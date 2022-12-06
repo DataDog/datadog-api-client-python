@@ -14,28 +14,28 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_application import RUMApplication
+    from datadog_api_client.v2.model.rum_application_list import RUMApplicationList
 
 
 class RUMApplicationsResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rum_application import RUMApplication
+        from datadog_api_client.v2.model.rum_application_list import RUMApplicationList
 
         return {
-            "data": ([RUMApplication],),
+            "data": ([RUMApplicationList],),
         }
 
     attribute_map = {
         "data": "data",
     }
 
-    def __init__(self_, data: Union[List[RUMApplication], UnsetType] = unset, **kwargs):
+    def __init__(self_, data: Union[List[RUMApplicationList], UnsetType] = unset, **kwargs):
         """
         RUM applications response.
 
         :param data: RUM applications array response.
-        :type data: [RUMApplication], optional
+        :type data: [RUMApplicationList], optional
         """
         if data is not unset:
             kwargs["data"] = data
