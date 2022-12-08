@@ -14,12 +14,18 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v1.model.synthetics_basic_auth_oauth_token_api_authentication import (
+        SyntheticsBasicAuthOauthTokenApiAuthentication,
+    )
     from datadog_api_client.v1.model.synthetics_basic_auth_oauth_rop_type import SyntheticsBasicAuthOauthROPType
 
 
 class SyntheticsBasicAuthOauthROP(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v1.model.synthetics_basic_auth_oauth_token_api_authentication import (
+            SyntheticsBasicAuthOauthTokenApiAuthentication,
+        )
         from datadog_api_client.v1.model.synthetics_basic_auth_oauth_rop_type import SyntheticsBasicAuthOauthROPType
 
         return {
@@ -30,6 +36,7 @@ class SyntheticsBasicAuthOauthROP(ModelNormal):
             "password": (str,),
             "resource": (str,),
             "scope": (str,),
+            "token_api_authentication": (SyntheticsBasicAuthOauthTokenApiAuthentication,),
             "type": (SyntheticsBasicAuthOauthROPType,),
             "username": (str,),
         }
@@ -42,6 +49,7 @@ class SyntheticsBasicAuthOauthROP(ModelNormal):
         "password": "password",
         "resource": "resource",
         "scope": "scope",
+        "token_api_authentication": "tokenApiAuthentication",
         "type": "type",
         "username": "username",
     }
@@ -50,6 +58,7 @@ class SyntheticsBasicAuthOauthROP(ModelNormal):
         self_,
         access_token_url: str,
         password: str,
+        token_api_authentication: SyntheticsBasicAuthOauthTokenApiAuthentication,
         username: str,
         audience: Union[str, UnsetType] = unset,
         client_id: Union[str, UnsetType] = unset,
@@ -83,6 +92,9 @@ class SyntheticsBasicAuthOauthROP(ModelNormal):
         :param scope: Scope to use when performing the authentication.
         :type scope: str, optional
 
+        :param token_api_authentication: Type of token to use when performing the authentication.
+        :type token_api_authentication: SyntheticsBasicAuthOauthTokenApiAuthentication
+
         :param type: The type of basic authentication to use when performing the test.
         :type type: SyntheticsBasicAuthOauthROPType, optional
 
@@ -105,4 +117,5 @@ class SyntheticsBasicAuthOauthROP(ModelNormal):
 
         self_.access_token_url = access_token_url
         self_.password = password
+        self_.token_api_authentication = token_api_authentication
         self_.username = username
