@@ -4,7 +4,6 @@ Edit a browser test returns "OK" response
 
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.synthetics_api import SyntheticsApi
-from datadog_api_client.v1.model.http_method import HTTPMethod
 from datadog_api_client.v1.model.synthetics_basic_auth_web import SyntheticsBasicAuthWeb
 from datadog_api_client.v1.model.synthetics_basic_auth_web_type import SyntheticsBasicAuthWebType
 from datadog_api_client.v1.model.synthetics_browser_test import SyntheticsBrowserTest
@@ -19,6 +18,7 @@ from datadog_api_client.v1.model.synthetics_device_id import SyntheticsDeviceID
 from datadog_api_client.v1.model.synthetics_restricted_roles import SyntheticsRestrictedRoles
 from datadog_api_client.v1.model.synthetics_step import SyntheticsStep
 from datadog_api_client.v1.model.synthetics_step_type import SyntheticsStepType
+from datadog_api_client.v1.model.synthetics_test_call_type import SyntheticsTestCallType
 from datadog_api_client.v1.model.synthetics_test_ci_options import SyntheticsTestCiOptions
 from datadog_api_client.v1.model.synthetics_test_execution_rule import SyntheticsTestExecutionRule
 from datadog_api_client.v1.model.synthetics_test_options import SyntheticsTestOptions
@@ -47,15 +47,16 @@ body = SyntheticsBrowserTest(
                 username="my_username",
             ),
             body_type=SyntheticsTestRequestBodyType.TEXT_PLAIN,
+            call_type=SyntheticsTestCallType.UNARY,
             certificate=SyntheticsTestRequestCertificate(
                 cert=SyntheticsTestRequestCertificateItem(),
                 key=SyntheticsTestRequestCertificateItem(),
             ),
             certificate_domains=[],
-            method=HTTPMethod.GET,
             proxy=SyntheticsTestRequestProxy(
                 url="https://example.com",
             ),
+            service="Greeter",
             url="https://example.com",
         ),
         variables=[

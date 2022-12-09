@@ -1107,13 +1107,6 @@ http\_log\_item
    :members:
    :show-inheritance:
 
-http\_method
-------------
-
-.. automodule:: datadog_api_client.v1.model.http_method
-   :members:
-   :show-inheritance:
-
 i\_frame\_widget\_definition
 ----------------------------
 
@@ -3939,6 +3932,13 @@ synthetics\_step\_type
 ----------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_step_type
+   :members:
+   :show-inheritance:
+
+synthetics\_test\_call\_type
+----------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_test_call_type
    :members:
    :show-inheritance:
 
