@@ -4,7 +4,6 @@ Create an API HTTP with oauth-rop test returns "OK - Returns the created test de
 
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.synthetics_api import SyntheticsApi
-from datadog_api_client.v1.model.http_method import HTTPMethod
 from datadog_api_client.v1.model.synthetics_api_test import SyntheticsAPITest
 from datadog_api_client.v1.model.synthetics_api_test_config import SyntheticsAPITestConfig
 from datadog_api_client.v1.model.synthetics_api_test_type import SyntheticsAPITestType
@@ -92,7 +91,7 @@ body = SyntheticsAPITest(
             headers=SyntheticsTestHeaders(
                 unique="examplecreateanapihttpwithoauthroptestreturnsokreturnsthecreatedtestdetailsresponse",
             ),
-            method=HTTPMethod.GET,
+            method="GET",
             timeout=10.0,
             url="https://datadoghq.com",
             proxy=SyntheticsTestRequestProxy(
