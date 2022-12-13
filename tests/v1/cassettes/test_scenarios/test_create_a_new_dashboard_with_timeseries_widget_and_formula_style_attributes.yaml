@@ -1,0 +1,44 @@
+interactions:
+- request:
+    body: '{"layout_type":"ordered","reflow_type":"auto","title":"Test-Create_a_new_dashboard_with_timeseries_widget_and_formula_style_attributes-1670951590
+      with formula style","widgets":[{"definition":{"legend_columns":["avg","min","max","value","sum"],"legend_layout":"auto","requests":[{"display_type":"line","formulas":[{"formula":"query1","style":{"palette":"classic","palette_index":4}}],"queries":[{"data_source":"metrics","name":"query1","query":"avg:system.cpu.user{*}"}],"response_format":"timeseries","style":{"line_type":"solid","line_width":"normal","palette":"dog_classic"}}],"show_legend":true,"time":{},"title":"styled
+      timeseries","type":"timeseries"}}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/dashboard
+  response:
+    body:
+      string: '{"notify_list":null,"description":null,"restricted_roles":[],"author_name":null,"template_variables":null,"is_read_only":false,"id":"k2c-ici-a4c","title":"Test-Create_a_new_dashboard_with_timeseries_widget_and_formula_style_attributes-1670951590
+        with formula style","url":"/dashboard/k2c-ici-a4c/test-createanewdashboardwithtimeserieswidgetandformulastyleattributes-1670951590","created_at":"2022-12-13T17:13:10.630153+00:00","modified_at":"2022-12-13T17:13:10.630153+00:00","reflow_type":"auto","author_handle":"frog@datadoghq.com","widgets":[{"definition":{"legend_columns":["avg","min","max","value","sum"],"title":"styled
+        timeseries","legend_layout":"auto","show_legend":true,"time":{},"requests":[{"formulas":[{"formula":"query1","style":{"palette_index":4,"palette":"classic"}}],"style":{"line_width":"normal","palette":"dog_classic","line_type":"solid"},"display_type":"line","response_format":"timeseries","queries":[{"query":"avg:system.cpu.user{*}","data_source":"metrics","name":"query1"}]}],"type":"timeseries"},"id":5980026334932933}],"layout_type":"ordered"}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/dashboard/k2c-ici-a4c
+  response:
+    body:
+      string: '{"deleted_dashboard_id":"k2c-ici-a4c"}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

@@ -830,6 +830,7 @@ from datadog_api_client.v1.model.widget_event_size import WidgetEventSize
 from datadog_api_client.v1.model.widget_field_sort import WidgetFieldSort
 from datadog_api_client.v1.model.widget_formula import WidgetFormula
 from datadog_api_client.v1.model.widget_formula_limit import WidgetFormulaLimit
+from datadog_api_client.v1.model.widget_formula_style import WidgetFormulaStyle
 from datadog_api_client.v1.model.widget_grouping import WidgetGrouping
 from datadog_api_client.v1.model.widget_horizontal_align import WidgetHorizontalAlign
 from datadog_api_client.v1.model.widget_image_sizing import WidgetImageSizing

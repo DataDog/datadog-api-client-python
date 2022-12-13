@@ -5167,6 +5167,13 @@ widget\_formula\_limit
    :members:
    :show-inheritance:
 
+widget\_formula\_style
+----------------------
+
+.. automodule:: datadog_api_client.v1.model.widget_formula_style
+   :members:
+   :show-inheritance:
+
 widget\_grouping
 ----------------
 
