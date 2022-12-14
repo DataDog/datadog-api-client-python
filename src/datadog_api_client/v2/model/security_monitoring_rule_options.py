@@ -14,6 +14,9 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.cloud_configuration_compliance_rule_options import (
+        CloudConfigurationComplianceRuleOptions,
+    )
     from datadog_api_client.v2.model.security_monitoring_rule_detection_method import (
         SecurityMonitoringRuleDetectionMethod,
     )
@@ -38,6 +41,9 @@ if TYPE_CHECKING:
 class SecurityMonitoringRuleOptions(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.cloud_configuration_compliance_rule_options import (
+            CloudConfigurationComplianceRuleOptions,
+        )
         from datadog_api_client.v2.model.security_monitoring_rule_detection_method import (
             SecurityMonitoringRuleDetectionMethod,
         )
@@ -59,6 +65,7 @@ class SecurityMonitoringRuleOptions(ModelNormal):
         )
 
         return {
+            "compliance_rule_options": (CloudConfigurationComplianceRuleOptions,),
             "decrease_criticality_based_on_env": (bool,),
             "detection_method": (SecurityMonitoringRuleDetectionMethod,),
             "evaluation_window": (SecurityMonitoringRuleEvaluationWindow,),
@@ -70,6 +77,7 @@ class SecurityMonitoringRuleOptions(ModelNormal):
         }
 
     attribute_map = {
+        "compliance_rule_options": "complianceRuleOptions",
         "decrease_criticality_based_on_env": "decreaseCriticalityBasedOnEnv",
         "detection_method": "detectionMethod",
         "evaluation_window": "evaluationWindow",
@@ -82,6 +90,7 @@ class SecurityMonitoringRuleOptions(ModelNormal):
 
     def __init__(
         self_,
+        compliance_rule_options: Union[CloudConfigurationComplianceRuleOptions, UnsetType] = unset,
         decrease_criticality_based_on_env: Union[bool, UnsetType] = unset,
         detection_method: Union[SecurityMonitoringRuleDetectionMethod, UnsetType] = unset,
         evaluation_window: Union[SecurityMonitoringRuleEvaluationWindow, UnsetType] = unset,
@@ -94,6 +103,9 @@ class SecurityMonitoringRuleOptions(ModelNormal):
     ):
         """
         Options on rules.
+
+        :param compliance_rule_options: Options for cloud_configuration rules.
+        :type compliance_rule_options: CloudConfigurationComplianceRuleOptions, optional
 
         :param decrease_criticality_based_on_env: If true, signals in non-production environments have a lower severity than what is defined by the rule case, which can reduce signal noise.
             The severity is decreased by one level: ``CRITICAL`` in production becomes ``HIGH`` in non-production, ``HIGH`` becomes ``MEDIUM`` and so on. ``INFO`` remains ``INFO``.
@@ -124,6 +136,8 @@ class SecurityMonitoringRuleOptions(ModelNormal):
         :param new_value_options: Options on new value rules.
         :type new_value_options: SecurityMonitoringRuleNewValueOptions, optional
         """
+        if compliance_rule_options is not unset:
+            kwargs["compliance_rule_options"] = compliance_rule_options
         if decrease_criticality_based_on_env is not unset:
             kwargs["decrease_criticality_based_on_env"] = decrease_criticality_based_on_env
         if detection_method is not unset:

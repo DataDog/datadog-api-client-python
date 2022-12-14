@@ -56,6 +56,13 @@ Feature: Security Monitoring
     Then the response status is 200 OK
 
   @team:DataDog/k9-cloud-security-platform
+  Scenario: Create a cloud_configuration rule returns "OK" response
+    Given new "CreateSecurityMonitoringRule" request
+    And body with value {"type":"cloud_configuration","name":"{{ unique }}_cloud","isEnabled":false,"cases":[{"status":"info","notifications":["channel"]}],"options":{"complianceRuleOptions":{"complexRule": false,"regoRule":{"policy":"package datadog\n","resourceTypes":["gcp_compute_disk"]}}},"message":"ddd","tags":["my:tag"],"complianceSignalOptions":{"userActivationStatus":true,"userGroupByFields":["@account_id"]}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @team:DataDog/k9-cloud-security-platform
   Scenario: Create a detection rule returns "Bad Request" response
     Given new "CreateSecurityMonitoringRule" request
     And body with value {"name":"{{ unique }}", "queries":[{"query":""}],"cases":[{"status":"info"}],"options":{},"message":"Test rule","tags":[],"isEnabled":true}
@@ -156,6 +163,16 @@ Feature: Security Monitoring
     And request contains "rule_id" parameter from "security_rule.id"
     When the request is sent
     Then the response status is 204 OK
+
+  @team:DataDog/k9-cloud-security-platform
+  Scenario: Get a cloud configuration rule's details returns "OK" response
+    Given there is a valid "cloud_configuration_rule" in the system
+    And new "GetSecurityMonitoringRule" request
+    And request contains "rule_id" parameter from "cloud_configuration_rule.id"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "name" is equal to "{{ unique }}_cloud"
+    And the response "id" has the same value as "cloud_configuration_rule.id"
 
   @generated @skip @team:DataDog/k9-cloud-security-platform
   Scenario: Get a list of security signals returns "Bad Request" response
@@ -286,6 +303,17 @@ Feature: Security Monitoring
     And body with value {"data": {"attributes": {"assignee": {"uuid": ""}}}}
     When the request is sent
     Then the response status is 200 OK
+
+  @team:DataDog/k9-cloud-security-platform
+  Scenario: Update a cloud configuration rule's details returns "OK" response
+    Given new "UpdateSecurityMonitoringRule" request
+    And there is a valid "cloud_configuration_rule" in the system
+    And request contains "rule_id" parameter from "cloud_configuration_rule.id"
+    And body with value {"name":"{{ unique }}_cloud_updated","isEnabled":false,"cases":[{"status":"info","notifications":[]}],"options":{"complianceRuleOptions":{"regoRule":{"policy":"package datadog\n","resourceTypes":["gcp_compute_disk"]}}},"message":"ddd","tags":[],"complianceSignalOptions":{"userActivationStatus":false,"userGroupByFields":[]}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "name" is equal to "{{ unique }}_cloud_updated"
+    And the response "id" has the same value as "cloud_configuration_rule.id"
 
   @generated @skip @team:DataDog/k9-cloud-security-platform
   Scenario: Update a security filter returns "Bad Request" response
