@@ -101,6 +101,17 @@ from datadog_api_client.v2.model.ci_app_tests_group_by import CIAppTestsGroupBy
 from datadog_api_client.v2.model.ci_app_tests_query_filter import CIAppTestsQueryFilter
 from datadog_api_client.v2.model.ci_app_warning import CIAppWarning
 from datadog_api_client.v2.model.chargeback_breakdown import ChargebackBreakdown
+from datadog_api_client.v2.model.cloud_configuration_compliance_rule_options import (
+    CloudConfigurationComplianceRuleOptions,
+)
+from datadog_api_client.v2.model.cloud_configuration_rego_rule import CloudConfigurationRegoRule
+from datadog_api_client.v2.model.cloud_configuration_rule_case_create import CloudConfigurationRuleCaseCreate
+from datadog_api_client.v2.model.cloud_configuration_rule_compliance_signal_options import (
+    CloudConfigurationRuleComplianceSignalOptions,
+)
+from datadog_api_client.v2.model.cloud_configuration_rule_create_payload import CloudConfigurationRuleCreatePayload
+from datadog_api_client.v2.model.cloud_configuration_rule_options import CloudConfigurationRuleOptions
+from datadog_api_client.v2.model.cloud_configuration_rule_type import CloudConfigurationRuleType
 from datadog_api_client.v2.model.cloud_workload_security_agent_rule_attributes import (
     CloudWorkloadSecurityAgentRuleAttributes,
 )

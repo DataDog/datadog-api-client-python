@@ -680,6 +680,55 @@ ci\_app\_warning
    :members:
    :show-inheritance:
 
+cloud\_configuration\_compliance\_rule\_options
+-----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cloud_configuration_compliance_rule_options
+   :members:
+   :show-inheritance:
+
+cloud\_configuration\_rego\_rule
+--------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cloud_configuration_rego_rule
+   :members:
+   :show-inheritance:
+
+cloud\_configuration\_rule\_case\_create
+----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cloud_configuration_rule_case_create
+   :members:
+   :show-inheritance:
+
+cloud\_configuration\_rule\_compliance\_signal\_options
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cloud_configuration_rule_compliance_signal_options
+   :members:
+   :show-inheritance:
+
+cloud\_configuration\_rule\_create\_payload
+-------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cloud_configuration_rule_create_payload
+   :members:
+   :show-inheritance:
+
+cloud\_configuration\_rule\_options
+-----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cloud_configuration_rule_options
+   :members:
+   :show-inheritance:
+
+cloud\_configuration\_rule\_type
+--------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cloud_configuration_rule_type
+   :members:
+   :show-inheritance:
+
 cloud\_workload\_security\_agent\_rule\_attributes
 --------------------------------------------------
 

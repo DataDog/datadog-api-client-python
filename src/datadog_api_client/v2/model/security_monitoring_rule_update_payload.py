@@ -15,6 +15,9 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.security_monitoring_rule_case import SecurityMonitoringRuleCase
+    from datadog_api_client.v2.model.cloud_configuration_rule_compliance_signal_options import (
+        CloudConfigurationRuleComplianceSignalOptions,
+    )
     from datadog_api_client.v2.model.security_monitoring_filter import SecurityMonitoringFilter
     from datadog_api_client.v2.model.security_monitoring_rule_options import SecurityMonitoringRuleOptions
     from datadog_api_client.v2.model.security_monitoring_rule_query import SecurityMonitoringRuleQuery
@@ -32,12 +35,16 @@ class SecurityMonitoringRuleUpdatePayload(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.security_monitoring_rule_case import SecurityMonitoringRuleCase
+        from datadog_api_client.v2.model.cloud_configuration_rule_compliance_signal_options import (
+            CloudConfigurationRuleComplianceSignalOptions,
+        )
         from datadog_api_client.v2.model.security_monitoring_filter import SecurityMonitoringFilter
         from datadog_api_client.v2.model.security_monitoring_rule_options import SecurityMonitoringRuleOptions
         from datadog_api_client.v2.model.security_monitoring_rule_query import SecurityMonitoringRuleQuery
 
         return {
             "cases": ([SecurityMonitoringRuleCase],),
+            "compliance_signal_options": (CloudConfigurationRuleComplianceSignalOptions,),
             "filters": ([SecurityMonitoringFilter],),
             "has_extended_title": (bool,),
             "is_enabled": (bool,),
@@ -51,6 +58,7 @@ class SecurityMonitoringRuleUpdatePayload(ModelNormal):
 
     attribute_map = {
         "cases": "cases",
+        "compliance_signal_options": "complianceSignalOptions",
         "filters": "filters",
         "has_extended_title": "hasExtendedTitle",
         "is_enabled": "isEnabled",
@@ -65,6 +73,7 @@ class SecurityMonitoringRuleUpdatePayload(ModelNormal):
     def __init__(
         self_,
         cases: Union[List[SecurityMonitoringRuleCase], UnsetType] = unset,
+        compliance_signal_options: Union[CloudConfigurationRuleComplianceSignalOptions, UnsetType] = unset,
         filters: Union[List[SecurityMonitoringFilter], UnsetType] = unset,
         has_extended_title: Union[bool, UnsetType] = unset,
         is_enabled: Union[bool, UnsetType] = unset,
@@ -88,6 +97,9 @@ class SecurityMonitoringRuleUpdatePayload(ModelNormal):
 
         :param cases: Cases for generating signals.
         :type cases: [SecurityMonitoringRuleCase], optional
+
+        :param compliance_signal_options: How to generate compliance signals. Useful for cloud_configuration rules only.
+        :type compliance_signal_options: CloudConfigurationRuleComplianceSignalOptions, optional
 
         :param filters: Additional queries to filter matched events before they are processed.
         :type filters: [SecurityMonitoringFilter], optional
@@ -118,6 +130,8 @@ class SecurityMonitoringRuleUpdatePayload(ModelNormal):
         """
         if cases is not unset:
             kwargs["cases"] = cases
+        if compliance_signal_options is not unset:
+            kwargs["compliance_signal_options"] = compliance_signal_options
         if filters is not unset:
             kwargs["filters"] = filters
         if has_extended_title is not unset:
