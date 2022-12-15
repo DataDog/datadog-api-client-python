@@ -4208,6 +4208,398 @@ security\_monitoring\_triage\_user
    :members:
    :show-inheritance:
 
+sensitive\_data\_scanner\_config\_request
+-----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sensitive_data_scanner_config_request
+   :members:
+   :show-inheritance:
+
+sensitive\_data\_scanner\_configuration
+---------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sensitive_data_scanner_configuration
+   :members:
+   :show-inheritance:
+
+sensitive\_data\_scanner\_configuration\_data
+---------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sensitive_data_scanner_configuration_data
+   :members:
+   :show-inheritance:
+
+sensitive\_data\_scanner\_configuration\_relationships
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sensitive_data_scanner_configuration_relationships
+   :members:
+   :show-inheritance:
+
+sensitive\_data\_scanner\_configuration\_type
+---------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sensitive_data_scanner_configuration_type
+   :members:
+   :show-inheritance:
+
+sensitive\_data\_scanner\_create\_group\_response
+-------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sensitive_data_scanner_create_group_response
+   :members:
+   :show-inheritance:
+
+sensitive\_data\_scanner\_create\_rule\_response
+------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sensitive_data_scanner_create_rule_response
+   :members:
+   :show-inheritance:
+
+sensitive\_data\_scanner\_filter
+--------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sensitive_data_scanner_filter
+   :members:
+   :show-inheritance:
+
+sensitive\_data\_scanner\_get\_config\_included\_array
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sensitive_data_scanner_get_config_included_array
+   :members:
+   :show-inheritance:
+
+sensitive\_data\_scanner\_get\_config\_included\_item
+-----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sensitive_data_scanner_get_config_included_item
+   :members:
+   :show-inheritance:
+
+sensitive\_data\_scanner\_get\_config\_response
+-----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sensitive_data_scanner_get_config_response
+   :members:
+   :show-inheritance:
+
+sensitive\_data\_scanner\_get\_config\_response\_data
+-----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sensitive_data_scanner_get_config_response_data
+   :members:
+   :show-inheritance:
+
+sensitive\_data\_scanner\_group
+-------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sensitive_data_scanner_group
+   :members:
+   :show-inheritance:
+
+sensitive\_data\_scanner\_group\_attributes
+-------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sensitive_data_scanner_group_attributes
+   :members:
+   :show-inheritance:
+
+sensitive\_data\_scanner\_group\_create
+---------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sensitive_data_scanner_group_create
+   :members:
+   :show-inheritance:
+
+sensitive\_data\_scanner\_group\_create\_request
+------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sensitive_data_scanner_group_create_request
+   :members:
+   :show-inheritance:
+
+sensitive\_data\_scanner\_group\_data
+-------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sensitive_data_scanner_group_data
+   :members:
+   :show-inheritance:
+
+sensitive\_data\_scanner\_group\_delete\_request
+------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sensitive_data_scanner_group_delete_request
+   :members:
+   :show-inheritance:
+
+sensitive\_data\_scanner\_group\_delete\_response
+-------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sensitive_data_scanner_group_delete_response
+   :members:
+   :show-inheritance:
+
+sensitive\_data\_scanner\_group\_included\_item
+-----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sensitive_data_scanner_group_included_item
+   :members:
+   :show-inheritance:
+
+sensitive\_data\_scanner\_group\_item
+-------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sensitive_data_scanner_group_item
+   :members:
+   :show-inheritance:
+
+sensitive\_data\_scanner\_group\_list
+-------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sensitive_data_scanner_group_list
+   :members:
+   :show-inheritance:
+
+sensitive\_data\_scanner\_group\_relationships
+----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sensitive_data_scanner_group_relationships
+   :members:
+   :show-inheritance:
+
+sensitive\_data\_scanner\_group\_response
+-----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sensitive_data_scanner_group_response
+   :members:
+   :show-inheritance:
+
+sensitive\_data\_scanner\_group\_type
+-------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sensitive_data_scanner_group_type
+   :members:
+   :show-inheritance:
+
+sensitive\_data\_scanner\_group\_update
+---------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sensitive_data_scanner_group_update
+   :members:
+   :show-inheritance:
+
+sensitive\_data\_scanner\_group\_update\_request
+------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sensitive_data_scanner_group_update_request
+   :members:
+   :show-inheritance:
+
+sensitive\_data\_scanner\_group\_update\_response
+-------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sensitive_data_scanner_group_update_response
+   :members:
+   :show-inheritance:
+
+sensitive\_data\_scanner\_meta
+------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sensitive_data_scanner_meta
+   :members:
+   :show-inheritance:
+
+sensitive\_data\_scanner\_meta\_version\_only
+---------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sensitive_data_scanner_meta_version_only
+   :members:
+   :show-inheritance:
+
+sensitive\_data\_scanner\_product
+---------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sensitive_data_scanner_product
+   :members:
+   :show-inheritance:
+
+sensitive\_data\_scanner\_reorder\_config
+-----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sensitive_data_scanner_reorder_config
+   :members:
+   :show-inheritance:
+
+sensitive\_data\_scanner\_reorder\_groups\_response
+---------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sensitive_data_scanner_reorder_groups_response
+   :members:
+   :show-inheritance:
+
+sensitive\_data\_scanner\_rule
+------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sensitive_data_scanner_rule
+   :members:
+   :show-inheritance:
+
+sensitive\_data\_scanner\_rule\_attributes
+------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sensitive_data_scanner_rule_attributes
+   :members:
+   :show-inheritance:
+
+sensitive\_data\_scanner\_rule\_create
+--------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sensitive_data_scanner_rule_create
+   :members:
+   :show-inheritance:
+
+sensitive\_data\_scanner\_rule\_create\_request
+-----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sensitive_data_scanner_rule_create_request
+   :members:
+   :show-inheritance:
+
+sensitive\_data\_scanner\_rule\_data
+------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sensitive_data_scanner_rule_data
+   :members:
+   :show-inheritance:
+
+sensitive\_data\_scanner\_rule\_delete\_request
+-----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sensitive_data_scanner_rule_delete_request
+   :members:
+   :show-inheritance:
+
+sensitive\_data\_scanner\_rule\_delete\_response
+------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sensitive_data_scanner_rule_delete_response
+   :members:
+   :show-inheritance:
+
+sensitive\_data\_scanner\_rule\_included\_item
+----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sensitive_data_scanner_rule_included_item
+   :members:
+   :show-inheritance:
+
+sensitive\_data\_scanner\_rule\_relationships
+---------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sensitive_data_scanner_rule_relationships
+   :members:
+   :show-inheritance:
+
+sensitive\_data\_scanner\_rule\_response
+----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sensitive_data_scanner_rule_response
+   :members:
+   :show-inheritance:
+
+sensitive\_data\_scanner\_rule\_type
+------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sensitive_data_scanner_rule_type
+   :members:
+   :show-inheritance:
+
+sensitive\_data\_scanner\_rule\_update
+--------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sensitive_data_scanner_rule_update
+   :members:
+   :show-inheritance:
+
+sensitive\_data\_scanner\_rule\_update\_request
+-----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sensitive_data_scanner_rule_update_request
+   :members:
+   :show-inheritance:
+
+sensitive\_data\_scanner\_rule\_update\_response
+------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sensitive_data_scanner_rule_update_response
+   :members:
+   :show-inheritance:
+
+sensitive\_data\_scanner\_standard\_pattern
+-------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sensitive_data_scanner_standard_pattern
+   :members:
+   :show-inheritance:
+
+sensitive\_data\_scanner\_standard\_pattern\_attributes
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sensitive_data_scanner_standard_pattern_attributes
+   :members:
+   :show-inheritance:
+
+sensitive\_data\_scanner\_standard\_pattern\_data
+-------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sensitive_data_scanner_standard_pattern_data
+   :members:
+   :show-inheritance:
+
+sensitive\_data\_scanner\_standard\_pattern\_type
+-------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sensitive_data_scanner_standard_pattern_type
+   :members:
+   :show-inheritance:
+
+sensitive\_data\_scanner\_standard\_patterns\_response
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sensitive_data_scanner_standard_patterns_response
+   :members:
+   :show-inheritance:
+
+sensitive\_data\_scanner\_standard\_patterns\_response\_data
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sensitive_data_scanner_standard_patterns_response_data
+   :members:
+   :show-inheritance:
+
+sensitive\_data\_scanner\_standard\_patterns\_response\_item
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sensitive_data_scanner_standard_patterns_response_item
+   :members:
+   :show-inheritance:
+
+sensitive\_data\_scanner\_text\_replacement
+-------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sensitive_data_scanner_text_replacement
+   :members:
+   :show-inheritance:
+
+sensitive\_data\_scanner\_text\_replacement\_type
+-------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sensitive_data_scanner_text_replacement_type
+   :members:
+   :show-inheritance:
+
 service\_account\_create\_attributes
 ------------------------------------
 

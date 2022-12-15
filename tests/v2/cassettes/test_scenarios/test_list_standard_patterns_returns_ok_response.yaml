@@ -1,0 +1,184 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/sensitive-data-scanner/config/standard-patterns
+  response:
+    body:
+      string: '{"data":[{"attributes":{"pattern":"(AKIA|A3T|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[0-9A-Z]{16}","name":"AWS
+        Access Key ID Scanner","tags":["sensitive_data_category:credentials","sensitive_data:aws_access_key_id"]},"type":"sensitive_data_scanner_standard_pattern","id":"OfGqX8R9TRqAcorxenl2fQ"},{"attributes":{"pattern":"(aws|AWS|amazon).{0,19}\\b[A-Za-z0-9/+]{40}\\b","name":"AWS
+        Secret Access Key Scanner","tags":["sensitive_data_category:credentials","sensitive_data:aws_secret_access_key"]},"type":"sensitive_data_scanner_standard_pattern","id":"iZeqWOvYThWJ7DWMwIQoRg"},{"attributes":{"pattern":"dt0[a-zA-Z]{1}[0-9]{2}\\.[A-Z0-9]{24}\\.[A-Z0-9]{64}","name":"Dynatrace
+        Token Scanner","tags":["sensitive_data_category:credentials","sensitive_data:dynatrace_token"]},"type":"sensitive_data_scanner_standard_pattern","id":"6wYyy0j-RyCz9fpI1cwf_w"},{"attributes":{"pattern":"EAACEdEose0cBA[0-9A-Za-z]+","name":"Facebook
+        Access Token Scanner","tags":["sensitive_data_category:credentials","sensitive_data:facebook_access_token"]},"type":"sensitive_data_scanner_standard_pattern","id":"ie1ReqxXR5WaAsdIedNT-A"},{"attributes":{"pattern":"glpat-[\\w\\\\-]{20}","name":"Gitlab
+        Token Scanner","tags":["sensitive_data_category:credentials","sensitive_data:gitlab_token"]},"type":"sensitive_data_scanner_standard_pattern","id":"FrAwrqLMSK68MsqcD_HVJA"},{"attributes":{"pattern":"(?i)\\b(igqvj|instagram).*?[a-z0-9]{100,250}\\b","name":"Instagram
+        Token Scanner","tags":["sensitive_data_category:credentials","sensitive_data:instagram_token"]},"type":"sensitive_data_scanner_standard_pattern","id":"0VhCLYz8ToS9w6CFgFa6lw"},{"attributes":{"pattern":"\\bey[I-L][\\w=-]+\\.ey[I-L][\\w=-]+(\\.[\\w.+/=-]+)?\\b","name":"JSON
+        Web Token Scanner","tags":["sensitive_data_category:credentials","sensitive_data:json_web_token"]},"type":"sensitive_data_scanner_standard_pattern","id":"9osY3xc9Q7ONAV0zw9Uz4A"},{"attributes":{"pattern":"[0-9a-f]{32}-us[0-9]{1,2}","name":"Mailchimp
+        API Key Scanner","tags":["sensitive_data_category:credentials","sensitive_data:mailchimp_api_key"]},"type":"sensitive_data_scanner_standard_pattern","id":"iWEOhW0JSRuWToJ7FnQ4dA"},{"attributes":{"pattern":"key-[0-9a-zA-Z]{32}","name":"Mailgun
+        API Key Scanner","tags":["sensitive_data_category:credentials","sensitive_data:mailgun_api_key"]},"type":"sensitive_data_scanner_standard_pattern","id":"bBJ6S21qTGyc3XL5ZV6-ag"},{"attributes":{"pattern":"SSWS
+        00[a-zA-Z0-9\\-\\_]{40}","name":"Okta API Token Scanner","tags":["sensitive_data_category:credentials","sensitive_data:okta_api_token"]},"type":"sensitive_data_scanner_standard_pattern","id":"wUOrv44TR6ibU9Na3kplUw"},{"attributes":{"pattern":"xox[baprs]-([0-9a-zA-Z]{10,48})?","name":"Slack
+        Access Token Scanner","tags":["sensitive_data_category:credentials","sensitive_data:slack_access_token"]},"type":"sensitive_data_scanner_standard_pattern","id":"ozSqFSGnQaur3HfiS3BTaQ"},{"attributes":{"pattern":"sk_live_[0-9a-zA-Z]{24}","name":"Stripe
+        API Key Scanner","tags":["sensitive_data_category:credentials","sensitive_data:stripe_api_key"]},"type":"sensitive_data_scanner_standard_pattern","id":"S0j4p-aLSMmV2Qd6q53_jA"},{"attributes":{"pattern":"rk_live_[0-9a-zA-Z]{24}","name":"Stripe
+        Restricted API Key Scanner","tags":["sensitive_data_category:credentials","sensitive_data:stripe_restricted_api_key"]},"type":"sensitive_data_scanner_standard_pattern","id":"0Ir-CDzMQQ2i9BfsFkW9Mg"},{"attributes":{"pattern":"\\bSK[0-9a-fA-F]{32}\\b","name":"Twilio
+        API Key Scanner","tags":["sensitive_data_category:credentials","sensitive_data:twilio_api_key"]},"type":"sensitive_data_scanner_standard_pattern","id":"cFGYTn4pTIiF7tUCCDhw4A"},{"attributes":{"pattern":"sq0atp-[0-9A-Za-z\\-_]{22}","name":"Square
+        Access Token Scanner","tags":["sensitive_data_category:credentials","sensitive_data:square_access_token"]},"type":"sensitive_data_scanner_standard_pattern","id":"aG7pEdjWRQq3DJDDirhLlQ"},{"attributes":{"pattern":"sq0csp-[0-9A-Za-z\\-_]{43}","name":"Square
+        OAuth Secret Scanner","tags":["sensitive_data_category:credentials","sensitive_data:square_oauth_secret"]},"type":"sensitive_data_scanner_standard_pattern","id":"l264G1wUQ4mY0wKp6y7m7g"},{"attributes":{"pattern":"\\bAIza[0-9A-Za-z\\\\-_]{35}\\b","name":"Google
+        API Key Scanner","tags":["sensitive_data_category:credentials","sensitive_data:google_api_key"]},"type":"sensitive_data_scanner_standard_pattern","id":"kvjX5yceTG6EUXy85edisQ"},{"attributes":{"pattern":"\\bya29\\.[0-9A-Za-z\\\\-_]+\\b","name":"Google
+        OAuth Access Token Scanner","tags":["sensitive_data_category:credentials","sensitive_data:google_oauth_access_token"]},"type":"sensitive_data_scanner_standard_pattern","id":"I0HS3rpVQ1e3VNQkJP2Acg"},{"attributes":{"pattern":"BEGIN
+        RSA PRIVATE KEY","name":"RSA Private Key Scanner","tags":["sensitive_data_category:credentials","sensitive_data:rsa_private_key"]},"type":"sensitive_data_scanner_standard_pattern","id":"hH0QoqerTWSDsqk2QLgQpg"},{"attributes":{"pattern":"SG\\.[a-zA-Z0-9]{22}\\.[a-zA-Z0-9]{43}","name":"Send
+        Grid API Token Scanner","tags":["sensitive_data_category:credentials","sensitive_data:send_grid_api_token"]},"type":"sensitive_data_scanner_standard_pattern","id":"la8TI0NQT9Gi-NnTjgHsnw"},{"attributes":{"pattern":"[h|H][e|E][r|R][o|O][k|K][u|U].{0,29}[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}","name":"Heroku
+        API Key Scanner","tags":["sensitive_data_category:credentials","sensitive_data:heroku_api_key"]},"type":"sensitive_data_scanner_standard_pattern","id":"5W01LmhRSx6eTFEUxmUjCA"},{"attributes":{"pattern":"BEGIN
+        OPENSSH PRIVATE KEY|BEGIN SSH PRIVATE KEY|BEGIN DSA PRIVATE KEY|BEGIN EC PRIVATE
+        KEY","name":"SSH Key Scanner","tags":["sensitive_data_category:credentials","sensitive_data:ssh_key"]},"type":"sensitive_data_scanner_standard_pattern","id":"A0fNRj-TQ06KnRznwcQpdQ"},{"attributes":{"pattern":"BEGIN
+        PGP PRIVATE KEY BLOCK","name":"PGP Private Key Scanner","tags":["sensitive_data_category:credentials","sensitive_data:pgp_private_key"]},"type":"sensitive_data_scanner_standard_pattern","id":"7gPGTneLSaK9xCbvtRIP2Q"},{"attributes":{"pattern":"access_token\\$production\\$[0-9a-z]{16}\\$[0-9a-f]{32}","name":"Paypal
+        Braintree Access Token Scanner","tags":["sensitive_data_category:credentials","sensitive_data:paypal_braintree_access_token"]},"type":"sensitive_data_scanner_standard_pattern","id":"A1Xhx8cuQ1-kVylk7CisDQ"},{"attributes":{"pattern":"amzn\\.mws\\.[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\b","name":"Amazon
+        Marketplace Web Services Auth Token Scanner","tags":["sensitive_data_category:credentials","sensitive_data:amazon_mws_token"]},"type":"sensitive_data_scanner_standard_pattern","id":"qxKIJw-ERuSq4ZFHVWuDkQ"},{"attributes":{"pattern":"((?i)azure)[\\s\\S]{0,16}[a-z0-9]{52}\\b","name":"Azure
+        Personal Access Token Scanner","tags":["sensitive_data_category:credentials","sensitive_data:azure_personal_access_token"]},"type":"sensitive_data_scanner_standard_pattern","id":"iIIn2m7JSViRvk64Ud027w"},{"attributes":{"pattern":"(?i)[a-z][a-z0-9-]+\\.database(?:\\.secure)?\\.(?:(?:windows|usgovcloudapi)\\.net|chinacloudapi\\.cn|cloudapi\\.de)","name":"Azure
+        SQL Connection String Scanner","tags":["sensitive_data_category:credentials","sensitive_data:azure_sql_connection_string"]},"type":"sensitive_data_scanner_standard_pattern","id":"zlO8j4beRYOMpGwtWSZj6Q"},{"attributes":{"pattern":"((?i)(subscription|authoring|programmatic))[\\s\\S]{0,30}[\\W][a-z0-9]{32}\\b","name":"Azure
+        Subscription Key Scanner","tags":["sensitive_data_category:credentials","sensitive_data:azure_subscription_key"]},"type":"sensitive_data_scanner_standard_pattern","id":"2zpIGqnoRYq9BrG_WiTzQA"},{"attributes":{"pattern":"(?i)bearer
+        [-a-z0-9._~+/]{4,}","name":"Bearer Token Scanner","tags":["sensitive_data_category:credentials","sensitive_data:bearer_token"]},"type":"sensitive_data_scanner_standard_pattern","id":"mZy8XjZLReC9smpERXWnnw"},{"attributes":{"pattern":"\\bsk_((sbox_)?[a-z0-9]{27}|(test_)?[a-fA-F0-9]{8}-([a-fA-F0-9]{4}-){3}[a-fA-F0-9]{12})\\b","name":"Checkout.com
+        Secret Scanner","tags":["sensitive_data_category:credentials","sensitive_data:checkout_secret"]},"type":"sensitive_data_scanner_standard_pattern","id":"-EJOOrU3R2CAuFGTH42FSQ"},{"attributes":{"pattern":"\\bdapi[a-h0-9]{32}\\b","name":"Databricks
+        Personal Access Token Scanner","tags":["sensitive_data_category:credentials","sensitive_data:databricks_personal_access_token"]},"type":"sensitive_data_scanner_standard_pattern","id":"hKkJD724Q-yDzGaXQI10Cg"},{"attributes":{"pattern":"\\bSWMTKN-1-[\\w\\d-]{76}\\b","name":"Docker
+        Swarm Join Token Scanner","tags":["sensitive_data_category:credentials","sensitive_data:docker_swarm_join_token"]},"type":"sensitive_data_scanner_standard_pattern","id":"QvRgpQ1LQsG1uWFlKgnSlA"},{"attributes":{"pattern":"\\bSWMKEY-1-[\\w\\d+/]{43}\\b","name":"Docker
+        Swarm Unlock Key Scanner","tags":["sensitive_data_category:credentials","sensitive_data:docker_swarm_unlock_key"]},"type":"sensitive_data_scanner_standard_pattern","id":"CNNsKOoIRq6TyhJY2zh46w"},{"attributes":{"pattern":"\\bgh[opsu]_[0-9a-zA-Z]{36}\\b","name":"Github
+        Access Token Scanner","tags":["sensitive_data_category:credentials","sensitive_data:github_access_token"]},"type":"sensitive_data_scanner_standard_pattern","id":"5rjXkBMvQ3GbbYrpVP_HdQ"},{"attributes":{"pattern":"\\bghr_[0-9a-zA-Z]{76}\\b","name":"Github
+        Refresh Token Scanner","tags":["sensitive_data_category:credentials","sensitive_data:github_refresh_token"]},"type":"sensitive_data_scanner_standard_pattern","id":"OMuUuImtTFCzF-duF0HxDQ"},{"attributes":{"pattern":"(jira|JIRA|Jira).{0,24}[a-zA-Z0-9]{20}[A-Z0-9]{4}\\b","name":"JIRA
+        API Token Scanner","tags":["sensitive_data_category:credentials","sensitive_data:jira_api_token"]},"type":"sensitive_data_scanner_standard_pattern","id":"70ZmrD75Q36PDbxaBVfT-A"},{"attributes":{"pattern":"(?i)linkedin(.{0,20})?[:=''\"][0-9a-z]{16}\\b","name":"LinkedIn
+        Secret Scanner","tags":["sensitive_data_category:credentials","sensitive_data:linkedin_secret"]},"type":"sensitive_data_scanner_standard_pattern","id":"dcTsD5wgT9CP_e70dFEpkQ"},{"attributes":{"pattern":"\\bshp(at|ca|pa)_[a-fA-F0-9]{32}\\b","name":"Shopify
+        Access Token Scanner","tags":["sensitive_data_category:credentials","sensitive_data:shopify_access_token"]},"type":"sensitive_data_scanner_standard_pattern","id":"eesmw5BiSjqZG8vxyW8Wjg"},{"attributes":{"pattern":"\\bshpss_[a-fA-F0-9]{32}\\b","name":"Shopify
+        Shared Secret Scanner","tags":["sensitive_data_category:credentials","sensitive_data:shopify_shared_secret"]},"type":"sensitive_data_scanner_standard_pattern","id":"d_O_6F5NRVqcXS1SGy479g"},{"attributes":{"pattern":"\\bT[a-zA-Z0-9_]{8}/B[a-zA-Z0-9_]{8}/[a-zA-Z0-9_]{24}\\b","name":"Slack
+        Webhook Secret Scanner","tags":["sensitive_data_category:credentials","sensitive_data:slack_webhook_secret"]},"type":"sensitive_data_scanner_standard_pattern","id":"wE1yJHDMRfqK91asu9uvaw"},{"attributes":{"pattern":"(?i)twitter(.{0,20})?[:=''\"][0-9a-z]{35,}\\b","name":"Twitter
+        Secret Scanner","tags":["sensitive_data_category:credentials","sensitive_data:twitter_secret"]},"type":"sensitive_data_scanner_standard_pattern","id":"gn0Eb2qDSUueJuQgqjdGGQ"},{"attributes":{"pattern":"\\b4\\d{3}(?:(?:,\\d{4}){3}|(?:\\s\\d{4}){3}|(?:\\.\\d{4}){3}|(?:-\\d{4}){3})\\b","tags":["sensitive_data:visa_credit_card","sensitive_data_category:credit_card"],"name":"Visa
+        Card Scanner (4x4 digits)","description":"\"Scan for Visa Card numbers formatted
+        as 4 groups of 4 contiguous digits. Matches are validated via the Luhn algorithm.
+        \n\nExamples of matching formats:\n* 4111 1111 1111 1111\n* 4111-1111-1111-1111\n*
+        4111.1111.1111.1111\n* 4111,1111,1111,1111\""},"type":"sensitive_data_scanner_standard_pattern","id":"0o71SJxXQNK7Q6gMbBesFQ"},{"attributes":{"pattern":"\\b4\\d{3}(?:(?:\\d{4}(?:(?:,\\d{8})|(?:-\\d{8})|(?:\\s\\d{8})|(?:\\.\\d{8}))))\\b","tags":["sensitive_data:visa_credit_card","sensitive_data_category:credit_card"],"name":"Visa
+        Card Scanner (2x8 digits)","description":"\"Scan for Visa Card numbers formatted
+        as 2 groups of 8 contiguous digits. Matches are validated via the Luhn algorithm.
+        \n\nExamples of matching formats:\n* 41111111 11111111\n* 41111111-11111111\n*
+        41111111.11111111\n* 41111111,11111111\""},"type":"sensitive_data_scanner_standard_pattern","id":"wJIgOygRQhKkR69b_9XbRQ"},{"attributes":{"pattern":"\\b4\\d{15}(?:\\d{3})?\\b","tags":["sensitive_data:visa_credit_card","sensitive_data_category:credit_card"],"name":"Visa
+        Card Scanner (1x16 & 1x19 digits)","description":"\"Scan for Visa Card numbers
+        formatted as 16 or 19 contiguous digits. Matches are validated via the Luhn
+        algorithm. \n\nExamples of matching formats:\n* 4111111111111111\n* 4012888888881881\""},"type":"sensitive_data_scanner_standard_pattern","id":"QrHD6AfgQm6z-j0wStxTvA"},{"attributes":{"pattern":"\\b(?:(?:5[1-5]\\d{2})|(?:222[1-9])|(?:22[3-9]\\d)|(?:2[3-6]\\d{2})|(?:27[0-1]\\d)|(?:2720))(?:(?:\\s\\d{4}){3}|(?:\\.\\d{4}){3}|(?:-\\d{4}){3}|(?:,\\d{4}){3})\\b","tags":["sensitive_data:master_card_credit_card","sensitive_data_category:credit_card"],"name":"MasterCard
+        Scanner (4x4 digits)","description":"\"Scan for MasterCard numbers formatted
+        as 4 groups of 4 contiguous digits. Matches are validated via the Luhn algorithm.  \n\nExamples
+        of matching formats:\n* 5105 1051 0510 5100\n* 5105-1051-0510-5100\n* 5105.1051.0510.5100\n*
+        5105,1051,0510,5100\""},"type":"sensitive_data_scanner_standard_pattern","id":"axxJkyjhRTOuhjwlsA35Vw"},{"attributes":{"pattern":"\\b(?:(?:5[1-5]\\d{2})|(?:222[1-9])|(?:22[3-9]\\d)|(?:2[3-6]\\d{2})|(?:27[0-1]\\d)|(?:2720))(?:(?:\\d{4}(?:(?:,\\d{8})|(?:-\\d{8})|(?:\\s\\d{8})|(?:\\.\\d{8}))))\\b","tags":["sensitive_data:master_card_credit_card","sensitive_data_category:credit_card"],"name":"MasterCard
+        Scanner (2x8 digits)","description":"\"Scan for MasterCard numbers formatted
+        as 2 groups of 8 contiguous digits. Matches are validated via the Luhn algorithm.\n\nExamples
+        of matching formats:\n* 51051051 05105100\n* 51051051-05105100\n* 51051051.05105100\n*
+        51051051,05105100\""},"type":"sensitive_data_scanner_standard_pattern","id":"NwhIYNS4STqZys37WlaIKA"},{"attributes":{"pattern":"\\b(?:(?:5[1-5]\\d{2})|(?:222[1-9])|(?:22[3-9]\\d)|(?:2[3-6]\\d{2})|(?:27[0-1]\\d)|(?:2720))(?:\\d{12})\\b","tags":["sensitive_data:master_card_credit_card","sensitive_data_category:credit_card"],"name":"MasterCard
+        Scanner (1x16 digits)","description":"\"Scan for MasterCard numbers formatted
+        as 16 contiguous digits. Matches are validated via the Luhn algorithm.\n\nExamples
+        of matching formats:\n* 5105105105105100\""},"type":"sensitive_data_scanner_standard_pattern","id":"76EhmoK3TPqJcpM-fK0pLw"},{"attributes":{"pattern":"\\b(?:(?:(?:6221(?:2[6-9]|[3-9][0-9])\\d{2}(?:,\\d{4}){2})|(?:6221\\s(?:2[6-9]|[3-9][0-9])\\d{2}(?:\\s\\d{4}){2})|(?:6221\\.(?:2[6-9]|[3-9][0-9])\\d{2}(?:\\.\\d{4}){2})|(?:6221-(?:2[6-9]|[3-9][0-9])\\d{2}(?:-\\d{4}){2}))|(?:(?:6229(?:[01][0-9]|2[0-5])\\d{2}(?:,\\d{4}){2})|(?:6229\\s(?:[01][0-9]|2[0-5])\\d{2}(?:\\s\\d{4}){2})|(?:6229\\.(?:[01][0-9]|2[0-5])\\d{2}(?:\\.\\d{4}){2})|(?:6229-(?:[01][0-9]|2[0-5])\\d{2}(?:-\\d{4}){2}))|(?:(?:6011|65\\d{2}|64[4-9]\\d|622[2-8])(?:(?:\\s\\d{4}){3}|(?:\\.\\d{4}){3}|(?:-\\d{4}){3}|(?:,\\d{4}){3})))\\b","tags":["sensitive_data:discover_credit_card","sensitive_data_category:credit_card"],"name":"Discover
+        Card Scanner (4x4 digits)","description":"\"Scan for Discover Card numbers
+        formatted as 4 groups of 4 contiguous digits. Matches are validated via the
+        Luhn algorithm.  \n\nExamples of matching formats:\n* 6011 0009 9013 9424\n*
+        6011-0009-9013-9424\n* 6011.0009.9013.9424\n* 6011,0009,9013,9424\""},"type":"sensitive_data_scanner_standard_pattern","id":"YBIDWJIvQWW_TFOyU0CGJg"},{"attributes":{"pattern":"\\b(?:6221(?:2[6-9]|[3-9][0-9])\\d{2}(?:,\\d{8}|\\s\\d{8}|-\\d{8}|\\.\\d{8})|6229(?:[01][0-9]|2[0-5])\\d{2}(?:,\\d{8}|\\s\\d{8}|-\\d{8}|\\.\\d{8})|(?:6011|65\\d{2}|64[4-9]\\d|622[2-8])\\d{4}(?:,\\d{8}|\\s\\d{8}|-\\d{8}|\\.\\d{8}))\\b","tags":["sensitive_data:discover_credit_card","sensitive_data_category:credit_card"],"name":"Discover
+        Card Scanner (2x8 digits)","description":"\"Scan for Discover Card numbers
+        formatted as 2 groups of 8 contiguous digits. Matches are validated via the
+        Luhn algorithm.\n\nExamples of matching formats:\n* 60110009 90139424\n* 60110009-90139424\n*
+        60110009.90139424\n* 60110009,90139424\""},"type":"sensitive_data_scanner_standard_pattern","id":"9cs4qCfEQBeX17U7AepOvQ"},{"attributes":{"pattern":"\\b(?:6221(?:2[6-9]|[3-9][0-9])\\d{10}|6229(?:[01][0-9]|2[0-5])\\d{10}|(?:6011|65\\d{2}|64[4-9]\\d|622[2-8])\\d{12})\\b","tags":["sensitive_data:discover_credit_card","sensitive_data_category:credit_card"],"name":"Discover
+        Card Scanner (1x16 digits)","description":"\"Scan for Discover Card numbers
+        formatted as 16 contiguous digits. Matches are validated via the Luhn algorithm.\n\nExamples
+        of matching formats:\n* 6011000990139424\""},"type":"sensitive_data_scanner_standard_pattern","id":"12cpbjtVTMaMutFhh9sojQ"},{"attributes":{"pattern":"\\b3[47]\\d{2}(?:(?:\\s\\d{6}\\s\\d{5})|(?:\\.\\d{6}\\.\\d{5})|(?:-\\d{6}-\\d{5})|(?:,\\d{6},\\d{5}))\\b","tags":["sensitive_data:american_express_credit_card","sensitive_data_category:credit_card"],"name":"American
+        Express Card Scanner (4+6+5 digits)","description":"\"Scan for American Express
+        Card numbers formatted as 3 groups of 4, 6, and 5 contiguous digits. Matches
+        are validated via the Luhn algorithm.\n\nExamples of matching formats:\n*
+        3782 822463 10005\n* 3782-822463-10005\n* 3782.822463.10005\n* 3782,822463,10005\""},"type":"sensitive_data_scanner_standard_pattern","id":"edmH513UTQWcRiQ9UnzHlw"},{"attributes":{"pattern":"\\b3[47]\\d{2}(?:(?:\\s\\d{4}\\s\\d{4}\\s\\d{3})|(?:\\,\\d{4}\\,\\d{4}\\,\\d{3})|(?:-\\d{4}-\\d{4}-\\d{3})|(?:\\.\\d{4}\\.\\d{4}\\.\\d{3}))\\b","tags":["sensitive_data:american_express_credit_card","sensitive_data_category:credit_card"],"name":"American
+        Express Card Scanner (4+4+4+3 digits)","description":"\"Scan for American
+        Express Card numbers formatted as 3 groups of 4 contiguous digits followed
+        by 3 contiguous digits. Matches are validated via the Luhn algorithm.\n\nExamples
+        of matching formats:\n* 3782 8224 6310 005\n* 3782-8224-6310-005\n* 3782.8224.6310.005\n*
+        3782,8224.6310,005\""},"type":"sensitive_data_scanner_standard_pattern","id":"JU1sRk3mSzqSUJn6GrVn7g"},{"attributes":{"pattern":"\\b3[47]\\d{6}(?:(?:\\s\\d{7})|(?:\\,\\d{7})|(?:-\\d{7})|(?:\\.\\d{7}))\\b","tags":["sensitive_data:american_express_credit_card","sensitive_data_category:credit_card"],"name":"American
+        Express Card Scanner (8+7 digits)","description":"\"Scan for American Express
+        Card numbers formatted as 2 groups of 8 and 7 contiguous digits. Matches are
+        validated via the Luhn algorithm.\n\nExamples of matching formats:\n* 37828224
+        6310005\n* 37828224-6310005\n* 37828224.6310005\n* 37828224.6310005\""},"type":"sensitive_data_scanner_standard_pattern","id":"e6K4h_7qTLaMiAbaNXoSZA"},{"attributes":{"pattern":"\\b3[47]\\d{13}\\b","tags":["sensitive_data:american_express_credit_card","sensitive_data_category:credit_card"],"name":"American
+        Express Card Scanner (1x15 digits)","description":"\"Scan for American Express
+        Card numbers formatted as 15 contiguous digits. Matches are validated via
+        the Luhn algorithm.\n\nExamples of matching formats:\n* 378282246310005\""},"type":"sensitive_data_scanner_standard_pattern","id":"K2rZflWzRhGM9HiTc6whyQ"},{"attributes":{"pattern":"\\b(?:30[0-59]\\d|3[689]\\d{2})(?:(?:\\s\\d{6}\\s\\d{4})|(?:\\.\\d{6}\\.\\d{4})|(?:-\\d{6}-\\d{4})|(?:,\\d{6},\\d{4}))\\b","tags":["sensitive_data:diners_credit_card","sensitive_data_category:credit_card"],"name":"Diners
+        Card Scanner (4+6+4 digits)","description":"\"Scan for Diners Card numbers
+        formatted as 3 groups of 4, 6, and 4 contiguous digits. Matches are validated
+        via the Luhn algorithm.\n\nExamples of matching formats:\n* 3056 930902 5904\n*
+        3056-930902-5904\n* 3056.930902.5904\n* 3056,930902,5904\""},"type":"sensitive_data_scanner_standard_pattern","id":"Xr5VdbQSTXitYGGiTfxBpw"},{"attributes":{"pattern":"\\b(?:30[0-59]\\d|3[689]\\d{2})(?:(?:\\s\\d{4}\\s\\d{4}\\s\\d{2})|(?:\\,\\d{4}\\,\\d{4}\\,\\d{2})|(?:-\\d{4}-\\d{4}-\\d{2})|(?:\\.\\d{4}\\.\\d{4}\\.\\d{2}))\\b","tags":["sensitive_data:diners_credit_card","sensitive_data_category:credit_card"],"name":"Diners
+        Card Scanner (4+4+4+2 digits)","description":"\"Scan for Diners Card numbers
+        formatted as 3 groups of 4 contiguous digits followed by 2 contiguous digits.
+        Matches are validated via the Luhn algorithm.\n\nExamples of matching formats:\n*
+        3056 9309 0259 04\n* 3056-9309-0259-04\n* 3056.9309.0259.04\n* 3056,9309,0259,04\""},"type":"sensitive_data_scanner_standard_pattern","id":"NlTWWM5LS6W0GSqBLuvtRw"},{"attributes":{"pattern":"\\b(?:30[0-59]\\d{5}|3[689]\\d{6})(?:(?:\\s\\d{6})|(?:\\,\\d{6})|(?:-\\d{6})|(?:\\.\\d{6}))\\b","tags":["sensitive_data:diners_credit_card","sensitive_data_category:credit_card"],"name":"Diners
+        Card Scanner (8+6 digits)","description":"\"Scan for Diners Card numbers formatted
+        as 2 groups of 8 and 6 contiguous digits. Matches are validated via the Luhn
+        algorithm.\n\nExamples of matching formats:\n* 30569309 025904\n* 30569309-025904\n*
+        30569309.025904\n* 30569309,025904\""},"type":"sensitive_data_scanner_standard_pattern","id":"gAbunN_WQNytxu54DjcbAA"},{"attributes":{"pattern":"(?:30[0-59]\\d|3[689]\\d{2})(?:\\d{10})","tags":["sensitive_data:diners_credit_card","sensitive_data_category:credit_card"],"name":"Diners
+        Card Scanner (1x14 digits)","description":"\"Scan for Diners Card numbers
+        formatted as 14 contiguous digits. Matches are validated via the Luhn algorithm.\n\nExamples
+        of matching formats:\n* 30569309025904\""},"type":"sensitive_data_scanner_standard_pattern","id":"qWumeP1GQUa_E4ffAnT-Yg"},{"attributes":{"pattern":"\\b35(?:2[89]|[3-9][0-9])(?:(?:\\s\\d{4}){3}|(?:\\.\\d{4}){3}|(?:-\\d{4}){3}|(?:,\\d{4}){3})\\b","tags":["sensitive_data:jcb_credit_card","sensitive_data_category:credit_card"],"name":"JCB
+        Card Scanner (4x4 digits)","description":"\"Scan for JCB Card numbers formatted
+        as 4 groups of 4 contiguous digits. Matches are validated via the Luhn algorithm.  \n\nExamples
+        of matching formats:\n* 3530 1113 3330 0000\n* 3530-1113-3330-0000\n* 3530.1113.3330.0000\n*
+        3530,1113,3330,0000\""},"type":"sensitive_data_scanner_standard_pattern","id":"imTliuhXT5GAeRNhqChXQQ"},{"attributes":{"pattern":"\\b35(?:2[89]|[3-9][0-9])\\d{4}(?:(?:,\\d{8})|(?:-\\d{8})|(?:\\s\\d{8})|(?:\\.\\d{8}))\\b","tags":["sensitive_data:jcb_credit_card","sensitive_data_category:credit_card"],"name":"JCB
+        Card Scanner (2x8 digits)","description":"\"Scan for JCB Card numbers formatted
+        as 2 groups of 8 contiguous digits. Matches are validated via the Luhn algorithm.\n\nExamples
+        of matching formats:\n* 35301113 33300000\n* 35301113-33300000\n* 35301113.33300000\n*
+        35301113,33300000\""},"type":"sensitive_data_scanner_standard_pattern","id":"gcEaMu_VSJ2-bGCEkgyC0w"},{"attributes":{"pattern":"\\b35(?:2[89]|[3-9][0-9])(?:\\d{12})\\b","tags":["sensitive_data:jcb_credit_card","sensitive_data_category:credit_card"],"name":"JCB
+        Card Scanner (1x16 digits)","description":"\"Scan for JCB Card numbers formatted
+        as 16 contiguous digits. Matches are validated via the Luhn algorithm.\n\nExamples
+        of matching formats:\n* 3530111333300000\n\""},"type":"sensitive_data_scanner_standard_pattern","id":"h6WJcecQTwqvN9KeEtwDvg"},{"attributes":{"pattern":"\\b(?:5[06-9]\\d{2}|6\\d{3})(?:(?:\\s\\d{4}){3}|(?:\\.\\d{4}){3}|(?:-\\d{4}){3}|(?:,\\d{4}){3})\\b","tags":["sensitive_data:maestro_card","sensitive_data_category:credit_card"],"name":"Maestro
+        Card Scanner (4x4 digits)","description":"\"Scan for Maestro Card numbers
+        formatted as 4 groups of 4 contiguous digits. Matches are validated via the
+        Luhn algorithm.  \n\nExamples of matching formats:\n* 6759 6498 2643 8453\n*
+        6759-6498-2643-8453\n* 6759.6498.2643.8453\n* 6759,6498,2643,8453\""},"type":"sensitive_data_scanner_standard_pattern","id":"hRxiQBlSSVKcjh5U7LZYLA"},{"attributes":{"pattern":"\\b(?:5[06-9]\\d{6}|6\\d{7})(?:\\s\\d{8}|\\.\\d{8}|-\\d{8}|,\\d{8})\\b","tags":["sensitive_data:maestro_card","sensitive_data_category:credit_card"],"name":"Maestro
+        Card Scanner (2x8 digits)","description":"\"Scan for Maestro Card numbers
+        formatted as 2 groups of 8 contiguous digits. Matches are validated via the
+        Luhn algorithm.\n\nExamples of matching formats:\n* 67596498 26438453\n* 67596498-26438453\n*
+        67596498.26438453\n* 67596498,26438453\""},"type":"sensitive_data_scanner_standard_pattern","id":"M3YIQKKjRVmoeQuM3pjzrw"},{"attributes":{"pattern":"\\b(?:5[06-9]\\d{2}|6\\d{3})(?:\\d{12})\\b","tags":["sensitive_data:maestro_card","sensitive_data_category:credit_card"],"name":"Maestro
+        Card Scanner (1x16 digits)","description":"\"Scan for Maestro Card numbers
+        formatted as 16 contiguous digits. Matches are validated via the Luhn algorithm.\n\nExamples
+        of matching formats:\n* 6759649826438453\n\""},"type":"sensitive_data_scanner_standard_pattern","id":"d1Q9D3YMRxuVKf6CZInJPw"},{"attributes":{"pattern":"\\b[\\w!#$%&''*+\\/=?`{|}~^-]+(?:\\.[\\w!#$%&''*+\\/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}\\b","name":"Standard
+        Email Address Scanner","tags":["sensitive_data:email_address","sensitive_data_category:email_address"]},"type":"sensitive_data_scanner_standard_pattern","id":"PuXiVTCkTHOtj0Yad1ppsw"},{"attributes":{"pattern":"\\b(?:NO\\d{2}(?:[
+        \\-]?\\d{4}){2}[ \\-]?\\d{3}|BE\\d{2}(?:[ \\-]?\\d{4}){3}|(?:DK|FO|FI|GL|SD)\\d{2}(?:[
+        \\-]?\\d{4}){3}[ \\-]?\\d{2}|NL\\d{2}[ \\-]?[A-Z]{4}(?:[ \\-]?\\d{4}){2}[
+        \\-]?\\d{2}|MK\\d{2}[ \\-]?\\d{3}[A-Z0-9](?:[ \\-]?[A-Z0-9]{4}){2}[ \\-]?[A-Z0-9]\\d{2}|SI\\d{17}|(?:AT|BA|EE|LT|XK)\\d{18}|(?:LU|KZ|EE|LT)\\d{5}[A-Z0-9]{13}|LV\\d{2}[A-Z]{4}[A-Z0-9]{13}|(?:LI|CH)\\d{2}[
+        \\-]?\\d{4}[ \\-]?\\d[A-Z0-9]{3}(?:[ \\-]?[A-Z0-9]{4}){2}[ \\-]?[A-Z0-9]|HR\\d{2}(?:[
+        \\-]?\\d{4}){4}[ \\-]?\\d|GE\\d{2}[ \\-]?[A-Z0-9]{2}\\d{2}\\d{14}|VA\\d{20}|BG\\d{2}[A-Z]{4}\\d{6}[A-Z0-9]{8}|BH\\d{2}[A-Z]{4}[A-Z0-9]{14}|GB\\d{2}[A-Z]{4}(?:[
+        \\-]?\\d{4}){3}[ \\-]?\\d{2}|IE\\d{2}[ \\-]?[A-Z0-9]{4}(?:[ \\-]?\\d{4}){3}[
+        \\-]?\\d{2}|(?:CR|DE|ME|RS)\\d{2}(?:[ \\-]?\\d{4}){4}[ \\-]?\\d{2}|(?:AE|TL|IL)\\d{2}(?:[
+        \\-]?\\d{4}){4}[ \\-]?\\d{3}|GI\\d{2}[ \\-]?[A-Z]{4}(?:[ \\-]?[A-Z0-9]{4}){3}[
+        \\-]?[A-Z0-9]{3}|IQ\\d{2}[ \\-]?[A-Z]{4}(?:[ \\-]?\\d{4}){3}[ \\-]?\\d{3}|MD\\d{2}(?:[
+        \\-]?[A-Z0-9]{4}){5}|SA\\d{2}[ \\-]?\\d{2}[A-Z0-9]{2}(?:[ \\-]?[A-Z0-9]{4}){4}|RO\\d{2}[
+        \\-]?[A-Z]{4}(?:[ \\-]?[A-Z0-9]{4}){4}|(?:PK|VG)\\d{2}[ \\-]?[A-Z0-9]{4}(?:[
+        \\-]?\\d{4}){4}|AD\\d{2}(?:[ \\-]?\\d{4}){2}(?:[ \\-]?[A-Z0-9]{4}){3}|(?:CZ|SK|ES|SE|TN)\\d{2}(?:[
+        \\-]?\\d{4}){5}|(?:LY|PT|ST)\\d{2}(?:[ \\-]?\\d{4}){5}[ \\-]?\\d|TR\\d{2}[
+        \\-]?\\d{4}[ \\-]?\\d[A-Z0-9]{3}(?:[ \\-]?[A-Z0-9]{4}){3}[ \\-]?[A-Z0-9]{2}|IS\\d{2}(?:[
+        \\-]?\\d{4}){5}[ \\-]?\\d{2}|(?:IT|SM)\\d{2}[ \\-]?[A-Z]\\d{3}[ \\-]?\\d{4}[
+        \\-]?\\d{3}[A-Z0-9](?:[ \\-]?[A-Z0-9]{4}){2}[ \\-]?[A-Z0-9]{3}|GR\\d{2}[ \\-]?\\d{4}[
+        \\-]?\\d{3}[A-Z0-9](?:[ \\-]?[A-Z0-9]{4}){3}[A-Z0-9]{3}|(?:FR|MC)\\d{2}(?:[
+        \\-]?\\d{4}){2}[ \\-]?\\d{2}[A-Z0-9]{2}(?:[ \\-]?[A-Z0-9]{4}){2}[ \\-]?[A-Z0-9]\\d{2}|MR\\d{2}(?:[
+        \\-]?\\d{4}){5}[ \\-]?\\d{3}|(?:SV|DO)\\d{2}[ \\-]?[A-Z]{4}(?:[ \\-]?\\d{4}){5}|BY\\d{2}[
+        \\-]?[A-Z]{4}[ \\-]?\\d{4}(?:[ \\-]?[A-Z0-9]{4}){4}|GT\\d{2}(?:[ \\-]?[A-Z0-9]{4}){6}|AZ\\d{2}[
+        \\-]?[A-Z0-9]{4}(?:[ \\-]?\\d{5}){4}|LB\\d{2}[ \\-]?\\d{4}(?:[ \\-]?[A-Z0-9]{5}){4}|(?:AL|CY)\\d{2}(?:[
+        \\-]?\\d{4}){2}(?:[ \\-]?[A-Z0-9]{4}){4}|(?:HU|PL)\\d{2}(?:[ \\-]?\\d{4}){6}|QA\\d{2}[
+        \\-]?[A-Z]{4}(?:[ \\-]?[A-Z0-9]{4}){5}[ \\-]?[A-Z0-9]|PS\\d{2}[ \\-]?[A-Z0-9]{4}(?:[
+        \\-]?\\d{4}){5}[ \\-]?\\d|UA\\d{2}[ \\-]?\\d{4}[ \\-]?\\d{2}[A-Z0-9]{2}(?:[
+        \\-]?[A-Z0-9]{4}){4}[ \\-]?[A-Z0-9]|BR\\d{2}(?:[ \\-]?\\d{4}){5}[ \\-]?\\d{3}[A-Z0-9][
+        \\-]?[A-Z0-9]|EG\\d{2}(?:[ \\-]?\\d{4}){6}\\d|MU\\d{2}[ \\-]?[A-Z]{4}(?:[
+        \\-]?\\d{4}){4}\\d{3}[A-Z][ \\-]?[A-Z]{2}|(?:KW|JO)\\d{2}[ \\-]?[A-Z]{4}(?:[
+        \\-]?[A-Z0-9]{4}){5}[ \\-]?[A-Z0-9]{2}|MT\\d{2}[ \\-]?[A-Z]{4}[ \\-]?\\d{4}[
+        \\-]?\\d[A-Z0-9]{3}(?:[ \\-]?[A-Z0-9]{3}){4}[ \\-]?[A-Z0-9]{3}|SC\\d{2}[ \\-]?[A-Z]{4}(?:[
+        \\-]?\\d{4}){5}[ \\-]?[A-Z]{3}|LC\\d{2}[ \\-]?[A-Z]{4}(?:[ \\-]?[A-Z0-9]{4}){6})\\b","name":"Standard
+        Iban Code Scanner","tags":["sensitive_data:iban_code","sensitive_data_category:iban_code"]},"type":"sensitive_data_scanner_standard_pattern","id":"8VS2RKxzR8a_95L5fuwaXQ"},{"attributes":{"pattern":"\\b((25[0-5]|(2[0-4]|1?[0-9])?[0-9])\\.){3}(25[0-5]|(2[0-4]|1?[0-9])?[0-9])\\b","name":"IPv4
+        Address Scanner","tags":["sensitive_data_category:ip_address","sensitive_data:ipv4_address"]},"type":"sensitive_data_scanner_standard_pattern","id":"aDA3jUjSSLOezHV2y-Rn_w"},{"attributes":{"pattern":"(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))","name":"IPv6
+        Address Scanner","tags":["sensitive_data_category:ip_address","sensitive_data:ipv6_address"]},"type":"sensitive_data_scanner_standard_pattern","id":"s3sEZP5fSTGSPLPS853VeQ"},{"attributes":{"pattern":"\\b(?:[0-9A-Fa-f]{2}[:-]){5}(?:[0-9A-Fa-f]{2})\\b","name":"Standard
+        Mac Address Scanner","tags":["sensitive_data:mac_address","sensitive_data_category:mac_address"]},"type":"sensitive_data_scanner_standard_pattern","id":"uRLVpXXTRxmCg4M93hfLiA"},{"attributes":{"pattern":"https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)","name":"HTTP(S)
+        URL Scanner","tags":["sensitive_data_category:url","sensitive_data:http_url"]},"type":"sensitive_data_scanner_standard_pattern","id":"aLQt_DX_T8S1MaWS82eoNQ"}]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1
