@@ -1,0 +1,81 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/sensitive-data-scanner/config
+  response:
+    body:
+      string: '{"meta":{"count_limit":100,"version":1211,"group_count_limit":20,"is_pci_compliant":false,"has_highlight_enabled":true},"data":{"relationships":{"groups":{"data":[]}},"attributes":{},"type":"sensitive_data_scanner_configuration","id":"7957915c634d4dcb581fa154157f5ad9c2947f50be632fb5599862069f4d2d87"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data":{"attributes":{"filter":{"query":"*"},"is_enabled":false,"name":"my-test-group","product_list":["logs"]},"relationships":{"configuration":{"data":{"id":"7957915c634d4dcb581fa154157f5ad9c2947f50be632fb5599862069f4d2d87","type":"sensitive_data_scanner_configuration"}},"rules":{"data":[]}},"type":"sensitive_data_scanner_group"},"meta":{}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/sensitive-data-scanner/config/groups
+  response:
+    body:
+      string: '{"meta":{"version":1212},"data":{"relationships":{"rules":{"data":[]},"configuration":{"data":{"type":"sensitive_data_scanner_configuration","id":"7957915c634d4dcb581fa154157f5ad9c2947f50be632fb5599862069f4d2d87"}}},"attributes":{"is_enabled":false,"filter":{"query":"*"},"product_list":["logs"],"name":"my-test-group"},"type":"sensitive_data_scanner_group","id":"CiAQStkNTd2K_irKY_-2Tg"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data":{"id":"7957915c634d4dcb581fa154157f5ad9c2947f50be632fb5599862069f4d2d87","relationships":{"groups":{"data":[{"id":"Test-Reorder_Groups_returns_Bad_Request_response-1670579580","type":"sensitive_data_scanner_group"}]}},"type":"sensitive_data_scanner_configuration"},"meta":{}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/sensitive-data-scanner/config
+  response:
+    body:
+      string: '{"errors":["invalid_argument(Pipelines to reorder do not match current
+        pipelines)"]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 400
+      message: Bad Request
+- request:
+    body: '{"meta":{}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/sensitive-data-scanner/config/groups/CiAQStkNTd2K_irKY_-2Tg
+  response:
+    body:
+      string: '{"meta":{"version":1213}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1
