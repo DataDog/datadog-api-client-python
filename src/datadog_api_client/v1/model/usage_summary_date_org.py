@@ -88,6 +88,7 @@ class UsageSummaryDateOrg(ModelNormal):
             "sds_total_scanned_bytes_sum": (int,),
             "synthetics_browser_check_calls_count_sum": (int,),
             "synthetics_check_calls_count_sum": (int,),
+            "synthetics_parallel_testing_max_slots_hwm": (int,),
             "trace_search_indexed_events_count_sum": (int,),
             "twol_ingested_events_bytes_sum": (int,),
             "vsphere_host_top99p": (int,),
@@ -165,6 +166,7 @@ class UsageSummaryDateOrg(ModelNormal):
         "sds_total_scanned_bytes_sum": "sds_total_scanned_bytes_sum",
         "synthetics_browser_check_calls_count_sum": "synthetics_browser_check_calls_count_sum",
         "synthetics_check_calls_count_sum": "synthetics_check_calls_count_sum",
+        "synthetics_parallel_testing_max_slots_hwm": "synthetics_parallel_testing_max_slots_hwm",
         "trace_search_indexed_events_count_sum": "trace_search_indexed_events_count_sum",
         "twol_ingested_events_bytes_sum": "twol_ingested_events_bytes_sum",
         "vsphere_host_top99p": "vsphere_host_top99p",
@@ -243,6 +245,7 @@ class UsageSummaryDateOrg(ModelNormal):
         sds_total_scanned_bytes_sum: Union[int, UnsetType] = unset,
         synthetics_browser_check_calls_count_sum: Union[int, UnsetType] = unset,
         synthetics_check_calls_count_sum: Union[int, UnsetType] = unset,
+        synthetics_parallel_testing_max_slots_hwm: Union[int, UnsetType] = unset,
         trace_search_indexed_events_count_sum: Union[int, UnsetType] = unset,
         twol_ingested_events_bytes_sum: Union[int, UnsetType] = unset,
         vsphere_host_top99p: Union[int, UnsetType] = unset,
@@ -464,6 +467,9 @@ class UsageSummaryDateOrg(ModelNormal):
         :param synthetics_check_calls_count_sum: Shows the sum of all Synthetic API tests over all hours in the current date for the given org.
         :type synthetics_check_calls_count_sum: int, optional
 
+        :param synthetics_parallel_testing_max_slots_hwm: Shows the high-water mark of used synthetics parallel testing slots over all hours in the current date for the given org.
+        :type synthetics_parallel_testing_max_slots_hwm: int, optional
+
         :param trace_search_indexed_events_count_sum: Shows the sum of all Indexed Spans indexed over all hours in the current date for the given org.
         :type trace_search_indexed_events_count_sum: int, optional
 
@@ -615,6 +621,8 @@ class UsageSummaryDateOrg(ModelNormal):
             kwargs["synthetics_browser_check_calls_count_sum"] = synthetics_browser_check_calls_count_sum
         if synthetics_check_calls_count_sum is not unset:
             kwargs["synthetics_check_calls_count_sum"] = synthetics_check_calls_count_sum
+        if synthetics_parallel_testing_max_slots_hwm is not unset:
+            kwargs["synthetics_parallel_testing_max_slots_hwm"] = synthetics_parallel_testing_max_slots_hwm
         if trace_search_indexed_events_count_sum is not unset:
             kwargs["trace_search_indexed_events_count_sum"] = trace_search_indexed_events_count_sum
         if twol_ingested_events_bytes_sum is not unset:
