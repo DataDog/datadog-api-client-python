@@ -250,7 +250,7 @@
     "parameters": [
       {
         "name": "body",
-        "value": "{\n  \"name\": \"{{ unique }}_cloud\",\n  \"tags\": [\"a:tag\"],\n  \"type\": \"cloud_configuration\",\n  \"isEnabled\": false,\n  \"message\": \"Cloud configuration rule\",\n  \"options\": {\n    \"complianceRuleOptions\": {\n      \"resourceType\": \"gcp_compute_disk\",\n      \"regoRule\": {\n        \"policy\": \"package datadog\\n\",\n        \"resourceTypes\": [\n          \"gcp_compute_disk\"\n        ]\n      },\n      \"complexRule\": false\n    }\n  },\n  \"complianceSignalOptions\": {\n    \"userActivationStatus\": true,\n    \"userGroupByFields\": [\"@account_id\"]\n  },\n  \"cases\": [\n    {\n      \"status\": \"info\",\n      \"notifications\": [\"channel\"]\n    }\n  ]\n}"
+        "value": "{\n  \"name\": \"{{ unique }}_cloud\",\n  \"tags\": [\"a:tag\"],\n  \"type\": \"cloud_configuration\",\n  \"isEnabled\": false,\n  \"message\": \"Cloud configuration rule\",\n  \"options\": {\n    \"complianceRuleOptions\": {\n      \"regoRule\": {\n        \"policy\": \"package datadog\\n\",\n        \"resourceTypes\": [\n          \"gcp_compute_disk\"\n        ]\n      },\n      \"complexRule\": false\n    }\n  },\n  \"complianceSignalOptions\": {\n    \"userActivationStatus\": true,\n    \"userGroupByFields\": [\"@account_id\"]\n  },\n  \"cases\": [\n    {\n      \"status\": \"info\",\n      \"notifications\": [\"channel\"]\n    }\n  ]\n}"
       }
     ],
     "step": "there is a valid \"cloud_configuration_rule\" in the system",

@@ -578,18 +578,7 @@ class SyntheticsApi:
                 "version": "v1",
                 "servers": None,
             },
-            params_map={
-                "page_size": {
-                    "openapi_types": (str,),
-                    "attribute": "page_size",
-                    "location": "query",
-                },
-                "page_number": {
-                    "openapi_types": (str,),
-                    "attribute": "page_number",
-                    "location": "query",
-                },
-            },
+            params_map={},
             headers_map={
                 "accept": ["application/json"],
                 "content_type": [],
@@ -1137,27 +1126,14 @@ class SyntheticsApi:
 
     def list_tests(
         self,
-        *,
-        page_size: Union[str, UnsetType] = unset,
-        page_number: Union[str, UnsetType] = unset,
     ) -> SyntheticsListTestsResponse:
-        """Get the list of all Synthetic tests.
+        """Get the list of all tests.
 
         Get the list of all Synthetic tests.
 
-        :param page_size: Used for pagination. The number of tests returned in the page.
-        :type page_size: str, optional
-        :param page_number: Used for pagination. Which page you want to retrieve. Starts at zero.
-        :type page_number: str, optional
         :rtype: SyntheticsListTestsResponse
         """
         kwargs: Dict[str, Any] = {}
-        if page_size is not unset:
-            kwargs["page_size"] = page_size
-
-        if page_number is not unset:
-            kwargs["page_number"] = page_number
-
         return self._list_tests_endpoint.call_with_http_info(**kwargs)
 
     def trigger_ci_tests(

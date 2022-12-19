@@ -31,7 +31,6 @@ body = SecurityMonitoringRuleUpdatePayload(
     ],
     options=SecurityMonitoringRuleOptions(
         compliance_rule_options=CloudConfigurationComplianceRuleOptions(
-            resource_type="gcp_compute_disk",
             rego_rule=CloudConfigurationRegoRule(
                 policy="package datadog\n",
                 resource_types=[

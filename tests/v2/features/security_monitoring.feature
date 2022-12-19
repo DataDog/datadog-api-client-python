@@ -58,7 +58,7 @@ Feature: Security Monitoring
   @team:DataDog/k9-cloud-security-platform
   Scenario: Create a cloud_configuration rule returns "OK" response
     Given new "CreateSecurityMonitoringRule" request
-    And body with value {"type":"cloud_configuration","name":"{{ unique }}_cloud","isEnabled":false,"cases":[{"status":"info","notifications":["channel"]}],"options":{"complianceRuleOptions":{"resourceType":"gcp_compute_disk","complexRule": false,"regoRule":{"policy":"package datadog\n","resourceTypes":["gcp_compute_disk"]}}},"message":"ddd","tags":["my:tag"],"complianceSignalOptions":{"userActivationStatus":true,"userGroupByFields":["@account_id"]}}
+    And body with value {"type":"cloud_configuration","name":"{{ unique }}_cloud","isEnabled":false,"cases":[{"status":"info","notifications":["channel"]}],"options":{"complianceRuleOptions":{"complexRule": false,"regoRule":{"policy":"package datadog\n","resourceTypes":["gcp_compute_disk"]}}},"message":"ddd","tags":["my:tag"],"complianceSignalOptions":{"userActivationStatus":true,"userGroupByFields":["@account_id"]}}
     When the request is sent
     Then the response status is 200 OK
 
@@ -309,7 +309,7 @@ Feature: Security Monitoring
     Given new "UpdateSecurityMonitoringRule" request
     And there is a valid "cloud_configuration_rule" in the system
     And request contains "rule_id" parameter from "cloud_configuration_rule.id"
-    And body with value {"name":"{{ unique }}_cloud_updated","isEnabled":false,"cases":[{"status":"info","notifications":[]}],"options":{"complianceRuleOptions":{"resourceType":"gcp_compute_disk", "regoRule":{"policy":"package datadog\n","resourceTypes":["gcp_compute_disk"]}}},"message":"ddd","tags":[],"complianceSignalOptions":{"userActivationStatus":false,"userGroupByFields":[]}}
+    And body with value {"name":"{{ unique }}_cloud_updated","isEnabled":false,"cases":[{"status":"info","notifications":[]}],"options":{"complianceRuleOptions":{"regoRule":{"policy":"package datadog\n","resourceTypes":["gcp_compute_disk"]}}},"message":"ddd","tags":[],"complianceSignalOptions":{"userActivationStatus":false,"userGroupByFields":[]}}
     When the request is sent
     Then the response status is 200 OK
     And the response "name" is equal to "{{ unique }}_cloud_updated"
