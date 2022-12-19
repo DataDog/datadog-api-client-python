@@ -506,13 +506,13 @@ Feature: Synthetics
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/synthetics-app
-  Scenario: Get the list of all tests returns "OK - Returns the list of all Synthetic tests." response
+  Scenario: Get the list of all Synthetic tests returns "OK - Returns the list of all Synthetic tests." response
     Given new "ListTests" request
     When the request is sent
     Then the response status is 200 OK - Returns the list of all Synthetic tests.
 
   @generated @skip @team:DataDog/synthetics-app
-  Scenario: Get the list of all tests returns "Synthetics is not activated for the user." response
+  Scenario: Get the list of all Synthetic tests returns "Synthetics is not activated for the user." response
     Given new "ListTests" request
     When the request is sent
     Then the response status is 404 Synthetics is not activated for the user.
