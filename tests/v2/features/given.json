@@ -250,6 +250,18 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"name\": \"{{ unique }}_cloud\",\n  \"tags\": [\"a:tag\"],\n  \"type\": \"cloud_configuration\",\n  \"isEnabled\": false,\n  \"message\": \"Cloud configuration rule\",\n  \"options\": {\n    \"complianceRuleOptions\": {\n      \"resourceType\": \"gcp_compute_disk\",\n      \"regoRule\": {\n        \"policy\": \"package datadog\\n\",\n        \"resourceTypes\": [\n          \"gcp_compute_disk\"\n        ]\n      },\n      \"complexRule\": false\n    }\n  },\n  \"complianceSignalOptions\": {\n    \"userActivationStatus\": true,\n    \"userGroupByFields\": [\"@account_id\"]\n  },\n  \"cases\": [\n    {\n      \"status\": \"info\",\n      \"notifications\": [\"channel\"]\n    }\n  ]\n}"
+      }
+    ],
+    "step": "there is a valid \"cloud_configuration_rule\" in the system",
+    "key": "cloud_configuration_rule",
+    "tag": "Security Monitoring",
+    "operationId": "CreateSecurityMonitoringRule"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"name\": \"{{ unique }}\",\n  \"queries\": [{\n    \"query\": \"@test:true\",\n    \"aggregation\": \"count\",\n    \"groupByFields\": [],\n    \"distinctFields\": [],\n    \"metrics\": []\n  }],\n  \"filters\": [],\n  \"cases\": [{\n    \"name\": \"\",\n    \"status\": \"info\",\n    \"condition\": \"a > 0\",\n    \"notifications\": []\n  }],\n  \"options\": {\n    \"evaluationWindow\": 900,\n    \"keepAlive\": 3600,\n    \"maxSignalDuration\": 86400\n  },\n  \"message\": \"Test rule\",\n  \"tags\": [],\n  \"isEnabled\": true,\n  \"type\": \"log_detection\"\n}"
       }
     ],
@@ -269,6 +281,36 @@
     "key": "security_rule_bis",
     "tag": "Security Monitoring",
     "operationId": "CreateSecurityMonitoringRule"
+  },
+  {
+    "step": "a valid \"configuration\" in the system",
+    "key": "configuration",
+    "tag": "Sensitive Data Scanner",
+    "operationId": "ListScanningGroups"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"sensitive_data_scanner_group\",\n    \"attributes\": {\n      \"name\": \"my-test-group\",\n      \"is_enabled\": false,\n      \"product_list\": [\n          \"logs\"\n      ],\n      \"filter\": {\n          \"query\": \"*\"\n      }\n    },\n    \"relationships\": {\n      \"configuration\": {\n        \"data\": {\n          \"id\": \"{{ configuration.data.id }}\",\n          \"type\": \"{{ configuration.data.type }}\"\n        }\n      },\n      \"rules\": {\n          \"data\": []\n      }\n    }\n  },\n  \"meta\": {}\n}"
+      }
+    ],
+    "step": "there is a valid \"scanning_group\" in the system",
+    "key": "group",
+    "tag": "Sensitive Data Scanner",
+    "operationId": "CreateScanningGroup"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"sensitive_data_scanner_rule\",\n    \"attributes\": {\n      \"name\": \"{{ unique }}\",\n      \"pattern\": \"pattern\",\n      \"text_replacement\": {\n        \"type\": \"none\"\n      },\n      \"tags\":[\n        \"sensitive_data:true\"\n      ],\n      \"is_enabled\":true\n    },\n    \"relationships\": {\n      \"group\": {\n        \"data\": {\n          \"id\": \"{{ group.data.id }}\",\n          \"type\": \"{{ group.data.type }}\"\n        }\n      }\n    }\n  },\n  \"meta\": {}\n}"
+      }
+    ],
+    "step": "the \"scanning_group\" has a \"scanning_rule\"",
+    "key": "rule",
+    "tag": "Sensitive Data Scanner",
+    "operationId": "CreateScanningRule"
   },
   {
     "parameters": [

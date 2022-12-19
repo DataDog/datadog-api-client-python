@@ -1107,13 +1107,6 @@ http\_log\_item
    :members:
    :show-inheritance:
 
-http\_method
-------------
-
-.. automodule:: datadog_api_client.v1.model.http_method
-   :members:
-   :show-inheritance:
-
 i\_frame\_widget\_definition
 ----------------------------
 
@@ -3942,6 +3935,13 @@ synthetics\_step\_type
    :members:
    :show-inheritance:
 
+synthetics\_test\_call\_type
+----------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_test_call_type
+   :members:
+   :show-inheritance:
+
 synthetics\_test\_ci\_options
 -----------------------------
 
@@ -5164,6 +5164,13 @@ widget\_formula\_limit
 ----------------------
 
 .. automodule:: datadog_api_client.v1.model.widget_formula_limit
+   :members:
+   :show-inheritance:
+
+widget\_formula\_style
+----------------------
+
+.. automodule:: datadog_api_client.v1.model.widget_formula_style
    :members:
    :show-inheritance:
 

@@ -155,6 +155,13 @@ security\_monitoring\_api
    :members:
    :show-inheritance:
 
+sensitive\_data\_scanner\_api
+-----------------------------
+
+.. automodule:: datadog_api_client.v2.api.sensitive_data_scanner_api
+   :members:
+   :show-inheritance:
+
 service\_accounts\_api
 ----------------------
 

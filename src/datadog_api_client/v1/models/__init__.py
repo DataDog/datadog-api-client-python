@@ -164,7 +164,6 @@ from datadog_api_client.v1.model.group_widget_definition_type import GroupWidget
 from datadog_api_client.v1.model.http_log import HTTPLog
 from datadog_api_client.v1.model.http_log_error import HTTPLogError
 from datadog_api_client.v1.model.http_log_item import HTTPLogItem
-from datadog_api_client.v1.model.http_method import HTTPMethod
 from datadog_api_client.v1.model.heat_map_widget_definition import HeatMapWidgetDefinition
 from datadog_api_client.v1.model.heat_map_widget_definition_type import HeatMapWidgetDefinitionType
 from datadog_api_client.v1.model.heat_map_widget_request import HeatMapWidgetRequest
@@ -645,6 +644,7 @@ from datadog_api_client.v1.model.synthetics_step import SyntheticsStep
 from datadog_api_client.v1.model.synthetics_step_detail import SyntheticsStepDetail
 from datadog_api_client.v1.model.synthetics_step_detail_warning import SyntheticsStepDetailWarning
 from datadog_api_client.v1.model.synthetics_step_type import SyntheticsStepType
+from datadog_api_client.v1.model.synthetics_test_call_type import SyntheticsTestCallType
 from datadog_api_client.v1.model.synthetics_test_ci_options import SyntheticsTestCiOptions
 from datadog_api_client.v1.model.synthetics_test_config import SyntheticsTestConfig
 from datadog_api_client.v1.model.synthetics_test_details import SyntheticsTestDetails
@@ -830,6 +830,7 @@ from datadog_api_client.v1.model.widget_event_size import WidgetEventSize
 from datadog_api_client.v1.model.widget_field_sort import WidgetFieldSort
 from datadog_api_client.v1.model.widget_formula import WidgetFormula
 from datadog_api_client.v1.model.widget_formula_limit import WidgetFormulaLimit
+from datadog_api_client.v1.model.widget_formula_style import WidgetFormulaStyle
 from datadog_api_client.v1.model.widget_grouping import WidgetGrouping
 from datadog_api_client.v1.model.widget_horizontal_align import WidgetHorizontalAlign
 from datadog_api_client.v1.model.widget_image_sizing import WidgetImageSizing

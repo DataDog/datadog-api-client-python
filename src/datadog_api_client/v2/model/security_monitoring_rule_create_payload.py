@@ -44,6 +44,9 @@ class SecurityMonitoringRuleCreatePayload(ModelComposed):
 
         :param type: The rule type.
         :type type: SecurityMonitoringRuleTypeCreate, optional
+
+        :param compliance_signal_options: How to generate compliance signals. Useful for cloud_configuration rules only.
+        :type compliance_signal_options: CloudConfigurationRuleComplianceSignalOptions
         """
         super().__init__(kwargs)
 
@@ -62,10 +65,14 @@ class SecurityMonitoringRuleCreatePayload(ModelComposed):
         from datadog_api_client.v2.model.security_monitoring_signal_rule_create_payload import (
             SecurityMonitoringSignalRuleCreatePayload,
         )
+        from datadog_api_client.v2.model.cloud_configuration_rule_create_payload import (
+            CloudConfigurationRuleCreatePayload,
+        )
 
         return {
             "oneOf": [
                 SecurityMonitoringStandardRuleCreatePayload,
                 SecurityMonitoringSignalRuleCreatePayload,
+                CloudConfigurationRuleCreatePayload,
             ],
         }
