@@ -25,14 +25,22 @@ class CloudConfigurationComplianceRuleOptions(ModelNormal):
         return {
             "complex_rule": (bool,),
             "rego_rule": (CloudConfigurationRegoRule,),
+            "resource_type": (str,),
         }
 
     attribute_map = {
         "complex_rule": "complexRule",
         "rego_rule": "regoRule",
+        "resource_type": "resourceType",
     }
 
-    def __init__(self_, rego_rule: CloudConfigurationRegoRule, complex_rule: Union[bool, UnsetType] = unset, **kwargs):
+    def __init__(
+        self_,
+        rego_rule: CloudConfigurationRegoRule,
+        resource_type: str,
+        complex_rule: Union[bool, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Options for cloud_configuration rules.
 
@@ -42,9 +50,13 @@ class CloudConfigurationComplianceRuleOptions(ModelNormal):
 
         :param rego_rule: Rule details.
         :type rego_rule: CloudConfigurationRegoRule
+
+        :param resource_type: Main resource type to be checked by the rule. It should be specified again in ``regoRule.resourceTypes``.
+        :type resource_type: str
         """
         if complex_rule is not unset:
             kwargs["complex_rule"] = complex_rule
         super().__init__(kwargs)
 
         self_.rego_rule = rego_rule
+        self_.resource_type = resource_type

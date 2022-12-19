@@ -31,6 +31,7 @@ body = CloudConfigurationRuleCreatePayload(
     ],
     options=CloudConfigurationRuleOptions(
         compliance_rule_options=CloudConfigurationComplianceRuleOptions(
+            resource_type="gcp_compute_disk",
             complex_rule=False,
             rego_rule=CloudConfigurationRegoRule(
                 policy="package datadog\n",

@@ -1788,7 +1788,15 @@ components:
           type: boolean
         regoRule:
           $ref: '#/components/schemas/CloudConfigurationRegoRule'
+        resourceType:
+          description: 'Main resource type to be checked by the rule. It should be
+            specified again in `regoRule.resourceTypes`.
+
+            '
+          example: aws_acm
+          type: string
       required:
+      - resourceType
       - regoRule
       type: object
     CloudConfigurationRegoRule:
