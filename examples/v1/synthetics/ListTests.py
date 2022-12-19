@@ -1,5 +1,5 @@
 """
-Get the list of all tests returns "OK - Returns the list of all Synthetic tests." response
+Get the list of all Synthetic tests returns "OK - Returns the list of all Synthetic tests." response
 """
 
 from datadog_api_client import ApiClient, Configuration
