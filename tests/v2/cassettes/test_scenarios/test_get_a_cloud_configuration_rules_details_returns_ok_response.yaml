@@ -1,8 +1,8 @@
 interactions:
 - request:
     body: '{"cases":[{"notifications":["channel"],"status":"info"}],"complianceSignalOptions":{"userActivationStatus":true,"userGroupByFields":["@account_id"]},"isEnabled":false,"message":"Cloud
-      configuration rule","name":"Test-Get_a_cloud_configuration_rule_s_details_returns_OK_response-1671007609_cloud","options":{"complianceRuleOptions":{"complexRule":false,"regoRule":{"policy":"package
-      datadog\n","resourceTypes":["gcp_compute_disk"]}}},"tags":["a:tag"],"type":"cloud_configuration"}'
+      configuration rule","name":"Test-Get_a_cloud_configuration_rule_s_details_returns_OK_response-1671216834_cloud","options":{"complianceRuleOptions":{"complexRule":false,"regoRule":{"policy":"package
+      datadog\n","resourceTypes":["gcp_compute_disk"]},"resourceType":"gcp_compute_disk"}},"tags":["a:tag"],"type":"cloud_configuration"}'
     headers:
       accept:
       - application/json
@@ -13,9 +13,9 @@ interactions:
   response:
     body:
       string: '{"creationAuthorId":1445416,"tags":["a:tag"],"type":"cloud_configuration","isEnabled":false,"hasExtendedTitle":true,"message":"Cloud
-        configuration rule","options":{"detectionMethod":"threshold","evaluationWindow":7200,"maxSignalDuration":86400,"complianceRuleOptions":{"regoRule":{"policy":"package
-        datadog\n","resourceTypes":["gcp_compute_disk"]},"complexRule":false},"keepAlive":21600},"version":1,"createdAt":1671007609108,"filters":[],"queries":[{"query":"resource_type:gcp_compute_disk","groupByFields":["resource_type","resource_id"],"aggregation":"count","name":"a","distinctFields":[]}],"isDeleted":false,"complianceSignalOptions":{"defaultActivationStatus":null,"userActivationStatus":true,"defaultGroupByFields":null,"userGroupByFields":["@account_id"]},"cases":[{"status":"info","notifications":["channel"],"name":"","condition":"a
-        > 0"}],"id":"jxe-vmy-pef","isDefault":false,"name":"Test-Get_a_cloud_configuration_rule_s_details_returns_OK_response-1671007609_cloud"}
+        configuration rule","options":{"detectionMethod":"threshold","evaluationWindow":7200,"maxSignalDuration":86400,"complianceRuleOptions":{"resourceType":"gcp_compute_disk","regoRule":{"policy":"package
+        datadog\n","resourceTypes":["gcp_compute_disk"]},"complexRule":false},"keepAlive":21600},"version":1,"createdAt":1671216834810,"filters":[],"queries":[{"query":"resource_type:gcp_compute_disk","groupByFields":["resource_type","resource_id"],"aggregation":"count","name":"a","distinctFields":[]}],"isDeleted":false,"complianceSignalOptions":{"defaultActivationStatus":null,"userActivationStatus":true,"defaultGroupByFields":null,"userGroupByFields":["@account_id"]},"cases":[{"status":"info","notifications":["channel"],"name":"","condition":"a
+        > 0"}],"id":"bwb-onz-qhs","isDefault":false,"name":"Test-Get_a_cloud_configuration_rule_s_details_returns_OK_response-1671216834_cloud"}
 
         '
     headers:
@@ -30,13 +30,13 @@ interactions:
       accept:
       - application/json
     method: GET
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/jxe-vmy-pef
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/bwb-onz-qhs
   response:
     body:
       string: '{"creationAuthorId":1445416,"tags":["a:tag"],"type":"cloud_configuration","isEnabled":false,"hasExtendedTitle":true,"message":"Cloud
-        configuration rule","options":{"detectionMethod":"threshold","evaluationWindow":7200,"maxSignalDuration":86400,"complianceRuleOptions":{"regoRule":{"policy":"package
-        datadog\n","resourceTypes":["gcp_compute_disk"]},"complexRule":false},"keepAlive":21600},"version":1,"createdAt":1671007609108,"filters":[],"queries":[{"query":"resource_type:gcp_compute_disk","groupByFields":["resource_type","resource_id"],"aggregation":"count","name":"a","distinctFields":[]}],"isDeleted":false,"complianceSignalOptions":{"defaultActivationStatus":null,"userActivationStatus":true,"defaultGroupByFields":null,"userGroupByFields":["@account_id"]},"cases":[{"status":"info","notifications":["channel"],"name":"","condition":"a
-        > 0"}],"id":"jxe-vmy-pef","isDefault":false,"name":"Test-Get_a_cloud_configuration_rule_s_details_returns_OK_response-1671007609_cloud"}
+        configuration rule","options":{"detectionMethod":"threshold","evaluationWindow":7200,"maxSignalDuration":86400,"complianceRuleOptions":{"resourceType":"gcp_compute_disk","regoRule":{"policy":"package
+        datadog\n","resourceTypes":["gcp_compute_disk"]},"complexRule":false},"keepAlive":21600},"version":1,"createdAt":1671216834810,"filters":[],"queries":[{"query":"resource_type:gcp_compute_disk","groupByFields":["resource_type","resource_id"],"aggregation":"count","name":"a","distinctFields":[]}],"isDeleted":false,"complianceSignalOptions":{"defaultActivationStatus":null,"userActivationStatus":true,"defaultGroupByFields":null,"userGroupByFields":["@account_id"]},"cases":[{"status":"info","notifications":["channel"],"name":"","condition":"a
+        > 0"}],"id":"bwb-onz-qhs","isDefault":false,"name":"Test-Get_a_cloud_configuration_rule_s_details_returns_OK_response-1671216834_cloud"}
 
         '
     headers:
@@ -51,7 +51,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/jxe-vmy-pef
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/bwb-onz-qhs
   response:
     body:
       string: ''
