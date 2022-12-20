@@ -105,6 +105,7 @@ class SecurityMonitoringRuleOptions(ModelNormal):
         Options on rules.
 
         :param compliance_rule_options: Options for cloud_configuration rules.
+            Fields ``resourceType`` and ``regoRule`` are mandatory when managing custom ``cloud_configuration`` rules.
         :type compliance_rule_options: CloudConfigurationComplianceRuleOptions, optional
 
         :param decrease_criticality_based_on_env: If true, signals in non-production environments have a lower severity than what is defined by the rule case, which can reduce signal noise.
