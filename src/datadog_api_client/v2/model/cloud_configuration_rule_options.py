@@ -37,6 +37,7 @@ class CloudConfigurationRuleOptions(ModelNormal):
         Options on cloud configuration rules.
 
         :param compliance_rule_options: Options for cloud_configuration rules.
+            Fields ``resourceType`` and ``regoRule`` are mandatory when managing custom ``cloud_configuration`` rules.
         :type compliance_rule_options: CloudConfigurationComplianceRuleOptions
         """
         super().__init__(kwargs)
