@@ -1434,7 +1434,11 @@ components:
         by:
           additionalProperties:
             description: The values for each group-by.
-            type: string
+            oneOf:
+            - type: string
+            - format: double
+              type: number
+            - type: boolean
           description: The key-value pairs for each group-by.
           example:
             '@ci.provider.name': gitlab
@@ -1687,7 +1691,11 @@ components:
         by:
           additionalProperties:
             description: The values for each group-by.
-            type: string
+            oneOf:
+            - type: string
+            - format: double
+              type: number
+            - type: boolean
           description: The key-value pairs for each group-by.
           example:
             '@test.service': web-ui-tests
