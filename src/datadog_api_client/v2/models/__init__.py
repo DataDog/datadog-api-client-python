@@ -101,6 +101,17 @@ from datadog_api_client.v2.model.ci_app_tests_group_by import CIAppTestsGroupBy
 from datadog_api_client.v2.model.ci_app_tests_query_filter import CIAppTestsQueryFilter
 from datadog_api_client.v2.model.ci_app_warning import CIAppWarning
 from datadog_api_client.v2.model.chargeback_breakdown import ChargebackBreakdown
+from datadog_api_client.v2.model.cloud_configuration_compliance_rule_options import (
+    CloudConfigurationComplianceRuleOptions,
+)
+from datadog_api_client.v2.model.cloud_configuration_rego_rule import CloudConfigurationRegoRule
+from datadog_api_client.v2.model.cloud_configuration_rule_case_create import CloudConfigurationRuleCaseCreate
+from datadog_api_client.v2.model.cloud_configuration_rule_compliance_signal_options import (
+    CloudConfigurationRuleComplianceSignalOptions,
+)
+from datadog_api_client.v2.model.cloud_configuration_rule_create_payload import CloudConfigurationRuleCreatePayload
+from datadog_api_client.v2.model.cloud_configuration_rule_options import CloudConfigurationRuleOptions
+from datadog_api_client.v2.model.cloud_configuration_rule_type import CloudConfigurationRuleType
 from datadog_api_client.v2.model.cloud_workload_security_agent_rule_attributes import (
     CloudWorkloadSecurityAgentRuleAttributes,
 )
@@ -502,6 +513,9 @@ from datadog_api_client.v2.model.rum_application_create import RUMApplicationCre
 from datadog_api_client.v2.model.rum_application_create_attributes import RUMApplicationCreateAttributes
 from datadog_api_client.v2.model.rum_application_create_request import RUMApplicationCreateRequest
 from datadog_api_client.v2.model.rum_application_create_type import RUMApplicationCreateType
+from datadog_api_client.v2.model.rum_application_list import RUMApplicationList
+from datadog_api_client.v2.model.rum_application_list_attributes import RUMApplicationListAttributes
+from datadog_api_client.v2.model.rum_application_list_type import RUMApplicationListType
 from datadog_api_client.v2.model.rum_application_response import RUMApplicationResponse
 from datadog_api_client.v2.model.rum_application_type import RUMApplicationType
 from datadog_api_client.v2.model.rum_application_update import RUMApplicationUpdate
@@ -717,6 +731,106 @@ from datadog_api_client.v2.model.security_monitoring_standard_rule_response impo
     SecurityMonitoringStandardRuleResponse,
 )
 from datadog_api_client.v2.model.security_monitoring_triage_user import SecurityMonitoringTriageUser
+from datadog_api_client.v2.model.sensitive_data_scanner_config_request import SensitiveDataScannerConfigRequest
+from datadog_api_client.v2.model.sensitive_data_scanner_configuration import SensitiveDataScannerConfiguration
+from datadog_api_client.v2.model.sensitive_data_scanner_configuration_data import SensitiveDataScannerConfigurationData
+from datadog_api_client.v2.model.sensitive_data_scanner_configuration_relationships import (
+    SensitiveDataScannerConfigurationRelationships,
+)
+from datadog_api_client.v2.model.sensitive_data_scanner_configuration_type import SensitiveDataScannerConfigurationType
+from datadog_api_client.v2.model.sensitive_data_scanner_create_group_response import (
+    SensitiveDataScannerCreateGroupResponse,
+)
+from datadog_api_client.v2.model.sensitive_data_scanner_create_rule_response import (
+    SensitiveDataScannerCreateRuleResponse,
+)
+from datadog_api_client.v2.model.sensitive_data_scanner_filter import SensitiveDataScannerFilter
+from datadog_api_client.v2.model.sensitive_data_scanner_get_config_included_array import (
+    SensitiveDataScannerGetConfigIncludedArray,
+)
+from datadog_api_client.v2.model.sensitive_data_scanner_get_config_included_item import (
+    SensitiveDataScannerGetConfigIncludedItem,
+)
+from datadog_api_client.v2.model.sensitive_data_scanner_get_config_response import SensitiveDataScannerGetConfigResponse
+from datadog_api_client.v2.model.sensitive_data_scanner_get_config_response_data import (
+    SensitiveDataScannerGetConfigResponseData,
+)
+from datadog_api_client.v2.model.sensitive_data_scanner_group import SensitiveDataScannerGroup
+from datadog_api_client.v2.model.sensitive_data_scanner_group_attributes import SensitiveDataScannerGroupAttributes
+from datadog_api_client.v2.model.sensitive_data_scanner_group_create import SensitiveDataScannerGroupCreate
+from datadog_api_client.v2.model.sensitive_data_scanner_group_create_request import (
+    SensitiveDataScannerGroupCreateRequest,
+)
+from datadog_api_client.v2.model.sensitive_data_scanner_group_data import SensitiveDataScannerGroupData
+from datadog_api_client.v2.model.sensitive_data_scanner_group_delete_request import (
+    SensitiveDataScannerGroupDeleteRequest,
+)
+from datadog_api_client.v2.model.sensitive_data_scanner_group_delete_response import (
+    SensitiveDataScannerGroupDeleteResponse,
+)
+from datadog_api_client.v2.model.sensitive_data_scanner_group_included_item import SensitiveDataScannerGroupIncludedItem
+from datadog_api_client.v2.model.sensitive_data_scanner_group_item import SensitiveDataScannerGroupItem
+from datadog_api_client.v2.model.sensitive_data_scanner_group_list import SensitiveDataScannerGroupList
+from datadog_api_client.v2.model.sensitive_data_scanner_group_relationships import (
+    SensitiveDataScannerGroupRelationships,
+)
+from datadog_api_client.v2.model.sensitive_data_scanner_group_response import SensitiveDataScannerGroupResponse
+from datadog_api_client.v2.model.sensitive_data_scanner_group_type import SensitiveDataScannerGroupType
+from datadog_api_client.v2.model.sensitive_data_scanner_group_update import SensitiveDataScannerGroupUpdate
+from datadog_api_client.v2.model.sensitive_data_scanner_group_update_request import (
+    SensitiveDataScannerGroupUpdateRequest,
+)
+from datadog_api_client.v2.model.sensitive_data_scanner_group_update_response import (
+    SensitiveDataScannerGroupUpdateResponse,
+)
+from datadog_api_client.v2.model.sensitive_data_scanner_meta import SensitiveDataScannerMeta
+from datadog_api_client.v2.model.sensitive_data_scanner_meta_version_only import SensitiveDataScannerMetaVersionOnly
+from datadog_api_client.v2.model.sensitive_data_scanner_product import SensitiveDataScannerProduct
+from datadog_api_client.v2.model.sensitive_data_scanner_reorder_config import SensitiveDataScannerReorderConfig
+from datadog_api_client.v2.model.sensitive_data_scanner_reorder_groups_response import (
+    SensitiveDataScannerReorderGroupsResponse,
+)
+from datadog_api_client.v2.model.sensitive_data_scanner_rule import SensitiveDataScannerRule
+from datadog_api_client.v2.model.sensitive_data_scanner_rule_attributes import SensitiveDataScannerRuleAttributes
+from datadog_api_client.v2.model.sensitive_data_scanner_rule_create import SensitiveDataScannerRuleCreate
+from datadog_api_client.v2.model.sensitive_data_scanner_rule_create_request import SensitiveDataScannerRuleCreateRequest
+from datadog_api_client.v2.model.sensitive_data_scanner_rule_data import SensitiveDataScannerRuleData
+from datadog_api_client.v2.model.sensitive_data_scanner_rule_delete_request import SensitiveDataScannerRuleDeleteRequest
+from datadog_api_client.v2.model.sensitive_data_scanner_rule_delete_response import (
+    SensitiveDataScannerRuleDeleteResponse,
+)
+from datadog_api_client.v2.model.sensitive_data_scanner_rule_included_item import SensitiveDataScannerRuleIncludedItem
+from datadog_api_client.v2.model.sensitive_data_scanner_rule_relationships import SensitiveDataScannerRuleRelationships
+from datadog_api_client.v2.model.sensitive_data_scanner_rule_response import SensitiveDataScannerRuleResponse
+from datadog_api_client.v2.model.sensitive_data_scanner_rule_type import SensitiveDataScannerRuleType
+from datadog_api_client.v2.model.sensitive_data_scanner_rule_update import SensitiveDataScannerRuleUpdate
+from datadog_api_client.v2.model.sensitive_data_scanner_rule_update_request import SensitiveDataScannerRuleUpdateRequest
+from datadog_api_client.v2.model.sensitive_data_scanner_rule_update_response import (
+    SensitiveDataScannerRuleUpdateResponse,
+)
+from datadog_api_client.v2.model.sensitive_data_scanner_standard_pattern import SensitiveDataScannerStandardPattern
+from datadog_api_client.v2.model.sensitive_data_scanner_standard_pattern_attributes import (
+    SensitiveDataScannerStandardPatternAttributes,
+)
+from datadog_api_client.v2.model.sensitive_data_scanner_standard_pattern_data import (
+    SensitiveDataScannerStandardPatternData,
+)
+from datadog_api_client.v2.model.sensitive_data_scanner_standard_pattern_type import (
+    SensitiveDataScannerStandardPatternType,
+)
+from datadog_api_client.v2.model.sensitive_data_scanner_standard_patterns_response import (
+    SensitiveDataScannerStandardPatternsResponse,
+)
+from datadog_api_client.v2.model.sensitive_data_scanner_standard_patterns_response_data import (
+    SensitiveDataScannerStandardPatternsResponseData,
+)
+from datadog_api_client.v2.model.sensitive_data_scanner_standard_patterns_response_item import (
+    SensitiveDataScannerStandardPatternsResponseItem,
+)
+from datadog_api_client.v2.model.sensitive_data_scanner_text_replacement import SensitiveDataScannerTextReplacement
+from datadog_api_client.v2.model.sensitive_data_scanner_text_replacement_type import (
+    SensitiveDataScannerTextReplacementType,
+)
 from datadog_api_client.v2.model.service_account_create_attributes import ServiceAccountCreateAttributes
 from datadog_api_client.v2.model.service_account_create_data import ServiceAccountCreateData
 from datadog_api_client.v2.model.service_account_create_request import ServiceAccountCreateRequest

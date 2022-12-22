@@ -3,11 +3,14 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Dict, Union, TYPE_CHECKING
+from typing import Any, Dict, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    date,
+    datetime,
+    none_type,
     unset,
     UnsetType,
 )
@@ -23,7 +26,21 @@ class CIAppTestsBucketResponse(ModelNormal):
         from datadog_api_client.v2.model.ci_app_computes import CIAppComputes
 
         return {
-            "by": ({str: (str,)},),
+            "by": (
+                {
+                    str: (
+                        bool,
+                        date,
+                        datetime,
+                        dict,
+                        float,
+                        int,
+                        list,
+                        str,
+                        none_type,
+                    )
+                },
+            ),
             "computes": (CIAppComputes,),
         }
 
@@ -33,13 +50,13 @@ class CIAppTestsBucketResponse(ModelNormal):
     }
 
     def __init__(
-        self_, by: Union[Dict[str, str], UnsetType] = unset, computes: Union[CIAppComputes, UnsetType] = unset, **kwargs
+        self_, by: Union[Dict[str, Any], UnsetType] = unset, computes: Union[CIAppComputes, UnsetType] = unset, **kwargs
     ):
         """
         Bucket values.
 
         :param by: The key-value pairs for each group-by.
-        :type by: {str: (str,)}, optional
+        :type by: {str: (bool, date, datetime, dict, float, int, list, str, none_type,)}, optional
 
         :param computes: A map of the metric name to value for regular compute, or a list of values for a timeseries.
         :type computes: CIAppComputes, optional

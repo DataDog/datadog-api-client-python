@@ -15,6 +15,9 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.security_monitoring_rule_case import SecurityMonitoringRuleCase
+    from datadog_api_client.v2.model.cloud_configuration_rule_compliance_signal_options import (
+        CloudConfigurationRuleComplianceSignalOptions,
+    )
     from datadog_api_client.v2.model.security_monitoring_filter import SecurityMonitoringFilter
     from datadog_api_client.v2.model.security_monitoring_rule_options import SecurityMonitoringRuleOptions
     from datadog_api_client.v2.model.security_monitoring_standard_rule_query import SecurityMonitoringStandardRuleQuery
@@ -25,6 +28,9 @@ class SecurityMonitoringStandardRuleResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.security_monitoring_rule_case import SecurityMonitoringRuleCase
+        from datadog_api_client.v2.model.cloud_configuration_rule_compliance_signal_options import (
+            CloudConfigurationRuleComplianceSignalOptions,
+        )
         from datadog_api_client.v2.model.security_monitoring_filter import SecurityMonitoringFilter
         from datadog_api_client.v2.model.security_monitoring_rule_options import SecurityMonitoringRuleOptions
         from datadog_api_client.v2.model.security_monitoring_standard_rule_query import (
@@ -34,6 +40,7 @@ class SecurityMonitoringStandardRuleResponse(ModelNormal):
 
         return {
             "cases": ([SecurityMonitoringRuleCase],),
+            "compliance_signal_options": (CloudConfigurationRuleComplianceSignalOptions,),
             "created_at": (int,),
             "creation_author_id": (int,),
             "filters": ([SecurityMonitoringFilter],),
@@ -54,6 +61,7 @@ class SecurityMonitoringStandardRuleResponse(ModelNormal):
 
     attribute_map = {
         "cases": "cases",
+        "compliance_signal_options": "complianceSignalOptions",
         "created_at": "createdAt",
         "creation_author_id": "creationAuthorId",
         "filters": "filters",
@@ -75,6 +83,7 @@ class SecurityMonitoringStandardRuleResponse(ModelNormal):
     def __init__(
         self_,
         cases: Union[List[SecurityMonitoringRuleCase], UnsetType] = unset,
+        compliance_signal_options: Union[CloudConfigurationRuleComplianceSignalOptions, UnsetType] = unset,
         created_at: Union[int, UnsetType] = unset,
         creation_author_id: Union[int, UnsetType] = unset,
         filters: Union[List[SecurityMonitoringFilter], UnsetType] = unset,
@@ -98,6 +107,9 @@ class SecurityMonitoringStandardRuleResponse(ModelNormal):
 
         :param cases: Cases for generating signals.
         :type cases: [SecurityMonitoringRuleCase], optional
+
+        :param compliance_signal_options: How to generate compliance signals. Useful for cloud_configuration rules only.
+        :type compliance_signal_options: CloudConfigurationRuleComplianceSignalOptions, optional
 
         :param created_at: When the rule was created, timestamp in milliseconds.
         :type created_at: int, optional
@@ -149,6 +161,8 @@ class SecurityMonitoringStandardRuleResponse(ModelNormal):
         """
         if cases is not unset:
             kwargs["cases"] = cases
+        if compliance_signal_options is not unset:
+            kwargs["compliance_signal_options"] = compliance_signal_options
         if created_at is not unset:
             kwargs["created_at"] = created_at
         if creation_author_id is not unset:

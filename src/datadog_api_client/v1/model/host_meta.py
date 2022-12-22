@@ -8,6 +8,7 @@ from typing import List, Union, TYPE_CHECKING
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    none_type,
     unset,
     UnsetType,
 )
@@ -28,18 +29,18 @@ class HostMeta(ModelNormal):
             "agent_checks": ([AgentCheck],),
             "agent_version": (str,),
             "cpu_cores": (int,),
-            "fbsd_v": ([str],),
+            "fbsd_v": ([str, none_type],),
             "gohai": (str,),
             "install_method": (HostMetaInstallMethod,),
-            "mac_v": ([str],),
+            "mac_v": ([str, none_type],),
             "machine": (str,),
-            "nix_v": ([str],),
+            "nix_v": ([str, none_type],),
             "platform": (str,),
             "processor": (str,),
             "python_v": (str,),
             "socket_fqdn": (str,),
             "socket_hostname": (str,),
-            "win_v": ([str],),
+            "win_v": ([str, none_type],),
         }
 
     attribute_map = {
@@ -92,7 +93,7 @@ class HostMeta(ModelNormal):
         :type cpu_cores: int, optional
 
         :param fbsd_v: An array of Mac versions.
-        :type fbsd_v: [str], optional
+        :type fbsd_v: [str, none_type], optional
 
         :param gohai: JSON string containing system information.
         :type gohai: str, optional
@@ -101,13 +102,13 @@ class HostMeta(ModelNormal):
         :type install_method: HostMetaInstallMethod, optional
 
         :param mac_v: An array of Mac versions.
-        :type mac_v: [str], optional
+        :type mac_v: [str, none_type], optional
 
         :param machine: The machine architecture.
         :type machine: str, optional
 
         :param nix_v: Array of Unix versions.
-        :type nix_v: [str], optional
+        :type nix_v: [str, none_type], optional
 
         :param platform: The OS platform.
         :type platform: str, optional
@@ -125,7 +126,7 @@ class HostMeta(ModelNormal):
         :type socket_hostname: str, optional
 
         :param win_v: An array of Windows versions.
-        :type win_v: [str], optional
+        :type win_v: [str, none_type], optional
         """
         if agent_checks is not unset:
             kwargs["agent_checks"] = agent_checks

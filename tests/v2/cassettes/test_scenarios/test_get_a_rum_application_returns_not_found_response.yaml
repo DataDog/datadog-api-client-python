@@ -8,9 +8,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/rum/applications/abcd1234-0000-0000-abcd-1234abcd5678
   response:
     body:
-      string: '{"errors":["Application Not Found not found"]}
-
-        '
+      string: '{"errors":["Application Not Found not found"]}'
     headers:
       content-type:
       - application/json

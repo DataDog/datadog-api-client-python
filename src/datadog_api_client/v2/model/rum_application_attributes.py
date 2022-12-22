@@ -24,9 +24,11 @@ class RUMApplicationAttributes(ModelNormal):
     def openapi_types(_):
         return {
             "application_id": (str,),
+            "client_token": (str,),
             "created_at": (int,),
             "created_by_handle": (str,),
             "hash": (str,),
+            "is_active": (bool,),
             "name": (str,),
             "org_id": (int,),
             "type": (str,),
@@ -36,9 +38,11 @@ class RUMApplicationAttributes(ModelNormal):
 
     attribute_map = {
         "application_id": "application_id",
+        "client_token": "client_token",
         "created_at": "created_at",
         "created_by_handle": "created_by_handle",
         "hash": "hash",
+        "is_active": "is_active",
         "name": "name",
         "org_id": "org_id",
         "type": "type",
@@ -49,6 +53,7 @@ class RUMApplicationAttributes(ModelNormal):
     def __init__(
         self_,
         application_id: str,
+        client_token: str,
         created_at: int,
         created_by_handle: str,
         name: str,
@@ -57,6 +62,7 @@ class RUMApplicationAttributes(ModelNormal):
         updated_at: int,
         updated_by_handle: str,
         hash: Union[str, UnsetType] = unset,
+        is_active: Union[bool, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -65,14 +71,20 @@ class RUMApplicationAttributes(ModelNormal):
         :param application_id: ID of the RUM application.
         :type application_id: str
 
+        :param client_token: Client token of the RUM application.
+        :type client_token: str
+
         :param created_at: Timestamp in ms of the creation date.
         :type created_at: int
 
         :param created_by_handle: Handle of the creator user.
         :type created_by_handle: str
 
-        :param hash: Client token of the RUM application.
+        :param hash: Hash of the RUM application. Optional.
         :type hash: str, optional
+
+        :param is_active: Indicates if the RUM application is active.
+        :type is_active: bool, optional
 
         :param name: Name of the RUM application.
         :type name: str
@@ -91,9 +103,12 @@ class RUMApplicationAttributes(ModelNormal):
         """
         if hash is not unset:
             kwargs["hash"] = hash
+        if is_active is not unset:
+            kwargs["is_active"] = is_active
         super().__init__(kwargs)
 
         self_.application_id = application_id
+        self_.client_token = client_token
         self_.created_at = created_at
         self_.created_by_handle = created_by_handle
         self_.name = name

@@ -17,6 +17,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.table_widget_cell_display_mode import TableWidgetCellDisplayMode
     from datadog_api_client.v1.model.widget_conditional_format import WidgetConditionalFormat
     from datadog_api_client.v1.model.widget_formula_limit import WidgetFormulaLimit
+    from datadog_api_client.v1.model.widget_formula_style import WidgetFormulaStyle
 
 
 class WidgetFormula(ModelNormal):
@@ -25,6 +26,7 @@ class WidgetFormula(ModelNormal):
         from datadog_api_client.v1.model.table_widget_cell_display_mode import TableWidgetCellDisplayMode
         from datadog_api_client.v1.model.widget_conditional_format import WidgetConditionalFormat
         from datadog_api_client.v1.model.widget_formula_limit import WidgetFormulaLimit
+        from datadog_api_client.v1.model.widget_formula_style import WidgetFormulaStyle
 
         return {
             "alias": (str,),
@@ -32,6 +34,7 @@ class WidgetFormula(ModelNormal):
             "conditional_formats": ([WidgetConditionalFormat],),
             "formula": (str,),
             "limit": (WidgetFormulaLimit,),
+            "style": (WidgetFormulaStyle,),
         }
 
     attribute_map = {
@@ -40,6 +43,7 @@ class WidgetFormula(ModelNormal):
         "conditional_formats": "conditional_formats",
         "formula": "formula",
         "limit": "limit",
+        "style": "style",
     }
 
     def __init__(
@@ -49,6 +53,7 @@ class WidgetFormula(ModelNormal):
         cell_display_mode: Union[TableWidgetCellDisplayMode, UnsetType] = unset,
         conditional_formats: Union[List[WidgetConditionalFormat], UnsetType] = unset,
         limit: Union[WidgetFormulaLimit, UnsetType] = unset,
+        style: Union[WidgetFormulaStyle, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -68,6 +73,9 @@ class WidgetFormula(ModelNormal):
 
         :param limit: Options for limiting results returned.
         :type limit: WidgetFormulaLimit, optional
+
+        :param style: Styling options for widget formulas.
+        :type style: WidgetFormulaStyle, optional
         """
         if alias is not unset:
             kwargs["alias"] = alias
@@ -77,6 +85,8 @@ class WidgetFormula(ModelNormal):
             kwargs["conditional_formats"] = conditional_formats
         if limit is not unset:
             kwargs["limit"] = limit
+        if style is not unset:
+            kwargs["style"] = style
         super().__init__(kwargs)
 
         self_.formula = formula

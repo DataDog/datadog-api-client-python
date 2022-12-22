@@ -10,7 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/rum/applications
   response:
     body:
-      string: '{"data":{"attributes":{"updated_by_handle":"frog@datadoghq.com","application_id":"0e3f5c84-1d29-4d03-83aa-ed8d4a8d9553","name":"my_new_rum_application","created_by_handle":"frog@datadoghq.com","created_at":1659974731712,"org_id":321813,"updated_at":1659974731712,"hash":"pubfd2f098023c1b1051e32e437d3d7a89f","type":"ios"},"type":"rum_application","id":"0e3f5c84-1d29-4d03-83aa-ed8d4a8d9553"}}
+      string: '{"data":{"attributes":{"updated_by_handle":"frog@datadoghq.com","application_id":"a5107087-ff92-413e-9dac-7ee1ebaa2322","name":"my_new_rum_application","created_by_handle":"frog@datadoghq.com","created_at":1670264406913,"org_id":321813,"updated_at":1670264406913,"is_active":false,"hash":"pub827b35dae6920b425915f489a4a309ac","client_token":"pub827b35dae6920b425915f489a4a309ac","type":"ios"},"type":"rum_application","id":"a5107087-ff92-413e-9dac-7ee1ebaa2322"}}
 
         '
     headers:
@@ -25,7 +25,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/rum/applications/0e3f5c84-1d29-4d03-83aa-ed8d4a8d9553
+    uri: https://api.datadoghq.com/api/v2/rum/applications/a5107087-ff92-413e-9dac-7ee1ebaa2322
   response:
     body:
       string: ''

@@ -10,7 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/rum/applications
   response:
     body:
-      string: '{"data":{"attributes":{"updated_by_handle":"frog@datadoghq.com","application_id":"aceb7b9f-ad0b-4dab-82a6-8928ccedd9b1","name":"test_name_create","created_by_handle":"frog@datadoghq.com","created_at":1659974733437,"org_id":321813,"updated_at":1659974733437,"hash":"pubbf38b6c932881edbbbba21744948c454","type":"browser"},"type":"rum_application","id":"aceb7b9f-ad0b-4dab-82a6-8928ccedd9b1"}}
+      string: '{"data":{"attributes":{"updated_by_handle":"frog@datadoghq.com","application_id":"f29b9fed-bb0a-422a-8279-33036c2cec51","name":"test_name_create","created_by_handle":"frog@datadoghq.com","created_at":1670264380961,"org_id":321813,"updated_at":1670264380961,"is_active":false,"hash":"pub937cab71d02024eb28c796162a479a56","client_token":"pub937cab71d02024eb28c796162a479a56","type":"browser"},"type":"rum_application","id":"f29b9fed-bb0a-422a-8279-33036c2cec51"}}
 
         '
     headers:
@@ -25,10 +25,10 @@ interactions:
       accept:
       - application/json
     method: GET
-    uri: https://api.datadoghq.com/api/v2/rum/applications/aceb7b9f-ad0b-4dab-82a6-8928ccedd9b1
+    uri: https://api.datadoghq.com/api/v2/rum/applications/f29b9fed-bb0a-422a-8279-33036c2cec51
   response:
     body:
-      string: '{"data":{"attributes":{"updated_by_handle":"frog@datadoghq.com","application_id":"aceb7b9f-ad0b-4dab-82a6-8928ccedd9b1","name":"test_name_create","created_by_handle":"frog@datadoghq.com","created_at":1659974733437,"org_id":321813,"updated_at":1659974733437,"hash":"pubbf38b6c932881edbbbba21744948c454","type":"browser"},"type":"rum_application","id":"aceb7b9f-ad0b-4dab-82a6-8928ccedd9b1"}}
+      string: '{"data":{"attributes":{"updated_by_handle":"frog@datadoghq.com","application_id":"f29b9fed-bb0a-422a-8279-33036c2cec51","name":"test_name_create","created_by_handle":"frog@datadoghq.com","created_at":1670264380961,"org_id":321813,"updated_at":1670264380961,"is_active":false,"hash":"pub937cab71d02024eb28c796162a479a56","client_token":"pub937cab71d02024eb28c796162a479a56","type":"browser"},"type":"rum_application","id":"f29b9fed-bb0a-422a-8279-33036c2cec51"}}
 
         '
     headers:
@@ -43,7 +43,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/rum/applications/aceb7b9f-ad0b-4dab-82a6-8928ccedd9b1
+    uri: https://api.datadoghq.com/api/v2/rum/applications/f29b9fed-bb0a-422a-8279-33036c2cec51
   response:
     body:
       string: ''

@@ -45,7 +45,7 @@ class MetricsQueryMetadata(ModelNormal):
             "scope": (str,),
             "start": (int,),
             "tag_set": ([str],),
-            "unit": ([MetricsQueryUnit],),
+            "unit": ([MetricsQueryUnit, none_type],),
         }
 
     attribute_map = {
@@ -138,7 +138,7 @@ class MetricsQueryMetadata(ModelNormal):
         :param unit: Detailed information about the metric unit.
             First element describes the "primary unit" (for example, ``bytes`` in ``bytes per second`` ),
             second describes the "per unit" (for example, ``second`` in ``bytes per second`` ).
-        :type unit: [MetricsQueryUnit], optional
+        :type unit: [MetricsQueryUnit, none_type], optional
         """
         if aggr is not unset:
             kwargs["aggr"] = aggr

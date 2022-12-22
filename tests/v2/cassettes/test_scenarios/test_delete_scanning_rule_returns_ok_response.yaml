@@ -1,0 +1,120 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/sensitive-data-scanner/config
+  response:
+    body:
+      string: '{"meta":{"count_limit":100,"version":1295,"group_count_limit":20,"is_pci_compliant":false,"has_highlight_enabled":true},"data":{"relationships":{"groups":{"data":[]}},"attributes":{},"type":"sensitive_data_scanner_configuration","id":"7957915c634d4dcb581fa154157f5ad9c2947f50be632fb5599862069f4d2d87"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data":{"attributes":{"filter":{"query":"*"},"is_enabled":false,"name":"my-test-group","product_list":["logs"]},"relationships":{"configuration":{"data":{"id":"7957915c634d4dcb581fa154157f5ad9c2947f50be632fb5599862069f4d2d87","type":"sensitive_data_scanner_configuration"}},"rules":{"data":[]}},"type":"sensitive_data_scanner_group"},"meta":{}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/sensitive-data-scanner/config/groups
+  response:
+    body:
+      string: '{"meta":{"version":1296},"data":{"relationships":{"rules":{"data":[]},"configuration":{"data":{"type":"sensitive_data_scanner_configuration","id":"7957915c634d4dcb581fa154157f5ad9c2947f50be632fb5599862069f4d2d87"}}},"attributes":{"is_enabled":false,"filter":{"query":"*"},"product_list":["logs"],"name":"my-test-group"},"type":"sensitive_data_scanner_group","id":"cXMD0eOmQjKTfy1Vm4wrWA"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data":{"attributes":{"is_enabled":true,"name":"Test-Delete_Scanning_Rule_returns_OK_response-1671095144","pattern":"pattern","tags":["sensitive_data:true"],"text_replacement":{"type":"none"}},"relationships":{"group":{"data":{"id":"cXMD0eOmQjKTfy1Vm4wrWA","type":"sensitive_data_scanner_group"}}},"type":"sensitive_data_scanner_rule"},"meta":{}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/sensitive-data-scanner/config/rules
+  response:
+    body:
+      string: '{"meta":{"version":1297},"data":{"relationships":{"group":{"data":{"type":"sensitive_data_scanner_group","id":"cXMD0eOmQjKTfy1Vm4wrWA"}}},"attributes":{"is_enabled":true,"excluded_namespaces":[],"name":"Test-Delete_Scanning_Rule_returns_OK_response-1671095144","tags":["sensitive_data:true"],"pattern":"pattern","namespaces":[],"text_replacement":{"type":"none"}},"type":"sensitive_data_scanner_rule","id":"0mMbznyeTb6d-9roSnX-Gw"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"meta":{}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/sensitive-data-scanner/config/rules/0mMbznyeTb6d-9roSnX-Gw
+  response:
+    body:
+      string: '{"meta":{"version":1298}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"meta":{}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/sensitive-data-scanner/config/rules/0mMbznyeTb6d-9roSnX-Gw
+  response:
+    body:
+      string: '{"errors":["not_found(null)"]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 404
+      message: Not Found
+- request:
+    body: '{"meta":{}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/sensitive-data-scanner/config/groups/cXMD0eOmQjKTfy1Vm4wrWA
+  response:
+    body:
+      string: '{"meta":{"version":1299}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

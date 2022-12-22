@@ -31,7 +31,7 @@ class SLOHistoryMetricsSeriesMetadata(ModelNormal):
             "metric": (str,),
             "query_index": (int,),
             "scope": (str,),
-            "unit": ([SLOHistoryMetricsSeriesMetadataUnit], none_type),
+            "unit": ([SLOHistoryMetricsSeriesMetadataUnit, none_type], none_type),
         }
 
     attribute_map = {
@@ -74,7 +74,7 @@ class SLOHistoryMetricsSeriesMetadata(ModelNormal):
         :param unit: An array of metric units that contains up to two unit objects.
             For example, bytes represents one unit object and bytes per second represents two unit objects.
             If a metric query only has one unit object, the second array element is null.
-        :type unit: [SLOHistoryMetricsSeriesMetadataUnit], none_type, optional
+        :type unit: [SLOHistoryMetricsSeriesMetadataUnit, none_type], none_type, optional
         """
         if aggr is not unset:
             kwargs["aggr"] = aggr

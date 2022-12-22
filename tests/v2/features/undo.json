@@ -891,6 +891,82 @@
       "type": "idempotent"
     }
   },
+  "ListScanningGroups": {
+    "tag": "Sensitive Data Scanner",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ReorderScanningGroups": {
+    "tag": "Sensitive Data Scanner",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "CreateScanningGroup": {
+    "tag": "Sensitive Data Scanner",
+    "undo": {
+      "operationId": "DeleteScanningGroup",
+      "parameters": [
+        {
+          "name": "group_id",
+          "source": "data.id"
+        },
+        {
+          "name": "body",
+          "template": "{\n  \"meta\": {}\n}"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteScanningGroup": {
+    "tag": "Sensitive Data Scanner",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateScanningGroup": {
+    "tag": "Sensitive Data Scanner",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "CreateScanningRule": {
+    "tag": "Sensitive Data Scanner",
+    "undo": {
+      "operationId": "DeleteScanningRule",
+      "parameters": [
+        {
+          "name": "rule_id",
+          "source": "data.id"
+        },
+        {
+          "name": "body",
+          "template": "{\n  \"meta\": {}\n}"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteScanningRule": {
+    "tag": "Sensitive Data Scanner",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateScanningRule": {
+    "tag": "Sensitive Data Scanner",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListStandardPatterns": {
+    "tag": "Sensitive Data Scanner",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "SubmitMetrics": {
     "tag": "Metrics",
     "undo": {

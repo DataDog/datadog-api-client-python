@@ -55,6 +55,7 @@ class MonitorOptions(ModelNormal):
             "aggregation": (MonitorOptionsAggregation,),
             "device_ids": ([MonitorDeviceID],),
             "enable_logs_sample": (bool,),
+            "enable_samples": (bool,),
             "escalation_message": (str,),
             "evaluation_delay": (int, none_type),
             "group_retention_duration": (str,),
@@ -94,6 +95,7 @@ class MonitorOptions(ModelNormal):
         "aggregation": "aggregation",
         "device_ids": "device_ids",
         "enable_logs_sample": "enable_logs_sample",
+        "enable_samples": "enable_samples",
         "escalation_message": "escalation_message",
         "evaluation_delay": "evaluation_delay",
         "group_retention_duration": "group_retention_duration",
@@ -131,6 +133,7 @@ class MonitorOptions(ModelNormal):
         aggregation: Union[MonitorOptionsAggregation, UnsetType] = unset,
         device_ids: Union[List[MonitorDeviceID], UnsetType] = unset,
         enable_logs_sample: Union[bool, UnsetType] = unset,
+        enable_samples: Union[bool, UnsetType] = unset,
         escalation_message: Union[str, UnsetType] = unset,
         evaluation_delay: Union[int, none_type, UnsetType] = unset,
         group_retention_duration: Union[str, UnsetType] = unset,
@@ -173,6 +176,9 @@ class MonitorOptions(ModelNormal):
 
         :param enable_logs_sample: Whether or not to send a log sample when the log monitor triggers.
         :type enable_logs_sample: bool, optional
+
+        :param enable_samples: Whether or not to send a list of samples when the monitor triggers. This is only used by CI Test and Pipeline monitors.
+        :type enable_samples: bool, optional
 
         :param escalation_message: We recommend using the `is_renotify <https://docs.datadoghq.com/monitors/notify/?tab=is_alert#renotify>`_ ,
             block in the original message instead.
@@ -295,6 +301,8 @@ class MonitorOptions(ModelNormal):
             kwargs["device_ids"] = device_ids
         if enable_logs_sample is not unset:
             kwargs["enable_logs_sample"] = enable_logs_sample
+        if enable_samples is not unset:
+            kwargs["enable_samples"] = enable_samples
         if escalation_message is not unset:
             kwargs["escalation_message"] = escalation_message
         if evaluation_delay is not unset:

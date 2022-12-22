@@ -16,10 +16,10 @@ from datadog_api_client.model_utils import (
 if TYPE_CHECKING:
     from datadog_api_client.v1.model.synthetics_basic_auth import SyntheticsBasicAuth
     from datadog_api_client.v1.model.synthetics_test_request_body_type import SyntheticsTestRequestBodyType
+    from datadog_api_client.v1.model.synthetics_test_call_type import SyntheticsTestCallType
     from datadog_api_client.v1.model.synthetics_test_request_certificate import SyntheticsTestRequestCertificate
     from datadog_api_client.v1.model.synthetics_test_headers import SyntheticsTestHeaders
     from datadog_api_client.v1.model.synthetics_test_metadata import SyntheticsTestMetadata
-    from datadog_api_client.v1.model.http_method import HTTPMethod
     from datadog_api_client.v1.model.synthetics_test_request_proxy import SyntheticsTestRequestProxy
     from datadog_api_client.v1.model.synthetics_basic_auth_web import SyntheticsBasicAuthWeb
     from datadog_api_client.v1.model.synthetics_basic_auth_sigv4 import SyntheticsBasicAuthSigv4
@@ -45,10 +45,10 @@ class SyntheticsTestRequest(ModelNormal):
     def openapi_types(_):
         from datadog_api_client.v1.model.synthetics_basic_auth import SyntheticsBasicAuth
         from datadog_api_client.v1.model.synthetics_test_request_body_type import SyntheticsTestRequestBodyType
+        from datadog_api_client.v1.model.synthetics_test_call_type import SyntheticsTestCallType
         from datadog_api_client.v1.model.synthetics_test_request_certificate import SyntheticsTestRequestCertificate
         from datadog_api_client.v1.model.synthetics_test_headers import SyntheticsTestHeaders
         from datadog_api_client.v1.model.synthetics_test_metadata import SyntheticsTestMetadata
-        from datadog_api_client.v1.model.http_method import HTTPMethod
         from datadog_api_client.v1.model.synthetics_test_request_proxy import SyntheticsTestRequestProxy
 
         return {
@@ -56,6 +56,7 @@ class SyntheticsTestRequest(ModelNormal):
             "basic_auth": (SyntheticsBasicAuth,),
             "body": (str,),
             "body_type": (SyntheticsTestRequestBodyType,),
+            "call_type": (SyntheticsTestCallType,),
             "certificate": (SyntheticsTestRequestCertificate,),
             "certificate_domains": ([str],),
             "dns_server": (str,),
@@ -65,7 +66,7 @@ class SyntheticsTestRequest(ModelNormal):
             "host": (str,),
             "message": (str,),
             "metadata": (SyntheticsTestMetadata,),
-            "method": (HTTPMethod,),
+            "method": (str,),
             "no_saving_response_body": (bool,),
             "number_of_packets": (int,),
             "port": (int,),
@@ -83,6 +84,7 @@ class SyntheticsTestRequest(ModelNormal):
         "basic_auth": "basicAuth",
         "body": "body",
         "body_type": "bodyType",
+        "call_type": "callType",
         "certificate": "certificate",
         "certificate_domains": "certificateDomains",
         "dns_server": "dnsServer",
@@ -120,6 +122,7 @@ class SyntheticsTestRequest(ModelNormal):
         ] = unset,
         body: Union[str, UnsetType] = unset,
         body_type: Union[SyntheticsTestRequestBodyType, UnsetType] = unset,
+        call_type: Union[SyntheticsTestCallType, UnsetType] = unset,
         certificate: Union[SyntheticsTestRequestCertificate, UnsetType] = unset,
         certificate_domains: Union[List[str], UnsetType] = unset,
         dns_server: Union[str, UnsetType] = unset,
@@ -129,7 +132,7 @@ class SyntheticsTestRequest(ModelNormal):
         host: Union[str, UnsetType] = unset,
         message: Union[str, UnsetType] = unset,
         metadata: Union[SyntheticsTestMetadata, UnsetType] = unset,
-        method: Union[HTTPMethod, UnsetType] = unset,
+        method: Union[str, UnsetType] = unset,
         no_saving_response_body: Union[bool, UnsetType] = unset,
         number_of_packets: Union[int, UnsetType] = unset,
         port: Union[int, UnsetType] = unset,
@@ -156,6 +159,9 @@ class SyntheticsTestRequest(ModelNormal):
 
         :param body_type: Type of the request body.
         :type body_type: SyntheticsTestRequestBodyType, optional
+
+        :param call_type: The type of gRPC call to perform.
+        :type call_type: SyntheticsTestCallType, optional
 
         :param certificate: Client certificate to use when performing the test request.
         :type certificate: SyntheticsTestRequestCertificate, optional
@@ -184,8 +190,8 @@ class SyntheticsTestRequest(ModelNormal):
         :param metadata: Metadata to include when performing the gRPC test.
         :type metadata: SyntheticsTestMetadata, optional
 
-        :param method: The HTTP method.
-        :type method: HTTPMethod, optional
+        :param method: Either the HTTP method/verb to use or a gRPC method available on the service set in the ``service`` field. Required if ``subtype`` is ``HTTP`` or if ``subtype`` is ``grpc`` and ``callType`` is ``unary``.
+        :type method: str, optional
 
         :param no_saving_response_body: Determines whether or not to save the response body.
         :type no_saving_response_body: bool, optional
@@ -207,7 +213,7 @@ class SyntheticsTestRequest(ModelNormal):
             the same IP address and TCP port number.
         :type servername: str, optional
 
-        :param service: gRPC service on which you want to perform the healthcheck.
+        :param service: The gRPC service on which you want to perform the gRPC call.
         :type service: str, optional
 
         :param should_track_hops: Turns on a traceroute probe to discover all gateways along the path to the host destination.
@@ -227,6 +233,8 @@ class SyntheticsTestRequest(ModelNormal):
             kwargs["body"] = body
         if body_type is not unset:
             kwargs["body_type"] = body_type
+        if call_type is not unset:
+            kwargs["call_type"] = call_type
         if certificate is not unset:
             kwargs["certificate"] = certificate
         if certificate_domains is not unset:

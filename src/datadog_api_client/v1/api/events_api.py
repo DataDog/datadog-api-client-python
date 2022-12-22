@@ -213,7 +213,7 @@ class EventsApi:
         :type priority: EventPriority, optional
         :param sources: A comma separated string of sources.
         :type sources: str, optional
-        :param tags: A comma separated list indicating what tags, if any, should be used to filter the list of monitors by scope.
+        :param tags: A comma separated list indicating what tags, if any, should be used to filter the list of events.
         :type tags: str, optional
         :param unaggregated: Set unaggregated to ``true`` to return all events within the specified [ ``start`` , ``end`` ] timeframe.
             Otherwise if an event is aggregated to a parent event with a timestamp outside of the timeframe,
