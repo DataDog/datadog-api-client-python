@@ -1,13 +1,13 @@
 @endpoint(metrics) @endpoint(metrics-v2)
 Feature: Metrics
   The metrics endpoint allows you to:  - Post metrics data so it can be
-  graphed on Datadog’s dashboards - Query metrics from any time period -
-  Modify tag configurations for metrics - View tags and volumes for metrics
-  **Note**: A graph can only contain a set number of points and as the
-  timeframe over which a metric is viewed increases, aggregation between
-  points occurs to stay below that set number.  The Post, Patch, and Delete
-  `manage_tags` API methods can only be performed by a user who has the
-  `Manage Tags for Metrics` permission.
+  graphed on Datadog’s dashboards - Query metrics from any time period
+  (timeseries and scalar) - Modify tag configurations for metrics - View
+  tags and volumes for metrics  **Note**: A graph can only contain a set
+  number of points and as the timeframe over which a metric is viewed
+  increases, aggregation between points occurs to stay below that set
+  number.  The Post, Patch, and Delete `manage_tags` API methods can only be
+  performed by a user who has the `Manage Tags for Metrics` permission.
 
   Background:
     Given a valid "apiKeyAuth" key in the system
@@ -214,6 +214,24 @@ Feature: Metrics
     Then the response status is 200 Success
     And the response "data.id" has the same value as "metric_tag_configuration.data.id"
 
+  @team:DataDog/metrics-query
+  Scenario: Scalar cross product query returns "Bad Request" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "QueryScalarData" enabled
+    And new "QueryScalarData" request
+    And body with value {"data": {"attributes": {"formulas": [{"formula": "a+b", "limit": {"count": 10, "order": "desc"}}], "from": 1568899800000, "queries": [{"aggregator": "avg", "data_source": "metrics", "query": "avg:system.cpu.user{*}", "name": "a"}], "to": 1568923200000}, "type": "scalar_request"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/metrics-query
+  Scenario: Scalar cross product query returns "OK" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "QueryScalarData" enabled
+    And new "QueryScalarData" request
+    And body with value {"data": {"attributes": {"formulas": [{"formula": "a", "limit": {"count": 10, "order": "desc"}}], "from": 1671612804000, "queries": [{"aggregator": "avg", "data_source": "metrics", "query": "avg:system.cpu.user{*}", "name": "a"}], "to": 1671620004000}, "type": "scalar_request"}}
+    When the request is sent
+    Then the response status is 200 OK
+
   @generated @skip @team:DataDog/metrics-intake @team:DataDog/metrics-query
   Scenario: Submit metrics returns "Bad Request" response
     Given new "SubmitMetrics" request
@@ -266,6 +284,24 @@ Feature: Metrics
     And request contains "filter[num_aggregations]" parameter with value 4
     When the request is sent
     Then the response status is 200 Success
+
+  @team:DataDog/metrics-query
+  Scenario: Timeseries cross product query returns "Bad Request" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "QueryTimeseriesData" enabled
+    And new "QueryTimeseriesData" request
+    And body with value {"data": {"attributes": {"formulas": [{"formula": "a+b", "limit": {"count": 10, "order": "desc"}}], "from": {{ timestamp('now - 1h') }}, "interval": 5000, "queries": [{"data_source": "metrics", "query": "avg:system.cpu.user{*}"}], "to": {{ timestamp('now') }}}, "type": "timeseries_rquest"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/metrics-query
+  Scenario: Timeseries cross product query returns "OK" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "QueryTimeseriesData" enabled
+    And new "QueryTimeseriesData" request
+    And body with value {"data": {"attributes": {"formulas": [{"formula": "a", "limit": {"count": 10, "order": "desc"}}], "from": 1671612804000, "interval": 5000, "queries": [{"data_source": "metrics", "query": "avg:system.cpu.user{*}", "name": "a"}], "to": 1671620004000}, "type": "timeseries_request"}}
+    When the request is sent
+    Then the response status is 200 OK
 
   @generated @skip @team:DataDog/points-aggregation
   Scenario: Update a tag configuration returns "Bad Request" response

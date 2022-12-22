@@ -26,6 +26,10 @@ from datadog_api_client.v2.model.metric_tag_configuration_response import Metric
 from datadog_api_client.v2.model.metric_tag_configuration_update_request import MetricTagConfigurationUpdateRequest
 from datadog_api_client.v2.model.metric_tag_configuration_create_request import MetricTagConfigurationCreateRequest
 from datadog_api_client.v2.model.metric_volumes_response import MetricVolumesResponse
+from datadog_api_client.v2.model.scalar_formula_query_response import ScalarFormulaQueryResponse
+from datadog_api_client.v2.model.scalar_formula_query_request import ScalarFormulaQueryRequest
+from datadog_api_client.v2.model.timeseries_formula_query_response import TimeseriesFormulaQueryResponse
+from datadog_api_client.v2.model.timeseries_formula_query_request import TimeseriesFormulaQueryRequest
 from datadog_api_client.v2.model.intake_payload_accepted import IntakePayloadAccepted
 from datadog_api_client.v2.model.metric_content_encoding import MetricContentEncoding
 from datadog_api_client.v2.model.metric_payload import MetricPayload
@@ -36,7 +40,7 @@ class MetricsApi:
     The metrics endpoint allows you to:
 
     * Post metrics data so it can be graphed on Datadog’s dashboards
-    * Query metrics from any time period
+    * Query metrics from any time period (timeseries and scalar)
     * Modify tag configurations for metrics
     * View tags and volumes for metrics
 
@@ -365,6 +369,48 @@ class MetricsApi:
             api_client=api_client,
         )
 
+        self._query_scalar_data_endpoint = _Endpoint(
+            settings={
+                "response_type": (ScalarFormulaQueryResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/query/scalar",
+                "operation_id": "query_scalar_data",
+                "http_method": "POST",
+                "version": "v2",
+                "servers": None,
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (ScalarFormulaQueryRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._query_timeseries_data_endpoint = _Endpoint(
+            settings={
+                "response_type": (TimeseriesFormulaQueryResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/query/timeseries",
+                "operation_id": "query_timeseries_data",
+                "http_method": "POST",
+                "version": "v2",
+                "servers": None,
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (TimeseriesFormulaQueryRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._submit_metrics_endpoint = _Endpoint(
             settings={
                 "response_type": (IntakePayloadAccepted,),
@@ -684,6 +730,40 @@ class MetricsApi:
         kwargs["metric_name"] = metric_name
 
         return self._list_volumes_by_metric_name_endpoint.call_with_http_info(**kwargs)
+
+    def query_scalar_data(
+        self,
+        body: ScalarFormulaQueryRequest,
+    ) -> ScalarFormulaQueryResponse:
+        """Scalar cross product query.
+
+        The internal endpoint to query scalar/table data for multiple data sources and
+        process the data using formulas and functions.
+
+        :type body: ScalarFormulaQueryRequest
+        :rtype: ScalarFormulaQueryResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._query_scalar_data_endpoint.call_with_http_info(**kwargs)
+
+    def query_timeseries_data(
+        self,
+        body: TimeseriesFormulaQueryRequest,
+    ) -> TimeseriesFormulaQueryResponse:
+        """Timeseries cross product query.
+
+        The internal endpoint to query timeseries data for multiple data sources and
+        process the data by applying formulas and functions.
+
+        :type body: TimeseriesFormulaQueryRequest
+        :rtype: TimeseriesFormulaQueryResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._query_timeseries_data_endpoint.call_with_http_info(**kwargs)
 
     def submit_metrics(
         self,
