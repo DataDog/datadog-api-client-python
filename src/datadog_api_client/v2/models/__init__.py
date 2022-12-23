@@ -195,20 +195,32 @@ from datadog_api_client.v2.model.event_response import EventResponse
 from datadog_api_client.v2.model.event_response_attributes import EventResponseAttributes
 from datadog_api_client.v2.model.event_status_type import EventStatusType
 from datadog_api_client.v2.model.event_type import EventType
+from datadog_api_client.v2.model.events_aggregation import EventsAggregation
+from datadog_api_client.v2.model.events_compute import EventsCompute
+from datadog_api_client.v2.model.events_data_source import EventsDataSource
+from datadog_api_client.v2.model.events_group_by import EventsGroupBy
+from datadog_api_client.v2.model.events_group_by_sort import EventsGroupBySort
 from datadog_api_client.v2.model.events_list_request import EventsListRequest
 from datadog_api_client.v2.model.events_list_response import EventsListResponse
 from datadog_api_client.v2.model.events_list_response_links import EventsListResponseLinks
 from datadog_api_client.v2.model.events_query_filter import EventsQueryFilter
+from datadog_api_client.v2.model.events_query_group_bys import EventsQueryGroupBys
 from datadog_api_client.v2.model.events_query_options import EventsQueryOptions
 from datadog_api_client.v2.model.events_request_page import EventsRequestPage
 from datadog_api_client.v2.model.events_response_metadata import EventsResponseMetadata
 from datadog_api_client.v2.model.events_response_metadata_page import EventsResponseMetadataPage
+from datadog_api_client.v2.model.events_scalar_query import EventsScalarQuery
+from datadog_api_client.v2.model.events_search import EventsSearch
 from datadog_api_client.v2.model.events_sort import EventsSort
+from datadog_api_client.v2.model.events_sort_type import EventsSortType
+from datadog_api_client.v2.model.events_timeseries_query import EventsTimeseriesQuery
 from datadog_api_client.v2.model.events_warning import EventsWarning
+from datadog_api_client.v2.model.formula_limit import FormulaLimit
 from datadog_api_client.v2.model.full_api_key import FullAPIKey
 from datadog_api_client.v2.model.full_api_key_attributes import FullAPIKeyAttributes
 from datadog_api_client.v2.model.full_application_key import FullApplicationKey
 from datadog_api_client.v2.model.full_application_key_attributes import FullApplicationKeyAttributes
+from datadog_api_client.v2.model.group_tags import GroupTags
 from datadog_api_client.v2.model.http_log import HTTPLog
 from datadog_api_client.v2.model.http_log_error import HTTPLogError
 from datadog_api_client.v2.model.http_log_errors import HTTPLogErrors
@@ -457,10 +469,14 @@ from datadog_api_client.v2.model.metric_tag_configuration_update_request import 
 from datadog_api_client.v2.model.metric_type import MetricType
 from datadog_api_client.v2.model.metric_volumes import MetricVolumes
 from datadog_api_client.v2.model.metric_volumes_response import MetricVolumesResponse
+from datadog_api_client.v2.model.metrics_aggregator import MetricsAggregator
 from datadog_api_client.v2.model.metrics_and_metric_tag_configurations import MetricsAndMetricTagConfigurations
 from datadog_api_client.v2.model.metrics_and_metric_tag_configurations_response import (
     MetricsAndMetricTagConfigurationsResponse,
 )
+from datadog_api_client.v2.model.metrics_data_source import MetricsDataSource
+from datadog_api_client.v2.model.metrics_scalar_query import MetricsScalarQuery
+from datadog_api_client.v2.model.metrics_timeseries_query import MetricsTimeseriesQuery
 from datadog_api_client.v2.model.monitor_type import MonitorType
 from datadog_api_client.v2.model.nullable_relationship_to_user import NullableRelationshipToUser
 from datadog_api_client.v2.model.nullable_relationship_to_user_data import NullableRelationshipToUserData
@@ -495,6 +511,7 @@ from datadog_api_client.v2.model.process_summaries_response import ProcessSummar
 from datadog_api_client.v2.model.process_summary import ProcessSummary
 from datadog_api_client.v2.model.process_summary_attributes import ProcessSummaryAttributes
 from datadog_api_client.v2.model.process_summary_type import ProcessSummaryType
+from datadog_api_client.v2.model.query_formula import QueryFormula
 from datadog_api_client.v2.model.query_sort_order import QuerySortOrder
 from datadog_api_client.v2.model.rum_aggregate_bucket_value import RUMAggregateBucketValue
 from datadog_api_client.v2.model.rum_aggregate_bucket_value_timeseries import RUMAggregateBucketValueTimeseries
@@ -596,6 +613,18 @@ from datadog_api_client.v2.model.roles_type import RolesType
 from datadog_api_client.v2.model.saml_assertion_attribute import SAMLAssertionAttribute
 from datadog_api_client.v2.model.saml_assertion_attribute_attributes import SAMLAssertionAttributeAttributes
 from datadog_api_client.v2.model.saml_assertion_attributes_type import SAMLAssertionAttributesType
+from datadog_api_client.v2.model.scalar_column import ScalarColumn
+from datadog_api_client.v2.model.scalar_formula_query_request import ScalarFormulaQueryRequest
+from datadog_api_client.v2.model.scalar_formula_query_response import ScalarFormulaQueryResponse
+from datadog_api_client.v2.model.scalar_formula_request import ScalarFormulaRequest
+from datadog_api_client.v2.model.scalar_formula_request_attributes import ScalarFormulaRequestAttributes
+from datadog_api_client.v2.model.scalar_formula_request_queries import ScalarFormulaRequestQueries
+from datadog_api_client.v2.model.scalar_formula_request_type import ScalarFormulaRequestType
+from datadog_api_client.v2.model.scalar_formula_response_atrributes import ScalarFormulaResponseAtrributes
+from datadog_api_client.v2.model.scalar_formula_response_type import ScalarFormulaResponseType
+from datadog_api_client.v2.model.scalar_query import ScalarQuery
+from datadog_api_client.v2.model.scalar_response import ScalarResponse
+from datadog_api_client.v2.model.scalar_response_series_list import ScalarResponseSeriesList
 from datadog_api_client.v2.model.security_filter import SecurityFilter
 from datadog_api_client.v2.model.security_filter_attributes import SecurityFilterAttributes
 from datadog_api_client.v2.model.security_filter_create_attributes import SecurityFilterCreateAttributes
@@ -865,6 +894,22 @@ from datadog_api_client.v2.model.service_definition_v2_version import ServiceDef
 from datadog_api_client.v2.model.service_definitions_create_request import ServiceDefinitionsCreateRequest
 from datadog_api_client.v2.model.service_definitions_list_response import ServiceDefinitionsListResponse
 from datadog_api_client.v2.model.tags_event_attribute import TagsEventAttribute
+from datadog_api_client.v2.model.timeseries_formula_query_request import TimeseriesFormulaQueryRequest
+from datadog_api_client.v2.model.timeseries_formula_query_response import TimeseriesFormulaQueryResponse
+from datadog_api_client.v2.model.timeseries_formula_request import TimeseriesFormulaRequest
+from datadog_api_client.v2.model.timeseries_formula_request_attributes import TimeseriesFormulaRequestAttributes
+from datadog_api_client.v2.model.timeseries_formula_request_queries import TimeseriesFormulaRequestQueries
+from datadog_api_client.v2.model.timeseries_formula_request_type import TimeseriesFormulaRequestType
+from datadog_api_client.v2.model.timeseries_formula_response_type import TimeseriesFormulaResponseType
+from datadog_api_client.v2.model.timeseries_query import TimeseriesQuery
+from datadog_api_client.v2.model.timeseries_response import TimeseriesResponse
+from datadog_api_client.v2.model.timeseries_response_attributes import TimeseriesResponseAttributes
+from datadog_api_client.v2.model.timeseries_response_series import TimeseriesResponseSeries
+from datadog_api_client.v2.model.timeseries_response_series_list import TimeseriesResponseSeriesList
+from datadog_api_client.v2.model.timeseries_response_times import TimeseriesResponseTimes
+from datadog_api_client.v2.model.timeseries_response_values import TimeseriesResponseValues
+from datadog_api_client.v2.model.timeseries_response_values_list import TimeseriesResponseValuesList
+from datadog_api_client.v2.model.unit import Unit
 from datadog_api_client.v2.model.usage_application_security_monitoring_response import (
     UsageApplicationSecurityMonitoringResponse,
 )

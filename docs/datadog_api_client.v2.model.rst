@@ -1128,6 +1128,41 @@ event\_type
    :members:
    :show-inheritance:
 
+events\_aggregation
+-------------------
+
+.. automodule:: datadog_api_client.v2.model.events_aggregation
+   :members:
+   :show-inheritance:
+
+events\_compute
+---------------
+
+.. automodule:: datadog_api_client.v2.model.events_compute
+   :members:
+   :show-inheritance:
+
+events\_data\_source
+--------------------
+
+.. automodule:: datadog_api_client.v2.model.events_data_source
+   :members:
+   :show-inheritance:
+
+events\_group\_by
+-----------------
+
+.. automodule:: datadog_api_client.v2.model.events_group_by
+   :members:
+   :show-inheritance:
+
+events\_group\_by\_sort
+-----------------------
+
+.. automodule:: datadog_api_client.v2.model.events_group_by_sort
+   :members:
+   :show-inheritance:
+
 events\_list\_request
 ---------------------
 
@@ -1153,6 +1188,13 @@ events\_query\_filter
 ---------------------
 
 .. automodule:: datadog_api_client.v2.model.events_query_filter
+   :members:
+   :show-inheritance:
+
+events\_query\_group\_bys
+-------------------------
+
+.. automodule:: datadog_api_client.v2.model.events_query_group_bys
    :members:
    :show-inheritance:
 
@@ -1184,6 +1226,20 @@ events\_response\_metadata\_page
    :members:
    :show-inheritance:
 
+events\_scalar\_query
+---------------------
+
+.. automodule:: datadog_api_client.v2.model.events_scalar_query
+   :members:
+   :show-inheritance:
+
+events\_search
+--------------
+
+.. automodule:: datadog_api_client.v2.model.events_search
+   :members:
+   :show-inheritance:
+
 events\_sort
 ------------
 
@@ -1191,10 +1247,31 @@ events\_sort
    :members:
    :show-inheritance:
 
+events\_sort\_type
+------------------
+
+.. automodule:: datadog_api_client.v2.model.events_sort_type
+   :members:
+   :show-inheritance:
+
+events\_timeseries\_query
+-------------------------
+
+.. automodule:: datadog_api_client.v2.model.events_timeseries_query
+   :members:
+   :show-inheritance:
+
 events\_warning
 ---------------
 
 .. automodule:: datadog_api_client.v2.model.events_warning
+   :members:
+   :show-inheritance:
+
+formula\_limit
+--------------
+
+.. automodule:: datadog_api_client.v2.model.formula_limit
    :members:
    :show-inheritance:
 
@@ -1223,6 +1300,13 @@ full\_application\_key\_attributes
 ----------------------------------
 
 .. automodule:: datadog_api_client.v2.model.full_application_key_attributes
+   :members:
+   :show-inheritance:
+
+group\_tags
+-----------
+
+.. automodule:: datadog_api_client.v2.model.group_tags
    :members:
    :show-inheritance:
 
@@ -2780,6 +2864,13 @@ metric\_volumes\_response
    :members:
    :show-inheritance:
 
+metrics\_aggregator
+-------------------
+
+.. automodule:: datadog_api_client.v2.model.metrics_aggregator
+   :members:
+   :show-inheritance:
+
 metrics\_and\_metric\_tag\_configurations
 -----------------------------------------
 
@@ -2791,6 +2882,27 @@ metrics\_and\_metric\_tag\_configurations\_response
 ---------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.metrics_and_metric_tag_configurations_response
+   :members:
+   :show-inheritance:
+
+metrics\_data\_source
+---------------------
+
+.. automodule:: datadog_api_client.v2.model.metrics_data_source
+   :members:
+   :show-inheritance:
+
+metrics\_scalar\_query
+----------------------
+
+.. automodule:: datadog_api_client.v2.model.metrics_scalar_query
+   :members:
+   :show-inheritance:
+
+metrics\_timeseries\_query
+--------------------------
+
+.. automodule:: datadog_api_client.v2.model.metrics_timeseries_query
    :members:
    :show-inheritance:
 
@@ -3029,6 +3141,13 @@ process\_summary\_type
 ----------------------
 
 .. automodule:: datadog_api_client.v2.model.process_summary_type
+   :members:
+   :show-inheritance:
+
+query\_formula
+--------------
+
+.. automodule:: datadog_api_client.v2.model.query_formula
    :members:
    :show-inheritance:
 
@@ -3680,6 +3799,90 @@ saml\_assertion\_attributes\_type
 ---------------------------------
 
 .. automodule:: datadog_api_client.v2.model.saml_assertion_attributes_type
+   :members:
+   :show-inheritance:
+
+scalar\_column
+--------------
+
+.. automodule:: datadog_api_client.v2.model.scalar_column
+   :members:
+   :show-inheritance:
+
+scalar\_formula\_query\_request
+-------------------------------
+
+.. automodule:: datadog_api_client.v2.model.scalar_formula_query_request
+   :members:
+   :show-inheritance:
+
+scalar\_formula\_query\_response
+--------------------------------
+
+.. automodule:: datadog_api_client.v2.model.scalar_formula_query_response
+   :members:
+   :show-inheritance:
+
+scalar\_formula\_request
+------------------------
+
+.. automodule:: datadog_api_client.v2.model.scalar_formula_request
+   :members:
+   :show-inheritance:
+
+scalar\_formula\_request\_attributes
+------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.scalar_formula_request_attributes
+   :members:
+   :show-inheritance:
+
+scalar\_formula\_request\_queries
+---------------------------------
+
+.. automodule:: datadog_api_client.v2.model.scalar_formula_request_queries
+   :members:
+   :show-inheritance:
+
+scalar\_formula\_request\_type
+------------------------------
+
+.. automodule:: datadog_api_client.v2.model.scalar_formula_request_type
+   :members:
+   :show-inheritance:
+
+scalar\_formula\_response\_atrributes
+-------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.scalar_formula_response_atrributes
+   :members:
+   :show-inheritance:
+
+scalar\_formula\_response\_type
+-------------------------------
+
+.. automodule:: datadog_api_client.v2.model.scalar_formula_response_type
+   :members:
+   :show-inheritance:
+
+scalar\_query
+-------------
+
+.. automodule:: datadog_api_client.v2.model.scalar_query
+   :members:
+   :show-inheritance:
+
+scalar\_response
+----------------
+
+.. automodule:: datadog_api_client.v2.model.scalar_response
+   :members:
+   :show-inheritance:
+
+scalar\_response\_series\_list
+------------------------------
+
+.. automodule:: datadog_api_client.v2.model.scalar_response_series_list
    :members:
    :show-inheritance:
 
@@ -4821,6 +5024,118 @@ tags\_event\_attribute
 ----------------------
 
 .. automodule:: datadog_api_client.v2.model.tags_event_attribute
+   :members:
+   :show-inheritance:
+
+timeseries\_formula\_query\_request
+-----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.timeseries_formula_query_request
+   :members:
+   :show-inheritance:
+
+timeseries\_formula\_query\_response
+------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.timeseries_formula_query_response
+   :members:
+   :show-inheritance:
+
+timeseries\_formula\_request
+----------------------------
+
+.. automodule:: datadog_api_client.v2.model.timeseries_formula_request
+   :members:
+   :show-inheritance:
+
+timeseries\_formula\_request\_attributes
+----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.timeseries_formula_request_attributes
+   :members:
+   :show-inheritance:
+
+timeseries\_formula\_request\_queries
+-------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.timeseries_formula_request_queries
+   :members:
+   :show-inheritance:
+
+timeseries\_formula\_request\_type
+----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.timeseries_formula_request_type
+   :members:
+   :show-inheritance:
+
+timeseries\_formula\_response\_type
+-----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.timeseries_formula_response_type
+   :members:
+   :show-inheritance:
+
+timeseries\_query
+-----------------
+
+.. automodule:: datadog_api_client.v2.model.timeseries_query
+   :members:
+   :show-inheritance:
+
+timeseries\_response
+--------------------
+
+.. automodule:: datadog_api_client.v2.model.timeseries_response
+   :members:
+   :show-inheritance:
+
+timeseries\_response\_attributes
+--------------------------------
+
+.. automodule:: datadog_api_client.v2.model.timeseries_response_attributes
+   :members:
+   :show-inheritance:
+
+timeseries\_response\_series
+----------------------------
+
+.. automodule:: datadog_api_client.v2.model.timeseries_response_series
+   :members:
+   :show-inheritance:
+
+timeseries\_response\_series\_list
+----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.timeseries_response_series_list
+   :members:
+   :show-inheritance:
+
+timeseries\_response\_times
+---------------------------
+
+.. automodule:: datadog_api_client.v2.model.timeseries_response_times
+   :members:
+   :show-inheritance:
+
+timeseries\_response\_values
+----------------------------
+
+.. automodule:: datadog_api_client.v2.model.timeseries_response_values
+   :members:
+   :show-inheritance:
+
+timeseries\_response\_values\_list
+----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.timeseries_response_values_list
+   :members:
+   :show-inheritance:
+
+unit
+----
+
+.. automodule:: datadog_api_client.v2.model.unit
    :members:
    :show-inheritance:
 
