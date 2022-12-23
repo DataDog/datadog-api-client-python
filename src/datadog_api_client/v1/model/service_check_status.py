@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class ServiceCheckStatus(ModelSimple):
     """
-    The status of a service check.
+    The status of a service check. Set to `0` for OK, `1` for warning, `2` for critical, and `3` for unknown.
 
     :param value: Must be one of [0, 1, 2, 3].
     :type value: int
