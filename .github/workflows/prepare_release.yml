@@ -29,9 +29,9 @@ jobs:
           if [ "${VERSION}" = "" ] ; then
             LATEST_TAG=$(git describe --tags --abbrev=0)
             NEXT_TAG=$(echo ${LATEST_TAG} | awk '{split($0, a, "."); print a[1] "." a[2] + 1 "." a[3]}')
-            echo ::set-output name=version::$NEXT_TAG
+            echo "version=$NEXT_TAG" >> $GITHUB_OUTPUT
           else
-            echo ::set-output name=version::$VERSION
+            echo "version=$VERSION" >> $GITHUB_OUTPUT
           fi
         env:
           VERSION: ${{ github.event.inputs.version }}
