@@ -53,6 +53,8 @@ class UsageAttributionValues(ModelNormal):
             "estimated_ingested_logs_usage": (float,),
             "estimated_ingested_spans_percentage": (float,),
             "estimated_ingested_spans_usage": (float,),
+            "estimated_rum_sessions_percentage": (float,),
+            "estimated_rum_sessions_usage": (float,),
             "infra_host_percentage": (float,),
             "infra_host_usage": (float,),
             "lambda_functions_percentage": (float,),
@@ -106,6 +108,8 @@ class UsageAttributionValues(ModelNormal):
         "estimated_ingested_logs_usage": "estimated_ingested_logs_usage",
         "estimated_ingested_spans_percentage": "estimated_ingested_spans_percentage",
         "estimated_ingested_spans_usage": "estimated_ingested_spans_usage",
+        "estimated_rum_sessions_percentage": "estimated_rum_sessions_percentage",
+        "estimated_rum_sessions_usage": "estimated_rum_sessions_usage",
         "infra_host_percentage": "infra_host_percentage",
         "infra_host_usage": "infra_host_usage",
         "lambda_functions_percentage": "lambda_functions_percentage",
@@ -160,6 +164,8 @@ class UsageAttributionValues(ModelNormal):
         estimated_ingested_logs_usage: Union[float, UnsetType] = unset,
         estimated_ingested_spans_percentage: Union[float, UnsetType] = unset,
         estimated_ingested_spans_usage: Union[float, UnsetType] = unset,
+        estimated_rum_sessions_percentage: Union[float, UnsetType] = unset,
+        estimated_rum_sessions_usage: Union[float, UnsetType] = unset,
         infra_host_percentage: Union[float, UnsetType] = unset,
         infra_host_usage: Union[float, UnsetType] = unset,
         lambda_functions_percentage: Union[float, UnsetType] = unset,
@@ -287,6 +293,12 @@ class UsageAttributionValues(ModelNormal):
         :param estimated_ingested_spans_usage: The estimated ingested spans usage by tag(s). Note this field is in private beta.
         :type estimated_ingested_spans_usage: float, optional
 
+        :param estimated_rum_sessions_percentage: The percentage of estimated rum sessions usage by tag(s). This field is in private beta.
+        :type estimated_rum_sessions_percentage: float, optional
+
+        :param estimated_rum_sessions_usage: The estimated rum sessions usage by tag(s). This field is in private beta.
+        :type estimated_rum_sessions_usage: float, optional
+
         :param infra_host_percentage: The percentage of infrastructure host usage by tag(s).
         :type infra_host_percentage: float, optional
 
@@ -401,6 +413,10 @@ class UsageAttributionValues(ModelNormal):
             kwargs["estimated_ingested_spans_percentage"] = estimated_ingested_spans_percentage
         if estimated_ingested_spans_usage is not unset:
             kwargs["estimated_ingested_spans_usage"] = estimated_ingested_spans_usage
+        if estimated_rum_sessions_percentage is not unset:
+            kwargs["estimated_rum_sessions_percentage"] = estimated_rum_sessions_percentage
+        if estimated_rum_sessions_usage is not unset:
+            kwargs["estimated_rum_sessions_usage"] = estimated_rum_sessions_usage
         if infra_host_percentage is not unset:
             kwargs["infra_host_percentage"] = infra_host_percentage
         if infra_host_usage is not unset:

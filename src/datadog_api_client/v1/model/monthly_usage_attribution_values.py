@@ -53,6 +53,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
             "estimated_ingested_logs_usage": (float,),
             "estimated_ingested_spans_percentage": (float,),
             "estimated_ingested_spans_usage": (float,),
+            "estimated_rum_sessions_percentage": (float,),
+            "estimated_rum_sessions_usage": (float,),
             "fargate_percentage": (float,),
             "fargate_usage": (float,),
             "functions_percentage": (float,),
@@ -110,6 +112,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         "estimated_ingested_logs_usage": "estimated_ingested_logs_usage",
         "estimated_ingested_spans_percentage": "estimated_ingested_spans_percentage",
         "estimated_ingested_spans_usage": "estimated_ingested_spans_usage",
+        "estimated_rum_sessions_percentage": "estimated_rum_sessions_percentage",
+        "estimated_rum_sessions_usage": "estimated_rum_sessions_usage",
         "fargate_percentage": "fargate_percentage",
         "fargate_usage": "fargate_usage",
         "functions_percentage": "functions_percentage",
@@ -168,6 +172,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         estimated_ingested_logs_usage: Union[float, UnsetType] = unset,
         estimated_ingested_spans_percentage: Union[float, UnsetType] = unset,
         estimated_ingested_spans_usage: Union[float, UnsetType] = unset,
+        estimated_rum_sessions_percentage: Union[float, UnsetType] = unset,
+        estimated_rum_sessions_usage: Union[float, UnsetType] = unset,
         fargate_percentage: Union[float, UnsetType] = unset,
         fargate_usage: Union[float, UnsetType] = unset,
         functions_percentage: Union[float, UnsetType] = unset,
@@ -299,6 +305,12 @@ class MonthlyUsageAttributionValues(ModelNormal):
         :param estimated_ingested_spans_usage: The estimated ingested spans usage by tag(s). This field is in private beta.
         :type estimated_ingested_spans_usage: float, optional
 
+        :param estimated_rum_sessions_percentage: The percentage of estimated rum sessions usage by tag(s). This field is in private beta.
+        :type estimated_rum_sessions_percentage: float, optional
+
+        :param estimated_rum_sessions_usage: The estimated rum sessions usage by tag(s). This field is in private beta.
+        :type estimated_rum_sessions_usage: float, optional
+
         :param fargate_percentage: The percentage of Fargate usage by tags.
         :type fargate_percentage: float, optional
 
@@ -425,6 +437,10 @@ class MonthlyUsageAttributionValues(ModelNormal):
             kwargs["estimated_ingested_spans_percentage"] = estimated_ingested_spans_percentage
         if estimated_ingested_spans_usage is not unset:
             kwargs["estimated_ingested_spans_usage"] = estimated_ingested_spans_usage
+        if estimated_rum_sessions_percentage is not unset:
+            kwargs["estimated_rum_sessions_percentage"] = estimated_rum_sessions_percentage
+        if estimated_rum_sessions_usage is not unset:
+            kwargs["estimated_rum_sessions_usage"] = estimated_rum_sessions_usage
         if fargate_percentage is not unset:
             kwargs["fargate_percentage"] = fargate_percentage
         if fargate_usage is not unset:
