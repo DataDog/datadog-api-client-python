@@ -3669,6 +3669,7 @@ components:
       - profiled_container_usage
       - profiled_host_usage
       - snmp_usage
+      - estimated_rum_sessions_usage
       type: string
       x-enum-varnames:
       - API_USAGE
@@ -3698,6 +3699,7 @@ components:
       - PROFILED_CONTAINER_USAGE
       - PROFILED_HOST_USAGE
       - SNMP_USAGE
+      - ESTIMATED_RUM_SESSIONS_USAGE
     IFrameWidgetDefinition:
       description: The iframe widget allows you to embed a portion of any other web
         page on your dashboard. Only available on FREE layout dashboards.
@@ -7024,6 +7026,8 @@ components:
       - profiled_host_percentage
       - snmp_usage
       - snmp_percentage
+      - estimated_rum_sessions_usage
+      - estimated_rum_sessions_percentage
       - '*'
       type: string
       x-enum-varnames:
@@ -7081,6 +7085,8 @@ components:
       - PROFILED_HOST_PERCENTAGE
       - SNMP_USAGE
       - SNMP_PERCENTAGE
+      - ESTIMATED_RUM_SESSIONS_USAGE
+      - ESTIMATED_RUM_SESSIONS_PERCENTAGE
       - ALL
     MonthlyUsageAttributionValues:
       description: Fields in Usage Summary by tag(s).
@@ -7239,6 +7245,16 @@ components:
         estimated_ingested_spans_usage:
           description: The estimated ingested spans usage by tag(s). This field is
             in private beta.
+          format: double
+          type: number
+        estimated_rum_sessions_percentage:
+          description: The percentage of estimated rum sessions usage by tag(s). This
+            field is in private beta.
+          format: double
+          type: number
+        estimated_rum_sessions_usage:
+          description: The estimated rum sessions usage by tag(s). This field is in
+            private beta.
           format: double
           type: number
         fargate_percentage:
@@ -14508,6 +14524,8 @@ components:
       - apm_fargate_percentage
       - appsec_fargate_usage
       - appsec_fargate_percentage
+      - estimated_rum_usage_attribution_usage
+      - estimated_rum_usage_attribution_percentage
       type: string
       x-enum-varnames:
       - API_PERCENTAGE
@@ -14544,6 +14562,8 @@ components:
       - APM_FARGATE_PERCENTAGE
       - APPSEC_FARGATE_USAGE
       - APPSEC_FARGATE_PERCENTAGE
+      - ESTIMATED_RUM_USAGE_ATTRIBUTION_USAGE
+      - ESTIMATED_RUM_USAGE_ATTRIBUTION_PERCENTAGE
     UsageAttributionSupportedMetrics:
       description: Supported fields for usage attribution requests (valid requests
         contain one or more metrics, or `*` for all).
@@ -14592,6 +14612,8 @@ components:
       - apm_fargate_percentage
       - appsec_fargate_usage
       - appsec_fargate_percentage
+      - estimated_rum_usage_attribution_usage
+      - estimated_rum_usage_attribution_percentage
       - '*'
       type: string
       x-enum-varnames:
@@ -14639,6 +14661,8 @@ components:
       - APM_FARGATE_PERCENTAGE
       - APPSEC_FARGATE_USAGE
       - APPSEC_FARGATE_PERCENTAGE
+      - ESTIMATED_RUM_USAGE_ATTRIBUTION_USAGE
+      - ESTIMATED_RUM_USAGE_ATTRIBUTION_PERCENTAGE
       - ALL
     UsageAttributionTagNames:
       additionalProperties:
@@ -14828,6 +14852,16 @@ components:
         estimated_ingested_spans_usage:
           description: The estimated ingested spans usage by tag(s). Note this field
             is in private beta.
+          format: double
+          type: number
+        estimated_rum_sessions_percentage:
+          description: The percentage of estimated rum sessions usage by tag(s). This
+            field is in private beta.
+          format: double
+          type: number
+        estimated_rum_sessions_usage:
+          description: The estimated rum sessions usage by tag(s). This field is in
+            private beta.
           format: double
           type: number
         infra_host_percentage:
