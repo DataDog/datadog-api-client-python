@@ -231,6 +231,8 @@ class Configuration:
                 "v2.list_incidents": False,
                 "v2.update_incident": False,
                 "v2.update_incident_attachments": False,
+                "v2.query_scalar_data": False,
+                "v2.query_timeseries_data": False,
                 "v2.create_incident_service": False,
                 "v2.delete_incident_service": False,
                 "v2.get_incident_service": False,

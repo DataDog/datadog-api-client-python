@@ -591,6 +591,18 @@
       "type": "safe"
     }
   },
+  "QueryScalarData": {
+    "tag": "Metrics",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "QueryTimeseriesData": {
+    "tag": "Metrics",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListRoles": {
     "tag": "Roles",
     "undo": {
