@@ -62,7 +62,7 @@ class ServiceCheck(ModelNormal):
         :param message: Message containing check status.
         :type message: str, optional
 
-        :param status: The status of a service check.
+        :param status: The status of a service check. Set to ``0`` for OK, ``1`` for warning, ``2`` for critical, and ``3`` for unknown.
         :type status: ServiceCheckStatus
 
         :param tags: Tags related to a check.
