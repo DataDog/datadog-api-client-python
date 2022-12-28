@@ -17,6 +17,7 @@ from datadog_api_client.model_utils import (
 if TYPE_CHECKING:
     from datadog_api_client.v1.model.service_level_objective_query import ServiceLevelObjectiveQuery
     from datadog_api_client.v1.model.slo_threshold import SLOThreshold
+    from datadog_api_client.v1.model.slo_timeframe import SLOTimeframe
     from datadog_api_client.v1.model.slo_type import SLOType
 
 
@@ -25,6 +26,7 @@ class ServiceLevelObjectiveRequest(ModelNormal):
     def openapi_types(_):
         from datadog_api_client.v1.model.service_level_objective_query import ServiceLevelObjectiveQuery
         from datadog_api_client.v1.model.slo_threshold import SLOThreshold
+        from datadog_api_client.v1.model.slo_timeframe import SLOTimeframe
         from datadog_api_client.v1.model.slo_type import SLOType
 
         return {
@@ -34,8 +36,11 @@ class ServiceLevelObjectiveRequest(ModelNormal):
             "name": (str,),
             "query": (ServiceLevelObjectiveQuery,),
             "tags": ([str],),
+            "target_threshold": (float,),
             "thresholds": ([SLOThreshold],),
+            "timeframe": (SLOTimeframe,),
             "type": (SLOType,),
+            "warning_threshold": (float,),
         }
 
     attribute_map = {
@@ -45,8 +50,11 @@ class ServiceLevelObjectiveRequest(ModelNormal):
         "name": "name",
         "query": "query",
         "tags": "tags",
+        "target_threshold": "target_threshold",
         "thresholds": "thresholds",
+        "timeframe": "timeframe",
         "type": "type",
+        "warning_threshold": "warning_threshold",
     }
 
     def __init__(
@@ -59,6 +67,9 @@ class ServiceLevelObjectiveRequest(ModelNormal):
         monitor_ids: Union[List[int], UnsetType] = unset,
         query: Union[ServiceLevelObjectiveQuery, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
+        target_threshold: Union[float, UnsetType] = unset,
+        timeframe: Union[SLOTimeframe, UnsetType] = unset,
+        warning_threshold: Union[float, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -95,12 +106,25 @@ class ServiceLevelObjectiveRequest(ModelNormal):
             Optional in create/update requests.
         :type tags: [str], optional
 
+        :param target_threshold: The target threshold such that when the service level indicator is above this
+            threshold over the given timeframe, the objective is being met.
+        :type target_threshold: float, optional
+
         :param thresholds: The thresholds (timeframes and associated targets) for this service level
             objective object.
         :type thresholds: [SLOThreshold]
 
+        :param timeframe: The SLO time window options.
+        :type timeframe: SLOTimeframe, optional
+
         :param type: The type of the service level objective.
         :type type: SLOType
+
+        :param warning_threshold: The optional warning threshold such that when the service level indicator is
+            below this value for the given threshold, but above the target threshold, the
+            objective appears in a "warning" state. This value must be greater than the target
+            threshold.
+        :type warning_threshold: float, optional
         """
         if description is not unset:
             kwargs["description"] = description
@@ -112,6 +136,12 @@ class ServiceLevelObjectiveRequest(ModelNormal):
             kwargs["query"] = query
         if tags is not unset:
             kwargs["tags"] = tags
+        if target_threshold is not unset:
+            kwargs["target_threshold"] = target_threshold
+        if timeframe is not unset:
+            kwargs["timeframe"] = timeframe
+        if warning_threshold is not unset:
+            kwargs["warning_threshold"] = warning_threshold
         super().__init__(kwargs)
 
         self_.name = name

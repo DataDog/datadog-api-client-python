@@ -25,6 +25,9 @@ body = ServiceLevelObjective(
             warning=98.0,
         ),
     ],
+    timeframe=SLOTimeframe.SEVEN_DAYS,
+    target_threshold=97.0,
+    warning_threshold=98.0,
     query=ServiceLevelObjectiveQuery(
         numerator="sum:httpservice.hits{code:2xx}.as_count()",
         denominator="sum:httpservice.hits{!code:3xx}.as_count()",
