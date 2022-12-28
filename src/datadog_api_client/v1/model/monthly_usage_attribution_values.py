@@ -29,6 +29,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
             "appsec_usage": (float,),
             "browser_percentage": (float,),
             "browser_usage": (float,),
+            "cont_percentage": (float,),
+            "cont_usage": (float,),
             "container_percentage": (float,),
             "container_usage": (float,),
             "cspm_containers_percentage": (float,),
@@ -88,6 +90,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         "appsec_usage": "appsec_usage",
         "browser_percentage": "browser_percentage",
         "browser_usage": "browser_usage",
+        "cont_percentage": "cont_percentage",
+        "cont_usage": "cont_usage",
         "container_percentage": "container_percentage",
         "container_usage": "container_usage",
         "cspm_containers_percentage": "cspm_containers_percentage",
@@ -148,6 +152,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         appsec_usage: Union[float, UnsetType] = unset,
         browser_percentage: Union[float, UnsetType] = unset,
         browser_usage: Union[float, UnsetType] = unset,
+        cont_percentage: Union[float, UnsetType] = unset,
+        cont_usage: Union[float, UnsetType] = unset,
         container_percentage: Union[float, UnsetType] = unset,
         container_usage: Union[float, UnsetType] = unset,
         cspm_containers_percentage: Union[float, UnsetType] = unset,
@@ -232,6 +238,12 @@ class MonthlyUsageAttributionValues(ModelNormal):
 
         :param browser_usage: The synthetic browser test usage by tag(s).
         :type browser_usage: float, optional
+
+        :param cont_percentage: The percentage of container usage without the Datadog Agent by tag(s).
+        :type cont_percentage: float, optional
+
+        :param cont_usage: The container usage without Datadog agent by tag(s).
+        :type cont_usage: float, optional
 
         :param container_percentage: The percentage of container usage by tag(s).
         :type container_percentage: float, optional
@@ -389,6 +401,10 @@ class MonthlyUsageAttributionValues(ModelNormal):
             kwargs["browser_percentage"] = browser_percentage
         if browser_usage is not unset:
             kwargs["browser_usage"] = browser_usage
+        if cont_percentage is not unset:
+            kwargs["cont_percentage"] = cont_percentage
+        if cont_usage is not unset:
+            kwargs["cont_usage"] = cont_usage
         if container_percentage is not unset:
             kwargs["container_percentage"] = container_percentage
         if container_usage is not unset:
