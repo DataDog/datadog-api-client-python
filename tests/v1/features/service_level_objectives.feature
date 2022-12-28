@@ -58,9 +58,12 @@ Feature: Service Level Objectives
   @team:DataDog/slo-app
   Scenario: Create an SLO object returns "OK" response
     Given new "CreateSLO" request
-    And body with value {"type":"metric","description":"string","groups":["env:test","role:mysql"],"monitor_ids":[],"name":"{{ unique }}","query":{"denominator":"sum:httpservice.hits{!code:3xx}.as_count()","numerator":"sum:httpservice.hits{code:2xx}.as_count()"},"tags":["env:prod","app:core"],"thresholds":[{"target":95.0,"target_display":"95.0","timeframe":"7d","warning":98,"warning_display":"98.0"}]}
+    And body with value {"type":"metric","description":"string","groups":["env:test","role:mysql"],"monitor_ids":[],"name":"{{ unique }}","query":{"denominator":"sum:httpservice.hits{!code:3xx}.as_count()","numerator":"sum:httpservice.hits{code:2xx}.as_count()"},"tags":["env:prod","app:core"],"thresholds":[{"target":95.0,"target_display":"95.0","timeframe":"7d","warning":98,"warning_display":"98.0"}],"timeframe":"7d","target_threshold":97.0,"warning_threshold":98}
     When the request is sent
     Then the response status is 200 OK
+    And the response "data[0].timeframe" is equal to "7d"
+    And the response "data[0].target_threshold" is equal to 97.0
+    And the response "data[0].warning_threshold" is equal to 98.0
 
   @generated @skip @team:DataDog/slo-app
   Scenario: Delete an SLO returns "Conflict" response
@@ -216,7 +219,10 @@ Feature: Service Level Objectives
     Given there is a valid "slo" in the system
     And new "UpdateSLO" request
     And request contains "slo_id" parameter from "slo.data[0].id"
-    And body with value {"type":"metric","name":"{{ slo.data[0].name }}","thresholds":[{"target":97.0,"timeframe":"7d","warning":98.0}],"query":{"numerator":"sum:httpservice.hits{code:2xx}.as_count()","denominator":"sum:httpservice.hits{!code:3xx}.as_count()"}}
+    And body with value {"type":"metric","name":"{{ slo.data[0].name }}","thresholds":[{"target":97.0,"timeframe":"7d","warning":98.0}],"timeframe":"7d","target_threshold":97.0,"warning_threshold":98,"query":{"numerator":"sum:httpservice.hits{code:2xx}.as_count()","denominator":"sum:httpservice.hits{!code:3xx}.as_count()"}}
     When the request is sent
     Then the response status is 200 OK
     And the response "data[0].thresholds[0].target" is equal to 97.0
+    And the response "data[0].timeframe" is equal to "7d"
+    And the response "data[0].target_threshold" is equal to 97.0
+    And the response "data[0].warning_threshold" is equal to 98.0

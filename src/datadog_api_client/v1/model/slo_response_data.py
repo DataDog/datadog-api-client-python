@@ -18,6 +18,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.creator import Creator
     from datadog_api_client.v1.model.service_level_objective_query import ServiceLevelObjectiveQuery
     from datadog_api_client.v1.model.slo_threshold import SLOThreshold
+    from datadog_api_client.v1.model.slo_timeframe import SLOTimeframe
     from datadog_api_client.v1.model.slo_type import SLOType
 
 
@@ -27,6 +28,7 @@ class SLOResponseData(ModelNormal):
         from datadog_api_client.v1.model.creator import Creator
         from datadog_api_client.v1.model.service_level_objective_query import ServiceLevelObjectiveQuery
         from datadog_api_client.v1.model.slo_threshold import SLOThreshold
+        from datadog_api_client.v1.model.slo_timeframe import SLOTimeframe
         from datadog_api_client.v1.model.slo_type import SLOType
 
         return {
@@ -42,8 +44,11 @@ class SLOResponseData(ModelNormal):
             "name": (str,),
             "query": (ServiceLevelObjectiveQuery,),
             "tags": ([str],),
+            "target_threshold": (float,),
             "thresholds": ([SLOThreshold],),
+            "timeframe": (SLOTimeframe,),
             "type": (SLOType,),
+            "warning_threshold": (float,),
         }
 
     attribute_map = {
@@ -59,8 +64,11 @@ class SLOResponseData(ModelNormal):
         "name": "name",
         "query": "query",
         "tags": "tags",
+        "target_threshold": "target_threshold",
         "thresholds": "thresholds",
+        "timeframe": "timeframe",
         "type": "type",
+        "warning_threshold": "warning_threshold",
     }
     read_only_vars = {
         "created_at",
@@ -83,8 +91,11 @@ class SLOResponseData(ModelNormal):
         name: Union[str, UnsetType] = unset,
         query: Union[ServiceLevelObjectiveQuery, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
+        target_threshold: Union[float, UnsetType] = unset,
         thresholds: Union[List[SLOThreshold], UnsetType] = unset,
+        timeframe: Union[SLOTimeframe, UnsetType] = unset,
         type: Union[SLOType, UnsetType] = unset,
+        warning_threshold: Union[float, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -150,12 +161,25 @@ class SLOResponseData(ModelNormal):
             Optional in create/update requests.
         :type tags: [str], optional
 
+        :param target_threshold: The target threshold such that when the service level indicator is above this
+            threshold over the given timeframe, the objective is being met.
+        :type target_threshold: float, optional
+
         :param thresholds: The thresholds (timeframes and associated targets) for this service level
             objective object.
         :type thresholds: [SLOThreshold], optional
 
+        :param timeframe: The SLO time window options.
+        :type timeframe: SLOTimeframe, optional
+
         :param type: The type of the service level objective.
         :type type: SLOType, optional
+
+        :param warning_threshold: The optional warning threshold such that when the service level indicator is
+            below this value for the given threshold, but above the target threshold, the
+            objective appears in a "warning" state. This value must be greater than the target
+            threshold.
+        :type warning_threshold: float, optional
         """
         if configured_alert_ids is not unset:
             kwargs["configured_alert_ids"] = configured_alert_ids
@@ -181,8 +205,14 @@ class SLOResponseData(ModelNormal):
             kwargs["query"] = query
         if tags is not unset:
             kwargs["tags"] = tags
+        if target_threshold is not unset:
+            kwargs["target_threshold"] = target_threshold
         if thresholds is not unset:
             kwargs["thresholds"] = thresholds
+        if timeframe is not unset:
+            kwargs["timeframe"] = timeframe
         if type is not unset:
             kwargs["type"] = type
+        if warning_threshold is not unset:
+            kwargs["warning_threshold"] = warning_threshold
         super().__init__(kwargs)
