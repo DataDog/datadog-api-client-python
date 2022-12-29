@@ -554,6 +554,10 @@ class ModelComposed(OpenApiModel):
         """Returns the string representation of the model"""
         return pprint.pformat(self.to_dict())
 
+    def get_oneof_instance(self):
+        """Returns the oneOf instance"""
+        return self._composed_instances[0]
+
     def __eq__(self, other):
         """Returns true if both objects are equal"""
         if not isinstance(other, self.__class__):
