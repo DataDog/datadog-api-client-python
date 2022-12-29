@@ -242,7 +242,7 @@ class MonthlyUsageAttributionValues(ModelNormal):
         :param cont_percentage: The percentage of container usage without the Datadog Agent by tag(s).
         :type cont_percentage: float, optional
 
-        :param cont_usage: The container usage without Datadog agent by tag(s).
+        :param cont_usage: The container usage without the Datadog Agent by tag(s).
         :type cont_usage: float, optional
 
         :param container_percentage: The percentage of container usage by tag(s).
