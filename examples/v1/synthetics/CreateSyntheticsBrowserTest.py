@@ -25,6 +25,7 @@ body = SyntheticsBrowserTest(
                 name="PROPERTY",
                 pattern="content-type",
                 type=SyntheticsConfigVariableType.TEXT,
+                secure=True,
             ),
         ],
         request=SyntheticsTestRequest(

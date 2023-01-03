@@ -27,6 +27,7 @@ class SyntheticsConfigVariable(ModelNormal):
             "id": (str,),
             "name": (str,),
             "pattern": (str,),
+            "secure": (bool,),
             "type": (SyntheticsConfigVariableType,),
         }
 
@@ -35,6 +36,7 @@ class SyntheticsConfigVariable(ModelNormal):
         "id": "id",
         "name": "name",
         "pattern": "pattern",
+        "secure": "secure",
         "type": "type",
     }
 
@@ -45,6 +47,7 @@ class SyntheticsConfigVariable(ModelNormal):
         example: Union[str, UnsetType] = unset,
         id: Union[str, UnsetType] = unset,
         pattern: Union[str, UnsetType] = unset,
+        secure: Union[bool, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -62,6 +65,9 @@ class SyntheticsConfigVariable(ModelNormal):
         :param pattern: Pattern of the variable.
         :type pattern: str, optional
 
+        :param secure: Whether the value of this variable will be obfuscated in test results.
+        :type secure: bool, optional
+
         :param type: Type of the configuration variable.
         :type type: SyntheticsConfigVariableType
         """
@@ -71,6 +77,8 @@ class SyntheticsConfigVariable(ModelNormal):
             kwargs["id"] = id
         if pattern is not unset:
             kwargs["pattern"] = pattern
+        if secure is not unset:
+            kwargs["secure"] = secure
         super().__init__(kwargs)
 
         self_.name = name

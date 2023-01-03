@@ -37,6 +37,7 @@ body = SyntheticsBrowserTest(
         config_variables=[
             SyntheticsConfigVariable(
                 name="VARIABLE_NAME",
+                secure=False,
                 type=SyntheticsConfigVariableType.TEXT,
             ),
         ],
