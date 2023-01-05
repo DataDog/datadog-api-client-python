@@ -1,5 +1,22 @@
 # Changelog
 
+## 2.8.0 / 2023-01-05
+
+### Fixed
+* Remove incorrect required fields from CloudConfigurationComplianceRuleOptions by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1276
+* Update CI Visibility types of BucketResponse schema by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1278
+* Fix logs aggregate integer facets by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1285
+### Added
+* Add support for query scalar and timeseries endpoints by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1274
+* Add estimated rum sessions usage types to UA enums by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1269
+* Update API spec to allow primary timeframe, target, and warning by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1280
+* Add Usage Metering Cont Usage fields by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1281
+* Add secure field to synthetics config variables by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1283
+* Expose helper method to retrieve oneOf instance by @skarimo in https://github.com/DataDog/datadog-api-client-python/pull/1284
+
+
+**Full Changelog**: https://github.com/DataDog/datadog-api-client-python/compare/2.7.0...2.8.0
+
 ## 2.7.0 / 2022-12-20
 
 ### Fixed
