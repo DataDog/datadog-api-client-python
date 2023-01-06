@@ -61,8 +61,6 @@ class MonthlyUsageAttributionValues(ModelNormal):
             "fargate_usage": (float,),
             "functions_percentage": (float,),
             "functions_usage": (float,),
-            "indexed_logs_percentage": (float,),
-            "indexed_logs_usage": (float,),
             "infra_host_percentage": (float,),
             "infra_host_usage": (float,),
             "invocations_percentage": (float,),
@@ -122,8 +120,6 @@ class MonthlyUsageAttributionValues(ModelNormal):
         "fargate_usage": "fargate_usage",
         "functions_percentage": "functions_percentage",
         "functions_usage": "functions_usage",
-        "indexed_logs_percentage": "indexed_logs_percentage",
-        "indexed_logs_usage": "indexed_logs_usage",
         "infra_host_percentage": "infra_host_percentage",
         "infra_host_usage": "infra_host_usage",
         "invocations_percentage": "invocations_percentage",
@@ -184,8 +180,6 @@ class MonthlyUsageAttributionValues(ModelNormal):
         fargate_usage: Union[float, UnsetType] = unset,
         functions_percentage: Union[float, UnsetType] = unset,
         functions_usage: Union[float, UnsetType] = unset,
-        indexed_logs_percentage: Union[float, UnsetType] = unset,
-        indexed_logs_usage: Union[float, UnsetType] = unset,
         infra_host_percentage: Union[float, UnsetType] = unset,
         infra_host_usage: Union[float, UnsetType] = unset,
         invocations_percentage: Union[float, UnsetType] = unset,
@@ -335,12 +329,6 @@ class MonthlyUsageAttributionValues(ModelNormal):
         :param functions_usage: The Lambda function usage by tag(s).
         :type functions_usage: float, optional
 
-        :param indexed_logs_percentage: The percentage of indexed logs usage by tags.
-        :type indexed_logs_percentage: float, optional
-
-        :param indexed_logs_usage: The indexed logs usage by tags.
-        :type indexed_logs_usage: float, optional
-
         :param infra_host_percentage: The percentage of infrastructure host usage by tag(s).
         :type infra_host_percentage: float, optional
 
@@ -465,10 +453,6 @@ class MonthlyUsageAttributionValues(ModelNormal):
             kwargs["functions_percentage"] = functions_percentage
         if functions_usage is not unset:
             kwargs["functions_usage"] = functions_usage
-        if indexed_logs_percentage is not unset:
-            kwargs["indexed_logs_percentage"] = indexed_logs_percentage
-        if indexed_logs_usage is not unset:
-            kwargs["indexed_logs_usage"] = indexed_logs_usage
         if infra_host_percentage is not unset:
             kwargs["infra_host_percentage"] = infra_host_percentage
         if infra_host_usage is not unset:
