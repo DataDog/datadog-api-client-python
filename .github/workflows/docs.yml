@@ -43,7 +43,7 @@ jobs:
       - name: Compress site
         run: tar czf site.tar.gz site
 
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         with:
           name: documentation
           path: site.tar.gz
@@ -56,7 +56,7 @@ jobs:
       - build
 
     steps:
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v3
         with:
           name: documentation
           path: site
