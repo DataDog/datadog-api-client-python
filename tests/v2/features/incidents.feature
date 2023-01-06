@@ -211,6 +211,31 @@ Feature: Incidents
     And the response "data.relationships.commander_user.data" is equal to null
 
   @generated @skip @team:DataDog/incident-app
+  Scenario: Search for incidents returns "Bad Request" response
+    Given operation "SearchIncidents" enabled
+    And new "SearchIncidents" request
+    And request contains "query" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Search for incidents returns "Not Found" response
+    Given operation "SearchIncidents" enabled
+    And new "SearchIncidents" request
+    And request contains "query" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/incident-app
+  Scenario: Search for incidents returns "OK" response
+    Given operation "SearchIncidents" enabled
+    And there is a valid "incident" in the system
+    And new "SearchIncidents" request
+    And request contains "query" parameter with value "state:(active OR stable OR resolved)"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/incident-app
   Scenario: Update an existing incident returns "Bad Request" response
     Given operation "UpdateIncident" enabled
     And new "UpdateIncident" request

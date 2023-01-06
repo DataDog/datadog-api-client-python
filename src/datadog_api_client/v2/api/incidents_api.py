@@ -18,6 +18,8 @@ from datadog_api_client.v2.model.incident_related_object import IncidentRelatedO
 from datadog_api_client.v2.model.incident_response_data import IncidentResponseData
 from datadog_api_client.v2.model.incident_response import IncidentResponse
 from datadog_api_client.v2.model.incident_create_request import IncidentCreateRequest
+from datadog_api_client.v2.model.incident_search_response import IncidentSearchResponse
+from datadog_api_client.v2.model.incident_search_sort_order import IncidentSearchSortOrder
 from datadog_api_client.v2.model.incident_update_request import IncidentUpdateRequest
 from datadog_api_client.v2.model.incident_attachments_response import IncidentAttachmentsResponse
 from datadog_api_client.v2.model.incident_attachment_related_object import IncidentAttachmentRelatedObject
@@ -175,6 +177,41 @@ class IncidentsApi:
                 "page_offset": {
                     "openapi_types": (int,),
                     "attribute": "page[offset]",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+                "content_type": [],
+            },
+            api_client=api_client,
+        )
+
+        self._search_incidents_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentSearchResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/search",
+                "operation_id": "search_incidents",
+                "http_method": "GET",
+                "version": "v2",
+                "servers": None,
+            },
+            params_map={
+                "include": {
+                    "openapi_types": (IncidentRelatedObject,),
+                    "attribute": "include",
+                    "location": "query",
+                },
+                "query": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "query",
+                    "location": "query",
+                },
+                "sort": {
+                    "openapi_types": (IncidentSearchSortOrder,),
+                    "attribute": "sort",
                     "location": "query",
                 },
             },
@@ -416,6 +453,40 @@ class IncidentsApi:
                 get_attribute_from_path(kwargs, "page_offset", 0) + local_page_size,
                 endpoint.params_map,
             )
+
+    def search_incidents(
+        self,
+        query: str,
+        *,
+        include: Union[IncidentRelatedObject, UnsetType] = unset,
+        sort: Union[IncidentSearchSortOrder, UnsetType] = unset,
+    ) -> IncidentSearchResponse:
+        """Search for incidents.
+
+        Search for incidents matching a certain query.
+
+        :param query: Specifies which incidents should be returned. After entering a search query in your `Incidents page <https://app.datadoghq.com/incidents>`_ ,
+            use the query parameter value in the URL of the page as the value for this parameter.
+
+            The query can contain any number of incident facets joined by ``ANDs`` , along with multiple values for each of
+            those facets joined by ``OR`` s, for instance: ``query="state:active AND severity:(SEV-2 OR SEV-1)"``.
+        :type query: str
+        :param include: Specifies which types of related objects should be included in the response.
+        :type include: IncidentRelatedObject, optional
+        :param sort: Specifies the order of returned incidents.
+        :type sort: IncidentSearchSortOrder, optional
+        :rtype: IncidentSearchResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if include is not unset:
+            kwargs["include"] = include
+
+        kwargs["query"] = query
+
+        if sort is not unset:
+            kwargs["sort"] = sort
+
+        return self._search_incidents_endpoint.call_with_http_info(**kwargs)
 
     def update_incident(
         self,

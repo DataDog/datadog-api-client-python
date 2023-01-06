@@ -237,6 +237,12 @@
       "type": "unsafe"
     }
   },
+  "SearchIncidents": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "DeleteIncident": {
     "tag": "Incidents",
     "undo": {

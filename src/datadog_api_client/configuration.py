@@ -229,6 +229,7 @@ class Configuration:
                 "v2.get_incident": False,
                 "v2.list_incident_attachments": False,
                 "v2.list_incidents": False,
+                "v2.search_incidents": False,
                 "v2.update_incident": False,
                 "v2.update_incident_attachments": False,
                 "v2.query_scalar_data": False,
