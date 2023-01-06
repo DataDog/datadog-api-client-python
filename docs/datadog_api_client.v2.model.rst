@@ -1660,6 +1660,90 @@ incident\_response\_relationships
    :members:
    :show-inheritance:
 
+incident\_search\_response
+--------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_search_response
+   :members:
+   :show-inheritance:
+
+incident\_search\_response\_attributes
+--------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_search_response_attributes
+   :members:
+   :show-inheritance:
+
+incident\_search\_response\_data
+--------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_search_response_data
+   :members:
+   :show-inheritance:
+
+incident\_search\_response\_facets\_data
+----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_search_response_facets_data
+   :members:
+   :show-inheritance:
+
+incident\_search\_response\_field\_facet\_data
+----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_search_response_field_facet_data
+   :members:
+   :show-inheritance:
+
+incident\_search\_response\_incidents\_data
+-------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_search_response_incidents_data
+   :members:
+   :show-inheritance:
+
+incident\_search\_response\_numeric\_facet\_data
+------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_search_response_numeric_facet_data
+   :members:
+   :show-inheritance:
+
+incident\_search\_response\_numeric\_facet\_data\_aggregates
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_search_response_numeric_facet_data_aggregates
+   :members:
+   :show-inheritance:
+
+incident\_search\_response\_property\_field\_facet\_data
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_search_response_property_field_facet_data
+   :members:
+   :show-inheritance:
+
+incident\_search\_response\_user\_facet\_data
+---------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_search_response_user_facet_data
+   :members:
+   :show-inheritance:
+
+incident\_search\_results\_type
+-------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_search_results_type
+   :members:
+   :show-inheritance:
+
+incident\_search\_sort\_order
+-----------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_search_sort_order
+   :members:
+   :show-inheritance:
+
 incident\_service\_create\_attributes
 -------------------------------------
 
