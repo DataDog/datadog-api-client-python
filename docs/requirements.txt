@@ -1,4 +1,4 @@
-Sphinx==6.0.0
+Sphinx
 sphinx_material
 m2r2
 docutils<0.19
