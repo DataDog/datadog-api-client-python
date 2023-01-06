@@ -38,7 +38,11 @@ jobs:
           restore-keys: sphinx-
 
       - name: Build documentation
-        run: tox -e docs
+        run: |
+          set +e
+          tox -e docs
+          tox -e docs
+        shell: bash
 
       - name: Compress site
         run: tar czf site.tar.gz site
