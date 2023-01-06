@@ -16,7 +16,7 @@ class HourlyUsageAttributionUsageType(ModelSimple):
     """
     Supported products for hourly usage attribution requests.
 
-    :param value: Must be one of ["api_usage", "apm_fargate_usage", "apm_host_usage", "appsec_fargate_usage", "appsec_usage", "browser_usage", "container_usage", "cspm_containers_usage", "cspm_hosts_usage", "custom_timeseries_usage", "cws_containers_usage", "cws_hosts_usage", "dbm_hosts_usage", "dbm_queries_usage", "estimated_indexed_logs_usage", "estimated_ingested_logs_usage", "estimated_indexed_spans_usage", "estimated_ingested_spans_usage", "fargate_usage", "functions_usage", "indexed_logs_usage", "infra_host_usage", "invocations_usage", "npm_host_usage", "profiled_container_usage", "profiled_host_usage", "snmp_usage", "estimated_rum_sessions_usage", "cont_usage"].
+    :param value: Must be one of ["api_usage", "apm_fargate_usage", "apm_host_usage", "appsec_fargate_usage", "appsec_usage", "browser_usage", "container_usage", "cspm_containers_usage", "cspm_hosts_usage", "custom_timeseries_usage", "cws_containers_usage", "cws_hosts_usage", "dbm_hosts_usage", "dbm_queries_usage", "estimated_indexed_logs_usage", "estimated_ingested_logs_usage", "estimated_indexed_spans_usage", "estimated_ingested_spans_usage", "fargate_usage", "functions_usage", "infra_host_usage", "invocations_usage", "npm_host_usage", "profiled_container_usage", "profiled_host_usage", "snmp_usage", "estimated_rum_sessions_usage", "cont_usage"].
     :type value: str
     """
 
@@ -41,7 +41,6 @@ class HourlyUsageAttributionUsageType(ModelSimple):
         "estimated_ingested_spans_usage",
         "fargate_usage",
         "functions_usage",
-        "indexed_logs_usage",
         "infra_host_usage",
         "invocations_usage",
         "npm_host_usage",
@@ -71,7 +70,6 @@ class HourlyUsageAttributionUsageType(ModelSimple):
     ESTIMATED_INGESTED_SPANS_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
     FARGATE_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
     FUNCTIONS_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
-    INDEXED_LOGS_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
     INFRA_HOST_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
     INVOCATIONS_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
     NPM_HOST_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
@@ -116,7 +114,6 @@ HourlyUsageAttributionUsageType.ESTIMATED_INGESTED_SPANS_USAGE = HourlyUsageAttr
 )
 HourlyUsageAttributionUsageType.FARGATE_USAGE = HourlyUsageAttributionUsageType("fargate_usage")
 HourlyUsageAttributionUsageType.FUNCTIONS_USAGE = HourlyUsageAttributionUsageType("functions_usage")
-HourlyUsageAttributionUsageType.INDEXED_LOGS_USAGE = HourlyUsageAttributionUsageType("indexed_logs_usage")
 HourlyUsageAttributionUsageType.INFRA_HOST_USAGE = HourlyUsageAttributionUsageType("infra_host_usage")
 HourlyUsageAttributionUsageType.INVOCATIONS_USAGE = HourlyUsageAttributionUsageType("invocations_usage")
 HourlyUsageAttributionUsageType.NPM_HOST_USAGE = HourlyUsageAttributionUsageType("npm_host_usage")
