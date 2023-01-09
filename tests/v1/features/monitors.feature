@@ -70,7 +70,7 @@ Feature: Monitors
   @team:DataDog/monitor-app
   Scenario: Create a metric monitor returns "OK" response
     Given new "CreateMonitor" request
-    And body with value {"name": "{{ unique }}", "type": "metric alert", "query": "avg(current_1d):avg:system.load.5{*} > 0.5", "message": "some message Notify: @hipchat-channel", "options":{"thresholds":{"critical":0.5}, "scheduling_options":{"evaluation_window":{"day_starts":"04:00", "month_starts":1}}}}
+    And body with value {"name": "{{ unique }}", "type": "metric alert", "query": "avg(current_1mo):avg:system.load.5{*} > 0.5", "message": "some message Notify: @hipchat-channel", "options":{"thresholds":{"critical":0.5}, "scheduling_options":{"evaluation_window":{"day_starts":"04:00", "month_starts":1}}}}
     When the request is sent
     Then the response status is 200 OK
 
