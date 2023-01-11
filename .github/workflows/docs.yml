@@ -42,8 +42,8 @@ jobs:
         uses: actions/cache@v3
         with:
           path: docs/.sphinx
-          key: sphinx-${{ SPHINX_VERSION }}-${{ hashFiles('.generator/schemas/**/openapi.yaml') }}
-          restore-keys: sphinx-
+          key: sphinx-${{ env.SPHINX_VERSION }}-${{ hashFiles('.generator/schemas/**/openapi.yaml') }}
+          restore-keys: sphinx-${{ env.SPHINX_VERSION }}
 
       - name: Build documentation
         run: tox -e docs
