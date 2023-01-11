@@ -10,14 +10,14 @@ Feature: CI Visibility Tests
   @generated @skip @team:Datadog/ci-app-backend @team:Datadog/integrations-tools-and-libraries
   Scenario: Aggregate tests events returns "Bad Request" response
     Given new "AggregateCIAppTestEvents" request
-    And body with value {"compute": [{"aggregation": "pc90", "interval": "5m", "metric": "@duration", "type": "total"}], "filter": {"from": "now-15m", "query": "@test.service:web-ui-tests AND @test.status:fail", "to": "now"}, "group_by": [{"facet": "@test.service", "histogram": {"interval": 10, "max": 100, "min": 50}, "limit": 10, "sort": {"aggregation": "count", "order": "asc"}, "total": false}], "options": {"timezone": "GMT"}, "page": {"cursor": "eyJzdGFydEF0IjoiQVFBQUFYS2tMS3pPbm40NGV3QUFBQUJCV0V0clRFdDZVbG8zY3pCRmNsbHJiVmxDWlEifQ==", "limit": 25}}
+    And body with value {"compute": [{"aggregation": "pc90", "interval": "5m", "metric": "@duration", "type": "total"}], "filter": {"from": "now-15m", "query": "@test.service:web-ui-tests AND @test.status:fail", "to": "now"}, "group_by": [{"facet": "@test.service", "histogram": {"interval": 10, "max": 100, "min": 50}, "limit": 10, "sort": {"aggregation": "count", "order": "asc"}, "total": false}], "options": {"timezone": "GMT"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @team:Datadog/ci-app-backend @team:Datadog/integrations-tools-and-libraries
   Scenario: Aggregate tests events returns "OK" response
     Given new "AggregateCIAppTestEvents" request
-    And body with value {"compute": [{"aggregation": "count", "metric": "@test.is_flaky", "type": "total"}], "filter": {"from": "now-15m", "query": "@language:(python OR go)", "to": "now"}, "group_by": [{"facet": "@git.branch", "limit": 10, "sort": {"order": "asc"}, "total": false}], "options": {"timezone": "GMT"}, "page": {"limit": 25}}
+    And body with value {"compute": [{"aggregation": "count", "metric": "@test.is_flaky", "type": "total"}], "filter": {"from": "now-15m", "query": "@language:(python OR go)", "to": "now"}, "group_by": [{"facet": "@git.branch", "limit": 10, "sort": {"order": "asc"}, "total": false}], "options": {"timezone": "GMT"}}
     When the request is sent
     Then the response status is 200 OK
 

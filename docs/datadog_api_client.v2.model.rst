@@ -575,6 +575,13 @@ ci\_app\_response\_metadata
    :members:
    :show-inheritance:
 
+ci\_app\_response\_metadata\_with\_pagination
+---------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_response_metadata_with_pagination
+   :members:
+   :show-inheritance:
+
 ci\_app\_response\_page
 -----------------------
 

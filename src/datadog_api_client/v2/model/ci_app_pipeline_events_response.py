@@ -16,7 +16,7 @@ from datadog_api_client.model_utils import (
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.ci_app_pipeline_event import CIAppPipelineEvent
     from datadog_api_client.v2.model.ci_app_response_links import CIAppResponseLinks
-    from datadog_api_client.v2.model.ci_app_response_metadata import CIAppResponseMetadata
+    from datadog_api_client.v2.model.ci_app_response_metadata_with_pagination import CIAppResponseMetadataWithPagination
 
 
 class CIAppPipelineEventsResponse(ModelNormal):
@@ -24,12 +24,14 @@ class CIAppPipelineEventsResponse(ModelNormal):
     def openapi_types(_):
         from datadog_api_client.v2.model.ci_app_pipeline_event import CIAppPipelineEvent
         from datadog_api_client.v2.model.ci_app_response_links import CIAppResponseLinks
-        from datadog_api_client.v2.model.ci_app_response_metadata import CIAppResponseMetadata
+        from datadog_api_client.v2.model.ci_app_response_metadata_with_pagination import (
+            CIAppResponseMetadataWithPagination,
+        )
 
         return {
             "data": ([CIAppPipelineEvent],),
             "links": (CIAppResponseLinks,),
-            "meta": (CIAppResponseMetadata,),
+            "meta": (CIAppResponseMetadataWithPagination,),
         }
 
     attribute_map = {
@@ -42,7 +44,7 @@ class CIAppPipelineEventsResponse(ModelNormal):
         self_,
         data: Union[List[CIAppPipelineEvent], UnsetType] = unset,
         links: Union[CIAppResponseLinks, UnsetType] = unset,
-        meta: Union[CIAppResponseMetadata, UnsetType] = unset,
+        meta: Union[CIAppResponseMetadataWithPagination, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -55,7 +57,7 @@ class CIAppPipelineEventsResponse(ModelNormal):
         :type links: CIAppResponseLinks, optional
 
         :param meta: The metadata associated with a request.
-        :type meta: CIAppResponseMetadata, optional
+        :type meta: CIAppResponseMetadataWithPagination, optional
         """
         if data is not unset:
             kwargs["data"] = data
