@@ -606,6 +606,7 @@ from datadog_api_client.v1.model.synthetics_get_browser_test_latest_results_resp
 )
 from datadog_api_client.v1.model.synthetics_global_variable import SyntheticsGlobalVariable
 from datadog_api_client.v1.model.synthetics_global_variable_attributes import SyntheticsGlobalVariableAttributes
+from datadog_api_client.v1.model.synthetics_global_variable_options import SyntheticsGlobalVariableOptions
 from datadog_api_client.v1.model.synthetics_global_variable_parse_test_options import (
     SyntheticsGlobalVariableParseTestOptions,
 )
@@ -613,6 +614,9 @@ from datadog_api_client.v1.model.synthetics_global_variable_parse_test_options_t
     SyntheticsGlobalVariableParseTestOptionsType,
 )
 from datadog_api_client.v1.model.synthetics_global_variable_parser_type import SyntheticsGlobalVariableParserType
+from datadog_api_client.v1.model.synthetics_global_variable_totp_parameters import (
+    SyntheticsGlobalVariableTOTPParameters,
+)
 from datadog_api_client.v1.model.synthetics_global_variable_value import SyntheticsGlobalVariableValue
 from datadog_api_client.v1.model.synthetics_list_global_variables_response import SyntheticsListGlobalVariablesResponse
 from datadog_api_client.v1.model.synthetics_list_tests_response import SyntheticsListTestsResponse

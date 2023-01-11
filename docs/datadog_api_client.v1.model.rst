@@ -3753,6 +3753,13 @@ synthetics\_global\_variable\_attributes
    :members:
    :show-inheritance:
 
+synthetics\_global\_variable\_options
+-------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_global_variable_options
+   :members:
+   :show-inheritance:
+
 synthetics\_global\_variable\_parse\_test\_options
 --------------------------------------------------
 
@@ -3771,6 +3778,13 @@ synthetics\_global\_variable\_parser\_type
 ------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_global_variable_parser_type
+   :members:
+   :show-inheritance:
+
+synthetics\_global\_variable\_totp\_parameters
+----------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_global_variable_totp_parameters
    :members:
    :show-inheritance:
 
