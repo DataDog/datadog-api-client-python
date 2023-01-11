@@ -11,6 +11,7 @@ from datadog_api_client.v2.model.ci_app_pipelines_aggregate_request import CIApp
 from datadog_api_client.v2.model.ci_app_pipelines_group_by import CIAppPipelinesGroupBy
 from datadog_api_client.v2.model.ci_app_pipelines_query_filter import CIAppPipelinesQueryFilter
 from datadog_api_client.v2.model.ci_app_query_options import CIAppQueryOptions
+from datadog_api_client.v2.model.ci_app_query_page_options import CIAppQueryPageOptions
 
 body = CIAppPipelinesAggregateRequest(
     compute=[
@@ -34,6 +35,9 @@ body = CIAppPipelinesAggregateRequest(
     ],
     options=CIAppQueryOptions(
         timezone="GMT",
+    ),
+    page=CIAppQueryPageOptions(
+        limit=25,
     ),
 )
 

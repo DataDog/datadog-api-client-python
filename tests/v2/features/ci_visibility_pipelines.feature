@@ -10,14 +10,14 @@ Feature: CI Visibility Pipelines
   @generated @skip @team:Datadog/ci-app-backend @team:Datadog/integrations-tools-and-libraries
   Scenario: Aggregate pipelines events returns "Bad Request" response
     Given new "AggregateCIAppPipelineEvents" request
-    And body with value {"compute": [{"aggregation": "pc90", "interval": "5m", "metric": "@duration", "type": "total"}], "filter": {"from": "now-15m", "query": "@ci.provider.name:github AND @ci.status:error", "to": "now"}, "group_by": [{"facet": "@ci.status", "histogram": {"interval": 10, "max": 100, "min": 50}, "limit": 10, "sort": {"aggregation": "count", "order": "asc"}, "total": false}], "options": {"timezone": "GMT"}}
+    And body with value {"compute": [{"aggregation": "pc90", "interval": "5m", "metric": "@duration", "type": "total"}], "filter": {"from": "now-15m", "query": "@ci.provider.name:github AND @ci.status:error", "to": "now"}, "group_by": [{"facet": "@ci.status", "histogram": {"interval": 10, "max": 100, "min": 50}, "limit": 10, "sort": {"aggregation": "count", "order": "asc"}, "total": false}], "options": {"timezone": "GMT"}, "page": {"cursor": "eyJzdGFydEF0IjoiQVFBQUFYS2tMS3pPbm40NGV3QUFBQUJCV0V0clRFdDZVbG8zY3pCRmNsbHJiVmxDWlEifQ==", "limit": 25}}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @team:Datadog/ci-app-backend @team:Datadog/integrations-tools-and-libraries
   Scenario: Aggregate pipelines events returns "OK" response
     Given new "AggregateCIAppPipelineEvents" request
-    And body with value {"compute": [{"aggregation": "pc90", "metric": "@duration", "type": "total"}], "filter": {"from": "now-15m", "query": "@ci.provider.name:(gitlab OR github)", "to": "now"}, "group_by": [{ "facet": "@ci.status", "limit": 10, "total": false}], "options": {"timezone": "GMT"}}
+    And body with value {"compute": [{"aggregation": "pc90", "metric": "@duration", "type": "total"}], "filter": {"from": "now-15m", "query": "@ci.provider.name:(gitlab OR github)", "to": "now"}, "group_by": [{ "facet": "@ci.status", "limit": 10, "total": false}], "options": {"timezone": "GMT"}, "page": {"limit": 25}}
     When the request is sent
     Then the response status is 200 OK
 

@@ -14,6 +14,7 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.ci_app_response_page import CIAppResponsePage
     from datadog_api_client.v2.model.ci_app_response_status import CIAppResponseStatus
     from datadog_api_client.v2.model.ci_app_warning import CIAppWarning
 
@@ -21,11 +22,13 @@ if TYPE_CHECKING:
 class CIAppResponseMetadata(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.ci_app_response_page import CIAppResponsePage
         from datadog_api_client.v2.model.ci_app_response_status import CIAppResponseStatus
         from datadog_api_client.v2.model.ci_app_warning import CIAppWarning
 
         return {
             "elapsed": (int,),
+            "page": (CIAppResponsePage,),
             "request_id": (str,),
             "status": (CIAppResponseStatus,),
             "warnings": ([CIAppWarning],),
@@ -33,6 +36,7 @@ class CIAppResponseMetadata(ModelNormal):
 
     attribute_map = {
         "elapsed": "elapsed",
+        "page": "page",
         "request_id": "request_id",
         "status": "status",
         "warnings": "warnings",
@@ -41,6 +45,7 @@ class CIAppResponseMetadata(ModelNormal):
     def __init__(
         self_,
         elapsed: Union[int, UnsetType] = unset,
+        page: Union[CIAppResponsePage, UnsetType] = unset,
         request_id: Union[str, UnsetType] = unset,
         status: Union[CIAppResponseStatus, UnsetType] = unset,
         warnings: Union[List[CIAppWarning], UnsetType] = unset,
@@ -51,6 +56,9 @@ class CIAppResponseMetadata(ModelNormal):
 
         :param elapsed: The time elapsed in milliseconds.
         :type elapsed: int, optional
+
+        :param page: Paging attributes.
+        :type page: CIAppResponsePage, optional
 
         :param request_id: The identifier of the request.
         :type request_id: str, optional
@@ -64,6 +72,8 @@ class CIAppResponseMetadata(ModelNormal):
         """
         if elapsed is not unset:
             kwargs["elapsed"] = elapsed
+        if page is not unset:
+            kwargs["page"] = page
         if request_id is not unset:
             kwargs["request_id"] = request_id
         if status is not unset:

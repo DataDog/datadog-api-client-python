@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"message":"some message Notify: @hipchat-channel","name":"Test-Create_a_metric_monitor_returns_OK_response-1673258836","options":{"scheduling_options":{"evaluation_window":{"day_starts":"04:00","month_starts":1}},"thresholds":{"critical":0.5}},"query":"avg(current_1mo):avg:system.load.5{*}
+    body: '{"message":"some message Notify: @hipchat-channel","name":"Test-Create_a_metric_monitor_returns_OK_response-1666985646","options":{"scheduling_options":{"evaluation_window":{"day_starts":"04:00","month_starts":1}},"thresholds":{"critical":0.5}},"query":"avg(current_1d):avg:system.load.5{*}
       > 0.5","type":"metric alert"}'
     headers:
       accept:
@@ -11,10 +11,9 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/monitor
   response:
     body:
-      string: '{"id":107235710,"org_id":321813,"type":"query alert","name":"Test-Create_a_metric_monitor_returns_OK_response-1673258836","message":"some
-        message Notify: @hipchat-channel","tags":[],"query":"avg(current_1mo):avg:system.load.5{*}
-        > 0.5","options":{"scheduling_options":{"evaluation_window":{"day_starts":"04:00","month_starts":1}},"thresholds":{"critical":0.5},"notify_no_data":false,"notify_audit":false,"new_host_delay":300,"include_tags":true,"silenced":{}},"multi":false,"created_at":1673258836000,"created":"2023-01-09T10:07:16.513455+00:00","modified":"2023-01-09T10:07:16.513455+00:00","deleted":null,"restricted_roles":null,"priority":null,"overall_state_modified":null,"overall_state":"No
-        Data","creator":{"name":null,"handle":"frog@datadoghq.com","email":"frog@datadoghq.com","id":1445416}}
+      string: '{"restricted_roles":null,"tags":[],"deleted":null,"query":"avg(current_1d):avg:system.load.5{*}
+        > 0.5","message":"some message Notify: @hipchat-channel","id":101334182,"multi":false,"name":"Test-Create_a_metric_monitor_returns_OK_response-1666985646","created":"2022-10-28T19:34:06.916192+00:00","created_at":1666985646000,"creator":{"id":1445416,"handle":"frog@datadoghq.com","name":null,"email":"frog@datadoghq.com"},"org_id":321813,"modified":"2022-10-28T19:34:06.916192+00:00","priority":null,"overall_state_modified":null,"overall_state":"No
+        Data","type":"query alert","options":{"notify_audit":false,"scheduling_options":{"evaluation_window":{"day_starts":"04:00","month_starts":1}},"include_tags":true,"thresholds":{"critical":0.5},"silenced":{},"new_host_delay":300,"notify_no_data":false}}
 
         '
     headers:
@@ -29,10 +28,10 @@ interactions:
       accept:
       - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/monitor/107235710
+    uri: https://api.datadoghq.com/api/v1/monitor/101334182
   response:
     body:
-      string: '{"deleted_monitor_id":107235710}
+      string: '{"deleted_monitor_id":101334182}
 
         '
     headers:
