@@ -85,6 +85,7 @@ from datadog_api_client.v2.model.ci_app_query_options import CIAppQueryOptions
 from datadog_api_client.v2.model.ci_app_query_page_options import CIAppQueryPageOptions
 from datadog_api_client.v2.model.ci_app_response_links import CIAppResponseLinks
 from datadog_api_client.v2.model.ci_app_response_metadata import CIAppResponseMetadata
+from datadog_api_client.v2.model.ci_app_response_metadata_with_pagination import CIAppResponseMetadataWithPagination
 from datadog_api_client.v2.model.ci_app_response_page import CIAppResponsePage
 from datadog_api_client.v2.model.ci_app_response_status import CIAppResponseStatus
 from datadog_api_client.v2.model.ci_app_sort import CIAppSort

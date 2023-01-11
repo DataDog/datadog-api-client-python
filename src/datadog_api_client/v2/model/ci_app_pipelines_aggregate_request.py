@@ -18,7 +18,6 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.ci_app_pipelines_query_filter import CIAppPipelinesQueryFilter
     from datadog_api_client.v2.model.ci_app_pipelines_group_by import CIAppPipelinesGroupBy
     from datadog_api_client.v2.model.ci_app_query_options import CIAppQueryOptions
-    from datadog_api_client.v2.model.ci_app_query_page_options import CIAppQueryPageOptions
 
 
 class CIAppPipelinesAggregateRequest(ModelNormal):
@@ -28,14 +27,12 @@ class CIAppPipelinesAggregateRequest(ModelNormal):
         from datadog_api_client.v2.model.ci_app_pipelines_query_filter import CIAppPipelinesQueryFilter
         from datadog_api_client.v2.model.ci_app_pipelines_group_by import CIAppPipelinesGroupBy
         from datadog_api_client.v2.model.ci_app_query_options import CIAppQueryOptions
-        from datadog_api_client.v2.model.ci_app_query_page_options import CIAppQueryPageOptions
 
         return {
             "compute": ([CIAppCompute],),
             "filter": (CIAppPipelinesQueryFilter,),
             "group_by": ([CIAppPipelinesGroupBy],),
             "options": (CIAppQueryOptions,),
-            "page": (CIAppQueryPageOptions,),
         }
 
     attribute_map = {
@@ -43,7 +40,6 @@ class CIAppPipelinesAggregateRequest(ModelNormal):
         "filter": "filter",
         "group_by": "group_by",
         "options": "options",
-        "page": "page",
     }
 
     def __init__(
@@ -52,7 +48,6 @@ class CIAppPipelinesAggregateRequest(ModelNormal):
         filter: Union[CIAppPipelinesQueryFilter, UnsetType] = unset,
         group_by: Union[List[CIAppPipelinesGroupBy], UnsetType] = unset,
         options: Union[CIAppQueryOptions, UnsetType] = unset,
-        page: Union[CIAppQueryPageOptions, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -70,9 +65,6 @@ class CIAppPipelinesAggregateRequest(ModelNormal):
         :param options: Global query options that are used during the query.
             Only supply timezone or time offset, not both. Otherwise, the query fails.
         :type options: CIAppQueryOptions, optional
-
-        :param page: Paging attributes for listing events.
-        :type page: CIAppQueryPageOptions, optional
         """
         if compute is not unset:
             kwargs["compute"] = compute
@@ -82,6 +74,4 @@ class CIAppPipelinesAggregateRequest(ModelNormal):
             kwargs["group_by"] = group_by
         if options is not unset:
             kwargs["options"] = options
-        if page is not unset:
-            kwargs["page"] = page
         super().__init__(kwargs)

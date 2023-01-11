@@ -9,7 +9,6 @@ from datadog_api_client.v2.model.ci_app_aggregation_function import CIAppAggrega
 from datadog_api_client.v2.model.ci_app_compute import CIAppCompute
 from datadog_api_client.v2.model.ci_app_compute_type import CIAppComputeType
 from datadog_api_client.v2.model.ci_app_query_options import CIAppQueryOptions
-from datadog_api_client.v2.model.ci_app_query_page_options import CIAppQueryPageOptions
 from datadog_api_client.v2.model.ci_app_sort_order import CIAppSortOrder
 from datadog_api_client.v2.model.ci_app_tests_aggregate_request import CIAppTestsAggregateRequest
 from datadog_api_client.v2.model.ci_app_tests_group_by import CIAppTestsGroupBy
@@ -40,9 +39,6 @@ body = CIAppTestsAggregateRequest(
     ],
     options=CIAppQueryOptions(
         timezone="GMT",
-    ),
-    page=CIAppQueryPageOptions(
-        limit=25,
     ),
 )
 
