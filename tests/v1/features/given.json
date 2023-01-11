@@ -195,7 +195,7 @@
     "parameters": [
       {
         "name": "body",
-        "value": "{\n  \"description\": \"\",\n  \"name\": \"GLOBAL_VARIABLE_PAYLOAD_{{ unique_upper_alnum }}\",\n  \"tags\": [],\n  \"value\": {\n    \"secure\": false,\n    \"value\": \"\"\n  },\n  \"parse_test_public_id\": \"{{ synthetics_api_test_multi_step.public_id }}\",\n  \"parse_test_options\": {\n    \"type\": \"local_variable\",\n    \"localVariableName\": \"EXTRACTED_VALUE\"\n  }\n}\n"
+        "value": "{\n  \"description\": \"\",\n  \"name\": \"GLOBAL_VARIABLE_PAYLOAD_{{ unique_upper_alnum }}\",\n  \"tags\": [],\n  \"value\": {\n    \"secure\": false,\n    \"value\": \"\",\n    \"options\": {\n      \"totp_parameters\": {\n        \"digits\": 6,\n        \"refresh_interval\": 30\n      }\n    }\n  },\n  \"parse_test_public_id\": \"{{ synthetics_api_test_multi_step.public_id }}\",\n  \"parse_test_options\": {\n    \"type\": \"local_variable\",\n    \"localVariableName\": \"EXTRACTED_VALUE\"\n  }\n}\n"
       }
     ],
     "step": "there is a valid \"synthetics_global_variable\" in the system",
