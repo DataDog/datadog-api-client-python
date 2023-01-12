@@ -80,8 +80,7 @@
     "monitor_name": "{{ unique }}",
     "monitor_priority": 5,
     "retry": { "count": 3, "interval": 10 },
-    "tick_every": 60,
-    "httpVersion": "http2"
+    "tick_every": 60
   },
   "subtype": "http",
   "tags": ["testing:api"],

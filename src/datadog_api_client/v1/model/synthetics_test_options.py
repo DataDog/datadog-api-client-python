@@ -16,7 +16,6 @@ from datadog_api_client.model_utils import (
 if TYPE_CHECKING:
     from datadog_api_client.v1.model.synthetics_test_ci_options import SyntheticsTestCiOptions
     from datadog_api_client.v1.model.synthetics_device_id import SyntheticsDeviceID
-    from datadog_api_client.v1.model.synthetics_test_options_http_version import SyntheticsTestOptionsHTTPVersion
     from datadog_api_client.v1.model.synthetics_test_options_monitor_options import SyntheticsTestOptionsMonitorOptions
     from datadog_api_client.v1.model.synthetics_restricted_roles import SyntheticsRestrictedRoles
     from datadog_api_client.v1.model.synthetics_test_options_retry import SyntheticsTestOptionsRetry
@@ -39,7 +38,6 @@ class SyntheticsTestOptions(ModelNormal):
     def openapi_types(_):
         from datadog_api_client.v1.model.synthetics_test_ci_options import SyntheticsTestCiOptions
         from datadog_api_client.v1.model.synthetics_device_id import SyntheticsDeviceID
-        from datadog_api_client.v1.model.synthetics_test_options_http_version import SyntheticsTestOptionsHTTPVersion
         from datadog_api_client.v1.model.synthetics_test_options_monitor_options import (
             SyntheticsTestOptionsMonitorOptions,
         )
@@ -56,7 +54,6 @@ class SyntheticsTestOptions(ModelNormal):
             "disable_cors": (bool,),
             "disable_csp": (bool,),
             "follow_redirects": (bool,),
-            "http_version": (SyntheticsTestOptionsHTTPVersion,),
             "ignore_server_certificate_error": (bool,),
             "initial_navigation_timeout": (int,),
             "min_failure_duration": (int,),
@@ -80,7 +77,6 @@ class SyntheticsTestOptions(ModelNormal):
         "disable_cors": "disableCors",
         "disable_csp": "disableCsp",
         "follow_redirects": "follow_redirects",
-        "http_version": "httpVersion",
         "ignore_server_certificate_error": "ignoreServerCertificateError",
         "initial_navigation_timeout": "initialNavigationTimeout",
         "min_failure_duration": "min_failure_duration",
@@ -105,7 +101,6 @@ class SyntheticsTestOptions(ModelNormal):
         disable_cors: Union[bool, UnsetType] = unset,
         disable_csp: Union[bool, UnsetType] = unset,
         follow_redirects: Union[bool, UnsetType] = unset,
-        http_version: Union[SyntheticsTestOptionsHTTPVersion, UnsetType] = unset,
         ignore_server_certificate_error: Union[bool, UnsetType] = unset,
         initial_navigation_timeout: Union[int, UnsetType] = unset,
         min_failure_duration: Union[int, UnsetType] = unset,
@@ -147,9 +142,6 @@ class SyntheticsTestOptions(ModelNormal):
 
         :param follow_redirects: For API HTTP test, whether or not the test should follow redirects.
         :type follow_redirects: bool, optional
-
-        :param http_version: HTTP version to use for a Synthetic test.
-        :type http_version: SyntheticsTestOptionsHTTPVersion, optional
 
         :param ignore_server_certificate_error: Ignore server certificate error for browser tests.
         :type ignore_server_certificate_error: bool, optional
@@ -215,8 +207,6 @@ class SyntheticsTestOptions(ModelNormal):
             kwargs["disable_csp"] = disable_csp
         if follow_redirects is not unset:
             kwargs["follow_redirects"] = follow_redirects
-        if http_version is not unset:
-            kwargs["http_version"] = http_version
         if ignore_server_certificate_error is not unset:
             kwargs["ignore_server_certificate_error"] = ignore_server_certificate_error
         if initial_navigation_timeout is not unset:

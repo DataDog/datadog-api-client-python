@@ -22,7 +22,6 @@ from datadog_api_client.v1.model.synthetics_test_call_type import SyntheticsTest
 from datadog_api_client.v1.model.synthetics_test_ci_options import SyntheticsTestCiOptions
 from datadog_api_client.v1.model.synthetics_test_execution_rule import SyntheticsTestExecutionRule
 from datadog_api_client.v1.model.synthetics_test_options import SyntheticsTestOptions
-from datadog_api_client.v1.model.synthetics_test_options_http_version import SyntheticsTestOptionsHTTPVersion
 from datadog_api_client.v1.model.synthetics_test_options_monitor_options import SyntheticsTestOptionsMonitorOptions
 from datadog_api_client.v1.model.synthetics_test_options_retry import SyntheticsTestOptionsRetry
 from datadog_api_client.v1.model.synthetics_test_pause_status import SyntheticsTestPauseStatus
@@ -80,7 +79,6 @@ body = SyntheticsBrowserTest(
         device_ids=[
             SyntheticsDeviceID.LAPTOP_LARGE,
         ],
-        http_version=SyntheticsTestOptionsHTTPVersion.HTTP1,
         monitor_options=SyntheticsTestOptionsMonitorOptions(),
         restricted_roles=SyntheticsRestrictedRoles(
             [

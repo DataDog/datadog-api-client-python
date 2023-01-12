@@ -28,7 +28,6 @@ from datadog_api_client.v1.model.synthetics_config_variable_type import Syntheti
 from datadog_api_client.v1.model.synthetics_test_details_sub_type import SyntheticsTestDetailsSubType
 from datadog_api_client.v1.model.synthetics_test_headers import SyntheticsTestHeaders
 from datadog_api_client.v1.model.synthetics_test_options import SyntheticsTestOptions
-from datadog_api_client.v1.model.synthetics_test_options_http_version import SyntheticsTestOptionsHTTPVersion
 from datadog_api_client.v1.model.synthetics_test_options_retry import SyntheticsTestOptionsRetry
 from datadog_api_client.v1.model.synthetics_test_request import SyntheticsTestRequest
 from datadog_api_client.v1.model.synthetics_test_request_certificate import SyntheticsTestRequestCertificate
@@ -129,7 +128,6 @@ body = SyntheticsAPITest(
             interval=10.0,
         ),
         tick_every=60,
-        http_version=SyntheticsTestOptionsHTTPVersion.HTTP2,
     ),
     subtype=SyntheticsTestDetailsSubType.HTTP,
     tags=[
