@@ -6,6 +6,7 @@ from __future__ import annotations
 from typing import Any, Dict
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
+from datadog_api_client.configuration import Configuration
 from datadog_api_client.v1.model.logs_pipelines_order import LogsPipelinesOrder
 from datadog_api_client.v1.model.logs_pipeline_list import LogsPipelineList
 from datadog_api_client.v1.model.logs_pipeline import LogsPipeline
@@ -44,7 +45,7 @@ class LogsPipelinesApi:
 
     def __init__(self, api_client=None):
         if api_client is None:
-            api_client = ApiClient()
+            api_client = ApiClient(Configuration())
         self.api_client = api_client
 
         self._create_logs_pipeline_endpoint = _Endpoint(

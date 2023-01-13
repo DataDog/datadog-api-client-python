@@ -6,6 +6,7 @@ from __future__ import annotations
 from typing import Any, Dict, List
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
+from datadog_api_client.configuration import Configuration
 from datadog_api_client.v1.model.aws_account_and_lambda_request import AWSAccountAndLambdaRequest
 from datadog_api_client.v1.model.aws_logs_list_response import AWSLogsListResponse
 from datadog_api_client.v1.model.aws_logs_async_response import AWSLogsAsyncResponse
@@ -21,7 +22,7 @@ class AWSLogsIntegrationApi:
 
     def __init__(self, api_client=None):
         if api_client is None:
-            api_client = ApiClient()
+            api_client = ApiClient(Configuration())
         self.api_client = api_client
 
         self._check_aws_logs_lambda_async_endpoint = _Endpoint(

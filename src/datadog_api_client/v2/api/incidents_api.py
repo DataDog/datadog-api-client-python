@@ -7,6 +7,7 @@ import collections
 from typing import Any, Dict, List, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
+from datadog_api_client.configuration import Configuration
 from datadog_api_client.model_utils import (
     set_attribute_from_path,
     get_attribute_from_path,
@@ -35,7 +36,7 @@ class IncidentsApi:
 
     def __init__(self, api_client=None):
         if api_client is None:
-            api_client = ApiClient()
+            api_client = ApiClient(Configuration())
         self.api_client = api_client
 
         self._create_incident_endpoint = _Endpoint(

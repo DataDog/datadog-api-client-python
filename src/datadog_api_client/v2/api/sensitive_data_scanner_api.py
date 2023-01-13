@@ -6,6 +6,7 @@ from __future__ import annotations
 from typing import Any, Dict
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
+from datadog_api_client.configuration import Configuration
 from datadog_api_client.v2.model.sensitive_data_scanner_get_config_response import SensitiveDataScannerGetConfigResponse
 from datadog_api_client.v2.model.sensitive_data_scanner_reorder_groups_response import (
     SensitiveDataScannerReorderGroupsResponse,
@@ -53,7 +54,7 @@ class SensitiveDataScannerApi:
 
     def __init__(self, api_client=None):
         if api_client is None:
-            api_client = ApiClient()
+            api_client = ApiClient(Configuration())
         self.api_client = api_client
 
         self._create_scanning_group_endpoint = _Endpoint(

@@ -6,6 +6,7 @@ from __future__ import annotations
 from typing import Any, Dict
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
+from datadog_api_client.configuration import Configuration
 from datadog_api_client.v1.model.webhooks_integration_custom_variable_response import (
     WebhooksIntegrationCustomVariableResponse,
 )
@@ -26,7 +27,7 @@ class WebhooksIntegrationApi:
 
     def __init__(self, api_client=None):
         if api_client is None:
-            api_client = ApiClient()
+            api_client = ApiClient(Configuration())
         self.api_client = api_client
 
         self._create_webhooks_integration_endpoint = _Endpoint(

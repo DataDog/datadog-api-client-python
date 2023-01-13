@@ -6,6 +6,7 @@ from __future__ import annotations
 from typing import Any, Dict
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
+from datadog_api_client.configuration import Configuration
 from datadog_api_client.v1.model.intake_payload_accepted import IntakePayloadAccepted
 from datadog_api_client.v1.model.service_checks import ServiceChecks
 
@@ -27,7 +28,7 @@ class ServiceChecksApi:
 
     def __init__(self, api_client=None):
         if api_client is None:
-            api_client = ApiClient()
+            api_client = ApiClient(Configuration())
         self.api_client = api_client
 
         self._submit_service_check_endpoint = _Endpoint(
