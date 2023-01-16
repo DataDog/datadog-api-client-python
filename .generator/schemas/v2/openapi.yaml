@@ -11485,6 +11485,7 @@ components:
       items:
         description: An individual value for a given time.
         format: double
+        nullable: true
         type: number
       type: array
     TimeseriesResponseValuesList:
