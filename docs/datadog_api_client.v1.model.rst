@@ -1233,6 +1233,27 @@ list\_stream\_column\_width
    :members:
    :show-inheritance:
 
+list\_stream\_compute\_aggregation
+----------------------------------
+
+.. automodule:: datadog_api_client.v1.model.list_stream_compute_aggregation
+   :members:
+   :show-inheritance:
+
+list\_stream\_compute\_items
+----------------------------
+
+.. automodule:: datadog_api_client.v1.model.list_stream_compute_items
+   :members:
+   :show-inheritance:
+
+list\_stream\_group\_by\_items
+------------------------------
+
+.. automodule:: datadog_api_client.v1.model.list_stream_group_by_items
+   :members:
+   :show-inheritance:
+
 list\_stream\_query
 -------------------
 
