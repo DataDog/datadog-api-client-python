@@ -7,6 +7,7 @@ from __future__ import annotations
 from datadog_api_client.model_utils import (
     ModelSimple,
     cached_property,
+    none_type,
 )
 
 
@@ -15,11 +16,11 @@ class TimeseriesResponseValues(ModelSimple):
     Array of values for an individual formula or query.
 
 
-    :type value: [float]
+    :type value: [float, none_type]
     """
 
     @cached_property
     def openapi_types(_):
         return {
-            "value": ([float],),
+            "value": ([float, none_type],),
         }
