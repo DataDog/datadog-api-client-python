@@ -333,6 +333,15 @@ Feature: Dashboards
     And the response "widgets[0].definition.requests[0].queries[0].storage" is equal to "online_archives"
 
   @team:DataDog/dashboards
+  Scenario: Create a new dashboard with logs_pattern_stream list_stream widget
+    Given new "CreateDashboard" request
+    And body with value {"layout_type": "ordered", "title": "{{ unique }} with list_stream widget","widgets": [{"definition": {"type": "list_stream","requests": [{"columns":[{"width":"auto","field":"timestamp"}],"query":{"data_source":"logs_pattern_stream","query_string":"","group_by":[{"facet":"service"}]},"response_format":"event_list"}]}}]}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.requests[0].query.data_source" is equal to "logs_pattern_stream"
+    And the response "widgets[0].definition.requests[0].query.group_by[0].facet" is equal to "service"
+
+  @team:DataDog/dashboards
   Scenario: Create a new dashboard with logs_stream list_stream widget and storage parameter
     Given new "CreateDashboard" request
     And body with value {"layout_type": "ordered", "title": "{{ unique }} with list_stream widget","widgets": [{"definition": {"type": "list_stream","requests": [{"columns":[{"width":"auto","field":"timestamp"}],"query":{"data_source":"logs_stream","query_string":"", "storage": "hot"},"response_format":"event_list"}]}}]}
@@ -341,6 +350,17 @@ Feature: Dashboards
     And the response "widgets[0].definition.type" is equal to "list_stream"
     And the response "widgets[0].definition.requests[0].query.data_source" is equal to "logs_stream"
     And the response "widgets[0].definition.requests[0].query.storage" is equal to "hot"
+
+  @team:DataDog/dashboards
+  Scenario: Create a new dashboard with logs_transaction_stream list_stream widget
+    Given new "CreateDashboard" request
+    And body with value {"layout_type": "ordered", "title": "{{ unique }} with list_stream widget","widgets": [{"definition": {"type": "list_stream","requests": [{"columns":[{"width":"auto","field":"timestamp"}],"query":{"data_source":"logs_transaction_stream","query_string":"","group_by":[{"facet":"service"}],"compute":[{"facet":"service","aggregation":"count"}]},"response_format":"event_list"}]}}]}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.requests[0].query.data_source" is equal to "logs_transaction_stream"
+    And the response "widgets[0].definition.requests[0].query.group_by[0].facet" is equal to "service"
+    And the response "widgets[0].definition.requests[0].query.compute[0].facet" is equal to "service"
+    And the response "widgets[0].definition.requests[0].query.compute[0].aggregation" is equal to "count"
 
   @team:DataDog/dashboards
   Scenario: Create a new dashboard with manage_status widget
