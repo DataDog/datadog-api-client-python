@@ -32,11 +32,8 @@ jobs:
 
       - name: set SPHINX_VERSION
         run: |
-          echo "SPHINX_VERSION=$(
-            pip install --upgrade sphinx== 2>&1 | \
-            grep "from versions:" | \
-            sed "s/^.*from versions: \(.*\))/\1/" | \
-            awk -F ", " '{print $NF}')" >> $GITHUB_ENV
+          tox -edocs --notest
+          echo "SPHINX_VERSION=$(.tox/docs/bin/python -c "import importlib.metadata;print(importlib.metadata.version('sphinx'))")" >> $GITHUB_ENV
 
       - name: Cache sphinx
         uses: actions/cache@v3
