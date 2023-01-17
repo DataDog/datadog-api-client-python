@@ -1,0 +1,42 @@
+interactions:
+- request:
+    body: '{"layout_type":"ordered","title":"Test-Create_a_new_dashboard_with_logs_pattern_stream_list_stream_widget-1673628237
+      with list_stream widget","widgets":[{"definition":{"requests":[{"columns":[{"field":"timestamp","width":"auto"}],"query":{"data_source":"logs_pattern_stream","group_by":[{"facet":"service"}],"query_string":""},"response_format":"event_list"}],"type":"list_stream"}}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/dashboard
+  response:
+    body:
+      string: '{"notify_list":null,"description":null,"restricted_roles":[],"author_name":null,"template_variables":null,"is_read_only":false,"id":"vqp-zrn-fki","title":"Test-Create_a_new_dashboard_with_logs_pattern_stream_list_stream_widget-1673628237
+        with list_stream widget","url":"/dashboard/vqp-zrn-fki/test-createanewdashboardwithlogspatternstreamliststreamwidget-1673628237-with-li","created_at":"2023-01-13T16:43:57.974008+00:00","modified_at":"2023-01-13T16:43:57.974008+00:00","author_handle":"frog@datadoghq.com","widgets":[{"definition":{"requests":[{"query":{"query_string":"","group_by":[{"facet":"service"}],"data_source":"logs_pattern_stream"},"response_format":"event_list","columns":[{"field":"timestamp","width":"auto"}]}],"type":"list_stream"},"id":8006246428423069}],"layout_type":"ordered"}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/dashboard/vqp-zrn-fki
+  response:
+    body:
+      string: '{"deleted_dashboard_id":"vqp-zrn-fki"}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

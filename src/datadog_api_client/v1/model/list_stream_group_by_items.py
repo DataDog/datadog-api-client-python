@@ -5,22 +5,29 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
+    ModelNormal,
     cached_property,
-    none_type,
 )
 
 
-class TimeseriesResponseValues(ModelSimple):
-    """
-    Array of values for an individual formula or query.
-
-
-    :type value: [float, none_type]
-    """
-
+class ListStreamGroupByItems(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
-            "value": ([float, none_type],),
+            "facet": (str,),
         }
+
+    attribute_map = {
+        "facet": "facet",
+    }
+
+    def __init__(self_, facet: str, **kwargs):
+        """
+        List of facets on which to group.
+
+        :param facet: Facet name.
+        :type facet: str
+        """
+        super().__init__(kwargs)
+
+        self_.facet = facet
