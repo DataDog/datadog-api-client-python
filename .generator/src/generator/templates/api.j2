@@ -6,6 +6,7 @@ from typing import Any, Dict, List, Union
 import warnings
 
 from {{ package }}.api_client import ApiClient, Endpoint as _Endpoint
+from {{ package }}.configuration import Configuration
 from {{ package }}.model_utils import (
     date,
     datetime,
@@ -27,7 +28,7 @@ class {{ classname }}:
     """
     def __init__(self, api_client=None):
         if api_client is None:
-            api_client = ApiClient()
+            api_client = ApiClient(Configuration())
         self.api_client = api_client
 {% for path, method, operation in operations|sort(attribute="2.operationId") %}
     {%- set httpMethod = method.upper() %}

@@ -6,6 +6,7 @@ from __future__ import annotations
 from typing import Any, Dict
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
+from datadog_api_client.configuration import Configuration
 from datadog_api_client.v1.model.successful_signal_update_response import SuccessfulSignalUpdateResponse
 from datadog_api_client.v1.model.add_signal_to_incident_request import AddSignalToIncidentRequest
 from datadog_api_client.v1.model.signal_assignee_update_request import SignalAssigneeUpdateRequest
@@ -20,7 +21,7 @@ class SecurityMonitoringApi:
 
     def __init__(self, api_client=None):
         if api_client is None:
-            api_client = ApiClient()
+            api_client = ApiClient(Configuration())
         self.api_client = api_client
 
         self._add_security_monitoring_signal_to_incident_endpoint = _Endpoint(

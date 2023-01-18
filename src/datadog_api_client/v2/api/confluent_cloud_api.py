@@ -6,6 +6,7 @@ from __future__ import annotations
 from typing import Any, Dict
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
+from datadog_api_client.configuration import Configuration
 from datadog_api_client.v2.model.confluent_accounts_response import ConfluentAccountsResponse
 from datadog_api_client.v2.model.confluent_account_response import ConfluentAccountResponse
 from datadog_api_client.v2.model.confluent_account_create_request import ConfluentAccountCreateRequest
@@ -22,7 +23,7 @@ class ConfluentCloudApi:
 
     def __init__(self, api_client=None):
         if api_client is None:
-            api_client = ApiClient()
+            api_client = ApiClient(Configuration())
         self.api_client = api_client
 
         self._create_confluent_account_endpoint = _Endpoint(

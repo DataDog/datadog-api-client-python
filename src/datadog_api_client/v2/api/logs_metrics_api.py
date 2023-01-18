@@ -6,6 +6,7 @@ from __future__ import annotations
 from typing import Any, Dict
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
+from datadog_api_client.configuration import Configuration
 from datadog_api_client.v2.model.logs_metrics_response import LogsMetricsResponse
 from datadog_api_client.v2.model.logs_metric_response import LogsMetricResponse
 from datadog_api_client.v2.model.logs_metric_create_request import LogsMetricCreateRequest
@@ -19,7 +20,7 @@ class LogsMetricsApi:
 
     def __init__(self, api_client=None):
         if api_client is None:
-            api_client = ApiClient()
+            api_client = ApiClient(Configuration())
         self.api_client = api_client
 
         self._create_logs_metric_endpoint = _Endpoint(

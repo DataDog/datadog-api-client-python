@@ -6,6 +6,7 @@ from __future__ import annotations
 from typing import Any, Dict
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
+from datadog_api_client.configuration import Configuration
 from datadog_api_client.v1.model.ip_ranges import IPRanges
 
 
@@ -16,7 +17,7 @@ class IPRangesApi:
 
     def __init__(self, api_client=None):
         if api_client is None:
-            api_client = ApiClient()
+            api_client = ApiClient(Configuration())
         self.api_client = api_client
 
         self._get_ip_ranges_endpoint = _Endpoint(
