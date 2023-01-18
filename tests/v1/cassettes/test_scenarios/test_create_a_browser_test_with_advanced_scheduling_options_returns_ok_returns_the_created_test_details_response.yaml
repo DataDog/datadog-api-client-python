@@ -1,0 +1,44 @@
+interactions:
+- request:
+    body: '{"config":{"assertions":[],"configVariables":[{"example":"content-type","name":"PROPERTY","pattern":"content-type","type":"text"}],"request":{"method":"GET","url":"https://datadoghq.com"},"setCookie":"name:test"},"locations":["aws:us-east-2"],"message":"Test
+      message","name":"Test-Create_a_browser_test_with_advanced_scheduling_options_returns_OK_Returns_the_created_test_details_r-1674055921","options":{"accept_self_signed":false,"allow_insecure":true,"device_ids":["tablet"],"disableCors":true,"follow_redirects":true,"min_failure_duration":10,"min_location_failed":1,"noScreenshot":true,"retry":{"count":3,"interval":10},"scheduling":{"timeframes":[{"day":1,"from":"07:00","to":"16:00"},{"day":3,"from":"07:00","to":"16:00"}],"timezone":"America/New_York"},"tick_every":300},"steps":[{"allowFailure":false,"isCritical":true,"name":"Refresh
+      page","params":{},"type":"refresh"}],"tags":["testing:browser"],"type":"browser"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/synthetics/tests/browser
+  response:
+    body:
+      string: '{"status":"paused","public_id":"f8y-yzi-hv8","tags":["testing:browser"],"org_id":321813,"locations":["aws:us-east-2"],"message":"Test
+        message","deleted_at":null,"name":"Test-Create_a_browser_test_with_advanced_scheduling_options_returns_OK_Returns_the_created_test_details_r-1674055921","monitor_id":108240886,"type":"browser","created_at":"2023-01-18T15:32:01.800845+00:00","modified_at":"2023-01-18T15:32:01.800845+00:00","steps":[{"name":"Refresh
+        page","allowFailure":false,"params":{},"isCritical":true,"type":"refresh"}],"config":{"setCookie":"name:test","request":{"url":"https://datadoghq.com","method":"GET"},"assertions":[],"configVariables":[{"pattern":"content-type","type":"text","example":"content-type","name":"PROPERTY"}]},"options":{"accept_self_signed":false,"retry":{"count":3,"interval":10},"min_location_failed":1,"allow_insecure":true,"follow_redirects":true,"min_failure_duration":10,"noScreenshot":true,"disableCors":true,"scheduling":{"timezone":"America/New_York","timeframes":[{"to":"16:00","from":"07:00","day":1},{"to":"16:00","from":"07:00","day":3}]},"device_ids":["tablet"],"tick_every":300}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"public_ids":["f8y-yzi-hv8"]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/synthetics/tests/delete
+  response:
+    body:
+      string: '{"deleted_tests":[{"deleted_at":"2023-01-18T15:32:02.187090+00:00","public_id":"f8y-yzi-hv8"}]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

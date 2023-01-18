@@ -21,6 +21,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.synthetics_restricted_roles import SyntheticsRestrictedRoles
     from datadog_api_client.v1.model.synthetics_test_options_retry import SyntheticsTestOptionsRetry
     from datadog_api_client.v1.model.synthetics_browser_test_rum_settings import SyntheticsBrowserTestRumSettings
+    from datadog_api_client.v1.model.synthetics_test_options_scheduling import SyntheticsTestOptionsScheduling
 
 
 class SyntheticsTestOptions(ModelNormal):
@@ -46,6 +47,7 @@ class SyntheticsTestOptions(ModelNormal):
         from datadog_api_client.v1.model.synthetics_restricted_roles import SyntheticsRestrictedRoles
         from datadog_api_client.v1.model.synthetics_test_options_retry import SyntheticsTestOptionsRetry
         from datadog_api_client.v1.model.synthetics_browser_test_rum_settings import SyntheticsBrowserTestRumSettings
+        from datadog_api_client.v1.model.synthetics_test_options_scheduling import SyntheticsTestOptionsScheduling
 
         return {
             "accept_self_signed": (bool,),
@@ -68,6 +70,7 @@ class SyntheticsTestOptions(ModelNormal):
             "restricted_roles": (SyntheticsRestrictedRoles,),
             "retry": (SyntheticsTestOptionsRetry,),
             "rum_settings": (SyntheticsBrowserTestRumSettings,),
+            "scheduling": (SyntheticsTestOptionsScheduling,),
             "tick_every": (int,),
         }
 
@@ -92,6 +95,7 @@ class SyntheticsTestOptions(ModelNormal):
         "restricted_roles": "restricted_roles",
         "retry": "retry",
         "rum_settings": "rumSettings",
+        "scheduling": "scheduling",
         "tick_every": "tick_every",
     }
 
@@ -117,6 +121,7 @@ class SyntheticsTestOptions(ModelNormal):
         restricted_roles: Union[SyntheticsRestrictedRoles, UnsetType] = unset,
         retry: Union[SyntheticsTestOptionsRetry, UnsetType] = unset,
         rum_settings: Union[SyntheticsBrowserTestRumSettings, UnsetType] = unset,
+        scheduling: Union[SyntheticsTestOptionsScheduling, UnsetType] = unset,
         tick_every: Union[int, UnsetType] = unset,
         **kwargs,
     ):
@@ -196,6 +201,9 @@ class SyntheticsTestOptions(ModelNormal):
             RUM data is collected using the specified application.
         :type rum_settings: SyntheticsBrowserTestRumSettings, optional
 
+        :param scheduling: Object containing timeframes and timezone used for advanced scheduling.
+        :type scheduling: SyntheticsTestOptionsScheduling, optional
+
         :param tick_every: The frequency at which to run the Synthetic test (in seconds).
         :type tick_every: int, optional
         """
@@ -239,6 +247,8 @@ class SyntheticsTestOptions(ModelNormal):
             kwargs["retry"] = retry
         if rum_settings is not unset:
             kwargs["rum_settings"] = rum_settings
+        if scheduling is not unset:
+            kwargs["scheduling"] = scheduling
         if tick_every is not unset:
             kwargs["tick_every"] = tick_every
         super().__init__(kwargs)
