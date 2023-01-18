@@ -4061,6 +4061,20 @@ synthetics\_test\_options\_retry
    :members:
    :show-inheritance:
 
+synthetics\_test\_options\_scheduling
+-------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_test_options_scheduling
+   :members:
+   :show-inheritance:
+
+synthetics\_test\_options\_scheduling\_timeframe
+------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_test_options_scheduling_timeframe
+   :members:
+   :show-inheritance:
+
 synthetics\_test\_pause\_status
 -------------------------------
 

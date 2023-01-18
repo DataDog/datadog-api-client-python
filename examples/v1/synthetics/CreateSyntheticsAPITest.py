@@ -20,6 +20,10 @@ from datadog_api_client.v1.model.synthetics_test_options import SyntheticsTestOp
 from datadog_api_client.v1.model.synthetics_test_options_http_version import SyntheticsTestOptionsHTTPVersion
 from datadog_api_client.v1.model.synthetics_test_options_monitor_options import SyntheticsTestOptionsMonitorOptions
 from datadog_api_client.v1.model.synthetics_test_options_retry import SyntheticsTestOptionsRetry
+from datadog_api_client.v1.model.synthetics_test_options_scheduling import SyntheticsTestOptionsScheduling
+from datadog_api_client.v1.model.synthetics_test_options_scheduling_timeframe import (
+    SyntheticsTestOptionsSchedulingTimeframe,
+)
 from datadog_api_client.v1.model.synthetics_test_pause_status import SyntheticsTestPauseStatus
 from datadog_api_client.v1.model.synthetics_test_request import SyntheticsTestRequest
 
@@ -61,6 +65,21 @@ body = SyntheticsAPITest(
             application_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
             client_token_id=12345,
             is_enabled=True,
+        ),
+        scheduling=SyntheticsTestOptionsScheduling(
+            timeframes=[
+                SyntheticsTestOptionsSchedulingTimeframe(
+                    day=1,
+                    _from="07:00",
+                    to="16:00",
+                ),
+                SyntheticsTestOptionsSchedulingTimeframe(
+                    day=3,
+                    _from="07:00",
+                    to="16:00",
+                ),
+            ],
+            timezone="America/New_York",
         ),
     ),
     status=SyntheticsTestPauseStatus.LIVE,

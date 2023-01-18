@@ -629,7 +629,7 @@ Feature: Dashboards
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/dashboards
+  @replay-only @team:DataDog/dashboards
   Scenario: Get deleted dashboards returns "OK" response
     Given new "ListDashboards" request
     And there is a valid "dashboard" in the system
