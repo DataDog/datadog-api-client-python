@@ -30,12 +30,17 @@ jobs:
       - name: Install tox
         run: pip install tox
 
+      - name: set SPHINX_VERSION
+        run: |
+          tox -edocs --notest
+          echo "SPHINX_VERSION=$(.tox/docs/bin/python -c "import importlib.metadata;print(importlib.metadata.version('sphinx'))")" >> $GITHUB_ENV
+
       - name: Cache sphinx
         uses: actions/cache@v3
         with:
           path: docs/.sphinx
-          key: sphinx-${{ hashFiles('.generator/schemas/**/openapi.yaml') }}
-          restore-keys: sphinx-
+          key: sphinx-${{ env.SPHINX_VERSION }}-${{ hashFiles('.generator/schemas/**/openapi.yaml') }}
+          restore-keys: sphinx-${{ env.SPHINX_VERSION }}
 
       - name: Build documentation
         run: tox -e docs
