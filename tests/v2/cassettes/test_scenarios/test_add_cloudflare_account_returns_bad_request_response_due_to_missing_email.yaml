@@ -1,0 +1,21 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"api_key":"test-api-key","name":"test-name"},"type":"cloudflare-accounts"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/integrations/cloudflare/accounts
+  response:
+    body:
+      string: '{"errors":["{u''_schema'': [''Email address is required if providing
+        an api key and not an api token.'']}"]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 400
+      message: Bad Request
+version: 1

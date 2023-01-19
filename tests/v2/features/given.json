@@ -111,6 +111,18 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"cloudflare-accounts\",\n    \"attributes\": {\n      \"api_key\": \"6Zm7WEgKzAlCnt_4exfEK0mSoeHHAaDf41O1AAfu\",\n      \"name\": \"datadog-dev\",\n      \"email\": \"dev@datadog.com\"\n    }\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"cloudflare_account\" in the system",
+    "key": "cloudflare_account",
+    "tag": "Cloudflare Integration",
+    "operationId": "CreateCloudflareAccount"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"type\": \"confluent-cloud-accounts\",\n    \"attributes\": {\n      \"api_key\": \"{{ unique_alnum }}\",\n      \"api_secret\": \"test-api-secret\",\n      \"tags\": [\n        \"tag1\",\n        \"tag2:val2\"\n      ],\n      \"resources\": [\n        {\n          \"id\": \"test-resource-id\",\n          \"resource_type\": \"kafka\",\n          \"tags\": [\n            \"tag1\",\n            \"tag2:val2\"\n          ]\n        }\n      ]\n    }\n  }\n}"
       }
     ],

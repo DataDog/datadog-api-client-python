@@ -36,6 +36,13 @@ cloud\_workload\_security\_api
    :members:
    :show-inheritance:
 
+cloudflare\_integration\_api
+----------------------------
+
+.. automodule:: datadog_api_client.v2.api.cloudflare_integration_api
+   :members:
+   :show-inheritance:
+
 confluent\_cloud\_api
 ---------------------
 
