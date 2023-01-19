@@ -1912,6 +1912,13 @@ monitor\_options\_aggregation
    :members:
    :show-inheritance:
 
+monitor\_options\_notification\_presets
+---------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.monitor_options_notification_presets
+   :members:
+   :show-inheritance:
+
 monitor\_options\_scheduling\_options
 -------------------------------------
 
