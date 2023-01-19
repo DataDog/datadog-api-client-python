@@ -48,7 +48,7 @@ class SyntheticsTestOptionsScheduling(ModelNormal):
         :param timeframes: Array containing objects describing the scheduling pattern to apply to each day.
         :type timeframes: [SyntheticsTestOptionsSchedulingTimeframe], optional
 
-        :param timezone: Timezone on which the timeframe are based.
+        :param timezone: Timezone in which the timeframe is based.
         :type timezone: str, optional
         """
         if timeframes is not unset:
