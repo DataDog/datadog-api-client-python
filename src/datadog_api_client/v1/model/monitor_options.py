@@ -17,6 +17,7 @@ from datadog_api_client.model_utils import (
 if TYPE_CHECKING:
     from datadog_api_client.v1.model.monitor_options_aggregation import MonitorOptionsAggregation
     from datadog_api_client.v1.model.monitor_device_id import MonitorDeviceID
+    from datadog_api_client.v1.model.monitor_options_notification_presets import MonitorOptionsNotificationPresets
     from datadog_api_client.v1.model.on_missing_data_option import OnMissingDataOption
     from datadog_api_client.v1.model.monitor_renotify_status_type import MonitorRenotifyStatusType
     from datadog_api_client.v1.model.monitor_options_scheduling_options import MonitorOptionsSchedulingOptions
@@ -42,6 +43,7 @@ class MonitorOptions(ModelNormal):
     def openapi_types(_):
         from datadog_api_client.v1.model.monitor_options_aggregation import MonitorOptionsAggregation
         from datadog_api_client.v1.model.monitor_device_id import MonitorDeviceID
+        from datadog_api_client.v1.model.monitor_options_notification_presets import MonitorOptionsNotificationPresets
         from datadog_api_client.v1.model.on_missing_data_option import OnMissingDataOption
         from datadog_api_client.v1.model.monitor_renotify_status_type import MonitorRenotifyStatusType
         from datadog_api_client.v1.model.monitor_options_scheduling_options import MonitorOptionsSchedulingOptions
@@ -67,6 +69,7 @@ class MonitorOptions(ModelNormal):
             "new_group_delay": (int, none_type),
             "new_host_delay": (int, none_type),
             "no_data_timeframe": (int, none_type),
+            "notification_preset_name": (MonitorOptionsNotificationPresets,),
             "notify_audit": (bool,),
             "notify_by": ([str],),
             "notify_no_data": (bool,),
@@ -107,6 +110,7 @@ class MonitorOptions(ModelNormal):
         "new_group_delay": "new_group_delay",
         "new_host_delay": "new_host_delay",
         "no_data_timeframe": "no_data_timeframe",
+        "notification_preset_name": "notification_preset_name",
         "notify_audit": "notify_audit",
         "notify_by": "notify_by",
         "notify_no_data": "notify_no_data",
@@ -145,6 +149,7 @@ class MonitorOptions(ModelNormal):
         new_group_delay: Union[int, none_type, UnsetType] = unset,
         new_host_delay: Union[int, none_type, UnsetType] = unset,
         no_data_timeframe: Union[int, none_type, UnsetType] = unset,
+        notification_preset_name: Union[MonitorOptionsNotificationPresets, UnsetType] = unset,
         notify_audit: Union[bool, UnsetType] = unset,
         notify_by: Union[List[str], UnsetType] = unset,
         notify_no_data: Union[bool, UnsetType] = unset,
@@ -238,6 +243,9 @@ class MonitorOptions(ModelNormal):
             If omitted, 2x the evaluation timeframe is used for query alerts, and 24 hours is used for service checks.
         :type no_data_timeframe: int, none_type, optional
 
+        :param notification_preset_name: Toggles the display of additional content sent in the monitor notification.
+        :type notification_preset_name: MonitorOptionsNotificationPresets, optional
+
         :param notify_audit: A Boolean indicating whether tagged users is notified on changes to this monitor.
         :type notify_audit: bool, optional
 
@@ -325,6 +333,8 @@ class MonitorOptions(ModelNormal):
             kwargs["new_host_delay"] = new_host_delay
         if no_data_timeframe is not unset:
             kwargs["no_data_timeframe"] = no_data_timeframe
+        if notification_preset_name is not unset:
+            kwargs["notification_preset_name"] = notification_preset_name
         if notify_audit is not unset:
             kwargs["notify_audit"] = notify_audit
         if notify_by is not unset:
