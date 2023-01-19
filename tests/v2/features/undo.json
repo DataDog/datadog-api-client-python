@@ -310,6 +310,43 @@
       "type": "idempotent"
     }
   },
+  "ListCloudflareAccounts": {
+    "tag": "Cloudflare Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateCloudflareAccount": {
+    "tag": "Cloudflare Integration",
+    "undo": {
+      "operationId": "DeleteCloudflareAccount",
+      "parameters": [
+        {
+          "name": "account_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteCloudflareAccount": {
+    "tag": "Cloudflare Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetCloudflareAccount": {
+    "tag": "Cloudflare Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateCloudflareAccount": {
+    "tag": "Cloudflare Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListConfluentAccount": {
     "tag": "Confluent Cloud",
     "undo": {

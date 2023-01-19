@@ -827,6 +827,83 @@ cloud\_workload\_security\_agent\_rules\_list\_response
    :members:
    :show-inheritance:
 
+cloudflare\_account\_create\_request
+------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cloudflare_account_create_request
+   :members:
+   :show-inheritance:
+
+cloudflare\_account\_create\_request\_attributes
+------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cloudflare_account_create_request_attributes
+   :members:
+   :show-inheritance:
+
+cloudflare\_account\_create\_request\_data
+------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cloudflare_account_create_request_data
+   :members:
+   :show-inheritance:
+
+cloudflare\_account\_response
+-----------------------------
+
+.. automodule:: datadog_api_client.v2.model.cloudflare_account_response
+   :members:
+   :show-inheritance:
+
+cloudflare\_account\_response\_attributes
+-----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cloudflare_account_response_attributes
+   :members:
+   :show-inheritance:
+
+cloudflare\_account\_response\_data
+-----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cloudflare_account_response_data
+   :members:
+   :show-inheritance:
+
+cloudflare\_account\_type
+-------------------------
+
+.. automodule:: datadog_api_client.v2.model.cloudflare_account_type
+   :members:
+   :show-inheritance:
+
+cloudflare\_account\_update\_request
+------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cloudflare_account_update_request
+   :members:
+   :show-inheritance:
+
+cloudflare\_account\_update\_request\_attributes
+------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cloudflare_account_update_request_attributes
+   :members:
+   :show-inheritance:
+
+cloudflare\_account\_update\_request\_data
+------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cloudflare_account_update_request_data
+   :members:
+   :show-inheritance:
+
+cloudflare\_accounts\_response
+------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cloudflare_accounts_response
+   :members:
+   :show-inheritance:
+
 confluent\_account\_create\_request
 -----------------------------------
 
