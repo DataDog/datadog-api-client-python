@@ -135,6 +135,18 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"fastly-accounts\",\n    \"attributes\": {\n      \"api_key\": \"{{ unique_alnum }}\",\n      \"name\": \"test-name\",\n      \"services\": []\n    }\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"fastly_account\" in the system",
+    "key": "fastly_account",
+    "tag": "Fastly Integration",
+    "operationId": "CreateFastlyAccount"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"id\": \"{{ unique }}\",\n    \"attributes\": {\n      \"filter\": {\n        \"query\": \"source:{{ unique }}\"\n      },\n      \"compute\": {\n        \"aggregation_type\": \"count\"\n      }\n    },\n    \"type\": \"logs_metrics\"\n  }\n}"
       }
     ],

@@ -1,0 +1,58 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"api_key":"TestUpdateFastlyaccountreturnsOKresponse1672855615","name":"test-name","services":[]},"type":"fastly-accounts"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/integrations/fastly/accounts
+  response:
+    body:
+      string: '{"data":{"attributes":{"services":[],"name":"test-name"},"type":"fastly-accounts","id":"42ed7da188c8af4a6964376d49bb7caa"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"api_key":"update-secret"},"type":"fastly-accounts"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/integrations/fastly/accounts/42ed7da188c8af4a6964376d49bb7caa
+  response:
+    body:
+      string: '{"data":{"attributes":{"services":[],"name":"test-name"},"type":"fastly-accounts","id":"42ed7da188c8af4a6964376d49bb7caa"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/integrations/fastly/accounts/42ed7da188c8af4a6964376d49bb7caa
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - text/html; charset=utf-8
+    status:
+      code: 204
+      message: No Content
+version: 1

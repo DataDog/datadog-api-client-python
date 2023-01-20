@@ -1352,6 +1352,132 @@ events\_warning
    :members:
    :show-inheritance:
 
+fastly\_accoun\_response\_attributes
+------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.fastly_accoun_response_attributes
+   :members:
+   :show-inheritance:
+
+fastly\_account\_create\_request
+--------------------------------
+
+.. automodule:: datadog_api_client.v2.model.fastly_account_create_request
+   :members:
+   :show-inheritance:
+
+fastly\_account\_create\_request\_attributes
+--------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.fastly_account_create_request_attributes
+   :members:
+   :show-inheritance:
+
+fastly\_account\_create\_request\_data
+--------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.fastly_account_create_request_data
+   :members:
+   :show-inheritance:
+
+fastly\_account\_response
+-------------------------
+
+.. automodule:: datadog_api_client.v2.model.fastly_account_response
+   :members:
+   :show-inheritance:
+
+fastly\_account\_response\_data
+-------------------------------
+
+.. automodule:: datadog_api_client.v2.model.fastly_account_response_data
+   :members:
+   :show-inheritance:
+
+fastly\_account\_type
+---------------------
+
+.. automodule:: datadog_api_client.v2.model.fastly_account_type
+   :members:
+   :show-inheritance:
+
+fastly\_account\_update\_request
+--------------------------------
+
+.. automodule:: datadog_api_client.v2.model.fastly_account_update_request
+   :members:
+   :show-inheritance:
+
+fastly\_account\_update\_request\_attributes
+--------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.fastly_account_update_request_attributes
+   :members:
+   :show-inheritance:
+
+fastly\_account\_update\_request\_data
+--------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.fastly_account_update_request_data
+   :members:
+   :show-inheritance:
+
+fastly\_accounts\_response
+--------------------------
+
+.. automodule:: datadog_api_client.v2.model.fastly_accounts_response
+   :members:
+   :show-inheritance:
+
+fastly\_service
+---------------
+
+.. automodule:: datadog_api_client.v2.model.fastly_service
+   :members:
+   :show-inheritance:
+
+fastly\_service\_attributes
+---------------------------
+
+.. automodule:: datadog_api_client.v2.model.fastly_service_attributes
+   :members:
+   :show-inheritance:
+
+fastly\_service\_data
+---------------------
+
+.. automodule:: datadog_api_client.v2.model.fastly_service_data
+   :members:
+   :show-inheritance:
+
+fastly\_service\_request
+------------------------
+
+.. automodule:: datadog_api_client.v2.model.fastly_service_request
+   :members:
+   :show-inheritance:
+
+fastly\_service\_response
+-------------------------
+
+.. automodule:: datadog_api_client.v2.model.fastly_service_response
+   :members:
+   :show-inheritance:
+
+fastly\_service\_type
+---------------------
+
+.. automodule:: datadog_api_client.v2.model.fastly_service_type
+   :members:
+   :show-inheritance:
+
+fastly\_services\_response
+--------------------------
+
+.. automodule:: datadog_api_client.v2.model.fastly_services_response
+   :members:
+   :show-inheritance:
+
 formula\_limit
 --------------
 

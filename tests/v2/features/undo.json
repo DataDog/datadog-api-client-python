@@ -414,6 +414,80 @@
       "type": "idempotent"
     }
   },
+  "ListFastlyAccounts": {
+    "tag": "Fastly Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateFastlyAccount": {
+    "tag": "Fastly Integration",
+    "undo": {
+      "operationId": "DeleteFastlyAccount",
+      "parameters": [
+        {
+          "name": "account_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteFastlyAccount": {
+    "tag": "Fastly Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetFastlyAccount": {
+    "tag": "Fastly Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateFastlyAccount": {
+    "tag": "Fastly Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListFastlyServices": {
+    "tag": "Fastly Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateFastlyService": {
+    "tag": "Fastly Integration",
+    "undo": {
+      "operationId": "DeleteFastlyService",
+      "parameters": [
+        {
+          "name": "account_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteFastlyService": {
+    "tag": "Fastly Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetFastlyService": {
+    "tag": "Fastly Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateFastlyService": {
+    "tag": "Fastly Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "SubmitLog": {
     "tag": "Logs",
     "undo": {
