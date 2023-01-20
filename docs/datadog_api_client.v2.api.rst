@@ -64,6 +64,13 @@ events\_api
    :members:
    :show-inheritance:
 
+fastly\_integration\_api
+------------------------
+
+.. automodule:: datadog_api_client.v2.api.fastly_integration_api
+   :members:
+   :show-inheritance:
+
 incident\_services\_api
 -----------------------
 

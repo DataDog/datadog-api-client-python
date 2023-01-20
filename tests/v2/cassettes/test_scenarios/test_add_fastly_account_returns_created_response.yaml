@@ -1,0 +1,38 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"api_key":"TestAddFastlyaccountreturnsCREATEDresponse1674141356","name":"Test-Add_Fastly_account_returns_CREATED_response-1674141356","services":[]},"type":"fastly-accounts"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/integrations/fastly/accounts
+  response:
+    body:
+      string: '{"data":{"attributes":{"services":[],"name":"Test-Add_Fastly_account_returns_CREATED_response-1674141356"},"type":"fastly-accounts","id":"0427b05b6f56f454ca1477aa8df5e75d"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/integrations/fastly/accounts/0427b05b6f56f454ca1477aa8df5e75d
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - text/html; charset=utf-8
+    status:
+      code: 204
+      message: No Content
+version: 1
