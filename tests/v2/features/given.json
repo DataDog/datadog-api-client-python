@@ -328,7 +328,7 @@
     "parameters": [
       {
         "name": "body",
-        "value": "{\n  \"data\": {\n    \"type\": \"sensitive_data_scanner_rule\",\n    \"attributes\": {\n      \"name\": \"{{ unique }}\",\n      \"pattern\": \"pattern\",\n      \"text_replacement\": {\n        \"type\": \"none\"\n      },\n      \"tags\":[\n        \"sensitive_data:true\"\n      ],\n      \"is_enabled\":true\n    },\n    \"relationships\": {\n      \"group\": {\n        \"data\": {\n          \"id\": \"{{ group.data.id }}\",\n          \"type\": \"{{ group.data.type }}\"\n        }\n      }\n    }\n  },\n  \"meta\": {}\n}"
+        "value": "{\n  \"data\": {\n    \"type\": \"sensitive_data_scanner_rule\",\n    \"attributes\": {\n      \"name\": \"{{ unique }}\",\n      \"pattern\": \"pattern\",\n      \"namespaces\": [\"admin.email\"],\n      \"text_replacement\": {\n        \"type\": \"none\"\n      },\n      \"tags\":[\n        \"sensitive_data:true\"\n      ],\n      \"is_enabled\":true\n    },\n    \"relationships\": {\n      \"group\": {\n        \"data\": {\n          \"id\": \"{{ group.data.id }}\",\n          \"type\": \"{{ group.data.type }}\"\n        }\n      }\n    }\n  },\n  \"meta\": {}\n}"
       }
     ],
     "step": "the \"scanning_group\" has a \"scanning_rule\"",

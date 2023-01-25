@@ -37,7 +37,7 @@ Feature: Sensitive Data Scanner
     Given a valid "configuration" in the system
     And there is a valid "scanning_group" in the system
     And new "CreateScanningRule" request
-    And body with value {"meta":{},"data":{"type":"sensitive_data_scanner_rule","attributes":{"name":"{{ unique }}","pattern":"pattern","text_replacement":{"type":"none"},"tags":["sensitive_data:true"],"is_enabled":true},"relationships":{"group":{"data":{"type":"{{ group.data.type }}","id":"{{ group.data.id }}"}}}}}
+    And body with value {"meta":{},"data":{"type":"sensitive_data_scanner_rule","attributes":{"name":"{{ unique }}","pattern":"pattern", "namespaces": ["admin"], "excluded_namespaces": ["admin.name"], "text_replacement":{"type":"none"},"tags":["sensitive_data:true"],"is_enabled":true},"relationships":{"group":{"data":{"type":"{{ group.data.type }}","id":"{{ group.data.id }}"}}}}}
     When the request is sent
     Then the response status is 200 OK
 

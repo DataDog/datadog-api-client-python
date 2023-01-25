@@ -29,6 +29,12 @@ body = SensitiveDataScannerRuleCreateRequest(
         attributes=SensitiveDataScannerRuleAttributes(
             name="Example-Create_Scanning_Rule_returns_OK_response",
             pattern="pattern",
+            namespaces=[
+                "admin",
+            ],
+            excluded_namespaces=[
+                "admin.name",
+            ],
             text_replacement=SensitiveDataScannerTextReplacement(
                 type=SensitiveDataScannerTextReplacementType.NONE,
             ),
