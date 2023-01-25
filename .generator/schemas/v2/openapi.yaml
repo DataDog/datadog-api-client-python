@@ -10905,10 +10905,11 @@ components:
         description:
           description: Description of the rule.
           type: string
-        excluded_attributes:
-          description: Attributes excluded from the scan.
+        excluded_namespaces:
+          description: Attributes excluded from the scan. If namespaces is provided,
+            it has to be a sub-path of the namespaces array.
           example:
-          - username
+          - admin.name
           items:
             type: string
           type: array
@@ -10918,6 +10919,16 @@ components:
         name:
           description: Name of the rule.
           type: string
+        namespaces:
+          description: 'Attributes included in the scan. If namespaces is empty or
+            missing, all attributes except excluded_namespaces are scanned.
+
+            If both are missing the whole event is scanned.'
+          example:
+          - admin
+          items:
+            type: string
+          type: array
         pattern:
           description: Not included if there is a relationship to a standard pattern.
           type: string

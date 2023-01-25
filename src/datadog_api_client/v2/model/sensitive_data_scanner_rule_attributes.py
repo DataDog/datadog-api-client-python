@@ -26,9 +26,10 @@ class SensitiveDataScannerRuleAttributes(ModelNormal):
 
         return {
             "description": (str,),
-            "excluded_attributes": ([str],),
+            "excluded_namespaces": ([str],),
             "is_enabled": (bool,),
             "name": (str,),
+            "namespaces": ([str],),
             "pattern": (str,),
             "tags": ([str],),
             "text_replacement": (SensitiveDataScannerTextReplacement,),
@@ -36,9 +37,10 @@ class SensitiveDataScannerRuleAttributes(ModelNormal):
 
     attribute_map = {
         "description": "description",
-        "excluded_attributes": "excluded_attributes",
+        "excluded_namespaces": "excluded_namespaces",
         "is_enabled": "is_enabled",
         "name": "name",
+        "namespaces": "namespaces",
         "pattern": "pattern",
         "tags": "tags",
         "text_replacement": "text_replacement",
@@ -47,9 +49,10 @@ class SensitiveDataScannerRuleAttributes(ModelNormal):
     def __init__(
         self_,
         description: Union[str, UnsetType] = unset,
-        excluded_attributes: Union[List[str], UnsetType] = unset,
+        excluded_namespaces: Union[List[str], UnsetType] = unset,
         is_enabled: Union[bool, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
+        namespaces: Union[List[str], UnsetType] = unset,
         pattern: Union[str, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
         text_replacement: Union[SensitiveDataScannerTextReplacement, UnsetType] = unset,
@@ -61,14 +64,18 @@ class SensitiveDataScannerRuleAttributes(ModelNormal):
         :param description: Description of the rule.
         :type description: str, optional
 
-        :param excluded_attributes: Attributes excluded from the scan.
-        :type excluded_attributes: [str], optional
+        :param excluded_namespaces: Attributes excluded from the scan. If namespaces is provided, it has to be a sub-path of the namespaces array.
+        :type excluded_namespaces: [str], optional
 
         :param is_enabled: Whether or not the rule is enabled.
         :type is_enabled: bool, optional
 
         :param name: Name of the rule.
         :type name: str, optional
+
+        :param namespaces: Attributes included in the scan. If namespaces is empty or missing, all attributes except excluded_namespaces are scanned.
+            If both are missing the whole event is scanned.
+        :type namespaces: [str], optional
 
         :param pattern: Not included if there is a relationship to a standard pattern.
         :type pattern: str, optional
@@ -81,12 +88,14 @@ class SensitiveDataScannerRuleAttributes(ModelNormal):
         """
         if description is not unset:
             kwargs["description"] = description
-        if excluded_attributes is not unset:
-            kwargs["excluded_attributes"] = excluded_attributes
+        if excluded_namespaces is not unset:
+            kwargs["excluded_namespaces"] = excluded_namespaces
         if is_enabled is not unset:
             kwargs["is_enabled"] = is_enabled
         if name is not unset:
             kwargs["name"] = name
+        if namespaces is not unset:
+            kwargs["namespaces"] = namespaces
         if pattern is not unset:
             kwargs["pattern"] = pattern
         if tags is not unset:

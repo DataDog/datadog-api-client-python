@@ -8,7 +8,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/sensitive-data-scanner/config
   response:
     body:
-      string: '{"meta":{"count_limit":100,"version":1295,"group_count_limit":20,"is_pci_compliant":false,"has_highlight_enabled":true},"data":{"relationships":{"groups":{"data":[]}},"attributes":{},"type":"sensitive_data_scanner_configuration","id":"7957915c634d4dcb581fa154157f5ad9c2947f50be632fb5599862069f4d2d87"}}
+      string: '{"data":{"id":"7957915c634d4dcb581fa154157f5ad9c2947f50be632fb5599862069f4d2d87","attributes":{},"type":"sensitive_data_scanner_configuration","relationships":{"groups":{"data":[]}}},"meta":{"version":12578,"count_limit":100,"group_count_limit":20,"is_pci_compliant":false,"has_highlight_enabled":true,"has_multi_pass_enabled":true}}
 
         '
     headers:
@@ -28,7 +28,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/sensitive-data-scanner/config/groups
   response:
     body:
-      string: '{"meta":{"version":1296},"data":{"relationships":{"rules":{"data":[]},"configuration":{"data":{"type":"sensitive_data_scanner_configuration","id":"7957915c634d4dcb581fa154157f5ad9c2947f50be632fb5599862069f4d2d87"}}},"attributes":{"is_enabled":false,"filter":{"query":"*"},"product_list":["logs"],"name":"my-test-group"},"type":"sensitive_data_scanner_group","id":"cXMD0eOmQjKTfy1Vm4wrWA"}}
+      string: '{"data":{"id":"TnVRBDeuSM67AsD6qluDxQ","attributes":{"name":"my-test-group","is_enabled":false,"filter":{"query":"*"},"product_list":["logs"]},"type":"sensitive_data_scanner_group","relationships":{"configuration":{"data":{"id":"7957915c634d4dcb581fa154157f5ad9c2947f50be632fb5599862069f4d2d87","type":"sensitive_data_scanner_configuration"}},"rules":{"data":[]}}},"meta":{"version":12579}}
 
         '
     headers:
@@ -38,7 +38,7 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"data":{"attributes":{"is_enabled":true,"name":"Test-Delete_Scanning_Rule_returns_OK_response-1671095144","pattern":"pattern","tags":["sensitive_data:true"],"text_replacement":{"type":"none"}},"relationships":{"group":{"data":{"id":"cXMD0eOmQjKTfy1Vm4wrWA","type":"sensitive_data_scanner_group"}}},"type":"sensitive_data_scanner_rule"},"meta":{}}'
+    body: '{"data":{"attributes":{"is_enabled":true,"name":"Test-Delete_Scanning_Rule_returns_OK_response-1674565935","namespaces":["admin.email"],"pattern":"pattern","tags":["sensitive_data:true"],"text_replacement":{"type":"none"}},"relationships":{"group":{"data":{"id":"TnVRBDeuSM67AsD6qluDxQ","type":"sensitive_data_scanner_group"}}},"type":"sensitive_data_scanner_rule"},"meta":{}}'
     headers:
       accept:
       - application/json
@@ -48,7 +48,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/sensitive-data-scanner/config/rules
   response:
     body:
-      string: '{"meta":{"version":1297},"data":{"relationships":{"group":{"data":{"type":"sensitive_data_scanner_group","id":"cXMD0eOmQjKTfy1Vm4wrWA"}}},"attributes":{"is_enabled":true,"excluded_namespaces":[],"name":"Test-Delete_Scanning_Rule_returns_OK_response-1671095144","tags":["sensitive_data:true"],"pattern":"pattern","namespaces":[],"text_replacement":{"type":"none"}},"type":"sensitive_data_scanner_rule","id":"0mMbznyeTb6d-9roSnX-Gw"}}
+      string: '{"data":{"id":"uTxgTNxqRy6L3a44B9KZDw","attributes":{"name":"Test-Delete_Scanning_Rule_returns_OK_response-1674565935","namespaces":["admin.email"],"excluded_namespaces":[],"pattern":"pattern","text_replacement":{"type":"none"},"tags":["sensitive_data:true"],"is_enabled":true},"type":"sensitive_data_scanner_rule","relationships":{"group":{"data":{"id":"TnVRBDeuSM67AsD6qluDxQ","type":"sensitive_data_scanner_group"}}}},"meta":{"version":12580}}
 
         '
     headers:
@@ -65,10 +65,10 @@ interactions:
       content-type:
       - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/sensitive-data-scanner/config/rules/0mMbznyeTb6d-9roSnX-Gw
+    uri: https://api.datadoghq.com/api/v2/sensitive-data-scanner/config/rules/uTxgTNxqRy6L3a44B9KZDw
   response:
     body:
-      string: '{"meta":{"version":1298}}
+      string: '{"meta":{"version":12581}}
 
         '
     headers:
@@ -85,7 +85,7 @@ interactions:
       content-type:
       - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/sensitive-data-scanner/config/rules/0mMbznyeTb6d-9roSnX-Gw
+    uri: https://api.datadoghq.com/api/v2/sensitive-data-scanner/config/rules/uTxgTNxqRy6L3a44B9KZDw
   response:
     body:
       string: '{"errors":["not_found(null)"]}
@@ -105,10 +105,10 @@ interactions:
       content-type:
       - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/sensitive-data-scanner/config/groups/cXMD0eOmQjKTfy1Vm4wrWA
+    uri: https://api.datadoghq.com/api/v2/sensitive-data-scanner/config/groups/TnVRBDeuSM67AsD6qluDxQ
   response:
     body:
-      string: '{"meta":{"version":1299}}
+      string: '{"meta":{"version":12582}}
 
         '
     headers:
