@@ -37,7 +37,7 @@ body = ServiceLevelObjectiveRequest(
         ),
     ],
     timeframe=SLOTimeframe.SEVEN_DAYS,
-    target_threshold=97.0,
+    target_threshold=95.0,
     warning_threshold=98.0,
 )
 
