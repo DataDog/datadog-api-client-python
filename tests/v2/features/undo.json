@@ -696,6 +696,43 @@
       "type": "safe"
     }
   },
+  "ListMonitorConfigPolicies": {
+    "tag": "Monitors",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateMonitorConfigPolicy": {
+    "tag": "Monitors",
+    "undo": {
+      "operationId": "DeleteMonitorConfigPolicy",
+      "parameters": [
+        {
+          "name": "policy_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteMonitorConfigPolicy": {
+    "tag": "Monitors",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetMonitorConfigPolicy": {
+    "tag": "Monitors",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateMonitorConfigPolicy": {
+    "tag": "Monitors",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListPermissions": {
     "tag": "Roles",
     "undo": {

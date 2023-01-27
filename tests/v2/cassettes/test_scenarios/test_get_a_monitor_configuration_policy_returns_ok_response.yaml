@@ -1,0 +1,56 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"policy":{"tag_key":"dc","tag_key_required":true,"valid_tag_values":["prod","staging"]},"policy_type":"tag"},"type":"monitor-config-policy"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/monitor/policy
+  response:
+    body:
+      string: '{"data":{"type":"monitor-config-policy","attributes":{"policy":{"valid_tag_values":["prod","staging"],"tag_key_required":true,"tag_key":"dc"},"policy_type":"tag"},"id":"d024d89a-9833-11ed-99f7-da7ad0900002"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/monitor/policy/d024d89a-9833-11ed-99f7-da7ad0900002
+  response:
+    body:
+      string: '{"data":{"type":"monitor-config-policy","id":"d024d89a-9833-11ed-99f7-da7ad0900002","attributes":{"policy_type":"tag","policy":{"valid_tag_values":["prod","staging"],"tag_key_required":true,"tag_key":"dc"}}}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/monitor/policy/d024d89a-9833-11ed-99f7-da7ad0900002
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - text/html; charset=utf-8
+    status:
+      code: 204
+      message: No Content
+version: 1

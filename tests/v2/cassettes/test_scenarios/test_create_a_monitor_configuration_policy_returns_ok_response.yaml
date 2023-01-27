@@ -1,0 +1,38 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"policy":{"tag_key":"datacenter","tag_key_required":true,"valid_tag_values":["prod","staging"]},"policy_type":"tag"},"type":"monitor-config-policy"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/monitor/policy
+  response:
+    body:
+      string: '{"data":{"type":"monitor-config-policy","id":"cedaaafa-9833-11ed-81a5-da7ad0900002","attributes":{"policy":{"tag_key":"datacenter","tag_key_required":true,"valid_tag_values":["prod","staging"]},"policy_type":"tag"}}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/monitor/policy/cedaaafa-9833-11ed-81a5-da7ad0900002
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - text/html; charset=utf-8
+    status:
+      code: 204
+      message: No Content
+version: 1
