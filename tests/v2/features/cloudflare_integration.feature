@@ -18,21 +18,21 @@ Feature: Cloudflare Integration
   @team:Datadog/web-integrations
   Scenario: Add Cloudflare account returns "Bad Request" response due to missing email
     Given new "CreateCloudflareAccount" request
-    And body with value {"data": {"attributes": {"api_key": "test-api-key", "name": "test-name"}, "type": "cloudflare-accounts"}}
+    And body with value {"data": {"attributes": {"api_key": "test-api-key", "name": "{{ unique_lower_alnum }}"}, "type": "cloudflare-accounts"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @team:Datadog/web-integrations
   Scenario: Add Cloudflare account returns "Bad Request" response using invalid auth key
     Given new "CreateCloudflareAccount" request
-    And body with value {"data": {"attributes": {"api_key": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "name": "test-name"}, "type": "cloudflare-accounts"}}
+    And body with value {"data": {"attributes": {"api_key": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "name": "{{ unique_lower_alnum }}"}, "type": "cloudflare-accounts"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @team:Datadog/web-integrations
   Scenario: Add Cloudflare account returns "CREATED" response
     Given new "CreateCloudflareAccount" request
-    And body with value {"data": {"attributes": {"api_key": "6Zm7WEgKzAlCnt_4exfEK0mSoeHHAaDf41O1AAfu", "email": "new@email", "name": "test-name"}, "type": "cloudflare-accounts"}}
+    And body with value {"data": {"attributes": {"api_key": "6Zm7WEgKzAlCnt_4exfEK0mSoeHHAaDf41O1AAfu", "email": "new@email", "name": "{{ unique_lower_alnum }}"}, "type": "cloudflare-accounts"}}
     When the request is sent
     Then the response status is 201 CREATED
 

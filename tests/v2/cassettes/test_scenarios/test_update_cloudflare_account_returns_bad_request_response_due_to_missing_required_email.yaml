@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"api_key":"6Zm7WEgKzAlCnt_4exfEK0mSoeHHAaDf41O1AAfu","email":"dev@datadog.com","name":"datadog-dev"},"type":"cloudflare-accounts"}}'
+    body: '{"data":{"attributes":{"api_key":"6Zm7WEgKzAlCnt_4exfEK0mSoeHHAaDf41O1AAfu","email":"dev@datadog.com","name":"testupdatecloudflareaccountreturnsbadrequestresponseduetomissingrequiredemail1674809954"},"type":"cloudflare-accounts"}}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/integrations/cloudflare/accounts
   response:
     body:
-      string: '{"data":{"attributes":{"email":"dev@datadog.com","name":"datadog-dev"},"type":"cloudflare-accounts","id":"683184a71c14fb788635d4a977ffb541"}}
+      string: '{"data":{"attributes":{"email":"dev@datadog.com","name":"testupdatecloudflareaccountreturnsbadrequestresponseduetomissingrequiredemail1674809954"},"type":"cloudflare-accounts","id":"c588ce074fe908f56db516f007afd3fd"}}
 
         '
     headers:
@@ -27,7 +27,7 @@ interactions:
       content-type:
       - application/json
     method: PATCH
-    uri: https://api.datadoghq.com/api/v2/integrations/cloudflare/accounts/683184a71c14fb788635d4a977ffb541
+    uri: https://api.datadoghq.com/api/v2/integrations/cloudflare/accounts/c588ce074fe908f56db516f007afd3fd
   response:
     body:
       string: '{"errors":["{u''_schema'': [''Email address is required if providing
@@ -44,7 +44,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/integrations/cloudflare/accounts/683184a71c14fb788635d4a977ffb541
+    uri: https://api.datadoghq.com/api/v2/integrations/cloudflare/accounts/c588ce074fe908f56db516f007afd3fd
   response:
     body:
       string: ''

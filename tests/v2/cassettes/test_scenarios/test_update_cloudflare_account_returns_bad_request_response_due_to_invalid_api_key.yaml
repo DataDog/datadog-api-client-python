@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"api_key":"6Zm7WEgKzAlCnt_4exfEK0mSoeHHAaDf41O1AAfu","email":"dev@datadog.com","name":"datadog-dev"},"type":"cloudflare-accounts"}}'
+    body: '{"data":{"attributes":{"api_key":"6Zm7WEgKzAlCnt_4exfEK0mSoeHHAaDf41O1AAfu","email":"dev@datadog.com","name":"testupdatecloudflareaccountreturnsbadrequestresponseduetoinvalidapikey1674809971"},"type":"cloudflare-accounts"}}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/integrations/cloudflare/accounts
   response:
     body:
-      string: '{"data":{"attributes":{"email":"dev@datadog.com","name":"datadog-dev"},"type":"cloudflare-accounts","id":"683184a71c14fb788635d4a977ffb541"}}
+      string: '{"data":{"attributes":{"email":"dev@datadog.com","name":"testupdatecloudflareaccountreturnsbadrequestresponseduetoinvalidapikey1674809971"},"type":"cloudflare-accounts","id":"56a7295bd711e0aea34906a3bea8a2b3"}}
 
         '
     headers:
@@ -27,11 +27,12 @@ interactions:
       content-type:
       - application/json
     method: PATCH
-    uri: https://api.datadoghq.com/api/v2/integrations/cloudflare/accounts/683184a71c14fb788635d4a977ffb541
+    uri: https://api.datadoghq.com/api/v2/integrations/cloudflare/accounts/56a7295bd711e0aea34906a3bea8a2b3
   response:
     body:
       string: '{"errors":["Invalid account. Your Cloudflare configuration is invalid.
-        Impossible to get zones for the account datadog-dev: API key or email is unknown."]}'
+        Impossible to get zones for the account testupdatecloudflareaccountreturnsbadrequestresponseduetoinvalidapikey1674809971:
+        API key or email is unknown."]}'
     headers:
       content-type:
       - application/json
@@ -44,7 +45,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/integrations/cloudflare/accounts/683184a71c14fb788635d4a977ffb541
+    uri: https://api.datadoghq.com/api/v2/integrations/cloudflare/accounts/56a7295bd711e0aea34906a3bea8a2b3
   response:
     body:
       string: ''

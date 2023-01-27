@@ -16,7 +16,7 @@ body = CloudflareAccountCreateRequest(
         attributes=CloudflareAccountCreateRequestAttributes(
             api_key="6Zm7WEgKzAlCnt_4exfEK0mSoeHHAaDf41O1AAfu",
             email="new@email",
-            name="test-name",
+            name="exampleaddcloudflareaccountreturnscreatedresponse",
         ),
         type=CloudflareAccountType.CLOUDFLARE_ACCOUNTS,
     ),

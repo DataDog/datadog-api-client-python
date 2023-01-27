@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"api_key":"6Zm7WEgKzAlCnt_4exfEK0mSoeHHAaDf41O1AAfu","email":"dev@datadog.com","name":"datadog-dev"},"type":"cloudflare-accounts"}}'
+    body: '{"data":{"attributes":{"api_key":"6Zm7WEgKzAlCnt_4exfEK0mSoeHHAaDf41O1AAfu","email":"dev@datadog.com","name":"testupdatecloudflareaccountreturnsokresponse1674809929"},"type":"cloudflare-accounts"}}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/integrations/cloudflare/accounts
   response:
     body:
-      string: '{"data":{"attributes":{"email":"dev@datadog.com","name":"datadog-dev"},"type":"cloudflare-accounts","id":"683184a71c14fb788635d4a977ffb541"}}
+      string: '{"data":{"attributes":{"email":"dev@datadog.com","name":"testupdatecloudflareaccountreturnsokresponse1674809929"},"type":"cloudflare-accounts","id":"4d22579092049210a1db06b632485219"}}
 
         '
     headers:
@@ -27,10 +27,10 @@ interactions:
       content-type:
       - application/json
     method: PATCH
-    uri: https://api.datadoghq.com/api/v2/integrations/cloudflare/accounts/683184a71c14fb788635d4a977ffb541
+    uri: https://api.datadoghq.com/api/v2/integrations/cloudflare/accounts/4d22579092049210a1db06b632485219
   response:
     body:
-      string: '{"data":{"attributes":{"email":"new@email","name":"datadog-dev"},"type":"cloudflare-accounts","id":"683184a71c14fb788635d4a977ffb541"}}
+      string: '{"data":{"attributes":{"email":"new@email","name":"testupdatecloudflareaccountreturnsokresponse1674809929"},"type":"cloudflare-accounts","id":"4d22579092049210a1db06b632485219"}}
 
         '
     headers:
@@ -45,7 +45,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/integrations/cloudflare/accounts/683184a71c14fb788635d4a977ffb541
+    uri: https://api.datadoghq.com/api/v2/integrations/cloudflare/accounts/4d22579092049210a1db06b632485219
   response:
     body:
       string: ''
