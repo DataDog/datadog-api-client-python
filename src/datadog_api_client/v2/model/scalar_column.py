@@ -3,50 +3,47 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
-    ModelNormal,
+    ModelComposed,
     cached_property,
-    none_type,
-    unset,
-    UnsetType,
 )
 
 
-if TYPE_CHECKING:
-    from datadog_api_client.v2.model.unit import Unit
-
-
-class ScalarColumn(ModelNormal):
-    @cached_property
-    def openapi_types(_):
-        from datadog_api_client.v2.model.unit import Unit
-
-        return {
-            "unit": ([Unit, none_type],),
-            "values": ([float],),
-        }
-
-    attribute_map = {
-        "unit": "unit",
-        "values": "values",
-    }
-
-    def __init__(
-        self_, unit: Union[List[Unit], UnsetType] = unset, values: Union[List[float], UnsetType] = unset, **kwargs
-    ):
+class ScalarColumn(ModelComposed):
+    def __init__(self, **kwargs):
         """
         A single column in a scalar query response.
 
-        :param unit: List of units.
-        :type unit: [Unit, none_type], optional
+        :param name: The name of the tag key or group.
+        :type name: str, optional
 
-        :param values: Array of values for each group-by combination that results from one formula or query.
-        :type values: [float], optional
+        :param type: The type of column present.
+        :type type: str, optional
+
+        :param values: The array of tag values for each group found for the results of the formulas or queries.
+        :type values: [[str]], optional
+
+        :param meta: Metadata for the resulting numerical values.
+        :type meta: ScalarMeta, optional
         """
-        if unit is not unset:
-            kwargs["unit"] = unit
-        if values is not unset:
-            kwargs["values"] = values
         super().__init__(kwargs)
+
+    @cached_property
+    def _composed_schemas(_):
+        # we need this here to make our import statements work
+        # we must store _composed_schemas in here so the code is only run
+        # when we invoke this method. If we kept this at the class
+        # level we would get an error because the class level
+        # code would be run when this module is imported, and these composed
+        # classes don't exist yet because their module has not finished
+        # loading
+        from datadog_api_client.v2.model.group_scalar_column import GroupScalarColumn
+        from datadog_api_client.v2.model.data_scalar_column import DataScalarColumn
+
+        return {
+            "oneOf": [
+                GroupScalarColumn,
+                DataScalarColumn,
+            ],
+        }

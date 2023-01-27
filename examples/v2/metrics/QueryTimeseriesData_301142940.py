@@ -1,5 +1,5 @@
 """
-Query timeseries data across multiple products returns "OK" response
+Timeseries cross product query returns "OK" response
 """
 
 from datadog_api_client import ApiClient, Configuration
@@ -20,24 +20,25 @@ body = TimeseriesFormulaQueryRequest(
         attributes=TimeseriesFormulaRequestAttributes(
             formulas=[
                 QueryFormula(
-                    formula="a+b",
+                    formula="a",
                     limit=FormulaLimit(
                         count=10,
                         order=QuerySortOrder.DESC,
                     ),
                 ),
             ],
-            _from=1568899800000,
+            _from=1671612804000,
             interval=5000,
             queries=TimeseriesFormulaRequestQueries(
                 [
                     MetricsTimeseriesQuery(
                         data_source=MetricsDataSource.METRICS,
-                        query="avg:system.cpu.user{*} by {env}",
+                        query="avg:system.cpu.user{*}",
+                        name="a",
                     ),
                 ]
             ),
-            to=1568923200000,
+            to=1671620004000,
         ),
         type=TimeseriesFormulaRequestType.TIMESERIES_REQUEST,
     ),

@@ -204,6 +204,7 @@ from datadog_api_client.v2.model.dashboard_list_items import DashboardListItems
 from datadog_api_client.v2.model.dashboard_list_update_items_request import DashboardListUpdateItemsRequest
 from datadog_api_client.v2.model.dashboard_list_update_items_response import DashboardListUpdateItemsResponse
 from datadog_api_client.v2.model.dashboard_type import DashboardType
+from datadog_api_client.v2.model.data_scalar_column import DataScalarColumn
 from datadog_api_client.v2.model.event import Event
 from datadog_api_client.v2.model.event_attributes import EventAttributes
 from datadog_api_client.v2.model.event_priority import EventPriority
@@ -254,6 +255,7 @@ from datadog_api_client.v2.model.full_api_key import FullAPIKey
 from datadog_api_client.v2.model.full_api_key_attributes import FullAPIKeyAttributes
 from datadog_api_client.v2.model.full_application_key import FullApplicationKey
 from datadog_api_client.v2.model.full_application_key_attributes import FullApplicationKeyAttributes
+from datadog_api_client.v2.model.group_scalar_column import GroupScalarColumn
 from datadog_api_client.v2.model.group_tags import GroupTags
 from datadog_api_client.v2.model.http_log import HTTPLog
 from datadog_api_client.v2.model.http_log_error import HTTPLogError
@@ -698,9 +700,9 @@ from datadog_api_client.v2.model.scalar_formula_request_queries import ScalarFor
 from datadog_api_client.v2.model.scalar_formula_request_type import ScalarFormulaRequestType
 from datadog_api_client.v2.model.scalar_formula_response_atrributes import ScalarFormulaResponseAtrributes
 from datadog_api_client.v2.model.scalar_formula_response_type import ScalarFormulaResponseType
+from datadog_api_client.v2.model.scalar_meta import ScalarMeta
 from datadog_api_client.v2.model.scalar_query import ScalarQuery
 from datadog_api_client.v2.model.scalar_response import ScalarResponse
-from datadog_api_client.v2.model.scalar_response_series_list import ScalarResponseSeriesList
 from datadog_api_client.v2.model.security_filter import SecurityFilter
 from datadog_api_client.v2.model.security_filter_attributes import SecurityFilterAttributes
 from datadog_api_client.v2.model.security_filter_create_attributes import SecurityFilterCreateAttributes

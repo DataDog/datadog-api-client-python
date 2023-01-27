@@ -1,5 +1,5 @@
 """
-Query scalar data across multiple products returns "OK" response
+Scalar cross product query returns "OK" response
 """
 
 from datadog_api_client import ApiClient, Configuration
@@ -21,24 +21,25 @@ body = ScalarFormulaQueryRequest(
         attributes=ScalarFormulaRequestAttributes(
             formulas=[
                 QueryFormula(
-                    formula="a+b",
+                    formula="a",
                     limit=FormulaLimit(
                         count=10,
                         order=QuerySortOrder.DESC,
                     ),
                 ),
             ],
-            _from=1568899800000,
+            _from=1671612804000,
             queries=ScalarFormulaRequestQueries(
                 [
                     MetricsScalarQuery(
                         aggregator=MetricsAggregator.AVG,
                         data_source=MetricsDataSource.METRICS,
-                        query="avg:system.cpu.user{*} by {env}",
+                        query="avg:system.cpu.user{*}",
+                        name="a",
                     ),
                 ]
             ),
-            to=1568923200000,
+            to=1671620004000,
         ),
         type=ScalarFormulaRequestType.SCALAR_REQUEST,
     ),
