@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"api_key":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","name":"test-name"},"type":"cloudflare-accounts"}}'
+    body: '{"data":{"attributes":{"api_key":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","name":"testaddcloudflareaccountreturnsbadrequestresponseusinginvalidauthkey1674730487"},"type":"cloudflare-accounts"}}'
     headers:
       accept:
       - application/json
@@ -11,7 +11,8 @@ interactions:
   response:
     body:
       string: '{"errors":["Invalid account. Your Cloudflare configuration is invalid.
-        Impossible to get zones for the account test-name: API key or email is unknown."]}'
+        Impossible to get zones for the account testaddcloudflareaccountreturnsbadrequestresponseusinginvalidauthkey1674730487:
+        API key or email is unknown."]}'
     headers:
       content-type:
       - application/json
