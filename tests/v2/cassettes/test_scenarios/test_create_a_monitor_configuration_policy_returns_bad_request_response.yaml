@@ -1,0 +1,21 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"policy":{"tag_key":"datacenter","tag_key_required":true,"valid_tag_values":["prod","staging"]},"policy_type":"INVALID"},"type":"monitor-config-policy"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/monitor/policy
+  response:
+    body:
+      string: '{"errors":["Value of parameter ''policy_type'' should be any of these
+        [''tag'']"]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 400
+      message: Bad Request
+version: 1

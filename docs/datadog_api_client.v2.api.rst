@@ -127,6 +127,13 @@ metrics\_api
    :members:
    :show-inheritance:
 
+monitors\_api
+-------------
+
+.. automodule:: datadog_api_client.v2.api.monitors_api
+   :members:
+   :show-inheritance:
+
 opsgenie\_integration\_api
 --------------------------
 

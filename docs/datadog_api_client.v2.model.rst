@@ -3200,6 +3200,118 @@ metrics\_timeseries\_query
    :members:
    :show-inheritance:
 
+monitor\_config\_policy\_attribute\_create\_request
+---------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_config_policy_attribute_create_request
+   :members:
+   :show-inheritance:
+
+monitor\_config\_policy\_attribute\_edit\_request
+-------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_config_policy_attribute_edit_request
+   :members:
+   :show-inheritance:
+
+monitor\_config\_policy\_attribute\_response
+--------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_config_policy_attribute_response
+   :members:
+   :show-inheritance:
+
+monitor\_config\_policy\_create\_data
+-------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_config_policy_create_data
+   :members:
+   :show-inheritance:
+
+monitor\_config\_policy\_create\_request
+----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_config_policy_create_request
+   :members:
+   :show-inheritance:
+
+monitor\_config\_policy\_edit\_data
+-----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_config_policy_edit_data
+   :members:
+   :show-inheritance:
+
+monitor\_config\_policy\_edit\_request
+--------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_config_policy_edit_request
+   :members:
+   :show-inheritance:
+
+monitor\_config\_policy\_list\_response
+---------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_config_policy_list_response
+   :members:
+   :show-inheritance:
+
+monitor\_config\_policy\_policy
+-------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_config_policy_policy
+   :members:
+   :show-inheritance:
+
+monitor\_config\_policy\_policy\_create\_request
+------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_config_policy_policy_create_request
+   :members:
+   :show-inheritance:
+
+monitor\_config\_policy\_resource\_type
+---------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_config_policy_resource_type
+   :members:
+   :show-inheritance:
+
+monitor\_config\_policy\_response
+---------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_config_policy_response
+   :members:
+   :show-inheritance:
+
+monitor\_config\_policy\_response\_data
+---------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_config_policy_response_data
+   :members:
+   :show-inheritance:
+
+monitor\_config\_policy\_tag\_policy
+------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_config_policy_tag_policy
+   :members:
+   :show-inheritance:
+
+monitor\_config\_policy\_tag\_policy\_create\_request
+-----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_config_policy_tag_policy_create_request
+   :members:
+   :show-inheritance:
+
+monitor\_config\_policy\_type
+-----------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_config_policy_type
+   :members:
+   :show-inheritance:
+
 monitor\_type
 -------------
 
