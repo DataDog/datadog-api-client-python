@@ -736,9 +736,10 @@ class MetricsApi:
         self,
         body: ScalarFormulaQueryRequest,
     ) -> ScalarFormulaQueryResponse:
-        """Scalar cross product query.
+        """Query scalar data across multiple products.
 
-        The internal endpoint to query scalar/table data for multiple data sources and
+        Query scalar values (as seen on Query Value, Table and Toplist widgets).
+        Multiple data sources are supported with the ability to
         process the data using formulas and functions.
 
         :type body: ScalarFormulaQueryRequest
@@ -753,9 +754,9 @@ class MetricsApi:
         self,
         body: TimeseriesFormulaQueryRequest,
     ) -> TimeseriesFormulaQueryResponse:
-        """Timeseries cross product query.
+        """Query timeseries data across multiple products.
 
-        The internal endpoint to query timeseries data for multiple data sources and
+        Query timeseries data across various data sources and
         process the data by applying formulas and functions.
 
         :type body: TimeseriesFormulaQueryRequest

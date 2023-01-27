@@ -214,6 +214,42 @@ Feature: Metrics
     Then the response status is 200 Success
     And the response "data.id" has the same value as "metric_tag_configuration.data.id"
 
+  @generated @skip @team:DataDog/metrics-query
+  Scenario: Query scalar data across multiple products returns "Bad Request" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "QueryScalarData" enabled
+    And new "QueryScalarData" request
+    And body with value {"data": {"attributes": {"formulas": [{"formula": "a+b", "limit": {"count": 10, "order": "desc"}}], "from": 1568899800000, "queries": [{"aggregator": "avg", "data_source": "metrics", "query": "avg:system.cpu.user{*} by {env}"}], "to": 1568923200000}, "type": "scalar_request"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/metrics-query
+  Scenario: Query scalar data across multiple products returns "OK" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "QueryScalarData" enabled
+    And new "QueryScalarData" request
+    And body with value {"data": {"attributes": {"formulas": [{"formula": "a+b", "limit": {"count": 10, "order": "desc"}}], "from": 1568899800000, "queries": [{"aggregator": "avg", "data_source": "metrics", "query": "avg:system.cpu.user{*} by {env}"}], "to": 1568923200000}, "type": "scalar_request"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/metrics-query
+  Scenario: Query timeseries data across multiple products returns "Bad Request" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "QueryTimeseriesData" enabled
+    And new "QueryTimeseriesData" request
+    And body with value {"data": {"attributes": {"formulas": [{"formula": "a+b", "limit": {"count": 10, "order": "desc"}}], "from": 1568899800000, "interval": 5000, "queries": [{"data_source": "metrics", "query": "avg:system.cpu.user{*} by {env}"}], "to": 1568923200000}, "type": "timeseries_request"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/metrics-query
+  Scenario: Query timeseries data across multiple products returns "OK" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "QueryTimeseriesData" enabled
+    And new "QueryTimeseriesData" request
+    And body with value {"data": {"attributes": {"formulas": [{"formula": "a+b", "limit": {"count": 10, "order": "desc"}}], "from": 1568899800000, "interval": 5000, "queries": [{"data_source": "metrics", "query": "avg:system.cpu.user{*} by {env}"}], "to": 1568923200000}, "type": "timeseries_request"}}
+    When the request is sent
+    Then the response status is 200 OK
+
   @team:DataDog/metrics-query
   Scenario: Scalar cross product query returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system

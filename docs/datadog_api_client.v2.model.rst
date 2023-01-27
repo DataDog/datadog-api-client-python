@@ -1163,6 +1163,13 @@ dashboard\_type
    :members:
    :show-inheritance:
 
+data\_scalar\_column
+--------------------
+
+.. automodule:: datadog_api_client.v2.model.data_scalar_column
+   :members:
+   :show-inheritance:
+
 event
 -----
 
@@ -1510,6 +1517,13 @@ full\_application\_key\_attributes
 ----------------------------------
 
 .. automodule:: datadog_api_client.v2.model.full_application_key_attributes
+   :members:
+   :show-inheritance:
+
+group\_scalar\_column
+---------------------
+
+.. automodule:: datadog_api_client.v2.model.group_scalar_column
    :members:
    :show-inheritance:
 
@@ -4271,6 +4285,13 @@ scalar\_formula\_response\_type
    :members:
    :show-inheritance:
 
+scalar\_meta
+------------
+
+.. automodule:: datadog_api_client.v2.model.scalar_meta
+   :members:
+   :show-inheritance:
+
 scalar\_query
 -------------
 
@@ -4282,13 +4303,6 @@ scalar\_response
 ----------------
 
 .. automodule:: datadog_api_client.v2.model.scalar_response
-   :members:
-   :show-inheritance:
-
-scalar\_response\_series\_list
-------------------------------
-
-.. automodule:: datadog_api_client.v2.model.scalar_response_series_list
    :members:
    :show-inheritance:
 

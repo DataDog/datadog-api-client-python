@@ -59,7 +59,10 @@ class TimeseriesResponseSeries(ModelNormal):
         :param query_index: The index of the query in the "formulas" array (or "queries" array if no "formulas" was specified).
         :type query_index: int, optional
 
-        :param unit: List of units.
+        :param unit: Detailed information about the unit.
+            The first element describes the "primary unit" (for example, ``bytes`` in ``bytes per second`` ).
+            The second element describes the "per unit" (for example, ``second`` in ``bytes per second`` ).
+            If the second element is not present, the API returns null.
         :type unit: [Unit, none_type], optional
         """
         if group_tags is not unset:
