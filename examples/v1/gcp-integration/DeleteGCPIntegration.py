@@ -16,6 +16,7 @@ body = GCPAccount(
         "*",
     ],
     host_filters="key:value,filter:example",
+    is_cspm_enabled=True,
     private_key="private_key",
     private_key_id="123456789abcdefghi123456789abcdefghijklm",
     project_id="datadog-apitest",
