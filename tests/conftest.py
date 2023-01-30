@@ -342,9 +342,12 @@ def undo_operations():
         version = f.parent.parent.name
         with f.open() as fp:
             data = json.load(fp)
-            result[version] = {
-                snake_case(operation_id): settings.get("undo") for operation_id, settings in data.items()
-            }
+            result[version] = {}
+            for operation_id, settings in data.items():
+                undo_settings = settings.get("undo")
+                undo_settings["base_tag"] = settings.get("tag")
+                result[version][snake_case(operation_id)] = undo_settings
+            
 
     return result
 
@@ -510,6 +513,15 @@ def undo(package_name, undo_operations, client):
 
         if operation["type"] != "unsafe":
             return
+
+        # If Undo tag is not the same as the the operation tag.
+        # For example, Service Accounts use the DisableUser operation to undo, which is part of Users.
+        if "tags" in operation and operation["base_tag"] != operation["tags"][0]:
+            undo_tag = operation["tags"][0]
+            undo_name = undo_tag.replace(" ", "")
+            undo_module_name = snake_case(undo_tag)
+            undo_package = importlib.import_module(f"{package_name}.api.{undo_module_name}_api")
+            api = getattr(undo_package, undo_name + "Api")(client)
 
         operation_name = snake_case(operation["operationId"])
         method = getattr(api, operation_name)
