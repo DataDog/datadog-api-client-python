@@ -12,7 +12,7 @@ from datadog_api_client.v1.model.authentication_validation_response import Authe
 
 class AuthenticationApi:
     """
-    All requests to Datadog’s API must be authenticated.
+    Testing CI - All requests to Datadog’s API must be authenticated.
     Requests that write data require reporting access and require an ``API key``.
     Requests that read data require full access and also require an ``application key``.
 
