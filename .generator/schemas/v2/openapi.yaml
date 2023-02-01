@@ -19082,7 +19082,7 @@ paths:
           $ref: '#/components/responses/TooManyRequestsResponse'
       summary: Create a service account
       tags:
-      - Users
+      - Service Accounts
       x-codegen-request-body-name: body
   /api/v2/service_accounts/{service_account_id}/application_keys:
     get:
