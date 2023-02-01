@@ -8,26 +8,6 @@ Feature: Users
     And an instance of "Users" API
 
   @generated @skip @team:DataDog/team-aaa
-  Scenario: Create a service account returns "Bad Request" response
-    Given new "CreateServiceAccount" request
-    And body with value {"data": {"attributes": {"email": "jane.doe@example.com", "service_account": true}, "relationships": {"roles": {"data": [{"id": "3653d3c6-0c75-11ea-ad28-fb5701eabc7d", "type": "roles"}]}}, "type": "users"}}
-    When the request is sent
-    Then the response status is 400 Bad Request
-
-  @team:DataDog/team-aaa
-  Scenario: Create a service account returns "OK" response
-    Given there is a valid "role" in the system
-    And new "CreateServiceAccount" request
-    And body with value {"data": {"type": "users", "attributes": {"name": "Test API Client", "email": "{{ unique }}@datadoghq.com", "service_account": true}, "relationships": {"roles": {"data": [{"id": "{{ role.data.id }}", "type": "roles"}]}}}}
-    When the request is sent
-    Then the response status is 201 OK
-    And the response "data.attributes.email" is equal to "{{ unique_lower }}@datadoghq.com"
-    And the response "data.attributes.name" is equal to "Test API Client"
-    And the response "data.attributes.disabled" is false
-    And the response "data.attributes.service_account" is equal to true
-    And the response "data.relationships.roles.data[0].id" is equal to "{{ role.data.id }}"
-
-  @generated @skip @team:DataDog/team-aaa
   Scenario: Create a user returns "Bad Request" response
     Given new "CreateUser" request
     And body with value {"data": {"attributes": {"email": "jane.doe@example.com"}, "relationships": {"roles": {"data": [{"id": "3653d3c6-0c75-11ea-ad28-fb5701eabc7d", "type": "roles"}]}}, "type": "users"}}

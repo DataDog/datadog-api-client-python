@@ -357,7 +357,7 @@
     ],
     "step": "there is a valid \"service_account_user\" in the system",
     "key": "service_account_user",
-    "tag": "Users",
+    "tag": "Service Accounts",
     "operationId": "CreateServiceAccount"
   },
   {
