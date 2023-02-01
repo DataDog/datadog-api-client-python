@@ -347,7 +347,6 @@ def undo_operations():
                 undo_settings = settings.get("undo")
                 undo_settings["base_tag"] = settings.get("tag")
                 result[version][snake_case(operation_id)] = undo_settings
-            
 
     return result
 
