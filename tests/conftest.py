@@ -516,8 +516,8 @@ def undo(package_name, undo_operations, client):
 
         # If Undo tag is not the same as the the operation tag.
         # For example, Service Accounts use the DisableUser operation to undo, which is part of Users.
-        if "tags" in operation and operation["base_tag"] != operation["tags"][0]:
-            undo_tag = operation["tags"][0]
+        if "tag" in operation and operation["base_tag"] != operation["tag"]:
+            undo_tag = operation["tag"]
             undo_name = undo_tag.replace(" ", "")
             undo_module_name = snake_case(undo_tag)
             undo_package = importlib.import_module(f"{package_name}.api.{undo_module_name}_api")
