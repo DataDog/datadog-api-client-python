@@ -34,6 +34,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.monitor_summary_widget_definition import MonitorSummaryWidgetDefinition
     from datadog_api_client.v1.model.note_widget_definition import NoteWidgetDefinition
     from datadog_api_client.v1.model.query_value_widget_definition import QueryValueWidgetDefinition
+    from datadog_api_client.v1.model.run_workflow_widget_definition import RunWorkflowWidgetDefinition
     from datadog_api_client.v1.model.scatter_plot_widget_definition import ScatterPlotWidgetDefinition
     from datadog_api_client.v1.model.slo_widget_definition import SLOWidgetDefinition
     from datadog_api_client.v1.model.slo_list_widget_definition import SLOListWidgetDefinition
@@ -89,6 +90,7 @@ class Widget(ModelNormal):
             MonitorSummaryWidgetDefinition,
             NoteWidgetDefinition,
             QueryValueWidgetDefinition,
+            RunWorkflowWidgetDefinition,
             ScatterPlotWidgetDefinition,
             SLOWidgetDefinition,
             SLOListWidgetDefinition,

@@ -414,6 +414,16 @@ Feature: Dashboards
     Then the response status is 200 OK
 
   @team:DataDog/dashboards
+  Scenario: Create a new dashboard with run-workflow widget
+    Given new "CreateDashboard" request
+    And body from file "dashboards_json_payload/run_workflow_widget.json"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.type" is equal to "run_workflow"
+    And the response "widgets[0].definition.workflow_id" is equal to "2e055f16-8b6a-4cdd-b452-17a34c44b160"
+    And the response "widgets[0].definition.inputs[0]" is equal to {"name": "environment", "value": "$env.value"}
+
+  @team:DataDog/dashboards
   Scenario: Create a new dashboard with scatterplot widget
     Given new "CreateDashboard" request
     And body from file "dashboards_json_payload/scatterplot_widget.json"

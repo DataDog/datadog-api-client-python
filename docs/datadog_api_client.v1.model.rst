@@ -2570,6 +2570,27 @@ response\_meta\_attributes
    :members:
    :show-inheritance:
 
+run\_workflow\_widget\_definition
+---------------------------------
+
+.. automodule:: datadog_api_client.v1.model.run_workflow_widget_definition
+   :members:
+   :show-inheritance:
+
+run\_workflow\_widget\_definition\_type
+---------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.run_workflow_widget_definition_type
+   :members:
+   :show-inheritance:
+
+run\_workflow\_widget\_input
+----------------------------
+
+.. automodule:: datadog_api_client.v1.model.run_workflow_widget_input
+   :members:
+   :show-inheritance:
+
 scatter\_plot\_request
 ----------------------
 
