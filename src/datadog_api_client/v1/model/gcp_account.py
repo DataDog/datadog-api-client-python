@@ -25,6 +25,7 @@ class GCPAccount(ModelNormal):
             "client_x509_cert_url": (str,),
             "errors": ([str],),
             "host_filters": (str,),
+            "is_cspm_enabled": (bool,),
             "private_key": (str,),
             "private_key_id": (str,),
             "project_id": (str,),
@@ -41,6 +42,7 @@ class GCPAccount(ModelNormal):
         "client_x509_cert_url": "client_x509_cert_url",
         "errors": "errors",
         "host_filters": "host_filters",
+        "is_cspm_enabled": "is_cspm_enabled",
         "private_key": "private_key",
         "private_key_id": "private_key_id",
         "project_id": "project_id",
@@ -58,6 +60,7 @@ class GCPAccount(ModelNormal):
         client_x509_cert_url: Union[str, UnsetType] = unset,
         errors: Union[List[str], UnsetType] = unset,
         host_filters: Union[str, UnsetType] = unset,
+        is_cspm_enabled: Union[bool, UnsetType] = unset,
         private_key: Union[str, UnsetType] = unset,
         private_key_id: Union[str, UnsetType] = unset,
         project_id: Union[str, UnsetType] = unset,
@@ -94,6 +97,9 @@ class GCPAccount(ModelNormal):
             Only hosts that match one of the defined tags are imported into Datadog.
         :type host_filters: str, optional
 
+        :param is_cspm_enabled: When enabled, Datadog performs configuration checks across your Google Cloud environment by continuously scanning every resource.
+        :type is_cspm_enabled: bool, optional
+
         :param private_key: Your private key name found in your JSON service account key.
         :type private_key: str, optional
 
@@ -125,6 +131,8 @@ class GCPAccount(ModelNormal):
             kwargs["errors"] = errors
         if host_filters is not unset:
             kwargs["host_filters"] = host_filters
+        if is_cspm_enabled is not unset:
+            kwargs["is_cspm_enabled"] = is_cspm_enabled
         if private_key is not unset:
             kwargs["private_key"] = private_key
         if private_key_id is not unset:
