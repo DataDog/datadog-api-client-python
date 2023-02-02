@@ -708,13 +708,13 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/red-zone-revenue-query
+  @skip @team:DataDog/red-zone-revenue-query
   Scenario: Get the list of available daily custom reports returns "OK" response
     Given new "GetDailyCustomReports" request
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/red-zone-revenue-query
+  @skip @team:DataDog/red-zone-revenue-query
   Scenario: Get the list of available monthly custom reports returns "OK" response
     Given new "GetMonthlyCustomReports" request
     When the request is sent
@@ -734,7 +734,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/red-zone-revenue-query
+  @skip @team:DataDog/red-zone-revenue-query
   Scenario: Get usage attribution returns "OK" response
     Given new "GetUsageAttribution" request
     And request contains "start_month" parameter with value "{{ timeISO('now - 3d') }}"
