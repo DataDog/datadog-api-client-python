@@ -236,12 +236,6 @@ class WidgetDefinition(ModelComposed):
         :param timeseries_background: Set a timeseries on the widget background.
         :type timeseries_background: TimeseriesBackground, optional
 
-        :param inputs: Array of workflow inputs to map to dashboard template variables.
-        :type inputs: [RunWorkflowWidgetInput], optional
-
-        :param workflow_id: Workflow id.
-        :type workflow_id: str
-
         :param color_by_groups: List of groups used for colors.
         :type color_by_groups: [str], optional
 
@@ -349,7 +343,6 @@ class WidgetDefinition(ModelComposed):
         from datadog_api_client.v1.model.monitor_summary_widget_definition import MonitorSummaryWidgetDefinition
         from datadog_api_client.v1.model.note_widget_definition import NoteWidgetDefinition
         from datadog_api_client.v1.model.query_value_widget_definition import QueryValueWidgetDefinition
-        from datadog_api_client.v1.model.run_workflow_widget_definition import RunWorkflowWidgetDefinition
         from datadog_api_client.v1.model.scatter_plot_widget_definition import ScatterPlotWidgetDefinition
         from datadog_api_client.v1.model.slo_widget_definition import SLOWidgetDefinition
         from datadog_api_client.v1.model.slo_list_widget_definition import SLOListWidgetDefinition
@@ -384,7 +377,6 @@ class WidgetDefinition(ModelComposed):
                 MonitorSummaryWidgetDefinition,
                 NoteWidgetDefinition,
                 QueryValueWidgetDefinition,
-                RunWorkflowWidgetDefinition,
                 ScatterPlotWidgetDefinition,
                 SLOWidgetDefinition,
                 SLOListWidgetDefinition,
