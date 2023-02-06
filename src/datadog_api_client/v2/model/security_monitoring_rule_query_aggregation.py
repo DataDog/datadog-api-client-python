@@ -16,7 +16,7 @@ class SecurityMonitoringRuleQueryAggregation(ModelSimple):
     """
     The aggregation type.
 
-    :param value: Must be one of ["count", "cardinality", "sum", "max", "new_value", "geo_data", "event_count"].
+    :param value: Must be one of ["count", "cardinality", "sum", "max", "new_value", "geo_data", "event_count", "none"].
     :type value: str
     """
 
@@ -28,6 +28,7 @@ class SecurityMonitoringRuleQueryAggregation(ModelSimple):
         "new_value",
         "geo_data",
         "event_count",
+        "none",
     }
     COUNT: ClassVar["SecurityMonitoringRuleQueryAggregation"]
     CARDINALITY: ClassVar["SecurityMonitoringRuleQueryAggregation"]
@@ -36,6 +37,7 @@ class SecurityMonitoringRuleQueryAggregation(ModelSimple):
     NEW_VALUE: ClassVar["SecurityMonitoringRuleQueryAggregation"]
     GEO_DATA: ClassVar["SecurityMonitoringRuleQueryAggregation"]
     EVENT_COUNT: ClassVar["SecurityMonitoringRuleQueryAggregation"]
+    NONE: ClassVar["SecurityMonitoringRuleQueryAggregation"]
 
     @cached_property
     def openapi_types(_):
@@ -51,3 +53,4 @@ SecurityMonitoringRuleQueryAggregation.MAX = SecurityMonitoringRuleQueryAggregat
 SecurityMonitoringRuleQueryAggregation.NEW_VALUE = SecurityMonitoringRuleQueryAggregation("new_value")
 SecurityMonitoringRuleQueryAggregation.GEO_DATA = SecurityMonitoringRuleQueryAggregation("geo_data")
 SecurityMonitoringRuleQueryAggregation.EVENT_COUNT = SecurityMonitoringRuleQueryAggregation("event_count")
+SecurityMonitoringRuleQueryAggregation.NONE = SecurityMonitoringRuleQueryAggregation("none")
