@@ -1140,7 +1140,7 @@
     }
   },
   "CreateServiceAccount": {
-    "tag": "Service Accounts",
+    "tag": "Users",
     "undo": {
       "operationId": "DisableUser",
       "parameters": [
@@ -1149,7 +1149,6 @@
           "source": "data.id"
         }
       ],
-      "tag": "Users",
       "type": "unsafe"
     }
   },
