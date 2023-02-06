@@ -3,11 +3,13 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, Union, TYPE_CHECKING
+from typing import Any, List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    date,
+    datetime,
     none_type,
     unset,
     UnsetType,
@@ -32,7 +34,7 @@ class HostMeta(ModelNormal):
             "fbsd_v": ([str, none_type],),
             "gohai": (str,),
             "install_method": (HostMetaInstallMethod,),
-            "mac_v": ([str, none_type],),
+            "mac_v": ([bool, date, datetime, dict, float, int, list, str, none_type],),
             "machine": (str,),
             "nix_v": ([str, none_type],),
             "platform": (str,),
@@ -69,7 +71,7 @@ class HostMeta(ModelNormal):
         fbsd_v: Union[List[str], UnsetType] = unset,
         gohai: Union[str, UnsetType] = unset,
         install_method: Union[HostMetaInstallMethod, UnsetType] = unset,
-        mac_v: Union[List[str], UnsetType] = unset,
+        mac_v: Union[List[Any], UnsetType] = unset,
         machine: Union[str, UnsetType] = unset,
         nix_v: Union[List[str], UnsetType] = unset,
         platform: Union[str, UnsetType] = unset,
@@ -102,7 +104,7 @@ class HostMeta(ModelNormal):
         :type install_method: HostMetaInstallMethod, optional
 
         :param mac_v: An array of Mac versions.
-        :type mac_v: [str, none_type], optional
+        :type mac_v: [bool, date, datetime, dict, float, int, list, str, none_type], optional
 
         :param machine: The machine architecture.
         :type machine: str, optional
