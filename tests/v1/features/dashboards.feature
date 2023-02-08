@@ -205,6 +205,17 @@ Feature: Dashboards
     And the response "widgets[0].definition.requests[0].apm_stats_query.name" is equal to "cassandra.query"
 
   @team:DataDog/dashboards
+  Scenario: Create a new dashboard with event_stream list_stream widget
+    Given new "CreateDashboard" request
+    And body with value {"layout_type": "ordered","title": "{{ unique }} with list_stream widget","widgets": [{"definition": {"type": "list_stream","requests": [{"columns": [{"width": "auto","field": "timestamp"}],"query": {"data_source": "event_stream","query_string": "","event_size": "l"},"response_format": "event_list"}]}}]}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.type" is equal to "list_stream"
+    And the response "widgets[0].definition.requests[0].response_format" is equal to "event_list"
+    And the response "widgets[0].definition.requests[0].query.data_source" is equal to "event_stream"
+    And the response "widgets[0].definition.requests[0].query.event_size" is equal to "l"
+
+  @team:DataDog/dashboards
   Scenario: Create a new dashboard with event_stream widget
     Given new "CreateDashboard" request
     And body from file "dashboards_json_payload/event_stream_widget.json"
