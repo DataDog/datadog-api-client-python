@@ -16,7 +16,7 @@ class MonthlyUsageAttributionSupportedMetrics(ModelSimple):
     """
     Supported metrics for monthly usage attribution requests.
 
-    :param value: Must be one of ["api_usage", "api_percentage", "apm_fargate_usage", "apm_fargate_percentage", "appsec_fargate_usage", "appsec_fargate_percentage", "apm_host_usage", "apm_host_percentage", "appsec_usage", "appsec_percentage", "browser_usage", "browser_percentage", "container_usage", "container_percentage", "cspm_containers_percentage", "cspm_containers_usage", "cspm_hosts_percentage", "cspm_hosts_usage", "custom_timeseries_usage", "custom_timeseries_percentage", "cws_containers_percentage", "cws_containers_usage", "cws_hosts_percentage", "cws_hosts_usage", "dbm_hosts_percentage", "dbm_hosts_usage", "dbm_queries_percentage", "dbm_queries_usage", "estimated_indexed_logs_usage", "estimated_indexed_logs_percentage", "estimated_ingested_logs_usage", "estimated_ingested_logs_percentage", "estimated_indexed_spans_usage", "estimated_indexed_spans_percentage", "estimated_ingested_spans_usage", "estimated_ingested_spans_percentage", "fargate_usage", "fargate_percentage", "functions_usage", "functions_percentage", "infra_host_usage", "infra_host_percentage", "invocations_usage", "invocations_percentage", "npm_host_usage", "npm_host_percentage", "profiled_container_usage", "profiled_container_percentage", "profiled_host_usage", "profiled_host_percentage", "snmp_usage", "snmp_percentage", "estimated_rum_sessions_usage", "estimated_rum_sessions_percentage", "cont_usage", "cont_percentage", "*"].
+    :param value: Must be one of ["api_usage", "api_percentage", "apm_fargate_usage", "apm_fargate_percentage", "appsec_fargate_usage", "appsec_fargate_percentage", "apm_host_usage", "apm_host_percentage", "appsec_usage", "appsec_percentage", "browser_usage", "browser_percentage", "container_excl_agent_usage", "container_excl_agent_percentage", "container_usage", "container_percentage", "cspm_containers_percentage", "cspm_containers_usage", "cspm_hosts_percentage", "cspm_hosts_usage", "custom_timeseries_usage", "custom_timeseries_percentage", "cws_containers_percentage", "cws_containers_usage", "cws_hosts_percentage", "cws_hosts_usage", "dbm_hosts_percentage", "dbm_hosts_usage", "dbm_queries_percentage", "dbm_queries_usage", "estimated_indexed_logs_usage", "estimated_indexed_logs_percentage", "estimated_ingested_logs_usage", "estimated_ingested_logs_percentage", "estimated_indexed_spans_usage", "estimated_indexed_spans_percentage", "estimated_ingested_spans_usage", "estimated_ingested_spans_percentage", "fargate_usage", "fargate_percentage", "functions_usage", "functions_percentage", "infra_host_usage", "infra_host_percentage", "invocations_usage", "invocations_percentage", "npm_host_usage", "npm_host_percentage", "profiled_container_usage", "profiled_container_percentage", "profiled_host_usage", "profiled_host_percentage", "snmp_usage", "snmp_percentage", "estimated_rum_sessions_usage", "estimated_rum_sessions_percentage", "*"].
     :type value: str
     """
 
@@ -33,6 +33,8 @@ class MonthlyUsageAttributionSupportedMetrics(ModelSimple):
         "appsec_percentage",
         "browser_usage",
         "browser_percentage",
+        "container_excl_agent_usage",
+        "container_excl_agent_percentage",
         "container_usage",
         "container_percentage",
         "cspm_containers_percentage",
@@ -75,8 +77,6 @@ class MonthlyUsageAttributionSupportedMetrics(ModelSimple):
         "snmp_percentage",
         "estimated_rum_sessions_usage",
         "estimated_rum_sessions_percentage",
-        "cont_usage",
-        "cont_percentage",
         "*",
     }
     API_USAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
@@ -91,6 +91,8 @@ class MonthlyUsageAttributionSupportedMetrics(ModelSimple):
     APPSEC_PERCENTAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
     BROWSER_USAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
     BROWSER_PERCENTAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    CONTAINER_EXCL_AGENT_USAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    CONTAINER_EXCL_AGENT_PERCENTAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
     CONTAINER_USAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
     CONTAINER_PERCENTAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
     CSPM_CONTAINERS_PERCENTAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
@@ -133,8 +135,6 @@ class MonthlyUsageAttributionSupportedMetrics(ModelSimple):
     SNMP_PERCENTAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
     ESTIMATED_RUM_SESSIONS_USAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
     ESTIMATED_RUM_SESSIONS_PERCENTAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
-    CONT_USAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
-    CONT_PERCENTAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
     ALL: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
 
     @cached_property
@@ -165,6 +165,12 @@ MonthlyUsageAttributionSupportedMetrics.APPSEC_PERCENTAGE = MonthlyUsageAttribut
 MonthlyUsageAttributionSupportedMetrics.BROWSER_USAGE = MonthlyUsageAttributionSupportedMetrics("browser_usage")
 MonthlyUsageAttributionSupportedMetrics.BROWSER_PERCENTAGE = MonthlyUsageAttributionSupportedMetrics(
     "browser_percentage"
+)
+MonthlyUsageAttributionSupportedMetrics.CONTAINER_EXCL_AGENT_USAGE = MonthlyUsageAttributionSupportedMetrics(
+    "container_excl_agent_usage"
+)
+MonthlyUsageAttributionSupportedMetrics.CONTAINER_EXCL_AGENT_PERCENTAGE = MonthlyUsageAttributionSupportedMetrics(
+    "container_excl_agent_percentage"
 )
 MonthlyUsageAttributionSupportedMetrics.CONTAINER_USAGE = MonthlyUsageAttributionSupportedMetrics("container_usage")
 MonthlyUsageAttributionSupportedMetrics.CONTAINER_PERCENTAGE = MonthlyUsageAttributionSupportedMetrics(
@@ -268,6 +274,4 @@ MonthlyUsageAttributionSupportedMetrics.ESTIMATED_RUM_SESSIONS_USAGE = MonthlyUs
 MonthlyUsageAttributionSupportedMetrics.ESTIMATED_RUM_SESSIONS_PERCENTAGE = MonthlyUsageAttributionSupportedMetrics(
     "estimated_rum_sessions_percentage"
 )
-MonthlyUsageAttributionSupportedMetrics.CONT_USAGE = MonthlyUsageAttributionSupportedMetrics("cont_usage")
-MonthlyUsageAttributionSupportedMetrics.CONT_PERCENTAGE = MonthlyUsageAttributionSupportedMetrics("cont_percentage")
 MonthlyUsageAttributionSupportedMetrics.ALL = MonthlyUsageAttributionSupportedMetrics("*")
