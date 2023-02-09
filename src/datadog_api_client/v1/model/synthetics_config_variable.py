@@ -65,7 +65,7 @@ class SyntheticsConfigVariable(ModelNormal):
         :param pattern: Pattern of the variable.
         :type pattern: str, optional
 
-        :param secure: Whether the value of this variable will be obfuscated in test results. Only for config variables of type ``text``.
+        :param secure: Whether the value of this variable will be obfuscated in test results.
         :type secure: bool, optional
 
         :param type: Type of the configuration variable.

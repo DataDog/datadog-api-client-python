@@ -16,7 +16,6 @@ from datadog_api_client.model_utils import (
 if TYPE_CHECKING:
     from datadog_api_client.v1.model.list_stream_compute_items import ListStreamComputeItems
     from datadog_api_client.v1.model.list_stream_source import ListStreamSource
-    from datadog_api_client.v1.model.widget_event_size import WidgetEventSize
     from datadog_api_client.v1.model.list_stream_group_by_items import ListStreamGroupByItems
 
 
@@ -35,13 +34,11 @@ class ListStreamQuery(ModelNormal):
     def openapi_types(_):
         from datadog_api_client.v1.model.list_stream_compute_items import ListStreamComputeItems
         from datadog_api_client.v1.model.list_stream_source import ListStreamSource
-        from datadog_api_client.v1.model.widget_event_size import WidgetEventSize
         from datadog_api_client.v1.model.list_stream_group_by_items import ListStreamGroupByItems
 
         return {
             "compute": ([ListStreamComputeItems],),
             "data_source": (ListStreamSource,),
-            "event_size": (WidgetEventSize,),
             "group_by": ([ListStreamGroupByItems],),
             "indexes": ([str],),
             "query_string": (str,),
@@ -51,7 +48,6 @@ class ListStreamQuery(ModelNormal):
     attribute_map = {
         "compute": "compute",
         "data_source": "data_source",
-        "event_size": "event_size",
         "group_by": "group_by",
         "indexes": "indexes",
         "query_string": "query_string",
@@ -63,7 +59,6 @@ class ListStreamQuery(ModelNormal):
         data_source: ListStreamSource,
         query_string: str,
         compute: Union[List[ListStreamComputeItems], UnsetType] = unset,
-        event_size: Union[WidgetEventSize, UnsetType] = unset,
         group_by: Union[List[ListStreamGroupByItems], UnsetType] = unset,
         indexes: Union[List[str], UnsetType] = unset,
         storage: Union[str, UnsetType] = unset,
@@ -77,9 +72,6 @@ class ListStreamQuery(ModelNormal):
 
         :param data_source: Source from which to query items to display in the stream.
         :type data_source: ListStreamSource
-
-        :param event_size: Size to use to display an event.
-        :type event_size: WidgetEventSize, optional
 
         :param group_by: Group by configuration for the List Stream Widget. Group by can be used only with logs_pattern_stream (up to 3 items) or logs_transaction_stream (one group by item is required) list stream source.
         :type group_by: [ListStreamGroupByItems], optional
@@ -95,8 +87,6 @@ class ListStreamQuery(ModelNormal):
         """
         if compute is not unset:
             kwargs["compute"] = compute
-        if event_size is not unset:
-            kwargs["event_size"] = event_size
         if group_by is not unset:
             kwargs["group_by"] = group_by
         if indexes is not unset:

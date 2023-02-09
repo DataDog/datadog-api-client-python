@@ -757,6 +757,12 @@
       "type": "idempotent"
     }
   },
+  "GetRestrictionPolicy": {
+    "tag": "Restriction Policies",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListRoles": {
     "tag": "Roles",
     "undo": {

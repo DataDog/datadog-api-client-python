@@ -28,7 +28,6 @@ class CostByOrgAttributes(ModelNormal):
             "date": (datetime,),
             "org_name": (str,),
             "public_id": (str,),
-            "region": (str,),
             "total_cost": (float,),
         }
 
@@ -37,7 +36,6 @@ class CostByOrgAttributes(ModelNormal):
         "date": "date",
         "org_name": "org_name",
         "public_id": "public_id",
-        "region": "region",
         "total_cost": "total_cost",
     }
 
@@ -47,7 +45,6 @@ class CostByOrgAttributes(ModelNormal):
         date: Union[datetime, UnsetType] = unset,
         org_name: Union[str, UnsetType] = unset,
         public_id: Union[str, UnsetType] = unset,
-        region: Union[str, UnsetType] = unset,
         total_cost: Union[float, UnsetType] = unset,
         **kwargs,
     ):
@@ -66,9 +63,6 @@ class CostByOrgAttributes(ModelNormal):
         :param public_id: The organization public ID.
         :type public_id: str, optional
 
-        :param region: The region of the Datadog instance that the organization belongs to.
-        :type region: str, optional
-
         :param total_cost: The total cost of products for the month.
         :type total_cost: float, optional
         """
@@ -80,8 +74,6 @@ class CostByOrgAttributes(ModelNormal):
             kwargs["org_name"] = org_name
         if public_id is not unset:
             kwargs["public_id"] = public_id
-        if region is not unset:
-            kwargs["region"] = region
         if total_cost is not unset:
             kwargs["total_cost"] = total_cost
         super().__init__(kwargs)

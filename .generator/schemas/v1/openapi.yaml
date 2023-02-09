@@ -3652,7 +3652,6 @@ components:
       - appsec_fargate_usage
       - appsec_usage
       - browser_usage
-      - container_excl_agent_usage
       - container_usage
       - cspm_containers_usage
       - cspm_hosts_usage
@@ -3674,6 +3673,7 @@ components:
       - profiled_host_usage
       - snmp_usage
       - estimated_rum_sessions_usage
+      - cont_usage
       type: string
       x-enum-varnames:
       - API_USAGE
@@ -3682,7 +3682,6 @@ components:
       - APPSEC_FARGATE_USAGE
       - APPSEC_USAGE
       - BROWSER_USAGE
-      - CONTAINER_EXCL_AGENT_USAGE
       - CONTAINER_USAGE
       - CSPM_CONTAINERS_USAGE
       - CSPM_HOSTS_USAGE
@@ -3704,6 +3703,7 @@ components:
       - PROFILED_HOST_USAGE
       - SNMP_USAGE
       - ESTIMATED_RUM_SESSIONS_USAGE
+      - CONT_USAGE
     IFrameWidgetDefinition:
       description: The iframe widget allows you to embed a portion of any other web
         page on your dashboard. Only available on FREE layout dashboards.
@@ -4078,8 +4078,6 @@ components:
           type: array
         data_source:
           $ref: '#/components/schemas/ListStreamSource'
-        event_size:
-          $ref: '#/components/schemas/WidgetEventSize'
         group_by:
           description: Group by configuration for the List Stream Widget. Group by
             can be used only with logs_pattern_stream (up to 3 items) or logs_transaction_stream
@@ -4124,7 +4122,6 @@ components:
       - apm_issue_stream
       - logs_pattern_stream
       - logs_transaction_stream
-      - event_stream
       example: apm_issue_stream
       type: string
       x-enum-varnames:
@@ -4134,7 +4131,6 @@ components:
       - APM_ISSUE_STREAM
       - LOGS_PATTERN_STREAM
       - LOGS_TRANSACTION_STREAM
-      - EVENT_STREAM
     ListStreamWidgetDefinition:
       description: 'The list stream visualization displays a table of recent events
         in your application that
@@ -7088,8 +7084,6 @@ components:
       - appsec_percentage
       - browser_usage
       - browser_percentage
-      - container_excl_agent_usage
-      - container_excl_agent_percentage
       - container_usage
       - container_percentage
       - cspm_containers_percentage
@@ -7132,6 +7126,8 @@ components:
       - snmp_percentage
       - estimated_rum_sessions_usage
       - estimated_rum_sessions_percentage
+      - cont_usage
+      - cont_percentage
       - '*'
       type: string
       x-enum-varnames:
@@ -7147,8 +7143,6 @@ components:
       - APPSEC_PERCENTAGE
       - BROWSER_USAGE
       - BROWSER_PERCENTAGE
-      - CONTAINER_EXCL_AGENT_USAGE
-      - CONTAINER_EXCL_AGENT_PERCENTAGE
       - CONTAINER_USAGE
       - CONTAINER_PERCENTAGE
       - CSPM_CONTAINERS_PERCENTAGE
@@ -7191,6 +7185,8 @@ components:
       - SNMP_PERCENTAGE
       - ESTIMATED_RUM_SESSIONS_USAGE
       - ESTIMATED_RUM_SESSIONS_PERCENTAGE
+      - CONT_USAGE
+      - CONT_PERCENTAGE
       - ALL
     MonthlyUsageAttributionValues:
       description: Fields in Usage Summary by tag(s).
@@ -7246,12 +7242,12 @@ components:
           description: The synthetic browser test usage by tag(s).
           format: double
           type: number
-        container_excl_agent_percentage:
+        cont_percentage:
           description: The percentage of container usage without the Datadog Agent
             by tag(s).
           format: double
           type: number
-        container_excl_agent_usage:
+        cont_usage:
           description: The container usage without the Datadog Agent by tag(s).
           format: double
           type: number
@@ -12681,7 +12677,7 @@ components:
           type: string
         secure:
           description: Whether the value of this variable will be obfuscated in test
-            results. Only for config variables of type `text`.
+            results.
           example: false
           type: boolean
         type:

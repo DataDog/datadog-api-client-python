@@ -169,6 +169,13 @@ application\_keys\_type
    :members:
    :show-inheritance:
 
+attributes
+----------
+
+.. automodule:: datadog_api_client.v2.model.attributes
+   :members:
+   :show-inheritance:
+
 audit\_logs\_event
 ------------------
 
@@ -376,6 +383,13 @@ authn\_mappings\_type
 ---------------------
 
 .. automodule:: datadog_api_client.v2.model.authn_mappings_type
+   :members:
+   :show-inheritance:
+
+binding
+-------
+
+.. automodule:: datadog_api_client.v2.model.binding
    :members:
    :show-inheritance:
 
@@ -1517,6 +1531,13 @@ full\_application\_key\_attributes
 ----------------------------------
 
 .. automodule:: datadog_api_client.v2.model.full_application_key_attributes
+   :members:
+   :show-inheritance:
+
+get\_restriction\_policy\_response
+----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_restriction_policy_response
    :members:
    :show-inheritance:
 
@@ -3722,6 +3743,20 @@ response\_meta\_attributes
 --------------------------
 
 .. automodule:: datadog_api_client.v2.model.response_meta_attributes
+   :members:
+   :show-inheritance:
+
+restriction\_policy
+-------------------
+
+.. automodule:: datadog_api_client.v2.model.restriction_policy
+   :members:
+   :show-inheritance:
+
+restriction\_policy\_type
+-------------------------
+
+.. automodule:: datadog_api_client.v2.model.restriction_policy_type
    :members:
    :show-inheritance:
 
