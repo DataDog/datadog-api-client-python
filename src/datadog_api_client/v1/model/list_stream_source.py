@@ -16,7 +16,7 @@ class ListStreamSource(ModelSimple):
     """
     Source from which to query items to display in the stream.
 
-    :param value: If omitted defaults to "apm_issue_stream". Must be one of ["logs_stream", "audit_stream", "rum_issue_stream", "apm_issue_stream", "logs_pattern_stream", "logs_transaction_stream", "event_stream"].
+    :param value: If omitted defaults to "apm_issue_stream". Must be one of ["logs_stream", "audit_stream", "rum_issue_stream", "apm_issue_stream", "logs_pattern_stream", "logs_transaction_stream", "rum_stream", "event_stream"].
     :type value: str
     """
 
@@ -27,6 +27,7 @@ class ListStreamSource(ModelSimple):
         "apm_issue_stream",
         "logs_pattern_stream",
         "logs_transaction_stream",
+        "rum_stream",
         "event_stream",
     }
     LOGS_STREAM: ClassVar["ListStreamSource"]
@@ -35,6 +36,7 @@ class ListStreamSource(ModelSimple):
     APM_ISSUE_STREAM: ClassVar["ListStreamSource"]
     LOGS_PATTERN_STREAM: ClassVar["ListStreamSource"]
     LOGS_TRANSACTION_STREAM: ClassVar["ListStreamSource"]
+    RUM_STREAM: ClassVar["ListStreamSource"]
     EVENT_STREAM: ClassVar["ListStreamSource"]
 
     @cached_property
@@ -50,4 +52,5 @@ ListStreamSource.RUM_ISSUE_STREAM = ListStreamSource("rum_issue_stream")
 ListStreamSource.APM_ISSUE_STREAM = ListStreamSource("apm_issue_stream")
 ListStreamSource.LOGS_PATTERN_STREAM = ListStreamSource("logs_pattern_stream")
 ListStreamSource.LOGS_TRANSACTION_STREAM = ListStreamSource("logs_transaction_stream")
+ListStreamSource.RUM_STREAM = ListStreamSource("rum_stream")
 ListStreamSource.EVENT_STREAM = ListStreamSource("event_stream")
