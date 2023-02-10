@@ -269,34 +269,34 @@ class UsageAttributionValues(ModelNormal):
         :param dbm_queries_usage: The Database Monitoring normalized queries usage by tag(s).
         :type dbm_queries_usage: float, optional
 
-        :param estimated_indexed_logs_percentage: The percentage of estimated live indexed logs usage by tag(s). Note this field is in private beta.
+        :param estimated_indexed_logs_percentage: The percentage of estimated live indexed logs usage by tag(s).
         :type estimated_indexed_logs_percentage: float, optional
 
-        :param estimated_indexed_logs_usage: The estimated live indexed logs usage by tag(s). Note this field is in private beta.
+        :param estimated_indexed_logs_usage: The estimated live indexed logs usage by tag(s).
         :type estimated_indexed_logs_usage: float, optional
 
-        :param estimated_indexed_spans_percentage: The percentage of estimated indexed spans usage by tag(s). Note this field is in private beta.
+        :param estimated_indexed_spans_percentage: The percentage of estimated indexed spans usage by tag(s).
         :type estimated_indexed_spans_percentage: float, optional
 
-        :param estimated_indexed_spans_usage: The estimated indexed spans usage by tag(s). Note this field is in private beta.
+        :param estimated_indexed_spans_usage: The estimated indexed spans usage by tag(s).
         :type estimated_indexed_spans_usage: float, optional
 
-        :param estimated_ingested_logs_percentage: The percentage of estimated live ingested logs usage by tag(s). Note this field is in private beta.
+        :param estimated_ingested_logs_percentage: The percentage of estimated live ingested logs usage by tag(s).
         :type estimated_ingested_logs_percentage: float, optional
 
-        :param estimated_ingested_logs_usage: The estimated live ingested logs usage by tag(s). Note this field is in private beta.
+        :param estimated_ingested_logs_usage: The estimated live ingested logs usage by tag(s).
         :type estimated_ingested_logs_usage: float, optional
 
-        :param estimated_ingested_spans_percentage: The percentage of estimated ingested spans usage by tag(s). Note this field is in private beta.
+        :param estimated_ingested_spans_percentage: The percentage of estimated ingested spans usage by tag(s).
         :type estimated_ingested_spans_percentage: float, optional
 
-        :param estimated_ingested_spans_usage: The estimated ingested spans usage by tag(s). Note this field is in private beta.
+        :param estimated_ingested_spans_usage: The estimated ingested spans usage by tag(s).
         :type estimated_ingested_spans_usage: float, optional
 
-        :param estimated_rum_sessions_percentage: The percentage of estimated rum sessions usage by tag(s). This field is in private beta.
+        :param estimated_rum_sessions_percentage: The percentage of estimated rum sessions usage by tag(s).
         :type estimated_rum_sessions_percentage: float, optional
 
-        :param estimated_rum_sessions_usage: The estimated rum sessions usage by tag(s). This field is in private beta.
+        :param estimated_rum_sessions_usage: The estimated rum sessions usage by tag(s).
         :type estimated_rum_sessions_usage: float, optional
 
         :param infra_host_percentage: The percentage of infrastructure host usage by tag(s).
