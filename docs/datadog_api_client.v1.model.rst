@@ -1184,6 +1184,13 @@ ip\_prefixes\_logs
    :members:
    :show-inheritance:
 
+ip\_prefixes\_orchestrator
+--------------------------
+
+.. automodule:: datadog_api_client.v1.model.ip_prefixes_orchestrator
+   :members:
+   :show-inheritance:
+
 ip\_prefixes\_process
 ---------------------
 
