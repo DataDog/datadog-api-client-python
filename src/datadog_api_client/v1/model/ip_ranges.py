@@ -18,6 +18,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.ip_prefixes_api import IPPrefixesAPI
     from datadog_api_client.v1.model.ip_prefixes_apm import IPPrefixesAPM
     from datadog_api_client.v1.model.ip_prefixes_logs import IPPrefixesLogs
+    from datadog_api_client.v1.model.ip_prefixes_orchestrator import IPPrefixesOrchestrator
     from datadog_api_client.v1.model.ip_prefixes_process import IPPrefixesProcess
     from datadog_api_client.v1.model.ip_prefixes_synthetics import IPPrefixesSynthetics
     from datadog_api_client.v1.model.ip_prefixes_synthetics_private_locations import (
@@ -33,6 +34,7 @@ class IPRanges(ModelNormal):
         from datadog_api_client.v1.model.ip_prefixes_api import IPPrefixesAPI
         from datadog_api_client.v1.model.ip_prefixes_apm import IPPrefixesAPM
         from datadog_api_client.v1.model.ip_prefixes_logs import IPPrefixesLogs
+        from datadog_api_client.v1.model.ip_prefixes_orchestrator import IPPrefixesOrchestrator
         from datadog_api_client.v1.model.ip_prefixes_process import IPPrefixesProcess
         from datadog_api_client.v1.model.ip_prefixes_synthetics import IPPrefixesSynthetics
         from datadog_api_client.v1.model.ip_prefixes_synthetics_private_locations import (
@@ -46,6 +48,7 @@ class IPRanges(ModelNormal):
             "apm": (IPPrefixesAPM,),
             "logs": (IPPrefixesLogs,),
             "modified": (str,),
+            "orchestrator": (IPPrefixesOrchestrator,),
             "process": (IPPrefixesProcess,),
             "synthetics": (IPPrefixesSynthetics,),
             "synthetics_private_locations": (IPPrefixesSyntheticsPrivateLocations,),
@@ -59,6 +62,7 @@ class IPRanges(ModelNormal):
         "apm": "apm",
         "logs": "logs",
         "modified": "modified",
+        "orchestrator": "orchestrator",
         "process": "process",
         "synthetics": "synthetics",
         "synthetics_private_locations": "synthetics-private-locations",
@@ -73,6 +77,7 @@ class IPRanges(ModelNormal):
         apm: Union[IPPrefixesAPM, UnsetType] = unset,
         logs: Union[IPPrefixesLogs, UnsetType] = unset,
         modified: Union[str, UnsetType] = unset,
+        orchestrator: Union[IPPrefixesOrchestrator, UnsetType] = unset,
         process: Union[IPPrefixesProcess, UnsetType] = unset,
         synthetics: Union[IPPrefixesSynthetics, UnsetType] = unset,
         synthetics_private_locations: Union[IPPrefixesSyntheticsPrivateLocations, UnsetType] = unset,
@@ -97,6 +102,9 @@ class IPRanges(ModelNormal):
 
         :param modified: Date when last updated, in the form ``YYYY-MM-DD-hh-mm-ss``.
         :type modified: str, optional
+
+        :param orchestrator: Available prefix information for the Orchestrator endpoints.
+        :type orchestrator: IPPrefixesOrchestrator, optional
 
         :param process: Available prefix information for the Process endpoints.
         :type process: IPPrefixesProcess, optional
@@ -123,6 +131,8 @@ class IPRanges(ModelNormal):
             kwargs["logs"] = logs
         if modified is not unset:
             kwargs["modified"] = modified
+        if orchestrator is not unset:
+            kwargs["orchestrator"] = orchestrator
         if process is not unset:
             kwargs["process"] = process
         if synthetics is not unset:
