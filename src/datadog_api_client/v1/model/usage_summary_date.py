@@ -43,7 +43,9 @@ class UsageSummaryDate(ModelNormal):
             "ci_test_indexed_spans_sum": (int,),
             "ci_visibility_pipeline_committers_hwm": (int,),
             "ci_visibility_test_committers_hwm": (int,),
+            "cloud_cost_management_host_count_avg": (int,),
             "container_avg": (int,),
+            "container_excl_agent_avg": (int,),
             "container_hwm": (int,),
             "cspm_aas_host_top99p": (int,),
             "cspm_aws_host_top99p": (int,),
@@ -119,7 +121,9 @@ class UsageSummaryDate(ModelNormal):
         "ci_test_indexed_spans_sum": "ci_test_indexed_spans_sum",
         "ci_visibility_pipeline_committers_hwm": "ci_visibility_pipeline_committers_hwm",
         "ci_visibility_test_committers_hwm": "ci_visibility_test_committers_hwm",
+        "cloud_cost_management_host_count_avg": "cloud_cost_management_host_count_avg",
         "container_avg": "container_avg",
+        "container_excl_agent_avg": "container_excl_agent_avg",
         "container_hwm": "container_hwm",
         "cspm_aas_host_top99p": "cspm_aas_host_top99p",
         "cspm_aws_host_top99p": "cspm_aws_host_top99p",
@@ -196,7 +200,9 @@ class UsageSummaryDate(ModelNormal):
         ci_test_indexed_spans_sum: Union[int, UnsetType] = unset,
         ci_visibility_pipeline_committers_hwm: Union[int, UnsetType] = unset,
         ci_visibility_test_committers_hwm: Union[int, UnsetType] = unset,
+        cloud_cost_management_host_count_avg: Union[int, UnsetType] = unset,
         container_avg: Union[int, UnsetType] = unset,
+        container_excl_agent_avg: Union[int, UnsetType] = unset,
         container_hwm: Union[int, UnsetType] = unset,
         cspm_aas_host_top99p: Union[int, UnsetType] = unset,
         cspm_aws_host_top99p: Union[int, UnsetType] = unset,
@@ -312,8 +318,14 @@ class UsageSummaryDate(ModelNormal):
         :param ci_visibility_test_committers_hwm: Shows the high-water mark of all CI visibility test committers over all hours in the current month for all organizations.
         :type ci_visibility_test_committers_hwm: int, optional
 
+        :param cloud_cost_management_host_count_avg: Host count average of Cloud Cost Management for the given date and given organization.
+        :type cloud_cost_management_host_count_avg: int, optional
+
         :param container_avg: Shows the average of all distinct containers over all hours in the current date for all organizations.
         :type container_avg: int, optional
+
+        :param container_excl_agent_avg: Shows the average of containers without the Datadog Agent over all hours in the current date for all organizations.
+        :type container_excl_agent_avg: int, optional
 
         :param container_hwm: Shows the high-water mark of all distinct containers over all hours in the current date for all organizations.
         :type container_hwm: int, optional
@@ -512,8 +524,12 @@ class UsageSummaryDate(ModelNormal):
             kwargs["ci_visibility_pipeline_committers_hwm"] = ci_visibility_pipeline_committers_hwm
         if ci_visibility_test_committers_hwm is not unset:
             kwargs["ci_visibility_test_committers_hwm"] = ci_visibility_test_committers_hwm
+        if cloud_cost_management_host_count_avg is not unset:
+            kwargs["cloud_cost_management_host_count_avg"] = cloud_cost_management_host_count_avg
         if container_avg is not unset:
             kwargs["container_avg"] = container_avg
+        if container_excl_agent_avg is not unset:
+            kwargs["container_excl_agent_avg"] = container_excl_agent_avg
         if container_hwm is not unset:
             kwargs["container_hwm"] = container_hwm
         if cspm_aas_host_top99p is not unset:

@@ -38,6 +38,7 @@ class UsageSummaryDateOrg(ModelNormal):
             "ci_visibility_test_committers_hwm": (int,),
             "cloud_cost_management_host_count_avg": (int,),
             "container_avg": (int,),
+            "container_excl_agent_avg": (int,),
             "container_hwm": (int,),
             "cspm_aas_host_top99p": (int,),
             "cspm_aws_host_top99p": (int,),
@@ -117,6 +118,7 @@ class UsageSummaryDateOrg(ModelNormal):
         "ci_visibility_test_committers_hwm": "ci_visibility_test_committers_hwm",
         "cloud_cost_management_host_count_avg": "cloud_cost_management_host_count_avg",
         "container_avg": "container_avg",
+        "container_excl_agent_avg": "container_excl_agent_avg",
         "container_hwm": "container_hwm",
         "cspm_aas_host_top99p": "cspm_aas_host_top99p",
         "cspm_aws_host_top99p": "cspm_aws_host_top99p",
@@ -197,6 +199,7 @@ class UsageSummaryDateOrg(ModelNormal):
         ci_visibility_test_committers_hwm: Union[int, UnsetType] = unset,
         cloud_cost_management_host_count_avg: Union[int, UnsetType] = unset,
         container_avg: Union[int, UnsetType] = unset,
+        container_excl_agent_avg: Union[int, UnsetType] = unset,
         container_hwm: Union[int, UnsetType] = unset,
         cspm_aas_host_top99p: Union[int, UnsetType] = unset,
         cspm_aws_host_top99p: Union[int, UnsetType] = unset,
@@ -319,6 +322,9 @@ class UsageSummaryDateOrg(ModelNormal):
 
         :param container_avg: Shows the average of all distinct containers over all hours in the current date for the given org.
         :type container_avg: int, optional
+
+        :param container_excl_agent_avg: Shows the average of containers without the Datadog Agent over all hours in the current date for the given organization.
+        :type container_excl_agent_avg: int, optional
 
         :param container_hwm: Shows the high-water mark of all distinct containers over all hours in the current date for the given org.
         :type container_hwm: int, optional
@@ -527,6 +533,8 @@ class UsageSummaryDateOrg(ModelNormal):
             kwargs["cloud_cost_management_host_count_avg"] = cloud_cost_management_host_count_avg
         if container_avg is not unset:
             kwargs["container_avg"] = container_avg
+        if container_excl_agent_avg is not unset:
+            kwargs["container_excl_agent_avg"] = container_excl_agent_avg
         if container_hwm is not unset:
             kwargs["container_hwm"] = container_hwm
         if cspm_aas_host_top99p is not unset:

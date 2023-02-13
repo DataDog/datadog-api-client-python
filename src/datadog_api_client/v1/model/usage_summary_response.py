@@ -48,6 +48,7 @@ class UsageSummaryResponse(ModelNormal):
             "ci_visibility_test_committers_hwm_sum": (int,),
             "cloud_cost_management_host_count_avg_sum": (int,),
             "container_avg_sum": (int,),
+            "container_excl_agent_avg_sum": (int,),
             "container_hwm_sum": (int,),
             "cspm_aas_host_top99p_sum": (int,),
             "cspm_aws_host_top99p_sum": (int,),
@@ -134,6 +135,7 @@ class UsageSummaryResponse(ModelNormal):
         "ci_visibility_test_committers_hwm_sum": "ci_visibility_test_committers_hwm_sum",
         "cloud_cost_management_host_count_avg_sum": "cloud_cost_management_host_count_avg_sum",
         "container_avg_sum": "container_avg_sum",
+        "container_excl_agent_avg_sum": "container_excl_agent_avg_sum",
         "container_hwm_sum": "container_hwm_sum",
         "cspm_aas_host_top99p_sum": "cspm_aas_host_top99p_sum",
         "cspm_aws_host_top99p_sum": "cspm_aws_host_top99p_sum",
@@ -221,6 +223,7 @@ class UsageSummaryResponse(ModelNormal):
         ci_visibility_test_committers_hwm_sum: Union[int, UnsetType] = unset,
         cloud_cost_management_host_count_avg_sum: Union[int, UnsetType] = unset,
         container_avg_sum: Union[int, UnsetType] = unset,
+        container_excl_agent_avg_sum: Union[int, UnsetType] = unset,
         container_hwm_sum: Union[int, UnsetType] = unset,
         cspm_aas_host_top99p_sum: Union[int, UnsetType] = unset,
         cspm_aws_host_top99p_sum: Union[int, UnsetType] = unset,
@@ -352,6 +355,9 @@ class UsageSummaryResponse(ModelNormal):
 
         :param container_avg_sum: Shows the average of all distinct containers over all hours in the current months for all organizations.
         :type container_avg_sum: int, optional
+
+        :param container_excl_agent_avg_sum: Shows the average of the containers without the Datadog Agent over all hours in the current month for all organizations.
+        :type container_excl_agent_avg_sum: int, optional
 
         :param container_hwm_sum: Shows the sum of the high-water marks of all distinct containers over all hours in the current months for all organizations.
         :type container_hwm_sum: int, optional
@@ -580,6 +586,8 @@ class UsageSummaryResponse(ModelNormal):
             kwargs["cloud_cost_management_host_count_avg_sum"] = cloud_cost_management_host_count_avg_sum
         if container_avg_sum is not unset:
             kwargs["container_avg_sum"] = container_avg_sum
+        if container_excl_agent_avg_sum is not unset:
+            kwargs["container_excl_agent_avg_sum"] = container_excl_agent_avg_sum
         if container_hwm_sum is not unset:
             kwargs["container_hwm_sum"] = container_hwm_sum
         if cspm_aas_host_top99p_sum is not unset:
