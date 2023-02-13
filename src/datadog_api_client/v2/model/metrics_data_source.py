@@ -14,16 +14,18 @@ from typing import ClassVar
 
 class MetricsDataSource(ModelSimple):
     """
-    A data source that is powered by the Metrics backend.
+    A data source that is powered by the Metrics platform.
 
-    :param value: If omitted defaults to "metrics". Must be one of ["metrics"].
+    :param value: If omitted defaults to "metrics". Must be one of ["metrics", "cloud_cost"].
     :type value: str
     """
 
     allowed_values = {
         "metrics",
+        "cloud_cost",
     }
     METRICS: ClassVar["MetricsDataSource"]
+    CLOUD_COST: ClassVar["MetricsDataSource"]
 
     @cached_property
     def openapi_types(_):
@@ -33,3 +35,4 @@ class MetricsDataSource(ModelSimple):
 
 
 MetricsDataSource.METRICS = MetricsDataSource("metrics")
+MetricsDataSource.CLOUD_COST = MetricsDataSource("cloud_cost")
