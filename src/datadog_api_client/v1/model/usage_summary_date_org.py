@@ -36,6 +36,7 @@ class UsageSummaryDateOrg(ModelNormal):
             "ci_test_indexed_spans_sum": (int,),
             "ci_visibility_pipeline_committers_hwm": (int,),
             "ci_visibility_test_committers_hwm": (int,),
+            "cloud_cost_management_host_count_avg": (int,),
             "container_avg": (int,),
             "container_hwm": (int,),
             "cspm_aas_host_top99p": (int,),
@@ -114,6 +115,7 @@ class UsageSummaryDateOrg(ModelNormal):
         "ci_test_indexed_spans_sum": "ci_test_indexed_spans_sum",
         "ci_visibility_pipeline_committers_hwm": "ci_visibility_pipeline_committers_hwm",
         "ci_visibility_test_committers_hwm": "ci_visibility_test_committers_hwm",
+        "cloud_cost_management_host_count_avg": "cloud_cost_management_host_count_avg",
         "container_avg": "container_avg",
         "container_hwm": "container_hwm",
         "cspm_aas_host_top99p": "cspm_aas_host_top99p",
@@ -193,6 +195,7 @@ class UsageSummaryDateOrg(ModelNormal):
         ci_test_indexed_spans_sum: Union[int, UnsetType] = unset,
         ci_visibility_pipeline_committers_hwm: Union[int, UnsetType] = unset,
         ci_visibility_test_committers_hwm: Union[int, UnsetType] = unset,
+        cloud_cost_management_host_count_avg: Union[int, UnsetType] = unset,
         container_avg: Union[int, UnsetType] = unset,
         container_hwm: Union[int, UnsetType] = unset,
         cspm_aas_host_top99p: Union[int, UnsetType] = unset,
@@ -310,6 +313,9 @@ class UsageSummaryDateOrg(ModelNormal):
 
         :param ci_visibility_test_committers_hwm: Shows the high-water mark of all CI visibility test committers over all hours in the current date for the given org.
         :type ci_visibility_test_committers_hwm: int, optional
+
+        :param cloud_cost_management_host_count_avg: Host count average of Cloud Cost Management for the given date and given org.
+        :type cloud_cost_management_host_count_avg: int, optional
 
         :param container_avg: Shows the average of all distinct containers over all hours in the current date for the given org.
         :type container_avg: int, optional
@@ -517,6 +523,8 @@ class UsageSummaryDateOrg(ModelNormal):
             kwargs["ci_visibility_pipeline_committers_hwm"] = ci_visibility_pipeline_committers_hwm
         if ci_visibility_test_committers_hwm is not unset:
             kwargs["ci_visibility_test_committers_hwm"] = ci_visibility_test_committers_hwm
+        if cloud_cost_management_host_count_avg is not unset:
+            kwargs["cloud_cost_management_host_count_avg"] = cloud_cost_management_host_count_avg
         if container_avg is not unset:
             kwargs["container_avg"] = container_avg
         if container_hwm is not unset:
