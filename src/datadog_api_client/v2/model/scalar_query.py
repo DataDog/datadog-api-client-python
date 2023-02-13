@@ -18,7 +18,7 @@ class ScalarQuery(ModelComposed):
         :param aggregator: The type of aggregation that can be performed on metrics queries.
         :type aggregator: MetricsAggregator
 
-        :param data_source: A data source that is powered by the Metrics backend.
+        :param data_source: A data source that is powered by the Metrics platform.
         :type data_source: MetricsDataSource
 
         :param name: The variable name for use in formulas.

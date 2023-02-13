@@ -38,7 +38,7 @@ class MetricsTimeseriesQuery(ModelNormal):
         """
         An individual timeseries metrics query.
 
-        :param data_source: A data source that is powered by the Metrics backend.
+        :param data_source: A data source that is powered by the Metrics platform.
         :type data_source: MetricsDataSource
 
         :param name: The variable name for use in formulas.
