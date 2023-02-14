@@ -31,18 +31,18 @@ class HostMeta(ModelNormal):
             "agent_checks": ([AgentCheck],),
             "agent_version": (str,),
             "cpu_cores": (int,),
-            "fbsd_v": ([str, none_type],),
+            "fbsd_v": ([bool, date, datetime, dict, float, int, list, str, none_type],),
             "gohai": (str,),
             "install_method": (HostMetaInstallMethod,),
             "mac_v": ([bool, date, datetime, dict, float, int, list, str, none_type],),
             "machine": (str,),
-            "nix_v": ([str, none_type],),
+            "nix_v": ([bool, date, datetime, dict, float, int, list, str, none_type],),
             "platform": (str,),
             "processor": (str,),
             "python_v": (str,),
             "socket_fqdn": (str,),
             "socket_hostname": (str,),
-            "win_v": ([str, none_type],),
+            "win_v": ([bool, date, datetime, dict, float, int, list, str, none_type],),
         }
 
     attribute_map = {
@@ -68,18 +68,18 @@ class HostMeta(ModelNormal):
         agent_checks: Union[List[AgentCheck], UnsetType] = unset,
         agent_version: Union[str, UnsetType] = unset,
         cpu_cores: Union[int, UnsetType] = unset,
-        fbsd_v: Union[List[str], UnsetType] = unset,
+        fbsd_v: Union[List[Any], UnsetType] = unset,
         gohai: Union[str, UnsetType] = unset,
         install_method: Union[HostMetaInstallMethod, UnsetType] = unset,
         mac_v: Union[List[Any], UnsetType] = unset,
         machine: Union[str, UnsetType] = unset,
-        nix_v: Union[List[str], UnsetType] = unset,
+        nix_v: Union[List[Any], UnsetType] = unset,
         platform: Union[str, UnsetType] = unset,
         processor: Union[str, UnsetType] = unset,
         python_v: Union[str, UnsetType] = unset,
         socket_fqdn: Union[str, UnsetType] = unset,
         socket_hostname: Union[str, UnsetType] = unset,
-        win_v: Union[List[str], UnsetType] = unset,
+        win_v: Union[List[Any], UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -95,7 +95,7 @@ class HostMeta(ModelNormal):
         :type cpu_cores: int, optional
 
         :param fbsd_v: An array of Mac versions.
-        :type fbsd_v: [str, none_type], optional
+        :type fbsd_v: [bool, date, datetime, dict, float, int, list, str, none_type], optional
 
         :param gohai: JSON string containing system information.
         :type gohai: str, optional
@@ -110,7 +110,7 @@ class HostMeta(ModelNormal):
         :type machine: str, optional
 
         :param nix_v: Array of Unix versions.
-        :type nix_v: [str, none_type], optional
+        :type nix_v: [bool, date, datetime, dict, float, int, list, str, none_type], optional
 
         :param platform: The OS platform.
         :type platform: str, optional
@@ -128,7 +128,7 @@ class HostMeta(ModelNormal):
         :type socket_hostname: str, optional
 
         :param win_v: An array of Windows versions.
-        :type win_v: [str, none_type], optional
+        :type win_v: [bool, date, datetime, dict, float, int, list, str, none_type], optional
         """
         if agent_checks is not unset:
             kwargs["agent_checks"] = agent_checks
