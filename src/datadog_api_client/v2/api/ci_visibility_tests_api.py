@@ -36,7 +36,7 @@ class CIVisibilityTestsApi:
         self._aggregate_ci_app_test_events_endpoint = _Endpoint(
             settings={
                 "response_type": (CIAppTestsAnalyticsAggregateResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/ci/tests/analytics/aggregate",
                 "operation_id": "aggregate_ci_app_test_events",
                 "http_method": "POST",
@@ -57,7 +57,7 @@ class CIVisibilityTestsApi:
         self._list_ci_app_test_events_endpoint = _Endpoint(
             settings={
                 "response_type": (CIAppTestEventsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/ci/tests/events",
                 "operation_id": "list_ci_app_test_events",
                 "http_method": "GET",
@@ -109,7 +109,7 @@ class CIVisibilityTestsApi:
         self._search_ci_app_test_events_endpoint = _Endpoint(
             settings={
                 "response_type": (CIAppTestEventsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/ci/tests/events/search",
                 "operation_id": "search_ci_app_test_events",
                 "http_method": "POST",
