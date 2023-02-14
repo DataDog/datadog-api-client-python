@@ -180,15 +180,13 @@ Feature: Service Level Objectives
 
   @generated @skip @team:DataDog/slo-app
   Scenario: Search for SLOs returns "Bad Request" response
-    Given operation "SearchSLO" enabled
-    And new "SearchSLO" request
+    Given new "SearchSLO" request
     When the request is sent
     Then the response status is 400 Bad Request
 
   @replay-only @team:DataDog/slo-app
   Scenario: Search for SLOs returns "OK" response
     Given there is a valid "slo" in the system
-    And operation "SearchSLO" enabled
     And new "SearchSLO" request
     And request contains "query" parameter from "slo.data[0].name"
     And request contains "page[size]" parameter with value 20
@@ -196,6 +194,9 @@ Feature: Service Level Objectives
     When the request is sent
     Then the response status is 200 OK
     And the response "data.attributes.slos[0].data.attributes.name" is equal to "{{ slo.data[0].name }}"
+    And the response "data.attributes.slos[0].data.attributes.overall_status[0].error_budget_remaining" is equal to null
+    And the response "data.attributes.slos[0].data.attributes.overall_status[0].status" is equal to null
+    And the response "data.attributes.slos[0].data.attributes.status.state" is equal to "no_data"
 
   @team:DataDog/slo-app
   Scenario: Update an SLO returns "Bad Request" response

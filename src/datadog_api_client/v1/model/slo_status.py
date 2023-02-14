@@ -17,58 +17,50 @@ from datadog_api_client.model_utils import (
 if TYPE_CHECKING:
     from datadog_api_client.v1.model.slo_raw_error_budget_remaining import SLORawErrorBudgetRemaining
     from datadog_api_client.v1.model.slo_state import SLOState
-    from datadog_api_client.v1.model.slo_timeframe import SLOTimeframe
 
 
-class SLOOverallStatuses(ModelNormal):
+class SLOStatus(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v1.model.slo_raw_error_budget_remaining import SLORawErrorBudgetRemaining
         from datadog_api_client.v1.model.slo_state import SLOState
-        from datadog_api_client.v1.model.slo_timeframe import SLOTimeframe
 
         return {
-            "error": (str, none_type),
+            "calculation_error": (str, none_type),
             "error_budget_remaining": (float, none_type),
             "indexed_at": (int,),
             "raw_error_budget_remaining": (SLORawErrorBudgetRemaining,),
+            "sli": (float, none_type),
             "span_precision": (int, none_type),
             "state": (SLOState,),
-            "status": (float, none_type),
-            "target": (float,),
-            "timeframe": (SLOTimeframe,),
         }
 
     attribute_map = {
-        "error": "error",
+        "calculation_error": "calculation_error",
         "error_budget_remaining": "error_budget_remaining",
         "indexed_at": "indexed_at",
         "raw_error_budget_remaining": "raw_error_budget_remaining",
+        "sli": "sli",
         "span_precision": "span_precision",
         "state": "state",
-        "status": "status",
-        "target": "target",
-        "timeframe": "timeframe",
     }
 
     def __init__(
         self_,
-        error: Union[str, none_type, UnsetType] = unset,
+        calculation_error: Union[str, none_type, UnsetType] = unset,
         error_budget_remaining: Union[float, none_type, UnsetType] = unset,
         indexed_at: Union[int, UnsetType] = unset,
         raw_error_budget_remaining: Union[SLORawErrorBudgetRemaining, none_type, UnsetType] = unset,
+        sli: Union[float, none_type, UnsetType] = unset,
         span_precision: Union[int, none_type, UnsetType] = unset,
         state: Union[SLOState, UnsetType] = unset,
-        status: Union[float, none_type, UnsetType] = unset,
-        target: Union[float, UnsetType] = unset,
-        timeframe: Union[SLOTimeframe, UnsetType] = unset,
         **kwargs,
     ):
         """
-        Overall status of the SLO by timeframes.
+        Status of the SLO's primary timeframe.
 
-        :param error: Error message if SLO status or error budget could not be calculated.
-        :type error: str, none_type, optional
+        :param calculation_error: Error message if SLO status or error budget could not be calculated.
+        :type calculation_error: str, none_type, optional
 
         :param error_budget_remaining: Remaining error budget of the SLO in percentage.
         :type error_budget_remaining: float, none_type, optional
@@ -80,37 +72,27 @@ class SLOOverallStatuses(ModelNormal):
         :param raw_error_budget_remaining: Error budget remaining for an SLO.
         :type raw_error_budget_remaining: SLORawErrorBudgetRemaining, none_type, optional
 
-        :param span_precision: The amount of decimal places the SLI value is accurate to.
+        :param sli: The current service level indicator (SLI) of the SLO, also known as 'status'. This is a percentage value from 0-100 (inclusive).
+        :type sli: float, none_type, optional
+
+        :param span_precision: The number of decimal places the SLI value is accurate to.
         :type span_precision: int, none_type, optional
 
         :param state: State of the SLO.
         :type state: SLOState, optional
-
-        :param status: The status of the SLO.
-        :type status: float, none_type, optional
-
-        :param target: The target of the SLO.
-        :type target: float, optional
-
-        :param timeframe: The SLO time window options.
-        :type timeframe: SLOTimeframe, optional
         """
-        if error is not unset:
-            kwargs["error"] = error
+        if calculation_error is not unset:
+            kwargs["calculation_error"] = calculation_error
         if error_budget_remaining is not unset:
             kwargs["error_budget_remaining"] = error_budget_remaining
         if indexed_at is not unset:
             kwargs["indexed_at"] = indexed_at
         if raw_error_budget_remaining is not unset:
             kwargs["raw_error_budget_remaining"] = raw_error_budget_remaining
+        if sli is not unset:
+            kwargs["sli"] = sli
         if span_precision is not unset:
             kwargs["span_precision"] = span_precision
         if state is not unset:
             kwargs["state"] = state
-        if status is not unset:
-            kwargs["status"] = status
-        if target is not unset:
-            kwargs["target"] = target
-        if timeframe is not unset:
-            kwargs["timeframe"] = timeframe
         super().__init__(kwargs)
