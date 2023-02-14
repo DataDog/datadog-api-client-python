@@ -373,7 +373,7 @@ class MetricsApi:
         self._query_scalar_data_endpoint = _Endpoint(
             settings={
                 "response_type": (ScalarFormulaQueryResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/query/scalar",
                 "operation_id": "query_scalar_data",
                 "http_method": "POST",
@@ -394,7 +394,7 @@ class MetricsApi:
         self._query_timeseries_data_endpoint = _Endpoint(
             settings={
                 "response_type": (TimeseriesFormulaQueryResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/query/timeseries",
                 "operation_id": "query_timeseries_data",
                 "http_method": "POST",

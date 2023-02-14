@@ -30,7 +30,7 @@ class MonitorsApi:
         self._create_monitor_config_policy_endpoint = _Endpoint(
             settings={
                 "response_type": (MonitorConfigPolicyResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/monitor/policy",
                 "operation_id": "create_monitor_config_policy",
                 "http_method": "POST",
@@ -51,7 +51,7 @@ class MonitorsApi:
         self._delete_monitor_config_policy_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/monitor/policy/{policy_id}",
                 "operation_id": "delete_monitor_config_policy",
                 "http_method": "DELETE",
@@ -119,7 +119,7 @@ class MonitorsApi:
         self._update_monitor_config_policy_endpoint = _Endpoint(
             settings={
                 "response_type": (MonitorConfigPolicyResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/monitor/policy/{policy_id}",
                 "operation_id": "update_monitor_config_policy",
                 "http_method": "PATCH",

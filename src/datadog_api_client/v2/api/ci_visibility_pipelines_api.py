@@ -38,7 +38,7 @@ class CIVisibilityPipelinesApi:
         self._aggregate_ci_app_pipeline_events_endpoint = _Endpoint(
             settings={
                 "response_type": (CIAppPipelinesAnalyticsAggregateResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/ci/pipelines/analytics/aggregate",
                 "operation_id": "aggregate_ci_app_pipeline_events",
                 "http_method": "POST",
@@ -59,7 +59,7 @@ class CIVisibilityPipelinesApi:
         self._list_ci_app_pipeline_events_endpoint = _Endpoint(
             settings={
                 "response_type": (CIAppPipelineEventsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/ci/pipelines/events",
                 "operation_id": "list_ci_app_pipeline_events",
                 "http_method": "GET",
@@ -111,7 +111,7 @@ class CIVisibilityPipelinesApi:
         self._search_ci_app_pipeline_events_endpoint = _Endpoint(
             settings={
                 "response_type": (CIAppPipelineEventsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/ci/pipelines/events/search",
                 "operation_id": "search_ci_app_pipeline_events",
                 "http_method": "POST",
