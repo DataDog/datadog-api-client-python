@@ -1,5 +1,20 @@
 # Changelog
 
+## 2.10.0 / 2023-02-15
+
+### Fixed
+* Set hosts versions as `type any` by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1339
+### Added
+* Add orchestrator section in IP ranges by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1331
+* Add Cloud Cost Management fields to Usage Metering endpoints by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1335
+* Add cloud-cost as a supported query data source by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1327
+* Add Cloud Cost And Container Excl Agent Usage Fields by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1340
+* Add SLO status and error budget remaining to search API by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1344
+* Add `sort` field to SLOListWidgetQuery by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1342
+
+
+**Full Changelog**: https://github.com/DataDog/datadog-api-client-python/compare/2.9.0...2.10.0
+
 ## 2.9.0 / 2023-02-08
 
 ### Fixed
