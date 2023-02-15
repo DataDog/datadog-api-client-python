@@ -8,15 +8,18 @@ import mimetypes
 import warnings
 import multiprocessing
 from multiprocessing.pool import ThreadPool
+from datetime import date, datetime
 import io
 import os
 import re
 from typing import Any, Dict, Optional, List, Tuple, Union
+from typing_extensions import Self
 from urllib.parse import quote
 from urllib3.fields import RequestField  # type: ignore
 
 
 from datadog_api_client import rest
+from datadog_api_client.configuration import Configuration
 from datadog_api_client.exceptions import ApiTypeError, ApiValueError
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -24,8 +27,6 @@ from datadog_api_client.model_utils import (
     ModelComposed,
     check_allowed_values,
     check_validations,
-    date,
-    datetime,
     deserialize_file,
     file_type,
     model_to_dict,
@@ -33,7 +34,7 @@ from datadog_api_client.model_utils import (
 )
 
 
-class ApiClient(object):
+class ApiClient:
     """Generic API client for OpenAPI client library builds.
 
     OpenAPI generic API client. This client handles the client-
@@ -47,7 +48,7 @@ class ApiClient(object):
         the API.
     """
 
-    def __init__(self, configuration):
+    def __init__(self, configuration: Configuration):
         self.configuration = configuration
 
         self.rest_client = self._build_rest_client()
@@ -57,28 +58,28 @@ class ApiClient(object):
         # Set default User-Agent.
         self.user_agent = user_agent()
 
-    def __enter__(self):
+    def __enter__(self) -> Self:
         return self
 
-    def __exit__(self, exc_type, exc_value, traceback):
+    def __exit__(self, exc_type, exc_value, traceback) -> None:
         self.close()
 
-    def close(self):
+    def close(self) -> None:
         self.rest_client.pool_manager.clear()
 
     def _build_rest_client(self):
         return rest.RESTClientObject(self.configuration)
 
     @property
-    def user_agent(self):
+    def user_agent(self) -> str:
         """User agent for this API client"""
         return self.default_headers["User-Agent"]
 
     @user_agent.setter
-    def user_agent(self, value):
+    def user_agent(self, value: str) -> None:
         self.default_headers["User-Agent"] = value
 
-    def set_default_header(self, header_name, header_value):
+    def set_default_header(self, header_name: str, header_value: str) -> None:
         self.default_headers[header_name] = header_value
 
     def _call_api(
@@ -92,7 +93,7 @@ class ApiClient(object):
         response_type: Optional[Tuple[Any]] = None,
         return_http_data_only: Optional[bool] = None,
         preload_content: bool = True,
-        request_timeout: Optional[Union[int, float, Tuple]] = None,
+        request_timeout: Optional[Union[int, float, Tuple[Union[int, float], Union[int, float]]]] = None,
         check_type: Optional[bool] = None,
     ):
         # perform request and return response
@@ -134,19 +135,16 @@ class ApiClient(object):
             return return_data
         return (return_data, response.status, response.getheaders())
 
-    def parameters_to_multipart(self, params, collection_types):
-        """Get parameters as list of tuples, formatting as json if value is collection_types.
+    def parameters_to_multipart(self, params):
+        """Get parameters as list of tuples, formatting as json if value is dict.
 
         :param params: Parameters as list of two-tuples.
-        :param collection_types: Parameter collection types.
 
         :return: Parameters as list of tuple or urllib3.fields.RequestField
         """
         new_params = []
-        if collection_types is None:
-            collection_types = dict
         for k, v in params.items() if isinstance(params, dict) else params:
-            if isinstance(v, collection_types):  # v is instance of collection_type, formatting as application/json
+            if isinstance(v, dict):  # v is instance of collection_type, formatting as application/json
                 v = json.dumps(v, ensure_ascii=False).encode("utf-8")
                 field = RequestField(k, v)
                 field.make_multipart(content_type="application/json; charset=utf-8")
@@ -176,7 +174,7 @@ class ApiClient(object):
         elif isinstance(obj, (str, int, float, bool)) or obj is None:
             return obj
         elif isinstance(obj, (datetime, date)):
-            if obj.tzinfo is not None:
+            if getattr(obj, "tzinfo", None) is not None:
                 return obj.isoformat()
             return obj.strftime("%Y-%m-%dT%H:%M:%S") + obj.strftime(".%f")[:4] + "Z"
         elif isinstance(obj, ModelSimple):
@@ -187,7 +185,7 @@ class ApiClient(object):
             return {key: cls.sanitize_for_serialization(val) for key, val in obj.items()}
         raise ApiValueError("Unable to prepare type {} for serialization".format(obj.__class__.__name__))
 
-    def deserialize(self, response_data, response_type, check_type):
+    def deserialize(self, response_data: str, response_type: Any, check_type: Optional[bool]):
         """Deserializes response into an object.
 
         :param response_data: Response data to be deserialized.
@@ -234,7 +232,7 @@ class ApiClient(object):
         return_http_data_only: Optional[bool] = None,
         collection_formats: Optional[Dict[str, str]] = None,
         preload_content: bool = True,
-        request_timeout: Optional[Union[int, float, Tuple]] = None,
+        request_timeout: Optional[Union[int, float, Tuple[Union[int, float], Union[int, float]]]] = None,
         host: Optional[str] = None,
         check_type: Optional[bool] = None,
     ):
@@ -309,7 +307,7 @@ class ApiClient(object):
             post_params = self.parameters_to_tuples(post_params, collection_formats)
             post_params.extend(self.files_parameters(files))
             if header_params["Content-Type"].startswith("multipart"):
-                post_params = self.parameters_to_multipart(post_params, (dict))
+                post_params = self.parameters_to_multipart(post_params)
 
         # body
         if body:
@@ -403,7 +401,7 @@ class ApiClient(object):
 
         return params
 
-    def select_header_accept(self, accepts):
+    def select_header_accept(self, accepts: List[str]) -> str:
         """Returns `Accept` based on an array of accepts provided.
 
         :param accepts: List of headers.
@@ -411,7 +409,7 @@ class ApiClient(object):
         """
         return ", ".join(accepts)
 
-    def select_header_content_type(self, content_types):
+    def select_header_content_type(self, content_types: List[str]) -> str:
         """Returns `Content-Type` based on an array of content_types provided.
 
         :param content_types: List of content-types.
@@ -431,7 +429,7 @@ class ThreadedApiClient(ApiClient):
 
     _pool = None
 
-    def __init__(self, configuration, pool_threads=1):
+    def __init__(self, configuration: Configuration, pool_threads: int = 1):
         self.pool_threads = pool_threads
         self.connection_pool_maxsize = multiprocessing.cpu_count() * 5
         super().__init__(configuration)
@@ -439,7 +437,7 @@ class ThreadedApiClient(ApiClient):
     def _build_rest_client(self):
         return rest.RESTClientObject(self.configuration, maxsize=self.connection_pool_maxsize)
 
-    def close(self):
+    def close(self) -> None:
         self.rest_client.pool_manager.clear()
         if self._pool:
             self._pool.close()
@@ -449,7 +447,7 @@ class ThreadedApiClient(ApiClient):
                 atexit.unregister(self.close)
 
     @property
-    def pool(self):
+    def pool(self) -> ThreadPool:
         """Create thread pool on first request
         avoids instantiating unused threadpool for blocking clients.
         """
@@ -494,7 +492,7 @@ class AsyncApiClient(ApiClient):
     def _build_rest_client(self):
         return rest.AsyncRESTClientObject(self.configuration)
 
-    async def __aenter__(self):
+    async def __aenter__(self) -> Self:
         return self
 
     async def __aexit__(self, _exc_type, exc, _tb):
@@ -513,7 +511,7 @@ class AsyncApiClient(ApiClient):
         response_type: Optional[Tuple[Any]] = None,
         return_http_data_only: Optional[bool] = None,
         preload_content: bool = True,
-        request_timeout: Optional[Union[int, float, Tuple]] = None,
+        request_timeout: Optional[Union[int, float, Tuple[Union[int, float], Union[int, float]]]] = None,
         check_type: Optional[bool] = None,
     ):
 
@@ -552,8 +550,14 @@ class AsyncApiClient(ApiClient):
         return (return_data, response.status_code, response.headers)
 
 
-class Endpoint(object):
-    def __init__(self, settings=None, params_map=None, headers_map=None, api_client=None):
+class Endpoint:
+    def __init__(
+        self,
+        settings: Dict[str, Any],
+        params_map: Dict[str, Dict[str, Any]],
+        headers_map: Dict[str, List[str]],
+        api_client: ApiClient,
+    ):
         """Creates an endpoint.
 
         :param settings: See below key value pairs:
@@ -724,7 +728,7 @@ class Endpoint(object):
             collection_formats=params["collection_format"],
         )
 
-    def update_params_for_auth(self, headers, queries):
+    def update_params_for_auth(self, headers, queries) -> None:
         """Updates header and query params based on authentication setting.
 
         :param headers: Header parameters dict to be updated.
@@ -747,7 +751,7 @@ class Endpoint(object):
                     raise ApiValueError("Authentication token must be in `query` or `header`")
 
 
-def user_agent():
+def user_agent() -> str:
     """Generate default User-Agent header."""
     import platform
     from datadog_api_client.version import __version__
