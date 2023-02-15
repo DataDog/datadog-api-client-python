@@ -1,0 +1,80 @@
+interactions:
+- request:
+    body: '{"name":"Test-Create_a_new_dashboard_with_slo_list_widget_with_sort-1676400896","query":{"denominator":"sum:httpservice.hits{!code:3xx}.as_count()","numerator":"sum:httpservice.hits{code:2xx}.as_count()"},"thresholds":[{"target":95,"timeframe":"7d","warning":98}],"type":"metric"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/slo
+  response:
+    body:
+      string: '{"data":[{"id":"80091437d0165587a0831040981e44f9","name":"Test-Create_a_new_dashboard_with_slo_list_widget_with_sort-1676400896","tags":[],"monitor_tags":[],"thresholds":[{"timeframe":"7d","target":95.0,"target_display":"95.","warning":98.0,"warning_display":"98."}],"type":"metric","type_id":1,"description":"","timeframe":"7d","warning_threshold":98,"target_threshold":95,"query":{"denominator":"sum:httpservice.hits{!code:3xx}.as_count()","numerator":"sum:httpservice.hits{code:2xx}.as_count()"},"creator":{"name":null,"handle":"frog@datadoghq.com","email":"frog@datadoghq.com"},"created_at":1676400896,"modified_at":1676400896}],"error":null}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"description":"","is_read_only":false,"layout_type":"free","notify_list":[],"template_variables":[],"title":"Test-Create_a_new_dashboard_with_slo_list_widget_with_sort-1676400896","widgets":[{"definition":{"requests":[{"query":{"limit":75,"query_string":"env:prod
+      AND service:my-app","sort":[{"column":"status.sli","order":"asc"}]},"request_type":"slo_list"}],"title_align":"left","title_size":"16","type":"slo_list"},"layout":{"height":21,"width":60,"x":0,"y":0}}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/dashboard
+  response:
+    body:
+      string: '{"id":"6hq-ih3-tzg","title":"Test-Create_a_new_dashboard_with_slo_list_widget_with_sort-1676400896","description":"","author_handle":"frog@datadoghq.com","author_name":null,"layout_type":"free","url":"/dashboard/6hq-ih3-tzg/test-createanewdashboardwithslolistwidgetwithsort-1676400896","is_read_only":false,"template_variables":[],"widgets":[{"definition":{"requests":[{"query":{"limit":75,"query_string":"env:prod
+        AND service:my-app","sort":[{"column":"status.sli","order":"asc"}]},"request_type":"slo_list"}],"title_align":"left","title_size":"16","type":"slo_list"},"layout":{"height":21,"width":60,"x":0,"y":0},"id":1642439378480719}],"notify_list":[],"created_at":"2023-02-14T18:54:57.012649+00:00","modified_at":"2023-02-14T18:54:57.012649+00:00","restricted_roles":[]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/dashboard/6hq-ih3-tzg
+  response:
+    body:
+      string: '{"deleted_dashboard_id":"6hq-ih3-tzg"}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/slo/80091437d0165587a0831040981e44f9
+  response:
+    body:
+      string: '{"data":["80091437d0165587a0831040981e44f9"],"error":null}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1
