@@ -16,14 +16,16 @@ class EventsDataSource(ModelSimple):
     """
     A data source that is powered by the Events Platform.
 
-    :param value: If omitted defaults to "logs". Must be one of ["logs"].
+    :param value: If omitted defaults to "logs". Must be one of ["logs", "rum"].
     :type value: str
     """
 
     allowed_values = {
         "logs",
+        "rum",
     }
     LOGS: ClassVar["EventsDataSource"]
+    RUM: ClassVar["EventsDataSource"]
 
     @cached_property
     def openapi_types(_):
@@ -33,3 +35,4 @@ class EventsDataSource(ModelSimple):
 
 
 EventsDataSource.LOGS = EventsDataSource("logs")
+EventsDataSource.RUM = EventsDataSource("rum")
