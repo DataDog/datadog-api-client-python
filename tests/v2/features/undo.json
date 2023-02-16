@@ -757,6 +757,24 @@
       "type": "idempotent"
     }
   },
+  "DeleteRestrictionPolicy": {
+    "tag": "Restriction Policies",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetRestrictionPolicy": {
+    "tag": "Restriction Policies",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateRestrictionPolicy": {
+    "tag": "Restriction Policies",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListRoles": {
     "tag": "Roles",
     "undo": {

@@ -1,0 +1,113 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"name":"Test-Update_a_restriction_policy_returns_Bad_Request_response-1676406317"},"type":"roles"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/roles
+  response:
+    body:
+      string: '{"data":{"type":"roles","id":"b27c878a-aca5-11ed-bc84-da7ad0900002","attributes":{"name":"Test-Update_a_restriction_policy_returns_Bad_Request_response-1676406317","created_at":"2023-02-14T20:25:18.243844+00:00","modified_at":"2023-02-14T20:25:18.273486+00:00"},"relationships":{"permissions":{"data":[{"type":"permissions","id":"d90f6830-d3d8-11e9-a77a-b3404e5e9ee2"},{"type":"permissions","id":"4441648c-d8b1-11e9-a77a-1b899a04b304"},{"type":"permissions","id":"417ba636-2dce-11eb-84c0-6bce5b0d9de0"},{"type":"permissions","id":"12efc20e-d36c-11eb-a9b8-da7ad0900002"},{"type":"permissions","id":"7605ef24-f376-11eb-b90b-da7ad0900002"},{"type":"permissions","id":"b6bf9ac6-9a59-11ec-8480-da7ad0900002"},{"type":"permissions","id":"f8e941cf-e746-11ec-b22d-da7ad0900002"},{"type":"permissions","id":"6c5ad874-7aff-11ed-a5cd-da7ad0900002"}]}}}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data":{"attributes":{"email":"Test-Update_a_restriction_policy_returns_Bad_Request_response-1676406317@datadoghq.com","title":"user
+      title"},"type":"users"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/users
+  response:
+    body:
+      string: '{"data":{"type":"users","id":"b2ca0a63-aca5-11ed-ad1d-9ae79f61138a","attributes":{"name":null,"handle":"test-update_a_restriction_policy_returns_bad_request_response-1676406317@datadoghq.com","created_at":"2023-02-14T20:25:18.752610+00:00","modified_at":"2023-02-14T20:25:18.755273+00:00","email":"test-update_a_restriction_policy_returns_bad_request_response-1676406317@datadoghq.com","icon":"https://secure.gravatar.com/avatar/80e45e7eec806ce0d10b973473d8c014?s=48&d=retro","title":"user
+        title","verified":false,"service_account":false,"disabled":false,"allowed_login_methods":[],"status":"Pending"},"relationships":{"roles":{"data":[]},"org":{"data":{"type":"orgs","id":"4dee724d-00cc-11ea-a77b-570c9d03c6c5"}}}}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"id":"b2ca0a63-aca5-11ed-ad1d-9ae79f61138a","type":"users"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/roles/b27c878a-aca5-11ed-bc84-da7ad0900002/users
+  response:
+    body:
+      string: '{"data":[{"type":"users","id":"b2ca0a63-aca5-11ed-ad1d-9ae79f61138a","attributes":{"name":null,"handle":"test-update_a_restriction_policy_returns_bad_request_response-1676406317@datadoghq.com","created_at":"2023-02-14T20:25:18.752610+00:00","modified_at":"2023-02-14T20:25:18.755273+00:00","email":"test-update_a_restriction_policy_returns_bad_request_response-1676406317@datadoghq.com","icon":"https://secure.gravatar.com/avatar/80e45e7eec806ce0d10b973473d8c014?s=48&d=retro","title":"user
+        title","verified":false,"service_account":false,"disabled":false,"allowed_login_methods":[],"status":"Pending"},"relationships":{"roles":{"data":[{"type":"roles","id":"b27c878a-aca5-11ed-bc84-da7ad0900002"}]},"org":{"data":{"type":"orgs","id":"4dee724d-00cc-11ea-a77b-570c9d03c6c5"}}}}],"meta":{"page":{"total_count":1}}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data":{"attributes":{"bindings":[{"principals":["org:4dee724d-00cc-11ea-a77b-570c9d03c6c5"],"relation":"editor"}]},"id":"dashboard:abc-def-ghi","type":"restriction_policy"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/restriction_policy/malformed
+  response:
+    body:
+      string: '{"errors":["Invalid resource: ''malformed'' is not in a valid format"]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 400
+      message: Bad Request
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/users/b2ca0a63-aca5-11ed-ad1d-9ae79f61138a
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/roles/b27c878a-aca5-11ed-bc84-da7ad0900002
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - text/html; charset=utf-8
+    status:
+      code: 204
+      message: No Content
+version: 1

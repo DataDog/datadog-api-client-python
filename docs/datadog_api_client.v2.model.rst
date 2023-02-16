@@ -3725,6 +3725,48 @@ response\_meta\_attributes
    :members:
    :show-inheritance:
 
+restriction\_policy
+-------------------
+
+.. automodule:: datadog_api_client.v2.model.restriction_policy
+   :members:
+   :show-inheritance:
+
+restriction\_policy\_attributes
+-------------------------------
+
+.. automodule:: datadog_api_client.v2.model.restriction_policy_attributes
+   :members:
+   :show-inheritance:
+
+restriction\_policy\_binding
+----------------------------
+
+.. automodule:: datadog_api_client.v2.model.restriction_policy_binding
+   :members:
+   :show-inheritance:
+
+restriction\_policy\_response
+-----------------------------
+
+.. automodule:: datadog_api_client.v2.model.restriction_policy_response
+   :members:
+   :show-inheritance:
+
+restriction\_policy\_type
+-------------------------
+
+.. automodule:: datadog_api_client.v2.model.restriction_policy_type
+   :members:
+   :show-inheritance:
+
+restriction\_policy\_update\_request
+------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.restriction_policy_update_request
+   :members:
+   :show-inheritance:
+
 role
 ----
 

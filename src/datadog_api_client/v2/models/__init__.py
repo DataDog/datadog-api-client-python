@@ -667,6 +667,12 @@ from datadog_api_client.v2.model.relationship_to_user import RelationshipToUser
 from datadog_api_client.v2.model.relationship_to_user_data import RelationshipToUserData
 from datadog_api_client.v2.model.relationship_to_users import RelationshipToUsers
 from datadog_api_client.v2.model.response_meta_attributes import ResponseMetaAttributes
+from datadog_api_client.v2.model.restriction_policy import RestrictionPolicy
+from datadog_api_client.v2.model.restriction_policy_attributes import RestrictionPolicyAttributes
+from datadog_api_client.v2.model.restriction_policy_binding import RestrictionPolicyBinding
+from datadog_api_client.v2.model.restriction_policy_response import RestrictionPolicyResponse
+from datadog_api_client.v2.model.restriction_policy_type import RestrictionPolicyType
+from datadog_api_client.v2.model.restriction_policy_update_request import RestrictionPolicyUpdateRequest
 from datadog_api_client.v2.model.role import Role
 from datadog_api_client.v2.model.role_attributes import RoleAttributes
 from datadog_api_client.v2.model.role_clone import RoleClone
