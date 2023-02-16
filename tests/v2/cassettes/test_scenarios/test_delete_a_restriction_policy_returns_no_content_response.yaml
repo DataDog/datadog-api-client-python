@@ -1,0 +1,18 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/restriction_policy/dashboard%3Aabc-def-ghi
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 204
+      message: No Content
+version: 1

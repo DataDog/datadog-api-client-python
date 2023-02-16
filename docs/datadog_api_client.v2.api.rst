@@ -155,6 +155,13 @@ processes\_api
    :members:
    :show-inheritance:
 
+restriction\_policies\_api
+--------------------------
+
+.. automodule:: datadog_api_client.v2.api.restriction_policies_api
+   :members:
+   :show-inheritance:
+
 roles\_api
 ----------
 
