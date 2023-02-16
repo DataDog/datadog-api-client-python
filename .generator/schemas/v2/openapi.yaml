@@ -3105,10 +3105,12 @@ components:
       description: A data source that is powered by the Events Platform.
       enum:
       - logs
+      - rum
       example: logs
       type: string
       x-enum-varnames:
       - LOGS
+      - RUM
     EventsGroupBy:
       description: A dimension on which to split a query's results.
       properties:
@@ -7211,6 +7213,10 @@ components:
       - max
       - sum
       - last
+      - percentile
+      - mean
+      - l2norm
+      - area
       example: avg
       type: string
       x-enum-varnames:
@@ -7219,6 +7225,10 @@ components:
       - MAX
       - SUM
       - LAST
+      - PERCENTILE
+      - MEAN
+      - L2NORM
+      - AREA
     MetricsAndMetricTagConfigurations:
       description: Object for a metrics and metric tag configurations.
       oneOf:
@@ -17042,11 +17052,11 @@ paths:
       tags:
       - Metrics
       x-codegen-request-body-name: body
-      x-unstable: '**Note**: This endpoint is GA for the metrics and cloud cost data
-        sources. Logs is
+      x-unstable: '**Note**: This endpoint is GA for the metrics, real user monitoring
+        (RUM) and cloud cost data sources.
 
-        in beta. We are gradually onboarding support for more sources. If you have
-        any
+        Support for logs is in beta. We are gradually onboarding support for more
+        sources. If you have any
 
         feedback, contact [Datadog support](https://docs.datadoghq.com/help/).'
   /api/v2/query/timeseries:
@@ -17085,11 +17095,11 @@ paths:
       tags:
       - Metrics
       x-codegen-request-body-name: body
-      x-unstable: '**Note**: This endpoint is GA for the metrics and cloud cost data
-        sources. Logs is
+      x-unstable: '**Note**: This endpoint is GA for the metrics, real user monitoring
+        (RUM) and cloud cost data sources.
 
-        in beta. We are gradually onboarding support for more sources. If you have
-        any
+        Support for logs is in beta. We are gradually onboarding support for more
+        sources. If you have any
 
         feedback, contact [Datadog support](https://docs.datadoghq.com/help/).'
   /api/v2/restriction_policy/{resource_id}:
