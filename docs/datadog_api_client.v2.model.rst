@@ -3347,6 +3347,27 @@ nullable\_relationship\_to\_user\_data
    :members:
    :show-inheritance:
 
+on\_demand\_concurrency\_cap
+----------------------------
+
+.. automodule:: datadog_api_client.v2.model.on_demand_concurrency_cap
+   :members:
+   :show-inheritance:
+
+on\_demand\_concurrency\_cap\_attributes
+----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.on_demand_concurrency_cap_attributes
+   :members:
+   :show-inheritance:
+
+on\_demand\_concurrency\_cap\_response
+--------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.on_demand_concurrency_cap_response
+   :members:
+   :show-inheritance:
+
 opsgenie\_service\_create\_attributes
 -------------------------------------
 

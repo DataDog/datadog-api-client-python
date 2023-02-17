@@ -204,6 +204,13 @@ service\_definition\_api
    :members:
    :show-inheritance:
 
+synthetics\_api
+---------------
+
+.. automodule:: datadog_api_client.v2.api.synthetics_api
+   :members:
+   :show-inheritance:
+
 usage\_metering\_api
 --------------------
 
