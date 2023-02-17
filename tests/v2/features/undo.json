@@ -1280,6 +1280,18 @@
       "type": "idempotent"
     }
   },
+  "GetOnDemandConcurrencyCap": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "SetOnDemandConcurrencyCap": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListIncidentTeams": {
     "tag": "Incident Teams",
     "undo": {
