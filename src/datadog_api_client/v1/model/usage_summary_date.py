@@ -72,6 +72,7 @@ class UsageSummaryDate(ModelNormal):
             "iot_device_top99p": (int,),
             "mobile_rum_lite_session_count_sum": (int,),
             "mobile_rum_session_count_android_sum": (int,),
+            "mobile_rum_session_count_flutter_sum": (int,),
             "mobile_rum_session_count_ios_sum": (int,),
             "mobile_rum_session_count_reactnative_sum": (int,),
             "mobile_rum_session_count_sum": (int,),
@@ -150,6 +151,7 @@ class UsageSummaryDate(ModelNormal):
         "iot_device_top99p": "iot_device_top99p",
         "mobile_rum_lite_session_count_sum": "mobile_rum_lite_session_count_sum",
         "mobile_rum_session_count_android_sum": "mobile_rum_session_count_android_sum",
+        "mobile_rum_session_count_flutter_sum": "mobile_rum_session_count_flutter_sum",
         "mobile_rum_session_count_ios_sum": "mobile_rum_session_count_ios_sum",
         "mobile_rum_session_count_reactnative_sum": "mobile_rum_session_count_reactnative_sum",
         "mobile_rum_session_count_sum": "mobile_rum_session_count_sum",
@@ -229,6 +231,7 @@ class UsageSummaryDate(ModelNormal):
         iot_device_top99p: Union[int, UnsetType] = unset,
         mobile_rum_lite_session_count_sum: Union[int, UnsetType] = unset,
         mobile_rum_session_count_android_sum: Union[int, UnsetType] = unset,
+        mobile_rum_session_count_flutter_sum: Union[int, UnsetType] = unset,
         mobile_rum_session_count_ios_sum: Union[int, UnsetType] = unset,
         mobile_rum_session_count_reactnative_sum: Union[int, UnsetType] = unset,
         mobile_rum_session_count_sum: Union[int, UnsetType] = unset,
@@ -404,6 +407,9 @@ class UsageSummaryDate(ModelNormal):
 
         :param mobile_rum_session_count_android_sum: Shows the sum of all mobile RUM Sessions on Android over all hours in the current date for all organizations.
         :type mobile_rum_session_count_android_sum: int, optional
+
+        :param mobile_rum_session_count_flutter_sum: Shows the sum of all mobile RUM Sessions on Flutter over all hours in the current date for all organizations.
+        :type mobile_rum_session_count_flutter_sum: int, optional
 
         :param mobile_rum_session_count_ios_sum: Shows the sum of all mobile RUM Sessions on iOS over all hours in the current date for all organizations.
         :type mobile_rum_session_count_ios_sum: int, optional
@@ -582,6 +588,8 @@ class UsageSummaryDate(ModelNormal):
             kwargs["mobile_rum_lite_session_count_sum"] = mobile_rum_lite_session_count_sum
         if mobile_rum_session_count_android_sum is not unset:
             kwargs["mobile_rum_session_count_android_sum"] = mobile_rum_session_count_android_sum
+        if mobile_rum_session_count_flutter_sum is not unset:
+            kwargs["mobile_rum_session_count_flutter_sum"] = mobile_rum_session_count_flutter_sum
         if mobile_rum_session_count_ios_sum is not unset:
             kwargs["mobile_rum_session_count_ios_sum"] = mobile_rum_session_count_ios_sum
         if mobile_rum_session_count_reactnative_sum is not unset:
