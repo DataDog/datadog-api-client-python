@@ -1,0 +1,40 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"enabled":false,"entries":[{"data":{"attributes":{"cidr_block":"127.0.0.1","note":"Test-Get_IP_Allowlist_returns_OK_response-1676046412"},"type":"ip_allowlist_entry"}},{"data":{"attributes":{"cidr_block":"0.0.0.0","note":"Test-Get_IP_Allowlist_returns_OK_response-1676046412"},"type":"ip_allowlist_entry"}}]},"type":"ip_allowlist"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/ip_allowlist
+  response:
+    body:
+      string: '{"data":{"type":"ip_allowlist","id":"4dee724d-00cc-11ea-a77b-570c9d03c6c5","attributes":{"enabled":false,"entries":[{"data":{"attributes":{"note":"Test-Get_IP_Allowlist_returns_OK_response-1676046412","created_at":"2023-02-10T16:20:06.266709+00:00","modified_at":"2023-02-10T16:26:52.418620+00:00","cidr_block":"127.0.0.1/32"},"type":"ip_allowlist_entry","id":"deae2f83-f7e0-41a6-89a1-a1708494df30"}},{"data":{"attributes":{"note":"Test-Get_IP_Allowlist_returns_OK_response-1676046412","created_at":"2023-02-10T16:26:52.422938+00:00","modified_at":"2023-02-10T16:26:52.422938+00:00","cidr_block":"0.0.0.0/32"},"type":"ip_allowlist_entry","id":"39bb36cd-9b44-489c-80a8-bdf0291617c9"}}]}}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/ip_allowlist
+  response:
+    body:
+      string: '{"data":{"type":"ip_allowlist","id":"4dee724d-00cc-11ea-a77b-570c9d03c6c5","attributes":{"enabled":false,"entries":[{"data":{"attributes":{"note":"Test-Get_IP_Allowlist_returns_OK_response-1676046412","created_at":"2023-02-10T16:26:52.422938+00:00","modified_at":"2023-02-10T16:26:52.422938+00:00","cidr_block":"0.0.0.0/32"},"type":"ip_allowlist_entry","id":"39bb36cd-9b44-489c-80a8-bdf0291617c9"}},{"data":{"attributes":{"note":"Test-Get_IP_Allowlist_returns_OK_response-1676046412","created_at":"2023-02-10T16:20:06.266709+00:00","modified_at":"2023-02-10T16:26:52.418620+00:00","cidr_block":"127.0.0.1/32"},"type":"ip_allowlist_entry","id":"deae2f83-f7e0-41a6-89a1-a1708494df30"}}]}}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

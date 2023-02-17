@@ -2227,6 +2227,69 @@ intake\_payload\_accepted
    :members:
    :show-inheritance:
 
+ip\_allowlist\_attributes
+-------------------------
+
+.. automodule:: datadog_api_client.v2.model.ip_allowlist_attributes
+   :members:
+   :show-inheritance:
+
+ip\_allowlist\_data
+-------------------
+
+.. automodule:: datadog_api_client.v2.model.ip_allowlist_data
+   :members:
+   :show-inheritance:
+
+ip\_allowlist\_entry
+--------------------
+
+.. automodule:: datadog_api_client.v2.model.ip_allowlist_entry
+   :members:
+   :show-inheritance:
+
+ip\_allowlist\_entry\_attributes
+--------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ip_allowlist_entry_attributes
+   :members:
+   :show-inheritance:
+
+ip\_allowlist\_entry\_data
+--------------------------
+
+.. automodule:: datadog_api_client.v2.model.ip_allowlist_entry_data
+   :members:
+   :show-inheritance:
+
+ip\_allowlist\_entry\_type
+--------------------------
+
+.. automodule:: datadog_api_client.v2.model.ip_allowlist_entry_type
+   :members:
+   :show-inheritance:
+
+ip\_allowlist\_response
+-----------------------
+
+.. automodule:: datadog_api_client.v2.model.ip_allowlist_response
+   :members:
+   :show-inheritance:
+
+ip\_allowlist\_type
+-------------------
+
+.. automodule:: datadog_api_client.v2.model.ip_allowlist_type
+   :members:
+   :show-inheritance:
+
+ip\_allowlist\_update\_request
+------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ip_allowlist_update_request
+   :members:
+   :show-inheritance:
+
 list\_application\_keys\_response
 ---------------------------------
 

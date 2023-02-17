@@ -488,6 +488,18 @@
       "type": "safe"
     }
   },
+  "GetIPAllowlist": {
+    "tag": "IP Allowlist",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateIPAllowlist": {
+    "tag": "IP Allowlist",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "SubmitLog": {
     "tag": "Logs",
     "undo": {
