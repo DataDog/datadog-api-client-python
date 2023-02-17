@@ -25,6 +25,7 @@ class UsageRumSessionsHour(ModelNormal):
             "replay_session_count": (int,),
             "session_count": (int, none_type),
             "session_count_android": (int, none_type),
+            "session_count_flutter": (int, none_type),
             "session_count_ios": (int, none_type),
             "session_count_reactnative": (int, none_type),
         }
@@ -36,6 +37,7 @@ class UsageRumSessionsHour(ModelNormal):
         "replay_session_count": "replay_session_count",
         "session_count": "session_count",
         "session_count_android": "session_count_android",
+        "session_count_flutter": "session_count_flutter",
         "session_count_ios": "session_count_ios",
         "session_count_reactnative": "session_count_reactnative",
     }
@@ -48,6 +50,7 @@ class UsageRumSessionsHour(ModelNormal):
         replay_session_count: Union[int, UnsetType] = unset,
         session_count: Union[int, none_type, UnsetType] = unset,
         session_count_android: Union[int, none_type, UnsetType] = unset,
+        session_count_flutter: Union[int, none_type, UnsetType] = unset,
         session_count_ios: Union[int, none_type, UnsetType] = unset,
         session_count_reactnative: Union[int, none_type, UnsetType] = unset,
         **kwargs,
@@ -73,6 +76,9 @@ class UsageRumSessionsHour(ModelNormal):
         :param session_count_android: Contains the number of mobile RUM Sessions on Android (data available beginning December 1, 2020).
         :type session_count_android: int, none_type, optional
 
+        :param session_count_flutter: Contains the number of mobile RUM Sessions on Flutter (data available beginning March 1, 2023).
+        :type session_count_flutter: int, none_type, optional
+
         :param session_count_ios: Contains the number of mobile RUM Sessions on iOS (data available beginning December 1, 2020).
         :type session_count_ios: int, none_type, optional
 
@@ -91,6 +97,8 @@ class UsageRumSessionsHour(ModelNormal):
             kwargs["session_count"] = session_count
         if session_count_android is not unset:
             kwargs["session_count_android"] = session_count_android
+        if session_count_flutter is not unset:
+            kwargs["session_count_flutter"] = session_count_flutter
         if session_count_ios is not unset:
             kwargs["session_count_ios"] = session_count_ios
         if session_count_reactnative is not unset:
