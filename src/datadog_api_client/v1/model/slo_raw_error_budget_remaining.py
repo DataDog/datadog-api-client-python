@@ -14,6 +14,8 @@ from datadog_api_client.model_utils import (
 
 
 class SLORawErrorBudgetRemaining(ModelNormal):
+    _nullable = True
+
     @cached_property
     def openapi_types(_):
         return {

@@ -12,20 +12,24 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class EventsDataSource(ModelSimple):
+class SLOState(ModelSimple):
     """
-    A data source that is powered by the Events Platform.
+    State of the SLO.
 
-    :param value: If omitted defaults to "logs". Must be one of ["logs", "rum"].
+    :param value: Must be one of ["breached", "warning", "ok", "no_data"].
     :type value: str
     """
 
     allowed_values = {
-        "logs",
-        "rum",
+        "breached",
+        "warning",
+        "ok",
+        "no_data",
     }
-    LOGS: ClassVar["EventsDataSource"]
-    RUM: ClassVar["EventsDataSource"]
+    BREACHED: ClassVar["SLOState"]
+    WARNING: ClassVar["SLOState"]
+    OK: ClassVar["SLOState"]
+    NO_DATA: ClassVar["SLOState"]
 
     @cached_property
     def openapi_types(_):
@@ -34,5 +38,7 @@ class EventsDataSource(ModelSimple):
         }
 
 
-EventsDataSource.LOGS = EventsDataSource("logs")
-EventsDataSource.RUM = EventsDataSource("rum")
+SLOState.BREACHED = SLOState("breached")
+SLOState.WARNING = SLOState("warning")
+SLOState.OK = SLOState("ok")
+SLOState.NO_DATA = SLOState("no_data")

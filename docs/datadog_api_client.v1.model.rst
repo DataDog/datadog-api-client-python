@@ -3186,6 +3186,20 @@ slo\_response\_data
    :members:
    :show-inheritance:
 
+slo\_state
+----------
+
+.. automodule:: datadog_api_client.v1.model.slo_state
+   :members:
+   :show-inheritance:
+
+slo\_status
+-----------
+
+.. automodule:: datadog_api_client.v1.model.slo_status
+   :members:
+   :show-inheritance:
+
 slo\_threshold
 --------------
 

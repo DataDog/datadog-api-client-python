@@ -468,6 +468,8 @@ from datadog_api_client.v1.model.slo_overall_statuses import SLOOverallStatuses
 from datadog_api_client.v1.model.slo_raw_error_budget_remaining import SLORawErrorBudgetRemaining
 from datadog_api_client.v1.model.slo_response import SLOResponse
 from datadog_api_client.v1.model.slo_response_data import SLOResponseData
+from datadog_api_client.v1.model.slo_state import SLOState
+from datadog_api_client.v1.model.slo_status import SLOStatus
 from datadog_api_client.v1.model.slo_threshold import SLOThreshold
 from datadog_api_client.v1.model.slo_timeframe import SLOTimeframe
 from datadog_api_client.v1.model.slo_type import SLOType

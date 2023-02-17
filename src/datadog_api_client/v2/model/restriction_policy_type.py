@@ -12,20 +12,18 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class EventsDataSource(ModelSimple):
+class RestrictionPolicyType(ModelSimple):
     """
-    A data source that is powered by the Events Platform.
+    Restriction policy type.
 
-    :param value: If omitted defaults to "logs". Must be one of ["logs", "rum"].
+    :param value: If omitted defaults to "restriction_policy". Must be one of ["restriction_policy"].
     :type value: str
     """
 
     allowed_values = {
-        "logs",
-        "rum",
+        "restriction_policy",
     }
-    LOGS: ClassVar["EventsDataSource"]
-    RUM: ClassVar["EventsDataSource"]
+    RESTRICTION_POLICY: ClassVar["RestrictionPolicyType"]
 
     @cached_property
     def openapi_types(_):
@@ -34,5 +32,4 @@ class EventsDataSource(ModelSimple):
         }
 
 
-EventsDataSource.LOGS = EventsDataSource("logs")
-EventsDataSource.RUM = EventsDataSource("rum")
+RestrictionPolicyType.RESTRICTION_POLICY = RestrictionPolicyType("restriction_policy")

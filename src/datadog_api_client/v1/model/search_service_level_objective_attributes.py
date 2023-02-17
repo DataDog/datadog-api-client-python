@@ -19,6 +19,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.slo_overall_statuses import SLOOverallStatuses
     from datadog_api_client.v1.model.search_slo_query import SearchSLOQuery
     from datadog_api_client.v1.model.slo_type import SLOType
+    from datadog_api_client.v1.model.slo_status import SLOStatus
     from datadog_api_client.v1.model.search_slo_threshold import SearchSLOThreshold
 
 
@@ -29,6 +30,7 @@ class SearchServiceLevelObjectiveAttributes(ModelNormal):
         from datadog_api_client.v1.model.slo_overall_statuses import SLOOverallStatuses
         from datadog_api_client.v1.model.search_slo_query import SearchSLOQuery
         from datadog_api_client.v1.model.slo_type import SLOType
+        from datadog_api_client.v1.model.slo_status import SLOStatus
         from datadog_api_client.v1.model.search_slo_threshold import SearchSLOThreshold
 
         return {
@@ -45,6 +47,7 @@ class SearchServiceLevelObjectiveAttributes(ModelNormal):
             "query": (SearchSLOQuery,),
             "service_tags": ([str],),
             "slo_type": (SLOType,),
+            "status": (SLOStatus,),
             "team_tags": ([str],),
             "thresholds": ([SearchSLOThreshold],),
         }
@@ -63,6 +66,7 @@ class SearchServiceLevelObjectiveAttributes(ModelNormal):
         "query": "query",
         "service_tags": "service_tags",
         "slo_type": "slo_type",
+        "status": "status",
         "team_tags": "team_tags",
         "thresholds": "thresholds",
     }
@@ -86,6 +90,7 @@ class SearchServiceLevelObjectiveAttributes(ModelNormal):
         query: Union[SearchSLOQuery, none_type, UnsetType] = unset,
         service_tags: Union[List[str], UnsetType] = unset,
         slo_type: Union[SLOType, UnsetType] = unset,
+        status: Union[SLOStatus, UnsetType] = unset,
         team_tags: Union[List[str], UnsetType] = unset,
         thresholds: Union[List[SearchSLOThreshold], UnsetType] = unset,
         **kwargs,
@@ -145,6 +150,9 @@ class SearchServiceLevelObjectiveAttributes(ModelNormal):
         :param slo_type: The type of the service level objective.
         :type slo_type: SLOType, optional
 
+        :param status: Status of the SLO's primary timeframe.
+        :type status: SLOStatus, optional
+
         :param team_tags: Tags with the ``team`` tag key.
         :type team_tags: [str], optional
 
@@ -178,6 +186,8 @@ class SearchServiceLevelObjectiveAttributes(ModelNormal):
             kwargs["service_tags"] = service_tags
         if slo_type is not unset:
             kwargs["slo_type"] = slo_type
+        if status is not unset:
+            kwargs["status"] = status
         if team_tags is not unset:
             kwargs["team_tags"] = team_tags
         if thresholds is not unset:
