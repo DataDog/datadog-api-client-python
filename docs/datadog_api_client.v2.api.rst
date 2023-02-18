@@ -92,6 +92,13 @@ incidents\_api
    :members:
    :show-inheritance:
 
+ip\_allowlist\_api
+------------------
+
+.. automodule:: datadog_api_client.v2.api.ip_allowlist_api
+   :members:
+   :show-inheritance:
+
 key\_management\_api
 --------------------
 
@@ -201,6 +208,13 @@ service\_definition\_api
 ------------------------
 
 .. automodule:: datadog_api_client.v2.api.service_definition_api
+   :members:
+   :show-inheritance:
+
+synthetics\_api
+---------------
+
+.. automodule:: datadog_api_client.v2.api.synthetics_api
    :members:
    :show-inheritance:
 

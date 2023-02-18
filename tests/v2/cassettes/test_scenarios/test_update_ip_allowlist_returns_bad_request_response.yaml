@@ -1,0 +1,21 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"enabled":true,"entries":[]},"type":"ip_allowlist"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/ip_allowlist
+  response:
+    body:
+      string: '{"errors":["Cannot enable or keep enabled an IP Allowlist without the
+        current IP address in it"]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 400
+      message: Bad Request
+version: 1

@@ -147,6 +147,30 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"enabled\": false,\n      \"entries\": []\n    },\n    \"type\": \"ip_allowlist\"\n  }\n}"
+      }
+    ],
+    "step": "the \"ip_allowlist_empty_disabled\" has no entries and is disabled",
+    "key": "ip_allowlist_empty_disabled",
+    "tag": "IP Allowlist",
+    "operationId": "UpdateIPAllowlist"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"enabled\": false,\n      \"entries\": [\n        {\n          \"data\": {\n            \"attributes\": {\n              \"cidr_block\": \"127.0.0.1\",\n              \"note\": \"{{ unique }}\"\n            },\n            \"type\": \"ip_allowlist_entry\"\n          }\n        },\n        {\n          \"data\": {\n            \"attributes\": {\n              \"cidr_block\": \"0.0.0.0\",\n              \"note\": \"{{ unique }}\"\n            },\n            \"type\": \"ip_allowlist_entry\"\n          }\n        }\n      ]\n    },\n    \"type\": \"ip_allowlist\"\n  }\n}"
+      }
+    ],
+    "step": "the \"ip_allowlist_nonempty_disabled\" has two entries and is disabled",
+    "key": "ip_allowlist_nonempty_disabled",
+    "tag": "IP Allowlist",
+    "operationId": "UpdateIPAllowlist"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"id\": \"{{ unique }}\",\n    \"attributes\": {\n      \"filter\": {\n        \"query\": \"source:{{ unique }}\"\n      },\n      \"compute\": {\n        \"aggregation_type\": \"count\"\n      }\n    },\n    \"type\": \"logs_metrics\"\n  }\n}"
       }
     ],
