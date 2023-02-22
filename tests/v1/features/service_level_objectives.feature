@@ -86,6 +86,7 @@ Feature: Service Level Objectives
     And request contains "slo_id" parameter from "slo.data[0].id"
     When the request is sent
     Then the response status is 200 OK
+    And the response "data[0]" has the same value as "slo.data[0].id"
 
   @generated @skip @team:DataDog/slo-app
   Scenario: Get Corrections For an SLO returns "Bad Request" response

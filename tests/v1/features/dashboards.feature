@@ -67,6 +67,10 @@ Feature: Dashboards
     And body from file "dashboard_payload.json"
     When the request is sent
     Then the response status is 200 OK
+    And the response "title" is equal to "{{ unique }} with Profile Metrics Query"
+    And the response "widgets[0].definition.requests[0].profile_metrics_query.search.query" is equal to "runtime:jvm"
+    And the response "widgets[0].definition.requests[0].profile_metrics_query.compute.facet" is equal to "@prof_core_cpu_cores"
+    And the response "widgets[0].definition.requests[0].profile_metrics_query.compute.aggregation" is equal to "sum"
 
   @team:DataDog/dashboards
   Scenario: Create a new dashboard with a formulas and functions change widget
@@ -105,6 +109,11 @@ Feature: Dashboards
     And body with value {"layout_type": "ordered", "title": "{{ unique }} with QVW Percentile Aggregator", "widgets": [{"definition":{"title_size":"16","title":"","title_align":"left","precision":2,"time":{},"autoscale":true,"requests":[{"formulas":[{"formula":"query1"}],"response_format":"scalar","queries":[{"query":"p90:dist.dd.dogweb.latency{*}","data_source":"metrics","name":"query1","aggregator":"percentile"}]}],"type":"query_value"},"layout":{"y":0,"x":0,"height":2,"width":2}}]}
     When the request is sent
     Then the response status is 200 OK
+    And the response "title" is equal to "{{ unique }} with QVW Percentile Aggregator"
+    And the response "widgets[0].definition.title_size" is equal to "16"
+    And the response "widgets[0].definition.title_align" is equal to "left"
+    And the response "widgets[0].definition.requests[0].formulas[0].formula" is equal to "query1"
+    And the response "widgets[0].definition.requests[0].response_format" is equal to "scalar"
 
   @team:DataDog/dashboards
   Scenario: Create a new dashboard with a query value widget using timeseries background
@@ -112,6 +121,12 @@ Feature: Dashboards
     And body with value {"layout_type": "ordered", "title": "{{ unique }} with QVW Timeseries Background", "widgets": [{"definition":{"title_size":"16","title":"","title_align":"left","precision":2,"time":{},"autoscale":true,"requests":[{"formulas":[{"formula":"query1"}],"response_format":"scalar","queries":[{"query":"sum:my.cool.count.metric{*}","data_source":"metrics","name":"query1","aggregator":"percentile"}]}],"type":"query_value","timeseries_background":{"type":"area","yaxis":{"include_zero":true}}},"layout":{"y":0,"x":0,"height":2,"width":2}}]}
     When the request is sent
     Then the response status is 200 OK
+    And the response "title" is equal to "{{ unique }} with QVW Timeseries Background"
+    And the response "widgets[0].definition.title_size" is equal to "16"
+    And the response "widgets[0].definition.title_align" is equal to "left"
+    And the response "widgets[0].definition.requests[0].formulas[0].formula" is equal to "query1"
+    And the response "widgets[0].definition.requests[0].response_format" is equal to "scalar"
+    And the response "widgets[0].definition.requests[0].queries[0].query" is equal to "sum:my.cool.count.metric{*}"
 
   @team:DataDog/dashboards
   Scenario: Create a new dashboard with alert_graph widget
@@ -140,6 +155,10 @@ Feature: Dashboards
     And body with value {"layout_type": "ordered", "title": "{{ unique }} with Audit Logs Query", "widgets": [{"definition": {"type": "timeseries","requests": [{"response_format": "timeseries","queries": [{"search": {"query": ""},"data_source": "audit","compute": {"aggregation": "count"},"name": "query1","indexes": ["*"],"group_by": []}]}]},"layout": {"x": 2,"y": 0,"width": 4,"height": 2}}]}
     When the request is sent
     Then the response status is 200 OK
+    And the response "title" is equal to "{{ unique }} with Audit Logs Query"
+    And the response "widgets[0].definition.type" is equal to "timeseries"
+    And the response "widgets[0].definition.requests[0].response_format" is equal to "timeseries"
+    And the response "widgets[0].definition.requests[0].queries[0].data_source" is equal to "audit"
 
   @team:DataDog/dashboards
   Scenario: Create a new dashboard with apm dependency stats widget
@@ -181,6 +200,10 @@ Feature: Dashboards
     And body with value {"layout_type": "ordered", "title": "{{ unique }} with list_stream widget","widgets": [{"definition": {"type": "list_stream","requests": [{"columns":[{"width":"auto","field":"timestamp"}],"query":{"data_source":"apm_issue_stream","query_string":""},"response_format":"event_list"}]}}]}
     When the request is sent
     Then the response status is 200 OK
+    And the response "title" is equal to "{{ unique }} with list_stream widget"
+    And the response "widgets[0].definition.type" is equal to "list_stream"
+    And the response "widgets[0].definition.requests[0].columns[0].width" is equal to "auto"
+    And the response "widgets[0].definition.requests[0].query.data_source" is equal to "apm_issue_stream"
 
   @team:DataDog/dashboards
   Scenario: Create a new dashboard with check_status widget
@@ -271,6 +294,10 @@ Feature: Dashboards
     And body with value {"layout_type": "ordered", "title": "{{ unique }} with funnel widget","widgets": [{"definition": {"type": "funnel","requests": [{"query":{"data_source":"rum","query_string":"","steps":[]},"request_type":"funnel"}]}}]}
     When the request is sent
     Then the response status is 200 OK
+    And the response "title" is equal to "{{ unique }} with funnel widget"
+    And the response "widgets[0].definition.type" is equal to "funnel"
+    And the response "widgets[0].definition.requests[0].query.data_source" is equal to "rum"
+    And the response "widgets[0].definition.requests[0].request_type" is equal to "funnel"
 
   @team:DataDog/dashboards
   Scenario: Create a new dashboard with geomap widget
@@ -322,6 +349,8 @@ Feature: Dashboards
     And body with value {"layout_type": "ordered", "title": "{{ unique }} with list_stream widget","widgets": [{"definition": {"type": "list_stream","requests": [{"columns":[{"width":"auto","field":"timestamp"}],"query":{"data_source":"apm_issue_stream","query_string":""},"response_format":"event_list"}]}}]}
     When the request is sent
     Then the response status is 200 OK
+    And the response "widgets[0].definition.type" is equal to "list_stream"
+    And the response "widgets[0].definition.requests[0].query.data_source" is equal to "apm_issue_stream"
 
   @team:DataDog/dashboards
   Scenario: Create a new dashboard with log_stream widget
@@ -423,6 +452,8 @@ Feature: Dashboards
     And body with value {"layout_type": "ordered", "title": "{{ unique }} with list_stream widget","widgets": [{"definition": {"type": "list_stream","requests": [{"columns":[{"width":"auto","field":"timestamp"}],"query":{"data_source":"rum_issue_stream","query_string":""},"response_format":"event_list"}]}}]}
     When the request is sent
     Then the response status is 200 OK
+    And the response "widgets[0].definition.type" is equal to "list_stream"
+    And the response "widgets[0].definition.requests[0].response_format" is equal to "event_list"
 
   @team:DataDog/dashboards
   Scenario: Create a new dashboard with run-workflow widget
@@ -511,6 +542,9 @@ Feature: Dashboards
     And body with value {"description": null, "is_read_only": false, "layout_type": "ordered", "notify_list": [], "reflow_type": "auto", "restricted_roles": [], "template_variables": [{"available_values": ["my-host", "host1", "host2"], "defaults": ["my-host"], "name": "host1", "prefix": "host"}], "title": "", "widgets": [{"definition": {"requests": {"fill": {"q": "avg:system.cpu.user{*}"}}, "type": "hostmap"}}]}
     When the request is sent
     Then the response status is 200 OK
+    And the response "template_variables[0].name" is equal to "host1"
+    And the response "template_variables[0].available_values[0]" is equal to "my-host"
+    And the response "template_variables[0].defaults[0]" is equal to "my-host"
 
   @team:DataDog/dashboards
   Scenario: Create a new dashboard with template variable defaults whose value has no length returns "Bad Request" response
@@ -532,6 +566,9 @@ Feature: Dashboards
     And body with value {"description": null, "is_read_only": false, "layout_type": "ordered", "notify_list": [], "reflow_type": "auto", "restricted_roles": [], "template_variable_presets": [{"name": "my saved view", "template_variables": [{"name": "datacenter", "values": ["*", "my-host"]}]}], "template_variables": [{"available_values": ["my-host", "host1", "host2"], "defaults": ["my-host"], "name": "host1", "prefix": "host"}], "title": "", "widgets": [{"definition": {"requests": {"fill": {"q": "avg:system.cpu.user{*}"}}, "type": "hostmap"}}]}
     When the request is sent
     Then the response status is 200 OK
+    And the response "template_variable_presets[0].name" is equal to "my saved view"
+    And the response "template_variable_presets[0].template_variables[0].name" is equal to "datacenter"
+    And the response "template_variable_presets[0].template_variables[0].values[0]" is equal to "*"
 
   @team:DataDog/dashboards
   Scenario: Create a new dashboard with timeseries widget and formula style attributes
@@ -655,13 +692,15 @@ Feature: Dashboards
     Then the response status is 200 OK
     And the response "author_name" is equal to "Frog Account"
 
-  @team:DataDog/dashboards
+  @replay-only @team:DataDog/dashboards
   Scenario: Get all dashboards returns "OK" response
     Given new "ListDashboards" request
     And there is a valid "dashboard" in the system
     And request contains "filter[shared]" parameter with value false
     When the request is sent
     Then the response status is 200 OK
+    And the response "dashboards[0].title" has the same value as "dashboard.title"
+    And the response "dashboards[0].id" has the same value as "dashboard.id"
 
   @replay-only @team:DataDog/dashboards
   Scenario: Get deleted dashboards returns "OK" response
@@ -671,6 +710,8 @@ Feature: Dashboards
     And request contains "filter[deleted]" parameter with value true
     When the request is sent
     Then the response status is 200 OK
+    And the response "dashboards[0].title" has the same value as "dashboard.title"
+    And the response "dashboards[0].id" has the same value as "dashboard.id"
 
   @generated @skip @team:DataDog/dashboards
   Scenario: Restore deleted dashboards returns "Bad Request" response

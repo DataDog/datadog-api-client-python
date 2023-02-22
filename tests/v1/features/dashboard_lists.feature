@@ -56,11 +56,13 @@ Feature: Dashboard Lists
     And the response "id" has the same value as "dashboard_list.id"
     And the response "name" has the same value as "dashboard_list.name"
 
-  @team:DataDog/dashboards
+  @replay-only @team:DataDog/dashboards
   Scenario: Get all dashboard lists returns "OK" response
-    Given new "ListDashboardLists" request
+    Given there is a valid "dashboard_list" in the system
+    And new "ListDashboardLists" request
     When the request is sent
     Then the response status is 200 OK
+    And the response "dashboard_lists[0].name" has the same value as "dashboard_list.name"
 
   @generated @skip @team:DataDog/dashboards
   Scenario: Update a dashboard list returns "Bad Request" response

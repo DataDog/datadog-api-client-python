@@ -8,3 +8,5 @@ Feature: IP Ranges
     And new "GetIPRanges" request
     When the request is sent
     Then the response status is 200 OK
+    And the response "agents.prefixes_ipv4" has length 1
+    And the response "agents.prefixes_ipv6" has length 1

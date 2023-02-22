@@ -91,6 +91,8 @@ Feature: Metrics
     And request contains "query" parameter with value "system.cpu.idle{*}"
     When the request is sent
     Then the response status is 200 OK
+    And the response "status" is equal to "ok"
+    And the response "query" is equal to "system.cpu.idle{*}"
 
   @generated @skip @team:DataDog/metrics-intake @team:DataDog/metrics-query
   Scenario: Search metrics returns "Bad Request" response

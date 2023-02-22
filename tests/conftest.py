@@ -486,7 +486,8 @@ def build_given(version, operation):
                 result = glom(result, operation["source"])
 
             # store response in fixtures
-            context[operation["key"]] = result
+            result_body_json = client.sanitize_for_serialization(result)
+            context[operation["key"]] = result_body_json
 
     return wrapper
 

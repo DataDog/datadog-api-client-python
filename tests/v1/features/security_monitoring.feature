@@ -30,6 +30,7 @@ Feature: Security Monitoring
     And body with value {"incident_id": 2609}
     When the request is sent
     Then the response status is 200 OK
+    And the response "status" is equal to "done"
 
   @generated @skip @team:DataDog/k9-cloud-security-platform
   Scenario: Change the triage state of a security signal returns "Bad Request" response
@@ -54,6 +55,7 @@ Feature: Security Monitoring
     And body with value {"archiveReason": "none", "state": "open"}
     When the request is sent
     Then the response status is 200 OK
+    And the response "status" is equal to "done"
 
   @generated @skip @team:DataDog/k9-cloud-security-platform
   Scenario: Modify the triage assignee of a security signal returns "Bad Request" response
@@ -78,3 +80,4 @@ Feature: Security Monitoring
     And body with value {"assignee": "773b045d-ccf8-4808-bd3b-955ef6a8c940"}
     When the request is sent
     Then the response status is 200 OK
+    And the response "status" is equal to "done"
