@@ -23,6 +23,9 @@ Feature: Notebooks
     And body with value {"data": {"attributes": {"cells": [{"attributes": {"definition": {"text": "## Some test markdown\n\n```js\nvar x, y;\nx = 5;\ny = 6;\n```", "type": "markdown"}}, "type": "notebook_cells"}, {"attributes": {"definition": {"requests": [{"display_type": "line", "q": "avg:system.load.1{*}", "style": {"line_type": "solid", "line_width": "normal", "palette": "dog_classic"}}], "show_legend": true, "type": "timeseries", "yaxis": {"scale": "linear"}}, "graph_size": "m", "split_by": {"keys": [], "tags": []}, "time": null}, "type": "notebook_cells"}], "name": "{{ unique }}", "status": "published", "time": {"live_span": "1h"}}, "type": "notebooks"}}
     When the request is sent
     Then the response status is 200 OK
+    And the response "data.type" is equal to "notebooks"
+    And the response "data.attributes.name" is equal to "{{ unique }}"
+    And the response "data.attributes.cells[0].attributes.definition.text" is equal to "## Some test markdown\n\n```js\nvar x, y;\nx = 5;\ny = 6;\n```"
 
   @skip @team:DataDog/notebooks
   Scenario: Delete a notebook returns "Bad Request" response
@@ -67,6 +70,8 @@ Feature: Notebooks
     And request contains "notebook_id" parameter from "notebook.data.id"
     When the request is sent
     Then the response status is 200 OK
+    And the response "data.attributes.name" has the same value as "notebook.data.attributes.name"
+    And the response "data.attributes.cells[0].attributes.definition.type" has the same value as "notebook.data.attributes.cells[0].attributes.definition.type"
 
   @generated @skip @team:DataDog/notebooks
   Scenario: Get all notebooks returns "Bad Request" response
@@ -112,3 +117,5 @@ Feature: Notebooks
     And body with value {"data": {"attributes": {"cells": [{"attributes": {"definition": {"text": "## Some test markdown\n\n```js\nvar x, y;\nx = 5;\ny = 6;\n```", "type": "markdown"}}, "type": "notebook_cells"}, {"attributes": {"definition": {"requests": [{"display_type": "line", "q": "avg:system.load.1{*}", "style": {"line_type": "solid", "line_width": "normal", "palette": "dog_classic"}}], "show_legend": true, "type": "timeseries", "yaxis": {"scale": "linear"}}, "graph_size": "m", "split_by": {"keys": [], "tags": []}, "time": null}, "type": "notebook_cells"}], "name": "{{ unique }}-updated", "status": "published", "time": {"live_span": "1h"}}, "type": "notebooks"}}
     When the request is sent
     Then the response status is 200 OK
+    And the response "data.attributes.name" is equal to "{{ unique }}-updated"
+    And the response "data.attributes.status" is equal to "published"

@@ -26,6 +26,9 @@ Feature: Service Level Objective Corrections
     And body with value {"data": {"attributes": {"category": "Scheduled Maintenance", "description": "{{ unique }}", "end": {{ timestamp("now + 1h") }}, "slo_id": "{{ slo.data[0].id }}", "start": {{ timestamp("now") }}, "timezone": "UTC"}, "type": "correction"}}
     When the request is sent
     Then the response status is 200 OK
+    And the response "data.type" is equal to "correction"
+    And the response "data.attributes.category" is equal to "Scheduled Maintenance"
+    And the response "data.attributes.slo_id" has the same value as "slo.data[0].id"
 
   @skip @team:DataDog/slo-app
   Scenario: Create an SLO correction returns "SLO Not Found" response
@@ -41,6 +44,8 @@ Feature: Service Level Objective Corrections
     And body with value {"data": {"attributes": {"category": "Scheduled Maintenance", "description": "{{ unique }}", "slo_id": "{{ slo.data[0].id }}", "start": {{ timestamp("now") }}, "duration": 3600, "rrule": "FREQ=DAILY;INTERVAL=10;COUNT=5", "timezone": "UTC"}, "type": "correction"}}
     When the request is sent
     Then the response status is 200 OK
+    And the response "data.type" is equal to "correction"
+    And the response "data.attributes.rrule" is equal to "FREQ=DAILY;INTERVAL=10;COUNT=5"
 
   @generated @skip @team:DataDog/slo-app
   Scenario: Delete an SLO correction returns "Not found" response
@@ -82,6 +87,8 @@ Feature: Service Level Objective Corrections
     And request contains "slo_correction_id" parameter from "correction.data.id"
     When the request is sent
     Then the response status is 200 OK
+    And the response "data.type" has the same value as "correction.data.type"
+    And the response "data.attributes.category" has the same value as "correction.data.attributes.category"
 
   @skip @team:DataDog/slo-app
   Scenario: Update an SLO correction returns "Bad Request" response

@@ -105,6 +105,8 @@ Feature: Synthetics
     And body with value {"description": "Test {{ unique }} description", "metadata": {"restricted_roles": ["{{ role.data.id }}"]}, "name": "{{ unique }}", "tags": ["test:{{ unique_lower_alnum }}"]}
     When the request is sent
     Then the response status is 200 OK
+    And the response "private_location.name" is equal to "{{ unique }}"
+    And the response "private_location.metadata.restricted_roles[0]" has the same value as "role.data.id"
 
   @generated @skip @team:DataDog/synthetics-app
   Scenario: Create a private location returns "Private locations are not activated for the user" response

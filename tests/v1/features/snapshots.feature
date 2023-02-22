@@ -25,3 +25,4 @@ Feature: Snapshots
     And request contains "width" parameter with value 600
     When the request is sent
     Then the response status is 200 OK
+    And the response "metric_query" is equal to "avg:system.load.1{*}"

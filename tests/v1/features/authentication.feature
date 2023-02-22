@@ -23,3 +23,4 @@ Feature: Authentication
     Given a valid "apiKeyAuth" key in the system
     When the request is sent
     Then the response status is 200 OK
+    And the response "valid" is equal to true
