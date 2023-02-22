@@ -459,6 +459,7 @@ class LogsApi:
 
         Datadog recommends sending your logs compressed.
         Add the ``Content-Encoding: gzip`` header to the request when sending compressed logs.
+        Log events can be submitted up to 18 hours in the past and 2 hours in the future.
 
         The status codes answered by the HTTP API are:
 
