@@ -69,6 +69,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
             "npm_host_usage": (float,),
             "profiled_container_percentage": (float,),
             "profiled_container_usage": (float,),
+            "profiled_fargate_percentage": (float,),
+            "profiled_fargate_usage": (float,),
             "profiled_host_percentage": (float,),
             "profiled_host_usage": (float,),
             "snmp_percentage": (float,),
@@ -128,6 +130,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         "npm_host_usage": "npm_host_usage",
         "profiled_container_percentage": "profiled_container_percentage",
         "profiled_container_usage": "profiled_container_usage",
+        "profiled_fargate_percentage": "profiled_fargate_percentage",
+        "profiled_fargate_usage": "profiled_fargate_usage",
         "profiled_host_percentage": "profiled_host_percentage",
         "profiled_host_usage": "profiled_host_usage",
         "snmp_percentage": "snmp_percentage",
@@ -188,6 +192,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         npm_host_usage: Union[float, UnsetType] = unset,
         profiled_container_percentage: Union[float, UnsetType] = unset,
         profiled_container_usage: Union[float, UnsetType] = unset,
+        profiled_fargate_percentage: Union[float, UnsetType] = unset,
+        profiled_fargate_usage: Union[float, UnsetType] = unset,
         profiled_host_percentage: Union[float, UnsetType] = unset,
         profiled_host_usage: Union[float, UnsetType] = unset,
         snmp_percentage: Union[float, UnsetType] = unset,
@@ -353,6 +359,12 @@ class MonthlyUsageAttributionValues(ModelNormal):
         :param profiled_container_usage: The profiled container usage by tag(s).
         :type profiled_container_usage: float, optional
 
+        :param profiled_fargate_percentage: The percentage of profiled Fargate task usage by tag(s).
+        :type profiled_fargate_percentage: float, optional
+
+        :param profiled_fargate_usage: The profiled Fargate task usage by tag(s).
+        :type profiled_fargate_usage: float, optional
+
         :param profiled_host_percentage: The percentage of profiled hosts usage by tag(s).
         :type profiled_host_percentage: float, optional
 
@@ -469,6 +481,10 @@ class MonthlyUsageAttributionValues(ModelNormal):
             kwargs["profiled_container_percentage"] = profiled_container_percentage
         if profiled_container_usage is not unset:
             kwargs["profiled_container_usage"] = profiled_container_usage
+        if profiled_fargate_percentage is not unset:
+            kwargs["profiled_fargate_percentage"] = profiled_fargate_percentage
+        if profiled_fargate_usage is not unset:
+            kwargs["profiled_fargate_usage"] = profiled_fargate_usage
         if profiled_host_percentage is not unset:
             kwargs["profiled_host_percentage"] = profiled_host_percentage
         if profiled_host_usage is not unset:

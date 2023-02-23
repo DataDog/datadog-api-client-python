@@ -16,7 +16,7 @@ class HourlyUsageAttributionUsageType(ModelSimple):
     """
     Supported products for hourly usage attribution requests.
 
-    :param value: Must be one of ["api_usage", "apm_fargate_usage", "apm_host_usage", "appsec_fargate_usage", "appsec_usage", "browser_usage", "container_excl_agent_usage", "container_usage", "cspm_containers_usage", "cspm_hosts_usage", "custom_timeseries_usage", "cws_containers_usage", "cws_hosts_usage", "dbm_hosts_usage", "dbm_queries_usage", "estimated_indexed_logs_usage", "estimated_ingested_logs_usage", "estimated_indexed_spans_usage", "estimated_ingested_spans_usage", "fargate_usage", "functions_usage", "infra_host_usage", "invocations_usage", "npm_host_usage", "profiled_container_usage", "profiled_host_usage", "snmp_usage", "estimated_rum_sessions_usage"].
+    :param value: Must be one of ["api_usage", "apm_fargate_usage", "apm_host_usage", "appsec_fargate_usage", "appsec_usage", "browser_usage", "container_excl_agent_usage", "container_usage", "cspm_containers_usage", "cspm_hosts_usage", "custom_timeseries_usage", "cws_containers_usage", "cws_hosts_usage", "dbm_hosts_usage", "dbm_queries_usage", "estimated_indexed_logs_usage", "estimated_ingested_logs_usage", "estimated_indexed_spans_usage", "estimated_ingested_spans_usage", "fargate_usage", "functions_usage", "infra_host_usage", "invocations_usage", "npm_host_usage", "profiled_container_usage", "profiled_fargate_usage", "profiled_host_usage", "snmp_usage", "estimated_rum_sessions_usage"].
     :type value: str
     """
 
@@ -46,6 +46,7 @@ class HourlyUsageAttributionUsageType(ModelSimple):
         "invocations_usage",
         "npm_host_usage",
         "profiled_container_usage",
+        "profiled_fargate_usage",
         "profiled_host_usage",
         "snmp_usage",
         "estimated_rum_sessions_usage",
@@ -75,6 +76,7 @@ class HourlyUsageAttributionUsageType(ModelSimple):
     INVOCATIONS_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
     NPM_HOST_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
     PROFILED_CONTAINER_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
+    PROFILED_FARGATE_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
     PROFILED_HOST_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
     SNMP_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
     ESTIMATED_RUM_SESSIONS_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
@@ -121,6 +123,7 @@ HourlyUsageAttributionUsageType.INFRA_HOST_USAGE = HourlyUsageAttributionUsageTy
 HourlyUsageAttributionUsageType.INVOCATIONS_USAGE = HourlyUsageAttributionUsageType("invocations_usage")
 HourlyUsageAttributionUsageType.NPM_HOST_USAGE = HourlyUsageAttributionUsageType("npm_host_usage")
 HourlyUsageAttributionUsageType.PROFILED_CONTAINER_USAGE = HourlyUsageAttributionUsageType("profiled_container_usage")
+HourlyUsageAttributionUsageType.PROFILED_FARGATE_USAGE = HourlyUsageAttributionUsageType("profiled_fargate_usage")
 HourlyUsageAttributionUsageType.PROFILED_HOST_USAGE = HourlyUsageAttributionUsageType("profiled_host_usage")
 HourlyUsageAttributionUsageType.SNMP_USAGE = HourlyUsageAttributionUsageType("snmp_usage")
 HourlyUsageAttributionUsageType.ESTIMATED_RUM_SESSIONS_USAGE = HourlyUsageAttributionUsageType(
