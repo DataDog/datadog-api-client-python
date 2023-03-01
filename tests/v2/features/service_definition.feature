@@ -21,6 +21,7 @@ Feature: Service Definition
     When the request is sent
     Then the response status is 200 CREATED
     And the response "data[0].attributes.meta.ingested-schema-version" is equal to "v2"
+    And the response "data[0].attributes.schema.dd-service" is equal to "service-{{ unique_lower }}"
 
   @generated @skip @team:DataDog/apm-insights
   Scenario: Create or update service definition returns "Conflict" response
@@ -80,6 +81,7 @@ Feature: Service Definition
     When the request is sent
     Then the response status is 200 OK
     And the response "data.attributes.meta.ingested-schema-version" is equal to "v2"
+    And the response "data.attributes.schema.dd-service" is equal to "service-definition-test"
 
   @team:DataDog/apm-insights
   Scenario: Get all service definitions returns "OK" response

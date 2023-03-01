@@ -20,6 +20,7 @@ Feature: CI Visibility Pipelines
     And body with value {"compute": [{"aggregation": "pc90", "metric": "@duration", "type": "total"}], "filter": {"from": "now-15m", "query": "@ci.provider.name:(gitlab OR github)", "to": "now"}, "group_by": [{ "facet": "@ci.status", "limit": 10, "total": false}], "options": {"timezone": "GMT"}}
     When the request is sent
     Then the response status is 200 OK
+    And the response "meta.status" is equal to "done"
 
   @generated @skip @team:Datadog/ci-app-backend @team:Datadog/integrations-tools-and-libraries
   Scenario: Get a list of pipelines events returns "Bad Request" response

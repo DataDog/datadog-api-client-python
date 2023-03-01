@@ -106,6 +106,7 @@ Feature: Metrics
     And request contains "filter[tags]" parameter with value "{{ unique_alnum }}"
     When the request is sent
     Then the response status is 200 Success
+    And the response "data" has length 0
 
   @team:DataDog/points-aggregation
   Scenario: Get a list of metrics with configured filter returns "Success" response
@@ -114,6 +115,7 @@ Feature: Metrics
     And request contains "filter[configured]" parameter with value true
     When the request is sent
     Then the response status is 200 Success
+    And the response "data[0].type" is equal to "manage_tags"
 
   @generated @skip @team:DataDog/points-aggregation
   Scenario: List active tags and aggregations returns "Bad Request" response
@@ -267,6 +269,8 @@ Feature: Metrics
     And body with value {"data": {"attributes": {"formulas": [{"formula": "a", "limit": {"count": 10, "order": "desc"}}], "from": 1671612804000, "queries": [{"aggregator": "avg", "data_source": "metrics", "query": "avg:system.cpu.user{*}", "name": "a"}], "to": 1671620004000}, "type": "scalar_request"}}
     When the request is sent
     Then the response status is 200 OK
+    And the response "data.type" is equal to "scalar_response"
+    And the response "data.attributes.columns[0].name" is equal to "a"
 
   @generated @skip @team:DataDog/metrics-intake @team:DataDog/metrics-query
   Scenario: Submit metrics returns "Bad Request" response
@@ -281,6 +285,7 @@ Feature: Metrics
     And body with value {"series": [{"metric": "system.load.1", "type": 0, "points": [{"timestamp": {{ timestamp('now') }}, "value": 0.7}], "resources": [{"name": "dummyhost", "type": "host"}]}]}
     When the request is sent
     Then the response status is 202 Payload accepted
+    And the response "errors" has length 0
 
   @generated @skip @team:DataDog/metrics-intake @team:DataDog/metrics-query
   Scenario: Submit metrics returns "Payload too large" response
@@ -338,6 +343,8 @@ Feature: Metrics
     And body with value {"data": {"attributes": {"formulas": [{"formula": "a", "limit": {"count": 10, "order": "desc"}}], "from": 1671612804000, "interval": 5000, "queries": [{"data_source": "metrics", "query": "avg:system.cpu.user{*}", "name": "a"}], "to": 1671620004000}, "type": "timeseries_request"}}
     When the request is sent
     Then the response status is 200 OK
+    And the response "data.type" is equal to "timeseries_response"
+    And the response "data.attributes.series[0].unit[0].name" is equal to "percent"
 
   @generated @skip @team:DataDog/points-aggregation
   Scenario: Update a tag configuration returns "Bad Request" response

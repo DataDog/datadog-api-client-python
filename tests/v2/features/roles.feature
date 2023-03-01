@@ -38,6 +38,8 @@ Feature: Roles
     And body with value {"data": {"id": "{{ user.data.id}}", "type": "{{ user.data.type }}"}}
     When the request is sent
     Then the response status is 200 OK
+    And the response "data[0].id" is equal to "{{ user.data.id }}"
+    And the response "data[0].type" is equal to "{{ user.data.type }}"
 
   @team:DataDog/team-aaa
   Scenario: Create a new role by cloning an existing role returns "Bad Request" response
@@ -89,6 +91,7 @@ Feature: Roles
     When the request is sent
     Then the response status is 200 OK
     And the response "data.attributes.name" is equal to "{{ unique }}"
+    And the response "data.type" is equal to "roles"
 
   @generated @skip @team:DataDog/team-aaa
   Scenario: Delete role returns "Not found" response
@@ -120,6 +123,7 @@ Feature: Roles
     When the request is sent
     Then the response status is 200 OK for get role
     And the response "data.attributes.name" has the same value as "role.data.attributes.name"
+    And the response "data.id" has the same value as "role.data.id"
 
   @generated @skip @team:DataDog/team-aaa
   Scenario: Get all users of a role returns "Not found" response
@@ -164,6 +168,7 @@ Feature: Roles
     And body with value {"data": {"id": "{{ permission.id }}", "type": "{{ permission.type }}"}}
     When the request is sent
     Then the response status is 200 OK
+    And the response "data[0].type" is equal to "permissions"
 
   @generated @skip @team:DataDog/team-aaa
   Scenario: List permissions for a role returns "Not found" response
@@ -181,6 +186,7 @@ Feature: Roles
     And request contains "role_id" parameter from "role.data.id"
     When the request is sent
     Then the response status is 200 OK
+    And the response "data[0].type" is equal to "permissions"
 
   @generated @skip @team:DataDog/team-aaa
   Scenario: List permissions returns "Bad Request" response
@@ -261,6 +267,7 @@ Feature: Roles
     And body with value {"data": {"id": "{{ permission.id }}", "type": "{{ permission.type }}"}}
     When the request is sent
     Then the response status is 200 OK
+    And the response "data[0].type" is equal to "permissions"
 
   @team:DataDog/team-aaa
   Scenario: Update a role returns "Bad Request" response

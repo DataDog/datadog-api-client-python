@@ -23,6 +23,8 @@ Feature: Key Management
     And body with value {"data": {"type": "api_keys", "attributes": {"name": "{{ unique }}"}}}
     When the request is sent
     Then the response status is 201 Created
+    And the response "data.type" is equal to "api_keys"
+    And the response "data.attributes.name" is equal to "{{ unique }}"
 
   @team:DataDog/team-aaa
   Scenario: Create an Application key for current user returns "Created" response
@@ -30,6 +32,7 @@ Feature: Key Management
     And body with value {"data": {"type": "application_keys", "attributes": {"name": "{{ unique }}"}}}
     When the request is sent
     Then the response status is 201 Created
+    And the response "data.type" is equal to "application_keys"
     And the response "data.attributes.name" is equal to "{{ unique }}"
 
   @team:DataDog/team-aaa
@@ -138,6 +141,9 @@ Feature: Key Management
     And body with value {"data": {"type": "api_keys", "id": "{{ api_key.data.id }}", "attributes": {"name": "{{ unique }}"}}}
     When the request is sent
     Then the response status is 200 OK
+    And the response "data.type" is equal to "api_keys"
+    And the response "data.id" is equal to "{{ api_key.data.id }}"
+    And the response "data.attributes.name" is equal to "{{ unique }}"
 
   @generated @skip @team:DataDog/team-aaa
   Scenario: Edit an application key owned by current user returns "Bad Request" response
@@ -163,6 +169,8 @@ Feature: Key Management
     And body with value {"data": {"id": "{{ application_key.data.id }}", "type": "application_keys", "attributes": {"name" : "{{ application_key.data.attributes.name }}-updated"}}}
     When the request is sent
     Then the response status is 200 OK
+    And the response "data.type" is equal to "application_keys"
+    And the response "data.id" is equal to "{{ application_key.data.id }}"
     And the response "data.attributes.name" is equal to "{{ application_key.data.attributes.name }}-updated"
 
   @generated @skip @team:DataDog/team-aaa
@@ -189,6 +197,8 @@ Feature: Key Management
     And body with value {"data": {"id": "{{ application_key.data.id }}", "type": "application_keys", "attributes": {"name" : "{{ application_key.data.attributes.name }}-updated"}}}
     When the request is sent
     Then the response status is 200 OK
+    And the response "data.type" is equal to "application_keys"
+    And the response "data.id" is equal to "{{ application_key.data.id }}"
     And the response "data.attributes.name" is equal to "{{ application_key.data.attributes.name }}-updated"
 
   @generated @skip @team:DataDog/team-aaa
@@ -205,6 +215,8 @@ Feature: Key Management
     And request contains "api_key_id" parameter from "api_key.data.id"
     When the request is sent
     Then the response status is 200 OK
+    And the response "data.type" is equal to "api_keys"
+    And the response "data.id" is equal to "{{ api_key.data.id }}"
 
   @generated @skip @team:DataDog/team-aaa
   Scenario: Get all API keys returns "Bad Request" response
@@ -219,12 +231,14 @@ Feature: Key Management
     And request contains "filter" parameter from "api_key.data.attributes.name"
     When the request is sent
     Then the response status is 200 OK
+    And the response "data[0].type" is equal to "api_keys"
 
   @team:DataDog/team-aaa
   Scenario: Get all Application keys owned by current user returns "OK" response
     Given new "ListCurrentUserApplicationKeys" request
     When the request is sent
     Then the response status is 200 OK
+    And the response "data[0].type" is equal to "application_keys"
 
   @team:DataDog/team-aaa
   Scenario: Get all Application keys returns "OK" response
@@ -232,6 +246,7 @@ Feature: Key Management
     And new "ListApplicationKeys" request
     When the request is sent
     Then the response status is 200 OK
+    And the response "data[0].type" is equal to "application_keys"
 
   @generated @skip @team:DataDog/team-aaa
   Scenario: Get all application keys owned by current user returns "Bad Request" response
@@ -290,6 +305,8 @@ Feature: Key Management
     And request contains "app_key_id" parameter from "application_key.data.id"
     When the request is sent
     Then the response status is 200 OK
+    And the response "data.type" is equal to "application_keys"
+    And the response "data.id" has the same value as "application_key.data.id"
 
   @team:DataDog/team-aaa
   Scenario: Get one Application key owned by current user returns "OK" response
@@ -299,6 +316,7 @@ Feature: Key Management
     When the request is sent
     Then the response status is 200 OK
     And the response "data.attributes.name" has the same value as "application_key.data.attributes.name"
+    And the response "data.id" has the same value as "application_key.data.id"
 
   @generated @skip @team:DataDog/team-aaa
   Scenario: Get one application key owned by current user returns "Not Found" response

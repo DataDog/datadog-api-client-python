@@ -91,6 +91,7 @@ Feature: Opsgenie Integration
     And new "ListOpsgenieServices" request
     When the request is sent
     Then the response status is 200 OK
+    And the response "data[0].type" is equal to "opsgenie-service"
 
   @skip @team:Datadog/collaboration-integrations
   Scenario: Update a single service object returns "Bad Request" response

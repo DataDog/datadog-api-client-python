@@ -71,6 +71,8 @@ Feature: Usage Metering
     And request contains "filter[product_families]" parameter with value "infra_hosts"
     When the request is sent
     Then the response status is 200 OK
+    And the response "data[0].type" is equal to "usage_timeseries"
+    And the response "data[0].attributes.region" is equal to "us"
 
   @team:DataDog/red-zone-revenue-query
   Scenario: Get hourly usage for Application Security returns "Bad Request" response
@@ -87,6 +89,8 @@ Feature: Usage Metering
     And request contains "end_hr" parameter with value "{{ timeISO('now - 3d') }}"
     When the request is sent
     Then the response status is 200 OK
+    And the response "data[0].type" is equal to "usage_timeseries"
+    And the response "data[0].attributes.product_family" is equal to "app-sec"
 
   @team:DataDog/red-zone-revenue-query
   Scenario: Get hourly usage for Lambda Traced Invocations returns "Bad Request" response
@@ -103,6 +107,8 @@ Feature: Usage Metering
     And request contains "end_hr" parameter with value "{{ timeISO('now - 3d') }}"
     When the request is sent
     Then the response status is 200 OK
+    And the response "data[0].type" is equal to "usage_timeseries"
+    And the response "data[0].attributes.product_family" is equal to "lambda-traced-invocations"
 
   @team:DataDog/red-zone-revenue-query
   Scenario: Get hourly usage for Observability Pipelines returns "Bad Request" response
@@ -119,6 +125,8 @@ Feature: Usage Metering
     And request contains "end_hr" parameter with value "{{ timeISO('now - 3d') }}"
     When the request is sent
     Then the response status is 200 OK
+    And the response "data[0].type" is equal to "usage_timeseries"
+    And the response "data[0].attributes.product_family" is equal to "observability-pipelines"
 
   @generated @skip @team:DataDog/red-zone-revenue-query
   Scenario: Get hourly usage for application security returns "Bad Request" response

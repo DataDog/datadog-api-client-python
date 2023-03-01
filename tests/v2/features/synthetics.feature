@@ -39,3 +39,4 @@ Feature: Synthetics
     And body with value {"on_demand_concurrency_cap": 20}
     When the request is sent
     Then the response status is 200 OK
+    And the response "data.attributes.on_demand_concurrency_cap" is equal to 20

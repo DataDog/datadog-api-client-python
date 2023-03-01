@@ -103,6 +103,8 @@ Feature: Service Accounts
     When the request is sent
     Then the response status is 200 OK
     And the response "data.attributes.name" is equal to "{{ service_account_application_key.data.attributes.name }}-updated"
+    And the response "data.type" is equal to "application_keys"
+    And the response "data.id" is equal to "{{ service_account_application_key.data.id }}"
 
   @generated @skip @team:DataDog/team-aaa
   Scenario: Edit an application key for this service account returns "Bad Request" response
@@ -149,6 +151,8 @@ Feature: Service Accounts
     When the request is sent
     Then the response status is 200 OK
     And the response "data.attributes.name" has the same value as "service_account_application_key.data.attributes.name"
+    And the response "data.type" is equal to "application_keys"
+    And the response "data.id" is equal to "{{ service_account_application_key.data.id }}"
 
   @generated @skip @team:DataDog/team-aaa
   Scenario: Get one application key for this service account returns "Not Found" response

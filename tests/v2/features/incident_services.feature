@@ -24,6 +24,7 @@ Feature: Incident Services
     When the request is sent
     Then the response status is 201 CREATED
     And the response "data.attributes.name" is equal to "{{ unique }}"
+    And the response "data.type" is equal to "services"
 
   @generated @skip @team:Datadog/incident-app
   Scenario: Create a new incident service returns "Not Found" response
@@ -107,6 +108,8 @@ Feature: Incident Services
     And request contains "service_id" parameter from "service.data.id"
     When the request is sent
     Then the response status is 200 OK
+    And the response "data.id" is equal to "{{service.data.id}}"
+    And the response "data.type" is equal to "services"
     And the response "data.attributes.name" has the same value as "service.data.attributes.name"
 
   @generated @skip @team:Datadog/incident-app
@@ -136,4 +139,6 @@ Feature: Incident Services
     And body with value {"data": {"type": "services", "attributes": {"name": "{{ service.data.attributes.name }}-updated"}}}
     When the request is sent
     Then the response status is 200 OK
+    And the response "data.id" is equal to "{{service.data.id}}"
+    And the response "data.type" is equal to "services"
     And the response "data.attributes.name" is equal to "{{ service.data.attributes.name }}-updated"
