@@ -45,6 +45,7 @@ Feature: Events
     And request contains "page[limit]" parameter with value 5
     When the request is sent
     Then the response status is 200 OK
+    And the response "data" has length 0
 
   @team:DataDog/event-management
   Scenario: Search events returns "Bad Request" response
@@ -61,6 +62,7 @@ Feature: Events
     And body with value {"filter": {"query": "datadog-agent", "from": "2020-09-17T11:48:36+01:00", "to": "2020-09-17T12:48:36+01:00"}, "sort": "timestamp", "page": {"limit": 5}}
     When the request is sent
     Then the response status is 200 OK
+    And the response "data" has length 0
 
   @replay-only @team:DataDog/event-management @with-pagination
   Scenario: Search events returns "OK" response with pagination

@@ -55,6 +55,8 @@ Feature: Users
     And request contains "user_invitation_uuid" parameter from "user_invitation.id"
     When the request is sent
     Then the response status is 200 OK
+    And the response "data.attributes.invite_type" is equal to "openid_invite"
+    And the response "data.attributes.uuid" is equal to "{{user_invitation.id}}"
 
   @generated @skip @team:DataDog/team-aaa
   Scenario: Get a user organization returns "Not found" response
@@ -84,6 +86,7 @@ Feature: Users
     And request contains "user_id" parameter from "user.data.id"
     When the request is sent
     Then the response status is 200 OK
+    And the response "data" has length 0
 
   @team:DataDog/team-aaa
   Scenario: Get a user returns "OK" response
@@ -92,6 +95,9 @@ Feature: Users
     And request contains "user_id" parameter from "user.data.id"
     When the request is sent
     Then the response status is 200 OK for get user
+    And the response "data.id" is equal to "{{ user.data.id }}"
+    And the response "data.type" is equal to "users"
+    And the response "data.attributes.handle" is equal to "{{ unique_lower }}@datadoghq.com"
 
   @generated @skip @team:DataDog/team-aaa
   Scenario: Get user details returns "Not found" response
@@ -137,6 +143,8 @@ Feature: Users
     And body with value {"data": [{"type": "user_invitations", "relationships": {"user": {"data": {"type": "{{ user.data.type }}", "id": "{{ user.data.id }}"}}}}]}
     When the request is sent
     Then the response status is 201 OK
+    And the response "data" has length 1
+    And the response "data[0].attributes.invite_type" is equal to "openid_invite"
 
   @generated @skip @team:DataDog/team-aaa
   Scenario: Update a user returns "Bad Request" response

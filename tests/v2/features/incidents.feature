@@ -28,6 +28,9 @@ Feature: Incidents
     When the request is sent
     Then the response status is 200 OK
     And the response "data" has length 1
+    And the response "data[0].type" is equal to "incident_attachments"
+    And the response "data[0].attributes.attachment_type" is equal to "link"
+    And the response "data[0].attributes.attachment.documentUrl" is equal to "https://www.example.com/doc"
 
   @generated @skip @team:DataDog/incident-app
   Scenario: Create an incident returns "Bad Request" response
@@ -46,6 +49,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 201 CREATED
     And the response "data.relationships.commander_user.data.id" has the same value as "user.data.id"
+    And the response "data.attributes.title" has the same value as "unique"
 
   @generated @skip @team:DataDog/incident-app
   Scenario: Create an incident returns "Not Found" response
@@ -152,6 +156,7 @@ Feature: Incidents
     And new "ListIncidents" request
     When the request is sent
     Then the response status is 200 OK
+    And the response "data[0].type" is equal to "incidents"
 
   @replay-only @team:DataDog/incident-app @with-pagination
   Scenario: Get a list of incidents returns "OK" response with pagination
@@ -172,6 +177,9 @@ Feature: Incidents
     When the request is sent
     Then the response status is 200 OK
     And the response "data" has length 1
+    And the response "data[0].type" is equal to "incident_attachments"
+    And the response "data[0].attributes.attachment_type" is equal to "link"
+    And the response "data[0].attributes.attachment.documentUrl" is equal to "https://www.example.com/doc"
 
   @generated @skip @team:DataDog/incident-app
   Scenario: Get the details of an incident returns "Bad Request" response
@@ -234,6 +242,8 @@ Feature: Incidents
     And request contains "query" parameter with value "state:(active OR stable OR resolved)"
     When the request is sent
     Then the response status is 200 OK
+    And the response "data.type" is equal to "incidents_search_results"
+    And the response "data.attributes.incidents[0].data.type" is equal to "incidents"
 
   @generated @skip @team:DataDog/incident-app
   Scenario: Update an existing incident returns "Bad Request" response

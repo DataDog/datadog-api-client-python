@@ -123,6 +123,9 @@ Feature: Confluent Cloud
     And request contains "account_id" parameter from "confluent_account.data.id"
     When the request is sent
     Then the response status is 200 OK
+    And the response "data.type" is equal to "confluent-cloud-accounts"
+    And the response "data.attributes.api_key" is equal to "{{ unique_alnum }}"
+    And the response "data.attributes.resources[0].resource_type" is equal to "kafka"
 
   @generated @skip @team:Datadog/web-integrations
   Scenario: Get resource from Confluent account returns "Bad Request" response
@@ -187,6 +190,7 @@ Feature: Confluent Cloud
     And new "ListConfluentAccount" request
     When the request is sent
     Then the response status is 200 OK
+    And the response "data[0].type" is equal to "confluent-cloud-accounts"
 
   @generated @skip @team:Datadog/web-integrations
   Scenario: Update Confluent account returns "Bad Request" response

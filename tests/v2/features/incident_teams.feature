@@ -23,6 +23,7 @@ Feature: Incident Teams
     And body with value {"data": {"type": "teams", "attributes": {"name": "{{ unique }}"}}}
     When the request is sent
     Then the response status is 201 CREATED
+    And the response "data.type" is equal to "teams"
     And the response "data.attributes.name" is equal to "{{ unique }}"
 
   @generated @skip @team:Datadog/incident-app
@@ -81,6 +82,7 @@ Feature: Incident Teams
     When the request is sent
     Then the response status is 200 OK
     And the response "data" has length 1
+    And the response "data[0].type" is equal to "teams"
     And the response "data[0].attributes.name" has the same value as "team.data.attributes.name"
 
   @generated @skip @team:Datadog/incident-app
@@ -107,6 +109,8 @@ Feature: Incident Teams
     And request contains "team_id" parameter from "team.data.id"
     When the request is sent
     Then the response status is 200 OK
+    And the response "data.type" is equal to "teams"
+    And the response "data.id" is equal to "{{ team.data.id }}"
     And the response "data.attributes.name" has the same value as "team.data.attributes.name"
 
   @generated @skip @team:Datadog/incident-app
@@ -136,4 +140,6 @@ Feature: Incident Teams
     And body with value {"data": {"type": "teams", "attributes": {"name": "{{ team.data.attributes.name }}-updated"}}}
     When the request is sent
     Then the response status is 200 OK
+    And the response "data.type" is equal to "teams"
+    And the response "data.id" is equal to "{{ team.data.id }}"
     And the response "data.attributes.name" is equal to "{{ team.data.attributes.name }}-updated"

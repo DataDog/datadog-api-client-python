@@ -26,9 +26,13 @@ Feature: Logs Metrics
   @team:DataDog/logs-backend
   Scenario: Create a log-based metric returns "OK" response
     Given new "CreateLogsMetric" request
-    And body with value {"data": {"id": "{{ unique }}", "type": "logs_metrics", "attributes": {"compute": {"aggregation_type": "distribution", "include_percentiles": true, "path":"@duration"}}}}
+    And body with value {"data": {"id": "{{ unique_alnum }}", "type": "logs_metrics", "attributes": {"compute": {"aggregation_type": "distribution", "include_percentiles": true, "path":"@duration"}}}}
     When the request is sent
     Then the response status is 200 OK
+    And the response "data.id" has the same value as "unique_alnum"
+    And the response "data.type" is equal to "logs_metrics"
+    And the response "data.attributes.compute.aggregation_type" is equal to "distribution"
+    And the response "data.attributes.compute.include_percentiles" is equal to true
 
   @generated @skip @team:DataDog/logs-backend
   Scenario: Delete a log-based metric returns "Not Found" response
@@ -67,6 +71,7 @@ Feature: Logs Metrics
     And new "ListLogsMetrics" request
     When the request is sent
     Then the response status is 200 OK
+    And the response "data[0].type" is equal to "logs_metrics"
 
   @generated @skip @team:DataDog/logs-backend
   Scenario: Update a log-based metric returns "Bad Request" response
@@ -103,3 +108,5 @@ Feature: Logs Metrics
     When the request is sent
     Then the response status is 200 OK
     And the response "data.attributes.compute.include_percentiles" is false
+    And the response "data.type" is equal to "logs_metrics"
+    And the response "data.id" is equal to "{{ logs_metric_percentile.data.id }}"

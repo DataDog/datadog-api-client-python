@@ -20,6 +20,8 @@ Feature: RUM
     And body with value {"compute": [{"aggregation": "pc90", "metric": "@view.time_spent", "type": "total"}], "filter": {"from": "now-15m", "query": "@type:view AND @session.type:user", "to": "now"}, "group_by": [{"facet": "@view.time_spent", "limit": 10, "total": false}], "options": {"timezone": "GMT"}, "page": { "limit": 25}}
     When the request is sent
     Then the response status is 200 OK
+    And the response "meta.status" is equal to "done"
+    And the response "data.buckets" has length 0
 
   @skip @team:DataDog/rum-back
   Scenario: Create a new RUM application returns "Bad Request" response
@@ -34,6 +36,9 @@ Feature: RUM
     And body with value {"data": {"attributes": {"name": "my_new_rum_application", "type": "ios"}, "type": "rum_application_create"}}
     When the request is sent
     Then the response status is 200 RUM application.
+    And the response "data.type" is equal to "rum_application"
+    And the response "data.attributes.type" is equal to "ios"
+    And the response "data.attributes.name" is equal to "my_new_rum_application"
 
   @team:DataDog/rum-back
   Scenario: Delete a RUM application returns "No Content" response
@@ -64,6 +69,9 @@ Feature: RUM
     And request contains "id" parameter from "rum_application.data.id"
     When the request is sent
     Then the response status is 200 OK
+    And the response "data.type" is equal to "rum_application"
+    And the response "data.attributes.type" is equal to "browser"
+    And the response "data.attributes.name" is equal to "test_name_create"
 
   @generated @skip @team:DataDog/rum-back
   Scenario: Get a list of RUM events returns "Bad Request" response
@@ -143,6 +151,10 @@ Feature: RUM
     And body with value {"data": {"attributes": {"name": "updated_name_for_my_existing_rum_application", "type": "browser"}, "id": "{{ rum_application.data.id }}","type": "rum_application_update"}}
     When the request is sent
     Then the response status is 200 OK
+    And the response "data.type" is equal to "rum_application"
+    And the response "data.attributes.application_id" is equal to "{{ rum_application.data.id }}"
+    And the response "data.attributes.type" is equal to "browser"
+    And the response "data.attributes.name" is equal to "updated_name_for_my_existing_rum_application"
 
   @team:DataDog/rum-back
   Scenario: Update a RUM application returns "Unprocessable Entity." response

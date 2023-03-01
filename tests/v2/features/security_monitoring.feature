@@ -61,6 +61,10 @@ Feature: Security Monitoring
     And body with value {"type":"cloud_configuration","name":"{{ unique }}_cloud","isEnabled":false,"cases":[{"status":"info","notifications":["channel"]}],"options":{"complianceRuleOptions":{"resourceType":"gcp_compute_disk","complexRule": false,"regoRule":{"policy":"package datadog\n","resourceTypes":["gcp_compute_disk"]}}},"message":"ddd","tags":["my:tag"],"complianceSignalOptions":{"userActivationStatus":true,"userGroupByFields":["@account_id"]}}
     When the request is sent
     Then the response status is 200 OK
+    And the response "name" is equal to "{{ unique }}_cloud"
+    And the response "type" is equal to "cloud_configuration"
+    And the response "message" is equal to "ddd"
+    And the response "options.complianceRuleOptions.resourceType" is equal to "gcp_compute_disk"
 
   @team:DataDog/k9-cloud-security-platform
   Scenario: Create a detection rule returns "Bad Request" response
@@ -75,6 +79,9 @@ Feature: Security Monitoring
     And body with value {"name":"{{ unique }}", "queries":[{"query":"@test:true","aggregation":"count","groupByFields":[],"distinctFields":[],"metric":""}],"filters":[],"cases":[{"name":"","status":"info","condition":"a > 0","notifications":[]}],"options":{"evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"message":"Test rule","tags":[],"isEnabled":true, "type":"log_detection"}
     When the request is sent
     Then the response status is 200 OK
+    And the response "name" is equal to "{{ unique }}"
+    And the response "type" is equal to "log_detection"
+    And the response "message" is equal to "Test rule"
 
   @team:DataDog/k9-cloud-security-platform
   Scenario: Create a detection rule with type 'impossible_travel' returns "OK" response
@@ -82,6 +89,10 @@ Feature: Security Monitoring
     And body with value {"queries":[{"aggregation":"geo_data","groupByFields":["@usr.id"],"distinctFields":[],"metric":"@network.client.geoip","query":"*"}],"cases":[{"name":"","status":"info","notifications":[]}],"hasExtendedTitle":true,"message":"test","isEnabled":true,"options":{"maxSignalDuration":86400,"evaluationWindow":900,"keepAlive":3600,"detectionMethod":"impossible_travel","impossibleTravelOptions":{"baselineUserLocations":false}},"name":"{{ unique }}","type":"log_detection","tags":[],"filters":[]}
     When the request is sent
     Then the response status is 200 OK
+    And the response "name" is equal to "{{ unique }}"
+    And the response "type" is equal to "log_detection"
+    And the response "message" is equal to "test"
+    And the response "options.detectionMethod" is equal to "impossible_travel"
 
   @team:DataDog/k9-cloud-security-platform
   Scenario: Create a detection rule with type 'signal_correlation' returns "OK" response
@@ -91,6 +102,10 @@ Feature: Security Monitoring
     And body with value {"name":"{{ unique }}_signal_rule", "queries":[{"ruleId":"{{ security_rule.id }}","aggregation":"event_count","correlatedByFields":["host"],"correlatedQueryIndex":1}, {"ruleId":"{{ security_rule_bis.id }}","aggregation":"event_count","correlatedByFields":["host"]}],"filters":[],"cases":[{"name":"","status":"info","condition":"a > 0 && b > 0","notifications":[]}],"options":{"evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"message":"Test signal correlation rule","tags":[],"isEnabled":true, "type": "signal_correlation"}
     When the request is sent
     Then the response status is 200 OK
+    And the response "name" is equal to "{{ unique }}_signal_rule"
+    And the response "type" is equal to "signal_correlation"
+    And the response "message" is equal to "Test signal correlation rule"
+    And the response "isEnabled" is equal to true
 
   @team:DataDog/k9-cloud-security-platform
   Scenario: Create a detection rule with type 'workload_security' returns "OK" response
@@ -98,6 +113,10 @@ Feature: Security Monitoring
     And body with value {"name":"{{ unique }}", "queries":[{"query":"@test:true","aggregation":"count","groupByFields":[],"distinctFields":[],"metric":""}],"filters":[],"cases":[{"name":"","status":"info","condition":"a > 0","notifications":[]}],"options":{"evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"message":"Test rule","tags":[],"isEnabled":true, "type": "workload_security"}
     When the request is sent
     Then the response status is 200 OK
+    And the response "name" is equal to "{{ unique }}"
+    And the response "type" is equal to "workload_security"
+    And the response "message" is equal to "Test rule"
+    And the response "isEnabled" is equal to true
 
   @generated @skip @team:DataDog/k9-cloud-security-platform
   Scenario: Create a security filter returns "Bad Request" response
@@ -119,6 +138,11 @@ Feature: Security Monitoring
     And body with value {"data": {"attributes": {"exclusion_filters": [{"name": "Exclude staging", "query": "source:staging"}], "filtered_data_type": "logs", "is_enabled": true, "name": "{{ unique }}", "query": "service:{{ unique_alnum }}"}, "type": "security_filters"}}
     When the request is sent
     Then the response status is 200 OK
+    And the response "data.type" is equal to "security_filters"
+    And the response "data.attributes.name" is equal to "{{ unique }}"
+    And the response "data.attributes.is_enabled" is equal to true
+    And the response "data.attributes.exclusion_filters[0].name" is equal to "Exclude staging"
+    And the response "data.attributes.exclusion_filters[0].query" is equal to "source:staging"
 
   @skip @team:DataDog/k9-cloud-security-platform
   Scenario: Delete a non existing rule returns "Not Found" response
@@ -247,6 +271,11 @@ Feature: Security Monitoring
     And request contains "security_filter_id" parameter from "security_filter.data.id"
     When the request is sent
     Then the response status is 200 OK
+    And the response "data.type" is equal to "security_filters"
+    And the response "data.attributes.name" is equal to "{{ unique }}"
+    And the response "data.attributes.is_enabled" is equal to true
+    And the response "data.attributes.exclusion_filters[0].name" is equal to "Exclude logs from staging"
+    And the response "data.attributes.exclusion_filters[0].query" is equal to "source:staging"
 
   @replay-only @team:DataDog/k9-cloud-security-platform
   Scenario: Get a signal's details returns "Not Found" response
@@ -347,6 +376,9 @@ Feature: Security Monitoring
     And body with value {"data": {"attributes": {"exclusion_filters": [], "filtered_data_type": "logs", "is_enabled": true, "name": "{{ unique }}", "query": "service:{{ unique_alnum }}", "version": 1}, "type": "security_filters"}}
     When the request is sent
     Then the response status is 200 OK
+    And the response "data.type" is equal to "security_filters"
+    And the response "data.attributes.filtered_data_type" is equal to "logs"
+    And the response "data.attributes.name" is equal to "{{ unique }}"
 
   @team:DataDog/k9-cloud-security-platform
   Scenario: Update an existing rule returns "Bad Request" response

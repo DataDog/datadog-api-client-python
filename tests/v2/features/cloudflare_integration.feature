@@ -35,6 +35,9 @@ Feature: Cloudflare Integration
     And body with value {"data": {"attributes": {"api_key": "6Zm7WEgKzAlCnt_4exfEK0mSoeHHAaDf41O1AAfu", "email": "new@email", "name": "{{ unique_lower_alnum }}"}, "type": "cloudflare-accounts"}}
     When the request is sent
     Then the response status is 201 CREATED
+    And the response "data.type" is equal to "cloudflare-accounts"
+    And the response "data.attributes.email" is equal to "new@email"
+    And the response "data.attributes.name" is equal to "{{ unique_lower_alnum }}"
 
   @generated @skip @team:Datadog/web-integrations
   Scenario: Add Cloudflare account returns "Not Found" response
@@ -85,6 +88,9 @@ Feature: Cloudflare Integration
     And request contains "account_id" parameter from "cloudflare_account.data.id"
     When the request is sent
     Then the response status is 200 OK
+    And the response "data.type" is equal to "cloudflare-accounts"
+    And the response "data.attributes.email" is equal to "dev@datadog.com"
+    And the response "data.attributes.name" is equal to "{{ unique_lower_alnum }}"
 
   @generated @skip @team:Datadog/web-integrations
   Scenario: List Cloudflare accounts returns "Bad Request" response
@@ -104,6 +110,7 @@ Feature: Cloudflare Integration
     And new "ListCloudflareAccounts" request
     When the request is sent
     Then the response status is 200 OK
+    And the response "data[0].type" is equal to "cloudflare-accounts"
 
   @generated @skip @team:Datadog/web-integrations
   Scenario: Update Cloudflare account returns "Bad Request" response

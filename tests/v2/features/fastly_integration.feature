@@ -21,6 +21,9 @@ Feature: Fastly Integration
     And body with value {"data": {"attributes": {"api_key": "{{ unique_alnum }}", "name": "{{ unique }}", "services": []}, "type": "fastly-accounts"}}
     When the request is sent
     Then the response status is 201 CREATED
+    And the response "data.type" is equal to "fastly-accounts"
+    And the response "data.attributes.name" is equal to "{{ unique }}"
+    And the response "data.attributes.services" has length 0
 
   @generated @skip @team:Datadog/web-integrations
   Scenario: Add Fastly account returns "Not Found" response
@@ -119,6 +122,9 @@ Feature: Fastly Integration
     And request contains "account_id" parameter from "fastly_account.data.id"
     When the request is sent
     Then the response status is 200 OK
+    And the response "data.type" is equal to "fastly-accounts"
+    And the response "data.attributes.name" is equal to "test-name"
+    And the response "data.attributes.services" has length 0
 
   @generated @skip @team:Datadog/web-integrations
   Scenario: Get Fastly service returns "Bad Request" response
@@ -162,6 +168,7 @@ Feature: Fastly Integration
     And new "ListFastlyAccounts" request
     When the request is sent
     Then the response status is 200 OK
+    And the response "data[0].type" is equal to "fastly-accounts"
 
   @generated @skip @team:Datadog/web-integrations
   Scenario: List Fastly services returns "Bad Request" response
@@ -208,6 +215,7 @@ Feature: Fastly Integration
     And body with value {"data": {"attributes": {"api_key": "update-secret"}, "type": "fastly-accounts"}}
     When the request is sent
     Then the response status is 200 OK
+    And the response "data.id" is equal to "{{fastly_account.data.id }}"
     And the response "data.attributes.name" is equal to "{{fastly_account.data.attributes.name }}"
 
   @generated @skip @team:Datadog/web-integrations

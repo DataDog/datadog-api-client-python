@@ -22,6 +22,8 @@ Feature: Sensitive Data Scanner
     And body with value {"meta":{},"data":{"type":"sensitive_data_scanner_group","attributes":{"name":"{{ unique }}","is_enabled":false,"product_list":["logs"],"filter":{"query":"*"}},"relationships":{"configuration":{"data":{"type":"sensitive_data_scanner_configuration","id":"{{ configuration.data.id }}"}},"rules":{"data":[]}}}}
     When the request is sent
     Then the response status is 200 OK
+    And the response "data.type" is equal to "sensitive_data_scanner_group"
+    And the response "data.attributes.name" is equal to "{{ unique }}"
 
   @team:DataDog/logs-app @team:DataDog/logs-core
   Scenario: Create Scanning Rule returns "Bad Request" response
@@ -40,6 +42,9 @@ Feature: Sensitive Data Scanner
     And body with value {"meta":{},"data":{"type":"sensitive_data_scanner_rule","attributes":{"name":"{{ unique }}","pattern":"pattern", "namespaces": ["admin"], "excluded_namespaces": ["admin.name"], "text_replacement":{"type":"none"},"tags":["sensitive_data:true"],"is_enabled":true},"relationships":{"group":{"data":{"type":"{{ group.data.type }}","id":"{{ group.data.id }}"}}}}}
     When the request is sent
     Then the response status is 200 OK
+    And the response "data.type" is equal to "sensitive_data_scanner_rule"
+    And the response "data.attributes.name" is equal to "{{ unique }}"
+    And the response "data.attributes.pattern" is equal to "pattern"
 
   @generated @skip @team:DataDog/logs-app @team:DataDog/logs-core
   Scenario: Delete Scanning Group returns "Bad Request" response
