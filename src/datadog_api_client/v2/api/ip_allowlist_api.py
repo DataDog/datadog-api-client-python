@@ -14,7 +14,11 @@ from datadog_api_client.v2.model.ip_allowlist_update_request import IPAllowlistU
 class IPAllowlistApi:
     """
     The IP allowlist API is used to manage the IP addresses that
-    can access the Datadog API and UI.
+    can access the Datadog API and web UI. It does not block
+    access to intake APIs or public dashboards.
+
+    This is an enterprise-only feature. Request access by
+    contacting Datadog support.
     """
 
     def __init__(self, api_client=None):
