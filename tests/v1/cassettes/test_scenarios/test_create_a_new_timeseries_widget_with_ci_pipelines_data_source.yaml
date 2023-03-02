@@ -1,0 +1,42 @@
+interactions:
+- request:
+    body: '{"layout_type":"ordered","reflow_type":"auto","title":"Test-Create_a_new_timeseries_widget_with_ci_pipelines_data_source-1677771676
+      with ci_pipelines datasource","widgets":[{"definition":{"legend_columns":["avg","min","max","value","sum"],"legend_layout":"auto","requests":[{"display_type":"line","formulas":[{"formula":"query1"}],"queries":[{"compute":{"aggregation":"count","metric":"@ci.queue_time"},"data_source":"ci_pipelines","group_by":[],"indexes":["*"],"name":"query1","search":{"query":"ci_level:job"}}],"response_format":"timeseries","style":{"line_type":"solid","line_width":"normal","palette":"dog_classic"}}],"show_legend":true,"time":{},"title":"","type":"timeseries"}}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/dashboard
+  response:
+    body:
+      string: '{"id":"iu9-viw-buz","title":"Test-Create_a_new_timeseries_widget_with_ci_pipelines_data_source-1677771676
+        with ci_pipelines datasource","description":null,"author_handle":"frog@datadoghq.com","author_name":null,"layout_type":"ordered","url":"/dashboard/iu9-viw-buz/test-createanewtimeserieswidgetwithcipipelinesdatasource-1677771676-with-cipipel","is_read_only":false,"template_variables":null,"widgets":[{"definition":{"legend_columns":["avg","min","max","value","sum"],"legend_layout":"auto","requests":[{"display_type":"line","formulas":[{"formula":"query1"}],"queries":[{"compute":{"aggregation":"count","metric":"@ci.queue_time"},"data_source":"ci_pipelines","group_by":[],"indexes":["*"],"name":"query1","search":{"query":"ci_level:job"}}],"response_format":"timeseries","style":{"line_type":"solid","line_width":"normal","palette":"dog_classic"}}],"show_legend":true,"time":{},"title":"","type":"timeseries"},"id":2105687409669278}],"notify_list":null,"created_at":"2023-03-02T15:41:16.697612+00:00","modified_at":"2023-03-02T15:41:16.697612+00:00","reflow_type":"auto","restricted_roles":[]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/dashboard/iu9-viw-buz
+  response:
+    body:
+      string: '{"deleted_dashboard_id":"iu9-viw-buz"}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1
