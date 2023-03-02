@@ -216,6 +216,16 @@ Feature: Dashboards
     And the response "widgets[0].definition.grouping" is equal to "check"
 
   @team:DataDog/dashboards
+  Scenario: Create a new dashboard with ci_test_stream list_stream widget
+    Given new "CreateDashboard" request
+    And body with value {"layout_type": "ordered", "title": "{{ unique }} with list_stream widget","widgets": [{"definition": {"type": "list_stream","requests": [{"columns":[{"width":"auto","field":"timestamp"}],"query":{"data_source":"ci_test_stream","query_string":"test_level:suite"},"response_format":"event_list"}]}}]}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.type" is equal to "list_stream"
+    And the response "widgets[0].definition.requests[0].query.data_source" is equal to "ci_test_stream"
+    And the response "widgets[0].definition.requests[0].query.query_string" is equal to "test_level:suite"
+
+  @team:DataDog/dashboards
   Scenario: Create a new dashboard with distribution widget and apm stats data
     Given new "CreateDashboard" request
     And body with value { "title": "{{ unique }}", "widgets": [{"definition": { "title": "", "title_size": "16", "title_align": "left", "type": "distribution", "requests": [{ "apm_stats_query": { "env": "prod", "service": "cassandra", "name": "cassandra.query", "primary_tag": "datacenter:dc1", "row_type": "service" }}] }, "layout": { "x": 0, "y": 0, "width": 4, "height": 4 } } ], "layout_type": "ordered" }

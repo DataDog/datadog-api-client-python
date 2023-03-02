@@ -1,0 +1,42 @@
+interactions:
+- request:
+    body: '{"layout_type":"ordered","title":"Test-Create_a_new_dashboard_with_ci_test_stream_list_stream_widget-1677789434
+      with list_stream widget","widgets":[{"definition":{"requests":[{"columns":[{"field":"timestamp","width":"auto"}],"query":{"data_source":"ci_test_stream","query_string":"test_level:suite"},"response_format":"event_list"}],"type":"list_stream"}}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/dashboard
+  response:
+    body:
+      string: '{"id":"mdr-2je-u6x","title":"Test-Create_a_new_dashboard_with_ci_test_stream_list_stream_widget-1677789434
+        with list_stream widget","description":null,"author_handle":"frog@datadoghq.com","author_name":null,"layout_type":"ordered","url":"/dashboard/mdr-2je-u6x/test-createanewdashboardwithciteststreamliststreamwidget-1677789434-with-liststr","is_read_only":false,"template_variables":null,"widgets":[{"definition":{"requests":[{"columns":[{"field":"timestamp","width":"auto"}],"query":{"data_source":"ci_test_stream","query_string":"test_level:suite"},"response_format":"event_list"}],"type":"list_stream"},"id":1680451278463569}],"notify_list":null,"created_at":"2023-03-02T20:37:14.537234+00:00","modified_at":"2023-03-02T20:37:14.537234+00:00","restricted_roles":[]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/dashboard/mdr-2je-u6x
+  response:
+    body:
+      string: '{"deleted_dashboard_id":"mdr-2je-u6x"}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1
