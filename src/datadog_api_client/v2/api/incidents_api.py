@@ -27,6 +27,16 @@ from datadog_api_client.v2.model.incident_attachment_related_object import Incid
 from datadog_api_client.v2.model.incident_attachment_attachment_type import IncidentAttachmentAttachmentType
 from datadog_api_client.v2.model.incident_attachment_update_response import IncidentAttachmentUpdateResponse
 from datadog_api_client.v2.model.incident_attachment_update_request import IncidentAttachmentUpdateRequest
+from datadog_api_client.v2.model.incident_integration_metadata_list_response import (
+    IncidentIntegrationMetadataListResponse,
+)
+from datadog_api_client.v2.model.incident_integration_metadata_response import IncidentIntegrationMetadataResponse
+from datadog_api_client.v2.model.incident_integration_metadata_create_request import (
+    IncidentIntegrationMetadataCreateRequest,
+)
+from datadog_api_client.v2.model.incident_integration_metadata_patch_request import (
+    IncidentIntegrationMetadataPatchRequest,
+)
 
 
 class IncidentsApi:
@@ -60,6 +70,33 @@ class IncidentsApi:
             api_client=api_client,
         )
 
+        self._create_incident_integration_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentIntegrationMetadataResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/{incident_id}/relationships/integrations",
+                "operation_id": "create_incident_integration",
+                "http_method": "POST",
+                "version": "v2",
+                "servers": None,
+            },
+            params_map={
+                "incident_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "incident_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (IncidentIntegrationMetadataCreateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._delete_incident_endpoint = _Endpoint(
             settings={
                 "response_type": None,
@@ -75,6 +112,37 @@ class IncidentsApi:
                     "required": True,
                     "openapi_types": (str,),
                     "attribute": "incident_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+                "content_type": [],
+            },
+            api_client=api_client,
+        )
+
+        self._delete_incident_integration_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/{incident_id}/relationships/integrations/{integration_metadata_id}",
+                "operation_id": "delete_incident_integration",
+                "http_method": "DELETE",
+                "version": "v2",
+                "servers": None,
+            },
+            params_map={
+                "incident_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "incident_id",
+                    "location": "path",
+                },
+                "integration_metadata_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "integration_metadata_id",
                     "location": "path",
                 },
             },
@@ -116,6 +184,37 @@ class IncidentsApi:
             api_client=api_client,
         )
 
+        self._get_incident_integration_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentIntegrationMetadataResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/{incident_id}/relationships/integrations/{integration_metadata_id}",
+                "operation_id": "get_incident_integration",
+                "http_method": "GET",
+                "version": "v2",
+                "servers": None,
+            },
+            params_map={
+                "incident_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "incident_id",
+                    "location": "path",
+                },
+                "integration_metadata_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "integration_metadata_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+                "content_type": [],
+            },
+            api_client=api_client,
+        )
+
         self._list_incident_attachments_endpoint = _Endpoint(
             settings={
                 "response_type": (IncidentAttachmentsResponse,),
@@ -144,6 +243,31 @@ class IncidentsApi:
                     "attribute": "filter[attachment_type]",
                     "location": "query",
                     "collection_format": "csv",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+                "content_type": [],
+            },
+            api_client=api_client,
+        )
+
+        self._list_incident_integrations_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentIntegrationMetadataListResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/{incident_id}/relationships/integrations",
+                "operation_id": "list_incident_integrations",
+                "http_method": "GET",
+                "version": "v2",
+                "servers": None,
+            },
+            params_map={
+                "incident_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "incident_id",
+                    "location": "path",
                 },
             },
             headers_map={
@@ -289,6 +413,39 @@ class IncidentsApi:
             api_client=api_client,
         )
 
+        self._update_incident_integration_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentIntegrationMetadataResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/{incident_id}/relationships/integrations/{integration_metadata_id}",
+                "operation_id": "update_incident_integration",
+                "http_method": "PATCH",
+                "version": "v2",
+                "servers": None,
+            },
+            params_map={
+                "incident_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "incident_id",
+                    "location": "path",
+                },
+                "integration_metadata_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "integration_metadata_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (IncidentIntegrationMetadataPatchRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
     def create_incident(
         self,
         body: IncidentCreateRequest,
@@ -306,6 +463,28 @@ class IncidentsApi:
 
         return self._create_incident_endpoint.call_with_http_info(**kwargs)
 
+    def create_incident_integration(
+        self,
+        incident_id: str,
+        body: IncidentIntegrationMetadataCreateRequest,
+    ) -> IncidentIntegrationMetadataResponse:
+        """Create an incident integration metadata.
+
+        Create an incident integration metadata.
+
+        :param incident_id: The UUID of the incident.
+        :type incident_id: str
+        :param body: Incident integration metadata payload.
+        :type body: IncidentIntegrationMetadataCreateRequest
+        :rtype: IncidentIntegrationMetadataResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["incident_id"] = incident_id
+
+        kwargs["body"] = body
+
+        return self._create_incident_integration_endpoint.call_with_http_info(**kwargs)
+
     def delete_incident(
         self,
         incident_id: str,
@@ -322,6 +501,28 @@ class IncidentsApi:
         kwargs["incident_id"] = incident_id
 
         return self._delete_incident_endpoint.call_with_http_info(**kwargs)
+
+    def delete_incident_integration(
+        self,
+        incident_id: str,
+        integration_metadata_id: str,
+    ) -> None:
+        """Delete an incident integration metadata.
+
+        Delete an incident integration metadata.
+
+        :param incident_id: The UUID of the incident.
+        :type incident_id: str
+        :param integration_metadata_id: The UUID of the incident integration metadata.
+        :type integration_metadata_id: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["incident_id"] = incident_id
+
+        kwargs["integration_metadata_id"] = integration_metadata_id
+
+        return self._delete_incident_integration_endpoint.call_with_http_info(**kwargs)
 
     def get_incident(
         self,
@@ -346,6 +547,28 @@ class IncidentsApi:
             kwargs["include"] = include
 
         return self._get_incident_endpoint.call_with_http_info(**kwargs)
+
+    def get_incident_integration(
+        self,
+        incident_id: str,
+        integration_metadata_id: str,
+    ) -> IncidentIntegrationMetadataResponse:
+        """Get incident integration metadata details.
+
+        Get incident integration metadata details.
+
+        :param incident_id: The UUID of the incident.
+        :type incident_id: str
+        :param integration_metadata_id: The UUID of the incident integration metadata.
+        :type integration_metadata_id: str
+        :rtype: IncidentIntegrationMetadataResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["incident_id"] = incident_id
+
+        kwargs["integration_metadata_id"] = integration_metadata_id
+
+        return self._get_incident_integration_endpoint.call_with_http_info(**kwargs)
 
     def list_incident_attachments(
         self,
@@ -376,6 +599,23 @@ class IncidentsApi:
             kwargs["filter_attachment_type"] = filter_attachment_type
 
         return self._list_incident_attachments_endpoint.call_with_http_info(**kwargs)
+
+    def list_incident_integrations(
+        self,
+        incident_id: str,
+    ) -> IncidentIntegrationMetadataListResponse:
+        """Get a list of an incident's integration metadata.
+
+        Get all integration metadata for an incident.
+
+        :param incident_id: The UUID of the incident.
+        :type incident_id: str
+        :rtype: IncidentIntegrationMetadataListResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["incident_id"] = incident_id
+
+        return self._list_incident_integrations_endpoint.call_with_http_info(**kwargs)
 
     def list_incidents(
         self,
@@ -546,3 +786,30 @@ class IncidentsApi:
         kwargs["body"] = body
 
         return self._update_incident_attachments_endpoint.call_with_http_info(**kwargs)
+
+    def update_incident_integration(
+        self,
+        incident_id: str,
+        integration_metadata_id: str,
+        body: IncidentIntegrationMetadataPatchRequest,
+    ) -> IncidentIntegrationMetadataResponse:
+        """Update an existing incident integration metadata.
+
+        Update an existing incident integration metadata.
+
+        :param incident_id: The UUID of the incident.
+        :type incident_id: str
+        :param integration_metadata_id: The UUID of the incident integration metadata.
+        :type integration_metadata_id: str
+        :param body: Incident integration metadata payload.
+        :type body: IncidentIntegrationMetadataPatchRequest
+        :rtype: IncidentIntegrationMetadataResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["incident_id"] = incident_id
+
+        kwargs["integration_metadata_id"] = integration_metadata_id
+
+        kwargs["body"] = body
+
+        return self._update_incident_integration_endpoint.call_with_http_info(**kwargs)

@@ -315,6 +315,26 @@ from datadog_api_client.v2.model.incident_field_attributes_single_value_type imp
     IncidentFieldAttributesSingleValueType,
 )
 from datadog_api_client.v2.model.incident_field_attributes_value_type import IncidentFieldAttributesValueType
+from datadog_api_client.v2.model.incident_integration_metadata_attributes import IncidentIntegrationMetadataAttributes
+from datadog_api_client.v2.model.incident_integration_metadata_create_data import IncidentIntegrationMetadataCreateData
+from datadog_api_client.v2.model.incident_integration_metadata_create_request import (
+    IncidentIntegrationMetadataCreateRequest,
+)
+from datadog_api_client.v2.model.incident_integration_metadata_list_response import (
+    IncidentIntegrationMetadataListResponse,
+)
+from datadog_api_client.v2.model.incident_integration_metadata_metadata import IncidentIntegrationMetadataMetadata
+from datadog_api_client.v2.model.incident_integration_metadata_patch_data import IncidentIntegrationMetadataPatchData
+from datadog_api_client.v2.model.incident_integration_metadata_patch_request import (
+    IncidentIntegrationMetadataPatchRequest,
+)
+from datadog_api_client.v2.model.incident_integration_metadata_response import IncidentIntegrationMetadataResponse
+from datadog_api_client.v2.model.incident_integration_metadata_response_data import (
+    IncidentIntegrationMetadataResponseData,
+)
+from datadog_api_client.v2.model.incident_integration_metadata_response_included_item import (
+    IncidentIntegrationMetadataResponseIncludedItem,
+)
 from datadog_api_client.v2.model.incident_integration_metadata_type import IncidentIntegrationMetadataType
 from datadog_api_client.v2.model.incident_notification_handle import IncidentNotificationHandle
 from datadog_api_client.v2.model.incident_postmortem_type import IncidentPostmortemType
@@ -387,6 +407,8 @@ from datadog_api_client.v2.model.incident_update_relationships import IncidentUp
 from datadog_api_client.v2.model.incident_update_request import IncidentUpdateRequest
 from datadog_api_client.v2.model.incidents_response import IncidentsResponse
 from datadog_api_client.v2.model.intake_payload_accepted import IntakePayloadAccepted
+from datadog_api_client.v2.model.jira_integration_metadata import JiraIntegrationMetadata
+from datadog_api_client.v2.model.jira_integration_metadata_issues_item import JiraIntegrationMetadataIssuesItem
 from datadog_api_client.v2.model.list_application_keys_response import ListApplicationKeysResponse
 from datadog_api_client.v2.model.log import Log
 from datadog_api_client.v2.model.log_attributes import LogAttributes
@@ -989,6 +1011,8 @@ from datadog_api_client.v2.model.service_definition_v2_slack_type import Service
 from datadog_api_client.v2.model.service_definition_v2_version import ServiceDefinitionV2Version
 from datadog_api_client.v2.model.service_definitions_create_request import ServiceDefinitionsCreateRequest
 from datadog_api_client.v2.model.service_definitions_list_response import ServiceDefinitionsListResponse
+from datadog_api_client.v2.model.slack_integration_metadata import SlackIntegrationMetadata
+from datadog_api_client.v2.model.slack_integration_metadata_channel_item import SlackIntegrationMetadataChannelItem
 from datadog_api_client.v2.model.tags_event_attribute import TagsEventAttribute
 from datadog_api_client.v2.model.timeseries_formula_query_request import TimeseriesFormulaQueryRequest
 from datadog_api_client.v2.model.timeseries_formula_query_response import TimeseriesFormulaQueryResponse
