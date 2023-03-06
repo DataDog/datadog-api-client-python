@@ -9,5 +9,5 @@ configuration = Configuration()
 with ApiClient(configuration) as api_client:
     api_instance = RestrictionPoliciesApi(api_client)
     api_instance.delete_restriction_policy(
-        resource_id="dashboard:abc-def-ghi",
+        resource_id="dashboard:test-delete",
     )

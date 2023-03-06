@@ -5,7 +5,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/restriction_policy/dashboard%3Aabc-def-ghi
+    uri: https://api.datadoghq.com/api/v2/restriction_policy/dashboard%3Atest-delete
   response:
     body:
       string: ''
