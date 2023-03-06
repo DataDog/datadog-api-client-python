@@ -36,7 +36,7 @@ class RelationshipToIncidentIntegrationMetadatas(ModelNormal):
         """
         A relationship reference for multiple integration metadata objects.
 
-        :param data: The integration metadata relationship array
+        :param data: Integration metadata relationship array
         :type data: [RelationshipToIncidentIntegrationMetadataData]
         """
         super().__init__(kwargs)

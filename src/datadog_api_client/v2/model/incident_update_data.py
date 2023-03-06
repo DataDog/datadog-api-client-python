@@ -54,7 +54,7 @@ class IncidentUpdateData(ModelNormal):
         :param attributes: The incident's attributes for an update request.
         :type attributes: IncidentUpdateAttributes, optional
 
-        :param id: The team's ID.
+        :param id: The incident's ID.
         :type id: str
 
         :param relationships: The incident's relationships for an update request.

@@ -1807,6 +1807,76 @@ incident\_field\_attributes\_value\_type
    :members:
    :show-inheritance:
 
+incident\_integration\_metadata\_attributes
+-------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_integration_metadata_attributes
+   :members:
+   :show-inheritance:
+
+incident\_integration\_metadata\_create\_data
+---------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_integration_metadata_create_data
+   :members:
+   :show-inheritance:
+
+incident\_integration\_metadata\_create\_request
+------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_integration_metadata_create_request
+   :members:
+   :show-inheritance:
+
+incident\_integration\_metadata\_list\_response
+-----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_integration_metadata_list_response
+   :members:
+   :show-inheritance:
+
+incident\_integration\_metadata\_metadata
+-----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_integration_metadata_metadata
+   :members:
+   :show-inheritance:
+
+incident\_integration\_metadata\_patch\_data
+--------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_integration_metadata_patch_data
+   :members:
+   :show-inheritance:
+
+incident\_integration\_metadata\_patch\_request
+-----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_integration_metadata_patch_request
+   :members:
+   :show-inheritance:
+
+incident\_integration\_metadata\_response
+-----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_integration_metadata_response
+   :members:
+   :show-inheritance:
+
+incident\_integration\_metadata\_response\_data
+-----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_integration_metadata_response_data
+   :members:
+   :show-inheritance:
+
+incident\_integration\_metadata\_response\_included\_item
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_integration_metadata_response_included_item
+   :members:
+   :show-inheritance:
+
 incident\_integration\_metadata\_type
 -------------------------------------
 
@@ -2287,6 +2357,20 @@ ip\_allowlist\_update\_request
 ------------------------------
 
 .. automodule:: datadog_api_client.v2.model.ip_allowlist_update_request
+   :members:
+   :show-inheritance:
+
+jira\_integration\_metadata
+---------------------------
+
+.. automodule:: datadog_api_client.v2.model.jira_integration_metadata
+   :members:
+   :show-inheritance:
+
+jira\_integration\_metadata\_issues\_item
+-----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.jira_integration_metadata_issues_item
    :members:
    :show-inheritance:
 
@@ -5563,6 +5647,20 @@ service\_definitions\_list\_response
 ------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.service_definitions_list_response
+   :members:
+   :show-inheritance:
+
+slack\_integration\_metadata
+----------------------------
+
+.. automodule:: datadog_api_client.v2.model.slack_integration_metadata
+   :members:
+   :show-inheritance:
+
+slack\_integration\_metadata\_channel\_item
+-------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.slack_integration_metadata_channel_item
    :members:
    :show-inheritance:
 
