@@ -102,9 +102,9 @@ class SnapshotsApi:
         Take graph snapshots.
         **Note** : When a snapshot is created, there is some delay before it is available.
 
-        :param start: The POSIX timestamp of the start of the query.
+        :param start: The POSIX timestamp of the start of the query in seconds.
         :type start: int
-        :param end: The POSIX timestamp of the end of the query.
+        :param end: The POSIX timestamp of the end of the query in seconds.
         :type end: int
         :param metric_query: The metric query.
         :type metric_query: str, optional
