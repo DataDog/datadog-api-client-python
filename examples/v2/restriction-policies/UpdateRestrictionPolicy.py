@@ -16,7 +16,7 @@ USER_DATA_RELATIONSHIPS_ORG_DATA_ID = environ["USER_DATA_RELATIONSHIPS_ORG_DATA_
 
 body = RestrictionPolicyUpdateRequest(
     data=RestrictionPolicy(
-        id="dashboard:abc-def-ghi",
+        id="dashboard:test-update",
         type=RestrictionPolicyType.RESTRICTION_POLICY,
         attributes=RestrictionPolicyAttributes(
             bindings=[
@@ -34,6 +34,6 @@ body = RestrictionPolicyUpdateRequest(
 configuration = Configuration()
 with ApiClient(configuration) as api_client:
     api_instance = RestrictionPoliciesApi(api_client)
-    response = api_instance.update_restriction_policy(resource_id="dashboard:abc-def-ghi", body=body)
+    response = api_instance.update_restriction_policy(resource_id="dashboard:test-update", body=body)
 
     print(response)

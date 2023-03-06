@@ -5,10 +5,10 @@ interactions:
       accept:
       - application/json
     method: GET
-    uri: https://api.datadoghq.com/api/v2/restriction_policy/dashboard%3Aabc-def-ghi
+    uri: https://api.datadoghq.com/api/v2/restriction_policy/dashboard%3Atest-get
   response:
     body:
-      string: '{"data":{"type":"restriction_policy","id":"dashboard:abc-def-ghi","attributes":{"bindings":[]}}}
+      string: '{"data":{"type":"restriction_policy","id":"dashboard:test-get","attributes":{"bindings":[]}}}
 
         '
     headers:
