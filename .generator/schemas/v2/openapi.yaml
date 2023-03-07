@@ -356,7 +356,7 @@ components:
         type: integer
     ResourceID:
       description: 'Identifier, formatted as `type:id`. Supported types: `connection`,
-        `dashboard`, `notebook`, `security-rule`.'
+        `dashboard`, `notebook`, `security-rule`, `slo`.'
       example: dashboard:abc-def-ghi
       in: path
       name: resource_id
@@ -17738,7 +17738,9 @@ paths:
 
         - Notebooks: `notebook`
 
-        - Security Rules: `security-rule`'
+        - Security Rules: `security-rule`
+
+        - Service Level Objectives: `slo`'
       operationId: UpdateRestrictionPolicy
       parameters:
       - $ref: '#/components/parameters/ResourceID'
