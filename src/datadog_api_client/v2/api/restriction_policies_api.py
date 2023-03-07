@@ -108,7 +108,7 @@ class RestrictionPoliciesApi:
 
         Deletes the restriction policy associated with a specified resource.
 
-        :param resource_id: Identifier, formatted as ``type:id``. Supported types: ``connection`` , ``dashboard`` , ``notebook`` , ``security-rule``.
+        :param resource_id: Identifier, formatted as ``type:id``. Supported types: ``connection`` , ``dashboard`` , ``notebook`` , ``security-rule`` , ``slo``.
         :type resource_id: str
         :rtype: None
         """
@@ -125,7 +125,7 @@ class RestrictionPoliciesApi:
 
         Retrieves the restriction policy associated with a specified resource.
 
-        :param resource_id: Identifier, formatted as ``type:id``. Supported types: ``connection`` , ``dashboard`` , ``notebook`` , ``security-rule``.
+        :param resource_id: Identifier, formatted as ``type:id``. Supported types: ``connection`` , ``dashboard`` , ``notebook`` , ``security-rule`` , ``slo``.
         :type resource_id: str
         :rtype: RestrictionPolicyResponse
         """
@@ -151,8 +151,9 @@ class RestrictionPoliciesApi:
         * Dashboards: ``dashboard``
         * Notebooks: ``notebook``
         * Security Rules: ``security-rule``
+        * Service Level Objectives: ``slo``
 
-        :param resource_id: Identifier, formatted as ``type:id``. Supported types: ``connection`` , ``dashboard`` , ``notebook`` , ``security-rule``.
+        :param resource_id: Identifier, formatted as ``type:id``. Supported types: ``connection`` , ``dashboard`` , ``notebook`` , ``security-rule`` , ``slo``.
         :type resource_id: str
         :param body: Restriction policy payload
         :type body: RestrictionPolicyUpdateRequest
