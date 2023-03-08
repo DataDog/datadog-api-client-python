@@ -110,6 +110,7 @@ class UsageSummaryResponse(ModelNormal):
             "trace_search_indexed_events_count_agg_sum": (int,),
             "twol_ingested_events_bytes_agg_sum": (int,),
             "usage": ([UsageSummaryDate],),
+            "usm_host_count_top99p_sum": (int,),
             "vsphere_host_top99p_sum": (int,),
         }
 
@@ -198,6 +199,7 @@ class UsageSummaryResponse(ModelNormal):
         "trace_search_indexed_events_count_agg_sum": "trace_search_indexed_events_count_agg_sum",
         "twol_ingested_events_bytes_agg_sum": "twol_ingested_events_bytes_agg_sum",
         "usage": "usage",
+        "usm_host_count_top99p_sum": "usm_host_count_top99p_sum",
         "vsphere_host_top99p_sum": "vsphere_host_top99p_sum",
     }
 
@@ -287,6 +289,7 @@ class UsageSummaryResponse(ModelNormal):
         trace_search_indexed_events_count_agg_sum: Union[int, UnsetType] = unset,
         twol_ingested_events_bytes_agg_sum: Union[int, UnsetType] = unset,
         usage: Union[List[UsageSummaryDate], UnsetType] = unset,
+        usm_host_count_top99p_sum: Union[int, UnsetType] = unset,
         vsphere_host_top99p_sum: Union[int, UnsetType] = unset,
         **kwargs,
     ):
@@ -545,6 +548,9 @@ class UsageSummaryResponse(ModelNormal):
         :param usage: An array of objects regarding hourly usage.
         :type usage: [UsageSummaryDate], optional
 
+        :param usm_host_count_top99p_sum: Shows the 99th percentile of all Universal Service Monitoring hosts over all hours in the current months for all organizations.
+        :type usm_host_count_top99p_sum: int, optional
+
         :param vsphere_host_top99p_sum: Shows the 99th percentile of all vSphere hosts over all hours in the current months for all organizations.
         :type vsphere_host_top99p_sum: int, optional
         """
@@ -718,6 +724,8 @@ class UsageSummaryResponse(ModelNormal):
             kwargs["twol_ingested_events_bytes_agg_sum"] = twol_ingested_events_bytes_agg_sum
         if usage is not unset:
             kwargs["usage"] = usage
+        if usm_host_count_top99p_sum is not unset:
+            kwargs["usm_host_count_top99p_sum"] = usm_host_count_top99p_sum
         if vsphere_host_top99p_sum is not unset:
             kwargs["vsphere_host_top99p_sum"] = vsphere_host_top99p_sum
         super().__init__(kwargs)
