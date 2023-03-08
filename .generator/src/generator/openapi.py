@@ -234,9 +234,6 @@ def child_models(schema, alternative_name=None, seen=None, in_list=False):
     if "oneOf" in schema:
         has_sub_models = True
         for child in schema["oneOf"]:
-            # Don't generate models for nested primitive types
-            if in_list and child.get("type") in PRIMITIVE_TYPES:
-                continue
             yield from child_models(child, seen=seen)
     if "anyOf" in schema:
         has_sub_models = True
