@@ -66,7 +66,10 @@ def type_to_python(schema, alternative_name=None, in_list=False):
     if name:
         if "enum" in schema:
             return name
-        if schema.get("type", "object") in ("object", "array"):
+        if schema.get("type") == "array":
+            if "enum" in schema["items"] or not schema["items"].get("type") in PRIMITIVE_TYPES:
+                return name
+        if schema.get("type", "object") == "object":
             return name
 
     type_ = schema.get("type")
@@ -137,7 +140,10 @@ def typing_to_python(schema, alternative_name=None, in_list=False):
     if name:
         if "enum" in schema:
             return name
-        if schema.get("type", "object") in ("object", "array"):
+        if schema.get("type") == "array":
+            if "enum" in schema["items"] or not schema["items"].get("type") in PRIMITIVE_TYPES:
+                return name
+        if schema.get("type", "object") == "object":
             if "oneOf" in schema:
                 types = [name]
                 types.extend(get_oneof_types(schema))
@@ -185,7 +191,12 @@ def get_types_for_attribute(schema, attribute, current_name=None):
 
 
 def get_type_for_items(schema):
-    name = formatter.get_name(schema.get("items"))
+    child_schema = schema.get("items")
+    if child_schema.get("type") == "array":
+        return get_type_for_items(child_schema)
+    if child_schema.get("type") in PRIMITIVE_TYPES:
+        return
+    name = formatter.get_name(child_schema)
     return name
 
 
@@ -265,13 +276,6 @@ def child_models(schema, alternative_name=None, seen=None, in_list=False):
         for key, child in schema.get("properties", {}).items():
             yield from child_models(child, alternative_name=name + formatter.camel_case(key), seen=seen)
 
-    if current_name and schema.get("type") == "array":
-        if name in seen:
-            return
-
-        seen.add(name)
-        yield name, schema
-
     if "enum" in schema:
         if name is None:
             raise ValueError(f"Schema {schema} has no name")
@@ -279,6 +283,17 @@ def child_models(schema, alternative_name=None, seen=None, in_list=False):
         if name in seen:
             return
 
+        seen.add(name)
+        yield name, schema
+
+    if current_name and schema.get("type") == "array":
+        child_schema = schema.get("items")
+        if name in seen:
+            return
+
+        if "enum" not in child_schema and child_schema.get("type") in PRIMITIVE_TYPES:
+            return
+    
         seen.add(name)
         yield name, schema
 
@@ -331,6 +346,8 @@ def get_references_for_model(model, model_name):
                     result[name] = None
         elif definition.get("type") == "array":
             name = formatter.get_name(definition)
+            if definition["items"].get("type") in PRIMITIVE_TYPES and "enum" not in definition["items"]:
+                continue
             if name:
                 result[name] = None
             else:

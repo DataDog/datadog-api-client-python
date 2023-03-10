@@ -270,6 +270,8 @@ def format_data_with_schema_list(
         imports = _merge_imports(imports, extra_imports)
     parameters = f"[{parameters}]"
 
+    if "enum" not in schema.get("items") and schema.get("items").get("type") in PRIMITIVE_TYPES:
+        return parameters, imports
     if name:
         return f"{name}({parameters})", imports
 
