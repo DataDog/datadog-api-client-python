@@ -1527,13 +1527,6 @@ group\_scalar\_column
    :members:
    :show-inheritance:
 
-group\_tags
------------
-
-.. automodule:: datadog_api_client.v2.model.group_tags
-   :members:
-   :show-inheritance:
-
 hourly\_usage
 -------------
 
@@ -2997,13 +2990,6 @@ metric\_bulk\_tag\_config\_delete\_request
    :members:
    :show-inheritance:
 
-metric\_bulk\_tag\_config\_email\_list
---------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.metric_bulk_tag_config_email_list
-   :members:
-   :show-inheritance:
-
 metric\_bulk\_tag\_config\_response
 -----------------------------------
 
@@ -3022,13 +3008,6 @@ metric\_bulk\_tag\_config\_status\_attributes
 ---------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.metric_bulk_tag_config_status_attributes
-   :members:
-   :show-inheritance:
-
-metric\_bulk\_tag\_config\_tag\_name\_list
-------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.metric_bulk_tag_config_tag_name_list
    :members:
    :show-inheritance:
 
@@ -4838,13 +4817,6 @@ security\_monitoring\_signal\_attributes
    :members:
    :show-inheritance:
 
-security\_monitoring\_signal\_incident\_ids
--------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.security_monitoring_signal_incident_ids
-   :members:
-   :show-inheritance:
-
 security\_monitoring\_signal\_incidents\_update\_attributes
 -----------------------------------------------------------
 
@@ -5664,13 +5636,6 @@ slack\_integration\_metadata\_channel\_item
    :members:
    :show-inheritance:
 
-tags\_event\_attribute
-----------------------
-
-.. automodule:: datadog_api_client.v2.model.tags_event_attribute
-   :members:
-   :show-inheritance:
-
 timeseries\_formula\_query\_request
 -----------------------------------
 
@@ -5752,20 +5717,6 @@ timeseries\_response\_series\_list
 ----------------------------------
 
 .. automodule:: datadog_api_client.v2.model.timeseries_response_series_list
-   :members:
-   :show-inheritance:
-
-timeseries\_response\_times
----------------------------
-
-.. automodule:: datadog_api_client.v2.model.timeseries_response_times
-   :members:
-   :show-inheritance:
-
-timeseries\_response\_values
-----------------------------
-
-.. automodule:: datadog_api_client.v2.model.timeseries_response_values
    :members:
    :show-inheritance:
 

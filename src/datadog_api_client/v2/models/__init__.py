@@ -256,7 +256,6 @@ from datadog_api_client.v2.model.full_api_key_attributes import FullAPIKeyAttrib
 from datadog_api_client.v2.model.full_application_key import FullApplicationKey
 from datadog_api_client.v2.model.full_application_key_attributes import FullApplicationKeyAttributes
 from datadog_api_client.v2.model.group_scalar_column import GroupScalarColumn
-from datadog_api_client.v2.model.group_tags import GroupTags
 from datadog_api_client.v2.model.http_log import HTTPLog
 from datadog_api_client.v2.model.http_log_error import HTTPLogError
 from datadog_api_client.v2.model.http_log_errors import HTTPLogErrors
@@ -502,11 +501,9 @@ from datadog_api_client.v2.model.metric_bulk_tag_config_create_request import Me
 from datadog_api_client.v2.model.metric_bulk_tag_config_delete import MetricBulkTagConfigDelete
 from datadog_api_client.v2.model.metric_bulk_tag_config_delete_attributes import MetricBulkTagConfigDeleteAttributes
 from datadog_api_client.v2.model.metric_bulk_tag_config_delete_request import MetricBulkTagConfigDeleteRequest
-from datadog_api_client.v2.model.metric_bulk_tag_config_email_list import MetricBulkTagConfigEmailList
 from datadog_api_client.v2.model.metric_bulk_tag_config_response import MetricBulkTagConfigResponse
 from datadog_api_client.v2.model.metric_bulk_tag_config_status import MetricBulkTagConfigStatus
 from datadog_api_client.v2.model.metric_bulk_tag_config_status_attributes import MetricBulkTagConfigStatusAttributes
-from datadog_api_client.v2.model.metric_bulk_tag_config_tag_name_list import MetricBulkTagConfigTagNameList
 from datadog_api_client.v2.model.metric_content_encoding import MetricContentEncoding
 from datadog_api_client.v2.model.metric_custom_aggregation import MetricCustomAggregation
 from datadog_api_client.v2.model.metric_custom_aggregations import MetricCustomAggregations
@@ -813,7 +810,6 @@ from datadog_api_client.v2.model.security_monitoring_signal_assignee_update_requ
     SecurityMonitoringSignalAssigneeUpdateRequest,
 )
 from datadog_api_client.v2.model.security_monitoring_signal_attributes import SecurityMonitoringSignalAttributes
-from datadog_api_client.v2.model.security_monitoring_signal_incident_ids import SecurityMonitoringSignalIncidentIds
 from datadog_api_client.v2.model.security_monitoring_signal_incidents_update_attributes import (
     SecurityMonitoringSignalIncidentsUpdateAttributes,
 )
@@ -1013,7 +1009,6 @@ from datadog_api_client.v2.model.service_definitions_create_request import Servi
 from datadog_api_client.v2.model.service_definitions_list_response import ServiceDefinitionsListResponse
 from datadog_api_client.v2.model.slack_integration_metadata import SlackIntegrationMetadata
 from datadog_api_client.v2.model.slack_integration_metadata_channel_item import SlackIntegrationMetadataChannelItem
-from datadog_api_client.v2.model.tags_event_attribute import TagsEventAttribute
 from datadog_api_client.v2.model.timeseries_formula_query_request import TimeseriesFormulaQueryRequest
 from datadog_api_client.v2.model.timeseries_formula_query_response import TimeseriesFormulaQueryResponse
 from datadog_api_client.v2.model.timeseries_formula_request import TimeseriesFormulaRequest
@@ -1026,8 +1021,6 @@ from datadog_api_client.v2.model.timeseries_response import TimeseriesResponse
 from datadog_api_client.v2.model.timeseries_response_attributes import TimeseriesResponseAttributes
 from datadog_api_client.v2.model.timeseries_response_series import TimeseriesResponseSeries
 from datadog_api_client.v2.model.timeseries_response_series_list import TimeseriesResponseSeriesList
-from datadog_api_client.v2.model.timeseries_response_times import TimeseriesResponseTimes
-from datadog_api_client.v2.model.timeseries_response_values import TimeseriesResponseValues
 from datadog_api_client.v2.model.timeseries_response_values_list import TimeseriesResponseValuesList
 from datadog_api_client.v2.model.unit import Unit
 from datadog_api_client.v2.model.usage_application_security_monitoring_response import (

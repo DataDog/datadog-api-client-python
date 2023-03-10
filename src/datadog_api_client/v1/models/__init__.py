@@ -66,7 +66,6 @@ from datadog_api_client.v1.model.dashboard_template_variable_preset import Dashb
 from datadog_api_client.v1.model.dashboard_template_variable_preset_value import DashboardTemplateVariablePresetValue
 from datadog_api_client.v1.model.deleted_monitor import DeletedMonitor
 from datadog_api_client.v1.model.distribution_point import DistributionPoint
-from datadog_api_client.v1.model.distribution_point_data import DistributionPointData
 from datadog_api_client.v1.model.distribution_points_content_encoding import DistributionPointsContentEncoding
 from datadog_api_client.v1.model.distribution_points_payload import DistributionPointsPayload
 from datadog_api_client.v1.model.distribution_points_series import DistributionPointsSeries
@@ -413,7 +412,6 @@ from datadog_api_client.v1.model.pager_duty_service import PagerDutyService
 from datadog_api_client.v1.model.pager_duty_service_key import PagerDutyServiceKey
 from datadog_api_client.v1.model.pager_duty_service_name import PagerDutyServiceName
 from datadog_api_client.v1.model.pagination import Pagination
-from datadog_api_client.v1.model.point import Point
 from datadog_api_client.v1.model.process_query_definition import ProcessQueryDefinition
 from datadog_api_client.v1.model.query_sort_order import QuerySortOrder
 from datadog_api_client.v1.model.query_value_widget_definition import QueryValueWidgetDefinition
@@ -650,7 +648,6 @@ from datadog_api_client.v1.model.synthetics_private_location_secrets_authenticat
 from datadog_api_client.v1.model.synthetics_private_location_secrets_config_decryption import (
     SyntheticsPrivateLocationSecretsConfigDecryption,
 )
-from datadog_api_client.v1.model.synthetics_restricted_roles import SyntheticsRestrictedRoles
 from datadog_api_client.v1.model.synthetics_ssl_certificate import SyntheticsSSLCertificate
 from datadog_api_client.v1.model.synthetics_ssl_certificate_issuer import SyntheticsSSLCertificateIssuer
 from datadog_api_client.v1.model.synthetics_ssl_certificate_subject import SyntheticsSSLCertificateSubject

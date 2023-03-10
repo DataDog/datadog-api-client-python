@@ -477,13 +477,6 @@ distribution\_point
    :members:
    :show-inheritance:
 
-distribution\_point\_data
--------------------------
-
-.. automodule:: datadog_api_client.v1.model.distribution_point_data
-   :members:
-   :show-inheritance:
-
 distribution\_points\_content\_encoding
 ---------------------------------------
 
@@ -2528,13 +2521,6 @@ pagination
    :members:
    :show-inheritance:
 
-point
------
-
-.. automodule:: datadog_api_client.v1.model.point
-   :members:
-   :show-inheritance:
-
 process\_query\_definition
 --------------------------
 
@@ -3960,13 +3946,6 @@ synthetics\_private\_location\_secrets\_config\_decryption
 ----------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_private_location_secrets_config_decryption
-   :members:
-   :show-inheritance:
-
-synthetics\_restricted\_roles
------------------------------
-
-.. automodule:: datadog_api_client.v1.model.synthetics_restricted_roles
    :members:
    :show-inheritance:
 

@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -15,7 +15,6 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.timeseries_response_series_list import TimeseriesResponseSeriesList
-    from datadog_api_client.v2.model.timeseries_response_times import TimeseriesResponseTimes
     from datadog_api_client.v2.model.timeseries_response_values_list import TimeseriesResponseValuesList
 
 
@@ -23,12 +22,11 @@ class TimeseriesResponseAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.timeseries_response_series_list import TimeseriesResponseSeriesList
-        from datadog_api_client.v2.model.timeseries_response_times import TimeseriesResponseTimes
         from datadog_api_client.v2.model.timeseries_response_values_list import TimeseriesResponseValuesList
 
         return {
             "series": (TimeseriesResponseSeriesList,),
-            "times": (TimeseriesResponseTimes,),
+            "times": ([int],),
             "values": (TimeseriesResponseValuesList,),
         }
 
@@ -41,7 +39,7 @@ class TimeseriesResponseAttributes(ModelNormal):
     def __init__(
         self_,
         series: Union[TimeseriesResponseSeriesList, UnsetType] = unset,
-        times: Union[TimeseriesResponseTimes, UnsetType] = unset,
+        times: Union[List[int], UnsetType] = unset,
         values: Union[TimeseriesResponseValuesList, UnsetType] = unset,
         **kwargs,
     ):
@@ -52,7 +50,7 @@ class TimeseriesResponseAttributes(ModelNormal):
         :type series: TimeseriesResponseSeriesList, optional
 
         :param times: Array of times, 1-1 match with individual values arrays.
-        :type times: TimeseriesResponseTimes, optional
+        :type times: [int], optional
 
         :param values: Array of value-arrays. The index here corresponds to the index in the ``formulas`` or ``queries`` array from the request.
         :type values: TimeseriesResponseValuesList, optional

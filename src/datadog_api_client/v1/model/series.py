@@ -15,19 +15,17 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v1.model.point import Point
+    pass
 
 
 class Series(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v1.model.point import Point
-
         return {
             "host": (str,),
             "interval": (int, none_type),
             "metric": (str,),
-            "points": ([Point],),
+            "points": ([[float, none_type]],),
             "tags": ([str],),
             "type": (str,),
         }
@@ -44,7 +42,7 @@ class Series(ModelNormal):
     def __init__(
         self_,
         metric: str,
-        points: List[Point],
+        points: List[List[float]],
         host: Union[str, UnsetType] = unset,
         interval: Union[int, none_type, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
@@ -65,7 +63,7 @@ class Series(ModelNormal):
         :type metric: str
 
         :param points: Points relating to a metric. All points must be tuples with timestamp and a scalar value (cannot be a string). Timestamps should be in POSIX time in seconds, and cannot be more than ten minutes in the future or more than one hour in the past.
-        :type points: [Point]
+        :type points: [[float, none_type]]
 
         :param tags: A list of tags associated with the metric.
         :type tags: [str], optional

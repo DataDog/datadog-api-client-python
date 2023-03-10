@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Any, Dict, Union, TYPE_CHECKING
+from typing import Any, Dict, List, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -16,15 +16,9 @@ from datadog_api_client.model_utils import (
 )
 
 
-if TYPE_CHECKING:
-    from datadog_api_client.v2.model.tags_event_attribute import TagsEventAttribute
-
-
 class CIAppEventAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.tags_event_attribute import TagsEventAttribute
-
         return {
             "attributes": (
                 {
@@ -42,7 +36,7 @@ class CIAppEventAttributes(ModelNormal):
                 },
             ),
             "service": (str,),
-            "tags": (TagsEventAttribute,),
+            "tags": ([str],),
             "timestamp": (datetime,),
         }
 
@@ -57,7 +51,7 @@ class CIAppEventAttributes(ModelNormal):
         self_,
         attributes: Union[Dict[str, Any], UnsetType] = unset,
         service: Union[str, UnsetType] = unset,
-        tags: Union[TagsEventAttribute, UnsetType] = unset,
+        tags: Union[List[str], UnsetType] = unset,
         timestamp: Union[datetime, UnsetType] = unset,
         **kwargs,
     ):
@@ -73,7 +67,7 @@ class CIAppEventAttributes(ModelNormal):
         :type service: str, optional
 
         :param tags: Array of tags associated with your event.
-        :type tags: TagsEventAttribute, optional
+        :type tags: [str], optional
 
         :param timestamp: Timestamp of your event.
         :type timestamp: datetime, optional
