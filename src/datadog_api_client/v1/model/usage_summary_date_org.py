@@ -23,6 +23,7 @@ class UsageSummaryDateOrg(ModelNormal):
             "apm_host_top99p": (int,),
             "appsec_fargate_count_avg": (int,),
             "audit_logs_lines_indexed_sum": (int,),
+            "audit_trail_enabled_hwm": (int,),
             "avg_profiled_fargate_tasks": (int,),
             "aws_host_top99p": (int,),
             "aws_lambda_func_count": (int,),
@@ -104,6 +105,7 @@ class UsageSummaryDateOrg(ModelNormal):
         "apm_host_top99p": "apm_host_top99p",
         "appsec_fargate_count_avg": "appsec_fargate_count_avg",
         "audit_logs_lines_indexed_sum": "audit_logs_lines_indexed_sum",
+        "audit_trail_enabled_hwm": "audit_trail_enabled_hwm",
         "avg_profiled_fargate_tasks": "avg_profiled_fargate_tasks",
         "aws_host_top99p": "aws_host_top99p",
         "aws_lambda_func_count": "aws_lambda_func_count",
@@ -186,6 +188,7 @@ class UsageSummaryDateOrg(ModelNormal):
         apm_host_top99p: Union[int, UnsetType] = unset,
         appsec_fargate_count_avg: Union[int, UnsetType] = unset,
         audit_logs_lines_indexed_sum: Union[int, UnsetType] = unset,
+        audit_trail_enabled_hwm: Union[int, UnsetType] = unset,
         avg_profiled_fargate_tasks: Union[int, UnsetType] = unset,
         aws_host_top99p: Union[int, UnsetType] = unset,
         aws_lambda_func_count: Union[int, UnsetType] = unset,
@@ -280,6 +283,9 @@ class UsageSummaryDateOrg(ModelNormal):
 
         :param audit_logs_lines_indexed_sum: Shows the sum of all audit logs lines indexed over all hours in the current date for the given org.
         :type audit_logs_lines_indexed_sum: int, optional
+
+        :param audit_trail_enabled_hwm: Shows whether Audit Trail is enabled for the current date for the given org.
+        :type audit_trail_enabled_hwm: int, optional
 
         :param avg_profiled_fargate_tasks: The average profiled task count for Fargate Profiling.
         :type avg_profiled_fargate_tasks: int, optional
@@ -509,6 +515,8 @@ class UsageSummaryDateOrg(ModelNormal):
             kwargs["appsec_fargate_count_avg"] = appsec_fargate_count_avg
         if audit_logs_lines_indexed_sum is not unset:
             kwargs["audit_logs_lines_indexed_sum"] = audit_logs_lines_indexed_sum
+        if audit_trail_enabled_hwm is not unset:
+            kwargs["audit_trail_enabled_hwm"] = audit_trail_enabled_hwm
         if avg_profiled_fargate_tasks is not unset:
             kwargs["avg_profiled_fargate_tasks"] = avg_profiled_fargate_tasks
         if aws_host_top99p is not unset:
