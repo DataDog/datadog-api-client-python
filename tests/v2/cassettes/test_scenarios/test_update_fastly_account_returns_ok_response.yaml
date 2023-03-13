@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"api_key":"TestUpdateFastlyaccountreturnsOKresponse1672855615","name":"test-name","services":[]},"type":"fastly-accounts"}}'
+    body: '{"data":{"attributes":{"api_key":"TestUpdateFastlyaccountreturnsOKresponse1678702217","name":"Test-Update_Fastly_account_returns_OK_response-1678702217","services":[]},"type":"fastly-accounts"}}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/integrations/fastly/accounts
   response:
     body:
-      string: '{"data":{"attributes":{"services":[],"name":"test-name"},"type":"fastly-accounts","id":"42ed7da188c8af4a6964376d49bb7caa"}}
+      string: '{"data":{"type":"fastly-accounts","id":"e37e834ae856fa24a2924973fdc7c276","attributes":{"services":[],"name":"Test-Update_Fastly_account_returns_OK_response-1678702217"}}}
 
         '
     headers:
@@ -27,10 +27,10 @@ interactions:
       content-type:
       - application/json
     method: PATCH
-    uri: https://api.datadoghq.com/api/v2/integrations/fastly/accounts/42ed7da188c8af4a6964376d49bb7caa
+    uri: https://api.datadoghq.com/api/v2/integrations/fastly/accounts/e37e834ae856fa24a2924973fdc7c276
   response:
     body:
-      string: '{"data":{"attributes":{"services":[],"name":"test-name"},"type":"fastly-accounts","id":"42ed7da188c8af4a6964376d49bb7caa"}}
+      string: '{"data":{"type":"fastly-accounts","id":"e37e834ae856fa24a2924973fdc7c276","attributes":{"services":[],"name":"Test-Update_Fastly_account_returns_OK_response-1678702217"}}}
 
         '
     headers:
@@ -45,7 +45,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/integrations/fastly/accounts/42ed7da188c8af4a6964376d49bb7caa
+    uri: https://api.datadoghq.com/api/v2/integrations/fastly/accounts/e37e834ae856fa24a2924973fdc7c276
   response:
     body:
       string: ''
