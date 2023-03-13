@@ -123,7 +123,7 @@ Feature: Fastly Integration
     When the request is sent
     Then the response status is 200 OK
     And the response "data.type" is equal to "fastly-accounts"
-    And the response "data.attributes.name" is equal to "test-name"
+    And the response "data.attributes.name" is equal to "{{ unique }}"
     And the response "data.attributes.services" has length 0
 
   @generated @skip @team:Datadog/web-integrations
