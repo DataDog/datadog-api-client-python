@@ -32,6 +32,7 @@ class UsageSummaryResponse(ModelNormal):
             "apm_host_top99p_sum": (int,),
             "appsec_fargate_count_avg_sum": (int,),
             "audit_logs_lines_indexed_agg_sum": (int,),
+            "audit_trail_enabled_hwm_sum": (int,),
             "avg_profiled_fargate_tasks_sum": (int,),
             "aws_host_top99p_sum": (int,),
             "aws_lambda_func_count": (int,),
@@ -120,6 +121,7 @@ class UsageSummaryResponse(ModelNormal):
         "apm_host_top99p_sum": "apm_host_top99p_sum",
         "appsec_fargate_count_avg_sum": "appsec_fargate_count_avg_sum",
         "audit_logs_lines_indexed_agg_sum": "audit_logs_lines_indexed_agg_sum",
+        "audit_trail_enabled_hwm_sum": "audit_trail_enabled_hwm_sum",
         "avg_profiled_fargate_tasks_sum": "avg_profiled_fargate_tasks_sum",
         "aws_host_top99p_sum": "aws_host_top99p_sum",
         "aws_lambda_func_count": "aws_lambda_func_count",
@@ -209,6 +211,7 @@ class UsageSummaryResponse(ModelNormal):
         apm_host_top99p_sum: Union[int, UnsetType] = unset,
         appsec_fargate_count_avg_sum: Union[int, UnsetType] = unset,
         audit_logs_lines_indexed_agg_sum: Union[int, UnsetType] = unset,
+        audit_trail_enabled_hwm_sum: Union[int, UnsetType] = unset,
         avg_profiled_fargate_tasks_sum: Union[int, UnsetType] = unset,
         aws_host_top99p_sum: Union[int, UnsetType] = unset,
         aws_lambda_func_count: Union[int, UnsetType] = unset,
@@ -310,6 +313,9 @@ class UsageSummaryResponse(ModelNormal):
 
         :param audit_logs_lines_indexed_agg_sum: Shows the sum of all audit logs lines indexed over all hours in the current months for all organizations.
         :type audit_logs_lines_indexed_agg_sum: int, optional
+
+        :param audit_trail_enabled_hwm_sum: Shows the total number of organizations that had Audit Trail enabled over a specific number of months.
+        :type audit_trail_enabled_hwm_sum: int, optional
 
         :param avg_profiled_fargate_tasks_sum: Shows the average of all profiled Fargate tasks over all hours in the current months for all organizations.
         :type avg_profiled_fargate_tasks_sum: int, optional
@@ -560,6 +566,8 @@ class UsageSummaryResponse(ModelNormal):
             kwargs["appsec_fargate_count_avg_sum"] = appsec_fargate_count_avg_sum
         if audit_logs_lines_indexed_agg_sum is not unset:
             kwargs["audit_logs_lines_indexed_agg_sum"] = audit_logs_lines_indexed_agg_sum
+        if audit_trail_enabled_hwm_sum is not unset:
+            kwargs["audit_trail_enabled_hwm_sum"] = audit_trail_enabled_hwm_sum
         if avg_profiled_fargate_tasks_sum is not unset:
             kwargs["avg_profiled_fargate_tasks_sum"] = avg_profiled_fargate_tasks_sum
         if aws_host_top99p_sum is not unset:
