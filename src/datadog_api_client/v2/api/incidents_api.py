@@ -37,6 +37,10 @@ from datadog_api_client.v2.model.incident_integration_metadata_create_request im
 from datadog_api_client.v2.model.incident_integration_metadata_patch_request import (
     IncidentIntegrationMetadataPatchRequest,
 )
+from datadog_api_client.v2.model.incident_todo_list_response import IncidentTodoListResponse
+from datadog_api_client.v2.model.incident_todo_response import IncidentTodoResponse
+from datadog_api_client.v2.model.incident_todo_create_request import IncidentTodoCreateRequest
+from datadog_api_client.v2.model.incident_todo_patch_request import IncidentTodoPatchRequest
 
 
 class IncidentsApi:
@@ -90,6 +94,33 @@ class IncidentsApi:
                 "body": {
                     "required": True,
                     "openapi_types": (IncidentIntegrationMetadataCreateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._create_incident_todo_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentTodoResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/{incident_id}/relationships/todos",
+                "operation_id": "create_incident_todo",
+                "http_method": "POST",
+                "version": "v2",
+                "servers": None,
+            },
+            params_map={
+                "incident_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "incident_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (IncidentTodoCreateRequest,),
                     "location": "body",
                 },
             },
@@ -153,6 +184,37 @@ class IncidentsApi:
             api_client=api_client,
         )
 
+        self._delete_incident_todo_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/{incident_id}/relationships/todos/{todo_id}",
+                "operation_id": "delete_incident_todo",
+                "http_method": "DELETE",
+                "version": "v2",
+                "servers": None,
+            },
+            params_map={
+                "incident_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "incident_id",
+                    "location": "path",
+                },
+                "todo_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "todo_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+                "content_type": [],
+            },
+            api_client=api_client,
+        )
+
         self._get_incident_endpoint = _Endpoint(
             settings={
                 "response_type": (IncidentResponse,),
@@ -205,6 +267,37 @@ class IncidentsApi:
                     "required": True,
                     "openapi_types": (str,),
                     "attribute": "integration_metadata_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+                "content_type": [],
+            },
+            api_client=api_client,
+        )
+
+        self._get_incident_todo_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentTodoResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/{incident_id}/relationships/todos/{todo_id}",
+                "operation_id": "get_incident_todo",
+                "http_method": "GET",
+                "version": "v2",
+                "servers": None,
+            },
+            params_map={
+                "incident_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "incident_id",
+                    "location": "path",
+                },
+                "todo_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "todo_id",
                     "location": "path",
                 },
             },
@@ -303,6 +396,31 @@ class IncidentsApi:
                     "openapi_types": (int,),
                     "attribute": "page[offset]",
                     "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+                "content_type": [],
+            },
+            api_client=api_client,
+        )
+
+        self._list_incident_todos_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentTodoListResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/{incident_id}/relationships/todos",
+                "operation_id": "list_incident_todos",
+                "http_method": "GET",
+                "version": "v2",
+                "servers": None,
+            },
+            params_map={
+                "incident_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "incident_id",
+                    "location": "path",
                 },
             },
             headers_map={
@@ -446,6 +564,39 @@ class IncidentsApi:
             api_client=api_client,
         )
 
+        self._update_incident_todo_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentTodoResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/{incident_id}/relationships/todos/{todo_id}",
+                "operation_id": "update_incident_todo",
+                "http_method": "PATCH",
+                "version": "v2",
+                "servers": None,
+            },
+            params_map={
+                "incident_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "incident_id",
+                    "location": "path",
+                },
+                "todo_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "todo_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (IncidentTodoPatchRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
     def create_incident(
         self,
         body: IncidentCreateRequest,
@@ -485,6 +636,28 @@ class IncidentsApi:
 
         return self._create_incident_integration_endpoint.call_with_http_info(**kwargs)
 
+    def create_incident_todo(
+        self,
+        incident_id: str,
+        body: IncidentTodoCreateRequest,
+    ) -> IncidentTodoResponse:
+        """Create an incident todo.
+
+        Create an incident todo.
+
+        :param incident_id: The UUID of the incident.
+        :type incident_id: str
+        :param body: Incident todo payload.
+        :type body: IncidentTodoCreateRequest
+        :rtype: IncidentTodoResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["incident_id"] = incident_id
+
+        kwargs["body"] = body
+
+        return self._create_incident_todo_endpoint.call_with_http_info(**kwargs)
+
     def delete_incident(
         self,
         incident_id: str,
@@ -523,6 +696,28 @@ class IncidentsApi:
         kwargs["integration_metadata_id"] = integration_metadata_id
 
         return self._delete_incident_integration_endpoint.call_with_http_info(**kwargs)
+
+    def delete_incident_todo(
+        self,
+        incident_id: str,
+        todo_id: str,
+    ) -> None:
+        """Delete an incident todo.
+
+        Delete an incident todo.
+
+        :param incident_id: The UUID of the incident.
+        :type incident_id: str
+        :param todo_id: The UUID of the incident todo.
+        :type todo_id: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["incident_id"] = incident_id
+
+        kwargs["todo_id"] = todo_id
+
+        return self._delete_incident_todo_endpoint.call_with_http_info(**kwargs)
 
     def get_incident(
         self,
@@ -569,6 +764,28 @@ class IncidentsApi:
         kwargs["integration_metadata_id"] = integration_metadata_id
 
         return self._get_incident_integration_endpoint.call_with_http_info(**kwargs)
+
+    def get_incident_todo(
+        self,
+        incident_id: str,
+        todo_id: str,
+    ) -> IncidentTodoResponse:
+        """Get incident todo details.
+
+        Get incident todo details.
+
+        :param incident_id: The UUID of the incident.
+        :type incident_id: str
+        :param todo_id: The UUID of the incident todo.
+        :type todo_id: str
+        :rtype: IncidentTodoResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["incident_id"] = incident_id
+
+        kwargs["todo_id"] = todo_id
+
+        return self._get_incident_todo_endpoint.call_with_http_info(**kwargs)
 
     def list_incident_attachments(
         self,
@@ -695,6 +912,23 @@ class IncidentsApi:
                 endpoint.params_map,
             )
 
+    def list_incident_todos(
+        self,
+        incident_id: str,
+    ) -> IncidentTodoListResponse:
+        """Get a list of an incident's todos.
+
+        Get all todos for an incident.
+
+        :param incident_id: The UUID of the incident.
+        :type incident_id: str
+        :rtype: IncidentTodoListResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["incident_id"] = incident_id
+
+        return self._list_incident_todos_endpoint.call_with_http_info(**kwargs)
+
     def search_incidents(
         self,
         query: str,
@@ -813,3 +1047,30 @@ class IncidentsApi:
         kwargs["body"] = body
 
         return self._update_incident_integration_endpoint.call_with_http_info(**kwargs)
+
+    def update_incident_todo(
+        self,
+        incident_id: str,
+        todo_id: str,
+        body: IncidentTodoPatchRequest,
+    ) -> IncidentTodoResponse:
+        """Update an incident todo.
+
+        Update an incident todo.
+
+        :param incident_id: The UUID of the incident.
+        :type incident_id: str
+        :param todo_id: The UUID of the incident todo.
+        :type todo_id: str
+        :param body: Incident todo payload.
+        :type body: IncidentTodoPatchRequest
+        :rtype: IncidentTodoResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["incident_id"] = incident_id
+
+        kwargs["todo_id"] = todo_id
+
+        kwargs["body"] = body
+
+        return self._update_incident_todo_endpoint.call_with_http_info(**kwargs)

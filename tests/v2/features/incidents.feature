@@ -90,6 +90,35 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
+  @generated @skip @team:Datadog/incident-app
+  Scenario: Create an incident todo returns "Bad Request" response
+    Given operation "CreateIncidentTodo" enabled
+    And new "CreateIncidentTodo" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"assignees": ["@test.user@test.com"], "completed": "2023-03-06T22:00:00.000000+00:00", "content": "Restore lost data.", "due_date": "2023-07-10T05:00:00.000000+00:00", "incident_id": "00000000-aaaa-0000-0000-000000000000"}, "type": "incident_todos"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:Datadog/incident-app
+  Scenario: Create an incident todo returns "CREATED" response
+    Given operation "CreateIncidentTodo" enabled
+    And new "CreateIncidentTodo" request
+    And there is a valid "incident" in the system
+    And request contains "incident_id" parameter from "incident.data.id"
+    And body with value {"data": {"attributes": {"assignees": ["@test.user@test.com"], "content": "Restore lost data."}, "type": "incident_todos"}}
+    When the request is sent
+    Then the response status is 201 CREATED
+    And the response "data.attributes.assignees" has length 1
+
+  @generated @skip @team:Datadog/incident-app
+  Scenario: Create an incident todo returns "Not Found" response
+    Given operation "CreateIncidentTodo" enabled
+    And new "CreateIncidentTodo" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"assignees": ["@test.user@test.com"], "completed": "2023-03-06T22:00:00.000000+00:00", "content": "Restore lost data.", "due_date": "2023-07-10T05:00:00.000000+00:00", "incident_id": "00000000-aaaa-0000-0000-000000000000"}, "type": "incident_todos"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
   @generated @skip @team:DataDog/incident-app
   Scenario: Create, update, and delete incident attachments returns "Bad Request" response
     Given operation "UpdateIncidentAttachments" enabled
@@ -171,6 +200,35 @@ Feature: Incidents
     When the request is sent
     Then the response status is 204 OK
 
+  @generated @skip @team:Datadog/incident-app
+  Scenario: Delete an incident todo returns "Bad Request" response
+    Given operation "DeleteIncidentTodo" enabled
+    And new "DeleteIncidentTodo" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And request contains "todo_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:Datadog/incident-app
+  Scenario: Delete an incident todo returns "Not Found" response
+    Given operation "DeleteIncidentTodo" enabled
+    And new "DeleteIncidentTodo" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And request contains "todo_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:Datadog/incident-app
+  Scenario: Delete an incident todo returns "OK" response
+    Given operation "DeleteIncidentTodo" enabled
+    And new "DeleteIncidentTodo" request
+    And there is a valid "incident" in the system
+    And the "incident" has an "incident_todo"
+    And request contains "incident_id" parameter from "incident.data.id"
+    And request contains "todo_id" parameter from "incident_todo.data.id"
+    When the request is sent
+    Then the response status is 204 OK
+
   @generated @skip @team:DataDog/incident-app
   Scenario: Get a list of an incident's integration metadata returns "Bad Request" response
     Given operation "ListIncidentIntegrations" enabled
@@ -197,6 +255,35 @@ Feature: Incidents
     When the request is sent
     Then the response status is 200 OK
     And the response "data[0].attributes.metadata.channels[0].channel_name" is equal to "#example-channel-name"
+
+  @generated @skip @team:Datadog/incident-app
+  Scenario: Get a list of an incident's todos returns "Bad Request" response
+    Given operation "ListIncidentTodos" enabled
+    And new "ListIncidentTodos" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:Datadog/incident-app
+  Scenario: Get a list of an incident's todos returns "Not Found" response
+    Given operation "ListIncidentTodos" enabled
+    And new "ListIncidentTodos" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:Datadog/incident-app
+  Scenario: Get a list of an incident's todos returns "OK" response
+    Given operation "ListIncidentTodos" enabled
+    And new "ListIncidentTodos" request
+    And there is a valid "incident" in the system
+    And the "incident" has an "incident_todo"
+    And request contains "incident_id" parameter from "incident.data.id"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data" has length 1
+    And the response "data[0].attributes.assignees" has length 2
+    And the response "data[0].attributes.content" is equal to "Follow up with customer about the impact they saw."
 
   @generated @skip @team:DataDog/incident-app
   Scenario: Get a list of attachments returns "Bad Request" response
@@ -296,6 +383,37 @@ Feature: Incidents
     And request contains "integration_metadata_id" parameter from "incident_integration_metadata.data.id"
     When the request is sent
     Then the response status is 200 OK
+
+  @generated @skip @team:Datadog/incident-app
+  Scenario: Get incident todo details returns "Bad Request" response
+    Given operation "GetIncidentTodo" enabled
+    And new "GetIncidentTodo" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And request contains "todo_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:Datadog/incident-app
+  Scenario: Get incident todo details returns "Not Found" response
+    Given operation "GetIncidentTodo" enabled
+    And new "GetIncidentTodo" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And request contains "todo_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:Datadog/incident-app
+  Scenario: Get incident todo details returns "OK" response
+    Given operation "GetIncidentTodo" enabled
+    And new "GetIncidentTodo" request
+    And there is a valid "incident" in the system
+    And the "incident" has an "incident_todo"
+    And request contains "incident_id" parameter from "incident.data.id"
+    And request contains "todo_id" parameter from "incident_todo.data.id"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.attributes.assignees" has length 2
+    And the response "data.attributes.content" is equal to "Follow up with customer about the impact they saw."
 
   @generated @skip @team:DataDog/incident-app
   Scenario: Get the details of an incident returns "Bad Request" response
@@ -422,3 +540,37 @@ Feature: Incidents
     When the request is sent
     Then the response status is 200 OK
     And the response "data.attributes.title" is equal to "{{ incident.data.attributes.title }}-updated"
+
+  @generated @skip @team:Datadog/incident-app
+  Scenario: Update an incident todo returns "Bad Request" response
+    Given operation "UpdateIncidentTodo" enabled
+    And new "UpdateIncidentTodo" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And request contains "todo_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"assignees": ["@test.user@test.com"], "completed": "2023-03-06T22:00:00.000000+00:00", "content": "Restore lost data.", "due_date": "2023-07-10T05:00:00.000000+00:00", "incident_id": "00000000-aaaa-0000-0000-000000000000"}, "type": "incident_todos"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:Datadog/incident-app
+  Scenario: Update an incident todo returns "Not Found" response
+    Given operation "UpdateIncidentTodo" enabled
+    And new "UpdateIncidentTodo" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And request contains "todo_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"assignees": ["@test.user@test.com"], "completed": "2023-03-06T22:00:00.000000+00:00", "content": "Restore lost data.", "due_date": "2023-07-10T05:00:00.000000+00:00", "incident_id": "00000000-aaaa-0000-0000-000000000000"}, "type": "incident_todos"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:Datadog/incident-app
+  Scenario: Update an incident todo returns "OK" response
+    Given operation "UpdateIncidentTodo" enabled
+    And new "UpdateIncidentTodo" request
+    And there is a valid "incident" in the system
+    And the "incident" has an "incident_todo"
+    And request contains "incident_id" parameter from "incident.data.id"
+    And request contains "todo_id" parameter from "incident_todo.data.id"
+    And body with value {"data": {"attributes": {"assignees": ["@test.user@test.com"], "content": "Restore lost data.", "completed": "2023-03-06T22:00:00.000000+00:00", "due_date": "2023-07-10T05:00:00.000000+00:00"}, "type": "incident_todos"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.attributes.assignees" has length 1
+    And the response "data.attributes.content" is equal to "Restore lost data."

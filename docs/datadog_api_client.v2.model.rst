@@ -2248,6 +2248,104 @@ incident\_timeline\_cell\_markdown\_create\_attributes\_content
    :members:
    :show-inheritance:
 
+incident\_todo\_anonymous\_assignee
+-----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_todo_anonymous_assignee
+   :members:
+   :show-inheritance:
+
+incident\_todo\_anonymous\_assignee\_source
+-------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_todo_anonymous_assignee_source
+   :members:
+   :show-inheritance:
+
+incident\_todo\_assignee
+------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_todo_assignee
+   :members:
+   :show-inheritance:
+
+incident\_todo\_assignee\_array
+-------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_todo_assignee_array
+   :members:
+   :show-inheritance:
+
+incident\_todo\_attributes
+--------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_todo_attributes
+   :members:
+   :show-inheritance:
+
+incident\_todo\_create\_data
+----------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_todo_create_data
+   :members:
+   :show-inheritance:
+
+incident\_todo\_create\_request
+-------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_todo_create_request
+   :members:
+   :show-inheritance:
+
+incident\_todo\_list\_response
+------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_todo_list_response
+   :members:
+   :show-inheritance:
+
+incident\_todo\_patch\_data
+---------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_todo_patch_data
+   :members:
+   :show-inheritance:
+
+incident\_todo\_patch\_request
+------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_todo_patch_request
+   :members:
+   :show-inheritance:
+
+incident\_todo\_response
+------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_todo_response
+   :members:
+   :show-inheritance:
+
+incident\_todo\_response\_data
+------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_todo_response_data
+   :members:
+   :show-inheritance:
+
+incident\_todo\_response\_included\_item
+----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_todo_response_included_item
+   :members:
+   :show-inheritance:
+
+incident\_todo\_type
+--------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_todo_type
+   :members:
+   :show-inheritance:
+
 incident\_type
 --------------
 

@@ -314,6 +314,47 @@
       "type": "idempotent"
     }
   },
+  "ListIncidentTodos": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateIncidentTodo": {
+    "tag": "Incidents",
+    "undo": {
+      "operationId": "DeleteIncidentTodo",
+      "parameters": [
+        {
+          "name": "incident_id",
+          "source": "data.attributes.incident_id"
+        },
+        {
+          "name": "todo_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteIncidentTodo": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetIncidentTodo": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateIncidentTodo": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListOpsgenieServices": {
     "tag": "Opsgenie Integration",
     "undo": {

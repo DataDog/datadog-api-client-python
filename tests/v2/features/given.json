@@ -114,6 +114,22 @@
   {
     "parameters": [
       {
+        "name": "incident_id",
+        "source": "incident.data.id"
+      },
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"content\": \"Follow up with customer about the impact they saw.\",\n      \"assignees\": [\n        \"@test.user@test.com\",\n        {\n          \"icon\": \"https://a.slack-edge.com/80588/img/slackbot_48.png\",\n          \"id\": \"USLACKBOT\",\n          \"name\": \"Slackbot\",\n          \"source\": \"slack\"\n        }\n      ]\n    },\n    \"type\": \"incident_todos\"\n  }\n}"
+      }
+    ],
+    "step": "the \"incident\" has an \"incident_todo\"",
+    "key": "incident_todo",
+    "tag": "Incidents",
+    "operationId": "CreateIncidentTodo"
+  },
+  {
+    "parameters": [
+      {
         "name": "body",
         "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"name\": \"{{ unique }}\",\n      \"opsgenie_api_key\": \"00000000-0000-0000-0000-000000000000\",\n      \"region\": \"us\"\n     },\n     \"type\": \"opsgenie-service\"\n  }\n}"
       }
