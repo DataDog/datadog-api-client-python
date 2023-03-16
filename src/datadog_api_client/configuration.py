@@ -24,6 +24,30 @@ JSON_SCHEMA_VALIDATION_KEYWORDS = {
     "minItems",
 }
 
+class _RetryConfiguration:
+    def __init__(self, values):
+            self.values = values
+
+    def get(self, key, default=None):
+        if key in self:
+            return self[key]
+        return default
+
+    def __getitem__(self, key):
+        if key in self.values:
+            return self.values[key]
+        raise KeyError(f"Unknown retry configuration {key}")
+
+    def __setitem__(self, key, value):
+        if key in self.values:
+            self.values[key] = value
+        else:
+            raise KeyError(f"Unknow retry configuration {key}")
+
+    def __contains__(self, key):
+        if key in self.values:
+            return True
+        return False
 
 class _UnstableOperations:
     def __init__(self, values):
@@ -201,7 +225,6 @@ class Configuration:
         self.proxy = None
         self.proxy_headers = None
         self.safe_chars_for_path_param = ""
-        self.retries = None
         # Enable client side validation
         self.client_side_validation = True
 
@@ -256,6 +279,14 @@ class Configuration:
             }
         )
 
+        self.retry_configuration = _RetryConfiguration(
+            {
+                "enable_retry": False,
+                "backoff_factor": 2,
+                "max_retries": 3,
+            }
+        )
+        
         # Load default values from environment
         if "DD_SITE" in os.environ:
             self.server_variables["site"] = os.environ["DD_SITE"]
