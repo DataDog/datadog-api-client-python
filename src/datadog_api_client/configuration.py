@@ -24,9 +24,10 @@ JSON_SCHEMA_VALIDATION_KEYWORDS = {
     "minItems",
 }
 
+
 class _RetryConfiguration:
     def __init__(self, values):
-            self.values = values
+        self.values = values
 
     def get(self, key, default=None):
         if key in self:
@@ -286,7 +287,7 @@ class Configuration:
                 "max_retries": 3,
             }
         )
-        
+
         # Load default values from environment
         if "DD_SITE" in os.environ:
             self.server_variables["site"] = os.environ["DD_SITE"]

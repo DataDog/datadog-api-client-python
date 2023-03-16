@@ -9,9 +9,8 @@ import ssl
 from urllib.parse import urlencode
 from urllib3.util.retry import Retry
 import zlib
-
-import urllib3  # type: ignore
 import requests
+import urllib3  # type: ignore
 
 from datadog_api_client.exceptions import (
     ApiException,
@@ -24,6 +23,7 @@ from datadog_api_client.exceptions import (
 
 
 logger = logging.getLogger(__name__)
+
 
 class DDRetry(Retry):
     def __init__(self):
@@ -39,6 +39,7 @@ class DDRetry(Retry):
         if retry_after is None:
             return None
         return self.parse_retry_after(retry_after)
+
 
 class RESTClientObject:
     def __init__(self, configuration, pools_size=4, maxsize=4):
@@ -59,15 +60,17 @@ class RESTClientObject:
             addition_pool_args["assert_hostname"] = configuration.assert_hostname
 
         if configuration.retry_configuration["enable_retry"] == True:
-            status_forcelist= tuple ( x for x in requests.status_codes._codes if x == 429 or x>=500)
+            status_forcelist = tuple(x for x in requests.status_codes._codes if x == 429 or x >= 500)
 
-            retries = DDRetry(total=configuration.retry_configuration["max_retries"],
-                            backoff_factor=configuration.retry_configuration["backoff_factor"],
-                            status_forcelist=status_forcelist)
+            retries = DDRetry(
+                total=configuration.retry_configuration["max_retries"],
+                backoff_factor=configuration.retry_configuration["backoff_factor"],
+                status_forcelist=status_forcelist,
+            )
 
             addition_pool_args["retries"] = retries
 
-        addition_pool_args["retries"]=False
+        addition_pool_args["retries"] = False
 
         if configuration.socket_options is not None:
             addition_pool_args["socket_options"] = configuration.socket_options
