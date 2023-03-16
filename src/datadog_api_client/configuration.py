@@ -50,6 +50,7 @@ class _RetryConfiguration:
             return True
         return False
 
+
 class _UnstableOperations:
     def __init__(self, values):
         self.values = values
