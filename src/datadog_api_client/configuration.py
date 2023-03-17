@@ -24,33 +24,6 @@ JSON_SCHEMA_VALIDATION_KEYWORDS = {
     "minItems",
 }
 
-
-class _RetryConfiguration:
-    def __init__(self, values):
-        self.values = values
-
-    def get(self, key, default=None):
-        if key in self:
-            return self[key]
-        return default
-
-    def __getitem__(self, key):
-        if key in self.values:
-            return self.values[key]
-        raise KeyError(f"Unknown retry configuration {key}")
-
-    def __setitem__(self, key, value):
-        if key in self.values:
-            self.values[key] = value
-        else:
-            raise KeyError(f"Unknow retry configuration {key}")
-
-    def __contains__(self, key):
-        if key in self.values:
-            return True
-        return False
-
-
 class _UnstableOperations:
     def __init__(self, values):
         self.values = values
@@ -185,6 +158,9 @@ class Configuration:
         check_input_type=True,
         check_return_type=True,
         spec_property_naming=False,
+        enable_retry= False,
+        retry_backoff_factor= 2,
+        max_retries= 3,
     ):
         """Constructor."""
         self._base_path = "https://api.datadoghq.com" if host is None else host
@@ -243,6 +219,11 @@ class Configuration:
         self.check_return_type = check_return_type
         self.spec_property_naming = spec_property_naming
 
+        # Options for http retry
+        self.enable_retry = enable_retry
+        self.retry_backoff_factor = retry_backoff_factor
+        self.max_retries = max_retries
+
         # Keep track of unstable operations
         self.unstable_operations = _UnstableOperations(
             {
@@ -278,14 +259,6 @@ class Configuration:
                 "v2.get_incident_team": False,
                 "v2.list_incident_teams": False,
                 "v2.update_incident_team": False,
-            }
-        )
-
-        self.retry_configuration = _RetryConfiguration(
-            {
-                "enable_retry": False,
-                "backoff_factor": 2,
-                "max_retries": 3,
             }
         )
 

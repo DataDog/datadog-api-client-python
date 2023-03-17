@@ -9,7 +9,6 @@ import ssl
 from urllib.parse import urlencode
 from urllib3.util.retry import Retry
 import zlib
-import requests
 import urllib3  # type: ignore
 
 from datadog_api_client.exceptions import (
@@ -28,6 +27,7 @@ logger = logging.getLogger(__name__)
 class DDRetry(Retry):
     def __init__(self):
         super().__init__(self)
+        self.RETRY_AFTER_STATUS_CODES = frozenset([413, 429, 500, 501, 502, 503, 504, 505, 506, 507, 509, 510, 511])
 
     def get_retry_after(self, response):
 
@@ -39,7 +39,29 @@ class DDRetry(Retry):
         if retry_after is None:
             return None
         return self.parse_retry_after(retry_after)
+    
+    def is_retry(self, method, status_code, has_retry_after=False):
+        """Is this status code retryable? (Based on allowlists and control
+        variables such as the number of total retries to allow, whether to
+        respect the Retry-After header, whether this header is present, and
+        whether the returned status code is on the list of status codes to
+        be retried upon on the presence of the aforementioned header)
+        """
+        response=self.response
+        if method:
+            return True
 
+        if self.status_forcelist and status_code in self.status_forcelist:
+            return True
+        
+        self.has_retry_after= bool(response.headers.get("X-Ratelimit-Reset"))
+
+        return (
+            self.total
+            and self.respect_retry_after_header
+            and has_retry_after
+            and (status_code in self.RETRY_AFTER_STATUS_CODES)
+        )    
 
 class RESTClientObject:
     def __init__(self, configuration, pools_size=4, maxsize=4):
@@ -59,13 +81,10 @@ class RESTClientObject:
         if configuration.assert_hostname is not None:
             addition_pool_args["assert_hostname"] = configuration.assert_hostname
 
-        if configuration.retry_configuration["enable_retry"] == True:
-            status_forcelist = tuple(x for x in requests.status_codes._codes if x == 429 or x >= 500)
-
+        if configuration.enable_retry == True:
             retries = DDRetry(
-                total=configuration.retry_configuration["max_retries"],
-                backoff_factor=configuration.retry_configuration["backoff_factor"],
-                status_forcelist=status_forcelist,
+                total=configuration.max_retries,
+                backoff_factor=configuration.retry_backoff_factor,
             )
 
             addition_pool_args["retries"] = retries
