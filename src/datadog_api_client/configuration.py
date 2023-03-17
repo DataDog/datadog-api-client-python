@@ -24,6 +24,7 @@ JSON_SCHEMA_VALIDATION_KEYWORDS = {
     "minItems",
 }
 
+
 class _UnstableOperations:
     def __init__(self, values):
         self.values = values
@@ -158,9 +159,9 @@ class Configuration:
         check_input_type=True,
         check_return_type=True,
         spec_property_naming=False,
-        enable_retry= False,
-        retry_backoff_factor= 2,
-        max_retries= 3,
+        enable_retry=False,
+        retry_backoff_factor=2,
+        max_retries=3,
     ):
         """Constructor."""
         self._base_path = "https://api.datadoghq.com" if host is None else host
