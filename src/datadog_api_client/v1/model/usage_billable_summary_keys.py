@@ -32,7 +32,7 @@ class UsageBillableSummaryKeys(ModelNormal):
             "apm_trace_search_sum": (UsageBillableSummaryBody,),
             "application_security_fargate_average": (UsageBillableSummaryBody,),
             "application_security_host_sum": (UsageBillableSummaryBody,),
-            "application_security_host_top99": (UsageBillableSummaryBody,),
+            "application_security_host_top99p": (UsageBillableSummaryBody,),
             "ci_pipeline_indexed_spans_sum": (UsageBillableSummaryBody,),
             "ci_pipeline_maximum": (UsageBillableSummaryBody,),
             "ci_pipeline_sum": (UsageBillableSummaryBody,),
@@ -123,7 +123,7 @@ class UsageBillableSummaryKeys(ModelNormal):
         "apm_trace_search_sum": "apm_trace_search_sum",
         "application_security_fargate_average": "application_security_fargate_average",
         "application_security_host_sum": "application_security_host_sum",
-        "application_security_host_top99": "application_security_host_top99",
+        "application_security_host_top99p": "application_security_host_top99p",
         "ci_pipeline_indexed_spans_sum": "ci_pipeline_indexed_spans_sum",
         "ci_pipeline_maximum": "ci_pipeline_maximum",
         "ci_pipeline_sum": "ci_pipeline_sum",
@@ -215,7 +215,7 @@ class UsageBillableSummaryKeys(ModelNormal):
         apm_trace_search_sum: Union[UsageBillableSummaryBody, UnsetType] = unset,
         application_security_fargate_average: Union[UsageBillableSummaryBody, UnsetType] = unset,
         application_security_host_sum: Union[UsageBillableSummaryBody, UnsetType] = unset,
-        application_security_host_top99: Union[UsageBillableSummaryBody, UnsetType] = unset,
+        application_security_host_top99p: Union[UsageBillableSummaryBody, UnsetType] = unset,
         ci_pipeline_indexed_spans_sum: Union[UsageBillableSummaryBody, UnsetType] = unset,
         ci_pipeline_maximum: Union[UsageBillableSummaryBody, UnsetType] = unset,
         ci_pipeline_sum: Union[UsageBillableSummaryBody, UnsetType] = unset,
@@ -326,8 +326,8 @@ class UsageBillableSummaryKeys(ModelNormal):
         :param application_security_host_sum: Response with properties for each aggregated usage type.
         :type application_security_host_sum: UsageBillableSummaryBody, optional
 
-        :param application_security_host_top99: Response with properties for each aggregated usage type.
-        :type application_security_host_top99: UsageBillableSummaryBody, optional
+        :param application_security_host_top99p: Response with properties for each aggregated usage type.
+        :type application_security_host_top99p: UsageBillableSummaryBody, optional
 
         :param ci_pipeline_indexed_spans_sum: Response with properties for each aggregated usage type.
         :type ci_pipeline_indexed_spans_sum: UsageBillableSummaryBody, optional
@@ -581,8 +581,8 @@ class UsageBillableSummaryKeys(ModelNormal):
             kwargs["application_security_fargate_average"] = application_security_fargate_average
         if application_security_host_sum is not unset:
             kwargs["application_security_host_sum"] = application_security_host_sum
-        if application_security_host_top99 is not unset:
-            kwargs["application_security_host_top99"] = application_security_host_top99
+        if application_security_host_top99p is not unset:
+            kwargs["application_security_host_top99p"] = application_security_host_top99p
         if ci_pipeline_indexed_spans_sum is not unset:
             kwargs["ci_pipeline_indexed_spans_sum"] = ci_pipeline_indexed_spans_sum
         if ci_pipeline_maximum is not unset:
