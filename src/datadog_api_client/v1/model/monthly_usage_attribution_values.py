@@ -37,6 +37,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
             "cspm_containers_usage": (float,),
             "cspm_hosts_percentage": (float,),
             "cspm_hosts_usage": (float,),
+            "custom_ingested_timeseries_percentage": (float,),
+            "custom_ingested_timeseries_usage": (float,),
             "custom_timeseries_percentage": (float,),
             "custom_timeseries_usage": (float,),
             "cws_containers_percentage": (float,),
@@ -98,6 +100,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         "cspm_containers_usage": "cspm_containers_usage",
         "cspm_hosts_percentage": "cspm_hosts_percentage",
         "cspm_hosts_usage": "cspm_hosts_usage",
+        "custom_ingested_timeseries_percentage": "custom_ingested_timeseries_percentage",
+        "custom_ingested_timeseries_usage": "custom_ingested_timeseries_usage",
         "custom_timeseries_percentage": "custom_timeseries_percentage",
         "custom_timeseries_usage": "custom_timeseries_usage",
         "cws_containers_percentage": "cws_containers_percentage",
@@ -160,6 +164,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         cspm_containers_usage: Union[float, UnsetType] = unset,
         cspm_hosts_percentage: Union[float, UnsetType] = unset,
         cspm_hosts_usage: Union[float, UnsetType] = unset,
+        custom_ingested_timeseries_percentage: Union[float, UnsetType] = unset,
+        custom_ingested_timeseries_usage: Union[float, UnsetType] = unset,
         custom_timeseries_percentage: Union[float, UnsetType] = unset,
         custom_timeseries_usage: Union[float, UnsetType] = unset,
         cws_containers_percentage: Union[float, UnsetType] = unset,
@@ -263,10 +269,16 @@ class MonthlyUsageAttributionValues(ModelNormal):
         :param cspm_hosts_usage: The CSPM host usage by tag(s).
         :type cspm_hosts_usage: float, optional
 
-        :param custom_timeseries_percentage: The percentage of custom metrics usage by tag(s).
+        :param custom_ingested_timeseries_percentage: The percentage of ingested custom metrics usage by tag(s).
+        :type custom_ingested_timeseries_percentage: float, optional
+
+        :param custom_ingested_timeseries_usage: The ingested custom metrics usage by tag(s).
+        :type custom_ingested_timeseries_usage: float, optional
+
+        :param custom_timeseries_percentage: The percentage of indexed custom metrics usage by tag(s).
         :type custom_timeseries_percentage: float, optional
 
-        :param custom_timeseries_usage: The custom metrics usage by tag(s).
+        :param custom_timeseries_usage: The indexed custom metrics usage by tag(s).
         :type custom_timeseries_usage: float, optional
 
         :param cws_containers_percentage: The percentage of Cloud Workload Security container usage by tag(s).
@@ -417,6 +429,10 @@ class MonthlyUsageAttributionValues(ModelNormal):
             kwargs["cspm_hosts_percentage"] = cspm_hosts_percentage
         if cspm_hosts_usage is not unset:
             kwargs["cspm_hosts_usage"] = cspm_hosts_usage
+        if custom_ingested_timeseries_percentage is not unset:
+            kwargs["custom_ingested_timeseries_percentage"] = custom_ingested_timeseries_percentage
+        if custom_ingested_timeseries_usage is not unset:
+            kwargs["custom_ingested_timeseries_usage"] = custom_ingested_timeseries_usage
         if custom_timeseries_percentage is not unset:
             kwargs["custom_timeseries_percentage"] = custom_timeseries_percentage
         if custom_timeseries_usage is not unset:
