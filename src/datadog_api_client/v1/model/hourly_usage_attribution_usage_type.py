@@ -16,7 +16,7 @@ class HourlyUsageAttributionUsageType(ModelSimple):
     """
     Supported products for hourly usage attribution requests.
 
-    :param value: Must be one of ["api_usage", "apm_fargate_usage", "apm_host_usage", "appsec_fargate_usage", "appsec_usage", "browser_usage", "container_excl_agent_usage", "container_usage", "cspm_containers_usage", "cspm_hosts_usage", "custom_timeseries_usage", "cws_containers_usage", "cws_hosts_usage", "dbm_hosts_usage", "dbm_queries_usage", "estimated_indexed_logs_usage", "estimated_ingested_logs_usage", "estimated_indexed_spans_usage", "estimated_ingested_spans_usage", "fargate_usage", "functions_usage", "infra_host_usage", "invocations_usage", "npm_host_usage", "profiled_container_usage", "profiled_fargate_usage", "profiled_host_usage", "snmp_usage", "estimated_rum_sessions_usage"].
+    :param value: Must be one of ["api_usage", "apm_fargate_usage", "apm_host_usage", "appsec_fargate_usage", "appsec_usage", "browser_usage", "container_excl_agent_usage", "container_usage", "cspm_containers_usage", "cspm_hosts_usage", "custom_ingested_timeseries_usage", "custom_timeseries_usage", "cws_containers_usage", "cws_hosts_usage", "dbm_hosts_usage", "dbm_queries_usage", "estimated_indexed_logs_usage", "estimated_ingested_logs_usage", "estimated_indexed_spans_usage", "estimated_ingested_spans_usage", "fargate_usage", "functions_usage", "infra_host_usage", "invocations_usage", "npm_host_usage", "profiled_container_usage", "profiled_fargate_usage", "profiled_host_usage", "snmp_usage", "estimated_rum_sessions_usage"].
     :type value: str
     """
 
@@ -31,6 +31,7 @@ class HourlyUsageAttributionUsageType(ModelSimple):
         "container_usage",
         "cspm_containers_usage",
         "cspm_hosts_usage",
+        "custom_ingested_timeseries_usage",
         "custom_timeseries_usage",
         "cws_containers_usage",
         "cws_hosts_usage",
@@ -61,6 +62,7 @@ class HourlyUsageAttributionUsageType(ModelSimple):
     CONTAINER_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
     CSPM_CONTAINERS_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
     CSPM_HOSTS_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
+    CUSTOM_INGESTED_TIMESERIES_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
     CUSTOM_TIMESERIES_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
     CWS_CONTAINERS_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
     CWS_HOSTS_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
@@ -100,6 +102,9 @@ HourlyUsageAttributionUsageType.CONTAINER_EXCL_AGENT_USAGE = HourlyUsageAttribut
 HourlyUsageAttributionUsageType.CONTAINER_USAGE = HourlyUsageAttributionUsageType("container_usage")
 HourlyUsageAttributionUsageType.CSPM_CONTAINERS_USAGE = HourlyUsageAttributionUsageType("cspm_containers_usage")
 HourlyUsageAttributionUsageType.CSPM_HOSTS_USAGE = HourlyUsageAttributionUsageType("cspm_hosts_usage")
+HourlyUsageAttributionUsageType.CUSTOM_INGESTED_TIMESERIES_USAGE = HourlyUsageAttributionUsageType(
+    "custom_ingested_timeseries_usage"
+)
 HourlyUsageAttributionUsageType.CUSTOM_TIMESERIES_USAGE = HourlyUsageAttributionUsageType("custom_timeseries_usage")
 HourlyUsageAttributionUsageType.CWS_CONTAINERS_USAGE = HourlyUsageAttributionUsageType("cws_containers_usage")
 HourlyUsageAttributionUsageType.CWS_HOSTS_USAGE = HourlyUsageAttributionUsageType("cws_hosts_usage")
