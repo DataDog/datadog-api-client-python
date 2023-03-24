@@ -8,6 +8,8 @@ from datadog_api_client.v1.api.downtimes_api import DowntimesApi
 configuration = Configuration()
 with ApiClient(configuration) as api_client:
     api_instance = DowntimesApi(api_client)
-    response = api_instance.list_downtimes()
+    response = api_instance.list_downtimes(
+        with_creator=True,
+    )
 
     print(response)
