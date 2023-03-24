@@ -37,9 +37,10 @@ Feature: Audit
   @team:DataDog/team-aaa
   Scenario: Search Audit Logs events returns "OK" response
     Given new "SearchAuditLogs" request
-    And body with value {"filter": {"from": "now-15m", "query": "@type:session AND @session.type:user", "to": "now"}, "options": {"time_offset": 0, "timezone": "GMT"}, "page": {"limit": 25}, "sort": "timestamp"}
+    And body with value {"filter": {"from": "now-15m", "query": "@evt.name:Request @auth_method:API_AND_APP_KEY", "to": "now"}, "options": {"time_offset": 0, "timezone": "GMT"}, "page": {"limit": 25}, "sort": "timestamp"}
     When the request is sent
     Then the response status is 200 OK
+    And the response "data[0].type" is equal to "audit"
 
   @replay-only @team:DataDog/team-aaa @with-pagination
   Scenario: Search Audit Logs events returns "OK" response with pagination
