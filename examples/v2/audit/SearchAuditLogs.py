@@ -13,7 +13,7 @@ from datadog_api_client.v2.model.audit_logs_sort import AuditLogsSort
 body = AuditLogsSearchEventsRequest(
     filter=AuditLogsQueryFilter(
         _from="now-15m",
-        query="@type:session AND @session.type:user",
+        query="@evt.name:Request @auth_method:API_AND_APP_KEY",
         to="now",
     ),
     options=AuditLogsQueryOptions(
