@@ -33,7 +33,7 @@ body = ServiceDefinitionV2(
             url="https://gdrive/mydoc",
         ),
     ],
-    extensions=dict(myorgextension="extensionvalue"),
+    extensions=dict([("myorgextension", "extensionvalue")]),
     integrations=ServiceDefinitionV2Integrations(
         opsgenie=ServiceDefinitionV2Opsgenie(
             region=ServiceDefinitionV2OpsgenieRegion.US,
