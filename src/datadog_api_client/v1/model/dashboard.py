@@ -24,6 +24,12 @@ if TYPE_CHECKING:
 
 
 class Dashboard(ModelNormal):
+    validations = {
+        "tags": {
+            "max_items": 5,
+        },
+    }
+
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v1.model.dashboard_layout_type import DashboardLayoutType
@@ -44,6 +50,7 @@ class Dashboard(ModelNormal):
             "notify_list": ([str], none_type),
             "reflow_type": (DashboardReflowType,),
             "restricted_roles": ([str],),
+            "tags": ([str], none_type),
             "template_variable_presets": ([DashboardTemplateVariablePreset], none_type),
             "template_variables": ([DashboardTemplateVariable], none_type),
             "title": (str,),
@@ -63,6 +70,7 @@ class Dashboard(ModelNormal):
         "notify_list": "notify_list",
         "reflow_type": "reflow_type",
         "restricted_roles": "restricted_roles",
+        "tags": "tags",
         "template_variable_presets": "template_variable_presets",
         "template_variables": "template_variables",
         "title": "title",
@@ -93,6 +101,7 @@ class Dashboard(ModelNormal):
         notify_list: Union[List[str], none_type, UnsetType] = unset,
         reflow_type: Union[DashboardReflowType, UnsetType] = unset,
         restricted_roles: Union[List[str], UnsetType] = unset,
+        tags: Union[List[str], none_type, UnsetType] = unset,
         template_variable_presets: Union[List[DashboardTemplateVariablePreset], none_type, UnsetType] = unset,
         template_variables: Union[List[DashboardTemplateVariable], none_type, UnsetType] = unset,
         url: Union[str, UnsetType] = unset,
@@ -137,6 +146,9 @@ class Dashboard(ModelNormal):
         :param restricted_roles: A list of role identifiers. Only the author and users associated with at least one of these roles can edit this dashboard.
         :type restricted_roles: [str], optional
 
+        :param tags: List of team names representing ownership of a dashboard.
+        :type tags: [str], none_type, optional
+
         :param template_variable_presets: Array of template variables saved views.
         :type template_variable_presets: [DashboardTemplateVariablePreset], none_type, optional
 
@@ -172,6 +184,8 @@ class Dashboard(ModelNormal):
             kwargs["reflow_type"] = reflow_type
         if restricted_roles is not unset:
             kwargs["restricted_roles"] = restricted_roles
+        if tags is not unset:
+            kwargs["tags"] = tags
         if template_variable_presets is not unset:
             kwargs["template_variable_presets"] = template_variable_presets
         if template_variables is not unset:
