@@ -275,7 +275,6 @@ Feature: Metrics
   @generated @skip @team:DataDog/metrics-intake @team:DataDog/metrics-query
   Scenario: Submit metrics returns "Bad Request" response
     Given new "SubmitMetrics" request
-    And body with value {"series": [{"metric": "system.load.1", "points": [{"timestamp": 1475317847, "value": 0.7}], "resources": [{"name": "dummyhost", "type": "host"}]}]}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -290,14 +289,12 @@ Feature: Metrics
   @generated @skip @team:DataDog/metrics-intake @team:DataDog/metrics-query
   Scenario: Submit metrics returns "Payload too large" response
     Given new "SubmitMetrics" request
-    And body with value {"series": [{"metric": "system.load.1", "points": [{"timestamp": 1475317847, "value": 0.7}], "resources": [{"name": "dummyhost", "type": "host"}]}]}
     When the request is sent
     Then the response status is 413 Payload too large
 
   @generated @skip @team:DataDog/metrics-intake @team:DataDog/metrics-query
   Scenario: Submit metrics returns "Request timeout" response
     Given new "SubmitMetrics" request
-    And body with value {"series": [{"metric": "system.load.1", "points": [{"timestamp": 1475317847, "value": 0.7}], "resources": [{"name": "dummyhost", "type": "host"}]}]}
     When the request is sent
     Then the response status is 408 Request timeout
 

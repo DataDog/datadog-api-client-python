@@ -434,7 +434,7 @@ class MetricsApi:
                     "location": "body",
                 },
             },
-            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            headers_map={"accept": ["application/json"], "content_type": ["application/x-protobuf"]},
             api_client=api_client,
         )
 
