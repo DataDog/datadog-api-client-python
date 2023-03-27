@@ -20102,7 +20102,7 @@ paths:
           $ref: '#/components/schemas/MetricContentEncoding'
       requestBody:
         content:
-          application/json:
+          application/x-protobuf:
             examples:
               dynamic-points:
                 description: "Post time-series data that can be graphed on Datadog\u2019s
