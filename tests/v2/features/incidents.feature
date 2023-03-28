@@ -479,6 +479,16 @@ Feature: Incidents
     And the response "data.type" is equal to "incidents_search_results"
     And the response "data.attributes.incidents[0].data.type" is equal to "incidents"
 
+  @replay-only @team:DataDog/incident-app @with-pagination
+  Scenario: Search for incidents returns "OK" response with pagination
+    Given operation "SearchIncidents" enabled
+    And new "SearchIncidents" request
+    And request contains "query" parameter with value "state:(active OR stable OR resolved)"
+    And request contains "page[size]" parameter with value 2
+    When the request with pagination is sent
+    Then the response status is 200 OK
+    And the response has 3 items
+
   @generated @skip @team:DataDog/incident-app
   Scenario: Update an existing incident integration metadata returns "Bad Request" response
     Given operation "UpdateIncidentIntegration" enabled

@@ -4724,6 +4724,8 @@ components:
             $ref: '#/components/schemas/IncidentResponseIncludedItem'
           readOnly: true
           type: array
+        meta:
+          $ref: '#/components/schemas/IncidentSearchResponseMeta'
       required:
       - data
       type: object
@@ -4839,6 +4841,13 @@ components:
           $ref: '#/components/schemas/IncidentResponseData'
       required:
       - data
+      type: object
+    IncidentSearchResponseMeta:
+      description: The metadata object containing pagination metadata.
+      properties:
+        pagination:
+          $ref: '#/components/schemas/IncidentResponseMetaPagination'
+      readOnly: true
       type: object
     IncidentSearchResponseNumericFacetData:
       description: Facet data numeric attributes of an incident.
@@ -14664,6 +14673,8 @@ paths:
       - $ref: '#/components/parameters/IncidentSearchIncludeQueryParameter'
       - $ref: '#/components/parameters/IncidentSearchQueryQueryParameter'
       - $ref: '#/components/parameters/IncidentSearchSortQueryParameter'
+      - $ref: '#/components/parameters/PageSize'
+      - $ref: '#/components/parameters/PageOffset'
       responses:
         '200':
           content:
@@ -14689,6 +14700,10 @@ paths:
       summary: Search for incidents
       tags:
       - Incidents
+      x-pagination:
+        limitParam: page[size]
+        pageOffsetParam: page[offset]
+        resultsPath: data.attributes.incidents
       x-unstable: '**Note**: This endpoint is in public beta.
 
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).'
