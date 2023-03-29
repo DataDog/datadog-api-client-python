@@ -21,6 +21,7 @@ from datadog_api_client.v2.model.incident_response import IncidentResponse
 from datadog_api_client.v2.model.incident_create_request import IncidentCreateRequest
 from datadog_api_client.v2.model.incident_search_response import IncidentSearchResponse
 from datadog_api_client.v2.model.incident_search_sort_order import IncidentSearchSortOrder
+from datadog_api_client.v2.model.incident_search_response_incidents_data import IncidentSearchResponseIncidentsData
 from datadog_api_client.v2.model.incident_update_request import IncidentUpdateRequest
 from datadog_api_client.v2.model.incident_attachments_response import IncidentAttachmentsResponse
 from datadog_api_client.v2.model.incident_attachment_related_object import IncidentAttachmentRelatedObject
@@ -455,6 +456,16 @@ class IncidentsApi:
                 "sort": {
                     "openapi_types": (IncidentSearchSortOrder,),
                     "attribute": "sort",
+                    "location": "query",
+                },
+                "page_size": {
+                    "openapi_types": (int,),
+                    "attribute": "page[size]",
+                    "location": "query",
+                },
+                "page_offset": {
+                    "openapi_types": (int,),
+                    "attribute": "page[offset]",
                     "location": "query",
                 },
             },
@@ -935,6 +946,8 @@ class IncidentsApi:
         *,
         include: Union[IncidentRelatedObject, UnsetType] = unset,
         sort: Union[IncidentSearchSortOrder, UnsetType] = unset,
+        page_size: Union[int, UnsetType] = unset,
+        page_offset: Union[int, UnsetType] = unset,
     ) -> IncidentSearchResponse:
         """Search for incidents.
 
@@ -950,6 +963,10 @@ class IncidentsApi:
         :type include: IncidentRelatedObject, optional
         :param sort: Specifies the order of returned incidents.
         :type sort: IncidentSearchSortOrder, optional
+        :param page_size: Size for a given page. The maximum allowed value is 5000.
+        :type page_size: int, optional
+        :param page_offset: Specific offset to use as the beginning of the returned page.
+        :type page_offset: int, optional
         :rtype: IncidentSearchResponse
         """
         kwargs: Dict[str, Any] = {}
@@ -961,7 +978,75 @@ class IncidentsApi:
         if sort is not unset:
             kwargs["sort"] = sort
 
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        if page_offset is not unset:
+            kwargs["page_offset"] = page_offset
+
         return self._search_incidents_endpoint.call_with_http_info(**kwargs)
+
+    def search_incidents_with_pagination(
+        self,
+        query: str,
+        *,
+        include: Union[IncidentRelatedObject, UnsetType] = unset,
+        sort: Union[IncidentSearchSortOrder, UnsetType] = unset,
+        page_size: Union[int, UnsetType] = unset,
+        page_offset: Union[int, UnsetType] = unset,
+    ) -> collections.abc.Iterable[IncidentSearchResponseIncidentsData]:
+        """Search for incidents.
+
+        Provide a paginated version of :meth:`search_incidents`, returning all items.
+
+        :param query: Specifies which incidents should be returned. After entering a search query in your `Incidents page <https://app.datadoghq.com/incidents>`_ ,
+            use the query parameter value in the URL of the page as the value for this parameter.
+
+            The query can contain any number of incident facets joined by ``ANDs`` , along with multiple values for each of
+            those facets joined by ``OR`` s, for instance: ``query="state:active AND severity:(SEV-2 OR SEV-1)"``.
+        :type query: str
+        :param include: Specifies which types of related objects should be included in the response.
+        :type include: IncidentRelatedObject, optional
+        :param sort: Specifies the order of returned incidents.
+        :type sort: IncidentSearchSortOrder, optional
+        :param page_size: Size for a given page. The maximum allowed value is 5000.
+        :type page_size: int, optional
+        :param page_offset: Specific offset to use as the beginning of the returned page.
+        :type page_offset: int, optional
+
+        :return: A generator of paginated results.
+        :rtype: collections.abc.Iterable[IncidentSearchResponseIncidentsData]
+        """
+        kwargs: Dict[str, Any] = {}
+        if include is not unset:
+            kwargs["include"] = include
+
+        kwargs["query"] = query
+
+        if sort is not unset:
+            kwargs["sort"] = sort
+
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        if page_offset is not unset:
+            kwargs["page_offset"] = page_offset
+
+        local_page_size = get_attribute_from_path(kwargs, "page_size", 10)
+        endpoint = self._search_incidents_endpoint
+        set_attribute_from_path(kwargs, "page_size", local_page_size, endpoint.params_map)
+        while True:
+            response = endpoint.call_with_http_info(**kwargs)
+            for item in get_attribute_from_path(response, "data.attributes.incidents"):
+                yield item
+            if len(get_attribute_from_path(response, "data.attributes.incidents")) < local_page_size:
+                break
+            set_attribute_from_path(
+                kwargs,
+                "page_offset",
+                get_attribute_from_path(kwargs, "page_offset", 0) + local_page_size,
+                endpoint.params_map,
+            )
 
     def update_incident(
         self,

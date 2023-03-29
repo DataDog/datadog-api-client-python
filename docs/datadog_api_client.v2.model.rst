@@ -1996,6 +1996,13 @@ incident\_search\_response\_incidents\_data
    :members:
    :show-inheritance:
 
+incident\_search\_response\_meta
+--------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_search_response_meta
+   :members:
+   :show-inheritance:
+
 incident\_search\_response\_numeric\_facet\_data
 ------------------------------------------------
 

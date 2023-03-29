@@ -352,6 +352,7 @@ from datadog_api_client.v2.model.incident_search_response_data import IncidentSe
 from datadog_api_client.v2.model.incident_search_response_facets_data import IncidentSearchResponseFacetsData
 from datadog_api_client.v2.model.incident_search_response_field_facet_data import IncidentSearchResponseFieldFacetData
 from datadog_api_client.v2.model.incident_search_response_incidents_data import IncidentSearchResponseIncidentsData
+from datadog_api_client.v2.model.incident_search_response_meta import IncidentSearchResponseMeta
 from datadog_api_client.v2.model.incident_search_response_numeric_facet_data import (
     IncidentSearchResponseNumericFacetData,
 )
