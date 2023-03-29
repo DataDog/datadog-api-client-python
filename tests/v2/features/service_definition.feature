@@ -40,11 +40,11 @@ Feature: Service Definition
   @team:DataDog/service-catalog
   Scenario: Create or update service definition using schema v2-1 returns "CREATED" response
     Given new "CreateOrUpdateServiceDefinitions" request
-    And body with value {"contacts":[{"contact":"contact@datadoghq.com","name":"Team Email","type":"email"}],"dd-service":"service-{{ unique }}","extensions":{"myorgextension":"extensionvalue"},"integrations":{"opsgenie":{"region":"US","service-url":"https://my-org.opsgenie.com/service/123e4567-e89b-12d3-a456-426614174000"},"pagerduty":{"service-url":"https://my-org.pagerduty.com/service-directory/PMyService"}},"links":[{"name":"Runbook","type":"runbook","url":"https://my-runbook"},{"name":"Source Code","type":"repo","provider":"GitHub","url":"https://github.com/DataDog/schema"},{"name":"Architecture","type":"doc","provider":"Gigoogle drivetHub","url":"https://my-runbook"}],"schema-version":"v2.1","tags":["my:tag","service:tag"],"team":"my-team"}
+    And body with value {"contacts":[{"contact":"contact@datadoghq.com","name":"Team Email","type":"email"}],"dd-service":"service-{{ unique_lower_alnum }}","extensions":{"myorgextension":"extensionvalue"},"integrations":{"opsgenie":{"region":"US","service-url":"https://my-org.opsgenie.com/service/123e4567-e89b-12d3-a456-426614174000"},"pagerduty":{"service-url":"https://my-org.pagerduty.com/service-directory/PMyService"}},"links":[{"name":"Runbook","type":"runbook","url":"https://my-runbook"},{"name":"Source Code","type":"repo","provider":"GitHub","url":"https://github.com/DataDog/schema"},{"name":"Architecture","type":"doc","provider":"Gigoogle drivetHub","url":"https://my-runbook"}],"schema-version":"v2.1","tags":["my:tag","service:tag"],"team":"my-team"}
     When the request is sent
     Then the response status is 200 CREATED
     And the response "data[0].attributes.meta.ingested-schema-version" is equal to "v2.1"
-    And the response "data[0].attributes.schema.dd-service" is equal to "service-{{ unique_lower }}"
+    And the response "data[0].attributes.schema.dd-service" is equal to "service-{{ unique_lower_alnum }}"
 
   @generated @skip @team:DataDog/service-catalog
   Scenario: Delete a single service definition returns "Bad Request" response

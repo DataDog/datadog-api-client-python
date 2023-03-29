@@ -23,7 +23,7 @@ body = ServiceDefinitionV2Dot1(
             type=ServiceDefinitionV2Dot1EmailType.EMAIL,
         ),
     ],
-    dd_service="service-Example-Create_or_update_service_definition_using_schema_v2_1_returns_CREATED_response",
+    dd_service="service-examplecreateorupdateservicedefinitionusingschemav21returnscreatedresponse",
     extensions=dict([("myorgextension", "extensionvalue")]),
     integrations=ServiceDefinitionV2Dot1Integrations(
         opsgenie=ServiceDefinitionV2Dot1Opsgenie(
