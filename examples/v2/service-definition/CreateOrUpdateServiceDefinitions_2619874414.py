@@ -1,5 +1,5 @@
 """
-Create or update service definition returns "CREATED" response
+Create or update service definition using schema v2-1 returns "CREATED" response
 """
 
 from datadog_api_client import ApiClient, Configuration
@@ -16,7 +16,6 @@ from datadog_api_client.v2.model.service_definition_v2_dot1_pagerduty import Ser
 from datadog_api_client.v2.model.service_definition_v2_dot1_version import ServiceDefinitionV2Dot1Version
 
 body = ServiceDefinitionV2Dot1(
-    application="my-app",
     contacts=[
         ServiceDefinitionV2Dot1Email(
             contact="contact@datadoghq.com",
@@ -24,9 +23,8 @@ body = ServiceDefinitionV2Dot1(
             type=ServiceDefinitionV2Dot1EmailType.EMAIL,
         ),
     ],
-    dd_service="my-service",
-    description="My service description",
-    extensions=dict([("myorg/extension", "extensionValue")]),
+    dd_service="service-Example-Create_or_update_service_definition_using_schema_v2_1_returns_CREATED_response",
+    extensions=dict([("myorgextension", "extensionvalue")]),
     integrations=ServiceDefinitionV2Dot1Integrations(
         opsgenie=ServiceDefinitionV2Dot1Opsgenie(
             region=ServiceDefinitionV2Dot1OpsgenieRegion.US,
@@ -36,12 +34,22 @@ body = ServiceDefinitionV2Dot1(
             service_url="https://my-org.pagerduty.com/service-directory/PMyService",
         ),
     ),
-    lifecycle="sandbox",
     links=[
         ServiceDefinitionV2Dot1Link(
             name="Runbook",
-            provider="Github",
             type=ServiceDefinitionV2Dot1LinkType.RUNBOOK,
+            url="https://my-runbook",
+        ),
+        ServiceDefinitionV2Dot1Link(
+            name="Source Code",
+            type=ServiceDefinitionV2Dot1LinkType.REPO,
+            provider="GitHub",
+            url="https://github.com/DataDog/schema",
+        ),
+        ServiceDefinitionV2Dot1Link(
+            name="Architecture",
+            type=ServiceDefinitionV2Dot1LinkType.DOC,
+            provider="Gigoogle drivetHub",
             url="https://my-runbook",
         ),
     ],
@@ -51,7 +59,6 @@ body = ServiceDefinitionV2Dot1(
         "service:tag",
     ],
     team="my-team",
-    tier="High",
 )
 
 configuration = Configuration()
