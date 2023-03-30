@@ -460,6 +460,46 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"handle\": \"{{timestamp('now')}}\",\n      \"name\": \"{{timestamp('now')}}\"\n    },\n    \"type\": \"team\"\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"dd_team\" in the system",
+    "key": "dd_team",
+    "tag": "Teams",
+    "operationId": "CreateTeam"
+  },
+  {
+    "parameters": [
+      {
+        "name": "team_id",
+        "source": "dd_team.data.id"
+      },
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"label\": \"{{unique}}\",\n      \"url\": \"https://example.com\",\n      \"position\": 0\n    },\n    \"type\": \"team_links\"\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"team_link\" in the system",
+    "key": "team_link",
+    "tag": "Teams",
+    "operationId": "CreateTeamLink"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"role\": \"admin\"\n    },\n    \"relationships\": {\n      \"user\": {\n        \"data\": {\n          \"id\": \"{{user.data.id}}\",\n          \"type\": \"users\"\n        }\n      }\n    },\n    \"type\": \"team_memberships\"\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"team_membership\" in the system",
+    "key": "team_membership",
+    "tag": "Teams",
+    "operationId": "CreateTeamMembership"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"name\": \"{{ unique }}\"\n     },\n     \"type\": \"teams\"\n  }\n}"
       }
     ],

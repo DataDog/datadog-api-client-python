@@ -1,0 +1,52 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"handle":"1679941983","name":"1679941983"},"type":"team"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/team
+  response:
+    body:
+      string: '{"data":{"type":"team","id":"cf7d13e8-cccd-11ed-ae79-da7ad0900002","attributes":{"name":"1679941983","handle":"1679941983","summary":null,"description":null,"color":8,"created_at":"2023-03-27T18:33:03.978804+00:00","modified_at":"2023-03-27T18:33:03.978808+00:00","user_count":0,"link_count":0},"relationships":{"team_links":{"links":{"related":"/api/v2/team/cf7d13e8-cccd-11ed-ae79-da7ad0900002/links"}},"user_team_permissions":{"links":{"related":"/api/v2/team/cf7d13e8-cccd-11ed-ae79-da7ad0900002/permission-settings"}}}}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/team/cf7d13e8-cccd-11ed-ae79-da7ad0900002/links/REPLACE.ME
+  response:
+    body:
+      string: '{"errors":["REPLACE.ME is not a valid UUID not found"]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 404
+      message: Not Found
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/team/cf7d13e8-cccd-11ed-ae79-da7ad0900002
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1
