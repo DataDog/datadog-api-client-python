@@ -1386,6 +1386,131 @@
       "type": "safe"
     }
   },
+  "GetAllTeams": {
+    "tag": "Teams",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateTeam": {
+    "tag": "Teams",
+    "undo": {
+      "operationId": "RemoveTeam",
+      "parameters": [
+        {
+          "name": "team_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "RemoveTeam": {
+    "tag": "Teams",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetTeam": {
+    "tag": "Teams",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateTeam": {
+    "tag": "Teams",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetTeamLinks": {
+    "tag": "Teams",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateTeamLink": {
+    "tag": "Teams",
+    "undo": {
+      "operationId": "RemoveTeamLink",
+      "parameters": [
+        {
+          "name": "team_id",
+          "source": "data.attributes.team_id"
+        },
+        {
+          "name": "link_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "RemoveTeamLink": {
+    "tag": "Teams",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetTeamLink": {
+    "tag": "Teams",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateTeamLink": {
+    "tag": "Teams",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetTeamMemberships": {
+    "tag": "Teams",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateTeamMembership": {
+    "tag": "Teams",
+    "undo": {
+      "operationId": "RemoveTeamMembership",
+      "parameters": [
+        {
+          "name": "team_id",
+          "template": "{{team.data.id}}"
+        },
+        {
+          "name": "user_id",
+          "source": "data.relationships.user.data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "RemoveTeamMembership": {
+    "tag": "Teams",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateTeamMembership": {
+    "tag": "Teams",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetTeamPermissionSettings": {
+    "tag": "Teams",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateTeamPermissionSetting": {
+    "tag": "Teams",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListIncidentTeams": {
     "tag": "Incident Teams",
     "undo": {
