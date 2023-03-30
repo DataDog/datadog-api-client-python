@@ -1,0 +1,42 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"compute":{"aggregation_type":"distribution","include_percentiles":false,"path":"@duration"},"filter":{"query":"@http.status_code:200
+      service:my-service"},"group_by":[{"path":"resource_name","tag_name":"resource_name"}]},"id":"TestCreateaspanbasedmetricreturnsOKresponse1680015324","type":"spans_metrics"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/apm/config/metrics
+  response:
+    body:
+      string: '{"data":{"id":"TestCreateaspanbasedmetricreturnsOKresponse1680015324","attributes":{"filter":{"query":"@http.status_code:200
+        service:my-service"},"group_by":[{"path":"resource_name","tag_name":"resource_name"}],"compute":{"aggregation_type":"distribution","path":"@duration","include_percentiles":false}},"type":"spans_metrics"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/apm/config/metrics/TestCreateaspanbasedmetricreturnsOKresponse1680015324
+  response:
+    body:
+      string: '{}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

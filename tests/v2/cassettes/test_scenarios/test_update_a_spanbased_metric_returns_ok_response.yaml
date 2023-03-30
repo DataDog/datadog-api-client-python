@@ -1,0 +1,60 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"compute":{"aggregation_type":"distribution","include_percentiles":false,"path":"@duration"},"filter":{"query":"source:Test-Update_a_span_based_metric_returns_OK_response-1680015329"},"group_by":[{"path":"resource_name","tag_name":"resource_name"}]},"id":"Test-Update_a_span_based_metric_returns_OK_response-1680015329","type":"spans_metrics"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/apm/config/metrics
+  response:
+    body:
+      string: '{"data":{"id":"Test_Update_a_span_based_metric_returns_OK_response_1680015329","attributes":{"filter":{"query":"source:Test-Update_a_span_based_metric_returns_OK_response-1680015329"},"group_by":[{"path":"resource_name","tag_name":"resource_name"}],"compute":{"aggregation_type":"distribution","path":"@duration","include_percentiles":false}},"type":"spans_metrics"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data":{"attributes":{"compute":{"include_percentiles":false},"filter":{"query":"source:Test-Update_a_span_based_metric_returns_OK_response-1680015329-updated"},"group_by":[{"path":"resource_name","tag_name":"resource_name"}]},"type":"spans_metrics"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/apm/config/metrics/Test_Update_a_span_based_metric_returns_OK_response_1680015329
+  response:
+    body:
+      string: '{"data":{"id":"Test_Update_a_span_based_metric_returns_OK_response_1680015329","attributes":{"filter":{"query":"source:Test-Update_a_span_based_metric_returns_OK_response-1680015329-updated"},"group_by":[{"path":"resource_name","tag_name":"resource_name"}],"compute":{"aggregation_type":"distribution","path":"@duration","include_percentiles":false}},"type":"spans_metrics"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/apm/config/metrics/Test_Update_a_span_based_metric_returns_OK_response_1680015329
+  response:
+    body:
+      string: '{}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1
