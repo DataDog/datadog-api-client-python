@@ -5916,6 +5916,139 @@ slack\_integration\_metadata\_channel\_item
    :members:
    :show-inheritance:
 
+spans\_metric\_compute
+----------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_metric_compute
+   :members:
+   :show-inheritance:
+
+spans\_metric\_compute\_aggregation\_type
+-----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_metric_compute_aggregation_type
+   :members:
+   :show-inheritance:
+
+spans\_metric\_create\_attributes
+---------------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_metric_create_attributes
+   :members:
+   :show-inheritance:
+
+spans\_metric\_create\_data
+---------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_metric_create_data
+   :members:
+   :show-inheritance:
+
+spans\_metric\_create\_request
+------------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_metric_create_request
+   :members:
+   :show-inheritance:
+
+spans\_metric\_filter
+---------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_metric_filter
+   :members:
+   :show-inheritance:
+
+spans\_metric\_group\_by
+------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_metric_group_by
+   :members:
+   :show-inheritance:
+
+spans\_metric\_response
+-----------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_metric_response
+   :members:
+   :show-inheritance:
+
+spans\_metric\_response\_attributes
+-----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_metric_response_attributes
+   :members:
+   :show-inheritance:
+
+spans\_metric\_response\_compute
+--------------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_metric_response_compute
+   :members:
+   :show-inheritance:
+
+spans\_metric\_response\_data
+-----------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_metric_response_data
+   :members:
+   :show-inheritance:
+
+spans\_metric\_response\_filter
+-------------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_metric_response_filter
+   :members:
+   :show-inheritance:
+
+spans\_metric\_response\_group\_by
+----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_metric_response_group_by
+   :members:
+   :show-inheritance:
+
+spans\_metric\_type
+-------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_metric_type
+   :members:
+   :show-inheritance:
+
+spans\_metric\_update\_attributes
+---------------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_metric_update_attributes
+   :members:
+   :show-inheritance:
+
+spans\_metric\_update\_compute
+------------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_metric_update_compute
+   :members:
+   :show-inheritance:
+
+spans\_metric\_update\_data
+---------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_metric_update_data
+   :members:
+   :show-inheritance:
+
+spans\_metric\_update\_request
+------------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_metric_update_request
+   :members:
+   :show-inheritance:
+
+spans\_metrics\_response
+------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_metrics_response
+   :members:
+   :show-inheritance:
+
 tags\_event\_attribute
 ----------------------
 

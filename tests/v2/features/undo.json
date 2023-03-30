@@ -36,6 +36,43 @@
       "type": "idempotent"
     }
   },
+  "ListSpansMetrics": {
+    "tag": "Spans Metrics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateSpansMetric": {
+    "tag": "Spans Metrics",
+    "undo": {
+      "operationId": "DeleteSpansMetric",
+      "parameters": [
+        {
+          "name": "metric_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteSpansMetric": {
+    "tag": "Spans Metrics",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetSpansMetric": {
+    "tag": "Spans Metrics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateSpansMetric": {
+    "tag": "Spans Metrics",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListApplicationKeys": {
     "tag": "Key Management",
     "undo": {
