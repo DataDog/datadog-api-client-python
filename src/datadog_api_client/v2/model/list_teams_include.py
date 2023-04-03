@@ -12,7 +12,7 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class GetAllTeamsInclude(ModelSimple):
+class ListTeamsInclude(ModelSimple):
     """
     Included related resources optionally requested.
 
@@ -24,8 +24,8 @@ class GetAllTeamsInclude(ModelSimple):
         "team_links",
         "user_team_permissions",
     }
-    TEAM_LINKS: ClassVar["GetAllTeamsInclude"]
-    USER_TEAM_PERMISSIONS: ClassVar["GetAllTeamsInclude"]
+    TEAM_LINKS: ClassVar["ListTeamsInclude"]
+    USER_TEAM_PERMISSIONS: ClassVar["ListTeamsInclude"]
 
     @cached_property
     def openapi_types(_):
@@ -34,5 +34,5 @@ class GetAllTeamsInclude(ModelSimple):
         }
 
 
-GetAllTeamsInclude.TEAM_LINKS = GetAllTeamsInclude("team_links")
-GetAllTeamsInclude.USER_TEAM_PERMISSIONS = GetAllTeamsInclude("user_team_permissions")
+ListTeamsInclude.TEAM_LINKS = ListTeamsInclude("team_links")
+ListTeamsInclude.USER_TEAM_PERMISSIONS = ListTeamsInclude("user_team_permissions")

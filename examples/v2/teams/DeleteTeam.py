@@ -12,6 +12,6 @@ DD_TEAM_DATA_ID = environ["DD_TEAM_DATA_ID"]
 configuration = Configuration()
 with ApiClient(configuration) as api_client:
     api_instance = TeamsApi(api_client)
-    api_instance.remove_team(
+    api_instance.delete_team(
         team_id=DD_TEAM_DATA_ID,
     )

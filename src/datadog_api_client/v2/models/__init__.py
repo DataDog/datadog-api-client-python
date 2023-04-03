@@ -255,8 +255,6 @@ from datadog_api_client.v2.model.full_api_key import FullAPIKey
 from datadog_api_client.v2.model.full_api_key_attributes import FullAPIKeyAttributes
 from datadog_api_client.v2.model.full_application_key import FullApplicationKey
 from datadog_api_client.v2.model.full_application_key_attributes import FullApplicationKeyAttributes
-from datadog_api_client.v2.model.get_all_teams_include import GetAllTeamsInclude
-from datadog_api_client.v2.model.get_all_teams_sort import GetAllTeamsSort
 from datadog_api_client.v2.model.get_team_memberships_sort import GetTeamMembershipsSort
 from datadog_api_client.v2.model.group_scalar_column import GroupScalarColumn
 from datadog_api_client.v2.model.group_tags import GroupTags
@@ -428,6 +426,8 @@ from datadog_api_client.v2.model.intake_payload_accepted import IntakePayloadAcc
 from datadog_api_client.v2.model.jira_integration_metadata import JiraIntegrationMetadata
 from datadog_api_client.v2.model.jira_integration_metadata_issues_item import JiraIntegrationMetadataIssuesItem
 from datadog_api_client.v2.model.list_application_keys_response import ListApplicationKeysResponse
+from datadog_api_client.v2.model.list_teams_include import ListTeamsInclude
+from datadog_api_client.v2.model.list_teams_sort import ListTeamsSort
 from datadog_api_client.v2.model.log import Log
 from datadog_api_client.v2.model.log_attributes import LogAttributes
 from datadog_api_client.v2.model.log_type import LogType

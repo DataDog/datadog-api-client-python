@@ -12,8 +12,8 @@ from datadog_api_client.model_utils import (
     unset,
 )
 from datadog_api_client.v2.model.teams_response import TeamsResponse
-from datadog_api_client.v2.model.get_all_teams_sort import GetAllTeamsSort
-from datadog_api_client.v2.model.get_all_teams_include import GetAllTeamsInclude
+from datadog_api_client.v2.model.list_teams_sort import ListTeamsSort
+from datadog_api_client.v2.model.list_teams_include import ListTeamsInclude
 from datadog_api_client.v2.model.team_response import TeamResponse
 from datadog_api_client.v2.model.team_create_request import TeamCreateRequest
 from datadog_api_client.v2.model.team_update_request import TeamUpdateRequest
@@ -115,51 +115,88 @@ class TeamsApi:
             api_client=api_client,
         )
 
-        self._get_all_teams_endpoint = _Endpoint(
+        self._delete_team_endpoint = _Endpoint(
             settings={
-                "response_type": (TeamsResponse,),
+                "response_type": None,
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/team",
-                "operation_id": "get_all_teams",
-                "http_method": "GET",
+                "endpoint_path": "/api/v2/team/{team_id}",
+                "operation_id": "delete_team",
+                "http_method": "DELETE",
                 "version": "v2",
                 "servers": None,
             },
             params_map={
-                "page_number": {
-                    "openapi_types": (int,),
-                    "attribute": "page[number]",
-                    "location": "query",
-                },
-                "page_size": {
-                    "openapi_types": (int,),
-                    "attribute": "page[size]",
-                    "location": "query",
-                },
-                "sort": {
-                    "openapi_types": (GetAllTeamsSort,),
-                    "attribute": "sort",
-                    "location": "query",
-                },
-                "include": {
-                    "openapi_types": ([GetAllTeamsInclude],),
-                    "attribute": "include",
-                    "location": "query",
-                    "collection_format": "multi",
-                },
-                "filter_keyword": {
+                "team_id": {
+                    "required": True,
                     "openapi_types": (str,),
-                    "attribute": "filter[keyword]",
-                    "location": "query",
-                },
-                "filter_me": {
-                    "openapi_types": (bool,),
-                    "attribute": "filter[me]",
-                    "location": "query",
+                    "attribute": "team_id",
+                    "location": "path",
                 },
             },
             headers_map={
-                "accept": ["application/json"],
+                "accept": ["*/*"],
+                "content_type": [],
+            },
+            api_client=api_client,
+        )
+
+        self._delete_team_link_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/team/{team_id}/links/{link_id}",
+                "operation_id": "delete_team_link",
+                "http_method": "DELETE",
+                "version": "v2",
+                "servers": None,
+            },
+            params_map={
+                "team_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "team_id",
+                    "location": "path",
+                },
+                "link_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "link_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+                "content_type": [],
+            },
+            api_client=api_client,
+        )
+
+        self._delete_team_membership_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/team/{team_id}/memberships/{user_id}",
+                "operation_id": "delete_team_membership",
+                "http_method": "DELETE",
+                "version": "v2",
+                "servers": None,
+            },
+            params_map={
+                "team_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "team_id",
+                    "location": "path",
+                },
+                "user_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "user_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -316,88 +353,51 @@ class TeamsApi:
             api_client=api_client,
         )
 
-        self._remove_team_endpoint = _Endpoint(
+        self._list_teams_endpoint = _Endpoint(
             settings={
-                "response_type": None,
+                "response_type": (TeamsResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/team/{team_id}",
-                "operation_id": "remove_team",
-                "http_method": "DELETE",
+                "endpoint_path": "/api/v2/team",
+                "operation_id": "list_teams",
+                "http_method": "GET",
                 "version": "v2",
                 "servers": None,
             },
             params_map={
-                "team_id": {
-                    "required": True,
+                "page_number": {
+                    "openapi_types": (int,),
+                    "attribute": "page[number]",
+                    "location": "query",
+                },
+                "page_size": {
+                    "openapi_types": (int,),
+                    "attribute": "page[size]",
+                    "location": "query",
+                },
+                "sort": {
+                    "openapi_types": (ListTeamsSort,),
+                    "attribute": "sort",
+                    "location": "query",
+                },
+                "include": {
+                    "openapi_types": ([ListTeamsInclude],),
+                    "attribute": "include",
+                    "location": "query",
+                    "collection_format": "multi",
+                },
+                "filter_keyword": {
                     "openapi_types": (str,),
-                    "attribute": "team_id",
-                    "location": "path",
+                    "attribute": "filter[keyword]",
+                    "location": "query",
+                },
+                "filter_me": {
+                    "openapi_types": (bool,),
+                    "attribute": "filter[me]",
+                    "location": "query",
                 },
             },
             headers_map={
-                "accept": ["*/*"],
-                "content_type": [],
-            },
-            api_client=api_client,
-        )
-
-        self._remove_team_link_endpoint = _Endpoint(
-            settings={
-                "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/team/{team_id}/links/{link_id}",
-                "operation_id": "remove_team_link",
-                "http_method": "DELETE",
-                "version": "v2",
-                "servers": None,
-            },
-            params_map={
-                "team_id": {
-                    "required": True,
-                    "openapi_types": (str,),
-                    "attribute": "team_id",
-                    "location": "path",
-                },
-                "link_id": {
-                    "required": True,
-                    "openapi_types": (str,),
-                    "attribute": "link_id",
-                    "location": "path",
-                },
-            },
-            headers_map={
-                "accept": ["*/*"],
-                "content_type": [],
-            },
-            api_client=api_client,
-        )
-
-        self._remove_team_membership_endpoint = _Endpoint(
-            settings={
-                "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/team/{team_id}/memberships/{user_id}",
-                "operation_id": "remove_team_membership",
-                "http_method": "DELETE",
-                "version": "v2",
-                "servers": None,
-            },
-            params_map={
-                "team_id": {
-                    "required": True,
-                    "openapi_types": (str,),
-                    "attribute": "team_id",
-                    "location": "path",
-                },
-                "user_id": {
-                    "required": True,
-                    "openapi_types": (str,),
-                    "attribute": "user_id",
-                    "location": "path",
-                },
-            },
-            headers_map={
-                "accept": ["*/*"],
+                "accept": ["application/json"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -588,55 +588,66 @@ class TeamsApi:
 
         return self._create_team_membership_endpoint.call_with_http_info(**kwargs)
 
-    def get_all_teams(
+    def delete_team(
         self,
-        *,
-        page_number: Union[int, UnsetType] = unset,
-        page_size: Union[int, UnsetType] = unset,
-        sort: Union[GetAllTeamsSort, UnsetType] = unset,
-        include: Union[List[GetAllTeamsInclude], UnsetType] = unset,
-        filter_keyword: Union[str, UnsetType] = unset,
-        filter_me: Union[bool, UnsetType] = unset,
-    ) -> TeamsResponse:
-        """Get all teams.
+        team_id: str,
+    ) -> None:
+        """Remove a team.
 
-        Get all teams.
-        Can be used to search for teams using the ``filter[keyword]`` and ``filter[me]`` query parameters.
+        Remove a team using the team's ``id``.
 
-        :param page_number: Specific page number to return.
-        :type page_number: int, optional
-        :param page_size: Size for a given page. The maximum allowed value is 5000.
-        :type page_size: int, optional
-        :param sort: Specifies the order of the returned teams
-        :type sort: GetAllTeamsSort, optional
-        :param include: Included related resources optionally requested. Allowed enum values: ``team_links, user_team_permissions``
-        :type include: [GetAllTeamsInclude], optional
-        :param filter_keyword: Search query. Can be team name, team handle, or email of team member
-        :type filter_keyword: str, optional
-        :param filter_me: When true, only returns teams the current user belongs to
-        :type filter_me: bool, optional
-        :rtype: TeamsResponse
+        :param team_id: None
+        :type team_id: str
+        :rtype: None
         """
         kwargs: Dict[str, Any] = {}
-        if page_number is not unset:
-            kwargs["page_number"] = page_number
+        kwargs["team_id"] = team_id
 
-        if page_size is not unset:
-            kwargs["page_size"] = page_size
+        return self._delete_team_endpoint.call_with_http_info(**kwargs)
 
-        if sort is not unset:
-            kwargs["sort"] = sort
+    def delete_team_link(
+        self,
+        team_id: str,
+        link_id: str,
+    ) -> None:
+        """Remove a team link.
 
-        if include is not unset:
-            kwargs["include"] = include
+        Remove a link from a team.
 
-        if filter_keyword is not unset:
-            kwargs["filter_keyword"] = filter_keyword
+        :param team_id: None
+        :type team_id: str
+        :param link_id: None
+        :type link_id: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["team_id"] = team_id
 
-        if filter_me is not unset:
-            kwargs["filter_me"] = filter_me
+        kwargs["link_id"] = link_id
 
-        return self._get_all_teams_endpoint.call_with_http_info(**kwargs)
+        return self._delete_team_link_endpoint.call_with_http_info(**kwargs)
+
+    def delete_team_membership(
+        self,
+        team_id: str,
+        user_id: str,
+    ) -> None:
+        """Remove a user from a team.
+
+        Remove a user from a team.
+
+        :param team_id: None
+        :type team_id: str
+        :param user_id: None
+        :type user_id: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["team_id"] = team_id
+
+        kwargs["user_id"] = user_id
+
+        return self._delete_team_membership_endpoint.call_with_http_info(**kwargs)
 
     def get_team(
         self,
@@ -753,66 +764,55 @@ class TeamsApi:
 
         return self._get_team_permission_settings_endpoint.call_with_http_info(**kwargs)
 
-    def remove_team(
+    def list_teams(
         self,
-        team_id: str,
-    ) -> None:
-        """Remove a team.
+        *,
+        page_number: Union[int, UnsetType] = unset,
+        page_size: Union[int, UnsetType] = unset,
+        sort: Union[ListTeamsSort, UnsetType] = unset,
+        include: Union[List[ListTeamsInclude], UnsetType] = unset,
+        filter_keyword: Union[str, UnsetType] = unset,
+        filter_me: Union[bool, UnsetType] = unset,
+    ) -> TeamsResponse:
+        """Get all teams.
 
-        Remove a team using the team's ``id``.
+        Get all teams.
+        Can be used to search for teams using the ``filter[keyword]`` and ``filter[me]`` query parameters.
 
-        :param team_id: None
-        :type team_id: str
-        :rtype: None
+        :param page_number: Specific page number to return.
+        :type page_number: int, optional
+        :param page_size: Size for a given page. The maximum allowed value is 5000.
+        :type page_size: int, optional
+        :param sort: Specifies the order of the returned teams
+        :type sort: ListTeamsSort, optional
+        :param include: Included related resources optionally requested. Allowed enum values: ``team_links, user_team_permissions``
+        :type include: [ListTeamsInclude], optional
+        :param filter_keyword: Search query. Can be team name, team handle, or email of team member
+        :type filter_keyword: str, optional
+        :param filter_me: When true, only returns teams the current user belongs to
+        :type filter_me: bool, optional
+        :rtype: TeamsResponse
         """
         kwargs: Dict[str, Any] = {}
-        kwargs["team_id"] = team_id
+        if page_number is not unset:
+            kwargs["page_number"] = page_number
 
-        return self._remove_team_endpoint.call_with_http_info(**kwargs)
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
 
-    def remove_team_link(
-        self,
-        team_id: str,
-        link_id: str,
-    ) -> None:
-        """Remove a team link.
+        if sort is not unset:
+            kwargs["sort"] = sort
 
-        Remove a link from a team.
+        if include is not unset:
+            kwargs["include"] = include
 
-        :param team_id: None
-        :type team_id: str
-        :param link_id: None
-        :type link_id: str
-        :rtype: None
-        """
-        kwargs: Dict[str, Any] = {}
-        kwargs["team_id"] = team_id
+        if filter_keyword is not unset:
+            kwargs["filter_keyword"] = filter_keyword
 
-        kwargs["link_id"] = link_id
+        if filter_me is not unset:
+            kwargs["filter_me"] = filter_me
 
-        return self._remove_team_link_endpoint.call_with_http_info(**kwargs)
-
-    def remove_team_membership(
-        self,
-        team_id: str,
-        user_id: str,
-    ) -> None:
-        """Remove a user from a team.
-
-        Remove a user from a team.
-
-        :param team_id: None
-        :type team_id: str
-        :param user_id: None
-        :type user_id: str
-        :rtype: None
-        """
-        kwargs: Dict[str, Any] = {}
-        kwargs["team_id"] = team_id
-
-        kwargs["user_id"] = user_id
-
-        return self._remove_team_membership_endpoint.call_with_http_info(**kwargs)
+        return self._list_teams_endpoint.call_with_http_info(**kwargs)
 
     def update_team(
         self,
