@@ -77,6 +77,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
             "profiled_host_usage": (float,),
             "snmp_percentage": (float,),
             "snmp_usage": (float,),
+            "universal_service_monitoring_percentage": (float,),
+            "universal_service_monitoring_usage": (float,),
         }
 
     attribute_map = {
@@ -140,6 +142,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         "profiled_host_usage": "profiled_host_usage",
         "snmp_percentage": "snmp_percentage",
         "snmp_usage": "snmp_usage",
+        "universal_service_monitoring_percentage": "universal_service_monitoring_percentage",
+        "universal_service_monitoring_usage": "universal_service_monitoring_usage",
     }
 
     def __init__(
@@ -204,6 +208,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         profiled_host_usage: Union[float, UnsetType] = unset,
         snmp_percentage: Union[float, UnsetType] = unset,
         snmp_usage: Union[float, UnsetType] = unset,
+        universal_service_monitoring_percentage: Union[float, UnsetType] = unset,
+        universal_service_monitoring_usage: Union[float, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -388,6 +394,12 @@ class MonthlyUsageAttributionValues(ModelNormal):
 
         :param snmp_usage: The network device usage by tag(s).
         :type snmp_usage: float, optional
+
+        :param universal_service_monitoring_percentage: The percentage of universal service monitoring usage by tag(s).
+        :type universal_service_monitoring_percentage: float, optional
+
+        :param universal_service_monitoring_usage: The universal service monitoring usage by tag(s).
+        :type universal_service_monitoring_usage: float, optional
         """
         if api_percentage is not unset:
             kwargs["api_percentage"] = api_percentage
@@ -509,4 +521,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
             kwargs["snmp_percentage"] = snmp_percentage
         if snmp_usage is not unset:
             kwargs["snmp_usage"] = snmp_usage
+        if universal_service_monitoring_percentage is not unset:
+            kwargs["universal_service_monitoring_percentage"] = universal_service_monitoring_percentage
+        if universal_service_monitoring_usage is not unset:
+            kwargs["universal_service_monitoring_usage"] = universal_service_monitoring_usage
         super().__init__(kwargs)
