@@ -12,7 +12,7 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class GetAllTeamsSort(ModelSimple):
+class ListTeamsSort(ModelSimple):
     """
     Specifies the order of the returned teams
 
@@ -26,10 +26,10 @@ class GetAllTeamsSort(ModelSimple):
         "user_count",
         "-user_count",
     }
-    NAME: ClassVar["GetAllTeamsSort"]
-    _NAME: ClassVar["GetAllTeamsSort"]
-    USER_COUNT: ClassVar["GetAllTeamsSort"]
-    _USER_COUNT: ClassVar["GetAllTeamsSort"]
+    NAME: ClassVar["ListTeamsSort"]
+    _NAME: ClassVar["ListTeamsSort"]
+    USER_COUNT: ClassVar["ListTeamsSort"]
+    _USER_COUNT: ClassVar["ListTeamsSort"]
 
     @cached_property
     def openapi_types(_):
@@ -38,7 +38,7 @@ class GetAllTeamsSort(ModelSimple):
         }
 
 
-GetAllTeamsSort.NAME = GetAllTeamsSort("name")
-GetAllTeamsSort._NAME = GetAllTeamsSort("-name")
-GetAllTeamsSort.USER_COUNT = GetAllTeamsSort("user_count")
-GetAllTeamsSort._USER_COUNT = GetAllTeamsSort("-user_count")
+ListTeamsSort.NAME = ListTeamsSort("name")
+ListTeamsSort._NAME = ListTeamsSort("-name")
+ListTeamsSort.USER_COUNT = ListTeamsSort("user_count")
+ListTeamsSort._USER_COUNT = ListTeamsSort("-user_count")

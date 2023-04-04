@@ -92,7 +92,7 @@ Feature: Teams
 
   @team:DataDog/core-app
   Scenario: Get all teams returns "OK" response
-    Given new "GetAllTeams" request
+    Given new "ListTeams" request
     And there is a valid "dd_team" in the system
     When the request is sent
     Then the response status is 200 OK
@@ -144,7 +144,7 @@ Feature: Teams
 
   @team:DataDog/core-app
   Scenario: Remove a team link returns "API error response." response
-    Given new "RemoveTeamLink" request
+    Given new "DeleteTeamLink" request
     And there is a valid "dd_team" in the system
     And request contains "team_id" parameter from "dd_team.data.id"
     And request contains "link_id" parameter with value "REPLACE.ME"
@@ -153,7 +153,7 @@ Feature: Teams
 
   @team:DataDog/core-app
   Scenario: Remove a team link returns "No Content" response
-    Given new "RemoveTeamLink" request
+    Given new "DeleteTeamLink" request
     And there is a valid "dd_team" in the system
     And there is a valid "team_link" in the system
     And request contains "team_id" parameter from "dd_team.data.id"
@@ -163,14 +163,14 @@ Feature: Teams
 
   @team:DataDog/core-app
   Scenario: Remove a team returns "API error response." response
-    Given new "RemoveTeam" request
+    Given new "DeleteTeam" request
     And request contains "team_id" parameter with value "REPLACE.ME"
     When the request is sent
     Then the response status is 404 API error response.
 
   @team:DataDog/core-app
   Scenario: Remove a team returns "No Content" response
-    Given new "RemoveTeam" request
+    Given new "DeleteTeam" request
     And there is a valid "dd_team" in the system
     And request contains "team_id" parameter from "dd_team.data.id"
     When the request is sent
@@ -178,7 +178,7 @@ Feature: Teams
 
   @team:DataDog/core-app
   Scenario: Remove a user from a team returns "API error response." response
-    Given new "RemoveTeamMembership" request
+    Given new "DeleteTeamMembership" request
     And there is a valid "dd_team" in the system
     And request contains "team_id" parameter from "dd_team.data.id"
     And request contains "user_id" parameter with value "REPLACE.ME"
@@ -187,7 +187,7 @@ Feature: Teams
 
   @skip @team:DataDog/core-app
   Scenario: Remove a user from a team returns "No Content" response
-    Given new "RemoveTeamMembership" request
+    Given new "DeleteTeamMembership" request
     And there is a valid "dd_team" in the system
     And request contains "team_id" parameter from "dd_team.data.id"
     And request contains "user_id" parameter from "REPLACE.ME"

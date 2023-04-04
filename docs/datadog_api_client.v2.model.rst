@@ -1520,20 +1520,6 @@ full\_application\_key\_attributes
    :members:
    :show-inheritance:
 
-get\_all\_teams\_include
-------------------------
-
-.. automodule:: datadog_api_client.v2.model.get_all_teams_include
-   :members:
-   :show-inheritance:
-
-get\_all\_teams\_sort
----------------------
-
-.. automodule:: datadog_api_client.v2.model.get_all_teams_sort
-   :members:
-   :show-inheritance:
-
 get\_team\_memberships\_sort
 ----------------------------
 
@@ -2504,6 +2490,20 @@ list\_application\_keys\_response
 ---------------------------------
 
 .. automodule:: datadog_api_client.v2.model.list_application_keys_response
+   :members:
+   :show-inheritance:
+
+list\_teams\_include
+--------------------
+
+.. automodule:: datadog_api_client.v2.model.list_teams_include
+   :members:
+   :show-inheritance:
+
+list\_teams\_sort
+-----------------
+
+.. automodule:: datadog_api_client.v2.model.list_teams_sort
    :members:
    :show-inheritance:
 

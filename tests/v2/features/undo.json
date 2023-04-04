@@ -1423,7 +1423,7 @@
       "type": "safe"
     }
   },
-  "GetAllTeams": {
+  "ListTeams": {
     "tag": "Teams",
     "undo": {
       "type": "safe"
@@ -1432,7 +1432,7 @@
   "CreateTeam": {
     "tag": "Teams",
     "undo": {
-      "operationId": "RemoveTeam",
+      "operationId": "DeleteTeam",
       "parameters": [
         {
           "name": "team_id",
@@ -1442,7 +1442,7 @@
       "type": "unsafe"
     }
   },
-  "RemoveTeam": {
+  "DeleteTeam": {
     "tag": "Teams",
     "undo": {
       "type": "idempotent"
@@ -1469,7 +1469,7 @@
   "CreateTeamLink": {
     "tag": "Teams",
     "undo": {
-      "operationId": "RemoveTeamLink",
+      "operationId": "DeleteTeamLink",
       "parameters": [
         {
           "name": "team_id",
@@ -1483,7 +1483,7 @@
       "type": "unsafe"
     }
   },
-  "RemoveTeamLink": {
+  "DeleteTeamLink": {
     "tag": "Teams",
     "undo": {
       "type": "idempotent"
@@ -1510,7 +1510,7 @@
   "CreateTeamMembership": {
     "tag": "Teams",
     "undo": {
-      "operationId": "RemoveTeamMembership",
+      "operationId": "DeleteTeamMembership",
       "parameters": [
         {
           "name": "team_id",
@@ -1524,7 +1524,7 @@
       "type": "unsafe"
     }
   },
-  "RemoveTeamMembership": {
+  "DeleteTeamMembership": {
     "tag": "Teams",
     "undo": {
       "type": "idempotent"
