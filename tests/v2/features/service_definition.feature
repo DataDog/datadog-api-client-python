@@ -104,4 +104,12 @@ Feature: Service Definition
     Given new "ListServiceDefinitions" request
     When the request is sent
     Then the response status is 200 OK
-    And the response "data[0].attributes.meta.ingested-schema-version" is equal to "v2"
+    And the response "data[0].attributes.meta.ingestion-source" is equal to "api"
+
+  @replay-only @team:DataDog/service-catalog @with-pagination
+  Scenario: Get all service definitions returns "OK" response with pagination
+    Given new "ListServiceDefinitions" request
+    And request contains "page[size]" parameter with value 2
+    When the request with pagination is sent
+    Then the response status is 200 OK
+    And the response has 3 items

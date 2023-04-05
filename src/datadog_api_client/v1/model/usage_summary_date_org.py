@@ -95,7 +95,6 @@ class UsageSummaryDateOrg(ModelNormal):
             "synthetics_parallel_testing_max_slots_hwm": (int,),
             "trace_search_indexed_events_count_sum": (int,),
             "twol_ingested_events_bytes_sum": (int,),
-            "universal_service_monitoring_host_top99p": (int,),
             "vsphere_host_top99p": (int,),
         }
 
@@ -178,7 +177,6 @@ class UsageSummaryDateOrg(ModelNormal):
         "synthetics_parallel_testing_max_slots_hwm": "synthetics_parallel_testing_max_slots_hwm",
         "trace_search_indexed_events_count_sum": "trace_search_indexed_events_count_sum",
         "twol_ingested_events_bytes_sum": "twol_ingested_events_bytes_sum",
-        "universal_service_monitoring_host_top99p": "universal_service_monitoring_host_top99p",
         "vsphere_host_top99p": "vsphere_host_top99p",
     }
 
@@ -262,7 +260,6 @@ class UsageSummaryDateOrg(ModelNormal):
         synthetics_parallel_testing_max_slots_hwm: Union[int, UnsetType] = unset,
         trace_search_indexed_events_count_sum: Union[int, UnsetType] = unset,
         twol_ingested_events_bytes_sum: Union[int, UnsetType] = unset,
-        universal_service_monitoring_host_top99p: Union[int, UnsetType] = unset,
         vsphere_host_top99p: Union[int, UnsetType] = unset,
         **kwargs,
     ):
@@ -503,9 +500,6 @@ class UsageSummaryDateOrg(ModelNormal):
         :param twol_ingested_events_bytes_sum: Shows the sum of all ingested APM span bytes over all hours in the current date for the given org.
         :type twol_ingested_events_bytes_sum: int, optional
 
-        :param universal_service_monitoring_host_top99p: Shows the 99th percentile of all Universal Service Monitoring hosts over all hours in the current date for the given org.
-        :type universal_service_monitoring_host_top99p: int, optional
-
         :param vsphere_host_top99p: Shows the 99th percentile of all vSphere hosts over all hours in the current date for the given org.
         :type vsphere_host_top99p: int, optional
         """
@@ -665,8 +659,6 @@ class UsageSummaryDateOrg(ModelNormal):
             kwargs["trace_search_indexed_events_count_sum"] = trace_search_indexed_events_count_sum
         if twol_ingested_events_bytes_sum is not unset:
             kwargs["twol_ingested_events_bytes_sum"] = twol_ingested_events_bytes_sum
-        if universal_service_monitoring_host_top99p is not unset:
-            kwargs["universal_service_monitoring_host_top99p"] = universal_service_monitoring_host_top99p
         if vsphere_host_top99p is not unset:
             kwargs["vsphere_host_top99p"] = vsphere_host_top99p
         super().__init__(kwargs)

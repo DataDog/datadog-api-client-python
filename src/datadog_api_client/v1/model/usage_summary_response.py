@@ -110,7 +110,6 @@ class UsageSummaryResponse(ModelNormal):
             "synthetics_parallel_testing_max_slots_hwm_sum": (int,),
             "trace_search_indexed_events_count_agg_sum": (int,),
             "twol_ingested_events_bytes_agg_sum": (int,),
-            "universal_service_monitoring_host_top99p_sum": (int,),
             "usage": ([UsageSummaryDate],),
             "vsphere_host_top99p_sum": (int,),
         }
@@ -200,7 +199,6 @@ class UsageSummaryResponse(ModelNormal):
         "synthetics_parallel_testing_max_slots_hwm_sum": "synthetics_parallel_testing_max_slots_hwm_sum",
         "trace_search_indexed_events_count_agg_sum": "trace_search_indexed_events_count_agg_sum",
         "twol_ingested_events_bytes_agg_sum": "twol_ingested_events_bytes_agg_sum",
-        "universal_service_monitoring_host_top99p_sum": "universal_service_monitoring_host_top99p_sum",
         "usage": "usage",
         "vsphere_host_top99p_sum": "vsphere_host_top99p_sum",
     }
@@ -291,7 +289,6 @@ class UsageSummaryResponse(ModelNormal):
         synthetics_parallel_testing_max_slots_hwm_sum: Union[int, UnsetType] = unset,
         trace_search_indexed_events_count_agg_sum: Union[int, UnsetType] = unset,
         twol_ingested_events_bytes_agg_sum: Union[int, UnsetType] = unset,
-        universal_service_monitoring_host_top99p_sum: Union[int, UnsetType] = unset,
         usage: Union[List[UsageSummaryDate], UnsetType] = unset,
         vsphere_host_top99p_sum: Union[int, UnsetType] = unset,
         **kwargs,
@@ -551,9 +548,6 @@ class UsageSummaryResponse(ModelNormal):
         :param twol_ingested_events_bytes_agg_sum: Shows the sum of all ingested APM span bytes over all hours in the current months for all organizations.
         :type twol_ingested_events_bytes_agg_sum: int, optional
 
-        :param universal_service_monitoring_host_top99p_sum: Shows the 99th percentile of all Universal Service Monitoring hosts over all hours in the current months for all organizations.
-        :type universal_service_monitoring_host_top99p_sum: int, optional
-
         :param usage: An array of objects regarding hourly usage.
         :type usage: [UsageSummaryDate], optional
 
@@ -730,8 +724,6 @@ class UsageSummaryResponse(ModelNormal):
             kwargs["trace_search_indexed_events_count_agg_sum"] = trace_search_indexed_events_count_agg_sum
         if twol_ingested_events_bytes_agg_sum is not unset:
             kwargs["twol_ingested_events_bytes_agg_sum"] = twol_ingested_events_bytes_agg_sum
-        if universal_service_monitoring_host_top99p_sum is not unset:
-            kwargs["universal_service_monitoring_host_top99p_sum"] = universal_service_monitoring_host_top99p_sum
         if usage is not unset:
             kwargs["usage"] = usage
         if vsphere_host_top99p_sum is not unset:

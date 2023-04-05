@@ -1,0 +1,49 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/services/definitions?page%5Bsize%5D=2
+  response:
+    body:
+      string: '{"data":[{"type":"service-definition","id":"000c4db9ae43787066748b39ad1c3059","attributes":{"meta":{"last-modified-time":"2023-04-03T20:23:00Z","github-html-url":"","ingestion-source":"api","origin":"unknown","origin-detail":"","warnings":[],"ingested-schema-version":"v2.1"},"schema":{"schema-version":"v2.1","dd-service":"service-examplecreateorupdateservicedefinitionusingschemav21returnscreatedresponse1680553380","team":"my-team","contacts":[{"name":"Team
+        Email","type":"email","contact":"contact@datadoghq.com"}],"links":[{"name":"Architecture","type":"doc","provider":"Gigoogle
+        drivetHub","url":"https://my-runbook"},{"name":"Runbook","type":"runbook","url":"https://my-runbook"},{"name":"Source
+        Code","type":"repo","provider":"GitHub","url":"https://github.com/DataDog/schema"}],"tags":["my:tag","service:tag"],"integrations":{"pagerduty":{"service-url":"https://my-org.pagerduty.com/service-directory/PMyService"},"opsgenie":{"service-url":"https://my-org.opsgenie.com/service/123e4567-e89b-12d3-a456-426614174000","region":"US"}},"extensions":{"myorgextension":"extensionvalue"}}}},{"type":"service-definition","id":"000c83c634df871f80ecbb47fa6b8bcc","attributes":{"meta":{"last-modified-time":"2022-11-17T02:44:15Z","github-html-url":"","ingestion-source":"api","origin":"","origin-detail":"","warnings":[],"ingested-schema-version":"v2"},"schema":{"schema-version":"v2","dd-service":"service-test-ruby-create_or_update_service_definition_returns_created_response-1668653055","dd-team":"my-team","team":"my-team","contacts":[{"name":"Team
+        Email","type":"email","contact":"contact@datadoghq.com"}],"links":[{"name":"Runbook","type":"runbook","url":"https://my-runbook"}],"repos":[{"name":"Source
+        Code","provider":"GitHub","url":"https://github.com/DataDog/schema"}],"docs":[{"name":"Architecture","provider":"google
+        drive","url":"https://gdrive/mydoc"}],"tags":["my:tag","service:tag"],"integrations":{"pagerduty":"https://my-org.pagerduty.com/service-directory/PMyService","opsgenie":{"service-url":"https://my-org.opsgenie.com/service/123e4567-e89b-12d3-a456-426614174000","region":"US"}},"extensions":{"myorgextension":"extensionvalue"}}}}]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/services/definitions?page%5Bsize%5D=2&page%5Bnumber%5D=2
+  response:
+    body:
+      string: '{"data":[{"type":"service-definition","id":"0059bcab67b74e99cc832ca503019574","attributes":{"meta":{"last-modified-time":"2023-03-02T12:21:20Z","github-html-url":"","ingestion-source":"api","origin":"dd_terraform","origin-detail":"","warnings":[{"keyword-location":"/properties/contacts/items/$ref/allOf/1/then/properties/contact/pattern","instance-location":"/contacts/0/contact","message":"does
+        not match pattern ''https://[a-zA-Z0-9_\\\\-]+.slack\\\\.com/archives/[a-zA-Z0-9_\\\\-]+''"},{"keyword-location":"/properties/contacts/items/$ref/allOf/0/then/properties/contact/format","instance-location":"/contacts/1/contact","message":"''BBB''
+        is not valid ''email''"},{"keyword-location":"/properties/contacts/items/$ref/allOf/0/then/properties/contact/format","instance-location":"/contacts/2/contact","message":"''AAA''
+        is not valid ''email''"},{"keyword-location":"/properties/contacts/items/$ref/allOf/0/then/properties/contact/format","instance-location":"/contacts/3/contact","message":"''AAA''
+        is not valid ''email''"},{"keyword-location":"/properties/contacts/items/$ref/allOf/0/then/properties/contact/format","instance-location":"/contacts/4/contact","message":"''BBB''
+        is not valid ''email''"}],"ingested-schema-version":"v2"},"schema":{"schema-version":"v2","dd-service":"tf-testaccdatadogservicedefinition_order-local-1677759678","team":"","contacts":[{"name":"AA","type":"email","contact":"AAA"},{"name":"AA","type":"slack","contact":"AAA"},{"name":"BB","type":"email","contact":"AAA"},{"name":"AA","type":"email","contact":"BBB"},{"name":"BB","type":"email","contact":"BBB"}],"links":[],"repos":[],"docs":[],"tags":["aaa","bbb"],"integrations":{},"extensions":{}}}}]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1
