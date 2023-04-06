@@ -62,10 +62,6 @@ def lookup(value, path):
     return result
 
 
-def json_dumps(*args, **kwargs):
-    return json.dumps(*args, **kwargs)
-
-
 class FloatEncoder(json.JSONEncoder):
     """Ensure that floats have decimal point and no trailing zeros."""
 
@@ -156,12 +152,6 @@ def code_examples():
     return {}
 
 
-@pytest.fixture(scope="session")
-def notifications():
-    with (ROOT_PATH / "notifications.json").open() as f:
-        return json.load(f)
-
-
 @pytest.fixture
 def api_version(request):
     path = pathlib.Path(request.node.__scenario_report__.scenario.feature.filename)
@@ -174,8 +164,7 @@ def unique(request):
     if main.endswith("s"):
         # Let's strip the plural present in most names
         main = main[:-1]
-    prefix = "Example-"
-    return f"{prefix}{main}"
+    return f"Example-{main}"
 
 
 TIME_FORMATTER = {
@@ -276,8 +265,6 @@ def context(request, unique, freezed_time):
         "_replace_values": replace_values,
         "_imports": imports,
         "_given": given,
-        "_given_parameters": set(),
-        "_given_requests": {},
         "_key_to_json_path": defaultdict(dict),
         "_enable_operations": set()
     }
