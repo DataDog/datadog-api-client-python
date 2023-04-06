@@ -5783,20 +5783,6 @@ service\_definition\_v2\_dot1\_link\_type
    :members:
    :show-inheritance:
 
-service\_definition\_v2\_dot1\_ms\_teams
-----------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.service_definition_v2_dot1_ms_teams
-   :members:
-   :show-inheritance:
-
-service\_definition\_v2\_dot1\_ms\_teams\_type
-----------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.service_definition_v2_dot1_ms_teams_type
-   :members:
-   :show-inheritance:
-
 service\_definition\_v2\_dot1\_opsgenie
 ---------------------------------------
 
@@ -5864,20 +5850,6 @@ service\_definition\_v2\_link\_type
 -----------------------------------
 
 .. automodule:: datadog_api_client.v2.model.service_definition_v2_link_type
-   :members:
-   :show-inheritance:
-
-service\_definition\_v2\_ms\_teams
-----------------------------------
-
-.. automodule:: datadog_api_client.v2.model.service_definition_v2_ms_teams
-   :members:
-   :show-inheritance:
-
-service\_definition\_v2\_ms\_teams\_type
-----------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.service_definition_v2_ms_teams_type
    :members:
    :show-inheritance:
 

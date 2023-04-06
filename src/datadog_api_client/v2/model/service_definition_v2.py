@@ -25,7 +25,6 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.service_definition_v2_version import ServiceDefinitionV2Version
     from datadog_api_client.v2.model.service_definition_v2_email import ServiceDefinitionV2Email
     from datadog_api_client.v2.model.service_definition_v2_slack import ServiceDefinitionV2Slack
-    from datadog_api_client.v2.model.service_definition_v2_ms_teams import ServiceDefinitionV2MSTeams
 
 
 class ServiceDefinitionV2(ModelNormal):
@@ -85,15 +84,7 @@ class ServiceDefinitionV2(ModelNormal):
         dd_service: str,
         schema_version: ServiceDefinitionV2Version,
         contacts: Union[
-            List[
-                Union[
-                    ServiceDefinitionV2Contact,
-                    ServiceDefinitionV2Email,
-                    ServiceDefinitionV2Slack,
-                    ServiceDefinitionV2MSTeams,
-                ]
-            ],
-            UnsetType,
+            List[Union[ServiceDefinitionV2Contact, ServiceDefinitionV2Email, ServiceDefinitionV2Slack]], UnsetType
         ] = unset,
         dd_team: Union[str, UnsetType] = unset,
         docs: Union[List[ServiceDefinitionV2Doc], UnsetType] = unset,

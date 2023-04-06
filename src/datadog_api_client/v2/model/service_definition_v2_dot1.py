@@ -23,7 +23,6 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.service_definition_v2_dot1_version import ServiceDefinitionV2Dot1Version
     from datadog_api_client.v2.model.service_definition_v2_dot1_email import ServiceDefinitionV2Dot1Email
     from datadog_api_client.v2.model.service_definition_v2_dot1_slack import ServiceDefinitionV2Dot1Slack
-    from datadog_api_client.v2.model.service_definition_v2_dot1_ms_teams import ServiceDefinitionV2Dot1MSTeams
 
 
 class ServiceDefinitionV2Dot1(ModelNormal):
@@ -86,14 +85,7 @@ class ServiceDefinitionV2Dot1(ModelNormal):
         schema_version: ServiceDefinitionV2Dot1Version,
         application: Union[str, UnsetType] = unset,
         contacts: Union[
-            List[
-                Union[
-                    ServiceDefinitionV2Dot1Contact,
-                    ServiceDefinitionV2Dot1Email,
-                    ServiceDefinitionV2Dot1Slack,
-                    ServiceDefinitionV2Dot1MSTeams,
-                ]
-            ],
+            List[Union[ServiceDefinitionV2Dot1Contact, ServiceDefinitionV2Dot1Email, ServiceDefinitionV2Dot1Slack]],
             UnsetType,
         ] = unset,
         description: Union[str, UnsetType] = unset,

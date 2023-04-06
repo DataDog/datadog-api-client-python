@@ -37,12 +37,10 @@ class ServiceDefinitionV2Dot1Contact(ModelComposed):
         # loading
         from datadog_api_client.v2.model.service_definition_v2_dot1_email import ServiceDefinitionV2Dot1Email
         from datadog_api_client.v2.model.service_definition_v2_dot1_slack import ServiceDefinitionV2Dot1Slack
-        from datadog_api_client.v2.model.service_definition_v2_dot1_ms_teams import ServiceDefinitionV2Dot1MSTeams
 
         return {
             "oneOf": [
                 ServiceDefinitionV2Dot1Email,
                 ServiceDefinitionV2Dot1Slack,
-                ServiceDefinitionV2Dot1MSTeams,
             ],
         }
