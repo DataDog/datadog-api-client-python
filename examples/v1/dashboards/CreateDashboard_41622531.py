@@ -27,7 +27,7 @@ from datadog_api_client.v1.model.widget_request_style import WidgetRequestStyle
 from datadog_api_client.v1.model.widget_time import WidgetTime
 
 body = Dashboard(
-    title="Example-Create_a_new_dashboard_with_timeseries_widget_and_formula_style_attributes with formula style",
+    title="Example-Dashboard with formula style",
     widgets=[
         Widget(
             definition=TimeseriesWidgetDefinition(

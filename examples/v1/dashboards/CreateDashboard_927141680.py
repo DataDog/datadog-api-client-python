@@ -16,7 +16,7 @@ from datadog_api_client.v1.model.widget import Widget
 
 body = Dashboard(
     layout_type=DashboardLayoutType.ORDERED,
-    title="Example-Create_a_new_dashboard_with_funnel_widget with funnel widget",
+    title="Example-Dashboard with funnel widget",
     widgets=[
         Widget(
             definition=FunnelWidgetDefinition(

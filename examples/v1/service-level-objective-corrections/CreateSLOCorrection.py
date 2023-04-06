@@ -20,7 +20,7 @@ body = SLOCorrectionCreateRequest(
     data=SLOCorrectionCreateData(
         attributes=SLOCorrectionCreateRequestAttributes(
             category=SLOCorrectionCategory.SCHEDULED_MAINTENANCE,
-            description="Example-Create_an_SLO_correction_returns_OK_response",
+            description="Example-Service-Level-Objective-Correction",
             end=int((datetime.now() + relativedelta(hours=1)).timestamp()),
             slo_id=SLO_DATA_0_ID,
             start=int(datetime.now().timestamp()),

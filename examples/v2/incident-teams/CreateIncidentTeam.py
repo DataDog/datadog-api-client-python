@@ -13,7 +13,7 @@ body = IncidentTeamCreateRequest(
     data=IncidentTeamCreateData(
         type=IncidentTeamType.TEAMS,
         attributes=IncidentTeamCreateAttributes(
-            name="Example-Create_a_new_incident_team_returns_CREATED_response",
+            name="Example-Incident-Team",
         ),
     ),
 )

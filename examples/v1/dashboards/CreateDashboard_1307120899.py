@@ -33,7 +33,7 @@ from datadog_api_client.v1.model.widget_request_style import WidgetRequestStyle
 from datadog_api_client.v1.model.widget_time import WidgetTime
 
 body = Dashboard(
-    title="Example-Create_a_new_timeseries_widget_with_ci_tests_data_source with ci_tests datasource",
+    title="Example-Dashboard with ci_tests datasource",
     widgets=[
         Widget(
             definition=TimeseriesWidgetDefinition(

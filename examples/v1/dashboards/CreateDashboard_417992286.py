@@ -12,7 +12,7 @@ from datadog_api_client.v1.model.widget import Widget
 from datadog_api_client.v1.model.widget_layout import WidgetLayout
 
 body = Dashboard(
-    title="Example-Create_a_new_dashboard_with_note_widget",
+    title="Example-Dashboard",
     description="",
     widgets=[
         Widget(

@@ -13,7 +13,7 @@ from datadog_api_client.v2.model.logs_metric_type import LogsMetricType
 
 body = LogsMetricCreateRequest(
     data=LogsMetricCreateData(
-        id="ExampleCreatealogbasedmetricreturnsOKresponse",
+        id="ExampleLogsMetric",
         type=LogsMetricType.LOGS_METRICS,
         attributes=LogsMetricCreateAttributes(
             compute=LogsMetricCompute(

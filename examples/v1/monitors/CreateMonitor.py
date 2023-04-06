@@ -12,12 +12,12 @@ from datadog_api_client.v1.model.monitor_type import MonitorType
 ROLE_DATA_ID = environ["ROLE_DATA_ID"]
 
 body = Monitor(
-    name="Example-Create_a_monitor_returns_OK_response",
+    name="Example-Monitor",
     type=MonitorType.LOG_ALERT,
     query='logs("service:foo AND type:error").index("main").rollup("count").by("source").last("5m") > 2',
     message="some message Notify: @hipchat-channel",
     tags=[
-        "test:examplecreateamonitorreturnsokresponse",
+        "test:examplemonitor",
         "env:ci",
     ],
     priority=3,

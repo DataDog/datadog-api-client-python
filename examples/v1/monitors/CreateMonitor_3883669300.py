@@ -25,12 +25,12 @@ from datadog_api_client.v1.model.monitor_thresholds import MonitorThresholds
 from datadog_api_client.v1.model.monitor_type import MonitorType
 
 body = Monitor(
-    name="Example-Create_a_RUM_formula_and_functions_monitor_returns_OK_response",
+    name="Example-Monitor",
     type=MonitorType.RUM_ALERT,
     query='formula("query2 / query1 * 100").last("15m") >= 0.8',
     message="some message Notify: @hipchat-channel",
     tags=[
-        "test:examplecreatearumformulaandfunctionsmonitorreturnsokresponse",
+        "test:examplemonitor",
         "env:ci",
     ],
     priority=3,

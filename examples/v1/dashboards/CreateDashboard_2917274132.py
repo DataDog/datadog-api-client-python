@@ -16,7 +16,7 @@ from datadog_api_client.v1.model.widget_monitor_summary_sort import WidgetMonito
 from datadog_api_client.v1.model.widget_summary_type import WidgetSummaryType
 
 body = Dashboard(
-    title="Example-Create_a_new_dashboard_with_manage_status_widget",
+    title="Example-Dashboard",
     description="",
     widgets=[
         Widget(

@@ -22,7 +22,7 @@ body = ConfluentResourceRequest(
                 "myTag2:myValue",
             ],
         ),
-        id="exampleaddresourcetoconfluentaccountreturnsokresponse",
+        id="exampleconfluentcloud",
         type=ConfluentResourceType.CONFLUENT_CLOUD_RESOURCES,
     ),
 )

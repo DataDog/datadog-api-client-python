@@ -14,7 +14,7 @@ from datadog_api_client.v1.model.widget_layout import WidgetLayout
 from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
 
 body = Dashboard(
-    title="Example-Create_a_new_dashboard_with_event_stream_widget",
+    title="Example-Dashboard",
     description="",
     widgets=[
         Widget(

@@ -9,7 +9,7 @@ configuration = Configuration()
 with ApiClient(configuration) as api_client:
     api_instance = MetricsApi(api_client)
     response = api_instance.list_tag_configurations(
-        filter_tags="ExampleGetalistofmetricswithatagfilterreturnsSuccessresponse",
+        filter_tags="ExampleMetric",
     )
 
     print(response)

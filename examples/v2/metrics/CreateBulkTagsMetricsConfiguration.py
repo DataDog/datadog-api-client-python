@@ -26,7 +26,7 @@ body = MetricBulkTagConfigCreateRequest(
             tags=MetricBulkTagConfigTagNameList(
                 [
                     "test",
-                    "exampleconfiguretagsformultiplemetricsreturnsacceptedresponse",
+                    "examplemetric",
                 ]
             ),
         ),

@@ -71,7 +71,7 @@ body = NotebookCreateRequest(
                     type=NotebookCellResourceType.NOTEBOOK_CELLS,
                 ),
             ],
-            name="Example-Create_a_notebook_returns_OK_response",
+            name="Example-Notebook",
             status=NotebookStatus.PUBLISHED,
             time=NotebookRelativeTime(
                 live_span=WidgetLiveSpan.PAST_ONE_HOUR,

@@ -29,7 +29,7 @@ from datadog_api_client.v1.model.widget_style import WidgetStyle
 from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
 
 body = Dashboard(
-    title="Example-Create_a_distribution_widget_using_a_histogram_request_containing_a_formulas_and_functions_APM_Stats",
+    title="Example-Dashboard",
     description="",
     widgets=[
         Widget(

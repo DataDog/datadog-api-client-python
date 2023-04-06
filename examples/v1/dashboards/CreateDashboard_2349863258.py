@@ -21,7 +21,7 @@ from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
 from datadog_api_client.v1.model.widget_time import WidgetTime
 
 body = Dashboard(
-    title="Example-Create_a_new_dashboard_with_query_value_widget",
+    title="Example-Dashboard",
     description="",
     widgets=[
         Widget(

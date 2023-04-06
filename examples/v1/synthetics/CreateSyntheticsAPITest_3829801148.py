@@ -40,14 +40,14 @@ body = SyntheticsAPITest(
         "aws:us-east-2",
     ],
     message="BDD test payload: synthetics_api_test_udp_payload.json",
-    name="Example-Create_an_API_test_with_UDP_subtype_returns_OK_Returns_the_created_test_details_response",
+    name="Example-Synthetic",
     options=SyntheticsTestOptions(
         accept_self_signed=False,
         allow_insecure=True,
         follow_redirects=True,
         min_failure_duration=10,
         min_location_failed=1,
-        monitor_name="Example-Create_an_API_test_with_UDP_subtype_returns_OK_Returns_the_created_test_details_response",
+        monitor_name="Example-Synthetic",
         monitor_priority=5,
         retry=SyntheticsTestOptionsRetry(
             count=3,

@@ -12,11 +12,11 @@ from datadog_api_client.v1.model.downtime import Downtime
 MONITOR_ID = environ["MONITOR_ID"]
 
 body = Downtime(
-    message="Example-Schedule_a_monitor_downtime_returns_OK_response",
+    message="Example-Downtime",
     start=int(datetime.now().timestamp()),
     timezone="Etc/UTC",
     scope=[
-        "test:examplescheduleamonitordowntimereturnsokresponse",
+        "test:exampledowntime",
     ],
     monitor_id=int(MONITOR_ID),
 )

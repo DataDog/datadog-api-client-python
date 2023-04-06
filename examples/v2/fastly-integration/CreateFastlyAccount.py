@@ -12,8 +12,8 @@ from datadog_api_client.v2.model.fastly_account_type import FastlyAccountType
 body = FastlyAccountCreateRequest(
     data=FastlyAccountCreateRequestData(
         attributes=FastlyAccountCreateRequestAttributes(
-            api_key="ExampleAddFastlyaccountreturnsCREATEDresponse",
-            name="Example-Add_Fastly_account_returns_CREATED_response",
+            api_key="ExampleFastlyIntegration",
+            name="Example-Fastly-Integration",
             services=[],
         ),
         type=FastlyAccountType.FASTLY_ACCOUNTS,

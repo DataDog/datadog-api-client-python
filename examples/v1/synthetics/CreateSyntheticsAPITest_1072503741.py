@@ -32,7 +32,7 @@ body = SyntheticsAPITest(
         "aws:us-east-2",
     ],
     message="BDD test payload: synthetics_api_ssl_test_payload.json",
-    name="Example-Create_an_API_SSL_test_returns_OK_Returns_the_created_test_details_response",
+    name="Example-Synthetic",
     options=SyntheticsTestOptions(
         accept_self_signed=True,
         check_certificate_revocation=True,
