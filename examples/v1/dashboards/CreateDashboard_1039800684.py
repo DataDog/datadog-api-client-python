@@ -19,7 +19,7 @@ from datadog_api_client.v1.model.widget import Widget
 
 body = Dashboard(
     layout_type=DashboardLayoutType.ORDERED,
-    title="Example-Create_a_new_dashboard_with_logs_pattern_stream_list_stream_widget with list_stream widget",
+    title="Example-Dashboard with list_stream widget",
     widgets=[
         Widget(
             definition=ListStreamWidgetDefinition(

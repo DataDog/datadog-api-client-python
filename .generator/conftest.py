@@ -151,17 +151,6 @@ def pytest_bdd_apply_tag(tag, function):
     return False
 
 
-def _get_prefix(request):
-    test_class = request.cls
-    if test_class:
-        main = "{}.{}".format(test_class.__name__, request.node.name)
-    else:
-        base_name = request.node.__scenario_report__.scenario.name
-        main = PATTERN_ALPHANUM.sub("_", base_name)[:100]
-    prefix = "Example-"
-    return f"{prefix}{main}"
-
-
 @pytest.fixture(scope="session")
 def code_examples():
     return {}
@@ -181,7 +170,12 @@ def api_version(request):
 
 @pytest.fixture
 def unique(request):
-    return _get_prefix(request)
+    main = PATTERN_ALPHANUM.sub("-", request.node.__scenario_report__.scenario.feature.name)
+    if main.endswith("s"):
+        # Let's strip the plural present in most names
+        main = main[:-1]
+    prefix = "Example-"
+    return f"{prefix}{main}"
 
 
 TIME_FORMATTER = {
@@ -251,7 +245,6 @@ def context(request, unique, freezed_time):
     Return a mapping with all defined fixtures, all objects created by `given` steps,
     and the undo operations to perform after a test scenario.
     """
-    prefix = _get_prefix(request)
 
     class MarkUsed(dict):
         def __init__(self, *args, **kwargs):
@@ -280,25 +273,13 @@ def context(request, unique, freezed_time):
         "unique_upper_alnum": PATTERN_ALPHANUM.sub("", unique).upper(),
         "timestamp": relative_time(imports, replace_values, freezed_time, False),
         "timeISO": relative_time(imports, replace_values, freezed_time, True),
-        "_asserts": [],
         "_replace_values": replace_values,
         "_imports": imports,
         "_given": given,
         "_given_parameters": set(),
         "_given_requests": {},
         "_key_to_json_path": defaultdict(dict),
-        "_enable_operations": set(),
-        "_local_variables": {
-            "unique": prefix + "_{{ timestamp(0, s) }}",
-            "unique_lower": prefix.lower() + "_{{ timestamp(0, s) }}",
-            "unique_upper": prefix.upper() + "_{{ timestamp(0, s) }}",
-            "unique_alnum": re.sub(r"[^A-Za-z0-9]+", "", prefix)
-            + "{{ timestamp(0, s) }}",
-            "unique_lower_alnum": re.sub(r"[^A-Za-z0-9]+", "", prefix).lower()
-            + "{{ timestamp(0, s) }}",
-            "unique_upper_alnum": re.sub(r"[^A-Za-z0-9]+", "", prefix).upper()
-            + "{{ timestamp(0, s) }}",
-        },
+        "_enable_operations": set()
     }
 
     yield ctx

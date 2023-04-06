@@ -38,7 +38,7 @@ body = SyntheticsBrowserTest(
         "aws:us-east-2",
     ],
     message="Test message",
-    name="Example-Create_a_browser_test_returns_OK_Returns_the_created_test_details_response",
+    name="Example-Synthetic",
     options=SyntheticsTestOptions(
         accept_self_signed=False,
         allow_insecure=True,

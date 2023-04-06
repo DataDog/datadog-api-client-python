@@ -20,7 +20,7 @@ body = IPAllowlistUpdateRequest(
                 IPAllowlistEntry(
                     data=IPAllowlistEntryData(
                         attributes=IPAllowlistEntryAttributes(
-                            note="Example-Update_IP_Allowlist_returns_OK_response",
+                            note="Example-IP-Allowlist",
                             cidr_block="127.0.0.1",
                         ),
                         type=IPAllowlistEntryType.IP_ALLOWLIST_ENTRY,

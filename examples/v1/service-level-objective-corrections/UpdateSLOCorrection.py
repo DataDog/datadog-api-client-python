@@ -20,7 +20,7 @@ body = SLOCorrectionUpdateRequest(
     data=SLOCorrectionUpdateData(
         attributes=SLOCorrectionUpdateRequestAttributes(
             category=SLOCorrectionCategory.DEPLOYMENT,
-            description="Example-Update_an_SLO_correction_returns_OK_response",
+            description="Example-Service-Level-Objective-Correction",
             end=int((datetime.now() + relativedelta(hours=1)).timestamp()),
             start=int(datetime.now().timestamp()),
             timezone="UTC",

@@ -12,12 +12,12 @@ from datadog_api_client.v1.model.monitor_type import MonitorType
 from datadog_api_client.v1.model.on_missing_data_option import OnMissingDataOption
 
 body = Monitor(
-    name="Example-Validate_a_monitor_returns_OK_response",
+    name="Example-Monitor",
     type=MonitorType.LOG_ALERT,
     query='logs("service:foo AND type:error").index("main").rollup("count").by("source").last("5m") > 2',
     message="some message Notify: @hipchat-channel",
     tags=[
-        "test:examplevalidateamonitorreturnsokresponse",
+        "test:examplemonitor",
         "env:ci",
     ],
     priority=3,

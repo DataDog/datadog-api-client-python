@@ -9,5 +9,5 @@ configuration = Configuration()
 with ApiClient(configuration) as api_client:
     api_instance = MetricsApi(api_client)
     api_instance.delete_tag_configuration(
-        metric_name="ExampleDeleteatagconfigurationreturnsNoContentresponse",
+        metric_name="ExampleMetric",
     )

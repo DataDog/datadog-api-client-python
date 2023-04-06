@@ -19,7 +19,7 @@ from datadog_api_client.v1.model.widget_viz_type import WidgetVizType
 MONITOR_ID = environ["MONITOR_ID"]
 
 body = Dashboard(
-    title="Example-Create_a_new_dashboard_with_alert_graph_widget",
+    title="Example-Dashboard",
     description="",
     widgets=[
         Widget(

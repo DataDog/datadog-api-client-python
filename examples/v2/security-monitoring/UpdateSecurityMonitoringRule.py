@@ -25,7 +25,7 @@ from datadog_api_client.v2.model.security_monitoring_standard_rule_query import 
 SECURITY_RULE_ID = environ["SECURITY_RULE_ID"]
 
 body = SecurityMonitoringRuleUpdatePayload(
-    name="Example-Update_an_existing_rule_returns_OK_response-Updated",
+    name="Example-Security-Monitoring-Updated",
     queries=[
         SecurityMonitoringStandardRuleQuery(
             query="@test:true",

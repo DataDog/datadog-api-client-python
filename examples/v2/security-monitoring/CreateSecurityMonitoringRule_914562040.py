@@ -31,7 +31,7 @@ SECURITY_RULE_ID = environ["SECURITY_RULE_ID"]
 SECURITY_RULE_BIS_ID = environ["SECURITY_RULE_BIS_ID"]
 
 body = SecurityMonitoringSignalRuleCreatePayload(
-    name="Example-Create_a_detection_rule_with_type_signal_correlation_returns_OK_response_signal_rule",
+    name="Example-Security-Monitoring_signal_rule",
     queries=[
         SecurityMonitoringSignalRuleQuery(
             rule_id=SECURITY_RULE_ID,

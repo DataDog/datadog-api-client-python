@@ -20,8 +20,8 @@ ROLE_DATA_ID = environ["ROLE_DATA_ID"]
 body = AuthNMappingCreateRequest(
     data=AuthNMappingCreateData(
         attributes=AuthNMappingCreateAttributes(
-            attribute_key="examplecreateanauthnmappingreturnsokresponse",
-            attribute_value="Example-Create_an_AuthN_Mapping_returns_OK_response",
+            attribute_key="exampleauthnmapping",
+            attribute_value="Example-AuthN-Mapping",
         ),
         relationships=AuthNMappingCreateRelationships(
             role=RelationshipToRole(

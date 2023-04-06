@@ -31,7 +31,7 @@ body = SpansMetricCreateRequest(
                 ),
             ],
         ),
-        id="ExampleCreateaspanbasedmetricreturnsOKresponse",
+        id="ExampleSpansMetric",
         type=SpansMetricType.SPANS_METRICS,
     ),
 )

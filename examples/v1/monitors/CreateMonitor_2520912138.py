@@ -10,12 +10,12 @@ from datadog_api_client.v1.model.monitor_thresholds import MonitorThresholds
 from datadog_api_client.v1.model.monitor_type import MonitorType
 
 body = Monitor(
-    name="Example-Create_a_ci_tests_monitor_returns_OK_response",
+    name="Example-Monitor",
     type=MonitorType.CI_TESTS_ALERT,
     query='ci-tests("type:test @git.branch:staging* @test.status:fail").rollup("count").by("@test.name").last("5m") >= 1',
     message="some message Notify: @hipchat-channel",
     tags=[
-        "test:examplecreateacitestsmonitorreturnsokresponse",
+        "test:examplemonitor",
         "env:ci",
     ],
     priority=3,

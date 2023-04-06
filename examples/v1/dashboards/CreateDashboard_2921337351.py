@@ -15,7 +15,7 @@ from datadog_api_client.v1.model.widget_size_format import WidgetSizeFormat
 from datadog_api_client.v1.model.widget_time import WidgetTime
 
 body = Dashboard(
-    title="Example-Create_a_new_dashboard_with_trace_service_widget",
+    title="Example-Dashboard",
     description="",
     widgets=[
         Widget(

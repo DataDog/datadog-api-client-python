@@ -19,7 +19,7 @@ from datadog_api_client.v1.model.widget_view_mode import WidgetViewMode
 SLO_DATA_0_ID = environ["SLO_DATA_0_ID"]
 
 body = Dashboard(
-    title="Example-Create_a_new_dashboard_with_slo_widget",
+    title="Example-Dashboard",
     description="",
     widgets=[
         Widget(

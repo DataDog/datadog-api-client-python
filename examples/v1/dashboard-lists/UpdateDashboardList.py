@@ -11,7 +11,7 @@ from datadog_api_client.v1.model.dashboard_list import DashboardList
 DASHBOARD_LIST_ID = environ["DASHBOARD_LIST_ID"]
 
 body = DashboardList(
-    name="updated Example-Update_a_dashboard_list_returns_OK_response",
+    name="updated Example-Dashboard-List",
 )
 
 configuration = Configuration()

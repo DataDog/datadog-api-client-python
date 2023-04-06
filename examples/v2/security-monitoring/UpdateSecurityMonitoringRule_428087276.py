@@ -21,7 +21,7 @@ from datadog_api_client.v2.model.security_monitoring_rule_update_payload import 
 CLOUD_CONFIGURATION_RULE_ID = environ["CLOUD_CONFIGURATION_RULE_ID"]
 
 body = SecurityMonitoringRuleUpdatePayload(
-    name="Example-Update_a_cloud_configuration_rule_s_details_returns_OK_response_cloud_updated",
+    name="Example-Security-Monitoring_cloud_updated",
     is_enabled=False,
     cases=[
         SecurityMonitoringRuleCase(

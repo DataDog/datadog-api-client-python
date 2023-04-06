@@ -7,10 +7,10 @@ from datadog_api_client.v1.api.events_api import EventsApi
 from datadog_api_client.v1.model.event_create_request import EventCreateRequest
 
 body = EventCreateRequest(
-    title="Example-Post_an_event_returns_OK_response",
+    title="Example-Event",
     text="A text message.",
     tags=[
-        "test:ExamplePostaneventreturnsOKresponse",
+        "test:ExampleEvent",
     ],
 )
 

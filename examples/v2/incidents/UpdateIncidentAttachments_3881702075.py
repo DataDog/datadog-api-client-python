@@ -25,7 +25,7 @@ body = IncidentAttachmentUpdateRequest(
                 attachment_type=IncidentAttachmentLinkAttachmentType.LINK,
                 attachment=IncidentAttachmentLinkAttributesAttachmentObject(
                     document_url="https://www.example.com/doc",
-                    title="Example-Create_an_incident_attachment_returns_OK_response",
+                    title="Example-Incident",
                 ),
             ),
         ),

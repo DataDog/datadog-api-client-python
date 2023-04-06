@@ -11,7 +11,7 @@ from datadog_api_client.v1.model.downtime import Downtime
 DOWNTIME_ID = environ["DOWNTIME_ID"]
 
 body = Downtime(
-    message="Example-Update_a_downtime_returns_OK_response-updated",
+    message="Example-Downtime-updated",
     mute_first_recovery_notification=True,
 )
 

@@ -19,7 +19,7 @@ from datadog_api_client.v1.model.widget_sort import WidgetSort
 
 body = Dashboard(
     layout_type=DashboardLayoutType.ORDERED,
-    title="Example-Create_a_new_dashboard_returns_OK_response with Profile Metrics Query",
+    title="Example-Dashboard with Profile Metrics Query",
     widgets=[
         Widget(
             definition=TimeseriesWidgetDefinition(

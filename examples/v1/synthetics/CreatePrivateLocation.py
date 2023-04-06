@@ -13,7 +13,7 @@ from datadog_api_client.v1.model.synthetics_restricted_roles import SyntheticsRe
 ROLE_DATA_ID = environ["ROLE_DATA_ID"]
 
 body = SyntheticsPrivateLocation(
-    description="Test Example-Create_a_private_location_returns_OK_response description",
+    description="Test Example-Synthetic description",
     metadata=SyntheticsPrivateLocationMetadata(
         restricted_roles=SyntheticsRestrictedRoles(
             [
@@ -21,9 +21,9 @@ body = SyntheticsPrivateLocation(
             ]
         ),
     ),
-    name="Example-Create_a_private_location_returns_OK_response",
+    name="Example-Synthetic",
     tags=[
-        "test:examplecreateaprivatelocationreturnsokresponse",
+        "test:examplesynthetic",
     ],
 )
 

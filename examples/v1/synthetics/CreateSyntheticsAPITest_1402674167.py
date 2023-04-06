@@ -38,14 +38,14 @@ body = SyntheticsAPITest(
         "aws:us-east-2",
     ],
     message="BDD test payload: synthetics_api_grpc_test_payload.json",
-    name="Example-Create_an_API_GRPC_test_returns_OK_Returns_the_created_test_details_response",
+    name="Example-Synthetic",
     options=SyntheticsTestOptions(
         min_failure_duration=0,
         min_location_failed=1,
         monitor_options=SyntheticsTestOptionsMonitorOptions(
             renotify_interval=0,
         ),
-        monitor_name="Example-Create_an_API_GRPC_test_returns_OK_Returns_the_created_test_details_response",
+        monitor_name="Example-Synthetic",
         tick_every=60,
     ),
     subtype=SyntheticsTestDetailsSubType.GRPC,

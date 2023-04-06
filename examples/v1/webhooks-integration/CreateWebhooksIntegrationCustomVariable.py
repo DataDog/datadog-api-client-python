@@ -8,7 +8,7 @@ from datadog_api_client.v1.model.webhooks_integration_custom_variable import Web
 
 body = WebhooksIntegrationCustomVariable(
     is_secret=True,
-    name="EXAMPLECREATEACUSTOMVARIABLERETURNSOKRESPONSE",
+    name="EXAMPLEWEBHOOKSINTEGRATION",
     value="CUSTOM_VARIABLE_VALUE",
 )
 

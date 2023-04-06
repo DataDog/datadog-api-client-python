@@ -24,7 +24,7 @@ body = ServiceDefinitionV2(
             type=ServiceDefinitionV2EmailType.EMAIL,
         ),
     ],
-    dd_service="service-examplecreateorupdateservicedefinitionusingschemav2returnscreatedresponse",
+    dd_service="service-exampleservicedefinition",
     dd_team="my-team",
     docs=[
         ServiceDefinitionV2Doc(
