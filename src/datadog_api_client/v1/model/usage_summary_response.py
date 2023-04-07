@@ -66,6 +66,7 @@ class UsageSummaryResponse(ModelNormal):
             "end_date": (datetime,),
             "fargate_tasks_count_avg_sum": (int,),
             "fargate_tasks_count_hwm_sum": (int,),
+            "forwarding_events_bytes_agg_sum": (int,),
             "gcp_host_top99p_sum": (int,),
             "heroku_host_top99p_sum": (int,),
             "incident_management_monthly_active_users_hwm_sum": (int,),
@@ -156,6 +157,7 @@ class UsageSummaryResponse(ModelNormal):
         "end_date": "end_date",
         "fargate_tasks_count_avg_sum": "fargate_tasks_count_avg_sum",
         "fargate_tasks_count_hwm_sum": "fargate_tasks_count_hwm_sum",
+        "forwarding_events_bytes_agg_sum": "forwarding_events_bytes_agg_sum",
         "gcp_host_top99p_sum": "gcp_host_top99p_sum",
         "heroku_host_top99p_sum": "heroku_host_top99p_sum",
         "incident_management_monthly_active_users_hwm_sum": "incident_management_monthly_active_users_hwm_sum",
@@ -247,6 +249,7 @@ class UsageSummaryResponse(ModelNormal):
         end_date: Union[datetime, UnsetType] = unset,
         fargate_tasks_count_avg_sum: Union[int, UnsetType] = unset,
         fargate_tasks_count_hwm_sum: Union[int, UnsetType] = unset,
+        forwarding_events_bytes_agg_sum: Union[int, UnsetType] = unset,
         gcp_host_top99p_sum: Union[int, UnsetType] = unset,
         heroku_host_top99p_sum: Union[int, UnsetType] = unset,
         incident_management_monthly_active_users_hwm_sum: Union[int, UnsetType] = unset,
@@ -418,6 +421,9 @@ class UsageSummaryResponse(ModelNormal):
 
         :param fargate_tasks_count_hwm_sum: Shows the sum of the high-water marks of all Fargate tasks over all hours in the current months for all organizations.
         :type fargate_tasks_count_hwm_sum: int, optional
+
+        :param forwarding_events_bytes_agg_sum: Shows the sum of all logs forwarding bytes over all hours in the current months for all organizations (data available as of April 1, 2023)
+        :type forwarding_events_bytes_agg_sum: int, optional
 
         :param gcp_host_top99p_sum: Shows the 99th percentile of all GCP hosts over all hours in the current months for all organizations.
         :type gcp_host_top99p_sum: int, optional
@@ -640,6 +646,8 @@ class UsageSummaryResponse(ModelNormal):
             kwargs["fargate_tasks_count_avg_sum"] = fargate_tasks_count_avg_sum
         if fargate_tasks_count_hwm_sum is not unset:
             kwargs["fargate_tasks_count_hwm_sum"] = fargate_tasks_count_hwm_sum
+        if forwarding_events_bytes_agg_sum is not unset:
+            kwargs["forwarding_events_bytes_agg_sum"] = forwarding_events_bytes_agg_sum
         if gcp_host_top99p_sum is not unset:
             kwargs["gcp_host_top99p_sum"] = gcp_host_top99p_sum
         if heroku_host_top99p_sum is not unset:
