@@ -21758,9 +21758,6 @@ paths:
       description: Get a list of all service definitions from the Datadog Service
         Catalog.
       operationId: ListServiceDefinitions
-      parameters:
-      - $ref: '#/components/parameters/PageSize'
-      - $ref: '#/components/parameters/PageNumber'
       responses:
         '200':
           content:
@@ -21775,10 +21772,6 @@ paths:
       summary: Get all service definitions
       tags:
       - Service Definition
-      x-pagination:
-        limitParam: page[size]
-        pageOffsetParam: page[number]
-        resultsPath: data
     post:
       description: Create or update service definition in the Datadog Service Catalog.
       operationId: CreateOrUpdateServiceDefinitions

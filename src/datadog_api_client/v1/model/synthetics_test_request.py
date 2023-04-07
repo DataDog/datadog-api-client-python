@@ -59,7 +59,6 @@ class SyntheticsTestRequest(ModelNormal):
             "call_type": (SyntheticsTestCallType,),
             "certificate": (SyntheticsTestRequestCertificate,),
             "certificate_domains": ([str],),
-            "compressed_json_descriptor": (str,),
             "dns_server": (str,),
             "dns_server_port": (int,),
             "follow_redirects": (bool,),
@@ -88,7 +87,6 @@ class SyntheticsTestRequest(ModelNormal):
         "call_type": "callType",
         "certificate": "certificate",
         "certificate_domains": "certificateDomains",
-        "compressed_json_descriptor": "compressedJsonDescriptor",
         "dns_server": "dnsServer",
         "dns_server_port": "dnsServerPort",
         "follow_redirects": "follow_redirects",
@@ -127,7 +125,6 @@ class SyntheticsTestRequest(ModelNormal):
         call_type: Union[SyntheticsTestCallType, UnsetType] = unset,
         certificate: Union[SyntheticsTestRequestCertificate, UnsetType] = unset,
         certificate_domains: Union[List[str], UnsetType] = unset,
-        compressed_json_descriptor: Union[str, UnsetType] = unset,
         dns_server: Union[str, UnsetType] = unset,
         dns_server_port: Union[int, UnsetType] = unset,
         follow_redirects: Union[bool, UnsetType] = unset,
@@ -171,9 +168,6 @@ class SyntheticsTestRequest(ModelNormal):
 
         :param certificate_domains: By default, the client certificate is applied on the domain of the starting URL for browser tests. If you want your client certificate to be applied on other domains instead, add them in ``certificateDomains``.
         :type certificate_domains: [str], optional
-
-        :param compressed_json_descriptor: A protobuf JSON descriptor that needs to be gzipped first then base64 encoded.
-        :type compressed_json_descriptor: str, optional
 
         :param dns_server: DNS server to use for DNS tests.
         :type dns_server: str, optional
@@ -245,8 +239,6 @@ class SyntheticsTestRequest(ModelNormal):
             kwargs["certificate"] = certificate
         if certificate_domains is not unset:
             kwargs["certificate_domains"] = certificate_domains
-        if compressed_json_descriptor is not unset:
-            kwargs["compressed_json_descriptor"] = compressed_json_descriptor
         if dns_server is not unset:
             kwargs["dns_server"] = dns_server
         if dns_server_port is not unset:

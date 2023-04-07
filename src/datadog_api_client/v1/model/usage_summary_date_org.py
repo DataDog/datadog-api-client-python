@@ -55,7 +55,6 @@ class UsageSummaryDateOrg(ModelNormal):
             "dbm_queries_avg_sum": (int,),
             "fargate_tasks_count_avg": (int,),
             "fargate_tasks_count_hwm": (int,),
-            "forwarding_events_bytes_sum": (int,),
             "gcp_host_top99p": (int,),
             "heroku_host_top99p": (int,),
             "id": (str,),
@@ -139,7 +138,6 @@ class UsageSummaryDateOrg(ModelNormal):
         "dbm_queries_avg_sum": "dbm_queries_avg_sum",
         "fargate_tasks_count_avg": "fargate_tasks_count_avg",
         "fargate_tasks_count_hwm": "fargate_tasks_count_hwm",
-        "forwarding_events_bytes_sum": "forwarding_events_bytes_sum",
         "gcp_host_top99p": "gcp_host_top99p",
         "heroku_host_top99p": "heroku_host_top99p",
         "id": "id",
@@ -224,7 +222,6 @@ class UsageSummaryDateOrg(ModelNormal):
         dbm_queries_avg_sum: Union[int, UnsetType] = unset,
         fargate_tasks_count_avg: Union[int, UnsetType] = unset,
         fargate_tasks_count_hwm: Union[int, UnsetType] = unset,
-        forwarding_events_bytes_sum: Union[int, UnsetType] = unset,
         gcp_host_top99p: Union[int, UnsetType] = unset,
         heroku_host_top99p: Union[int, UnsetType] = unset,
         id: Union[str, UnsetType] = unset,
@@ -385,9 +382,6 @@ class UsageSummaryDateOrg(ModelNormal):
 
         :param fargate_tasks_count_hwm: Shows the high-water mark of all Fargate tasks over all hours in the current date for the given org.
         :type fargate_tasks_count_hwm: int, optional
-
-        :param forwarding_events_bytes_sum: Shows the sum of all log bytes forwarded over all hours in the current date for the given org.
-        :type forwarding_events_bytes_sum: int, optional
 
         :param gcp_host_top99p: Shows the 99th percentile of all GCP hosts over all hours in the current date for the given org.
         :type gcp_host_top99p: int, optional
@@ -591,8 +585,6 @@ class UsageSummaryDateOrg(ModelNormal):
             kwargs["fargate_tasks_count_avg"] = fargate_tasks_count_avg
         if fargate_tasks_count_hwm is not unset:
             kwargs["fargate_tasks_count_hwm"] = fargate_tasks_count_hwm
-        if forwarding_events_bytes_sum is not unset:
-            kwargs["forwarding_events_bytes_sum"] = forwarding_events_bytes_sum
         if gcp_host_top99p is not unset:
             kwargs["gcp_host_top99p"] = gcp_host_top99p
         if heroku_host_top99p is not unset:

@@ -22,7 +22,6 @@ class UsageLogsHour(ModelNormal):
             "hour": (datetime,),
             "indexed_events_count": (int,),
             "ingested_events_bytes": (int,),
-            "logs_forwarding_events_bytes": (int,),
             "logs_live_indexed_count": (int,),
             "logs_live_ingested_bytes": (int,),
             "logs_rehydrated_indexed_count": (int,),
@@ -36,7 +35,6 @@ class UsageLogsHour(ModelNormal):
         "hour": "hour",
         "indexed_events_count": "indexed_events_count",
         "ingested_events_bytes": "ingested_events_bytes",
-        "logs_forwarding_events_bytes": "logs_forwarding_events_bytes",
         "logs_live_indexed_count": "logs_live_indexed_count",
         "logs_live_ingested_bytes": "logs_live_ingested_bytes",
         "logs_rehydrated_indexed_count": "logs_rehydrated_indexed_count",
@@ -51,7 +49,6 @@ class UsageLogsHour(ModelNormal):
         hour: Union[datetime, UnsetType] = unset,
         indexed_events_count: Union[int, UnsetType] = unset,
         ingested_events_bytes: Union[int, UnsetType] = unset,
-        logs_forwarding_events_bytes: Union[int, UnsetType] = unset,
         logs_live_indexed_count: Union[int, UnsetType] = unset,
         logs_live_ingested_bytes: Union[int, UnsetType] = unset,
         logs_rehydrated_indexed_count: Union[int, UnsetType] = unset,
@@ -74,9 +71,6 @@ class UsageLogsHour(ModelNormal):
 
         :param ingested_events_bytes: Contains the number of log bytes ingested.
         :type ingested_events_bytes: int, optional
-
-        :param logs_forwarding_events_bytes: Contains the number of logs forwarded bytes (data available as of April 1st 2023)
-        :type logs_forwarding_events_bytes: int, optional
 
         :param logs_live_indexed_count: Contains the number of live log events indexed (data available as of December 1, 2020).
         :type logs_live_indexed_count: int, optional
@@ -104,8 +98,6 @@ class UsageLogsHour(ModelNormal):
             kwargs["indexed_events_count"] = indexed_events_count
         if ingested_events_bytes is not unset:
             kwargs["ingested_events_bytes"] = ingested_events_bytes
-        if logs_forwarding_events_bytes is not unset:
-            kwargs["logs_forwarding_events_bytes"] = logs_forwarding_events_bytes
         if logs_live_indexed_count is not unset:
             kwargs["logs_live_indexed_count"] = logs_live_indexed_count
         if logs_live_ingested_bytes is not unset:

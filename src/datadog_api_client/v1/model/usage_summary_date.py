@@ -63,7 +63,6 @@ class UsageSummaryDate(ModelNormal):
             "dbm_queries_count_avg": (int,),
             "fargate_tasks_count_avg": (int,),
             "fargate_tasks_count_hwm": (int,),
-            "forwarding_events_bytes_sum": (int,),
             "gcp_host_top99p": (int,),
             "heroku_host_top99p": (int,),
             "incident_management_monthly_active_users_hwm": (int,),
@@ -145,7 +144,6 @@ class UsageSummaryDate(ModelNormal):
         "dbm_queries_count_avg": "dbm_queries_count_avg",
         "fargate_tasks_count_avg": "fargate_tasks_count_avg",
         "fargate_tasks_count_hwm": "fargate_tasks_count_hwm",
-        "forwarding_events_bytes_sum": "forwarding_events_bytes_sum",
         "gcp_host_top99p": "gcp_host_top99p",
         "heroku_host_top99p": "heroku_host_top99p",
         "incident_management_monthly_active_users_hwm": "incident_management_monthly_active_users_hwm",
@@ -228,7 +226,6 @@ class UsageSummaryDate(ModelNormal):
         dbm_queries_count_avg: Union[int, UnsetType] = unset,
         fargate_tasks_count_avg: Union[int, UnsetType] = unset,
         fargate_tasks_count_hwm: Union[int, UnsetType] = unset,
-        forwarding_events_bytes_sum: Union[int, UnsetType] = unset,
         gcp_host_top99p: Union[int, UnsetType] = unset,
         heroku_host_top99p: Union[int, UnsetType] = unset,
         incident_management_monthly_active_users_hwm: Union[int, UnsetType] = unset,
@@ -389,9 +386,6 @@ class UsageSummaryDate(ModelNormal):
 
         :param fargate_tasks_count_hwm: Shows the average of all Fargate tasks over all hours in the current date for all organizations.
         :type fargate_tasks_count_hwm: int, optional
-
-        :param forwarding_events_bytes_sum: Shows the sum of all log bytes forwarded over all hours in the current date for all organizations.
-        :type forwarding_events_bytes_sum: int, optional
 
         :param gcp_host_top99p: Shows the 99th percentile of all GCP hosts over all hours in the current date for all organizations.
         :type gcp_host_top99p: int, optional
@@ -588,8 +582,6 @@ class UsageSummaryDate(ModelNormal):
             kwargs["fargate_tasks_count_avg"] = fargate_tasks_count_avg
         if fargate_tasks_count_hwm is not unset:
             kwargs["fargate_tasks_count_hwm"] = fargate_tasks_count_hwm
-        if forwarding_events_bytes_sum is not unset:
-            kwargs["forwarding_events_bytes_sum"] = forwarding_events_bytes_sum
         if gcp_host_top99p is not unset:
             kwargs["gcp_host_top99p"] = gcp_host_top99p
         if heroku_host_top99p is not unset:
