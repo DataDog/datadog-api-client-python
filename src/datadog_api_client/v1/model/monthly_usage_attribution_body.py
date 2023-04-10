@@ -29,6 +29,7 @@ class MonthlyUsageAttributionBody(ModelNormal):
             "month": (datetime,),
             "org_name": (str,),
             "public_id": (str,),
+            "region": (str,),
             "tag_config_source": (str,),
             "tags": (UsageAttributionTagNames,),
             "updated_at": (datetime,),
@@ -39,6 +40,7 @@ class MonthlyUsageAttributionBody(ModelNormal):
         "month": "month",
         "org_name": "org_name",
         "public_id": "public_id",
+        "region": "region",
         "tag_config_source": "tag_config_source",
         "tags": "tags",
         "updated_at": "updated_at",
@@ -50,6 +52,7 @@ class MonthlyUsageAttributionBody(ModelNormal):
         month: Union[datetime, UnsetType] = unset,
         org_name: Union[str, UnsetType] = unset,
         public_id: Union[str, UnsetType] = unset,
+        region: Union[str, UnsetType] = unset,
         tag_config_source: Union[str, UnsetType] = unset,
         tags: Union[UsageAttributionTagNames, UnsetType] = unset,
         updated_at: Union[datetime, UnsetType] = unset,
@@ -67,6 +70,9 @@ class MonthlyUsageAttributionBody(ModelNormal):
 
         :param public_id: The organization public ID.
         :type public_id: str, optional
+
+        :param region: The region of the Datadog instance that the organization belongs to.
+        :type region: str, optional
 
         :param tag_config_source: The source of the usage attribution tag configuration and the selected tags in the format ``<source_org_name>:::<selected tag 1>///<selected tag 2>///<selected tag 3>``.
         :type tag_config_source: str, optional
@@ -90,6 +96,8 @@ class MonthlyUsageAttributionBody(ModelNormal):
             kwargs["org_name"] = org_name
         if public_id is not unset:
             kwargs["public_id"] = public_id
+        if region is not unset:
+            kwargs["region"] = region
         if tag_config_source is not unset:
             kwargs["tag_config_source"] = tag_config_source
         if tags is not unset:
