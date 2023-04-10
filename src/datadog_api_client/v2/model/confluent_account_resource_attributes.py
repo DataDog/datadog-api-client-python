@@ -30,8 +30,8 @@ class ConfluentAccountResourceAttributes(ModelNormal):
 
     def __init__(
         self_,
+        resource_type: str,
         id: Union[str, UnsetType] = unset,
-        resource_type: Union[str, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
         **kwargs,
     ):
@@ -42,15 +42,15 @@ class ConfluentAccountResourceAttributes(ModelNormal):
         :type id: str, optional
 
         :param resource_type: The resource type of the Resource. Can be ``kafka`` , ``connector`` , ``ksql`` , or ``schema_registry``.
-        :type resource_type: str, optional
+        :type resource_type: str
 
         :param tags: A list of strings representing tags. Can be a single key, or key-value pairs separated by a colon.
         :type tags: [str], optional
         """
         if id is not unset:
             kwargs["id"] = id
-        if resource_type is not unset:
-            kwargs["resource_type"] = resource_type
         if tags is not unset:
             kwargs["tags"] = tags
         super().__init__(kwargs)
+
+        self_.resource_type = resource_type

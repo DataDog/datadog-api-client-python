@@ -26,20 +26,18 @@ class ConfluentResourceRequestAttributes(ModelNormal):
         "tags": "tags",
     }
 
-    def __init__(
-        self_, resource_type: Union[str, UnsetType] = unset, tags: Union[List[str], UnsetType] = unset, **kwargs
-    ):
+    def __init__(self_, resource_type: str, tags: Union[List[str], UnsetType] = unset, **kwargs):
         """
         Attributes object for updating a Confluent resource.
 
         :param resource_type: The resource type of the Resource. Can be ``kafka`` , ``connector`` , ``ksql`` , or ``schema_registry``.
-        :type resource_type: str, optional
+        :type resource_type: str
 
         :param tags: A list of strings representing tags. Can be a single key, or key-value pairs separated by a colon.
         :type tags: [str], optional
         """
-        if resource_type is not unset:
-            kwargs["resource_type"] = resource_type
         if tags is not unset:
             kwargs["tags"] = tags
         super().__init__(kwargs)
+
+        self_.resource_type = resource_type
