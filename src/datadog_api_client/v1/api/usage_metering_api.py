@@ -1392,7 +1392,7 @@ class UsageMeteringApi:
     ) -> HourlyUsageAttributionResponse:
         """Get hourly usage attribution.
 
-        Get hourly usage attribution.
+        Get hourly usage attribution. Multi-region data is available starting March 1, 2023.
 
         This API endpoint is paginated. To make sure you receive all records, check if the value of ``next_record_id`` is
         set in the response. If it is, make another request and pass ``next_record_id`` as a parameter.
@@ -1550,7 +1550,7 @@ class UsageMeteringApi:
     ) -> MonthlyUsageAttributionResponse:
         """Get monthly usage attribution.
 
-        Get monthly usage attribution.
+        Get monthly usage attribution. Multi-region data is available starting March 1, 2023.
 
         This API endpoint is paginated. To make sure you receive all records, check if the value of ``next_record_id`` is
         set in the response. If it is, make another request and pass ``next_record_id`` as a parameter.
