@@ -16763,6 +16763,7 @@ components:
           format: int64
           type: integer
         audit_logs_lines_indexed_sum:
+          deprecated: true
           description: Shows the sum of audit logs lines indexed over all hours in
             the current date for all organizations.
           format: int64
@@ -17164,6 +17165,7 @@ components:
           format: int64
           type: integer
         audit_logs_lines_indexed_sum:
+          deprecated: true
           description: Shows the sum of all audit logs lines indexed over all hours
             in the current date for the given org.
           format: int64
@@ -17568,6 +17570,7 @@ components:
           format: int64
           type: integer
         audit_logs_lines_indexed_agg_sum:
+          deprecated: true
           description: Shows the sum of all audit logs lines indexed over all hours
             in the current months for all organizations.
           format: int64
@@ -28073,12 +28076,10 @@ paths:
       - Usage Metering
   /api/v1/usage/audit_logs:
     get:
+      deprecated: true
       description: 'Get hourly usage for audit logs.
 
-        **Note:** hourly usage data for all products is now available in the [Get
-        hourly usage by product family API](https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family).
-        Refer to [Migrating from the V1 Hourly Usage APIs to V2](https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/)
-        for the associated migration guide.'
+        **Note:** This endpoint has been deprecated.'
       operationId: GetUsageAuditLogs
       parameters:
       - description: 'Datetime in ISO-8601 format, UTC, precise to hour: `[YYYY-MM-DDThh]`

@@ -317,7 +317,7 @@ class UsageSummaryResponse(ModelNormal):
         :param appsec_fargate_count_avg_sum: Shows the average of all Application Security Monitoring ECS Fargate tasks over all hours in the current months for all organizations.
         :type appsec_fargate_count_avg_sum: int, optional
 
-        :param audit_logs_lines_indexed_agg_sum: Shows the sum of all audit logs lines indexed over all hours in the current months for all organizations.
+        :param audit_logs_lines_indexed_agg_sum: Shows the sum of all audit logs lines indexed over all hours in the current months for all organizations. **Deprecated**.
         :type audit_logs_lines_indexed_agg_sum: int, optional
 
         :param audit_trail_enabled_hwm_sum: Shows the total number of organizations that had Audit Trail enabled over a specific number of months.
