@@ -14,7 +14,7 @@ from datadog_api_client.v2.model.cloudflare_account_type import CloudflareAccoun
 body = CloudflareAccountCreateRequest(
     data=CloudflareAccountCreateRequestData(
         attributes=CloudflareAccountCreateRequestAttributes(
-            api_key="6Zm7WEgKzAlCnt_4exfEK0mSoeHHAaDf41O1AAfu",
+            api_key="fakekey",
             email="new@email",
             name="examplecloudflareintegration",
         ),

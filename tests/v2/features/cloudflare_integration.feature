@@ -15,24 +15,24 @@ Feature: Cloudflare Integration
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:Datadog/web-integrations
+  @replay-only @team:Datadog/web-integrations
   Scenario: Add Cloudflare account returns "Bad Request" response due to missing email
     Given new "CreateCloudflareAccount" request
     And body with value {"data": {"attributes": {"api_key": "test-api-key", "name": "{{ unique_lower_alnum }}"}, "type": "cloudflare-accounts"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:Datadog/web-integrations
+  @replay-only @team:Datadog/web-integrations
   Scenario: Add Cloudflare account returns "Bad Request" response using invalid auth key
     Given new "CreateCloudflareAccount" request
     And body with value {"data": {"attributes": {"api_key": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "name": "{{ unique_lower_alnum }}"}, "type": "cloudflare-accounts"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:Datadog/web-integrations
+  @replay-only @team:Datadog/web-integrations
   Scenario: Add Cloudflare account returns "CREATED" response
     Given new "CreateCloudflareAccount" request
-    And body with value {"data": {"attributes": {"api_key": "6Zm7WEgKzAlCnt_4exfEK0mSoeHHAaDf41O1AAfu", "email": "new@email", "name": "{{ unique_lower_alnum }}"}, "type": "cloudflare-accounts"}}
+    And body with value {"data": {"attributes": {"api_key": "fakekey", "email": "new@email", "name": "{{ unique_lower_alnum }}"}, "type": "cloudflare-accounts"}}
     When the request is sent
     Then the response status is 201 CREATED
     And the response "data.type" is equal to "cloudflare-accounts"
@@ -81,7 +81,7 @@ Feature: Cloudflare Integration
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:Datadog/web-integrations
+  @replay-only @team:Datadog/web-integrations
   Scenario: Get Cloudflare account returns "OK" response
     Given there is a valid "cloudflare_account" in the system
     And new "GetCloudflareAccount" request
@@ -104,7 +104,7 @@ Feature: Cloudflare Integration
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:Datadog/web-integrations
+  @replay-only @team:Datadog/web-integrations
   Scenario: List Cloudflare accounts returns "OK" response
     Given there is a valid "cloudflare_account" in the system
     And new "ListCloudflareAccounts" request
@@ -120,7 +120,7 @@ Feature: Cloudflare Integration
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:Datadog/web-integrations
+  @replay-only @team:Datadog/web-integrations
   Scenario: Update Cloudflare account returns "Bad Request" response due to invalid api key
     Given there is a valid "cloudflare_account" in the system
     And new "UpdateCloudflareAccount" request
@@ -129,7 +129,7 @@ Feature: Cloudflare Integration
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:Datadog/web-integrations
+  @replay-only @team:Datadog/web-integrations
   Scenario: Update Cloudflare account returns "Bad Request" response due to missing required email
     Given there is a valid "cloudflare_account" in the system
     And new "UpdateCloudflareAccount" request
@@ -146,12 +146,12 @@ Feature: Cloudflare Integration
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:Datadog/web-integrations
+  @replay-only @team:Datadog/web-integrations
   Scenario: Update Cloudflare account returns "OK" response
     Given there is a valid "cloudflare_account" in the system
     And new "UpdateCloudflareAccount" request
     And request contains "account_id" parameter from "cloudflare_account.data.id"
-    And body with value {"data": {"attributes": {"api_key": "6Zm7WEgKzAlCnt_4exfEK0mSoeHHAaDf41O1AAfu", "email": "new@email"}, "type": "cloudflare-accounts"}}
+    And body with value {"data": {"attributes": {"api_key": "fakekey", "email": "new@email"}, "type": "cloudflare-accounts"}}
     When the request is sent
     Then the response status is 200 OK
     And the response "data.attributes.name" is equal to "{{cloudflare_account.data.attributes.name }}"

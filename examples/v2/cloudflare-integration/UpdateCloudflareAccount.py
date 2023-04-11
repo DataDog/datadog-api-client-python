@@ -18,7 +18,7 @@ CLOUDFLARE_ACCOUNT_DATA_ID = environ["CLOUDFLARE_ACCOUNT_DATA_ID"]
 body = CloudflareAccountUpdateRequest(
     data=CloudflareAccountUpdateRequestData(
         attributes=CloudflareAccountUpdateRequestAttributes(
-            api_key="6Zm7WEgKzAlCnt_4exfEK0mSoeHHAaDf41O1AAfu",
+            api_key="fakekey",
             email="new@email",
         ),
         type=CloudflareAccountType.CLOUDFLARE_ACCOUNTS,
