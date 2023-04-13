@@ -13,7 +13,7 @@ body = APIKeyCreateRequest(
     data=APIKeyCreateData(
         type=APIKeysType.API_KEYS,
         attributes=APIKeyCreateAttributes(
-            name="Example-Create_an_API_key_returns_Created_response",
+            name="Example-Key-Management",
         ),
     ),
 )

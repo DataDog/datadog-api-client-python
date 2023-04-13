@@ -1520,6 +1520,13 @@ full\_application\_key\_attributes
    :members:
    :show-inheritance:
 
+get\_team\_memberships\_sort
+----------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_team_memberships_sort
+   :members:
+   :show-inheritance:
+
 group\_scalar\_column
 ---------------------
 
@@ -1993,6 +2000,13 @@ incident\_search\_response\_incidents\_data
 -------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.incident_search_response_incidents_data
+   :members:
+   :show-inheritance:
+
+incident\_search\_response\_meta
+--------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_search_response_meta
    :members:
    :show-inheritance:
 
@@ -2476,6 +2490,20 @@ list\_application\_keys\_response
 ---------------------------------
 
 .. automodule:: datadog_api_client.v2.model.list_application_keys_response
+   :members:
+   :show-inheritance:
+
+list\_teams\_include
+--------------------
+
+.. automodule:: datadog_api_client.v2.model.list_teams_include
+   :members:
+   :show-inheritance:
+
+list\_teams\_sort
+-----------------
+
+.. automodule:: datadog_api_client.v2.model.list_teams_sort
    :members:
    :show-inheritance:
 
@@ -3963,6 +3991,20 @@ relationship\_to\_saml\_assertion\_attribute\_data
    :members:
    :show-inheritance:
 
+relationship\_to\_team\_link\_data
+----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.relationship_to_team_link_data
+   :members:
+   :show-inheritance:
+
+relationship\_to\_team\_links
+-----------------------------
+
+.. automodule:: datadog_api_client.v2.model.relationship_to_team_links
+   :members:
+   :show-inheritance:
+
 relationship\_to\_user
 ----------------------
 
@@ -3974,6 +4016,34 @@ relationship\_to\_user\_data
 ----------------------------
 
 .. automodule:: datadog_api_client.v2.model.relationship_to_user_data
+   :members:
+   :show-inheritance:
+
+relationship\_to\_user\_team\_permission
+----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.relationship_to_user_team_permission
+   :members:
+   :show-inheritance:
+
+relationship\_to\_user\_team\_permission\_data
+----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.relationship_to_user_team_permission_data
+   :members:
+   :show-inheritance:
+
+relationship\_to\_user\_team\_user
+----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.relationship_to_user_team_user
+   :members:
+   :show-inheritance:
+
+relationship\_to\_user\_team\_user\_data
+----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.relationship_to_user_team_user_data
    :members:
    :show-inheritance:
 
@@ -5664,6 +5734,104 @@ service\_definition\_v2\_doc
    :members:
    :show-inheritance:
 
+service\_definition\_v2\_dot1
+-----------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_definition_v2_dot1
+   :members:
+   :show-inheritance:
+
+service\_definition\_v2\_dot1\_contact
+--------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_definition_v2_dot1_contact
+   :members:
+   :show-inheritance:
+
+service\_definition\_v2\_dot1\_email
+------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_definition_v2_dot1_email
+   :members:
+   :show-inheritance:
+
+service\_definition\_v2\_dot1\_email\_type
+------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_definition_v2_dot1_email_type
+   :members:
+   :show-inheritance:
+
+service\_definition\_v2\_dot1\_integrations
+-------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_definition_v2_dot1_integrations
+   :members:
+   :show-inheritance:
+
+service\_definition\_v2\_dot1\_link
+-----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_definition_v2_dot1_link
+   :members:
+   :show-inheritance:
+
+service\_definition\_v2\_dot1\_link\_type
+-----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_definition_v2_dot1_link_type
+   :members:
+   :show-inheritance:
+
+service\_definition\_v2\_dot1\_ms\_teams
+----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_definition_v2_dot1_ms_teams
+   :members:
+   :show-inheritance:
+
+service\_definition\_v2\_dot1\_ms\_teams\_type
+----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_definition_v2_dot1_ms_teams_type
+   :members:
+   :show-inheritance:
+
+service\_definition\_v2\_dot1\_opsgenie
+---------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_definition_v2_dot1_opsgenie
+   :members:
+   :show-inheritance:
+
+service\_definition\_v2\_dot1\_opsgenie\_region
+-----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_definition_v2_dot1_opsgenie_region
+   :members:
+   :show-inheritance:
+
+service\_definition\_v2\_dot1\_pagerduty
+----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_definition_v2_dot1_pagerduty
+   :members:
+   :show-inheritance:
+
+service\_definition\_v2\_dot1\_slack
+------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_definition_v2_dot1_slack
+   :members:
+   :show-inheritance:
+
+service\_definition\_v2\_dot1\_slack\_type
+------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_definition_v2_dot1_slack_type
+   :members:
+   :show-inheritance:
+
 service\_definition\_v2\_email
 ------------------------------
 
@@ -5696,6 +5864,20 @@ service\_definition\_v2\_link\_type
 -----------------------------------
 
 .. automodule:: datadog_api_client.v2.model.service_definition_v2_link_type
+   :members:
+   :show-inheritance:
+
+service\_definition\_v2\_ms\_teams
+----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_definition_v2_ms_teams
+   :members:
+   :show-inheritance:
+
+service\_definition\_v2\_ms\_teams\_type
+----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_definition_v2_ms_teams_type
    :members:
    :show-inheritance:
 
@@ -5762,10 +5944,381 @@ slack\_integration\_metadata\_channel\_item
    :members:
    :show-inheritance:
 
+spans\_metric\_compute
+----------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_metric_compute
+   :members:
+   :show-inheritance:
+
+spans\_metric\_compute\_aggregation\_type
+-----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_metric_compute_aggregation_type
+   :members:
+   :show-inheritance:
+
+spans\_metric\_create\_attributes
+---------------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_metric_create_attributes
+   :members:
+   :show-inheritance:
+
+spans\_metric\_create\_data
+---------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_metric_create_data
+   :members:
+   :show-inheritance:
+
+spans\_metric\_create\_request
+------------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_metric_create_request
+   :members:
+   :show-inheritance:
+
+spans\_metric\_filter
+---------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_metric_filter
+   :members:
+   :show-inheritance:
+
+spans\_metric\_group\_by
+------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_metric_group_by
+   :members:
+   :show-inheritance:
+
+spans\_metric\_response
+-----------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_metric_response
+   :members:
+   :show-inheritance:
+
+spans\_metric\_response\_attributes
+-----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_metric_response_attributes
+   :members:
+   :show-inheritance:
+
+spans\_metric\_response\_compute
+--------------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_metric_response_compute
+   :members:
+   :show-inheritance:
+
+spans\_metric\_response\_data
+-----------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_metric_response_data
+   :members:
+   :show-inheritance:
+
+spans\_metric\_response\_filter
+-------------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_metric_response_filter
+   :members:
+   :show-inheritance:
+
+spans\_metric\_response\_group\_by
+----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_metric_response_group_by
+   :members:
+   :show-inheritance:
+
+spans\_metric\_type
+-------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_metric_type
+   :members:
+   :show-inheritance:
+
+spans\_metric\_update\_attributes
+---------------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_metric_update_attributes
+   :members:
+   :show-inheritance:
+
+spans\_metric\_update\_compute
+------------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_metric_update_compute
+   :members:
+   :show-inheritance:
+
+spans\_metric\_update\_data
+---------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_metric_update_data
+   :members:
+   :show-inheritance:
+
+spans\_metric\_update\_request
+------------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_metric_update_request
+   :members:
+   :show-inheritance:
+
+spans\_metrics\_response
+------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_metrics_response
+   :members:
+   :show-inheritance:
+
 tags\_event\_attribute
 ----------------------
 
 .. automodule:: datadog_api_client.v2.model.tags_event_attribute
+   :members:
+   :show-inheritance:
+
+team
+----
+
+.. automodule:: datadog_api_client.v2.model.team
+   :members:
+   :show-inheritance:
+
+team\_attributes
+----------------
+
+.. automodule:: datadog_api_client.v2.model.team_attributes
+   :members:
+   :show-inheritance:
+
+team\_create
+------------
+
+.. automodule:: datadog_api_client.v2.model.team_create
+   :members:
+   :show-inheritance:
+
+team\_create\_attributes
+------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_create_attributes
+   :members:
+   :show-inheritance:
+
+team\_create\_relationships
+---------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_create_relationships
+   :members:
+   :show-inheritance:
+
+team\_create\_request
+---------------------
+
+.. automodule:: datadog_api_client.v2.model.team_create_request
+   :members:
+   :show-inheritance:
+
+team\_data
+----------
+
+.. automodule:: datadog_api_client.v2.model.team_data
+   :members:
+   :show-inheritance:
+
+team\_included
+--------------
+
+.. automodule:: datadog_api_client.v2.model.team_included
+   :members:
+   :show-inheritance:
+
+team\_link
+----------
+
+.. automodule:: datadog_api_client.v2.model.team_link
+   :members:
+   :show-inheritance:
+
+team\_link\_attributes
+----------------------
+
+.. automodule:: datadog_api_client.v2.model.team_link_attributes
+   :members:
+   :show-inheritance:
+
+team\_link\_create
+------------------
+
+.. automodule:: datadog_api_client.v2.model.team_link_create
+   :members:
+   :show-inheritance:
+
+team\_link\_create\_request
+---------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_link_create_request
+   :members:
+   :show-inheritance:
+
+team\_link\_response
+--------------------
+
+.. automodule:: datadog_api_client.v2.model.team_link_response
+   :members:
+   :show-inheritance:
+
+team\_link\_type
+----------------
+
+.. automodule:: datadog_api_client.v2.model.team_link_type
+   :members:
+   :show-inheritance:
+
+team\_links\_response
+---------------------
+
+.. automodule:: datadog_api_client.v2.model.team_links_response
+   :members:
+   :show-inheritance:
+
+team\_permission\_setting
+-------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_permission_setting
+   :members:
+   :show-inheritance:
+
+team\_permission\_setting\_attributes
+-------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_permission_setting_attributes
+   :members:
+   :show-inheritance:
+
+team\_permission\_setting\_response
+-----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_permission_setting_response
+   :members:
+   :show-inheritance:
+
+team\_permission\_setting\_serializer\_action
+---------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_permission_setting_serializer_action
+   :members:
+   :show-inheritance:
+
+team\_permission\_setting\_type
+-------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_permission_setting_type
+   :members:
+   :show-inheritance:
+
+team\_permission\_setting\_update
+---------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_permission_setting_update
+   :members:
+   :show-inheritance:
+
+team\_permission\_setting\_update\_attributes
+---------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_permission_setting_update_attributes
+   :members:
+   :show-inheritance:
+
+team\_permission\_setting\_update\_request
+------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_permission_setting_update_request
+   :members:
+   :show-inheritance:
+
+team\_permission\_setting\_value
+--------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_permission_setting_value
+   :members:
+   :show-inheritance:
+
+team\_permission\_setting\_values
+---------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_permission_setting_values
+   :members:
+   :show-inheritance:
+
+team\_permission\_settings\_response
+------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_permission_settings_response
+   :members:
+   :show-inheritance:
+
+team\_relationships
+-------------------
+
+.. automodule:: datadog_api_client.v2.model.team_relationships
+   :members:
+   :show-inheritance:
+
+team\_response
+--------------
+
+.. automodule:: datadog_api_client.v2.model.team_response
+   :members:
+   :show-inheritance:
+
+team\_type
+----------
+
+.. automodule:: datadog_api_client.v2.model.team_type
+   :members:
+   :show-inheritance:
+
+team\_update
+------------
+
+.. automodule:: datadog_api_client.v2.model.team_update
+   :members:
+   :show-inheritance:
+
+team\_update\_attributes
+------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_update_attributes
+   :members:
+   :show-inheritance:
+
+team\_update\_relationships
+---------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_update_relationships
+   :members:
+   :show-inheritance:
+
+team\_update\_request
+---------------------
+
+.. automodule:: datadog_api_client.v2.model.team_update_request
+   :members:
+   :show-inheritance:
+
+teams\_response
+---------------
+
+.. automodule:: datadog_api_client.v2.model.teams_response
    :members:
    :show-inheritance:
 
@@ -6046,6 +6599,111 @@ user\_response\_relationships
 -----------------------------
 
 .. automodule:: datadog_api_client.v2.model.user_response_relationships
+   :members:
+   :show-inheritance:
+
+user\_team
+----------
+
+.. automodule:: datadog_api_client.v2.model.user_team
+   :members:
+   :show-inheritance:
+
+user\_team\_attributes
+----------------------
+
+.. automodule:: datadog_api_client.v2.model.user_team_attributes
+   :members:
+   :show-inheritance:
+
+user\_team\_create
+------------------
+
+.. automodule:: datadog_api_client.v2.model.user_team_create
+   :members:
+   :show-inheritance:
+
+user\_team\_permission
+----------------------
+
+.. automodule:: datadog_api_client.v2.model.user_team_permission
+   :members:
+   :show-inheritance:
+
+user\_team\_permission\_attributes
+----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.user_team_permission_attributes
+   :members:
+   :show-inheritance:
+
+user\_team\_permission\_type
+----------------------------
+
+.. automodule:: datadog_api_client.v2.model.user_team_permission_type
+   :members:
+   :show-inheritance:
+
+user\_team\_relationships
+-------------------------
+
+.. automodule:: datadog_api_client.v2.model.user_team_relationships
+   :members:
+   :show-inheritance:
+
+user\_team\_request
+-------------------
+
+.. automodule:: datadog_api_client.v2.model.user_team_request
+   :members:
+   :show-inheritance:
+
+user\_team\_response
+--------------------
+
+.. automodule:: datadog_api_client.v2.model.user_team_response
+   :members:
+   :show-inheritance:
+
+user\_team\_role
+----------------
+
+.. automodule:: datadog_api_client.v2.model.user_team_role
+   :members:
+   :show-inheritance:
+
+user\_team\_type
+----------------
+
+.. automodule:: datadog_api_client.v2.model.user_team_type
+   :members:
+   :show-inheritance:
+
+user\_team\_update
+------------------
+
+.. automodule:: datadog_api_client.v2.model.user_team_update
+   :members:
+   :show-inheritance:
+
+user\_team\_update\_request
+---------------------------
+
+.. automodule:: datadog_api_client.v2.model.user_team_update_request
+   :members:
+   :show-inheritance:
+
+user\_team\_user\_type
+----------------------
+
+.. automodule:: datadog_api_client.v2.model.user_team_user_type
+   :members:
+   :show-inheritance:
+
+user\_teams\_response
+---------------------
+
+.. automodule:: datadog_api_client.v2.model.user_teams_response
    :members:
    :show-inheritance:
 

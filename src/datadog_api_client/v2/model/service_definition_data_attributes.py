@@ -18,6 +18,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.service_definition_schema import ServiceDefinitionSchema
     from datadog_api_client.v2.model.service_definition_v1 import ServiceDefinitionV1
     from datadog_api_client.v2.model.service_definition_v2 import ServiceDefinitionV2
+    from datadog_api_client.v2.model.service_definition_v2_dot1 import ServiceDefinitionV2Dot1
 
 
 class ServiceDefinitionDataAttributes(ModelNormal):
@@ -39,7 +40,9 @@ class ServiceDefinitionDataAttributes(ModelNormal):
     def __init__(
         self_,
         meta: Union[ServiceDefinitionMeta, UnsetType] = unset,
-        schema: Union[ServiceDefinitionSchema, ServiceDefinitionV1, ServiceDefinitionV2, UnsetType] = unset,
+        schema: Union[
+            ServiceDefinitionSchema, ServiceDefinitionV1, ServiceDefinitionV2, ServiceDefinitionV2Dot1, UnsetType
+        ] = unset,
         **kwargs,
     ):
         """

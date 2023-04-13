@@ -1,0 +1,58 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"compute":{"aggregation_type":"distribution","include_percentiles":false,"path":"@duration"},"filter":{"query":"source:Test-Get_a_span_based_metric_returns_OK_response-1680015326"},"group_by":[{"path":"resource_name","tag_name":"resource_name"}]},"id":"Test-Get_a_span_based_metric_returns_OK_response-1680015326","type":"spans_metrics"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/apm/config/metrics
+  response:
+    body:
+      string: '{"data":{"id":"Test_Get_a_span_based_metric_returns_OK_response_1680015326","attributes":{"filter":{"query":"source:Test-Get_a_span_based_metric_returns_OK_response-1680015326"},"group_by":[{"path":"resource_name","tag_name":"resource_name"}],"compute":{"aggregation_type":"distribution","path":"@duration","include_percentiles":false}},"type":"spans_metrics"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/apm/config/metrics/Test_Get_a_span_based_metric_returns_OK_response_1680015326
+  response:
+    body:
+      string: '{"data":{"id":"Test_Get_a_span_based_metric_returns_OK_response_1680015326","attributes":{"filter":{"query":"source:Test-Get_a_span_based_metric_returns_OK_response-1680015326"},"group_by":[{"path":"resource_name","tag_name":"resource_name"}],"compute":{"aggregation_type":"distribution","path":"@duration","include_percentiles":false}},"type":"spans_metrics"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/apm/config/metrics/Test_Get_a_span_based_metric_returns_OK_response_1680015326
+  response:
+    body:
+      string: '{}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

@@ -29,7 +29,7 @@ from datadog_api_client.v1.model.widget_formula_limit import WidgetFormulaLimit
 
 body = Dashboard(
     layout_type=DashboardLayoutType.ORDERED,
-    title="Example-Create_a_new_dashboard_with_logs_query_table_widget_and_storage_parameter with query table widget and storage parameter",
+    title="Example-Dashboard with query table widget and storage parameter",
     widgets=[
         Widget(
             definition=TableWidgetDefinition(

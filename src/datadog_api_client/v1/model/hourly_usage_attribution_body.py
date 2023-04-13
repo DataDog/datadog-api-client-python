@@ -29,6 +29,7 @@ class HourlyUsageAttributionBody(ModelNormal):
             "hour": (datetime,),
             "org_name": (str,),
             "public_id": (str,),
+            "region": (str,),
             "tag_config_source": (str,),
             "tags": (UsageAttributionTagNames,),
             "total_usage_sum": (float,),
@@ -40,6 +41,7 @@ class HourlyUsageAttributionBody(ModelNormal):
         "hour": "hour",
         "org_name": "org_name",
         "public_id": "public_id",
+        "region": "region",
         "tag_config_source": "tag_config_source",
         "tags": "tags",
         "total_usage_sum": "total_usage_sum",
@@ -52,6 +54,7 @@ class HourlyUsageAttributionBody(ModelNormal):
         hour: Union[datetime, UnsetType] = unset,
         org_name: Union[str, UnsetType] = unset,
         public_id: Union[str, UnsetType] = unset,
+        region: Union[str, UnsetType] = unset,
         tag_config_source: Union[str, UnsetType] = unset,
         tags: Union[UsageAttributionTagNames, UnsetType] = unset,
         total_usage_sum: Union[float, UnsetType] = unset,
@@ -70,6 +73,9 @@ class HourlyUsageAttributionBody(ModelNormal):
 
         :param public_id: The organization public ID.
         :type public_id: str, optional
+
+        :param region: The region of the Datadog instance that the organization belongs to.
+        :type region: str, optional
 
         :param tag_config_source: The source of the usage attribution tag configuration and the selected tags in the format of ``<source_org_name>:::<selected tag 1>///<selected tag 2>///<selected tag 3>``.
         :type tag_config_source: str, optional
@@ -96,6 +102,8 @@ class HourlyUsageAttributionBody(ModelNormal):
             kwargs["org_name"] = org_name
         if public_id is not unset:
             kwargs["public_id"] = public_id
+        if region is not unset:
+            kwargs["region"] = region
         if tag_config_source is not unset:
             kwargs["tag_config_source"] = tag_config_source
         if tags is not unset:

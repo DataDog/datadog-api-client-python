@@ -137,6 +137,11 @@ class DowntimesApi:
                     "attribute": "current_only",
                     "location": "query",
                 },
+                "with_creator": {
+                    "openapi_types": (bool,),
+                    "attribute": "with_creator",
+                    "location": "query",
+                },
             },
             headers_map={
                 "accept": ["application/json"],
@@ -269,6 +274,7 @@ class DowntimesApi:
         self,
         *,
         current_only: Union[bool, UnsetType] = unset,
+        with_creator: Union[bool, UnsetType] = unset,
     ) -> List[Downtime]:
         """Get all downtimes.
 
@@ -276,11 +282,16 @@ class DowntimesApi:
 
         :param current_only: Only return downtimes that are active when the request is made.
         :type current_only: bool, optional
+        :param with_creator: Return creator information.
+        :type with_creator: bool, optional
         :rtype: [Downtime]
         """
         kwargs: Dict[str, Any] = {}
         if current_only is not unset:
             kwargs["current_only"] = current_only
+
+        if with_creator is not unset:
+            kwargs["with_creator"] = with_creator
 
         return self._list_downtimes_endpoint.call_with_http_info(**kwargs)
 

@@ -75,7 +75,7 @@ body = NotebookUpdateRequest(
                     type=NotebookCellResourceType.NOTEBOOK_CELLS,
                 ),
             ],
-            name="Example-Update_a_notebook_returns_OK_response-updated",
+            name="Example-Notebook-updated",
             status=NotebookStatus.PUBLISHED,
             time=NotebookRelativeTime(
                 live_span=WidgetLiveSpan.PAST_ONE_HOUR,

@@ -18,7 +18,7 @@ body = APIKeyUpdateRequest(
         type=APIKeysType.API_KEYS,
         id=API_KEY_DATA_ID,
         attributes=APIKeyUpdateAttributes(
-            name="Example-Edit_an_API_key_returns_OK_response",
+            name="Example-Key-Management",
         ),
     ),
 )

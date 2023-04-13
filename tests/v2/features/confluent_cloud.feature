@@ -55,7 +55,7 @@ Feature: Confluent Cloud
     Then the response status is 201 OK
     And the response "data.id" is equal to "{{ unique_lower_alnum }}"
     And the response "data.attributes.resource_type" is equal to "kafka"
-    And the response "data.attributes.tags[0]" is equal to "myTag"
+    And the response "data.attributes.tags[0]" is equal to "mytag"
 
   @generated @skip @team:Datadog/web-integrations
   Scenario: Delete Confluent account returns "Bad Request" response

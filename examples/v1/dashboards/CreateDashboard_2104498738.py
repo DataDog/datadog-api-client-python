@@ -23,7 +23,7 @@ from datadog_api_client.v1.model.widget_layout import WidgetLayout
 from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
 
 body = Dashboard(
-    title="Example-Create_a_new_dashboard_with_formulas_and_functions_scatterplot_widget",
+    title="Example-Dashboard",
     widgets=[
         Widget(
             id=5346764334358972,

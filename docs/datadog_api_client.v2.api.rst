@@ -211,10 +211,24 @@ service\_definition\_api
    :members:
    :show-inheritance:
 
+spans\_metrics\_api
+-------------------
+
+.. automodule:: datadog_api_client.v2.api.spans_metrics_api
+   :members:
+   :show-inheritance:
+
 synthetics\_api
 ---------------
 
 .. automodule:: datadog_api_client.v2.api.synthetics_api
+   :members:
+   :show-inheritance:
+
+teams\_api
+----------
+
+.. automodule:: datadog_api_client.v2.api.teams_api
    :members:
    :show-inheritance:
 

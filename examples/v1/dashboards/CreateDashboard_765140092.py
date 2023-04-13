@@ -26,7 +26,7 @@ from datadog_api_client.v1.model.widget_time import WidgetTime
 
 body = Dashboard(
     layout_type=DashboardLayoutType.ORDERED,
-    title="Example-Create_a_new_dashboard_with_a_query_value_widget_using_timeseries_background with QVW Timeseries Background",
+    title="Example-Dashboard with QVW Timeseries Background",
     widgets=[
         Widget(
             definition=QueryValueWidgetDefinition(

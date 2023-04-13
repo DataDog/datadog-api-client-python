@@ -37,6 +37,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
             "cspm_containers_usage": (float,),
             "cspm_hosts_percentage": (float,),
             "cspm_hosts_usage": (float,),
+            "custom_ingested_timeseries_percentage": (float,),
+            "custom_ingested_timeseries_usage": (float,),
             "custom_timeseries_percentage": (float,),
             "custom_timeseries_usage": (float,),
             "cws_containers_percentage": (float,),
@@ -75,6 +77,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
             "profiled_host_usage": (float,),
             "snmp_percentage": (float,),
             "snmp_usage": (float,),
+            "universal_service_monitoring_percentage": (float,),
+            "universal_service_monitoring_usage": (float,),
         }
 
     attribute_map = {
@@ -98,6 +102,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         "cspm_containers_usage": "cspm_containers_usage",
         "cspm_hosts_percentage": "cspm_hosts_percentage",
         "cspm_hosts_usage": "cspm_hosts_usage",
+        "custom_ingested_timeseries_percentage": "custom_ingested_timeseries_percentage",
+        "custom_ingested_timeseries_usage": "custom_ingested_timeseries_usage",
         "custom_timeseries_percentage": "custom_timeseries_percentage",
         "custom_timeseries_usage": "custom_timeseries_usage",
         "cws_containers_percentage": "cws_containers_percentage",
@@ -136,6 +142,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         "profiled_host_usage": "profiled_host_usage",
         "snmp_percentage": "snmp_percentage",
         "snmp_usage": "snmp_usage",
+        "universal_service_monitoring_percentage": "universal_service_monitoring_percentage",
+        "universal_service_monitoring_usage": "universal_service_monitoring_usage",
     }
 
     def __init__(
@@ -160,6 +168,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         cspm_containers_usage: Union[float, UnsetType] = unset,
         cspm_hosts_percentage: Union[float, UnsetType] = unset,
         cspm_hosts_usage: Union[float, UnsetType] = unset,
+        custom_ingested_timeseries_percentage: Union[float, UnsetType] = unset,
+        custom_ingested_timeseries_usage: Union[float, UnsetType] = unset,
         custom_timeseries_percentage: Union[float, UnsetType] = unset,
         custom_timeseries_usage: Union[float, UnsetType] = unset,
         cws_containers_percentage: Union[float, UnsetType] = unset,
@@ -198,6 +208,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         profiled_host_usage: Union[float, UnsetType] = unset,
         snmp_percentage: Union[float, UnsetType] = unset,
         snmp_usage: Union[float, UnsetType] = unset,
+        universal_service_monitoring_percentage: Union[float, UnsetType] = unset,
+        universal_service_monitoring_usage: Union[float, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -263,10 +275,16 @@ class MonthlyUsageAttributionValues(ModelNormal):
         :param cspm_hosts_usage: The CSPM host usage by tag(s).
         :type cspm_hosts_usage: float, optional
 
-        :param custom_timeseries_percentage: The percentage of custom metrics usage by tag(s).
+        :param custom_ingested_timeseries_percentage: The percentage of ingested custom metrics usage by tag(s).
+        :type custom_ingested_timeseries_percentage: float, optional
+
+        :param custom_ingested_timeseries_usage: The ingested custom metrics usage by tag(s).
+        :type custom_ingested_timeseries_usage: float, optional
+
+        :param custom_timeseries_percentage: The percentage of indexed custom metrics usage by tag(s).
         :type custom_timeseries_percentage: float, optional
 
-        :param custom_timeseries_usage: The custom metrics usage by tag(s).
+        :param custom_timeseries_usage: The indexed custom metrics usage by tag(s).
         :type custom_timeseries_usage: float, optional
 
         :param cws_containers_percentage: The percentage of Cloud Workload Security container usage by tag(s).
@@ -376,6 +394,12 @@ class MonthlyUsageAttributionValues(ModelNormal):
 
         :param snmp_usage: The network device usage by tag(s).
         :type snmp_usage: float, optional
+
+        :param universal_service_monitoring_percentage: The percentage of universal service monitoring usage by tag(s).
+        :type universal_service_monitoring_percentage: float, optional
+
+        :param universal_service_monitoring_usage: The universal service monitoring usage by tag(s).
+        :type universal_service_monitoring_usage: float, optional
         """
         if api_percentage is not unset:
             kwargs["api_percentage"] = api_percentage
@@ -417,6 +441,10 @@ class MonthlyUsageAttributionValues(ModelNormal):
             kwargs["cspm_hosts_percentage"] = cspm_hosts_percentage
         if cspm_hosts_usage is not unset:
             kwargs["cspm_hosts_usage"] = cspm_hosts_usage
+        if custom_ingested_timeseries_percentage is not unset:
+            kwargs["custom_ingested_timeseries_percentage"] = custom_ingested_timeseries_percentage
+        if custom_ingested_timeseries_usage is not unset:
+            kwargs["custom_ingested_timeseries_usage"] = custom_ingested_timeseries_usage
         if custom_timeseries_percentage is not unset:
             kwargs["custom_timeseries_percentage"] = custom_timeseries_percentage
         if custom_timeseries_usage is not unset:
@@ -493,4 +521,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
             kwargs["snmp_percentage"] = snmp_percentage
         if snmp_usage is not unset:
             kwargs["snmp_usage"] = snmp_usage
+        if universal_service_monitoring_percentage is not unset:
+            kwargs["universal_service_monitoring_percentage"] = universal_service_monitoring_percentage
+        if universal_service_monitoring_usage is not unset:
+            kwargs["universal_service_monitoring_usage"] = universal_service_monitoring_usage
         super().__init__(kwargs)

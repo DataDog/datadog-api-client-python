@@ -14,7 +14,7 @@ from datadog_api_client.v1.model.monitor_thresholds import MonitorThresholds
 from datadog_api_client.v1.model.monitor_type import MonitorType
 
 body = Monitor(
-    name="Example-Create_a_metric_monitor_returns_OK_response",
+    name="Example-Monitor",
     type=MonitorType.METRIC_ALERT,
     query="avg(current_1mo):avg:system.load.5{*} > 0.5",
     message="some message Notify: @hipchat-channel",

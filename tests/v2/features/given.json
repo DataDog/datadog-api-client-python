@@ -15,6 +15,18 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"data\": {\n    \"id\": \"{{ unique }}\",\n    \"attributes\": {\n      \"filter\": {\n        \"query\": \"source:{{ unique }}\"\n      },\n      \"compute\": {\n        \"aggregation_type\": \"distribution\",\n        \"path\": \"@duration\",\n        \"include_percentiles\": false\n      },\n      \"group_by\": [\n        {\n            \"path\": \"resource_name\",\n            \"tag_name\": \"resource_name\"\n        }\n      ]\n    },\n    \"type\": \"spans_metrics\"\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"spans_metric\" in the system",
+    "key": "spans_metric",
+    "tag": "Spans Metrics",
+    "operationId": "CreateSpansMetric"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"attributes\": {\n     \"attribute_key\": \"{{ unique_lower_alnum }}\",\n     \"attribute_value\": \"{{ unique }}\"\n    },\n    \"relationships\": {\n       \"role\": {\n         \"data\": {\n           \"id\": \"{{ role.data.id }}\",\n           \"type\": \"{{ role.data.type }}\"\n         }\n      }\n    },\n    \"type\": \"authn_mappings\"\n  }\n}"
       }
     ],
@@ -143,7 +155,7 @@
     "parameters": [
       {
         "name": "body",
-        "value": "{\n  \"data\": {\n    \"type\": \"cloudflare-accounts\",\n    \"attributes\": {\n      \"api_key\": \"6Zm7WEgKzAlCnt_4exfEK0mSoeHHAaDf41O1AAfu\",\n      \"name\": \"{{ unique_lower_alnum }}\",\n      \"email\": \"dev@datadog.com\"\n    }\n  }\n}"
+        "value": "{\n  \"data\": {\n    \"type\": \"cloudflare-accounts\",\n    \"attributes\": {\n      \"api_key\": \"fakekey\",\n      \"name\": \"{{ unique_lower_alnum }}\",\n      \"email\": \"dev@datadog.com\"\n    }\n  }\n}"
       }
     ],
     "step": "there is a valid \"cloudflare_account\" in the system",
@@ -448,13 +460,53 @@
     "parameters": [
       {
         "name": "body",
-        "value": "{\n  \"dd-service\": \"service-{{ unique}}\",\n  \"dd-team\": \"my-team\",\n  \"docs\": [{\"name\": \"Architecture\",\n            \"provider\": \"google drive\",\n            \"url\": \"https://gdrive/mygivedoc\"}],\n  \"extensions\": {\"frogextension\": \"extensionfrogvalue\"},\n  \"integrations\": {\"opsgenie\": {\"region\": \"US\",\n                                \"service-url\": \"https://my-org.opsgenie.com/service/123e4567-e89b-12d3-a456-426614174000\"},\n                   \"pagerduty\": \"https://my-org.pagerduty.com/service-directory/PMyService\"},\n  \"links\": [{\"name\": \"Runbook\", \"type\": \"runbook\", \"url\": \"https://my-runbook\"}],\n  \"repos\": [{\"name\": \"Source Code\",\n             \"provider\": \"GitHub\",\n             \"url\": \"https://github.com/DataDog/given\"}],\n  \"schema-version\": \"v2\",\n  \"tags\": [\"this:tag\", \"service:tag\"],\n  \"team\": \"super-team\"\n}"
+        "value": "{\n  \"dd-service\": \"service-{{ unique_lower_alnum }}\",\n  \"dd-team\": \"my-team\",\n  \"docs\": [{\"name\": \"Architecture\",\n            \"provider\": \"google drive\",\n            \"url\": \"https://gdrive/mygivedoc\"}],\n  \"extensions\": {\"frogextension\": \"extensionfrogvalue\"},\n  \"integrations\": {\"opsgenie\": {\"region\": \"US\",\n                                \"service-url\": \"https://my-org.opsgenie.com/service/123e4567-e89b-12d3-a456-426614174000\"},\n                   \"pagerduty\": \"https://my-org.pagerduty.com/service-directory/PMyService\"},\n  \"links\": [{\"name\": \"Runbook\", \"type\": \"runbook\", \"url\": \"https://my-runbook\"}],\n  \"repos\": [{\"name\": \"Source Code\",\n             \"provider\": \"GitHub\",\n             \"url\": \"https://github.com/DataDog/given\"}],\n  \"schema-version\": \"v2\",\n  \"tags\": [\"this:tag\", \"service:tag\"],\n  \"team\": \"super-team\"\n}"
       }
     ],
     "step": "there is a valid \"service_definition\" in the system",
     "key": "service_definition",
     "tag": "Service Definition",
     "operationId": "CreateOrUpdateServiceDefinitions"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"handle\": \"{{timestamp('now')}}\",\n      \"name\": \"{{timestamp('now')}}\"\n    },\n    \"type\": \"team\"\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"dd_team\" in the system",
+    "key": "dd_team",
+    "tag": "Teams",
+    "operationId": "CreateTeam"
+  },
+  {
+    "parameters": [
+      {
+        "name": "team_id",
+        "source": "dd_team.data.id"
+      },
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"label\": \"{{unique}}\",\n      \"url\": \"https://example.com\",\n      \"position\": 0\n    },\n    \"type\": \"team_links\"\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"team_link\" in the system",
+    "key": "team_link",
+    "tag": "Teams",
+    "operationId": "CreateTeamLink"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"role\": \"admin\"\n    },\n    \"relationships\": {\n      \"user\": {\n        \"data\": {\n          \"id\": \"{{user.data.id}}\",\n          \"type\": \"users\"\n        }\n      }\n    },\n    \"type\": \"team_memberships\"\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"team_membership\" in the system",
+    "key": "team_membership",
+    "tag": "Teams",
+    "operationId": "CreateTeamMembership"
   },
   {
     "parameters": [

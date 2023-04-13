@@ -23,7 +23,7 @@ body = MetricsPayload(
                 ),
             ],
             tags=[
-                "test:ExampleSubmitmetricsreturnsPayloadacceptedresponse",
+                "test:ExampleMetric",
             ],
         ),
     ],

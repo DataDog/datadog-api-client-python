@@ -55,6 +55,7 @@ class UsageSummaryDateOrg(ModelNormal):
             "dbm_queries_avg_sum": (int,),
             "fargate_tasks_count_avg": (int,),
             "fargate_tasks_count_hwm": (int,),
+            "forwarding_events_bytes_sum": (int,),
             "gcp_host_top99p": (int,),
             "heroku_host_top99p": (int,),
             "id": (str,),
@@ -95,6 +96,7 @@ class UsageSummaryDateOrg(ModelNormal):
             "synthetics_parallel_testing_max_slots_hwm": (int,),
             "trace_search_indexed_events_count_sum": (int,),
             "twol_ingested_events_bytes_sum": (int,),
+            "universal_service_monitoring_host_top99p": (int,),
             "vsphere_host_top99p": (int,),
         }
 
@@ -137,6 +139,7 @@ class UsageSummaryDateOrg(ModelNormal):
         "dbm_queries_avg_sum": "dbm_queries_avg_sum",
         "fargate_tasks_count_avg": "fargate_tasks_count_avg",
         "fargate_tasks_count_hwm": "fargate_tasks_count_hwm",
+        "forwarding_events_bytes_sum": "forwarding_events_bytes_sum",
         "gcp_host_top99p": "gcp_host_top99p",
         "heroku_host_top99p": "heroku_host_top99p",
         "id": "id",
@@ -177,6 +180,7 @@ class UsageSummaryDateOrg(ModelNormal):
         "synthetics_parallel_testing_max_slots_hwm": "synthetics_parallel_testing_max_slots_hwm",
         "trace_search_indexed_events_count_sum": "trace_search_indexed_events_count_sum",
         "twol_ingested_events_bytes_sum": "twol_ingested_events_bytes_sum",
+        "universal_service_monitoring_host_top99p": "universal_service_monitoring_host_top99p",
         "vsphere_host_top99p": "vsphere_host_top99p",
     }
 
@@ -220,6 +224,7 @@ class UsageSummaryDateOrg(ModelNormal):
         dbm_queries_avg_sum: Union[int, UnsetType] = unset,
         fargate_tasks_count_avg: Union[int, UnsetType] = unset,
         fargate_tasks_count_hwm: Union[int, UnsetType] = unset,
+        forwarding_events_bytes_sum: Union[int, UnsetType] = unset,
         gcp_host_top99p: Union[int, UnsetType] = unset,
         heroku_host_top99p: Union[int, UnsetType] = unset,
         id: Union[str, UnsetType] = unset,
@@ -260,6 +265,7 @@ class UsageSummaryDateOrg(ModelNormal):
         synthetics_parallel_testing_max_slots_hwm: Union[int, UnsetType] = unset,
         trace_search_indexed_events_count_sum: Union[int, UnsetType] = unset,
         twol_ingested_events_bytes_sum: Union[int, UnsetType] = unset,
+        universal_service_monitoring_host_top99p: Union[int, UnsetType] = unset,
         vsphere_host_top99p: Union[int, UnsetType] = unset,
         **kwargs,
     ):
@@ -281,7 +287,7 @@ class UsageSummaryDateOrg(ModelNormal):
         :param appsec_fargate_count_avg: Shows the average of all Application Security Monitoring ECS Fargate tasks over all hours in the current months for the given org.
         :type appsec_fargate_count_avg: int, optional
 
-        :param audit_logs_lines_indexed_sum: Shows the sum of all audit logs lines indexed over all hours in the current date for the given org.
+        :param audit_logs_lines_indexed_sum: Shows the sum of all audit logs lines indexed over all hours in the current date for the given org. **Deprecated**.
         :type audit_logs_lines_indexed_sum: int, optional
 
         :param audit_trail_enabled_hwm: Shows whether Audit Trail is enabled for the current date for the given org.
@@ -379,6 +385,9 @@ class UsageSummaryDateOrg(ModelNormal):
 
         :param fargate_tasks_count_hwm: Shows the high-water mark of all Fargate tasks over all hours in the current date for the given org.
         :type fargate_tasks_count_hwm: int, optional
+
+        :param forwarding_events_bytes_sum: Shows the sum of all log bytes forwarded over all hours in the current date for the given org.
+        :type forwarding_events_bytes_sum: int, optional
 
         :param gcp_host_top99p: Shows the 99th percentile of all GCP hosts over all hours in the current date for the given org.
         :type gcp_host_top99p: int, optional
@@ -500,6 +509,9 @@ class UsageSummaryDateOrg(ModelNormal):
         :param twol_ingested_events_bytes_sum: Shows the sum of all ingested APM span bytes over all hours in the current date for the given org.
         :type twol_ingested_events_bytes_sum: int, optional
 
+        :param universal_service_monitoring_host_top99p: Shows the 99th percentile of all Universal Service Monitoring hosts over all hours in the current date for the given org.
+        :type universal_service_monitoring_host_top99p: int, optional
+
         :param vsphere_host_top99p: Shows the 99th percentile of all vSphere hosts over all hours in the current date for the given org.
         :type vsphere_host_top99p: int, optional
         """
@@ -579,6 +591,8 @@ class UsageSummaryDateOrg(ModelNormal):
             kwargs["fargate_tasks_count_avg"] = fargate_tasks_count_avg
         if fargate_tasks_count_hwm is not unset:
             kwargs["fargate_tasks_count_hwm"] = fargate_tasks_count_hwm
+        if forwarding_events_bytes_sum is not unset:
+            kwargs["forwarding_events_bytes_sum"] = forwarding_events_bytes_sum
         if gcp_host_top99p is not unset:
             kwargs["gcp_host_top99p"] = gcp_host_top99p
         if heroku_host_top99p is not unset:
@@ -659,6 +673,8 @@ class UsageSummaryDateOrg(ModelNormal):
             kwargs["trace_search_indexed_events_count_sum"] = trace_search_indexed_events_count_sum
         if twol_ingested_events_bytes_sum is not unset:
             kwargs["twol_ingested_events_bytes_sum"] = twol_ingested_events_bytes_sum
+        if universal_service_monitoring_host_top99p is not unset:
+            kwargs["universal_service_monitoring_host_top99p"] = universal_service_monitoring_host_top99p
         if vsphere_host_top99p is not unset:
             kwargs["vsphere_host_top99p"] = vsphere_host_top99p
         super().__init__(kwargs)

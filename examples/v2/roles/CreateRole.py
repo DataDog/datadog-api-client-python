@@ -13,7 +13,7 @@ body = RoleCreateRequest(
     data=RoleCreateData(
         type=RolesType.ROLES,
         attributes=RoleCreateAttributes(
-            name="Example-Create_role_returns_OK_response",
+            name="Example-Role",
         ),
     ),
 )

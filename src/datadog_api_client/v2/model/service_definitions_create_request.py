@@ -15,11 +15,41 @@ class ServiceDefinitionsCreateRequest(ModelComposed):
         """
         Create service definitions request.
 
+        :param application: Identifier for a group of related services serving a product feature, which the service is a part of.
+        :type application: str, optional
+
         :param contacts: A list of contacts related to the services.
-        :type contacts: [ServiceDefinitionV2Contact], optional
+        :type contacts: [ServiceDefinitionV2Dot1Contact], optional
 
         :param dd_service: Unique identifier of the service. Must be unique across all services and is used to match with a service in Datadog.
         :type dd_service: str
+
+        :param description: A short description of the service.
+        :type description: str, optional
+
+        :param extensions: Extensions to v2.1 schema.
+        :type extensions: {str: (bool, date, datetime, dict, float, int, list, str, none_type,)}, optional
+
+        :param integrations: Third party integrations that Datadog supports.
+        :type integrations: ServiceDefinitionV2Dot1Integrations, optional
+
+        :param lifecycle: The current life cycle phase of the service.
+        :type lifecycle: str, optional
+
+        :param links: A list of links related to the services.
+        :type links: [ServiceDefinitionV2Dot1Link], optional
+
+        :param schema_version: Schema version being used.
+        :type schema_version: ServiceDefinitionV2Dot1Version
+
+        :param tags: A set of custom tags.
+        :type tags: [str], optional
+
+        :param team: Team that owns the service. It is used to locate a team defined in Datadog Teams if it exists.
+        :type team: str, optional
+
+        :param tier: Importance of the service.
+        :type tier: str, optional
 
         :param dd_team: Experimental feature. A Team handle that matches a Team in the Datadog Teams product.
         :type dd_team: str, optional
@@ -27,26 +57,8 @@ class ServiceDefinitionsCreateRequest(ModelComposed):
         :param docs: A list of documentation related to the services.
         :type docs: [ServiceDefinitionV2Doc], optional
 
-        :param extensions: Extensions to V2 schema.
-        :type extensions: {str: (bool, date, datetime, dict, float, int, list, str, none_type,)}, optional
-
-        :param integrations: Third party integrations that Datadog supports.
-        :type integrations: ServiceDefinitionV2Integrations, optional
-
-        :param links: A list of links related to the services.
-        :type links: [ServiceDefinitionV2Link], optional
-
         :param repos: A list of code repositories related to the services.
         :type repos: [ServiceDefinitionV2Repo], optional
-
-        :param schema_version: Schema version being used.
-        :type schema_version: ServiceDefinitionV2Version
-
-        :param tags: A set of custom tags.
-        :type tags: [str], optional
-
-        :param team: Team that owns the service.
-        :type team: str, optional
         """
         super().__init__(kwargs)
 
@@ -59,10 +71,12 @@ class ServiceDefinitionsCreateRequest(ModelComposed):
         # code would be run when this module is imported, and these composed
         # classes don't exist yet because their module has not finished
         # loading
+        from datadog_api_client.v2.model.service_definition_v2_dot1 import ServiceDefinitionV2Dot1
         from datadog_api_client.v2.model.service_definition_v2 import ServiceDefinitionV2
 
         return {
             "oneOf": [
+                ServiceDefinitionV2Dot1,
                 ServiceDefinitionV2,
                 str,
             ],

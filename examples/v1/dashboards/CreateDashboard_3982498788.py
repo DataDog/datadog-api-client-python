@@ -17,7 +17,7 @@ from datadog_api_client.v1.model.widget_request_style import WidgetRequestStyle
 
 body = Dashboard(
     layout_type=DashboardLayoutType.ORDERED,
-    title="Example-Create_a_new_dashboard_with_timeseries_widget_containing_style_attributes with timeseries widget",
+    title="Example-Dashboard with timeseries widget",
     widgets=[
         Widget(
             definition=TimeseriesWidgetDefinition(

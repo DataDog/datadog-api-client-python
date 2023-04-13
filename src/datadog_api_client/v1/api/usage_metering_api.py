@@ -1392,7 +1392,7 @@ class UsageMeteringApi:
     ) -> HourlyUsageAttributionResponse:
         """Get hourly usage attribution.
 
-        Get hourly usage attribution.
+        Get hourly usage attribution. Multi-region data is available starting March 1, 2023.
 
         This API endpoint is paginated. To make sure you receive all records, check if the value of ``next_record_id`` is
         set in the response. If it is, make another request and pass ``next_record_id`` as a parameter.
@@ -1550,7 +1550,7 @@ class UsageMeteringApi:
     ) -> MonthlyUsageAttributionResponse:
         """Get monthly usage attribution.
 
-        Get monthly usage attribution.
+        Get monthly usage attribution. Multi-region data is available starting March 1, 2023.
 
         This API endpoint is paginated. To make sure you receive all records, check if the value of ``next_record_id`` is
         set in the response. If it is, make another request and pass ``next_record_id`` as a parameter.
@@ -1747,10 +1747,10 @@ class UsageMeteringApi:
         *,
         end_hr: Union[datetime, UnsetType] = unset,
     ) -> UsageAuditLogsResponse:
-        """Get hourly usage for audit logs.
+        """Get hourly usage for audit logs. **Deprecated**.
 
         Get hourly usage for audit logs.
-        **Note:** hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_. Refer to `Migrating from the V1 Hourly Usage APIs to V2 <https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/>`_ for the associated migration guide.
+        **Note:** This endpoint has been deprecated.
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage beginning at this hour.
         :type start_hr: datetime
@@ -1765,6 +1765,7 @@ class UsageMeteringApi:
         if end_hr is not unset:
             kwargs["end_hr"] = end_hr
 
+        warnings.warn("get_usage_audit_logs is deprecated", DeprecationWarning, stacklevel=2)
         return self._get_usage_audit_logs_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_billable_summary(

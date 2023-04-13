@@ -1,0 +1,43 @@
+interactions:
+- request:
+    body: '{"contacts":[{"contact":"contact@datadoghq.com","name":"Team Email","type":"email"}],"dd-service":"service-testcreateorupdateservicedefinitionusingschemav21returnscreatedresponse1680112296","extensions":{"myorgextension":"extensionvalue"},"integrations":{"opsgenie":{"region":"US","service-url":"https://my-org.opsgenie.com/service/123e4567-e89b-12d3-a456-426614174000"},"pagerduty":{"service-url":"https://my-org.pagerduty.com/service-directory/PMyService"}},"links":[{"name":"Runbook","type":"runbook","url":"https://my-runbook"},{"name":"Source
+      Code","provider":"GitHub","type":"repo","url":"https://github.com/DataDog/schema"},{"name":"Architecture","provider":"Gigoogle
+      drivetHub","type":"doc","url":"https://my-runbook"}],"schema-version":"v2.1","tags":["my:tag","service:tag"],"team":"my-team"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/services/definitions
+  response:
+    body:
+      string: '{"data":[{"type":"service-definition","attributes":{"meta":{"last-modified-time":"2023-03-29T17:51:36.683797279Z","github-html-url":"","ingestion-source":"api","origin":"unknown","origin-detail":"","warnings":[],"ingested-schema-version":"v2.1"},"schema":{"schema-version":"v2.1","dd-service":"service-testcreateorupdateservicedefinitionusingschemav21returnscreatedresponse1680112296","team":"my-team","contacts":[{"name":"Team
+        Email","type":"email","contact":"contact@datadoghq.com"}],"links":[{"name":"Runbook","type":"runbook","url":"https://my-runbook"},{"name":"Source
+        Code","type":"repo","provider":"GitHub","url":"https://github.com/DataDog/schema"},{"name":"Architecture","type":"doc","provider":"Gigoogle
+        drivetHub","url":"https://my-runbook"}],"tags":["my:tag","service:tag"],"integrations":{"pagerduty":{"service-url":"https://my-org.pagerduty.com/service-directory/PMyService"},"opsgenie":{"service-url":"https://my-org.opsgenie.com/service/123e4567-e89b-12d3-a456-426614174000","region":"US"}},"extensions":{"myorgextension":"extensionvalue"}}}}]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/services/definitions/service-testcreateorupdateservicedefinitionusingschemav21returnscreatedresponse1680112296
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - text/html; charset=utf-8
+    status:
+      code: 204
+      message: No Content
+version: 1

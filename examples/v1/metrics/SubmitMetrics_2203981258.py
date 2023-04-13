@@ -24,7 +24,7 @@ body = MetricsPayload(
                 ),
             ],
             tags=[
-                "test:ExampleSubmitdeflatemetricsreturnsPayloadacceptedresponse",
+                "test:ExampleMetric",
             ],
         ),
     ],

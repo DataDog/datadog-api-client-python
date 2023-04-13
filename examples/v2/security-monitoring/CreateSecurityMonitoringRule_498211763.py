@@ -24,7 +24,7 @@ from datadog_api_client.v2.model.security_monitoring_standard_rule_create_payloa
 from datadog_api_client.v2.model.security_monitoring_standard_rule_query import SecurityMonitoringStandardRuleQuery
 
 body = SecurityMonitoringStandardRuleCreatePayload(
-    name="Example-Create_a_detection_rule_with_type_workload_security_returns_OK_response",
+    name="Example-Security-Monitoring",
     queries=[
         SecurityMonitoringStandardRuleQuery(
             query="@test:true",

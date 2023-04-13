@@ -13,7 +13,7 @@ from datadog_api_client.v2.model.opsgenie_service_type import OpsgenieServiceTyp
 body = OpsgenieServiceCreateRequest(
     data=OpsgenieServiceCreateData(
         attributes=OpsgenieServiceCreateAttributes(
-            name="Example-Create_a_new_service_object_returns_CREATED_response",
+            name="Example-Opsgenie-Integration",
             opsgenie_api_key="00000000-0000-0000-0000-000000000000",
             region=OpsgenieServiceRegionType.US,
         ),

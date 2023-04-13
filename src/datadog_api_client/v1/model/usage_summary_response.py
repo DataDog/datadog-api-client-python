@@ -66,6 +66,7 @@ class UsageSummaryResponse(ModelNormal):
             "end_date": (datetime,),
             "fargate_tasks_count_avg_sum": (int,),
             "fargate_tasks_count_hwm_sum": (int,),
+            "forwarding_events_bytes_agg_sum": (int,),
             "gcp_host_top99p_sum": (int,),
             "heroku_host_top99p_sum": (int,),
             "incident_management_monthly_active_users_hwm_sum": (int,),
@@ -110,6 +111,7 @@ class UsageSummaryResponse(ModelNormal):
             "synthetics_parallel_testing_max_slots_hwm_sum": (int,),
             "trace_search_indexed_events_count_agg_sum": (int,),
             "twol_ingested_events_bytes_agg_sum": (int,),
+            "universal_service_monitoring_host_top99p_sum": (int,),
             "usage": ([UsageSummaryDate],),
             "vsphere_host_top99p_sum": (int,),
         }
@@ -155,6 +157,7 @@ class UsageSummaryResponse(ModelNormal):
         "end_date": "end_date",
         "fargate_tasks_count_avg_sum": "fargate_tasks_count_avg_sum",
         "fargate_tasks_count_hwm_sum": "fargate_tasks_count_hwm_sum",
+        "forwarding_events_bytes_agg_sum": "forwarding_events_bytes_agg_sum",
         "gcp_host_top99p_sum": "gcp_host_top99p_sum",
         "heroku_host_top99p_sum": "heroku_host_top99p_sum",
         "incident_management_monthly_active_users_hwm_sum": "incident_management_monthly_active_users_hwm_sum",
@@ -199,6 +202,7 @@ class UsageSummaryResponse(ModelNormal):
         "synthetics_parallel_testing_max_slots_hwm_sum": "synthetics_parallel_testing_max_slots_hwm_sum",
         "trace_search_indexed_events_count_agg_sum": "trace_search_indexed_events_count_agg_sum",
         "twol_ingested_events_bytes_agg_sum": "twol_ingested_events_bytes_agg_sum",
+        "universal_service_monitoring_host_top99p_sum": "universal_service_monitoring_host_top99p_sum",
         "usage": "usage",
         "vsphere_host_top99p_sum": "vsphere_host_top99p_sum",
     }
@@ -245,6 +249,7 @@ class UsageSummaryResponse(ModelNormal):
         end_date: Union[datetime, UnsetType] = unset,
         fargate_tasks_count_avg_sum: Union[int, UnsetType] = unset,
         fargate_tasks_count_hwm_sum: Union[int, UnsetType] = unset,
+        forwarding_events_bytes_agg_sum: Union[int, UnsetType] = unset,
         gcp_host_top99p_sum: Union[int, UnsetType] = unset,
         heroku_host_top99p_sum: Union[int, UnsetType] = unset,
         incident_management_monthly_active_users_hwm_sum: Union[int, UnsetType] = unset,
@@ -289,6 +294,7 @@ class UsageSummaryResponse(ModelNormal):
         synthetics_parallel_testing_max_slots_hwm_sum: Union[int, UnsetType] = unset,
         trace_search_indexed_events_count_agg_sum: Union[int, UnsetType] = unset,
         twol_ingested_events_bytes_agg_sum: Union[int, UnsetType] = unset,
+        universal_service_monitoring_host_top99p_sum: Union[int, UnsetType] = unset,
         usage: Union[List[UsageSummaryDate], UnsetType] = unset,
         vsphere_host_top99p_sum: Union[int, UnsetType] = unset,
         **kwargs,
@@ -311,7 +317,7 @@ class UsageSummaryResponse(ModelNormal):
         :param appsec_fargate_count_avg_sum: Shows the average of all Application Security Monitoring ECS Fargate tasks over all hours in the current months for all organizations.
         :type appsec_fargate_count_avg_sum: int, optional
 
-        :param audit_logs_lines_indexed_agg_sum: Shows the sum of all audit logs lines indexed over all hours in the current months for all organizations.
+        :param audit_logs_lines_indexed_agg_sum: Shows the sum of all audit logs lines indexed over all hours in the current months for all organizations. **Deprecated**.
         :type audit_logs_lines_indexed_agg_sum: int, optional
 
         :param audit_trail_enabled_hwm_sum: Shows the total number of organizations that had Audit Trail enabled over a specific number of months.
@@ -415,6 +421,9 @@ class UsageSummaryResponse(ModelNormal):
 
         :param fargate_tasks_count_hwm_sum: Shows the sum of the high-water marks of all Fargate tasks over all hours in the current months for all organizations.
         :type fargate_tasks_count_hwm_sum: int, optional
+
+        :param forwarding_events_bytes_agg_sum: Shows the sum of all logs forwarding bytes over all hours in the current months for all organizations (data available as of April 1, 2023)
+        :type forwarding_events_bytes_agg_sum: int, optional
 
         :param gcp_host_top99p_sum: Shows the 99th percentile of all GCP hosts over all hours in the current months for all organizations.
         :type gcp_host_top99p_sum: int, optional
@@ -548,6 +557,9 @@ class UsageSummaryResponse(ModelNormal):
         :param twol_ingested_events_bytes_agg_sum: Shows the sum of all ingested APM span bytes over all hours in the current months for all organizations.
         :type twol_ingested_events_bytes_agg_sum: int, optional
 
+        :param universal_service_monitoring_host_top99p_sum: Shows the 99th percentile of all Universal Service Monitoring hosts over all hours in the current months for all organizations.
+        :type universal_service_monitoring_host_top99p_sum: int, optional
+
         :param usage: An array of objects regarding hourly usage.
         :type usage: [UsageSummaryDate], optional
 
@@ -634,6 +646,8 @@ class UsageSummaryResponse(ModelNormal):
             kwargs["fargate_tasks_count_avg_sum"] = fargate_tasks_count_avg_sum
         if fargate_tasks_count_hwm_sum is not unset:
             kwargs["fargate_tasks_count_hwm_sum"] = fargate_tasks_count_hwm_sum
+        if forwarding_events_bytes_agg_sum is not unset:
+            kwargs["forwarding_events_bytes_agg_sum"] = forwarding_events_bytes_agg_sum
         if gcp_host_top99p_sum is not unset:
             kwargs["gcp_host_top99p_sum"] = gcp_host_top99p_sum
         if heroku_host_top99p_sum is not unset:
@@ -724,6 +738,8 @@ class UsageSummaryResponse(ModelNormal):
             kwargs["trace_search_indexed_events_count_agg_sum"] = trace_search_indexed_events_count_agg_sum
         if twol_ingested_events_bytes_agg_sum is not unset:
             kwargs["twol_ingested_events_bytes_agg_sum"] = twol_ingested_events_bytes_agg_sum
+        if universal_service_monitoring_host_top99p_sum is not unset:
+            kwargs["universal_service_monitoring_host_top99p_sum"] = universal_service_monitoring_host_top99p_sum
         if usage is not unset:
             kwargs["usage"] = usage
         if vsphere_host_top99p_sum is not unset:

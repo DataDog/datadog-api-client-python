@@ -27,7 +27,7 @@ body = SensitiveDataScannerRuleCreateRequest(
     data=SensitiveDataScannerRuleCreate(
         type=SensitiveDataScannerRuleType.SENSITIVE_DATA_SCANNER_RULE,
         attributes=SensitiveDataScannerRuleAttributes(
-            name="Example-Create_Scanning_Rule_returns_OK_response",
+            name="Example-Sensitive-Data-Scanner",
             pattern="pattern",
             namespaces=[
                 "admin",

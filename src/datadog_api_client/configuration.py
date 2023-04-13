@@ -427,6 +427,7 @@ class Configuration:
                             "datadoghq.com",
                             "us3.datadoghq.com",
                             "us5.datadoghq.com",
+                            "ap1.datadoghq.com",
                             "datadoghq.eu",
                             "ddog-gov.com",
                         ],

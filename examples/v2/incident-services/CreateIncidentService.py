@@ -13,7 +13,7 @@ body = IncidentServiceCreateRequest(
     data=IncidentServiceCreateData(
         type=IncidentServiceType.SERVICES,
         attributes=IncidentServiceCreateAttributes(
-            name="Example-Create_a_new_incident_service_returns_CREATED_response",
+            name="Example-Incident-Service",
         ),
     ),
 )

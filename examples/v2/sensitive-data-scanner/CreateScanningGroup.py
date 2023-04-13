@@ -30,7 +30,7 @@ body = SensitiveDataScannerGroupCreateRequest(
     data=SensitiveDataScannerGroupCreate(
         type=SensitiveDataScannerGroupType.SENSITIVE_DATA_SCANNER_GROUP,
         attributes=SensitiveDataScannerGroupAttributes(
-            name="Example-Create_Scanning_Group_returns_OK_response",
+            name="Example-Sensitive-Data-Scanner",
             is_enabled=False,
             product_list=[
                 SensitiveDataScannerProduct.LOGS,

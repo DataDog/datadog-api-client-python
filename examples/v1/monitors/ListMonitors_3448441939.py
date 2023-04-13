@@ -9,7 +9,7 @@ configuration = Configuration()
 with ApiClient(configuration) as api_client:
     api_instance = MonitorsApi(api_client)
     response = api_instance.list_monitors(
-        tags="test:examplegetallmonitordetailswithtags",
+        tags="test:examplemonitor",
         page_size=1,
     )
 

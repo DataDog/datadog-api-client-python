@@ -59,6 +59,18 @@ class ServiceDefinitionSchema(ModelComposed):
 
         :param team: Team that owns the service.
         :type team: str, optional
+
+        :param application: Identifier for a group of related services serving a product feature, which the service is a part of.
+        :type application: str, optional
+
+        :param description: A short description of the service.
+        :type description: str, optional
+
+        :param lifecycle: The current life cycle phase of the service.
+        :type lifecycle: str, optional
+
+        :param tier: Importance of the service.
+        :type tier: str, optional
         """
         super().__init__(kwargs)
 
@@ -73,10 +85,12 @@ class ServiceDefinitionSchema(ModelComposed):
         # loading
         from datadog_api_client.v2.model.service_definition_v1 import ServiceDefinitionV1
         from datadog_api_client.v2.model.service_definition_v2 import ServiceDefinitionV2
+        from datadog_api_client.v2.model.service_definition_v2_dot1 import ServiceDefinitionV2Dot1
 
         return {
             "oneOf": [
                 ServiceDefinitionV1,
                 ServiceDefinitionV2,
+                ServiceDefinitionV2Dot1,
             ],
         }
