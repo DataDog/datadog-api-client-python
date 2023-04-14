@@ -27042,8 +27042,8 @@ paths:
       x-codegen-request-body-name: body
   /api/v1/synthetics/tests/browser/{public_id}/results:
     get:
-      description: Get the last 50 test results summaries for a given Synthetics Browser
-        test.
+      description: Get the last 150 test results summaries for a given Synthetics
+        Browser test.
       operationId: GetBrowserTestLatestResults
       parameters:
       - description: 'The public ID of the browser test for which to search results
@@ -27326,8 +27326,8 @@ paths:
       - Synthetics
   /api/v1/synthetics/tests/{public_id}/results:
     get:
-      description: Get the last 50 test results summaries for a given Synthetics API
-        test.
+      description: Get the last 150 test results summaries for a given Synthetics
+        API test.
       operationId: GetAPITestLatestResults
       parameters:
       - description: The public ID of the test for which to search results for.
