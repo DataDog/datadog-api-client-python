@@ -12,6 +12,8 @@ SPANS_METRIC_DATA_ID = environ["SPANS_METRIC_DATA_ID"]
 configuration = Configuration()
 with ApiClient(configuration) as api_client:
     api_instance = SpansMetricsApi(api_client)
-    api_instance.delete_spans_metric(
+    response = api_instance.delete_spans_metric(
         metric_id=SPANS_METRIC_DATA_ID,
     )
+
+    print(response)

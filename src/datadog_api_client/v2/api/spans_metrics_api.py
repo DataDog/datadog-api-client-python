@@ -46,7 +46,7 @@ class SpansMetricsApi:
 
         self._delete_spans_metric_endpoint = _Endpoint(
             settings={
-                "response_type": None,
+                "response_type": (dict,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/apm/config/metrics/{metric_id}",
                 "operation_id": "delete_spans_metric",
@@ -63,7 +63,7 @@ class SpansMetricsApi:
                 },
             },
             headers_map={
-                "accept": ["*/*"],
+                "accept": ["application/json"],
                 "content_type": [],
             },
             api_client=api_client,
@@ -160,14 +160,14 @@ class SpansMetricsApi:
     def delete_spans_metric(
         self,
         metric_id: str,
-    ) -> None:
+    ) -> dict:
         """Delete a span-based metric.
 
         Delete a specific span-based metric from your organization.
 
         :param metric_id: The name of the span-based metric.
         :type metric_id: str
-        :rtype: None
+        :rtype: dict
         """
         kwargs: Dict[str, Any] = {}
         kwargs["metric_id"] = metric_id

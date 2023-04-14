@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"compute":{"aggregation_type":"distribution","include_percentiles":false,"path":"@duration"},"filter":{"query":"source:Test-Delete_a_span_based_metric_returns_OK_response-1680015325"},"group_by":[{"path":"resource_name","tag_name":"resource_name"}]},"id":"Test-Delete_a_span_based_metric_returns_OK_response-1680015325","type":"spans_metrics"}}'
+    body: '{"data":{"attributes":{"compute":{"aggregation_type":"distribution","include_percentiles":false,"path":"@duration"},"filter":{"query":"source:Test-Delete_a_span_based_metric_returns_OK_response-1681502130"},"group_by":[{"path":"resource_name","tag_name":"resource_name"}]},"id":"Test-Delete_a_span_based_metric_returns_OK_response-1681502130","type":"spans_metrics"}}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/apm/config/metrics
   response:
     body:
-      string: '{"data":{"id":"Test_Delete_a_span_based_metric_returns_OK_response_1680015325","attributes":{"filter":{"query":"source:Test-Delete_a_span_based_metric_returns_OK_response-1680015325"},"group_by":[{"path":"resource_name","tag_name":"resource_name"}],"compute":{"aggregation_type":"distribution","path":"@duration","include_percentiles":false}},"type":"spans_metrics"}}
+      string: '{"data":{"id":"Test_Delete_a_span_based_metric_returns_OK_response_1681502130","attributes":{"filter":{"query":"source:Test-Delete_a_span_based_metric_returns_OK_response-1681502130"},"group_by":[{"path":"resource_name","tag_name":"resource_name"}],"compute":{"aggregation_type":"distribution","path":"@duration","include_percentiles":false}},"type":"spans_metrics"}}
 
         '
     headers:
@@ -23,9 +23,9 @@ interactions:
     body: null
     headers:
       accept:
-      - '*/*'
+      - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/apm/config/metrics/Test_Delete_a_span_based_metric_returns_OK_response_1680015325
+    uri: https://api.datadoghq.com/api/v2/apm/config/metrics/Test_Delete_a_span_based_metric_returns_OK_response_1681502130
   response:
     body:
       string: '{}
@@ -41,12 +41,12 @@ interactions:
     body: null
     headers:
       accept:
-      - '*/*'
+      - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/apm/config/metrics/Test_Delete_a_span_based_metric_returns_OK_response_1680015325
+    uri: https://api.datadoghq.com/api/v2/apm/config/metrics/Test_Delete_a_span_based_metric_returns_OK_response_1681502130
   response:
     body:
-      string: '{"errors":["not_found(Metric with name ''Test_Delete_a_span_based_metric_returns_OK_response_1680015325''
+      string: '{"errors":["not_found(Metric with name ''Test_Delete_a_span_based_metric_returns_OK_response_1681502130''
         not found)"]}
 
         '
