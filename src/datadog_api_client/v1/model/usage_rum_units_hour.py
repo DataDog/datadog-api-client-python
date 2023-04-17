@@ -18,8 +18,8 @@ class UsageRumUnitsHour(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
-            "browser_rum_units": (int,),
-            "mobile_rum_units": (int,),
+            "browser_rum_units": (int, none_type),
+            "mobile_rum_units": (int, none_type),
             "org_name": (str,),
             "public_id": (str,),
             "rum_units": (int, none_type),
@@ -35,8 +35,8 @@ class UsageRumUnitsHour(ModelNormal):
 
     def __init__(
         self_,
-        browser_rum_units: Union[int, UnsetType] = unset,
-        mobile_rum_units: Union[int, UnsetType] = unset,
+        browser_rum_units: Union[int, none_type, UnsetType] = unset,
+        mobile_rum_units: Union[int, none_type, UnsetType] = unset,
         org_name: Union[str, UnsetType] = unset,
         public_id: Union[str, UnsetType] = unset,
         rum_units: Union[int, none_type, UnsetType] = unset,
@@ -46,10 +46,10 @@ class UsageRumUnitsHour(ModelNormal):
         Number of RUM Units used for each hour for a given organization (data available as of November 1, 2021).
 
         :param browser_rum_units: The number of browser RUM units.
-        :type browser_rum_units: int, optional
+        :type browser_rum_units: int, none_type, optional
 
         :param mobile_rum_units: The number of mobile RUM units.
-        :type mobile_rum_units: int, optional
+        :type mobile_rum_units: int, none_type, optional
 
         :param org_name: The organization name.
         :type org_name: str, optional

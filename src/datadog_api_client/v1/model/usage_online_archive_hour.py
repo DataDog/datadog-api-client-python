@@ -9,6 +9,7 @@ from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     datetime,
+    none_type,
     unset,
     UnsetType,
 )
@@ -19,7 +20,7 @@ class UsageOnlineArchiveHour(ModelNormal):
     def openapi_types(_):
         return {
             "hour": (datetime,),
-            "online_archive_events_count": (int,),
+            "online_archive_events_count": (int, none_type),
             "org_name": (str,),
             "public_id": (str,),
         }
@@ -34,7 +35,7 @@ class UsageOnlineArchiveHour(ModelNormal):
     def __init__(
         self_,
         hour: Union[datetime, UnsetType] = unset,
-        online_archive_events_count: Union[int, UnsetType] = unset,
+        online_archive_events_count: Union[int, none_type, UnsetType] = unset,
         org_name: Union[str, UnsetType] = unset,
         public_id: Union[str, UnsetType] = unset,
         **kwargs,
@@ -46,7 +47,7 @@ class UsageOnlineArchiveHour(ModelNormal):
         :type hour: datetime, optional
 
         :param online_archive_events_count: Total count of online archived events within the hour.
-        :type online_archive_events_count: int, optional
+        :type online_archive_events_count: int, none_type, optional
 
         :param org_name: The organization name.
         :type org_name: str, optional

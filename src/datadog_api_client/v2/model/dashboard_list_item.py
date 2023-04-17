@@ -9,6 +9,7 @@ from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     datetime,
+    none_type,
     unset,
     UnsetType,
 )
@@ -34,7 +35,7 @@ class DashboardListItem(ModelNormal):
         return {
             "author": (Creator,),
             "created": (datetime,),
-            "icon": (str,),
+            "icon": (str, none_type),
             "id": (str,),
             "is_favorite": (bool,),
             "is_read_only": (bool,),
@@ -78,7 +79,7 @@ class DashboardListItem(ModelNormal):
         type: DashboardType,
         author: Union[Creator, UnsetType] = unset,
         created: Union[datetime, UnsetType] = unset,
-        icon: Union[str, UnsetType] = unset,
+        icon: Union[str, none_type, UnsetType] = unset,
         is_favorite: Union[bool, UnsetType] = unset,
         is_read_only: Union[bool, UnsetType] = unset,
         is_shared: Union[bool, UnsetType] = unset,
@@ -98,7 +99,7 @@ class DashboardListItem(ModelNormal):
         :type created: datetime, optional
 
         :param icon: URL to the icon of the dashboard.
-        :type icon: str, optional
+        :type icon: str, none_type, optional
 
         :param id: ID of the dashboard.
         :type id: str

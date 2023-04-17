@@ -11,7 +11,7 @@ Feature: Monitors
     And a valid "appKeyAuth" key in the system
     And an instance of "Monitors" API
 
-  @team:DataDog/monitor-app
+  @skip-validation @team:DataDog/monitor-app
   Scenario: Create a monitor configuration policy returns "Bad Request" response
     Given new "CreateMonitorConfigPolicy" request
     And body with value {"data": {"attributes": {"policy_type": "INVALID", "policy": {"tag_key": "datacenter", "tag_key_required": true, "valid_tag_values": ["prod", "staging"]}}, "type": "monitor-config-policy"}}

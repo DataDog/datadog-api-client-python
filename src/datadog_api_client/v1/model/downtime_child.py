@@ -44,7 +44,7 @@ class DowntimeChild(ModelNormal):
             "downtime_type": (int,),
             "end": (int, none_type),
             "id": (int,),
-            "message": (str,),
+            "message": (str, none_type),
             "monitor_id": (int, none_type),
             "monitor_tags": ([str],),
             "mute_first_recovery_notification": (bool,),
@@ -93,7 +93,7 @@ class DowntimeChild(ModelNormal):
         downtime_type: Union[int, UnsetType] = unset,
         end: Union[int, none_type, UnsetType] = unset,
         id: Union[int, UnsetType] = unset,
-        message: Union[str, UnsetType] = unset,
+        message: Union[str, none_type, UnsetType] = unset,
         monitor_id: Union[int, none_type, UnsetType] = unset,
         monitor_tags: Union[List[str], UnsetType] = unset,
         mute_first_recovery_notification: Union[bool, UnsetType] = unset,
@@ -135,7 +135,7 @@ class DowntimeChild(ModelNormal):
 
         :param message: A message to include with notifications for this downtime.
             Email notifications can be sent to specific users by using the same ``@username`` notation as events.
-        :type message: str, optional
+        :type message: str, none_type, optional
 
         :param monitor_id: A single monitor to which the downtime applies.
             If not provided, the downtime applies to all monitors.

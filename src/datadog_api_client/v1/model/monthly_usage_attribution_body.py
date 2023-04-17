@@ -9,6 +9,7 @@ from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     datetime,
+    none_type,
     unset,
     UnsetType,
 )
@@ -54,7 +55,7 @@ class MonthlyUsageAttributionBody(ModelNormal):
         public_id: Union[str, UnsetType] = unset,
         region: Union[str, UnsetType] = unset,
         tag_config_source: Union[str, UnsetType] = unset,
-        tags: Union[UsageAttributionTagNames, UnsetType] = unset,
+        tags: Union[UsageAttributionTagNames, none_type, UnsetType] = unset,
         updated_at: Union[datetime, UnsetType] = unset,
         values: Union[MonthlyUsageAttributionValues, UnsetType] = unset,
         **kwargs,
@@ -82,7 +83,7 @@ class MonthlyUsageAttributionBody(ModelNormal):
             A ``null`` value here means that the requested tag breakdown cannot be applied because it does not match the `tags
             configured for usage attribution <https://docs.datadoghq.com/account_management/billing/usage_attribution/#getting-started>`_.
             In this scenario the API returns the total usage, not broken down by tags.
-        :type tags: UsageAttributionTagNames, optional
+        :type tags: UsageAttributionTagNames, none_type, optional
 
         :param updated_at: Datetime of the most recent update to the usage values.
         :type updated_at: datetime, optional

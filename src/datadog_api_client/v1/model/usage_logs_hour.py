@@ -9,6 +9,7 @@ from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     datetime,
+    none_type,
     unset,
     UnsetType,
 )
@@ -18,15 +19,15 @@ class UsageLogsHour(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
-            "billable_ingested_bytes": (int,),
+            "billable_ingested_bytes": (int, none_type),
             "hour": (datetime,),
-            "indexed_events_count": (int,),
-            "ingested_events_bytes": (int,),
-            "logs_forwarding_events_bytes": (int,),
-            "logs_live_indexed_count": (int,),
-            "logs_live_ingested_bytes": (int,),
-            "logs_rehydrated_indexed_count": (int,),
-            "logs_rehydrated_ingested_bytes": (int,),
+            "indexed_events_count": (int, none_type),
+            "ingested_events_bytes": (int, none_type),
+            "logs_forwarding_events_bytes": (int, none_type),
+            "logs_live_indexed_count": (int, none_type),
+            "logs_live_ingested_bytes": (int, none_type),
+            "logs_rehydrated_indexed_count": (int, none_type),
+            "logs_rehydrated_ingested_bytes": (int, none_type),
             "org_name": (str,),
             "public_id": (str,),
         }
@@ -47,15 +48,15 @@ class UsageLogsHour(ModelNormal):
 
     def __init__(
         self_,
-        billable_ingested_bytes: Union[int, UnsetType] = unset,
+        billable_ingested_bytes: Union[int, none_type, UnsetType] = unset,
         hour: Union[datetime, UnsetType] = unset,
-        indexed_events_count: Union[int, UnsetType] = unset,
-        ingested_events_bytes: Union[int, UnsetType] = unset,
-        logs_forwarding_events_bytes: Union[int, UnsetType] = unset,
-        logs_live_indexed_count: Union[int, UnsetType] = unset,
-        logs_live_ingested_bytes: Union[int, UnsetType] = unset,
-        logs_rehydrated_indexed_count: Union[int, UnsetType] = unset,
-        logs_rehydrated_ingested_bytes: Union[int, UnsetType] = unset,
+        indexed_events_count: Union[int, none_type, UnsetType] = unset,
+        ingested_events_bytes: Union[int, none_type, UnsetType] = unset,
+        logs_forwarding_events_bytes: Union[int, none_type, UnsetType] = unset,
+        logs_live_indexed_count: Union[int, none_type, UnsetType] = unset,
+        logs_live_ingested_bytes: Union[int, none_type, UnsetType] = unset,
+        logs_rehydrated_indexed_count: Union[int, none_type, UnsetType] = unset,
+        logs_rehydrated_ingested_bytes: Union[int, none_type, UnsetType] = unset,
         org_name: Union[str, UnsetType] = unset,
         public_id: Union[str, UnsetType] = unset,
         **kwargs,
@@ -64,31 +65,31 @@ class UsageLogsHour(ModelNormal):
         Hour usage for logs.
 
         :param billable_ingested_bytes: Contains the number of billable log bytes ingested.
-        :type billable_ingested_bytes: int, optional
+        :type billable_ingested_bytes: int, none_type, optional
 
         :param hour: The hour for the usage.
         :type hour: datetime, optional
 
         :param indexed_events_count: Contains the number of log events indexed.
-        :type indexed_events_count: int, optional
+        :type indexed_events_count: int, none_type, optional
 
         :param ingested_events_bytes: Contains the number of log bytes ingested.
-        :type ingested_events_bytes: int, optional
+        :type ingested_events_bytes: int, none_type, optional
 
         :param logs_forwarding_events_bytes: Contains the number of logs forwarded bytes (data available as of April 1st 2023)
-        :type logs_forwarding_events_bytes: int, optional
+        :type logs_forwarding_events_bytes: int, none_type, optional
 
         :param logs_live_indexed_count: Contains the number of live log events indexed (data available as of December 1, 2020).
-        :type logs_live_indexed_count: int, optional
+        :type logs_live_indexed_count: int, none_type, optional
 
         :param logs_live_ingested_bytes: Contains the number of live log bytes ingested (data available as of December 1, 2020).
-        :type logs_live_ingested_bytes: int, optional
+        :type logs_live_ingested_bytes: int, none_type, optional
 
         :param logs_rehydrated_indexed_count: Contains the number of rehydrated log events indexed (data available as of December 1, 2020).
-        :type logs_rehydrated_indexed_count: int, optional
+        :type logs_rehydrated_indexed_count: int, none_type, optional
 
         :param logs_rehydrated_ingested_bytes: Contains the number of rehydrated log bytes ingested (data available as of December 1, 2020).
-        :type logs_rehydrated_ingested_bytes: int, optional
+        :type logs_rehydrated_ingested_bytes: int, none_type, optional
 
         :param org_name: The organization name.
         :type org_name: str, optional

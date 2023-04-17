@@ -55,7 +55,7 @@ Feature: Logs
     When the request is sent
     Then the response status is 200 OK
 
-  @replay-only @team:DataDog/logs-app @with-pagination
+  @replay-only @skip-validation @team:DataDog/logs-app @with-pagination
   Scenario: Get a list of logs returns "OK" response with pagination
     Given a valid "appKeyAuth" key in the system
     And new "ListLogsGet" request
@@ -94,7 +94,7 @@ Feature: Logs
     Then the response status is 200 OK
     And the response "data" has length 0
 
-  @replay-only @team:DataDog/logs-app @with-pagination
+  @replay-only @skip-validation @team:DataDog/logs-app @with-pagination
   Scenario: Search logs returns "OK" response with pagination
     Given a valid "appKeyAuth" key in the system
     And new "ListLogs" request
