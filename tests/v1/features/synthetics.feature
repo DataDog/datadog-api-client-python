@@ -15,7 +15,7 @@ Feature: Synthetics
     And a valid "appKeyAuth" key in the system
     And an instance of "Synthetics" API
 
-  @replay-only @team:DataDog/synthetics-app
+  @replay-only @skip-validation @team:DataDog/synthetics-app
   Scenario: Client is resilient to enum and oneOf deserialization errors
     Given new "ListTests" request
     When the request is sent

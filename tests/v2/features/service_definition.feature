@@ -106,7 +106,7 @@ Feature: Service Definition
     Then the response status is 200 OK
     And the response "data[0].attributes.meta.ingestion-source" is equal to "api"
 
-  @replay-only @team:DataDog/service-catalog @with-pagination
+  @replay-only @skip-validation @team:DataDog/service-catalog @with-pagination
   Scenario: Get all service definitions returns "OK" response with pagination
     Given new "ListServiceDefinitions" request
     And request contains "page[size]" parameter with value 2

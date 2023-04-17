@@ -20,7 +20,7 @@ class UsageTopAvgMetricsPagination(ModelNormal):
         return {
             "limit": (int,),
             "next_record_id": (str, none_type),
-            "total_number_of_records": (int,),
+            "total_number_of_records": (int, none_type),
         }
 
     attribute_map = {
@@ -33,7 +33,7 @@ class UsageTopAvgMetricsPagination(ModelNormal):
         self_,
         limit: Union[int, UnsetType] = unset,
         next_record_id: Union[str, none_type, UnsetType] = unset,
-        total_number_of_records: Union[int, UnsetType] = unset,
+        total_number_of_records: Union[int, none_type, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -46,7 +46,7 @@ class UsageTopAvgMetricsPagination(ModelNormal):
         :type next_record_id: str, none_type, optional
 
         :param total_number_of_records: Total number of records.
-        :type total_number_of_records: int, optional
+        :type total_number_of_records: int, none_type, optional
         """
         if limit is not unset:
             kwargs["limit"] = limit

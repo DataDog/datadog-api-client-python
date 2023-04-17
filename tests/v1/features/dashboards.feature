@@ -572,7 +572,7 @@ Feature: Dashboards
     And the response "template_variables[0].available_values[0]" is equal to "my-host"
     And the response "template_variables[0].defaults[0]" is equal to "my-host"
 
-  @team:DataDog/dashboards
+  @skip-validation @team:DataDog/dashboards
   Scenario: Create a new dashboard with template variable defaults whose value has no length returns "Bad Request" response
     Given new "CreateDashboard" request
     And body with value {"description": null, "is_read_only": false, "layout_type": "ordered", "notify_list": [], "reflow_type": "auto", "restricted_roles": [], "template_variables": [{"available_values": ["my-host", "host1", "host2"], "defaults": [""], "name": "host1", "prefix": "host"}], "title": "", "widgets": [{"definition": {"requests": {"fill": {"q": "avg:system.cpu.user{*}"}}, "type": "hostmap"}}]}

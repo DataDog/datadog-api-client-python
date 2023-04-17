@@ -332,7 +332,7 @@ Feature: Incidents
     Then the response status is 200 OK
     And the response "data[0].type" is equal to "incidents"
 
-  @replay-only @team:DataDog/incident-app @with-pagination
+  @replay-only @skip-validation @team:DataDog/incident-app @with-pagination
   Scenario: Get a list of incidents returns "OK" response with pagination
     Given operation "ListIncidents" enabled
     And new "ListIncidents" request
@@ -468,7 +468,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/incident-app
+  @skip-validation @team:DataDog/incident-app
   Scenario: Search for incidents returns "OK" response
     Given operation "SearchIncidents" enabled
     And there is a valid "incident" in the system
@@ -479,7 +479,7 @@ Feature: Incidents
     And the response "data.type" is equal to "incidents_search_results"
     And the response "data.attributes.incidents[0].data.type" is equal to "incidents"
 
-  @replay-only @team:DataDog/incident-app @with-pagination
+  @replay-only @skip-validation @team:DataDog/incident-app @with-pagination
   Scenario: Search for incidents returns "OK" response with pagination
     Given operation "SearchIncidents" enabled
     And new "SearchIncidents" request

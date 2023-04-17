@@ -8,6 +8,7 @@ from typing import List, Union, TYPE_CHECKING
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    none_type,
     unset,
     UnsetType,
 )
@@ -24,7 +25,7 @@ class LogsListResponse(ModelNormal):
 
         return {
             "logs": ([Log],),
-            "next_log_id": (str,),
+            "next_log_id": (str, none_type),
             "status": (str,),
         }
 
@@ -37,7 +38,7 @@ class LogsListResponse(ModelNormal):
     def __init__(
         self_,
         logs: Union[List[Log], UnsetType] = unset,
-        next_log_id: Union[str, UnsetType] = unset,
+        next_log_id: Union[str, none_type, UnsetType] = unset,
         status: Union[str, UnsetType] = unset,
         **kwargs,
     ):
@@ -49,7 +50,7 @@ class LogsListResponse(ModelNormal):
 
         :param next_log_id: Hash identifier of the next log to return in the list.
             This parameter is used for the pagination feature.
-        :type next_log_id: str, optional
+        :type next_log_id: str, none_type, optional
 
         :param status: Status of the response.
         :type status: str, optional

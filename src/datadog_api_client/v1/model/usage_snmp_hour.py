@@ -9,6 +9,7 @@ from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     datetime,
+    none_type,
     unset,
     UnsetType,
 )
@@ -21,7 +22,7 @@ class UsageSNMPHour(ModelNormal):
             "hour": (datetime,),
             "org_name": (str,),
             "public_id": (str,),
-            "snmp_devices": (int,),
+            "snmp_devices": (int, none_type),
         }
 
     attribute_map = {
@@ -36,7 +37,7 @@ class UsageSNMPHour(ModelNormal):
         hour: Union[datetime, UnsetType] = unset,
         org_name: Union[str, UnsetType] = unset,
         public_id: Union[str, UnsetType] = unset,
-        snmp_devices: Union[int, UnsetType] = unset,
+        snmp_devices: Union[int, none_type, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -52,7 +53,7 @@ class UsageSNMPHour(ModelNormal):
         :type public_id: str, optional
 
         :param snmp_devices: Contains the number of SNMP devices.
-        :type snmp_devices: int, optional
+        :type snmp_devices: int, none_type, optional
         """
         if hour is not unset:
             kwargs["hour"] = hour

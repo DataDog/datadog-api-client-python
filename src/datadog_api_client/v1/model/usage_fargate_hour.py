@@ -9,6 +9,7 @@ from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     datetime,
+    none_type,
     unset,
     UnsetType,
 )
@@ -18,13 +19,13 @@ class UsageFargateHour(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
-            "apm_fargate_count": (int,),
-            "appsec_fargate_count": (int,),
-            "avg_profiled_fargate_tasks": (int,),
+            "apm_fargate_count": (int, none_type),
+            "appsec_fargate_count": (int, none_type),
+            "avg_profiled_fargate_tasks": (int, none_type),
             "hour": (datetime,),
             "org_name": (str,),
             "public_id": (str,),
-            "tasks_count": (int,),
+            "tasks_count": (int, none_type),
         }
 
     attribute_map = {
@@ -39,26 +40,26 @@ class UsageFargateHour(ModelNormal):
 
     def __init__(
         self_,
-        apm_fargate_count: Union[int, UnsetType] = unset,
-        appsec_fargate_count: Union[int, UnsetType] = unset,
-        avg_profiled_fargate_tasks: Union[int, UnsetType] = unset,
+        apm_fargate_count: Union[int, none_type, UnsetType] = unset,
+        appsec_fargate_count: Union[int, none_type, UnsetType] = unset,
+        avg_profiled_fargate_tasks: Union[int, none_type, UnsetType] = unset,
         hour: Union[datetime, UnsetType] = unset,
         org_name: Union[str, UnsetType] = unset,
         public_id: Union[str, UnsetType] = unset,
-        tasks_count: Union[int, UnsetType] = unset,
+        tasks_count: Union[int, none_type, UnsetType] = unset,
         **kwargs,
     ):
         """
         Number of Fargate tasks run and hourly usage.
 
         :param apm_fargate_count: The high-water mark of APM ECS Fargate tasks during the given hour.
-        :type apm_fargate_count: int, optional
+        :type apm_fargate_count: int, none_type, optional
 
         :param appsec_fargate_count: The Application Security Monitoring ECS Fargate tasks during the given hour.
-        :type appsec_fargate_count: int, optional
+        :type appsec_fargate_count: int, none_type, optional
 
         :param avg_profiled_fargate_tasks: The average profiled task count for Fargate Profiling.
-        :type avg_profiled_fargate_tasks: int, optional
+        :type avg_profiled_fargate_tasks: int, none_type, optional
 
         :param hour: The hour for the usage.
         :type hour: datetime, optional
@@ -70,7 +71,7 @@ class UsageFargateHour(ModelNormal):
         :type public_id: str, optional
 
         :param tasks_count: The number of Fargate tasks run.
-        :type tasks_count: int, optional
+        :type tasks_count: int, none_type, optional
         """
         if apm_fargate_count is not unset:
             kwargs["apm_fargate_count"] = apm_fargate_count

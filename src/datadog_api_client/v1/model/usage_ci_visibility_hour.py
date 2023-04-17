@@ -8,6 +8,7 @@ from typing import Union
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    none_type,
     unset,
     UnsetType,
 )
@@ -17,10 +18,10 @@ class UsageCIVisibilityHour(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
-            "ci_pipeline_indexed_spans": (int,),
-            "ci_test_indexed_spans": (int,),
-            "ci_visibility_pipeline_committers": (int,),
-            "ci_visibility_test_committers": (int,),
+            "ci_pipeline_indexed_spans": (int, none_type),
+            "ci_test_indexed_spans": (int, none_type),
+            "ci_visibility_pipeline_committers": (int, none_type),
+            "ci_visibility_test_committers": (int, none_type),
             "org_name": (str,),
             "public_id": (str,),
         }
@@ -36,10 +37,10 @@ class UsageCIVisibilityHour(ModelNormal):
 
     def __init__(
         self_,
-        ci_pipeline_indexed_spans: Union[int, UnsetType] = unset,
-        ci_test_indexed_spans: Union[int, UnsetType] = unset,
-        ci_visibility_pipeline_committers: Union[int, UnsetType] = unset,
-        ci_visibility_test_committers: Union[int, UnsetType] = unset,
+        ci_pipeline_indexed_spans: Union[int, none_type, UnsetType] = unset,
+        ci_test_indexed_spans: Union[int, none_type, UnsetType] = unset,
+        ci_visibility_pipeline_committers: Union[int, none_type, UnsetType] = unset,
+        ci_visibility_test_committers: Union[int, none_type, UnsetType] = unset,
         org_name: Union[str, UnsetType] = unset,
         public_id: Union[str, UnsetType] = unset,
         **kwargs,
@@ -48,16 +49,16 @@ class UsageCIVisibilityHour(ModelNormal):
         CI visibility usage in a given hour.
 
         :param ci_pipeline_indexed_spans: The number of spans for pipelines in the queried hour.
-        :type ci_pipeline_indexed_spans: int, optional
+        :type ci_pipeline_indexed_spans: int, none_type, optional
 
         :param ci_test_indexed_spans: The number of spans for tests in the queried hour.
-        :type ci_test_indexed_spans: int, optional
+        :type ci_test_indexed_spans: int, none_type, optional
 
         :param ci_visibility_pipeline_committers: Shows the total count of all active Git committers for Pipelines in the current month. A committer is active if they commit at least 3 times in a given month.
-        :type ci_visibility_pipeline_committers: int, optional
+        :type ci_visibility_pipeline_committers: int, none_type, optional
 
         :param ci_visibility_test_committers: The total count of all active Git committers for tests in the current month. A committer is active if they commit at least 3 times in a given month.
-        :type ci_visibility_test_committers: int, optional
+        :type ci_visibility_test_committers: int, none_type, optional
 
         :param org_name: The organization name.
         :type org_name: str, optional
