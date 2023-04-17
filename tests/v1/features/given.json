@@ -38,6 +38,34 @@
   {
     "parameters": [
       {
+        "name": "body",
+        "value": "{\n  \"dashboard_id\": \"{{ dashboard.id }}\",\n  \"dashboard_type\": \"custom_timeboard\",\n  \"share_type\": \"invite\",\n  \"share_list\": [\"{{unique_lower_alnum}}@datadoghq.com\"],\n  \"global_time\": {\n    \"live_span\": \"1h\"\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"shared_dashboard\" in the system",
+    "key": "shared_dashboard",
+    "tag": "Dashboards",
+    "operationId": "CreatePublicDashboard"
+  },
+  {
+    "parameters": [
+      {
+        "name": "token",
+        "value": "\"{{ shared_dashboard.token }}\""
+      },
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"email\": \"{{unique_lower_alnum}}@datadoghq.com\"\n    },\n    \"type\": \"public_dashboard_invitation\"\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"public_dashboard_invitation\" in the system",
+    "key": "public_dashboard_invitation",
+    "tag": "Dashboards",
+    "operationId": "SendPublicDashboardInvitation"
+  },
+  {
+    "parameters": [
+      {
         "name": "dashboard_id",
         "source": "dashboard.id"
       }

@@ -379,6 +379,27 @@ dashboard\_delete\_response
    :members:
    :show-inheritance:
 
+dashboard\_global\_time
+-----------------------
+
+.. automodule:: datadog_api_client.v1.model.dashboard_global_time
+   :members:
+   :show-inheritance:
+
+dashboard\_global\_time\_live\_span
+-----------------------------------
+
+.. automodule:: datadog_api_client.v1.model.dashboard_global_time_live_span
+   :members:
+   :show-inheritance:
+
+dashboard\_invite\_type
+-----------------------
+
+.. automodule:: datadog_api_client.v1.model.dashboard_invite_type
+   :members:
+   :show-inheritance:
+
 dashboard\_layout\_type
 -----------------------
 
@@ -428,6 +449,13 @@ dashboard\_restore\_request
    :members:
    :show-inheritance:
 
+dashboard\_share\_type
+----------------------
+
+.. automodule:: datadog_api_client.v1.model.dashboard_share_type
+   :members:
+   :show-inheritance:
+
 dashboard\_summary
 ------------------
 
@@ -460,6 +488,20 @@ dashboard\_template\_variable\_preset\_value
 --------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.dashboard_template_variable_preset_value
+   :members:
+   :show-inheritance:
+
+dashboard\_type
+---------------
+
+.. automodule:: datadog_api_client.v1.model.dashboard_type
+   :members:
+   :show-inheritance:
+
+delete\_shared\_dashboard\_response
+-----------------------------------
+
+.. automodule:: datadog_api_client.v1.model.delete_shared_dashboard_response
    :members:
    :show-inheritance:
 
@@ -2766,6 +2808,13 @@ search\_slo\_timeframe
    :members:
    :show-inheritance:
 
+selectable\_template\_variable\_items
+-------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.selectable_template_variable_items
+   :members:
+   :show-inheritance:
+
 series
 ------
 
@@ -2840,6 +2889,83 @@ service\_summary\_widget\_definition\_type
 ------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.service_summary_widget_definition_type
+   :members:
+   :show-inheritance:
+
+shared\_dashboard
+-----------------
+
+.. automodule:: datadog_api_client.v1.model.shared_dashboard
+   :members:
+   :show-inheritance:
+
+shared\_dashboard\_author
+-------------------------
+
+.. automodule:: datadog_api_client.v1.model.shared_dashboard_author
+   :members:
+   :show-inheritance:
+
+shared\_dashboard\_invites
+--------------------------
+
+.. automodule:: datadog_api_client.v1.model.shared_dashboard_invites
+   :members:
+   :show-inheritance:
+
+shared\_dashboard\_invites\_data
+--------------------------------
+
+.. automodule:: datadog_api_client.v1.model.shared_dashboard_invites_data
+   :members:
+   :show-inheritance:
+
+shared\_dashboard\_invites\_data\_list
+--------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.shared_dashboard_invites_data_list
+   :members:
+   :show-inheritance:
+
+shared\_dashboard\_invites\_data\_object
+----------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.shared_dashboard_invites_data_object
+   :members:
+   :show-inheritance:
+
+shared\_dashboard\_invites\_data\_object\_attributes
+----------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.shared_dashboard_invites_data_object_attributes
+   :members:
+   :show-inheritance:
+
+shared\_dashboard\_invites\_meta
+--------------------------------
+
+.. automodule:: datadog_api_client.v1.model.shared_dashboard_invites_meta
+   :members:
+   :show-inheritance:
+
+shared\_dashboard\_invites\_meta\_page
+--------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.shared_dashboard_invites_meta_page
+   :members:
+   :show-inheritance:
+
+shared\_dashboard\_update\_request
+----------------------------------
+
+.. automodule:: datadog_api_client.v1.model.shared_dashboard_update_request
+   :members:
+   :show-inheritance:
+
+shared\_dashboard\_update\_request\_global\_time
+------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.shared_dashboard_update_request_global_time
    :members:
    :show-inheritance:
 

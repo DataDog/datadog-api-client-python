@@ -165,6 +165,66 @@
       "type": "idempotent"
     }
   },
+  "CreatePublicDashboard": {
+    "tag": "Dashboards",
+    "undo": {
+      "operationId": "DeletePublicDashboard",
+      "parameters": [
+        {
+          "name": "token",
+          "source": "token"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeletePublicDashboard": {
+    "tag": "Dashboards",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetPublicDashboard": {
+    "tag": "Dashboards",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdatePublicDashboard": {
+    "tag": "Dashboards",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DeletePublicDashboardInvitation": {
+    "tag": "Dashboards",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetPublicDashboardInvitations": {
+    "tag": "Dashboards",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "SendPublicDashboardInvitation": {
+    "tag": "Dashboards",
+    "undo": {
+      "operationId": "DeletePublicDashboardInvitation",
+      "parameters": [
+        {
+          "name": "token",
+          "source": "data.attributes.share_token"
+        },
+        {
+          "name": "body",
+          "template": "{\n  \"data\": {\n    \"attributes\": {\n      \"email\": \"{{data.attributes.email}}\"\n    },\n    \"type\": \"public_dashboard_invitation\"\n  }\n}"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
   "DeleteDashboard": {
     "tag": "Dashboards",
     "undo": {
