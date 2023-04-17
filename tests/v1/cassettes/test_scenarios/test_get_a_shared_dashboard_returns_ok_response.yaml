@@ -1,0 +1,98 @@
+interactions:
+- request:
+    body: '{"layout_type":"ordered","title":"Test-Get_a_shared_dashboard_returns_OK_response-1680884023
+      with Profile Metrics Query","widgets":[{"definition":{"requests":[{"profile_metrics_query":{"compute":{"aggregation":"sum","facet":"@prof_core_cpu_cores"},"group_by":[{"facet":"service","limit":10,"sort":{"aggregation":"sum","facet":"@prof_core_cpu_cores","order":"desc"}}],"search":{"query":"runtime:jvm"}}}],"type":"timeseries"}}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/dashboard
+  response:
+    body:
+      string: '{"id":"zrc-p5j-6r5","title":"Test-Get_a_shared_dashboard_returns_OK_response-1680884023
+        with Profile Metrics Query","description":null,"author_handle":"frog@datadoghq.com","author_name":null,"layout_type":"ordered","url":"/dashboard/zrc-p5j-6r5/test-getashareddashboardreturnsokresponse-1680884023-with-profile-metrics-query","is_read_only":false,"template_variables":null,"widgets":[{"definition":{"requests":[{"profile_metrics_query":{"compute":{"aggregation":"sum","facet":"@prof_core_cpu_cores"},"group_by":[{"facet":"service","limit":10,"sort":{"aggregation":"sum","facet":"@prof_core_cpu_cores","order":"desc"}}],"search":{"query":"runtime:jvm"}}}],"type":"timeseries"},"id":1984776941235348}],"notify_list":null,"created_at":"2023-04-07T16:13:43.596459+00:00","modified_at":"2023-04-07T16:13:43.596459+00:00","restricted_roles":[]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"dashboard_id":"zrc-p5j-6r5","dashboard_type":"custom_timeboard","global_time":{"live_span":"1h"},"share_list":["testgetashareddashboardreturnsokresponse1680884023@datadoghq.com"],"share_type":"invite"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/dashboard/public
+  response:
+    body:
+      string: '{"author":{"handle":"frog@datadoghq.com","name":null},"dashboard_id":"zrc-p5j-6r5","dashboard_type":"custom_timeboard","global_time_selectable_enabled":false,"global_time":{"live_span":"1h"},"selectable_template_vars":null,"token":"fasjyydbcgwwc2uc-c4a0580ce838fc0e47144fc8808f5467","public_url":"https://p.datadoghq.com/sb/fasjyydbcgwwc2uc-c4a0580ce838fc0e47144fc8808f5467","created":"2023-04-07T16:13:44.162867+00:00","share_type":"invite","share_list":["testgetashareddashboardreturnsokresponse1680884023@datadoghq.com"]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v1/dashboard/public/fasjyydbcgwwc2uc-c4a0580ce838fc0e47144fc8808f5467
+  response:
+    body:
+      string: '{"author":{"handle":"frog@datadoghq.com","name":null},"dashboard_id":"zrc-p5j-6r5","dashboard_type":"custom_timeboard","global_time_selectable_enabled":false,"global_time":{"live_span":"1h"},"selectable_template_vars":null,"token":"fasjyydbcgwwc2uc-c4a0580ce838fc0e47144fc8808f5467","public_url":"https://p.datadoghq.com/sb/fasjyydbcgwwc2uc-c4a0580ce838fc0e47144fc8808f5467","created":"2023-04-07T16:13:44.162867+00:00","share_type":"invite","share_list":["testgetashareddashboardreturnsokresponse1680884023@datadoghq.com"]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/dashboard/public/fasjyydbcgwwc2uc-c4a0580ce838fc0e47144fc8808f5467
+  response:
+    body:
+      string: '{"deleted_public_dashboard_token":"fasjyydbcgwwc2uc-c4a0580ce838fc0e47144fc8808f5467"}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/dashboard/zrc-p5j-6r5
+  response:
+    body:
+      string: '{"deleted_dashboard_id":"zrc-p5j-6r5"}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

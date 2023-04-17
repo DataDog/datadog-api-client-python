@@ -665,6 +665,30 @@ Feature: Dashboards
     And the response "widgets[0].definition.requests[0].queries[0].search.query" is equal to "test_level:test"
 
   @generated @skip @team:DataDog/dashboards
+  Scenario: Create a shared dashboard returns "Bad Request" response
+    Given new "CreatePublicDashboard" request
+    And body with value {"dashboard_id": "123-abc-456", "dashboard_type": "custom_timeboard", "global_time": {"live_span": "1h"}, "global_time_selectable_enabled": null, "selectable_template_vars": [{"default_value": "*", "name": "exampleVar", "prefix": "test", "visible_tags": ["selectableValue1", "selectableValue2"]}], "share_list": ["test@datadoghq.com", "test2@email.com"], "share_type": "open"}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/dashboards
+  Scenario: Create a shared dashboard returns "Dashboard Not Found" response
+    Given new "CreatePublicDashboard" request
+    And body with value {"dashboard_id": "abc-123-def", "dashboard_type": "custom_timeboard", "share_type": "open", "global_time": {"live_span": "1h"}}
+    When the request is sent
+    Then the response status is 404 Dashboard Not Found
+
+  @team:DataDog/dashboards
+  Scenario: Create a shared dashboard returns "OK" response
+    Given there is a valid "dashboard" in the system
+    And new "CreatePublicDashboard" request
+    And body with value {"dashboard_id": "{{dashboard.id}}", "dashboard_type": "custom_timeboard", "share_type": "open", "global_time": {"live_span": "1h"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "dashboard_id" has the same value as "dashboard.id"
+    And the response "dashboard_type" is equal to "custom_timeboard"
+
+  @generated @skip @team:DataDog/dashboards
   Scenario: Delete a dashboard returns "Dashboards Not Found" response
     Given new "DeleteDashboard" request
     And request contains "dashboard_id" parameter from "REPLACE.ME"
@@ -727,6 +751,24 @@ Feature: Dashboards
     Then the response status is 200 OK
     And the response "author_name" is equal to "Frog Account"
 
+  @team:DataDog/dashboards
+  Scenario: Get a shared dashboard returns "OK" response
+    Given there is a valid "dashboard" in the system
+    And there is a valid "shared_dashboard" in the system
+    And new "GetPublicDashboard" request
+    And request contains "token" parameter from "shared_dashboard.token"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "dashboard_id" has the same value as "dashboard.id"
+    And the response "token" has the same value as "shared_dashboard.token"
+
+  @generated @skip @team:DataDog/dashboards
+  Scenario: Get a shared dashboard returns "Shared Dashboard Not Found" response
+    Given new "GetPublicDashboard" request
+    And request contains "token" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Shared Dashboard Not Found
+
   @replay-only @team:DataDog/dashboards
   Scenario: Get all dashboards returns "OK" response
     Given new "ListDashboards" request
@@ -736,6 +778,23 @@ Feature: Dashboards
     Then the response status is 200 OK
     And the response "dashboards[0].title" has the same value as "dashboard.title"
     And the response "dashboards[0].id" has the same value as "dashboard.id"
+
+  @generated @skip @team:DataDog/dashboards
+  Scenario: Get all invitations for a shared dashboard returns "Not Found" response
+    Given new "GetPublicDashboardInvitations" request
+    And request contains "token" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/dashboards
+  Scenario: Get all invitations for a shared dashboard returns "OK" response
+    Given there is a valid "dashboard" in the system
+    And there is a valid "shared_dashboard" in the system
+    And new "GetPublicDashboardInvitations" request
+    And request contains "token" parameter from "shared_dashboard.token"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data" has length 0
 
   @replay-only @team:DataDog/dashboards
   Scenario: Get deleted dashboards returns "OK" response
@@ -772,6 +831,64 @@ Feature: Dashboards
     Then the response status is 204 No Content
 
   @generated @skip @team:DataDog/dashboards
+  Scenario: Revoke a shared dashboard URL returns "OK" response
+    Given new "DeletePublicDashboard" request
+    And request contains "token" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/dashboards
+  Scenario: Revoke a shared dashboard URL returns "Shared Dashboard Not Found" response
+    Given new "DeletePublicDashboard" request
+    And request contains "token" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Shared Dashboard Not Found
+
+  @generated @skip @team:DataDog/dashboards
+  Scenario: Revoke shared dashboard invitations returns "Not Found" response
+    Given new "DeletePublicDashboardInvitation" request
+    And request contains "token" parameter from "REPLACE.ME"
+    And body with value {"data": [{"attributes": {"email": "test@datadoghq.com"}, "type": "public_dashboard_invitation"}]}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/dashboards
+  Scenario: Revoke shared dashboard invitations returns "OK" response
+    Given new "DeletePublicDashboardInvitation" request
+    And request contains "token" parameter from "REPLACE.ME"
+    And body with value {"data": [{"attributes": {"email": "test@datadoghq.com"}, "type": "public_dashboard_invitation"}]}
+    When the request is sent
+    Then the response status is 204 OK
+
+  @generated @skip @team:DataDog/dashboards
+  Scenario: Send shared dashboard invitation email returns "Bad Request" response
+    Given new "SendPublicDashboardInvitation" request
+    And request contains "token" parameter from "REPLACE.ME"
+    And body with value {"data": [{"attributes": {"email": "test@datadoghq.com"}, "type": "public_dashboard_invitation"}]}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/dashboards
+  Scenario: Send shared dashboard invitation email returns "Not Found" response
+    Given new "SendPublicDashboardInvitation" request
+    And request contains "token" parameter from "REPLACE.ME"
+    And body with value {"data": [{"attributes": {"email": "test@datadoghq.com"}, "type": "public_dashboard_invitation"}]}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/dashboards
+  Scenario: Send shared dashboard invitation email returns "OK" response
+    Given there is a valid "dashboard" in the system
+    And there is a valid "shared_dashboard" in the system
+    And new "SendPublicDashboardInvitation" request
+    And request contains "token" parameter from "shared_dashboard.token"
+    And body with value {"data": {"attributes": {"email": "{{unique_lower_alnum}}@datadoghq.com"}, "type": "public_dashboard_invitation"}}
+    When the request is sent
+    Then the response status is 201 OK
+    And the response "data.attributes.email" has the same value as "shared_dashboard.share_list[0]"
+    And the response "data.attributes.share_token" has the same value as "shared_dashboard.token"
+
+  @generated @skip @team:DataDog/dashboards
   Scenario: Update a dashboard returns "Bad Request" response
     Given new "UpdateDashboard" request
     And request contains "dashboard_id" parameter from "REPLACE.ME"
@@ -806,3 +923,34 @@ Feature: Dashboards
     When the request is sent
     Then the response status is 200 OK
     And the response "tags" is equal to ["team:foo", "team:bar"]
+
+  @generated @skip @team:DataDog/dashboards
+  Scenario: Update a shared dashboard returns "Bad Request" response
+    Given new "UpdatePublicDashboard" request
+    And request contains "token" parameter from "REPLACE.ME"
+    And body with value {"global_time": {"live_span": "1h"}, "share_list": ["test@datadoghq.com", "test2@datadoghq.com"], "share_type": "invite"}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/dashboards
+  Scenario: Update a shared dashboard returns "Item Not Found" response
+    Given new "UpdatePublicDashboard" request
+    And request contains "token" parameter from "REPLACE.ME"
+    And body with value {"global_time": {"live_span": "1h"}, "share_list": ["test@datadoghq.com", "test2@datadoghq.com"], "share_type": "invite"}
+    When the request is sent
+    Then the response status is 404 Item Not Found
+
+  @team:DataDog/dashboards
+  Scenario: Update a shared dashboard returns "OK" response
+    Given there is a valid "dashboard" in the system
+    And there is a valid "shared_dashboard" in the system
+    And new "UpdatePublicDashboard" request
+    And request contains "token" parameter from "shared_dashboard.token"
+    And body with value {"global_time": {"live_span": "15m"}, "share_list": [], "share_type": "open"}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "dashboard_id" has the same value as "dashboard.id"
+    And the response "dashboard_type" is equal to "custom_timeboard"
+    And the response "global_time.live_span" is equal to "15m"
+    And the response "share_type" is equal to "open"
+    And the response "share_list" has length 0
