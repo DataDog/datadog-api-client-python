@@ -1,0 +1,34 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/posture_management/findings/AgAAAYd59gjghzF52gAAAAAAAAAYAAAAAEFZZDU5Z2pnQUFCRTRvV1lFeEo4SlFBQQAAACQAAAAAMDE4NzdhMDEtMDRiYS00NTZlLWFmMzMtNTIxNmNkNjVlNDMz
+  response:
+    body:
+      string: '{"data":{"id":"AgAAAYd59gjghzF52gAAAAAAAAAYAAAAAEFZZDU5Z2pnQUFCRTRvV1lFeEo4SlFBQQAAACQAAAAAMDE4NzdhMDEtMDRiYS00NTZlLWFmMzMtNTIxNmNkNjVlNDMz","type":"detailed_finding","attributes":{"evaluation":"pass","evaluation_changed_at":1681220975000,"message":"%%%\n##
+        Description\n\nUpdate your ACL permission to remove `WRITE_ACP` and `FULL_CONTROL`
+        accesses for authenticated and unauthenticated public users.\n\n## Rationale\n\n`WRITE_ACP`
+        access gives any authenticated AWS accounts or IAM users or unauthenticated
+        users READ and WRITE Access Control List (ACL) permissions. `FULL_CONTROL`
+        encompasses `WRITE_ACP` so whenever `WRITE_ACP` and `FULL_CONTROL` permissions
+        are granted to any AWS `Authenticated User` or `Unauthenticated User`, it
+        grants administrative access to view, upload, modify and delete S3 objects
+        without restriction, which can lead to potential data loss or unintended charges
+        on your AWS bill.\n\n\n## Remediation\n\n### From the console:\n\nFollow the
+        [Configuring ACLs: Using the S3 console to set ACL permissions for a bucket][1]
+        docs to remove `WRITE_ACP` or `FULL_CONTROL` access and update ACL permissions.\n\n###
+        From the command line:\n\n1. Run `put-bucket-acl` with your [bucket name and
+        ACL][2] to `private`.\n\n  ```\n  aws s3api put-bucket-acl\n    --bucket your-s3-bucket-name\n    --acl
+        private\n  ```\n\n[1]: https://docs.aws.amazon.com/AmazonS3/latest/userguide/managing-acls.html\n[2]:
+        https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3api/put-bucket-acl.html#synopsis\n\n%%%","mute":{"muted":false},"resource":"dd-chaos-cloud-xuxu-eu-north-1","resource_configuration":{"account_id":"013910733512","bucket_arn":"arn:aws:s3:::dd-chaos-cloud-xuxu-eu-north-1","bucket_policy_statement":[{"account_id":"013910733512","bucket_arn":"arn:aws:s3:::dd-chaos-cloud-xuxu-eu-north-1","condition":{},"policy_principal":{"principal":"*"},"statement_action":["s3:*"],"statement_effect":"Deny","statement_has_condition":true,"statement_id":1,"statement_resource":["arn:aws:s3:::dd-chaos-cloud-xuxu-eu-north-1/*"],"statement_sid":"DefaultPolicy"}],"creation_date":1594937050000,"name":"dd-chaos-cloud-xuxu-eu-north-1","owner":{"id":"704bba538dc5e0b23934c261108592d6222088d0c4c2fa2ba90f0ed7d03a6efb"},"policy_status":{"is_public":false},"public_access_block_configuration":{"block_public_acls":false,"block_public_policy":false,"ignore_public_acls":false,"restrict_public_buckets":true},"resource_type":"aws_s3_bucket","server_side_encryption_configuration":{"rules":[{"apply_server_side_encryption_by_default":{"sse_algorithm":"AES256"},"bucket_key_enabled":false}]}},"resource_discovery_date":1681220975000,"resource_type":"aws_s3_bucket","rule":{"name":"S3
+        bucket ACL does not grant full bucket control to everyone","id":"gkb-eoz-lut"},"status":"critical","tags":["requirement:AWS","scored:true","aws_account:013910733512","framework:gdpr","control:164.308-a-3-i","requirement:Compliance","framework:iso-27001","framework:hipaa","requirement:Access-Control","source:s3","requirement:Information-Access-Management","region:eu-north-1","control:164.308-a-4-ii-B","framework:pci","control:164.308-a-4-ii-C","control:25.2","requirement:Workforce-Security","control:1.1","security:compliance","requirement:Least-Privileged-Access","cloud_provider:aws","requirement:Data-Protection","control:7.2.1","control:7.2.2","requirement:Security-of-Processing","control:A.18.1.3","framework:soc-2","scope:s3","control:A.9.2.3","control:32.1a","requirement:Logical-and-Physical-Access-Control","control:CC6.3","framework:security-labs","control:CC6.1"]}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1

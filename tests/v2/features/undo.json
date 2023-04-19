@@ -870,6 +870,18 @@
       "type": "safe"
     }
   },
+  "ListFindings": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetFinding": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListProcesses": {
     "tag": "Processes",
     "undo": {

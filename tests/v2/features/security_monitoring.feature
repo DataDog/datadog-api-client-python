@@ -198,6 +198,31 @@ Feature: Security Monitoring
     And the response "name" is equal to "{{ unique }}_cloud"
     And the response "id" has the same value as "cloud_configuration_rule.id"
 
+  @generated @skip @team:DataDog/cloud-security-posture-management
+  Scenario: Get a finding returns "Bad Request" response
+    Given operation "GetFinding" enabled
+    And new "GetFinding" request
+    And request contains "finding_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/cloud-security-posture-management
+  Scenario: Get a finding returns "Not Found" response
+    Given operation "GetFinding" enabled
+    And new "GetFinding" request
+    And request contains "finding_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @replay-only @team:DataDog/cloud-security-posture-management
+  Scenario: Get a finding returns "OK" response
+    Given operation "GetFinding" enabled
+    And new "GetFinding" request
+    And request contains "finding_id" parameter with value "AgAAAYd59gjghzF52gAAAAAAAAAYAAAAAEFZZDU5Z2pnQUFCRTRvV1lFeEo4SlFBQQAAACQAAAAAMDE4NzdhMDEtMDRiYS00NTZlLWFmMzMtNTIxNmNkNjVlNDMz"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.attributes.evaluation" is equal to "pass"
+
   @generated @skip @team:DataDog/k9-cloud-security-platform
   Scenario: Get a list of security signals returns "Bad Request" response
     Given new "SearchSecurityMonitoringSignals" request
@@ -296,6 +321,28 @@ Feature: Security Monitoring
     Given new "ListSecurityFilters" request
     When the request is sent
     Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/cloud-security-posture-management
+  Scenario: List findings returns "Bad Request" response
+    Given operation "ListFindings" enabled
+    And new "ListFindings" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/cloud-security-posture-management
+  Scenario: List findings returns "Not Found" response
+    Given operation "ListFindings" enabled
+    And new "ListFindings" request
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @replay-only @team:DataDog/cloud-security-posture-management
+  Scenario: List findings returns "OK" response
+    Given operation "ListFindings" enabled
+    And new "ListFindings" request
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data[0].type" is equal to "finding"
 
   @generated @skip @team:DataDog/k9-cloud-security-platform
   Scenario: List rules returns "Bad Request" response
