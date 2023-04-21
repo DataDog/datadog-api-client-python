@@ -140,7 +140,7 @@ Feature: Logs
     When the request is sent
     Then the response status is 408 Request Timeout
 
-  @skip-go @team:DataDog/event-platform-intake @team:DataDog/logs-backend
+  @team:DataDog/event-platform-intake @team:DataDog/logs-backend
   Scenario: Send logs returns "Request accepted for processing (always 202 empty JSON)." response
     Given new "SubmitLog" request
     And body with value [{"ddsource": "nginx", "ddtags": "env:staging,version:5.1", "hostname": "i-012345678", "message": "2019-11-19T14:37:58,995 INFO [process.name][20081] Hello World", "service": "payment", "status": "info"}]
