@@ -18,6 +18,7 @@ from datadog_api_client.model_utils import (
 from datadog_api_client.v2.model.list_findings_response import ListFindingsResponse
 from datadog_api_client.v2.model.finding_evaluation import FindingEvaluation
 from datadog_api_client.v2.model.finding_status import FindingStatus
+from datadog_api_client.v2.model.finding import Finding
 from datadog_api_client.v2.model.get_finding_response import GetFindingResponse
 from datadog_api_client.v2.model.security_filters_response import SecurityFiltersResponse
 from datadog_api_client.v2.model.security_filter_response import SecurityFilterResponse
@@ -347,13 +348,13 @@ class SecurityMonitoringApi:
                 "servers": None,
             },
             params_map={
-                "limit": {
+                "page_limit": {
                     "validation": {
                         "inclusive_maximum": 1000,
                         "inclusive_minimum": 1,
                     },
                     "openapi_types": (int,),
-                    "attribute": "limit",
+                    "attribute": "page[limit]",
                     "location": "query",
                 },
                 "snapshot_timestamp": {
@@ -810,7 +811,7 @@ class SecurityMonitoringApi:
     def list_findings(
         self,
         *,
-        limit: Union[int, UnsetType] = unset,
+        page_limit: Union[int, UnsetType] = unset,
         snapshot_timestamp: Union[int, UnsetType] = unset,
         page_cursor: Union[str, UnsetType] = unset,
         filter_tags: Union[str, UnsetType] = unset,
@@ -827,8 +828,35 @@ class SecurityMonitoringApi:
 
         Get a list of CSPM findings.
 
-        :param limit: Limit the number of findings returned.
-        :type limit: int, optional
+        **Filtering**
+
+        Filters can be applied by appending query parameters to the URL.
+
+        * Using a single filter: ``?filter[attribute_key]=attribute_value``
+        * Chaining filters: ``?filter[attribute_key]=attribute_value&filter[attribute_key]=attribute_value...``
+        * Filtering on tags: ``?filter[tags]=tag_key:tag_value&filter[tags]=tag_key_2:tag_value_2``
+
+        Here, ``attribute_key`` can be any of the filter keys described further below.
+
+        Query parameters of type ``integer`` support comparison operators ( ``>`` , ``>=`` , ``<`` , ``<=`` ). This is particularly useful when filtering by ``evaluation_changed_at`` or ``resource_discovery_timestamp``. For example: ``?filter[evaluation_changed_at]=>20123123121``.
+
+        You can also use the negation operator on strings. For example, use ``filter[resource_type]=-aws*`` to filter for any non-AWS resources.
+
+        The operator must come after the equal sign. For example, to filter with the ``>=`` operator, add the operator after the equal sign: ``filter[evaluation_changed_at]=>=1678809373257``.
+
+        **Response**
+
+        The response includes an array of finding objects, pagination metadata, and a count of items that match the query.
+
+        Each finding object contains the following:
+
+        * The finding ID that can be used in a ``GetFinding`` request to retrieve the full finding details.
+        * Core attributes, including status, evaluation, high-level resource details, muted state, and rule details.
+        * ``evaluation_changed_at`` and ``resource_discovery_date`` time stamps.
+        * An array of associated tags.
+
+        :param page_limit: Limit the number of findings returned. Must be <= 1000.
+        :type page_limit: int, optional
         :param snapshot_timestamp: Return findings for a given snapshot of time (Unix ms).
         :type snapshot_timestamp: int, optional
         :param page_cursor: Return the next page of findings pointed to by the cursor.
@@ -854,8 +882,8 @@ class SecurityMonitoringApi:
         :rtype: ListFindingsResponse
         """
         kwargs: Dict[str, Any] = {}
-        if limit is not unset:
-            kwargs["limit"] = limit
+        if page_limit is not unset:
+            kwargs["page_limit"] = page_limit
 
         if snapshot_timestamp is not unset:
             kwargs["snapshot_timestamp"] = snapshot_timestamp
@@ -891,6 +919,104 @@ class SecurityMonitoringApi:
             kwargs["filter_status"] = filter_status
 
         return self._list_findings_endpoint.call_with_http_info(**kwargs)
+
+    def list_findings_with_pagination(
+        self,
+        *,
+        page_limit: Union[int, UnsetType] = unset,
+        snapshot_timestamp: Union[int, UnsetType] = unset,
+        page_cursor: Union[str, UnsetType] = unset,
+        filter_tags: Union[str, UnsetType] = unset,
+        filter_evaluation_changed_at: Union[str, UnsetType] = unset,
+        filter_muted: Union[bool, UnsetType] = unset,
+        filter_rule_id: Union[str, UnsetType] = unset,
+        filter_rule_name: Union[str, UnsetType] = unset,
+        filter_resource_type: Union[str, UnsetType] = unset,
+        filter_discovery_timestamp: Union[str, UnsetType] = unset,
+        filter_evaluation: Union[FindingEvaluation, UnsetType] = unset,
+        filter_status: Union[FindingStatus, UnsetType] = unset,
+    ) -> collections.abc.Iterable[Finding]:
+        """List findings.
+
+        Provide a paginated version of :meth:`list_findings`, returning all items.
+
+        :param page_limit: Limit the number of findings returned. Must be <= 1000.
+        :type page_limit: int, optional
+        :param snapshot_timestamp: Return findings for a given snapshot of time (Unix ms).
+        :type snapshot_timestamp: int, optional
+        :param page_cursor: Return the next page of findings pointed to by the cursor.
+        :type page_cursor: str, optional
+        :param filter_tags: Return findings that have these associated tags (repeatable).
+        :type filter_tags: str, optional
+        :param filter_evaluation_changed_at: Return findings that have changed from pass to fail or vice versa on a specified date (Unix ms) or date range (using comparison operators).
+        :type filter_evaluation_changed_at: str, optional
+        :param filter_muted: Set to ``true`` to return findings that are muted. Set to ``false`` to return unmuted findings.
+        :type filter_muted: bool, optional
+        :param filter_rule_id: Return findings for the specified rule ID.
+        :type filter_rule_id: str, optional
+        :param filter_rule_name: Return findings for the specified rule.
+        :type filter_rule_name: str, optional
+        :param filter_resource_type: Return only findings for the specified resource type.
+        :type filter_resource_type: str, optional
+        :param filter_discovery_timestamp: Return findings that were found on a specified date (Unix ms) or date range (using comparison operators).
+        :type filter_discovery_timestamp: str, optional
+        :param filter_evaluation: Return only ``pass`` or ``fail`` findings.
+        :type filter_evaluation: FindingEvaluation, optional
+        :param filter_status: Return only findings with the specified status.
+        :type filter_status: FindingStatus, optional
+
+        :return: A generator of paginated results.
+        :rtype: collections.abc.Iterable[Finding]
+        """
+        kwargs: Dict[str, Any] = {}
+        if page_limit is not unset:
+            kwargs["page_limit"] = page_limit
+
+        if snapshot_timestamp is not unset:
+            kwargs["snapshot_timestamp"] = snapshot_timestamp
+
+        if page_cursor is not unset:
+            kwargs["page_cursor"] = page_cursor
+
+        if filter_tags is not unset:
+            kwargs["filter_tags"] = filter_tags
+
+        if filter_evaluation_changed_at is not unset:
+            kwargs["filter_evaluation_changed_at"] = filter_evaluation_changed_at
+
+        if filter_muted is not unset:
+            kwargs["filter_muted"] = filter_muted
+
+        if filter_rule_id is not unset:
+            kwargs["filter_rule_id"] = filter_rule_id
+
+        if filter_rule_name is not unset:
+            kwargs["filter_rule_name"] = filter_rule_name
+
+        if filter_resource_type is not unset:
+            kwargs["filter_resource_type"] = filter_resource_type
+
+        if filter_discovery_timestamp is not unset:
+            kwargs["filter_discovery_timestamp"] = filter_discovery_timestamp
+
+        if filter_evaluation is not unset:
+            kwargs["filter_evaluation"] = filter_evaluation
+
+        if filter_status is not unset:
+            kwargs["filter_status"] = filter_status
+
+        local_page_size = get_attribute_from_path(kwargs, "page_limit", 100)
+        endpoint = self._list_findings_endpoint
+        set_attribute_from_path(kwargs, "page_limit", local_page_size, endpoint.params_map)
+        while True:
+            response = endpoint.call_with_http_info(**kwargs)
+            for item in get_attribute_from_path(response, "data"):
+                yield item
+            if len(get_attribute_from_path(response, "data")) < local_page_size:
+                break
+            set_attribute_from_path(
+                kwargs, "page_cursor", get_attribute_from_path(response, "meta.page.cursor"), endpoint.params_map
+            )
 
     def list_security_filters(
         self,

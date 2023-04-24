@@ -344,6 +344,13 @@ Feature: Security Monitoring
     Then the response status is 200 OK
     And the response "data[0].type" is equal to "finding"
 
+  @generated @skip @team:DataDog/cloud-security-posture-management @with-pagination
+  Scenario: List findings returns "OK" response with pagination
+    Given operation "ListFindings" enabled
+    And new "ListFindings" request
+    When the request with pagination is sent
+    Then the response status is 200 OK
+
   @generated @skip @team:DataDog/k9-cloud-security-platform
   Scenario: List rules returns "Bad Request" response
     Given new "ListSecurityMonitoringRules" request
