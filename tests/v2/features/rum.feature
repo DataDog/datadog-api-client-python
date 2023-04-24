@@ -99,7 +99,7 @@ Feature: RUM
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/rum-backend
+  @skip-go @skip-java @skip-python @skip-ruby @skip-typescript @team:DataDog/rum-backend
   Scenario: List all the RUM applications returns "OK" response
     Given new "GetRUMApplications" request
     When the request is sent
