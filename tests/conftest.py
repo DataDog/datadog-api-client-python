@@ -643,3 +643,13 @@ def expect_equal_response_items(context, fixture_length):
 def expect_false(context, response_path):
     response_value = glom(context["api_request"]["response"][0], response_path)
     assert not response_value
+
+@then(parsers.parse('the response "{response_path}" has item with field "{key_path}" with value {value}'))
+def expect_array_contains_object(context, response_path, key_path, value):
+    response_value = glom(context["api_request"]["response"][0], response_path)
+    test_value = json.loads(Template(value).render(**context))
+    for response_item in response_value:
+        response_item_value = glom(response_item, key_path)
+        if response_item_value == test_value:
+            return
+    raise AssertionError(f"could not find key value pair in object array: \"{key_path}\": \"{test_value}\"")
