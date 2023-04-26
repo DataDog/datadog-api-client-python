@@ -17,7 +17,6 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.team_permission_setting_serializer_action import (
         TeamPermissionSettingSerializerAction,
     )
-    from datadog_api_client.v2.model.team_permission_setting_values import TeamPermissionSettingValues
     from datadog_api_client.v2.model.team_permission_setting_value import TeamPermissionSettingValue
 
 
@@ -27,13 +26,12 @@ class TeamPermissionSettingAttributes(ModelNormal):
         from datadog_api_client.v2.model.team_permission_setting_serializer_action import (
             TeamPermissionSettingSerializerAction,
         )
-        from datadog_api_client.v2.model.team_permission_setting_values import TeamPermissionSettingValues
         from datadog_api_client.v2.model.team_permission_setting_value import TeamPermissionSettingValue
 
         return {
             "action": (TeamPermissionSettingSerializerAction,),
             "editable": (bool,),
-            "options": (TeamPermissionSettingValues,),
+            "options": ([TeamPermissionSettingValue],),
             "title": (str,),
             "value": (TeamPermissionSettingValue,),
         }
@@ -71,7 +69,7 @@ class TeamPermissionSettingAttributes(ModelNormal):
         :type editable: bool, optional
 
         :param options: Possible values for action
-        :type options: TeamPermissionSettingValues, optional
+        :type options: [TeamPermissionSettingValue], optional
 
         :param title: The team permission name
         :type title: str, optional

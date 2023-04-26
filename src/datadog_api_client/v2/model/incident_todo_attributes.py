@@ -15,16 +15,16 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.incident_todo_assignee_array import IncidentTodoAssigneeArray
+    pass
 
 
 class IncidentTodoAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.incident_todo_assignee_array import IncidentTodoAssigneeArray
+        from datadog_api_client.v2.model.incident_todo_assignee import IncidentTodoAssignee
 
         return {
-            "assignees": (IncidentTodoAssigneeArray,),
+            "assignees": ([IncidentTodoAssignee],),
             "completed": (str, none_type),
             "content": (str,),
             "due_date": (str, none_type),
@@ -52,7 +52,7 @@ class IncidentTodoAttributes(ModelNormal):
         Incident todo's attributes.
 
         :param assignees: Array of todo assignees.
-        :type assignees: IncidentTodoAssigneeArray
+        :type assignees: [IncidentTodoAssignee]
 
         :param completed: Timestamp when the todo was completed.
         :type completed: str, none_type, optional

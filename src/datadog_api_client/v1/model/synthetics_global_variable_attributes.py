@@ -14,16 +14,14 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v1.model.synthetics_restricted_roles import SyntheticsRestrictedRoles
+    pass
 
 
 class SyntheticsGlobalVariableAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v1.model.synthetics_restricted_roles import SyntheticsRestrictedRoles
-
         return {
-            "restricted_roles": (SyntheticsRestrictedRoles,),
+            "restricted_roles": ([str],),
         }
 
     attribute_map = {
@@ -35,7 +33,7 @@ class SyntheticsGlobalVariableAttributes(ModelNormal):
         Attributes of the global variable.
 
         :param restricted_roles: A list of role identifiers that can be pulled from the Roles API, for restricting read and write access.
-        :type restricted_roles: SyntheticsRestrictedRoles, optional
+        :type restricted_roles: [str], optional
         """
         if restricted_roles is not unset:
             kwargs["restricted_roles"] = restricted_roles

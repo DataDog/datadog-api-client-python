@@ -14,17 +14,17 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v1.model.monitor_search_count import MonitorSearchCount
+    pass
 
 
 class MonitorGroupSearchResponseCounts(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v1.model.monitor_search_count import MonitorSearchCount
+        from datadog_api_client.v1.model.monitor_search_count_item import MonitorSearchCountItem
 
         return {
-            "status": (MonitorSearchCount,),
-            "type": (MonitorSearchCount,),
+            "status": ([MonitorSearchCountItem],),
+            "type": ([MonitorSearchCountItem],),
         }
 
     attribute_map = {
@@ -42,10 +42,10 @@ class MonitorGroupSearchResponseCounts(ModelNormal):
         The counts of monitor groups per different criteria.
 
         :param status: Search facets.
-        :type status: MonitorSearchCount, optional
+        :type status: [MonitorSearchCountItem], optional
 
         :param type: Search facets.
-        :type type: MonitorSearchCount, optional
+        :type type: [MonitorSearchCountItem], optional
         """
         if status is not unset:
             kwargs["status"] = status

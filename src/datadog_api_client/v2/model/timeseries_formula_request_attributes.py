@@ -15,20 +15,19 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.query_formula import QueryFormula
-    from datadog_api_client.v2.model.timeseries_formula_request_queries import TimeseriesFormulaRequestQueries
 
 
 class TimeseriesFormulaRequestAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.query_formula import QueryFormula
-        from datadog_api_client.v2.model.timeseries_formula_request_queries import TimeseriesFormulaRequestQueries
+        from datadog_api_client.v2.model.timeseries_query import TimeseriesQuery
 
         return {
             "formulas": ([QueryFormula],),
             "_from": (int,),
             "interval": (int,),
-            "queries": (TimeseriesFormulaRequestQueries,),
+            "queries": ([TimeseriesQuery],),
             "to": (int,),
         }
 
@@ -65,7 +64,7 @@ class TimeseriesFormulaRequestAttributes(ModelNormal):
         :type interval: int, optional
 
         :param queries: List of queries to be run and used as inputs to the formulas.
-        :type queries: TimeseriesFormulaRequestQueries
+        :type queries: [TimeseriesQuery]
 
         :param to: End date (exclusive) of the query in milliseconds since the Unix epoch.
         :type to: int

@@ -3,12 +3,11 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Any, Dict
+from typing import Any, Dict, List
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
 from datadog_api_client.v1.model.azure_account import AzureAccount
-from datadog_api_client.v1.model.azure_account_list_response import AzureAccountListResponse
 
 
 class AzureIntegrationApi:
@@ -66,7 +65,7 @@ class AzureIntegrationApi:
 
         self._list_azure_integration_endpoint = _Endpoint(
             settings={
-                "response_type": (AzureAccountListResponse,),
+                "response_type": ([AzureAccount],),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/integration/azure",
                 "operation_id": "list_azure_integration",
@@ -166,12 +165,12 @@ class AzureIntegrationApi:
 
     def list_azure_integration(
         self,
-    ) -> AzureAccountListResponse:
+    ) -> List[AzureAccount]:
         """List all Azure integrations.
 
         List all Datadog-Azure integrations configured in your Datadog account.
 
-        :rtype: AzureAccountListResponse
+        :rtype: [AzureAccount]
         """
         kwargs: Dict[str, Any] = {}
         return self._list_azure_integration_endpoint.call_with_http_info(**kwargs)

@@ -17,14 +17,12 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.tags_event_attribute import TagsEventAttribute
+    pass
 
 
 class CIAppEventAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.tags_event_attribute import TagsEventAttribute
-
         return {
             "attributes": (
                 {
@@ -42,7 +40,7 @@ class CIAppEventAttributes(ModelNormal):
                 },
             ),
             "service": (str,),
-            "tags": (TagsEventAttribute,),
+            "tags": ([str],),
             "timestamp": (datetime,),
         }
 
@@ -73,7 +71,7 @@ class CIAppEventAttributes(ModelNormal):
         :type service: str, optional
 
         :param tags: Array of tags associated with your event.
-        :type tags: TagsEventAttribute, optional
+        :type tags: [str], optional
 
         :param timestamp: Timestamp of your event.
         :type timestamp: datetime, optional

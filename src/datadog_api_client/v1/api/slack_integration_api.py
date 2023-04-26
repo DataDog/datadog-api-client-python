@@ -3,11 +3,10 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Any, Dict
+from typing import Any, Dict, List
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
-from datadog_api_client.v1.model.slack_integration_channels import SlackIntegrationChannels
 from datadog_api_client.v1.model.slack_integration_channel import SlackIntegrationChannel
 
 
@@ -82,7 +81,7 @@ class SlackIntegrationApi:
 
         self._get_slack_integration_channels_endpoint = _Endpoint(
             settings={
-                "response_type": (SlackIntegrationChannels,),
+                "response_type": ([SlackIntegrationChannel],),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/integration/slack/configuration/accounts/{account_name}/channels",
                 "operation_id": "get_slack_integration_channels",
@@ -216,14 +215,14 @@ class SlackIntegrationApi:
     def get_slack_integration_channels(
         self,
         account_name: str,
-    ) -> SlackIntegrationChannels:
+    ) -> List[SlackIntegrationChannel]:
         """Get all channels in a Slack integration.
 
         Get a list of all channels configured for your Datadog-Slack integration.
 
         :param account_name: Your Slack account name.
         :type account_name: str
-        :rtype: SlackIntegrationChannels
+        :rtype: [SlackIntegrationChannel]
         """
         kwargs: Dict[str, Any] = {}
         kwargs["account_name"] = account_name

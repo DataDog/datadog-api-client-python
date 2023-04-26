@@ -12,16 +12,16 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v1.model.dashboard_bulk_action_data_list import DashboardBulkActionDataList
+    pass
 
 
 class DashboardBulkDeleteRequest(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v1.model.dashboard_bulk_action_data_list import DashboardBulkActionDataList
+        from datadog_api_client.v1.model.dashboard_bulk_action_data import DashboardBulkActionData
 
         return {
-            "data": (DashboardBulkActionDataList,),
+            "data": ([DashboardBulkActionData],),
         }
 
     attribute_map = {
@@ -33,7 +33,7 @@ class DashboardBulkDeleteRequest(ModelNormal):
         Dashboard bulk delete request body.
 
         :param data: List of dashboard bulk action request data objects.
-        :type data: DashboardBulkActionDataList
+        :type data: [DashboardBulkActionData]
         """
         super().__init__(kwargs)
 

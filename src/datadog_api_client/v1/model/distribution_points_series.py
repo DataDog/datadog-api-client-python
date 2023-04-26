@@ -21,13 +21,19 @@ if TYPE_CHECKING:
 class DistributionPointsSeries(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v1.model.distribution_point import DistributionPoint
         from datadog_api_client.v1.model.distribution_points_type import DistributionPointsType
 
         return {
             "host": (str,),
             "metric": (str,),
-            "points": ([DistributionPoint],),
+            "points": (
+                [
+                    [
+                        float,
+                        [float],
+                    ]
+                ],
+            ),
             "tags": ([str],),
             "type": (DistributionPointsType,),
         }
@@ -59,7 +65,7 @@ class DistributionPointsSeries(ModelNormal):
         :type metric: str
 
         :param points: Points relating to the distribution point metric. All points must be tuples with timestamp and a list of values (cannot be a string). Timestamps should be in POSIX time in seconds.
-        :type points: [DistributionPoint]
+        :type points: [[float,[float],]]
 
         :param tags: A list of tags associated with the distribution point metric.
         :type tags: [str], optional

@@ -67,7 +67,7 @@ def allows_single_value_input(cls):
     elif issubclass(cls, ModelComposed):
         if not cls._composed_schemas["oneOf"]:
             return False
-        return any(allows_single_value_input(c) for c in cls._composed_schemas["oneOf"])
+        return any(allows_single_value_input(c) for c in cls._composed_schemas["oneOf"] if not isinstance(c, list))
     return False
 
 
@@ -985,7 +985,7 @@ def change_keys_js_to_python(input_dict, model_class):
     if issubclass(model_class, ModelComposed):
         attribute_map = {}
         for t in model_class._composed_schemas.get("oneOf", ()):
-            if issubclass(t, OpenApiModel):
+            if not isinstance(t, list) and issubclass(t, OpenApiModel):
                 attribute_map.update(t.attribute_map)
     elif not getattr(model_class, "attribute_map", None):
         return input_dict
@@ -1498,7 +1498,7 @@ def get_oneof_instance(cls, model_kwargs, constant_kwargs, model_arg=None):
             # none_type deserialization is handled in the __new__ method
             continue
 
-        single_value_input = allows_single_value_input(oneof_class)
+        single_value_input = allows_single_value_input(oneof_class) if not isinstance(oneof_class, list) else True
 
         with suppress(Exception):
             if not single_value_input:
@@ -1511,7 +1511,21 @@ def get_oneof_instance(cls, model_kwargs, constant_kwargs, model_arg=None):
                 if not oneof_instance._unparsed:
                     oneof_instances.append(oneof_instance)
             else:
-                if issubclass(oneof_class, ModelSimple):
+                if isinstance(oneof_class, list):
+                    oneof_class = oneof_class[0]
+                    list_oneof_instance = []
+                    for arg in model_arg:
+                        if constant_kwargs.get("_spec_property_naming"):
+                            oneof_instance = oneof_class(
+                                **change_keys_js_to_python(arg, oneof_class), **constant_kwargs
+                            )
+                        else:
+                            oneof_instance = oneof_class(**arg, **constant_kwargs)
+                        if not oneof_instance._unparsed:
+                            list_oneof_instance.append(oneof_instance)
+                    if list_oneof_instance:
+                        oneof_instances.append(list_oneof_instance)
+                elif issubclass(oneof_class, ModelSimple):
                     oneof_instance = oneof_class(model_arg, **constant_kwargs)
                     if not oneof_instance._unparsed:
                         oneof_instances.append(oneof_instance)

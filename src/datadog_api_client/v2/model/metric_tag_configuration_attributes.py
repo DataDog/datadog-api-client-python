@@ -15,18 +15,17 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.metric_custom_aggregations import MetricCustomAggregations
     from datadog_api_client.v2.model.metric_tag_configuration_metric_types import MetricTagConfigurationMetricTypes
 
 
 class MetricTagConfigurationAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.metric_custom_aggregations import MetricCustomAggregations
+        from datadog_api_client.v2.model.metric_custom_aggregation import MetricCustomAggregation
         from datadog_api_client.v2.model.metric_tag_configuration_metric_types import MetricTagConfigurationMetricTypes
 
         return {
-            "aggregations": (MetricCustomAggregations,),
+            "aggregations": ([MetricCustomAggregation],),
             "created_at": (datetime,),
             "include_percentiles": (bool,),
             "metric_type": (MetricTagConfigurationMetricTypes,),
@@ -72,7 +71,7 @@ class MetricTagConfigurationAttributes(ModelNormal):
             * time: sum, space: sum
 
             Can only be applied to metrics that have a ``metric_type`` of ``count`` , ``rate`` , or ``gauge``.
-        :type aggregations: MetricCustomAggregations, optional
+        :type aggregations: [MetricCustomAggregation], optional
 
         :param created_at: Timestamp when the tag configuration was created.
         :type created_at: datetime, optional

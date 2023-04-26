@@ -14,20 +14,16 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.metric_bulk_tag_config_email_list import MetricBulkTagConfigEmailList
-    from datadog_api_client.v2.model.metric_bulk_tag_config_tag_name_list import MetricBulkTagConfigTagNameList
+    pass
 
 
 class MetricBulkTagConfigStatusAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.metric_bulk_tag_config_email_list import MetricBulkTagConfigEmailList
-        from datadog_api_client.v2.model.metric_bulk_tag_config_tag_name_list import MetricBulkTagConfigTagNameList
-
         return {
-            "emails": (MetricBulkTagConfigEmailList,),
+            "emails": ([str],),
             "status": (str,),
-            "tags": (MetricBulkTagConfigTagNameList,),
+            "tags": ([str],),
         }
 
     attribute_map = {
@@ -47,13 +43,13 @@ class MetricBulkTagConfigStatusAttributes(ModelNormal):
         Optional attributes for the status of a bulk tag configuration request.
 
         :param emails: A list of account emails to notify when the configuration is applied.
-        :type emails: MetricBulkTagConfigEmailList, optional
+        :type emails: [str], optional
 
         :param status: The status of the request.
         :type status: str, optional
 
         :param tags: A list of tag names to apply to the configuration.
-        :type tags: MetricBulkTagConfigTagNameList, optional
+        :type tags: [str], optional
         """
         if emails is not unset:
             kwargs["emails"] = emails

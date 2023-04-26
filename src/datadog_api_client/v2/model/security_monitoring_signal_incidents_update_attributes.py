@@ -14,18 +14,14 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.security_monitoring_signal_incident_ids import SecurityMonitoringSignalIncidentIds
+    pass
 
 
 class SecurityMonitoringSignalIncidentsUpdateAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.security_monitoring_signal_incident_ids import (
-            SecurityMonitoringSignalIncidentIds,
-        )
-
         return {
-            "incident_ids": (SecurityMonitoringSignalIncidentIds,),
+            "incident_ids": ([int],),
             "version": (int,),
         }
 
@@ -41,7 +37,7 @@ class SecurityMonitoringSignalIncidentsUpdateAttributes(ModelNormal):
         Attributes describing the new list of related signals for a security signal.
 
         :param incident_ids: Array of incidents that are associated with this signal.
-        :type incident_ids: SecurityMonitoringSignalIncidentIds
+        :type incident_ids: [int]
 
         :param version: Version of the updated signal. If server side version is higher, update will be rejected.
         :type version: int, optional

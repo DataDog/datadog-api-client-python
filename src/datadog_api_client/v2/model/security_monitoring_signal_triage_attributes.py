@@ -18,7 +18,6 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.security_monitoring_signal_archive_reason import (
         SecurityMonitoringSignalArchiveReason,
     )
-    from datadog_api_client.v2.model.security_monitoring_signal_incident_ids import SecurityMonitoringSignalIncidentIds
     from datadog_api_client.v2.model.security_monitoring_signal_state import SecurityMonitoringSignalState
 
 
@@ -38,9 +37,6 @@ class SecurityMonitoringSignalTriageAttributes(ModelNormal):
         from datadog_api_client.v2.model.security_monitoring_signal_archive_reason import (
             SecurityMonitoringSignalArchiveReason,
         )
-        from datadog_api_client.v2.model.security_monitoring_signal_incident_ids import (
-            SecurityMonitoringSignalIncidentIds,
-        )
         from datadog_api_client.v2.model.security_monitoring_signal_state import SecurityMonitoringSignalState
 
         return {
@@ -49,7 +45,7 @@ class SecurityMonitoringSignalTriageAttributes(ModelNormal):
             "archive_comment_user": (SecurityMonitoringTriageUser,),
             "archive_reason": (SecurityMonitoringSignalArchiveReason,),
             "assignee": (SecurityMonitoringTriageUser,),
-            "incident_ids": (SecurityMonitoringSignalIncidentIds,),
+            "incident_ids": ([int],),
             "state": (SecurityMonitoringSignalState,),
             "state_update_timestamp": (int,),
             "state_update_user": (SecurityMonitoringTriageUser,),
@@ -99,7 +95,7 @@ class SecurityMonitoringSignalTriageAttributes(ModelNormal):
         :type assignee: SecurityMonitoringTriageUser
 
         :param incident_ids: Array of incidents that are associated with this signal.
-        :type incident_ids: SecurityMonitoringSignalIncidentIds
+        :type incident_ids: [int]
 
         :param state: The new triage state of the signal.
         :type state: SecurityMonitoringSignalState

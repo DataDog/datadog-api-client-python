@@ -14,19 +14,19 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v1.model.monitor_search_count import MonitorSearchCount
+    pass
 
 
 class MonitorSearchResponseCounts(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v1.model.monitor_search_count import MonitorSearchCount
+        from datadog_api_client.v1.model.monitor_search_count_item import MonitorSearchCountItem
 
         return {
-            "muted": (MonitorSearchCount,),
-            "status": (MonitorSearchCount,),
-            "tag": (MonitorSearchCount,),
-            "type": (MonitorSearchCount,),
+            "muted": ([MonitorSearchCountItem],),
+            "status": ([MonitorSearchCountItem],),
+            "tag": ([MonitorSearchCountItem],),
+            "type": ([MonitorSearchCountItem],),
         }
 
     attribute_map = {
@@ -48,16 +48,16 @@ class MonitorSearchResponseCounts(ModelNormal):
         The counts of monitors per different criteria.
 
         :param muted: Search facets.
-        :type muted: MonitorSearchCount, optional
+        :type muted: [MonitorSearchCountItem], optional
 
         :param status: Search facets.
-        :type status: MonitorSearchCount, optional
+        :type status: [MonitorSearchCountItem], optional
 
         :param tag: Search facets.
-        :type tag: MonitorSearchCount, optional
+        :type tag: [MonitorSearchCountItem], optional
 
         :param type: Search facets.
-        :type type: MonitorSearchCount, optional
+        :type type: [MonitorSearchCountItem], optional
         """
         if muted is not unset:
             kwargs["muted"] = muted

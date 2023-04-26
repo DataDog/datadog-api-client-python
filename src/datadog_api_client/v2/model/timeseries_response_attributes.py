@@ -8,28 +8,25 @@ from typing import Union, TYPE_CHECKING
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    none_type,
     unset,
     UnsetType,
 )
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.timeseries_response_series_list import TimeseriesResponseSeriesList
-    from datadog_api_client.v2.model.timeseries_response_times import TimeseriesResponseTimes
-    from datadog_api_client.v2.model.timeseries_response_values_list import TimeseriesResponseValuesList
+    pass
 
 
 class TimeseriesResponseAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.timeseries_response_series_list import TimeseriesResponseSeriesList
-        from datadog_api_client.v2.model.timeseries_response_times import TimeseriesResponseTimes
-        from datadog_api_client.v2.model.timeseries_response_values_list import TimeseriesResponseValuesList
+        from datadog_api_client.v2.model.timeseries_response_series import TimeseriesResponseSeries
 
         return {
-            "series": (TimeseriesResponseSeriesList,),
-            "times": (TimeseriesResponseTimes,),
-            "values": (TimeseriesResponseValuesList,),
+            "series": ([TimeseriesResponseSeries],),
+            "times": ([int],),
+            "values": ([[float, none_type]],),
         }
 
     attribute_map = {
@@ -49,13 +46,13 @@ class TimeseriesResponseAttributes(ModelNormal):
         The object describing a timeseries response.
 
         :param series: Array of response series. The index here corresponds to the index in the ``formulas`` or ``queries`` array from the request.
-        :type series: TimeseriesResponseSeriesList, optional
+        :type series: [TimeseriesResponseSeries], optional
 
         :param times: Array of times, 1-1 match with individual values arrays.
-        :type times: TimeseriesResponseTimes, optional
+        :type times: [int], optional
 
         :param values: Array of value-arrays. The index here corresponds to the index in the ``formulas`` or ``queries`` array from the request.
-        :type values: TimeseriesResponseValuesList, optional
+        :type values: [[float, none_type]], optional
         """
         if series is not unset:
             kwargs["series"] = series

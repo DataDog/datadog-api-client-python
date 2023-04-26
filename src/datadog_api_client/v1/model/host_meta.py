@@ -24,11 +24,10 @@ if TYPE_CHECKING:
 class HostMeta(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v1.model.agent_check import AgentCheck
         from datadog_api_client.v1.model.host_meta_install_method import HostMetaInstallMethod
 
         return {
-            "agent_checks": ([AgentCheck],),
+            "agent_checks": ([[bool, date, datetime, dict, float, int, list, str, none_type]],),
             "agent_version": (str,),
             "cpu_cores": (int,),
             "fbsd_v": ([bool, date, datetime, dict, float, int, list, str, none_type],),
@@ -86,7 +85,7 @@ class HostMeta(ModelNormal):
         Metadata associated with your host.
 
         :param agent_checks: A list of Agent checks running on the host.
-        :type agent_checks: [AgentCheck], optional
+        :type agent_checks: [[bool, date, datetime, dict, float, int, list, str, none_type]], optional
 
         :param agent_version: The Datadog Agent version.
         :type agent_version: str, optional

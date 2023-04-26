@@ -16,7 +16,6 @@ from datadog_api_client.model_utils import (
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.events_compute import EventsCompute
     from datadog_api_client.v2.model.events_data_source import EventsDataSource
-    from datadog_api_client.v2.model.events_query_group_bys import EventsQueryGroupBys
     from datadog_api_client.v2.model.events_search import EventsSearch
 
 
@@ -25,13 +24,13 @@ class EventsTimeseriesQuery(ModelNormal):
     def openapi_types(_):
         from datadog_api_client.v2.model.events_compute import EventsCompute
         from datadog_api_client.v2.model.events_data_source import EventsDataSource
-        from datadog_api_client.v2.model.events_query_group_bys import EventsQueryGroupBys
+        from datadog_api_client.v2.model.events_group_by import EventsGroupBy
         from datadog_api_client.v2.model.events_search import EventsSearch
 
         return {
             "compute": (EventsCompute,),
             "data_source": (EventsDataSource,),
-            "group_by": (EventsQueryGroupBys,),
+            "group_by": ([EventsGroupBy],),
             "indexes": ([str],),
             "name": (str,),
             "search": (EventsSearch,),
@@ -66,7 +65,7 @@ class EventsTimeseriesQuery(ModelNormal):
         :type data_source: EventsDataSource
 
         :param group_by: The list of facets on which to split results.
-        :type group_by: EventsQueryGroupBys, optional
+        :type group_by: [EventsGroupBy], optional
 
         :param indexes: The indexes in which to search.
         :type indexes: [str], optional

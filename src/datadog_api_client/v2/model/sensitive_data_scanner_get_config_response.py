@@ -17,9 +17,6 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.sensitive_data_scanner_get_config_response_data import (
         SensitiveDataScannerGetConfigResponseData,
     )
-    from datadog_api_client.v2.model.sensitive_data_scanner_get_config_included_array import (
-        SensitiveDataScannerGetConfigIncludedArray,
-    )
     from datadog_api_client.v2.model.sensitive_data_scanner_meta import SensitiveDataScannerMeta
 
 
@@ -29,14 +26,14 @@ class SensitiveDataScannerGetConfigResponse(ModelNormal):
         from datadog_api_client.v2.model.sensitive_data_scanner_get_config_response_data import (
             SensitiveDataScannerGetConfigResponseData,
         )
-        from datadog_api_client.v2.model.sensitive_data_scanner_get_config_included_array import (
-            SensitiveDataScannerGetConfigIncludedArray,
+        from datadog_api_client.v2.model.sensitive_data_scanner_get_config_included_item import (
+            SensitiveDataScannerGetConfigIncludedItem,
         )
         from datadog_api_client.v2.model.sensitive_data_scanner_meta import SensitiveDataScannerMeta
 
         return {
             "data": (SensitiveDataScannerGetConfigResponseData,),
-            "included": (SensitiveDataScannerGetConfigIncludedArray,),
+            "included": ([SensitiveDataScannerGetConfigIncludedItem],),
             "meta": (SensitiveDataScannerMeta,),
         }
 
@@ -60,7 +57,7 @@ class SensitiveDataScannerGetConfigResponse(ModelNormal):
         :type data: SensitiveDataScannerGetConfigResponseData, optional
 
         :param included: Included objects from relationships.
-        :type included: SensitiveDataScannerGetConfigIncludedArray, optional
+        :type included: [SensitiveDataScannerGetConfigIncludedItem], optional
 
         :param meta: Meta response containing information about the API.
         :type meta: SensitiveDataScannerMeta, optional

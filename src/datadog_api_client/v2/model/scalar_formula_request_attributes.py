@@ -15,19 +15,18 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.query_formula import QueryFormula
-    from datadog_api_client.v2.model.scalar_formula_request_queries import ScalarFormulaRequestQueries
 
 
 class ScalarFormulaRequestAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.query_formula import QueryFormula
-        from datadog_api_client.v2.model.scalar_formula_request_queries import ScalarFormulaRequestQueries
+        from datadog_api_client.v2.model.scalar_query import ScalarQuery
 
         return {
             "formulas": ([QueryFormula],),
             "_from": (int,),
-            "queries": (ScalarFormulaRequestQueries,),
+            "queries": ([ScalarQuery],),
             "to": (int,),
         }
 
@@ -56,7 +55,7 @@ class ScalarFormulaRequestAttributes(ModelNormal):
         :type _from: int
 
         :param queries: List of queries to be run and used as inputs to the formulas.
-        :type queries: ScalarFormulaRequestQueries
+        :type queries: [ScalarQuery]
 
         :param to: End date (exclusive) of the query in milliseconds since the Unix epoch.
         :type to: int

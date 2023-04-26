@@ -15,7 +15,6 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.group_tags import GroupTags
     from datadog_api_client.v2.model.unit import Unit
 
 
@@ -28,11 +27,10 @@ class TimeseriesResponseSeries(ModelNormal):
 
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.group_tags import GroupTags
         from datadog_api_client.v2.model.unit import Unit
 
         return {
-            "group_tags": (GroupTags,),
+            "group_tags": ([str],),
             "query_index": (int,),
             "unit": ([Unit, none_type],),
         }
@@ -54,7 +52,7 @@ class TimeseriesResponseSeries(ModelNormal):
 
 
         :param group_tags: List of tags that apply to a single response value.
-        :type group_tags: GroupTags, optional
+        :type group_tags: [str], optional
 
         :param query_index: The index of the query in the "formulas" array (or "queries" array if no "formulas" was specified).
         :type query_index: int, optional

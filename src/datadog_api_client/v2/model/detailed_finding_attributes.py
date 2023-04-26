@@ -18,7 +18,6 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.finding_mute import FindingMute
     from datadog_api_client.v2.model.finding_rule import FindingRule
     from datadog_api_client.v2.model.finding_status import FindingStatus
-    from datadog_api_client.v2.model.finding_tags import FindingTags
 
 
 class DetailedFindingAttributes(ModelNormal):
@@ -37,7 +36,6 @@ class DetailedFindingAttributes(ModelNormal):
         from datadog_api_client.v2.model.finding_mute import FindingMute
         from datadog_api_client.v2.model.finding_rule import FindingRule
         from datadog_api_client.v2.model.finding_status import FindingStatus
-        from datadog_api_client.v2.model.finding_tags import FindingTags
 
         return {
             "evaluation": (FindingEvaluation,),
@@ -50,7 +48,7 @@ class DetailedFindingAttributes(ModelNormal):
             "resource_type": (str,),
             "rule": (FindingRule,),
             "status": (FindingStatus,),
-            "tags": (FindingTags,),
+            "tags": ([str],),
         }
 
     attribute_map = {
@@ -116,7 +114,7 @@ class DetailedFindingAttributes(ModelNormal):
         :type status: FindingStatus, optional
 
         :param tags: The tags associated with this finding.
-        :type tags: FindingTags, optional
+        :type tags: [str], optional
         """
         if evaluation is not unset:
             kwargs["evaluation"] = evaluation

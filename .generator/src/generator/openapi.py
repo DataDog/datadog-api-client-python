@@ -37,9 +37,9 @@ def type_to_python_helper(type_, schema, alternative_name=None, in_list=False):
     elif type_ == "boolean":
         return "bool"
     elif type_ == "array":
-        subtype = type_to_python(schema["items"], in_list=True)
+        subtype = type_to_python(schema["items"], alternative_name=alternative_name + "Item" if alternative_name else None, in_list=True)
         if schema["items"].get("nullable"):
-             subtype += ", none_type"
+            subtype += ", none_type"
         return "[{}]".format(subtype)
     elif type_ == "object":
         if "additionalProperties" in schema:
@@ -63,11 +63,14 @@ def type_to_python_helper(type_, schema, alternative_name=None, in_list=False):
 def type_to_python(schema, alternative_name=None, in_list=False):
     """Return Python type name for the type."""
     name = formatter.get_name(schema)
-    if name:
+    if name and "items" not in schema:
         if "enum" in schema:
             return name
-        if schema.get("type", "object") in ("object", "array"):
+        if schema.get("type", "object") == "object":
             return name
+
+    if name:
+        alternative_name = name
 
     type_ = schema.get("type")
     if type_ is None:
@@ -241,7 +244,7 @@ def child_models(schema, alternative_name=None, seen=None, in_list=False):
             yield from child_models(child, seen=seen)
 
     if "items" in schema:
-        yield from child_models(schema["items"], None, seen=seen, in_list=True)
+        yield from child_models(schema["items"], alternative_name=name + "Item" if name is not None else None, seen=seen, in_list=True)
 
     if schema.get("type") == "object" or "properties" in schema or has_sub_models:
         if not has_sub_models and name is None:
@@ -265,7 +268,7 @@ def child_models(schema, alternative_name=None, seen=None, in_list=False):
         for key, child in schema.get("properties", {}).items():
             yield from child_models(child, alternative_name=name + formatter.camel_case(key), seen=seen)
 
-    if current_name and schema.get("type") == "array":
+    if False and current_name and schema.get("type") == "array":
         if name in seen:
             return
 
@@ -330,13 +333,16 @@ def get_references_for_model(model, model_name):
                 if name:
                     result[name] = None
         elif definition.get("type") == "array":
-            name = formatter.get_name(definition)
+            name = formatter.get_name(definition.get("items"))
             if name:
                 result[name] = None
-            else:
-                name = formatter.get_name(definition.get("items"))
+            elif formatter.get_name(definition):
+                result[formatter.get_name(definition) + "Item"] = None
+            if "items" in definition["items"]:
+                name = formatter.get_name(definition["items"])
                 if name:
-                    result[name] = None
+                    result[name + "Item"] = None
+
         elif definition.get("properties") and top_name:
             result[top_name + formatter.camel_case(key)] = None
     if model.get("additionalProperties"):
@@ -392,8 +398,12 @@ def get_oneof_parameters(model):
 def get_oneof_types(model):
     for schema in model["oneOf"]:
         type_ = schema.get("type", "object")
-        if type_ in ("array", "object"):
+        if type_ == "object":
             yield formatter.get_name(schema)
+        elif type_ == "array":
+            name = formatter.get_name(schema["items"])
+            if name:
+                yield f"[{name}]"
         elif type_ == "integer":
             yield "int"
         elif type_ == "string":
@@ -409,8 +419,13 @@ def get_oneof_types(model):
 def get_oneof_models(model):
     result = []
     for schema in model["oneOf"]:
-        if schema.get("type", "object") in ("array", "object"):
+        type_ = schema.get("type", "object")
+        if type_ == "object":
             result.append(formatter.get_name(schema))
+        elif type_ == "array":
+            name = formatter.get_name(schema["items"])
+            if name:
+                result.append(name)
     return result
 
 
@@ -470,6 +485,23 @@ def get_api_models(operations):
                                     if name and name not in seen:
                                         seen.add(name)
                                         yield name
+                    if "items" in content["schema"]:
+                        name = formatter.get_name(content["schema"]["items"])
+                        if name and name not in seen:
+                            seen.add(name)
+                            yield name
+                    if "additionalProperties" in content["schema"]:
+                        if "items" in content["schema"]["additionalProperties"]:
+                            name = formatter.get_name(content["schema"]["additionalProperties"]["items"])
+                            if name and name not in seen:
+                                seen.add(name)
+                                yield name
+                    else:
+                        name = formatter.get_name(content["schema"])
+                        if name and name not in seen:
+                            seen.add(name)
+                            yield name
+
         if "x-pagination" in operation:
             name = get_type_at_path(operation, operation["x-pagination"]["resultsPath"])
             if name and name not in seen:

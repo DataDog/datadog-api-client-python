@@ -18,7 +18,6 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.logs_aggregate_bucket_value import LogsAggregateBucketValue
-    from datadog_api_client.v2.model.logs_aggregate_bucket_value_timeseries import LogsAggregateBucketValueTimeseries
 
 
 class LogsAggregateBucket(ModelNormal):
@@ -54,7 +53,7 @@ class LogsAggregateBucket(ModelNormal):
         self_,
         by: Union[Dict[str, Any], UnsetType] = unset,
         computes: Union[
-            Dict[str, Union[LogsAggregateBucketValue, str, float, LogsAggregateBucketValueTimeseries]], UnsetType
+            Dict[str, Union[LogsAggregateBucketValue, str, float, [LogsAggregateBucketValueTimeseriesPoint]]], UnsetType
         ] = unset,
         **kwargs,
     ):

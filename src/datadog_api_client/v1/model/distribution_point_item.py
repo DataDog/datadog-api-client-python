@@ -10,16 +10,10 @@ from datadog_api_client.model_utils import (
 )
 
 
-class SharedDashboardInvitesData(ModelComposed):
+class DistributionPointItem(ModelComposed):
     def __init__(self, **kwargs):
         """
-        An object or list of objects containing the information for an invitation to a shared dashboard.
-
-        :param attributes: Attributes of the shared dashboard invitation
-        :type attributes: SharedDashboardInvitesDataObjectAttributes
-
-        :param type: Type for shared dashboard invitation request body.
-        :type type: DashboardInviteType
+        List of distribution point.
         """
         super().__init__(kwargs)
 
@@ -32,12 +26,8 @@ class SharedDashboardInvitesData(ModelComposed):
         # code would be run when this module is imported, and these composed
         # classes don't exist yet because their module has not finished
         # loading
-        from datadog_api_client.v1.model.shared_dashboard_invites_data_object import SharedDashboardInvitesDataObject
-        from datadog_api_client.v1.model.shared_dashboard_invites_data_object import SharedDashboardInvitesDataObject
-
         return {
             "oneOf": [
-                SharedDashboardInvitesDataObject,
-                [SharedDashboardInvitesDataObject],
+                float,
             ],
         }
