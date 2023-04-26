@@ -237,7 +237,10 @@ def format_data_with_schema_list(
 ):
     """Format data with schema."""
     assert version is not None
-    name, imports = get_name_and_imports(schema, version, imports)
+    #name, imports = get_name_and_imports(schema, version, imports)
+    #if name == "ScalarFormulaRequestQueries":
+    #    import pdb; pdb.set_trace()
+    imports = imports or defaultdict(set)
 
     if "oneOf" in schema:
         for sub_schema in schema["oneOf"]:
@@ -263,15 +266,14 @@ def format_data_with_schema_list(
             d,
             schema["items"],
             replace_values=replace_values,
-            default_name=name,
             version=version,
         )
         parameters += f"{value}, "
         imports = _merge_imports(imports, extra_imports)
     parameters = f"[{parameters}]"
 
-    if name:
-        return f"{name}({parameters})", imports
+    #if name:
+    #    return f"{name}({parameters})", imports
 
     return parameters, imports
 
