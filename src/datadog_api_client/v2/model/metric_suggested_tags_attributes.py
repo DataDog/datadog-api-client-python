@@ -14,7 +14,7 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    pass
+    from datadog_api_client.v2.model.metric_custom_aggregation import MetricCustomAggregation
 
 
 class MetricSuggestedTagsAttributes(ModelNormal):
@@ -34,7 +34,7 @@ class MetricSuggestedTagsAttributes(ModelNormal):
 
     def __init__(
         self_,
-        active_aggregations: Union[MetricSuggestedAggregations, UnsetType] = unset,
+        active_aggregations: Union[List[MetricCustomAggregation], UnsetType] = unset,
         active_tags: Union[List[str], UnsetType] = unset,
         **kwargs,
     ):

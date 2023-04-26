@@ -43,7 +43,7 @@ class TimeseriesResponseSeries(ModelNormal):
 
     def __init__(
         self_,
-        group_tags: Union[GroupTags, UnsetType] = unset,
+        group_tags: Union[List[str], UnsetType] = unset,
         query_index: Union[int, UnsetType] = unset,
         unit: Union[List[Unit], UnsetType] = unset,
         **kwargs,

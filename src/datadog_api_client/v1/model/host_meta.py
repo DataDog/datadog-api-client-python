@@ -17,7 +17,6 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v1.model.agent_check import AgentCheck
     from datadog_api_client.v1.model.host_meta_install_method import HostMetaInstallMethod
 
 
@@ -64,7 +63,7 @@ class HostMeta(ModelNormal):
 
     def __init__(
         self_,
-        agent_checks: Union[List[AgentCheck], UnsetType] = unset,
+        agent_checks: Union[List[List[Any]], UnsetType] = unset,
         agent_version: Union[str, UnsetType] = unset,
         cpu_cores: Union[int, UnsetType] = unset,
         fbsd_v: Union[List[Any], UnsetType] = unset,

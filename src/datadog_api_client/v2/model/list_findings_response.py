@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import List, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -12,6 +12,7 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.finding import Finding
     from datadog_api_client.v2.model.list_findings_meta import ListFindingsMeta
 
 
@@ -31,7 +32,7 @@ class ListFindingsResponse(ModelNormal):
         "meta": "meta",
     }
 
-    def __init__(self_, data: ListFindingsData, meta: ListFindingsMeta, **kwargs):
+    def __init__(self_, data: List[Finding], meta: ListFindingsMeta, **kwargs):
         """
         The expected response schema when listing findings.
 

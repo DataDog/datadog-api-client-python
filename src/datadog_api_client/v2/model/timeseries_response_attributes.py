@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -15,7 +15,7 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    pass
+    from datadog_api_client.v2.model.timeseries_response_series import TimeseriesResponseSeries
 
 
 class TimeseriesResponseAttributes(ModelNormal):
@@ -37,9 +37,9 @@ class TimeseriesResponseAttributes(ModelNormal):
 
     def __init__(
         self_,
-        series: Union[TimeseriesResponseSeriesList, UnsetType] = unset,
-        times: Union[TimeseriesResponseTimes, UnsetType] = unset,
-        values: Union[TimeseriesResponseValuesList, UnsetType] = unset,
+        series: Union[List[TimeseriesResponseSeries], UnsetType] = unset,
+        times: Union[List[int], UnsetType] = unset,
+        values: Union[List[List[float]], UnsetType] = unset,
         **kwargs,
     ):
         """

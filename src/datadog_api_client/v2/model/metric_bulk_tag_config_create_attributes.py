@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -31,10 +31,7 @@ class MetricBulkTagConfigCreateAttributes(ModelNormal):
     }
 
     def __init__(
-        self_,
-        emails: Union[MetricBulkTagConfigEmailList, UnsetType] = unset,
-        tags: Union[MetricBulkTagConfigTagNameList, UnsetType] = unset,
-        **kwargs,
+        self_, emails: Union[List[str], UnsetType] = unset, tags: Union[List[str], UnsetType] = unset, **kwargs
     ):
         """
         Optional parameters for bulk creating metric tag configurations.

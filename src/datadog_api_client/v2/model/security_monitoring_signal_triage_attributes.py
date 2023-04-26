@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -66,7 +66,7 @@ class SecurityMonitoringSignalTriageAttributes(ModelNormal):
     def __init__(
         self_,
         assignee: SecurityMonitoringTriageUser,
-        incident_ids: SecurityMonitoringSignalIncidentIds,
+        incident_ids: List[int],
         state: SecurityMonitoringSignalState,
         archive_comment: Union[str, UnsetType] = unset,
         archive_comment_timestamp: Union[int, UnsetType] = unset,

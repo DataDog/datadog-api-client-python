@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import List, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -12,7 +12,7 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    pass
+    from datadog_api_client.v1.model.dashboard_bulk_action_data import DashboardBulkActionData
 
 
 class DashboardBulkDeleteRequest(ModelNormal):
@@ -28,7 +28,7 @@ class DashboardBulkDeleteRequest(ModelNormal):
         "data": "data",
     }
 
-    def __init__(self_, data: DashboardBulkActionDataList, **kwargs):
+    def __init__(self_, data: List[DashboardBulkActionData], **kwargs):
         """
         Dashboard bulk delete request body.
 

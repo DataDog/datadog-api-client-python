@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -33,10 +33,7 @@ class MonitorGroupSearchResponseCounts(ModelNormal):
     }
 
     def __init__(
-        self_,
-        status: Union[MonitorSearchCount, UnsetType] = unset,
-        type: Union[MonitorSearchCount, UnsetType] = unset,
-        **kwargs,
+        self_, status: Union[List[dict], UnsetType] = unset, type: Union[List[dict], UnsetType] = unset, **kwargs
     ):
         """
         The counts of monitor groups per different criteria.

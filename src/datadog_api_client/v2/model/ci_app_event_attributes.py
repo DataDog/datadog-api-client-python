@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Any, Dict, Union, TYPE_CHECKING
+from typing import Any, Dict, List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -55,7 +55,7 @@ class CIAppEventAttributes(ModelNormal):
         self_,
         attributes: Union[Dict[str, Any], UnsetType] = unset,
         service: Union[str, UnsetType] = unset,
-        tags: Union[TagsEventAttribute, UnsetType] = unset,
+        tags: Union[List[str], UnsetType] = unset,
         timestamp: Union[datetime, UnsetType] = unset,
         **kwargs,
     ):

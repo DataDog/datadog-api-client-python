@@ -140,10 +140,10 @@ def typing_to_python(schema, alternative_name=None, in_list=False):
     if name:
         if "enum" in schema:
             return name
-        if schema.get("type", "object") in ("object", "array"):
+        if schema.get("type", "object") == "object":
             if "oneOf" in schema:
                 types = [name]
-                types.extend(get_oneof_types(schema))
+                types.extend(get_oneof_types(schema, typing=True))
                 return f"Union[{','.join(types)}]"
             return name
 
@@ -395,7 +395,7 @@ def get_oneof_parameters(model):
                 yield attr, definition, schema
 
 
-def get_oneof_types(model):
+def get_oneof_types(model, typing=False):
     for schema in model["oneOf"]:
         type_ = schema.get("type", "object")
         if type_ == "object":
@@ -403,7 +403,10 @@ def get_oneof_types(model):
         elif type_ == "array":
             name = formatter.get_name(schema["items"])
             if name:
-                yield f"[{name}]"
+                if typing:
+                    yield f"List[{name}]"
+                else:
+                    yield f"[{name}]"
         elif type_ == "integer":
             yield "int"
         elif type_ == "string":

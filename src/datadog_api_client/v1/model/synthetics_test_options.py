@@ -116,7 +116,7 @@ class SyntheticsTestOptions(ModelNormal):
         monitor_options: Union[SyntheticsTestOptionsMonitorOptions, UnsetType] = unset,
         monitor_priority: Union[int, UnsetType] = unset,
         no_screenshot: Union[bool, UnsetType] = unset,
-        restricted_roles: Union[SyntheticsRestrictedRoles, UnsetType] = unset,
+        restricted_roles: Union[List[str], UnsetType] = unset,
         retry: Union[SyntheticsTestOptionsRetry, UnsetType] = unset,
         rum_settings: Union[SyntheticsBrowserTestRumSettings, UnsetType] = unset,
         scheduling: Union[SyntheticsTestOptionsScheduling, UnsetType] = unset,

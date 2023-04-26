@@ -14,7 +14,6 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v1.model.distribution_point import DistributionPoint
     from datadog_api_client.v1.model.distribution_points_type import DistributionPointsType
 
 
@@ -49,7 +48,12 @@ class DistributionPointsSeries(ModelNormal):
     def __init__(
         self_,
         metric: str,
-        points: List[DistributionPoint],
+        points: List[
+            List[
+                float,
+                List[float],
+            ]
+        ],
         host: Union[str, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
         type: Union[DistributionPointsType, UnsetType] = unset,

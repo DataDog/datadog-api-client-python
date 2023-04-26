@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -15,7 +15,8 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    pass
+    from datadog_api_client.v2.model.incident_todo_assignee import IncidentTodoAssignee
+    from datadog_api_client.v2.model.incident_todo_anonymous_assignee import IncidentTodoAnonymousAssignee
 
 
 class IncidentTodoAttributes(ModelNormal):
@@ -41,7 +42,7 @@ class IncidentTodoAttributes(ModelNormal):
 
     def __init__(
         self_,
-        assignees: IncidentTodoAssigneeArray,
+        assignees: List[Union[IncidentTodoAssignee, str, IncidentTodoAnonymousAssignee]],
         content: str,
         completed: Union[str, none_type, UnsetType] = unset,
         due_date: Union[str, none_type, UnsetType] = unset,

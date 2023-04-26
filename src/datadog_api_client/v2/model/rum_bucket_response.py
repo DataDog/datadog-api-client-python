@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Dict, Union, TYPE_CHECKING
+from typing import Dict, List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -36,7 +36,8 @@ class RUMBucketResponse(ModelNormal):
         self_,
         by: Union[Dict[str, str], UnsetType] = unset,
         computes: Union[
-            Dict[str, Union[RUMAggregateBucketValue, str, float, [RUMAggregateBucketValueTimeseriesPoint]]], UnsetType
+            Dict[str, Union[RUMAggregateBucketValue, str, float, List[RUMAggregateBucketValueTimeseriesPoint]]],
+            UnsetType,
         ] = unset,
         **kwargs,
     ):

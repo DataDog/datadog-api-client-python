@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -28,7 +28,7 @@ class SyntheticsPrivateLocationMetadata(ModelNormal):
         "restricted_roles": "restricted_roles",
     }
 
-    def __init__(self_, restricted_roles: Union[SyntheticsRestrictedRoles, UnsetType] = unset, **kwargs):
+    def __init__(self_, restricted_roles: Union[List[str], UnsetType] = unset, **kwargs):
         """
         Object containing metadata about the private location.
 

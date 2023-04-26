@@ -14,7 +14,7 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    pass
+    from datadog_api_client.v2.model.metric_custom_aggregation import MetricCustomAggregation
 
 
 class MetricTagConfigurationUpdateAttributes(ModelNormal):
@@ -36,7 +36,7 @@ class MetricTagConfigurationUpdateAttributes(ModelNormal):
 
     def __init__(
         self_,
-        aggregations: Union[MetricCustomAggregations, UnsetType] = unset,
+        aggregations: Union[List[MetricCustomAggregation], UnsetType] = unset,
         include_percentiles: Union[bool, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
         **kwargs,

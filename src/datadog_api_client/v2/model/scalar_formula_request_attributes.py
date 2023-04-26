@@ -15,6 +15,9 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.query_formula import QueryFormula
+    from datadog_api_client.v2.model.scalar_query import ScalarQuery
+    from datadog_api_client.v2.model.metrics_scalar_query import MetricsScalarQuery
+    from datadog_api_client.v2.model.events_scalar_query import EventsScalarQuery
 
 
 class ScalarFormulaRequestAttributes(ModelNormal):
@@ -40,7 +43,7 @@ class ScalarFormulaRequestAttributes(ModelNormal):
     def __init__(
         self_,
         _from: int,
-        queries: ScalarFormulaRequestQueries,
+        queries: List[Union[ScalarQuery, MetricsScalarQuery, EventsScalarQuery]],
         to: int,
         formulas: Union[List[QueryFormula], UnsetType] = unset,
         **kwargs,

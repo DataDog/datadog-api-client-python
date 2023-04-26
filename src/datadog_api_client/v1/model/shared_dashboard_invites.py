@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -40,7 +40,9 @@ class SharedDashboardInvites(ModelNormal):
 
     def __init__(
         self_,
-        data: Union[SharedDashboardInvitesData, SharedDashboardInvitesDataObject, [SharedDashboardInvitesDataObject]],
+        data: Union[
+            SharedDashboardInvitesData, SharedDashboardInvitesDataObject, List[SharedDashboardInvitesDataObject]
+        ],
         meta: Union[SharedDashboardInvitesMeta, UnsetType] = unset,
         **kwargs,
     ):

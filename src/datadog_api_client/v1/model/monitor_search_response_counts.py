@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -38,10 +38,10 @@ class MonitorSearchResponseCounts(ModelNormal):
 
     def __init__(
         self_,
-        muted: Union[MonitorSearchCount, UnsetType] = unset,
-        status: Union[MonitorSearchCount, UnsetType] = unset,
-        tag: Union[MonitorSearchCount, UnsetType] = unset,
-        type: Union[MonitorSearchCount, UnsetType] = unset,
+        muted: Union[List[dict], UnsetType] = unset,
+        status: Union[List[dict], UnsetType] = unset,
+        tag: Union[List[dict], UnsetType] = unset,
+        type: Union[List[dict], UnsetType] = unset,
         **kwargs,
     ):
         """

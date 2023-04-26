@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -14,6 +14,7 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v1.model.usage_attribution_aggregates_body import UsageAttributionAggregatesBody
     from datadog_api_client.v1.model.monthly_usage_attribution_pagination import MonthlyUsageAttributionPagination
 
 
@@ -35,7 +36,7 @@ class MonthlyUsageAttributionMetadata(ModelNormal):
 
     def __init__(
         self_,
-        aggregates: Union[UsageAttributionAggregates, UnsetType] = unset,
+        aggregates: Union[List[UsageAttributionAggregatesBody], UnsetType] = unset,
         pagination: Union[MonthlyUsageAttributionPagination, UnsetType] = unset,
         **kwargs,
     ):

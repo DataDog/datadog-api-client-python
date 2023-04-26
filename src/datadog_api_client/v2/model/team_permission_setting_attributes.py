@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -54,7 +54,7 @@ class TeamPermissionSettingAttributes(ModelNormal):
         self_,
         action: Union[TeamPermissionSettingSerializerAction, UnsetType] = unset,
         editable: Union[bool, UnsetType] = unset,
-        options: Union[TeamPermissionSettingValues, UnsetType] = unset,
+        options: Union[List[TeamPermissionSettingValue], UnsetType] = unset,
         title: Union[str, UnsetType] = unset,
         value: Union[TeamPermissionSettingValue, UnsetType] = unset,
         **kwargs,

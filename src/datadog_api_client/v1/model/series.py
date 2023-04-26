@@ -15,7 +15,7 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v1.model.point import Point
+    pass
 
 
 class Series(ModelNormal):
@@ -42,7 +42,7 @@ class Series(ModelNormal):
     def __init__(
         self_,
         metric: str,
-        points: List[Point],
+        points: List[List[float]],
         host: Union[str, UnsetType] = unset,
         interval: Union[int, none_type, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,

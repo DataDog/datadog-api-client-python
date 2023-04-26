@@ -16,6 +16,7 @@ from datadog_api_client.model_utils import (
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.events_compute import EventsCompute
     from datadog_api_client.v2.model.events_data_source import EventsDataSource
+    from datadog_api_client.v2.model.events_group_by import EventsGroupBy
     from datadog_api_client.v2.model.events_search import EventsSearch
 
 
@@ -49,7 +50,7 @@ class EventsScalarQuery(ModelNormal):
         self_,
         compute: EventsCompute,
         data_source: EventsDataSource,
-        group_by: Union[EventsQueryGroupBys, UnsetType] = unset,
+        group_by: Union[List[EventsGroupBy], UnsetType] = unset,
         indexes: Union[List[str], UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
         search: Union[EventsSearch, UnsetType] = unset,
