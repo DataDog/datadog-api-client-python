@@ -268,13 +268,6 @@ def child_models(schema, alternative_name=None, seen=None, in_list=False):
         for key, child in schema.get("properties", {}).items():
             yield from child_models(child, alternative_name=name + formatter.camel_case(key), seen=seen)
 
-    if False and current_name and schema.get("type") == "array":
-        if name in seen:
-            return
-
-        seen.add(name)
-        yield name, schema
-
     if "enum" in schema:
         if name is None:
             raise ValueError(f"Schema {schema} has no name")
