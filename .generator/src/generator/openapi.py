@@ -371,8 +371,12 @@ def get_oneof_references_for_model(model, model_name, seen=None):
     if model.get("oneOf"):
         for schema in model["oneOf"]:
             type_ = schema.get("type", "object")
-            if type_ in ("array", "object"):
+            if type_ == "object":
                 result[formatter.get_name(schema)] = None
+            elif type_ == "array":
+                sub_name = formatter.get_name(schema["items"])
+                if sub_name:
+                    result[sub_name] = None
 
     for key, definition in model.get("properties", {}).items():
         result.update({k: None for k in get_oneof_references_for_model(definition, model_name, seen)})
