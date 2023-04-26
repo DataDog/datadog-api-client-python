@@ -157,7 +157,7 @@ def typing_to_python(schema, alternative_name=None, in_list=False):
                     type_ += f"{typing_to_python_helper(child.get('type'), child, in_list=in_list)},"
                 else:
                     type_ += f"{typing_to_python(child, in_list=in_list)},"
-            return type_
+            return f"Union[{type_}]"
         if "items" in schema:
             type_ = "array"
 

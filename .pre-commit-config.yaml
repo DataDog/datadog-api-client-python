@@ -31,7 +31,7 @@ repos:
   - id: generator
     name: generator
     language: python
-    entry: bash -c "cd .generator && poetry install && poetry run python -m generator ./schemas/v1/openapi.yaml ./schemas/v2/openapi.yaml -o ../src/"
+    entry: bash -c "unset VIRTUAL_ENV && cd .generator && poetry install && poetry run python -m generator ./schemas/v1/openapi.yaml ./schemas/v2/openapi.yaml -o ../src/"
     files: "^.generator/(config|schemas/v1|src|poetry.lock|pyproject.toml)"
     stages: [manual]
     pass_filenames: false
@@ -40,7 +40,7 @@ repos:
   - id: examples
     name: examples
     language: python
-    entry: bash -c "cd .generator && poetry install && poetry run pytest"
+    entry: bash -c "unset VIRTUAL_ENV && cd .generator && poetry install && poetry run pytest"
     files: "^.generator/"
     stages: [manual]
     pass_filenames: false

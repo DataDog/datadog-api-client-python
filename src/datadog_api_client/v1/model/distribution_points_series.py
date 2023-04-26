@@ -50,8 +50,10 @@ class DistributionPointsSeries(ModelNormal):
         metric: str,
         points: List[
             List[
-                float,
-                List[float],
+                Union[
+                    float,
+                    List[float],
+                ]
             ]
         ],
         host: Union[str, UnsetType] = unset,
