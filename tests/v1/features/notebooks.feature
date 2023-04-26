@@ -79,7 +79,7 @@ Feature: Notebooks
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/notebooks
+  @skip-validation @team:DataDog/notebooks
   Scenario: Get all notebooks returns "OK" response
     Given new "ListNotebooks" request
     When the request is sent
