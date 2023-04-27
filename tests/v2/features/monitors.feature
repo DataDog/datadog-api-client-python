@@ -18,7 +18,7 @@ Feature: Monitors
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/monitor-app
+  @monitor_gate:true @team:DataDog/monitor-app
   Scenario: Create a monitor configuration policy returns "OK" response
     Given new "CreateMonitorConfigPolicy" request
     And body with value {"data": {"attributes": {"policy_type": "tag", "policy": {"tag_key": "datacenter", "tag_key_required": true, "valid_tag_values": ["prod", "staging"]}}, "type": "monitor-config-policy"}}
