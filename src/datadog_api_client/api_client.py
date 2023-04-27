@@ -114,13 +114,13 @@ class ApiClient:
         # deserialize response data
         if response_type:
             if response_type == (file_type,):
-                content_disposition = response.getheader("Content-Disposition")
+                content_disposition = response.headers.get("Content-Disposition")
                 return_data = deserialize_file(
                     response.data, self.configuration.temp_folder_path, content_disposition=content_disposition
                 )
             else:
                 encoding = "utf-8"
-                content_type = response.getheader("content-type")
+                content_type = response.headers.get("Content-Type")
                 if content_type is not None:
                     match = re.search(r"charset=([a-zA-Z\-\d]+)[\s\;]?", content_type)
                     if match:
@@ -133,7 +133,7 @@ class ApiClient:
 
         if return_http_data_only:
             return return_data
-        return (return_data, response.status, response.getheaders())
+        return (return_data, response.status, response.headers.copy())
 
     def parameters_to_multipart(self, params):
         """Get parameters as list of tuples, formatting as json if value is dict.
