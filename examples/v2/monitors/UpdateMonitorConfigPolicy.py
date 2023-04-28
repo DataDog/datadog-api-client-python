@@ -21,8 +21,8 @@ body = MonitorConfigPolicyEditRequest(
     data=MonitorConfigPolicyEditData(
         attributes=MonitorConfigPolicyAttributeEditRequest(
             policy=MonitorConfigPolicyTagPolicy(
-                tag_key="examplemonitor",
-                tag_key_required=False,
+                tag_key="datacenter",
+                tag_key_required=True,
                 valid_tag_values=[
                     "prod",
                     "staging",
