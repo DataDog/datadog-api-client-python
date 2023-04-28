@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"policy":{"tag_key":"dc","tag_key_required":true,"valid_tag_values":["prod","staging"]},"policy_type":"tag"},"type":"monitor-config-policy"}}'
+    body: '{"data":{"attributes":{"policy":{"tag_key":"testgetamonitorconfigurationpolicyreturnsokresponse1682627702","tag_key_required":false,"valid_tag_values":["prod","staging"]},"policy_type":"tag"},"type":"monitor-config-policy"}}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/monitor/policy
   response:
     body:
-      string: '{"data":{"type":"monitor-config-policy","attributes":{"policy":{"valid_tag_values":["prod","staging"],"tag_key_required":true,"tag_key":"dc"},"policy_type":"tag"},"id":"d024d89a-9833-11ed-99f7-da7ad0900002"}}
+      string: '{"data":{"type":"monitor-config-policy","attributes":{"policy_type":"tag","policy":{"tag_key":"testgetamonitorconfigurationpolicyreturnsokresponse1682627702","valid_tag_values":["prod","staging"],"tag_key_required":false}},"id":"fcd6f8ec-e53a-11ed-8b5f-da7ad0900002"}}
 
         '
     headers:
@@ -25,10 +25,10 @@ interactions:
       accept:
       - application/json
     method: GET
-    uri: https://api.datadoghq.com/api/v2/monitor/policy/d024d89a-9833-11ed-99f7-da7ad0900002
+    uri: https://api.datadoghq.com/api/v2/monitor/policy/fcd6f8ec-e53a-11ed-8b5f-da7ad0900002
   response:
     body:
-      string: '{"data":{"type":"monitor-config-policy","id":"d024d89a-9833-11ed-99f7-da7ad0900002","attributes":{"policy_type":"tag","policy":{"valid_tag_values":["prod","staging"],"tag_key_required":true,"tag_key":"dc"}}}}
+      string: '{"data":{"type":"monitor-config-policy","attributes":{"policy_type":"tag","policy":{"tag_key_required":false,"tag_key":"testgetamonitorconfigurationpolicyreturnsokresponse1682627702","valid_tag_values":["prod","staging"]}},"id":"fcd6f8ec-e53a-11ed-8b5f-da7ad0900002"}}
 
         '
     headers:
@@ -43,7 +43,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/monitor/policy/d024d89a-9833-11ed-99f7-da7ad0900002
+    uri: https://api.datadoghq.com/api/v2/monitor/policy/fcd6f8ec-e53a-11ed-8b5f-da7ad0900002
   response:
     body:
       string: ''

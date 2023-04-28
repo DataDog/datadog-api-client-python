@@ -20,8 +20,8 @@ body = MonitorConfigPolicyCreateRequest(
         attributes=MonitorConfigPolicyAttributeCreateRequest(
             policy_type=MonitorConfigPolicyType.TAG,
             policy=MonitorConfigPolicyTagPolicyCreateRequest(
-                tag_key="datacenter",
-                tag_key_required=True,
+                tag_key="examplemonitor",
+                tag_key_required=False,
                 valid_tag_values=[
                     "prod",
                     "staging",
