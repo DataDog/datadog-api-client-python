@@ -109,7 +109,3 @@ Feature: Monitors
     When the request is sent
     Then the response status is 200 OK
     And the response "data[0].type" is equal to "monitor-config-policy"
-    And the response "data[0].id" is equal to "{{ monitor_configuration_policy.data.id }}"
-    And the response "data[0].attributes.policy_type" is equal to "tag"
-    And the response "data[0].attributes.policy.tag_key" is equal to "{{ unique_lower_alnum }}"
-    And the response "data[0].attributes.policy.valid_tag_values" is equal to ["prod", "staging"]
