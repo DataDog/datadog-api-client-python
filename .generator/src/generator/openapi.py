@@ -331,10 +331,6 @@ def get_references_for_model(model, model_name):
                 result[name] = None
             elif formatter.get_name(definition) and definition["items"].get("type") not in PRIMITIVE_TYPES:
                 result[formatter.get_name(definition) + "Item"] = None
-            if "items" in definition["items"]:
-                name = formatter.get_name(definition["items"])
-                if name:
-                    result[name + "Item"] = None
 
         elif definition.get("properties") and top_name:
             result[top_name + formatter.camel_case(key)] = None
