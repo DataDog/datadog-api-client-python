@@ -24,6 +24,17 @@ body = SyntheticsAPITest(
                 target=1,
                 type=SyntheticsAssertionType.GRPC_HEALTHCHECK_STATUS,
             ),
+            SyntheticsAssertionTarget(
+                operator=SyntheticsAssertionOperator.IS,
+                target="proto target",
+                type=SyntheticsAssertionType.GRPC_PROTO,
+            ),
+            SyntheticsAssertionTarget(
+                operator=SyntheticsAssertionOperator.IS,
+                target="123",
+                _property="property",
+                type=SyntheticsAssertionType.GRPC_METADATA,
+            ),
         ],
         request=SyntheticsTestRequest(
             host="localhost",
