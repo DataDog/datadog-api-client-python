@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Any, Dict, List, Union, TYPE_CHECKING
+from typing import Any, Dict, List, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -14,10 +14,6 @@ from datadog_api_client.model_utils import (
     unset,
     UnsetType,
 )
-
-
-if TYPE_CHECKING:
-    pass
 
 
 class CIAppEventAttributes(ModelNormal):

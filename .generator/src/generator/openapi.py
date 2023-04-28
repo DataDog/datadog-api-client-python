@@ -329,7 +329,7 @@ def get_references_for_model(model, model_name):
             name = formatter.get_name(definition.get("items"))
             if name:
                 result[name] = None
-            elif formatter.get_name(definition):
+            elif formatter.get_name(definition) and definition["items"].get("type") not in PRIMITIVE_TYPES:
                 result[formatter.get_name(definition) + "Item"] = None
             if "items" in definition["items"]:
                 name = formatter.get_name(definition["items"])
