@@ -532,6 +532,7 @@ Feature: Dashboards
     Then the response status is 200 OK
     And the response "widgets[0].definition.type" is equal to "slo"
     And the response "widgets[0].definition.slo_id" is equal to "{{ slo.data[0].id }}"
+    And the response "widgets[0].definition.additional_query_filters" is equal to "!host:excluded_host"
 
   @team:DataDog/dashboards
   Scenario: Create a new dashboard with sunburst widget and metrics data
