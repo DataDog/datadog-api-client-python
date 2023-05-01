@@ -224,9 +224,7 @@ class _AioSonicResponseWrapper:
         self.status = response.status_code
         self.reason = response.response_initial.get("reason")
         self.data = data
-
-    def getheaders(self):
-        return self.response.headers
+        self.headers = response.headers.copy()
 
 
 class AsyncRESTClientObject:
