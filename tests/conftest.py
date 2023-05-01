@@ -654,7 +654,7 @@ def expect_array_contains_object(context, response_path, key_path, value):
             return
     raise AssertionError(f"could not find key value pair in object array: \"{key_path}\": \"{test_value}\"")
 
-@then(parsers.parse('the response "{response_path}" contains value {value}'))
+@then(parsers.parse('the response "{response_path}" array contains value {value}'))
 def expect_array_contains_object(context, response_path, value):
     response_value = glom(context["api_request"]["response"][0], response_path)
     test_value = json.loads(Template(value).render(**context))
