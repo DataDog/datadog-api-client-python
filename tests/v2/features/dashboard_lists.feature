@@ -8,7 +8,7 @@ Feature: Dashboard Lists
     And a valid "appKeyAuth" key in the system
     And an instance of "DashboardLists" API
 
-  @generated @skip @team:DataDog/dashboards
+  @generated @skip @team:DataDog/dashboards-backend
   Scenario: Add Items to a Dashboard List returns "Bad Request" response
     Given new "CreateDashboardListItems" request
     And request contains "dashboard_list_id" parameter from "REPLACE.ME"
@@ -16,7 +16,7 @@ Feature: Dashboard Lists
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/dashboards
+  @generated @skip @team:DataDog/dashboards-backend
   Scenario: Add Items to a Dashboard List returns "Not Found" response
     Given new "CreateDashboardListItems" request
     And request contains "dashboard_list_id" parameter from "REPLACE.ME"
@@ -24,7 +24,7 @@ Feature: Dashboard Lists
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/dashboards
+  @generated @skip @team:DataDog/dashboards-backend
   Scenario: Add Items to a Dashboard List returns "OK" response
     Given new "CreateDashboardListItems" request
     And request contains "dashboard_list_id" parameter from "REPLACE.ME"
@@ -32,7 +32,7 @@ Feature: Dashboard Lists
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/dashboards
+  @team:DataDog/dashboards-backend
   Scenario: Add custom screenboard dashboard to an existing dashboard list returns "OK" response
     Given there is a valid "dashboard_list" in the system
     And there is a valid "screenboard_dashboard" in the system
@@ -45,7 +45,7 @@ Feature: Dashboard Lists
     And the response "added_dashboards_to_list[0].id" is equal to "{{ screenboard_dashboard.id }}"
     And the response "added_dashboards_to_list" has length 1
 
-  @team:DataDog/dashboards
+  @team:DataDog/dashboards-backend
   Scenario: Add custom timeboard dashboard to an existing dashboard list returns "OK" response
     Given there is a valid "dashboard_list" in the system
     And there is a valid "dashboard" in the system
@@ -58,7 +58,7 @@ Feature: Dashboard Lists
     And the response "added_dashboards_to_list[0].id" is equal to "{{ dashboard.id }}"
     And the response "added_dashboards_to_list" has length 1
 
-  @team:DataDog/dashboards
+  @team:DataDog/dashboards-backend
   Scenario: Delete custom screenboard dashboard from an existing dashboard list returns "OK" response
     Given there is a valid "dashboard_list" in the system
     And there is a valid "screenboard_dashboard" in the system
@@ -72,7 +72,7 @@ Feature: Dashboard Lists
     And the response "deleted_dashboards_from_list[0].id" is equal to "{{ screenboard_dashboard.id }}"
     And the response "deleted_dashboards_from_list" has length 1
 
-  @team:DataDog/dashboards
+  @team:DataDog/dashboards-backend
   Scenario: Delete custom timeboard dashboard from an existing dashboard list returns "OK" response
     Given there is a valid "dashboard_list" in the system
     And there is a valid "dashboard" in the system
@@ -86,7 +86,7 @@ Feature: Dashboard Lists
     And the response "deleted_dashboards_from_list[0].id" is equal to "{{ dashboard.id }}"
     And the response "deleted_dashboards_from_list" has length 1
 
-  @generated @skip @team:DataDog/dashboards
+  @generated @skip @team:DataDog/dashboards-backend
   Scenario: Delete items from a dashboard list returns "Bad Request" response
     Given new "DeleteDashboardListItems" request
     And request contains "dashboard_list_id" parameter from "REPLACE.ME"
@@ -94,7 +94,7 @@ Feature: Dashboard Lists
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/dashboards
+  @generated @skip @team:DataDog/dashboards-backend
   Scenario: Delete items from a dashboard list returns "Not Found" response
     Given new "DeleteDashboardListItems" request
     And request contains "dashboard_list_id" parameter from "REPLACE.ME"
@@ -102,7 +102,7 @@ Feature: Dashboard Lists
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/dashboards
+  @generated @skip @team:DataDog/dashboards-backend
   Scenario: Delete items from a dashboard list returns "OK" response
     Given new "DeleteDashboardListItems" request
     And request contains "dashboard_list_id" parameter from "REPLACE.ME"
@@ -110,14 +110,14 @@ Feature: Dashboard Lists
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/dashboards
+  @generated @skip @team:DataDog/dashboards-backend
   Scenario: Get items of a Dashboard List returns "Not Found" response
     Given new "GetDashboardListItems" request
     And request contains "dashboard_list_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/dashboards
+  @team:DataDog/dashboards-backend
   Scenario: Get items of a Dashboard List returns "OK" response
     Given there is a valid "dashboard_list" in the system
     And there is a valid "dashboard" in the system
@@ -130,7 +130,7 @@ Feature: Dashboard Lists
     And the response "dashboards[0].type" is equal to "custom_timeboard"
     And the response "dashboards" has length 1
 
-  @generated @skip @team:DataDog/dashboards
+  @generated @skip @team:DataDog/dashboards-backend
   Scenario: Update items of a dashboard list returns "Bad Request" response
     Given new "UpdateDashboardListItems" request
     And request contains "dashboard_list_id" parameter from "REPLACE.ME"
@@ -138,7 +138,7 @@ Feature: Dashboard Lists
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/dashboards
+  @generated @skip @team:DataDog/dashboards-backend
   Scenario: Update items of a dashboard list returns "Not Found" response
     Given new "UpdateDashboardListItems" request
     And request contains "dashboard_list_id" parameter from "REPLACE.ME"
@@ -146,7 +146,7 @@ Feature: Dashboard Lists
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/dashboards
+  @team:DataDog/dashboards-backend
   Scenario: Update items of a dashboard list returns "OK" response
     Given there is a valid "dashboard_list" in the system
     And there is a valid "dashboard" in the system
