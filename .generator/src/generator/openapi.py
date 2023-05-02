@@ -311,6 +311,17 @@ def models(spec):
     return name_to_schema
 
 
+def find_non_primitive_type(schema):
+    if schema.get("enum"):
+        return True
+    sub_type = schema.get("type")
+    if sub_type == "array":
+        return find_non_primitive_type(schema["items"])
+    if sub_type not in PRIMITIVE_TYPES:
+        return True
+    return False
+
+
 def get_references_for_model(model, model_name):
     result = {}
     top_name = formatter.get_name(model) or model_name
@@ -327,7 +338,7 @@ def get_references_for_model(model, model_name):
                     result[name] = None
         elif definition.get("type") == "array":
             name = formatter.get_name(definition.get("items"))
-            if name:
+            if name and find_non_primitive_type(definition["items"]):
                 result[name] = None
             elif formatter.get_name(definition) and definition["items"].get("type") not in PRIMITIVE_TYPES:
                 result[formatter.get_name(definition) + "Item"] = None
