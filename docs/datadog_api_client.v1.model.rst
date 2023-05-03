@@ -491,13 +491,6 @@ deleted\_monitor
    :members:
    :show-inheritance:
 
-distribution\_point\_item
--------------------------
-
-.. automodule:: datadog_api_client.v1.model.distribution_point_item
-   :members:
-   :show-inheritance:
-
 distribution\_points\_content\_encoding
 ---------------------------------------
 
