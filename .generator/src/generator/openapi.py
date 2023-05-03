@@ -486,25 +486,13 @@ def get_api_models(operations):
                         yield name
                         if "oneOf" in content["schema"]:
                             for schema in content["schema"]["oneOf"]:
-                                type_ = schema.get("type", "object")
-                                if type_ in ("array", "object"):
+                                if schema.get("type", "object") == "object":
                                     name = formatter.get_name(schema)
                                     if name and name not in seen:
                                         seen.add(name)
                                         yield name
                     if "items" in content["schema"]:
                         name = formatter.get_name(content["schema"]["items"])
-                        if name and name not in seen:
-                            seen.add(name)
-                            yield name
-                    if "additionalProperties" in content["schema"]:
-                        if "items" in content["schema"]["additionalProperties"]:
-                            name = formatter.get_name(content["schema"]["additionalProperties"]["items"])
-                            if name and name not in seen:
-                                seen.add(name)
-                                yield name
-                    else:
-                        name = formatter.get_name(content["schema"])
                         if name and name not in seen:
                             seen.add(name)
                             yield name
