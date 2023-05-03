@@ -234,9 +234,14 @@ def child_models(schema, alternative_name=None, seen=None, in_list=False):
 
     has_sub_models = False
     if "oneOf" in schema:
-        has_sub_models = True
+        has_sub_models = not in_list
         for child in schema["oneOf"]:
-            yield from child_models(child, seen=seen)
+            sub_models = list(child_models(child, seen=seen))
+            if sub_models:
+                has_sub_models = True
+                yield from sub_models
+        if in_list and not has_sub_models:
+            return
 
     if "items" in schema:
         yield from child_models(schema["items"], alternative_name=name + "Item" if name is not None else None, seen=seen, in_list=True)
