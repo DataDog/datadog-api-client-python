@@ -1514,6 +1514,10 @@ def get_oneof_instance(cls, model_kwargs, constant_kwargs, model_arg=None):
                 if isinstance(oneof_class, list):
                     oneof_class = oneof_class[0]
                     list_oneof_instance = []
+                    if model_arg is None and not model_kwargs:
+                        # Empty data
+                        oneof_instances.append(list_oneof_instance)
+                        continue
                     for arg in model_arg:
                         if constant_kwargs.get("_spec_property_naming"):
                             oneof_instance = oneof_class(
@@ -1595,7 +1599,7 @@ def validate_get_composed_info(constant_args, model_args, self):
     # Create composed_instances
     composed_instances = []
     oneof_instance = get_oneof_instance(self.__class__, model_args, constant_args)
-    if oneof_instance is not None:
+    if oneof_instance is not None and not isinstance(oneof_instance, list):
         composed_instances.append(oneof_instance)
 
     additional_properties_model_instances = []
