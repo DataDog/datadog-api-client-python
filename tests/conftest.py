@@ -64,7 +64,7 @@ from pytest_bdd import given, parsers, then, when
 from datadog_api_client import exceptions
 from datadog_api_client.api_client import ApiClient
 from datadog_api_client.configuration import Configuration
-from datadog_api_client.model_utils import OpenApiModel, UnparsedObject
+from datadog_api_client.model_utils import OpenApiModel
 
 logging.basicConfig()
 
