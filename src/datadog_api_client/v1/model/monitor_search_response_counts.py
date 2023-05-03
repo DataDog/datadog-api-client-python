@@ -14,7 +14,7 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    pass
+    from datadog_api_client.v1.model.monitor_search_count_item import MonitorSearchCountItem
 
 
 class MonitorSearchResponseCounts(ModelNormal):
@@ -38,10 +38,10 @@ class MonitorSearchResponseCounts(ModelNormal):
 
     def __init__(
         self_,
-        muted: Union[List[dict], UnsetType] = unset,
-        status: Union[List[dict], UnsetType] = unset,
-        tag: Union[List[dict], UnsetType] = unset,
-        type: Union[List[dict], UnsetType] = unset,
+        muted: Union[List[MonitorSearchCountItem], UnsetType] = unset,
+        status: Union[List[MonitorSearchCountItem], UnsetType] = unset,
+        tag: Union[List[MonitorSearchCountItem], UnsetType] = unset,
+        type: Union[List[MonitorSearchCountItem], UnsetType] = unset,
         **kwargs,
     ):
         """

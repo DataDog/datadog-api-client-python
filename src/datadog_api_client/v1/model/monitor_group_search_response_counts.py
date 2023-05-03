@@ -14,7 +14,7 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    pass
+    from datadog_api_client.v1.model.monitor_search_count_item import MonitorSearchCountItem
 
 
 class MonitorGroupSearchResponseCounts(ModelNormal):
@@ -33,7 +33,10 @@ class MonitorGroupSearchResponseCounts(ModelNormal):
     }
 
     def __init__(
-        self_, status: Union[List[dict], UnsetType] = unset, type: Union[List[dict], UnsetType] = unset, **kwargs
+        self_,
+        status: Union[List[MonitorSearchCountItem], UnsetType] = unset,
+        type: Union[List[MonitorSearchCountItem], UnsetType] = unset,
+        **kwargs,
     ):
         """
         The counts of monitor groups per different criteria.

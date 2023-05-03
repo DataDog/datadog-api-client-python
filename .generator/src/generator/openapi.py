@@ -51,7 +51,7 @@ def type_to_python_helper(type_, schema, alternative_name=None, in_list=False):
         return (
             alternative_name
             if alternative_name
-            and ("properties" in schema or "oneOf" in schema or "anyOf" in schema or "allOf" in schema)
+            and ("properties" in schema or "oneOf" in schema)
             else "dict"
         )
     elif type_ == "null":
@@ -114,7 +114,7 @@ def typing_to_python_helper(type_, schema, alternative_name=None, in_list=False)
     elif type_ == "boolean":
         return "bool"
     elif type_ == "array":
-        return "List[{}]".format(typing_to_python(schema["items"], in_list=True))
+        return "List[{}]".format(typing_to_python(schema["items"], alternative_name=alternative_name + "Item" if alternative_name else None, in_list=True))
     elif type_ == "object":
         if "additionalProperties" in schema:
             nested_schema = schema["additionalProperties"]
@@ -125,7 +125,7 @@ def typing_to_python_helper(type_, schema, alternative_name=None, in_list=False)
         return (
             alternative_name
             if alternative_name
-            and ("properties" in schema or "oneOf" in schema or "anyOf" in schema or "allOf" in schema)
+            and ("properties" in schema or "oneOf" in schema)
             else "dict"
         )
     elif type_ == "null":
@@ -146,6 +146,9 @@ def typing_to_python(schema, alternative_name=None, in_list=False):
                 types.extend(get_oneof_types(schema, typing=True))
                 return f"Union[{','.join(types)}]"
             return name
+
+    if name:
+        alternative_name = name
 
     type_ = schema.get("type")
     if type_ is None:
@@ -230,17 +233,9 @@ def child_models(schema, alternative_name=None, seen=None, in_list=False):
     name = current_name or alternative_name
 
     has_sub_models = False
-    if "allOf" in schema:
-        has_sub_models = True
-        for child in schema["allOf"]:
-            yield from child_models(child, seen=seen)
     if "oneOf" in schema:
         has_sub_models = True
         for child in schema["oneOf"]:
-            yield from child_models(child, seen=seen)
-    if "anyOf" in schema:
-        has_sub_models = True
-        for child in schema["anyOf"]:
             yield from child_models(child, seen=seen)
 
     if "items" in schema:
