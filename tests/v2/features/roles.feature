@@ -199,6 +199,9 @@ Feature: Roles
     Given new "ListPermissions" request
     When the request is sent
     Then the response status is 200 OK
+    And the response "data" has item with field "attributes.restricted" with value true
+    And the response "data" has item with field "attributes.restricted" with value false
+    And the response "data" has item with field "attributes.name" with value "admin"
 
   @team:DataDog/aaa-core-access
   Scenario: List roles returns "OK" response

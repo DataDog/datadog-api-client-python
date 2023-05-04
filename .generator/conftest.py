@@ -528,3 +528,12 @@ def expect_equal_response_items(context, fixture_length):
 @then(parsers.parse('the response "{response_path}" is false'))
 def expect_false(context, response_path):
     """Check that a response attribute is false."""
+
+
+@then(parsers.parse('the response "{response_path}" has item with field "{key_path}" with value {value}'))
+def expect_array_contains_object(context, response_path, key_path, value):
+    """Check that a response attribute contains an object with the specified key and value."""
+
+@then(parsers.parse('the response "{response_path}" array contains value {value}'))
+def expect_array_contains_object(context, response_path, value):
+    """Check that a response array contains the specified value."""

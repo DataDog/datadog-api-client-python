@@ -140,6 +140,7 @@ Feature: Service Accounts
     And request contains "service_account_id" parameter from "service_account_user.data.id"
     When the request is sent
     Then the response status is 200 OK
+    And the response "data" has length 0
 
   @team:DataDog/team-aaa-authn @team:DataDog/team-aaa-identity
   Scenario: Get one app key owned by this service account returns "OK" response

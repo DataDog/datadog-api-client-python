@@ -321,6 +321,8 @@ Feature: Security Monitoring
     Given new "ListSecurityFilters" request
     When the request is sent
     Then the response status is 200 OK
+    And the response "data" has item with field "attributes.filtered_data_type" with value "logs"
+    And the response "data" has item with field "attributes.is_builtin" with value true
 
   @generated @skip @team:DataDog/cloud-security-posture-management
   Scenario: List findings returns "Bad Request" response

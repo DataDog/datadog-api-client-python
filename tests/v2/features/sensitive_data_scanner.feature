@@ -96,6 +96,7 @@ Feature: Sensitive Data Scanner
     And new "ListScanningGroups" request
     When the request is sent
     Then the response status is 200 OK
+    And the response "included" has item with field "id" with value "{{ group.data.id }}"
 
   @generated @skip @team:DataDog/logs-app @team:DataDog/logs-core
   Scenario: List standard patterns returns "Bad Request" response
