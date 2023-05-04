@@ -554,7 +554,7 @@ Feature: Dashboards
     When the request is sent
     Then the response status is 200 OK
     And the response "title" is equal to "{{ unique }}"
-    And the response "tags[0]" is equal to "team:foobar"
+    And the response "tags" array contains value "team:foobar"
 
   @team:DataDog/dashboards-backend
   Scenario: Create a new dashboard with template variable defaults and default returns "Bad Request" response
