@@ -115,11 +115,13 @@ Feature: Downtimes
   @team:DataDog/monitor-app
   Scenario: Schedule a downtime returns "OK" response
     Given new "CreateDowntime" request
-    And body with value {"message": "{{ unique }}", "start": {{ timestamp("now") }}, "timezone": "Etc/UTC", "scope": ["test:{{ unique_lower_alnum }}"], "recurrence": {"type": "weeks", "period": 1, "week_days": ["Mon", "Tue", "Wed", "Thu", "Fri"], "until_date": {{ timestamp("now + 21d")}} }}
+    And body with value {"message": "{{ unique }}", "start": {{ timestamp("now") }}, "timezone": "Etc/UTC", "scope": ["test:{{ unique_lower_alnum }}"], "recurrence": {"type": "weeks", "period": 1, "week_days": ["Mon", "Tue", "Wed", "Thu", "Fri"], "until_date": {{ timestamp("now + 21d")}} }, "notify_end_states": ["alert", "no data", "warn"], "notify_end_types": ["canceled", "expired"]}
     When the request is sent
     Then the response status is 200 OK
     And the response "message" is equal to "{{ unique }}"
     And the response "active" is equal to true
+    And the response "notify_end_states" array contains value "alert"
+    And the response "notify_end_types" array contains value "canceled"
 
   @team:DataDog/monitor-app
   Scenario: Schedule a downtime until date
@@ -192,7 +194,9 @@ Feature: Downtimes
     Given there is a valid "downtime" in the system
     And new "UpdateDowntime" request
     And request contains "downtime_id" parameter from "downtime.id"
-    And body with value {"message": "{{ unique}}-updated", "mute_first_recovery_notification": true}
+    And body with value {"message": "{{ unique}}-updated", "mute_first_recovery_notification": true, "notify_end_states": ["alert", "no data", "warn"], "notify_end_types": ["canceled", "expired"]}
     When the request is sent
     Then the response status is 200 OK
     And the response "message" is equal to "{{ unique }}-updated"
+    And the response "notify_end_states" array contains value "alert"
+    And the response "notify_end_types" array contains value "canceled"
