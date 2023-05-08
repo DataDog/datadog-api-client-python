@@ -85,7 +85,7 @@ Feature: RUM
     When the request is sent
     Then the response status is 200 OK
 
-  @replay-only @skip-validation @team:DataDog/rum-backend @with-pagination
+  @replay-only @team:DataDog/rum-backend @with-pagination
   Scenario: Get a list of RUM events returns "OK" response with pagination
     Given new "ListRUMEvents" request
     And request contains "page[limit]" parameter with value 2
@@ -101,11 +101,9 @@ Feature: RUM
 
   @team:DataDog/rum-backend
   Scenario: List all the RUM applications returns "OK" response
-    Given there is a valid "rum_application" in the system
-    And new "GetRUMApplications" request
+    Given new "GetRUMApplications" request
     When the request is sent
     Then the response status is 200 OK
-    And the response "data" has item with field "attributes.application_id" with value "{{ rum_application.data.id }}"
 
   @generated @skip @team:DataDog/rum-backend
   Scenario: Search RUM events returns "Bad Request" response
@@ -121,7 +119,7 @@ Feature: RUM
     When the request is sent
     Then the response status is 200 OK
 
-  @replay-only @skip-validation @team:DataDog/rum-backend @with-pagination
+  @replay-only @team:DataDog/rum-backend @with-pagination
   Scenario: Search RUM events returns "OK" response with pagination
     Given new "SearchRUMEvents" request
     And body with value {"filter": {"from": "now-15m", "query": "@type:session AND @session.type:user", "to": "now"}, "options": {"time_offset": 0, "timezone": "GMT"}, "page": {"limit": 2}, "sort": "timestamp"}

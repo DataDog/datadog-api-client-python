@@ -8,7 +8,6 @@ from typing import Dict, List, Union, TYPE_CHECKING
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    none_type,
     unset,
     UnsetType,
 )
@@ -25,7 +24,7 @@ class CheckCanDeleteMonitorResponse(ModelNormal):
 
         return {
             "data": (CheckCanDeleteMonitorResponseData,),
-            "errors": ({str: ([str],)}, none_type),
+            "errors": ({str: ([str],)},),
         }
 
     attribute_map = {
@@ -34,10 +33,7 @@ class CheckCanDeleteMonitorResponse(ModelNormal):
     }
 
     def __init__(
-        self_,
-        data: CheckCanDeleteMonitorResponseData,
-        errors: Union[Dict[str, List[str]], none_type, UnsetType] = unset,
-        **kwargs,
+        self_, data: CheckCanDeleteMonitorResponseData, errors: Union[Dict[str, List[str]], UnsetType] = unset, **kwargs
     ):
         """
         Response of monitor IDs that can or can't be safely deleted.
@@ -46,7 +42,7 @@ class CheckCanDeleteMonitorResponse(ModelNormal):
         :type data: CheckCanDeleteMonitorResponseData
 
         :param errors: A mapping of Monitor ID to strings denoting where it's used.
-        :type errors: {str: ([str],)}, none_type, optional
+        :type errors: {str: ([str],)}, optional
         """
         if errors is not unset:
             kwargs["errors"] = errors

@@ -9,7 +9,6 @@ from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     datetime,
-    none_type,
     unset,
     UnsetType,
 )
@@ -19,8 +18,8 @@ class UsageDBMHour(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
-            "dbm_host_count": (int, none_type),
-            "dbm_queries_count": (int, none_type),
+            "dbm_host_count": (int,),
+            "dbm_queries_count": (int,),
             "hour": (datetime,),
             "org_name": (str,),
             "public_id": (str,),
@@ -36,8 +35,8 @@ class UsageDBMHour(ModelNormal):
 
     def __init__(
         self_,
-        dbm_host_count: Union[int, none_type, UnsetType] = unset,
-        dbm_queries_count: Union[int, none_type, UnsetType] = unset,
+        dbm_host_count: Union[int, UnsetType] = unset,
+        dbm_queries_count: Union[int, UnsetType] = unset,
         hour: Union[datetime, UnsetType] = unset,
         org_name: Union[str, UnsetType] = unset,
         public_id: Union[str, UnsetType] = unset,
@@ -47,10 +46,10 @@ class UsageDBMHour(ModelNormal):
         Database Monitoring usage for a given organization for a given hour.
 
         :param dbm_host_count: The total number of Database Monitoring host hours from the start of the given hour’s month until the given hour.
-        :type dbm_host_count: int, none_type, optional
+        :type dbm_host_count: int, optional
 
         :param dbm_queries_count: The total number of normalized Database Monitoring queries from the start of the given hour’s month until the given hour.
-        :type dbm_queries_count: int, none_type, optional
+        :type dbm_queries_count: int, optional
 
         :param hour: The hour for the usage.
         :type hour: datetime, optional

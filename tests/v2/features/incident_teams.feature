@@ -1,8 +1,7 @@
 @endpoint(incident-teams) @endpoint(incident-teams-v2)
 Feature: Incident Teams
-  The Incident Teams endpoints are deprecated. See the [Teams API
-  endpoints](https://docs.datadoghq.com/api/latest/teams/) to create,
-  update, delete, and retrieve teams which can be associated with incidents.
+  Create, update, delete and retrieve teams which can be associated with
+  incidents.
 
   Background:
     Given a valid "apiKeyAuth" key in the system

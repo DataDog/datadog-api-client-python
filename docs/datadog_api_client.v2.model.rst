@@ -1170,27 +1170,6 @@ data\_scalar\_column
    :members:
    :show-inheritance:
 
-detailed\_finding
------------------
-
-.. automodule:: datadog_api_client.v2.model.detailed_finding
-   :members:
-   :show-inheritance:
-
-detailed\_finding\_attributes
------------------------------
-
-.. automodule:: datadog_api_client.v2.model.detailed_finding_attributes
-   :members:
-   :show-inheritance:
-
-detailed\_finding\_type
------------------------
-
-.. automodule:: datadog_api_client.v2.model.detailed_finding_type
-   :members:
-   :show-inheritance:
-
 event
 -----
 
@@ -1506,69 +1485,6 @@ fastly\_services\_response
    :members:
    :show-inheritance:
 
-finding
--------
-
-.. automodule:: datadog_api_client.v2.model.finding
-   :members:
-   :show-inheritance:
-
-finding\_attributes
--------------------
-
-.. automodule:: datadog_api_client.v2.model.finding_attributes
-   :members:
-   :show-inheritance:
-
-finding\_evaluation
--------------------
-
-.. automodule:: datadog_api_client.v2.model.finding_evaluation
-   :members:
-   :show-inheritance:
-
-finding\_mute
--------------
-
-.. automodule:: datadog_api_client.v2.model.finding_mute
-   :members:
-   :show-inheritance:
-
-finding\_mute\_reason
----------------------
-
-.. automodule:: datadog_api_client.v2.model.finding_mute_reason
-   :members:
-   :show-inheritance:
-
-finding\_rule
--------------
-
-.. automodule:: datadog_api_client.v2.model.finding_rule
-   :members:
-   :show-inheritance:
-
-finding\_status
----------------
-
-.. automodule:: datadog_api_client.v2.model.finding_status
-   :members:
-   :show-inheritance:
-
-finding\_tags
--------------
-
-.. automodule:: datadog_api_client.v2.model.finding_tags
-   :members:
-   :show-inheritance:
-
-finding\_type
--------------
-
-.. automodule:: datadog_api_client.v2.model.finding_type
-   :members:
-   :show-inheritance:
-
 formula\_limit
 --------------
 
@@ -1601,13 +1517,6 @@ full\_application\_key\_attributes
 ----------------------------------
 
 .. automodule:: datadog_api_client.v2.model.full_application_key_attributes
-   :members:
-   :show-inheritance:
-
-get\_finding\_response
-----------------------
-
-.. automodule:: datadog_api_client.v2.model.get_finding_response
    :members:
    :show-inheritance:
 
@@ -2581,34 +2490,6 @@ list\_application\_keys\_response
 ---------------------------------
 
 .. automodule:: datadog_api_client.v2.model.list_application_keys_response
-   :members:
-   :show-inheritance:
-
-list\_findings\_data
---------------------
-
-.. automodule:: datadog_api_client.v2.model.list_findings_data
-   :members:
-   :show-inheritance:
-
-list\_findings\_meta
---------------------
-
-.. automodule:: datadog_api_client.v2.model.list_findings_meta
-   :members:
-   :show-inheritance:
-
-list\_findings\_page
---------------------
-
-.. automodule:: datadog_api_client.v2.model.list_findings_page
-   :members:
-   :show-inheritance:
-
-list\_findings\_response
-------------------------
-
-.. automodule:: datadog_api_client.v2.model.list_findings_response
    :members:
    :show-inheritance:
 

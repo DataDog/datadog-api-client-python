@@ -46,7 +46,7 @@ Feature: Spans Metrics
     And new "DeleteSpansMetric" request
     And request contains "metric_id" parameter from "spans_metric.data.id"
     When the request is sent
-    Then the response status is 204 OK
+    Then the response status is 200 OK
 
   @generated @skip @team:DataDog/apm
   Scenario: Get a span-based metric returns "Not Found" response

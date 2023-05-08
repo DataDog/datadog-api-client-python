@@ -27,7 +27,7 @@ Feature: Service Checks
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip-validation @team:DataDog/monitors-evaluation
+  @team:DataDog/monitors-evaluation
   Scenario: Submit a Service Check returns "Payload accepted" response
     Given body with value [{"check": "app.ok", "host_name": "host", "status": 0, "tags": ["test:{{ unique_alnum }}"]}]
     When the request is sent

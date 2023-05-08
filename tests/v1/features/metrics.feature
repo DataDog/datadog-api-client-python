@@ -161,7 +161,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip-validation @team:DataDog/metrics-intake @team:DataDog/metrics-query
+  @team:DataDog/metrics-intake @team:DataDog/metrics-query
   Scenario: Submit metrics returns "Payload accepted" response
     Given new "SubmitMetrics" request
     And body with value {"series": [{"metric": "system.load.1", "type": "gauge", "points": [[{{ timestamp("now") }}, 1.1]], "tags": ["test:{{ unique_alnum }}"]}]}

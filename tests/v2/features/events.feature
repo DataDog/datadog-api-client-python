@@ -24,7 +24,7 @@ Feature: Events
     When the request is sent
     Then the response status is 200 OK
 
-  @replay-only @skip-validation @team:DataDog/event-management @with-pagination
+  @replay-only @team:DataDog/event-management @with-pagination
   Scenario: Get a list of events returns "OK" response with pagination
     Given operation "ListEvents" enabled
     And new "ListEvents" request
@@ -64,7 +64,7 @@ Feature: Events
     Then the response status is 200 OK
     And the response "data" has length 0
 
-  @replay-only @skip-validation @team:DataDog/event-management @with-pagination
+  @replay-only @team:DataDog/event-management @with-pagination
   Scenario: Search events returns "OK" response with pagination
     Given operation "SearchEvents" enabled
     And new "SearchEvents" request

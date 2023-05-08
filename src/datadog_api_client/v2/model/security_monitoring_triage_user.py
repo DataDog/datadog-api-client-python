@@ -8,7 +8,6 @@ from typing import Union
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    none_type,
     unset,
     UnsetType,
 )
@@ -20,7 +19,7 @@ class SecurityMonitoringTriageUser(ModelNormal):
         return {
             "handle": (str,),
             "id": (int,),
-            "name": (str, none_type),
+            "name": (str,),
             "uuid": (str,),
         }
 
@@ -36,7 +35,7 @@ class SecurityMonitoringTriageUser(ModelNormal):
         uuid: str,
         handle: Union[str, UnsetType] = unset,
         id: Union[int, UnsetType] = unset,
-        name: Union[str, none_type, UnsetType] = unset,
+        name: Union[str, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -49,7 +48,7 @@ class SecurityMonitoringTriageUser(ModelNormal):
         :type id: int, optional
 
         :param name: The name for this user account.
-        :type name: str, none_type, optional
+        :type name: str, optional
 
         :param uuid: UUID assigned by Datadog to this user account.
         :type uuid: str

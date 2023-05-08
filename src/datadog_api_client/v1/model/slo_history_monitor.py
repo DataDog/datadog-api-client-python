@@ -8,7 +8,6 @@ from typing import List, Union, TYPE_CHECKING
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    none_type,
     unset,
     UnsetType,
 )
@@ -35,7 +34,7 @@ class SLOHistoryMonitor(ModelNormal):
             "name": (str,),
             "precision": (float,),
             "preview": (bool,),
-            "sli_value": (float, none_type),
+            "sli_value": (float,),
             "span_precision": (float,),
             "uptime": (float,),
         }
@@ -66,7 +65,7 @@ class SLOHistoryMonitor(ModelNormal):
         name: Union[str, UnsetType] = unset,
         precision: Union[float, UnsetType] = unset,
         preview: Union[bool, UnsetType] = unset,
-        sli_value: Union[float, none_type, UnsetType] = unset,
+        sli_value: Union[float, UnsetType] = unset,
         span_precision: Union[float, UnsetType] = unset,
         uptime: Union[float, UnsetType] = unset,
         **kwargs,
@@ -104,7 +103,7 @@ class SLOHistoryMonitor(ModelNormal):
         :type preview: bool, optional
 
         :param sli_value: The current SLI value of the SLO over the history window.
-        :type sli_value: float, none_type, optional
+        :type sli_value: float, optional
 
         :param span_precision: The amount of decimal places the SLI value is accurate to for the given from ``&&`` to timestamp.
         :type span_precision: float, optional

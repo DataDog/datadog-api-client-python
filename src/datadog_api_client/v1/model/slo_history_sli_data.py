@@ -8,7 +8,6 @@ from typing import Dict, List, Union, TYPE_CHECKING
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    none_type,
     unset,
     UnsetType,
 )
@@ -35,9 +34,9 @@ class SLOHistorySLIData(ModelNormal):
             "name": (str,),
             "precision": ({str: (float,)},),
             "preview": (bool,),
-            "sli_value": (float, none_type),
+            "sli_value": (float,),
             "span_precision": (float,),
-            "uptime": (float, none_type),
+            "uptime": (float,),
         }
 
     attribute_map = {
@@ -66,9 +65,9 @@ class SLOHistorySLIData(ModelNormal):
         name: Union[str, UnsetType] = unset,
         precision: Union[Dict[str, float], UnsetType] = unset,
         preview: Union[bool, UnsetType] = unset,
-        sli_value: Union[float, none_type, UnsetType] = unset,
+        sli_value: Union[float, UnsetType] = unset,
         span_precision: Union[float, UnsetType] = unset,
-        uptime: Union[float, none_type, UnsetType] = unset,
+        uptime: Union[float, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -104,13 +103,13 @@ class SLOHistorySLIData(ModelNormal):
         :type preview: bool, optional
 
         :param sli_value: The current SLI value of the SLO over the history window.
-        :type sli_value: float, none_type, optional
+        :type sli_value: float, optional
 
         :param span_precision: The amount of decimal places the SLI value is accurate to for the given from ``&&`` to timestamp.
         :type span_precision: float, optional
 
         :param uptime: Use ``sli_value`` instead. **Deprecated**.
-        :type uptime: float, none_type, optional
+        :type uptime: float, optional
         """
         if error_budget_remaining is not unset:
             kwargs["error_budget_remaining"] = error_budget_remaining

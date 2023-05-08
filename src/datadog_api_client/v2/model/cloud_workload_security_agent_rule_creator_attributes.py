@@ -8,7 +8,6 @@ from typing import Union
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    none_type,
     unset,
     UnsetType,
 )
@@ -19,7 +18,7 @@ class CloudWorkloadSecurityAgentRuleCreatorAttributes(ModelNormal):
     def openapi_types(_):
         return {
             "handle": (str,),
-            "name": (str, none_type),
+            "name": (str,),
         }
 
     attribute_map = {
@@ -27,9 +26,7 @@ class CloudWorkloadSecurityAgentRuleCreatorAttributes(ModelNormal):
         "name": "name",
     }
 
-    def __init__(
-        self_, handle: Union[str, UnsetType] = unset, name: Union[str, none_type, UnsetType] = unset, **kwargs
-    ):
+    def __init__(self_, handle: Union[str, UnsetType] = unset, name: Union[str, UnsetType] = unset, **kwargs):
         """
         The attributes of the user who created the Agent rule.
 
@@ -37,7 +34,7 @@ class CloudWorkloadSecurityAgentRuleCreatorAttributes(ModelNormal):
         :type handle: str, optional
 
         :param name: The name of the user.
-        :type name: str, none_type, optional
+        :type name: str, optional
         """
         if handle is not unset:
             kwargs["handle"] = handle

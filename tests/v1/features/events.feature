@@ -43,7 +43,7 @@ Feature: Events
     When the request is sent
     Then the response status is 200 OK
 
-  @skip-validation @team:DataDog/monitors-evaluation
+  @team:DataDog/monitors-evaluation
   Scenario: Post an event in the past returns "Bad Request" response
     Given new "CreateEvent" request
     And body with value {"title": "{{ unique }}", "text": "A text message.", "date_happened": 1, "tags": ["test:{{ unique_alnum }}"]}

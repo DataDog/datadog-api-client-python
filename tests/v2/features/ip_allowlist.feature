@@ -10,13 +10,13 @@ Feature: IP Allowlist
     And a valid "appKeyAuth" key in the system
     And an instance of "IPAllowlist" API
 
-  @generated @skip @team:DataDog/aaa-core-access
+  @generated @skip @team:DataDog/team-aaa
   Scenario: Get IP Allowlist returns "Not Found" response
     Given new "GetIPAllowlist" request
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/aaa-core-access
+  @team:DataDog/team-aaa
   Scenario: Get IP Allowlist returns "OK" response
     Given the "ip_allowlist_nonempty_disabled" has two entries and is disabled
     And new "GetIPAllowlist" request
@@ -30,21 +30,21 @@ Feature: IP Allowlist
     And the response "data.attributes.entries[1].data.attributes.note" has the same value as "ip_allowlist_nonempty_disabled.data.attributes.entries[1].data.attributes.note"
     And the response "data.attributes.entries[1].data.type" is equal to "{{ ip_allowlist_nonempty_disabled.data.attributes.entries[1].data.type }}"
 
-  @team:DataDog/aaa-core-access
+  @team:DataDog/team-aaa
   Scenario: Update IP Allowlist returns "Bad Request" response
     Given new "UpdateIPAllowlist" request
     And body with value {"data": {"type": "ip_allowlist", "attributes": {"enabled": true, "entries": []}}}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/aaa-core-access
+  @generated @skip @team:DataDog/team-aaa
   Scenario: Update IP Allowlist returns "Not Found" response
     Given new "UpdateIPAllowlist" request
     And body with value {"data": {"attributes": {"entries": [{"data": {"attributes": {}, "type": "ip_allowlist_entry"}}]}, "type": "ip_allowlist"}}
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/aaa-core-access
+  @team:DataDog/team-aaa
   Scenario: Update IP Allowlist returns "OK" response
     Given the "ip_allowlist_empty_disabled" has no entries and is disabled
     And new "UpdateIPAllowlist" request

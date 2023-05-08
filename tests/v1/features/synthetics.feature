@@ -15,7 +15,7 @@ Feature: Synthetics
     And a valid "appKeyAuth" key in the system
     And an instance of "Synthetics" API
 
-  @replay-only @skip-validation @team:DataDog/synthetics-app
+  @replay-only @team:DataDog/synthetics-app
   Scenario: Client is resilient to enum and oneOf deserialization errors
     Given new "ListTests" request
     When the request is sent
@@ -569,8 +569,6 @@ Feature: Synthetics
     And body with value {"tests": [{"public_id": "{{ synthetics_api_test.public_id }}"}]}
     When the request is sent
     Then the response status is 200 OK
-    And the response "triggered_check_ids" array contains value "{{ synthetics_api_test.public_id }}"
-    And the response "results" has item with field "public_id" with value "{{ synthetics_api_test.public_id }}"
 
   @generated @skip @team:DataDog/synthetics-app
   Scenario: Trigger tests from CI/CD pipelines returns "JSON format is wrong" response

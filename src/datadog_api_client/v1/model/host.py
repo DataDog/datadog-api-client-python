@@ -8,7 +8,6 @@ from typing import Dict, List, Union, TYPE_CHECKING
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    none_type,
     unset,
     UnsetType,
 )
@@ -35,7 +34,7 @@ class Host(ModelNormal):
             "last_reported_time": (int,),
             "meta": (HostMeta,),
             "metrics": (HostMetrics,),
-            "mute_timeout": (int, none_type),
+            "mute_timeout": (int,),
             "name": (str,),
             "sources": ([str],),
             "tags_by_source": ({str: ([str],)},),
@@ -70,7 +69,7 @@ class Host(ModelNormal):
         last_reported_time: Union[int, UnsetType] = unset,
         meta: Union[HostMeta, UnsetType] = unset,
         metrics: Union[HostMetrics, UnsetType] = unset,
-        mute_timeout: Union[int, none_type, UnsetType] = unset,
+        mute_timeout: Union[int, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
         sources: Union[List[str], UnsetType] = unset,
         tags_by_source: Union[Dict[str, List[str]], UnsetType] = unset,
@@ -108,7 +107,7 @@ class Host(ModelNormal):
         :type metrics: HostMetrics, optional
 
         :param mute_timeout: Timeout of the mute applied to your host.
-        :type mute_timeout: int, none_type, optional
+        :type mute_timeout: int, optional
 
         :param name: The host name.
         :type name: str, optional

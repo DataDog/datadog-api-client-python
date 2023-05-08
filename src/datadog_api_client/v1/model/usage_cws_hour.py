@@ -9,7 +9,6 @@ from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     datetime,
-    none_type,
     unset,
     UnsetType,
 )
@@ -19,8 +18,8 @@ class UsageCWSHour(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
-            "cws_container_count": (int, none_type),
-            "cws_host_count": (int, none_type),
+            "cws_container_count": (int,),
+            "cws_host_count": (int,),
             "hour": (datetime,),
             "org_name": (str,),
             "public_id": (str,),
@@ -36,8 +35,8 @@ class UsageCWSHour(ModelNormal):
 
     def __init__(
         self_,
-        cws_container_count: Union[int, none_type, UnsetType] = unset,
-        cws_host_count: Union[int, none_type, UnsetType] = unset,
+        cws_container_count: Union[int, UnsetType] = unset,
+        cws_host_count: Union[int, UnsetType] = unset,
         hour: Union[datetime, UnsetType] = unset,
         org_name: Union[str, UnsetType] = unset,
         public_id: Union[str, UnsetType] = unset,
@@ -47,10 +46,10 @@ class UsageCWSHour(ModelNormal):
         Cloud Workload Security usage for a given organization for a given hour.
 
         :param cws_container_count: The total number of Cloud Workload Security container hours from the start of the given hour’s month until the given hour.
-        :type cws_container_count: int, none_type, optional
+        :type cws_container_count: int, optional
 
         :param cws_host_count: The total number of Cloud Workload Security host hours from the start of the given hour’s month until the given hour.
-        :type cws_host_count: int, none_type, optional
+        :type cws_host_count: int, optional
 
         :param hour: The hour for the usage.
         :type hour: datetime, optional

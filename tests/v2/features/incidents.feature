@@ -67,7 +67,7 @@ Feature: Incidents
   Scenario: Create an incident returns "Bad Request" response
     Given operation "CreateIncident" enabled
     And new "CreateIncident" request
-    And body with value {"data": {"attributes": {"customer_impact_scope": "Example customer impact scope", "customer_impacted": false, "fields": {"severity": {"type": "dropdown", "value": "SEV-5"}}, "initial_cells": [{"cell_type": "markdown", "content": {"content": "An example timeline cell message."}, "important": false}], "notification_handles": [{"display_name": "Jane Doe", "handle": "@test.user@test.com"}], "title": "A test incident title"}, "relationships": {"commander_user": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "users"}}}, "type": "incidents"}}
+    And body with value {"data": {"attributes": {"customer_impacted": false, "fields": {"severity": {"type": "dropdown", "value": "SEV-5"}}, "initial_cells": [{"cell_type": "markdown", "content": {"content": "An example timeline cell message."}, "important": false}], "notification_handles": [{"display_name": "Jane Doe", "handle": "@test.user@test.com"}], "title": "A test incident title"}, "relationships": {"commander_user": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "users"}}}, "type": "incidents"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -86,7 +86,7 @@ Feature: Incidents
   Scenario: Create an incident returns "Not Found" response
     Given operation "CreateIncident" enabled
     And new "CreateIncident" request
-    And body with value {"data": {"attributes": {"customer_impact_scope": "Example customer impact scope", "customer_impacted": false, "fields": {"severity": {"type": "dropdown", "value": "SEV-5"}}, "initial_cells": [{"cell_type": "markdown", "content": {"content": "An example timeline cell message."}, "important": false}], "notification_handles": [{"display_name": "Jane Doe", "handle": "@test.user@test.com"}], "title": "A test incident title"}, "relationships": {"commander_user": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "users"}}}, "type": "incidents"}}
+    And body with value {"data": {"attributes": {"customer_impacted": false, "fields": {"severity": {"type": "dropdown", "value": "SEV-5"}}, "initial_cells": [{"cell_type": "markdown", "content": {"content": "An example timeline cell message."}, "important": false}], "notification_handles": [{"display_name": "Jane Doe", "handle": "@test.user@test.com"}], "title": "A test incident title"}, "relationships": {"commander_user": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "users"}}}, "type": "incidents"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -99,7 +99,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @replay-only @team:Datadog/incident-app
+  @team:Datadog/incident-app
   Scenario: Create an incident todo returns "CREATED" response
     Given operation "CreateIncidentTodo" enabled
     And new "CreateIncidentTodo" request
@@ -218,7 +218,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @replay-only @team:Datadog/incident-app
+  @team:Datadog/incident-app
   Scenario: Delete an incident todo returns "OK" response
     Given operation "DeleteIncidentTodo" enabled
     And new "DeleteIncidentTodo" request
@@ -272,7 +272,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @replay-only @team:Datadog/incident-app
+  @team:Datadog/incident-app
   Scenario: Get a list of an incident's todos returns "OK" response
     Given operation "ListIncidentTodos" enabled
     And new "ListIncidentTodos" request
@@ -332,7 +332,7 @@ Feature: Incidents
     Then the response status is 200 OK
     And the response "data[0].type" is equal to "incidents"
 
-  @replay-only @skip-validation @team:DataDog/incident-app @with-pagination
+  @replay-only @team:DataDog/incident-app @with-pagination
   Scenario: Get a list of incidents returns "OK" response with pagination
     Given operation "ListIncidents" enabled
     And new "ListIncidents" request
@@ -402,7 +402,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @replay-only @team:Datadog/incident-app
+  @team:Datadog/incident-app
   Scenario: Get incident todo details returns "OK" response
     Given operation "GetIncidentTodo" enabled
     And new "GetIncidentTodo" request
@@ -468,7 +468,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @skip-validation @team:DataDog/incident-app
+  @team:DataDog/incident-app
   Scenario: Search for incidents returns "OK" response
     Given operation "SearchIncidents" enabled
     And there is a valid "incident" in the system
@@ -479,7 +479,7 @@ Feature: Incidents
     And the response "data.type" is equal to "incidents_search_results"
     And the response "data.attributes.incidents[0].data.type" is equal to "incidents"
 
-  @replay-only @skip-validation @team:DataDog/incident-app @with-pagination
+  @replay-only @team:DataDog/incident-app @with-pagination
   Scenario: Search for incidents returns "OK" response with pagination
     Given operation "SearchIncidents" enabled
     And new "SearchIncidents" request

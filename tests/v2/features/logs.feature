@@ -55,7 +55,7 @@ Feature: Logs
     When the request is sent
     Then the response status is 200 OK
 
-  @replay-only @skip-validation @team:DataDog/logs-app @with-pagination
+  @replay-only @team:DataDog/logs-app @with-pagination
   Scenario: Get a list of logs returns "OK" response with pagination
     Given a valid "appKeyAuth" key in the system
     And new "ListLogsGet" request
@@ -94,7 +94,7 @@ Feature: Logs
     Then the response status is 200 OK
     And the response "data" has length 0
 
-  @replay-only @skip-validation @team:DataDog/logs-app @with-pagination
+  @replay-only @team:DataDog/logs-app @with-pagination
   Scenario: Search logs returns "OK" response with pagination
     Given a valid "appKeyAuth" key in the system
     And new "ListLogs" request
@@ -140,7 +140,7 @@ Feature: Logs
     When the request is sent
     Then the response status is 408 Request Timeout
 
-  @team:DataDog/event-platform-intake @team:DataDog/logs-backend
+  @skip-go @team:DataDog/event-platform-intake @team:DataDog/logs-backend
   Scenario: Send logs returns "Request accepted for processing (always 202 empty JSON)." response
     Given new "SubmitLog" request
     And body with value [{"ddsource": "nginx", "ddtags": "env:staging,version:5.1", "hostname": "i-012345678", "message": "2019-11-19T14:37:58,995 INFO [process.name][20081] Hello World", "service": "payment", "status": "info"}]

@@ -33,12 +33,12 @@ class SLOCorrectionResponseAttributes(ModelNormal):
 
         return {
             "category": (SLOCorrectionCategory,),
-            "created_at": (int, none_type),
+            "created_at": (int,),
             "creator": (Creator,),
             "description": (str,),
             "duration": (int, none_type),
-            "end": (int, none_type),
-            "modified_at": (int, none_type),
+            "end": (int,),
+            "modified_at": (int,),
             "modifier": (SLOCorrectionResponseAttributesModifier,),
             "rrule": (str, none_type),
             "slo_id": (str,),
@@ -67,12 +67,12 @@ class SLOCorrectionResponseAttributes(ModelNormal):
     def __init__(
         self_,
         category: Union[SLOCorrectionCategory, UnsetType] = unset,
-        created_at: Union[int, none_type, UnsetType] = unset,
+        created_at: Union[int, UnsetType] = unset,
         creator: Union[Creator, UnsetType] = unset,
         description: Union[str, UnsetType] = unset,
         duration: Union[int, none_type, UnsetType] = unset,
-        end: Union[int, none_type, UnsetType] = unset,
-        modified_at: Union[int, none_type, UnsetType] = unset,
+        end: Union[int, UnsetType] = unset,
+        modified_at: Union[int, UnsetType] = unset,
         modifier: Union[SLOCorrectionResponseAttributesModifier, none_type, UnsetType] = unset,
         rrule: Union[str, none_type, UnsetType] = unset,
         slo_id: Union[str, UnsetType] = unset,
@@ -87,7 +87,7 @@ class SLOCorrectionResponseAttributes(ModelNormal):
         :type category: SLOCorrectionCategory, optional
 
         :param created_at: The epoch timestamp of when the correction was created at.
-        :type created_at: int, none_type, optional
+        :type created_at: int, optional
 
         :param creator: Object describing the creator of the shared element.
         :type creator: Creator, optional
@@ -99,10 +99,10 @@ class SLOCorrectionResponseAttributes(ModelNormal):
         :type duration: int, none_type, optional
 
         :param end: Ending time of the correction in epoch seconds.
-        :type end: int, none_type, optional
+        :type end: int, optional
 
         :param modified_at: The epoch timestamp of when the correction was modified at.
-        :type modified_at: int, none_type, optional
+        :type modified_at: int, optional
 
         :param modifier: Modifier of the object.
         :type modifier: SLOCorrectionResponseAttributesModifier, none_type, optional

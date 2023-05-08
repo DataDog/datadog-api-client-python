@@ -8,7 +8,6 @@ from typing import Union
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    none_type,
     unset,
     UnsetType,
 )
@@ -22,7 +21,7 @@ class SLOCreator(ModelNormal):
         return {
             "email": (str,),
             "id": (int,),
-            "name": (str, none_type),
+            "name": (str,),
         }
 
     attribute_map = {
@@ -35,7 +34,7 @@ class SLOCreator(ModelNormal):
         self_,
         email: Union[str, UnsetType] = unset,
         id: Union[int, UnsetType] = unset,
-        name: Union[str, none_type, UnsetType] = unset,
+        name: Union[str, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -48,7 +47,7 @@ class SLOCreator(ModelNormal):
         :type id: int, optional
 
         :param name: Name of the creator.
-        :type name: str, none_type, optional
+        :type name: str, optional
         """
         if email is not unset:
             kwargs["email"] = email

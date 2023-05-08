@@ -38,7 +38,6 @@ class IncidentCreateAttributes(ModelNormal):
         from datadog_api_client.v2.model.incident_notification_handle import IncidentNotificationHandle
 
         return {
-            "customer_impact_scope": (str,),
             "customer_impacted": (bool,),
             "fields": ({str: (IncidentFieldAttributes,)},),
             "initial_cells": ([IncidentTimelineCellCreateAttributes],),
@@ -47,7 +46,6 @@ class IncidentCreateAttributes(ModelNormal):
         }
 
     attribute_map = {
-        "customer_impact_scope": "customer_impact_scope",
         "customer_impacted": "customer_impacted",
         "fields": "fields",
         "initial_cells": "initial_cells",
@@ -59,7 +57,6 @@ class IncidentCreateAttributes(ModelNormal):
         self_,
         customer_impacted: bool,
         title: str,
-        customer_impact_scope: Union[str, UnsetType] = unset,
         fields: Union[
             Dict[
                 str,
@@ -78,9 +75,6 @@ class IncidentCreateAttributes(ModelNormal):
         """
         The incident's attributes for a create request.
 
-        :param customer_impact_scope: Required if ``customer_impacted:"true"``. A summary of the impact customers experienced during the incident.
-        :type customer_impact_scope: str, optional
-
         :param customer_impacted: A flag indicating whether the incident caused customer impact.
         :type customer_impacted: bool
 
@@ -96,8 +90,6 @@ class IncidentCreateAttributes(ModelNormal):
         :param title: The title of the incident, which summarizes what happened.
         :type title: str
         """
-        if customer_impact_scope is not unset:
-            kwargs["customer_impact_scope"] = customer_impact_scope
         if fields is not unset:
             kwargs["fields"] = fields
         if initial_cells is not unset:

@@ -9,7 +9,6 @@ from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     datetime,
-    none_type,
     unset,
     UnsetType,
 )
@@ -38,12 +37,12 @@ class TeamAttributes(ModelNormal):
     def openapi_types(_):
         return {
             "created_at": (datetime,),
-            "description": (str, none_type),
+            "description": (str,),
             "handle": (str,),
             "link_count": (int,),
             "modified_at": (datetime,),
             "name": (str,),
-            "summary": (str, none_type),
+            "summary": (str,),
             "user_count": (int,),
         }
 
@@ -67,10 +66,10 @@ class TeamAttributes(ModelNormal):
         handle: str,
         name: str,
         created_at: Union[datetime, UnsetType] = unset,
-        description: Union[str, none_type, UnsetType] = unset,
+        description: Union[str, UnsetType] = unset,
         link_count: Union[int, UnsetType] = unset,
         modified_at: Union[datetime, UnsetType] = unset,
-        summary: Union[str, none_type, UnsetType] = unset,
+        summary: Union[str, UnsetType] = unset,
         user_count: Union[int, UnsetType] = unset,
         **kwargs,
     ):
@@ -81,7 +80,7 @@ class TeamAttributes(ModelNormal):
         :type created_at: datetime, optional
 
         :param description: Free-form markdown description/content for the team's homepage
-        :type description: str, none_type, optional
+        :type description: str, optional
 
         :param handle: The team's identifier
         :type handle: str
@@ -96,7 +95,7 @@ class TeamAttributes(ModelNormal):
         :type name: str
 
         :param summary: A brief summary of the team, derived from the ``description``
-        :type summary: str, none_type, optional
+        :type summary: str, optional
 
         :param user_count: The number of users belonging to the team
         :type user_count: int, optional

@@ -8,7 +8,6 @@ from typing import Union
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    none_type,
     unset,
     UnsetType,
 )
@@ -19,7 +18,7 @@ class SharedDashboardAuthor(ModelNormal):
     def openapi_types(_):
         return {
             "handle": (str,),
-            "name": (str, none_type),
+            "name": (str,),
         }
 
     attribute_map = {
@@ -31,9 +30,7 @@ class SharedDashboardAuthor(ModelNormal):
         "name",
     }
 
-    def __init__(
-        self_, handle: Union[str, UnsetType] = unset, name: Union[str, none_type, UnsetType] = unset, **kwargs
-    ):
+    def __init__(self_, handle: Union[str, UnsetType] = unset, name: Union[str, UnsetType] = unset, **kwargs):
         """
         User who shared the dashboard.
 
@@ -41,7 +38,7 @@ class SharedDashboardAuthor(ModelNormal):
         :type handle: str, optional
 
         :param name: Name of the user who shared the dashboard.
-        :type name: str, none_type, optional
+        :type name: str, optional
         """
         if handle is not unset:
             kwargs["handle"] = handle

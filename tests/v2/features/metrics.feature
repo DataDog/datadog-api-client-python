@@ -56,7 +56,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 409 Conflict
 
-  @replay-only @skip-validation @team:DataDog/points-aggregation
+  @replay-only @team:DataDog/points-aggregation
   Scenario: Create a tag configuration returns "Created" response
     Given a valid "appKeyAuth" key in the system
     And new "CreateTagConfiguration" request
@@ -66,7 +66,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 201 Created
 
-  @replay-only @skip-validation @team:DataDog/points-aggregation
+  @replay-only @team:DataDog/points-aggregation
   Scenario: Delete a tag configuration returns "No Content" response
     Given there is a valid "metric" in the system
     And there is a valid "metric_tag_configuration" in the system
@@ -133,7 +133,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 404 Not Found
 
-  @skip-validation @team:DataDog/points-aggregation
+  @team:DataDog/points-aggregation
   Scenario: List active tags and aggregations returns "Success" response
     Given a valid "appKeyAuth" key in the system
     And there is a valid "metric" in the system
@@ -159,7 +159,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 404 Not Found
 
-  @skip-validation @team:DataDog/points-aggregation
+  @team:DataDog/points-aggregation
   Scenario: List distinct metric volumes by metric name returns "Success" response
     Given a valid "appKeyAuth" key in the system
     And there is a valid "metric" in the system
@@ -178,7 +178,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 404 Not Found
 
-  @replay-only @skip-validation @team:DataDog/points-aggregation
+  @replay-only @team:DataDog/points-aggregation
   Scenario: List tag configuration by name returns "Success" response
     Given a valid "appKeyAuth" key in the system
     And there is a valid "metric" in the system
@@ -205,7 +205,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 404 Not Found
 
-  @replay-only @skip-validation @team:DataDog/points-aggregation
+  @replay-only @team:DataDog/points-aggregation
   Scenario: List tags by metric name returns "Success" response
     Given a valid "appKeyAuth" key in the system
     And there is a valid "metric" in the system
@@ -326,7 +326,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 200 Success
 
-  @skip-validation @team:DataDog/metrics-query
+  @team:DataDog/metrics-query
   Scenario: Timeseries cross product query returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And operation "QueryTimeseriesData" enabled
@@ -355,7 +355,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @replay-only @skip-validation @team:DataDog/points-aggregation
+  @replay-only @team:DataDog/points-aggregation
   Scenario: Update a tag configuration returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And there is a valid "metric" in the system

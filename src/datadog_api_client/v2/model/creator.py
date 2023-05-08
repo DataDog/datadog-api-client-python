@@ -8,7 +8,6 @@ from typing import Union
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    none_type,
     unset,
     UnsetType,
 )
@@ -20,7 +19,7 @@ class Creator(ModelNormal):
         return {
             "email": (str,),
             "handle": (str,),
-            "name": (str, none_type),
+            "name": (str,),
         }
 
     attribute_map = {
@@ -33,7 +32,7 @@ class Creator(ModelNormal):
         self_,
         email: Union[str, UnsetType] = unset,
         handle: Union[str, UnsetType] = unset,
-        name: Union[str, none_type, UnsetType] = unset,
+        name: Union[str, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -46,7 +45,7 @@ class Creator(ModelNormal):
         :type handle: str, optional
 
         :param name: Name of the creator.
-        :type name: str, none_type, optional
+        :type name: str, optional
         """
         if email is not unset:
             kwargs["email"] = email
