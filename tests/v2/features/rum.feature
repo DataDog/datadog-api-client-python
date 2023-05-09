@@ -101,9 +101,11 @@ Feature: RUM
 
   @team:DataDog/rum-backend
   Scenario: List all the RUM applications returns "OK" response
-    Given new "GetRUMApplications" request
+    Given there is a valid "rum_application" in the system
+    And new "GetRUMApplications" request
     When the request is sent
     Then the response status is 200 OK
+    And the response "data" has item with field "attributes.application_id" with value "{{ rum_application.data.id }}"
 
   @generated @skip @team:DataDog/rum-backend
   Scenario: Search RUM events returns "Bad Request" response

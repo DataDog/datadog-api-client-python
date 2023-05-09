@@ -12,7 +12,6 @@ from datadog_api_client.v1.model.synthetics_assertion_target import SyntheticsAs
 from datadog_api_client.v1.model.synthetics_assertion_type import SyntheticsAssertionType
 from datadog_api_client.v1.model.synthetics_browser_test_rum_settings import SyntheticsBrowserTestRumSettings
 from datadog_api_client.v1.model.synthetics_device_id import SyntheticsDeviceID
-from datadog_api_client.v1.model.synthetics_restricted_roles import SyntheticsRestrictedRoles
 from datadog_api_client.v1.model.synthetics_test_ci_options import SyntheticsTestCiOptions
 from datadog_api_client.v1.model.synthetics_test_details_sub_type import SyntheticsTestDetailsSubType
 from datadog_api_client.v1.model.synthetics_test_execution_rule import SyntheticsTestExecutionRule
@@ -55,11 +54,9 @@ body = SyntheticsAPITest(
         ],
         http_version=SyntheticsTestOptionsHTTPVersion.HTTP1,
         monitor_options=SyntheticsTestOptionsMonitorOptions(),
-        restricted_roles=SyntheticsRestrictedRoles(
-            [
-                "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-            ]
-        ),
+        restricted_roles=[
+            "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+        ],
         retry=SyntheticsTestOptionsRetry(),
         rum_settings=SyntheticsBrowserTestRumSettings(
             application_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",

@@ -8,6 +8,8 @@ from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.downtimes_api import DowntimesApi
 from datadog_api_client.v1.model.downtime import Downtime
 from datadog_api_client.v1.model.downtime_recurrence import DowntimeRecurrence
+from datadog_api_client.v1.model.notify_end_state import NotifyEndState
+from datadog_api_client.v1.model.notify_end_type import NotifyEndType
 
 body = Downtime(
     message="Example-Downtime",
@@ -32,6 +34,12 @@ body = Downtime(
     mute_first_recovery_notification=True,
     monitor_tags=[
         "tag0",
+    ],
+    notify_end_states=[
+        NotifyEndState.ALERT,
+    ],
+    notify_end_types=[
+        NotifyEndType.CANCELED,
     ],
 )
 

@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import List, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -12,28 +12,28 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v1.model.dashboard_bulk_action_data_list import DashboardBulkActionDataList
+    from datadog_api_client.v1.model.dashboard_bulk_action_data import DashboardBulkActionData
 
 
 class DashboardBulkDeleteRequest(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v1.model.dashboard_bulk_action_data_list import DashboardBulkActionDataList
+        from datadog_api_client.v1.model.dashboard_bulk_action_data import DashboardBulkActionData
 
         return {
-            "data": (DashboardBulkActionDataList,),
+            "data": ([DashboardBulkActionData],),
         }
 
     attribute_map = {
         "data": "data",
     }
 
-    def __init__(self_, data: DashboardBulkActionDataList, **kwargs):
+    def __init__(self_, data: List[DashboardBulkActionData], **kwargs):
         """
         Dashboard bulk delete request body.
 
         :param data: List of dashboard bulk action request data objects.
-        :type data: DashboardBulkActionDataList
+        :type data: [DashboardBulkActionData]
         """
         super().__init__(kwargs)
 

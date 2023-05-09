@@ -33,11 +33,11 @@ class SharedDashboardInvitesData(ModelComposed):
         # classes don't exist yet because their module has not finished
         # loading
         from datadog_api_client.v1.model.shared_dashboard_invites_data_object import SharedDashboardInvitesDataObject
-        from datadog_api_client.v1.model.shared_dashboard_invites_data_list import SharedDashboardInvitesDataList
+        from datadog_api_client.v1.model.shared_dashboard_invites_data_object import SharedDashboardInvitesDataObject
 
         return {
             "oneOf": [
                 SharedDashboardInvitesDataObject,
-                SharedDashboardInvitesDataList,
+                [SharedDashboardInvitesDataObject],
             ],
         }

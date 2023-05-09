@@ -15,7 +15,6 @@ from datadog_api_client.v1.model.synthetics_browser_variable_type import Synthet
 from datadog_api_client.v1.model.synthetics_config_variable import SyntheticsConfigVariable
 from datadog_api_client.v1.model.synthetics_config_variable_type import SyntheticsConfigVariableType
 from datadog_api_client.v1.model.synthetics_device_id import SyntheticsDeviceID
-from datadog_api_client.v1.model.synthetics_restricted_roles import SyntheticsRestrictedRoles
 from datadog_api_client.v1.model.synthetics_step import SyntheticsStep
 from datadog_api_client.v1.model.synthetics_step_type import SyntheticsStepType
 from datadog_api_client.v1.model.synthetics_test_call_type import SyntheticsTestCallType
@@ -86,11 +85,9 @@ body = SyntheticsBrowserTest(
         ],
         http_version=SyntheticsTestOptionsHTTPVersion.HTTP1,
         monitor_options=SyntheticsTestOptionsMonitorOptions(),
-        restricted_roles=SyntheticsRestrictedRoles(
-            [
-                "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-            ]
-        ),
+        restricted_roles=[
+            "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+        ],
         retry=SyntheticsTestOptionsRetry(),
         rum_settings=SyntheticsBrowserTestRumSettings(
             application_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",

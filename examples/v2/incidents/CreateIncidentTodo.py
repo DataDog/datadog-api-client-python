@@ -5,7 +5,6 @@ Create an incident todo returns "CREATED" response
 from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.incidents_api import IncidentsApi
-from datadog_api_client.v2.model.incident_todo_assignee_array import IncidentTodoAssigneeArray
 from datadog_api_client.v2.model.incident_todo_attributes import IncidentTodoAttributes
 from datadog_api_client.v2.model.incident_todo_create_data import IncidentTodoCreateData
 from datadog_api_client.v2.model.incident_todo_create_request import IncidentTodoCreateRequest
@@ -17,11 +16,9 @@ INCIDENT_DATA_ID = environ["INCIDENT_DATA_ID"]
 body = IncidentTodoCreateRequest(
     data=IncidentTodoCreateData(
         attributes=IncidentTodoAttributes(
-            assignees=IncidentTodoAssigneeArray(
-                [
-                    "@test.user@test.com",
-                ]
-            ),
+            assignees=[
+                "@test.user@test.com",
+            ],
             content="Restore lost data.",
         ),
         type=IncidentTodoType.INCIDENT_TODOS,

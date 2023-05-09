@@ -9,6 +9,7 @@ from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     datetime,
+    none_type,
     unset,
     UnsetType,
 )
@@ -19,7 +20,7 @@ class UsageIngestedSpansHour(ModelNormal):
     def openapi_types(_):
         return {
             "hour": (datetime,),
-            "ingested_events_bytes": (int,),
+            "ingested_events_bytes": (int, none_type),
             "org_name": (str,),
             "public_id": (str,),
         }
@@ -34,7 +35,7 @@ class UsageIngestedSpansHour(ModelNormal):
     def __init__(
         self_,
         hour: Union[datetime, UnsetType] = unset,
-        ingested_events_bytes: Union[int, UnsetType] = unset,
+        ingested_events_bytes: Union[int, none_type, UnsetType] = unset,
         org_name: Union[str, UnsetType] = unset,
         public_id: Union[str, UnsetType] = unset,
         **kwargs,
@@ -46,7 +47,7 @@ class UsageIngestedSpansHour(ModelNormal):
         :type hour: datetime, optional
 
         :param ingested_events_bytes: Contains the total number of bytes ingested for APM spans during a given hour.
-        :type ingested_events_bytes: int, optional
+        :type ingested_events_bytes: int, none_type, optional
 
         :param org_name: The organization name.
         :type org_name: str, optional

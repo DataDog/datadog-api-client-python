@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import List, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -13,29 +13,23 @@ from datadog_api_client.model_utils import (
 )
 
 
-if TYPE_CHECKING:
-    from datadog_api_client.v2.model.metric_bulk_tag_config_email_list import MetricBulkTagConfigEmailList
-
-
 class MetricBulkTagConfigDeleteAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.metric_bulk_tag_config_email_list import MetricBulkTagConfigEmailList
-
         return {
-            "emails": (MetricBulkTagConfigEmailList,),
+            "emails": ([str],),
         }
 
     attribute_map = {
         "emails": "emails",
     }
 
-    def __init__(self_, emails: Union[MetricBulkTagConfigEmailList, UnsetType] = unset, **kwargs):
+    def __init__(self_, emails: Union[List[str], UnsetType] = unset, **kwargs):
         """
         Optional parameters for bulk deleting metric tag configurations.
 
         :param emails: A list of account emails to notify when the configuration is applied.
-        :type emails: MetricBulkTagConfigEmailList, optional
+        :type emails: [str], optional
         """
         if emails is not unset:
             kwargs["emails"] = emails

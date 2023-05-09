@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Any, Dict, Union
+from typing import Any, Dict, List, Union
 import warnings
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
@@ -15,7 +15,7 @@ from datadog_api_client.model_utils import (
 from datadog_api_client.v1.model.logs_list_response import LogsListResponse
 from datadog_api_client.v1.model.logs_list_request import LogsListRequest
 from datadog_api_client.v1.model.content_encoding import ContentEncoding
-from datadog_api_client.v1.model.http_log import HTTPLog
+from datadog_api_client.v1.model.http_log_item import HTTPLogItem
 
 
 class LogsApi:
@@ -120,7 +120,7 @@ class LogsApi:
                 },
                 "body": {
                     "required": True,
-                    "openapi_types": (HTTPLog,),
+                    "openapi_types": ([HTTPLogItem],),
                     "location": "body",
                     "collection_format": "multi",
                 },
@@ -156,7 +156,7 @@ class LogsApi:
 
     def submit_log(
         self,
-        body: HTTPLog,
+        body: List[HTTPLogItem],
         *,
         content_encoding: Union[ContentEncoding, UnsetType] = unset,
         ddtags: Union[str, UnsetType] = unset,
@@ -186,7 +186,7 @@ class LogsApi:
         * 5xx: Internal error, request should be retried after some time
 
         :param body: Log to send (JSON format).
-        :type body: HTTPLog
+        :type body: [HTTPLogItem]
         :param content_encoding: HTTP header used to compress the media-type.
         :type content_encoding: ContentEncoding, optional
         :param ddtags: Log tags can be passed as query parameters with ``text/plain`` content type.

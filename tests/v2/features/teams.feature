@@ -96,6 +96,7 @@ Feature: Teams
     And there is a valid "dd_team" in the system
     When the request is sent
     Then the response status is 200 OK
+    And the response "data" has item with field "id" with value "{{ dd_team.data.id }}"
 
   @team:DataDog/core-app
   Scenario: Get links for a team returns "API error response." response
@@ -214,6 +215,8 @@ Feature: Teams
     And body with value {"data": {"attributes": {"label": "New Label", "url": "https://example.com"}, "type": "team_links"}}
     When the request is sent
     Then the response status is 200 OK
+    And the response "data.id" is equal to "{{ team_link.data.id }}"
+    And the response "data.attributes.team_id" is equal to "{{ dd_team.data.id }}"
 
   @generated @skip @team:DataDog/core-app
   Scenario: Update a team returns "API error response." response
@@ -231,6 +234,7 @@ Feature: Teams
     And body with value {"data": {"attributes": {"handle": "{{dd_team.data.attributes.handle}}", "name": "{{dd_team.data.attributes.name}} updated"}, "type": "team"}}
     When the request is sent
     Then the response status is 200 OK
+    And the response "data.id" is equal to "{{ dd_team.data.id }}"
 
   @generated @skip @team:DataDog/core-app
   Scenario: Update a user's membership attributes on a team returns "API error response." response

@@ -28,7 +28,7 @@ class TimeseriesQuery(ModelComposed):
         :type compute: EventsCompute
 
         :param group_by: The list of facets on which to split results.
-        :type group_by: EventsQueryGroupBys, optional
+        :type group_by: [EventsGroupBy], optional
 
         :param indexes: The indexes in which to search.
         :type indexes: [str], optional
