@@ -15,13 +15,6 @@ add\_signal\_to\_incident\_request
    :members:
    :show-inheritance:
 
-agent\_check
-------------
-
-.. automodule:: datadog_api_client.v1.model.agent_check
-   :members:
-   :show-inheritance:
-
 alert\_graph\_widget\_definition
 --------------------------------
 
@@ -246,13 +239,6 @@ azure\_account
    :members:
    :show-inheritance:
 
-azure\_account\_list\_response
-------------------------------
-
-.. automodule:: datadog_api_client.v1.model.azure_account_list_response
-   :members:
-   :show-inheritance:
-
 cancel\_downtimes\_by\_scope\_request
 -------------------------------------
 
@@ -355,13 +341,6 @@ dashboard\_bulk\_action\_data
 -----------------------------
 
 .. automodule:: datadog_api_client.v1.model.dashboard_bulk_action_data
-   :members:
-   :show-inheritance:
-
-dashboard\_bulk\_action\_data\_list
------------------------------------
-
-.. automodule:: datadog_api_client.v1.model.dashboard_bulk_action_data_list
    :members:
    :show-inheritance:
 
@@ -509,20 +488,6 @@ deleted\_monitor
 ----------------
 
 .. automodule:: datadog_api_client.v1.model.deleted_monitor
-   :members:
-   :show-inheritance:
-
-distribution\_point
--------------------
-
-.. automodule:: datadog_api_client.v1.model.distribution_point
-   :members:
-   :show-inheritance:
-
-distribution\_point\_data
--------------------------
-
-.. automodule:: datadog_api_client.v1.model.distribution_point_data
    :members:
    :show-inheritance:
 
@@ -918,13 +883,6 @@ gcp\_account
    :members:
    :show-inheritance:
 
-gcp\_account\_list\_response
-----------------------------
-
-.. automodule:: datadog_api_client.v1.model.gcp_account_list_response
-   :members:
-   :show-inheritance:
-
 geomap\_widget\_definition
 --------------------------
 
@@ -1132,13 +1090,6 @@ hourly\_usage\_attribution\_usage\_type
 ---------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.hourly_usage_attribution_usage_type
-   :members:
-   :show-inheritance:
-
-http\_log
----------
-
-.. automodule:: datadog_api_client.v1.model.http_log
    :members:
    :show-inheritance:
 
@@ -1653,13 +1604,6 @@ logs\_pipeline
    :members:
    :show-inheritance:
 
-logs\_pipeline\_list
---------------------
-
-.. automodule:: datadog_api_client.v1.model.logs_pipeline_list
-   :members:
-   :show-inheritance:
-
 logs\_pipeline\_processor
 -------------------------
 
@@ -2003,10 +1947,10 @@ monitor\_renotify\_status\_type
    :members:
    :show-inheritance:
 
-monitor\_search\_count
-----------------------
+monitor\_search\_count\_item
+----------------------------
 
-.. automodule:: datadog_api_client.v1.model.monitor_search_count
+.. automodule:: datadog_api_client.v1.model.monitor_search_count_item
    :members:
    :show-inheritance:
 
@@ -2451,24 +2395,10 @@ notify\_end\_state
    :members:
    :show-inheritance:
 
-notify\_end\_states
--------------------
-
-.. automodule:: datadog_api_client.v1.model.notify_end_states
-   :members:
-   :show-inheritance:
-
 notify\_end\_type
 -----------------
 
 .. automodule:: datadog_api_client.v1.model.notify_end_type
-   :members:
-   :show-inheritance:
-
-notify\_end\_types
-------------------
-
-.. automodule:: datadog_api_client.v1.model.notify_end_types
    :members:
    :show-inheritance:
 
@@ -2595,13 +2525,6 @@ pagination
 ----------
 
 .. automodule:: datadog_api_client.v1.model.pagination
-   :members:
-   :show-inheritance:
-
-point
------
-
-.. automodule:: datadog_api_client.v1.model.point
    :members:
    :show-inheritance:
 
@@ -2864,13 +2787,6 @@ service\_check\_status
    :members:
    :show-inheritance:
 
-service\_checks
----------------
-
-.. automodule:: datadog_api_client.v1.model.service_checks
-   :members:
-   :show-inheritance:
-
 service\_level\_objective
 -------------------------
 
@@ -2945,13 +2861,6 @@ shared\_dashboard\_invites\_data
 --------------------------------
 
 .. automodule:: datadog_api_client.v1.model.shared_dashboard_invites_data
-   :members:
-   :show-inheritance:
-
-shared\_dashboard\_invites\_data\_list
---------------------------------------
-
-.. automodule:: datadog_api_client.v1.model.shared_dashboard_invites_data_list
    :members:
    :show-inheritance:
 
@@ -3036,13 +2945,6 @@ slack\_integration\_channel\_display
 ------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.slack_integration_channel_display
-   :members:
-   :show-inheritance:
-
-slack\_integration\_channels
-----------------------------
-
-.. automodule:: datadog_api_client.v1.model.slack_integration_channels
    :members:
    :show-inheritance:
 
@@ -4117,13 +4019,6 @@ synthetics\_private\_location\_secrets\_config\_decryption
    :members:
    :show-inheritance:
 
-synthetics\_restricted\_roles
------------------------------
-
-.. automodule:: datadog_api_client.v1.model.synthetics_restricted_roles
-   :members:
-   :show-inheritance:
-
 synthetics\_ssl\_certificate
 ----------------------------
 
@@ -4618,13 +4513,6 @@ usage\_analyzed\_logs\_response
 -------------------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_analyzed_logs_response
-   :members:
-   :show-inheritance:
-
-usage\_attribution\_aggregates
-------------------------------
-
-.. automodule:: datadog_api_client.v1.model.usage_attribution_aggregates
    :members:
    :show-inheritance:
 

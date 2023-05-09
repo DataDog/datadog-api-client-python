@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import List, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -12,18 +12,18 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.list_findings_data import ListFindingsData
+    from datadog_api_client.v2.model.finding import Finding
     from datadog_api_client.v2.model.list_findings_meta import ListFindingsMeta
 
 
 class ListFindingsResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.list_findings_data import ListFindingsData
+        from datadog_api_client.v2.model.finding import Finding
         from datadog_api_client.v2.model.list_findings_meta import ListFindingsMeta
 
         return {
-            "data": (ListFindingsData,),
+            "data": ([Finding],),
             "meta": (ListFindingsMeta,),
         }
 
@@ -32,12 +32,12 @@ class ListFindingsResponse(ModelNormal):
         "meta": "meta",
     }
 
-    def __init__(self_, data: ListFindingsData, meta: ListFindingsMeta, **kwargs):
+    def __init__(self_, data: List[Finding], meta: ListFindingsMeta, **kwargs):
         """
         The expected response schema when listing findings.
 
         :param data: Array of findings.
-        :type data: ListFindingsData
+        :type data: [Finding]
 
         :param meta: Metadata for pagination.
         :type meta: ListFindingsMeta

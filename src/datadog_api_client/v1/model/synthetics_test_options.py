@@ -18,7 +18,6 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.synthetics_device_id import SyntheticsDeviceID
     from datadog_api_client.v1.model.synthetics_test_options_http_version import SyntheticsTestOptionsHTTPVersion
     from datadog_api_client.v1.model.synthetics_test_options_monitor_options import SyntheticsTestOptionsMonitorOptions
-    from datadog_api_client.v1.model.synthetics_restricted_roles import SyntheticsRestrictedRoles
     from datadog_api_client.v1.model.synthetics_test_options_retry import SyntheticsTestOptionsRetry
     from datadog_api_client.v1.model.synthetics_browser_test_rum_settings import SyntheticsBrowserTestRumSettings
     from datadog_api_client.v1.model.synthetics_test_options_scheduling import SyntheticsTestOptionsScheduling
@@ -44,7 +43,6 @@ class SyntheticsTestOptions(ModelNormal):
         from datadog_api_client.v1.model.synthetics_test_options_monitor_options import (
             SyntheticsTestOptionsMonitorOptions,
         )
-        from datadog_api_client.v1.model.synthetics_restricted_roles import SyntheticsRestrictedRoles
         from datadog_api_client.v1.model.synthetics_test_options_retry import SyntheticsTestOptionsRetry
         from datadog_api_client.v1.model.synthetics_browser_test_rum_settings import SyntheticsBrowserTestRumSettings
         from datadog_api_client.v1.model.synthetics_test_options_scheduling import SyntheticsTestOptionsScheduling
@@ -67,7 +65,7 @@ class SyntheticsTestOptions(ModelNormal):
             "monitor_options": (SyntheticsTestOptionsMonitorOptions,),
             "monitor_priority": (int,),
             "no_screenshot": (bool,),
-            "restricted_roles": (SyntheticsRestrictedRoles,),
+            "restricted_roles": ([str],),
             "retry": (SyntheticsTestOptionsRetry,),
             "rum_settings": (SyntheticsBrowserTestRumSettings,),
             "scheduling": (SyntheticsTestOptionsScheduling,),
@@ -118,7 +116,7 @@ class SyntheticsTestOptions(ModelNormal):
         monitor_options: Union[SyntheticsTestOptionsMonitorOptions, UnsetType] = unset,
         monitor_priority: Union[int, UnsetType] = unset,
         no_screenshot: Union[bool, UnsetType] = unset,
-        restricted_roles: Union[SyntheticsRestrictedRoles, UnsetType] = unset,
+        restricted_roles: Union[List[str], UnsetType] = unset,
         retry: Union[SyntheticsTestOptionsRetry, UnsetType] = unset,
         rum_settings: Union[SyntheticsBrowserTestRumSettings, UnsetType] = unset,
         scheduling: Union[SyntheticsTestOptionsScheduling, UnsetType] = unset,
@@ -183,7 +181,7 @@ class SyntheticsTestOptions(ModelNormal):
         :type no_screenshot: bool, optional
 
         :param restricted_roles: A list of role identifiers that can be pulled from the Roles API, for restricting read and write access.
-        :type restricted_roles: SyntheticsRestrictedRoles, optional
+        :type restricted_roles: [str], optional
 
         :param retry: Object describing the retry strategy to apply to a Synthetic test.
         :type retry: SyntheticsTestOptionsRetry, optional

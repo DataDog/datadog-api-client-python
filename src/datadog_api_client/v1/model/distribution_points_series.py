@@ -14,20 +14,25 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v1.model.distribution_point import DistributionPoint
     from datadog_api_client.v1.model.distribution_points_type import DistributionPointsType
 
 
 class DistributionPointsSeries(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v1.model.distribution_point import DistributionPoint
         from datadog_api_client.v1.model.distribution_points_type import DistributionPointsType
 
         return {
             "host": (str,),
             "metric": (str,),
-            "points": ([DistributionPoint],),
+            "points": (
+                [
+                    [
+                        float,
+                        [float],
+                    ]
+                ],
+            ),
             "tags": ([str],),
             "type": (DistributionPointsType,),
         }
@@ -43,7 +48,14 @@ class DistributionPointsSeries(ModelNormal):
     def __init__(
         self_,
         metric: str,
-        points: List[DistributionPoint],
+        points: List[
+            List[
+                Union[
+                    float,
+                    List[float],
+                ]
+            ]
+        ],
         host: Union[str, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
         type: Union[DistributionPointsType, UnsetType] = unset,
@@ -59,7 +71,7 @@ class DistributionPointsSeries(ModelNormal):
         :type metric: str
 
         :param points: Points relating to the distribution point metric. All points must be tuples with timestamp and a list of values (cannot be a string). Timestamps should be in POSIX time in seconds.
-        :type points: [DistributionPoint]
+        :type points: [[float,[float],]]
 
         :param tags: A list of tags associated with the distribution point metric.
         :type tags: [str], optional

@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -14,19 +14,19 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v1.model.monitor_search_count import MonitorSearchCount
+    from datadog_api_client.v1.model.monitor_search_count_item import MonitorSearchCountItem
 
 
 class MonitorSearchResponseCounts(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v1.model.monitor_search_count import MonitorSearchCount
+        from datadog_api_client.v1.model.monitor_search_count_item import MonitorSearchCountItem
 
         return {
-            "muted": (MonitorSearchCount,),
-            "status": (MonitorSearchCount,),
-            "tag": (MonitorSearchCount,),
-            "type": (MonitorSearchCount,),
+            "muted": ([MonitorSearchCountItem],),
+            "status": ([MonitorSearchCountItem],),
+            "tag": ([MonitorSearchCountItem],),
+            "type": ([MonitorSearchCountItem],),
         }
 
     attribute_map = {
@@ -38,26 +38,26 @@ class MonitorSearchResponseCounts(ModelNormal):
 
     def __init__(
         self_,
-        muted: Union[MonitorSearchCount, UnsetType] = unset,
-        status: Union[MonitorSearchCount, UnsetType] = unset,
-        tag: Union[MonitorSearchCount, UnsetType] = unset,
-        type: Union[MonitorSearchCount, UnsetType] = unset,
+        muted: Union[List[MonitorSearchCountItem], UnsetType] = unset,
+        status: Union[List[MonitorSearchCountItem], UnsetType] = unset,
+        tag: Union[List[MonitorSearchCountItem], UnsetType] = unset,
+        type: Union[List[MonitorSearchCountItem], UnsetType] = unset,
         **kwargs,
     ):
         """
         The counts of monitors per different criteria.
 
         :param muted: Search facets.
-        :type muted: MonitorSearchCount, optional
+        :type muted: [MonitorSearchCountItem], optional
 
         :param status: Search facets.
-        :type status: MonitorSearchCount, optional
+        :type status: [MonitorSearchCountItem], optional
 
         :param tag: Search facets.
-        :type tag: MonitorSearchCount, optional
+        :type tag: [MonitorSearchCountItem], optional
 
         :param type: Search facets.
-        :type type: MonitorSearchCount, optional
+        :type type: [MonitorSearchCountItem], optional
         """
         if muted is not unset:
             kwargs["muted"] = muted

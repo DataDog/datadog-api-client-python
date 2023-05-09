@@ -15,20 +15,22 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.query_formula import QueryFormula
-    from datadog_api_client.v2.model.timeseries_formula_request_queries import TimeseriesFormulaRequestQueries
+    from datadog_api_client.v2.model.timeseries_query import TimeseriesQuery
+    from datadog_api_client.v2.model.metrics_timeseries_query import MetricsTimeseriesQuery
+    from datadog_api_client.v2.model.events_timeseries_query import EventsTimeseriesQuery
 
 
 class TimeseriesFormulaRequestAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.query_formula import QueryFormula
-        from datadog_api_client.v2.model.timeseries_formula_request_queries import TimeseriesFormulaRequestQueries
+        from datadog_api_client.v2.model.timeseries_query import TimeseriesQuery
 
         return {
             "formulas": ([QueryFormula],),
             "_from": (int,),
             "interval": (int,),
-            "queries": (TimeseriesFormulaRequestQueries,),
+            "queries": ([TimeseriesQuery],),
             "to": (int,),
         }
 
@@ -43,7 +45,7 @@ class TimeseriesFormulaRequestAttributes(ModelNormal):
     def __init__(
         self_,
         _from: int,
-        queries: TimeseriesFormulaRequestQueries,
+        queries: List[Union[TimeseriesQuery, MetricsTimeseriesQuery, EventsTimeseriesQuery]],
         to: int,
         formulas: Union[List[QueryFormula], UnsetType] = unset,
         interval: Union[int, UnsetType] = unset,
@@ -65,7 +67,7 @@ class TimeseriesFormulaRequestAttributes(ModelNormal):
         :type interval: int, optional
 
         :param queries: List of queries to be run and used as inputs to the formulas.
-        :type queries: TimeseriesFormulaRequestQueries
+        :type queries: [TimeseriesQuery]
 
         :param to: End date (exclusive) of the query in milliseconds since the Unix epoch.
         :type to: int

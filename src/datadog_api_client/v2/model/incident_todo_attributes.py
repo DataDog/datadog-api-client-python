@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -15,16 +15,17 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.incident_todo_assignee_array import IncidentTodoAssigneeArray
+    from datadog_api_client.v2.model.incident_todo_assignee import IncidentTodoAssignee
+    from datadog_api_client.v2.model.incident_todo_anonymous_assignee import IncidentTodoAnonymousAssignee
 
 
 class IncidentTodoAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.incident_todo_assignee_array import IncidentTodoAssigneeArray
+        from datadog_api_client.v2.model.incident_todo_assignee import IncidentTodoAssignee
 
         return {
-            "assignees": (IncidentTodoAssigneeArray,),
+            "assignees": ([IncidentTodoAssignee],),
             "completed": (str, none_type),
             "content": (str,),
             "due_date": (str, none_type),
@@ -41,7 +42,7 @@ class IncidentTodoAttributes(ModelNormal):
 
     def __init__(
         self_,
-        assignees: IncidentTodoAssigneeArray,
+        assignees: List[Union[IncidentTodoAssignee, str, IncidentTodoAnonymousAssignee]],
         content: str,
         completed: Union[str, none_type, UnsetType] = unset,
         due_date: Union[str, none_type, UnsetType] = unset,
@@ -52,7 +53,7 @@ class IncidentTodoAttributes(ModelNormal):
         Incident todo's attributes.
 
         :param assignees: Array of todo assignees.
-        :type assignees: IncidentTodoAssigneeArray
+        :type assignees: [IncidentTodoAssignee]
 
         :param completed: Timestamp when the todo was completed.
         :type completed: str, none_type, optional

@@ -4,7 +4,6 @@ Change the related incidents of a security signal returns "OK" response
 
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.security_monitoring_api import SecurityMonitoringApi
-from datadog_api_client.v2.model.security_monitoring_signal_incident_ids import SecurityMonitoringSignalIncidentIds
 from datadog_api_client.v2.model.security_monitoring_signal_incidents_update_attributes import (
     SecurityMonitoringSignalIncidentsUpdateAttributes,
 )
@@ -18,11 +17,9 @@ from datadog_api_client.v2.model.security_monitoring_signal_incidents_update_req
 body = SecurityMonitoringSignalIncidentsUpdateRequest(
     data=SecurityMonitoringSignalIncidentsUpdateData(
         attributes=SecurityMonitoringSignalIncidentsUpdateAttributes(
-            incident_ids=SecurityMonitoringSignalIncidentIds(
-                [
-                    2066,
-                ]
-            ),
+            incident_ids=[
+                2066,
+            ],
         ),
     ),
 )

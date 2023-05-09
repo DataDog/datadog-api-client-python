@@ -9,9 +9,7 @@ from datadog_api_client.v1.api.downtimes_api import DowntimesApi
 from datadog_api_client.v1.model.downtime import Downtime
 from datadog_api_client.v1.model.downtime_recurrence import DowntimeRecurrence
 from datadog_api_client.v1.model.notify_end_state import NotifyEndState
-from datadog_api_client.v1.model.notify_end_states import NotifyEndStates
 from datadog_api_client.v1.model.notify_end_type import NotifyEndType
-from datadog_api_client.v1.model.notify_end_types import NotifyEndTypes
 
 body = Downtime(
     message="Example-Downtime",
@@ -29,17 +27,13 @@ body = Downtime(
     monitor_tags=[
         "tag0",
     ],
-    notify_end_states=NotifyEndStates(
-        [
-            NotifyEndState.ALERT,
-            NotifyEndState.WARN,
-        ]
-    ),
-    notify_end_types=NotifyEndTypes(
-        [
-            NotifyEndType.EXPIRED,
-        ]
-    ),
+    notify_end_states=[
+        NotifyEndState.ALERT,
+        NotifyEndState.WARN,
+    ],
+    notify_end_types=[
+        NotifyEndType.EXPIRED,
+    ],
 )
 
 configuration = Configuration()
