@@ -441,7 +441,7 @@ def assert_no_unparsed(data):
     if isinstance(data, list):
         for item in data:
             assert_no_unparsed(item)
-    elif isinstance(data, list):
+    elif isinstance(data, dict):
         for item in data.values():
             assert_no_unparsed(item)
     elif isinstance(data, OpenApiModel):
