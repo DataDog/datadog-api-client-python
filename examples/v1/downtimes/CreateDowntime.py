@@ -8,6 +8,10 @@ from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.downtimes_api import DowntimesApi
 from datadog_api_client.v1.model.downtime import Downtime
 from datadog_api_client.v1.model.downtime_recurrence import DowntimeRecurrence
+from datadog_api_client.v1.model.notify_end_state import NotifyEndState
+from datadog_api_client.v1.model.notify_end_states import NotifyEndStates
+from datadog_api_client.v1.model.notify_end_type import NotifyEndType
+from datadog_api_client.v1.model.notify_end_types import NotifyEndTypes
 
 body = Downtime(
     message="Example-Downtime",
@@ -27,6 +31,19 @@ body = Downtime(
             "Fri",
         ],
         until_date=int((datetime.now() + relativedelta(days=21)).timestamp()),
+    ),
+    notify_end_states=NotifyEndStates(
+        [
+            NotifyEndState.ALERT,
+            NotifyEndState.NO_DATA,
+            NotifyEndState.WARN,
+        ]
+    ),
+    notify_end_types=NotifyEndTypes(
+        [
+            NotifyEndType.CANCELED,
+            NotifyEndType.EXPIRED,
+        ]
     ),
 )
 

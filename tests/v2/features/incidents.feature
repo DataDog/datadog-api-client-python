@@ -99,7 +99,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:Datadog/incident-app
+  @replay-only @team:Datadog/incident-app
   Scenario: Create an incident todo returns "CREATED" response
     Given operation "CreateIncidentTodo" enabled
     And new "CreateIncidentTodo" request
@@ -218,7 +218,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:Datadog/incident-app
+  @replay-only @team:Datadog/incident-app
   Scenario: Delete an incident todo returns "OK" response
     Given operation "DeleteIncidentTodo" enabled
     And new "DeleteIncidentTodo" request
@@ -272,7 +272,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:Datadog/incident-app
+  @replay-only @team:Datadog/incident-app
   Scenario: Get a list of an incident's todos returns "OK" response
     Given operation "ListIncidentTodos" enabled
     And new "ListIncidentTodos" request
@@ -402,7 +402,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:Datadog/incident-app
+  @replay-only @team:Datadog/incident-app
   Scenario: Get incident todo details returns "OK" response
     Given operation "GetIncidentTodo" enabled
     And new "GetIncidentTodo" request

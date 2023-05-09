@@ -108,4 +108,8 @@ Feature: Monitors
     And new "ListMonitorConfigPolicies" request
     When the request is sent
     Then the response status is 200 OK
-    And the response "data[0].type" is equal to "monitor-config-policy"
+    And the response "data" has item with field "type" with value "monitor-config-policy"
+    And the response "data" has item with field "id" with value "{{ monitor_configuration_policy.data.id }}"
+    And the response "data" has item with field "attributes.policy_type" with value "tag"
+    And the response "data" has item with field "attributes.policy.tag_key" with value "{{ unique_lower_alnum }}"
+    And the response "data" has item with field "attributes.policy.valid_tag_values" with value ["prod", "staging"]
