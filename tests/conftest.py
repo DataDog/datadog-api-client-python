@@ -206,7 +206,7 @@ def context(vcr, unique, freezed_time):
     Return a mapping with all defined fixtures, all objects created by `given` steps,
     and the undo operations to perform after a test scenario.
     """
-    unique_hash = "test-" + hashlib.sha256(unique.encode("utf-8")).hexdigest()[:16]
+    unique_hash = hashlib.sha256(unique.encode("utf-8")).hexdigest()[:16]
     ctx = {
         "undo_operations": [],
         "unique": unique,
