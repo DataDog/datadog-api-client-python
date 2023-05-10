@@ -65,6 +65,7 @@ from pytest_bdd import given, parsers, then, when
 from datadog_api_client import exceptions
 from datadog_api_client.api_client import ApiClient
 from datadog_api_client.configuration import Configuration
+from datadog_api_client.model_utils import OpenApiModel
 
 logging.basicConfig()
 
@@ -439,6 +440,19 @@ def request_parameter_with_value(context, name, value):
     context["api_request"]["kwargs"][escape_reserved_keyword(snake_case(name))] = tpl
 
 
+def assert_no_unparsed(data):
+    if isinstance(data, list):
+        for item in data:
+            assert_no_unparsed(item)
+    elif isinstance(data, dict):
+        for item in data.values():
+            assert_no_unparsed(item)
+    elif isinstance(data, OpenApiModel):
+        assert not data._unparsed
+        for attr in data._data_store.values():
+            assert_no_unparsed(attr)
+
+
 def build_given(version, operation):
     @sleep_after_request
     def wrapper(context, undo):
@@ -551,7 +565,7 @@ def undo(package_name, undo_operations, client):
 
 
 @when("the request is sent")
-def execute_request(undo, context, client, api_version):
+def execute_request(undo, context, client, api_version, request):
     """Execute the prepared request."""
     api_request = context["api_request"]
 
@@ -570,6 +584,9 @@ def execute_request(undo, context, client, api_version):
         # responses returned have an ordered response of body|status|headers
         api_request["response"] = [e.body, e.status, e.headers]
         return
+
+    if "skip-validation" not in request.node.__scenario_report__.scenario.tags:
+        assert_no_unparsed(response[0])
 
     api = api_request["api"]
     operation_id = api_request["request"].__name__
