@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"handle":"1679942006","name":"1679942006"},"type":"team"}}'
+    body: '{"data":{"attributes":{"handle":"handle-5fc4017c72fce64f","name":"name-5fc4017c72fce64f"},"type":"team"}}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/team
   response:
     body:
-      string: '{"data":{"type":"team","id":"dd3c1916-cccd-11ed-b35c-da7ad0900002","attributes":{"name":"1679942006","handle":"1679942006","summary":null,"description":null,"color":11,"created_at":"2023-03-27T18:33:27.041313+00:00","modified_at":"2023-03-27T18:33:27.041316+00:00","user_count":0,"link_count":0},"relationships":{"team_links":{"links":{"related":"/api/v2/team/dd3c1916-cccd-11ed-b35c-da7ad0900002/links"}},"user_team_permissions":{"links":{"related":"/api/v2/team/dd3c1916-cccd-11ed-b35c-da7ad0900002/permission-settings"}}}}}
+      string: '{"data":{"type":"team","id":"5b163526-ef4f-11ed-a5d4-da7ad0900002","attributes":{"name":"name-5fc4017c72fce64f","handle":"handle-5fc4017c72fce64f","summary":null,"description":null,"color":12,"created_at":"2023-05-10T16:26:02.799664+00:00","modified_at":"2023-05-10T16:26:02.799668+00:00","user_count":0,"link_count":0},"relationships":{"team_links":{"links":{"related":"/api/v2/team/5b163526-ef4f-11ed-a5d4-da7ad0900002/links"}},"user_team_permissions":{"links":{"related":"/api/v2/team/5b163526-ef4f-11ed-a5d4-da7ad0900002/permission-settings"}}}}}
 
         '
     headers:
@@ -27,7 +27,7 @@ interactions:
       content-type:
       - application/json
     method: PUT
-    uri: https://api.datadoghq.com/api/v2/team/dd3c1916-cccd-11ed-b35c-da7ad0900002/permission-settings/REPLACE.ME
+    uri: https://api.datadoghq.com/api/v2/team/5b163526-ef4f-11ed-a5d4-da7ad0900002/permission-settings/REPLACE.ME
   response:
     body:
       string: '{"errors":["Invalid action type \"REPLACE.ME\". Valid actions: manage_membership,
@@ -44,7 +44,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/team/dd3c1916-cccd-11ed-b35c-da7ad0900002
+    uri: https://api.datadoghq.com/api/v2/team/5b163526-ef4f-11ed-a5d4-da7ad0900002
   response:
     body:
       string: ''

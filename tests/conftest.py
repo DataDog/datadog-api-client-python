@@ -2,6 +2,7 @@
 """Define basic fixtures."""
 
 import os
+import hashlib
 
 RECORD = os.getenv("RECORD", "false").lower()
 SLEEP_AFTER_REQUEST = int(os.getenv("SLEEP_AFTER_REQUEST", "0"))
@@ -206,6 +207,7 @@ def context(vcr, unique, freezed_time):
     Return a mapping with all defined fixtures, all objects created by `given` steps,
     and the undo operations to perform after a test scenario.
     """
+    unique_hash = hashlib.sha256(unique.encode("utf-8")).hexdigest()[:16]
     ctx = {
         "undo_operations": [],
         "unique": unique,
@@ -214,6 +216,7 @@ def context(vcr, unique, freezed_time):
         "unique_alnum": PATTERN_ALPHANUM.sub("", unique),
         "unique_lower_alnum": PATTERN_ALPHANUM.sub("", unique).lower(),
         "unique_upper_alnum": PATTERN_ALPHANUM.sub("", unique).upper(),
+        "unique_hash": unique_hash,
         "timestamp": relative_time(freezed_time, False),
         "timeISO": relative_time(freezed_time, True),
     }

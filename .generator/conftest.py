@@ -13,6 +13,7 @@ import pytest
 from dateutil.relativedelta import relativedelta
 from jinja2 import Environment, FileSystemLoader, Template
 from pytest_bdd import given, parsers, then, when
+import hashlib
 
 from generator import openapi
 
@@ -252,6 +253,7 @@ def context(request, unique, freezed_time):
     imports = defaultdict(set)
     given = defaultdict(dict)
 
+    unique_hash = hashlib.sha256(unique.encode("utf-8")).hexdigest()[:16]
     ctx = {
         "undo_operations": [],
         "unique": unique,
@@ -260,6 +262,7 @@ def context(request, unique, freezed_time):
         "unique_alnum": PATTERN_ALPHANUM.sub("", unique),
         "unique_lower_alnum": PATTERN_ALPHANUM.sub("", unique).lower(),
         "unique_upper_alnum": PATTERN_ALPHANUM.sub("", unique).upper(),
+        "unique_hash": unique_hash,
         "timestamp": relative_time(imports, replace_values, freezed_time, False),
         "timeISO": relative_time(imports, replace_values, freezed_time, True),
         "_replace_values": replace_values,
