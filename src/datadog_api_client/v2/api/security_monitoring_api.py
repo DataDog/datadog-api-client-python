@@ -254,6 +254,14 @@ class SecurityMonitoringApi:
                     "attribute": "finding_id",
                     "location": "path",
                 },
+                "snapshot_timestamp": {
+                    "validation": {
+                        "inclusive_minimum": 1,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "snapshot_timestamp",
+                    "location": "query",
+                },
             },
             headers_map={
                 "accept": ["application/json"],
@@ -740,6 +748,8 @@ class SecurityMonitoringApi:
     def get_finding(
         self,
         finding_id: str,
+        *,
+        snapshot_timestamp: Union[int, UnsetType] = unset,
     ) -> GetFindingResponse:
         """Get a finding.
 
@@ -747,10 +757,15 @@ class SecurityMonitoringApi:
 
         :param finding_id: The ID of the finding.
         :type finding_id: str
+        :param snapshot_timestamp: Return the finding for a given snapshot of time (Unix ms).
+        :type snapshot_timestamp: int, optional
         :rtype: GetFindingResponse
         """
         kwargs: Dict[str, Any] = {}
         kwargs["finding_id"] = finding_id
+
+        if snapshot_timestamp is not unset:
+            kwargs["snapshot_timestamp"] = snapshot_timestamp
 
         return self._get_finding_endpoint.call_with_http_info(**kwargs)
 
