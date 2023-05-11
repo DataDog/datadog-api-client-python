@@ -52,7 +52,7 @@ Feature: Teams
   @team:DataDog/core-app
   Scenario: Create a team returns "CREATED" response
     Given new "CreateTeam" request
-    And body with value {"data": {"attributes": {"handle": "{{timestamp('now')}}", "name": "{{timestamp('now')}}"}, "relationships": {"users": {"data": []}}, "type": "team"}}
+    And body with value {"data": {"attributes": {"handle": "handle-{{ unique_hash }}", "name": "name-{{ unique_hash }}"}, "relationships": {"users": {"data": []}}, "type": "team"}}
     When the request is sent
     Then the response status is 201 CREATED
 
