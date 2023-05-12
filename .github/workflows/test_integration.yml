@@ -60,7 +60,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install --upgrade wheel setuptools build
       - name: Install
-        run: pip install --disable-pip-version-check -e .[apm,tests]
+        run: |
+          pip install --disable-pip-version-check -e .[apm,tests]
+          pip install -U "ddtrace<1.13.0"
       - name: Test
         run: ./run-tests.sh
         shell: bash
