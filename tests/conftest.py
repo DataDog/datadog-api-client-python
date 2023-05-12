@@ -266,8 +266,6 @@ def vcr_config():
 
         if hasattr(tracer._writer, "agent_url"):
             config["ignore_hosts"] = [urlparse(tracer._writer.agent_url).hostname]
-        else:
-            config["ignore_hosts"] = [urlparse(tracer._writer.intake_url).hostname]
 
     return config
 
