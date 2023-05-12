@@ -5664,6 +5664,13 @@ service\_definition\_schema
    :members:
    :show-inheritance:
 
+service\_definition\_schema\_versions
+-------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_definition_schema_versions
+   :members:
+   :show-inheritance:
+
 service\_definition\_v1
 -----------------------
 
