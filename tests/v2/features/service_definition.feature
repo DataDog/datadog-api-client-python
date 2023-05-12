@@ -94,17 +94,21 @@ Feature: Service Definition
   Scenario: Get a single service definition returns "OK" response
     Given new "GetServiceDefinition" request
     And request contains "service_name" parameter with value "service-definition-test"
+    And request contains "schema_version" parameter with value "v2.1"
     When the request is sent
     Then the response status is 200 OK
     And the response "data.attributes.meta.ingested-schema-version" is equal to "v2"
+    And the response "data.attributes.schema.schema-version" is equal to "v2.1"
     And the response "data.attributes.schema.dd-service" is equal to "service-definition-test"
 
   @team:DataDog/service-catalog
   Scenario: Get all service definitions returns "OK" response
     Given new "ListServiceDefinitions" request
+    And request contains "schema_version" parameter with value "v2.1"
     When the request is sent
     Then the response status is 200 OK
     And the response "data[0].attributes.meta.ingestion-source" is equal to "api"
+    And the response "data[0].attributes.schema.schema-version" is equal to "v2.1"
 
   @replay-only @skip-validation @team:DataDog/service-catalog @with-pagination
   Scenario: Get all service definitions returns "OK" response with pagination

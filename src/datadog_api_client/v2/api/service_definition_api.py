@@ -15,6 +15,7 @@ from datadog_api_client.model_utils import (
     unset,
 )
 from datadog_api_client.v2.model.service_definitions_list_response import ServiceDefinitionsListResponse
+from datadog_api_client.v2.model.service_definition_schema_versions import ServiceDefinitionSchemaVersions
 from datadog_api_client.v2.model.service_definition_data import ServiceDefinitionData
 from datadog_api_client.v2.model.service_definition_create_response import ServiceDefinitionCreateResponse
 from datadog_api_client.v2.model.service_definitions_create_request import ServiceDefinitionsCreateRequest
@@ -96,6 +97,11 @@ class ServiceDefinitionApi:
                     "attribute": "service_name",
                     "location": "path",
                 },
+                "schema_version": {
+                    "openapi_types": (ServiceDefinitionSchemaVersions,),
+                    "attribute": "schema_version",
+                    "location": "query",
+                },
             },
             headers_map={
                 "accept": ["application/json"],
@@ -123,6 +129,11 @@ class ServiceDefinitionApi:
                 "page_number": {
                     "openapi_types": (int,),
                     "attribute": "page[number]",
+                    "location": "query",
+                },
+                "schema_version": {
+                    "openapi_types": (ServiceDefinitionSchemaVersions,),
+                    "attribute": "schema_version",
                     "location": "query",
                 },
             },
@@ -170,6 +181,8 @@ class ServiceDefinitionApi:
     def get_service_definition(
         self,
         service_name: str,
+        *,
+        schema_version: Union[ServiceDefinitionSchemaVersions, UnsetType] = unset,
     ) -> ServiceDefinitionGetResponse:
         """Get a single service definition.
 
@@ -177,10 +190,15 @@ class ServiceDefinitionApi:
 
         :param service_name: The name of the service.
         :type service_name: str
+        :param schema_version: The schema version desired in the response.
+        :type schema_version: ServiceDefinitionSchemaVersions, optional
         :rtype: ServiceDefinitionGetResponse
         """
         kwargs: Dict[str, Any] = {}
         kwargs["service_name"] = service_name
+
+        if schema_version is not unset:
+            kwargs["schema_version"] = schema_version
 
         return self._get_service_definition_endpoint.call_with_http_info(**kwargs)
 
@@ -189,6 +207,7 @@ class ServiceDefinitionApi:
         *,
         page_size: Union[int, UnsetType] = unset,
         page_number: Union[int, UnsetType] = unset,
+        schema_version: Union[ServiceDefinitionSchemaVersions, UnsetType] = unset,
     ) -> ServiceDefinitionsListResponse:
         """Get all service definitions.
 
@@ -198,6 +217,8 @@ class ServiceDefinitionApi:
         :type page_size: int, optional
         :param page_number: Specific page number to return.
         :type page_number: int, optional
+        :param schema_version: The schema version desired in the response.
+        :type schema_version: ServiceDefinitionSchemaVersions, optional
         :rtype: ServiceDefinitionsListResponse
         """
         kwargs: Dict[str, Any] = {}
@@ -207,6 +228,9 @@ class ServiceDefinitionApi:
         if page_number is not unset:
             kwargs["page_number"] = page_number
 
+        if schema_version is not unset:
+            kwargs["schema_version"] = schema_version
+
         return self._list_service_definitions_endpoint.call_with_http_info(**kwargs)
 
     def list_service_definitions_with_pagination(
@@ -214,6 +238,7 @@ class ServiceDefinitionApi:
         *,
         page_size: Union[int, UnsetType] = unset,
         page_number: Union[int, UnsetType] = unset,
+        schema_version: Union[ServiceDefinitionSchemaVersions, UnsetType] = unset,
     ) -> collections.abc.Iterable[ServiceDefinitionData]:
         """Get all service definitions.
 
@@ -223,6 +248,8 @@ class ServiceDefinitionApi:
         :type page_size: int, optional
         :param page_number: Specific page number to return.
         :type page_number: int, optional
+        :param schema_version: The schema version desired in the response.
+        :type schema_version: ServiceDefinitionSchemaVersions, optional
 
         :return: A generator of paginated results.
         :rtype: collections.abc.Iterable[ServiceDefinitionData]
@@ -233,6 +260,9 @@ class ServiceDefinitionApi:
 
         if page_number is not unset:
             kwargs["page_number"] = page_number
+
+        if schema_version is not unset:
+            kwargs["schema_version"] = schema_version
 
         local_page_size = get_attribute_from_path(kwargs, "page_size", 10)
         endpoint = self._list_service_definitions_endpoint

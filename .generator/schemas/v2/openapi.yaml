@@ -377,6 +377,13 @@ components:
       required: true
       schema:
         type: string
+    SchemaVersion:
+      description: The schema version desired in the response.
+      in: query
+      name: schema_version
+      required: false
+      schema:
+        $ref: '#/components/schemas/ServiceDefinitionSchemaVersions'
     SecurityFilterID:
       description: The ID of the security filter.
       in: path
@@ -12502,6 +12509,17 @@ components:
       - $ref: '#/components/schemas/ServiceDefinitionV2'
       - $ref: '#/components/schemas/ServiceDefinitionV2Dot1'
       type: object
+    ServiceDefinitionSchemaVersions:
+      description: Schema versions
+      enum:
+      - v1
+      - v2
+      - v2.1
+      type: string
+      x-enum-varnames:
+      - V1
+      - V2
+      - V2_1
     ServiceDefinitionV1:
       deprecated: true
       description: Deprecated - Service definition V1 for providing additional service
@@ -22234,6 +22252,7 @@ paths:
       parameters:
       - $ref: '#/components/parameters/PageSize'
       - $ref: '#/components/parameters/PageNumber'
+      - $ref: '#/components/parameters/SchemaVersion'
       responses:
         '200':
           content:
@@ -22306,6 +22325,7 @@ paths:
       operationId: GetServiceDefinition
       parameters:
       - $ref: '#/components/parameters/ServiceName'
+      - $ref: '#/components/parameters/SchemaVersion'
       responses:
         '200':
           content:
