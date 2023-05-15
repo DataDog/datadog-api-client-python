@@ -19,7 +19,7 @@ try:
         sync_mode=True,
         priority_sampler=tracer._priority_sampler,
     )
-    tracer.configure(writer)
+    tracer.configure(writer=writer)
 
     patch(urllib3=True)
 
