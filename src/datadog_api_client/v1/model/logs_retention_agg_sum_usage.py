@@ -8,6 +8,7 @@ from typing import Union
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    none_type,
     unset,
     UnsetType,
 )
@@ -17,10 +18,10 @@ class LogsRetentionAggSumUsage(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
-            "logs_indexed_logs_usage_agg_sum": (int,),
-            "logs_live_indexed_logs_usage_agg_sum": (int,),
-            "logs_rehydrated_indexed_logs_usage_agg_sum": (int,),
-            "retention": (str,),
+            "logs_indexed_logs_usage_agg_sum": (int, none_type),
+            "logs_live_indexed_logs_usage_agg_sum": (int, none_type),
+            "logs_rehydrated_indexed_logs_usage_agg_sum": (int, none_type),
+            "retention": (str, none_type),
         }
 
     attribute_map = {
@@ -32,26 +33,26 @@ class LogsRetentionAggSumUsage(ModelNormal):
 
     def __init__(
         self_,
-        logs_indexed_logs_usage_agg_sum: Union[int, UnsetType] = unset,
-        logs_live_indexed_logs_usage_agg_sum: Union[int, UnsetType] = unset,
-        logs_rehydrated_indexed_logs_usage_agg_sum: Union[int, UnsetType] = unset,
-        retention: Union[str, UnsetType] = unset,
+        logs_indexed_logs_usage_agg_sum: Union[int, none_type, UnsetType] = unset,
+        logs_live_indexed_logs_usage_agg_sum: Union[int, none_type, UnsetType] = unset,
+        logs_rehydrated_indexed_logs_usage_agg_sum: Union[int, none_type, UnsetType] = unset,
+        retention: Union[str, none_type, UnsetType] = unset,
         **kwargs,
     ):
         """
         Object containing indexed logs usage aggregated across organizations and months for a retention period.
 
         :param logs_indexed_logs_usage_agg_sum: Total indexed logs for this retention period.
-        :type logs_indexed_logs_usage_agg_sum: int, optional
+        :type logs_indexed_logs_usage_agg_sum: int, none_type, optional
 
         :param logs_live_indexed_logs_usage_agg_sum: Live indexed logs for this retention period.
-        :type logs_live_indexed_logs_usage_agg_sum: int, optional
+        :type logs_live_indexed_logs_usage_agg_sum: int, none_type, optional
 
         :param logs_rehydrated_indexed_logs_usage_agg_sum: Rehydrated indexed logs for this retention period.
-        :type logs_rehydrated_indexed_logs_usage_agg_sum: int, optional
+        :type logs_rehydrated_indexed_logs_usage_agg_sum: int, none_type, optional
 
         :param retention: The retention period in days or "custom" for all custom retention periods.
-        :type retention: str, optional
+        :type retention: str, none_type, optional
         """
         if logs_indexed_logs_usage_agg_sum is not unset:
             kwargs["logs_indexed_logs_usage_agg_sum"] = logs_indexed_logs_usage_agg_sum

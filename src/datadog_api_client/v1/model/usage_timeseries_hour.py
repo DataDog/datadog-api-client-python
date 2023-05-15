@@ -9,6 +9,7 @@ from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     datetime,
+    none_type,
     unset,
     UnsetType,
 )
@@ -19,9 +20,9 @@ class UsageTimeseriesHour(ModelNormal):
     def openapi_types(_):
         return {
             "hour": (datetime,),
-            "num_custom_input_timeseries": (int,),
-            "num_custom_output_timeseries": (int,),
-            "num_custom_timeseries": (int,),
+            "num_custom_input_timeseries": (int, none_type),
+            "num_custom_output_timeseries": (int, none_type),
+            "num_custom_timeseries": (int, none_type),
             "org_name": (str,),
             "public_id": (str,),
         }
@@ -38,9 +39,9 @@ class UsageTimeseriesHour(ModelNormal):
     def __init__(
         self_,
         hour: Union[datetime, UnsetType] = unset,
-        num_custom_input_timeseries: Union[int, UnsetType] = unset,
-        num_custom_output_timeseries: Union[int, UnsetType] = unset,
-        num_custom_timeseries: Union[int, UnsetType] = unset,
+        num_custom_input_timeseries: Union[int, none_type, UnsetType] = unset,
+        num_custom_output_timeseries: Union[int, none_type, UnsetType] = unset,
+        num_custom_timeseries: Union[int, none_type, UnsetType] = unset,
         org_name: Union[str, UnsetType] = unset,
         public_id: Union[str, UnsetType] = unset,
         **kwargs,
@@ -52,13 +53,13 @@ class UsageTimeseriesHour(ModelNormal):
         :type hour: datetime, optional
 
         :param num_custom_input_timeseries: Contains the number of custom metrics that are inputs for aggregations (metric configured is custom).
-        :type num_custom_input_timeseries: int, optional
+        :type num_custom_input_timeseries: int, none_type, optional
 
         :param num_custom_output_timeseries: Contains the number of custom metrics that are outputs for aggregations (metric configured is custom).
-        :type num_custom_output_timeseries: int, optional
+        :type num_custom_output_timeseries: int, none_type, optional
 
         :param num_custom_timeseries: Contains sum of non-aggregation custom metrics and custom metrics that are outputs for aggregations.
-        :type num_custom_timeseries: int, optional
+        :type num_custom_timeseries: int, none_type, optional
 
         :param org_name: The organization name.
         :type org_name: str, optional

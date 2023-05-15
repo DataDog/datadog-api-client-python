@@ -22,7 +22,7 @@ class UsageRumSessionsHour(ModelNormal):
             "hour": (datetime,),
             "org_name": (str,),
             "public_id": (str,),
-            "replay_session_count": (int,),
+            "replay_session_count": (int, none_type),
             "session_count": (int, none_type),
             "session_count_android": (int, none_type),
             "session_count_flutter": (int, none_type),
@@ -47,7 +47,7 @@ class UsageRumSessionsHour(ModelNormal):
         hour: Union[datetime, UnsetType] = unset,
         org_name: Union[str, UnsetType] = unset,
         public_id: Union[str, UnsetType] = unset,
-        replay_session_count: Union[int, UnsetType] = unset,
+        replay_session_count: Union[int, none_type, UnsetType] = unset,
         session_count: Union[int, none_type, UnsetType] = unset,
         session_count_android: Union[int, none_type, UnsetType] = unset,
         session_count_flutter: Union[int, none_type, UnsetType] = unset,
@@ -68,7 +68,7 @@ class UsageRumSessionsHour(ModelNormal):
         :type public_id: str, optional
 
         :param replay_session_count: Contains the number of RUM Replay Sessions (data available beginning November 1, 2021).
-        :type replay_session_count: int, optional
+        :type replay_session_count: int, none_type, optional
 
         :param session_count: Contains the number of browser RUM Lite Sessions.
         :type session_count: int, none_type, optional

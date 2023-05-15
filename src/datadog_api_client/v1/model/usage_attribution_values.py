@@ -8,6 +8,7 @@ from typing import Union
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    none_type,
     unset,
     UnsetType,
 )
@@ -17,58 +18,58 @@ class UsageAttributionValues(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
-            "api_percentage": (float,),
-            "api_usage": (float,),
-            "apm_fargate_percentage": (float,),
-            "apm_fargate_usage": (float,),
-            "apm_host_percentage": (float,),
-            "apm_host_usage": (float,),
-            "appsec_fargate_percentage": (float,),
-            "appsec_fargate_usage": (float,),
-            "appsec_percentage": (float,),
-            "appsec_usage": (float,),
-            "browser_percentage": (float,),
-            "browser_usage": (float,),
-            "container_percentage": (float,),
-            "container_usage": (float,),
-            "cspm_container_percentage": (float,),
-            "cspm_container_usage": (float,),
-            "cspm_host_percentage": (float,),
-            "cspm_host_usage": (float,),
-            "custom_timeseries_percentage": (float,),
-            "custom_timeseries_usage": (float,),
-            "cws_container_percentage": (float,),
-            "cws_container_usage": (float,),
-            "cws_host_percentage": (float,),
-            "cws_host_usage": (float,),
-            "dbm_hosts_percentage": (float,),
-            "dbm_hosts_usage": (float,),
-            "dbm_queries_percentage": (float,),
-            "dbm_queries_usage": (float,),
-            "estimated_indexed_logs_percentage": (float,),
-            "estimated_indexed_logs_usage": (float,),
-            "estimated_indexed_spans_percentage": (float,),
-            "estimated_indexed_spans_usage": (float,),
-            "estimated_ingested_logs_percentage": (float,),
-            "estimated_ingested_logs_usage": (float,),
-            "estimated_ingested_spans_percentage": (float,),
-            "estimated_ingested_spans_usage": (float,),
-            "estimated_rum_sessions_percentage": (float,),
-            "estimated_rum_sessions_usage": (float,),
-            "infra_host_percentage": (float,),
-            "infra_host_usage": (float,),
-            "lambda_functions_percentage": (float,),
-            "lambda_functions_usage": (float,),
-            "lambda_invocations_percentage": (float,),
-            "lambda_invocations_usage": (float,),
-            "npm_host_percentage": (float,),
-            "npm_host_usage": (float,),
-            "profiled_container_percentage": (float,),
-            "profiled_container_usage": (float,),
-            "profiled_hosts_percentage": (float,),
-            "profiled_hosts_usage": (float,),
-            "snmp_percentage": (float,),
-            "snmp_usage": (float,),
+            "api_percentage": (float, none_type),
+            "api_usage": (float, none_type),
+            "apm_fargate_percentage": (float, none_type),
+            "apm_fargate_usage": (float, none_type),
+            "apm_host_percentage": (float, none_type),
+            "apm_host_usage": (float, none_type),
+            "appsec_fargate_percentage": (float, none_type),
+            "appsec_fargate_usage": (float, none_type),
+            "appsec_percentage": (float, none_type),
+            "appsec_usage": (float, none_type),
+            "browser_percentage": (float, none_type),
+            "browser_usage": (float, none_type),
+            "container_percentage": (float, none_type),
+            "container_usage": (float, none_type),
+            "cspm_container_percentage": (float, none_type),
+            "cspm_container_usage": (float, none_type),
+            "cspm_host_percentage": (float, none_type),
+            "cspm_host_usage": (float, none_type),
+            "custom_timeseries_percentage": (float, none_type),
+            "custom_timeseries_usage": (float, none_type),
+            "cws_container_percentage": (float, none_type),
+            "cws_container_usage": (float, none_type),
+            "cws_host_percentage": (float, none_type),
+            "cws_host_usage": (float, none_type),
+            "dbm_hosts_percentage": (float, none_type),
+            "dbm_hosts_usage": (float, none_type),
+            "dbm_queries_percentage": (float, none_type),
+            "dbm_queries_usage": (float, none_type),
+            "estimated_indexed_logs_percentage": (float, none_type),
+            "estimated_indexed_logs_usage": (float, none_type),
+            "estimated_indexed_spans_percentage": (float, none_type),
+            "estimated_indexed_spans_usage": (float, none_type),
+            "estimated_ingested_logs_percentage": (float, none_type),
+            "estimated_ingested_logs_usage": (float, none_type),
+            "estimated_ingested_spans_percentage": (float, none_type),
+            "estimated_ingested_spans_usage": (float, none_type),
+            "estimated_rum_sessions_percentage": (float, none_type),
+            "estimated_rum_sessions_usage": (float, none_type),
+            "infra_host_percentage": (float, none_type),
+            "infra_host_usage": (float, none_type),
+            "lambda_functions_percentage": (float, none_type),
+            "lambda_functions_usage": (float, none_type),
+            "lambda_invocations_percentage": (float, none_type),
+            "lambda_invocations_usage": (float, none_type),
+            "npm_host_percentage": (float, none_type),
+            "npm_host_usage": (float, none_type),
+            "profiled_container_percentage": (float, none_type),
+            "profiled_container_usage": (float, none_type),
+            "profiled_hosts_percentage": (float, none_type),
+            "profiled_hosts_usage": (float, none_type),
+            "snmp_percentage": (float, none_type),
+            "snmp_usage": (float, none_type),
         }
 
     attribute_map = {
@@ -128,218 +129,218 @@ class UsageAttributionValues(ModelNormal):
 
     def __init__(
         self_,
-        api_percentage: Union[float, UnsetType] = unset,
-        api_usage: Union[float, UnsetType] = unset,
-        apm_fargate_percentage: Union[float, UnsetType] = unset,
-        apm_fargate_usage: Union[float, UnsetType] = unset,
-        apm_host_percentage: Union[float, UnsetType] = unset,
-        apm_host_usage: Union[float, UnsetType] = unset,
-        appsec_fargate_percentage: Union[float, UnsetType] = unset,
-        appsec_fargate_usage: Union[float, UnsetType] = unset,
-        appsec_percentage: Union[float, UnsetType] = unset,
-        appsec_usage: Union[float, UnsetType] = unset,
-        browser_percentage: Union[float, UnsetType] = unset,
-        browser_usage: Union[float, UnsetType] = unset,
-        container_percentage: Union[float, UnsetType] = unset,
-        container_usage: Union[float, UnsetType] = unset,
-        cspm_container_percentage: Union[float, UnsetType] = unset,
-        cspm_container_usage: Union[float, UnsetType] = unset,
-        cspm_host_percentage: Union[float, UnsetType] = unset,
-        cspm_host_usage: Union[float, UnsetType] = unset,
-        custom_timeseries_percentage: Union[float, UnsetType] = unset,
-        custom_timeseries_usage: Union[float, UnsetType] = unset,
-        cws_container_percentage: Union[float, UnsetType] = unset,
-        cws_container_usage: Union[float, UnsetType] = unset,
-        cws_host_percentage: Union[float, UnsetType] = unset,
-        cws_host_usage: Union[float, UnsetType] = unset,
-        dbm_hosts_percentage: Union[float, UnsetType] = unset,
-        dbm_hosts_usage: Union[float, UnsetType] = unset,
-        dbm_queries_percentage: Union[float, UnsetType] = unset,
-        dbm_queries_usage: Union[float, UnsetType] = unset,
-        estimated_indexed_logs_percentage: Union[float, UnsetType] = unset,
-        estimated_indexed_logs_usage: Union[float, UnsetType] = unset,
-        estimated_indexed_spans_percentage: Union[float, UnsetType] = unset,
-        estimated_indexed_spans_usage: Union[float, UnsetType] = unset,
-        estimated_ingested_logs_percentage: Union[float, UnsetType] = unset,
-        estimated_ingested_logs_usage: Union[float, UnsetType] = unset,
-        estimated_ingested_spans_percentage: Union[float, UnsetType] = unset,
-        estimated_ingested_spans_usage: Union[float, UnsetType] = unset,
-        estimated_rum_sessions_percentage: Union[float, UnsetType] = unset,
-        estimated_rum_sessions_usage: Union[float, UnsetType] = unset,
-        infra_host_percentage: Union[float, UnsetType] = unset,
-        infra_host_usage: Union[float, UnsetType] = unset,
-        lambda_functions_percentage: Union[float, UnsetType] = unset,
-        lambda_functions_usage: Union[float, UnsetType] = unset,
-        lambda_invocations_percentage: Union[float, UnsetType] = unset,
-        lambda_invocations_usage: Union[float, UnsetType] = unset,
-        npm_host_percentage: Union[float, UnsetType] = unset,
-        npm_host_usage: Union[float, UnsetType] = unset,
-        profiled_container_percentage: Union[float, UnsetType] = unset,
-        profiled_container_usage: Union[float, UnsetType] = unset,
-        profiled_hosts_percentage: Union[float, UnsetType] = unset,
-        profiled_hosts_usage: Union[float, UnsetType] = unset,
-        snmp_percentage: Union[float, UnsetType] = unset,
-        snmp_usage: Union[float, UnsetType] = unset,
+        api_percentage: Union[float, none_type, UnsetType] = unset,
+        api_usage: Union[float, none_type, UnsetType] = unset,
+        apm_fargate_percentage: Union[float, none_type, UnsetType] = unset,
+        apm_fargate_usage: Union[float, none_type, UnsetType] = unset,
+        apm_host_percentage: Union[float, none_type, UnsetType] = unset,
+        apm_host_usage: Union[float, none_type, UnsetType] = unset,
+        appsec_fargate_percentage: Union[float, none_type, UnsetType] = unset,
+        appsec_fargate_usage: Union[float, none_type, UnsetType] = unset,
+        appsec_percentage: Union[float, none_type, UnsetType] = unset,
+        appsec_usage: Union[float, none_type, UnsetType] = unset,
+        browser_percentage: Union[float, none_type, UnsetType] = unset,
+        browser_usage: Union[float, none_type, UnsetType] = unset,
+        container_percentage: Union[float, none_type, UnsetType] = unset,
+        container_usage: Union[float, none_type, UnsetType] = unset,
+        cspm_container_percentage: Union[float, none_type, UnsetType] = unset,
+        cspm_container_usage: Union[float, none_type, UnsetType] = unset,
+        cspm_host_percentage: Union[float, none_type, UnsetType] = unset,
+        cspm_host_usage: Union[float, none_type, UnsetType] = unset,
+        custom_timeseries_percentage: Union[float, none_type, UnsetType] = unset,
+        custom_timeseries_usage: Union[float, none_type, UnsetType] = unset,
+        cws_container_percentage: Union[float, none_type, UnsetType] = unset,
+        cws_container_usage: Union[float, none_type, UnsetType] = unset,
+        cws_host_percentage: Union[float, none_type, UnsetType] = unset,
+        cws_host_usage: Union[float, none_type, UnsetType] = unset,
+        dbm_hosts_percentage: Union[float, none_type, UnsetType] = unset,
+        dbm_hosts_usage: Union[float, none_type, UnsetType] = unset,
+        dbm_queries_percentage: Union[float, none_type, UnsetType] = unset,
+        dbm_queries_usage: Union[float, none_type, UnsetType] = unset,
+        estimated_indexed_logs_percentage: Union[float, none_type, UnsetType] = unset,
+        estimated_indexed_logs_usage: Union[float, none_type, UnsetType] = unset,
+        estimated_indexed_spans_percentage: Union[float, none_type, UnsetType] = unset,
+        estimated_indexed_spans_usage: Union[float, none_type, UnsetType] = unset,
+        estimated_ingested_logs_percentage: Union[float, none_type, UnsetType] = unset,
+        estimated_ingested_logs_usage: Union[float, none_type, UnsetType] = unset,
+        estimated_ingested_spans_percentage: Union[float, none_type, UnsetType] = unset,
+        estimated_ingested_spans_usage: Union[float, none_type, UnsetType] = unset,
+        estimated_rum_sessions_percentage: Union[float, none_type, UnsetType] = unset,
+        estimated_rum_sessions_usage: Union[float, none_type, UnsetType] = unset,
+        infra_host_percentage: Union[float, none_type, UnsetType] = unset,
+        infra_host_usage: Union[float, none_type, UnsetType] = unset,
+        lambda_functions_percentage: Union[float, none_type, UnsetType] = unset,
+        lambda_functions_usage: Union[float, none_type, UnsetType] = unset,
+        lambda_invocations_percentage: Union[float, none_type, UnsetType] = unset,
+        lambda_invocations_usage: Union[float, none_type, UnsetType] = unset,
+        npm_host_percentage: Union[float, none_type, UnsetType] = unset,
+        npm_host_usage: Union[float, none_type, UnsetType] = unset,
+        profiled_container_percentage: Union[float, none_type, UnsetType] = unset,
+        profiled_container_usage: Union[float, none_type, UnsetType] = unset,
+        profiled_hosts_percentage: Union[float, none_type, UnsetType] = unset,
+        profiled_hosts_usage: Union[float, none_type, UnsetType] = unset,
+        snmp_percentage: Union[float, none_type, UnsetType] = unset,
+        snmp_usage: Union[float, none_type, UnsetType] = unset,
         **kwargs,
     ):
         """
         Fields in Usage Summary by tag(s).
 
         :param api_percentage: The percentage of synthetic API test usage by tag(s).
-        :type api_percentage: float, optional
+        :type api_percentage: float, none_type, optional
 
         :param api_usage: The synthetic API test usage by tag(s).
-        :type api_usage: float, optional
+        :type api_usage: float, none_type, optional
 
         :param apm_fargate_percentage: The percentage of APM ECS Fargate task usage by tag(s).
-        :type apm_fargate_percentage: float, optional
+        :type apm_fargate_percentage: float, none_type, optional
 
         :param apm_fargate_usage: The APM ECS Fargate task usage by tag(s).
-        :type apm_fargate_usage: float, optional
+        :type apm_fargate_usage: float, none_type, optional
 
         :param apm_host_percentage: The percentage of APM host usage by tag(s).
-        :type apm_host_percentage: float, optional
+        :type apm_host_percentage: float, none_type, optional
 
         :param apm_host_usage: The APM host usage by tag(s).
-        :type apm_host_usage: float, optional
+        :type apm_host_usage: float, none_type, optional
 
         :param appsec_fargate_percentage: The percentage of Application Security Monitoring ECS Fargate task usage by tag(s).
-        :type appsec_fargate_percentage: float, optional
+        :type appsec_fargate_percentage: float, none_type, optional
 
         :param appsec_fargate_usage: The Application Security Monitoring ECS Fargate task usage by tag(s).
-        :type appsec_fargate_usage: float, optional
+        :type appsec_fargate_usage: float, none_type, optional
 
         :param appsec_percentage: The percentage of Application Security Monitoring host usage by tag(s).
-        :type appsec_percentage: float, optional
+        :type appsec_percentage: float, none_type, optional
 
         :param appsec_usage: The Application Security Monitoring host usage by tag(s).
-        :type appsec_usage: float, optional
+        :type appsec_usage: float, none_type, optional
 
         :param browser_percentage: The percentage of synthetic browser test usage by tag(s).
-        :type browser_percentage: float, optional
+        :type browser_percentage: float, none_type, optional
 
         :param browser_usage: The synthetic browser test usage by tag(s).
-        :type browser_usage: float, optional
+        :type browser_usage: float, none_type, optional
 
         :param container_percentage: The percentage of container usage by tag(s).
-        :type container_percentage: float, optional
+        :type container_percentage: float, none_type, optional
 
         :param container_usage: The container usage by tag(s).
-        :type container_usage: float, optional
+        :type container_usage: float, none_type, optional
 
         :param cspm_container_percentage: The percentage of Cloud Security Posture Management container usage by tag(s)
-        :type cspm_container_percentage: float, optional
+        :type cspm_container_percentage: float, none_type, optional
 
         :param cspm_container_usage: The Cloud Security Posture Management container usage by tag(s)
-        :type cspm_container_usage: float, optional
+        :type cspm_container_usage: float, none_type, optional
 
         :param cspm_host_percentage: The percentage of Cloud Security Posture Management host usage by tag(s)
-        :type cspm_host_percentage: float, optional
+        :type cspm_host_percentage: float, none_type, optional
 
         :param cspm_host_usage: The Cloud Security Posture Management host usage by tag(s)
-        :type cspm_host_usage: float, optional
+        :type cspm_host_usage: float, none_type, optional
 
         :param custom_timeseries_percentage: The percentage of custom metrics usage by tag(s).
-        :type custom_timeseries_percentage: float, optional
+        :type custom_timeseries_percentage: float, none_type, optional
 
         :param custom_timeseries_usage: The custom metrics usage by tag(s).
-        :type custom_timeseries_usage: float, optional
+        :type custom_timeseries_usage: float, none_type, optional
 
         :param cws_container_percentage: The percentage of Cloud Workload Security container usage by tag(s)
-        :type cws_container_percentage: float, optional
+        :type cws_container_percentage: float, none_type, optional
 
         :param cws_container_usage: The Cloud Workload Security container usage by tag(s)
-        :type cws_container_usage: float, optional
+        :type cws_container_usage: float, none_type, optional
 
         :param cws_host_percentage: The percentage of Cloud Workload Security host usage by tag(s)
-        :type cws_host_percentage: float, optional
+        :type cws_host_percentage: float, none_type, optional
 
         :param cws_host_usage: The Cloud Workload Security host usage by tag(s)
-        :type cws_host_usage: float, optional
+        :type cws_host_usage: float, none_type, optional
 
         :param dbm_hosts_percentage: The percentage of Database Monitoring host usage by tag(s).
-        :type dbm_hosts_percentage: float, optional
+        :type dbm_hosts_percentage: float, none_type, optional
 
         :param dbm_hosts_usage: The Database Monitoring host usage by tag(s).
-        :type dbm_hosts_usage: float, optional
+        :type dbm_hosts_usage: float, none_type, optional
 
         :param dbm_queries_percentage: The percentage of Database Monitoring normalized queries usage by tag(s).
-        :type dbm_queries_percentage: float, optional
+        :type dbm_queries_percentage: float, none_type, optional
 
         :param dbm_queries_usage: The Database Monitoring normalized queries usage by tag(s).
-        :type dbm_queries_usage: float, optional
+        :type dbm_queries_usage: float, none_type, optional
 
         :param estimated_indexed_logs_percentage: The percentage of estimated live indexed logs usage by tag(s).
-        :type estimated_indexed_logs_percentage: float, optional
+        :type estimated_indexed_logs_percentage: float, none_type, optional
 
         :param estimated_indexed_logs_usage: The estimated live indexed logs usage by tag(s).
-        :type estimated_indexed_logs_usage: float, optional
+        :type estimated_indexed_logs_usage: float, none_type, optional
 
         :param estimated_indexed_spans_percentage: The percentage of estimated indexed spans usage by tag(s).
-        :type estimated_indexed_spans_percentage: float, optional
+        :type estimated_indexed_spans_percentage: float, none_type, optional
 
         :param estimated_indexed_spans_usage: The estimated indexed spans usage by tag(s).
-        :type estimated_indexed_spans_usage: float, optional
+        :type estimated_indexed_spans_usage: float, none_type, optional
 
         :param estimated_ingested_logs_percentage: The percentage of estimated live ingested logs usage by tag(s).
-        :type estimated_ingested_logs_percentage: float, optional
+        :type estimated_ingested_logs_percentage: float, none_type, optional
 
         :param estimated_ingested_logs_usage: The estimated live ingested logs usage by tag(s).
-        :type estimated_ingested_logs_usage: float, optional
+        :type estimated_ingested_logs_usage: float, none_type, optional
 
         :param estimated_ingested_spans_percentage: The percentage of estimated ingested spans usage by tag(s).
-        :type estimated_ingested_spans_percentage: float, optional
+        :type estimated_ingested_spans_percentage: float, none_type, optional
 
         :param estimated_ingested_spans_usage: The estimated ingested spans usage by tag(s).
-        :type estimated_ingested_spans_usage: float, optional
+        :type estimated_ingested_spans_usage: float, none_type, optional
 
         :param estimated_rum_sessions_percentage: The percentage of estimated rum sessions usage by tag(s).
-        :type estimated_rum_sessions_percentage: float, optional
+        :type estimated_rum_sessions_percentage: float, none_type, optional
 
         :param estimated_rum_sessions_usage: The estimated rum sessions usage by tag(s).
-        :type estimated_rum_sessions_usage: float, optional
+        :type estimated_rum_sessions_usage: float, none_type, optional
 
         :param infra_host_percentage: The percentage of infrastructure host usage by tag(s).
-        :type infra_host_percentage: float, optional
+        :type infra_host_percentage: float, none_type, optional
 
         :param infra_host_usage: The infrastructure host usage by tag(s).
-        :type infra_host_usage: float, optional
+        :type infra_host_usage: float, none_type, optional
 
         :param lambda_functions_percentage: The percentage of Lambda function usage by tag(s).
-        :type lambda_functions_percentage: float, optional
+        :type lambda_functions_percentage: float, none_type, optional
 
         :param lambda_functions_usage: The Lambda function usage by tag(s).
-        :type lambda_functions_usage: float, optional
+        :type lambda_functions_usage: float, none_type, optional
 
         :param lambda_invocations_percentage: The percentage of Lambda invocation usage by tag(s).
-        :type lambda_invocations_percentage: float, optional
+        :type lambda_invocations_percentage: float, none_type, optional
 
         :param lambda_invocations_usage: The Lambda invocation usage by tag(s).
-        :type lambda_invocations_usage: float, optional
+        :type lambda_invocations_usage: float, none_type, optional
 
         :param npm_host_percentage: The percentage of network host usage by tag(s).
-        :type npm_host_percentage: float, optional
+        :type npm_host_percentage: float, none_type, optional
 
         :param npm_host_usage: The network host usage by tag(s).
-        :type npm_host_usage: float, optional
+        :type npm_host_usage: float, none_type, optional
 
         :param profiled_container_percentage: The percentage of profiled containers usage by tag(s).
-        :type profiled_container_percentage: float, optional
+        :type profiled_container_percentage: float, none_type, optional
 
         :param profiled_container_usage: The profiled container usage by tag(s).
-        :type profiled_container_usage: float, optional
+        :type profiled_container_usage: float, none_type, optional
 
         :param profiled_hosts_percentage: The percentage of profiled hosts usage by tag(s).
-        :type profiled_hosts_percentage: float, optional
+        :type profiled_hosts_percentage: float, none_type, optional
 
         :param profiled_hosts_usage: The profiled host usage by tag(s).
-        :type profiled_hosts_usage: float, optional
+        :type profiled_hosts_usage: float, none_type, optional
 
         :param snmp_percentage: The percentage of network device usage by tag(s).
-        :type snmp_percentage: float, optional
+        :type snmp_percentage: float, none_type, optional
 
         :param snmp_usage: The network device usage by tag(s).
-        :type snmp_usage: float, optional
+        :type snmp_usage: float, none_type, optional
         """
         if api_percentage is not unset:
             kwargs["api_percentage"] = api_percentage

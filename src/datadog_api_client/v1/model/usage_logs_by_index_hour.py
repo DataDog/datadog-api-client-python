@@ -9,6 +9,7 @@ from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     datetime,
+    none_type,
     unset,
     UnsetType,
 )
@@ -18,7 +19,7 @@ class UsageLogsByIndexHour(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
-            "event_count": (int,),
+            "event_count": (int, none_type),
             "hour": (datetime,),
             "index_id": (str,),
             "index_name": (str,),
@@ -39,7 +40,7 @@ class UsageLogsByIndexHour(ModelNormal):
 
     def __init__(
         self_,
-        event_count: Union[int, UnsetType] = unset,
+        event_count: Union[int, none_type, UnsetType] = unset,
         hour: Union[datetime, UnsetType] = unset,
         index_id: Union[str, UnsetType] = unset,
         index_name: Union[str, UnsetType] = unset,
@@ -52,7 +53,7 @@ class UsageLogsByIndexHour(ModelNormal):
         Number of indexed logs for each hour and index for a given organization.
 
         :param event_count: The total number of indexed logs for the queried hour.
-        :type event_count: int, optional
+        :type event_count: int, none_type, optional
 
         :param hour: The hour for the usage.
         :type hour: datetime, optional

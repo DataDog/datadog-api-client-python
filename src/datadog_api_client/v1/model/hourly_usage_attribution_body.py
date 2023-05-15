@@ -33,7 +33,7 @@ class HourlyUsageAttributionBody(ModelNormal):
             "region": (str,),
             "tag_config_source": (str,),
             "tags": (UsageAttributionTagNames,),
-            "total_usage_sum": (float,),
+            "total_usage_sum": (float, none_type),
             "updated_at": (str,),
             "usage_type": (HourlyUsageAttributionUsageType,),
         }
@@ -58,7 +58,7 @@ class HourlyUsageAttributionBody(ModelNormal):
         region: Union[str, UnsetType] = unset,
         tag_config_source: Union[str, UnsetType] = unset,
         tags: Union[UsageAttributionTagNames, none_type, UnsetType] = unset,
-        total_usage_sum: Union[float, UnsetType] = unset,
+        total_usage_sum: Union[float, none_type, UnsetType] = unset,
         updated_at: Union[str, UnsetType] = unset,
         usage_type: Union[HourlyUsageAttributionUsageType, UnsetType] = unset,
         **kwargs,
@@ -89,7 +89,7 @@ class HourlyUsageAttributionBody(ModelNormal):
         :type tags: UsageAttributionTagNames, none_type, optional
 
         :param total_usage_sum: Total product usage for the given tags within the hour.
-        :type total_usage_sum: float, optional
+        :type total_usage_sum: float, none_type, optional
 
         :param updated_at: Shows the most recent hour in the current month for all organizations where usages are calculated.
         :type updated_at: str, optional

@@ -9,6 +9,7 @@ from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     datetime,
+    none_type,
     unset,
     UnsetType,
 )
@@ -18,12 +19,12 @@ class UsageBillableSummaryBody(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
-            "account_billable_usage": (int,),
-            "elapsed_usage_hours": (int,),
+            "account_billable_usage": (int, none_type),
+            "elapsed_usage_hours": (int, none_type),
             "first_billable_usage_hour": (datetime,),
             "last_billable_usage_hour": (datetime,),
-            "org_billable_usage": (int,),
-            "percentage_in_account": (float,),
+            "org_billable_usage": (int, none_type),
+            "percentage_in_account": (float, none_type),
             "usage_unit": (str,),
         }
 
@@ -39,12 +40,12 @@ class UsageBillableSummaryBody(ModelNormal):
 
     def __init__(
         self_,
-        account_billable_usage: Union[int, UnsetType] = unset,
-        elapsed_usage_hours: Union[int, UnsetType] = unset,
+        account_billable_usage: Union[int, none_type, UnsetType] = unset,
+        elapsed_usage_hours: Union[int, none_type, UnsetType] = unset,
         first_billable_usage_hour: Union[datetime, UnsetType] = unset,
         last_billable_usage_hour: Union[datetime, UnsetType] = unset,
-        org_billable_usage: Union[int, UnsetType] = unset,
-        percentage_in_account: Union[float, UnsetType] = unset,
+        org_billable_usage: Union[int, none_type, UnsetType] = unset,
+        percentage_in_account: Union[float, none_type, UnsetType] = unset,
         usage_unit: Union[str, UnsetType] = unset,
         **kwargs,
     ):
@@ -52,10 +53,10 @@ class UsageBillableSummaryBody(ModelNormal):
         Response with properties for each aggregated usage type.
 
         :param account_billable_usage: The total account usage.
-        :type account_billable_usage: int, optional
+        :type account_billable_usage: int, none_type, optional
 
         :param elapsed_usage_hours: Elapsed usage hours for some billable product.
-        :type elapsed_usage_hours: int, optional
+        :type elapsed_usage_hours: int, none_type, optional
 
         :param first_billable_usage_hour: The first billable hour for the org.
         :type first_billable_usage_hour: datetime, optional
@@ -64,10 +65,10 @@ class UsageBillableSummaryBody(ModelNormal):
         :type last_billable_usage_hour: datetime, optional
 
         :param org_billable_usage: The number of units used within the billable timeframe.
-        :type org_billable_usage: int, optional
+        :type org_billable_usage: int, none_type, optional
 
         :param percentage_in_account: The percentage of account usage the org represents.
-        :type percentage_in_account: float, optional
+        :type percentage_in_account: float, none_type, optional
 
         :param usage_unit: Units pertaining to the usage.
         :type usage_unit: str, optional
