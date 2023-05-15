@@ -21,6 +21,7 @@ try:
             priority_sampler=tracer._priority_sampler,
         )
         tracer.configure(writer)
+    tracer._writer._sync_mode = True
 
     patch(urllib3=True)
 
