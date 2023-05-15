@@ -31,6 +31,7 @@ jobs:
           DD_API_KEY: ${{ secrets.DD_API_KEY }}
           DD_HOSTNAME: "none"
           DD_INSIDE_CI: "true"
+          DD_EVP_PROXY_CONFIG_ENABLED: "false"
     steps:
       - name: Get GitHub App token
         if: github.event_name == 'pull_request'
@@ -70,12 +71,10 @@ jobs:
           DD_ENV: prod
           DD_SERVICE: datadog-api-client-python
           DD_TAGS: "team:integrations-tools-and-libraries"
-          DD_API_KEY: ${{ secrets.DD_API_KEY }}
           DD_TEST_CLIENT_API_KEY: ${{ secrets.DD_CLIENT_API_KEY }}
           DD_TEST_CLIENT_APP_KEY: ${{ secrets.DD_CLIENT_APP_KEY }}
           DD_TRACE_ANALYTICS_ENABLED: "true"
           DD_TRACE_DEBUG: "true"
-          DD_CIVISIBILITY_AGENTLESS_ENABLED: "true"
           RECORD: "none"
           SLEEP_AFTER_REQUEST: ${{ secrets.SLEEP_AFTER_REQUEST }}
           PYTEST_ADDOPTS: "--ddtrace"
