@@ -73,7 +73,7 @@ jobs:
           DD_TEST_CLIENT_APP_KEY: ${{ secrets.DD_CLIENT_APP_KEY }}
           DD_TRACE_ANALYTICS_ENABLED: "true"
           RECORD: "none"
-          SLEEP_AFTER_REQUEST: ${{ secrets.SLEEP_AFTER_REQUEST }}
+          SLEEP_AFTER_REQUEST: ${{ vars.SLEEP_AFTER_REQUEST }}
           PYTEST_ADDOPTS: "--ddtrace"
           DD_PYTEST_OPERATION_NAME: "test"
       - name: Post failure status check
