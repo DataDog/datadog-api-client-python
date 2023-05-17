@@ -813,6 +813,41 @@ formula\_and\_function\_response\_format
    :members:
    :show-inheritance:
 
+formula\_and\_function\_slo\_data\_source
+-----------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.formula_and_function_slo_data_source
+   :members:
+   :show-inheritance:
+
+formula\_and\_function\_slo\_group\_mode
+----------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.formula_and_function_slo_group_mode
+   :members:
+   :show-inheritance:
+
+formula\_and\_function\_slo\_measure
+------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.formula_and_function_slo_measure
+   :members:
+   :show-inheritance:
+
+formula\_and\_function\_slo\_query\_definition
+----------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.formula_and_function_slo_query_definition
+   :members:
+   :show-inheritance:
+
+formula\_and\_function\_slo\_query\_type
+----------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.formula_and_function_slo_query_type
+   :members:
+   :show-inheritance:
+
 free\_text\_widget\_definition
 ------------------------------
 
