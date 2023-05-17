@@ -114,6 +114,7 @@ class UsageSummaryResponse(ModelNormal):
             "universal_service_monitoring_host_top99p_sum": (int,),
             "usage": ([UsageSummaryDate],),
             "vsphere_host_top99p_sum": (int,),
+            "vuln_management_host_count_top99p_sum": (int,),
         }
 
     attribute_map = {
@@ -205,6 +206,7 @@ class UsageSummaryResponse(ModelNormal):
         "universal_service_monitoring_host_top99p_sum": "universal_service_monitoring_host_top99p_sum",
         "usage": "usage",
         "vsphere_host_top99p_sum": "vsphere_host_top99p_sum",
+        "vuln_management_host_count_top99p_sum": "vuln_management_host_count_top99p_sum",
     }
 
     def __init__(
@@ -297,6 +299,7 @@ class UsageSummaryResponse(ModelNormal):
         universal_service_monitoring_host_top99p_sum: Union[int, UnsetType] = unset,
         usage: Union[List[UsageSummaryDate], UnsetType] = unset,
         vsphere_host_top99p_sum: Union[int, UnsetType] = unset,
+        vuln_management_host_count_top99p_sum: Union[int, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -565,6 +568,9 @@ class UsageSummaryResponse(ModelNormal):
 
         :param vsphere_host_top99p_sum: Shows the 99th percentile of all vSphere hosts over all hours in the current months for all organizations.
         :type vsphere_host_top99p_sum: int, optional
+
+        :param vuln_management_host_count_top99p_sum: Shows the 99th percentile of all Application Vulnerability Management hosts over all hours in the current months for all organizations.
+        :type vuln_management_host_count_top99p_sum: int, optional
         """
         if agent_host_top99p_sum is not unset:
             kwargs["agent_host_top99p_sum"] = agent_host_top99p_sum
@@ -744,4 +750,6 @@ class UsageSummaryResponse(ModelNormal):
             kwargs["usage"] = usage
         if vsphere_host_top99p_sum is not unset:
             kwargs["vsphere_host_top99p_sum"] = vsphere_host_top99p_sum
+        if vuln_management_host_count_top99p_sum is not unset:
+            kwargs["vuln_management_host_count_top99p_sum"] = vuln_management_host_count_top99p_sum
         super().__init__(kwargs)

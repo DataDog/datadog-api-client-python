@@ -79,6 +79,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
             "snmp_usage": (float,),
             "universal_service_monitoring_percentage": (float,),
             "universal_service_monitoring_usage": (float,),
+            "vuln_management_hosts_percentage": (float,),
+            "vuln_management_hosts_usage": (float,),
         }
 
     attribute_map = {
@@ -144,6 +146,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         "snmp_usage": "snmp_usage",
         "universal_service_monitoring_percentage": "universal_service_monitoring_percentage",
         "universal_service_monitoring_usage": "universal_service_monitoring_usage",
+        "vuln_management_hosts_percentage": "vuln_management_hosts_percentage",
+        "vuln_management_hosts_usage": "vuln_management_hosts_usage",
     }
 
     def __init__(
@@ -210,6 +214,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         snmp_usage: Union[float, UnsetType] = unset,
         universal_service_monitoring_percentage: Union[float, UnsetType] = unset,
         universal_service_monitoring_usage: Union[float, UnsetType] = unset,
+        vuln_management_hosts_percentage: Union[float, UnsetType] = unset,
+        vuln_management_hosts_usage: Union[float, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -400,6 +406,12 @@ class MonthlyUsageAttributionValues(ModelNormal):
 
         :param universal_service_monitoring_usage: The universal service monitoring usage by tag(s).
         :type universal_service_monitoring_usage: float, optional
+
+        :param vuln_management_hosts_percentage: The percentage of Application Vulnerability Management usage by tag(s).
+        :type vuln_management_hosts_percentage: float, optional
+
+        :param vuln_management_hosts_usage: The Application Vulnerability Management usage by tag(s).
+        :type vuln_management_hosts_usage: float, optional
         """
         if api_percentage is not unset:
             kwargs["api_percentage"] = api_percentage
@@ -525,4 +537,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
             kwargs["universal_service_monitoring_percentage"] = universal_service_monitoring_percentage
         if universal_service_monitoring_usage is not unset:
             kwargs["universal_service_monitoring_usage"] = universal_service_monitoring_usage
+        if vuln_management_hosts_percentage is not unset:
+            kwargs["vuln_management_hosts_percentage"] = vuln_management_hosts_percentage
+        if vuln_management_hosts_usage is not unset:
+            kwargs["vuln_management_hosts_usage"] = vuln_management_hosts_usage
         super().__init__(kwargs)
