@@ -33,6 +33,9 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.formula_and_function_apm_resource_stats_query_definition import (
         FormulaAndFunctionApmResourceStatsQueryDefinition,
     )
+    from datadog_api_client.v1.model.formula_and_function_slo_query_definition import (
+        FormulaAndFunctionSLOQueryDefinition,
+    )
 
 
 class GeomapWidgetRequest(ModelNormal):
@@ -77,6 +80,7 @@ class GeomapWidgetRequest(ModelNormal):
                     FormulaAndFunctionProcessQueryDefinition,
                     FormulaAndFunctionApmDependencyStatsQueryDefinition,
                     FormulaAndFunctionApmResourceStatsQueryDefinition,
+                    FormulaAndFunctionSLOQueryDefinition,
                 ]
             ],
             UnsetType,
