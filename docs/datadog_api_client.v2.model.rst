@@ -1,6 +1,27 @@
 datadog\_api\_client.v2.model
 =============================
 
+account\_attributes
+-------------------
+
+.. automodule:: datadog_api_client.v2.model.account_attributes
+   :members:
+   :show-inheritance:
+
+account\_creation\_response
+---------------------------
+
+.. automodule:: datadog_api_client.v2.model.account_creation_response
+   :members:
+   :show-inheritance:
+
+account\_patch\_body
+--------------------
+
+.. automodule:: datadog_api_client.v2.model.account_patch_body
+   :members:
+   :show-inheritance:
+
 api\_error\_response
 --------------------
 
@@ -166,6 +187,13 @@ application\_keys\_type
 -----------------------
 
 .. automodule:: datadog_api_client.v2.model.application_keys_type
+   :members:
+   :show-inheritance:
+
+attribute\_metadata
+-------------------
+
+.. automodule:: datadog_api_client.v2.model.attribute_metadata
    :members:
    :show-inheritance:
 
@@ -1163,6 +1191,27 @@ data\_scalar\_column
    :members:
    :show-inheritance:
 
+delegate\_account\_attributes
+-----------------------------
+
+.. automodule:: datadog_api_client.v2.model.delegate_account_attributes
+   :members:
+   :show-inheritance:
+
+delegate\_creation\_response
+----------------------------
+
+.. automodule:: datadog_api_client.v2.model.delegate_creation_response
+   :members:
+   :show-inheritance:
+
+delegate\_info
+--------------
+
+.. automodule:: datadog_api_client.v2.model.delegate_info
+   :members:
+   :show-inheritance:
+
 detailed\_finding
 -----------------
 
@@ -1580,6 +1629,13 @@ full\_application\_key\_attributes
 ----------------------------------
 
 .. automodule:: datadog_api_client.v2.model.full_application_key_attributes
+   :members:
+   :show-inheritance:
+
+gcpsts\_accounts
+----------------
+
+.. automodule:: datadog_api_client.v2.model.gcpsts_accounts
    :members:
    :show-inheritance:
 
@@ -3099,6 +3155,13 @@ logs\_warning
 -------------
 
 .. automodule:: datadog_api_client.v2.model.logs_warning
+   :members:
+   :show-inheritance:
+
+meta\_info
+----------
+
+.. automodule:: datadog_api_client.v2.model.meta_info
    :members:
    :show-inheritance:
 
@@ -5622,6 +5685,34 @@ service\_account\_create\_request
    :members:
    :show-inheritance:
 
+service\_account\_info
+----------------------
+
+.. automodule:: datadog_api_client.v2.model.service_account_info
+   :members:
+   :show-inheritance:
+
+service\_account\_info\_patch
+-----------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_account_info_patch
+   :members:
+   :show-inheritance:
+
+service\_account\_metadata
+--------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_account_metadata
+   :members:
+   :show-inheritance:
+
+service\_account\_to\_be\_created\_data
+---------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_account_to_be_created_data
+   :members:
+   :show-inheritance:
+
 service\_definition\_create\_response
 -------------------------------------
 
@@ -6081,6 +6172,13 @@ spans\_metrics\_response
 ------------------------
 
 .. automodule:: datadog_api_client.v2.model.spans_metrics_response
+   :members:
+   :show-inheritance:
+
+sts\_enabled\_account\_data
+---------------------------
+
+.. automodule:: datadog_api_client.v2.model.sts_enabled_account_data
    :members:
    :show-inheritance:
 

@@ -392,6 +392,51 @@
       "type": "idempotent"
     }
   },
+  "ListGCPSTSAccountsV2": {
+    "tag": "GCP Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateGCPSTSAccountsV2": {
+    "tag": "GCP Integration",
+    "undo": {
+      "operationId": "DeleteGCPSTSAccountsV2",
+      "parameters": [
+        {
+          "name": "account_id",
+          "source": "id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteGCPSTSAccountsV2": {
+    "tag": "GCP Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateGCPSTSAccountsV2": {
+    "tag": "GCP Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetDelegateV2": {
+    "tag": "GCP Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "MakeDelegateV2": {
+    "tag": "GCP Integration",
+    "undo": {
+      "operationId": "TODO",
+      "parameters": [],
+      "type": "unsafe"
+    }
+  },
   "ListOpsgenieServices": {
     "tag": "Opsgenie Integration",
     "undo": {

@@ -11,6 +11,9 @@ from datadog_api_client.v2.model.api_key_update_request import APIKeyUpdateReque
 from datadog_api_client.v2.model.api_keys_response import APIKeysResponse
 from datadog_api_client.v2.model.api_keys_sort import APIKeysSort
 from datadog_api_client.v2.model.api_keys_type import APIKeysType
+from datadog_api_client.v2.model.account_attributes import AccountAttributes
+from datadog_api_client.v2.model.account_creation_response import AccountCreationResponse
+from datadog_api_client.v2.model.account_patch_body import AccountPatchBody
 from datadog_api_client.v2.model.application_key_create_attributes import ApplicationKeyCreateAttributes
 from datadog_api_client.v2.model.application_key_create_data import ApplicationKeyCreateData
 from datadog_api_client.v2.model.application_key_create_request import ApplicationKeyCreateRequest
@@ -22,6 +25,7 @@ from datadog_api_client.v2.model.application_key_update_data import ApplicationK
 from datadog_api_client.v2.model.application_key_update_request import ApplicationKeyUpdateRequest
 from datadog_api_client.v2.model.application_keys_sort import ApplicationKeysSort
 from datadog_api_client.v2.model.application_keys_type import ApplicationKeysType
+from datadog_api_client.v2.model.attribute_metadata import AttributeMetadata
 from datadog_api_client.v2.model.audit_logs_event import AuditLogsEvent
 from datadog_api_client.v2.model.audit_logs_event_attributes import AuditLogsEventAttributes
 from datadog_api_client.v2.model.audit_logs_event_type import AuditLogsEventType
@@ -204,6 +208,9 @@ from datadog_api_client.v2.model.dashboard_list_update_items_request import Dash
 from datadog_api_client.v2.model.dashboard_list_update_items_response import DashboardListUpdateItemsResponse
 from datadog_api_client.v2.model.dashboard_type import DashboardType
 from datadog_api_client.v2.model.data_scalar_column import DataScalarColumn
+from datadog_api_client.v2.model.delegate_account_attributes import DelegateAccountAttributes
+from datadog_api_client.v2.model.delegate_creation_response import DelegateCreationResponse
+from datadog_api_client.v2.model.delegate_info import DelegateInfo
 from datadog_api_client.v2.model.detailed_finding import DetailedFinding
 from datadog_api_client.v2.model.detailed_finding_attributes import DetailedFindingAttributes
 from datadog_api_client.v2.model.detailed_finding_type import DetailedFindingType
@@ -264,6 +271,7 @@ from datadog_api_client.v2.model.full_api_key import FullAPIKey
 from datadog_api_client.v2.model.full_api_key_attributes import FullAPIKeyAttributes
 from datadog_api_client.v2.model.full_application_key import FullApplicationKey
 from datadog_api_client.v2.model.full_application_key_attributes import FullApplicationKeyAttributes
+from datadog_api_client.v2.model.gcpsts_accounts import GCPSTSAccounts
 from datadog_api_client.v2.model.get_finding_response import GetFindingResponse
 from datadog_api_client.v2.model.get_team_memberships_sort import GetTeamMembershipsSort
 from datadog_api_client.v2.model.group_scalar_column import GroupScalarColumn
@@ -517,6 +525,7 @@ from datadog_api_client.v2.model.logs_sort import LogsSort
 from datadog_api_client.v2.model.logs_sort_order import LogsSortOrder
 from datadog_api_client.v2.model.logs_storage_tier import LogsStorageTier
 from datadog_api_client.v2.model.logs_warning import LogsWarning
+from datadog_api_client.v2.model.meta_info import MetaInfo
 from datadog_api_client.v2.model.metric import Metric
 from datadog_api_client.v2.model.metric_active_configuration_type import MetricActiveConfigurationType
 from datadog_api_client.v2.model.metric_all_tags import MetricAllTags
@@ -759,6 +768,7 @@ from datadog_api_client.v2.model.roles_type import RolesType
 from datadog_api_client.v2.model.saml_assertion_attribute import SAMLAssertionAttribute
 from datadog_api_client.v2.model.saml_assertion_attribute_attributes import SAMLAssertionAttributeAttributes
 from datadog_api_client.v2.model.saml_assertion_attributes_type import SAMLAssertionAttributesType
+from datadog_api_client.v2.model.sts_enabled_account_data import STSEnabledAccountData
 from datadog_api_client.v2.model.scalar_column import ScalarColumn
 from datadog_api_client.v2.model.scalar_formula_query_request import ScalarFormulaQueryRequest
 from datadog_api_client.v2.model.scalar_formula_query_response import ScalarFormulaQueryResponse
@@ -1001,6 +1011,10 @@ from datadog_api_client.v2.model.sensitive_data_scanner_text_replacement_type im
 from datadog_api_client.v2.model.service_account_create_attributes import ServiceAccountCreateAttributes
 from datadog_api_client.v2.model.service_account_create_data import ServiceAccountCreateData
 from datadog_api_client.v2.model.service_account_create_request import ServiceAccountCreateRequest
+from datadog_api_client.v2.model.service_account_info import ServiceAccountInfo
+from datadog_api_client.v2.model.service_account_info_patch import ServiceAccountInfoPatch
+from datadog_api_client.v2.model.service_account_metadata import ServiceAccountMetadata
+from datadog_api_client.v2.model.service_account_to_be_created_data import ServiceAccountToBeCreatedData
 from datadog_api_client.v2.model.service_definition_create_response import ServiceDefinitionCreateResponse
 from datadog_api_client.v2.model.service_definition_data import ServiceDefinitionData
 from datadog_api_client.v2.model.service_definition_data_attributes import ServiceDefinitionDataAttributes
