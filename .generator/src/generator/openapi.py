@@ -21,7 +21,9 @@ def load(filename):
 
 def type_to_python_helper(type_, schema, alternative_name=None, in_list=False, typing=False):
     if type_ is None:
-        return "bool, date, datetime, dict, float, int, list, str, none_type" if not typing else "Any"
+        if typing:
+            return "Any"
+        return "bool, date, datetime, dict, float, int, list, str, none_type"
 
     if type_ == "integer":
         return "int"
@@ -37,11 +39,12 @@ def type_to_python_helper(type_, schema, alternative_name=None, in_list=False, t
     elif type_ == "boolean":
         return "bool"
     elif type_ == "array":
-        prefix = "List" if typing else ""
         subtype = type_to_python(schema["items"], alternative_name=alternative_name + "Item" if alternative_name else None, in_list=True, typing=typing)
         if schema["items"].get("nullable") and not typing:
             subtype += ", none_type"
-        return "{}[{}]".format(prefix, subtype)
+        if typing:
+            return "List[{}]".format(subtype)
+        return "[{}]".format(subtype)
     elif type_ == "object":
         if "additionalProperties" in schema:
             nested_schema = schema["additionalProperties"]
@@ -51,7 +54,9 @@ def type_to_python_helper(type_, schema, alternative_name=None, in_list=False, t
                     nested_name = f"Union[{nested_name}, none_type]"
                 else:
                     nested_name += ", none_type"
-            return "{{str: ({},)}}".format(nested_name) if not typing else f"Dict[str, {nested_name}]"
+            if typing:
+                return f"Dict[str, {nested_name}]"
+            return "{{str: ({},)}}".format(nested_name)
         return (
             alternative_name
             if alternative_name
@@ -90,7 +95,9 @@ def type_to_python(schema, alternative_name=None, in_list=False, typing=False):
                     type_ += f"{type_to_python_helper(child.get('type'), child, in_list=in_list, typing=typing)},"
                 else:
                     type_ += f"{type_to_python(child, in_list=in_list, typing=typing)},"
-            return type_ if not typing else f"Union[{type_}]"
+            if typing:
+                return f"Union[{type_}]"
+            return type_
         if "items" in schema:
             type_ = "array"
 
