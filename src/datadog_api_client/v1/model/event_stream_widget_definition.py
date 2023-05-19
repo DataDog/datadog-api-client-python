@@ -31,6 +31,7 @@ class EventStreamWidgetDefinition(ModelNormal):
         return {
             "event_size": (WidgetEventSize,),
             "query": (str,),
+            "show_year": (bool,),
             "tags_execution": (str,),
             "time": (WidgetTime,),
             "title": (str,),
@@ -42,6 +43,7 @@ class EventStreamWidgetDefinition(ModelNormal):
     attribute_map = {
         "event_size": "event_size",
         "query": "query",
+        "show_year": "show_year",
         "tags_execution": "tags_execution",
         "time": "time",
         "title": "title",
@@ -55,6 +57,7 @@ class EventStreamWidgetDefinition(ModelNormal):
         query: str,
         type: EventStreamWidgetDefinitionType,
         event_size: Union[WidgetEventSize, UnsetType] = unset,
+        show_year: Union[bool, UnsetType] = unset,
         tags_execution: Union[str, UnsetType] = unset,
         time: Union[WidgetTime, UnsetType] = unset,
         title: Union[str, UnsetType] = unset,
@@ -71,6 +74,9 @@ class EventStreamWidgetDefinition(ModelNormal):
 
         :param query: Query to filter the event stream with.
         :type query: str
+
+        :param show_year: Option to display the year in the date column.
+        :type show_year: bool, optional
 
         :param tags_execution: The execution method for multi-value filters. Can be either and or or.
         :type tags_execution: str, optional
@@ -92,6 +98,8 @@ class EventStreamWidgetDefinition(ModelNormal):
         """
         if event_size is not unset:
             kwargs["event_size"] = event_size
+        if show_year is not unset:
+            kwargs["show_year"] = show_year
         if tags_execution is not unset:
             kwargs["tags_execution"] = tags_execution
         if time is not unset:
