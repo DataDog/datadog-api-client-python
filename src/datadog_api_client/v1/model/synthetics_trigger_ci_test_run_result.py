@@ -53,7 +53,7 @@ class SyntheticsTriggerCITestRunResult(ModelNormal):
         :param location: The location ID of the test run.
         :type location: int, optional
 
-        :param public_id: The public ID of the Synthetics test.
+        :param public_id: The public ID of the Synthetic test.
         :type public_id: str, optional
 
         :param result_id: ID of the result.
