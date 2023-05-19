@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class SyntheticsGlobalVariableParserType(ModelSimple):
     """
-    Type of parser for a Synthetics global variable from a synthetics test.
+    Type of parser for a Synthetic global variable from a synthetics test.
 
     :param value: Must be one of ["raw", "json_path", "regex", "x_path"].
     :type value: str

@@ -1,14 +1,14 @@
 @endpoint(synthetics) @endpoint(synthetics-v1)
 Feature: Synthetics
-  Datadog Synthetics uses simulated user requests and browser rendering to
-  help you ensure uptime, identify regional issues, and track your
-  application performance. Datadog Synthetics tests come in two different
+  Datadog Synthetic Monitoring uses simulated user requests and browser
+  rendering to help you ensure uptime, identify regional issues, and track
+  your application performance. Synthetic tests come in two different
   flavors, [API
   tests](https://docs.datadoghq.com/synthetics/api_tests/?tab=httptest) and
   [browser tests](https://docs.datadoghq.com/synthetics/browser_tests). You
   can use Datadog’s API to manage both test types programmatically.  For
-  more information about Synthetics, see the [Synthetics
-  overview](https://docs.datadoghq.com/synthetics/).
+  more information, see the [Synthetic Monitoring
+  documentation](https://docs.datadoghq.com/synthetics/).
 
   Background:
     Given a valid "apiKeyAuth" key in the system
@@ -55,6 +55,8 @@ Feature: Synthetics
     When the request is sent
     Then the response status is 200 OK - Returns the created test details.
     And the response "name" is equal to "{{ unique }}"
+    And the response "config.configVariables" has item with field "secure" with value true
+    And the response "config.variables" has item with field "secure" with value true
 
   @generated @skip @team:DataDog/synthetics-app
   Scenario: Create a browser test returns "Test quota is reached" response
@@ -342,12 +344,12 @@ Feature: Synthetics
     And the response "name" is equal to "{{ synthetics_api_test.name }}-updated"
 
   @generated @skip @team:DataDog/synthetics-app
-  Scenario: Get a browser test result returns "- Synthetic is not activated for the user" response
+  Scenario: Get a browser test result returns "- Synthetic Monitoring is not activated for the user" response
     Given new "GetBrowserTestResult" request
     And request contains "public_id" parameter from "REPLACE.ME"
     And request contains "result_id" parameter from "REPLACE.ME"
     When the request is sent
-    Then the response status is 404 - Synthetic is not activated for the user
+    Then the response status is 404 - Synthetic Monitoring is not activated for the user
 
   @replay-only @team:DataDog/synthetics-app
   Scenario: Get a browser test result returns "OK" response
@@ -360,11 +362,11 @@ Feature: Synthetics
     And the response "probe_dc" is equal to "aws:ca-central-1"
 
   @generated @skip @team:DataDog/synthetics-app
-  Scenario: Get a browser test returns "- Synthetic is not activated for the user" response
+  Scenario: Get a browser test returns "- Synthetic Monitoring is not activated for the user" response
     Given new "GetBrowserTest" request
     And request contains "public_id" parameter from "REPLACE.ME"
     When the request is sent
-    Then the response status is 404 - Synthetic is not activated for the user
+    Then the response status is 404 - Synthetic Monitoring is not activated for the user
 
   @generated @skip @team:DataDog/synthetics-app
   Scenario: Get a browser test returns "OK" response
@@ -374,11 +376,11 @@ Feature: Synthetics
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/synthetics-app
-  Scenario: Get a browser test's latest results summaries returns "- Synthetic is not activated for the user" response
+  Scenario: Get a browser test's latest results summaries returns "- Synthetic Monitoring is not activated for the user" response
     Given new "GetBrowserTestLatestResults" request
     And request contains "public_id" parameter from "REPLACE.ME"
     When the request is sent
-    Then the response status is 404 - Synthetic is not activated for the user
+    Then the response status is 404 - Synthetic Monitoring is not activated for the user
 
   @replay-only @team:DataDog/synthetics-app
   Scenario: Get a browser test's latest results summaries returns "OK" response
@@ -445,12 +447,12 @@ Feature: Synthetics
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/synthetics-app
-  Scenario: Get an API test result returns "- Synthetic is not activated for the user" response
+  Scenario: Get an API test result returns "- Synthetic Monitoring is not activated for the user" response
     Given new "GetAPITestResult" request
     And request contains "public_id" parameter from "REPLACE.ME"
     And request contains "result_id" parameter from "REPLACE.ME"
     When the request is sent
-    Then the response status is 404 - Synthetic is not activated for the user
+    Then the response status is 404 - Synthetic Monitoring is not activated for the user
 
   @replay-only @team:DataDog/synthetics-app
   Scenario: Get an API test result returns "OK" response
@@ -526,18 +528,18 @@ Feature: Synthetics
     Then the response status is 200 OK - Returns the list of all Synthetic tests.
 
   @generated @skip @team:DataDog/synthetics-app
-  Scenario: Get the list of all Synthetic tests returns "Synthetics is not activated for the user." response
+  Scenario: Get the list of all Synthetic tests returns "Synthetic Monitoring is not activated for the user." response
     Given new "ListTests" request
     When the request is sent
-    Then the response status is 404 Synthetics is not activated for the user.
+    Then the response status is 404 Synthetic Monitoring is not activated for the user.
 
   @generated @skip @team:DataDog/synthetics-app
-  Scenario: Pause or start a test returns "- Synthetic is not activated for the user" response
+  Scenario: Pause or start a test returns "- Synthetic Monitoring is not activated for the user" response
     Given new "UpdateTestPauseStatus" request
     And request contains "public_id" parameter from "REPLACE.ME"
     And body with value {"new_status": "live"}
     When the request is sent
-    Then the response status is 404 - Synthetic is not activated for the user
+    Then the response status is 404 - Synthetic Monitoring is not activated for the user
 
   @generated @skip @team:DataDog/synthetics-app
   Scenario: Pause or start a test returns "JSON format is wrong." response
@@ -556,14 +558,14 @@ Feature: Synthetics
     Then the response status is 200 OK - Returns a boolean indicating if the update was successful.
 
   @generated @skip @team:DataDog/synthetics-app
-  Scenario: Trigger Synthetics tests returns "Bad Request" response
+  Scenario: Trigger Synthetic tests returns "Bad Request" response
     Given new "TriggerTests" request
     And body with value {"tests": [{"metadata": {"ci": {"pipeline": {}, "provider": {}}, "git": {}}, "public_id": "aaa-aaa-aaa"}]}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @team:DataDog/synthetics-app
-  Scenario: Trigger Synthetics tests returns "OK" response
+  Scenario: Trigger Synthetic tests returns "OK" response
     Given there is a valid "synthetics_api_test" in the system
     And new "TriggerTests" request
     And body with value {"tests": [{"public_id": "{{ synthetics_api_test.public_id }}"}]}

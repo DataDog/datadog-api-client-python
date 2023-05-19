@@ -98,7 +98,7 @@ class SyntheticsCITest(ModelNormal):
         **kwargs,
     ):
         """
-        Test configuration for Synthetics CI
+        Configuration for Continuous Testing.
 
         :param allow_insecure_certificates: Disable certificate checks in API tests.
         :type allow_insecure_certificates: bool, optional
@@ -109,7 +109,7 @@ class SyntheticsCITest(ModelNormal):
         :param body: Body to include in the test.
         :type body: str, optional
 
-        :param body_type: Type of the data sent in a synthetics API test.
+        :param body_type: Type of the data sent in a Synthetic API test.
         :type body_type: str, optional
 
         :param cookies: Cookies for the request.
@@ -127,10 +127,10 @@ class SyntheticsCITest(ModelNormal):
         :param locations: Array of locations used to run the test.
         :type locations: [str], optional
 
-        :param metadata: Metadata for the Synthetics tests run.
+        :param metadata: Metadata for the Synthetic tests run.
         :type metadata: SyntheticsCIBatchMetadata, optional
 
-        :param public_id: The public ID of the Synthetics test to trigger.
+        :param public_id: The public ID of the Synthetic test to trigger.
         :type public_id: str
 
         :param retry: Object describing the retry strategy to apply to a Synthetic test.

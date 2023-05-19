@@ -51,7 +51,7 @@ class SyntheticsGlobalVariableParseTestOptions(ModelNormal):
         **kwargs,
     ):
         """
-        Parser options to use for retrieving a Synthetics global variable from a Synthetics Test. Used in conjunction with ``parse_test_public_id``.
+        Parser options to use for retrieving a Synthetic global variable from a Synthetic test. Used in conjunction with ``parse_test_public_id``.
 
         :param field: When type is ``http_header`` , name of the header to use to extract the value.
         :type field: str, optional
@@ -62,7 +62,7 @@ class SyntheticsGlobalVariableParseTestOptions(ModelNormal):
         :param parser: Details of the parser to use for the global variable.
         :type parser: SyntheticsVariableParser, optional
 
-        :param type: Property of the Synthetics Test Response to use for a Synthetics global variable.
+        :param type: Property of the Synthetic Test Response to use for a Synthetic global variable.
         :type type: SyntheticsGlobalVariableParseTestOptionsType
         """
         if field is not unset:

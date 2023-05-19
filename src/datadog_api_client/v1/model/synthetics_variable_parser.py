@@ -38,7 +38,7 @@ class SyntheticsVariableParser(ModelNormal):
         """
         Details of the parser to use for the global variable.
 
-        :param type: Type of parser for a Synthetics global variable from a synthetics test.
+        :param type: Type of parser for a Synthetic global variable from a synthetics test.
         :type type: SyntheticsGlobalVariableParserType
 
         :param value: Regex or JSON path used for the parser. Not used with type ``raw``.

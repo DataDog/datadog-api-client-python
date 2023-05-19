@@ -41,7 +41,7 @@ class SyntheticsCIBatchMetadata(ModelNormal):
         **kwargs,
     ):
         """
-        Metadata for the Synthetics tests run.
+        Metadata for the Synthetic tests run.
 
         :param ci: Description of the CI provider.
         :type ci: SyntheticsCIBatchMetadataCI, optional

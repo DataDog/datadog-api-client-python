@@ -48,7 +48,7 @@ class SyntheticsBatchDetailsData(ModelNormal):
         """
         Wrapper object that contains the details of a batch.
 
-        :param metadata: Metadata for the Synthetics tests run.
+        :param metadata: Metadata for the Synthetic tests run.
         :type metadata: SyntheticsCIBatchMetadata, optional
 
         :param results: List of results for the batch.

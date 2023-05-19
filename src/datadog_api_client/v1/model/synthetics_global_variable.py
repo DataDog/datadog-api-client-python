@@ -68,7 +68,7 @@ class SyntheticsGlobalVariable(ModelNormal):
         **kwargs,
     ):
         """
-        Synthetics global variable.
+        Synthetic global variable.
 
         :param attributes: Attributes of the global variable.
         :type attributes: SyntheticsGlobalVariableAttributes, optional
@@ -79,10 +79,10 @@ class SyntheticsGlobalVariable(ModelNormal):
         :param id: Unique identifier of the global variable.
         :type id: str, optional
 
-        :param name: Name of the global variable. Unique across Synthetics global variables.
+        :param name: Name of the global variable. Unique across Synthetic global variables.
         :type name: str
 
-        :param parse_test_options: Parser options to use for retrieving a Synthetics global variable from a Synthetics Test. Used in conjunction with ``parse_test_public_id``.
+        :param parse_test_options: Parser options to use for retrieving a Synthetic global variable from a Synthetic test. Used in conjunction with ``parse_test_public_id``.
         :type parse_test_options: SyntheticsGlobalVariableParseTestOptions, optional
 
         :param parse_test_public_id: A Synthetic test ID to use as a test to generate the variable value.

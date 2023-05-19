@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class SyntheticsTestExecutionRule(ModelSimple):
     """
-    Execution rule for a Synthetics test.
+    Execution rule for a Synthetic test.
 
     :param value: Must be one of ["blocking", "non_blocking", "skipped"].
     :type value: str
