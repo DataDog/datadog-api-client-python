@@ -115,7 +115,7 @@ Feature: Downtimes
   @team:DataDog/monitor-app
   Scenario: Schedule a downtime returns "OK" response
     Given new "CreateDowntime" request
-    And body with value {"message": "{{ unique }}", "start": {{ timestamp("now") }}, "timezone": "Etc/UTC", "scope": ["test:{{ unique_lower_alnum }}"], "recurrence": {"type": "weeks", "period": 1, "week_days": ["Mon", "Tue", "Wed", "Thu", "Fri"], "until_date": {{ timestamp("now + 21d")}} }, "notify_end_states": ["alert", "no data", "warn"], "notify_end_types": ["canceled", "expired"]}
+    And body with value {"message": "{{ unique }}", "start": {{ timestamp("now") }}, "end": {{ timestamp("now + 1h") }}, "timezone": "Etc/UTC", "scope": ["test:{{ unique_lower_alnum }}"], "recurrence": {"type": "weeks", "period": 1, "week_days": ["Mon", "Tue", "Wed", "Thu", "Fri"], "until_date": {{ timestamp("now + 21d")}} }, "notify_end_states": ["alert", "no data", "warn"], "notify_end_types": ["canceled", "expired"]}
     When the request is sent
     Then the response status is 200 OK
     And the response "message" is equal to "{{ unique }}"

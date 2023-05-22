@@ -14,6 +14,7 @@ from datadog_api_client.v1.model.notify_end_type import NotifyEndType
 body = Downtime(
     message="Example-Downtime",
     start=int(datetime.now().timestamp()),
+    end=int((datetime.now() + relativedelta(hours=1)).timestamp()),
     timezone="Etc/UTC",
     scope=[
         "test:exampledowntime",
