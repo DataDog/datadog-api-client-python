@@ -53,13 +53,13 @@ class SyntheticsTriggerCITestsResponse(ModelNormal):
         :param batch_id: The public ID of the batch triggered.
         :type batch_id: str, none_type, optional
 
-        :param locations: List of Synthetics locations.
+        :param locations: List of Synthetic locations.
         :type locations: [SyntheticsTriggerCITestLocation], optional
 
         :param results: Information about the tests runs.
         :type results: [SyntheticsTriggerCITestRunResult], optional
 
-        :param triggered_check_ids: The public IDs of the Synthetics test triggered.
+        :param triggered_check_ids: The public IDs of the Synthetic test triggered.
         :type triggered_check_ids: [str], optional
         """
         if batch_id is not unset:

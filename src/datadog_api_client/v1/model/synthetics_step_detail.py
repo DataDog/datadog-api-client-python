@@ -139,7 +139,7 @@ class SyntheticsStepDetail(ModelNormal):
         :param step_id: The step ID.
         :type step_id: int, optional
 
-        :param sub_test_step_details: If this steps include a sub-test.
+        :param sub_test_step_details: If this step includes a sub-test.
             `Subtests documentation <https://docs.datadoghq.com/synthetics/browser_tests/advanced_options/#subtests>`_.
         :type sub_test_step_details: [SyntheticsStepDetail], optional
 

@@ -32,9 +32,9 @@ class SyntheticsLocations(ModelNormal):
 
     def __init__(self_, locations: Union[List[SyntheticsLocation], UnsetType] = unset, **kwargs):
         """
-        List of Synthetics locations.
+        List of Synthetic locations.
 
-        :param locations: List of Synthetics locations.
+        :param locations: List of Synthetic locations.
         :type locations: [SyntheticsLocation], optional
         """
         if locations is not unset:

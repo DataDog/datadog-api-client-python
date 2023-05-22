@@ -1,7 +1,7 @@
 interactions:
 - request:
-    body: '{"config":{"assertions":[],"configVariables":[{"example":"content-type","name":"PROPERTY","pattern":"content-type","secure":true,"type":"text"}],"request":{"method":"GET","url":"https://datadoghq.com"},"setCookie":"name:test"},"locations":["aws:us-east-2"],"message":"Test
-      message","name":"Test-Create_a_browser_test_returns_OK_Returns_the_created_test_details_response-1672258826","options":{"accept_self_signed":false,"allow_insecure":true,"device_ids":["tablet"],"disableCors":true,"follow_redirects":true,"min_failure_duration":10,"min_location_failed":1,"noScreenshot":true,"retry":{"count":3,"interval":10},"tick_every":300},"steps":[{"allowFailure":false,"isCritical":true,"name":"Refresh
+    body: '{"config":{"assertions":[],"configVariables":[{"example":"content-type","name":"PROPERTY","pattern":"content-type","secure":true,"type":"text"}],"request":{"method":"GET","url":"https://datadoghq.com"},"setCookie":"name:test","variables":[{"example":"secret","name":"TEST_VARIABLE","pattern":"secret","secure":true,"type":"text"}]},"locations":["aws:us-east-2"],"message":"Test
+      message","name":"Test-Create_a_browser_test_returns_OK_Returns_the_created_test_details_response-1684335519","options":{"accept_self_signed":false,"allow_insecure":true,"device_ids":["tablet"],"disableCors":true,"follow_redirects":true,"min_failure_duration":10,"min_location_failed":1,"noScreenshot":true,"retry":{"count":3,"interval":10},"tick_every":300},"steps":[{"allowFailure":false,"isCritical":true,"name":"Refresh
       page","params":{},"type":"refresh"}],"tags":["testing:browser"],"type":"browser"}'
     headers:
       accept:
@@ -12,9 +12,9 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/synthetics/tests/browser
   response:
     body:
-      string: '{"status":"paused","public_id":"t2j-ah7-xvk","tags":["testing:browser"],"org_id":321813,"locations":["aws:us-east-2"],"message":"Test
-        message","deleted_at":null,"name":"Test-Create_a_browser_test_returns_OK_Returns_the_created_test_details_response-1672258826","monitor_id":106541668,"type":"browser","created_at":"2022-12-28T20:20:26.418704+00:00","modified_at":"2022-12-28T20:20:26.418704+00:00","steps":[{"name":"Refresh
-        page","allowFailure":false,"params":{},"isCritical":true,"type":"refresh"}],"config":{"setCookie":"name:test","request":{"url":"https://datadoghq.com","method":"GET"},"assertions":[],"configVariables":[{"type":"text","secure":true,"name":"PROPERTY"}]},"options":{"accept_self_signed":false,"retry":{"count":3,"interval":10},"min_location_failed":1,"allow_insecure":true,"follow_redirects":true,"min_failure_duration":10,"noScreenshot":true,"disableCors":true,"device_ids":["tablet"],"tick_every":300}}'
+      string: '{"public_id":"mwh-zx5-9qv","name":"Test-Create_a_browser_test_returns_OK_Returns_the_created_test_details_response-1684335519","status":"paused","type":"browser","tags":["testing:browser"],"created_at":"2023-05-17T14:58:40.195477+00:00","modified_at":"2023-05-17T14:58:40.195477+00:00","config":{"assertions":[],"configVariables":[{"name":"PROPERTY","secure":true,"type":"text"}],"request":{"method":"GET","url":"https://datadoghq.com"},"setCookie":"name:test","variables":[{"name":"TEST_VARIABLE","secure":true,"type":"text"}]},"message":"Test
+        message","options":{"accept_self_signed":false,"allow_insecure":true,"device_ids":["tablet"],"disableCors":true,"follow_redirects":true,"min_failure_duration":10,"min_location_failed":1,"noScreenshot":true,"retry":{"count":3,"interval":10},"tick_every":300},"locations":["aws:us-east-2"],"deleted_at":null,"monitor_id":119298217,"org_id":321813,"steps":[{"name":"Refresh
+        page","params":{},"type":"refresh","allowFailure":false,"isCritical":true}]}'
     headers:
       content-type:
       - application/json
@@ -22,7 +22,7 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"public_ids":["t2j-ah7-xvk"]}'
+    body: '{"public_ids":["mwh-zx5-9qv"]}'
     headers:
       accept:
       - application/json
@@ -32,7 +32,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/synthetics/tests/delete
   response:
     body:
-      string: '{"deleted_tests":[{"deleted_at":"2022-12-28T20:20:26.638790+00:00","public_id":"t2j-ah7-xvk"}]}
+      string: '{"deleted_tests":[{"public_id":"mwh-zx5-9qv","deleted_at":"2023-05-17T14:58:40.497772+00:00"}]}
 
         '
     headers:
