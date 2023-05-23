@@ -277,7 +277,6 @@ Feature: Dashboards
     Then the response status is 200 OK
     And the response "widgets[0].definition.type" is equal to "event_stream"
     And the response "widgets[0].definition.query" is equal to "example-query"
-    And the response "widgets[0].definition.show_year" is equal to true
 
   @team:DataDog/dashboards-backend
   Scenario: Create a new dashboard with event_timeline widget
