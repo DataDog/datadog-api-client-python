@@ -32,7 +32,6 @@ body = Dashboard(
                 query="example-query",
                 tags_execution="and",
                 event_size=WidgetEventSize.SMALL,
-                show_year=True,
             ),
         ),
     ],

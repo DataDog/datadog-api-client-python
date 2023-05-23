@@ -90,9 +90,6 @@ class WidgetDefinition(ModelComposed):
         :param query: Query to filter the event stream with.
         :type query: str
 
-        :param show_year: Option to display the year in the date column.
-        :type show_year: bool, optional
-
         :param tags_execution: The execution method for multi-value filters. Can be either and or or.
         :type tags_execution: str, optional
 
