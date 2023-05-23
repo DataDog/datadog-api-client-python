@@ -187,9 +187,24 @@ Feature: Monitors
     Given there is a valid "monitor" in the system
     And new "GetMonitor" request
     And request contains "monitor_id" parameter from "monitor.id"
+    And request contains "with_downtimes" parameter with value true
     When the request is sent
     Then the response status is 200 OK
     And the response "id" has the same value as "monitor.id"
+    And the response "matching_downtimes" has length 0
+
+  @replay-only @team:DataDog/monitor-app
+  Scenario: Get a monitor's details with downtime returns "OK" response
+    Given there is a valid "monitor" in the system
+    And there is a valid "downtime" for a "monitor" in the system
+    And new "GetMonitor" request
+    And request contains "monitor_id" parameter from "monitor.id"
+    And request contains "with_downtimes" parameter with value true
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "id" has the same value as "monitor.id"
+    And the response "matching_downtimes" has length 1
+    And the response "matching_downtimes[0].id" has the same value as "downtime_monitor.id"
 
   @team:DataDog/monitor-app
   Scenario: Get a synthetics monitor's details

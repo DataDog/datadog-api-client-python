@@ -282,6 +282,7 @@ from datadog_api_client.v1.model.logs_url_parser import LogsURLParser
 from datadog_api_client.v1.model.logs_url_parser_type import LogsURLParserType
 from datadog_api_client.v1.model.logs_user_agent_parser import LogsUserAgentParser
 from datadog_api_client.v1.model.logs_user_agent_parser_type import LogsUserAgentParserType
+from datadog_api_client.v1.model.matching_downtime import MatchingDowntime
 from datadog_api_client.v1.model.metric_content_encoding import MetricContentEncoding
 from datadog_api_client.v1.model.metric_metadata import MetricMetadata
 from datadog_api_client.v1.model.metric_search_response import MetricSearchResponse
