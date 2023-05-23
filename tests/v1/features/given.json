@@ -91,6 +91,18 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"message\": \"{{ unique }}\",\n  \"monitor_id\": {{ monitor.id }},\n  \"start\": {{ timestamp(\"now\") }},\n  \"end\": {{ timestamp(\"now + 7d\") }},\n  \"timezone\": \"Etc/UTC\",\n  \"scope\": [\"*\"],\n  \"mute_first_recovery_notification\": true,\n  \"notify_end_states\": [\"alert\"],\n  \"notify_end_types\": [\"canceled\"]\n}"
+      }
+    ],
+    "step": "there is a valid \"downtime\" for a \"monitor\" in the system",
+    "key": "downtime_monitor",
+    "tag": "Downtimes",
+    "operationId": "CreateDowntime"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"name\": \"{{ unique_upper_alnum }}\",\n  \"value\": \"variable-value\",\n  \"is_secret\": false\n}"
       }
     ],

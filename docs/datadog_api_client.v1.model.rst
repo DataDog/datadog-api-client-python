@@ -1779,6 +1779,13 @@ logs\_user\_agent\_parser\_type
    :members:
    :show-inheritance:
 
+matching\_downtime
+------------------
+
+.. automodule:: datadog_api_client.v1.model.matching_downtime
+   :members:
+   :show-inheritance:
+
 metric\_content\_encoding
 -------------------------
 
