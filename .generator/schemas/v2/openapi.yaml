@@ -14569,6 +14569,9 @@ components:
         authorizationCode:
           authorizationUrl: /oauth2/v1/authorize
           scopes:
+            apm_service_catalog_read: View service catalog and service definitions.
+            apm_service_catalog_write: Add, modify, and delete service catalog definitions
+              when those definitions are maintained by Datadog.
             dashboards_read: View dashboards.
             dashboards_write: Create and change dashboards.
             events_read: Read Events data.
@@ -22264,6 +22267,11 @@ paths:
           $ref: '#/components/responses/ForbiddenResponse'
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ:
+        - apm_service_catalog_read
       summary: Get all service definitions
       tags:
       - Service Definition
@@ -22296,6 +22304,11 @@ paths:
           $ref: '#/components/responses/ConflictResponse'
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ:
+        - apm_service_catalog_write
       summary: Create or update service definition
       tags:
       - Service Definition
@@ -22317,6 +22330,11 @@ paths:
           $ref: '#/components/responses/NotFoundResponse'
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ:
+        - apm_service_catalog_write
       summary: Delete a single service definition
       tags:
       - Service Definition
@@ -22343,6 +22361,11 @@ paths:
           $ref: '#/components/responses/ConflictResponse'
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ:
+        - apm_service_catalog_read
       summary: Get a single service definition
       tags:
       - Service Definition
