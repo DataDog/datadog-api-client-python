@@ -37,7 +37,7 @@ class ServiceDefinitionApi:
         self._create_or_update_service_definitions_endpoint = _Endpoint(
             settings={
                 "response_type": (ServiceDefinitionCreateResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/services/definitions",
                 "operation_id": "create_or_update_service_definitions",
                 "http_method": "POST",
@@ -58,7 +58,7 @@ class ServiceDefinitionApi:
         self._delete_service_definition_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/services/definitions/{service_name}",
                 "operation_id": "delete_service_definition",
                 "http_method": "DELETE",
@@ -83,7 +83,7 @@ class ServiceDefinitionApi:
         self._get_service_definition_endpoint = _Endpoint(
             settings={
                 "response_type": (ServiceDefinitionGetResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/services/definitions/{service_name}",
                 "operation_id": "get_service_definition",
                 "http_method": "GET",
@@ -113,7 +113,7 @@ class ServiceDefinitionApi:
         self._list_service_definitions_endpoint = _Endpoint(
             settings={
                 "response_type": (ServiceDefinitionsListResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/services/definitions",
                 "operation_id": "list_service_definitions",
                 "http_method": "GET",
