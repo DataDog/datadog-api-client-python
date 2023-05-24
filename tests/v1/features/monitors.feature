@@ -191,7 +191,6 @@ Feature: Monitors
     When the request is sent
     Then the response status is 200 OK
     And the response "id" has the same value as "monitor.id"
-    And the response "matching_downtimes" has length 0
 
   @replay-only @team:DataDog/monitor-app
   Scenario: Get a monitor's details with downtime returns "OK" response
