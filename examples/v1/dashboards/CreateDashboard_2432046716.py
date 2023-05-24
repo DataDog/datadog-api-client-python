@@ -36,6 +36,7 @@ body = Dashboard(
                             data_source=ListStreamSource.EVENT_STREAM,
                             query_string="",
                             event_size=WidgetEventSize.LARGE,
+                            show_year=True,
                         ),
                         response_format=ListStreamResponseFormat.EVENT_LIST,
                     ),
