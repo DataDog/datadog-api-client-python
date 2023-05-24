@@ -16,7 +16,7 @@ class HourlyUsageAttributionUsageType(ModelSimple):
     """
     Supported products for hourly usage attribution requests.
 
-    :param value: Must be one of ["api_usage", "apm_fargate_usage", "apm_host_usage", "appsec_fargate_usage", "appsec_usage", "browser_usage", "container_excl_agent_usage", "container_usage", "cspm_containers_usage", "cspm_hosts_usage", "custom_ingested_timeseries_usage", "custom_timeseries_usage", "cws_containers_usage", "cws_hosts_usage", "dbm_hosts_usage", "dbm_queries_usage", "estimated_indexed_logs_usage", "estimated_ingested_logs_usage", "estimated_indexed_spans_usage", "estimated_ingested_spans_usage", "fargate_usage", "functions_usage", "infra_host_usage", "invocations_usage", "npm_host_usage", "profiled_container_usage", "profiled_fargate_usage", "profiled_host_usage", "snmp_usage", "estimated_rum_sessions_usage", "universal_service_monitoring_usage", "vuln_management_hosts_usage"].
+    :param value: Must be one of ["api_usage", "apm_fargate_usage", "apm_host_usage", "appsec_fargate_usage", "appsec_usage", "browser_usage", "container_excl_agent_usage", "container_usage", "cspm_containers_usage", "cspm_hosts_usage", "custom_ingested_timeseries_usage", "custom_timeseries_usage", "cws_containers_usage", "cws_hosts_usage", "dbm_hosts_usage", "dbm_queries_usage", "estimated_indexed_logs_usage", "estimated_ingested_logs_usage", "estimated_indexed_spans_usage", "estimated_ingested_spans_usage", "fargate_usage", "functions_usage", "infra_host_usage", "invocations_usage", "npm_host_usage", "obs_pipeline_bytes_usage", "profiled_container_usage", "profiled_fargate_usage", "profiled_host_usage", "snmp_usage", "estimated_rum_sessions_usage", "universal_service_monitoring_usage", "vuln_management_hosts_usage"].
     :type value: str
     """
 
@@ -46,6 +46,7 @@ class HourlyUsageAttributionUsageType(ModelSimple):
         "infra_host_usage",
         "invocations_usage",
         "npm_host_usage",
+        "obs_pipeline_bytes_usage",
         "profiled_container_usage",
         "profiled_fargate_usage",
         "profiled_host_usage",
@@ -79,6 +80,7 @@ class HourlyUsageAttributionUsageType(ModelSimple):
     INFRA_HOST_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
     INVOCATIONS_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
     NPM_HOST_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
+    OBS_PIPELINE_BYTES_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
     PROFILED_CONTAINER_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
     PROFILED_FARGATE_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
     PROFILED_HOST_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
@@ -131,6 +133,7 @@ HourlyUsageAttributionUsageType.FUNCTIONS_USAGE = HourlyUsageAttributionUsageTyp
 HourlyUsageAttributionUsageType.INFRA_HOST_USAGE = HourlyUsageAttributionUsageType("infra_host_usage")
 HourlyUsageAttributionUsageType.INVOCATIONS_USAGE = HourlyUsageAttributionUsageType("invocations_usage")
 HourlyUsageAttributionUsageType.NPM_HOST_USAGE = HourlyUsageAttributionUsageType("npm_host_usage")
+HourlyUsageAttributionUsageType.OBS_PIPELINE_BYTES_USAGE = HourlyUsageAttributionUsageType("obs_pipeline_bytes_usage")
 HourlyUsageAttributionUsageType.PROFILED_CONTAINER_USAGE = HourlyUsageAttributionUsageType("profiled_container_usage")
 HourlyUsageAttributionUsageType.PROFILED_FARGATE_USAGE = HourlyUsageAttributionUsageType("profiled_fargate_usage")
 HourlyUsageAttributionUsageType.PROFILED_HOST_USAGE = HourlyUsageAttributionUsageType("profiled_host_usage")
