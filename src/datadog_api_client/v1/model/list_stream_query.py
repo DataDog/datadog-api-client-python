@@ -45,6 +45,7 @@ class ListStreamQuery(ModelNormal):
             "group_by": ([ListStreamGroupByItems],),
             "indexes": ([str],),
             "query_string": (str,),
+            "show_year": (bool,),
             "storage": (str,),
         }
 
@@ -55,6 +56,7 @@ class ListStreamQuery(ModelNormal):
         "group_by": "group_by",
         "indexes": "indexes",
         "query_string": "query_string",
+        "show_year": "show_year",
         "storage": "storage",
     }
 
@@ -66,6 +68,7 @@ class ListStreamQuery(ModelNormal):
         event_size: Union[WidgetEventSize, UnsetType] = unset,
         group_by: Union[List[ListStreamGroupByItems], UnsetType] = unset,
         indexes: Union[List[str], UnsetType] = unset,
+        show_year: Union[bool, UnsetType] = unset,
         storage: Union[str, UnsetType] = unset,
         **kwargs,
     ):
@@ -90,6 +93,9 @@ class ListStreamQuery(ModelNormal):
         :param query_string: Widget query.
         :type query_string: str
 
+        :param show_year: Option to display the year in the date column. To be used with the ``event_stream``.
+        :type show_year: bool, optional
+
         :param storage: Option for storage location. Feature in Private Beta.
         :type storage: str, optional
         """
@@ -101,6 +107,8 @@ class ListStreamQuery(ModelNormal):
             kwargs["group_by"] = group_by
         if indexes is not unset:
             kwargs["indexes"] = indexes
+        if show_year is not unset:
+            kwargs["show_year"] = show_year
         if storage is not unset:
             kwargs["storage"] = storage
         super().__init__(kwargs)
