@@ -261,14 +261,13 @@ Feature: Dashboards
   @team:DataDog/dashboards-backend
   Scenario: Create a new dashboard with event_stream list_stream widget
     Given new "CreateDashboard" request
-    And body with value {"layout_type": "ordered","title": "{{ unique }} with list_stream widget","widgets": [{"definition": {"type": "list_stream","requests": [{"columns": [{"width": "auto","field": "timestamp"}],"query": {"data_source": "event_stream","query_string": "","event_size": "l", "show_year": true},"response_format": "event_list"}]}}]}
+    And body with value {"layout_type": "ordered","title": "{{ unique }} with list_stream widget","widgets": [{"definition": {"type": "list_stream","requests": [{"columns": [{"width": "auto","field": "timestamp"}],"query": {"data_source": "event_stream","query_string": "","event_size": "l"},"response_format": "event_list"}]}}]}
     When the request is sent
     Then the response status is 200 OK
     And the response "widgets[0].definition.type" is equal to "list_stream"
     And the response "widgets[0].definition.requests[0].response_format" is equal to "event_list"
     And the response "widgets[0].definition.requests[0].query.data_source" is equal to "event_stream"
     And the response "widgets[0].definition.requests[0].query.event_size" is equal to "l"
-    And the response "widgets[0].definition.requests[0].query.show_year" is equal to true
 
   @team:DataDog/dashboards-backend
   Scenario: Create a new dashboard with event_stream widget
