@@ -202,6 +202,7 @@ Feature: Synthetics
     And the response "name" is equal to "{{ unique }}"
     And the response "config.steps[0].retry.count" is equal to 5
     And the response "config.steps[0].retry.interval" is equal to 1000
+    And the response "config.steps[0].extractedValues[0].secure" is equal to true
 
   @generated @skip @team:DataDog/synthetics-app
   Scenario: Delete a global variable returns "JSON format is wrong" response
