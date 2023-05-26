@@ -69,8 +69,6 @@ class MonthlyUsageAttributionValues(ModelNormal):
             "invocations_usage": (float,),
             "npm_host_percentage": (float,),
             "npm_host_usage": (float,),
-            "obs_pipeline_bytes_percentage": (float,),
-            "obs_pipeline_bytes_usage": (float,),
             "profiled_container_percentage": (float,),
             "profiled_container_usage": (float,),
             "profiled_fargate_percentage": (float,),
@@ -138,8 +136,6 @@ class MonthlyUsageAttributionValues(ModelNormal):
         "invocations_usage": "invocations_usage",
         "npm_host_percentage": "npm_host_percentage",
         "npm_host_usage": "npm_host_usage",
-        "obs_pipeline_bytes_percentage": "obs_pipeline_bytes_percentage",
-        "obs_pipeline_bytes_usage": "obs_pipeline_bytes_usage",
         "profiled_container_percentage": "profiled_container_percentage",
         "profiled_container_usage": "profiled_container_usage",
         "profiled_fargate_percentage": "profiled_fargate_percentage",
@@ -208,8 +204,6 @@ class MonthlyUsageAttributionValues(ModelNormal):
         invocations_usage: Union[float, UnsetType] = unset,
         npm_host_percentage: Union[float, UnsetType] = unset,
         npm_host_usage: Union[float, UnsetType] = unset,
-        obs_pipeline_bytes_percentage: Union[float, UnsetType] = unset,
-        obs_pipeline_bytes_usage: Union[float, UnsetType] = unset,
         profiled_container_percentage: Union[float, UnsetType] = unset,
         profiled_container_usage: Union[float, UnsetType] = unset,
         profiled_fargate_percentage: Union[float, UnsetType] = unset,
@@ -383,12 +377,6 @@ class MonthlyUsageAttributionValues(ModelNormal):
         :param npm_host_usage: The network host usage by tag(s).
         :type npm_host_usage: float, optional
 
-        :param obs_pipeline_bytes_percentage: The percentage of observability pipeline bytes usage by tag(s).
-        :type obs_pipeline_bytes_percentage: float, optional
-
-        :param obs_pipeline_bytes_usage: The observability pipeline bytes usage by tag(s).
-        :type obs_pipeline_bytes_usage: float, optional
-
         :param profiled_container_percentage: The percentage of profiled container usage by tag(s).
         :type profiled_container_percentage: float, optional
 
@@ -529,10 +517,6 @@ class MonthlyUsageAttributionValues(ModelNormal):
             kwargs["npm_host_percentage"] = npm_host_percentage
         if npm_host_usage is not unset:
             kwargs["npm_host_usage"] = npm_host_usage
-        if obs_pipeline_bytes_percentage is not unset:
-            kwargs["obs_pipeline_bytes_percentage"] = obs_pipeline_bytes_percentage
-        if obs_pipeline_bytes_usage is not unset:
-            kwargs["obs_pipeline_bytes_usage"] = obs_pipeline_bytes_usage
         if profiled_container_percentage is not unset:
             kwargs["profiled_container_percentage"] = profiled_container_percentage
         if profiled_container_usage is not unset:
