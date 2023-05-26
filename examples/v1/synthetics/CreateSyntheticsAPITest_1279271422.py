@@ -53,6 +53,7 @@ body = SyntheticsAPITest(
                             type=SyntheticsGlobalVariableParserType.RAW,
                         ),
                         type=SyntheticsGlobalVariableParseTestOptionsType.HTTP_HEADER,
+                        secure=True,
                     ),
                 ],
                 is_critical=True,
