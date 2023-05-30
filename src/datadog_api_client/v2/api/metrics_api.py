@@ -514,7 +514,7 @@ class MetricsApi:
         self,
         body: MetricBulkTagConfigDeleteRequest,
     ) -> MetricBulkTagConfigResponse:
-        """Configure tags for multiple metrics.
+        """Delete tags for multiple metrics.
 
         Delete all custom lists of queryable tag keys for a set of existing count, gauge, rate, and distribution metrics.
         Metrics are selected by passing a metric name prefix.
