@@ -1,0 +1,20 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/integration/gcp/sts_delegate
+  response:
+    body:
+      string: '{"data":{"type":"gcp_sts_delegate","attributes":{"delegate_account_email":"ddgci-d427c1b4a96cca3986b2@datadog-gci-sts-us1-prod.iam.gserviceaccount.com"},"id":"ddgci-d427c1b4a96cca3986b2@datadog-gci-sts-us1-prod.iam.gserviceaccount.com"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1
