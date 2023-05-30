@@ -1,5 +1,5 @@
 """
-Get a monitor configuration policy returns "Created" response
+Create a tag configuration returns "Created" response
 """
 
 from datadog_api_client import ApiClient, Configuration
@@ -14,22 +14,21 @@ from datadog_api_client.v2.model.metric_tag_configuration_type import MetricTagC
 
 body = MetricTagConfigurationCreateRequest(
     data=MetricTagConfigurationCreateData(
+        type=MetricTagConfigurationType.MANAGE_TAGS,
+        id="ExampleMetric",
         attributes=MetricTagConfigurationCreateAttributes(
-            include_percentiles=False,
-            metric_type=MetricTagConfigurationMetricTypes.DISTRIBUTION,
             tags=[
                 "app",
                 "datacenter",
             ],
+            metric_type=MetricTagConfigurationMetricTypes.GAUGE,
         ),
-        id="http.endpoint.request",
-        type=MetricTagConfigurationType.MANAGE_TAGS,
     ),
 )
 
 configuration = Configuration()
 with ApiClient(configuration) as api_client:
     api_instance = MetricsApi(api_client)
-    response = api_instance.create_tag_configuration(metric_name="metric_name", body=body)
+    response = api_instance.create_tag_configuration(metric_name="ExampleMetric", body=body)
 
     print(response)

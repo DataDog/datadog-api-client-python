@@ -51,6 +51,14 @@ Feature: Monitors
     When the request is sent
     Then the response status is 204 OK
 
+  @generated @skip @team:DataDog/monitor-app
+  Scenario: Delete a monitor configuration policy returns "Unprocessable Entity" response
+    Given new "UpdateMonitorConfigPolicy" request
+    And request contains "policy_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"policy": {"tag_key": "datacenter", "tag_key_required": true, "valid_tag_values": ["prod", "staging"]}, "policy_type": "tag"}, "id": "00000000-0000-1234-0000-000000000000", "type": "monitor-config-policy"}}
+    When the request is sent
+    Then the response status is 422 Unprocessable Entity
+
   @team:DataDog/monitor-app
   Scenario: Edit a monitor configuration policy returns "Not Found" response
     Given new "UpdateMonitorConfigPolicy" request

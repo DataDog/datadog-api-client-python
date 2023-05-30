@@ -38,24 +38,6 @@ Feature: Metrics
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/metrics-experience
-  Scenario: Create a tag configuration returns "Bad Request" response
-    Given a valid "appKeyAuth" key in the system
-    And new "CreateTagConfiguration" request
-    And request contains "metric_name" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"include_percentiles": false, "metric_type": "distribution", "tags": ["app", "datacenter"]}, "id": "http.endpoint.request", "type": "manage_tags"}}
-    When the request is sent
-    Then the response status is 400 Bad Request
-
-  @generated @skip @team:DataDog/metrics-experience
-  Scenario: Create a tag configuration returns "Conflict" response
-    Given a valid "appKeyAuth" key in the system
-    And new "CreateTagConfiguration" request
-    And request contains "metric_name" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"include_percentiles": false, "metric_type": "distribution", "tags": ["app", "datacenter"]}, "id": "http.endpoint.request", "type": "manage_tags"}}
-    When the request is sent
-    Then the response status is 409 Conflict
-
   @replay-only @skip-validation @team:DataDog/metrics-experience
   Scenario: Create a tag configuration returns "Created" response
     Given a valid "appKeyAuth" key in the system
@@ -140,6 +122,33 @@ Feature: Metrics
     When the request is sent
     Then the response status is 200 Success
     And the response "data[0].type" is equal to "manage_tags"
+
+  @generated @skip @team:DataDog/metrics-experience
+  Scenario: Get a monitor configuration policy returns "Bad Request" response
+    Given a valid "appKeyAuth" key in the system
+    And new "CreateTagConfiguration" request
+    And request contains "metric_name" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"include_percentiles": false, "metric_type": "distribution", "tags": ["app", "datacenter"]}, "id": "http.endpoint.request", "type": "manage_tags"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/metrics-experience
+  Scenario: Get a monitor configuration policy returns "Conflict" response
+    Given a valid "appKeyAuth" key in the system
+    And new "CreateTagConfiguration" request
+    And request contains "metric_name" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"include_percentiles": false, "metric_type": "distribution", "tags": ["app", "datacenter"]}, "id": "http.endpoint.request", "type": "manage_tags"}}
+    When the request is sent
+    Then the response status is 409 Conflict
+
+  @generated @skip @team:DataDog/metrics-experience
+  Scenario: Get a monitor configuration policy returns "Created" response
+    Given a valid "appKeyAuth" key in the system
+    And new "CreateTagConfiguration" request
+    And request contains "metric_name" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"include_percentiles": false, "metric_type": "distribution", "tags": ["app", "datacenter"]}, "id": "http.endpoint.request", "type": "manage_tags"}}
+    When the request is sent
+    Then the response status is 201 Created
 
   @generated @skip @team:DataDog/metrics-experience
   Scenario: List active tags and aggregations returns "Bad Request" response

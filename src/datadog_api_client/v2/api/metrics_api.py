@@ -491,7 +491,7 @@ class MetricsApi:
         metric_name: str,
         body: MetricTagConfigurationCreateRequest,
     ) -> MetricTagConfigurationResponse:
-        """Create a tag configuration.
+        """Get a monitor configuration policy.
 
         Create and define a list of queryable tag keys for an existing count/gauge/rate/distribution metric.
         Optionally, include percentile aggregations on any distribution metric or configure custom aggregations

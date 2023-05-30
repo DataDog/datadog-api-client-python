@@ -211,7 +211,7 @@ class MonitorsApi:
         policy_id: str,
         body: MonitorConfigPolicyEditRequest,
     ) -> MonitorConfigPolicyResponse:
-        """Edit a monitor configuration policy.
+        """Delete a monitor configuration policy.
 
         Edit a monitor configuration policy.
 
