@@ -71,6 +71,13 @@ fastly\_integration\_api
    :members:
    :show-inheritance:
 
+gcp\_integration\_api
+---------------------
+
+.. automodule:: datadog_api_client.v2.api.gcp_integration_api
+   :members:
+   :show-inheritance:
+
 incident\_services\_api
 -----------------------
 

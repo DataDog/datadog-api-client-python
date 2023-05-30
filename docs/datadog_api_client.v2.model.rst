@@ -1583,6 +1583,104 @@ full\_application\_key\_attributes
    :members:
    :show-inheritance:
 
+gcp\_service\_account\_meta
+---------------------------
+
+.. automodule:: datadog_api_client.v2.model.gcp_service_account_meta
+   :members:
+   :show-inheritance:
+
+gcp\_service\_account\_type
+---------------------------
+
+.. automodule:: datadog_api_client.v2.model.gcp_service_account_type
+   :members:
+   :show-inheritance:
+
+gcpsts\_delegate\_account
+-------------------------
+
+.. automodule:: datadog_api_client.v2.model.gcpsts_delegate_account
+   :members:
+   :show-inheritance:
+
+gcpsts\_delegate\_account\_attributes
+-------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.gcpsts_delegate_account_attributes
+   :members:
+   :show-inheritance:
+
+gcpsts\_delegate\_account\_response
+-----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.gcpsts_delegate_account_response
+   :members:
+   :show-inheritance:
+
+gcpsts\_delegate\_account\_type
+-------------------------------
+
+.. automodule:: datadog_api_client.v2.model.gcpsts_delegate_account_type
+   :members:
+   :show-inheritance:
+
+gcpsts\_service\_account
+------------------------
+
+.. automodule:: datadog_api_client.v2.model.gcpsts_service_account
+   :members:
+   :show-inheritance:
+
+gcpsts\_service\_account\_attributes
+------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.gcpsts_service_account_attributes
+   :members:
+   :show-inheritance:
+
+gcpsts\_service\_account\_create\_request
+-----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.gcpsts_service_account_create_request
+   :members:
+   :show-inheritance:
+
+gcpsts\_service\_account\_data
+------------------------------
+
+.. automodule:: datadog_api_client.v2.model.gcpsts_service_account_data
+   :members:
+   :show-inheritance:
+
+gcpsts\_service\_account\_response
+----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.gcpsts_service_account_response
+   :members:
+   :show-inheritance:
+
+gcpsts\_service\_account\_update\_request
+-----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.gcpsts_service_account_update_request
+   :members:
+   :show-inheritance:
+
+gcpsts\_service\_account\_update\_request\_data
+-----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.gcpsts_service_account_update_request_data
+   :members:
+   :show-inheritance:
+
+gcpsts\_service\_accounts\_response
+-----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.gcpsts_service_accounts_response
+   :members:
+   :show-inheritance:
+
 get\_finding\_response
 ----------------------
 
