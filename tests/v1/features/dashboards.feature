@@ -391,6 +391,32 @@ Feature: Dashboards
     And the response "widgets[0].definition.requests[0].query.data_source" is equal to "apm_issue_stream"
 
   @team:DataDog/dashboards-backend
+  Scenario: Create a new dashboard with list_stream widget with a valid sort parameter ASC
+    Given new "CreateDashboard" request
+    And body with value {"layout_type": "ordered","title": "{{ unique }} with list_stream widget","widgets": [{"definition": {"type": "list_stream","requests": [{"columns": [{"width": "auto","field": "timestamp"}],"query": {"data_source": "event_stream","query_string": "","event_size": "l", "sort": {"column": "timestamp", "order": "asc"}},"response_format": "event_list"}]}}]}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.type" is equal to "list_stream"
+    And the response "widgets[0].definition.requests[0].response_format" is equal to "event_list"
+    And the response "widgets[0].definition.requests[0].query.data_source" is equal to "event_stream"
+    And the response "widgets[0].definition.requests[0].query.event_size" is equal to "l"
+    And the response "widgets[0].definition.requests[0].query.sort.column" is equal to "timestamp"
+    And the response "widgets[0].definition.requests[0].query.sort.order" is equal to "asc"
+
+  @team:DataDog/dashboards-backend
+  Scenario: Create a new dashboard with list_stream widget with a valid sort parameter DESC
+    Given new "CreateDashboard" request
+    And body with value {"layout_type": "ordered","title": "{{ unique }} with list_stream widget","widgets": [{"definition": {"type": "list_stream","requests": [{"columns": [{"width": "auto","field": "timestamp"}],"query": {"data_source": "event_stream","query_string": "","event_size": "l", "sort": {"column": "timestamp", "order": "desc"}},"response_format": "event_list"}]}}]}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.type" is equal to "list_stream"
+    And the response "widgets[0].definition.requests[0].response_format" is equal to "event_list"
+    And the response "widgets[0].definition.requests[0].query.data_source" is equal to "event_stream"
+    And the response "widgets[0].definition.requests[0].query.event_size" is equal to "l"
+    And the response "widgets[0].definition.requests[0].query.sort.column" is equal to "timestamp"
+    And the response "widgets[0].definition.requests[0].query.sort.order" is equal to "desc"
+
+  @team:DataDog/dashboards-backend
   Scenario: Create a new dashboard with log_stream widget
     Given new "CreateDashboard" request
     And body from file "dashboards_json_payload/log_stream_widget.json"
