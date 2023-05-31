@@ -16,10 +16,10 @@ from datadog_api_client.model_utils import (
 class TeamCreateAttributes(ModelNormal):
     validations = {
         "handle": {
-            "max_length": 64,
+            "max_length": 195,
         },
         "name": {
-            "max_length": 64,
+            "max_length": 200,
         },
     }
 
