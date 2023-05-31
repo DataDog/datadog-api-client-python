@@ -18,6 +18,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.list_stream_source import ListStreamSource
     from datadog_api_client.v1.model.widget_event_size import WidgetEventSize
     from datadog_api_client.v1.model.list_stream_group_by_items import ListStreamGroupByItems
+    from datadog_api_client.v1.model.widget_field_sort import WidgetFieldSort
 
 
 class ListStreamQuery(ModelNormal):
@@ -37,6 +38,7 @@ class ListStreamQuery(ModelNormal):
         from datadog_api_client.v1.model.list_stream_source import ListStreamSource
         from datadog_api_client.v1.model.widget_event_size import WidgetEventSize
         from datadog_api_client.v1.model.list_stream_group_by_items import ListStreamGroupByItems
+        from datadog_api_client.v1.model.widget_field_sort import WidgetFieldSort
 
         return {
             "compute": ([ListStreamComputeItems],),
@@ -45,6 +47,7 @@ class ListStreamQuery(ModelNormal):
             "group_by": ([ListStreamGroupByItems],),
             "indexes": ([str],),
             "query_string": (str,),
+            "sort": (WidgetFieldSort,),
             "storage": (str,),
         }
 
@@ -55,6 +58,7 @@ class ListStreamQuery(ModelNormal):
         "group_by": "group_by",
         "indexes": "indexes",
         "query_string": "query_string",
+        "sort": "sort",
         "storage": "storage",
     }
 
@@ -66,6 +70,7 @@ class ListStreamQuery(ModelNormal):
         event_size: Union[WidgetEventSize, UnsetType] = unset,
         group_by: Union[List[ListStreamGroupByItems], UnsetType] = unset,
         indexes: Union[List[str], UnsetType] = unset,
+        sort: Union[WidgetFieldSort, UnsetType] = unset,
         storage: Union[str, UnsetType] = unset,
         **kwargs,
     ):
@@ -90,6 +95,9 @@ class ListStreamQuery(ModelNormal):
         :param query_string: Widget query.
         :type query_string: str
 
+        :param sort: Which column and order to sort by
+        :type sort: WidgetFieldSort, optional
+
         :param storage: Option for storage location. Feature in Private Beta.
         :type storage: str, optional
         """
@@ -101,6 +109,8 @@ class ListStreamQuery(ModelNormal):
             kwargs["group_by"] = group_by
         if indexes is not unset:
             kwargs["indexes"] = indexes
+        if sort is not unset:
+            kwargs["sort"] = sort
         if storage is not unset:
             kwargs["storage"] = storage
         super().__init__(kwargs)
