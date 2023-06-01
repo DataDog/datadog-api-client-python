@@ -13613,7 +13613,7 @@ components:
         handle:
           description: The team's identifier
           example: example-team
-          maxLength: 64
+          maxLength: 195
           type: string
         link_count:
           description: The number of links belonging to the team
@@ -13628,7 +13628,7 @@ components:
         name:
           description: The name of the team
           example: Example Team
-          maxLength: 64
+          maxLength: 200
           type: string
         summary:
           description: A brief summary of the team, derived from the `description`
@@ -13964,12 +13964,12 @@ components:
         handle:
           description: The team's identifier
           example: example-team
-          maxLength: 64
+          maxLength: 195
           type: string
         name:
           description: The name of the team
           example: Example Team
-          maxLength: 64
+          maxLength: 200
           type: string
       required:
       - handle

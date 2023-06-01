@@ -20,10 +20,10 @@ class TeamUpdateAttributes(ModelNormal):
             "inclusive_minimum": 0,
         },
         "handle": {
-            "max_length": 64,
+            "max_length": 195,
         },
         "name": {
-            "max_length": 64,
+            "max_length": 200,
         },
     }
 

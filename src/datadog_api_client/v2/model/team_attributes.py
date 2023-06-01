@@ -18,13 +18,13 @@ from datadog_api_client.model_utils import (
 class TeamAttributes(ModelNormal):
     validations = {
         "handle": {
-            "max_length": 64,
+            "max_length": 195,
         },
         "link_count": {
             "inclusive_maximum": 2147483647,
         },
         "name": {
-            "max_length": 64,
+            "max_length": 200,
         },
         "summary": {
             "max_length": 120,
