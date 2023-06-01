@@ -4,5 +4,7 @@ warnings.warn("NotifyEndStates is deprecated and doesn't do anything. It will be
 
 
 class NotifyEndStates:
+    """Deprecated, please don't use."""
+
     def __new__(cls, *args, **kwargs):
         return args[0]

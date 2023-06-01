@@ -6,5 +6,7 @@ warnings.warn(
 
 
 class MetricBulkTagConfigEmailList:
+    """Deprecated, please don't use."""
+
     def __new__(cls, *args, **kwargs):
         return args[0]

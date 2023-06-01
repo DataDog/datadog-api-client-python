@@ -4,5 +4,7 @@ warnings.warn("AzureAccountListResponse is deprecated and doesn't do anything. I
 
 
 class AzureAccountListResponse:
+    """Deprecated, please don't use."""
+
     def __new__(cls, *args, **kwargs):
         return args[0]

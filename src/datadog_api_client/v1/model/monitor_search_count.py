@@ -4,5 +4,7 @@ warnings.warn("MonitorSearchCount is deprecated and doesn't do anything. It will
 
 
 class MonitorSearchCount:
+    """Deprecated, please don't use."""
+
     def __new__(cls, *args, **kwargs):
         return args[0]

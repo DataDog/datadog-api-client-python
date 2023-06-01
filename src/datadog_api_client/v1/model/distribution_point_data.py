@@ -4,5 +4,7 @@ warnings.warn("DistributionPointData is deprecated and doesn't do anything. It w
 
 
 class DistributionPointData:
+    """Deprecated, please don't use."""
+
     def __new__(cls, *args, **kwargs):
         return args[0]

@@ -4,5 +4,7 @@ warnings.warn("ListFindingsData is deprecated and doesn't do anything. It will b
 
 
 class ListFindingsData:
+    """Deprecated, please don't use."""
+
     def __new__(cls, *args, **kwargs):
         return args[0]

@@ -4,5 +4,7 @@ warnings.warn("SlackIntegrationChannels is deprecated and doesn't do anything. I
 
 
 class SlackIntegrationChannels:
+    """Deprecated, please don't use."""
+
     def __new__(cls, *args, **kwargs):
         return args[0]

@@ -1,10 +1,12 @@
 import warnings
 
 warnings.warn(
-    "RumAggregateBucketValueTimeseries is deprecated and doesn't do anything. It will be removed in a future version."
+    "RUMAggregateBucketValueTimeseries is deprecated and doesn't do anything. It will be removed in a future version."
 )
 
 
-class RumAggregateBucketValueTimeseries:
+class RUMAggregateBucketValueTimeseries:
+    """Deprecated, please don't use."""
+
     def __new__(cls, *args, **kwargs):
         return args[0]

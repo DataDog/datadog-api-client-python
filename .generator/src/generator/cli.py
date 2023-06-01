@@ -144,7 +144,6 @@ def cli(specs, output):
 
     with (pathlib.Path(__file__).parent / "compat-files").open() as fp:
         for compat_file in fp:
-            compat_file = compat_file.strip()
-            model = formatter.camel_case(compat_file.split("/")[-1][:-3])
+            compat_file, compat_model = compat_file.strip().split(":")
             with top_package.joinpath(compat_file).open("w") as model_fp:
-                model_fp.write(compat_j2.render(model=model))
+                model_fp.write(compat_j2.render(model=compat_model))

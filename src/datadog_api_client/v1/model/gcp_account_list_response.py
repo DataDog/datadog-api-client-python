@@ -1,8 +1,10 @@
 import warnings
 
-warnings.warn("GcpAccountListResponse is deprecated and doesn't do anything. It will be removed in a future version.")
+warnings.warn("GCPAccountListResponse is deprecated and doesn't do anything. It will be removed in a future version.")
 
 
-class GcpAccountListResponse:
+class GCPAccountListResponse:
+    """Deprecated, please don't use."""
+
     def __new__(cls, *args, **kwargs):
         return args[0]

@@ -4,5 +4,7 @@ warnings.warn("DistributionPointItem is deprecated and doesn't do anything. It w
 
 
 class DistributionPointItem:
+    """Deprecated, please don't use."""
+
     def __new__(cls, *args, **kwargs):
         return args[0]

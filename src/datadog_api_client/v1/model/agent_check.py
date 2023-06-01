@@ -4,5 +4,7 @@ warnings.warn("AgentCheck is deprecated and doesn't do anything. It will be remo
 
 
 class AgentCheck:
+    """Deprecated, please don't use."""
+
     def __new__(cls, *args, **kwargs):
         return args[0]
