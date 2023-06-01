@@ -7,6 +7,8 @@ v1/model/gcp_account_list_response.py:GCPAccountListResponse
 v1/model/http_log.py:HTTPLog
 v1/model/logs_pipeline_list.py:LogsPipelineList
 v1/model/monitor_search_count.py:MonitorSearchCount
+v1/model/notify_end_states.py:NotifyEndStates
+v1/model/notify_end_types.py:NotifyEndTypes
 v1/model/point.py:Point
 v1/model/service_checks.py:ServiceChecks
 v1/model/shared_dashboard_invites_data_list.py:SharedDashboardInvitesDataList
@@ -37,6 +39,3 @@ v2/model/timeseries_response_series_list.py:TimeseriesResponseSeriesList
 v2/model/timeseries_response_times.py:TimeseriesResponseTimes
 v2/model/timeseries_response_values.py:TimeseriesResponseValues
 v2/model/timeseries_response_values_list.py:TimeseriesResponseValuesList
-v1/model/distribution_point_item.py:DistributionPointItem
-v1/model/notify_end_states.py:NotifyEndStates
-v1/model/notify_end_types.py:NotifyEndTypes
