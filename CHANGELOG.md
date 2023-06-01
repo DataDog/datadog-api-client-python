@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.13.1 / 2023-06-01
+
+### Fixed
+* Add back array models for compatibility by @therve in https://github.com/DataDog/datadog-api-client-python/pull/1499
+### Changed
+* Team name and handle length updates by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1495
+
+
+**Full Changelog**: https://github.com/DataDog/datadog-api-client-python/compare/2.13.0...2.13.1
+
 ## 2.13.0 / 2023-05-31
 
 ### Fixed
