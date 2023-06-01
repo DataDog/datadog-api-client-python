@@ -1,0 +1,8 @@
+import warnings
+
+warnings.warn("Point is deprecated and doesn't do anything. It will be removed in a future version.")
+
+
+class Point:
+    def __new__(cls, *args, **kwargs):
+        return args[0]
