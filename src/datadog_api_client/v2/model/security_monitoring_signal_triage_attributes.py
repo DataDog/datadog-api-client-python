@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, Union, TYPE_CHECKING
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -45,7 +45,7 @@ class SecurityMonitoringSignalTriageAttributes(ModelNormal):
             "archive_comment_user": (SecurityMonitoringTriageUser,),
             "archive_reason": (SecurityMonitoringSignalArchiveReason,),
             "assignee": (SecurityMonitoringTriageUser,),
-            "incident_ids": ([int],),
+            "incident_ids": (SecurityMonitoringSignalIncidentIds,),
             "state": (SecurityMonitoringSignalState,),
             "state_update_timestamp": (int,),
             "state_update_user": (SecurityMonitoringTriageUser,),
@@ -66,7 +66,7 @@ class SecurityMonitoringSignalTriageAttributes(ModelNormal):
     def __init__(
         self_,
         assignee: SecurityMonitoringTriageUser,
-        incident_ids: List[int],
+        incident_ids: SecurityMonitoringSignalIncidentIds,
         state: SecurityMonitoringSignalState,
         archive_comment: Union[str, UnsetType] = unset,
         archive_comment_timestamp: Union[int, UnsetType] = unset,
@@ -95,7 +95,7 @@ class SecurityMonitoringSignalTriageAttributes(ModelNormal):
         :type assignee: SecurityMonitoringTriageUser
 
         :param incident_ids: Array of incidents that are associated with this signal.
-        :type incident_ids: [int]
+        :type incident_ids: SecurityMonitoringSignalIncidentIds
 
         :param state: The new triage state of the signal.
         :type state: SecurityMonitoringSignalState

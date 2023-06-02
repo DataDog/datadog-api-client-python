@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, Union
+from typing import Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -17,8 +17,8 @@ class MetricBulkTagConfigCreateAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
-            "emails": ([str],),
-            "tags": ([str],),
+            "emails": (MetricBulkTagConfigEmailList,),
+            "tags": (MetricBulkTagConfigTagNameList,),
         }
 
     attribute_map = {
@@ -27,16 +27,19 @@ class MetricBulkTagConfigCreateAttributes(ModelNormal):
     }
 
     def __init__(
-        self_, emails: Union[List[str], UnsetType] = unset, tags: Union[List[str], UnsetType] = unset, **kwargs
+        self_,
+        emails: Union[MetricBulkTagConfigEmailList, UnsetType] = unset,
+        tags: Union[MetricBulkTagConfigTagNameList, UnsetType] = unset,
+        **kwargs,
     ):
         """
         Optional parameters for bulk creating metric tag configurations.
 
         :param emails: A list of account emails to notify when the configuration is applied.
-        :type emails: [str], optional
+        :type emails: MetricBulkTagConfigEmailList, optional
 
         :param tags: A list of tag names to apply to the configuration.
-        :type tags: [str], optional
+        :type tags: MetricBulkTagConfigTagNameList, optional
         """
         if emails is not unset:
             kwargs["emails"] = emails

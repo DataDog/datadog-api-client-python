@@ -4,7 +4,7 @@
 from __future__ import annotations
 
 import collections
-from typing import Any, Dict, List, Union
+from typing import Any, Dict, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
@@ -16,7 +16,7 @@ from datadog_api_client.model_utils import (
     unset,
 )
 from datadog_api_client.v2.model.content_encoding import ContentEncoding
-from datadog_api_client.v2.model.http_log_item import HTTPLogItem
+from datadog_api_client.v2.model.http_log import HTTPLog
 from datadog_api_client.v2.model.logs_aggregate_response import LogsAggregateResponse
 from datadog_api_client.v2.model.logs_aggregate_request import LogsAggregateRequest
 from datadog_api_client.v2.model.logs_list_response import LogsListResponse
@@ -210,7 +210,7 @@ class LogsApi:
                 },
                 "body": {
                     "required": True,
-                    "openapi_types": ([HTTPLogItem],),
+                    "openapi_types": (HTTPLog,),
                     "location": "body",
                     "collection_format": "multi",
                 },
@@ -440,7 +440,7 @@ class LogsApi:
 
     def submit_log(
         self,
-        body: List[HTTPLogItem],
+        body: HTTPLog,
         *,
         content_encoding: Union[ContentEncoding, UnsetType] = unset,
         ddtags: Union[str, UnsetType] = unset,
@@ -475,7 +475,7 @@ class LogsApi:
         * 503: Service Unavailable, the server is not ready to handle the request probably because it is overloaded, request should be retried after some time
 
         :param body: Log to send (JSON format).
-        :type body: [HTTPLogItem]
+        :type body: HTTPLog
         :param content_encoding: HTTP header used to compress the media-type.
         :type content_encoding: ContentEncoding, optional
         :param ddtags: Log tags can be passed as query parameters with ``text/plain`` content type.

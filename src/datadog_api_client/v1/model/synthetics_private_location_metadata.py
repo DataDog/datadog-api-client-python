@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, Union
+from typing import Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -17,19 +17,19 @@ class SyntheticsPrivateLocationMetadata(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
-            "restricted_roles": ([str],),
+            "restricted_roles": (SyntheticsRestrictedRoles,),
         }
 
     attribute_map = {
         "restricted_roles": "restricted_roles",
     }
 
-    def __init__(self_, restricted_roles: Union[List[str], UnsetType] = unset, **kwargs):
+    def __init__(self_, restricted_roles: Union[SyntheticsRestrictedRoles, UnsetType] = unset, **kwargs):
         """
         Object containing metadata about the private location.
 
         :param restricted_roles: A list of role identifiers that can be pulled from the Roles API, for restricting read and write access.
-        :type restricted_roles: [str], optional
+        :type restricted_roles: SyntheticsRestrictedRoles, optional
         """
         if restricted_roles is not unset:
             kwargs["restricted_roles"] = restricted_roles

@@ -128,10 +128,11 @@ def type_to_python(schema, alternative_name=None, in_list=False, typing=False):
     """Return Python type name for the type."""
 
     name = formatter.get_name(schema)
-    if name and "items" not in schema:
+    # TODO: double check
+    if name and ("items" not in schema or name in WHITELISTED_LIST_MODELS[API_VERSION]):
         if "enum" in schema:
             return name
-        if schema.get("type", "object") == "object":
+        if schema.get("type", "object") == "object" or name in WHITELISTED_LIST_MODELS[API_VERSION]:
             if typing and "oneOf" in schema:
                 types = [name]
                 types.extend(get_oneof_types(schema, typing=typing))

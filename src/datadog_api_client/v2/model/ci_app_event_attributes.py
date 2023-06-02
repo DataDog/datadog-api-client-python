@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Any, Dict, List, Union
+from typing import Any, Dict, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -36,7 +36,7 @@ class CIAppEventAttributes(ModelNormal):
                 },
             ),
             "service": (str,),
-            "tags": ([str],),
+            "tags": (TagsEventAttribute,),
             "timestamp": (datetime,),
         }
 
@@ -51,7 +51,7 @@ class CIAppEventAttributes(ModelNormal):
         self_,
         attributes: Union[Dict[str, Any], UnsetType] = unset,
         service: Union[str, UnsetType] = unset,
-        tags: Union[List[str], UnsetType] = unset,
+        tags: Union[TagsEventAttribute, UnsetType] = unset,
         timestamp: Union[datetime, UnsetType] = unset,
         **kwargs,
     ):
@@ -67,7 +67,7 @@ class CIAppEventAttributes(ModelNormal):
         :type service: str, optional
 
         :param tags: Array of tags associated with your event.
-        :type tags: [str], optional
+        :type tags: TagsEventAttribute, optional
 
         :param timestamp: Timestamp of your event.
         :type timestamp: datetime, optional

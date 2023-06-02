@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, Union, TYPE_CHECKING
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -17,16 +17,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.sensitive_data_scanner_get_config_response_data import (
         SensitiveDataScannerGetConfigResponseData,
     )
-    from datadog_api_client.v2.model.sensitive_data_scanner_get_config_included_item import (
-        SensitiveDataScannerGetConfigIncludedItem,
-    )
     from datadog_api_client.v2.model.sensitive_data_scanner_meta import SensitiveDataScannerMeta
-    from datadog_api_client.v2.model.sensitive_data_scanner_rule_included_item import (
-        SensitiveDataScannerRuleIncludedItem,
-    )
-    from datadog_api_client.v2.model.sensitive_data_scanner_group_included_item import (
-        SensitiveDataScannerGroupIncludedItem,
-    )
 
 
 class SensitiveDataScannerGetConfigResponse(ModelNormal):
@@ -35,14 +26,11 @@ class SensitiveDataScannerGetConfigResponse(ModelNormal):
         from datadog_api_client.v2.model.sensitive_data_scanner_get_config_response_data import (
             SensitiveDataScannerGetConfigResponseData,
         )
-        from datadog_api_client.v2.model.sensitive_data_scanner_get_config_included_item import (
-            SensitiveDataScannerGetConfigIncludedItem,
-        )
         from datadog_api_client.v2.model.sensitive_data_scanner_meta import SensitiveDataScannerMeta
 
         return {
             "data": (SensitiveDataScannerGetConfigResponseData,),
-            "included": ([SensitiveDataScannerGetConfigIncludedItem],),
+            "included": (SensitiveDataScannerGetConfigIncludedArray,),
             "meta": (SensitiveDataScannerMeta,),
         }
 
@@ -55,16 +43,7 @@ class SensitiveDataScannerGetConfigResponse(ModelNormal):
     def __init__(
         self_,
         data: Union[SensitiveDataScannerGetConfigResponseData, UnsetType] = unset,
-        included: Union[
-            List[
-                Union[
-                    SensitiveDataScannerGetConfigIncludedItem,
-                    SensitiveDataScannerRuleIncludedItem,
-                    SensitiveDataScannerGroupIncludedItem,
-                ]
-            ],
-            UnsetType,
-        ] = unset,
+        included: Union[SensitiveDataScannerGetConfigIncludedArray, UnsetType] = unset,
         meta: Union[SensitiveDataScannerMeta, UnsetType] = unset,
         **kwargs,
     ):
@@ -75,7 +54,7 @@ class SensitiveDataScannerGetConfigResponse(ModelNormal):
         :type data: SensitiveDataScannerGetConfigResponseData, optional
 
         :param included: Included objects from relationships.
-        :type included: [SensitiveDataScannerGetConfigIncludedItem], optional
+        :type included: SensitiveDataScannerGetConfigIncludedArray, optional
 
         :param meta: Meta response containing information about the API.
         :type meta: SensitiveDataScannerMeta, optional

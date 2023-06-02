@@ -21,7 +21,7 @@ class Series(ModelNormal):
             "host": (str,),
             "interval": (int, none_type),
             "metric": (str,),
-            "points": ([[float, none_type]],),
+            "points": ([Point],),
             "tags": ([str],),
             "type": (str,),
         }
@@ -38,7 +38,7 @@ class Series(ModelNormal):
     def __init__(
         self_,
         metric: str,
-        points: List[List[float]],
+        points: List[Point],
         host: Union[str, UnsetType] = unset,
         interval: Union[int, none_type, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
@@ -59,7 +59,7 @@ class Series(ModelNormal):
         :type metric: str
 
         :param points: Points relating to a metric. All points must be tuples with timestamp and a scalar value (cannot be a string). Timestamps should be in POSIX time in seconds, and cannot be more than ten minutes in the future or more than one hour in the past.
-        :type points: [[float, none_type]]
+        :type points: [Point]
 
         :param tags: A list of tags associated with the metric.
         :type tags: [str], optional

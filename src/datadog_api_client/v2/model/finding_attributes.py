@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, Union, TYPE_CHECKING
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -46,7 +46,7 @@ class FindingAttributes(ModelNormal):
             "resource_type": (str,),
             "rule": (FindingRule,),
             "status": (FindingStatus,),
-            "tags": ([str],),
+            "tags": (FindingTags,),
         }
 
     attribute_map = {
@@ -71,7 +71,7 @@ class FindingAttributes(ModelNormal):
         resource_type: Union[str, UnsetType] = unset,
         rule: Union[FindingRule, UnsetType] = unset,
         status: Union[FindingStatus, UnsetType] = unset,
-        tags: Union[List[str], UnsetType] = unset,
+        tags: Union[FindingTags, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -102,7 +102,7 @@ class FindingAttributes(ModelNormal):
         :type status: FindingStatus, optional
 
         :param tags: The tags associated with this finding.
-        :type tags: [str], optional
+        :type tags: FindingTags, optional
         """
         if evaluation is not unset:
             kwargs["evaluation"] = evaluation

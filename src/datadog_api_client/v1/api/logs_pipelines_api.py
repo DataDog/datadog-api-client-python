@@ -3,11 +3,12 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Any, Dict, List
+from typing import Any, Dict
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
 from datadog_api_client.v1.model.logs_pipelines_order import LogsPipelinesOrder
+from datadog_api_client.v1.model.logs_pipeline_list import LogsPipelineList
 from datadog_api_client.v1.model.logs_pipeline import LogsPipeline
 
 
@@ -138,7 +139,7 @@ class LogsPipelinesApi:
 
         self._list_logs_pipelines_endpoint = _Endpoint(
             settings={
-                "response_type": ([LogsPipeline],),
+                "response_type": (LogsPipelineList,),
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/logs/config/pipelines",
                 "operation_id": "list_logs_pipelines",
@@ -270,13 +271,13 @@ class LogsPipelinesApi:
 
     def list_logs_pipelines(
         self,
-    ) -> List[LogsPipeline]:
+    ) -> LogsPipelineList:
         """Get all pipelines.
 
         Get all pipelines from your organization.
         This endpoint takes no JSON arguments.
 
-        :rtype: [LogsPipeline]
+        :rtype: LogsPipelineList
         """
         kwargs: Dict[str, Any] = {}
         return self._list_logs_pipelines_endpoint.call_with_http_info(**kwargs)

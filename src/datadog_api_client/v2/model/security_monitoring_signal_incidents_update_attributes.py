@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, Union
+from typing import Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -17,7 +17,7 @@ class SecurityMonitoringSignalIncidentsUpdateAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
-            "incident_ids": ([int],),
+            "incident_ids": (SecurityMonitoringSignalIncidentIds,),
             "version": (int,),
         }
 
@@ -26,12 +26,14 @@ class SecurityMonitoringSignalIncidentsUpdateAttributes(ModelNormal):
         "version": "version",
     }
 
-    def __init__(self_, incident_ids: List[int], version: Union[int, UnsetType] = unset, **kwargs):
+    def __init__(
+        self_, incident_ids: SecurityMonitoringSignalIncidentIds, version: Union[int, UnsetType] = unset, **kwargs
+    ):
         """
         Attributes describing the new list of related signals for a security signal.
 
         :param incident_ids: Array of incidents that are associated with this signal.
-        :type incident_ids: [int]
+        :type incident_ids: SecurityMonitoringSignalIncidentIds
 
         :param version: Version of the updated signal. If server side version is higher, update will be rejected.
         :type version: int, optional
