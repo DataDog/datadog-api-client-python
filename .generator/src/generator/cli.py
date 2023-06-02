@@ -72,6 +72,7 @@ def cli(specs, output):
         "rest.py": env.get_template("rest.j2"),
     }
 
+
     top_package = output / PACKAGE_NAME
     top_package.mkdir(parents=True, exist_ok=True)
 
@@ -89,12 +90,13 @@ def cli(specs, output):
 
         version = spec_path.parent.name
         env.globals["version"] = version
+        openapi.set_api_version(version)
 
         all_specs[version] = spec
 
         apis = openapi.apis(spec)
         all_apis[version] = apis
-        models = openapi.models(version, spec)
+        models = openapi.models(spec)
 
         package = top_package / version
         package.mkdir(exist_ok=True)
