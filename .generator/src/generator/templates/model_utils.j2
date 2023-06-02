@@ -1527,9 +1527,10 @@ def get_oneof_instance(cls, model_kwargs, constant_kwargs, model_arg=None):
                     if list_oneof_instance:
                         oneof_instances.append(list_oneof_instance)
                 elif issubclass(oneof_class, ModelSimple):
-                    oneof_instance = oneof_class(model_arg, **constant_kwargs)
-                    if not oneof_instance._unparsed:
-                        oneof_instances.append(oneof_instance)
+                    if model_arg is not None:
+                        oneof_instance = oneof_class(model_arg, **constant_kwargs)
+                        if not oneof_instance._unparsed:
+                            oneof_instances.append(oneof_instance)
                 elif oneof_class in PRIMITIVE_TYPES:
                     oneof_instance = validate_and_convert_types(
                         model_arg,
