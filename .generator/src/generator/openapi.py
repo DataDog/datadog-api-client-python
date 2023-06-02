@@ -329,7 +329,7 @@ def get_oneof_references_for_model(model, model_name, seen=None):
             type_ = schema.get("type", "object")
 
             oneof_name = formatter.get_name(schema)
-            if type_ == "object" or oneof_formatter.is_list_model_whitelisted(name):
+            if type_ == "object" or formatter.is_list_model_whitelisted(oneof_name):
                 result[oneof_name] = None
             elif type_ == "array":
                 sub_name = formatter.get_name(schema["items"])
