@@ -342,11 +342,20 @@ def get_references_for_model(model, model_name):
                 if name:
                     result[name] = None
         elif definition.get("type") == "array":
-            name = formatter.get_name(definition.get("items"))
-            if name and find_non_primitive_type(definition["items"]):
+            name = formatter.get_name(definition)
+            if name == "Point":
+                import pdb; pdb.set_trace()
+            if name and name in WHITELISTED_LIST_MODELS[API_VERSION]:
                 result[name] = None
-            elif formatter.get_name(definition) and definition["items"].get("type") not in PRIMITIVE_TYPES:
-                result[formatter.get_name(definition) + "Item"] = None
+            else:
+                name = formatter.get_name(definition.get("items"))
+                
+                if name and find_non_primitive_type(definition["items"]):
+                    result[name] = None
+                elif name and name in WHITELISTED_LIST_MODELS[API_VERSION]:
+                    result[name] = None
+                elif formatter.get_name(definition) and definition["items"].get("type") not in PRIMITIVE_TYPES:
+                    result[formatter.get_name(definition) + "Item"] = None
 
         elif definition.get("properties") and top_name:
             result[top_name + formatter.camel_case(key)] = None

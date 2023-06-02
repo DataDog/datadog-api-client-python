@@ -15,6 +15,8 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v1.model.notify_end_states import NotifyEndStates
+    from datadog_api_client.v1.model.notify_end_types import NotifyEndTypes
     from datadog_api_client.v1.model.downtime_recurrence import DowntimeRecurrence
 
 
@@ -34,6 +36,8 @@ class DowntimeChild(ModelNormal):
 
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v1.model.notify_end_states import NotifyEndStates
+        from datadog_api_client.v1.model.notify_end_types import NotifyEndTypes
         from datadog_api_client.v1.model.downtime_recurrence import DowntimeRecurrence
 
         return {

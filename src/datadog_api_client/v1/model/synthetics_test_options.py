@@ -18,6 +18,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.synthetics_device_id import SyntheticsDeviceID
     from datadog_api_client.v1.model.synthetics_test_options_http_version import SyntheticsTestOptionsHTTPVersion
     from datadog_api_client.v1.model.synthetics_test_options_monitor_options import SyntheticsTestOptionsMonitorOptions
+    from datadog_api_client.v1.model.synthetics_restricted_roles import SyntheticsRestrictedRoles
     from datadog_api_client.v1.model.synthetics_test_options_retry import SyntheticsTestOptionsRetry
     from datadog_api_client.v1.model.synthetics_browser_test_rum_settings import SyntheticsBrowserTestRumSettings
     from datadog_api_client.v1.model.synthetics_test_options_scheduling import SyntheticsTestOptionsScheduling
@@ -43,6 +44,7 @@ class SyntheticsTestOptions(ModelNormal):
         from datadog_api_client.v1.model.synthetics_test_options_monitor_options import (
             SyntheticsTestOptionsMonitorOptions,
         )
+        from datadog_api_client.v1.model.synthetics_restricted_roles import SyntheticsRestrictedRoles
         from datadog_api_client.v1.model.synthetics_test_options_retry import SyntheticsTestOptionsRetry
         from datadog_api_client.v1.model.synthetics_browser_test_rum_settings import SyntheticsBrowserTestRumSettings
         from datadog_api_client.v1.model.synthetics_test_options_scheduling import SyntheticsTestOptionsScheduling

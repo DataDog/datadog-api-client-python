@@ -12,12 +12,14 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    pass
+    from datadog_api_client.v1.model.dashboard_bulk_action_data_list import DashboardBulkActionDataList
 
 
 class DashboardBulkDeleteRequest(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v1.model.dashboard_bulk_action_data_list import DashboardBulkActionDataList
+
         return {
             "data": (DashboardBulkActionDataList,),
         }

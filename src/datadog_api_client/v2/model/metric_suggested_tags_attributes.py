@@ -14,12 +14,14 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    pass
+    from datadog_api_client.v2.model.metric_suggested_aggregations import MetricSuggestedAggregations
 
 
 class MetricSuggestedTagsAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.metric_suggested_aggregations import MetricSuggestedAggregations
+
         return {
             "active_aggregations": (MetricSuggestedAggregations,),
             "active_tags": ([str],),

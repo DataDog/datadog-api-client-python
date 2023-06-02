@@ -18,6 +18,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.security_monitoring_signal_archive_reason import (
         SecurityMonitoringSignalArchiveReason,
     )
+    from datadog_api_client.v2.model.security_monitoring_signal_incident_ids import SecurityMonitoringSignalIncidentIds
     from datadog_api_client.v2.model.security_monitoring_signal_state import SecurityMonitoringSignalState
 
 
@@ -36,6 +37,9 @@ class SecurityMonitoringSignalTriageAttributes(ModelNormal):
         from datadog_api_client.v2.model.security_monitoring_triage_user import SecurityMonitoringTriageUser
         from datadog_api_client.v2.model.security_monitoring_signal_archive_reason import (
             SecurityMonitoringSignalArchiveReason,
+        )
+        from datadog_api_client.v2.model.security_monitoring_signal_incident_ids import (
+            SecurityMonitoringSignalIncidentIds,
         )
         from datadog_api_client.v2.model.security_monitoring_signal_state import SecurityMonitoringSignalState
 

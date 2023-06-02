@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Any, Dict, Union
+from typing import Any, Dict, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -16,9 +16,15 @@ from datadog_api_client.model_utils import (
 )
 
 
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.tags_event_attribute import TagsEventAttribute
+
+
 class CIAppEventAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.tags_event_attribute import TagsEventAttribute
+
         return {
             "attributes": (
                 {

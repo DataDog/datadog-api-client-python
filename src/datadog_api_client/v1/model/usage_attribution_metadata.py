@@ -14,12 +14,14 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v1.model.usage_attribution_aggregates import UsageAttributionAggregates
     from datadog_api_client.v1.model.usage_attribution_pagination import UsageAttributionPagination
 
 
 class UsageAttributionMetadata(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v1.model.usage_attribution_aggregates import UsageAttributionAggregates
         from datadog_api_client.v1.model.usage_attribution_pagination import UsageAttributionPagination
 
         return {

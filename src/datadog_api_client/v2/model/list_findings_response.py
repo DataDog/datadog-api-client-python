@@ -12,12 +12,14 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.list_findings_data import ListFindingsData
     from datadog_api_client.v2.model.list_findings_meta import ListFindingsMeta
 
 
 class ListFindingsResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.list_findings_data import ListFindingsData
         from datadog_api_client.v2.model.list_findings_meta import ListFindingsMeta
 
         return {

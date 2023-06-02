@@ -17,6 +17,9 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.sensitive_data_scanner_get_config_response_data import (
         SensitiveDataScannerGetConfigResponseData,
     )
+    from datadog_api_client.v2.model.sensitive_data_scanner_get_config_included_array import (
+        SensitiveDataScannerGetConfigIncludedArray,
+    )
     from datadog_api_client.v2.model.sensitive_data_scanner_meta import SensitiveDataScannerMeta
 
 
@@ -25,6 +28,9 @@ class SensitiveDataScannerGetConfigResponse(ModelNormal):
     def openapi_types(_):
         from datadog_api_client.v2.model.sensitive_data_scanner_get_config_response_data import (
             SensitiveDataScannerGetConfigResponseData,
+        )
+        from datadog_api_client.v2.model.sensitive_data_scanner_get_config_included_array import (
+            SensitiveDataScannerGetConfigIncludedArray,
         )
         from datadog_api_client.v2.model.sensitive_data_scanner_meta import SensitiveDataScannerMeta
 

@@ -16,6 +16,7 @@ from datadog_api_client.model_utils import (
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.events_compute import EventsCompute
     from datadog_api_client.v2.model.events_data_source import EventsDataSource
+    from datadog_api_client.v2.model.events_query_group_bys import EventsQueryGroupBys
     from datadog_api_client.v2.model.events_search import EventsSearch
 
 
@@ -24,6 +25,7 @@ class EventsScalarQuery(ModelNormal):
     def openapi_types(_):
         from datadog_api_client.v2.model.events_compute import EventsCompute
         from datadog_api_client.v2.model.events_data_source import EventsDataSource
+        from datadog_api_client.v2.model.events_query_group_bys import EventsQueryGroupBys
         from datadog_api_client.v2.model.events_search import EventsSearch
 
         return {

@@ -14,12 +14,18 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    pass
+    from datadog_api_client.v2.model.sensitive_data_scanner_standard_patterns_response import (
+        SensitiveDataScannerStandardPatternsResponse,
+    )
 
 
 class SensitiveDataScannerStandardPatternsResponseData(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.sensitive_data_scanner_standard_patterns_response import (
+            SensitiveDataScannerStandardPatternsResponse,
+        )
+
         return {
             "data": (SensitiveDataScannerStandardPatternsResponse,),
         }

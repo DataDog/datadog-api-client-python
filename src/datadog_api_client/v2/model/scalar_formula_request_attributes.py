@@ -15,12 +15,14 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.query_formula import QueryFormula
+    from datadog_api_client.v2.model.scalar_formula_request_queries import ScalarFormulaRequestQueries
 
 
 class ScalarFormulaRequestAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.query_formula import QueryFormula
+        from datadog_api_client.v2.model.scalar_formula_request_queries import ScalarFormulaRequestQueries
 
         return {
             "formulas": ([QueryFormula],),

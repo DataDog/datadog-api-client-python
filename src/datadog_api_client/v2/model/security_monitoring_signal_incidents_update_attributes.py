@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -13,9 +13,17 @@ from datadog_api_client.model_utils import (
 )
 
 
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.security_monitoring_signal_incident_ids import SecurityMonitoringSignalIncidentIds
+
+
 class SecurityMonitoringSignalIncidentsUpdateAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.security_monitoring_signal_incident_ids import (
+            SecurityMonitoringSignalIncidentIds,
+        )
+
         return {
             "incident_ids": (SecurityMonitoringSignalIncidentIds,),
             "version": (int,),

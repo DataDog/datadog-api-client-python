@@ -15,12 +15,14 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    pass
+    from datadog_api_client.v2.model.incident_todo_assignee_array import IncidentTodoAssigneeArray
 
 
 class IncidentTodoAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.incident_todo_assignee_array import IncidentTodoAssigneeArray
+
         return {
             "assignees": (IncidentTodoAssigneeArray,),
             "completed": (str, none_type),

@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, Union
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -14,9 +14,15 @@ from datadog_api_client.model_utils import (
 )
 
 
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.point import Point
+
+
 class Series(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v1.model.point import Point
+
         return {
             "host": (str,),
             "interval": (int, none_type),

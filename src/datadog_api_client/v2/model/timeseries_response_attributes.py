@@ -14,12 +14,18 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    pass
+    from datadog_api_client.v2.model.timeseries_response_series_list import TimeseriesResponseSeriesList
+    from datadog_api_client.v2.model.timeseries_response_times import TimeseriesResponseTimes
+    from datadog_api_client.v2.model.timeseries_response_values_list import TimeseriesResponseValuesList
 
 
 class TimeseriesResponseAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.timeseries_response_series_list import TimeseriesResponseSeriesList
+        from datadog_api_client.v2.model.timeseries_response_times import TimeseriesResponseTimes
+        from datadog_api_client.v2.model.timeseries_response_values_list import TimeseriesResponseValuesList
+
         return {
             "series": (TimeseriesResponseSeriesList,),
             "times": (TimeseriesResponseTimes,),

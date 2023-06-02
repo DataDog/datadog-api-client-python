@@ -15,6 +15,7 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v1.model.point import Point
     from datadog_api_client.v1.model.metrics_query_unit import MetricsQueryUnit
 
 
@@ -28,6 +29,7 @@ class MetricsQueryMetadata(ModelNormal):
 
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v1.model.point import Point
         from datadog_api_client.v1.model.metrics_query_unit import MetricsQueryUnit
 
         return {

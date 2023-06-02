@@ -15,6 +15,7 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.group_tags import GroupTags
     from datadog_api_client.v2.model.unit import Unit
 
 
@@ -27,6 +28,7 @@ class TimeseriesResponseSeries(ModelNormal):
 
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.group_tags import GroupTags
         from datadog_api_client.v2.model.unit import Unit
 
         return {

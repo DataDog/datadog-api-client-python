@@ -18,6 +18,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.finding_mute import FindingMute
     from datadog_api_client.v2.model.finding_rule import FindingRule
     from datadog_api_client.v2.model.finding_status import FindingStatus
+    from datadog_api_client.v2.model.finding_tags import FindingTags
 
 
 class FindingAttributes(ModelNormal):
@@ -36,6 +37,7 @@ class FindingAttributes(ModelNormal):
         from datadog_api_client.v2.model.finding_mute import FindingMute
         from datadog_api_client.v2.model.finding_rule import FindingRule
         from datadog_api_client.v2.model.finding_status import FindingStatus
+        from datadog_api_client.v2.model.finding_tags import FindingTags
 
         return {
             "evaluation": (FindingEvaluation,),
