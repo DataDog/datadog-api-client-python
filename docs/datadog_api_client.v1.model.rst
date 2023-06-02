@@ -2493,24 +2493,10 @@ notify\_end\_state
    :members:
    :show-inheritance:
 
-notify\_end\_states
--------------------
-
-.. automodule:: datadog_api_client.v1.model.notify_end_states
-   :members:
-   :show-inheritance:
-
 notify\_end\_type
 -----------------
 
 .. automodule:: datadog_api_client.v1.model.notify_end_type
-   :members:
-   :show-inheritance:
-
-notify\_end\_types
-------------------
-
-.. automodule:: datadog_api_client.v1.model.notify_end_types
    :members:
    :show-inheritance:
 
