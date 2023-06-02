@@ -225,7 +225,7 @@ def child_models(schema, alternative_name=None, seen=None, in_list=False):
 
     has_sub_models = False
     if "oneOf" in schema:
-        has_sub_models = not in_list
+        has_sub_models = not in_list and not name in WHITELISTED_LIST_MODELS[API_VERSION]
         for child in schema["oneOf"]:
             sub_models = list(child_models(child, seen=seen))
             if sub_models:
@@ -235,7 +235,12 @@ def child_models(schema, alternative_name=None, seen=None, in_list=False):
             return
 
     if "items" in schema:
-        yield from child_models(schema["items"], alternative_name=name + "Item" if name is not None else None, seen=seen, in_list=True)
+        if name in WHITELISTED_LIST_MODELS[API_VERSION]:
+            alt_name = None
+        else:
+            alt_name = name + "Item" if name is not None else None
+
+        yield from child_models(schema["items"], alternative_name=alt_name, seen=seen, in_list=True)
 
     if schema.get("type") == "object" or "properties" in schema or has_sub_models:
         if not has_sub_models and name is None:

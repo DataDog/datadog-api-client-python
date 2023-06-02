@@ -73,7 +73,6 @@ from datadog_api_client.v1.model.delete_shared_dashboard_response import DeleteS
 from datadog_api_client.v1.model.deleted_monitor import DeletedMonitor
 from datadog_api_client.v1.model.distribution_point import DistributionPoint
 from datadog_api_client.v1.model.distribution_point_data import DistributionPointData
-from datadog_api_client.v1.model.distribution_point_item import DistributionPointItem
 from datadog_api_client.v1.model.distribution_points_content_encoding import DistributionPointsContentEncoding
 from datadog_api_client.v1.model.distribution_points_payload import DistributionPointsPayload
 from datadog_api_client.v1.model.distribution_points_series import DistributionPointsSeries
@@ -340,7 +339,6 @@ from datadog_api_client.v1.model.monitor_options_scheduling_options_evaluation_w
 from datadog_api_client.v1.model.monitor_overall_states import MonitorOverallStates
 from datadog_api_client.v1.model.monitor_renotify_status_type import MonitorRenotifyStatusType
 from datadog_api_client.v1.model.monitor_search_count import MonitorSearchCount
-from datadog_api_client.v1.model.monitor_search_count_item import MonitorSearchCountItem
 from datadog_api_client.v1.model.monitor_search_response import MonitorSearchResponse
 from datadog_api_client.v1.model.monitor_search_response_counts import MonitorSearchResponseCounts
 from datadog_api_client.v1.model.monitor_search_response_metadata import MonitorSearchResponseMetadata

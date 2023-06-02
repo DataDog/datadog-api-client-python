@@ -526,13 +526,6 @@ distribution\_point\_data
    :members:
    :show-inheritance:
 
-distribution\_point\_item
--------------------------
-
-.. automodule:: datadog_api_client.v1.model.distribution_point_item
-   :members:
-   :show-inheritance:
-
 distribution\_points\_content\_encoding
 ---------------------------------------
 
@@ -2056,13 +2049,6 @@ monitor\_search\_count
 ----------------------
 
 .. automodule:: datadog_api_client.v1.model.monitor_search_count
-   :members:
-   :show-inheritance:
-
-monitor\_search\_count\_item
-----------------------------
-
-.. automodule:: datadog_api_client.v1.model.monitor_search_count_item
    :members:
    :show-inheritance:
 
