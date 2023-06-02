@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -18,7 +18,6 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.finding_mute import FindingMute
     from datadog_api_client.v2.model.finding_rule import FindingRule
     from datadog_api_client.v2.model.finding_status import FindingStatus
-    from datadog_api_client.v2.model.finding_tags import FindingTags
 
 
 class FindingAttributes(ModelNormal):
@@ -37,7 +36,6 @@ class FindingAttributes(ModelNormal):
         from datadog_api_client.v2.model.finding_mute import FindingMute
         from datadog_api_client.v2.model.finding_rule import FindingRule
         from datadog_api_client.v2.model.finding_status import FindingStatus
-        from datadog_api_client.v2.model.finding_tags import FindingTags
 
         return {
             "evaluation": (FindingEvaluation,),
@@ -48,7 +46,7 @@ class FindingAttributes(ModelNormal):
             "resource_type": (str,),
             "rule": (FindingRule,),
             "status": (FindingStatus,),
-            "tags": (FindingTags,),
+            "tags": ([str],),
         }
 
     attribute_map = {
@@ -73,7 +71,7 @@ class FindingAttributes(ModelNormal):
         resource_type: Union[str, UnsetType] = unset,
         rule: Union[FindingRule, UnsetType] = unset,
         status: Union[FindingStatus, UnsetType] = unset,
-        tags: Union[FindingTags, UnsetType] = unset,
+        tags: Union[List[str], UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -104,7 +102,7 @@ class FindingAttributes(ModelNormal):
         :type status: FindingStatus, optional
 
         :param tags: The tags associated with this finding.
-        :type tags: FindingTags, optional
+        :type tags: [str], optional
         """
         if evaluation is not unset:
             kwargs["evaluation"] = evaluation

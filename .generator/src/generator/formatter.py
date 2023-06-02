@@ -42,11 +42,9 @@ WHITELISTED_LIST_MODELS={
     "v2": (
         "CIAppAggregateBucketValueTimeseries",
         "EventsQueryGroupBys",
-        "FindingTags",
         "GroupTags",
         "HTTPLog",
         "IncidentTodoAssigneeArray",
-        "ListFindingsData",
         "LogsAggregateBucketValueTimeseries",
         "MetricBulkTagConfigEmailList",
         "MetricBulkTagConfigTagNameList",

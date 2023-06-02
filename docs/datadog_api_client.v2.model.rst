@@ -1555,13 +1555,6 @@ finding\_status
    :members:
    :show-inheritance:
 
-finding\_tags
--------------
-
-.. automodule:: datadog_api_client.v2.model.finding_tags
-   :members:
-   :show-inheritance:
-
 finding\_type
 -------------
 
@@ -2679,13 +2672,6 @@ list\_application\_keys\_response
 ---------------------------------
 
 .. automodule:: datadog_api_client.v2.model.list_application_keys_response
-   :members:
-   :show-inheritance:
-
-list\_findings\_data
---------------------
-
-.. automodule:: datadog_api_client.v2.model.list_findings_data
    :members:
    :show-inheritance:
 
