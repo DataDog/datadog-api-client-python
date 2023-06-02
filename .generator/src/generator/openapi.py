@@ -25,8 +25,6 @@ WHITELISTED_LIST_MODELS={
         "HTTPLog",
         "LogsPipelineList",
         "MonitorSearchCount",
-        "NotifyEndStates",
-        "NotifyEndTypes",
         "Point",
         "ServiceChecks",
         "SharedDashboardInvitesDataList",
