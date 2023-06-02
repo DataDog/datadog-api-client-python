@@ -10,61 +10,8 @@ from yaml import CSafeLoader
 
 from . import formatter
 
-API_VERSION = None
 
 PRIMITIVE_TYPES = ["string", "number", "boolean", "integer"]
-
-WHITELISTED_LIST_MODELS={
-    "v1": (
-        "AgentCheck",
-        "AzureAccountListResponse",
-        "DashboardBulkActionDataList",
-        "DistributionPoint",
-        "DistributionPointData",
-        "GCPAccountListResponse",
-        "HTTPLog",
-        "LogsPipelineList",
-        "MonitorSearchCount",
-        "Point",
-        "ServiceChecks",
-        "SharedDashboardInvitesDataList",
-        "SlackIntegrationChannels",
-        "SyntheticsRestrictedRoles",
-        "UsageAttributionAggregates",
-    ),
-    "v2": (
-        "CIAppAggregateBucketValueTimeseries",
-        "EventsQueryGroupBys",
-        "FindingTags",
-        "GroupTags",
-        "HTTPLog",
-        "IncidentTodoAssigneeArray",
-        "ListFindingsData",
-        "LogsAggregateBucketValueTimeseries",
-        "MetricBulkTagConfigEmailList",
-        "MetricBulkTagConfigTagNameList",
-        "MetricCustomAggregations",
-        "MetricSuggestedAggregations",
-        "RUMAggregateBucketValueTimeseries",
-        "ScalarFormulaRequestQueries",
-        "SecurityMonitoringSignalIncidentIds",
-        "SensitiveDataScannerGetConfigIncludedArray",
-        "SensitiveDataScannerStandardPatternsResponse",
-        "TagsEventAttribute",
-        "TeamPermissionSettingValues",
-        "TimeseriesFormulaRequestQueries",
-        "TimeseriesResponseSeriesList",
-        "TimeseriesResponseTimes",
-        "TimeseriesResponseValues",
-        "TimeseriesResponseValuesList",
-
-    ),
-}
-
-
-def set_api_version(version):
-    global API_VERSION
-    API_VERSION = version
 
 
 def load(filename):
@@ -127,10 +74,10 @@ def type_to_python(schema, alternative_name=None, in_list=False, typing=False):
 
     name = formatter.get_name(schema)
     # TODO: double check
-    if name and ("items" not in schema or name in WHITELISTED_LIST_MODELS[API_VERSION]):
+    if name and "items" not in schema or formatter.is_list_model_whitelisted(name):
         if "enum" in schema:
             return name
-        if schema.get("type", "object") == "object" or name in WHITELISTED_LIST_MODELS[API_VERSION]:
+        if schema.get("type", "object") == "object" or formatter.is_list_model_whitelisted(name):
             if typing and "oneOf" in schema:
                 types = [name]
                 types.extend(get_oneof_types(schema, typing=typing))
@@ -223,7 +170,7 @@ def child_models(schema, alternative_name=None, seen=None, in_list=False):
 
     has_sub_models = False
     if "oneOf" in schema:
-        has_sub_models = not in_list and not name in WHITELISTED_LIST_MODELS[API_VERSION]
+        has_sub_models = not in_list and not formatter.is_list_model_whitelisted(name)
         for child in schema["oneOf"]:
             sub_models = list(child_models(child, seen=seen))
             if sub_models:
@@ -233,7 +180,7 @@ def child_models(schema, alternative_name=None, seen=None, in_list=False):
             return
 
     if "items" in schema:
-        if name in WHITELISTED_LIST_MODELS[API_VERSION]:
+        if formatter.is_list_model_whitelisted(name):
             alt_name = None
         else:
             alt_name = name + "Item" if name is not None else None
@@ -266,7 +213,7 @@ def child_models(schema, alternative_name=None, seen=None, in_list=False):
         if name in seen:
             return
 
-        if name in WHITELISTED_LIST_MODELS[API_VERSION]:
+        if formatter.is_list_model_whitelisted(name):
             seen.add(name)
             yield name, schema
 
@@ -341,13 +288,13 @@ def get_references_for_model(model, model_name):
                     result[name] = None
         elif definition.get("type") == "array":
             name = formatter.get_name(definition)
-            if name and name in WHITELISTED_LIST_MODELS[API_VERSION]:
+            if name and formatter.is_list_model_whitelisted(name):
                 result[name] = None
             else:
                 name = formatter.get_name(definition.get("items"))
                 if name and find_non_primitive_type(definition["items"]):
                     result[name] = None
-                elif name and name in WHITELISTED_LIST_MODELS[API_VERSION]:
+                elif name and formatter.is_list_model_whitelisted(name):
                     result[name] = None
                 elif formatter.get_name(definition) and definition["items"].get("type") not in PRIMITIVE_TYPES:
                     result[formatter.get_name(definition) + "Item"] = None
@@ -382,7 +329,7 @@ def get_oneof_references_for_model(model, model_name, seen=None):
             type_ = schema.get("type", "object")
 
             oneof_name = formatter.get_name(schema)
-            if type_ == "object" or oneof_name in WHITELISTED_LIST_MODELS[API_VERSION]:
+            if type_ == "object" or oneof_formatter.is_list_model_whitelisted(name):
                 result[oneof_name] = None
             elif type_ == "array":
                 sub_name = formatter.get_name(schema["items"])
@@ -414,7 +361,7 @@ def get_oneof_types(model, typing=False):
     for schema in model["oneOf"]:
         type_ = schema.get("type", "object")
         name = formatter.get_name(schema)
-        if type_ == "object" or formatter.get_name(schema) in WHITELISTED_LIST_MODELS[API_VERSION]:
+        if type_ == "object" or formatter.is_list_model_whitelisted(name):
             yield name
         elif type_ == "array":
             name = formatter.get_name(schema["items"])
@@ -440,7 +387,7 @@ def get_oneof_models(model):
     for schema in model["oneOf"]:
         type_ = schema.get("type", "object")
         name = formatter.get_name(schema)
-        if type_ == "object" or name in WHITELISTED_LIST_MODELS[API_VERSION]:
+        if type_ == "object" or formatter.is_list_model_whitelisted(name):
             result.append(name)
         elif type_ == "array":
             name = formatter.get_name(schema["items"])

@@ -90,7 +90,7 @@ def cli(specs, output):
 
         version = spec_path.parent.name
         env.globals["version"] = version
-        openapi.set_api_version(version)
+        formatter.set_api_version(version)
 
         all_specs[version] = spec
 
