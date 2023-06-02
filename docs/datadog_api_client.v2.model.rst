@@ -393,13 +393,6 @@ ci\_app\_aggregate\_bucket\_value
    :members:
    :show-inheritance:
 
-ci\_app\_aggregate\_bucket\_value\_timeseries
----------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.ci_app_aggregate_bucket_value_timeseries
-   :members:
-   :show-inheritance:
-
 ci\_app\_aggregate\_bucket\_value\_timeseries\_point
 ----------------------------------------------------
 
@@ -1303,13 +1296,6 @@ events\_query\_filter
    :members:
    :show-inheritance:
 
-events\_query\_group\_bys
--------------------------
-
-.. automodule:: datadog_api_client.v2.model.events_query_group_bys
-   :members:
-   :show-inheritance:
-
 events\_query\_options
 ----------------------
 
@@ -1555,13 +1541,6 @@ finding\_status
    :members:
    :show-inheritance:
 
-finding\_tags
--------------
-
-.. automodule:: datadog_api_client.v2.model.finding_tags
-   :members:
-   :show-inheritance:
-
 finding\_type
 -------------
 
@@ -1723,13 +1702,6 @@ group\_scalar\_column
    :members:
    :show-inheritance:
 
-group\_tags
------------
-
-.. automodule:: datadog_api_client.v2.model.group_tags
-   :members:
-   :show-inheritance:
-
 hourly\_usage
 -------------
 
@@ -1776,13 +1748,6 @@ hourly\_usage\_type
 -------------------
 
 .. automodule:: datadog_api_client.v2.model.hourly_usage_type
-   :members:
-   :show-inheritance:
-
-http\_log
----------
-
-.. automodule:: datadog_api_client.v2.model.http_log
    :members:
    :show-inheritance:
 
@@ -2472,13 +2437,6 @@ incident\_todo\_assignee
    :members:
    :show-inheritance:
 
-incident\_todo\_assignee\_array
--------------------------------
-
-.. automodule:: datadog_api_client.v2.model.incident_todo_assignee_array
-   :members:
-   :show-inheritance:
-
 incident\_todo\_attributes
 --------------------------
 
@@ -2682,13 +2640,6 @@ list\_application\_keys\_response
    :members:
    :show-inheritance:
 
-list\_findings\_data
---------------------
-
-.. automodule:: datadog_api_client.v2.model.list_findings_data
-   :members:
-   :show-inheritance:
-
 list\_findings\_meta
 --------------------
 
@@ -2756,13 +2707,6 @@ logs\_aggregate\_bucket\_value
 ------------------------------
 
 .. automodule:: datadog_api_client.v2.model.logs_aggregate_bucket_value
-   :members:
-   :show-inheritance:
-
-logs\_aggregate\_bucket\_value\_timeseries
-------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.logs_aggregate_bucket_value_timeseries
    :members:
    :show-inheritance:
 
@@ -3340,13 +3284,6 @@ metric\_bulk\_tag\_config\_delete\_request
    :members:
    :show-inheritance:
 
-metric\_bulk\_tag\_config\_email\_list
---------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.metric_bulk_tag_config_email_list
-   :members:
-   :show-inheritance:
-
 metric\_bulk\_tag\_config\_response
 -----------------------------------
 
@@ -3368,13 +3305,6 @@ metric\_bulk\_tag\_config\_status\_attributes
    :members:
    :show-inheritance:
 
-metric\_bulk\_tag\_config\_tag\_name\_list
-------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.metric_bulk_tag_config_tag_name_list
-   :members:
-   :show-inheritance:
-
 metric\_content\_encoding
 -------------------------
 
@@ -3386,13 +3316,6 @@ metric\_custom\_aggregation
 ---------------------------
 
 .. automodule:: datadog_api_client.v2.model.metric_custom_aggregation
-   :members:
-   :show-inheritance:
-
-metric\_custom\_aggregations
-----------------------------
-
-.. automodule:: datadog_api_client.v2.model.metric_custom_aggregations
    :members:
    :show-inheritance:
 
@@ -3533,13 +3456,6 @@ metric\_series
 --------------
 
 .. automodule:: datadog_api_client.v2.model.metric_series
-   :members:
-   :show-inheritance:
-
-metric\_suggested\_aggregations
--------------------------------
-
-.. automodule:: datadog_api_client.v2.model.metric_suggested_aggregations
    :members:
    :show-inheritance:
 
@@ -4474,13 +4390,6 @@ rum\_aggregate\_bucket\_value
    :members:
    :show-inheritance:
 
-rum\_aggregate\_bucket\_value\_timeseries
------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.rum_aggregate_bucket_value_timeseries
-   :members:
-   :show-inheritance:
-
 rum\_aggregate\_bucket\_value\_timeseries\_point
 ------------------------------------------------
 
@@ -4852,13 +4761,6 @@ scalar\_formula\_request\_attributes
    :members:
    :show-inheritance:
 
-scalar\_formula\_request\_queries
----------------------------------
-
-.. automodule:: datadog_api_client.v2.model.scalar_formula_request_queries
-   :members:
-   :show-inheritance:
-
 scalar\_formula\_request\_type
 ------------------------------
 
@@ -5223,13 +5125,6 @@ security\_monitoring\_signal\_attributes
    :members:
    :show-inheritance:
 
-security\_monitoring\_signal\_incident\_ids
--------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.security_monitoring_signal_incident_ids
-   :members:
-   :show-inheritance:
-
 security\_monitoring\_signal\_incidents\_update\_attributes
 -----------------------------------------------------------
 
@@ -5479,13 +5374,6 @@ sensitive\_data\_scanner\_filter
 --------------------------------
 
 .. automodule:: datadog_api_client.v2.model.sensitive_data_scanner_filter
-   :members:
-   :show-inheritance:
-
-sensitive\_data\_scanner\_get\_config\_included\_array
-------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.sensitive_data_scanner_get_config_included_array
    :members:
    :show-inheritance:
 
@@ -5780,13 +5668,6 @@ sensitive\_data\_scanner\_standard\_pattern\_type
 -------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.sensitive_data_scanner_standard_pattern_type
-   :members:
-   :show-inheritance:
-
-sensitive\_data\_scanner\_standard\_patterns\_response
-------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.sensitive_data_scanner_standard_patterns_response
    :members:
    :show-inheritance:
 
@@ -6301,13 +6182,6 @@ spans\_metrics\_response
    :members:
    :show-inheritance:
 
-tags\_event\_attribute
-----------------------
-
-.. automodule:: datadog_api_client.v2.model.tags_event_attribute
-   :members:
-   :show-inheritance:
-
 team
 ----
 
@@ -6476,13 +6350,6 @@ team\_permission\_setting\_value
    :members:
    :show-inheritance:
 
-team\_permission\_setting\_values
----------------------------------
-
-.. automodule:: datadog_api_client.v2.model.team_permission_setting_values
-   :members:
-   :show-inheritance:
-
 team\_permission\_settings\_response
 ------------------------------------
 
@@ -6574,13 +6441,6 @@ timeseries\_formula\_request\_attributes
    :members:
    :show-inheritance:
 
-timeseries\_formula\_request\_queries
--------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.timeseries_formula_request_queries
-   :members:
-   :show-inheritance:
-
 timeseries\_formula\_request\_type
 ----------------------------------
 
@@ -6620,34 +6480,6 @@ timeseries\_response\_series
 ----------------------------
 
 .. automodule:: datadog_api_client.v2.model.timeseries_response_series
-   :members:
-   :show-inheritance:
-
-timeseries\_response\_series\_list
-----------------------------------
-
-.. automodule:: datadog_api_client.v2.model.timeseries_response_series_list
-   :members:
-   :show-inheritance:
-
-timeseries\_response\_times
----------------------------
-
-.. automodule:: datadog_api_client.v2.model.timeseries_response_times
-   :members:
-   :show-inheritance:
-
-timeseries\_response\_values
-----------------------------
-
-.. automodule:: datadog_api_client.v2.model.timeseries_response_values
-   :members:
-   :show-inheritance:
-
-timeseries\_response\_values\_list
-----------------------------------
-
-.. automodule:: datadog_api_client.v2.model.timeseries_response_values_list
    :members:
    :show-inheritance:
 
