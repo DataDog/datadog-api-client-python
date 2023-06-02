@@ -94,7 +94,7 @@ def cli(specs, output):
 
         apis = openapi.apis(spec)
         all_apis[version] = apis
-        models = openapi.models(spec)
+        models = openapi.models(version, spec)
 
         package = top_package / version
         package.mkdir(exist_ok=True)

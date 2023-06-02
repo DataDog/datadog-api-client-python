@@ -12,6 +12,54 @@ from . import formatter
 
 PRIMITIVE_TYPES = ["string", "number", "boolean", "integer"]
 
+WHITELISTED_LIST_MODELS={
+    "v1": (
+        "AgentCheck",
+        "AzureAccountListResponse",
+        "DashboardBulkActionDataList",
+        "DistributionPoint",
+        "DistributionPointData",
+        "GCPAccountListResponse",
+        "HTTPLog",
+        "LogsPipelineList",
+        "MonitorSearchCount",
+        "NotifyEndStates",
+        "NotifyEndTypes",
+        "Point",
+        "ServiceChecks",
+        "SharedDashboardInvitesDataList",
+        "SlackIntegrationChannels",
+        "SyntheticsRestrictedRoles",
+        "UsageAttributionAggregates",
+    ),
+    "v2": (
+        "CIAppAggregateBucketValueTimeseries",
+        "EventsQueryGroupBys",
+        "FindingTags",
+        "GroupTags",
+        "HTTPLog",
+        "IncidentTodoAssigneeArray",
+        "ListFindingsData",
+        "LogsAggregateBucketValueTimeseries",
+        "MetricBulkTagConfigEmailList",
+        "MetricBulkTagConfigTagNameList",
+        "MetricCustomAggregations",
+        "MetricSuggestedAggregations",
+        "RUMAggregateBucketValueTimeseries",
+        "ScalarFormulaRequestQueries",
+        "SecurityMonitoringSignalIncidentIds",
+        "SensitiveDataScannerGetConfigIncludedArray",
+        "SensitiveDataScannerStandardPatternsResponse",
+        "TagsEventAttribute",
+        "TeamPermissionSettingValues",
+        "TimeseriesFormulaRequestQueries",
+        "TimeseriesResponseSeriesList",
+        "TimeseriesResponseTimes",
+        "TimeseriesResponseValues",
+        "TimeseriesResponseValuesList",
+
+    ),
+}
 
 def load(filename):
     path = pathlib.Path(filename)
@@ -24,7 +72,6 @@ def type_to_python_helper(type_, schema, alternative_name=None, in_list=False, t
         if typing:
             return "Any"
         return "bool, date, datetime, dict, float, int, list, str, none_type"
-
     if type_ == "integer":
         return "int"
     elif type_ == "number":
@@ -161,7 +208,7 @@ def get_enum_default(model):
     return model["enum"][0] if len(model["enum"]) == 1 else model.get("default")
 
 
-def child_models(schema, alternative_name=None, seen=None, in_list=False):
+def child_models(api_version, schema, alternative_name=None, seen=None, in_list=False):
     seen = seen or set()
     current_name = formatter.get_name(schema)
     name = current_name or alternative_name
@@ -170,7 +217,7 @@ def child_models(schema, alternative_name=None, seen=None, in_list=False):
     if "oneOf" in schema:
         has_sub_models = not in_list
         for child in schema["oneOf"]:
-            sub_models = list(child_models(child, seen=seen))
+            sub_models = list(child_models(api_version, child, seen=seen))
             if sub_models:
                 has_sub_models = True
                 yield from sub_models
@@ -178,7 +225,7 @@ def child_models(schema, alternative_name=None, seen=None, in_list=False):
             return
 
     if "items" in schema:
-        yield from child_models(schema["items"], alternative_name=name + "Item" if name is not None else None, seen=seen, in_list=True)
+        yield from child_models(api_version, schema["items"], alternative_name=name + "Item" if name is not None else None, seen=seen, in_list=True)
 
     if schema.get("type") == "object" or "properties" in schema or has_sub_models:
         if not has_sub_models and name is None:
@@ -200,7 +247,16 @@ def child_models(schema, alternative_name=None, seen=None, in_list=False):
             yield name, schema
 
         for key, child in schema.get("properties", {}).items():
-            yield from child_models(child, alternative_name=name + formatter.camel_case(key), seen=seen)
+            yield from child_models(api_version, child, alternative_name=name + formatter.camel_case(key), seen=seen)
+
+    if current_name and schema.get("type") == "array":
+        if name in seen:
+            return
+
+        if name in WHITELISTED_LIST_MODELS[api_version]:
+            seen.add(name)
+            yield name, schema
+
 
     if "enum" in schema:
         if name is None:
@@ -216,13 +272,14 @@ def child_models(schema, alternative_name=None, seen=None, in_list=False):
         nested_name = formatter.get_name(schema["additionalProperties"])
         if nested_name:
             yield from child_models(
+                api_version,
                 schema["additionalProperties"],
                 alternative_name=name,
                 seen=seen,
             )
 
 
-def models(spec):
+def models(api_version, spec):
     name_to_schema = {}
 
     for path in spec["paths"]:
@@ -231,16 +288,16 @@ def models(spec):
 
             for content in operation.get("parameters", []):
                 if "schema" in content:
-                    name_to_schema.update(dict(child_models(content["schema"])))
+                    name_to_schema.update(dict(child_models(api_version, content["schema"])))
 
             for content in operation.get("requestBody", {}).get("content", {}).values():
                 if "schema" in content:
-                    name_to_schema.update(dict(child_models(content["schema"])))
+                    name_to_schema.update(dict(child_models(api_version, content["schema"])))
 
             for response in operation.get("responses", {}).values():
                 for content in response.get("content", {}).values():
                     if "schema" in content:
-                        name_to_schema.update(dict(child_models(content["schema"])))
+                        name_to_schema.update(dict(child_models(api_version, content["schema"])))
 
     return name_to_schema
 
