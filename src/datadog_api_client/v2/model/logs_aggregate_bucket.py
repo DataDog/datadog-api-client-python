@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Any, Dict, List, Union, TYPE_CHECKING
+from typing import Any, Dict, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -18,9 +18,7 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.logs_aggregate_bucket_value import LogsAggregateBucketValue
-    from datadog_api_client.v2.model.logs_aggregate_bucket_value_timeseries_point import (
-        LogsAggregateBucketValueTimeseriesPoint,
-    )
+    from datadog_api_client.v2.model.logs_aggregate_bucket_value_timeseries import LogsAggregateBucketValueTimeseries
 
 
 class LogsAggregateBucket(ModelNormal):
@@ -56,8 +54,7 @@ class LogsAggregateBucket(ModelNormal):
         self_,
         by: Union[Dict[str, Any], UnsetType] = unset,
         computes: Union[
-            Dict[str, Union[LogsAggregateBucketValue, str, float, List[LogsAggregateBucketValueTimeseriesPoint]]],
-            UnsetType,
+            Dict[str, Union[LogsAggregateBucketValue, str, float, LogsAggregateBucketValueTimeseries]], UnsetType
         ] = unset,
         **kwargs,
     ):

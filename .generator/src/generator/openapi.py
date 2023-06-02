@@ -343,13 +343,10 @@ def get_references_for_model(model, model_name):
                     result[name] = None
         elif definition.get("type") == "array":
             name = formatter.get_name(definition)
-            if name == "Point":
-                import pdb; pdb.set_trace()
             if name and name in WHITELISTED_LIST_MODELS[API_VERSION]:
                 result[name] = None
             else:
                 name = formatter.get_name(definition.get("items"))
-                
                 if name and find_non_primitive_type(definition["items"]):
                     result[name] = None
                 elif name and name in WHITELISTED_LIST_MODELS[API_VERSION]:
@@ -385,8 +382,10 @@ def get_oneof_references_for_model(model, model_name, seen=None):
     if model.get("oneOf"):
         for schema in model["oneOf"]:
             type_ = schema.get("type", "object")
-            if type_ == "object":
-                result[formatter.get_name(schema)] = None
+
+            oneof_name = formatter.get_name(schema)
+            if type_ == "object" or oneof_name in WHITELISTED_LIST_MODELS[API_VERSION]:
+                result[oneof_name] = None
             elif type_ == "array":
                 sub_name = formatter.get_name(schema["items"])
                 if sub_name:
@@ -416,8 +415,9 @@ def get_oneof_parameters(model):
 def get_oneof_types(model, typing=False):
     for schema in model["oneOf"]:
         type_ = schema.get("type", "object")
-        if type_ == "object":
-            yield formatter.get_name(schema)
+        name = formatter.get_name(schema)
+        if type_ == "object" or formatter.get_name(schema) in WHITELISTED_LIST_MODELS[API_VERSION]:
+            yield name
         elif type_ == "array":
             name = formatter.get_name(schema["items"])
             if name:
@@ -441,8 +441,9 @@ def get_oneof_models(model):
     result = []
     for schema in model["oneOf"]:
         type_ = schema.get("type", "object")
-        if type_ == "object":
-            result.append(formatter.get_name(schema))
+        name = formatter.get_name(schema)
+        if type_ == "object" or name in WHITELISTED_LIST_MODELS[API_VERSION]:
+            result.append(name)
         elif type_ == "array":
             name = formatter.get_name(schema["items"])
             if name:
