@@ -14,13 +14,16 @@ from datadog_api_client.v1.model.synthetics_global_variable_parse_test_options_t
 )
 from datadog_api_client.v1.model.synthetics_global_variable_parser_type import SyntheticsGlobalVariableParserType
 from datadog_api_client.v1.model.synthetics_global_variable_value import SyntheticsGlobalVariableValue
+from datadog_api_client.v1.model.synthetics_restricted_roles import SyntheticsRestrictedRoles
 from datadog_api_client.v1.model.synthetics_variable_parser import SyntheticsVariableParser
 
 body = SyntheticsGlobalVariable(
     attributes=SyntheticsGlobalVariableAttributes(
-        restricted_roles=[
-            "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-        ],
+        restricted_roles=SyntheticsRestrictedRoles(
+            [
+                "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+            ]
+        ),
     ),
     description="Example description",
     name="MY_VARIABLE",

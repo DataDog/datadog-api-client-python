@@ -5,6 +5,7 @@ Update an incident todo returns "OK" response
 from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.incidents_api import IncidentsApi
+from datadog_api_client.v2.model.incident_todo_assignee_array import IncidentTodoAssigneeArray
 from datadog_api_client.v2.model.incident_todo_attributes import IncidentTodoAttributes
 from datadog_api_client.v2.model.incident_todo_patch_data import IncidentTodoPatchData
 from datadog_api_client.v2.model.incident_todo_patch_request import IncidentTodoPatchRequest
@@ -19,9 +20,11 @@ INCIDENT_TODO_DATA_ID = environ["INCIDENT_TODO_DATA_ID"]
 body = IncidentTodoPatchRequest(
     data=IncidentTodoPatchData(
         attributes=IncidentTodoAttributes(
-            assignees=[
-                "@test.user@test.com",
-            ],
+            assignees=IncidentTodoAssigneeArray(
+                [
+                    "@test.user@test.com",
+                ]
+            ),
             content="Restore lost data.",
             completed="2023-03-06T22:00:00.000000+00:00",
             due_date="2023-07-10T05:00:00.000000+00:00",

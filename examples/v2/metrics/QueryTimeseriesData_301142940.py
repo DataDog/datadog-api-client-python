@@ -12,6 +12,7 @@ from datadog_api_client.v2.model.query_sort_order import QuerySortOrder
 from datadog_api_client.v2.model.timeseries_formula_query_request import TimeseriesFormulaQueryRequest
 from datadog_api_client.v2.model.timeseries_formula_request import TimeseriesFormulaRequest
 from datadog_api_client.v2.model.timeseries_formula_request_attributes import TimeseriesFormulaRequestAttributes
+from datadog_api_client.v2.model.timeseries_formula_request_queries import TimeseriesFormulaRequestQueries
 from datadog_api_client.v2.model.timeseries_formula_request_type import TimeseriesFormulaRequestType
 
 body = TimeseriesFormulaQueryRequest(
@@ -28,13 +29,15 @@ body = TimeseriesFormulaQueryRequest(
             ],
             _from=1671612804000,
             interval=5000,
-            queries=[
-                MetricsTimeseriesQuery(
-                    data_source=MetricsDataSource.METRICS,
-                    query="avg:system.cpu.user{*}",
-                    name="a",
-                ),
-            ],
+            queries=TimeseriesFormulaRequestQueries(
+                [
+                    MetricsTimeseriesQuery(
+                        data_source=MetricsDataSource.METRICS,
+                        query="avg:system.cpu.user{*}",
+                        name="a",
+                    ),
+                ]
+            ),
             to=1671620004000,
         ),
         type=TimeseriesFormulaRequestType.TIMESERIES_REQUEST,

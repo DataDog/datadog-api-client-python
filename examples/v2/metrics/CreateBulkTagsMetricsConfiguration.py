@@ -9,6 +9,8 @@ from datadog_api_client.v2.model.metric_bulk_configure_tags_type import MetricBu
 from datadog_api_client.v2.model.metric_bulk_tag_config_create import MetricBulkTagConfigCreate
 from datadog_api_client.v2.model.metric_bulk_tag_config_create_attributes import MetricBulkTagConfigCreateAttributes
 from datadog_api_client.v2.model.metric_bulk_tag_config_create_request import MetricBulkTagConfigCreateRequest
+from datadog_api_client.v2.model.metric_bulk_tag_config_email_list import MetricBulkTagConfigEmailList
+from datadog_api_client.v2.model.metric_bulk_tag_config_tag_name_list import MetricBulkTagConfigTagNameList
 
 # there is a valid "user" in the system
 USER_DATA_ATTRIBUTES_EMAIL = environ["USER_DATA_ATTRIBUTES_EMAIL"]
@@ -16,13 +18,17 @@ USER_DATA_ATTRIBUTES_EMAIL = environ["USER_DATA_ATTRIBUTES_EMAIL"]
 body = MetricBulkTagConfigCreateRequest(
     data=MetricBulkTagConfigCreate(
         attributes=MetricBulkTagConfigCreateAttributes(
-            emails=[
-                USER_DATA_ATTRIBUTES_EMAIL,
-            ],
-            tags=[
-                "test",
-                "examplemetric",
-            ],
+            emails=MetricBulkTagConfigEmailList(
+                [
+                    USER_DATA_ATTRIBUTES_EMAIL,
+                ]
+            ),
+            tags=MetricBulkTagConfigTagNameList(
+                [
+                    "test",
+                    "examplemetric",
+                ]
+            ),
         ),
         id="system.load.1",
         type=MetricBulkConfigureTagsType.BULK_MANAGE_TAGS,

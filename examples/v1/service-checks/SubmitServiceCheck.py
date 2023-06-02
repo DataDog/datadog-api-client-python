@@ -6,17 +6,20 @@ from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.service_checks_api import ServiceChecksApi
 from datadog_api_client.v1.model.service_check import ServiceCheck
 from datadog_api_client.v1.model.service_check_status import ServiceCheckStatus
+from datadog_api_client.v1.model.service_checks import ServiceChecks
 
-body = [
-    ServiceCheck(
-        check="app.ok",
-        host_name="host",
-        status=ServiceCheckStatus.OK,
-        tags=[
-            "test:ExampleServiceCheck",
-        ],
-    ),
-]
+body = ServiceChecks(
+    [
+        ServiceCheck(
+            check="app.ok",
+            host_name="host",
+            status=ServiceCheckStatus.OK,
+            tags=[
+                "test:ExampleServiceCheck",
+            ],
+        ),
+    ]
+)
 
 configuration = Configuration()
 with ApiClient(configuration) as api_client:

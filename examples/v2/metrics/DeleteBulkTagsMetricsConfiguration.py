@@ -8,14 +8,17 @@ from datadog_api_client.v2.model.metric_bulk_configure_tags_type import MetricBu
 from datadog_api_client.v2.model.metric_bulk_tag_config_delete import MetricBulkTagConfigDelete
 from datadog_api_client.v2.model.metric_bulk_tag_config_delete_attributes import MetricBulkTagConfigDeleteAttributes
 from datadog_api_client.v2.model.metric_bulk_tag_config_delete_request import MetricBulkTagConfigDeleteRequest
+from datadog_api_client.v2.model.metric_bulk_tag_config_email_list import MetricBulkTagConfigEmailList
 
 body = MetricBulkTagConfigDeleteRequest(
     data=MetricBulkTagConfigDelete(
         attributes=MetricBulkTagConfigDeleteAttributes(
-            emails=[
-                "sue@example.com",
-                "bob@example.com",
-            ],
+            emails=MetricBulkTagConfigEmailList(
+                [
+                    "sue@example.com",
+                    "bob@example.com",
+                ]
+            ),
         ),
         id="kafka.lag",
         type=MetricBulkConfigureTagsType.BULK_MANAGE_TAGS,

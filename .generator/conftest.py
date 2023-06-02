@@ -17,7 +17,7 @@ import hashlib
 
 from generator import openapi
 
-from generator.formatter import format_parameters, format_data_with_schema, safe_snake_case, snake_case
+from generator.formatter import format_parameters, format_data_with_schema, safe_snake_case, snake_case, set_api_version
 
 
 MODIFIED_FEATURES = {
@@ -156,6 +156,7 @@ def code_examples():
 @pytest.fixture
 def api_version(request):
     path = pathlib.Path(request.node.__scenario_report__.scenario.feature.filename)
+    set_api_version(path.parent.parent.name)
     return path.parent.parent.name
 
 

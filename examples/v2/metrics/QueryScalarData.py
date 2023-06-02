@@ -13,6 +13,7 @@ from datadog_api_client.v2.model.query_sort_order import QuerySortOrder
 from datadog_api_client.v2.model.scalar_formula_query_request import ScalarFormulaQueryRequest
 from datadog_api_client.v2.model.scalar_formula_request import ScalarFormulaRequest
 from datadog_api_client.v2.model.scalar_formula_request_attributes import ScalarFormulaRequestAttributes
+from datadog_api_client.v2.model.scalar_formula_request_queries import ScalarFormulaRequestQueries
 from datadog_api_client.v2.model.scalar_formula_request_type import ScalarFormulaRequestType
 
 body = ScalarFormulaQueryRequest(
@@ -28,13 +29,15 @@ body = ScalarFormulaQueryRequest(
                 ),
             ],
             _from=1568899800000,
-            queries=[
-                MetricsScalarQuery(
-                    aggregator=MetricsAggregator.AVG,
-                    data_source=MetricsDataSource.METRICS,
-                    query="avg:system.cpu.user{*} by {env}",
-                ),
-            ],
+            queries=ScalarFormulaRequestQueries(
+                [
+                    MetricsScalarQuery(
+                        aggregator=MetricsAggregator.AVG,
+                        data_source=MetricsDataSource.METRICS,
+                        query="avg:system.cpu.user{*} by {env}",
+                    ),
+                ]
+            ),
             to=1568923200000,
         ),
         type=ScalarFormulaRequestType.SCALAR_REQUEST,

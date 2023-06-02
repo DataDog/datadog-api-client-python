@@ -294,7 +294,11 @@ def format_data_with_schema_list(
 ):
     """Format data with schema."""
     assert version is not None
-    name, imports = get_name_and_imports(schema, version, imports)
+
+    imports = imports or defaultdict(set)
+    name, r_imports = get_name_and_imports(schema, version, None)
+    if is_list_model_whitelisted(name):
+        imports.update(r_imports) 
 
     if "oneOf" in schema:
         for sub_schema in schema["oneOf"]:
@@ -303,7 +307,7 @@ def format_data_with_schema_list(
                     data,
                     sub_schema,
                     replace_values=replace_values,
-                    default_name=name,
+                    default_name=name if is_list_model_whitelisted(name) else None,
                     version=version,
                 )
             except (KeyError, ValueError):
@@ -327,7 +331,7 @@ def format_data_with_schema_list(
         imports = _merge_imports(imports, extra_imports)
     parameters = f"[{parameters}]"
 
-    if name:
+    if name and is_list_model_whitelisted(name): 
         return f"{name}({parameters})", imports
 
     return parameters, imports
