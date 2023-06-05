@@ -3,11 +3,12 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Any, Dict, List
+from typing import Any, Dict
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
 from datadog_api_client.v1.model.gcp_account import GCPAccount
+from datadog_api_client.v1.model.gcp_account_list_response import GCPAccountListResponse
 
 
 class GCPIntegrationApi:
@@ -65,7 +66,7 @@ class GCPIntegrationApi:
 
         self._list_gcp_integration_endpoint = _Endpoint(
             settings={
-                "response_type": ([GCPAccount],),
+                "response_type": (GCPAccountListResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/integration/gcp",
                 "operation_id": "list_gcp_integration",
@@ -138,12 +139,12 @@ class GCPIntegrationApi:
 
     def list_gcp_integration(
         self,
-    ) -> List[GCPAccount]:
+    ) -> GCPAccountListResponse:
         """List all GCP integrations.
 
         List all Datadog-GCP integrations configured in your Datadog account.
 
-        :rtype: [GCPAccount]
+        :rtype: GCPAccountListResponse
         """
         kwargs: Dict[str, Any] = {}
         return self._list_gcp_integration_endpoint.call_with_http_info(**kwargs)

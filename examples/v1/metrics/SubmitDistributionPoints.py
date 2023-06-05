@@ -5,6 +5,7 @@ Submit distribution points returns "Payload accepted" response
 from datetime import datetime
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.metrics_api import MetricsApi
+from datadog_api_client.v1.model.distribution_point import DistributionPoint
 from datadog_api_client.v1.model.distribution_points_payload import DistributionPointsPayload
 from datadog_api_client.v1.model.distribution_points_series import DistributionPointsSeries
 
@@ -13,10 +14,12 @@ body = DistributionPointsPayload(
         DistributionPointsSeries(
             metric="system.load.1.dist",
             points=[
-                [
-                    datetime.now().timestamp(),
-                    [1.0, 2.0],
-                ],
+                DistributionPoint(
+                    [
+                        datetime.now().timestamp(),
+                        [1.0, 2.0],
+                    ]
+                ),
             ],
         ),
     ],

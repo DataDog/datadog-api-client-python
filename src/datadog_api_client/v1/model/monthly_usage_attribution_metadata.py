@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, Union, TYPE_CHECKING
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -14,18 +14,18 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v1.model.usage_attribution_aggregates_body import UsageAttributionAggregatesBody
+    from datadog_api_client.v1.model.usage_attribution_aggregates import UsageAttributionAggregates
     from datadog_api_client.v1.model.monthly_usage_attribution_pagination import MonthlyUsageAttributionPagination
 
 
 class MonthlyUsageAttributionMetadata(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v1.model.usage_attribution_aggregates_body import UsageAttributionAggregatesBody
+        from datadog_api_client.v1.model.usage_attribution_aggregates import UsageAttributionAggregates
         from datadog_api_client.v1.model.monthly_usage_attribution_pagination import MonthlyUsageAttributionPagination
 
         return {
-            "aggregates": ([UsageAttributionAggregatesBody],),
+            "aggregates": (UsageAttributionAggregates,),
             "pagination": (MonthlyUsageAttributionPagination,),
         }
 
@@ -36,7 +36,7 @@ class MonthlyUsageAttributionMetadata(ModelNormal):
 
     def __init__(
         self_,
-        aggregates: Union[List[UsageAttributionAggregatesBody], UnsetType] = unset,
+        aggregates: Union[UsageAttributionAggregates, UnsetType] = unset,
         pagination: Union[MonthlyUsageAttributionPagination, UnsetType] = unset,
         **kwargs,
     ):
@@ -44,7 +44,7 @@ class MonthlyUsageAttributionMetadata(ModelNormal):
         The object containing document metadata.
 
         :param aggregates: An array of available aggregates.
-        :type aggregates: [UsageAttributionAggregatesBody], optional
+        :type aggregates: UsageAttributionAggregates, optional
 
         :param pagination: The metadata for the current pagination.
         :type pagination: MonthlyUsageAttributionPagination, optional

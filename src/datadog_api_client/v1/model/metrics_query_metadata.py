@@ -15,6 +15,7 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v1.model.point import Point
     from datadog_api_client.v1.model.metrics_query_unit import MetricsQueryUnit
 
 
@@ -28,6 +29,7 @@ class MetricsQueryMetadata(ModelNormal):
 
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v1.model.point import Point
         from datadog_api_client.v1.model.metrics_query_unit import MetricsQueryUnit
 
         return {
@@ -38,7 +40,7 @@ class MetricsQueryMetadata(ModelNormal):
             "interval": (int,),
             "length": (int,),
             "metric": (str,),
-            "pointlist": ([[float, none_type]],),
+            "pointlist": ([Point],),
             "query_index": (int,),
             "scope": (str,),
             "start": (int,),
@@ -86,7 +88,7 @@ class MetricsQueryMetadata(ModelNormal):
         interval: Union[int, UnsetType] = unset,
         length: Union[int, UnsetType] = unset,
         metric: Union[str, UnsetType] = unset,
-        pointlist: Union[List[List[float]], UnsetType] = unset,
+        pointlist: Union[List[Point], UnsetType] = unset,
         query_index: Union[int, UnsetType] = unset,
         scope: Union[str, UnsetType] = unset,
         start: Union[int, UnsetType] = unset,
@@ -119,7 +121,7 @@ class MetricsQueryMetadata(ModelNormal):
         :type metric: str, optional
 
         :param pointlist: List of points of the time series in milliseconds.
-        :type pointlist: [[float, none_type]], optional
+        :type pointlist: [Point], optional
 
         :param query_index: The index of the series' query within the request.
         :type query_index: int, optional

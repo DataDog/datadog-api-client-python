@@ -26,14 +26,14 @@ class CIAppAggregateBucketValue(ModelComposed):
         # code would be run when this module is imported, and these composed
         # classes don't exist yet because their module has not finished
         # loading
-        from datadog_api_client.v2.model.ci_app_aggregate_bucket_value_timeseries_point import (
-            CIAppAggregateBucketValueTimeseriesPoint,
+        from datadog_api_client.v2.model.ci_app_aggregate_bucket_value_timeseries import (
+            CIAppAggregateBucketValueTimeseries,
         )
 
         return {
             "oneOf": [
                 str,
                 float,
-                [CIAppAggregateBucketValueTimeseriesPoint],
+                CIAppAggregateBucketValueTimeseries,
             ],
         }

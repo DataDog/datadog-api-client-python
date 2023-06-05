@@ -14,16 +14,16 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.metric_custom_aggregation import MetricCustomAggregation
+    from datadog_api_client.v2.model.metric_suggested_aggregations import MetricSuggestedAggregations
 
 
 class MetricSuggestedTagsAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.metric_custom_aggregation import MetricCustomAggregation
+        from datadog_api_client.v2.model.metric_suggested_aggregations import MetricSuggestedAggregations
 
         return {
-            "active_aggregations": ([MetricCustomAggregation],),
+            "active_aggregations": (MetricSuggestedAggregations,),
             "active_tags": ([str],),
         }
 
@@ -34,7 +34,7 @@ class MetricSuggestedTagsAttributes(ModelNormal):
 
     def __init__(
         self_,
-        active_aggregations: Union[List[MetricCustomAggregation], UnsetType] = unset,
+        active_aggregations: Union[MetricSuggestedAggregations, UnsetType] = unset,
         active_tags: Union[List[str], UnsetType] = unset,
         **kwargs,
     ):
@@ -42,7 +42,7 @@ class MetricSuggestedTagsAttributes(ModelNormal):
         Object containing the definition of a metric's actively queried tags and aggregations.
 
         :param active_aggregations: List of aggregation combinations that have been actively queried.
-        :type active_aggregations: [MetricCustomAggregation], optional
+        :type active_aggregations: MetricSuggestedAggregations, optional
 
         :param active_tags: List of tag keys that have been actively queried.
         :type active_tags: [str], optional

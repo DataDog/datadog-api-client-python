@@ -64,7 +64,6 @@ def cli(specs, output):
     models_j2 = env.get_template("models.j2")
     init_j2 = env.get_template("init.j2")
     configuration_j2 = env.get_template("configuration.j2")
-    compat_j2 = env.get_template("compat.j2")
 
     extra_files = {
         "api_client.py": env.get_template("api_client.j2"),
@@ -72,6 +71,7 @@ def cli(specs, output):
         "model_utils.py": env.get_template("model_utils.j2"),
         "rest.py": env.get_template("rest.j2"),
     }
+
 
     top_package = output / PACKAGE_NAME
     top_package.mkdir(parents=True, exist_ok=True)
@@ -90,6 +90,7 @@ def cli(specs, output):
 
         version = spec_path.parent.name
         env.globals["version"] = version
+        formatter.set_api_version(version)
 
         all_specs[version] = spec
 
@@ -141,9 +142,3 @@ def cli(specs, output):
     filename = top_package / "configuration.py"
     with filename.open("w") as fp:
         fp.write(configuration_j2.render(specs=all_specs, apis=all_apis))
-
-    with (pathlib.Path(__file__).parent / "compat-files").open() as fp:
-        for compat_file in fp:
-            compat_file, compat_model = compat_file.strip().split(":")
-            with top_package.joinpath(compat_file).open("w") as model_fp:
-                model_fp.write(compat_j2.render(model=compat_model))

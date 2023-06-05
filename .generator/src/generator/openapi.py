@@ -10,6 +10,7 @@ from yaml import CSafeLoader
 
 from . import formatter
 
+
 PRIMITIVE_TYPES = ["string", "number", "boolean", "integer"]
 
 
@@ -24,7 +25,6 @@ def type_to_python_helper(type_, schema, alternative_name=None, in_list=False, t
         if typing:
             return "Any"
         return "bool, date, datetime, dict, float, int, list, str, none_type"
-
     if type_ == "integer":
         return "int"
     elif type_ == "number":
@@ -71,11 +71,13 @@ def type_to_python_helper(type_, schema, alternative_name=None, in_list=False, t
 
 def type_to_python(schema, alternative_name=None, in_list=False, typing=False):
     """Return Python type name for the type."""
+
     name = formatter.get_name(schema)
-    if name and "items" not in schema:
+    # TODO: double check
+    if name and "items" not in schema or formatter.is_list_model_whitelisted(name):
         if "enum" in schema:
             return name
-        if schema.get("type", "object") == "object":
+        if schema.get("type", "object") == "object" or formatter.is_list_model_whitelisted(name):
             if typing and "oneOf" in schema:
                 types = [name]
                 types.extend(get_oneof_types(schema, typing=typing))
@@ -168,7 +170,7 @@ def child_models(schema, alternative_name=None, seen=None, in_list=False):
 
     has_sub_models = False
     if "oneOf" in schema:
-        has_sub_models = not in_list
+        has_sub_models = not in_list and not formatter.is_list_model_whitelisted(name)
         for child in schema["oneOf"]:
             sub_models = list(child_models(child, seen=seen))
             if sub_models:
@@ -178,7 +180,12 @@ def child_models(schema, alternative_name=None, seen=None, in_list=False):
             return
 
     if "items" in schema:
-        yield from child_models(schema["items"], alternative_name=name + "Item" if name is not None else None, seen=seen, in_list=True)
+        if formatter.is_list_model_whitelisted(name):
+            alt_name = None
+        else:
+            alt_name = name + "Item" if name is not None else None
+
+        yield from child_models(schema["items"], alternative_name=alt_name, seen=seen, in_list=True)
 
     if schema.get("type") == "object" or "properties" in schema or has_sub_models:
         if not has_sub_models and name is None:
@@ -201,6 +208,15 @@ def child_models(schema, alternative_name=None, seen=None, in_list=False):
 
         for key, child in schema.get("properties", {}).items():
             yield from child_models(child, alternative_name=name + formatter.camel_case(key), seen=seen)
+
+    if current_name and schema.get("type") == "array":
+        if name in seen:
+            return
+
+        if formatter.is_list_model_whitelisted(name):
+            seen.add(name)
+            yield name, schema
+
 
     if "enum" in schema:
         if name is None:
@@ -271,11 +287,17 @@ def get_references_for_model(model, model_name):
                 if name:
                     result[name] = None
         elif definition.get("type") == "array":
-            name = formatter.get_name(definition.get("items"))
-            if name and find_non_primitive_type(definition["items"]):
+            name = formatter.get_name(definition)
+            if name and formatter.is_list_model_whitelisted(name):
                 result[name] = None
-            elif formatter.get_name(definition) and definition["items"].get("type") not in PRIMITIVE_TYPES:
-                result[formatter.get_name(definition) + "Item"] = None
+            else:
+                name = formatter.get_name(definition.get("items"))
+                if name and find_non_primitive_type(definition["items"]):
+                    result[name] = None
+                elif name and formatter.is_list_model_whitelisted(name):
+                    result[name] = None
+                elif formatter.get_name(definition) and definition["items"].get("type") not in PRIMITIVE_TYPES:
+                    result[formatter.get_name(definition) + "Item"] = None
 
         elif definition.get("properties") and top_name:
             result[top_name + formatter.camel_case(key)] = None
@@ -305,8 +327,10 @@ def get_oneof_references_for_model(model, model_name, seen=None):
     if model.get("oneOf"):
         for schema in model["oneOf"]:
             type_ = schema.get("type", "object")
-            if type_ == "object":
-                result[formatter.get_name(schema)] = None
+
+            oneof_name = formatter.get_name(schema)
+            if type_ == "object" or formatter.is_list_model_whitelisted(oneof_name):
+                result[oneof_name] = None
             elif type_ == "array":
                 sub_name = formatter.get_name(schema["items"])
                 if sub_name:
@@ -336,8 +360,9 @@ def get_oneof_parameters(model):
 def get_oneof_types(model, typing=False):
     for schema in model["oneOf"]:
         type_ = schema.get("type", "object")
-        if type_ == "object":
-            yield formatter.get_name(schema)
+        name = formatter.get_name(schema)
+        if type_ == "object" or formatter.is_list_model_whitelisted(name):
+            yield name
         elif type_ == "array":
             name = formatter.get_name(schema["items"])
             if name:
@@ -361,8 +386,9 @@ def get_oneof_models(model):
     result = []
     for schema in model["oneOf"]:
         type_ = schema.get("type", "object")
-        if type_ == "object":
-            result.append(formatter.get_name(schema))
+        name = formatter.get_name(schema)
+        if type_ == "object" or formatter.is_list_model_whitelisted(name):
+            result.append(name)
         elif type_ == "array":
             name = formatter.get_name(schema["items"])
             if name:

@@ -14,16 +14,16 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.metric_custom_aggregation import MetricCustomAggregation
+    from datadog_api_client.v2.model.metric_custom_aggregations import MetricCustomAggregations
 
 
 class MetricTagConfigurationUpdateAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.metric_custom_aggregation import MetricCustomAggregation
+        from datadog_api_client.v2.model.metric_custom_aggregations import MetricCustomAggregations
 
         return {
-            "aggregations": ([MetricCustomAggregation],),
+            "aggregations": (MetricCustomAggregations,),
             "include_percentiles": (bool,),
             "tags": ([str],),
         }
@@ -36,7 +36,7 @@ class MetricTagConfigurationUpdateAttributes(ModelNormal):
 
     def __init__(
         self_,
-        aggregations: Union[List[MetricCustomAggregation], UnsetType] = unset,
+        aggregations: Union[MetricCustomAggregations, UnsetType] = unset,
         include_percentiles: Union[bool, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
         **kwargs,
@@ -60,7 +60,7 @@ class MetricTagConfigurationUpdateAttributes(ModelNormal):
             * time: sum, space: sum
 
             Can only be applied to metrics that have a ``metric_type`` of ``count`` , ``rate`` , or ``gauge``.
-        :type aggregations: [MetricCustomAggregation], optional
+        :type aggregations: MetricCustomAggregations, optional
 
         :param include_percentiles: Toggle to include/exclude percentiles for a distribution metric.
             Defaults to false. Can only be applied to metrics that have a ``metric_type`` of ``distribution``.

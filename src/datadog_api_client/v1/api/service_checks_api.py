@@ -3,12 +3,12 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Any, Dict, List
+from typing import Any, Dict
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
 from datadog_api_client.v1.model.intake_payload_accepted import IntakePayloadAccepted
-from datadog_api_client.v1.model.service_check import ServiceCheck
+from datadog_api_client.v1.model.service_checks import ServiceChecks
 
 
 class ServiceChecksApi:
@@ -44,7 +44,7 @@ class ServiceChecksApi:
             params_map={
                 "body": {
                     "required": True,
-                    "openapi_types": ([ServiceCheck],),
+                    "openapi_types": (ServiceChecks,),
                     "location": "body",
                     "collection_format": "multi",
                 },
@@ -55,7 +55,7 @@ class ServiceChecksApi:
 
     def submit_service_check(
         self,
-        body: List[ServiceCheck],
+        body: ServiceChecks,
     ) -> IntakePayloadAccepted:
         """Submit a Service Check.
 
@@ -67,7 +67,7 @@ class ServiceChecksApi:
         * Service checks can be submitted up to 10 minutes in the past.
 
         :param body: Service Check request body.
-        :type body: [ServiceCheck]
+        :type body: ServiceChecks
         :rtype: IntakePayloadAccepted
         """
         kwargs: Dict[str, Any] = {}

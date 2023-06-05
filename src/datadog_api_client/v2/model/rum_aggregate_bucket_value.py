@@ -26,14 +26,12 @@ class RUMAggregateBucketValue(ModelComposed):
         # code would be run when this module is imported, and these composed
         # classes don't exist yet because their module has not finished
         # loading
-        from datadog_api_client.v2.model.rum_aggregate_bucket_value_timeseries_point import (
-            RUMAggregateBucketValueTimeseriesPoint,
-        )
+        from datadog_api_client.v2.model.rum_aggregate_bucket_value_timeseries import RUMAggregateBucketValueTimeseries
 
         return {
             "oneOf": [
                 str,
                 float,
-                [RUMAggregateBucketValueTimeseriesPoint],
+                RUMAggregateBucketValueTimeseries,
             ],
         }

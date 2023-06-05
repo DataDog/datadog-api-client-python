@@ -20,6 +20,52 @@ if replacement_file.exists():
     with replacement_file.open() as f:
         EDGE_CASES.update(json.load(f))
 
+API_VERSION = None
+WHITELISTED_LIST_MODELS={
+    "v1": (
+        "AgentCheck",
+        "AzureAccountListResponse",
+        "DashboardBulkActionDataList",
+        "DistributionPoint",
+        "DistributionPointData",
+        "GCPAccountListResponse",
+        "HTTPLog",
+        "LogsPipelineList",
+        "MonitorSearchCount",
+        "Point",
+        "ServiceChecks",
+        "SharedDashboardInvitesDataList",
+        "SlackIntegrationChannels",
+        "SyntheticsRestrictedRoles",
+        "UsageAttributionAggregates",
+    ),
+    "v2": (
+        "CIAppAggregateBucketValueTimeseries",
+        "EventsQueryGroupBys",
+        "GroupTags",
+        "HTTPLog",
+        "IncidentTodoAssigneeArray",
+        "LogsAggregateBucketValueTimeseries",
+        "MetricBulkTagConfigEmailList",
+        "MetricBulkTagConfigTagNameList",
+        "MetricCustomAggregations",
+        "MetricSuggestedAggregations",
+        "RUMAggregateBucketValueTimeseries",
+        "ScalarFormulaRequestQueries",
+        "SecurityMonitoringSignalIncidentIds",
+        "SensitiveDataScannerGetConfigIncludedArray",
+        "SensitiveDataScannerStandardPatternsResponse",
+        "TagsEventAttribute",
+        "TeamPermissionSettingValues",
+        "TimeseriesFormulaRequestQueries",
+        "TimeseriesResponseSeriesList",
+        "TimeseriesResponseTimes",
+        "TimeseriesResponseValues",
+        "TimeseriesResponseValuesList",
+
+    ),
+}
+
 KEYWORDS = set(keyword.kwlist)
 KEYWORDS.add("property")
 KEYWORDS.add("cls")
@@ -28,6 +74,15 @@ PATTERN_DOUBLE_UNDERSCORE = re.compile(r"__+")
 PATTERN_LEADING_ALPHA = re.compile(r"(.)([A-Z][a-z]+)")
 PATTERN_FOLLOWING_ALPHA = re.compile(r"([a-z0-9])([A-Z])")
 PATTERN_WHITESPACE = re.compile(r"\W")
+
+
+def set_api_version(version):
+    global API_VERSION
+    API_VERSION = version
+
+
+def is_list_model_whitelisted(name):
+    return name in WHITELISTED_LIST_MODELS[API_VERSION]
 
 
 def snake_case(value):
@@ -237,7 +292,11 @@ def format_data_with_schema_list(
 ):
     """Format data with schema."""
     assert version is not None
+
     imports = imports or defaultdict(set)
+    name, r_imports = get_name_and_imports(schema, version, None)
+    if is_list_model_whitelisted(name):
+        imports.update(r_imports) 
 
     if "oneOf" in schema:
         for sub_schema in schema["oneOf"]:
@@ -246,6 +305,7 @@ def format_data_with_schema_list(
                     data,
                     sub_schema,
                     replace_values=replace_values,
+                    default_name=name if is_list_model_whitelisted(name) else None,
                     version=version,
                 )
             except (KeyError, ValueError):
@@ -268,6 +328,9 @@ def format_data_with_schema_list(
         parameters += f"{value}, "
         imports = _merge_imports(imports, extra_imports)
     parameters = f"[{parameters}]"
+
+    if name and is_list_model_whitelisted(name): 
+        return f"{name}({parameters})", imports
 
     return parameters, imports
 
