@@ -389,6 +389,52 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
 
+  @generated @skip @team:DataDog/cloud-security-posture-management
+  Scenario: Mute or unmute a finding returns "Bad Request: The server cannot process the request due to invalid syntax in the request." response
+    Given operation "UpdateFinding" enabled
+    And new "UpdateFinding" request
+    And request contains "finding_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"mute": {"description": "To be resolved later", "expiration_date": 1778721573794, "muted": true, "reason": "ACCEPTED_RISK"}}, "id": "AQAAAYbb1i0gijTHEQAAAABBWWJiMWkwZ0FBQ2FuNzBJVGZXZ3B3QUE", "type": "finding"}}
+    When the request is sent
+    Then the response status is 400 Bad Request: The server cannot process the request due to invalid syntax in the request.
+
+  @generated @skip @team:DataDog/cloud-security-posture-management
+  Scenario: Mute or unmute a finding returns "Invalid Request: The server understands the request syntax but cannot process it due to invalid data." response
+    Given operation "UpdateFinding" enabled
+    And new "UpdateFinding" request
+    And request contains "finding_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"mute": {"description": "To be resolved later", "expiration_date": 1778721573794, "muted": true, "reason": "ACCEPTED_RISK"}}, "id": "AQAAAYbb1i0gijTHEQAAAABBWWJiMWkwZ0FBQ2FuNzBJVGZXZ3B3QUE", "type": "finding"}}
+    When the request is sent
+    Then the response status is 422 Invalid Request: The server understands the request syntax but cannot process it due to invalid data.
+
+  @generated @skip @team:DataDog/cloud-security-posture-management
+  Scenario: Mute or unmute a finding returns "Not Found: The requested finding cannot be found." response
+    Given operation "UpdateFinding" enabled
+    And new "UpdateFinding" request
+    And request contains "finding_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"mute": {"description": "To be resolved later", "expiration_date": 1778721573794, "muted": true, "reason": "ACCEPTED_RISK"}}, "id": "AQAAAYbb1i0gijTHEQAAAABBWWJiMWkwZ0FBQ2FuNzBJVGZXZ3B3QUE", "type": "finding"}}
+    When the request is sent
+    Then the response status is 404 Not Found: The requested finding cannot be found.
+
+  @replay-only @team:DataDog/cloud-security-posture-management
+  Scenario: Mute or unmute a finding returns "OK" response
+    Given operation "UpdateFinding" enabled
+    And new "UpdateFinding" request
+    And request contains "finding_id" parameter with value "AQAAAYbb1i0gijTHEQAAAABBWWJiMWkwZ0FBQ2FuNzBJVGZXZ3B3QUE"
+    And body with value {"data": {"attributes": {"mute": {"description": "To be resolved later", "expiration_date": 1778721573794, "muted": true, "reason": "ACCEPTED_RISK"}}, "id": "AQAAAYbb1i0gijTHEQAAAABBWWJiMWkwZ0FBQ2FuNzBJVGZXZ3B3QUE", "type": "finding"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.attributes.mute.muted" is equal to true
+
+  @generated @skip @team:DataDog/cloud-security-posture-management
+  Scenario: Mute or unmute a finding returns "Resource Conflict: The finding has already been muted or unmuted within the last 60 seconds." response
+    Given operation "UpdateFinding" enabled
+    And new "UpdateFinding" request
+    And request contains "finding_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"mute": {"description": "To be resolved later", "expiration_date": 1778721573794, "muted": true, "reason": "ACCEPTED_RISK"}}, "id": "AQAAAYbb1i0gijTHEQAAAABBWWJiMWkwZ0FBQ2FuNzBJVGZXZ3B3QUE", "type": "finding"}}
+    When the request is sent
+    Then the response status is 409 Resource Conflict: The finding has already been muted or unmuted within the last 60 seconds.
+
   @team:DataDog/k9-cloud-security-platform
   Scenario: Update a cloud configuration rule's details returns "OK" response
     Given new "UpdateSecurityMonitoringRule" request

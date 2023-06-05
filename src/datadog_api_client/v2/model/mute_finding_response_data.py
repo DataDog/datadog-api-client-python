@@ -14,18 +14,18 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.finding_attributes import FindingAttributes
+    from datadog_api_client.v2.model.mute_finding_response_attributes import MuteFindingResponseAttributes
     from datadog_api_client.v2.model.finding_type import FindingType
 
 
-class Finding(ModelNormal):
+class MuteFindingResponseData(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.finding_attributes import FindingAttributes
+        from datadog_api_client.v2.model.mute_finding_response_attributes import MuteFindingResponseAttributes
         from datadog_api_client.v2.model.finding_type import FindingType
 
         return {
-            "attributes": (FindingAttributes,),
+            "attributes": (MuteFindingResponseAttributes,),
             "id": (str,),
             "type": (FindingType,),
         }
@@ -38,16 +38,16 @@ class Finding(ModelNormal):
 
     def __init__(
         self_,
-        attributes: Union[FindingAttributes, UnsetType] = unset,
+        attributes: Union[MuteFindingResponseAttributes, UnsetType] = unset,
         id: Union[str, UnsetType] = unset,
         type: Union[FindingType, UnsetType] = unset,
         **kwargs,
     ):
         """
-        A single finding without the message and resource configuration.
+        Data object containing the updated finding.
 
         :param attributes: The JSON:API attributes of the finding.
-        :type attributes: FindingAttributes, optional
+        :type attributes: MuteFindingResponseAttributes, optional
 
         :param id: The unique ID for this finding.
         :type id: str, optional
