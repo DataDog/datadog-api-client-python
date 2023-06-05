@@ -1,0 +1,17 @@
+{
+  "series": [
+    {
+      "metric": "static_test_metric_donotdelete",
+      "type": "gauge",
+      "points": [
+        [
+          {{ timestamp("now") }},
+          1.1
+        ]
+      ],
+      "tags": [
+        "test:static_test_metric_donotdelete"
+      ]
+    }
+  ]
+}
