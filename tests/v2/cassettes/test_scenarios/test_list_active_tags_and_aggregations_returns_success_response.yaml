@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"series":[{"metric":"TestListactivetagsandaggregationsreturnsSuccessresponse1662033627","points":[[1662033627,1.1]],"tags":["test:ExampleSubmitmetricsreturnsPayloadacceptedresponse"],"type":"gauge"}]}'
+    body: '{"series":[{"metric":"static_test_metric_donotdelete","points":[[1685976245,1.1]],"tags":["test:static_test_metric_donotdelete"],"type":"gauge"}]}'
     headers:
       accept:
       - text/json, application/json
@@ -23,10 +23,10 @@ interactions:
       accept:
       - application/json
     method: GET
-    uri: https://api.datadoghq.com/api/v2/metrics/TestListactivetagsandaggregationsreturnsSuccessresponse1662033627/active-configurations
+    uri: https://api.datadoghq.com/api/v2/metrics/static_test_metric_donotdelete/active-configurations
   response:
     body:
-      string: '{"data":{"type":"actively_queried_configurations","id":"TestListactivetagsandaggregationsreturnsSuccessresponse1662033627","attributes":{"active_tags":[],"active_aggregations":[]}}}
+      string: '{"data":{"type":"actively_queried_configurations","id":"static_test_metric_donotdelete","attributes":{"active_tags":[],"active_aggregations":[]}}}
 
         '
     headers:

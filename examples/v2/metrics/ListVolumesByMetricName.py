@@ -9,7 +9,7 @@ configuration = Configuration()
 with ApiClient(configuration) as api_client:
     api_instance = MetricsApi(api_client)
     response = api_instance.list_volumes_by_metric_name(
-        metric_name="ExampleMetric",
+        metric_name="static_test_metric_donotdelete",
     )
 
     print(response)
