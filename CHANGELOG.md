@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.13.2 / 2023-06-05
+
+### Fixed
+* Re-introduce array container models by @skarimo in https://github.com/DataDog/datadog-api-client-python/pull/1503
+
+
+**Full Changelog**: https://github.com/DataDog/datadog-api-client-python/compare/2.13.1...2.13.2
+
 ## 2.13.1 / 2023-06-01
 
 ### Fixed
