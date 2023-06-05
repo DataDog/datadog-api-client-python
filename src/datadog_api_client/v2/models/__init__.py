@@ -261,6 +261,8 @@ from datadog_api_client.v2.model.finding_mute_reason import FindingMuteReason
 from datadog_api_client.v2.model.finding_rule import FindingRule
 from datadog_api_client.v2.model.finding_status import FindingStatus
 from datadog_api_client.v2.model.finding_type import FindingType
+from datadog_api_client.v2.model.findings_error_item import FindingsErrorItem
+from datadog_api_client.v2.model.findings_error_response import FindingsErrorResponse
 from datadog_api_client.v2.model.formula_limit import FormulaLimit
 from datadog_api_client.v2.model.full_api_key import FullAPIKey
 from datadog_api_client.v2.model.full_api_key_attributes import FullAPIKeyAttributes
@@ -634,6 +636,14 @@ from datadog_api_client.v2.model.monitor_config_policy_tag_policy_create_request
 )
 from datadog_api_client.v2.model.monitor_config_policy_type import MonitorConfigPolicyType
 from datadog_api_client.v2.model.monitor_type import MonitorType
+from datadog_api_client.v2.model.mute_finding_request import MuteFindingRequest
+from datadog_api_client.v2.model.mute_finding_request_attributes import MuteFindingRequestAttributes
+from datadog_api_client.v2.model.mute_finding_request_data import MuteFindingRequestData
+from datadog_api_client.v2.model.mute_finding_request_properties import MuteFindingRequestProperties
+from datadog_api_client.v2.model.mute_finding_response import MuteFindingResponse
+from datadog_api_client.v2.model.mute_finding_response_attributes import MuteFindingResponseAttributes
+from datadog_api_client.v2.model.mute_finding_response_data import MuteFindingResponseData
+from datadog_api_client.v2.model.mute_finding_response_properties import MuteFindingResponseProperties
 from datadog_api_client.v2.model.nullable_relationship_to_user import NullableRelationshipToUser
 from datadog_api_client.v2.model.nullable_relationship_to_user_data import NullableRelationshipToUserData
 from datadog_api_client.v2.model.on_demand_concurrency_cap import OnDemandConcurrencyCap
