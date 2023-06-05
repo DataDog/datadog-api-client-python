@@ -1,0 +1,22 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"mute":{"description":"To be resolved later","expiration_date":1778721573794,"muted":true,"reason":"ACCEPTED_RISK"}},"id":"AQAAAYbb1i0gijTHEQAAAABBWWJiMWkwZ0FBQ2FuNzBJVGZXZ3B3QUE","type":"finding"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/posture_management/findings/AQAAAYbb1i0gijTHEQAAAABBWWJiMWkwZ0FBQ2FuNzBJVGZXZ3B3QUE
+  response:
+    body:
+      string: '{"data":{"id":"AQAAAYbb1i0gijTHEQAAAABBWWJiMWkwZ0FBQ2FuNzBJVGZXZ3B3QUE","type":"finding","attributes":{"evaluation":"pass","evaluation_changed_at":1681220975000,"mute":{"description":"To
+        be resolved later","expiration_date":1778721573794,"muted":true,"reason":"ACCEPTED_RISK"},"resource":"dd-chaos-cloud-xuxu-eu-north-1","resource_discovery_date":1681220975000,"resource_type":"aws_s3_bucket","rule":{"name":"S3
+        bucket ACL does not grant full bucket control to everyone","id":"gkb-eoz-lut"},"status":"critical","tags":["requirement:AWS","scored:true","aws_account:013910733512","framework:gdpr","control:164.308-a-3-i","requirement:Compliance","framework:iso-27001","framework:hipaa","requirement:Access-Control","source:s3","requirement:Information-Access-Management","region:eu-north-1","control:164.308-a-4-ii-B","framework:pci","control:164.308-a-4-ii-C","control:25.2","requirement:Workforce-Security","control:1.1","security:compliance","requirement:Least-Privileged-Access","cloud_provider:aws","requirement:Data-Protection","control:7.2.1","control:7.2.2","requirement:Security-of-Processing","control:A.18.1.3","framework:soc-2","scope:s3","control:A.9.2.3","control:32.1a","requirement:Logical-and-Physical-Access-Control","control:CC6.3","framework:security-labs","control:CC6.1"]}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1

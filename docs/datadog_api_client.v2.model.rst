@@ -1562,6 +1562,20 @@ finding\_type
    :members:
    :show-inheritance:
 
+findings\_error\_item
+---------------------
+
+.. automodule:: datadog_api_client.v2.model.findings_error_item
+   :members:
+   :show-inheritance:
+
+findings\_error\_response
+-------------------------
+
+.. automodule:: datadog_api_client.v2.model.findings_error_response
+   :members:
+   :show-inheritance:
+
 formula\_limit
 --------------
 
@@ -3806,6 +3820,62 @@ monitor\_type
 -------------
 
 .. automodule:: datadog_api_client.v2.model.monitor_type
+   :members:
+   :show-inheritance:
+
+mute\_finding\_request
+----------------------
+
+.. automodule:: datadog_api_client.v2.model.mute_finding_request
+   :members:
+   :show-inheritance:
+
+mute\_finding\_request\_attributes
+----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.mute_finding_request_attributes
+   :members:
+   :show-inheritance:
+
+mute\_finding\_request\_data
+----------------------------
+
+.. automodule:: datadog_api_client.v2.model.mute_finding_request_data
+   :members:
+   :show-inheritance:
+
+mute\_finding\_request\_properties
+----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.mute_finding_request_properties
+   :members:
+   :show-inheritance:
+
+mute\_finding\_response
+-----------------------
+
+.. automodule:: datadog_api_client.v2.model.mute_finding_response
+   :members:
+   :show-inheritance:
+
+mute\_finding\_response\_attributes
+-----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.mute_finding_response_attributes
+   :members:
+   :show-inheritance:
+
+mute\_finding\_response\_data
+-----------------------------
+
+.. automodule:: datadog_api_client.v2.model.mute_finding_response_data
+   :members:
+   :show-inheritance:
+
+mute\_finding\_response\_properties
+-----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.mute_finding_response_properties
    :members:
    :show-inheritance:
 

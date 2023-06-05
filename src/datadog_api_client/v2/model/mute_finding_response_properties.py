@@ -17,7 +17,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.finding_mute_reason import FindingMuteReason
 
 
-class FindingMute(ModelNormal):
+class MuteFindingResponseProperties(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.finding_mute_reason import FindingMuteReason
@@ -27,8 +27,6 @@ class FindingMute(ModelNormal):
             "expiration_date": (int,),
             "muted": (bool,),
             "reason": (FindingMuteReason,),
-            "start_date": (int,),
-            "uuid": (str,),
         }
 
     attribute_map = {
@@ -36,8 +34,6 @@ class FindingMute(ModelNormal):
         "expiration_date": "expiration_date",
         "muted": "muted",
         "reason": "reason",
-        "start_date": "start_date",
-        "uuid": "uuid",
     }
 
     def __init__(
@@ -46,17 +42,17 @@ class FindingMute(ModelNormal):
         expiration_date: Union[int, UnsetType] = unset,
         muted: Union[bool, UnsetType] = unset,
         reason: Union[FindingMuteReason, UnsetType] = unset,
-        start_date: Union[int, UnsetType] = unset,
-        uuid: Union[str, UnsetType] = unset,
         **kwargs,
     ):
         """
         Information about the mute status of this finding.
 
         :param description: Additional information about the reason why this finding is muted or unmuted.
+            This attribute will not be included in the response if the description is not provided in the request body.
         :type description: str, optional
 
-        :param expiration_date: The expiration date of the mute or unmute action (Unix ms).
+        :param expiration_date: The expiration date of the mute or unmute action.
+            If the expiration date is not provided in the request body, this attribute will not be included in the response and the finding will be muted or unmuted indefinitely.
         :type expiration_date: int, optional
 
         :param muted: Whether this finding is muted or unmuted.
@@ -64,12 +60,6 @@ class FindingMute(ModelNormal):
 
         :param reason: The reason why this finding is muted or unmuted.
         :type reason: FindingMuteReason, optional
-
-        :param start_date: The start of the mute period.
-        :type start_date: int, optional
-
-        :param uuid: The ID of the user who muted or unmuted this finding.
-        :type uuid: str, optional
         """
         if description is not unset:
             kwargs["description"] = description
@@ -79,8 +69,4 @@ class FindingMute(ModelNormal):
             kwargs["muted"] = muted
         if reason is not unset:
             kwargs["reason"] = reason
-        if start_date is not unset:
-            kwargs["start_date"] = start_date
-        if uuid is not unset:
-            kwargs["uuid"] = uuid
         super().__init__(kwargs)
