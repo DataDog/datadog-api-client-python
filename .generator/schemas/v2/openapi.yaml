@@ -16439,7 +16439,7 @@ paths:
         cursorPath: meta.page.after
         limitParam: page[limit]
         resultsPath: data
-      x-unstable: '**Note**: This endpoint is in private beta.
+      x-unstable: '**Note**: This endpoint is in beta.
 
         For access, contact [Datadog support](https://docs.datadoghq.com/help/).'
   /api/v2/events/search:
@@ -16484,7 +16484,7 @@ paths:
         cursorPath: meta.page.after
         limitParam: body.page.limit
         resultsPath: data
-      x-unstable: '**Note**: This endpoint is in private beta.
+      x-unstable: '**Note**: This endpoint is in beta.
 
         For access, contact [Datadog support](https://docs.datadoghq.com/help/).'
   /api/v2/incidents:
