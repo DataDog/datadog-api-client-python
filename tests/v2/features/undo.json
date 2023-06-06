@@ -925,12 +925,6 @@
       "type": "safe"
     }
   },
-  "UpdateFinding": {
-    "tag": "Security Monitoring",
-    "undo": {
-      "type": "safe"
-    }
-  },
   "ListProcesses": {
     "tag": "Processes",
     "undo": {

@@ -160,13 +160,12 @@ Feature: Metrics
   @skip-validation @team:DataDog/metrics-experience
   Scenario: List active tags and aggregations returns "Success" response
     Given a valid "appKeyAuth" key in the system
-    And there is a valid "metric_static" in the system
+    And there is a valid "metric" in the system
     And new "ListActiveMetricConfigurations" request
-    And request contains "metric_name" parameter with value "static_test_metric_donotdelete"
+    And request contains "metric_name" parameter with value "{{ unique_alnum }}"
     When the request is sent
     Then the response status is 200 Success
     And the response "data.type" is equal to "actively_queried_configurations"
-    And the response "data.id" is equal to "static_test_metric_donotdelete"
 
   @generated @skip @team:DataDog/metrics-experience
   Scenario: List distinct metric volumes by metric name returns "Bad Request" response
@@ -187,13 +186,13 @@ Feature: Metrics
   @skip-validation @team:DataDog/metrics-experience
   Scenario: List distinct metric volumes by metric name returns "Success" response
     Given a valid "appKeyAuth" key in the system
-    And there is a valid "metric_static" in the system
+    And there is a valid "metric" in the system
+    And there is a valid "metric_tag_configuration" in the system
     And new "ListVolumesByMetricName" request
-    And request contains "metric_name" parameter with value "static_test_metric_donotdelete"
+    And request contains "metric_name" parameter with value "{{ unique_alnum }}"
     When the request is sent
     Then the response status is 200 Success
     And the response "data.type" is equal to "metric_volumes"
-    And the response "data.id" is equal to "static_test_metric_donotdelete"
 
   @generated @skip @team:DataDog/metrics-experience
   Scenario: List tag configuration by name returns "Not Found" response

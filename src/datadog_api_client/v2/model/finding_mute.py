@@ -53,22 +53,22 @@ class FindingMute(ModelNormal):
         """
         Information about the mute status of this finding.
 
-        :param description: Additional information about the reason why this finding is muted or unmuted.
+        :param description: Additional information about the reason why this finding is muted.
         :type description: str, optional
 
-        :param expiration_date: The expiration date of the mute or unmute action (Unix ms).
+        :param expiration_date: The end of the mute period.
         :type expiration_date: int, optional
 
-        :param muted: Whether this finding is muted or unmuted.
+        :param muted: Whether this finding is muted.
         :type muted: bool, optional
 
-        :param reason: The reason why this finding is muted or unmuted.
+        :param reason: The reason why this finding is muted.
         :type reason: FindingMuteReason, optional
 
         :param start_date: The start of the mute period.
         :type start_date: int, optional
 
-        :param uuid: The ID of the user who muted or unmuted this finding.
+        :param uuid: The ID of the user who muted this finding.
         :type uuid: str, optional
         """
         if description is not unset:

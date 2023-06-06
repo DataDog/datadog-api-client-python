@@ -44,7 +44,7 @@ class Finding(ModelNormal):
         **kwargs,
     ):
         """
-        A single finding without the message and resource configuration.
+        A single finding without message and resource configuration.
 
         :param attributes: The JSON:API attributes of the finding.
         :type attributes: FindingAttributes, optional
