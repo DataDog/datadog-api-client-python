@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"compute":{"aggregation_type":"distribution","include_percentiles":false,"path":"@duration"},"filter":{"query":"source:Test-Get_a_span_based_metric_returns_OK_response-1680015326"},"group_by":[{"path":"resource_name","tag_name":"resource_name"}]},"id":"Test-Get_a_span_based_metric_returns_OK_response-1680015326","type":"spans_metrics"}}'
+    body: '{"data":{"attributes":{"compute":{"aggregation_type":"distribution","include_percentiles":false,"path":"@duration"},"filter":{"query":"source:Test-Get_a_span_based_metric_returns_OK_response-1686139541"},"group_by":[{"path":"resource_name","tag_name":"resource_name"}]},"id":"Test-Get_a_span_based_metric_returns_OK_response-1686139541","type":"spans_metrics"}}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/apm/config/metrics
   response:
     body:
-      string: '{"data":{"id":"Test_Get_a_span_based_metric_returns_OK_response_1680015326","attributes":{"filter":{"query":"source:Test-Get_a_span_based_metric_returns_OK_response-1680015326"},"group_by":[{"path":"resource_name","tag_name":"resource_name"}],"compute":{"aggregation_type":"distribution","path":"@duration","include_percentiles":false}},"type":"spans_metrics"}}
+      string: '{"data":{"id":"Test_Get_a_span_based_metric_returns_OK_response_1686139541","attributes":{"filter":{"query":"source:Test-Get_a_span_based_metric_returns_OK_response-1686139541"},"group_by":[{"path":"resource_name","tag_name":"resource_name"}],"compute":{"aggregation_type":"distribution","path":"@duration","include_percentiles":false}},"type":"spans_metrics"}}
 
         '
     headers:
@@ -25,10 +25,10 @@ interactions:
       accept:
       - application/json
     method: GET
-    uri: https://api.datadoghq.com/api/v2/apm/config/metrics/Test_Get_a_span_based_metric_returns_OK_response_1680015326
+    uri: https://api.datadoghq.com/api/v2/apm/config/metrics/Test_Get_a_span_based_metric_returns_OK_response_1686139541
   response:
     body:
-      string: '{"data":{"id":"Test_Get_a_span_based_metric_returns_OK_response_1680015326","attributes":{"filter":{"query":"source:Test-Get_a_span_based_metric_returns_OK_response-1680015326"},"group_by":[{"path":"resource_name","tag_name":"resource_name"}],"compute":{"aggregation_type":"distribution","path":"@duration","include_percentiles":false}},"type":"spans_metrics"}}
+      string: '{"data":{"id":"Test_Get_a_span_based_metric_returns_OK_response_1686139541","attributes":{"filter":{"query":"source:Test-Get_a_span_based_metric_returns_OK_response-1686139541"},"group_by":[{"path":"resource_name","tag_name":"resource_name"}],"compute":{"aggregation_type":"distribution","path":"@duration","include_percentiles":false}},"type":"spans_metrics"}}
 
         '
     headers:
@@ -43,16 +43,14 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/apm/config/metrics/Test_Get_a_span_based_metric_returns_OK_response_1680015326
+    uri: https://api.datadoghq.com/api/v2/apm/config/metrics/Test_Get_a_span_based_metric_returns_OK_response_1686139541
   response:
     body:
-      string: '{}
-
-        '
+      string: ''
     headers:
       content-type:
-      - application/json
+      - text/html; charset=utf-8
     status:
-      code: 200
-      message: OK
+      code: 204
+      message: No Content
 version: 1

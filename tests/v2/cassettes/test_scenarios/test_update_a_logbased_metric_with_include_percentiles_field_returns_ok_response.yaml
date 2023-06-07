@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"compute":{"aggregation_type":"distribution","include_percentiles":true,"path":"@duration"},"filter":{"query":"source:Test-Update_a_log_based_metric_with_include_percentiles_field_returns_OK_response-1669060165"}},"id":"Test-Update_a_log_based_metric_with_include_percentiles_field_returns_OK_response-1669060165","type":"logs_metrics"}}'
+    body: '{"data":{"attributes":{"compute":{"aggregation_type":"distribution","include_percentiles":true,"path":"@duration"},"filter":{"query":"source:Test-Update_a_log_based_metric_with_include_percentiles_field_returns_OK_response-1686138962"}},"id":"Test-Update_a_log_based_metric_with_include_percentiles_field_returns_OK_response-1686138962","type":"logs_metrics"}}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/logs/config/metrics
   response:
     body:
-      string: '{"data":{"attributes":{"filter":{"query":"source:Test-Update_a_log_based_metric_with_include_percentiles_field_returns_OK_response-1669060165"},"group_by":[],"compute":{"path":"@duration","include_percentiles":true,"aggregation_type":"distribution"}},"type":"logs_metrics","id":"Test_Update_a_log_based_metric_with_include_percentiles_field_returns_OK_response_1669060165"}}
+      string: '{"data":{"id":"Test_Update_a_log_based_metric_with_include_percentiles_field_returns_OK_response_1686138962","attributes":{"filter":{"query":"source:Test-Update_a_log_based_metric_with_include_percentiles_field_returns_OK_response-1686138962"},"group_by":[],"compute":{"aggregation_type":"distribution","path":"@duration","include_percentiles":true}},"type":"logs_metrics"}}
 
         '
     headers:
@@ -27,10 +27,10 @@ interactions:
       content-type:
       - application/json
     method: PATCH
-    uri: https://api.datadoghq.com/api/v2/logs/config/metrics/Test_Update_a_log_based_metric_with_include_percentiles_field_returns_OK_response_1669060165
+    uri: https://api.datadoghq.com/api/v2/logs/config/metrics/Test_Update_a_log_based_metric_with_include_percentiles_field_returns_OK_response_1686138962
   response:
     body:
-      string: '{"data":{"attributes":{"filter":{"query":"source:Test-Update_a_log_based_metric_with_include_percentiles_field_returns_OK_response-1669060165"},"group_by":[],"compute":{"path":"@duration","include_percentiles":false,"aggregation_type":"distribution"}},"type":"logs_metrics","id":"Test_Update_a_log_based_metric_with_include_percentiles_field_returns_OK_response_1669060165"}}
+      string: '{"data":{"id":"Test_Update_a_log_based_metric_with_include_percentiles_field_returns_OK_response_1686138962","attributes":{"filter":{"query":"source:Test-Update_a_log_based_metric_with_include_percentiles_field_returns_OK_response-1686138962"},"group_by":[],"compute":{"aggregation_type":"distribution","path":"@duration","include_percentiles":false}},"type":"logs_metrics"}}
 
         '
     headers:
@@ -45,16 +45,14 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/logs/config/metrics/Test_Update_a_log_based_metric_with_include_percentiles_field_returns_OK_response_1669060165
+    uri: https://api.datadoghq.com/api/v2/logs/config/metrics/Test_Update_a_log_based_metric_with_include_percentiles_field_returns_OK_response_1686138962
   response:
     body:
-      string: '{}
-
-        '
+      string: ''
     headers:
       content-type:
-      - application/json
+      - text/html; charset=utf-8
     status:
-      code: 200
-      message: OK
+      code: 204
+      message: No Content
 version: 1
