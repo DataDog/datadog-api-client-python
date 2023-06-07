@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"compute":{"aggregation_type":"distribution","include_percentiles":false,"path":"@duration"},"filter":{"query":"source:Test-Get_all_span_based_metrics_returns_OK_response-1680015328"},"group_by":[{"path":"resource_name","tag_name":"resource_name"}]},"id":"Test-Get_all_span_based_metrics_returns_OK_response-1680015328","type":"spans_metrics"}}'
+    body: '{"data":{"attributes":{"compute":{"aggregation_type":"distribution","include_percentiles":false,"path":"@duration"},"filter":{"query":"source:Test-Get_all_span_based_metrics_returns_OK_response-1686139550"},"group_by":[{"path":"resource_name","tag_name":"resource_name"}]},"id":"Test-Get_all_span_based_metrics_returns_OK_response-1686139550","type":"spans_metrics"}}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/apm/config/metrics
   response:
     body:
-      string: '{"data":{"id":"Test_Get_all_span_based_metrics_returns_OK_response_1680015328","attributes":{"filter":{"query":"source:Test-Get_all_span_based_metrics_returns_OK_response-1680015328"},"group_by":[{"path":"resource_name","tag_name":"resource_name"}],"compute":{"aggregation_type":"distribution","path":"@duration","include_percentiles":false}},"type":"spans_metrics"}}
+      string: '{"data":{"id":"Test_Get_all_span_based_metrics_returns_OK_response_1686139550","attributes":{"filter":{"query":"source:Test-Get_all_span_based_metrics_returns_OK_response-1686139550"},"group_by":[{"path":"resource_name","tag_name":"resource_name"}],"compute":{"aggregation_type":"distribution","path":"@duration","include_percentiles":false}},"type":"spans_metrics"}}
 
         '
     headers:
@@ -28,7 +28,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/apm/config/metrics
   response:
     body:
-      string: '{"data":[{"id":"Test_Get_all_span_based_metrics_returns_OK_response_1680015328","attributes":{"filter":{"query":"source:Test-Get_all_span_based_metrics_returns_OK_response-1680015328"},"group_by":[{"path":"resource_name","tag_name":"resource_name"}],"compute":{"aggregation_type":"distribution","path":"@duration","include_percentiles":false}},"type":"spans_metrics"}]}
+      string: '{"data":[{"id":"tf_TestAccSpansMetric_import_local_1681996306","attributes":{"filter":{"query":"@http.status_code:200
+        service:my-service"},"group_by":[{"path":"resource_name","tag_name":"resource_name"}],"compute":{"aggregation_type":"distribution","path":"@duration","include_percentiles":false}},"type":"spans_metrics"},{"id":"Test_Get_all_span_based_metrics_returns_OK_response_1686139550","attributes":{"filter":{"query":"source:Test-Get_all_span_based_metrics_returns_OK_response-1686139550"},"group_by":[{"path":"resource_name","tag_name":"resource_name"}],"compute":{"aggregation_type":"distribution","path":"@duration","include_percentiles":false}},"type":"spans_metrics"}]}
 
         '
     headers:
@@ -43,16 +44,14 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/apm/config/metrics/Test_Get_all_span_based_metrics_returns_OK_response_1680015328
+    uri: https://api.datadoghq.com/api/v2/apm/config/metrics/Test_Get_all_span_based_metrics_returns_OK_response_1686139550
   response:
     body:
-      string: '{}
-
-        '
+      string: ''
     headers:
       content-type:
-      - application/json
+      - text/html; charset=utf-8
     status:
-      code: 200
-      message: OK
+      code: 204
+      message: No Content
 version: 1
