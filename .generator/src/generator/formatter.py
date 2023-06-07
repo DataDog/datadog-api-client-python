@@ -350,6 +350,11 @@ def format_data_with_schema_dict(
 
     parameters = ""
     if "properties" in schema:
+        required_properties = set(schema.get("required", []))
+        missing = required_properties - set(data.keys())
+        if missing:
+            raise ValueError(f"missing required properties: {missing}")
+
         for k, v in data.items():
             if k in schema["properties"]:
                 sub_schema = schema["properties"][k]
