@@ -229,7 +229,7 @@ class AuthNMappingsApi:
 
         List all AuthN Mappings in the org.
 
-        :param page_size: Size for a given page. The maximum allowed value is 5000.
+        :param page_size: Size for a given page. The maximum allowed value is 100.
         :type page_size: int, optional
         :param page_number: Specific page number to return.
         :type page_number: int, optional
