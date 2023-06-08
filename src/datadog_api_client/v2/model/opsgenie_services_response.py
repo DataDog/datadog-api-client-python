@@ -30,7 +30,7 @@ class OpsgenieServicesResponse(ModelNormal):
 
     def __init__(self_, data: List[OpsgenieServiceResponseData], **kwargs):
         """
-        Response with a list of Opsgenie services.
+        Response with a list of Opsgenie services. Test coverage.
 
         :param data: An array of Opsgenie services.
         :type data: [OpsgenieServiceResponseData]
