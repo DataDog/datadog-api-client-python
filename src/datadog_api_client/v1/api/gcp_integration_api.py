@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 from typing import Any, Dict
+import warnings
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
@@ -107,9 +108,9 @@ class GCPIntegrationApi:
         self,
         body: GCPAccount,
     ) -> dict:
-        """Create a GCP integration.
+        """Create a GCP integration. **Deprecated**.
 
-        Create a Datadog-GCP integration.
+        This endpoint is deprecated. Create a Datadog-GCP integration.
 
         :param body: Create a Datadog-GCP integration.
         :type body: GCPAccount
@@ -118,15 +119,16 @@ class GCPIntegrationApi:
         kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
+        warnings.warn("create_gcp_integration is deprecated", DeprecationWarning, stacklevel=2)
         return self._create_gcp_integration_endpoint.call_with_http_info(**kwargs)
 
     def delete_gcp_integration(
         self,
         body: GCPAccount,
     ) -> dict:
-        """Delete a GCP integration.
+        """Delete a GCP integration. **Deprecated**.
 
-        Delete a given Datadog-GCP integration.
+        This endpoint is deprecated. Delete a given Datadog-GCP integration.
 
         :param body: Delete a given Datadog-GCP integration.
         :type body: GCPAccount
@@ -135,27 +137,29 @@ class GCPIntegrationApi:
         kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
+        warnings.warn("delete_gcp_integration is deprecated", DeprecationWarning, stacklevel=2)
         return self._delete_gcp_integration_endpoint.call_with_http_info(**kwargs)
 
     def list_gcp_integration(
         self,
     ) -> GCPAccountListResponse:
-        """List all GCP integrations.
+        """List all GCP integrations. **Deprecated**.
 
-        List all Datadog-GCP integrations configured in your Datadog account.
+        This endpoint is deprecated. List all Datadog-GCP integrations configured in your Datadog account.
 
         :rtype: GCPAccountListResponse
         """
         kwargs: Dict[str, Any] = {}
+        warnings.warn("list_gcp_integration is deprecated", DeprecationWarning, stacklevel=2)
         return self._list_gcp_integration_endpoint.call_with_http_info(**kwargs)
 
     def update_gcp_integration(
         self,
         body: GCPAccount,
     ) -> dict:
-        """Update a GCP integration.
+        """Update a GCP integration. **Deprecated**.
 
-        Update a Datadog-GCP integrations host_filters and/or auto-mute.
+        This endpoint is deprecated. Update a Datadog-GCP integrations host_filters and/or auto-mute.
         Requires a ``project_id`` and ``client_email`` , however these fields cannot be updated.
         If you need to update these fields, delete and use the create ( ``POST`` ) endpoint.
         The unspecified fields will keep their original values.
@@ -167,4 +171,5 @@ class GCPIntegrationApi:
         kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
+        warnings.warn("update_gcp_integration is deprecated", DeprecationWarning, stacklevel=2)
         return self._update_gcp_integration_endpoint.call_with_http_info(**kwargs)
