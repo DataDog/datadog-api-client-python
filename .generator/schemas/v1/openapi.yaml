@@ -16761,6 +16761,7 @@ components:
         iot_device_count:
           description: The total number of IoT devices during a given hour.
           format: int64
+          nullable: true
           type: integer
         org_name:
           description: The organization name.
@@ -16888,6 +16889,7 @@ components:
         retention:
           description: The retention period in days or "custom" for all custom retention
             usage.
+          nullable: true
           type: string
       type: object
     UsageLogsByRetentionResponse:
@@ -17012,6 +17014,7 @@ components:
         host_count:
           description: Contains the number of active NPM hosts.
           format: int64
+          nullable: true
           type: integer
         hour:
           description: The hour for the usage.
