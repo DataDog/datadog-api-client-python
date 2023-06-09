@@ -54,14 +54,6 @@ Feature: Sensitive Data Scanner
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/logs-app @team:DataDog/logs-core
-  Scenario: Delete Scanning Group returns "Not Found" response
-    Given new "DeleteScanningGroup" request
-    And request contains "group_id" parameter from "REPLACE.ME"
-    And body with value {"meta": {"version": 0}}
-    When the request is sent
-    Then the response status is 404 Not Found
-
   @team:DataDog/logs-app @team:DataDog/logs-core
   Scenario: Delete Scanning Group returns "OK" response
     Given a valid "configuration" in the system
@@ -79,14 +71,6 @@ Feature: Sensitive Data Scanner
     And body with value {"meta": {"version": 0}}
     When the request is sent
     Then the response status is 400 Bad Request
-
-  @generated @skip @team:DataDog/logs-app @team:DataDog/logs-core
-  Scenario: Delete Scanning Rule returns "Not Found" response
-    Given new "DeleteScanningRule" request
-    And request contains "rule_id" parameter from "REPLACE.ME"
-    And body with value {"meta": {"version": 0}}
-    When the request is sent
-    Then the response status is 404 Not Found
 
   @team:DataDog/logs-app @team:DataDog/logs-core
   Scenario: Delete Scanning Rule returns "OK" response
@@ -152,14 +136,6 @@ Feature: Sensitive Data Scanner
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/logs-app @team:DataDog/logs-core
-  Scenario: Update Scanning Group returns "Not Found" response
-    Given new "UpdateScanningGroup" request
-    And request contains "group_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"filter": {}, "product_list": ["logs"]}, "relationships": {"configuration": {"data": {"type": "sensitive_data_scanner_configuration"}}, "rules": {"data": [{"type": "sensitive_data_scanner_rule"}]}}, "type": "sensitive_data_scanner_group"}, "meta": {"version": 0}}
-    When the request is sent
-    Then the response status is 404 Not Found
-
   @team:DataDog/logs-app @team:DataDog/logs-core
   Scenario: Update Scanning Group returns "OK" response
     Given a valid "configuration" in the system
@@ -180,14 +156,6 @@ Feature: Sensitive Data Scanner
     And body with value {"meta":{},"data":{"type":"sensitive_data_scanner_rule","attributes":{"name":"{{ unique }}","pattern":"pattern","text_replacement":{"type":"none"},"tags":["sensitive_data:true"],"is_enabled":true},"relationships":{"group":{"data":{"type":"{{ group.data.type }}","id":"{{ group.data.id }}"}}}}}
     When the request is sent
     Then the response status is 400 Bad Request
-
-  @generated @skip @team:DataDog/logs-app @team:DataDog/logs-core
-  Scenario: Update Scanning Rule returns "Not Found" response
-    Given new "UpdateScanningRule" request
-    And request contains "rule_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"excluded_namespaces": ["admin.name"], "namespaces": ["admin"], "tags": [], "text_replacement": {"type": "none"}}, "relationships": {"group": {"data": {"type": "sensitive_data_scanner_group"}}, "standard_pattern": {"data": {"type": "sensitive_data_scanner_standard_pattern"}}}, "type": "sensitive_data_scanner_rule"}, "meta": {"version": 0}}
-    When the request is sent
-    Then the response status is 404 Not Found
 
   @team:DataDog/logs-app @team:DataDog/logs-core
   Scenario: Update Scanning Rule returns "OK" response

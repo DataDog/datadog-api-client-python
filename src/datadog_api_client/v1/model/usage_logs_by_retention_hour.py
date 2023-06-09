@@ -23,7 +23,7 @@ class UsageLogsByRetentionHour(ModelNormal):
             "org_name": (str,),
             "public_id": (str,),
             "rehydrated_indexed_events_count": (int, none_type),
-            "retention": (str, none_type),
+            "retention": (str,),
         }
 
     attribute_map = {
@@ -42,7 +42,7 @@ class UsageLogsByRetentionHour(ModelNormal):
         org_name: Union[str, UnsetType] = unset,
         public_id: Union[str, UnsetType] = unset,
         rehydrated_indexed_events_count: Union[int, none_type, UnsetType] = unset,
-        retention: Union[str, none_type, UnsetType] = unset,
+        retention: Union[str, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -64,7 +64,7 @@ class UsageLogsByRetentionHour(ModelNormal):
         :type rehydrated_indexed_events_count: int, none_type, optional
 
         :param retention: The retention period in days or "custom" for all custom retention usage.
-        :type retention: str, none_type, optional
+        :type retention: str, optional
         """
         if indexed_events_count is not unset:
             kwargs["indexed_events_count"] = indexed_events_count

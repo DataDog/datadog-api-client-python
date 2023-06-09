@@ -83,6 +83,18 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n\t\"data\": {\n\t\t\"attributes\": {\n            \"message\": \"test message\",\n\t\t\t\"monitor_identifier\": {\n\t\t\t\t\"monitor_tags\": [\"cat:hat\"]\n\t\t\t},\n\t\t\t\"scope\": \"test:{{ unique_lower_alnum }}\",\n            \"schedule\": {\"start\": null }\n\t\t},\n\t\t\"type\": \"downtime\"\n\t}\n}"
+      }
+    ],
+    "step": "there is a valid \"downtime_v2\" in the system",
+    "key": "downtime_v2",
+    "tag": "Downtimes",
+    "operationId": "CreateDowntime"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"title\": \"{{ unique }}\",\n      \"customer_impacted\": false\n     },\n     \"type\": \"incidents\"\n  }\n}"
       }
     ],

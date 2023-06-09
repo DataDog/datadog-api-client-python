@@ -9,7 +9,6 @@ from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     datetime,
-    none_type,
     unset,
     UnsetType,
 )
@@ -20,7 +19,7 @@ class UsageIoTHour(ModelNormal):
     def openapi_types(_):
         return {
             "hour": (datetime,),
-            "iot_device_count": (int, none_type),
+            "iot_device_count": (int,),
             "org_name": (str,),
             "public_id": (str,),
         }
@@ -35,7 +34,7 @@ class UsageIoTHour(ModelNormal):
     def __init__(
         self_,
         hour: Union[datetime, UnsetType] = unset,
-        iot_device_count: Union[int, none_type, UnsetType] = unset,
+        iot_device_count: Union[int, UnsetType] = unset,
         org_name: Union[str, UnsetType] = unset,
         public_id: Union[str, UnsetType] = unset,
         **kwargs,
@@ -47,7 +46,7 @@ class UsageIoTHour(ModelNormal):
         :type hour: datetime, optional
 
         :param iot_device_count: The total number of IoT devices during a given hour.
-        :type iot_device_count: int, none_type, optional
+        :type iot_device_count: int, optional
 
         :param org_name: The organization name.
         :type org_name: str, optional
