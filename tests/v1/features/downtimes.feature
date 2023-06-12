@@ -67,21 +67,21 @@ Feature: Downtimes
     And the response "message" has the same value as "downtime.message"
 
   @generated @skip @team:DataDog/monitor-app
-  Scenario: Get all downtimes for a monitor returns "Bad Request" response
+  Scenario: Get active downtimes for a monitor returns "Bad Request" response
     Given new "ListMonitorDowntimes" request
     And request contains "monitor_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/monitor-app
-  Scenario: Get all downtimes for a monitor returns "Monitor Not Found error" response
+  Scenario: Get active downtimes for a monitor returns "Monitor Not Found error" response
     Given new "ListMonitorDowntimes" request
     And request contains "monitor_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Monitor Not Found error
 
   @generated @skip @team:DataDog/monitor-app
-  Scenario: Get all downtimes for a monitor returns "OK" response
+  Scenario: Get active downtimes for a monitor returns "OK" response
     Given new "ListMonitorDowntimes" request
     And request contains "monitor_id" parameter from "REPLACE.ME"
     When the request is sent
