@@ -299,7 +299,7 @@ class DowntimesApi:
         self,
         monitor_id: int,
     ) -> List[Downtime]:
-        """Get all downtimes for a monitor.
+        """Get active downtimes for a monitor.
 
         Get all active downtimes for the specified monitor.
 
