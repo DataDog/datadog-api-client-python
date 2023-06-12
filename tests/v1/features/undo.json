@@ -1078,6 +1078,12 @@
       "type": "idempotent"
     }
   },
+  "GetSyntheticsDefaultLocations": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListTests": {
     "tag": "Synthetics",
     "undo": {

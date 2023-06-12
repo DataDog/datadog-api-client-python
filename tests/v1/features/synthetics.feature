@@ -523,6 +523,12 @@ Feature: Synthetics
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/synthetics-app
+  Scenario: Get the default locations returns "OK" response
+    Given new "GetSyntheticsDefaultLocations" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/synthetics-app
   Scenario: Get the list of all Synthetic tests returns "OK - Returns the list of all Synthetic tests." response
     Given new "ListTests" request
     When the request is sent
@@ -533,6 +539,12 @@ Feature: Synthetics
     Given new "ListTests" request
     When the request is sent
     Then the response status is 404 Synthetic Monitoring is not activated for the user.
+
+  @team:DataDog/synthetics-app
+  Scenario: Get the list of default locations returns "OK" response
+    Given new "GetSyntheticsDefaultLocations" request
+    When the request is sent
+    Then the response status is 200 OK
 
   @generated @skip @team:DataDog/synthetics-app
   Scenario: Pause or start a test returns "- Synthetic Monitoring is not activated for the user" response

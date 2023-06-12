@@ -508,6 +508,24 @@ class SyntheticsApi:
             api_client=api_client,
         )
 
+        self._get_synthetics_default_locations_endpoint = _Endpoint(
+            settings={
+                "response_type": ([str],),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v1/synthetics/settings/default_locations",
+                "operation_id": "get_synthetics_default_locations",
+                "http_method": "GET",
+                "version": "v1",
+                "servers": None,
+            },
+            params_map={},
+            headers_map={
+                "accept": ["application/json"],
+                "content_type": [],
+            },
+            api_client=api_client,
+        )
+
         self._get_test_endpoint = _Endpoint(
             settings={
                 "response_type": (SyntheticsTestDetails,),
@@ -1093,6 +1111,18 @@ class SyntheticsApi:
         kwargs["batch_id"] = batch_id
 
         return self._get_synthetics_ci_batch_endpoint.call_with_http_info(**kwargs)
+
+    def get_synthetics_default_locations(
+        self,
+    ) -> List[str]:
+        """Get the default locations.
+
+        Get the default locations settings.
+
+        :rtype: [str]
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._get_synthetics_default_locations_endpoint.call_with_http_info(**kwargs)
 
     def get_test(
         self,
