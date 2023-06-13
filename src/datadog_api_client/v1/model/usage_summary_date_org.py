@@ -70,6 +70,7 @@ class UsageSummaryDateOrg(ModelNormal):
             "mobile_rum_session_count_flutter_sum": (int,),
             "mobile_rum_session_count_ios_sum": (int,),
             "mobile_rum_session_count_reactnative_sum": (int,),
+            "mobile_rum_session_count_roku_sum": (int,),
             "mobile_rum_session_count_sum": (int,),
             "mobile_rum_units_sum": (int,),
             "name": (str,),
@@ -155,6 +156,7 @@ class UsageSummaryDateOrg(ModelNormal):
         "mobile_rum_session_count_flutter_sum": "mobile_rum_session_count_flutter_sum",
         "mobile_rum_session_count_ios_sum": "mobile_rum_session_count_ios_sum",
         "mobile_rum_session_count_reactnative_sum": "mobile_rum_session_count_reactnative_sum",
+        "mobile_rum_session_count_roku_sum": "mobile_rum_session_count_roku_sum",
         "mobile_rum_session_count_sum": "mobile_rum_session_count_sum",
         "mobile_rum_units_sum": "mobile_rum_units_sum",
         "name": "name",
@@ -241,6 +243,7 @@ class UsageSummaryDateOrg(ModelNormal):
         mobile_rum_session_count_flutter_sum: Union[int, UnsetType] = unset,
         mobile_rum_session_count_ios_sum: Union[int, UnsetType] = unset,
         mobile_rum_session_count_reactnative_sum: Union[int, UnsetType] = unset,
+        mobile_rum_session_count_roku_sum: Union[int, UnsetType] = unset,
         mobile_rum_session_count_sum: Union[int, UnsetType] = unset,
         mobile_rum_units_sum: Union[int, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
@@ -433,6 +436,9 @@ class UsageSummaryDateOrg(ModelNormal):
 
         :param mobile_rum_session_count_reactnative_sum: Shows the sum of all mobile RUM Sessions on React Native over all hours in the current date for the given org.
         :type mobile_rum_session_count_reactnative_sum: int, optional
+
+        :param mobile_rum_session_count_roku_sum: Shows the sum of all mobile RUM Sessions on Roku over all hours in the current date for the given org.
+        :type mobile_rum_session_count_roku_sum: int, optional
 
         :param mobile_rum_session_count_sum: Shows the sum of all mobile RUM Sessions over all hours in the current date for the given org.
         :type mobile_rum_session_count_sum: int, optional
@@ -627,6 +633,8 @@ class UsageSummaryDateOrg(ModelNormal):
             kwargs["mobile_rum_session_count_ios_sum"] = mobile_rum_session_count_ios_sum
         if mobile_rum_session_count_reactnative_sum is not unset:
             kwargs["mobile_rum_session_count_reactnative_sum"] = mobile_rum_session_count_reactnative_sum
+        if mobile_rum_session_count_roku_sum is not unset:
+            kwargs["mobile_rum_session_count_roku_sum"] = mobile_rum_session_count_roku_sum
         if mobile_rum_session_count_sum is not unset:
             kwargs["mobile_rum_session_count_sum"] = mobile_rum_session_count_sum
         if mobile_rum_units_sum is not unset:
