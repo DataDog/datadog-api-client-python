@@ -13,7 +13,7 @@ from datadog_api_client.model_utils import (
 )
 
 
-class FindingsErrorItem(ModelNormal):
+class JSONAPIErrorItem(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {

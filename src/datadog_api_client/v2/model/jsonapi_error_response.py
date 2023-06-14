@@ -12,28 +12,28 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.findings_error_item import FindingsErrorItem
+    from datadog_api_client.v2.model.jsonapi_error_item import JSONAPIErrorItem
 
 
-class FindingsErrorResponse(ModelNormal):
+class JSONAPIErrorResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.findings_error_item import FindingsErrorItem
+        from datadog_api_client.v2.model.jsonapi_error_item import JSONAPIErrorItem
 
         return {
-            "errors": ([FindingsErrorItem],),
+            "errors": ([JSONAPIErrorItem],),
         }
 
     attribute_map = {
         "errors": "errors",
     }
 
-    def __init__(self_, errors: List[FindingsErrorItem], **kwargs):
+    def __init__(self_, errors: List[JSONAPIErrorItem], **kwargs):
         """
         API error response.
 
         :param errors: A list of errors.
-        :type errors: [FindingsErrorItem]
+        :type errors: [JSONAPIErrorItem]
         """
         super().__init__(kwargs)
 

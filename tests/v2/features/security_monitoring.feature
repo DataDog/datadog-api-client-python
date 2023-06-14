@@ -199,20 +199,20 @@ Feature: Security Monitoring
     And the response "id" has the same value as "cloud_configuration_rule.id"
 
   @generated @skip @team:DataDog/cloud-security-posture-management
-  Scenario: Get a finding returns "Bad Request" response
+  Scenario: Get a finding returns "Bad Request: The server cannot process the request due to invalid syntax in the request." response
     Given operation "GetFinding" enabled
     And new "GetFinding" request
     And request contains "finding_id" parameter from "REPLACE.ME"
     When the request is sent
-    Then the response status is 400 Bad Request
+    Then the response status is 400 Bad Request: The server cannot process the request due to invalid syntax in the request.
 
   @generated @skip @team:DataDog/cloud-security-posture-management
-  Scenario: Get a finding returns "Not Found" response
+  Scenario: Get a finding returns "Not Found: The requested finding cannot be found." response
     Given operation "GetFinding" enabled
     And new "GetFinding" request
     And request contains "finding_id" parameter from "REPLACE.ME"
     When the request is sent
-    Then the response status is 404 Not Found
+    Then the response status is 404 Not Found: The requested finding cannot be found.
 
   @replay-only @team:DataDog/cloud-security-posture-management
   Scenario: Get a finding returns "OK" response
@@ -325,18 +325,18 @@ Feature: Security Monitoring
     And the response "data" has item with field "attributes.is_builtin" with value true
 
   @generated @skip @team:DataDog/cloud-security-posture-management
-  Scenario: List findings returns "Bad Request" response
+  Scenario: List findings returns "Bad Request: The server cannot process the request due to invalid syntax in the request." response
     Given operation "ListFindings" enabled
     And new "ListFindings" request
     When the request is sent
-    Then the response status is 400 Bad Request
+    Then the response status is 400 Bad Request: The server cannot process the request due to invalid syntax in the request.
 
   @generated @skip @team:DataDog/cloud-security-posture-management
-  Scenario: List findings returns "Not Found" response
+  Scenario: List findings returns "Not Found: The requested finding cannot be found." response
     Given operation "ListFindings" enabled
     And new "ListFindings" request
     When the request is sent
-    Then the response status is 404 Not Found
+    Then the response status is 404 Not Found: The requested finding cannot be found.
 
   @replay-only @team:DataDog/cloud-security-posture-management
   Scenario: List findings returns "OK" response

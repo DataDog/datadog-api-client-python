@@ -1737,20 +1737,6 @@ finding\_type
    :members:
    :show-inheritance:
 
-findings\_error\_item
----------------------
-
-.. automodule:: datadog_api_client.v2.model.findings_error_item
-   :members:
-   :show-inheritance:
-
-findings\_error\_response
--------------------------
-
-.. automodule:: datadog_api_client.v2.model.findings_error_response
-   :members:
-   :show-inheritance:
-
 formula\_limit
 --------------
 
@@ -2868,6 +2854,20 @@ jira\_integration\_metadata\_issues\_item
 -----------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.jira_integration_metadata_issues_item
+   :members:
+   :show-inheritance:
+
+jsonapi\_error\_item
+--------------------
+
+.. automodule:: datadog_api_client.v2.model.jsonapi_error_item
+   :members:
+   :show-inheritance:
+
+jsonapi\_error\_response
+------------------------
+
+.. automodule:: datadog_api_client.v2.model.jsonapi_error_response
    :members:
    :show-inheritance:
 
