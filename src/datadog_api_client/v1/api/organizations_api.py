@@ -37,7 +37,6 @@ class OrganizationsApi:
                 "operation_id": "create_child_org",
                 "http_method": "POST",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -58,7 +57,6 @@ class OrganizationsApi:
                 "operation_id": "downgrade_org",
                 "http_method": "POST",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "public_id": {
@@ -70,7 +68,6 @@ class OrganizationsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -83,7 +80,6 @@ class OrganizationsApi:
                 "operation_id": "get_org",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "public_id": {
@@ -95,7 +91,6 @@ class OrganizationsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -108,12 +103,10 @@ class OrganizationsApi:
                 "operation_id": "list_orgs",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={},
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -126,7 +119,6 @@ class OrganizationsApi:
                 "operation_id": "update_org",
                 "http_method": "PUT",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "public_id": {
@@ -153,7 +145,6 @@ class OrganizationsApi:
                 "operation_id": "upload_idp_for_org",
                 "http_method": "POST",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "public_id": {

@@ -69,8 +69,6 @@ class {{ classname }}:
                     },
 {%- endfor %}
                 ],
-{%- else %}
-                "servers": None,
 {%- endif %}
             },
             params_map={
@@ -132,8 +130,6 @@ class {{ classname }}:
 {%- if operation.requestBody %}
                 "content_type": [
 {%- for mediaType in operation.requestBody.content.keys() %}"{{ mediaType }}"{%- if not loop.last %}, {% endif %}{%- endfor %}]
-{% else %}
-                "content_type": [],
 {%- endif %}
             },
             api_client=api_client,

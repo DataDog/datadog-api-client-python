@@ -41,7 +41,6 @@ class DashboardsApi:
                 "operation_id": "create_dashboard",
                 "http_method": "POST",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -62,7 +61,6 @@ class DashboardsApi:
                 "operation_id": "create_public_dashboard",
                 "http_method": "POST",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -83,7 +81,6 @@ class DashboardsApi:
                 "operation_id": "delete_dashboard",
                 "http_method": "DELETE",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "dashboard_id": {
@@ -95,7 +92,6 @@ class DashboardsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -108,7 +104,6 @@ class DashboardsApi:
                 "operation_id": "delete_dashboards",
                 "http_method": "DELETE",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -129,7 +124,6 @@ class DashboardsApi:
                 "operation_id": "delete_public_dashboard",
                 "http_method": "DELETE",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "token": {
@@ -141,7 +135,6 @@ class DashboardsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -154,7 +147,6 @@ class DashboardsApi:
                 "operation_id": "delete_public_dashboard_invitation",
                 "http_method": "DELETE",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "token": {
@@ -181,7 +173,6 @@ class DashboardsApi:
                 "operation_id": "get_dashboard",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "dashboard_id": {
@@ -193,7 +184,6 @@ class DashboardsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -206,7 +196,6 @@ class DashboardsApi:
                 "operation_id": "get_public_dashboard",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "token": {
@@ -218,7 +207,6 @@ class DashboardsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -231,7 +219,6 @@ class DashboardsApi:
                 "operation_id": "get_public_dashboard_invitations",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "token": {
@@ -253,7 +240,6 @@ class DashboardsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -266,7 +252,6 @@ class DashboardsApi:
                 "operation_id": "list_dashboards",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "filter_shared": {
@@ -282,7 +267,6 @@ class DashboardsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -295,7 +279,6 @@ class DashboardsApi:
                 "operation_id": "restore_dashboards",
                 "http_method": "PATCH",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -316,7 +299,6 @@ class DashboardsApi:
                 "operation_id": "send_public_dashboard_invitation",
                 "http_method": "POST",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "token": {
@@ -343,7 +325,6 @@ class DashboardsApi:
                 "operation_id": "update_dashboard",
                 "http_method": "PUT",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "dashboard_id": {
@@ -370,7 +351,6 @@ class DashboardsApi:
                 "operation_id": "update_public_dashboard",
                 "http_method": "PUT",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "token": {

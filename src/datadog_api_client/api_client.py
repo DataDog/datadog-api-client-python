@@ -656,6 +656,7 @@ class Endpoint:
         elif is_unstable is False:
             raise ApiValueError("Unstable operation '{0}' is disabled".format(self.settings["operation_id"]))
 
+        servers = self.settings.get("servers")
         try:
             index = self.api_client.configuration.server_operation_index.get(
                 self.settings["operation_id"], self.api_client.configuration.server_index
@@ -664,11 +665,11 @@ class Endpoint:
                 self.settings["operation_id"], self.api_client.configuration.server_variables
             )
             host = self.api_client.configuration.get_host_from_settings(
-                index, variables=server_variables, servers=self.settings["servers"]
+                index, variables=server_variables, servers=servers
             )
         except IndexError:
-            if self.settings["servers"]:
-                raise ApiValueError("Invalid host index. Must be 0 <= index < %s" % len(self.settings["servers"]))
+            if servers:
+                raise ApiValueError("Invalid host index. Must be 0 <= index < %s" % len(servers))
             host = None
 
         for key, value in kwargs.items():
@@ -703,7 +704,7 @@ class Endpoint:
         if accept_headers_list:
             params["header"]["Accept"] = self.api_client.select_header_accept(accept_headers_list)
 
-        content_type_headers_list = self.headers_map["content_type"]
+        content_type_headers_list = self.headers_map.get("content_type")
         if content_type_headers_list:
             header_list = self.api_client.select_header_content_type(content_type_headers_list)
             params["header"]["Content-Type"] = header_list

@@ -31,7 +31,6 @@ class PagerDutyIntegrationApi:
                 "operation_id": "create_pager_duty_integration_service",
                 "http_method": "POST",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -52,7 +51,6 @@ class PagerDutyIntegrationApi:
                 "operation_id": "delete_pager_duty_integration_service",
                 "http_method": "DELETE",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "service_name": {
@@ -64,7 +62,6 @@ class PagerDutyIntegrationApi:
             },
             headers_map={
                 "accept": ["*/*"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -77,7 +74,6 @@ class PagerDutyIntegrationApi:
                 "operation_id": "get_pager_duty_integration_service",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "service_name": {
@@ -89,7 +85,6 @@ class PagerDutyIntegrationApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -102,7 +97,6 @@ class PagerDutyIntegrationApi:
                 "operation_id": "update_pager_duty_integration_service",
                 "http_method": "PUT",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "service_name": {

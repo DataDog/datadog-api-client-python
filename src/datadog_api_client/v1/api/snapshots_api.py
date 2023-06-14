@@ -32,7 +32,6 @@ class SnapshotsApi:
                 "operation_id": "get_graph_snapshot",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "metric_query": {
@@ -80,7 +79,6 @@ class SnapshotsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )

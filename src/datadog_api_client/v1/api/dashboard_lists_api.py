@@ -32,7 +32,6 @@ class DashboardListsApi:
                 "operation_id": "create_dashboard_list",
                 "http_method": "POST",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -53,7 +52,6 @@ class DashboardListsApi:
                 "operation_id": "delete_dashboard_list",
                 "http_method": "DELETE",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "list_id": {
@@ -65,7 +63,6 @@ class DashboardListsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -78,7 +75,6 @@ class DashboardListsApi:
                 "operation_id": "get_dashboard_list",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "list_id": {
@@ -90,7 +86,6 @@ class DashboardListsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -103,12 +98,10 @@ class DashboardListsApi:
                 "operation_id": "list_dashboard_lists",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={},
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -121,7 +114,6 @@ class DashboardListsApi:
                 "operation_id": "update_dashboard_list",
                 "http_method": "PUT",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "list_id": {

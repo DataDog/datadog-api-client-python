@@ -31,7 +31,6 @@ class UsersApi:
                 "operation_id": "create_user",
                 "http_method": "POST",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -52,7 +51,6 @@ class UsersApi:
                 "operation_id": "disable_user",
                 "http_method": "DELETE",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "user_handle": {
@@ -64,7 +62,6 @@ class UsersApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -77,7 +74,6 @@ class UsersApi:
                 "operation_id": "get_user",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "user_handle": {
@@ -89,7 +85,6 @@ class UsersApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -102,12 +97,10 @@ class UsersApi:
                 "operation_id": "list_users",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={},
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -120,7 +113,6 @@ class UsersApi:
                 "operation_id": "update_user",
                 "http_method": "PUT",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "user_handle": {

@@ -44,7 +44,6 @@ class CIVisibilityPipelinesApi:
                 "operation_id": "aggregate_ci_app_pipeline_events",
                 "http_method": "POST",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -65,7 +64,6 @@ class CIVisibilityPipelinesApi:
                 "operation_id": "create_ci_app_pipeline_event",
                 "http_method": "POST",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -86,7 +84,6 @@ class CIVisibilityPipelinesApi:
                 "operation_id": "list_ci_app_pipeline_events",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "filter_query": {
@@ -125,7 +122,6 @@ class CIVisibilityPipelinesApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -138,7 +134,6 @@ class CIVisibilityPipelinesApi:
                 "operation_id": "search_ci_app_pipeline_events",
                 "http_method": "POST",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "body": {

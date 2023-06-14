@@ -40,7 +40,6 @@ class MonitorsApi:
                 "operation_id": "check_can_delete_monitor",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "monitor_ids": {
@@ -53,7 +52,6 @@ class MonitorsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -66,7 +64,6 @@ class MonitorsApi:
                 "operation_id": "create_monitor",
                 "http_method": "POST",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -87,7 +84,6 @@ class MonitorsApi:
                 "operation_id": "delete_monitor",
                 "http_method": "DELETE",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "monitor_id": {
@@ -104,7 +100,6 @@ class MonitorsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -117,7 +112,6 @@ class MonitorsApi:
                 "operation_id": "get_monitor",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "monitor_id": {
@@ -139,7 +133,6 @@ class MonitorsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -152,7 +145,6 @@ class MonitorsApi:
                 "operation_id": "list_monitors",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "group_states": {
@@ -201,7 +193,6 @@ class MonitorsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -214,7 +205,6 @@ class MonitorsApi:
                 "operation_id": "search_monitor_groups",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "query": {
@@ -240,7 +230,6 @@ class MonitorsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -253,7 +242,6 @@ class MonitorsApi:
                 "operation_id": "search_monitors",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "query": {
@@ -279,7 +267,6 @@ class MonitorsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -292,7 +279,6 @@ class MonitorsApi:
                 "operation_id": "update_monitor",
                 "http_method": "PUT",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "monitor_id": {
@@ -319,7 +305,6 @@ class MonitorsApi:
                 "operation_id": "validate_existing_monitor",
                 "http_method": "POST",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "monitor_id": {
@@ -346,7 +331,6 @@ class MonitorsApi:
                 "operation_id": "validate_monitor",
                 "http_method": "POST",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "body": {

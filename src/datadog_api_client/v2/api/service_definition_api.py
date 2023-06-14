@@ -42,7 +42,6 @@ class ServiceDefinitionApi:
                 "operation_id": "create_or_update_service_definitions",
                 "http_method": "POST",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -63,7 +62,6 @@ class ServiceDefinitionApi:
                 "operation_id": "delete_service_definition",
                 "http_method": "DELETE",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "service_name": {
@@ -75,7 +73,6 @@ class ServiceDefinitionApi:
             },
             headers_map={
                 "accept": ["*/*"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -88,7 +85,6 @@ class ServiceDefinitionApi:
                 "operation_id": "get_service_definition",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "service_name": {
@@ -105,7 +101,6 @@ class ServiceDefinitionApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -118,7 +113,6 @@ class ServiceDefinitionApi:
                 "operation_id": "list_service_definitions",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "page_size": {
@@ -139,7 +133,6 @@ class ServiceDefinitionApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )

@@ -65,7 +65,6 @@ class SyntheticsApi:
                 "operation_id": "create_global_variable",
                 "http_method": "POST",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -86,7 +85,6 @@ class SyntheticsApi:
                 "operation_id": "create_private_location",
                 "http_method": "POST",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -107,7 +105,6 @@ class SyntheticsApi:
                 "operation_id": "create_synthetics_api_test",
                 "http_method": "POST",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -128,7 +125,6 @@ class SyntheticsApi:
                 "operation_id": "create_synthetics_browser_test",
                 "http_method": "POST",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -149,7 +145,6 @@ class SyntheticsApi:
                 "operation_id": "delete_global_variable",
                 "http_method": "DELETE",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "variable_id": {
@@ -161,7 +156,6 @@ class SyntheticsApi:
             },
             headers_map={
                 "accept": ["*/*"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -174,7 +168,6 @@ class SyntheticsApi:
                 "operation_id": "delete_private_location",
                 "http_method": "DELETE",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "location_id": {
@@ -186,7 +179,6 @@ class SyntheticsApi:
             },
             headers_map={
                 "accept": ["*/*"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -199,7 +191,6 @@ class SyntheticsApi:
                 "operation_id": "delete_tests",
                 "http_method": "POST",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -220,7 +211,6 @@ class SyntheticsApi:
                 "operation_id": "edit_global_variable",
                 "http_method": "PUT",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "variable_id": {
@@ -247,7 +237,6 @@ class SyntheticsApi:
                 "operation_id": "get_api_test",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "public_id": {
@@ -259,7 +248,6 @@ class SyntheticsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -272,7 +260,6 @@ class SyntheticsApi:
                 "operation_id": "get_api_test_latest_results",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "public_id": {
@@ -300,7 +287,6 @@ class SyntheticsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -313,7 +299,6 @@ class SyntheticsApi:
                 "operation_id": "get_api_test_result",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "public_id": {
@@ -331,7 +316,6 @@ class SyntheticsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -344,7 +328,6 @@ class SyntheticsApi:
                 "operation_id": "get_browser_test",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "public_id": {
@@ -356,7 +339,6 @@ class SyntheticsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -369,7 +351,6 @@ class SyntheticsApi:
                 "operation_id": "get_browser_test_latest_results",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "public_id": {
@@ -397,7 +378,6 @@ class SyntheticsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -410,7 +390,6 @@ class SyntheticsApi:
                 "operation_id": "get_browser_test_result",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "public_id": {
@@ -428,7 +407,6 @@ class SyntheticsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -441,7 +419,6 @@ class SyntheticsApi:
                 "operation_id": "get_global_variable",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "variable_id": {
@@ -453,7 +430,6 @@ class SyntheticsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -466,7 +442,6 @@ class SyntheticsApi:
                 "operation_id": "get_private_location",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "location_id": {
@@ -478,7 +453,6 @@ class SyntheticsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -491,7 +465,6 @@ class SyntheticsApi:
                 "operation_id": "get_synthetics_ci_batch",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "batch_id": {
@@ -503,7 +476,6 @@ class SyntheticsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -516,12 +488,10 @@ class SyntheticsApi:
                 "operation_id": "get_synthetics_default_locations",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={},
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -534,7 +504,6 @@ class SyntheticsApi:
                 "operation_id": "get_test",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "public_id": {
@@ -546,7 +515,6 @@ class SyntheticsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -559,12 +527,10 @@ class SyntheticsApi:
                 "operation_id": "list_global_variables",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={},
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -577,12 +543,10 @@ class SyntheticsApi:
                 "operation_id": "list_locations",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={},
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -595,7 +559,6 @@ class SyntheticsApi:
                 "operation_id": "list_tests",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "page_size": {
@@ -611,7 +574,6 @@ class SyntheticsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -624,7 +586,6 @@ class SyntheticsApi:
                 "operation_id": "trigger_ci_tests",
                 "http_method": "POST",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -645,7 +606,6 @@ class SyntheticsApi:
                 "operation_id": "trigger_tests",
                 "http_method": "POST",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -666,7 +626,6 @@ class SyntheticsApi:
                 "operation_id": "update_api_test",
                 "http_method": "PUT",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "public_id": {
@@ -693,7 +652,6 @@ class SyntheticsApi:
                 "operation_id": "update_browser_test",
                 "http_method": "PUT",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "public_id": {
@@ -720,7 +678,6 @@ class SyntheticsApi:
                 "operation_id": "update_private_location",
                 "http_method": "PUT",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "location_id": {
@@ -747,7 +704,6 @@ class SyntheticsApi:
                 "operation_id": "update_test_pause_status",
                 "http_method": "PUT",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "public_id": {
