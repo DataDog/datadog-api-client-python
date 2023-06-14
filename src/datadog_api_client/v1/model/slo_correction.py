@@ -35,12 +35,12 @@ if TYPE_CHECKING:
 class SLOCorrectionJSON:
     id: str
     category: Union[SLOCorrectionCategory, UnsetType] = unset
-    created_at: Union[int, UnsetType] = unset
+    created_at: Union[int, none_type, UnsetType] = unset
     creator: Union[Creator, UnsetType] = unset
     description: Union[str, UnsetType] = unset
     duration: Union[int, none_type, UnsetType] = unset
-    end: Union[int, UnsetType] = unset
-    modified_at: Union[int, UnsetType] = unset
+    end: Union[int, none_type, UnsetType] = unset
+    modified_at: Union[int, none_type, UnsetType] = unset
     modifier: Union[SLOCorrectionResponseAttributesModifier, none_type, UnsetType] = unset
     rrule: Union[str, none_type, UnsetType] = unset
     slo_id: Union[str, UnsetType] = unset

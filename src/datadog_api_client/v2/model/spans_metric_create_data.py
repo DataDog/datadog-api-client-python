@@ -3,23 +3,40 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from dataclasses import dataclass
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
+from datadog_api_client.v2.model.spans_metric_compute import SpansMetricCompute
+from datadog_api_client.v2.model.spans_metric_filter import SpansMetricFilter
+from datadog_api_client.v2.model.spans_metric_group_by import SpansMetricGroupBy
+from datadog_api_client.v2.model.spans_metric_create_attributes import SpansMetricCreateAttributes
+from datadog_api_client.v2.model.spans_metric_compute import SpansMetricCompute
+from datadog_api_client.v2.model.spans_metric_filter import SpansMetricFilter
+from datadog_api_client.v2.model.spans_metric_group_by import SpansMetricGroupBy
+
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.spans_metric_create_attributes import SpansMetricCreateAttributes
     from datadog_api_client.v2.model.spans_metric_type import SpansMetricType
+
+
+@dataclass
+class SpansMetricCreateDataJSON:
+    id: str
+    compute: Union[SpansMetricCompute, UnsetType] = unset
+    filter: Union[SpansMetricFilter, UnsetType] = unset
+    group_by: Union[List[SpansMetricGroupBy], UnsetType] = unset
 
 
 class SpansMetricCreateData(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.spans_metric_create_attributes import SpansMetricCreateAttributes
         from datadog_api_client.v2.model.spans_metric_type import SpansMetricType
 
         return {
@@ -33,6 +50,7 @@ class SpansMetricCreateData(ModelNormal):
         "id": "id",
         "type": "type",
     }
+    json_api_model = SpansMetricCreateDataJSON
 
     def __init__(self_, attributes: SpansMetricCreateAttributes, id: str, type: SpansMetricType, **kwargs):
         """
