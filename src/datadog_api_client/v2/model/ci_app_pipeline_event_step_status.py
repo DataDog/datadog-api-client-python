@@ -12,18 +12,20 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class CIAppTestEventTypeName(ModelSimple):
+class CIAppPipelineEventStepStatus(ModelSimple):
     """
-    Type of the event.
+    The final status of the step.
 
-    :param value: If omitted defaults to "citest". Must be one of ["citest"].
+    :param value: Must be one of ["success", "error"].
     :type value: str
     """
 
     allowed_values = {
-        "citest",
+        "success",
+        "error",
     }
-    CITEST: ClassVar["CIAppTestEventTypeName"]
+    SUCCESS: ClassVar["CIAppPipelineEventStepStatus"]
+    ERROR: ClassVar["CIAppPipelineEventStepStatus"]
 
     @cached_property
     def openapi_types(_):
@@ -32,4 +34,5 @@ class CIAppTestEventTypeName(ModelSimple):
         }
 
 
-CIAppTestEventTypeName.CITEST = CIAppTestEventTypeName("citest")
+CIAppPipelineEventStepStatus.SUCCESS = CIAppPipelineEventStepStatus("success")
+CIAppPipelineEventStepStatus.ERROR = CIAppPipelineEventStepStatus("error")

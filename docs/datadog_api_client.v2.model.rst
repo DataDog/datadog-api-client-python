@@ -428,6 +428,20 @@ ci\_app\_aggregation\_function
    :members:
    :show-inheritance:
 
+ci\_app\_ci\_error
+------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_ci_error
+   :members:
+   :show-inheritance:
+
+ci\_app\_ci\_error\_domain
+--------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_ci_error_domain
+   :members:
+   :show-inheritance:
+
 ci\_app\_compute
 ----------------
 
@@ -449,10 +463,52 @@ ci\_app\_computes
    :members:
    :show-inheritance:
 
+ci\_app\_create\_pipeline\_event\_request
+-----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_create_pipeline_event_request
+   :members:
+   :show-inheritance:
+
+ci\_app\_create\_pipeline\_event\_request\_attributes
+-----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_create_pipeline_event_request_attributes
+   :members:
+   :show-inheritance:
+
+ci\_app\_create\_pipeline\_event\_request\_attributes\_resource
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_create_pipeline_event_request_attributes_resource
+   :members:
+   :show-inheritance:
+
+ci\_app\_create\_pipeline\_event\_request\_data
+-----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_create_pipeline_event_request_data
+   :members:
+   :show-inheritance:
+
+ci\_app\_create\_pipeline\_event\_request\_data\_type
+-----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_create_pipeline_event_request_data_type
+   :members:
+   :show-inheritance:
+
 ci\_app\_event\_attributes
 --------------------------
 
 .. automodule:: datadog_api_client.v2.model.ci_app_event_attributes
+   :members:
+   :show-inheritance:
+
+ci\_app\_git\_info
+------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_git_info
    :members:
    :show-inheritance:
 
@@ -477,10 +533,122 @@ ci\_app\_group\_by\_total
    :members:
    :show-inheritance:
 
+ci\_app\_host\_info
+-------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_host_info
+   :members:
+   :show-inheritance:
+
 ci\_app\_pipeline\_event
 ------------------------
 
 .. automodule:: datadog_api_client.v2.model.ci_app_pipeline_event
+   :members:
+   :show-inheritance:
+
+ci\_app\_pipeline\_event\_job
+-----------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_pipeline_event_job
+   :members:
+   :show-inheritance:
+
+ci\_app\_pipeline\_event\_job\_level
+------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_pipeline_event_job_level
+   :members:
+   :show-inheritance:
+
+ci\_app\_pipeline\_event\_job\_status
+-------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_pipeline_event_job_status
+   :members:
+   :show-inheritance:
+
+ci\_app\_pipeline\_event\_parameters
+------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_pipeline_event_parameters
+   :members:
+   :show-inheritance:
+
+ci\_app\_pipeline\_event\_parent\_pipeline
+------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_pipeline_event_parent_pipeline
+   :members:
+   :show-inheritance:
+
+ci\_app\_pipeline\_event\_pipeline
+----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_pipeline_event_pipeline
+   :members:
+   :show-inheritance:
+
+ci\_app\_pipeline\_event\_pipeline\_level
+-----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_pipeline_event_pipeline_level
+   :members:
+   :show-inheritance:
+
+ci\_app\_pipeline\_event\_pipeline\_status
+------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_pipeline_event_pipeline_status
+   :members:
+   :show-inheritance:
+
+ci\_app\_pipeline\_event\_previous\_pipeline
+--------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_pipeline_event_previous_pipeline
+   :members:
+   :show-inheritance:
+
+ci\_app\_pipeline\_event\_stage
+-------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_pipeline_event_stage
+   :members:
+   :show-inheritance:
+
+ci\_app\_pipeline\_event\_stage\_level
+--------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_pipeline_event_stage_level
+   :members:
+   :show-inheritance:
+
+ci\_app\_pipeline\_event\_stage\_status
+---------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_pipeline_event_stage_status
+   :members:
+   :show-inheritance:
+
+ci\_app\_pipeline\_event\_step
+------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_pipeline_event_step
+   :members:
+   :show-inheritance:
+
+ci\_app\_pipeline\_event\_step\_level
+-------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_pipeline_event_step_level
+   :members:
+   :show-inheritance:
+
+ci\_app\_pipeline\_event\_step\_status
+--------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_pipeline_event_step_status
    :members:
    :show-inheritance:
 
@@ -677,6 +845,13 @@ ci\_app\_tests\_query\_filter
 -----------------------------
 
 .. automodule:: datadog_api_client.v2.model.ci_app_tests_query_filter
+   :members:
+   :show-inheritance:
+
+ci\_app\_user\_info
+-------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_user_info
    :members:
    :show-inheritance:
 
@@ -1811,6 +1986,20 @@ http\_log\_item
 ---------------
 
 .. automodule:: datadog_api_client.v2.model.http_log_item
+   :members:
+   :show-inheritance:
+
+httpci\_app\_error
+------------------
+
+.. automodule:: datadog_api_client.v2.model.httpci_app_error
+   :members:
+   :show-inheritance:
+
+httpci\_app\_errors
+-------------------
+
+.. automodule:: datadog_api_client.v2.model.httpci_app_errors
    :members:
    :show-inheritance:
 

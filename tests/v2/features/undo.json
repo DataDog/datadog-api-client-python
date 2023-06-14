@@ -146,6 +146,12 @@
       "type": "idempotent"
     }
   },
+  "CreateCIAppPipelineEvent": {
+    "tag": "CI Visibility Pipelines",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "AggregateCIAppPipelineEvents": {
     "tag": "CI Visibility Pipelines",
     "undo": {
