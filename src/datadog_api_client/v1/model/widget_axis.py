@@ -44,19 +44,19 @@ class WidgetAxis(ModelNormal):
         """
         Axis controls for the widget.
 
-        :param include_zero: True includes zero.
+        :param include_zero: Set to ``true`` to include zero.
         :type include_zero: bool, optional
 
-        :param label: The label of the axis to display on the graph.
+        :param label: The label of the axis to display on the graph. Only usable on Scatterplot Widgets.
         :type label: str, optional
 
-        :param max: Specifies the maximum value to show on the y-axis. It takes a number, or auto for default behavior.
+        :param max: Specifies maximum numeric value to show on the axis. Defaults to ``auto``.
         :type max: str, optional
 
-        :param min: Specifies minimum value to show on the y-axis. It takes a number, or auto for default behavior.
+        :param min: Specifies minimum numeric value to show on the axis. Defaults to ``auto``.
         :type min: str, optional
 
-        :param scale: Specifies the scale type. Possible values are ``linear`` , ``log`` , ``sqrt`` , ``pow##`` (for example ``pow2`` , ``pow0.5`` etc.).
+        :param scale: Specifies the scale type. Possible values are ``linear`` , ``log`` , ``sqrt`` , and ``pow##`` (for example ``pow2`` or ``pow0.5`` ).
         :type scale: str, optional
         """
         if include_zero is not unset:
