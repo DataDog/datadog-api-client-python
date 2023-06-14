@@ -12,18 +12,18 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class CIAppTestEventTypeName(ModelSimple):
+class CIAppCreatePipelineEventRequestDataType(ModelSimple):
     """
     Type of the event.
 
-    :param value: If omitted defaults to "citest". Must be one of ["citest"].
+    :param value: If omitted defaults to "cipipeline_resource_request". Must be one of ["cipipeline_resource_request"].
     :type value: str
     """
 
     allowed_values = {
-        "citest",
+        "cipipeline_resource_request",
     }
-    CITEST: ClassVar["CIAppTestEventTypeName"]
+    CIPIPELINE_RESOURCE_REQUEST: ClassVar["CIAppCreatePipelineEventRequestDataType"]
 
     @cached_property
     def openapi_types(_):
@@ -32,4 +32,6 @@ class CIAppTestEventTypeName(ModelSimple):
         }
 
 
-CIAppTestEventTypeName.CITEST = CIAppTestEventTypeName("citest")
+CIAppCreatePipelineEventRequestDataType.CIPIPELINE_RESOURCE_REQUEST = CIAppCreatePipelineEventRequestDataType(
+    "cipipeline_resource_request"
+)

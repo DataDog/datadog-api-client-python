@@ -23,7 +23,7 @@ class CIAppPipelineEventTypeName(ModelSimple):
     allowed_values = {
         "cipipeline",
     }
-    cipipeline: ClassVar["CIAppPipelineEventTypeName"]
+    CIPIPELINE: ClassVar["CIAppPipelineEventTypeName"]
 
     @cached_property
     def openapi_types(_):
@@ -32,4 +32,4 @@ class CIAppPipelineEventTypeName(ModelSimple):
         }
 
 
-CIAppPipelineEventTypeName.cipipeline = CIAppPipelineEventTypeName("cipipeline")
+CIAppPipelineEventTypeName.CIPIPELINE = CIAppPipelineEventTypeName("cipipeline")

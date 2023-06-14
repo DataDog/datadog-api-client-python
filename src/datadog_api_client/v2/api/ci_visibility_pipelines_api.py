@@ -15,6 +15,7 @@ from datadog_api_client.model_utils import (
     UnsetType,
     unset,
 )
+from datadog_api_client.v2.model.ci_app_create_pipeline_event_request import CIAppCreatePipelineEventRequest
 from datadog_api_client.v2.model.ci_app_pipelines_analytics_aggregate_response import (
     CIAppPipelinesAnalyticsAggregateResponse,
 )
@@ -27,7 +28,7 @@ from datadog_api_client.v2.model.ci_app_pipeline_events_request import CIAppPipe
 
 class CIVisibilityPipelinesApi:
     """
-    Search or aggregate your CI Visibility pipeline events over HTTP.
+    Search or aggregate your CI Visibility pipeline events and send them to your Datadog site over HTTP.
     """
 
     def __init__(self, api_client=None):
@@ -49,6 +50,27 @@ class CIVisibilityPipelinesApi:
                 "body": {
                     "required": True,
                     "openapi_types": (CIAppPipelinesAggregateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._create_ci_app_pipeline_event_endpoint = _Endpoint(
+            settings={
+                "response_type": (dict,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/ci/pipeline",
+                "operation_id": "create_ci_app_pipeline_event",
+                "http_method": "POST",
+                "version": "v2",
+                "servers": None,
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (CIAppCreatePipelineEventRequest,),
                     "location": "body",
                 },
             },
@@ -143,6 +165,22 @@ class CIVisibilityPipelinesApi:
         kwargs["body"] = body
 
         return self._aggregate_ci_app_pipeline_events_endpoint.call_with_http_info(**kwargs)
+
+    def create_ci_app_pipeline_event(
+        self,
+        body: CIAppCreatePipelineEventRequest,
+    ) -> dict:
+        """Send pipeline event.
+
+        Send your pipeline event to your Datadog platform over HTTP.
+
+        :type body: CIAppCreatePipelineEventRequest
+        :rtype: dict
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_ci_app_pipeline_event_endpoint.call_with_http_info(**kwargs)
 
     def list_ci_app_pipeline_events(
         self,

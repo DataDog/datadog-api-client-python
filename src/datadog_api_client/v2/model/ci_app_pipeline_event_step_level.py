@@ -12,18 +12,18 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class CIAppTestEventTypeName(ModelSimple):
+class CIAppPipelineEventStepLevel(ModelSimple):
     """
-    Type of the event.
+    Used to distinguish between pipelines, stages, jobs and steps.
 
-    :param value: If omitted defaults to "citest". Must be one of ["citest"].
+    :param value: If omitted defaults to "step". Must be one of ["step"].
     :type value: str
     """
 
     allowed_values = {
-        "citest",
+        "step",
     }
-    CITEST: ClassVar["CIAppTestEventTypeName"]
+    STEP: ClassVar["CIAppPipelineEventStepLevel"]
 
     @cached_property
     def openapi_types(_):
@@ -32,4 +32,4 @@ class CIAppTestEventTypeName(ModelSimple):
         }
 
 
-CIAppTestEventTypeName.CITEST = CIAppTestEventTypeName("citest")
+CIAppPipelineEventStepLevel.STEP = CIAppPipelineEventStepLevel("step")
