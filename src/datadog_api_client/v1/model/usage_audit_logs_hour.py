@@ -9,6 +9,7 @@ from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     datetime,
+    none_type,
     unset,
     UnsetType,
 )
@@ -19,7 +20,7 @@ class UsageAuditLogsHour(ModelNormal):
     def openapi_types(_):
         return {
             "hour": (datetime,),
-            "lines_indexed": (int,),
+            "lines_indexed": (int, none_type),
             "org_name": (str,),
             "public_id": (str,),
         }
@@ -34,7 +35,7 @@ class UsageAuditLogsHour(ModelNormal):
     def __init__(
         self_,
         hour: Union[datetime, UnsetType] = unset,
-        lines_indexed: Union[int, UnsetType] = unset,
+        lines_indexed: Union[int, none_type, UnsetType] = unset,
         org_name: Union[str, UnsetType] = unset,
         public_id: Union[str, UnsetType] = unset,
         **kwargs,
@@ -46,7 +47,7 @@ class UsageAuditLogsHour(ModelNormal):
         :type hour: datetime, optional
 
         :param lines_indexed: The total number of audit logs lines indexed during a given hour.
-        :type lines_indexed: int, optional
+        :type lines_indexed: int, none_type, optional
 
         :param org_name: The organization name.
         :type org_name: str, optional
