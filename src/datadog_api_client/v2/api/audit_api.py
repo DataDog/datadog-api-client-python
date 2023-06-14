@@ -39,7 +39,6 @@ class AuditApi:
                 "operation_id": "list_audit_logs",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "filter_query": {
@@ -78,7 +77,6 @@ class AuditApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -91,7 +89,6 @@ class AuditApi:
                 "operation_id": "search_audit_logs",
                 "http_method": "POST",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "body": {

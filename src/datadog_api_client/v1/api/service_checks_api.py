@@ -39,7 +39,6 @@ class ServiceChecksApi:
                 "operation_id": "submit_service_check",
                 "http_method": "POST",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "body": {

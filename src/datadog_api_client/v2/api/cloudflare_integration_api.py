@@ -31,7 +31,6 @@ class CloudflareIntegrationApi:
                 "operation_id": "create_cloudflare_account",
                 "http_method": "POST",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -52,7 +51,6 @@ class CloudflareIntegrationApi:
                 "operation_id": "delete_cloudflare_account",
                 "http_method": "DELETE",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "account_id": {
@@ -64,7 +62,6 @@ class CloudflareIntegrationApi:
             },
             headers_map={
                 "accept": ["*/*"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -77,7 +74,6 @@ class CloudflareIntegrationApi:
                 "operation_id": "get_cloudflare_account",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "account_id": {
@@ -89,7 +85,6 @@ class CloudflareIntegrationApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -102,12 +97,10 @@ class CloudflareIntegrationApi:
                 "operation_id": "list_cloudflare_accounts",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={},
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -120,7 +113,6 @@ class CloudflareIntegrationApi:
                 "operation_id": "update_cloudflare_account",
                 "http_method": "PATCH",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "account_id": {

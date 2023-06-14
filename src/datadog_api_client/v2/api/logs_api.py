@@ -44,7 +44,6 @@ class LogsApi:
                 "operation_id": "aggregate_logs",
                 "http_method": "POST",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -65,7 +64,6 @@ class LogsApi:
                 "operation_id": "list_logs",
                 "http_method": "POST",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -85,7 +83,6 @@ class LogsApi:
                 "operation_id": "list_logs_get",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "filter_query": {
@@ -134,7 +131,6 @@ class LogsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )

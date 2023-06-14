@@ -35,7 +35,6 @@ class HostsApi:
                 "operation_id": "get_host_totals",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "_from": {
@@ -46,7 +45,6 @@ class HostsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -59,7 +57,6 @@ class HostsApi:
                 "operation_id": "list_hosts",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "filter": {
@@ -105,7 +102,6 @@ class HostsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -118,7 +114,6 @@ class HostsApi:
                 "operation_id": "mute_host",
                 "http_method": "POST",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "host_name": {
@@ -145,7 +140,6 @@ class HostsApi:
                 "operation_id": "unmute_host",
                 "http_method": "POST",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "host_name": {
@@ -157,7 +151,6 @@ class HostsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )

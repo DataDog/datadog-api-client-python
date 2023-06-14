@@ -39,7 +39,6 @@ class EventsApi:
                 "operation_id": "create_event",
                 "http_method": "POST",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -60,7 +59,6 @@ class EventsApi:
                 "operation_id": "get_event",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "event_id": {
@@ -72,7 +70,6 @@ class EventsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -85,7 +82,6 @@ class EventsApi:
                 "operation_id": "list_events",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "start": {
@@ -136,7 +132,6 @@ class EventsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )

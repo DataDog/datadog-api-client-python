@@ -41,7 +41,6 @@ class EventsApi:
                 "operation_id": "list_events",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "filter_query": {
@@ -80,7 +79,6 @@ class EventsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -93,7 +91,6 @@ class EventsApi:
                 "operation_id": "search_events",
                 "http_method": "POST",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "body": {

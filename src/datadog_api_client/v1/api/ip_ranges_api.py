@@ -77,7 +77,6 @@ class IPRangesApi:
             params_map={},
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )

@@ -66,7 +66,6 @@ class MetricsApi:
                 "operation_id": "create_bulk_tags_metrics_configuration",
                 "http_method": "POST",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -87,7 +86,6 @@ class MetricsApi:
                 "operation_id": "create_tag_configuration",
                 "http_method": "POST",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "metric_name": {
@@ -114,7 +112,6 @@ class MetricsApi:
                 "operation_id": "delete_bulk_tags_metrics_configuration",
                 "http_method": "DELETE",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -135,7 +132,6 @@ class MetricsApi:
                 "operation_id": "delete_tag_configuration",
                 "http_method": "DELETE",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "metric_name": {
@@ -147,7 +143,6 @@ class MetricsApi:
             },
             headers_map={
                 "accept": ["*/*"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -160,7 +155,6 @@ class MetricsApi:
                 "operation_id": "estimate_metrics_output_series",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "metric_name": {
@@ -206,7 +200,6 @@ class MetricsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -219,7 +212,6 @@ class MetricsApi:
                 "operation_id": "list_active_metric_configurations",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "metric_name": {
@@ -236,7 +228,6 @@ class MetricsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -249,7 +240,6 @@ class MetricsApi:
                 "operation_id": "list_tag_configuration_by_name",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "metric_name": {
@@ -261,7 +251,6 @@ class MetricsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -274,7 +263,6 @@ class MetricsApi:
                 "operation_id": "list_tag_configurations",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "filter_configured": {
@@ -315,7 +303,6 @@ class MetricsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -328,7 +315,6 @@ class MetricsApi:
                 "operation_id": "list_tags_by_metric_name",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "metric_name": {
@@ -340,7 +326,6 @@ class MetricsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -353,7 +338,6 @@ class MetricsApi:
                 "operation_id": "list_volumes_by_metric_name",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "metric_name": {
@@ -365,7 +349,6 @@ class MetricsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -378,7 +361,6 @@ class MetricsApi:
                 "operation_id": "query_scalar_data",
                 "http_method": "POST",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -399,7 +381,6 @@ class MetricsApi:
                 "operation_id": "query_timeseries_data",
                 "http_method": "POST",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -420,7 +401,6 @@ class MetricsApi:
                 "operation_id": "submit_metrics",
                 "http_method": "POST",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "content_encoding": {
@@ -446,7 +426,6 @@ class MetricsApi:
                 "operation_id": "update_tag_configuration",
                 "http_method": "PATCH",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "metric_name": {

@@ -34,12 +34,10 @@ class IPAllowlistApi:
                 "operation_id": "get_ip_allowlist",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={},
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -52,7 +50,6 @@ class IPAllowlistApi:
                 "operation_id": "update_ip_allowlist",
                 "http_method": "PATCH",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "body": {

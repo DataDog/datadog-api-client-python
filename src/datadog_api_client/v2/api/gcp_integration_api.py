@@ -37,7 +37,6 @@ class GCPIntegrationApi:
                 "operation_id": "create_gcpsts_account",
                 "http_method": "POST",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -58,7 +57,6 @@ class GCPIntegrationApi:
                 "operation_id": "delete_gcpsts_account",
                 "http_method": "DELETE",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "account_id": {
@@ -70,7 +68,6 @@ class GCPIntegrationApi:
             },
             headers_map={
                 "accept": ["*/*"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -83,12 +80,10 @@ class GCPIntegrationApi:
                 "operation_id": "get_gcpsts_delegate",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={},
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -101,12 +96,10 @@ class GCPIntegrationApi:
                 "operation_id": "list_gcpsts_accounts",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={},
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -119,7 +112,6 @@ class GCPIntegrationApi:
                 "operation_id": "make_gcpsts_delegate",
                 "http_method": "POST",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -139,7 +131,6 @@ class GCPIntegrationApi:
                 "operation_id": "update_gcpsts_account",
                 "http_method": "PATCH",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "account_id": {

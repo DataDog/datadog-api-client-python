@@ -39,7 +39,6 @@ class AWSIntegrationApi:
                 "operation_id": "create_aws_account",
                 "http_method": "POST",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -60,7 +59,6 @@ class AWSIntegrationApi:
                 "operation_id": "create_aws_tag_filter",
                 "http_method": "POST",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -81,7 +79,6 @@ class AWSIntegrationApi:
                 "operation_id": "create_new_aws_external_id",
                 "http_method": "PUT",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -102,7 +99,6 @@ class AWSIntegrationApi:
                 "operation_id": "delete_aws_account",
                 "http_method": "DELETE",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -123,7 +119,6 @@ class AWSIntegrationApi:
                 "operation_id": "delete_aws_tag_filter",
                 "http_method": "DELETE",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -144,12 +139,10 @@ class AWSIntegrationApi:
                 "operation_id": "list_available_aws_namespaces",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={},
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -162,7 +155,6 @@ class AWSIntegrationApi:
                 "operation_id": "list_aws_accounts",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "account_id": {
@@ -183,7 +175,6 @@ class AWSIntegrationApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -196,7 +187,6 @@ class AWSIntegrationApi:
                 "operation_id": "list_aws_tag_filters",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "account_id": {
@@ -208,7 +198,6 @@ class AWSIntegrationApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -221,7 +210,6 @@ class AWSIntegrationApi:
                 "operation_id": "update_aws_account",
                 "http_method": "PUT",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "account_id": {

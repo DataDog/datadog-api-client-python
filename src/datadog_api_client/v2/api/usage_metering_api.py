@@ -49,7 +49,6 @@ class UsageMeteringApi:
                 "operation_id": "get_cost_by_org",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "start_month": {
@@ -66,7 +65,6 @@ class UsageMeteringApi:
             },
             headers_map={
                 "accept": ["application/json;datetime-format=rfc3339"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -79,7 +77,6 @@ class UsageMeteringApi:
                 "operation_id": "get_estimated_cost_by_org",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "view": {
@@ -110,7 +107,6 @@ class UsageMeteringApi:
             },
             headers_map={
                 "accept": ["application/json;datetime-format=rfc3339"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -123,7 +119,6 @@ class UsageMeteringApi:
                 "operation_id": "get_historical_cost_by_org",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "view": {
@@ -145,7 +140,6 @@ class UsageMeteringApi:
             },
             headers_map={
                 "accept": ["application/json;datetime-format=rfc3339"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -158,7 +152,6 @@ class UsageMeteringApi:
                 "operation_id": "get_hourly_usage",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "filter_timestamp_start": {
@@ -210,7 +203,6 @@ class UsageMeteringApi:
             },
             headers_map={
                 "accept": ["application/json;datetime-format=rfc3339"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -223,7 +215,6 @@ class UsageMeteringApi:
                 "operation_id": "get_usage_application_security_monitoring",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "start_hr": {
@@ -240,7 +231,6 @@ class UsageMeteringApi:
             },
             headers_map={
                 "accept": ["application/json;datetime-format=rfc3339"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -253,7 +243,6 @@ class UsageMeteringApi:
                 "operation_id": "get_usage_lambda_traced_invocations",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "start_hr": {
@@ -270,7 +259,6 @@ class UsageMeteringApi:
             },
             headers_map={
                 "accept": ["application/json;datetime-format=rfc3339"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -283,7 +271,6 @@ class UsageMeteringApi:
                 "operation_id": "get_usage_observability_pipelines",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "start_hr": {
@@ -300,7 +287,6 @@ class UsageMeteringApi:
             },
             headers_map={
                 "accept": ["application/json;datetime-format=rfc3339"],
-                "content_type": [],
             },
             api_client=api_client,
         )

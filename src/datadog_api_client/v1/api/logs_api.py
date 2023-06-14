@@ -36,7 +36,6 @@ class LogsApi:
                 "operation_id": "list_logs",
                 "http_method": "POST",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "body": {

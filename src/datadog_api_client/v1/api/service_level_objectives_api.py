@@ -47,7 +47,6 @@ class ServiceLevelObjectivesApi:
                 "operation_id": "check_can_delete_slo",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "ids": {
@@ -59,7 +58,6 @@ class ServiceLevelObjectivesApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -72,7 +70,6 @@ class ServiceLevelObjectivesApi:
                 "operation_id": "create_slo",
                 "http_method": "POST",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -93,7 +90,6 @@ class ServiceLevelObjectivesApi:
                 "operation_id": "delete_slo",
                 "http_method": "DELETE",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "slo_id": {
@@ -110,7 +106,6 @@ class ServiceLevelObjectivesApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -123,7 +118,6 @@ class ServiceLevelObjectivesApi:
                 "operation_id": "delete_slo_timeframe_in_bulk",
                 "http_method": "POST",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -144,7 +138,6 @@ class ServiceLevelObjectivesApi:
                 "operation_id": "get_slo",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "slo_id": {
@@ -161,7 +154,6 @@ class ServiceLevelObjectivesApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -174,7 +166,6 @@ class ServiceLevelObjectivesApi:
                 "operation_id": "get_slo_corrections",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "slo_id": {
@@ -186,7 +177,6 @@ class ServiceLevelObjectivesApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -199,7 +189,6 @@ class ServiceLevelObjectivesApi:
                 "operation_id": "get_slo_history",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "slo_id": {
@@ -237,7 +226,6 @@ class ServiceLevelObjectivesApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -250,7 +238,6 @@ class ServiceLevelObjectivesApi:
                 "operation_id": "list_slos",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "ids": {
@@ -286,7 +273,6 @@ class ServiceLevelObjectivesApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -373,7 +359,6 @@ class ServiceLevelObjectivesApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -386,7 +371,6 @@ class ServiceLevelObjectivesApi:
                 "operation_id": "update_slo",
                 "http_method": "PUT",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "slo_id": {

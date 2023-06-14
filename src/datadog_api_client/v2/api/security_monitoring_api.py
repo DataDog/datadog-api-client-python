@@ -74,7 +74,6 @@ class SecurityMonitoringApi:
                 "operation_id": "create_security_filter",
                 "http_method": "POST",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -95,7 +94,6 @@ class SecurityMonitoringApi:
                 "operation_id": "create_security_monitoring_rule",
                 "http_method": "POST",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -116,7 +114,6 @@ class SecurityMonitoringApi:
                 "operation_id": "delete_security_filter",
                 "http_method": "DELETE",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "security_filter_id": {
@@ -128,7 +125,6 @@ class SecurityMonitoringApi:
             },
             headers_map={
                 "accept": ["*/*"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -141,7 +137,6 @@ class SecurityMonitoringApi:
                 "operation_id": "delete_security_monitoring_rule",
                 "http_method": "DELETE",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "rule_id": {
@@ -153,7 +148,6 @@ class SecurityMonitoringApi:
             },
             headers_map={
                 "accept": ["*/*"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -166,7 +160,6 @@ class SecurityMonitoringApi:
                 "operation_id": "edit_security_monitoring_signal_assignee",
                 "http_method": "PATCH",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "signal_id": {
@@ -193,7 +186,6 @@ class SecurityMonitoringApi:
                 "operation_id": "edit_security_monitoring_signal_incidents",
                 "http_method": "PATCH",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "signal_id": {
@@ -220,7 +212,6 @@ class SecurityMonitoringApi:
                 "operation_id": "edit_security_monitoring_signal_state",
                 "http_method": "PATCH",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "signal_id": {
@@ -247,7 +238,6 @@ class SecurityMonitoringApi:
                 "operation_id": "get_finding",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "finding_id": {
@@ -267,7 +257,6 @@ class SecurityMonitoringApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -280,7 +269,6 @@ class SecurityMonitoringApi:
                 "operation_id": "get_security_filter",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "security_filter_id": {
@@ -292,7 +280,6 @@ class SecurityMonitoringApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -305,7 +292,6 @@ class SecurityMonitoringApi:
                 "operation_id": "get_security_monitoring_rule",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "rule_id": {
@@ -317,7 +303,6 @@ class SecurityMonitoringApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -330,7 +315,6 @@ class SecurityMonitoringApi:
                 "operation_id": "get_security_monitoring_signal",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "signal_id": {
@@ -342,7 +326,6 @@ class SecurityMonitoringApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -355,7 +338,6 @@ class SecurityMonitoringApi:
                 "operation_id": "list_findings",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "page_limit": {
@@ -428,7 +410,6 @@ class SecurityMonitoringApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -441,12 +422,10 @@ class SecurityMonitoringApi:
                 "operation_id": "list_security_filters",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={},
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -459,7 +438,6 @@ class SecurityMonitoringApi:
                 "operation_id": "list_security_monitoring_rules",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "page_size": {
@@ -475,7 +453,6 @@ class SecurityMonitoringApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -488,7 +465,6 @@ class SecurityMonitoringApi:
                 "operation_id": "list_security_monitoring_signals",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "filter_query": {
@@ -527,7 +503,6 @@ class SecurityMonitoringApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -540,7 +515,6 @@ class SecurityMonitoringApi:
                 "operation_id": "search_security_monitoring_signals",
                 "http_method": "POST",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -560,7 +534,6 @@ class SecurityMonitoringApi:
                 "operation_id": "update_finding",
                 "http_method": "PATCH",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "finding_id": {
@@ -587,7 +560,6 @@ class SecurityMonitoringApi:
                 "operation_id": "update_security_filter",
                 "http_method": "PATCH",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "security_filter_id": {
@@ -614,7 +586,6 @@ class SecurityMonitoringApi:
                 "operation_id": "update_security_monitoring_rule",
                 "http_method": "PUT",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "rule_id": {

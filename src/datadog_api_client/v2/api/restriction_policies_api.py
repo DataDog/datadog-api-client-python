@@ -31,7 +31,6 @@ class RestrictionPoliciesApi:
                 "operation_id": "delete_restriction_policy",
                 "http_method": "DELETE",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "resource_id": {
@@ -43,7 +42,6 @@ class RestrictionPoliciesApi:
             },
             headers_map={
                 "accept": ["*/*"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -56,7 +54,6 @@ class RestrictionPoliciesApi:
                 "operation_id": "get_restriction_policy",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "resource_id": {
@@ -68,7 +65,6 @@ class RestrictionPoliciesApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -81,7 +77,6 @@ class RestrictionPoliciesApi:
                 "operation_id": "update_restriction_policy",
                 "http_method": "POST",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "resource_id": {
