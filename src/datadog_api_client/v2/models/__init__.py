@@ -292,8 +292,6 @@ from datadog_api_client.v2.model.finding_mute_reason import FindingMuteReason
 from datadog_api_client.v2.model.finding_rule import FindingRule
 from datadog_api_client.v2.model.finding_status import FindingStatus
 from datadog_api_client.v2.model.finding_type import FindingType
-from datadog_api_client.v2.model.findings_error_item import FindingsErrorItem
-from datadog_api_client.v2.model.findings_error_response import FindingsErrorResponse
 from datadog_api_client.v2.model.formula_limit import FormulaLimit
 from datadog_api_client.v2.model.full_api_key import FullAPIKey
 from datadog_api_client.v2.model.full_api_key_attributes import FullAPIKeyAttributes
@@ -484,6 +482,8 @@ from datadog_api_client.v2.model.incident_update_relationships import IncidentUp
 from datadog_api_client.v2.model.incident_update_request import IncidentUpdateRequest
 from datadog_api_client.v2.model.incidents_response import IncidentsResponse
 from datadog_api_client.v2.model.intake_payload_accepted import IntakePayloadAccepted
+from datadog_api_client.v2.model.jsonapi_error_item import JSONAPIErrorItem
+from datadog_api_client.v2.model.jsonapi_error_response import JSONAPIErrorResponse
 from datadog_api_client.v2.model.jira_integration_metadata import JiraIntegrationMetadata
 from datadog_api_client.v2.model.jira_integration_metadata_issues_item import JiraIntegrationMetadataIssuesItem
 from datadog_api_client.v2.model.list_application_keys_response import ListApplicationKeysResponse

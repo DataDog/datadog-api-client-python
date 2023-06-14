@@ -888,6 +888,8 @@ class SecurityMonitoringApi:
 
         The operator must come after the equal sign. For example, to filter with the ``>=`` operator, add the operator after the equal sign: ``filter[evaluation_changed_at]=>=1678809373257``.
 
+        Query parameters must be only among the documented ones and with values of correct types. Duplicated query parameters (e.g. ``filter[status]=low&filter[status]=info`` ) are not allowed.
+
         **Response**
 
         The response includes an array of finding objects, pagination metadata, and a count of items that match the query.
