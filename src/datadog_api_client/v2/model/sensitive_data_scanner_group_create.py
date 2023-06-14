@@ -3,7 +3,8 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from dataclasses import dataclass
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -13,20 +14,33 @@ from datadog_api_client.model_utils import (
 )
 
 
+from datadog_api_client.v2.model.sensitive_data_scanner_filter import SensitiveDataScannerFilter
+from datadog_api_client.v2.model.sensitive_data_scanner_product import SensitiveDataScannerProduct
+from datadog_api_client.v2.model.sensitive_data_scanner_group_attributes import SensitiveDataScannerGroupAttributes
+from datadog_api_client.v2.model.sensitive_data_scanner_filter import SensitiveDataScannerFilter
+from datadog_api_client.v2.model.sensitive_data_scanner_product import SensitiveDataScannerProduct
+
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.sensitive_data_scanner_group_attributes import SensitiveDataScannerGroupAttributes
     from datadog_api_client.v2.model.sensitive_data_scanner_group_relationships import (
         SensitiveDataScannerGroupRelationships,
     )
     from datadog_api_client.v2.model.sensitive_data_scanner_group_type import SensitiveDataScannerGroupType
 
 
+@dataclass
+class SensitiveDataScannerGroupCreateJSON:
+    description: Union[str, UnsetType] = unset
+    filter: Union[SensitiveDataScannerFilter, UnsetType] = unset
+    is_enabled: Union[bool, UnsetType] = unset
+    name: Union[str, UnsetType] = unset
+    product_list: Union[List[SensitiveDataScannerProduct], UnsetType] = unset
+    configuration: Union[str, UnsetType] = unset
+    rules: Union[List[str], UnsetType] = unset
+
+
 class SensitiveDataScannerGroupCreate(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.sensitive_data_scanner_group_attributes import (
-            SensitiveDataScannerGroupAttributes,
-        )
         from datadog_api_client.v2.model.sensitive_data_scanner_group_relationships import (
             SensitiveDataScannerGroupRelationships,
         )
@@ -43,6 +57,7 @@ class SensitiveDataScannerGroupCreate(ModelNormal):
         "relationships": "relationships",
         "type": "type",
     }
+    json_api_model = SensitiveDataScannerGroupCreateJSON
 
     def __init__(
         self_,

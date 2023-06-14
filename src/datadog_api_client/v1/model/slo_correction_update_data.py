@@ -3,6 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
+from dataclasses import dataclass
 from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
@@ -13,19 +14,28 @@ from datadog_api_client.model_utils import (
 )
 
 
+from datadog_api_client.v1.model.slo_correction_category import SLOCorrectionCategory
+from datadog_api_client.v1.model.slo_correction_update_request_attributes import SLOCorrectionUpdateRequestAttributes
+from datadog_api_client.v1.model.slo_correction_category import SLOCorrectionCategory
+
 if TYPE_CHECKING:
-    from datadog_api_client.v1.model.slo_correction_update_request_attributes import (
-        SLOCorrectionUpdateRequestAttributes,
-    )
     from datadog_api_client.v1.model.slo_correction_type import SLOCorrectionType
+
+
+@dataclass
+class SLOCorrectionUpdateDataJSON:
+    category: Union[SLOCorrectionCategory, UnsetType] = unset
+    description: Union[str, UnsetType] = unset
+    duration: Union[int, UnsetType] = unset
+    end: Union[int, UnsetType] = unset
+    rrule: Union[str, UnsetType] = unset
+    start: Union[int, UnsetType] = unset
+    timezone: Union[str, UnsetType] = unset
 
 
 class SLOCorrectionUpdateData(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v1.model.slo_correction_update_request_attributes import (
-            SLOCorrectionUpdateRequestAttributes,
-        )
         from datadog_api_client.v1.model.slo_correction_type import SLOCorrectionType
 
         return {
@@ -37,6 +47,7 @@ class SLOCorrectionUpdateData(ModelNormal):
         "attributes": "attributes",
         "type": "type",
     }
+    json_api_model = SLOCorrectionUpdateDataJSON
 
     def __init__(
         self_,

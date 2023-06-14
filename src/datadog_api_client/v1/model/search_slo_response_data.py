@@ -3,7 +3,8 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from dataclasses import dataclass
+from typing import List, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -13,15 +14,22 @@ from datadog_api_client.model_utils import (
 )
 
 
-if TYPE_CHECKING:
-    from datadog_api_client.v1.model.search_slo_response_data_attributes import SearchSLOResponseDataAttributes
+from datadog_api_client.v1.model.search_slo_response_data_attributes_facets import SearchSLOResponseDataAttributesFacets
+from datadog_api_client.v1.model.search_service_level_objective import SearchServiceLevelObjective
+from datadog_api_client.v1.model.search_slo_response_data_attributes import SearchSLOResponseDataAttributes
+from datadog_api_client.v1.model.search_slo_response_data_attributes_facets import SearchSLOResponseDataAttributesFacets
+from datadog_api_client.v1.model.search_service_level_objective import SearchServiceLevelObjective
+
+
+@dataclass
+class SearchSLOResponseDataJSON:
+    facets: Union[SearchSLOResponseDataAttributesFacets, UnsetType] = unset
+    slos: Union[List[SearchServiceLevelObjective], UnsetType] = unset
 
 
 class SearchSLOResponseData(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v1.model.search_slo_response_data_attributes import SearchSLOResponseDataAttributes
-
         return {
             "attributes": (SearchSLOResponseDataAttributes,),
             "type": (str,),
@@ -31,6 +39,7 @@ class SearchSLOResponseData(ModelNormal):
         "attributes": "attributes",
         "type": "type",
     }
+    json_api_model = SearchSLOResponseDataJSON
 
     def __init__(
         self_,

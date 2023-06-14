@@ -3,7 +3,8 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from dataclasses import dataclass
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -13,15 +14,24 @@ from datadog_api_client.model_utils import (
 )
 
 
+from datadog_api_client.v2.model.scalar_column import ScalarColumn
+from datadog_api_client.v2.model.scalar_formula_response_atrributes import ScalarFormulaResponseAtrributes
+from datadog_api_client.v2.model.scalar_column import ScalarColumn
+from datadog_api_client.v2.model.group_scalar_column import GroupScalarColumn
+from datadog_api_client.v2.model.data_scalar_column import DataScalarColumn
+
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.scalar_formula_response_atrributes import ScalarFormulaResponseAtrributes
     from datadog_api_client.v2.model.scalar_formula_response_type import ScalarFormulaResponseType
+
+
+@dataclass
+class ScalarResponseJSON:
+    columns: Union[List[Union[ScalarColumn, GroupScalarColumn, DataScalarColumn]], UnsetType] = unset
 
 
 class ScalarResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.scalar_formula_response_atrributes import ScalarFormulaResponseAtrributes
         from datadog_api_client.v2.model.scalar_formula_response_type import ScalarFormulaResponseType
 
         return {
@@ -33,6 +43,7 @@ class ScalarResponse(ModelNormal):
         "attributes": "attributes",
         "type": "type",
     }
+    json_api_model = ScalarResponseJSON
 
     def __init__(
         self_,

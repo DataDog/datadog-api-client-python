@@ -217,7 +217,6 @@ def child_models(schema, alternative_name=None, seen=None, in_list=False):
             seen.add(name)
             yield name, schema
 
-
     if "enum" in schema:
         if name is None:
             raise ValueError(f"Schema {schema} has no name")
@@ -690,7 +689,7 @@ def get_type_at_path(operation, attribute_path):
 
 def is_json_api(model):
     properties = model.get("properties", {})
-    if not ("id" in properties and "type" in properties):
+    if "type" not in properties:
         return False
     if "attributes" in properties:
         attributes = properties["attributes"]
@@ -703,6 +702,8 @@ def json_api_attributes(model):
     attributes = []
     optional_attributes = []
     imports = []
+    if "id" in model["properties"]:
+        attributes.append(("id", "str"))
     for attr, definition in model["properties"].get("attributes", {}).get("properties", {}).items():
         if attr in required:
             attributes.append((attr, get_typing_for_attribute(model["properties"]["attributes"], attr)))

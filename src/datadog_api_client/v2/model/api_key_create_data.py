@@ -3,23 +3,31 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from dataclasses import dataclass
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
+from datadog_api_client.v2.model.api_key_create_attributes import APIKeyCreateAttributes
+
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.api_key_create_attributes import APIKeyCreateAttributes
     from datadog_api_client.v2.model.api_keys_type import APIKeysType
+
+
+@dataclass
+class APIKeyCreateDataJSON:
+    name: Union[str, UnsetType] = unset
 
 
 class APIKeyCreateData(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.api_key_create_attributes import APIKeyCreateAttributes
         from datadog_api_client.v2.model.api_keys_type import APIKeysType
 
         return {
@@ -31,6 +39,7 @@ class APIKeyCreateData(ModelNormal):
         "attributes": "attributes",
         "type": "type",
     }
+    json_api_model = APIKeyCreateDataJSON
 
     def __init__(self_, attributes: APIKeyCreateAttributes, type: APIKeysType, **kwargs):
         """

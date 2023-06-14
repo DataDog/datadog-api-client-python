@@ -3,23 +3,31 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from dataclasses import dataclass
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
+from datadog_api_client.v2.model.role_clone_attributes import RoleCloneAttributes
+
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.role_clone_attributes import RoleCloneAttributes
     from datadog_api_client.v2.model.roles_type import RolesType
+
+
+@dataclass
+class RoleCloneJSON:
+    name: Union[str, UnsetType] = unset
 
 
 class RoleClone(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.role_clone_attributes import RoleCloneAttributes
         from datadog_api_client.v2.model.roles_type import RolesType
 
         return {
@@ -31,6 +39,7 @@ class RoleClone(ModelNormal):
         "attributes": "attributes",
         "type": "type",
     }
+    json_api_model = RoleCloneJSON
 
     def __init__(self_, attributes: RoleCloneAttributes, type: RolesType, **kwargs):
         """

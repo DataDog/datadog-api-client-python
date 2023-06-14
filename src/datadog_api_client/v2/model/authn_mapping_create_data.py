@@ -3,6 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
+from dataclasses import dataclass
 from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
@@ -13,16 +14,23 @@ from datadog_api_client.model_utils import (
 )
 
 
+from datadog_api_client.v2.model.authn_mapping_create_attributes import AuthNMappingCreateAttributes
+
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.authn_mapping_create_attributes import AuthNMappingCreateAttributes
     from datadog_api_client.v2.model.authn_mapping_create_relationships import AuthNMappingCreateRelationships
     from datadog_api_client.v2.model.authn_mappings_type import AuthNMappingsType
+
+
+@dataclass
+class AuthNMappingCreateDataJSON:
+    attribute_key: Union[str, UnsetType] = unset
+    attribute_value: Union[str, UnsetType] = unset
+    role: Union[str, UnsetType] = unset
 
 
 class AuthNMappingCreateData(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.authn_mapping_create_attributes import AuthNMappingCreateAttributes
         from datadog_api_client.v2.model.authn_mapping_create_relationships import AuthNMappingCreateRelationships
         from datadog_api_client.v2.model.authn_mappings_type import AuthNMappingsType
 
@@ -37,6 +45,7 @@ class AuthNMappingCreateData(ModelNormal):
         "relationships": "relationships",
         "type": "type",
     }
+    json_api_model = AuthNMappingCreateDataJSON
 
     def __init__(
         self_,

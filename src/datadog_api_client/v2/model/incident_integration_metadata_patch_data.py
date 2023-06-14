@@ -3,27 +3,40 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from dataclasses import dataclass
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
+from datadog_api_client.v2.model.incident_integration_metadata_metadata import IncidentIntegrationMetadataMetadata
+from datadog_api_client.v2.model.incident_integration_metadata_attributes import IncidentIntegrationMetadataAttributes
+from datadog_api_client.v2.model.incident_integration_metadata_metadata import IncidentIntegrationMetadataMetadata
+from datadog_api_client.v2.model.slack_integration_metadata import SlackIntegrationMetadata
+from datadog_api_client.v2.model.jira_integration_metadata import JiraIntegrationMetadata
+
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.incident_integration_metadata_attributes import (
-        IncidentIntegrationMetadataAttributes,
-    )
     from datadog_api_client.v2.model.incident_integration_metadata_type import IncidentIntegrationMetadataType
+
+
+@dataclass
+class IncidentIntegrationMetadataPatchDataJSON:
+    incident_id: Union[str, UnsetType] = unset
+    integration_type: Union[int, UnsetType] = unset
+    metadata: Union[
+        IncidentIntegrationMetadataMetadata, SlackIntegrationMetadata, JiraIntegrationMetadata, UnsetType
+    ] = unset
+    status: Union[int, UnsetType] = unset
 
 
 class IncidentIntegrationMetadataPatchData(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.incident_integration_metadata_attributes import (
-            IncidentIntegrationMetadataAttributes,
-        )
         from datadog_api_client.v2.model.incident_integration_metadata_type import IncidentIntegrationMetadataType
 
         return {
@@ -35,6 +48,7 @@ class IncidentIntegrationMetadataPatchData(ModelNormal):
         "attributes": "attributes",
         "type": "type",
     }
+    json_api_model = IncidentIntegrationMetadataPatchDataJSON
 
     def __init__(
         self_, attributes: IncidentIntegrationMetadataAttributes, type: IncidentIntegrationMetadataType, **kwargs

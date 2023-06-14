@@ -20,7 +20,6 @@ if TYPE_CHECKING:
 {% if is_json_api(model) %}
 @dataclass
 class {{ name }}JSON:
-   id: str
 {%- for attr, typing in attrs %}
    {{ attr|attribute_name }}: {{ typing }}
 {%- endfor %}

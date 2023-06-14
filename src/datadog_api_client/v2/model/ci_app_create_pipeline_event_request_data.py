@@ -3,6 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
+from dataclasses import dataclass
 from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
@@ -13,21 +14,43 @@ from datadog_api_client.model_utils import (
 )
 
 
+from datadog_api_client.v2.model.ci_app_create_pipeline_event_request_attributes_resource import (
+    CIAppCreatePipelineEventRequestAttributesResource,
+)
+from datadog_api_client.v2.model.ci_app_create_pipeline_event_request_attributes import (
+    CIAppCreatePipelineEventRequestAttributes,
+)
+from datadog_api_client.v2.model.ci_app_create_pipeline_event_request_attributes_resource import (
+    CIAppCreatePipelineEventRequestAttributesResource,
+)
+from datadog_api_client.v2.model.ci_app_pipeline_event_pipeline import CIAppPipelineEventPipeline
+from datadog_api_client.v2.model.ci_app_pipeline_event_stage import CIAppPipelineEventStage
+from datadog_api_client.v2.model.ci_app_pipeline_event_job import CIAppPipelineEventJob
+from datadog_api_client.v2.model.ci_app_pipeline_event_step import CIAppPipelineEventStep
+
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.ci_app_create_pipeline_event_request_attributes import (
-        CIAppCreatePipelineEventRequestAttributes,
-    )
     from datadog_api_client.v2.model.ci_app_create_pipeline_event_request_data_type import (
         CIAppCreatePipelineEventRequestDataType,
     )
 
 
+@dataclass
+class CIAppCreatePipelineEventRequestDataJSON:
+    env: Union[str, UnsetType] = unset
+    resource: Union[
+        CIAppCreatePipelineEventRequestAttributesResource,
+        CIAppPipelineEventPipeline,
+        CIAppPipelineEventStage,
+        CIAppPipelineEventJob,
+        CIAppPipelineEventStep,
+        UnsetType,
+    ] = unset
+    service: Union[str, UnsetType] = unset
+
+
 class CIAppCreatePipelineEventRequestData(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.ci_app_create_pipeline_event_request_attributes import (
-            CIAppCreatePipelineEventRequestAttributes,
-        )
         from datadog_api_client.v2.model.ci_app_create_pipeline_event_request_data_type import (
             CIAppCreatePipelineEventRequestDataType,
         )
@@ -41,6 +64,7 @@ class CIAppCreatePipelineEventRequestData(ModelNormal):
         "attributes": "attributes",
         "type": "type",
     }
+    json_api_model = CIAppCreatePipelineEventRequestDataJSON
 
     def __init__(
         self_,

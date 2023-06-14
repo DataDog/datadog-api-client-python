@@ -3,6 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
+from dataclasses import dataclass
 from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
@@ -13,19 +14,22 @@ from datadog_api_client.model_utils import (
 )
 
 
+from datadog_api_client.v2.model.team_permission_setting_value import TeamPermissionSettingValue
+from datadog_api_client.v2.model.team_permission_setting_update_attributes import TeamPermissionSettingUpdateAttributes
+from datadog_api_client.v2.model.team_permission_setting_value import TeamPermissionSettingValue
+
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.team_permission_setting_update_attributes import (
-        TeamPermissionSettingUpdateAttributes,
-    )
     from datadog_api_client.v2.model.team_permission_setting_type import TeamPermissionSettingType
+
+
+@dataclass
+class TeamPermissionSettingUpdateJSON:
+    value: Union[TeamPermissionSettingValue, UnsetType] = unset
 
 
 class TeamPermissionSettingUpdate(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.team_permission_setting_update_attributes import (
-            TeamPermissionSettingUpdateAttributes,
-        )
         from datadog_api_client.v2.model.team_permission_setting_type import TeamPermissionSettingType
 
         return {
@@ -37,6 +41,7 @@ class TeamPermissionSettingUpdate(ModelNormal):
         "attributes": "attributes",
         "type": "type",
     }
+    json_api_model = TeamPermissionSettingUpdateJSON
 
     def __init__(
         self_,
