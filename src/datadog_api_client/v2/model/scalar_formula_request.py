@@ -3,38 +3,23 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from dataclasses import dataclass
-from typing import List, Union, TYPE_CHECKING
+from typing import TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    unset,
-    UnsetType,
 )
 
 
-from datadog_api_client.v2.model.query_formula import QueryFormula
-from datadog_api_client.v2.model.scalar_formula_request_queries import ScalarFormulaRequestQueries
-from datadog_api_client.v2.model.scalar_formula_request_attributes import ScalarFormulaRequestAttributes
-from datadog_api_client.v2.model.query_formula import QueryFormula
-from datadog_api_client.v2.model.scalar_formula_request_queries import ScalarFormulaRequestQueries
-
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.scalar_formula_request_attributes import ScalarFormulaRequestAttributes
     from datadog_api_client.v2.model.scalar_formula_request_type import ScalarFormulaRequestType
-
-
-@dataclass
-class ScalarFormulaRequestJSON:
-    formulas: Union[List[QueryFormula], UnsetType] = unset
-    _from: Union[int, UnsetType] = unset
-    queries: Union[ScalarFormulaRequestQueries, UnsetType] = unset
-    to: Union[int, UnsetType] = unset
 
 
 class ScalarFormulaRequest(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.scalar_formula_request_attributes import ScalarFormulaRequestAttributes
         from datadog_api_client.v2.model.scalar_formula_request_type import ScalarFormulaRequestType
 
         return {
@@ -46,7 +31,6 @@ class ScalarFormulaRequest(ModelNormal):
         "attributes": "attributes",
         "type": "type",
     }
-    json_api_model = ScalarFormulaRequestJSON
 
     def __init__(self_, attributes: ScalarFormulaRequestAttributes, type: ScalarFormulaRequestType, **kwargs):
         """

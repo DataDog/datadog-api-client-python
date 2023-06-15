@@ -3,7 +3,6 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from dataclasses import dataclass
 from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
@@ -14,27 +13,19 @@ from datadog_api_client.model_utils import (
 )
 
 
-from datadog_api_client.v2.model.monitor_config_policy_policy import MonitorConfigPolicyPolicy
-from datadog_api_client.v2.model.monitor_config_policy_type import MonitorConfigPolicyType
-from datadog_api_client.v2.model.monitor_config_policy_attribute_response import MonitorConfigPolicyAttributeResponse
-from datadog_api_client.v2.model.monitor_config_policy_policy import MonitorConfigPolicyPolicy
-from datadog_api_client.v2.model.monitor_config_policy_tag_policy import MonitorConfigPolicyTagPolicy
-from datadog_api_client.v2.model.monitor_config_policy_type import MonitorConfigPolicyType
-
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.monitor_config_policy_attribute_response import (
+        MonitorConfigPolicyAttributeResponse,
+    )
     from datadog_api_client.v2.model.monitor_config_policy_resource_type import MonitorConfigPolicyResourceType
-
-
-@dataclass
-class MonitorConfigPolicyResponseDataJSON:
-    id: str
-    policy: Union[MonitorConfigPolicyPolicy, MonitorConfigPolicyTagPolicy, UnsetType] = unset
-    policy_type: Union[MonitorConfigPolicyType, UnsetType] = unset
 
 
 class MonitorConfigPolicyResponseData(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.monitor_config_policy_attribute_response import (
+            MonitorConfigPolicyAttributeResponse,
+        )
         from datadog_api_client.v2.model.monitor_config_policy_resource_type import MonitorConfigPolicyResourceType
 
         return {
@@ -48,7 +39,6 @@ class MonitorConfigPolicyResponseData(ModelNormal):
         "id": "id",
         "type": "type",
     }
-    json_api_model = MonitorConfigPolicyResponseDataJSON
 
     def __init__(
         self_,

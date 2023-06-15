@@ -3,38 +3,26 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from dataclasses import dataclass
 from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    datetime,
     unset,
     UnsetType,
 )
 
 
-from datadog_api_client.v2.model.incident_team_response_attributes import IncidentTeamResponseAttributes
-
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.incident_team_response_attributes import IncidentTeamResponseAttributes
     from datadog_api_client.v2.model.incident_team_relationships import IncidentTeamRelationships
     from datadog_api_client.v2.model.incident_team_type import IncidentTeamType
-
-
-@dataclass
-class IncidentTeamResponseDataJSON:
-    id: str
-    created: Union[datetime, UnsetType] = unset
-    modified: Union[datetime, UnsetType] = unset
-    name: Union[str, UnsetType] = unset
-    created_by: Union[str, UnsetType] = unset
-    last_modified_by: Union[str, UnsetType] = unset
 
 
 class IncidentTeamResponseData(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.incident_team_response_attributes import IncidentTeamResponseAttributes
         from datadog_api_client.v2.model.incident_team_relationships import IncidentTeamRelationships
         from datadog_api_client.v2.model.incident_team_type import IncidentTeamType
 
@@ -54,7 +42,6 @@ class IncidentTeamResponseData(ModelNormal):
     read_only_vars = {
         "relationships",
     }
-    json_api_model = IncidentTeamResponseDataJSON
 
     def __init__(
         self_,

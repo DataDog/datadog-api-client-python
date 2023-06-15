@@ -3,40 +3,25 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from dataclasses import dataclass
-from typing import List, Union, TYPE_CHECKING
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    datetime,
     unset,
     UnsetType,
 )
 
 
-from datadog_api_client.v2.model.chargeback_breakdown import ChargebackBreakdown
-from datadog_api_client.v2.model.cost_by_org_attributes import CostByOrgAttributes
-from datadog_api_client.v2.model.chargeback_breakdown import ChargebackBreakdown
-
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.cost_by_org_attributes import CostByOrgAttributes
     from datadog_api_client.v2.model.cost_by_org_type import CostByOrgType
-
-
-@dataclass
-class CostByOrgJSON:
-    id: str
-    charges: Union[List[ChargebackBreakdown], UnsetType] = unset
-    date: Union[datetime, UnsetType] = unset
-    org_name: Union[str, UnsetType] = unset
-    public_id: Union[str, UnsetType] = unset
-    region: Union[str, UnsetType] = unset
-    total_cost: Union[float, UnsetType] = unset
 
 
 class CostByOrg(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.cost_by_org_attributes import CostByOrgAttributes
         from datadog_api_client.v2.model.cost_by_org_type import CostByOrgType
 
         return {
@@ -50,7 +35,6 @@ class CostByOrg(ModelNormal):
         "id": "id",
         "type": "type",
     }
-    json_api_model = CostByOrgJSON
 
     def __init__(
         self_,

@@ -3,7 +3,8 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from dataclasses import dataclass
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -13,9 +14,27 @@ from datadog_api_client.model_utils import (
 )
 
 
+from datadog_api_client.v2.model.sensitive_data_scanner_text_replacement import SensitiveDataScannerTextReplacement
+from datadog_api_client.v2.model.sensitive_data_scanner_text_replacement import SensitiveDataScannerTextReplacement
+
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.sensitive_data_scanner_rule_response import SensitiveDataScannerRuleResponse
     from datadog_api_client.v2.model.sensitive_data_scanner_meta_version_only import SensitiveDataScannerMetaVersionOnly
+
+
+@dataclass
+class SensitiveDataScannerCreateRuleResponseJSON:
+    id: str
+    description: Union[str, UnsetType] = unset
+    excluded_namespaces: Union[List[str], UnsetType] = unset
+    is_enabled: Union[bool, UnsetType] = unset
+    name: Union[str, UnsetType] = unset
+    namespaces: Union[List[str], UnsetType] = unset
+    pattern: Union[str, UnsetType] = unset
+    tags: Union[List[str], UnsetType] = unset
+    text_replacement: Union[SensitiveDataScannerTextReplacement, UnsetType] = unset
+    group: Union[str, UnsetType] = unset
+    standard_pattern: Union[str, UnsetType] = unset
 
 
 class SensitiveDataScannerCreateRuleResponse(ModelNormal):
@@ -35,6 +54,7 @@ class SensitiveDataScannerCreateRuleResponse(ModelNormal):
         "data": "data",
         "meta": "meta",
     }
+    json_api_model = SensitiveDataScannerCreateRuleResponseJSON
 
     def __init__(
         self_,

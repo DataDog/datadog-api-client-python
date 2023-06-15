@@ -3,8 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from dataclasses import dataclass
-from typing import List, Union, TYPE_CHECKING
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -14,24 +13,16 @@ from datadog_api_client.model_utils import (
 )
 
 
-from datadog_api_client.v2.model.user_create_attributes import UserCreateAttributes
-
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.user_create_attributes import UserCreateAttributes
     from datadog_api_client.v2.model.user_relationships import UserRelationships
     from datadog_api_client.v2.model.users_type import UsersType
-
-
-@dataclass
-class UserCreateDataJSON:
-    email: Union[str, UnsetType] = unset
-    name: Union[str, UnsetType] = unset
-    title: Union[str, UnsetType] = unset
-    roles: Union[List[str], UnsetType] = unset
 
 
 class UserCreateData(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.user_create_attributes import UserCreateAttributes
         from datadog_api_client.v2.model.user_relationships import UserRelationships
         from datadog_api_client.v2.model.users_type import UsersType
 
@@ -46,7 +37,6 @@ class UserCreateData(ModelNormal):
         "relationships": "relationships",
         "type": "type",
     }
-    json_api_model = UserCreateDataJSON
 
     def __init__(
         self_,

@@ -3,8 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from dataclasses import dataclass
-from typing import List, Union, TYPE_CHECKING
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -14,27 +13,21 @@ from datadog_api_client.model_utils import (
 )
 
 
-from datadog_api_client.v2.model.sensitive_data_scanner_standard_pattern_attributes import (
-    SensitiveDataScannerStandardPatternAttributes,
-)
-
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.sensitive_data_scanner_standard_pattern_attributes import (
+        SensitiveDataScannerStandardPatternAttributes,
+    )
     from datadog_api_client.v2.model.sensitive_data_scanner_standard_pattern_type import (
         SensitiveDataScannerStandardPatternType,
     )
 
 
-@dataclass
-class SensitiveDataScannerStandardPatternsResponseItemJSON:
-    id: str
-    name: Union[str, UnsetType] = unset
-    pattern: Union[str, UnsetType] = unset
-    tags: Union[List[str], UnsetType] = unset
-
-
 class SensitiveDataScannerStandardPatternsResponseItem(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.sensitive_data_scanner_standard_pattern_attributes import (
+            SensitiveDataScannerStandardPatternAttributes,
+        )
         from datadog_api_client.v2.model.sensitive_data_scanner_standard_pattern_type import (
             SensitiveDataScannerStandardPatternType,
         )
@@ -50,7 +43,6 @@ class SensitiveDataScannerStandardPatternsResponseItem(ModelNormal):
         "id": "id",
         "type": "type",
     }
-    json_api_model = SensitiveDataScannerStandardPatternsResponseItemJSON
 
     def __init__(
         self_,

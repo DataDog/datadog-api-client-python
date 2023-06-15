@@ -3,7 +3,6 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from dataclasses import dataclass
 from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
@@ -14,20 +13,19 @@ from datadog_api_client.model_utils import (
 )
 
 
-from datadog_api_client.v2.model.fastly_account_update_request_attributes import FastlyAccountUpdateRequestAttributes
-
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.fastly_account_update_request_attributes import (
+        FastlyAccountUpdateRequestAttributes,
+    )
     from datadog_api_client.v2.model.fastly_account_type import FastlyAccountType
-
-
-@dataclass
-class FastlyAccountUpdateRequestDataJSON:
-    api_key: Union[str, UnsetType] = unset
 
 
 class FastlyAccountUpdateRequestData(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.fastly_account_update_request_attributes import (
+            FastlyAccountUpdateRequestAttributes,
+        )
         from datadog_api_client.v2.model.fastly_account_type import FastlyAccountType
 
         return {
@@ -39,7 +37,6 @@ class FastlyAccountUpdateRequestData(ModelNormal):
         "attributes": "attributes",
         "type": "type",
     }
-    json_api_model = FastlyAccountUpdateRequestDataJSON
 
     def __init__(
         self_,

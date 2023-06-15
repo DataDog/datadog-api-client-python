@@ -3,6 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
+from dataclasses import dataclass
 from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
@@ -17,6 +18,12 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.gcpsts_delegate_account import GCPSTSDelegateAccount
 
 
+@dataclass
+class GCPSTSDelegateAccountResponseJSON:
+    id: str
+    delegate_account_email: Union[str, UnsetType] = unset
+
+
 class GCPSTSDelegateAccountResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
@@ -29,6 +36,7 @@ class GCPSTSDelegateAccountResponse(ModelNormal):
     attribute_map = {
         "data": "data",
     }
+    json_api_model = GCPSTSDelegateAccountResponseJSON
 
     def __init__(self_, data: Union[GCPSTSDelegateAccount, UnsetType] = unset, **kwargs):
         """

@@ -3,39 +3,23 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from dataclasses import dataclass
-from typing import List, Union, TYPE_CHECKING
+from typing import TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    unset,
-    UnsetType,
 )
 
 
-from datadog_api_client.v2.model.spans_metric_update_compute import SpansMetricUpdateCompute
-from datadog_api_client.v2.model.spans_metric_filter import SpansMetricFilter
-from datadog_api_client.v2.model.spans_metric_group_by import SpansMetricGroupBy
-from datadog_api_client.v2.model.spans_metric_update_attributes import SpansMetricUpdateAttributes
-from datadog_api_client.v2.model.spans_metric_update_compute import SpansMetricUpdateCompute
-from datadog_api_client.v2.model.spans_metric_filter import SpansMetricFilter
-from datadog_api_client.v2.model.spans_metric_group_by import SpansMetricGroupBy
-
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.spans_metric_update_attributes import SpansMetricUpdateAttributes
     from datadog_api_client.v2.model.spans_metric_type import SpansMetricType
-
-
-@dataclass
-class SpansMetricUpdateDataJSON:
-    compute: Union[SpansMetricUpdateCompute, UnsetType] = unset
-    filter: Union[SpansMetricFilter, UnsetType] = unset
-    group_by: Union[List[SpansMetricGroupBy], UnsetType] = unset
 
 
 class SpansMetricUpdateData(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.spans_metric_update_attributes import SpansMetricUpdateAttributes
         from datadog_api_client.v2.model.spans_metric_type import SpansMetricType
 
         return {
@@ -47,7 +31,6 @@ class SpansMetricUpdateData(ModelNormal):
         "attributes": "attributes",
         "type": "type",
     }
-    json_api_model = SpansMetricUpdateDataJSON
 
     def __init__(self_, attributes: SpansMetricUpdateAttributes, type: SpansMetricType, **kwargs):
         """

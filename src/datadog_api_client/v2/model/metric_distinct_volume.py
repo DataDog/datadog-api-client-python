@@ -3,7 +3,6 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from dataclasses import dataclass
 from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
@@ -14,21 +13,15 @@ from datadog_api_client.model_utils import (
 )
 
 
-from datadog_api_client.v2.model.metric_distinct_volume_attributes import MetricDistinctVolumeAttributes
-
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.metric_distinct_volume_attributes import MetricDistinctVolumeAttributes
     from datadog_api_client.v2.model.metric_distinct_volume_type import MetricDistinctVolumeType
-
-
-@dataclass
-class MetricDistinctVolumeJSON:
-    id: str
-    distinct_volume: Union[int, UnsetType] = unset
 
 
 class MetricDistinctVolume(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.metric_distinct_volume_attributes import MetricDistinctVolumeAttributes
         from datadog_api_client.v2.model.metric_distinct_volume_type import MetricDistinctVolumeType
 
         return {
@@ -42,7 +35,6 @@ class MetricDistinctVolume(ModelNormal):
         "id": "id",
         "type": "type",
     }
-    json_api_model = MetricDistinctVolumeJSON
 
     def __init__(
         self_,

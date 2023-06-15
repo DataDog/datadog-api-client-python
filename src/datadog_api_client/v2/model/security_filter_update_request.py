@@ -3,16 +3,34 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from dataclasses import dataclass
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
+from datadog_api_client.v2.model.security_filter_exclusion_filter import SecurityFilterExclusionFilter
+from datadog_api_client.v2.model.security_filter_filtered_data_type import SecurityFilterFilteredDataType
+from datadog_api_client.v2.model.security_filter_exclusion_filter import SecurityFilterExclusionFilter
+from datadog_api_client.v2.model.security_filter_filtered_data_type import SecurityFilterFilteredDataType
+
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.security_filter_update_data import SecurityFilterUpdateData
+
+
+@dataclass
+class SecurityFilterUpdateRequestJSON:
+    exclusion_filters: Union[List[SecurityFilterExclusionFilter], UnsetType] = unset
+    filtered_data_type: Union[SecurityFilterFilteredDataType, UnsetType] = unset
+    is_enabled: Union[bool, UnsetType] = unset
+    name: Union[str, UnsetType] = unset
+    query: Union[str, UnsetType] = unset
+    version: Union[int, UnsetType] = unset
 
 
 class SecurityFilterUpdateRequest(ModelNormal):
@@ -27,6 +45,7 @@ class SecurityFilterUpdateRequest(ModelNormal):
     attribute_map = {
         "data": "data",
     }
+    json_api_model = SecurityFilterUpdateRequestJSON
 
     def __init__(self_, data: SecurityFilterUpdateData, **kwargs):
         """

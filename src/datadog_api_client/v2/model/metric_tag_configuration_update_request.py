@@ -3,16 +3,30 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from dataclasses import dataclass
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
+from datadog_api_client.v2.model.metric_custom_aggregations import MetricCustomAggregations
+from datadog_api_client.v2.model.metric_custom_aggregations import MetricCustomAggregations
+
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.metric_tag_configuration_update_data import MetricTagConfigurationUpdateData
+
+
+@dataclass
+class MetricTagConfigurationUpdateRequestJSON:
+    id: str
+    aggregations: Union[MetricCustomAggregations, UnsetType] = unset
+    include_percentiles: Union[bool, UnsetType] = unset
+    tags: Union[List[str], UnsetType] = unset
 
 
 class MetricTagConfigurationUpdateRequest(ModelNormal):
@@ -27,6 +41,7 @@ class MetricTagConfigurationUpdateRequest(ModelNormal):
     attribute_map = {
         "data": "data",
     }
+    json_api_model = MetricTagConfigurationUpdateRequestJSON
 
     def __init__(self_, data: MetricTagConfigurationUpdateData, **kwargs):
         """

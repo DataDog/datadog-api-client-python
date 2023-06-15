@@ -3,11 +3,14 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
+from dataclasses import dataclass
 from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    datetime,
+    none_type,
     unset,
     UnsetType,
 )
@@ -15,6 +18,19 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.team_data import TeamData
+
+
+@dataclass
+class TeamResponseJSON:
+    id: str
+    created_at: Union[datetime, UnsetType] = unset
+    description: Union[str, none_type, UnsetType] = unset
+    handle: Union[str, UnsetType] = unset
+    link_count: Union[int, UnsetType] = unset
+    modified_at: Union[datetime, UnsetType] = unset
+    name: Union[str, UnsetType] = unset
+    summary: Union[str, none_type, UnsetType] = unset
+    user_count: Union[int, UnsetType] = unset
 
 
 class TeamResponse(ModelNormal):
@@ -29,6 +45,7 @@ class TeamResponse(ModelNormal):
     attribute_map = {
         "data": "data",
     }
+    json_api_model = TeamResponseJSON
 
     def __init__(self_, data: Union[TeamData, UnsetType] = unset, **kwargs):
         """

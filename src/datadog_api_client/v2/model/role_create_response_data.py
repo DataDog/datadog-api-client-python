@@ -3,37 +3,26 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from dataclasses import dataclass
-from typing import List, Union, TYPE_CHECKING
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    datetime,
     unset,
     UnsetType,
 )
 
 
-from datadog_api_client.v2.model.role_create_attributes import RoleCreateAttributes
-
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.role_create_attributes import RoleCreateAttributes
     from datadog_api_client.v2.model.role_response_relationships import RoleResponseRelationships
     from datadog_api_client.v2.model.roles_type import RolesType
-
-
-@dataclass
-class RoleCreateResponseDataJSON:
-    id: str
-    created_at: Union[datetime, UnsetType] = unset
-    modified_at: Union[datetime, UnsetType] = unset
-    name: Union[str, UnsetType] = unset
-    permissions: Union[List[str], UnsetType] = unset
 
 
 class RoleCreateResponseData(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.role_create_attributes import RoleCreateAttributes
         from datadog_api_client.v2.model.role_response_relationships import RoleResponseRelationships
         from datadog_api_client.v2.model.roles_type import RolesType
 
@@ -50,7 +39,6 @@ class RoleCreateResponseData(ModelNormal):
         "relationships": "relationships",
         "type": "type",
     }
-    json_api_model = RoleCreateResponseDataJSON
 
     def __init__(
         self_,

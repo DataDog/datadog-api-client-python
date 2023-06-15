@@ -689,15 +689,18 @@ def get_type_at_path(operation, attribute_path):
 
 def is_json_api(model):
     properties = model.get("properties", {})
-    if "type" not in properties:
-        return False
-    if "attributes" in properties:
-        attributes = properties["attributes"]
-        return not bool(attributes.get("oneOf"))
+    if "data" in properties:
+        sub_properties = model["properties"]["data"].get("properties", {})
+        if "type" not in sub_properties:
+            return False
+        if "attributes" in sub_properties:
+            attributes = sub_properties["attributes"]
+            return not bool(attributes.get("oneOf"))
     return False
 
 
 def json_api_attributes(model):
+    model = model["properties"]["data"]
     required = model.get("required", ())
     attributes = []
     optional_attributes = []

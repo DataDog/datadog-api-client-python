@@ -3,8 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from dataclasses import dataclass
-from typing import List, Union, TYPE_CHECKING
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -14,31 +13,15 @@ from datadog_api_client.model_utils import (
 )
 
 
-from datadog_api_client.v2.model.security_filter_exclusion_filter_response import SecurityFilterExclusionFilterResponse
-from datadog_api_client.v2.model.security_filter_filtered_data_type import SecurityFilterFilteredDataType
-from datadog_api_client.v2.model.security_filter_attributes import SecurityFilterAttributes
-from datadog_api_client.v2.model.security_filter_exclusion_filter_response import SecurityFilterExclusionFilterResponse
-from datadog_api_client.v2.model.security_filter_filtered_data_type import SecurityFilterFilteredDataType
-
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.security_filter_attributes import SecurityFilterAttributes
     from datadog_api_client.v2.model.security_filter_type import SecurityFilterType
-
-
-@dataclass
-class SecurityFilterJSON:
-    id: str
-    exclusion_filters: Union[List[SecurityFilterExclusionFilterResponse], UnsetType] = unset
-    filtered_data_type: Union[SecurityFilterFilteredDataType, UnsetType] = unset
-    is_builtin: Union[bool, UnsetType] = unset
-    is_enabled: Union[bool, UnsetType] = unset
-    name: Union[str, UnsetType] = unset
-    query: Union[str, UnsetType] = unset
-    version: Union[int, UnsetType] = unset
 
 
 class SecurityFilter(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.security_filter_attributes import SecurityFilterAttributes
         from datadog_api_client.v2.model.security_filter_type import SecurityFilterType
 
         return {
@@ -52,7 +35,6 @@ class SecurityFilter(ModelNormal):
         "id": "id",
         "type": "type",
     }
-    json_api_model = SecurityFilterJSON
 
     def __init__(
         self_,

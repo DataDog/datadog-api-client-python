@@ -3,17 +3,37 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from dataclasses import dataclass
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
+
+from datadog_api_client.v2.model.sensitive_data_scanner_filter import SensitiveDataScannerFilter
+from datadog_api_client.v2.model.sensitive_data_scanner_product import SensitiveDataScannerProduct
+from datadog_api_client.v2.model.sensitive_data_scanner_filter import SensitiveDataScannerFilter
+from datadog_api_client.v2.model.sensitive_data_scanner_product import SensitiveDataScannerProduct
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.sensitive_data_scanner_group_update import SensitiveDataScannerGroupUpdate
     from datadog_api_client.v2.model.sensitive_data_scanner_meta_version_only import SensitiveDataScannerMetaVersionOnly
+
+
+@dataclass
+class SensitiveDataScannerGroupUpdateRequestJSON:
+    id: str
+    description: Union[str, UnsetType] = unset
+    filter: Union[SensitiveDataScannerFilter, UnsetType] = unset
+    is_enabled: Union[bool, UnsetType] = unset
+    name: Union[str, UnsetType] = unset
+    product_list: Union[List[SensitiveDataScannerProduct], UnsetType] = unset
+    configuration: Union[str, UnsetType] = unset
+    rules: Union[List[str], UnsetType] = unset
 
 
 class SensitiveDataScannerGroupUpdateRequest(ModelNormal):
@@ -33,6 +53,7 @@ class SensitiveDataScannerGroupUpdateRequest(ModelNormal):
         "data": "data",
         "meta": "meta",
     }
+    json_api_model = SensitiveDataScannerGroupUpdateRequestJSON
 
     def __init__(self_, data: SensitiveDataScannerGroupUpdate, meta: SensitiveDataScannerMetaVersionOnly, **kwargs):
         """

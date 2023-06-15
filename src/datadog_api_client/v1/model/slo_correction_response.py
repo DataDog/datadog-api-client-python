@@ -3,18 +3,48 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
+from dataclasses import dataclass
 from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    none_type,
     unset,
     UnsetType,
 )
 
 
+from datadog_api_client.v1.model.slo_correction_category import SLOCorrectionCategory
+from datadog_api_client.v1.model.creator import Creator
+from datadog_api_client.v1.model.slo_correction_response_attributes_modifier import (
+    SLOCorrectionResponseAttributesModifier,
+)
+from datadog_api_client.v1.model.slo_correction_category import SLOCorrectionCategory
+from datadog_api_client.v1.model.creator import Creator
+from datadog_api_client.v1.model.slo_correction_response_attributes_modifier import (
+    SLOCorrectionResponseAttributesModifier,
+)
+
 if TYPE_CHECKING:
     from datadog_api_client.v1.model.slo_correction import SLOCorrection
+
+
+@dataclass
+class SLOCorrectionResponseJSON:
+    id: str
+    category: Union[SLOCorrectionCategory, UnsetType] = unset
+    created_at: Union[int, none_type, UnsetType] = unset
+    creator: Union[Creator, UnsetType] = unset
+    description: Union[str, UnsetType] = unset
+    duration: Union[int, none_type, UnsetType] = unset
+    end: Union[int, none_type, UnsetType] = unset
+    modified_at: Union[int, none_type, UnsetType] = unset
+    modifier: Union[SLOCorrectionResponseAttributesModifier, none_type, UnsetType] = unset
+    rrule: Union[str, none_type, UnsetType] = unset
+    slo_id: Union[str, UnsetType] = unset
+    start: Union[int, UnsetType] = unset
+    timezone: Union[str, UnsetType] = unset
 
 
 class SLOCorrectionResponse(ModelNormal):
@@ -29,6 +59,7 @@ class SLOCorrectionResponse(ModelNormal):
     attribute_map = {
         "data": "data",
     }
+    json_api_model = SLOCorrectionResponseJSON
 
     def __init__(self_, data: Union[SLOCorrection, UnsetType] = unset, **kwargs):
         """

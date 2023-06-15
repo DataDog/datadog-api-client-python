@@ -3,40 +3,26 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from dataclasses import dataclass
 from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    datetime,
     unset,
     UnsetType,
 )
 
 
-from datadog_api_client.v2.model.authn_mapping_attributes import AuthNMappingAttributes
-
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.authn_mapping_attributes import AuthNMappingAttributes
     from datadog_api_client.v2.model.authn_mapping_relationships import AuthNMappingRelationships
     from datadog_api_client.v2.model.authn_mappings_type import AuthNMappingsType
-
-
-@dataclass
-class AuthNMappingJSON:
-    id: str
-    attribute_key: Union[str, UnsetType] = unset
-    attribute_value: Union[str, UnsetType] = unset
-    created_at: Union[datetime, UnsetType] = unset
-    modified_at: Union[datetime, UnsetType] = unset
-    saml_assertion_attribute_id: Union[str, UnsetType] = unset
-    role: Union[str, UnsetType] = unset
-    saml_assertion_attribute: Union[str, UnsetType] = unset
 
 
 class AuthNMapping(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.authn_mapping_attributes import AuthNMappingAttributes
         from datadog_api_client.v2.model.authn_mapping_relationships import AuthNMappingRelationships
         from datadog_api_client.v2.model.authn_mappings_type import AuthNMappingsType
 
@@ -53,7 +39,6 @@ class AuthNMapping(ModelNormal):
         "relationships": "relationships",
         "type": "type",
     }
-    json_api_model = AuthNMappingJSON
 
     def __init__(
         self_,

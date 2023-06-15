@@ -3,40 +3,25 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from dataclasses import dataclass
-from typing import List, Union, TYPE_CHECKING
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    datetime,
     unset,
     UnsetType,
 )
 
 
-from datadog_api_client.v2.model.hourly_usage_measurement import HourlyUsageMeasurement
-from datadog_api_client.v2.model.hourly_usage_attributes import HourlyUsageAttributes
-from datadog_api_client.v2.model.hourly_usage_measurement import HourlyUsageMeasurement
-
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.hourly_usage_attributes import HourlyUsageAttributes
     from datadog_api_client.v2.model.usage_time_series_type import UsageTimeSeriesType
-
-
-@dataclass
-class HourlyUsageJSON:
-    id: str
-    measurements: Union[List[HourlyUsageMeasurement], UnsetType] = unset
-    org_name: Union[str, UnsetType] = unset
-    product_family: Union[str, UnsetType] = unset
-    public_id: Union[str, UnsetType] = unset
-    region: Union[str, UnsetType] = unset
-    timestamp: Union[datetime, UnsetType] = unset
 
 
 class HourlyUsage(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.hourly_usage_attributes import HourlyUsageAttributes
         from datadog_api_client.v2.model.usage_time_series_type import UsageTimeSeriesType
 
         return {
@@ -50,7 +35,6 @@ class HourlyUsage(ModelNormal):
         "id": "id",
         "type": "type",
     }
-    json_api_model = HourlyUsageJSON
 
     def __init__(
         self_,

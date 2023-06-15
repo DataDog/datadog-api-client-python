@@ -3,11 +3,13 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from dataclasses import dataclass
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    datetime,
     unset,
     UnsetType,
 )
@@ -15,6 +17,15 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.role_update_response_data import RoleUpdateResponseData
+
+
+@dataclass
+class RoleUpdateResponseJSON:
+    id: str
+    created_at: Union[datetime, UnsetType] = unset
+    modified_at: Union[datetime, UnsetType] = unset
+    name: Union[str, UnsetType] = unset
+    permissions: Union[List[str], UnsetType] = unset
 
 
 class RoleUpdateResponse(ModelNormal):
@@ -29,6 +40,7 @@ class RoleUpdateResponse(ModelNormal):
     attribute_map = {
         "data": "data",
     }
+    json_api_model = RoleUpdateResponseJSON
 
     def __init__(self_, data: Union[RoleUpdateResponseData, UnsetType] = unset, **kwargs):
         """

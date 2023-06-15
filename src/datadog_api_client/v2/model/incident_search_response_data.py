@@ -3,8 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from dataclasses import dataclass
-from typing import List, Union, TYPE_CHECKING
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -14,26 +13,15 @@ from datadog_api_client.model_utils import (
 )
 
 
-from datadog_api_client.v2.model.incident_search_response_facets_data import IncidentSearchResponseFacetsData
-from datadog_api_client.v2.model.incident_search_response_incidents_data import IncidentSearchResponseIncidentsData
-from datadog_api_client.v2.model.incident_search_response_attributes import IncidentSearchResponseAttributes
-from datadog_api_client.v2.model.incident_search_response_facets_data import IncidentSearchResponseFacetsData
-from datadog_api_client.v2.model.incident_search_response_incidents_data import IncidentSearchResponseIncidentsData
-
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.incident_search_response_attributes import IncidentSearchResponseAttributes
     from datadog_api_client.v2.model.incident_search_results_type import IncidentSearchResultsType
-
-
-@dataclass
-class IncidentSearchResponseDataJSON:
-    facets: Union[IncidentSearchResponseFacetsData, UnsetType] = unset
-    incidents: Union[List[IncidentSearchResponseIncidentsData], UnsetType] = unset
-    total: Union[int, UnsetType] = unset
 
 
 class IncidentSearchResponseData(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.incident_search_response_attributes import IncidentSearchResponseAttributes
         from datadog_api_client.v2.model.incident_search_results_type import IncidentSearchResultsType
 
         return {
@@ -45,7 +33,6 @@ class IncidentSearchResponseData(ModelNormal):
         "attributes": "attributes",
         "type": "type",
     }
-    json_api_model = IncidentSearchResponseDataJSON
 
     def __init__(
         self_,

@@ -3,7 +3,8 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from dataclasses import dataclass
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -13,8 +14,19 @@ from datadog_api_client.model_utils import (
 )
 
 
+from datadog_api_client.v2.model.confluent_resource_response_attributes import ConfluentResourceResponseAttributes
+from datadog_api_client.v2.model.confluent_resource_response_attributes import ConfluentResourceResponseAttributes
+
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.confluent_account_response_data import ConfluentAccountResponseData
+
+
+@dataclass
+class ConfluentAccountResponseJSON:
+    id: str
+    api_key: Union[str, UnsetType] = unset
+    resources: Union[List[ConfluentResourceResponseAttributes], UnsetType] = unset
+    tags: Union[List[str], UnsetType] = unset
 
 
 class ConfluentAccountResponse(ModelNormal):
@@ -29,6 +41,7 @@ class ConfluentAccountResponse(ModelNormal):
     attribute_map = {
         "data": "data",
     }
+    json_api_model = ConfluentAccountResponseJSON
 
     def __init__(self_, data: Union[ConfluentAccountResponseData, UnsetType] = unset, **kwargs):
         """

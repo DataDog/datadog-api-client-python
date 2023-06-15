@@ -3,7 +3,8 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from dataclasses import dataclass
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -13,8 +14,18 @@ from datadog_api_client.model_utils import (
 )
 
 
+from datadog_api_client.v2.model.scalar_column import ScalarColumn
+from datadog_api_client.v2.model.scalar_column import ScalarColumn
+from datadog_api_client.v2.model.group_scalar_column import GroupScalarColumn
+from datadog_api_client.v2.model.data_scalar_column import DataScalarColumn
+
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.scalar_response import ScalarResponse
+
+
+@dataclass
+class ScalarFormulaQueryResponseJSON:
+    columns: Union[List[Union[ScalarColumn, GroupScalarColumn, DataScalarColumn]], UnsetType] = unset
 
 
 class ScalarFormulaQueryResponse(ModelNormal):
@@ -31,6 +42,7 @@ class ScalarFormulaQueryResponse(ModelNormal):
         "data": "data",
         "errors": "errors",
     }
+    json_api_model = ScalarFormulaQueryResponseJSON
 
     def __init__(
         self_, data: Union[ScalarResponse, UnsetType] = unset, errors: Union[str, UnsetType] = unset, **kwargs

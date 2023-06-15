@@ -3,36 +3,25 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from dataclasses import dataclass
 from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    datetime,
     unset,
     UnsetType,
 )
 
 
-from datadog_api_client.v2.model.user_invitation_data_attributes import UserInvitationDataAttributes
-
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.user_invitation_data_attributes import UserInvitationDataAttributes
     from datadog_api_client.v2.model.user_invitations_type import UserInvitationsType
-
-
-@dataclass
-class UserInvitationResponseDataJSON:
-    id: str
-    created_at: Union[datetime, UnsetType] = unset
-    expires_at: Union[datetime, UnsetType] = unset
-    invite_type: Union[str, UnsetType] = unset
-    uuid: Union[str, UnsetType] = unset
 
 
 class UserInvitationResponseData(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.user_invitation_data_attributes import UserInvitationDataAttributes
         from datadog_api_client.v2.model.user_invitations_type import UserInvitationsType
 
         return {
@@ -46,7 +35,6 @@ class UserInvitationResponseData(ModelNormal):
         "id": "id",
         "type": "type",
     }
-    json_api_model = UserInvitationResponseDataJSON
 
     def __init__(
         self_,

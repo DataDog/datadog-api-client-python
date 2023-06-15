@@ -3,6 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
+from dataclasses import dataclass
 from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
@@ -13,8 +14,22 @@ from datadog_api_client.model_utils import (
 )
 
 
+from datadog_api_client.v2.model.timeseries_response_series_list import TimeseriesResponseSeriesList
+from datadog_api_client.v2.model.timeseries_response_times import TimeseriesResponseTimes
+from datadog_api_client.v2.model.timeseries_response_values_list import TimeseriesResponseValuesList
+from datadog_api_client.v2.model.timeseries_response_series_list import TimeseriesResponseSeriesList
+from datadog_api_client.v2.model.timeseries_response_times import TimeseriesResponseTimes
+from datadog_api_client.v2.model.timeseries_response_values_list import TimeseriesResponseValuesList
+
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.timeseries_response import TimeseriesResponse
+
+
+@dataclass
+class TimeseriesFormulaQueryResponseJSON:
+    series: Union[TimeseriesResponseSeriesList, UnsetType] = unset
+    times: Union[TimeseriesResponseTimes, UnsetType] = unset
+    values: Union[TimeseriesResponseValuesList, UnsetType] = unset
 
 
 class TimeseriesFormulaQueryResponse(ModelNormal):
@@ -31,6 +46,7 @@ class TimeseriesFormulaQueryResponse(ModelNormal):
         "data": "data",
         "errors": "errors",
     }
+    json_api_model = TimeseriesFormulaQueryResponseJSON
 
     def __init__(
         self_, data: Union[TimeseriesResponse, UnsetType] = unset, errors: Union[str, UnsetType] = unset, **kwargs

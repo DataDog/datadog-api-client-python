@@ -3,40 +3,25 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from dataclasses import dataclass
 from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    datetime,
     unset,
     UnsetType,
 )
 
 
-from datadog_api_client.v2.model.organization_attributes import OrganizationAttributes
-
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.organization_attributes import OrganizationAttributes
     from datadog_api_client.v2.model.organizations_type import OrganizationsType
-
-
-@dataclass
-class OrganizationJSON:
-    id: str
-    created_at: Union[datetime, UnsetType] = unset
-    description: Union[str, UnsetType] = unset
-    disabled: Union[bool, UnsetType] = unset
-    modified_at: Union[datetime, UnsetType] = unset
-    name: Union[str, UnsetType] = unset
-    public_id: Union[str, UnsetType] = unset
-    sharing: Union[str, UnsetType] = unset
-    url: Union[str, UnsetType] = unset
 
 
 class Organization(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.organization_attributes import OrganizationAttributes
         from datadog_api_client.v2.model.organizations_type import OrganizationsType
 
         return {
@@ -50,7 +35,6 @@ class Organization(ModelNormal):
         "id": "id",
         "type": "type",
     }
-    json_api_model = OrganizationJSON
 
     def __init__(
         self_,

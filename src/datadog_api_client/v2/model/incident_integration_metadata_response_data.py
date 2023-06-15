@@ -3,7 +3,6 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from dataclasses import dataclass
 from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
@@ -14,30 +13,19 @@ from datadog_api_client.model_utils import (
 )
 
 
-from datadog_api_client.v2.model.incident_integration_metadata_metadata import IncidentIntegrationMetadataMetadata
-from datadog_api_client.v2.model.incident_integration_metadata_attributes import IncidentIntegrationMetadataAttributes
-from datadog_api_client.v2.model.incident_integration_metadata_metadata import IncidentIntegrationMetadataMetadata
-from datadog_api_client.v2.model.slack_integration_metadata import SlackIntegrationMetadata
-from datadog_api_client.v2.model.jira_integration_metadata import JiraIntegrationMetadata
-
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.incident_integration_metadata_attributes import (
+        IncidentIntegrationMetadataAttributes,
+    )
     from datadog_api_client.v2.model.incident_integration_metadata_type import IncidentIntegrationMetadataType
-
-
-@dataclass
-class IncidentIntegrationMetadataResponseDataJSON:
-    id: str
-    incident_id: Union[str, UnsetType] = unset
-    integration_type: Union[int, UnsetType] = unset
-    metadata: Union[
-        IncidentIntegrationMetadataMetadata, SlackIntegrationMetadata, JiraIntegrationMetadata, UnsetType
-    ] = unset
-    status: Union[int, UnsetType] = unset
 
 
 class IncidentIntegrationMetadataResponseData(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.incident_integration_metadata_attributes import (
+            IncidentIntegrationMetadataAttributes,
+        )
         from datadog_api_client.v2.model.incident_integration_metadata_type import IncidentIntegrationMetadataType
 
         return {
@@ -51,7 +39,6 @@ class IncidentIntegrationMetadataResponseData(ModelNormal):
         "id": "id",
         "type": "type",
     }
-    json_api_model = IncidentIntegrationMetadataResponseDataJSON
 
     def __init__(
         self_,

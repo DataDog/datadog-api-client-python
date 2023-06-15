@@ -3,8 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from dataclasses import dataclass
-from typing import List, Union, TYPE_CHECKING
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -14,35 +13,20 @@ from datadog_api_client.model_utils import (
 )
 
 
-from datadog_api_client.v2.model.sensitive_data_scanner_text_replacement import SensitiveDataScannerTextReplacement
-from datadog_api_client.v2.model.sensitive_data_scanner_rule_attributes import SensitiveDataScannerRuleAttributes
-from datadog_api_client.v2.model.sensitive_data_scanner_text_replacement import SensitiveDataScannerTextReplacement
-
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.sensitive_data_scanner_rule_attributes import SensitiveDataScannerRuleAttributes
     from datadog_api_client.v2.model.sensitive_data_scanner_rule_relationships import (
         SensitiveDataScannerRuleRelationships,
     )
     from datadog_api_client.v2.model.sensitive_data_scanner_rule_type import SensitiveDataScannerRuleType
 
 
-@dataclass
-class SensitiveDataScannerRuleIncludedItemJSON:
-    id: str
-    description: Union[str, UnsetType] = unset
-    excluded_namespaces: Union[List[str], UnsetType] = unset
-    is_enabled: Union[bool, UnsetType] = unset
-    name: Union[str, UnsetType] = unset
-    namespaces: Union[List[str], UnsetType] = unset
-    pattern: Union[str, UnsetType] = unset
-    tags: Union[List[str], UnsetType] = unset
-    text_replacement: Union[SensitiveDataScannerTextReplacement, UnsetType] = unset
-    group: Union[str, UnsetType] = unset
-    standard_pattern: Union[str, UnsetType] = unset
-
-
 class SensitiveDataScannerRuleIncludedItem(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.sensitive_data_scanner_rule_attributes import (
+            SensitiveDataScannerRuleAttributes,
+        )
         from datadog_api_client.v2.model.sensitive_data_scanner_rule_relationships import (
             SensitiveDataScannerRuleRelationships,
         )
@@ -61,7 +45,6 @@ class SensitiveDataScannerRuleIncludedItem(ModelNormal):
         "relationships": "relationships",
         "type": "type",
     }
-    json_api_model = SensitiveDataScannerRuleIncludedItemJSON
 
     def __init__(
         self_,

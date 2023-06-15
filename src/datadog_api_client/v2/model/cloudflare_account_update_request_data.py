@@ -3,7 +3,6 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from dataclasses import dataclass
 from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
@@ -14,23 +13,19 @@ from datadog_api_client.model_utils import (
 )
 
 
-from datadog_api_client.v2.model.cloudflare_account_update_request_attributes import (
-    CloudflareAccountUpdateRequestAttributes,
-)
-
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.cloudflare_account_update_request_attributes import (
+        CloudflareAccountUpdateRequestAttributes,
+    )
     from datadog_api_client.v2.model.cloudflare_account_type import CloudflareAccountType
-
-
-@dataclass
-class CloudflareAccountUpdateRequestDataJSON:
-    api_key: Union[str, UnsetType] = unset
-    email: Union[str, UnsetType] = unset
 
 
 class CloudflareAccountUpdateRequestData(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.cloudflare_account_update_request_attributes import (
+            CloudflareAccountUpdateRequestAttributes,
+        )
         from datadog_api_client.v2.model.cloudflare_account_type import CloudflareAccountType
 
         return {
@@ -42,7 +37,6 @@ class CloudflareAccountUpdateRequestData(ModelNormal):
         "attributes": "attributes",
         "type": "type",
     }
-    json_api_model = CloudflareAccountUpdateRequestDataJSON
 
     def __init__(
         self_,

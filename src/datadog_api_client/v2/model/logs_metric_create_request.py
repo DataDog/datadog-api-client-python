@@ -3,16 +3,34 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from dataclasses import dataclass
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
+from datadog_api_client.v2.model.logs_metric_compute import LogsMetricCompute
+from datadog_api_client.v2.model.logs_metric_filter import LogsMetricFilter
+from datadog_api_client.v2.model.logs_metric_group_by import LogsMetricGroupBy
+from datadog_api_client.v2.model.logs_metric_compute import LogsMetricCompute
+from datadog_api_client.v2.model.logs_metric_filter import LogsMetricFilter
+from datadog_api_client.v2.model.logs_metric_group_by import LogsMetricGroupBy
+
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.logs_metric_create_data import LogsMetricCreateData
+
+
+@dataclass
+class LogsMetricCreateRequestJSON:
+    id: str
+    compute: Union[LogsMetricCompute, UnsetType] = unset
+    filter: Union[LogsMetricFilter, UnsetType] = unset
+    group_by: Union[List[LogsMetricGroupBy], UnsetType] = unset
 
 
 class LogsMetricCreateRequest(ModelNormal):
@@ -27,6 +45,7 @@ class LogsMetricCreateRequest(ModelNormal):
     attribute_map = {
         "data": "data",
     }
+    json_api_model = LogsMetricCreateRequestJSON
 
     def __init__(self_, data: LogsMetricCreateData, **kwargs):
         """

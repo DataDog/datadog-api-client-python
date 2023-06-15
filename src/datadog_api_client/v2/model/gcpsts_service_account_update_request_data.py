@@ -3,8 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from dataclasses import dataclass
-from typing import List, Union, TYPE_CHECKING
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -14,24 +13,15 @@ from datadog_api_client.model_utils import (
 )
 
 
-from datadog_api_client.v2.model.gcpsts_service_account_attributes import GCPSTSServiceAccountAttributes
-
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.gcpsts_service_account_attributes import GCPSTSServiceAccountAttributes
     from datadog_api_client.v2.model.gcp_service_account_type import GCPServiceAccountType
-
-
-@dataclass
-class GCPSTSServiceAccountUpdateRequestDataJSON:
-    id: str
-    automute: Union[bool, UnsetType] = unset
-    client_email: Union[str, UnsetType] = unset
-    host_filters: Union[List[str], UnsetType] = unset
-    is_cspm_enabled: Union[bool, UnsetType] = unset
 
 
 class GCPSTSServiceAccountUpdateRequestData(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.gcpsts_service_account_attributes import GCPSTSServiceAccountAttributes
         from datadog_api_client.v2.model.gcp_service_account_type import GCPServiceAccountType
 
         return {
@@ -45,7 +35,6 @@ class GCPSTSServiceAccountUpdateRequestData(ModelNormal):
         "id": "id",
         "type": "type",
     }
-    json_api_model = GCPSTSServiceAccountUpdateRequestDataJSON
 
     def __init__(
         self_,

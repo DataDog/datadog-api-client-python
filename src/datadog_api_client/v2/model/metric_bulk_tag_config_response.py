@@ -3,6 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
+from dataclasses import dataclass
 from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
@@ -13,8 +14,21 @@ from datadog_api_client.model_utils import (
 )
 
 
+from datadog_api_client.v2.model.metric_bulk_tag_config_email_list import MetricBulkTagConfigEmailList
+from datadog_api_client.v2.model.metric_bulk_tag_config_tag_name_list import MetricBulkTagConfigTagNameList
+from datadog_api_client.v2.model.metric_bulk_tag_config_email_list import MetricBulkTagConfigEmailList
+from datadog_api_client.v2.model.metric_bulk_tag_config_tag_name_list import MetricBulkTagConfigTagNameList
+
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.metric_bulk_tag_config_status import MetricBulkTagConfigStatus
+
+
+@dataclass
+class MetricBulkTagConfigResponseJSON:
+    id: str
+    emails: Union[MetricBulkTagConfigEmailList, UnsetType] = unset
+    status: Union[str, UnsetType] = unset
+    tags: Union[MetricBulkTagConfigTagNameList, UnsetType] = unset
 
 
 class MetricBulkTagConfigResponse(ModelNormal):
@@ -29,6 +43,7 @@ class MetricBulkTagConfigResponse(ModelNormal):
     attribute_map = {
         "data": "data",
     }
+    json_api_model = MetricBulkTagConfigResponseJSON
 
     def __init__(self_, data: Union[MetricBulkTagConfigStatus, UnsetType] = unset, **kwargs):
         """

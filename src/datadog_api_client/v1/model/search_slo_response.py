@@ -3,7 +3,8 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from dataclasses import dataclass
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -13,10 +14,21 @@ from datadog_api_client.model_utils import (
 )
 
 
+from datadog_api_client.v1.model.search_slo_response_data_attributes_facets import SearchSLOResponseDataAttributesFacets
+from datadog_api_client.v1.model.search_service_level_objective import SearchServiceLevelObjective
+from datadog_api_client.v1.model.search_slo_response_data_attributes_facets import SearchSLOResponseDataAttributesFacets
+from datadog_api_client.v1.model.search_service_level_objective import SearchServiceLevelObjective
+
 if TYPE_CHECKING:
     from datadog_api_client.v1.model.search_slo_response_data import SearchSLOResponseData
     from datadog_api_client.v1.model.search_slo_response_links import SearchSLOResponseLinks
     from datadog_api_client.v1.model.search_slo_response_meta import SearchSLOResponseMeta
+
+
+@dataclass
+class SearchSLOResponseJSON:
+    facets: Union[SearchSLOResponseDataAttributesFacets, UnsetType] = unset
+    slos: Union[List[SearchServiceLevelObjective], UnsetType] = unset
 
 
 class SearchSLOResponse(ModelNormal):
@@ -37,6 +49,7 @@ class SearchSLOResponse(ModelNormal):
         "links": "links",
         "meta": "meta",
     }
+    json_api_model = SearchSLOResponseJSON
 
     def __init__(
         self_,

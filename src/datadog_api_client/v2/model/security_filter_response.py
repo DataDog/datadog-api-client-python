@@ -3,7 +3,8 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from dataclasses import dataclass
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -13,9 +14,26 @@ from datadog_api_client.model_utils import (
 )
 
 
+from datadog_api_client.v2.model.security_filter_exclusion_filter_response import SecurityFilterExclusionFilterResponse
+from datadog_api_client.v2.model.security_filter_filtered_data_type import SecurityFilterFilteredDataType
+from datadog_api_client.v2.model.security_filter_exclusion_filter_response import SecurityFilterExclusionFilterResponse
+from datadog_api_client.v2.model.security_filter_filtered_data_type import SecurityFilterFilteredDataType
+
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.security_filter import SecurityFilter
     from datadog_api_client.v2.model.security_filter_meta import SecurityFilterMeta
+
+
+@dataclass
+class SecurityFilterResponseJSON:
+    id: str
+    exclusion_filters: Union[List[SecurityFilterExclusionFilterResponse], UnsetType] = unset
+    filtered_data_type: Union[SecurityFilterFilteredDataType, UnsetType] = unset
+    is_builtin: Union[bool, UnsetType] = unset
+    is_enabled: Union[bool, UnsetType] = unset
+    name: Union[str, UnsetType] = unset
+    query: Union[str, UnsetType] = unset
+    version: Union[int, UnsetType] = unset
 
 
 class SecurityFilterResponse(ModelNormal):
@@ -33,6 +51,7 @@ class SecurityFilterResponse(ModelNormal):
         "data": "data",
         "meta": "meta",
     }
+    json_api_model = SecurityFilterResponseJSON
 
     def __init__(
         self_,

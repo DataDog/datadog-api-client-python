@@ -3,7 +3,6 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from dataclasses import dataclass
 from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
@@ -14,22 +13,15 @@ from datadog_api_client.model_utils import (
 )
 
 
-from datadog_api_client.v2.model.rum_application_update_attributes import RUMApplicationUpdateAttributes
-
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.rum_application_update_attributes import RUMApplicationUpdateAttributes
     from datadog_api_client.v2.model.rum_application_update_type import RUMApplicationUpdateType
-
-
-@dataclass
-class RUMApplicationUpdateJSON:
-    id: str
-    type: str
-    name: Union[str, UnsetType] = unset
 
 
 class RUMApplicationUpdate(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.rum_application_update_attributes import RUMApplicationUpdateAttributes
         from datadog_api_client.v2.model.rum_application_update_type import RUMApplicationUpdateType
 
         return {
@@ -43,7 +35,6 @@ class RUMApplicationUpdate(ModelNormal):
         "id": "id",
         "type": "type",
     }
-    json_api_model = RUMApplicationUpdateJSON
 
     def __init__(
         self_,

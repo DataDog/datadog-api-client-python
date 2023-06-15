@@ -3,8 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from dataclasses import dataclass
-from typing import List, Union, TYPE_CHECKING
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -14,24 +13,15 @@ from datadog_api_client.model_utils import (
 )
 
 
-from datadog_api_client.v2.model.metric_suggested_aggregations import MetricSuggestedAggregations
-from datadog_api_client.v2.model.metric_suggested_tags_attributes import MetricSuggestedTagsAttributes
-from datadog_api_client.v2.model.metric_suggested_aggregations import MetricSuggestedAggregations
-
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.metric_suggested_tags_attributes import MetricSuggestedTagsAttributes
     from datadog_api_client.v2.model.metric_active_configuration_type import MetricActiveConfigurationType
-
-
-@dataclass
-class MetricSuggestedTagsAndAggregationsJSON:
-    id: str
-    active_aggregations: Union[MetricSuggestedAggregations, UnsetType] = unset
-    active_tags: Union[List[str], UnsetType] = unset
 
 
 class MetricSuggestedTagsAndAggregations(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.metric_suggested_tags_attributes import MetricSuggestedTagsAttributes
         from datadog_api_client.v2.model.metric_active_configuration_type import MetricActiveConfigurationType
 
         return {
@@ -45,7 +35,6 @@ class MetricSuggestedTagsAndAggregations(ModelNormal):
         "id": "id",
         "type": "type",
     }
-    json_api_model = MetricSuggestedTagsAndAggregationsJSON
 
     def __init__(
         self_,

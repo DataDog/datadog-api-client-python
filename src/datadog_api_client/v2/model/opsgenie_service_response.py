@@ -3,16 +3,31 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from dataclasses import dataclass
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    none_type,
+    unset,
+    UnsetType,
 )
 
 
+from datadog_api_client.v2.model.opsgenie_service_region_type import OpsgenieServiceRegionType
+from datadog_api_client.v2.model.opsgenie_service_region_type import OpsgenieServiceRegionType
+
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.opsgenie_service_response_data import OpsgenieServiceResponseData
+
+
+@dataclass
+class OpsgenieServiceResponseJSON:
+    id: str
+    custom_url: Union[str, none_type, UnsetType] = unset
+    name: Union[str, UnsetType] = unset
+    region: Union[OpsgenieServiceRegionType, UnsetType] = unset
 
 
 class OpsgenieServiceResponse(ModelNormal):
@@ -27,6 +42,7 @@ class OpsgenieServiceResponse(ModelNormal):
     attribute_map = {
         "data": "data",
     }
+    json_api_model = OpsgenieServiceResponseJSON
 
     def __init__(self_, data: OpsgenieServiceResponseData, **kwargs):
         """

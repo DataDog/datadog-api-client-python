@@ -3,7 +3,6 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from dataclasses import dataclass
 from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
@@ -14,23 +13,17 @@ from datadog_api_client.model_utils import (
 )
 
 
-from datadog_api_client.v2.model.metric_bulk_tag_config_email_list import MetricBulkTagConfigEmailList
-from datadog_api_client.v2.model.metric_bulk_tag_config_delete_attributes import MetricBulkTagConfigDeleteAttributes
-from datadog_api_client.v2.model.metric_bulk_tag_config_email_list import MetricBulkTagConfigEmailList
-
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.metric_bulk_tag_config_delete_attributes import MetricBulkTagConfigDeleteAttributes
     from datadog_api_client.v2.model.metric_bulk_configure_tags_type import MetricBulkConfigureTagsType
-
-
-@dataclass
-class MetricBulkTagConfigDeleteJSON:
-    id: str
-    emails: Union[MetricBulkTagConfigEmailList, UnsetType] = unset
 
 
 class MetricBulkTagConfigDelete(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.metric_bulk_tag_config_delete_attributes import (
+            MetricBulkTagConfigDeleteAttributes,
+        )
         from datadog_api_client.v2.model.metric_bulk_configure_tags_type import MetricBulkConfigureTagsType
 
         return {
@@ -44,7 +37,6 @@ class MetricBulkTagConfigDelete(ModelNormal):
         "id": "id",
         "type": "type",
     }
-    json_api_model = MetricBulkTagConfigDeleteJSON
 
     def __init__(
         self_,

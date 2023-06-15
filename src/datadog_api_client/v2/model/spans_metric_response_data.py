@@ -3,8 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from dataclasses import dataclass
-from typing import List, Union, TYPE_CHECKING
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -14,29 +13,15 @@ from datadog_api_client.model_utils import (
 )
 
 
-from datadog_api_client.v2.model.spans_metric_response_compute import SpansMetricResponseCompute
-from datadog_api_client.v2.model.spans_metric_response_filter import SpansMetricResponseFilter
-from datadog_api_client.v2.model.spans_metric_response_group_by import SpansMetricResponseGroupBy
-from datadog_api_client.v2.model.spans_metric_response_attributes import SpansMetricResponseAttributes
-from datadog_api_client.v2.model.spans_metric_response_compute import SpansMetricResponseCompute
-from datadog_api_client.v2.model.spans_metric_response_filter import SpansMetricResponseFilter
-from datadog_api_client.v2.model.spans_metric_response_group_by import SpansMetricResponseGroupBy
-
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.spans_metric_response_attributes import SpansMetricResponseAttributes
     from datadog_api_client.v2.model.spans_metric_type import SpansMetricType
-
-
-@dataclass
-class SpansMetricResponseDataJSON:
-    id: str
-    compute: Union[SpansMetricResponseCompute, UnsetType] = unset
-    filter: Union[SpansMetricResponseFilter, UnsetType] = unset
-    group_by: Union[List[SpansMetricResponseGroupBy], UnsetType] = unset
 
 
 class SpansMetricResponseData(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.spans_metric_response_attributes import SpansMetricResponseAttributes
         from datadog_api_client.v2.model.spans_metric_type import SpansMetricType
 
         return {
@@ -50,7 +35,6 @@ class SpansMetricResponseData(ModelNormal):
         "id": "id",
         "type": "type",
     }
-    json_api_model = SpansMetricResponseDataJSON
 
     def __init__(
         self_,

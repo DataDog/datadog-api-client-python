@@ -3,7 +3,8 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from dataclasses import dataclass
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -13,9 +14,26 @@ from datadog_api_client.model_utils import (
 )
 
 
+from datadog_api_client.v2.model.sensitive_data_scanner_filter import SensitiveDataScannerFilter
+from datadog_api_client.v2.model.sensitive_data_scanner_product import SensitiveDataScannerProduct
+from datadog_api_client.v2.model.sensitive_data_scanner_filter import SensitiveDataScannerFilter
+from datadog_api_client.v2.model.sensitive_data_scanner_product import SensitiveDataScannerProduct
+
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.sensitive_data_scanner_group_response import SensitiveDataScannerGroupResponse
     from datadog_api_client.v2.model.sensitive_data_scanner_meta_version_only import SensitiveDataScannerMetaVersionOnly
+
+
+@dataclass
+class SensitiveDataScannerCreateGroupResponseJSON:
+    id: str
+    description: Union[str, UnsetType] = unset
+    filter: Union[SensitiveDataScannerFilter, UnsetType] = unset
+    is_enabled: Union[bool, UnsetType] = unset
+    name: Union[str, UnsetType] = unset
+    product_list: Union[List[SensitiveDataScannerProduct], UnsetType] = unset
+    configuration: Union[str, UnsetType] = unset
+    rules: Union[List[str], UnsetType] = unset
 
 
 class SensitiveDataScannerCreateGroupResponse(ModelNormal):
@@ -35,6 +53,7 @@ class SensitiveDataScannerCreateGroupResponse(ModelNormal):
         "data": "data",
         "meta": "meta",
     }
+    json_api_model = SensitiveDataScannerCreateGroupResponseJSON
 
     def __init__(
         self_,

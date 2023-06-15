@@ -3,34 +3,23 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from dataclasses import dataclass
-from typing import Union, TYPE_CHECKING
+from typing import TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    unset,
-    UnsetType,
 )
 
 
-from datadog_api_client.v2.model.team_link_attributes import TeamLinkAttributes
-
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.team_link_attributes import TeamLinkAttributes
     from datadog_api_client.v2.model.team_link_type import TeamLinkType
-
-
-@dataclass
-class TeamLinkCreateJSON:
-    label: Union[str, UnsetType] = unset
-    position: Union[int, UnsetType] = unset
-    team_id: Union[str, UnsetType] = unset
-    url: Union[str, UnsetType] = unset
 
 
 class TeamLinkCreate(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.team_link_attributes import TeamLinkAttributes
         from datadog_api_client.v2.model.team_link_type import TeamLinkType
 
         return {
@@ -42,7 +31,6 @@ class TeamLinkCreate(ModelNormal):
         "attributes": "attributes",
         "type": "type",
     }
-    json_api_model = TeamLinkCreateJSON
 
     def __init__(self_, attributes: TeamLinkAttributes, type: TeamLinkType, **kwargs):
         """

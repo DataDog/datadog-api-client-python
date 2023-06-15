@@ -3,7 +3,6 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from dataclasses import dataclass
 from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
@@ -14,28 +13,15 @@ from datadog_api_client.model_utils import (
 )
 
 
-from datadog_api_client.v2.model.timeseries_response_series_list import TimeseriesResponseSeriesList
-from datadog_api_client.v2.model.timeseries_response_times import TimeseriesResponseTimes
-from datadog_api_client.v2.model.timeseries_response_values_list import TimeseriesResponseValuesList
-from datadog_api_client.v2.model.timeseries_response_attributes import TimeseriesResponseAttributes
-from datadog_api_client.v2.model.timeseries_response_series_list import TimeseriesResponseSeriesList
-from datadog_api_client.v2.model.timeseries_response_times import TimeseriesResponseTimes
-from datadog_api_client.v2.model.timeseries_response_values_list import TimeseriesResponseValuesList
-
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.timeseries_response_attributes import TimeseriesResponseAttributes
     from datadog_api_client.v2.model.timeseries_formula_response_type import TimeseriesFormulaResponseType
-
-
-@dataclass
-class TimeseriesResponseJSON:
-    series: Union[TimeseriesResponseSeriesList, UnsetType] = unset
-    times: Union[TimeseriesResponseTimes, UnsetType] = unset
-    values: Union[TimeseriesResponseValuesList, UnsetType] = unset
 
 
 class TimeseriesResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.timeseries_response_attributes import TimeseriesResponseAttributes
         from datadog_api_client.v2.model.timeseries_formula_response_type import TimeseriesFormulaResponseType
 
         return {
@@ -47,7 +33,6 @@ class TimeseriesResponse(ModelNormal):
         "attributes": "attributes",
         "type": "type",
     }
-    json_api_model = TimeseriesResponseJSON
 
     def __init__(
         self_,

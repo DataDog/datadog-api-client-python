@@ -3,8 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from dataclasses import dataclass
-from typing import List, Union, TYPE_CHECKING
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -14,24 +13,15 @@ from datadog_api_client.model_utils import (
 )
 
 
-from datadog_api_client.v2.model.ip_allowlist_entry import IPAllowlistEntry
-from datadog_api_client.v2.model.ip_allowlist_attributes import IPAllowlistAttributes
-from datadog_api_client.v2.model.ip_allowlist_entry import IPAllowlistEntry
-
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.ip_allowlist_attributes import IPAllowlistAttributes
     from datadog_api_client.v2.model.ip_allowlist_type import IPAllowlistType
-
-
-@dataclass
-class IPAllowlistDataJSON:
-    id: str
-    enabled: Union[bool, UnsetType] = unset
-    entries: Union[List[IPAllowlistEntry], UnsetType] = unset
 
 
 class IPAllowlistData(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.ip_allowlist_attributes import IPAllowlistAttributes
         from datadog_api_client.v2.model.ip_allowlist_type import IPAllowlistType
 
         return {
@@ -45,7 +35,6 @@ class IPAllowlistData(ModelNormal):
         "id": "id",
         "type": "type",
     }
-    json_api_model = IPAllowlistDataJSON
 
     def __init__(
         self_,

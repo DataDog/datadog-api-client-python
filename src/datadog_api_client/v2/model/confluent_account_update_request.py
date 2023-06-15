@@ -3,16 +3,26 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from dataclasses import dataclass
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.confluent_account_update_request_data import ConfluentAccountUpdateRequestData
+
+
+@dataclass
+class ConfluentAccountUpdateRequestJSON:
+    api_key: Union[str, UnsetType] = unset
+    api_secret: Union[str, UnsetType] = unset
+    tags: Union[List[str], UnsetType] = unset
 
 
 class ConfluentAccountUpdateRequest(ModelNormal):
@@ -27,6 +37,7 @@ class ConfluentAccountUpdateRequest(ModelNormal):
     attribute_map = {
         "data": "data",
     }
+    json_api_model = ConfluentAccountUpdateRequestJSON
 
     def __init__(self_, data: ConfluentAccountUpdateRequestData, **kwargs):
         """

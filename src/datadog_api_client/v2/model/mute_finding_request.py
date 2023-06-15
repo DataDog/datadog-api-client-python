@@ -3,16 +3,28 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from dataclasses import dataclass
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
+from datadog_api_client.v2.model.mute_finding_request_properties import MuteFindingRequestProperties
+from datadog_api_client.v2.model.mute_finding_request_properties import MuteFindingRequestProperties
+
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.mute_finding_request_data import MuteFindingRequestData
+
+
+@dataclass
+class MuteFindingRequestJSON:
+    id: str
+    mute: Union[MuteFindingRequestProperties, UnsetType] = unset
 
 
 class MuteFindingRequest(ModelNormal):
@@ -27,6 +39,7 @@ class MuteFindingRequest(ModelNormal):
     attribute_map = {
         "data": "data",
     }
+    json_api_model = MuteFindingRequestJSON
 
     def __init__(self_, data: MuteFindingRequestData, **kwargs):
         """

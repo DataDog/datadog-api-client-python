@@ -3,36 +3,25 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from dataclasses import dataclass
-from typing import Any, Dict, List, Union, TYPE_CHECKING
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    datetime,
     unset,
     UnsetType,
 )
 
 
-from datadog_api_client.v2.model.audit_logs_event_attributes import AuditLogsEventAttributes
-
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.audit_logs_event_attributes import AuditLogsEventAttributes
     from datadog_api_client.v2.model.audit_logs_event_type import AuditLogsEventType
-
-
-@dataclass
-class AuditLogsEventJSON:
-    id: str
-    attributes: Union[Dict[str, Any], UnsetType] = unset
-    service: Union[str, UnsetType] = unset
-    tags: Union[List[str], UnsetType] = unset
-    timestamp: Union[datetime, UnsetType] = unset
 
 
 class AuditLogsEvent(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.audit_logs_event_attributes import AuditLogsEventAttributes
         from datadog_api_client.v2.model.audit_logs_event_type import AuditLogsEventType
 
         return {
@@ -46,7 +35,6 @@ class AuditLogsEvent(ModelNormal):
         "id": "id",
         "type": "type",
     }
-    json_api_model = AuditLogsEventJSON
 
     def __init__(
         self_,

@@ -3,16 +3,27 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from dataclasses import dataclass
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.incident_service_update_data import IncidentServiceUpdateData
+
+
+@dataclass
+class IncidentServiceUpdateRequestJSON:
+    id: str
+    name: Union[str, UnsetType] = unset
+    created_by: Union[str, UnsetType] = unset
+    last_modified_by: Union[str, UnsetType] = unset
 
 
 class IncidentServiceUpdateRequest(ModelNormal):
@@ -27,6 +38,7 @@ class IncidentServiceUpdateRequest(ModelNormal):
     attribute_map = {
         "data": "data",
     }
+    json_api_model = IncidentServiceUpdateRequestJSON
 
     def __init__(self_, data: IncidentServiceUpdateData, **kwargs):
         """

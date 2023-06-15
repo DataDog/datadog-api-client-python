@@ -3,8 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from dataclasses import dataclass
-from typing import List, Union, TYPE_CHECKING
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -14,25 +13,16 @@ from datadog_api_client.model_utils import (
 )
 
 
-from datadog_api_client.v2.model.team_update_attributes import TeamUpdateAttributes
-
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.team_update_attributes import TeamUpdateAttributes
     from datadog_api_client.v2.model.team_update_relationships import TeamUpdateRelationships
     from datadog_api_client.v2.model.team_type import TeamType
-
-
-@dataclass
-class TeamUpdateJSON:
-    color: Union[int, UnsetType] = unset
-    description: Union[str, UnsetType] = unset
-    handle: Union[str, UnsetType] = unset
-    name: Union[str, UnsetType] = unset
-    team_links: Union[List[str], UnsetType] = unset
 
 
 class TeamUpdate(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.team_update_attributes import TeamUpdateAttributes
         from datadog_api_client.v2.model.team_update_relationships import TeamUpdateRelationships
         from datadog_api_client.v2.model.team_type import TeamType
 
@@ -47,7 +37,6 @@ class TeamUpdate(ModelNormal):
         "relationships": "relationships",
         "type": "type",
     }
-    json_api_model = TeamUpdateJSON
 
     def __init__(
         self_,
