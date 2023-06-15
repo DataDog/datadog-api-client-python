@@ -16,7 +16,7 @@ class SyntheticsAssertionOperator(ModelSimple):
     """
     Assertion operator to apply.
 
-    :param value: Must be one of ["contains", "doesNotContain", "is", "isNot", "lessThan", "lessThanOrEqual", "moreThan", "moreThanOrEqual", "matches", "doesNotMatch", "validates", "isInMoreThan", "isInLessThan", "doesNotExist"].
+    :param value: Must be one of ["contains", "doesNotContain", "is", "isNot", "lessThan", "lessThanOrEqual", "moreThan", "moreThanOrEqual", "matches", "doesNotMatch", "validates", "isInMoreThan", "isInLessThan", "doesNotExist", "isUndefined"].
     :type value: str
     """
 
@@ -35,6 +35,7 @@ class SyntheticsAssertionOperator(ModelSimple):
         "isInMoreThan",
         "isInLessThan",
         "doesNotExist",
+        "isUndefined",
     }
     CONTAINS: ClassVar["SyntheticsAssertionOperator"]
     DOES_NOT_CONTAIN: ClassVar["SyntheticsAssertionOperator"]
@@ -50,6 +51,7 @@ class SyntheticsAssertionOperator(ModelSimple):
     IS_IN_MORE_DAYS_THAN: ClassVar["SyntheticsAssertionOperator"]
     IS_IN_LESS_DAYS_THAN: ClassVar["SyntheticsAssertionOperator"]
     DOES_NOT_EXIST: ClassVar["SyntheticsAssertionOperator"]
+    IS_UNDEFINED: ClassVar["SyntheticsAssertionOperator"]
 
     @cached_property
     def openapi_types(_):
@@ -72,3 +74,4 @@ SyntheticsAssertionOperator.VALIDATES = SyntheticsAssertionOperator("validates")
 SyntheticsAssertionOperator.IS_IN_MORE_DAYS_THAN = SyntheticsAssertionOperator("isInMoreThan")
 SyntheticsAssertionOperator.IS_IN_LESS_DAYS_THAN = SyntheticsAssertionOperator("isInLessThan")
 SyntheticsAssertionOperator.DOES_NOT_EXIST = SyntheticsAssertionOperator("doesNotExist")
+SyntheticsAssertionOperator.IS_UNDEFINED = SyntheticsAssertionOperator("isUndefined")
