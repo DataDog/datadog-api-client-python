@@ -285,55 +285,6 @@ class ServiceLevelObjectivesApi:
                 "operation_id": "search_slo",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": [
-                    {
-                        "url": "https://{subdomain}.{site}",
-                        "variables": {
-                            "site": {
-                                "description": "The regional site for Datadog customers.",
-                                "default_value": "datadoghq.com",
-                                "enum_values": [
-                                    "datadoghq.com",
-                                    "datadoghq.eu",
-                                    "us3.datadoghq.com",
-                                    "us5.datadoghq.com",
-                                    "ap1.datadoghq.com",
-                                    "ddog-gov.com",
-                                ],
-                            },
-                            "subdomain": {
-                                "description": "The subdomain where the API is deployed.",
-                                "default_value": "api",
-                            },
-                        },
-                    },
-                    {
-                        "url": "{protocol}://{name}",
-                        "variables": {
-                            "name": {
-                                "description": "Full site DNS name.",
-                                "default_value": "api.datadoghq.com",
-                            },
-                            "protocol": {
-                                "description": "The protocol for accessing the API.",
-                                "default_value": "https",
-                            },
-                        },
-                    },
-                    {
-                        "url": "https://{subdomain}.{site}",
-                        "variables": {
-                            "site": {
-                                "description": "Any Datadog deployment.",
-                                "default_value": "datadoghq.com",
-                            },
-                            "subdomain": {
-                                "description": "The subdomain where the API is deployed.",
-                                "default_value": "api",
-                            },
-                        },
-                    },
-                ],
             },
             params_map={
                 "query": {
