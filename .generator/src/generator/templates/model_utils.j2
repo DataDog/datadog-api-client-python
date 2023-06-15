@@ -1199,22 +1199,31 @@ def attempt_convert_item(
     return input_value
 
 
-def to_json_api(model):
-    cls = model.json_api_model
-    kwargs = {"id": model.id}
-    if "attributes" in model.attribute_map:
-        for attr in model.attributes.attribute_map:
-            kwargs[attr] = model.attributes.get(attr)
-    if "relationships" in model.attribute_map:
-        for attr in model.relationships.attribute_map:
-            data = model.relationships.get(attr).data
+def _data_to_json_api(model_data):
+    kwargs = {}
+    if "id" in model_data.attribute_map:
+        kwargs["id"] = model_data.id
+    if "attributes" in model_data.attribute_map:
+        for attr in model_data.attributes.attribute_map:
+            kwargs[attr] = model_data.attributes.get(attr)
+    if "relationships" in model_data.attribute_map:
+        for attr in model_data.relationships.attribute_map:
+            data = model_data.relationships.get(attr).data
             if isinstance(data, list):
                 kwargs[attr] = [elt.id for elt in data]
             elif data is not None:
                 kwargs[attr] = data.id
             else:
                 kwargs[attr] = data
-    return cls(**kwargs)
+    return kwargs
+
+
+def to_json_api(model):
+    cls = model.json_api_model
+    if isinstance(model.data, list):
+        return [cls(**_data_to_json_api(item)) for item in model.data]
+    else:
+        return cls(**_data_to_json_api(model.data))
 
 
 def is_type_nullable(input_type):
