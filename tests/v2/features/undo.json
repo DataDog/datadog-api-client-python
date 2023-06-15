@@ -411,7 +411,7 @@
       "parameters": [
         {
           "name": "account_id",
-          "source": "id"
+          "source": "data.id"
         }
       ],
       "type": "unsafe"
