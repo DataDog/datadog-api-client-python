@@ -3,11 +3,13 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
+from dataclasses import dataclass
 from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    datetime,
     unset,
     UnsetType,
 )
@@ -18,6 +20,16 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.incident_team_included_items import IncidentTeamIncludedItems
     from datadog_api_client.v2.model.incident_response_meta import IncidentResponseMeta
     from datadog_api_client.v2.model.user import User
+
+
+@dataclass
+class IncidentTeamsResponseJSON:
+    id: str
+    created: Union[datetime, UnsetType] = unset
+    modified: Union[datetime, UnsetType] = unset
+    name: Union[str, UnsetType] = unset
+    created_by: Union[str, UnsetType] = unset
+    last_modified_by: Union[str, UnsetType] = unset
 
 
 class IncidentTeamsResponse(ModelNormal):
@@ -42,6 +54,7 @@ class IncidentTeamsResponse(ModelNormal):
         "included",
         "meta",
     }
+    json_api_model = IncidentTeamsResponseJSON
 
     def __init__(
         self_,

@@ -3,21 +3,36 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
+from dataclasses import dataclass
 from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    none_type,
     unset,
     UnsetType,
 )
 
+
+from datadog_api_client.v2.model.incident_todo_assignee_array import IncidentTodoAssigneeArray
+from datadog_api_client.v2.model.incident_todo_assignee_array import IncidentTodoAssigneeArray
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.incident_todo_response_data import IncidentTodoResponseData
     from datadog_api_client.v2.model.incident_todo_response_included_item import IncidentTodoResponseIncludedItem
     from datadog_api_client.v2.model.incident_response_meta import IncidentResponseMeta
     from datadog_api_client.v2.model.user import User
+
+
+@dataclass
+class IncidentTodoListResponseJSON:
+    id: str
+    assignees: Union[IncidentTodoAssigneeArray, UnsetType] = unset
+    completed: Union[str, none_type, UnsetType] = unset
+    content: Union[str, UnsetType] = unset
+    due_date: Union[str, none_type, UnsetType] = unset
+    incident_id: Union[str, UnsetType] = unset
 
 
 class IncidentTodoListResponse(ModelNormal):
@@ -42,6 +57,7 @@ class IncidentTodoListResponse(ModelNormal):
         "included",
         "meta",
     }
+    json_api_model = IncidentTodoListResponseJSON
 
     def __init__(
         self_,

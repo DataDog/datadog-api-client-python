@@ -3,6 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
+from dataclasses import dataclass
 from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
@@ -13,8 +14,23 @@ from datadog_api_client.model_utils import (
 )
 
 
+from datadog_api_client.v2.model.spans_metric_response_compute import SpansMetricResponseCompute
+from datadog_api_client.v2.model.spans_metric_response_filter import SpansMetricResponseFilter
+from datadog_api_client.v2.model.spans_metric_response_group_by import SpansMetricResponseGroupBy
+from datadog_api_client.v2.model.spans_metric_response_compute import SpansMetricResponseCompute
+from datadog_api_client.v2.model.spans_metric_response_filter import SpansMetricResponseFilter
+from datadog_api_client.v2.model.spans_metric_response_group_by import SpansMetricResponseGroupBy
+
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.spans_metric_response_data import SpansMetricResponseData
+
+
+@dataclass
+class SpansMetricsResponseJSON:
+    id: str
+    compute: Union[SpansMetricResponseCompute, UnsetType] = unset
+    filter: Union[SpansMetricResponseFilter, UnsetType] = unset
+    group_by: Union[List[SpansMetricResponseGroupBy], UnsetType] = unset
 
 
 class SpansMetricsResponse(ModelNormal):
@@ -29,6 +45,7 @@ class SpansMetricsResponse(ModelNormal):
     attribute_map = {
         "data": "data",
     }
+    json_api_model = SpansMetricsResponseJSON
 
     def __init__(self_, data: Union[List[SpansMetricResponseData], UnsetType] = unset, **kwargs):
         """

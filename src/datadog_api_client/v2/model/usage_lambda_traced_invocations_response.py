@@ -3,6 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
+from dataclasses import dataclass
 from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
@@ -13,8 +14,23 @@ from datadog_api_client.model_utils import (
 )
 
 
+from datadog_api_client.v2.model.usage_time_series_object import UsageTimeSeriesObject
+from datadog_api_client.v2.model.hourly_usage_type import HourlyUsageType
+from datadog_api_client.v2.model.usage_time_series_object import UsageTimeSeriesObject
+from datadog_api_client.v2.model.hourly_usage_type import HourlyUsageType
+
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.usage_data_object import UsageDataObject
+
+
+@dataclass
+class UsageLambdaTracedInvocationsResponseJSON:
+    id: str
+    org_name: Union[str, UnsetType] = unset
+    product_family: Union[str, UnsetType] = unset
+    public_id: Union[str, UnsetType] = unset
+    timeseries: Union[List[UsageTimeSeriesObject], UnsetType] = unset
+    usage_type: Union[HourlyUsageType, UnsetType] = unset
 
 
 class UsageLambdaTracedInvocationsResponse(ModelNormal):
@@ -29,6 +45,7 @@ class UsageLambdaTracedInvocationsResponse(ModelNormal):
     attribute_map = {
         "data": "data",
     }
+    json_api_model = UsageLambdaTracedInvocationsResponseJSON
 
     def __init__(self_, data: Union[List[UsageDataObject], UnsetType] = unset, **kwargs):
         """

@@ -3,11 +3,13 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, Union, TYPE_CHECKING
+from dataclasses import dataclass
+from typing import Any, Dict, List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    datetime,
     unset,
     UnsetType,
 )
@@ -17,6 +19,15 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.rum_event import RUMEvent
     from datadog_api_client.v2.model.rum_response_links import RUMResponseLinks
     from datadog_api_client.v2.model.rum_response_metadata import RUMResponseMetadata
+
+
+@dataclass
+class RUMEventsResponseJSON:
+    id: str
+    attributes: Union[Dict[str, Any], UnsetType] = unset
+    service: Union[str, UnsetType] = unset
+    tags: Union[List[str], UnsetType] = unset
+    timestamp: Union[datetime, UnsetType] = unset
 
 
 class RUMEventsResponse(ModelNormal):
@@ -37,6 +48,7 @@ class RUMEventsResponse(ModelNormal):
         "links": "links",
         "meta": "meta",
     }
+    json_api_model = RUMEventsResponseJSON
 
     def __init__(
         self_,

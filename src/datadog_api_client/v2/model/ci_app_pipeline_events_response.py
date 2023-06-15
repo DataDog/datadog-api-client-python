@@ -3,20 +3,34 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, Union, TYPE_CHECKING
+from dataclasses import dataclass
+from typing import Any, Dict, List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    datetime,
     unset,
     UnsetType,
 )
 
 
+from datadog_api_client.v2.model.tags_event_attribute import TagsEventAttribute
+from datadog_api_client.v2.model.tags_event_attribute import TagsEventAttribute
+
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.ci_app_pipeline_event import CIAppPipelineEvent
     from datadog_api_client.v2.model.ci_app_response_links import CIAppResponseLinks
     from datadog_api_client.v2.model.ci_app_response_metadata_with_pagination import CIAppResponseMetadataWithPagination
+
+
+@dataclass
+class CIAppPipelineEventsResponseJSON:
+    id: str
+    attributes: Union[Dict[str, Any], UnsetType] = unset
+    service: Union[str, UnsetType] = unset
+    tags: Union[TagsEventAttribute, UnsetType] = unset
+    timestamp: Union[datetime, UnsetType] = unset
 
 
 class CIAppPipelineEventsResponse(ModelNormal):
@@ -39,6 +53,7 @@ class CIAppPipelineEventsResponse(ModelNormal):
         "links": "links",
         "meta": "meta",
     }
+    json_api_model = CIAppPipelineEventsResponseJSON
 
     def __init__(
         self_,

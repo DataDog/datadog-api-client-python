@@ -3,6 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
+from dataclasses import dataclass
 from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
@@ -17,6 +18,13 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.cloudflare_account_response_data import CloudflareAccountResponseData
 
 
+@dataclass
+class CloudflareAccountsResponseJSON:
+    id: str
+    email: Union[str, UnsetType] = unset
+    name: Union[str, UnsetType] = unset
+
+
 class CloudflareAccountsResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
@@ -29,6 +37,7 @@ class CloudflareAccountsResponse(ModelNormal):
     attribute_map = {
         "data": "data",
     }
+    json_api_model = CloudflareAccountsResponseJSON
 
     def __init__(self_, data: Union[List[CloudflareAccountResponseData], UnsetType] = unset, **kwargs):
         """

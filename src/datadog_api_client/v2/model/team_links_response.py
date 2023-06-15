@@ -3,6 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
+from dataclasses import dataclass
 from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
@@ -17,6 +18,15 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.team_link import TeamLink
 
 
+@dataclass
+class TeamLinksResponseJSON:
+    id: str
+    label: Union[str, UnsetType] = unset
+    position: Union[int, UnsetType] = unset
+    team_id: Union[str, UnsetType] = unset
+    url: Union[str, UnsetType] = unset
+
+
 class TeamLinksResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
@@ -29,6 +39,7 @@ class TeamLinksResponse(ModelNormal):
     attribute_map = {
         "data": "data",
     }
+    json_api_model = TeamLinksResponseJSON
 
     def __init__(self_, data: Union[List[TeamLink], UnsetType] = unset, **kwargs):
         """

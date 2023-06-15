@@ -3,6 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
+from dataclasses import dataclass
 from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
@@ -13,8 +14,21 @@ from datadog_api_client.model_utils import (
 )
 
 
+from datadog_api_client.v2.model.monitor_config_policy_policy import MonitorConfigPolicyPolicy
+from datadog_api_client.v2.model.monitor_config_policy_type import MonitorConfigPolicyType
+from datadog_api_client.v2.model.monitor_config_policy_policy import MonitorConfigPolicyPolicy
+from datadog_api_client.v2.model.monitor_config_policy_tag_policy import MonitorConfigPolicyTagPolicy
+from datadog_api_client.v2.model.monitor_config_policy_type import MonitorConfigPolicyType
+
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.monitor_config_policy_response_data import MonitorConfigPolicyResponseData
+
+
+@dataclass
+class MonitorConfigPolicyListResponseJSON:
+    id: str
+    policy: Union[MonitorConfigPolicyPolicy, MonitorConfigPolicyTagPolicy, UnsetType] = unset
+    policy_type: Union[MonitorConfigPolicyType, UnsetType] = unset
 
 
 class MonitorConfigPolicyListResponse(ModelNormal):
@@ -29,6 +43,7 @@ class MonitorConfigPolicyListResponse(ModelNormal):
     attribute_map = {
         "data": "data",
     }
+    json_api_model = MonitorConfigPolicyListResponseJSON
 
     def __init__(self_, data: Union[List[MonitorConfigPolicyResponseData], UnsetType] = unset, **kwargs):
         """

@@ -3,11 +3,13 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
+from dataclasses import dataclass
 from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    datetime,
     unset,
     UnsetType,
 )
@@ -15,6 +17,18 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.permission import Permission
+
+
+@dataclass
+class PermissionsResponseJSON:
+    id: str
+    created: Union[datetime, UnsetType] = unset
+    description: Union[str, UnsetType] = unset
+    display_name: Union[str, UnsetType] = unset
+    display_type: Union[str, UnsetType] = unset
+    group_name: Union[str, UnsetType] = unset
+    name: Union[str, UnsetType] = unset
+    restricted: Union[bool, UnsetType] = unset
 
 
 class PermissionsResponse(ModelNormal):
@@ -29,6 +43,7 @@ class PermissionsResponse(ModelNormal):
     attribute_map = {
         "data": "data",
     }
+    json_api_model = PermissionsResponseJSON
 
     def __init__(self_, data: Union[List[Permission], UnsetType] = unset, **kwargs):
         """

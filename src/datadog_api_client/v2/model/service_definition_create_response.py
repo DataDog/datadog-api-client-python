@@ -3,6 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
+from dataclasses import dataclass
 from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
@@ -13,8 +14,24 @@ from datadog_api_client.model_utils import (
 )
 
 
+from datadog_api_client.v2.model.service_definition_meta import ServiceDefinitionMeta
+from datadog_api_client.v2.model.service_definition_schema import ServiceDefinitionSchema
+from datadog_api_client.v2.model.service_definition_meta import ServiceDefinitionMeta
+from datadog_api_client.v2.model.service_definition_schema import ServiceDefinitionSchema
+from datadog_api_client.v2.model.service_definition_v1 import ServiceDefinitionV1
+from datadog_api_client.v2.model.service_definition_v2 import ServiceDefinitionV2
+from datadog_api_client.v2.model.service_definition_v2_dot1 import ServiceDefinitionV2Dot1
+
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.service_definition_data import ServiceDefinitionData
+
+
+@dataclass
+class ServiceDefinitionCreateResponseJSON:
+    meta: Union[ServiceDefinitionMeta, UnsetType] = unset
+    schema: Union[
+        ServiceDefinitionSchema, ServiceDefinitionV1, ServiceDefinitionV2, ServiceDefinitionV2Dot1, UnsetType
+    ] = unset
 
 
 class ServiceDefinitionCreateResponse(ModelNormal):
@@ -29,6 +46,7 @@ class ServiceDefinitionCreateResponse(ModelNormal):
     attribute_map = {
         "data": "data",
     }
+    json_api_model = ServiceDefinitionCreateResponseJSON
 
     def __init__(self_, data: Union[List[ServiceDefinitionData], UnsetType] = unset, **kwargs):
         """
