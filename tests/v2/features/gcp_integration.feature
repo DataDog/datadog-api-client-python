@@ -50,7 +50,7 @@ Feature: GCP Integration
     Given new "CreateGCPSTSAccount" request
     And body with value {"data": {"attributes": {"client_email": "{{ unique_hash }}@test-project.iam.gserviceaccount.com", "host_filters": []}, "type": "gcp_service_account"}}
     When the request is sent
-    Then the response status is 200 OK
+    Then the response status is 201 OK
     And the response "data.type" is equal to "gcp_service_account"
     And the response "data.attributes.client_email" is equal to "{{ unique_hash }}@test-project.iam.gserviceaccount.com"
 
