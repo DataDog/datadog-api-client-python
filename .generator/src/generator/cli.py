@@ -13,7 +13,9 @@ PACKAGE_NAME = "datadog_api_client"
 @click.argument(
     "specs",
     nargs=-1,
-    type=click.Path(exists=True, file_okay=True, dir_okay=False, path_type=pathlib.Path),
+    type=click.Path(
+        exists=True, file_okay=True, dir_okay=False, path_type=pathlib.Path
+    ),
 )
 @click.option(
     "-o",
@@ -24,7 +26,9 @@ def cli(specs, output):
     """
     Generate a Python code snippet from OpenAPI specification.
     """
-    env = Environment(loader=FileSystemLoader(str(pathlib.Path(__file__).parent / "templates")))
+    env = Environment(
+        loader=FileSystemLoader(str(pathlib.Path(__file__).parent / "templates"))
+    )
 
     env.filters["accept_headers"] = openapi.accept_headers
     env.filters["attribute_name"] = formatter.attribute_name
@@ -46,7 +50,9 @@ def cli(specs, output):
     env.globals["get_types_for_attribute"] = openapi.get_types_for_attribute
     env.globals["get_type_for_parameter"] = openapi.get_type_for_parameter
     env.globals["get_references_for_model"] = openapi.get_references_for_model
-    env.globals["get_oneof_references_for_model"] = openapi.get_oneof_references_for_model
+    env.globals[
+        "get_oneof_references_for_model"
+    ] = openapi.get_oneof_references_for_model
     env.globals["get_oneof_parameters"] = openapi.get_oneof_parameters
     env.globals["get_type_for_items"] = openapi.get_type_for_items
     env.globals["get_api_models"] = openapi.get_api_models
@@ -74,7 +80,6 @@ def cli(specs, output):
         "model_utils.py": env.get_template("model_utils.j2"),
         "rest.py": env.get_template("rest.j2"),
     }
-
 
     top_package = output / PACKAGE_NAME
     top_package.mkdir(parents=True, exist_ok=True)
@@ -127,7 +132,13 @@ def cli(specs, output):
             api_path = package / "api" / filename
             api_path.parent.mkdir(parents=True, exist_ok=True)
             with api_path.open("w") as fp:
-                fp.write(api_j2.render(name=name, operations=operations, description=tags_by_name[name]["description"]))
+                fp.write(
+                    api_j2.render(
+                        name=name,
+                        operations=operations,
+                        description=tags_by_name[name]["description"],
+                    )
+                )
 
         api_init_path = package / "api" / "__init__.py"
         with api_init_path.open("w") as fp:

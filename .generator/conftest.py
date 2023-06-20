@@ -17,7 +17,13 @@ import hashlib
 
 from generator import openapi
 
-from generator.formatter import format_parameters, format_data_with_schema, safe_snake_case, snake_case, set_api_version
+from generator.formatter import (
+    format_parameters,
+    format_data_with_schema,
+    safe_snake_case,
+    snake_case,
+    set_api_version,
+)
 
 
 MODIFIED_FEATURES = {
@@ -76,7 +82,11 @@ class FloatEncoder(json.JSONEncoder):
         return result
 
 
-JINJA_ENV = Environment(loader=FileSystemLoader(pathlib.Path(__file__).parent / "src" / "generator" / "templates"))
+JINJA_ENV = Environment(
+    loader=FileSystemLoader(
+        pathlib.Path(__file__).parent / "src" / "generator" / "templates"
+    )
+)
 JINJA_ENV.filters["tojson"] = json.dumps
 JINJA_ENV.filters["snake_case"] = snake_case
 JINJA_ENV.filters["safe_snake_case"] = safe_snake_case
@@ -123,6 +133,7 @@ def pytest_bdd_after_scenario(request, feature, scenario):
         version=version,
         scenario=scenario,
         operation_spec=operation_spec.spec,
+        jsonapi=False,
     )
 
     output = (
@@ -136,6 +147,35 @@ def pytest_bdd_after_scenario(request, feature, scenario):
 
     with output.open("w") as f:
         f.write(data)
+
+    if (
+        context.get("body")
+        and isinstance(context["body"]["value"], dict)
+        and list(context["body"]["value"].keys()) == ["data"]
+    ):
+        try:
+            data = PYTHON_EXAMPLE_J2.render(
+                context=context,
+                version=version,
+                scenario=scenario,
+                operation_spec=operation_spec.spec,
+                jsonapi=True,
+            )
+        except NotImplementedError:
+            pass
+        else:
+            unique_suffix = f"JSONAPI{unique_suffix}"
+
+            output = (
+                ROOT_PATH
+                / "examples"
+                / version
+                / group_name
+                / f"{operation_id}{unique_suffix}.py"
+            )
+
+            with output.open("w") as f:
+                f.write(data)
 
 
 def pytest_bdd_apply_tag(tag, function):
@@ -162,7 +202,9 @@ def api_version(request):
 
 @pytest.fixture
 def unique(request):
-    main = PATTERN_ALPHANUM.sub("-", request.node.__scenario_report__.scenario.feature.name)
+    main = PATTERN_ALPHANUM.sub(
+        "-", request.node.__scenario_report__.scenario.feature.name
+    )
     if main.endswith("s"):
         # Let's strip the plural present in most names
         main = main[:-1]
@@ -270,7 +312,7 @@ def context(request, unique, freezed_time):
         "_imports": imports,
         "_given": given,
         "_key_to_json_path": defaultdict(dict),
-        "_enable_operations": set()
+        "_enable_operations": set(),
     }
 
     yield ctx
@@ -534,10 +576,15 @@ def expect_false(context, response_path):
     """Check that a response attribute is false."""
 
 
-@then(parsers.parse('the response "{response_path}" has item with field "{key_path}" with value {value}'))
-def expect_array_contains_object(context, response_path, key_path, value):
+@then(
+    parsers.parse(
+        'the response "{response_path}" has item with field "{key_path}" with value {value}'
+    )
+)
+def expect_array_contains_field(context, response_path, key_path, value):
     """Check that a response attribute contains an object with the specified key and value."""
 
+
 @then(parsers.parse('the response "{response_path}" array contains value {value}'))
-def expect_array_contains_object(context, response_path, value):
+def expect_array_contains_value(context, response_path, value):
     """Check that a response array contains the specified value."""

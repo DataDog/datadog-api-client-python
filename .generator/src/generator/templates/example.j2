@@ -1,5 +1,5 @@
 """
-{{ scenario.name|wordwrap(width=120)}}
+{{ scenario.name|wordwrap(width=120)}}{%- if jsonapi %} using JSON:API models{%- endif %}
 """
 {% if context._given -%}
     {# Include 'from os import environ' used in given statements. #}
@@ -7,7 +7,7 @@
 {%- endif -%}
 {%- set parameters, imports = format_parameters(context.api_request.kwargs, spec=operation_spec, replace_values=context._replace_values, version=version) %}
 {%- if context.body %}
-{%- set body, imports = format_data_with_schema(context.body.value, context.api_request.schema.spec, replace_values=context._replace_values, version=version, imports=imports) %}
+{%- set body, imports = format_data_with_schema(context.body.value, context.api_request.schema.spec, replace_values=context._replace_values, version=version, imports=imports, jsonapi=jsonapi) %}
 {%- endif %}
 
 {%- for package, values in context._imports.items() %}
