@@ -13,6 +13,7 @@ from datadog_api_client.v2.model.metric_bulk_tag_config_tag_name_list import Met
 USER_DATA_ATTRIBUTES_EMAIL = environ["USER_DATA_ATTRIBUTES_EMAIL"]
 
 body = MetricBulkTagConfigCreateRequestJSON(
+    id="system.load.1",
     emails=MetricBulkTagConfigEmailList(
         [
             USER_DATA_ATTRIBUTES_EMAIL,

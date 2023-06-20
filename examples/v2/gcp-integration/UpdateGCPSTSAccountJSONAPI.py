@@ -11,6 +11,7 @@ from datadog_api_client.v2.model.gcpsts_service_account_update_request import GC
 GCP_STS_ACCOUNT_DATA_ID = environ["GCP_STS_ACCOUNT_DATA_ID"]
 
 body = GCPSTSServiceAccountUpdateRequestJSON(
+    id=GCP_STS_ACCOUNT_DATA_ID,
     client_email="252bf553ef04b351@example.com",
     host_filters=[
         "foo:bar",

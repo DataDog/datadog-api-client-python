@@ -12,6 +12,7 @@ APPLICATION_KEY_DATA_ATTRIBUTES_NAME = environ["APPLICATION_KEY_DATA_ATTRIBUTES_
 APPLICATION_KEY_DATA_ID = environ["APPLICATION_KEY_DATA_ID"]
 
 body = ApplicationKeyUpdateRequestJSON(
+    id=APPLICATION_KEY_DATA_ID,
     name="Application Key for managing dashboards-updated",
 )
 

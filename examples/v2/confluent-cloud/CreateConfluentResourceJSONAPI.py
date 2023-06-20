@@ -11,6 +11,7 @@ from datadog_api_client.v2.model.confluent_resource_request import ConfluentReso
 CONFLUENT_ACCOUNT_DATA_ID = environ["CONFLUENT_ACCOUNT_DATA_ID"]
 
 body = ConfluentResourceRequestJSON(
+    id="exampleconfluentcloud",
     resource_type="kafka",
     tags=[
         "myTag",

@@ -11,6 +11,7 @@ from datadog_api_client.v2.model.metric_tag_configuration_update_request import 
 METRIC_TAG_CONFIGURATION_DATA_ID = environ["METRIC_TAG_CONFIGURATION_DATA_ID"]
 
 body = MetricTagConfigurationUpdateRequestJSON(
+    id=METRIC_TAG_CONFIGURATION_DATA_ID,
     tags=[
         "app",
     ],

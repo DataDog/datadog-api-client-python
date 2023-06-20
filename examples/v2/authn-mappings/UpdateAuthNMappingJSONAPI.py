@@ -14,6 +14,7 @@ AUTHN_MAPPING_DATA_ID = environ["AUTHN_MAPPING_DATA_ID"]
 ROLE_DATA_ID = environ["ROLE_DATA_ID"]
 
 body = AuthNMappingUpdateRequestJSON(
+    id=AUTHN_MAPPING_DATA_ID,
     attribute_key="member-of",
     attribute_value="Development",
     role="string",

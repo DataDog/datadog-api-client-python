@@ -12,6 +12,7 @@ from datadog_api_client.v2.model.restriction_policy_update_request import Restri
 USER_DATA_RELATIONSHIPS_ORG_DATA_ID = environ["USER_DATA_RELATIONSHIPS_ORG_DATA_ID"]
 
 body = RestrictionPolicyUpdateRequestJSON(
+    id="dashboard:test-update",
     bindings=[
         RestrictionPolicyBinding(
             relation="editor",

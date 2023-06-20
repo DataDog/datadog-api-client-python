@@ -8,6 +8,7 @@ from datadog_api_client.v2.model.metric_tag_configuration_create_request import 
 from datadog_api_client.v2.model.metric_tag_configuration_metric_types import MetricTagConfigurationMetricTypes
 
 body = MetricTagConfigurationCreateRequestJSON(
+    id="ExampleMetric",
     tags=[
         "app",
         "datacenter",

@@ -7,6 +7,7 @@ from datadog_api_client.v2.api.fastly_integration_api import FastlyIntegrationAp
 from datadog_api_client.v2.model.fastly_service_request import FastlyServiceRequestJSON
 
 body = FastlyServiceRequestJSON(
+    id="abc123",
     tags=[
         "myTag",
         "myTag2:myValue",

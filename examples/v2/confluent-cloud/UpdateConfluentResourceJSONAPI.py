@@ -7,6 +7,7 @@ from datadog_api_client.v2.api.confluent_cloud_api import ConfluentCloudApi
 from datadog_api_client.v2.model.confluent_resource_request import ConfluentResourceRequestJSON
 
 body = ConfluentResourceRequestJSON(
+    id="resource-id-123",
     resource_type="kafka",
     tags=[
         "myTag",

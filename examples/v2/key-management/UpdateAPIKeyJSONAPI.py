@@ -11,6 +11,7 @@ from datadog_api_client.v2.model.api_key_update_request import APIKeyUpdateReque
 API_KEY_DATA_ID = environ["API_KEY_DATA_ID"]
 
 body = APIKeyUpdateRequestJSON(
+    id=API_KEY_DATA_ID,
     name="Example-Key-Management",
 )
 

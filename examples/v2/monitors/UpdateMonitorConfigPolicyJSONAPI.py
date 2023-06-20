@@ -13,6 +13,7 @@ from datadog_api_client.v2.model.monitor_config_policy_type import MonitorConfig
 MONITOR_CONFIGURATION_POLICY_DATA_ID = environ["MONITOR_CONFIGURATION_POLICY_DATA_ID"]
 
 body = MonitorConfigPolicyEditRequestJSON(
+    id=MONITOR_CONFIGURATION_POLICY_DATA_ID,
     policy=MonitorConfigPolicyTagPolicy(
         tag_key="examplemonitor",
         tag_key_required=False,

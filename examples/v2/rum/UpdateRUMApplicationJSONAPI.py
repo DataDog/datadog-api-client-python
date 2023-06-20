@@ -11,6 +11,7 @@ from datadog_api_client.v2.model.rum_application_update_request import RUMApplic
 RUM_APPLICATION_DATA_ID = environ["RUM_APPLICATION_DATA_ID"]
 
 body = RUMApplicationUpdateRequestJSON(
+    id=RUM_APPLICATION_DATA_ID,
     name="updated_name_for_my_existing_rum_application",
     type="browser",
 )

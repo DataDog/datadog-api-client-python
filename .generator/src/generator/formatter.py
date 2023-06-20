@@ -373,6 +373,13 @@ def format_data_with_schema_dict(
                     models.remove(name)
             name = f"{name}JSON"
             original_schema = schema
+            if "id" in data["data"]:
+                v = data["data"]["id"]
+                if v in replace_values:
+                    v = replace_values[v]
+                else:
+                    v = f'"{v}"'
+                parameters += f"id={v}, "
             if (
                 original_schema["properties"]["data"]
                 .get("properties", {})

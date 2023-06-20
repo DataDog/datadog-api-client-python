@@ -8,6 +8,7 @@ from datadog_api_client.v2.model.metric_bulk_tag_config_delete_request import Me
 from datadog_api_client.v2.model.metric_bulk_tag_config_email_list import MetricBulkTagConfigEmailList
 
 body = MetricBulkTagConfigDeleteRequestJSON(
+    id="kafka.lag",
     emails=MetricBulkTagConfigEmailList(
         [
             "sue@example.com",

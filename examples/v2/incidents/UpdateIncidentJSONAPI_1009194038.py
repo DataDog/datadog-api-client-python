@@ -11,6 +11,7 @@ from datadog_api_client.v2.model.incident_update_request import IncidentUpdateRe
 INCIDENT_DATA_ID = environ["INCIDENT_DATA_ID"]
 
 body = IncidentUpdateRequestJSON(
+    id=INCIDENT_DATA_ID,
     commander_user=None,
 )
 

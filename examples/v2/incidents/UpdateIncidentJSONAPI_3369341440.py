@@ -14,6 +14,7 @@ INCIDENT_DATA_ID = environ["INCIDENT_DATA_ID"]
 USER_DATA_ID = environ["USER_DATA_ID"]
 
 body = IncidentUpdateRequestJSON(
+    id=INCIDENT_DATA_ID,
     commander_user="string",
 )
 

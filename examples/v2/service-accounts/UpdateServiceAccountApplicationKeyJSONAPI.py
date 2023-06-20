@@ -7,6 +7,7 @@ from datadog_api_client.v2.api.service_accounts_api import ServiceAccountsApi
 from datadog_api_client.v2.model.application_key_update_request import ApplicationKeyUpdateRequestJSON
 
 body = ApplicationKeyUpdateRequestJSON(
+    id="00112233-4455-6677-8899-aabbccddeeff",
     name="Application Key for managing dashboards",
     scopes=[
         "dashboards_read",

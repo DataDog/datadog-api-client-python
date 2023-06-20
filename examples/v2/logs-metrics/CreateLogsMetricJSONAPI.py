@@ -9,6 +9,7 @@ from datadog_api_client.v2.model.logs_metric_compute_aggregation_type import Log
 from datadog_api_client.v2.model.logs_metric_create_request import LogsMetricCreateRequestJSON
 
 body = LogsMetricCreateRequestJSON(
+    id="ExampleLogsMetric",
     compute=LogsMetricCompute(
         aggregation_type=LogsMetricComputeAggregationType.DISTRIBUTION,
         include_percentiles=True,

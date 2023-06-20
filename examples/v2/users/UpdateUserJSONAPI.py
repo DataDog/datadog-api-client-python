@@ -11,6 +11,7 @@ from datadog_api_client.v2.model.user_update_request import UserUpdateRequestJSO
 USER_DATA_ID = environ["USER_DATA_ID"]
 
 body = UserUpdateRequestJSON(
+    id=USER_DATA_ID,
     name="updated",
     disabled=True,
 )

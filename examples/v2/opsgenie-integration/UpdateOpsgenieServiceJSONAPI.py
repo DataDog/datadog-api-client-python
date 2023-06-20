@@ -13,6 +13,7 @@ OPSGENIE_SERVICE_DATA_ATTRIBUTES_NAME = environ["OPSGENIE_SERVICE_DATA_ATTRIBUTE
 OPSGENIE_SERVICE_DATA_ID = environ["OPSGENIE_SERVICE_DATA_ID"]
 
 body = OpsgenieServiceUpdateRequestJSON(
+    id=OPSGENIE_SERVICE_DATA_ID,
     name="fake-opsgenie-service-name--updated",
     opsgenie_api_key="00000000-0000-0000-0000-000000000000",
     region=OpsgenieServiceRegionType.EU,

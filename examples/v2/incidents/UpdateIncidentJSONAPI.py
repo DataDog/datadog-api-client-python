@@ -16,6 +16,7 @@ INCIDENT_DATA_ATTRIBUTES_TITLE = environ["INCIDENT_DATA_ATTRIBUTES_TITLE"]
 INCIDENT_DATA_ID = environ["INCIDENT_DATA_ID"]
 
 body = IncidentUpdateRequestJSON(
+    id=INCIDENT_DATA_ID,
     fields=dict(
         state=IncidentFieldAttributesSingleValue(
             type=IncidentFieldAttributesSingleValueType.DROPDOWN,

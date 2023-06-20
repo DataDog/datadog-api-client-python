@@ -11,6 +11,7 @@ from datadog_api_client.v2.model.spans_metric_filter import SpansMetricFilter
 from datadog_api_client.v2.model.spans_metric_group_by import SpansMetricGroupBy
 
 body = SpansMetricCreateRequestJSON(
+    id="ExampleSpansMetric",
     compute=SpansMetricCompute(
         aggregation_type=SpansMetricComputeAggregationType.DISTRIBUTION,
         include_percentiles=False,
