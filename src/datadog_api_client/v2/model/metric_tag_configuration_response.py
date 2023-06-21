@@ -15,13 +15,10 @@ from datadog_api_client.model_utils import (
 )
 
 
-from datadog_api_client.v2.model.metric_custom_aggregations import MetricCustomAggregations
-from datadog_api_client.v2.model.metric_tag_configuration_metric_types import MetricTagConfigurationMetricTypes
-from datadog_api_client.v2.model.metric_custom_aggregations import MetricCustomAggregations
-from datadog_api_client.v2.model.metric_tag_configuration_metric_types import MetricTagConfigurationMetricTypes
-
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.metric_tag_configuration import MetricTagConfiguration
+    from datadog_api_client.v2.model.metric_custom_aggregations import MetricCustomAggregations
+    from datadog_api_client.v2.model.metric_tag_configuration_metric_types import MetricTagConfigurationMetricTypes
 
 
 @dataclass

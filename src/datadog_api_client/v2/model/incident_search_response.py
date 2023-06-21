@@ -14,17 +14,14 @@ from datadog_api_client.model_utils import (
 )
 
 
-from datadog_api_client.v2.model.incident_search_response_facets_data import IncidentSearchResponseFacetsData
-from datadog_api_client.v2.model.incident_search_response_incidents_data import IncidentSearchResponseIncidentsData
-from datadog_api_client.v2.model.incident_search_response_facets_data import IncidentSearchResponseFacetsData
-from datadog_api_client.v2.model.incident_search_response_incidents_data import IncidentSearchResponseIncidentsData
-
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.incident_search_response_data import IncidentSearchResponseData
     from datadog_api_client.v2.model.incident_response_included_item import IncidentResponseIncludedItem
     from datadog_api_client.v2.model.incident_search_response_meta import IncidentSearchResponseMeta
     from datadog_api_client.v2.model.user import User
     from datadog_api_client.v2.model.incident_attachment_data import IncidentAttachmentData
+    from datadog_api_client.v2.model.incident_search_response_facets_data import IncidentSearchResponseFacetsData
+    from datadog_api_client.v2.model.incident_search_response_incidents_data import IncidentSearchResponseIncidentsData
 
 
 @dataclass

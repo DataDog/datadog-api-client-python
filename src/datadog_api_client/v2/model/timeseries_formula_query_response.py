@@ -14,15 +14,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-from datadog_api_client.v2.model.timeseries_response_series_list import TimeseriesResponseSeriesList
-from datadog_api_client.v2.model.timeseries_response_times import TimeseriesResponseTimes
-from datadog_api_client.v2.model.timeseries_response_values_list import TimeseriesResponseValuesList
-from datadog_api_client.v2.model.timeseries_response_series_list import TimeseriesResponseSeriesList
-from datadog_api_client.v2.model.timeseries_response_times import TimeseriesResponseTimes
-from datadog_api_client.v2.model.timeseries_response_values_list import TimeseriesResponseValuesList
-
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.timeseries_response import TimeseriesResponse
+    from datadog_api_client.v2.model.timeseries_response_series_list import TimeseriesResponseSeriesList
+    from datadog_api_client.v2.model.timeseries_response_times import TimeseriesResponseTimes
+    from datadog_api_client.v2.model.timeseries_response_values_list import TimeseriesResponseValuesList
 
 
 @dataclass

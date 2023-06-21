@@ -14,11 +14,6 @@ from datadog_api_client.model_utils import (
 )
 
 
-from datadog_api_client.v2.model.incident_integration_metadata_metadata import IncidentIntegrationMetadataMetadata
-from datadog_api_client.v2.model.incident_integration_metadata_metadata import IncidentIntegrationMetadataMetadata
-from datadog_api_client.v2.model.slack_integration_metadata import SlackIntegrationMetadata
-from datadog_api_client.v2.model.jira_integration_metadata import JiraIntegrationMetadata
-
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.incident_integration_metadata_response_data import (
         IncidentIntegrationMetadataResponseData,
@@ -28,6 +23,9 @@ if TYPE_CHECKING:
     )
     from datadog_api_client.v2.model.incident_response_meta import IncidentResponseMeta
     from datadog_api_client.v2.model.user import User
+    from datadog_api_client.v2.model.incident_integration_metadata_metadata import IncidentIntegrationMetadataMetadata
+    from datadog_api_client.v2.model.slack_integration_metadata import SlackIntegrationMetadata
+    from datadog_api_client.v2.model.jira_integration_metadata import JiraIntegrationMetadata
 
 
 @dataclass

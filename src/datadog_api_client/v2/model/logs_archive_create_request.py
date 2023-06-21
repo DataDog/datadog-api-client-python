@@ -15,14 +15,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-from datadog_api_client.v2.model.logs_archive_create_request_destination import LogsArchiveCreateRequestDestination
-from datadog_api_client.v2.model.logs_archive_create_request_destination import LogsArchiveCreateRequestDestination
-from datadog_api_client.v2.model.logs_archive_destination_azure import LogsArchiveDestinationAzure
-from datadog_api_client.v2.model.logs_archive_destination_gcs import LogsArchiveDestinationGCS
-from datadog_api_client.v2.model.logs_archive_destination_s3 import LogsArchiveDestinationS3
-
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.logs_archive_create_request_definition import LogsArchiveCreateRequestDefinition
+    from datadog_api_client.v2.model.logs_archive_create_request_destination import LogsArchiveCreateRequestDestination
+    from datadog_api_client.v2.model.logs_archive_destination_azure import LogsArchiveDestinationAzure
+    from datadog_api_client.v2.model.logs_archive_destination_gcs import LogsArchiveDestinationGCS
+    from datadog_api_client.v2.model.logs_archive_destination_s3 import LogsArchiveDestinationS3
 
 
 @dataclass

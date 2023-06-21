@@ -15,11 +15,9 @@ from datadog_api_client.model_utils import (
 )
 
 
-from datadog_api_client.v2.model.chargeback_breakdown import ChargebackBreakdown
-from datadog_api_client.v2.model.chargeback_breakdown import ChargebackBreakdown
-
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.cost_by_org import CostByOrg
+    from datadog_api_client.v2.model.chargeback_breakdown import ChargebackBreakdown
 
 
 @dataclass

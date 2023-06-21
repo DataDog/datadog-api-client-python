@@ -14,11 +14,9 @@ from datadog_api_client.model_utils import (
 )
 
 
-from datadog_api_client.v2.model.metric_bulk_tag_config_email_list import MetricBulkTagConfigEmailList
-from datadog_api_client.v2.model.metric_bulk_tag_config_email_list import MetricBulkTagConfigEmailList
-
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.metric_bulk_tag_config_delete import MetricBulkTagConfigDelete
+    from datadog_api_client.v2.model.metric_bulk_tag_config_email_list import MetricBulkTagConfigEmailList
 
 
 @dataclass

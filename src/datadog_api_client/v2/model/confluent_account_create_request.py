@@ -14,11 +14,9 @@ from datadog_api_client.model_utils import (
 )
 
 
-from datadog_api_client.v2.model.confluent_account_resource_attributes import ConfluentAccountResourceAttributes
-from datadog_api_client.v2.model.confluent_account_resource_attributes import ConfluentAccountResourceAttributes
-
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.confluent_account_create_request_data import ConfluentAccountCreateRequestData
+    from datadog_api_client.v2.model.confluent_account_resource_attributes import ConfluentAccountResourceAttributes
 
 
 @dataclass

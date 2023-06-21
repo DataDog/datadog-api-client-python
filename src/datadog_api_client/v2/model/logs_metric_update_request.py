@@ -14,15 +14,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-from datadog_api_client.v2.model.logs_metric_update_compute import LogsMetricUpdateCompute
-from datadog_api_client.v2.model.logs_metric_filter import LogsMetricFilter
-from datadog_api_client.v2.model.logs_metric_group_by import LogsMetricGroupBy
-from datadog_api_client.v2.model.logs_metric_update_compute import LogsMetricUpdateCompute
-from datadog_api_client.v2.model.logs_metric_filter import LogsMetricFilter
-from datadog_api_client.v2.model.logs_metric_group_by import LogsMetricGroupBy
-
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.logs_metric_update_data import LogsMetricUpdateData
+    from datadog_api_client.v2.model.logs_metric_update_compute import LogsMetricUpdateCompute
+    from datadog_api_client.v2.model.logs_metric_filter import LogsMetricFilter
+    from datadog_api_client.v2.model.logs_metric_group_by import LogsMetricGroupBy
 
 
 @dataclass

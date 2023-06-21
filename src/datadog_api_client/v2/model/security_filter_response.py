@@ -14,14 +14,13 @@ from datadog_api_client.model_utils import (
 )
 
 
-from datadog_api_client.v2.model.security_filter_exclusion_filter_response import SecurityFilterExclusionFilterResponse
-from datadog_api_client.v2.model.security_filter_filtered_data_type import SecurityFilterFilteredDataType
-from datadog_api_client.v2.model.security_filter_exclusion_filter_response import SecurityFilterExclusionFilterResponse
-from datadog_api_client.v2.model.security_filter_filtered_data_type import SecurityFilterFilteredDataType
-
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.security_filter import SecurityFilter
     from datadog_api_client.v2.model.security_filter_meta import SecurityFilterMeta
+    from datadog_api_client.v2.model.security_filter_exclusion_filter_response import (
+        SecurityFilterExclusionFilterResponse,
+    )
+    from datadog_api_client.v2.model.security_filter_filtered_data_type import SecurityFilterFilteredDataType
 
 
 @dataclass

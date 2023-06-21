@@ -15,11 +15,9 @@ from datadog_api_client.model_utils import (
 )
 
 
-from datadog_api_client.v2.model.metric_estimate_type import MetricEstimateType
-from datadog_api_client.v2.model.metric_estimate_type import MetricEstimateType
-
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.metric_estimate import MetricEstimate
+    from datadog_api_client.v2.model.metric_estimate_type import MetricEstimateType
 
 
 @dataclass

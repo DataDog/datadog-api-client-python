@@ -15,11 +15,9 @@ from datadog_api_client.model_utils import (
 )
 
 
-from datadog_api_client.v2.model.incident_todo_assignee_array import IncidentTodoAssigneeArray
-from datadog_api_client.v2.model.incident_todo_assignee_array import IncidentTodoAssigneeArray
-
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.incident_todo_create_data import IncidentTodoCreateData
+    from datadog_api_client.v2.model.incident_todo_assignee_array import IncidentTodoAssigneeArray
 
 
 @dataclass

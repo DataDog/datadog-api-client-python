@@ -15,11 +15,9 @@ from datadog_api_client.model_utils import (
 )
 
 
-from datadog_api_client.v2.model.user_team_role import UserTeamRole
-from datadog_api_client.v2.model.user_team_role import UserTeamRole
-
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.user_team import UserTeam
+    from datadog_api_client.v2.model.user_team_role import UserTeamRole
 
 
 @dataclass

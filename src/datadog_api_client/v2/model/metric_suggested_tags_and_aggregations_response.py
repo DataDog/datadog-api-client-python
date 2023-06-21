@@ -14,11 +14,9 @@ from datadog_api_client.model_utils import (
 )
 
 
-from datadog_api_client.v2.model.metric_suggested_aggregations import MetricSuggestedAggregations
-from datadog_api_client.v2.model.metric_suggested_aggregations import MetricSuggestedAggregations
-
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.metric_suggested_tags_and_aggregations import MetricSuggestedTagsAndAggregations
+    from datadog_api_client.v2.model.metric_suggested_aggregations import MetricSuggestedAggregations
 
 
 @dataclass

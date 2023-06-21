@@ -15,13 +15,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-from datadog_api_client.v2.model.event_attributes import EventAttributes
-from datadog_api_client.v2.model.event_attributes import EventAttributes
-
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.event_response import EventResponse
     from datadog_api_client.v2.model.events_list_response_links import EventsListResponseLinks
     from datadog_api_client.v2.model.events_response_metadata import EventsResponseMetadata
+    from datadog_api_client.v2.model.event_attributes import EventAttributes
 
 
 @dataclass

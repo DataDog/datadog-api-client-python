@@ -14,21 +14,14 @@ from datadog_api_client.model_utils import (
 )
 
 
-from datadog_api_client.v2.model.cloud_workload_security_agent_rule_creator_attributes import (
-    CloudWorkloadSecurityAgentRuleCreatorAttributes,
-)
-from datadog_api_client.v2.model.cloud_workload_security_agent_rule_updater_attributes import (
-    CloudWorkloadSecurityAgentRuleUpdaterAttributes,
-)
-from datadog_api_client.v2.model.cloud_workload_security_agent_rule_creator_attributes import (
-    CloudWorkloadSecurityAgentRuleCreatorAttributes,
-)
-from datadog_api_client.v2.model.cloud_workload_security_agent_rule_updater_attributes import (
-    CloudWorkloadSecurityAgentRuleUpdaterAttributes,
-)
-
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.cloud_workload_security_agent_rule_data import CloudWorkloadSecurityAgentRuleData
+    from datadog_api_client.v2.model.cloud_workload_security_agent_rule_creator_attributes import (
+        CloudWorkloadSecurityAgentRuleCreatorAttributes,
+    )
+    from datadog_api_client.v2.model.cloud_workload_security_agent_rule_updater_attributes import (
+        CloudWorkloadSecurityAgentRuleUpdaterAttributes,
+    )
 
 
 @dataclass

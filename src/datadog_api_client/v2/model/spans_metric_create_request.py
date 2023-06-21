@@ -14,15 +14,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-from datadog_api_client.v2.model.spans_metric_compute import SpansMetricCompute
-from datadog_api_client.v2.model.spans_metric_filter import SpansMetricFilter
-from datadog_api_client.v2.model.spans_metric_group_by import SpansMetricGroupBy
-from datadog_api_client.v2.model.spans_metric_compute import SpansMetricCompute
-from datadog_api_client.v2.model.spans_metric_filter import SpansMetricFilter
-from datadog_api_client.v2.model.spans_metric_group_by import SpansMetricGroupBy
-
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.spans_metric_create_data import SpansMetricCreateData
+    from datadog_api_client.v2.model.spans_metric_compute import SpansMetricCompute
+    from datadog_api_client.v2.model.spans_metric_filter import SpansMetricFilter
+    from datadog_api_client.v2.model.spans_metric_group_by import SpansMetricGroupBy
 
 
 @dataclass

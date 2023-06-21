@@ -14,18 +14,13 @@ from datadog_api_client.model_utils import (
 )
 
 
-from datadog_api_client.v2.model.finding_evaluation import FindingEvaluation
-from datadog_api_client.v2.model.finding_mute import FindingMute
-from datadog_api_client.v2.model.finding_rule import FindingRule
-from datadog_api_client.v2.model.finding_status import FindingStatus
-from datadog_api_client.v2.model.finding_evaluation import FindingEvaluation
-from datadog_api_client.v2.model.finding_mute import FindingMute
-from datadog_api_client.v2.model.finding_rule import FindingRule
-from datadog_api_client.v2.model.finding_status import FindingStatus
-
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.finding import Finding
     from datadog_api_client.v2.model.list_findings_meta import ListFindingsMeta
+    from datadog_api_client.v2.model.finding_evaluation import FindingEvaluation
+    from datadog_api_client.v2.model.finding_mute import FindingMute
+    from datadog_api_client.v2.model.finding_rule import FindingRule
+    from datadog_api_client.v2.model.finding_status import FindingStatus
 
 
 @dataclass

@@ -15,13 +15,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-from datadog_api_client.v2.model.tags_event_attribute import TagsEventAttribute
-from datadog_api_client.v2.model.tags_event_attribute import TagsEventAttribute
-
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.ci_app_pipeline_event import CIAppPipelineEvent
     from datadog_api_client.v2.model.ci_app_response_links import CIAppResponseLinks
     from datadog_api_client.v2.model.ci_app_response_metadata_with_pagination import CIAppResponseMetadataWithPagination
+    from datadog_api_client.v2.model.tags_event_attribute import TagsEventAttribute
 
 
 @dataclass

@@ -14,16 +14,13 @@ from datadog_api_client.model_utils import (
 )
 
 
-from datadog_api_client.v2.model.service_definition_meta import ServiceDefinitionMeta
-from datadog_api_client.v2.model.service_definition_schema import ServiceDefinitionSchema
-from datadog_api_client.v2.model.service_definition_meta import ServiceDefinitionMeta
-from datadog_api_client.v2.model.service_definition_schema import ServiceDefinitionSchema
-from datadog_api_client.v2.model.service_definition_v1 import ServiceDefinitionV1
-from datadog_api_client.v2.model.service_definition_v2 import ServiceDefinitionV2
-from datadog_api_client.v2.model.service_definition_v2_dot1 import ServiceDefinitionV2Dot1
-
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.service_definition_data import ServiceDefinitionData
+    from datadog_api_client.v2.model.service_definition_meta import ServiceDefinitionMeta
+    from datadog_api_client.v2.model.service_definition_schema import ServiceDefinitionSchema
+    from datadog_api_client.v2.model.service_definition_v1 import ServiceDefinitionV1
+    from datadog_api_client.v2.model.service_definition_v2 import ServiceDefinitionV2
+    from datadog_api_client.v2.model.service_definition_v2_dot1 import ServiceDefinitionV2Dot1
 
 
 @dataclass

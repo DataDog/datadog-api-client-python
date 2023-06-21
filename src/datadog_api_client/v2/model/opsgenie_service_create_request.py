@@ -14,11 +14,9 @@ from datadog_api_client.model_utils import (
 )
 
 
-from datadog_api_client.v2.model.opsgenie_service_region_type import OpsgenieServiceRegionType
-from datadog_api_client.v2.model.opsgenie_service_region_type import OpsgenieServiceRegionType
-
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.opsgenie_service_create_data import OpsgenieServiceCreateData
+    from datadog_api_client.v2.model.opsgenie_service_region_type import OpsgenieServiceRegionType
 
 
 @dataclass

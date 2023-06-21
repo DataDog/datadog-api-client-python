@@ -14,14 +14,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-from datadog_api_client.v2.model.sensitive_data_scanner_filter import SensitiveDataScannerFilter
-from datadog_api_client.v2.model.sensitive_data_scanner_product import SensitiveDataScannerProduct
-from datadog_api_client.v2.model.sensitive_data_scanner_filter import SensitiveDataScannerFilter
-from datadog_api_client.v2.model.sensitive_data_scanner_product import SensitiveDataScannerProduct
-
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.sensitive_data_scanner_group_response import SensitiveDataScannerGroupResponse
     from datadog_api_client.v2.model.sensitive_data_scanner_meta_version_only import SensitiveDataScannerMetaVersionOnly
+    from datadog_api_client.v2.model.sensitive_data_scanner_filter import SensitiveDataScannerFilter
+    from datadog_api_client.v2.model.sensitive_data_scanner_product import SensitiveDataScannerProduct
 
 
 @dataclass

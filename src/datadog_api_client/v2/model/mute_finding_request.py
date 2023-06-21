@@ -14,11 +14,9 @@ from datadog_api_client.model_utils import (
 )
 
 
-from datadog_api_client.v2.model.mute_finding_request_properties import MuteFindingRequestProperties
-from datadog_api_client.v2.model.mute_finding_request_properties import MuteFindingRequestProperties
-
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.mute_finding_request_data import MuteFindingRequestData
+    from datadog_api_client.v2.model.mute_finding_request_properties import MuteFindingRequestProperties
 
 
 @dataclass

@@ -15,20 +15,14 @@ from datadog_api_client.model_utils import (
 )
 
 
-from datadog_api_client.v1.model.slo_correction_category import SLOCorrectionCategory
-from datadog_api_client.v1.model.creator import Creator
-from datadog_api_client.v1.model.slo_correction_response_attributes_modifier import (
-    SLOCorrectionResponseAttributesModifier,
-)
-from datadog_api_client.v1.model.slo_correction_category import SLOCorrectionCategory
-from datadog_api_client.v1.model.creator import Creator
-from datadog_api_client.v1.model.slo_correction_response_attributes_modifier import (
-    SLOCorrectionResponseAttributesModifier,
-)
-
 if TYPE_CHECKING:
     from datadog_api_client.v1.model.slo_correction import SLOCorrection
     from datadog_api_client.v1.model.response_meta_attributes import ResponseMetaAttributes
+    from datadog_api_client.v1.model.slo_correction_category import SLOCorrectionCategory
+    from datadog_api_client.v1.model.creator import Creator
+    from datadog_api_client.v1.model.slo_correction_response_attributes_modifier import (
+        SLOCorrectionResponseAttributesModifier,
+    )
 
 
 @dataclass

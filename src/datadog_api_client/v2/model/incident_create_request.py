@@ -15,19 +15,20 @@ from datadog_api_client.model_utils import (
 )
 
 
-from datadog_api_client.v2.model.incident_timeline_cell_create_attributes import IncidentTimelineCellCreateAttributes
-from datadog_api_client.v2.model.incident_notification_handle import IncidentNotificationHandle
-from datadog_api_client.v2.model.incident_field_attributes import IncidentFieldAttributes
-from datadog_api_client.v2.model.incident_field_attributes_single_value import IncidentFieldAttributesSingleValue
-from datadog_api_client.v2.model.incident_field_attributes_multiple_value import IncidentFieldAttributesMultipleValue
-from datadog_api_client.v2.model.incident_timeline_cell_create_attributes import IncidentTimelineCellCreateAttributes
-from datadog_api_client.v2.model.incident_timeline_cell_markdown_create_attributes import (
-    IncidentTimelineCellMarkdownCreateAttributes,
-)
-from datadog_api_client.v2.model.incident_notification_handle import IncidentNotificationHandle
-
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.incident_create_data import IncidentCreateData
+    from datadog_api_client.v2.model.incident_timeline_cell_create_attributes import (
+        IncidentTimelineCellCreateAttributes,
+    )
+    from datadog_api_client.v2.model.incident_notification_handle import IncidentNotificationHandle
+    from datadog_api_client.v2.model.incident_field_attributes import IncidentFieldAttributes
+    from datadog_api_client.v2.model.incident_field_attributes_single_value import IncidentFieldAttributesSingleValue
+    from datadog_api_client.v2.model.incident_field_attributes_multiple_value import (
+        IncidentFieldAttributesMultipleValue,
+    )
+    from datadog_api_client.v2.model.incident_timeline_cell_markdown_create_attributes import (
+        IncidentTimelineCellMarkdownCreateAttributes,
+    )
 
 
 @dataclass

@@ -14,20 +14,15 @@ from datadog_api_client.model_utils import (
 )
 
 
-from datadog_api_client.v2.model.monitor_config_policy_policy_create_request import (
-    MonitorConfigPolicyPolicyCreateRequest,
-)
-from datadog_api_client.v2.model.monitor_config_policy_type import MonitorConfigPolicyType
-from datadog_api_client.v2.model.monitor_config_policy_policy_create_request import (
-    MonitorConfigPolicyPolicyCreateRequest,
-)
-from datadog_api_client.v2.model.monitor_config_policy_tag_policy_create_request import (
-    MonitorConfigPolicyTagPolicyCreateRequest,
-)
-from datadog_api_client.v2.model.monitor_config_policy_type import MonitorConfigPolicyType
-
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.monitor_config_policy_create_data import MonitorConfigPolicyCreateData
+    from datadog_api_client.v2.model.monitor_config_policy_policy_create_request import (
+        MonitorConfigPolicyPolicyCreateRequest,
+    )
+    from datadog_api_client.v2.model.monitor_config_policy_type import MonitorConfigPolicyType
+    from datadog_api_client.v2.model.monitor_config_policy_tag_policy_create_request import (
+        MonitorConfigPolicyTagPolicyCreateRequest,
+    )
 
 
 @dataclass

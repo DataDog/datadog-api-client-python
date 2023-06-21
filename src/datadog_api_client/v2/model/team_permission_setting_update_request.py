@@ -14,11 +14,9 @@ from datadog_api_client.model_utils import (
 )
 
 
-from datadog_api_client.v2.model.team_permission_setting_value import TeamPermissionSettingValue
-from datadog_api_client.v2.model.team_permission_setting_value import TeamPermissionSettingValue
-
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.team_permission_setting_update import TeamPermissionSettingUpdate
+    from datadog_api_client.v2.model.team_permission_setting_value import TeamPermissionSettingValue
 
 
 @dataclass

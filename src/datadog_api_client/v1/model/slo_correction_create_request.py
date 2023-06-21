@@ -14,11 +14,9 @@ from datadog_api_client.model_utils import (
 )
 
 
-from datadog_api_client.v1.model.slo_correction_category import SLOCorrectionCategory
-from datadog_api_client.v1.model.slo_correction_category import SLOCorrectionCategory
-
 if TYPE_CHECKING:
     from datadog_api_client.v1.model.slo_correction_create_data import SLOCorrectionCreateData
+    from datadog_api_client.v1.model.slo_correction_category import SLOCorrectionCategory
 
 
 @dataclass

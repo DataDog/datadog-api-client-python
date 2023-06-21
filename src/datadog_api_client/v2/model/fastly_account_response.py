@@ -14,11 +14,9 @@ from datadog_api_client.model_utils import (
 )
 
 
-from datadog_api_client.v2.model.fastly_service import FastlyService
-from datadog_api_client.v2.model.fastly_service import FastlyService
-
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.fastly_account_response_data import FastlyAccountResponseData
+    from datadog_api_client.v2.model.fastly_service import FastlyService
 
 
 @dataclass

@@ -15,21 +15,14 @@ from datadog_api_client.model_utils import (
 )
 
 
-from datadog_api_client.v1.model.slo_creator import SLOCreator
-from datadog_api_client.v1.model.slo_overall_statuses import SLOOverallStatuses
-from datadog_api_client.v1.model.search_slo_query import SearchSLOQuery
-from datadog_api_client.v1.model.slo_type import SLOType
-from datadog_api_client.v1.model.slo_status import SLOStatus
-from datadog_api_client.v1.model.search_slo_threshold import SearchSLOThreshold
-from datadog_api_client.v1.model.slo_creator import SLOCreator
-from datadog_api_client.v1.model.slo_overall_statuses import SLOOverallStatuses
-from datadog_api_client.v1.model.search_slo_query import SearchSLOQuery
-from datadog_api_client.v1.model.slo_type import SLOType
-from datadog_api_client.v1.model.slo_status import SLOStatus
-from datadog_api_client.v1.model.search_slo_threshold import SearchSLOThreshold
-
 if TYPE_CHECKING:
     from datadog_api_client.v1.model.search_service_level_objective_data import SearchServiceLevelObjectiveData
+    from datadog_api_client.v1.model.slo_creator import SLOCreator
+    from datadog_api_client.v1.model.slo_overall_statuses import SLOOverallStatuses
+    from datadog_api_client.v1.model.search_slo_query import SearchSLOQuery
+    from datadog_api_client.v1.model.slo_type import SLOType
+    from datadog_api_client.v1.model.slo_status import SLOStatus
+    from datadog_api_client.v1.model.search_slo_threshold import SearchSLOThreshold
 
 
 @dataclass

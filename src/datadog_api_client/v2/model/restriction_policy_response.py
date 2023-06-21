@@ -14,11 +14,9 @@ from datadog_api_client.model_utils import (
 )
 
 
-from datadog_api_client.v2.model.restriction_policy_binding import RestrictionPolicyBinding
-from datadog_api_client.v2.model.restriction_policy_binding import RestrictionPolicyBinding
-
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.restriction_policy import RestrictionPolicy
+    from datadog_api_client.v2.model.restriction_policy_binding import RestrictionPolicyBinding
 
 
 @dataclass

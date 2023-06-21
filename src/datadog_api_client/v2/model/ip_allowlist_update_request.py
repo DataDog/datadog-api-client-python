@@ -14,11 +14,9 @@ from datadog_api_client.model_utils import (
 )
 
 
-from datadog_api_client.v2.model.ip_allowlist_entry import IPAllowlistEntry
-from datadog_api_client.v2.model.ip_allowlist_entry import IPAllowlistEntry
-
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.ip_allowlist_data import IPAllowlistData
+    from datadog_api_client.v2.model.ip_allowlist_entry import IPAllowlistEntry
 
 
 @dataclass

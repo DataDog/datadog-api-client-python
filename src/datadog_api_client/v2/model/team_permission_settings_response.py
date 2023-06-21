@@ -14,15 +14,13 @@ from datadog_api_client.model_utils import (
 )
 
 
-from datadog_api_client.v2.model.team_permission_setting_serializer_action import TeamPermissionSettingSerializerAction
-from datadog_api_client.v2.model.team_permission_setting_values import TeamPermissionSettingValues
-from datadog_api_client.v2.model.team_permission_setting_value import TeamPermissionSettingValue
-from datadog_api_client.v2.model.team_permission_setting_serializer_action import TeamPermissionSettingSerializerAction
-from datadog_api_client.v2.model.team_permission_setting_values import TeamPermissionSettingValues
-from datadog_api_client.v2.model.team_permission_setting_value import TeamPermissionSettingValue
-
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.team_permission_setting import TeamPermissionSetting
+    from datadog_api_client.v2.model.team_permission_setting_serializer_action import (
+        TeamPermissionSettingSerializerAction,
+    )
+    from datadog_api_client.v2.model.team_permission_setting_values import TeamPermissionSettingValues
+    from datadog_api_client.v2.model.team_permission_setting_value import TeamPermissionSettingValue
 
 
 @dataclass

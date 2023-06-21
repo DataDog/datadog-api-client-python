@@ -752,7 +752,11 @@ def json_api_attributes(model):
             name = formatter.get_name(definition["items"])
             if name:
                 imports.append(name)
-    imports.extend(get_oneof_references_for_model(model["properties"].get("attributes", {}), None, add_container=True))
+    imports.extend(
+        ref
+        for ref in get_oneof_references_for_model(model["properties"].get("attributes", {}), None, add_container=True)
+        if ref not in imports
+    )
 
     required = model["properties"].get("relationships", {}).get("required", {})
     for attr, definition in model["properties"].get("relationships", {}).get("properties", {}).items():

@@ -15,22 +15,16 @@ from datadog_api_client.model_utils import (
 )
 
 
-from datadog_api_client.v1.model.notebook_author import NotebookAuthor
-from datadog_api_client.v1.model.notebook_cell_response import NotebookCellResponse
-from datadog_api_client.v1.model.notebook_metadata import NotebookMetadata
-from datadog_api_client.v1.model.notebook_status import NotebookStatus
-from datadog_api_client.v1.model.notebook_global_time import NotebookGlobalTime
-from datadog_api_client.v1.model.notebook_author import NotebookAuthor
-from datadog_api_client.v1.model.notebook_cell_response import NotebookCellResponse
-from datadog_api_client.v1.model.notebook_metadata import NotebookMetadata
-from datadog_api_client.v1.model.notebook_status import NotebookStatus
-from datadog_api_client.v1.model.notebook_global_time import NotebookGlobalTime
-from datadog_api_client.v1.model.notebook_relative_time import NotebookRelativeTime
-from datadog_api_client.v1.model.notebook_absolute_time import NotebookAbsoluteTime
-
 if TYPE_CHECKING:
     from datadog_api_client.v1.model.notebooks_response_data import NotebooksResponseData
     from datadog_api_client.v1.model.notebooks_response_meta import NotebooksResponseMeta
+    from datadog_api_client.v1.model.notebook_author import NotebookAuthor
+    from datadog_api_client.v1.model.notebook_cell_response import NotebookCellResponse
+    from datadog_api_client.v1.model.notebook_metadata import NotebookMetadata
+    from datadog_api_client.v1.model.notebook_status import NotebookStatus
+    from datadog_api_client.v1.model.notebook_global_time import NotebookGlobalTime
+    from datadog_api_client.v1.model.notebook_relative_time import NotebookRelativeTime
+    from datadog_api_client.v1.model.notebook_absolute_time import NotebookAbsoluteTime
 
 
 @dataclass

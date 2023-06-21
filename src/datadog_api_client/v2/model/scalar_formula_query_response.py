@@ -14,13 +14,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-from datadog_api_client.v2.model.scalar_column import ScalarColumn
-from datadog_api_client.v2.model.scalar_column import ScalarColumn
-from datadog_api_client.v2.model.group_scalar_column import GroupScalarColumn
-from datadog_api_client.v2.model.data_scalar_column import DataScalarColumn
-
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.scalar_response import ScalarResponse
+    from datadog_api_client.v2.model.scalar_column import ScalarColumn
+    from datadog_api_client.v2.model.group_scalar_column import GroupScalarColumn
+    from datadog_api_client.v2.model.data_scalar_column import DataScalarColumn
 
 
 @dataclass

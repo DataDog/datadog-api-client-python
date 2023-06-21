@@ -14,14 +14,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-from datadog_api_client.v2.model.monitor_config_policy_policy import MonitorConfigPolicyPolicy
-from datadog_api_client.v2.model.monitor_config_policy_type import MonitorConfigPolicyType
-from datadog_api_client.v2.model.monitor_config_policy_policy import MonitorConfigPolicyPolicy
-from datadog_api_client.v2.model.monitor_config_policy_tag_policy import MonitorConfigPolicyTagPolicy
-from datadog_api_client.v2.model.monitor_config_policy_type import MonitorConfigPolicyType
-
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.monitor_config_policy_edit_data import MonitorConfigPolicyEditData
+    from datadog_api_client.v2.model.monitor_config_policy_policy import MonitorConfigPolicyPolicy
+    from datadog_api_client.v2.model.monitor_config_policy_type import MonitorConfigPolicyType
+    from datadog_api_client.v2.model.monitor_config_policy_tag_policy import MonitorConfigPolicyTagPolicy
 
 
 @dataclass

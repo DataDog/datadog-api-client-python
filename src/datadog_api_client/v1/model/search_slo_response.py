@@ -14,15 +14,14 @@ from datadog_api_client.model_utils import (
 )
 
 
-from datadog_api_client.v1.model.search_slo_response_data_attributes_facets import SearchSLOResponseDataAttributesFacets
-from datadog_api_client.v1.model.search_service_level_objective import SearchServiceLevelObjective
-from datadog_api_client.v1.model.search_slo_response_data_attributes_facets import SearchSLOResponseDataAttributesFacets
-from datadog_api_client.v1.model.search_service_level_objective import SearchServiceLevelObjective
-
 if TYPE_CHECKING:
     from datadog_api_client.v1.model.search_slo_response_data import SearchSLOResponseData
     from datadog_api_client.v1.model.search_slo_response_links import SearchSLOResponseLinks
     from datadog_api_client.v1.model.search_slo_response_meta import SearchSLOResponseMeta
+    from datadog_api_client.v1.model.search_slo_response_data_attributes_facets import (
+        SearchSLOResponseDataAttributesFacets,
+    )
+    from datadog_api_client.v1.model.search_service_level_objective import SearchServiceLevelObjective
 
 
 @dataclass

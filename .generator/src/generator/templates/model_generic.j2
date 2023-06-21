@@ -2,9 +2,6 @@
 {%- if is_json_api(model) %}
 {%- set attrs, optional_attrs, imports = json_api_attributes(model) %}
 {%- set seen_oneof = set(imports) %}
-{%- for ref in imports %}
-from {{ package }}.{{ version }}.model.{{ ref|safe_snake_case }} import {{ ref }}
-{%- endfor %}
 {% endif %}
 {%- set refs = get_references_for_model(model, name) %}
 {%- if set(refs) - seen_oneof %}
@@ -13,6 +10,9 @@ if TYPE_CHECKING:
     from {{ package }}.{{ version }}.model.{{ ref|safe_snake_case }} import {{ ref }}
 {%- endfor %}
 {%- for ref in get_oneof_references_for_model(model, name) if ref not in seen_oneof %}
+    from {{ package }}.{{ version }}.model.{{ ref|safe_snake_case }} import {{ ref }}
+{%- endfor %}
+{%- for ref in imports %}
     from {{ package }}.{{ version }}.model.{{ ref|safe_snake_case }} import {{ ref }}
 {%- endfor %}
 {%- endif %}

@@ -16,14 +16,14 @@ from datadog_api_client.model_utils import (
 )
 
 
-from datadog_api_client.v2.model.incident_notification_handle import IncidentNotificationHandle
-from datadog_api_client.v2.model.incident_field_attributes import IncidentFieldAttributes
-from datadog_api_client.v2.model.incident_field_attributes_single_value import IncidentFieldAttributesSingleValue
-from datadog_api_client.v2.model.incident_field_attributes_multiple_value import IncidentFieldAttributesMultipleValue
-from datadog_api_client.v2.model.incident_notification_handle import IncidentNotificationHandle
-
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.incident_response_data import IncidentResponseData
+    from datadog_api_client.v2.model.incident_notification_handle import IncidentNotificationHandle
+    from datadog_api_client.v2.model.incident_field_attributes import IncidentFieldAttributes
+    from datadog_api_client.v2.model.incident_field_attributes_single_value import IncidentFieldAttributesSingleValue
+    from datadog_api_client.v2.model.incident_field_attributes_multiple_value import (
+        IncidentFieldAttributesMultipleValue,
+    )
 
 
 @dataclass
