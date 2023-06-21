@@ -26,11 +26,7 @@ from generator.formatter import (
 )
 
 
-MODIFIED_FEATURES = {
-    pathlib.Path(p).resolve()
-    for p in os.getenv("BDD_MODIFIED_FEATURES", "").split(" ")
-    if p
-}
+MODIFIED_FEATURES = {pathlib.Path(p).resolve() for p in os.getenv("BDD_MODIFIED_FEATURES", "").split(" ") if p}
 
 ROOT_PATH = pathlib.Path(__file__).parent.parent
 
@@ -52,9 +48,7 @@ def pytest_bdd_before_scenario(request, feature, scenario):
     if MODIFIED_FEATURES:
         current = pathlib.Path(scenario.feature.filename).resolve()
         if current not in MODIFIED_FEATURES:
-            pytest.skip(
-                f"Feature file {scenario.feature.filename} has not been modified"
-            )
+            pytest.skip(f"Feature file {scenario.feature.filename} has not been modified")
 
 
 def lookup(value, path):
@@ -82,11 +76,7 @@ class FloatEncoder(json.JSONEncoder):
         return result
 
 
-JINJA_ENV = Environment(
-    loader=FileSystemLoader(
-        pathlib.Path(__file__).parent / "src" / "generator" / "templates"
-    )
-)
+JINJA_ENV = Environment(loader=FileSystemLoader(pathlib.Path(__file__).parent / "src" / "generator" / "templates"))
 JINJA_ENV.filters["tojson"] = json.dumps
 JINJA_ENV.filters["snake_case"] = snake_case
 JINJA_ENV.filters["safe_snake_case"] = safe_snake_case
@@ -136,13 +126,7 @@ def pytest_bdd_after_scenario(request, feature, scenario):
         jsonapi=False,
     )
 
-    output = (
-        ROOT_PATH
-        / "examples"
-        / version
-        / group_name
-        / f"{operation_id}{unique_suffix}.py"
-    )
+    output = ROOT_PATH / "examples" / version / group_name / f"{operation_id}{unique_suffix}.py"
     output.parent.mkdir(parents=True, exist_ok=True)
 
     with output.open("w") as f:
@@ -166,13 +150,7 @@ def pytest_bdd_after_scenario(request, feature, scenario):
         else:
             unique_suffix = f"JSONAPI{unique_suffix}"
 
-            output = (
-                ROOT_PATH
-                / "examples"
-                / version
-                / group_name
-                / f"{operation_id}{unique_suffix}.py"
-            )
+            output = ROOT_PATH / "examples" / version / group_name / f"{operation_id}{unique_suffix}.py"
 
             with output.open("w") as f:
                 f.write(data)
@@ -202,9 +180,7 @@ def api_version(request):
 
 @pytest.fixture
 def unique(request):
-    main = PATTERN_ALPHANUM.sub(
-        "-", request.node.__scenario_report__.scenario.feature.name
-    )
+    main = PATTERN_ALPHANUM.sub("-", request.node.__scenario_report__.scenario.feature.name)
     if main.endswith("s"):
         # Let's strip the plural present in most names
         main = main[:-1]
@@ -493,18 +469,9 @@ def build_given(version, operation):
                 value = openapi.generate_value(schema, use_random=True, prefix=key)
 
             context["_replace_values"][value] = key
-            keys = (
-                [operation["source"]] + list(schema.keys)
-                if "source" in operation
-                else schema.keys
-            )
-            json_path = "".join(
-                f"[{k}]" if isinstance(k, int) else f".{k}" for k in keys
-            ).strip(".")
-            assert (
-                context["_key_to_json_path"][operation["key"]].get(key, json_path)
-                == json_path
-            )
+            keys = [operation["source"]] + list(schema.keys) if "source" in operation else schema.keys
+            json_path = "".join(f"[{k}]" if isinstance(k, int) else f".{k}" for k in keys).strip(".")
+            assert context["_key_to_json_path"][operation["key"]].get(key, json_path) == json_path
             context["_key_to_json_path"][operation["key"]][key] = json_path
             return value
 
@@ -552,11 +519,7 @@ def expect_equal(context, response_path, value):
     """Compare a response attribute to a value."""
 
 
-@then(
-    parsers.parse(
-        'the response "{response_path}" has the same value as "{fixture_path}"'
-    )
-)
+@then(parsers.parse('the response "{response_path}" has the same value as "{fixture_path}"'))
 def expect_equal_value(context, response_path, fixture_path):
     """Compare a response attribute to another attribute."""
 
@@ -576,11 +539,7 @@ def expect_false(context, response_path):
     """Check that a response attribute is false."""
 
 
-@then(
-    parsers.parse(
-        'the response "{response_path}" has item with field "{key_path}" with value {value}'
-    )
-)
+@then(parsers.parse('the response "{response_path}" has item with field "{key_path}" with value {value}'))
 def expect_array_contains_field(context, response_path, key_path, value):
     """Check that a response attribute contains an object with the specified key and value."""
 

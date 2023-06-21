@@ -20,9 +20,7 @@ def load(filename):
         return JsonRef.replace_refs(yaml.load(fp, Loader=CSafeLoader))
 
 
-def type_to_python_helper(
-    type_, schema, alternative_name=None, in_list=False, typing=False
-):
+def type_to_python_helper(type_, schema, alternative_name=None, in_list=False, typing=False):
     if type_ is None:
         if typing:
             return "Any"
@@ -64,11 +62,7 @@ def type_to_python_helper(
             if typing:
                 return f"Dict[str, {nested_name}]"
             return "{{str: ({},)}}".format(nested_name)
-        return (
-            alternative_name
-            if alternative_name and ("properties" in schema or "oneOf" in schema)
-            else "dict"
-        )
+        return alternative_name if alternative_name and ("properties" in schema or "oneOf" in schema) else "dict"
     elif type_ == "null":
         return "none_type"
     else:
@@ -83,9 +77,7 @@ def type_to_python(schema, alternative_name=None, in_list=False, typing=False):
     if name and "items" not in schema or formatter.is_list_model_whitelisted(name):
         if "enum" in schema:
             return name
-        if schema.get(
-            "type", "object"
-        ) == "object" or formatter.is_list_model_whitelisted(name):
+        if schema.get("type", "object") == "object" or formatter.is_list_model_whitelisted(name):
             if typing and "oneOf" in schema:
                 types = [name]
                 types.extend(get_oneof_types(schema, typing=typing))
@@ -101,11 +93,7 @@ def type_to_python(schema, alternative_name=None, in_list=False, typing=False):
             type_ = ""
             for child in schema["oneOf"]:
                 # We do not generate model for nested primitive oneOfs
-                if (
-                    in_list
-                    and "items" in child
-                    and child["items"].get("type") in PRIMITIVE_TYPES
-                ):
+                if in_list and "items" in child and child["items"].get("type") in PRIMITIVE_TYPES:
                     type_ += f"{type_to_python_helper(child.get('type'), child, in_list=in_list, typing=typing)},"
                 else:
                     type_ += f"{type_to_python(child, in_list=in_list, typing=typing)},"
@@ -115,28 +103,20 @@ def type_to_python(schema, alternative_name=None, in_list=False, typing=False):
         if "items" in schema:
             type_ = "array"
 
-    return type_to_python_helper(
-        type_, schema, alternative_name=alternative_name, in_list=in_list, typing=typing
-    )
+    return type_to_python_helper(type_, schema, alternative_name=alternative_name, in_list=in_list, typing=typing)
 
 
 def get_type_for_attribute(schema, attribute, current_name=None):
     """Return Python type name for the attribute."""
     child_schema = schema.get("properties", {}).get(attribute)
-    alternative_name = (
-        current_name + formatter.camel_case(attribute) if current_name else None
-    )
+    alternative_name = current_name + formatter.camel_case(attribute) if current_name else None
     return type_to_python(child_schema, alternative_name=alternative_name)
 
 
 def get_typing_for_attribute(schema, attribute, current_name=None, optional=False):
     child_schema = schema.get("properties", {}).get(attribute)
-    alternative_name = (
-        current_name + formatter.camel_case(attribute) if current_name else None
-    )
-    attr_type = type_to_python(
-        child_schema, alternative_name=alternative_name, typing=True
-    )
+    alternative_name = current_name + formatter.camel_case(attribute) if current_name else None
+    attr_type = type_to_python(child_schema, alternative_name=alternative_name, typing=True)
     if child_schema.get("nullable"):
         if optional:
             return f"Union[{attr_type}, none_type, UnsetType]"
@@ -205,9 +185,7 @@ def child_models(schema, alternative_name=None, seen=None, in_list=False):
         else:
             alt_name = name + "Item" if name is not None else None
 
-        yield from child_models(
-            schema["items"], alternative_name=alt_name, seen=seen, in_list=True
-        )
+        yield from child_models(schema["items"], alternative_name=alt_name, seen=seen, in_list=True)
 
     if schema.get("type") == "object" or "properties" in schema or has_sub_models:
         if not has_sub_models and name is None:
@@ -229,9 +207,7 @@ def child_models(schema, alternative_name=None, seen=None, in_list=False):
             yield name, schema
 
         for key, child in schema.get("properties", {}).items():
-            yield from child_models(
-                child, alternative_name=name + formatter.camel_case(key), seen=seen
-            )
+            yield from child_models(child, alternative_name=name + formatter.camel_case(key), seen=seen)
 
     if current_name and schema.get("type") == "array":
         if name in seen:
@@ -299,11 +275,7 @@ def get_references_for_model(model, model_name):
     result = {}
     top_name = formatter.get_name(model) or model_name
     for key, definition in model.get("properties", {}).items():
-        if (
-            definition.get("type") == "object"
-            or definition.get("enum")
-            or definition.get("oneOf")
-        ):
+        if definition.get("type") == "object" or definition.get("enum") or definition.get("oneOf"):
             name = formatter.get_name(definition)
             if name:
                 result[name] = None
@@ -323,10 +295,7 @@ def get_references_for_model(model, model_name):
                     result[name] = None
                 elif name and formatter.is_list_model_whitelisted(name):
                     result[name] = None
-                elif (
-                    formatter.get_name(definition)
-                    and definition["items"].get("type") not in PRIMITIVE_TYPES
-                ):
+                elif formatter.get_name(definition) and definition["items"].get("type") not in PRIMITIVE_TYPES:
                     result[formatter.get_name(definition) + "Item"] = None
 
         elif definition.get("properties") and top_name:
@@ -369,14 +338,7 @@ def get_oneof_references_for_model(model, model_name, seen=None, add_container=F
                     result[sub_name] = None
 
     for key, definition in model.get("properties", {}).items():
-        result.update(
-            {
-                k: None
-                for k in get_oneof_references_for_model(
-                    definition, model_name, seen, add_container
-                )
-            }
-        )
+        result.update({k: None for k in get_oneof_references_for_model(definition, model_name, seen, add_container)})
         if definition.get("items"):
             result.update(
                 {
@@ -483,8 +445,7 @@ def get_api_models(operations):
             break
         for content in operation.get("parameters", []):
             if "schema" in content and (
-                content["schema"].get("type") in ("object", "array")
-                or content["schema"].get("enum")
+                content["schema"].get("type") in ("object", "array") or content["schema"].get("enum")
             ):
                 name = formatter.get_name(content["schema"])
                 if name and name not in seen:
@@ -529,9 +490,7 @@ def parameters(operation):
 
     if "requestBody" in operation:
         if "multipart/form-data" in operation["requestBody"]["content"]:
-            parent = operation["requestBody"]["content"]["multipart/form-data"][
-                "schema"
-            ]
+            parent = operation["requestBody"]["content"]["multipart/form-data"]["schema"]
             for name, schema in parent["properties"].items():
                 yield name, {
                     "in": "form",
@@ -615,9 +574,7 @@ def generate_value(schema, use_random=False, prefix=None):
             )
         return "string"
     elif spec["type"] == "integer":
-        return (
-            random.randint(0, 32000) if use_random else len(str(prefix or schema.keys))
-        )
+        return random.randint(0, 32000) if use_random else len(str(prefix or schema.keys))
     elif spec["type"] == "number":
         return random.random() if use_random else 1.0 / len(str(prefix or schema.keys))
     elif spec["type"] == "boolean":
@@ -625,10 +582,7 @@ def generate_value(schema, use_random=False, prefix=None):
     elif spec["type"] == "array":
         return [generate_value(schema[0], use_random=use_random)]
     elif spec["type"] == "object":
-        return {
-            key: generate_value(schema[key], use_random=use_random)
-            for key in spec["properties"]
-        }
+        return {key: generate_value(schema[key], use_random=use_random) for key in spec["properties"]}
     else:
         raise TypeError(f"Unknown type: {spec['type']}")
 
@@ -663,13 +617,9 @@ class Schema:
                                 )
                             except KeyError:
                                 pass
-            raise KeyError(
-                f"{key} not found in {self.spec.get('properties', {}).keys()}: {self.spec}"
-            )
+            raise KeyError(f"{key} not found in {self.spec.get('properties', {}).keys()}: {self.spec}")
         if type_ == "array":
-            return self.__class__(
-                self.spec["items"], value=self.value, keys=self.keys + (key,)
-            )
+            return self.__class__(self.spec["items"], value=self.value, keys=self.keys + (key,))
 
         raise KeyError(f"{key} not found in {self.spec}")
 
@@ -697,9 +647,7 @@ class Operation:
             for variable in server["variables"]:
                 if variable in server_variables:
                     continue
-                url = url.replace(
-                    "{" + variable + "}", server["variables"][variable]["default"]
-                )
+                url = url.replace("{" + variable + "}", server["variables"][variable]["default"])
             return url
 
         server_variables = server_variables or {}
@@ -711,9 +659,7 @@ class Operation:
 
     def response_code_and_accept_type(self):
         for response in self.spec["responses"]:
-            return int(response), next(
-                iter(self.spec["responses"][response].get("content", {None: None}))
-            )
+            return int(response), next(iter(self.spec["responses"][response].get("content", {None: None})))
         return None, None
 
     def request_content_type(self):
@@ -721,16 +667,10 @@ class Operation:
 
     def response(self):
         for response in self.spec["responses"]:
-            return Schema(
-                next(iter((self.spec["responses"][response]["content"].values())))[
-                    "schema"
-                ]
-            )
+            return Schema(next(iter((self.spec["responses"][response]["content"].values())))["schema"])
 
     def request(self):
-        return Schema(
-            next(iter(self.spec["requestBody"]["content"].values()))["schema"]
-        )
+        return Schema(next(iter(self.spec["requestBody"]["content"].values()))["schema"])
 
 
 def get_default(operation, attribute_path):
@@ -790,9 +730,7 @@ def json_api_attributes(model):
     imports = []
     if "id" in model["properties"]:
         attributes.append(("id", "str"))
-    for attr, definition in (
-        model["properties"].get("attributes", {}).get("properties", {}).items()
-    ):
+    for attr, definition in model["properties"].get("attributes", {}).get("properties", {}).items():
         if attr in required:
             attributes.append(
                 (
@@ -804,9 +742,7 @@ def json_api_attributes(model):
             optional_attributes.append(
                 (
                     attr,
-                    get_typing_for_attribute(
-                        model["properties"]["attributes"], attr, optional=True
-                    ),
+                    get_typing_for_attribute(model["properties"]["attributes"], attr, optional=True),
                 )
             )
         name = formatter.get_name(definition)
@@ -816,16 +752,10 @@ def json_api_attributes(model):
             name = formatter.get_name(definition["items"])
             if name:
                 imports.append(name)
-    imports.extend(
-        get_oneof_references_for_model(
-            model["properties"].get("attributes", {}), None, add_container=True
-        )
-    )
+    imports.extend(get_oneof_references_for_model(model["properties"].get("attributes", {}), None, add_container=True))
 
     required = model["properties"].get("relationships", {}).get("required", {})
-    for attr, definition in (
-        model["properties"].get("relationships", {}).get("properties", {}).items()
-    ):
+    for attr, definition in model["properties"].get("relationships", {}).get("properties", {}).items():
         definition_type = definition["properties"]["data"].get("type")
         to_append = attributes if attr in required else optional_attributes
         if definition_type == "array":

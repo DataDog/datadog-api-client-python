@@ -11,21 +11,16 @@ from datadog_api_client.v2.model.users_type import UsersType
 
 def test_to_json_api():
     response = IncidentsResponse(
-        data=[IncidentResponseData(
-            id="incident-id",
-            type=IncidentType.INCIDENTS,
-            attributes=IncidentResponseAttributes(
-                title="incident title"
-            ),
-            relationships=IncidentResponseRelationships(
-                created_by_user=RelationshipToUser(
-                    data=RelationshipToUserData(
-                        id="user-id",
-                        type=UsersType.USERS
-                    )
-                )
+        data=[
+            IncidentResponseData(
+                id="incident-id",
+                type=IncidentType.INCIDENTS,
+                attributes=IncidentResponseAttributes(title="incident title"),
+                relationships=IncidentResponseRelationships(
+                    created_by_user=RelationshipToUser(data=RelationshipToUserData(id="user-id", type=UsersType.USERS))
+                ),
             )
-        )]
+        ]
     )
     [json_api_response] = to_json_api(response)
 
