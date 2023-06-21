@@ -1213,17 +1213,24 @@ def _data_to_json_api(model_data):
     if "id" in model_data.attribute_map:
         kwargs["id"] = model_data.id
     if "attributes" in model_data.attribute_map:
-        for attr in model_data.attributes.attribute_map:
-            kwargs[attr] = model_data.attributes.get(attr)
+        attributes = getattr(model_data, "attributes", None)
+        if attributes is not None:
+            for attr in attributes.attribute_map:
+                kwargs[attr] = attributes.get(attr)
     if "relationships" in model_data.attribute_map:
-        for attr in model_data.relationships.attribute_map:
-            data = model_data.relationships.get(attr).data
-            if isinstance(data, list):
-                kwargs[attr] = [elt.id for elt in data]
-            elif data is not None:
-                kwargs[attr] = data.id
-            else:
-                kwargs[attr] = data
+        relationships = getattr(model_data, "relationships", None)
+        if relationships is not None:
+            for attr in relationships.attribute_map:
+                rel = relationships.get(attr)
+                if rel is None:
+                    continue
+                data = rel.data
+                if isinstance(data, list):
+                    kwargs[attr] = [elt.id for elt in data]
+                elif data is not None:
+                    kwargs[attr] = data.id
+                else:
+                    kwargs[attr] = data
     return kwargs
 
 
