@@ -22,7 +22,6 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.ci_app_host_info import CIAppHostInfo
     from datadog_api_client.v2.model.ci_app_pipeline_event_parameters import CIAppPipelineEventParameters
     from datadog_api_client.v2.model.ci_app_pipeline_event_stage_status import CIAppPipelineEventStageStatus
-    from datadog_api_client.v2.model.ci_app_user_info import CIAppUserInfo
 
 
 class CIAppPipelineEventStage(ModelNormal):
@@ -40,7 +39,6 @@ class CIAppPipelineEventStage(ModelNormal):
         from datadog_api_client.v2.model.ci_app_host_info import CIAppHostInfo
         from datadog_api_client.v2.model.ci_app_pipeline_event_parameters import CIAppPipelineEventParameters
         from datadog_api_client.v2.model.ci_app_pipeline_event_stage_status import CIAppPipelineEventStageStatus
-        from datadog_api_client.v2.model.ci_app_user_info import CIAppUserInfo
 
         return {
             "dependencies": ([str], none_type),
@@ -59,7 +57,6 @@ class CIAppPipelineEventStage(ModelNormal):
             "start": (datetime,),
             "status": (CIAppPipelineEventStageStatus,),
             "tags": ([str],),
-            "user": (CIAppUserInfo,),
         }
 
     attribute_map = {
@@ -79,12 +76,12 @@ class CIAppPipelineEventStage(ModelNormal):
         "start": "start",
         "status": "status",
         "tags": "tags",
-        "user": "user",
     }
 
     def __init__(
         self_,
         end: datetime,
+        git: Union[CIAppGitInfo, none_type],
         id: str,
         level: CIAppPipelineEventStageLevel,
         name: str,
@@ -94,13 +91,11 @@ class CIAppPipelineEventStage(ModelNormal):
         status: CIAppPipelineEventStageStatus,
         dependencies: Union[List[str], none_type, UnsetType] = unset,
         error: Union[CIAppCIError, none_type, UnsetType] = unset,
-        git: Union[CIAppGitInfo, none_type, UnsetType] = unset,
         metrics: Union[List[str], none_type, UnsetType] = unset,
         node: Union[CIAppHostInfo, none_type, UnsetType] = unset,
         parameters: Union[CIAppPipelineEventParameters, none_type, UnsetType] = unset,
         queue_time: Union[int, none_type, UnsetType] = unset,
         tags: Union[List[str], none_type, UnsetType] = unset,
-        user: Union[CIAppUserInfo, none_type, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -117,7 +112,7 @@ class CIAppPipelineEventStage(ModelNormal):
 
         :param git: If pipelines are triggered due to actions to a Git repository, then all payloads must contain this.
             Note that either ``tag`` or ``branch`` has to be provided, but not both.
-        :type git: CIAppGitInfo, none_type, optional
+        :type git: CIAppGitInfo, none_type
 
         :param id: UUID for the stage. It has to be unique at least in the pipeline scope.
         :type id: str
@@ -154,17 +149,11 @@ class CIAppPipelineEventStage(ModelNormal):
 
         :param tags: A list of user-defined tags. The tags must follow the ``key:value`` pattern.
         :type tags: [str], none_type, optional
-
-        :param user: Used to specify user-related information when the payload does not have Git information.
-            For example, if Git information is missing for manually triggered pipelines, this field can be used instead.
-        :type user: CIAppUserInfo, none_type, optional
         """
         if dependencies is not unset:
             kwargs["dependencies"] = dependencies
         if error is not unset:
             kwargs["error"] = error
-        if git is not unset:
-            kwargs["git"] = git
         if metrics is not unset:
             kwargs["metrics"] = metrics
         if node is not unset:
@@ -175,11 +164,10 @@ class CIAppPipelineEventStage(ModelNormal):
             kwargs["queue_time"] = queue_time
         if tags is not unset:
             kwargs["tags"] = tags
-        if user is not unset:
-            kwargs["user"] = user
         super().__init__(kwargs)
 
         self_.end = end
+        self_.git = git
         self_.id = id
         self_.level = level
         self_.name = name

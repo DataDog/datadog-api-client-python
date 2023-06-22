@@ -22,7 +22,6 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.ci_app_host_info import CIAppHostInfo
     from datadog_api_client.v2.model.ci_app_pipeline_event_parameters import CIAppPipelineEventParameters
     from datadog_api_client.v2.model.ci_app_pipeline_event_step_status import CIAppPipelineEventStepStatus
-    from datadog_api_client.v2.model.ci_app_user_info import CIAppUserInfo
 
 
 class CIAppPipelineEventStep(ModelNormal):
@@ -34,7 +33,6 @@ class CIAppPipelineEventStep(ModelNormal):
         from datadog_api_client.v2.model.ci_app_host_info import CIAppHostInfo
         from datadog_api_client.v2.model.ci_app_pipeline_event_parameters import CIAppPipelineEventParameters
         from datadog_api_client.v2.model.ci_app_pipeline_event_step_status import CIAppPipelineEventStepStatus
-        from datadog_api_client.v2.model.ci_app_user_info import CIAppUserInfo
 
         return {
             "end": (datetime,),
@@ -56,7 +54,6 @@ class CIAppPipelineEventStep(ModelNormal):
             "status": (CIAppPipelineEventStepStatus,),
             "tags": ([str],),
             "url": (str, none_type),
-            "user": (CIAppUserInfo,),
         }
 
     attribute_map = {
@@ -79,12 +76,12 @@ class CIAppPipelineEventStep(ModelNormal):
         "status": "status",
         "tags": "tags",
         "url": "url",
-        "user": "user",
     }
 
     def __init__(
         self_,
         end: datetime,
+        git: Union[CIAppGitInfo, none_type],
         id: str,
         level: CIAppPipelineEventStepLevel,
         name: str,
@@ -93,7 +90,6 @@ class CIAppPipelineEventStep(ModelNormal):
         start: datetime,
         status: CIAppPipelineEventStepStatus,
         error: Union[CIAppCIError, none_type, UnsetType] = unset,
-        git: Union[CIAppGitInfo, none_type, UnsetType] = unset,
         job_id: Union[str, none_type, UnsetType] = unset,
         job_name: Union[str, none_type, UnsetType] = unset,
         metrics: Union[List[str], none_type, UnsetType] = unset,
@@ -103,7 +99,6 @@ class CIAppPipelineEventStep(ModelNormal):
         stage_name: Union[str, none_type, UnsetType] = unset,
         tags: Union[List[str], none_type, UnsetType] = unset,
         url: Union[str, none_type, UnsetType] = unset,
-        user: Union[CIAppUserInfo, none_type, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -117,7 +112,7 @@ class CIAppPipelineEventStep(ModelNormal):
 
         :param git: If pipelines are triggered due to actions to a Git repository, then all payloads must contain this.
             Note that either ``tag`` or ``branch`` has to be provided, but not both.
-        :type git: CIAppGitInfo, none_type, optional
+        :type git: CIAppGitInfo, none_type
 
         :param id: UUID for the step. It has to be unique within each pipeline execution.
         :type id: str
@@ -166,15 +161,9 @@ class CIAppPipelineEventStep(ModelNormal):
 
         :param url: The URL to look at the step in the CI provider UI.
         :type url: str, none_type, optional
-
-        :param user: Used to specify user-related information when the payload does not have Git information.
-            For example, if Git information is missing for manually triggered pipelines, this field can be used instead.
-        :type user: CIAppUserInfo, none_type, optional
         """
         if error is not unset:
             kwargs["error"] = error
-        if git is not unset:
-            kwargs["git"] = git
         if job_id is not unset:
             kwargs["job_id"] = job_id
         if job_name is not unset:
@@ -193,11 +182,10 @@ class CIAppPipelineEventStep(ModelNormal):
             kwargs["tags"] = tags
         if url is not unset:
             kwargs["url"] = url
-        if user is not unset:
-            kwargs["user"] = user
         super().__init__(kwargs)
 
         self_.end = end
+        self_.git = git
         self_.id = id
         self_.level = level
         self_.name = name
