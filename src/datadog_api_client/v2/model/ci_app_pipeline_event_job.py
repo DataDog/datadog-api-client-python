@@ -22,7 +22,6 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.ci_app_host_info import CIAppHostInfo
     from datadog_api_client.v2.model.ci_app_pipeline_event_parameters import CIAppPipelineEventParameters
     from datadog_api_client.v2.model.ci_app_pipeline_event_job_status import CIAppPipelineEventJobStatus
-    from datadog_api_client.v2.model.ci_app_user_info import CIAppUserInfo
 
 
 class CIAppPipelineEventJob(ModelNormal):
@@ -40,7 +39,6 @@ class CIAppPipelineEventJob(ModelNormal):
         from datadog_api_client.v2.model.ci_app_host_info import CIAppHostInfo
         from datadog_api_client.v2.model.ci_app_pipeline_event_parameters import CIAppPipelineEventParameters
         from datadog_api_client.v2.model.ci_app_pipeline_event_job_status import CIAppPipelineEventJobStatus
-        from datadog_api_client.v2.model.ci_app_user_info import CIAppUserInfo
 
         return {
             "dependencies": ([str], none_type),
@@ -62,7 +60,6 @@ class CIAppPipelineEventJob(ModelNormal):
             "status": (CIAppPipelineEventJobStatus,),
             "tags": ([str],),
             "url": (str,),
-            "user": (CIAppUserInfo,),
         }
 
     attribute_map = {
@@ -85,12 +82,12 @@ class CIAppPipelineEventJob(ModelNormal):
         "status": "status",
         "tags": "tags",
         "url": "url",
-        "user": "user",
     }
 
     def __init__(
         self_,
         end: datetime,
+        git: Union[CIAppGitInfo, none_type],
         id: str,
         level: CIAppPipelineEventJobLevel,
         name: str,
@@ -101,7 +98,6 @@ class CIAppPipelineEventJob(ModelNormal):
         url: str,
         dependencies: Union[List[str], none_type, UnsetType] = unset,
         error: Union[CIAppCIError, none_type, UnsetType] = unset,
-        git: Union[CIAppGitInfo, none_type, UnsetType] = unset,
         metrics: Union[List[str], none_type, UnsetType] = unset,
         node: Union[CIAppHostInfo, none_type, UnsetType] = unset,
         parameters: Union[CIAppPipelineEventParameters, none_type, UnsetType] = unset,
@@ -109,7 +105,6 @@ class CIAppPipelineEventJob(ModelNormal):
         stage_id: Union[str, none_type, UnsetType] = unset,
         stage_name: Union[str, none_type, UnsetType] = unset,
         tags: Union[List[str], none_type, UnsetType] = unset,
-        user: Union[CIAppUserInfo, none_type, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -126,7 +121,7 @@ class CIAppPipelineEventJob(ModelNormal):
 
         :param git: If pipelines are triggered due to actions to a Git repository, then all payloads must contain this.
             Note that either ``tag`` or ``branch`` has to be provided, but not both.
-        :type git: CIAppGitInfo, none_type, optional
+        :type git: CIAppGitInfo, none_type
 
         :param id: The UUID for the job. It has to be unique within each pipeline execution.
         :type id: str
@@ -172,17 +167,11 @@ class CIAppPipelineEventJob(ModelNormal):
 
         :param url: The URL to look at the job in the CI provider UI.
         :type url: str
-
-        :param user: Used to specify user-related information when the payload does not have Git information.
-            For example, if Git information is missing for manually triggered pipelines, this field can be used instead.
-        :type user: CIAppUserInfo, none_type, optional
         """
         if dependencies is not unset:
             kwargs["dependencies"] = dependencies
         if error is not unset:
             kwargs["error"] = error
-        if git is not unset:
-            kwargs["git"] = git
         if metrics is not unset:
             kwargs["metrics"] = metrics
         if node is not unset:
@@ -197,11 +186,10 @@ class CIAppPipelineEventJob(ModelNormal):
             kwargs["stage_name"] = stage_name
         if tags is not unset:
             kwargs["tags"] = tags
-        if user is not unset:
-            kwargs["user"] = user
         super().__init__(kwargs)
 
         self_.end = end
+        self_.git = git
         self_.id = id
         self_.level = level
         self_.name = name

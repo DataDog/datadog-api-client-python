@@ -130,7 +130,6 @@ from datadog_api_client.v2.model.ci_app_tests_analytics_aggregate_response impor
 from datadog_api_client.v2.model.ci_app_tests_bucket_response import CIAppTestsBucketResponse
 from datadog_api_client.v2.model.ci_app_tests_group_by import CIAppTestsGroupBy
 from datadog_api_client.v2.model.ci_app_tests_query_filter import CIAppTestsQueryFilter
-from datadog_api_client.v2.model.ci_app_user_info import CIAppUserInfo
 from datadog_api_client.v2.model.ci_app_warning import CIAppWarning
 from datadog_api_client.v2.model.chargeback_breakdown import ChargebackBreakdown
 from datadog_api_client.v2.model.cloud_configuration_compliance_rule_options import (
