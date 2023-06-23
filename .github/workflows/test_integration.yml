@@ -75,8 +75,7 @@ jobs:
           SLEEP_AFTER_REQUEST: ${{ vars.SLEEP_AFTER_REQUEST }}
           PYTEST_ADDOPTS: "--ddtrace"
           DD_PYTEST_OPERATION_NAME: "test"
-          DD_CIVISIBILITY_AGENTLESS_ENABLED: "1"
-          DD_API_KEY: ${{ secrets.DD_API_KEY }}
+          DD_TRACE_PROPAGATION_STYLE_INJECT: "datadog" 
       - name: Post failure status check
         if: failure() && github.event_name == 'pull_request' && contains(github.event.pull_request.head.ref, 'datadog-api-spec/generated/')
         uses: DataDog/github-actions/post-status-check@v2
