@@ -24,7 +24,6 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.ci_app_pipeline_event_parent_pipeline import CIAppPipelineEventParentPipeline
     from datadog_api_client.v2.model.ci_app_pipeline_event_previous_pipeline import CIAppPipelineEventPreviousPipeline
     from datadog_api_client.v2.model.ci_app_pipeline_event_pipeline_status import CIAppPipelineEventPipelineStatus
-    from datadog_api_client.v2.model.ci_app_user_info import CIAppUserInfo
 
 
 class CIAppPipelineEventPipeline(ModelNormal):
@@ -46,7 +45,6 @@ class CIAppPipelineEventPipeline(ModelNormal):
             CIAppPipelineEventPreviousPipeline,
         )
         from datadog_api_client.v2.model.ci_app_pipeline_event_pipeline_status import CIAppPipelineEventPipelineStatus
-        from datadog_api_client.v2.model.ci_app_user_info import CIAppUserInfo
 
         return {
             "end": (datetime,),
@@ -69,7 +67,6 @@ class CIAppPipelineEventPipeline(ModelNormal):
             "tags": ([str],),
             "unique_id": (str,),
             "url": (str,),
-            "user": (CIAppUserInfo,),
         }
 
     attribute_map = {
@@ -93,12 +90,12 @@ class CIAppPipelineEventPipeline(ModelNormal):
         "tags": "tags",
         "unique_id": "unique_id",
         "url": "url",
-        "user": "user",
     }
 
     def __init__(
         self_,
         end: datetime,
+        git: Union[CIAppGitInfo, none_type],
         level: CIAppPipelineEventPipelineLevel,
         name: str,
         partial_retry: bool,
@@ -107,7 +104,6 @@ class CIAppPipelineEventPipeline(ModelNormal):
         unique_id: str,
         url: str,
         error: Union[CIAppCIError, none_type, UnsetType] = unset,
-        git: Union[CIAppGitInfo, none_type, UnsetType] = unset,
         is_manual: Union[bool, none_type, UnsetType] = unset,
         is_resumed: Union[bool, none_type, UnsetType] = unset,
         metrics: Union[List[str], none_type, UnsetType] = unset,
@@ -118,7 +114,6 @@ class CIAppPipelineEventPipeline(ModelNormal):
         previous_attempt: Union[CIAppPipelineEventPreviousPipeline, none_type, UnsetType] = unset,
         queue_time: Union[int, none_type, UnsetType] = unset,
         tags: Union[List[str], none_type, UnsetType] = unset,
-        user: Union[CIAppUserInfo, none_type, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -132,7 +127,7 @@ class CIAppPipelineEventPipeline(ModelNormal):
 
         :param git: If pipelines are triggered due to actions to a Git repository, then all payloads must contain this.
             Note that either ``tag`` or ``branch`` has to be provided, but not both.
-        :type git: CIAppGitInfo, none_type, optional
+        :type git: CIAppGitInfo, none_type
 
         :param is_manual: Whether or not the pipeline was triggered manually by the user.
         :type is_manual: bool, none_type, optional
@@ -187,15 +182,9 @@ class CIAppPipelineEventPipeline(ModelNormal):
 
         :param url: The URL to look at the pipeline in the CI provider UI.
         :type url: str
-
-        :param user: Used to specify user-related information when the payload does not have Git information.
-            For example, if Git information is missing for manually triggered pipelines, this field can be used instead.
-        :type user: CIAppUserInfo, none_type, optional
         """
         if error is not unset:
             kwargs["error"] = error
-        if git is not unset:
-            kwargs["git"] = git
         if is_manual is not unset:
             kwargs["is_manual"] = is_manual
         if is_resumed is not unset:
@@ -216,11 +205,10 @@ class CIAppPipelineEventPipeline(ModelNormal):
             kwargs["queue_time"] = queue_time
         if tags is not unset:
             kwargs["tags"] = tags
-        if user is not unset:
-            kwargs["user"] = user
         super().__init__(kwargs)
 
         self_.end = end
+        self_.git = git
         self_.level = level
         self_.name = name
         self_.partial_retry = partial_retry
