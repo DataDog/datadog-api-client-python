@@ -848,13 +848,6 @@ ci\_app\_tests\_query\_filter
    :members:
    :show-inheritance:
 
-ci\_app\_user\_info
--------------------
-
-.. automodule:: datadog_api_client.v2.model.ci_app_user_info
-   :members:
-   :show-inheritance:
-
 ci\_app\_warning
 ----------------
 
