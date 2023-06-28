@@ -54,6 +54,15 @@ Feature: Dashboards
     And the response "widgets[0].definition.requests[0].query.data_source" is equal to "metrics"
     And the response "widgets[0].definition.requests[0].query.name" is equal to "query1"
 
+  @team:DataDog/dashboards-backend
+  Scenario: Create a geomap widget using an event_list request
+    Given new "CreateDashboard" request
+    And body with value {"title": "{{ unique }}","description": "{{ unique }}","widgets":[{"definition":{"title":"","title_size":"16","title_align":"left","type":"geomap","requests":[{"response_format":"event_list","query":{"data_source":"logs_stream","query_string":"","indexes":[]},"columns":[{"field":"@network.client.geoip.location.latitude","width":"auto"},{"field":"@network.client.geoip.location.longitude","width":"auto"},{"field":"@network.client.geoip.country.iso_code","width":"auto"},{"field":"@network.client.geoip.subdivision.name","width":"auto"},{"field":"classic","width":"auto"},{"field":"","width":"auto"}]}],"style":{"palette":"hostmap_blues","palette_flip":false},"view":{"focus":"WORLD"}},"layout":{"x":0,"y":0,"width":12,"height":6}}],"template_variables":[],"layout_type":"ordered","notify_list":[],"reflow_type":"fixed","tags":[]}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.requests[0].response_format" is equal to "event_list"
+    And the response "widgets[0].definition.requests[0].query.data_source" is equal to "logs_stream"
+
   @generated @skip @team:DataDog/dashboards-backend
   Scenario: Create a new dashboard returns "Bad Request" response
     Given new "CreateDashboard" request

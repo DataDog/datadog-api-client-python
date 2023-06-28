@@ -162,7 +162,7 @@ class ToplistWidgetRequest(ModelNormal):
         :param queries: List of queries that can be returned directly or used in formulas.
         :type queries: [FormulaAndFunctionQueryDefinition], optional
 
-        :param response_format: Timeseries or Scalar response.
+        :param response_format: Timeseries, scalar, or event list response. Event list response formats are supported by Geomap widgets.
         :type response_format: FormulaAndFunctionResponseFormat, optional
 
         :param rum_query: The log query.

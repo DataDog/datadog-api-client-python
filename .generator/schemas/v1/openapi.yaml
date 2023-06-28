@@ -2731,15 +2731,18 @@ components:
       - $ref: '#/components/schemas/FormulaAndFunctionSLOQueryDefinition'
       type: object
     FormulaAndFunctionResponseFormat:
-      description: Timeseries or Scalar response.
+      description: Timeseries, scalar, or event list response. Event list response
+        formats are supported by Geomap widgets.
       enum:
       - timeseries
       - scalar
+      - event_list
       example: timeseries
       type: string
       x-enum-varnames:
       - TIMESERIES
       - SCALAR
+      - EVENT_LIST
     FormulaAndFunctionSLODataSource:
       description: Data source for SLO measures queries.
       enum:
@@ -3127,6 +3130,16 @@ components:
     GeomapWidgetRequest:
       description: An updated geomap widget.
       properties:
+        columns:
+          description: Widget columns.
+          example:
+          - field: timestamp
+            width: auto
+          - field: content
+            width: full
+          items:
+            $ref: '#/components/schemas/ListStreamColumn'
+          type: array
         formulas:
           description: List of formulas that operate on queries.
           items:
@@ -3142,6 +3155,8 @@ components:
           items:
             $ref: '#/components/schemas/FormulaAndFunctionQueryDefinition'
           type: array
+        query:
+          $ref: '#/components/schemas/ListStreamQuery'
         response_format:
           $ref: '#/components/schemas/FormulaAndFunctionResponseFormat'
         rum_query:

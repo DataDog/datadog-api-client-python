@@ -14,18 +14,20 @@ from typing import ClassVar
 
 class FormulaAndFunctionResponseFormat(ModelSimple):
     """
-    Timeseries or Scalar response.
+    Timeseries, scalar, or event list response. Event list response formats are supported by Geomap widgets.
 
-    :param value: Must be one of ["timeseries", "scalar"].
+    :param value: Must be one of ["timeseries", "scalar", "event_list"].
     :type value: str
     """
 
     allowed_values = {
         "timeseries",
         "scalar",
+        "event_list",
     }
     TIMESERIES: ClassVar["FormulaAndFunctionResponseFormat"]
     SCALAR: ClassVar["FormulaAndFunctionResponseFormat"]
+    EVENT_LIST: ClassVar["FormulaAndFunctionResponseFormat"]
 
     @cached_property
     def openapi_types(_):
@@ -36,3 +38,4 @@ class FormulaAndFunctionResponseFormat(ModelSimple):
 
 FormulaAndFunctionResponseFormat.TIMESERIES = FormulaAndFunctionResponseFormat("timeseries")
 FormulaAndFunctionResponseFormat.SCALAR = FormulaAndFunctionResponseFormat("scalar")
+FormulaAndFunctionResponseFormat.EVENT_LIST = FormulaAndFunctionResponseFormat("event_list")
