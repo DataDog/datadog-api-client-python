@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class MetricsAggregator(ModelSimple):
     """
-    The type of aggregation that can be performed on metrics queries.
+    The type of aggregation that can be performed on metrics-based queries.
 
     :param value: If omitted defaults to "avg". Must be one of ["avg", "min", "max", "sum", "last", "percentile", "mean", "l2norm", "area"].
     :type value: str
