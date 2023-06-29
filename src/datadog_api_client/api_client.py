@@ -426,7 +426,6 @@ class ApiClient:
 
 
 class ThreadedApiClient(ApiClient):
-
     _pool = None
 
     def __init__(self, configuration: Configuration, pool_threads: int = 1):
@@ -514,7 +513,6 @@ class AsyncApiClient(ApiClient):
         request_timeout: Optional[Union[int, float, Tuple[Union[int, float], Union[int, float]]]] = None,
         check_type: Optional[bool] = None,
     ):
-
         # perform request and return response
         response = await self.rest_client.request(
             method,
@@ -647,7 +645,6 @@ class Endpoint:
         return params
 
     def call_with_http_info(self, **kwargs):
-
         is_unstable = self.api_client.configuration.unstable_operations.get(
             "{}.{}".format(self.settings["version"], self.settings["operation_id"])
         )

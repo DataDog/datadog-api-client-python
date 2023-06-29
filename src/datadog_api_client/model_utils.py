@@ -1629,7 +1629,6 @@ class UnparsedObject(ModelNormal):
     )
 
     def __init__(self, **kwargs):
-
         self._data_store = {}
         self._unparsed = True
 
