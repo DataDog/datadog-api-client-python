@@ -176,7 +176,7 @@ class ApiClient:
         elif isinstance(obj, (datetime, date)):
             if getattr(obj, "tzinfo", None) is not None:
                 return obj.isoformat()
-            return obj.strftime("%Y-%m-%dT%H:%M:%S") + obj.strftime(".%f")[:4] + "Z"
+            return "{}Z".format(obj.strftime("%Y-%m-%dT%H:%M:%S.%f")[:-3])
         elif isinstance(obj, ModelSimple):
             return cls.sanitize_for_serialization(obj.value)
         elif isinstance(obj, (list, tuple)):
