@@ -15,7 +15,7 @@ class ScalarQuery(ModelComposed):
         """
         An individual scalar query to one of the basic Datadog data sources.
 
-        :param aggregator: The type of aggregation that can be performed on metrics queries.
+        :param aggregator: The type of aggregation that can be performed on metrics-based queries.
         :type aggregator: MetricsAggregator
 
         :param data_source: A data source that is powered by the Metrics platform.
