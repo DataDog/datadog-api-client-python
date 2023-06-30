@@ -6406,6 +6406,209 @@ slack\_integration\_metadata\_channel\_item
    :members:
    :show-inheritance:
 
+span
+----
+
+.. automodule:: datadog_api_client.v2.model.span
+   :members:
+   :show-inheritance:
+
+spans\_aggregate\_bucket
+------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_aggregate_bucket
+   :members:
+   :show-inheritance:
+
+spans\_aggregate\_bucket\_value
+-------------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_aggregate_bucket_value
+   :members:
+   :show-inheritance:
+
+spans\_aggregate\_bucket\_value\_timeseries\_point
+--------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_aggregate_bucket_value_timeseries_point
+   :members:
+   :show-inheritance:
+
+spans\_aggregate\_data
+----------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_aggregate_data
+   :members:
+   :show-inheritance:
+
+spans\_aggregate\_request
+-------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_aggregate_request
+   :members:
+   :show-inheritance:
+
+spans\_aggregate\_request\_attributes
+-------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_aggregate_request_attributes
+   :members:
+   :show-inheritance:
+
+spans\_aggregate\_request\_type
+-------------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_aggregate_request_type
+   :members:
+   :show-inheritance:
+
+spans\_aggregate\_response
+--------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_aggregate_response
+   :members:
+   :show-inheritance:
+
+spans\_aggregate\_response\_metadata
+------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_aggregate_response_metadata
+   :members:
+   :show-inheritance:
+
+spans\_aggregate\_response\_status
+----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_aggregate_response_status
+   :members:
+   :show-inheritance:
+
+spans\_aggregate\_sort
+----------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_aggregate_sort
+   :members:
+   :show-inheritance:
+
+spans\_aggregate\_sort\_type
+----------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_aggregate_sort_type
+   :members:
+   :show-inheritance:
+
+spans\_aggregation\_function
+----------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_aggregation_function
+   :members:
+   :show-inheritance:
+
+spans\_attributes
+-----------------
+
+.. automodule:: datadog_api_client.v2.model.spans_attributes
+   :members:
+   :show-inheritance:
+
+spans\_compute
+--------------
+
+.. automodule:: datadog_api_client.v2.model.spans_compute
+   :members:
+   :show-inheritance:
+
+spans\_compute\_type
+--------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_compute_type
+   :members:
+   :show-inheritance:
+
+spans\_group\_by
+----------------
+
+.. automodule:: datadog_api_client.v2.model.spans_group_by
+   :members:
+   :show-inheritance:
+
+spans\_group\_by\_histogram
+---------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_group_by_histogram
+   :members:
+   :show-inheritance:
+
+spans\_group\_by\_missing
+-------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_group_by_missing
+   :members:
+   :show-inheritance:
+
+spans\_group\_by\_total
+-----------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_group_by_total
+   :members:
+   :show-inheritance:
+
+spans\_list\_request
+--------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_list_request
+   :members:
+   :show-inheritance:
+
+spans\_list\_request\_attributes
+--------------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_list_request_attributes
+   :members:
+   :show-inheritance:
+
+spans\_list\_request\_data
+--------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_list_request_data
+   :members:
+   :show-inheritance:
+
+spans\_list\_request\_page
+--------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_list_request_page
+   :members:
+   :show-inheritance:
+
+spans\_list\_request\_type
+--------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_list_request_type
+   :members:
+   :show-inheritance:
+
+spans\_list\_response
+---------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_list_response
+   :members:
+   :show-inheritance:
+
+spans\_list\_response\_links
+----------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_list_response_links
+   :members:
+   :show-inheritance:
+
+spans\_list\_response\_metadata
+-------------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_list_response_metadata
+   :members:
+   :show-inheritance:
+
 spans\_metric\_compute
 ----------------------
 
@@ -6536,6 +6739,55 @@ spans\_metrics\_response
 ------------------------
 
 .. automodule:: datadog_api_client.v2.model.spans_metrics_response
+   :members:
+   :show-inheritance:
+
+spans\_query\_filter
+--------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_query_filter
+   :members:
+   :show-inheritance:
+
+spans\_query\_options
+---------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_query_options
+   :members:
+   :show-inheritance:
+
+spans\_response\_metadata\_page
+-------------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_response_metadata_page
+   :members:
+   :show-inheritance:
+
+spans\_sort
+-----------
+
+.. automodule:: datadog_api_client.v2.model.spans_sort
+   :members:
+   :show-inheritance:
+
+spans\_sort\_order
+------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_sort_order
+   :members:
+   :show-inheritance:
+
+spans\_type
+-----------
+
+.. automodule:: datadog_api_client.v2.model.spans_type
+   :members:
+   :show-inheritance:
+
+spans\_warning
+--------------
+
+.. automodule:: datadog_api_client.v2.model.spans_warning
    :members:
    :show-inheritance:
 

@@ -1478,6 +1478,24 @@
       "type": "idempotent"
     }
   },
+  "AggregateSpans": {
+    "tag": "Spans",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListSpansGet": {
+    "tag": "Spans",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListSpans": {
+    "tag": "Spans",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "GetOnDemandConcurrencyCap": {
     "tag": "Synthetics",
     "undo": {

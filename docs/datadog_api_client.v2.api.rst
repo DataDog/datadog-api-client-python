@@ -218,6 +218,13 @@ service\_definition\_api
    :members:
    :show-inheritance:
 
+spans\_api
+----------
+
+.. automodule:: datadog_api_client.v2.api.spans_api
+   :members:
+   :show-inheritance:
+
 spans\_metrics\_api
 -------------------
 
