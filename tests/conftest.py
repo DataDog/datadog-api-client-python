@@ -11,6 +11,7 @@ SLEEP_AFTER_REQUEST = int(os.getenv("SLEEP_AFTER_REQUEST", "0"))
 tracer = None
 try:
     from ddtrace import patch, tracer
+    import ddtrace.profiling.auto  # noqa: F401
 
     if RECORD != "none":
         from ddtrace.internal.writer import AgentWriter
