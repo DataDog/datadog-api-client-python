@@ -57,6 +57,13 @@ dashboard\_lists\_api
    :members:
    :show-inheritance:
 
+downtimes\_api
+--------------
+
+.. automodule:: datadog_api_client.v2.api.downtimes_api
+   :members:
+   :show-inheritance:
+
 events\_api
 -----------
 

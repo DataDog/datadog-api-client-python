@@ -249,6 +249,43 @@
       "type": "safe"
     }
   },
+  "ListDowntimes": {
+    "tag": "Downtimes",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateDowntime": {
+    "tag": "Downtimes",
+    "undo": {
+      "operationId": "CancelDowntime",
+      "parameters": [
+        {
+          "name": "downtime_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "CancelDowntime": {
+    "tag": "Downtimes",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetDowntime": {
+    "tag": "Downtimes",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateDowntime": {
+    "tag": "Downtimes",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListEvents": {
     "tag": "Events",
     "undo": {
@@ -911,6 +948,12 @@
     "tag": "Monitors",
     "undo": {
       "type": "idempotent"
+    }
+  },
+  "ListMonitorDowntimes": {
+    "tag": "Downtimes",
+    "undo": {
+      "type": "safe"
     }
   },
   "ListPermissions": {
