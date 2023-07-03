@@ -1359,6 +1359,272 @@ detailed\_finding\_type
    :members:
    :show-inheritance:
 
+downtime\_create\_request
+-------------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_create_request
+   :members:
+   :show-inheritance:
+
+downtime\_create\_request\_attributes
+-------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_create_request_attributes
+   :members:
+   :show-inheritance:
+
+downtime\_create\_request\_data
+-------------------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_create_request_data
+   :members:
+   :show-inheritance:
+
+downtime\_included\_monitor\_type
+---------------------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_included_monitor_type
+   :members:
+   :show-inheritance:
+
+downtime\_meta
+--------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_meta
+   :members:
+   :show-inheritance:
+
+downtime\_meta\_page
+--------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_meta_page
+   :members:
+   :show-inheritance:
+
+downtime\_monitor\_identifier
+-----------------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_monitor_identifier
+   :members:
+   :show-inheritance:
+
+downtime\_monitor\_identifier\_id
+---------------------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_monitor_identifier_id
+   :members:
+   :show-inheritance:
+
+downtime\_monitor\_identifier\_tags
+-----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_monitor_identifier_tags
+   :members:
+   :show-inheritance:
+
+downtime\_monitor\_included\_attributes
+---------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_monitor_included_attributes
+   :members:
+   :show-inheritance:
+
+downtime\_monitor\_included\_item
+---------------------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_monitor_included_item
+   :members:
+   :show-inheritance:
+
+downtime\_notify\_end\_state\_actions
+-------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_notify_end_state_actions
+   :members:
+   :show-inheritance:
+
+downtime\_notify\_end\_state\_types
+-----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_notify_end_state_types
+   :members:
+   :show-inheritance:
+
+downtime\_relationships
+-----------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_relationships
+   :members:
+   :show-inheritance:
+
+downtime\_relationships\_created\_by
+------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_relationships_created_by
+   :members:
+   :show-inheritance:
+
+downtime\_relationships\_created\_by\_data
+------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_relationships_created_by_data
+   :members:
+   :show-inheritance:
+
+downtime\_relationships\_monitor
+--------------------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_relationships_monitor
+   :members:
+   :show-inheritance:
+
+downtime\_relationships\_monitor\_data
+--------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_relationships_monitor_data
+   :members:
+   :show-inheritance:
+
+downtime\_resource\_type
+------------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_resource_type
+   :members:
+   :show-inheritance:
+
+downtime\_response
+------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_response
+   :members:
+   :show-inheritance:
+
+downtime\_response\_attributes
+------------------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_response_attributes
+   :members:
+   :show-inheritance:
+
+downtime\_response\_data
+------------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_response_data
+   :members:
+   :show-inheritance:
+
+downtime\_response\_included\_item
+----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_response_included_item
+   :members:
+   :show-inheritance:
+
+downtime\_schedule\_create\_request
+-----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_schedule_create_request
+   :members:
+   :show-inheritance:
+
+downtime\_schedule\_current\_downtime\_response
+-----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_schedule_current_downtime_response
+   :members:
+   :show-inheritance:
+
+downtime\_schedule\_one\_time\_create\_update\_request
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_schedule_one_time_create_update_request
+   :members:
+   :show-inheritance:
+
+downtime\_schedule\_one\_time\_response
+---------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_schedule_one_time_response
+   :members:
+   :show-inheritance:
+
+downtime\_schedule\_recurrence\_create\_update\_request
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_schedule_recurrence_create_update_request
+   :members:
+   :show-inheritance:
+
+downtime\_schedule\_recurrence\_response
+----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_schedule_recurrence_response
+   :members:
+   :show-inheritance:
+
+downtime\_schedule\_recurrences\_create\_request
+------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_schedule_recurrences_create_request
+   :members:
+   :show-inheritance:
+
+downtime\_schedule\_recurrences\_response
+-----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_schedule_recurrences_response
+   :members:
+   :show-inheritance:
+
+downtime\_schedule\_recurrences\_update\_request
+------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_schedule_recurrences_update_request
+   :members:
+   :show-inheritance:
+
+downtime\_schedule\_response
+----------------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_schedule_response
+   :members:
+   :show-inheritance:
+
+downtime\_schedule\_update\_request
+-----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_schedule_update_request
+   :members:
+   :show-inheritance:
+
+downtime\_status
+----------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_status
+   :members:
+   :show-inheritance:
+
+downtime\_update\_request
+-------------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_update_request
+   :members:
+   :show-inheritance:
+
+downtime\_update\_request\_attributes
+-------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_update_request_attributes
+   :members:
+   :show-inheritance:
+
+downtime\_update\_request\_data
+-------------------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_update_request_data
+   :members:
+   :show-inheritance:
+
 event
 -----
 
@@ -2871,6 +3137,13 @@ list\_application\_keys\_response
    :members:
    :show-inheritance:
 
+list\_downtimes\_response
+-------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_downtimes_response
+   :members:
+   :show-inheritance:
+
 list\_findings\_meta
 --------------------
 
@@ -3995,6 +4268,34 @@ monitor\_config\_policy\_type
 -----------------------------
 
 .. automodule:: datadog_api_client.v2.model.monitor_config_policy_type
+   :members:
+   :show-inheritance:
+
+monitor\_downtime\_match\_resource\_type
+----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_downtime_match_resource_type
+   :members:
+   :show-inheritance:
+
+monitor\_downtime\_match\_response
+----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_downtime_match_response
+   :members:
+   :show-inheritance:
+
+monitor\_downtime\_match\_response\_attributes
+----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_downtime_match_response_attributes
+   :members:
+   :show-inheritance:
+
+monitor\_downtime\_match\_response\_data
+----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_downtime_match_response_data
    :members:
    :show-inheritance:
 

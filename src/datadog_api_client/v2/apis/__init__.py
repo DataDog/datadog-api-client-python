@@ -6,6 +6,7 @@ from datadog_api_client.v2.api.cloud_workload_security_api import CloudWorkloadS
 from datadog_api_client.v2.api.cloudflare_integration_api import CloudflareIntegrationApi
 from datadog_api_client.v2.api.confluent_cloud_api import ConfluentCloudApi
 from datadog_api_client.v2.api.dashboard_lists_api import DashboardListsApi
+from datadog_api_client.v2.api.downtimes_api import DowntimesApi
 from datadog_api_client.v2.api.events_api import EventsApi
 from datadog_api_client.v2.api.fastly_integration_api import FastlyIntegrationApi
 from datadog_api_client.v2.api.gcp_integration_api import GCPIntegrationApi

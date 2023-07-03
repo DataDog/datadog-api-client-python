@@ -221,6 +221,12 @@ class Configuration:
         # Keep track of unstable operations
         self.unstable_operations = _UnstableOperations(
             {
+                "v2.cancel_downtime": False,
+                "v2.create_downtime": False,
+                "v2.get_downtime": False,
+                "v2.list_downtimes": False,
+                "v2.list_monitor_downtimes": False,
+                "v2.update_downtime": False,
                 "v2.list_events": False,
                 "v2.search_events": False,
                 "v2.create_incident": False,
