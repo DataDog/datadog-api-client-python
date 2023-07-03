@@ -129,6 +129,7 @@ class SpansApi:
         """Aggregate spans.
 
         The API endpoint to aggregate spans into buckets and compute metrics and timeseries.
+        This endpoint is rate limited to ``300`` requests per hour.
 
         :type body: SpansAggregateRequest
         :rtype: SpansAggregateResponse
@@ -145,9 +146,10 @@ class SpansApi:
         """Search spans.
 
         List endpoint returns spans that match a span search query.
-        [Results are paginated][1].
+        `Results are paginated </logs/guide/collect-multiple-logs-with-pagination>`_.
 
         Use this endpoint to build complex spans filtering and search.
+        This endpoint is rate limited to ``300`` requests per hour.
 
         :type body: SpansListRequest
         :rtype: SpansListResponse
@@ -202,9 +204,10 @@ class SpansApi:
         """Get a list of spans.
 
         List endpoint returns spans that match a span search query.
-        [Results are paginated][1].
+        `Results are paginated </logs/guide/collect-multiple-logs-with-pagination>`_.
 
         Use this endpoint to see your latest spans.
+        This endpoint is rate limited to ``300`` requests per hour.
 
         :param filter_query: Search query following spans syntax.
         :type filter_query: str, optional
