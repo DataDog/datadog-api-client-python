@@ -28,14 +28,14 @@ Feature: Spans
     When the request is sent
     Then the response status is 400 Bad Request.
 
-  @team:DataDog/apm
+  @replay-only @team:DataDog/apm
   Scenario: Get a list of spans returns "OK" response
     Given new "ListSpansGet" request
     When the request is sent
     Then the response status is 200 OK
     And the response "data[0].type" is equal to "spans"
 
-  @skip-validation @team:DataDog/apm @with-pagination
+  @replay-only @skip-validation @team:DataDog/apm @with-pagination
   Scenario: Get a list of spans returns "OK" response with pagination
     Given new "ListSpansGet" request
     And request contains "page[limit]" parameter with value 2
@@ -58,7 +58,7 @@ Feature: Spans
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/apm
+  @replay-only @team:DataDog/apm
   Scenario: Search spans returns "OK" response
     Given new "ListSpans" request
     And body with value {"data": {"attributes": {"filter": {"from": "now-15m", "query": "*", "to": "now"}, "options": {"timezone": "GMT"}, "page": {"limit": 25}, "sort": "timestamp"}, "type": "search_request"}}
@@ -66,7 +66,7 @@ Feature: Spans
     Then the response status is 200 OK
     And the response "data[0].type" is equal to "spans"
 
-  @skip-validation @team:DataDog/apm @with-pagination
+  @replay-only @skip-validation @team:DataDog/apm @with-pagination
   Scenario: Search spans returns "OK" response with pagination
     Given new "ListSpans" request
     And body with value {"data": {"attributes": {"filter": {"from": "now-15m", "query": "service:python*", "to": "now"}, "options": {"timezone": "GMT"}, "page": {"limit": 2}, "sort": "timestamp"}, "type": "search_request"}}
