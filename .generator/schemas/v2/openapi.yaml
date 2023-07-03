@@ -24437,8 +24437,10 @@ paths:
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).'
   /api/v2/spans/analytics/aggregate:
     post:
-      description: The API endpoint to aggregate spans into buckets and compute metrics
+      description: 'The API endpoint to aggregate spans into buckets and compute metrics
         and timeseries.
+
+        This endpoint is rate limited to `300` requests per hour.'
       operationId: AggregateSpans
       requestBody:
         content:
@@ -24470,7 +24472,12 @@ paths:
         [Results are paginated][1].
 
 
-        Use this endpoint to see your latest spans.'
+        Use this endpoint to see your latest spans.
+
+        This endpoint is rate limited to `300` requests per hour.
+
+
+        [1]: /logs/guide/collect-multiple-logs-with-pagination'
       operationId: ListSpansGet
       parameters:
       - description: Search query following spans syntax.
@@ -24550,7 +24557,12 @@ paths:
         [Results are paginated][1].
 
 
-        Use this endpoint to build complex spans filtering and search.'
+        Use this endpoint to build complex spans filtering and search.
+
+        This endpoint is rate limited to `300` requests per hour.
+
+
+        [1]: /logs/guide/collect-multiple-logs-with-pagination'
       operationId: ListSpans
       requestBody:
         content:
