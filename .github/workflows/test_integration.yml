@@ -76,6 +76,7 @@ jobs:
           PYTEST_ADDOPTS: "--ddtrace"
           DD_PYTEST_OPERATION_NAME: "test"
           DD_TRACE_PROPAGATION_STYLE_INJECT: "datadog" 
+          DD_PROFILING_ENABLED: "true"
       - name: Post failure status check
         if: failure() && github.event_name == 'pull_request' && contains(github.event.pull_request.head.ref, 'datadog-api-spec/generated/')
         uses: DataDog/github-actions/post-status-check@v2
