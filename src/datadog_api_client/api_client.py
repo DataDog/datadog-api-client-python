@@ -133,7 +133,7 @@ class ApiClient:
 
         if return_http_data_only:
             return return_data
-        return (return_data, response.status, response.headers.copy())
+        return (return_data, response.status, dict(response.headers))
 
     def parameters_to_multipart(self, params):
         """Get parameters as list of tuples, formatting as json if value is dict.
