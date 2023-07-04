@@ -146,7 +146,7 @@ class SpansApi:
         """Search spans.
 
         List endpoint returns spans that match a span search query.
-        `Results are paginated </logs/guide/collect-multiple-logs-with-pagination>`_.
+        `Results are paginated </logs/guide/collect-multiple-logs-with-pagination?tab=v2api>`_.
 
         Use this endpoint to build complex spans filtering and search.
         This endpoint is rate limited to ``300`` requests per hour.
@@ -204,7 +204,7 @@ class SpansApi:
         """Get a list of spans.
 
         List endpoint returns spans that match a span search query.
-        `Results are paginated </logs/guide/collect-multiple-logs-with-pagination>`_.
+        `Results are paginated </logs/guide/collect-multiple-logs-with-pagination?tab=v2api>`_.
 
         Use this endpoint to see your latest spans.
         This endpoint is rate limited to ``300`` requests per hour.
