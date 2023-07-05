@@ -3,6 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
+from dataclasses import dataclass
 from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
@@ -15,6 +16,18 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.spans_list_request_data import SpansListRequestData
+    from datadog_api_client.v2.model.spans_query_filter import SpansQueryFilter
+    from datadog_api_client.v2.model.spans_query_options import SpansQueryOptions
+    from datadog_api_client.v2.model.spans_list_request_page import SpansListRequestPage
+    from datadog_api_client.v2.model.spans_sort import SpansSort
+
+
+@dataclass
+class SpansListRequestJSON:
+    filter: Union[SpansQueryFilter, UnsetType] = unset
+    options: Union[SpansQueryOptions, UnsetType] = unset
+    page: Union[SpansListRequestPage, UnsetType] = unset
+    sort: Union[SpansSort, UnsetType] = unset
 
 
 class SpansListRequest(ModelNormal):
@@ -29,6 +42,7 @@ class SpansListRequest(ModelNormal):
     attribute_map = {
         "data": "data",
     }
+    json_api_model = SpansListRequestJSON
 
     def __init__(self_, data: Union[SpansListRequestData, UnsetType] = unset, **kwargs):
         """

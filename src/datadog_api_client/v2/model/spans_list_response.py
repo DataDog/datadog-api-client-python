@@ -3,11 +3,13 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, Union, TYPE_CHECKING
+from dataclasses import dataclass
+from typing import Any, Dict, List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    datetime,
     unset,
     UnsetType,
 )
@@ -17,6 +19,27 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.span import Span
     from datadog_api_client.v2.model.spans_list_response_links import SpansListResponseLinks
     from datadog_api_client.v2.model.spans_list_response_metadata import SpansListResponseMetadata
+
+
+@dataclass
+class SpansListResponseJSON:
+    id: str
+    attributes: Union[Dict[str, Any], UnsetType] = unset
+    end_timestamp: Union[datetime, UnsetType] = unset
+    env: Union[str, UnsetType] = unset
+    host: Union[str, UnsetType] = unset
+    ingestion_reason: Union[str, UnsetType] = unset
+    parent_id: Union[str, UnsetType] = unset
+    resource_hash: Union[str, UnsetType] = unset
+    resource_name: Union[str, UnsetType] = unset
+    retained_by: Union[str, UnsetType] = unset
+    service: Union[str, UnsetType] = unset
+    single_span: Union[bool, UnsetType] = unset
+    span_id: Union[str, UnsetType] = unset
+    start_timestamp: Union[datetime, UnsetType] = unset
+    tags: Union[List[str], UnsetType] = unset
+    trace_id: Union[str, UnsetType] = unset
+    type: Union[str, UnsetType] = unset
 
 
 class SpansListResponse(ModelNormal):
@@ -37,6 +60,7 @@ class SpansListResponse(ModelNormal):
         "links": "links",
         "meta": "meta",
     }
+    json_api_model = SpansListResponseJSON
 
     def __init__(
         self_,

@@ -3,11 +3,14 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
+from dataclasses import dataclass
 from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    datetime,
+    none_type,
     unset,
     UnsetType,
 )
@@ -16,6 +19,15 @@ from datadog_api_client.model_utils import (
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.monitor_downtime_match_response_data import MonitorDowntimeMatchResponseData
     from datadog_api_client.v2.model.downtime_meta import DowntimeMeta
+
+
+@dataclass
+class MonitorDowntimeMatchResponseJSON:
+    id: str
+    end: Union[datetime, none_type, UnsetType] = unset
+    groups: Union[List[str], UnsetType] = unset
+    scope: Union[str, UnsetType] = unset
+    start: Union[datetime, UnsetType] = unset
 
 
 class MonitorDowntimeMatchResponse(ModelNormal):
@@ -33,6 +45,7 @@ class MonitorDowntimeMatchResponse(ModelNormal):
         "data": "data",
         "meta": "meta",
     }
+    json_api_model = MonitorDowntimeMatchResponseJSON
 
     def __init__(
         self_,
