@@ -85,7 +85,7 @@ Feature: Dashboards
   Scenario: Create a new dashboard with a change widget using formulas and functions slo query
     Given there is a valid "slo" in the system
     And new "CreateDashboard" request
-    And body with value { "title": "{{ unique }}", "widgets": [ { "definition": {"title": "", "title_size": "16", "title_align": "left", "time": {}, "type": "change", "requests": [ {"formulas": [ { "formula": "hour_before(query1)" }, { "formula": "query1" } ], "queries": [ {"name": "query1", "data_source": "slo", "slo_id": "{{ slo.data[0].id }}", "measure": "slo_status", "group_mode": "overall", "slo_query_type": "metric" } ], "response_format": "scalar", "order_by": "change", "change_type": "absolute", "increase_good": true, "order_dir": "asc" } ] }, "layout": { "x":0, "y": 0, "width": 4, "height": 2 } } ], "layout_type": "ordered" }
+    And body with value { "title": "{{ unique }}", "widgets": [ { "definition": {"title": "", "title_size": "16", "title_align": "left", "time": {}, "type": "change", "requests": [ {"formulas": [ { "formula": "hour_before(query1)" }, { "formula": "query1" } ], "queries": [ {"name": "query1", "data_source": "slo", "slo_id": "{{ slo.data[0].id }}", "measure": "slo_status", "group_mode": "overall", "slo_query_type": "metric", "additional_query_filters": "*" } ], "response_format": "scalar", "order_by": "change", "change_type": "absolute", "increase_good": true, "order_dir": "asc" } ] }, "layout": { "x":0, "y": 0, "width": 4, "height": 2 } } ], "layout_type": "ordered" }
     When the request is sent
     Then the response status is 200 OK
     And the response "widgets[0].definition.requests[0].response_format" is equal to "scalar"
@@ -99,6 +99,7 @@ Feature: Dashboards
     And the response "widgets[0].definition.requests[0].queries[0].measure" is equal to "slo_status"
     And the response "widgets[0].definition.requests[0].queries[0].slo_query_type" is equal to "metric"
     And the response "widgets[0].definition.requests[0].queries[0].slo_id" has the same value as "slo.data[0].id"
+    And the response "widgets[0].definition.requests[0].queries[0].additional_query_filters" is equal to "*"
     And the response "widgets[0].definition.requests[0].formulas[0].formula" is equal to "hour_before(query1)"
     And the response "widgets[0].definition.requests[0].formulas[1].formula" is equal to "query1"
 

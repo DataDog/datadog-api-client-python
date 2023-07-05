@@ -84,6 +84,9 @@ class FormulaAndFunctionQueryDefinition(ModelComposed):
         :param stat: APM statistic.
         :type stat: FormulaAndFunctionApmDependencyStatName
 
+        :param additional_query_filters: Additional filters applied to the SLO query.
+        :type additional_query_filters: str, optional
+
         :param group_mode: Group mode to query measures.
         :type group_mode: FormulaAndFunctionSLOGroupMode, optional
 
