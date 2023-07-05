@@ -3,3 +3,10 @@
 from {{ package }}.{{ version }}.api.{{ classname|safe_snake_case }} import {{ classname }}
 {%- endfor %}
 
+
+__all__ = [
+{%- for api in apis %}
+{%- set classname = api.replace(" ", "") + "Api" %}
+    "{{ classname }}",
+{%- endfor %}
+]
