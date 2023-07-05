@@ -169,6 +169,8 @@ class CIVisibilityPipelinesApi:
 
         Send your pipeline event to your Datadog platform over HTTP. For details about how pipeline executions are modeled and what execution types we support, see the `guide <https://docs.datadoghq.com/continuous_integration/guides/pipeline_data_model/>`_.
 
+        Pipeline events can be submitted with a timestamp that is up to 18 hours in the past.
+
         This API endpoint is in private beta.
 
         :type body: CIAppCreatePipelineEventRequest
