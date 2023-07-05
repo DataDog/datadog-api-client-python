@@ -1104,7 +1104,7 @@ def deserialize_model(model_data, model_class, path_to_item, check_type, configu
             return model_class(model_data, **kw_args)
         else:
             return model_class(*model_data, **kw_args)
-    if isinstance(model_data, dict):
+    elif isinstance(model_data, dict):
         kw_args.update(change_keys_js_to_python(model_data, model_class))
         return model_class(**kw_args)
     elif isinstance(model_data, PRIMITIVE_TYPES):

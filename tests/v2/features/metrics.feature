@@ -351,7 +351,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 200 Success
 
-  @skip-validation @team:DataDog/metrics-query
+  @team:DataDog/metrics-query
   Scenario: Timeseries cross product query returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And operation "QueryTimeseriesData" enabled

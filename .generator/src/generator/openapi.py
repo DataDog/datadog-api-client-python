@@ -642,12 +642,12 @@ class Operation:
             url = server["url"] + path
             # replace potential path variables
             for variable, value in server_variables.items():
-                url = url.replace("{" + variable + "}", value)
+                url = url.replace(f"{{{variable}}}", value)
             # replace server variables if they were not replace before
             for variable in server["variables"]:
                 if variable in server_variables:
                     continue
-                url = url.replace("{" + variable + "}", server["variables"][variable]["default"])
+                url = url.replace(f"{{{variable}}}", server["variables"][variable]["default"])
             return url
 
         server_variables = server_variables or {}
