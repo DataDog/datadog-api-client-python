@@ -11,7 +11,7 @@ repos:
     name: Format documentation
     stages: [manual]
     language: node
-    language_version: 14.12.0
+    language_version: 18.16.1
     entry: prettier --write --list-different --ignore-unknown README.md
     "types": [text]
     files: 'README.md'
@@ -19,7 +19,7 @@ repos:
     additional_dependencies:
       # When updating the version of prettier, make sure to check the  pre-commit file
       # And keep the `entry` here up to date https://github.com/pre-commit/mirrors-prettier/blob/master/.pre-commit-hooks.yaml
-      - prettier@2.5.1
+      - prettier@2.8.8
   - id: api-docs
     name: Generate API docs
     stages: [manual]
@@ -47,7 +47,7 @@ repos:
     additional_dependencies:
       - "poetry"
 - repo: https://github.com/psf/black
-  rev: 22.3.0
+  rev: 23.3.0
   hooks:
   - id: black
     stages: [manual]
@@ -55,7 +55,7 @@ repos:
     files: '^(src|examples|tests)'
     pass_filenames: false
 - repo: https://github.com/charliermarsh/ruff-pre-commit
-  rev: v0.0.137
+  rev: v0.0.275
   hooks:
   - id: ruff
     entry: ruff --fix --quiet --exit-zero --fixable I001,F401 --ignore E501 src examples tests
