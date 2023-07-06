@@ -11,21 +11,21 @@ Feature: Confluent Cloud
   @generated @skip @team:Datadog/web-integrations
   Scenario: Add Confluent account returns "Bad Request" response
     Given new "CreateConfluentAccount" request
-    And body with value {"data": {"attributes": {"api_key": "TESTAPIKEY123", "api_secret": "test-api-secret-123", "resources": [{"id": "resource-id-123", "resource_type": "kafka", "tags": ["myTag", "myTag2:myValue"]}], "tags": ["myTag", "myTag2:myValue"]}, "type": "confluent-cloud-accounts"}}
+    And body with value {"data": {"attributes": {"api_key": "TESTAPIKEY123", "api_secret": "test-api-secret-123", "resources": [{"enable_custom_metrics": false, "id": "resource-id-123", "resource_type": "kafka", "tags": ["myTag", "myTag2:myValue"]}], "tags": ["myTag", "myTag2:myValue"]}, "type": "confluent-cloud-accounts"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:Datadog/web-integrations
   Scenario: Add Confluent account returns "Not Found" response
     Given new "CreateConfluentAccount" request
-    And body with value {"data": {"attributes": {"api_key": "TESTAPIKEY123", "api_secret": "test-api-secret-123", "resources": [{"id": "resource-id-123", "resource_type": "kafka", "tags": ["myTag", "myTag2:myValue"]}], "tags": ["myTag", "myTag2:myValue"]}, "type": "confluent-cloud-accounts"}}
+    And body with value {"data": {"attributes": {"api_key": "TESTAPIKEY123", "api_secret": "test-api-secret-123", "resources": [{"enable_custom_metrics": false, "id": "resource-id-123", "resource_type": "kafka", "tags": ["myTag", "myTag2:myValue"]}], "tags": ["myTag", "myTag2:myValue"]}, "type": "confluent-cloud-accounts"}}
     When the request is sent
     Then the response status is 404 Not Found
 
   @generated @skip @team:Datadog/web-integrations
   Scenario: Add Confluent account returns "OK" response
     Given new "CreateConfluentAccount" request
-    And body with value {"data": {"attributes": {"api_key": "TESTAPIKEY123", "api_secret": "test-api-secret-123", "resources": [{"id": "resource-id-123", "resource_type": "kafka", "tags": ["myTag", "myTag2:myValue"]}], "tags": ["myTag", "myTag2:myValue"]}, "type": "confluent-cloud-accounts"}}
+    And body with value {"data": {"attributes": {"api_key": "TESTAPIKEY123", "api_secret": "test-api-secret-123", "resources": [{"enable_custom_metrics": false, "id": "resource-id-123", "resource_type": "kafka", "tags": ["myTag", "myTag2:myValue"]}], "tags": ["myTag", "myTag2:myValue"]}, "type": "confluent-cloud-accounts"}}
     When the request is sent
     Then the response status is 201 OK
 
@@ -33,7 +33,7 @@ Feature: Confluent Cloud
   Scenario: Add resource to Confluent account returns "Bad Request" response
     Given new "CreateConfluentResource" request
     And request contains "account_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"resource_type": "kafka", "tags": ["myTag", "myTag2:myValue"]}, "id": "resource-id-123", "type": "confluent-cloud-resources"}}
+    And body with value {"data": {"attributes": {"enable_custom_metrics": false, "resource_type": "kafka", "tags": ["myTag", "myTag2:myValue"]}, "id": "resource-id-123", "type": "confluent-cloud-resources"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -41,7 +41,7 @@ Feature: Confluent Cloud
   Scenario: Add resource to Confluent account returns "Not Found" response
     Given new "CreateConfluentResource" request
     And request contains "account_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"resource_type": "kafka", "tags": ["myTag", "myTag2:myValue"]}, "id": "resource-id-123", "type": "confluent-cloud-resources"}}
+    And body with value {"data": {"attributes": {"enable_custom_metrics": false, "resource_type": "kafka", "tags": ["myTag", "myTag2:myValue"]}, "id": "resource-id-123", "type": "confluent-cloud-resources"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -50,7 +50,7 @@ Feature: Confluent Cloud
     Given there is a valid "confluent_account" in the system
     And new "CreateConfluentResource" request
     And request contains "account_id" parameter from "confluent_account.data.id"
-    And body with value {"data": {"attributes": {"resource_type": "kafka", "tags": ["myTag", "myTag2:myValue"]}, "id": "{{ unique_lower_alnum }}", "type": "confluent-cloud-resources"}}
+    And body with value {"data": {"attributes": {"resource_type": "kafka", "tags": ["myTag", "myTag2:myValue"], "enable_custom_metrics": false}, "id": "{{ unique_lower_alnum }}", "type": "confluent-cloud-resources"}}
     When the request is sent
     Then the response status is 201 OK
     And the response "data.id" is equal to "{{ unique_lower_alnum }}"
@@ -126,6 +126,7 @@ Feature: Confluent Cloud
     And the response "data.type" is equal to "confluent-cloud-accounts"
     And the response "data.attributes.api_key" is equal to "{{ unique_alnum }}"
     And the response "data.attributes.resources[0].resource_type" is equal to "kafka"
+    And the response "data.attributes.resources[0].enable_custom_metrics" is equal to false
 
   @generated @skip @team:Datadog/web-integrations
   Scenario: Get resource from Confluent account returns "Bad Request" response
@@ -224,7 +225,7 @@ Feature: Confluent Cloud
     Given new "UpdateConfluentResource" request
     And request contains "account_id" parameter from "REPLACE.ME"
     And request contains "resource_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"resource_type": "kafka", "tags": ["myTag", "myTag2:myValue"]}, "id": "resource-id-123", "type": "confluent-cloud-resources"}}
+    And body with value {"data": {"attributes": {"enable_custom_metrics": false, "resource_type": "kafka", "tags": ["myTag", "myTag2:myValue"]}, "id": "resource-id-123", "type": "confluent-cloud-resources"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -233,7 +234,7 @@ Feature: Confluent Cloud
     Given new "UpdateConfluentResource" request
     And request contains "account_id" parameter from "REPLACE.ME"
     And request contains "resource_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"resource_type": "kafka", "tags": ["myTag", "myTag2:myValue"]}, "id": "resource-id-123", "type": "confluent-cloud-resources"}}
+    And body with value {"data": {"attributes": {"enable_custom_metrics": false, "resource_type": "kafka", "tags": ["myTag", "myTag2:myValue"]}, "id": "resource-id-123", "type": "confluent-cloud-resources"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -242,6 +243,6 @@ Feature: Confluent Cloud
     Given new "UpdateConfluentResource" request
     And request contains "account_id" parameter from "REPLACE.ME"
     And request contains "resource_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"resource_type": "kafka", "tags": ["myTag", "myTag2:myValue"]}, "id": "resource-id-123", "type": "confluent-cloud-resources"}}
+    And body with value {"data": {"attributes": {"enable_custom_metrics": false, "resource_type": "kafka", "tags": ["myTag", "myTag2:myValue"]}, "id": "resource-id-123", "type": "confluent-cloud-resources"}}
     When the request is sent
     Then the response status is 200 OK
