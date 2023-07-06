@@ -11,7 +11,6 @@ from datadog_api_client.model_utils import (
 
 
 class NotebookCellTime(ModelComposed):
-
     _nullable = True
 
     def __init__(self, **kwargs):
