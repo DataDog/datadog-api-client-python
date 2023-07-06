@@ -56,6 +56,7 @@ body = Dashboard(
                                 measure=FormulaAndFunctionSLOMeasure.SLO_STATUS,
                                 group_mode=FormulaAndFunctionSLOGroupMode.OVERALL,
                                 slo_query_type=FormulaAndFunctionSLOQueryType.METRIC,
+                                additional_query_filters="*",
                             ),
                         ],
                         response_format=FormulaAndFunctionResponseFormat.SCALAR,
