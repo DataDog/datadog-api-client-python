@@ -21,6 +21,7 @@ body = ConfluentResourceRequest(
                 "myTag",
                 "myTag2:myValue",
             ],
+            enable_custom_metrics=False,
         ),
         id="exampleconfluentcloud",
         type=ConfluentResourceType.CONFLUENT_CLOUD_RESOURCES,
