@@ -12,6 +12,7 @@ from datadog_api_client.v2.model.confluent_resource_type import ConfluentResourc
 body = ConfluentResourceRequest(
     data=ConfluentResourceRequestData(
         attributes=ConfluentResourceRequestAttributes(
+            enable_custom_metrics=False,
             resource_type="kafka",
             tags=[
                 "myTag",
