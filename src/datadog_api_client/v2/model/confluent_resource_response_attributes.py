@@ -18,12 +18,14 @@ class ConfluentResourceResponseAttributes(ModelNormal):
     def openapi_types(_):
         return {
             "enable_custom_metrics": (bool,),
+            "id": (str,),
             "resource_type": (str,),
             "tags": ([str],),
         }
 
     attribute_map = {
         "enable_custom_metrics": "enable_custom_metrics",
+        "id": "id",
         "resource_type": "resource_type",
         "tags": "tags",
     }
@@ -32,6 +34,7 @@ class ConfluentResourceResponseAttributes(ModelNormal):
         self_,
         resource_type: str,
         enable_custom_metrics: Union[bool, UnsetType] = unset,
+        id: Union[str, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
         **kwargs,
     ):
@@ -41,6 +44,9 @@ class ConfluentResourceResponseAttributes(ModelNormal):
         :param enable_custom_metrics: Enable the ``custom.consumer_lag_offset`` metric, which contains extra metric tags.
         :type enable_custom_metrics: bool, optional
 
+        :param id: The ID associated with the Confluent resource.
+        :type id: str, optional
+
         :param resource_type: The resource type of the Resource. Can be ``kafka`` , ``connector`` , ``ksql`` , or ``schema_registry``.
         :type resource_type: str
 
@@ -49,6 +55,8 @@ class ConfluentResourceResponseAttributes(ModelNormal):
         """
         if enable_custom_metrics is not unset:
             kwargs["enable_custom_metrics"] = enable_custom_metrics
+        if id is not unset:
+            kwargs["id"] = id
         if tags is not unset:
             kwargs["tags"] = tags
         super().__init__(kwargs)
