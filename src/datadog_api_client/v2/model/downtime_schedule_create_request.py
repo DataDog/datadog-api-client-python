@@ -22,7 +22,7 @@ class DowntimeScheduleCreateRequest(ModelComposed):
         :type timezone: str, optional
 
         :param end: ISO-8601 Datetime to end the downtime. Must include a UTC offset of zero. If not provided, the
-            downtime starts the moment it is created.
+            downtime continues forever.
         :type end: datetime, none_type, optional
 
         :param start: ISO-8601 Datetime to start the downtime. Must include a UTC offset of zero. If not provided, the
