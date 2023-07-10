@@ -14,8 +14,8 @@ from datadog_api_client.v2.model.restriction_policy_update_request import Restri
 class RestrictionPoliciesApi:
     """
     A restriction policy defines the access control rules for a resource, mapping a set of relations
-    (such as editor and viewer) to a set of allowed principals (such as roles). The restriction policy
-    determines who is authorized to perform what actions on the resource.
+    (such as editor and viewer) to a set of allowed principals (such as roles, teams (beta), or users (beta)).
+    The restriction policy determines who is authorized to perform what actions on the resource.
     """
 
     def __init__(self, api_client=None):
