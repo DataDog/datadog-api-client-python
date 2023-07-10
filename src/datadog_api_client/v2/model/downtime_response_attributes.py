@@ -37,10 +37,11 @@ class DowntimeResponseAttributes(ModelNormal):
         from datadog_api_client.v2.model.downtime_status import DowntimeStatus
 
         return {
-            "created_at": (datetime,),
+            "canceled": (datetime, none_type),
+            "created": (datetime,),
             "display_timezone": (str,),
             "message": (str,),
-            "modified_at": (datetime,),
+            "modified": (datetime,),
             "monitor_identifier": (DowntimeMonitorIdentifier,),
             "mute_first_recovery_notification": (bool,),
             "notify_end_states": ([DowntimeNotifyEndStateTypes],),
@@ -51,10 +52,11 @@ class DowntimeResponseAttributes(ModelNormal):
         }
 
     attribute_map = {
-        "created_at": "created_at",
+        "canceled": "canceled",
+        "created": "created",
         "display_timezone": "display_timezone",
         "message": "message",
-        "modified_at": "modified_at",
+        "modified": "modified",
         "monitor_identifier": "monitor_identifier",
         "mute_first_recovery_notification": "mute_first_recovery_notification",
         "notify_end_states": "notify_end_states",
@@ -66,10 +68,11 @@ class DowntimeResponseAttributes(ModelNormal):
 
     def __init__(
         self_,
-        created_at: Union[datetime, UnsetType] = unset,
+        canceled: Union[datetime, none_type, UnsetType] = unset,
+        created: Union[datetime, UnsetType] = unset,
         display_timezone: Union[str, none_type, UnsetType] = unset,
         message: Union[str, none_type, UnsetType] = unset,
-        modified_at: Union[datetime, UnsetType] = unset,
+        modified: Union[datetime, UnsetType] = unset,
         monitor_identifier: Union[
             DowntimeMonitorIdentifier, DowntimeMonitorIdentifierId, DowntimeMonitorIdentifierTags, UnsetType
         ] = unset,
@@ -86,8 +89,11 @@ class DowntimeResponseAttributes(ModelNormal):
         """
         Downtime details.
 
-        :param created_at: Creation time of the downtime.
-        :type created_at: datetime, optional
+        :param canceled: Time that the downtime was canceled.
+        :type canceled: datetime, none_type, optional
+
+        :param created: Creation time of the downtime.
+        :type created: datetime, optional
 
         :param display_timezone: The timezone in which to display the downtime's start and end times in Datadog applications. This is not used
             as an offset for scheduling.
@@ -97,8 +103,8 @@ class DowntimeResponseAttributes(ModelNormal):
             by using the same ``@username`` notation as events.
         :type message: str, none_type, optional
 
-        :param modified_at: Time that the downtime was last modified.
-        :type modified_at: datetime, optional
+        :param modified: Time that the downtime was last modified.
+        :type modified: datetime, optional
 
         :param monitor_identifier: Monitor identifier for the downtime.
         :type monitor_identifier: DowntimeMonitorIdentifier, optional
@@ -123,14 +129,16 @@ class DowntimeResponseAttributes(ModelNormal):
         :param status: The current status of the downtime.
         :type status: DowntimeStatus, optional
         """
-        if created_at is not unset:
-            kwargs["created_at"] = created_at
+        if canceled is not unset:
+            kwargs["canceled"] = canceled
+        if created is not unset:
+            kwargs["created"] = created
         if display_timezone is not unset:
             kwargs["display_timezone"] = display_timezone
         if message is not unset:
             kwargs["message"] = message
-        if modified_at is not unset:
-            kwargs["modified_at"] = modified_at
+        if modified is not unset:
+            kwargs["modified"] = modified
         if monitor_identifier is not unset:
             kwargs["monitor_identifier"] = monitor_identifier
         if mute_first_recovery_notification is not unset:
