@@ -35,6 +35,9 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.formula_and_function_slo_query_definition import (
         FormulaAndFunctionSLOQueryDefinition,
     )
+    from datadog_api_client.v1.model.formula_and_function_cloud_cost_query_definition import (
+        FormulaAndFunctionCloudCostQueryDefinition,
+    )
 
 
 class ScatterplotTableRequest(ModelNormal):
@@ -69,6 +72,7 @@ class ScatterplotTableRequest(ModelNormal):
                     FormulaAndFunctionApmDependencyStatsQueryDefinition,
                     FormulaAndFunctionApmResourceStatsQueryDefinition,
                     FormulaAndFunctionSLOQueryDefinition,
+                    FormulaAndFunctionCloudCostQueryDefinition,
                 ]
             ],
             UnsetType,
