@@ -1,14 +1,13 @@
 """
-Create a user returns "User created" response
+Create a user returns null access role
 """
 
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.users_api import UsersApi
-from datadog_api_client.v1.model.access_role import AccessRole
 from datadog_api_client.v1.model.user import User
 
 body = User(
-    access_role=AccessRole.READ_ONLY,
+    access_role=None,
     disabled=False,
     email="test@datadoghq.com",
     handle="test@datadoghq.com",

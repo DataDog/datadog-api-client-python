@@ -16,7 +16,7 @@ class AccessRole(ModelSimple):
     """
     The access role of the user. Options are **st** (standard user), **adm** (admin user), or **ro** (read-only user).
 
-    :param value: If omitted defaults to "st". Must be one of ["st", "adm", "ro", "ERROR"].
+    :param value: Must be one of ["st", "adm", "ro", "ERROR"].
     :type value: str
     """
 
@@ -30,6 +30,8 @@ class AccessRole(ModelSimple):
     ADMIN: ClassVar["AccessRole"]
     READ_ONLY: ClassVar["AccessRole"]
     ERROR: ClassVar["AccessRole"]
+
+    _nullable = True
 
     @cached_property
     def openapi_types(_):

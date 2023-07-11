@@ -8,7 +8,7 @@ from datadog_api_client.v1.model.access_role import AccessRole
 from datadog_api_client.v1.model.user import User
 
 body = User(
-    access_role=AccessRole.STANDARD,
+    access_role=AccessRole.READ_ONLY,
     disabled=False,
     email="test@datadoghq.com",
     handle="test@datadoghq.com",
