@@ -160,6 +160,18 @@ Feature: Dashboards
     And the response "widgets[0].definition.requests[0].queries[0].query" is equal to "sum:my.cool.count.metric{*}"
 
   @team:DataDog/dashboards-backend
+  Scenario: Create a new dashboard with a timeseries widget using formulas and functions cloud cost query
+    Given new "CreateDashboard" request
+    And body with value { "title": "{{ unique }}", "widgets": [ { "definition": { "title": "Example Cloud Cost Query", "title_size": "16", "title_align": "left", "type": "timeseries",  "requests": [ { "formulas": [ { "formula": "query1" } ], "queries": [ { "data_source": "cloud_cost", "name": "query1", "query": "sum:aws.cost.amortized{*} by {aws_product}.rollup(sum, monthly)" } ], "response_format": "timeseries", "style": { "palette": "dog_classic", "line_type": "solid", "line_width": "normal" }, "display_type": "bars" } ] } } ], "layout_type": "ordered" }
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.requests[0].response_format" is equal to "timeseries"
+    And the response "widgets[0].definition.requests[0].queries[0].data_source" is equal to "cloud_cost"
+    And the response "widgets[0].definition.requests[0].queries[0].name" is equal to "query1"
+    And the response "widgets[0].definition.requests[0].queries[0].query" is equal to "sum:aws.cost.amortized{*} by {aws_product}.rollup(sum, monthly)"
+    And the response "widgets[0].definition.requests[0].formulas[0].formula" is equal to "query1"
+
+  @team:DataDog/dashboards-backend
   Scenario: Create a new dashboard with alert_graph widget
     Given there is a valid "monitor" in the system
     And new "CreateDashboard" request

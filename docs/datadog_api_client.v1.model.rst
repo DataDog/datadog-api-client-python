@@ -750,6 +750,20 @@ formula\_and\_function\_apm\_resource\_stats\_query\_definition
    :members:
    :show-inheritance:
 
+formula\_and\_function\_cloud\_cost\_data\_source
+-------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.formula_and_function_cloud_cost_data_source
+   :members:
+   :show-inheritance:
+
+formula\_and\_function\_cloud\_cost\_query\_definition
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.formula_and_function_cloud_cost_query_definition
+   :members:
+   :show-inheritance:
+
 formula\_and\_function\_event\_aggregation
 ------------------------------------------
 
