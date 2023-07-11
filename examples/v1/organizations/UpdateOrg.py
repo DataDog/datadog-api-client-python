@@ -30,7 +30,7 @@ body = Organization(
         saml=OrganizationSettingsSaml(
             enabled=False,
         ),
-        saml_autocreate_access_role=AccessRole.STANDARD,
+        saml_autocreate_access_role=AccessRole.READ_ONLY,
         saml_autocreate_users_domains=OrganizationSettingsSamlAutocreateUsersDomains(
             domains=[
                 "example.com",

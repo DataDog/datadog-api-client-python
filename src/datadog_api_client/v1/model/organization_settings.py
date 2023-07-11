@@ -8,6 +8,7 @@ from typing import Union, TYPE_CHECKING
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    none_type,
     unset,
     UnsetType,
 )
@@ -70,7 +71,7 @@ class OrganizationSettings(ModelNormal):
         self_,
         private_widget_share: Union[bool, UnsetType] = unset,
         saml: Union[OrganizationSettingsSaml, UnsetType] = unset,
-        saml_autocreate_access_role: Union[AccessRole, UnsetType] = unset,
+        saml_autocreate_access_role: Union[AccessRole, none_type, UnsetType] = unset,
         saml_autocreate_users_domains: Union[OrganizationSettingsSamlAutocreateUsersDomains, UnsetType] = unset,
         saml_can_be_enabled: Union[bool, UnsetType] = unset,
         saml_idp_endpoint: Union[str, UnsetType] = unset,
@@ -91,7 +92,7 @@ class OrganizationSettings(ModelNormal):
         :type saml: OrganizationSettingsSaml, optional
 
         :param saml_autocreate_access_role: The access role of the user. Options are **st** (standard user), **adm** (admin user), or **ro** (read-only user).
-        :type saml_autocreate_access_role: AccessRole, optional
+        :type saml_autocreate_access_role: AccessRole, none_type, optional
 
         :param saml_autocreate_users_domains: Has two properties, ``enabled`` (boolean) and ``domains`` , which is a list of domains without the @ symbol.
         :type saml_autocreate_users_domains: OrganizationSettingsSamlAutocreateUsersDomains, optional
