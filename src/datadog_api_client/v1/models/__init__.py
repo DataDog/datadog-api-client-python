@@ -121,6 +121,12 @@ from datadog_api_client.v1.model.formula_and_function_apm_resource_stats_data_so
 from datadog_api_client.v1.model.formula_and_function_apm_resource_stats_query_definition import (
     FormulaAndFunctionApmResourceStatsQueryDefinition,
 )
+from datadog_api_client.v1.model.formula_and_function_cloud_cost_data_source import (
+    FormulaAndFunctionCloudCostDataSource,
+)
+from datadog_api_client.v1.model.formula_and_function_cloud_cost_query_definition import (
+    FormulaAndFunctionCloudCostQueryDefinition,
+)
 from datadog_api_client.v1.model.formula_and_function_event_aggregation import FormulaAndFunctionEventAggregation
 from datadog_api_client.v1.model.formula_and_function_event_query_definition import (
     FormulaAndFunctionEventQueryDefinition,
@@ -1019,6 +1025,8 @@ __all__ = [
     "FormulaAndFunctionApmResourceStatName",
     "FormulaAndFunctionApmResourceStatsDataSource",
     "FormulaAndFunctionApmResourceStatsQueryDefinition",
+    "FormulaAndFunctionCloudCostDataSource",
+    "FormulaAndFunctionCloudCostQueryDefinition",
     "FormulaAndFunctionEventAggregation",
     "FormulaAndFunctionEventQueryDefinition",
     "FormulaAndFunctionEventQueryDefinitionCompute",
