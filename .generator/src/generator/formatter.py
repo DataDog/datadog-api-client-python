@@ -226,6 +226,8 @@ def format_data_with_schema(
 
     name = None
     imports = imports or defaultdict(set)
+    nullable = schema.get("nullable", False)
+
     if schema.get("type") not in {"string", "integer", "boolean"} or schema.get("enum"):
         name, imports = get_name_and_imports(schema, version, imports)
     if schema.get("oneOf"):
@@ -233,18 +235,25 @@ def format_data_with_schema(
     if name:
         imports[MODEL_IMPORT_TPL.format(version=version, name=safe_snake_case(name))].add(name)
 
-    if "enum" in schema and data not in schema["enum"]:
-        raise ValueError(f"{data} is not valid enum value {schema['enum']}")
+    if "enum" in schema:
+        if nullable and data is None:
+            pass
+        elif data not in schema["enum"]:
+            raise ValueError(f"{data} is not valid enum value {schema['enum']}")
 
     if replace_values and data in replace_values:
         parameters = replace_values[data]
         if schema.get("format") in ("int32", "int64"):
             parameters = f"int({parameters})"
     elif "enum" in schema:
-        parameters = schema["x-enum-varnames"][schema["enum"].index(data)]
-        return f"{name}.{parameters}", imports
+        if nullable and data is None:
+            parameters = repr(data)
+            return parameters, imports
+        else:
+            parameters = schema["x-enum-varnames"][schema["enum"].index(data)]
+            return f"{name}.{parameters}", imports
     else:
-        if schema.get("nullable") and data is None:
+        if nullable and data is None:
             parameters = repr(data)
             return parameters, imports
         else:
