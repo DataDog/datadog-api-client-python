@@ -37,6 +37,7 @@ class DashboardListItem(ModelNormal):
             "created": (datetime,),
             "icon": (str, none_type),
             "id": (str,),
+            "integration_id": (str, none_type),
             "is_favorite": (bool,),
             "is_read_only": (bool,),
             "is_shared": (bool,),
@@ -52,6 +53,7 @@ class DashboardListItem(ModelNormal):
         "created": "created",
         "icon": "icon",
         "id": "id",
+        "integration_id": "integration_id",
         "is_favorite": "is_favorite",
         "is_read_only": "is_read_only",
         "is_shared": "is_shared",
@@ -64,6 +66,7 @@ class DashboardListItem(ModelNormal):
     read_only_vars = {
         "created",
         "icon",
+        "integration_id",
         "is_favorite",
         "is_read_only",
         "is_shared",
@@ -80,6 +83,7 @@ class DashboardListItem(ModelNormal):
         author: Union[Creator, UnsetType] = unset,
         created: Union[datetime, UnsetType] = unset,
         icon: Union[str, none_type, UnsetType] = unset,
+        integration_id: Union[str, none_type, UnsetType] = unset,
         is_favorite: Union[bool, UnsetType] = unset,
         is_read_only: Union[bool, UnsetType] = unset,
         is_shared: Union[bool, UnsetType] = unset,
@@ -103,6 +107,9 @@ class DashboardListItem(ModelNormal):
 
         :param id: ID of the dashboard.
         :type id: str
+
+        :param integration_id: The short name of the integration.
+        :type integration_id: str, none_type, optional
 
         :param is_favorite: Whether or not the dashboard is in the favorites.
         :type is_favorite: bool, optional
@@ -134,6 +141,8 @@ class DashboardListItem(ModelNormal):
             kwargs["created"] = created
         if icon is not unset:
             kwargs["icon"] = icon
+        if integration_id is not unset:
+            kwargs["integration_id"] = integration_id
         if is_favorite is not unset:
             kwargs["is_favorite"] = is_favorite
         if is_read_only is not unset:
