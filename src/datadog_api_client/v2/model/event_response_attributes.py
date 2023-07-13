@@ -25,12 +25,14 @@ class EventResponseAttributes(ModelNormal):
 
         return {
             "attributes": (EventAttributes,),
+            "message": (str,),
             "tags": ([str],),
             "timestamp": (datetime,),
         }
 
     attribute_map = {
         "attributes": "attributes",
+        "message": "message",
         "tags": "tags",
         "timestamp": "timestamp",
     }
@@ -38,6 +40,7 @@ class EventResponseAttributes(ModelNormal):
     def __init__(
         self_,
         attributes: Union[EventAttributes, UnsetType] = unset,
+        message: Union[str, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
         timestamp: Union[datetime, UnsetType] = unset,
         **kwargs,
@@ -48,6 +51,9 @@ class EventResponseAttributes(ModelNormal):
         :param attributes: Object description of attributes from your event.
         :type attributes: EventAttributes, optional
 
+        :param message: The message of the event.
+        :type message: str, optional
+
         :param tags: An array of tags associated with the event.
         :type tags: [str], optional
 
@@ -56,6 +62,8 @@ class EventResponseAttributes(ModelNormal):
         """
         if attributes is not unset:
             kwargs["attributes"] = attributes
+        if message is not unset:
+            kwargs["message"] = message
         if tags is not unset:
             kwargs["tags"] = tags
         if timestamp is not unset:
