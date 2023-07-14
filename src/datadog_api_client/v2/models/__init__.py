@@ -1184,6 +1184,8 @@ from datadog_api_client.v2.model.slack_integration_metadata import SlackIntegrat
 from datadog_api_client.v2.model.slack_integration_metadata_channel_item import SlackIntegrationMetadataChannelItem
 from datadog_api_client.v2.model.span import Span
 from datadog_api_client.v2.model.spans_aggregate_bucket import SpansAggregateBucket
+from datadog_api_client.v2.model.spans_aggregate_bucket_attributes import SpansAggregateBucketAttributes
+from datadog_api_client.v2.model.spans_aggregate_bucket_type import SpansAggregateBucketType
 from datadog_api_client.v2.model.spans_aggregate_bucket_value import SpansAggregateBucketValue
 from datadog_api_client.v2.model.spans_aggregate_bucket_value_timeseries_point import (
     SpansAggregateBucketValueTimeseriesPoint,
@@ -2302,6 +2304,8 @@ __all__ = [
     "SlackIntegrationMetadataChannelItem",
     "Span",
     "SpansAggregateBucket",
+    "SpansAggregateBucketAttributes",
+    "SpansAggregateBucketType",
     "SpansAggregateBucketValue",
     "SpansAggregateBucketValueTimeseriesPoint",
     "SpansAggregateData",

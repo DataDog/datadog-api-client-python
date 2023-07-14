@@ -3,75 +3,62 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Any, Dict, List, Union, TYPE_CHECKING
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    date,
-    datetime,
-    none_type,
     unset,
     UnsetType,
 )
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.spans_aggregate_bucket_value import SpansAggregateBucketValue
-    from datadog_api_client.v2.model.spans_aggregate_bucket_value_timeseries_point import (
-        SpansAggregateBucketValueTimeseriesPoint,
-    )
+    from datadog_api_client.v2.model.spans_aggregate_bucket_attributes import SpansAggregateBucketAttributes
+    from datadog_api_client.v2.model.spans_aggregate_bucket_type import SpansAggregateBucketType
 
 
 class SpansAggregateBucket(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.spans_aggregate_bucket_value import SpansAggregateBucketValue
+        from datadog_api_client.v2.model.spans_aggregate_bucket_attributes import SpansAggregateBucketAttributes
+        from datadog_api_client.v2.model.spans_aggregate_bucket_type import SpansAggregateBucketType
 
         return {
-            "by": (
-                {
-                    str: (
-                        bool,
-                        date,
-                        datetime,
-                        dict,
-                        float,
-                        int,
-                        list,
-                        str,
-                        none_type,
-                    )
-                },
-            ),
-            "computes": ({str: (SpansAggregateBucketValue,)},),
+            "attributes": (SpansAggregateBucketAttributes,),
+            "id": (str,),
+            "type": (SpansAggregateBucketType,),
         }
 
     attribute_map = {
-        "by": "by",
-        "computes": "computes",
+        "attributes": "attributes",
+        "id": "id",
+        "type": "type",
     }
 
     def __init__(
         self_,
-        by: Union[Dict[str, Any], UnsetType] = unset,
-        computes: Union[
-            Dict[str, Union[SpansAggregateBucketValue, str, float, List[SpansAggregateBucketValueTimeseriesPoint]]],
-            UnsetType,
-        ] = unset,
+        attributes: Union[SpansAggregateBucketAttributes, UnsetType] = unset,
+        id: Union[str, UnsetType] = unset,
+        type: Union[SpansAggregateBucketType, UnsetType] = unset,
         **kwargs,
     ):
         """
-        A bucket values.
+        Spans aggregate.
 
-        :param by: The key, value pairs for each group by.
-        :type by: {str: (bool, date, datetime, dict, float, int, list, str, none_type,)}, optional
+        :param attributes: A bucket values.
+        :type attributes: SpansAggregateBucketAttributes, optional
 
-        :param computes: A map of the metric name -> value for regular compute or list of values for a timeseries.
-        :type computes: {str: (SpansAggregateBucketValue,)}, optional
+        :param id: ID of the spans aggregate.
+        :type id: str, optional
+
+        :param type: The spans aggregate bucket type.
+        :type type: SpansAggregateBucketType, optional
         """
-        if by is not unset:
-            kwargs["by"] = by
-        if computes is not unset:
-            kwargs["computes"] = computes
+        if attributes is not unset:
+            kwargs["attributes"] = attributes
+        if id is not unset:
+            kwargs["id"] = id
+        if type is not unset:
+            kwargs["type"] = type
         super().__init__(kwargs)

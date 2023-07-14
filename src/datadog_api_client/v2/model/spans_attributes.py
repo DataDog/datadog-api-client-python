@@ -35,6 +35,21 @@ class SpansAttributes(ModelNormal):
                     )
                 },
             ),
+            "custom": (
+                {
+                    str: (
+                        bool,
+                        date,
+                        datetime,
+                        dict,
+                        float,
+                        int,
+                        list,
+                        str,
+                        none_type,
+                    )
+                },
+            ),
             "end_timestamp": (datetime,),
             "env": (str,),
             "host": (str,),
@@ -54,6 +69,7 @@ class SpansAttributes(ModelNormal):
 
     attribute_map = {
         "attributes": "attributes",
+        "custom": "custom",
         "end_timestamp": "end_timestamp",
         "env": "env",
         "host": "host",
@@ -74,6 +90,7 @@ class SpansAttributes(ModelNormal):
     def __init__(
         self_,
         attributes: Union[Dict[str, Any], UnsetType] = unset,
+        custom: Union[Dict[str, Any], UnsetType] = unset,
         end_timestamp: Union[datetime, UnsetType] = unset,
         env: Union[str, UnsetType] = unset,
         host: Union[str, UnsetType] = unset,
@@ -96,6 +113,9 @@ class SpansAttributes(ModelNormal):
 
         :param attributes: JSON object of attributes from your span.
         :type attributes: {str: (bool, date, datetime, dict, float, int, list, str, none_type,)}, optional
+
+        :param custom: JSON object of custom spans data.
+        :type custom: {str: (bool, date, datetime, dict, float, int, list, str, none_type,)}, optional
 
         :param end_timestamp: End timestamp of your span.
         :type end_timestamp: datetime, optional
@@ -146,6 +166,8 @@ class SpansAttributes(ModelNormal):
         """
         if attributes is not unset:
             kwargs["attributes"] = attributes
+        if custom is not unset:
+            kwargs["custom"] = custom
         if end_timestamp is not unset:
             kwargs["end_timestamp"] = end_timestamp
         if env is not unset:
