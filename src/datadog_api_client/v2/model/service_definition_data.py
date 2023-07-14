@@ -24,17 +24,20 @@ class ServiceDefinitionData(ModelNormal):
 
         return {
             "attributes": (ServiceDefinitionDataAttributes,),
+            "id": (str,),
             "type": (str,),
         }
 
     attribute_map = {
         "attributes": "attributes",
+        "id": "id",
         "type": "type",
     }
 
     def __init__(
         self_,
         attributes: Union[ServiceDefinitionDataAttributes, UnsetType] = unset,
+        id: Union[str, UnsetType] = unset,
         type: Union[str, UnsetType] = unset,
         **kwargs,
     ):
@@ -44,11 +47,16 @@ class ServiceDefinitionData(ModelNormal):
         :param attributes: Service definition attributes.
         :type attributes: ServiceDefinitionDataAttributes, optional
 
+        :param id: Service definition id.
+        :type id: str, optional
+
         :param type: Service definition type.
         :type type: str, optional
         """
         if attributes is not unset:
             kwargs["attributes"] = attributes
+        if id is not unset:
+            kwargs["id"] = id
         if type is not unset:
             kwargs["type"] = type
         super().__init__(kwargs)

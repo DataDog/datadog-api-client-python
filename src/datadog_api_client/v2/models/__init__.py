@@ -1136,6 +1136,7 @@ from datadog_api_client.v2.model.service_definition_data import ServiceDefinitio
 from datadog_api_client.v2.model.service_definition_data_attributes import ServiceDefinitionDataAttributes
 from datadog_api_client.v2.model.service_definition_get_response import ServiceDefinitionGetResponse
 from datadog_api_client.v2.model.service_definition_meta import ServiceDefinitionMeta
+from datadog_api_client.v2.model.service_definition_meta_warnings import ServiceDefinitionMetaWarnings
 from datadog_api_client.v2.model.service_definition_schema import ServiceDefinitionSchema
 from datadog_api_client.v2.model.service_definition_schema_versions import ServiceDefinitionSchemaVersions
 from datadog_api_client.v2.model.service_definition_v1 import ServiceDefinitionV1
@@ -2253,6 +2254,7 @@ __all__ = [
     "ServiceDefinitionDataAttributes",
     "ServiceDefinitionGetResponse",
     "ServiceDefinitionMeta",
+    "ServiceDefinitionMetaWarnings",
     "ServiceDefinitionSchema",
     "ServiceDefinitionSchemaVersions",
     "ServiceDefinitionV1",

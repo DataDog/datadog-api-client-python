@@ -6413,6 +6413,13 @@ service\_definition\_meta
    :members:
    :show-inheritance:
 
+service\_definition\_meta\_warnings
+-----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_definition_meta_warnings
+   :members:
+   :show-inheritance:
+
 service\_definition\_schema
 ---------------------------
 
