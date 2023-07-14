@@ -6728,6 +6728,20 @@ spans\_aggregate\_bucket
    :members:
    :show-inheritance:
 
+spans\_aggregate\_bucket\_attributes
+------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_aggregate_bucket_attributes
+   :members:
+   :show-inheritance:
+
+spans\_aggregate\_bucket\_type
+------------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_aggregate_bucket_type
+   :members:
+   :show-inheritance:
+
 spans\_aggregate\_bucket\_value
 -------------------------------
 
