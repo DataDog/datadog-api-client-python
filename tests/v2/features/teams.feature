@@ -55,6 +55,7 @@ Feature: Teams
     And body with value {"data": {"attributes": {"handle": "handle-{{ unique_hash }}", "name": "name-{{ unique_hash }}"}, "relationships": {"users": {"data": []}}, "type": "team"}}
     When the request is sent
     Then the response status is 201 CREATED
+    And the response "data" has field "id"
 
   @team:DataDog/core-app
   Scenario: Get a team link returns "API error response." response
