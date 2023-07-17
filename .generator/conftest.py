@@ -535,7 +535,7 @@ def expect_false(context, response_path):
 
 
 @then(parsers.parse('the response "{response_path}" has field "{field}"'))
-def expect_false(context, response_path, field):
+def expect_response_has_field(context, response_path, field):
     """Check that a response has field."""
 
 
