@@ -25,7 +25,7 @@ logger = logging.getLogger(__name__)
 
 
 class DDRetry(Retry):
-    def __init__(self):
+    def __init__(self,**kwargs):
         super().__init__(self)
         self.RETRY_AFTER_STATUS_CODES = frozenset([413, 429, 500, 501, 502, 503, 504, 505, 506, 507, 509, 510, 511])
 
@@ -89,8 +89,8 @@ class RESTClientObject:
             )
 
             addition_pool_args["retries"] = retries
-
-        addition_pool_args["retries"] = False
+        else:
+            addition_pool_args["retries"] = False
 
         if configuration.socket_options is not None:
             addition_pool_args["socket_options"] = configuration.socket_options
