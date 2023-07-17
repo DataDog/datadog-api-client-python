@@ -40,7 +40,6 @@ class MonitorsApi:
                 "operation_id": "check_can_delete_monitor",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "monitor_ids": {
@@ -53,7 +52,6 @@ class MonitorsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -66,7 +64,6 @@ class MonitorsApi:
                 "operation_id": "create_monitor",
                 "http_method": "POST",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -87,7 +84,6 @@ class MonitorsApi:
                 "operation_id": "delete_monitor",
                 "http_method": "DELETE",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "monitor_id": {
@@ -104,7 +100,6 @@ class MonitorsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -117,7 +112,6 @@ class MonitorsApi:
                 "operation_id": "get_monitor",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "monitor_id": {
@@ -131,10 +125,14 @@ class MonitorsApi:
                     "attribute": "group_states",
                     "location": "query",
                 },
+                "with_downtimes": {
+                    "openapi_types": (bool,),
+                    "attribute": "with_downtimes",
+                    "location": "query",
+                },
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -147,7 +145,6 @@ class MonitorsApi:
                 "operation_id": "list_monitors",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "group_states": {
@@ -196,7 +193,6 @@ class MonitorsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -209,7 +205,6 @@ class MonitorsApi:
                 "operation_id": "search_monitor_groups",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "query": {
@@ -235,7 +230,6 @@ class MonitorsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -248,7 +242,6 @@ class MonitorsApi:
                 "operation_id": "search_monitors",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "query": {
@@ -274,7 +267,6 @@ class MonitorsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -287,7 +279,6 @@ class MonitorsApi:
                 "operation_id": "update_monitor",
                 "http_method": "PUT",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "monitor_id": {
@@ -314,7 +305,6 @@ class MonitorsApi:
                 "operation_id": "validate_existing_monitor",
                 "http_method": "POST",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "monitor_id": {
@@ -341,7 +331,6 @@ class MonitorsApi:
                 "operation_id": "validate_monitor",
                 "http_method": "POST",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -403,6 +392,7 @@ class MonitorsApi:
         * event-v2: ``event-v2 alert``
         * audit: ``audit alert``
         * error-tracking: ``error-tracking alert``
+        * database-monitoring: ``database-monitoring alert``
 
         **Note** : Synthetic monitors are created through the Synthetics API. See the [Synthetics API] (https://docs.datadoghq.com/api/latest/synthetics/) documentation for more information.
 
@@ -563,6 +553,19 @@ class MonitorsApi:
         * ``operator`` ``<`` , ``<=`` , ``>`` , ``>=`` , ``==`` , or ``!=``.
         * ``#`` an integer or decimal number used to set the threshold.
 
+        **Database Monitoring Alert Query**
+
+        Example: ``database-monitoring(query).rollup(rollup_method[, measure]).last(time_window) operator #``
+
+        * ``query`` The search query - following the `Log search syntax <https://docs.datadoghq.com/logs/search_syntax/>`_.
+        * ``rollup_method`` The stats roll-up method - supports ``count`` , ``avg`` , and ``cardinality``.
+        * ``measure`` For ``avg`` and cardinality ``rollup_method`` - specify the measure or the facet name you want to use.
+        * ``time_window`` #m (between 1 and 2880), #h (between 1 and 48).
+        * ``operator`` ``<`` , ``<=`` , ``>`` , ``>=`` , ``==`` , or ``!=``.
+        * ``#`` an integer or decimal number used to set the threshold.
+
+        **NOTE** Database Monitoring monitors are in alpha on US1.
+
         :param body: Create a monitor request body.
         :type body: Monitor
         :rtype: Monitor
@@ -601,6 +604,7 @@ class MonitorsApi:
         monitor_id: int,
         *,
         group_states: Union[str, UnsetType] = unset,
+        with_downtimes: Union[bool, UnsetType] = unset,
     ) -> Monitor:
         """Get a monitor's details.
 
@@ -610,6 +614,8 @@ class MonitorsApi:
         :type monitor_id: int
         :param group_states: When specified, shows additional information about the group states. Choose one or more from ``all`` , ``alert`` , ``warn`` , and ``no data``.
         :type group_states: str, optional
+        :param with_downtimes: If this argument is set to true, then the returned data includes all current active downtimes for the monitor.
+        :type with_downtimes: bool, optional
         :rtype: Monitor
         """
         kwargs: Dict[str, Any] = {}
@@ -617,6 +623,9 @@ class MonitorsApi:
 
         if group_states is not unset:
             kwargs["group_states"] = group_states
+
+        if with_downtimes is not unset:
+            kwargs["with_downtimes"] = with_downtimes
 
         return self._get_monitor_endpoint.call_with_http_info(**kwargs)
 

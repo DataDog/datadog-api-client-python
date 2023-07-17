@@ -39,6 +39,12 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.formula_and_function_apm_resource_stats_query_definition import (
         FormulaAndFunctionApmResourceStatsQueryDefinition,
     )
+    from datadog_api_client.v1.model.formula_and_function_slo_query_definition import (
+        FormulaAndFunctionSLOQueryDefinition,
+    )
+    from datadog_api_client.v1.model.formula_and_function_cloud_cost_query_definition import (
+        FormulaAndFunctionCloudCostQueryDefinition,
+    )
 
 
 class TableWidgetRequest(ModelNormal):
@@ -125,6 +131,8 @@ class TableWidgetRequest(ModelNormal):
                     FormulaAndFunctionProcessQueryDefinition,
                     FormulaAndFunctionApmDependencyStatsQueryDefinition,
                     FormulaAndFunctionApmResourceStatsQueryDefinition,
+                    FormulaAndFunctionSLOQueryDefinition,
+                    FormulaAndFunctionCloudCostQueryDefinition,
                 ]
             ],
             UnsetType,
@@ -185,7 +193,7 @@ class TableWidgetRequest(ModelNormal):
         :param queries: List of queries that can be returned directly or used in formulas.
         :type queries: [FormulaAndFunctionQueryDefinition], optional
 
-        :param response_format: Timeseries or Scalar response.
+        :param response_format: Timeseries, scalar, or event list response. Event list response formats are supported by Geomap widgets.
         :type response_format: FormulaAndFunctionResponseFormat, optional
 
         :param rum_query: The log query.

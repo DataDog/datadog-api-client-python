@@ -1,0 +1,20 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/monitor/35534610/downtime_matches
+  response:
+    body:
+      string: '{"data":[{"type":"downtime_match","id":"aeefc6a8-15d8-11ee-a8ef-da7ad0900002","attributes":{"groups":["*"],"scope":"*","start":"2023-06-28T17:23:57.324000+00:00","end":null}}],"meta":{"page":{"total_filtered_count":1}}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

@@ -47,6 +47,8 @@ class UsageSummaryResponse(ModelNormal):
             "ci_test_indexed_spans_agg_sum": (int,),
             "ci_visibility_pipeline_committers_hwm_sum": (int,),
             "ci_visibility_test_committers_hwm_sum": (int,),
+            "cloud_cost_management_aws_host_count_avg_sum": (int,),
+            "cloud_cost_management_azure_host_count_avg_sum": (int,),
             "cloud_cost_management_host_count_avg_sum": (int,),
             "container_avg_sum": (int,),
             "container_excl_agent_avg_sum": (int,),
@@ -85,6 +87,7 @@ class UsageSummaryResponse(ModelNormal):
             "mobile_rum_session_count_flutter_agg_sum": (int,),
             "mobile_rum_session_count_ios_agg_sum": (int,),
             "mobile_rum_session_count_reactnative_agg_sum": (int,),
+            "mobile_rum_session_count_roku_agg_sum": (int,),
             "mobile_rum_units_agg_sum": (int,),
             "netflow_indexed_events_count_agg_sum": (int,),
             "npm_host_top99p_sum": (int,),
@@ -114,6 +117,7 @@ class UsageSummaryResponse(ModelNormal):
             "universal_service_monitoring_host_top99p_sum": (int,),
             "usage": ([UsageSummaryDate],),
             "vsphere_host_top99p_sum": (int,),
+            "vuln_management_host_count_top99p_sum": (int,),
         }
 
     attribute_map = {
@@ -138,6 +142,8 @@ class UsageSummaryResponse(ModelNormal):
         "ci_test_indexed_spans_agg_sum": "ci_test_indexed_spans_agg_sum",
         "ci_visibility_pipeline_committers_hwm_sum": "ci_visibility_pipeline_committers_hwm_sum",
         "ci_visibility_test_committers_hwm_sum": "ci_visibility_test_committers_hwm_sum",
+        "cloud_cost_management_aws_host_count_avg_sum": "cloud_cost_management_aws_host_count_avg_sum",
+        "cloud_cost_management_azure_host_count_avg_sum": "cloud_cost_management_azure_host_count_avg_sum",
         "cloud_cost_management_host_count_avg_sum": "cloud_cost_management_host_count_avg_sum",
         "container_avg_sum": "container_avg_sum",
         "container_excl_agent_avg_sum": "container_excl_agent_avg_sum",
@@ -176,6 +182,7 @@ class UsageSummaryResponse(ModelNormal):
         "mobile_rum_session_count_flutter_agg_sum": "mobile_rum_session_count_flutter_agg_sum",
         "mobile_rum_session_count_ios_agg_sum": "mobile_rum_session_count_ios_agg_sum",
         "mobile_rum_session_count_reactnative_agg_sum": "mobile_rum_session_count_reactnative_agg_sum",
+        "mobile_rum_session_count_roku_agg_sum": "mobile_rum_session_count_roku_agg_sum",
         "mobile_rum_units_agg_sum": "mobile_rum_units_agg_sum",
         "netflow_indexed_events_count_agg_sum": "netflow_indexed_events_count_agg_sum",
         "npm_host_top99p_sum": "npm_host_top99p_sum",
@@ -205,6 +212,7 @@ class UsageSummaryResponse(ModelNormal):
         "universal_service_monitoring_host_top99p_sum": "universal_service_monitoring_host_top99p_sum",
         "usage": "usage",
         "vsphere_host_top99p_sum": "vsphere_host_top99p_sum",
+        "vuln_management_host_count_top99p_sum": "vuln_management_host_count_top99p_sum",
     }
 
     def __init__(
@@ -230,6 +238,8 @@ class UsageSummaryResponse(ModelNormal):
         ci_test_indexed_spans_agg_sum: Union[int, UnsetType] = unset,
         ci_visibility_pipeline_committers_hwm_sum: Union[int, UnsetType] = unset,
         ci_visibility_test_committers_hwm_sum: Union[int, UnsetType] = unset,
+        cloud_cost_management_aws_host_count_avg_sum: Union[int, UnsetType] = unset,
+        cloud_cost_management_azure_host_count_avg_sum: Union[int, UnsetType] = unset,
         cloud_cost_management_host_count_avg_sum: Union[int, UnsetType] = unset,
         container_avg_sum: Union[int, UnsetType] = unset,
         container_excl_agent_avg_sum: Union[int, UnsetType] = unset,
@@ -268,6 +278,7 @@ class UsageSummaryResponse(ModelNormal):
         mobile_rum_session_count_flutter_agg_sum: Union[int, UnsetType] = unset,
         mobile_rum_session_count_ios_agg_sum: Union[int, UnsetType] = unset,
         mobile_rum_session_count_reactnative_agg_sum: Union[int, UnsetType] = unset,
+        mobile_rum_session_count_roku_agg_sum: Union[int, UnsetType] = unset,
         mobile_rum_units_agg_sum: Union[int, UnsetType] = unset,
         netflow_indexed_events_count_agg_sum: Union[int, UnsetType] = unset,
         npm_host_top99p_sum: Union[int, UnsetType] = unset,
@@ -297,6 +308,7 @@ class UsageSummaryResponse(ModelNormal):
         universal_service_monitoring_host_top99p_sum: Union[int, UnsetType] = unset,
         usage: Union[List[UsageSummaryDate], UnsetType] = unset,
         vsphere_host_top99p_sum: Union[int, UnsetType] = unset,
+        vuln_management_host_count_top99p_sum: Union[int, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -365,7 +377,13 @@ class UsageSummaryResponse(ModelNormal):
         :param ci_visibility_test_committers_hwm_sum: Shows the high-water mark of all CI visibility test committers over all hours in the current months for all organizations.
         :type ci_visibility_test_committers_hwm_sum: int, optional
 
-        :param cloud_cost_management_host_count_avg_sum: Sum of the host count average for Cloud Cost Management.
+        :param cloud_cost_management_aws_host_count_avg_sum: Sum of the host count average for Cloud Cost Management for AWS.
+        :type cloud_cost_management_aws_host_count_avg_sum: int, optional
+
+        :param cloud_cost_management_azure_host_count_avg_sum: Sum of the host count average for Cloud Cost Management for Azure.
+        :type cloud_cost_management_azure_host_count_avg_sum: int, optional
+
+        :param cloud_cost_management_host_count_avg_sum: Sum of the host count average for Cloud Cost Management for all cloud providers.
         :type cloud_cost_management_host_count_avg_sum: int, optional
 
         :param container_avg_sum: Shows the average of all distinct containers over all hours in the current months for all organizations.
@@ -479,6 +497,9 @@ class UsageSummaryResponse(ModelNormal):
         :param mobile_rum_session_count_reactnative_agg_sum: Shows the sum of all mobile RUM Sessions on React Native over all hours in the current months for all organizations.
         :type mobile_rum_session_count_reactnative_agg_sum: int, optional
 
+        :param mobile_rum_session_count_roku_agg_sum: Shows the sum of all mobile RUM Sessions on Roku over all hours in the current months for all organizations.
+        :type mobile_rum_session_count_roku_agg_sum: int, optional
+
         :param mobile_rum_units_agg_sum: Shows the sum of all mobile RUM units over all hours in the current months for all organizations.
         :type mobile_rum_units_agg_sum: int, optional
 
@@ -565,6 +586,9 @@ class UsageSummaryResponse(ModelNormal):
 
         :param vsphere_host_top99p_sum: Shows the 99th percentile of all vSphere hosts over all hours in the current months for all organizations.
         :type vsphere_host_top99p_sum: int, optional
+
+        :param vuln_management_host_count_top99p_sum: Shows the 99th percentile of all Application Vulnerability Management hosts over all hours in the current months for all organizations.
+        :type vuln_management_host_count_top99p_sum: int, optional
         """
         if agent_host_top99p_sum is not unset:
             kwargs["agent_host_top99p_sum"] = agent_host_top99p_sum
@@ -608,6 +632,10 @@ class UsageSummaryResponse(ModelNormal):
             kwargs["ci_visibility_pipeline_committers_hwm_sum"] = ci_visibility_pipeline_committers_hwm_sum
         if ci_visibility_test_committers_hwm_sum is not unset:
             kwargs["ci_visibility_test_committers_hwm_sum"] = ci_visibility_test_committers_hwm_sum
+        if cloud_cost_management_aws_host_count_avg_sum is not unset:
+            kwargs["cloud_cost_management_aws_host_count_avg_sum"] = cloud_cost_management_aws_host_count_avg_sum
+        if cloud_cost_management_azure_host_count_avg_sum is not unset:
+            kwargs["cloud_cost_management_azure_host_count_avg_sum"] = cloud_cost_management_azure_host_count_avg_sum
         if cloud_cost_management_host_count_avg_sum is not unset:
             kwargs["cloud_cost_management_host_count_avg_sum"] = cloud_cost_management_host_count_avg_sum
         if container_avg_sum is not unset:
@@ -686,6 +714,8 @@ class UsageSummaryResponse(ModelNormal):
             kwargs["mobile_rum_session_count_ios_agg_sum"] = mobile_rum_session_count_ios_agg_sum
         if mobile_rum_session_count_reactnative_agg_sum is not unset:
             kwargs["mobile_rum_session_count_reactnative_agg_sum"] = mobile_rum_session_count_reactnative_agg_sum
+        if mobile_rum_session_count_roku_agg_sum is not unset:
+            kwargs["mobile_rum_session_count_roku_agg_sum"] = mobile_rum_session_count_roku_agg_sum
         if mobile_rum_units_agg_sum is not unset:
             kwargs["mobile_rum_units_agg_sum"] = mobile_rum_units_agg_sum
         if netflow_indexed_events_count_agg_sum is not unset:
@@ -744,4 +774,6 @@ class UsageSummaryResponse(ModelNormal):
             kwargs["usage"] = usage
         if vsphere_host_top99p_sum is not unset:
             kwargs["vsphere_host_top99p_sum"] = vsphere_host_top99p_sum
+        if vuln_management_host_count_top99p_sum is not unset:
+            kwargs["vuln_management_host_count_top99p_sum"] = vuln_management_host_count_top99p_sum
         super().__init__(kwargs)

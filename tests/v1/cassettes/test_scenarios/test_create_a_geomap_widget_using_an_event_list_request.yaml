@@ -1,0 +1,40 @@
+interactions:
+- request:
+    body: '{"description":"Test-Create_a_geomap_widget_using_an_event_list_request-1687375743","layout_type":"ordered","notify_list":[],"reflow_type":"fixed","tags":[],"template_variables":[],"title":"Test-Create_a_geomap_widget_using_an_event_list_request-1687375743","widgets":[{"definition":{"requests":[{"columns":[{"field":"@network.client.geoip.location.latitude","width":"auto"},{"field":"@network.client.geoip.location.longitude","width":"auto"},{"field":"@network.client.geoip.country.iso_code","width":"auto"},{"field":"@network.client.geoip.subdivision.name","width":"auto"},{"field":"classic","width":"auto"},{"field":"","width":"auto"}],"query":{"data_source":"logs_stream","indexes":[],"query_string":""},"response_format":"event_list"}],"style":{"palette":"hostmap_blues","palette_flip":false},"title":"","title_align":"left","title_size":"16","type":"geomap","view":{"focus":"WORLD"}},"layout":{"height":6,"width":12,"x":0,"y":0}}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/dashboard
+  response:
+    body:
+      string: '{"id":"cn7-qfm-s9w","title":"Test-Create_a_geomap_widget_using_an_event_list_request-1687375743","description":"Test-Create_a_geomap_widget_using_an_event_list_request-1687375743","author_handle":"frog@datadoghq.com","author_name":null,"layout_type":"ordered","url":"/dashboard/cn7-qfm-s9w/test-createageomapwidgetusinganeventlistrequest-1687375743","is_read_only":false,"template_variables":[],"widgets":[{"definition":{"requests":[{"columns":[{"field":"@network.client.geoip.location.latitude","width":"auto"},{"field":"@network.client.geoip.location.longitude","width":"auto"},{"field":"@network.client.geoip.country.iso_code","width":"auto"},{"field":"@network.client.geoip.subdivision.name","width":"auto"},{"field":"classic","width":"auto"},{"field":"","width":"auto"}],"query":{"data_source":"logs_stream","indexes":[],"query_string":""},"response_format":"event_list"}],"style":{"palette":"hostmap_blues","palette_flip":false},"title":"","title_align":"left","title_size":"16","type":"geomap","view":{"focus":"WORLD"}},"layout":{"height":6,"width":12,"x":0,"y":0},"id":8506811379916619}],"notify_list":[],"created_at":"2023-06-21T19:29:03.801081+00:00","modified_at":"2023-06-21T19:29:03.801081+00:00","reflow_type":"fixed","tags":[],"restricted_roles":[]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/dashboard/cn7-qfm-s9w
+  response:
+    body:
+      string: '{"deleted_dashboard_id":"cn7-qfm-s9w"}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

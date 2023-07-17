@@ -19,6 +19,7 @@ body = ConfluentAccountCreateRequest(
             api_secret="test-api-secret-123",
             resources=[
                 ConfluentAccountResourceAttributes(
+                    enable_custom_metrics=False,
                     id="resource-id-123",
                     resource_type="kafka",
                     tags=[

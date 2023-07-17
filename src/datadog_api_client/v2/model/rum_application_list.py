@@ -3,11 +3,13 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -24,24 +26,37 @@ class RUMApplicationList(ModelNormal):
 
         return {
             "attributes": (RUMApplicationListAttributes,),
+            "id": (str,),
             "type": (RUMApplicationListType,),
         }
 
     attribute_map = {
         "attributes": "attributes",
+        "id": "id",
         "type": "type",
     }
 
-    def __init__(self_, attributes: RUMApplicationListAttributes, type: RUMApplicationListType, **kwargs):
+    def __init__(
+        self_,
+        attributes: RUMApplicationListAttributes,
+        type: RUMApplicationListType,
+        id: Union[str, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         RUM application list.
 
         :param attributes: RUM application list attributes.
         :type attributes: RUMApplicationListAttributes
 
+        :param id: RUM application ID.
+        :type id: str, optional
+
         :param type: RUM application list type.
         :type type: RUMApplicationListType
         """
+        if id is not unset:
+            kwargs["id"] = id
         super().__init__(kwargs)
 
         self_.attributes = attributes

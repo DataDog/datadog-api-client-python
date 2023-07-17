@@ -9,6 +9,7 @@ from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     datetime,
+    none_type,
     unset,
     UnsetType,
 )
@@ -19,7 +20,7 @@ class UsageIncidentManagementHour(ModelNormal):
     def openapi_types(_):
         return {
             "hour": (datetime,),
-            "monthly_active_users": (int,),
+            "monthly_active_users": (int, none_type),
             "org_name": (str,),
             "public_id": (str,),
         }
@@ -34,7 +35,7 @@ class UsageIncidentManagementHour(ModelNormal):
     def __init__(
         self_,
         hour: Union[datetime, UnsetType] = unset,
-        monthly_active_users: Union[int, UnsetType] = unset,
+        monthly_active_users: Union[int, none_type, UnsetType] = unset,
         org_name: Union[str, UnsetType] = unset,
         public_id: Union[str, UnsetType] = unset,
         **kwargs,
@@ -46,7 +47,7 @@ class UsageIncidentManagementHour(ModelNormal):
         :type hour: datetime, optional
 
         :param monthly_active_users: Contains the total number monthly active users from the start of the given hour's month until the given hour.
-        :type monthly_active_users: int, optional
+        :type monthly_active_users: int, none_type, optional
 
         :param org_name: The organization name.
         :type org_name: str, optional

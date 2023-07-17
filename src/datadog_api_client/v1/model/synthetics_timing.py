@@ -55,7 +55,7 @@ class SyntheticsTiming(ModelNormal):
     ):
         """
         Object containing all metrics and their values collected for a Synthetic API test.
-        Learn more about those metrics in `Synthetics documentation <https://docs.datadoghq.com/synthetics/#metrics>`_.
+        See the `Synthetic Monitoring Metrics documentation <https://docs.datadoghq.com/synthetics/metrics/>`_.
 
         :param dns: The duration in millisecond of the DNS lookup.
         :type dns: float, optional

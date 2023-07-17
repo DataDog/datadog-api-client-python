@@ -1,5 +1,5 @@
 """
-Get all downtimes for a monitor returns "OK" response
+Get active downtimes for a monitor returns "OK" response
 """
 
 from datadog_api_client import ApiClient, Configuration

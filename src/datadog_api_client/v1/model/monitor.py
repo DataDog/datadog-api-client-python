@@ -17,6 +17,7 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v1.model.creator import Creator
+    from datadog_api_client.v1.model.matching_downtime import MatchingDowntime
     from datadog_api_client.v1.model.monitor_options import MonitorOptions
     from datadog_api_client.v1.model.monitor_overall_states import MonitorOverallStates
     from datadog_api_client.v1.model.monitor_state import MonitorState
@@ -34,6 +35,7 @@ class Monitor(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v1.model.creator import Creator
+        from datadog_api_client.v1.model.matching_downtime import MatchingDowntime
         from datadog_api_client.v1.model.monitor_options import MonitorOptions
         from datadog_api_client.v1.model.monitor_overall_states import MonitorOverallStates
         from datadog_api_client.v1.model.monitor_state import MonitorState
@@ -44,6 +46,7 @@ class Monitor(ModelNormal):
             "creator": (Creator,),
             "deleted": (datetime, none_type),
             "id": (int,),
+            "matching_downtimes": ([MatchingDowntime],),
             "message": (str,),
             "modified": (datetime,),
             "multi": (bool,),
@@ -63,6 +66,7 @@ class Monitor(ModelNormal):
         "creator": "creator",
         "deleted": "deleted",
         "id": "id",
+        "matching_downtimes": "matching_downtimes",
         "message": "message",
         "modified": "modified",
         "multi": "multi",
@@ -95,6 +99,7 @@ class Monitor(ModelNormal):
         creator: Union[Creator, UnsetType] = unset,
         deleted: Union[datetime, none_type, UnsetType] = unset,
         id: Union[int, UnsetType] = unset,
+        matching_downtimes: Union[List[MatchingDowntime], UnsetType] = unset,
         message: Union[str, UnsetType] = unset,
         modified: Union[datetime, UnsetType] = unset,
         multi: Union[bool, UnsetType] = unset,
@@ -121,6 +126,9 @@ class Monitor(ModelNormal):
 
         :param id: ID of this monitor.
         :type id: int, optional
+
+        :param matching_downtimes: A list of active downtimes that match this monitor.
+        :type matching_downtimes: [MatchingDowntime], optional
 
         :param message: A message to include with notifications for this monitor.
         :type message: str, optional
@@ -166,6 +174,8 @@ class Monitor(ModelNormal):
             kwargs["deleted"] = deleted
         if id is not unset:
             kwargs["id"] = id
+        if matching_downtimes is not unset:
+            kwargs["matching_downtimes"] = matching_downtimes
         if message is not unset:
             kwargs["message"] = message
         if modified is not unset:

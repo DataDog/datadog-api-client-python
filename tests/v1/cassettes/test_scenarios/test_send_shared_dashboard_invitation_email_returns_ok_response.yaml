@@ -1,0 +1,118 @@
+interactions:
+- request:
+    body: '{"layout_type":"ordered","title":"Test-Send_shared_dashboard_invitation_email_returns_OK_response-1680883811
+      with Profile Metrics Query","widgets":[{"definition":{"requests":[{"profile_metrics_query":{"compute":{"aggregation":"sum","facet":"@prof_core_cpu_cores"},"group_by":[{"facet":"service","limit":10,"sort":{"aggregation":"sum","facet":"@prof_core_cpu_cores","order":"desc"}}],"search":{"query":"runtime:jvm"}}}],"type":"timeseries"}}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/dashboard
+  response:
+    body:
+      string: '{"id":"raa-btt-uqs","title":"Test-Send_shared_dashboard_invitation_email_returns_OK_response-1680883811
+        with Profile Metrics Query","description":null,"author_handle":"frog@datadoghq.com","author_name":null,"layout_type":"ordered","url":"/dashboard/raa-btt-uqs/test-sendshareddashboardinvitationemailreturnsokresponse-1680883811-with-profile","is_read_only":false,"template_variables":null,"widgets":[{"definition":{"requests":[{"profile_metrics_query":{"compute":{"aggregation":"sum","facet":"@prof_core_cpu_cores"},"group_by":[{"facet":"service","limit":10,"sort":{"aggregation":"sum","facet":"@prof_core_cpu_cores","order":"desc"}}],"search":{"query":"runtime:jvm"}}}],"type":"timeseries"},"id":2455557193881497}],"notify_list":null,"created_at":"2023-04-07T16:10:12.130578+00:00","modified_at":"2023-04-07T16:10:12.130578+00:00","restricted_roles":[]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"dashboard_id":"raa-btt-uqs","dashboard_type":"custom_timeboard","global_time":{"live_span":"1h"},"share_list":["testsendshareddashboardinvitationemailreturnsokresponse1680883811@datadoghq.com"],"share_type":"invite"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/dashboard/public
+  response:
+    body:
+      string: '{"author":{"handle":"frog@datadoghq.com","name":null},"dashboard_id":"raa-btt-uqs","dashboard_type":"custom_timeboard","global_time_selectable_enabled":false,"global_time":{"live_span":"1h"},"selectable_template_vars":null,"token":"fasjyydbcgwwc2uc-0aaf9e22dcfc91f4bf3857f95fbdd16e","public_url":"https://p.datadoghq.com/sb/fasjyydbcgwwc2uc-0aaf9e22dcfc91f4bf3857f95fbdd16e","created":"2023-04-07T16:10:12.476162+00:00","share_type":"invite","share_list":["testsendshareddashboardinvitationemailreturnsokresponse1680883811@datadoghq.com"]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data":{"attributes":{"email":"testsendshareddashboardinvitationemailreturnsokresponse1680883811@datadoghq.com"},"type":"public_dashboard_invitation"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/dashboard/public/fasjyydbcgwwc2uc-0aaf9e22dcfc91f4bf3857f95fbdd16e/invitation
+  response:
+    body:
+      string: '{"data":{"type":"public_dashboard_invitation","attributes":{"email":"testsendshareddashboardinvitationemailreturnsokresponse1680883811@datadoghq.com","share_token":"fasjyydbcgwwc2uc-0aaf9e22dcfc91f4bf3857f95fbdd16e","created_at":"2023-04-07T16:10:12.708843+00:00","invitation_expiry":"2023-04-07T17:10:12.707450+00:00","has_session":false,"session_expiry":null}}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"email":"testsendshareddashboardinvitationemailreturnsokresponse1680883811@datadoghq.com"},"type":"public_dashboard_invitation"}}'
+    headers:
+      accept:
+      - '*/*'
+      content-type:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/dashboard/public/fasjyydbcgwwc2uc-0aaf9e22dcfc91f4bf3857f95fbdd16e/invitation
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - text/html; charset=utf-8
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/dashboard/public/fasjyydbcgwwc2uc-0aaf9e22dcfc91f4bf3857f95fbdd16e
+  response:
+    body:
+      string: '{"deleted_public_dashboard_token":"fasjyydbcgwwc2uc-0aaf9e22dcfc91f4bf3857f95fbdd16e"}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/dashboard/raa-btt-uqs
+  response:
+    body:
+      string: '{"deleted_dashboard_id":"raa-btt-uqs"}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

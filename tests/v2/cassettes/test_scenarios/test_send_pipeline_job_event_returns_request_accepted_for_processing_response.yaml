@@ -1,0 +1,21 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"resource":{"end":"2023-06-22T08:07:58.549Z","git":{"author_email":"john.doe@email.com","repository_url":"https://github.com/DataDog/datadog-agent","sha":"7f263865994b76066c4612fd1965215e7dcb4cd2"},"id":"cf9456de-8b9e-4c27-aa79-27b1e78c1a33","level":"job","name":"Build
+      image","pipeline_name":"Deploy to AWS","pipeline_unique_id":"3eacb6f3-ff04-4e10-8a9c-46e6d054024a","start":"2023-06-22T08:06:28.549Z","status":"error","url":"https://my-ci-provider.example/jobs/my-jobs/run/1"}},"type":"cipipeline_resource_request"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/ci/pipeline
+  response:
+    body:
+      string: '{"data":null}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 202
+      message: Accepted
+version: 1

@@ -35,12 +35,10 @@ class SyntheticsApi:
                 "operation_id": "get_on_demand_concurrency_cap",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={},
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -53,7 +51,6 @@ class SyntheticsApi:
                 "operation_id": "set_on_demand_concurrency_cap",
                 "http_method": "POST",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "body": {

@@ -45,7 +45,6 @@ class RUMApi:
                 "operation_id": "aggregate_rum_events",
                 "http_method": "POST",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -66,7 +65,6 @@ class RUMApi:
                 "operation_id": "create_rum_application",
                 "http_method": "POST",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -87,7 +85,6 @@ class RUMApi:
                 "operation_id": "delete_rum_application",
                 "http_method": "DELETE",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "id": {
@@ -99,7 +96,6 @@ class RUMApi:
             },
             headers_map={
                 "accept": ["*/*"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -112,7 +108,6 @@ class RUMApi:
                 "operation_id": "get_rum_application",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "id": {
@@ -124,7 +119,6 @@ class RUMApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -137,12 +131,10 @@ class RUMApi:
                 "operation_id": "get_rum_applications",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={},
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -155,7 +147,6 @@ class RUMApi:
                 "operation_id": "list_rum_events",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "filter_query": {
@@ -194,7 +185,6 @@ class RUMApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -207,7 +197,6 @@ class RUMApi:
                 "operation_id": "search_rum_events",
                 "http_method": "POST",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -228,7 +217,6 @@ class RUMApi:
                 "operation_id": "update_rum_application",
                 "http_method": "PATCH",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "id": {

@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class SyntheticsGlobalVariableParseTestOptionsType(ModelSimple):
     """
-    Property of the Synthetics Test Response to use for a Synthetics global variable.
+    Property of the Synthetic Test Response to use for a Synthetic global variable.
 
     :param value: Must be one of ["http_body", "http_header", "local_variable"].
     :type value: str

@@ -41,6 +41,7 @@ body = Dashboard(
                 show_error_budget=True,
                 view_mode=WidgetViewMode.OVERALL,
                 global_time_target="0",
+                additional_query_filters="!host:excluded_host",
             ),
         ),
     ],

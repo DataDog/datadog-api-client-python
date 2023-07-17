@@ -28,7 +28,7 @@ class SyntheticsTriggerCITestLocation(ModelNormal):
 
     def __init__(self_, id: Union[int, UnsetType] = unset, name: Union[str, UnsetType] = unset, **kwargs):
         """
-        Synthetics location.
+        Synthetic location.
 
         :param id: Unique identifier of the location.
         :type id: int, optional

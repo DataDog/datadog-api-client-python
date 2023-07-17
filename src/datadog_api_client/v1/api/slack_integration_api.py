@@ -30,7 +30,6 @@ class SlackIntegrationApi:
                 "operation_id": "create_slack_integration_channel",
                 "http_method": "POST",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "account_name": {
@@ -57,7 +56,6 @@ class SlackIntegrationApi:
                 "operation_id": "get_slack_integration_channel",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "account_name": {
@@ -75,7 +73,6 @@ class SlackIntegrationApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -88,7 +85,6 @@ class SlackIntegrationApi:
                 "operation_id": "get_slack_integration_channels",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "account_name": {
@@ -100,7 +96,6 @@ class SlackIntegrationApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -113,7 +108,6 @@ class SlackIntegrationApi:
                 "operation_id": "remove_slack_integration_channel",
                 "http_method": "DELETE",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "account_name": {
@@ -131,7 +125,6 @@ class SlackIntegrationApi:
             },
             headers_map={
                 "accept": ["*/*"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -144,7 +137,6 @@ class SlackIntegrationApi:
                 "operation_id": "update_slack_integration_channel",
                 "http_method": "PATCH",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "account_name": {

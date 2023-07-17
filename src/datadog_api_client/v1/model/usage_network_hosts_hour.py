@@ -9,6 +9,7 @@ from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     datetime,
+    none_type,
     unset,
     UnsetType,
 )
@@ -18,7 +19,7 @@ class UsageNetworkHostsHour(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
-            "host_count": (int,),
+            "host_count": (int, none_type),
             "hour": (datetime,),
             "org_name": (str,),
             "public_id": (str,),
@@ -33,7 +34,7 @@ class UsageNetworkHostsHour(ModelNormal):
 
     def __init__(
         self_,
-        host_count: Union[int, UnsetType] = unset,
+        host_count: Union[int, none_type, UnsetType] = unset,
         hour: Union[datetime, UnsetType] = unset,
         org_name: Union[str, UnsetType] = unset,
         public_id: Union[str, UnsetType] = unset,
@@ -43,7 +44,7 @@ class UsageNetworkHostsHour(ModelNormal):
         Number of active NPM hosts for each hour for a given organization.
 
         :param host_count: Contains the number of active NPM hosts.
-        :type host_count: int, optional
+        :type host_count: int, none_type, optional
 
         :param hour: The hour for the usage.
         :type hour: datetime, optional

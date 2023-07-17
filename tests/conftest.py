@@ -2,6 +2,7 @@
 """Define basic fixtures."""
 
 import os
+import hashlib
 
 RECORD = os.getenv("RECORD", "false").lower()
 SLEEP_AFTER_REQUEST = int(os.getenv("SLEEP_AFTER_REQUEST", "0"))
@@ -64,6 +65,7 @@ from pytest_bdd import given, parsers, then, when
 from datadog_api_client import exceptions
 from datadog_api_client.api_client import ApiClient
 from datadog_api_client.configuration import Configuration
+from datadog_api_client.model_utils import OpenApiModel
 
 logging.basicConfig()
 
@@ -205,6 +207,7 @@ def context(vcr, unique, freezed_time):
     Return a mapping with all defined fixtures, all objects created by `given` steps,
     and the undo operations to perform after a test scenario.
     """
+    unique_hash = hashlib.sha256(unique.encode("utf-8")).hexdigest()[:16]
     ctx = {
         "undo_operations": [],
         "unique": unique,
@@ -213,6 +216,7 @@ def context(vcr, unique, freezed_time):
         "unique_alnum": PATTERN_ALPHANUM.sub("", unique),
         "unique_lower_alnum": PATTERN_ALPHANUM.sub("", unique).lower(),
         "unique_upper_alnum": PATTERN_ALPHANUM.sub("", unique).upper(),
+        "unique_hash": unique_hash,
         "timestamp": relative_time(freezed_time, False),
         "timeISO": relative_time(freezed_time, True),
     }
@@ -260,7 +264,10 @@ def vcr_config():
     if tracer:
         from urllib.parse import urlparse
 
-        config["ignore_hosts"] = [urlparse(tracer._writer.agent_url).hostname]
+        if hasattr(tracer._writer, "agent_url"):
+            config["ignore_hosts"] = [urlparse(tracer._writer.agent_url).hostname]
+        else:
+            config["ignore_hosts"] = [urlparse(tracer._writer.intake_url).hostname]
 
     return config
 
@@ -436,6 +443,19 @@ def request_parameter_with_value(context, name, value):
     context["api_request"]["kwargs"][escape_reserved_keyword(snake_case(name))] = tpl
 
 
+def assert_no_unparsed(data):
+    if isinstance(data, list):
+        for item in data:
+            assert_no_unparsed(item)
+    elif isinstance(data, dict):
+        for item in data.values():
+            assert_no_unparsed(item)
+    elif isinstance(data, OpenApiModel):
+        assert not data._unparsed
+        for attr in data._data_store.values():
+            assert_no_unparsed(attr)
+
+
 def build_given(version, operation):
     @sleep_after_request
     def wrapper(context, undo):
@@ -548,7 +568,7 @@ def undo(package_name, undo_operations, client):
 
 
 @when("the request is sent")
-def execute_request(undo, context, client, api_version):
+def execute_request(undo, context, client, api_version, request):
     """Execute the prepared request."""
     api_request = context["api_request"]
 
@@ -567,6 +587,9 @@ def execute_request(undo, context, client, api_version):
         # responses returned have an ordered response of body|status|headers
         api_request["response"] = [e.body, e.status, e.headers]
         return
+
+    if "skip-validation" not in request.node.__scenario_report__.scenario.tags:
+        assert_no_unparsed(response[0])
 
     api = api_request["api"]
     operation_id = api_request["request"].__name__
@@ -643,3 +666,24 @@ def expect_equal_response_items(context, fixture_length):
 def expect_false(context, response_path):
     response_value = glom(context["api_request"]["response"][0], response_path)
     assert not response_value
+
+
+@then(parsers.parse('the response "{response_path}" has item with field "{key_path}" with value {value}'))
+def expect_array_contains_object(context, response_path, key_path, value):
+    response_value = glom(context["api_request"]["response"][0], response_path)
+    test_value = json.loads(Template(value).render(**context))
+    for response_item in response_value:
+        response_item_value = glom(response_item, key_path)
+        if response_item_value == test_value:
+            return
+    raise AssertionError(f'could not find key value pair in object array: "{key_path}": "{test_value}"')
+
+
+@then(parsers.parse('the response "{response_path}" array contains value {value}'))
+def expect_array_contains_object(context, response_path, value):
+    response_value = glom(context["api_request"]["response"][0], response_path)
+    test_value = json.loads(Template(value).render(**context))
+    for response_item in response_value:
+        if response_item == test_value:
+            return
+    raise AssertionError(f"could not find value in array: {test_value}")

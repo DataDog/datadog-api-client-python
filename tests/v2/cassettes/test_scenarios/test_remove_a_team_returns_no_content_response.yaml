@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"handle":"1679941998","name":"1679941998"},"type":"team"}}'
+    body: '{"data":{"attributes":{"handle":"handle-5193f5ba7bb7cf2a","name":"name-5193f5ba7bb7cf2a"},"type":"team"}}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/team
   response:
     body:
-      string: '{"data":{"type":"team","id":"d8648c52-cccd-11ed-a275-da7ad0900002","attributes":{"name":"1679941998","handle":"1679941998","summary":null,"description":null,"color":3,"created_at":"2023-03-27T18:33:18.917793+00:00","modified_at":"2023-03-27T18:33:18.917799+00:00","user_count":0,"link_count":0},"relationships":{"team_links":{"links":{"related":"/api/v2/team/d8648c52-cccd-11ed-a275-da7ad0900002/links"}},"user_team_permissions":{"links":{"related":"/api/v2/team/d8648c52-cccd-11ed-a275-da7ad0900002/permission-settings"}}}}}
+      string: '{"data":{"type":"team","id":"58c0c93a-ef4f-11ed-a5d2-da7ad0900002","attributes":{"name":"name-5193f5ba7bb7cf2a","handle":"handle-5193f5ba7bb7cf2a","summary":null,"description":null,"color":3,"created_at":"2023-05-10T16:25:58.884270+00:00","modified_at":"2023-05-10T16:25:58.884274+00:00","user_count":0,"link_count":0},"relationships":{"team_links":{"links":{"related":"/api/v2/team/58c0c93a-ef4f-11ed-a5d2-da7ad0900002/links"}},"user_team_permissions":{"links":{"related":"/api/v2/team/58c0c93a-ef4f-11ed-a5d2-da7ad0900002/permission-settings"}}}}}
 
         '
     headers:
@@ -25,7 +25,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/team/d8648c52-cccd-11ed-a275-da7ad0900002
+    uri: https://api.datadoghq.com/api/v2/team/58c0c93a-ef4f-11ed-a5d2-da7ad0900002
   response:
     body:
       string: ''
@@ -39,10 +39,10 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/team/d8648c52-cccd-11ed-a275-da7ad0900002
+    uri: https://api.datadoghq.com/api/v2/team/58c0c93a-ef4f-11ed-a5d2-da7ad0900002
   response:
     body:
-      string: '{"errors":["Team for ID d8648c52-cccd-11ed-a275-da7ad0900002 not found"]}'
+      string: '{"errors":["Team for ID 58c0c93a-ef4f-11ed-a5d2-da7ad0900002 not found"]}'
     headers:
       content-type:
       - application/json

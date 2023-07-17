@@ -1,0 +1,44 @@
+interactions:
+- request:
+    body: '{"layout_type":"ordered","title":"Test-Create_a_new_dashboard_with_a_timeseries_widget_using_formulas_and_functions_cloud_cost_query-1689085965","widgets":[{"definition":{"requests":[{"display_type":"bars","formulas":[{"formula":"query1"}],"queries":[{"data_source":"cloud_cost","name":"query1","query":"sum:aws.cost.amortized{*}
+      by {aws_product}.rollup(sum, monthly)"}],"response_format":"timeseries","style":{"line_type":"solid","line_width":"normal","palette":"dog_classic"}}],"title":"Example
+      Cloud Cost Query","title_align":"left","title_size":"16","type":"timeseries"}}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/dashboard
+  response:
+    body:
+      string: '{"id":"kka-2iz-3jf","title":"Test-Create_a_new_dashboard_with_a_timeseries_widget_using_formulas_and_functions_cloud_cost_query-1689085965","description":null,"author_handle":"frog@datadoghq.com","author_name":null,"layout_type":"ordered","url":"/dashboard/kka-2iz-3jf/test-createanewdashboardwithatimeserieswidgetusingformulasandfunctionscloudcostq","is_read_only":false,"template_variables":null,"widgets":[{"definition":{"requests":[{"display_type":"bars","formulas":[{"formula":"query1"}],"queries":[{"data_source":"cloud_cost","name":"query1","query":"sum:aws.cost.amortized{*}
+        by {aws_product}.rollup(sum, monthly)"}],"response_format":"timeseries","style":{"line_type":"solid","line_width":"normal","palette":"dog_classic"}}],"title":"Example
+        Cloud Cost Query","title_align":"left","title_size":"16","type":"timeseries"},"id":1004255439340}],"notify_list":null,"created_at":"2023-07-11T14:32:45.564617+00:00","modified_at":"2023-07-11T14:32:45.564617+00:00","restricted_roles":[]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/dashboard/kka-2iz-3jf
+  response:
+    body:
+      string: '{"deleted_dashboard_id":"kka-2iz-3jf"}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

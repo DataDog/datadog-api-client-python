@@ -16,7 +16,7 @@ class SyntheticsAssertionType(ModelSimple):
     """
     Type of the assertion.
 
-    :param value: Must be one of ["body", "header", "statusCode", "certificate", "responseTime", "property", "recordEvery", "recordSome", "tlsVersion", "minTlsVersion", "latency", "packetLossPercentage", "packetsReceived", "networkHop", "receivedMessage", "grpcHealthcheckStatus", "connection"].
+    :param value: Must be one of ["body", "header", "statusCode", "certificate", "responseTime", "property", "recordEvery", "recordSome", "tlsVersion", "minTlsVersion", "latency", "packetLossPercentage", "packetsReceived", "networkHop", "receivedMessage", "grpcHealthcheckStatus", "grpcMetadata", "grpcProto", "connection"].
     :type value: str
     """
 
@@ -37,6 +37,8 @@ class SyntheticsAssertionType(ModelSimple):
         "networkHop",
         "receivedMessage",
         "grpcHealthcheckStatus",
+        "grpcMetadata",
+        "grpcProto",
         "connection",
     }
     BODY: ClassVar["SyntheticsAssertionType"]
@@ -55,6 +57,8 @@ class SyntheticsAssertionType(ModelSimple):
     NETWORK_HOP: ClassVar["SyntheticsAssertionType"]
     RECEIVED_MESSAGE: ClassVar["SyntheticsAssertionType"]
     GRPC_HEALTHCHECK_STATUS: ClassVar["SyntheticsAssertionType"]
+    GRPC_METADATA: ClassVar["SyntheticsAssertionType"]
+    GRPC_PROTO: ClassVar["SyntheticsAssertionType"]
     CONNECTION: ClassVar["SyntheticsAssertionType"]
 
     @cached_property
@@ -80,4 +84,6 @@ SyntheticsAssertionType.PACKETS_RECEIVED = SyntheticsAssertionType("packetsRecei
 SyntheticsAssertionType.NETWORK_HOP = SyntheticsAssertionType("networkHop")
 SyntheticsAssertionType.RECEIVED_MESSAGE = SyntheticsAssertionType("receivedMessage")
 SyntheticsAssertionType.GRPC_HEALTHCHECK_STATUS = SyntheticsAssertionType("grpcHealthcheckStatus")
+SyntheticsAssertionType.GRPC_METADATA = SyntheticsAssertionType("grpcMetadata")
+SyntheticsAssertionType.GRPC_PROTO = SyntheticsAssertionType("grpcProto")
 SyntheticsAssertionType.CONNECTION = SyntheticsAssertionType("connection")

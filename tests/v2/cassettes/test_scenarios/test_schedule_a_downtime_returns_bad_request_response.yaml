@@ -1,0 +1,20 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"monitor_identifier":{"monitor_tags":["cat:hat"]},"schedule":{"start":null},"scope":"BAD_SCOPE_MISSING_KEY_VALUE_FORMAT"},"type":"downtime"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/downtime
+  response:
+    body:
+      string: '{"errors":["All values must have a key"]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 400
+      message: Bad Request
+version: 1

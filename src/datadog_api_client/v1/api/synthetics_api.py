@@ -43,13 +43,13 @@ from datadog_api_client.v1.model.synthetics_global_variable import SyntheticsGlo
 
 class SyntheticsApi:
     """
-    Datadog Synthetics uses simulated user requests and browser rendering to help you ensure uptime,
-    identify regional issues, and track your application performance. Datadog Synthetics tests come in
+    Datadog Synthetic Monitoring uses simulated user requests and browser rendering to help you ensure uptime,
+    identify regional issues, and track your application performance. Synthetic tests come in
     two different flavors, `API tests <https://docs.datadoghq.com/synthetics/api_tests/?tab=httptest>`_
     and `browser tests <https://docs.datadoghq.com/synthetics/browser_tests>`_. You can use Datadog’s API to
     manage both test types programmatically.
 
-    For more information about Synthetics, see the `Synthetics overview <https://docs.datadoghq.com/synthetics/>`_.
+    For more information, see the `Synthetic Monitoring documentation <https://docs.datadoghq.com/synthetics/>`_.
     """
 
     def __init__(self, api_client=None):
@@ -65,7 +65,6 @@ class SyntheticsApi:
                 "operation_id": "create_global_variable",
                 "http_method": "POST",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -86,7 +85,6 @@ class SyntheticsApi:
                 "operation_id": "create_private_location",
                 "http_method": "POST",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -107,7 +105,6 @@ class SyntheticsApi:
                 "operation_id": "create_synthetics_api_test",
                 "http_method": "POST",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -128,7 +125,6 @@ class SyntheticsApi:
                 "operation_id": "create_synthetics_browser_test",
                 "http_method": "POST",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -149,7 +145,6 @@ class SyntheticsApi:
                 "operation_id": "delete_global_variable",
                 "http_method": "DELETE",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "variable_id": {
@@ -161,7 +156,6 @@ class SyntheticsApi:
             },
             headers_map={
                 "accept": ["*/*"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -174,7 +168,6 @@ class SyntheticsApi:
                 "operation_id": "delete_private_location",
                 "http_method": "DELETE",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "location_id": {
@@ -186,7 +179,6 @@ class SyntheticsApi:
             },
             headers_map={
                 "accept": ["*/*"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -199,7 +191,6 @@ class SyntheticsApi:
                 "operation_id": "delete_tests",
                 "http_method": "POST",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -220,7 +211,6 @@ class SyntheticsApi:
                 "operation_id": "edit_global_variable",
                 "http_method": "PUT",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "variable_id": {
@@ -247,7 +237,6 @@ class SyntheticsApi:
                 "operation_id": "get_api_test",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "public_id": {
@@ -259,7 +248,6 @@ class SyntheticsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -272,7 +260,6 @@ class SyntheticsApi:
                 "operation_id": "get_api_test_latest_results",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "public_id": {
@@ -300,7 +287,6 @@ class SyntheticsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -313,7 +299,6 @@ class SyntheticsApi:
                 "operation_id": "get_api_test_result",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "public_id": {
@@ -331,7 +316,6 @@ class SyntheticsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -344,7 +328,6 @@ class SyntheticsApi:
                 "operation_id": "get_browser_test",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "public_id": {
@@ -356,7 +339,6 @@ class SyntheticsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -369,7 +351,6 @@ class SyntheticsApi:
                 "operation_id": "get_browser_test_latest_results",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "public_id": {
@@ -397,7 +378,6 @@ class SyntheticsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -410,7 +390,6 @@ class SyntheticsApi:
                 "operation_id": "get_browser_test_result",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "public_id": {
@@ -428,7 +407,6 @@ class SyntheticsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -441,7 +419,6 @@ class SyntheticsApi:
                 "operation_id": "get_global_variable",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "variable_id": {
@@ -453,7 +430,6 @@ class SyntheticsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -466,7 +442,6 @@ class SyntheticsApi:
                 "operation_id": "get_private_location",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "location_id": {
@@ -478,7 +453,6 @@ class SyntheticsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -491,7 +465,6 @@ class SyntheticsApi:
                 "operation_id": "get_synthetics_ci_batch",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "batch_id": {
@@ -503,7 +476,22 @@ class SyntheticsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
+            },
+            api_client=api_client,
+        )
+
+        self._get_synthetics_default_locations_endpoint = _Endpoint(
+            settings={
+                "response_type": ([str],),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v1/synthetics/settings/default_locations",
+                "operation_id": "get_synthetics_default_locations",
+                "http_method": "GET",
+                "version": "v1",
+            },
+            params_map={},
+            headers_map={
+                "accept": ["application/json"],
             },
             api_client=api_client,
         )
@@ -516,7 +504,6 @@ class SyntheticsApi:
                 "operation_id": "get_test",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "public_id": {
@@ -528,7 +515,6 @@ class SyntheticsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -541,12 +527,10 @@ class SyntheticsApi:
                 "operation_id": "list_global_variables",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={},
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -559,12 +543,10 @@ class SyntheticsApi:
                 "operation_id": "list_locations",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={},
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -577,7 +559,6 @@ class SyntheticsApi:
                 "operation_id": "list_tests",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "page_size": {
@@ -593,7 +574,6 @@ class SyntheticsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -606,7 +586,6 @@ class SyntheticsApi:
                 "operation_id": "trigger_ci_tests",
                 "http_method": "POST",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -627,7 +606,6 @@ class SyntheticsApi:
                 "operation_id": "trigger_tests",
                 "http_method": "POST",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -648,7 +626,6 @@ class SyntheticsApi:
                 "operation_id": "update_api_test",
                 "http_method": "PUT",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "public_id": {
@@ -675,7 +652,6 @@ class SyntheticsApi:
                 "operation_id": "update_browser_test",
                 "http_method": "PUT",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "public_id": {
@@ -702,7 +678,6 @@ class SyntheticsApi:
                 "operation_id": "update_private_location",
                 "http_method": "PUT",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "location_id": {
@@ -729,7 +704,6 @@ class SyntheticsApi:
                 "operation_id": "update_test_pause_status",
                 "http_method": "PUT",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "public_id": {
@@ -754,7 +728,7 @@ class SyntheticsApi:
     ) -> SyntheticsGlobalVariable:
         """Create a global variable.
 
-        Create a Synthetics global variable.
+        Create a Synthetic global variable.
 
         :param body: Details of the global variable to create.
         :type body: SyntheticsGlobalVariable
@@ -771,7 +745,7 @@ class SyntheticsApi:
     ) -> SyntheticsPrivateLocationCreationResponse:
         """Create a private location.
 
-        Create a new Synthetics private location.
+        Create a new Synthetic private location.
 
         :param body: Details of the private location to create.
         :type body: SyntheticsPrivateLocation
@@ -822,7 +796,7 @@ class SyntheticsApi:
     ) -> None:
         """Delete a global variable.
 
-        Delete a Synthetics global variable.
+        Delete a Synthetic global variable.
 
         :param variable_id: The ID of the global variable.
         :type variable_id: str
@@ -839,7 +813,7 @@ class SyntheticsApi:
     ) -> None:
         """Delete a private location.
 
-        Delete a Synthetics private location.
+        Delete a Synthetic private location.
 
         :param location_id: The ID of the private location.
         :type location_id: str
@@ -874,7 +848,7 @@ class SyntheticsApi:
     ) -> SyntheticsGlobalVariable:
         """Edit a global variable.
 
-        Edit a Synthetics global variable.
+        Edit a Synthetic global variable.
 
         :param variable_id: The ID of the global variable.
         :type variable_id: str
@@ -917,7 +891,7 @@ class SyntheticsApi:
     ) -> SyntheticsGetAPITestLatestResultsResponse:
         """Get an API test's latest results summaries.
 
-        Get the last 50 test results summaries for a given Synthetics API test.
+        Get the last 150 test results summaries for a given Synthetic API test.
 
         :param public_id: The public ID of the test for which to search results for.
         :type public_id: str
@@ -950,7 +924,7 @@ class SyntheticsApi:
     ) -> SyntheticsAPITestResultFull:
         """Get an API test result.
 
-        Get a specific full result from a given (API) Synthetic test.
+        Get a specific full result from a given Synthetic API test.
 
         :param public_id: The public ID of the API test to which the target result belongs.
         :type public_id: str
@@ -993,7 +967,7 @@ class SyntheticsApi:
     ) -> SyntheticsGetBrowserTestLatestResultsResponse:
         """Get a browser test's latest results summaries.
 
-        Get the last 50 test results summaries for a given Synthetics Browser test.
+        Get the last 150 test results summaries for a given Synthetic browser test.
 
         :param public_id: The public ID of the browser test for which to search results
             for.
@@ -1027,7 +1001,7 @@ class SyntheticsApi:
     ) -> SyntheticsBrowserTestResultFull:
         """Get a browser test result.
 
-        Get a specific full result from a given (browser) Synthetic test.
+        Get a specific full result from a given Synthetic browser test.
 
         :param public_id: The public ID of the browser test to which the target result
             belongs.
@@ -1066,7 +1040,7 @@ class SyntheticsApi:
     ) -> SyntheticsPrivateLocation:
         """Get a private location.
 
-        Get a Synthetics private location.
+        Get a Synthetic private location.
 
         :param location_id: The ID of the private location.
         :type location_id: str
@@ -1094,13 +1068,25 @@ class SyntheticsApi:
 
         return self._get_synthetics_ci_batch_endpoint.call_with_http_info(**kwargs)
 
+    def get_synthetics_default_locations(
+        self,
+    ) -> List[str]:
+        """Get the default locations.
+
+        Get the default locations settings.
+
+        :rtype: [str]
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._get_synthetics_default_locations_endpoint.call_with_http_info(**kwargs)
+
     def get_test(
         self,
         public_id: str,
     ) -> SyntheticsTestDetails:
         """Get a test configuration.
 
-        Get the detailed configuration associated with a Synthetics test.
+        Get the detailed configuration associated with a Synthetic test.
 
         :param public_id: The public ID of the test to get details from.
         :type public_id: str
@@ -1116,7 +1102,7 @@ class SyntheticsApi:
     ) -> SyntheticsListGlobalVariablesResponse:
         """Get all global variables.
 
-        Get the list of all Synthetics global variables.
+        Get the list of all Synthetic global variables.
 
         :rtype: SyntheticsListGlobalVariablesResponse
         """
@@ -1167,7 +1153,7 @@ class SyntheticsApi:
     ) -> SyntheticsTriggerCITestsResponse:
         """Trigger tests from CI/CD pipelines.
 
-        Trigger a set of Synthetics tests for continuous integration.
+        Trigger a set of Synthetic tests for continuous integration.
 
         :param body: Details of the test to trigger.
         :type body: SyntheticsCITestBody
@@ -1182,9 +1168,9 @@ class SyntheticsApi:
         self,
         body: SyntheticsTriggerBody,
     ) -> SyntheticsTriggerCITestsResponse:
-        """Trigger Synthetics tests.
+        """Trigger Synthetic tests.
 
-        Trigger a set of Synthetics tests.
+        Trigger a set of Synthetic tests.
 
         :param body: The identifiers of the tests to trigger.
         :type body: SyntheticsTriggerBody
@@ -1246,7 +1232,7 @@ class SyntheticsApi:
     ) -> SyntheticsPrivateLocation:
         """Edit a private location.
 
-        Edit a Synthetics private location.
+        Edit a Synthetic private location.
 
         :param location_id: The ID of the private location.
         :type location_id: str
@@ -1268,7 +1254,7 @@ class SyntheticsApi:
     ) -> bool:
         """Pause or start a test.
 
-        Pause or start a Synthetics test by changing the status.
+        Pause or start a Synthetic test by changing the status.
 
         :param public_id: The public ID of the Synthetic test to update.
         :type public_id: str

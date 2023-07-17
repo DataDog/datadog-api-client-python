@@ -8,6 +8,7 @@ from typing import List, Union
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    none_type,
     unset,
     UnsetType,
 )
@@ -17,8 +18,8 @@ class CloudConfigurationRuleComplianceSignalOptions(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
-            "user_activation_status": (bool,),
-            "user_group_by_fields": ([str],),
+            "user_activation_status": (bool, none_type),
+            "user_group_by_fields": ([str], none_type),
         }
 
     attribute_map = {
@@ -28,18 +29,18 @@ class CloudConfigurationRuleComplianceSignalOptions(ModelNormal):
 
     def __init__(
         self_,
-        user_activation_status: Union[bool, UnsetType] = unset,
-        user_group_by_fields: Union[List[str], UnsetType] = unset,
+        user_activation_status: Union[bool, none_type, UnsetType] = unset,
+        user_group_by_fields: Union[List[str], none_type, UnsetType] = unset,
         **kwargs,
     ):
         """
         How to generate compliance signals. Useful for cloud_configuration rules only.
 
         :param user_activation_status: Whether signals will be sent.
-        :type user_activation_status: bool, optional
+        :type user_activation_status: bool, none_type, optional
 
         :param user_group_by_fields: Fields to use to group findings by when sending signals.
-        :type user_group_by_fields: [str], optional
+        :type user_group_by_fields: [str], none_type, optional
         """
         if user_activation_status is not unset:
             kwargs["user_activation_status"] = user_activation_status

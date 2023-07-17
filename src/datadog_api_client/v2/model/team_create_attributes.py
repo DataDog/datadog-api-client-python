@@ -16,13 +16,10 @@ from datadog_api_client.model_utils import (
 class TeamCreateAttributes(ModelNormal):
     validations = {
         "handle": {
-            "max_length": 64,
-        },
-        "link_count": {
-            "inclusive_maximum": 2147483647,
+            "max_length": 195,
         },
         "name": {
-            "max_length": 64,
+            "max_length": 200,
         },
     }
 
@@ -31,28 +28,16 @@ class TeamCreateAttributes(ModelNormal):
         return {
             "description": (str,),
             "handle": (str,),
-            "link_count": (int,),
             "name": (str,),
         }
 
     attribute_map = {
         "description": "description",
         "handle": "handle",
-        "link_count": "link_count",
         "name": "name",
     }
-    read_only_vars = {
-        "link_count",
-    }
 
-    def __init__(
-        self_,
-        handle: str,
-        name: str,
-        description: Union[str, UnsetType] = unset,
-        link_count: Union[int, UnsetType] = unset,
-        **kwargs,
-    ):
+    def __init__(self_, handle: str, name: str, description: Union[str, UnsetType] = unset, **kwargs):
         """
         Team creation attributes
 
@@ -62,16 +47,11 @@ class TeamCreateAttributes(ModelNormal):
         :param handle: The team's identifier
         :type handle: str
 
-        :param link_count: The number of links belonging to the team
-        :type link_count: int, optional
-
         :param name: The name of the team
         :type name: str
         """
         if description is not unset:
             kwargs["description"] = description
-        if link_count is not unset:
-            kwargs["link_count"] = link_count
         super().__init__(kwargs)
 
         self_.handle = handle

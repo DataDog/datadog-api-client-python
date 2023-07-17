@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"handle":"1679941993","name":"1679941993"},"type":"team"}}'
+    body: '{"data":{"attributes":{"handle":"handle-bb47a0fd53411a26","name":"name-bb47a0fd53411a26"},"type":"team"}}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/team
   response:
     body:
-      string: '{"data":{"type":"team","id":"d5406960-cccd-11ed-b1e3-da7ad0900002","attributes":{"name":"1679941993","handle":"1679941993","summary":null,"description":null,"color":4,"created_at":"2023-03-27T18:33:13.647495+00:00","modified_at":"2023-03-27T18:33:13.647499+00:00","user_count":0,"link_count":0},"relationships":{"team_links":{"links":{"related":"/api/v2/team/d5406960-cccd-11ed-b1e3-da7ad0900002/links"}},"user_team_permissions":{"links":{"related":"/api/v2/team/d5406960-cccd-11ed-b1e3-da7ad0900002/permission-settings"}}}}}
+      string: '{"data":{"type":"team","id":"5777e9e6-ef4f-11ed-9a2b-da7ad0900002","attributes":{"name":"name-bb47a0fd53411a26","handle":"handle-bb47a0fd53411a26","summary":null,"description":null,"color":4,"created_at":"2023-05-10T16:25:56.724082+00:00","modified_at":"2023-05-10T16:25:56.724086+00:00","user_count":0,"link_count":0},"relationships":{"team_links":{"links":{"related":"/api/v2/team/5777e9e6-ef4f-11ed-9a2b-da7ad0900002/links"}},"user_team_permissions":{"links":{"related":"/api/v2/team/5777e9e6-ef4f-11ed-9a2b-da7ad0900002/permission-settings"}}}}}
 
         '
     headers:
@@ -25,10 +25,10 @@ interactions:
       accept:
       - application/json
     method: GET
-    uri: https://api.datadoghq.com/api/v2/team/d5406960-cccd-11ed-b1e3-da7ad0900002/memberships
+    uri: https://api.datadoghq.com/api/v2/team/5777e9e6-ef4f-11ed-9a2b-da7ad0900002/memberships
   response:
     body:
-      string: '{"data":[],"meta":{"pagination":{"offset":0,"first_offset":0,"prev_offset":0,"next_offset":100,"last_offset":0,"limit":100,"type":"offset_limit","total":0}},"links":{"self":"https://api.datadoghq.com/api/v2/team/d5406960-cccd-11ed-b1e3-da7ad0900002/memberships","last":null,"next":"https://api.datadoghq.com/api/v2/team/d5406960-cccd-11ed-b1e3-da7ad0900002/memberships?page[offset]=100&page[limit]=100","prev":null,"first":"https://api.datadoghq.com/api/v2/team/d5406960-cccd-11ed-b1e3-da7ad0900002/memberships?page[offset]=0&page[limit]=100"}}
+      string: '{"data":[],"meta":{"pagination":{"offset":0,"first_offset":0,"prev_offset":0,"next_offset":100,"last_offset":0,"limit":100,"type":"offset_limit","total":0}},"links":{"self":"https://api.datadoghq.com/api/v2/team/5777e9e6-ef4f-11ed-9a2b-da7ad0900002/memberships","last":null,"next":"https://api.datadoghq.com/api/v2/team/5777e9e6-ef4f-11ed-9a2b-da7ad0900002/memberships?page[offset]=100&page[limit]=100","prev":null,"first":"https://api.datadoghq.com/api/v2/team/5777e9e6-ef4f-11ed-9a2b-da7ad0900002/memberships?page[offset]=0&page[limit]=100"}}
 
         '
     headers:
@@ -43,7 +43,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/team/d5406960-cccd-11ed-b1e3-da7ad0900002
+    uri: https://api.datadoghq.com/api/v2/team/5777e9e6-ef4f-11ed-9a2b-da7ad0900002
   response:
     body:
       string: ''

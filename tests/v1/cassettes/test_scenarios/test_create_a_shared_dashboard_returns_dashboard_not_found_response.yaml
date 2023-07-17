@@ -1,0 +1,20 @@
+interactions:
+- request:
+    body: '{"dashboard_id":"abc-123-def","dashboard_type":"custom_timeboard","global_time":{"live_span":"1h"},"share_type":"open"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/dashboard/public
+  response:
+    body:
+      string: '{"errors":["custom_timeboard abc-123-def not found"]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 404
+      message: Not Found
+version: 1

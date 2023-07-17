@@ -37,7 +37,6 @@ class DowntimesApi:
                 "operation_id": "cancel_downtime",
                 "http_method": "DELETE",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "downtime_id": {
@@ -49,7 +48,6 @@ class DowntimesApi:
             },
             headers_map={
                 "accept": ["*/*"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -62,7 +60,6 @@ class DowntimesApi:
                 "operation_id": "cancel_downtimes_by_scope",
                 "http_method": "POST",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -83,7 +80,6 @@ class DowntimesApi:
                 "operation_id": "create_downtime",
                 "http_method": "POST",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -104,7 +100,6 @@ class DowntimesApi:
                 "operation_id": "get_downtime",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "downtime_id": {
@@ -116,7 +111,6 @@ class DowntimesApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -129,7 +123,6 @@ class DowntimesApi:
                 "operation_id": "list_downtimes",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "current_only": {
@@ -145,7 +138,6 @@ class DowntimesApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -158,7 +150,6 @@ class DowntimesApi:
                 "operation_id": "list_monitor_downtimes",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "monitor_id": {
@@ -170,7 +161,6 @@ class DowntimesApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -183,7 +173,6 @@ class DowntimesApi:
                 "operation_id": "update_downtime",
                 "http_method": "PUT",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "downtime_id": {
@@ -299,7 +288,7 @@ class DowntimesApi:
         self,
         monitor_id: int,
     ) -> List[Downtime]:
-        """Get all downtimes for a monitor.
+        """Get active downtimes for a monitor.
 
         Get all active downtimes for the specified monitor.
 

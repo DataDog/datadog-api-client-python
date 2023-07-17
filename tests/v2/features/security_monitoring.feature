@@ -198,6 +198,31 @@ Feature: Security Monitoring
     And the response "name" is equal to "{{ unique }}_cloud"
     And the response "id" has the same value as "cloud_configuration_rule.id"
 
+  @generated @skip @team:DataDog/cloud-security-posture-management
+  Scenario: Get a finding returns "Bad Request: The server cannot process the request due to invalid syntax in the request." response
+    Given operation "GetFinding" enabled
+    And new "GetFinding" request
+    And request contains "finding_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request: The server cannot process the request due to invalid syntax in the request.
+
+  @generated @skip @team:DataDog/cloud-security-posture-management
+  Scenario: Get a finding returns "Not Found: The requested finding cannot be found." response
+    Given operation "GetFinding" enabled
+    And new "GetFinding" request
+    And request contains "finding_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found: The requested finding cannot be found.
+
+  @replay-only @team:DataDog/cloud-security-posture-management
+  Scenario: Get a finding returns "OK" response
+    Given operation "GetFinding" enabled
+    And new "GetFinding" request
+    And request contains "finding_id" parameter with value "AgAAAYd59gjghzF52gAAAAAAAAAYAAAAAEFZZDU5Z2pnQUFCRTRvV1lFeEo4SlFBQQAAACQAAAAAMDE4NzdhMDEtMDRiYS00NTZlLWFmMzMtNTIxNmNkNjVlNDMz"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.attributes.evaluation" is equal to "pass"
+
   @generated @skip @team:DataDog/k9-cloud-security-platform
   Scenario: Get a list of security signals returns "Bad Request" response
     Given new "SearchSecurityMonitoringSignals" request
@@ -212,7 +237,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
 
-  @replay-only @team:DataDog/k9-cloud-security-platform @with-pagination
+  @replay-only @skip-validation @team:DataDog/k9-cloud-security-platform @with-pagination
   Scenario: Get a list of security signals returns "OK" response with pagination
     Given new "SearchSecurityMonitoringSignals" request
     And body with value {"filter": {"from": "{{ timeISO("now-15m") }}", "query": "security:attack status:high", "to": "{{ timeISO("now") }}"}, "page": {"limit": 2}, "sort": "timestamp"}
@@ -232,7 +257,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
 
-  @replay-only @team:DataDog/k9-cloud-security-platform @with-pagination
+  @replay-only @skip-validation @team:DataDog/k9-cloud-security-platform @with-pagination
   Scenario: Get a quick list of security signals returns "OK" response with pagination
     Given new "ListSecurityMonitoringSignals" request
     And request contains "page[limit]" parameter with value 2
@@ -296,6 +321,37 @@ Feature: Security Monitoring
     Given new "ListSecurityFilters" request
     When the request is sent
     Then the response status is 200 OK
+    And the response "data" has item with field "attributes.filtered_data_type" with value "logs"
+    And the response "data" has item with field "attributes.is_builtin" with value true
+
+  @generated @skip @team:DataDog/cloud-security-posture-management
+  Scenario: List findings returns "Bad Request: The server cannot process the request due to invalid syntax in the request." response
+    Given operation "ListFindings" enabled
+    And new "ListFindings" request
+    When the request is sent
+    Then the response status is 400 Bad Request: The server cannot process the request due to invalid syntax in the request.
+
+  @generated @skip @team:DataDog/cloud-security-posture-management
+  Scenario: List findings returns "Not Found: The requested finding cannot be found." response
+    Given operation "ListFindings" enabled
+    And new "ListFindings" request
+    When the request is sent
+    Then the response status is 404 Not Found: The requested finding cannot be found.
+
+  @replay-only @team:DataDog/cloud-security-posture-management
+  Scenario: List findings returns "OK" response
+    Given operation "ListFindings" enabled
+    And new "ListFindings" request
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data[0].type" is equal to "finding"
+
+  @generated @skip @team:DataDog/cloud-security-posture-management @with-pagination
+  Scenario: List findings returns "OK" response with pagination
+    Given operation "ListFindings" enabled
+    And new "ListFindings" request
+    When the request with pagination is sent
+    Then the response status is 200 OK
 
   @generated @skip @team:DataDog/k9-cloud-security-platform
   Scenario: List rules returns "Bad Request" response
@@ -313,7 +369,7 @@ Feature: Security Monitoring
   Scenario: Modify the triage assignee of a security signal returns "Bad Request" response
     Given new "EditSecurityMonitoringSignalAssignee" request
     And request contains "signal_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"assignee": {"uuid": "773b045d-ccf8-4808-bd3b-955ef6a8c940"}}}}
+    And body with value {"data": {"attributes": {"assignee": {"name": null, "uuid": "773b045d-ccf8-4808-bd3b-955ef6a8c940"}}}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -321,7 +377,7 @@ Feature: Security Monitoring
   Scenario: Modify the triage assignee of a security signal returns "Not Found" response
     Given new "EditSecurityMonitoringSignalAssignee" request
     And request contains "signal_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"assignee": {"uuid": "773b045d-ccf8-4808-bd3b-955ef6a8c940"}}}}
+    And body with value {"data": {"attributes": {"assignee": {"name": null, "uuid": "773b045d-ccf8-4808-bd3b-955ef6a8c940"}}}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -332,6 +388,52 @@ Feature: Security Monitoring
     And body with value {"data": {"attributes": {"assignee": {"uuid": ""}}}}
     When the request is sent
     Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/cloud-security-posture-management
+  Scenario: Mute or unmute a finding returns "Bad Request: The server cannot process the request due to invalid syntax in the request." response
+    Given operation "UpdateFinding" enabled
+    And new "UpdateFinding" request
+    And request contains "finding_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"mute": {"description": "To be resolved later", "expiration_date": 1778721573794, "muted": true, "reason": "ACCEPTED_RISK"}}, "id": "AQAAAYbb1i0gijTHEQAAAABBWWJiMWkwZ0FBQ2FuNzBJVGZXZ3B3QUE", "type": "finding"}}
+    When the request is sent
+    Then the response status is 400 Bad Request: The server cannot process the request due to invalid syntax in the request.
+
+  @generated @skip @team:DataDog/cloud-security-posture-management
+  Scenario: Mute or unmute a finding returns "Invalid Request: The server understands the request syntax but cannot process it due to invalid data." response
+    Given operation "UpdateFinding" enabled
+    And new "UpdateFinding" request
+    And request contains "finding_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"mute": {"description": "To be resolved later", "expiration_date": 1778721573794, "muted": true, "reason": "ACCEPTED_RISK"}}, "id": "AQAAAYbb1i0gijTHEQAAAABBWWJiMWkwZ0FBQ2FuNzBJVGZXZ3B3QUE", "type": "finding"}}
+    When the request is sent
+    Then the response status is 422 Invalid Request: The server understands the request syntax but cannot process it due to invalid data.
+
+  @generated @skip @team:DataDog/cloud-security-posture-management
+  Scenario: Mute or unmute a finding returns "Not Found: The requested finding cannot be found." response
+    Given operation "UpdateFinding" enabled
+    And new "UpdateFinding" request
+    And request contains "finding_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"mute": {"description": "To be resolved later", "expiration_date": 1778721573794, "muted": true, "reason": "ACCEPTED_RISK"}}, "id": "AQAAAYbb1i0gijTHEQAAAABBWWJiMWkwZ0FBQ2FuNzBJVGZXZ3B3QUE", "type": "finding"}}
+    When the request is sent
+    Then the response status is 404 Not Found: The requested finding cannot be found.
+
+  @replay-only @team:DataDog/cloud-security-posture-management
+  Scenario: Mute or unmute a finding returns "OK" response
+    Given operation "UpdateFinding" enabled
+    And new "UpdateFinding" request
+    And request contains "finding_id" parameter with value "AQAAAYbb1i0gijTHEQAAAABBWWJiMWkwZ0FBQ2FuNzBJVGZXZ3B3QUE"
+    And body with value {"data": {"attributes": {"mute": {"description": "To be resolved later", "expiration_date": 1778721573794, "muted": true, "reason": "ACCEPTED_RISK"}}, "id": "AQAAAYbb1i0gijTHEQAAAABBWWJiMWkwZ0FBQ2FuNzBJVGZXZ3B3QUE", "type": "finding"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.attributes.mute.muted" is equal to true
+
+  @generated @skip @team:DataDog/cloud-security-posture-management
+  Scenario: Mute or unmute a finding returns "Resource Conflict: The finding has already been muted or unmuted within the last 60 seconds." response
+    Given operation "UpdateFinding" enabled
+    And new "UpdateFinding" request
+    And request contains "finding_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"mute": {"description": "To be resolved later", "expiration_date": 1778721573794, "muted": true, "reason": "ACCEPTED_RISK"}}, "id": "AQAAAYbb1i0gijTHEQAAAABBWWJiMWkwZ0FBQ2FuNzBJVGZXZ3B3QUE", "type": "finding"}}
+    When the request is sent
+    Then the response status is 409 Resource Conflict: The finding has already been muted or unmuted within the last 60 seconds.
 
   @team:DataDog/k9-cloud-security-platform
   Scenario: Update a cloud configuration rule's details returns "OK" response

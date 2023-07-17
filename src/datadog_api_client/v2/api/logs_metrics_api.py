@@ -31,7 +31,6 @@ class LogsMetricsApi:
                 "operation_id": "create_logs_metric",
                 "http_method": "POST",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -52,7 +51,6 @@ class LogsMetricsApi:
                 "operation_id": "delete_logs_metric",
                 "http_method": "DELETE",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "metric_id": {
@@ -64,7 +62,6 @@ class LogsMetricsApi:
             },
             headers_map={
                 "accept": ["*/*"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -77,7 +74,6 @@ class LogsMetricsApi:
                 "operation_id": "get_logs_metric",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "metric_id": {
@@ -89,7 +85,6 @@ class LogsMetricsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -102,12 +97,10 @@ class LogsMetricsApi:
                 "operation_id": "list_logs_metrics",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={},
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -120,7 +113,6 @@ class LogsMetricsApi:
                 "operation_id": "update_logs_metric",
                 "http_method": "PATCH",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "metric_id": {

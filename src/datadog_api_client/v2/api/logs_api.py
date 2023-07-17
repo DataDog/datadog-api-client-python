@@ -4,7 +4,7 @@
 from __future__ import annotations
 
 import collections
-from typing import Any, Dict, Union
+from typing import Any, Dict, List, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
@@ -44,7 +44,6 @@ class LogsApi:
                 "operation_id": "aggregate_logs",
                 "http_method": "POST",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -65,7 +64,6 @@ class LogsApi:
                 "operation_id": "list_logs",
                 "http_method": "POST",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -85,7 +83,6 @@ class LogsApi:
                 "operation_id": "list_logs_get",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "filter_query": {
@@ -93,10 +90,11 @@ class LogsApi:
                     "attribute": "filter[query]",
                     "location": "query",
                 },
-                "filter_index": {
-                    "openapi_types": (str,),
-                    "attribute": "filter[index]",
+                "filter_indexes": {
+                    "openapi_types": ([str],),
+                    "attribute": "filter[indexes]",
                     "location": "query",
+                    "collection_format": "csv",
                 },
                 "filter_from": {
                     "openapi_types": (datetime,),
@@ -134,7 +132,6 @@ class LogsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -298,7 +295,7 @@ class LogsApi:
         self,
         *,
         filter_query: Union[str, UnsetType] = unset,
-        filter_index: Union[str, UnsetType] = unset,
+        filter_indexes: Union[List[str], UnsetType] = unset,
         filter_from: Union[datetime, UnsetType] = unset,
         filter_to: Union[datetime, UnsetType] = unset,
         filter_storage_tier: Union[LogsStorageTier, UnsetType] = unset,
@@ -319,9 +316,9 @@ class LogsApi:
 
         :param filter_query: Search query following logs syntax.
         :type filter_query: str, optional
-        :param filter_index: For customers with multiple indexes, the indexes to search
+        :param filter_indexes: For customers with multiple indexes, the indexes to search.
             Defaults to '*' which means all indexes
-        :type filter_index: str, optional
+        :type filter_indexes: [str], optional
         :param filter_from: Minimum timestamp for requested logs.
         :type filter_from: datetime, optional
         :param filter_to: Maximum timestamp for requested logs.
@@ -340,8 +337,8 @@ class LogsApi:
         if filter_query is not unset:
             kwargs["filter_query"] = filter_query
 
-        if filter_index is not unset:
-            kwargs["filter_index"] = filter_index
+        if filter_indexes is not unset:
+            kwargs["filter_indexes"] = filter_indexes
 
         if filter_from is not unset:
             kwargs["filter_from"] = filter_from
@@ -367,7 +364,7 @@ class LogsApi:
         self,
         *,
         filter_query: Union[str, UnsetType] = unset,
-        filter_index: Union[str, UnsetType] = unset,
+        filter_indexes: Union[List[str], UnsetType] = unset,
         filter_from: Union[datetime, UnsetType] = unset,
         filter_to: Union[datetime, UnsetType] = unset,
         filter_storage_tier: Union[LogsStorageTier, UnsetType] = unset,
@@ -381,9 +378,9 @@ class LogsApi:
 
         :param filter_query: Search query following logs syntax.
         :type filter_query: str, optional
-        :param filter_index: For customers with multiple indexes, the indexes to search
+        :param filter_indexes: For customers with multiple indexes, the indexes to search.
             Defaults to '*' which means all indexes
-        :type filter_index: str, optional
+        :type filter_indexes: [str], optional
         :param filter_from: Minimum timestamp for requested logs.
         :type filter_from: datetime, optional
         :param filter_to: Maximum timestamp for requested logs.
@@ -404,8 +401,8 @@ class LogsApi:
         if filter_query is not unset:
             kwargs["filter_query"] = filter_query
 
-        if filter_index is not unset:
-            kwargs["filter_index"] = filter_index
+        if filter_indexes is not unset:
+            kwargs["filter_indexes"] = filter_indexes
 
         if filter_from is not unset:
             kwargs["filter_from"] = filter_from
@@ -460,7 +457,7 @@ class LogsApi:
 
         Datadog recommends sending your logs compressed.
         Add the ``Content-Encoding: gzip`` header to the request when sending compressed logs.
-        Log events can be submitted up to 18 hours in the past and 2 hours in the future.
+        Log events can be submitted with a timestamp that is up to 18 hours in the past.
 
         The status codes answered by the HTTP API are:
 

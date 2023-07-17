@@ -9,6 +9,7 @@ from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     datetime,
+    none_type,
     unset,
     UnsetType,
 )
@@ -18,14 +19,14 @@ class UsageSDSHour(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
-            "apm_scanned_bytes": (int,),
-            "events_scanned_bytes": (int,),
+            "apm_scanned_bytes": (int, none_type),
+            "events_scanned_bytes": (int, none_type),
             "hour": (datetime,),
-            "logs_scanned_bytes": (int,),
+            "logs_scanned_bytes": (int, none_type),
             "org_name": (str,),
             "public_id": (str,),
-            "rum_scanned_bytes": (int,),
-            "total_scanned_bytes": (int,),
+            "rum_scanned_bytes": (int, none_type),
+            "total_scanned_bytes": (int, none_type),
         }
 
     attribute_map = {
@@ -41,30 +42,30 @@ class UsageSDSHour(ModelNormal):
 
     def __init__(
         self_,
-        apm_scanned_bytes: Union[int, UnsetType] = unset,
-        events_scanned_bytes: Union[int, UnsetType] = unset,
+        apm_scanned_bytes: Union[int, none_type, UnsetType] = unset,
+        events_scanned_bytes: Union[int, none_type, UnsetType] = unset,
         hour: Union[datetime, UnsetType] = unset,
-        logs_scanned_bytes: Union[int, UnsetType] = unset,
+        logs_scanned_bytes: Union[int, none_type, UnsetType] = unset,
         org_name: Union[str, UnsetType] = unset,
         public_id: Union[str, UnsetType] = unset,
-        rum_scanned_bytes: Union[int, UnsetType] = unset,
-        total_scanned_bytes: Union[int, UnsetType] = unset,
+        rum_scanned_bytes: Union[int, none_type, UnsetType] = unset,
+        total_scanned_bytes: Union[int, none_type, UnsetType] = unset,
         **kwargs,
     ):
         """
         Sensitive Data Scanner usage for a given organization for a given hour.
 
         :param apm_scanned_bytes: The total number of bytes scanned of APM usage across all usage types by the Sensitive Data Scanner from the start of the given hour’s month until the given hour.
-        :type apm_scanned_bytes: int, optional
+        :type apm_scanned_bytes: int, none_type, optional
 
         :param events_scanned_bytes: The total number of bytes scanned of Events usage across all usage types by the Sensitive Data Scanner from the start of the given hour’s month until the given hour.
-        :type events_scanned_bytes: int, optional
+        :type events_scanned_bytes: int, none_type, optional
 
         :param hour: The hour for the usage.
         :type hour: datetime, optional
 
         :param logs_scanned_bytes: The total number of bytes scanned of logs usage by the Sensitive Data Scanner from the start of the given hour’s month until the given hour.
-        :type logs_scanned_bytes: int, optional
+        :type logs_scanned_bytes: int, none_type, optional
 
         :param org_name: The organization name.
         :type org_name: str, optional
@@ -73,10 +74,10 @@ class UsageSDSHour(ModelNormal):
         :type public_id: str, optional
 
         :param rum_scanned_bytes: The total number of bytes scanned of RUM usage across all usage types by the Sensitive Data Scanner from the start of the given hour’s month until the given hour.
-        :type rum_scanned_bytes: int, optional
+        :type rum_scanned_bytes: int, none_type, optional
 
         :param total_scanned_bytes: The total number of bytes scanned across all usage types by the Sensitive Data Scanner from the start of the given hour’s month until the given hour.
-        :type total_scanned_bytes: int, optional
+        :type total_scanned_bytes: int, none_type, optional
         """
         if apm_scanned_bytes is not unset:
             kwargs["apm_scanned_bytes"] = apm_scanned_bytes

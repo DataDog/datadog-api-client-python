@@ -428,6 +428,20 @@ ci\_app\_aggregation\_function
    :members:
    :show-inheritance:
 
+ci\_app\_ci\_error
+------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_ci_error
+   :members:
+   :show-inheritance:
+
+ci\_app\_ci\_error\_domain
+--------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_ci_error_domain
+   :members:
+   :show-inheritance:
+
 ci\_app\_compute
 ----------------
 
@@ -449,10 +463,52 @@ ci\_app\_computes
    :members:
    :show-inheritance:
 
+ci\_app\_create\_pipeline\_event\_request
+-----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_create_pipeline_event_request
+   :members:
+   :show-inheritance:
+
+ci\_app\_create\_pipeline\_event\_request\_attributes
+-----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_create_pipeline_event_request_attributes
+   :members:
+   :show-inheritance:
+
+ci\_app\_create\_pipeline\_event\_request\_attributes\_resource
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_create_pipeline_event_request_attributes_resource
+   :members:
+   :show-inheritance:
+
+ci\_app\_create\_pipeline\_event\_request\_data
+-----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_create_pipeline_event_request_data
+   :members:
+   :show-inheritance:
+
+ci\_app\_create\_pipeline\_event\_request\_data\_type
+-----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_create_pipeline_event_request_data_type
+   :members:
+   :show-inheritance:
+
 ci\_app\_event\_attributes
 --------------------------
 
 .. automodule:: datadog_api_client.v2.model.ci_app_event_attributes
+   :members:
+   :show-inheritance:
+
+ci\_app\_git\_info
+------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_git_info
    :members:
    :show-inheritance:
 
@@ -477,10 +533,122 @@ ci\_app\_group\_by\_total
    :members:
    :show-inheritance:
 
+ci\_app\_host\_info
+-------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_host_info
+   :members:
+   :show-inheritance:
+
 ci\_app\_pipeline\_event
 ------------------------
 
 .. automodule:: datadog_api_client.v2.model.ci_app_pipeline_event
+   :members:
+   :show-inheritance:
+
+ci\_app\_pipeline\_event\_job
+-----------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_pipeline_event_job
+   :members:
+   :show-inheritance:
+
+ci\_app\_pipeline\_event\_job\_level
+------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_pipeline_event_job_level
+   :members:
+   :show-inheritance:
+
+ci\_app\_pipeline\_event\_job\_status
+-------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_pipeline_event_job_status
+   :members:
+   :show-inheritance:
+
+ci\_app\_pipeline\_event\_parameters
+------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_pipeline_event_parameters
+   :members:
+   :show-inheritance:
+
+ci\_app\_pipeline\_event\_parent\_pipeline
+------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_pipeline_event_parent_pipeline
+   :members:
+   :show-inheritance:
+
+ci\_app\_pipeline\_event\_pipeline
+----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_pipeline_event_pipeline
+   :members:
+   :show-inheritance:
+
+ci\_app\_pipeline\_event\_pipeline\_level
+-----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_pipeline_event_pipeline_level
+   :members:
+   :show-inheritance:
+
+ci\_app\_pipeline\_event\_pipeline\_status
+------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_pipeline_event_pipeline_status
+   :members:
+   :show-inheritance:
+
+ci\_app\_pipeline\_event\_previous\_pipeline
+--------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_pipeline_event_previous_pipeline
+   :members:
+   :show-inheritance:
+
+ci\_app\_pipeline\_event\_stage
+-------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_pipeline_event_stage
+   :members:
+   :show-inheritance:
+
+ci\_app\_pipeline\_event\_stage\_level
+--------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_pipeline_event_stage_level
+   :members:
+   :show-inheritance:
+
+ci\_app\_pipeline\_event\_stage\_status
+---------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_pipeline_event_stage_status
+   :members:
+   :show-inheritance:
+
+ci\_app\_pipeline\_event\_step
+------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_pipeline_event_step
+   :members:
+   :show-inheritance:
+
+ci\_app\_pipeline\_event\_step\_level
+-------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_pipeline_event_step_level
+   :members:
+   :show-inheritance:
+
+ci\_app\_pipeline\_event\_step\_status
+--------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_pipeline_event_step_status
    :members:
    :show-inheritance:
 
@@ -1170,6 +1338,293 @@ data\_scalar\_column
    :members:
    :show-inheritance:
 
+detailed\_finding
+-----------------
+
+.. automodule:: datadog_api_client.v2.model.detailed_finding
+   :members:
+   :show-inheritance:
+
+detailed\_finding\_attributes
+-----------------------------
+
+.. automodule:: datadog_api_client.v2.model.detailed_finding_attributes
+   :members:
+   :show-inheritance:
+
+detailed\_finding\_type
+-----------------------
+
+.. automodule:: datadog_api_client.v2.model.detailed_finding_type
+   :members:
+   :show-inheritance:
+
+downtime\_create\_request
+-------------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_create_request
+   :members:
+   :show-inheritance:
+
+downtime\_create\_request\_attributes
+-------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_create_request_attributes
+   :members:
+   :show-inheritance:
+
+downtime\_create\_request\_data
+-------------------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_create_request_data
+   :members:
+   :show-inheritance:
+
+downtime\_included\_monitor\_type
+---------------------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_included_monitor_type
+   :members:
+   :show-inheritance:
+
+downtime\_meta
+--------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_meta
+   :members:
+   :show-inheritance:
+
+downtime\_meta\_page
+--------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_meta_page
+   :members:
+   :show-inheritance:
+
+downtime\_monitor\_identifier
+-----------------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_monitor_identifier
+   :members:
+   :show-inheritance:
+
+downtime\_monitor\_identifier\_id
+---------------------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_monitor_identifier_id
+   :members:
+   :show-inheritance:
+
+downtime\_monitor\_identifier\_tags
+-----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_monitor_identifier_tags
+   :members:
+   :show-inheritance:
+
+downtime\_monitor\_included\_attributes
+---------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_monitor_included_attributes
+   :members:
+   :show-inheritance:
+
+downtime\_monitor\_included\_item
+---------------------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_monitor_included_item
+   :members:
+   :show-inheritance:
+
+downtime\_notify\_end\_state\_actions
+-------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_notify_end_state_actions
+   :members:
+   :show-inheritance:
+
+downtime\_notify\_end\_state\_types
+-----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_notify_end_state_types
+   :members:
+   :show-inheritance:
+
+downtime\_relationships
+-----------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_relationships
+   :members:
+   :show-inheritance:
+
+downtime\_relationships\_created\_by
+------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_relationships_created_by
+   :members:
+   :show-inheritance:
+
+downtime\_relationships\_created\_by\_data
+------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_relationships_created_by_data
+   :members:
+   :show-inheritance:
+
+downtime\_relationships\_monitor
+--------------------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_relationships_monitor
+   :members:
+   :show-inheritance:
+
+downtime\_relationships\_monitor\_data
+--------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_relationships_monitor_data
+   :members:
+   :show-inheritance:
+
+downtime\_resource\_type
+------------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_resource_type
+   :members:
+   :show-inheritance:
+
+downtime\_response
+------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_response
+   :members:
+   :show-inheritance:
+
+downtime\_response\_attributes
+------------------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_response_attributes
+   :members:
+   :show-inheritance:
+
+downtime\_response\_data
+------------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_response_data
+   :members:
+   :show-inheritance:
+
+downtime\_response\_included\_item
+----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_response_included_item
+   :members:
+   :show-inheritance:
+
+downtime\_schedule\_create\_request
+-----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_schedule_create_request
+   :members:
+   :show-inheritance:
+
+downtime\_schedule\_current\_downtime\_response
+-----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_schedule_current_downtime_response
+   :members:
+   :show-inheritance:
+
+downtime\_schedule\_one\_time\_create\_update\_request
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_schedule_one_time_create_update_request
+   :members:
+   :show-inheritance:
+
+downtime\_schedule\_one\_time\_response
+---------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_schedule_one_time_response
+   :members:
+   :show-inheritance:
+
+downtime\_schedule\_recurrence\_create\_update\_request
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_schedule_recurrence_create_update_request
+   :members:
+   :show-inheritance:
+
+downtime\_schedule\_recurrence\_response
+----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_schedule_recurrence_response
+   :members:
+   :show-inheritance:
+
+downtime\_schedule\_recurrences\_create\_request
+------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_schedule_recurrences_create_request
+   :members:
+   :show-inheritance:
+
+downtime\_schedule\_recurrences\_response
+-----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_schedule_recurrences_response
+   :members:
+   :show-inheritance:
+
+downtime\_schedule\_recurrences\_update\_request
+------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_schedule_recurrences_update_request
+   :members:
+   :show-inheritance:
+
+downtime\_schedule\_response
+----------------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_schedule_response
+   :members:
+   :show-inheritance:
+
+downtime\_schedule\_update\_request
+-----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_schedule_update_request
+   :members:
+   :show-inheritance:
+
+downtime\_status
+----------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_status
+   :members:
+   :show-inheritance:
+
+downtime\_update\_request
+-------------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_update_request
+   :members:
+   :show-inheritance:
+
+downtime\_update\_request\_attributes
+-------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_update_request_attributes
+   :members:
+   :show-inheritance:
+
+downtime\_update\_request\_data
+-------------------------------
+
+.. automodule:: datadog_api_client.v2.model.downtime_update_request_data
+   :members:
+   :show-inheritance:
+
 event
 -----
 
@@ -1485,6 +1940,62 @@ fastly\_services\_response
    :members:
    :show-inheritance:
 
+finding
+-------
+
+.. automodule:: datadog_api_client.v2.model.finding
+   :members:
+   :show-inheritance:
+
+finding\_attributes
+-------------------
+
+.. automodule:: datadog_api_client.v2.model.finding_attributes
+   :members:
+   :show-inheritance:
+
+finding\_evaluation
+-------------------
+
+.. automodule:: datadog_api_client.v2.model.finding_evaluation
+   :members:
+   :show-inheritance:
+
+finding\_mute
+-------------
+
+.. automodule:: datadog_api_client.v2.model.finding_mute
+   :members:
+   :show-inheritance:
+
+finding\_mute\_reason
+---------------------
+
+.. automodule:: datadog_api_client.v2.model.finding_mute_reason
+   :members:
+   :show-inheritance:
+
+finding\_rule
+-------------
+
+.. automodule:: datadog_api_client.v2.model.finding_rule
+   :members:
+   :show-inheritance:
+
+finding\_status
+---------------
+
+.. automodule:: datadog_api_client.v2.model.finding_status
+   :members:
+   :show-inheritance:
+
+finding\_type
+-------------
+
+.. automodule:: datadog_api_client.v2.model.finding_type
+   :members:
+   :show-inheritance:
+
 formula\_limit
 --------------
 
@@ -1517,6 +2028,111 @@ full\_application\_key\_attributes
 ----------------------------------
 
 .. automodule:: datadog_api_client.v2.model.full_application_key_attributes
+   :members:
+   :show-inheritance:
+
+gcp\_service\_account\_meta
+---------------------------
+
+.. automodule:: datadog_api_client.v2.model.gcp_service_account_meta
+   :members:
+   :show-inheritance:
+
+gcp\_service\_account\_type
+---------------------------
+
+.. automodule:: datadog_api_client.v2.model.gcp_service_account_type
+   :members:
+   :show-inheritance:
+
+gcpsts\_delegate\_account
+-------------------------
+
+.. automodule:: datadog_api_client.v2.model.gcpsts_delegate_account
+   :members:
+   :show-inheritance:
+
+gcpsts\_delegate\_account\_attributes
+-------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.gcpsts_delegate_account_attributes
+   :members:
+   :show-inheritance:
+
+gcpsts\_delegate\_account\_response
+-----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.gcpsts_delegate_account_response
+   :members:
+   :show-inheritance:
+
+gcpsts\_delegate\_account\_type
+-------------------------------
+
+.. automodule:: datadog_api_client.v2.model.gcpsts_delegate_account_type
+   :members:
+   :show-inheritance:
+
+gcpsts\_service\_account
+------------------------
+
+.. automodule:: datadog_api_client.v2.model.gcpsts_service_account
+   :members:
+   :show-inheritance:
+
+gcpsts\_service\_account\_attributes
+------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.gcpsts_service_account_attributes
+   :members:
+   :show-inheritance:
+
+gcpsts\_service\_account\_create\_request
+-----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.gcpsts_service_account_create_request
+   :members:
+   :show-inheritance:
+
+gcpsts\_service\_account\_data
+------------------------------
+
+.. automodule:: datadog_api_client.v2.model.gcpsts_service_account_data
+   :members:
+   :show-inheritance:
+
+gcpsts\_service\_account\_response
+----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.gcpsts_service_account_response
+   :members:
+   :show-inheritance:
+
+gcpsts\_service\_account\_update\_request
+-----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.gcpsts_service_account_update_request
+   :members:
+   :show-inheritance:
+
+gcpsts\_service\_account\_update\_request\_data
+-----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.gcpsts_service_account_update_request_data
+   :members:
+   :show-inheritance:
+
+gcpsts\_service\_accounts\_response
+-----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.gcpsts_service_accounts_response
+   :members:
+   :show-inheritance:
+
+get\_finding\_response
+----------------------
+
+.. automodule:: datadog_api_client.v2.model.get_finding_response
    :members:
    :show-inheritance:
 
@@ -1615,6 +2231,20 @@ http\_log\_item
 ---------------
 
 .. automodule:: datadog_api_client.v2.model.http_log_item
+   :members:
+   :show-inheritance:
+
+httpci\_app\_error
+------------------
+
+.. automodule:: datadog_api_client.v2.model.httpci_app_error
+   :members:
+   :show-inheritance:
+
+httpci\_app\_errors
+-------------------
+
+.. automodule:: datadog_api_client.v2.model.httpci_app_errors
    :members:
    :show-inheritance:
 
@@ -2486,10 +3116,52 @@ jira\_integration\_metadata\_issues\_item
    :members:
    :show-inheritance:
 
+jsonapi\_error\_item
+--------------------
+
+.. automodule:: datadog_api_client.v2.model.jsonapi_error_item
+   :members:
+   :show-inheritance:
+
+jsonapi\_error\_response
+------------------------
+
+.. automodule:: datadog_api_client.v2.model.jsonapi_error_response
+   :members:
+   :show-inheritance:
+
 list\_application\_keys\_response
 ---------------------------------
 
 .. automodule:: datadog_api_client.v2.model.list_application_keys_response
+   :members:
+   :show-inheritance:
+
+list\_downtimes\_response
+-------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_downtimes_response
+   :members:
+   :show-inheritance:
+
+list\_findings\_meta
+--------------------
+
+.. automodule:: datadog_api_client.v2.model.list_findings_meta
+   :members:
+   :show-inheritance:
+
+list\_findings\_page
+--------------------
+
+.. automodule:: datadog_api_client.v2.model.list_findings_page
+   :members:
+   :show-inheritance:
+
+list\_findings\_response
+------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_findings_response
    :members:
    :show-inheritance:
 
@@ -3599,10 +4271,94 @@ monitor\_config\_policy\_type
    :members:
    :show-inheritance:
 
+monitor\_downtime\_match\_resource\_type
+----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_downtime_match_resource_type
+   :members:
+   :show-inheritance:
+
+monitor\_downtime\_match\_response
+----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_downtime_match_response
+   :members:
+   :show-inheritance:
+
+monitor\_downtime\_match\_response\_attributes
+----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_downtime_match_response_attributes
+   :members:
+   :show-inheritance:
+
+monitor\_downtime\_match\_response\_data
+----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_downtime_match_response_data
+   :members:
+   :show-inheritance:
+
 monitor\_type
 -------------
 
 .. automodule:: datadog_api_client.v2.model.monitor_type
+   :members:
+   :show-inheritance:
+
+mute\_finding\_request
+----------------------
+
+.. automodule:: datadog_api_client.v2.model.mute_finding_request
+   :members:
+   :show-inheritance:
+
+mute\_finding\_request\_attributes
+----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.mute_finding_request_attributes
+   :members:
+   :show-inheritance:
+
+mute\_finding\_request\_data
+----------------------------
+
+.. automodule:: datadog_api_client.v2.model.mute_finding_request_data
+   :members:
+   :show-inheritance:
+
+mute\_finding\_request\_properties
+----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.mute_finding_request_properties
+   :members:
+   :show-inheritance:
+
+mute\_finding\_response
+-----------------------
+
+.. automodule:: datadog_api_client.v2.model.mute_finding_response
+   :members:
+   :show-inheritance:
+
+mute\_finding\_response\_attributes
+-----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.mute_finding_response_attributes
+   :members:
+   :show-inheritance:
+
+mute\_finding\_response\_data
+-----------------------------
+
+.. automodule:: datadog_api_client.v2.model.mute_finding_response_data
+   :members:
+   :show-inheritance:
+
+mute\_finding\_response\_properties
+-----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.mute_finding_response_properties
    :members:
    :show-inheritance:
 
@@ -5657,10 +6413,24 @@ service\_definition\_meta
    :members:
    :show-inheritance:
 
+service\_definition\_meta\_warnings
+-----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_definition_meta_warnings
+   :members:
+   :show-inheritance:
+
 service\_definition\_schema
 ---------------------------
 
 .. automodule:: datadog_api_client.v2.model.service_definition_schema
+   :members:
+   :show-inheritance:
+
+service\_definition\_schema\_versions
+-------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_definition_schema_versions
    :members:
    :show-inheritance:
 
@@ -5944,6 +6714,223 @@ slack\_integration\_metadata\_channel\_item
    :members:
    :show-inheritance:
 
+span
+----
+
+.. automodule:: datadog_api_client.v2.model.span
+   :members:
+   :show-inheritance:
+
+spans\_aggregate\_bucket
+------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_aggregate_bucket
+   :members:
+   :show-inheritance:
+
+spans\_aggregate\_bucket\_attributes
+------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_aggregate_bucket_attributes
+   :members:
+   :show-inheritance:
+
+spans\_aggregate\_bucket\_type
+------------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_aggregate_bucket_type
+   :members:
+   :show-inheritance:
+
+spans\_aggregate\_bucket\_value
+-------------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_aggregate_bucket_value
+   :members:
+   :show-inheritance:
+
+spans\_aggregate\_bucket\_value\_timeseries\_point
+--------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_aggregate_bucket_value_timeseries_point
+   :members:
+   :show-inheritance:
+
+spans\_aggregate\_data
+----------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_aggregate_data
+   :members:
+   :show-inheritance:
+
+spans\_aggregate\_request
+-------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_aggregate_request
+   :members:
+   :show-inheritance:
+
+spans\_aggregate\_request\_attributes
+-------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_aggregate_request_attributes
+   :members:
+   :show-inheritance:
+
+spans\_aggregate\_request\_type
+-------------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_aggregate_request_type
+   :members:
+   :show-inheritance:
+
+spans\_aggregate\_response
+--------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_aggregate_response
+   :members:
+   :show-inheritance:
+
+spans\_aggregate\_response\_metadata
+------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_aggregate_response_metadata
+   :members:
+   :show-inheritance:
+
+spans\_aggregate\_response\_status
+----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_aggregate_response_status
+   :members:
+   :show-inheritance:
+
+spans\_aggregate\_sort
+----------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_aggregate_sort
+   :members:
+   :show-inheritance:
+
+spans\_aggregate\_sort\_type
+----------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_aggregate_sort_type
+   :members:
+   :show-inheritance:
+
+spans\_aggregation\_function
+----------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_aggregation_function
+   :members:
+   :show-inheritance:
+
+spans\_attributes
+-----------------
+
+.. automodule:: datadog_api_client.v2.model.spans_attributes
+   :members:
+   :show-inheritance:
+
+spans\_compute
+--------------
+
+.. automodule:: datadog_api_client.v2.model.spans_compute
+   :members:
+   :show-inheritance:
+
+spans\_compute\_type
+--------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_compute_type
+   :members:
+   :show-inheritance:
+
+spans\_group\_by
+----------------
+
+.. automodule:: datadog_api_client.v2.model.spans_group_by
+   :members:
+   :show-inheritance:
+
+spans\_group\_by\_histogram
+---------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_group_by_histogram
+   :members:
+   :show-inheritance:
+
+spans\_group\_by\_missing
+-------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_group_by_missing
+   :members:
+   :show-inheritance:
+
+spans\_group\_by\_total
+-----------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_group_by_total
+   :members:
+   :show-inheritance:
+
+spans\_list\_request
+--------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_list_request
+   :members:
+   :show-inheritance:
+
+spans\_list\_request\_attributes
+--------------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_list_request_attributes
+   :members:
+   :show-inheritance:
+
+spans\_list\_request\_data
+--------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_list_request_data
+   :members:
+   :show-inheritance:
+
+spans\_list\_request\_page
+--------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_list_request_page
+   :members:
+   :show-inheritance:
+
+spans\_list\_request\_type
+--------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_list_request_type
+   :members:
+   :show-inheritance:
+
+spans\_list\_response
+---------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_list_response
+   :members:
+   :show-inheritance:
+
+spans\_list\_response\_links
+----------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_list_response_links
+   :members:
+   :show-inheritance:
+
+spans\_list\_response\_metadata
+-------------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_list_response_metadata
+   :members:
+   :show-inheritance:
+
 spans\_metric\_compute
 ----------------------
 
@@ -6074,6 +7061,55 @@ spans\_metrics\_response
 ------------------------
 
 .. automodule:: datadog_api_client.v2.model.spans_metrics_response
+   :members:
+   :show-inheritance:
+
+spans\_query\_filter
+--------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_query_filter
+   :members:
+   :show-inheritance:
+
+spans\_query\_options
+---------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_query_options
+   :members:
+   :show-inheritance:
+
+spans\_response\_metadata\_page
+-------------------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_response_metadata_page
+   :members:
+   :show-inheritance:
+
+spans\_sort
+-----------
+
+.. automodule:: datadog_api_client.v2.model.spans_sort
+   :members:
+   :show-inheritance:
+
+spans\_sort\_order
+------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_sort_order
+   :members:
+   :show-inheritance:
+
+spans\_type
+-----------
+
+.. automodule:: datadog_api_client.v2.model.spans_type
+   :members:
+   :show-inheritance:
+
+spans\_warning
+--------------
+
+.. automodule:: datadog_api_client.v2.model.spans_warning
    :members:
    :show-inheritance:
 

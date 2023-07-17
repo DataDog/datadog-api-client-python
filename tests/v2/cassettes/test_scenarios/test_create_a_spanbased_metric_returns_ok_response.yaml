@@ -1,7 +1,7 @@
 interactions:
 - request:
     body: '{"data":{"attributes":{"compute":{"aggregation_type":"distribution","include_percentiles":false,"path":"@duration"},"filter":{"query":"@http.status_code:200
-      service:my-service"},"group_by":[{"path":"resource_name","tag_name":"resource_name"}]},"id":"TestCreateaspanbasedmetricreturnsOKresponse1680015324","type":"spans_metrics"}}'
+      service:my-service"},"group_by":[{"path":"resource_name","tag_name":"resource_name"}]},"id":"TestCreateaspanbasedmetricreturnsOKresponse1686139498","type":"spans_metrics"}}'
     headers:
       accept:
       - application/json
@@ -11,7 +11,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/apm/config/metrics
   response:
     body:
-      string: '{"data":{"id":"TestCreateaspanbasedmetricreturnsOKresponse1680015324","attributes":{"filter":{"query":"@http.status_code:200
+      string: '{"data":{"id":"TestCreateaspanbasedmetricreturnsOKresponse1686139498","attributes":{"filter":{"query":"@http.status_code:200
         service:my-service"},"group_by":[{"path":"resource_name","tag_name":"resource_name"}],"compute":{"aggregation_type":"distribution","path":"@duration","include_percentiles":false}},"type":"spans_metrics"}}
 
         '
@@ -27,16 +27,14 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/apm/config/metrics/TestCreateaspanbasedmetricreturnsOKresponse1680015324
+    uri: https://api.datadoghq.com/api/v2/apm/config/metrics/TestCreateaspanbasedmetricreturnsOKresponse1686139498
   response:
     body:
-      string: '{}
-
-        '
+      string: ''
     headers:
       content-type:
-      - application/json
+      - text/html; charset=utf-8
     status:
-      code: 200
-      message: OK
+      code: 204
+      message: No Content
 version: 1

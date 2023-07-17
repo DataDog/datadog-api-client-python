@@ -57,6 +57,13 @@ dashboard\_lists\_api
    :members:
    :show-inheritance:
 
+downtimes\_api
+--------------
+
+.. automodule:: datadog_api_client.v2.api.downtimes_api
+   :members:
+   :show-inheritance:
+
 events\_api
 -----------
 
@@ -68,6 +75,13 @@ fastly\_integration\_api
 ------------------------
 
 .. automodule:: datadog_api_client.v2.api.fastly_integration_api
+   :members:
+   :show-inheritance:
+
+gcp\_integration\_api
+---------------------
+
+.. automodule:: datadog_api_client.v2.api.gcp_integration_api
    :members:
    :show-inheritance:
 
@@ -208,6 +222,13 @@ service\_definition\_api
 ------------------------
 
 .. automodule:: datadog_api_client.v2.api.service_definition_api
+   :members:
+   :show-inheritance:
+
+spans\_api
+----------
+
+.. automodule:: datadog_api_client.v2.api.spans_api
    :members:
    :show-inheritance:
 

@@ -9,6 +9,7 @@ from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     datetime,
+    none_type,
     unset,
     UnsetType,
 )
@@ -18,8 +19,8 @@ class UsageProfilingHour(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
-            "avg_container_agent_count": (int,),
-            "host_count": (int,),
+            "avg_container_agent_count": (int, none_type),
+            "host_count": (int, none_type),
             "hour": (datetime,),
             "org_name": (str,),
             "public_id": (str,),
@@ -35,8 +36,8 @@ class UsageProfilingHour(ModelNormal):
 
     def __init__(
         self_,
-        avg_container_agent_count: Union[int, UnsetType] = unset,
-        host_count: Union[int, UnsetType] = unset,
+        avg_container_agent_count: Union[int, none_type, UnsetType] = unset,
+        host_count: Union[int, none_type, UnsetType] = unset,
         hour: Union[datetime, UnsetType] = unset,
         org_name: Union[str, UnsetType] = unset,
         public_id: Union[str, UnsetType] = unset,
@@ -46,10 +47,10 @@ class UsageProfilingHour(ModelNormal):
         The number of profiled hosts for each hour for a given organization.
 
         :param avg_container_agent_count: Get average number of container agents for that hour.
-        :type avg_container_agent_count: int, optional
+        :type avg_container_agent_count: int, none_type, optional
 
         :param host_count: Contains the total number of profiled hosts reporting during a given hour.
-        :type host_count: int, optional
+        :type host_count: int, none_type, optional
 
         :param hour: The hour for the usage.
         :type hour: datetime, optional

@@ -20,13 +20,10 @@ class TeamUpdateAttributes(ModelNormal):
             "inclusive_minimum": 0,
         },
         "handle": {
-            "max_length": 64,
-        },
-        "link_count": {
-            "inclusive_maximum": 2147483647,
+            "max_length": 195,
         },
         "name": {
-            "max_length": 64,
+            "max_length": 200,
         },
     }
 
@@ -36,7 +33,6 @@ class TeamUpdateAttributes(ModelNormal):
             "color": (int,),
             "description": (str,),
             "handle": (str,),
-            "link_count": (int,),
             "name": (str,),
         }
 
@@ -44,11 +40,7 @@ class TeamUpdateAttributes(ModelNormal):
         "color": "color",
         "description": "description",
         "handle": "handle",
-        "link_count": "link_count",
         "name": "name",
-    }
-    read_only_vars = {
-        "link_count",
     }
 
     def __init__(
@@ -57,7 +49,6 @@ class TeamUpdateAttributes(ModelNormal):
         name: str,
         color: Union[int, UnsetType] = unset,
         description: Union[str, UnsetType] = unset,
-        link_count: Union[int, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -72,9 +63,6 @@ class TeamUpdateAttributes(ModelNormal):
         :param handle: The team's identifier
         :type handle: str
 
-        :param link_count: The number of links belonging to the team
-        :type link_count: int, optional
-
         :param name: The name of the team
         :type name: str
         """
@@ -82,8 +70,6 @@ class TeamUpdateAttributes(ModelNormal):
             kwargs["color"] = color
         if description is not unset:
             kwargs["description"] = description
-        if link_count is not unset:
-            kwargs["link_count"] = link_count
         super().__init__(kwargs)
 
         self_.handle = handle

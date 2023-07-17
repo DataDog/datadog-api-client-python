@@ -33,7 +33,9 @@ class CloudWorkloadSecurityAgentRuleAttributes(ModelNormal):
         )
 
         return {
+            "agent_constraint": (str,),
             "category": (str,),
+            "creation_author_uu_id": (str,),
             "creation_date": (int,),
             "creator": (CloudWorkloadSecurityAgentRuleCreatorAttributes,),
             "default_rule": (bool,),
@@ -41,13 +43,17 @@ class CloudWorkloadSecurityAgentRuleAttributes(ModelNormal):
             "enabled": (bool,),
             "expression": (str,),
             "name": (str,),
+            "update_author_uu_id": (str,),
+            "update_date": (int,),
             "updated_at": (int,),
             "updater": (CloudWorkloadSecurityAgentRuleUpdaterAttributes,),
             "version": (int,),
         }
 
     attribute_map = {
+        "agent_constraint": "agentConstraint",
         "category": "category",
+        "creation_author_uu_id": "creationAuthorUuId",
         "creation_date": "creationDate",
         "creator": "creator",
         "default_rule": "defaultRule",
@@ -55,6 +61,8 @@ class CloudWorkloadSecurityAgentRuleAttributes(ModelNormal):
         "enabled": "enabled",
         "expression": "expression",
         "name": "name",
+        "update_author_uu_id": "updateAuthorUuId",
+        "update_date": "updateDate",
         "updated_at": "updatedAt",
         "updater": "updater",
         "version": "version",
@@ -62,7 +70,9 @@ class CloudWorkloadSecurityAgentRuleAttributes(ModelNormal):
 
     def __init__(
         self_,
+        agent_constraint: Union[str, UnsetType] = unset,
         category: Union[str, UnsetType] = unset,
+        creation_author_uu_id: Union[str, UnsetType] = unset,
         creation_date: Union[int, UnsetType] = unset,
         creator: Union[CloudWorkloadSecurityAgentRuleCreatorAttributes, UnsetType] = unset,
         default_rule: Union[bool, UnsetType] = unset,
@@ -70,6 +80,8 @@ class CloudWorkloadSecurityAgentRuleAttributes(ModelNormal):
         enabled: Union[bool, UnsetType] = unset,
         expression: Union[str, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
+        update_author_uu_id: Union[str, UnsetType] = unset,
+        update_date: Union[int, UnsetType] = unset,
         updated_at: Union[int, UnsetType] = unset,
         updater: Union[CloudWorkloadSecurityAgentRuleUpdaterAttributes, UnsetType] = unset,
         version: Union[int, UnsetType] = unset,
@@ -78,8 +90,14 @@ class CloudWorkloadSecurityAgentRuleAttributes(ModelNormal):
         """
         A Cloud Workload Security Agent rule returned by the API.
 
+        :param agent_constraint: The version of the agent.
+        :type agent_constraint: str, optional
+
         :param category: The category of the Agent rule.
         :type category: str, optional
+
+        :param creation_author_uu_id: The ID of the user who created the rule.
+        :type creation_author_uu_id: str, optional
 
         :param creation_date: When the Agent rule was created, timestamp in milliseconds.
         :type creation_date: int, optional
@@ -102,6 +120,12 @@ class CloudWorkloadSecurityAgentRuleAttributes(ModelNormal):
         :param name: The name of the Agent rule.
         :type name: str, optional
 
+        :param update_author_uu_id: The ID of the user who updated the rule.
+        :type update_author_uu_id: str, optional
+
+        :param update_date: Timestamp in milliseconds when the Agent rule was last updated.
+        :type update_date: int, optional
+
         :param updated_at: When the Agent rule was last updated, timestamp in milliseconds.
         :type updated_at: int, optional
 
@@ -111,8 +135,12 @@ class CloudWorkloadSecurityAgentRuleAttributes(ModelNormal):
         :param version: The version of the Agent rule.
         :type version: int, optional
         """
+        if agent_constraint is not unset:
+            kwargs["agent_constraint"] = agent_constraint
         if category is not unset:
             kwargs["category"] = category
+        if creation_author_uu_id is not unset:
+            kwargs["creation_author_uu_id"] = creation_author_uu_id
         if creation_date is not unset:
             kwargs["creation_date"] = creation_date
         if creator is not unset:
@@ -127,6 +155,10 @@ class CloudWorkloadSecurityAgentRuleAttributes(ModelNormal):
             kwargs["expression"] = expression
         if name is not unset:
             kwargs["name"] = name
+        if update_author_uu_id is not unset:
+            kwargs["update_author_uu_id"] = update_author_uu_id
+        if update_date is not unset:
+            kwargs["update_date"] = update_date
         if updated_at is not unset:
             kwargs["updated_at"] = updated_at
         if updater is not unset:

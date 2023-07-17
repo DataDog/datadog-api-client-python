@@ -32,7 +32,6 @@ class OpsgenieIntegrationApi:
                 "operation_id": "create_opsgenie_service",
                 "http_method": "POST",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -53,7 +52,6 @@ class OpsgenieIntegrationApi:
                 "operation_id": "delete_opsgenie_service",
                 "http_method": "DELETE",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "integration_service_id": {
@@ -65,7 +63,6 @@ class OpsgenieIntegrationApi:
             },
             headers_map={
                 "accept": ["*/*"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -78,7 +75,6 @@ class OpsgenieIntegrationApi:
                 "operation_id": "get_opsgenie_service",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "integration_service_id": {
@@ -90,7 +86,6 @@ class OpsgenieIntegrationApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -103,12 +98,10 @@ class OpsgenieIntegrationApi:
                 "operation_id": "list_opsgenie_services",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={},
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -121,7 +114,6 @@ class OpsgenieIntegrationApi:
                 "operation_id": "update_opsgenie_service",
                 "http_method": "PATCH",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "integration_service_id": {

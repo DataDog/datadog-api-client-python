@@ -44,7 +44,6 @@ class KeyManagementApi:
                 "operation_id": "create_api_key",
                 "http_method": "POST",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -65,7 +64,6 @@ class KeyManagementApi:
                 "operation_id": "create_current_user_application_key",
                 "http_method": "POST",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -86,7 +84,6 @@ class KeyManagementApi:
                 "operation_id": "delete_api_key",
                 "http_method": "DELETE",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "api_key_id": {
@@ -98,7 +95,6 @@ class KeyManagementApi:
             },
             headers_map={
                 "accept": ["*/*"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -111,7 +107,6 @@ class KeyManagementApi:
                 "operation_id": "delete_application_key",
                 "http_method": "DELETE",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "app_key_id": {
@@ -123,7 +118,6 @@ class KeyManagementApi:
             },
             headers_map={
                 "accept": ["*/*"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -136,7 +130,6 @@ class KeyManagementApi:
                 "operation_id": "delete_current_user_application_key",
                 "http_method": "DELETE",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "app_key_id": {
@@ -148,7 +141,6 @@ class KeyManagementApi:
             },
             headers_map={
                 "accept": ["*/*"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -161,7 +153,6 @@ class KeyManagementApi:
                 "operation_id": "get_api_key",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "api_key_id": {
@@ -178,7 +169,6 @@ class KeyManagementApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -191,7 +181,6 @@ class KeyManagementApi:
                 "operation_id": "get_application_key",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "app_key_id": {
@@ -208,7 +197,6 @@ class KeyManagementApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -221,7 +209,6 @@ class KeyManagementApi:
                 "operation_id": "get_current_user_application_key",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "app_key_id": {
@@ -233,7 +220,6 @@ class KeyManagementApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -246,7 +232,6 @@ class KeyManagementApi:
                 "operation_id": "list_api_keys",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "page_size": {
@@ -297,7 +282,6 @@ class KeyManagementApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -310,7 +294,6 @@ class KeyManagementApi:
                 "operation_id": "list_application_keys",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "page_size": {
@@ -346,7 +329,6 @@ class KeyManagementApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -359,7 +341,6 @@ class KeyManagementApi:
                 "operation_id": "list_current_user_application_keys",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "page_size": {
@@ -395,7 +376,6 @@ class KeyManagementApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -408,7 +388,6 @@ class KeyManagementApi:
                 "operation_id": "update_api_key",
                 "http_method": "PATCH",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "api_key_id": {
@@ -435,7 +414,6 @@ class KeyManagementApi:
                 "operation_id": "update_application_key",
                 "http_method": "PATCH",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "app_key_id": {
@@ -462,7 +440,6 @@ class KeyManagementApi:
                 "operation_id": "update_current_user_application_key",
                 "http_method": "PATCH",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "app_key_id": {
@@ -646,7 +623,7 @@ class KeyManagementApi:
 
         List all API keys available for your account.
 
-        :param page_size: Size for a given page. The maximum allowed value is 5000.
+        :param page_size: Size for a given page. The maximum allowed value is 100.
         :type page_size: int, optional
         :param page_number: Specific page number to return.
         :type page_number: int, optional
@@ -712,7 +689,7 @@ class KeyManagementApi:
 
         List all application keys available for your org
 
-        :param page_size: Size for a given page. The maximum allowed value is 5000.
+        :param page_size: Size for a given page. The maximum allowed value is 100.
         :type page_size: int, optional
         :param page_number: Specific page number to return.
         :type page_number: int, optional
@@ -763,7 +740,7 @@ class KeyManagementApi:
 
         List all application keys available for current user
 
-        :param page_size: Size for a given page. The maximum allowed value is 5000.
+        :param page_size: Size for a given page. The maximum allowed value is 100.
         :type page_size: int, optional
         :param page_number: Specific page number to return.
         :type page_number: int, optional

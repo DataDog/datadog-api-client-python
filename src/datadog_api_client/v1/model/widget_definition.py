@@ -245,6 +245,9 @@ class WidgetDefinition(ModelComposed):
         :param color_by_groups: List of groups used for colors.
         :type color_by_groups: [str], optional
 
+        :param additional_query_filters: Additional filters applied to the SLO query.
+        :type additional_query_filters: str, optional
+
         :param global_time_target: Defined global time target.
         :type global_time_target: str, optional
 

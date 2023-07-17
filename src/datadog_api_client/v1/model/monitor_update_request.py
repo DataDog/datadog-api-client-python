@@ -52,7 +52,7 @@ class MonitorUpdateRequest(ModelNormal):
             "overall_state": (MonitorOverallStates,),
             "priority": (int,),
             "query": (str,),
-            "restricted_roles": ([str],),
+            "restricted_roles": ([str], none_type),
             "state": (MonitorState,),
             "tags": ([str],),
             "type": (MonitorType,),
@@ -101,7 +101,7 @@ class MonitorUpdateRequest(ModelNormal):
         overall_state: Union[MonitorOverallStates, UnsetType] = unset,
         priority: Union[int, UnsetType] = unset,
         query: Union[str, UnsetType] = unset,
-        restricted_roles: Union[List[str], UnsetType] = unset,
+        restricted_roles: Union[List[str], none_type, UnsetType] = unset,
         state: Union[MonitorState, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
         type: Union[MonitorType, UnsetType] = unset,
@@ -147,7 +147,7 @@ class MonitorUpdateRequest(ModelNormal):
         :type query: str, optional
 
         :param restricted_roles: A list of unique role identifiers to define which roles are allowed to edit the monitor. The unique identifiers for all roles can be pulled from the `Roles API <https://docs.datadoghq.com/api/latest/roles/#list-roles>`_ and are located in the ``data.id`` field. Editing a monitor includes any updates to the monitor configuration, monitor deletion, and muting of the monitor for any amount of time. ``restricted_roles`` is the successor of ``locked``. For more information about ``locked`` and ``restricted_roles`` , see the `monitor options docs <https://docs.datadoghq.com/monitors/guide/monitor_api_options/#permissions-options>`_.
-        :type restricted_roles: [str], optional
+        :type restricted_roles: [str], none_type, optional
 
         :param state: Wrapper object with the different monitor states.
         :type state: MonitorState, optional

@@ -35,7 +35,6 @@ class MonitorsApi:
                 "operation_id": "create_monitor_config_policy",
                 "http_method": "POST",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -56,7 +55,6 @@ class MonitorsApi:
                 "operation_id": "delete_monitor_config_policy",
                 "http_method": "DELETE",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "policy_id": {
@@ -68,7 +66,6 @@ class MonitorsApi:
             },
             headers_map={
                 "accept": ["*/*"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -81,7 +78,6 @@ class MonitorsApi:
                 "operation_id": "get_monitor_config_policy",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "policy_id": {
@@ -93,7 +89,6 @@ class MonitorsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -106,12 +101,10 @@ class MonitorsApi:
                 "operation_id": "list_monitor_config_policies",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={},
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -124,7 +117,6 @@ class MonitorsApi:
                 "operation_id": "update_monitor_config_policy",
                 "http_method": "PATCH",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "policy_id": {

@@ -50,7 +50,6 @@ class RolesApi:
                 "operation_id": "add_permission_to_role",
                 "http_method": "POST",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "role_id": {
@@ -77,7 +76,6 @@ class RolesApi:
                 "operation_id": "add_user_to_role",
                 "http_method": "POST",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "role_id": {
@@ -104,7 +102,6 @@ class RolesApi:
                 "operation_id": "clone_role",
                 "http_method": "POST",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "role_id": {
@@ -131,7 +128,6 @@ class RolesApi:
                 "operation_id": "create_role",
                 "http_method": "POST",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -152,7 +148,6 @@ class RolesApi:
                 "operation_id": "delete_role",
                 "http_method": "DELETE",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "role_id": {
@@ -164,7 +159,6 @@ class RolesApi:
             },
             headers_map={
                 "accept": ["*/*"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -177,7 +171,6 @@ class RolesApi:
                 "operation_id": "get_role",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "role_id": {
@@ -189,7 +182,6 @@ class RolesApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -202,12 +194,10 @@ class RolesApi:
                 "operation_id": "list_permissions",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={},
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -220,7 +210,6 @@ class RolesApi:
                 "operation_id": "list_role_permissions",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "role_id": {
@@ -232,7 +221,6 @@ class RolesApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -245,7 +233,6 @@ class RolesApi:
                 "operation_id": "list_roles",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "page_size": {
@@ -271,7 +258,6 @@ class RolesApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -284,7 +270,6 @@ class RolesApi:
                 "operation_id": "list_role_users",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "role_id": {
@@ -316,7 +301,6 @@ class RolesApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -329,7 +313,6 @@ class RolesApi:
                 "operation_id": "remove_permission_from_role",
                 "http_method": "DELETE",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "role_id": {
@@ -356,7 +339,6 @@ class RolesApi:
                 "operation_id": "remove_user_from_role",
                 "http_method": "DELETE",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "role_id": {
@@ -383,7 +365,6 @@ class RolesApi:
                 "operation_id": "update_role",
                 "http_method": "PATCH",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "role_id": {
@@ -556,7 +537,7 @@ class RolesApi:
 
         Returns all roles, including their names and their unique identifiers.
 
-        :param page_size: Size for a given page. The maximum allowed value is 5000.
+        :param page_size: Size for a given page. The maximum allowed value is 100.
         :type page_size: int, optional
         :param page_number: Specific page number to return.
         :type page_number: int, optional
@@ -598,7 +579,7 @@ class RolesApi:
 
         :param role_id: The unique identifier of the role.
         :type role_id: str
-        :param page_size: Size for a given page. The maximum allowed value is 5000.
+        :param page_size: Size for a given page. The maximum allowed value is 100.
         :type page_size: int, optional
         :param page_number: Specific page number to return.
         :type page_number: int, optional

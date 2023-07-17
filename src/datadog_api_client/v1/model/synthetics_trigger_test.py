@@ -36,10 +36,10 @@ class SyntheticsTriggerTest(ModelNormal):
         """
         Test configuration for Synthetics
 
-        :param metadata: Metadata for the Synthetics tests run.
+        :param metadata: Metadata for the Synthetic tests run.
         :type metadata: SyntheticsCIBatchMetadata, optional
 
-        :param public_id: The public ID of the Synthetics test to trigger.
+        :param public_id: The public ID of the Synthetic test to trigger.
         :type public_id: str
         """
         if metadata is not unset:

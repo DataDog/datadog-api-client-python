@@ -15,6 +15,7 @@ from datadog_api_client.model_utils import (
     unset,
 )
 from datadog_api_client.v2.model.service_definitions_list_response import ServiceDefinitionsListResponse
+from datadog_api_client.v2.model.service_definition_schema_versions import ServiceDefinitionSchemaVersions
 from datadog_api_client.v2.model.service_definition_data import ServiceDefinitionData
 from datadog_api_client.v2.model.service_definition_create_response import ServiceDefinitionCreateResponse
 from datadog_api_client.v2.model.service_definitions_create_request import ServiceDefinitionsCreateRequest
@@ -36,12 +37,11 @@ class ServiceDefinitionApi:
         self._create_or_update_service_definitions_endpoint = _Endpoint(
             settings={
                 "response_type": (ServiceDefinitionCreateResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/services/definitions",
                 "operation_id": "create_or_update_service_definitions",
                 "http_method": "POST",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -57,12 +57,11 @@ class ServiceDefinitionApi:
         self._delete_service_definition_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/services/definitions/{service_name}",
                 "operation_id": "delete_service_definition",
                 "http_method": "DELETE",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "service_name": {
@@ -74,7 +73,6 @@ class ServiceDefinitionApi:
             },
             headers_map={
                 "accept": ["*/*"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -82,12 +80,11 @@ class ServiceDefinitionApi:
         self._get_service_definition_endpoint = _Endpoint(
             settings={
                 "response_type": (ServiceDefinitionGetResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/services/definitions/{service_name}",
                 "operation_id": "get_service_definition",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "service_name": {
@@ -96,10 +93,14 @@ class ServiceDefinitionApi:
                     "attribute": "service_name",
                     "location": "path",
                 },
+                "schema_version": {
+                    "openapi_types": (ServiceDefinitionSchemaVersions,),
+                    "attribute": "schema_version",
+                    "location": "query",
+                },
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -107,12 +108,11 @@ class ServiceDefinitionApi:
         self._list_service_definitions_endpoint = _Endpoint(
             settings={
                 "response_type": (ServiceDefinitionsListResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/services/definitions",
                 "operation_id": "list_service_definitions",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "page_size": {
@@ -125,10 +125,14 @@ class ServiceDefinitionApi:
                     "attribute": "page[number]",
                     "location": "query",
                 },
+                "schema_version": {
+                    "openapi_types": (ServiceDefinitionSchemaVersions,),
+                    "attribute": "schema_version",
+                    "location": "query",
+                },
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -170,6 +174,8 @@ class ServiceDefinitionApi:
     def get_service_definition(
         self,
         service_name: str,
+        *,
+        schema_version: Union[ServiceDefinitionSchemaVersions, UnsetType] = unset,
     ) -> ServiceDefinitionGetResponse:
         """Get a single service definition.
 
@@ -177,10 +183,15 @@ class ServiceDefinitionApi:
 
         :param service_name: The name of the service.
         :type service_name: str
+        :param schema_version: The schema version desired in the response.
+        :type schema_version: ServiceDefinitionSchemaVersions, optional
         :rtype: ServiceDefinitionGetResponse
         """
         kwargs: Dict[str, Any] = {}
         kwargs["service_name"] = service_name
+
+        if schema_version is not unset:
+            kwargs["schema_version"] = schema_version
 
         return self._get_service_definition_endpoint.call_with_http_info(**kwargs)
 
@@ -189,15 +200,18 @@ class ServiceDefinitionApi:
         *,
         page_size: Union[int, UnsetType] = unset,
         page_number: Union[int, UnsetType] = unset,
+        schema_version: Union[ServiceDefinitionSchemaVersions, UnsetType] = unset,
     ) -> ServiceDefinitionsListResponse:
         """Get all service definitions.
 
         Get a list of all service definitions from the Datadog Service Catalog.
 
-        :param page_size: Size for a given page. The maximum allowed value is 5000.
+        :param page_size: Size for a given page. The maximum allowed value is 100.
         :type page_size: int, optional
         :param page_number: Specific page number to return.
         :type page_number: int, optional
+        :param schema_version: The schema version desired in the response.
+        :type schema_version: ServiceDefinitionSchemaVersions, optional
         :rtype: ServiceDefinitionsListResponse
         """
         kwargs: Dict[str, Any] = {}
@@ -207,6 +221,9 @@ class ServiceDefinitionApi:
         if page_number is not unset:
             kwargs["page_number"] = page_number
 
+        if schema_version is not unset:
+            kwargs["schema_version"] = schema_version
+
         return self._list_service_definitions_endpoint.call_with_http_info(**kwargs)
 
     def list_service_definitions_with_pagination(
@@ -214,15 +231,18 @@ class ServiceDefinitionApi:
         *,
         page_size: Union[int, UnsetType] = unset,
         page_number: Union[int, UnsetType] = unset,
+        schema_version: Union[ServiceDefinitionSchemaVersions, UnsetType] = unset,
     ) -> collections.abc.Iterable[ServiceDefinitionData]:
         """Get all service definitions.
 
         Provide a paginated version of :meth:`list_service_definitions`, returning all items.
 
-        :param page_size: Size for a given page. The maximum allowed value is 5000.
+        :param page_size: Size for a given page. The maximum allowed value is 100.
         :type page_size: int, optional
         :param page_number: Specific page number to return.
         :type page_number: int, optional
+        :param schema_version: The schema version desired in the response.
+        :type schema_version: ServiceDefinitionSchemaVersions, optional
 
         :return: A generator of paginated results.
         :rtype: collections.abc.Iterable[ServiceDefinitionData]
@@ -233,6 +253,9 @@ class ServiceDefinitionApi:
 
         if page_number is not unset:
             kwargs["page_number"] = page_number
+
+        if schema_version is not unset:
+            kwargs["schema_version"] = schema_version
 
         local_page_size = get_attribute_from_path(kwargs, "page_size", 10)
         endpoint = self._list_service_definitions_endpoint

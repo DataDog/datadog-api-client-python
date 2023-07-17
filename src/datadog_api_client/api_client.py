@@ -114,13 +114,13 @@ class ApiClient:
         # deserialize response data
         if response_type:
             if response_type == (file_type,):
-                content_disposition = response.getheader("Content-Disposition")
+                content_disposition = response.headers.get("Content-Disposition")
                 return_data = deserialize_file(
                     response.data, self.configuration.temp_folder_path, content_disposition=content_disposition
                 )
             else:
                 encoding = "utf-8"
-                content_type = response.getheader("content-type")
+                content_type = response.headers.get("Content-Type")
                 if content_type is not None:
                     match = re.search(r"charset=([a-zA-Z\-\d]+)[\s\;]?", content_type)
                     if match:
@@ -133,7 +133,7 @@ class ApiClient:
 
         if return_http_data_only:
             return return_data
-        return (return_data, response.status, response.getheaders())
+        return (return_data, response.status, dict(response.headers))
 
     def parameters_to_multipart(self, params):
         """Get parameters as list of tuples, formatting as json if value is dict.
@@ -176,7 +176,7 @@ class ApiClient:
         elif isinstance(obj, (datetime, date)):
             if getattr(obj, "tzinfo", None) is not None:
                 return obj.isoformat()
-            return obj.strftime("%Y-%m-%dT%H:%M:%S") + obj.strftime(".%f")[:4] + "Z"
+            return "{}Z".format(obj.strftime("%Y-%m-%dT%H:%M:%S.%f")[:-3])
         elif isinstance(obj, ModelSimple):
             return cls.sanitize_for_serialization(obj.value)
         elif isinstance(obj, (list, tuple)):
@@ -426,7 +426,6 @@ class ApiClient:
 
 
 class ThreadedApiClient(ApiClient):
-
     _pool = None
 
     def __init__(self, configuration: Configuration, pool_threads: int = 1):
@@ -514,7 +513,6 @@ class AsyncApiClient(ApiClient):
         request_timeout: Optional[Union[int, float, Tuple[Union[int, float], Union[int, float]]]] = None,
         check_type: Optional[bool] = None,
     ):
-
         # perform request and return response
         response = await self.rest_client.request(
             method,
@@ -647,7 +645,6 @@ class Endpoint:
         return params
 
     def call_with_http_info(self, **kwargs):
-
         is_unstable = self.api_client.configuration.unstable_operations.get(
             "{}.{}".format(self.settings["version"], self.settings["operation_id"])
         )
@@ -656,6 +653,7 @@ class Endpoint:
         elif is_unstable is False:
             raise ApiValueError("Unstable operation '{0}' is disabled".format(self.settings["operation_id"]))
 
+        servers = self.settings.get("servers")
         try:
             index = self.api_client.configuration.server_operation_index.get(
                 self.settings["operation_id"], self.api_client.configuration.server_index
@@ -664,11 +662,11 @@ class Endpoint:
                 self.settings["operation_id"], self.api_client.configuration.server_variables
             )
             host = self.api_client.configuration.get_host_from_settings(
-                index, variables=server_variables, servers=self.settings["servers"]
+                index, variables=server_variables, servers=servers
             )
         except IndexError:
-            if self.settings["servers"]:
-                raise ApiValueError("Invalid host index. Must be 0 <= index < %s" % len(self.settings["servers"]))
+            if servers:
+                raise ApiValueError("Invalid host index. Must be 0 <= index < %s" % len(servers))
             host = None
 
         for key, value in kwargs.items():
@@ -703,7 +701,7 @@ class Endpoint:
         if accept_headers_list:
             params["header"]["Accept"] = self.api_client.select_header_accept(accept_headers_list)
 
-        content_type_headers_list = self.headers_map["content_type"]
+        content_type_headers_list = self.headers_map.get("content_type")
         if content_type_headers_list:
             header_list = self.api_client.select_header_content_type(content_type_headers_list)
             params["header"]["Content-Type"] = header_list

@@ -9,6 +9,7 @@ from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     datetime,
+    none_type,
     unset,
     UnsetType,
 )
@@ -19,7 +20,7 @@ class UsageNetworkFlowsHour(ModelNormal):
     def openapi_types(_):
         return {
             "hour": (datetime,),
-            "indexed_events_count": (int,),
+            "indexed_events_count": (int, none_type),
             "org_name": (str,),
             "public_id": (str,),
         }
@@ -34,7 +35,7 @@ class UsageNetworkFlowsHour(ModelNormal):
     def __init__(
         self_,
         hour: Union[datetime, UnsetType] = unset,
-        indexed_events_count: Union[int, UnsetType] = unset,
+        indexed_events_count: Union[int, none_type, UnsetType] = unset,
         org_name: Union[str, UnsetType] = unset,
         public_id: Union[str, UnsetType] = unset,
         **kwargs,
@@ -46,7 +47,7 @@ class UsageNetworkFlowsHour(ModelNormal):
         :type hour: datetime, optional
 
         :param indexed_events_count: Contains the number of netflow events indexed.
-        :type indexed_events_count: int, optional
+        :type indexed_events_count: int, none_type, optional
 
         :param org_name: The organization name.
         :type org_name: str, optional

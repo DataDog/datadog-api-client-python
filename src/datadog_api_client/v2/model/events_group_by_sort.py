@@ -54,7 +54,7 @@ class EventsGroupBySort(ModelNormal):
         :param aggregation: The type of aggregation that can be performed on events-based queries.
         :type aggregation: EventsAggregation
 
-        :param metric: Metric whose calculated value should be used to define the sort order of a query's results.
+        :param metric: The metric's calculated value which should be used to define the sort order of a query's results.
         :type metric: str, optional
 
         :param order: Direction of sort.

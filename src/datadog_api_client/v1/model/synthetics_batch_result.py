@@ -69,7 +69,7 @@ class SyntheticsBatchResult(ModelNormal):
         **kwargs,
     ):
         """
-        Object with the results of a Synthetics batch.
+        Object with the results of a Synthetic batch.
 
         :param device: The device ID.
         :type device: SyntheticsDeviceID, optional
@@ -77,7 +77,7 @@ class SyntheticsBatchResult(ModelNormal):
         :param duration: Total duration in millisecond of the test.
         :type duration: float, optional
 
-        :param execution_rule: Execution rule for a Synthetics test.
+        :param execution_rule: Execution rule for a Synthetic test.
         :type execution_rule: SyntheticsTestExecutionRule, optional
 
         :param location: Name of the location.

@@ -30,9 +30,9 @@ class SyntheticsTriggerBody(ModelNormal):
 
     def __init__(self_, tests: List[SyntheticsTriggerTest], **kwargs):
         """
-        Object describing the synthetics tests to trigger.
+        Object describing the Synthetic tests to trigger.
 
-        :param tests: Individual synthetics test.
+        :param tests: Individual Synthetic test.
         :type tests: [SyntheticsTriggerTest]
         """
         super().__init__(kwargs)

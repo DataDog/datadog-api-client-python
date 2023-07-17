@@ -9,6 +9,7 @@ from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     datetime,
+    none_type,
     unset,
     UnsetType,
 )
@@ -18,9 +19,9 @@ class UsageLambdaHour(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
-            "func_count": (int,),
+            "func_count": (int, none_type),
             "hour": (datetime,),
-            "invocations_sum": (int,),
+            "invocations_sum": (int, none_type),
             "org_name": (str,),
             "public_id": (str,),
         }
@@ -35,9 +36,9 @@ class UsageLambdaHour(ModelNormal):
 
     def __init__(
         self_,
-        func_count: Union[int, UnsetType] = unset,
+        func_count: Union[int, none_type, UnsetType] = unset,
         hour: Union[datetime, UnsetType] = unset,
-        invocations_sum: Union[int, UnsetType] = unset,
+        invocations_sum: Union[int, none_type, UnsetType] = unset,
         org_name: Union[str, UnsetType] = unset,
         public_id: Union[str, UnsetType] = unset,
         **kwargs,
@@ -47,13 +48,13 @@ class UsageLambdaHour(ModelNormal):
         for each hour for a given organization.
 
         :param func_count: Contains the number of different functions for each region and AWS account.
-        :type func_count: int, optional
+        :type func_count: int, none_type, optional
 
         :param hour: The hour for the usage.
         :type hour: datetime, optional
 
         :param invocations_sum: Contains the sum of invocations of all functions.
-        :type invocations_sum: int, optional
+        :type invocations_sum: int, none_type, optional
 
         :param org_name: The organization name.
         :type org_name: str, optional

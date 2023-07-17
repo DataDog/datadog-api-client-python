@@ -38,7 +38,6 @@ class WebhooksIntegrationApi:
                 "operation_id": "create_webhooks_integration",
                 "http_method": "POST",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -59,7 +58,6 @@ class WebhooksIntegrationApi:
                 "operation_id": "create_webhooks_integration_custom_variable",
                 "http_method": "POST",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -80,7 +78,6 @@ class WebhooksIntegrationApi:
                 "operation_id": "delete_webhooks_integration",
                 "http_method": "DELETE",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "webhook_name": {
@@ -92,7 +89,6 @@ class WebhooksIntegrationApi:
             },
             headers_map={
                 "accept": ["*/*"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -105,7 +101,6 @@ class WebhooksIntegrationApi:
                 "operation_id": "delete_webhooks_integration_custom_variable",
                 "http_method": "DELETE",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "custom_variable_name": {
@@ -117,7 +112,6 @@ class WebhooksIntegrationApi:
             },
             headers_map={
                 "accept": ["*/*"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -130,7 +124,6 @@ class WebhooksIntegrationApi:
                 "operation_id": "get_webhooks_integration",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "webhook_name": {
@@ -142,7 +135,6 @@ class WebhooksIntegrationApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -155,7 +147,6 @@ class WebhooksIntegrationApi:
                 "operation_id": "get_webhooks_integration_custom_variable",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "custom_variable_name": {
@@ -167,7 +158,6 @@ class WebhooksIntegrationApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -180,7 +170,6 @@ class WebhooksIntegrationApi:
                 "operation_id": "update_webhooks_integration",
                 "http_method": "PUT",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "webhook_name": {
@@ -207,7 +196,6 @@ class WebhooksIntegrationApi:
                 "operation_id": "update_webhooks_integration_custom_variable",
                 "http_method": "PUT",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "custom_variable_name": {

@@ -56,7 +56,6 @@ class LogsPipelinesApi:
                 "operation_id": "create_logs_pipeline",
                 "http_method": "POST",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -77,7 +76,6 @@ class LogsPipelinesApi:
                 "operation_id": "delete_logs_pipeline",
                 "http_method": "DELETE",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "pipeline_id": {
@@ -89,7 +87,6 @@ class LogsPipelinesApi:
             },
             headers_map={
                 "accept": ["*/*"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -102,7 +99,6 @@ class LogsPipelinesApi:
                 "operation_id": "get_logs_pipeline",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "pipeline_id": {
@@ -114,7 +110,6 @@ class LogsPipelinesApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -127,12 +122,10 @@ class LogsPipelinesApi:
                 "operation_id": "get_logs_pipeline_order",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={},
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -145,12 +138,10 @@ class LogsPipelinesApi:
                 "operation_id": "list_logs_pipelines",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={},
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -163,7 +154,6 @@ class LogsPipelinesApi:
                 "operation_id": "update_logs_pipeline",
                 "http_method": "PUT",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "pipeline_id": {
@@ -190,7 +180,6 @@ class LogsPipelinesApi:
                 "operation_id": "update_logs_pipeline_order",
                 "http_method": "PUT",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "body": {

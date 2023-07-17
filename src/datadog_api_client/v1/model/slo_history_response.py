@@ -8,6 +8,7 @@ from typing import List, Union, TYPE_CHECKING
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    none_type,
     unset,
     UnsetType,
 )
@@ -26,7 +27,7 @@ class SLOHistoryResponse(ModelNormal):
 
         return {
             "data": (SLOHistoryResponseData,),
-            "errors": ([SLOHistoryResponseError],),
+            "errors": ([SLOHistoryResponseError], none_type),
         }
 
     attribute_map = {
@@ -37,7 +38,7 @@ class SLOHistoryResponse(ModelNormal):
     def __init__(
         self_,
         data: Union[SLOHistoryResponseData, UnsetType] = unset,
-        errors: Union[List[SLOHistoryResponseError], UnsetType] = unset,
+        errors: Union[List[SLOHistoryResponseError], none_type, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -47,7 +48,7 @@ class SLOHistoryResponse(ModelNormal):
         :type data: SLOHistoryResponseData, optional
 
         :param errors: A list of errors while querying the history data for the service level objective.
-        :type errors: [SLOHistoryResponseError], optional
+        :type errors: [SLOHistoryResponseError], none_type, optional
         """
         if data is not unset:
             kwargs["data"] = data

@@ -23,7 +23,7 @@ class CIAppTestEventTypeName(ModelSimple):
     allowed_values = {
         "citest",
     }
-    citest: ClassVar["CIAppTestEventTypeName"]
+    CITEST: ClassVar["CIAppTestEventTypeName"]
 
     @cached_property
     def openapi_types(_):
@@ -32,4 +32,4 @@ class CIAppTestEventTypeName(ModelSimple):
         }
 
 
-CIAppTestEventTypeName.citest = CIAppTestEventTypeName("citest")
+CIAppTestEventTypeName.CITEST = CIAppTestEventTypeName("citest")

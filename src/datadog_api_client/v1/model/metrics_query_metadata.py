@@ -111,7 +111,7 @@ class MetricsQueryMetadata(ModelNormal):
         :param expression: Metric expression.
         :type expression: str, optional
 
-        :param interval: Number of seconds between data samples.
+        :param interval: Number of milliseconds between data samples.
         :type interval: int, optional
 
         :param length: Number of data samples.
@@ -120,7 +120,7 @@ class MetricsQueryMetadata(ModelNormal):
         :param metric: Metric name.
         :type metric: str, optional
 
-        :param pointlist: List of points of the time series.
+        :param pointlist: List of points of the time series in milliseconds.
         :type pointlist: [Point], optional
 
         :param query_index: The index of the series' query within the request.

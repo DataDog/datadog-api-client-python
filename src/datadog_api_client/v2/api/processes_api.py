@@ -36,7 +36,6 @@ class ProcessesApi:
                 "operation_id": "list_processes",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "search": {
@@ -76,7 +75,6 @@ class ProcessesApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )

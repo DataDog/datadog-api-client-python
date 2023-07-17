@@ -7,14 +7,14 @@ license = "Apache-2.0"
 
 [tool.poetry.dependencies]
 python = "^3.10"
-click = "8.0.1"
-PyYAML = "6.0"
-jsonref = "0.2"
-jinja2 = "3.0.3"
-pytest = "^7.1.1"
-pytest-bdd = "^5.0.0"
-python-dateutil = "2.8.2"
-m2r2 = "0.3.2"
+click = "^8.1.4"
+PyYAML = "^6.0"
+jsonref = "^1.1.0"
+jinja2 = "^3.1.2"
+pytest = "^7.4.0"
+pytest-bdd = "^6.1.1"
+python-dateutil = "^2.8.2"
+m2r2 = "0.3.3.post2"
 
 [tool.poetry.dev-dependencies]
 

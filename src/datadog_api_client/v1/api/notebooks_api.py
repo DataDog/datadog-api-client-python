@@ -37,7 +37,6 @@ class NotebooksApi:
                 "operation_id": "create_notebook",
                 "http_method": "POST",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -58,7 +57,6 @@ class NotebooksApi:
                 "operation_id": "delete_notebook",
                 "http_method": "DELETE",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "notebook_id": {
@@ -70,7 +68,6 @@ class NotebooksApi:
             },
             headers_map={
                 "accept": ["*/*"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -83,7 +80,6 @@ class NotebooksApi:
                 "operation_id": "get_notebook",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "notebook_id": {
@@ -95,7 +91,6 @@ class NotebooksApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -108,7 +103,6 @@ class NotebooksApi:
                 "operation_id": "list_notebooks",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "author_handle": {
@@ -164,7 +158,6 @@ class NotebooksApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -177,7 +170,6 @@ class NotebooksApi:
                 "operation_id": "update_notebook",
                 "http_method": "PUT",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "notebook_id": {

@@ -32,7 +32,6 @@ class OrganizationsApi:
                 "operation_id": "upload_idp_metadata",
                 "http_method": "POST",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "idp_file": {

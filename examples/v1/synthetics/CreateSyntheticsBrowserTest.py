@@ -7,6 +7,8 @@ from datadog_api_client.v1.api.synthetics_api import SyntheticsApi
 from datadog_api_client.v1.model.synthetics_browser_test import SyntheticsBrowserTest
 from datadog_api_client.v1.model.synthetics_browser_test_config import SyntheticsBrowserTestConfig
 from datadog_api_client.v1.model.synthetics_browser_test_type import SyntheticsBrowserTestType
+from datadog_api_client.v1.model.synthetics_browser_variable import SyntheticsBrowserVariable
+from datadog_api_client.v1.model.synthetics_browser_variable_type import SyntheticsBrowserVariableType
 from datadog_api_client.v1.model.synthetics_config_variable import SyntheticsConfigVariable
 from datadog_api_client.v1.model.synthetics_config_variable_type import SyntheticsConfigVariableType
 from datadog_api_client.v1.model.synthetics_device_id import SyntheticsDeviceID
@@ -19,6 +21,15 @@ from datadog_api_client.v1.model.synthetics_test_request import SyntheticsTestRe
 body = SyntheticsBrowserTest(
     config=SyntheticsBrowserTestConfig(
         assertions=[],
+        variables=[
+            SyntheticsBrowserVariable(
+                type=SyntheticsBrowserVariableType.TEXT,
+                name="TEST_VARIABLE",
+                pattern="secret",
+                secure=True,
+                example="secret",
+            ),
+        ],
         config_variables=[
             SyntheticsConfigVariable(
                 example="content-type",

@@ -36,12 +36,10 @@ class AuthenticationApi:
                 "operation_id": "validate",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={},
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )

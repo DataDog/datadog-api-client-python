@@ -228,6 +228,12 @@ class Configuration:
         # Keep track of unstable operations
         self.unstable_operations = _UnstableOperations(
             {
+                "v2.cancel_downtime": False,
+                "v2.create_downtime": False,
+                "v2.get_downtime": False,
+                "v2.list_downtimes": False,
+                "v2.list_monitor_downtimes": False,
+                "v2.update_downtime": False,
                 "v2.list_events": False,
                 "v2.search_events": False,
                 "v2.create_incident": False,
@@ -250,6 +256,9 @@ class Configuration:
                 "v2.update_incident_todo": False,
                 "v2.query_scalar_data": False,
                 "v2.query_timeseries_data": False,
+                "v2.get_finding": False,
+                "v2.list_findings": False,
+                "v2.update_finding": False,
                 "v2.create_incident_service": False,
                 "v2.delete_incident_service": False,
                 "v2.get_incident_service": False,
@@ -394,8 +403,7 @@ class Configuration:
             prefix = self.api_key_prefix.get(identifier)
             if prefix:
                 return "%s %s" % (prefix, key)
-            else:
-                return key
+            return key
 
     def get_basic_auth_token(self):
         """Gets HTTP basic authentication header (string).
@@ -487,8 +495,7 @@ class Configuration:
             server = servers[index]
         except IndexError:
             raise ValueError(
-                "Invalid index {0} when selecting the host settings. "
-                "Must be less than {1}".format(index, len(servers))
+                "Invalid index {} when selecting the host settings. " "Must be less than {}".format(index, len(servers))
             )
 
         url = server["url"]
@@ -499,11 +506,11 @@ class Configuration:
 
             if "enum_values" in variable and used_value not in variable["enum_values"]:
                 raise ValueError(
-                    "The variable `{0}` in the host URL has invalid value "
-                    "{1}. Must be {2}.".format(variable_name, variables[variable_name], variable["enum_values"])
+                    "The variable `{}` in the host URL has invalid value "
+                    "{}. Must be {}.".format(variable_name, variables[variable_name], variable["enum_values"])
                 )
 
-            url = url.replace("{" + variable_name + "}", used_value)
+            url = url.replace(f"{{{variable_name}}}", used_value)
 
         return url
 

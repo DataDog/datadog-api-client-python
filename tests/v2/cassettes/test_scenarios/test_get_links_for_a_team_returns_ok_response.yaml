@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"handle":"1679941989","name":"1679941989"},"type":"team"}}'
+    body: '{"data":{"attributes":{"handle":"handle-0d2d6ca6aa883570","name":"name-0d2d6ca6aa883570"},"type":"team"}}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/team
   response:
     body:
-      string: '{"data":{"type":"team","id":"d3141588-cccd-11ed-93f1-da7ad0900002","attributes":{"name":"1679941989","handle":"1679941989","summary":null,"description":null,"color":6,"created_at":"2023-03-27T18:33:10.001530+00:00","modified_at":"2023-03-27T18:33:10.001534+00:00","user_count":0,"link_count":0},"relationships":{"team_links":{"links":{"related":"/api/v2/team/d3141588-cccd-11ed-93f1-da7ad0900002/links"}},"user_team_permissions":{"links":{"related":"/api/v2/team/d3141588-cccd-11ed-93f1-da7ad0900002/permission-settings"}}}}}
+      string: '{"data":{"type":"team","id":"56bc6f22-ef4f-11ed-9378-da7ad0900002","attributes":{"name":"name-0d2d6ca6aa883570","handle":"handle-0d2d6ca6aa883570","summary":null,"description":null,"color":7,"created_at":"2023-05-10T16:25:55.499796+00:00","modified_at":"2023-05-10T16:25:55.499801+00:00","user_count":0,"link_count":0},"relationships":{"team_links":{"links":{"related":"/api/v2/team/56bc6f22-ef4f-11ed-9378-da7ad0900002/links"}},"user_team_permissions":{"links":{"related":"/api/v2/team/56bc6f22-ef4f-11ed-9378-da7ad0900002/permission-settings"}}}}}
 
         '
     headers:
@@ -25,7 +25,7 @@ interactions:
       accept:
       - application/json
     method: GET
-    uri: https://api.datadoghq.com/api/v2/team/d3141588-cccd-11ed-93f1-da7ad0900002/links
+    uri: https://api.datadoghq.com/api/v2/team/56bc6f22-ef4f-11ed-9378-da7ad0900002/links
   response:
     body:
       string: '{"data":[]}
@@ -43,7 +43,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/team/d3141588-cccd-11ed-93f1-da7ad0900002
+    uri: https://api.datadoghq.com/api/v2/team/56bc6f22-ef4f-11ed-9378-da7ad0900002
   response:
     body:
       string: ''

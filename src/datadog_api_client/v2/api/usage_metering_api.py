@@ -49,7 +49,6 @@ class UsageMeteringApi:
                 "operation_id": "get_cost_by_org",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "start_month": {
@@ -66,7 +65,6 @@ class UsageMeteringApi:
             },
             headers_map={
                 "accept": ["application/json;datetime-format=rfc3339"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -79,7 +77,6 @@ class UsageMeteringApi:
                 "operation_id": "get_estimated_cost_by_org",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "view": {
@@ -110,7 +107,6 @@ class UsageMeteringApi:
             },
             headers_map={
                 "accept": ["application/json;datetime-format=rfc3339"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -123,7 +119,6 @@ class UsageMeteringApi:
                 "operation_id": "get_historical_cost_by_org",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "view": {
@@ -145,7 +140,6 @@ class UsageMeteringApi:
             },
             headers_map={
                 "accept": ["application/json;datetime-format=rfc3339"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -158,7 +152,6 @@ class UsageMeteringApi:
                 "operation_id": "get_hourly_usage",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "filter_timestamp_start": {
@@ -183,6 +176,11 @@ class UsageMeteringApi:
                     "attribute": "filter[include_descendants]",
                     "location": "query",
                 },
+                "filter_include_breakdown": {
+                    "openapi_types": (bool,),
+                    "attribute": "filter[include_breakdown]",
+                    "location": "query",
+                },
                 "filter_versions": {
                     "openapi_types": (str,),
                     "attribute": "filter[versions]",
@@ -205,7 +203,6 @@ class UsageMeteringApi:
             },
             headers_map={
                 "accept": ["application/json;datetime-format=rfc3339"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -218,7 +215,6 @@ class UsageMeteringApi:
                 "operation_id": "get_usage_application_security_monitoring",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "start_hr": {
@@ -235,7 +231,6 @@ class UsageMeteringApi:
             },
             headers_map={
                 "accept": ["application/json;datetime-format=rfc3339"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -248,7 +243,6 @@ class UsageMeteringApi:
                 "operation_id": "get_usage_lambda_traced_invocations",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "start_hr": {
@@ -265,7 +259,6 @@ class UsageMeteringApi:
             },
             headers_map={
                 "accept": ["application/json;datetime-format=rfc3339"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -278,7 +271,6 @@ class UsageMeteringApi:
                 "operation_id": "get_usage_observability_pipelines",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "start_hr": {
@@ -295,7 +287,6 @@ class UsageMeteringApi:
             },
             headers_map={
                 "accept": ["application/json;datetime-format=rfc3339"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -347,11 +338,11 @@ class UsageMeteringApi:
 
         :param view: String to specify whether cost is broken down at a parent-org level or at the sub-org level. Available views are ``summary`` and ``sub-org``. Defaults to ``summary``.
         :type view: str, optional
-        :param start_month: Datetime in ISO-8601 format, UTC, precise to month: ``[YYYY-MM]`` for cost beginning this month. Either start_month or start_date should be specified, but not both. (start_month cannot go beyond two months in the past)
+        :param start_month: Datetime in ISO-8601 format, UTC, precise to month: ``[YYYY-MM]`` for cost beginning this month. Either start_month or start_date should be specified, but not both. (start_month cannot go beyond two months in the past). Provide an ``end_month`` to view month-over-month cost.
         :type start_month: datetime, optional
         :param end_month: Datetime in ISO-8601 format, UTC, precise to month: ``[YYYY-MM]`` for cost ending this month.
         :type end_month: datetime, optional
-        :param start_date: Datetime in ISO-8601 format, UTC, precise to day: ``[YYYY-MM-DD]`` for cost beginning this day. Either start_month or start_date should be specified, but not both. (start_date cannot go beyond two months in the past)
+        :param start_date: Datetime in ISO-8601 format, UTC, precise to day: ``[YYYY-MM-DD]`` for cost beginning this day. Either start_month or start_date should be specified, but not both. (start_date cannot go beyond two months in the past). Provide an ``end_date`` to view day-over-day cumulative cost.
         :type start_date: datetime, optional
         :param end_date: Datetime in ISO-8601 format, UTC, precise to day: ``[YYYY-MM-DD]`` for cost ending this day.
         :type end_date: datetime, optional
@@ -413,6 +404,7 @@ class UsageMeteringApi:
         *,
         filter_timestamp_end: Union[datetime, UnsetType] = unset,
         filter_include_descendants: Union[bool, UnsetType] = unset,
+        filter_include_breakdown: Union[bool, UnsetType] = unset,
         filter_versions: Union[str, UnsetType] = unset,
         page_limit: Union[int, UnsetType] = unset,
         page_next_record_id: Union[str, UnsetType] = unset,
@@ -436,6 +428,8 @@ class UsageMeteringApi:
         :type filter_timestamp_end: datetime, optional
         :param filter_include_descendants: Include child org usage in the response. Defaults to false.
         :type filter_include_descendants: bool, optional
+        :param filter_include_breakdown: Include breakdown of usage by subcategories where applicable (for product family logs only). Defaults to false.
+        :type filter_include_breakdown: bool, optional
         :param filter_versions: Comma separated list of product family versions to use in the format ``product_family:version``. For example,
             ``infra_hosts:1.0.0``. If this parameter is not used, the API will use the latest version of each requested
             product family. Currently all families have one version ``1.0.0``.
@@ -456,6 +450,9 @@ class UsageMeteringApi:
 
         if filter_include_descendants is not unset:
             kwargs["filter_include_descendants"] = filter_include_descendants
+
+        if filter_include_breakdown is not unset:
+            kwargs["filter_include_breakdown"] = filter_include_breakdown
 
         if filter_versions is not unset:
             kwargs["filter_versions"] = filter_versions

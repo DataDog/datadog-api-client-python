@@ -1,0 +1,78 @@
+interactions:
+- request:
+    body: '{"name":"Test-Create_a_new_dashboard_with_a_change_widget_using_formulas_and_functions_slo_query-1688414483","query":{"denominator":"sum:httpservice.hits{!code:3xx}.as_count()","numerator":"sum:httpservice.hits{code:2xx}.as_count()"},"thresholds":[{"target":95,"timeframe":"7d","warning":98}],"type":"metric"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/slo
+  response:
+    body:
+      string: '{"data":[{"id":"1973fea2b6975337b3c26626e42c34e4","name":"Test-Create_a_new_dashboard_with_a_change_widget_using_formulas_and_functions_slo_query-1688414483","tags":[],"monitor_tags":[],"thresholds":[{"timeframe":"7d","target":95.0,"target_display":"95.","warning":98.0,"warning_display":"98."}],"type":"metric","type_id":1,"description":"","timeframe":"7d","warning_threshold":98,"target_threshold":95,"query":{"denominator":"sum:httpservice.hits{!code:3xx}.as_count()","numerator":"sum:httpservice.hits{code:2xx}.as_count()"},"creator":{"name":null,"handle":"frog@datadoghq.com","email":"frog@datadoghq.com"},"created_at":1688414484,"modified_at":1688414484}],"error":null}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"layout_type":"ordered","title":"Test-Create_a_new_dashboard_with_a_change_widget_using_formulas_and_functions_slo_query-1688414483","widgets":[{"definition":{"requests":[{"change_type":"absolute","formulas":[{"formula":"hour_before(query1)"},{"formula":"query1"}],"increase_good":true,"order_by":"change","order_dir":"asc","queries":[{"additional_query_filters":"*","data_source":"slo","group_mode":"overall","measure":"slo_status","name":"query1","slo_id":"1973fea2b6975337b3c26626e42c34e4","slo_query_type":"metric"}],"response_format":"scalar"}],"time":{},"title":"","title_align":"left","title_size":"16","type":"change"},"layout":{"height":2,"width":4,"x":0,"y":0}}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/dashboard
+  response:
+    body:
+      string: '{"id":"9u7-4vb-5ag","title":"Test-Create_a_new_dashboard_with_a_change_widget_using_formulas_and_functions_slo_query-1688414483","description":null,"author_handle":"frog@datadoghq.com","author_name":null,"layout_type":"ordered","url":"/dashboard/9u7-4vb-5ag/test-createanewdashboardwithachangewidgetusingformulasandfunctionssloquery-16884","is_read_only":false,"template_variables":null,"widgets":[{"definition":{"requests":[{"change_type":"absolute","formulas":[{"formula":"hour_before(query1)"},{"formula":"query1"}],"increase_good":true,"order_by":"change","order_dir":"asc","queries":[{"additional_query_filters":"*","data_source":"slo","group_mode":"overall","measure":"slo_status","name":"query1","slo_id":"1973fea2b6975337b3c26626e42c34e4","slo_query_type":"metric"}],"response_format":"scalar"}],"time":{},"title":"","title_align":"left","title_size":"16","type":"change"},"layout":{"height":2,"width":4,"x":0,"y":0},"id":6457792410139351}],"notify_list":null,"created_at":"2023-07-03T20:01:24.547325+00:00","modified_at":"2023-07-03T20:01:24.547325+00:00","restricted_roles":[]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/dashboard/9u7-4vb-5ag
+  response:
+    body:
+      string: '{"deleted_dashboard_id":"9u7-4vb-5ag"}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/slo/1973fea2b6975337b3c26626e42c34e4
+  response:
+    body:
+      string: '{"data":["1973fea2b6975337b3c26626e42c34e4"],"error":null}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

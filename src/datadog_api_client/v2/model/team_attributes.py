@@ -9,6 +9,7 @@ from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     datetime,
+    none_type,
     unset,
     UnsetType,
 )
@@ -17,13 +18,13 @@ from datadog_api_client.model_utils import (
 class TeamAttributes(ModelNormal):
     validations = {
         "handle": {
-            "max_length": 64,
+            "max_length": 195,
         },
         "link_count": {
             "inclusive_maximum": 2147483647,
         },
         "name": {
-            "max_length": 64,
+            "max_length": 200,
         },
         "summary": {
             "max_length": 120,
@@ -37,12 +38,12 @@ class TeamAttributes(ModelNormal):
     def openapi_types(_):
         return {
             "created_at": (datetime,),
-            "description": (str,),
+            "description": (str, none_type),
             "handle": (str,),
             "link_count": (int,),
             "modified_at": (datetime,),
             "name": (str,),
-            "summary": (str,),
+            "summary": (str, none_type),
             "user_count": (int,),
         }
 
@@ -66,10 +67,10 @@ class TeamAttributes(ModelNormal):
         handle: str,
         name: str,
         created_at: Union[datetime, UnsetType] = unset,
-        description: Union[str, UnsetType] = unset,
+        description: Union[str, none_type, UnsetType] = unset,
         link_count: Union[int, UnsetType] = unset,
         modified_at: Union[datetime, UnsetType] = unset,
-        summary: Union[str, UnsetType] = unset,
+        summary: Union[str, none_type, UnsetType] = unset,
         user_count: Union[int, UnsetType] = unset,
         **kwargs,
     ):
@@ -80,7 +81,7 @@ class TeamAttributes(ModelNormal):
         :type created_at: datetime, optional
 
         :param description: Free-form markdown description/content for the team's homepage
-        :type description: str, optional
+        :type description: str, none_type, optional
 
         :param handle: The team's identifier
         :type handle: str
@@ -95,7 +96,7 @@ class TeamAttributes(ModelNormal):
         :type name: str
 
         :param summary: A brief summary of the team, derived from the ``description``
-        :type summary: str, optional
+        :type summary: str, none_type, optional
 
         :param user_count: The number of users belonging to the team
         :type user_count: int, optional

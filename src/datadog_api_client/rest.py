@@ -273,9 +273,7 @@ class _AioSonicResponseWrapper:
         self.status = response.status_code
         self.reason = response.response_initial.get("reason")
         self.data = data
-
-    def getheaders(self):
-        return self.response.headers
+        self.headers = response.headers.copy()
 
 
 class AsyncRESTClientObject:
@@ -317,6 +315,13 @@ class AsyncRESTClientObject:
                                 (connection, read) timeouts.
         """
         assert not post_params, "not supported for now"
+        if request_timeout is not None:
+            from aiosonic.timeout import Timeouts  # type: ignore
+
+            if isinstance(request_timeout, (int, float)):
+                request_timeout = Timeouts(request_timeout=request_timeout)
+            else:
+                request_timeout = Timeouts(sock_connect=request_timeout[0], sock_read=request_timeout[1])
         request_body = None
         if (
             "Content-Type" not in headers

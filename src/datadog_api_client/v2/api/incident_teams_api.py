@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 from typing import Any, Dict, Union
+import warnings
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
@@ -20,7 +21,7 @@ from datadog_api_client.v2.model.incident_team_update_request import IncidentTea
 
 class IncidentTeamsApi:
     """
-    Create, update, delete and retrieve teams which can be associated with incidents.
+    The Incident Teams endpoints are deprecated. See the `Teams API endpoints <https://docs.datadoghq.com/api/latest/teams/>`_ to create, update, delete, and retrieve teams which can be associated with incidents.
     """
 
     def __init__(self, api_client=None):
@@ -36,7 +37,6 @@ class IncidentTeamsApi:
                 "operation_id": "create_incident_team",
                 "http_method": "POST",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -57,7 +57,6 @@ class IncidentTeamsApi:
                 "operation_id": "delete_incident_team",
                 "http_method": "DELETE",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "team_id": {
@@ -69,7 +68,6 @@ class IncidentTeamsApi:
             },
             headers_map={
                 "accept": ["*/*"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -82,7 +80,6 @@ class IncidentTeamsApi:
                 "operation_id": "get_incident_team",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "team_id": {
@@ -99,7 +96,6 @@ class IncidentTeamsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -112,7 +108,6 @@ class IncidentTeamsApi:
                 "operation_id": "list_incident_teams",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "include": {
@@ -138,7 +133,6 @@ class IncidentTeamsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -151,7 +145,6 @@ class IncidentTeamsApi:
                 "operation_id": "update_incident_team",
                 "http_method": "PATCH",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "team_id": {
@@ -174,7 +167,7 @@ class IncidentTeamsApi:
         self,
         body: IncidentTeamCreateRequest,
     ) -> IncidentTeamResponse:
-        """Create a new incident team.
+        """Create a new incident team. **Deprecated**.
 
         Creates a new incident team.
 
@@ -185,13 +178,14 @@ class IncidentTeamsApi:
         kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
+        warnings.warn("create_incident_team is deprecated", DeprecationWarning, stacklevel=2)
         return self._create_incident_team_endpoint.call_with_http_info(**kwargs)
 
     def delete_incident_team(
         self,
         team_id: str,
     ) -> None:
-        """Delete an existing incident team.
+        """Delete an existing incident team. **Deprecated**.
 
         Deletes an existing incident team.
 
@@ -202,6 +196,7 @@ class IncidentTeamsApi:
         kwargs: Dict[str, Any] = {}
         kwargs["team_id"] = team_id
 
+        warnings.warn("delete_incident_team is deprecated", DeprecationWarning, stacklevel=2)
         return self._delete_incident_team_endpoint.call_with_http_info(**kwargs)
 
     def get_incident_team(
@@ -210,7 +205,7 @@ class IncidentTeamsApi:
         *,
         include: Union[IncidentRelatedObject, UnsetType] = unset,
     ) -> IncidentTeamResponse:
-        """Get details of an incident team.
+        """Get details of an incident team. **Deprecated**.
 
         Get details of an incident team. If the ``include[users]`` query parameter is provided,
         the included attribute will contain the users related to these incident teams.
@@ -227,6 +222,7 @@ class IncidentTeamsApi:
         if include is not unset:
             kwargs["include"] = include
 
+        warnings.warn("get_incident_team is deprecated", DeprecationWarning, stacklevel=2)
         return self._get_incident_team_endpoint.call_with_http_info(**kwargs)
 
     def list_incident_teams(
@@ -237,13 +233,13 @@ class IncidentTeamsApi:
         page_offset: Union[int, UnsetType] = unset,
         filter: Union[str, UnsetType] = unset,
     ) -> IncidentTeamsResponse:
-        """Get a list of all incident teams.
+        """Get a list of all incident teams. **Deprecated**.
 
         Get all incident teams for the requesting user's organization. If the ``include[users]`` query parameter is provided, the included attribute will contain the users related to these incident teams.
 
         :param include: Specifies which types of related objects should be included in the response.
         :type include: IncidentRelatedObject, optional
-        :param page_size: Size for a given page. The maximum allowed value is 5000.
+        :param page_size: Size for a given page. The maximum allowed value is 100.
         :type page_size: int, optional
         :param page_offset: Specific offset to use as the beginning of the returned page.
         :type page_offset: int, optional
@@ -264,6 +260,7 @@ class IncidentTeamsApi:
         if filter is not unset:
             kwargs["filter"] = filter
 
+        warnings.warn("list_incident_teams is deprecated", DeprecationWarning, stacklevel=2)
         return self._list_incident_teams_endpoint.call_with_http_info(**kwargs)
 
     def update_incident_team(
@@ -271,7 +268,7 @@ class IncidentTeamsApi:
         team_id: str,
         body: IncidentTeamUpdateRequest,
     ) -> IncidentTeamResponse:
-        """Update an existing incident team.
+        """Update an existing incident team. **Deprecated**.
 
         Updates an existing incident team. Only provide the attributes which should be updated as this request is a partial update.
 
@@ -286,4 +283,5 @@ class IncidentTeamsApi:
 
         kwargs["body"] = body
 
+        warnings.warn("update_incident_team is deprecated", DeprecationWarning, stacklevel=2)
         return self._update_incident_team_endpoint.call_with_http_info(**kwargs)

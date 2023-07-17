@@ -30,7 +30,6 @@ class AzureIntegrationApi:
                 "operation_id": "create_azure_integration",
                 "http_method": "POST",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -51,7 +50,6 @@ class AzureIntegrationApi:
                 "operation_id": "delete_azure_integration",
                 "http_method": "DELETE",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -72,12 +70,10 @@ class AzureIntegrationApi:
                 "operation_id": "list_azure_integration",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={},
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -90,7 +86,6 @@ class AzureIntegrationApi:
                 "operation_id": "update_azure_host_filters",
                 "http_method": "POST",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -111,7 +106,6 @@ class AzureIntegrationApi:
                 "operation_id": "update_azure_integration",
                 "http_method": "PUT",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "body": {

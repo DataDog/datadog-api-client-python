@@ -1,0 +1,108 @@
+interactions:
+- request:
+    body: '{"message":"some message Notify: @hipchat-channel","name":"Test-Get_a_monitor_s_details_with_downtime_returns_OK_response-1684790119","options":{"enable_logs_sample":true,"escalation_message":"the
+      situation has escalated","evaluation_delay":700,"groupby_simple_monitor":true,"include_tags":true,"locked":false,"new_host_delay":600,"no_data_timeframe":null,"notification_preset_name":"hide_handles","notify_audit":false,"notify_no_data":false,"on_missing_data":"show_and_notify_no_data","renotify_interval":60,"require_full_window":true,"thresholds":{"critical":2,"warning":1},"timeout_h":24},"priority":3,"query":"logs(\"service:foo
+      AND type:error\").index(\"main\").rollup(\"count\").by(\"source\").last(\"5m\")
+      > 2","tags":["test:testgetamonitorsdetailswithdowntimereturnsokresponse1684790119","env:ci"],"type":"log
+      alert"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/monitor
+  response:
+    body:
+      string: '{"id":119766008,"org_id":717122,"type":"log alert","name":"Test-Get_a_monitor_s_details_with_downtime_returns_OK_response-1684790119","message":"some
+        message Notify: @hipchat-channel","tags":["test:testgetamonitorsdetailswithdowntimereturnsokresponse1684790119","env:ci"],"query":"logs(\"service:foo
+        AND type:error\").index(\"main\").rollup(\"count\").by(\"source\").last(\"5m\")
+        > 2","options":{"enable_logs_sample":true,"escalation_message":"the situation
+        has escalated","evaluation_delay":700,"groupby_simple_monitor":true,"include_tags":true,"locked":false,"new_host_delay":600,"no_data_timeframe":null,"notification_preset_name":"hide_handles","notify_audit":false,"notify_no_data":false,"on_missing_data":"show_and_notify_no_data","renotify_interval":60,"require_full_window":true,"thresholds":{"critical":2.0,"warning":1.0},"timeout_h":24,"silenced":{}},"multi":true,"created_at":1684790119000,"created":"2023-05-22T21:15:19.942502+00:00","modified":"2023-05-22T21:15:19.942502+00:00","deleted":null,"restricted_roles":null,"priority":3,"overall_state_modified":null,"overall_state":"No
+        Data","creator":{"name":"Kevin Zou","handle":"kevin.zou@datadoghq.com","email":"kevin.zou@datadoghq.com","id":4351227}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"end":1685394919,"message":"Test-Get_a_monitor_s_details_with_downtime_returns_OK_response-1684790119","monitor_id":119766008,"mute_first_recovery_notification":true,"notify_end_states":["alert"],"notify_end_types":["canceled"],"scope":["*"],"start":1684790119,"timezone":"Etc/UTC"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/downtime
+  response:
+    body:
+      string: '{"id":2942947856,"monitor_id":119766008,"org_id":717122,"start":1684790119,"end":1685394919,"canceled":null,"created":1684790120,"modified":1684790120,"message":"Test-Get_a_monitor_s_details_with_downtime_returns_OK_response-1684790119","active":true,"disabled":false,"recurrence":null,"timezone":"Etc/UTC","parent_id":null,"child_id":null,"creator_id":4351227,"updater_id":null,"downtime_type":0,"status":"active","monitor_tags":["*"],"mute_first_recovery_notification":true,"notify_end_types":["canceled"],"notify_end_states":["alert"],"uuid":"c1ddf27c-f8e5-11ed-8c5a-da7ad0900002","scope":["*"]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v1/monitor/119766008?with_downtimes=true
+  response:
+    body:
+      string: '{"id":119766008,"org_id":717122,"type":"log alert","name":"Test-Get_a_monitor_s_details_with_downtime_returns_OK_response-1684790119","message":"some
+        message Notify: @hipchat-channel","tags":["test:testgetamonitorsdetailswithdowntimereturnsokresponse1684790119","env:ci"],"query":"logs(\"service:foo
+        AND type:error\").index(\"main\").rollup(\"count\").by(\"source\").last(\"5m\")
+        > 2","options":{"enable_logs_sample":true,"escalation_message":"the situation
+        has escalated","evaluation_delay":700,"groupby_simple_monitor":true,"include_tags":true,"locked":false,"new_host_delay":600,"no_data_timeframe":null,"notification_preset_name":"hide_handles","notify_audit":false,"notify_no_data":false,"on_missing_data":"show_and_notify_no_data","renotify_interval":60,"require_full_window":true,"thresholds":{"critical":2.0,"warning":1.0},"timeout_h":24,"silenced":{"*":1685394919}},"multi":true,"created_at":1684790119000,"created":"2023-05-22T21:15:19.942502+00:00","modified":"2023-05-22T21:15:19.942502+00:00","deleted":null,"restricted_roles":null,"priority":3,"overall_state_modified":"2023-05-22T21:15:22+00:00","overall_state":"No
+        Data","creator":{"name":"Kevin Zou","handle":"kevin.zou@datadoghq.com","email":"kevin.zou@datadoghq.com","id":4351227},"matching_downtimes":[{"id":2942947856,"active":true,"monitor_id":119766008,"start":1684790119,"end":1685394919,"scope":["*"],"groups":["total"]}]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/downtime/2942947856
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - text/html; charset=utf-8
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/monitor/119766008
+  response:
+    body:
+      string: '{"deleted_monitor_id":119766008}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

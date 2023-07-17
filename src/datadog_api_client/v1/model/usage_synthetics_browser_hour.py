@@ -9,6 +9,7 @@ from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     datetime,
+    none_type,
     unset,
     UnsetType,
 )
@@ -18,7 +19,7 @@ class UsageSyntheticsBrowserHour(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
-            "browser_check_calls_count": (int,),
+            "browser_check_calls_count": (int, none_type),
             "hour": (datetime,),
             "org_name": (str,),
             "public_id": (str,),
@@ -33,7 +34,7 @@ class UsageSyntheticsBrowserHour(ModelNormal):
 
     def __init__(
         self_,
-        browser_check_calls_count: Union[int, UnsetType] = unset,
+        browser_check_calls_count: Union[int, none_type, UnsetType] = unset,
         hour: Union[datetime, UnsetType] = unset,
         org_name: Union[str, UnsetType] = unset,
         public_id: Union[str, UnsetType] = unset,
@@ -43,7 +44,7 @@ class UsageSyntheticsBrowserHour(ModelNormal):
         Number of Synthetics Browser tests run for each hour for a given organization.
 
         :param browser_check_calls_count: Contains the number of Synthetics Browser tests run.
-        :type browser_check_calls_count: int, optional
+        :type browser_check_calls_count: int, none_type, optional
 
         :param hour: The hour for the usage.
         :type hour: datetime, optional

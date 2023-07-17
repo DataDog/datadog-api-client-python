@@ -14,6 +14,7 @@ with ApiClient(configuration) as api_client:
     api_instance = MonitorsApi(api_client)
     response = api_instance.get_monitor(
         monitor_id=int(MONITOR_ID),
+        with_downtimes=True,
     )
 
     print(response)

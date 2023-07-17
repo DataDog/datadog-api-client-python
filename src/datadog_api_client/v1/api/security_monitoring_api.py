@@ -32,7 +32,6 @@ class SecurityMonitoringApi:
                 "operation_id": "add_security_monitoring_signal_to_incident",
                 "http_method": "PATCH",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "signal_id": {
@@ -59,7 +58,6 @@ class SecurityMonitoringApi:
                 "operation_id": "edit_security_monitoring_signal_assignee",
                 "http_method": "PATCH",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "signal_id": {
@@ -86,7 +84,6 @@ class SecurityMonitoringApi:
                 "operation_id": "edit_security_monitoring_signal_state",
                 "http_method": "PATCH",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "signal_id": {

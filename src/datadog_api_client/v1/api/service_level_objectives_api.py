@@ -47,7 +47,6 @@ class ServiceLevelObjectivesApi:
                 "operation_id": "check_can_delete_slo",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "ids": {
@@ -59,7 +58,6 @@ class ServiceLevelObjectivesApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -72,7 +70,6 @@ class ServiceLevelObjectivesApi:
                 "operation_id": "create_slo",
                 "http_method": "POST",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -93,7 +90,6 @@ class ServiceLevelObjectivesApi:
                 "operation_id": "delete_slo",
                 "http_method": "DELETE",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "slo_id": {
@@ -110,7 +106,6 @@ class ServiceLevelObjectivesApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -123,7 +118,6 @@ class ServiceLevelObjectivesApi:
                 "operation_id": "delete_slo_timeframe_in_bulk",
                 "http_method": "POST",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -144,7 +138,6 @@ class ServiceLevelObjectivesApi:
                 "operation_id": "get_slo",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "slo_id": {
@@ -161,7 +154,6 @@ class ServiceLevelObjectivesApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -174,7 +166,6 @@ class ServiceLevelObjectivesApi:
                 "operation_id": "get_slo_corrections",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "slo_id": {
@@ -186,7 +177,6 @@ class ServiceLevelObjectivesApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -199,7 +189,6 @@ class ServiceLevelObjectivesApi:
                 "operation_id": "get_slo_history",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "slo_id": {
@@ -237,7 +226,6 @@ class ServiceLevelObjectivesApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -250,7 +238,6 @@ class ServiceLevelObjectivesApi:
                 "operation_id": "list_slos",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "ids": {
@@ -286,7 +273,6 @@ class ServiceLevelObjectivesApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -299,55 +285,6 @@ class ServiceLevelObjectivesApi:
                 "operation_id": "search_slo",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": [
-                    {
-                        "url": "https://{subdomain}.{site}",
-                        "variables": {
-                            "site": {
-                                "description": "The regional site for Datadog customers.",
-                                "default_value": "datadoghq.com",
-                                "enum_values": [
-                                    "datadoghq.com",
-                                    "datadoghq.eu",
-                                    "us3.datadoghq.com",
-                                    "us5.datadoghq.com",
-                                    "ap1.datadoghq.com",
-                                    "ddog-gov.com",
-                                ],
-                            },
-                            "subdomain": {
-                                "description": "The subdomain where the API is deployed.",
-                                "default_value": "api",
-                            },
-                        },
-                    },
-                    {
-                        "url": "{protocol}://{name}",
-                        "variables": {
-                            "name": {
-                                "description": "Full site DNS name.",
-                                "default_value": "api.datadoghq.com",
-                            },
-                            "protocol": {
-                                "description": "The protocol for accessing the API.",
-                                "default_value": "https",
-                            },
-                        },
-                    },
-                    {
-                        "url": "https://{subdomain}.{site}",
-                        "variables": {
-                            "site": {
-                                "description": "Any Datadog deployment.",
-                                "default_value": "datadoghq.com",
-                            },
-                            "subdomain": {
-                                "description": "The subdomain where the API is deployed.",
-                                "default_value": "api",
-                            },
-                        },
-                    },
-                ],
             },
             params_map={
                 "query": {
@@ -373,7 +310,6 @@ class ServiceLevelObjectivesApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -386,7 +322,6 @@ class ServiceLevelObjectivesApi:
                 "operation_id": "update_slo",
                 "http_method": "PUT",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "slo_id": {

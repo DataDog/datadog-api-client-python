@@ -15,6 +15,10 @@ from datadog_api_client.v1.model.dashboard_bulk_delete_request import DashboardB
 from datadog_api_client.v1.model.dashboard_summary import DashboardSummary
 from datadog_api_client.v1.model.dashboard_restore_request import DashboardRestoreRequest
 from datadog_api_client.v1.model.dashboard import Dashboard
+from datadog_api_client.v1.model.shared_dashboard import SharedDashboard
+from datadog_api_client.v1.model.delete_shared_dashboard_response import DeleteSharedDashboardResponse
+from datadog_api_client.v1.model.shared_dashboard_update_request import SharedDashboardUpdateRequest
+from datadog_api_client.v1.model.shared_dashboard_invites import SharedDashboardInvites
 from datadog_api_client.v1.model.dashboard_delete_response import DashboardDeleteResponse
 
 
@@ -37,12 +41,31 @@ class DashboardsApi:
                 "operation_id": "create_dashboard",
                 "http_method": "POST",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "body": {
                     "required": True,
                     "openapi_types": (Dashboard,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._create_public_dashboard_endpoint = _Endpoint(
+            settings={
+                "response_type": (SharedDashboard,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v1/dashboard/public",
+                "operation_id": "create_public_dashboard",
+                "http_method": "POST",
+                "version": "v1",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (SharedDashboard,),
                     "location": "body",
                 },
             },
@@ -58,7 +81,6 @@ class DashboardsApi:
                 "operation_id": "delete_dashboard",
                 "http_method": "DELETE",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "dashboard_id": {
@@ -70,7 +92,6 @@ class DashboardsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -83,12 +104,60 @@ class DashboardsApi:
                 "operation_id": "delete_dashboards",
                 "http_method": "DELETE",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "body": {
                     "required": True,
                     "openapi_types": (DashboardBulkDeleteRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._delete_public_dashboard_endpoint = _Endpoint(
+            settings={
+                "response_type": (DeleteSharedDashboardResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v1/dashboard/public/{token}",
+                "operation_id": "delete_public_dashboard",
+                "http_method": "DELETE",
+                "version": "v1",
+            },
+            params_map={
+                "token": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "token",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._delete_public_dashboard_invitation_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v1/dashboard/public/{token}/invitation",
+                "operation_id": "delete_public_dashboard_invitation",
+                "http_method": "DELETE",
+                "version": "v1",
+            },
+            params_map={
+                "token": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "token",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (SharedDashboardInvites,),
                     "location": "body",
                 },
             },
@@ -104,7 +173,6 @@ class DashboardsApi:
                 "operation_id": "get_dashboard",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "dashboard_id": {
@@ -116,7 +184,62 @@ class DashboardsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
+            },
+            api_client=api_client,
+        )
+
+        self._get_public_dashboard_endpoint = _Endpoint(
+            settings={
+                "response_type": (SharedDashboard,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v1/dashboard/public/{token}",
+                "operation_id": "get_public_dashboard",
+                "http_method": "GET",
+                "version": "v1",
+            },
+            params_map={
+                "token": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "token",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_public_dashboard_invitations_endpoint = _Endpoint(
+            settings={
+                "response_type": (SharedDashboardInvites,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v1/dashboard/public/{token}/invitation",
+                "operation_id": "get_public_dashboard_invitations",
+                "http_method": "GET",
+                "version": "v1",
+            },
+            params_map={
+                "token": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "token",
+                    "location": "path",
+                },
+                "page_size": {
+                    "openapi_types": (int,),
+                    "attribute": "page_size",
+                    "location": "query",
+                },
+                "page_number": {
+                    "openapi_types": (int,),
+                    "attribute": "page_number",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
             },
             api_client=api_client,
         )
@@ -129,7 +252,6 @@ class DashboardsApi:
                 "operation_id": "list_dashboards",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "filter_shared": {
@@ -145,7 +267,6 @@ class DashboardsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -158,7 +279,6 @@ class DashboardsApi:
                 "operation_id": "restore_dashboards",
                 "http_method": "PATCH",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -171,6 +291,32 @@ class DashboardsApi:
             api_client=api_client,
         )
 
+        self._send_public_dashboard_invitation_endpoint = _Endpoint(
+            settings={
+                "response_type": (SharedDashboardInvites,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v1/dashboard/public/{token}/invitation",
+                "operation_id": "send_public_dashboard_invitation",
+                "http_method": "POST",
+                "version": "v1",
+            },
+            params_map={
+                "token": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "token",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (SharedDashboardInvites,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._update_dashboard_endpoint = _Endpoint(
             settings={
                 "response_type": (Dashboard,),
@@ -179,7 +325,6 @@ class DashboardsApi:
                 "operation_id": "update_dashboard",
                 "http_method": "PUT",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "dashboard_id": {
@@ -191,6 +336,32 @@ class DashboardsApi:
                 "body": {
                     "required": True,
                     "openapi_types": (Dashboard,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._update_public_dashboard_endpoint = _Endpoint(
+            settings={
+                "response_type": (SharedDashboard,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v1/dashboard/public/{token}",
+                "operation_id": "update_public_dashboard",
+                "http_method": "PUT",
+                "version": "v1",
+            },
+            params_map={
+                "token": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "token",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (SharedDashboardUpdateRequest,),
                     "location": "body",
                 },
             },
@@ -215,6 +386,23 @@ class DashboardsApi:
         kwargs["body"] = body
 
         return self._create_dashboard_endpoint.call_with_http_info(**kwargs)
+
+    def create_public_dashboard(
+        self,
+        body: SharedDashboard,
+    ) -> SharedDashboard:
+        """Create a shared dashboard.
+
+        Share a specified private dashboard, generating a URL at which it can be publicly viewed.
+
+        :param body: Create a shared dashboard request body.
+        :type body: SharedDashboard
+        :rtype: SharedDashboard
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_public_dashboard_endpoint.call_with_http_info(**kwargs)
 
     def delete_dashboard(
         self,
@@ -250,6 +438,45 @@ class DashboardsApi:
 
         return self._delete_dashboards_endpoint.call_with_http_info(**kwargs)
 
+    def delete_public_dashboard(
+        self,
+        token: str,
+    ) -> DeleteSharedDashboardResponse:
+        """Revoke a shared dashboard URL.
+
+        Revoke the public URL for a dashboard (rendering it private) associated with the specified token.
+
+        :param token: The token of the shared dashboard.
+        :type token: str
+        :rtype: DeleteSharedDashboardResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["token"] = token
+
+        return self._delete_public_dashboard_endpoint.call_with_http_info(**kwargs)
+
+    def delete_public_dashboard_invitation(
+        self,
+        token: str,
+        body: SharedDashboardInvites,
+    ) -> None:
+        """Revoke shared dashboard invitations.
+
+        Revoke previously sent invitation emails and active sessions used to access a given shared dashboard for specific email addresses.
+
+        :param token: The token of the shared dashboard.
+        :type token: str
+        :param body: Shared Dashboard Invitation deletion request body.
+        :type body: SharedDashboardInvites
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["token"] = token
+
+        kwargs["body"] = body
+
+        return self._delete_public_dashboard_invitation_endpoint.call_with_http_info(**kwargs)
+
     def get_dashboard(
         self,
         dashboard_id: str,
@@ -266,6 +493,53 @@ class DashboardsApi:
         kwargs["dashboard_id"] = dashboard_id
 
         return self._get_dashboard_endpoint.call_with_http_info(**kwargs)
+
+    def get_public_dashboard(
+        self,
+        token: str,
+    ) -> SharedDashboard:
+        """Get a shared dashboard.
+
+        Fetch an existing shared dashboard's sharing metadata associated with the specified token.
+
+        :param token: The token of the shared dashboard. Generated when a dashboard is shared.
+        :type token: str
+        :rtype: SharedDashboard
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["token"] = token
+
+        return self._get_public_dashboard_endpoint.call_with_http_info(**kwargs)
+
+    def get_public_dashboard_invitations(
+        self,
+        token: str,
+        *,
+        page_size: Union[int, UnsetType] = unset,
+        page_number: Union[int, UnsetType] = unset,
+    ) -> SharedDashboardInvites:
+        """Get all invitations for a shared dashboard.
+
+        Describe the invitations that exist for the given shared dashboard (paginated).
+
+        :param token: Token of the shared dashboard for which to fetch invitations.
+        :type token: str
+        :param page_size: The number of records to return in a single request.
+        :type page_size: int, optional
+        :param page_number: The page to access (base 0).
+        :type page_number: int, optional
+        :rtype: SharedDashboardInvites
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["token"] = token
+
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        if page_number is not unset:
+            kwargs["page_number"] = page_number
+
+        return self._get_public_dashboard_invitations_endpoint.call_with_http_info(**kwargs)
 
     def list_dashboards(
         self,
@@ -314,6 +588,28 @@ class DashboardsApi:
 
         return self._restore_dashboards_endpoint.call_with_http_info(**kwargs)
 
+    def send_public_dashboard_invitation(
+        self,
+        token: str,
+        body: SharedDashboardInvites,
+    ) -> SharedDashboardInvites:
+        """Send shared dashboard invitation email.
+
+        Send emails to specified email addresses containing links to access a given authenticated shared dashboard. Email addresses must already belong to the authenticated shared dashboard's share_list.
+
+        :param token: The token of the shared dashboard.
+        :type token: str
+        :param body: Shared Dashboard Invitation request body.
+        :type body: SharedDashboardInvites
+        :rtype: SharedDashboardInvites
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["token"] = token
+
+        kwargs["body"] = body
+
+        return self._send_public_dashboard_invitation_endpoint.call_with_http_info(**kwargs)
+
     def update_dashboard(
         self,
         dashboard_id: str,
@@ -335,3 +631,25 @@ class DashboardsApi:
         kwargs["body"] = body
 
         return self._update_dashboard_endpoint.call_with_http_info(**kwargs)
+
+    def update_public_dashboard(
+        self,
+        token: str,
+        body: SharedDashboardUpdateRequest,
+    ) -> SharedDashboard:
+        """Update a shared dashboard.
+
+        Update a shared dashboard associated with the specified token.
+
+        :param token: The token of the shared dashboard.
+        :type token: str
+        :param body: Update Dashboard request body.
+        :type body: SharedDashboardUpdateRequest
+        :rtype: SharedDashboard
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["token"] = token
+
+        kwargs["body"] = body
+
+        return self._update_public_dashboard_endpoint.call_with_http_info(**kwargs)

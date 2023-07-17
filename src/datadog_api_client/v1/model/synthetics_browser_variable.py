@@ -27,6 +27,7 @@ class SyntheticsBrowserVariable(ModelNormal):
             "id": (str,),
             "name": (str,),
             "pattern": (str,),
+            "secure": (bool,),
             "type": (SyntheticsBrowserVariableType,),
         }
 
@@ -35,6 +36,7 @@ class SyntheticsBrowserVariable(ModelNormal):
         "id": "id",
         "name": "name",
         "pattern": "pattern",
+        "secure": "secure",
         "type": "type",
     }
 
@@ -45,11 +47,12 @@ class SyntheticsBrowserVariable(ModelNormal):
         example: Union[str, UnsetType] = unset,
         id: Union[str, UnsetType] = unset,
         pattern: Union[str, UnsetType] = unset,
+        secure: Union[bool, UnsetType] = unset,
         **kwargs,
     ):
         """
         Object defining a variable that can be used in your browser test.
-        Learn more in the `Browser test Actions documentation <https://docs.datadoghq.com/synthetics/browser_tests/actions#variable>`_.
+        See the `Recording Steps documentation <https://docs.datadoghq.com/synthetics/browser_tests/actions/?tab=testanelementontheactivepage#variables>`_.
 
         :param example: Example for the variable.
         :type example: str, optional
@@ -63,6 +66,9 @@ class SyntheticsBrowserVariable(ModelNormal):
         :param pattern: Pattern of the variable.
         :type pattern: str, optional
 
+        :param secure: Determines whether or not the browser test variable is obfuscated. Can only be used with browser variables of type ``text``.
+        :type secure: bool, optional
+
         :param type: Type of browser test variable.
         :type type: SyntheticsBrowserVariableType
         """
@@ -72,6 +78,8 @@ class SyntheticsBrowserVariable(ModelNormal):
             kwargs["id"] = id
         if pattern is not unset:
             kwargs["pattern"] = pattern
+        if secure is not unset:
+            kwargs["secure"] = secure
         super().__init__(kwargs)
 
         self_.name = name

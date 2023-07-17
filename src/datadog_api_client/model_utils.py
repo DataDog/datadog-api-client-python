@@ -67,7 +67,7 @@ def allows_single_value_input(cls):
     elif issubclass(cls, ModelComposed):
         if not cls._composed_schemas["oneOf"]:
             return False
-        return any(allows_single_value_input(c) for c in cls._composed_schemas["oneOf"])
+        return any(allows_single_value_input(c) for c in cls._composed_schemas["oneOf"] if not isinstance(c, list))
     return False
 
 
@@ -985,7 +985,7 @@ def change_keys_js_to_python(input_dict, model_class):
     if issubclass(model_class, ModelComposed):
         attribute_map = {}
         for t in model_class._composed_schemas.get("oneOf", ()):
-            if issubclass(t, OpenApiModel):
+            if not isinstance(t, list) and issubclass(t, OpenApiModel):
                 attribute_map.update(t.attribute_map)
     elif not getattr(model_class, "attribute_map", None):
         return input_dict
@@ -1096,7 +1096,7 @@ def deserialize_model(model_data, model_class, path_to_item, check_type, configu
             return model_class(model_data, **kw_args)
         else:
             return model_class(*model_data, **kw_args)
-    if isinstance(model_data, dict):
+    elif isinstance(model_data, dict):
         kw_args.update(change_keys_js_to_python(model_data, model_class))
         return model_class(**kw_args)
     elif isinstance(model_data, PRIMITIVE_TYPES):
@@ -1498,7 +1498,7 @@ def get_oneof_instance(cls, model_kwargs, constant_kwargs, model_arg=None):
             # none_type deserialization is handled in the __new__ method
             continue
 
-        single_value_input = allows_single_value_input(oneof_class)
+        single_value_input = allows_single_value_input(oneof_class) if not isinstance(oneof_class, list) else True
 
         with suppress(Exception):
             if not single_value_input:
@@ -1511,10 +1511,29 @@ def get_oneof_instance(cls, model_kwargs, constant_kwargs, model_arg=None):
                 if not oneof_instance._unparsed:
                     oneof_instances.append(oneof_instance)
             else:
-                if issubclass(oneof_class, ModelSimple):
-                    oneof_instance = oneof_class(model_arg, **constant_kwargs)
-                    if not oneof_instance._unparsed:
-                        oneof_instances.append(oneof_instance)
+                if isinstance(oneof_class, list):
+                    oneof_class = oneof_class[0]
+                    list_oneof_instance = []
+                    if model_arg is None and not model_kwargs:
+                        # Empty data
+                        oneof_instances.append(list_oneof_instance)
+                        continue
+                    for arg in model_arg:
+                        if constant_kwargs.get("_spec_property_naming"):
+                            oneof_instance = oneof_class(
+                                **change_keys_js_to_python(arg, oneof_class), **constant_kwargs
+                            )
+                        else:
+                            oneof_instance = oneof_class(**arg, **constant_kwargs)
+                        if not oneof_instance._unparsed:
+                            list_oneof_instance.append(oneof_instance)
+                    if list_oneof_instance:
+                        oneof_instances.append(list_oneof_instance)
+                elif issubclass(oneof_class, ModelSimple):
+                    if model_arg is not None:
+                        oneof_instance = oneof_class(model_arg, **constant_kwargs)
+                        if not oneof_instance._unparsed:
+                            oneof_instances.append(oneof_instance)
                 elif oneof_class in PRIMITIVE_TYPES:
                     oneof_instance = validate_and_convert_types(
                         model_arg,
@@ -1581,7 +1600,7 @@ def validate_get_composed_info(constant_args, model_args, self):
     # Create composed_instances
     composed_instances = []
     oneof_instance = get_oneof_instance(self.__class__, model_args, constant_args)
-    if oneof_instance is not None:
+    if oneof_instance is not None and not isinstance(oneof_instance, list):
         composed_instances.append(oneof_instance)
 
     additional_properties_model_instances = []
@@ -1610,7 +1629,6 @@ class UnparsedObject(ModelNormal):
     )
 
     def __init__(self, **kwargs):
-
         self._data_store = {}
         self._unparsed = True
 

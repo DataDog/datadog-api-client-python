@@ -8,6 +8,7 @@ from typing import Union, TYPE_CHECKING
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    none_type,
     unset,
     UnsetType,
 )
@@ -48,7 +49,7 @@ class User(ModelNormal):
 
     def __init__(
         self_,
-        access_role: Union[AccessRole, UnsetType] = unset,
+        access_role: Union[AccessRole, none_type, UnsetType] = unset,
         disabled: Union[bool, UnsetType] = unset,
         email: Union[str, UnsetType] = unset,
         handle: Union[str, UnsetType] = unset,
@@ -61,7 +62,7 @@ class User(ModelNormal):
         Create, edit, and disable users.
 
         :param access_role: The access role of the user. Options are **st** (standard user), **adm** (admin user), or **ro** (read-only user).
-        :type access_role: AccessRole, optional
+        :type access_role: AccessRole, none_type, optional
 
         :param disabled: The new disabled status of the user.
         :type disabled: bool, optional

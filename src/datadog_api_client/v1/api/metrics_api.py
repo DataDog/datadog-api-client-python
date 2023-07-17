@@ -52,7 +52,6 @@ class MetricsApi:
                 "operation_id": "get_metric_metadata",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "metric_name": {
@@ -64,7 +63,6 @@ class MetricsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -77,7 +75,6 @@ class MetricsApi:
                 "operation_id": "list_active_metrics",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "_from": {
@@ -99,7 +96,6 @@ class MetricsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -112,7 +108,6 @@ class MetricsApi:
                 "operation_id": "list_metrics",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "q": {
@@ -124,7 +119,6 @@ class MetricsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -137,7 +131,6 @@ class MetricsApi:
                 "operation_id": "query_metrics",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "_from": {
@@ -161,7 +154,6 @@ class MetricsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -174,7 +166,6 @@ class MetricsApi:
                 "operation_id": "submit_distribution_points",
                 "http_method": "POST",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "content_encoding": {
@@ -200,7 +191,6 @@ class MetricsApi:
                 "operation_id": "submit_metrics",
                 "http_method": "POST",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "content_encoding": {
@@ -226,7 +216,6 @@ class MetricsApi:
                 "operation_id": "update_metric_metadata",
                 "http_method": "PUT",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "metric_name": {

@@ -34,7 +34,7 @@ class SyntheticsTestCiOptions(ModelNormal):
         """
         CI/CD options for a Synthetic test.
 
-        :param execution_rule: Execution rule for a Synthetics test.
+        :param execution_rule: Execution rule for a Synthetic test.
         :type execution_rule: SyntheticsTestExecutionRule, optional
         """
         if execution_rule is not unset:

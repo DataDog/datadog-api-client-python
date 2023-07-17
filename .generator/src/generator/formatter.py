@@ -20,6 +20,52 @@ if replacement_file.exists():
     with replacement_file.open() as f:
         EDGE_CASES.update(json.load(f))
 
+API_VERSION = None
+WHITELISTED_LIST_MODELS={
+    "v1": (
+        "AgentCheck",
+        "AzureAccountListResponse",
+        "DashboardBulkActionDataList",
+        "DistributionPoint",
+        "DistributionPointData",
+        "GCPAccountListResponse",
+        "HTTPLog",
+        "LogsPipelineList",
+        "MonitorSearchCount",
+        "Point",
+        "ServiceChecks",
+        "SharedDashboardInvitesDataList",
+        "SlackIntegrationChannels",
+        "SyntheticsRestrictedRoles",
+        "UsageAttributionAggregates",
+    ),
+    "v2": (
+        "CIAppAggregateBucketValueTimeseries",
+        "EventsQueryGroupBys",
+        "GroupTags",
+        "HTTPLog",
+        "IncidentTodoAssigneeArray",
+        "LogsAggregateBucketValueTimeseries",
+        "MetricBulkTagConfigEmailList",
+        "MetricBulkTagConfigTagNameList",
+        "MetricCustomAggregations",
+        "MetricSuggestedAggregations",
+        "RUMAggregateBucketValueTimeseries",
+        "ScalarFormulaRequestQueries",
+        "SecurityMonitoringSignalIncidentIds",
+        "SensitiveDataScannerGetConfigIncludedArray",
+        "SensitiveDataScannerStandardPatternsResponse",
+        "TagsEventAttribute",
+        "TeamPermissionSettingValues",
+        "TimeseriesFormulaRequestQueries",
+        "TimeseriesResponseSeriesList",
+        "TimeseriesResponseTimes",
+        "TimeseriesResponseValues",
+        "TimeseriesResponseValuesList",
+
+    ),
+}
+
 KEYWORDS = set(keyword.kwlist)
 KEYWORDS.add("property")
 KEYWORDS.add("cls")
@@ -28,6 +74,15 @@ PATTERN_DOUBLE_UNDERSCORE = re.compile(r"__+")
 PATTERN_LEADING_ALPHA = re.compile(r"(.)([A-Z][a-z]+)")
 PATTERN_FOLLOWING_ALPHA = re.compile(r"([a-z0-9])([A-Z])")
 PATTERN_WHITESPACE = re.compile(r"\W")
+
+
+def set_api_version(version):
+    global API_VERSION
+    API_VERSION = version
+
+
+def is_list_model_whitelisted(name):
+    return name in WHITELISTED_LIST_MODELS[API_VERSION]
 
 
 def snake_case(value):
@@ -171,6 +226,8 @@ def format_data_with_schema(
 
     name = None
     imports = imports or defaultdict(set)
+    nullable = schema.get("nullable", False)
+
     if schema.get("type") not in {"string", "integer", "boolean"} or schema.get("enum"):
         name, imports = get_name_and_imports(schema, version, imports)
     if schema.get("oneOf"):
@@ -178,18 +235,25 @@ def format_data_with_schema(
     if name:
         imports[MODEL_IMPORT_TPL.format(version=version, name=safe_snake_case(name))].add(name)
 
-    if "enum" in schema and data not in schema["enum"]:
-        raise ValueError(f"{data} is not valid enum value {schema['enum']}")
+    if "enum" in schema:
+        if nullable and data is None:
+            pass
+        elif data not in schema["enum"]:
+            raise ValueError(f"{data} is not valid enum value {schema['enum']}")
 
     if replace_values and data in replace_values:
         parameters = replace_values[data]
         if schema.get("format") in ("int32", "int64"):
             parameters = f"int({parameters})"
     elif "enum" in schema:
-        parameters = schema["x-enum-varnames"][schema["enum"].index(data)]
-        return f"{name}.{parameters}", imports
+        if nullable and data is None:
+            parameters = repr(data)
+            return parameters, imports
+        else:
+            parameters = schema["x-enum-varnames"][schema["enum"].index(data)]
+            return f"{name}.{parameters}", imports
     else:
-        if schema.get("nullable") and data is None:
+        if nullable and data is None:
             parameters = repr(data)
             return parameters, imports
         else:
@@ -237,7 +301,11 @@ def format_data_with_schema_list(
 ):
     """Format data with schema."""
     assert version is not None
-    name, imports = get_name_and_imports(schema, version, imports)
+
+    imports = imports or defaultdict(set)
+    name, r_imports = get_name_and_imports(schema, version, None)
+    if is_list_model_whitelisted(name):
+        imports.update(r_imports) 
 
     if "oneOf" in schema:
         for sub_schema in schema["oneOf"]:
@@ -246,6 +314,7 @@ def format_data_with_schema_list(
                     data,
                     sub_schema,
                     replace_values=replace_values,
+                    default_name=name if is_list_model_whitelisted(name) else None,
                     version=version,
                 )
             except (KeyError, ValueError):
@@ -263,14 +332,13 @@ def format_data_with_schema_list(
             d,
             schema["items"],
             replace_values=replace_values,
-            default_name=name,
             version=version,
         )
         parameters += f"{value}, "
         imports = _merge_imports(imports, extra_imports)
     parameters = f"[{parameters}]"
 
-    if name:
+    if name and is_list_model_whitelisted(name): 
         return f"{name}({parameters})", imports
 
     return parameters, imports
@@ -291,6 +359,11 @@ def format_data_with_schema_dict(
 
     parameters = ""
     if "properties" in schema:
+        required_properties = set(schema.get("required", []))
+        missing = required_properties - set(data.keys())
+        if missing:
+            raise ValueError(f"missing required properties: {missing}")
+
         for k, v in data.items():
             if k in schema["properties"]:
                 sub_schema = schema["properties"][k]

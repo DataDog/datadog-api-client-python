@@ -28,6 +28,7 @@ class EventsResponseMetadata(ModelNormal):
             "elapsed": (int,),
             "page": (EventsResponseMetadataPage,),
             "request_id": (str,),
+            "status": (str,),
             "warnings": ([EventsWarning],),
         }
 
@@ -35,6 +36,7 @@ class EventsResponseMetadata(ModelNormal):
         "elapsed": "elapsed",
         "page": "page",
         "request_id": "request_id",
+        "status": "status",
         "warnings": "warnings",
     }
 
@@ -43,6 +45,7 @@ class EventsResponseMetadata(ModelNormal):
         elapsed: Union[int, UnsetType] = unset,
         page: Union[EventsResponseMetadataPage, UnsetType] = unset,
         request_id: Union[str, UnsetType] = unset,
+        status: Union[str, UnsetType] = unset,
         warnings: Union[List[EventsWarning], UnsetType] = unset,
         **kwargs,
     ):
@@ -58,6 +61,9 @@ class EventsResponseMetadata(ModelNormal):
         :param request_id: The identifier of the request.
         :type request_id: str, optional
 
+        :param status: The request status.
+        :type status: str, optional
+
         :param warnings: A list of warnings (non-fatal errors) encountered. Partial results might be returned if
             warnings are present in the response.
         :type warnings: [EventsWarning], optional
@@ -68,6 +74,8 @@ class EventsResponseMetadata(ModelNormal):
             kwargs["page"] = page
         if request_id is not unset:
             kwargs["request_id"] = request_id
+        if status is not unset:
+            kwargs["status"] = status
         if warnings is not unset:
             kwargs["warnings"] = warnings
         super().__init__(kwargs)

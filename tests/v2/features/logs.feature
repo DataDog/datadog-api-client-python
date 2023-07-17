@@ -55,7 +55,7 @@ Feature: Logs
     When the request is sent
     Then the response status is 200 OK
 
-  @replay-only @team:DataDog/logs-app @with-pagination
+  @replay-only @skip-validation @team:DataDog/logs-app @with-pagination
   Scenario: Get a list of logs returns "OK" response with pagination
     Given a valid "appKeyAuth" key in the system
     And new "ListLogsGet" request
@@ -69,7 +69,7 @@ Feature: Logs
     Given a valid "appKeyAuth" key in the system
     And new "ListLogsGet" request
     And request contains "filter[query]" parameter with value "datadog-agent"
-    And request contains "filter[index]" parameter with value "main"
+    And request contains "filter[indexes]" parameter with value ["main"]
     And request contains "filter[from]" parameter with value "2020-09-17T11:48:36+01:00"
     And request contains "filter[to]" parameter with value "2020-09-17T12:48:36+01:00"
     And request contains "page[limit]" parameter with value 5
@@ -94,7 +94,7 @@ Feature: Logs
     Then the response status is 200 OK
     And the response "data" has length 0
 
-  @replay-only @team:DataDog/logs-app @with-pagination
+  @replay-only @skip-validation @team:DataDog/logs-app @with-pagination
   Scenario: Search logs returns "OK" response with pagination
     Given a valid "appKeyAuth" key in the system
     And new "ListLogs" request
@@ -140,9 +140,9 @@ Feature: Logs
     When the request is sent
     Then the response status is 408 Request Timeout
 
-  @skip-go @team:DataDog/event-platform-intake @team:DataDog/logs-backend
+  @team:DataDog/event-platform-intake @team:DataDog/logs-backend
   Scenario: Send logs returns "Request accepted for processing (always 202 empty JSON)." response
     Given new "SubmitLog" request
-    And body with value [{"ddsource": "nginx", "ddtags": "env:staging,version:5.1", "hostname": "i-012345678", "message": "2019-11-19T14:37:58,995 INFO [process.name][20081] Hello World", "service": "payment", "status": "error"}]
+    And body with value [{"ddsource": "nginx", "ddtags": "env:staging,version:5.1", "hostname": "i-012345678", "message": "2019-11-19T14:37:58,995 INFO [process.name][20081] Hello World", "service": "payment", "status": "info"}]
     When the request is sent
     Then the response status is 202 Request accepted for processing (always 202 empty JSON).

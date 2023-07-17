@@ -37,6 +37,8 @@ class UsageSummaryDateOrg(ModelNormal):
             "ci_test_indexed_spans_sum": (int,),
             "ci_visibility_pipeline_committers_hwm": (int,),
             "ci_visibility_test_committers_hwm": (int,),
+            "cloud_cost_management_aws_host_count_avg": (int,),
+            "cloud_cost_management_azure_host_count_avg": (int,),
             "cloud_cost_management_host_count_avg": (int,),
             "container_avg": (int,),
             "container_excl_agent_avg": (int,),
@@ -70,6 +72,7 @@ class UsageSummaryDateOrg(ModelNormal):
             "mobile_rum_session_count_flutter_sum": (int,),
             "mobile_rum_session_count_ios_sum": (int,),
             "mobile_rum_session_count_reactnative_sum": (int,),
+            "mobile_rum_session_count_roku_sum": (int,),
             "mobile_rum_session_count_sum": (int,),
             "mobile_rum_units_sum": (int,),
             "name": (str,),
@@ -98,6 +101,7 @@ class UsageSummaryDateOrg(ModelNormal):
             "twol_ingested_events_bytes_sum": (int,),
             "universal_service_monitoring_host_top99p": (int,),
             "vsphere_host_top99p": (int,),
+            "vuln_management_host_count_top99p": (int,),
         }
 
     attribute_map = {
@@ -121,6 +125,8 @@ class UsageSummaryDateOrg(ModelNormal):
         "ci_test_indexed_spans_sum": "ci_test_indexed_spans_sum",
         "ci_visibility_pipeline_committers_hwm": "ci_visibility_pipeline_committers_hwm",
         "ci_visibility_test_committers_hwm": "ci_visibility_test_committers_hwm",
+        "cloud_cost_management_aws_host_count_avg": "cloud_cost_management_aws_host_count_avg",
+        "cloud_cost_management_azure_host_count_avg": "cloud_cost_management_azure_host_count_avg",
         "cloud_cost_management_host_count_avg": "cloud_cost_management_host_count_avg",
         "container_avg": "container_avg",
         "container_excl_agent_avg": "container_excl_agent_avg",
@@ -154,6 +160,7 @@ class UsageSummaryDateOrg(ModelNormal):
         "mobile_rum_session_count_flutter_sum": "mobile_rum_session_count_flutter_sum",
         "mobile_rum_session_count_ios_sum": "mobile_rum_session_count_ios_sum",
         "mobile_rum_session_count_reactnative_sum": "mobile_rum_session_count_reactnative_sum",
+        "mobile_rum_session_count_roku_sum": "mobile_rum_session_count_roku_sum",
         "mobile_rum_session_count_sum": "mobile_rum_session_count_sum",
         "mobile_rum_units_sum": "mobile_rum_units_sum",
         "name": "name",
@@ -182,6 +189,7 @@ class UsageSummaryDateOrg(ModelNormal):
         "twol_ingested_events_bytes_sum": "twol_ingested_events_bytes_sum",
         "universal_service_monitoring_host_top99p": "universal_service_monitoring_host_top99p",
         "vsphere_host_top99p": "vsphere_host_top99p",
+        "vuln_management_host_count_top99p": "vuln_management_host_count_top99p",
     }
 
     def __init__(
@@ -206,6 +214,8 @@ class UsageSummaryDateOrg(ModelNormal):
         ci_test_indexed_spans_sum: Union[int, UnsetType] = unset,
         ci_visibility_pipeline_committers_hwm: Union[int, UnsetType] = unset,
         ci_visibility_test_committers_hwm: Union[int, UnsetType] = unset,
+        cloud_cost_management_aws_host_count_avg: Union[int, UnsetType] = unset,
+        cloud_cost_management_azure_host_count_avg: Union[int, UnsetType] = unset,
         cloud_cost_management_host_count_avg: Union[int, UnsetType] = unset,
         container_avg: Union[int, UnsetType] = unset,
         container_excl_agent_avg: Union[int, UnsetType] = unset,
@@ -239,6 +249,7 @@ class UsageSummaryDateOrg(ModelNormal):
         mobile_rum_session_count_flutter_sum: Union[int, UnsetType] = unset,
         mobile_rum_session_count_ios_sum: Union[int, UnsetType] = unset,
         mobile_rum_session_count_reactnative_sum: Union[int, UnsetType] = unset,
+        mobile_rum_session_count_roku_sum: Union[int, UnsetType] = unset,
         mobile_rum_session_count_sum: Union[int, UnsetType] = unset,
         mobile_rum_units_sum: Union[int, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
@@ -267,6 +278,7 @@ class UsageSummaryDateOrg(ModelNormal):
         twol_ingested_events_bytes_sum: Union[int, UnsetType] = unset,
         universal_service_monitoring_host_top99p: Union[int, UnsetType] = unset,
         vsphere_host_top99p: Union[int, UnsetType] = unset,
+        vuln_management_host_count_top99p: Union[int, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -332,7 +344,13 @@ class UsageSummaryDateOrg(ModelNormal):
         :param ci_visibility_test_committers_hwm: Shows the high-water mark of all CI visibility test committers over all hours in the current date for the given org.
         :type ci_visibility_test_committers_hwm: int, optional
 
-        :param cloud_cost_management_host_count_avg: Host count average of Cloud Cost Management for the given date and given org.
+        :param cloud_cost_management_aws_host_count_avg: Host count average of Cloud Cost Management for AWS for the given date and given org.
+        :type cloud_cost_management_aws_host_count_avg: int, optional
+
+        :param cloud_cost_management_azure_host_count_avg: Host count average of Cloud Cost Management for Azure for the given date and given org.
+        :type cloud_cost_management_azure_host_count_avg: int, optional
+
+        :param cloud_cost_management_host_count_avg: Host count average of Cloud Cost Management for all cloud providers for the given date and given org.
         :type cloud_cost_management_host_count_avg: int, optional
 
         :param container_avg: Shows the average of all distinct containers over all hours in the current date for the given org.
@@ -431,6 +449,9 @@ class UsageSummaryDateOrg(ModelNormal):
         :param mobile_rum_session_count_reactnative_sum: Shows the sum of all mobile RUM Sessions on React Native over all hours in the current date for the given org.
         :type mobile_rum_session_count_reactnative_sum: int, optional
 
+        :param mobile_rum_session_count_roku_sum: Shows the sum of all mobile RUM Sessions on Roku over all hours in the current date for the given org.
+        :type mobile_rum_session_count_roku_sum: int, optional
+
         :param mobile_rum_session_count_sum: Shows the sum of all mobile RUM Sessions over all hours in the current date for the given org.
         :type mobile_rum_session_count_sum: int, optional
 
@@ -514,6 +535,9 @@ class UsageSummaryDateOrg(ModelNormal):
 
         :param vsphere_host_top99p: Shows the 99th percentile of all vSphere hosts over all hours in the current date for the given org.
         :type vsphere_host_top99p: int, optional
+
+        :param vuln_management_host_count_top99p: Shows the 99th percentile of all Application Vulnerability Management hosts over all hours in the current date for the given org.
+        :type vuln_management_host_count_top99p: int, optional
         """
         if agent_host_top99p is not unset:
             kwargs["agent_host_top99p"] = agent_host_top99p
@@ -555,6 +579,10 @@ class UsageSummaryDateOrg(ModelNormal):
             kwargs["ci_visibility_pipeline_committers_hwm"] = ci_visibility_pipeline_committers_hwm
         if ci_visibility_test_committers_hwm is not unset:
             kwargs["ci_visibility_test_committers_hwm"] = ci_visibility_test_committers_hwm
+        if cloud_cost_management_aws_host_count_avg is not unset:
+            kwargs["cloud_cost_management_aws_host_count_avg"] = cloud_cost_management_aws_host_count_avg
+        if cloud_cost_management_azure_host_count_avg is not unset:
+            kwargs["cloud_cost_management_azure_host_count_avg"] = cloud_cost_management_azure_host_count_avg
         if cloud_cost_management_host_count_avg is not unset:
             kwargs["cloud_cost_management_host_count_avg"] = cloud_cost_management_host_count_avg
         if container_avg is not unset:
@@ -621,6 +649,8 @@ class UsageSummaryDateOrg(ModelNormal):
             kwargs["mobile_rum_session_count_ios_sum"] = mobile_rum_session_count_ios_sum
         if mobile_rum_session_count_reactnative_sum is not unset:
             kwargs["mobile_rum_session_count_reactnative_sum"] = mobile_rum_session_count_reactnative_sum
+        if mobile_rum_session_count_roku_sum is not unset:
+            kwargs["mobile_rum_session_count_roku_sum"] = mobile_rum_session_count_roku_sum
         if mobile_rum_session_count_sum is not unset:
             kwargs["mobile_rum_session_count_sum"] = mobile_rum_session_count_sum
         if mobile_rum_units_sum is not unset:
@@ -677,4 +707,6 @@ class UsageSummaryDateOrg(ModelNormal):
             kwargs["universal_service_monitoring_host_top99p"] = universal_service_monitoring_host_top99p
         if vsphere_host_top99p is not unset:
             kwargs["vsphere_host_top99p"] = vsphere_host_top99p
+        if vuln_management_host_count_top99p is not unset:
+            kwargs["vuln_management_host_count_top99p"] = vuln_management_host_count_top99p
         super().__init__(kwargs)

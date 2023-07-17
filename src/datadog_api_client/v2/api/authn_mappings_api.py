@@ -38,7 +38,6 @@ class AuthNMappingsApi:
                 "operation_id": "create_authn_mapping",
                 "http_method": "POST",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -59,7 +58,6 @@ class AuthNMappingsApi:
                 "operation_id": "delete_authn_mapping",
                 "http_method": "DELETE",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "authn_mapping_id": {
@@ -71,7 +69,6 @@ class AuthNMappingsApi:
             },
             headers_map={
                 "accept": ["*/*"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -84,7 +81,6 @@ class AuthNMappingsApi:
                 "operation_id": "get_authn_mapping",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "authn_mapping_id": {
@@ -96,7 +92,6 @@ class AuthNMappingsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -109,7 +104,6 @@ class AuthNMappingsApi:
                 "operation_id": "list_authn_mappings",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "page_size": {
@@ -135,7 +129,6 @@ class AuthNMappingsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -148,7 +141,6 @@ class AuthNMappingsApi:
                 "operation_id": "update_authn_mapping",
                 "http_method": "PATCH",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "authn_mapping_id": {
@@ -229,7 +221,7 @@ class AuthNMappingsApi:
 
         List all AuthN Mappings in the org.
 
-        :param page_size: Size for a given page. The maximum allowed value is 5000.
+        :param page_size: Size for a given page. The maximum allowed value is 100.
         :type page_size: int, optional
         :param page_number: Specific page number to return.
         :type page_number: int, optional

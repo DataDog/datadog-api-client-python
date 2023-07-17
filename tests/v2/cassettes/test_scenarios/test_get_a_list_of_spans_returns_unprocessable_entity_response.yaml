@@ -1,0 +1,19 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/spans/events?filter%5Bfrom%5D=now&filter%5Bto%5D=now-1m
+  response:
+    body:
+      string: '{"errors":[{"title":"Generic Error","detail":"invalid_argument(Field
+        ''filter.from,to'' is invalid: ''from'' should be anterior to ''to'')"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 422
+      message: Unprocessable Entity
+version: 1

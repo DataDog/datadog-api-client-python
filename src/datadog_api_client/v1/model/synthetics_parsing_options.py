@@ -32,6 +32,7 @@ class SyntheticsParsingOptions(ModelNormal):
             "field": (str,),
             "name": (str,),
             "parser": (SyntheticsVariableParser,),
+            "secure": (bool,),
             "type": (SyntheticsGlobalVariableParseTestOptionsType,),
         }
 
@@ -39,6 +40,7 @@ class SyntheticsParsingOptions(ModelNormal):
         "field": "field",
         "name": "name",
         "parser": "parser",
+        "secure": "secure",
         "type": "type",
     }
 
@@ -47,6 +49,7 @@ class SyntheticsParsingOptions(ModelNormal):
         field: Union[str, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
         parser: Union[SyntheticsVariableParser, UnsetType] = unset,
+        secure: Union[bool, UnsetType] = unset,
         type: Union[SyntheticsGlobalVariableParseTestOptionsType, UnsetType] = unset,
         **kwargs,
     ):
@@ -62,7 +65,10 @@ class SyntheticsParsingOptions(ModelNormal):
         :param parser: Details of the parser to use for the global variable.
         :type parser: SyntheticsVariableParser, optional
 
-        :param type: Property of the Synthetics Test Response to use for a Synthetics global variable.
+        :param secure: Determines whether or not the extracted value will be obfuscated.
+        :type secure: bool, optional
+
+        :param type: Property of the Synthetic Test Response to use for a Synthetic global variable.
         :type type: SyntheticsGlobalVariableParseTestOptionsType, optional
         """
         if field is not unset:
@@ -71,6 +77,8 @@ class SyntheticsParsingOptions(ModelNormal):
             kwargs["name"] = name
         if parser is not unset:
             kwargs["parser"] = parser
+        if secure is not unset:
+            kwargs["secure"] = secure
         if type is not unset:
             kwargs["type"] = type
         super().__init__(kwargs)

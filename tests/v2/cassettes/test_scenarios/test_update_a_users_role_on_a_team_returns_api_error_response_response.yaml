@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"handle":"1679942005","name":"1679942005"},"type":"team"}}'
+    body: '{"data":{"attributes":{"handle":"handle-7ee388ec964ab7d8","name":"name-7ee388ec964ab7d8"},"type":"team"}}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/team
   response:
     body:
-      string: '{"data":{"type":"team","id":"dc7e6240-cccd-11ed-bc0b-da7ad0900002","attributes":{"name":"1679942005","handle":"1679942005","summary":null,"description":null,"color":8,"created_at":"2023-03-27T18:33:25.798162+00:00","modified_at":"2023-03-27T18:33:25.798166+00:00","user_count":0,"link_count":0},"relationships":{"team_links":{"links":{"related":"/api/v2/team/dc7e6240-cccd-11ed-bc0b-da7ad0900002/links"}},"user_team_permissions":{"links":{"related":"/api/v2/team/dc7e6240-cccd-11ed-bc0b-da7ad0900002/permission-settings"}}}}}
+      string: '{"data":{"type":"team","id":"5ac7a35c-ef4f-11ed-ba32-da7ad0900002","attributes":{"name":"name-7ee388ec964ab7d8","handle":"handle-7ee388ec964ab7d8","summary":null,"description":null,"color":6,"created_at":"2023-05-10T16:26:02.284460+00:00","modified_at":"2023-05-10T16:26:02.284464+00:00","user_count":0,"link_count":0},"relationships":{"team_links":{"links":{"related":"/api/v2/team/5ac7a35c-ef4f-11ed-ba32-da7ad0900002/links"}},"user_team_permissions":{"links":{"related":"/api/v2/team/5ac7a35c-ef4f-11ed-ba32-da7ad0900002/permission-settings"}}}}}
 
         '
     headers:
@@ -27,7 +27,7 @@ interactions:
       content-type:
       - application/json
     method: PATCH
-    uri: https://api.datadoghq.com/api/v2/team/dc7e6240-cccd-11ed-bc0b-da7ad0900002/memberships/REPLACE.ME
+    uri: https://api.datadoghq.com/api/v2/team/5ac7a35c-ef4f-11ed-ba32-da7ad0900002/memberships/REPLACE.ME
   response:
     body:
       string: '{"errors":["REPLACE.ME is not a valid UUID not found"]}'
@@ -43,7 +43,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/team/dc7e6240-cccd-11ed-bc0b-da7ad0900002
+    uri: https://api.datadoghq.com/api/v2/team/5ac7a35c-ef4f-11ed-ba32-da7ad0900002
   response:
     body:
       string: ''

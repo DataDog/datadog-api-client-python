@@ -33,7 +33,6 @@ class AWSLogsIntegrationApi:
                 "operation_id": "check_aws_logs_lambda_async",
                 "http_method": "POST",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -54,7 +53,6 @@ class AWSLogsIntegrationApi:
                 "operation_id": "check_aws_logs_services_async",
                 "http_method": "POST",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -75,7 +73,6 @@ class AWSLogsIntegrationApi:
                 "operation_id": "create_aws_lambda_arn",
                 "http_method": "POST",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -96,7 +93,6 @@ class AWSLogsIntegrationApi:
                 "operation_id": "delete_aws_lambda_arn",
                 "http_method": "DELETE",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -117,7 +113,6 @@ class AWSLogsIntegrationApi:
                 "operation_id": "enable_aws_log_services",
                 "http_method": "POST",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -138,12 +133,10 @@ class AWSLogsIntegrationApi:
                 "operation_id": "list_aws_logs_integrations",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={},
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -156,12 +149,10 @@ class AWSLogsIntegrationApi:
                 "operation_id": "list_aws_logs_services",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={},
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )

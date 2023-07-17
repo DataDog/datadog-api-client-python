@@ -34,7 +34,6 @@ class FastlyIntegrationApi:
                 "operation_id": "create_fastly_account",
                 "http_method": "POST",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -55,7 +54,6 @@ class FastlyIntegrationApi:
                 "operation_id": "create_fastly_service",
                 "http_method": "POST",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "account_id": {
@@ -82,7 +80,6 @@ class FastlyIntegrationApi:
                 "operation_id": "delete_fastly_account",
                 "http_method": "DELETE",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "account_id": {
@@ -94,7 +91,6 @@ class FastlyIntegrationApi:
             },
             headers_map={
                 "accept": ["*/*"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -107,7 +103,6 @@ class FastlyIntegrationApi:
                 "operation_id": "delete_fastly_service",
                 "http_method": "DELETE",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "account_id": {
@@ -125,7 +120,6 @@ class FastlyIntegrationApi:
             },
             headers_map={
                 "accept": ["*/*"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -138,7 +132,6 @@ class FastlyIntegrationApi:
                 "operation_id": "get_fastly_account",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "account_id": {
@@ -150,7 +143,6 @@ class FastlyIntegrationApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -163,7 +155,6 @@ class FastlyIntegrationApi:
                 "operation_id": "get_fastly_service",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "account_id": {
@@ -181,7 +172,6 @@ class FastlyIntegrationApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -194,12 +184,10 @@ class FastlyIntegrationApi:
                 "operation_id": "list_fastly_accounts",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={},
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -212,7 +200,6 @@ class FastlyIntegrationApi:
                 "operation_id": "list_fastly_services",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "account_id": {
@@ -224,7 +211,6 @@ class FastlyIntegrationApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -237,7 +223,6 @@ class FastlyIntegrationApi:
                 "operation_id": "update_fastly_account",
                 "http_method": "PATCH",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "account_id": {
@@ -264,7 +249,6 @@ class FastlyIntegrationApi:
                 "operation_id": "update_fastly_service",
                 "http_method": "PATCH",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "account_id": {

@@ -29,6 +29,7 @@ class SLOWidgetDefinition(ModelNormal):
         from datadog_api_client.v1.model.widget_view_mode import WidgetViewMode
 
         return {
+            "additional_query_filters": (str,),
             "global_time_target": (str,),
             "show_error_budget": (bool,),
             "slo_id": (str,),
@@ -42,6 +43,7 @@ class SLOWidgetDefinition(ModelNormal):
         }
 
     attribute_map = {
+        "additional_query_filters": "additional_query_filters",
         "global_time_target": "global_time_target",
         "show_error_budget": "show_error_budget",
         "slo_id": "slo_id",
@@ -57,6 +59,7 @@ class SLOWidgetDefinition(ModelNormal):
     def __init__(
         self_,
         type: SLOWidgetDefinitionType,
+        additional_query_filters: Union[str, UnsetType] = unset,
         global_time_target: Union[str, UnsetType] = unset,
         show_error_budget: Union[bool, UnsetType] = unset,
         slo_id: Union[str, UnsetType] = unset,
@@ -69,6 +72,9 @@ class SLOWidgetDefinition(ModelNormal):
     ):
         """
         Use the SLO and uptime widget to track your SLOs (Service Level Objectives) and uptime on screenboards and timeboards.
+
+        :param additional_query_filters: Additional filters applied to the SLO query.
+        :type additional_query_filters: str, optional
 
         :param global_time_target: Defined global time target.
         :type global_time_target: str, optional
@@ -100,6 +106,8 @@ class SLOWidgetDefinition(ModelNormal):
         :param view_type: Type of view displayed by the widget.
         :type view_type: str
         """
+        if additional_query_filters is not unset:
+            kwargs["additional_query_filters"] = additional_query_filters
         if global_time_target is not unset:
             kwargs["global_time_target"] = global_time_target
         if show_error_budget is not unset:

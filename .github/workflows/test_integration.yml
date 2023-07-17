@@ -2,7 +2,13 @@ name: Run Integration Tests
 
 on:
   pull_request:
-    types: [opened, synchronize, reopened, ready_for_review]
+    types:
+      - opened
+      - reopened
+      - ready_for_review
+      - synchronize
+      - labeled
+      - unlabeled
     branches:
       - master
   schedule:
@@ -71,11 +77,11 @@ jobs:
           DD_TAGS: "team:integrations-tools-and-libraries"
           DD_TEST_CLIENT_API_KEY: ${{ secrets.DD_CLIENT_API_KEY }}
           DD_TEST_CLIENT_APP_KEY: ${{ secrets.DD_CLIENT_APP_KEY }}
-          DD_TRACE_ANALYTICS_ENABLED: "true"
           RECORD: "none"
-          SLEEP_AFTER_REQUEST: ${{ secrets.SLEEP_AFTER_REQUEST }}
+          SLEEP_AFTER_REQUEST: ${{ vars.SLEEP_AFTER_REQUEST }}
           PYTEST_ADDOPTS: "--ddtrace"
           DD_PYTEST_OPERATION_NAME: "test"
+          DD_TRACE_PROPAGATION_STYLE_INJECT: "datadog" 
       - name: Post failure status check
         if: failure() && github.event_name == 'pull_request' && contains(github.event.pull_request.head.ref, 'datadog-api-spec/generated/')
         uses: DataDog/github-actions/post-status-check@v2

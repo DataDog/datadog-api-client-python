@@ -49,7 +49,7 @@ class MetricsScalarQuery(ModelNormal):
         """
         An individual scalar metrics query.
 
-        :param aggregator: The type of aggregation that can be performed on metrics queries.
+        :param aggregator: The type of aggregation that can be performed on metrics-based queries.
         :type aggregator: MetricsAggregator
 
         :param data_source: A data source that is powered by the Metrics platform.

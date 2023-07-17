@@ -36,7 +36,6 @@ class KeyManagementApi:
                 "operation_id": "create_api_key",
                 "http_method": "POST",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -57,7 +56,6 @@ class KeyManagementApi:
                 "operation_id": "create_application_key",
                 "http_method": "POST",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -78,7 +76,6 @@ class KeyManagementApi:
                 "operation_id": "delete_api_key",
                 "http_method": "DELETE",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "key": {
@@ -90,7 +87,6 @@ class KeyManagementApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -103,7 +99,6 @@ class KeyManagementApi:
                 "operation_id": "delete_application_key",
                 "http_method": "DELETE",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "key": {
@@ -115,7 +110,6 @@ class KeyManagementApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -128,7 +122,6 @@ class KeyManagementApi:
                 "operation_id": "get_api_key",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "key": {
@@ -140,7 +133,6 @@ class KeyManagementApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -153,7 +145,6 @@ class KeyManagementApi:
                 "operation_id": "get_application_key",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "key": {
@@ -165,7 +156,6 @@ class KeyManagementApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -178,12 +168,10 @@ class KeyManagementApi:
                 "operation_id": "list_api_keys",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={},
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -196,12 +184,10 @@ class KeyManagementApi:
                 "operation_id": "list_application_keys",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={},
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -214,7 +200,6 @@ class KeyManagementApi:
                 "operation_id": "update_api_key",
                 "http_method": "PUT",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "key": {
@@ -241,7 +226,6 @@ class KeyManagementApi:
                 "operation_id": "update_application_key",
                 "http_method": "PUT",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "key": {

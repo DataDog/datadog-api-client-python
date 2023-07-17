@@ -44,7 +44,6 @@ class TagsApi:
                 "operation_id": "create_host_tags",
                 "http_method": "POST",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "host_name": {
@@ -76,7 +75,6 @@ class TagsApi:
                 "operation_id": "delete_host_tags",
                 "http_method": "DELETE",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "host_name": {
@@ -93,7 +91,6 @@ class TagsApi:
             },
             headers_map={
                 "accept": ["*/*"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -106,7 +103,6 @@ class TagsApi:
                 "operation_id": "get_host_tags",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "host_name": {
@@ -123,7 +119,6 @@ class TagsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -136,7 +131,6 @@ class TagsApi:
                 "operation_id": "list_host_tags",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "source": {
@@ -147,7 +141,6 @@ class TagsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -160,7 +153,6 @@ class TagsApi:
                 "operation_id": "update_host_tags",
                 "http_method": "PUT",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "host_name": {

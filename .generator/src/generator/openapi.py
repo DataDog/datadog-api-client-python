@@ -10,6 +10,7 @@ from yaml import CSafeLoader
 
 from . import formatter
 
+
 PRIMITIVE_TYPES = ["string", "number", "boolean", "integer"]
 
 
@@ -19,10 +20,11 @@ def load(filename):
         return JsonRef.replace_refs(yaml.load(fp, Loader=CSafeLoader))
 
 
-def type_to_python_helper(type_, schema, alternative_name=None, in_list=False):
+def type_to_python_helper(type_, schema, alternative_name=None, in_list=False, typing=False):
     if type_ is None:
+        if typing:
+            return "Any"
         return "bool, date, datetime, dict, float, int, list, str, none_type"
-
     if type_ == "integer":
         return "int"
     elif type_ == "number":
@@ -37,21 +39,28 @@ def type_to_python_helper(type_, schema, alternative_name=None, in_list=False):
     elif type_ == "boolean":
         return "bool"
     elif type_ == "array":
-        subtype = type_to_python(schema["items"], in_list=True)
-        if schema["items"].get("nullable"):
-             subtype += ", none_type"
+        subtype = type_to_python(schema["items"], alternative_name=alternative_name + "Item" if alternative_name else None, in_list=True, typing=typing)
+        if schema["items"].get("nullable") and not typing:
+            subtype += ", none_type"
+        if typing:
+            return "List[{}]".format(subtype)
         return "[{}]".format(subtype)
     elif type_ == "object":
         if "additionalProperties" in schema:
             nested_schema = schema["additionalProperties"]
-            nested_name = type_to_python(nested_schema)
+            nested_name = type_to_python(nested_schema, typing=typing)
             if nested_schema.get("nullable"):
-                nested_name += ", none_type"
+                if typing:
+                    nested_name = f"Union[{nested_name}, none_type]"
+                else:
+                    nested_name += ", none_type"
+            if typing:
+                return f"Dict[str, {nested_name}]"
             return "{{str: ({},)}}".format(nested_name)
         return (
             alternative_name
             if alternative_name
-            and ("properties" in schema or "oneOf" in schema or "anyOf" in schema or "allOf" in schema)
+            and ("properties" in schema or "oneOf" in schema)
             else "dict"
         )
     elif type_ == "null":
@@ -60,14 +69,23 @@ def type_to_python_helper(type_, schema, alternative_name=None, in_list=False):
         raise ValueError(f"Unknown type {type_}")
 
 
-def type_to_python(schema, alternative_name=None, in_list=False):
+def type_to_python(schema, alternative_name=None, in_list=False, typing=False):
     """Return Python type name for the type."""
+
     name = formatter.get_name(schema)
-    if name:
+    # TODO: double check
+    if name and "items" not in schema or formatter.is_list_model_whitelisted(name):
         if "enum" in schema:
             return name
-        if schema.get("type", "object") in ("object", "array"):
+        if schema.get("type", "object") == "object" or formatter.is_list_model_whitelisted(name):
+            if typing and "oneOf" in schema:
+                types = [name]
+                types.extend(get_oneof_types(schema, typing=typing))
+                return f"Union[{','.join(types)}]"
             return name
+
+    if name:
+        alternative_name = name
 
     type_ = schema.get("type")
     if type_ is None:
@@ -76,14 +94,16 @@ def type_to_python(schema, alternative_name=None, in_list=False):
             for child in schema["oneOf"]:
                 # We do not generate model for nested primitive oneOfs
                 if in_list and "items" in child and child["items"].get("type") in PRIMITIVE_TYPES:
-                    type_ += f"{type_to_python_helper(child.get('type'), child, in_list=in_list)},"
+                    type_ += f"{type_to_python_helper(child.get('type'), child, in_list=in_list, typing=typing)},"
                 else:
-                    type_ += f"{type_to_python(child, in_list=in_list)},"
+                    type_ += f"{type_to_python(child, in_list=in_list, typing=typing)},"
+            if typing:
+                return f"Union[{type_}]"
             return type_
         if "items" in schema:
             type_ = "array"
 
-    return type_to_python_helper(type_, schema, alternative_name=alternative_name, in_list=in_list)
+    return type_to_python_helper(type_, schema, alternative_name=alternative_name, in_list=in_list, typing=typing)
 
 
 def get_type_for_attribute(schema, attribute, current_name=None):
@@ -93,78 +113,10 @@ def get_type_for_attribute(schema, attribute, current_name=None):
     return type_to_python(child_schema, alternative_name=alternative_name)
 
 
-def typing_to_python_helper(type_, schema, alternative_name=None, in_list=False):
-    if type_ is None:
-        return "Any"
-
-    if type_ == "integer":
-        return "int"
-    elif type_ == "number":
-        return "float"
-    elif type_ == "string":
-        format_ = schema.get("format")
-        if format_ in {"date", "date-time"}:
-            return "datetime"
-        elif format_ == "binary":
-            return "file_type"
-        return "str"
-    elif type_ == "boolean":
-        return "bool"
-    elif type_ == "array":
-        return "List[{}]".format(typing_to_python(schema["items"], in_list=True))
-    elif type_ == "object":
-        if "additionalProperties" in schema:
-            nested_schema = schema["additionalProperties"]
-            nested_name = typing_to_python(nested_schema)
-            if nested_schema.get("nullable"):
-                nested_name = f"Union[{nested_name}, none_type]"
-            return f"Dict[str, {nested_name}]"
-        return (
-            alternative_name
-            if alternative_name
-            and ("properties" in schema or "oneOf" in schema or "anyOf" in schema or "allOf" in schema)
-            else "dict"
-        )
-    elif type_ == "null":
-        return "none_type"
-    else:
-        raise ValueError(f"Unknown type {type_}")
-
-
-def typing_to_python(schema, alternative_name=None, in_list=False):
-    """Return Python type name for the type."""
-    name = formatter.get_name(schema)
-    if name:
-        if "enum" in schema:
-            return name
-        if schema.get("type", "object") in ("object", "array"):
-            if "oneOf" in schema:
-                types = [name]
-                types.extend(get_oneof_types(schema))
-                return f"Union[{','.join(types)}]"
-            return name
-
-    type_ = schema.get("type")
-    if type_ is None:
-        if "oneOf" in schema and in_list:
-            type_ = ""
-            for child in schema["oneOf"]:
-                # We do not generate model for nested primitive oneOfs
-                if in_list and "items" in child and child["items"].get("type") in PRIMITIVE_TYPES:
-                    type_ += f"{typing_to_python_helper(child.get('type'), child, in_list=in_list)},"
-                else:
-                    type_ += f"{typing_to_python(child, in_list=in_list)},"
-            return type_
-        if "items" in schema:
-            type_ = "array"
-
-    return typing_to_python_helper(type_, schema, alternative_name=alternative_name, in_list=in_list)
-
-
 def get_typing_for_attribute(schema, attribute, current_name=None, optional=False):
     child_schema = schema.get("properties", {}).get(attribute)
     alternative_name = current_name + formatter.camel_case(attribute) if current_name else None
-    attr_type = typing_to_python(child_schema, alternative_name=alternative_name)
+    attr_type = type_to_python(child_schema, alternative_name=alternative_name, typing=True)
     if child_schema.get("nullable"):
         if optional:
             return f"Union[{attr_type}, none_type, UnsetType]"
@@ -194,18 +146,8 @@ def get_type_for_parameter(parameter, typing=False):
     if "content" in parameter:
         assert "in" not in parameter
         for content in parameter["content"].values():
-            data = type_to_python(content["schema"])
-            if typing:
-                if "oneOf" in content["schema"]:
-                    types = [data]
-                    types.extend(get_oneof_types(content["schema"]))
-                    return f"Union[{','.join(types)}]"
-                data = data.replace("[", "List[")
-            return data
-    data = type_to_python(parameter.get("schema"))
-    if typing:
-        data = data.replace("[", "List[")
-    return data
+            return type_to_python(content["schema"], typing=typing)
+    return type_to_python(parameter.get("schema"), typing=typing)
 
 
 def get_enum_type(schema):
@@ -227,21 +169,23 @@ def child_models(schema, alternative_name=None, seen=None, in_list=False):
     name = current_name or alternative_name
 
     has_sub_models = False
-    if "allOf" in schema:
-        has_sub_models = True
-        for child in schema["allOf"]:
-            yield from child_models(child, seen=seen)
     if "oneOf" in schema:
-        has_sub_models = True
+        has_sub_models = not in_list and not formatter.is_list_model_whitelisted(name)
         for child in schema["oneOf"]:
-            yield from child_models(child, seen=seen)
-    if "anyOf" in schema:
-        has_sub_models = True
-        for child in schema["anyOf"]:
-            yield from child_models(child, seen=seen)
+            sub_models = list(child_models(child, seen=seen))
+            if sub_models:
+                has_sub_models = True
+                yield from sub_models
+        if in_list and not has_sub_models:
+            return
 
     if "items" in schema:
-        yield from child_models(schema["items"], None, seen=seen, in_list=True)
+        if formatter.is_list_model_whitelisted(name):
+            alt_name = None
+        else:
+            alt_name = name + "Item" if name is not None else None
+
+        yield from child_models(schema["items"], alternative_name=alt_name, seen=seen, in_list=True)
 
     if schema.get("type") == "object" or "properties" in schema or has_sub_models:
         if not has_sub_models and name is None:
@@ -269,8 +213,9 @@ def child_models(schema, alternative_name=None, seen=None, in_list=False):
         if name in seen:
             return
 
-        seen.add(name)
-        yield name, schema
+        if formatter.is_list_model_whitelisted(name):
+            seen.add(name)
+            yield name, schema
 
     if "enum" in schema:
         if name is None:
@@ -315,6 +260,17 @@ def models(spec):
     return name_to_schema
 
 
+def find_non_primitive_type(schema):
+    if schema.get("enum"):
+        return True
+    sub_type = schema.get("type")
+    if sub_type == "array":
+        return find_non_primitive_type(schema["items"])
+    if sub_type not in PRIMITIVE_TYPES:
+        return True
+    return False
+
+
 def get_references_for_model(model, model_name):
     result = {}
     top_name = formatter.get_name(model) or model_name
@@ -331,12 +287,17 @@ def get_references_for_model(model, model_name):
                     result[name] = None
         elif definition.get("type") == "array":
             name = formatter.get_name(definition)
-            if name:
+            if name and formatter.is_list_model_whitelisted(name):
                 result[name] = None
             else:
                 name = formatter.get_name(definition.get("items"))
-                if name:
+                if name and find_non_primitive_type(definition["items"]):
                     result[name] = None
+                elif name and formatter.is_list_model_whitelisted(name):
+                    result[name] = None
+                elif formatter.get_name(definition) and definition["items"].get("type") not in PRIMITIVE_TYPES:
+                    result[formatter.get_name(definition) + "Item"] = None
+
         elif definition.get("properties") and top_name:
             result[top_name + formatter.camel_case(key)] = None
     if model.get("additionalProperties"):
@@ -365,8 +326,14 @@ def get_oneof_references_for_model(model, model_name, seen=None):
     if model.get("oneOf"):
         for schema in model["oneOf"]:
             type_ = schema.get("type", "object")
-            if type_ in ("array", "object"):
-                result[formatter.get_name(schema)] = None
+
+            oneof_name = formatter.get_name(schema)
+            if type_ == "object" or formatter.is_list_model_whitelisted(oneof_name):
+                result[oneof_name] = None
+            elif type_ == "array":
+                sub_name = formatter.get_name(schema["items"])
+                if sub_name:
+                    result[sub_name] = None
 
     for key, definition in model.get("properties", {}).items():
         result.update({k: None for k in get_oneof_references_for_model(definition, model_name, seen)})
@@ -389,11 +356,19 @@ def get_oneof_parameters(model):
                 yield attr, definition, schema
 
 
-def get_oneof_types(model):
+def get_oneof_types(model, typing=False):
     for schema in model["oneOf"]:
         type_ = schema.get("type", "object")
-        if type_ in ("array", "object"):
-            yield formatter.get_name(schema)
+        name = formatter.get_name(schema)
+        if type_ == "object" or formatter.is_list_model_whitelisted(name):
+            yield name
+        elif type_ == "array":
+            name = formatter.get_name(schema["items"])
+            if name:
+                if typing:
+                    yield f"List[{name}]"
+                else:
+                    yield f"[{name}]"
         elif type_ == "integer":
             yield "int"
         elif type_ == "string":
@@ -409,8 +384,14 @@ def get_oneof_types(model):
 def get_oneof_models(model):
     result = []
     for schema in model["oneOf"]:
-        if schema.get("type", "object") in ("array", "object"):
-            result.append(formatter.get_name(schema))
+        type_ = schema.get("type", "object")
+        name = formatter.get_name(schema)
+        if type_ == "object" or formatter.is_list_model_whitelisted(name):
+            result.append(name)
+        elif type_ == "array":
+            name = formatter.get_name(schema["items"])
+            if name:
+                result.append(name)
     return result
 
 
@@ -464,12 +445,17 @@ def get_api_models(operations):
                         yield name
                         if "oneOf" in content["schema"]:
                             for schema in content["schema"]["oneOf"]:
-                                type_ = schema.get("type", "object")
-                                if type_ in ("array", "object"):
+                                if schema.get("type", "object") == "object":
                                     name = formatter.get_name(schema)
                                     if name and name not in seen:
                                         seen.add(name)
                                         yield name
+                    if "items" in content["schema"]:
+                        name = formatter.get_name(content["schema"]["items"])
+                        if name and name not in seen:
+                            seen.add(name)
+                            yield name
+
         if "x-pagination" in operation:
             name = get_type_at_path(operation, operation["x-pagination"]["resultsPath"])
             if name and name not in seen:
@@ -636,12 +622,12 @@ class Operation:
             url = server["url"] + path
             # replace potential path variables
             for variable, value in server_variables.items():
-                url = url.replace("{" + variable + "}", value)
+                url = url.replace(f"{{{variable}}}", value)
             # replace server variables if they were not replace before
             for variable in server["variables"]:
                 if variable in server_variables:
                     continue
-                url = url.replace("{" + variable + "}", server["variables"][variable]["default"])
+                url = url.replace(f"{{{variable}}}", server["variables"][variable]["default"])
             return url
 
         server_variables = server_variables or {}

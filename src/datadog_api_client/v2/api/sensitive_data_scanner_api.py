@@ -65,7 +65,6 @@ class SensitiveDataScannerApi:
                 "operation_id": "create_scanning_group",
                 "http_method": "POST",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -86,7 +85,6 @@ class SensitiveDataScannerApi:
                 "operation_id": "create_scanning_rule",
                 "http_method": "POST",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -107,7 +105,6 @@ class SensitiveDataScannerApi:
                 "operation_id": "delete_scanning_group",
                 "http_method": "DELETE",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "group_id": {
@@ -134,7 +131,6 @@ class SensitiveDataScannerApi:
                 "operation_id": "delete_scanning_rule",
                 "http_method": "DELETE",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "rule_id": {
@@ -161,12 +157,10 @@ class SensitiveDataScannerApi:
                 "operation_id": "list_scanning_groups",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={},
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -179,12 +173,10 @@ class SensitiveDataScannerApi:
                 "operation_id": "list_standard_patterns",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={},
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -197,7 +189,6 @@ class SensitiveDataScannerApi:
                 "operation_id": "reorder_scanning_groups",
                 "http_method": "PATCH",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -218,7 +209,6 @@ class SensitiveDataScannerApi:
                 "operation_id": "update_scanning_group",
                 "http_method": "PATCH",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "group_id": {
@@ -245,7 +235,6 @@ class SensitiveDataScannerApi:
                 "operation_id": "update_scanning_rule",
                 "http_method": "PATCH",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "rule_id": {

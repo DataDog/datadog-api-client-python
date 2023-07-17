@@ -36,7 +36,6 @@ class LogsArchivesApi:
                 "operation_id": "add_read_role_to_archive",
                 "http_method": "POST",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "archive_id": {
@@ -63,7 +62,6 @@ class LogsArchivesApi:
                 "operation_id": "create_logs_archive",
                 "http_method": "POST",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -84,7 +82,6 @@ class LogsArchivesApi:
                 "operation_id": "delete_logs_archive",
                 "http_method": "DELETE",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "archive_id": {
@@ -96,7 +93,6 @@ class LogsArchivesApi:
             },
             headers_map={
                 "accept": ["*/*"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -109,7 +105,6 @@ class LogsArchivesApi:
                 "operation_id": "get_logs_archive",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "archive_id": {
@@ -121,7 +116,6 @@ class LogsArchivesApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -134,12 +128,10 @@ class LogsArchivesApi:
                 "operation_id": "get_logs_archive_order",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={},
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -152,7 +144,6 @@ class LogsArchivesApi:
                 "operation_id": "list_archive_read_roles",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "archive_id": {
@@ -164,7 +155,6 @@ class LogsArchivesApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -177,12 +167,10 @@ class LogsArchivesApi:
                 "operation_id": "list_logs_archives",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={},
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -195,7 +183,6 @@ class LogsArchivesApi:
                 "operation_id": "remove_role_from_archive",
                 "http_method": "DELETE",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "archive_id": {
@@ -222,7 +209,6 @@ class LogsArchivesApi:
                 "operation_id": "update_logs_archive",
                 "http_method": "PUT",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "archive_id": {
@@ -249,7 +235,6 @@ class LogsArchivesApi:
                 "operation_id": "update_logs_archive_order",
                 "http_method": "PUT",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "body": {

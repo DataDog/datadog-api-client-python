@@ -96,7 +96,7 @@ class ApiException(OpenApiException):
                 self.body = json.loads(http_resp.data)
             except Exception:
                 self.body = http_resp.data.decode("utf-8")
-            self.headers = http_resp.getheaders()
+            self.headers = dict(http_resp.headers)
         else:
             self.status = status
             self.reason = reason

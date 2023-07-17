@@ -15,6 +15,13 @@ from datadog_api_client.model_utils import (
     UnsetType,
     unset,
 )
+from datadog_api_client.v2.model.list_findings_response import ListFindingsResponse
+from datadog_api_client.v2.model.finding_evaluation import FindingEvaluation
+from datadog_api_client.v2.model.finding_status import FindingStatus
+from datadog_api_client.v2.model.finding import Finding
+from datadog_api_client.v2.model.get_finding_response import GetFindingResponse
+from datadog_api_client.v2.model.mute_finding_response import MuteFindingResponse
+from datadog_api_client.v2.model.mute_finding_request import MuteFindingRequest
 from datadog_api_client.v2.model.security_filters_response import SecurityFiltersResponse
 from datadog_api_client.v2.model.security_filter_response import SecurityFilterResponse
 from datadog_api_client.v2.model.security_filter_create_request import SecurityFilterCreateRequest
@@ -67,7 +74,6 @@ class SecurityMonitoringApi:
                 "operation_id": "create_security_filter",
                 "http_method": "POST",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -88,7 +94,6 @@ class SecurityMonitoringApi:
                 "operation_id": "create_security_monitoring_rule",
                 "http_method": "POST",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -109,7 +114,6 @@ class SecurityMonitoringApi:
                 "operation_id": "delete_security_filter",
                 "http_method": "DELETE",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "security_filter_id": {
@@ -121,7 +125,6 @@ class SecurityMonitoringApi:
             },
             headers_map={
                 "accept": ["*/*"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -134,7 +137,6 @@ class SecurityMonitoringApi:
                 "operation_id": "delete_security_monitoring_rule",
                 "http_method": "DELETE",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "rule_id": {
@@ -146,7 +148,6 @@ class SecurityMonitoringApi:
             },
             headers_map={
                 "accept": ["*/*"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -159,7 +160,6 @@ class SecurityMonitoringApi:
                 "operation_id": "edit_security_monitoring_signal_assignee",
                 "http_method": "PATCH",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "signal_id": {
@@ -186,7 +186,6 @@ class SecurityMonitoringApi:
                 "operation_id": "edit_security_monitoring_signal_incidents",
                 "http_method": "PATCH",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "signal_id": {
@@ -213,7 +212,6 @@ class SecurityMonitoringApi:
                 "operation_id": "edit_security_monitoring_signal_state",
                 "http_method": "PATCH",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "signal_id": {
@@ -232,6 +230,37 @@ class SecurityMonitoringApi:
             api_client=api_client,
         )
 
+        self._get_finding_endpoint = _Endpoint(
+            settings={
+                "response_type": (GetFindingResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/posture_management/findings/{finding_id}",
+                "operation_id": "get_finding",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "finding_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "finding_id",
+                    "location": "path",
+                },
+                "snapshot_timestamp": {
+                    "validation": {
+                        "inclusive_minimum": 1,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "snapshot_timestamp",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._get_security_filter_endpoint = _Endpoint(
             settings={
                 "response_type": (SecurityFilterResponse,),
@@ -240,7 +269,6 @@ class SecurityMonitoringApi:
                 "operation_id": "get_security_filter",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "security_filter_id": {
@@ -252,7 +280,6 @@ class SecurityMonitoringApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -265,7 +292,6 @@ class SecurityMonitoringApi:
                 "operation_id": "get_security_monitoring_rule",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "rule_id": {
@@ -277,7 +303,6 @@ class SecurityMonitoringApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -290,7 +315,6 @@ class SecurityMonitoringApi:
                 "operation_id": "get_security_monitoring_signal",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "signal_id": {
@@ -302,7 +326,90 @@ class SecurityMonitoringApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
+            },
+            api_client=api_client,
+        )
+
+        self._list_findings_endpoint = _Endpoint(
+            settings={
+                "response_type": (ListFindingsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/posture_management/findings",
+                "operation_id": "list_findings",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "page_limit": {
+                    "validation": {
+                        "inclusive_maximum": 1000,
+                        "inclusive_minimum": 1,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "page[limit]",
+                    "location": "query",
+                },
+                "snapshot_timestamp": {
+                    "validation": {
+                        "inclusive_minimum": 1,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "snapshot_timestamp",
+                    "location": "query",
+                },
+                "page_cursor": {
+                    "openapi_types": (str,),
+                    "attribute": "page[cursor]",
+                    "location": "query",
+                },
+                "filter_tags": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[tags]",
+                    "location": "query",
+                },
+                "filter_evaluation_changed_at": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[evaluation_changed_at]",
+                    "location": "query",
+                },
+                "filter_muted": {
+                    "openapi_types": (bool,),
+                    "attribute": "filter[muted]",
+                    "location": "query",
+                },
+                "filter_rule_id": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[rule_id]",
+                    "location": "query",
+                },
+                "filter_rule_name": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[rule_name]",
+                    "location": "query",
+                },
+                "filter_resource_type": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[resource_type]",
+                    "location": "query",
+                },
+                "filter_discovery_timestamp": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[discovery_timestamp]",
+                    "location": "query",
+                },
+                "filter_evaluation": {
+                    "openapi_types": (FindingEvaluation,),
+                    "attribute": "filter[evaluation]",
+                    "location": "query",
+                },
+                "filter_status": {
+                    "openapi_types": (FindingStatus,),
+                    "attribute": "filter[status]",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
             },
             api_client=api_client,
         )
@@ -315,12 +422,10 @@ class SecurityMonitoringApi:
                 "operation_id": "list_security_filters",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={},
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -333,7 +438,6 @@ class SecurityMonitoringApi:
                 "operation_id": "list_security_monitoring_rules",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "page_size": {
@@ -349,7 +453,6 @@ class SecurityMonitoringApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -362,7 +465,6 @@ class SecurityMonitoringApi:
                 "operation_id": "list_security_monitoring_signals",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "filter_query": {
@@ -401,7 +503,6 @@ class SecurityMonitoringApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -414,11 +515,36 @@ class SecurityMonitoringApi:
                 "operation_id": "search_security_monitoring_signals",
                 "http_method": "POST",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "body": {
                     "openapi_types": (SecurityMonitoringSignalListRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._update_finding_endpoint = _Endpoint(
+            settings={
+                "response_type": (MuteFindingResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/posture_management/findings/{finding_id}",
+                "operation_id": "update_finding",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "finding_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "finding_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (MuteFindingRequest,),
                     "location": "body",
                 },
             },
@@ -434,7 +560,6 @@ class SecurityMonitoringApi:
                 "operation_id": "update_security_filter",
                 "http_method": "PATCH",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "security_filter_id": {
@@ -461,7 +586,6 @@ class SecurityMonitoringApi:
                 "operation_id": "update_security_monitoring_rule",
                 "http_method": "PUT",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "rule_id": {
@@ -621,6 +745,30 @@ class SecurityMonitoringApi:
 
         return self._edit_security_monitoring_signal_state_endpoint.call_with_http_info(**kwargs)
 
+    def get_finding(
+        self,
+        finding_id: str,
+        *,
+        snapshot_timestamp: Union[int, UnsetType] = unset,
+    ) -> GetFindingResponse:
+        """Get a finding.
+
+        Returns a single finding with message and resource configuration.
+
+        :param finding_id: The ID of the finding.
+        :type finding_id: str
+        :param snapshot_timestamp: Return the finding for a given snapshot of time (Unix ms).
+        :type snapshot_timestamp: int, optional
+        :rtype: GetFindingResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["finding_id"] = finding_id
+
+        if snapshot_timestamp is not unset:
+            kwargs["snapshot_timestamp"] = snapshot_timestamp
+
+        return self._get_finding_endpoint.call_with_http_info(**kwargs)
+
     def get_security_filter(
         self,
         security_filter_id: str,
@@ -675,6 +823,218 @@ class SecurityMonitoringApi:
 
         return self._get_security_monitoring_signal_endpoint.call_with_http_info(**kwargs)
 
+    def list_findings(
+        self,
+        *,
+        page_limit: Union[int, UnsetType] = unset,
+        snapshot_timestamp: Union[int, UnsetType] = unset,
+        page_cursor: Union[str, UnsetType] = unset,
+        filter_tags: Union[str, UnsetType] = unset,
+        filter_evaluation_changed_at: Union[str, UnsetType] = unset,
+        filter_muted: Union[bool, UnsetType] = unset,
+        filter_rule_id: Union[str, UnsetType] = unset,
+        filter_rule_name: Union[str, UnsetType] = unset,
+        filter_resource_type: Union[str, UnsetType] = unset,
+        filter_discovery_timestamp: Union[str, UnsetType] = unset,
+        filter_evaluation: Union[FindingEvaluation, UnsetType] = unset,
+        filter_status: Union[FindingStatus, UnsetType] = unset,
+    ) -> ListFindingsResponse:
+        """List findings.
+
+        Get a list of CSPM findings.
+
+        **Filtering**
+
+        Filters can be applied by appending query parameters to the URL.
+
+        * Using a single filter: ``?filter[attribute_key]=attribute_value``
+        * Chaining filters: ``?filter[attribute_key]=attribute_value&filter[attribute_key]=attribute_value...``
+        * Filtering on tags: ``?filter[tags]=tag_key:tag_value&filter[tags]=tag_key_2:tag_value_2``
+
+        Here, ``attribute_key`` can be any of the filter keys described further below.
+
+        Query parameters of type ``integer`` support comparison operators ( ``>`` , ``>=`` , ``<`` , ``<=`` ). This is particularly useful when filtering by ``evaluation_changed_at`` or ``resource_discovery_timestamp``. For example: ``?filter[evaluation_changed_at]=>20123123121``.
+
+        You can also use the negation operator on strings. For example, use ``filter[resource_type]=-aws*`` to filter for any non-AWS resources.
+
+        The operator must come after the equal sign. For example, to filter with the ``>=`` operator, add the operator after the equal sign: ``filter[evaluation_changed_at]=>=1678809373257``.
+
+        Query parameters must be only among the documented ones and with values of correct types. Duplicated query parameters (e.g. ``filter[status]=low&filter[status]=info`` ) are not allowed.
+
+        **Response**
+
+        The response includes an array of finding objects, pagination metadata, and a count of items that match the query.
+
+        Each finding object contains the following:
+
+        * The finding ID that can be used in a ``GetFinding`` request to retrieve the full finding details.
+        * Core attributes, including status, evaluation, high-level resource details, muted state, and rule details.
+        * ``evaluation_changed_at`` and ``resource_discovery_date`` time stamps.
+        * An array of associated tags.
+
+        :param page_limit: Limit the number of findings returned. Must be <= 1000.
+        :type page_limit: int, optional
+        :param snapshot_timestamp: Return findings for a given snapshot of time (Unix ms).
+        :type snapshot_timestamp: int, optional
+        :param page_cursor: Return the next page of findings pointed to by the cursor.
+        :type page_cursor: str, optional
+        :param filter_tags: Return findings that have these associated tags (repeatable).
+        :type filter_tags: str, optional
+        :param filter_evaluation_changed_at: Return findings that have changed from pass to fail or vice versa on a specified date (Unix ms) or date range (using comparison operators).
+        :type filter_evaluation_changed_at: str, optional
+        :param filter_muted: Set to ``true`` to return findings that are muted. Set to ``false`` to return unmuted findings.
+        :type filter_muted: bool, optional
+        :param filter_rule_id: Return findings for the specified rule ID.
+        :type filter_rule_id: str, optional
+        :param filter_rule_name: Return findings for the specified rule.
+        :type filter_rule_name: str, optional
+        :param filter_resource_type: Return only findings for the specified resource type.
+        :type filter_resource_type: str, optional
+        :param filter_discovery_timestamp: Return findings that were found on a specified date (Unix ms) or date range (using comparison operators).
+        :type filter_discovery_timestamp: str, optional
+        :param filter_evaluation: Return only ``pass`` or ``fail`` findings.
+        :type filter_evaluation: FindingEvaluation, optional
+        :param filter_status: Return only findings with the specified status.
+        :type filter_status: FindingStatus, optional
+        :rtype: ListFindingsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if page_limit is not unset:
+            kwargs["page_limit"] = page_limit
+
+        if snapshot_timestamp is not unset:
+            kwargs["snapshot_timestamp"] = snapshot_timestamp
+
+        if page_cursor is not unset:
+            kwargs["page_cursor"] = page_cursor
+
+        if filter_tags is not unset:
+            kwargs["filter_tags"] = filter_tags
+
+        if filter_evaluation_changed_at is not unset:
+            kwargs["filter_evaluation_changed_at"] = filter_evaluation_changed_at
+
+        if filter_muted is not unset:
+            kwargs["filter_muted"] = filter_muted
+
+        if filter_rule_id is not unset:
+            kwargs["filter_rule_id"] = filter_rule_id
+
+        if filter_rule_name is not unset:
+            kwargs["filter_rule_name"] = filter_rule_name
+
+        if filter_resource_type is not unset:
+            kwargs["filter_resource_type"] = filter_resource_type
+
+        if filter_discovery_timestamp is not unset:
+            kwargs["filter_discovery_timestamp"] = filter_discovery_timestamp
+
+        if filter_evaluation is not unset:
+            kwargs["filter_evaluation"] = filter_evaluation
+
+        if filter_status is not unset:
+            kwargs["filter_status"] = filter_status
+
+        return self._list_findings_endpoint.call_with_http_info(**kwargs)
+
+    def list_findings_with_pagination(
+        self,
+        *,
+        page_limit: Union[int, UnsetType] = unset,
+        snapshot_timestamp: Union[int, UnsetType] = unset,
+        page_cursor: Union[str, UnsetType] = unset,
+        filter_tags: Union[str, UnsetType] = unset,
+        filter_evaluation_changed_at: Union[str, UnsetType] = unset,
+        filter_muted: Union[bool, UnsetType] = unset,
+        filter_rule_id: Union[str, UnsetType] = unset,
+        filter_rule_name: Union[str, UnsetType] = unset,
+        filter_resource_type: Union[str, UnsetType] = unset,
+        filter_discovery_timestamp: Union[str, UnsetType] = unset,
+        filter_evaluation: Union[FindingEvaluation, UnsetType] = unset,
+        filter_status: Union[FindingStatus, UnsetType] = unset,
+    ) -> collections.abc.Iterable[Finding]:
+        """List findings.
+
+        Provide a paginated version of :meth:`list_findings`, returning all items.
+
+        :param page_limit: Limit the number of findings returned. Must be <= 1000.
+        :type page_limit: int, optional
+        :param snapshot_timestamp: Return findings for a given snapshot of time (Unix ms).
+        :type snapshot_timestamp: int, optional
+        :param page_cursor: Return the next page of findings pointed to by the cursor.
+        :type page_cursor: str, optional
+        :param filter_tags: Return findings that have these associated tags (repeatable).
+        :type filter_tags: str, optional
+        :param filter_evaluation_changed_at: Return findings that have changed from pass to fail or vice versa on a specified date (Unix ms) or date range (using comparison operators).
+        :type filter_evaluation_changed_at: str, optional
+        :param filter_muted: Set to ``true`` to return findings that are muted. Set to ``false`` to return unmuted findings.
+        :type filter_muted: bool, optional
+        :param filter_rule_id: Return findings for the specified rule ID.
+        :type filter_rule_id: str, optional
+        :param filter_rule_name: Return findings for the specified rule.
+        :type filter_rule_name: str, optional
+        :param filter_resource_type: Return only findings for the specified resource type.
+        :type filter_resource_type: str, optional
+        :param filter_discovery_timestamp: Return findings that were found on a specified date (Unix ms) or date range (using comparison operators).
+        :type filter_discovery_timestamp: str, optional
+        :param filter_evaluation: Return only ``pass`` or ``fail`` findings.
+        :type filter_evaluation: FindingEvaluation, optional
+        :param filter_status: Return only findings with the specified status.
+        :type filter_status: FindingStatus, optional
+
+        :return: A generator of paginated results.
+        :rtype: collections.abc.Iterable[Finding]
+        """
+        kwargs: Dict[str, Any] = {}
+        if page_limit is not unset:
+            kwargs["page_limit"] = page_limit
+
+        if snapshot_timestamp is not unset:
+            kwargs["snapshot_timestamp"] = snapshot_timestamp
+
+        if page_cursor is not unset:
+            kwargs["page_cursor"] = page_cursor
+
+        if filter_tags is not unset:
+            kwargs["filter_tags"] = filter_tags
+
+        if filter_evaluation_changed_at is not unset:
+            kwargs["filter_evaluation_changed_at"] = filter_evaluation_changed_at
+
+        if filter_muted is not unset:
+            kwargs["filter_muted"] = filter_muted
+
+        if filter_rule_id is not unset:
+            kwargs["filter_rule_id"] = filter_rule_id
+
+        if filter_rule_name is not unset:
+            kwargs["filter_rule_name"] = filter_rule_name
+
+        if filter_resource_type is not unset:
+            kwargs["filter_resource_type"] = filter_resource_type
+
+        if filter_discovery_timestamp is not unset:
+            kwargs["filter_discovery_timestamp"] = filter_discovery_timestamp
+
+        if filter_evaluation is not unset:
+            kwargs["filter_evaluation"] = filter_evaluation
+
+        if filter_status is not unset:
+            kwargs["filter_status"] = filter_status
+
+        local_page_size = get_attribute_from_path(kwargs, "page_limit", 100)
+        endpoint = self._list_findings_endpoint
+        set_attribute_from_path(kwargs, "page_limit", local_page_size, endpoint.params_map)
+        while True:
+            response = endpoint.call_with_http_info(**kwargs)
+            for item in get_attribute_from_path(response, "data"):
+                yield item
+            if len(get_attribute_from_path(response, "data")) < local_page_size:
+                break
+            set_attribute_from_path(
+                kwargs, "page_cursor", get_attribute_from_path(response, "meta.page.cursor"), endpoint.params_map
+            )
+
     def list_security_filters(
         self,
     ) -> SecurityFiltersResponse:
@@ -697,7 +1057,7 @@ class SecurityMonitoringApi:
 
         List rules.
 
-        :param page_size: Size for a given page. The maximum allowed value is 5000.
+        :param page_size: Size for a given page. The maximum allowed value is 100.
         :type page_size: int, optional
         :param page_number: Specific page number to return.
         :type page_number: int, optional
@@ -875,6 +1235,32 @@ class SecurityMonitoringApi:
             set_attribute_from_path(
                 kwargs, "body.page.cursor", get_attribute_from_path(response, "meta.page.after"), endpoint.params_map
             )
+
+    def update_finding(
+        self,
+        finding_id: str,
+        body: MuteFindingRequest,
+    ) -> MuteFindingResponse:
+        """Mute or unmute a finding.
+
+        Mute or unmute a specific finding.
+        The API returns the updated finding object when the request is successful.
+
+        :param finding_id: The ID of the finding.
+        :type finding_id: str
+        :param body: To mute or unmute a finding, the request body should include at least two attributes: ``muted`` and ``reason``. The allowed reasons depend on whether the finding is being muted or unmuted:
+
+            * To mute a finding: ``PENDING_FIX`` , ``FALSE_POSITIVE`` , ``ACCEPTED_RISK`` , ``OTHER``.
+            * To unmute a finding : ``NO_PENDING_FIX`` , ``HUMAN_ERROR`` , ``NO_LONGER_ACCEPTED_RISK`` , ``OTHER``.
+        :type body: MuteFindingRequest
+        :rtype: MuteFindingResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["finding_id"] = finding_id
+
+        kwargs["body"] = body
+
+        return self._update_finding_endpoint.call_with_http_info(**kwargs)
 
     def update_security_filter(
         self,

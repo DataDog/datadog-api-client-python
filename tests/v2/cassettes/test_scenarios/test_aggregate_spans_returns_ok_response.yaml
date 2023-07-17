@@ -1,0 +1,22 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"compute":[{"aggregation":"count","interval":"5m","type":"timeseries"}],"filter":{"from":"now-15m","query":"*","to":"now"}},"type":"aggregate_request"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/spans/analytics/aggregate
+  response:
+    body:
+      string: '{"data":[{"type":"bucket","id":"6e46dab5-e68e-4697-82e6-a4ee241037e9","attributes":{"compute":{"c0":[{"time":"2023-06-29T09:40:00.000Z","value":154},{"time":"2023-06-29T09:45:00.000Z","value":513},{"time":"2023-06-29T09:50:00.000Z","value":357},{"time":"2023-06-29T09:55:00.000Z","value":196}]},"by":{}}}],"meta":{"elapsed":27,"request_id":"pddv1ChZjQUlYNUd2UFFPdW94MXo0a25KdmVRIi4KHtxbw_pw4TotFiThwqXCJgIkQfm0Fiipg5dt0SkRehIMJcIJBiPBYooWmylp","status":"done"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

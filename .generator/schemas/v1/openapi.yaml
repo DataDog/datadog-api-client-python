@@ -352,7 +352,6 @@ components:
           type: array
       type: object
     AccessRole:
-      default: st
       description: The access role of the user. Options are **st** (standard user),
         **adm** (admin user), or **ro** (read-only user).
       enum:
@@ -360,7 +359,8 @@ components:
       - adm
       - ro
       - ERROR
-      example: st
+      example: ro
+      nullable: true
       type: string
       x-enum-varnames:
       - STANDARD
@@ -830,6 +830,7 @@ components:
               type: string
             type: array
           description: A mapping of Monitor ID to strings denoting where it's used.
+          nullable: true
           type: object
       required:
       - data
@@ -1092,10 +1093,46 @@ components:
           description: ID of the deleted dashboard.
           type: string
       type: object
+    DashboardGlobalTime:
+      description: Object containing the live span selection for the dashboard.
+      properties:
+        live_span:
+          $ref: '#/components/schemas/DashboardGlobalTimeLiveSpan'
+      type: object
+    DashboardGlobalTimeLiveSpan:
+      description: Dashboard global time live_span selection
+      enum:
+      - 15m
+      - 1h
+      - 4h
+      - 1d
+      - 2d
+      - 1w
+      - 1mo
+      - 3mo
+      example: 1h
+      type: string
+      x-enum-varnames:
+      - PAST_FIFTEEN_MINUTES
+      - PAST_ONE_HOUR
+      - PAST_FOUR_HOURS
+      - PAST_ONE_DAY
+      - PAST_TWO_DAYS
+      - PAST_ONE_WEEK
+      - PAST_ONE_MONTH
+      - PAST_THREE_MONTHS
     DashboardID:
       description: Dashboard resource ID.
       example: 123-abc-456
       type: string
+    DashboardInviteType:
+      description: Type for shared dashboard invitation request body.
+      enum:
+      - public_dashboard_invitation
+      example: public_dashboard_invitation
+      type: string
+      x-enum-varnames:
+      - PUBLIC_DASHBOARD_INVITATION
     DashboardLayoutType:
       description: Layout type of the dashboard.
       enum:
@@ -1200,6 +1237,17 @@ components:
       required:
       - data
       type: object
+    DashboardShareType:
+      description: Type of sharing access (either open to anyone who has the public
+        URL or invite-only).
+      enum:
+      - open
+      - invite
+      nullable: true
+      type: string
+      x-enum-varnames:
+      - OPEN
+      - INVITE
     DashboardSummary:
       description: Dashboard summary response.
       properties:
@@ -1325,6 +1373,23 @@ components:
             type: string
           minItems: 1
           type: array
+      type: object
+    DashboardType:
+      description: The type of the associated private dashboard.
+      enum:
+      - custom_timeboard
+      - custom_screenboard
+      example: custom_timeboard
+      type: string
+      x-enum-varnames:
+      - CUSTOM_TIMEBOARD
+      - CUSTOM_SCREENBOARD
+    DeleteSharedDashboardResponse:
+      description: Response containing token of deleted shared dashboard.
+      properties:
+        deleted_public_dashboard_token:
+          description: Token associated with the shared dashboard that was revoked.
+          type: string
       type: object
     DeletedMonitor:
       description: Response from the delete monitor call.
@@ -1647,6 +1712,7 @@ components:
             Email notifications can be sent to specific users by using the same `@username`
             notation as events.'
           example: Message on the downtime
+          nullable: true
           type: string
         monitor_id:
           description: 'A single monitor to which the downtime applies.
@@ -1678,6 +1744,10 @@ components:
             be muted.
           example: false
           type: boolean
+        notify_end_states:
+          $ref: '#/components/schemas/NotifyEndStates'
+        notify_end_types:
+          $ref: '#/components/schemas/NotifyEndTypes'
         parent_id:
           description: ID of the parent Downtime.
           example: 123
@@ -1782,6 +1852,7 @@ components:
             Email notifications can be sent to specific users by using the same `@username`
             notation as events.'
           example: Message on the downtime
+          nullable: true
           type: string
         monitor_id:
           description: 'A single monitor to which the downtime applies.
@@ -1813,6 +1884,10 @@ components:
             be muted.
           example: false
           type: boolean
+        notify_end_states:
+          $ref: '#/components/schemas/NotifyEndStates'
+        notify_end_types:
+          $ref: '#/components/schemas/NotifyEndTypes'
         parent_id:
           description: ID of the parent Downtime.
           example: 123
@@ -2391,6 +2466,38 @@ components:
       - service
       - stat
       type: object
+    FormulaAndFunctionCloudCostDataSource:
+      description: Data source for Cloud Cost queries.
+      enum:
+      - cloud_cost
+      example: cloud_cost
+      type: string
+      x-enum-varnames:
+      - CLOUD_COST
+    FormulaAndFunctionCloudCostQueryDefinition:
+      description: A formula and functions Cloud Cost query.
+      example:
+        data_source: cloud_cost
+        name: query1
+        query: sum:aws.cost.amortized{*}
+      properties:
+        aggregator:
+          $ref: '#/components/schemas/WidgetAggregator'
+        data_source:
+          $ref: '#/components/schemas/FormulaAndFunctionCloudCostDataSource'
+        name:
+          description: Name of the query for use in formulas.
+          example: my_query
+          type: string
+        query:
+          description: Query for Cloud Cost data.
+          example: ''
+          type: string
+      required:
+      - data_source
+      - query
+      - name
+      type: object
     FormulaAndFunctionEventAggregation:
       description: Aggregation methods for event platform queries.
       enum:
@@ -2653,17 +2760,102 @@ components:
       - $ref: '#/components/schemas/FormulaAndFunctionProcessQueryDefinition'
       - $ref: '#/components/schemas/FormulaAndFunctionApmDependencyStatsQueryDefinition'
       - $ref: '#/components/schemas/FormulaAndFunctionApmResourceStatsQueryDefinition'
+      - $ref: '#/components/schemas/FormulaAndFunctionSLOQueryDefinition'
+      - $ref: '#/components/schemas/FormulaAndFunctionCloudCostQueryDefinition'
       type: object
     FormulaAndFunctionResponseFormat:
-      description: Timeseries or Scalar response.
+      description: Timeseries, scalar, or event list response. Event list response
+        formats are supported by Geomap widgets.
       enum:
       - timeseries
       - scalar
+      - event_list
       example: timeseries
       type: string
       x-enum-varnames:
       - TIMESERIES
       - SCALAR
+      - EVENT_LIST
+    FormulaAndFunctionSLODataSource:
+      description: Data source for SLO measures queries.
+      enum:
+      - slo
+      example: slo
+      type: string
+      x-enum-varnames:
+      - SLO
+    FormulaAndFunctionSLOGroupMode:
+      description: Group mode to query measures.
+      enum:
+      - overall
+      - components
+      example: overall
+      type: string
+      x-enum-varnames:
+      - OVERALL
+      - COMPONENTS
+    FormulaAndFunctionSLOMeasure:
+      description: SLO measures queries.
+      enum:
+      - good_events
+      - bad_events
+      - slo_status
+      - error_budget_remaining
+      - burn_rate
+      - error_budget_burndown
+      example: slo_status
+      type: string
+      x-enum-varnames:
+      - GOOD_EVENTS
+      - BAD_EVENTS
+      - SLO_STATUS
+      - ERROR_BUDGET_REMAINING
+      - BURN_RATE
+      - ERROR_BUDGET_BURNDOWN
+    FormulaAndFunctionSLOQueryDefinition:
+      description: A formula and functions metrics query.
+      example:
+        additional_query_filters: '*'
+        data_source: slo
+        group_mode: overall
+        measure: good_events
+        name: my_slo
+        slo_id: '12345678910'
+        slo_query_type: metric
+      properties:
+        additional_query_filters:
+          description: Additional filters applied to the SLO query.
+          example: host:host_a,env:prod
+          type: string
+        data_source:
+          $ref: '#/components/schemas/FormulaAndFunctionSLODataSource'
+        group_mode:
+          $ref: '#/components/schemas/FormulaAndFunctionSLOGroupMode'
+        measure:
+          $ref: '#/components/schemas/FormulaAndFunctionSLOMeasure'
+        name:
+          description: Name of the query for use in formulas.
+          example: my_slo
+          type: string
+        slo_id:
+          description: ID of an SLO to query measures.
+          example: '12345678910'
+          type: string
+        slo_query_type:
+          $ref: '#/components/schemas/FormulaAndFunctionSLOQueryType'
+      required:
+      - data_source
+      - slo_id
+      - measure
+      type: object
+    FormulaAndFunctionSLOQueryType:
+      description: Name of the query for use in formulas.
+      enum:
+      - metric
+      example: metric
+      type: string
+      x-enum-varnames:
+      - METRIC
     FreeTextWidgetDefinition:
       description: Free text is a widget that allows you to add headings to your screenboard.
         Commonly used to state the overall purpose of the dashboard. Only available
@@ -2976,6 +3168,16 @@ components:
     GeomapWidgetRequest:
       description: An updated geomap widget.
       properties:
+        columns:
+          description: Widget columns.
+          example:
+          - field: timestamp
+            width: auto
+          - field: content
+            width: full
+          items:
+            $ref: '#/components/schemas/ListStreamColumn'
+          type: array
         formulas:
           description: List of formulas that operate on queries.
           items:
@@ -2991,6 +3193,8 @@ components:
           items:
             $ref: '#/components/schemas/FormulaAndFunctionQueryDefinition'
           type: array
+        query:
+          $ref: '#/components/schemas/ListStreamQuery'
         response_format:
           $ref: '#/components/schemas/FormulaAndFunctionResponseFormat'
         rum_query:
@@ -3262,6 +3466,7 @@ components:
         mute_timeout:
           description: Timeout of the mute applied to your host.
           format: int64
+          nullable: true
           type: integer
         name:
           description: The host name.
@@ -3682,12 +3887,14 @@ components:
       - infra_host_usage
       - invocations_usage
       - npm_host_usage
+      - obs_pipeline_bytes_usage
       - profiled_container_usage
       - profiled_fargate_usage
       - profiled_host_usage
       - snmp_usage
       - estimated_rum_sessions_usage
       - universal_service_monitoring_usage
+      - vuln_management_hosts_usage
       type: string
       x-enum-varnames:
       - API_USAGE
@@ -3715,12 +3922,14 @@ components:
       - INFRA_HOST_USAGE
       - INVOCATIONS_USAGE
       - NPM_HOST_USAGE
+      - OBS_PIPELINE_BYTES_USAGE
       - PROFILED_CONTAINER_USAGE
       - PROFILED_FARGATE_USAGE
       - PROFILED_HOST_USAGE
       - SNMP_USAGE
       - ESTIMATED_RUM_SESSIONS_USAGE
       - UNIVERSAL_SERVICE_MONITORING_USAGE
+      - VULN_MANAGEMENT_HOSTS_USAGE
     IFrameWidgetDefinition:
       description: The iframe widget allows you to embed a portion of any other web
         page on your dashboard. Only available on FREE layout dashboards.
@@ -4133,6 +4342,8 @@ components:
           description: Widget query.
           example: '@service:app'
           type: string
+        sort:
+          $ref: '#/components/schemas/WidgetFieldSort'
         storage:
           description: Option for storage location. Feature in Private Beta.
           example: indexes
@@ -5092,6 +5303,7 @@ components:
           description: 'Hash identifier of the next log to return in the list.
 
             This parameter is used for the pagination feature.'
+          nullable: true
           type: string
         status:
           description: Status of the response.
@@ -5674,6 +5886,43 @@ components:
       type: string
       x-enum-varnames:
       - USER_AGENT_PARSER
+    MatchingDowntime:
+      description: Object describing a downtime that matches this monitor.
+      properties:
+        end:
+          description: POSIX timestamp to end the downtime.
+          example: 1412792983
+          format: int64
+          nullable: true
+          type: integer
+        id:
+          description: The downtime ID.
+          example: 1625
+          format: int64
+          readOnly: true
+          type: integer
+        scope:
+          description: 'The scope(s) to which the downtime applies. Must be in `key:value`
+            format. For example, `host:app2`.
+
+            Provide multiple scopes as a comma-separated list like `env:dev,env:prod`.
+
+            The resulting downtime applies to sources that matches ALL provided scopes
+            (`env:dev` **AND** `env:prod`).'
+          example:
+          - env:staging
+          items:
+            description: A scope. For example, `"env:staging"`.
+            type: string
+          type: array
+        start:
+          description: POSIX timestamp to start the downtime.
+          example: 1412792983
+          format: int64
+          type: integer
+      required:
+      - id
+      type: object
     MetricContentEncoding:
       default: deflate
       description: HTTP header used to compress the media-type.
@@ -5788,7 +6037,7 @@ components:
           readOnly: true
           type: string
         interval:
-          description: Number of seconds between data samples.
+          description: Number of milliseconds between data samples.
           format: int64
           readOnly: true
           type: integer
@@ -5803,10 +6052,10 @@ components:
           readOnly: true
           type: string
         pointlist:
-          description: List of points of the time series.
+          description: List of points of the time series in milliseconds.
           example:
-          - - 1575317847.0
-            - 0.5
+          - - 1681683300000.0
+            - 77.62145685254418
           items:
             $ref: '#/components/schemas/Point'
           readOnly: true
@@ -5954,6 +6203,11 @@ components:
           format: int64
           readOnly: true
           type: integer
+        matching_downtimes:
+          description: A list of active downtimes that match this monitor.
+          items:
+            $ref: '#/components/schemas/MatchingDowntime'
+          type: array
         message:
           description: A message to include with notifications for this monitor.
           type: string
@@ -6967,6 +7221,7 @@ components:
       - ci-pipelines alert
       - ci-tests alert
       - error-tracking alert
+      - database-monitoring alert
       example: query alert
       type: string
       x-enum-varnames:
@@ -6986,6 +7241,7 @@ components:
       - CI_PIPELINES_ALERT
       - CI_TESTS_ALERT
       - ERROR_TRACKING_ALERT
+      - DATABASE_MONITORING_ALERT
     MonitorUpdateRequest:
       description: Object describing a monitor update request.
       properties:
@@ -7047,6 +7303,7 @@ components:
           items:
             description: A role UUID.
             type: string
+          nullable: true
           type: array
         state:
           $ref: '#/components/schemas/MonitorState'
@@ -7171,6 +7428,8 @@ components:
       - invocations_percentage
       - npm_host_usage
       - npm_host_percentage
+      - obs_pipeline_bytes_usage
+      - obs_pipeline_bytes_percentage
       - profiled_container_usage
       - profiled_container_percentage
       - profiled_fargate_usage
@@ -7183,6 +7442,8 @@ components:
       - estimated_rum_sessions_percentage
       - universal_service_monitoring_usage
       - universal_service_monitoring_percentage
+      - vuln_management_hosts_usage
+      - vuln_management_hosts_percentage
       - '*'
       type: string
       x-enum-varnames:
@@ -7236,6 +7497,8 @@ components:
       - INVOCATIONS_PERCENTAGE
       - NPM_HOST_USAGE
       - NPM_HOST_PERCENTAGE
+      - OBS_PIPELINE_BYTES_USAGE
+      - OBS_PIPELINE_BYTES_PERCENTAGE
       - PROFILED_CONTAINER_USAGE
       - PROFILED_CONTAINER_PERCENTAGE
       - PROFILED_FARGATE_USAGE
@@ -7248,6 +7511,8 @@ components:
       - ESTIMATED_RUM_SESSIONS_PERCENTAGE
       - UNIVERSAL_SERVICE_MONITORING_USAGE
       - UNIVERSAL_SERVICE_MONITORING_PERCENTAGE
+      - VULN_MANAGEMENT_HOSTS_USAGE
+      - VULN_MANAGEMENT_HOSTS_PERCENTAGE
       - ALL
     MonthlyUsageAttributionValues:
       description: Fields in Usage Summary by tag(s).
@@ -7465,6 +7730,14 @@ components:
           description: The network host usage by tag(s).
           format: double
           type: number
+        obs_pipeline_bytes_percentage:
+          description: The percentage of observability pipeline bytes usage by tag(s).
+          format: double
+          type: number
+        obs_pipeline_bytes_usage:
+          description: The observability pipeline bytes usage by tag(s).
+          format: double
+          type: number
         profiled_container_percentage:
           description: The percentage of profiled container usage by tag(s).
           format: double
@@ -7503,6 +7776,15 @@ components:
           type: number
         universal_service_monitoring_usage:
           description: The universal service monitoring usage by tag(s).
+          format: double
+          type: number
+        vuln_management_hosts_percentage:
+          description: The percentage of Application Vulnerability Management usage
+            by tag(s).
+          format: double
+          type: number
+        vuln_management_hosts_usage:
+          description: The Application Vulnerability Management usage by tag(s).
           format: double
           type: number
       type: object
@@ -8330,6 +8612,60 @@ components:
           format: int64
           type: integer
       type: object
+    NotifyEndState:
+      description: A notification end state.
+      enum:
+      - alert
+      - no data
+      - warn
+      example: alert
+      type: string
+      x-enum-varnames:
+      - ALERT
+      - NO_DATA
+      - WARN
+    NotifyEndStates:
+      default:
+      - alert
+      - no data
+      - warn
+      description: States for which `notify_end_types` sends out notifications for.
+      example:
+      - alert
+      - no data
+      - warn
+      items:
+        $ref: '#/components/schemas/NotifyEndState'
+      type: array
+    NotifyEndType:
+      description: A notification end type.
+      enum:
+      - canceled
+      - expired
+      example: expired
+      type: string
+      x-enum-varnames:
+      - CANCELED
+      - EXPIRED
+    NotifyEndTypes:
+      default:
+      - expired
+      description: 'If set, notifies if a monitor is in an alert-worthy state (`ALERT`,
+        `WARNING`, or `NO DATA`)
+
+        when this downtime expires or is canceled. Applied to monitors that change
+        states during
+
+        the downtime (such as from `OK` to `ALERT`, `WARNING`, or `NO DATA`), and
+        to monitors that
+
+        already have an alert-worthy state when downtime begins.'
+      example:
+      - canceled
+      - expired
+      items:
+        $ref: '#/components/schemas/NotifyEndType'
+      type: array
     OnMissingDataOption:
       description: 'Controls how groups or monitors are treated if an evaluation does
         not return any data points.
@@ -9047,6 +9383,7 @@ components:
         created_at:
           description: The epoch timestamp of when the correction was created at.
           format: int64
+          nullable: true
           type: integer
         creator:
           $ref: '#/components/schemas/Creator'
@@ -9063,10 +9400,12 @@ components:
         end:
           description: Ending time of the correction in epoch seconds.
           format: int64
+          nullable: true
           type: integer
         modified_at:
           description: The epoch timestamp of when the correction was modified at.
           format: int64
+          nullable: true
           type: integer
         modifier:
           $ref: '#/components/schemas/SLOCorrectionResponseAttributesModifier'
@@ -9177,6 +9516,7 @@ components:
           type: integer
         name:
           description: Name of the creator.
+          nullable: true
           type: string
       type: object
     SLODeleteResponse:
@@ -9448,6 +9788,7 @@ components:
           description: The current SLI value of the SLO over the history window.
           example: 99.99
           format: double
+          nullable: true
           type: number
         span_precision:
           description: The amount of decimal places the SLI value is accurate to for
@@ -9472,6 +9813,7 @@ components:
             level objective.
           items:
             $ref: '#/components/schemas/SLOHistoryResponseError'
+          nullable: true
           type: array
       type: object
     SLOHistoryResponseData:
@@ -9632,6 +9974,7 @@ components:
           description: The current SLI value of the SLO over the history window.
           example: 99.99
           format: double
+          nullable: true
           type: number
         span_precision:
           description: The amount of decimal places the SLI value is accurate to for
@@ -9644,6 +9987,7 @@ components:
           description: Use `sli_value` instead.
           example: 99.99
           format: double
+          nullable: true
           type: number
       type: object
     SLOListResponse:
@@ -10145,6 +10489,9 @@ components:
       description: Use the SLO and uptime widget to track your SLOs (Service Level
         Objectives) and uptime on screenboards and timeboards.
       properties:
+        additional_query_filters:
+          description: Additional filters applied to the SLO query.
+          type: string
         global_time_target:
           description: Defined global time target.
           type: string
@@ -10727,6 +11074,28 @@ components:
           description: The type of the object, must be `slo`.
           type: string
       type: object
+    SelectableTemplateVariableItems:
+      description: Object containing the template variable's name, associated tag/attribute,
+        default value and selectable values.
+      properties:
+        default_value:
+          description: The default value of the template variable.
+          type: string
+        name:
+          description: Name of the template variable.
+          type: string
+        prefix:
+          description: The tag/attribute key associated with the template variable.
+          type: string
+        visible_tags:
+          description: List of visible tag values on the shared dashboard.
+          items:
+            description: Other values for this tag that can be selected on the shared
+              dashboard.
+            type: string
+          nullable: true
+          type: array
+      type: object
     Series:
       description: 'A metric to submit to Datadog.
 
@@ -11222,18 +11591,274 @@ components:
       type: string
       x-enum-varnames:
       - TRACE_SERVICE
+    SharedDashboard:
+      description: The metadata object associated with how a dashboard has been/will
+        be shared.
+      properties:
+        author:
+          $ref: '#/components/schemas/SharedDashboardAuthor'
+        created_at:
+          description: Date the dashboard was shared.
+          format: date-time
+          readOnly: true
+          type: string
+        dashboard_id:
+          description: ID of the dashboard to share.
+          example: 123-abc-456
+          type: string
+        dashboard_type:
+          $ref: '#/components/schemas/DashboardType'
+        global_time:
+          $ref: '#/components/schemas/DashboardGlobalTime'
+        global_time_selectable_enabled:
+          description: Whether to allow viewers to select a different global time
+            setting for the shared dashboard.
+          nullable: true
+          type: boolean
+        public_url:
+          description: URL of the shared dashboard.
+          readOnly: true
+          type: string
+        selectable_template_vars:
+          description: List of objects representing template variables on the shared
+            dashboard which can have selectable values.
+          example:
+          - default_value: '*'
+            name: exampleVar
+            prefix: test
+            visible_tags:
+            - selectableValue1
+            - selectableValue2
+          items:
+            $ref: '#/components/schemas/SelectableTemplateVariableItems'
+          nullable: true
+          type: array
+        share_list:
+          description: List of email addresses that can receive an invitation to access
+            to the shared dashboard.
+          example:
+          - test@datadoghq.com
+          - test2@email.com
+          items:
+            description: Email address that can receive an invitation to access the
+              shared dashboard.
+            format: email
+            type: string
+          nullable: true
+          type: array
+        share_type:
+          $ref: '#/components/schemas/DashboardShareType'
+        token:
+          description: A unique token assigned to the shared dashboard.
+          readOnly: true
+          type: string
+      required:
+      - dashboard_id
+      - dashboard_type
+      type: object
+    SharedDashboardAuthor:
+      description: User who shared the dashboard.
+      properties:
+        handle:
+          description: Identifier of the user who shared the dashboard.
+          example: test@datadoghq.com
+          readOnly: true
+          type: string
+        name:
+          description: Name of the user who shared the dashboard.
+          nullable: true
+          readOnly: true
+          type: string
+      readOnly: true
+      type: object
+    SharedDashboardInvites:
+      description: Invitations data and metadata that exists for a shared dashboard
+        returned by the API.
+      example:
+        data:
+        - attributes:
+            email: test@datadoghq.com
+          type: public_dashboard_invitation
+      properties:
+        data:
+          $ref: '#/components/schemas/SharedDashboardInvitesData'
+        meta:
+          $ref: '#/components/schemas/SharedDashboardInvitesMeta'
+      required:
+      - data
+      type: object
+    SharedDashboardInvitesData:
+      description: An object or list of objects containing the information for an
+        invitation to a shared dashboard.
+      example:
+      - attributes:
+          email: test@datadoghq.com
+        type: public_dashboard_invitation
+      oneOf:
+      - $ref: '#/components/schemas/SharedDashboardInvitesDataObject'
+      - $ref: '#/components/schemas/SharedDashboardInvitesDataList'
+    SharedDashboardInvitesDataList:
+      description: A list of objects containing the information for an invitation(s)
+        to a shared dashboard.
+      example:
+      - attributes:
+          email: test@datadoghq.com
+        type: public_dashboard_invitation
+      items:
+        $ref: '#/components/schemas/SharedDashboardInvitesDataObject'
+      type: array
+    SharedDashboardInvitesDataObject:
+      description: Object containing the information for an invitation to a shared
+        dashboard.
+      example:
+        attributes:
+          created_at: '2020-12-07T20:16:27.846985+00:00'
+          email: test@datadoghq.com
+          has_session: false
+          invitation_expiry: '2020-12-07T21:16:27.840542+00:00'
+          session_expiry: null
+          share_token: XXXXXX-123456abcedfg7890hijklmnopqrstuv
+        type: public_dashboard_invitation
+      properties:
+        attributes:
+          $ref: '#/components/schemas/SharedDashboardInvitesDataObjectAttributes'
+        type:
+          $ref: '#/components/schemas/DashboardInviteType'
+      required:
+      - type
+      - attributes
+      type: object
+    SharedDashboardInvitesDataObjectAttributes:
+      description: Attributes of the shared dashboard invitation
+      example:
+        created_at: '2020-12-07T20:16:27.846985+00:00'
+        email: test@datadoghq.com
+        has_session: false
+        invitation_expiry: '2020-12-07T21:16:27.840542+00:00'
+        session_expiry: null
+        share_token: XXXXXX-123456abcedfg7890hijklmnopqrstuv
+      properties:
+        created_at:
+          description: When the invitation was sent.
+          format: date-time
+          readOnly: true
+          type: string
+        email:
+          description: An email address that an invitation has been (or if used in
+            invitation request, will be) sent to.
+          nullable: false
+          type: string
+        has_session:
+          description: Indicates whether an active session exists for the invitation
+            (produced when a user clicks the link in the email).
+          readOnly: true
+          type: boolean
+        invitation_expiry:
+          description: When the invitation expires.
+          format: date-time
+          readOnly: true
+          type: string
+        session_expiry:
+          description: When the invited user's session expires. null if the invitation
+            has no associated session.
+          format: date-time
+          nullable: true
+          readOnly: true
+          type: string
+        share_token:
+          description: The unique token of the shared dashboard that was (or is to
+            be) shared.
+          readOnly: true
+          type: string
+      type: object
+    SharedDashboardInvitesMeta:
+      description: Pagination metadata returned by the API.
+      properties:
+        page:
+          $ref: '#/components/schemas/SharedDashboardInvitesMetaPage'
+      readOnly: true
+      type: object
+    SharedDashboardInvitesMetaPage:
+      description: Object containing the total count of invitations across all pages
+      properties:
+        total_count:
+          description: The total number of invitations on this shared board, across
+            all pages.
+          format: int64
+          type: integer
+      type: object
+    SharedDashboardUpdateRequest:
+      description: Update a shared dashboard's settings.
+      example:
+        global_time:
+          live_span: 1h
+        share_list:
+        - test@datadoghq.com
+        - test2@datadoghq.com
+        share_type: invite
+      properties:
+        global_time:
+          $ref: '#/components/schemas/SharedDashboardUpdateRequestGlobalTime'
+        global_time_selectable_enabled:
+          description: Whether to allow viewers to select a different global time
+            setting for the shared dashboard.
+          nullable: true
+          type: boolean
+        selectable_template_vars:
+          description: List of objects representing template variables on the shared
+            dashboard which can have selectable values.
+          example:
+          - default_value: '*'
+            name: exampleVar
+            prefix: test
+            visible_tags:
+            - selectableValue1
+            - selectableValue2
+          items:
+            $ref: '#/components/schemas/SelectableTemplateVariableItems'
+          nullable: true
+          type: array
+        share_list:
+          description: List of email addresses that can be given access to the shared
+            dashboard.
+          example:
+          - test@datadoghq.com
+          - test2@email.com
+          items:
+            description: Email address that can receive an invitation to access the
+              shared dashboard.
+            format: email
+            type: string
+          nullable: true
+          type: array
+        share_type:
+          $ref: '#/components/schemas/DashboardShareType'
+      required:
+      - global_time
+      type: object
+    SharedDashboardUpdateRequestGlobalTime:
+      description: Timeframe setting for the shared dashboard.
+      example:
+        live_span: 1h
+      nullable: true
+      properties:
+        live_span:
+          $ref: '#/components/schemas/DashboardGlobalTimeLiveSpan'
+      type: object
     SignalArchiveReason:
       description: Reason why a signal has been archived.
       enum:
       - none
       - false_positive
       - testing_or_maintenance
+      - investigated_case_opened
       - other
       type: string
       x-enum-varnames:
       - NONE
       - FALSE_POSITIVE
       - TESTING_OR_MAINTENANCE
+      - INVESTIGATED_CASE_OPENED
       - OTHER
     SignalAssigneeUpdateRequest:
       description: Attributes describing an assignee update operation over a security
@@ -11462,7 +12087,7 @@ components:
           $ref: '#/components/schemas/LogQueryDefinition'
       type: object
     SyntheticsAPIStep:
-      description: The steps used in a Synthetics multistep API test.
+      description: The steps used in a Synthetic multistep API test.
       properties:
         allowFailure:
           description: Determines whether or not to continue with test if this step
@@ -11836,6 +12461,7 @@ components:
       - isInMoreThan
       - isInLessThan
       - doesNotExist
+      - isUndefined
       example: contains
       type: string
       x-enum-varnames:
@@ -11853,6 +12479,7 @@ components:
       - IS_IN_MORE_DAYS_THAN
       - IS_IN_LESS_DAYS_THAN
       - DOES_NOT_EXIST
+      - IS_UNDEFINED
     SyntheticsAssertionTarget:
       description: An assertion which uses a simple target.
       properties:
@@ -11890,6 +12517,8 @@ components:
       - networkHop
       - receivedMessage
       - grpcHealthcheckStatus
+      - grpcMetadata
+      - grpcProto
       - connection
       example: statusCode
       type: string
@@ -11910,6 +12539,8 @@ components:
       - NETWORK_HOP
       - RECEIVED_MESSAGE
       - GRPC_HEALTHCHECK_STATUS
+      - GRPC_METADATA
+      - GRPC_PROTO
       - CONNECTION
     SyntheticsAssertionXPathOperator:
       description: Assertion operator to apply.
@@ -12224,7 +12855,7 @@ components:
           $ref: '#/components/schemas/SyntheticsStatus'
       type: object
     SyntheticsBatchResult:
-      description: Object with the results of a Synthetics batch.
+      description: Object with the results of a Synthetic batch.
       properties:
         device:
           $ref: '#/components/schemas/SyntheticsDeviceID'
@@ -12629,7 +13260,7 @@ components:
     SyntheticsBrowserVariable:
       description: 'Object defining a variable that can be used in your browser test.
 
-        Learn more in the [Browser test Actions documentation](https://docs.datadoghq.com/synthetics/browser_tests/actions#variable).'
+        See the [Recording Steps documentation](https://docs.datadoghq.com/synthetics/browser_tests/actions/?tab=testanelementontheactivepage#variables).'
       properties:
         example:
           description: Example for the variable.
@@ -12644,6 +13275,10 @@ components:
         pattern:
           description: Pattern of the variable.
           type: string
+        secure:
+          description: Determines whether or not the browser test variable is obfuscated.
+            Can only be used with browser variables of type `text`.
+          type: boolean
         type:
           $ref: '#/components/schemas/SyntheticsBrowserVariableType'
       required:
@@ -12667,7 +13302,7 @@ components:
       - JAVASCRIPT
       - TEXT
     SyntheticsCIBatchMetadata:
-      description: Metadata for the Synthetics tests run.
+      description: Metadata for the Synthetic tests run.
       properties:
         ci:
           $ref: '#/components/schemas/SyntheticsCIBatchMetadataCI'
@@ -12707,7 +13342,7 @@ components:
           type: string
       type: object
     SyntheticsCITest:
-      description: Test configuration for Synthetics CI
+      description: Configuration for Continuous Testing.
       properties:
         allowInsecureCertificates:
           description: Disable certificate checks in API tests.
@@ -12718,7 +13353,7 @@ components:
           description: Body to include in the test.
           type: string
         bodyType:
-          description: Type of the data sent in a synthetics API test.
+          description: Type of the data sent in a Synthetic API test.
           type: string
         cookies:
           description: Cookies for the request.
@@ -12745,7 +13380,7 @@ components:
         metadata:
           $ref: '#/components/schemas/SyntheticsCIBatchMetadata'
         public_id:
-          description: The public ID of the Synthetics test to trigger.
+          description: The public ID of the Synthetic test to trigger.
           example: aaa-aaa-aaa
           type: string
         retry:
@@ -12856,6 +13491,14 @@ components:
           description: URL attached to the metrics.
           type: string
       type: object
+    SyntheticsDefaultLocations:
+      description: List of Synthetics default locations settings.
+      example:
+      - aws:eu-west-3
+      items:
+        description: Name of the location.
+        type: string
+      type: array
     SyntheticsDeleteTestsPayload:
       description: 'A JSON list of the ID or IDs of the Synthetic tests that you want
 
@@ -12979,7 +13622,7 @@ components:
           type: array
       type: object
     SyntheticsGlobalVariable:
-      description: Synthetics global variable.
+      description: Synthetic global variable.
       properties:
         attributes:
           $ref: '#/components/schemas/SyntheticsGlobalVariableAttributes'
@@ -12992,7 +13635,7 @@ components:
           readOnly: true
           type: string
         name:
-          description: Name of the global variable. Unique across Synthetics global
+          description: Name of the global variable. Unique across Synthetic global
             variables.
           example: MY_VARIABLE
           type: string
@@ -13033,8 +13676,8 @@ components:
           $ref: '#/components/schemas/SyntheticsGlobalVariableTOTPParameters'
       type: object
     SyntheticsGlobalVariableParseTestOptions:
-      description: Parser options to use for retrieving a Synthetics global variable
-        from a Synthetics Test. Used in conjunction with `parse_test_public_id`.
+      description: Parser options to use for retrieving a Synthetic global variable
+        from a Synthetic test. Used in conjunction with `parse_test_public_id`.
       properties:
         field:
           description: When type is `http_header`, name of the header to use to extract
@@ -13054,7 +13697,7 @@ components:
       - type
       type: object
     SyntheticsGlobalVariableParseTestOptionsType:
-      description: Property of the Synthetics Test Response to use for a Synthetics
+      description: Property of the Synthetic Test Response to use for a Synthetic
         global variable.
       enum:
       - http_body
@@ -13067,7 +13710,7 @@ components:
       - HTTP_HEADER
       - LOCAL_VARIABLE
     SyntheticsGlobalVariableParserType:
-      description: Type of parser for a Synthetics global variable from a synthetics
+      description: Type of parser for a Synthetic global variable from a synthetics
         test.
       enum:
       - raw
@@ -13149,10 +13792,10 @@ components:
           type: string
       type: object
     SyntheticsLocations:
-      description: List of Synthetics locations.
+      description: List of Synthetic locations.
       properties:
         locations:
-          description: List of Synthetics locations.
+          description: List of Synthetic locations.
           items:
             $ref: '#/components/schemas/SyntheticsLocation'
           type: array
@@ -13171,6 +13814,9 @@ components:
           type: string
         parser:
           $ref: '#/components/schemas/SyntheticsVariableParser'
+        secure:
+          description: Determines whether or not the extracted value will be obfuscated.
+          type: boolean
         type:
           $ref: '#/components/schemas/SyntheticsGlobalVariableParseTestOptionsType'
       type: object
@@ -13396,7 +14042,7 @@ components:
       - skipped
       - failed
     SyntheticsStep:
-      description: The steps used in a Synthetics browser test.
+      description: The steps used in a Synthetic browser test.
       properties:
         allowFailure:
           description: A boolean set to allow this step to fail.
@@ -13457,7 +14103,7 @@ components:
           format: int64
           type: integer
         subTestStepDetails:
-          description: 'If this steps include a sub-test.
+          description: 'If this step includes a sub-test.
 
             [Subtests documentation](https://docs.datadoghq.com/synthetics/browser_tests/advanced_options/#subtests).'
           items:
@@ -13680,7 +14326,7 @@ components:
       - API
       - BROWSER
     SyntheticsTestExecutionRule:
-      description: Execution rule for a Synthetics test.
+      description: Execution rule for a Synthetic test.
       enum:
       - blocking
       - non_blocking
@@ -14069,7 +14715,7 @@ components:
       description: 'Object containing all metrics and their values collected for a
         Synthetic API test.
 
-        Learn more about those metrics in [Synthetics documentation](https://docs.datadoghq.com/synthetics/#metrics).'
+        See the [Synthetic Monitoring Metrics documentation](https://docs.datadoghq.com/synthetics/metrics/).'
       properties:
         dns:
           description: The duration in millisecond of the DNS lookup.
@@ -14109,10 +14755,10 @@ components:
           type: number
       type: object
     SyntheticsTriggerBody:
-      description: Object describing the synthetics tests to trigger.
+      description: Object describing the Synthetic tests to trigger.
       properties:
         tests:
-          description: Individual synthetics test.
+          description: Individual Synthetic test.
           items:
             $ref: '#/components/schemas/SyntheticsTriggerTest'
           type: array
@@ -14120,7 +14766,7 @@ components:
       - tests
       type: object
     SyntheticsTriggerCITestLocation:
-      description: Synthetics location.
+      description: Synthetic location.
       properties:
         id:
           description: Unique identifier of the location.
@@ -14140,7 +14786,7 @@ components:
           format: int64
           type: integer
         public_id:
-          description: The public ID of the Synthetics test.
+          description: The public ID of the Synthetic test.
           type: string
         result_id:
           description: ID of the result.
@@ -14154,7 +14800,7 @@ components:
           nullable: true
           type: string
         locations:
-          description: List of Synthetics locations.
+          description: List of Synthetic locations.
           items:
             $ref: '#/components/schemas/SyntheticsTriggerCITestLocation'
           type: array
@@ -14164,9 +14810,9 @@ components:
             $ref: '#/components/schemas/SyntheticsTriggerCITestRunResult'
           type: array
         triggered_check_ids:
-          description: The public IDs of the Synthetics test triggered.
+          description: The public IDs of the Synthetic test triggered.
           items:
-            description: The public ID of the Synthetics test.
+            description: The public ID of the Synthetic test.
             type: string
           type: array
       type: object
@@ -14176,7 +14822,7 @@ components:
         metadata:
           $ref: '#/components/schemas/SyntheticsCIBatchMetadata'
         public_id:
-          description: The public ID of the Synthetics test to trigger.
+          description: The public ID of the Synthetic test to trigger.
           example: aaa-aaa-aaa
           type: string
       required:
@@ -14832,6 +15478,7 @@ components:
         analyzed_logs:
           description: Contains the number of analyzed logs.
           format: int64
+          nullable: true
           type: integer
         hour:
           description: The hour for the usage.
@@ -15158,6 +15805,7 @@ components:
         configured for usage attribution](https://docs.datadoghq.com/account_management/billing/usage_attribution/#getting-started).
 
         In this scenario the API returns the total usage, not broken down by tags.'
+      nullable: true
       type: object
     UsageAttributionValues:
       description: Fields in Usage Summary by tag(s).
@@ -15389,6 +16037,7 @@ components:
           description: The total number of audit logs lines indexed during a given
             hour.
           format: int64
+          nullable: true
           type: integer
         org_name:
           description: The organization name.
@@ -15667,22 +16316,26 @@ components:
         ci_pipeline_indexed_spans:
           description: The number of spans for pipelines in the queried hour.
           format: int64
+          nullable: true
           type: integer
         ci_test_indexed_spans:
           description: The number of spans for tests in the queried hour.
           format: int64
+          nullable: true
           type: integer
         ci_visibility_pipeline_committers:
           description: Shows the total count of all active Git committers for Pipelines
             in the current month. A committer is active if they commit at least 3
             times in a given month.
           format: int64
+          nullable: true
           type: integer
         ci_visibility_test_committers:
           description: The total count of all active Git committers for tests in the
             current month. A committer is active if they commit at least 3 times in
             a given month.
           format: int64
+          nullable: true
           type: integer
         org_name:
           description: The organization name.
@@ -15708,11 +16361,13 @@ components:
           description: "The total number of Cloud Workload Security container hours
             from the start of the given hour\u2019s month until the given hour."
           format: int64
+          nullable: true
           type: integer
         cws_host_count:
           description: "The total number of Cloud Workload Security host hours from
             the start of the given hour\u2019s month until the given hour."
           format: int64
+          nullable: true
           type: integer
         hour:
           description: The hour for the usage.
@@ -15870,11 +16525,13 @@ components:
           description: "The total number of Database Monitoring host hours from the
             start of the given hour\u2019s month until the given hour."
           format: int64
+          nullable: true
           type: integer
         dbm_queries_count:
           description: "The total number of normalized Database Monitoring queries
             from the start of the given hour\u2019s month until the given hour."
           format: int64
+          nullable: true
           type: integer
         hour:
           description: The hour for the usage.
@@ -15904,15 +16561,18 @@ components:
           description: The high-water mark of APM ECS Fargate tasks during the given
             hour.
           format: int64
+          nullable: true
           type: integer
         appsec_fargate_count:
           description: The Application Security Monitoring ECS Fargate tasks during
             the given hour.
           format: int64
+          nullable: true
           type: integer
         avg_profiled_fargate_tasks:
           description: The average profiled task count for Fargate Profiling.
           format: int64
+          nullable: true
           type: integer
         hour:
           description: The hour for the usage.
@@ -15927,6 +16587,7 @@ components:
         tasks_count:
           description: The number of Fargate tasks run.
           format: int64
+          nullable: true
           type: integer
       type: object
     UsageFargateResponse:
@@ -15948,6 +16609,7 @@ components:
 
             during a given hour that were running the Datadog Agent.'
           format: int64
+          nullable: true
           type: integer
         alibaba_host_count:
           description: 'Contains the total number of hosts that reported through Alibaba
@@ -15955,17 +16617,20 @@ components:
 
             (and were NOT running the Datadog Agent).'
           format: int64
+          nullable: true
           type: integer
         apm_azure_app_service_host_count:
           description: Contains the total number of Azure App Services hosts using
             APM.
           format: int64
+          nullable: true
           type: integer
         apm_host_count:
           description: 'Shows the total number of hosts using APM during the hour,
 
             these are counted as billable (except during trial periods).'
           format: int64
+          nullable: true
           type: integer
         aws_host_count:
           description: 'Contains the total number of hosts that reported through the
@@ -15973,6 +16638,7 @@ components:
 
             (and were NOT running the Datadog Agent).'
           format: int64
+          nullable: true
           type: integer
         azure_host_count:
           description: 'Contains the total number of hosts that reported through Azure
@@ -15980,11 +16646,13 @@ components:
 
             (and were NOT running the Datadog Agent).'
           format: int64
+          nullable: true
           type: integer
         container_count:
           description: Shows the total number of containers reported by the Docker
             integration during the hour.
           format: int64
+          nullable: true
           type: integer
         gcp_host_count:
           description: 'Contains the total number of hosts that reported through the
@@ -15992,11 +16660,13 @@ components:
 
             (and were NOT running the Datadog Agent).'
           format: int64
+          nullable: true
           type: integer
         heroku_host_count:
           description: Contains the total number of Heroku dynos reported by the Datadog
             Agent.
           format: int64
+          nullable: true
           type: integer
         host_count:
           description: 'Contains the total number of billable infrastructure hosts
@@ -16004,10 +16674,12 @@ components:
 
             This is the sum of `agent_host_count`, `aws_host_count`, and `gcp_host_count`.'
           format: int64
+          nullable: true
           type: integer
         hour:
           description: The hour for the usage.
           format: date-time
+          nullable: true
           type: string
         infra_azure_app_service:
           description: 'Contains the total number of hosts that reported through the
@@ -16015,16 +16687,19 @@ components:
 
             (and were NOT running the Datadog Agent).'
           format: int64
+          nullable: true
           type: integer
         opentelemetry_apm_host_count:
           description: Contains the total number of hosts using APM reported by Datadog
             exporter for the OpenTelemetry Collector.
           format: int64
+          nullable: true
           type: integer
         opentelemetry_host_count:
           description: Contains the total number of hosts reported by Datadog exporter
             for the OpenTelemetry Collector.
           format: int64
+          nullable: true
           type: integer
         org_name:
           description: The organization name.
@@ -16038,6 +16713,7 @@ components:
 
             (and were NOT running the Datadog Agent).'
           format: int64
+          nullable: true
           type: integer
       type: object
     UsageHostsResponse:
@@ -16061,6 +16737,7 @@ components:
           description: Contains the total number monthly active users from the start
             of the given hour's month until the given hour.
           format: int64
+          nullable: true
           type: integer
         org_name:
           description: The organization name.
@@ -16089,6 +16766,7 @@ components:
         indexed_events_count:
           description: Contains the number of spans indexed.
           format: int64
+          nullable: true
           type: integer
         org_name:
           description: The organization name.
@@ -16118,6 +16796,7 @@ components:
           description: Contains the total number of bytes ingested for APM spans during
             a given hour.
           format: int64
+          nullable: true
           type: integer
         org_name:
           description: The organization name.
@@ -16146,6 +16825,7 @@ components:
         iot_device_count:
           description: The total number of IoT devices during a given hour.
           format: int64
+          nullable: true
           type: integer
         org_name:
           description: The organization name.
@@ -16173,6 +16853,7 @@ components:
           description: Contains the number of different functions for each region
             and AWS account.
           format: int64
+          nullable: true
           type: integer
         hour:
           description: The hour for the usage.
@@ -16181,6 +16862,7 @@ components:
         invocations_sum:
           description: Contains the sum of invocations of all functions.
           format: int64
+          nullable: true
           type: integer
         org_name:
           description: The organization name.
@@ -16248,11 +16930,13 @@ components:
           description: Total logs indexed with this retention period during a given
             hour.
           format: int64
+          nullable: true
           type: integer
         live_indexed_events_count:
           description: Live logs indexed with this retention period during a given
             hour.
           format: int64
+          nullable: true
           type: integer
         org_name:
           description: The organization name.
@@ -16264,10 +16948,12 @@ components:
           description: Rehydrated logs indexed with this retention period during a
             given hour.
           format: int64
+          nullable: true
           type: integer
         retention:
           description: The retention period in days or "custom" for all custom retention
             usage.
+          nullable: true
           type: string
       type: object
     UsageLogsByRetentionResponse:
@@ -16286,6 +16972,7 @@ components:
         billable_ingested_bytes:
           description: Contains the number of billable log bytes ingested.
           format: int64
+          nullable: true
           type: integer
         hour:
           description: The hour for the usage.
@@ -16294,35 +16981,42 @@ components:
         indexed_events_count:
           description: Contains the number of log events indexed.
           format: int64
+          nullable: true
           type: integer
         ingested_events_bytes:
           description: Contains the number of log bytes ingested.
           format: int64
+          nullable: true
           type: integer
         logs_forwarding_events_bytes:
           description: Contains the number of logs forwarded bytes (data available
             as of April 1st 2023)
           format: int64
+          nullable: true
           type: integer
         logs_live_indexed_count:
           description: Contains the number of live log events indexed (data available
             as of December 1, 2020).
           format: int64
+          nullable: true
           type: integer
         logs_live_ingested_bytes:
           description: Contains the number of live log bytes ingested (data available
             as of December 1, 2020).
           format: int64
+          nullable: true
           type: integer
         logs_rehydrated_indexed_count:
           description: Contains the number of rehydrated log events indexed (data
             available as of December 1, 2020).
           format: int64
+          nullable: true
           type: integer
         logs_rehydrated_ingested_bytes:
           description: Contains the number of rehydrated log bytes ingested (data
             available as of December 1, 2020).
           format: int64
+          nullable: true
           type: integer
         org_name:
           description: The organization name.
@@ -16359,6 +17053,7 @@ components:
         indexed_events_count:
           description: Contains the number of netflow events indexed.
           format: int64
+          nullable: true
           type: integer
         org_name:
           description: The organization name.
@@ -16383,6 +17078,7 @@ components:
         host_count:
           description: Contains the number of active NPM hosts.
           format: int64
+          nullable: true
           type: integer
         hour:
           description: The hour for the usage.
@@ -16415,6 +17111,7 @@ components:
         online_archive_events_count:
           description: Total count of online archived events within the hour.
           format: int64
+          nullable: true
           type: integer
         org_name:
           description: The organization name.
@@ -16438,11 +17135,13 @@ components:
         avg_container_agent_count:
           description: Get average number of container agents for that hour.
           format: int64
+          nullable: true
           type: integer
         host_count:
           description: Contains the total number of profiled hosts reporting during
             a given hour.
           format: int64
+          nullable: true
           type: integer
         hour:
           description: The hour for the usage.
@@ -16539,10 +17238,12 @@ components:
         browser_rum_units:
           description: The number of browser RUM units.
           format: int64
+          nullable: true
           type: integer
         mobile_rum_units:
           description: The number of mobile RUM units.
           format: int64
+          nullable: true
           type: integer
         org_name:
           description: The organization name.
@@ -16575,12 +17276,14 @@ components:
             usage types by the Sensitive Data Scanner from the start of the given
             hour\u2019s month until the given hour."
           format: int64
+          nullable: true
           type: integer
         events_scanned_bytes:
           description: "The total number of bytes scanned of Events usage across all
             usage types by the Sensitive Data Scanner from the start of the given
             hour\u2019s month until the given hour."
           format: int64
+          nullable: true
           type: integer
         hour:
           description: The hour for the usage.
@@ -16591,6 +17294,7 @@ components:
             Data Scanner from the start of the given hour\u2019s month until the given
             hour."
           format: int64
+          nullable: true
           type: integer
         org_name:
           description: The organization name.
@@ -16603,12 +17307,14 @@ components:
             usage types by the Sensitive Data Scanner from the start of the given
             hour\u2019s month until the given hour."
           format: int64
+          nullable: true
           type: integer
         total_scanned_bytes:
           description: "The total number of bytes scanned across all usage types by
             the Sensitive Data Scanner from the start of the given hour\u2019s month
             until the given hour."
           format: int64
+          nullable: true
           type: integer
       type: object
     UsageSDSResponse:
@@ -16637,6 +17343,7 @@ components:
         snmp_devices:
           description: Contains the number of SNMP devices.
           format: int64
+          nullable: true
           type: integer
       type: object
     UsageSNMPResponse:
@@ -16837,9 +17544,19 @@ components:
             over all hours in the current month for all organizations.
           format: int64
           type: integer
+        cloud_cost_management_aws_host_count_avg:
+          description: Host count average of Cloud Cost Management for AWS for the
+            given date and given organization.
+          format: int64
+          type: integer
+        cloud_cost_management_azure_host_count_avg:
+          description: Host count average of Cloud Cost Management for Azure for the
+            given date and given organization.
+          format: int64
+          type: integer
         cloud_cost_management_host_count_avg:
-          description: Host count average of Cloud Cost Management for the given date
-            and given organization.
+          description: Host count average of Cloud Cost Management for all cloud providers
+            for the given date and given organization.
           format: int64
           type: integer
         container_avg:
@@ -17001,6 +17718,11 @@ components:
             all hours in the current date for all organizations.
           format: int64
           type: integer
+        mobile_rum_session_count_roku_sum:
+          description: Shows the sum of all mobile RUM Sessions on Roku over all hours
+            in the current date for all organizations.
+          format: int64
+          type: integer
         mobile_rum_session_count_sum:
           description: Shows the sum of all mobile RUM Sessions over all hours in
             the current date for all organizations
@@ -17134,6 +17856,11 @@ components:
             in the current date for all organizations.
           format: int64
           type: integer
+        vuln_management_host_count_top99p:
+          description: Shows the 99th percentile of all Application Vulnerability
+            Management hosts over all hours in the current date for the given org.
+          format: int64
+          type: integer
       type: object
     UsageSummaryDateOrg:
       description: Global hourly report of all data billed by Datadog for a given
@@ -17239,9 +17966,19 @@ components:
             over all hours in the current date for the given org.
           format: int64
           type: integer
+        cloud_cost_management_aws_host_count_avg:
+          description: Host count average of Cloud Cost Management for AWS for the
+            given date and given org.
+          format: int64
+          type: integer
+        cloud_cost_management_azure_host_count_avg:
+          description: Host count average of Cloud Cost Management for Azure for the
+            given date and given org.
+          format: int64
+          type: integer
         cloud_cost_management_host_count_avg:
-          description: Host count average of Cloud Cost Management for the given date
-            and given org.
+          description: Host count average of Cloud Cost Management for all cloud providers
+            for the given date and given org.
           format: int64
           type: integer
         container_avg:
@@ -17402,6 +18139,11 @@ components:
             all hours in the current date for the given org.
           format: int64
           type: integer
+        mobile_rum_session_count_roku_sum:
+          description: Shows the sum of all mobile RUM Sessions on Roku over all hours
+            in the current date for the given org.
+          format: int64
+          type: integer
         mobile_rum_session_count_sum:
           description: Shows the sum of all mobile RUM Sessions over all hours in
             the current date for the given org.
@@ -17539,6 +18281,11 @@ components:
             in the current date for the given org.
           format: int64
           type: integer
+        vuln_management_host_count_top99p:
+          description: Shows the 99th percentile of all Application Vulnerability
+            Management hosts over all hours in the current date for the given org.
+          format: int64
+          type: integer
       type: object
     UsageSummaryResponse:
       description: Response summarizing all usage aggregated across the months in
@@ -17650,8 +18397,19 @@ components:
             over all hours in the current months for all organizations.
           format: int64
           type: integer
+        cloud_cost_management_aws_host_count_avg_sum:
+          description: Sum of the host count average for Cloud Cost Management for
+            AWS.
+          format: int64
+          type: integer
+        cloud_cost_management_azure_host_count_avg_sum:
+          description: Sum of the host count average for Cloud Cost Management for
+            Azure.
+          format: int64
+          type: integer
         cloud_cost_management_host_count_avg_sum:
-          description: Sum of the host count average for Cloud Cost Management.
+          description: Sum of the host count average for Cloud Cost Management for
+            all cloud providers.
           format: int64
           type: integer
         container_avg_sum:
@@ -17841,6 +18599,11 @@ components:
             all hours in the current months for all organizations.
           format: int64
           type: integer
+        mobile_rum_session_count_roku_agg_sum:
+          description: Shows the sum of all mobile RUM Sessions on Roku over all hours
+            in the current months for all organizations.
+          format: int64
+          type: integer
         mobile_rum_units_agg_sum:
           description: Shows the sum of all mobile RUM units over all hours in the
             current months for all organizations.
@@ -17991,6 +18754,11 @@ components:
             in the current months for all organizations.
           format: int64
           type: integer
+        vuln_management_host_count_top99p_sum:
+          description: Shows the 99th percentile of all Application Vulnerability
+            Management hosts over all hours in the current months for all organizations.
+          format: int64
+          type: integer
       type: object
     UsageSyntheticsAPIHour:
       description: Number of Synthetics API tests run for each hour for a given organization.
@@ -17998,6 +18766,7 @@ components:
         check_calls_count:
           description: Contains the number of Synthetics API tests run.
           format: int64
+          nullable: true
           type: integer
         hour:
           description: The hour for the usage.
@@ -18027,6 +18796,7 @@ components:
         browser_check_calls_count:
           description: Contains the number of Synthetics Browser tests run.
           format: int64
+          nullable: true
           type: integer
         hour:
           description: The hour for the usage.
@@ -18164,6 +18934,7 @@ components:
         total_number_of_records:
           description: Total number of records.
           format: int64
+          nullable: true
           type: integer
       type: object
     UsageTopAvgMetricsResponse:
@@ -18430,25 +19201,26 @@ components:
       description: Axis controls for the widget.
       properties:
         include_zero:
-          description: True includes zero.
+          description: Set to `true` to include zero.
           type: boolean
         label:
-          description: The label of the axis to display on the graph.
+          description: The label of the axis to display on the graph. Only usable
+            on Scatterplot Widgets.
           type: string
         max:
           default: auto
-          description: Specifies the maximum value to show on the y-axis. It takes
-            a number, or auto for default behavior.
+          description: Specifies maximum numeric value to show on the axis. Defaults
+            to `auto`.
           type: string
         min:
           default: auto
-          description: Specifies minimum value to show on the y-axis. It takes a number,
-            or auto for default behavior.
+          description: Specifies minimum numeric value to show on the axis. Defaults
+            to `auto`.
           type: string
         scale:
           default: linear
           description: Specifies the scale type. Possible values are `linear`, `log`,
-            `sqrt`, `pow##` (for example `pow2`, `pow0.5` etc.).
+            `sqrt`, and `pow##` (for example `pow2` or `pow0.5`).
           type: string
       type: object
     WidgetChangeType:
@@ -20213,6 +20985,379 @@ paths:
       summary: Update a dashboard list
       tags:
       - Dashboard Lists
+      x-codegen-request-body-name: body
+  /api/v1/dashboard/public:
+    post:
+      description: Share a specified private dashboard, generating a URL at which
+        it can be publicly viewed.
+      operationId: CreatePublicDashboard
+      requestBody:
+        content:
+          application/json:
+            examples:
+              json-request-body:
+                value:
+                  dashboard_id: 123-abc-456
+                  dashboard_type: custom_timeboard
+                  share_type: open
+            schema:
+              $ref: '#/components/schemas/SharedDashboard'
+        description: Create a shared dashboard request body.
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SharedDashboard'
+          description: OK
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+          description: Bad Request
+        '403':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+          description: Forbidden
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+          description: Dashboard Not Found
+        '429':
+          $ref: '#/components/responses/TooManyRequestsResponse'
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ:
+        - dashboards_public_share
+      summary: Create a shared dashboard
+      tags:
+      - Dashboards
+      x-codegen-request-body-name: body
+  /api/v1/dashboard/public/{token}:
+    delete:
+      description: Revoke the public URL for a dashboard (rendering it private) associated
+        with the specified token.
+      operationId: DeletePublicDashboard
+      parameters:
+      - description: The token of the shared dashboard.
+        in: path
+        name: token
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeleteSharedDashboardResponse'
+          description: OK
+        '403':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+          description: Forbidden
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+          description: Shared Dashboard Not Found
+        '429':
+          $ref: '#/components/responses/TooManyRequestsResponse'
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ:
+        - dashboards_public_share
+      summary: Revoke a shared dashboard URL
+      tags:
+      - Dashboards
+    get:
+      description: Fetch an existing shared dashboard's sharing metadata associated
+        with the specified token.
+      operationId: GetPublicDashboard
+      parameters:
+      - description: The token of the shared dashboard. Generated when a dashboard
+          is shared.
+        in: path
+        name: token
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SharedDashboard'
+          description: OK
+        '403':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+          description: Forbidden
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+          description: Shared Dashboard Not Found
+        '429':
+          $ref: '#/components/responses/TooManyRequestsResponse'
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ:
+        - dashboards_read
+      summary: Get a shared dashboard
+      tags:
+      - Dashboards
+    put:
+      description: Update a shared dashboard associated with the specified token.
+      operationId: UpdatePublicDashboard
+      parameters:
+      - description: The token of the shared dashboard.
+        in: path
+        name: token
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            examples:
+              json-request-body:
+                value:
+                  global_time:
+                    live_span: 1h
+                  selectable_template_vars:
+                  - default_value: '*'
+                    name: exampleVar
+                    prefix: test
+                    visible_tags:
+                    - selectableValue1
+                    - selectableValue2
+                  share_list:
+                  - test@datadoghq.com
+                  - test2@datadoghq.com
+                  share_type: invite
+            schema:
+              $ref: '#/components/schemas/SharedDashboardUpdateRequest'
+        description: Update Dashboard request body.
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SharedDashboard'
+          description: OK
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+          description: Bad Request
+        '403':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+          description: Authentication Error
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+          description: Item Not Found
+        '429':
+          $ref: '#/components/responses/TooManyRequestsResponse'
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ:
+        - dashboards_public_share
+      summary: Update a shared dashboard
+      tags:
+      - Dashboards
+      x-codegen-request-body-name: body
+  /api/v1/dashboard/public/{token}/invitation:
+    delete:
+      description: Revoke previously sent invitation emails and active sessions used
+        to access a given shared dashboard for specific email addresses.
+      operationId: DeletePublicDashboardInvitation
+      parameters:
+      - description: The token of the shared dashboard.
+        in: path
+        name: token
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            examples:
+              json-request-body:
+                value:
+                  data:
+                    attributes:
+                      email: test@datadoghq.com
+                    type: public_dashboard_invitation
+            schema:
+              $ref: '#/components/schemas/SharedDashboardInvites'
+        description: Shared Dashboard Invitation deletion request body.
+        required: true
+      responses:
+        '204':
+          description: OK
+        '403':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+          description: Forbidden
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+          description: Not Found
+        '429':
+          $ref: '#/components/responses/TooManyRequestsResponse'
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ:
+        - dashboards_public_share
+      summary: Revoke shared dashboard invitations
+      tags:
+      - Dashboards
+      x-codegen-request-body-name: body
+    get:
+      description: Describe the invitations that exist for the given shared dashboard
+        (paginated).
+      operationId: GetPublicDashboardInvitations
+      parameters:
+      - description: Token of the shared dashboard for which to fetch invitations.
+        in: path
+        name: token
+        required: true
+        schema:
+          type: string
+      - description: The number of records to return in a single request.
+        in: query
+        name: page_size
+        required: false
+        schema:
+          format: int64
+          type: integer
+      - description: The page to access (base 0).
+        in: query
+        name: page_number
+        required: false
+        schema:
+          format: int64
+          type: integer
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SharedDashboardInvites'
+          description: OK
+        '403':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+          description: Forbidden
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+          description: Not Found
+        '429':
+          $ref: '#/components/responses/TooManyRequestsResponse'
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ:
+        - dashboards_public_share
+      summary: Get all invitations for a shared dashboard
+      tags:
+      - Dashboards
+    post:
+      description: Send emails to specified email addresses containing links to access
+        a given authenticated shared dashboard. Email addresses must already belong
+        to the authenticated shared dashboard's share_list.
+      operationId: SendPublicDashboardInvitation
+      parameters:
+      - description: The token of the shared dashboard.
+        in: path
+        name: token
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            examples:
+              json-request-body:
+                value:
+                  data:
+                  - attributes:
+                      email: test@datadoghq.com
+                    type: public_dashboard_invitation
+            schema:
+              $ref: '#/components/schemas/SharedDashboardInvites'
+        description: Shared Dashboard Invitation request body.
+        required: true
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SharedDashboardInvites'
+          description: OK
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+          description: Bad Request
+        '403':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+          description: Forbidden
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+          description: Not Found
+        '429':
+          $ref: '#/components/responses/TooManyRequestsResponse'
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ:
+        - dashboards_public_share
+      summary: Send shared dashboard invitation email
+      tags:
+      - Dashboards
       x-codegen-request-body-name: body
   /api/v1/dashboard/{dashboard_id}:
     delete:
@@ -22037,7 +23182,9 @@ paths:
       x-codegen-request-body-name: body
   /api/v1/integration/gcp:
     delete:
-      description: Delete a given Datadog-GCP integration.
+      deprecated: true
+      description: "This endpoint is deprecated \u2013 use the V2 endpoints instead.
+        Delete a given Datadog-GCP integration."
       operationId: DeleteGCPIntegration
       requestBody:
         content:
@@ -22073,7 +23220,9 @@ paths:
       - GCP Integration
       x-codegen-request-body-name: body
     get:
-      description: List all Datadog-GCP integrations configured in your Datadog account.
+      deprecated: true
+      description: "This endpoint is deprecated \u2013 use the V2 endpoints instead.
+        List all Datadog-GCP integrations configured in your Datadog account."
       operationId: ListGCPIntegration
       responses:
         '200':
@@ -22100,7 +23249,9 @@ paths:
       tags:
       - GCP Integration
     post:
-      description: Create a Datadog-GCP integration.
+      deprecated: true
+      description: "This endpoint is deprecated \u2013 use the V2 endpoints instead.
+        Create a Datadog-GCP integration."
       operationId: CreateGCPIntegration
       requestBody:
         content:
@@ -22136,14 +23287,12 @@ paths:
       - GCP Integration
       x-codegen-request-body-name: body
     put:
-      description: 'Update a Datadog-GCP integrations host_filters and/or auto-mute.
-
-        Requires a `project_id` and `client_email`, however these fields cannot be
-        updated.
-
-        If you need to update these fields, delete and use the create (`POST`) endpoint.
-
-        The unspecified fields will keep their original values.'
+      deprecated: true
+      description: "This endpoint is deprecated \u2013 use the V2 endpoints instead.
+        Update a Datadog-GCP integrations host_filters and/or auto-mute.\nRequires
+        a `project_id` and `client_email`, however these fields cannot be updated.\nIf
+        you need to update these fields, delete and use the create (`POST`) endpoint.\nThe
+        unspecified fields will keep their original values."
       operationId: UpdateGCPIntegration
       requestBody:
         content:
@@ -23663,6 +24812,8 @@ paths:
 
         - error-tracking: `error-tracking alert`
 
+        - database-monitoring: `database-monitoring alert`
+
 
         **Note**: Synthetic monitors are created through the Synthetics API. See the
         [Synthetics API] (https://docs.datadoghq.com/api/latest/synthetics/) documentation
@@ -23672,7 +24823,7 @@ paths:
         #### Query Types
 
 
-        **Metric Alert Query**
+        ##### Metric Alert Query
 
 
         Example: `time_aggr(time_window):space_aggr:metric{tags} [by {key}] operator
@@ -23720,7 +24871,7 @@ paths:
         ''dbscan'', 7) > 0`
 
 
-        **Service Check Query**
+        ##### Service Check Query
 
 
         Example: `"check".over(tags).last(count).by(group).count_by_status()`
@@ -23746,7 +24897,7 @@ paths:
         for more information.
 
 
-        **Event Alert Query**
+        ##### Event Alert Query
 
 
         Example: `events(''sources:nagios status:error,warning priority:normal tags:
@@ -23782,7 +24933,7 @@ paths:
         V2 Alert Query. For more information, see the [Event Migration guide](https://docs.datadoghq.com/events/guides/migrating_to_new_events_features/).
 
 
-        **Event V2 Alert Query**
+        ##### Event V2 Alert Query
 
 
         Example: `events(query).rollup(rollup_method[, measure]).last(time_window)
@@ -23803,7 +24954,7 @@ paths:
         - `#` an integer or decimal number used to set the threshold.
 
 
-        **Process Alert Query**
+        ##### Process Alert Query
 
 
         Example: `processes(search).over(tags).rollup(''count'').last(timeframe) operator
@@ -23825,7 +24976,7 @@ paths:
         - `#` an integer or decimal number used to set the threshold
 
 
-        **Logs Alert Query**
+        ##### Logs Alert Query
 
 
         Example: `logs(query).index(index_name).rollup(rollup_method[, measure]).last(time_window)
@@ -23849,7 +25000,7 @@ paths:
         - `#` an integer or decimal number used to set the threshold.
 
 
-        **Composite Query**
+        ##### Composite Query
 
 
         Example: `12345 && 67890`, where `12345` and `67890` are the IDs of non-composite
@@ -23875,7 +25026,7 @@ paths:
         UI.
 
 
-        **SLO Alert Query**
+        ##### SLO Alert Query
 
 
         Example: `error_budget("slo_id").over("time_window") operator #`
@@ -23890,7 +25041,7 @@ paths:
         - `operator`: `>=` or `>`
 
 
-        **Audit Alert Query**
+        ##### Audit Alert Query
 
 
         Example: `audits(query).rollup(rollup_method[, measure]).last(time_window)
@@ -23915,7 +25066,7 @@ paths:
         and US5.
 
 
-        **CI Pipelines Alert Query**
+        ##### CI Pipelines Alert Query
 
 
         Example: `ci-pipelines(query).rollup(rollup_method[, measure]).last(time_window)
@@ -23940,7 +25091,7 @@ paths:
         **NOTE** CI Pipeline monitors are in alpha on US1, EU, AP1, US3, and US5.
 
 
-        **CI Tests Alert Query**
+        ##### CI Tests Alert Query
 
 
         Example: `ci-tests(query).rollup(rollup_method[, measure]).last(time_window)
@@ -23966,7 +25117,7 @@ paths:
         US3, and US5.
 
 
-        **Error Tracking Alert Query**
+        ##### Error Tracking Alert Query
 
 
         Example(RUM): `error-tracking-rum(query).rollup(rollup_method[, measure]).last(time_window)
@@ -23988,7 +25139,32 @@ paths:
 
         - `operator` `<`, `<=`, `>`, `>=`, `==`, or `!=`.
 
-        - `#` an integer or decimal number used to set the threshold.'
+        - `#` an integer or decimal number used to set the threshold.
+
+
+        **Database Monitoring Alert Query**
+
+
+        Example: `database-monitoring(query).rollup(rollup_method[, measure]).last(time_window)
+        operator #`
+
+
+        - `query` The search query - following the [Log search syntax](https://docs.datadoghq.com/logs/search_syntax/).
+
+        - `rollup_method` The stats roll-up method - supports `count`, `avg`, and
+        `cardinality`.
+
+        - `measure` For `avg` and cardinality `rollup_method` - specify the measure
+        or the facet name you want to use.
+
+        - `time_window` #m (between 1 and 2880), #h (between 1 and 48).
+
+        - `operator` `<`, `<=`, `>`, `>=`, `==`, or `!=`.
+
+        - `#` an integer or decimal number used to set the threshold.
+
+
+        **NOTE** Database Monitoring monitors are in alpha on US1.'
       operationId: CreateMonitor
       requestBody:
         content:
@@ -24387,6 +25563,13 @@ paths:
         required: false
         schema:
           type: string
+      - description: If this argument is set to true, then the returned data includes
+          all current active downtimes for the monitor.
+        in: query
+        name: with_downtimes
+        required: false
+        schema:
+          type: boolean
       responses:
         '200':
           content:
@@ -24523,7 +25706,7 @@ paths:
         appKeyAuth: []
       - AuthZ:
         - monitors_read
-      summary: Get all downtimes for a monitor
+      summary: Get active downtimes for a monitor
       tags:
       - Downtimes
       x-codegen-request-body-name: body
@@ -26065,38 +27248,6 @@ paths:
           description: Forbidden
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
-      servers:
-      - url: https://{subdomain}.{site}
-        variables:
-          site:
-            default: datadoghq.com
-            description: The regional site for Datadog customers.
-            enum:
-            - datadoghq.com
-            - datadoghq.eu
-            - us3.datadoghq.com
-            - us5.datadoghq.com
-            - ap1.datadoghq.com
-            - ddog-gov.com
-          subdomain:
-            default: api
-            description: The subdomain where the API is deployed.
-      - url: '{protocol}://{name}'
-        variables:
-          name:
-            default: api.datadoghq.com
-            description: Full site DNS name.
-          protocol:
-            default: https
-            description: The protocol for accessing the API.
-      - url: https://{subdomain}.{site}
-        variables:
-          site:
-            default: datadoghq.com
-            description: Any Datadog deployment.
-          subdomain:
-            default: api
-            description: The subdomain where the API is deployed.
       summary: Search for SLOs
       tags:
       - Service Level Objectives
@@ -26423,7 +27574,7 @@ paths:
       - Synthetics
   /api/v1/synthetics/private-locations:
     post:
-      description: Create a new Synthetics private location.
+      description: Create a new Synthetic private location.
       operationId: CreatePrivateLocation
       requestBody:
         content:
@@ -26464,7 +27615,7 @@ paths:
       x-codegen-request-body-name: body
   /api/v1/synthetics/private-locations/{location_id}:
     delete:
-      description: Delete a Synthetics private location.
+      description: Delete a Synthetic private location.
       operationId: DeletePrivateLocation
       parameters:
       - description: The ID of the private location.
@@ -26495,7 +27646,7 @@ paths:
       tags:
       - Synthetics
     get:
-      description: Get a Synthetics private location.
+      description: Get a Synthetic private location.
       operationId: GetPrivateLocation
       parameters:
       - description: The ID of the private location.
@@ -26530,7 +27681,7 @@ paths:
       tags:
       - Synthetics
     put:
-      description: Edit a Synthetics private location.
+      description: Edit a Synthetic private location.
       operationId: UpdatePrivateLocation
       parameters:
       - description: The ID of the private location.
@@ -26572,6 +27723,27 @@ paths:
       tags:
       - Synthetics
       x-codegen-request-body-name: body
+  /api/v1/synthetics/settings/default_locations:
+    get:
+      description: Get the default locations settings.
+      operationId: GetSyntheticsDefaultLocations
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SyntheticsDefaultLocations'
+          description: OK
+        '429':
+          $ref: '#/components/responses/TooManyRequestsResponse'
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ:
+        - synthetics_default_settings_read
+      summary: Get the default locations
+      tags:
+      - Synthetics
   /api/v1/synthetics/tests:
     get:
       description: Get the list of all Synthetic tests.
@@ -26606,7 +27778,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
-          description: Synthetics is not activated for the user.
+          description: Synthetic Monitoring is not activated for the user.
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
       security:
@@ -26968,7 +28140,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
-          description: '- Synthetic is not activated for the user
+          description: '- Synthetic Monitoring is not activated for the user
 
             - Test is not owned by the user'
         '429':
@@ -27042,7 +28214,7 @@ paths:
       x-codegen-request-body-name: body
   /api/v1/synthetics/tests/browser/{public_id}/results:
     get:
-      description: Get the last 50 test results summaries for a given Synthetics Browser
+      description: Get the last 150 test results summaries for a given Synthetic browser
         test.
       operationId: GetBrowserTestLatestResults
       parameters:
@@ -27094,7 +28266,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
-          description: '- Synthetic is not activated for the user
+          description: '- Synthetic Monitoring is not activated for the user
 
             - Test is not owned by the user'
         '429':
@@ -27110,7 +28282,7 @@ paths:
       x-codegen-request-body-name: body
   /api/v1/synthetics/tests/browser/{public_id}/results/{result_id}:
     get:
-      description: Get a specific full result from a given (browser) Synthetic test.
+      description: Get a specific full result from a given Synthetic browser test.
       operationId: GetBrowserTestResult
       parameters:
       - description: 'The public ID of the browser test to which the target result
@@ -27145,7 +28317,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
-          description: '- Synthetic is not activated for the user
+          description: '- Synthetic Monitoring is not activated for the user
 
             - Test or result is not owned by the user'
         '429':
@@ -27200,7 +28372,7 @@ paths:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: '- Tests to be deleted can''t be found
 
-            - Synthetics is not activated for the user'
+            - Synthetic is not activated for the user'
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
       security:
@@ -27214,7 +28386,7 @@ paths:
       x-codegen-request-body-name: body
   /api/v1/synthetics/tests/trigger:
     post:
-      description: Trigger a set of Synthetics tests.
+      description: Trigger a set of Synthetic tests.
       operationId: TriggerTests
       requestBody:
         content:
@@ -27243,13 +28415,13 @@ paths:
         appKeyAuth: []
       - AuthZ:
         - synthetics_write
-      summary: Trigger Synthetics tests
+      summary: Trigger Synthetic tests
       tags:
       - Synthetics
       x-codegen-request-body-name: body
   /api/v1/synthetics/tests/trigger/ci:
     post:
-      description: Trigger a set of Synthetics tests for continuous integration.
+      description: Trigger a set of Synthetic tests for continuous integration.
       operationId: TriggerCITests
       requestBody:
         content:
@@ -27284,7 +28456,7 @@ paths:
       x-codegen-request-body-name: body
   /api/v1/synthetics/tests/{public_id}:
     get:
-      description: Get the detailed configuration associated with a Synthetics test.
+      description: Get the detailed configuration associated with a Synthetic test.
       operationId: GetTest
       parameters:
       - description: The public ID of the test to get details from.
@@ -27326,7 +28498,7 @@ paths:
       - Synthetics
   /api/v1/synthetics/tests/{public_id}/results:
     get:
-      description: Get the last 50 test results summaries for a given Synthetics API
+      description: Get the last 150 test results summaries for a given Synthetic API
         test.
       operationId: GetAPITestLatestResults
       parameters:
@@ -27392,7 +28564,7 @@ paths:
       x-codegen-request-body-name: body
   /api/v1/synthetics/tests/{public_id}/results/{result_id}:
     get:
-      description: Get a specific full result from a given (API) Synthetic test.
+      description: Get a specific full result from a given Synthetic API test.
       operationId: GetAPITestResult
       parameters:
       - description: The public ID of the API test to which the target result belongs.
@@ -27425,7 +28597,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
-          description: '- Synthetic is not activated for the user
+          description: '- Synthetic Monitoring is not activated for the user
 
             - Test or result is not owned by the user'
         '429':
@@ -27440,7 +28612,7 @@ paths:
       - Synthetics
   /api/v1/synthetics/tests/{public_id}/status:
     put:
-      description: Pause or start a Synthetics test by changing the status.
+      description: Pause or start a Synthetic test by changing the status.
       operationId: UpdateTestPauseStatus
       parameters:
       - description: The public ID of the Synthetic test to update.
@@ -27480,7 +28652,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
-          description: '- Synthetic is not activated for the user
+          description: '- Synthetic Monitoring is not activated for the user
 
             - Test is not owned by the user'
         '429':
@@ -27496,7 +28668,7 @@ paths:
       x-codegen-request-body-name: body
   /api/v1/synthetics/variables:
     get:
-      description: Get the list of all Synthetics global variables.
+      description: Get the list of all Synthetic global variables.
       operationId: ListGlobalVariables
       responses:
         '200':
@@ -27522,7 +28694,7 @@ paths:
       tags:
       - Synthetics
     post:
-      description: Create a Synthetics global variable.
+      description: Create a Synthetic global variable.
       operationId: CreateGlobalVariable
       requestBody:
         content:
@@ -27563,7 +28735,7 @@ paths:
       x-codegen-request-body-name: body
   /api/v1/synthetics/variables/{variable_id}:
     delete:
-      description: Delete a Synthetics global variable.
+      description: Delete a Synthetic global variable.
       operationId: DeleteGlobalVariable
       parameters:
       - description: The ID of the global variable.
@@ -27643,7 +28815,7 @@ paths:
       tags:
       - Synthetics
     put:
-      description: Edit a Synthetics global variable.
+      description: Edit a Synthetic global variable.
       operationId: EditGlobalVariable
       parameters:
       - description: The ID of the global variable.
@@ -30745,12 +31917,13 @@ tags:
   name: Slack Integration
 - description: Take graph snapshots using the API.
   name: Snapshots
-- description: "Datadog Synthetics uses simulated user requests and browser rendering
-    to help you ensure uptime,\nidentify regional issues, and track your application
-    performance. Datadog Synthetics tests come in\ntwo different flavors, [API tests](https://docs.datadoghq.com/synthetics/api_tests/?tab=httptest)\nand
-    [browser tests](https://docs.datadoghq.com/synthetics/browser_tests). You can
-    use Datadog\u2019s API to\nmanage both test types programmatically.\n\nFor more
-    information about Synthetics, see the [Synthetics overview](https://docs.datadoghq.com/synthetics/)."
+- description: "Datadog Synthetic Monitoring uses simulated user requests and browser
+    rendering to help you ensure uptime,\nidentify regional issues, and track your
+    application performance. Synthetic tests come in\ntwo different flavors, [API
+    tests](https://docs.datadoghq.com/synthetics/api_tests/?tab=httptest)\nand [browser
+    tests](https://docs.datadoghq.com/synthetics/browser_tests). You can use Datadog\u2019s
+    API to\nmanage both test types programmatically.\n\nFor more information, see
+    the [Synthetic Monitoring documentation](https://docs.datadoghq.com/synthetics/)."
   name: Synthetics
 - description: 'The tag endpoint allows you to assign tags to hosts,
 

@@ -83,6 +83,21 @@ class FormulaAndFunctionQueryDefinition(ModelComposed):
 
         :param stat: APM statistic.
         :type stat: FormulaAndFunctionApmDependencyStatName
+
+        :param additional_query_filters: Additional filters applied to the SLO query.
+        :type additional_query_filters: str, optional
+
+        :param group_mode: Group mode to query measures.
+        :type group_mode: FormulaAndFunctionSLOGroupMode, optional
+
+        :param measure: SLO measures queries.
+        :type measure: FormulaAndFunctionSLOMeasure
+
+        :param slo_id: ID of an SLO to query measures.
+        :type slo_id: str
+
+        :param slo_query_type: Name of the query for use in formulas.
+        :type slo_query_type: FormulaAndFunctionSLOQueryType, optional
         """
         super().__init__(kwargs)
 
@@ -110,6 +125,12 @@ class FormulaAndFunctionQueryDefinition(ModelComposed):
         from datadog_api_client.v1.model.formula_and_function_apm_resource_stats_query_definition import (
             FormulaAndFunctionApmResourceStatsQueryDefinition,
         )
+        from datadog_api_client.v1.model.formula_and_function_slo_query_definition import (
+            FormulaAndFunctionSLOQueryDefinition,
+        )
+        from datadog_api_client.v1.model.formula_and_function_cloud_cost_query_definition import (
+            FormulaAndFunctionCloudCostQueryDefinition,
+        )
 
         return {
             "oneOf": [
@@ -118,5 +139,7 @@ class FormulaAndFunctionQueryDefinition(ModelComposed):
                 FormulaAndFunctionProcessQueryDefinition,
                 FormulaAndFunctionApmDependencyStatsQueryDefinition,
                 FormulaAndFunctionApmResourceStatsQueryDefinition,
+                FormulaAndFunctionSLOQueryDefinition,
+                FormulaAndFunctionCloudCostQueryDefinition,
             ],
         }

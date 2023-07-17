@@ -15,6 +15,8 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v1.model.notify_end_state import NotifyEndState
+    from datadog_api_client.v1.model.notify_end_type import NotifyEndType
     from datadog_api_client.v1.model.downtime_recurrence import DowntimeRecurrence
 
 
@@ -34,6 +36,8 @@ class DowntimeChild(ModelNormal):
 
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v1.model.notify_end_state import NotifyEndState
+        from datadog_api_client.v1.model.notify_end_type import NotifyEndType
         from datadog_api_client.v1.model.downtime_recurrence import DowntimeRecurrence
 
         return {
@@ -44,10 +48,12 @@ class DowntimeChild(ModelNormal):
             "downtime_type": (int,),
             "end": (int, none_type),
             "id": (int,),
-            "message": (str,),
+            "message": (str, none_type),
             "monitor_id": (int, none_type),
             "monitor_tags": ([str],),
             "mute_first_recovery_notification": (bool,),
+            "notify_end_states": ([NotifyEndState],),
+            "notify_end_types": ([NotifyEndType],),
             "parent_id": (int, none_type),
             "recurrence": (DowntimeRecurrence,),
             "scope": ([str],),
@@ -68,6 +74,8 @@ class DowntimeChild(ModelNormal):
         "monitor_id": "monitor_id",
         "monitor_tags": "monitor_tags",
         "mute_first_recovery_notification": "mute_first_recovery_notification",
+        "notify_end_states": "notify_end_states",
+        "notify_end_types": "notify_end_types",
         "parent_id": "parent_id",
         "recurrence": "recurrence",
         "scope": "scope",
@@ -93,10 +101,12 @@ class DowntimeChild(ModelNormal):
         downtime_type: Union[int, UnsetType] = unset,
         end: Union[int, none_type, UnsetType] = unset,
         id: Union[int, UnsetType] = unset,
-        message: Union[str, UnsetType] = unset,
+        message: Union[str, none_type, UnsetType] = unset,
         monitor_id: Union[int, none_type, UnsetType] = unset,
         monitor_tags: Union[List[str], UnsetType] = unset,
         mute_first_recovery_notification: Union[bool, UnsetType] = unset,
+        notify_end_states: Union[List[NotifyEndState], UnsetType] = unset,
+        notify_end_types: Union[List[NotifyEndType], UnsetType] = unset,
         parent_id: Union[int, none_type, UnsetType] = unset,
         recurrence: Union[DowntimeRecurrence, none_type, UnsetType] = unset,
         scope: Union[List[str], UnsetType] = unset,
@@ -135,7 +145,7 @@ class DowntimeChild(ModelNormal):
 
         :param message: A message to include with notifications for this downtime.
             Email notifications can be sent to specific users by using the same ``@username`` notation as events.
-        :type message: str, optional
+        :type message: str, none_type, optional
 
         :param monitor_id: A single monitor to which the downtime applies.
             If not provided, the downtime applies to all monitors.
@@ -149,6 +159,15 @@ class DowntimeChild(ModelNormal):
 
         :param mute_first_recovery_notification: If the first recovery notification during a downtime should be muted.
         :type mute_first_recovery_notification: bool, optional
+
+        :param notify_end_states: States for which ``notify_end_types`` sends out notifications for.
+        :type notify_end_states: [NotifyEndState], optional
+
+        :param notify_end_types: If set, notifies if a monitor is in an alert-worthy state ( ``ALERT`` , ``WARNING`` , or ``NO DATA`` )
+            when this downtime expires or is canceled. Applied to monitors that change states during
+            the downtime (such as from ``OK`` to ``ALERT`` , ``WARNING`` , or ``NO DATA`` ), and to monitors that
+            already have an alert-worthy state when downtime begins.
+        :type notify_end_types: [NotifyEndType], optional
 
         :param parent_id: ID of the parent Downtime.
         :type parent_id: int, none_type, optional
@@ -193,6 +212,10 @@ class DowntimeChild(ModelNormal):
             kwargs["monitor_tags"] = monitor_tags
         if mute_first_recovery_notification is not unset:
             kwargs["mute_first_recovery_notification"] = mute_first_recovery_notification
+        if notify_end_states is not unset:
+            kwargs["notify_end_states"] = notify_end_states
+        if notify_end_types is not unset:
+            kwargs["notify_end_types"] = notify_end_types
         if parent_id is not unset:
             kwargs["parent_id"] = parent_id
         if recurrence is not unset:

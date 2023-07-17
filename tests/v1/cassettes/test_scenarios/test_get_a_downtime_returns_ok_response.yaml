@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"message":"Test-Get_a_downtime_returns_OK_response-1652348996","recurrence":{"period":1,"type":"weeks","until_date":1654163396,"week_days":["Mon","Tue","Wed","Thu","Fri"]},"scope":["test:testgetadowntimereturnsokresponse1652348996"],"start":1652348996,"timezone":"Etc/UTC"}'
+    body: '{"end":1684769410,"message":"Test-Get_a_downtime_returns_OK_response-1684765810","recurrence":{"period":1,"type":"weeks","until_date":1686580210,"week_days":["Mon","Tue","Wed","Thu","Fri"]},"scope":["test:testgetadowntimereturnsokresponse1684765810"],"start":1684765810,"timezone":"Etc/UTC"}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,10 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/downtime
   response:
     body:
-      string: '{"recurrence":{"until_date":1654163396,"until_occurrences":null,"week_days":["Mon","Tue","Wed","Thu","Fri"],"type":"weeks","period":1},"end":null,"monitor_tags":["*"],"child_id":null,"canceled":null,"monitor_id":null,"mute_first_recovery_notification":false,"created":1652348997,"org_id":321813,"modified":1652348997,"disabled":false,"start":1652348996,"creator_id":1445416,"parent_id":null,"timezone":"Etc/UTC","active":true,"scope":["test:testgetadowntimereturnsokresponse1652348996"],"message":"Test-Get_a_downtime_returns_OK_response-1652348996","downtime_type":2,"id":1944162261,"updater_id":null}'
+      string: '{"id":2941966869,"monitor_id":null,"org_id":321813,"start":1684765810,"end":1684769410,"canceled":null,"created":1684765810,"modified":1684765810,"message":"Test-Get_a_downtime_returns_OK_response-1684765810","active":true,"disabled":false,"recurrence":{"type":"weeks","period":1,"week_days":["Mon","Tue","Wed","Thu","Fri"],"until_occurrences":null,"until_date":1686580210},"timezone":"Etc/UTC","parent_id":null,"child_id":null,"creator_id":1445416,"updater_id":null,"downtime_type":2,"status":"active","monitor_tags":["*"],"mute_first_recovery_notification":false,"notify_end_types":["expired"],"notify_end_states":["alert","no
+        data","warn"],"uuid":"286629f8-f8ad-11ed-9901-da7ad0900002","scope":["test:testgetadowntimereturnsokresponse1684765810"]}
+
+        '
     headers:
       content-type:
       - application/json
@@ -23,10 +26,13 @@ interactions:
       accept:
       - application/json
     method: GET
-    uri: https://api.datadoghq.com/api/v1/downtime/1944162261
+    uri: https://api.datadoghq.com/api/v1/downtime/2941966869
   response:
     body:
-      string: '{"recurrence":{"until_date":1654163396,"until_occurrences":null,"week_days":["Mon","Tue","Wed","Thu","Fri"],"type":"weeks","period":1},"end":null,"monitor_tags":["*"],"child_id":null,"canceled":null,"monitor_id":null,"mute_first_recovery_notification":false,"created":1652348997,"org_id":321813,"modified":1652348997,"disabled":false,"start":1652348996,"creator_id":1445416,"parent_id":null,"timezone":"Etc/UTC","active":true,"scope":["test:testgetadowntimereturnsokresponse1652348996"],"message":"Test-Get_a_downtime_returns_OK_response-1652348996","downtime_type":2,"id":1944162261,"updater_id":null}'
+      string: '{"id":2941966869,"monitor_id":null,"org_id":321813,"start":1684765810,"end":1684769410,"canceled":null,"created":1684765810,"modified":1684765810,"message":"Test-Get_a_downtime_returns_OK_response-1684765810","active":true,"disabled":false,"recurrence":{"type":"weeks","period":1,"week_days":["Mon","Tue","Wed","Thu","Fri"],"until_occurrences":null,"until_date":1686580210},"timezone":"Etc/UTC","parent_id":null,"child_id":null,"creator_id":1445416,"updater_id":null,"downtime_type":2,"status":"active","monitor_tags":["*"],"mute_first_recovery_notification":false,"notify_end_types":["expired"],"notify_end_states":["alert","no
+        data","warn"],"uuid":"286629f8-f8ad-11ed-9901-da7ad0900002","scope":["test:testgetadowntimereturnsokresponse1684765810"]}
+
+        '
     headers:
       content-type:
       - application/json
@@ -39,11 +45,13 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/downtime/1944162261
+    uri: https://api.datadoghq.com/api/v1/downtime/2941966869
   response:
     body:
       string: ''
-    headers: {}
+    headers:
+      content-type:
+      - text/html; charset=utf-8
     status:
       code: 204
       message: No Content

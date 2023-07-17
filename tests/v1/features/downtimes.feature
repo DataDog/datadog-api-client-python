@@ -67,21 +67,21 @@ Feature: Downtimes
     And the response "message" has the same value as "downtime.message"
 
   @generated @skip @team:DataDog/monitor-app
-  Scenario: Get all downtimes for a monitor returns "Bad Request" response
+  Scenario: Get active downtimes for a monitor returns "Bad Request" response
     Given new "ListMonitorDowntimes" request
     And request contains "monitor_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/monitor-app
-  Scenario: Get all downtimes for a monitor returns "Monitor Not Found error" response
+  Scenario: Get active downtimes for a monitor returns "Monitor Not Found error" response
     Given new "ListMonitorDowntimes" request
     And request contains "monitor_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Monitor Not Found error
 
   @generated @skip @team:DataDog/monitor-app
-  Scenario: Get all downtimes for a monitor returns "OK" response
+  Scenario: Get active downtimes for a monitor returns "OK" response
     Given new "ListMonitorDowntimes" request
     And request contains "monitor_id" parameter from "REPLACE.ME"
     When the request is sent
@@ -115,11 +115,13 @@ Feature: Downtimes
   @team:DataDog/monitor-app
   Scenario: Schedule a downtime returns "OK" response
     Given new "CreateDowntime" request
-    And body with value {"message": "{{ unique }}", "start": {{ timestamp("now") }}, "timezone": "Etc/UTC", "scope": ["test:{{ unique_lower_alnum }}"], "recurrence": {"type": "weeks", "period": 1, "week_days": ["Mon", "Tue", "Wed", "Thu", "Fri"], "until_date": {{ timestamp("now + 21d")}} }}
+    And body with value {"message": "{{ unique }}", "start": {{ timestamp("now") }}, "end": {{ timestamp("now + 1h") }}, "timezone": "Etc/UTC", "scope": ["test:{{ unique_lower_alnum }}"], "recurrence": {"type": "weeks", "period": 1, "week_days": ["Mon", "Tue", "Wed", "Thu", "Fri"], "until_date": {{ timestamp("now + 21d")}} }, "notify_end_states": ["alert", "no data", "warn"], "notify_end_types": ["canceled", "expired"]}
     When the request is sent
     Then the response status is 200 OK
     And the response "message" is equal to "{{ unique }}"
     And the response "active" is equal to true
+    And the response "notify_end_states" array contains value "alert"
+    And the response "notify_end_types" array contains value "canceled"
 
   @team:DataDog/monitor-app
   Scenario: Schedule a downtime until date
@@ -175,7 +177,7 @@ Feature: Downtimes
   Scenario: Update a downtime returns "Bad Request" response
     Given new "UpdateDowntime" request
     And request contains "downtime_id" parameter from "REPLACE.ME"
-    And body with value {"disabled": false, "end": 1412793983, "message": "Message on the downtime", "monitor_id": 123456, "monitor_tags": ["*"], "mute_first_recovery_notification": false, "parent_id": 123, "recurrence": {"period": 1, "rrule": "FREQ=MONTHLY;BYSETPOS=3;BYDAY=WE;INTERVAL=1", "type": "weeks", "until_date": 1447786293, "until_occurrences": 2, "week_days": ["Mon", "Tue"]}, "scope": ["env:staging"], "start": 1412792983, "timezone": "America/New_York"}
+    And body with value {"disabled": false, "end": 1412793983, "message": "Message on the downtime", "monitor_id": 123456, "monitor_tags": ["*"], "mute_first_recovery_notification": false, "notify_end_states": ["alert", "no data", "warn"], "notify_end_types": ["canceled", "expired"], "parent_id": 123, "recurrence": {"period": 1, "rrule": "FREQ=MONTHLY;BYSETPOS=3;BYDAY=WE;INTERVAL=1", "type": "weeks", "until_date": 1447786293, "until_occurrences": 2, "week_days": ["Mon", "Tue"]}, "scope": ["env:staging"], "start": 1412792983, "timezone": "America/New_York"}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -183,7 +185,7 @@ Feature: Downtimes
   Scenario: Update a downtime returns "Downtime not found" response
     Given new "UpdateDowntime" request
     And request contains "downtime_id" parameter from "REPLACE.ME"
-    And body with value {"disabled": false, "end": 1412793983, "message": "Message on the downtime", "monitor_id": 123456, "monitor_tags": ["*"], "mute_first_recovery_notification": false, "parent_id": 123, "recurrence": {"period": 1, "rrule": "FREQ=MONTHLY;BYSETPOS=3;BYDAY=WE;INTERVAL=1", "type": "weeks", "until_date": 1447786293, "until_occurrences": 2, "week_days": ["Mon", "Tue"]}, "scope": ["env:staging"], "start": 1412792983, "timezone": "America/New_York"}
+    And body with value {"disabled": false, "end": 1412793983, "message": "Message on the downtime", "monitor_id": 123456, "monitor_tags": ["*"], "mute_first_recovery_notification": false, "notify_end_states": ["alert", "no data", "warn"], "notify_end_types": ["canceled", "expired"], "parent_id": 123, "recurrence": {"period": 1, "rrule": "FREQ=MONTHLY;BYSETPOS=3;BYDAY=WE;INTERVAL=1", "type": "weeks", "until_date": 1447786293, "until_occurrences": 2, "week_days": ["Mon", "Tue"]}, "scope": ["env:staging"], "start": 1412792983, "timezone": "America/New_York"}
     When the request is sent
     Then the response status is 404 Downtime not found
 
@@ -192,7 +194,9 @@ Feature: Downtimes
     Given there is a valid "downtime" in the system
     And new "UpdateDowntime" request
     And request contains "downtime_id" parameter from "downtime.id"
-    And body with value {"message": "{{ unique}}-updated", "mute_first_recovery_notification": true}
+    And body with value {"message": "{{ unique}}-updated", "mute_first_recovery_notification": true, "notify_end_states": ["alert", "no data", "warn"], "notify_end_types": ["canceled", "expired"]}
     When the request is sent
     Then the response status is 200 OK
     And the response "message" is equal to "{{ unique }}-updated"
+    And the response "notify_end_states" array contains value "alert"
+    And the response "notify_end_types" array contains value "canceled"

@@ -48,7 +48,6 @@ class TeamsApi:
                 "operation_id": "create_team",
                 "http_method": "POST",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -69,7 +68,6 @@ class TeamsApi:
                 "operation_id": "create_team_link",
                 "http_method": "POST",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "team_id": {
@@ -96,7 +94,6 @@ class TeamsApi:
                 "operation_id": "create_team_membership",
                 "http_method": "POST",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "team_id": {
@@ -123,7 +120,6 @@ class TeamsApi:
                 "operation_id": "delete_team",
                 "http_method": "DELETE",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "team_id": {
@@ -135,7 +131,6 @@ class TeamsApi:
             },
             headers_map={
                 "accept": ["*/*"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -148,7 +143,6 @@ class TeamsApi:
                 "operation_id": "delete_team_link",
                 "http_method": "DELETE",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "team_id": {
@@ -166,7 +160,6 @@ class TeamsApi:
             },
             headers_map={
                 "accept": ["*/*"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -179,7 +172,6 @@ class TeamsApi:
                 "operation_id": "delete_team_membership",
                 "http_method": "DELETE",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "team_id": {
@@ -197,7 +189,6 @@ class TeamsApi:
             },
             headers_map={
                 "accept": ["*/*"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -210,7 +201,6 @@ class TeamsApi:
                 "operation_id": "get_team",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "team_id": {
@@ -222,7 +212,6 @@ class TeamsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -235,7 +224,6 @@ class TeamsApi:
                 "operation_id": "get_team_link",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "team_id": {
@@ -253,7 +241,6 @@ class TeamsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -266,7 +253,6 @@ class TeamsApi:
                 "operation_id": "get_team_links",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "team_id": {
@@ -278,7 +264,6 @@ class TeamsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -291,7 +276,6 @@ class TeamsApi:
                 "operation_id": "get_team_memberships",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "team_id": {
@@ -323,7 +307,6 @@ class TeamsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -336,7 +319,6 @@ class TeamsApi:
                 "operation_id": "get_team_permission_settings",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "team_id": {
@@ -348,7 +330,6 @@ class TeamsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -361,7 +342,6 @@ class TeamsApi:
                 "operation_id": "list_teams",
                 "http_method": "GET",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "page_number": {
@@ -398,7 +378,6 @@ class TeamsApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -411,7 +390,6 @@ class TeamsApi:
                 "operation_id": "update_team",
                 "http_method": "PATCH",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "team_id": {
@@ -438,7 +416,6 @@ class TeamsApi:
                 "operation_id": "update_team_link",
                 "http_method": "PATCH",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "team_id": {
@@ -471,7 +448,6 @@ class TeamsApi:
                 "operation_id": "update_team_membership",
                 "http_method": "PATCH",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "team_id": {
@@ -504,7 +480,6 @@ class TeamsApi:
                 "operation_id": "update_team_permission_setting",
                 "http_method": "PUT",
                 "version": "v2",
-                "servers": None,
             },
             params_map={
                 "team_id": {
@@ -720,7 +695,7 @@ class TeamsApi:
 
         :param team_id: None
         :type team_id: str
-        :param page_size: Size for a given page. The maximum allowed value is 5000.
+        :param page_size: Size for a given page. The maximum allowed value is 100.
         :type page_size: int, optional
         :param page_number: Specific page number to return.
         :type page_number: int, optional
@@ -781,7 +756,7 @@ class TeamsApi:
 
         :param page_number: Specific page number to return.
         :type page_number: int, optional
-        :param page_size: Size for a given page. The maximum allowed value is 5000.
+        :param page_size: Size for a given page. The maximum allowed value is 100.
         :type page_size: int, optional
         :param sort: Specifies the order of the returned teams
         :type sort: ListTeamsSort, optional

@@ -1,5 +1,116 @@
 # Changelog
 
+## 2.14.0 / 2023-06-27
+
+### Fixed
+* Mark `restricted_roles` as nullable in monitor update request by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1508
+* Mark additional usage fields as `nullable` by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1516
+* Updated findings api error responses by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1486
+* Mark usage metering field `lines_indexed` as `nullable` by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1521
+* Update dashboard widget axis field descriptions by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1507
+* Fix `CreateGCPSTSAccount` return code and update tests by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1528
+* Fix `CreateGCPSTSAccount` response status code by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1531
+* Add missing descriptions for authorization scopes in public docs  by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1529
+* Update CI Visibility pipelines write API endpoint fields by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1535
+### Added
+* Add support for mute findings endpoint by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1469
+* Expose `database-monitoring` monitor type by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1354
+* Add endpoint to get Synthetics default locations by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1515
+* Add usage metering RUM Roku fields by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1522
+* Add usage metering fields for AWS and Azure cloud cost management by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1524
+* Add support for CI Visibility create pipeline events endpoint by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1523
+* Add isUndefined synthetics assertion operator by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1527
+* Add missing Synthetics and Metrics Scope descriptions by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1530
+### Deprecated
+* mark v1 GCP APIs as deprecated by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1518
+
+
+**Full Changelog**: https://github.com/DataDog/datadog-api-client-python/compare/2.13.2...2.14.0
+
+## 2.13.2 / 2023-06-05
+
+### Fixed
+* Re-introduce array container models by @skarimo in https://github.com/DataDog/datadog-api-client-python/pull/1503
+
+
+**Full Changelog**: https://github.com/DataDog/datadog-api-client-python/compare/2.13.1...2.13.2
+
+## 2.13.1 / 2023-06-01
+
+### Fixed
+* Add back array models for compatibility by @therve in https://github.com/DataDog/datadog-api-client-python/pull/1499
+### Changed
+* Team name and handle length updates by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1495
+
+
+**Full Changelog**: https://github.com/DataDog/datadog-api-client-python/compare/2.13.0...2.13.1
+
+## 2.13.0 / 2023-05-31
+
+### Fixed
+* Mark usage fields as nullable by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1432
+* Properly mark usage fields as nullable by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1451
+* Remove read only attributes from team create and update by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1455
+### Added
+* Expose `include_breakdown` param for v2 hourly_usage by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1424
+* Add support for deserializing `additionalProperties` in GO client by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1417
+* Add new grpc assertions for Synthetics tests by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1429
+* add additional_query_filters to slo widget  by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1443
+* Add `customer_impact_scope` to fields by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1441
+* Add notify_end_states and notify_end_types options to downtime by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1445
+* Add snapshot timestamp to GetFinding by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1457
+* Support schema version parameter in Get and List Service Definition endpoints by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1460
+* Add Application Vulnerability Management to usage metering API by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1461
+* Add formula and function slo query to dash widgets by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1466
+* Add secure field to Synthetics Browser Test variables and update docs by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1465
+* Add MatchingDowntime to monitor schema and with_downtimes parameter to GetMonitor by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1475
+* Add auth scopes for the `service_definition` endpoints by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1479
+* Update documentation for observability pipeline bytes usage attribution by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1472
+* Add option to obfuscate extracted values from Synthetics multistep tests by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1473
+* Add support for GCP STS endpoints by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1464
+* Add `sort` field to List Stream Widget's request query by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1492
+### Changed
+* Update spec to change findings limit and security monitoring menu order by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1426
+* Require teams_manage scope for creating and deleting teams by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1444
+* Remove models for arrays by @therve in https://github.com/DataDog/datadog-api-client-python/pull/1431
+* Update team name and handle length restrictions by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1493
+### Deprecated
+* Deprecate note for Incident Teams endpoints by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1450
+
+
+**Full Changelog**: https://github.com/DataDog/datadog-api-client-python/compare/2.12.0...2.13.0
+
+## 2.12.0 / 2023-04-18
+
+### Fixed
+* Fix application_security_host_top99p usage field by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1383
+* Mark `resource_type` attribute as required for Confluent Account by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1400
+* Fix spec errors caught with prism validation by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1413
+* Fix spans/logs custom metrics delete operation responses by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1419
+### Added
+* Add support for Incident Todo APIs by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1368
+* Add supported relations in restriction policy  by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1380
+* Add parameter to downtime API for returning creator info by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1382
+* Publish the new ingested timeseries metrics for usage attribution by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1365
+* Add tags field to dashboard API spec by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1373
+* Add pagination support to SearchIncidents by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1391
+* Add service catalog v2.1 schema by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1387
+* Add team API specs by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1385
+* Add spans metrics API endpoints specification by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1392
+* Add universal service monitoring to usage metering API by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1395
+* Add a new contact type in service catalog api for schema v2 and v2.1 by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1398
+* Add pagination support for the GET service_definitions endpoint by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1403
+* Publish logs forwarding fields in summary usage API by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1402
+* Add compressedJsonDescriptor to Synthetics gRPC tests by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1401
+* Add region field and note about multiregion start by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1386
+* Add AP1 support by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1409
+* Add support for shared dashboards endpoints by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1396
+### Deprecated
+* Deprecate audit logs usage by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1411
+
+
+**Full Changelog**: https://github.com/DataDog/datadog-api-client-python/compare/2.11.0...2.12.0
+
 ## 2.11.0 / 2023-03-14
 
 ### Fixed

@@ -54,7 +54,7 @@ class SyntheticsStep(ModelNormal):
         **kwargs,
     ):
         """
-        The steps used in a Synthetics browser test.
+        The steps used in a Synthetic browser test.
 
         :param allow_failure: A boolean set to allow this step to fail.
         :type allow_failure: bool, optional

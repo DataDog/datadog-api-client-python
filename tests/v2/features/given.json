@@ -83,6 +83,18 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"message\": \"test message\",\n      \"monitor_identifier\": {\n        \"monitor_tags\": [\"cat:hat\"]\n      },\n      \"scope\": \"test:{{ unique_lower_alnum }}\",\n      \"schedule\": {\n        \"start\": null\n      }\n    },\n    \"type\": \"downtime\"\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"downtime_v2\" in the system",
+    "key": "downtime_v2",
+    "tag": "Downtimes",
+    "operationId": "CreateDowntime"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"title\": \"{{ unique }}\",\n      \"customer_impacted\": false\n     },\n     \"type\": \"incidents\"\n  }\n}"
       }
     ],
@@ -138,6 +150,18 @@
     "key": "incident_todo",
     "tag": "Incidents",
     "operationId": "CreateIncidentTodo"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"client_email\": \"{{ unique_hash }}@example.com\",\n      \"host_filters\": []\n    },\n    \"type\": \"gcp_service_account\"\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"gcp_sts_account\" in the system",
+    "key": "gcp_sts_account",
+    "tag": "GCP Integration",
+    "operationId": "CreateGCPSTSAccount"
   },
   {
     "parameters": [
@@ -255,7 +279,7 @@
     "parameters": [
       {
         "name": "body",
-        "value": "{\n  \"data\": {\n    \"type\": \"monitor-config-policy\",\n    \"attributes\": {\n      \"policy_type\": \"tag\",\n      \"policy\": {\n        \"tag_key\": \"dc\", \"tag_key_required\": true, \"valid_tag_values\": [\"prod\", \"staging\"]\n      }\n    }\n  }\n}"
+        "value": "{\n  \"data\": {\n    \"type\": \"monitor-config-policy\",\n    \"attributes\": {\n      \"policy_type\": \"tag\",\n      \"policy\": {\n        \"tag_key\": \"{{ unique_lower_alnum }}\", \"tag_key_required\": false, \"valid_tag_values\": [\"prod\", \"staging\"]\n      }\n    }\n  }\n}"
       }
     ],
     "step": "there is a valid \"monitor_configuration_policy\" in the system",
@@ -472,7 +496,7 @@
     "parameters": [
       {
         "name": "body",
-        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"handle\": \"{{timestamp('now')}}\",\n      \"name\": \"{{timestamp('now')}}\"\n    },\n    \"type\": \"team\"\n  }\n}"
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"handle\": \"handle-{{ unique_hash }}\",\n      \"name\": \"name-{{ unique_hash }}\"\n    },\n    \"type\": \"team\"\n  }\n}"
       }
     ],
     "step": "there is a valid \"dd_team\" in the system",

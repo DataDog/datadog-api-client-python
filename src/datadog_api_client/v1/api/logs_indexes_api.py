@@ -32,7 +32,6 @@ class LogsIndexesApi:
                 "operation_id": "create_logs_index",
                 "http_method": "POST",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "body": {
@@ -53,7 +52,6 @@ class LogsIndexesApi:
                 "operation_id": "get_logs_index",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "name": {
@@ -65,7 +63,6 @@ class LogsIndexesApi:
             },
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -78,12 +75,10 @@ class LogsIndexesApi:
                 "operation_id": "get_logs_index_order",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={},
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -96,12 +91,10 @@ class LogsIndexesApi:
                 "operation_id": "list_log_indexes",
                 "http_method": "GET",
                 "version": "v1",
-                "servers": None,
             },
             params_map={},
             headers_map={
                 "accept": ["application/json"],
-                "content_type": [],
             },
             api_client=api_client,
         )
@@ -114,7 +107,6 @@ class LogsIndexesApi:
                 "operation_id": "update_logs_index",
                 "http_method": "PUT",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "name": {
@@ -141,7 +133,6 @@ class LogsIndexesApi:
                 "operation_id": "update_logs_index_order",
                 "http_method": "PUT",
                 "version": "v1",
-                "servers": None,
             },
             params_map={
                 "body": {

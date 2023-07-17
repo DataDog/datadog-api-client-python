@@ -13,10 +13,11 @@ import pytest
 from dateutil.relativedelta import relativedelta
 from jinja2 import Environment, FileSystemLoader, Template
 from pytest_bdd import given, parsers, then, when
+import hashlib
 
 from generator import openapi
 
-from generator.formatter import format_parameters, format_data_with_schema, safe_snake_case, snake_case
+from generator.formatter import format_parameters, format_data_with_schema, safe_snake_case, snake_case, set_api_version
 
 
 MODIFIED_FEATURES = {
@@ -155,6 +156,7 @@ def code_examples():
 @pytest.fixture
 def api_version(request):
     path = pathlib.Path(request.node.__scenario_report__.scenario.feature.filename)
+    set_api_version(path.parent.parent.name)
     return path.parent.parent.name
 
 
@@ -252,6 +254,7 @@ def context(request, unique, freezed_time):
     imports = defaultdict(set)
     given = defaultdict(dict)
 
+    unique_hash = hashlib.sha256(unique.encode("utf-8")).hexdigest()[:16]
     ctx = {
         "undo_operations": [],
         "unique": unique,
@@ -260,6 +263,7 @@ def context(request, unique, freezed_time):
         "unique_alnum": PATTERN_ALPHANUM.sub("", unique),
         "unique_lower_alnum": PATTERN_ALPHANUM.sub("", unique).lower(),
         "unique_upper_alnum": PATTERN_ALPHANUM.sub("", unique).upper(),
+        "unique_hash": unique_hash,
         "timestamp": relative_time(imports, replace_values, freezed_time, False),
         "timeISO": relative_time(imports, replace_values, freezed_time, True),
         "_replace_values": replace_values,
@@ -528,3 +532,12 @@ def expect_equal_response_items(context, fixture_length):
 @then(parsers.parse('the response "{response_path}" is false'))
 def expect_false(context, response_path):
     """Check that a response attribute is false."""
+
+
+@then(parsers.parse('the response "{response_path}" has item with field "{key_path}" with value {value}'))
+def expect_array_contains_object(context, response_path, key_path, value):
+    """Check that a response attribute contains an object with the specified key and value."""
+
+@then(parsers.parse('the response "{response_path}" array contains value {value}'))
+def expect_array_contains_object(context, response_path, value):
+    """Check that a response array contains the specified value."""
