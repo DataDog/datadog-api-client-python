@@ -1296,6 +1296,13 @@ ip\_prefixes\_process
    :members:
    :show-inheritance:
 
+ip\_prefixes\_remote\_configuration
+-----------------------------------
+
+.. automodule:: datadog_api_client.v1.model.ip_prefixes_remote_configuration
+   :members:
+   :show-inheritance:
+
 ip\_prefixes\_synthetics
 ------------------------
 
