@@ -80,7 +80,6 @@ class RESTClientObject:
                 total=configuration.max_retries,
                 backoff_factor=configuration.retry_backoff_factor,
             )
-
             addition_pool_args["retries"] = retries
         else:
             addition_pool_args["retries"] = False
