@@ -20,6 +20,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.ip_prefixes_logs import IPPrefixesLogs
     from datadog_api_client.v1.model.ip_prefixes_orchestrator import IPPrefixesOrchestrator
     from datadog_api_client.v1.model.ip_prefixes_process import IPPrefixesProcess
+    from datadog_api_client.v1.model.ip_prefixes_remote_configuration import IPPrefixesRemoteConfiguration
     from datadog_api_client.v1.model.ip_prefixes_synthetics import IPPrefixesSynthetics
     from datadog_api_client.v1.model.ip_prefixes_synthetics_private_locations import (
         IPPrefixesSyntheticsPrivateLocations,
@@ -36,6 +37,7 @@ class IPRanges(ModelNormal):
         from datadog_api_client.v1.model.ip_prefixes_logs import IPPrefixesLogs
         from datadog_api_client.v1.model.ip_prefixes_orchestrator import IPPrefixesOrchestrator
         from datadog_api_client.v1.model.ip_prefixes_process import IPPrefixesProcess
+        from datadog_api_client.v1.model.ip_prefixes_remote_configuration import IPPrefixesRemoteConfiguration
         from datadog_api_client.v1.model.ip_prefixes_synthetics import IPPrefixesSynthetics
         from datadog_api_client.v1.model.ip_prefixes_synthetics_private_locations import (
             IPPrefixesSyntheticsPrivateLocations,
@@ -50,6 +52,7 @@ class IPRanges(ModelNormal):
             "modified": (str,),
             "orchestrator": (IPPrefixesOrchestrator,),
             "process": (IPPrefixesProcess,),
+            "remote_configuration": (IPPrefixesRemoteConfiguration,),
             "synthetics": (IPPrefixesSynthetics,),
             "synthetics_private_locations": (IPPrefixesSyntheticsPrivateLocations,),
             "version": (int,),
@@ -64,6 +67,7 @@ class IPRanges(ModelNormal):
         "modified": "modified",
         "orchestrator": "orchestrator",
         "process": "process",
+        "remote_configuration": "remote-configuration",
         "synthetics": "synthetics",
         "synthetics_private_locations": "synthetics-private-locations",
         "version": "version",
@@ -79,6 +83,7 @@ class IPRanges(ModelNormal):
         modified: Union[str, UnsetType] = unset,
         orchestrator: Union[IPPrefixesOrchestrator, UnsetType] = unset,
         process: Union[IPPrefixesProcess, UnsetType] = unset,
+        remote_configuration: Union[IPPrefixesRemoteConfiguration, UnsetType] = unset,
         synthetics: Union[IPPrefixesSynthetics, UnsetType] = unset,
         synthetics_private_locations: Union[IPPrefixesSyntheticsPrivateLocations, UnsetType] = unset,
         version: Union[int, UnsetType] = unset,
@@ -109,6 +114,9 @@ class IPRanges(ModelNormal):
         :param process: Available prefix information for the Process endpoints.
         :type process: IPPrefixesProcess, optional
 
+        :param remote_configuration: Available prefix information for the Remote Configuration endpoints.
+        :type remote_configuration: IPPrefixesRemoteConfiguration, optional
+
         :param synthetics: Available prefix information for the Synthetics endpoints.
         :type synthetics: IPPrefixesSynthetics, optional
 
@@ -135,6 +143,8 @@ class IPRanges(ModelNormal):
             kwargs["orchestrator"] = orchestrator
         if process is not unset:
             kwargs["process"] = process
+        if remote_configuration is not unset:
+            kwargs["remote_configuration"] = remote_configuration
         if synthetics is not unset:
             kwargs["synthetics"] = synthetics
         if synthetics_private_locations is not unset:
