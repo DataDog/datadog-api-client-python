@@ -16,7 +16,7 @@ class WidgetDisplayType(ModelSimple):
     """
     Type of display to use for the request.
 
-    :param value: Must be one of ["area", "bars", "line"].
+    :param value: Must be one of ["area", "bars", "line", "overlay"].
     :type value: str
     """
 
@@ -24,10 +24,12 @@ class WidgetDisplayType(ModelSimple):
         "area",
         "bars",
         "line",
+        "overlay",
     }
     AREA: ClassVar["WidgetDisplayType"]
     BARS: ClassVar["WidgetDisplayType"]
     LINE: ClassVar["WidgetDisplayType"]
+    OVERLAY: ClassVar["WidgetDisplayType"]
 
     @cached_property
     def openapi_types(_):
@@ -39,3 +41,4 @@ class WidgetDisplayType(ModelSimple):
 WidgetDisplayType.AREA = WidgetDisplayType("area")
 WidgetDisplayType.BARS = WidgetDisplayType("bars")
 WidgetDisplayType.LINE = WidgetDisplayType("line")
+WidgetDisplayType.OVERLAY = WidgetDisplayType("overlay")

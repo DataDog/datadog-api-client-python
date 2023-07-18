@@ -1,0 +1,40 @@
+interactions:
+- request:
+    body: '{"layout_type":"ordered","title":"Test-Create_a_new_dashboard_with_a_timeseries_widget_and_an_overlay_request-1689353452","widgets":[{"definition":{"requests":[{"display_type":"line","on_right_yaxis":false,"queries":[{"data_source":"metrics","name":"mymetric","query":"avg:system.cpu.user{*}"}],"response_format":"timeseries"},{"display_type":"overlay","queries":[{"data_source":"metrics","name":"mymetricoverlay","query":"avg:system.cpu.user{*}"}],"response_format":"timeseries","style":{"line_type":"solid","line_width":"normal","palette":"purple"}}],"type":"timeseries"}}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/dashboard
+  response:
+    body:
+      string: '{"id":"56a-eq2-76i","title":"Test-Create_a_new_dashboard_with_a_timeseries_widget_and_an_overlay_request-1689353452","description":null,"author_handle":"frog@datadoghq.com","author_name":null,"layout_type":"ordered","url":"/dashboard/56a-eq2-76i/test-createanewdashboardwithatimeserieswidgetandanoverlayrequest-1689353452","is_read_only":false,"template_variables":null,"widgets":[{"definition":{"requests":[{"display_type":"line","on_right_yaxis":false,"queries":[{"data_source":"metrics","name":"mymetric","query":"avg:system.cpu.user{*}"}],"response_format":"timeseries"},{"display_type":"overlay","queries":[{"data_source":"metrics","name":"mymetricoverlay","query":"avg:system.cpu.user{*}"}],"response_format":"timeseries","style":{"line_type":"solid","line_width":"normal","palette":"purple"}}],"type":"timeseries"},"id":4582756152438811}],"notify_list":null,"created_at":"2023-07-14T16:50:52.916992+00:00","modified_at":"2023-07-14T16:50:52.916992+00:00","restricted_roles":[]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/dashboard/56a-eq2-76i
+  response:
+    body:
+      string: '{"deleted_dashboard_id":"56a-eq2-76i"}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1
