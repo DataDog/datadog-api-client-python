@@ -212,6 +212,7 @@ from datadog_api_client.v1.model.ip_prefixes_agents import IPPrefixesAgents
 from datadog_api_client.v1.model.ip_prefixes_logs import IPPrefixesLogs
 from datadog_api_client.v1.model.ip_prefixes_orchestrator import IPPrefixesOrchestrator
 from datadog_api_client.v1.model.ip_prefixes_process import IPPrefixesProcess
+from datadog_api_client.v1.model.ip_prefixes_remote_configuration import IPPrefixesRemoteConfiguration
 from datadog_api_client.v1.model.ip_prefixes_synthetics import IPPrefixesSynthetics
 from datadog_api_client.v1.model.ip_prefixes_synthetics_private_locations import IPPrefixesSyntheticsPrivateLocations
 from datadog_api_client.v1.model.ip_prefixes_webhooks import IPPrefixesWebhooks
@@ -1098,6 +1099,7 @@ __all__ = [
     "IPPrefixesLogs",
     "IPPrefixesOrchestrator",
     "IPPrefixesProcess",
+    "IPPrefixesRemoteConfiguration",
     "IPPrefixesSynthetics",
     "IPPrefixesSyntheticsPrivateLocations",
     "IPPrefixesWebhooks",
