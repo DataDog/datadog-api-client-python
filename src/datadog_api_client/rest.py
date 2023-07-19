@@ -7,7 +7,6 @@ import logging
 import re
 import ssl
 from urllib.parse import urlencode
-from urllib3.util import Retry
 import zlib
 import urllib3  # type: ignore
 
@@ -24,7 +23,7 @@ from datadog_api_client.exceptions import (
 logger = logging.getLogger(__name__)
 
 
-class DDRetry(Retry):
+class DDRetry(urllib3.util.Retry):
     RETRY_AFTER_STATUS_CODES = frozenset([413, 429, 500, 501, 502, 503, 504, 505, 506, 507, 509, 510, 511])
     DEFAULT_ALLOWED_METHODS = frozenset(
         ["HEAD", "GET", "PUT", "DELETE", "OPTIONS", "TRACE", "POST", "CONNECT", "PATCH"]
