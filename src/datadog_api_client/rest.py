@@ -25,9 +25,13 @@ logger = logging.getLogger(__name__)
 
 
 class DDRetry(Retry):
+    RETRY_AFTER_STATUS_CODES = frozenset([413, 429, 500, 501, 502, 503, 504, 505, 506, 507, 509, 510, 511])
+    DEFAULT_ALLOWED_METHODS = frozenset(
+        ["HEAD", "GET", "PUT", "DELETE", "OPTIONS", "TRACE", "POST", "CONNECT", "PATCH"]
+    )
+
     def __init__(self, **kwargs):
-        super().__init__(self)
-        self.RETRY_AFTER_STATUS_CODES = frozenset([413, 429, 500, 501, 502, 503, 504, 505, 506, 507, 509, 510, 511])
+        super().__init__(**kwargs)
 
     def get_retry_after(self, response):
         """This method overrides the default "Retry-after" header and uses dd's X-Ratelimit-Reset header
@@ -40,27 +44,13 @@ class DDRetry(Retry):
         return self.parse_retry_after(retry_after)
 
     def is_retry(self, method, status_code, has_retry_after=False):
-        """Is this status code retryable? (Based on allowlists and control
-        variables such as the number of total retries to allow, whether to
-        respect the Retry-After header, whether this header is present, and
-        whether the returned status code is on the list of status codes to
-        be retried upon on the presence of the aforementioned header)
-        """
-        response = self.response
-        if method:
-            return True
+        if not self._is_method_retryable(method):
+            return False
 
         if self.status_forcelist and status_code in self.status_forcelist:
             return True
-
-        self.has_retry_after = bool(response.headers.get("X-Ratelimit-Reset"))
-
-        return (
-            self.total
-            and self.respect_retry_after_header
-            and has_retry_after
-            and (status_code in self.RETRY_AFTER_STATUS_CODES)
-        )
+        print(status_code)
+        return self.total and self.respect_retry_after_header and (status_code in self.RETRY_AFTER_STATUS_CODES)
 
 
 class RESTClientObject:
