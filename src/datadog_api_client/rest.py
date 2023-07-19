@@ -7,7 +7,7 @@ import logging
 import re
 import ssl
 from urllib.parse import urlencode
-from urllib3.util.retry import Retry
+import urllib3.util.retry
 import zlib
 import urllib3  # type: ignore
 
