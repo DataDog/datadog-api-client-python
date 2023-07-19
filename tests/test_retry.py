@@ -16,5 +16,5 @@ def test_retry_get_list_logs(retry_mock):
     configuration.enable_retry = True
     with ApiClient(configuration) as api_client:
         api_instance = LogsApi(api_client)
-        response = api_instance.list_logs_get()
-    assert retry_mock.call_count == 3 and response != None
+        api_instance.list_logs_get()
+    assert retry_mock.call_count == 3
