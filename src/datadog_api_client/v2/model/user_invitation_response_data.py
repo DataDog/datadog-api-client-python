@@ -15,6 +15,7 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.user_invitation_data_attributes import UserInvitationDataAttributes
+    from datadog_api_client.v2.model.user_invitation_relationships import UserInvitationRelationships
     from datadog_api_client.v2.model.user_invitations_type import UserInvitationsType
 
 
@@ -22,17 +23,20 @@ class UserInvitationResponseData(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.user_invitation_data_attributes import UserInvitationDataAttributes
+        from datadog_api_client.v2.model.user_invitation_relationships import UserInvitationRelationships
         from datadog_api_client.v2.model.user_invitations_type import UserInvitationsType
 
         return {
             "attributes": (UserInvitationDataAttributes,),
             "id": (str,),
+            "relationships": (UserInvitationRelationships,),
             "type": (UserInvitationsType,),
         }
 
     attribute_map = {
         "attributes": "attributes",
         "id": "id",
+        "relationships": "relationships",
         "type": "type",
     }
 
@@ -40,6 +44,7 @@ class UserInvitationResponseData(ModelNormal):
         self_,
         attributes: Union[UserInvitationDataAttributes, UnsetType] = unset,
         id: Union[str, UnsetType] = unset,
+        relationships: Union[UserInvitationRelationships, UnsetType] = unset,
         type: Union[UserInvitationsType, UnsetType] = unset,
         **kwargs,
     ):
@@ -52,6 +57,9 @@ class UserInvitationResponseData(ModelNormal):
         :param id: ID of the user invitation.
         :type id: str, optional
 
+        :param relationships: Relationships data for user invitation.
+        :type relationships: UserInvitationRelationships, optional
+
         :param type: User invitations type.
         :type type: UserInvitationsType, optional
         """
@@ -59,6 +67,8 @@ class UserInvitationResponseData(ModelNormal):
             kwargs["attributes"] = attributes
         if id is not unset:
             kwargs["id"] = id
+        if relationships is not unset:
+            kwargs["relationships"] = relationships
         if type is not unset:
             kwargs["type"] = type
         super().__init__(kwargs)
