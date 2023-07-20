@@ -29,7 +29,7 @@ class IPAllowlistApi:
         self._get_ip_allowlist_endpoint = _Endpoint(
             settings={
                 "response_type": (IPAllowlistResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/ip_allowlist",
                 "operation_id": "get_ip_allowlist",
                 "http_method": "GET",
@@ -45,7 +45,7 @@ class IPAllowlistApi:
         self._update_ip_allowlist_endpoint = _Endpoint(
             settings={
                 "response_type": (IPAllowlistResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/ip_allowlist",
                 "operation_id": "update_ip_allowlist",
                 "http_method": "PATCH",
