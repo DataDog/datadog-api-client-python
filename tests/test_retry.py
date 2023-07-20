@@ -1,15 +1,8 @@
-import pytest
 from unittest import mock
 import requests
 from http.client import HTTPMessage
 
-from datadog_api_client.api_client import ApiClient
-from datadog_api_client.configuration import Configuration
-from datadog_api_client.v2.api.logs_api import LogsApi
-from datadog_api_client.api_client import ApiClient
-from datadog_api_client.configuration import Configuration
 from datadog_api_client.rest import DDRetry
-from datadog_api_client.configuration import Configuration
 
 
 # @pytest.mark.vcr(ignore_localhost=True)
@@ -23,25 +16,28 @@ from datadog_api_client.configuration import Configuration
 #         response = api_instance.list_logs_get()
 #     assert retry_mock.call_count == 3
 
+
 def request_with_retry(*args, **kwargs):
     session = requests.Session()
-    adapter = requests.adapters.HTTPAdapter(max_retries=DDRetry(
-        total=kwargs.pop("max_retries", 3),
-    ))
+    adapter = requests.adapters.HTTPAdapter(
+        max_retries=DDRetry(
+            total=kwargs.pop("max_retries", 3),
+        )
+    )
     session.mount("http://", adapter)
     return session.request(*args, **kwargs)
 
 
 @mock.patch("urllib3.connectionpool.HTTPConnectionPool._get_conn")
 def test_retry_request_ddretry(getconn_mock):
-    mock_endpoint= "/api/test"
+    mock_endpoint = "/api/test"
     getconn_mock.return_value.getresponse.side_effect = [
         mock.Mock(status=429, msg=HTTPMessage()),
         mock.Mock(status=429, msg=HTTPMessage()),
         mock.Mock(status=429, msg=HTTPMessage()),
         mock.Mock(status=200, msg=HTTPMessage()),
     ]
-    r = request_with_retry("GET", "http://ddog.url"+mock_endpoint, max_retries=3)
+    r = request_with_retry("GET", "http://ddog.url" + mock_endpoint, max_retries=3)
     r.raise_for_status()
 
     assert getconn_mock.return_value.request.mock_calls == [
