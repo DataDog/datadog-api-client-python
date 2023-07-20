@@ -18,6 +18,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.cloud_configuration_rule_compliance_signal_options import (
         CloudConfigurationRuleComplianceSignalOptions,
     )
+    from datadog_api_client.v2.model.security_monitoring_filter import SecurityMonitoringFilter
     from datadog_api_client.v2.model.cloud_configuration_rule_options import CloudConfigurationRuleOptions
     from datadog_api_client.v2.model.cloud_configuration_rule_type import CloudConfigurationRuleType
 
@@ -29,12 +30,14 @@ class CloudConfigurationRuleCreatePayload(ModelNormal):
         from datadog_api_client.v2.model.cloud_configuration_rule_compliance_signal_options import (
             CloudConfigurationRuleComplianceSignalOptions,
         )
+        from datadog_api_client.v2.model.security_monitoring_filter import SecurityMonitoringFilter
         from datadog_api_client.v2.model.cloud_configuration_rule_options import CloudConfigurationRuleOptions
         from datadog_api_client.v2.model.cloud_configuration_rule_type import CloudConfigurationRuleType
 
         return {
             "cases": ([CloudConfigurationRuleCaseCreate],),
             "compliance_signal_options": (CloudConfigurationRuleComplianceSignalOptions,),
+            "filters": ([SecurityMonitoringFilter],),
             "is_enabled": (bool,),
             "message": (str,),
             "name": (str,),
@@ -46,6 +49,7 @@ class CloudConfigurationRuleCreatePayload(ModelNormal):
     attribute_map = {
         "cases": "cases",
         "compliance_signal_options": "complianceSignalOptions",
+        "filters": "filters",
         "is_enabled": "isEnabled",
         "message": "message",
         "name": "name",
@@ -62,6 +66,7 @@ class CloudConfigurationRuleCreatePayload(ModelNormal):
         message: str,
         name: str,
         options: CloudConfigurationRuleOptions,
+        filters: Union[List[SecurityMonitoringFilter], UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
         type: Union[CloudConfigurationRuleType, UnsetType] = unset,
         **kwargs,
@@ -74,6 +79,9 @@ class CloudConfigurationRuleCreatePayload(ModelNormal):
 
         :param compliance_signal_options: How to generate compliance signals. Useful for cloud_configuration rules only.
         :type compliance_signal_options: CloudConfigurationRuleComplianceSignalOptions
+
+        :param filters: Additional queries to filter matched events before they are processed.
+        :type filters: [SecurityMonitoringFilter], optional
 
         :param is_enabled: Whether the rule is enabled.
         :type is_enabled: bool
@@ -93,6 +101,8 @@ class CloudConfigurationRuleCreatePayload(ModelNormal):
         :param type: The rule type.
         :type type: CloudConfigurationRuleType, optional
         """
+        if filters is not unset:
+            kwargs["filters"] = filters
         if tags is not unset:
             kwargs["tags"] = tags
         if type is not unset:
