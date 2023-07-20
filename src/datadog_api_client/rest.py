@@ -48,9 +48,11 @@ class DDRetry(urllib3.util.Retry):
 
         if self.status_forcelist and status_code in self.status_forcelist:
             return True
-        print(status_code)
-        return self.total and self.respect_retry_after_header and (status_code in self.RETRY_AFTER_STATUS_CODES)
-
+        return (
+            self.total
+            and self.respect_retry_after_header
+            and (status_code in self.RETRY_AFTER_STATUS_CODES)
+        )
 
 class RESTClientObject:
     def __init__(self, configuration, pools_size=4, maxsize=4):
