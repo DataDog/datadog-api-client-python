@@ -710,9 +710,7 @@ components:
           example: Application Key for managing dashboards
           type: string
         scopes:
-          description: Array of scopes to grant the application key. This feature
-            is in private beta, please contact Datadog support to enable scopes for
-            your application keys.
+          description: Array of scopes to grant the application key.
           example:
           - dashboards_read
           - dashboards_write
@@ -775,9 +773,7 @@ components:
           example: Application Key for managing dashboards
           type: string
         scopes:
-          description: Array of scopes to grant the application key. This feature
-            is in private beta, please contact Datadog support to enable scopes for
-            your application keys.
+          description: Array of scopes to grant the application key.
           example:
           - dashboards_read
           - dashboards_write
@@ -5274,9 +5270,7 @@ components:
           example: Application Key for managing dashboards
           type: string
         scopes:
-          description: Array of scopes to grant the application key. This feature
-            is in private beta, please contact Datadog support to enable scopes for
-            your application keys.
+          description: Array of scopes to grant the application key.
           example:
           - dashboards_read
           - dashboards_write
@@ -10430,9 +10424,7 @@ components:
           example: Application Key for managing dashboards
           type: string
         scopes:
-          description: Array of scopes to grant the application key. This feature
-            is in private beta, please contact Datadog support to enable scopes for
-            your application keys.
+          description: Array of scopes to grant the application key.
           example:
           - dashboards_read
           - dashboards_write
