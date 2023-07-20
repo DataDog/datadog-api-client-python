@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"cases":[{"notifications":["channel"],"status":"info"}],"complianceSignalOptions":{"userActivationStatus":true,"userGroupByFields":["@account_id"]},"isEnabled":false,"message":"ddd","name":"Test-Create_a_cloud_configuration_rule_returns_OK_response-1671216833_cloud","options":{"complianceRuleOptions":{"complexRule":false,"regoRule":{"policy":"package
+    body: '{"cases":[{"notifications":["channel"],"status":"info"}],"complianceSignalOptions":{"userActivationStatus":true,"userGroupByFields":["@account_id"]},"filters":[{"action":"require","query":"resource_id:helo*"},{"action":"suppress","query":"control:helo*"}],"isEnabled":false,"message":"ddd","name":"Test-Create_a_cloud_configuration_rule_returns_OK_response-1689856053_cloud","options":{"complianceRuleOptions":{"complexRule":false,"regoRule":{"policy":"package
       datadog\n","resourceTypes":["gcp_compute_disk"]},"resourceType":"gcp_compute_disk"}},"tags":["my:tag"],"type":"cloud_configuration"}'
     headers:
       accept:
@@ -11,9 +11,9 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/security_monitoring/rules
   response:
     body:
-      string: '{"creationAuthorId":1445416,"tags":["my:tag"],"type":"cloud_configuration","isEnabled":false,"hasExtendedTitle":true,"message":"ddd","options":{"detectionMethod":"threshold","evaluationWindow":7200,"maxSignalDuration":86400,"complianceRuleOptions":{"resourceType":"gcp_compute_disk","regoRule":{"policy":"package
-        datadog\n","resourceTypes":["gcp_compute_disk"]},"complexRule":false},"keepAlive":21600},"version":1,"createdAt":1671216834196,"filters":[],"queries":[{"query":"resource_type:gcp_compute_disk","groupByFields":["resource_type","resource_id"],"aggregation":"count","name":"a","distinctFields":[]}],"isDeleted":false,"complianceSignalOptions":{"defaultActivationStatus":null,"userActivationStatus":true,"defaultGroupByFields":null,"userGroupByFields":["@account_id"]},"cases":[{"status":"info","notifications":["channel"],"name":"","condition":"a
-        > 0"}],"id":"fat-bma-9yo","isDefault":false,"name":"Test-Create_a_cloud_configuration_rule_returns_OK_response-1671216833_cloud"}
+      string: '{"id":"rmr-xkf-scr","version":1,"name":"Test-Create_a_cloud_configuration_rule_returns_OK_response-1689856053_cloud","createdAt":1689856054469,"creationAuthorId":1445416,"isDefault":false,"isEnabled":false,"isDeleted":false,"isDeprecated":false,"queries":[{"query":"resource_type:gcp_compute_disk","groupByFields":["resource_type","resource_id"],"distinctFields":[],"aggregation":"count","name":"a"}],"options":{"keepAlive":21600,"maxSignalDuration":86400,"detectionMethod":"threshold","evaluationWindow":7200,"complianceRuleOptions":{"resourceType":"gcp_compute_disk","regoRule":{"policy":"package
+        datadog\n","resourceTypes":["gcp_compute_disk"]},"complexRule":false}},"complianceSignalOptions":{"defaultActivationStatus":null,"defaultGroupByFields":null,"userActivationStatus":true,"userGroupByFields":["@account_id"]},"cases":[{"condition":"a
+        > 0","name":"","status":"info","notifications":["channel"]}],"message":"ddd","tags":["my:tag"],"hasExtendedTitle":true,"type":"cloud_configuration","filters":[{"action":"require","query":"resource_id:helo*"},{"action":"suppress","query":"control:helo*"}]}
 
         '
     headers:
@@ -28,7 +28,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/fat-bma-9yo
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/rmr-xkf-scr
   response:
     body:
       string: ''
