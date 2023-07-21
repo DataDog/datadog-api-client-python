@@ -21,6 +21,6 @@ def test_retry_request_ddretry(getconn_mock):
         response_200,
     ]
 
-    pool_manager.request("GET", "http://ddog.url"+mock_endpoint)
+    pool_manager.request("GET", "http://ddog.url" + mock_endpoint)
 
-    assert (getconn_mock.call_count==3)
+    assert getconn_mock.call_count == 3
