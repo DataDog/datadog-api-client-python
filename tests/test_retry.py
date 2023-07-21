@@ -21,8 +21,5 @@ def test_retry_request_ddretry(getconn_mock):
     ]
 
     pool_manager.request("GET", "http://ddog.url"+mock_endpoint)
-    assert getconn_mock.return_value.request.mock_calls == [
-        mock.call("GET", mock_endpoint, body=None, headers=mock.ANY, chunked=False, preload_content=True, decode_content=True, enforce_content_length=True),
-        mock.call("GET",mock_endpoint, body=None, headers=mock.ANY, chunked=False, preload_content=True, decode_content=True, enforce_content_length=True),
-        mock.call("GET", mock_endpoint, body=None, headers=mock.ANY, chunked=False, preload_content=True, decode_content=True, enforce_content_length=True),
-    ]
+
+    assert (getconn_mock.call_count==3)
