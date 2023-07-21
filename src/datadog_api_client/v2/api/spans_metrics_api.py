@@ -69,7 +69,7 @@ class SpansMetricsApi:
         self._get_spans_metric_endpoint = _Endpoint(
             settings={
                 "response_type": (SpansMetricResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/apm/config/metrics/{metric_id}",
                 "operation_id": "get_spans_metric",
                 "http_method": "GET",
@@ -92,7 +92,7 @@ class SpansMetricsApi:
         self._list_spans_metrics_endpoint = _Endpoint(
             settings={
                 "response_type": (SpansMetricsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/apm/config/metrics",
                 "operation_id": "list_spans_metrics",
                 "http_method": "GET",
