@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"formulas":[{"formula":"a+b","limit":{"count":10,"order":"desc"}}],"from":1671617641,"interval":5000,"queries":[{"data_source":"metrics","query":"avg:system.cpu.user{*}"}],"to":1671621241},"type":"timeseries_rquest"}}'
+    body: '{"data":{"attributes":{"formulas":[{"formula":"a+b"}],"from":1689871087,"interval":5000,"queries":[{"data_source":"metrics","query":"avg:system.cpu.user{*}"}],"to":1689874687},"type":"timeseries_rquest"}}'
     headers:
       accept:
       - application/json

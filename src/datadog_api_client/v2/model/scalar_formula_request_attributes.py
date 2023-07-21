@@ -14,18 +14,18 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.query_formula import QueryFormula
+    from datadog_api_client.v2.model.query_formula_with_limit import QueryFormulaWithLimit
     from datadog_api_client.v2.model.scalar_formula_request_queries import ScalarFormulaRequestQueries
 
 
 class ScalarFormulaRequestAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.query_formula import QueryFormula
+        from datadog_api_client.v2.model.query_formula_with_limit import QueryFormulaWithLimit
         from datadog_api_client.v2.model.scalar_formula_request_queries import ScalarFormulaRequestQueries
 
         return {
-            "formulas": ([QueryFormula],),
+            "formulas": ([QueryFormulaWithLimit],),
             "_from": (int,),
             "queries": (ScalarFormulaRequestQueries,),
             "to": (int,),
@@ -43,14 +43,14 @@ class ScalarFormulaRequestAttributes(ModelNormal):
         _from: int,
         queries: ScalarFormulaRequestQueries,
         to: int,
-        formulas: Union[List[QueryFormula], UnsetType] = unset,
+        formulas: Union[List[QueryFormulaWithLimit], UnsetType] = unset,
         **kwargs,
     ):
         """
         The object describing a scalar formula request.
 
         :param formulas: List of formulas to be calculated and returned as responses.
-        :type formulas: [QueryFormula], optional
+        :type formulas: [QueryFormulaWithLimit], optional
 
         :param _from: Start date (inclusive) of the query in milliseconds since the Unix epoch.
         :type _from: int

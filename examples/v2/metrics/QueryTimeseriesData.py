@@ -4,11 +4,9 @@ Query timeseries data across multiple products returns "OK" response
 
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.metrics_api import MetricsApi
-from datadog_api_client.v2.model.formula_limit import FormulaLimit
 from datadog_api_client.v2.model.metrics_data_source import MetricsDataSource
 from datadog_api_client.v2.model.metrics_timeseries_query import MetricsTimeseriesQuery
 from datadog_api_client.v2.model.query_formula import QueryFormula
-from datadog_api_client.v2.model.query_sort_order import QuerySortOrder
 from datadog_api_client.v2.model.timeseries_formula_query_request import TimeseriesFormulaQueryRequest
 from datadog_api_client.v2.model.timeseries_formula_request import TimeseriesFormulaRequest
 from datadog_api_client.v2.model.timeseries_formula_request_attributes import TimeseriesFormulaRequestAttributes
@@ -21,10 +19,6 @@ body = TimeseriesFormulaQueryRequest(
             formulas=[
                 QueryFormula(
                     formula="a+b",
-                    limit=FormulaLimit(
-                        count=10,
-                        order=QuerySortOrder.DESC,
-                    ),
                 ),
             ],
             _from=1568899800000,

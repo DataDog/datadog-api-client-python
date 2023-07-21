@@ -264,7 +264,7 @@ Feature: Metrics
     Given a valid "appKeyAuth" key in the system
     And operation "QueryTimeseriesData" enabled
     And new "QueryTimeseriesData" request
-    And body with value {"data": {"attributes": {"formulas": [{"formula": "a+b", "limit": {"count": 10, "order": "desc"}}], "from": 1568899800000, "interval": 5000, "queries": [{"data_source": "metrics", "query": "avg:system.cpu.user{*} by {env}"}], "to": 1568923200000}, "type": "timeseries_request"}}
+    And body with value {"data": {"attributes": {"formulas": [{"formula": "a+b"}], "from": 1568899800000, "interval": 5000, "queries": [{"data_source": "metrics", "query": "avg:system.cpu.user{*} by {env}"}], "to": 1568923200000}, "type": "timeseries_request"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -273,7 +273,7 @@ Feature: Metrics
     Given a valid "appKeyAuth" key in the system
     And operation "QueryTimeseriesData" enabled
     And new "QueryTimeseriesData" request
-    And body with value {"data": {"attributes": {"formulas": [{"formula": "a+b", "limit": {"count": 10, "order": "desc"}}], "from": 1568899800000, "interval": 5000, "queries": [{"data_source": "metrics", "query": "avg:system.cpu.user{*} by {env}"}], "to": 1568923200000}, "type": "timeseries_request"}}
+    And body with value {"data": {"attributes": {"formulas": [{"formula": "a+b"}], "from": 1568899800000, "interval": 5000, "queries": [{"data_source": "metrics", "query": "avg:system.cpu.user{*} by {env}"}], "to": 1568923200000}, "type": "timeseries_request"}}
     When the request is sent
     Then the response status is 200 OK
 
@@ -356,7 +356,7 @@ Feature: Metrics
     Given a valid "appKeyAuth" key in the system
     And operation "QueryTimeseriesData" enabled
     And new "QueryTimeseriesData" request
-    And body with value {"data": {"attributes": {"formulas": [{"formula": "a+b", "limit": {"count": 10, "order": "desc"}}], "from": {{ timestamp('now - 1h') }}, "interval": 5000, "queries": [{"data_source": "metrics", "query": "avg:system.cpu.user{*}"}], "to": {{ timestamp('now') }}}, "type": "timeseries_rquest"}}
+    And body with value {"data": {"attributes": {"formulas": [{"formula": "a+b"}], "from": {{ timestamp('now - 1h') }}, "interval": 5000, "queries": [{"data_source": "metrics", "query": "avg:system.cpu.user{*}"}], "to": {{ timestamp('now') }}}, "type": "timeseries_rquest"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -365,7 +365,7 @@ Feature: Metrics
     Given a valid "appKeyAuth" key in the system
     And operation "QueryTimeseriesData" enabled
     And new "QueryTimeseriesData" request
-    And body with value {"data": {"attributes": {"formulas": [{"formula": "a", "limit": {"count": 10, "order": "desc"}}], "from": 1671612804000, "interval": 5000, "queries": [{"data_source": "metrics", "query": "avg:system.cpu.user{*}", "name": "a"}], "to": 1671620004000}, "type": "timeseries_request"}}
+    And body with value {"data": {"attributes": {"formulas": [{"formula": "a"}], "from": 1671612804000, "interval": 5000, "queries": [{"data_source": "metrics", "query": "avg:system.cpu.user{*}", "name": "a"}], "to": 1671620004000}, "type": "timeseries_request"}}
     When the request is sent
     Then the response status is 200 OK
     And the response "data.type" is equal to "timeseries_response"

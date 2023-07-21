@@ -4621,6 +4621,13 @@ query\_formula
    :members:
    :show-inheritance:
 
+query\_formula\_with\_limit
+---------------------------
+
+.. automodule:: datadog_api_client.v2.model.query_formula_with_limit
+   :members:
+   :show-inheritance:
+
 query\_sort\_order
 ------------------
 

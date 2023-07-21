@@ -8,7 +8,7 @@ from datadog_api_client.v2.model.formula_limit import FormulaLimit
 from datadog_api_client.v2.model.metrics_aggregator import MetricsAggregator
 from datadog_api_client.v2.model.metrics_data_source import MetricsDataSource
 from datadog_api_client.v2.model.metrics_scalar_query import MetricsScalarQuery
-from datadog_api_client.v2.model.query_formula import QueryFormula
+from datadog_api_client.v2.model.query_formula_with_limit import QueryFormulaWithLimit
 from datadog_api_client.v2.model.query_sort_order import QuerySortOrder
 from datadog_api_client.v2.model.scalar_formula_query_request import ScalarFormulaQueryRequest
 from datadog_api_client.v2.model.scalar_formula_request import ScalarFormulaRequest
@@ -20,7 +20,7 @@ body = ScalarFormulaQueryRequest(
     data=ScalarFormulaRequest(
         attributes=ScalarFormulaRequestAttributes(
             formulas=[
-                QueryFormula(
+                QueryFormulaWithLimit(
                     formula="a+b",
                     limit=FormulaLimit(
                         count=10,

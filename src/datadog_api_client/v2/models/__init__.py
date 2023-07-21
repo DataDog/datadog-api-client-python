@@ -768,6 +768,7 @@ from datadog_api_client.v2.model.process_summary import ProcessSummary
 from datadog_api_client.v2.model.process_summary_attributes import ProcessSummaryAttributes
 from datadog_api_client.v2.model.process_summary_type import ProcessSummaryType
 from datadog_api_client.v2.model.query_formula import QueryFormula
+from datadog_api_client.v2.model.query_formula_with_limit import QueryFormulaWithLimit
 from datadog_api_client.v2.model.query_sort_order import QuerySortOrder
 from datadog_api_client.v2.model.rum_aggregate_bucket_value import RUMAggregateBucketValue
 from datadog_api_client.v2.model.rum_aggregate_bucket_value_timeseries import RUMAggregateBucketValueTimeseries
@@ -2000,6 +2001,7 @@ __all__ = [
     "ProcessSummaryAttributes",
     "ProcessSummaryType",
     "QueryFormula",
+    "QueryFormulaWithLimit",
     "QuerySortOrder",
     "RUMAggregateBucketValue",
     "RUMAggregateBucketValueTimeseries",
