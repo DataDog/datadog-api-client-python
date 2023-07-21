@@ -3,12 +3,13 @@ import urllib3
 import http
 from datadog_api_client.rest import DDRetry
 
+
 @mock.patch("urllib3.connectionpool.HTTPConnectionPool._get_conn")
 def test_retry_request_ddretry(getconn_mock):
     ddretries = DDRetry(total=3)
     pool_manager = urllib3.PoolManager(retries=ddretries)
     mock_endpoint = "/api/test"
-    msg=http.client.HTTPMessage()
+    msg = http.client.HTTPMessage()
     response_429 = mock.Mock(status=429, msg=msg, headers={"X-Ratelimit-Reset": "1"})
     response_429.get_redirect_location.return_value = ""
     response_200 = mock.Mock(status=200, msg=msg, headers={})
