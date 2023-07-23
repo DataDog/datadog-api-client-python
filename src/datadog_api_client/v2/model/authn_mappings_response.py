@@ -3,11 +3,13 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
+from dataclasses import dataclass
 from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    datetime,
     unset,
     UnsetType,
 )
@@ -19,6 +21,18 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.response_meta_attributes import ResponseMetaAttributes
     from datadog_api_client.v2.model.saml_assertion_attribute import SAMLAssertionAttribute
     from datadog_api_client.v2.model.role import Role
+
+
+@dataclass
+class AuthNMappingsResponseJSON:
+    id: str
+    attribute_key: Union[str, UnsetType] = unset
+    attribute_value: Union[str, UnsetType] = unset
+    created_at: Union[datetime, UnsetType] = unset
+    modified_at: Union[datetime, UnsetType] = unset
+    saml_assertion_attribute_id: Union[str, UnsetType] = unset
+    role: Union[str, UnsetType] = unset
+    saml_assertion_attribute: Union[str, UnsetType] = unset
 
 
 class AuthNMappingsResponse(ModelNormal):
@@ -39,6 +53,7 @@ class AuthNMappingsResponse(ModelNormal):
         "included": "included",
         "meta": "meta",
     }
+    json_api_model = AuthNMappingsResponseJSON
 
     def __init__(
         self_,

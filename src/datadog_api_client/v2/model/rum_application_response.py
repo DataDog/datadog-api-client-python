@@ -3,6 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
+from dataclasses import dataclass
 from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
@@ -17,6 +18,22 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.rum_application import RUMApplication
 
 
+@dataclass
+class RUMApplicationResponseJSON:
+    id: str
+    type: str
+    application_id: Union[str, UnsetType] = unset
+    client_token: Union[str, UnsetType] = unset
+    created_at: Union[int, UnsetType] = unset
+    created_by_handle: Union[str, UnsetType] = unset
+    hash: Union[str, UnsetType] = unset
+    is_active: Union[bool, UnsetType] = unset
+    name: Union[str, UnsetType] = unset
+    org_id: Union[int, UnsetType] = unset
+    updated_at: Union[int, UnsetType] = unset
+    updated_by_handle: Union[str, UnsetType] = unset
+
+
 class RUMApplicationResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
@@ -29,6 +46,7 @@ class RUMApplicationResponse(ModelNormal):
     attribute_map = {
         "data": "data",
     }
+    json_api_model = RUMApplicationResponseJSON
 
     def __init__(self_, data: Union[RUMApplication, UnsetType] = unset, **kwargs):
         """

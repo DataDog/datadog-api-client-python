@@ -3,11 +3,13 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, Union, TYPE_CHECKING
+from dataclasses import dataclass
+from typing import Any, Dict, List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    datetime,
     unset,
     UnsetType,
 )
@@ -17,6 +19,15 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.audit_logs_event import AuditLogsEvent
     from datadog_api_client.v2.model.audit_logs_response_links import AuditLogsResponseLinks
     from datadog_api_client.v2.model.audit_logs_response_metadata import AuditLogsResponseMetadata
+
+
+@dataclass
+class AuditLogsEventsResponseJSON:
+    id: str
+    attributes: Union[Dict[str, Any], UnsetType] = unset
+    service: Union[str, UnsetType] = unset
+    tags: Union[List[str], UnsetType] = unset
+    timestamp: Union[datetime, UnsetType] = unset
 
 
 class AuditLogsEventsResponse(ModelNormal):
@@ -37,6 +48,7 @@ class AuditLogsEventsResponse(ModelNormal):
         "links": "links",
         "meta": "meta",
     }
+    json_api_model = AuditLogsEventsResponseJSON
 
     def __init__(
         self_,

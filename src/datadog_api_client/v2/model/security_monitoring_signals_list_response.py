@@ -3,11 +3,13 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, Union, TYPE_CHECKING
+from dataclasses import dataclass
+from typing import Any, Dict, List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    datetime,
     unset,
     UnsetType,
 )
@@ -21,6 +23,15 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.security_monitoring_signals_list_response_meta import (
         SecurityMonitoringSignalsListResponseMeta,
     )
+
+
+@dataclass
+class SecurityMonitoringSignalsListResponseJSON:
+    id: str
+    attributes: Union[Dict[str, Any], UnsetType] = unset
+    message: Union[str, UnsetType] = unset
+    tags: Union[List[str], UnsetType] = unset
+    timestamp: Union[datetime, UnsetType] = unset
 
 
 class SecurityMonitoringSignalsListResponse(ModelNormal):
@@ -45,6 +56,7 @@ class SecurityMonitoringSignalsListResponse(ModelNormal):
         "links": "links",
         "meta": "meta",
     }
+    json_api_model = SecurityMonitoringSignalsListResponseJSON
 
     def __init__(
         self_,

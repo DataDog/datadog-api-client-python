@@ -3,11 +3,13 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
+from dataclasses import dataclass
 from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    none_type,
     unset,
     UnsetType,
 )
@@ -18,6 +20,16 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.application_key_response_included_item import ApplicationKeyResponseIncludedItem
     from datadog_api_client.v2.model.user import User
     from datadog_api_client.v2.model.role import Role
+
+
+@dataclass
+class PartialApplicationKeyResponseJSON:
+    id: str
+    created_at: Union[str, UnsetType] = unset
+    last4: Union[str, UnsetType] = unset
+    name: Union[str, UnsetType] = unset
+    scopes: Union[List[str], none_type, UnsetType] = unset
+    owned_by: Union[str, UnsetType] = unset
 
 
 class PartialApplicationKeyResponse(ModelNormal):
@@ -37,6 +49,7 @@ class PartialApplicationKeyResponse(ModelNormal):
         "data": "data",
         "included": "included",
     }
+    json_api_model = PartialApplicationKeyResponseJSON
 
     def __init__(
         self_,

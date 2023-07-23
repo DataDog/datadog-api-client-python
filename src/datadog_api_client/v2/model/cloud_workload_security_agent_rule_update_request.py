@@ -3,11 +3,14 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from dataclasses import dataclass
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -15,6 +18,13 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.cloud_workload_security_agent_rule_update_data import (
         CloudWorkloadSecurityAgentRuleUpdateData,
     )
+
+
+@dataclass
+class CloudWorkloadSecurityAgentRuleUpdateRequestJSON:
+    description: Union[str, UnsetType] = unset
+    enabled: Union[bool, UnsetType] = unset
+    expression: Union[str, UnsetType] = unset
 
 
 class CloudWorkloadSecurityAgentRuleUpdateRequest(ModelNormal):
@@ -31,6 +41,7 @@ class CloudWorkloadSecurityAgentRuleUpdateRequest(ModelNormal):
     attribute_map = {
         "data": "data",
     }
+    json_api_model = CloudWorkloadSecurityAgentRuleUpdateRequestJSON
 
     def __init__(self_, data: CloudWorkloadSecurityAgentRuleUpdateData, **kwargs):
         """

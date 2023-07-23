@@ -21,7 +21,7 @@ if replacement_file.exists():
         EDGE_CASES.update(json.load(f))
 
 API_VERSION = None
-WHITELISTED_LIST_MODELS={
+WHITELISTED_LIST_MODELS = {
     "v1": (
         "AgentCheck",
         "AzureAccountListResponse",
@@ -62,7 +62,6 @@ WHITELISTED_LIST_MODELS={
         "TimeseriesResponseTimes",
         "TimeseriesResponseValues",
         "TimeseriesResponseValuesList",
-
     ),
 }
 
@@ -220,6 +219,7 @@ def format_data_with_schema(
     default_name=None,
     version=None,
     imports=None,
+    jsonapi=False,
 ):
     """Format data with schema."""
     assert version is not None
@@ -298,6 +298,7 @@ def format_data_with_schema_list(
     default_name=None,
     version=None,
     imports=None,
+    jsonapi=False,
 ):
     """Format data with schema."""
     assert version is not None
@@ -305,7 +306,7 @@ def format_data_with_schema_list(
     imports = imports or defaultdict(set)
     name, r_imports = get_name_and_imports(schema, version, None)
     if is_list_model_whitelisted(name):
-        imports.update(r_imports) 
+        imports.update(r_imports)
 
     if "oneOf" in schema:
         for sub_schema in schema["oneOf"]:
@@ -316,6 +317,7 @@ def format_data_with_schema_list(
                     replace_values=replace_values,
                     default_name=name if is_list_model_whitelisted(name) else None,
                     version=version,
+                    jsonapi=jsonapi,
                 )
             except (KeyError, ValueError):
                 continue
@@ -333,12 +335,13 @@ def format_data_with_schema_list(
             schema["items"],
             replace_values=replace_values,
             version=version,
+            jsonapi=jsonapi,
         )
         parameters += f"{value}, "
         imports = _merge_imports(imports, extra_imports)
     parameters = f"[{parameters}]"
 
-    if name and is_list_model_whitelisted(name): 
+    if name and is_list_model_whitelisted(name):
         return f"{name}({parameters})", imports
 
     return parameters, imports
@@ -352,6 +355,7 @@ def format_data_with_schema_dict(
     default_name=None,
     version=None,
     imports=None,
+    jsonapi=False,
 ):
     """Format data with schema."""
     assert version is not None
@@ -364,20 +368,66 @@ def format_data_with_schema_dict(
         if missing:
             raise ValueError(f"missing required properties: {missing}")
 
-        for k, v in data.items():
-            if k in schema["properties"]:
-                sub_schema = schema["properties"][k]
-            else:
-                sub_schema = schema["additionalProperties"]
-            value, extra_imports = format_data_with_schema(
-                v,
-                sub_schema,
-                replace_values=replace_values,
-                default_name=name + camel_case(k) if name else None,
-                version=version,
-            )
-            parameters += f"{escape_reserved_keyword(safe_snake_case(k))}={value}, "
-            imports = _merge_imports(imports, extra_imports)
+        if jsonapi and list(data.keys()) == ["data"]:
+            for package, models in imports.items():
+                if name in models:
+                    models.add(f"{name}JSON")
+                    models.remove(name)
+            name = f"{name}JSON"
+            original_schema = schema
+            if "id" in data["data"]:
+                v = data["data"]["id"]
+                if v in replace_values:
+                    v = replace_values[v]
+                else:
+                    v = f'"{v}"'
+                parameters += f"id={v}, "
+            if original_schema["properties"]["data"].get("properties", {}).get("attributes"):
+                schema = original_schema["properties"]["data"]["properties"]["attributes"]
+                for k, v in data["data"].get("attributes", {}).items():
+                    sub_schema = schema["properties"][k]
+                    value, extra_imports = format_data_with_schema(
+                        v,
+                        sub_schema,
+                        replace_values=replace_values,
+                        default_name=name + camel_case(k) if name else None,
+                        version=version,
+                        jsonapi=jsonapi,
+                    )
+                    parameters += f"{escape_reserved_keyword(safe_snake_case(k))}={value}, "
+                    imports = _merge_imports(imports, extra_imports)
+            if original_schema["properties"]["data"].get("properties", {}).get("relationships"):
+                schema = original_schema["properties"]["data"]["properties"]["relationships"]
+                for k, v in data["data"].get("relationships", {}).items():
+                    value = v.get("data", {})
+                    if value:
+                        if isinstance(value, list):
+                            value = [item["id"] for item in value]
+                            value = ", ".join(f'"{item}"' for item in value)
+                            value = f"[{value}]"
+                        else:
+                            value = value.get("id")
+                            if value:
+                                value = f'"{value}"'
+                    parameters += f"{escape_reserved_keyword(safe_snake_case(k))}={value}, "
+            if not parameters:
+                raise NotImplementedError()
+        else:
+            for k, v in data.items():
+                if k in schema["properties"]:
+                    sub_schema = schema["properties"][k]
+                else:
+                    sub_schema = schema["additionalProperties"]
+                value, extra_imports = format_data_with_schema(
+                    v,
+                    sub_schema,
+                    replace_values=replace_values,
+                    default_name=name + camel_case(k) if name else None,
+                    version=version,
+                    jsonapi=jsonapi,
+                )
+                parameters += f"{escape_reserved_keyword(safe_snake_case(k))}={value}, "
+                imports = _merge_imports(imports, extra_imports)
 
     if schema.get("additionalProperties") and not schema.get("properties"):
         for k, v in data.items():
@@ -386,6 +436,7 @@ def format_data_with_schema_dict(
                 schema["additionalProperties"],
                 replace_values=replace_values,
                 version=version,
+                jsonapi=jsonapi,
             )
             parameters += f"{escape_reserved_keyword(k)}={value}, "
             imports = _merge_imports(imports, extra_imports)
@@ -407,6 +458,7 @@ def format_data_with_schema_dict(
                     sub_schema,
                     replace_values=replace_values,
                     version=version,
+                    jsonapi=jsonapi,
                 )
                 if matched == 0:
                     imports = _merge_imports(imports, extra_imports)

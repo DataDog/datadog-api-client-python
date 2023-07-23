@@ -3,6 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
+from dataclasses import dataclass
 from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
@@ -15,6 +16,14 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.fastly_account_response_data import FastlyAccountResponseData
+    from datadog_api_client.v2.model.fastly_service import FastlyService
+
+
+@dataclass
+class FastlyAccountsResponseJSON:
+    id: str
+    name: Union[str, UnsetType] = unset
+    services: Union[List[FastlyService], UnsetType] = unset
 
 
 class FastlyAccountsResponse(ModelNormal):
@@ -29,6 +38,7 @@ class FastlyAccountsResponse(ModelNormal):
     attribute_map = {
         "data": "data",
     }
+    json_api_model = FastlyAccountsResponseJSON
 
     def __init__(self_, data: Union[List[FastlyAccountResponseData], UnsetType] = unset, **kwargs):
         """

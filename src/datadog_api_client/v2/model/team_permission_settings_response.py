@@ -3,6 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
+from dataclasses import dataclass
 from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
@@ -15,6 +16,21 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.team_permission_setting import TeamPermissionSetting
+    from datadog_api_client.v2.model.team_permission_setting_serializer_action import (
+        TeamPermissionSettingSerializerAction,
+    )
+    from datadog_api_client.v2.model.team_permission_setting_values import TeamPermissionSettingValues
+    from datadog_api_client.v2.model.team_permission_setting_value import TeamPermissionSettingValue
+
+
+@dataclass
+class TeamPermissionSettingsResponseJSON:
+    id: str
+    action: Union[TeamPermissionSettingSerializerAction, UnsetType] = unset
+    editable: Union[bool, UnsetType] = unset
+    options: Union[TeamPermissionSettingValues, UnsetType] = unset
+    title: Union[str, UnsetType] = unset
+    value: Union[TeamPermissionSettingValue, UnsetType] = unset
 
 
 class TeamPermissionSettingsResponse(ModelNormal):
@@ -29,6 +45,7 @@ class TeamPermissionSettingsResponse(ModelNormal):
     attribute_map = {
         "data": "data",
     }
+    json_api_model = TeamPermissionSettingsResponseJSON
 
     def __init__(self_, data: Union[List[TeamPermissionSetting], UnsetType] = unset, **kwargs):
         """

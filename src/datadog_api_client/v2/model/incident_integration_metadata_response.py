@@ -3,6 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
+from dataclasses import dataclass
 from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
@@ -21,6 +22,20 @@ if TYPE_CHECKING:
         IncidentIntegrationMetadataResponseIncludedItem,
     )
     from datadog_api_client.v2.model.user import User
+    from datadog_api_client.v2.model.incident_integration_metadata_metadata import IncidentIntegrationMetadataMetadata
+    from datadog_api_client.v2.model.slack_integration_metadata import SlackIntegrationMetadata
+    from datadog_api_client.v2.model.jira_integration_metadata import JiraIntegrationMetadata
+
+
+@dataclass
+class IncidentIntegrationMetadataResponseJSON:
+    id: str
+    incident_id: Union[str, UnsetType] = unset
+    integration_type: Union[int, UnsetType] = unset
+    metadata: Union[
+        IncidentIntegrationMetadataMetadata, SlackIntegrationMetadata, JiraIntegrationMetadata, UnsetType
+    ] = unset
+    status: Union[int, UnsetType] = unset
 
 
 class IncidentIntegrationMetadataResponse(ModelNormal):
@@ -45,6 +60,7 @@ class IncidentIntegrationMetadataResponse(ModelNormal):
     read_only_vars = {
         "included",
     }
+    json_api_model = IncidentIntegrationMetadataResponseJSON
 
     def __init__(
         self_,

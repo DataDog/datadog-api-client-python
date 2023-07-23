@@ -3,16 +3,26 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from dataclasses import dataclass
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.restriction_policy import RestrictionPolicy
+    from datadog_api_client.v2.model.restriction_policy_binding import RestrictionPolicyBinding
+
+
+@dataclass
+class RestrictionPolicyResponseJSON:
+    id: str
+    bindings: Union[List[RestrictionPolicyBinding], UnsetType] = unset
 
 
 class RestrictionPolicyResponse(ModelNormal):
@@ -27,6 +37,7 @@ class RestrictionPolicyResponse(ModelNormal):
     attribute_map = {
         "data": "data",
     }
+    json_api_model = RestrictionPolicyResponseJSON
 
     def __init__(self_, data: RestrictionPolicy, **kwargs):
         """

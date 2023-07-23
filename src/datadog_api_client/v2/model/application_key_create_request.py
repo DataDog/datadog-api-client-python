@@ -3,16 +3,26 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from dataclasses import dataclass
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    none_type,
+    unset,
+    UnsetType,
 )
 
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.application_key_create_data import ApplicationKeyCreateData
+
+
+@dataclass
+class ApplicationKeyCreateRequestJSON:
+    name: Union[str, UnsetType] = unset
+    scopes: Union[List[str], none_type, UnsetType] = unset
 
 
 class ApplicationKeyCreateRequest(ModelNormal):
@@ -27,6 +37,7 @@ class ApplicationKeyCreateRequest(ModelNormal):
     attribute_map = {
         "data": "data",
     }
+    json_api_model = ApplicationKeyCreateRequestJSON
 
     def __init__(self_, data: ApplicationKeyCreateData, **kwargs):
         """

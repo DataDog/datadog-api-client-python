@@ -3,16 +3,28 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from dataclasses import dataclass
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.service_account_create_data import ServiceAccountCreateData
+
+
+@dataclass
+class ServiceAccountCreateRequestJSON:
+    email: Union[str, UnsetType] = unset
+    name: Union[str, UnsetType] = unset
+    service_account: Union[bool, UnsetType] = unset
+    title: Union[str, UnsetType] = unset
+    roles: Union[List[str], UnsetType] = unset
 
 
 class ServiceAccountCreateRequest(ModelNormal):
@@ -27,6 +39,7 @@ class ServiceAccountCreateRequest(ModelNormal):
     attribute_map = {
         "data": "data",
     }
+    json_api_model = ServiceAccountCreateRequestJSON
 
     def __init__(self_, data: ServiceAccountCreateData, **kwargs):
         """

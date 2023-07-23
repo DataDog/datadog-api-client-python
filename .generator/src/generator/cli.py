@@ -57,6 +57,9 @@ def cli(specs, output):
     env.globals["type_to_python"] = openapi.type_to_python
     env.globals["get_default"] = openapi.get_default
     env.globals["get_type_at_path"] = openapi.get_type_at_path
+    env.globals["is_json_api"] = openapi.is_json_api
+    env.globals["json_api_attributes"] = openapi.json_api_attributes
+    env.globals["set"] = set
 
     api_j2 = env.get_template("api.j2")
     apis_j2 = env.get_template("apis.j2")
@@ -71,7 +74,6 @@ def cli(specs, output):
         "model_utils.py": env.get_template("model_utils.j2"),
         "rest.py": env.get_template("rest.j2"),
     }
-
 
     top_package = output / PACKAGE_NAME
     top_package.mkdir(parents=True, exist_ok=True)
@@ -124,7 +126,13 @@ def cli(specs, output):
             api_path = package / "api" / filename
             api_path.parent.mkdir(parents=True, exist_ok=True)
             with api_path.open("w") as fp:
-                fp.write(api_j2.render(name=name, operations=operations, description=tags_by_name[name]["description"]))
+                fp.write(
+                    api_j2.render(
+                        name=name,
+                        operations=operations,
+                        description=tags_by_name[name]["description"],
+                    )
+                )
 
         api_init_path = package / "api" / "__init__.py"
         with api_init_path.open("w") as fp:

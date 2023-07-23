@@ -1,6 +1,7 @@
 {% include "api_info.j2" %}
 from __future__ import annotations
 
+from dataclasses import dataclass
 from typing import Any, Dict, List, Union, TYPE_CHECKING
 
 from {{ package }}.model_utils import (

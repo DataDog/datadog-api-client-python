@@ -3,6 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
+from dataclasses import dataclass
 from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
@@ -17,6 +18,18 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.full_api_key import FullAPIKey
     from datadog_api_client.v2.model.api_key_response_included_item import APIKeyResponseIncludedItem
     from datadog_api_client.v2.model.user import User
+
+
+@dataclass
+class APIKeyResponseJSON:
+    id: str
+    created_at: Union[str, UnsetType] = unset
+    key: Union[str, UnsetType] = unset
+    last4: Union[str, UnsetType] = unset
+    modified_at: Union[str, UnsetType] = unset
+    name: Union[str, UnsetType] = unset
+    created_by: Union[str, UnsetType] = unset
+    modified_by: Union[str, UnsetType] = unset
 
 
 class APIKeyResponse(ModelNormal):
@@ -34,6 +47,7 @@ class APIKeyResponse(ModelNormal):
         "data": "data",
         "included": "included",
     }
+    json_api_model = APIKeyResponseJSON
 
     def __init__(
         self_,

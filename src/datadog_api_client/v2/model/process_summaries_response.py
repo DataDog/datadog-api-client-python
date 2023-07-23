@@ -3,6 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
+from dataclasses import dataclass
 from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
@@ -16,6 +17,19 @@ from datadog_api_client.model_utils import (
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.process_summary import ProcessSummary
     from datadog_api_client.v2.model.process_summaries_meta import ProcessSummariesMeta
+
+
+@dataclass
+class ProcessSummariesResponseJSON:
+    id: str
+    cmdline: Union[str, UnsetType] = unset
+    host: Union[str, UnsetType] = unset
+    pid: Union[int, UnsetType] = unset
+    ppid: Union[int, UnsetType] = unset
+    start: Union[str, UnsetType] = unset
+    tags: Union[List[str], UnsetType] = unset
+    timestamp: Union[str, UnsetType] = unset
+    user: Union[str, UnsetType] = unset
 
 
 class ProcessSummariesResponse(ModelNormal):
@@ -33,6 +47,7 @@ class ProcessSummariesResponse(ModelNormal):
         "data": "data",
         "meta": "meta",
     }
+    json_api_model = ProcessSummariesResponseJSON
 
     def __init__(
         self_,

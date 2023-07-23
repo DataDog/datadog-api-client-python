@@ -3,16 +3,30 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from dataclasses import dataclass
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.spans_metric_create_data import SpansMetricCreateData
+    from datadog_api_client.v2.model.spans_metric_compute import SpansMetricCompute
+    from datadog_api_client.v2.model.spans_metric_filter import SpansMetricFilter
+    from datadog_api_client.v2.model.spans_metric_group_by import SpansMetricGroupBy
+
+
+@dataclass
+class SpansMetricCreateRequestJSON:
+    id: str
+    compute: Union[SpansMetricCompute, UnsetType] = unset
+    filter: Union[SpansMetricFilter, UnsetType] = unset
+    group_by: Union[List[SpansMetricGroupBy], UnsetType] = unset
 
 
 class SpansMetricCreateRequest(ModelNormal):
@@ -27,6 +41,7 @@ class SpansMetricCreateRequest(ModelNormal):
     attribute_map = {
         "data": "data",
     }
+    json_api_model = SpansMetricCreateRequestJSON
 
     def __init__(self_, data: SpansMetricCreateData, **kwargs):
         """

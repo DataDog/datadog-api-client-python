@@ -3,7 +3,8 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from dataclasses import dataclass
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -15,6 +16,15 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.gcpsts_service_account import GCPSTSServiceAccount
+
+
+@dataclass
+class GCPSTSServiceAccountResponseJSON:
+    id: str
+    automute: Union[bool, UnsetType] = unset
+    client_email: Union[str, UnsetType] = unset
+    host_filters: Union[List[str], UnsetType] = unset
+    is_cspm_enabled: Union[bool, UnsetType] = unset
 
 
 class GCPSTSServiceAccountResponse(ModelNormal):
@@ -29,6 +39,7 @@ class GCPSTSServiceAccountResponse(ModelNormal):
     attribute_map = {
         "data": "data",
     }
+    json_api_model = GCPSTSServiceAccountResponseJSON
 
     def __init__(self_, data: Union[GCPSTSServiceAccount, UnsetType] = unset, **kwargs):
         """

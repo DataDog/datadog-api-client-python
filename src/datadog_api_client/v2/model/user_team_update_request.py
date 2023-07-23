@@ -3,16 +3,26 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from dataclasses import dataclass
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    none_type,
+    unset,
+    UnsetType,
 )
 
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.user_team_update import UserTeamUpdate
+    from datadog_api_client.v2.model.user_team_role import UserTeamRole
+
+
+@dataclass
+class UserTeamUpdateRequestJSON:
+    role: Union[UserTeamRole, none_type, UnsetType] = unset
 
 
 class UserTeamUpdateRequest(ModelNormal):
@@ -27,6 +37,7 @@ class UserTeamUpdateRequest(ModelNormal):
     attribute_map = {
         "data": "data",
     }
+    json_api_model = UserTeamUpdateRequestJSON
 
     def __init__(self_, data: UserTeamUpdate, **kwargs):
         """

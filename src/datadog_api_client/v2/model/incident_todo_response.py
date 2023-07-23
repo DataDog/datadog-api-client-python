@@ -3,11 +3,13 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
+from dataclasses import dataclass
 from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    none_type,
     unset,
     UnsetType,
 )
@@ -17,6 +19,17 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.incident_todo_response_data import IncidentTodoResponseData
     from datadog_api_client.v2.model.incident_todo_response_included_item import IncidentTodoResponseIncludedItem
     from datadog_api_client.v2.model.user import User
+    from datadog_api_client.v2.model.incident_todo_assignee_array import IncidentTodoAssigneeArray
+
+
+@dataclass
+class IncidentTodoResponseJSON:
+    id: str
+    assignees: Union[IncidentTodoAssigneeArray, UnsetType] = unset
+    completed: Union[str, none_type, UnsetType] = unset
+    content: Union[str, UnsetType] = unset
+    due_date: Union[str, none_type, UnsetType] = unset
+    incident_id: Union[str, UnsetType] = unset
 
 
 class IncidentTodoResponse(ModelNormal):
@@ -37,6 +50,7 @@ class IncidentTodoResponse(ModelNormal):
     read_only_vars = {
         "included",
     }
+    json_api_model = IncidentTodoResponseJSON
 
     def __init__(
         self_,

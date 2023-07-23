@@ -3,7 +3,8 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from dataclasses import dataclass
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -15,6 +16,18 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.spans_aggregate_data import SpansAggregateData
+    from datadog_api_client.v2.model.spans_compute import SpansCompute
+    from datadog_api_client.v2.model.spans_query_filter import SpansQueryFilter
+    from datadog_api_client.v2.model.spans_group_by import SpansGroupBy
+    from datadog_api_client.v2.model.spans_query_options import SpansQueryOptions
+
+
+@dataclass
+class SpansAggregateRequestJSON:
+    compute: Union[List[SpansCompute], UnsetType] = unset
+    filter: Union[SpansQueryFilter, UnsetType] = unset
+    group_by: Union[List[SpansGroupBy], UnsetType] = unset
+    options: Union[SpansQueryOptions, UnsetType] = unset
 
 
 class SpansAggregateRequest(ModelNormal):
@@ -29,6 +42,7 @@ class SpansAggregateRequest(ModelNormal):
     attribute_map = {
         "data": "data",
     }
+    json_api_model = SpansAggregateRequestJSON
 
     def __init__(self_, data: Union[SpansAggregateData, UnsetType] = unset, **kwargs):
         """

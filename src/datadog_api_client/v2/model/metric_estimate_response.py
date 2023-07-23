@@ -3,11 +3,13 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
+from dataclasses import dataclass
 from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    datetime,
     unset,
     UnsetType,
 )
@@ -15,6 +17,15 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.metric_estimate import MetricEstimate
+    from datadog_api_client.v2.model.metric_estimate_type import MetricEstimateType
+
+
+@dataclass
+class MetricEstimateResponseJSON:
+    id: str
+    estimate_type: Union[MetricEstimateType, UnsetType] = unset
+    estimated_at: Union[datetime, UnsetType] = unset
+    estimated_output_series: Union[int, UnsetType] = unset
 
 
 class MetricEstimateResponse(ModelNormal):
@@ -29,6 +40,7 @@ class MetricEstimateResponse(ModelNormal):
     attribute_map = {
         "data": "data",
     }
+    json_api_model = MetricEstimateResponseJSON
 
     def __init__(self_, data: Union[MetricEstimate, UnsetType] = unset, **kwargs):
         """

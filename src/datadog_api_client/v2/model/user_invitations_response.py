@@ -3,11 +3,13 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
+from dataclasses import dataclass
 from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    datetime,
     unset,
     UnsetType,
 )
@@ -15,6 +17,15 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.user_invitation_response_data import UserInvitationResponseData
+
+
+@dataclass
+class UserInvitationsResponseJSON:
+    id: str
+    created_at: Union[datetime, UnsetType] = unset
+    expires_at: Union[datetime, UnsetType] = unset
+    invite_type: Union[str, UnsetType] = unset
+    uuid: Union[str, UnsetType] = unset
 
 
 class UserInvitationsResponse(ModelNormal):
@@ -29,6 +40,7 @@ class UserInvitationsResponse(ModelNormal):
     attribute_map = {
         "data": "data",
     }
+    json_api_model = UserInvitationsResponseJSON
 
     def __init__(self_, data: Union[List[UserInvitationResponseData], UnsetType] = unset, **kwargs):
         """

@@ -3,16 +3,25 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from dataclasses import dataclass
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.cloudflare_account_update_request_data import CloudflareAccountUpdateRequestData
+
+
+@dataclass
+class CloudflareAccountUpdateRequestJSON:
+    api_key: Union[str, UnsetType] = unset
+    email: Union[str, UnsetType] = unset
 
 
 class CloudflareAccountUpdateRequest(ModelNormal):
@@ -29,6 +38,7 @@ class CloudflareAccountUpdateRequest(ModelNormal):
     attribute_map = {
         "data": "data",
     }
+    json_api_model = CloudflareAccountUpdateRequestJSON
 
     def __init__(self_, data: CloudflareAccountUpdateRequestData, **kwargs):
         """

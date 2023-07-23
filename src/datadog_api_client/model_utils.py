@@ -120,6 +120,8 @@ class OpenApiModel(object):
 
     read_only_vars: Collection[str] = frozenset()
 
+    json_api_model: Union[type, none_type] = None
+
     def set_attribute(self, name, value):
         # this is only used to set properties on self
 
@@ -908,6 +910,10 @@ def remove_uncoercible(required_types_classes, current_item, spec_property_namin
         # convert our models to OpenApiModel
         required_type_class_simplified = required_type_class
         if isinstance(required_type_class_simplified, type):
+            if getattr(required_type_class, "json_api_model", None) == current_type_simple:
+                results_classes.append(required_type_class)
+                continue
+
             if issubclass(required_type_class_simplified, ModelComposed):
                 required_type_class_simplified = ModelComposed
             elif issubclass(required_type_class_simplified, ModelNormal):
@@ -1091,6 +1097,8 @@ def deserialize_model(model_data, model_class, path_to_item, check_type, configu
 
     if issubclass(model_class, ModelSimple):
         return model_class(model_data, **kw_args)
+    if issubclass(model_class, ModelNormal) and model_class.json_api_model and not isinstance(model_data, dict):
+        return from_json_api(model_class, model_data, **kw_args)
     elif isinstance(model_data, list):
         if issubclass(model_class, ModelComposed) and allows_single_value_input(model_class):
             return model_class(model_data, **kw_args)
@@ -1179,9 +1187,12 @@ def attempt_convert_item(
     for valid_class in valid_classes_coercible:
         try:
             if issubclass(valid_class, OpenApiModel):
-                return deserialize_model(
+                model = deserialize_model(
                     input_value, valid_class, path_to_item, check_type, configuration, spec_property_naming
                 )
+                if configuration.use_json_api and model.json_api_model:
+                    model = to_json_api(model)
+                return model
             elif valid_class == file_type:
                 return deserialize_file(input_value, configuration.temp_folder_path)
             return deserialize_primitive(input_value, valid_class, path_to_item)
@@ -1195,6 +1206,71 @@ def attempt_convert_item(
         raise get_type_error(input_value, path_to_item, valid_classes, key_type=key_type)
     # we were unable to convert, must_convert == False
     return input_value
+
+
+def _data_to_json_api(model_data):
+    kwargs = {}
+    if "id" in model_data.attribute_map:
+        kwargs["id"] = model_data.id
+    if "attributes" in model_data.attribute_map:
+        attributes = getattr(model_data, "attributes", None)
+        if attributes is not None:
+            for attr in attributes.attribute_map:
+                kwargs[attr] = attributes.get(attr)
+    if "relationships" in model_data.attribute_map:
+        relationships = getattr(model_data, "relationships", None)
+        if relationships is not None:
+            for attr in relationships.attribute_map:
+                rel = relationships.get(attr)
+                if rel is None:
+                    continue
+                data = rel.data
+                if isinstance(data, list):
+                    kwargs[attr] = [elt.id for elt in data]
+                elif data is not None:
+                    kwargs[attr] = data.id
+                else:
+                    kwargs[attr] = data
+    return kwargs
+
+
+def to_json_api(model):
+    cls = model.json_api_model
+    if isinstance(model.data, list):
+        return [cls(**_data_to_json_api(item)) for item in model.data]
+    else:
+        return cls(**_data_to_json_api(model.data))
+
+
+def from_json_api(model, json_instance, **kwargs):
+    data_model = model.openapi_types["data"][0]
+    data_kwargs = kwargs.copy()
+    if "id" in data_model.attribute_map:
+        data_kwargs["id"] = getattr(json_instance, "id", unset)
+    if "attributes" in data_model.attribute_map:
+        attributes_model = data_model.openapi_types["attributes"][0]
+        attributes_kwargs = kwargs.copy()
+        for attr in attributes_model.attribute_map:
+            attr_value = getattr(json_instance, attr, unset)
+            if attr_value is not unset:
+                attributes_kwargs[attr] = attr_value
+        data_kwargs["attributes"] = attributes_model(**attributes_kwargs)
+    if "relationships" in data_model.attribute_map:
+        relationships_model = data_model.openapi_types["relationships"][0]
+        relationships_kwargs = kwargs.copy()
+        for attr in relationships_model.attribute_map:
+            attr_value = getattr(json_instance, attr, unset)
+            if attr_value is not unset:
+                rel_model = relationships_model.openapi_types[attr][0]
+                rel_data_model = rel_model.openapi_types["data"][0]
+                type_model = rel_data_model.openapi_types["type"][0]
+                relationships_kwargs[attr] = rel_model(
+                    rel_data_model(attr_value, type_model(list(type_model.allowed_values)[0])),
+                )
+        data_kwargs["relationships"] = relationships_model(**relationships_kwargs)
+    type_model = data_model.openapi_types["type"][0]
+    data_kwargs["type"] = type_model(list(type_model.allowed_values)[0])
+    return model(data_model(**data_kwargs))
 
 
 def is_type_nullable(input_type):

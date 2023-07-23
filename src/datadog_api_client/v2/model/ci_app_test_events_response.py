@@ -3,11 +3,13 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, Union, TYPE_CHECKING
+from dataclasses import dataclass
+from typing import Any, Dict, List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    datetime,
     unset,
     UnsetType,
 )
@@ -17,6 +19,16 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.ci_app_test_event import CIAppTestEvent
     from datadog_api_client.v2.model.ci_app_response_links import CIAppResponseLinks
     from datadog_api_client.v2.model.ci_app_response_metadata_with_pagination import CIAppResponseMetadataWithPagination
+    from datadog_api_client.v2.model.tags_event_attribute import TagsEventAttribute
+
+
+@dataclass
+class CIAppTestEventsResponseJSON:
+    id: str
+    attributes: Union[Dict[str, Any], UnsetType] = unset
+    service: Union[str, UnsetType] = unset
+    tags: Union[TagsEventAttribute, UnsetType] = unset
+    timestamp: Union[datetime, UnsetType] = unset
 
 
 class CIAppTestEventsResponse(ModelNormal):
@@ -39,6 +51,7 @@ class CIAppTestEventsResponse(ModelNormal):
         "links": "links",
         "meta": "meta",
     }
+    json_api_model = CIAppTestEventsResponseJSON
 
     def __init__(
         self_,

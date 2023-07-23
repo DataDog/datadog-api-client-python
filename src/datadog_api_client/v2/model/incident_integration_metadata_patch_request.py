@@ -3,11 +3,14 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from dataclasses import dataclass
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -15,6 +18,19 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.incident_integration_metadata_patch_data import (
         IncidentIntegrationMetadataPatchData,
     )
+    from datadog_api_client.v2.model.incident_integration_metadata_metadata import IncidentIntegrationMetadataMetadata
+    from datadog_api_client.v2.model.slack_integration_metadata import SlackIntegrationMetadata
+    from datadog_api_client.v2.model.jira_integration_metadata import JiraIntegrationMetadata
+
+
+@dataclass
+class IncidentIntegrationMetadataPatchRequestJSON:
+    incident_id: Union[str, UnsetType] = unset
+    integration_type: Union[int, UnsetType] = unset
+    metadata: Union[
+        IncidentIntegrationMetadataMetadata, SlackIntegrationMetadata, JiraIntegrationMetadata, UnsetType
+    ] = unset
+    status: Union[int, UnsetType] = unset
 
 
 class IncidentIntegrationMetadataPatchRequest(ModelNormal):
@@ -31,6 +47,7 @@ class IncidentIntegrationMetadataPatchRequest(ModelNormal):
     attribute_map = {
         "data": "data",
     }
+    json_api_model = IncidentIntegrationMetadataPatchRequestJSON
 
     def __init__(self_, data: IncidentIntegrationMetadataPatchData, **kwargs):
         """

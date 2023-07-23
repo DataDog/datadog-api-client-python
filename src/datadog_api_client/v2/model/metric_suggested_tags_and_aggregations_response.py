@@ -3,7 +3,8 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from dataclasses import dataclass
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -15,6 +16,14 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.metric_suggested_tags_and_aggregations import MetricSuggestedTagsAndAggregations
+    from datadog_api_client.v2.model.metric_suggested_aggregations import MetricSuggestedAggregations
+
+
+@dataclass
+class MetricSuggestedTagsAndAggregationsResponseJSON:
+    id: str
+    active_aggregations: Union[MetricSuggestedAggregations, UnsetType] = unset
+    active_tags: Union[List[str], UnsetType] = unset
 
 
 class MetricSuggestedTagsAndAggregationsResponse(ModelNormal):
@@ -31,6 +40,7 @@ class MetricSuggestedTagsAndAggregationsResponse(ModelNormal):
     attribute_map = {
         "data": "data",
     }
+    json_api_model = MetricSuggestedTagsAndAggregationsResponseJSON
 
     def __init__(self_, data: Union[MetricSuggestedTagsAndAggregations, UnsetType] = unset, **kwargs):
         """
