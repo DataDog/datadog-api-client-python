@@ -710,9 +710,7 @@ components:
           example: Application Key for managing dashboards
           type: string
         scopes:
-          description: Array of scopes to grant the application key. This feature
-            is in private beta, please contact Datadog support to enable scopes for
-            your application keys.
+          description: Array of scopes to grant the application key.
           example:
           - dashboards_read
           - dashboards_write
@@ -775,9 +773,7 @@ components:
           example: Application Key for managing dashboards
           type: string
         scopes:
-          description: Array of scopes to grant the application key. This feature
-            is in private beta, please contact Datadog support to enable scopes for
-            your application keys.
+          description: Array of scopes to grant the application key.
           example:
           - dashboards_read
           - dashboards_write
@@ -5274,9 +5270,7 @@ components:
           example: Application Key for managing dashboards
           type: string
         scopes:
-          description: Array of scopes to grant the application key. This feature
-            is in private beta, please contact Datadog support to enable scopes for
-            your application keys.
+          description: Array of scopes to grant the application key.
           example:
           - dashboards_read
           - dashboards_write
@@ -10430,9 +10424,7 @@ components:
           example: Application Key for managing dashboards
           type: string
         scopes:
-          description: Array of scopes to grant the application key. This feature
-            is in private beta, please contact Datadog support to enable scopes for
-            your application keys.
+          description: Array of scopes to grant the application key.
           example:
           - dashboards_read
           - dashboards_write
@@ -21550,7 +21542,7 @@ paths:
       - description: 'The number of seconds of look back (from now) to apply to a
           filter[tag] or filter[queried] query.
 
-          Defaults value is 3600 (1 hour), maximum value is 1,209,600 (2 weeks).'
+          Default value is 3600 (1 hour), maximum value is 2,592,000 (30 days).'
         example: 3600
         in: query
         name: window[seconds]
