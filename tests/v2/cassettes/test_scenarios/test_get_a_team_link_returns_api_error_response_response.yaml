@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"handle":"handle-7502e409e8a5596c","name":"name-7502e409e8a5596c"},"type":"team"}}'
+    body: '{"data":{"attributes":{"handle":"handle-62e1a70bb6b304ee","name":"name-62e1a70bb6b304ee"},"type":"team"}}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/team
   response:
     body:
-      string: '{"data":{"type":"team","id":"54e7478a-ef4f-11ed-9558-da7ad0900002","attributes":{"name":"name-7502e409e8a5596c","handle":"handle-7502e409e8a5596c","summary":null,"description":null,"color":0,"created_at":"2023-05-10T16:25:52.425262+00:00","modified_at":"2023-05-10T16:25:52.425266+00:00","user_count":0,"link_count":0},"relationships":{"team_links":{"links":{"related":"/api/v2/team/54e7478a-ef4f-11ed-9558-da7ad0900002/links"}},"user_team_permissions":{"links":{"related":"/api/v2/team/54e7478a-ef4f-11ed-9558-da7ad0900002/permission-settings"}}}}}
+      string: '{"data":{"type":"team","id":"a7c4e9c4-20d9-11ee-99df-da7ad0900002","attributes":{"name":"name-62e1a70bb6b304ee","handle":"handle-62e1a70bb6b304ee","summary":null,"description":null,"created_at":"2023-07-12T17:29:28.973645+00:00","modified_at":"2023-07-12T17:29:28.973651+00:00","user_count":0,"link_count":0},"relationships":{"team_links":{"links":{"related":"/api/v2/team/a7c4e9c4-20d9-11ee-99df-da7ad0900002/links"}},"user_team_permissions":{"links":{"related":"/api/v2/team/a7c4e9c4-20d9-11ee-99df-da7ad0900002/permission-settings"}}}}}
 
         '
     headers:
@@ -25,7 +25,7 @@ interactions:
       accept:
       - application/json
     method: GET
-    uri: https://api.datadoghq.com/api/v2/team/54e7478a-ef4f-11ed-9558-da7ad0900002/links/REPLACE.ME
+    uri: https://api.datadoghq.com/api/v2/team/a7c4e9c4-20d9-11ee-99df-da7ad0900002/links/REPLACE.ME
   response:
     body:
       string: '{"errors":["REPLACE.ME is not a valid UUID not found"]}'
@@ -41,7 +41,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/team/54e7478a-ef4f-11ed-9558-da7ad0900002
+    uri: https://api.datadoghq.com/api/v2/team/a7c4e9c4-20d9-11ee-99df-da7ad0900002
   response:
     body:
       string: ''
