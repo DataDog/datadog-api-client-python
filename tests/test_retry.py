@@ -35,6 +35,7 @@ def test_retry_request_ddretry_429(getconn_mock, sleep_mock):
     assert sleep_mock.call_args_list[1][0][0] == 1
     assert sleep_mock.call_args_list[2][0][0] == 1
 
+
 @mock.patch("time.sleep", return_value=None)
 @mock.patch("urllib3.connectionpool.HTTPConnectionPool._get_conn")
 def test_retry_request_ddretry_500(getconn_mock, sleep_mock):
@@ -60,6 +61,7 @@ def test_retry_request_ddretry_500(getconn_mock, sleep_mock):
     assert r.status == 200
     assert sleep_mock.call_args_list[0][0][0] == 4
     assert sleep_mock.call_args_list[1][0][0] == 8
+
 
 @mock.patch("time.sleep", return_value=None)
 def test_retry_client(sleep_mock):
