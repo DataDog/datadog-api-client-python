@@ -15,6 +15,8 @@ from datadog_api_client.v2.model.cloud_configuration_rule_compliance_signal_opti
 from datadog_api_client.v2.model.cloud_configuration_rule_create_payload import CloudConfigurationRuleCreatePayload
 from datadog_api_client.v2.model.cloud_configuration_rule_options import CloudConfigurationRuleOptions
 from datadog_api_client.v2.model.cloud_configuration_rule_type import CloudConfigurationRuleType
+from datadog_api_client.v2.model.security_monitoring_filter import SecurityMonitoringFilter
+from datadog_api_client.v2.model.security_monitoring_filter_action import SecurityMonitoringFilterAction
 from datadog_api_client.v2.model.security_monitoring_rule_severity import SecurityMonitoringRuleSeverity
 
 body = CloudConfigurationRuleCreatePayload(
@@ -51,6 +53,16 @@ body = CloudConfigurationRuleCreatePayload(
             "@account_id",
         ],
     ),
+    filters=[
+        SecurityMonitoringFilter(
+            action=SecurityMonitoringFilterAction.REQUIRE,
+            query="resource_id:helo*",
+        ),
+        SecurityMonitoringFilter(
+            action=SecurityMonitoringFilterAction.SUPPRESS,
+            query="control:helo*",
+        ),
+    ],
 )
 
 configuration = Configuration()
