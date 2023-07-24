@@ -54,7 +54,7 @@ class {{ name }}(ModelNormal):
     }
 {%- endif %}
 
-{%- if model.get("additionalProperties") %}
+{%- if model.get("additionalProperties", false) is not false %}
     @cached_property
     def additional_properties_type(_):
 {%- if refs %}
