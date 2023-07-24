@@ -23,16 +23,14 @@ from datadog_api_client.exceptions import (
 logger = logging.getLogger(__name__)
 
 
-class DDRetry(urllib3.util.Retry):
+class ClientRetry(urllib3.util.Retry):
     RETRY_AFTER_STATUS_CODES = frozenset([413, 429, 500, 501, 502, 503, 504, 505, 506, 507, 509, 510, 511])
     DEFAULT_ALLOWED_METHODS = frozenset(
-        ["HEAD", "GET", "PUT", "DELETE", "OPTIONS", "TRACE", "POST", "CONNECT", "PATCH"]
+        ["GET", "PUT", "DELETE", "POST", "PATCH"]
     )
 
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
-
     def get_retry_after(self, response):
+
         """
         This method overrides the default "Retry-after" header and uses dd's X-Ratelimit-Reset header
         and gets the value of X-Ratelimit-Reset in seconds.
@@ -52,7 +50,6 @@ class DDRetry(urllib3.util.Retry):
             return True
         return self.total and self.respect_retry_after_header and (status_code in self.RETRY_AFTER_STATUS_CODES)
 
-
 class RESTClientObject:
     def __init__(self, configuration, pools_size=4, maxsize=4):
         # urllib3.PoolManager will pass all kw parameters to connectionpool
@@ -71,14 +68,12 @@ class RESTClientObject:
         if configuration.assert_hostname is not None:
             addition_pool_args["assert_hostname"] = configuration.assert_hostname
 
-        if configuration.enable_retry == True:
-            retries = DDRetry(
+        if configuration.enable_retry:
+            retries = ClientRetry(
                 total=configuration.max_retries,
                 backoff_factor=configuration.retry_backoff_factor,
             )
             addition_pool_args["retries"] = retries
-        else:
-            addition_pool_args["retries"] = False
 
         if configuration.socket_options is not None:
             addition_pool_args["socket_options"] = configuration.socket_options

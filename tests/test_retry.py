@@ -1,9 +1,8 @@
 from unittest import mock
 import urllib3
 import http
+from datadog_api_client.rest import ClientRetry
 import vcr
-
-from datadog_api_client.rest import DDRetry
 from datadog_api_client.api_client import ApiClient
 from datadog_api_client.configuration import Configuration
 from datadog_api_client.v2.api import logs_api
@@ -12,7 +11,7 @@ from datadog_api_client.v2.api import logs_api
 @mock.patch("time.sleep", return_value=None)
 @mock.patch("urllib3.connectionpool.HTTPConnectionPool._get_conn")
 def test_retry_request_ddretry(getconn_mock, sleep_mock):
-    ddretries = DDRetry(total=3)
+    ddretries = ClientRetry(total=3)
     pool_manager = urllib3.PoolManager(retries=ddretries)
     mock_endpoint = "/api/test"
     msg = http.client.HTTPMessage()
@@ -30,7 +29,6 @@ def test_retry_request_ddretry(getconn_mock, sleep_mock):
     pool_manager.request("GET", "http://ddog.url" + mock_endpoint)
 
     assert getconn_mock.call_count == 3
-
 
 @mock.patch("time.sleep", return_value=None)
 def test_retry_client(sleep_mock):
