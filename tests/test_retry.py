@@ -9,7 +9,7 @@ from datadog_api_client.configuration import Configuration
 from datadog_api_client.v2.api import logs_api
 
 
-@mock.patch('time.sleep', return_value=None)
+@mock.patch("time.sleep", return_value=None)
 @mock.patch("urllib3.connectionpool.HTTPConnectionPool._get_conn")
 def test_retry_request_ddretry(getconn_mock, sleep_mock):
     ddretries = DDRetry(total=3)
@@ -32,11 +32,11 @@ def test_retry_request_ddretry(getconn_mock, sleep_mock):
     assert getconn_mock.call_count == 3
 
 
-@mock.patch('time.sleep', return_value=None)
+@mock.patch("time.sleep", return_value=None)
 def test_retry_client(sleep_mock):
     configuration = Configuration(enable_retry=True)
 
-    with vcr.use_cassette('tests/cassettes/test_retry/test_retry_get_list_logs.yaml', record_mode=vcr.mode.NONE):
+    with vcr.use_cassette("tests/cassettes/test_retry/test_retry_get_list_logs.yaml", record_mode=vcr.mode.NONE):
         with ApiClient(configuration) as api_client:
             api_instance = logs_api.LogsApi(api_client)
             logs = api_instance.list_logs_get()
