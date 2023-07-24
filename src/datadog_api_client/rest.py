@@ -33,8 +33,10 @@ class DDRetry(urllib3.util.Retry):
         super().__init__(**kwargs)
 
     def get_retry_after(self, response):
-        """This method overrides the default "Retry-after" header and uses dd's X-Ratelimit-Reset header
-        and gets the value of X-Ratelimit-Reset in seconds."""
+        """
+        This method overrides the default "Retry-after" header and uses dd's X-Ratelimit-Reset header
+        and gets the value of X-Ratelimit-Reset in seconds.
+        """
 
         retry_after = response.headers.get("X-Ratelimit-Reset")
 
