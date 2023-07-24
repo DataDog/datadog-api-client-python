@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -13,30 +13,24 @@ from datadog_api_client.model_utils import (
 )
 
 
-if TYPE_CHECKING:
-    from datadog_api_client.v2.model.team import Team
-
-
-class TeamResponse(ModelNormal):
+class TeamRelationshipsLinks(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.team import Team
-
         return {
-            "data": (Team,),
+            "related": (str,),
         }
 
     attribute_map = {
-        "data": "data",
+        "related": "related",
     }
 
-    def __init__(self_, data: Union[Team, UnsetType] = unset, **kwargs):
+    def __init__(self_, related: Union[str, UnsetType] = unset, **kwargs):
         """
-        Response with a team
+        Links attributes.
 
-        :param data: A team
-        :type data: Team, optional
+        :param related: Related link.
+        :type related: str, optional
         """
-        if data is not unset:
-            kwargs["data"] = data
+        if related is not unset:
+            kwargs["related"] = related
         super().__init__(kwargs)

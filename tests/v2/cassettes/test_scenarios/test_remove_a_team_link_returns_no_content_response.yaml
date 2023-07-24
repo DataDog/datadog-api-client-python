@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"handle":"handle-d9940b7456e5c622","name":"name-d9940b7456e5c622"},"type":"team"}}'
+    body: '{"data":{"attributes":{"handle":"handle-0fe32e2c4ff0dff0","name":"name-0fe32e2c4ff0dff0"},"type":"team"}}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/team
   response:
     body:
-      string: '{"data":{"type":"team","id":"582432c8-ef4f-11ed-bdd4-da7ad0900002","attributes":{"name":"name-d9940b7456e5c622","handle":"handle-d9940b7456e5c622","summary":null,"description":null,"color":4,"created_at":"2023-05-10T16:25:57.858187+00:00","modified_at":"2023-05-10T16:25:57.858193+00:00","user_count":0,"link_count":0},"relationships":{"team_links":{"links":{"related":"/api/v2/team/582432c8-ef4f-11ed-bdd4-da7ad0900002/links"}},"user_team_permissions":{"links":{"related":"/api/v2/team/582432c8-ef4f-11ed-bdd4-da7ad0900002/permission-settings"}}}}}
+      string: '{"data":{"type":"team","id":"ab1bfa86-20d9-11ee-83ad-da7ad0900002","attributes":{"name":"name-0fe32e2c4ff0dff0","handle":"handle-0fe32e2c4ff0dff0","summary":null,"description":null,"created_at":"2023-07-12T17:29:34.577529+00:00","modified_at":"2023-07-12T17:29:34.577535+00:00","user_count":0,"link_count":0},"relationships":{"team_links":{"links":{"related":"/api/v2/team/ab1bfa86-20d9-11ee-83ad-da7ad0900002/links"}},"user_team_permissions":{"links":{"related":"/api/v2/team/ab1bfa86-20d9-11ee-83ad-da7ad0900002/permission-settings"}}}}}
 
         '
     headers:
@@ -20,17 +20,17 @@ interactions:
       code: 201
       message: Created
 - request:
-    body: '{"data":{"attributes":{"label":"Test-Remove_a_team_link_returns_No_Content_response-1683735957","position":0,"url":"https://example.com"},"type":"team_links"}}'
+    body: '{"data":{"attributes":{"label":"Test-Remove_a_team_link_returns_No_Content_response-1689182974","position":0,"url":"https://example.com"},"type":"team_links"}}'
     headers:
       accept:
       - application/json
       content-type:
       - application/json
     method: POST
-    uri: https://api.datadoghq.com/api/v2/team/582432c8-ef4f-11ed-bdd4-da7ad0900002/links
+    uri: https://api.datadoghq.com/api/v2/team/ab1bfa86-20d9-11ee-83ad-da7ad0900002/links
   response:
     body:
-      string: '{"data":{"type":"team_links","id":"584c2a94-ef4f-11ed-9556-da7ad0900002","attributes":{"team_id":"582432c8-ef4f-11ed-bdd4-da7ad0900002","label":"Test-Remove_a_team_link_returns_No_Content_response-1683735957","url":"https://example.com","position":0}}}
+      string: '{"data":{"type":"team_links","id":"ab3d7062-20d9-11ee-86ea-da7ad0900002","attributes":{"team_id":"ab1bfa86-20d9-11ee-83ad-da7ad0900002","label":"Test-Remove_a_team_link_returns_No_Content_response-1689182974","url":"https://example.com","position":0}}}
 
         '
     headers:
@@ -45,7 +45,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/team/582432c8-ef4f-11ed-bdd4-da7ad0900002/links/584c2a94-ef4f-11ed-9556-da7ad0900002
+    uri: https://api.datadoghq.com/api/v2/team/ab1bfa86-20d9-11ee-83ad-da7ad0900002/links/ab3d7062-20d9-11ee-86ea-da7ad0900002
   response:
     body:
       string: ''
@@ -59,10 +59,10 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/team/582432c8-ef4f-11ed-bdd4-da7ad0900002/links/584c2a94-ef4f-11ed-9556-da7ad0900002
+    uri: https://api.datadoghq.com/api/v2/team/ab1bfa86-20d9-11ee-83ad-da7ad0900002/links/ab3d7062-20d9-11ee-86ea-da7ad0900002
   response:
     body:
-      string: '{"errors":["Link for ID 584c2a94-ef4f-11ed-9556-da7ad0900002 not found"]}'
+      string: '{"errors":["Link for ID ab3d7062-20d9-11ee-86ea-da7ad0900002 not found"]}'
     headers:
       content-type:
       - application/json
@@ -75,7 +75,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/team/582432c8-ef4f-11ed-bdd4-da7ad0900002
+    uri: https://api.datadoghq.com/api/v2/team/ab1bfa86-20d9-11ee-83ad-da7ad0900002
   response:
     body:
       string: ''
