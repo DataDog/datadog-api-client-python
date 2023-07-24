@@ -30,6 +30,7 @@ def test_retry_request_ddretry(getconn_mock, sleep_mock):
 
     assert getconn_mock.call_count == 3
 
+
 @mock.patch("time.sleep", return_value=None)
 def test_retry_client(sleep_mock):
     configuration = Configuration(enable_retry=True)
