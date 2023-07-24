@@ -1,5 +1,36 @@
 # Changelog
 
+## 2.15.0 / 2023-07-20
+
+### Fixed
+* Spans API docs update by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1553
+* Fix filter indexes parameter in logs search by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1559
+* Fix Spans endpoint schemas by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1580
+### Added
+* Add support for geomap widget using response_type `event_list` by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1534
+* Add support for the spans API endpoints by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1539
+* Add a new field additional_query_filters to formula and function slo query by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1555
+* Add support for `enable_custom_metrics` in Confluent Account by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1562
+* Add missing `id` attribute for Confluent Account Response by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1560
+* Fix downtimes v2 schema and add missing field `canceled` by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1568
+* Add cloud_cost data source and query definition to dashboards by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1569
+* Add missing cloud workload security fields by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1575
+* Add `integration_id` field for dashboard list item by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1579
+* Add events response fields `message` and `status` by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1576
+* Add missing `GetRUMApplications` response field `id` by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1577
+* Add missing service definition fields by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1578
+* Add overlay type to Dashboards WidgetDisplayType by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1581
+* Update IP ranges with remote configuration section by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1583
+* Add missing `relationships` to UsersInvitations response by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1585
+* Added optional field filters when creating a cloud configuration rule by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1589
+### Changed
+* Add downtime v2 API in private beta by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1482
+* Allow use of latest urllib3 by @therve in https://github.com/DataDog/datadog-api-client-python/pull/1556
+* Mark `access_role` as nullable by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1566
+
+
+**Full Changelog**: https://github.com/DataDog/datadog-api-client-python/compare/2.14.0...2.15.0
+
 ## 2.14.0 / 2023-06-27
 
 ### Fixed
