@@ -10,7 +10,7 @@ from datadog_api_client.v2.api import logs_api
 
 @mock.patch("time.sleep", return_value=None)
 @mock.patch("urllib3.connectionpool.HTTPConnectionPool._get_conn")
-def test_retry_request_ddretry(getconn_mock, sleep_mock):
+def test_retry_request_ddretry_429(getconn_mock, sleep_mock):
     ddretries = ClientRetry(total=3)
     pool_manager = urllib3.PoolManager(retries=ddretries)
     mock_endpoint = "/api/test"
@@ -23,13 +23,43 @@ def test_retry_request_ddretry(getconn_mock, sleep_mock):
     getconn_mock.return_value.getresponse.side_effect = [
         response_429,
         response_429,
+        response_429,
         response_200,
     ]
 
-    pool_manager.request("GET", "http://ddog.url" + mock_endpoint)
+    r = pool_manager.request("GET", "http://ddog.url" + mock_endpoint)
 
-    assert getconn_mock.call_count == 3
+    assert getconn_mock.call_count == 4
+    assert r.status == 200
+    assert sleep_mock.call_args_list[0][0][0] == 1
+    assert sleep_mock.call_args_list[1][0][0] == 1
+    assert sleep_mock.call_args_list[2][0][0] == 1
 
+@mock.patch("time.sleep", return_value=None)
+@mock.patch("urllib3.connectionpool.HTTPConnectionPool._get_conn")
+def test_retry_request_ddretry_500(getconn_mock, sleep_mock):
+    ddretries = ClientRetry(total=3, backoff_factor=2)
+    pool_manager = urllib3.PoolManager(retries=ddretries)
+    mock_endpoint = "/api/test"
+    msg = http.client.HTTPMessage()
+    response_500 = mock.Mock(status=500, msg=msg, headers={})
+    response_500.get_redirect_location.return_value = ""
+    response_200 = mock.Mock(status=200, msg=msg, headers={})
+    response_200.get_redirect_location.return_value = ""
+
+    getconn_mock.return_value.getresponse.side_effect = [
+        response_500,
+        response_500,
+        response_500,
+        response_200,
+    ]
+
+    r = pool_manager.request("GET", "http://ddog.url" + mock_endpoint)
+
+    assert getconn_mock.call_count == 4
+    assert r.status == 200
+    assert sleep_mock.call_args_list[0][0][0] == 4
+    assert sleep_mock.call_args_list[1][0][0] == 8
 
 @mock.patch("time.sleep", return_value=None)
 def test_retry_client(sleep_mock):

@@ -38,7 +38,7 @@ class ClientRetry(urllib3.util.Retry):
         if retry_after is None:
             return None
         return self.parse_retry_after(retry_after)
-
+    
     def is_retry(self, method, status_code, has_retry_after=False):
         if not self._is_method_retryable(method):
             return False
