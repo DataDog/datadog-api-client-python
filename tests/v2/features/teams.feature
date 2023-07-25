@@ -55,6 +55,7 @@ Feature: Teams
     And body with value {"data": {"attributes": {"handle": "handle-{{ unique_hash }}", "name": "name-{{ unique_hash }}"}, "relationships": {"users": {"data": []}}, "type": "team"}}
     When the request is sent
     Then the response status is 201 CREATED
+    And the response "data" has field "id"
 
   @team:DataDog/core-app
   Scenario: Get a team link returns "API error response." response
@@ -222,7 +223,7 @@ Feature: Teams
   Scenario: Update a team returns "API error response." response
     Given new "UpdateTeam" request
     And request contains "team_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"handle": "example-team", "name": "Example Team"}, "relationships": {"team_links": {"data": [{"id": "f9bb8444-af7f-11ec-ac2c-da7ad0900001", "type": "team_links"}]}}, "type": "team"}}
+    And body with value {"data": {"attributes": {"handle": "example-team", "name": "Example Team"}, "relationships": {"team_links": {"data": [{"id": "f9bb8444-af7f-11ec-ac2c-da7ad0900001", "type": "team_links"}], "links": {"related": "/api/v2/team/c75a4a8e-20c7-11ee-a3a5-da7ad0900002/links"}}}, "type": "team"}}
     When the request is sent
     Then the response status is 409 API error response.
 

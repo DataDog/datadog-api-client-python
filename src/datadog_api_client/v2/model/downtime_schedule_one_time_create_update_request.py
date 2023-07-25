@@ -8,6 +8,7 @@ from typing import Union
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    date,
     datetime,
     none_type,
     unset,
@@ -16,6 +17,20 @@ from datadog_api_client.model_utils import (
 
 
 class DowntimeScheduleOneTimeCreateUpdateRequest(ModelNormal):
+    @cached_property
+    def additional_properties_type(_):
+        return (
+            bool,
+            date,
+            datetime,
+            dict,
+            float,
+            int,
+            list,
+            str,
+            none_type,
+        )
+
     @cached_property
     def openapi_types(_):
         return {

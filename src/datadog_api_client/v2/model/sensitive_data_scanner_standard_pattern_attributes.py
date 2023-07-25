@@ -17,12 +17,14 @@ class SensitiveDataScannerStandardPatternAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
+            "description": (str,),
             "name": (str,),
             "pattern": (str,),
             "tags": ([str],),
         }
 
     attribute_map = {
+        "description": "description",
         "name": "name",
         "pattern": "pattern",
         "tags": "tags",
@@ -30,6 +32,7 @@ class SensitiveDataScannerStandardPatternAttributes(ModelNormal):
 
     def __init__(
         self_,
+        description: Union[str, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
         pattern: Union[str, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
@@ -37,6 +40,9 @@ class SensitiveDataScannerStandardPatternAttributes(ModelNormal):
     ):
         """
         Attributes of the Sensitive Data Scanner standard pattern.
+
+        :param description: Description of the standard pattern.
+        :type description: str, optional
 
         :param name: Name of the standard pattern.
         :type name: str, optional
@@ -47,6 +53,8 @@ class SensitiveDataScannerStandardPatternAttributes(ModelNormal):
         :param tags: List of tags.
         :type tags: [str], optional
         """
+        if description is not unset:
+            kwargs["description"] = description
         if name is not unset:
             kwargs["name"] = name
         if pattern is not unset:

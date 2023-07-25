@@ -42,7 +42,7 @@ class ServiceLevelObjectivesApi:
         self._check_can_delete_slo_endpoint = _Endpoint(
             settings={
                 "response_type": (CheckCanDeleteSLOResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/slo/can_delete",
                 "operation_id": "check_can_delete_slo",
                 "http_method": "GET",
@@ -65,7 +65,7 @@ class ServiceLevelObjectivesApi:
         self._create_slo_endpoint = _Endpoint(
             settings={
                 "response_type": (SLOListResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/slo",
                 "operation_id": "create_slo",
                 "http_method": "POST",
@@ -85,7 +85,7 @@ class ServiceLevelObjectivesApi:
         self._delete_slo_endpoint = _Endpoint(
             settings={
                 "response_type": (SLODeleteResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/slo/{slo_id}",
                 "operation_id": "delete_slo",
                 "http_method": "DELETE",
@@ -113,7 +113,7 @@ class ServiceLevelObjectivesApi:
         self._delete_slo_timeframe_in_bulk_endpoint = _Endpoint(
             settings={
                 "response_type": (SLOBulkDeleteResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/slo/bulk_delete",
                 "operation_id": "delete_slo_timeframe_in_bulk",
                 "http_method": "POST",
@@ -133,7 +133,7 @@ class ServiceLevelObjectivesApi:
         self._get_slo_endpoint = _Endpoint(
             settings={
                 "response_type": (SLOResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/slo/{slo_id}",
                 "operation_id": "get_slo",
                 "http_method": "GET",
@@ -161,7 +161,7 @@ class ServiceLevelObjectivesApi:
         self._get_slo_corrections_endpoint = _Endpoint(
             settings={
                 "response_type": (SLOCorrectionListResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/slo/{slo_id}/corrections",
                 "operation_id": "get_slo_corrections",
                 "http_method": "GET",
@@ -184,7 +184,7 @@ class ServiceLevelObjectivesApi:
         self._get_slo_history_endpoint = _Endpoint(
             settings={
                 "response_type": (SLOHistoryResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/slo/{slo_id}/history",
                 "operation_id": "get_slo_history",
                 "http_method": "GET",
@@ -233,7 +233,7 @@ class ServiceLevelObjectivesApi:
         self._list_slos_endpoint = _Endpoint(
             settings={
                 "response_type": (SLOListResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/slo",
                 "operation_id": "list_slos",
                 "http_method": "GET",
@@ -280,7 +280,7 @@ class ServiceLevelObjectivesApi:
         self._search_slo_endpoint = _Endpoint(
             settings={
                 "response_type": (SearchSLOResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/slo/search",
                 "operation_id": "search_slo",
                 "http_method": "GET",
@@ -317,7 +317,7 @@ class ServiceLevelObjectivesApi:
         self._update_slo_endpoint = _Endpoint(
             settings={
                 "response_type": (SLOListResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/slo/{slo_id}",
                 "operation_id": "update_slo",
                 "http_method": "PUT",

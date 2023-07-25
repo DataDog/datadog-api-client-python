@@ -159,6 +159,9 @@ class Configuration:
         check_input_type=True,
         check_return_type=True,
         spec_property_naming=False,
+        enable_retry=False,
+        retry_backoff_factor=2,
+        max_retries=3,
     ):
         """Constructor."""
         self._base_path = "https://api.datadoghq.com" if host is None else host
@@ -201,7 +204,6 @@ class Configuration:
         self.proxy = None
         self.proxy_headers = None
         self.safe_chars_for_path_param = ""
-        self.retries = None
         # Enable client side validation
         self.client_side_validation = True
 
@@ -217,6 +219,11 @@ class Configuration:
         self.check_input_type = check_input_type
         self.check_return_type = check_return_type
         self.spec_property_naming = spec_property_naming
+
+        # Options for http retry
+        self.enable_retry = enable_retry
+        self.retry_backoff_factor = retry_backoff_factor
+        self.max_retries = max_retries
 
         # Keep track of unstable operations
         self.unstable_operations = _UnstableOperations(

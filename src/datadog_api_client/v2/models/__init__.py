@@ -1248,7 +1248,6 @@ from datadog_api_client.v2.model.team_create import TeamCreate
 from datadog_api_client.v2.model.team_create_attributes import TeamCreateAttributes
 from datadog_api_client.v2.model.team_create_relationships import TeamCreateRelationships
 from datadog_api_client.v2.model.team_create_request import TeamCreateRequest
-from datadog_api_client.v2.model.team_data import TeamData
 from datadog_api_client.v2.model.team_included import TeamIncluded
 from datadog_api_client.v2.model.team_link import TeamLink
 from datadog_api_client.v2.model.team_link_attributes import TeamLinkAttributes
@@ -1269,6 +1268,7 @@ from datadog_api_client.v2.model.team_permission_setting_value import TeamPermis
 from datadog_api_client.v2.model.team_permission_setting_values import TeamPermissionSettingValues
 from datadog_api_client.v2.model.team_permission_settings_response import TeamPermissionSettingsResponse
 from datadog_api_client.v2.model.team_relationships import TeamRelationships
+from datadog_api_client.v2.model.team_relationships_links import TeamRelationshipsLinks
 from datadog_api_client.v2.model.team_response import TeamResponse
 from datadog_api_client.v2.model.team_type import TeamType
 from datadog_api_client.v2.model.team_update import TeamUpdate
@@ -1276,6 +1276,9 @@ from datadog_api_client.v2.model.team_update_attributes import TeamUpdateAttribu
 from datadog_api_client.v2.model.team_update_relationships import TeamUpdateRelationships
 from datadog_api_client.v2.model.team_update_request import TeamUpdateRequest
 from datadog_api_client.v2.model.teams_response import TeamsResponse
+from datadog_api_client.v2.model.teams_response_links import TeamsResponseLinks
+from datadog_api_client.v2.model.teams_response_meta import TeamsResponseMeta
+from datadog_api_client.v2.model.teams_response_meta_pagination import TeamsResponseMetaPagination
 from datadog_api_client.v2.model.timeseries_formula_query_request import TimeseriesFormulaQueryRequest
 from datadog_api_client.v2.model.timeseries_formula_query_response import TimeseriesFormulaQueryResponse
 from datadog_api_client.v2.model.timeseries_formula_request import TimeseriesFormulaRequest
@@ -2366,7 +2369,6 @@ __all__ = [
     "TeamCreateAttributes",
     "TeamCreateRelationships",
     "TeamCreateRequest",
-    "TeamData",
     "TeamIncluded",
     "TeamLink",
     "TeamLinkAttributes",
@@ -2387,6 +2389,7 @@ __all__ = [
     "TeamPermissionSettingValues",
     "TeamPermissionSettingsResponse",
     "TeamRelationships",
+    "TeamRelationshipsLinks",
     "TeamResponse",
     "TeamType",
     "TeamUpdate",
@@ -2394,6 +2397,9 @@ __all__ = [
     "TeamUpdateRelationships",
     "TeamUpdateRequest",
     "TeamsResponse",
+    "TeamsResponseLinks",
+    "TeamsResponseMeta",
+    "TeamsResponseMetaPagination",
     "TimeseriesFormulaQueryRequest",
     "TimeseriesFormulaQueryResponse",
     "TimeseriesFormulaRequest",

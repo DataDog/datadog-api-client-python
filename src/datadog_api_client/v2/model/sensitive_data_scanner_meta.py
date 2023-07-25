@@ -26,6 +26,7 @@ class SensitiveDataScannerMeta(ModelNormal):
             "count_limit": (int,),
             "group_count_limit": (int,),
             "has_highlight_enabled": (bool,),
+            "has_multi_pass_enabled": (bool,),
             "is_pci_compliant": (bool,),
             "version": (int,),
         }
@@ -34,6 +35,7 @@ class SensitiveDataScannerMeta(ModelNormal):
         "count_limit": "count_limit",
         "group_count_limit": "group_count_limit",
         "has_highlight_enabled": "has_highlight_enabled",
+        "has_multi_pass_enabled": "has_multi_pass_enabled",
         "is_pci_compliant": "is_pci_compliant",
         "version": "version",
     }
@@ -43,6 +45,7 @@ class SensitiveDataScannerMeta(ModelNormal):
         count_limit: Union[int, UnsetType] = unset,
         group_count_limit: Union[int, UnsetType] = unset,
         has_highlight_enabled: Union[bool, UnsetType] = unset,
+        has_multi_pass_enabled: Union[bool, UnsetType] = unset,
         is_pci_compliant: Union[bool, UnsetType] = unset,
         version: Union[int, UnsetType] = unset,
         **kwargs,
@@ -59,6 +62,9 @@ class SensitiveDataScannerMeta(ModelNormal):
         :param has_highlight_enabled: Whether or not scanned events are highlighted in Logs or RUM for the org.
         :type has_highlight_enabled: bool, optional
 
+        :param has_multi_pass_enabled: Whether or not scanned events have multi-pass enabled.
+        :type has_multi_pass_enabled: bool, optional
+
         :param is_pci_compliant: Whether or not the org is compliant to the payment card industry standard.
         :type is_pci_compliant: bool, optional
 
@@ -71,6 +77,8 @@ class SensitiveDataScannerMeta(ModelNormal):
             kwargs["group_count_limit"] = group_count_limit
         if has_highlight_enabled is not unset:
             kwargs["has_highlight_enabled"] = has_highlight_enabled
+        if has_multi_pass_enabled is not unset:
+            kwargs["has_multi_pass_enabled"] = has_multi_pass_enabled
         if is_pci_compliant is not unset:
             kwargs["is_pci_compliant"] = is_pci_compliant
         if version is not unset:

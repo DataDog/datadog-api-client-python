@@ -36,7 +36,7 @@ class ApplicationKeyUpdateAttributes(ModelNormal):
         :param name: Name of the application key.
         :type name: str, optional
 
-        :param scopes: Array of scopes to grant the application key. This feature is in private beta, please contact Datadog support to enable scopes for your application keys.
+        :param scopes: Array of scopes to grant the application key.
         :type scopes: [str], none_type, optional
         """
         if name is not unset:

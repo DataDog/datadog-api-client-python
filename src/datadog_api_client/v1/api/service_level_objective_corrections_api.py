@@ -33,7 +33,7 @@ class ServiceLevelObjectiveCorrectionsApi:
         self._create_slo_correction_endpoint = _Endpoint(
             settings={
                 "response_type": (SLOCorrectionResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/slo/correction",
                 "operation_id": "create_slo_correction",
                 "http_method": "POST",
@@ -99,7 +99,7 @@ class ServiceLevelObjectiveCorrectionsApi:
         self._list_slo_correction_endpoint = _Endpoint(
             settings={
                 "response_type": (SLOCorrectionListResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/slo/correction",
                 "operation_id": "list_slo_correction",
                 "http_method": "GET",

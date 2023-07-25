@@ -14,28 +14,28 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.team_data import TeamData
+    from datadog_api_client.v2.model.team import Team
 
 
 class TeamResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.team_data import TeamData
+        from datadog_api_client.v2.model.team import Team
 
         return {
-            "data": (TeamData,),
+            "data": (Team,),
         }
 
     attribute_map = {
         "data": "data",
     }
 
-    def __init__(self_, data: Union[TeamData, UnsetType] = unset, **kwargs):
+    def __init__(self_, data: Union[Team, UnsetType] = unset, **kwargs):
         """
         Response with a team
 
         :param data: A team
-        :type data: TeamData, optional
+        :type data: Team, optional
         """
         if data is not unset:
             kwargs["data"] = data
