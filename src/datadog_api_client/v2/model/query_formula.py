@@ -40,6 +40,7 @@ class QueryFormula(ModelNormal):
         :type formula: str
 
         :param limit: Message for specifying limits to the number of values returned by a query.
+            This limit is only for scalar queries and has no effect on timeseries queries.
         :type limit: FormulaLimit, optional
         """
         if limit is not unset:

@@ -241,7 +241,7 @@ Feature: Metrics
     Then the response status is 200 Success
     And the response "data.id" has the same value as "metric_tag_configuration.data.id"
 
-  @generated @skip @team:DataDog/metrics-query
+  @generated @skip @team:Datadog/timeseries-query
   Scenario: Query scalar data across multiple products returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And operation "QueryScalarData" enabled
@@ -250,7 +250,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/metrics-query
+  @generated @skip @team:Datadog/timeseries-query
   Scenario: Query scalar data across multiple products returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And operation "QueryScalarData" enabled
@@ -259,7 +259,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/metrics-query
+  @generated @skip @team:Datadog/timeseries-query
   Scenario: Query timeseries data across multiple products returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And operation "QueryTimeseriesData" enabled
@@ -268,7 +268,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/metrics-query
+  @generated @skip @team:Datadog/timeseries-query
   Scenario: Query timeseries data across multiple products returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And operation "QueryTimeseriesData" enabled
@@ -277,7 +277,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/metrics-query
+  @team:Datadog/timeseries-query
   Scenario: Scalar cross product query returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And operation "QueryScalarData" enabled
@@ -286,7 +286,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/metrics-query
+  @team:Datadog/timeseries-query
   Scenario: Scalar cross product query returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And operation "QueryScalarData" enabled
@@ -351,7 +351,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 200 Success
 
-  @team:DataDog/metrics-query
+  @team:Datadog/timeseries-query
   Scenario: Timeseries cross product query returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And operation "QueryTimeseriesData" enabled
@@ -360,7 +360,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/metrics-query
+  @team:Datadog/timeseries-query
   Scenario: Timeseries cross product query returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And operation "QueryTimeseriesData" enabled
