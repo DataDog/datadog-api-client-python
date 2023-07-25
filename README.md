@@ -85,6 +85,20 @@ If you want to enable requests logging, set the `debug` flag on your configurati
 configuration.debug = True
 ```
 
+### Enable retry
+
+If you want to enable retry when getting status code `429` rate-limited, set `enable_retry` to `True`
+
+```python
+    configuration.enable_retry = True
+```
+
+The default max retry is `3`, you can change it with `max_retries`
+
+```python
+    configuration.max_retries = 5
+```
+
 ### Configure proxy
 
 You can configure the client to use proxy by setting the `proxy` key on configuration object:
