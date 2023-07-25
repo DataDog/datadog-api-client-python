@@ -33,7 +33,7 @@ class DowntimeScheduleResponse(ModelComposed):
         :type end: datetime, none_type, optional
 
         :param start: ISO-8601 Datetime to start the downtime.
-        :type start: datetime, optional
+        :type start: datetime
         """
         super().__init__(kwargs)
 

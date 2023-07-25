@@ -28,9 +28,7 @@ class DowntimeScheduleOneTimeResponse(ModelNormal):
         "start": "start",
     }
 
-    def __init__(
-        self_, end: Union[datetime, none_type, UnsetType] = unset, start: Union[datetime, UnsetType] = unset, **kwargs
-    ):
+    def __init__(self_, start: datetime, end: Union[datetime, none_type, UnsetType] = unset, **kwargs):
         """
         A one-time downtime definition.
 
@@ -38,10 +36,10 @@ class DowntimeScheduleOneTimeResponse(ModelNormal):
         :type end: datetime, none_type, optional
 
         :param start: ISO-8601 Datetime to start the downtime.
-        :type start: datetime, optional
+        :type start: datetime
         """
         if end is not unset:
             kwargs["end"] = end
-        if start is not unset:
-            kwargs["start"] = start
         super().__init__(kwargs)
+
+        self_.start = start
