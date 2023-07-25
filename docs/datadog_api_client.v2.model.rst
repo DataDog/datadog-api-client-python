@@ -7162,13 +7162,6 @@ team\_create\_request
    :members:
    :show-inheritance:
 
-team\_data
-----------
-
-.. automodule:: datadog_api_client.v2.model.team_data
-   :members:
-   :show-inheritance:
-
 team\_included
 --------------
 
@@ -7309,6 +7302,13 @@ team\_relationships
    :members:
    :show-inheritance:
 
+team\_relationships\_links
+--------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_relationships_links
+   :members:
+   :show-inheritance:
+
 team\_response
 --------------
 
@@ -7355,6 +7355,27 @@ teams\_response
 ---------------
 
 .. automodule:: datadog_api_client.v2.model.teams_response
+   :members:
+   :show-inheritance:
+
+teams\_response\_links
+----------------------
+
+.. automodule:: datadog_api_client.v2.model.teams_response_links
+   :members:
+   :show-inheritance:
+
+teams\_response\_meta
+---------------------
+
+.. automodule:: datadog_api_client.v2.model.teams_response_meta
+   :members:
+   :show-inheritance:
+
+teams\_response\_meta\_pagination
+---------------------------------
+
+.. automodule:: datadog_api_client.v2.model.teams_response_meta_pagination
    :members:
    :show-inheritance:
 
