@@ -32,7 +32,6 @@ class ClientRetry(urllib3.util.Retry):
         This method overrides the default "Retry-after" header and uses dd's X-Ratelimit-Reset header
         and gets the value of X-Ratelimit-Reset in seconds.
         """
-
         retry_after = response.headers.get("X-Ratelimit-Reset")
 
         if retry_after is None:
@@ -66,7 +65,7 @@ class RESTClientObject:
         if configuration.assert_hostname is not None:
             addition_pool_args["assert_hostname"] = configuration.assert_hostname
 
-        if configuration.enable_retry == True:
+        if configuration.enable_retry:
             retries = ClientRetry(
                 total=configuration.max_retries,
                 backoff_factor=configuration.retry_backoff_factor,
