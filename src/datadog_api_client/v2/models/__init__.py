@@ -981,6 +981,8 @@ from datadog_api_client.v2.model.security_monitoring_signal_list_request_filter 
 from datadog_api_client.v2.model.security_monitoring_signal_list_request_page import (
     SecurityMonitoringSignalListRequestPage,
 )
+from datadog_api_client.v2.model.security_monitoring_signal_metadata_type import SecurityMonitoringSignalMetadataType
+from datadog_api_client.v2.model.security_monitoring_signal_response import SecurityMonitoringSignalResponse
 from datadog_api_client.v2.model.security_monitoring_signal_rule_create_payload import (
     SecurityMonitoringSignalRuleCreatePayload,
 )
@@ -2175,6 +2177,8 @@ __all__ = [
     "SecurityMonitoringSignalListRequest",
     "SecurityMonitoringSignalListRequestFilter",
     "SecurityMonitoringSignalListRequestPage",
+    "SecurityMonitoringSignalMetadataType",
+    "SecurityMonitoringSignalResponse",
     "SecurityMonitoringSignalRuleCreatePayload",
     "SecurityMonitoringSignalRuleQuery",
     "SecurityMonitoringSignalRuleResponse",

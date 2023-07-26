@@ -5818,6 +5818,20 @@ security\_monitoring\_signal\_list\_request\_page
    :members:
    :show-inheritance:
 
+security\_monitoring\_signal\_metadata\_type
+--------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_signal_metadata_type
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_signal\_response
+--------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_signal_response
+   :members:
+   :show-inheritance:
+
 security\_monitoring\_signal\_rule\_create\_payload
 ---------------------------------------------------
 

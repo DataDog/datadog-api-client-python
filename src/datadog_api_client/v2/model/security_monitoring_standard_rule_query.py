@@ -48,13 +48,13 @@ class SecurityMonitoringStandardRuleQuery(ModelNormal):
 
     def __init__(
         self_,
-        query: str,
         aggregation: Union[SecurityMonitoringRuleQueryAggregation, UnsetType] = unset,
         distinct_fields: Union[List[str], UnsetType] = unset,
         group_by_fields: Union[List[str], UnsetType] = unset,
         metric: Union[str, UnsetType] = unset,
         metrics: Union[List[str], UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
+        query: Union[str, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -80,7 +80,7 @@ class SecurityMonitoringStandardRuleQuery(ModelNormal):
         :type name: str, optional
 
         :param query: Query to run on logs.
-        :type query: str
+        :type query: str, optional
         """
         if aggregation is not unset:
             kwargs["aggregation"] = aggregation
@@ -94,6 +94,6 @@ class SecurityMonitoringStandardRuleQuery(ModelNormal):
             kwargs["metrics"] = metrics
         if name is not unset:
             kwargs["name"] = name
+        if query is not unset:
+            kwargs["query"] = query
         super().__init__(kwargs)
-
-        self_.query = query

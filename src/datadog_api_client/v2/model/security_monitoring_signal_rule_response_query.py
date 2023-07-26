@@ -37,6 +37,8 @@ class SecurityMonitoringSignalRuleResponseQuery(ModelNormal):
             "correlated_by_fields": ([str],),
             "correlated_query_index": (int,),
             "default_rule_id": (str,),
+            "distinct_fields": ([str],),
+            "group_by_fields": ([str],),
             "metrics": ([str],),
             "name": (str,),
             "rule_id": (str,),
@@ -47,6 +49,8 @@ class SecurityMonitoringSignalRuleResponseQuery(ModelNormal):
         "correlated_by_fields": "correlatedByFields",
         "correlated_query_index": "correlatedQueryIndex",
         "default_rule_id": "defaultRuleId",
+        "distinct_fields": "distinctFields",
+        "group_by_fields": "groupByFields",
         "metrics": "metrics",
         "name": "name",
         "rule_id": "ruleId",
@@ -58,6 +62,8 @@ class SecurityMonitoringSignalRuleResponseQuery(ModelNormal):
         correlated_by_fields: Union[List[str], UnsetType] = unset,
         correlated_query_index: Union[int, UnsetType] = unset,
         default_rule_id: Union[str, UnsetType] = unset,
+        distinct_fields: Union[List[str], UnsetType] = unset,
+        group_by_fields: Union[List[str], UnsetType] = unset,
         metrics: Union[List[str], UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
         rule_id: Union[str, UnsetType] = unset,
@@ -69,7 +75,7 @@ class SecurityMonitoringSignalRuleResponseQuery(ModelNormal):
         :param aggregation: The aggregation type.
         :type aggregation: SecurityMonitoringRuleQueryAggregation, optional
 
-        :param correlated_by_fields: Fields to group by.
+        :param correlated_by_fields: Fields to correlate by.
         :type correlated_by_fields: [str], optional
 
         :param correlated_query_index: Index of the rule query used to retrieve the correlated field.
@@ -77,6 +83,12 @@ class SecurityMonitoringSignalRuleResponseQuery(ModelNormal):
 
         :param default_rule_id: Default Rule ID to match on signals.
         :type default_rule_id: str, optional
+
+        :param distinct_fields: Field for which the cardinality is measured. Sent as an array.
+        :type distinct_fields: [str], optional
+
+        :param group_by_fields: Fields to group by.
+        :type group_by_fields: [str], optional
 
         :param metrics: Group of target fields to aggregate over.
         :type metrics: [str], optional
@@ -95,6 +107,10 @@ class SecurityMonitoringSignalRuleResponseQuery(ModelNormal):
             kwargs["correlated_query_index"] = correlated_query_index
         if default_rule_id is not unset:
             kwargs["default_rule_id"] = default_rule_id
+        if distinct_fields is not unset:
+            kwargs["distinct_fields"] = distinct_fields
+        if group_by_fields is not unset:
+            kwargs["group_by_fields"] = group_by_fields
         if metrics is not unset:
             kwargs["metrics"] = metrics
         if name is not unset:

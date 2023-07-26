@@ -35,7 +35,7 @@ Feature: Security Monitoring
   Scenario: Change the triage state of a security signal returns "Bad Request" response
     Given new "EditSecurityMonitoringSignalState" request
     And request contains "signal_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"archive_reason": "none", "state": "open"}}}
+    And body with value {"data": {"attributes": {"archive_reason": "none", "state": "open"}, "type": "signal_metadata"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -43,7 +43,7 @@ Feature: Security Monitoring
   Scenario: Change the triage state of a security signal returns "Not Found" response
     Given new "EditSecurityMonitoringSignalState" request
     And request contains "signal_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"archive_reason": "none", "state": "open"}}}
+    And body with value {"data": {"attributes": {"archive_reason": "none", "state": "open"}, "type": "signal_metadata"}}
     When the request is sent
     Then the response status is 404 Not Found
 
