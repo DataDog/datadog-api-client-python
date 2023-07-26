@@ -19,6 +19,7 @@ class SecurityMonitoringTriageUser(ModelNormal):
     def openapi_types(_):
         return {
             "handle": (str,),
+            "icon": (str,),
             "id": (int,),
             "name": (str, none_type),
             "uuid": (str,),
@@ -26,15 +27,20 @@ class SecurityMonitoringTriageUser(ModelNormal):
 
     attribute_map = {
         "handle": "handle",
+        "icon": "icon",
         "id": "id",
         "name": "name",
         "uuid": "uuid",
+    }
+    read_only_vars = {
+        "icon",
     }
 
     def __init__(
         self_,
         uuid: str,
         handle: Union[str, UnsetType] = unset,
+        icon: Union[str, UnsetType] = unset,
         id: Union[int, UnsetType] = unset,
         name: Union[str, none_type, UnsetType] = unset,
         **kwargs,
@@ -44,6 +50,9 @@ class SecurityMonitoringTriageUser(ModelNormal):
 
         :param handle: The handle for this user account.
         :type handle: str, optional
+
+        :param icon: Gravatar icon associated to the user.
+        :type icon: str, optional
 
         :param id: Numerical ID assigned by Datadog to this user account.
         :type id: int, optional
@@ -56,6 +65,8 @@ class SecurityMonitoringTriageUser(ModelNormal):
         """
         if handle is not unset:
             kwargs["handle"] = handle
+        if icon is not unset:
+            kwargs["icon"] = icon
         if id is not unset:
             kwargs["id"] = id
         if name is not unset:

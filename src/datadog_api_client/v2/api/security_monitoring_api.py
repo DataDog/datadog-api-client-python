@@ -41,6 +41,7 @@ from datadog_api_client.v2.model.security_monitoring_signals_list_response impor
 from datadog_api_client.v2.model.security_monitoring_signals_sort import SecurityMonitoringSignalsSort
 from datadog_api_client.v2.model.security_monitoring_signal import SecurityMonitoringSignal
 from datadog_api_client.v2.model.security_monitoring_signal_list_request import SecurityMonitoringSignalListRequest
+from datadog_api_client.v2.model.security_monitoring_signal_response import SecurityMonitoringSignalResponse
 from datadog_api_client.v2.model.security_monitoring_signal_triage_update_response import (
     SecurityMonitoringSignalTriageUpdateResponse,
 )
@@ -309,7 +310,7 @@ class SecurityMonitoringApi:
 
         self._get_security_monitoring_signal_endpoint = _Endpoint(
             settings={
-                "response_type": (SecurityMonitoringSignal,),
+                "response_type": (SecurityMonitoringSignalResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security_monitoring/signals/{signal_id}",
                 "operation_id": "get_security_monitoring_signal",
@@ -809,14 +810,14 @@ class SecurityMonitoringApi:
     def get_security_monitoring_signal(
         self,
         signal_id: str,
-    ) -> SecurityMonitoringSignal:
+    ) -> SecurityMonitoringSignalResponse:
         """Get a signal's details.
 
         Get a signal's details.
 
         :param signal_id: The ID of the signal.
         :type signal_id: str
-        :rtype: SecurityMonitoringSignal
+        :rtype: SecurityMonitoringSignalResponse
         """
         kwargs: Dict[str, Any] = {}
         kwargs["signal_id"] = signal_id

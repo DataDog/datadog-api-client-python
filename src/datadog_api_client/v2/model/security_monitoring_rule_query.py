@@ -35,7 +35,7 @@ class SecurityMonitoringRuleQuery(ModelComposed):
         :type name: str, optional
 
         :param query: Query to run on logs.
-        :type query: str
+        :type query: str, optional
 
         :param correlated_by_fields: Fields to group by.
         :type correlated_by_fields: [str], optional
