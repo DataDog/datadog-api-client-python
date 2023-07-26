@@ -4397,6 +4397,13 @@ on\_demand\_concurrency\_cap\_response
    :members:
    :show-inheritance:
 
+on\_demand\_concurrency\_cap\_type
+----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.on_demand_concurrency_cap_type
+   :members:
+   :show-inheritance:
+
 opsgenie\_service\_create\_attributes
 -------------------------------------
 
