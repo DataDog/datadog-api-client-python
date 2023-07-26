@@ -107,6 +107,7 @@ class UsageSummaryDate(ModelNormal):
             "universal_service_monitoring_host_top99p": (int,),
             "vsphere_host_top99p": (int,),
             "vuln_management_host_count_top99p": (int,),
+            "workflow_executions_usage_sum": (int,),
         }
 
     attribute_map = {
@@ -193,6 +194,7 @@ class UsageSummaryDate(ModelNormal):
         "universal_service_monitoring_host_top99p": "universal_service_monitoring_host_top99p",
         "vsphere_host_top99p": "vsphere_host_top99p",
         "vuln_management_host_count_top99p": "vuln_management_host_count_top99p",
+        "workflow_executions_usage_sum": "workflow_executions_usage_sum",
     }
 
     def __init__(
@@ -280,6 +282,7 @@ class UsageSummaryDate(ModelNormal):
         universal_service_monitoring_host_top99p: Union[int, UnsetType] = unset,
         vsphere_host_top99p: Union[int, UnsetType] = unset,
         vuln_management_host_count_top99p: Union[int, UnsetType] = unset,
+        workflow_executions_usage_sum: Union[int, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -533,6 +536,9 @@ class UsageSummaryDate(ModelNormal):
 
         :param vuln_management_host_count_top99p: Shows the 99th percentile of all Application Vulnerability Management hosts over all hours in the current date for the given org.
         :type vuln_management_host_count_top99p: int, optional
+
+        :param workflow_executions_usage_sum: Sum of all workflows executed over all hours in the current date for all organizations.
+        :type workflow_executions_usage_sum: int, optional
         """
         if agent_host_top99p is not unset:
             kwargs["agent_host_top99p"] = agent_host_top99p
@@ -700,4 +706,6 @@ class UsageSummaryDate(ModelNormal):
             kwargs["vsphere_host_top99p"] = vsphere_host_top99p
         if vuln_management_host_count_top99p is not unset:
             kwargs["vuln_management_host_count_top99p"] = vuln_management_host_count_top99p
+        if workflow_executions_usage_sum is not unset:
+            kwargs["workflow_executions_usage_sum"] = workflow_executions_usage_sum
         super().__init__(kwargs)
