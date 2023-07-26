@@ -736,6 +736,7 @@ from datadog_api_client.v2.model.nullable_relationship_to_user_data import Nulla
 from datadog_api_client.v2.model.on_demand_concurrency_cap import OnDemandConcurrencyCap
 from datadog_api_client.v2.model.on_demand_concurrency_cap_attributes import OnDemandConcurrencyCapAttributes
 from datadog_api_client.v2.model.on_demand_concurrency_cap_response import OnDemandConcurrencyCapResponse
+from datadog_api_client.v2.model.on_demand_concurrency_cap_type import OnDemandConcurrencyCapType
 from datadog_api_client.v2.model.opsgenie_service_create_attributes import OpsgenieServiceCreateAttributes
 from datadog_api_client.v2.model.opsgenie_service_create_data import OpsgenieServiceCreateData
 from datadog_api_client.v2.model.opsgenie_service_create_request import OpsgenieServiceCreateRequest
@@ -1971,6 +1972,7 @@ __all__ = [
     "OnDemandConcurrencyCap",
     "OnDemandConcurrencyCapAttributes",
     "OnDemandConcurrencyCapResponse",
+    "OnDemandConcurrencyCapType",
     "OpsgenieServiceCreateAttributes",
     "OpsgenieServiceCreateData",
     "OpsgenieServiceCreateRequest",
