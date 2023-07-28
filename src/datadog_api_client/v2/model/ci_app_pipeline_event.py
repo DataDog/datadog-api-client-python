@@ -14,18 +14,18 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.ci_app_event_attributes import CIAppEventAttributes
+    from datadog_api_client.v2.model.ci_app_pipeline_event_attributes import CIAppPipelineEventAttributes
     from datadog_api_client.v2.model.ci_app_pipeline_event_type_name import CIAppPipelineEventTypeName
 
 
 class CIAppPipelineEvent(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.ci_app_event_attributes import CIAppEventAttributes
+        from datadog_api_client.v2.model.ci_app_pipeline_event_attributes import CIAppPipelineEventAttributes
         from datadog_api_client.v2.model.ci_app_pipeline_event_type_name import CIAppPipelineEventTypeName
 
         return {
-            "attributes": (CIAppEventAttributes,),
+            "attributes": (CIAppPipelineEventAttributes,),
             "id": (str,),
             "type": (CIAppPipelineEventTypeName,),
         }
@@ -38,7 +38,7 @@ class CIAppPipelineEvent(ModelNormal):
 
     def __init__(
         self_,
-        attributes: Union[CIAppEventAttributes, UnsetType] = unset,
+        attributes: Union[CIAppPipelineEventAttributes, UnsetType] = unset,
         id: Union[str, UnsetType] = unset,
         type: Union[CIAppPipelineEventTypeName, UnsetType] = unset,
         **kwargs,
@@ -47,7 +47,7 @@ class CIAppPipelineEvent(ModelNormal):
         Object description of a pipeline event after being processed and stored by Datadog.
 
         :param attributes: JSON object containing all event attributes and their associated values.
-        :type attributes: CIAppEventAttributes, optional
+        :type attributes: CIAppPipelineEventAttributes, optional
 
         :param id: Unique ID of the event.
         :type id: str, optional

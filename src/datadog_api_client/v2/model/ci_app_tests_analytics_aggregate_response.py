@@ -18,7 +18,7 @@ if TYPE_CHECKING:
         CIAppTestsAggregationBucketsResponse,
     )
     from datadog_api_client.v2.model.ci_app_response_links import CIAppResponseLinks
-    from datadog_api_client.v2.model.ci_app_response_metadata import CIAppResponseMetadata
+    from datadog_api_client.v2.model.ci_app_response_metadata_with_pagination import CIAppResponseMetadataWithPagination
 
 
 class CIAppTestsAnalyticsAggregateResponse(ModelNormal):
@@ -28,12 +28,14 @@ class CIAppTestsAnalyticsAggregateResponse(ModelNormal):
             CIAppTestsAggregationBucketsResponse,
         )
         from datadog_api_client.v2.model.ci_app_response_links import CIAppResponseLinks
-        from datadog_api_client.v2.model.ci_app_response_metadata import CIAppResponseMetadata
+        from datadog_api_client.v2.model.ci_app_response_metadata_with_pagination import (
+            CIAppResponseMetadataWithPagination,
+        )
 
         return {
             "data": (CIAppTestsAggregationBucketsResponse,),
             "links": (CIAppResponseLinks,),
-            "meta": (CIAppResponseMetadata,),
+            "meta": (CIAppResponseMetadataWithPagination,),
         }
 
     attribute_map = {
@@ -46,7 +48,7 @@ class CIAppTestsAnalyticsAggregateResponse(ModelNormal):
         self_,
         data: Union[CIAppTestsAggregationBucketsResponse, UnsetType] = unset,
         links: Union[CIAppResponseLinks, UnsetType] = unset,
-        meta: Union[CIAppResponseMetadata, UnsetType] = unset,
+        meta: Union[CIAppResponseMetadataWithPagination, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -59,7 +61,7 @@ class CIAppTestsAnalyticsAggregateResponse(ModelNormal):
         :type links: CIAppResponseLinks, optional
 
         :param meta: The metadata associated with a request.
-        :type meta: CIAppResponseMetadata, optional
+        :type meta: CIAppResponseMetadataWithPagination, optional
         """
         if data is not unset:
             kwargs["data"] = data

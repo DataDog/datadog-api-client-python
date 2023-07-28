@@ -17,15 +17,15 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.ci_app_pipeline_level import CIAppPipelineLevel
     from datadog_api_client.v2.model.tags_event_attribute import TagsEventAttribute
-    from datadog_api_client.v2.model.ci_app_test_level import CIAppTestLevel
 
 
-class CIAppEventAttributes(ModelNormal):
+class CIAppPipelineEventAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.ci_app_pipeline_level import CIAppPipelineLevel
         from datadog_api_client.v2.model.tags_event_attribute import TagsEventAttribute
-        from datadog_api_client.v2.model.ci_app_test_level import CIAppTestLevel
 
         return {
             "attributes": (
@@ -43,39 +43,39 @@ class CIAppEventAttributes(ModelNormal):
                     )
                 },
             ),
+            "ci_level": (CIAppPipelineLevel,),
             "tags": (TagsEventAttribute,),
-            "test_level": (CIAppTestLevel,),
         }
 
     attribute_map = {
         "attributes": "attributes",
+        "ci_level": "ci_level",
         "tags": "tags",
-        "test_level": "test_level",
     }
 
     def __init__(
         self_,
         attributes: Union[Dict[str, Any], UnsetType] = unset,
+        ci_level: Union[CIAppPipelineLevel, UnsetType] = unset,
         tags: Union[TagsEventAttribute, UnsetType] = unset,
-        test_level: Union[CIAppTestLevel, UnsetType] = unset,
         **kwargs,
     ):
         """
         JSON object containing all event attributes and their associated values.
 
-        :param attributes: JSON object of attributes from CI Visibility test events.
+        :param attributes: JSON object of attributes from CI Visibility pipeline events.
         :type attributes: {str: (bool, date, datetime, dict, float, int, list, str, none_type,)}, optional
+
+        :param ci_level: Pipeline execution level.
+        :type ci_level: CIAppPipelineLevel, optional
 
         :param tags: Array of tags associated with your event.
         :type tags: TagsEventAttribute, optional
-
-        :param test_level: Test run level.
-        :type test_level: CIAppTestLevel, optional
         """
         if attributes is not unset:
             kwargs["attributes"] = attributes
+        if ci_level is not unset:
+            kwargs["ci_level"] = ci_level
         if tags is not unset:
             kwargs["tags"] = tags
-        if test_level is not unset:
-            kwargs["test_level"] = test_level
         super().__init__(kwargs)
