@@ -29,6 +29,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
             "appsec_usage": (float,),
             "browser_percentage": (float,),
             "browser_usage": (float,),
+            "ci_visibility_itr_percentage": (float,),
+            "ci_visibility_itr_usage": (float,),
             "container_excl_agent_percentage": (float,),
             "container_excl_agent_usage": (float,),
             "container_percentage": (float,),
@@ -98,6 +100,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         "appsec_usage": "appsec_usage",
         "browser_percentage": "browser_percentage",
         "browser_usage": "browser_usage",
+        "ci_visibility_itr_percentage": "ci_visibility_itr_percentage",
+        "ci_visibility_itr_usage": "ci_visibility_itr_usage",
         "container_excl_agent_percentage": "container_excl_agent_percentage",
         "container_excl_agent_usage": "container_excl_agent_usage",
         "container_percentage": "container_percentage",
@@ -168,6 +172,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         appsec_usage: Union[float, UnsetType] = unset,
         browser_percentage: Union[float, UnsetType] = unset,
         browser_usage: Union[float, UnsetType] = unset,
+        ci_visibility_itr_percentage: Union[float, UnsetType] = unset,
+        ci_visibility_itr_usage: Union[float, UnsetType] = unset,
         container_excl_agent_percentage: Union[float, UnsetType] = unset,
         container_excl_agent_usage: Union[float, UnsetType] = unset,
         container_percentage: Union[float, UnsetType] = unset,
@@ -262,6 +268,12 @@ class MonthlyUsageAttributionValues(ModelNormal):
 
         :param browser_usage: The synthetic browser test usage by tag(s).
         :type browser_usage: float, optional
+
+        :param ci_visibility_itr_percentage: The percentage of Git committers for Intelligent Test Runner usage by tag(s).
+        :type ci_visibility_itr_percentage: float, optional
+
+        :param ci_visibility_itr_usage: The Git committers for Intelligent Test Runner usage by tag(s).
+        :type ci_visibility_itr_usage: float, optional
 
         :param container_excl_agent_percentage: The percentage of container usage without the Datadog Agent by tag(s).
         :type container_excl_agent_percentage: float, optional
@@ -449,6 +461,10 @@ class MonthlyUsageAttributionValues(ModelNormal):
             kwargs["browser_percentage"] = browser_percentage
         if browser_usage is not unset:
             kwargs["browser_usage"] = browser_usage
+        if ci_visibility_itr_percentage is not unset:
+            kwargs["ci_visibility_itr_percentage"] = ci_visibility_itr_percentage
+        if ci_visibility_itr_usage is not unset:
+            kwargs["ci_visibility_itr_usage"] = ci_visibility_itr_usage
         if container_excl_agent_percentage is not unset:
             kwargs["container_excl_agent_percentage"] = container_excl_agent_percentage
         if container_excl_agent_usage is not unset:
