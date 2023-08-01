@@ -14,6 +14,7 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v1.model.widget_custom_link import WidgetCustomLink
     from datadog_api_client.v1.model.widget_marker import WidgetMarker
     from datadog_api_client.v1.model.distribution_widget_request import DistributionWidgetRequest
     from datadog_api_client.v1.model.widget_time import WidgetTime
@@ -33,6 +34,7 @@ class DistributionWidgetDefinition(ModelNormal):
 
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v1.model.widget_custom_link import WidgetCustomLink
         from datadog_api_client.v1.model.widget_marker import WidgetMarker
         from datadog_api_client.v1.model.distribution_widget_request import DistributionWidgetRequest
         from datadog_api_client.v1.model.widget_time import WidgetTime
@@ -42,6 +44,7 @@ class DistributionWidgetDefinition(ModelNormal):
         from datadog_api_client.v1.model.distribution_widget_y_axis import DistributionWidgetYAxis
 
         return {
+            "custom_links": ([WidgetCustomLink],),
             "legend_size": (str,),
             "markers": ([WidgetMarker],),
             "requests": ([DistributionWidgetRequest],),
@@ -56,6 +59,7 @@ class DistributionWidgetDefinition(ModelNormal):
         }
 
     attribute_map = {
+        "custom_links": "custom_links",
         "legend_size": "legend_size",
         "markers": "markers",
         "requests": "requests",
@@ -73,6 +77,7 @@ class DistributionWidgetDefinition(ModelNormal):
         self_,
         requests: List[DistributionWidgetRequest],
         type: DistributionWidgetDefinitionType,
+        custom_links: Union[List[WidgetCustomLink], UnsetType] = unset,
         legend_size: Union[str, UnsetType] = unset,
         markers: Union[List[WidgetMarker], UnsetType] = unset,
         show_legend: Union[bool, UnsetType] = unset,
@@ -88,6 +93,9 @@ class DistributionWidgetDefinition(ModelNormal):
         The Distribution visualization is another way of showing metrics
         aggregated across one or several tags, such as hosts.
         Unlike the heat map, a distribution graph’s x-axis is quantity rather than time.
+
+        :param custom_links: A list of custom links.
+        :type custom_links: [WidgetCustomLink], optional
 
         :param legend_size: (Deprecated) The widget legend was replaced by a tooltip and sidebar. **Deprecated**.
         :type legend_size: str, optional
@@ -125,6 +133,8 @@ class DistributionWidgetDefinition(ModelNormal):
         :param yaxis: Y Axis controls for the distribution widget.
         :type yaxis: DistributionWidgetYAxis, optional
         """
+        if custom_links is not unset:
+            kwargs["custom_links"] = custom_links
         if legend_size is not unset:
             kwargs["legend_size"] = legend_size
         if markers is not unset:
