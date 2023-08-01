@@ -45,7 +45,7 @@ Feature: Dashboards
   @team:DataDog/dashboards-backend
   Scenario: Create a distribution widget using a histogram request containing a formulas and functions metrics query
     Given new "CreateDashboard" request
-    And body with value { "title": "{{ unique }}", "widgets": [ { "definition": { "title": "Metrics HOP", "title_size": "16", "title_align": "left", "show_legend": false, "type": "distribution", "xaxis": { "max": "auto", "include_zero": true, "scale": "linear", "min": "auto" }, "yaxis": { "max": "auto", "include_zero": true, "scale": "linear", "min": "auto" }, "requests": [ { "query": { "query": "histogram:trace.Load{*}", "data_source": "metrics", "name": "query1" }, "request_type": "histogram", "style": { "palette": "dog_classic" } } ] }, "layout": { "x": 0, "y": 0, "width": 4, "height": 2 } } ], "layout_type": "ordered" }
+    And body with value {"title":"{{ unique }}","widgets":[{"definition":{"title":"Metrics HOP","title_size":"16","title_align":"left","show_legend":false,"type":"distribution","custom_links":[{"label":"Example","link":"https://example.org/"}],"xaxis":{"max":"auto","include_zero":true,"scale":"linear","min":"auto"},"yaxis":{"max":"auto","include_zero":true,"scale":"linear","min":"auto"},"requests":[{"query":{"query":"histogram:trace.Load{*}","data_source":"metrics","name":"query1"},"request_type":"histogram","style":{"palette":"dog_classic"}}]},"layout":{"x":0,"y":0,"width":4,"height":2}}],"layout_type":"ordered"}
     When the request is sent
     Then the response status is 200 OK
     And the response "widgets[0].definition.requests[0].request_type" is equal to "histogram"
@@ -53,6 +53,7 @@ Feature: Dashboards
     And the response "widgets[0].definition.requests[0].query.query" is equal to "histogram:trace.Load{*}"
     And the response "widgets[0].definition.requests[0].query.data_source" is equal to "metrics"
     And the response "widgets[0].definition.requests[0].query.name" is equal to "query1"
+    And the response "widgets[0].definition.custom_links" has item with field "label" with value "Example"
 
   @team:DataDog/dashboards-backend
   Scenario: Create a geomap widget using an event_list request
