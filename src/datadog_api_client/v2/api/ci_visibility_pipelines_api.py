@@ -151,7 +151,7 @@ class CIVisibilityPipelinesApi:
     ) -> CIAppPipelinesAnalyticsAggregateResponse:
         """Aggregate pipelines events.
 
-        The API endpoint to aggregate CI Visibility pipeline events into buckets of computed metrics and timeseries.
+        Use this API endpoint to aggregate CI Visibility pipeline events into buckets of computed metrics and timeseries.
 
         :type body: CIAppPipelinesAggregateRequest
         :rtype: CIAppPipelinesAnalyticsAggregateResponse
@@ -167,11 +167,9 @@ class CIVisibilityPipelinesApi:
     ) -> dict:
         """Send pipeline event.
 
-        Send your pipeline event to your Datadog platform over HTTP. For details about how pipeline executions are modeled and what execution types we support, see the `guide <https://docs.datadoghq.com/continuous_integration/guides/pipeline_data_model/>`_.
+        Send your pipeline event to your Datadog platform over HTTP. For details about how pipeline executions are modeled and what execution types we support, see `Pipeline Data Model And Execution Types <https://docs.datadoghq.com/continuous_integration/guides/pipeline_data_model/>`_.
 
         Pipeline events can be submitted with a timestamp that is up to 18 hours in the past.
-
-        This API endpoint is in private beta.
 
         :type body: CIAppCreatePipelineEventRequest
         :rtype: dict
@@ -193,7 +191,7 @@ class CIVisibilityPipelinesApi:
     ) -> CIAppPipelineEventsResponse:
         """Get a list of pipelines events.
 
-        List endpoint returns CI Visibility pipeline events that match a `log search query <https://docs.datadoghq.com/logs/explorer/search_syntax/>`_.
+        List endpoint returns CI Visibility pipeline events that match a `search query <https://docs.datadoghq.com/continuous_integration/explorer/search_syntax/>`_.
         `Results are paginated similarly to logs <https://docs.datadoghq.com/logs/guide/collect-multiple-logs-with-pagination>`_.
 
         Use this endpoint to see your latest pipeline events.
@@ -302,7 +300,7 @@ class CIVisibilityPipelinesApi:
     ) -> CIAppPipelineEventsResponse:
         """Search pipelines events.
 
-        List endpoint returns CI Visibility pipeline events that match a `log search query <https://docs.datadoghq.com/logs/explorer/search_syntax/>`_.
+        List endpoint returns CI Visibility pipeline events that match a `search query <https://docs.datadoghq.com/continuous_integration/explorer/search_syntax/>`_.
         `Results are paginated similarly to logs <https://docs.datadoghq.com/logs/guide/collect-multiple-logs-with-pagination>`_.
 
         Use this endpoint to build complex events filtering and search.
