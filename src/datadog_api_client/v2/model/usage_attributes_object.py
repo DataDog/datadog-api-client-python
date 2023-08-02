@@ -28,6 +28,7 @@ class UsageAttributesObject(ModelNormal):
             "org_name": (str,),
             "product_family": (str,),
             "public_id": (str,),
+            "region": (str,),
             "timeseries": ([UsageTimeSeriesObject],),
             "usage_type": (HourlyUsageType,),
         }
@@ -36,6 +37,7 @@ class UsageAttributesObject(ModelNormal):
         "org_name": "org_name",
         "product_family": "product_family",
         "public_id": "public_id",
+        "region": "region",
         "timeseries": "timeseries",
         "usage_type": "usage_type",
     }
@@ -45,6 +47,7 @@ class UsageAttributesObject(ModelNormal):
         org_name: Union[str, UnsetType] = unset,
         product_family: Union[str, UnsetType] = unset,
         public_id: Union[str, UnsetType] = unset,
+        region: Union[str, UnsetType] = unset,
         timeseries: Union[List[UsageTimeSeriesObject], UnsetType] = unset,
         usage_type: Union[HourlyUsageType, UnsetType] = unset,
         **kwargs,
@@ -61,6 +64,9 @@ class UsageAttributesObject(ModelNormal):
         :param public_id: The organization public ID.
         :type public_id: str, optional
 
+        :param region: The region of the Datadog instance that the organization belongs to.
+        :type region: str, optional
+
         :param timeseries: List of usage data reported for each requested hour.
         :type timeseries: [UsageTimeSeriesObject], optional
 
@@ -73,6 +79,8 @@ class UsageAttributesObject(ModelNormal):
             kwargs["product_family"] = product_family
         if public_id is not unset:
             kwargs["public_id"] = public_id
+        if region is not unset:
+            kwargs["region"] = region
         if timeseries is not unset:
             kwargs["timeseries"] = timeseries
         if usage_type is not unset:
