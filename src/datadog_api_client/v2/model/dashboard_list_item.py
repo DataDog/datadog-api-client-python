@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -25,6 +25,9 @@ class DashboardListItem(ModelNormal):
         "popularity": {
             "inclusive_maximum": 5,
         },
+        "tags": {
+            "max_items": 5,
+        },
     }
 
     @cached_property
@@ -43,6 +46,7 @@ class DashboardListItem(ModelNormal):
             "is_shared": (bool,),
             "modified": (datetime,),
             "popularity": (int,),
+            "tags": ([str], none_type),
             "title": (str,),
             "type": (DashboardType,),
             "url": (str,),
@@ -59,6 +63,7 @@ class DashboardListItem(ModelNormal):
         "is_shared": "is_shared",
         "modified": "modified",
         "popularity": "popularity",
+        "tags": "tags",
         "title": "title",
         "type": "type",
         "url": "url",
@@ -72,6 +77,7 @@ class DashboardListItem(ModelNormal):
         "is_shared",
         "modified",
         "popularity",
+        "tags",
         "title",
         "url",
     }
@@ -89,6 +95,7 @@ class DashboardListItem(ModelNormal):
         is_shared: Union[bool, UnsetType] = unset,
         modified: Union[datetime, UnsetType] = unset,
         popularity: Union[int, UnsetType] = unset,
+        tags: Union[List[str], none_type, UnsetType] = unset,
         title: Union[str, UnsetType] = unset,
         url: Union[str, UnsetType] = unset,
         **kwargs,
@@ -126,6 +133,9 @@ class DashboardListItem(ModelNormal):
         :param popularity: Popularity of the dashboard.
         :type popularity: int, optional
 
+        :param tags: List of team names representing ownership of a dashboard.
+        :type tags: [str], none_type, optional
+
         :param title: Title of the dashboard.
         :type title: str, optional
 
@@ -153,6 +163,8 @@ class DashboardListItem(ModelNormal):
             kwargs["modified"] = modified
         if popularity is not unset:
             kwargs["popularity"] = popularity
+        if tags is not unset:
+            kwargs["tags"] = tags
         if title is not unset:
             kwargs["title"] = title
         if url is not unset:
