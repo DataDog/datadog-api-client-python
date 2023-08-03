@@ -35,6 +35,7 @@ class AuditLogsEventAttributes(ModelNormal):
                     )
                 },
             ),
+            "message": (str,),
             "service": (str,),
             "tags": ([str],),
             "timestamp": (datetime,),
@@ -42,6 +43,7 @@ class AuditLogsEventAttributes(ModelNormal):
 
     attribute_map = {
         "attributes": "attributes",
+        "message": "message",
         "service": "service",
         "tags": "tags",
         "timestamp": "timestamp",
@@ -50,6 +52,7 @@ class AuditLogsEventAttributes(ModelNormal):
     def __init__(
         self_,
         attributes: Union[Dict[str, Any], UnsetType] = unset,
+        message: Union[str, UnsetType] = unset,
         service: Union[str, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
         timestamp: Union[datetime, UnsetType] = unset,
@@ -60,6 +63,9 @@ class AuditLogsEventAttributes(ModelNormal):
 
         :param attributes: JSON object of attributes from Audit Logs events.
         :type attributes: {str: (bool, date, datetime, dict, float, int, list, str, none_type,)}, optional
+
+        :param message: Message of the event.
+        :type message: str, optional
 
         :param service: Name of the application or service generating Audit Logs events.
             This name is used to correlate Audit Logs to APM, so make sure you specify the same
@@ -74,6 +80,8 @@ class AuditLogsEventAttributes(ModelNormal):
         """
         if attributes is not unset:
             kwargs["attributes"] = attributes
+        if message is not unset:
+            kwargs["message"] = message
         if service is not unset:
             kwargs["service"] = service
         if tags is not unset:
