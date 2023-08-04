@@ -23,8 +23,11 @@ from datadog_api_client.exceptions import (
 logger = logging.getLogger(__name__)
 
 
+RETRY_AFTER_STATUS_CODES = frozenset([413, 429, 500, 501, 502, 503, 504, 505, 506, 507, 509, 510, 511])
+
+
 class ClientRetry(urllib3.util.Retry):
-    RETRY_AFTER_STATUS_CODES = frozenset([413, 429, 500, 501, 502, 503, 504, 505, 506, 507, 509, 510, 511])
+    RETRY_AFTER_STATUS_CODES = RETRY_AFTER_STATUS_CODES
     DEFAULT_ALLOWED_METHODS = frozenset(["GET", "PUT", "DELETE", "POST", "PATCH"])
 
     def get_retry_after(self, response):
@@ -237,6 +240,19 @@ class AsyncRESTClientObject:
         if configuration.proxy:
             proxy = aiosonic.Proxy(configuration.proxy, configuration.proxy_headers)
         self._client = aiosonic.HTTPClient(proxy=proxy)
+        self._configuration = configuration
+
+    def _retry(self, response, counter):
+        if (
+            not self._configuration.enable_retry
+            or counter >= self._configuration.max_retries
+            or response.status_code not in RETRY_AFTER_STATUS_CODES
+        ):
+            return 0
+        retry_after = response.headers.get("X-Ratelimit-Reset")
+        if retry_after is None:
+            return self._configuration.retry_backoff_factor * (2 ** (counter))
+        return int(retry_after)
 
     async def request(
         self,
@@ -287,9 +303,23 @@ class AsyncRESTClientObject:
                 request_body = compress.compress(request_body.encode("utf-8")) + compress.flush()
             elif headers.get("Content-Encoding") == "deflate":
                 request_body = zlib.compress(request_body.encode("utf-8"))
-        response = await self._client.request(
-            url, method, headers, query_params, request_body, timeouts=request_timeout
-        )
+            elif headers.get("Content-Encoding") == "zstd1":
+                import zstandard as zstd
+
+                compressor = zstd.ZstdCompressor()
+                request_body = compressor.compress(request_body.encode("utf-8"))
+        counter = 0
+        while True:
+            response = await self._client.request(
+                url, method, headers, query_params, request_body, timeouts=request_timeout
+            )
+            retry = self._retry(response, counter)
+            if not retry:
+                break
+            import asyncio
+
+            await asyncio.sleep(retry)
+            counter += 1
 
         if not 200 <= response.status_code <= 299:
             data = b""
