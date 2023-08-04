@@ -124,17 +124,25 @@ class Configuration:
         Default is True.
     :type preload_content: bool
     :param request_timeout: Timeout setting for this request. If one
-        number provided, it will be total request timeout. It can also be a
+        number is provided, it will be total request timeout. It can also be a
         pair (tuple) of (connection, read) timeouts.  Default is None.
     :type request_timeout: float/tuple
-    :param check_input_type: Specifies if type checking should be done one
+    :param check_input_type: Specifies if type checking should be done on
         the data sent to the server. Default is True.
     :type check_input_type: bool
     :param check_return_type: Specifies if type checking should be done
-        one the data received from the server. Default is True.
+        on the data received from the server. Default is True.
     :type check_return_type: bool
     :param spec_property_naming: Whether names in properties are expected to respect the spec or use snake case.
     :type spec_property_naming: bool
+    :param enable_retry: If set, the client will retry requests on backend errors (5xx status codes), and 429.
+        On 429 if will use the returned headers to wait until the next requests, otherwise it will retry using
+        the backoff factor.
+    :type enable_retry: bool
+    :param retry_backoff_factor: Factor used to space out retried requests on backend errors.
+    :type retry_backoff_factor: int
+    :param max_retries: The maximum number of times a single request can be retried.
+    :type max_retries: int
     """
 
     def __init__(
