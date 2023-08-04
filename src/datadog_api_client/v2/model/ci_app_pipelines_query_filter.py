@@ -41,7 +41,7 @@ class CIAppPipelinesQueryFilter(ModelNormal):
         :param _from: The minimum time for the requested events; supports date, math, and regular timestamps (in milliseconds).
         :type _from: str, optional
 
-        :param query: The search query following the Log search syntax.
+        :param query: The search query following the CI Visibility Explorer search syntax.
         :type query: str, optional
 
         :param to: The maximum time for the requested events, supports date, math, and regular timestamps (in milliseconds).

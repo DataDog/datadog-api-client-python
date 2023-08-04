@@ -547,6 +547,13 @@ ci\_app\_pipeline\_event
    :members:
    :show-inheritance:
 
+ci\_app\_pipeline\_event\_attributes
+------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_pipeline_event_attributes
+   :members:
+   :show-inheritance:
+
 ci\_app\_pipeline\_event\_job
 -----------------------------
 
@@ -670,6 +677,13 @@ ci\_app\_pipeline\_events\_response
 -----------------------------------
 
 .. automodule:: datadog_api_client.v2.model.ci_app_pipeline_events_response
+   :members:
+   :show-inheritance:
+
+ci\_app\_pipeline\_level
+------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_pipeline_level
    :members:
    :show-inheritance:
 
@@ -803,6 +817,13 @@ ci\_app\_test\_events\_response
 -------------------------------
 
 .. automodule:: datadog_api_client.v2.model.ci_app_test_events_response
+   :members:
+   :show-inheritance:
+
+ci\_app\_test\_level
+--------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_test_level
    :members:
    :show-inheritance:
 

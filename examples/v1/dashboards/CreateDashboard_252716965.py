@@ -19,6 +19,7 @@ from datadog_api_client.v1.model.formula_and_function_metric_query_definition im
     FormulaAndFunctionMetricQueryDefinition,
 )
 from datadog_api_client.v1.model.widget import Widget
+from datadog_api_client.v1.model.widget_custom_link import WidgetCustomLink
 from datadog_api_client.v1.model.widget_layout import WidgetLayout
 from datadog_api_client.v1.model.widget_style import WidgetStyle
 from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
@@ -33,6 +34,12 @@ body = Dashboard(
                 title_align=WidgetTextAlign.LEFT,
                 show_legend=False,
                 type=DistributionWidgetDefinitionType.DISTRIBUTION,
+                custom_links=[
+                    WidgetCustomLink(
+                        label="Example",
+                        link="https://example.org/",
+                    ),
+                ],
                 xaxis=DistributionWidgetXAxis(
                     max="auto",
                     include_zero=True,

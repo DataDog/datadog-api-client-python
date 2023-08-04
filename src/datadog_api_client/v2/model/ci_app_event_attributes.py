@@ -18,12 +18,14 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.tags_event_attribute import TagsEventAttribute
+    from datadog_api_client.v2.model.ci_app_test_level import CIAppTestLevel
 
 
 class CIAppEventAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.tags_event_attribute import TagsEventAttribute
+        from datadog_api_client.v2.model.ci_app_test_level import CIAppTestLevel
 
         return {
             "attributes": (
@@ -41,49 +43,39 @@ class CIAppEventAttributes(ModelNormal):
                     )
                 },
             ),
-            "service": (str,),
             "tags": (TagsEventAttribute,),
-            "timestamp": (datetime,),
+            "test_level": (CIAppTestLevel,),
         }
 
     attribute_map = {
         "attributes": "attributes",
-        "service": "service",
         "tags": "tags",
-        "timestamp": "timestamp",
+        "test_level": "test_level",
     }
 
     def __init__(
         self_,
         attributes: Union[Dict[str, Any], UnsetType] = unset,
-        service: Union[str, UnsetType] = unset,
         tags: Union[TagsEventAttribute, UnsetType] = unset,
-        timestamp: Union[datetime, UnsetType] = unset,
+        test_level: Union[CIAppTestLevel, UnsetType] = unset,
         **kwargs,
     ):
         """
         JSON object containing all event attributes and their associated values.
 
-        :param attributes: JSON object of attributes from CI Visibility events.
+        :param attributes: JSON object of attributes from CI Visibility test events.
         :type attributes: {str: (bool, date, datetime, dict, float, int, list, str, none_type,)}, optional
-
-        :param service: The name of the application or service generating CI Visibility events.
-            It is used to switch from CI Visibility to APM, so make sure you define the same
-            value when you use both products.
-        :type service: str, optional
 
         :param tags: Array of tags associated with your event.
         :type tags: TagsEventAttribute, optional
 
-        :param timestamp: Timestamp of your event.
-        :type timestamp: datetime, optional
+        :param test_level: Test run level.
+        :type test_level: CIAppTestLevel, optional
         """
         if attributes is not unset:
             kwargs["attributes"] = attributes
-        if service is not unset:
-            kwargs["service"] = service
         if tags is not unset:
             kwargs["tags"] = tags
-        if timestamp is not unset:
-            kwargs["timestamp"] = timestamp
+        if test_level is not unset:
+            kwargs["test_level"] = test_level
         super().__init__(kwargs)

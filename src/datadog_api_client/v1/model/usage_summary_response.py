@@ -45,6 +45,7 @@ class UsageSummaryResponse(ModelNormal):
             "browser_rum_units_agg_sum": (int,),
             "ci_pipeline_indexed_spans_agg_sum": (int,),
             "ci_test_indexed_spans_agg_sum": (int,),
+            "ci_visibility_itr_committers_hwm_sum": (int,),
             "ci_visibility_pipeline_committers_hwm_sum": (int,),
             "ci_visibility_test_committers_hwm_sum": (int,),
             "cloud_cost_management_aws_host_count_avg_sum": (int,),
@@ -141,6 +142,7 @@ class UsageSummaryResponse(ModelNormal):
         "browser_rum_units_agg_sum": "browser_rum_units_agg_sum",
         "ci_pipeline_indexed_spans_agg_sum": "ci_pipeline_indexed_spans_agg_sum",
         "ci_test_indexed_spans_agg_sum": "ci_test_indexed_spans_agg_sum",
+        "ci_visibility_itr_committers_hwm_sum": "ci_visibility_itr_committers_hwm_sum",
         "ci_visibility_pipeline_committers_hwm_sum": "ci_visibility_pipeline_committers_hwm_sum",
         "ci_visibility_test_committers_hwm_sum": "ci_visibility_test_committers_hwm_sum",
         "cloud_cost_management_aws_host_count_avg_sum": "cloud_cost_management_aws_host_count_avg_sum",
@@ -238,6 +240,7 @@ class UsageSummaryResponse(ModelNormal):
         browser_rum_units_agg_sum: Union[int, UnsetType] = unset,
         ci_pipeline_indexed_spans_agg_sum: Union[int, UnsetType] = unset,
         ci_test_indexed_spans_agg_sum: Union[int, UnsetType] = unset,
+        ci_visibility_itr_committers_hwm_sum: Union[int, UnsetType] = unset,
         ci_visibility_pipeline_committers_hwm_sum: Union[int, UnsetType] = unset,
         ci_visibility_test_committers_hwm_sum: Union[int, UnsetType] = unset,
         cloud_cost_management_aws_host_count_avg_sum: Union[int, UnsetType] = unset,
@@ -373,6 +376,9 @@ class UsageSummaryResponse(ModelNormal):
 
         :param ci_test_indexed_spans_agg_sum: Shows the sum of all CI test indexed spans over all hours in the current months for all organizations.
         :type ci_test_indexed_spans_agg_sum: int, optional
+
+        :param ci_visibility_itr_committers_hwm_sum: Shows the high-water mark of all CI visibility intelligent test runner committers over all hours in the current months for all organizations.
+        :type ci_visibility_itr_committers_hwm_sum: int, optional
 
         :param ci_visibility_pipeline_committers_hwm_sum: Shows the high-water mark of all CI visibility pipeline committers over all hours in the current months for all organizations.
         :type ci_visibility_pipeline_committers_hwm_sum: int, optional
@@ -634,6 +640,8 @@ class UsageSummaryResponse(ModelNormal):
             kwargs["ci_pipeline_indexed_spans_agg_sum"] = ci_pipeline_indexed_spans_agg_sum
         if ci_test_indexed_spans_agg_sum is not unset:
             kwargs["ci_test_indexed_spans_agg_sum"] = ci_test_indexed_spans_agg_sum
+        if ci_visibility_itr_committers_hwm_sum is not unset:
+            kwargs["ci_visibility_itr_committers_hwm_sum"] = ci_visibility_itr_committers_hwm_sum
         if ci_visibility_pipeline_committers_hwm_sum is not unset:
             kwargs["ci_visibility_pipeline_committers_hwm_sum"] = ci_visibility_pipeline_committers_hwm_sum
         if ci_visibility_test_committers_hwm_sum is not unset:

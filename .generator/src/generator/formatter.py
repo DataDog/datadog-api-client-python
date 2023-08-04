@@ -21,7 +21,7 @@ if replacement_file.exists():
         EDGE_CASES.update(json.load(f))
 
 API_VERSION = None
-WHITELISTED_LIST_MODELS={
+WHITELISTED_LIST_MODELS = {
     "v1": (
         "AgentCheck",
         "AzureAccountListResponse",
@@ -212,6 +212,35 @@ def get_name_and_imports(schema, version=None, imports=None):
     return name, imports
 
 
+def _format_oneof(data, schema, replace_values, version, imports):
+    matched = 0
+    for sub_schema in schema["oneOf"]:
+        try:
+            if "items" in sub_schema and not isinstance(data, list):
+                continue
+            formatted, extra_imports = format_data_with_schema(
+                data,
+                sub_schema,
+                replace_values=replace_values,
+                version=version,
+            )
+            if sub_schema.get("items", {}).get("type") in PRIMITIVE_TYPES:
+                return data, imports
+            if matched == 0:
+                imports = _merge_imports(imports, extra_imports)
+                # NOTE we do not support mixed schemas with oneOf
+                # parameters += formatted
+                parameters = formatted
+            matched += 1
+        except (KeyError, ValueError) as e:
+            print(f"{e}")
+
+    if matched != 1:
+        raise ValueError(f"[{matched}] {data} is not valid for schema {schema}")
+
+    return parameters, imports
+
+
 @singledispatch
 def format_data_with_schema(
     data,
@@ -305,26 +334,10 @@ def format_data_with_schema_list(
     imports = imports or defaultdict(set)
     name, r_imports = get_name_and_imports(schema, version, None)
     if is_list_model_whitelisted(name):
-        imports.update(r_imports) 
+        imports.update(r_imports)
 
     if "oneOf" in schema:
-        for sub_schema in schema["oneOf"]:
-            try:
-                value, one_of_imports = format_data_with_schema(
-                    data,
-                    sub_schema,
-                    replace_values=replace_values,
-                    default_name=name if is_list_model_whitelisted(name) else None,
-                    version=version,
-                )
-            except (KeyError, ValueError):
-                continue
-            # Workaround to not generate schema for primitive nested oneOfs
-            if sub_schema.get("items", {}).get("type") in PRIMITIVE_TYPES:
-                return data, imports
-
-            return value, one_of_imports
-        raise ValueError(f"{data} is not valid oneOf {schema}")
+        return _format_oneof(data, schema, replace_values, version, imports)
 
     parameters = ""
     for d in data:
@@ -338,7 +351,7 @@ def format_data_with_schema_list(
         imports = _merge_imports(imports, extra_imports)
     parameters = f"[{parameters}]"
 
-    if name and is_list_model_whitelisted(name): 
+    if name and is_list_model_whitelisted(name):
         return f"{name}({parameters})", imports
 
     return parameters, imports
@@ -390,7 +403,10 @@ def format_data_with_schema_dict(
             parameters += f"{escape_reserved_keyword(k)}={value}, "
             imports = _merge_imports(imports, extra_imports)
 
-    if not name and "oneOf" not in schema:
+    if "oneOf" in schema:
+        return _format_oneof(data, schema, replace_values, version, imports)
+
+    if not name:
         if default_name and not schema.get("additionalProperties") and schema.get("properties"):
             name = default_name
             imports[MODEL_IMPORT_TPL.format(version=version, name=safe_snake_case(name))].add(name)
@@ -398,30 +414,8 @@ def format_data_with_schema_dict(
             name = "dict"
             warnings.warn(f"Unnamed schema {schema} for {data}")
 
-    if "oneOf" in schema:
-        matched = 0
-        for sub_schema in schema["oneOf"]:
-            try:
-                formatted, extra_imports = format_data_with_schema(
-                    data,
-                    sub_schema,
-                    replace_values=replace_values,
-                    version=version,
-                )
-                if matched == 0:
-                    imports = _merge_imports(imports, extra_imports)
-                    # NOTE we do not support mixed schemas with oneOf
-                    # parameters += formatted
-                    parameters = formatted
-                    name = None
-                matched += 1
-            except (KeyError, ValueError) as e:
-                print(f"{e}")
-
-        if matched == 0:
-            raise ValueError(f"[{matched}] {data} is not valid for schema {name}")
-        elif matched > 1:
-            warnings.warn(f"[{matched}] {data} is not valid for schema {name}")
+    if parameters == "" and schema.get("type") == "string":
+        raise ValueError(f"No schema matched for {data}")
 
     if not parameters and data:
         key_val_pairs = ", ".join(f'("{k}", "{v}")' for k, v in data.items())

@@ -83,6 +83,7 @@ from datadog_api_client.v2.model.ci_app_group_by_missing import CIAppGroupByMiss
 from datadog_api_client.v2.model.ci_app_group_by_total import CIAppGroupByTotal
 from datadog_api_client.v2.model.ci_app_host_info import CIAppHostInfo
 from datadog_api_client.v2.model.ci_app_pipeline_event import CIAppPipelineEvent
+from datadog_api_client.v2.model.ci_app_pipeline_event_attributes import CIAppPipelineEventAttributes
 from datadog_api_client.v2.model.ci_app_pipeline_event_job import CIAppPipelineEventJob
 from datadog_api_client.v2.model.ci_app_pipeline_event_job_level import CIAppPipelineEventJobLevel
 from datadog_api_client.v2.model.ci_app_pipeline_event_job_status import CIAppPipelineEventJobStatus
@@ -101,6 +102,7 @@ from datadog_api_client.v2.model.ci_app_pipeline_event_step_status import CIAppP
 from datadog_api_client.v2.model.ci_app_pipeline_event_type_name import CIAppPipelineEventTypeName
 from datadog_api_client.v2.model.ci_app_pipeline_events_request import CIAppPipelineEventsRequest
 from datadog_api_client.v2.model.ci_app_pipeline_events_response import CIAppPipelineEventsResponse
+from datadog_api_client.v2.model.ci_app_pipeline_level import CIAppPipelineLevel
 from datadog_api_client.v2.model.ci_app_pipelines_aggregate_request import CIAppPipelinesAggregateRequest
 from datadog_api_client.v2.model.ci_app_pipelines_aggregation_buckets_response import (
     CIAppPipelinesAggregationBucketsResponse,
@@ -124,6 +126,7 @@ from datadog_api_client.v2.model.ci_app_test_event import CIAppTestEvent
 from datadog_api_client.v2.model.ci_app_test_event_type_name import CIAppTestEventTypeName
 from datadog_api_client.v2.model.ci_app_test_events_request import CIAppTestEventsRequest
 from datadog_api_client.v2.model.ci_app_test_events_response import CIAppTestEventsResponse
+from datadog_api_client.v2.model.ci_app_test_level import CIAppTestLevel
 from datadog_api_client.v2.model.ci_app_tests_aggregate_request import CIAppTestsAggregateRequest
 from datadog_api_client.v2.model.ci_app_tests_aggregation_buckets_response import CIAppTestsAggregationBucketsResponse
 from datadog_api_client.v2.model.ci_app_tests_analytics_aggregate_response import CIAppTestsAnalyticsAggregateResponse
@@ -1423,6 +1426,7 @@ __all__ = [
     "CIAppGroupByTotal",
     "CIAppHostInfo",
     "CIAppPipelineEvent",
+    "CIAppPipelineEventAttributes",
     "CIAppPipelineEventJob",
     "CIAppPipelineEventJobLevel",
     "CIAppPipelineEventJobStatus",
@@ -1441,6 +1445,7 @@ __all__ = [
     "CIAppPipelineEventTypeName",
     "CIAppPipelineEventsRequest",
     "CIAppPipelineEventsResponse",
+    "CIAppPipelineLevel",
     "CIAppPipelinesAggregateRequest",
     "CIAppPipelinesAggregationBucketsResponse",
     "CIAppPipelinesAnalyticsAggregateResponse",
@@ -1460,6 +1465,7 @@ __all__ = [
     "CIAppTestEventTypeName",
     "CIAppTestEventsRequest",
     "CIAppTestEventsResponse",
+    "CIAppTestLevel",
     "CIAppTestsAggregateRequest",
     "CIAppTestsAggregationBucketsResponse",
     "CIAppTestsAnalyticsAggregateResponse",

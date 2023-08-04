@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Any, Dict, List, Union
+from typing import Any, Dict, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -16,9 +16,17 @@ from datadog_api_client.model_utils import (
 )
 
 
-class AuditLogsEventAttributes(ModelNormal):
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.ci_app_pipeline_level import CIAppPipelineLevel
+    from datadog_api_client.v2.model.tags_event_attribute import TagsEventAttribute
+
+
+class CIAppPipelineEventAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.ci_app_pipeline_level import CIAppPipelineLevel
+        from datadog_api_client.v2.model.tags_event_attribute import TagsEventAttribute
+
         return {
             "attributes": (
                 {
@@ -35,57 +43,39 @@ class AuditLogsEventAttributes(ModelNormal):
                     )
                 },
             ),
-            "message": (str,),
-            "service": (str,),
-            "tags": ([str],),
-            "timestamp": (datetime,),
+            "ci_level": (CIAppPipelineLevel,),
+            "tags": (TagsEventAttribute,),
         }
 
     attribute_map = {
         "attributes": "attributes",
-        "message": "message",
-        "service": "service",
+        "ci_level": "ci_level",
         "tags": "tags",
-        "timestamp": "timestamp",
     }
 
     def __init__(
         self_,
         attributes: Union[Dict[str, Any], UnsetType] = unset,
-        message: Union[str, UnsetType] = unset,
-        service: Union[str, UnsetType] = unset,
-        tags: Union[List[str], UnsetType] = unset,
-        timestamp: Union[datetime, UnsetType] = unset,
+        ci_level: Union[CIAppPipelineLevel, UnsetType] = unset,
+        tags: Union[TagsEventAttribute, UnsetType] = unset,
         **kwargs,
     ):
         """
         JSON object containing all event attributes and their associated values.
 
-        :param attributes: JSON object of attributes from Audit Logs events.
+        :param attributes: JSON object of attributes from CI Visibility pipeline events.
         :type attributes: {str: (bool, date, datetime, dict, float, int, list, str, none_type,)}, optional
 
-        :param message: Message of the event.
-        :type message: str, optional
-
-        :param service: Name of the application or service generating Audit Logs events.
-            This name is used to correlate Audit Logs to APM, so make sure you specify the same
-            value when you use both products.
-        :type service: str, optional
+        :param ci_level: Pipeline execution level.
+        :type ci_level: CIAppPipelineLevel, optional
 
         :param tags: Array of tags associated with your event.
-        :type tags: [str], optional
-
-        :param timestamp: Timestamp of your event.
-        :type timestamp: datetime, optional
+        :type tags: TagsEventAttribute, optional
         """
         if attributes is not unset:
             kwargs["attributes"] = attributes
-        if message is not unset:
-            kwargs["message"] = message
-        if service is not unset:
-            kwargs["service"] = service
+        if ci_level is not unset:
+            kwargs["ci_level"] = ci_level
         if tags is not unset:
             kwargs["tags"] = tags
-        if timestamp is not unset:
-            kwargs["timestamp"] = timestamp
         super().__init__(kwargs)

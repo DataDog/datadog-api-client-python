@@ -20,6 +20,7 @@ class UsageCIVisibilityHour(ModelNormal):
         return {
             "ci_pipeline_indexed_spans": (int, none_type),
             "ci_test_indexed_spans": (int, none_type),
+            "ci_visibility_itr_committers": (int, none_type),
             "ci_visibility_pipeline_committers": (int, none_type),
             "ci_visibility_test_committers": (int, none_type),
             "org_name": (str,),
@@ -29,6 +30,7 @@ class UsageCIVisibilityHour(ModelNormal):
     attribute_map = {
         "ci_pipeline_indexed_spans": "ci_pipeline_indexed_spans",
         "ci_test_indexed_spans": "ci_test_indexed_spans",
+        "ci_visibility_itr_committers": "ci_visibility_itr_committers",
         "ci_visibility_pipeline_committers": "ci_visibility_pipeline_committers",
         "ci_visibility_test_committers": "ci_visibility_test_committers",
         "org_name": "org_name",
@@ -39,6 +41,7 @@ class UsageCIVisibilityHour(ModelNormal):
         self_,
         ci_pipeline_indexed_spans: Union[int, none_type, UnsetType] = unset,
         ci_test_indexed_spans: Union[int, none_type, UnsetType] = unset,
+        ci_visibility_itr_committers: Union[int, none_type, UnsetType] = unset,
         ci_visibility_pipeline_committers: Union[int, none_type, UnsetType] = unset,
         ci_visibility_test_committers: Union[int, none_type, UnsetType] = unset,
         org_name: Union[str, UnsetType] = unset,
@@ -53,6 +56,9 @@ class UsageCIVisibilityHour(ModelNormal):
 
         :param ci_test_indexed_spans: The number of spans for tests in the queried hour.
         :type ci_test_indexed_spans: int, none_type, optional
+
+        :param ci_visibility_itr_committers: Shows the total count of all active Git committers for Intelligent Test Runner in the current month. A committer is active if they commit at least 3 times in a given month.
+        :type ci_visibility_itr_committers: int, none_type, optional
 
         :param ci_visibility_pipeline_committers: Shows the total count of all active Git committers for Pipelines in the current month. A committer is active if they commit at least 3 times in a given month.
         :type ci_visibility_pipeline_committers: int, none_type, optional
@@ -70,6 +76,8 @@ class UsageCIVisibilityHour(ModelNormal):
             kwargs["ci_pipeline_indexed_spans"] = ci_pipeline_indexed_spans
         if ci_test_indexed_spans is not unset:
             kwargs["ci_test_indexed_spans"] = ci_test_indexed_spans
+        if ci_visibility_itr_committers is not unset:
+            kwargs["ci_visibility_itr_committers"] = ci_visibility_itr_committers
         if ci_visibility_pipeline_committers is not unset:
             kwargs["ci_visibility_pipeline_committers"] = ci_visibility_pipeline_committers
         if ci_visibility_test_committers is not unset:
