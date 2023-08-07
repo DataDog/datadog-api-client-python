@@ -7547,10 +7547,38 @@ usage\_attributes\_object
    :members:
    :show-inheritance:
 
+usage\_ci\_committers\_detailed\_attributes
+-------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.usage_ci_committers_detailed_attributes
+   :members:
+   :show-inheritance:
+
+usage\_ci\_committers\_detailed\_hour
+-------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.usage_ci_committers_detailed_hour
+   :members:
+   :show-inheritance:
+
+usage\_ci\_committers\_detailed\_response
+-----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.usage_ci_committers_detailed_response
+   :members:
+   :show-inheritance:
+
 usage\_data\_object
 -------------------
 
 .. automodule:: datadog_api_client.v2.model.usage_data_object
+   :members:
+   :show-inheritance:
+
+usage\_data\_point\_type
+------------------------
+
+.. automodule:: datadog_api_client.v2.model.usage_data_point_type
    :members:
    :show-inheritance:
 

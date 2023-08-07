@@ -16,6 +16,7 @@ from datadog_api_client.model_utils import (
 from datadog_api_client.v2.model.usage_application_security_monitoring_response import (
     UsageApplicationSecurityMonitoringResponse,
 )
+from datadog_api_client.v2.model.usage_ci_committers_detailed_response import UsageCICommittersDetailedResponse
 from datadog_api_client.v2.model.cost_by_org_response import CostByOrgResponse
 from datadog_api_client.v2.model.hourly_usage_response import HourlyUsageResponse
 from datadog_api_client.v2.model.usage_lambda_traced_invocations_response import UsageLambdaTracedInvocationsResponse
@@ -226,6 +227,64 @@ class UsageMeteringApi:
                 "end_hr": {
                     "openapi_types": (datetime,),
                     "attribute": "end_hr",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json;datetime-format=rfc3339"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_usage_ci_committers_detailed_endpoint = _Endpoint(
+            settings={
+                "response_type": (UsageCICommittersDetailedResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/usage/ci_committers_detailed",
+                "operation_id": "get_usage_ci_committers_detailed",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "usage_type": {
+                    "openapi_types": (str,),
+                    "attribute": "usage_type",
+                    "location": "query",
+                },
+                "filter_timestamp_start": {
+                    "required": True,
+                    "openapi_types": (datetime,),
+                    "attribute": "filter[timestamp][start]",
+                    "location": "query",
+                },
+                "filter_timestamp_end": {
+                    "openapi_types": (datetime,),
+                    "attribute": "filter[timestamp][end]",
+                    "location": "query",
+                },
+                "filter_usage_type": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "filter[usage_type]",
+                    "location": "query",
+                },
+                "filter_include_descendants": {
+                    "openapi_types": (bool,),
+                    "attribute": "filter[include_descendants]",
+                    "location": "query",
+                },
+                "page_limit": {
+                    "validation": {
+                        "inclusive_maximum": 500,
+                        "inclusive_minimum": 1,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "page[limit]",
+                    "location": "query",
+                },
+                "page_next_record_id": {
+                    "openapi_types": (str,),
+                    "attribute": "page[next_record_id]",
                     "location": "query",
                 },
             },
@@ -490,6 +549,59 @@ class UsageMeteringApi:
             kwargs["end_hr"] = end_hr
 
         return self._get_usage_application_security_monitoring_endpoint.call_with_http_info(**kwargs)
+
+    def get_usage_ci_committers_detailed(
+        self,
+        filter_timestamp_start: datetime,
+        filter_usage_type: str,
+        *,
+        usage_type: Union[str, UnsetType] = unset,
+        filter_timestamp_end: Union[datetime, UnsetType] = unset,
+        filter_include_descendants: Union[bool, UnsetType] = unset,
+        page_limit: Union[int, UnsetType] = unset,
+        page_next_record_id: Union[str, UnsetType] = unset,
+    ) -> UsageCICommittersDetailedResponse:
+        """Get hourly CI Committers Detailed.
+
+        Get hourly CI Committers Detailed.
+
+        :param filter_timestamp_start: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
+        :type filter_timestamp_start: datetime
+        :param filter_usage_type: usage type: ``[pipeline, test]``
+        :type filter_usage_type: str
+        :param usage_type: usage type: ``[pipeline, test]``. Defaults to ``pipeline``.
+        :type usage_type: str, optional
+        :param filter_timestamp_end: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.
+        :type filter_timestamp_end: datetime, optional
+        :param filter_include_descendants: Include child org usage in the response. Defaults to false.
+        :type filter_include_descendants: bool, optional
+        :param page_limit: Maximum number of results to return (between 1 and 500) - defaults to 500 if limit not specified.
+        :type page_limit: int, optional
+        :param page_next_record_id: List following results with a next_record_id provided in the previous query.
+        :type page_next_record_id: str, optional
+        :rtype: UsageCICommittersDetailedResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if usage_type is not unset:
+            kwargs["usage_type"] = usage_type
+
+        kwargs["filter_timestamp_start"] = filter_timestamp_start
+
+        if filter_timestamp_end is not unset:
+            kwargs["filter_timestamp_end"] = filter_timestamp_end
+
+        kwargs["filter_usage_type"] = filter_usage_type
+
+        if filter_include_descendants is not unset:
+            kwargs["filter_include_descendants"] = filter_include_descendants
+
+        if page_limit is not unset:
+            kwargs["page_limit"] = page_limit
+
+        if page_next_record_id is not unset:
+            kwargs["page_next_record_id"] = page_next_record_id
+
+        return self._get_usage_ci_committers_detailed_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_lambda_traced_invocations(
         self,

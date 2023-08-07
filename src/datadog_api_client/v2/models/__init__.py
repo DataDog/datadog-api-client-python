@@ -1305,7 +1305,11 @@ from datadog_api_client.v2.model.usage_application_security_monitoring_response 
     UsageApplicationSecurityMonitoringResponse,
 )
 from datadog_api_client.v2.model.usage_attributes_object import UsageAttributesObject
+from datadog_api_client.v2.model.usage_ci_committers_detailed_attributes import UsageCICommittersDetailedAttributes
+from datadog_api_client.v2.model.usage_ci_committers_detailed_hour import UsageCICommittersDetailedHour
+from datadog_api_client.v2.model.usage_ci_committers_detailed_response import UsageCICommittersDetailedResponse
 from datadog_api_client.v2.model.usage_data_object import UsageDataObject
+from datadog_api_client.v2.model.usage_data_point_type import UsageDataPointType
 from datadog_api_client.v2.model.usage_lambda_traced_invocations_response import UsageLambdaTracedInvocationsResponse
 from datadog_api_client.v2.model.usage_observability_pipelines_response import UsageObservabilityPipelinesResponse
 from datadog_api_client.v2.model.usage_time_series_object import UsageTimeSeriesObject
@@ -2430,7 +2434,11 @@ __all__ = [
     "Unit",
     "UsageApplicationSecurityMonitoringResponse",
     "UsageAttributesObject",
+    "UsageCICommittersDetailedAttributes",
+    "UsageCICommittersDetailedHour",
+    "UsageCICommittersDetailedResponse",
     "UsageDataObject",
+    "UsageDataPointType",
     "UsageLambdaTracedInvocationsResponse",
     "UsageObservabilityPipelinesResponse",
     "UsageTimeSeriesObject",

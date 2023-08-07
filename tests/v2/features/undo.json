@@ -1719,6 +1719,12 @@
       "type": "safe"
     }
   },
+  "GetUsageCICommittersDetailed": {
+    "tag": "Usage Metering",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "GetCostByOrg": {
     "tag": "Usage Metering",
     "undo": {
