@@ -79,6 +79,14 @@ class MonthlyUsageAttributionValues(ModelNormal):
             "profiled_fargate_usage": (float,),
             "profiled_host_percentage": (float,),
             "profiled_host_usage": (float,),
+            "sds_evt_events_percentage": (float,),
+            "sds_evt_events_usage": (float,),
+            "sds_log_events_percentage": (float,),
+            "sds_log_events_usage": (float,),
+            "sds_rum_events_percentage": (float,),
+            "sds_rum_events_usage": (float,),
+            "sds_spans_events_percentage": (float,),
+            "sds_spans_events_usage": (float,),
             "snmp_percentage": (float,),
             "snmp_usage": (float,),
             "universal_service_monitoring_percentage": (float,),
@@ -150,6 +158,14 @@ class MonthlyUsageAttributionValues(ModelNormal):
         "profiled_fargate_usage": "profiled_fargate_usage",
         "profiled_host_percentage": "profiled_host_percentage",
         "profiled_host_usage": "profiled_host_usage",
+        "sds_evt_events_percentage": "sds_evt_events_percentage",
+        "sds_evt_events_usage": "sds_evt_events_usage",
+        "sds_log_events_percentage": "sds_log_events_percentage",
+        "sds_log_events_usage": "sds_log_events_usage",
+        "sds_rum_events_percentage": "sds_rum_events_percentage",
+        "sds_rum_events_usage": "sds_rum_events_usage",
+        "sds_spans_events_percentage": "sds_spans_events_percentage",
+        "sds_spans_events_usage": "sds_spans_events_usage",
         "snmp_percentage": "snmp_percentage",
         "snmp_usage": "snmp_usage",
         "universal_service_monitoring_percentage": "universal_service_monitoring_percentage",
@@ -222,6 +238,14 @@ class MonthlyUsageAttributionValues(ModelNormal):
         profiled_fargate_usage: Union[float, UnsetType] = unset,
         profiled_host_percentage: Union[float, UnsetType] = unset,
         profiled_host_usage: Union[float, UnsetType] = unset,
+        sds_evt_events_percentage: Union[float, UnsetType] = unset,
+        sds_evt_events_usage: Union[float, UnsetType] = unset,
+        sds_log_events_percentage: Union[float, UnsetType] = unset,
+        sds_log_events_usage: Union[float, UnsetType] = unset,
+        sds_rum_events_percentage: Union[float, UnsetType] = unset,
+        sds_rum_events_usage: Union[float, UnsetType] = unset,
+        sds_spans_events_percentage: Union[float, UnsetType] = unset,
+        sds_spans_events_usage: Union[float, UnsetType] = unset,
         snmp_percentage: Union[float, UnsetType] = unset,
         snmp_usage: Union[float, UnsetType] = unset,
         universal_service_monitoring_percentage: Union[float, UnsetType] = unset,
@@ -419,6 +443,30 @@ class MonthlyUsageAttributionValues(ModelNormal):
         :param profiled_host_usage: The profiled hosts usage by tag(s).
         :type profiled_host_usage: float, optional
 
+        :param sds_evt_events_percentage: The percentage of Sensitive Data Scanner events usage by tag(s).
+        :type sds_evt_events_percentage: float, optional
+
+        :param sds_evt_events_usage: The Sensitive Data Scanner events usage by tag(s).
+        :type sds_evt_events_usage: float, optional
+
+        :param sds_log_events_percentage: The percentage of Sensitive Data Scanner logs usage by tag(s).
+        :type sds_log_events_percentage: float, optional
+
+        :param sds_log_events_usage: The Sensitive Data Scanner logs usage by tag(s).
+        :type sds_log_events_usage: float, optional
+
+        :param sds_rum_events_percentage: The percentage of Sensitive Data Scanner RUM usage by tag(s).
+        :type sds_rum_events_percentage: float, optional
+
+        :param sds_rum_events_usage: The Sensitive Data Scanner RUM usage by tag(s).
+        :type sds_rum_events_usage: float, optional
+
+        :param sds_spans_events_percentage: The percentage of Sensitive Data Scanner spans usage by tag(s).
+        :type sds_spans_events_percentage: float, optional
+
+        :param sds_spans_events_usage: The Sensitive Data Scanner spans usage by tag(s).
+        :type sds_spans_events_usage: float, optional
+
         :param snmp_percentage: The percentage of network device usage by tag(s).
         :type snmp_percentage: float, optional
 
@@ -561,6 +609,22 @@ class MonthlyUsageAttributionValues(ModelNormal):
             kwargs["profiled_host_percentage"] = profiled_host_percentage
         if profiled_host_usage is not unset:
             kwargs["profiled_host_usage"] = profiled_host_usage
+        if sds_evt_events_percentage is not unset:
+            kwargs["sds_evt_events_percentage"] = sds_evt_events_percentage
+        if sds_evt_events_usage is not unset:
+            kwargs["sds_evt_events_usage"] = sds_evt_events_usage
+        if sds_log_events_percentage is not unset:
+            kwargs["sds_log_events_percentage"] = sds_log_events_percentage
+        if sds_log_events_usage is not unset:
+            kwargs["sds_log_events_usage"] = sds_log_events_usage
+        if sds_rum_events_percentage is not unset:
+            kwargs["sds_rum_events_percentage"] = sds_rum_events_percentage
+        if sds_rum_events_usage is not unset:
+            kwargs["sds_rum_events_usage"] = sds_rum_events_usage
+        if sds_spans_events_percentage is not unset:
+            kwargs["sds_spans_events_percentage"] = sds_spans_events_percentage
+        if sds_spans_events_usage is not unset:
+            kwargs["sds_spans_events_usage"] = sds_spans_events_usage
         if snmp_percentage is not unset:
             kwargs["snmp_percentage"] = snmp_percentage
         if snmp_usage is not unset:

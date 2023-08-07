@@ -16,7 +16,7 @@ class HourlyUsageAttributionUsageType(ModelSimple):
     """
     Supported products for hourly usage attribution requests.
 
-    :param value: Must be one of ["api_usage", "apm_fargate_usage", "apm_host_usage", "appsec_fargate_usage", "appsec_usage", "browser_usage", "container_excl_agent_usage", "ci_visibility_itr_usage", "container_usage", "cspm_containers_usage", "cspm_hosts_usage", "custom_ingested_timeseries_usage", "custom_timeseries_usage", "cws_containers_usage", "cws_hosts_usage", "dbm_hosts_usage", "dbm_queries_usage", "estimated_indexed_logs_usage", "estimated_ingested_logs_usage", "estimated_indexed_spans_usage", "estimated_ingested_spans_usage", "fargate_usage", "functions_usage", "infra_host_usage", "invocations_usage", "npm_host_usage", "obs_pipeline_bytes_usage", "profiled_container_usage", "profiled_fargate_usage", "profiled_host_usage", "snmp_usage", "estimated_rum_sessions_usage", "universal_service_monitoring_usage", "vuln_management_hosts_usage"].
+    :param value: Must be one of ["api_usage", "apm_fargate_usage", "apm_host_usage", "appsec_fargate_usage", "appsec_usage", "browser_usage", "container_excl_agent_usage", "ci_visibility_itr_usage", "container_usage", "cspm_containers_usage", "cspm_hosts_usage", "custom_ingested_timeseries_usage", "custom_timeseries_usage", "cws_containers_usage", "cws_hosts_usage", "dbm_hosts_usage", "dbm_queries_usage", "estimated_indexed_logs_usage", "estimated_ingested_logs_usage", "estimated_indexed_spans_usage", "estimated_ingested_spans_usage", "fargate_usage", "functions_usage", "infra_host_usage", "invocations_usage", "npm_host_usage", "obs_pipeline_bytes_usage", "profiled_container_usage", "profiled_fargate_usage", "profiled_host_usage", "snmp_usage", "estimated_rum_sessions_usage", "universal_service_monitoring_usage", "vuln_management_hosts_usage", "sds_evt_events_usage", "sds_log_events_usage", "sds_spans_events_usage", "sds_rum_events_usage"].
     :type value: str
     """
 
@@ -55,6 +55,10 @@ class HourlyUsageAttributionUsageType(ModelSimple):
         "estimated_rum_sessions_usage",
         "universal_service_monitoring_usage",
         "vuln_management_hosts_usage",
+        "sds_evt_events_usage",
+        "sds_log_events_usage",
+        "sds_spans_events_usage",
+        "sds_rum_events_usage",
     }
     API_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
     APM_FARGATE_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
@@ -90,6 +94,10 @@ class HourlyUsageAttributionUsageType(ModelSimple):
     ESTIMATED_RUM_SESSIONS_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
     UNIVERSAL_SERVICE_MONITORING_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
     VULN_MANAGEMENT_HOSTS_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
+    SDS_EVT_EVENTS_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
+    SDS_LOG_EVENTS_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
+    SDS_SPANS_EVENTS_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
+    SDS_RUM_EVENTS_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
 
     @cached_property
     def openapi_types(_):
@@ -150,3 +158,7 @@ HourlyUsageAttributionUsageType.UNIVERSAL_SERVICE_MONITORING_USAGE = HourlyUsage
 HourlyUsageAttributionUsageType.VULN_MANAGEMENT_HOSTS_USAGE = HourlyUsageAttributionUsageType(
     "vuln_management_hosts_usage"
 )
+HourlyUsageAttributionUsageType.SDS_EVT_EVENTS_USAGE = HourlyUsageAttributionUsageType("sds_evt_events_usage")
+HourlyUsageAttributionUsageType.SDS_LOG_EVENTS_USAGE = HourlyUsageAttributionUsageType("sds_log_events_usage")
+HourlyUsageAttributionUsageType.SDS_SPANS_EVENTS_USAGE = HourlyUsageAttributionUsageType("sds_spans_events_usage")
+HourlyUsageAttributionUsageType.SDS_RUM_EVENTS_USAGE = HourlyUsageAttributionUsageType("sds_rum_events_usage")
