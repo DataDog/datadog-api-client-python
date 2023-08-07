@@ -28,7 +28,6 @@ from {{ package }}.model_utils import (
     deserialize_file,
     file_type,
     model_to_dict,
-    none_type,
     validate_and_convert_types,
     get_attribute_from_path,
     set_attribute_from_path,
@@ -749,8 +748,7 @@ class Endpoint:
 
         return params
 
-    def call_with_http_info(self, **kwargs):
-
+    def _validate_and_get_host(self, kwargs):
         is_unstable = self.api_client.configuration.unstable_operations.get(
             "{}.{}".format(self.settings["version"], self.settings["operation_id"])
         )
@@ -800,6 +798,11 @@ class Endpoint:
                 )
 
         self._validate_inputs(kwargs)
+
+        return host
+
+    def call_with_http_info(self, **kwargs):
+        host = self._validate_and_get_host(kwargs)
 
         params = self._gather_params(kwargs)
 
@@ -833,57 +836,7 @@ class Endpoint:
         )
 
     def call_with_http_info_paginated(self, pagination):
-        is_unstable = self.api_client.configuration.unstable_operations.get(
-            "{}.{}".format(self.settings["version"], self.settings["operation_id"])
-        )
-        if is_unstable:
-            warnings.warn("Using unstable operation '{0}'".format(self.settings["operation_id"]))
-        elif is_unstable is False:
-            raise ApiValueError("Unstable operation '{0}' is disabled".format(self.settings["operation_id"]))
-
-        servers = self.settings.get("servers")
-        try:
-            index = self.api_client.configuration.server_operation_index.get(
-                self.settings["operation_id"], self.api_client.configuration.server_index
-            )
-            server_variables = self.api_client.configuration.server_operation_variables.get(
-                self.settings["operation_id"], self.api_client.configuration.server_variables
-            )
-            host = self.api_client.configuration.get_host_from_settings(
-                index, variables=server_variables, servers=servers
-            )
-        except IndexError:
-            if servers:
-                raise ApiValueError("Invalid host index. Must be 0 <= index < %s" % len(servers))
-            host = None
-
-        kwargs = pagination["kwargs"]
-
-        for key, value in kwargs.items():
-            if key not in self.params_map:
-                raise ApiTypeError(
-                    "Got an unexpected parameter '%s'" " to method `%s`" % (key, self.settings["operation_id"])
-                )
-            # only throw this nullable ApiValueError if check_input_type
-            # is False, if check_input_type==True we catch this case
-            # in self._validate_inputs
-            if (
-                not self.params_map[key].get("nullable")
-                and value is None
-                and not self.api_client.configuration.check_input_type
-            ):
-                raise ApiValueError(
-                    "Value may not be None for non-nullable parameter `%s`"
-                    " when calling `%s`" % (key, self.settings["operation_id"])
-                )
-
-        for key, param_map in self.params_map.items():
-            if param_map.get("required") and key not in kwargs:
-                raise ApiValueError(
-                    "Missing the required parameter `%s` when calling " "`%s`" % (key, self.settings["operation_id"])
-                )
-
-        self._validate_inputs(kwargs)
+        host = self._validate_and_get_host(pagination["kwargs"])
 
         return self.api_client.call_api_paginated(
             self.settings["endpoint_path"],
