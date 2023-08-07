@@ -881,18 +881,14 @@ class IncidentsApi:
         local_page_size = get_attribute_from_path(kwargs, "page_size", 10)
         endpoint = self._list_incidents_endpoint
         set_attribute_from_path(kwargs, "page_size", local_page_size, endpoint.params_map)
-        while True:
-            response = endpoint.call_with_http_info(**kwargs)
-            for item in get_attribute_from_path(response, "data"):
-                yield item
-            if len(get_attribute_from_path(response, "data")) < local_page_size:
-                break
-            set_attribute_from_path(
-                kwargs,
-                "page_offset",
-                get_attribute_from_path(kwargs, "page_offset", 0) + local_page_size,
-                endpoint.params_map,
-            )
+        pagination = {
+            "limit_value": local_page_size,
+            "results_path": "data",
+            "page_offset_param": "page_offset",
+            "endpoint": endpoint,
+            "kwargs": kwargs,
+        }
+        return endpoint.call_with_http_info_paginated(pagination)
 
     def list_incident_todos(
         self,
@@ -1006,18 +1002,14 @@ class IncidentsApi:
         local_page_size = get_attribute_from_path(kwargs, "page_size", 10)
         endpoint = self._search_incidents_endpoint
         set_attribute_from_path(kwargs, "page_size", local_page_size, endpoint.params_map)
-        while True:
-            response = endpoint.call_with_http_info(**kwargs)
-            for item in get_attribute_from_path(response, "data.attributes.incidents"):
-                yield item
-            if len(get_attribute_from_path(response, "data.attributes.incidents")) < local_page_size:
-                break
-            set_attribute_from_path(
-                kwargs,
-                "page_offset",
-                get_attribute_from_path(kwargs, "page_offset", 0) + local_page_size,
-                endpoint.params_map,
-            )
+        pagination = {
+            "limit_value": local_page_size,
+            "results_path": "data.attributes.incidents",
+            "page_offset_param": "page_offset",
+            "endpoint": endpoint,
+            "kwargs": kwargs,
+        }
+        return endpoint.call_with_http_info_paginated(pagination)
 
     def update_incident(
         self,

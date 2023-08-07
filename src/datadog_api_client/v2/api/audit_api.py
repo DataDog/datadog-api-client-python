@@ -204,15 +204,15 @@ class AuditApi:
         local_page_size = get_attribute_from_path(kwargs, "page_limit", 10)
         endpoint = self._list_audit_logs_endpoint
         set_attribute_from_path(kwargs, "page_limit", local_page_size, endpoint.params_map)
-        while True:
-            response = endpoint.call_with_http_info(**kwargs)
-            for item in get_attribute_from_path(response, "data"):
-                yield item
-            if len(get_attribute_from_path(response, "data")) < local_page_size:
-                break
-            set_attribute_from_path(
-                kwargs, "page_cursor", get_attribute_from_path(response, "meta.page.after"), endpoint.params_map
-            )
+        pagination = {
+            "limit_value": local_page_size,
+            "results_path": "data",
+            "cursor_param": "page_cursor",
+            "cursor_path": "meta.page.after",
+            "endpoint": endpoint,
+            "kwargs": kwargs,
+        }
+        return endpoint.call_with_http_info_paginated(pagination)
 
     def search_audit_logs(
         self,
@@ -256,12 +256,12 @@ class AuditApi:
         local_page_size = get_attribute_from_path(kwargs, "body.page.limit", 10)
         endpoint = self._search_audit_logs_endpoint
         set_attribute_from_path(kwargs, "body.page.limit", local_page_size, endpoint.params_map)
-        while True:
-            response = endpoint.call_with_http_info(**kwargs)
-            for item in get_attribute_from_path(response, "data"):
-                yield item
-            if len(get_attribute_from_path(response, "data")) < local_page_size:
-                break
-            set_attribute_from_path(
-                kwargs, "body.page.cursor", get_attribute_from_path(response, "meta.page.after"), endpoint.params_map
-            )
+        pagination = {
+            "limit_value": local_page_size,
+            "results_path": "data",
+            "cursor_param": "body.page.cursor",
+            "cursor_path": "meta.page.after",
+            "endpoint": endpoint,
+            "kwargs": kwargs,
+        }
+        return endpoint.call_with_http_info_paginated(pagination)

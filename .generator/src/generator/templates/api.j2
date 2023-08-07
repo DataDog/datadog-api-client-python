@@ -204,17 +204,19 @@ class {{ classname }}:
         local_page_size = get_attribute_from_path(kwargs, "{{ pagination.limitParam|attribute_path }}", {{ get_default(operation, pagination.limitParam) }})
         endpoint = self._{{ operation.operationId|safe_snake_case }}_endpoint
         set_attribute_from_path(kwargs, "{{ pagination.limitParam|attribute_path }}", local_page_size, endpoint.params_map)
-        while True:
-            response = endpoint.call_with_http_info(**kwargs)
-            for item in get_attribute_from_path(response, "{{ pagination.resultsPath|attribute_path }}"):
-                yield item
-            if len(get_attribute_from_path(response, "{{ pagination.resultsPath|attribute_path }}")) < local_page_size:
-                break
-            {%- if pagination.pageOffsetParam %}
-            set_attribute_from_path(kwargs, "{{ pagination.pageOffsetParam|attribute_path }}", get_attribute_from_path(kwargs, "{{ pagination.pageOffsetParam|attribute_path }}", 0) + local_page_size, endpoint.params_map)
-            {%- endif %}
+        pagination = {
+            "limit_value": local_page_size,
+            "results_path": "{{ pagination.resultsPath|attribute_path }}",
             {%- if pagination.cursorParam %}
-            set_attribute_from_path(kwargs, "{{ pagination.cursorParam|attribute_path }}", get_attribute_from_path(response, "{{ pagination.cursorPath }}"), endpoint.params_map)
+            "cursor_param": "{{ pagination.cursorParam|attribute_path }}",
+            "cursor_path": "{{ pagination.cursorPath }}",
             {%- endif %}
+            {%- if pagination.pageOffsetParam %}
+            "page_offset_param": "{{ pagination.pageOffsetParam|attribute_path }}",
+            {%- endif %}
+            "endpoint": endpoint,
+            "kwargs": kwargs,
+        }
+        return endpoint.call_with_http_info_paginated(pagination)
     {%- endif %}
 {% endfor %}

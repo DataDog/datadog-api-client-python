@@ -31,6 +31,8 @@ from datadog_api_client.model_utils import (
     file_type,
     model_to_dict,
     validate_and_convert_types,
+    get_attribute_from_path,
+    set_attribute_from_path,
 )
 
 
@@ -334,6 +336,60 @@ class ApiClient:
             check_type,
         )
 
+    def call_api_paginated(
+        self,
+        resource_path: str,
+        method: str,
+        pagination: dict,
+        response_type: Optional[Tuple[Any]] = None,
+        return_http_data_only: Optional[bool] = None,
+        preload_content: bool = True,
+        request_timeout: Optional[Union[int, float, Tuple[Union[int, float], Union[int, float]]]] = None,
+        host: Optional[str] = None,
+        check_type: Optional[bool] = None,
+    ):
+        params = pagination["endpoint"].get_pagination_params(pagination["kwargs"])
+        while True:
+            response = self.call_api(
+                resource_path,
+                method,
+                params["path"],
+                params["query"],
+                params["header"],
+                body=params["body"],
+                post_params=params["form"],
+                files=params["file"],
+                response_type=response_type,
+                check_type=check_type,
+                return_http_data_only=return_http_data_only,
+                preload_content=preload_content,
+                request_timeout=request_timeout,
+                host=host,
+                collection_formats=params["collection_format"],
+            )
+            for item in get_attribute_from_path(response, pagination["results_path"]):
+                yield item
+            if len(get_attribute_from_path(response, pagination["results_path"])) < pagination["limit_value"]:
+                break
+
+            if "page_offset_param" in pagination:
+                set_attribute_from_path(
+                    pagination["kwargs"],
+                    pagination["page_offset_param"],
+                    get_attribute_from_path(pagination["kwargs"], pagination["page_offset_param"], 0)
+                    + pagination["limit_value"],
+                    pagination["endpoint"].params_map,
+                )
+            else:
+                set_attribute_from_path(
+                    pagination["kwargs"],
+                    pagination["cursor_param"],
+                    get_attribute_from_path(response, pagination["cursor_path"]),
+                    pagination["endpoint"].params_map,
+                )
+
+            params = pagination["endpoint"].get_pagination_params(pagination["kwargs"])
+
     def parameters_to_tuples(self, params, collection_formats) -> List[Tuple[str, Any]]:
         """Get parameters as list of tuples, formatting collections.
 
@@ -547,6 +603,60 @@ class AsyncApiClient(ApiClient):
             return return_data
         return (return_data, response.status_code, response.headers)
 
+    async def call_api_paginated(
+        self,
+        resource_path: str,
+        method: str,
+        pagination: dict,
+        response_type: Optional[Tuple[Any]] = None,
+        return_http_data_only: Optional[bool] = None,
+        preload_content: bool = True,
+        request_timeout: Optional[Union[int, float, Tuple[Union[int, float], Union[int, float]]]] = None,
+        host: Optional[str] = None,
+        check_type: Optional[bool] = None,
+    ):
+        params = pagination["endpoint"].get_pagination_params(pagination["kwargs"])
+        while True:
+            response = await self.call_api(
+                resource_path,
+                method,
+                params["path"],
+                params["query"],
+                params["header"],
+                body=params["body"],
+                post_params=params["form"],
+                files=params["file"],
+                response_type=response_type,
+                check_type=check_type,
+                return_http_data_only=return_http_data_only,
+                preload_content=preload_content,
+                request_timeout=request_timeout,
+                host=host,
+                collection_formats=params["collection_format"],
+            )
+            for item in get_attribute_from_path(response, pagination["results_path"]):
+                yield item
+            if len(get_attribute_from_path(response, pagination["results_path"])) < pagination["limit_value"]:
+                break
+
+            if "page_offset_param" in pagination:
+                set_attribute_from_path(
+                    pagination["kwargs"],
+                    pagination["page_offset_param"],
+                    get_attribute_from_path(pagination["kwargs"], pagination["page_offset_param"], 0)
+                    + pagination["limit_value"],
+                    pagination["endpoint"].params_map,
+                )
+            else:
+                set_attribute_from_path(
+                    pagination["kwargs"],
+                    pagination["cursor_param"],
+                    get_attribute_from_path(response, pagination["cursor_path"]),
+                    pagination["endpoint"].params_map,
+                )
+
+            params = pagination["endpoint"].get_pagination_params(pagination["kwargs"])
+
 
 class Endpoint:
     def __init__(
@@ -725,6 +835,86 @@ class Endpoint:
             host=host,
             collection_formats=params["collection_format"],
         )
+
+    def call_with_http_info_paginated(self, pagination):
+        is_unstable = self.api_client.configuration.unstable_operations.get(
+            "{}.{}".format(self.settings["version"], self.settings["operation_id"])
+        )
+        if is_unstable:
+            warnings.warn("Using unstable operation '{0}'".format(self.settings["operation_id"]))
+        elif is_unstable is False:
+            raise ApiValueError("Unstable operation '{0}' is disabled".format(self.settings["operation_id"]))
+
+        servers = self.settings.get("servers")
+        try:
+            index = self.api_client.configuration.server_operation_index.get(
+                self.settings["operation_id"], self.api_client.configuration.server_index
+            )
+            server_variables = self.api_client.configuration.server_operation_variables.get(
+                self.settings["operation_id"], self.api_client.configuration.server_variables
+            )
+            host = self.api_client.configuration.get_host_from_settings(
+                index, variables=server_variables, servers=servers
+            )
+        except IndexError:
+            if servers:
+                raise ApiValueError("Invalid host index. Must be 0 <= index < %s" % len(servers))
+            host = None
+
+        kwargs = pagination["kwargs"]
+
+        for key, value in kwargs.items():
+            if key not in self.params_map:
+                raise ApiTypeError(
+                    "Got an unexpected parameter '%s'" " to method `%s`" % (key, self.settings["operation_id"])
+                )
+            # only throw this nullable ApiValueError if check_input_type
+            # is False, if check_input_type==True we catch this case
+            # in self._validate_inputs
+            if (
+                not self.params_map[key].get("nullable")
+                and value is None
+                and not self.api_client.configuration.check_input_type
+            ):
+                raise ApiValueError(
+                    "Value may not be None for non-nullable parameter `%s`"
+                    " when calling `%s`" % (key, self.settings["operation_id"])
+                )
+
+        for key, param_map in self.params_map.items():
+            if param_map.get("required") and key not in kwargs:
+                raise ApiValueError(
+                    "Missing the required parameter `%s` when calling " "`%s`" % (key, self.settings["operation_id"])
+                )
+
+        self._validate_inputs(kwargs)
+
+        return self.api_client.call_api_paginated(
+            self.settings["endpoint_path"],
+            self.settings["http_method"],
+            response_type=self.settings["response_type"],
+            check_type=self.api_client.configuration.check_return_type,
+            return_http_data_only=self.api_client.configuration.return_http_data_only,
+            preload_content=self.api_client.configuration.preload_content,
+            request_timeout=self.api_client.configuration.request_timeout,
+            host=host,
+            pagination=pagination,
+        )
+
+    def get_pagination_params(self, kwargs):
+        params = self._gather_params(kwargs)
+
+        accept_headers_list = self.headers_map["accept"]
+        if accept_headers_list:
+            params["header"]["Accept"] = self.api_client.select_header_accept(accept_headers_list)
+
+        content_type_headers_list = self.headers_map.get("content_type")
+        if content_type_headers_list:
+            header_list = self.api_client.select_header_content_type(content_type_headers_list)
+            params["header"]["Content-Type"] = header_list
+
+        self.update_params_for_auth(params["header"], params["query"])
+        return params
 
     def update_params_for_auth(self, headers, queries) -> None:
         """Updates header and query params based on authentication setting.
