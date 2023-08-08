@@ -348,7 +348,7 @@ class ApiClient:
         host: Optional[str] = None,
         check_type: Optional[bool] = None,
     ):
-        params = pagination["endpoint"].get_pagination_params(pagination["kwargs"])
+        params = pagination["endpoint"].gather_params(pagination["kwargs"])
         while True:
             response = self.call_api(
                 resource_path,
@@ -391,7 +391,7 @@ class ApiClient:
                 pagination["endpoint"].params_map,
             )
 
-        return pagination["endpoint"].get_pagination_params(pagination["kwargs"])
+        return pagination["endpoint"].gather_params(pagination["kwargs"])
 
     def parameters_to_tuples(self, params, collection_formats) -> List[Tuple[str, Any]]:
         """Get parameters as list of tuples, formatting collections.
@@ -713,7 +713,7 @@ class Endpoint:
             )
             kwargs[key] = fixed_val
 
-    def _gather_params(self, kwargs):
+    def gather_params(self, kwargs):
         params = {"body": None, "collection_format": {}, "file": {}, "form": [], "header": {}, "path": {}, "query": []}
 
         for param_name, param_value in kwargs.items():
@@ -740,6 +740,17 @@ class Endpoint:
                 collection_format = param_map.get("collection_format")
                 if collection_format:
                     params["collection_format"][base_name] = collection_format
+
+        accept_headers_list = self.headers_map["accept"]
+        if accept_headers_list:
+            params["header"]["Accept"] = self.api_client.select_header_accept(accept_headers_list)
+
+        content_type_headers_list = self.headers_map.get("content_type")
+        if content_type_headers_list:
+            header_list = self.api_client.select_header_content_type(content_type_headers_list)
+            params["header"]["Content-Type"] = header_list
+
+        self.update_params_for_auth(params["header"], params["query"])
 
         return params
 
@@ -799,18 +810,7 @@ class Endpoint:
     def call_with_http_info(self, **kwargs):
         host = self._validate_and_get_host(kwargs)
 
-        params = self._gather_params(kwargs)
-
-        accept_headers_list = self.headers_map["accept"]
-        if accept_headers_list:
-            params["header"]["Accept"] = self.api_client.select_header_accept(accept_headers_list)
-
-        content_type_headers_list = self.headers_map.get("content_type")
-        if content_type_headers_list:
-            header_list = self.api_client.select_header_content_type(content_type_headers_list)
-            params["header"]["Content-Type"] = header_list
-
-        self.update_params_for_auth(params["header"], params["query"])
+        params = self.gather_params(kwargs)
 
         return self.api_client.call_api(
             self.settings["endpoint_path"],
@@ -844,21 +844,6 @@ class Endpoint:
             host=host,
             pagination=pagination
         )
-
-    def get_pagination_params(self, kwargs):
-        params = self._gather_params(kwargs)
-
-        accept_headers_list = self.headers_map["accept"]
-        if accept_headers_list:
-            params["header"]["Accept"] = self.api_client.select_header_accept(accept_headers_list)
-
-        content_type_headers_list = self.headers_map.get("content_type")
-        if content_type_headers_list:
-            header_list = self.api_client.select_header_content_type(content_type_headers_list)
-            params["header"]["Content-Type"] = header_list
-
-        self.update_params_for_auth(params["header"], params["query"])
-        return params
 
     def update_params_for_auth(self, headers, queries) -> None:
         """Updates header and query params based on authentication setting.
