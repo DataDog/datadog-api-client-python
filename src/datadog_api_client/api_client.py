@@ -372,23 +372,26 @@ class ApiClient:
             if len(get_attribute_from_path(response, pagination["results_path"])) < pagination["limit_value"]:
                 break
 
-            if "page_offset_param" in pagination:
-                set_attribute_from_path(
-                    pagination["kwargs"],
-                    pagination["page_offset_param"],
-                    get_attribute_from_path(pagination["kwargs"], pagination["page_offset_param"], 0)
-                    + pagination["limit_value"],
-                    pagination["endpoint"].params_map,
-                )
-            else:
-                set_attribute_from_path(
-                    pagination["kwargs"],
-                    pagination["cursor_param"],
-                    get_attribute_from_path(response, pagination["cursor_path"]),
-                    pagination["endpoint"].params_map,
-                )
+            params = self._get_update_paginated_params(pagination, response)
 
-            params = pagination["endpoint"].get_pagination_params(pagination["kwargs"])
+    def _get_update_paginated_params(self, pagination, response):
+        if "page_offset_param" in pagination:
+            set_attribute_from_path(
+                pagination["kwargs"],
+                pagination["page_offset_param"],
+                get_attribute_from_path(pagination["kwargs"], pagination["page_offset_param"], 0)
+                + pagination["limit_value"],
+                pagination["endpoint"].params_map,
+            )
+        else:
+            set_attribute_from_path(
+                pagination["kwargs"],
+                pagination["cursor_param"],
+                get_attribute_from_path(response, pagination["cursor_path"]),
+                pagination["endpoint"].params_map,
+            )
+
+        return pagination["endpoint"].get_pagination_params(pagination["kwargs"])
 
     def parameters_to_tuples(self, params, collection_formats) -> List[Tuple[str, Any]]:
         """Get parameters as list of tuples, formatting collections.
@@ -639,23 +642,7 @@ class AsyncApiClient(ApiClient):
             if len(get_attribute_from_path(response, pagination["results_path"])) < pagination["limit_value"]:
                 break
 
-            if "page_offset_param" in pagination:
-                set_attribute_from_path(
-                    pagination["kwargs"],
-                    pagination["page_offset_param"],
-                    get_attribute_from_path(pagination["kwargs"], pagination["page_offset_param"], 0)
-                    + pagination["limit_value"],
-                    pagination["endpoint"].params_map,
-                )
-            else:
-                set_attribute_from_path(
-                    pagination["kwargs"],
-                    pagination["cursor_param"],
-                    get_attribute_from_path(response, pagination["cursor_path"]),
-                    pagination["endpoint"].params_map,
-                )
-
-            params = pagination["endpoint"].get_pagination_params(pagination["kwargs"])
+            params = self._get_update_paginated_params(pagination, response)
 
 
 class Endpoint:
