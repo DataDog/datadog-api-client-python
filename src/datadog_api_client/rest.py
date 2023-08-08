@@ -23,12 +23,13 @@ from datadog_api_client.exceptions import (
 logger = logging.getLogger(__name__)
 
 
-RETRY_AFTER_STATUS_CODES = frozenset([413, 429, 500, 501, 502, 503, 504, 505, 506, 507, 509, 510, 511])
+RETRY_AFTER_STATUS_CODES = frozenset([429, 500, 501, 502, 503, 504, 505, 506, 507, 509, 510, 511])
+RETRY_ALLOWED_METHODS = frozenset(["GET", "PUT", "DELETE", "POST", "PATCH"])
 
 
 class ClientRetry(urllib3.util.Retry):
     RETRY_AFTER_STATUS_CODES = RETRY_AFTER_STATUS_CODES
-    DEFAULT_ALLOWED_METHODS = frozenset(["GET", "PUT", "DELETE", "POST", "PATCH"])
+    DEFAULT_ALLOWED_METHODS = RETRY_ALLOWED_METHODS
 
     def get_retry_after(self, response):
         """
@@ -242,10 +243,11 @@ class AsyncRESTClientObject:
         self._client = aiosonic.HTTPClient(proxy=proxy)
         self._configuration = configuration
 
-    def _retry(self, response, counter):
+    def _retry(self, method, response, counter):
         if (
             not self._configuration.enable_retry
             or counter >= self._configuration.max_retries
+            or method not in RETRY_ALLOWED_METHODS
             or response.status_code not in RETRY_AFTER_STATUS_CODES
         ):
             return 0
@@ -313,7 +315,7 @@ class AsyncRESTClientObject:
             response = await self._client.request(
                 url, method, headers, query_params, request_body, timeouts=request_timeout
             )
-            retry = self._retry(response, counter)
+            retry = self._retry(method, response, counter)
             if not retry:
                 break
             import asyncio
