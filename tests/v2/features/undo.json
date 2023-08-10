@@ -1815,5 +1815,11 @@
     "undo": {
       "type": "safe"
     }
+  },
+  "GetUserMemberships": {
+    "tag": "Teams",
+    "undo": {
+      "type": "safe"
+    }
   }
 }
