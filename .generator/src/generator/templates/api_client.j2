@@ -342,8 +342,6 @@ class ApiClient:
         method: str,
         pagination: dict,
         response_type: Optional[Tuple[Any]] = None,
-        return_http_data_only: Optional[bool] = None,
-        preload_content: bool = True,
         request_timeout: Optional[Union[int, float, Tuple[Union[int, float], Union[int, float]]]] = None,
         host: Optional[str] = None,
         check_type: Optional[bool] = None,
@@ -361,8 +359,8 @@ class ApiClient:
                 files=params["file"],
                 response_type=response_type,
                 check_type=check_type,
-                return_http_data_only=return_http_data_only,
-                preload_content=preload_content,
+                return_http_data_only=True,
+                preload_content=True,
                 request_timeout=request_timeout,
                 host=host,
                 collection_formats=params["collection_format"],
@@ -372,9 +370,9 @@ class ApiClient:
             if len(get_attribute_from_path(response, pagination["results_path"])) < pagination["limit_value"]:
                 break
 
-            params = self._get_update_paginated_params(pagination, response)
+            params = self._update_paginated_params(pagination, response)
 
-    def _get_update_paginated_params(self, pagination, response):
+    def _update_paginated_params(self, pagination, response):
         if "page_offset_param" in pagination:
             set_attribute_from_path(
                 pagination["kwargs"],
@@ -614,8 +612,6 @@ class AsyncApiClient(ApiClient):
         method: str,
         pagination: dict,
         response_type: Optional[Tuple[Any]] = None,
-        return_http_data_only: Optional[bool] = None,
-        preload_content: bool = True,
         request_timeout: Optional[Union[int, float, Tuple[Union[int, float], Union[int, float]]]] = None,
         host: Optional[str] = None,
         check_type: Optional[bool] = None,
@@ -633,8 +629,8 @@ class AsyncApiClient(ApiClient):
                 files=params["file"],
                 response_type=response_type,
                 check_type=check_type,
-                return_http_data_only=return_http_data_only,
-                preload_content=preload_content,
+                return_http_data_only=True,
+                preload_content=True,
                 request_timeout=request_timeout,
                 host=host,
                 collection_formats=params["collection_format"],
@@ -644,7 +640,7 @@ class AsyncApiClient(ApiClient):
             if len(get_attribute_from_path(response, pagination["results_path"])) < pagination["limit_value"]:
                 break
 
-            params = self._get_update_paginated_params(pagination, response)
+            params = self._update_paginated_params(pagination, response)
 
 
 class Endpoint:
@@ -838,8 +834,6 @@ class Endpoint:
             self.settings["http_method"],
             response_type=self.settings["response_type"],
             check_type=self.api_client.configuration.check_return_type,
-            return_http_data_only=self.api_client.configuration.return_http_data_only,
-            preload_content=self.api_client.configuration.preload_content,
             request_timeout=self.api_client.configuration.request_timeout,
             host=host,
             pagination=pagination
