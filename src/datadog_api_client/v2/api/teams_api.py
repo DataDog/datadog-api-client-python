@@ -334,6 +334,29 @@ class TeamsApi:
             api_client=api_client,
         )
 
+        self._get_user_memberships_endpoint = _Endpoint(
+            settings={
+                "response_type": (UserTeamsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/users/{user_uuid}/memberships",
+                "operation_id": "get_user_memberships",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "user_uuid": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "user_uuid",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._list_teams_endpoint = _Endpoint(
             settings={
                 "response_type": (TeamsResponse,),
@@ -738,6 +761,23 @@ class TeamsApi:
         kwargs["team_id"] = team_id
 
         return self._get_team_permission_settings_endpoint.call_with_http_info(**kwargs)
+
+    def get_user_memberships(
+        self,
+        user_uuid: str,
+    ) -> UserTeamsResponse:
+        """Get user memberships.
+
+        Get a list of memberships for a user
+
+        :param user_uuid: None
+        :type user_uuid: str
+        :rtype: UserTeamsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["user_uuid"] = user_uuid
+
+        return self._get_user_memberships_endpoint.call_with_http_info(**kwargs)
 
     def list_teams(
         self,

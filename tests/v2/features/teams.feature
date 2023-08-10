@@ -144,6 +144,22 @@ Feature: Teams
     When the request is sent
     Then the response status is 200 Represents a user's association to a team
 
+  @generated @skip @team:DataDog/core-app
+  Scenario: Get user memberships returns "API error response." response
+    Given new "GetUserMemberships" request
+    And request contains "user_uuid" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 API error response.
+
+  @team:DataDog/core-app
+  Scenario: Get user memberships returns "Represents a user's association to a team" response
+    Given new "GetUserMemberships" request
+    And there is a valid "user" in the system
+    And request contains "user_uuid" parameter from "user.data.id"
+    When the request is sent
+    Then the response status is 200 Represents a user's association to a team
+    And the response "data" has length 0
+
   @team:DataDog/core-app
   Scenario: Remove a team link returns "API error response." response
     Given new "DeleteTeamLink" request
