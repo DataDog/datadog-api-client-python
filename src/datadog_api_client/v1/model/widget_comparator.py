@@ -16,16 +16,18 @@ class WidgetComparator(ModelSimple):
     """
     Comparator to apply.
 
-    :param value: Must be one of [">", ">=", "<", "<="].
+    :param value: Must be one of ["=", ">", ">=", "<", "<="].
     :type value: str
     """
 
     allowed_values = {
+        "=",
         ">",
         ">=",
         "<",
         "<=",
     }
+    EQUAL_TO: ClassVar["WidgetComparator"]
     GREATER_THAN: ClassVar["WidgetComparator"]
     GREATER_THAN_OR_EQUAL_TO: ClassVar["WidgetComparator"]
     LESS_THAN: ClassVar["WidgetComparator"]
@@ -38,6 +40,7 @@ class WidgetComparator(ModelSimple):
         }
 
 
+WidgetComparator.EQUAL_TO = WidgetComparator("=")
 WidgetComparator.GREATER_THAN = WidgetComparator(">")
 WidgetComparator.GREATER_THAN_OR_EQUAL_TO = WidgetComparator(">=")
 WidgetComparator.LESS_THAN = WidgetComparator("<")
