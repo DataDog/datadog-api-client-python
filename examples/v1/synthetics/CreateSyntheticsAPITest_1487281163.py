@@ -109,6 +109,7 @@ body = SyntheticsAPITest(
                 token_api_authentication=SyntheticsBasicAuthOauthTokenApiAuthentication.HEADER,
                 type=SyntheticsBasicAuthOauthClientType.OAUTH_CLIENT,
             ),
+            persist_cookies=True,
         ),
     ),
     locations=[
