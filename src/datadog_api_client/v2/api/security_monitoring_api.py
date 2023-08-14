@@ -20,8 +20,6 @@ from datadog_api_client.v2.model.finding_evaluation import FindingEvaluation
 from datadog_api_client.v2.model.finding_status import FindingStatus
 from datadog_api_client.v2.model.finding import Finding
 from datadog_api_client.v2.model.get_finding_response import GetFindingResponse
-from datadog_api_client.v2.model.mute_finding_response import MuteFindingResponse
-from datadog_api_client.v2.model.mute_finding_request import MuteFindingRequest
 from datadog_api_client.v2.model.security_filters_response import SecurityFiltersResponse
 from datadog_api_client.v2.model.security_filter_response import SecurityFilterResponse
 from datadog_api_client.v2.model.security_filter_create_request import SecurityFilterCreateRequest
@@ -520,32 +518,6 @@ class SecurityMonitoringApi:
             params_map={
                 "body": {
                     "openapi_types": (SecurityMonitoringSignalListRequest,),
-                    "location": "body",
-                },
-            },
-            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
-            api_client=api_client,
-        )
-
-        self._update_finding_endpoint = _Endpoint(
-            settings={
-                "response_type": (MuteFindingResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/posture_management/findings/{finding_id}",
-                "operation_id": "update_finding",
-                "http_method": "PATCH",
-                "version": "v2",
-            },
-            params_map={
-                "finding_id": {
-                    "required": True,
-                    "openapi_types": (str,),
-                    "attribute": "finding_id",
-                    "location": "path",
-                },
-                "body": {
-                    "required": True,
-                    "openapi_types": (MuteFindingRequest,),
                     "location": "body",
                 },
             },
@@ -1236,32 +1208,6 @@ class SecurityMonitoringApi:
             set_attribute_from_path(
                 kwargs, "body.page.cursor", get_attribute_from_path(response, "meta.page.after"), endpoint.params_map
             )
-
-    def update_finding(
-        self,
-        finding_id: str,
-        body: MuteFindingRequest,
-    ) -> MuteFindingResponse:
-        """Mute or unmute a finding.
-
-        Mute or unmute a specific finding.
-        The API returns the updated finding object when the request is successful.
-
-        :param finding_id: The ID of the finding.
-        :type finding_id: str
-        :param body: To mute or unmute a finding, the request body should include at least two attributes: ``muted`` and ``reason``. The allowed reasons depend on whether the finding is being muted or unmuted:
-
-            * To mute a finding: ``PENDING_FIX`` , ``FALSE_POSITIVE`` , ``ACCEPTED_RISK`` , ``OTHER``.
-            * To unmute a finding : ``NO_PENDING_FIX`` , ``HUMAN_ERROR`` , ``NO_LONGER_ACCEPTED_RISK`` , ``OTHER``.
-        :type body: MuteFindingRequest
-        :rtype: MuteFindingResponse
-        """
-        kwargs: Dict[str, Any] = {}
-        kwargs["finding_id"] = finding_id
-
-        kwargs["body"] = body
-
-        return self._update_finding_endpoint.call_with_http_info(**kwargs)
 
     def update_security_filter(
         self,

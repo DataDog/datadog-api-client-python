@@ -267,7 +267,6 @@ class Configuration:
                 "v2.query_timeseries_data": False,
                 "v2.get_finding": False,
                 "v2.list_findings": False,
-                "v2.update_finding": False,
                 "v2.create_incident_service": False,
                 "v2.delete_incident_service": False,
                 "v2.get_incident_service": False,
