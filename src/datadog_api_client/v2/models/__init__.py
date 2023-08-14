@@ -726,14 +726,6 @@ from datadog_api_client.v2.model.monitor_downtime_match_response_attributes impo
 )
 from datadog_api_client.v2.model.monitor_downtime_match_response_data import MonitorDowntimeMatchResponseData
 from datadog_api_client.v2.model.monitor_type import MonitorType
-from datadog_api_client.v2.model.mute_finding_request import MuteFindingRequest
-from datadog_api_client.v2.model.mute_finding_request_attributes import MuteFindingRequestAttributes
-from datadog_api_client.v2.model.mute_finding_request_data import MuteFindingRequestData
-from datadog_api_client.v2.model.mute_finding_request_properties import MuteFindingRequestProperties
-from datadog_api_client.v2.model.mute_finding_response import MuteFindingResponse
-from datadog_api_client.v2.model.mute_finding_response_attributes import MuteFindingResponseAttributes
-from datadog_api_client.v2.model.mute_finding_response_data import MuteFindingResponseData
-from datadog_api_client.v2.model.mute_finding_response_properties import MuteFindingResponseProperties
 from datadog_api_client.v2.model.nullable_relationship_to_user import NullableRelationshipToUser
 from datadog_api_client.v2.model.nullable_relationship_to_user_data import NullableRelationshipToUserData
 from datadog_api_client.v2.model.on_demand_concurrency_cap import OnDemandConcurrencyCap
@@ -1967,14 +1959,6 @@ __all__ = [
     "MonitorDowntimeMatchResponseAttributes",
     "MonitorDowntimeMatchResponseData",
     "MonitorType",
-    "MuteFindingRequest",
-    "MuteFindingRequestAttributes",
-    "MuteFindingRequestData",
-    "MuteFindingRequestProperties",
-    "MuteFindingResponse",
-    "MuteFindingResponseAttributes",
-    "MuteFindingResponseData",
-    "MuteFindingResponseProperties",
     "NullableRelationshipToUser",
     "NullableRelationshipToUserData",
     "OnDemandConcurrencyCap",
