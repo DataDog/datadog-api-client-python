@@ -16,7 +16,7 @@ class MonthlyUsageAttributionSupportedMetrics(ModelSimple):
     """
     Supported metrics for monthly usage attribution requests.
 
-    :param value: Must be one of ["api_usage", "api_percentage", "apm_fargate_usage", "apm_fargate_percentage", "appsec_fargate_usage", "appsec_fargate_percentage", "apm_host_usage", "apm_host_percentage", "appsec_usage", "appsec_percentage", "browser_usage", "browser_percentage", "ci_visibility_itr_usage", "ci_visibility_itr_percentage", "container_excl_agent_usage", "container_excl_agent_percentage", "container_usage", "container_percentage", "cspm_containers_percentage", "cspm_containers_usage", "cspm_hosts_percentage", "cspm_hosts_usage", "custom_timeseries_usage", "custom_timeseries_percentage", "custom_ingested_timeseries_usage", "custom_ingested_timeseries_percentage", "cws_containers_percentage", "cws_containers_usage", "cws_hosts_percentage", "cws_hosts_usage", "dbm_hosts_percentage", "dbm_hosts_usage", "dbm_queries_percentage", "dbm_queries_usage", "estimated_indexed_logs_usage", "estimated_indexed_logs_percentage", "estimated_ingested_logs_usage", "estimated_ingested_logs_percentage", "estimated_indexed_spans_usage", "estimated_indexed_spans_percentage", "estimated_ingested_spans_usage", "estimated_ingested_spans_percentage", "fargate_usage", "fargate_percentage", "functions_usage", "functions_percentage", "infra_host_usage", "infra_host_percentage", "invocations_usage", "invocations_percentage", "npm_host_usage", "npm_host_percentage", "obs_pipeline_bytes_usage", "obs_pipeline_bytes_percentage", "profiled_container_usage", "profiled_container_percentage", "profiled_fargate_usage", "profiled_fargate_percentage", "profiled_host_usage", "profiled_host_percentage", "snmp_usage", "snmp_percentage", "estimated_rum_sessions_usage", "estimated_rum_sessions_percentage", "universal_service_monitoring_usage", "universal_service_monitoring_percentage", "vuln_management_hosts_usage", "vuln_management_hosts_percentage", "*"].
+    :param value: Must be one of ["api_usage", "api_percentage", "apm_fargate_usage", "apm_fargate_percentage", "appsec_fargate_usage", "appsec_fargate_percentage", "apm_host_usage", "apm_host_percentage", "appsec_usage", "appsec_percentage", "browser_usage", "browser_percentage", "ci_visibility_itr_usage", "ci_visibility_itr_percentage", "container_excl_agent_usage", "container_excl_agent_percentage", "container_usage", "container_percentage", "cspm_containers_percentage", "cspm_containers_usage", "cspm_hosts_percentage", "cspm_hosts_usage", "custom_timeseries_usage", "custom_timeseries_percentage", "custom_ingested_timeseries_usage", "custom_ingested_timeseries_percentage", "cws_containers_percentage", "cws_containers_usage", "cws_hosts_percentage", "cws_hosts_usage", "dbm_hosts_percentage", "dbm_hosts_usage", "dbm_queries_percentage", "dbm_queries_usage", "estimated_indexed_logs_usage", "estimated_indexed_logs_percentage", "estimated_ingested_logs_usage", "estimated_ingested_logs_percentage", "estimated_indexed_spans_usage", "estimated_indexed_spans_percentage", "estimated_ingested_spans_usage", "estimated_ingested_spans_percentage", "fargate_usage", "fargate_percentage", "functions_usage", "functions_percentage", "infra_host_usage", "infra_host_percentage", "invocations_usage", "invocations_percentage", "npm_host_usage", "npm_host_percentage", "obs_pipeline_bytes_usage", "obs_pipeline_bytes_percentage", "profiled_container_usage", "profiled_container_percentage", "profiled_fargate_usage", "profiled_fargate_percentage", "profiled_host_usage", "profiled_host_percentage", "snmp_usage", "snmp_percentage", "estimated_rum_sessions_usage", "estimated_rum_sessions_percentage", "universal_service_monitoring_usage", "universal_service_monitoring_percentage", "vuln_management_hosts_usage", "vuln_management_hosts_percentage", "sds_scanned_bytes_usage", "sds_scanned_bytes_percentage", "*"].
     :type value: str
     """
 
@@ -89,6 +89,8 @@ class MonthlyUsageAttributionSupportedMetrics(ModelSimple):
         "universal_service_monitoring_percentage",
         "vuln_management_hosts_usage",
         "vuln_management_hosts_percentage",
+        "sds_scanned_bytes_usage",
+        "sds_scanned_bytes_percentage",
         "*",
     }
     API_USAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
@@ -159,6 +161,8 @@ class MonthlyUsageAttributionSupportedMetrics(ModelSimple):
     UNIVERSAL_SERVICE_MONITORING_PERCENTAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
     VULN_MANAGEMENT_HOSTS_USAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
     VULN_MANAGEMENT_HOSTS_PERCENTAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    SDS_SCANNED_BYTES_USAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    SDS_SCANNED_BYTES_PERCENTAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
     ALL: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
 
     @cached_property
@@ -333,5 +337,11 @@ MonthlyUsageAttributionSupportedMetrics.VULN_MANAGEMENT_HOSTS_USAGE = MonthlyUsa
 )
 MonthlyUsageAttributionSupportedMetrics.VULN_MANAGEMENT_HOSTS_PERCENTAGE = MonthlyUsageAttributionSupportedMetrics(
     "vuln_management_hosts_percentage"
+)
+MonthlyUsageAttributionSupportedMetrics.SDS_SCANNED_BYTES_USAGE = MonthlyUsageAttributionSupportedMetrics(
+    "sds_scanned_bytes_usage"
+)
+MonthlyUsageAttributionSupportedMetrics.SDS_SCANNED_BYTES_PERCENTAGE = MonthlyUsageAttributionSupportedMetrics(
+    "sds_scanned_bytes_percentage"
 )
 MonthlyUsageAttributionSupportedMetrics.ALL = MonthlyUsageAttributionSupportedMetrics("*")
