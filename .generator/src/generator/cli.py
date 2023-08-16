@@ -72,7 +72,6 @@ def cli(specs, output):
         "rest.py": env.get_template("rest.j2"),
     }
 
-
     top_package = output / PACKAGE_NAME
     top_package.mkdir(parents=True, exist_ok=True)
 

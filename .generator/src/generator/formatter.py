@@ -62,7 +62,6 @@ WHITELISTED_LIST_MODELS = {
         "TimeseriesResponseTimes",
         "TimeseriesResponseValues",
         "TimeseriesResponseValuesList",
-
     ),
 }
 
