@@ -28,8 +28,9 @@ from {{ package }}.model_utils import (
     deserialize_file,
     file_type,
     model_to_dict,
-    none_type,
     validate_and_convert_types,
+    get_attribute_from_path,
+    set_attribute_from_path,
 )
 
 
@@ -335,6 +336,61 @@ class ApiClient:
             check_type,
         )
 
+    def call_api_paginated(
+        self,
+        resource_path: str,
+        method: str,
+        pagination: dict,
+        response_type: Optional[Tuple[Any]] = None,
+        request_timeout: Optional[Union[int, float, Tuple[Union[int, float], Union[int, float]]]] = None,
+        host: Optional[str] = None,
+        check_type: Optional[bool] = None,
+    ):
+        params = pagination["endpoint"].gather_params(pagination["kwargs"])
+        while True:
+            response = self.call_api(
+                resource_path,
+                method,
+                params["path"],
+                params["query"],
+                params["header"],
+                body=params["body"],
+                post_params=params["form"],
+                files=params["file"],
+                response_type=response_type,
+                check_type=check_type,
+                return_http_data_only=True,
+                preload_content=True,
+                request_timeout=request_timeout,
+                host=host,
+                collection_formats=params["collection_format"],
+            )
+            for item in get_attribute_from_path(response, pagination["results_path"]):
+                yield item
+            if len(get_attribute_from_path(response, pagination["results_path"])) < pagination["limit_value"]:
+                break
+
+            params = self._update_paginated_params(pagination, response)
+
+    def _update_paginated_params(self, pagination, response):
+        if "page_offset_param" in pagination:
+            set_attribute_from_path(
+                pagination["kwargs"],
+                pagination["page_offset_param"],
+                get_attribute_from_path(pagination["kwargs"], pagination["page_offset_param"], 0)
+                + pagination["limit_value"],
+                pagination["endpoint"].params_map,
+            )
+        else:
+            set_attribute_from_path(
+                pagination["kwargs"],
+                pagination["cursor_param"],
+                get_attribute_from_path(response, pagination["cursor_path"]),
+                pagination["endpoint"].params_map,
+            )
+
+        return pagination["endpoint"].gather_params(pagination["kwargs"])
+
     def parameters_to_tuples(self, params, collection_formats) -> List[Tuple[str, Any]]:
         """Get parameters as list of tuples, formatting collections.
 
@@ -550,6 +606,42 @@ class AsyncApiClient(ApiClient):
             return return_data
         return (return_data, response.status_code, response.headers)
 
+    async def call_api_paginated(
+        self,
+        resource_path: str,
+        method: str,
+        pagination: dict,
+        response_type: Optional[Tuple[Any]] = None,
+        request_timeout: Optional[Union[int, float, Tuple[Union[int, float], Union[int, float]]]] = None,
+        host: Optional[str] = None,
+        check_type: Optional[bool] = None,
+    ):
+        params = pagination["endpoint"].get_pagination_params(pagination["kwargs"])
+        while True:
+            response = await self.call_api(
+                resource_path,
+                method,
+                params["path"],
+                params["query"],
+                params["header"],
+                body=params["body"],
+                post_params=params["form"],
+                files=params["file"],
+                response_type=response_type,
+                check_type=check_type,
+                return_http_data_only=True,
+                preload_content=True,
+                request_timeout=request_timeout,
+                host=host,
+                collection_formats=params["collection_format"],
+            )
+            for item in get_attribute_from_path(response, pagination["results_path"]):
+                yield item
+            if len(get_attribute_from_path(response, pagination["results_path"])) < pagination["limit_value"]:
+                break
+
+            params = self._update_paginated_params(pagination, response)
+
 
 class Endpoint:
     def __init__(
@@ -617,7 +709,7 @@ class Endpoint:
             )
             kwargs[key] = fixed_val
 
-    def _gather_params(self, kwargs):
+    def gather_params(self, kwargs):
         params = {"body": None, "collection_format": {}, "file": {}, "form": [], "header": {}, "path": {}, "query": []}
 
         for param_name, param_value in kwargs.items():
@@ -645,10 +737,20 @@ class Endpoint:
                 if collection_format:
                     params["collection_format"][base_name] = collection_format
 
+        accept_headers_list = self.headers_map["accept"]
+        if accept_headers_list:
+            params["header"]["Accept"] = self.api_client.select_header_accept(accept_headers_list)
+
+        content_type_headers_list = self.headers_map.get("content_type")
+        if content_type_headers_list:
+            header_list = self.api_client.select_header_content_type(content_type_headers_list)
+            params["header"]["Content-Type"] = header_list
+
+        self.update_params_for_auth(params["header"], params["query"])
+
         return params
 
-    def call_with_http_info(self, **kwargs):
-
+    def _validate_and_get_host(self, kwargs):
         is_unstable = self.api_client.configuration.unstable_operations.get(
             "{}.{}".format(self.settings["version"], self.settings["operation_id"])
         )
@@ -699,18 +801,12 @@ class Endpoint:
 
         self._validate_inputs(kwargs)
 
-        params = self._gather_params(kwargs)
+        return host
 
-        accept_headers_list = self.headers_map["accept"]
-        if accept_headers_list:
-            params["header"]["Accept"] = self.api_client.select_header_accept(accept_headers_list)
+    def call_with_http_info(self, **kwargs):
+        host = self._validate_and_get_host(kwargs)
 
-        content_type_headers_list = self.headers_map.get("content_type")
-        if content_type_headers_list:
-            header_list = self.api_client.select_header_content_type(content_type_headers_list)
-            params["header"]["Content-Type"] = header_list
-
-        self.update_params_for_auth(params["header"], params["query"])
+        params = self.gather_params(kwargs)
 
         return self.api_client.call_api(
             self.settings["endpoint_path"],
@@ -728,6 +824,19 @@ class Endpoint:
             request_timeout=self.api_client.configuration.request_timeout,
             host=host,
             collection_formats=params["collection_format"],
+        )
+
+    def call_with_http_info_paginated(self, pagination):
+        host = self._validate_and_get_host(pagination["kwargs"])
+
+        return self.api_client.call_api_paginated(
+            self.settings["endpoint_path"],
+            self.settings["http_method"],
+            response_type=self.settings["response_type"],
+            check_type=self.api_client.configuration.check_return_type,
+            request_timeout=self.api_client.configuration.request_timeout,
+            host=host,
+            pagination=pagination
         )
 
     def update_params_for_auth(self, headers, queries) -> None:

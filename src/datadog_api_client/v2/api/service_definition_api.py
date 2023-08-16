@@ -260,15 +260,11 @@ class ServiceDefinitionApi:
         local_page_size = get_attribute_from_path(kwargs, "page_size", 10)
         endpoint = self._list_service_definitions_endpoint
         set_attribute_from_path(kwargs, "page_size", local_page_size, endpoint.params_map)
-        while True:
-            response = endpoint.call_with_http_info(**kwargs)
-            for item in get_attribute_from_path(response, "data"):
-                yield item
-            if len(get_attribute_from_path(response, "data")) < local_page_size:
-                break
-            set_attribute_from_path(
-                kwargs,
-                "page_number",
-                get_attribute_from_path(kwargs, "page_number", 0) + local_page_size,
-                endpoint.params_map,
-            )
+        pagination = {
+            "limit_value": local_page_size,
+            "results_path": "data",
+            "page_offset_param": "page_number",
+            "endpoint": endpoint,
+            "kwargs": kwargs,
+        }
+        return endpoint.call_with_http_info_paginated(pagination)
