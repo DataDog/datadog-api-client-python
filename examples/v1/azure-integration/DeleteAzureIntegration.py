@@ -7,9 +7,12 @@ from datadog_api_client.v1.api.azure_integration_api import AzureIntegrationApi
 from datadog_api_client.v1.model.azure_account import AzureAccount
 
 body = AzureAccount(
+    app_service_plan_filters="key:value,filter:example",
     automute=True,
     client_id="testc7f6-1234-5678-9101-3fcbf464test",
     client_secret="testingx./Sw*g/Y33t..R1cH+hScMDt",
+    cspm_enabled=True,
+    custom_metrics_enabled=True,
     errors=[
         "*",
     ],

@@ -70,6 +70,7 @@ class SyntheticsTestRequest(ModelNormal):
             "method": (str,),
             "no_saving_response_body": (bool,),
             "number_of_packets": (int,),
+            "persist_cookies": (bool,),
             "port": (int,),
             "proxy": (SyntheticsTestRequestProxy,),
             "query": (dict,),
@@ -99,6 +100,7 @@ class SyntheticsTestRequest(ModelNormal):
         "method": "method",
         "no_saving_response_body": "noSavingResponseBody",
         "number_of_packets": "numberOfPackets",
+        "persist_cookies": "persistCookies",
         "port": "port",
         "proxy": "proxy",
         "query": "query",
@@ -138,6 +140,7 @@ class SyntheticsTestRequest(ModelNormal):
         method: Union[str, UnsetType] = unset,
         no_saving_response_body: Union[bool, UnsetType] = unset,
         number_of_packets: Union[int, UnsetType] = unset,
+        persist_cookies: Union[bool, UnsetType] = unset,
         port: Union[int, UnsetType] = unset,
         proxy: Union[SyntheticsTestRequestProxy, UnsetType] = unset,
         query: Union[dict, UnsetType] = unset,
@@ -205,6 +208,9 @@ class SyntheticsTestRequest(ModelNormal):
         :param number_of_packets: Number of pings to use per test.
         :type number_of_packets: int, optional
 
+        :param persist_cookies: Persist cookies across redirects.
+        :type persist_cookies: bool, optional
+
         :param port: Port to use when performing the test.
         :type port: int, optional
 
@@ -267,6 +273,8 @@ class SyntheticsTestRequest(ModelNormal):
             kwargs["no_saving_response_body"] = no_saving_response_body
         if number_of_packets is not unset:
             kwargs["number_of_packets"] = number_of_packets
+        if persist_cookies is not unset:
+            kwargs["persist_cookies"] = persist_cookies
         if port is not unset:
             kwargs["port"] = port
         if proxy is not unset:
