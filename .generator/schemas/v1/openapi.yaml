@@ -647,6 +647,14 @@ components:
     AzureAccount:
       description: Datadog-Azure integrations configured for your organization.
       properties:
+        app_service_plan_filters:
+          description: 'Limit the Azure app service plans that are pulled into Datadog
+            using tags.
+
+            Only app service plans that match one of the defined tags are imported
+            into Datadog.'
+          example: key:value,filter:example
+          type: string
         automute:
           description: Silence monitors for expected Azure VM shutdowns.
           example: true
@@ -659,6 +667,15 @@ components:
           description: Your Azure web application secret key.
           example: testingx./Sw*g/Y33t..R1cH+hScMDt
           type: string
+        cspm_enabled:
+          description: Enable Cloud Security Management Misconfigurations for your
+            organization.
+          example: true
+          type: boolean
+        custom_metrics_enabled:
+          description: Enable custom metrics for your organization.
+          example: true
+          type: boolean
         errors:
           description: Errors in your configuration.
           example:
