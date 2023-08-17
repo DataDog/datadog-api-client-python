@@ -3887,6 +3887,7 @@ components:
       - api_usage
       - apm_fargate_usage
       - apm_host_usage
+      - apm_usm_usage
       - appsec_fargate_usage
       - appsec_usage
       - browser_usage
@@ -3924,6 +3925,7 @@ components:
       - API_USAGE
       - APM_FARGATE_USAGE
       - APM_HOST_USAGE
+      - APM_USM_USAGE
       - APPSEC_FARGATE_USAGE
       - APPSEC_USAGE
       - BROWSER_USAGE
@@ -7430,6 +7432,8 @@ components:
       - appsec_fargate_percentage
       - apm_host_usage
       - apm_host_percentage
+      - apm_usm_usage
+      - apm_usm_percentage
       - appsec_usage
       - appsec_percentage
       - browser_usage
@@ -7503,6 +7507,8 @@ components:
       - APPSEC_FARGATE_PERCENTAGE
       - APM_HOST_USAGE
       - APM_HOST_PERCENTAGE
+      - APM_USM_USAGE
+      - APM_USM_PERCENTAGE
       - APPSEC_USAGE
       - APPSEC_PERCENTAGE
       - BROWSER_USAGE
@@ -7591,6 +7597,15 @@ components:
           type: number
         apm_host_usage:
           description: The APM host usage by tag(s).
+          format: double
+          type: number
+        apm_usm_percentage:
+          description: The percentage of APM and Universal Service Monitoring host
+            usage by tag(s).
+          format: double
+          type: number
+        apm_usm_usage:
+          description: The APM and Universal Service Monitoring host usage by tag(s).
           format: double
           type: number
         appsec_fargate_percentage:
