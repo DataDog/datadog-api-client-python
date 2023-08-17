@@ -57,7 +57,7 @@ class LogsListRequest(ModelNormal):
         :type filter: LogsQueryFilter, optional
 
         :param options: Global query options that are used during the query.
-            Note: You should only supply timezone or time offset but not both otherwise the query will fail.
+            Note: you should supply either timezone or time offset, but not both. Otherwise, the query will fail.
         :type options: LogsQueryOptions, optional
 
         :param page: Paging attributes for listing logs.
