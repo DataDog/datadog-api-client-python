@@ -28,7 +28,7 @@ class LogsAggregateRequestPage(ModelNormal):
         """
         Paging settings
 
-        :param cursor: The returned paging point to use to get the next results
+        :param cursor: The returned paging point to use to get the next results. Note: at most 1000 results can be paged.
         :type cursor: str, optional
         """
         if cursor is not unset:

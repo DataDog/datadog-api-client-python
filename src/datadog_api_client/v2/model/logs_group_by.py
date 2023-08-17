@@ -63,10 +63,11 @@ class LogsGroupBy(ModelNormal):
         :type facet: str
 
         :param histogram: Used to perform a histogram computation (only for measure facets).
-            Note: At most 100 buckets are allowed, the number of buckets is (max - min)/interval.
+            Note: at most 100 buckets are allowed, the number of buckets is (max - min)/interval.
         :type histogram: LogsGroupByHistogram, optional
 
-        :param limit: The maximum buckets to return for this group by
+        :param limit: The maximum buckets to return for this group by. Note: at most 10000 buckets are allowed.
+            If grouping by multiple facets, the product of limits must not exceed 10000.
         :type limit: int, optional
 
         :param missing: The value to use for logs that don't have the facet used to group by
