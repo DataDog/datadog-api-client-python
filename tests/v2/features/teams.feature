@@ -40,6 +40,9 @@ Feature: Teams
     And body with value {"data": {"attributes": {"label": "Link label", "url": "https://example.com", "position": 0}, "type": "team_links"}}
     When the request is sent
     Then the response status is 200 OK
+    And the response "data.attributes.label" is equal to "Link label"
+    And the response "data.attributes.url" is equal to "https://example.com"
+    And the response "data.attributes.position" is equal to 0
 
   @team:DataDog/core-app
   Scenario: Create a team returns "API error response." response
@@ -56,6 +59,22 @@ Feature: Teams
     When the request is sent
     Then the response status is 201 CREATED
     And the response "data" has field "id"
+    And the response "data.attributes.handle" is equal to "handle-{{ unique_hash }}"
+    And the response "data.attributes.name" is equal to "name-{{ unique_hash }}"
+
+  @team:DataDog/core-app
+  Scenario: Create a team with V2 fields returns "CREATED" response
+    Given new "CreateTeam" request
+    And body with value {"data": {"attributes": {"handle": "handle-{{ unique_hash }}","name": "name-{{ unique_hash }}", "avatar": "🥑", "banner": 7, "visible_modules": ["m1","m2"], "hidden_modules": ["m3"]}, "type": "team"}}
+    When the request is sent
+    Then the response status is 201 CREATED
+    And the response "data" has field "id"
+    And the response "data.attributes.handle" is equal to "handle-{{ unique_hash }}"
+    And the response "data.attributes.name" is equal to "name-{{ unique_hash }}"
+    And the response "data.attributes.avatar" is equal to "🥑"
+    And the response "data.attributes.banner" is equal to 7
+    And the response "data.attributes.visible_modules" is equal to ["m1","m2"]
+    And the response "data.attributes.hidden_modules" is equal to ["m3"]
 
   @team:DataDog/core-app
   Scenario: Get a team link returns "API error response." response
@@ -234,12 +253,14 @@ Feature: Teams
     Then the response status is 200 OK
     And the response "data.id" is equal to "{{ team_link.data.id }}"
     And the response "data.attributes.team_id" is equal to "{{ dd_team.data.id }}"
+    And the response "data.attributes.label" is equal to "New Label"
+    And the response "data.attributes.url" is equal to "https://example.com"
 
   @generated @skip @team:DataDog/core-app
   Scenario: Update a team returns "API error response." response
     Given new "UpdateTeam" request
     And request contains "team_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"handle": "example-team", "name": "Example Team"}, "relationships": {"team_links": {"data": [{"id": "f9bb8444-af7f-11ec-ac2c-da7ad0900001", "type": "team_links"}], "links": {"related": "/api/v2/team/c75a4a8e-20c7-11ee-a3a5-da7ad0900002/links"}}}, "type": "team"}}
+    And body with value {"data": {"attributes": {"avatar": "\ud83e\udd51", "banner": null, "handle": "example-team", "hidden_modules": [], "name": "Example Team", "visible_modules": []}, "relationships": {"team_links": {"data": [{"id": "f9bb8444-af7f-11ec-ac2c-da7ad0900001", "type": "team_links"}], "links": {"related": "/api/v2/team/c75a4a8e-20c7-11ee-a3a5-da7ad0900002/links"}}}, "type": "team"}}
     When the request is sent
     Then the response status is 409 API error response.
 
@@ -248,10 +269,16 @@ Feature: Teams
     Given new "UpdateTeam" request
     And there is a valid "dd_team" in the system
     And request contains "team_id" parameter from "dd_team.data.id"
-    And body with value {"data": {"attributes": {"handle": "{{dd_team.data.attributes.handle}}", "name": "{{dd_team.data.attributes.name}} updated"}, "type": "team"}}
+    And body with value {"data": {"attributes": {"handle": "{{dd_team.data.attributes.handle}}", "name": "{{dd_team.data.attributes.name}} updated", "avatar": "🥑", "banner": 7, "hidden_modules": ["m3"], "visible_modules": ["m1", "m2"]}, "type": "team"}}
     When the request is sent
     Then the response status is 200 OK
     And the response "data.id" is equal to "{{ dd_team.data.id }}"
+    And the response "data.attributes.handle" is equal to "{{dd_team.data.attributes.handle}}"
+    And the response "data.attributes.name" is equal to "{{dd_team.data.attributes.name}} updated"
+    And the response "data.attributes.avatar" is equal to "🥑"
+    And the response "data.attributes.banner" is equal to 7
+    And the response "data.attributes.hidden_modules" is equal to ["m3"]
+    And the response "data.attributes.visible_modules" is equal to ["m1", "m2"]
 
   @generated @skip @team:DataDog/core-app
   Scenario: Update a user's membership attributes on a team returns "API error response." response

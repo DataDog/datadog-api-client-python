@@ -20,6 +20,15 @@ body = TeamUpdateRequest(
         attributes=TeamUpdateAttributes(
             handle=DD_TEAM_DATA_ATTRIBUTES_HANDLE,
             name="Example Team updated",
+            avatar="🥑",
+            banner=7,
+            hidden_modules=[
+                "m3",
+            ],
+            visible_modules=[
+                "m1",
+                "m2",
+            ],
         ),
         type=TeamType.TEAM,
     ),
