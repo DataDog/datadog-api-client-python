@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"email":"Test-Get_user_memberships_returns_Represents_a_user_s_association_to_a_team_response-1691694156@datadoghq.com","title":"user
+    body: '{"data":{"attributes":{"email":"Test-Get_user_memberships_returns_Represents_a_user_s_association_to_a_team_response-1692647090@datadoghq.com","title":"user
       title"},"type":"users"}}'
     headers:
       accept:
@@ -11,7 +11,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/users
   response:
     body:
-      string: '{"data":{"type":"users","id":"7833e13f-37b0-11ee-a0ea-725cd22022ad","attributes":{"name":null,"handle":"test-get_user_memberships_returns_represents_a_user_s_association_to_a_team_response-1691694156@datadoghq.com","created_at":"2023-08-10T19:02:36.551631+00:00","modified_at":"2023-08-10T19:02:36.555165+00:00","email":"test-get_user_memberships_returns_represents_a_user_s_association_to_a_team_response-1691694156@datadoghq.com","icon":"https://secure.gravatar.com/avatar/8773e3c21e198b2955b34d27f0208990?s=48&d=retro","title":"user
+      string: '{"data":{"type":"users","id":"30e03059-405b-11ee-9a91-1a2c4720b59d","attributes":{"name":null,"handle":"test-get_user_memberships_returns_represents_a_user_s_association_to_a_team_response-1692647090@datadoghq.com","created_at":"2023-08-21T19:44:50.128235+00:00","modified_at":"2023-08-21T19:44:50.135570+00:00","email":"test-get_user_memberships_returns_represents_a_user_s_association_to_a_team_response-1692647090@datadoghq.com","icon":"https://secure.gravatar.com/avatar/d2db09a560a471f9d40152e20a8dff27?s=48&d=retro","title":"user
         title","verified":false,"service_account":false,"disabled":false,"allowed_login_methods":[],"status":"Pending"},"relationships":{"roles":{"data":[]},"org":{"data":{"type":"orgs","id":"4dee724d-00cc-11ea-a77b-570c9d03c6c5"}}}}}
 
         '
@@ -27,7 +27,7 @@ interactions:
       accept:
       - application/json
     method: GET
-    uri: https://api.datadoghq.com/api/v2/users/7833e13f-37b0-11ee-a0ea-725cd22022ad/memberships
+    uri: https://api.datadoghq.com/api/v2/users/30e03059-405b-11ee-9a91-1a2c4720b59d/memberships
   response:
     body:
       string: '{"data":[]}
@@ -45,7 +45,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/users/7833e13f-37b0-11ee-a0ea-725cd22022ad
+    uri: https://api.datadoghq.com/api/v2/users/30e03059-405b-11ee-9a91-1a2c4720b59d
   response:
     body:
       string: ''

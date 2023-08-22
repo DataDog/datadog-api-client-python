@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"handle":"handle-365d9943be4cbd80","name":"name-365d9943be4cbd80"},"type":"team"}}'
+    body: '{"data":{"attributes":{"handle":"test-handle-f17bf3394db1955e","name":"test-name-f17bf3394db1955e"},"type":"team"}}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/team
   response:
     body:
-      string: '{"data":{"type":"team","id":"ae81e17c-20d9-11ee-a254-da7ad0900002","attributes":{"name":"name-365d9943be4cbd80","handle":"handle-365d9943be4cbd80","summary":null,"description":null,"created_at":"2023-07-12T17:29:40.278830+00:00","modified_at":"2023-07-12T17:29:40.278836+00:00","user_count":0,"link_count":0},"relationships":{"team_links":{"links":{"related":"/api/v2/team/ae81e17c-20d9-11ee-a254-da7ad0900002/links"}},"user_team_permissions":{"links":{"related":"/api/v2/team/ae81e17c-20d9-11ee-a254-da7ad0900002/permission-settings"}}}}}
+      string: '{"data":{"type":"team","id":"3474a102-405b-11ee-8a0f-da7ad0900002","attributes":{"name":"test-name-f17bf3394db1955e","handle":"test-handle-f17bf3394db1955e","summary":null,"description":null,"avatar":null,"banner":null,"visible_modules":[],"hidden_modules":[],"created_at":"2023-08-21T19:44:56.131892+00:00","modified_at":"2023-08-21T19:44:56.131898+00:00","user_count":0,"link_count":0},"relationships":{"team_links":{"links":{"related":"/api/v2/team/3474a102-405b-11ee-8a0f-da7ad0900002/links"}},"user_team_permissions":{"links":{"related":"/api/v2/team/3474a102-405b-11ee-8a0f-da7ad0900002/permission-settings"}}}}}
 
         '
     headers:
@@ -27,10 +27,10 @@ interactions:
       content-type:
       - application/json
     method: PUT
-    uri: https://api.datadoghq.com/api/v2/team/ae81e17c-20d9-11ee-a254-da7ad0900002/permission-settings/manage_membership
+    uri: https://api.datadoghq.com/api/v2/team/3474a102-405b-11ee-8a0f-da7ad0900002/permission-settings/manage_membership
   response:
     body:
-      string: '{"data":{"type":"team_permission_settings","attributes":{"value":"admins","action":"manage_membership","options":["admins","members","organization","user_access_manage","teams_manage"]},"id":"TeamPermission-ae81e17c-20d9-11ee-a254-da7ad0900002-manage_membership"}}
+      string: '{"data":{"type":"team_permission_settings","attributes":{"action":"manage_membership","value":"admins","options":["admins","members","organization","user_access_manage","teams_manage"]},"id":"TeamPermission-3474a102-405b-11ee-8a0f-da7ad0900002-manage_membership"}}
 
         '
     headers:
@@ -45,7 +45,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/team/ae81e17c-20d9-11ee-a254-da7ad0900002
+    uri: https://api.datadoghq.com/api/v2/team/3474a102-405b-11ee-8a0f-da7ad0900002
   response:
     body:
       string: ''
