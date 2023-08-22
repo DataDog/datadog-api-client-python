@@ -55,22 +55,22 @@ Feature: Teams
   @team:DataDog/core-app
   Scenario: Create a team returns "CREATED" response
     Given new "CreateTeam" request
-    And body with value {"data": {"attributes": {"handle": "handle-{{ unique_hash }}", "name": "name-{{ unique_hash }}"}, "relationships": {"users": {"data": []}}, "type": "team"}}
+    And body with value {"data": {"attributes": {"handle": "test-handle-{{ unique_hash }}", "name": "test-name-{{ unique_hash }}"}, "relationships": {"users": {"data": []}}, "type": "team"}}
     When the request is sent
     Then the response status is 201 CREATED
     And the response "data" has field "id"
-    And the response "data.attributes.handle" is equal to "handle-{{ unique_hash }}"
-    And the response "data.attributes.name" is equal to "name-{{ unique_hash }}"
+    And the response "data.attributes.handle" is equal to "test-handle-{{ unique_hash }}"
+    And the response "data.attributes.name" is equal to "test-name-{{ unique_hash }}"
 
   @team:DataDog/core-app
   Scenario: Create a team with V2 fields returns "CREATED" response
     Given new "CreateTeam" request
-    And body with value {"data": {"attributes": {"handle": "handle-{{ unique_hash }}","name": "name-{{ unique_hash }}", "avatar": "🥑", "banner": 7, "visible_modules": ["m1","m2"], "hidden_modules": ["m3"]}, "type": "team"}}
+    And body with value {"data": {"attributes": {"handle": "test-handle-{{ unique_hash }}","name": "test-name-{{ unique_hash }}", "avatar": "🥑", "banner": 7, "visible_modules": ["m1","m2"], "hidden_modules": ["m3"]}, "type": "team"}}
     When the request is sent
     Then the response status is 201 CREATED
     And the response "data" has field "id"
-    And the response "data.attributes.handle" is equal to "handle-{{ unique_hash }}"
-    And the response "data.attributes.name" is equal to "name-{{ unique_hash }}"
+    And the response "data.attributes.handle" is equal to "test-handle-{{ unique_hash }}"
+    And the response "data.attributes.name" is equal to "test-name-{{ unique_hash }}"
     And the response "data.attributes.avatar" is equal to "🥑"
     And the response "data.attributes.banner" is equal to 7
     And the response "data.attributes.visible_modules" is equal to ["m1","m2"]

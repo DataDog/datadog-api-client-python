@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"handle":"handle-8ebcf13472862f30","name":"name-8ebcf13472862f30"},"type":"team"}}'
+    body: '{"data":{"attributes":{"handle":"test-handle-61d5baa2cd58430d","name":"test-name-61d5baa2cd58430d"},"type":"team"}}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/team
   response:
     body:
-      string: '{"data":{"type":"team","id":"abfca7f2-20d9-11ee-a1e9-da7ad0900002","attributes":{"name":"name-8ebcf13472862f30","handle":"handle-8ebcf13472862f30","summary":null,"description":null,"created_at":"2023-07-12T17:29:36.049655+00:00","modified_at":"2023-07-12T17:29:36.049660+00:00","user_count":0,"link_count":0},"relationships":{"team_links":{"links":{"related":"/api/v2/team/abfca7f2-20d9-11ee-a1e9-da7ad0900002/links"}},"user_team_permissions":{"links":{"related":"/api/v2/team/abfca7f2-20d9-11ee-a1e9-da7ad0900002/permission-settings"}}}}}
+      string: '{"data":{"type":"team","id":"325bc472-405b-11ee-ac5e-da7ad0900002","attributes":{"name":"test-name-61d5baa2cd58430d","handle":"test-handle-61d5baa2cd58430d","summary":null,"description":null,"avatar":null,"banner":null,"visible_modules":[],"hidden_modules":[],"created_at":"2023-08-21T19:44:52.612996+00:00","modified_at":"2023-08-21T19:44:52.613002+00:00","user_count":0,"link_count":0},"relationships":{"team_links":{"links":{"related":"/api/v2/team/325bc472-405b-11ee-ac5e-da7ad0900002/links"}},"user_team_permissions":{"links":{"related":"/api/v2/team/325bc472-405b-11ee-ac5e-da7ad0900002/permission-settings"}}}}}
 
         '
     headers:
@@ -25,7 +25,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/team/abfca7f2-20d9-11ee-a1e9-da7ad0900002/memberships/REPLACE.ME
+    uri: https://api.datadoghq.com/api/v2/team/325bc472-405b-11ee-ac5e-da7ad0900002/memberships/REPLACE.ME
   response:
     body:
       string: '{"errors":["REPLACE.ME is not a valid UUID not found"]}'
@@ -41,7 +41,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/team/abfca7f2-20d9-11ee-a1e9-da7ad0900002
+    uri: https://api.datadoghq.com/api/v2/team/325bc472-405b-11ee-ac5e-da7ad0900002
   response:
     body:
       string: ''

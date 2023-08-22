@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"handle":"handle-99ca65bcb7eba7f2","name":"name-99ca65bcb7eba7f2"},"type":"team"}}'
+    body: '{"data":{"attributes":{"handle":"test-handle-427b76ae43f10fe0","name":"test-name-427b76ae43f10fe0"},"type":"team"}}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/team
   response:
     body:
-      string: '{"data":{"type":"team","id":"adfa785e-20d9-11ee-9b3a-da7ad0900002","attributes":{"name":"name-99ca65bcb7eba7f2","handle":"handle-99ca65bcb7eba7f2","summary":null,"description":null,"created_at":"2023-07-12T17:29:39.390829+00:00","modified_at":"2023-07-12T17:29:39.390834+00:00","user_count":0,"link_count":0},"relationships":{"team_links":{"links":{"related":"/api/v2/team/adfa785e-20d9-11ee-9b3a-da7ad0900002/links"}},"user_team_permissions":{"links":{"related":"/api/v2/team/adfa785e-20d9-11ee-9b3a-da7ad0900002/permission-settings"}}}}}
+      string: '{"data":{"type":"team","id":"33d811ca-405b-11ee-a640-da7ad0900002","attributes":{"name":"test-name-427b76ae43f10fe0","handle":"test-handle-427b76ae43f10fe0","summary":null,"description":null,"avatar":null,"banner":null,"visible_modules":[],"hidden_modules":[],"created_at":"2023-08-21T19:44:55.105594+00:00","modified_at":"2023-08-21T19:44:55.105599+00:00","user_count":0,"link_count":0},"relationships":{"team_links":{"links":{"related":"/api/v2/team/33d811ca-405b-11ee-a640-da7ad0900002/links"}},"user_team_permissions":{"links":{"related":"/api/v2/team/33d811ca-405b-11ee-a640-da7ad0900002/permission-settings"}}}}}
 
         '
     headers:
@@ -27,7 +27,7 @@ interactions:
       content-type:
       - application/json
     method: PATCH
-    uri: https://api.datadoghq.com/api/v2/team/adfa785e-20d9-11ee-9b3a-da7ad0900002/memberships/REPLACE.ME
+    uri: https://api.datadoghq.com/api/v2/team/33d811ca-405b-11ee-a640-da7ad0900002/memberships/REPLACE.ME
   response:
     body:
       string: '{"errors":["REPLACE.ME is not a valid UUID not found"]}'
@@ -43,7 +43,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/team/adfa785e-20d9-11ee-9b3a-da7ad0900002
+    uri: https://api.datadoghq.com/api/v2/team/33d811ca-405b-11ee-a640-da7ad0900002
   response:
     body:
       string: ''

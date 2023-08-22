@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"handle":"handle-b083901017e30c13","name":"name-b083901017e30c13"},"type":"team"}}'
+    body: '{"data":{"attributes":{"handle":"test-handle-a9d07353f71937c2","name":"test-name-a9d07353f71937c2"},"type":"team"}}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/team
   response:
     body:
-      string: '{"data":{"type":"team","id":"abb3161e-20d9-11ee-95db-da7ad0900002","attributes":{"name":"name-b083901017e30c13","handle":"handle-b083901017e30c13","summary":null,"description":null,"created_at":"2023-07-12T17:29:35.567410+00:00","modified_at":"2023-07-12T17:29:35.567415+00:00","user_count":0,"link_count":0},"relationships":{"team_links":{"links":{"related":"/api/v2/team/abb3161e-20d9-11ee-95db-da7ad0900002/links"}},"user_team_permissions":{"links":{"related":"/api/v2/team/abb3161e-20d9-11ee-95db-da7ad0900002/permission-settings"}}}}}
+      string: '{"data":{"type":"team","id":"320db0de-405b-11ee-bb10-da7ad0900002","attributes":{"name":"test-name-a9d07353f71937c2","handle":"test-handle-a9d07353f71937c2","summary":null,"description":null,"avatar":null,"banner":null,"visible_modules":[],"hidden_modules":[],"created_at":"2023-08-21T19:44:52.101073+00:00","modified_at":"2023-08-21T19:44:52.101079+00:00","user_count":0,"link_count":0},"relationships":{"team_links":{"links":{"related":"/api/v2/team/320db0de-405b-11ee-bb10-da7ad0900002/links"}},"user_team_permissions":{"links":{"related":"/api/v2/team/320db0de-405b-11ee-bb10-da7ad0900002/permission-settings"}}}}}
 
         '
     headers:
@@ -25,7 +25,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/team/abb3161e-20d9-11ee-95db-da7ad0900002
+    uri: https://api.datadoghq.com/api/v2/team/320db0de-405b-11ee-bb10-da7ad0900002
   response:
     body:
       string: ''
@@ -39,10 +39,10 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/team/abb3161e-20d9-11ee-95db-da7ad0900002
+    uri: https://api.datadoghq.com/api/v2/team/320db0de-405b-11ee-bb10-da7ad0900002
   response:
     body:
-      string: '{"errors":["Team for ID abb3161e-20d9-11ee-95db-da7ad0900002 not found"]}'
+      string: '{"errors":["Team for ID 320db0de-405b-11ee-bb10-da7ad0900002 not found"]}'
     headers:
       content-type:
       - application/json
