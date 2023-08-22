@@ -622,7 +622,6 @@ components:
       description: An object related to an API key.
       oneOf:
       - $ref: '#/components/schemas/User'
-      type: object
     APIKeyUpdateAttributes:
       description: Attributes used to update an API Key.
       properties:
@@ -764,7 +763,6 @@ components:
       oneOf:
       - $ref: '#/components/schemas/User'
       - $ref: '#/components/schemas/Role'
-      type: object
     ApplicationKeyUpdateAttributes:
       description: Attributes used to update an application Key.
       properties:
@@ -1145,8 +1143,6 @@ components:
       oneOf:
       - $ref: '#/components/schemas/SAMLAssertionAttribute'
       - $ref: '#/components/schemas/Role'
-      properties: {}
-      type: object
     AuthNMappingRelationships:
       description: All relationships associated with AuthN Mapping.
       properties:
@@ -3877,7 +3873,6 @@ components:
       oneOf:
       - $ref: '#/components/schemas/DowntimeMonitorIdentifierId'
       - $ref: '#/components/schemas/DowntimeMonitorIdentifierTags'
-      type: object
     DowntimeMonitorIdentifierId:
       additionalProperties: {}
       description: Object of the monitor identifier.
@@ -4112,13 +4107,11 @@ components:
       oneOf:
       - $ref: '#/components/schemas/User'
       - $ref: '#/components/schemas/DowntimeMonitorIncludedItem'
-      type: object
     DowntimeScheduleCreateRequest:
       description: Schedule for the downtime.
       oneOf:
       - $ref: '#/components/schemas/DowntimeScheduleRecurrencesCreateRequest'
       - $ref: '#/components/schemas/DowntimeScheduleOneTimeCreateUpdateRequest'
-      type: object
     DowntimeScheduleCurrentDowntimeResponse:
       description: 'The most recent actual start and end dates for a recurring downtime.
         For a canceled downtime,
@@ -4300,13 +4293,11 @@ components:
       oneOf:
       - $ref: '#/components/schemas/DowntimeScheduleRecurrencesResponse'
       - $ref: '#/components/schemas/DowntimeScheduleOneTimeResponse'
-      type: object
     DowntimeScheduleUpdateRequest:
       description: Schedule for the downtime.
       oneOf:
       - $ref: '#/components/schemas/DowntimeScheduleRecurrencesUpdateRequest'
       - $ref: '#/components/schemas/DowntimeScheduleOneTimeCreateUpdateRequest'
-      type: object
     DowntimeScope:
       description: The scope to which the downtime applies. Must follow the [common
         search syntax](https://docs.datadoghq.com/logs/explorer/search_syntax/).
@@ -5858,7 +5849,6 @@ components:
       oneOf:
       - $ref: '#/components/schemas/IncidentAttachmentPostmortemAttributes'
       - $ref: '#/components/schemas/IncidentAttachmentLinkAttributes'
-      type: object
     IncidentAttachmentData:
       description: A single incident attachment.
       example:
@@ -5973,7 +5963,6 @@ components:
       oneOf:
       - $ref: '#/components/schemas/IncidentAttachmentPostmortemAttributes'
       - $ref: '#/components/schemas/IncidentAttachmentLinkAttributes'
-      type: object
     IncidentAttachmentUpdateData:
       description: A single incident attachment.
       properties:
@@ -6079,7 +6068,6 @@ components:
       description: An object related to an attachment that is included in the response.
       oneOf:
       - $ref: '#/components/schemas/User'
-      type: object
     IncidentCreateAttributes:
       description: The incident's attributes for a create request.
       properties:
@@ -6160,7 +6148,6 @@ components:
       - $ref: '#/components/schemas/IncidentFieldAttributesMultipleValue'
       required:
       - type
-      type: object
     IncidentFieldAttributesMultipleValue:
       description: A field with potentially multiple values selected.
       properties:
@@ -6291,7 +6278,6 @@ components:
       oneOf:
       - $ref: '#/components/schemas/SlackIntegrationMetadata'
       - $ref: '#/components/schemas/JiraIntegrationMetadata'
-      type: object
     IncidentIntegrationMetadataPatchData:
       description: Incident integration metadata data for a patch request.
       properties:
@@ -6345,7 +6331,6 @@ components:
         in the response.
       oneOf:
       - $ref: '#/components/schemas/User'
-      type: object
     IncidentIntegrationMetadataType:
       default: incident_integrations
       description: Integration metadata resource type.
@@ -6525,7 +6510,6 @@ components:
       oneOf:
       - $ref: '#/components/schemas/User'
       - $ref: '#/components/schemas/IncidentAttachmentData'
-      type: object
     IncidentResponseMeta:
       description: The metadata object containing pagination metadata.
       properties:
@@ -6825,7 +6809,6 @@ components:
         included payload.
       oneOf:
       - $ref: '#/components/schemas/User'
-      type: object
     IncidentServiceRelationships:
       description: The incident service's relationships.
       properties:
@@ -6984,7 +6967,6 @@ components:
         payload.
       oneOf:
       - $ref: '#/components/schemas/User'
-      type: object
     IncidentTeamRelationships:
       description: The incident team's relationships.
       properties:
@@ -7111,7 +7093,6 @@ components:
       description: The timeline cell's attributes for a create request.
       oneOf:
       - $ref: '#/components/schemas/IncidentTimelineCellMarkdownCreateAttributes'
-      type: object
     IncidentTimelineCellMarkdownContentType:
       default: markdown
       description: Type of the Markdown timeline cell.
@@ -7313,7 +7294,6 @@ components:
       description: An object related to an incident todo that is included in the response.
       oneOf:
       - $ref: '#/components/schemas/User'
-      type: object
     IncidentTodoType:
       default: incident_todos
       description: Todo resource type.
@@ -8053,7 +8033,6 @@ components:
       required:
       - type
       - integration
-      type: object
     LogsArchiveDefinition:
       description: The definition of an archive.
       properties:
@@ -8083,7 +8062,6 @@ components:
       required:
       - type
       - integration
-      type: object
     LogsArchiveDestinationAzure:
       description: The Azure archive destination.
       properties:
@@ -9631,7 +9609,6 @@ components:
       oneOf:
       - $ref: '#/components/schemas/MetricDistinctVolume'
       - $ref: '#/components/schemas/MetricIngestedIndexedVolume'
-      type: object
     MetricVolumesResponse:
       description: Response object which includes a single metric's volume.
       properties:
@@ -9670,7 +9647,6 @@ components:
       oneOf:
       - $ref: '#/components/schemas/Metric'
       - $ref: '#/components/schemas/MetricTagConfiguration'
-      type: object
     MetricsAndMetricTagConfigurationsResponse:
       description: Response object that includes metrics and metric tag configurations.
       properties:
@@ -9813,12 +9789,10 @@ components:
       description: Configuration for the policy.
       oneOf:
       - $ref: '#/components/schemas/MonitorConfigPolicyTagPolicy'
-      type: object
     MonitorConfigPolicyPolicyCreateRequest:
       description: Configuration for the policy.
       oneOf:
       - $ref: '#/components/schemas/MonitorConfigPolicyTagPolicyCreateRequest'
-      type: object
     MonitorConfigPolicyResourceType:
       default: monitor-config-policy
       description: Monitor configuration policy resource type.
@@ -12138,7 +12112,6 @@ components:
       oneOf:
       - $ref: '#/components/schemas/GroupScalarColumn'
       - $ref: '#/components/schemas/DataScalarColumn'
-      type: object
     ScalarFormulaQueryRequest:
       description: A wrapper request around one scalar query to be executed.
       properties:
@@ -12247,10 +12220,13 @@ components:
       type: object
     ScalarQuery:
       description: An individual scalar query to one of the basic Datadog data sources.
+      example:
+        aggregator: avg
+        data_source: metrics
+        query: avg:system.cpu.user{*} by {env}
       oneOf:
       - $ref: '#/components/schemas/MetricsScalarQuery'
       - $ref: '#/components/schemas/EventsScalarQuery'
-      type: object
     ScalarResponse:
       description: A message containing the response to a scalar query.
       properties:
@@ -12563,7 +12539,6 @@ components:
       - $ref: '#/components/schemas/SecurityMonitoringStandardRuleCreatePayload'
       - $ref: '#/components/schemas/SecurityMonitoringSignalRuleCreatePayload'
       - $ref: '#/components/schemas/CloudConfigurationRuleCreatePayload'
-      type: object
     SecurityMonitoringRuleDecreaseCriticalityBasedOnEnv:
       description: 'If true, signals in non-production environments have a lower severity
         than what is defined by the rule case, which can reduce signal noise.
@@ -12794,7 +12769,6 @@ components:
       oneOf:
       - $ref: '#/components/schemas/SecurityMonitoringStandardRuleQuery'
       - $ref: '#/components/schemas/SecurityMonitoringSignalRuleQuery'
-      type: object
     SecurityMonitoringRuleQueryAggregation:
       description: The aggregation type.
       enum:
@@ -12821,7 +12795,6 @@ components:
       oneOf:
       - $ref: '#/components/schemas/SecurityMonitoringStandardRuleResponse'
       - $ref: '#/components/schemas/SecurityMonitoringSignalRuleResponse'
-      type: object
     SecurityMonitoringRuleSeverity:
       description: Severity of the Security Signal.
       enum:
@@ -13758,7 +13731,6 @@ components:
       oneOf:
       - $ref: '#/components/schemas/SensitiveDataScannerRuleIncludedItem'
       - $ref: '#/components/schemas/SensitiveDataScannerGroupIncludedItem'
-      type: object
     SensitiveDataScannerGetConfigResponse:
       description: Get all groups response.
       properties:
@@ -14487,6 +14459,7 @@ components:
           description: "Service owner\u2019s Slack channel."
           example: https://yourcompany.slack.com/archives/channel123
           type: string
+      type: object
     ServiceDefinitionV1Info:
       description: Basic information about a service.
       properties:
@@ -16144,8 +16117,6 @@ components:
       - $ref: '#/components/schemas/User'
       - $ref: '#/components/schemas/TeamLink'
       - $ref: '#/components/schemas/UserTeamPermission'
-      properties: {}
-      type: object
     TeamLink:
       description: Team link
       properties:
@@ -16623,10 +16594,12 @@ components:
     TimeseriesQuery:
       description: An individual timeseries query to one of the basic Datadog data
         sources.
+      example:
+        data_source: metrics
+        query: avg:system.cpu.user{*} by {env}
       oneOf:
       - $ref: '#/components/schemas/MetricsTimeseriesQuery'
       - $ref: '#/components/schemas/EventsTimeseriesQuery'
-      type: object
     TimeseriesResponse:
       description: A message containing the response to a timeseries query.
       properties:
@@ -17016,7 +16989,6 @@ components:
       - $ref: '#/components/schemas/Organization'
       - $ref: '#/components/schemas/Permission'
       - $ref: '#/components/schemas/Role'
-      type: object
     UserResponseRelationships:
       description: Relationships of the user object returned by the API.
       properties:
