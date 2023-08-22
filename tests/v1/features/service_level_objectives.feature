@@ -212,7 +212,7 @@ Feature: Service Level Objectives
   Scenario: Update an SLO returns "Not Found" response
     Given new "UpdateSLO" request
     And request contains "slo_id" parameter from "REPLACE.ME"
-    And body with value null
+    And body with value {"description": null, "groups": ["env:prod", "role:mysql"], "monitor_ids": [], "monitor_tags": [], "name": "Custom Metric SLO", "query": {"denominator": "sum:my.custom.metric{*}.as_count()", "numerator": "sum:my.custom.metric{type:good}.as_count()"}, "tags": ["env:prod", "app:core"], "target_threshold": 99.9, "thresholds": [{"target": 95, "timeframe": "7d"}, {"target": 95, "timeframe": "30d", "warning": 97}], "timeframe": "30d", "type": "metric", "warning_threshold": 99.95}
     When the request is sent
     Then the response status is 404 Not Found
 
