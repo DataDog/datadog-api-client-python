@@ -15,7 +15,7 @@ class DistributionPoint(ModelSimple):
     Array of distribution points.
 
 
-    :type value: [float, DistributionPointData]
+    :type value: [float, [float]]
     """
 
     validations = {
@@ -28,5 +28,5 @@ class DistributionPoint(ModelSimple):
     @cached_property
     def openapi_types(_):
         return {
-            "value": ([float, DistributionPointData],),
+            "value": ([float, [float]],),
         }

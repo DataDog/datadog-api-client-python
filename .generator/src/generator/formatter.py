@@ -27,7 +27,6 @@ WHITELISTED_LIST_MODELS = {
         "AzureAccountListResponse",
         "DashboardBulkActionDataList",
         "DistributionPoint",
-        "DistributionPointData",
         "GCPAccountListResponse",
         "HTTPLog",
         "LogsPipelineList",
