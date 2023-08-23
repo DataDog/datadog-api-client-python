@@ -483,7 +483,7 @@ class SyntheticsApi:
         self._get_synthetics_default_locations_endpoint = _Endpoint(
             settings={
                 "response_type": ([str],),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/synthetics/settings/default_locations",
                 "operation_id": "get_synthetics_default_locations",
                 "http_method": "GET",
