@@ -16,7 +16,7 @@ class ListStreamSource(ModelSimple):
     """
     Source from which to query items to display in the stream.
 
-    :param value: If omitted defaults to "apm_issue_stream". Must be one of ["logs_stream", "audit_stream", "ci_pipeline_stream", "ci_test_stream", "rum_issue_stream", "apm_issue_stream", "logs_issue_stream", "logs_pattern_stream", "logs_transaction_stream", "event_stream"].
+    :param value: If omitted defaults to "apm_issue_stream". Must be one of ["logs_stream", "audit_stream", "ci_pipeline_stream", "ci_test_stream", "rum_issue_stream", "apm_issue_stream", "trace_stream", "logs_issue_stream", "logs_pattern_stream", "logs_transaction_stream", "event_stream"].
     :type value: str
     """
 
@@ -27,6 +27,7 @@ class ListStreamSource(ModelSimple):
         "ci_test_stream",
         "rum_issue_stream",
         "apm_issue_stream",
+        "trace_stream",
         "logs_issue_stream",
         "logs_pattern_stream",
         "logs_transaction_stream",
@@ -38,6 +39,7 @@ class ListStreamSource(ModelSimple):
     CI_TEST_STREAM: ClassVar["ListStreamSource"]
     RUM_ISSUE_STREAM: ClassVar["ListStreamSource"]
     APM_ISSUE_STREAM: ClassVar["ListStreamSource"]
+    TRACE_STREAM: ClassVar["ListStreamSource"]
     LOGS_ISSUE_STREAM: ClassVar["ListStreamSource"]
     LOGS_PATTERN_STREAM: ClassVar["ListStreamSource"]
     LOGS_TRANSACTION_STREAM: ClassVar["ListStreamSource"]
@@ -56,6 +58,7 @@ ListStreamSource.CI_PIPELINE_STREAM = ListStreamSource("ci_pipeline_stream")
 ListStreamSource.CI_TEST_STREAM = ListStreamSource("ci_test_stream")
 ListStreamSource.RUM_ISSUE_STREAM = ListStreamSource("rum_issue_stream")
 ListStreamSource.APM_ISSUE_STREAM = ListStreamSource("apm_issue_stream")
+ListStreamSource.TRACE_STREAM = ListStreamSource("trace_stream")
 ListStreamSource.LOGS_ISSUE_STREAM = ListStreamSource("logs_issue_stream")
 ListStreamSource.LOGS_PATTERN_STREAM = ListStreamSource("logs_pattern_stream")
 ListStreamSource.LOGS_TRANSACTION_STREAM = ListStreamSource("logs_transaction_stream")
