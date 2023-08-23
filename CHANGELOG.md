@@ -1,5 +1,39 @@
 # Changelog
 
+## 2.16.0 / 2023-08-23
+
+### Fixed
+* Handle `{}` and `bool` for additionalProperties by @skarimo in https://github.com/DataDog/datadog-api-client-python/pull/1590
+* Update team schemas by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1588
+* Mark downtime v2 start response as required by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1601
+* Document new properties and fix security monitoring schemas by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1587
+* Add missing CI App fields `page` and `test_level` by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1565
+### Added
+* Update stated limit for api/v2/metrics from 14 days to 30 days by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1594
+* Add missing sensitive data scanner fields by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1584
+* Add support for retry of HTTP requests by @HantingZhang2 in https://github.com/DataDog/datadog-api-client-python/pull/1384
+* Add Workflow Executions to usage metering API by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1597
+* Add missing `type` field for OnDemandConcurrencyCap response by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1586
+* Add CI Visibility Intelligent Test Runner to usage metering API by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1595
+* Add custom_links to distribution widget schema by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1605
+* Add usage field `region` by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1606
+* Add `message` field to audit logs response by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1608
+* Add `tags` field to dashboard list response by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1607
+* Support retry in async client by @therve in https://github.com/DataDog/datadog-api-client-python/pull/1613
+* API specs for user team memberships by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1618
+* Document `EQUAL` comparator by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1621
+* Add persistCookies option synthetics test request by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1620
+* Expose sds_scanned_bytes_usage in usage attribution API by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1624
+* Add support in azure integration endpoint for app service plan filters/cspm/custom metrics by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1619
+* Support paginated methods in async client by @therve in https://github.com/DataDog/datadog-api-client-python/pull/1615
+* Add APM and USM usage attribution type by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1617
+* Document new attributes for team models by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1614
+
+## New Contributors
+* @HantingZhang2 made their first contribution in https://github.com/DataDog/datadog-api-client-python/pull/1384
+
+**Full Changelog**: https://github.com/DataDog/datadog-api-client-python/compare/2.15.0...2.16.0
+
 ## 2.15.0 / 2023-07-20
 
 ### Fixed
