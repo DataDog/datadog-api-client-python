@@ -530,7 +530,7 @@ class SecurityMonitoringApi:
         self._update_finding_endpoint = _Endpoint(
             settings={
                 "response_type": (MuteFindingResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/posture_management/findings/{finding_id}",
                 "operation_id": "update_finding",
                 "http_method": "PATCH",

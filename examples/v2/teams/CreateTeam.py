@@ -14,8 +14,8 @@ from datadog_api_client.v2.model.team_type import TeamType
 body = TeamCreateRequest(
     data=TeamCreate(
         attributes=TeamCreateAttributes(
-            handle="handle-a0fc0297eb519635",
-            name="name-a0fc0297eb519635",
+            handle="test-handle-a0fc0297eb519635",
+            name="test-name-a0fc0297eb519635",
         ),
         relationships=TeamCreateRelationships(
             users=RelationshipToUsers(

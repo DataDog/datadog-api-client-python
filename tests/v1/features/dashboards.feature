@@ -732,6 +732,15 @@ Feature: Dashboards
     And the response "widgets[0].definition.env" is equal to "none"
 
   @team:DataDog/dashboards-backend
+  Scenario: Create a new dashboard with trace_stream widget
+    Given new "CreateDashboard" request
+    And body with value {"layout_type": "ordered", "title": "{{ unique }} with list_stream widget","widgets": [{"definition": {"type": "list_stream","requests": [{"columns":[{"width":"auto","field":"timestamp"},{"width":"auto","field":"service"}],"query":{"data_source":"trace_stream","query_string":""},"response_format":"event_list"}]}}]}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.type" is equal to "list_stream"
+    And the response "widgets[0].definition.requests[0].query.data_source" is equal to "trace_stream"
+
+  @team:DataDog/dashboards-backend
   Scenario: Create a new timeseries widget with ci_pipelines data source
     Given new "CreateDashboard" request
     And body with value {"title":"{{ unique }} with ci_pipelines datasource","widgets":[{"definition":{"title":"","show_legend":true,"legend_layout":"auto","legend_columns":["avg","min","max","value","sum"],"time":{},"type":"timeseries","requests":[{"formulas":[{"formula":"query1"}],"queries":[{"data_source":"ci_pipelines","name":"query1","search":{"query":"ci_level:job"},"indexes":["*"],"compute":{"aggregation":"count", "metric": "@ci.queue_time"},"group_by":[]}],"response_format":"timeseries","style":{"palette":"dog_classic","line_type":"solid","line_width":"normal"},"display_type":"line"}]}}],"layout_type":"ordered","reflow_type":"auto"}
