@@ -27,7 +27,6 @@ WHITELISTED_LIST_MODELS = {
         "AzureAccountListResponse",
         "DashboardBulkActionDataList",
         "DistributionPoint",
-        "DistributionPointData",
         "GCPAccountListResponse",
         "HTTPLog",
         "LogsPipelineList",
@@ -62,7 +61,6 @@ WHITELISTED_LIST_MODELS = {
         "TimeseriesResponseTimes",
         "TimeseriesResponseValues",
         "TimeseriesResponseValuesList",
-
     ),
 }
 

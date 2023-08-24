@@ -11,7 +11,7 @@ class {{ name }}(ModelSimple):
 {%- if ref %}
     :type value: [{{ ref }}]
 {%- else %}
-    :type value: [{{ type_to_python(model.get("items"), in_list=True) }}{%- if model["items"].get("nullable") %}, none_type{%- endif %}]
+    :type value: [{{ type_to_python(model.get("items")) }}{%- if model["items"].get("nullable") %}, none_type{%- endif %}]
 {%- endif %}
     """
 
@@ -65,6 +65,6 @@ class {{ name }}(ModelSimple):
         }
 {%- else %}
         return {
-            "value": ([{{ type_to_python(model.get("items"), in_list=True) }}{%- if model["items"].get("nullable") %}, none_type{%- endif %}],),
+            "value": ([{{ type_to_python(model.get("items")) }}{%- if model["items"].get("nullable") %}, none_type{%- endif %}],),
         }
 {%- endif %}

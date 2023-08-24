@@ -519,13 +519,6 @@ distribution\_point
    :members:
    :show-inheritance:
 
-distribution\_point\_data
--------------------------
-
-.. automodule:: datadog_api_client.v1.model.distribution_point_data
-   :members:
-   :show-inheritance:
-
 distribution\_points\_content\_encoding
 ---------------------------------------
 
