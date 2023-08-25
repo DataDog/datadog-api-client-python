@@ -27185,6 +27185,7 @@ paths:
         name: limit
         required: false
         schema:
+          default: 25
           format: int64
           type: integer
       responses:
@@ -27210,6 +27211,10 @@ paths:
       summary: Get all SLO corrections
       tags:
       - Service Level Objective Corrections
+      x-pagination:
+        limitParam: limit
+        pageOffsetParam: offset
+        resultsPath: data
     post:
       description: Create an SLO Correction.
       operationId: CreateSLOCorrection

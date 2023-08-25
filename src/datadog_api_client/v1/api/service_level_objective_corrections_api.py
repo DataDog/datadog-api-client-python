@@ -3,15 +3,19 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
+import collections
 from typing import Any, Dict, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
 from datadog_api_client.model_utils import (
+    set_attribute_from_path,
+    get_attribute_from_path,
     UnsetType,
     unset,
 )
 from datadog_api_client.v1.model.slo_correction_list_response import SLOCorrectionListResponse
+from datadog_api_client.v1.model.slo_correction import SLOCorrection
 from datadog_api_client.v1.model.slo_correction_response import SLOCorrectionResponse
 from datadog_api_client.v1.model.slo_correction_create_request import SLOCorrectionCreateRequest
 from datadog_api_client.v1.model.slo_correction_update_request import SLOCorrectionUpdateRequest
@@ -224,6 +228,43 @@ class ServiceLevelObjectiveCorrectionsApi:
             kwargs["limit"] = limit
 
         return self._list_slo_correction_endpoint.call_with_http_info(**kwargs)
+
+    def list_slo_correction_with_pagination(
+        self,
+        *,
+        offset: Union[int, UnsetType] = unset,
+        limit: Union[int, UnsetType] = unset,
+    ) -> collections.abc.Iterable[SLOCorrection]:
+        """Get all SLO corrections.
+
+        Provide a paginated version of :meth:`list_slo_correction`, returning all items.
+
+        :param offset: The specific offset to use as the beginning of the returned response.
+        :type offset: int, optional
+        :param limit: The number of SLO corrections to return in the response. Default is 25.
+        :type limit: int, optional
+
+        :return: A generator of paginated results.
+        :rtype: collections.abc.Iterable[SLOCorrection]
+        """
+        kwargs: Dict[str, Any] = {}
+        if offset is not unset:
+            kwargs["offset"] = offset
+
+        if limit is not unset:
+            kwargs["limit"] = limit
+
+        local_page_size = get_attribute_from_path(kwargs, "limit", 25)
+        endpoint = self._list_slo_correction_endpoint
+        set_attribute_from_path(kwargs, "limit", local_page_size, endpoint.params_map)
+        pagination = {
+            "limit_value": local_page_size,
+            "results_path": "data",
+            "page_offset_param": "offset",
+            "endpoint": endpoint,
+            "kwargs": kwargs,
+        }
+        return endpoint.call_with_http_info_paginated(pagination)
 
     def update_slo_correction(
         self,

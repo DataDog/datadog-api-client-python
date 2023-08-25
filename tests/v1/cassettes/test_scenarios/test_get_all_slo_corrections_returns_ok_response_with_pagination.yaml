@@ -1,0 +1,41 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v1/slo/correction?limit=2
+  response:
+    body:
+      string: '{"data":[{"type":"correction","id":"fb76e0fa-bf7b-11ed-ba7e-da7ad0902002","attributes":{"slo_id":"a17acfd48b7c55d19192e3a697cc1d01","start":1678255200,"end":1678355280,"description":"","category":"Other","timezone":"UTC","created_at":1678477473,"modified_at":1678477473,"rrule":null,"duration":null,"creator":{"data":{"type":"users","id":"35c75d43-eba0-11e9-a77a-2b3585ff5dfb","attributes":{"uuid":"35c75d43-eba0-11e9-a77a-2b3585ff5dfb","handle":"support-nickautotestingorg","email":"support-user-prod@datadoghq.com","name":"Datadog
+        Support","icon":"https://secure.gravatar.com/avatar/e6952b5f29fe2d996cf4e63f40db9e71?s=48&d=retro"}}},"modifier":null}},{"type":"correction","id":"2d16c2ee-bf70-11ed-895f-da7ad0902002","attributes":{"slo_id":"70e82706f4ae56ff8bdd7f02e767f97c","start":1678255200,"end":1678339140,"description":"","category":"Other","timezone":"UTC","created_at":1678472403,"modified_at":1678472403,"rrule":null,"duration":null,"creator":{"data":{"type":"users","id":"35c75d43-eba0-11e9-a77a-2b3585ff5dfb","attributes":{"uuid":"35c75d43-eba0-11e9-a77a-2b3585ff5dfb","handle":"support-nickautotestingorg","email":"support-user-prod@datadoghq.com","name":"Datadog
+        Support","icon":"https://secure.gravatar.com/avatar/e6952b5f29fe2d996cf4e63f40db9e71?s=48&d=retro"}}},"modifier":null}}],"meta":{"page":{"total_count":3,"total_filtered_count":2}}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v1/slo/correction?limit=2&offset=2
+  response:
+    body:
+      string: '{"data":[{"type":"correction","id":"cc2316d2-bf6e-11ed-82f2-da7ad0902002","attributes":{"slo_id":"955ab6301fa656e7b061de4a05ad4774","start":1678255200,"end":1678339140,"description":"","category":"Other","timezone":"UTC","created_at":1678471811,"modified_at":1678471811,"rrule":null,"duration":null,"creator":{"data":{"type":"users","id":"35c75d43-eba0-11e9-a77a-2b3585ff5dfb","attributes":{"uuid":"35c75d43-eba0-11e9-a77a-2b3585ff5dfb","handle":"support-nickautotestingorg","email":"support-user-prod@datadoghq.com","name":"Datadog
+        Support","icon":"https://secure.gravatar.com/avatar/e6952b5f29fe2d996cf4e63f40db9e71?s=48&d=retro"}}},"modifier":null}}],"meta":{"page":{"total_count":3,"total_filtered_count":1}}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

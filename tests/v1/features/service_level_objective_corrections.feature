@@ -72,6 +72,14 @@ Feature: Service Level Objective Corrections
     Then the response status is 200 OK
     And the response "data" has length 1
 
+  @replay-only @skip-validation @team:DataDog/slo-app @with-pagination
+  Scenario: Get all SLO corrections returns "OK" response with pagination
+    Given new "ListSLOCorrection" request
+    And request contains "limit" parameter with value 2
+    When the request with pagination is sent
+    Then the response status is 200 OK
+    And the response has 3 items
+
   @generated @skip @team:DataDog/slo-app
   Scenario: Get an SLO correction for an SLO returns "Bad Request" response
     Given new "GetSLOCorrection" request
