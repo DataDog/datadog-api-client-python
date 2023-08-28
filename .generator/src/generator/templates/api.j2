@@ -206,13 +206,18 @@ class {{ classname }}:
         set_attribute_from_path(kwargs, "{{ pagination.limitParam|attribute_path }}", local_page_size, endpoint.params_map)
         pagination = {
             "limit_value": local_page_size,
+            {%- if pagination.resultsPath %}
             "results_path": "{{ pagination.resultsPath|attribute_path }}",
+            {%- endif %}
             {%- if pagination.cursorParam %}
             "cursor_param": "{{ pagination.cursorParam|attribute_path }}",
             "cursor_path": "{{ pagination.cursorPath }}",
             {%- endif %}
             {%- if pagination.pageOffsetParam %}
             "page_offset_param": "{{ pagination.pageOffsetParam|attribute_path }}",
+            {%- endif %}
+            {%- if pagination.pageParam %}
+            "page_param": "{{ pagination.pageParam|attribute_path }}",
             {%- endif %}
             "endpoint": endpoint,
             "kwargs": kwargs,
