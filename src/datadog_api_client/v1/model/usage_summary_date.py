@@ -90,6 +90,7 @@ class UsageSummaryDate(ModelNormal):
             "opentelemetry_apm_host_top99p": (int,),
             "opentelemetry_host_top99p": (int,),
             "orgs": ([UsageSummaryDateOrg],),
+            "profiling_aas_count_top99p": (int,),
             "profiling_host_top99p": (int,),
             "rum_browser_and_mobile_session_count": (int,),
             "rum_session_count_sum": (int,),
@@ -178,6 +179,7 @@ class UsageSummaryDate(ModelNormal):
         "opentelemetry_apm_host_top99p": "opentelemetry_apm_host_top99p",
         "opentelemetry_host_top99p": "opentelemetry_host_top99p",
         "orgs": "orgs",
+        "profiling_aas_count_top99p": "profiling_aas_count_top99p",
         "profiling_host_top99p": "profiling_host_top99p",
         "rum_browser_and_mobile_session_count": "rum_browser_and_mobile_session_count",
         "rum_session_count_sum": "rum_session_count_sum",
@@ -267,6 +269,7 @@ class UsageSummaryDate(ModelNormal):
         opentelemetry_apm_host_top99p: Union[int, UnsetType] = unset,
         opentelemetry_host_top99p: Union[int, UnsetType] = unset,
         orgs: Union[List[UsageSummaryDateOrg], UnsetType] = unset,
+        profiling_aas_count_top99p: Union[int, UnsetType] = unset,
         profiling_host_top99p: Union[int, UnsetType] = unset,
         rum_browser_and_mobile_session_count: Union[int, UnsetType] = unset,
         rum_session_count_sum: Union[int, UnsetType] = unset,
@@ -489,6 +492,9 @@ class UsageSummaryDate(ModelNormal):
         :param orgs: Organizations associated with a user.
         :type orgs: [UsageSummaryDateOrg], optional
 
+        :param profiling_aas_count_top99p: Shows the 99th percentile of all profiled Azure app services over all hours in the current date for all organizations.
+        :type profiling_aas_count_top99p: int, optional
+
         :param profiling_host_top99p: Shows the 99th percentile of all profiled hosts over all hours in the current date for all organizations.
         :type profiling_host_top99p: int, optional
 
@@ -678,6 +684,8 @@ class UsageSummaryDate(ModelNormal):
             kwargs["opentelemetry_host_top99p"] = opentelemetry_host_top99p
         if orgs is not unset:
             kwargs["orgs"] = orgs
+        if profiling_aas_count_top99p is not unset:
+            kwargs["profiling_aas_count_top99p"] = profiling_aas_count_top99p
         if profiling_host_top99p is not unset:
             kwargs["profiling_host_top99p"] = profiling_host_top99p
         if rum_browser_and_mobile_session_count is not unset:

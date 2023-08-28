@@ -19,6 +19,7 @@ class UsageProfilingHour(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
+            "aas_count": (int, none_type),
             "avg_container_agent_count": (int, none_type),
             "host_count": (int, none_type),
             "hour": (datetime,),
@@ -27,6 +28,7 @@ class UsageProfilingHour(ModelNormal):
         }
 
     attribute_map = {
+        "aas_count": "aas_count",
         "avg_container_agent_count": "avg_container_agent_count",
         "host_count": "host_count",
         "hour": "hour",
@@ -36,6 +38,7 @@ class UsageProfilingHour(ModelNormal):
 
     def __init__(
         self_,
+        aas_count: Union[int, none_type, UnsetType] = unset,
         avg_container_agent_count: Union[int, none_type, UnsetType] = unset,
         host_count: Union[int, none_type, UnsetType] = unset,
         hour: Union[datetime, UnsetType] = unset,
@@ -45,6 +48,9 @@ class UsageProfilingHour(ModelNormal):
     ):
         """
         The number of profiled hosts for each hour for a given organization.
+
+        :param aas_count: Contains the total number of profiled Azure app services reporting during a given hour.
+        :type aas_count: int, none_type, optional
 
         :param avg_container_agent_count: Get average number of container agents for that hour.
         :type avg_container_agent_count: int, none_type, optional
@@ -61,6 +67,8 @@ class UsageProfilingHour(ModelNormal):
         :param public_id: The organization public ID.
         :type public_id: str, optional
         """
+        if aas_count is not unset:
+            kwargs["aas_count"] = aas_count
         if avg_container_agent_count is not unset:
             kwargs["avg_container_agent_count"] = avg_container_agent_count
         if host_count is not unset:
