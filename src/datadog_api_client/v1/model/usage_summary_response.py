@@ -96,6 +96,7 @@ class UsageSummaryResponse(ModelNormal):
             "online_archive_events_count_agg_sum": (int,),
             "opentelemetry_apm_host_top99p_sum": (int,),
             "opentelemetry_host_top99p_sum": (int,),
+            "profiling_aas_count_top99p_sum": (int,),
             "profiling_container_agent_count_avg": (int,),
             "profiling_host_count_top99p_sum": (int,),
             "rehydrated_indexed_events_agg_sum": (int,),
@@ -193,6 +194,7 @@ class UsageSummaryResponse(ModelNormal):
         "online_archive_events_count_agg_sum": "online_archive_events_count_agg_sum",
         "opentelemetry_apm_host_top99p_sum": "opentelemetry_apm_host_top99p_sum",
         "opentelemetry_host_top99p_sum": "opentelemetry_host_top99p_sum",
+        "profiling_aas_count_top99p_sum": "profiling_aas_count_top99p_sum",
         "profiling_container_agent_count_avg": "profiling_container_agent_count_avg",
         "profiling_host_count_top99p_sum": "profiling_host_count_top99p_sum",
         "rehydrated_indexed_events_agg_sum": "rehydrated_indexed_events_agg_sum",
@@ -291,6 +293,7 @@ class UsageSummaryResponse(ModelNormal):
         online_archive_events_count_agg_sum: Union[int, UnsetType] = unset,
         opentelemetry_apm_host_top99p_sum: Union[int, UnsetType] = unset,
         opentelemetry_host_top99p_sum: Union[int, UnsetType] = unset,
+        profiling_aas_count_top99p_sum: Union[int, UnsetType] = unset,
         profiling_container_agent_count_avg: Union[int, UnsetType] = unset,
         profiling_host_count_top99p_sum: Union[int, UnsetType] = unset,
         rehydrated_indexed_events_agg_sum: Union[int, UnsetType] = unset,
@@ -530,6 +533,9 @@ class UsageSummaryResponse(ModelNormal):
         :param opentelemetry_host_top99p_sum: Shows the 99th percentile of all hosts reported by the Datadog exporter for the OpenTelemetry Collector over all hours in the current months for all organizations.
         :type opentelemetry_host_top99p_sum: int, optional
 
+        :param profiling_aas_count_top99p_sum: Shows the 99th percentile of all profiled Azure app services over all hours in the current months for all organizations.
+        :type profiling_aas_count_top99p_sum: int, optional
+
         :param profiling_container_agent_count_avg: Shows the average number of profiled containers over all hours in the current months for all organizations.
         :type profiling_container_agent_count_avg: int, optional
 
@@ -744,6 +750,8 @@ class UsageSummaryResponse(ModelNormal):
             kwargs["opentelemetry_apm_host_top99p_sum"] = opentelemetry_apm_host_top99p_sum
         if opentelemetry_host_top99p_sum is not unset:
             kwargs["opentelemetry_host_top99p_sum"] = opentelemetry_host_top99p_sum
+        if profiling_aas_count_top99p_sum is not unset:
+            kwargs["profiling_aas_count_top99p_sum"] = profiling_aas_count_top99p_sum
         if profiling_container_agent_count_avg is not unset:
             kwargs["profiling_container_agent_count_avg"] = profiling_container_agent_count_avg
         if profiling_host_count_top99p_sum is not unset:

@@ -17220,6 +17220,12 @@ components:
     UsageProfilingHour:
       description: The number of profiled hosts for each hour for a given organization.
       properties:
+        aas_count:
+          description: Contains the total number of profiled Azure app services reporting
+            during a given hour.
+          format: int64
+          nullable: true
+          type: integer
         avg_container_agent_count:
           description: Get average number of container agents for that hour.
           format: int64
@@ -17863,6 +17869,11 @@ components:
           items:
             $ref: '#/components/schemas/UsageSummaryDateOrg'
           type: array
+        profiling_aas_count_top99p:
+          description: Shows the 99th percentile of all profiled Azure app services
+            over all hours in the current date for all organizations.
+          format: int64
+          type: integer
         profiling_host_top99p:
           description: Shows the 99th percentile of all profiled hosts over all hours
             in the current date for all organizations.
@@ -18291,6 +18302,11 @@ components:
           description: Shows the 99th percentile of all hosts reported by the Datadog
             exporter for the OpenTelemetry Collector over all hours in the current
             date for the given org.
+          format: int64
+          type: integer
+        profiling_aas_count_top99p:
+          description: Shows the 99th percentile of all profiled Azure app services
+            over all hours in the current date for all organizations.
           format: int64
           type: integer
         profiling_host_top99p:
@@ -18753,6 +18769,11 @@ components:
           description: Shows the 99th percentile of all hosts reported by the Datadog
             exporter for the OpenTelemetry Collector over all hours in the current
             months for all organizations.
+          format: int64
+          type: integer
+        profiling_aas_count_top99p_sum:
+          description: Shows the 99th percentile of all profiled Azure app services
+            over all hours in the current months for all organizations.
           format: int64
           type: integer
         profiling_container_agent_count_avg:
