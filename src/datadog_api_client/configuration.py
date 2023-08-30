@@ -397,6 +397,18 @@ class Configuration:
         self._logger_format = value
         self.logger_formatter = logging.Formatter(self._logger_format)
 
+    @property
+    def retry_backoff_factor(self):
+        """Retry backoff factor."""
+        return self._retry_backoff_factor
+
+    @retry_backoff_factor.setter
+    def retry_backoff_factor(self, value):
+        """Retry backoff factor."""
+        if value < 2:
+            raise ValueError("Retry backoff factor cannot be smaller than 2")
+        self._retry_backoff_factor = value
+
     def get_api_key_with_prefix(self, identifier, alias=None):
         """Gets API key (with prefix if set).
 
