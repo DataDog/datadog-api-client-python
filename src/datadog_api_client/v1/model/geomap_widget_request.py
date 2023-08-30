@@ -20,6 +20,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.formula_and_function_query_definition import FormulaAndFunctionQueryDefinition
     from datadog_api_client.v1.model.list_stream_query import ListStreamQuery
     from datadog_api_client.v1.model.formula_and_function_response_format import FormulaAndFunctionResponseFormat
+    from datadog_api_client.v1.model.geomap_widget_style import GeomapWidgetStyle
     from datadog_api_client.v1.model.formula_and_function_metric_query_definition import (
         FormulaAndFunctionMetricQueryDefinition,
     )
@@ -52,6 +53,7 @@ class GeomapWidgetRequest(ModelNormal):
         from datadog_api_client.v1.model.formula_and_function_query_definition import FormulaAndFunctionQueryDefinition
         from datadog_api_client.v1.model.list_stream_query import ListStreamQuery
         from datadog_api_client.v1.model.formula_and_function_response_format import FormulaAndFunctionResponseFormat
+        from datadog_api_client.v1.model.geomap_widget_style import GeomapWidgetStyle
 
         return {
             "columns": ([ListStreamColumn],),
@@ -63,6 +65,7 @@ class GeomapWidgetRequest(ModelNormal):
             "response_format": (FormulaAndFunctionResponseFormat,),
             "rum_query": (LogQueryDefinition,),
             "security_query": (LogQueryDefinition,),
+            "style": (GeomapWidgetStyle,),
         }
 
     attribute_map = {
@@ -75,6 +78,7 @@ class GeomapWidgetRequest(ModelNormal):
         "response_format": "response_format",
         "rum_query": "rum_query",
         "security_query": "security_query",
+        "style": "style",
     }
 
     def __init__(
@@ -102,6 +106,7 @@ class GeomapWidgetRequest(ModelNormal):
         response_format: Union[FormulaAndFunctionResponseFormat, UnsetType] = unset,
         rum_query: Union[LogQueryDefinition, UnsetType] = unset,
         security_query: Union[LogQueryDefinition, UnsetType] = unset,
+        style: Union[GeomapWidgetStyle, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -133,6 +138,9 @@ class GeomapWidgetRequest(ModelNormal):
 
         :param security_query: The log query.
         :type security_query: LogQueryDefinition, optional
+
+        :param style: The style for the points coming from this request.
+        :type style: GeomapWidgetStyle, optional
         """
         if columns is not unset:
             kwargs["columns"] = columns
@@ -152,4 +160,6 @@ class GeomapWidgetRequest(ModelNormal):
             kwargs["rum_query"] = rum_query
         if security_query is not unset:
             kwargs["security_query"] = security_query
+        if style is not unset:
+            kwargs["style"] = style
         super().__init__(kwargs)
