@@ -1639,6 +1639,8 @@ class UnparsedObject(ModelNormal):
 
 def get_attribute_from_path(obj, path, default=None):
     """Return an attribute at `path` from the passed object."""
+    if not path:
+        return obj
     for elt in path.split("."):
         try:
             obj = obj[elt]

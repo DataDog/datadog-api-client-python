@@ -1,0 +1,50 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v1/monitor?page_size=2&page=0
+  response:
+    body:
+      string: '[{"id":34822915,"org_id":321813,"type":"query alert","name":"SLO Monitor:
+        aws_alb_latency_p95 for splunk","message":"Latency SLO violation for splunk
+        load balancer(s)","tags":["environment:test","generator:slops","release:e6a2686","sli:latency","slotype:alb","systemid:splunk","team:developer_insights"],"query":"avg(last_1m):avg:aws.applicationelb.target_response_time.p95{systemid:splunk,aws_account_type:production}
+        by {region} > 0.2","options":{"notify_audit":false,"locked":false,"include_tags":true,"thresholds":{"critical":0.2},"new_host_delay":300,"require_full_window":true,"notify_no_data":false,"silenced":{}},"multi":true,"created_at":1620047024000,"created":"2021-05-03T13:03:44.905085+00:00","modified":"2021-05-03T13:03:44.905085+00:00","deleted":null,"restricted_roles":null,"priority":null,"overall_state_modified":"2021-05-03T13:06:23+00:00","overall_state":"No
+        Data","creator":{"name":null,"handle":"frog@datadoghq.com","email":"frog@datadoghq.com","id":1445416},"matching_downtimes":[]},{"id":34822916,"org_id":321813,"type":"query
+        alert","name":"SLO Monitor: aws_classic_elb_latency_p99 for splunk","message":"Latency
+        SLO violation for splunk load balancer(s)","tags":["environment:test","generator:slops","release:e6a2686","sli:latency","slotype:elb","systemid:splunk","team:developer_insights"],"query":"avg(last_1m):avg:aws.elb.latency.p99{systemid:splunk,aws_account_type:production}
+        by {region} > 0.2","options":{"notify_audit":false,"locked":false,"include_tags":true,"thresholds":{"critical":0.2},"new_host_delay":300,"require_full_window":true,"notify_no_data":false,"silenced":{}},"multi":true,"created_at":1620047024000,"created":"2021-05-03T13:03:44.909928+00:00","modified":"2021-05-03T13:03:44.909928+00:00","deleted":null,"restricted_roles":null,"priority":null,"overall_state_modified":"2021-05-03T13:06:18+00:00","overall_state":"No
+        Data","creator":{"name":null,"handle":"frog@datadoghq.com","email":"frog@datadoghq.com","id":1445416},"matching_downtimes":[]}]
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v1/monitor?page_size=2&page=1
+  response:
+    body:
+      string: '[{"id":34822917,"org_id":321813,"type":"query alert","name":"SLO Monitor:
+        aws_alb_latency_p50 for splunk","message":"Latency SLO violation for splunk
+        load balancer(s)","tags":["environment:test","generator:slops","release:e6a2686","sli:latency","slotype:alb","systemid:splunk","team:developer_insights"],"query":"avg(last_1m):avg:aws.applicationelb.target_response_time.p50{systemid:splunk,aws_account_type:production}
+        by {region} > 0.2","options":{"notify_audit":false,"locked":false,"include_tags":true,"thresholds":{"critical":0.2},"new_host_delay":300,"require_full_window":true,"notify_no_data":false,"silenced":{}},"multi":true,"created_at":1620047024000,"created":"2021-05-03T13:03:44.920644+00:00","modified":"2021-05-03T13:03:44.920644+00:00","deleted":null,"restricted_roles":null,"priority":null,"overall_state_modified":"2021-05-03T13:06:37+00:00","overall_state":"No
+        Data","creator":{"name":null,"handle":"frog@datadoghq.com","email":"frog@datadoghq.com","id":1445416},"matching_downtimes":[]}]
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

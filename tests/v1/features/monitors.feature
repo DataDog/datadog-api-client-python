@@ -227,6 +227,14 @@ Feature: Monitors
     When the request is sent
     Then the response status is 200 OK
 
+  @replay-only @skip-validation @team:DataDog/monitor-app @with-pagination
+  Scenario: Get all monitor details returns "OK" response with pagination
+    Given new "ListMonitors" request
+    And request contains "page_size" parameter with value 2
+    When the request with pagination is sent
+    Then the response status is 200 OK
+    And the response has 3 items
+
   @skip @team:DataDog/monitor-app
   Scenario: Get all monitor details with tags
     Given there is a valid "monitor" in the system

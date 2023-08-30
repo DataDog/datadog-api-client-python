@@ -24896,6 +24896,7 @@ paths:
         name: page_size
         required: false
         schema:
+          default: 100
           example: 20
           format: int32
           maximum: 1000
@@ -24931,6 +24932,9 @@ paths:
       summary: Get all monitor details
       tags:
       - Monitors
+      x-pagination:
+        limitParam: page_size
+        pageParam: page
     post:
       description: 'Create a monitor using the specified options.
 
