@@ -1,0 +1,40 @@
+interactions:
+- request:
+    body: '{"description":"Test-Create_a_point_geomap_widget_defining_the_style_for_the_request-1691786509","layout_type":"ordered","notify_list":[],"reflow_type":"fixed","tags":[],"template_variables":[],"title":"Test-Create_a_point_geomap_widget_defining_the_style_for_the_request-1691786509","widgets":[{"definition":{"requests":[{"columns":[{"field":"@network.client.geoip.location.latitude","width":"auto"},{"field":"@network.client.geoip.location.longitude","width":"auto"},{"field":"@network.client.geoip.country.iso_code","width":"auto"},{"field":"@network.client.geoip.subdivision.name","width":"auto"},{"field":"classic","width":"auto"},{"field":"","width":"auto"}],"query":{"data_source":"logs_stream","indexes":[],"query_string":""},"response_format":"event_list","style":{"color_by":"status","palette":"classic"}}],"style":{"palette":"hostmap_blues","palette_flip":false},"title":"","title_align":"left","title_size":"16","type":"geomap","view":{"focus":"WORLD"}},"layout":{"height":6,"width":12,"x":0,"y":0}}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/dashboard
+  response:
+    body:
+      string: '{"id":"iye-x6e-r8i","title":"Test-Create_a_point_geomap_widget_defining_the_style_for_the_request-1691786509","description":"Test-Create_a_point_geomap_widget_defining_the_style_for_the_request-1691786509","author_handle":"frog@datadoghq.com","author_name":null,"layout_type":"ordered","url":"/dashboard/iye-x6e-r8i/test-createapointgeomapwidgetdefiningthestylefortherequest-1691786509","is_read_only":false,"template_variables":[],"widgets":[{"definition":{"requests":[{"columns":[{"field":"@network.client.geoip.location.latitude","width":"auto"},{"field":"@network.client.geoip.location.longitude","width":"auto"},{"field":"@network.client.geoip.country.iso_code","width":"auto"},{"field":"@network.client.geoip.subdivision.name","width":"auto"},{"field":"classic","width":"auto"},{"field":"","width":"auto"}],"query":{"data_source":"logs_stream","indexes":[],"query_string":""},"response_format":"event_list","style":{"color_by":"status","palette":"classic"}}],"style":{"palette":"hostmap_blues","palette_flip":false},"title":"","title_align":"left","title_size":"16","type":"geomap","view":{"focus":"WORLD"}},"layout":{"height":6,"width":12,"x":0,"y":0},"id":7781364417773245}],"notify_list":[],"created_at":"2023-08-11T20:41:49.935982+00:00","modified_at":"2023-08-11T20:41:49.935982+00:00","reflow_type":"fixed","tags":[],"restricted_roles":[]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/dashboard/iye-x6e-r8i
+  response:
+    body:
+      string: '{"deleted_dashboard_id":"iye-x6e-r8i"}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

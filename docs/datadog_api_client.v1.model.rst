@@ -1002,6 +1002,13 @@ geomap\_widget\_request
    :members:
    :show-inheritance:
 
+geomap\_widget\_style
+---------------------
+
+.. automodule:: datadog_api_client.v1.model.geomap_widget_style
+   :members:
+   :show-inheritance:
+
 graph\_snapshot
 ---------------
 
