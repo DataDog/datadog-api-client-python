@@ -534,6 +534,14 @@ Feature: Synthetics
     When the request is sent
     Then the response status is 200 OK - Returns the list of all Synthetic tests.
 
+  @replay-only @skip-validation @team:DataDog/synthetics-app @with-pagination
+  Scenario: Get the list of all Synthetic tests returns "OK - Returns the list of all Synthetic tests." response with pagination
+    Given new "ListTests" request
+    And request contains "page_size" parameter with value 2
+    When the request with pagination is sent
+    Then the response status is 200 OK - Returns the list of all Synthetic tests.
+    And the response has 3 items
+
   @generated @skip @team:DataDog/synthetics-app
   Scenario: Get the list of all Synthetic tests returns "Synthetic Monitoring is not activated for the user." response
     Given new "ListTests" request
