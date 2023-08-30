@@ -37,8 +37,8 @@ def test_retry_rate_limit(sleep_mock):
 
 
 def test_retry_backoff_factor_validation():
-     configuration = Configuration()
-     with pytest.raises(ValueError):
-        configuration.retry_backoff_factor = 1  
-        
-     configuration.retry_backoff_factor = 3 
+    configuration = Configuration()
+    with pytest.raises(ValueError):
+        configuration.retry_backoff_factor = 1
+
+    configuration.retry_backoff_factor = 3
