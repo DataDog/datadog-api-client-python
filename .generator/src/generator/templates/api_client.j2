@@ -346,6 +346,13 @@ class ApiClient:
         host: Optional[str] = None,
         check_type: Optional[bool] = None,
     ):
+        if "page_param" in pagination:
+            set_attribute_from_path(
+                pagination["kwargs"],
+                pagination["page_param"],
+                0,
+                pagination["endpoint"].params_map,
+            )
         params = pagination["endpoint"].gather_params(pagination["kwargs"])
         while True:
             response = self.call_api(
@@ -365,9 +372,9 @@ class ApiClient:
                 host=host,
                 collection_formats=params["collection_format"],
             )
-            for item in get_attribute_from_path(response, pagination["results_path"]):
+            for item in get_attribute_from_path(response, pagination.get("results_path")):
                 yield item
-            if len(get_attribute_from_path(response, pagination["results_path"])) < pagination["limit_value"]:
+            if len(get_attribute_from_path(response, pagination.get("results_path"))) < pagination["limit_value"]:
                 break
 
             params = self._update_paginated_params(pagination, response)
@@ -379,6 +386,13 @@ class ApiClient:
                 pagination["page_offset_param"],
                 get_attribute_from_path(pagination["kwargs"], pagination["page_offset_param"], 0)
                 + pagination["limit_value"],
+                pagination["endpoint"].params_map,
+            )
+        elif "page_param" in pagination:
+            set_attribute_from_path(
+                pagination["kwargs"],
+                pagination["page_param"],
+                get_attribute_from_path(pagination["kwargs"], pagination["page_param"], 0) + 1,
                 pagination["endpoint"].params_map,
             )
         else:
@@ -635,9 +649,9 @@ class AsyncApiClient(ApiClient):
                 host=host,
                 collection_formats=params["collection_format"],
             )
-            for item in get_attribute_from_path(response, pagination["results_path"]):
+            for item in get_attribute_from_path(response, pagination.get("results_path")):
                 yield item
-            if len(get_attribute_from_path(response, pagination["results_path"])) < pagination["limit_value"]:
+            if len(get_attribute_from_path(response, pagination.get("results_path"))) < pagination["limit_value"]:
                 break
 
             params = self._update_paginated_params(pagination, response)

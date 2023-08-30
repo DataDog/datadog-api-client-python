@@ -3,11 +3,14 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
+import collections
 from typing import Any, Dict, List, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
 from datadog_api_client.model_utils import (
+    set_attribute_from_path,
+    get_attribute_from_path,
     UnsetType,
     unset,
 )
@@ -692,6 +695,81 @@ class MonitorsApi:
             kwargs["page_size"] = page_size
 
         return self._list_monitors_endpoint.call_with_http_info(**kwargs)
+
+    def list_monitors_with_pagination(
+        self,
+        *,
+        group_states: Union[str, UnsetType] = unset,
+        name: Union[str, UnsetType] = unset,
+        tags: Union[str, UnsetType] = unset,
+        monitor_tags: Union[str, UnsetType] = unset,
+        with_downtimes: Union[bool, UnsetType] = unset,
+        id_offset: Union[int, UnsetType] = unset,
+        page: Union[int, UnsetType] = unset,
+        page_size: Union[int, UnsetType] = unset,
+    ) -> collections.abc.Iterable[Monitor]:
+        """Get all monitor details.
+
+        Provide a paginated version of :meth:`list_monitors`, returning all items.
+
+        :param group_states: When specified, shows additional information about the group states.
+            Choose one or more from ``all`` , ``alert`` , ``warn`` , and ``no data``.
+        :type group_states: str, optional
+        :param name: A string to filter monitors by name.
+        :type name: str, optional
+        :param tags: A comma separated list indicating what tags, if any, should be used to filter the list of monitors by scope.
+            For example, ``host:host0``.
+        :type tags: str, optional
+        :param monitor_tags: A comma separated list indicating what service and/or custom tags, if any, should be used to filter the list of monitors.
+            Tags created in the Datadog UI automatically have the service key prepended. For example, ``service:my-app``.
+        :type monitor_tags: str, optional
+        :param with_downtimes: If this argument is set to true, then the returned data includes all current active downtimes for each monitor.
+        :type with_downtimes: bool, optional
+        :param id_offset: Use this parameter for paginating through large sets of monitors. Start with a value of zero, make a request, set the value to the last ID of result set, and then repeat until the response is empty.
+        :type id_offset: int, optional
+        :param page: The page to start paginating from. If this argument is not specified, the request returns all monitors without pagination.
+        :type page: int, optional
+        :param page_size: The number of monitors to return per page. If the page argument is not specified, the default behavior returns all monitors without a ``page_size`` limit. However, if page is specified and ``page_size`` is not, the argument defaults to 100.
+        :type page_size: int, optional
+
+        :return: A generator of paginated results.
+        :rtype: collections.abc.Iterable[Monitor]
+        """
+        kwargs: Dict[str, Any] = {}
+        if group_states is not unset:
+            kwargs["group_states"] = group_states
+
+        if name is not unset:
+            kwargs["name"] = name
+
+        if tags is not unset:
+            kwargs["tags"] = tags
+
+        if monitor_tags is not unset:
+            kwargs["monitor_tags"] = monitor_tags
+
+        if with_downtimes is not unset:
+            kwargs["with_downtimes"] = with_downtimes
+
+        if id_offset is not unset:
+            kwargs["id_offset"] = id_offset
+
+        if page is not unset:
+            kwargs["page"] = page
+
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        local_page_size = get_attribute_from_path(kwargs, "page_size", 100)
+        endpoint = self._list_monitors_endpoint
+        set_attribute_from_path(kwargs, "page_size", local_page_size, endpoint.params_map)
+        pagination = {
+            "limit_value": local_page_size,
+            "page_param": "page",
+            "endpoint": endpoint,
+            "kwargs": kwargs,
+        }
+        return endpoint.call_with_http_info_paginated(pagination)
 
     def search_monitor_groups(
         self,
