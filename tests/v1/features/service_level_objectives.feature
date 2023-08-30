@@ -134,6 +134,14 @@ Feature: Service Level Objectives
     And the response "data" has length 1
     And the response "data[0].id" has the same value as "slo.data[0].id"
 
+  @replay-only @skip-validation @team:DataDog/slo-app @with-pagination
+  Scenario: Get all SLOs returns "OK" response with pagination
+    Given new "ListSLOs" request
+    And request contains "limit" parameter with value 2
+    When the request with pagination is sent
+    Then the response status is 200 OK
+    And the response has 3 items
+
   @generated @skip @team:DataDog/slo-app
   Scenario: Get an SLO's details returns "Not found" response
     Given new "GetSLO" request
