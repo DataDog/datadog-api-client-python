@@ -1,0 +1,43 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v1/slo?limit=2
+  response:
+    body:
+      string: '{"data":[{"id":"70e82706f4ae56ff8bdd7f02e767f97c","name":"test SLO
+        1668426861","tags":["type:test"],"monitor_tags":[],"thresholds":[{"timeframe":"7d","target":90.0,"target_display":"90."}],"type":"metric","type_id":1,"description":"","timeframe":"7d","target_threshold":90.0,"query":{"denominator":"sum:my.custom.metric{!type:ignored}.as_count()","numerator":"sum:my.custom.metric{type:good,!type:ignored}.as_count()"},"creator":{"name":null,"handle":"frog@datadoghq.com","email":"frog@datadoghq.com"},"created_at":1668426862,"modified_at":1668426862},{"id":"955ab6301fa656e7b061de4a05ad4774","name":"tf-TestAccDatadogServiceLevelObjective_Basic-local-1673543942-updated","tags":["foo:bar","baz"],"monitor_tags":[],"thresholds":[{"timeframe":"7d","target":99.5,"target_display":"99.5","warning":99.8,"warning_display":"99.8"},{"timeframe":"30d","target":98.0,"target_display":"98.","warning":99.0,"warning_display":"99."},{"timeframe":"90d","target":99.9,"target_display":"99.9"}],"type":"metric","type_id":1,"description":"some
+        updated description about foo SLO","timeframe":"7d","warning_threshold":99.8,"target_threshold":99.5,"query":{"denominator":"sum:my.metric{type:good}.as_count()
+        + sum:my.metric{type:bad}.as_count()","numerator":"sum:my.metric{type:good}.as_count()"},"creator":{"name":null,"handle":"frog@datadoghq.com","email":"frog@datadoghq.com"},"created_at":1673543944,"modified_at":1673543945}],"error":null,"metadata":{"page":{"total_count":3,"total_filtered_count":2}}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v1/slo?limit=2&offset=2
+  response:
+    body:
+      string: '{"data":[{"id":"a17acfd48b7c55d19192e3a697cc1d01","name":"test SLO
+        1677686870","tags":[],"monitor_tags":[],"thresholds":[{"timeframe":"7d","target":90.0,"target_display":"90."}],"type":"monitor","type_id":0,"description":"","timeframe":"7d","target_threshold":90.0,"monitor_ids":[112445445],"creator":{"name":"CI
+        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","email":"team-intg-tools-libs-spam@datadoghq.com"},"created_at":1677686871,"modified_at":1677686871}],"error":null,"metadata":{"page":{"total_count":3,"total_filtered_count":2}}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1
