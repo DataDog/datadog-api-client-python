@@ -399,12 +399,20 @@ class Configuration:
 
     @property
     def retry_backoff_factor(self):
-        """Retry backoff factor."""
+        """Retry backoff factor.
+
+        :return: The backoff factor, float
+        :rtype: float
+        """
         return self._retry_backoff_factor
 
     @retry_backoff_factor.setter
     def retry_backoff_factor(self, value):
-        """Retry backoff factor."""
+        """Retry backoff factor.
+
+        :param value: The backoff factor used to calculate intervals between retry attempts
+        :type value: float
+        """
         if value < 2:
             raise ValueError("Retry backoff factor cannot be smaller than 2")
         self._retry_backoff_factor = value
