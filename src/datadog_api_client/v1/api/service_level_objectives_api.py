@@ -3,15 +3,19 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
+import collections
 from typing import Any, Dict, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
 from datadog_api_client.model_utils import (
+    set_attribute_from_path,
+    get_attribute_from_path,
     UnsetType,
     unset,
 )
 from datadog_api_client.v1.model.slo_list_response import SLOListResponse
+from datadog_api_client.v1.model.service_level_objective import ServiceLevelObjective
 from datadog_api_client.v1.model.service_level_objective_request import ServiceLevelObjectiveRequest
 from datadog_api_client.v1.model.slo_bulk_delete_response import SLOBulkDeleteResponse
 from datadog_api_client.v1.model.slo_bulk_delete import SLOBulkDelete
@@ -19,7 +23,6 @@ from datadog_api_client.v1.model.check_can_delete_slo_response import CheckCanDe
 from datadog_api_client.v1.model.search_slo_response import SearchSLOResponse
 from datadog_api_client.v1.model.slo_delete_response import SLODeleteResponse
 from datadog_api_client.v1.model.slo_response import SLOResponse
-from datadog_api_client.v1.model.service_level_objective import ServiceLevelObjective
 from datadog_api_client.v1.model.slo_correction_list_response import SLOCorrectionListResponse
 from datadog_api_client.v1.model.slo_history_response import SLOHistoryResponse
 
@@ -560,6 +563,67 @@ class ServiceLevelObjectivesApi:
             kwargs["offset"] = offset
 
         return self._list_slos_endpoint.call_with_http_info(**kwargs)
+
+    def list_slos_with_pagination(
+        self,
+        *,
+        ids: Union[str, UnsetType] = unset,
+        query: Union[str, UnsetType] = unset,
+        tags_query: Union[str, UnsetType] = unset,
+        metrics_query: Union[str, UnsetType] = unset,
+        limit: Union[int, UnsetType] = unset,
+        offset: Union[int, UnsetType] = unset,
+    ) -> collections.abc.Iterable[ServiceLevelObjective]:
+        """Get all SLOs.
+
+        Provide a paginated version of :meth:`list_slos`, returning all items.
+
+        :param ids: A comma separated list of the IDs of the service level objectives objects.
+        :type ids: str, optional
+        :param query: The query string to filter results based on SLO names.
+        :type query: str, optional
+        :param tags_query: The query string to filter results based on a single SLO tag.
+        :type tags_query: str, optional
+        :param metrics_query: The query string to filter results based on SLO numerator and denominator.
+        :type metrics_query: str, optional
+        :param limit: The number of SLOs to return in the response.
+        :type limit: int, optional
+        :param offset: The specific offset to use as the beginning of the returned response.
+        :type offset: int, optional
+
+        :return: A generator of paginated results.
+        :rtype: collections.abc.Iterable[ServiceLevelObjective]
+        """
+        kwargs: Dict[str, Any] = {}
+        if ids is not unset:
+            kwargs["ids"] = ids
+
+        if query is not unset:
+            kwargs["query"] = query
+
+        if tags_query is not unset:
+            kwargs["tags_query"] = tags_query
+
+        if metrics_query is not unset:
+            kwargs["metrics_query"] = metrics_query
+
+        if limit is not unset:
+            kwargs["limit"] = limit
+
+        if offset is not unset:
+            kwargs["offset"] = offset
+
+        local_page_size = get_attribute_from_path(kwargs, "limit", 1000)
+        endpoint = self._list_slos_endpoint
+        set_attribute_from_path(kwargs, "limit", local_page_size, endpoint.params_map)
+        pagination = {
+            "limit_value": local_page_size,
+            "results_path": "data",
+            "page_offset_param": "offset",
+            "endpoint": endpoint,
+            "kwargs": kwargs,
+        }
+        return endpoint.call_with_http_info_paginated(pagination)
 
     def search_slo(
         self,

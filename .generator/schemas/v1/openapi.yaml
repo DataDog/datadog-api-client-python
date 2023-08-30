@@ -27004,6 +27004,7 @@ paths:
         name: limit
         required: false
         schema:
+          default: 1000
           format: int64
           type: integer
       - description: The specific offset to use as the beginning of the returned response.
@@ -27048,6 +27049,10 @@ paths:
       summary: Get all SLOs
       tags:
       - Service Level Objectives
+      x-pagination:
+        limitParam: limit
+        pageOffsetParam: offset
+        resultsPath: data
     post:
       description: Create a service level objective object.
       operationId: CreateSLO
