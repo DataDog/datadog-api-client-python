@@ -70,9 +70,14 @@ class RESTClientObject:
             addition_pool_args["assert_hostname"] = configuration.assert_hostname
 
         if configuration.enable_retry:
+            backoff_factor_config = configuration.retry_backoff_factor
+            if backoff_factor_config < 2: 
+                backoff_factor_config = 2
+                logger.warning("backoff_factor cannot be less than 2, setting it to 2")
+                
             retries = ClientRetry(
                 total=configuration.max_retries,
-                backoff_factor=configuration.retry_backoff_factor,
+                backoff_factor = backoff_factor_config,
             )
             addition_pool_args["retries"] = retries
 
