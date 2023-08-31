@@ -3,11 +3,14 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
+import collections
 from typing import Any, Dict, List, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
 from datadog_api_client.model_utils import (
+    set_attribute_from_path,
+    get_attribute_from_path,
     UnsetType,
     unset,
 )
@@ -18,6 +21,7 @@ from datadog_api_client.v1.model.synthetics_private_location_creation_response i
 )
 from datadog_api_client.v1.model.synthetics_private_location import SyntheticsPrivateLocation
 from datadog_api_client.v1.model.synthetics_list_tests_response import SyntheticsListTestsResponse
+from datadog_api_client.v1.model.synthetics_test_details import SyntheticsTestDetails
 from datadog_api_client.v1.model.synthetics_api_test import SyntheticsAPITest
 from datadog_api_client.v1.model.synthetics_browser_test import SyntheticsBrowserTest
 from datadog_api_client.v1.model.synthetics_get_browser_test_latest_results_response import (
@@ -29,7 +33,6 @@ from datadog_api_client.v1.model.synthetics_delete_tests_payload import Syntheti
 from datadog_api_client.v1.model.synthetics_trigger_ci_tests_response import SyntheticsTriggerCITestsResponse
 from datadog_api_client.v1.model.synthetics_trigger_body import SyntheticsTriggerBody
 from datadog_api_client.v1.model.synthetics_ci_test_body import SyntheticsCITestBody
-from datadog_api_client.v1.model.synthetics_test_details import SyntheticsTestDetails
 from datadog_api_client.v1.model.synthetics_get_api_test_latest_results_response import (
     SyntheticsGetAPITestLatestResultsResponse,
 )
@@ -562,12 +565,12 @@ class SyntheticsApi:
             },
             params_map={
                 "page_size": {
-                    "openapi_types": (str,),
+                    "openapi_types": (int,),
                     "attribute": "page_size",
                     "location": "query",
                 },
                 "page_number": {
-                    "openapi_types": (str,),
+                    "openapi_types": (int,),
                     "attribute": "page_number",
                     "location": "query",
                 },
@@ -1125,17 +1128,17 @@ class SyntheticsApi:
     def list_tests(
         self,
         *,
-        page_size: Union[str, UnsetType] = unset,
-        page_number: Union[str, UnsetType] = unset,
+        page_size: Union[int, UnsetType] = unset,
+        page_number: Union[int, UnsetType] = unset,
     ) -> SyntheticsListTestsResponse:
         """Get the list of all Synthetic tests.
 
         Get the list of all Synthetic tests.
 
         :param page_size: Used for pagination. The number of tests returned in the page.
-        :type page_size: str, optional
+        :type page_size: int, optional
         :param page_number: Used for pagination. Which page you want to retrieve. Starts at zero.
-        :type page_number: str, optional
+        :type page_number: int, optional
         :rtype: SyntheticsListTestsResponse
         """
         kwargs: Dict[str, Any] = {}
@@ -1146,6 +1149,43 @@ class SyntheticsApi:
             kwargs["page_number"] = page_number
 
         return self._list_tests_endpoint.call_with_http_info(**kwargs)
+
+    def list_tests_with_pagination(
+        self,
+        *,
+        page_size: Union[int, UnsetType] = unset,
+        page_number: Union[int, UnsetType] = unset,
+    ) -> collections.abc.Iterable[SyntheticsTestDetails]:
+        """Get the list of all Synthetic tests.
+
+        Provide a paginated version of :meth:`list_tests`, returning all items.
+
+        :param page_size: Used for pagination. The number of tests returned in the page.
+        :type page_size: int, optional
+        :param page_number: Used for pagination. Which page you want to retrieve. Starts at zero.
+        :type page_number: int, optional
+
+        :return: A generator of paginated results.
+        :rtype: collections.abc.Iterable[SyntheticsTestDetails]
+        """
+        kwargs: Dict[str, Any] = {}
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        if page_number is not unset:
+            kwargs["page_number"] = page_number
+
+        local_page_size = get_attribute_from_path(kwargs, "page_size", 100)
+        endpoint = self._list_tests_endpoint
+        set_attribute_from_path(kwargs, "page_size", local_page_size, endpoint.params_map)
+        pagination = {
+            "limit_value": local_page_size,
+            "results_path": "tests",
+            "page_param": "page_number",
+            "endpoint": endpoint,
+            "kwargs": kwargs,
+        }
+        return endpoint.call_with_http_info_paginated(pagination)
 
     def trigger_ci_tests(
         self,
