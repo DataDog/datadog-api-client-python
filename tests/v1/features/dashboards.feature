@@ -621,7 +621,7 @@ Feature: Dashboards
   @team:DataDog/dashboards-backend
   Scenario: Create a new dashboard with sunburst widget and metrics data
     Given new "CreateDashboard" request
-    And body with value { "title": "{{ unique }}", "widgets": [ { "definition": { "title": "", "title_size": "16", "title_align": "left", "type": "sunburst", "requests": [ { "response_format": "scalar", "formulas": [ { "formula": "query1" } ], "queries": [ { "query": "sum:system.mem.used{*} by {service}", "data_source": "metrics", "name": "query1", "aggregator": "sum" } ] } ] }, "layout": { "x": 0, "y": 0, "width": 4, "height": 4 } } ], "layout_type": "ordered" }
+    And body with value { "title": "{{ unique }}", "widgets": [ { "definition": { "title": "", "title_size": "16", "title_align": "left", "type": "sunburst", "requests": [ { "response_format": "scalar", "formulas": [ { "formula": "query1" } ], "queries": [ { "query": "sum:system.mem.used{*} by {service}", "data_source": "metrics", "name": "query1", "aggregator": "sum" } ], "style": { "palette": "dog_classic" } } ] }, "layout": { "x": 0, "y": 0, "width": 4, "height": 4 } } ], "layout_type": "ordered" }
     When the request is sent
     Then the response status is 200 OK
     And the response "widgets[0].definition.requests[0].response_format" is equal to "scalar"
@@ -630,6 +630,7 @@ Feature: Dashboards
     And the response "widgets[0].definition.requests[0].queries[0].name" is equal to "query1"
     And the response "widgets[0].definition.requests[0].queries[0].aggregator" is equal to "sum"
     And the response "widgets[0].definition.requests[0].formulas[0].formula" is equal to "query1"
+    And the response "widgets[0].definition.requests[0].style.palette" is equal to "dog_classic"
 
   @team:DataDog/dashboards-backend
   Scenario: Create a new dashboard with team tags returns "OK" response
