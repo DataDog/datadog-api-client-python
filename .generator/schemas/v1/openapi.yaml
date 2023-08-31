@@ -27990,14 +27990,19 @@ paths:
       - description: Used for pagination. The number of tests returned in the page.
         in: query
         name: page_size
+        required: false
         schema:
-          type: string
+          default: 100
+          format: int64
+          type: integer
       - description: Used for pagination. Which page you want to retrieve. Starts
           at zero.
         in: query
         name: page_number
+        required: false
         schema:
-          type: string
+          format: int64
+          type: integer
       responses:
         '200':
           content:
@@ -28027,6 +28032,10 @@ paths:
       summary: Get the list of all Synthetic tests
       tags:
       - Synthetics
+      x-pagination:
+        limitParam: page_size
+        pageParam: page_number
+        resultsPath: tests
   /api/v1/synthetics/tests/api:
     post:
       description: Create a Synthetic API test.
