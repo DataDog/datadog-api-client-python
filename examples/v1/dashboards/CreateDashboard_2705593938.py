@@ -18,6 +18,7 @@ from datadog_api_client.v1.model.sunburst_widget_request import SunburstWidgetRe
 from datadog_api_client.v1.model.widget import Widget
 from datadog_api_client.v1.model.widget_formula import WidgetFormula
 from datadog_api_client.v1.model.widget_layout import WidgetLayout
+from datadog_api_client.v1.model.widget_style import WidgetStyle
 from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
 
 body = Dashboard(
@@ -45,6 +46,9 @@ body = Dashboard(
                                 aggregator=FormulaAndFunctionMetricAggregation.SUM,
                             ),
                         ],
+                        style=WidgetStyle(
+                            palette="dog_classic",
+                        ),
                     ),
                 ],
             ),
