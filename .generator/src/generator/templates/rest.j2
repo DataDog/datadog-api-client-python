@@ -69,8 +69,8 @@ class RESTClientObject:
 
         if configuration.enable_retry:
             retries = ClientRetry(
-                total=configuration.max_retries,
-                backoff_factor=configuration.retry_backoff_factor,
+                total = configuration.max_retries,
+                backoff_factor = configuration.retry_backoff_factor,
             )
             addition_pool_args["retries"] = retries
 

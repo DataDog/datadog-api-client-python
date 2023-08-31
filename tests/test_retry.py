@@ -1,4 +1,5 @@
 from unittest import mock
+import pytest
 import vcr
 
 from datadog_api_client.api_client import ApiClient
@@ -33,3 +34,11 @@ def test_retry_rate_limit(sleep_mock):
             assert sleep_mock.call_args_list[0][0][0] == 3
             assert sleep_mock.call_args_list[1][0][0] == 2
             assert sleep_mock.call_args_list[2][0][0] == 1
+
+
+def test_retry_backoff_factor_validation():
+    configuration = Configuration()
+    with pytest.raises(ValueError):
+        configuration.retry_backoff_factor = 1
+
+    configuration.retry_backoff_factor = 3

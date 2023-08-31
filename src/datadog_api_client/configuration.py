@@ -140,7 +140,7 @@ class Configuration:
         the backoff factor.
     :type enable_retry: bool
     :param retry_backoff_factor: Factor used to space out retried requests on backend errors.
-    :type retry_backoff_factor: int
+    :type retry_backoff_factor: float
     :param max_retries: The maximum number of times a single request can be retried.
     :type max_retries: int
     """
@@ -396,6 +396,26 @@ class Configuration:
         """
         self._logger_format = value
         self.logger_formatter = logging.Formatter(self._logger_format)
+
+    @property
+    def retry_backoff_factor(self):
+        """Retry backoff factor.
+
+        :return: The backoff factor, float
+        :rtype: float
+        """
+        return self._retry_backoff_factor
+
+    @retry_backoff_factor.setter
+    def retry_backoff_factor(self, value):
+        """Retry backoff factor.
+
+        :param value: The backoff factor used to calculate intervals between retry attempts
+        :type value: float
+        """
+        if value < 2:
+            raise ValueError("Retry backoff factor cannot be smaller than 2")
+        self._retry_backoff_factor = value
 
     def get_api_key_with_prefix(self, identifier, alias=None):
         """Gets API key (with prefix if set).
