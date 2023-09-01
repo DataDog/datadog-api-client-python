@@ -1,8 +1,15 @@
 interactions:
 - request:
     body: '{"cases":[{"notifications":["channel"],"status":"info"}],"complianceSignalOptions":{"userActivationStatus":true,"userGroupByFields":["@account_id"]},"isEnabled":false,"message":"Cloud
-      configuration rule","name":"Test-Get_a_cloud_configuration_rule_s_details_returns_OK_response-1671216834_cloud","options":{"complianceRuleOptions":{"complexRule":false,"regoRule":{"policy":"package
-      datadog\n","resourceTypes":["gcp_compute_disk"]},"resourceType":"gcp_compute_disk"}},"tags":["a:tag"],"type":"cloud_configuration"}'
+      configuration rule","name":"Test-Get_a_cloud_configuration_rule_s_details_returns_OK_response-1693483107_cloud","options":{"complianceRuleOptions":{"complexRule":false,"regoRule":{"policy":"package
+      datadog\n\nimport data.datadog.output as dd_output\n\nimport future.keywords.contains\nimport
+      future.keywords.if\nimport future.keywords.in\n\nmilliseconds_in_a_day := ((1000
+      * 60) * 60) * 24\n\neval(iam_service_account_key) = \"skip\" if {\n\tiam_service_account_key.disabled\n}
+      else = \"pass\" if {\n\t(iam_service_account_key.resource_seen_at / milliseconds_in_a_day)
+      - (iam_service_account_key.valid_after_time / milliseconds_in_a_day) <= 90\n}
+      else = \"fail\"\n\n# This part remains unchanged for all rules\nresults contains
+      result if {\n\tsome resource in input.resources[input.main_resource_type]\n\tresult
+      := dd_output.format(resource, eval(resource))\n}\n","resourceTypes":["gcp_compute_disk"]},"resourceType":"gcp_compute_disk"}},"tags":["a:tag"],"type":"cloud_configuration"}'
     headers:
       accept:
       - application/json
@@ -12,10 +19,16 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/security_monitoring/rules
   response:
     body:
-      string: '{"creationAuthorId":1445416,"tags":["a:tag"],"type":"cloud_configuration","isEnabled":false,"hasExtendedTitle":true,"message":"Cloud
-        configuration rule","options":{"detectionMethod":"threshold","evaluationWindow":7200,"maxSignalDuration":86400,"complianceRuleOptions":{"resourceType":"gcp_compute_disk","regoRule":{"policy":"package
-        datadog\n","resourceTypes":["gcp_compute_disk"]},"complexRule":false},"keepAlive":21600},"version":1,"createdAt":1671216834810,"filters":[],"queries":[{"query":"resource_type:gcp_compute_disk","groupByFields":["resource_type","resource_id"],"aggregation":"count","name":"a","distinctFields":[]}],"isDeleted":false,"complianceSignalOptions":{"defaultActivationStatus":null,"userActivationStatus":true,"defaultGroupByFields":null,"userGroupByFields":["@account_id"]},"cases":[{"status":"info","notifications":["channel"],"name":"","condition":"a
-        > 0"}],"id":"bwb-onz-qhs","isDefault":false,"name":"Test-Get_a_cloud_configuration_rule_s_details_returns_OK_response-1671216834_cloud"}
+      string: '{"id":"ijx-ftp-oew","version":1,"name":"Test-Get_a_cloud_configuration_rule_s_details_returns_OK_response-1693483107_cloud","createdAt":1693483108023,"creationAuthorId":1445416,"isDefault":false,"isEnabled":false,"isDeleted":false,"isDeprecated":false,"queries":[{"query":"resource_type:gcp_compute_disk","groupByFields":["resource_type","resource_id"],"distinctFields":[],"aggregation":"count","name":"a"}],"options":{"keepAlive":21600,"maxSignalDuration":86400,"detectionMethod":"threshold","evaluationWindow":7200,"complianceRuleOptions":{"resourceType":"gcp_compute_disk","regoRule":{"policy":"package
+        datadog\n\nimport data.datadog.output as dd_output\n\nimport future.keywords.contains\nimport
+        future.keywords.if\nimport future.keywords.in\n\nmilliseconds_in_a_day :=
+        ((1000 * 60) * 60) * 24\n\neval(iam_service_account_key) = \"skip\" if {\n\tiam_service_account_key.disabled\n}
+        else = \"pass\" if {\n\t(iam_service_account_key.resource_seen_at / milliseconds_in_a_day)
+        - (iam_service_account_key.valid_after_time / milliseconds_in_a_day) <= 90\n}
+        else = \"fail\"\n\n# This part remains unchanged for all rules\nresults contains
+        result if {\n\tsome resource in input.resources[input.main_resource_type]\n\tresult
+        := dd_output.format(resource, eval(resource))\n}\n","resourceTypes":["gcp_compute_disk"]},"complexRule":false}},"complianceSignalOptions":{"defaultActivationStatus":null,"defaultGroupByFields":null,"userActivationStatus":true,"userGroupByFields":["@account_id"]},"cases":[{"name":"","status":"info","notifications":["channel"],"condition":"a
+        > 0"}],"message":"Cloud configuration rule","tags":["a:tag"],"hasExtendedTitle":true,"type":"cloud_configuration","filters":[]}
 
         '
     headers:
@@ -30,13 +43,19 @@ interactions:
       accept:
       - application/json
     method: GET
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/bwb-onz-qhs
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/ijx-ftp-oew
   response:
     body:
-      string: '{"creationAuthorId":1445416,"tags":["a:tag"],"type":"cloud_configuration","isEnabled":false,"hasExtendedTitle":true,"message":"Cloud
-        configuration rule","options":{"detectionMethod":"threshold","evaluationWindow":7200,"maxSignalDuration":86400,"complianceRuleOptions":{"resourceType":"gcp_compute_disk","regoRule":{"policy":"package
-        datadog\n","resourceTypes":["gcp_compute_disk"]},"complexRule":false},"keepAlive":21600},"version":1,"createdAt":1671216834810,"filters":[],"queries":[{"query":"resource_type:gcp_compute_disk","groupByFields":["resource_type","resource_id"],"aggregation":"count","name":"a","distinctFields":[]}],"isDeleted":false,"complianceSignalOptions":{"defaultActivationStatus":null,"userActivationStatus":true,"defaultGroupByFields":null,"userGroupByFields":["@account_id"]},"cases":[{"status":"info","notifications":["channel"],"name":"","condition":"a
-        > 0"}],"id":"bwb-onz-qhs","isDefault":false,"name":"Test-Get_a_cloud_configuration_rule_s_details_returns_OK_response-1671216834_cloud"}
+      string: '{"id":"ijx-ftp-oew","version":1,"name":"Test-Get_a_cloud_configuration_rule_s_details_returns_OK_response-1693483107_cloud","createdAt":1693483108023,"creationAuthorId":1445416,"isDefault":false,"isEnabled":false,"isDeleted":false,"isDeprecated":false,"queries":[{"query":"resource_type:gcp_compute_disk","groupByFields":["resource_type","resource_id"],"distinctFields":[],"aggregation":"count","name":"a"}],"options":{"keepAlive":21600,"maxSignalDuration":86400,"detectionMethod":"threshold","evaluationWindow":7200,"complianceRuleOptions":{"resourceType":"gcp_compute_disk","regoRule":{"policy":"package
+        datadog\n\nimport data.datadog.output as dd_output\n\nimport future.keywords.contains\nimport
+        future.keywords.if\nimport future.keywords.in\n\nmilliseconds_in_a_day :=
+        ((1000 * 60) * 60) * 24\n\neval(iam_service_account_key) = \"skip\" if {\n\tiam_service_account_key.disabled\n}
+        else = \"pass\" if {\n\t(iam_service_account_key.resource_seen_at / milliseconds_in_a_day)
+        - (iam_service_account_key.valid_after_time / milliseconds_in_a_day) <= 90\n}
+        else = \"fail\"\n\n# This part remains unchanged for all rules\nresults contains
+        result if {\n\tsome resource in input.resources[input.main_resource_type]\n\tresult
+        := dd_output.format(resource, eval(resource))\n}\n","resourceTypes":["gcp_compute_disk"]},"complexRule":false}},"complianceSignalOptions":{"defaultActivationStatus":null,"defaultGroupByFields":null,"userActivationStatus":true,"userGroupByFields":["@account_id"]},"cases":[{"name":"","status":"info","notifications":["channel"],"condition":"a
+        > 0"}],"message":"Cloud configuration rule","tags":["a:tag"],"hasExtendedTitle":true,"type":"cloud_configuration","filters":[]}
 
         '
     headers:
@@ -51,7 +70,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/bwb-onz-qhs
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/ijx-ftp-oew
   response:
     body:
       string: ''

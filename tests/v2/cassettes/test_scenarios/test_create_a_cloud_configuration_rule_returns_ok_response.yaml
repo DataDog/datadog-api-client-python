@@ -1,7 +1,14 @@
 interactions:
 - request:
-    body: '{"cases":[{"notifications":["channel"],"status":"info"}],"complianceSignalOptions":{"userActivationStatus":true,"userGroupByFields":["@account_id"]},"filters":[{"action":"require","query":"resource_id:helo*"},{"action":"suppress","query":"control:helo*"}],"isEnabled":false,"message":"ddd","name":"Test-Create_a_cloud_configuration_rule_returns_OK_response-1689856053_cloud","options":{"complianceRuleOptions":{"complexRule":false,"regoRule":{"policy":"package
-      datadog\n","resourceTypes":["gcp_compute_disk"]},"resourceType":"gcp_compute_disk"}},"tags":["my:tag"],"type":"cloud_configuration"}'
+    body: '{"cases":[{"notifications":["channel"],"status":"info"}],"complianceSignalOptions":{"userActivationStatus":true,"userGroupByFields":["@account_id"]},"filters":[{"action":"require","query":"resource_id:helo*"},{"action":"suppress","query":"control:helo*"}],"isEnabled":false,"message":"ddd","name":"Test-Create_a_cloud_configuration_rule_returns_OK_response-1693482688_cloud","options":{"complianceRuleOptions":{"complexRule":false,"regoRule":{"policy":"package
+      datadog\n\nimport data.datadog.output as dd_output\n\nimport future.keywords.contains\nimport
+      future.keywords.if\nimport future.keywords.in\n\nmilliseconds_in_a_day := ((1000
+      * 60) * 60) * 24\n\neval(iam_service_account_key) = \"skip\" if {\n\tiam_service_account_key.disabled\n}
+      else = \"pass\" if {\n\t(iam_service_account_key.resource_seen_at / milliseconds_in_a_day)
+      - (iam_service_account_key.valid_after_time / milliseconds_in_a_day) <= 90\n}
+      else = \"fail\"\n\n# This part remains unchanged for all rules\nresults contains
+      result if {\n\tsome resource in input.resources[input.main_resource_type]\n\tresult
+      := dd_output.format(resource, eval(resource))\n}\n","resourceTypes":["gcp_compute_disk"]},"resourceType":"gcp_compute_disk"}},"tags":["my:tag"],"type":"cloud_configuration"}'
     headers:
       accept:
       - application/json
@@ -11,9 +18,16 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/security_monitoring/rules
   response:
     body:
-      string: '{"id":"rmr-xkf-scr","version":1,"name":"Test-Create_a_cloud_configuration_rule_returns_OK_response-1689856053_cloud","createdAt":1689856054469,"creationAuthorId":1445416,"isDefault":false,"isEnabled":false,"isDeleted":false,"isDeprecated":false,"queries":[{"query":"resource_type:gcp_compute_disk","groupByFields":["resource_type","resource_id"],"distinctFields":[],"aggregation":"count","name":"a"}],"options":{"keepAlive":21600,"maxSignalDuration":86400,"detectionMethod":"threshold","evaluationWindow":7200,"complianceRuleOptions":{"resourceType":"gcp_compute_disk","regoRule":{"policy":"package
-        datadog\n","resourceTypes":["gcp_compute_disk"]},"complexRule":false}},"complianceSignalOptions":{"defaultActivationStatus":null,"defaultGroupByFields":null,"userActivationStatus":true,"userGroupByFields":["@account_id"]},"cases":[{"condition":"a
-        > 0","name":"","status":"info","notifications":["channel"]}],"message":"ddd","tags":["my:tag"],"hasExtendedTitle":true,"type":"cloud_configuration","filters":[{"action":"require","query":"resource_id:helo*"},{"action":"suppress","query":"control:helo*"}]}
+      string: '{"id":"m0o-cza-uq9","version":1,"name":"Test-Create_a_cloud_configuration_rule_returns_OK_response-1693482688_cloud","createdAt":1693482689435,"creationAuthorId":1445416,"isDefault":false,"isEnabled":false,"isDeleted":false,"isDeprecated":false,"queries":[{"query":"resource_type:gcp_compute_disk","groupByFields":["resource_type","resource_id"],"distinctFields":[],"aggregation":"count","name":"a"}],"options":{"keepAlive":21600,"maxSignalDuration":86400,"detectionMethod":"threshold","evaluationWindow":7200,"complianceRuleOptions":{"resourceType":"gcp_compute_disk","regoRule":{"policy":"package
+        datadog\n\nimport data.datadog.output as dd_output\n\nimport future.keywords.contains\nimport
+        future.keywords.if\nimport future.keywords.in\n\nmilliseconds_in_a_day :=
+        ((1000 * 60) * 60) * 24\n\neval(iam_service_account_key) = \"skip\" if {\n\tiam_service_account_key.disabled\n}
+        else = \"pass\" if {\n\t(iam_service_account_key.resource_seen_at / milliseconds_in_a_day)
+        - (iam_service_account_key.valid_after_time / milliseconds_in_a_day) <= 90\n}
+        else = \"fail\"\n\n# This part remains unchanged for all rules\nresults contains
+        result if {\n\tsome resource in input.resources[input.main_resource_type]\n\tresult
+        := dd_output.format(resource, eval(resource))\n}\n","resourceTypes":["gcp_compute_disk"]},"complexRule":false}},"complianceSignalOptions":{"defaultActivationStatus":null,"defaultGroupByFields":null,"userActivationStatus":true,"userGroupByFields":["@account_id"]},"cases":[{"name":"","status":"info","notifications":["channel"],"condition":"a
+        > 0"}],"message":"ddd","tags":["my:tag"],"hasExtendedTitle":true,"type":"cloud_configuration","filters":[{"action":"require","query":"resource_id:helo*"},{"action":"suppress","query":"control:helo*"}]}
 
         '
     headers:
@@ -28,7 +42,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/rmr-xkf-scr
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/m0o-cza-uq9
   response:
     body:
       string: ''
