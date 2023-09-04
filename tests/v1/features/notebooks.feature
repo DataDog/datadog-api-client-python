@@ -86,6 +86,14 @@ Feature: Notebooks
     Then the response status is 200 OK
     And the response "data" has item with field "attributes.status" with value "published"
 
+  @replay-only @skip-validation @team:DataDog/notebooks @with-pagination
+  Scenario: Get all notebooks returns "OK" response with pagination
+    Given new "ListNotebooks" request
+    And request contains "count" parameter with value 2
+    When the request with pagination is sent
+    Then the response status is 200 OK
+    And the response has 3 items
+
   @generated @skip @team:DataDog/notebooks
   Scenario: Update a notebook returns "Bad Request" response
     Given new "UpdateNotebook" request

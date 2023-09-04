@@ -1,0 +1,69 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v1/notebooks?count=2
+  response:
+    body:
+      string: '{"data":[{"type":"notebooks","id":4758632,"attributes":{"name":"PCF
+        Container Usage Attribution","cells":[{"type":"notebook_cells","id":"jod8dstf","attributes":{"split_by":{"tags":[],"keys":[]},"definition":{"title":"Count
+        of containers","type":"query_table","requests":[{"response_format":"scalar","formulas":[{"alias":"containers","formula":"query1","limit":{"count":10000,"order":"desc"}}],"queries":[{"name":"query1","data_source":"metrics","query":"avg:cloudfoundry.nozzle.app.instances{$container_deployement_guid,$troux_uuid}
+        by {app_name,bosh_id}","aggregator":"avg"}]}]},"graph_size":"m","time":null}},{"type":"notebook_cells","id":"0t3xetbt","attributes":{"definition":{"type":"markdown","text":"This
+        displays the count of containers per `troux_uuid` (`bosh_id`) and `container_deployment_guid`
+        (`app_name`)"}}},{"type":"notebook_cells","id":"7lxv9snf","attributes":{"definition":{"title":"Percentage
+        breakdown of containers on VMs","requests":[{"response_format":"scalar","formulas":[{"formula":"query1","limit":{"order":"desc"}}],"queries":[{"query":"avg:cloudfoundry.nozzle.app.instances{$troux_uuid,$container_deployement_guid}
+        by {app_name,bosh_id}.rollup(avg, 3600)","data_source":"metrics","name":"query1","aggregator":"sum"}],"style":{"palette":"datadog16"}}],"type":"sunburst","legend":{"type":"automatic"}},"time":null}},{"type":"notebook_cells","id":"uhwq9m18","attributes":{"definition":{"type":"markdown","text":"This
+        displays the count of containers per\u00a0`troux_uuid` (`bosh_id`)\u00a0and\u00a0`container_deployment_guid`
+        (`app_name`) as percentages of total containers\n"}}},{"type":"notebook_cells","id":"fcid5x88","attributes":{"split_by":{"tags":[],"keys":[]},"definition":{"title":"Number
+        of VMs per container_deployment_guid","type":"query_value","requests":[{"response_format":"scalar","queries":[{"name":"query1","data_source":"metrics","query":"avg:cloudfoundry.nozzle.app.instances{$troux_uuid,$container_deployement_guid}","aggregator":"avg"}],"formulas":[{"formula":"count_nonzero(query1)","alias":"VMs"}]}],"autoscale":true,"precision":2},"graph_size":"xs","time":null}},{"type":"notebook_cells","id":"7qmg68gc","attributes":{"definition":{"type":"markdown","text":"When
+        filtering by the template variable `container_deployment_guid`, this value
+        represents the number of VMs (or `troux_uuid`s) that `container_deployment_guid`
+        runs on "}}},{"type":"notebook_cells","id":"h75xo4j5","attributes":{"split_by":{"tags":[],"keys":[]},"definition":{"type":"query_table","requests":[{"queries":[{"data_source":"metrics","name":"query1","query":"avg:system.cpu.user{$troux_uuid,$container_deployement_guid}
+        by {bosh_id,application_name}.rollup(avg, 3600)","aggregator":"avg"}],"formulas":[{"conditional_formats":[],"cell_display_mode":"bar","formula":"query1","limit":{"count":500,"order":"desc"}}],"response_format":"scalar"}],"has_search_bar":"auto"},"time":null}}],"time":{"live_span":"2d"},"metadata":{"take_snapshots":false,"is_template":false,"is_favorite":false,"type":null},"template_variables":[{"name":"container_deployement_guid","prefix":"app_name","available_values":[],"default":"*"},{"name":"troux_uuid","prefix":"bosh_id","available_values":[],"default":"*"}],"status":"published","modified":"2023-02-27T17:53:59.623647+00:00","created":"2023-02-15T18:12:35.189588+00:00","author":{"name":"Sarah
+        Witt","handle":"sarah.witt@datadoghq.com","email":"sarah.witt@datadoghq.com","icon":"https://secure.gravatar.com/avatar/7f710a0bcefa8df8d47bfcba79f69a40?s=48&d=retro","title":null,"verified":true,"disabled":false,"status":"Active"}}},{"type":"notebooks","id":4823614,"attributes":{"name":"Sarah
+        Feb 22 2023 11:04","cells":[{"type":"notebook_cells","id":"dnulkt1p","attributes":{"split_by":{"tags":[],"keys":[]},"definition":{"show_legend":true,"type":"timeseries","requests":[{"response_format":"timeseries","queries":[{"name":"query1","data_source":"metrics","query":"avg:system.cpu.user{*}"}],"style":{"palette":"dog_classic","line_type":"solid","line_width":"normal"},"display_type":"line"}]},"time":null}}],"time":{"live_span":"1h"},"metadata":{"take_snapshots":false,"is_template":false,"is_favorite":false,"type":null},"template_variables":[],"status":"published","modified":"2023-02-22T16:04:51.449049+00:00","created":"2023-02-22T16:04:51.449049+00:00","author":{"name":"Sarah
+        Witt","handle":"sarah.witt@datadoghq.com","email":"sarah.witt@datadoghq.com","icon":"https://secure.gravatar.com/avatar/7f710a0bcefa8df8d47bfcba79f69a40?s=48&d=retro","title":null,"verified":true,"disabled":false,"status":"Active"}}}],"meta":{"page":{"total_count":158,"total_filtered_count":2}}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v1/notebooks?count=2&start=2
+  response:
+    body:
+      string: '{"data":[{"type":"notebooks","id":4745953,"attributes":{"name":"PCF
+        Container Usage Attribution","cells":[{"type":"notebook_cells","id":"bqyp7v5p","attributes":{"definition":{"title":"Count
+        of containers","type":"query_table","requests":[{"response_format":"scalar","formulas":[{"alias":"containers","formula":"query1","limit":{"count":500,"order":"desc"}}],"queries":[{"name":"query1","data_source":"metrics","query":"avg:cloudfoundry.nozzle.app.instances{$troux_uuid,$container_deployment_guid}
+        by {app_name,bosh_id}.rollup(avg, 3600)","aggregator":"sum"}]}]},"time":null,"split_by":{"keys":[],"tags":[]},"graph_size":"m"}},{"type":"notebook_cells","id":"svgafvhk","attributes":{"definition":{"type":"markdown","text":"This
+        displays the count of containers per `troux_uuid` (`bosh_id`) and `container_deployment_guid`
+        (`app_name`)"}}},{"type":"notebook_cells","id":"vq0zsiia","attributes":{"definition":{"title":"Percentage
+        breakdown of containers on VMs","requests":[{"response_format":"scalar","formulas":[{"formula":"query1","limit":{"order":"desc"}}],"queries":[{"query":"avg:cloudfoundry.nozzle.app.instances{$troux_uuid,$container_deployment_guid}
+        by {app_name,bosh_id}.rollup(avg, 3600)","data_source":"metrics","name":"query1","aggregator":"sum"}],"style":{"palette":"datadog16"}}],"type":"sunburst","legend":{"type":"automatic"}},"time":null}},{"type":"notebook_cells","id":"oldqd75v","attributes":{"definition":{"type":"markdown","text":"This
+        displays the count of containers per\u00a0`troux_uuid` (`bosh_id`)\u00a0and\u00a0`container_deployment_guid`
+        (`app_name`) as percentages of total containers\n"}}},{"type":"notebook_cells","id":"m2dcz3jo","attributes":{"definition":{"title":"Number
+        of VMs per container_deployment_guid","type":"query_value","requests":[{"response_format":"scalar","queries":[{"name":"query1","data_source":"metrics","query":"avg:cloudfoundry.nozzle.app.instances{$troux_uuid,$container_deployment_guid}","aggregator":"avg"}],"formulas":[{"formula":"count_nonzero(query1)","alias":"VMs"}]}],"autoscale":true,"precision":2},"time":null,"split_by":{"keys":[],"tags":[]},"graph_size":"xs"}},{"type":"notebook_cells","id":"39crgjxd","attributes":{"definition":{"type":"markdown","text":"When
+        filtering by the template variable `container_deployment_guid`, this value
+        represents the number of VMs (or `troux_uuid`s) that `container_deployment_guid`
+        runs on "}}}],"time":{"live_span":"2d"},"metadata":{"take_snapshots":false,"is_template":false,"is_favorite":false,"type":null},"template_variables":[{"name":"container_deployment_guid","prefix":"app_name","available_values":[],"default":"*"},{"name":"troux_uuid","prefix":"bosh_id","available_values":[],"default":"*"}],"status":"published","modified":"2023-02-16T17:32:46.774359+00:00","created":"2023-02-14T20:04:16.789408+00:00","author":{"name":"Sarah
+        Witt","handle":"sarah.witt@datadoghq.com","email":"sarah.witt@datadoghq.com","icon":"https://secure.gravatar.com/avatar/7f710a0bcefa8df8d47bfcba79f69a40?s=48&d=retro","title":null,"verified":true,"disabled":false,"status":"Active"}}}],"meta":{"page":{"total_count":158,"total_filtered_count":2}}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

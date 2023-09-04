@@ -3,15 +3,19 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
+import collections
 from typing import Any, Dict, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
 from datadog_api_client.model_utils import (
+    set_attribute_from_path,
+    get_attribute_from_path,
     UnsetType,
     unset,
 )
 from datadog_api_client.v1.model.notebooks_response import NotebooksResponse
+from datadog_api_client.v1.model.notebooks_response_data import NotebooksResponseData
 from datadog_api_client.v1.model.notebook_response import NotebookResponse
 from datadog_api_client.v1.model.notebook_create_request import NotebookCreateRequest
 from datadog_api_client.v1.model.notebook_update_request import NotebookUpdateRequest
@@ -312,6 +316,91 @@ class NotebooksApi:
             kwargs["type"] = type
 
         return self._list_notebooks_endpoint.call_with_http_info(**kwargs)
+
+    def list_notebooks_with_pagination(
+        self,
+        *,
+        author_handle: Union[str, UnsetType] = unset,
+        exclude_author_handle: Union[str, UnsetType] = unset,
+        start: Union[int, UnsetType] = unset,
+        count: Union[int, UnsetType] = unset,
+        sort_field: Union[str, UnsetType] = unset,
+        sort_dir: Union[str, UnsetType] = unset,
+        query: Union[str, UnsetType] = unset,
+        include_cells: Union[bool, UnsetType] = unset,
+        is_template: Union[bool, UnsetType] = unset,
+        type: Union[str, UnsetType] = unset,
+    ) -> collections.abc.Iterable[NotebooksResponseData]:
+        """Get all notebooks.
+
+        Provide a paginated version of :meth:`list_notebooks`, returning all items.
+
+        :param author_handle: Return notebooks created by the given ``author_handle``.
+        :type author_handle: str, optional
+        :param exclude_author_handle: Return notebooks not created by the given ``author_handle``.
+        :type exclude_author_handle: str, optional
+        :param start: The index of the first notebook you want returned.
+        :type start: int, optional
+        :param count: The number of notebooks to be returned.
+        :type count: int, optional
+        :param sort_field: Sort by field ``modified`` , ``name`` , or ``created``.
+        :type sort_field: str, optional
+        :param sort_dir: Sort by direction ``asc`` or ``desc``.
+        :type sort_dir: str, optional
+        :param query: Return only notebooks with ``query`` string in notebook name or author handle.
+        :type query: str, optional
+        :param include_cells: Value of ``false`` excludes the ``cells`` and global ``time`` for each notebook.
+        :type include_cells: bool, optional
+        :param is_template: True value returns only template notebooks. Default is false (returns only non-template notebooks).
+        :type is_template: bool, optional
+        :param type: If type is provided, returns only notebooks with that metadata type. Default does not have type filtering.
+        :type type: str, optional
+
+        :return: A generator of paginated results.
+        :rtype: collections.abc.Iterable[NotebooksResponseData]
+        """
+        kwargs: Dict[str, Any] = {}
+        if author_handle is not unset:
+            kwargs["author_handle"] = author_handle
+
+        if exclude_author_handle is not unset:
+            kwargs["exclude_author_handle"] = exclude_author_handle
+
+        if start is not unset:
+            kwargs["start"] = start
+
+        if count is not unset:
+            kwargs["count"] = count
+
+        if sort_field is not unset:
+            kwargs["sort_field"] = sort_field
+
+        if sort_dir is not unset:
+            kwargs["sort_dir"] = sort_dir
+
+        if query is not unset:
+            kwargs["query"] = query
+
+        if include_cells is not unset:
+            kwargs["include_cells"] = include_cells
+
+        if is_template is not unset:
+            kwargs["is_template"] = is_template
+
+        if type is not unset:
+            kwargs["type"] = type
+
+        local_page_size = get_attribute_from_path(kwargs, "count", 100)
+        endpoint = self._list_notebooks_endpoint
+        set_attribute_from_path(kwargs, "count", local_page_size, endpoint.params_map)
+        pagination = {
+            "limit_value": local_page_size,
+            "results_path": "data",
+            "page_offset_param": "start",
+            "endpoint": endpoint,
+            "kwargs": kwargs,
+        }
+        return endpoint.call_with_http_info_paginated(pagination)
 
     def update_notebook(
         self,

@@ -26095,6 +26095,7 @@ paths:
         name: count
         required: false
         schema:
+          default: 100
           example: 5
           format: int64
           type: integer
@@ -26179,6 +26180,10 @@ paths:
       summary: Get all notebooks
       tags:
       - Notebooks
+      x-pagination:
+        limitParam: count
+        pageOffsetParam: start
+        resultsPath: data
     post:
       description: Create a notebook using the specified options.
       operationId: CreateNotebook
