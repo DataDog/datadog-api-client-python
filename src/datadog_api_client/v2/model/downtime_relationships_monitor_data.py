@@ -25,7 +25,7 @@ class DowntimeRelationshipsMonitorData(ModelNormal):
         from datadog_api_client.v2.model.downtime_included_monitor_type import DowntimeIncludedMonitorType
 
         return {
-            "id": (int,),
+            "id": (str,),
             "type": (DowntimeIncludedMonitorType,),
         }
 
@@ -35,13 +35,13 @@ class DowntimeRelationshipsMonitorData(ModelNormal):
     }
 
     def __init__(
-        self_, id: Union[int, UnsetType] = unset, type: Union[DowntimeIncludedMonitorType, UnsetType] = unset, **kwargs
+        self_, id: Union[str, UnsetType] = unset, type: Union[DowntimeIncludedMonitorType, UnsetType] = unset, **kwargs
     ):
         """
         Data for the monitor.
 
         :param id: Monitor ID of the downtime.
-        :type id: int, optional
+        :type id: str, optional
 
         :param type: Monitor resource type.
         :type type: DowntimeIncludedMonitorType, optional
