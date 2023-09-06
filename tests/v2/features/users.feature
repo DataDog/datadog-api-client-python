@@ -129,6 +129,14 @@ Feature: Users
     And the response "meta.page.total_filtered_count" is equal to 1
     And the response "data[0].attributes.email" has the same value as "user.data.attributes.email"
 
+  @replay-only @skip-validation @team:DataDog/team-aaa-identity @with-pagination
+  Scenario: List all users returns "OK" response with pagination
+    Given new "ListUsers" request
+    And request contains "page[size]" parameter with value 2
+    When the request with pagination is sent
+    Then the response status is 200 OK
+    And the response has 3 items
+
   @generated @skip @team:DataDog/team-aaa-identity
   Scenario: Send invitation emails returns "Bad Request" response
     Given new "SendInvitations" request

@@ -27459,6 +27459,10 @@ paths:
       tags:
       - Users
       x-codegen-request-body-name: body
+      x-pagination:
+        limitParam: page[size]
+        pageParam: page[number]
+        resultsPath: data
     post:
       description: Create a user for your organization.
       operationId: CreateUser

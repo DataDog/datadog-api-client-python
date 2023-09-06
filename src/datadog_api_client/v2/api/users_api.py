@@ -3,11 +3,14 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
+import collections
 from typing import Any, Dict, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
 from datadog_api_client.model_utils import (
+    set_attribute_from_path,
+    get_attribute_from_path,
     UnsetType,
     unset,
 )
@@ -16,6 +19,7 @@ from datadog_api_client.v2.model.user_invitations_request import UserInvitations
 from datadog_api_client.v2.model.user_invitation_response import UserInvitationResponse
 from datadog_api_client.v2.model.users_response import UsersResponse
 from datadog_api_client.v2.model.query_sort_order import QuerySortOrder
+from datadog_api_client.v2.model.user import User
 from datadog_api_client.v2.model.user_response import UserResponse
 from datadog_api_client.v2.model.user_create_request import UserCreateRequest
 from datadog_api_client.v2.model.user_update_request import UserUpdateRequest
@@ -418,6 +422,72 @@ class UsersApi:
             kwargs["filter_status"] = filter_status
 
         return self._list_users_endpoint.call_with_http_info(**kwargs)
+
+    def list_users_with_pagination(
+        self,
+        *,
+        page_size: Union[int, UnsetType] = unset,
+        page_number: Union[int, UnsetType] = unset,
+        sort: Union[str, UnsetType] = unset,
+        sort_dir: Union[QuerySortOrder, UnsetType] = unset,
+        filter: Union[str, UnsetType] = unset,
+        filter_status: Union[str, UnsetType] = unset,
+    ) -> collections.abc.Iterable[User]:
+        """List all users.
+
+        Provide a paginated version of :meth:`list_users`, returning all items.
+
+        :param page_size: Size for a given page. The maximum allowed value is 100.
+        :type page_size: int, optional
+        :param page_number: Specific page number to return.
+        :type page_number: int, optional
+        :param sort: User attribute to order results by. Sort order is ascending by default.
+            Sort order is descending if the field
+            is prefixed by a negative sign, for example ``sort=-name``. Options: ``name`` ,
+            ``modified_at`` , ``user_count``.
+        :type sort: str, optional
+        :param sort_dir: Direction of sort. Options: ``asc`` , ``desc``.
+        :type sort_dir: QuerySortOrder, optional
+        :param filter: Filter all users by the given string. Defaults to no filtering.
+        :type filter: str, optional
+        :param filter_status: Filter on status attribute.
+            Comma separated list, with possible values ``Active`` , ``Pending`` , and ``Disabled``.
+            Defaults to no filtering.
+        :type filter_status: str, optional
+
+        :return: A generator of paginated results.
+        :rtype: collections.abc.Iterable[User]
+        """
+        kwargs: Dict[str, Any] = {}
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        if page_number is not unset:
+            kwargs["page_number"] = page_number
+
+        if sort is not unset:
+            kwargs["sort"] = sort
+
+        if sort_dir is not unset:
+            kwargs["sort_dir"] = sort_dir
+
+        if filter is not unset:
+            kwargs["filter"] = filter
+
+        if filter_status is not unset:
+            kwargs["filter_status"] = filter_status
+
+        local_page_size = get_attribute_from_path(kwargs, "page_size", 10)
+        endpoint = self._list_users_endpoint
+        set_attribute_from_path(kwargs, "page_size", local_page_size, endpoint.params_map)
+        pagination = {
+            "limit_value": local_page_size,
+            "results_path": "data",
+            "page_param": "page_number",
+            "endpoint": endpoint,
+            "kwargs": kwargs,
+        }
+        return endpoint.call_with_http_info_paginated(pagination)
 
     def send_invitations(
         self,
