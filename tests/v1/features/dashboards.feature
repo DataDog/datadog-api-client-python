@@ -874,6 +874,14 @@ Feature: Dashboards
     And the response "dashboards[0].title" has the same value as "dashboard.title"
     And the response "dashboards[0].id" has the same value as "dashboard.id"
 
+  @replay-only @skip-validation @team:DataDog/dashboards-backend @with-pagination
+  Scenario: Get all dashboards returns "OK" response with pagination
+    Given new "ListDashboards" request
+    And request contains "count" parameter with value 2
+    When the request with pagination is sent
+    Then the response status is 200 OK
+    And the response has 3 items
+
   @generated @skip @team:DataDog/dashboards-backend
   Scenario: Get all invitations for a shared dashboard returns "Not Found" response
     Given new "GetPublicDashboardInvitations" request
