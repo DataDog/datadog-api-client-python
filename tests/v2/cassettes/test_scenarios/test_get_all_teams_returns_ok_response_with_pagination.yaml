@@ -1,0 +1,39 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/team?page%5Bsize%5D=2&page%5Bnumber%5D=0
+  response:
+    body:
+      string: '{"data":[{"type":"team","attributes":{"created_at":"2023-03-22T17:12:07.018313+00:00","user_count":0,"description":null,"link_count":0,"modified_at":"2023-03-22T17:12:07.018317+00:00","name":"Example
+        Team","summary":null,"handle":"api-spec-test-team"},"relationships":{"team_links":{"links":{"related":"/api/v2/team/ac73040e-c8d4-11ed-b2ea-da7ad0900002/links"}},"user_team_permissions":{"links":{"related":"/api/v2/team/ac73040e-c8d4-11ed-b2ea-da7ad0900002/permission-settings"}}},"id":"ac73040e-c8d4-11ed-b2ea-da7ad0900002"},{"type":"team","attributes":{"created_at":"2023-08-21T19:49:10.718738+00:00","user_count":1,"description":"","link_count":0,"modified_at":"2023-08-21T19:49:10.718744+00:00","name":"test-name-12938712938","summary":null,"handle":"test-handle-12938712938"},"relationships":{"team_links":{"links":{"related":"/api/v2/team/cc338b02-405b-11ee-835e-da7ad0900002/links"}},"user_team_permissions":{"links":{"related":"/api/v2/team/cc338b02-405b-11ee-835e-da7ad0900002/permission-settings"}}},"id":"cc338b02-405b-11ee-835e-da7ad0900002"}],"meta":{"pagination":{"number":0,"first_number":0,"prev_number":0,"next_number":1,"last_number":1,"size":2,"type":"number_size","total":3}},"links":{"self":"https://api.datadoghq.com/api/v2/team?page%5Bsize%5D=2&page%5Bnumber%5D=0","last":"https://api.datadoghq.com/api/v2/team?page[number]=1&page[size]=2","next":"https://api.datadoghq.com/api/v2/team?page[number]=1&page[size]=2","prev":null,"first":"https://api.datadoghq.com/api/v2/team?page[number]=0&page[size]=2"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/team?page%5Bsize%5D=2&page%5Bnumber%5D=1
+  response:
+    body:
+      string: '{"data":[{"type":"team","relationships":{"user_team_permissions":{"links":{"related":"/api/v2/team/ecc8affc-27d6-11ee-b33c-da7ad0900002/permission-settings"}},"team_links":{"links":{"related":"/api/v2/team/ecc8affc-27d6-11ee-b33c-da7ad0900002/links"}}},"attributes":{"link_count":0,"handle":"tf-testaccteamlinkbasic-local-1689951453","modified_at":"2023-07-21T14:57:34.412713+00:00","created_at":"2023-07-21T14:57:34.412707+00:00","summary":"123","name":"tf-testaccteamlinkbasic-local-1689951453","user_count":0,"description":"123"},"id":"ecc8affc-27d6-11ee-b33c-da7ad0900002"}],"meta":{"pagination":{"number":1,"first_number":0,"prev_number":0,"next_number":2,"last_number":1,"size":2,"type":"number_size","total":3}},"links":{"self":"https://api.datadoghq.com/api/v2/team?page%5Bsize%5D=2&page%5Bnumber%5D=1","last":"https://api.datadoghq.com/api/v2/team?page[number]=1&page[size]=2","next":"https://api.datadoghq.com/api/v2/team?page[number]=2&page[size]=2","prev":"https://api.datadoghq.com/api/v2/team?page[number]=0&page[size]=2","first":"https://api.datadoghq.com/api/v2/team?page[number]=0&page[size]=2"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1
