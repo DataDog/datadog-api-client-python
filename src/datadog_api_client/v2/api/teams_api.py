@@ -3,17 +3,21 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
+import collections
 from typing import Any, Dict, List, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
 from datadog_api_client.model_utils import (
+    set_attribute_from_path,
+    get_attribute_from_path,
     UnsetType,
     unset,
 )
 from datadog_api_client.v2.model.teams_response import TeamsResponse
 from datadog_api_client.v2.model.list_teams_sort import ListTeamsSort
 from datadog_api_client.v2.model.list_teams_include import ListTeamsInclude
+from datadog_api_client.v2.model.team import Team
 from datadog_api_client.v2.model.team_response import TeamResponse
 from datadog_api_client.v2.model.team_create_request import TeamCreateRequest
 from datadog_api_client.v2.model.team_update_request import TeamUpdateRequest
@@ -828,6 +832,67 @@ class TeamsApi:
             kwargs["filter_me"] = filter_me
 
         return self._list_teams_endpoint.call_with_http_info(**kwargs)
+
+    def list_teams_with_pagination(
+        self,
+        *,
+        page_number: Union[int, UnsetType] = unset,
+        page_size: Union[int, UnsetType] = unset,
+        sort: Union[ListTeamsSort, UnsetType] = unset,
+        include: Union[List[ListTeamsInclude], UnsetType] = unset,
+        filter_keyword: Union[str, UnsetType] = unset,
+        filter_me: Union[bool, UnsetType] = unset,
+    ) -> collections.abc.Iterable[Team]:
+        """Get all teams.
+
+        Provide a paginated version of :meth:`list_teams`, returning all items.
+
+        :param page_number: Specific page number to return.
+        :type page_number: int, optional
+        :param page_size: Size for a given page. The maximum allowed value is 100.
+        :type page_size: int, optional
+        :param sort: Specifies the order of the returned teams
+        :type sort: ListTeamsSort, optional
+        :param include: Included related resources optionally requested. Allowed enum values: ``team_links, user_team_permissions``
+        :type include: [ListTeamsInclude], optional
+        :param filter_keyword: Search query. Can be team name, team handle, or email of team member
+        :type filter_keyword: str, optional
+        :param filter_me: When true, only returns teams the current user belongs to
+        :type filter_me: bool, optional
+
+        :return: A generator of paginated results.
+        :rtype: collections.abc.Iterable[Team]
+        """
+        kwargs: Dict[str, Any] = {}
+        if page_number is not unset:
+            kwargs["page_number"] = page_number
+
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        if sort is not unset:
+            kwargs["sort"] = sort
+
+        if include is not unset:
+            kwargs["include"] = include
+
+        if filter_keyword is not unset:
+            kwargs["filter_keyword"] = filter_keyword
+
+        if filter_me is not unset:
+            kwargs["filter_me"] = filter_me
+
+        local_page_size = get_attribute_from_path(kwargs, "page_size", 10)
+        endpoint = self._list_teams_endpoint
+        set_attribute_from_path(kwargs, "page_size", local_page_size, endpoint.params_map)
+        pagination = {
+            "limit_value": local_page_size,
+            "results_path": "data",
+            "page_param": "page_number",
+            "endpoint": endpoint,
+            "kwargs": kwargs,
+        }
+        return endpoint.call_with_http_info_paginated(pagination)
 
     def update_team(
         self,

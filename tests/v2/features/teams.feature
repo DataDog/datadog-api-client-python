@@ -118,6 +118,14 @@ Feature: Teams
     Then the response status is 200 OK
     And the response "data" has item with field "id" with value "{{ dd_team.data.id }}"
 
+  @replay-only @skip-validation @team:DataDog/core-app @with-pagination
+  Scenario: Get all teams returns "OK" response with pagination
+    Given new "ListTeams" request
+    And request contains "page[size]" parameter with value 2
+    When the request with pagination is sent
+    Then the response status is 200 OK
+    And the response has 3 items
+
   @team:DataDog/core-app
   Scenario: Get links for a team returns "API error response." response
     Given new "GetTeamLinks" request

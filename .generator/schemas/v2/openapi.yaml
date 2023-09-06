@@ -25989,6 +25989,10 @@ paths:
       summary: Get all teams
       tags:
       - Teams
+      x-pagination:
+        limitParam: page[size]
+        pageParam: page[number]
+        resultsPath: data
     post:
       description: 'Create a new team.
 
