@@ -3,15 +3,19 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
+import collections
 from typing import Any, Dict, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
 from datadog_api_client.model_utils import (
+    set_attribute_from_path,
+    get_attribute_from_path,
     UnsetType,
     unset,
 )
 from datadog_api_client.v2.model.list_downtimes_response import ListDowntimesResponse
+from datadog_api_client.v2.model.downtime_response_data import DowntimeResponseData
 from datadog_api_client.v2.model.downtime_response import DowntimeResponse
 from datadog_api_client.v2.model.downtime_create_request import DowntimeCreateRequest
 from datadog_api_client.v2.model.downtime_update_request import DowntimeUpdateRequest
@@ -122,6 +126,16 @@ class DowntimesApi:
                 "include": {
                     "openapi_types": (str,),
                     "attribute": "include",
+                    "location": "query",
+                },
+                "page_offset": {
+                    "openapi_types": (int,),
+                    "attribute": "page[offset]",
+                    "location": "query",
+                },
+                "page_limit": {
+                    "openapi_types": (int,),
+                    "attribute": "page[limit]",
                     "location": "query",
                 },
             },
@@ -244,6 +258,8 @@ class DowntimesApi:
         *,
         current_only: Union[bool, UnsetType] = unset,
         include: Union[str, UnsetType] = unset,
+        page_offset: Union[int, UnsetType] = unset,
+        page_limit: Union[int, UnsetType] = unset,
     ) -> ListDowntimesResponse:
         """Get all downtimes.
 
@@ -254,6 +270,10 @@ class DowntimesApi:
         :param include: Comma-separated list of resource paths for related resources to include in the response. Supported resource
             paths are ``created_by`` and ``monitor``.
         :type include: str, optional
+        :param page_offset: Specific offset to use as the beginning of the returned page.
+        :type page_offset: int, optional
+        :param page_limit: Maximum number of downtimes in the response.
+        :type page_limit: int, optional
         :rtype: ListDowntimesResponse
         """
         kwargs: Dict[str, Any] = {}
@@ -263,7 +283,63 @@ class DowntimesApi:
         if include is not unset:
             kwargs["include"] = include
 
+        if page_offset is not unset:
+            kwargs["page_offset"] = page_offset
+
+        if page_limit is not unset:
+            kwargs["page_limit"] = page_limit
+
         return self._list_downtimes_endpoint.call_with_http_info(**kwargs)
+
+    def list_downtimes_with_pagination(
+        self,
+        *,
+        current_only: Union[bool, UnsetType] = unset,
+        include: Union[str, UnsetType] = unset,
+        page_offset: Union[int, UnsetType] = unset,
+        page_limit: Union[int, UnsetType] = unset,
+    ) -> collections.abc.Iterable[DowntimeResponseData]:
+        """Get all downtimes.
+
+        Provide a paginated version of :meth:`list_downtimes`, returning all items.
+
+        :param current_only: Only return downtimes that are active when the request is made.
+        :type current_only: bool, optional
+        :param include: Comma-separated list of resource paths for related resources to include in the response. Supported resource
+            paths are ``created_by`` and ``monitor``.
+        :type include: str, optional
+        :param page_offset: Specific offset to use as the beginning of the returned page.
+        :type page_offset: int, optional
+        :param page_limit: Maximum number of downtimes in the response.
+        :type page_limit: int, optional
+
+        :return: A generator of paginated results.
+        :rtype: collections.abc.Iterable[DowntimeResponseData]
+        """
+        kwargs: Dict[str, Any] = {}
+        if current_only is not unset:
+            kwargs["current_only"] = current_only
+
+        if include is not unset:
+            kwargs["include"] = include
+
+        if page_offset is not unset:
+            kwargs["page_offset"] = page_offset
+
+        if page_limit is not unset:
+            kwargs["page_limit"] = page_limit
+
+        local_page_size = get_attribute_from_path(kwargs, "page_limit", 30)
+        endpoint = self._list_downtimes_endpoint
+        set_attribute_from_path(kwargs, "page_limit", local_page_size, endpoint.params_map)
+        pagination = {
+            "limit_value": local_page_size,
+            "results_path": "data",
+            "page_offset_param": "page_offset",
+            "endpoint": endpoint,
+            "kwargs": kwargs,
+        }
+        return endpoint.call_with_http_info_paginated(pagination)
 
     def list_monitor_downtimes(
         self,
