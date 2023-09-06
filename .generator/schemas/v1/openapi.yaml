@@ -20836,6 +20836,21 @@ paths:
         required: false
         schema:
           type: boolean
+      - description: The maximum number of dashboards returned in the list.
+        in: query
+        name: count
+        required: false
+        schema:
+          default: 100
+          format: int64
+          type: integer
+      - description: The specific offset to use as the beginning of the returned response.
+        in: query
+        name: start
+        required: false
+        schema:
+          format: int64
+          type: integer
       responses:
         '200':
           content:
@@ -20859,6 +20874,10 @@ paths:
       summary: Get all dashboards
       tags:
       - Dashboards
+      x-pagination:
+        limitParam: count
+        pageOffsetParam: start
+        resultsPath: dashboards
     patch:
       description: Restore dashboards using the specified IDs. If there are any failures,
         no dashboards will be restored (partial success is not allowed).
