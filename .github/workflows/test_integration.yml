@@ -79,10 +79,9 @@ jobs:
           DD_TEST_CLIENT_APP_KEY: ${{ secrets.DD_CLIENT_APP_KEY }}
           RECORD: "none"
           SLEEP_AFTER_REQUEST: ${{ vars.SLEEP_AFTER_REQUEST }}
-          PYTEST_ADDOPTS: "--ddtrace --ddtrace-patch-all"
+          PYTEST_ADDOPTS: "--ddtrace"
           DD_PYTEST_OPERATION_NAME: "test"
           DD_TRACE_PROPAGATION_STYLE_INJECT: "datadog" 
-          DD_PATCH_MODULES: "urllib3:true"
 
       - name: Post failure status check
         if: failure() && github.event_name == 'pull_request' && contains(github.event.pull_request.head.ref, 'datadog-api-spec/generated/')
