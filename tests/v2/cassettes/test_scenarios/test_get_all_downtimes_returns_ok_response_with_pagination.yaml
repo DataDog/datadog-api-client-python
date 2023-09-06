@@ -1,0 +1,41 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/downtime?page%5Blimit%5D=2
+  response:
+    body:
+      string: '{"data":[{"type":"downtime","attributes":{"mute_first_recovery_notification":false,"canceled":null,"monitor_identifier":{"monitor_tags":["*"]},"schedule":{"start":"2023-05-22T03:06:54.072998+00:00","end":null},"notify_end_types":["expired"],"notify_end_states":["no
+        data","warn","alert"],"status":"active","scope":"host:\"java-hostsMuteErrorsTest-local-1684724813\"","created":"2023-05-22T03:06:54.079122+00:00","display_timezone":"UTC","message":null,"modified":"2023-05-22T03:06:54.079122+00:00"},"id":"b4613732-f84d-11ed-a766-da7ad0900002"},{"type":"downtime","attributes":{"mute_first_recovery_notification":false,"canceled":null,"monitor_identifier":{"monitor_tags":["*"]},"schedule":{"start":"2023-05-23T03:21:54.687109+00:00","end":null},"notify_end_types":["expired"],"notify_end_states":["no
+        data","warn","alert"],"status":"active","scope":"host:\"java-hostsMuteErrorsTest-local-1684812114\"","created":"2023-05-23T03:21:54.690618+00:00","display_timezone":"UTC","message":null,"modified":"2023-05-23T03:21:54.690618+00:00"},"id":"f799770a-f918-11ed-8b48-da7ad0900002"}],"meta":{"page":{"total_filtered_count":3}}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/downtime?page%5Blimit%5D=2&page%5Boffset%5D=2
+  response:
+    body:
+      string: '{"data":[{"type":"downtime","attributes":{"modified":"2023-05-24T03:29:35.343207+00:00","created":"2023-05-24T03:29:35.343207+00:00","canceled":null,"status":"active","scope":"host:\"java-hostsMuteErrorsTest-local-1684898975\"","display_timezone":"UTC","schedule":{"end":null,"start":"2023-05-24T03:29:35.340446+00:00"},"message":null,"mute_first_recovery_notification":false,"notify_end_types":["expired"],"notify_end_states":["warn","no
+        data","alert"],"monitor_identifier":{"monitor_tags":["*"]}},"id":"34953930-f9e3-11ed-85d4-da7ad0900002"}],"meta":{"page":{"total_filtered_count":3}}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

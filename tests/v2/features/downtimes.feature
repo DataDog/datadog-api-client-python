@@ -98,6 +98,15 @@ Feature: Downtimes
     Then the response status is 200 OK
     And the response "data" has item with field "id" with value "1dcb33f8-b23a-11ed-ae77-da7ad0900002"
 
+  @replay-only @skip-validation @team:DataDog/monitor-app @with-pagination
+  Scenario: Get all downtimes returns "OK" response with pagination
+    Given operation "ListDowntimes" enabled
+    And new "ListDowntimes" request
+    And request contains "page[limit]" parameter with value 2
+    When the request with pagination is sent
+    Then the response status is 200 OK
+    And the response has 3 items
+
   @skip-validation @team:DataDog/monitor-app
   Scenario: Schedule a downtime returns "Bad Request" response
     Given new "CreateDowntime" request
