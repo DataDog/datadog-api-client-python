@@ -2066,6 +2066,13 @@ monitor\_search\_count
    :members:
    :show-inheritance:
 
+monitor\_search\_count\_item
+----------------------------
+
+.. automodule:: datadog_api_client.v1.model.monitor_search_count_item
+   :members:
+   :show-inheritance:
+
 monitor\_search\_response
 -------------------------
 
