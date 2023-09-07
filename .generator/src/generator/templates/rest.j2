@@ -238,7 +238,7 @@ class AsyncRESTClientObject:
         proxy = None
         if configuration.proxy:
             proxy = aiosonic.Proxy(configuration.proxy, configuration.proxy_headers)
-        self._client = aiosonic.HTTPClient(proxy=proxy)
+        self._client = aiosonic.HTTPClient(proxy=proxy, verify_ssl=configuration.verify_ssl)
         self._configuration = configuration
 
     def _retry(self, method, response, counter):
