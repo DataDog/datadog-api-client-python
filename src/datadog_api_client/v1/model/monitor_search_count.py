@@ -15,11 +15,13 @@ class MonitorSearchCount(ModelSimple):
     Search facets.
 
 
-    :type value: [dict]
+    :type value: [MonitorSearchCountItem]
     """
 
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v1.model.monitor_search_count_item import MonitorSearchCountItem
+
         return {
-            "value": ([dict],),
+            "value": ([MonitorSearchCountItem],),
         }

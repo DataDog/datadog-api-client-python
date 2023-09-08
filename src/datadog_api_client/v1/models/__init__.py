@@ -345,6 +345,7 @@ from datadog_api_client.v1.model.monitor_options_scheduling_options_evaluation_w
 from datadog_api_client.v1.model.monitor_overall_states import MonitorOverallStates
 from datadog_api_client.v1.model.monitor_renotify_status_type import MonitorRenotifyStatusType
 from datadog_api_client.v1.model.monitor_search_count import MonitorSearchCount
+from datadog_api_client.v1.model.monitor_search_count_item import MonitorSearchCountItem
 from datadog_api_client.v1.model.monitor_search_response import MonitorSearchResponse
 from datadog_api_client.v1.model.monitor_search_response_counts import MonitorSearchResponseCounts
 from datadog_api_client.v1.model.monitor_search_response_metadata import MonitorSearchResponseMetadata
@@ -1213,6 +1214,7 @@ __all__ = [
     "MonitorOverallStates",
     "MonitorRenotifyStatusType",
     "MonitorSearchCount",
+    "MonitorSearchCountItem",
     "MonitorSearchResponse",
     "MonitorSearchResponseCounts",
     "MonitorSearchResponseMetadata",
