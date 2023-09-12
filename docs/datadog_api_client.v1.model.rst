@@ -3641,6 +3641,13 @@ synthetics\_assertion\_target
    :members:
    :show-inheritance:
 
+synthetics\_assertion\_timings\_scope
+-------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_assertion_timings_scope
+   :members:
+   :show-inheritance:
+
 synthetics\_assertion\_type
 ---------------------------
 

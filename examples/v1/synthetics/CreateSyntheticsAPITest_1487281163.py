@@ -14,6 +14,7 @@ from datadog_api_client.v1.model.synthetics_assertion_json_path_target_target im
 )
 from datadog_api_client.v1.model.synthetics_assertion_operator import SyntheticsAssertionOperator
 from datadog_api_client.v1.model.synthetics_assertion_target import SyntheticsAssertionTarget
+from datadog_api_client.v1.model.synthetics_assertion_timings_scope import SyntheticsAssertionTimingsScope
 from datadog_api_client.v1.model.synthetics_assertion_type import SyntheticsAssertionType
 from datadog_api_client.v1.model.synthetics_assertion_x_path_operator import SyntheticsAssertionXPathOperator
 from datadog_api_client.v1.model.synthetics_assertion_x_path_target import SyntheticsAssertionXPathTarget
@@ -48,6 +49,7 @@ body = SyntheticsAPITest(
                 operator=SyntheticsAssertionOperator.LESS_THAN,
                 target=2000,
                 type=SyntheticsAssertionType.RESPONSE_TIME,
+                timings_scope=SyntheticsAssertionTimingsScope.WITHOUT_DNS,
             ),
             SyntheticsAssertionJSONPathTarget(
                 operator=SyntheticsAssertionJSONPathOperator.VALIDATES_JSON_PATH,
