@@ -285,7 +285,7 @@ class MonitorOptions(ModelNormal):
         :param scheduling_options: Configuration options for scheduling.
         :type scheduling_options: MonitorOptionsSchedulingOptions, optional
 
-        :param silenced: Information about the downtime applied to the monitor. **Deprecated**.
+        :param silenced: Information about the downtime applied to the monitor. Only shows v1 downtimes. **Deprecated**.
         :type silenced: {str: (int, none_type,)}, optional
 
         :param synthetics_check_id: ID of the corresponding Synthetic check. **Deprecated**.
