@@ -784,6 +784,43 @@
       "type": "unsafe"
     }
   },
+  "ListLogsCustomDestinations": {
+    "tag": "Logs Custom Destinations",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateLogsCustomDestination": {
+    "tag": "Logs Custom Destinations",
+    "undo": {
+      "operationId": "DeleteLogsCustomDestination",
+      "parameters": [
+        {
+          "name": "custom_destination_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteLogsCustomDestination": {
+    "tag": "Logs Custom Destinations",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetLogsCustomDestination": {
+    "tag": "Logs Custom Destinations",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateLogsCustomDestination": {
+    "tag": "Logs Custom Destinations",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListLogsMetrics": {
     "tag": "Logs Metrics",
     "undo": {

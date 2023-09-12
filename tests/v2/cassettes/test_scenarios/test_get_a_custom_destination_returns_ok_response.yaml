@@ -1,0 +1,58 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"forwarderDestination":{"auth":{"password":"password","type":"basic","username":"username"},"endpoint":"https://example.org/my-intake","type":"http"},"name":"destination-Test-Get_a_custom_destination_returns_OK_response-1694511523","version":0},"type":"custom_destination"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/logs/config/custom_destinations
+  response:
+    body:
+      string: '{"data":{"id":"0a86df7e-9428-4193-8b49-bdaaa7378152","attributes":{"version":0,"name":"destination-Test-Get_a_custom_destination_returns_OK_response-1694511523","query":"","enabled":true,"bufferMaxBytes":5242880,"bufferTimeoutSeconds":60,"maxRetryDurationSeconds":300,"compression":"GZIP","forwarderDestination":{"type":"http","endpoint":"https://example.org/my-intake","auth":{"type":"basic","username":"__REDACTED_SECRET__","password":"__REDACTED_SECRET__"}}},"type":"custom_destination"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/logs/config/custom_destinations/0a86df7e-9428-4193-8b49-bdaaa7378152
+  response:
+    body:
+      string: '{"data":{"id":"0a86df7e-9428-4193-8b49-bdaaa7378152","attributes":{"version":0,"name":"destination-Test-Get_a_custom_destination_returns_OK_response-1694511523","query":"","enabled":true,"bufferMaxBytes":5242880,"bufferTimeoutSeconds":60,"maxRetryDurationSeconds":300,"compression":"GZIP","forwarderDestination":{"type":"http","endpoint":"https://example.org/my-intake","auth":{"type":"basic","username":"__REDACTED_SECRET__","password":"__REDACTED_SECRET__"}}},"type":"custom_destination"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/logs/config/custom_destinations/0a86df7e-9428-4193-8b49-bdaaa7378152
+  response:
+    body:
+      string: '{"meta":{}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

@@ -1,0 +1,40 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"bufferMaxBytes":10000000,"bufferTimeoutSeconds":100,"compression":"GZIP","enabled":true,"fallbackDestination":{"container":"container-name","integration":{"clientId":"aaaaaaaa-1a1a-1a1a-1a1a-aaaaaaaaaaaa","tenantId":"aaaaaaaa-1a1a-1a1a-1a1a-aaaaaaaaaaaa"},"storageAccount":"account-name","type":"azure"},"forwarderDestination":{"auth":{"password":"password","type":"basic","username":"username"},"endpoint":"https://example.org/my-intake","type":"http"},"maxRetryDurationSeconds":100,"name":"my-destination","query":"source:dummy","version":0},"type":"custom_destination"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/logs/config/custom_destinations
+  response:
+    body:
+      string: '{"data":{"id":"38263dba-2c38-41bd-939a-1dc0e7f7d5c2","attributes":{"version":0,"name":"my-destination","query":"source:dummy","enabled":true,"bufferMaxBytes":10000000,"bufferTimeoutSeconds":100,"maxRetryDurationSeconds":100,"compression":"GZIP","forwarderDestination":{"type":"http","endpoint":"https://example.org/my-intake","auth":{"type":"basic","username":"__REDACTED_SECRET__","password":"__REDACTED_SECRET__"}},"fallbackDestination":{"storageAccount":"account-name","container":"container-name","integration":{"tenantId":"aaaaaaaa-1a1a-1a1a-1a1a-aaaaaaaaaaaa","clientId":"aaaaaaaa-1a1a-1a1a-1a1a-aaaaaaaaaaaa"},"type":"azure"}},"type":"custom_destination"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/logs/config/custom_destinations/38263dba-2c38-41bd-939a-1dc0e7f7d5c2
+  response:
+    body:
+      string: '{"meta":{}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

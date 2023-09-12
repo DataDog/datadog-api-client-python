@@ -134,6 +134,13 @@ logs\_archives\_api
    :members:
    :show-inheritance:
 
+logs\_custom\_destinations\_api
+-------------------------------
+
+.. automodule:: datadog_api_client.v2.api.logs_custom_destinations_api
+   :members:
+   :show-inheritance:
+
 logs\_metrics\_api
 ------------------
 

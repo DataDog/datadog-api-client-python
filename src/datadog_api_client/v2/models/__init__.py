@@ -52,6 +52,9 @@ from datadog_api_client.v2.model.authn_mapping_update_request import AuthNMappin
 from datadog_api_client.v2.model.authn_mappings_response import AuthNMappingsResponse
 from datadog_api_client.v2.model.authn_mappings_sort import AuthNMappingsSort
 from datadog_api_client.v2.model.authn_mappings_type import AuthNMappingsType
+from datadog_api_client.v2.model.azure_fallback_destination import AzureFallbackDestination
+from datadog_api_client.v2.model.azure_fallback_destination_integration import AzureFallbackDestinationIntegration
+from datadog_api_client.v2.model.azure_fallback_destination_type import AzureFallbackDestinationType
 from datadog_api_client.v2.model.ci_app_aggregate_bucket_value import CIAppAggregateBucketValue
 from datadog_api_client.v2.model.ci_app_aggregate_bucket_value_timeseries import CIAppAggregateBucketValueTimeseries
 from datadog_api_client.v2.model.ci_app_aggregate_bucket_value_timeseries_point import (
@@ -226,6 +229,18 @@ from datadog_api_client.v2.model.cost_by_org_attributes import CostByOrgAttribut
 from datadog_api_client.v2.model.cost_by_org_response import CostByOrgResponse
 from datadog_api_client.v2.model.cost_by_org_type import CostByOrgType
 from datadog_api_client.v2.model.creator import Creator
+from datadog_api_client.v2.model.custom_destination_attributes import CustomDestinationAttributes
+from datadog_api_client.v2.model.custom_destination_compression_type import CustomDestinationCompressionType
+from datadog_api_client.v2.model.custom_destination_create_payload import CustomDestinationCreatePayload
+from datadog_api_client.v2.model.custom_destination_delete_response import CustomDestinationDeleteResponse
+from datadog_api_client.v2.model.custom_destination_fallback_destination import CustomDestinationFallbackDestination
+from datadog_api_client.v2.model.custom_destination_forwarder_destination import CustomDestinationForwarderDestination
+from datadog_api_client.v2.model.custom_destination_list_response import CustomDestinationListResponse
+from datadog_api_client.v2.model.custom_destination_metadata import CustomDestinationMetadata
+from datadog_api_client.v2.model.custom_destination_response import CustomDestinationResponse
+from datadog_api_client.v2.model.custom_destination_update_payload import CustomDestinationUpdatePayload
+from datadog_api_client.v2.model.custom_destination_with_id import CustomDestinationWithId
+from datadog_api_client.v2.model.custom_destination_without_id import CustomDestinationWithoutId
 from datadog_api_client.v2.model.dashboard_list_add_items_request import DashboardListAddItemsRequest
 from datadog_api_client.v2.model.dashboard_list_add_items_response import DashboardListAddItemsResponse
 from datadog_api_client.v2.model.dashboard_list_delete_items_request import DashboardListDeleteItemsRequest
@@ -289,6 +304,8 @@ from datadog_api_client.v2.model.downtime_status import DowntimeStatus
 from datadog_api_client.v2.model.downtime_update_request import DowntimeUpdateRequest
 from datadog_api_client.v2.model.downtime_update_request_attributes import DowntimeUpdateRequestAttributes
 from datadog_api_client.v2.model.downtime_update_request_data import DowntimeUpdateRequestData
+from datadog_api_client.v2.model.elasticsearch_destination import ElasticsearchDestination
+from datadog_api_client.v2.model.elasticsearch_destination_type import ElasticsearchDestinationType
 from datadog_api_client.v2.model.event import Event
 from datadog_api_client.v2.model.event_attributes import EventAttributes
 from datadog_api_client.v2.model.event_priority import EventPriority
@@ -361,6 +378,9 @@ from datadog_api_client.v2.model.gcpsts_service_account_update_request_data impo
 from datadog_api_client.v2.model.gcpsts_service_accounts_response import GCPSTSServiceAccountsResponse
 from datadog_api_client.v2.model.gcp_service_account_meta import GCPServiceAccountMeta
 from datadog_api_client.v2.model.gcp_service_account_type import GCPServiceAccountType
+from datadog_api_client.v2.model.gcs_fallback_destination import GCSFallbackDestination
+from datadog_api_client.v2.model.gcs_fallback_destination_integration import GCSFallbackDestinationIntegration
+from datadog_api_client.v2.model.gcs_fallback_destination_type import GCSFallbackDestinationType
 from datadog_api_client.v2.model.get_finding_response import GetFindingResponse
 from datadog_api_client.v2.model.get_team_memberships_sort import GetTeamMembershipsSort
 from datadog_api_client.v2.model.group_scalar_column import GroupScalarColumn
@@ -378,6 +398,13 @@ from datadog_api_client.v2.model.hourly_usage_metadata import HourlyUsageMetadat
 from datadog_api_client.v2.model.hourly_usage_pagination import HourlyUsagePagination
 from datadog_api_client.v2.model.hourly_usage_response import HourlyUsageResponse
 from datadog_api_client.v2.model.hourly_usage_type import HourlyUsageType
+from datadog_api_client.v2.model.http_destination import HttpDestination
+from datadog_api_client.v2.model.http_destination_auth import HttpDestinationAuth
+from datadog_api_client.v2.model.http_destination_basic_auth import HttpDestinationBasicAuth
+from datadog_api_client.v2.model.http_destination_basic_auth_type import HttpDestinationBasicAuthType
+from datadog_api_client.v2.model.http_destination_custom_header_auth import HttpDestinationCustomHeaderAuth
+from datadog_api_client.v2.model.http_destination_custom_header_auth_type import HttpDestinationCustomHeaderAuthType
+from datadog_api_client.v2.model.http_destination_type import HttpDestinationType
 from datadog_api_client.v2.model.ip_allowlist_attributes import IPAllowlistAttributes
 from datadog_api_client.v2.model.ip_allowlist_data import IPAllowlistData
 from datadog_api_client.v2.model.ip_allowlist_entry import IPAllowlistEntry
@@ -882,6 +909,9 @@ from datadog_api_client.v2.model.role_update_response_data import RoleUpdateResp
 from datadog_api_client.v2.model.roles_response import RolesResponse
 from datadog_api_client.v2.model.roles_sort import RolesSort
 from datadog_api_client.v2.model.roles_type import RolesType
+from datadog_api_client.v2.model.s3_fallback_destination import S3FallbackDestination
+from datadog_api_client.v2.model.s3_fallback_destination_integration import S3FallbackDestinationIntegration
+from datadog_api_client.v2.model.s3_fallback_destination_type import S3FallbackDestinationType
 from datadog_api_client.v2.model.saml_assertion_attribute import SAMLAssertionAttribute
 from datadog_api_client.v2.model.saml_assertion_attribute_attributes import SAMLAssertionAttributeAttributes
 from datadog_api_client.v2.model.saml_assertion_attributes_type import SAMLAssertionAttributesType
@@ -1247,6 +1277,8 @@ from datadog_api_client.v2.model.spans_sort import SpansSort
 from datadog_api_client.v2.model.spans_sort_order import SpansSortOrder
 from datadog_api_client.v2.model.spans_type import SpansType
 from datadog_api_client.v2.model.spans_warning import SpansWarning
+from datadog_api_client.v2.model.splunk_hec_destination import SplunkHecDestination
+from datadog_api_client.v2.model.splunk_hec_destination_type import SplunkHecDestinationType
 from datadog_api_client.v2.model.tags_event_attribute import TagsEventAttribute
 from datadog_api_client.v2.model.team import Team
 from datadog_api_client.v2.model.team_attributes import TeamAttributes
@@ -1403,6 +1435,9 @@ __all__ = [
     "AuthNMappingsResponse",
     "AuthNMappingsSort",
     "AuthNMappingsType",
+    "AzureFallbackDestination",
+    "AzureFallbackDestinationIntegration",
+    "AzureFallbackDestinationType",
     "CIAppAggregateBucketValue",
     "CIAppAggregateBucketValueTimeseries",
     "CIAppAggregateBucketValueTimeseriesPoint",
@@ -1531,6 +1566,18 @@ __all__ = [
     "CostByOrgResponse",
     "CostByOrgType",
     "Creator",
+    "CustomDestinationAttributes",
+    "CustomDestinationCompressionType",
+    "CustomDestinationCreatePayload",
+    "CustomDestinationDeleteResponse",
+    "CustomDestinationFallbackDestination",
+    "CustomDestinationForwarderDestination",
+    "CustomDestinationListResponse",
+    "CustomDestinationMetadata",
+    "CustomDestinationResponse",
+    "CustomDestinationUpdatePayload",
+    "CustomDestinationWithId",
+    "CustomDestinationWithoutId",
     "DashboardListAddItemsRequest",
     "DashboardListAddItemsResponse",
     "DashboardListDeleteItemsRequest",
@@ -1584,6 +1631,8 @@ __all__ = [
     "DowntimeUpdateRequest",
     "DowntimeUpdateRequestAttributes",
     "DowntimeUpdateRequestData",
+    "ElasticsearchDestination",
+    "ElasticsearchDestinationType",
     "Event",
     "EventAttributes",
     "EventPriority",
@@ -1656,6 +1705,9 @@ __all__ = [
     "GCPSTSServiceAccountsResponse",
     "GCPServiceAccountMeta",
     "GCPServiceAccountType",
+    "GCSFallbackDestination",
+    "GCSFallbackDestinationIntegration",
+    "GCSFallbackDestinationType",
     "GetFindingResponse",
     "GetTeamMembershipsSort",
     "GroupScalarColumn",
@@ -1673,6 +1725,13 @@ __all__ = [
     "HourlyUsagePagination",
     "HourlyUsageResponse",
     "HourlyUsageType",
+    "HttpDestination",
+    "HttpDestinationAuth",
+    "HttpDestinationBasicAuth",
+    "HttpDestinationBasicAuthType",
+    "HttpDestinationCustomHeaderAuth",
+    "HttpDestinationCustomHeaderAuthType",
+    "HttpDestinationType",
     "IPAllowlistAttributes",
     "IPAllowlistData",
     "IPAllowlistEntry",
@@ -2115,6 +2174,9 @@ __all__ = [
     "RolesResponse",
     "RolesSort",
     "RolesType",
+    "S3FallbackDestination",
+    "S3FallbackDestinationIntegration",
+    "S3FallbackDestinationType",
     "SAMLAssertionAttribute",
     "SAMLAssertionAttributeAttributes",
     "SAMLAssertionAttributesType",
@@ -2374,6 +2436,8 @@ __all__ = [
     "SpansSortOrder",
     "SpansType",
     "SpansWarning",
+    "SplunkHecDestination",
+    "SplunkHecDestinationType",
     "TagsEventAttribute",
     "Team",
     "TeamAttributes",
