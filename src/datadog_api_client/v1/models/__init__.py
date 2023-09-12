@@ -590,6 +590,7 @@ from datadog_api_client.v1.model.synthetics_assertion_json_path_target_target im
 )
 from datadog_api_client.v1.model.synthetics_assertion_operator import SyntheticsAssertionOperator
 from datadog_api_client.v1.model.synthetics_assertion_target import SyntheticsAssertionTarget
+from datadog_api_client.v1.model.synthetics_assertion_timings_scope import SyntheticsAssertionTimingsScope
 from datadog_api_client.v1.model.synthetics_assertion_type import SyntheticsAssertionType
 from datadog_api_client.v1.model.synthetics_assertion_x_path_operator import SyntheticsAssertionXPathOperator
 from datadog_api_client.v1.model.synthetics_assertion_x_path_target import SyntheticsAssertionXPathTarget
@@ -1439,6 +1440,7 @@ __all__ = [
     "SyntheticsAssertionJSONPathTargetTarget",
     "SyntheticsAssertionOperator",
     "SyntheticsAssertionTarget",
+    "SyntheticsAssertionTimingsScope",
     "SyntheticsAssertionType",
     "SyntheticsAssertionXPathOperator",
     "SyntheticsAssertionXPathTarget",

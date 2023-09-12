@@ -7,7 +7,7 @@
         "target": "text/html",
         "type": "header"
       },
-      { "operator": "lessThan", "target": 2000, "type": "responseTime" },
+      { "operator": "lessThan", "target": 2000, "type": "responseTime", "timingsScope": "withoutDNS" },
       {
         "operator": "validatesJSONPath",
         "target": {
