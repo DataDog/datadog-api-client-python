@@ -127,7 +127,7 @@ class Monitor(ModelNormal):
         :param id: ID of this monitor.
         :type id: int, optional
 
-        :param matching_downtimes: A list of active downtimes that match this monitor.
+        :param matching_downtimes: A list of active v1 downtimes that match this monitor.
         :type matching_downtimes: [MatchingDowntime], optional
 
         :param message: A message to include with notifications for this monitor.
