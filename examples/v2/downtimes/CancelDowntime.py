@@ -10,7 +10,6 @@ from datadog_api_client.v2.api.downtimes_api import DowntimesApi
 DOWNTIME_V2_DATA_ID = environ["DOWNTIME_V2_DATA_ID"]
 
 configuration = Configuration()
-configuration.unstable_operations["cancel_downtime"] = True
 with ApiClient(configuration) as api_client:
     api_instance = DowntimesApi(api_client)
     api_instance.cancel_downtime(
