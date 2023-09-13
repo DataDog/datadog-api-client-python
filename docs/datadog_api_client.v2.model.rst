@@ -379,6 +379,27 @@ authn\_mappings\_type
    :members:
    :show-inheritance:
 
+azure\_fallback\_destination
+----------------------------
+
+.. automodule:: datadog_api_client.v2.model.azure_fallback_destination
+   :members:
+   :show-inheritance:
+
+azure\_fallback\_destination\_integration
+-----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.azure_fallback_destination_integration
+   :members:
+   :show-inheritance:
+
+azure\_fallback\_destination\_type
+----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.azure_fallback_destination_type
+   :members:
+   :show-inheritance:
+
 chargeback\_breakdown
 ---------------------
 
@@ -1275,6 +1296,97 @@ creator
    :members:
    :show-inheritance:
 
+custom\_destination
+-------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_destination
+   :members:
+   :show-inheritance:
+
+custom\_destination\_attributes
+-------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_destination_attributes
+   :members:
+   :show-inheritance:
+
+custom\_destination\_compression\_type
+--------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_destination_compression_type
+   :members:
+   :show-inheritance:
+
+custom\_destination\_create\_data
+---------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_destination_create_data
+   :members:
+   :show-inheritance:
+
+custom\_destination\_create\_request
+------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_destination_create_request
+   :members:
+   :show-inheritance:
+
+custom\_destination\_delete\_response
+-------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_destination_delete_response
+   :members:
+   :show-inheritance:
+
+custom\_destination\_fallback\_destination
+------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_destination_fallback_destination
+   :members:
+   :show-inheritance:
+
+custom\_destination\_forwarder\_destination
+-------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_destination_forwarder_destination
+   :members:
+   :show-inheritance:
+
+custom\_destination\_list\_response
+-----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_destination_list_response
+   :members:
+   :show-inheritance:
+
+custom\_destination\_metadata
+-----------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_destination_metadata
+   :members:
+   :show-inheritance:
+
+custom\_destination\_response
+-----------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_destination_response
+   :members:
+   :show-inheritance:
+
+custom\_destination\_type
+-------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_destination_type
+   :members:
+   :show-inheritance:
+
+custom\_destination\_update\_request
+------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_destination_update_request
+   :members:
+   :show-inheritance:
+
 dashboard\_list\_add\_items\_request
 ------------------------------------
 
@@ -1643,6 +1755,20 @@ downtime\_update\_request\_data
 -------------------------------
 
 .. automodule:: datadog_api_client.v2.model.downtime_update_request_data
+   :members:
+   :show-inheritance:
+
+elasticsearch\_destination
+--------------------------
+
+.. automodule:: datadog_api_client.v2.model.elasticsearch_destination
+   :members:
+   :show-inheritance:
+
+elasticsearch\_destination\_type
+--------------------------------
+
+.. automodule:: datadog_api_client.v2.model.elasticsearch_destination_type
    :members:
    :show-inheritance:
 
@@ -2150,6 +2276,27 @@ gcpsts\_service\_accounts\_response
    :members:
    :show-inheritance:
 
+gcs\_fallback\_destination
+--------------------------
+
+.. automodule:: datadog_api_client.v2.model.gcs_fallback_destination
+   :members:
+   :show-inheritance:
+
+gcs\_fallback\_destination\_integration
+---------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.gcs_fallback_destination_integration
+   :members:
+   :show-inheritance:
+
+gcs\_fallback\_destination\_type
+--------------------------------
+
+.. automodule:: datadog_api_client.v2.model.gcs_fallback_destination_type
+   :members:
+   :show-inheritance:
+
 get\_finding\_response
 ----------------------
 
@@ -2224,6 +2371,55 @@ hourly\_usage\_type
 -------------------
 
 .. automodule:: datadog_api_client.v2.model.hourly_usage_type
+   :members:
+   :show-inheritance:
+
+http\_destination
+-----------------
+
+.. automodule:: datadog_api_client.v2.model.http_destination
+   :members:
+   :show-inheritance:
+
+http\_destination\_auth
+-----------------------
+
+.. automodule:: datadog_api_client.v2.model.http_destination_auth
+   :members:
+   :show-inheritance:
+
+http\_destination\_basic\_auth
+------------------------------
+
+.. automodule:: datadog_api_client.v2.model.http_destination_basic_auth
+   :members:
+   :show-inheritance:
+
+http\_destination\_basic\_auth\_type
+------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.http_destination_basic_auth_type
+   :members:
+   :show-inheritance:
+
+http\_destination\_custom\_header\_auth
+---------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.http_destination_custom_header_auth
+   :members:
+   :show-inheritance:
+
+http\_destination\_custom\_header\_auth\_type
+---------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.http_destination_custom_header_auth_type
+   :members:
+   :show-inheritance:
+
+http\_destination\_type
+-----------------------
+
+.. automodule:: datadog_api_client.v2.model.http_destination_type
    :members:
    :show-inheritance:
 
@@ -5363,6 +5559,27 @@ rum\_warning
    :members:
    :show-inheritance:
 
+s3\_fallback\_destination
+-------------------------
+
+.. automodule:: datadog_api_client.v2.model.s3_fallback_destination
+   :members:
+   :show-inheritance:
+
+s3\_fallback\_destination\_integration
+--------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.s3_fallback_destination_integration
+   :members:
+   :show-inheritance:
+
+s3\_fallback\_destination\_type
+-------------------------------
+
+.. automodule:: datadog_api_client.v2.model.s3_fallback_destination_type
+   :members:
+   :show-inheritance:
+
 saml\_assertion\_attribute
 --------------------------
 
@@ -7152,6 +7369,20 @@ spans\_warning
 --------------
 
 .. automodule:: datadog_api_client.v2.model.spans_warning
+   :members:
+   :show-inheritance:
+
+splunk\_hec\_destination
+------------------------
+
+.. automodule:: datadog_api_client.v2.model.splunk_hec_destination
+   :members:
+   :show-inheritance:
+
+splunk\_hec\_destination\_type
+------------------------------
+
+.. automodule:: datadog_api_client.v2.model.splunk_hec_destination_type
    :members:
    :show-inheritance:
 

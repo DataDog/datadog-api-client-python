@@ -1,0 +1,58 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"forwarderDestination":{"auth":{"password":"password","type":"basic","username":"username"},"endpoint":"https://example.org/my-intake","type":"http"},"name":"destination-Test-List_custom_destinations_returns_OK_response-1694620628","version":0},"type":"custom_destination"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/logs/config/custom_destinations
+  response:
+    body:
+      string: '{"data":{"id":"4fb853ff-a5d7-4a49-9b4c-e721d08bb614","attributes":{"version":0,"name":"destination-Test-List_custom_destinations_returns_OK_response-1694620628","query":"","enabled":true,"bufferMaxBytes":5242880,"bufferTimeoutSeconds":60,"maxRetryDurationSeconds":300,"compression":"GZIP","forwarderDestination":{"type":"http","endpoint":"https://example.org/my-intake","auth":{"type":"basic","username":"__REDACTED_SECRET__","password":"__REDACTED_SECRET__"}}},"type":"custom_destination"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/logs/config/custom_destinations
+  response:
+    body:
+      string: '{"data":[{"id":"05594534-2f12-46de-8939-68531237bd52","attributes":{"version":0,"name":"destination-Test-List_custom_destinations_returns_OK_response-1694619972","query":"","enabled":true,"bufferMaxBytes":5242880,"bufferTimeoutSeconds":60,"maxRetryDurationSeconds":300,"compression":"GZIP","forwarderDestination":{"type":"http","endpoint":"https://example.org/my-intake","auth":{"type":"basic","username":"__REDACTED_SECRET__","password":"__REDACTED_SECRET__"}}},"type":"custom_destination"},{"id":"0118f773-b2f0-4280-bdba-4c81160c5349","attributes":{"version":1,"name":"destination-Test-Update_a_custom_destination_returns_OK_response-1694620006--updated-name","query":"","enabled":true,"bufferMaxBytes":5242880,"bufferTimeoutSeconds":60,"maxRetryDurationSeconds":300,"compression":"GZIP","forwarderDestination":{"type":"http","endpoint":"https://example.org/my-intake","auth":{"type":"basic","username":"__REDACTED_SECRET__","password":"__REDACTED_SECRET__"}}},"type":"custom_destination"},{"id":"4fb853ff-a5d7-4a49-9b4c-e721d08bb614","attributes":{"version":0,"name":"destination-Test-List_custom_destinations_returns_OK_response-1694620628","query":"","enabled":true,"bufferMaxBytes":5242880,"bufferTimeoutSeconds":60,"maxRetryDurationSeconds":300,"compression":"GZIP","forwarderDestination":{"type":"http","endpoint":"https://example.org/my-intake","auth":{"type":"basic","username":"__REDACTED_SECRET__","password":"__REDACTED_SECRET__"}}},"type":"custom_destination"}],"meta":{"customDestinationsLimit":3}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/logs/config/custom_destinations/4fb853ff-a5d7-4a49-9b4c-e721d08bb614
+  response:
+    body:
+      string: '{"meta":{}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

@@ -239,6 +239,18 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"custom_destination\",\n    \"attributes\": {\n      \"name\": \"destination-{{ unique }}\",\n      \"version\": 0,\n      \"forwarderDestination\": {\n        \"type\": \"http\",\n        \"endpoint\": \"https://example.org/my-intake\",\n        \"auth\": {\n          \"type\": \"basic\",\n          \"username\": \"username\",\n          \"password\": \"password\"\n        }\n      }\n    }\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"logs_custom_destination\" in the system",
+    "key": "logs_custom_destination",
+    "tag": "Logs Custom Destinations",
+    "operationId": "CreateLogsCustomDestination"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"id\": \"{{ unique }}\",\n    \"attributes\": {\n      \"filter\": {\n        \"query\": \"source:{{ unique }}\"\n      },\n      \"compute\": {\n        \"aggregation_type\": \"count\"\n      }\n    },\n    \"type\": \"logs_metrics\"\n  }\n}"
       }
     ],
