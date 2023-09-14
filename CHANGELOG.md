@@ -1,5 +1,36 @@
 # Changelog
 
+## 2.17.0 / 2023-09-14
+
+### Fixed
+* Fix downtimes monitor relationship id schema type by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1649
+* Pass SSL configuration arguments to Async Api Client by @vxuv in https://github.com/DataDog/datadog-api-client-python/pull/1655
+### Added
+* Add trace_stream to dashboard ListStreamSource by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1622
+* Add pagination extension to SLO corrections by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1631
+* Adding aas count to the documentation for summary and hourly usage endpoints by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1635
+* Add pagination extension to SLOs by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1632
+* Add pagination extension to monitors by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1633
+* Add pagination extension to synthetics tests by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1640
+* Add 'style' to sunburst requests by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1639
+* Add pagination extension to notebook by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1642
+* Add support for dashboard listing pagination parameters by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1646
+* Add pagination parameters to downtimes listing by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1648
+* Add pagination extension to user list by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1647
+* Add pagination extension to team listing by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1650
+* Remove private beta for Downtimes v2 by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1645
+* Update v1 monitor api docs to exclude downtimes v2 by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1660
+* Add timing scope for response time assertions by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1651
+* Add Formula and Function query support to heatmap widgets by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1661
+* Add synthetics mobile application testing to usage metering API by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1657
+### Changed
+* Add spectral rule for validating `no unnamed objects` in lists by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1656
+
+## New Contributors
+* @vxuv made their first contribution in https://github.com/DataDog/datadog-api-client-python/pull/1655
+
+**Full Changelog**: https://github.com/DataDog/datadog-api-client-python/compare/2.16.0...2.17.0
+
 ## 2.16.0 / 2023-08-23
 
 ### Fixed
