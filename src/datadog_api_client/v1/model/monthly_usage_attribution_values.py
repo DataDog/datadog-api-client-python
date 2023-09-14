@@ -71,6 +71,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
             "infra_host_usage": (float,),
             "invocations_percentage": (float,),
             "invocations_usage": (float,),
+            "mobile_app_testing_percentage": (float,),
+            "mobile_app_testing_usage": (float,),
             "npm_host_percentage": (float,),
             "npm_host_usage": (float,),
             "obs_pipeline_bytes_percentage": (float,),
@@ -146,6 +148,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         "infra_host_usage": "infra_host_usage",
         "invocations_percentage": "invocations_percentage",
         "invocations_usage": "invocations_usage",
+        "mobile_app_testing_percentage": "mobile_app_testing_percentage",
+        "mobile_app_testing_usage": "mobile_app_testing_usage",
         "npm_host_percentage": "npm_host_percentage",
         "npm_host_usage": "npm_host_usage",
         "obs_pipeline_bytes_percentage": "obs_pipeline_bytes_percentage",
@@ -222,6 +226,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         infra_host_usage: Union[float, UnsetType] = unset,
         invocations_percentage: Union[float, UnsetType] = unset,
         invocations_usage: Union[float, UnsetType] = unset,
+        mobile_app_testing_percentage: Union[float, UnsetType] = unset,
+        mobile_app_testing_usage: Union[float, UnsetType] = unset,
         npm_host_percentage: Union[float, UnsetType] = unset,
         npm_host_usage: Union[float, UnsetType] = unset,
         obs_pipeline_bytes_percentage: Union[float, UnsetType] = unset,
@@ -407,6 +413,12 @@ class MonthlyUsageAttributionValues(ModelNormal):
         :param invocations_usage: The Lambda invocation usage by tag(s).
         :type invocations_usage: float, optional
 
+        :param mobile_app_testing_percentage: The percentage of Synthetic mobile application test usage by tag(s).
+        :type mobile_app_testing_percentage: float, optional
+
+        :param mobile_app_testing_usage: The Synthetic mobile application test usage by tag(s).
+        :type mobile_app_testing_usage: float, optional
+
         :param npm_host_percentage: The percentage of network host usage by tag(s).
         :type npm_host_percentage: float, optional
 
@@ -569,6 +581,10 @@ class MonthlyUsageAttributionValues(ModelNormal):
             kwargs["invocations_percentage"] = invocations_percentage
         if invocations_usage is not unset:
             kwargs["invocations_usage"] = invocations_usage
+        if mobile_app_testing_percentage is not unset:
+            kwargs["mobile_app_testing_percentage"] = mobile_app_testing_percentage
+        if mobile_app_testing_usage is not unset:
+            kwargs["mobile_app_testing_usage"] = mobile_app_testing_usage
         if npm_host_percentage is not unset:
             kwargs["npm_host_percentage"] = npm_host_percentage
         if npm_host_usage is not unset:
