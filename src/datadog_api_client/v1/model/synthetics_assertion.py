@@ -25,6 +25,9 @@ class SyntheticsAssertion(ModelComposed):
         :param target: Value used by the operator.
         :type target: bool, date, datetime, dict, float, int, list, str, none_type
 
+        :param timings_scope: Timings scope for response time assertions.
+        :type timings_scope: SyntheticsAssertionTimingsScope, optional
+
         :param type: Type of the assertion.
         :type type: SyntheticsAssertionType
         """

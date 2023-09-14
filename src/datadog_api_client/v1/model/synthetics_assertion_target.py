@@ -18,6 +18,7 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v1.model.synthetics_assertion_operator import SyntheticsAssertionOperator
+    from datadog_api_client.v1.model.synthetics_assertion_timings_scope import SyntheticsAssertionTimingsScope
     from datadog_api_client.v1.model.synthetics_assertion_type import SyntheticsAssertionType
 
 
@@ -25,6 +26,7 @@ class SyntheticsAssertionTarget(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v1.model.synthetics_assertion_operator import SyntheticsAssertionOperator
+        from datadog_api_client.v1.model.synthetics_assertion_timings_scope import SyntheticsAssertionTimingsScope
         from datadog_api_client.v1.model.synthetics_assertion_type import SyntheticsAssertionType
 
         return {
@@ -41,6 +43,7 @@ class SyntheticsAssertionTarget(ModelNormal):
                 str,
                 none_type,
             ),
+            "timings_scope": (SyntheticsAssertionTimingsScope,),
             "type": (SyntheticsAssertionType,),
         }
 
@@ -48,6 +51,7 @@ class SyntheticsAssertionTarget(ModelNormal):
         "operator": "operator",
         "_property": "property",
         "target": "target",
+        "timings_scope": "timingsScope",
         "type": "type",
     }
 
@@ -57,6 +61,7 @@ class SyntheticsAssertionTarget(ModelNormal):
         target: Any,
         type: SyntheticsAssertionType,
         _property: Union[str, UnsetType] = unset,
+        timings_scope: Union[SyntheticsAssertionTimingsScope, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -71,11 +76,16 @@ class SyntheticsAssertionTarget(ModelNormal):
         :param target: Value used by the operator.
         :type target: bool, date, datetime, dict, float, int, list, str, none_type
 
+        :param timings_scope: Timings scope for response time assertions.
+        :type timings_scope: SyntheticsAssertionTimingsScope, optional
+
         :param type: Type of the assertion.
         :type type: SyntheticsAssertionType
         """
         if _property is not unset:
             kwargs["_property"] = _property
+        if timings_scope is not unset:
+            kwargs["timings_scope"] = timings_scope
         super().__init__(kwargs)
 
         self_.operator = operator

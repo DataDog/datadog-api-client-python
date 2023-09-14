@@ -32,7 +32,6 @@ body = DowntimeCreateRequest(
 )
 
 configuration = Configuration()
-configuration.unstable_operations["create_downtime"] = True
 with ApiClient(configuration) as api_client:
     api_instance = DowntimesApi(api_client)
     response = api_instance.create_downtime(body=body)

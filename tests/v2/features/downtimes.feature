@@ -16,7 +16,6 @@ Feature: Downtimes
   @skip-validation @team:DataDog/monitor-app
   Scenario: Cancel a downtime returns "Downtime not found" response
     Given new "CancelDowntime" request
-    And operation "CancelDowntime" enabled
     And request contains "downtime_id" parameter with value "00000000-0000-1234-0000-000000000000"
     When the request is sent
     Then the response status is 404 Downtime not found
@@ -24,7 +23,6 @@ Feature: Downtimes
   @team:DataDog/monitor-app
   Scenario: Cancel a downtime returns "OK" response
     Given there is a valid "downtime_v2" in the system
-    And operation "CancelDowntime" enabled
     And new "CancelDowntime" request
     And request contains "downtime_id" parameter from "downtime_v2.data.id"
     When the request is sent
@@ -33,7 +31,6 @@ Feature: Downtimes
   @skip-validation @team:DataDog/monitor-app
   Scenario: Get a downtime returns "Bad Request" response
     Given new "GetDowntime" request
-    And operation "GetDowntime" enabled
     And request contains "downtime_id" parameter with value "INVALID_UUID_LENGTH"
     When the request is sent
     Then the response status is 400 Bad Request
@@ -41,7 +38,6 @@ Feature: Downtimes
   @skip-validation @team:DataDog/monitor-app
   Scenario: Get a downtime returns "Not Found" response
     Given new "GetDowntime" request
-    And operation "GetDowntime" enabled
     And request contains "downtime_id" parameter with value "00000000-0000-1234-0000-000000000000"
     When the request is sent
     Then the response status is 404 Not Found
@@ -49,7 +45,6 @@ Feature: Downtimes
   @team:DataDog/monitor-app
   Scenario: Get a downtime returns "OK" response
     Given there is a valid "downtime_v2" in the system
-    And operation "GetDowntime" enabled
     And new "GetDowntime" request
     And request contains "downtime_id" parameter from "downtime_v2.data.id"
     When the request is sent
@@ -58,16 +53,14 @@ Feature: Downtimes
 
   @generated @skip @team:DataDog/monitor-app
   Scenario: Get active downtimes for a monitor returns "Monitor Not Found error" response
-    Given operation "ListMonitorDowntimes" enabled
-    And new "ListMonitorDowntimes" request
+    Given new "ListMonitorDowntimes" request
     And request contains "monitor_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Monitor Not Found error
 
   @generated @skip @team:DataDog/monitor-app
   Scenario: Get active downtimes for a monitor returns "OK" response
-    Given operation "ListMonitorDowntimes" enabled
-    And new "ListMonitorDowntimes" request
+    Given new "ListMonitorDowntimes" request
     And request contains "monitor_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
@@ -75,7 +68,6 @@ Feature: Downtimes
   @team:DataDog/monitor-app
   Scenario: Get all downtimes for a monitor returns "Monitor Not Found error" response
     Given new "ListMonitorDowntimes" request
-    And operation "ListMonitorDowntimes" enabled
     And request contains "monitor_id" parameter with value 0
     When the request is sent
     Then the response status is 404 Monitor Not Found error
@@ -83,7 +75,6 @@ Feature: Downtimes
   @replay-only @team:DataDog/monitor-app
   Scenario: Get all downtimes for a monitor returns "OK" response
     Given new "ListMonitorDowntimes" request
-    And operation "ListMonitorDowntimes" enabled
     And request contains "monitor_id" parameter with value 35534610
     When the request is sent
     Then the response status is 200 OK
@@ -93,15 +84,13 @@ Feature: Downtimes
   @replay-only @team:DataDog/monitor-app
   Scenario: Get all downtimes returns "OK" response
     Given new "ListDowntimes" request
-    And operation "ListDowntimes" enabled
     When the request is sent
     Then the response status is 200 OK
     And the response "data" has item with field "id" with value "1dcb33f8-b23a-11ed-ae77-da7ad0900002"
 
   @replay-only @skip-validation @team:DataDog/monitor-app @with-pagination
   Scenario: Get all downtimes returns "OK" response with pagination
-    Given operation "ListDowntimes" enabled
-    And new "ListDowntimes" request
+    Given new "ListDowntimes" request
     And request contains "page[limit]" parameter with value 2
     When the request with pagination is sent
     Then the response status is 200 OK
@@ -110,7 +99,6 @@ Feature: Downtimes
   @skip-validation @team:DataDog/monitor-app
   Scenario: Schedule a downtime returns "Bad Request" response
     Given new "CreateDowntime" request
-    And operation "CreateDowntime" enabled
     And body with value { "data": { "attributes": { "monitor_identifier": { "monitor_tags": ["cat:hat"] }, "scope": "BAD_SCOPE_MISSING_KEY_VALUE_FORMAT", "schedule": {"start": null } }, "type": "downtime" } }
     When the request is sent
     Then the response status is 400 Bad Request
@@ -118,7 +106,6 @@ Feature: Downtimes
   @team:DataDog/monitor-app
   Scenario: Schedule a downtime returns "OK" response
     Given new "CreateDowntime" request
-    And operation "CreateDowntime" enabled
     And body with value { "data": { "attributes": { "message": "dark forest", "monitor_identifier": { "monitor_tags": ["cat:hat"] }, "scope": "test:{{ unique_lower_alnum }}", "schedule": {"start": null } }, "type": "downtime" } }
     When the request is sent
     Then the response status is 200 OK
@@ -127,7 +114,6 @@ Feature: Downtimes
   @skip-java @skip-python @skip-ruby @skip-typescript @skip-validation @team:DataDog/monitor-app
   Scenario: Update a downtime returns "Bad Request" response
     Given there is a valid "downtime_v2" in the system
-    And operation "UpdateDowntime" enabled
     And new "UpdateDowntime" request
     And request contains "downtime_id" parameter from "downtime_v2.data.id"
     And body with value {"data": {"attributes": {"invalid_field": "sophon"}, "id": "{{ downtime_v2.data.id }}", "type": "downtime"}}
@@ -137,7 +123,6 @@ Feature: Downtimes
   @skip-validation @team:DataDog/monitor-app
   Scenario: Update a downtime returns "Downtime not found" response
     Given new "UpdateDowntime" request
-    And operation "UpdateDowntime" enabled
     And request contains "downtime_id" parameter with value "00000000-0000-1234-0000-000000000000"
     And body with value {"data": {"attributes": {"message": "test msg"}, "id": "00000000-0000-1234-0000-000000000000", "type": "downtime"}}
     When the request is sent
@@ -146,7 +131,6 @@ Feature: Downtimes
   @team:DataDog/monitor-app
   Scenario: Update a downtime returns "OK" response
     Given there is a valid "downtime_v2" in the system
-    And operation "UpdateDowntime" enabled
     And new "UpdateDowntime" request
     And request contains "downtime_id" parameter from "downtime_v2.data.id"
     And body with value {"data": {"attributes": {"message": "light speed"}, "id": "{{ downtime_v2.data.id }}", "type": "downtime"}}
