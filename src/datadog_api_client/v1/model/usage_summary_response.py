@@ -113,6 +113,7 @@ class UsageSummaryResponse(ModelNormal):
             "start_date": (datetime,),
             "synthetics_browser_check_calls_count_agg_sum": (int,),
             "synthetics_check_calls_count_agg_sum": (int,),
+            "synthetics_mobile_test_runs_agg_sum": (int,),
             "synthetics_parallel_testing_max_slots_hwm_sum": (int,),
             "trace_search_indexed_events_count_agg_sum": (int,),
             "twol_ingested_events_bytes_agg_sum": (int,),
@@ -211,6 +212,7 @@ class UsageSummaryResponse(ModelNormal):
         "start_date": "start_date",
         "synthetics_browser_check_calls_count_agg_sum": "synthetics_browser_check_calls_count_agg_sum",
         "synthetics_check_calls_count_agg_sum": "synthetics_check_calls_count_agg_sum",
+        "synthetics_mobile_test_runs_agg_sum": "synthetics_mobile_test_runs_agg_sum",
         "synthetics_parallel_testing_max_slots_hwm_sum": "synthetics_parallel_testing_max_slots_hwm_sum",
         "trace_search_indexed_events_count_agg_sum": "trace_search_indexed_events_count_agg_sum",
         "twol_ingested_events_bytes_agg_sum": "twol_ingested_events_bytes_agg_sum",
@@ -310,6 +312,7 @@ class UsageSummaryResponse(ModelNormal):
         start_date: Union[datetime, UnsetType] = unset,
         synthetics_browser_check_calls_count_agg_sum: Union[int, UnsetType] = unset,
         synthetics_check_calls_count_agg_sum: Union[int, UnsetType] = unset,
+        synthetics_mobile_test_runs_agg_sum: Union[int, UnsetType] = unset,
         synthetics_parallel_testing_max_slots_hwm_sum: Union[int, UnsetType] = unset,
         trace_search_indexed_events_count_agg_sum: Union[int, UnsetType] = unset,
         twol_ingested_events_bytes_agg_sum: Union[int, UnsetType] = unset,
@@ -584,6 +587,9 @@ class UsageSummaryResponse(ModelNormal):
         :param synthetics_check_calls_count_agg_sum: Shows the sum of all Synthetic API tests over all hours in the current months for all organizations.
         :type synthetics_check_calls_count_agg_sum: int, optional
 
+        :param synthetics_mobile_test_runs_agg_sum: Shows the sum of Synthetic mobile application tests over all hours in the current months for all organizations.
+        :type synthetics_mobile_test_runs_agg_sum: int, optional
+
         :param synthetics_parallel_testing_max_slots_hwm_sum: Shows the sum of the high-water marks of used synthetics parallel testing slots over all hours in the current month for all organizations.
         :type synthetics_parallel_testing_max_slots_hwm_sum: int, optional
 
@@ -784,6 +790,8 @@ class UsageSummaryResponse(ModelNormal):
             kwargs["synthetics_browser_check_calls_count_agg_sum"] = synthetics_browser_check_calls_count_agg_sum
         if synthetics_check_calls_count_agg_sum is not unset:
             kwargs["synthetics_check_calls_count_agg_sum"] = synthetics_check_calls_count_agg_sum
+        if synthetics_mobile_test_runs_agg_sum is not unset:
+            kwargs["synthetics_mobile_test_runs_agg_sum"] = synthetics_mobile_test_runs_agg_sum
         if synthetics_parallel_testing_max_slots_hwm_sum is not unset:
             kwargs["synthetics_parallel_testing_max_slots_hwm_sum"] = synthetics_parallel_testing_max_slots_hwm_sum
         if trace_search_indexed_events_count_agg_sum is not unset:
