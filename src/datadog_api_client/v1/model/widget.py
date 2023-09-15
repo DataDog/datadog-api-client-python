@@ -24,30 +24,31 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.event_stream_widget_definition import EventStreamWidgetDefinition
     from datadog_api_client.v1.model.event_timeline_widget_definition import EventTimelineWidgetDefinition
     from datadog_api_client.v1.model.free_text_widget_definition import FreeTextWidgetDefinition
+    from datadog_api_client.v1.model.funnel_widget_definition import FunnelWidgetDefinition
     from datadog_api_client.v1.model.geomap_widget_definition import GeomapWidgetDefinition
     from datadog_api_client.v1.model.group_widget_definition import GroupWidgetDefinition
     from datadog_api_client.v1.model.heat_map_widget_definition import HeatMapWidgetDefinition
     from datadog_api_client.v1.model.host_map_widget_definition import HostMapWidgetDefinition
     from datadog_api_client.v1.model.i_frame_widget_definition import IFrameWidgetDefinition
     from datadog_api_client.v1.model.image_widget_definition import ImageWidgetDefinition
+    from datadog_api_client.v1.model.list_stream_widget_definition import ListStreamWidgetDefinition
     from datadog_api_client.v1.model.log_stream_widget_definition import LogStreamWidgetDefinition
     from datadog_api_client.v1.model.monitor_summary_widget_definition import MonitorSummaryWidgetDefinition
     from datadog_api_client.v1.model.note_widget_definition import NoteWidgetDefinition
     from datadog_api_client.v1.model.query_value_widget_definition import QueryValueWidgetDefinition
     from datadog_api_client.v1.model.run_workflow_widget_definition import RunWorkflowWidgetDefinition
-    from datadog_api_client.v1.model.scatter_plot_widget_definition import ScatterPlotWidgetDefinition
-    from datadog_api_client.v1.model.slo_widget_definition import SLOWidgetDefinition
     from datadog_api_client.v1.model.slo_list_widget_definition import SLOListWidgetDefinition
+    from datadog_api_client.v1.model.slo_widget_definition import SLOWidgetDefinition
+    from datadog_api_client.v1.model.scatter_plot_widget_definition import ScatterPlotWidgetDefinition
     from datadog_api_client.v1.model.service_map_widget_definition import ServiceMapWidgetDefinition
     from datadog_api_client.v1.model.service_summary_widget_definition import ServiceSummaryWidgetDefinition
+    from datadog_api_client.v1.model.split_graph_widget_definition import SplitGraphWidgetDefinition
     from datadog_api_client.v1.model.sunburst_widget_definition import SunburstWidgetDefinition
     from datadog_api_client.v1.model.table_widget_definition import TableWidgetDefinition
     from datadog_api_client.v1.model.timeseries_widget_definition import TimeseriesWidgetDefinition
     from datadog_api_client.v1.model.toplist_widget_definition import ToplistWidgetDefinition
-    from datadog_api_client.v1.model.tree_map_widget_definition import TreeMapWidgetDefinition
-    from datadog_api_client.v1.model.list_stream_widget_definition import ListStreamWidgetDefinition
-    from datadog_api_client.v1.model.funnel_widget_definition import FunnelWidgetDefinition
     from datadog_api_client.v1.model.topology_map_widget_definition import TopologyMapWidgetDefinition
+    from datadog_api_client.v1.model.tree_map_widget_definition import TreeMapWidgetDefinition
 
 
 class Widget(ModelNormal):
@@ -80,30 +81,31 @@ class Widget(ModelNormal):
             EventStreamWidgetDefinition,
             EventTimelineWidgetDefinition,
             FreeTextWidgetDefinition,
+            FunnelWidgetDefinition,
             GeomapWidgetDefinition,
             GroupWidgetDefinition,
             HeatMapWidgetDefinition,
             HostMapWidgetDefinition,
             IFrameWidgetDefinition,
             ImageWidgetDefinition,
+            ListStreamWidgetDefinition,
             LogStreamWidgetDefinition,
             MonitorSummaryWidgetDefinition,
             NoteWidgetDefinition,
             QueryValueWidgetDefinition,
             RunWorkflowWidgetDefinition,
-            ScatterPlotWidgetDefinition,
-            SLOWidgetDefinition,
             SLOListWidgetDefinition,
+            SLOWidgetDefinition,
+            ScatterPlotWidgetDefinition,
             ServiceMapWidgetDefinition,
             ServiceSummaryWidgetDefinition,
+            SplitGraphWidgetDefinition,
             SunburstWidgetDefinition,
             TableWidgetDefinition,
             TimeseriesWidgetDefinition,
             ToplistWidgetDefinition,
-            TreeMapWidgetDefinition,
-            ListStreamWidgetDefinition,
-            FunnelWidgetDefinition,
             TopologyMapWidgetDefinition,
+            TreeMapWidgetDefinition,
         ],
         id: Union[int, UnsetType] = unset,
         layout: Union[WidgetLayout, UnsetType] = unset,

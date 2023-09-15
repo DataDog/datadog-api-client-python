@@ -3452,6 +3452,69 @@ slo\_widget\_definition\_type
    :members:
    :show-inheritance:
 
+split\_config
+-------------
+
+.. automodule:: datadog_api_client.v1.model.split_config
+   :members:
+   :show-inheritance:
+
+split\_config\_sort\_compute
+----------------------------
+
+.. automodule:: datadog_api_client.v1.model.split_config_sort_compute
+   :members:
+   :show-inheritance:
+
+split\_dimension
+----------------
+
+.. automodule:: datadog_api_client.v1.model.split_dimension
+   :members:
+   :show-inheritance:
+
+split\_graph\_source\_widget\_definition
+----------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.split_graph_source_widget_definition
+   :members:
+   :show-inheritance:
+
+split\_graph\_viz\_size
+-----------------------
+
+.. automodule:: datadog_api_client.v1.model.split_graph_viz_size
+   :members:
+   :show-inheritance:
+
+split\_graph\_widget\_definition
+--------------------------------
+
+.. automodule:: datadog_api_client.v1.model.split_graph_widget_definition
+   :members:
+   :show-inheritance:
+
+split\_graph\_widget\_definition\_type
+--------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.split_graph_widget_definition_type
+   :members:
+   :show-inheritance:
+
+split\_sort
+-----------
+
+.. automodule:: datadog_api_client.v1.model.split_sort
+   :members:
+   :show-inheritance:
+
+split\_vector\_entry\_item
+--------------------------
+
+.. automodule:: datadog_api_client.v1.model.split_vector_entry_item
+   :members:
+   :show-inheritance:
+
 successful\_signal\_update\_response
 ------------------------------------
 
