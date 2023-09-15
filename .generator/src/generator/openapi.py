@@ -35,6 +35,8 @@ def basic_type_to_python(type_, schema, typing=False):
             return "datetime"
         elif format_ == "binary":
             return "file_type"
+        elif format_ == "uuid":
+            return "uuid"
         return "str"
     elif type_ == "boolean":
         return "bool"
