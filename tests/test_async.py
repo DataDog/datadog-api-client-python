@@ -12,7 +12,7 @@ from datadog_api_client.v1.api import dashboards_api, metrics_api
 @pytest.mark.asyncio
 async def test_error():
     configuration = Configuration()
-    configuration.api_key["apiKeyAuth"] = "invalid"
+    configuration.api_key["apiKeyAuth"] = "00000000000000000000000000000000"
 
     async with AsyncApiClient(configuration) as api_client:
         api_instance = metrics_api.MetricsApi(api_client)
