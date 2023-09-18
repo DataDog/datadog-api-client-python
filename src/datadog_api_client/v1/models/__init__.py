@@ -559,6 +559,15 @@ from datadog_api_client.v1.model.signal_triage_state import SignalTriageState
 from datadog_api_client.v1.model.slack_integration_channel import SlackIntegrationChannel
 from datadog_api_client.v1.model.slack_integration_channel_display import SlackIntegrationChannelDisplay
 from datadog_api_client.v1.model.slack_integration_channels import SlackIntegrationChannels
+from datadog_api_client.v1.model.split_config import SplitConfig
+from datadog_api_client.v1.model.split_config_sort_compute import SplitConfigSortCompute
+from datadog_api_client.v1.model.split_dimension import SplitDimension
+from datadog_api_client.v1.model.split_graph_source_widget_definition import SplitGraphSourceWidgetDefinition
+from datadog_api_client.v1.model.split_graph_viz_size import SplitGraphVizSize
+from datadog_api_client.v1.model.split_graph_widget_definition import SplitGraphWidgetDefinition
+from datadog_api_client.v1.model.split_graph_widget_definition_type import SplitGraphWidgetDefinitionType
+from datadog_api_client.v1.model.split_sort import SplitSort
+from datadog_api_client.v1.model.split_vector_entry_item import SplitVectorEntryItem
 from datadog_api_client.v1.model.successful_signal_update_response import SuccessfulSignalUpdateResponse
 from datadog_api_client.v1.model.sunburst_widget_definition import SunburstWidgetDefinition
 from datadog_api_client.v1.model.sunburst_widget_definition_type import SunburstWidgetDefinitionType
@@ -1413,6 +1422,15 @@ __all__ = [
     "SlackIntegrationChannel",
     "SlackIntegrationChannelDisplay",
     "SlackIntegrationChannels",
+    "SplitConfig",
+    "SplitConfigSortCompute",
+    "SplitDimension",
+    "SplitGraphSourceWidgetDefinition",
+    "SplitGraphVizSize",
+    "SplitGraphWidgetDefinition",
+    "SplitGraphWidgetDefinitionType",
+    "SplitSort",
+    "SplitVectorEntryItem",
     "SuccessfulSignalUpdateResponse",
     "SunburstWidgetDefinition",
     "SunburstWidgetDefinitionType",

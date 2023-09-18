@@ -242,9 +242,6 @@ class WidgetDefinition(ModelComposed):
         :param workflow_id: Workflow id.
         :type workflow_id: str
 
-        :param color_by_groups: List of groups used for colors.
-        :type color_by_groups: [str], optional
-
         :param additional_query_filters: Additional filters applied to the SLO query.
         :type additional_query_filters: str, optional
 
@@ -265,6 +262,9 @@ class WidgetDefinition(ModelComposed):
 
         :param view_type: Type of view displayed by the widget.
         :type view_type: str
+
+        :param color_by_groups: List of groups used for colors.
+        :type color_by_groups: [str], optional
 
         :param filters: Your environment and primary tag (or * if enabled for your account).
         :type filters: [str]
@@ -298,6 +298,18 @@ class WidgetDefinition(ModelComposed):
 
         :param span_name: APM span name.
         :type span_name: str
+
+        :param has_uniform_y_axes: Normalize y axes across graphs
+        :type has_uniform_y_axes: bool, optional
+
+        :param size: Size of the individual graphs in the split.
+        :type size: SplitGraphVizSize
+
+        :param source_widget_definition: The original widget we are splitting on.
+        :type source_widget_definition: SplitGraphSourceWidgetDefinition
+
+        :param split_config: Encapsulates all user choices about how to split a graph.
+        :type split_config: SplitConfig
 
         :param hide_total: Show the total value in this widget.
         :type hide_total: bool, optional
@@ -342,30 +354,31 @@ class WidgetDefinition(ModelComposed):
         from datadog_api_client.v1.model.event_stream_widget_definition import EventStreamWidgetDefinition
         from datadog_api_client.v1.model.event_timeline_widget_definition import EventTimelineWidgetDefinition
         from datadog_api_client.v1.model.free_text_widget_definition import FreeTextWidgetDefinition
+        from datadog_api_client.v1.model.funnel_widget_definition import FunnelWidgetDefinition
         from datadog_api_client.v1.model.geomap_widget_definition import GeomapWidgetDefinition
         from datadog_api_client.v1.model.group_widget_definition import GroupWidgetDefinition
         from datadog_api_client.v1.model.heat_map_widget_definition import HeatMapWidgetDefinition
         from datadog_api_client.v1.model.host_map_widget_definition import HostMapWidgetDefinition
         from datadog_api_client.v1.model.i_frame_widget_definition import IFrameWidgetDefinition
         from datadog_api_client.v1.model.image_widget_definition import ImageWidgetDefinition
+        from datadog_api_client.v1.model.list_stream_widget_definition import ListStreamWidgetDefinition
         from datadog_api_client.v1.model.log_stream_widget_definition import LogStreamWidgetDefinition
         from datadog_api_client.v1.model.monitor_summary_widget_definition import MonitorSummaryWidgetDefinition
         from datadog_api_client.v1.model.note_widget_definition import NoteWidgetDefinition
         from datadog_api_client.v1.model.query_value_widget_definition import QueryValueWidgetDefinition
         from datadog_api_client.v1.model.run_workflow_widget_definition import RunWorkflowWidgetDefinition
-        from datadog_api_client.v1.model.scatter_plot_widget_definition import ScatterPlotWidgetDefinition
-        from datadog_api_client.v1.model.slo_widget_definition import SLOWidgetDefinition
         from datadog_api_client.v1.model.slo_list_widget_definition import SLOListWidgetDefinition
+        from datadog_api_client.v1.model.slo_widget_definition import SLOWidgetDefinition
+        from datadog_api_client.v1.model.scatter_plot_widget_definition import ScatterPlotWidgetDefinition
         from datadog_api_client.v1.model.service_map_widget_definition import ServiceMapWidgetDefinition
         from datadog_api_client.v1.model.service_summary_widget_definition import ServiceSummaryWidgetDefinition
+        from datadog_api_client.v1.model.split_graph_widget_definition import SplitGraphWidgetDefinition
         from datadog_api_client.v1.model.sunburst_widget_definition import SunburstWidgetDefinition
         from datadog_api_client.v1.model.table_widget_definition import TableWidgetDefinition
         from datadog_api_client.v1.model.timeseries_widget_definition import TimeseriesWidgetDefinition
         from datadog_api_client.v1.model.toplist_widget_definition import ToplistWidgetDefinition
-        from datadog_api_client.v1.model.tree_map_widget_definition import TreeMapWidgetDefinition
-        from datadog_api_client.v1.model.list_stream_widget_definition import ListStreamWidgetDefinition
-        from datadog_api_client.v1.model.funnel_widget_definition import FunnelWidgetDefinition
         from datadog_api_client.v1.model.topology_map_widget_definition import TopologyMapWidgetDefinition
+        from datadog_api_client.v1.model.tree_map_widget_definition import TreeMapWidgetDefinition
 
         return {
             "oneOf": [
@@ -377,29 +390,30 @@ class WidgetDefinition(ModelComposed):
                 EventStreamWidgetDefinition,
                 EventTimelineWidgetDefinition,
                 FreeTextWidgetDefinition,
+                FunnelWidgetDefinition,
                 GeomapWidgetDefinition,
                 GroupWidgetDefinition,
                 HeatMapWidgetDefinition,
                 HostMapWidgetDefinition,
                 IFrameWidgetDefinition,
                 ImageWidgetDefinition,
+                ListStreamWidgetDefinition,
                 LogStreamWidgetDefinition,
                 MonitorSummaryWidgetDefinition,
                 NoteWidgetDefinition,
                 QueryValueWidgetDefinition,
                 RunWorkflowWidgetDefinition,
-                ScatterPlotWidgetDefinition,
-                SLOWidgetDefinition,
                 SLOListWidgetDefinition,
+                SLOWidgetDefinition,
+                ScatterPlotWidgetDefinition,
                 ServiceMapWidgetDefinition,
                 ServiceSummaryWidgetDefinition,
+                SplitGraphWidgetDefinition,
                 SunburstWidgetDefinition,
                 TableWidgetDefinition,
                 TimeseriesWidgetDefinition,
                 ToplistWidgetDefinition,
-                TreeMapWidgetDefinition,
-                ListStreamWidgetDefinition,
-                FunnelWidgetDefinition,
                 TopologyMapWidgetDefinition,
+                TreeMapWidgetDefinition,
             ],
         }
