@@ -27,10 +27,10 @@ class SplitConfigSortCompute(ModelNormal):
         """
         Defines the metric and aggregation used as the sort value.
 
-        :param aggregation: The metric to use for sorting graphs.
+        :param aggregation: How to aggregate the sort metric for the purposes of ordering.
         :type aggregation: str
 
-        :param metric: How to aggregate the sort metric for the purposes of ordering.
+        :param metric: The metric to use for sorting graphs.
         :type metric: str
         """
         super().__init__(kwargs)
