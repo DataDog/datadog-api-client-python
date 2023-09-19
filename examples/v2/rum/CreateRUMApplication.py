@@ -12,7 +12,7 @@ from datadog_api_client.v2.model.rum_application_create_type import RUMApplicati
 body = RUMApplicationCreateRequest(
     data=RUMApplicationCreate(
         attributes=RUMApplicationCreateAttributes(
-            name="my_new_rum_application",
+            name="test-rum-5c67ebb32077e1d9",
             type="ios",
         ),
         type=RUMApplicationCreateType.RUM_APPLICATION_CREATE,

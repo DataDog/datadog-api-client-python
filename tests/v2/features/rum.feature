@@ -33,12 +33,12 @@ Feature: RUM
   @team:DataDog/rum-backend
   Scenario: Create a new RUM application returns "OK" response
     Given new "CreateRUMApplication" request
-    And body with value {"data": {"attributes": {"name": "my_new_rum_application", "type": "ios"}, "type": "rum_application_create"}}
+    And body with value {"data": {"attributes": {"name": "test-rum-{{ unique_hash }}", "type": "ios"}, "type": "rum_application_create"}}
     When the request is sent
     Then the response status is 200 RUM application.
     And the response "data.type" is equal to "rum_application"
     And the response "data.attributes.type" is equal to "ios"
-    And the response "data.attributes.name" is equal to "my_new_rum_application"
+    And the response "data.attributes.name" is equal to "test-rum-{{ unique_hash }}"
 
   @team:DataDog/rum-backend
   Scenario: Delete a RUM application returns "No Content" response
