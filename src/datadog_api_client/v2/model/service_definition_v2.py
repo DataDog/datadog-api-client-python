@@ -13,6 +13,7 @@ from datadog_api_client.model_utils import (
     none_type,
     unset,
     UnsetType,
+    UUID,
 )
 
 
@@ -54,6 +55,7 @@ class ServiceDefinitionV2(ModelNormal):
                         int,
                         list,
                         str,
+                        UUID,
                         none_type,
                     )
                 },
@@ -121,7 +123,7 @@ class ServiceDefinitionV2(ModelNormal):
         :type docs: [ServiceDefinitionV2Doc], optional
 
         :param extensions: Extensions to V2 schema.
-        :type extensions: {str: (bool, date, datetime, dict, float, int, list, str, none_type,)}, optional
+        :type extensions: {str: (bool, date, datetime, dict, float, int, list, str, UUID, none_type,)}, optional
 
         :param integrations: Third party integrations that Datadog supports.
         :type integrations: ServiceDefinitionV2Integrations, optional

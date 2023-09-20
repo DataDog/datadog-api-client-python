@@ -13,6 +13,7 @@ from datadog_api_client.model_utils import (
     none_type,
     unset,
     UnsetType,
+    UUID,
 )
 
 
@@ -40,6 +41,7 @@ class SpansAggregateBucketAttributes(ModelNormal):
                         int,
                         list,
                         str,
+                        UUID,
                         none_type,
                     )
                 },
@@ -68,7 +70,7 @@ class SpansAggregateBucketAttributes(ModelNormal):
         A bucket values.
 
         :param by: The key, value pairs for each group by.
-        :type by: {str: (bool, date, datetime, dict, float, int, list, str, none_type,)}, optional
+        :type by: {str: (bool, date, datetime, dict, float, int, list, str, UUID, none_type,)}, optional
 
         :param compute: The compute data.
         :type compute: dict, optional

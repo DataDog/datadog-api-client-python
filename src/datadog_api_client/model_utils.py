@@ -4,6 +4,7 @@
 
 from contextlib import suppress
 from datetime import date, datetime
+from uuid import UUID
 import enum
 import inspect
 import io
@@ -54,7 +55,7 @@ class cached_property(object):
             return result
 
 
-PRIMITIVE_TYPES = (list, float, int, bool, datetime, date, str, file_type)
+PRIMITIVE_TYPES = (list, float, int, bool, datetime, date, str, UUID, file_type)
 
 
 def allows_single_value_input(cls):
@@ -571,6 +572,7 @@ COERCION_INDEX_BY_TYPE = {
     date: 10,
     str: 11,
     file_type: 12,  # 'file_type' is an alias for the built-in 'file' or 'io.IOBase' type.
+    UUID: 13,
 }
 
 # these are used to limit what type conversions we try to do
@@ -579,6 +581,7 @@ COERCION_INDEX_BY_TYPE = {
 UPCONVERSION_TYPE_PAIRS = (
     (str, datetime),
     (str, date),
+    (str, UUID),
     (int, float),  # A float may be serialized as an integer, e.g. '3' is a valid serialized float.
     (list, ModelComposed),
     (dict, ModelComposed),
@@ -627,6 +630,7 @@ COERCIBLE_TYPE_PAIRS = {
         # (str, float),
         (str, datetime),
         (str, date),
+        (str, UUID),
         # (int, str),
         # (float, str),
         (str, file_type),
@@ -667,6 +671,8 @@ def get_simple_class(input_value):
         return date
     elif isinstance(input_value, str):
         return str
+    elif isinstance(input_value, UUID):
+        return UUID
     return type(input_value)
 
 
@@ -678,7 +684,7 @@ def check_allowed_values(allowed_values, input_variable, input_values):
     :type input_variable: str
     :param input_values: The values that we are checking to see if they are in
         allowed_values.
-    :type input_values: list/str/int/float/date/datetime
+    :type input_values: list/str/int/float/date/datetime/uuid
     """
     if isinstance(input_values, list) and not set(input_values).issubset(allowed_values):
         invalid_values = (", ".join(map(str, set(input_values) - allowed_values)),)
@@ -724,7 +730,7 @@ def check_validations(validations, input_variable, input_values, configuration=N
     :param input_variable: The name of the input variable.
     :type input_variable: str
     :param input_values: The values that we are checking.
-    :type input_values: list/str/int/float/date/datetime
+    :type input_values: list/str/int/float/date/datetime/uuid
     :param configuration: The configuration instance.
     :type configuration: Configuration
     """
@@ -1017,7 +1023,7 @@ def deserialize_primitive(data, klass, path_to_item):
     :param klass: The class to convert to.
     :type klass: str/class
 
-    :rtype: int, float, str, bool, date, datetime
+    :rtype: int, float, str, bool, date, datetime, UUID
     """
     additional_message = ""
     try:
@@ -1045,11 +1051,18 @@ def deserialize_primitive(data, klass, path_to_item):
                     raise ValueError("This is not a date")
                 return parse(data).date()
         else:
-            converted_value = klass(data)
+            if isinstance(data, str) and klass == UUID:
+                try:
+                    converted_value = UUID(data)
+                except ValueError:
+                    print("This is not an UUID")
             if isinstance(data, str) and klass == float:
+                converted_value = float(data)
                 if str(converted_value) != data:
                     # '7' -> 7.0 -> '7.0' != '7'
                     raise ValueError("This is not a float")
+            else:
+                converted_value = klass(data)
             return converted_value
     except (OverflowError, ValueError) as ex:
         # parse can raise OverflowError
@@ -1482,7 +1495,7 @@ def get_oneof_instance(cls, model_kwargs, constant_kwargs, model_arg=None):
         Notes:
         - this is only passed in when oneOf includes types which are not object
         - None is used to suppress handling of model_arg, nullable models are handled in __new__
-    :type model_arg: int, float, bool, str, date, datetime, ModelSimple, None
+    :type model_arg: int, float, bool, str, date, datetime, ModelSimple, UUID, None
     """
     if len(cls._composed_schemas["oneOf"]) == 0:
         return None

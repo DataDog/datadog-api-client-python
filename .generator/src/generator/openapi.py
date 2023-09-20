@@ -24,7 +24,7 @@ def basic_type_to_python(type_, schema, typing=False):
     if type_ is None:
         if typing:
             return "Any"
-        return "bool, date, datetime, dict, float, int, list, str, none_type"
+        return "bool, date, datetime, dict, float, int, list, str, UUID, none_type"
     if type_ == "integer":
         return "int"
     elif type_ == "number":
@@ -36,7 +36,7 @@ def basic_type_to_python(type_, schema, typing=False):
         elif format_ == "binary":
             return "file_type"
         elif format_ == "uuid":
-            return "uuid"
+            return "UUID"
         return "str"
     elif type_ == "boolean":
         return "bool"

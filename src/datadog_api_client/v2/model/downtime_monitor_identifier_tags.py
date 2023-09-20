@@ -11,6 +11,7 @@ from datadog_api_client.model_utils import (
     date,
     datetime,
     none_type,
+    UUID,
 )
 
 
@@ -32,6 +33,7 @@ class DowntimeMonitorIdentifierTags(ModelNormal):
             int,
             list,
             str,
+            UUID,
             none_type,
         )
 

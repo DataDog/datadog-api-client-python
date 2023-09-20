@@ -13,6 +13,7 @@ from datadog_api_client.model_utils import (
     none_type,
     unset,
     UnsetType,
+    UUID,
 )
 
 
@@ -37,6 +38,7 @@ class CIAppTestsBucketResponse(ModelNormal):
                         int,
                         list,
                         str,
+                        UUID,
                         none_type,
                     )
                 },
@@ -56,7 +58,7 @@ class CIAppTestsBucketResponse(ModelNormal):
         Bucket values.
 
         :param by: The key-value pairs for each group-by.
-        :type by: {str: (bool, date, datetime, dict, float, int, list, str, none_type,)}, optional
+        :type by: {str: (bool, date, datetime, dict, float, int, list, str, UUID, none_type,)}, optional
 
         :param computes: A map of the metric name to value for regular compute, or a list of values for a timeseries.
         :type computes: CIAppComputes, optional

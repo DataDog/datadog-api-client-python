@@ -13,6 +13,7 @@ from datadog_api_client.model_utils import (
     none_type,
     unset,
     UnsetType,
+    UUID,
 )
 
 
@@ -49,6 +50,7 @@ class SyntheticsAPITestResultData(ModelNormal):
                         int,
                         list,
                         str,
+                        UUID,
                         none_type,
                     )
                 },
@@ -104,7 +106,7 @@ class SyntheticsAPITestResultData(ModelNormal):
         :type response_body: str, optional
 
         :param response_headers: Response headers returned for the API test.
-        :type response_headers: {str: (bool, date, datetime, dict, float, int, list, str, none_type,)}, optional
+        :type response_headers: {str: (bool, date, datetime, dict, float, int, list, str, UUID, none_type,)}, optional
 
         :param response_size: Global size in byte of the API test response.
         :type response_size: int, optional

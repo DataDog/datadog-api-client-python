@@ -13,6 +13,7 @@ from datadog_api_client.model_utils import (
     none_type,
     unset,
     UnsetType,
+    UUID,
 )
 
 
@@ -31,6 +32,7 @@ class RUMEventAttributes(ModelNormal):
                         int,
                         list,
                         str,
+                        UUID,
                         none_type,
                     )
                 },
@@ -59,7 +61,7 @@ class RUMEventAttributes(ModelNormal):
         JSON object containing all event attributes and their associated values.
 
         :param attributes: JSON object of attributes from RUM events.
-        :type attributes: {str: (bool, date, datetime, dict, float, int, list, str, none_type,)}, optional
+        :type attributes: {str: (bool, date, datetime, dict, float, int, list, str, UUID, none_type,)}, optional
 
         :param service: The name of the application or service generating RUM events.
             It is used to switch from RUM to APM, so make sure you define the same

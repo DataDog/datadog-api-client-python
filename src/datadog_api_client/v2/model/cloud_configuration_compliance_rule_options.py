@@ -13,6 +13,7 @@ from datadog_api_client.model_utils import (
     none_type,
     unset,
     UnsetType,
+    UUID,
 )
 
 
@@ -32,6 +33,7 @@ class CloudConfigurationComplianceRuleOptions(ModelNormal):
             int,
             list,
             str,
+            UUID,
             none_type,
         )
 

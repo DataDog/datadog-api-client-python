@@ -13,6 +13,7 @@ from datadog_api_client.model_utils import (
     none_type,
     unset,
     UnsetType,
+    UUID,
 )
 
 
@@ -30,6 +31,7 @@ class MonitorSearchCountItem(ModelNormal):
                 int,
                 list,
                 str,
+                UUID,
                 none_type,
             ),
         }
@@ -51,7 +53,7 @@ class MonitorSearchCountItem(ModelNormal):
         :type count: int, optional
 
         :param name: The facet value.
-        :type name: bool, date, datetime, dict, float, int, list, str, none_type, optional
+        :type name: bool, date, datetime, dict, float, int, list, str, UUID, none_type, optional
         """
         if count is not unset:
             kwargs["count"] = count

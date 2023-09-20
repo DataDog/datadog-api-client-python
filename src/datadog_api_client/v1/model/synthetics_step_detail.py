@@ -13,6 +13,7 @@ from datadog_api_client.model_utils import (
     none_type,
     unset,
     UnsetType,
+    UUID,
 )
 
 
@@ -59,6 +60,7 @@ class SyntheticsStepDetail(ModelNormal):
                 int,
                 list,
                 str,
+                UUID,
                 none_type,
             ),
             "vitals_metrics": ([SyntheticsCoreWebVitals],),
@@ -153,7 +155,7 @@ class SyntheticsStepDetail(ModelNormal):
         :type url: str, optional
 
         :param value: Value for the step.
-        :type value: bool, date, datetime, dict, float, int, list, str, none_type, optional
+        :type value: bool, date, datetime, dict, float, int, list, str, UUID, none_type, optional
 
         :param vitals_metrics: Array of Core Web Vitals metrics for the step.
         :type vitals_metrics: [SyntheticsCoreWebVitals], optional
