@@ -571,8 +571,8 @@ COERCION_INDEX_BY_TYPE = {
     datetime: 9,
     date: 10,
     str: 11,
-    file_type: 12,  # 'file_type' is an alias for the built-in 'file' or 'io.IOBase' type.
-    UUID: 13,
+    UUID: 12,
+    file_type: 13,  # 'file_type' is an alias for the built-in 'file' or 'io.IOBase' type.
 }
 
 # these are used to limit what type conversions we try to do
