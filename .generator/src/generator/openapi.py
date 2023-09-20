@@ -231,10 +231,7 @@ def models(spec):
 def find_non_primitive_type(schema):
     if schema.get("enum"):
         return True
-    sub_type = schema.get("type")
-    if sub_type == "array":
-        return find_non_primitive_type(schema["items"])
-    return sub_type not in PRIMITIVE_TYPES
+    return schema.get("type") not in PRIMITIVE_TYPES
 
 
 def get_references_for_model(model, model_name):
@@ -257,13 +254,13 @@ def get_references_for_model(model, model_name):
                 result[name] = None
             else:
                 items_name = formatter.get_name(definition.get("items"))
-                if items_name and (
-                    find_non_primitive_type(definition["items"]) or formatter.is_list_model_whitelisted(items_name)
-                ):
-                    result[items_name] = None
-                elif name and definition["items"].get("type") not in PRIMITIVE_TYPES:
-                    result[f"{name}Item"] = None
-
+                if items_name:
+                    if formatter.is_list_model_whitelisted(items_name):
+                        result[items_name] = None
+                    elif definition["items"].get("type") == "array":
+                        result[formatter.get_name(definition["items"]["items"])] = None
+                    elif find_non_primitive_type(definition["items"]):
+                        result[items_name] = None
         elif definition.get("properties") and top_name:
             result[top_name + formatter.camel_case(key)] = None
     if model.get("additionalProperties"):

@@ -45,7 +45,7 @@ Feature: GCP Integration
     When the request is sent
     Then the response status is 409 Conflict
 
-  @team:DataDog/gcp-integrations
+  @skip-validation @team:DataDog/gcp-integrations
   Scenario: Create a new entry for your service account returns "OK" response
     Given new "CreateGCPSTSAccount" request
     And body with value {"data": {"attributes": {"client_email": "{{ unique_hash }}@test-project.iam.gserviceaccount.com", "host_filters": []}, "type": "gcp_service_account"}}
@@ -74,7 +74,7 @@ Feature: GCP Integration
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/gcp-integrations
+  @skip-validation @team:DataDog/gcp-integrations
   Scenario: List all GCP STS-enabled service accounts returns "OK" response
     Given there is a valid "gcp_sts_account" in the system
     And new "ListGCPSTSAccounts" request
@@ -105,7 +105,7 @@ Feature: GCP Integration
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/gcp-integrations
+  @skip-validation @team:DataDog/gcp-integrations
   Scenario: Update STS Service Account returns "OK" response
     Given there is a valid "gcp_sts_account" in the system
     And new "UpdateGCPSTSAccount" request
