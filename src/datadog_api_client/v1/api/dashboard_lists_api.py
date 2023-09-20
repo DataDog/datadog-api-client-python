@@ -3,10 +3,14 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Any, Dict
+from typing import Any, Dict, List, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
+from datadog_api_client.model_utils import (
+    UnsetType,
+    unset,
+)
 from datadog_api_client.v1.model.dashboard_list_list_response import DashboardListListResponse
 from datadog_api_client.v1.model.dashboard_list import DashboardList
 from datadog_api_client.v1.model.dashboard_list_delete_response import DashboardListDeleteResponse
@@ -82,6 +86,12 @@ class DashboardListsApi:
                     "openapi_types": (int,),
                     "attribute": "list_id",
                     "location": "path",
+                },
+                "test_query": {
+                    "openapi_types": ([str],),
+                    "attribute": "test_query",
+                    "location": "query",
+                    "collection_format": "multi",
                 },
             },
             headers_map={
@@ -169,6 +179,8 @@ class DashboardListsApi:
     def get_dashboard_list(
         self,
         list_id: int,
+        *,
+        test_query: Union[List[str], UnsetType] = unset,
     ) -> DashboardList:
         """Get a dashboard list.
 
@@ -176,10 +188,15 @@ class DashboardListsApi:
 
         :param list_id: ID of the dashboard list to fetch.
         :type list_id: int
+        :param test_query: Test query.
+        :type test_query: [str], optional
         :rtype: DashboardList
         """
         kwargs: Dict[str, Any] = {}
         kwargs["list_id"] = list_id
+
+        if test_query is not unset:
+            kwargs["test_query"] = test_query
 
         return self._get_dashboard_list_endpoint.call_with_http_info(**kwargs)
 
