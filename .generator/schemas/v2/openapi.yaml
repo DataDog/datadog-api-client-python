@@ -17218,6 +17218,9 @@ components:
             apm_service_catalog_read: View service catalog and service definitions.
             apm_service_catalog_write: Add, modify, and delete service catalog definitions
               when those definitions are maintained by Datadog.
+            ci_visibility_pipelines_write: Create CI Visibility pipeline spans using
+              the API.
+            ci_visibility_read: View CI Visibility.
             create_webhooks: Create webhooks integrations.
             dashboards_public_share: Generate public and authenticated links to share
               dashboards or embeddable graphs externally.
@@ -18169,6 +18172,11 @@ paths:
           $ref: '#/components/responses/NotAuthorizedResponse'
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ:
+        - ci_visibility_read
       summary: Aggregate pipelines events
       tags:
       - CI Visibility Pipelines
@@ -18244,6 +18252,11 @@ paths:
           $ref: '#/components/responses/NotAuthorizedResponse'
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ:
+        - ci_visibility_read
       summary: Get a list of pipelines events
       tags:
       - CI Visibility Pipelines
@@ -18281,6 +18294,11 @@ paths:
           $ref: '#/components/responses/NotAuthorizedResponse'
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ:
+        - ci_visibility_read
       summary: Search pipelines events
       tags:
       - CI Visibility Pipelines
@@ -18314,6 +18332,11 @@ paths:
           $ref: '#/components/responses/NotAuthorizedResponse'
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ:
+        - ci_visibility_read
       summary: Aggregate tests events
       tags:
       - CI Visibility Tests
@@ -18389,6 +18412,11 @@ paths:
           $ref: '#/components/responses/NotAuthorizedResponse'
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ:
+        - ci_visibility_read
       summary: Get a list of tests events
       tags:
       - CI Visibility Tests
@@ -18426,6 +18454,11 @@ paths:
           $ref: '#/components/responses/NotAuthorizedResponse'
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ:
+        - ci_visibility_read
       summary: Search tests events
       tags:
       - CI Visibility Tests
