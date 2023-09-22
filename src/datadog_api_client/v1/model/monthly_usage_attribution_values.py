@@ -311,16 +311,16 @@ class MonthlyUsageAttributionValues(ModelNormal):
         :param container_usage: The container usage by tag(s).
         :type container_usage: float, optional
 
-        :param cspm_containers_percentage: The percentage of CSPM container usage by tag(s).
+        :param cspm_containers_percentage: The percentage of Cloud Security Management Pro container usage by tag(s).
         :type cspm_containers_percentage: float, optional
 
-        :param cspm_containers_usage: The CSPM container usage by tag(s).
+        :param cspm_containers_usage: The Cloud Security Management Pro container usage by tag(s).
         :type cspm_containers_usage: float, optional
 
-        :param cspm_hosts_percentage: The percentage of CSPM host usage by by tag(s).
+        :param cspm_hosts_percentage: The percentage of Cloud Security Management Pro host usage by tag(s).
         :type cspm_hosts_percentage: float, optional
 
-        :param cspm_hosts_usage: The CSPM host usage by tag(s).
+        :param cspm_hosts_usage: The Cloud Security Management Pro host usage by tag(s).
         :type cspm_hosts_usage: float, optional
 
         :param custom_ingested_timeseries_percentage: The percentage of ingested custom metrics usage by tag(s).
