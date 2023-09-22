@@ -26,8 +26,8 @@ python -m mypy src
 set +e
 python -m pytest -vvv
 RESULT=$?
-if [ "$RERECORD_FAILED_TESTS" == "true" ] && [ "$RESULT" -ne "0" ]; then
-    RECORD=true python -m pytest -vvv --last-failed
+if [ "$RECORD" == "none" ]; then
+    python -m pytest -vvv --last-failed
     RESULT=$?
 fi
 

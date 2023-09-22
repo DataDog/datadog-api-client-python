@@ -8,6 +8,7 @@ from typing import List, Union, TYPE_CHECKING
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    none_type,
     unset,
     UnsetType,
 )
@@ -15,18 +16,20 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.scalar_meta import ScalarMeta
+    from datadog_api_client.v2.model.scalar_column_type_number import ScalarColumnTypeNumber
 
 
 class DataScalarColumn(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.scalar_meta import ScalarMeta
+        from datadog_api_client.v2.model.scalar_column_type_number import ScalarColumnTypeNumber
 
         return {
             "meta": (ScalarMeta,),
             "name": (str,),
-            "type": (str,),
-            "values": ([float],),
+            "type": (ScalarColumnTypeNumber,),
+            "values": ([float, none_type],),
         }
 
     attribute_map = {
@@ -40,7 +43,7 @@ class DataScalarColumn(ModelNormal):
         self_,
         meta: Union[ScalarMeta, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
-        type: Union[str, UnsetType] = unset,
+        type: Union[ScalarColumnTypeNumber, UnsetType] = unset,
         values: Union[List[float], UnsetType] = unset,
         **kwargs,
     ):
@@ -53,11 +56,11 @@ class DataScalarColumn(ModelNormal):
         :param name: The name referencing the formula or query for this column.
         :type name: str, optional
 
-        :param type: The type of column present.
-        :type type: str, optional
+        :param type: The type of column present for numbers.
+        :type type: ScalarColumnTypeNumber, optional
 
         :param values: The array of numerical values for one formula or query.
-        :type values: [float], optional
+        :type values: [float, none_type], optional
         """
         if meta is not unset:
             kwargs["meta"] = meta
