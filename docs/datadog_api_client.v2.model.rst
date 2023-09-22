@@ -5391,6 +5391,20 @@ scalar\_column
    :members:
    :show-inheritance:
 
+scalar\_column\_type\_group
+---------------------------
+
+.. automodule:: datadog_api_client.v2.model.scalar_column_type_group
+   :members:
+   :show-inheritance:
+
+scalar\_column\_type\_number
+----------------------------
+
+.. automodule:: datadog_api_client.v2.model.scalar_column_type_number
+   :members:
+   :show-inheritance:
+
 scalar\_formula\_query\_request
 -------------------------------
 
