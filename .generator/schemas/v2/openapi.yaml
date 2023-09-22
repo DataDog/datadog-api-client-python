@@ -1949,7 +1949,6 @@ components:
           description: UUID of a pipeline.
           example: 93bfeb70-af47-424d-908a-948d3f08e37f
           type: string
-          format: uuid
         url:
           description: The URL to look at the pipeline in the CI provider UI.
           example: https://ci-platform.com/pipelines/123456789
