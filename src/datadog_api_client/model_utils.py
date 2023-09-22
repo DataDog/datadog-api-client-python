@@ -266,6 +266,9 @@ class ModelSimple(OpenApiModel):
         self.value = value
         self._check_kw_args(kwargs)
 
+    def __dir__(self):
+        return {"value"}
+
     def __setitem__(self, name, value):
         """Set the value of an attribute using square-bracket notation: `instance[attr] = val`."""
         if name in self.required_properties:
@@ -403,6 +406,9 @@ class ModelNormal(OpenApiModel):
             setattr(self, var_name, var_value)
             if not self._spec_property_naming and var_name in self.read_only_vars:
                 raise ApiAttributeError(f"`{var_name}` is a read-only attribute.")
+
+    def __dir__(self):
+        return set(self.attribute_map)
 
 
 class ModelComposed(OpenApiModel):
