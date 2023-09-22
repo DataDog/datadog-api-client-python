@@ -10,7 +10,6 @@ from datadog_api_client.model_utils import (
     cached_property,
     unset,
     UnsetType,
-    UUID,
 )
 
 
@@ -20,7 +19,7 @@ class CIAppPipelineEventPreviousPipeline(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
-            "id": (UUID,),
+            "id": (str,),
             "url": (str,),
         }
 
@@ -29,12 +28,12 @@ class CIAppPipelineEventPreviousPipeline(ModelNormal):
         "url": "url",
     }
 
-    def __init__(self_, id: UUID, url: Union[str, UnsetType] = unset, **kwargs):
+    def __init__(self_, id: str, url: Union[str, UnsetType] = unset, **kwargs):
         """
         If the pipeline is a retry, this should contain the details of the previous attempt.
 
         :param id: UUID of a pipeline.
-        :type id: UUID
+        :type id: str
 
         :param url: The URL to look at the pipeline in the CI provider UI.
         :type url: str, optional
