@@ -886,6 +886,8 @@ from datadog_api_client.v2.model.saml_assertion_attribute import SAMLAssertionAt
 from datadog_api_client.v2.model.saml_assertion_attribute_attributes import SAMLAssertionAttributeAttributes
 from datadog_api_client.v2.model.saml_assertion_attributes_type import SAMLAssertionAttributesType
 from datadog_api_client.v2.model.scalar_column import ScalarColumn
+from datadog_api_client.v2.model.scalar_column_type_group import ScalarColumnTypeGroup
+from datadog_api_client.v2.model.scalar_column_type_number import ScalarColumnTypeNumber
 from datadog_api_client.v2.model.scalar_formula_query_request import ScalarFormulaQueryRequest
 from datadog_api_client.v2.model.scalar_formula_query_response import ScalarFormulaQueryResponse
 from datadog_api_client.v2.model.scalar_formula_request import ScalarFormulaRequest
@@ -2119,6 +2121,8 @@ __all__ = [
     "SAMLAssertionAttributeAttributes",
     "SAMLAssertionAttributesType",
     "ScalarColumn",
+    "ScalarColumnTypeGroup",
+    "ScalarColumnTypeNumber",
     "ScalarFormulaQueryRequest",
     "ScalarFormulaQueryResponse",
     "ScalarFormulaRequest",

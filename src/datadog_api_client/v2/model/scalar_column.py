@@ -18,8 +18,8 @@ class ScalarColumn(ModelComposed):
         :param name: The name of the tag key or group.
         :type name: str, optional
 
-        :param type: The type of column present.
-        :type type: str, optional
+        :param type: The type of column present for groups.
+        :type type: ScalarColumnTypeGroup, optional
 
         :param values: The array of tag values for each group found for the results of the formulas or queries.
         :type values: [[str]], optional
