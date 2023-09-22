@@ -102,14 +102,14 @@ Feature: Usage Metering
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/red-zone-revenue-query
-  Scenario: Get hourly usage for CSPM returns "Bad Request" response
+  Scenario: Get hourly usage for CSM Pro returns "Bad Request" response
     Given new "GetUsageCloudSecurityPostureManagement" request
     And request contains "start_hr" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
   @team:DataDog/red-zone-revenue-query
-  Scenario: Get hourly usage for CSPM returns "OK" response
+  Scenario: Get hourly usage for CSM Pro returns "OK" response
     Given new "GetUsageCloudSecurityPostureManagement" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 3d') }}"
     When the request is sent

@@ -1743,9 +1743,9 @@ class UsageMeteringApi:
         *,
         end_hr: Union[datetime, UnsetType] = unset,
     ) -> UsageCloudSecurityPostureManagementResponse:
-        """Get hourly usage for CSPM.
+        """Get hourly usage for CSM Pro.
 
-        Get hourly usage for cloud security posture management (CSPM).
+        Get hourly usage for cloud security management (CSM) pro.
         **Note:** hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_. Refer to `Migrating from the V1 Hourly Usage APIs to V2 <https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/>`_ for the associated migration guide.
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage beginning at this hour.

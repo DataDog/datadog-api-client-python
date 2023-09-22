@@ -54,6 +54,16 @@ class UsageSummaryResponse(ModelNormal):
             "container_avg_sum": (int,),
             "container_excl_agent_avg_sum": (int,),
             "container_hwm_sum": (int,),
+            "csm_container_enterprise_compliance_count_agg_sum": (int,),
+            "csm_container_enterprise_cws_count_agg_sum": (int,),
+            "csm_container_enterprise_total_count_agg_sum": (int,),
+            "csm_host_enterprise_aas_host_count_top99p_sum": (int,),
+            "csm_host_enterprise_aws_host_count_top99p_sum": (int,),
+            "csm_host_enterprise_azure_host_count_top99p_sum": (int,),
+            "csm_host_enterprise_compliance_host_count_top99p_sum": (int,),
+            "csm_host_enterprise_cws_host_count_top99p_sum": (int,),
+            "csm_host_enterprise_gcp_host_count_top99p_sum": (int,),
+            "csm_host_enterprise_total_host_count_top99p_sum": (int,),
             "cspm_aas_host_top99p_sum": (int,),
             "cspm_aws_host_top99p_sum": (int,),
             "cspm_azure_host_top99p_sum": (int,),
@@ -153,6 +163,16 @@ class UsageSummaryResponse(ModelNormal):
         "container_avg_sum": "container_avg_sum",
         "container_excl_agent_avg_sum": "container_excl_agent_avg_sum",
         "container_hwm_sum": "container_hwm_sum",
+        "csm_container_enterprise_compliance_count_agg_sum": "csm_container_enterprise_compliance_count_agg_sum",
+        "csm_container_enterprise_cws_count_agg_sum": "csm_container_enterprise_cws_count_agg_sum",
+        "csm_container_enterprise_total_count_agg_sum": "csm_container_enterprise_total_count_agg_sum",
+        "csm_host_enterprise_aas_host_count_top99p_sum": "csm_host_enterprise_aas_host_count_top99p_sum",
+        "csm_host_enterprise_aws_host_count_top99p_sum": "csm_host_enterprise_aws_host_count_top99p_sum",
+        "csm_host_enterprise_azure_host_count_top99p_sum": "csm_host_enterprise_azure_host_count_top99p_sum",
+        "csm_host_enterprise_compliance_host_count_top99p_sum": "csm_host_enterprise_compliance_host_count_top99p_sum",
+        "csm_host_enterprise_cws_host_count_top99p_sum": "csm_host_enterprise_cws_host_count_top99p_sum",
+        "csm_host_enterprise_gcp_host_count_top99p_sum": "csm_host_enterprise_gcp_host_count_top99p_sum",
+        "csm_host_enterprise_total_host_count_top99p_sum": "csm_host_enterprise_total_host_count_top99p_sum",
         "cspm_aas_host_top99p_sum": "cspm_aas_host_top99p_sum",
         "cspm_aws_host_top99p_sum": "cspm_aws_host_top99p_sum",
         "cspm_azure_host_top99p_sum": "cspm_azure_host_top99p_sum",
@@ -253,6 +273,16 @@ class UsageSummaryResponse(ModelNormal):
         container_avg_sum: Union[int, UnsetType] = unset,
         container_excl_agent_avg_sum: Union[int, UnsetType] = unset,
         container_hwm_sum: Union[int, UnsetType] = unset,
+        csm_container_enterprise_compliance_count_agg_sum: Union[int, UnsetType] = unset,
+        csm_container_enterprise_cws_count_agg_sum: Union[int, UnsetType] = unset,
+        csm_container_enterprise_total_count_agg_sum: Union[int, UnsetType] = unset,
+        csm_host_enterprise_aas_host_count_top99p_sum: Union[int, UnsetType] = unset,
+        csm_host_enterprise_aws_host_count_top99p_sum: Union[int, UnsetType] = unset,
+        csm_host_enterprise_azure_host_count_top99p_sum: Union[int, UnsetType] = unset,
+        csm_host_enterprise_compliance_host_count_top99p_sum: Union[int, UnsetType] = unset,
+        csm_host_enterprise_cws_host_count_top99p_sum: Union[int, UnsetType] = unset,
+        csm_host_enterprise_gcp_host_count_top99p_sum: Union[int, UnsetType] = unset,
+        csm_host_enterprise_total_host_count_top99p_sum: Union[int, UnsetType] = unset,
         cspm_aas_host_top99p_sum: Union[int, UnsetType] = unset,
         cspm_aws_host_top99p_sum: Union[int, UnsetType] = unset,
         cspm_azure_host_top99p_sum: Union[int, UnsetType] = unset,
@@ -410,25 +440,55 @@ class UsageSummaryResponse(ModelNormal):
         :param container_hwm_sum: Shows the sum of the high-water marks of all distinct containers over all hours in the current months for all organizations.
         :type container_hwm_sum: int, optional
 
-        :param cspm_aas_host_top99p_sum: Shows the 99th percentile of all Cloud Security Posture Management Azure app services hosts over all hours in the current months for all organizations.
+        :param csm_container_enterprise_compliance_count_agg_sum: Shows the sum of all Cloud Security Management Enterprise compliance containers over all hours in the current months for all organizations.
+        :type csm_container_enterprise_compliance_count_agg_sum: int, optional
+
+        :param csm_container_enterprise_cws_count_agg_sum: Shows the sum of all Cloud Security Management Enterprise Cloud Workload Security containers over all hours in the current months for all organizations.
+        :type csm_container_enterprise_cws_count_agg_sum: int, optional
+
+        :param csm_container_enterprise_total_count_agg_sum: Shows the sum of all Cloud Security Management Enterprise containers over all hours in the current months for all organizations.
+        :type csm_container_enterprise_total_count_agg_sum: int, optional
+
+        :param csm_host_enterprise_aas_host_count_top99p_sum: Shows the 99th percentile of all Cloud Security Management Enterprise Azure app services hosts over all hours in the current months for all organizations.
+        :type csm_host_enterprise_aas_host_count_top99p_sum: int, optional
+
+        :param csm_host_enterprise_aws_host_count_top99p_sum: Shows the 99th percentile of all Cloud Security Management Enterprise AWS hosts over all hours in the current months for all organizations.
+        :type csm_host_enterprise_aws_host_count_top99p_sum: int, optional
+
+        :param csm_host_enterprise_azure_host_count_top99p_sum: Shows the 99th percentile of all Cloud Security Management Enterprise Azure hosts over all hours in the current months for all organizations.
+        :type csm_host_enterprise_azure_host_count_top99p_sum: int, optional
+
+        :param csm_host_enterprise_compliance_host_count_top99p_sum: Shows the 99th percentile of all Cloud Security Management Enterprise compliance hosts over all hours in the current months for all organizations.
+        :type csm_host_enterprise_compliance_host_count_top99p_sum: int, optional
+
+        :param csm_host_enterprise_cws_host_count_top99p_sum: Shows the 99th percentile of all Cloud Security Management Enterprise Cloud Workload Security hosts over all hours in the current months for all organizations.
+        :type csm_host_enterprise_cws_host_count_top99p_sum: int, optional
+
+        :param csm_host_enterprise_gcp_host_count_top99p_sum: Shows the 99th percentile of all Cloud Security Management Enterprise GCP hosts over all hours in the current months for all organizations.
+        :type csm_host_enterprise_gcp_host_count_top99p_sum: int, optional
+
+        :param csm_host_enterprise_total_host_count_top99p_sum: Shows the 99th percentile of all Cloud Security Management Enterprise hosts over all hours in the current months for all organizations.
+        :type csm_host_enterprise_total_host_count_top99p_sum: int, optional
+
+        :param cspm_aas_host_top99p_sum: Shows the 99th percentile of all Cloud Security Management Pro Azure app services hosts over all hours in the current months for all organizations.
         :type cspm_aas_host_top99p_sum: int, optional
 
-        :param cspm_aws_host_top99p_sum: Shows the 99th percentile of all Cloud Security Posture Management AWS hosts over all hours in the current months for all organizations.
+        :param cspm_aws_host_top99p_sum: Shows the 99th percentile of all Cloud Security Management Pro AWS hosts over all hours in the current months for all organizations.
         :type cspm_aws_host_top99p_sum: int, optional
 
-        :param cspm_azure_host_top99p_sum: Shows the 99th percentile of all Cloud Security Posture Management Azure hosts over all hours in the current months for all organizations.
+        :param cspm_azure_host_top99p_sum: Shows the 99th percentile of all Cloud Security Management Pro Azure hosts over all hours in the current months for all organizations.
         :type cspm_azure_host_top99p_sum: int, optional
 
-        :param cspm_container_avg_sum: Shows the average number of Cloud Security Posture Management containers over all hours in the current months for all organizations.
+        :param cspm_container_avg_sum: Shows the average number of Cloud Security Management Pro containers over all hours in the current months for all organizations.
         :type cspm_container_avg_sum: int, optional
 
-        :param cspm_container_hwm_sum: Shows the sum of the the high-water marks of Cloud Security Posture Management containers over all hours in the current months for all organizations.
+        :param cspm_container_hwm_sum: Shows the sum of the the high-water marks of Cloud Security Management Pro containers over all hours in the current months for all organizations.
         :type cspm_container_hwm_sum: int, optional
 
-        :param cspm_gcp_host_top99p_sum: Shows the 99th percentile of all Cloud Security Posture Management GCP hosts over all hours in the current months for all organizations.
+        :param cspm_gcp_host_top99p_sum: Shows the 99th percentile of all Cloud Security Management Pro GCP hosts over all hours in the current months for all organizations.
         :type cspm_gcp_host_top99p_sum: int, optional
 
-        :param cspm_host_top99p_sum: Shows the 99th percentile of all Cloud Security Posture Management hosts over all hours in the current months for all organizations.
+        :param cspm_host_top99p_sum: Shows the 99th percentile of all Cloud Security Management Pro hosts over all hours in the current months for all organizations.
         :type cspm_host_top99p_sum: int, optional
 
         :param custom_ts_sum: Shows the average number of distinct custom metrics over all hours in the current months for all organizations.
@@ -670,6 +730,30 @@ class UsageSummaryResponse(ModelNormal):
             kwargs["container_excl_agent_avg_sum"] = container_excl_agent_avg_sum
         if container_hwm_sum is not unset:
             kwargs["container_hwm_sum"] = container_hwm_sum
+        if csm_container_enterprise_compliance_count_agg_sum is not unset:
+            kwargs[
+                "csm_container_enterprise_compliance_count_agg_sum"
+            ] = csm_container_enterprise_compliance_count_agg_sum
+        if csm_container_enterprise_cws_count_agg_sum is not unset:
+            kwargs["csm_container_enterprise_cws_count_agg_sum"] = csm_container_enterprise_cws_count_agg_sum
+        if csm_container_enterprise_total_count_agg_sum is not unset:
+            kwargs["csm_container_enterprise_total_count_agg_sum"] = csm_container_enterprise_total_count_agg_sum
+        if csm_host_enterprise_aas_host_count_top99p_sum is not unset:
+            kwargs["csm_host_enterprise_aas_host_count_top99p_sum"] = csm_host_enterprise_aas_host_count_top99p_sum
+        if csm_host_enterprise_aws_host_count_top99p_sum is not unset:
+            kwargs["csm_host_enterprise_aws_host_count_top99p_sum"] = csm_host_enterprise_aws_host_count_top99p_sum
+        if csm_host_enterprise_azure_host_count_top99p_sum is not unset:
+            kwargs["csm_host_enterprise_azure_host_count_top99p_sum"] = csm_host_enterprise_azure_host_count_top99p_sum
+        if csm_host_enterprise_compliance_host_count_top99p_sum is not unset:
+            kwargs[
+                "csm_host_enterprise_compliance_host_count_top99p_sum"
+            ] = csm_host_enterprise_compliance_host_count_top99p_sum
+        if csm_host_enterprise_cws_host_count_top99p_sum is not unset:
+            kwargs["csm_host_enterprise_cws_host_count_top99p_sum"] = csm_host_enterprise_cws_host_count_top99p_sum
+        if csm_host_enterprise_gcp_host_count_top99p_sum is not unset:
+            kwargs["csm_host_enterprise_gcp_host_count_top99p_sum"] = csm_host_enterprise_gcp_host_count_top99p_sum
+        if csm_host_enterprise_total_host_count_top99p_sum is not unset:
+            kwargs["csm_host_enterprise_total_host_count_top99p_sum"] = csm_host_enterprise_total_host_count_top99p_sum
         if cspm_aas_host_top99p_sum is not unset:
             kwargs["cspm_aas_host_top99p_sum"] = cspm_aas_host_top99p_sum
         if cspm_aws_host_top99p_sum is not unset:

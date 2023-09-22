@@ -59,27 +59,27 @@ class UsageCloudSecurityPostureManagementHour(ModelNormal):
         **kwargs,
     ):
         """
-        Cloud Security Posture Management usage for a given organization for a given hour.
+        Cloud Security Management Pro usage for a given organization for a given hour.
 
-        :param aas_host_count: The number of Cloud Security Posture Management Azure app services hosts during a given hour.
+        :param aas_host_count: The number of Cloud Security Management Pro Azure app services hosts during a given hour.
         :type aas_host_count: float, none_type, optional
 
-        :param aws_host_count: The number of Cloud Security Posture Management AWS hosts during a given hour.
+        :param aws_host_count: The number of Cloud Security Management Pro AWS hosts during a given hour.
         :type aws_host_count: float, none_type, optional
 
-        :param azure_host_count: The number of Cloud Security Posture Management Azure hosts during a given hour.
+        :param azure_host_count: The number of Cloud Security Management Pro Azure hosts during a given hour.
         :type azure_host_count: float, none_type, optional
 
-        :param compliance_host_count: The number of Cloud Security Posture Management hosts during a given hour.
+        :param compliance_host_count: The number of Cloud Security Management Pro hosts during a given hour.
         :type compliance_host_count: float, none_type, optional
 
-        :param container_count: The total number of Cloud Security Posture Management containers during a given hour.
+        :param container_count: The total number of Cloud Security Management Pro containers during a given hour.
         :type container_count: float, none_type, optional
 
-        :param gcp_host_count: The number of Cloud Security Posture Management GCP hosts during a given hour.
+        :param gcp_host_count: The number of Cloud Security Management Pro GCP hosts during a given hour.
         :type gcp_host_count: float, none_type, optional
 
-        :param host_count: The total number of Cloud Security Posture Management hosts during a given hour.
+        :param host_count: The total number of Cloud Security Management Pro hosts during a given hour.
         :type host_count: float, none_type, optional
 
         :param hour: The hour for the usage.
