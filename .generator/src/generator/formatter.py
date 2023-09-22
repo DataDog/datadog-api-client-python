@@ -296,6 +296,11 @@ def format_data_with_schema(
                 if "tzoffset" in result:
                     imports["dateutil.tz"].add("tzoffset")
                 return result
+            
+            def format_uuid(x):
+                imports["uuid"].add("UUID")
+                result = repr(UUID(x))
+                return result
 
             formatter = {
                 "double": lambda s: repr(float(s)),
@@ -305,8 +310,8 @@ def format_data_with_schema(
                 "date-time": format_datetime,
                 "binary": lambda s: f'open("{s}", "rb")',
                 "email": repr,
-                "UUID": lambda s: repr(UUID(s)),
-                None: repr,
+                "uuid": format_uuid,
+                None: repr, 
             }[schema.get("format")]
 
             # TODO format date and datetime

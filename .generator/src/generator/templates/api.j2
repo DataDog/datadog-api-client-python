@@ -16,6 +16,7 @@ from {{ package }}.model_utils import (
     none_type,
     UnsetType,
     unset,
+    UUID,
 )
 {%- for model in get_api_models(operations) %}
 from {{ package }}.{{ version }}.model.{{ model|safe_snake_case }} import {{ model }}
