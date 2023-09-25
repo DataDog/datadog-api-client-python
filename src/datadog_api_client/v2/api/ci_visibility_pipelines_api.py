@@ -59,7 +59,7 @@ class CIVisibilityPipelinesApi:
         self._create_ci_app_pipeline_event_endpoint = _Endpoint(
             settings={
                 "response_type": (dict,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth"],
                 "endpoint_path": "/api/v2/ci/pipeline",
                 "operation_id": "create_ci_app_pipeline_event",
                 "http_method": "POST",
