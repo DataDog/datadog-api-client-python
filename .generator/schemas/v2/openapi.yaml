@@ -354,10 +354,7 @@ components:
       name: page[offset]
       required: false
       schema:
-        default: 0
-        example: 0
-        format: int64
-        type: integer
+        type: string
     PageSize:
       description: Size for a given page. The maximum allowed value is 100.
       in: query

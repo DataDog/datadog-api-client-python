@@ -374,7 +374,7 @@ class IncidentsApi:
                     "location": "query",
                 },
                 "page_offset": {
-                    "openapi_types": (int,),
+                    "openapi_types": (str,),
                     "attribute": "page[offset]",
                     "location": "query",
                 },
@@ -440,7 +440,7 @@ class IncidentsApi:
                     "location": "query",
                 },
                 "page_offset": {
-                    "openapi_types": (int,),
+                    "openapi_types": (str,),
                     "attribute": "page[offset]",
                     "location": "query",
                 },
@@ -821,7 +821,7 @@ class IncidentsApi:
         *,
         include: Union[List[IncidentRelatedObject], UnsetType] = unset,
         page_size: Union[int, UnsetType] = unset,
-        page_offset: Union[int, UnsetType] = unset,
+        page_offset: Union[str, UnsetType] = unset,
     ) -> IncidentsResponse:
         """Get a list of incidents.
 
@@ -832,7 +832,7 @@ class IncidentsApi:
         :param page_size: Size for a given page. The maximum allowed value is 100.
         :type page_size: int, optional
         :param page_offset: Specific offset to use as the beginning of the returned page.
-        :type page_offset: int, optional
+        :type page_offset: str, optional
         :rtype: IncidentsResponse
         """
         kwargs: Dict[str, Any] = {}
@@ -852,7 +852,7 @@ class IncidentsApi:
         *,
         include: Union[List[IncidentRelatedObject], UnsetType] = unset,
         page_size: Union[int, UnsetType] = unset,
-        page_offset: Union[int, UnsetType] = unset,
+        page_offset: Union[str, UnsetType] = unset,
     ) -> collections.abc.Iterable[IncidentResponseData]:
         """Get a list of incidents.
 
@@ -863,7 +863,7 @@ class IncidentsApi:
         :param page_size: Size for a given page. The maximum allowed value is 100.
         :type page_size: int, optional
         :param page_offset: Specific offset to use as the beginning of the returned page.
-        :type page_offset: int, optional
+        :type page_offset: str, optional
 
         :return: A generator of paginated results.
         :rtype: collections.abc.Iterable[IncidentResponseData]
@@ -914,7 +914,7 @@ class IncidentsApi:
         include: Union[IncidentRelatedObject, UnsetType] = unset,
         sort: Union[IncidentSearchSortOrder, UnsetType] = unset,
         page_size: Union[int, UnsetType] = unset,
-        page_offset: Union[int, UnsetType] = unset,
+        page_offset: Union[str, UnsetType] = unset,
     ) -> IncidentSearchResponse:
         """Search for incidents.
 
@@ -933,7 +933,7 @@ class IncidentsApi:
         :param page_size: Size for a given page. The maximum allowed value is 100.
         :type page_size: int, optional
         :param page_offset: Specific offset to use as the beginning of the returned page.
-        :type page_offset: int, optional
+        :type page_offset: str, optional
         :rtype: IncidentSearchResponse
         """
         kwargs: Dict[str, Any] = {}
@@ -960,7 +960,7 @@ class IncidentsApi:
         include: Union[IncidentRelatedObject, UnsetType] = unset,
         sort: Union[IncidentSearchSortOrder, UnsetType] = unset,
         page_size: Union[int, UnsetType] = unset,
-        page_offset: Union[int, UnsetType] = unset,
+        page_offset: Union[str, UnsetType] = unset,
     ) -> collections.abc.Iterable[IncidentSearchResponseIncidentsData]:
         """Search for incidents.
 
@@ -979,7 +979,7 @@ class IncidentsApi:
         :param page_size: Size for a given page. The maximum allowed value is 100.
         :type page_size: int, optional
         :param page_offset: Specific offset to use as the beginning of the returned page.
-        :type page_offset: int, optional
+        :type page_offset: str, optional
 
         :return: A generator of paginated results.
         :rtype: collections.abc.Iterable[IncidentSearchResponseIncidentsData]

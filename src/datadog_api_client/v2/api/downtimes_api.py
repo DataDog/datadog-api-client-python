@@ -129,7 +129,7 @@ class DowntimesApi:
                     "location": "query",
                 },
                 "page_offset": {
-                    "openapi_types": (int,),
+                    "openapi_types": (str,),
                     "attribute": "page[offset]",
                     "location": "query",
                 },
@@ -258,7 +258,7 @@ class DowntimesApi:
         *,
         current_only: Union[bool, UnsetType] = unset,
         include: Union[str, UnsetType] = unset,
-        page_offset: Union[int, UnsetType] = unset,
+        page_offset: Union[str, UnsetType] = unset,
         page_limit: Union[int, UnsetType] = unset,
     ) -> ListDowntimesResponse:
         """Get all downtimes.
@@ -271,7 +271,7 @@ class DowntimesApi:
             paths are ``created_by`` and ``monitor``.
         :type include: str, optional
         :param page_offset: Specific offset to use as the beginning of the returned page.
-        :type page_offset: int, optional
+        :type page_offset: str, optional
         :param page_limit: Maximum number of downtimes in the response.
         :type page_limit: int, optional
         :rtype: ListDowntimesResponse
@@ -296,7 +296,7 @@ class DowntimesApi:
         *,
         current_only: Union[bool, UnsetType] = unset,
         include: Union[str, UnsetType] = unset,
-        page_offset: Union[int, UnsetType] = unset,
+        page_offset: Union[str, UnsetType] = unset,
         page_limit: Union[int, UnsetType] = unset,
     ) -> collections.abc.Iterable[DowntimeResponseData]:
         """Get all downtimes.
@@ -309,7 +309,7 @@ class DowntimesApi:
             paths are ``created_by`` and ``monitor``.
         :type include: str, optional
         :param page_offset: Specific offset to use as the beginning of the returned page.
-        :type page_offset: int, optional
+        :type page_offset: str, optional
         :param page_limit: Maximum number of downtimes in the response.
         :type page_limit: int, optional
 

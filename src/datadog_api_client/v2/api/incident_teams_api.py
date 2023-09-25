@@ -121,7 +121,7 @@ class IncidentTeamsApi:
                     "location": "query",
                 },
                 "page_offset": {
-                    "openapi_types": (int,),
+                    "openapi_types": (str,),
                     "attribute": "page[offset]",
                     "location": "query",
                 },
@@ -230,7 +230,7 @@ class IncidentTeamsApi:
         *,
         include: Union[IncidentRelatedObject, UnsetType] = unset,
         page_size: Union[int, UnsetType] = unset,
-        page_offset: Union[int, UnsetType] = unset,
+        page_offset: Union[str, UnsetType] = unset,
         filter: Union[str, UnsetType] = unset,
     ) -> IncidentTeamsResponse:
         """Get a list of all incident teams. **Deprecated**.
@@ -242,7 +242,7 @@ class IncidentTeamsApi:
         :param page_size: Size for a given page. The maximum allowed value is 100.
         :type page_size: int, optional
         :param page_offset: Specific offset to use as the beginning of the returned page.
-        :type page_offset: int, optional
+        :type page_offset: str, optional
         :param filter: A search query that filters teams by name.
         :type filter: str, optional
         :rtype: IncidentTeamsResponse
