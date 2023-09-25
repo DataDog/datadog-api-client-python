@@ -1,7 +1,5 @@
 import json
-from datadog_api_client.model_utils import (
-    UUID
-)
+from datadog_api_client.model_utils import UUID
 
 from datadog_api_client.configuration import Configuration
 from datadog_api_client.model_utils import validate_and_convert_types, model_to_dict
@@ -322,6 +320,7 @@ def test_unknown_model_value():
     assert "allowed_login_methods" in serialized["data"]["attributes"]
     assert serialized["data"]["attributes"]["allowed_login_methods"] == []
 
+
 def test_uuid_handling():
     body = """{
         "data":{
@@ -349,5 +348,5 @@ def test_uuid_handling():
     deserialized_data = validate_and_convert_types(
         json.loads(body), (UserInvitationResponse,), ["received_data"], True, True, config
     )
-    assert isinstance(deserialized_data,UserInvitationResponse)
-    assert isinstance(deserialized_data.get("data").get("attributes").get("uuid"),UUID)
+    assert isinstance(deserialized_data, UserInvitationResponse)
+    assert isinstance(deserialized_data.get("data").get("attributes").get("uuid"), UUID)
