@@ -27,6 +27,18 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n    \"data\": {\n        \"attributes\": {\n            \"name\": \"demo retention filter\",\n            \"rate\": 0.90,\n            \"filter\": {\n                \"query\": \"@_top_level:1 test:service-demo\"\n            },\n            \"enabled\": true,\n            \"filter_type\": \"spans-sampling-processor\"\n        },\n        \"type\": \"apm_retention_filter\"\n    }\n}"
+      }
+    ],
+    "step": "there is a valid \"retention_filter\" in the system",
+    "key": "retention_filter",
+    "tag": "APM Retention Filters",
+    "operationId": "CreateApmRetentionFilter"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"attributes\": {\n     \"attribute_key\": \"{{ unique_lower_alnum }}\",\n     \"attribute_value\": \"{{ unique }}\"\n    },\n    \"relationships\": {\n       \"role\": {\n         \"data\": {\n           \"id\": \"{{ role.data.id }}\",\n           \"type\": \"{{ role.data.type }}\"\n         }\n      }\n    },\n    \"type\": \"authn_mappings\"\n  }\n}"
       }
     ],
