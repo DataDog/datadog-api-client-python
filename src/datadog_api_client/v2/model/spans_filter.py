@@ -28,7 +28,7 @@ class SpansFilter(ModelNormal):
         """
         The spans filter used to index spans.
 
-        :param query: The search query - following the span search syntax.
+        :param query: The search query - following the `span search syntax <https://docs.datadoghq.com/tracing/trace_explorer/query_syntax/>`_.
         :type query: str, optional
         """
         if query is not unset:
