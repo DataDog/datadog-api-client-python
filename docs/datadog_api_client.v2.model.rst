@@ -92,6 +92,13 @@ api\_keys\_type
    :members:
    :show-inheritance:
 
+apm\_retention\_filter\_type
+----------------------------
+
+.. automodule:: datadog_api_client.v2.model.apm_retention_filter_type
+   :members:
+   :show-inheritance:
+
 application\_key\_create\_attributes
 ------------------------------------
 
@@ -4838,6 +4845,13 @@ relationship\_to\_users
    :members:
    :show-inheritance:
 
+reorder\_retention\_filters\_request
+------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.reorder_retention_filters_request
+   :members:
+   :show-inheritance:
+
 response\_meta\_attributes
 --------------------------
 
@@ -4884,6 +4898,104 @@ restriction\_policy\_update\_request
 ------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.restriction_policy_update_request
+   :members:
+   :show-inheritance:
+
+retention\_filter
+-----------------
+
+.. automodule:: datadog_api_client.v2.model.retention_filter
+   :members:
+   :show-inheritance:
+
+retention\_filter\_all
+----------------------
+
+.. automodule:: datadog_api_client.v2.model.retention_filter_all
+   :members:
+   :show-inheritance:
+
+retention\_filter\_all\_attributes
+----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.retention_filter_all_attributes
+   :members:
+   :show-inheritance:
+
+retention\_filter\_all\_type
+----------------------------
+
+.. automodule:: datadog_api_client.v2.model.retention_filter_all_type
+   :members:
+   :show-inheritance:
+
+retention\_filter\_attributes
+-----------------------------
+
+.. automodule:: datadog_api_client.v2.model.retention_filter_attributes
+   :members:
+   :show-inheritance:
+
+retention\_filter\_create\_attributes
+-------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.retention_filter_create_attributes
+   :members:
+   :show-inheritance:
+
+retention\_filter\_create\_data
+-------------------------------
+
+.. automodule:: datadog_api_client.v2.model.retention_filter_create_data
+   :members:
+   :show-inheritance:
+
+retention\_filter\_create\_request
+----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.retention_filter_create_request
+   :members:
+   :show-inheritance:
+
+retention\_filter\_response
+---------------------------
+
+.. automodule:: datadog_api_client.v2.model.retention_filter_response
+   :members:
+   :show-inheritance:
+
+retention\_filter\_type
+-----------------------
+
+.. automodule:: datadog_api_client.v2.model.retention_filter_type
+   :members:
+   :show-inheritance:
+
+retention\_filter\_update\_data
+-------------------------------
+
+.. automodule:: datadog_api_client.v2.model.retention_filter_update_data
+   :members:
+   :show-inheritance:
+
+retention\_filter\_update\_request
+----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.retention_filter_update_request
+   :members:
+   :show-inheritance:
+
+retention\_filter\_without\_attributes
+--------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.retention_filter_without_attributes
+   :members:
+   :show-inheritance:
+
+retention\_filters\_response
+----------------------------
+
+.. automodule:: datadog_api_client.v2.model.retention_filters_response
    :members:
    :show-inheritance:
 
@@ -6900,6 +7012,20 @@ spans\_compute\_type
 --------------------
 
 .. automodule:: datadog_api_client.v2.model.spans_compute_type
+   :members:
+   :show-inheritance:
+
+spans\_filter
+-------------
+
+.. automodule:: datadog_api_client.v2.model.spans_filter
+   :members:
+   :show-inheritance:
+
+spans\_filter\_create
+---------------------
+
+.. automodule:: datadog_api_client.v2.model.spans_filter_create
    :members:
    :show-inheritance:
 

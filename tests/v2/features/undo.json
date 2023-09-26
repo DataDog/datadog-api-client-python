@@ -73,6 +73,43 @@
       "type": "idempotent"
     }
   },
+  "ListApmRetentionFilters": {
+    "tag": "APM Retention Filters",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateApmRetentionFilter": {
+    "tag": "APM Retention Filters",
+    "undo": {
+      "operationId": "DeleteApmRetentionFilter",
+      "parameters": [
+        {
+          "name": "filter_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "ReorderApmRetentionFilters": {
+    "tag": "APM Retention Filters",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DeleteApmRetentionFilter": {
+    "tag": "APM Retention Filters",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateApmRetentionFilter": {
+    "tag": "APM Retention Filters",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListApplicationKeys": {
     "tag": "Key Management",
     "undo": {

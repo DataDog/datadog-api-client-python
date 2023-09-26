@@ -72,7 +72,7 @@ Feature: Usage Metering
     Then the response status is 200 OK
 
   @team:DataDog/red-zone-revenue-query
-  Scenario: Get hourly usage for CI Visibility returns "Bad Request" response
+  Scenario: Get hourly usage for CI visibility returns "Bad Request" response
     Given new "GetUsageCIApp" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 3d') }}"
     And request contains "end_hr" parameter with value "{{ timeISO('now - 5d') }}"
@@ -80,24 +80,10 @@ Feature: Usage Metering
     Then the response status is 400 Bad Request
 
   @team:DataDog/red-zone-revenue-query
-  Scenario: Get hourly usage for CI Visibility returns "OK" response
+  Scenario: Get hourly usage for CI visibility returns "OK" response
     Given new "GetUsageCIApp" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 5d') }}"
     And request contains "end_hr" parameter with value "{{ timeISO('now - 3d') }}"
-    When the request is sent
-    Then the response status is 200 OK
-
-  @generated @skip @team:DataDog/red-zone-revenue-query
-  Scenario: Get hourly usage for CI visibility returns "Bad Request" response
-    Given new "GetUsageCIApp" request
-    And request contains "start_hr" parameter from "REPLACE.ME"
-    When the request is sent
-    Then the response status is 400 Bad Request
-
-  @generated @skip @team:DataDog/red-zone-revenue-query
-  Scenario: Get hourly usage for CI visibility returns "OK" response
-    Given new "GetUsageCIApp" request
-    And request contains "start_hr" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
@@ -112,14 +98,6 @@ Feature: Usage Metering
   Scenario: Get hourly usage for CSM Pro returns "OK" response
     Given new "GetUsageCloudSecurityPostureManagement" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 3d') }}"
-    When the request is sent
-    Then the response status is 200 OK
-
-  @team:DataDog/red-zone-revenue-query
-  Scenario: Get hourly usage for Cloud Workload Security returns "OK" response
-    Given new "GetUsageCWS" request
-    And request contains "start_hr" parameter with value "{{ timeISO('now - 5d') }}"
-    And request contains "end_hr" parameter with value "{{ timeISO('now - 3d') }}"
     When the request is sent
     Then the response status is 200 OK
 
@@ -405,10 +383,11 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/red-zone-revenue-query
+  @team:DataDog/red-zone-revenue-query
   Scenario: Get hourly usage for cloud workload security returns "OK" response
     Given new "GetUsageCWS" request
-    And request contains "start_hr" parameter from "REPLACE.ME"
+    And request contains "start_hr" parameter with value "{{ timeISO('now - 5d') }}"
+    And request contains "end_hr" parameter with value "{{ timeISO('now - 3d') }}"
     When the request is sent
     Then the response status is 200 OK
 
