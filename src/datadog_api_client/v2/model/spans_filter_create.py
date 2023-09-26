@@ -25,7 +25,7 @@ class SpansFilterCreate(ModelNormal):
         """
         The spans filter. Spans matching this filter will be indexed and stored.
 
-        :param query: The search query - following the span search syntax.
+        :param query: The search query - following the `span search syntax <https://docs.datadoghq.com/tracing/trace_explorer/query_syntax/>`_.
         :type query: str
         """
         super().__init__(kwargs)
