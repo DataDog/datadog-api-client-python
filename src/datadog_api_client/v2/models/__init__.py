@@ -11,6 +11,7 @@ from datadog_api_client.v2.model.api_key_update_request import APIKeyUpdateReque
 from datadog_api_client.v2.model.api_keys_response import APIKeysResponse
 from datadog_api_client.v2.model.api_keys_sort import APIKeysSort
 from datadog_api_client.v2.model.api_keys_type import APIKeysType
+from datadog_api_client.v2.model.apm_retention_filter_type import ApmRetentionFilterType
 from datadog_api_client.v2.model.application_key_create_attributes import ApplicationKeyCreateAttributes
 from datadog_api_client.v2.model.application_key_create_data import ApplicationKeyCreateData
 from datadog_api_client.v2.model.application_key_create_request import ApplicationKeyCreateRequest
@@ -854,6 +855,7 @@ from datadog_api_client.v2.model.relationship_to_user_team_permission_data impor
 from datadog_api_client.v2.model.relationship_to_user_team_user import RelationshipToUserTeamUser
 from datadog_api_client.v2.model.relationship_to_user_team_user_data import RelationshipToUserTeamUserData
 from datadog_api_client.v2.model.relationship_to_users import RelationshipToUsers
+from datadog_api_client.v2.model.reorder_retention_filters_request import ReorderRetentionFiltersRequest
 from datadog_api_client.v2.model.response_meta_attributes import ResponseMetaAttributes
 from datadog_api_client.v2.model.restriction_policy import RestrictionPolicy
 from datadog_api_client.v2.model.restriction_policy_attributes import RestrictionPolicyAttributes
@@ -861,6 +863,20 @@ from datadog_api_client.v2.model.restriction_policy_binding import RestrictionPo
 from datadog_api_client.v2.model.restriction_policy_response import RestrictionPolicyResponse
 from datadog_api_client.v2.model.restriction_policy_type import RestrictionPolicyType
 from datadog_api_client.v2.model.restriction_policy_update_request import RestrictionPolicyUpdateRequest
+from datadog_api_client.v2.model.retention_filter import RetentionFilter
+from datadog_api_client.v2.model.retention_filter_all import RetentionFilterAll
+from datadog_api_client.v2.model.retention_filter_all_attributes import RetentionFilterAllAttributes
+from datadog_api_client.v2.model.retention_filter_all_type import RetentionFilterAllType
+from datadog_api_client.v2.model.retention_filter_attributes import RetentionFilterAttributes
+from datadog_api_client.v2.model.retention_filter_create_attributes import RetentionFilterCreateAttributes
+from datadog_api_client.v2.model.retention_filter_create_data import RetentionFilterCreateData
+from datadog_api_client.v2.model.retention_filter_create_request import RetentionFilterCreateRequest
+from datadog_api_client.v2.model.retention_filter_response import RetentionFilterResponse
+from datadog_api_client.v2.model.retention_filter_type import RetentionFilterType
+from datadog_api_client.v2.model.retention_filter_update_data import RetentionFilterUpdateData
+from datadog_api_client.v2.model.retention_filter_update_request import RetentionFilterUpdateRequest
+from datadog_api_client.v2.model.retention_filter_without_attributes import RetentionFilterWithoutAttributes
+from datadog_api_client.v2.model.retention_filters_response import RetentionFiltersResponse
 from datadog_api_client.v2.model.role import Role
 from datadog_api_client.v2.model.role_attributes import RoleAttributes
 from datadog_api_client.v2.model.role_clone import RoleClone
@@ -1211,6 +1227,8 @@ from datadog_api_client.v2.model.spans_aggregation_function import SpansAggregat
 from datadog_api_client.v2.model.spans_attributes import SpansAttributes
 from datadog_api_client.v2.model.spans_compute import SpansCompute
 from datadog_api_client.v2.model.spans_compute_type import SpansComputeType
+from datadog_api_client.v2.model.spans_filter import SpansFilter
+from datadog_api_client.v2.model.spans_filter_create import SpansFilterCreate
 from datadog_api_client.v2.model.spans_group_by import SpansGroupBy
 from datadog_api_client.v2.model.spans_group_by_histogram import SpansGroupByHistogram
 from datadog_api_client.v2.model.spans_group_by_missing import SpansGroupByMissing
@@ -1364,6 +1382,7 @@ __all__ = [
     "APIKeysResponse",
     "APIKeysSort",
     "APIKeysType",
+    "ApmRetentionFilterType",
     "ApplicationKeyCreateAttributes",
     "ApplicationKeyCreateData",
     "ApplicationKeyCreateRequest",
@@ -2089,6 +2108,7 @@ __all__ = [
     "RelationshipToUserTeamUser",
     "RelationshipToUserTeamUserData",
     "RelationshipToUsers",
+    "ReorderRetentionFiltersRequest",
     "ResponseMetaAttributes",
     "RestrictionPolicy",
     "RestrictionPolicyAttributes",
@@ -2096,6 +2116,20 @@ __all__ = [
     "RestrictionPolicyResponse",
     "RestrictionPolicyType",
     "RestrictionPolicyUpdateRequest",
+    "RetentionFilter",
+    "RetentionFilterAll",
+    "RetentionFilterAllAttributes",
+    "RetentionFilterAllType",
+    "RetentionFilterAttributes",
+    "RetentionFilterCreateAttributes",
+    "RetentionFilterCreateData",
+    "RetentionFilterCreateRequest",
+    "RetentionFilterResponse",
+    "RetentionFilterType",
+    "RetentionFilterUpdateData",
+    "RetentionFilterUpdateRequest",
+    "RetentionFilterWithoutAttributes",
+    "RetentionFiltersResponse",
     "Role",
     "RoleAttributes",
     "RoleClone",
@@ -2340,6 +2374,8 @@ __all__ = [
     "SpansAttributes",
     "SpansCompute",
     "SpansComputeType",
+    "SpansFilter",
+    "SpansFilterCreate",
     "SpansGroupBy",
     "SpansGroupByHistogram",
     "SpansGroupByMissing",
