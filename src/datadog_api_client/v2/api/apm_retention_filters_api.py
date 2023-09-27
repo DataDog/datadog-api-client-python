@@ -27,7 +27,7 @@ class APMRetentionFiltersApi:
         self._create_apm_retention_filter_endpoint = _Endpoint(
             settings={
                 "response_type": (RetentionFilterResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/apm/config/retention-filters",
                 "operation_id": "create_apm_retention_filter",
                 "http_method": "POST",
@@ -47,7 +47,7 @@ class APMRetentionFiltersApi:
         self._delete_apm_retention_filter_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/apm/config/retention-filters/{filter_id}",
                 "operation_id": "delete_apm_retention_filter",
                 "http_method": "DELETE",
@@ -70,7 +70,7 @@ class APMRetentionFiltersApi:
         self._list_apm_retention_filters_endpoint = _Endpoint(
             settings={
                 "response_type": (RetentionFiltersResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/apm/config/retention-filters",
                 "operation_id": "list_apm_retention_filters",
                 "http_method": "GET",
@@ -86,7 +86,7 @@ class APMRetentionFiltersApi:
         self._reorder_apm_retention_filters_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/apm/config/retention-filters-execution-order",
                 "operation_id": "reorder_apm_retention_filters",
                 "http_method": "PUT",
@@ -106,7 +106,7 @@ class APMRetentionFiltersApi:
         self._update_apm_retention_filter_endpoint = _Endpoint(
             settings={
                 "response_type": (RetentionFilterResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/apm/config/retention-filters/{filter_id}",
                 "operation_id": "update_apm_retention_filter",
                 "http_method": "PUT",
