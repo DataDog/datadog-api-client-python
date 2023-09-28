@@ -14,7 +14,6 @@ from datadog_api_client.v2.model.ci_app_create_pipeline_event_request_data impor
 from datadog_api_client.v2.model.ci_app_create_pipeline_event_request_data_type import (
     CIAppCreatePipelineEventRequestDataType,
 )
-from datadog_api_client.v2.model.ci_app_git_info import CIAppGitInfo
 from datadog_api_client.v2.model.ci_app_pipeline_event_job import CIAppPipelineEventJob
 from datadog_api_client.v2.model.ci_app_pipeline_event_job_level import CIAppPipelineEventJobLevel
 from datadog_api_client.v2.model.ci_app_pipeline_event_job_status import CIAppPipelineEventJobStatus
@@ -32,11 +31,6 @@ body = CIAppCreatePipelineEventRequest(
                 pipeline_unique_id="3eacb6f3-ff04-4e10-8a9c-46e6d054024a",
                 pipeline_name="Deploy to AWS",
                 url="https://my-ci-provider.example/jobs/my-jobs/run/1",
-                git=CIAppGitInfo(
-                    repository_url="https://github.com/DataDog/datadog-agent",
-                    sha="7f263865994b76066c4612fd1965215e7dcb4cd2",
-                    author_email="john.doe@email.com",
-                ),
             ),
         ),
         type=CIAppCreatePipelineEventRequestDataType.CIPIPELINE_RESOURCE_REQUEST,
