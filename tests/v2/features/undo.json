@@ -104,6 +104,12 @@
       "type": "idempotent"
     }
   },
+  "GetApmRetentionFilter": {
+    "tag": "APM Retention Filters",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "UpdateApmRetentionFilter": {
     "tag": "APM Retention Filters",
     "undo": {
