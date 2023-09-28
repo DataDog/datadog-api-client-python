@@ -67,6 +67,29 @@ class APMRetentionFiltersApi:
             api_client=api_client,
         )
 
+        self._get_apm_retention_filter_endpoint = _Endpoint(
+            settings={
+                "response_type": (RetentionFilterResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/apm/config/retention-filters/{filter_id}",
+                "operation_id": "get_apm_retention_filter",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "filter_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "filter_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._list_apm_retention_filters_endpoint = _Endpoint(
             settings={
                 "response_type": (RetentionFiltersResponse,),
@@ -163,6 +186,23 @@ class APMRetentionFiltersApi:
         kwargs["filter_id"] = filter_id
 
         return self._delete_apm_retention_filter_endpoint.call_with_http_info(**kwargs)
+
+    def get_apm_retention_filter(
+        self,
+        filter_id: str,
+    ) -> RetentionFilterResponse:
+        """Get a given APM retention filter.
+
+        Get an APM retention filter.
+
+        :param filter_id: The ID of the retention filter.
+        :type filter_id: str
+        :rtype: RetentionFilterResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["filter_id"] = filter_id
+
+        return self._get_apm_retention_filter_endpoint.call_with_http_info(**kwargs)
 
     def list_apm_retention_filters(
         self,
