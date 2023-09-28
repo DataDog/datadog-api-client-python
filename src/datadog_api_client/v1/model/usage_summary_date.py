@@ -111,6 +111,9 @@ class UsageSummaryDate(ModelNormal):
             "sds_logs_scanned_bytes_sum": (int,),
             "sds_rum_scanned_bytes_sum": (int,),
             "sds_total_scanned_bytes_sum": (int,),
+            "serverless_apps_azure_count_avg": (int,),
+            "serverless_apps_google_count_avg": (int,),
+            "serverless_apps_total_count_avg": (int,),
             "synthetics_browser_check_calls_count_sum": (int,),
             "synthetics_check_calls_count_sum": (int,),
             "synthetics_mobile_test_runs_sum": (int,),
@@ -211,6 +214,9 @@ class UsageSummaryDate(ModelNormal):
         "sds_logs_scanned_bytes_sum": "sds_logs_scanned_bytes_sum",
         "sds_rum_scanned_bytes_sum": "sds_rum_scanned_bytes_sum",
         "sds_total_scanned_bytes_sum": "sds_total_scanned_bytes_sum",
+        "serverless_apps_azure_count_avg": "serverless_apps_azure_count_avg",
+        "serverless_apps_google_count_avg": "serverless_apps_google_count_avg",
+        "serverless_apps_total_count_avg": "serverless_apps_total_count_avg",
         "synthetics_browser_check_calls_count_sum": "synthetics_browser_check_calls_count_sum",
         "synthetics_check_calls_count_sum": "synthetics_check_calls_count_sum",
         "synthetics_mobile_test_runs_sum": "synthetics_mobile_test_runs_sum",
@@ -312,6 +318,9 @@ class UsageSummaryDate(ModelNormal):
         sds_logs_scanned_bytes_sum: Union[int, UnsetType] = unset,
         sds_rum_scanned_bytes_sum: Union[int, UnsetType] = unset,
         sds_total_scanned_bytes_sum: Union[int, UnsetType] = unset,
+        serverless_apps_azure_count_avg: Union[int, UnsetType] = unset,
+        serverless_apps_google_count_avg: Union[int, UnsetType] = unset,
+        serverless_apps_total_count_avg: Union[int, UnsetType] = unset,
         synthetics_browser_check_calls_count_sum: Union[int, UnsetType] = unset,
         synthetics_check_calls_count_sum: Union[int, UnsetType] = unset,
         synthetics_mobile_test_runs_sum: Union[int, UnsetType] = unset,
@@ -588,6 +597,15 @@ class UsageSummaryDate(ModelNormal):
         :param sds_total_scanned_bytes_sum: Shows the sum of all bytes scanned across all usage types by the Sensitive Data Scanner over all hours in the current month for all organizations.
         :type sds_total_scanned_bytes_sum: int, optional
 
+        :param serverless_apps_azure_count_avg: Shows the average of the number of Serverless Apps for Azure for the given date and given org.
+        :type serverless_apps_azure_count_avg: int, optional
+
+        :param serverless_apps_google_count_avg: Shows the average of the number of Serverless Apps for Google Cloud for the given date and given org.
+        :type serverless_apps_google_count_avg: int, optional
+
+        :param serverless_apps_total_count_avg: Shows the average of the number of Serverless Apps for Azure and Google Cloud for the given date and given org.
+        :type serverless_apps_total_count_avg: int, optional
+
         :param synthetics_browser_check_calls_count_sum: Shows the sum of all Synthetic browser tests over all hours in the current date for all organizations.
         :type synthetics_browser_check_calls_count_sum: int, optional
 
@@ -794,6 +812,12 @@ class UsageSummaryDate(ModelNormal):
             kwargs["sds_rum_scanned_bytes_sum"] = sds_rum_scanned_bytes_sum
         if sds_total_scanned_bytes_sum is not unset:
             kwargs["sds_total_scanned_bytes_sum"] = sds_total_scanned_bytes_sum
+        if serverless_apps_azure_count_avg is not unset:
+            kwargs["serverless_apps_azure_count_avg"] = serverless_apps_azure_count_avg
+        if serverless_apps_google_count_avg is not unset:
+            kwargs["serverless_apps_google_count_avg"] = serverless_apps_google_count_avg
+        if serverless_apps_total_count_avg is not unset:
+            kwargs["serverless_apps_total_count_avg"] = serverless_apps_total_count_avg
         if synthetics_browser_check_calls_count_sum is not unset:
             kwargs["synthetics_browser_check_calls_count_sum"] = synthetics_browser_check_calls_count_sum
         if synthetics_check_calls_count_sum is not unset:
