@@ -120,6 +120,9 @@ class UsageSummaryResponse(ModelNormal):
             "sds_logs_scanned_bytes_sum": (int,),
             "sds_rum_scanned_bytes_sum": (int,),
             "sds_total_scanned_bytes_sum": (int,),
+            "serverless_apps_azure_count_avg_sum": (int,),
+            "serverless_apps_google_count_avg_sum": (int,),
+            "serverless_apps_total_count_avg_sum": (int,),
             "start_date": (datetime,),
             "synthetics_browser_check_calls_count_agg_sum": (int,),
             "synthetics_check_calls_count_agg_sum": (int,),
@@ -229,6 +232,9 @@ class UsageSummaryResponse(ModelNormal):
         "sds_logs_scanned_bytes_sum": "sds_logs_scanned_bytes_sum",
         "sds_rum_scanned_bytes_sum": "sds_rum_scanned_bytes_sum",
         "sds_total_scanned_bytes_sum": "sds_total_scanned_bytes_sum",
+        "serverless_apps_azure_count_avg_sum": "serverless_apps_azure_count_avg_sum",
+        "serverless_apps_google_count_avg_sum": "serverless_apps_google_count_avg_sum",
+        "serverless_apps_total_count_avg_sum": "serverless_apps_total_count_avg_sum",
         "start_date": "start_date",
         "synthetics_browser_check_calls_count_agg_sum": "synthetics_browser_check_calls_count_agg_sum",
         "synthetics_check_calls_count_agg_sum": "synthetics_check_calls_count_agg_sum",
@@ -339,6 +345,9 @@ class UsageSummaryResponse(ModelNormal):
         sds_logs_scanned_bytes_sum: Union[int, UnsetType] = unset,
         sds_rum_scanned_bytes_sum: Union[int, UnsetType] = unset,
         sds_total_scanned_bytes_sum: Union[int, UnsetType] = unset,
+        serverless_apps_azure_count_avg_sum: Union[int, UnsetType] = unset,
+        serverless_apps_google_count_avg_sum: Union[int, UnsetType] = unset,
+        serverless_apps_total_count_avg_sum: Union[int, UnsetType] = unset,
         start_date: Union[datetime, UnsetType] = unset,
         synthetics_browser_check_calls_count_agg_sum: Union[int, UnsetType] = unset,
         synthetics_check_calls_count_agg_sum: Union[int, UnsetType] = unset,
@@ -638,6 +647,15 @@ class UsageSummaryResponse(ModelNormal):
         :param sds_total_scanned_bytes_sum: Shows the sum of all bytes scanned across all usage types by the Sensitive Data Scanner over all hours in the current month for all organizations.
         :type sds_total_scanned_bytes_sum: int, optional
 
+        :param serverless_apps_azure_count_avg_sum: Sum of the average number of Serverless Apps for Azure in the current months for all organizations.
+        :type serverless_apps_azure_count_avg_sum: int, optional
+
+        :param serverless_apps_google_count_avg_sum: Sum of the average number of Serverless Apps for Google Cloud in the current months for all organizations.
+        :type serverless_apps_google_count_avg_sum: int, optional
+
+        :param serverless_apps_total_count_avg_sum: Sum of the average number of Serverless Apps for Azure and Google Cloud in the current months for all organizations.
+        :type serverless_apps_total_count_avg_sum: int, optional
+
         :param start_date: Shows the first date of usage in the current months for all organizations.
         :type start_date: datetime, optional
 
@@ -868,6 +886,12 @@ class UsageSummaryResponse(ModelNormal):
             kwargs["sds_rum_scanned_bytes_sum"] = sds_rum_scanned_bytes_sum
         if sds_total_scanned_bytes_sum is not unset:
             kwargs["sds_total_scanned_bytes_sum"] = sds_total_scanned_bytes_sum
+        if serverless_apps_azure_count_avg_sum is not unset:
+            kwargs["serverless_apps_azure_count_avg_sum"] = serverless_apps_azure_count_avg_sum
+        if serverless_apps_google_count_avg_sum is not unset:
+            kwargs["serverless_apps_google_count_avg_sum"] = serverless_apps_google_count_avg_sum
+        if serverless_apps_total_count_avg_sum is not unset:
+            kwargs["serverless_apps_total_count_avg_sum"] = serverless_apps_total_count_avg_sum
         if start_date is not unset:
             kwargs["start_date"] = start_date
         if synthetics_browser_check_calls_count_agg_sum is not unset:
