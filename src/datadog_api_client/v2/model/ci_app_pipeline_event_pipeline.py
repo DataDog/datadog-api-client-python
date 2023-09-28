@@ -95,7 +95,6 @@ class CIAppPipelineEventPipeline(ModelNormal):
     def __init__(
         self_,
         end: datetime,
-        git: Union[CIAppGitInfo, none_type],
         level: CIAppPipelineEventPipelineLevel,
         name: str,
         partial_retry: bool,
@@ -104,6 +103,7 @@ class CIAppPipelineEventPipeline(ModelNormal):
         unique_id: str,
         url: str,
         error: Union[CIAppCIError, none_type, UnsetType] = unset,
+        git: Union[CIAppGitInfo, none_type, UnsetType] = unset,
         is_manual: Union[bool, none_type, UnsetType] = unset,
         is_resumed: Union[bool, none_type, UnsetType] = unset,
         metrics: Union[List[str], none_type, UnsetType] = unset,
@@ -127,7 +127,7 @@ class CIAppPipelineEventPipeline(ModelNormal):
 
         :param git: If pipelines are triggered due to actions to a Git repository, then all payloads must contain this.
             Note that either ``tag`` or ``branch`` has to be provided, but not both.
-        :type git: CIAppGitInfo, none_type
+        :type git: CIAppGitInfo, none_type, optional
 
         :param is_manual: Whether or not the pipeline was triggered manually by the user.
         :type is_manual: bool, none_type, optional
@@ -185,6 +185,8 @@ class CIAppPipelineEventPipeline(ModelNormal):
         """
         if error is not unset:
             kwargs["error"] = error
+        if git is not unset:
+            kwargs["git"] = git
         if is_manual is not unset:
             kwargs["is_manual"] = is_manual
         if is_resumed is not unset:
@@ -208,7 +210,6 @@ class CIAppPipelineEventPipeline(ModelNormal):
         super().__init__(kwargs)
 
         self_.end = end
-        self_.git = git
         self_.level = level
         self_.name = name
         self_.partial_retry = partial_retry

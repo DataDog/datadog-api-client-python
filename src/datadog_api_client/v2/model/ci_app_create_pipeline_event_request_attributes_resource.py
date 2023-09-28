@@ -23,7 +23,7 @@ class CIAppCreatePipelineEventRequestAttributesResource(ModelComposed):
 
         :param git: If pipelines are triggered due to actions to a Git repository, then all payloads must contain this.
             Note that either `tag` or `branch` has to be provided, but not both.
-        :type git: CIAppGitInfo, none_type
+        :type git: CIAppGitInfo, none_type, optional
 
         :param is_manual: Whether or not the pipeline was triggered manually by the user.
         :type is_manual: bool, none_type, optional
