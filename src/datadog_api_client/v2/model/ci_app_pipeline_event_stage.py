@@ -81,7 +81,6 @@ class CIAppPipelineEventStage(ModelNormal):
     def __init__(
         self_,
         end: datetime,
-        git: Union[CIAppGitInfo, none_type],
         id: str,
         level: CIAppPipelineEventStageLevel,
         name: str,
@@ -91,6 +90,7 @@ class CIAppPipelineEventStage(ModelNormal):
         status: CIAppPipelineEventStageStatus,
         dependencies: Union[List[str], none_type, UnsetType] = unset,
         error: Union[CIAppCIError, none_type, UnsetType] = unset,
+        git: Union[CIAppGitInfo, none_type, UnsetType] = unset,
         metrics: Union[List[str], none_type, UnsetType] = unset,
         node: Union[CIAppHostInfo, none_type, UnsetType] = unset,
         parameters: Union[CIAppPipelineEventParameters, none_type, UnsetType] = unset,
@@ -112,7 +112,7 @@ class CIAppPipelineEventStage(ModelNormal):
 
         :param git: If pipelines are triggered due to actions to a Git repository, then all payloads must contain this.
             Note that either ``tag`` or ``branch`` has to be provided, but not both.
-        :type git: CIAppGitInfo, none_type
+        :type git: CIAppGitInfo, none_type, optional
 
         :param id: UUID for the stage. It has to be unique at least in the pipeline scope.
         :type id: str
@@ -154,6 +154,8 @@ class CIAppPipelineEventStage(ModelNormal):
             kwargs["dependencies"] = dependencies
         if error is not unset:
             kwargs["error"] = error
+        if git is not unset:
+            kwargs["git"] = git
         if metrics is not unset:
             kwargs["metrics"] = metrics
         if node is not unset:
@@ -167,7 +169,6 @@ class CIAppPipelineEventStage(ModelNormal):
         super().__init__(kwargs)
 
         self_.end = end
-        self_.git = git
         self_.id = id
         self_.level = level
         self_.name = name
