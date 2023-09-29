@@ -47,6 +47,21 @@ Feature: APM Retention Filters
     Then the response status is 200 OK
 
   @team:DataDog/apm-trace-intake
+  Scenario: Get a given APM retention filter returns "Not Found" response
+    Given new "GetApmRetentionFilter" request
+    And request contains "filter_id" parameter with value "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/apm-trace-intake
+  Scenario: Get a given APM retention filter returns "OK" response
+    Given there is a valid "retention_filter" in the system
+    And new "GetApmRetentionFilter" request
+    And request contains "filter_id" parameter from "retention_filter.data.id"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @team:DataDog/apm-trace-intake
   Scenario: List all APM retention filters returns "OK" response
     Given there is a valid "retention_filter" in the system
     And new "ListApmRetentionFilters" request
