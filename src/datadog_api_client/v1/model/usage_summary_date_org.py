@@ -87,6 +87,7 @@ class UsageSummaryDateOrg(ModelNormal):
             "mobile_rum_session_count_sum": (int,),
             "mobile_rum_units_sum": (int,),
             "name": (str,),
+            "ndm_netflow_events_sum": (int,),
             "netflow_indexed_events_count_sum": (int,),
             "npm_host_top99p": (int,),
             "observability_pipelines_bytes_processed_sum": (int,),
@@ -192,6 +193,7 @@ class UsageSummaryDateOrg(ModelNormal):
         "mobile_rum_session_count_sum": "mobile_rum_session_count_sum",
         "mobile_rum_units_sum": "mobile_rum_units_sum",
         "name": "name",
+        "ndm_netflow_events_sum": "ndm_netflow_events_sum",
         "netflow_indexed_events_count_sum": "netflow_indexed_events_count_sum",
         "npm_host_top99p": "npm_host_top99p",
         "observability_pipelines_bytes_processed_sum": "observability_pipelines_bytes_processed_sum",
@@ -298,6 +300,7 @@ class UsageSummaryDateOrg(ModelNormal):
         mobile_rum_session_count_sum: Union[int, UnsetType] = unset,
         mobile_rum_units_sum: Union[int, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
+        ndm_netflow_events_sum: Union[int, UnsetType] = unset,
         netflow_indexed_events_count_sum: Union[int, UnsetType] = unset,
         npm_host_top99p: Union[int, UnsetType] = unset,
         observability_pipelines_bytes_processed_sum: Union[int, UnsetType] = unset,
@@ -545,6 +548,9 @@ class UsageSummaryDateOrg(ModelNormal):
         :param name: The organization name.
         :type name: str, optional
 
+        :param ndm_netflow_events_sum: Shows the sum of all Network Device Monitoring NetFlow events over all hours in the current date for the given org.
+        :type ndm_netflow_events_sum: int, optional
+
         :param netflow_indexed_events_count_sum: Shows the sum of all Network flows indexed over all hours in the current date for the given org.
         :type netflow_indexed_events_count_sum: int, optional
 
@@ -783,6 +789,8 @@ class UsageSummaryDateOrg(ModelNormal):
             kwargs["mobile_rum_units_sum"] = mobile_rum_units_sum
         if name is not unset:
             kwargs["name"] = name
+        if ndm_netflow_events_sum is not unset:
+            kwargs["ndm_netflow_events_sum"] = ndm_netflow_events_sum
         if netflow_indexed_events_count_sum is not unset:
             kwargs["netflow_indexed_events_count_sum"] = netflow_indexed_events_count_sum
         if npm_host_top99p is not unset:

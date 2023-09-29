@@ -73,6 +73,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
             "invocations_usage": (float,),
             "mobile_app_testing_percentage": (float,),
             "mobile_app_testing_usage": (float,),
+            "ndm_netflow_percentage": (float,),
+            "ndm_netflow_usage": (float,),
             "npm_host_percentage": (float,),
             "npm_host_usage": (float,),
             "obs_pipeline_bytes_percentage": (float,),
@@ -152,6 +154,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         "invocations_usage": "invocations_usage",
         "mobile_app_testing_percentage": "mobile_app_testing_percentage",
         "mobile_app_testing_usage": "mobile_app_testing_usage",
+        "ndm_netflow_percentage": "ndm_netflow_percentage",
+        "ndm_netflow_usage": "ndm_netflow_usage",
         "npm_host_percentage": "npm_host_percentage",
         "npm_host_usage": "npm_host_usage",
         "obs_pipeline_bytes_percentage": "obs_pipeline_bytes_percentage",
@@ -232,6 +236,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         invocations_usage: Union[float, UnsetType] = unset,
         mobile_app_testing_percentage: Union[float, UnsetType] = unset,
         mobile_app_testing_usage: Union[float, UnsetType] = unset,
+        ndm_netflow_percentage: Union[float, UnsetType] = unset,
+        ndm_netflow_usage: Union[float, UnsetType] = unset,
         npm_host_percentage: Union[float, UnsetType] = unset,
         npm_host_usage: Union[float, UnsetType] = unset,
         obs_pipeline_bytes_percentage: Union[float, UnsetType] = unset,
@@ -425,6 +431,12 @@ class MonthlyUsageAttributionValues(ModelNormal):
         :param mobile_app_testing_usage: The Synthetic mobile application test usage by tag(s).
         :type mobile_app_testing_usage: float, optional
 
+        :param ndm_netflow_percentage: The percentage of Network Device Monitoring NetFlow usage by tag(s).
+        :type ndm_netflow_percentage: float, optional
+
+        :param ndm_netflow_usage: The Network Device Monitoring NetFlow usage by tag(s).
+        :type ndm_netflow_usage: float, optional
+
         :param npm_host_percentage: The percentage of network host usage by tag(s).
         :type npm_host_percentage: float, optional
 
@@ -597,6 +609,10 @@ class MonthlyUsageAttributionValues(ModelNormal):
             kwargs["mobile_app_testing_percentage"] = mobile_app_testing_percentage
         if mobile_app_testing_usage is not unset:
             kwargs["mobile_app_testing_usage"] = mobile_app_testing_usage
+        if ndm_netflow_percentage is not unset:
+            kwargs["ndm_netflow_percentage"] = ndm_netflow_percentage
+        if ndm_netflow_usage is not unset:
+            kwargs["ndm_netflow_usage"] = ndm_netflow_usage
         if npm_host_percentage is not unset:
             kwargs["npm_host_percentage"] = npm_host_percentage
         if npm_host_usage is not unset:
