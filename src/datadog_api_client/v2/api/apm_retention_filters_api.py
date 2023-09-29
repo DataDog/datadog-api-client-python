@@ -70,7 +70,7 @@ class APMRetentionFiltersApi:
         self._get_apm_retention_filter_endpoint = _Endpoint(
             settings={
                 "response_type": (RetentionFilterResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/apm/config/retention-filters/{filter_id}",
                 "operation_id": "get_apm_retention_filter",
                 "http_method": "GET",
