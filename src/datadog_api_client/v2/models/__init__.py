@@ -362,6 +362,7 @@ from datadog_api_client.v2.model.gcpsts_service_account_update_request_data impo
 from datadog_api_client.v2.model.gcpsts_service_accounts_response import GCPSTSServiceAccountsResponse
 from datadog_api_client.v2.model.gcp_service_account_meta import GCPServiceAccountMeta
 from datadog_api_client.v2.model.gcp_service_account_type import GCPServiceAccountType
+from datadog_api_client.v2.model.get_all_powerpacks_response import GetAllPowerpacksResponse
 from datadog_api_client.v2.model.get_finding_response import GetFindingResponse
 from datadog_api_client.v2.model.get_team_memberships_sort import GetTeamMembershipsSort
 from datadog_api_client.v2.model.group_scalar_column import GroupScalarColumn
@@ -766,6 +767,15 @@ from datadog_api_client.v2.model.permission import Permission
 from datadog_api_client.v2.model.permission_attributes import PermissionAttributes
 from datadog_api_client.v2.model.permissions_response import PermissionsResponse
 from datadog_api_client.v2.model.permissions_type import PermissionsType
+from datadog_api_client.v2.model.powerpack import Powerpack
+from datadog_api_client.v2.model.powerpack_attributes import PowerpackAttributes
+from datadog_api_client.v2.model.powerpack_data import PowerpackData
+from datadog_api_client.v2.model.powerpack_relationships import PowerpackRelationships
+from datadog_api_client.v2.model.powerpack_response import PowerpackResponse
+from datadog_api_client.v2.model.powerpack_response_links import PowerpackResponseLinks
+from datadog_api_client.v2.model.powerpack_template_variable import PowerpackTemplateVariable
+from datadog_api_client.v2.model.powerpacks_response_meta import PowerpacksResponseMeta
+from datadog_api_client.v2.model.powerpacks_response_meta_pagination import PowerpacksResponseMetaPagination
 from datadog_api_client.v2.model.process_summaries_meta import ProcessSummariesMeta
 from datadog_api_client.v2.model.process_summaries_meta_page import ProcessSummariesMetaPage
 from datadog_api_client.v2.model.process_summaries_response import ProcessSummariesResponse
@@ -1677,6 +1687,7 @@ __all__ = [
     "GCPSTSServiceAccountsResponse",
     "GCPServiceAccountMeta",
     "GCPServiceAccountType",
+    "GetAllPowerpacksResponse",
     "GetFindingResponse",
     "GetTeamMembershipsSort",
     "GroupScalarColumn",
@@ -2027,6 +2038,15 @@ __all__ = [
     "PermissionAttributes",
     "PermissionsResponse",
     "PermissionsType",
+    "Powerpack",
+    "PowerpackAttributes",
+    "PowerpackData",
+    "PowerpackRelationships",
+    "PowerpackResponse",
+    "PowerpackResponseLinks",
+    "PowerpackTemplateVariable",
+    "PowerpacksResponseMeta",
+    "PowerpacksResponseMetaPagination",
     "ProcessSummariesMeta",
     "ProcessSummariesMetaPage",
     "ProcessSummariesResponse",

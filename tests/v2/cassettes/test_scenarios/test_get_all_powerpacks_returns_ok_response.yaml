@@ -1,0 +1,98 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"description":"Sample powerpack","group_widget":{"definition":{"layout_type":"ordered","show_title":true,"title":"Sample
+      Powerpack","type":"group","widgets":[{"definition":{"content":"test","type":"note"}}]},"layout":{"height":3,"width":12,"x":0,"y":0}},"name":"Sample
+      Powerpack","tags":["tag:sample"],"template_variables":[{"defaults":["*"],"name":"sample"}]},"type":"powerpack"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/powerpacks
+  response:
+    body:
+      string: '{"data":{"type":"powerpack","id":"ea79a97a-572b-11ee-95d1-da7ad0900002","attributes":{"name":"Sample
+        Powerpack","description":"Sample powerpack","group_widget":{"definition":{"layout_type":"ordered","show_title":true,"title":"Sample
+        Powerpack","type":"group","widgets":[{"definition":{"content":"test","type":"note"},"id":4425546308848838}]},"layout":{"height":3,"width":12,"x":0,"y":0}},"template_variables":[{"defaults":["*"],"name":"sample"}],"tags":["tag:sample"]},"relationships":{"author":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}}},"included":[{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0","attributes":{"name":null,"email":"frog@datadoghq.com"}}]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/powerpacks
+  response:
+    body:
+      string: '{"data":[{"type":"powerpack","id":"ea79a97a-572b-11ee-95d1-da7ad0900002","attributes":{"name":"Sample
+        Powerpack","description":"Sample powerpack","group_widget":{"definition":{"layout_type":"ordered","show_title":true,"title":"Sample
+        Powerpack","type":"group","widgets":[{"definition":{"content":"test","type":"note"},"id":4425546308848838}]},"layout":{"height":3,"width":12,"x":0,"y":0}},"template_variables":[{"defaults":["*"],"name":"sample"}],"tags":["tag:sample"]},"relationships":{"author":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}}},{"type":"powerpack","id":"df854830-5721-11ee-a5cb-da7ad0900002","attributes":{"name":"Sample
+        Powerpack","description":"Sample powerpack","group_widget":{"definition":{"layout_type":"ordered","show_title":true,"title":"Sample
+        Powerpack","type":"group","widgets":[{"definition":{"content":"test","type":"note"},"id":7074599446492254}]},"layout":{"height":3,"width":12,"x":0,"y":0}},"template_variables":[{"defaults":["*"],"name":"sample"}],"tags":["tag:sample"]},"relationships":{"author":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}}},{"type":"powerpack","id":"c682402c-5721-11ee-9e3a-da7ad0900002","attributes":{"name":"Sample
+        Powerpack","description":"Sample powerpack","group_widget":{"definition":{"layout_type":"ordered","show_title":true,"title":"Sample
+        Powerpack","type":"group","widgets":[{"definition":{"content":"test","type":"note"},"id":6284179343997328}]},"layout":{"height":3,"width":12,"x":0,"y":0}},"template_variables":[{"defaults":["*"],"name":"sample"}],"tags":["tag:sample"]},"relationships":{"author":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}}},{"type":"powerpack","id":"9845ef02-5270-11ee-b156-da7ad0900002","attributes":{"name":"Sample
+        Powerpack","description":"Please don''t delete - used in public api spec tests.","group_widget":{"layout":{"x":0,"y":0,"width":12,"height":3},"definition":{"title":"Sample
+        Powerpack","type":"group","layout_type":"ordered","widgets":[{"layout":{"x":0,"y":0,"width":2,"height":2},"definition":{"type":"note","content":"Test","background_color":"white","font_size":"56","text_align":"center","vertical_align":"top","show_tick":false,"tick_pos":"50%","tick_edge":"left","has_padding":true},"id":5480978922393146},{"layout":{"x":2,"y":0,"width":4,"height":2},"definition":{"type":"note","content":"Powerpacks","background_color":"white","font_size":"56","text_align":"center","vertical_align":"top","show_tick":false,"tick_pos":"50%","tick_edge":"left","has_padding":true},"id":8930506491864045}]}},"template_variables":[],"tags":["tag:display"]},"relationships":{"author":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}}},{"type":"powerpack","id":"88575170-5721-11ee-ad58-da7ad0900002","attributes":{"name":"Sample
+        Powerpack","description":"Sample powerpack","group_widget":{"definition":{"layout_type":"ordered","show_title":true,"title":"Sample
+        Powerpack","type":"group","widgets":[{"definition":{"content":"test","type":"note"},"id":808919002773200}]},"layout":{"height":3,"width":12,"x":0,"y":0}},"template_variables":[{"defaults":["*"],"name":"sample"}],"tags":["tag:sample"]},"relationships":{"author":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}}},{"type":"powerpack","id":"87dcc80c-5720-11ee-a801-da7ad0900002","attributes":{"name":"Sample
+        Powerpack","description":"Sample powerpack","group_widget":{"definition":{"layout_type":"ordered","show_title":true,"title":"Sample
+        Powerpack","type":"group","widgets":[{"definition":{"content":"test","type":"note"},"id":8191251878590002}]},"layout":{"height":3,"width":12,"x":0,"y":0}},"template_variables":[{"defaults":["*"],"name":"sample"}],"tags":["tag:sample"]},"relationships":{"author":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}}},{"type":"powerpack","id":"80d9e6ee-571f-11ee-8b1f-da7ad0900002","attributes":{"name":"Sample
+        Powerpack","description":"Sample powerpack","group_widget":{"definition":{"layout_type":"ordered","show_title":true,"title":"Sample
+        Powerpack","type":"group","widgets":[{"definition":{"content":"test","type":"note"},"id":8862041995898907}]},"layout":{"height":3,"width":12,"x":0,"y":0}},"template_variables":[{"defaults":["*"],"name":"sample"}],"tags":["tag:sample"]},"relationships":{"author":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}}},{"type":"powerpack","id":"762dbf4a-571f-11ee-8317-da7ad0900002","attributes":{"name":"Sample
+        Powerpack","description":"Sample powerpack","group_widget":{"definition":{"layout_type":"ordered","show_title":true,"title":"Sample
+        Powerpack","type":"group","widgets":[{"definition":{"content":"test","type":"note"},"id":687973434806520}]},"layout":{"height":3,"width":12,"x":0,"y":0}},"template_variables":[{"defaults":["*"],"name":"sample"}],"tags":["tag:sample"]},"relationships":{"author":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}}},{"type":"powerpack","id":"760fce72-571f-11ee-9833-da7ad0900002","attributes":{"name":"Sample
+        Powerpack","description":"Sample powerpack","group_widget":{"definition":{"layout_type":"ordered","show_title":true,"title":"Sample
+        Powerpack","type":"group","widgets":[{"definition":{"content":"test","type":"note"},"id":4098068431422804}]},"layout":{"height":3,"width":12,"x":0,"y":0}},"template_variables":[{"defaults":["*"],"name":"sample"}],"tags":["tag:sample"]},"relationships":{"author":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}}},{"type":"powerpack","id":"75f58440-571f-11ee-b1ee-da7ad0900002","attributes":{"name":"Sample
+        Powerpack","description":"Sample powerpack","group_widget":{"definition":{"layout_type":"ordered","show_title":true,"title":"Sample
+        Powerpack","type":"group","widgets":[{"definition":{"content":"test","type":"note"},"id":1606539530126708}]},"layout":{"height":3,"width":12,"x":0,"y":0}},"template_variables":[{"defaults":["*"],"name":"sample"}],"tags":["tag:sample"]},"relationships":{"author":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}}},{"type":"powerpack","id":"75024140-571f-11ee-b658-da7ad0900002","attributes":{"name":"Sample
+        Powerpack","description":"Sample powerpack","group_widget":{"definition":{"layout_type":"ordered","show_title":true,"title":"Sample
+        Powerpack","type":"group","widgets":[{"definition":{"content":"test","type":"note"},"id":8753429084871035}]},"layout":{"height":3,"width":12,"x":0,"y":0}},"template_variables":[{"defaults":["*"],"name":"sample"}],"tags":["tag:sample"]},"relationships":{"author":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}}},{"type":"powerpack","id":"74cbe5be-571f-11ee-b7f3-da7ad0900002","attributes":{"name":"Sample
+        Powerpack","description":"Sample powerpack","group_widget":{"definition":{"layout_type":"ordered","show_title":true,"title":"Sample
+        Powerpack","type":"group","widgets":[{"definition":{"content":"test","type":"note"},"id":6566925545234730}]},"layout":{"height":3,"width":12,"x":0,"y":0}},"template_variables":[{"defaults":["*"],"name":"sample"}],"tags":["tag:sample"]},"relationships":{"author":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}}},{"type":"powerpack","id":"74929fb6-571f-11ee-8b1e-da7ad0900002","attributes":{"name":"Sample
+        Powerpack","description":"Sample powerpack","group_widget":{"definition":{"layout_type":"ordered","show_title":true,"title":"Sample
+        Powerpack","type":"group","widgets":[{"definition":{"content":"test","type":"note"},"id":432765966992707}]},"layout":{"height":3,"width":12,"x":0,"y":0}},"template_variables":[{"defaults":["*"],"name":"sample"}],"tags":["tag:sample"]},"relationships":{"author":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}}},{"type":"powerpack","id":"7100a1b8-571f-11ee-8970-da7ad0900002","attributes":{"name":"Sample
+        Powerpack","description":"Sample powerpack","group_widget":{"definition":{"layout_type":"ordered","show_title":true,"title":"Sample
+        Powerpack","type":"group","widgets":[{"definition":{"content":"test","type":"note"},"id":2190124205654107}]},"layout":{"height":3,"width":12,"x":0,"y":0}},"template_variables":[{"defaults":["*"],"name":"sample"}],"tags":["tag:sample"]},"relationships":{"author":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}}},{"type":"powerpack","id":"70db12f4-571f-11ee-964e-da7ad0900002","attributes":{"name":"Sample
+        Powerpack","description":"Sample powerpack","group_widget":{"definition":{"layout_type":"ordered","show_title":true,"title":"Sample
+        Powerpack","type":"group","widgets":[{"definition":{"content":"test","type":"note"},"id":7599696962501486}]},"layout":{"height":3,"width":12,"x":0,"y":0}},"template_variables":[{"defaults":["*"],"name":"sample"}],"tags":["tag:sample"]},"relationships":{"author":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}}},{"type":"powerpack","id":"70b76822-571f-11ee-ad4d-da7ad0900002","attributes":{"name":"Sample
+        Powerpack","description":"Sample powerpack","group_widget":{"definition":{"layout_type":"ordered","show_title":true,"title":"Sample
+        Powerpack","type":"group","widgets":[{"definition":{"content":"test","type":"note"},"id":2781058132030543}]},"layout":{"height":3,"width":12,"x":0,"y":0}},"template_variables":[{"defaults":["*"],"name":"sample"}],"tags":["tag:sample"]},"relationships":{"author":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}}},{"type":"powerpack","id":"7057cd54-571f-11ee-8cb3-da7ad0900002","attributes":{"name":"Sample
+        Powerpack","description":"Sample powerpack","group_widget":{"definition":{"layout_type":"ordered","show_title":true,"title":"Sample
+        Powerpack","type":"group","widgets":[{"definition":{"content":"test","type":"note"},"id":6920126044100885}]},"layout":{"height":3,"width":12,"x":0,"y":0}},"template_variables":[{"defaults":["*"],"name":"sample"}],"tags":["tag:sample"]},"relationships":{"author":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}}},{"type":"powerpack","id":"700537b0-571f-11ee-a310-da7ad0900002","attributes":{"name":"Sample
+        Powerpack","description":"Sample powerpack","group_widget":{"definition":{"layout_type":"ordered","show_title":true,"title":"Sample
+        Powerpack","type":"group","widgets":[{"definition":{"content":"test","type":"note"},"id":7133100708358096}]},"layout":{"height":3,"width":12,"x":0,"y":0}},"template_variables":[{"defaults":["*"],"name":"sample"}],"tags":["tag:sample"]},"relationships":{"author":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}}},{"type":"powerpack","id":"6f8db988-571f-11ee-8974-da7ad0900002","attributes":{"name":"Sample
+        Powerpack","description":"Sample powerpack","group_widget":{"definition":{"layout_type":"ordered","show_title":true,"title":"Sample
+        Powerpack","type":"group","widgets":[{"definition":{"content":"test","type":"note"},"id":1212099985738531}]},"layout":{"height":3,"width":12,"x":0,"y":0}},"template_variables":[{"defaults":["*"],"name":"sample"}],"tags":["tag:sample"]},"relationships":{"author":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}}}],"included":[{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0","attributes":{"name":null,"email":"frog@datadoghq.com"}}],"meta":{"pagination":{"offset":0,"first_offset":0,"prev_offset":0,"next_offset":25,"last_offset":null,"limit":25,"type":"offset_limit"}},"links":{"self":"https://api.datadoghq.com/api/v2/powerpacks","last":null,"next":"https://api.datadoghq.com/api/v2/powerpacks?page[offset]=25&page[limit]=25","prev":null,"first":"https://api.datadoghq.com/api/v2/powerpacks?page[offset]=0&page[limit]=25"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/powerpacks/ea79a97a-572b-11ee-95d1-da7ad0900002
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - text/html; charset=utf-8
+    status:
+      code: 204
+      message: No Content
+version: 1
