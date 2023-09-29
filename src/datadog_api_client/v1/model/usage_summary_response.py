@@ -100,6 +100,7 @@ class UsageSummaryResponse(ModelNormal):
             "mobile_rum_session_count_reactnative_agg_sum": (int,),
             "mobile_rum_session_count_roku_agg_sum": (int,),
             "mobile_rum_units_agg_sum": (int,),
+            "ndm_netflow_events_agg_sum": (int,),
             "netflow_indexed_events_count_agg_sum": (int,),
             "npm_host_top99p_sum": (int,),
             "observability_pipelines_bytes_processed_agg_sum": (int,),
@@ -212,6 +213,7 @@ class UsageSummaryResponse(ModelNormal):
         "mobile_rum_session_count_reactnative_agg_sum": "mobile_rum_session_count_reactnative_agg_sum",
         "mobile_rum_session_count_roku_agg_sum": "mobile_rum_session_count_roku_agg_sum",
         "mobile_rum_units_agg_sum": "mobile_rum_units_agg_sum",
+        "ndm_netflow_events_agg_sum": "ndm_netflow_events_agg_sum",
         "netflow_indexed_events_count_agg_sum": "netflow_indexed_events_count_agg_sum",
         "npm_host_top99p_sum": "npm_host_top99p_sum",
         "observability_pipelines_bytes_processed_agg_sum": "observability_pipelines_bytes_processed_agg_sum",
@@ -325,6 +327,7 @@ class UsageSummaryResponse(ModelNormal):
         mobile_rum_session_count_reactnative_agg_sum: Union[int, UnsetType] = unset,
         mobile_rum_session_count_roku_agg_sum: Union[int, UnsetType] = unset,
         mobile_rum_units_agg_sum: Union[int, UnsetType] = unset,
+        ndm_netflow_events_agg_sum: Union[int, UnsetType] = unset,
         netflow_indexed_events_count_agg_sum: Union[int, UnsetType] = unset,
         npm_host_top99p_sum: Union[int, UnsetType] = unset,
         observability_pipelines_bytes_processed_agg_sum: Union[int, UnsetType] = unset,
@@ -587,6 +590,9 @@ class UsageSummaryResponse(ModelNormal):
         :param mobile_rum_units_agg_sum: Shows the sum of all mobile RUM units over all hours in the current months for all organizations.
         :type mobile_rum_units_agg_sum: int, optional
 
+        :param ndm_netflow_events_agg_sum: Shows the sum of all Network Device Monitoring NetFlow events over all hours in the current months for all organizations.
+        :type ndm_netflow_events_agg_sum: int, optional
+
         :param netflow_indexed_events_count_agg_sum: Shows the sum of all Network flows indexed over all hours in the current months for all organizations.
         :type netflow_indexed_events_count_agg_sum: int, optional
 
@@ -846,6 +852,8 @@ class UsageSummaryResponse(ModelNormal):
             kwargs["mobile_rum_session_count_roku_agg_sum"] = mobile_rum_session_count_roku_agg_sum
         if mobile_rum_units_agg_sum is not unset:
             kwargs["mobile_rum_units_agg_sum"] = mobile_rum_units_agg_sum
+        if ndm_netflow_events_agg_sum is not unset:
+            kwargs["ndm_netflow_events_agg_sum"] = ndm_netflow_events_agg_sum
         if netflow_indexed_events_count_agg_sum is not unset:
             kwargs["netflow_indexed_events_count_agg_sum"] = netflow_indexed_events_count_agg_sum
         if npm_host_top99p_sum is not unset:

@@ -93,6 +93,7 @@ class UsageSummaryDate(ModelNormal):
             "mobile_rum_session_count_roku_sum": (int,),
             "mobile_rum_session_count_sum": (int,),
             "mobile_rum_units_sum": (int,),
+            "ndm_netflow_events_sum": (int,),
             "netflow_indexed_events_count_sum": (int,),
             "npm_host_top99p": (int,),
             "observability_pipelines_bytes_processed_sum": (int,),
@@ -196,6 +197,7 @@ class UsageSummaryDate(ModelNormal):
         "mobile_rum_session_count_roku_sum": "mobile_rum_session_count_roku_sum",
         "mobile_rum_session_count_sum": "mobile_rum_session_count_sum",
         "mobile_rum_units_sum": "mobile_rum_units_sum",
+        "ndm_netflow_events_sum": "ndm_netflow_events_sum",
         "netflow_indexed_events_count_sum": "netflow_indexed_events_count_sum",
         "npm_host_top99p": "npm_host_top99p",
         "observability_pipelines_bytes_processed_sum": "observability_pipelines_bytes_processed_sum",
@@ -300,6 +302,7 @@ class UsageSummaryDate(ModelNormal):
         mobile_rum_session_count_roku_sum: Union[int, UnsetType] = unset,
         mobile_rum_session_count_sum: Union[int, UnsetType] = unset,
         mobile_rum_units_sum: Union[int, UnsetType] = unset,
+        ndm_netflow_events_sum: Union[int, UnsetType] = unset,
         netflow_indexed_events_count_sum: Union[int, UnsetType] = unset,
         npm_host_top99p: Union[int, UnsetType] = unset,
         observability_pipelines_bytes_processed_sum: Union[int, UnsetType] = unset,
@@ -543,6 +546,9 @@ class UsageSummaryDate(ModelNormal):
         :param mobile_rum_units_sum: Shows the sum of all mobile RUM units over all hours in the current date for all organizations.
         :type mobile_rum_units_sum: int, optional
 
+        :param ndm_netflow_events_sum: Shows the sum of all Network Device Monitoring NetFlow events over all hours in the current date for the given org.
+        :type ndm_netflow_events_sum: int, optional
+
         :param netflow_indexed_events_count_sum: Shows the sum of all Network flows indexed over all hours in the current date for all organizations.
         :type netflow_indexed_events_count_sum: int, optional
 
@@ -776,6 +782,8 @@ class UsageSummaryDate(ModelNormal):
             kwargs["mobile_rum_session_count_sum"] = mobile_rum_session_count_sum
         if mobile_rum_units_sum is not unset:
             kwargs["mobile_rum_units_sum"] = mobile_rum_units_sum
+        if ndm_netflow_events_sum is not unset:
+            kwargs["ndm_netflow_events_sum"] = ndm_netflow_events_sum
         if netflow_indexed_events_count_sum is not unset:
             kwargs["netflow_indexed_events_count_sum"] = netflow_indexed_events_count_sum
         if npm_host_top99p is not unset:
