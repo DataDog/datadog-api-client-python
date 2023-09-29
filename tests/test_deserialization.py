@@ -1,5 +1,4 @@
 import json
-from datadog_api_client.model_utils import UUID
 
 from datadog_api_client.configuration import Configuration
 from datadog_api_client.model_utils import validate_and_convert_types, model_to_dict
@@ -10,7 +9,6 @@ from datadog_api_client.v1.model.synthetics_assertion import SyntheticsAssertion
 from datadog_api_client.v2.model.logs_aggregate_response import LogsAggregateResponse
 from datadog_api_client.v2.model.logs_archive import LogsArchive
 from datadog_api_client.v2.model.logs_archive_destination import LogsArchiveDestination
-from datadog_api_client.v2.model.user_invitation_response import UserInvitationResponse
 from datadog_api_client.v2.model.user_response import UserResponse
 
 
@@ -319,34 +317,3 @@ def test_unknown_model_value():
     serialized = model_to_dict(deserialized_data)
     assert "allowed_login_methods" in serialized["data"]["attributes"]
     assert serialized["data"]["attributes"]["allowed_login_methods"] == []
-
-
-def test_uuid_handling():
-    body = """{
-        "data":{
-            "type":"user_invitations",
-            "id":"65ef03ae-d1d9-11ec-ad3d-da7ad0900002",
-            "attributes":{
-                "uuid":"65ef03ae-d1d9-11ec-ad3d-da7ad0900002",
-                "login_method":null,
-                "invite_type":"openid_invite",
-                "created_at":"2022-05-12T09:53:38.990217+00:00",
-                "expires_at":"2022-05-14T09:53:38.846030+00:00"
-            },
-            "relationships":{
-                "user":{
-                    "data":{
-                        "type":"users",
-                        "id":"657f03d8-d1d9-11ec-ad3d-da7ad0900002"
-                    }
-                }
-            }
-        }
-    }"""
-
-    config = Configuration()
-    deserialized_data = validate_and_convert_types(
-        json.loads(body), (UserInvitationResponse,), ["received_data"], True, True, config
-    )
-    assert isinstance(deserialized_data, UserInvitationResponse)
-    assert isinstance(deserialized_data.get("data").get("attributes").get("uuid"), UUID)

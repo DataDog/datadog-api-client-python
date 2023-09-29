@@ -11,7 +11,6 @@ from datadog_api_client.model_utils import (
     datetime,
     unset,
     UnsetType,
-    UUID,
 )
 
 
@@ -22,7 +21,7 @@ class UserInvitationDataAttributes(ModelNormal):
             "created_at": (datetime,),
             "expires_at": (datetime,),
             "invite_type": (str,),
-            "uuid": (UUID,),
+            "uuid": (str,),
         }
 
     attribute_map = {
@@ -37,7 +36,7 @@ class UserInvitationDataAttributes(ModelNormal):
         created_at: Union[datetime, UnsetType] = unset,
         expires_at: Union[datetime, UnsetType] = unset,
         invite_type: Union[str, UnsetType] = unset,
-        uuid: Union[UUID, UnsetType] = unset,
+        uuid: Union[str, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -53,7 +52,7 @@ class UserInvitationDataAttributes(ModelNormal):
         :type invite_type: str, optional
 
         :param uuid: UUID of the user invitation.
-        :type uuid: UUID, optional
+        :type uuid: str, optional
         """
         if created_at is not unset:
             kwargs["created_at"] = created_at
