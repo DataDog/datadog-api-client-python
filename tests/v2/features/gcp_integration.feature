@@ -34,14 +34,14 @@ Feature: GCP Integration
   @generated @skip @team:DataDog/gcp-integrations
   Scenario: Create a new entry for your service account returns "Bad Request" response
     Given new "CreateGCPSTSAccount" request
-    And body with value {"data": {"attributes": {"client_email": "datadog-service-account@test-project.iam.gserviceaccount.com", "host_filters": []}, "type": "gcp_service_account"}}
+    And body with value {"data": {"attributes": {"account_tags": [], "client_email": "datadog-service-account@test-project.iam.gserviceaccount.com", "host_filters": []}, "type": "gcp_service_account"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/gcp-integrations
   Scenario: Create a new entry for your service account returns "Conflict" response
     Given new "CreateGCPSTSAccount" request
-    And body with value {"data": {"attributes": {"client_email": "datadog-service-account@test-project.iam.gserviceaccount.com", "host_filters": []}, "type": "gcp_service_account"}}
+    And body with value {"data": {"attributes": {"account_tags": [], "client_email": "datadog-service-account@test-project.iam.gserviceaccount.com", "host_filters": []}, "type": "gcp_service_account"}}
     When the request is sent
     Then the response status is 409 Conflict
 
@@ -53,6 +53,16 @@ Feature: GCP Integration
     Then the response status is 201 OK
     And the response "data.type" is equal to "gcp_service_account"
     And the response "data.attributes.client_email" is equal to "{{ unique_hash }}@test-project.iam.gserviceaccount.com"
+
+  @team:DataDog/gcp-integrations
+  Scenario: Create a new entry for your service account with account_tags returns "OK" response
+    Given new "CreateGCPSTSAccount" request
+    And body with value {"data": {"attributes": {"account_tags": ["lorem", "ipsum"], "client_email": "{{ unique_hash }}@test-project.iam.gserviceaccount.com", "host_filters": []}, "type": "gcp_service_account"}}
+    When the request is sent
+    Then the response status is 201 OK
+    And the response "data.type" is equal to "gcp_service_account"
+    And the response "data.attributes.client_email" is equal to "{{ unique_hash }}@test-project.iam.gserviceaccount.com"
+    And the response "data.attributes.account_tags" is equal to ["lorem", "ipsum"]
 
   @generated @skip @team:DataDog/gcp-integrations
   Scenario: Delete an STS enabled GCP Account returns "Bad Request" response
@@ -93,7 +103,7 @@ Feature: GCP Integration
   Scenario: Update STS Service Account returns "Bad Request" response
     Given new "UpdateGCPSTSAccount" request
     And request contains "account_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"client_email": "datadog-service-account@test-project.iam.gserviceaccount.com", "host_filters": []}, "id": "d291291f-12c2-22g4-j290-123456678897", "type": "gcp_service_account"}}
+    And body with value {"data": {"attributes": {"account_tags": [], "client_email": "datadog-service-account@test-project.iam.gserviceaccount.com", "host_filters": []}, "id": "d291291f-12c2-22g4-j290-123456678897", "type": "gcp_service_account"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -101,7 +111,7 @@ Feature: GCP Integration
   Scenario: Update STS Service Account returns "Not Found" response
     Given new "UpdateGCPSTSAccount" request
     And request contains "account_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"client_email": "datadog-service-account@test-project.iam.gserviceaccount.com", "host_filters": []}, "id": "d291291f-12c2-22g4-j290-123456678897", "type": "gcp_service_account"}}
+    And body with value {"data": {"attributes": {"account_tags": [], "client_email": "datadog-service-account@test-project.iam.gserviceaccount.com", "host_filters": []}, "id": "d291291f-12c2-22g4-j290-123456678897", "type": "gcp_service_account"}}
     When the request is sent
     Then the response status is 404 Not Found
 
