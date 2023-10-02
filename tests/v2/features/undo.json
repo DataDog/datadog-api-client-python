@@ -1023,6 +1023,43 @@
       "type": "safe"
     }
   },
+  "GetAllPowerpacks": {
+    "tag": "Powerpack",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreatePowerpack": {
+    "tag": "Powerpack",
+    "undo": {
+      "operationId": "DeletePowerpack",
+      "parameters": [
+        {
+          "name": "powerpack_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeletePowerpack": {
+    "tag": "Powerpack",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetPowerpack": {
+    "tag": "Powerpack",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdatePowerpack": {
+    "tag": "Powerpack",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListProcesses": {
     "tag": "Processes",
     "undo": {

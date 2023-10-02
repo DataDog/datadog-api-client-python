@@ -176,6 +176,13 @@ organizations\_api
    :members:
    :show-inheritance:
 
+powerpack\_api
+--------------
+
+.. automodule:: datadog_api_client.v2.api.powerpack_api
+   :members:
+   :show-inheritance:
+
 processes\_api
 --------------
 

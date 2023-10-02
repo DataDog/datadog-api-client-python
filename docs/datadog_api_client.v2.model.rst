@@ -2157,6 +2157,13 @@ gcpsts\_service\_accounts\_response
    :members:
    :show-inheritance:
 
+get\_all\_powerpacks\_response
+------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_all_powerpacks_response
+   :members:
+   :show-inheritance:
+
 get\_finding\_response
 ----------------------
 
@@ -4604,6 +4611,69 @@ permissions\_type
 -----------------
 
 .. automodule:: datadog_api_client.v2.model.permissions_type
+   :members:
+   :show-inheritance:
+
+powerpack
+---------
+
+.. automodule:: datadog_api_client.v2.model.powerpack
+   :members:
+   :show-inheritance:
+
+powerpack\_attributes
+---------------------
+
+.. automodule:: datadog_api_client.v2.model.powerpack_attributes
+   :members:
+   :show-inheritance:
+
+powerpack\_data
+---------------
+
+.. automodule:: datadog_api_client.v2.model.powerpack_data
+   :members:
+   :show-inheritance:
+
+powerpack\_relationships
+------------------------
+
+.. automodule:: datadog_api_client.v2.model.powerpack_relationships
+   :members:
+   :show-inheritance:
+
+powerpack\_response
+-------------------
+
+.. automodule:: datadog_api_client.v2.model.powerpack_response
+   :members:
+   :show-inheritance:
+
+powerpack\_response\_links
+--------------------------
+
+.. automodule:: datadog_api_client.v2.model.powerpack_response_links
+   :members:
+   :show-inheritance:
+
+powerpack\_template\_variable
+-----------------------------
+
+.. automodule:: datadog_api_client.v2.model.powerpack_template_variable
+   :members:
+   :show-inheritance:
+
+powerpacks\_response\_meta
+--------------------------
+
+.. automodule:: datadog_api_client.v2.model.powerpacks_response_meta
+   :members:
+   :show-inheritance:
+
+powerpacks\_response\_meta\_pagination
+--------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.powerpacks_response_meta_pagination
    :members:
    :show-inheritance:
 
