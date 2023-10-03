@@ -56,10 +56,10 @@ jobs:
           repo: datadog-api-spec
           status: pending
           context: integration
-      - name: Set up Python 3.11
+      - name: Set up Python 3.12
         uses: actions/setup-python@v4
         with:
-          python-version: "3.11"
+          python-version: "3.12"
           cache: "pip"
       - name: Upgrade pip
         run: |
