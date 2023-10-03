@@ -1,3 +1,4 @@
+from datadog_api_client.v2.api.apm_retention_filters_api import APMRetentionFiltersApi
 from datadog_api_client.v2.api.audit_api import AuditApi
 from datadog_api_client.v2.api.authn_mappings_api import AuthNMappingsApi
 from datadog_api_client.v2.api.ci_visibility_pipelines_api import CIVisibilityPipelinesApi
@@ -22,6 +23,7 @@ from datadog_api_client.v2.api.metrics_api import MetricsApi
 from datadog_api_client.v2.api.monitors_api import MonitorsApi
 from datadog_api_client.v2.api.opsgenie_integration_api import OpsgenieIntegrationApi
 from datadog_api_client.v2.api.organizations_api import OrganizationsApi
+from datadog_api_client.v2.api.powerpack_api import PowerpackApi
 from datadog_api_client.v2.api.processes_api import ProcessesApi
 from datadog_api_client.v2.api.rum_api import RUMApi
 from datadog_api_client.v2.api.restriction_policies_api import RestrictionPoliciesApi
@@ -39,6 +41,7 @@ from datadog_api_client.v2.api.users_api import UsersApi
 
 
 __all__ = [
+    "APMRetentionFiltersApi",
     "AuditApi",
     "AuthNMappingsApi",
     "CIVisibilityPipelinesApi",
@@ -63,6 +66,7 @@ __all__ = [
     "MonitorsApi",
     "OpsgenieIntegrationApi",
     "OrganizationsApi",
+    "PowerpackApi",
     "ProcessesApi",
     "RUMApi",
     "RestrictionPoliciesApi",

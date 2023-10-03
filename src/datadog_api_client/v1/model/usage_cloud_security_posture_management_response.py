@@ -36,9 +36,9 @@ class UsageCloudSecurityPostureManagementResponse(ModelNormal):
 
     def __init__(self_, usage: Union[List[UsageCloudSecurityPostureManagementHour], UnsetType] = unset, **kwargs):
         """
-        The response containing the Cloud Security Posture Management usage for each hour for a given organization.
+        The response containing the Cloud Security Management Pro usage for each hour for a given organization.
 
-        :param usage: Get hourly usage for Cloud Security Posture Management.
+        :param usage: Get hourly usage for Cloud Security Management Pro.
         :type usage: [UsageCloudSecurityPostureManagementHour], optional
         """
         if usage is not unset:

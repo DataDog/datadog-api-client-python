@@ -73,6 +73,49 @@
       "type": "idempotent"
     }
   },
+  "ListApmRetentionFilters": {
+    "tag": "APM Retention Filters",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateApmRetentionFilter": {
+    "tag": "APM Retention Filters",
+    "undo": {
+      "operationId": "DeleteApmRetentionFilter",
+      "parameters": [
+        {
+          "name": "filter_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "ReorderApmRetentionFilters": {
+    "tag": "APM Retention Filters",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DeleteApmRetentionFilter": {
+    "tag": "APM Retention Filters",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetApmRetentionFilter": {
+    "tag": "APM Retention Filters",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateApmRetentionFilter": {
+    "tag": "APM Retention Filters",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListApplicationKeys": {
     "tag": "Key Management",
     "undo": {
@@ -978,6 +1021,43 @@
     "tag": "Security Monitoring",
     "undo": {
       "type": "safe"
+    }
+  },
+  "GetAllPowerpacks": {
+    "tag": "Powerpack",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreatePowerpack": {
+    "tag": "Powerpack",
+    "undo": {
+      "operationId": "DeletePowerpack",
+      "parameters": [
+        {
+          "name": "powerpack_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeletePowerpack": {
+    "tag": "Powerpack",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetPowerpack": {
+    "tag": "Powerpack",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdatePowerpack": {
+    "tag": "Powerpack",
+    "undo": {
+      "type": "idempotent"
     }
   },
   "ListProcesses": {

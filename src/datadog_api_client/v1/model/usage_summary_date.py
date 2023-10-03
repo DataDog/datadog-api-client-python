@@ -51,6 +51,16 @@ class UsageSummaryDate(ModelNormal):
             "container_avg": (int,),
             "container_excl_agent_avg": (int,),
             "container_hwm": (int,),
+            "csm_container_enterprise_compliance_count_sum": (int,),
+            "csm_container_enterprise_cws_count_sum": (int,),
+            "csm_container_enterprise_total_count_sum": (int,),
+            "csm_host_enterprise_aas_host_count_top99p": (int,),
+            "csm_host_enterprise_aws_host_count_top99p": (int,),
+            "csm_host_enterprise_azure_host_count_top99p": (int,),
+            "csm_host_enterprise_compliance_host_count_top99p": (int,),
+            "csm_host_enterprise_cws_host_count_top99p": (int,),
+            "csm_host_enterprise_gcp_host_count_top99p": (int,),
+            "csm_host_enterprise_total_host_count_top99p": (int,),
             "cspm_aas_host_top99p": (int,),
             "cspm_aws_host_top99p": (int,),
             "cspm_azure_host_top99p": (int,),
@@ -83,6 +93,7 @@ class UsageSummaryDate(ModelNormal):
             "mobile_rum_session_count_roku_sum": (int,),
             "mobile_rum_session_count_sum": (int,),
             "mobile_rum_units_sum": (int,),
+            "ndm_netflow_events_sum": (int,),
             "netflow_indexed_events_count_sum": (int,),
             "npm_host_top99p": (int,),
             "observability_pipelines_bytes_processed_sum": (int,),
@@ -101,6 +112,9 @@ class UsageSummaryDate(ModelNormal):
             "sds_logs_scanned_bytes_sum": (int,),
             "sds_rum_scanned_bytes_sum": (int,),
             "sds_total_scanned_bytes_sum": (int,),
+            "serverless_apps_azure_count_avg": (int,),
+            "serverless_apps_google_count_avg": (int,),
+            "serverless_apps_total_count_avg": (int,),
             "synthetics_browser_check_calls_count_sum": (int,),
             "synthetics_check_calls_count_sum": (int,),
             "synthetics_mobile_test_runs_sum": (int,),
@@ -141,6 +155,16 @@ class UsageSummaryDate(ModelNormal):
         "container_avg": "container_avg",
         "container_excl_agent_avg": "container_excl_agent_avg",
         "container_hwm": "container_hwm",
+        "csm_container_enterprise_compliance_count_sum": "csm_container_enterprise_compliance_count_sum",
+        "csm_container_enterprise_cws_count_sum": "csm_container_enterprise_cws_count_sum",
+        "csm_container_enterprise_total_count_sum": "csm_container_enterprise_total_count_sum",
+        "csm_host_enterprise_aas_host_count_top99p": "csm_host_enterprise_aas_host_count_top99p",
+        "csm_host_enterprise_aws_host_count_top99p": "csm_host_enterprise_aws_host_count_top99p",
+        "csm_host_enterprise_azure_host_count_top99p": "csm_host_enterprise_azure_host_count_top99p",
+        "csm_host_enterprise_compliance_host_count_top99p": "csm_host_enterprise_compliance_host_count_top99p",
+        "csm_host_enterprise_cws_host_count_top99p": "csm_host_enterprise_cws_host_count_top99p",
+        "csm_host_enterprise_gcp_host_count_top99p": "csm_host_enterprise_gcp_host_count_top99p",
+        "csm_host_enterprise_total_host_count_top99p": "csm_host_enterprise_total_host_count_top99p",
         "cspm_aas_host_top99p": "cspm_aas_host_top99p",
         "cspm_aws_host_top99p": "cspm_aws_host_top99p",
         "cspm_azure_host_top99p": "cspm_azure_host_top99p",
@@ -173,6 +197,7 @@ class UsageSummaryDate(ModelNormal):
         "mobile_rum_session_count_roku_sum": "mobile_rum_session_count_roku_sum",
         "mobile_rum_session_count_sum": "mobile_rum_session_count_sum",
         "mobile_rum_units_sum": "mobile_rum_units_sum",
+        "ndm_netflow_events_sum": "ndm_netflow_events_sum",
         "netflow_indexed_events_count_sum": "netflow_indexed_events_count_sum",
         "npm_host_top99p": "npm_host_top99p",
         "observability_pipelines_bytes_processed_sum": "observability_pipelines_bytes_processed_sum",
@@ -191,6 +216,9 @@ class UsageSummaryDate(ModelNormal):
         "sds_logs_scanned_bytes_sum": "sds_logs_scanned_bytes_sum",
         "sds_rum_scanned_bytes_sum": "sds_rum_scanned_bytes_sum",
         "sds_total_scanned_bytes_sum": "sds_total_scanned_bytes_sum",
+        "serverless_apps_azure_count_avg": "serverless_apps_azure_count_avg",
+        "serverless_apps_google_count_avg": "serverless_apps_google_count_avg",
+        "serverless_apps_total_count_avg": "serverless_apps_total_count_avg",
         "synthetics_browser_check_calls_count_sum": "synthetics_browser_check_calls_count_sum",
         "synthetics_check_calls_count_sum": "synthetics_check_calls_count_sum",
         "synthetics_mobile_test_runs_sum": "synthetics_mobile_test_runs_sum",
@@ -232,6 +260,16 @@ class UsageSummaryDate(ModelNormal):
         container_avg: Union[int, UnsetType] = unset,
         container_excl_agent_avg: Union[int, UnsetType] = unset,
         container_hwm: Union[int, UnsetType] = unset,
+        csm_container_enterprise_compliance_count_sum: Union[int, UnsetType] = unset,
+        csm_container_enterprise_cws_count_sum: Union[int, UnsetType] = unset,
+        csm_container_enterprise_total_count_sum: Union[int, UnsetType] = unset,
+        csm_host_enterprise_aas_host_count_top99p: Union[int, UnsetType] = unset,
+        csm_host_enterprise_aws_host_count_top99p: Union[int, UnsetType] = unset,
+        csm_host_enterprise_azure_host_count_top99p: Union[int, UnsetType] = unset,
+        csm_host_enterprise_compliance_host_count_top99p: Union[int, UnsetType] = unset,
+        csm_host_enterprise_cws_host_count_top99p: Union[int, UnsetType] = unset,
+        csm_host_enterprise_gcp_host_count_top99p: Union[int, UnsetType] = unset,
+        csm_host_enterprise_total_host_count_top99p: Union[int, UnsetType] = unset,
         cspm_aas_host_top99p: Union[int, UnsetType] = unset,
         cspm_aws_host_top99p: Union[int, UnsetType] = unset,
         cspm_azure_host_top99p: Union[int, UnsetType] = unset,
@@ -264,6 +302,7 @@ class UsageSummaryDate(ModelNormal):
         mobile_rum_session_count_roku_sum: Union[int, UnsetType] = unset,
         mobile_rum_session_count_sum: Union[int, UnsetType] = unset,
         mobile_rum_units_sum: Union[int, UnsetType] = unset,
+        ndm_netflow_events_sum: Union[int, UnsetType] = unset,
         netflow_indexed_events_count_sum: Union[int, UnsetType] = unset,
         npm_host_top99p: Union[int, UnsetType] = unset,
         observability_pipelines_bytes_processed_sum: Union[int, UnsetType] = unset,
@@ -282,6 +321,9 @@ class UsageSummaryDate(ModelNormal):
         sds_logs_scanned_bytes_sum: Union[int, UnsetType] = unset,
         sds_rum_scanned_bytes_sum: Union[int, UnsetType] = unset,
         sds_total_scanned_bytes_sum: Union[int, UnsetType] = unset,
+        serverless_apps_azure_count_avg: Union[int, UnsetType] = unset,
+        serverless_apps_google_count_avg: Union[int, UnsetType] = unset,
+        serverless_apps_total_count_avg: Union[int, UnsetType] = unset,
         synthetics_browser_check_calls_count_sum: Union[int, UnsetType] = unset,
         synthetics_check_calls_count_sum: Union[int, UnsetType] = unset,
         synthetics_mobile_test_runs_sum: Union[int, UnsetType] = unset,
@@ -378,25 +420,55 @@ class UsageSummaryDate(ModelNormal):
         :param container_hwm: Shows the high-water mark of all distinct containers over all hours in the current date for all organizations.
         :type container_hwm: int, optional
 
-        :param cspm_aas_host_top99p: Shows the 99th percentile of all Cloud Security Posture Management Azure app services hosts over all hours in the current date for all organizations.
+        :param csm_container_enterprise_compliance_count_sum: Shows the sum of all Cloud Security Management Enterprise compliance containers over all hours in the current date for the given org.
+        :type csm_container_enterprise_compliance_count_sum: int, optional
+
+        :param csm_container_enterprise_cws_count_sum: Shows the sum of all Cloud Security Management Enterprise Cloud Workload Security containers over all hours in the current date for the given org.
+        :type csm_container_enterprise_cws_count_sum: int, optional
+
+        :param csm_container_enterprise_total_count_sum: Shows the sum of all Cloud Security Management Enterprise containers over all hours in the current date for the given org.
+        :type csm_container_enterprise_total_count_sum: int, optional
+
+        :param csm_host_enterprise_aas_host_count_top99p: Shows the 99th percentile of all Cloud Security Management Enterprise Azure app services hosts over all hours in the current date for the given org.
+        :type csm_host_enterprise_aas_host_count_top99p: int, optional
+
+        :param csm_host_enterprise_aws_host_count_top99p: Shows the 99th percentile of all Cloud Security Management Enterprise AWS hosts over all hours in the current date for the given org.
+        :type csm_host_enterprise_aws_host_count_top99p: int, optional
+
+        :param csm_host_enterprise_azure_host_count_top99p: Shows the 99th percentile of all Cloud Security Management Enterprise Azure hosts over all hours in the current date for the given org.
+        :type csm_host_enterprise_azure_host_count_top99p: int, optional
+
+        :param csm_host_enterprise_compliance_host_count_top99p: Shows the 99th percentile of all Cloud Security Management Enterprise compliance hosts over all hours in the current date for the given org.
+        :type csm_host_enterprise_compliance_host_count_top99p: int, optional
+
+        :param csm_host_enterprise_cws_host_count_top99p: Shows the 99th percentile of all Cloud Security Management Enterprise Cloud Workload Security hosts over all hours in the current date for the given org.
+        :type csm_host_enterprise_cws_host_count_top99p: int, optional
+
+        :param csm_host_enterprise_gcp_host_count_top99p: Shows the 99th percentile of all Cloud Security Management Enterprise GCP hosts over all hours in the current date for the given org.
+        :type csm_host_enterprise_gcp_host_count_top99p: int, optional
+
+        :param csm_host_enterprise_total_host_count_top99p: Shows the 99th percentile of all Cloud Security Management Enterprise hosts over all hours in the current date for the given org.
+        :type csm_host_enterprise_total_host_count_top99p: int, optional
+
+        :param cspm_aas_host_top99p: Shows the 99th percentile of all Cloud Security Management Pro Azure app services hosts over all hours in the current date for all organizations.
         :type cspm_aas_host_top99p: int, optional
 
-        :param cspm_aws_host_top99p: Shows the 99th percentile of all Cloud Security Posture Management AWS hosts over all hours in the current date for all organizations.
+        :param cspm_aws_host_top99p: Shows the 99th percentile of all Cloud Security Management Pro AWS hosts over all hours in the current date for all organizations.
         :type cspm_aws_host_top99p: int, optional
 
-        :param cspm_azure_host_top99p: Shows the 99th percentile of all Cloud Security Posture Management Azure hosts over all hours in the current date for all organizations.
+        :param cspm_azure_host_top99p: Shows the 99th percentile of all Cloud Security Management Pro Azure hosts over all hours in the current date for all organizations.
         :type cspm_azure_host_top99p: int, optional
 
-        :param cspm_container_avg: Shows the average number of Cloud Security Posture Management containers over all hours in the current date for all organizations.
+        :param cspm_container_avg: Shows the average number of Cloud Security Management Pro containers over all hours in the current date for all organizations.
         :type cspm_container_avg: int, optional
 
-        :param cspm_container_hwm: Shows the high-water mark of Cloud Security Posture Management containers over all hours in the current date for all organizations.
+        :param cspm_container_hwm: Shows the high-water mark of Cloud Security Management Pro containers over all hours in the current date for all organizations.
         :type cspm_container_hwm: int, optional
 
-        :param cspm_gcp_host_top99p: Shows the 99th percentile of all Cloud Security Posture Management GCP hosts over all hours in the current date for all organizations.
+        :param cspm_gcp_host_top99p: Shows the 99th percentile of all Cloud Security Management Pro GCP hosts over all hours in the current date for all organizations.
         :type cspm_gcp_host_top99p: int, optional
 
-        :param cspm_host_top99p: Shows the 99th percentile of all Cloud Security Posture Management hosts over all hours in the current date for all organizations.
+        :param cspm_host_top99p: Shows the 99th percentile of all Cloud Security Management Pro hosts over all hours in the current date for all organizations.
         :type cspm_host_top99p: int, optional
 
         :param custom_ts_avg: Shows the average number of distinct custom metrics over all hours in the current date for all organizations.
@@ -474,6 +546,9 @@ class UsageSummaryDate(ModelNormal):
         :param mobile_rum_units_sum: Shows the sum of all mobile RUM units over all hours in the current date for all organizations.
         :type mobile_rum_units_sum: int, optional
 
+        :param ndm_netflow_events_sum: Shows the sum of all Network Device Monitoring NetFlow events over all hours in the current date for the given org.
+        :type ndm_netflow_events_sum: int, optional
+
         :param netflow_indexed_events_count_sum: Shows the sum of all Network flows indexed over all hours in the current date for all organizations.
         :type netflow_indexed_events_count_sum: int, optional
 
@@ -527,6 +602,15 @@ class UsageSummaryDate(ModelNormal):
 
         :param sds_total_scanned_bytes_sum: Shows the sum of all bytes scanned across all usage types by the Sensitive Data Scanner over all hours in the current month for all organizations.
         :type sds_total_scanned_bytes_sum: int, optional
+
+        :param serverless_apps_azure_count_avg: Shows the average of the number of Serverless Apps for Azure for the given date and given org.
+        :type serverless_apps_azure_count_avg: int, optional
+
+        :param serverless_apps_google_count_avg: Shows the average of the number of Serverless Apps for Google Cloud for the given date and given org.
+        :type serverless_apps_google_count_avg: int, optional
+
+        :param serverless_apps_total_count_avg: Shows the average of the number of Serverless Apps for Azure and Google Cloud for the given date and given org.
+        :type serverless_apps_total_count_avg: int, optional
 
         :param synthetics_browser_check_calls_count_sum: Shows the sum of all Synthetic browser tests over all hours in the current date for all organizations.
         :type synthetics_browser_check_calls_count_sum: int, optional
@@ -612,6 +696,28 @@ class UsageSummaryDate(ModelNormal):
             kwargs["container_excl_agent_avg"] = container_excl_agent_avg
         if container_hwm is not unset:
             kwargs["container_hwm"] = container_hwm
+        if csm_container_enterprise_compliance_count_sum is not unset:
+            kwargs["csm_container_enterprise_compliance_count_sum"] = csm_container_enterprise_compliance_count_sum
+        if csm_container_enterprise_cws_count_sum is not unset:
+            kwargs["csm_container_enterprise_cws_count_sum"] = csm_container_enterprise_cws_count_sum
+        if csm_container_enterprise_total_count_sum is not unset:
+            kwargs["csm_container_enterprise_total_count_sum"] = csm_container_enterprise_total_count_sum
+        if csm_host_enterprise_aas_host_count_top99p is not unset:
+            kwargs["csm_host_enterprise_aas_host_count_top99p"] = csm_host_enterprise_aas_host_count_top99p
+        if csm_host_enterprise_aws_host_count_top99p is not unset:
+            kwargs["csm_host_enterprise_aws_host_count_top99p"] = csm_host_enterprise_aws_host_count_top99p
+        if csm_host_enterprise_azure_host_count_top99p is not unset:
+            kwargs["csm_host_enterprise_azure_host_count_top99p"] = csm_host_enterprise_azure_host_count_top99p
+        if csm_host_enterprise_compliance_host_count_top99p is not unset:
+            kwargs[
+                "csm_host_enterprise_compliance_host_count_top99p"
+            ] = csm_host_enterprise_compliance_host_count_top99p
+        if csm_host_enterprise_cws_host_count_top99p is not unset:
+            kwargs["csm_host_enterprise_cws_host_count_top99p"] = csm_host_enterprise_cws_host_count_top99p
+        if csm_host_enterprise_gcp_host_count_top99p is not unset:
+            kwargs["csm_host_enterprise_gcp_host_count_top99p"] = csm_host_enterprise_gcp_host_count_top99p
+        if csm_host_enterprise_total_host_count_top99p is not unset:
+            kwargs["csm_host_enterprise_total_host_count_top99p"] = csm_host_enterprise_total_host_count_top99p
         if cspm_aas_host_top99p is not unset:
             kwargs["cspm_aas_host_top99p"] = cspm_aas_host_top99p
         if cspm_aws_host_top99p is not unset:
@@ -676,6 +782,8 @@ class UsageSummaryDate(ModelNormal):
             kwargs["mobile_rum_session_count_sum"] = mobile_rum_session_count_sum
         if mobile_rum_units_sum is not unset:
             kwargs["mobile_rum_units_sum"] = mobile_rum_units_sum
+        if ndm_netflow_events_sum is not unset:
+            kwargs["ndm_netflow_events_sum"] = ndm_netflow_events_sum
         if netflow_indexed_events_count_sum is not unset:
             kwargs["netflow_indexed_events_count_sum"] = netflow_indexed_events_count_sum
         if npm_host_top99p is not unset:
@@ -712,6 +820,12 @@ class UsageSummaryDate(ModelNormal):
             kwargs["sds_rum_scanned_bytes_sum"] = sds_rum_scanned_bytes_sum
         if sds_total_scanned_bytes_sum is not unset:
             kwargs["sds_total_scanned_bytes_sum"] = sds_total_scanned_bytes_sum
+        if serverless_apps_azure_count_avg is not unset:
+            kwargs["serverless_apps_azure_count_avg"] = serverless_apps_azure_count_avg
+        if serverless_apps_google_count_avg is not unset:
+            kwargs["serverless_apps_google_count_avg"] = serverless_apps_google_count_avg
+        if serverless_apps_total_count_avg is not unset:
+            kwargs["serverless_apps_total_count_avg"] = serverless_apps_total_count_avg
         if synthetics_browser_check_calls_count_sum is not unset:
             kwargs["synthetics_browser_check_calls_count_sum"] = synthetics_browser_check_calls_count_sum
         if synthetics_check_calls_count_sum is not unset:

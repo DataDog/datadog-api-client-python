@@ -56,7 +56,7 @@ body = SyntheticsBrowserTest(
         min_location_failed=1,
         no_screenshot=True,
         retry=SyntheticsTestOptionsRetry(
-            count=3,
+            count=2,
             interval=10.0,
         ),
         rum_settings=SyntheticsBrowserTestRumSettings(

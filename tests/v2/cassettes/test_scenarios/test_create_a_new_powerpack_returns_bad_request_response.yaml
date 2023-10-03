@@ -1,0 +1,44 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"description":"Powerpack for ABC","group_widget":{"layout_type":"ordered","tags":["tag:foo1"],"type":"group","widgets":[{"definition":{"content":"example","type":"note"}}]},"name":"Sample
+      Powerpack","tags":["tag:foo1"],"template_variables":[{"defaults":["*"],"name":"test"}]},"type":"powerpack"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/powerpacks
+  response:
+    body:
+      string: '{"errors":["Invalid group widget for powerpack. Error: ''type'' is
+        a required property\n\nFailed validating ''required'' in schema:\n    {''additionalProperties'':
+        False,\n     ''properties'': {''background_color'': {''type'': ''string''},\n                    ''banner_img'':
+        {''type'': ''string''},\n                    ''layout_type'': {''enum'': [''ordered'']},\n                    ''reflow_type'':
+        {''enum'': [''auto'', ''fixed'']},\n                    ''show_title'': {''type'':
+        ''boolean''},\n                    ''title'': {''type'': ''string''},\n                    ''title_align'':
+        {''enum'': [''center'', ''left'', ''right'']},\n                    ''type'':
+        {''enum'': [''group'']},\n                    ''widgets'': {''items'': {''additionalProperties'':
+        False,\n                                          ''properties'': {''definition'':
+        {''additionalProperties'': True,\n                                                                        ''properties'':
+        {''type'': {''enum'': [''alert_graph'',\n                                                                                                         ''alert_value'',\n                                                                                                         ''change'',\n                                                                                                         ''check_status'',\n                                                                                                         ''distribution'',\n                                                                                                         ''geomap'',\n                                                                                                         ''heatmap'',\n                                                                                                         ''hostmap'',\n                                                                                                         ''note'',\n                                                                                                         ''query_value'',\n                                                                                                         ''scatterplot'',\n                                                                                                         ''servicemap'',\n                                                                                                         ''topology_map'',\n                                                                                                         ''query_table'',\n                                                                                                         ''timeseries'',\n                                                                                                         ''toplist'',\n                                                                                                         ''list_stream'',\n                                                                                                         ''treemap'',\n                                                                                                         ''uptime'',\n                                                                                                         ''slo'',\n                                                                                                         ''funnel'',\n                                                                                                         ''custom'',\n                                                                                                         ''experimental'',\n                                                                                                         ''sunburst'',\n                                                                                                         ''wildcard'',\n                                                                                                         ''slo_list'',\n                                                                                                         ''flame_graph'',\n                                                                                                         ''run_workflow'',\n                                                                                                         ''embedded_app'',\n                                                                                                         ''log_stream'',\n                                                                                                         ''iframe'',\n                                                                                                         ''free_text'',\n                                                                                                         ''event_stream'',\n                                                                                                         ''event_timeline'',\n                                                                                                         ''manage_status'',\n                                                                                                         ''trace_service'',\n                                                                                                         ''image'']}},\n                                                                        ''required'':
+        [''type''],\n                                                                        ''type'':
+        ''object''},\n                                                         ''id'':
+        {''type'': ''integer''},\n                                                         ''layout'':
+        {''additionalProperties'': False,\n                                                                    ''properties'':
+        {''height'': {''type'': ''number''},\n                                                                                   ''is_column_break'':
+        {''type'': ''boolean''},\n                                                                                   ''width'':
+        {''type'': ''number''},\n                                                                                   ''x'':
+        {''type'': ''number''},\n                                                                                   ''y'':
+        {''type'': ''number''}},\n                                                                    ''type'':
+        ''object''}},\n                                          ''required'': [''definition''],\n                                          ''type'':
+        ''object''},\n                                ''type'': ''array''}},\n     ''required'':
+        [''type'', ''layout_type'', ''widgets''],\n     ''type'': ''object''}\n\nOn
+        instance:\n    {}."]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 400
+      message: Bad Request
+version: 1

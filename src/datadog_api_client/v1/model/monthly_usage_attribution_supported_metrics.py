@@ -16,7 +16,7 @@ class MonthlyUsageAttributionSupportedMetrics(ModelSimple):
     """
     Supported metrics for monthly usage attribution requests.
 
-    :param value: Must be one of ["api_usage", "api_percentage", "apm_fargate_usage", "apm_fargate_percentage", "appsec_fargate_usage", "appsec_fargate_percentage", "apm_host_usage", "apm_host_percentage", "apm_usm_usage", "apm_usm_percentage", "appsec_usage", "appsec_percentage", "browser_usage", "browser_percentage", "ci_visibility_itr_usage", "ci_visibility_itr_percentage", "container_excl_agent_usage", "container_excl_agent_percentage", "container_usage", "container_percentage", "cspm_containers_percentage", "cspm_containers_usage", "cspm_hosts_percentage", "cspm_hosts_usage", "custom_timeseries_usage", "custom_timeseries_percentage", "custom_ingested_timeseries_usage", "custom_ingested_timeseries_percentage", "cws_containers_percentage", "cws_containers_usage", "cws_hosts_percentage", "cws_hosts_usage", "dbm_hosts_percentage", "dbm_hosts_usage", "dbm_queries_percentage", "dbm_queries_usage", "estimated_indexed_logs_usage", "estimated_indexed_logs_percentage", "estimated_ingested_logs_usage", "estimated_ingested_logs_percentage", "estimated_indexed_spans_usage", "estimated_indexed_spans_percentage", "estimated_ingested_spans_usage", "estimated_ingested_spans_percentage", "fargate_usage", "fargate_percentage", "functions_usage", "functions_percentage", "infra_host_usage", "infra_host_percentage", "invocations_usage", "invocations_percentage", "mobile_app_testing_percentage", "mobile_app_testing_usage", "npm_host_usage", "npm_host_percentage", "obs_pipeline_bytes_usage", "obs_pipeline_bytes_percentage", "profiled_container_usage", "profiled_container_percentage", "profiled_fargate_usage", "profiled_fargate_percentage", "profiled_host_usage", "profiled_host_percentage", "snmp_usage", "snmp_percentage", "estimated_rum_sessions_usage", "estimated_rum_sessions_percentage", "universal_service_monitoring_usage", "universal_service_monitoring_percentage", "vuln_management_hosts_usage", "vuln_management_hosts_percentage", "sds_scanned_bytes_usage", "sds_scanned_bytes_percentage", "*"].
+    :param value: Must be one of ["api_usage", "api_percentage", "apm_fargate_usage", "apm_fargate_percentage", "appsec_fargate_usage", "appsec_fargate_percentage", "apm_host_usage", "apm_host_percentage", "apm_usm_usage", "apm_usm_percentage", "appsec_usage", "appsec_percentage", "browser_usage", "browser_percentage", "ci_visibility_itr_usage", "ci_visibility_itr_percentage", "container_excl_agent_usage", "container_excl_agent_percentage", "container_usage", "container_percentage", "cspm_containers_percentage", "cspm_containers_usage", "cspm_hosts_percentage", "cspm_hosts_usage", "custom_timeseries_usage", "custom_timeseries_percentage", "custom_ingested_timeseries_usage", "custom_ingested_timeseries_percentage", "cws_containers_percentage", "cws_containers_usage", "cws_hosts_percentage", "cws_hosts_usage", "dbm_hosts_percentage", "dbm_hosts_usage", "dbm_queries_percentage", "dbm_queries_usage", "estimated_indexed_logs_usage", "estimated_indexed_logs_percentage", "estimated_ingested_logs_usage", "estimated_ingested_logs_percentage", "estimated_indexed_spans_usage", "estimated_indexed_spans_percentage", "estimated_ingested_spans_usage", "estimated_ingested_spans_percentage", "fargate_usage", "fargate_percentage", "functions_usage", "functions_percentage", "infra_host_usage", "infra_host_percentage", "invocations_usage", "invocations_percentage", "mobile_app_testing_percentage", "mobile_app_testing_usage", "ndm_netflow_usage", "ndm_netflow_percentage", "npm_host_usage", "npm_host_percentage", "obs_pipeline_bytes_usage", "obs_pipeline_bytes_percentage", "profiled_container_usage", "profiled_container_percentage", "profiled_fargate_usage", "profiled_fargate_percentage", "profiled_host_usage", "profiled_host_percentage", "serverless_apps_usage", "serverless_apps_percentage", "snmp_usage", "snmp_percentage", "estimated_rum_sessions_usage", "estimated_rum_sessions_percentage", "universal_service_monitoring_usage", "universal_service_monitoring_percentage", "vuln_management_hosts_usage", "vuln_management_hosts_percentage", "sds_scanned_bytes_usage", "sds_scanned_bytes_percentage", "*"].
     :type value: str
     """
 
@@ -75,6 +75,8 @@ class MonthlyUsageAttributionSupportedMetrics(ModelSimple):
         "invocations_percentage",
         "mobile_app_testing_percentage",
         "mobile_app_testing_usage",
+        "ndm_netflow_usage",
+        "ndm_netflow_percentage",
         "npm_host_usage",
         "npm_host_percentage",
         "obs_pipeline_bytes_usage",
@@ -85,6 +87,8 @@ class MonthlyUsageAttributionSupportedMetrics(ModelSimple):
         "profiled_fargate_percentage",
         "profiled_host_usage",
         "profiled_host_percentage",
+        "serverless_apps_usage",
+        "serverless_apps_percentage",
         "snmp_usage",
         "snmp_percentage",
         "estimated_rum_sessions_usage",
@@ -151,6 +155,8 @@ class MonthlyUsageAttributionSupportedMetrics(ModelSimple):
     INVOCATIONS_PERCENTAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
     MOBILE_APP_TESTING_USAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
     MOBILE_APP_TESTING_PERCENTAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    NDM_NETFLOW_USAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    NDM_NETFLOW_PERCENTAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
     NPM_HOST_USAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
     NPM_HOST_PERCENTAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
     OBS_PIPELINE_BYTES_USAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
@@ -161,6 +167,8 @@ class MonthlyUsageAttributionSupportedMetrics(ModelSimple):
     PROFILED_FARGATE_PERCENTAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
     PROFILED_HOST_USAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
     PROFILED_HOST_PERCENTAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    SERVERLESS_APPS_USAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    SERVERLESS_APPS_PERCENTAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
     SNMP_USAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
     SNMP_PERCENTAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
     ESTIMATED_RUM_SESSIONS_USAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
@@ -308,6 +316,10 @@ MonthlyUsageAttributionSupportedMetrics.MOBILE_APP_TESTING_USAGE = MonthlyUsageA
 MonthlyUsageAttributionSupportedMetrics.MOBILE_APP_TESTING_PERCENTAGE = MonthlyUsageAttributionSupportedMetrics(
     "mobile_app_testing_usage"
 )
+MonthlyUsageAttributionSupportedMetrics.NDM_NETFLOW_USAGE = MonthlyUsageAttributionSupportedMetrics("ndm_netflow_usage")
+MonthlyUsageAttributionSupportedMetrics.NDM_NETFLOW_PERCENTAGE = MonthlyUsageAttributionSupportedMetrics(
+    "ndm_netflow_percentage"
+)
 MonthlyUsageAttributionSupportedMetrics.NPM_HOST_USAGE = MonthlyUsageAttributionSupportedMetrics("npm_host_usage")
 MonthlyUsageAttributionSupportedMetrics.NPM_HOST_PERCENTAGE = MonthlyUsageAttributionSupportedMetrics(
     "npm_host_percentage"
@@ -335,6 +347,12 @@ MonthlyUsageAttributionSupportedMetrics.PROFILED_HOST_USAGE = MonthlyUsageAttrib
 )
 MonthlyUsageAttributionSupportedMetrics.PROFILED_HOST_PERCENTAGE = MonthlyUsageAttributionSupportedMetrics(
     "profiled_host_percentage"
+)
+MonthlyUsageAttributionSupportedMetrics.SERVERLESS_APPS_USAGE = MonthlyUsageAttributionSupportedMetrics(
+    "serverless_apps_usage"
+)
+MonthlyUsageAttributionSupportedMetrics.SERVERLESS_APPS_PERCENTAGE = MonthlyUsageAttributionSupportedMetrics(
+    "serverless_apps_percentage"
 )
 MonthlyUsageAttributionSupportedMetrics.SNMP_USAGE = MonthlyUsageAttributionSupportedMetrics("snmp_usage")
 MonthlyUsageAttributionSupportedMetrics.SNMP_PERCENTAGE = MonthlyUsageAttributionSupportedMetrics("snmp_percentage")

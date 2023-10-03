@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, Union
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -13,12 +13,18 @@ from datadog_api_client.model_utils import (
 )
 
 
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.scalar_column_type_group import ScalarColumnTypeGroup
+
+
 class GroupScalarColumn(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.scalar_column_type_group import ScalarColumnTypeGroup
+
         return {
             "name": (str,),
-            "type": (str,),
+            "type": (ScalarColumnTypeGroup,),
             "values": ([[str]],),
         }
 
@@ -31,7 +37,7 @@ class GroupScalarColumn(ModelNormal):
     def __init__(
         self_,
         name: Union[str, UnsetType] = unset,
-        type: Union[str, UnsetType] = unset,
+        type: Union[ScalarColumnTypeGroup, UnsetType] = unset,
         values: Union[List[List[str]], UnsetType] = unset,
         **kwargs,
     ):
@@ -41,8 +47,8 @@ class GroupScalarColumn(ModelNormal):
         :param name: The name of the tag key or group.
         :type name: str, optional
 
-        :param type: The type of column present.
-        :type type: str, optional
+        :param type: The type of column present for groups.
+        :type type: ScalarColumnTypeGroup, optional
 
         :param values: The array of tag values for each group found for the results of the formulas or queries.
         :type values: [[str]], optional

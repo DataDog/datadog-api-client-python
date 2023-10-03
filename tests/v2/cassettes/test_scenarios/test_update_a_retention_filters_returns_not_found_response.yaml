@@ -1,0 +1,21 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"enabled":true,"filter":{"query":"@_top_level:1
+      test:service-demo"},"filter_type":"spans-sampling-processor","name":"test","rate":0.9},"id":"not_found","type":"apm_retention_filter"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PUT
+    uri: https://api.datadoghq.com/api/v2/apm/config/retention-filters/not_found
+  response:
+    body:
+      string: '{"errors":["retention filter with id: ''not_found'' not found"]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 404
+      message: Not Found
+version: 1

@@ -227,16 +227,16 @@ class UsageAttributionValues(ModelNormal):
         :param container_usage: The container usage by tag(s).
         :type container_usage: float, optional
 
-        :param cspm_container_percentage: The percentage of Cloud Security Posture Management container usage by tag(s)
+        :param cspm_container_percentage: The percentage of Cloud Security Management Pro container usage by tag(s)
         :type cspm_container_percentage: float, optional
 
-        :param cspm_container_usage: The Cloud Security Posture Management container usage by tag(s)
+        :param cspm_container_usage: The Cloud Security Management Pro container usage by tag(s)
         :type cspm_container_usage: float, optional
 
-        :param cspm_host_percentage: The percentage of Cloud Security Posture Management host usage by tag(s)
+        :param cspm_host_percentage: The percentage of Cloud Security Management Pro host usage by tag(s)
         :type cspm_host_percentage: float, optional
 
-        :param cspm_host_usage: The Cloud Security Posture Management host usage by tag(s)
+        :param cspm_host_usage: The Cloud Security Management Pro host usage by tag(s)
         :type cspm_host_usage: float, optional
 
         :param custom_timeseries_percentage: The percentage of custom metrics usage by tag(s).

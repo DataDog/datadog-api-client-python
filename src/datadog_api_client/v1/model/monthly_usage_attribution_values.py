@@ -73,6 +73,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
             "invocations_usage": (float,),
             "mobile_app_testing_percentage": (float,),
             "mobile_app_testing_usage": (float,),
+            "ndm_netflow_percentage": (float,),
+            "ndm_netflow_usage": (float,),
             "npm_host_percentage": (float,),
             "npm_host_usage": (float,),
             "obs_pipeline_bytes_percentage": (float,),
@@ -85,6 +87,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
             "profiled_host_usage": (float,),
             "sds_scanned_bytes_percentage": (float,),
             "sds_scanned_bytes_usage": (float,),
+            "serverless_apps_percentage": (float,),
+            "serverless_apps_usage": (float,),
             "snmp_percentage": (float,),
             "snmp_usage": (float,),
             "universal_service_monitoring_percentage": (float,),
@@ -150,6 +154,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         "invocations_usage": "invocations_usage",
         "mobile_app_testing_percentage": "mobile_app_testing_percentage",
         "mobile_app_testing_usage": "mobile_app_testing_usage",
+        "ndm_netflow_percentage": "ndm_netflow_percentage",
+        "ndm_netflow_usage": "ndm_netflow_usage",
         "npm_host_percentage": "npm_host_percentage",
         "npm_host_usage": "npm_host_usage",
         "obs_pipeline_bytes_percentage": "obs_pipeline_bytes_percentage",
@@ -162,6 +168,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         "profiled_host_usage": "profiled_host_usage",
         "sds_scanned_bytes_percentage": "sds_scanned_bytes_percentage",
         "sds_scanned_bytes_usage": "sds_scanned_bytes_usage",
+        "serverless_apps_percentage": "serverless_apps_percentage",
+        "serverless_apps_usage": "serverless_apps_usage",
         "snmp_percentage": "snmp_percentage",
         "snmp_usage": "snmp_usage",
         "universal_service_monitoring_percentage": "universal_service_monitoring_percentage",
@@ -228,6 +236,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         invocations_usage: Union[float, UnsetType] = unset,
         mobile_app_testing_percentage: Union[float, UnsetType] = unset,
         mobile_app_testing_usage: Union[float, UnsetType] = unset,
+        ndm_netflow_percentage: Union[float, UnsetType] = unset,
+        ndm_netflow_usage: Union[float, UnsetType] = unset,
         npm_host_percentage: Union[float, UnsetType] = unset,
         npm_host_usage: Union[float, UnsetType] = unset,
         obs_pipeline_bytes_percentage: Union[float, UnsetType] = unset,
@@ -240,6 +250,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         profiled_host_usage: Union[float, UnsetType] = unset,
         sds_scanned_bytes_percentage: Union[float, UnsetType] = unset,
         sds_scanned_bytes_usage: Union[float, UnsetType] = unset,
+        serverless_apps_percentage: Union[float, UnsetType] = unset,
+        serverless_apps_usage: Union[float, UnsetType] = unset,
         snmp_percentage: Union[float, UnsetType] = unset,
         snmp_usage: Union[float, UnsetType] = unset,
         universal_service_monitoring_percentage: Union[float, UnsetType] = unset,
@@ -311,16 +323,16 @@ class MonthlyUsageAttributionValues(ModelNormal):
         :param container_usage: The container usage by tag(s).
         :type container_usage: float, optional
 
-        :param cspm_containers_percentage: The percentage of CSPM container usage by tag(s).
+        :param cspm_containers_percentage: The percentage of Cloud Security Management Pro container usage by tag(s).
         :type cspm_containers_percentage: float, optional
 
-        :param cspm_containers_usage: The CSPM container usage by tag(s).
+        :param cspm_containers_usage: The Cloud Security Management Pro container usage by tag(s).
         :type cspm_containers_usage: float, optional
 
-        :param cspm_hosts_percentage: The percentage of CSPM host usage by by tag(s).
+        :param cspm_hosts_percentage: The percentage of Cloud Security Management Pro host usage by tag(s).
         :type cspm_hosts_percentage: float, optional
 
-        :param cspm_hosts_usage: The CSPM host usage by tag(s).
+        :param cspm_hosts_usage: The Cloud Security Management Pro host usage by tag(s).
         :type cspm_hosts_usage: float, optional
 
         :param custom_ingested_timeseries_percentage: The percentage of ingested custom metrics usage by tag(s).
@@ -419,6 +431,12 @@ class MonthlyUsageAttributionValues(ModelNormal):
         :param mobile_app_testing_usage: The Synthetic mobile application test usage by tag(s).
         :type mobile_app_testing_usage: float, optional
 
+        :param ndm_netflow_percentage: The percentage of Network Device Monitoring NetFlow usage by tag(s).
+        :type ndm_netflow_percentage: float, optional
+
+        :param ndm_netflow_usage: The Network Device Monitoring NetFlow usage by tag(s).
+        :type ndm_netflow_usage: float, optional
+
         :param npm_host_percentage: The percentage of network host usage by tag(s).
         :type npm_host_percentage: float, optional
 
@@ -454,6 +472,12 @@ class MonthlyUsageAttributionValues(ModelNormal):
 
         :param sds_scanned_bytes_usage: The total Sensitive Data Scanner usage by tag(s).
         :type sds_scanned_bytes_usage: float, optional
+
+        :param serverless_apps_percentage: The percentage of Serverless Apps usage by tag(s).
+        :type serverless_apps_percentage: float, optional
+
+        :param serverless_apps_usage: The total Serverless Apps usage by tag(s).
+        :type serverless_apps_usage: float, optional
 
         :param snmp_percentage: The percentage of network device usage by tag(s).
         :type snmp_percentage: float, optional
@@ -585,6 +609,10 @@ class MonthlyUsageAttributionValues(ModelNormal):
             kwargs["mobile_app_testing_percentage"] = mobile_app_testing_percentage
         if mobile_app_testing_usage is not unset:
             kwargs["mobile_app_testing_usage"] = mobile_app_testing_usage
+        if ndm_netflow_percentage is not unset:
+            kwargs["ndm_netflow_percentage"] = ndm_netflow_percentage
+        if ndm_netflow_usage is not unset:
+            kwargs["ndm_netflow_usage"] = ndm_netflow_usage
         if npm_host_percentage is not unset:
             kwargs["npm_host_percentage"] = npm_host_percentage
         if npm_host_usage is not unset:
@@ -609,6 +637,10 @@ class MonthlyUsageAttributionValues(ModelNormal):
             kwargs["sds_scanned_bytes_percentage"] = sds_scanned_bytes_percentage
         if sds_scanned_bytes_usage is not unset:
             kwargs["sds_scanned_bytes_usage"] = sds_scanned_bytes_usage
+        if serverless_apps_percentage is not unset:
+            kwargs["serverless_apps_percentage"] = serverless_apps_percentage
+        if serverless_apps_usage is not unset:
+            kwargs["serverless_apps_usage"] = serverless_apps_usage
         if snmp_percentage is not unset:
             kwargs["snmp_percentage"] = snmp_percentage
         if snmp_usage is not unset:

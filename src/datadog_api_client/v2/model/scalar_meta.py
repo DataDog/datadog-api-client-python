@@ -24,14 +24,14 @@ class ScalarMeta(ModelNormal):
         from datadog_api_client.v2.model.unit import Unit
 
         return {
-            "unit": ([Unit, none_type],),
+            "unit": ([Unit, none_type], none_type),
         }
 
     attribute_map = {
         "unit": "unit",
     }
 
-    def __init__(self_, unit: Union[List[Unit], UnsetType] = unset, **kwargs):
+    def __init__(self_, unit: Union[List[Unit], none_type, UnsetType] = unset, **kwargs):
         """
         Metadata for the resulting numerical values.
 
@@ -39,7 +39,7 @@ class ScalarMeta(ModelNormal):
             First element describes the "primary unit" (for example, ``bytes`` in ``bytes per second`` ).
             The second element describes the "per unit" (for example, ``second`` in ``bytes per second`` ).
             If the second element is not present, the API returns null.
-        :type unit: [Unit, none_type], optional
+        :type unit: [Unit, none_type], none_type, optional
         """
         if unit is not unset:
             kwargs["unit"] = unit

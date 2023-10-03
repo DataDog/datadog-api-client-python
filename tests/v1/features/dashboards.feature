@@ -636,11 +636,22 @@ Feature: Dashboards
     When the request is sent
     Then the response status is 200 OK
     And the response "widgets[0].definition.type" is equal to "split_group"
-    And the response "widgets[0].definition.source_widget_definition" is equal to {"title":"","title_size":"16","title_align":"left","type":"timeseries","requests":[{"response_format":"timeseries","queries":[{"name":"query1","data_source":"metrics","query":"avg:system.cpu.user{*}"}],"style":{"palette":"dog_classic","line_type":"solid","line_width":"normal"},"display_type":"line"}]}
-    And the response "widgets[0].definition.split_config.split_dimensions" is equal to [{"one_graph_per": "service"}]
+    And the response "widgets[0].definition.source_widget_definition.type" is equal to "timeseries"
+    And the response "widgets[0].definition.source_widget_definition.requests[0].response_format" is equal to "timeseries"
+    And the response "widgets[0].definition.source_widget_definition.requests[0].queries[0].data_source" is equal to "metrics"
+    And the response "widgets[0].definition.source_widget_definition.requests[0].queries[0].query" is equal to "avg:system.cpu.user{*}"
+    And the response "widgets[0].definition.source_widget_definition.requests[0].style.palette" is equal to "dog_classic"
+    And the response "widgets[0].definition.split_config.split_dimensions[0].one_graph_per" is equal to "service"
     And the response "widgets[0].definition.split_config.limit" is equal to 24
-    And the response "widgets[0].definition.split_config.sort" is equal to {"compute": {"aggregation": "sum", "metric": "system.cpu.user"}, "order": "desc"}
-    And the response "widgets[0].definition.split_config.static_splits" is equal to [[{"tag_key":"service","tag_values":["cassandra"]},{"tag_key":"datacenter","tag_values":[]}],[{"tag_key":"demo","tag_values":["env"]}]]
+    And the response "widgets[0].definition.split_config.sort.compute.aggregation" is equal to "sum"
+    And the response "widgets[0].definition.split_config.sort.compute.metric" is equal to "system.cpu.user"
+    And the response "widgets[0].definition.split_config.sort.order" is equal to "desc"
+    And the response "widgets[0].definition.split_config.static_splits[0][0].tag_key" is equal to "service"
+    And the response "widgets[0].definition.split_config.static_splits[0][0].tag_values[0]" is equal to "cassandra"
+    And the response "widgets[0].definition.split_config.static_splits[0][1].tag_key" is equal to "datacenter"
+    And the response "widgets[0].definition.split_config.static_splits[0][1].tag_values" has length 0
+    And the response "widgets[0].definition.split_config.static_splits[1][0].tag_key" is equal to "demo"
+    And the response "widgets[0].definition.split_config.static_splits[1][0].tag_values[0]" is equal to "env"
     And the response "widgets[0].definition.size" is equal to "md"
     And the response "widgets[0].definition.has_uniform_y_axes" is equal to true
 

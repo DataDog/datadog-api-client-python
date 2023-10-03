@@ -17,6 +17,7 @@ class GCPSTSServiceAccountAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
+            "account_tags": ([str],),
             "automute": (bool,),
             "client_email": (str,),
             "host_filters": ([str],),
@@ -24,6 +25,7 @@ class GCPSTSServiceAccountAttributes(ModelNormal):
         }
 
     attribute_map = {
+        "account_tags": "account_tags",
         "automute": "automute",
         "client_email": "client_email",
         "host_filters": "host_filters",
@@ -32,6 +34,7 @@ class GCPSTSServiceAccountAttributes(ModelNormal):
 
     def __init__(
         self_,
+        account_tags: Union[List[str], UnsetType] = unset,
         automute: Union[bool, UnsetType] = unset,
         client_email: Union[str, UnsetType] = unset,
         host_filters: Union[List[str], UnsetType] = unset,
@@ -40,6 +43,9 @@ class GCPSTSServiceAccountAttributes(ModelNormal):
     ):
         """
         Attributes associated with your service account.
+
+        :param account_tags: Tags to be associated with GCP metrics and service checks from your account.
+        :type account_tags: [str], optional
 
         :param automute: Silence monitors for expected GCE instance shutdowns.
         :type automute: bool, optional
@@ -53,6 +59,8 @@ class GCPSTSServiceAccountAttributes(ModelNormal):
         :param is_cspm_enabled: When enabled, Datadog performs configuration checks across your Google Cloud environment by continuously scanning every resource.
         :type is_cspm_enabled: bool, optional
         """
+        if account_tags is not unset:
+            kwargs["account_tags"] = account_tags
         if automute is not unset:
             kwargs["automute"] = automute
         if client_email is not unset:

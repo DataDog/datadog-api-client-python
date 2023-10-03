@@ -33,7 +33,7 @@ class WebhooksIntegrationApi:
         self._create_webhooks_integration_endpoint = _Endpoint(
             settings={
                 "response_type": (WebhooksIntegration,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/integration/webhooks/configuration/webhooks",
                 "operation_id": "create_webhooks_integration",
                 "http_method": "POST",

@@ -1,6 +1,13 @@
 datadog\_api\_client.v2.api
 ===========================
 
+apm\_retention\_filters\_api
+----------------------------
+
+.. automodule:: datadog_api_client.v2.api.apm_retention_filters_api
+   :members:
+   :show-inheritance:
+
 audit\_api
 ----------
 
@@ -166,6 +173,13 @@ organizations\_api
 ------------------
 
 .. automodule:: datadog_api_client.v2.api.organizations_api
+   :members:
+   :show-inheritance:
+
+powerpack\_api
+--------------
+
+.. automodule:: datadog_api_client.v2.api.powerpack_api
    :members:
    :show-inheritance:
 
