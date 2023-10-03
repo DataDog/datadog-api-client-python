@@ -362,6 +362,7 @@ def build_configuration():
     c = Configuration(return_http_data_only=False, spec_property_naming=True)
     c.connection_pool_maxsize = 0
     c.debug = debug = os.getenv("DEBUG") in {"true", "1", "yes", "on"}
+    c.enable_retry = True
     if debug:  # enable vcr logs for DEBUG=true
         vcr_log = logging.getLogger("vcr")
         vcr_log.setLevel(logging.INFO)
