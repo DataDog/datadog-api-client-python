@@ -435,6 +435,10 @@ from datadog_api_client.v1.model.pager_duty_service_key import PagerDutyServiceK
 from datadog_api_client.v1.model.pager_duty_service_name import PagerDutyServiceName
 from datadog_api_client.v1.model.pagination import Pagination
 from datadog_api_client.v1.model.point import Point
+from datadog_api_client.v1.model.powerpack_template_variable_contents import PowerpackTemplateVariableContents
+from datadog_api_client.v1.model.powerpack_template_variables import PowerpackTemplateVariables
+from datadog_api_client.v1.model.powerpack_widget_definition import PowerpackWidgetDefinition
+from datadog_api_client.v1.model.powerpack_widget_definition_type import PowerpackWidgetDefinitionType
 from datadog_api_client.v1.model.process_query_definition import ProcessQueryDefinition
 from datadog_api_client.v1.model.query_sort_order import QuerySortOrder
 from datadog_api_client.v1.model.query_value_widget_definition import QueryValueWidgetDefinition
@@ -1308,6 +1312,10 @@ __all__ = [
     "PagerDutyServiceName",
     "Pagination",
     "Point",
+    "PowerpackTemplateVariableContents",
+    "PowerpackTemplateVariables",
+    "PowerpackWidgetDefinition",
+    "PowerpackWidgetDefinitionType",
     "ProcessQueryDefinition",
     "QuerySortOrder",
     "QueryValueWidgetDefinition",
