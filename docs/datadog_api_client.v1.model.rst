@@ -2654,6 +2654,34 @@ point
    :members:
    :show-inheritance:
 
+powerpack\_template\_variable\_contents
+---------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.powerpack_template_variable_contents
+   :members:
+   :show-inheritance:
+
+powerpack\_template\_variables
+------------------------------
+
+.. automodule:: datadog_api_client.v1.model.powerpack_template_variables
+   :members:
+   :show-inheritance:
+
+powerpack\_widget\_definition
+-----------------------------
+
+.. automodule:: datadog_api_client.v1.model.powerpack_widget_definition
+   :members:
+   :show-inheritance:
+
+powerpack\_widget\_definition\_type
+-----------------------------------
+
+.. automodule:: datadog_api_client.v1.model.powerpack_widget_definition_type
+   :members:
+   :show-inheritance:
+
 process\_query\_definition
 --------------------------
 
