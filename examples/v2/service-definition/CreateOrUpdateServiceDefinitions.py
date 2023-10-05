@@ -17,6 +17,10 @@ from datadog_api_client.v2.model.service_definition_v2_dot1_version import Servi
 
 body = ServiceDefinitionV2Dot1(
     application="my-app",
+    ci_pipeline_fingerprints=[
+        "j88xdEy0J5lc",
+        "eZ7LMljCk8vo",
+    ],
     contacts=[
         ServiceDefinitionV2Dot1Email(
             contact="contact@datadoghq.com",

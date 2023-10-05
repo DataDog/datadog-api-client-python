@@ -63,6 +63,9 @@ class ServiceDefinitionSchema(ModelComposed):
         :param application: Identifier for a group of related services serving a product feature, which the service is a part of.
         :type application: str, optional
 
+        :param ci_pipeline_fingerprints: A set of CI pipeline fingerprints related to the service.
+        :type ci_pipeline_fingerprints: [str], optional
+
         :param description: A short description of the service.
         :type description: str, optional
 

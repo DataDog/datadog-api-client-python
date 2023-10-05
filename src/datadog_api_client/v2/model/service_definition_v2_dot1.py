@@ -38,6 +38,7 @@ class ServiceDefinitionV2Dot1(ModelNormal):
 
         return {
             "application": (str,),
+            "ci_pipeline_fingerprints": ([str],),
             "contacts": ([ServiceDefinitionV2Dot1Contact],),
             "dd_service": (str,),
             "description": (str,),
@@ -67,6 +68,7 @@ class ServiceDefinitionV2Dot1(ModelNormal):
 
     attribute_map = {
         "application": "application",
+        "ci_pipeline_fingerprints": "ci-pipeline-fingerprints",
         "contacts": "contacts",
         "dd_service": "dd-service",
         "description": "description",
@@ -85,6 +87,7 @@ class ServiceDefinitionV2Dot1(ModelNormal):
         dd_service: str,
         schema_version: ServiceDefinitionV2Dot1Version,
         application: Union[str, UnsetType] = unset,
+        ci_pipeline_fingerprints: Union[List[str], UnsetType] = unset,
         contacts: Union[
             List[
                 Union[
@@ -111,6 +114,9 @@ class ServiceDefinitionV2Dot1(ModelNormal):
 
         :param application: Identifier for a group of related services serving a product feature, which the service is a part of.
         :type application: str, optional
+
+        :param ci_pipeline_fingerprints: A set of CI pipeline fingerprints related to the service.
+        :type ci_pipeline_fingerprints: [str], optional
 
         :param contacts: A list of contacts related to the services.
         :type contacts: [ServiceDefinitionV2Dot1Contact], optional
@@ -147,6 +153,8 @@ class ServiceDefinitionV2Dot1(ModelNormal):
         """
         if application is not unset:
             kwargs["application"] = application
+        if ci_pipeline_fingerprints is not unset:
+            kwargs["ci_pipeline_fingerprints"] = ci_pipeline_fingerprints
         if contacts is not unset:
             kwargs["contacts"] = contacts
         if description is not unset:
