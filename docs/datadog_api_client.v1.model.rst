@@ -2024,6 +2024,20 @@ monitor\_options\_aggregation
    :members:
    :show-inheritance:
 
+monitor\_options\_custom\_schedule
+----------------------------------
+
+.. automodule:: datadog_api_client.v1.model.monitor_options_custom_schedule
+   :members:
+   :show-inheritance:
+
+monitor\_options\_custom\_schedule\_recurrence
+----------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.monitor_options_custom_schedule_recurrence
+   :members:
+   :show-inheritance:
+
 monitor\_options\_notification\_presets
 ---------------------------------------
 

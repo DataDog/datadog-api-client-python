@@ -337,6 +337,10 @@ from datadog_api_client.v1.model.monitor_group_search_response_counts import Mon
 from datadog_api_client.v1.model.monitor_group_search_result import MonitorGroupSearchResult
 from datadog_api_client.v1.model.monitor_options import MonitorOptions
 from datadog_api_client.v1.model.monitor_options_aggregation import MonitorOptionsAggregation
+from datadog_api_client.v1.model.monitor_options_custom_schedule import MonitorOptionsCustomSchedule
+from datadog_api_client.v1.model.monitor_options_custom_schedule_recurrence import (
+    MonitorOptionsCustomScheduleRecurrence,
+)
 from datadog_api_client.v1.model.monitor_options_notification_presets import MonitorOptionsNotificationPresets
 from datadog_api_client.v1.model.monitor_options_scheduling_options import MonitorOptionsSchedulingOptions
 from datadog_api_client.v1.model.monitor_options_scheduling_options_evaluation_window import (
@@ -1222,6 +1226,8 @@ __all__ = [
     "MonitorGroupSearchResult",
     "MonitorOptions",
     "MonitorOptionsAggregation",
+    "MonitorOptionsCustomSchedule",
+    "MonitorOptionsCustomScheduleRecurrence",
     "MonitorOptionsNotificationPresets",
     "MonitorOptionsSchedulingOptions",
     "MonitorOptionsSchedulingOptionsEvaluationWindow",
