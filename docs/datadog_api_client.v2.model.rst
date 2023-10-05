@@ -2157,13 +2157,6 @@ gcpsts\_service\_accounts\_response
    :members:
    :show-inheritance:
 
-get\_all\_powerpacks\_response
-------------------------------
-
-.. automodule:: datadog_api_client.v2.model.get_all_powerpacks_response
-   :members:
-   :show-inheritance:
-
 get\_finding\_response
 ----------------------
 
@@ -3197,6 +3190,13 @@ list\_findings\_response
 ------------------------
 
 .. automodule:: datadog_api_client.v2.model.list_findings_response
+   :members:
+   :show-inheritance:
+
+list\_powerpacks\_response
+--------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_powerpacks_response
    :members:
    :show-inheritance:
 
@@ -4632,6 +4632,41 @@ powerpack\_data
 ---------------
 
 .. automodule:: datadog_api_client.v2.model.powerpack_data
+   :members:
+   :show-inheritance:
+
+powerpack\_group\_widget
+------------------------
+
+.. automodule:: datadog_api_client.v2.model.powerpack_group_widget
+   :members:
+   :show-inheritance:
+
+powerpack\_group\_widget\_definition
+------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.powerpack_group_widget_definition
+   :members:
+   :show-inheritance:
+
+powerpack\_group\_widget\_layout
+--------------------------------
+
+.. automodule:: datadog_api_client.v2.model.powerpack_group_widget_layout
+   :members:
+   :show-inheritance:
+
+powerpack\_inner\_widget\_layout
+--------------------------------
+
+.. automodule:: datadog_api_client.v2.model.powerpack_inner_widget_layout
+   :members:
+   :show-inheritance:
+
+powerpack\_inner\_widgets
+-------------------------
+
+.. automodule:: datadog_api_client.v2.model.powerpack_inner_widgets
    :members:
    :show-inheritance:
 

@@ -362,7 +362,6 @@ from datadog_api_client.v2.model.gcpsts_service_account_update_request_data impo
 from datadog_api_client.v2.model.gcpsts_service_accounts_response import GCPSTSServiceAccountsResponse
 from datadog_api_client.v2.model.gcp_service_account_meta import GCPServiceAccountMeta
 from datadog_api_client.v2.model.gcp_service_account_type import GCPServiceAccountType
-from datadog_api_client.v2.model.get_all_powerpacks_response import GetAllPowerpacksResponse
 from datadog_api_client.v2.model.get_finding_response import GetFindingResponse
 from datadog_api_client.v2.model.get_team_memberships_sort import GetTeamMembershipsSort
 from datadog_api_client.v2.model.group_scalar_column import GroupScalarColumn
@@ -543,6 +542,7 @@ from datadog_api_client.v2.model.list_downtimes_response import ListDowntimesRes
 from datadog_api_client.v2.model.list_findings_meta import ListFindingsMeta
 from datadog_api_client.v2.model.list_findings_page import ListFindingsPage
 from datadog_api_client.v2.model.list_findings_response import ListFindingsResponse
+from datadog_api_client.v2.model.list_powerpacks_response import ListPowerpacksResponse
 from datadog_api_client.v2.model.list_teams_include import ListTeamsInclude
 from datadog_api_client.v2.model.list_teams_sort import ListTeamsSort
 from datadog_api_client.v2.model.log import Log
@@ -770,6 +770,11 @@ from datadog_api_client.v2.model.permissions_type import PermissionsType
 from datadog_api_client.v2.model.powerpack import Powerpack
 from datadog_api_client.v2.model.powerpack_attributes import PowerpackAttributes
 from datadog_api_client.v2.model.powerpack_data import PowerpackData
+from datadog_api_client.v2.model.powerpack_group_widget import PowerpackGroupWidget
+from datadog_api_client.v2.model.powerpack_group_widget_definition import PowerpackGroupWidgetDefinition
+from datadog_api_client.v2.model.powerpack_group_widget_layout import PowerpackGroupWidgetLayout
+from datadog_api_client.v2.model.powerpack_inner_widget_layout import PowerpackInnerWidgetLayout
+from datadog_api_client.v2.model.powerpack_inner_widgets import PowerpackInnerWidgets
 from datadog_api_client.v2.model.powerpack_relationships import PowerpackRelationships
 from datadog_api_client.v2.model.powerpack_response import PowerpackResponse
 from datadog_api_client.v2.model.powerpack_response_links import PowerpackResponseLinks
@@ -1687,7 +1692,6 @@ __all__ = [
     "GCPSTSServiceAccountsResponse",
     "GCPServiceAccountMeta",
     "GCPServiceAccountType",
-    "GetAllPowerpacksResponse",
     "GetFindingResponse",
     "GetTeamMembershipsSort",
     "GroupScalarColumn",
@@ -1836,6 +1840,7 @@ __all__ = [
     "ListFindingsMeta",
     "ListFindingsPage",
     "ListFindingsResponse",
+    "ListPowerpacksResponse",
     "ListTeamsInclude",
     "ListTeamsSort",
     "Log",
@@ -2041,6 +2046,11 @@ __all__ = [
     "Powerpack",
     "PowerpackAttributes",
     "PowerpackData",
+    "PowerpackGroupWidget",
+    "PowerpackGroupWidgetDefinition",
+    "PowerpackGroupWidgetLayout",
+    "PowerpackInnerWidgetLayout",
+    "PowerpackInnerWidgets",
     "PowerpackRelationships",
     "PowerpackResponse",
     "PowerpackResponseLinks",
