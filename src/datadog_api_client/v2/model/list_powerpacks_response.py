@@ -20,7 +20,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.powerpacks_response_meta import PowerpacksResponseMeta
 
 
-class GetAllPowerpacksResponse(ModelNormal):
+class ListPowerpacksResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.powerpack_data import PowerpackData

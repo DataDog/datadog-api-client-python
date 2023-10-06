@@ -7,7 +7,7 @@ from typing import Any, Dict
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
-from datadog_api_client.v2.model.get_all_powerpacks_response import GetAllPowerpacksResponse
+from datadog_api_client.v2.model.list_powerpacks_response import ListPowerpacksResponse
 from datadog_api_client.v2.model.powerpack_response import PowerpackResponse
 from datadog_api_client.v2.model.powerpack import Powerpack
 
@@ -73,22 +73,6 @@ class PowerpackApi:
             api_client=api_client,
         )
 
-        self._get_all_powerpacks_endpoint = _Endpoint(
-            settings={
-                "response_type": (GetAllPowerpacksResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/powerpacks",
-                "operation_id": "get_all_powerpacks",
-                "http_method": "GET",
-                "version": "v2",
-            },
-            params_map={},
-            headers_map={
-                "accept": ["application/json"],
-            },
-            api_client=api_client,
-        )
-
         self._get_powerpack_endpoint = _Endpoint(
             settings={
                 "response_type": (PowerpackResponse,),
@@ -106,6 +90,22 @@ class PowerpackApi:
                     "location": "path",
                 },
             },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_powerpacks_endpoint = _Endpoint(
+            settings={
+                "response_type": (ListPowerpacksResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/powerpacks",
+                "operation_id": "list_powerpacks",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={},
             headers_map={
                 "accept": ["application/json"],
             },
@@ -172,18 +172,6 @@ class PowerpackApi:
 
         return self._delete_powerpack_endpoint.call_with_http_info(**kwargs)
 
-    def get_all_powerpacks(
-        self,
-    ) -> GetAllPowerpacksResponse:
-        """Get all powerpacks.
-
-        Get a list of all powerpacks.
-
-        :rtype: GetAllPowerpacksResponse
-        """
-        kwargs: Dict[str, Any] = {}
-        return self._get_all_powerpacks_endpoint.call_with_http_info(**kwargs)
-
     def get_powerpack(
         self,
         powerpack_id: str,
@@ -200,6 +188,18 @@ class PowerpackApi:
         kwargs["powerpack_id"] = powerpack_id
 
         return self._get_powerpack_endpoint.call_with_http_info(**kwargs)
+
+    def list_powerpacks(
+        self,
+    ) -> ListPowerpacksResponse:
+        """Get all powerpacks.
+
+        Get a list of all powerpacks.
+
+        :rtype: ListPowerpacksResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._list_powerpacks_endpoint.call_with_http_info(**kwargs)
 
     def update_powerpack(
         self,

@@ -13,7 +13,7 @@ Feature: Powerpack
   @team:DataDog/dashboards-backend
   Scenario: Create a new powerpack returns "Bad Request" response
     Given new "CreatePowerpack" request
-    And body with value {"data": {"attributes": {"description": "Powerpack for ABC", "group_widget": {"layout_type": "ordered", "tags": ["tag:foo1"], "type": "group", "widgets": [{"definition": {"content": "example", "type": "note"}}]}, "name": "Sample Powerpack", "tags": ["tag:foo1"], "template_variables": [{"defaults": ["*"], "name": "test"}]}, "type": "powerpack"}}
+    And body with value {"data": {"attributes": {"description": "Powerpack for ABC", "group_widget": {"definition": {"type": "group1", "layout_type": "ordered", "widgets": []}}, "name": "Sample Powerpack", "tags": ["tag:foo1"], "template_variables": [{"defaults": ["*"], "name": "test"}]}, "type": "powerpack"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -37,13 +37,6 @@ Feature: Powerpack
     And the response "data.attributes.group_widget.definition.show_title" is equal to true
     And the response "data.attributes.group_widget.definition.title" is equal to "Sample Powerpack"
     And the response "data.attributes.group_widget.definition.widgets[0].definition.type" is equal to "note"
-
-  @team:DataDog/dashboards-backend
-  Scenario: Create a new powerpack with missing group_widget returns "Bad Request" response
-    Given new "CreatePowerpack" request
-    And body with value {"data":{"type": "powerpack","attributes": {"name": "Sample Powerpack","description": "Sample powerpack","group_widget": {},"template_variables": [{"name": "sample", "defaults": ["*"]}],"tags": ["tag:sample"]}}}
-    When the request is sent
-    Then the response status is 400 Bad Request
 
   @team:DataDog/dashboards-backend
   Scenario: Delete a powerpack returns "OK" response
@@ -93,7 +86,7 @@ Feature: Powerpack
   @team:DataDog/dashboards-backend
   Scenario: Get all powerpacks returns "OK" response
     Given there is a valid "powerpack" in the system
-    And new "GetAllPowerpacks" request
+    And new "ListPowerpacks" request
     When the request is sent
     Then the response status is 200 OK
     And the response "data" has item with field "type" with value "powerpack"
@@ -117,7 +110,7 @@ Feature: Powerpack
     Given there is a valid "powerpack" in the system
     And new "UpdatePowerpack" request
     And request contains "powerpack_id" parameter from "powerpack.data.id"
-    And body with value {"data":{"type": "powerpack","attributes": {"name": "Sample Powerpack","description": "Sample powerpack","group_widget": {},"template_variables": [{"name": "sample", "defaults": ["*"]}],"tags": ["tag:sample"]}}}
+    And body with value {"data":{"type": "powerpack","attributes": {"name": "Sample Powerpack","description": "Sample powerpack","group_widget": {"definition": {"type": "group1", "layout_type": "ordered", "widgets": []}},"template_variables": [{"name": "sample", "defaults": ["*"]}],"tags": ["tag:sample"]}}}
     When the request is sent
     Then the response status is 400 Bad Request
 
