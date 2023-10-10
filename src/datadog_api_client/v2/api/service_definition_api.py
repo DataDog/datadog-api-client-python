@@ -19,6 +19,7 @@ from datadog_api_client.v2.model.service_definition_schema_versions import Servi
 from datadog_api_client.v2.model.service_definition_data import ServiceDefinitionData
 from datadog_api_client.v2.model.service_definition_create_response import ServiceDefinitionCreateResponse
 from datadog_api_client.v2.model.service_definitions_create_request import ServiceDefinitionsCreateRequest
+from datadog_api_client.v2.model.service_definition_v2_dot2 import ServiceDefinitionV2Dot2
 from datadog_api_client.v2.model.service_definition_v2_dot1 import ServiceDefinitionV2Dot1
 from datadog_api_client.v2.model.service_definition_v2 import ServiceDefinitionV2
 from datadog_api_client.v2.model.service_definition_get_response import ServiceDefinitionGetResponse
@@ -139,7 +140,9 @@ class ServiceDefinitionApi:
 
     def create_or_update_service_definitions(
         self,
-        body: Union[ServiceDefinitionsCreateRequest, ServiceDefinitionV2Dot1, ServiceDefinitionV2, str],
+        body: Union[
+            ServiceDefinitionsCreateRequest, ServiceDefinitionV2Dot2, ServiceDefinitionV2Dot1, ServiceDefinitionV2, str
+        ],
     ) -> ServiceDefinitionCreateResponse:
         """Create or update service definition.
 

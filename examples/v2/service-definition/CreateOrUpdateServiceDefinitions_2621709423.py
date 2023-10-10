@@ -1,5 +1,5 @@
 """
-Create or update service definition returns "CREATED" response
+Create or update service definition using schema v2-2 returns "CREATED" response
 """
 
 from datadog_api_client import ApiClient, Configuration
@@ -14,17 +14,15 @@ from datadog_api_client.v2.model.service_definition_v2_dot2_pagerduty import Ser
 from datadog_api_client.v2.model.service_definition_v2_dot2_version import ServiceDefinitionV2Dot2Version
 
 body = ServiceDefinitionV2Dot2(
-    application="my-app",
     contacts=[
         ServiceDefinitionV2Dot2Contact(
-            contact="https://teams.microsoft.com/myteam",
-            name="My team channel",
-            type="slack",
+            contact="contact@datadoghq.com",
+            name="Team Email",
+            type="email",
         ),
     ],
-    dd_service="my-service",
-    description="My service description",
-    extensions=dict([("myorg/extension", "extensionValue")]),
+    dd_service="service-exampleservicedefinition",
+    extensions=dict([("myorgextension", "extensionvalue")]),
     integrations=ServiceDefinitionV2Dot2Integrations(
         opsgenie=ServiceDefinitionV2Dot2Opsgenie(
             region=ServiceDefinitionV2Dot2OpsgenieRegion.US,
@@ -34,33 +32,31 @@ body = ServiceDefinitionV2Dot2(
             service_url="https://my-org.pagerduty.com/service-directory/PMyService",
         ),
     ),
-    langauges=[
-        "dotnet",
-        "go",
-        "java",
-        "js",
-        "php",
-        "python",
-        "ruby",
-        "c++",
-    ],
-    lifecycle="sandbox",
     links=[
         ServiceDefinitionV2Dot2Link(
             name="Runbook",
-            provider="Github",
             type="runbook",
+            url="https://my-runbook",
+        ),
+        ServiceDefinitionV2Dot2Link(
+            name="Source Code",
+            type="repo",
+            provider="GitHub",
+            url="https://github.com/DataDog/schema",
+        ),
+        ServiceDefinitionV2Dot2Link(
+            name="Architecture",
+            type="doc",
+            provider="Gigoogle drivetHub",
             url="https://my-runbook",
         ),
     ],
     schema_version=ServiceDefinitionV2Dot2Version.V2_2,
-    service_type="web",
     tags=[
         "my:tag",
         "service:tag",
     ],
     team="my-team",
-    tier="High",
 )
 
 configuration = Configuration()

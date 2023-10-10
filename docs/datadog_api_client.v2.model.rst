@@ -6875,6 +6875,55 @@ service\_definition\_v2\_dot1\_slack\_type
    :members:
    :show-inheritance:
 
+service\_definition\_v2\_dot2
+-----------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_definition_v2_dot2
+   :members:
+   :show-inheritance:
+
+service\_definition\_v2\_dot2\_contact
+--------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_definition_v2_dot2_contact
+   :members:
+   :show-inheritance:
+
+service\_definition\_v2\_dot2\_integrations
+-------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_definition_v2_dot2_integrations
+   :members:
+   :show-inheritance:
+
+service\_definition\_v2\_dot2\_link
+-----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_definition_v2_dot2_link
+   :members:
+   :show-inheritance:
+
+service\_definition\_v2\_dot2\_opsgenie
+---------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_definition_v2_dot2_opsgenie
+   :members:
+   :show-inheritance:
+
+service\_definition\_v2\_dot2\_opsgenie\_region
+-----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_definition_v2_dot2_opsgenie_region
+   :members:
+   :show-inheritance:
+
+service\_definition\_v2\_dot2\_pagerduty
+----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_definition_v2_dot2_pagerduty
+   :members:
+   :show-inheritance:
+
 service\_definition\_v2\_email
 ------------------------------
 
