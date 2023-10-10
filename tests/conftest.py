@@ -12,16 +12,6 @@ tracer = None
 try:
     from ddtrace import patch, tracer
 
-    if RECORD != "none":
-        from ddtrace.internal.writer import AgentWriter
-
-        writer = AgentWriter(
-            tracer._writer.agent_url,
-            sync_mode=True,
-            priority_sampler=tracer._priority_sampler,
-        )
-        tracer.configure(writer)
-
     patch(urllib3=True)
 
     from pytest import hookimpl
