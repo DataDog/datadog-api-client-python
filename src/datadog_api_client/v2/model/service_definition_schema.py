@@ -71,6 +71,12 @@ class ServiceDefinitionSchema(ModelComposed):
 
         :param tier: Importance of the service.
         :type tier: str, optional
+
+        :param langauges: The service's programming language. Datadog recognizes the following languages: `dotnet`, `go`, `java`, `js`, `php`, `python`, `ruby`, and `c++`.
+        :type langauges: [str], optional
+
+        :param service_type: The type of service. Datadog recognizes the following service types: `database`, `cache`, `function`, `web`, `browser`, and `mobile`.
+        :type service_type: str, optional
         """
         super().__init__(kwargs)
 
@@ -86,11 +92,13 @@ class ServiceDefinitionSchema(ModelComposed):
         from datadog_api_client.v2.model.service_definition_v1 import ServiceDefinitionV1
         from datadog_api_client.v2.model.service_definition_v2 import ServiceDefinitionV2
         from datadog_api_client.v2.model.service_definition_v2_dot1 import ServiceDefinitionV2Dot1
+        from datadog_api_client.v2.model.service_definition_v2_dot2 import ServiceDefinitionV2Dot2
 
         return {
             "oneOf": [
                 ServiceDefinitionV1,
                 ServiceDefinitionV2,
                 ServiceDefinitionV2Dot1,
+                ServiceDefinitionV2Dot2,
             ],
         }

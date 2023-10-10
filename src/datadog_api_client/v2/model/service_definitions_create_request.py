@@ -19,7 +19,7 @@ class ServiceDefinitionsCreateRequest(ModelComposed):
         :type application: str, optional
 
         :param contacts: A list of contacts related to the services.
-        :type contacts: [ServiceDefinitionV2Dot1Contact], optional
+        :type contacts: [ServiceDefinitionV2Dot2Contact], optional
 
         :param dd_service: Unique identifier of the service. Must be unique across all services and is used to match with a service in Datadog.
         :type dd_service: str
@@ -27,20 +27,26 @@ class ServiceDefinitionsCreateRequest(ModelComposed):
         :param description: A short description of the service.
         :type description: str, optional
 
-        :param extensions: Extensions to v2.1 schema.
+        :param extensions: Extensions to v2.2 schema.
         :type extensions: {str: (bool, date, datetime, dict, float, int, list, str, none_type,)}, optional
 
         :param integrations: Third party integrations that Datadog supports.
-        :type integrations: ServiceDefinitionV2Dot1Integrations, optional
+        :type integrations: ServiceDefinitionV2Dot2Integrations, optional
+
+        :param langauges: The service's programming language. Datadog recognizes the following languages: `dotnet`, `go`, `java`, `js`, `php`, `python`, `ruby`, and `c++`.
+        :type langauges: [str], optional
 
         :param lifecycle: The current life cycle phase of the service.
         :type lifecycle: str, optional
 
         :param links: A list of links related to the services.
-        :type links: [ServiceDefinitionV2Dot1Link], optional
+        :type links: [ServiceDefinitionV2Dot2Link], optional
 
         :param schema_version: Schema version being used.
-        :type schema_version: ServiceDefinitionV2Dot1Version
+        :type schema_version: ServiceDefinitionV2Dot2Version
+
+        :param service_type: The type of service. Datadog recognizes the following service types: `database`, `cache`, `function`, `web`, `browser`, and `mobile`.
+        :type service_type: str, optional
 
         :param tags: A set of custom tags.
         :type tags: [str], optional
@@ -71,11 +77,13 @@ class ServiceDefinitionsCreateRequest(ModelComposed):
         # code would be run when this module is imported, and these composed
         # classes don't exist yet because their module has not finished
         # loading
+        from datadog_api_client.v2.model.service_definition_v2_dot2 import ServiceDefinitionV2Dot2
         from datadog_api_client.v2.model.service_definition_v2_dot1 import ServiceDefinitionV2Dot1
         from datadog_api_client.v2.model.service_definition_v2 import ServiceDefinitionV2
 
         return {
             "oneOf": [
+                ServiceDefinitionV2Dot2,
                 ServiceDefinitionV2Dot1,
                 ServiceDefinitionV2,
                 str,

@@ -16,7 +16,7 @@ class ServiceDefinitionSchemaVersions(ModelSimple):
     """
     Schema versions
 
-    :param value: Must be one of ["v1", "v2", "v2.1"].
+    :param value: Must be one of ["v1", "v2", "v2.1", "v2.2"].
     :type value: str
     """
 
@@ -24,10 +24,12 @@ class ServiceDefinitionSchemaVersions(ModelSimple):
         "v1",
         "v2",
         "v2.1",
+        "v2.2",
     }
     V1: ClassVar["ServiceDefinitionSchemaVersions"]
     V2: ClassVar["ServiceDefinitionSchemaVersions"]
     V2_1: ClassVar["ServiceDefinitionSchemaVersions"]
+    V2_2: ClassVar["ServiceDefinitionSchemaVersions"]
 
     @cached_property
     def openapi_types(_):
@@ -39,3 +41,4 @@ class ServiceDefinitionSchemaVersions(ModelSimple):
 ServiceDefinitionSchemaVersions.V1 = ServiceDefinitionSchemaVersions("v1")
 ServiceDefinitionSchemaVersions.V2 = ServiceDefinitionSchemaVersions("v2")
 ServiceDefinitionSchemaVersions.V2_1 = ServiceDefinitionSchemaVersions("v2.1")
+ServiceDefinitionSchemaVersions.V2_2 = ServiceDefinitionSchemaVersions("v2.2")

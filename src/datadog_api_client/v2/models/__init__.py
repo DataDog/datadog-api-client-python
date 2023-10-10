@@ -1204,6 +1204,14 @@ from datadog_api_client.v2.model.service_definition_v2_dot1_pagerduty import Ser
 from datadog_api_client.v2.model.service_definition_v2_dot1_slack import ServiceDefinitionV2Dot1Slack
 from datadog_api_client.v2.model.service_definition_v2_dot1_slack_type import ServiceDefinitionV2Dot1SlackType
 from datadog_api_client.v2.model.service_definition_v2_dot1_version import ServiceDefinitionV2Dot1Version
+from datadog_api_client.v2.model.service_definition_v2_dot2 import ServiceDefinitionV2Dot2
+from datadog_api_client.v2.model.service_definition_v2_dot2_contact import ServiceDefinitionV2Dot2Contact
+from datadog_api_client.v2.model.service_definition_v2_dot2_integrations import ServiceDefinitionV2Dot2Integrations
+from datadog_api_client.v2.model.service_definition_v2_dot2_link import ServiceDefinitionV2Dot2Link
+from datadog_api_client.v2.model.service_definition_v2_dot2_opsgenie import ServiceDefinitionV2Dot2Opsgenie
+from datadog_api_client.v2.model.service_definition_v2_dot2_opsgenie_region import ServiceDefinitionV2Dot2OpsgenieRegion
+from datadog_api_client.v2.model.service_definition_v2_dot2_pagerduty import ServiceDefinitionV2Dot2Pagerduty
+from datadog_api_client.v2.model.service_definition_v2_dot2_version import ServiceDefinitionV2Dot2Version
 from datadog_api_client.v2.model.service_definition_v2_email import ServiceDefinitionV2Email
 from datadog_api_client.v2.model.service_definition_v2_email_type import ServiceDefinitionV2EmailType
 from datadog_api_client.v2.model.service_definition_v2_integrations import ServiceDefinitionV2Integrations
@@ -2368,6 +2376,14 @@ __all__ = [
     "ServiceDefinitionV2Dot1Slack",
     "ServiceDefinitionV2Dot1SlackType",
     "ServiceDefinitionV2Dot1Version",
+    "ServiceDefinitionV2Dot2",
+    "ServiceDefinitionV2Dot2Contact",
+    "ServiceDefinitionV2Dot2Integrations",
+    "ServiceDefinitionV2Dot2Link",
+    "ServiceDefinitionV2Dot2Opsgenie",
+    "ServiceDefinitionV2Dot2OpsgenieRegion",
+    "ServiceDefinitionV2Dot2Pagerduty",
+    "ServiceDefinitionV2Dot2Version",
     "ServiceDefinitionV2Email",
     "ServiceDefinitionV2EmailType",
     "ServiceDefinitionV2Integrations",
