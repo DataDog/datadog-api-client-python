@@ -668,12 +668,16 @@ def expect_response_has_field(context, response_path, field):
 
 @then(parsers.parse('the response "{response_path}" has item with field "{key_path}" with value {value}'))
 def expect_array_contains_object(context, response_path, key_path, value):
+    from glom.core import PathAccessError
     response_value = glom(context["api_request"]["response"][0], response_path)
     test_value = json.loads(Template(value).render(**context))
     for response_item in response_value:
-        response_item_value = glom(response_item, key_path)
-        if response_item_value == test_value:
-            return
+        try:
+            response_item_value = glom(response_item, key_path)
+            if response_item_value == test_value:
+                return
+        except PathAccessError:
+            pass
     raise AssertionError(f'could not find key value pair in object array: "{key_path}": "{test_value}"')
 
 
