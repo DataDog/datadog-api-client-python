@@ -3,11 +3,19 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Any, Dict
+import collections
+from typing import Any, Dict, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
+from datadog_api_client.model_utils import (
+    set_attribute_from_path,
+    get_attribute_from_path,
+    UnsetType,
+    unset,
+)
 from datadog_api_client.v2.model.list_powerpacks_response import ListPowerpacksResponse
+from datadog_api_client.v2.model.powerpack_data import PowerpackData
 from datadog_api_client.v2.model.powerpack_response import PowerpackResponse
 from datadog_api_client.v2.model.powerpack import Powerpack
 
@@ -105,7 +113,21 @@ class PowerpackApi:
                 "http_method": "GET",
                 "version": "v2",
             },
-            params_map={},
+            params_map={
+                "page_limit": {
+                    "validation": {
+                        "inclusive_maximum": 1000,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "page[limit]",
+                    "location": "query",
+                },
+                "page_offset": {
+                    "openapi_types": (int,),
+                    "attribute": "page[offset]",
+                    "location": "query",
+                },
+            },
             headers_map={
                 "accept": ["application/json"],
             },
@@ -191,15 +213,65 @@ class PowerpackApi:
 
     def list_powerpacks(
         self,
+        *,
+        page_limit: Union[int, UnsetType] = unset,
+        page_offset: Union[int, UnsetType] = unset,
     ) -> ListPowerpacksResponse:
         """Get all powerpacks.
 
         Get a list of all powerpacks.
 
+        :param page_limit: Maximum number of powerpacks in the response.
+        :type page_limit: int, optional
+        :param page_offset: Specific offset to use as the beginning of the returned page.
+        :type page_offset: int, optional
         :rtype: ListPowerpacksResponse
         """
         kwargs: Dict[str, Any] = {}
+        if page_limit is not unset:
+            kwargs["page_limit"] = page_limit
+
+        if page_offset is not unset:
+            kwargs["page_offset"] = page_offset
+
         return self._list_powerpacks_endpoint.call_with_http_info(**kwargs)
+
+    def list_powerpacks_with_pagination(
+        self,
+        *,
+        page_limit: Union[int, UnsetType] = unset,
+        page_offset: Union[int, UnsetType] = unset,
+    ) -> collections.abc.Iterable[PowerpackData]:
+        """Get all powerpacks.
+
+        Provide a paginated version of :meth:`list_powerpacks`, returning all items.
+
+        :param page_limit: Maximum number of powerpacks in the response.
+        :type page_limit: int, optional
+        :param page_offset: Specific offset to use as the beginning of the returned page.
+        :type page_offset: int, optional
+
+        :return: A generator of paginated results.
+        :rtype: collections.abc.Iterable[PowerpackData]
+        """
+        kwargs: Dict[str, Any] = {}
+        if page_limit is not unset:
+            kwargs["page_limit"] = page_limit
+
+        if page_offset is not unset:
+            kwargs["page_offset"] = page_offset
+
+        local_page_size = get_attribute_from_path(kwargs, "page_limit", 25)
+        endpoint = self._list_powerpacks_endpoint
+        set_attribute_from_path(kwargs, "page_limit", local_page_size, endpoint.params_map)
+        pagination = {
+            "limit_value": local_page_size,
+            "results_path": "data",
+            "page_offset_param": "page_offset",
+            "endpoint": endpoint,
+            "kwargs": kwargs,
+        }
+        return endpoint.call_with_http_info_paginated(pagination)
 
     def update_powerpack(
         self,

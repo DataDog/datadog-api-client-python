@@ -1,8 +1,7 @@
 interactions:
 - request:
     body: '{"data":{"attributes":{"description":"Sample powerpack","group_widget":{"definition":{"layout_type":"ordered","show_title":true,"title":"Sample
-      Powerpack","type":"group","widgets":[{"definition":{"content":"test","type":"note"}}]},"layout":{"height":3,"width":12,"x":0,"y":0}},"name":"Sample
-      Powerpack","tags":["tag:sample"],"template_variables":[{"defaults":["*"],"name":"sample"}]},"type":"powerpack"}}'
+      Powerpack","type":"group","widgets":[{"definition":{"content":"test","type":"note"}}]},"layout":{"height":3,"width":12,"x":0,"y":0}},"name":"Test-Update_a_powerpack_returns_Bad_Request_response-1697039337","tags":["tag:sample"],"template_variables":[{"defaults":["*"],"name":"sample"}]},"type":"powerpack"}}'
     headers:
       accept:
       - application/json
@@ -12,10 +11,9 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/powerpacks
   response:
     body:
-      string: '{"data":{"type":"powerpack","id":"bc22abe4-6397-11ee-865e-da7ad0900002","attributes":{"name":"Sample
-        Powerpack","description":"Sample powerpack","group_widget":{"definition":{"layout_type":"ordered","show_title":true,"title":"Sample
-        Powerpack","type":"group","widgets":[{"definition":{"content":"test","type":"note"},"id":1043184765896296}]},"layout":{"height":3,"width":12,"x":0,"y":0}},"template_variables":[{"defaults":["*"],"name":"sample"}],"tags":["tag:sample"]},"relationships":{"author":{"data":{"type":"users","id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"}}}},"included":[{"type":"users","id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","attributes":{"name":"CI
-        Account","email":"team-intg-tools-libs-spam@datadoghq.com"}}]}
+      string: '{"data":{"type":"powerpack","id":"b030a42a-684d-11ee-ad9a-da7ad0900002","attributes":{"name":"Test-Update_a_powerpack_returns_Bad_Request_response-1697039337","description":"Sample
+        powerpack","group_widget":{"definition":{"layout_type":"ordered","show_title":true,"title":"Sample
+        Powerpack","type":"group","widgets":[{"definition":{"content":"test","type":"note"},"id":8452824404539211}]},"layout":{"height":3,"width":12,"x":0,"y":0}},"template_variables":[{"defaults":["*"],"name":"sample"}],"tags":["tag:sample"]},"relationships":{"author":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}}},"included":[{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0","attributes":{"name":null,"email":"frog@datadoghq.com"}}]}
 
         '
     headers:
@@ -33,7 +31,7 @@ interactions:
       content-type:
       - application/json
     method: PATCH
-    uri: https://api.datadoghq.com/api/v2/powerpacks/bc22abe4-6397-11ee-865e-da7ad0900002
+    uri: https://api.datadoghq.com/api/v2/powerpacks/b030a42a-684d-11ee-ad9a-da7ad0900002
   response:
     body:
       string: '{"errors":["Invalid group widget for powerpack. Error: ''group1'' is
@@ -51,7 +49,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/powerpacks/bc22abe4-6397-11ee-865e-da7ad0900002
+    uri: https://api.datadoghq.com/api/v2/powerpacks/b030a42a-684d-11ee-ad9a-da7ad0900002
   response:
     body:
       string: ''
