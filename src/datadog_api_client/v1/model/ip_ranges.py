@@ -17,6 +17,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.ip_prefixes_agents import IPPrefixesAgents
     from datadog_api_client.v1.model.ip_prefixes_api import IPPrefixesAPI
     from datadog_api_client.v1.model.ip_prefixes_apm import IPPrefixesAPM
+    from datadog_api_client.v1.model.ip_prefixes_global import IPPrefixesGlobal
     from datadog_api_client.v1.model.ip_prefixes_logs import IPPrefixesLogs
     from datadog_api_client.v1.model.ip_prefixes_orchestrator import IPPrefixesOrchestrator
     from datadog_api_client.v1.model.ip_prefixes_process import IPPrefixesProcess
@@ -34,6 +35,7 @@ class IPRanges(ModelNormal):
         from datadog_api_client.v1.model.ip_prefixes_agents import IPPrefixesAgents
         from datadog_api_client.v1.model.ip_prefixes_api import IPPrefixesAPI
         from datadog_api_client.v1.model.ip_prefixes_apm import IPPrefixesAPM
+        from datadog_api_client.v1.model.ip_prefixes_global import IPPrefixesGlobal
         from datadog_api_client.v1.model.ip_prefixes_logs import IPPrefixesLogs
         from datadog_api_client.v1.model.ip_prefixes_orchestrator import IPPrefixesOrchestrator
         from datadog_api_client.v1.model.ip_prefixes_process import IPPrefixesProcess
@@ -48,6 +50,7 @@ class IPRanges(ModelNormal):
             "agents": (IPPrefixesAgents,),
             "api": (IPPrefixesAPI,),
             "apm": (IPPrefixesAPM,),
+            "_global": (IPPrefixesGlobal,),
             "logs": (IPPrefixesLogs,),
             "modified": (str,),
             "orchestrator": (IPPrefixesOrchestrator,),
@@ -63,6 +66,7 @@ class IPRanges(ModelNormal):
         "agents": "agents",
         "api": "api",
         "apm": "apm",
+        "_global": "global",
         "logs": "logs",
         "modified": "modified",
         "orchestrator": "orchestrator",
@@ -79,6 +83,7 @@ class IPRanges(ModelNormal):
         agents: Union[IPPrefixesAgents, UnsetType] = unset,
         api: Union[IPPrefixesAPI, UnsetType] = unset,
         apm: Union[IPPrefixesAPM, UnsetType] = unset,
+        _global: Union[IPPrefixesGlobal, UnsetType] = unset,
         logs: Union[IPPrefixesLogs, UnsetType] = unset,
         modified: Union[str, UnsetType] = unset,
         orchestrator: Union[IPPrefixesOrchestrator, UnsetType] = unset,
@@ -101,6 +106,9 @@ class IPRanges(ModelNormal):
 
         :param apm: Available prefix information for the APM endpoints.
         :type apm: IPPrefixesAPM, optional
+
+        :param _global: Available prefix information for all Datadog endpoints.
+        :type _global: IPPrefixesGlobal, optional
 
         :param logs: Available prefix information for the Logs endpoints.
         :type logs: IPPrefixesLogs, optional
@@ -135,6 +143,8 @@ class IPRanges(ModelNormal):
             kwargs["api"] = api
         if apm is not unset:
             kwargs["apm"] = apm
+        if _global is not unset:
+            kwargs["_global"] = _global
         if logs is not unset:
             kwargs["logs"] = logs
         if modified is not unset:
