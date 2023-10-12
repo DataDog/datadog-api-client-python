@@ -1,0 +1,35 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/container_images
+  response:
+    body:
+      string: '{"data": [{"type": "container_image", "id": "test_id", "attributes":
+        {"name": "test_name", "short_image": "test_short_image", "image_tags": ["test_image_tags"],
+        "registry": "test_registry", "repository": "argo", "repo_digest": "test_repo_digest",
+        "sizes": [41802389], "published_at": "2021-05-19T19:33:53Z", "tags": ["test_tags"],
+        "container_count": 0, "os_names": [], "os_versions": [], "os_architectures":
+        [], "images_built_at": [], "sources": ["aws_ecr"], "image_flavors": []}},
+        {"type": "container_image", "id": "test_id", "attributes": {"name": "test_name",
+        "short_image": "test_short_image", "image_tags": ["test_image_tags"], "registry":
+        "test_registry", "repository": "argo", "repo_digest": "test_repo_digest",
+        "sizes": [41808952], "published_at": "2021-05-19T20:09:12Z", "tags": ["test_tags"],
+        "container_count": 0, "os_names": [], "os_versions": [], "os_architectures":
+        [], "images_built_at": [], "sources": ["aws_ecr"], "image_flavors": []}}],
+        "meta": {"pagination": {"cursor": "", "prev_cursor": null, "next_cursor":
+        "bmFtZTowMTM5MTA3MzM1MTIuZGtyLmVjci51cy1lYXN0LTEuYW1hem9uYXdzLmNvbS9hcmdvfGlkOjAxMzkxMDczMzUxMi5ka3IuZWNyLnVzLWVhc3QtMS5hbWF6b25hd3MuY29tL2FyZ29Ac2hhMjU2OjNlYWJjNzMwY2RiOTBiMWQ1N2QwNTkyNzJkZWQ3OWQ5NzZkNzk1ZTk0NzM0M2Q0NWFjMjA5MGViZjVmY2I2MTk=",
+        "limit": 2, "type": "cursor_limit", "total": 5252447}}, "links": {"self":
+        "https://api.datadoghq.com/api/v2/container_images", "last": null, "next":
+        "https://api.datadoghq.com/api/v2/container_images?page[cursor]=bmFtZTowMTM5MTA3MzM1MTIuZGtyLmVjci51cy1lYXN0LTEuYW1hem9uYXdzLmNvbS9hcmdvfGlkOjAxMzkxMDczMzUxMi5ka3IuZWNyLnVzLWVhc3QtMS5hbWF6b25hd3MuY29tL2FyZ29Ac2hhMjU2OjNlYWJjNzMwY2RiOTBiMWQ1N2QwNTkyNzJkZWQ3OWQ5NzZkNzk1ZTk0NzM0M2Q0NWFjMjA5MGViZjVmY2I2MTk=",
+        "prev": null, "first": "https://api.datadoghq.com/api/v2/container_images"}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

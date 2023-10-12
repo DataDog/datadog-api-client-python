@@ -221,6 +221,25 @@ from datadog_api_client.v2.model.confluent_resource_response_attributes import C
 from datadog_api_client.v2.model.confluent_resource_response_data import ConfluentResourceResponseData
 from datadog_api_client.v2.model.confluent_resource_type import ConfluentResourceType
 from datadog_api_client.v2.model.confluent_resources_response import ConfluentResourcesResponse
+from datadog_api_client.v2.model.container_image import ContainerImage
+from datadog_api_client.v2.model.container_image_attributes import ContainerImageAttributes
+from datadog_api_client.v2.model.container_image_flavor import ContainerImageFlavor
+from datadog_api_client.v2.model.container_image_group import ContainerImageGroup
+from datadog_api_client.v2.model.container_image_group_attributes import ContainerImageGroupAttributes
+from datadog_api_client.v2.model.container_image_group_images_relationships_link import (
+    ContainerImageGroupImagesRelationshipsLink,
+)
+from datadog_api_client.v2.model.container_image_group_relationships import ContainerImageGroupRelationships
+from datadog_api_client.v2.model.container_image_group_relationships_links import ContainerImageGroupRelationshipsLinks
+from datadog_api_client.v2.model.container_image_group_type import ContainerImageGroupType
+from datadog_api_client.v2.model.container_image_item import ContainerImageItem
+from datadog_api_client.v2.model.container_image_meta import ContainerImageMeta
+from datadog_api_client.v2.model.container_image_meta_page import ContainerImageMetaPage
+from datadog_api_client.v2.model.container_image_meta_page_type import ContainerImageMetaPageType
+from datadog_api_client.v2.model.container_image_type import ContainerImageType
+from datadog_api_client.v2.model.container_image_vulnerabilities import ContainerImageVulnerabilities
+from datadog_api_client.v2.model.container_images_response import ContainerImagesResponse
+from datadog_api_client.v2.model.container_images_response_links import ContainerImagesResponseLinks
 from datadog_api_client.v2.model.content_encoding import ContentEncoding
 from datadog_api_client.v2.model.cost_by_org import CostByOrg
 from datadog_api_client.v2.model.cost_by_org_attributes import CostByOrgAttributes
@@ -1569,6 +1588,23 @@ __all__ = [
     "ConfluentResourceResponseData",
     "ConfluentResourceType",
     "ConfluentResourcesResponse",
+    "ContainerImage",
+    "ContainerImageAttributes",
+    "ContainerImageFlavor",
+    "ContainerImageGroup",
+    "ContainerImageGroupAttributes",
+    "ContainerImageGroupImagesRelationshipsLink",
+    "ContainerImageGroupRelationships",
+    "ContainerImageGroupRelationshipsLinks",
+    "ContainerImageGroupType",
+    "ContainerImageItem",
+    "ContainerImageMeta",
+    "ContainerImageMetaPage",
+    "ContainerImageMetaPageType",
+    "ContainerImageType",
+    "ContainerImageVulnerabilities",
+    "ContainerImagesResponse",
+    "ContainerImagesResponseLinks",
     "ContentEncoding",
     "CostByOrg",
     "CostByOrgAttributes",

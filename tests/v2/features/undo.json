@@ -231,6 +231,12 @@
       "type": "safe"
     }
   },
+  "ListContainerImages": {
+    "tag": "Container Images",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListCurrentUserApplicationKeys": {
     "tag": "Key Management",
     "undo": {

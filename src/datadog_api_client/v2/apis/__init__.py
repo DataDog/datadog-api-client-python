@@ -6,6 +6,7 @@ from datadog_api_client.v2.api.ci_visibility_tests_api import CIVisibilityTestsA
 from datadog_api_client.v2.api.cloud_workload_security_api import CloudWorkloadSecurityApi
 from datadog_api_client.v2.api.cloudflare_integration_api import CloudflareIntegrationApi
 from datadog_api_client.v2.api.confluent_cloud_api import ConfluentCloudApi
+from datadog_api_client.v2.api.container_images_api import ContainerImagesApi
 from datadog_api_client.v2.api.dashboard_lists_api import DashboardListsApi
 from datadog_api_client.v2.api.downtimes_api import DowntimesApi
 from datadog_api_client.v2.api.events_api import EventsApi
@@ -49,6 +50,7 @@ __all__ = [
     "CloudWorkloadSecurityApi",
     "CloudflareIntegrationApi",
     "ConfluentCloudApi",
+    "ContainerImagesApi",
     "DashboardListsApi",
     "DowntimesApi",
     "EventsApi",

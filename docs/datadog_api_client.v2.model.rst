@@ -1240,6 +1240,125 @@ confluent\_resources\_response
    :members:
    :show-inheritance:
 
+container\_image
+----------------
+
+.. automodule:: datadog_api_client.v2.model.container_image
+   :members:
+   :show-inheritance:
+
+container\_image\_attributes
+----------------------------
+
+.. automodule:: datadog_api_client.v2.model.container_image_attributes
+   :members:
+   :show-inheritance:
+
+container\_image\_flavor
+------------------------
+
+.. automodule:: datadog_api_client.v2.model.container_image_flavor
+   :members:
+   :show-inheritance:
+
+container\_image\_group
+-----------------------
+
+.. automodule:: datadog_api_client.v2.model.container_image_group
+   :members:
+   :show-inheritance:
+
+container\_image\_group\_attributes
+-----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.container_image_group_attributes
+   :members:
+   :show-inheritance:
+
+container\_image\_group\_images\_relationships\_link
+----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.container_image_group_images_relationships_link
+   :members:
+   :show-inheritance:
+
+container\_image\_group\_relationships
+--------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.container_image_group_relationships
+   :members:
+   :show-inheritance:
+
+container\_image\_group\_relationships\_links
+---------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.container_image_group_relationships_links
+   :members:
+   :show-inheritance:
+
+container\_image\_group\_type
+-----------------------------
+
+.. automodule:: datadog_api_client.v2.model.container_image_group_type
+   :members:
+   :show-inheritance:
+
+container\_image\_item
+----------------------
+
+.. automodule:: datadog_api_client.v2.model.container_image_item
+   :members:
+   :show-inheritance:
+
+container\_image\_meta
+----------------------
+
+.. automodule:: datadog_api_client.v2.model.container_image_meta
+   :members:
+   :show-inheritance:
+
+container\_image\_meta\_page
+----------------------------
+
+.. automodule:: datadog_api_client.v2.model.container_image_meta_page
+   :members:
+   :show-inheritance:
+
+container\_image\_meta\_page\_type
+----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.container_image_meta_page_type
+   :members:
+   :show-inheritance:
+
+container\_image\_type
+----------------------
+
+.. automodule:: datadog_api_client.v2.model.container_image_type
+   :members:
+   :show-inheritance:
+
+container\_image\_vulnerabilities
+---------------------------------
+
+.. automodule:: datadog_api_client.v2.model.container_image_vulnerabilities
+   :members:
+   :show-inheritance:
+
+container\_images\_response
+---------------------------
+
+.. automodule:: datadog_api_client.v2.model.container_images_response
+   :members:
+   :show-inheritance:
+
+container\_images\_response\_links
+----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.container_images_response_links
+   :members:
+   :show-inheritance:
+
 content\_encoding
 -----------------
 

@@ -1,0 +1,62 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/container_images?page%5Bsize%5D=2
+  response:
+    body:
+      string: '{"data": [{"type": "container_image", "id": "test_id", "attributes":
+        {"name": "test_name", "short_image": "test_short_image", "image_tags": ["test_image_tags"],
+        "registry": "test_registry", "repository": "argo", "repo_digest": "test_repo_digest",
+        "sizes": [41802389], "published_at": "2021-05-19T19:33:53Z", "tags": ["test_tags"],
+        "container_count": 0, "os_names": [], "os_versions": [], "os_architectures":
+        [], "images_built_at": [], "sources": ["aws_ecr"], "image_flavors": []}},
+        {"type": "container_image", "id": "test_id", "attributes": {"name": "test_name",
+        "short_image": "test_short_image", "image_tags": ["test_image_tags"], "registry":
+        "test_registry", "repository": "argo", "repo_digest": "test_repo_digest",
+        "sizes": [41808952], "published_at": "2021-05-19T20:09:12Z", "tags": ["test_tags"],
+        "container_count": 0, "os_names": [], "os_versions": [], "os_architectures":
+        [], "images_built_at": [], "sources": ["aws_ecr"], "image_flavors": []}}],
+        "meta": {"pagination": {"cursor": "", "prev_cursor": null, "next_cursor":
+        "bmFtZTowMTM5MTA3MzM1MTIuZGtyLmVjci51cy1lYXN0LTEuYW1hem9uYXdzLmNvbS9hcmdvfGlkOjAxMzkxMDczMzUxMi5ka3IuZWNyLnVzLWVhc3QtMS5hbWF6b25hd3MuY29tL2FyZ29Ac2hhMjU2OjNlYWJjNzMwY2RiOTBiMWQ1N2QwNTkyNzJkZWQ3OWQ5NzZkNzk1ZTk0NzM0M2Q0NWFjMjA5MGViZjVmY2I2MTk=",
+        "limit": 2, "type": "cursor_limit", "total": 5184864}}, "links": {"self":
+        "https://api.datadoghq.com/api/v2/container_images?page%5Bsize%5D=2", "last":
+        null, "next": "https://api.datadoghq.com/api/v2/container_images?page[cursor]=bmFtZTowMTM5MTA3MzM1MTIuZGtyLmVjci51cy1lYXN0LTEuYW1hem9uYXdzLmNvbS9hcmdvfGlkOjAxMzkxMDczMzUxMi5ka3IuZWNyLnVzLWVhc3QtMS5hbWF6b25hd3MuY29tL2FyZ29Ac2hhMjU2OjNlYWJjNzMwY2RiOTBiMWQ1N2QwNTkyNzJkZWQ3OWQ5NzZkNzk1ZTk0NzM0M2Q0NWFjMjA5MGViZjVmY2I2MTk=&page[size]=2",
+        "prev": null, "first": "https://api.datadoghq.com/api/v2/container_images?page[size]=2"}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/container_images?page%5Bsize%5D=2&page%5Bcursor%5D=bmFtZTowMTM5MTA3MzM1MTIuZGtyLmVjci51cy1lYXN0LTEuYW1hem9uYXdzLmNvbS9hcmdvfGlkOjAxMzkxMDczMzUxMi5ka3IuZWNyLnVzLWVhc3QtMS5hbWF6b25hd3MuY29tL2FyZ29Ac2hhMjU2OjNlYWJjNzMwY2RiOTBiMWQ1N2QwNTkyNzJkZWQ3OWQ5NzZkNzk1ZTk0NzM0M2Q0NWFjMjA5MGViZjVmY2I2MTk%3D
+  response:
+    body:
+      string: '{"data": [{"type": "container_image", "id": "test_id", "attributes":
+        {"name": "test_name", "short_image": "test_short_image", "image_tags": ["test_image_tags"],
+        "registry": "test_registry", "repository": "argo", "repo_digest": "test_repo_digest",
+        "sizes": [41808952], "published_at": "2021-05-19T19:33:23Z", "tags": ["test_tags"],
+        "container_count": 0, "os_names": [], "os_versions": [], "os_architectures":
+        [], "images_built_at": [], "sources": ["aws_ecr"], "image_flavors": []}}],
+        "meta": {"pagination": {"cursor": "bmFtZTowMTM5MTA3MzM1MTIuZGtyLmVjci51cy1lYXN0LTEuYW1hem9uYXdzLmNvbS9hcmdvfGlkOjAxMzkxMDczMzUxMi5ka3IuZWNyLnVzLWVhc3QtMS5hbWF6b25hd3MuY29tL2FyZ29Ac2hhMjU2OjNlYWJjNzMwY2RiOTBiMWQ1N2QwNTkyNzJkZWQ3OWQ5NzZkNzk1ZTk0NzM0M2Q0NWFjMjA5MGViZjVmY2I2MTk=",
+        "prev_cursor": null, "next_cursor": "bmFtZTowMTM5MTA3MzM1MTIuZGtyLmVjci51cy1lYXN0LTEuYW1hem9uYXdzLmNvbS9hcmdvfGlkOjAxMzkxMDczMzUxMi5ka3IuZWNyLnVzLWVhc3QtMS5hbWF6b25hd3MuY29tL2FyZ29Ac2hhMjU2OmZmMTUxZWYyNDZkN2I0ZDZiOGZlMzE5MjNiMjk4ZDg0ZThmMjA2MzI3MDFiYmI2ZWQ5N2ZjYzU4YTAxNTBmODA=",
+        "limit": 2, "type": "cursor_limit", "total": 5185322}}, "links": {"self":
+        "https://api.datadoghq.com/api/v2/container_images?page%5Bsize%5D=2&page%5Bcursor%5D=bmFtZTowMTM5MTA3MzM1MTIuZGtyLmVjci51cy1lYXN0LTEuYW1hem9uYXdzLmNvbS9hcmdvfGlkOjAxMzkxMDczMzUxMi5ka3IuZWNyLnVzLWVhc3QtMS5hbWF6b25hd3MuY29tL2FyZ29Ac2hhMjU2OjNlYWJjNzMwY2RiOTBiMWQ1N2QwNTkyNzJkZWQ3OWQ5NzZkNzk1ZTk0NzM0M2Q0NWFjMjA5MGViZjVmY2I2MTk%3D",
+        "last": null, "next": "https://api.datadoghq.com/api/v2/container_images?page[cursor]=bmFtZTowMTM5MTA3MzM1MTIuZGtyLmVjci51cy1lYXN0LTEuYW1hem9uYXdzLmNvbS9hcmdvfGlkOjAxMzkxMDczMzUxMi5ka3IuZWNyLnVzLWVhc3QtMS5hbWF6b25hd3MuY29tL2FyZ29Ac2hhMjU2OmZmMTUxZWYyNDZkN2I0ZDZiOGZlMzE5MjNiMjk4ZDg0ZThmMjA2MzI3MDFiYmI2ZWQ5N2ZjYzU4YTAxNTBmODA=&page[size]=2",
+        "prev": null, "first": "https://api.datadoghq.com/api/v2/container_images?page[size]=2"}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1
