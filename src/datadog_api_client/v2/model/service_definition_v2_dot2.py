@@ -21,6 +21,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.service_definition_v2_dot2_integrations import ServiceDefinitionV2Dot2Integrations
     from datadog_api_client.v2.model.service_definition_v2_dot2_link import ServiceDefinitionV2Dot2Link
     from datadog_api_client.v2.model.service_definition_v2_dot2_version import ServiceDefinitionV2Dot2Version
+    from datadog_api_client.v2.model.service_definition_v2_dot2_type import ServiceDefinitionV2Dot2Type
 
 
 class ServiceDefinitionV2Dot2(ModelNormal):
@@ -32,6 +33,7 @@ class ServiceDefinitionV2Dot2(ModelNormal):
         )
         from datadog_api_client.v2.model.service_definition_v2_dot2_link import ServiceDefinitionV2Dot2Link
         from datadog_api_client.v2.model.service_definition_v2_dot2_version import ServiceDefinitionV2Dot2Version
+        from datadog_api_client.v2.model.service_definition_v2_dot2_type import ServiceDefinitionV2Dot2Type
 
         return {
             "application": (str,),
@@ -58,10 +60,10 @@ class ServiceDefinitionV2Dot2(ModelNormal):
             "lifecycle": (str,),
             "links": ([ServiceDefinitionV2Dot2Link],),
             "schema_version": (ServiceDefinitionV2Dot2Version,),
-            "service_type": (str,),
             "tags": ([str],),
             "team": (str,),
             "tier": (str,),
+            "type": (ServiceDefinitionV2Dot2Type,),
         }
 
     attribute_map = {
@@ -75,10 +77,10 @@ class ServiceDefinitionV2Dot2(ModelNormal):
         "lifecycle": "lifecycle",
         "links": "links",
         "schema_version": "schema-version",
-        "service_type": "service-type",
         "tags": "tags",
         "team": "team",
         "tier": "tier",
+        "type": "type",
     }
 
     def __init__(
@@ -93,10 +95,10 @@ class ServiceDefinitionV2Dot2(ModelNormal):
         langauges: Union[List[str], UnsetType] = unset,
         lifecycle: Union[str, UnsetType] = unset,
         links: Union[List[ServiceDefinitionV2Dot2Link], UnsetType] = unset,
-        service_type: Union[str, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
         team: Union[str, UnsetType] = unset,
         tier: Union[str, UnsetType] = unset,
+        type: Union[ServiceDefinitionV2Dot2Type, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -132,9 +134,6 @@ class ServiceDefinitionV2Dot2(ModelNormal):
         :param schema_version: Schema version being used.
         :type schema_version: ServiceDefinitionV2Dot2Version
 
-        :param service_type: The type of service. Datadog recognizes the following service types: ``database`` , ``cache`` , ``function`` , ``web`` , ``browser`` , and ``mobile``.
-        :type service_type: str, optional
-
         :param tags: A set of custom tags.
         :type tags: [str], optional
 
@@ -143,6 +142,9 @@ class ServiceDefinitionV2Dot2(ModelNormal):
 
         :param tier: Importance of the service.
         :type tier: str, optional
+
+        :param type: The type of service.
+        :type type: ServiceDefinitionV2Dot2Type, optional
         """
         if application is not unset:
             kwargs["application"] = application
@@ -160,14 +162,14 @@ class ServiceDefinitionV2Dot2(ModelNormal):
             kwargs["lifecycle"] = lifecycle
         if links is not unset:
             kwargs["links"] = links
-        if service_type is not unset:
-            kwargs["service_type"] = service_type
         if tags is not unset:
             kwargs["tags"] = tags
         if team is not unset:
             kwargs["team"] = team
         if tier is not unset:
             kwargs["tier"] = tier
+        if type is not unset:
+            kwargs["type"] = type
         super().__init__(kwargs)
 
         self_.dd_service = dd_service

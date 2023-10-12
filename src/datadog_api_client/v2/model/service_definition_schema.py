@@ -75,8 +75,8 @@ class ServiceDefinitionSchema(ModelComposed):
         :param langauges: The service's programming language. Datadog recognizes the following languages: `dotnet`, `go`, `java`, `js`, `php`, `python`, `ruby`, and `c++`.
         :type langauges: [str], optional
 
-        :param service_type: The type of service. Datadog recognizes the following service types: `database`, `cache`, `function`, `web`, `browser`, and `mobile`.
-        :type service_type: str, optional
+        :param type: The type of service.
+        :type type: ServiceDefinitionV2Dot2Type, optional
         """
         super().__init__(kwargs)
 
