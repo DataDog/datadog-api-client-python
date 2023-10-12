@@ -15836,11 +15836,6 @@ components:
           type: array
         schema-version:
           $ref: '#/components/schemas/ServiceDefinitionV2Dot2Version'
-        service-type:
-          description: 'The type of service. Datadog recognizes the following service
-            types: `database`, `cache`, `function`, `web`, `browser`, and `mobile`.'
-          example: web
-          type: string
         tags:
           description: A set of custom tags.
           example:
@@ -15858,6 +15853,8 @@ components:
           description: Importance of the service.
           example: High
           type: string
+        type:
+          $ref: '#/components/schemas/ServiceDefinitionV2Dot2Type'
       required:
       - schema-version
       - dd-service
@@ -15945,6 +15942,26 @@ components:
           example: https://my-org.pagerduty.com/service-directory/PMyService
           type: string
       type: object
+    ServiceDefinitionV2Dot2Type:
+      description: The type of service.
+      enum:
+      - web
+      - db
+      - cache
+      - function
+      - browser
+      - mobile
+      - custom
+      example: web
+      type: string
+      x-enum-varnames:
+      - WEB
+      - DB
+      - CACHE
+      - FUNCTION
+      - BROSWER
+      - MOBILE
+      - CUSTOM
     ServiceDefinitionV2Dot2Version:
       default: v2.2
       description: Schema version being used.

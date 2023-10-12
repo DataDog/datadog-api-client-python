@@ -7043,6 +7043,13 @@ service\_definition\_v2\_dot2\_pagerduty
    :members:
    :show-inheritance:
 
+service\_definition\_v2\_dot2\_type
+-----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_definition_v2_dot2_type
+   :members:
+   :show-inheritance:
+
 service\_definition\_v2\_email
 ------------------------------
 

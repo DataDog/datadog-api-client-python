@@ -45,9 +45,6 @@ class ServiceDefinitionsCreateRequest(ModelComposed):
         :param schema_version: Schema version being used.
         :type schema_version: ServiceDefinitionV2Dot2Version
 
-        :param service_type: The type of service. Datadog recognizes the following service types: `database`, `cache`, `function`, `web`, `browser`, and `mobile`.
-        :type service_type: str, optional
-
         :param tags: A set of custom tags.
         :type tags: [str], optional
 
@@ -56,6 +53,9 @@ class ServiceDefinitionsCreateRequest(ModelComposed):
 
         :param tier: Importance of the service.
         :type tier: str, optional
+
+        :param type: The type of service.
+        :type type: ServiceDefinitionV2Dot2Type, optional
 
         :param dd_team: Experimental feature. A Team handle that matches a Team in the Datadog Teams product.
         :type dd_team: str, optional
