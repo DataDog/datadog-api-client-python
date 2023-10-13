@@ -236,7 +236,6 @@ class Configuration:
         # Keep track of unstable operations
         self.unstable_operations = _UnstableOperations(
             {
-                "v2.create_ci_app_pipeline_event": False,
                 "v2.list_container_images": False,
                 "v2.list_events": False,
                 "v2.search_events": False,
