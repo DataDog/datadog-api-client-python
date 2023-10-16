@@ -3,7 +3,6 @@
 ## 2.18.0 / 2023-10-16
 
 ### Fixed
-* Pin `setuptools_scm` to < 8 by @skarimo in https://github.com/DataDog/datadog-api-client-python/pull/1674
 * Fix schema for query scalar API by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1668
 * Remove the application key from CreateCIAppPipelineEvent endpoint by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1679
 * Document 403 on team endpoints by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1687
