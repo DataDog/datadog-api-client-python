@@ -1,5 +1,38 @@
 # Changelog
 
+## 2.18.0 / 2023-10-16
+
+### Fixed
+* Fix schema for query scalar API by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1668
+* Remove the application key from CreateCIAppPipelineEvent endpoint by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1679
+* Document 403 on team endpoints by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1687
+* Pass all keyword/ arguments to avoid panics with `setuptools_scm` > 8 by @skarimo in https://github.com/DataDog/datadog-api-client-python/pull/1702
+* Powerpack improve group_widget object by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1704
+* Remove escalation message default by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1720
+### Added
+* Add split graph widget to dashboard schema  by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1644
+* Update public docs for CSM Enterprise and CSPM by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1664
+* Add serverless apps to usage and usage attribution by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1685
+* Add Network Device Monitoring Netflow to usage by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1694
+* Add Powerpacks endpoints to public api spec by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1665
+* Add account-tags to GCP Service Account Attributes by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1678
+* Add powerpack widget to dashboard schema by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1697
+* Add custom schedule to monitor scheduling options by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1681
+* Service Catalog support service definition schema v2.2 by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1709
+* Powerpack pagination and test fixes by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1716
+* Add support for container images endpoint by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1714
+* Add global IP ranges to spec by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1349
+### Changed
+* Add APM retention filter api documentation by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1653
+* Update request requirements of CI Visibility public pipelines write API by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1689
+* Add get APM retention filter endpoint by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1692
+* Remove beta label notice on create pipeline API endpoint by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1715
+
+## New Contributors
+* @romainkomorndatadog made their first contribution in https://github.com/DataDog/datadog-api-client-python/pull/1710
+
+**Full Changelog**: https://github.com/DataDog/datadog-api-client-python/compare/2.17.0...2.18.0
+
 ## 2.17.0 / 2023-09-14
 
 ### Fixed
