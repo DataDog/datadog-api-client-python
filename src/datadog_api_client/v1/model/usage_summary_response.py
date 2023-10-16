@@ -51,6 +51,7 @@ class UsageSummaryResponse(ModelNormal):
             "cloud_cost_management_aws_host_count_avg_sum": (int,),
             "cloud_cost_management_azure_host_count_avg_sum": (int,),
             "cloud_cost_management_host_count_avg_sum": (int,),
+            "cloud_siem_events_agg_sum": (int,),
             "container_avg_sum": (int,),
             "container_excl_agent_avg_sum": (int,),
             "container_hwm_sum": (int,),
@@ -164,6 +165,7 @@ class UsageSummaryResponse(ModelNormal):
         "cloud_cost_management_aws_host_count_avg_sum": "cloud_cost_management_aws_host_count_avg_sum",
         "cloud_cost_management_azure_host_count_avg_sum": "cloud_cost_management_azure_host_count_avg_sum",
         "cloud_cost_management_host_count_avg_sum": "cloud_cost_management_host_count_avg_sum",
+        "cloud_siem_events_agg_sum": "cloud_siem_events_agg_sum",
         "container_avg_sum": "container_avg_sum",
         "container_excl_agent_avg_sum": "container_excl_agent_avg_sum",
         "container_hwm_sum": "container_hwm_sum",
@@ -278,6 +280,7 @@ class UsageSummaryResponse(ModelNormal):
         cloud_cost_management_aws_host_count_avg_sum: Union[int, UnsetType] = unset,
         cloud_cost_management_azure_host_count_avg_sum: Union[int, UnsetType] = unset,
         cloud_cost_management_host_count_avg_sum: Union[int, UnsetType] = unset,
+        cloud_siem_events_agg_sum: Union[int, UnsetType] = unset,
         container_avg_sum: Union[int, UnsetType] = unset,
         container_excl_agent_avg_sum: Union[int, UnsetType] = unset,
         container_hwm_sum: Union[int, UnsetType] = unset,
@@ -442,6 +445,9 @@ class UsageSummaryResponse(ModelNormal):
 
         :param cloud_cost_management_host_count_avg_sum: Sum of the host count average for Cloud Cost Management for all cloud providers.
         :type cloud_cost_management_host_count_avg_sum: int, optional
+
+        :param cloud_siem_events_agg_sum: Shows the sum of all Cloud Security Information and Event Management events over all hours in the current months for all organizations.
+        :type cloud_siem_events_agg_sum: int, optional
 
         :param container_avg_sum: Shows the average of all distinct containers over all hours in the current months for all organizations.
         :type container_avg_sum: int, optional
@@ -748,6 +754,8 @@ class UsageSummaryResponse(ModelNormal):
             kwargs["cloud_cost_management_azure_host_count_avg_sum"] = cloud_cost_management_azure_host_count_avg_sum
         if cloud_cost_management_host_count_avg_sum is not unset:
             kwargs["cloud_cost_management_host_count_avg_sum"] = cloud_cost_management_host_count_avg_sum
+        if cloud_siem_events_agg_sum is not unset:
+            kwargs["cloud_siem_events_agg_sum"] = cloud_siem_events_agg_sum
         if container_avg_sum is not unset:
             kwargs["container_avg_sum"] = container_avg_sum
         if container_excl_agent_avg_sum is not unset:
