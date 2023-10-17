@@ -17,7 +17,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.widget_layout_type import WidgetLayoutType
     from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
     from datadog_api_client.v1.model.group_widget_definition_type import GroupWidgetDefinitionType
-    from datadog_api_client.v1.model.widget import Widget
+    from datadog_api_client.v1.model.group_widget_item import GroupWidgetItem
 
 
 class GroupWidgetDefinition(ModelNormal):
@@ -26,7 +26,7 @@ class GroupWidgetDefinition(ModelNormal):
         from datadog_api_client.v1.model.widget_layout_type import WidgetLayoutType
         from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
         from datadog_api_client.v1.model.group_widget_definition_type import GroupWidgetDefinitionType
-        from datadog_api_client.v1.model.widget import Widget
+        from datadog_api_client.v1.model.group_widget_item import GroupWidgetItem
 
         return {
             "background_color": (str,),
@@ -36,7 +36,7 @@ class GroupWidgetDefinition(ModelNormal):
             "title": (str,),
             "title_align": (WidgetTextAlign,),
             "type": (GroupWidgetDefinitionType,),
-            "widgets": ([Widget],),
+            "widgets": ([GroupWidgetItem],),
         }
 
     attribute_map = {
@@ -54,7 +54,7 @@ class GroupWidgetDefinition(ModelNormal):
         self_,
         layout_type: WidgetLayoutType,
         type: GroupWidgetDefinitionType,
-        widgets: List[Widget],
+        widgets: List[GroupWidgetItem],
         background_color: Union[str, UnsetType] = unset,
         banner_img: Union[str, UnsetType] = unset,
         show_title: Union[bool, UnsetType] = unset,
@@ -87,7 +87,7 @@ class GroupWidgetDefinition(ModelNormal):
         :type type: GroupWidgetDefinitionType
 
         :param widgets: List of widget groups.
-        :type widgets: [Widget]
+        :type widgets: [GroupWidgetItem]
         """
         if background_color is not unset:
             kwargs["background_color"] = background_color

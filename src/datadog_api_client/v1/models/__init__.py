@@ -178,6 +178,8 @@ from datadog_api_client.v1.model.geomap_widget_request import GeomapWidgetReques
 from datadog_api_client.v1.model.graph_snapshot import GraphSnapshot
 from datadog_api_client.v1.model.group_widget_definition import GroupWidgetDefinition
 from datadog_api_client.v1.model.group_widget_definition_type import GroupWidgetDefinitionType
+from datadog_api_client.v1.model.group_widget_item import GroupWidgetItem
+from datadog_api_client.v1.model.group_widget_item_definition import GroupWidgetItemDefinition
 from datadog_api_client.v1.model.http_log import HTTPLog
 from datadog_api_client.v1.model.http_log_error import HTTPLogError
 from datadog_api_client.v1.model.http_log_item import HTTPLogItem
@@ -1084,6 +1086,8 @@ __all__ = [
     "GraphSnapshot",
     "GroupWidgetDefinition",
     "GroupWidgetDefinitionType",
+    "GroupWidgetItem",
+    "GroupWidgetItemDefinition",
     "HTTPLog",
     "HTTPLogError",
     "HTTPLogItem",

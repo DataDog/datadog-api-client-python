@@ -1023,6 +1023,20 @@ group\_widget\_definition\_type
    :members:
    :show-inheritance:
 
+group\_widget\_item
+-------------------
+
+.. automodule:: datadog_api_client.v1.model.group_widget_item
+   :members:
+   :show-inheritance:
+
+group\_widget\_item\_definition
+-------------------------------
+
+.. automodule:: datadog_api_client.v1.model.group_widget_item_definition
+   :members:
+   :show-inheritance:
+
 heat\_map\_widget\_definition
 -----------------------------
 
