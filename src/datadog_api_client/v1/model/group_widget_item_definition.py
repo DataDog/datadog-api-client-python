@@ -10,10 +10,10 @@ from datadog_api_client.model_utils import (
 )
 
 
-class WidgetDefinition(ModelComposed):
+class GroupWidgetItemDefinition(ModelComposed):
     def __init__(self, **kwargs):
         """
-        `Definition of the widget <https://docs.datadoghq.com/dashboards/widgets/>`_.
+        Same as the regular widget definition but without group.
 
         :param alert_id: ID of the alert to use in the widget.
         :type alert_id: str
@@ -108,21 +108,6 @@ class WidgetDefinition(ModelComposed):
         :param view: The view of the world that the map should render.
         :type view: GeomapWidgetDefinitionView
 
-        :param background_color: Background color of the group title.
-        :type background_color: str, optional
-
-        :param banner_img: URL of image to display as a banner for the group.
-        :type banner_img: str, optional
-
-        :param layout_type: Layout type of the group.
-        :type layout_type: WidgetLayoutType
-
-        :param show_title: Whether to show the title or not.
-        :type show_title: bool, optional
-
-        :param widgets: List of widget groups.
-        :type widgets: [GroupWidgetItem]
-
         :param events: List of widget events.
         :type events: [WidgetEvent], optional
 
@@ -212,6 +197,9 @@ class WidgetDefinition(ModelComposed):
         :param summary_type: Which summary type should be used.
         :type summary_type: WidgetSummaryType, optional
 
+        :param background_color: Background color of the note.
+        :type background_color: str, optional
+
         :param content: Content of the note.
         :type content: str
 
@@ -226,12 +214,6 @@ class WidgetDefinition(ModelComposed):
 
         :param tick_pos: Where to position the tick on an edge.
         :type tick_pos: str, optional
-
-        :param powerpack_id: UUID of the associated powerpack.
-        :type powerpack_id: str
-
-        :param template_variables: Powerpack template variables.
-        :type template_variables: PowerpackTemplateVariables, optional
 
         :param autoscale: Whether to use auto-scaling or not.
         :type autoscale: bool, optional
@@ -305,18 +287,6 @@ class WidgetDefinition(ModelComposed):
         :param span_name: APM span name.
         :type span_name: str
 
-        :param has_uniform_y_axes: Normalize y axes across graphs
-        :type has_uniform_y_axes: bool, optional
-
-        :param size: Size of the individual graphs in the split.
-        :type size: SplitGraphVizSize
-
-        :param source_widget_definition: The original widget we are splitting on.
-        :type source_widget_definition: SplitGraphSourceWidgetDefinition
-
-        :param split_config: Encapsulates all user choices about how to split a graph.
-        :type split_config: SplitConfig
-
         :param hide_total: Show the total value in this widget.
         :type hide_total: bool, optional
 
@@ -362,7 +332,6 @@ class WidgetDefinition(ModelComposed):
         from datadog_api_client.v1.model.free_text_widget_definition import FreeTextWidgetDefinition
         from datadog_api_client.v1.model.funnel_widget_definition import FunnelWidgetDefinition
         from datadog_api_client.v1.model.geomap_widget_definition import GeomapWidgetDefinition
-        from datadog_api_client.v1.model.group_widget_definition import GroupWidgetDefinition
         from datadog_api_client.v1.model.heat_map_widget_definition import HeatMapWidgetDefinition
         from datadog_api_client.v1.model.host_map_widget_definition import HostMapWidgetDefinition
         from datadog_api_client.v1.model.i_frame_widget_definition import IFrameWidgetDefinition
@@ -371,7 +340,6 @@ class WidgetDefinition(ModelComposed):
         from datadog_api_client.v1.model.log_stream_widget_definition import LogStreamWidgetDefinition
         from datadog_api_client.v1.model.monitor_summary_widget_definition import MonitorSummaryWidgetDefinition
         from datadog_api_client.v1.model.note_widget_definition import NoteWidgetDefinition
-        from datadog_api_client.v1.model.powerpack_widget_definition import PowerpackWidgetDefinition
         from datadog_api_client.v1.model.query_value_widget_definition import QueryValueWidgetDefinition
         from datadog_api_client.v1.model.run_workflow_widget_definition import RunWorkflowWidgetDefinition
         from datadog_api_client.v1.model.slo_list_widget_definition import SLOListWidgetDefinition
@@ -379,7 +347,6 @@ class WidgetDefinition(ModelComposed):
         from datadog_api_client.v1.model.scatter_plot_widget_definition import ScatterPlotWidgetDefinition
         from datadog_api_client.v1.model.service_map_widget_definition import ServiceMapWidgetDefinition
         from datadog_api_client.v1.model.service_summary_widget_definition import ServiceSummaryWidgetDefinition
-        from datadog_api_client.v1.model.split_graph_widget_definition import SplitGraphWidgetDefinition
         from datadog_api_client.v1.model.sunburst_widget_definition import SunburstWidgetDefinition
         from datadog_api_client.v1.model.table_widget_definition import TableWidgetDefinition
         from datadog_api_client.v1.model.timeseries_widget_definition import TimeseriesWidgetDefinition
@@ -399,7 +366,6 @@ class WidgetDefinition(ModelComposed):
                 FreeTextWidgetDefinition,
                 FunnelWidgetDefinition,
                 GeomapWidgetDefinition,
-                GroupWidgetDefinition,
                 HeatMapWidgetDefinition,
                 HostMapWidgetDefinition,
                 IFrameWidgetDefinition,
@@ -408,7 +374,6 @@ class WidgetDefinition(ModelComposed):
                 LogStreamWidgetDefinition,
                 MonitorSummaryWidgetDefinition,
                 NoteWidgetDefinition,
-                PowerpackWidgetDefinition,
                 QueryValueWidgetDefinition,
                 RunWorkflowWidgetDefinition,
                 SLOListWidgetDefinition,
@@ -416,7 +381,6 @@ class WidgetDefinition(ModelComposed):
                 ScatterPlotWidgetDefinition,
                 ServiceMapWidgetDefinition,
                 ServiceSummaryWidgetDefinition,
-                SplitGraphWidgetDefinition,
                 SunburstWidgetDefinition,
                 TableWidgetDefinition,
                 TimeseriesWidgetDefinition,
