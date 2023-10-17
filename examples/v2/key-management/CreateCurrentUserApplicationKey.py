@@ -11,15 +11,10 @@ from datadog_api_client.v2.model.application_keys_type import ApplicationKeysTyp
 
 body = ApplicationKeyCreateRequest(
     data=ApplicationKeyCreateData(
-        attributes=ApplicationKeyCreateAttributes(
-            name="Application Key for managing dashboards",
-            scopes=[
-                "dashboards_read",
-                "dashboards_write",
-                "dashboards_public_share",
-            ],
-        ),
         type=ApplicationKeysType.APPLICATION_KEYS,
+        attributes=ApplicationKeyCreateAttributes(
+            name="Example-Key-Management",
+        ),
     ),
 )
 

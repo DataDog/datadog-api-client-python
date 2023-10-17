@@ -29128,7 +29128,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/UserResponse'
-          description: OK for get user
+          description: OK
         '403':
           content:
             application/json:

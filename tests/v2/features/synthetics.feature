@@ -15,26 +15,13 @@ Feature: Synthetics
     And an instance of "Synthetics" API
 
   @team:DataDog/synthetics-app
-  Scenario: Get on demand concurrency cap
-    Given new "GetOnDemandConcurrencyCap" request
-    When the request is sent
-    Then the response status is 200 OK
-
-  @generated @skip @team:DataDog/synthetics-app
   Scenario: Get the on-demand concurrency cap returns "OK" response
     Given new "GetOnDemandConcurrencyCap" request
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/synthetics-app
-  Scenario: Save new value for on-demand concurrency cap returns "OK" response
-    Given new "SetOnDemandConcurrencyCap" request
-    And body with value {}
-    When the request is sent
-    Then the response status is 200 OK
-
   @team:DataDog/synthetics-app
-  Scenario: Save on demand concurrency cap
+  Scenario: Save new value for on-demand concurrency cap returns "OK" response
     Given new "SetOnDemandConcurrencyCap" request
     And body with value {"on_demand_concurrency_cap": 20}
     When the request is sent

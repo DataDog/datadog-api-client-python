@@ -6,7 +6,9 @@ from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.synthetics_api import SyntheticsApi
 from datadog_api_client.v2.model.on_demand_concurrency_cap_attributes import OnDemandConcurrencyCapAttributes
 
-body = OnDemandConcurrencyCapAttributes()
+body = OnDemandConcurrencyCapAttributes(
+    on_demand_concurrency_cap=20.0,
+)
 
 configuration = Configuration()
 with ApiClient(configuration) as api_client:
