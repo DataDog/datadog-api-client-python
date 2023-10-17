@@ -1,0 +1,57 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"email":"Test-Get_user_details_returns_OK_response-1697467605@datadoghq.com","title":"user
+      title"},"type":"users"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/users
+  response:
+    body:
+      string: '{"data":{"type":"users","id":"d3edd11c-6c32-11ee-9c79-aaef51702d10","attributes":{"name":null,"handle":"test-get_user_details_returns_ok_response-1697467605@datadoghq.com","created_at":"2023-10-16T14:46:45.480711+00:00","modified_at":"2023-10-16T14:46:45.480711+00:00","email":"test-get_user_details_returns_ok_response-1697467605@datadoghq.com","icon":"https://secure.gravatar.com/avatar/64901293a45aa6f5fa32d0fa57decdb2?s=48&d=retro","title":"user
+        title","verified":false,"service_account":false,"disabled":false,"allowed_login_methods":[],"status":"Pending"},"relationships":{"roles":{"data":[]},"org":{"data":{"type":"orgs","id":"4dee724d-00cc-11ea-a77b-570c9d03c6c5"}}}}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/users/d3edd11c-6c32-11ee-9c79-aaef51702d10
+  response:
+    body:
+      string: '{"data":{"type":"users","id":"d3edd11c-6c32-11ee-9c79-aaef51702d10","attributes":{"name":null,"handle":"test-get_user_details_returns_ok_response-1697467605@datadoghq.com","created_at":"2023-10-16T14:46:45.480711+00:00","modified_at":"2023-10-16T14:46:45.480711+00:00","email":"test-get_user_details_returns_ok_response-1697467605@datadoghq.com","icon":"https://secure.gravatar.com/avatar/64901293a45aa6f5fa32d0fa57decdb2?s=48&d=retro","title":"user
+        title","verified":false,"service_account":false,"disabled":false,"allowed_login_methods":[],"status":"Pending"},"relationships":{"roles":{"data":[]},"org":{"data":{"type":"orgs","id":"4dee724d-00cc-11ea-a77b-570c9d03c6c5"}}}}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/users/d3edd11c-6c32-11ee-9c79-aaef51702d10
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1
