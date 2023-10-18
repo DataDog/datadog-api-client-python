@@ -10,21 +10,21 @@ Feature: Service Definition
   @generated @skip @team:DataDog/service-catalog
   Scenario: Create or update service definition returns "Bad Request" response
     Given new "CreateOrUpdateServiceDefinitions" request
-    And body with value {"application": "my-app", "contacts": [{"contact": "contact@datadoghq.com", "name": "Team Email", "type": "email"}], "dd-service": "my-service", "description": "My service description", "extensions": {"myorg/extension": "extensionValue"}, "integrations": {"opsgenie": {"region": "US", "service-url": "https://my-org.opsgenie.com/service/123e4567-e89b-12d3-a456-426614174000"}, "pagerduty": {"service-url": "https://my-org.pagerduty.com/service-directory/PMyService"}}, "lifecycle": "sandbox", "links": [{"name": "Runbook", "provider": "Github", "type": "runbook", "url": "https://my-runbook"}], "schema-version": "v2.1", "tags": ["my:tag", "service:tag"], "team": "my-team", "tier": "High"}
+    And body with value {"application": "my-app", "contacts": [{"contact": "https://teams.microsoft.com/myteam", "name": "My team channel", "type": "slack"}], "dd-service": "my-service", "description": "My service description", "extensions": {"myorg/extension": "extensionValue"}, "integrations": {"opsgenie": {"region": "US", "service-url": "https://my-org.opsgenie.com/service/123e4567-e89b-12d3-a456-426614174000"}, "pagerduty": {"service-url": "https://my-org.pagerduty.com/service-directory/PMyService"}}, "langauges": ["dotnet", "go", "java", "js", "php", "python", "ruby", "c++"], "lifecycle": "sandbox", "links": [{"name": "Runbook", "provider": "Github", "type": "runbook", "url": "https://my-runbook"}], "schema-version": "v2.2", "tags": ["my:tag", "service:tag"], "team": "my-team", "tier": "High", "type": "web"}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/service-catalog
   Scenario: Create or update service definition returns "CREATED" response
     Given new "CreateOrUpdateServiceDefinitions" request
-    And body with value {"application": "my-app", "contacts": [{"contact": "contact@datadoghq.com", "name": "Team Email", "type": "email"}], "dd-service": "my-service", "description": "My service description", "extensions": {"myorg/extension": "extensionValue"}, "integrations": {"opsgenie": {"region": "US", "service-url": "https://my-org.opsgenie.com/service/123e4567-e89b-12d3-a456-426614174000"}, "pagerduty": {"service-url": "https://my-org.pagerduty.com/service-directory/PMyService"}}, "lifecycle": "sandbox", "links": [{"name": "Runbook", "provider": "Github", "type": "runbook", "url": "https://my-runbook"}], "schema-version": "v2.1", "tags": ["my:tag", "service:tag"], "team": "my-team", "tier": "High"}
+    And body with value {"application": "my-app", "contacts": [{"contact": "https://teams.microsoft.com/myteam", "name": "My team channel", "type": "slack"}], "dd-service": "my-service", "description": "My service description", "extensions": {"myorg/extension": "extensionValue"}, "integrations": {"opsgenie": {"region": "US", "service-url": "https://my-org.opsgenie.com/service/123e4567-e89b-12d3-a456-426614174000"}, "pagerduty": {"service-url": "https://my-org.pagerduty.com/service-directory/PMyService"}}, "langauges": ["dotnet", "go", "java", "js", "php", "python", "ruby", "c++"], "lifecycle": "sandbox", "links": [{"name": "Runbook", "provider": "Github", "type": "runbook", "url": "https://my-runbook"}], "schema-version": "v2.2", "tags": ["my:tag", "service:tag"], "team": "my-team", "tier": "High", "type": "web"}
     When the request is sent
     Then the response status is 200 CREATED
 
   @generated @skip @team:DataDog/service-catalog
   Scenario: Create or update service definition returns "Conflict" response
     Given new "CreateOrUpdateServiceDefinitions" request
-    And body with value {"application": "my-app", "contacts": [{"contact": "contact@datadoghq.com", "name": "Team Email", "type": "email"}], "dd-service": "my-service", "description": "My service description", "extensions": {"myorg/extension": "extensionValue"}, "integrations": {"opsgenie": {"region": "US", "service-url": "https://my-org.opsgenie.com/service/123e4567-e89b-12d3-a456-426614174000"}, "pagerduty": {"service-url": "https://my-org.pagerduty.com/service-directory/PMyService"}}, "lifecycle": "sandbox", "links": [{"name": "Runbook", "provider": "Github", "type": "runbook", "url": "https://my-runbook"}], "schema-version": "v2.1", "tags": ["my:tag", "service:tag"], "team": "my-team", "tier": "High"}
+    And body with value {"application": "my-app", "contacts": [{"contact": "https://teams.microsoft.com/myteam", "name": "My team channel", "type": "slack"}], "dd-service": "my-service", "description": "My service description", "extensions": {"myorg/extension": "extensionValue"}, "integrations": {"opsgenie": {"region": "US", "service-url": "https://my-org.opsgenie.com/service/123e4567-e89b-12d3-a456-426614174000"}, "pagerduty": {"service-url": "https://my-org.pagerduty.com/service-directory/PMyService"}}, "langauges": ["dotnet", "go", "java", "js", "php", "python", "ruby", "c++"], "lifecycle": "sandbox", "links": [{"name": "Runbook", "provider": "Github", "type": "runbook", "url": "https://my-runbook"}], "schema-version": "v2.2", "tags": ["my:tag", "service:tag"], "team": "my-team", "tier": "High", "type": "web"}
     When the request is sent
     Then the response status is 409 Conflict
 
@@ -44,6 +44,15 @@ Feature: Service Definition
     When the request is sent
     Then the response status is 200 CREATED
     And the response "data[0].attributes.meta.ingested-schema-version" is equal to "v2.1"
+    And the response "data[0].attributes.schema.dd-service" is equal to "service-{{ unique_lower_alnum }}"
+
+  @team:DataDog/service-catalog
+  Scenario: Create or update service definition using schema v2-2 returns "CREATED" response
+    Given new "CreateOrUpdateServiceDefinitions" request
+    And body with value {"contacts":[{"contact":"contact@datadoghq.com","name":"Team Email","type":"email"}],"dd-service":"service-{{ unique_lower_alnum }}","extensions":{"myorgextension":"extensionvalue"},"integrations":{"opsgenie":{"region":"US","service-url":"https://my-org.opsgenie.com/service/123e4567-e89b-12d3-a456-426614174000"},"pagerduty":{"service-url":"https://my-org.pagerduty.com/service-directory/PMyService"}},"links":[{"name":"Runbook","type":"runbook","url":"https://my-runbook"},{"name":"Source Code","type":"repo","provider":"GitHub","url":"https://github.com/DataDog/schema"},{"name":"Architecture","type":"doc","provider":"Gigoogle drivetHub","url":"https://my-runbook"}],"schema-version":"v2.2","tags":["my:tag","service:tag"],"team":"my-team"}
+    When the request is sent
+    Then the response status is 200 CREATED
+    And the response "data[0].attributes.meta.ingested-schema-version" is equal to "v2.2"
     And the response "data[0].attributes.schema.dd-service" is equal to "service-{{ unique_lower_alnum }}"
 
   @generated @skip @team:DataDog/service-catalog

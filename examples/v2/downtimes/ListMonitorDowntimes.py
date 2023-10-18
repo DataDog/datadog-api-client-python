@@ -9,7 +9,7 @@ configuration = Configuration()
 with ApiClient(configuration) as api_client:
     api_instance = DowntimesApi(api_client)
     response = api_instance.list_monitor_downtimes(
-        monitor_id=9223372036854775807,
+        monitor_id=35534610,
     )
 
     print(response)

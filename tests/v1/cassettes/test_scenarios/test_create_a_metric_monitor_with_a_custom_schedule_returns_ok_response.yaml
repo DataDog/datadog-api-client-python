@@ -1,0 +1,44 @@
+interactions:
+- request:
+    body: '{"message":"some message Notify: @hipchat-channel","name":"Test-Create_a_metric_monitor_with_a_custom_schedule_returns_OK_response-1696444400","options":{"include_tags":false,"notify_audit":false,"on_missing_data":"default","scheduling_options":{"custom_schedule":{"recurrences":[{"rrule":"FREQ=DAILY;INTERVAL=1","start":"2024-10-26T09:13:00","timezone":"America/Los_Angeles"}]},"evaluation_window":{"day_starts":"04:00","month_starts":1}},"thresholds":{"critical":0.5}},"query":"avg(current_1mo):avg:system.load.5{*}
+      > 0.5","tags":[],"type":"query alert"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/monitor
+  response:
+    body:
+      string: '{"id":132537965,"org_id":321813,"type":"query alert","name":"Test-Create_a_metric_monitor_with_a_custom_schedule_returns_OK_response-1696444400","message":"some
+        message Notify: @hipchat-channel","tags":[],"query":"avg(current_1mo):avg:system.load.5{*}
+        > 0.5","options":{"include_tags":false,"notify_audit":false,"on_missing_data":"default","scheduling_options":{"custom_schedule":{"recurrences":[{"rrule":"FREQ=DAILY;INTERVAL=1","start":"2024-10-26T09:13:00","timezone":"America/Los_Angeles"}]},"evaluation_window":{"day_starts":"04:00","month_starts":1}},"thresholds":{"critical":0.5},"new_host_delay":300,"silenced":{}},"multi":false,"created_at":1696444400000,"created":"2023-10-04T18:33:20.388003+00:00","modified":"2023-10-04T18:33:20.388003+00:00","deleted":null,"restricted_roles":null,"priority":null,"overall_state_modified":null,"overall_state":"No
+        Data","creator":{"name":"CI Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","email":"team-intg-tools-libs-spam@datadoghq.com","id":2320499}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/monitor/132537965
+  response:
+    body:
+      string: '{"deleted_monitor_id":132537965}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

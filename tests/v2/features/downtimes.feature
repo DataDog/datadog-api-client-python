@@ -58,12 +58,14 @@ Feature: Downtimes
     When the request is sent
     Then the response status is 404 Monitor Not Found error
 
-  @generated @skip @team:DataDog/monitor-app
+  @replay-only @team:DataDog/monitor-app
   Scenario: Get active downtimes for a monitor returns "OK" response
     Given new "ListMonitorDowntimes" request
-    And request contains "monitor_id" parameter from "REPLACE.ME"
+    And request contains "monitor_id" parameter with value 35534610
     When the request is sent
     Then the response status is 200 OK
+    And the response "data" has length 1
+    And the response "data" has item with field "id" with value "aeefc6a8-15d8-11ee-a8ef-da7ad0900002"
 
   @team:DataDog/monitor-app
   Scenario: Get all downtimes for a monitor returns "Monitor Not Found error" response
@@ -71,15 +73,6 @@ Feature: Downtimes
     And request contains "monitor_id" parameter with value 0
     When the request is sent
     Then the response status is 404 Monitor Not Found error
-
-  @replay-only @team:DataDog/monitor-app
-  Scenario: Get all downtimes for a monitor returns "OK" response
-    Given new "ListMonitorDowntimes" request
-    And request contains "monitor_id" parameter with value 35534610
-    When the request is sent
-    Then the response status is 200 OK
-    And the response "data" has length 1
-    And the response "data" has item with field "id" with value "aeefc6a8-15d8-11ee-a8ef-da7ad0900002"
 
   @replay-only @team:DataDog/monitor-app
   Scenario: Get all downtimes returns "OK" response

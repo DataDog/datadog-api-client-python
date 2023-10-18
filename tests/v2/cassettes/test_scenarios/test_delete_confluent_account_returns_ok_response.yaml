@@ -1,0 +1,54 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"api_key":"TestDeleteConfluentaccountreturnsOKresponse1697461335","api_secret":"test-api-secret","resources":[{"id":"test-resource-id","resource_type":"kafka","tags":["tag1","tag2:val2"]}],"tags":["tag1","tag2:val2"]},"type":"confluent-cloud-accounts"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/integrations/confluent-cloud/accounts
+  response:
+    body:
+      string: '{"data":{"type":"confluent-cloud-accounts","attributes":{"resources":[{"tags":["tag1","tag2:val2"],"id":"test-resource-id","enable_custom_metrics":false,"resource_type":"kafka"}],"tags":["tag1","tag2:val2"],"api_key":"TestDeleteConfluentaccountreturnsOKresponse1697461335"},"id":"ed3f03aa36fdd7ba6b48381d54280e45"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/integrations/confluent-cloud/accounts/ed3f03aa36fdd7ba6b48381d54280e45
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - text/html; charset=utf-8
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/integrations/confluent-cloud/accounts/ed3f03aa36fdd7ba6b48381d54280e45
+  response:
+    body:
+      string: '{"errors":["Account not found not found"]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 404
+      message: Not Found
+version: 1

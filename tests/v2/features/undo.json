@@ -231,6 +231,12 @@
       "type": "safe"
     }
   },
+  "ListContainerImages": {
+    "tag": "Container Images",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListCurrentUserApplicationKeys": {
     "tag": "Key Management",
     "undo": {
@@ -1023,7 +1029,7 @@
       "type": "safe"
     }
   },
-  "GetAllPowerpacks": {
+  "ListPowerpacks": {
     "tag": "Powerpack",
     "undo": {
       "type": "safe"

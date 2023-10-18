@@ -227,6 +227,12 @@ class WidgetDefinition(ModelComposed):
         :param tick_pos: Where to position the tick on an edge.
         :type tick_pos: str, optional
 
+        :param powerpack_id: UUID of the associated powerpack.
+        :type powerpack_id: str
+
+        :param template_variables: Powerpack template variables.
+        :type template_variables: PowerpackTemplateVariables, optional
+
         :param autoscale: Whether to use auto-scaling or not.
         :type autoscale: bool, optional
 
@@ -365,6 +371,7 @@ class WidgetDefinition(ModelComposed):
         from datadog_api_client.v1.model.log_stream_widget_definition import LogStreamWidgetDefinition
         from datadog_api_client.v1.model.monitor_summary_widget_definition import MonitorSummaryWidgetDefinition
         from datadog_api_client.v1.model.note_widget_definition import NoteWidgetDefinition
+        from datadog_api_client.v1.model.powerpack_widget_definition import PowerpackWidgetDefinition
         from datadog_api_client.v1.model.query_value_widget_definition import QueryValueWidgetDefinition
         from datadog_api_client.v1.model.run_workflow_widget_definition import RunWorkflowWidgetDefinition
         from datadog_api_client.v1.model.slo_list_widget_definition import SLOListWidgetDefinition
@@ -401,6 +408,7 @@ class WidgetDefinition(ModelComposed):
                 LogStreamWidgetDefinition,
                 MonitorSummaryWidgetDefinition,
                 NoteWidgetDefinition,
+                PowerpackWidgetDefinition,
                 QueryValueWidgetDefinition,
                 RunWorkflowWidgetDefinition,
                 SLOListWidgetDefinition,

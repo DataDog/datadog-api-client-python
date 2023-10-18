@@ -71,10 +71,11 @@ Feature: Confluent Cloud
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:Datadog/web-integrations
+  @team:Datadog/web-integrations
   Scenario: Delete Confluent account returns "OK" response
-    Given new "DeleteConfluentAccount" request
-    And request contains "account_id" parameter from "REPLACE.ME"
+    Given there is a valid "confluent_account" in the system
+    And new "DeleteConfluentAccount" request
+    And request contains "account_id" parameter from "confluent_account.data.id"
     When the request is sent
     Then the response status is 204 OK
 
@@ -94,11 +95,11 @@ Feature: Confluent Cloud
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:Datadog/web-integrations
+  @generated @skip @team:Datadog/web-integrations
   Scenario: Delete resource from Confluent account returns "OK" response
-    Given there is a valid "confluent_account" in the system
-    And new "DeleteConfluentAccount" request
-    And request contains "account_id" parameter from "confluent_account.data.id"
+    Given new "DeleteConfluentResource" request
+    And request contains "account_id" parameter from "REPLACE.ME"
+    And request contains "resource_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 204 OK
 

@@ -3,20 +3,18 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Any, Dict, List, Union, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    date,
-    datetime,
-    none_type,
     unset,
     UnsetType,
 )
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.powerpack_group_widget import PowerpackGroupWidget
     from datadog_api_client.v2.model.powerpack_template_variable import PowerpackTemplateVariable
 
 
@@ -29,25 +27,12 @@ class PowerpackAttributes(ModelNormal):
 
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.powerpack_group_widget import PowerpackGroupWidget
         from datadog_api_client.v2.model.powerpack_template_variable import PowerpackTemplateVariable
 
         return {
             "description": (str,),
-            "group_widget": (
-                {
-                    str: (
-                        bool,
-                        date,
-                        datetime,
-                        dict,
-                        float,
-                        int,
-                        list,
-                        str,
-                        none_type,
-                    )
-                },
-            ),
+            "group_widget": (PowerpackGroupWidget,),
             "name": (str,),
             "tags": ([str],),
             "template_variables": ([PowerpackTemplateVariable],),
@@ -63,7 +48,7 @@ class PowerpackAttributes(ModelNormal):
 
     def __init__(
         self_,
-        group_widget: Dict[str, Any],
+        group_widget: PowerpackGroupWidget,
         name: str,
         description: Union[str, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
@@ -76,8 +61,8 @@ class PowerpackAttributes(ModelNormal):
         :param description: Description of this powerpack.
         :type description: str, optional
 
-        :param group_widget: Templated group of dashboard widgets for the powerpack.
-        :type group_widget: {str: (bool, date, datetime, dict, float, int, list, str, none_type,)}
+        :param group_widget: Powerpack group widget definition object.
+        :type group_widget: PowerpackGroupWidget
 
         :param name: Name of the powerpack.
         :type name: str

@@ -17,7 +17,7 @@ Feature: Events
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/event-management
+  @skip-validation @team:DataDog/event-management
   Scenario: Get a list of events returns "OK" response
     Given operation "ListEvents" enabled
     And new "ListEvents" request

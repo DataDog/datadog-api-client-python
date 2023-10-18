@@ -542,6 +542,16 @@ Feature: Dashboards
     And the response "widgets[0].definition.content" is equal to "# Example Note"
 
   @team:DataDog/dashboards-backend
+  Scenario: Create a new dashboard with powerpack widget
+    Given new "CreateDashboard" request
+    And there is a valid "powerpack" in the system
+    And body from file "dashboards_json_payload/powerpack_widget.json"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.type" is equal to "powerpack"
+    And the response "widgets[0].definition.powerpack_id" has the same value as "powerpack.data.id"
+
+  @team:DataDog/dashboards-backend
   Scenario: Create a new dashboard with query_table widget
     Given new "CreateDashboard" request
     And body from file "dashboards_json_payload/query_table_widget.json"

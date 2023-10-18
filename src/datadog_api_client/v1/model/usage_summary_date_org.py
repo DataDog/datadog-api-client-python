@@ -41,6 +41,7 @@ class UsageSummaryDateOrg(ModelNormal):
             "cloud_cost_management_aws_host_count_avg": (int,),
             "cloud_cost_management_azure_host_count_avg": (int,),
             "cloud_cost_management_host_count_avg": (int,),
+            "cloud_siem_events_sum": (int,),
             "container_avg": (int,),
             "container_excl_agent_avg": (int,),
             "container_hwm": (int,),
@@ -147,6 +148,7 @@ class UsageSummaryDateOrg(ModelNormal):
         "cloud_cost_management_aws_host_count_avg": "cloud_cost_management_aws_host_count_avg",
         "cloud_cost_management_azure_host_count_avg": "cloud_cost_management_azure_host_count_avg",
         "cloud_cost_management_host_count_avg": "cloud_cost_management_host_count_avg",
+        "cloud_siem_events_sum": "cloud_siem_events_sum",
         "container_avg": "container_avg",
         "container_excl_agent_avg": "container_excl_agent_avg",
         "container_hwm": "container_hwm",
@@ -254,6 +256,7 @@ class UsageSummaryDateOrg(ModelNormal):
         cloud_cost_management_aws_host_count_avg: Union[int, UnsetType] = unset,
         cloud_cost_management_azure_host_count_avg: Union[int, UnsetType] = unset,
         cloud_cost_management_host_count_avg: Union[int, UnsetType] = unset,
+        cloud_siem_events_sum: Union[int, UnsetType] = unset,
         container_avg: Union[int, UnsetType] = unset,
         container_excl_agent_avg: Union[int, UnsetType] = unset,
         container_hwm: Union[int, UnsetType] = unset,
@@ -409,6 +412,9 @@ class UsageSummaryDateOrg(ModelNormal):
 
         :param cloud_cost_management_host_count_avg: Host count average of Cloud Cost Management for all cloud providers for the given date and given org.
         :type cloud_cost_management_host_count_avg: int, optional
+
+        :param cloud_siem_events_sum: Shows the sum of all Cloud Security Information and Event Management events over all hours in the current date for the given org.
+        :type cloud_siem_events_sum: int, optional
 
         :param container_avg: Shows the average of all distinct containers over all hours in the current date for the given org.
         :type container_avg: int, optional
@@ -695,6 +701,8 @@ class UsageSummaryDateOrg(ModelNormal):
             kwargs["cloud_cost_management_azure_host_count_avg"] = cloud_cost_management_azure_host_count_avg
         if cloud_cost_management_host_count_avg is not unset:
             kwargs["cloud_cost_management_host_count_avg"] = cloud_cost_management_host_count_avg
+        if cloud_siem_events_sum is not unset:
+            kwargs["cloud_siem_events_sum"] = cloud_siem_events_sum
         if container_avg is not unset:
             kwargs["container_avg"] = container_avg
         if container_excl_agent_avg is not unset:

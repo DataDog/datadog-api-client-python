@@ -55,7 +55,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/k9-cloud-security-platform
+  @skip-validation @team:DataDog/k9-cloud-security-platform
   Scenario: Create a cloud_configuration rule returns "OK" response
     Given new "CreateSecurityMonitoringRule" request
     And body with value {"type":"cloud_configuration","name":"{{ unique }}_cloud","isEnabled":false,"cases":[{"status":"info","notifications":["channel"]}],"options":{"complianceRuleOptions":{"resourceType":"gcp_compute_disk","complexRule": false,"regoRule":{"policy":"package datadog\n\nimport data.datadog.output as dd_output\n\nimport future.keywords.contains\nimport future.keywords.if\nimport future.keywords.in\n\nmilliseconds_in_a_day := ((1000 * 60) * 60) * 24\n\neval(iam_service_account_key) = \"skip\" if {\n\tiam_service_account_key.disabled\n} else = \"pass\" if {\n\t(iam_service_account_key.resource_seen_at / milliseconds_in_a_day) - (iam_service_account_key.valid_after_time / milliseconds_in_a_day) <= 90\n} else = \"fail\"\n\n# This part remains unchanged for all rules\nresults contains result if {\n\tsome resource in input.resources[input.main_resource_type]\n\tresult := dd_output.format(resource, eval(resource))\n}\n","resourceTypes":["gcp_compute_disk"]}}},"message":"ddd","tags":["my:tag"],"complianceSignalOptions":{"userActivationStatus":true,"userGroupByFields":["@account_id"]},"filters":[{"action":"require","query":"resource_id:helo*"},{"action":"suppress","query":"control:helo*"}]}
@@ -73,7 +73,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/k9-cloud-security-platform
+  @skip-validation @team:DataDog/k9-cloud-security-platform
   Scenario: Create a detection rule returns "OK" response
     Given new "CreateSecurityMonitoringRule" request
     And body with value {"name":"{{ unique }}", "queries":[{"query":"@test:true","aggregation":"count","groupByFields":[],"distinctFields":[],"metric":""}],"filters":[],"cases":[{"name":"","status":"info","condition":"a > 0","notifications":[]}],"options":{"evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"message":"Test rule","tags":[],"isEnabled":true, "type":"log_detection"}
@@ -83,7 +83,7 @@ Feature: Security Monitoring
     And the response "type" is equal to "log_detection"
     And the response "message" is equal to "Test rule"
 
-  @team:DataDog/k9-cloud-security-platform
+  @skip-validation @team:DataDog/k9-cloud-security-platform
   Scenario: Create a detection rule with type 'impossible_travel' returns "OK" response
     Given new "CreateSecurityMonitoringRule" request
     And body with value {"queries":[{"aggregation":"geo_data","groupByFields":["@usr.id"],"distinctFields":[],"metric":"@network.client.geoip","query":"*"}],"cases":[{"name":"","status":"info","notifications":[]}],"hasExtendedTitle":true,"message":"test","isEnabled":true,"options":{"maxSignalDuration":86400,"evaluationWindow":900,"keepAlive":3600,"detectionMethod":"impossible_travel","impossibleTravelOptions":{"baselineUserLocations":false}},"name":"{{ unique }}","type":"log_detection","tags":[],"filters":[]}
@@ -94,7 +94,7 @@ Feature: Security Monitoring
     And the response "message" is equal to "test"
     And the response "options.detectionMethod" is equal to "impossible_travel"
 
-  @team:DataDog/k9-cloud-security-platform
+  @skip-validation @team:DataDog/k9-cloud-security-platform
   Scenario: Create a detection rule with type 'signal_correlation' returns "OK" response
     Given there is a valid "security_rule" in the system
     And there is a valid "security_rule_bis" in the system
@@ -107,7 +107,7 @@ Feature: Security Monitoring
     And the response "message" is equal to "Test signal correlation rule"
     And the response "isEnabled" is equal to true
 
-  @team:DataDog/k9-cloud-security-platform
+  @skip-validation @team:DataDog/k9-cloud-security-platform
   Scenario: Create a detection rule with type 'workload_security' returns "OK" response
     Given new "CreateSecurityMonitoringRule" request
     And body with value {"name":"{{ unique }}", "queries":[{"query":"@test:true","aggregation":"count","groupByFields":[],"distinctFields":[],"metric":""}],"filters":[],"cases":[{"name":"","status":"info","condition":"a > 0","notifications":[]}],"options":{"evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"message":"Test rule","tags":[],"isEnabled":true, "type": "workload_security"}
@@ -180,7 +180,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/k9-cloud-security-platform
+  @skip-validation @team:DataDog/k9-cloud-security-platform
   Scenario: Delete an existing rule returns "OK" response
     Given there is a valid "security_rule" in the system
     And new "DeleteSecurityMonitoringRule" request
@@ -188,7 +188,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 204 OK
 
-  @team:DataDog/k9-cloud-security-platform
+  @skip-validation @team:DataDog/k9-cloud-security-platform
   Scenario: Get a cloud configuration rule's details returns "OK" response
     Given there is a valid "cloud_configuration_rule" in the system
     And new "GetSecurityMonitoringRule" request
@@ -272,7 +272,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/k9-cloud-security-platform
+  @skip-validation @team:DataDog/k9-cloud-security-platform
   Scenario: Get a rule's details returns "OK" response
     Given new "GetSecurityMonitoringRule" request
     And there is a valid "security_rule" in the system
@@ -359,7 +359,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/k9-cloud-security-platform
+  @skip-validation @team:DataDog/k9-cloud-security-platform
   Scenario: List rules returns "OK" response
     Given new "ListSecurityMonitoringRules" request
     When the request is sent
@@ -435,7 +435,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 409 Resource Conflict: The finding has already been muted or unmuted within the last 60 seconds.
 
-  @team:DataDog/k9-cloud-security-platform
+  @skip-validation @team:DataDog/k9-cloud-security-platform
   Scenario: Update a cloud configuration rule's details returns "OK" response
     Given new "UpdateSecurityMonitoringRule" request
     And there is a valid "cloud_configuration_rule" in the system
@@ -482,7 +482,7 @@ Feature: Security Monitoring
     And the response "data.attributes.filtered_data_type" is equal to "logs"
     And the response "data.attributes.name" is equal to "{{ unique }}"
 
-  @team:DataDog/k9-cloud-security-platform
+  @skip-validation @team:DataDog/k9-cloud-security-platform
   Scenario: Update an existing rule returns "Bad Request" response
     Given new "UpdateSecurityMonitoringRule" request
     And there is a valid "security_rule" in the system
@@ -499,7 +499,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/k9-cloud-security-platform
+  @skip-validation @team:DataDog/k9-cloud-security-platform
   Scenario: Update an existing rule returns "OK" response
     Given new "UpdateSecurityMonitoringRule" request
     And there is a valid "security_rule" in the system
