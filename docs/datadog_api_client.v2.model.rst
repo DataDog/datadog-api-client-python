@@ -1240,6 +1240,62 @@ confluent\_resources\_response
    :members:
    :show-inheritance:
 
+container
+---------
+
+.. automodule:: datadog_api_client.v2.model.container
+   :members:
+   :show-inheritance:
+
+container\_attributes
+---------------------
+
+.. automodule:: datadog_api_client.v2.model.container_attributes
+   :members:
+   :show-inheritance:
+
+container\_group
+----------------
+
+.. automodule:: datadog_api_client.v2.model.container_group
+   :members:
+   :show-inheritance:
+
+container\_group\_attributes
+----------------------------
+
+.. automodule:: datadog_api_client.v2.model.container_group_attributes
+   :members:
+   :show-inheritance:
+
+container\_group\_relationships
+-------------------------------
+
+.. automodule:: datadog_api_client.v2.model.container_group_relationships
+   :members:
+   :show-inheritance:
+
+container\_group\_relationships\_link
+-------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.container_group_relationships_link
+   :members:
+   :show-inheritance:
+
+container\_group\_relationships\_links
+--------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.container_group_relationships_links
+   :members:
+   :show-inheritance:
+
+container\_group\_type
+----------------------
+
+.. automodule:: datadog_api_client.v2.model.container_group_type
+   :members:
+   :show-inheritance:
+
 container\_image
 ----------------
 
@@ -1356,6 +1412,55 @@ container\_images\_response\_links
 ----------------------------------
 
 .. automodule:: datadog_api_client.v2.model.container_images_response_links
+   :members:
+   :show-inheritance:
+
+container\_item
+---------------
+
+.. automodule:: datadog_api_client.v2.model.container_item
+   :members:
+   :show-inheritance:
+
+container\_meta
+---------------
+
+.. automodule:: datadog_api_client.v2.model.container_meta
+   :members:
+   :show-inheritance:
+
+container\_meta\_page
+---------------------
+
+.. automodule:: datadog_api_client.v2.model.container_meta_page
+   :members:
+   :show-inheritance:
+
+container\_meta\_page\_type
+---------------------------
+
+.. automodule:: datadog_api_client.v2.model.container_meta_page_type
+   :members:
+   :show-inheritance:
+
+container\_type
+---------------
+
+.. automodule:: datadog_api_client.v2.model.container_type
+   :members:
+   :show-inheritance:
+
+containers\_response
+--------------------
+
+.. automodule:: datadog_api_client.v2.model.containers_response
+   :members:
+   :show-inheritance:
+
+containers\_response\_links
+---------------------------
+
+.. automodule:: datadog_api_client.v2.model.containers_response_links
    :members:
    :show-inheritance:
 
