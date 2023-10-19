@@ -64,6 +64,13 @@ container\_images\_api
    :members:
    :show-inheritance:
 
+containers\_api
+---------------
+
+.. automodule:: datadog_api_client.v2.api.containers_api
+   :members:
+   :show-inheritance:
+
 dashboard\_lists\_api
 ---------------------
 
