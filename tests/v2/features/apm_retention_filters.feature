@@ -24,12 +24,13 @@ Feature: APM Retention Filters
     When the request is sent
     Then the response status is 409 Conflict
 
-  @generated @skip @team:DataDog/apm-trace-intake
+  @team:DataDog/apm-trace-intake
   Scenario: Create a retention filter returns "OK" response
     Given new "CreateApmRetentionFilter" request
     And body with value {"data": {"attributes": {"enabled": true, "filter": {"query": "@http.status_code:200 service:my-service"}, "filter_type": "spans-sampling-processor", "name": "my retention filter", "rate": 1.0}, "type": "apm_retention_filter"}}
     When the request is sent
     Then the response status is 200 OK
+    And the response "data.attributes.name" is equal to "my retention filter"
 
   @team:DataDog/apm-trace-intake
   Scenario: Delete a retention filter returns "Not Found" response
