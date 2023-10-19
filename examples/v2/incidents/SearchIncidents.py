@@ -10,7 +10,7 @@ configuration.unstable_operations["search_incidents"] = True
 with ApiClient(configuration) as api_client:
     api_instance = IncidentsApi(api_client)
     response = api_instance.search_incidents(
-        query="state:(active OR stable OR resolved)&from_ts=1693233872794&to_ts=1695912272794",
+        query="state:(active OR stable OR resolved)",
     )
 
     print(response)
