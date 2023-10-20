@@ -1,0 +1,44 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"enabled":true,"filter":{"query":"@http.status_code:200
+      service:my-service"},"filter_type":"spans-sampling-processor","name":"my retention
+      filter","rate":1},"type":"apm_retention_filter"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/apm/config/retention-filters
+  response:
+    body:
+      string: '{"data":{"id":"kkZkTzFaR_Oy4OWzOJQbcw","attributes":{"name":"my retention
+        filter","rate":1.0,"enabled":true,"filter_type":"spans-sampling-processor","filter":{"query":"@http.status_code:200
+        service:my-service"},"editable":true,"modified_by":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","modified_at":1697718481,"created_by":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","created_at":1697718481},"type":"apm_retention_filter"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/apm/config/retention-filters/kkZkTzFaR_Oy4OWzOJQbcw
+  response:
+    body:
+      string: '{}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1
