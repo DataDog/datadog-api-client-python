@@ -6,6 +6,8 @@ from datadog_api_client.v2.api.ci_visibility_tests_api import CIVisibilityTestsA
 from datadog_api_client.v2.api.cloud_workload_security_api import CloudWorkloadSecurityApi
 from datadog_api_client.v2.api.cloudflare_integration_api import CloudflareIntegrationApi
 from datadog_api_client.v2.api.confluent_cloud_api import ConfluentCloudApi
+from datadog_api_client.v2.api.container_images_api import ContainerImagesApi
+from datadog_api_client.v2.api.containers_api import ContainersApi
 from datadog_api_client.v2.api.dashboard_lists_api import DashboardListsApi
 from datadog_api_client.v2.api.downtimes_api import DowntimesApi
 from datadog_api_client.v2.api.events_api import EventsApi
@@ -23,6 +25,7 @@ from datadog_api_client.v2.api.metrics_api import MetricsApi
 from datadog_api_client.v2.api.monitors_api import MonitorsApi
 from datadog_api_client.v2.api.opsgenie_integration_api import OpsgenieIntegrationApi
 from datadog_api_client.v2.api.organizations_api import OrganizationsApi
+from datadog_api_client.v2.api.powerpack_api import PowerpackApi
 from datadog_api_client.v2.api.processes_api import ProcessesApi
 from datadog_api_client.v2.api.rum_api import RUMApi
 from datadog_api_client.v2.api.restriction_policies_api import RestrictionPoliciesApi
@@ -48,6 +51,8 @@ __all__ = [
     "CloudWorkloadSecurityApi",
     "CloudflareIntegrationApi",
     "ConfluentCloudApi",
+    "ContainerImagesApi",
+    "ContainersApi",
     "DashboardListsApi",
     "DowntimesApi",
     "EventsApi",
@@ -65,6 +70,7 @@ __all__ = [
     "MonitorsApi",
     "OpsgenieIntegrationApi",
     "OrganizationsApi",
+    "PowerpackApi",
     "ProcessesApi",
     "RUMApi",
     "RestrictionPoliciesApi",

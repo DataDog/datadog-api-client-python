@@ -1,0 +1,321 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/container_images?group_by=short_image
+  response:
+    body:
+      string: '{"data": [{"type": "container_image_group", "attributes": {"name":
+        "test_name", "tags": {"short_image": "test_short_image"}, "count": 641013},
+        "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        318935}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=hort_image:worker"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        183916}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        179844}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        179662}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        81059}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        42254}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        22692}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        18684}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        17610}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        16188}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        15532}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        14965}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        14727}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        13803}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        13724}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        12730}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        12702}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        12519}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        12500}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        12441}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        12359}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        11952}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        11949}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        11477}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        11265}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        10888}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        10801}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        10697}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        10576}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        10574}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        10449}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        10110}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        9981}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        9960}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        9947}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        9943}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        9875}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        9870}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        9742}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        9613}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        9450}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        9395}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        9372}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        9371}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        9364}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        9363}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        9344}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        9341}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        9295}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        9270}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        9205}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        9129}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        9059}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        9037}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        8951}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        8697}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        8693}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        8587}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        8568}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        8450}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        8385}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        8321}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        8292}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        8263}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        8240}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        8219}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        8218}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        8194}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        8179}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        8156}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        8110}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        7938}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        7901}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        7848}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        7785}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        7647}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        7631}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        7573}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        7565}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        7498}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        7402}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        7382}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        7312}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        7298}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        7151}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        7059}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        7045}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        7024}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        7021}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        6998}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        6907}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        6862}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        6837}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        6726}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        6697}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        6679}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        6670}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        6618}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}, {"type": "container_image_group", "attributes":
+        {"name": "test_name", "tags": {"short_image": "test_short_image"}, "count":
+        6596}, "relationships": {"container_images": {"links": {"related": "https://api.datadoghq.com/api/v2/container_images?filter[tags]=short_image:image"},
+        "data": []}}, "id": "test_id"}], "meta": {"pagination": {"cursor": "", "prev_cursor":
+        null, "next_cursor": "", "limit": 100, "type": "cursor_limit", "total": 0}},
+        "links": {"self": "https://api.datadoghq.com/api/v2/container_images?group_by=short_image",
+        "last": null, "next": null, "prev": null, "first": "https://api.datadoghq.com/api/v2/container_images?group_by=short_image&page[size]=100"}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

@@ -920,11 +920,9 @@ class IncidentsApi:
 
         Search for incidents matching a certain query.
 
-        :param query: Specifies which incidents should be returned. After entering a search query in your `Incidents page <https://app.datadoghq.com/incidents>`_ ,
-            use the query parameter value in the URL of the page as the value for this parameter.
-
-            The query can contain any number of incident facets joined by ``ANDs`` , along with multiple values for each of
-            those facets joined by ``OR`` s, for instance: ``query="state:active AND severity:(SEV-2 OR SEV-1)"``.
+        :param query: Specifies which incidents should be returned. The query can contain any number of incident facets
+            joined by ``ANDs`` , along with multiple values for each of those facets joined by ``OR`` s. For
+            example: ``state:active AND severity:(SEV-2 OR SEV-1)``.
         :type query: str
         :param include: Specifies which types of related objects should be included in the response.
         :type include: IncidentRelatedObject, optional
@@ -966,11 +964,9 @@ class IncidentsApi:
 
         Provide a paginated version of :meth:`search_incidents`, returning all items.
 
-        :param query: Specifies which incidents should be returned. After entering a search query in your `Incidents page <https://app.datadoghq.com/incidents>`_ ,
-            use the query parameter value in the URL of the page as the value for this parameter.
-
-            The query can contain any number of incident facets joined by ``ANDs`` , along with multiple values for each of
-            those facets joined by ``OR`` s, for instance: ``query="state:active AND severity:(SEV-2 OR SEV-1)"``.
+        :param query: Specifies which incidents should be returned. The query can contain any number of incident facets
+            joined by ``ANDs`` , along with multiple values for each of those facets joined by ``OR`` s. For
+            example: ``state:active AND severity:(SEV-2 OR SEV-1)``.
         :type query: str
         :param include: Specifies which types of related objects should be included in the response.
         :type include: IncidentRelatedObject, optional

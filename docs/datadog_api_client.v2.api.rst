@@ -57,6 +57,20 @@ confluent\_cloud\_api
    :members:
    :show-inheritance:
 
+container\_images\_api
+----------------------
+
+.. automodule:: datadog_api_client.v2.api.container_images_api
+   :members:
+   :show-inheritance:
+
+containers\_api
+---------------
+
+.. automodule:: datadog_api_client.v2.api.containers_api
+   :members:
+   :show-inheritance:
+
 dashboard\_lists\_api
 ---------------------
 
@@ -173,6 +187,13 @@ organizations\_api
 ------------------
 
 .. automodule:: datadog_api_client.v2.api.organizations_api
+   :members:
+   :show-inheritance:
+
+powerpack\_api
+--------------
+
+.. automodule:: datadog_api_client.v2.api.powerpack_api
    :members:
    :show-inheritance:
 

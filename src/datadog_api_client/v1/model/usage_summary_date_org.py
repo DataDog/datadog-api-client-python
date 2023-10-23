@@ -41,6 +41,7 @@ class UsageSummaryDateOrg(ModelNormal):
             "cloud_cost_management_aws_host_count_avg": (int,),
             "cloud_cost_management_azure_host_count_avg": (int,),
             "cloud_cost_management_host_count_avg": (int,),
+            "cloud_siem_events_sum": (int,),
             "container_avg": (int,),
             "container_excl_agent_avg": (int,),
             "container_hwm": (int,),
@@ -87,6 +88,7 @@ class UsageSummaryDateOrg(ModelNormal):
             "mobile_rum_session_count_sum": (int,),
             "mobile_rum_units_sum": (int,),
             "name": (str,),
+            "ndm_netflow_events_sum": (int,),
             "netflow_indexed_events_count_sum": (int,),
             "npm_host_top99p": (int,),
             "observability_pipelines_bytes_processed_sum": (int,),
@@ -146,6 +148,7 @@ class UsageSummaryDateOrg(ModelNormal):
         "cloud_cost_management_aws_host_count_avg": "cloud_cost_management_aws_host_count_avg",
         "cloud_cost_management_azure_host_count_avg": "cloud_cost_management_azure_host_count_avg",
         "cloud_cost_management_host_count_avg": "cloud_cost_management_host_count_avg",
+        "cloud_siem_events_sum": "cloud_siem_events_sum",
         "container_avg": "container_avg",
         "container_excl_agent_avg": "container_excl_agent_avg",
         "container_hwm": "container_hwm",
@@ -192,6 +195,7 @@ class UsageSummaryDateOrg(ModelNormal):
         "mobile_rum_session_count_sum": "mobile_rum_session_count_sum",
         "mobile_rum_units_sum": "mobile_rum_units_sum",
         "name": "name",
+        "ndm_netflow_events_sum": "ndm_netflow_events_sum",
         "netflow_indexed_events_count_sum": "netflow_indexed_events_count_sum",
         "npm_host_top99p": "npm_host_top99p",
         "observability_pipelines_bytes_processed_sum": "observability_pipelines_bytes_processed_sum",
@@ -252,6 +256,7 @@ class UsageSummaryDateOrg(ModelNormal):
         cloud_cost_management_aws_host_count_avg: Union[int, UnsetType] = unset,
         cloud_cost_management_azure_host_count_avg: Union[int, UnsetType] = unset,
         cloud_cost_management_host_count_avg: Union[int, UnsetType] = unset,
+        cloud_siem_events_sum: Union[int, UnsetType] = unset,
         container_avg: Union[int, UnsetType] = unset,
         container_excl_agent_avg: Union[int, UnsetType] = unset,
         container_hwm: Union[int, UnsetType] = unset,
@@ -298,6 +303,7 @@ class UsageSummaryDateOrg(ModelNormal):
         mobile_rum_session_count_sum: Union[int, UnsetType] = unset,
         mobile_rum_units_sum: Union[int, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
+        ndm_netflow_events_sum: Union[int, UnsetType] = unset,
         netflow_indexed_events_count_sum: Union[int, UnsetType] = unset,
         npm_host_top99p: Union[int, UnsetType] = unset,
         observability_pipelines_bytes_processed_sum: Union[int, UnsetType] = unset,
@@ -406,6 +412,9 @@ class UsageSummaryDateOrg(ModelNormal):
 
         :param cloud_cost_management_host_count_avg: Host count average of Cloud Cost Management for all cloud providers for the given date and given org.
         :type cloud_cost_management_host_count_avg: int, optional
+
+        :param cloud_siem_events_sum: Shows the sum of all Cloud Security Information and Event Management events over all hours in the current date for the given org.
+        :type cloud_siem_events_sum: int, optional
 
         :param container_avg: Shows the average of all distinct containers over all hours in the current date for the given org.
         :type container_avg: int, optional
@@ -544,6 +553,9 @@ class UsageSummaryDateOrg(ModelNormal):
 
         :param name: The organization name.
         :type name: str, optional
+
+        :param ndm_netflow_events_sum: Shows the sum of all Network Device Monitoring NetFlow events over all hours in the current date for the given org.
+        :type ndm_netflow_events_sum: int, optional
 
         :param netflow_indexed_events_count_sum: Shows the sum of all Network flows indexed over all hours in the current date for the given org.
         :type netflow_indexed_events_count_sum: int, optional
@@ -689,6 +701,8 @@ class UsageSummaryDateOrg(ModelNormal):
             kwargs["cloud_cost_management_azure_host_count_avg"] = cloud_cost_management_azure_host_count_avg
         if cloud_cost_management_host_count_avg is not unset:
             kwargs["cloud_cost_management_host_count_avg"] = cloud_cost_management_host_count_avg
+        if cloud_siem_events_sum is not unset:
+            kwargs["cloud_siem_events_sum"] = cloud_siem_events_sum
         if container_avg is not unset:
             kwargs["container_avg"] = container_avg
         if container_excl_agent_avg is not unset:
@@ -783,6 +797,8 @@ class UsageSummaryDateOrg(ModelNormal):
             kwargs["mobile_rum_units_sum"] = mobile_rum_units_sum
         if name is not unset:
             kwargs["name"] = name
+        if ndm_netflow_events_sum is not unset:
+            kwargs["ndm_netflow_events_sum"] = ndm_netflow_events_sum
         if netflow_indexed_events_count_sum is not unset:
             kwargs["netflow_indexed_events_count_sum"] = netflow_indexed_events_count_sum
         if npm_host_top99p is not unset:

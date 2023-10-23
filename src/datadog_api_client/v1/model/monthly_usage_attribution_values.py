@@ -33,6 +33,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
             "browser_usage": (float,),
             "ci_visibility_itr_percentage": (float,),
             "ci_visibility_itr_usage": (float,),
+            "cloud_siem_percentage": (float,),
+            "cloud_siem_usage": (float,),
             "container_excl_agent_percentage": (float,),
             "container_excl_agent_usage": (float,),
             "container_percentage": (float,),
@@ -73,6 +75,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
             "invocations_usage": (float,),
             "mobile_app_testing_percentage": (float,),
             "mobile_app_testing_usage": (float,),
+            "ndm_netflow_percentage": (float,),
+            "ndm_netflow_usage": (float,),
             "npm_host_percentage": (float,),
             "npm_host_usage": (float,),
             "obs_pipeline_bytes_percentage": (float,),
@@ -112,6 +116,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         "browser_usage": "browser_usage",
         "ci_visibility_itr_percentage": "ci_visibility_itr_percentage",
         "ci_visibility_itr_usage": "ci_visibility_itr_usage",
+        "cloud_siem_percentage": "cloud_siem_percentage",
+        "cloud_siem_usage": "cloud_siem_usage",
         "container_excl_agent_percentage": "container_excl_agent_percentage",
         "container_excl_agent_usage": "container_excl_agent_usage",
         "container_percentage": "container_percentage",
@@ -152,6 +158,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         "invocations_usage": "invocations_usage",
         "mobile_app_testing_percentage": "mobile_app_testing_percentage",
         "mobile_app_testing_usage": "mobile_app_testing_usage",
+        "ndm_netflow_percentage": "ndm_netflow_percentage",
+        "ndm_netflow_usage": "ndm_netflow_usage",
         "npm_host_percentage": "npm_host_percentage",
         "npm_host_usage": "npm_host_usage",
         "obs_pipeline_bytes_percentage": "obs_pipeline_bytes_percentage",
@@ -192,6 +200,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         browser_usage: Union[float, UnsetType] = unset,
         ci_visibility_itr_percentage: Union[float, UnsetType] = unset,
         ci_visibility_itr_usage: Union[float, UnsetType] = unset,
+        cloud_siem_percentage: Union[float, UnsetType] = unset,
+        cloud_siem_usage: Union[float, UnsetType] = unset,
         container_excl_agent_percentage: Union[float, UnsetType] = unset,
         container_excl_agent_usage: Union[float, UnsetType] = unset,
         container_percentage: Union[float, UnsetType] = unset,
@@ -232,6 +242,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         invocations_usage: Union[float, UnsetType] = unset,
         mobile_app_testing_percentage: Union[float, UnsetType] = unset,
         mobile_app_testing_usage: Union[float, UnsetType] = unset,
+        ndm_netflow_percentage: Union[float, UnsetType] = unset,
+        ndm_netflow_usage: Union[float, UnsetType] = unset,
         npm_host_percentage: Union[float, UnsetType] = unset,
         npm_host_usage: Union[float, UnsetType] = unset,
         obs_pipeline_bytes_percentage: Union[float, UnsetType] = unset,
@@ -304,6 +316,12 @@ class MonthlyUsageAttributionValues(ModelNormal):
 
         :param ci_visibility_itr_usage: The Git committers for Intelligent Test Runner usage by tag(s).
         :type ci_visibility_itr_usage: float, optional
+
+        :param cloud_siem_percentage: The percentage of Cloud Security Information and Event Management usage by tag(s).
+        :type cloud_siem_percentage: float, optional
+
+        :param cloud_siem_usage: The Cloud Security Information and Event Management usage by tag(s).
+        :type cloud_siem_usage: float, optional
 
         :param container_excl_agent_percentage: The percentage of container usage without the Datadog Agent by tag(s).
         :type container_excl_agent_percentage: float, optional
@@ -425,6 +443,12 @@ class MonthlyUsageAttributionValues(ModelNormal):
         :param mobile_app_testing_usage: The Synthetic mobile application test usage by tag(s).
         :type mobile_app_testing_usage: float, optional
 
+        :param ndm_netflow_percentage: The percentage of Network Device Monitoring NetFlow usage by tag(s).
+        :type ndm_netflow_percentage: float, optional
+
+        :param ndm_netflow_usage: The Network Device Monitoring NetFlow usage by tag(s).
+        :type ndm_netflow_usage: float, optional
+
         :param npm_host_percentage: The percentage of network host usage by tag(s).
         :type npm_host_percentage: float, optional
 
@@ -517,6 +541,10 @@ class MonthlyUsageAttributionValues(ModelNormal):
             kwargs["ci_visibility_itr_percentage"] = ci_visibility_itr_percentage
         if ci_visibility_itr_usage is not unset:
             kwargs["ci_visibility_itr_usage"] = ci_visibility_itr_usage
+        if cloud_siem_percentage is not unset:
+            kwargs["cloud_siem_percentage"] = cloud_siem_percentage
+        if cloud_siem_usage is not unset:
+            kwargs["cloud_siem_usage"] = cloud_siem_usage
         if container_excl_agent_percentage is not unset:
             kwargs["container_excl_agent_percentage"] = container_excl_agent_percentage
         if container_excl_agent_usage is not unset:
@@ -597,6 +625,10 @@ class MonthlyUsageAttributionValues(ModelNormal):
             kwargs["mobile_app_testing_percentage"] = mobile_app_testing_percentage
         if mobile_app_testing_usage is not unset:
             kwargs["mobile_app_testing_usage"] = mobile_app_testing_usage
+        if ndm_netflow_percentage is not unset:
+            kwargs["ndm_netflow_percentage"] = ndm_netflow_percentage
+        if ndm_netflow_usage is not unset:
+            kwargs["ndm_netflow_usage"] = ndm_netflow_usage
         if npm_host_percentage is not unset:
             kwargs["npm_host_percentage"] = npm_host_percentage
         if npm_host_usage is not unset:

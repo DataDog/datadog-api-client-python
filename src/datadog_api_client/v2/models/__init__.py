@@ -221,6 +221,40 @@ from datadog_api_client.v2.model.confluent_resource_response_attributes import C
 from datadog_api_client.v2.model.confluent_resource_response_data import ConfluentResourceResponseData
 from datadog_api_client.v2.model.confluent_resource_type import ConfluentResourceType
 from datadog_api_client.v2.model.confluent_resources_response import ConfluentResourcesResponse
+from datadog_api_client.v2.model.container import Container
+from datadog_api_client.v2.model.container_attributes import ContainerAttributes
+from datadog_api_client.v2.model.container_group import ContainerGroup
+from datadog_api_client.v2.model.container_group_attributes import ContainerGroupAttributes
+from datadog_api_client.v2.model.container_group_relationships import ContainerGroupRelationships
+from datadog_api_client.v2.model.container_group_relationships_link import ContainerGroupRelationshipsLink
+from datadog_api_client.v2.model.container_group_relationships_links import ContainerGroupRelationshipsLinks
+from datadog_api_client.v2.model.container_group_type import ContainerGroupType
+from datadog_api_client.v2.model.container_image import ContainerImage
+from datadog_api_client.v2.model.container_image_attributes import ContainerImageAttributes
+from datadog_api_client.v2.model.container_image_flavor import ContainerImageFlavor
+from datadog_api_client.v2.model.container_image_group import ContainerImageGroup
+from datadog_api_client.v2.model.container_image_group_attributes import ContainerImageGroupAttributes
+from datadog_api_client.v2.model.container_image_group_images_relationships_link import (
+    ContainerImageGroupImagesRelationshipsLink,
+)
+from datadog_api_client.v2.model.container_image_group_relationships import ContainerImageGroupRelationships
+from datadog_api_client.v2.model.container_image_group_relationships_links import ContainerImageGroupRelationshipsLinks
+from datadog_api_client.v2.model.container_image_group_type import ContainerImageGroupType
+from datadog_api_client.v2.model.container_image_item import ContainerImageItem
+from datadog_api_client.v2.model.container_image_meta import ContainerImageMeta
+from datadog_api_client.v2.model.container_image_meta_page import ContainerImageMetaPage
+from datadog_api_client.v2.model.container_image_meta_page_type import ContainerImageMetaPageType
+from datadog_api_client.v2.model.container_image_type import ContainerImageType
+from datadog_api_client.v2.model.container_image_vulnerabilities import ContainerImageVulnerabilities
+from datadog_api_client.v2.model.container_images_response import ContainerImagesResponse
+from datadog_api_client.v2.model.container_images_response_links import ContainerImagesResponseLinks
+from datadog_api_client.v2.model.container_item import ContainerItem
+from datadog_api_client.v2.model.container_meta import ContainerMeta
+from datadog_api_client.v2.model.container_meta_page import ContainerMetaPage
+from datadog_api_client.v2.model.container_meta_page_type import ContainerMetaPageType
+from datadog_api_client.v2.model.container_type import ContainerType
+from datadog_api_client.v2.model.containers_response import ContainersResponse
+from datadog_api_client.v2.model.containers_response_links import ContainersResponseLinks
 from datadog_api_client.v2.model.content_encoding import ContentEncoding
 from datadog_api_client.v2.model.cost_by_org import CostByOrg
 from datadog_api_client.v2.model.cost_by_org_attributes import CostByOrgAttributes
@@ -542,6 +576,7 @@ from datadog_api_client.v2.model.list_downtimes_response import ListDowntimesRes
 from datadog_api_client.v2.model.list_findings_meta import ListFindingsMeta
 from datadog_api_client.v2.model.list_findings_page import ListFindingsPage
 from datadog_api_client.v2.model.list_findings_response import ListFindingsResponse
+from datadog_api_client.v2.model.list_powerpacks_response import ListPowerpacksResponse
 from datadog_api_client.v2.model.list_teams_include import ListTeamsInclude
 from datadog_api_client.v2.model.list_teams_sort import ListTeamsSort
 from datadog_api_client.v2.model.log import Log
@@ -766,6 +801,20 @@ from datadog_api_client.v2.model.permission import Permission
 from datadog_api_client.v2.model.permission_attributes import PermissionAttributes
 from datadog_api_client.v2.model.permissions_response import PermissionsResponse
 from datadog_api_client.v2.model.permissions_type import PermissionsType
+from datadog_api_client.v2.model.powerpack import Powerpack
+from datadog_api_client.v2.model.powerpack_attributes import PowerpackAttributes
+from datadog_api_client.v2.model.powerpack_data import PowerpackData
+from datadog_api_client.v2.model.powerpack_group_widget import PowerpackGroupWidget
+from datadog_api_client.v2.model.powerpack_group_widget_definition import PowerpackGroupWidgetDefinition
+from datadog_api_client.v2.model.powerpack_group_widget_layout import PowerpackGroupWidgetLayout
+from datadog_api_client.v2.model.powerpack_inner_widget_layout import PowerpackInnerWidgetLayout
+from datadog_api_client.v2.model.powerpack_inner_widgets import PowerpackInnerWidgets
+from datadog_api_client.v2.model.powerpack_relationships import PowerpackRelationships
+from datadog_api_client.v2.model.powerpack_response import PowerpackResponse
+from datadog_api_client.v2.model.powerpack_response_links import PowerpackResponseLinks
+from datadog_api_client.v2.model.powerpack_template_variable import PowerpackTemplateVariable
+from datadog_api_client.v2.model.powerpacks_response_meta import PowerpacksResponseMeta
+from datadog_api_client.v2.model.powerpacks_response_meta_pagination import PowerpacksResponseMetaPagination
 from datadog_api_client.v2.model.process_summaries_meta import ProcessSummariesMeta
 from datadog_api_client.v2.model.process_summaries_meta_page import ProcessSummariesMetaPage
 from datadog_api_client.v2.model.process_summaries_response import ProcessSummariesResponse
@@ -1189,6 +1238,15 @@ from datadog_api_client.v2.model.service_definition_v2_dot1_pagerduty import Ser
 from datadog_api_client.v2.model.service_definition_v2_dot1_slack import ServiceDefinitionV2Dot1Slack
 from datadog_api_client.v2.model.service_definition_v2_dot1_slack_type import ServiceDefinitionV2Dot1SlackType
 from datadog_api_client.v2.model.service_definition_v2_dot1_version import ServiceDefinitionV2Dot1Version
+from datadog_api_client.v2.model.service_definition_v2_dot2 import ServiceDefinitionV2Dot2
+from datadog_api_client.v2.model.service_definition_v2_dot2_contact import ServiceDefinitionV2Dot2Contact
+from datadog_api_client.v2.model.service_definition_v2_dot2_integrations import ServiceDefinitionV2Dot2Integrations
+from datadog_api_client.v2.model.service_definition_v2_dot2_link import ServiceDefinitionV2Dot2Link
+from datadog_api_client.v2.model.service_definition_v2_dot2_opsgenie import ServiceDefinitionV2Dot2Opsgenie
+from datadog_api_client.v2.model.service_definition_v2_dot2_opsgenie_region import ServiceDefinitionV2Dot2OpsgenieRegion
+from datadog_api_client.v2.model.service_definition_v2_dot2_pagerduty import ServiceDefinitionV2Dot2Pagerduty
+from datadog_api_client.v2.model.service_definition_v2_dot2_type import ServiceDefinitionV2Dot2Type
+from datadog_api_client.v2.model.service_definition_v2_dot2_version import ServiceDefinitionV2Dot2Version
 from datadog_api_client.v2.model.service_definition_v2_email import ServiceDefinitionV2Email
 from datadog_api_client.v2.model.service_definition_v2_email_type import ServiceDefinitionV2EmailType
 from datadog_api_client.v2.model.service_definition_v2_integrations import ServiceDefinitionV2Integrations
@@ -1546,6 +1604,38 @@ __all__ = [
     "ConfluentResourceResponseData",
     "ConfluentResourceType",
     "ConfluentResourcesResponse",
+    "Container",
+    "ContainerAttributes",
+    "ContainerGroup",
+    "ContainerGroupAttributes",
+    "ContainerGroupRelationships",
+    "ContainerGroupRelationshipsLink",
+    "ContainerGroupRelationshipsLinks",
+    "ContainerGroupType",
+    "ContainerImage",
+    "ContainerImageAttributes",
+    "ContainerImageFlavor",
+    "ContainerImageGroup",
+    "ContainerImageGroupAttributes",
+    "ContainerImageGroupImagesRelationshipsLink",
+    "ContainerImageGroupRelationships",
+    "ContainerImageGroupRelationshipsLinks",
+    "ContainerImageGroupType",
+    "ContainerImageItem",
+    "ContainerImageMeta",
+    "ContainerImageMetaPage",
+    "ContainerImageMetaPageType",
+    "ContainerImageType",
+    "ContainerImageVulnerabilities",
+    "ContainerImagesResponse",
+    "ContainerImagesResponseLinks",
+    "ContainerItem",
+    "ContainerMeta",
+    "ContainerMetaPage",
+    "ContainerMetaPageType",
+    "ContainerType",
+    "ContainersResponse",
+    "ContainersResponseLinks",
     "ContentEncoding",
     "CostByOrg",
     "CostByOrgAttributes",
@@ -1825,6 +1915,7 @@ __all__ = [
     "ListFindingsMeta",
     "ListFindingsPage",
     "ListFindingsResponse",
+    "ListPowerpacksResponse",
     "ListTeamsInclude",
     "ListTeamsSort",
     "Log",
@@ -2027,6 +2118,20 @@ __all__ = [
     "PermissionAttributes",
     "PermissionsResponse",
     "PermissionsType",
+    "Powerpack",
+    "PowerpackAttributes",
+    "PowerpackData",
+    "PowerpackGroupWidget",
+    "PowerpackGroupWidgetDefinition",
+    "PowerpackGroupWidgetLayout",
+    "PowerpackInnerWidgetLayout",
+    "PowerpackInnerWidgets",
+    "PowerpackRelationships",
+    "PowerpackResponse",
+    "PowerpackResponseLinks",
+    "PowerpackTemplateVariable",
+    "PowerpacksResponseMeta",
+    "PowerpacksResponseMetaPagination",
     "ProcessSummariesMeta",
     "ProcessSummariesMetaPage",
     "ProcessSummariesResponse",
@@ -2338,6 +2443,15 @@ __all__ = [
     "ServiceDefinitionV2Dot1Slack",
     "ServiceDefinitionV2Dot1SlackType",
     "ServiceDefinitionV2Dot1Version",
+    "ServiceDefinitionV2Dot2",
+    "ServiceDefinitionV2Dot2Contact",
+    "ServiceDefinitionV2Dot2Integrations",
+    "ServiceDefinitionV2Dot2Link",
+    "ServiceDefinitionV2Dot2Opsgenie",
+    "ServiceDefinitionV2Dot2OpsgenieRegion",
+    "ServiceDefinitionV2Dot2Pagerduty",
+    "ServiceDefinitionV2Dot2Type",
+    "ServiceDefinitionV2Dot2Version",
     "ServiceDefinitionV2Email",
     "ServiceDefinitionV2EmailType",
     "ServiceDefinitionV2Integrations",

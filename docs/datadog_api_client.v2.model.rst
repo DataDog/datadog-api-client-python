@@ -1240,6 +1240,230 @@ confluent\_resources\_response
    :members:
    :show-inheritance:
 
+container
+---------
+
+.. automodule:: datadog_api_client.v2.model.container
+   :members:
+   :show-inheritance:
+
+container\_attributes
+---------------------
+
+.. automodule:: datadog_api_client.v2.model.container_attributes
+   :members:
+   :show-inheritance:
+
+container\_group
+----------------
+
+.. automodule:: datadog_api_client.v2.model.container_group
+   :members:
+   :show-inheritance:
+
+container\_group\_attributes
+----------------------------
+
+.. automodule:: datadog_api_client.v2.model.container_group_attributes
+   :members:
+   :show-inheritance:
+
+container\_group\_relationships
+-------------------------------
+
+.. automodule:: datadog_api_client.v2.model.container_group_relationships
+   :members:
+   :show-inheritance:
+
+container\_group\_relationships\_link
+-------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.container_group_relationships_link
+   :members:
+   :show-inheritance:
+
+container\_group\_relationships\_links
+--------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.container_group_relationships_links
+   :members:
+   :show-inheritance:
+
+container\_group\_type
+----------------------
+
+.. automodule:: datadog_api_client.v2.model.container_group_type
+   :members:
+   :show-inheritance:
+
+container\_image
+----------------
+
+.. automodule:: datadog_api_client.v2.model.container_image
+   :members:
+   :show-inheritance:
+
+container\_image\_attributes
+----------------------------
+
+.. automodule:: datadog_api_client.v2.model.container_image_attributes
+   :members:
+   :show-inheritance:
+
+container\_image\_flavor
+------------------------
+
+.. automodule:: datadog_api_client.v2.model.container_image_flavor
+   :members:
+   :show-inheritance:
+
+container\_image\_group
+-----------------------
+
+.. automodule:: datadog_api_client.v2.model.container_image_group
+   :members:
+   :show-inheritance:
+
+container\_image\_group\_attributes
+-----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.container_image_group_attributes
+   :members:
+   :show-inheritance:
+
+container\_image\_group\_images\_relationships\_link
+----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.container_image_group_images_relationships_link
+   :members:
+   :show-inheritance:
+
+container\_image\_group\_relationships
+--------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.container_image_group_relationships
+   :members:
+   :show-inheritance:
+
+container\_image\_group\_relationships\_links
+---------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.container_image_group_relationships_links
+   :members:
+   :show-inheritance:
+
+container\_image\_group\_type
+-----------------------------
+
+.. automodule:: datadog_api_client.v2.model.container_image_group_type
+   :members:
+   :show-inheritance:
+
+container\_image\_item
+----------------------
+
+.. automodule:: datadog_api_client.v2.model.container_image_item
+   :members:
+   :show-inheritance:
+
+container\_image\_meta
+----------------------
+
+.. automodule:: datadog_api_client.v2.model.container_image_meta
+   :members:
+   :show-inheritance:
+
+container\_image\_meta\_page
+----------------------------
+
+.. automodule:: datadog_api_client.v2.model.container_image_meta_page
+   :members:
+   :show-inheritance:
+
+container\_image\_meta\_page\_type
+----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.container_image_meta_page_type
+   :members:
+   :show-inheritance:
+
+container\_image\_type
+----------------------
+
+.. automodule:: datadog_api_client.v2.model.container_image_type
+   :members:
+   :show-inheritance:
+
+container\_image\_vulnerabilities
+---------------------------------
+
+.. automodule:: datadog_api_client.v2.model.container_image_vulnerabilities
+   :members:
+   :show-inheritance:
+
+container\_images\_response
+---------------------------
+
+.. automodule:: datadog_api_client.v2.model.container_images_response
+   :members:
+   :show-inheritance:
+
+container\_images\_response\_links
+----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.container_images_response_links
+   :members:
+   :show-inheritance:
+
+container\_item
+---------------
+
+.. automodule:: datadog_api_client.v2.model.container_item
+   :members:
+   :show-inheritance:
+
+container\_meta
+---------------
+
+.. automodule:: datadog_api_client.v2.model.container_meta
+   :members:
+   :show-inheritance:
+
+container\_meta\_page
+---------------------
+
+.. automodule:: datadog_api_client.v2.model.container_meta_page
+   :members:
+   :show-inheritance:
+
+container\_meta\_page\_type
+---------------------------
+
+.. automodule:: datadog_api_client.v2.model.container_meta_page_type
+   :members:
+   :show-inheritance:
+
+container\_type
+---------------
+
+.. automodule:: datadog_api_client.v2.model.container_type
+   :members:
+   :show-inheritance:
+
+containers\_response
+--------------------
+
+.. automodule:: datadog_api_client.v2.model.containers_response
+   :members:
+   :show-inheritance:
+
+containers\_response\_links
+---------------------------
+
+.. automodule:: datadog_api_client.v2.model.containers_response_links
+   :members:
+   :show-inheritance:
+
 content\_encoding
 -----------------
 
@@ -3193,6 +3417,13 @@ list\_findings\_response
    :members:
    :show-inheritance:
 
+list\_powerpacks\_response
+--------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_powerpacks_response
+   :members:
+   :show-inheritance:
+
 list\_teams\_include
 --------------------
 
@@ -4604,6 +4835,104 @@ permissions\_type
 -----------------
 
 .. automodule:: datadog_api_client.v2.model.permissions_type
+   :members:
+   :show-inheritance:
+
+powerpack
+---------
+
+.. automodule:: datadog_api_client.v2.model.powerpack
+   :members:
+   :show-inheritance:
+
+powerpack\_attributes
+---------------------
+
+.. automodule:: datadog_api_client.v2.model.powerpack_attributes
+   :members:
+   :show-inheritance:
+
+powerpack\_data
+---------------
+
+.. automodule:: datadog_api_client.v2.model.powerpack_data
+   :members:
+   :show-inheritance:
+
+powerpack\_group\_widget
+------------------------
+
+.. automodule:: datadog_api_client.v2.model.powerpack_group_widget
+   :members:
+   :show-inheritance:
+
+powerpack\_group\_widget\_definition
+------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.powerpack_group_widget_definition
+   :members:
+   :show-inheritance:
+
+powerpack\_group\_widget\_layout
+--------------------------------
+
+.. automodule:: datadog_api_client.v2.model.powerpack_group_widget_layout
+   :members:
+   :show-inheritance:
+
+powerpack\_inner\_widget\_layout
+--------------------------------
+
+.. automodule:: datadog_api_client.v2.model.powerpack_inner_widget_layout
+   :members:
+   :show-inheritance:
+
+powerpack\_inner\_widgets
+-------------------------
+
+.. automodule:: datadog_api_client.v2.model.powerpack_inner_widgets
+   :members:
+   :show-inheritance:
+
+powerpack\_relationships
+------------------------
+
+.. automodule:: datadog_api_client.v2.model.powerpack_relationships
+   :members:
+   :show-inheritance:
+
+powerpack\_response
+-------------------
+
+.. automodule:: datadog_api_client.v2.model.powerpack_response
+   :members:
+   :show-inheritance:
+
+powerpack\_response\_links
+--------------------------
+
+.. automodule:: datadog_api_client.v2.model.powerpack_response_links
+   :members:
+   :show-inheritance:
+
+powerpack\_template\_variable
+-----------------------------
+
+.. automodule:: datadog_api_client.v2.model.powerpack_template_variable
+   :members:
+   :show-inheritance:
+
+powerpacks\_response\_meta
+--------------------------
+
+.. automodule:: datadog_api_client.v2.model.powerpacks_response_meta
+   :members:
+   :show-inheritance:
+
+powerpacks\_response\_meta\_pagination
+--------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.powerpacks_response_meta_pagination
    :members:
    :show-inheritance:
 
@@ -6767,6 +7096,62 @@ service\_definition\_v2\_dot1\_slack\_type
 ------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.service_definition_v2_dot1_slack_type
+   :members:
+   :show-inheritance:
+
+service\_definition\_v2\_dot2
+-----------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_definition_v2_dot2
+   :members:
+   :show-inheritance:
+
+service\_definition\_v2\_dot2\_contact
+--------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_definition_v2_dot2_contact
+   :members:
+   :show-inheritance:
+
+service\_definition\_v2\_dot2\_integrations
+-------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_definition_v2_dot2_integrations
+   :members:
+   :show-inheritance:
+
+service\_definition\_v2\_dot2\_link
+-----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_definition_v2_dot2_link
+   :members:
+   :show-inheritance:
+
+service\_definition\_v2\_dot2\_opsgenie
+---------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_definition_v2_dot2_opsgenie
+   :members:
+   :show-inheritance:
+
+service\_definition\_v2\_dot2\_opsgenie\_region
+-----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_definition_v2_dot2_opsgenie_region
+   :members:
+   :show-inheritance:
+
+service\_definition\_v2\_dot2\_pagerduty
+----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_definition_v2_dot2_pagerduty
+   :members:
+   :show-inheritance:
+
+service\_definition\_v2\_dot2\_type
+-----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_definition_v2_dot2_type
    :members:
    :show-inheritance:
 

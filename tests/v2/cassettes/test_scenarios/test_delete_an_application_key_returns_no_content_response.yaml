@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"name":"Test-Delete_an_Application_key_returns_No_Content_response-1652349126"},"type":"application_keys"}}'
+    body: '{"data":{"attributes":{"name":"Test-Delete_an_application_key_returns_No_Content_response-1697462308"},"type":"application_keys"}}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/current_user/application_keys
   response:
     body:
-      string: '{"data":{"type":"application_keys","id":"d2653524-a474-460c-a7c7-75073e8aa1fa","attributes":{"name":"Test-Delete_an_Application_key_returns_No_Content_response-1652349126","created_at":"2022-05-12T09:52:07.427090+00:00","last4":"xxxx","key":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","scopes":null},"relationships":{"owned_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}},"leak_information":{"data":null}}}}'
+      string: '{"data":{"type":"application_keys","id":"c7a26dee-1619-4ed0-8d1a-0ae4ed94da29","attributes":{"name":"Test-Delete_an_application_key_returns_No_Content_response-1697462308","created_at":"2023-10-16T13:18:29.388862+00:00","last4":"xxxx","key":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","scopes":null},"relationships":{"owned_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}},"leak_information":{"data":null}}}}'
     headers:
       content-type:
       - application/json
@@ -23,11 +23,13 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/application_keys/d2653524-a474-460c-a7c7-75073e8aa1fa
+    uri: https://api.datadoghq.com/api/v2/application_keys/c7a26dee-1619-4ed0-8d1a-0ae4ed94da29
   response:
     body:
       string: ''
-    headers: {}
+    headers:
+      content-type:
+      - text/html; charset=utf-8
     status:
       code: 204
       message: No Content
@@ -37,10 +39,10 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/current_user/application_keys/d2653524-a474-460c-a7c7-75073e8aa1fa
+    uri: https://api.datadoghq.com/api/v2/current_user/application_keys/c7a26dee-1619-4ed0-8d1a-0ae4ed94da29
   response:
     body:
-      string: '{"errors": ["Application key not found"]}'
+      string: '{"errors":["Application key not found"]}'
     headers:
       content-type:
       - application/json

@@ -88,8 +88,15 @@ Feature: Users
     Then the response status is 200 OK
     And the response "data" has length 0
 
+  @generated @skip @team:DataDog/team-aaa-identity
+  Scenario: Get user details returns "Not found" response
+    Given new "GetUser" request
+    And request contains "user_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not found
+
   @team:DataDog/team-aaa-identity
-  Scenario: Get a user returns "OK" response
+  Scenario: Get user details returns "OK" response
     Given there is a valid "user" in the system
     And new "GetUser" request
     And request contains "user_id" parameter from "user.data.id"
@@ -98,20 +105,6 @@ Feature: Users
     And the response "data.id" is equal to "{{ user.data.id }}"
     And the response "data.type" is equal to "users"
     And the response "data.attributes.handle" is equal to "{{ unique_lower }}@datadoghq.com"
-
-  @generated @skip @team:DataDog/team-aaa-identity
-  Scenario: Get user details returns "Not found" response
-    Given new "GetUser" request
-    And request contains "user_id" parameter from "REPLACE.ME"
-    When the request is sent
-    Then the response status is 404 Not found
-
-  @generated @skip @team:DataDog/team-aaa-identity
-  Scenario: Get user details returns "OK for get user" response
-    Given new "GetUser" request
-    And request contains "user_id" parameter from "REPLACE.ME"
-    When the request is sent
-    Then the response status is 200 OK for get user
 
   @generated @skip @team:DataDog/team-aaa-identity
   Scenario: List all users returns "Bad Request" response

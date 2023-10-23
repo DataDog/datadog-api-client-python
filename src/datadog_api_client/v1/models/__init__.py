@@ -208,6 +208,7 @@ from datadog_api_client.v1.model.i_frame_widget_definition_type import IFrameWid
 from datadog_api_client.v1.model.ip_prefixes_api import IPPrefixesAPI
 from datadog_api_client.v1.model.ip_prefixes_apm import IPPrefixesAPM
 from datadog_api_client.v1.model.ip_prefixes_agents import IPPrefixesAgents
+from datadog_api_client.v1.model.ip_prefixes_global import IPPrefixesGlobal
 from datadog_api_client.v1.model.ip_prefixes_logs import IPPrefixesLogs
 from datadog_api_client.v1.model.ip_prefixes_orchestrator import IPPrefixesOrchestrator
 from datadog_api_client.v1.model.ip_prefixes_process import IPPrefixesProcess
@@ -337,6 +338,10 @@ from datadog_api_client.v1.model.monitor_group_search_response_counts import Mon
 from datadog_api_client.v1.model.monitor_group_search_result import MonitorGroupSearchResult
 from datadog_api_client.v1.model.monitor_options import MonitorOptions
 from datadog_api_client.v1.model.monitor_options_aggregation import MonitorOptionsAggregation
+from datadog_api_client.v1.model.monitor_options_custom_schedule import MonitorOptionsCustomSchedule
+from datadog_api_client.v1.model.monitor_options_custom_schedule_recurrence import (
+    MonitorOptionsCustomScheduleRecurrence,
+)
 from datadog_api_client.v1.model.monitor_options_notification_presets import MonitorOptionsNotificationPresets
 from datadog_api_client.v1.model.monitor_options_scheduling_options import MonitorOptionsSchedulingOptions
 from datadog_api_client.v1.model.monitor_options_scheduling_options_evaluation_window import (
@@ -435,6 +440,10 @@ from datadog_api_client.v1.model.pager_duty_service_key import PagerDutyServiceK
 from datadog_api_client.v1.model.pager_duty_service_name import PagerDutyServiceName
 from datadog_api_client.v1.model.pagination import Pagination
 from datadog_api_client.v1.model.point import Point
+from datadog_api_client.v1.model.powerpack_template_variable_contents import PowerpackTemplateVariableContents
+from datadog_api_client.v1.model.powerpack_template_variables import PowerpackTemplateVariables
+from datadog_api_client.v1.model.powerpack_widget_definition import PowerpackWidgetDefinition
+from datadog_api_client.v1.model.powerpack_widget_definition_type import PowerpackWidgetDefinitionType
 from datadog_api_client.v1.model.process_query_definition import ProcessQueryDefinition
 from datadog_api_client.v1.model.query_sort_order import QuerySortOrder
 from datadog_api_client.v1.model.query_value_widget_definition import QueryValueWidgetDefinition
@@ -1105,6 +1114,7 @@ __all__ = [
     "IPPrefixesAPI",
     "IPPrefixesAPM",
     "IPPrefixesAgents",
+    "IPPrefixesGlobal",
     "IPPrefixesLogs",
     "IPPrefixesOrchestrator",
     "IPPrefixesProcess",
@@ -1218,6 +1228,8 @@ __all__ = [
     "MonitorGroupSearchResult",
     "MonitorOptions",
     "MonitorOptionsAggregation",
+    "MonitorOptionsCustomSchedule",
+    "MonitorOptionsCustomScheduleRecurrence",
     "MonitorOptionsNotificationPresets",
     "MonitorOptionsSchedulingOptions",
     "MonitorOptionsSchedulingOptionsEvaluationWindow",
@@ -1308,6 +1320,10 @@ __all__ = [
     "PagerDutyServiceName",
     "Pagination",
     "Point",
+    "PowerpackTemplateVariableContents",
+    "PowerpackTemplateVariables",
+    "PowerpackWidgetDefinition",
+    "PowerpackWidgetDefinitionType",
     "ProcessQueryDefinition",
     "QuerySortOrder",
     "QueryValueWidgetDefinition",

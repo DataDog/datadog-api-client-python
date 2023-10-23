@@ -1,0 +1,23 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"description":"Powerpack for ABC","group_widget":{"definition":{"layout_type":"ordered","type":"group1","widgets":[]}},"name":"Sample
+      Powerpack","tags":["tag:foo1"],"template_variables":[{"defaults":["*"],"name":"test"}]},"type":"powerpack"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/powerpacks
+  response:
+    body:
+      string: '{"errors":["Invalid group widget for powerpack. Error: ''group1'' is
+        not one of [''group'']\n\nFailed validating ''enum'' in schema[''properties''][''type'']:\n    {''enum'':
+        [''group'']}\n\nOn instance[''type'']:\n    ''group1''."]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 400
+      message: Bad Request
+version: 1

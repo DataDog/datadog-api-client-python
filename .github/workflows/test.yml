@@ -74,7 +74,7 @@ jobs:
   test:
     strategy:
       matrix:
-        python-version: ["3.7", "3.11"]
+        python-version: ["3.7", "3.12"]
         platform: [ubuntu-latest, macos-latest] # windows-latest
         # test only latest version on macos and windows
         exclude:
@@ -112,7 +112,7 @@ jobs:
       - name: Install Python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.11"
+          python-version: "3.12"
           cache: "pip"
       - name: Upgrade pip
         run: |

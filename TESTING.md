@@ -1,7 +1,7 @@
 Running tests
 =============
 
-The Datadog Python API client is mostly using BDD tests to verify its behaviro.
+The Datadog Python API client is mostly using BDD tests to verify its behavior.
 They are using recodings to store HTTP interactions, allowing to run the tests without
 talking to the API. We also store the test time to be able to freeze.
 

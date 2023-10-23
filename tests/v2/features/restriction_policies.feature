@@ -2,9 +2,8 @@
 Feature: Restriction Policies
   A restriction policy defines the access control rules for a resource,
   mapping a set of relations (such as editor and viewer) to a set of allowed
-  principals (such as roles, teams (beta), or users (beta)). The restriction
-  policy determines who is authorized to perform what actions on the
-  resource.
+  principals (such as roles, teams, or users). The restriction policy
+  determines who is authorized to perform what actions on the resource.
 
   Background:
     Given a valid "apiKeyAuth" key in the system

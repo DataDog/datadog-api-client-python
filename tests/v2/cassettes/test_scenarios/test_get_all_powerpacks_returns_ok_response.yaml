@@ -1,0 +1,67 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"description":"Sample powerpack","group_widget":{"definition":{"layout_type":"ordered","show_title":true,"title":"Sample
+      Powerpack","type":"group","widgets":[{"definition":{"content":"test","type":"note"}}]},"layout":{"height":3,"width":12,"x":0,"y":0}},"name":"Test-Get_all_powerpacks_returns_OK_response-1697039336","tags":["tag:sample"],"template_variables":[{"defaults":["*"],"name":"sample"}]},"type":"powerpack"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/powerpacks
+  response:
+    body:
+      string: '{"data":{"type":"powerpack","id":"afe8ae9a-684d-11ee-acaa-da7ad0900002","attributes":{"name":"Test-Get_all_powerpacks_returns_OK_response-1697039336","description":"Sample
+        powerpack","group_widget":{"definition":{"layout_type":"ordered","show_title":true,"title":"Sample
+        Powerpack","type":"group","widgets":[{"definition":{"content":"test","type":"note"},"id":2076464251986187}]},"layout":{"height":3,"width":12,"x":0,"y":0}},"template_variables":[{"defaults":["*"],"name":"sample"}],"tags":["tag:sample"]},"relationships":{"author":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}}},"included":[{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0","attributes":{"name":null,"email":"frog@datadoghq.com"}}]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/powerpacks?page%5Blimit%5D=1000
+  response:
+    body:
+      string: '{"data":[{"type":"powerpack","id":"afe8ae9a-684d-11ee-acaa-da7ad0900002","attributes":{"name":"Test-Get_all_powerpacks_returns_OK_response-1697039336","description":"Sample
+        powerpack","group_widget":{"definition":{"layout_type":"ordered","show_title":true,"title":"Sample
+        Powerpack","type":"group","widgets":[{"definition":{"content":"test","type":"note"},"id":2076464251986187}]},"layout":{"height":3,"width":12,"x":0,"y":0}},"template_variables":[{"defaults":["*"],"name":"sample"}],"tags":["tag:sample"]},"relationships":{"author":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}}},{"type":"powerpack","id":"1de23daa-67a7-11ee-aeeb-da7ad0900002","attributes":{"name":"","description":"Powerpack
+        for ABC!","group_widget":{"definition":{"layout_type":"ordered","show_title":true,"title":"Powerpack
+        Test","type":"group","widgets":[]}},"template_variables":null,"tags":[]},"relationships":{"author":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}}},{"type":"powerpack","id":"1aa44f4c-684d-11ee-a69d-da7ad0900002","attributes":{"name":"","description":"Powerpack
+        for ABCD!","group_widget":{"definition":{"layout_type":"ordered","show_title":true,"title":"Powerpack
+        Test","type":"group","widgets":[{"definition":{"content":"test notes","type":"note"},"id":2505594874009019}]}},"template_variables":null,"tags":[]},"relationships":{"author":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}}},{"type":"powerpack","id":"17c331c8-67a6-11ee-bad7-da7ad0900002","attributes":{"name":"","description":"Powerpack
+        for ABC!","group_widget":{"definition":{"layout_type":"ordered","show_title":true,"title":"Powerpack
+        Test","type":"group","widgets":[]}},"template_variables":null,"tags":[]},"relationships":{"author":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}}}],"included":[{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0","attributes":{"name":null,"email":"frog@datadoghq.com"}}],"meta":{"pagination":{"offset":0,"first_offset":0,"prev_offset":0,"next_offset":1000,"last_offset":null,"limit":1000,"type":"offset_limit"}},"links":{"self":"https://api.datadoghq.com/api/v2/powerpacks?page%5Blimit%5D=1000","last":null,"next":"https://api.datadoghq.com/api/v2/powerpacks?page[offset]=1000&page[limit]=1000","prev":null,"first":"https://api.datadoghq.com/api/v2/powerpacks?page[offset]=0&page[limit]=1000"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/powerpacks/afe8ae9a-684d-11ee-acaa-da7ad0900002
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - text/html; charset=utf-8
+    status:
+      code: 204
+      message: No Content
+version: 1

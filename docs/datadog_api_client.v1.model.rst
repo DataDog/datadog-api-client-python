@@ -1268,6 +1268,13 @@ ip\_prefixes\_apm
    :members:
    :show-inheritance:
 
+ip\_prefixes\_global
+--------------------
+
+.. automodule:: datadog_api_client.v1.model.ip_prefixes_global
+   :members:
+   :show-inheritance:
+
 ip\_prefixes\_logs
 ------------------
 
@@ -2024,6 +2031,20 @@ monitor\_options\_aggregation
    :members:
    :show-inheritance:
 
+monitor\_options\_custom\_schedule
+----------------------------------
+
+.. automodule:: datadog_api_client.v1.model.monitor_options_custom_schedule
+   :members:
+   :show-inheritance:
+
+monitor\_options\_custom\_schedule\_recurrence
+----------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.monitor_options_custom_schedule_recurrence
+   :members:
+   :show-inheritance:
+
 monitor\_options\_notification\_presets
 ---------------------------------------
 
@@ -2651,6 +2672,34 @@ point
 -----
 
 .. automodule:: datadog_api_client.v1.model.point
+   :members:
+   :show-inheritance:
+
+powerpack\_template\_variable\_contents
+---------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.powerpack_template_variable_contents
+   :members:
+   :show-inheritance:
+
+powerpack\_template\_variables
+------------------------------
+
+.. automodule:: datadog_api_client.v1.model.powerpack_template_variables
+   :members:
+   :show-inheritance:
+
+powerpack\_widget\_definition
+-----------------------------
+
+.. automodule:: datadog_api_client.v1.model.powerpack_widget_definition
+   :members:
+   :show-inheritance:
+
+powerpack\_widget\_definition\_type
+-----------------------------------
+
+.. automodule:: datadog_api_client.v1.model.powerpack_widget_definition_type
    :members:
    :show-inheritance:
 

@@ -1,0 +1,22 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"description":"Sample powerpack","name":"Sample
+      Powerpack","tags":["tag:sample"],"template_variables":[{"defaults":["*"],"name":"sample"}]},"type":"powerpack"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/powerpacks
+  response:
+    body:
+      string: '{"errors":["API input validation failed: {''group_widget'': [''Missing
+        data for required field.'']}"]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 400
+      message: Bad Request
+version: 1
