@@ -17,6 +17,7 @@ from datadog_api_client.model_utils import (
 from datadog_api_client.v2.model.teams_response import TeamsResponse
 from datadog_api_client.v2.model.list_teams_sort import ListTeamsSort
 from datadog_api_client.v2.model.list_teams_include import ListTeamsInclude
+from datadog_api_client.v2.model.teams_field import TeamsField
 from datadog_api_client.v2.model.team import Team
 from datadog_api_client.v2.model.team_response import TeamResponse
 from datadog_api_client.v2.model.team_create_request import TeamCreateRequest
@@ -401,6 +402,12 @@ class TeamsApi:
                     "openapi_types": (bool,),
                     "attribute": "filter[me]",
                     "location": "query",
+                },
+                "fields_team": {
+                    "openapi_types": ([TeamsField],),
+                    "attribute": "fields[team]",
+                    "location": "query",
+                    "collection_format": "csv",
                 },
             },
             headers_map={
@@ -792,6 +799,7 @@ class TeamsApi:
         include: Union[List[ListTeamsInclude], UnsetType] = unset,
         filter_keyword: Union[str, UnsetType] = unset,
         filter_me: Union[bool, UnsetType] = unset,
+        fields_team: Union[List[TeamsField], UnsetType] = unset,
     ) -> TeamsResponse:
         """Get all teams.
 
@@ -810,6 +818,8 @@ class TeamsApi:
         :type filter_keyword: str, optional
         :param filter_me: When true, only returns teams the current user belongs to
         :type filter_me: bool, optional
+        :param fields_team: List of fields that need to be fetched.
+        :type fields_team: [TeamsField], optional
         :rtype: TeamsResponse
         """
         kwargs: Dict[str, Any] = {}
@@ -831,6 +841,9 @@ class TeamsApi:
         if filter_me is not unset:
             kwargs["filter_me"] = filter_me
 
+        if fields_team is not unset:
+            kwargs["fields_team"] = fields_team
+
         return self._list_teams_endpoint.call_with_http_info(**kwargs)
 
     def list_teams_with_pagination(
@@ -842,6 +855,7 @@ class TeamsApi:
         include: Union[List[ListTeamsInclude], UnsetType] = unset,
         filter_keyword: Union[str, UnsetType] = unset,
         filter_me: Union[bool, UnsetType] = unset,
+        fields_team: Union[List[TeamsField], UnsetType] = unset,
     ) -> collections.abc.Iterable[Team]:
         """Get all teams.
 
@@ -859,6 +873,8 @@ class TeamsApi:
         :type filter_keyword: str, optional
         :param filter_me: When true, only returns teams the current user belongs to
         :type filter_me: bool, optional
+        :param fields_team: List of fields that need to be fetched.
+        :type fields_team: [TeamsField], optional
 
         :return: A generator of paginated results.
         :rtype: collections.abc.Iterable[Team]
@@ -881,6 +897,9 @@ class TeamsApi:
 
         if filter_me is not unset:
             kwargs["filter_me"] = filter_me
+
+        if fields_team is not unset:
+            kwargs["fields_team"] = fields_team
 
         local_page_size = get_attribute_from_path(kwargs, "page_size", 10)
         endpoint = self._list_teams_endpoint

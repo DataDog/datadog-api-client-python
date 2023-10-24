@@ -127,6 +127,16 @@ Feature: Teams
     And the response has 3 items
 
   @team:DataDog/core-app
+  Scenario: Get all teams with fields_team parameter returns "OK" response
+    Given new "ListTeams" request
+    And request contains "fields[team]" parameter with value ["id", "name", "handle"]
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data[0]" has field "id"
+    And the response "data[0].attributes" has field "name"
+    And the response "data[0].attributes" has field "handle"
+
+  @team:DataDog/core-app
   Scenario: Get links for a team returns "API error response." response
     Given new "GetTeamLinks" request
     And request contains "team_id" parameter with value "REPLACE.ME"
