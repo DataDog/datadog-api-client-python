@@ -7918,6 +7918,13 @@ team\_update\_request
    :members:
    :show-inheritance:
 
+teams\_field
+------------
+
+.. automodule:: datadog_api_client.v2.model.teams_field
+   :members:
+   :show-inheritance:
+
 teams\_response
 ---------------
 

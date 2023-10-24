@@ -1359,6 +1359,7 @@ from datadog_api_client.v2.model.team_update import TeamUpdate
 from datadog_api_client.v2.model.team_update_attributes import TeamUpdateAttributes
 from datadog_api_client.v2.model.team_update_relationships import TeamUpdateRelationships
 from datadog_api_client.v2.model.team_update_request import TeamUpdateRequest
+from datadog_api_client.v2.model.teams_field import TeamsField
 from datadog_api_client.v2.model.teams_response import TeamsResponse
 from datadog_api_client.v2.model.teams_response_links import TeamsResponseLinks
 from datadog_api_client.v2.model.teams_response_meta import TeamsResponseMeta
@@ -2562,6 +2563,7 @@ __all__ = [
     "TeamUpdateAttributes",
     "TeamUpdateRelationships",
     "TeamUpdateRequest",
+    "TeamsField",
     "TeamsResponse",
     "TeamsResponseLinks",
     "TeamsResponseMeta",

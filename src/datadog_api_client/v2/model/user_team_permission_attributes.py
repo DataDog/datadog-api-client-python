@@ -31,7 +31,7 @@ class UserTeamPermissionAttributes(ModelNormal):
         """
         User team permission attributes
 
-        :param permissions: Object of team permission actions and boolean values indicating of the currently logged in user can perform them on this team
+        :param permissions: Object of team permission actions and boolean values that a logged in user can perform on this team.
         :type permissions: dict, optional
         """
         if permissions is not unset:
