@@ -10,6 +10,7 @@ from datadog_api_client.model_utils import (
     cached_property,
     unset,
     UnsetType,
+    UUID,
 )
 
 
@@ -28,7 +29,7 @@ class UserInvitationResponseData(ModelNormal):
 
         return {
             "attributes": (UserInvitationDataAttributes,),
-            "id": (str,),
+            "id": (UUID,),
             "relationships": (UserInvitationRelationships,),
             "type": (UserInvitationsType,),
         }
@@ -43,7 +44,7 @@ class UserInvitationResponseData(ModelNormal):
     def __init__(
         self_,
         attributes: Union[UserInvitationDataAttributes, UnsetType] = unset,
-        id: Union[str, UnsetType] = unset,
+        id: Union[UUID, UnsetType] = unset,
         relationships: Union[UserInvitationRelationships, UnsetType] = unset,
         type: Union[UserInvitationsType, UnsetType] = unset,
         **kwargs,
@@ -55,7 +56,7 @@ class UserInvitationResponseData(ModelNormal):
         :type attributes: UserInvitationDataAttributes, optional
 
         :param id: ID of the user invitation.
-        :type id: str, optional
+        :type id: UUID, optional
 
         :param relationships: Relationships data for user invitation.
         :type relationships: UserInvitationRelationships, optional

@@ -13,6 +13,7 @@ from datadog_api_client.model_utils import (
     get_attribute_from_path,
     UnsetType,
     unset,
+    UUID,
 )
 from datadog_api_client.v2.model.user_invitations_response import UserInvitationsResponse
 from datadog_api_client.v2.model.user_invitations_request import UserInvitationsRequest
@@ -91,7 +92,7 @@ class UsersApi:
             params_map={
                 "user_invitation_uuid": {
                     "required": True,
-                    "openapi_types": (str,),
+                    "openapi_types": (UUID,),
                     "attribute": "user_invitation_uuid",
                     "location": "path",
                 },
@@ -300,14 +301,14 @@ class UsersApi:
 
     def get_invitation(
         self,
-        user_invitation_uuid: str,
+        user_invitation_uuid: UUID,
     ) -> UserInvitationResponse:
         """Get a user invitation.
 
         Returns a single user invitation by its UUID.
 
         :param user_invitation_uuid: The UUID of the user invitation.
-        :type user_invitation_uuid: str
+        :type user_invitation_uuid: UUID
         :rtype: UserInvitationResponse
         """
         kwargs: Dict[str, Any] = {}

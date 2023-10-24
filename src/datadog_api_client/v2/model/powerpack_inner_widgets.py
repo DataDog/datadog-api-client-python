@@ -13,6 +13,7 @@ from datadog_api_client.model_utils import (
     none_type,
     unset,
     UnsetType,
+    UUID,
 )
 
 
@@ -37,6 +38,7 @@ class PowerpackInnerWidgets(ModelNormal):
                         int,
                         list,
                         str,
+                        UUID,
                         none_type,
                     )
                 },
@@ -56,7 +58,7 @@ class PowerpackInnerWidgets(ModelNormal):
         Powerpack group widget definition of individual widgets.
 
         :param definition: Information about widget.
-        :type definition: {str: (bool, date, datetime, dict, float, int, list, str, none_type,)}
+        :type definition: {str: (bool, date, datetime, dict, float, int, list, str, UUID, none_type,)}
 
         :param layout: Powerpack inner widget layout.
         :type layout: PowerpackInnerWidgetLayout, optional

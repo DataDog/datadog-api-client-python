@@ -18230,6 +18230,7 @@ components:
           type: string
         uuid:
           description: UUID of the user invitation.
+          format: uuid
           type: string
       type: object
     UserInvitationRelationships:
@@ -18253,6 +18254,7 @@ components:
           $ref: '#/components/schemas/UserInvitationDataAttributes'
         id:
           description: ID of the user invitation.
+          format: uuid
           type: string
         relationships:
           $ref: '#/components/schemas/UserInvitationRelationships'
@@ -29213,6 +29215,7 @@ paths:
         required: true
         schema:
           example: 00000000-0000-0000-3456-000000000000
+          format: uuid
           type: string
       responses:
         '200':
