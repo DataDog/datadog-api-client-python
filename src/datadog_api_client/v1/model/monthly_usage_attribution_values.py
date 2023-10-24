@@ -73,6 +73,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
             "infra_host_usage": (float,),
             "invocations_percentage": (float,),
             "invocations_usage": (float,),
+            "lambda_traced_invocations_percentage": (float,),
+            "lambda_traced_invocations_usage": (float,),
             "mobile_app_testing_percentage": (float,),
             "mobile_app_testing_usage": (float,),
             "ndm_netflow_percentage": (float,),
@@ -156,6 +158,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         "infra_host_usage": "infra_host_usage",
         "invocations_percentage": "invocations_percentage",
         "invocations_usage": "invocations_usage",
+        "lambda_traced_invocations_percentage": "lambda_traced_invocations_percentage",
+        "lambda_traced_invocations_usage": "lambda_traced_invocations_usage",
         "mobile_app_testing_percentage": "mobile_app_testing_percentage",
         "mobile_app_testing_usage": "mobile_app_testing_usage",
         "ndm_netflow_percentage": "ndm_netflow_percentage",
@@ -240,6 +244,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         infra_host_usage: Union[float, UnsetType] = unset,
         invocations_percentage: Union[float, UnsetType] = unset,
         invocations_usage: Union[float, UnsetType] = unset,
+        lambda_traced_invocations_percentage: Union[float, UnsetType] = unset,
+        lambda_traced_invocations_usage: Union[float, UnsetType] = unset,
         mobile_app_testing_percentage: Union[float, UnsetType] = unset,
         mobile_app_testing_usage: Union[float, UnsetType] = unset,
         ndm_netflow_percentage: Union[float, UnsetType] = unset,
@@ -437,6 +443,12 @@ class MonthlyUsageAttributionValues(ModelNormal):
         :param invocations_usage: The Lambda invocation usage by tag(s).
         :type invocations_usage: float, optional
 
+        :param lambda_traced_invocations_percentage: The percentage of Serverless APM usage by tag(s).
+        :type lambda_traced_invocations_percentage: float, optional
+
+        :param lambda_traced_invocations_usage: The Serverless APM usage by tag(s).
+        :type lambda_traced_invocations_usage: float, optional
+
         :param mobile_app_testing_percentage: The percentage of Synthetic mobile application test usage by tag(s).
         :type mobile_app_testing_percentage: float, optional
 
@@ -621,6 +633,10 @@ class MonthlyUsageAttributionValues(ModelNormal):
             kwargs["invocations_percentage"] = invocations_percentage
         if invocations_usage is not unset:
             kwargs["invocations_usage"] = invocations_usage
+        if lambda_traced_invocations_percentage is not unset:
+            kwargs["lambda_traced_invocations_percentage"] = lambda_traced_invocations_percentage
+        if lambda_traced_invocations_usage is not unset:
+            kwargs["lambda_traced_invocations_usage"] = lambda_traced_invocations_usage
         if mobile_app_testing_percentage is not unset:
             kwargs["mobile_app_testing_percentage"] = mobile_app_testing_percentage
         if mobile_app_testing_usage is not unset:
