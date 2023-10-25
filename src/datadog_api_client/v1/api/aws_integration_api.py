@@ -15,6 +15,11 @@ from datadog_api_client.v1.model.aws_account_delete_request import AWSAccountDel
 from datadog_api_client.v1.model.aws_account_list_response import AWSAccountListResponse
 from datadog_api_client.v1.model.aws_account_create_response import AWSAccountCreateResponse
 from datadog_api_client.v1.model.aws_account import AWSAccount
+from datadog_api_client.v1.model.aws_event_bridge_delete_response import AWSEventBridgeDeleteResponse
+from datadog_api_client.v1.model.aws_event_bridge_delete_request import AWSEventBridgeDeleteRequest
+from datadog_api_client.v1.model.aws_event_bridge_list_response import AWSEventBridgeListResponse
+from datadog_api_client.v1.model.aws_event_bridge_create_response import AWSEventBridgeCreateResponse
+from datadog_api_client.v1.model.aws_event_bridge_create_request import AWSEventBridgeCreateRequest
 from datadog_api_client.v1.model.aws_tag_filter_delete_request import AWSTagFilterDeleteRequest
 from datadog_api_client.v1.model.aws_tag_filter_list_response import AWSTagFilterListResponse
 from datadog_api_client.v1.model.aws_tag_filter_create_request import AWSTagFilterCreateRequest
@@ -44,6 +49,26 @@ class AWSIntegrationApi:
                 "body": {
                     "required": True,
                     "openapi_types": (AWSAccount,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._create_aws_event_bridge_source_endpoint = _Endpoint(
+            settings={
+                "response_type": (AWSEventBridgeCreateResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/integration/aws/event_bridge",
+                "operation_id": "create_aws_event_bridge_source",
+                "http_method": "POST",
+                "version": "v1",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (AWSEventBridgeCreateRequest,),
                     "location": "body",
                 },
             },
@@ -104,6 +129,26 @@ class AWSIntegrationApi:
                 "body": {
                     "required": True,
                     "openapi_types": (AWSAccountDeleteRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._delete_aws_event_bridge_source_endpoint = _Endpoint(
+            settings={
+                "response_type": (AWSEventBridgeDeleteResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/integration/aws/event_bridge",
+                "operation_id": "delete_aws_event_bridge_source",
+                "http_method": "DELETE",
+                "version": "v1",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (AWSEventBridgeDeleteRequest,),
                     "location": "body",
                 },
             },
@@ -173,6 +218,22 @@ class AWSIntegrationApi:
                     "location": "query",
                 },
             },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_aws_event_bridge_sources_endpoint = _Endpoint(
+            settings={
+                "response_type": (AWSEventBridgeListResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/integration/aws/event_bridge",
+                "operation_id": "list_aws_event_bridge_sources",
+                "http_method": "GET",
+                "version": "v1",
+            },
+            params_map={},
             headers_map={
                 "accept": ["application/json"],
             },
@@ -257,6 +318,23 @@ class AWSIntegrationApi:
 
         return self._create_aws_account_endpoint.call_with_http_info(**kwargs)
 
+    def create_aws_event_bridge_source(
+        self,
+        body: AWSEventBridgeCreateRequest,
+    ) -> AWSEventBridgeCreateResponse:
+        """Create an Amazon EventBridge source.
+
+        Create an Amazon EventBridge source.
+
+        :param body: Create an Amazon EventBridge source for an AWS account with a given name and region.
+        :type body: AWSEventBridgeCreateRequest
+        :rtype: AWSEventBridgeCreateResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_aws_event_bridge_source_endpoint.call_with_http_info(**kwargs)
+
     def create_aws_tag_filter(
         self,
         body: AWSTagFilterCreateRequest,
@@ -310,6 +388,23 @@ class AWSIntegrationApi:
         kwargs["body"] = body
 
         return self._delete_aws_account_endpoint.call_with_http_info(**kwargs)
+
+    def delete_aws_event_bridge_source(
+        self,
+        body: AWSEventBridgeDeleteRequest,
+    ) -> AWSEventBridgeDeleteResponse:
+        """Delete an Amazon EventBridge source.
+
+        Delete an Amazon EventBridge source.
+
+        :param body: Delete the Amazon EventBridge source with the given name, region, and associated AWS account.
+        :type body: AWSEventBridgeDeleteRequest
+        :rtype: AWSEventBridgeDeleteResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._delete_aws_event_bridge_source_endpoint.call_with_http_info(**kwargs)
 
     def delete_aws_tag_filter(
         self,
@@ -370,6 +465,18 @@ class AWSIntegrationApi:
             kwargs["access_key_id"] = access_key_id
 
         return self._list_aws_accounts_endpoint.call_with_http_info(**kwargs)
+
+    def list_aws_event_bridge_sources(
+        self,
+    ) -> AWSEventBridgeListResponse:
+        """Get all Amazon EventBridge sources.
+
+        Get all Amazon EventBridge sources.
+
+        :rtype: AWSEventBridgeListResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._list_aws_event_bridge_sources_endpoint.call_with_http_info(**kwargs)
 
     def list_aws_tag_filters(
         self,

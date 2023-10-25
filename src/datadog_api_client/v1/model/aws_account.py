@@ -76,7 +76,8 @@ class AWSAccount(ModelNormal):
         :param cspm_resource_collection_enabled: Whether Datadog collects cloud security posture management resources from your AWS account. This includes additional resources not covered under the general ``resource_collection``.
         :type cspm_resource_collection_enabled: bool, optional
 
-        :param excluded_regions: An array of AWS regions to exclude from metrics collection.
+        :param excluded_regions: An array of `AWS regions <https://docs.aws.amazon.com/general/latest/gr/rande.html#regional-endpoints>`_
+            to exclude from metrics collection.
         :type excluded_regions: [str], optional
 
         :param filter_tags: The array of EC2 tags (in the form ``key:value`` ) defines a filter that Datadog uses when collecting metrics from EC2.

@@ -4,6 +4,15 @@ from datadog_api_client.v1.model.aws_account_and_lambda_request import AWSAccoun
 from datadog_api_client.v1.model.aws_account_create_response import AWSAccountCreateResponse
 from datadog_api_client.v1.model.aws_account_delete_request import AWSAccountDeleteRequest
 from datadog_api_client.v1.model.aws_account_list_response import AWSAccountListResponse
+from datadog_api_client.v1.model.aws_event_bridge_account_configuration import AWSEventBridgeAccountConfiguration
+from datadog_api_client.v1.model.aws_event_bridge_create_request import AWSEventBridgeCreateRequest
+from datadog_api_client.v1.model.aws_event_bridge_create_response import AWSEventBridgeCreateResponse
+from datadog_api_client.v1.model.aws_event_bridge_create_status import AWSEventBridgeCreateStatus
+from datadog_api_client.v1.model.aws_event_bridge_delete_request import AWSEventBridgeDeleteRequest
+from datadog_api_client.v1.model.aws_event_bridge_delete_response import AWSEventBridgeDeleteResponse
+from datadog_api_client.v1.model.aws_event_bridge_delete_status import AWSEventBridgeDeleteStatus
+from datadog_api_client.v1.model.aws_event_bridge_list_response import AWSEventBridgeListResponse
+from datadog_api_client.v1.model.aws_event_bridge_source import AWSEventBridgeSource
 from datadog_api_client.v1.model.aws_logs_async_error import AWSLogsAsyncError
 from datadog_api_client.v1.model.aws_logs_async_response import AWSLogsAsyncResponse
 from datadog_api_client.v1.model.aws_logs_lambda import AWSLogsLambda
@@ -944,6 +953,15 @@ __all__ = [
     "AWSAccountCreateResponse",
     "AWSAccountDeleteRequest",
     "AWSAccountListResponse",
+    "AWSEventBridgeAccountConfiguration",
+    "AWSEventBridgeCreateRequest",
+    "AWSEventBridgeCreateResponse",
+    "AWSEventBridgeCreateStatus",
+    "AWSEventBridgeDeleteRequest",
+    "AWSEventBridgeDeleteResponse",
+    "AWSEventBridgeDeleteStatus",
+    "AWSEventBridgeListResponse",
+    "AWSEventBridgeSource",
     "AWSLogsAsyncError",
     "AWSLogsAsyncResponse",
     "AWSLogsLambda",

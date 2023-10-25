@@ -7,7 +7,7 @@ from datadog_api_client.v1.api.aws_integration_api import AWSIntegrationApi
 from datadog_api_client.v1.model.aws_account_delete_request import AWSAccountDeleteRequest
 
 body = AWSAccountDeleteRequest(
-    account_id="1234567",
+    account_id="123456789012",
     role_name="DatadogAWSIntegrationRole",
 )
 
