@@ -1,7 +1,7 @@
 interactions:
 - request:
     body: '{"data":{"attributes":{"description":"Sample powerpack","group_widget":{"definition":{"layout_type":"ordered","show_title":true,"title":"Sample
-      Powerpack","type":"group","widgets":[{"definition":{"content":"test","type":"note"}}]},"layout":{"height":3,"width":12,"x":0,"y":0}},"name":"Test-Get_all_powerpacks_returns_OK_response-1697039336","tags":["tag:sample"],"template_variables":[{"defaults":["*"],"name":"sample"}]},"type":"powerpack"}}'
+      Powerpack","type":"group","widgets":[{"definition":{"content":"test","type":"note"}}]},"layout":{"height":3,"width":12,"x":0,"y":0},"live_span":"1h"},"name":"Test-Get_all_powerpacks_returns_OK_response-1698172333","tags":["tag:sample"],"template_variables":[{"defaults":["*"],"name":"sample"}]},"type":"powerpack"}}'
     headers:
       accept:
       - application/json
@@ -11,9 +11,10 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/powerpacks
   response:
     body:
-      string: '{"data":{"type":"powerpack","id":"afe8ae9a-684d-11ee-acaa-da7ad0900002","attributes":{"name":"Test-Get_all_powerpacks_returns_OK_response-1697039336","description":"Sample
+      string: '{"data":{"type":"powerpack","id":"a65cae1e-729b-11ee-9a94-da7ad0900002","attributes":{"name":"Test-Get_all_powerpacks_returns_OK_response-1698172333","description":"Sample
         powerpack","group_widget":{"definition":{"layout_type":"ordered","show_title":true,"title":"Sample
-        Powerpack","type":"group","widgets":[{"definition":{"content":"test","type":"note"},"id":2076464251986187}]},"layout":{"height":3,"width":12,"x":0,"y":0}},"template_variables":[{"defaults":["*"],"name":"sample"}],"tags":["tag:sample"]},"relationships":{"author":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}}},"included":[{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0","attributes":{"name":null,"email":"frog@datadoghq.com"}}]}
+        Powerpack","type":"group","widgets":[{"definition":{"content":"test","type":"note"},"id":8966066562910324}]},"layout":{"height":3,"width":12,"x":0,"y":0},"live_span":"1h"},"template_variables":[{"defaults":["*"],"name":"sample"}],"tags":["tag:sample"]},"relationships":{"author":{"data":{"type":"users","id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"}}}},"included":[{"type":"users","id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","attributes":{"name":"CI
+        Account","email":"team-intg-tools-libs-spam@datadoghq.com"}}]}
 
         '
     headers:
@@ -31,15 +32,17 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/powerpacks?page%5Blimit%5D=1000
   response:
     body:
-      string: '{"data":[{"type":"powerpack","id":"afe8ae9a-684d-11ee-acaa-da7ad0900002","attributes":{"name":"Test-Get_all_powerpacks_returns_OK_response-1697039336","description":"Sample
+      string: '{"data":[{"type":"powerpack","id":"cabb74fa-686b-11ee-8326-da7ad0900002","attributes":{"name":"another
+        powerpack","description":"","group_widget":{"layout":{"x":0,"y":0,"width":4,"height":3},"definition":{"title":"another
+        powerpack","type":"group","layout_type":"ordered","widgets":[{"layout":{"x":0,"y":0,"width":2,"height":2},"definition":{"type":"note","content":"its
+        just a ***test***","background_color":"white","font_size":"36","text_align":"center","vertical_align":"center","show_tick":false,"tick_pos":"50%","tick_edge":"left","has_padding":true},"id":2265811261450092}]}},"template_variables":[],"tags":["tag:display"]},"relationships":{"author":{"data":{"type":"users","id":"d5bf7f0a-19b0-11ed-b0df-da7ad0900002"}}}},{"type":"powerpack","id":"a65cae1e-729b-11ee-9a94-da7ad0900002","attributes":{"name":"Test-Get_all_powerpacks_returns_OK_response-1698172333","description":"Sample
         powerpack","group_widget":{"definition":{"layout_type":"ordered","show_title":true,"title":"Sample
-        Powerpack","type":"group","widgets":[{"definition":{"content":"test","type":"note"},"id":2076464251986187}]},"layout":{"height":3,"width":12,"x":0,"y":0}},"template_variables":[{"defaults":["*"],"name":"sample"}],"tags":["tag:sample"]},"relationships":{"author":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}}},{"type":"powerpack","id":"1de23daa-67a7-11ee-aeeb-da7ad0900002","attributes":{"name":"","description":"Powerpack
-        for ABC!","group_widget":{"definition":{"layout_type":"ordered","show_title":true,"title":"Powerpack
-        Test","type":"group","widgets":[]}},"template_variables":null,"tags":[]},"relationships":{"author":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}}},{"type":"powerpack","id":"1aa44f4c-684d-11ee-a69d-da7ad0900002","attributes":{"name":"","description":"Powerpack
-        for ABCD!","group_widget":{"definition":{"layout_type":"ordered","show_title":true,"title":"Powerpack
-        Test","type":"group","widgets":[{"definition":{"content":"test notes","type":"note"},"id":2505594874009019}]}},"template_variables":null,"tags":[]},"relationships":{"author":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}}},{"type":"powerpack","id":"17c331c8-67a6-11ee-bad7-da7ad0900002","attributes":{"name":"","description":"Powerpack
-        for ABC!","group_widget":{"definition":{"layout_type":"ordered","show_title":true,"title":"Powerpack
-        Test","type":"group","widgets":[]}},"template_variables":null,"tags":[]},"relationships":{"author":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}}}],"included":[{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0","attributes":{"name":null,"email":"frog@datadoghq.com"}}],"meta":{"pagination":{"offset":0,"first_offset":0,"prev_offset":0,"next_offset":1000,"last_offset":null,"limit":1000,"type":"offset_limit"}},"links":{"self":"https://api.datadoghq.com/api/v2/powerpacks?page%5Blimit%5D=1000","last":null,"next":"https://api.datadoghq.com/api/v2/powerpacks?page[offset]=1000&page[limit]=1000","prev":null,"first":"https://api.datadoghq.com/api/v2/powerpacks?page[offset]=0&page[limit]=1000"}}
+        Powerpack","type":"group","widgets":[{"definition":{"content":"test","type":"note"},"id":8966066562910324}]},"layout":{"height":3,"width":12,"x":0,"y":0},"live_span":"1h"},"template_variables":[{"defaults":["*"],"name":"sample"}],"tags":["tag:sample"]},"relationships":{"author":{"data":{"type":"users","id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"}}}},{"type":"powerpack","id":"66a92bf4-7209-11ee-af46-da7ad0900002","attributes":{"name":"Sample
+        Powerpack","description":"Test Powerpack 2","group_widget":{"definition":{"layout_type":"ordered","title":"Sample
+        Powerpack","type":"group","widgets":[{"definition":{"event_size":"l","query":"*","title":"Widget
+        Title","title_align":"right","title_size":"16","type":"event_stream"},"id":5277269296927835}]}},"template_variables":[{"defaults":["defaults"],"name":"datacenter"}],"tags":["tag:foo1","tag:foo2"]},"relationships":{"author":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}}}],"included":[{"type":"users","id":"d5bf7f0a-19b0-11ed-b0df-da7ad0900002","attributes":{"name":"Kevin
+        Zou","email":"kevin.zou@datadoghq.com"}},{"type":"users","id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","attributes":{"name":"CI
+        Account","email":"team-intg-tools-libs-spam@datadoghq.com"}},{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0","attributes":{"name":null,"email":"frog@datadoghq.com"}}],"meta":{"pagination":{"offset":0,"first_offset":0,"prev_offset":0,"next_offset":1000,"last_offset":null,"limit":1000,"type":"offset_limit"}},"links":{"self":"https://api.datadoghq.com/api/v2/powerpacks?page%5Blimit%5D=1000","last":null,"next":"https://api.datadoghq.com/api/v2/powerpacks?page[offset]=1000&page[limit]=1000","prev":null,"first":"https://api.datadoghq.com/api/v2/powerpacks?page[offset]=0&page[limit]=1000"}}
 
         '
     headers:
@@ -54,7 +57,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/powerpacks/afe8ae9a-684d-11ee-acaa-da7ad0900002
+    uri: https://api.datadoghq.com/api/v2/powerpacks/a65cae1e-729b-11ee-9a94-da7ad0900002
   response:
     body:
       string: ''

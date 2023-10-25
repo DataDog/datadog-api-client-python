@@ -1,7 +1,7 @@
 interactions:
 - request:
     body: '{"data":{"attributes":{"description":"Sample powerpack","group_widget":{"definition":{"layout_type":"ordered","show_title":true,"title":"Sample
-      Powerpack","type":"group","widgets":[{"definition":{"content":"test","type":"note"}}]},"layout":{"height":3,"width":12,"x":0,"y":0}},"name":"Test-Create_a_new_dashboard_with_powerpack_widget-1697049887","tags":["tag:sample"],"template_variables":[{"defaults":["*"],"name":"sample"}]},"type":"powerpack"}}'
+      Powerpack","type":"group","widgets":[{"definition":{"content":"test","type":"note"}}]},"layout":{"height":3,"width":12,"x":0,"y":0},"live_span":"1h"},"name":"Test-Create_a_new_dashboard_with_powerpack_widget-1698172328","tags":["tag:sample"],"template_variables":[{"defaults":["*"],"name":"sample"}]},"type":"powerpack"}}'
     headers:
       accept:
       - application/json
@@ -11,9 +11,10 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/powerpacks
   response:
     body:
-      string: '{"data":{"type":"powerpack","id":"40778356-6866-11ee-812e-da7ad0900002","attributes":{"name":"Test-Create_a_new_dashboard_with_powerpack_widget-1697049887","description":"Sample
+      string: '{"data":{"type":"powerpack","id":"a3e591c8-729b-11ee-bde6-da7ad0900002","attributes":{"name":"Test-Create_a_new_dashboard_with_powerpack_widget-1698172328","description":"Sample
         powerpack","group_widget":{"definition":{"layout_type":"ordered","show_title":true,"title":"Sample
-        Powerpack","type":"group","widgets":[{"definition":{"content":"test","type":"note"},"id":6750168893668334}]},"layout":{"height":3,"width":12,"x":0,"y":0}},"template_variables":[{"defaults":["*"],"name":"sample"}],"tags":["tag:sample"]},"relationships":{"author":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}}},"included":[{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0","attributes":{"name":null,"email":"frog@datadoghq.com"}}]}
+        Powerpack","type":"group","widgets":[{"definition":{"content":"test","type":"note"},"id":1041433464205113}]},"layout":{"height":3,"width":12,"x":0,"y":0},"live_span":"1h"},"template_variables":[{"defaults":["*"],"name":"sample"}],"tags":["tag:sample"]},"relationships":{"author":{"data":{"type":"users","id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"}}}},"included":[{"type":"users","id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","attributes":{"name":"CI
+        Account","email":"team-intg-tools-libs-spam@datadoghq.com"}}]}
 
         '
     headers:
@@ -23,8 +24,8 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"description":"description","is_read_only":false,"layout_type":"ordered","title":"Test-Create_a_new_dashboard_with_powerpack_widget-1697049887
-      with powerpack widget","widgets":[{"definition":{"powerpack_id":"40778356-6866-11ee-812e-da7ad0900002","template_variables":{"controlled_by_powerpack":[{"name":"foo","prefix":"bar","values":["baz","qux","quuz"]}],"controlled_externally":[]},"type":"powerpack"},"layout":{"height":2,"is_column_break":false,"width":2,"x":1,"y":1}}]}'
+    body: '{"description":"description","is_read_only":false,"layout_type":"ordered","title":"Test-Create_a_new_dashboard_with_powerpack_widget-1698172328
+      with powerpack widget","widgets":[{"definition":{"powerpack_id":"a3e591c8-729b-11ee-bde6-da7ad0900002","template_variables":{"controlled_by_powerpack":[{"name":"foo","prefix":"bar","values":["baz","qux","quuz"]}],"controlled_externally":[]},"type":"powerpack"},"layout":{"height":2,"is_column_break":false,"width":2,"x":1,"y":1}}]}'
     headers:
       accept:
       - application/json
@@ -34,8 +35,9 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/dashboard
   response:
     body:
-      string: '{"id":"wap-jgr-c99","title":"Test-Create_a_new_dashboard_with_powerpack_widget-1697049887
-        with powerpack widget","description":"description","author_handle":"frog@datadoghq.com","author_name":null,"layout_type":"ordered","url":"/dashboard/wap-jgr-c99/test-createanewdashboardwithpowerpackwidget-1697049887-with-powerpack-widget","is_read_only":false,"template_variables":null,"widgets":[{"definition":{"powerpack_id":"40778356-6866-11ee-812e-da7ad0900002","template_variables":{"controlled_by_powerpack":[{"name":"foo","prefix":"bar","values":["baz","qux","quuz"]}],"controlled_externally":[]},"type":"powerpack"},"layout":{"height":2,"is_column_break":false,"width":2,"x":1,"y":1},"id":2124665012947075}],"notify_list":null,"created_at":"2023-10-11T18:44:47.485150+00:00","modified_at":"2023-10-11T18:44:47.485150+00:00","restricted_roles":[]}
+      string: '{"id":"u4a-itq-xia","title":"Test-Create_a_new_dashboard_with_powerpack_widget-1698172328
+        with powerpack widget","description":"description","author_handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","author_name":"CI
+        Account","layout_type":"ordered","url":"/dashboard/u4a-itq-xia/test-createanewdashboardwithpowerpackwidget-1698172328-with-powerpack-widget","is_read_only":false,"template_variables":null,"widgets":[{"definition":{"powerpack_id":"a3e591c8-729b-11ee-bde6-da7ad0900002","template_variables":{"controlled_by_powerpack":[{"name":"foo","prefix":"bar","values":["baz","qux","quuz"]}],"controlled_externally":[]},"type":"powerpack"},"layout":{"height":2,"is_column_break":false,"width":2,"x":1,"y":1},"id":1423357855337541}],"notify_list":null,"created_at":"2023-10-24T18:32:09.719784+00:00","modified_at":"2023-10-24T18:32:09.719784+00:00","restricted_roles":[]}
 
         '
     headers:
@@ -50,10 +52,10 @@ interactions:
       accept:
       - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/dashboard/wap-jgr-c99
+    uri: https://api.datadoghq.com/api/v1/dashboard/u4a-itq-xia
   response:
     body:
-      string: '{"deleted_dashboard_id":"wap-jgr-c99"}
+      string: '{"deleted_dashboard_id":"u4a-itq-xia"}
 
         '
     headers:
@@ -68,7 +70,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/powerpacks/40778356-6866-11ee-812e-da7ad0900002
+    uri: https://api.datadoghq.com/api/v2/powerpacks/a3e591c8-729b-11ee-bde6-da7ad0900002
   response:
     body:
       string: ''
