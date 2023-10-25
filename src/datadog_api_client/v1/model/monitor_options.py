@@ -257,7 +257,7 @@ class MonitorOptions(ModelNormal):
             Setting ``notify_by`` to ``[*]`` configures the monitor to notify as a simple-alert.
         :type notify_by: [str], optional
 
-        :param notify_no_data: A Boolean indicating whether this monitor notifies when data stops reporting.
+        :param notify_no_data: A Boolean indicating whether this monitor notifies when data stops reporting. Defaults to ``false``.
         :type notify_no_data: bool, optional
 
         :param on_missing_data: Controls how groups or monitors are treated if an evaluation does not return any data points.
