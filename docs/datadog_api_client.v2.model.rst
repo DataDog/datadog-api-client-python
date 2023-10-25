@@ -8373,6 +8373,13 @@ users\_type
    :members:
    :show-inheritance:
 
+widget\_live\_span
+------------------
+
+.. automodule:: datadog_api_client.v2.model.widget_live_span
+   :members:
+   :show-inheritance:
+
 
 .. automodule:: datadog_api_client.v2.model
    :members:

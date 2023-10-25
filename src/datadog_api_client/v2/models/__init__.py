@@ -1426,6 +1426,7 @@ from datadog_api_client.v2.model.user_update_data import UserUpdateData
 from datadog_api_client.v2.model.user_update_request import UserUpdateRequest
 from datadog_api_client.v2.model.users_response import UsersResponse
 from datadog_api_client.v2.model.users_type import UsersType
+from datadog_api_client.v2.model.widget_live_span import WidgetLiveSpan
 
 __all__ = [
     "APIErrorResponse",
@@ -2628,4 +2629,5 @@ __all__ = [
     "UserUpdateRequest",
     "UsersResponse",
     "UsersType",
+    "WidgetLiveSpan",
 ]
