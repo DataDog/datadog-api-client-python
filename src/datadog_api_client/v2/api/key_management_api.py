@@ -279,6 +279,16 @@ class KeyManagementApi:
                     "attribute": "include",
                     "location": "query",
                 },
+                "filter_remote_config_read_enabled": {
+                    "openapi_types": (bool,),
+                    "attribute": "filter[remote_config_read_enabled]",
+                    "location": "query",
+                },
+                "filter_category": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[category]",
+                    "location": "query",
+                },
             },
             headers_map={
                 "accept": ["application/json"],
@@ -326,6 +336,11 @@ class KeyManagementApi:
                     "attribute": "filter[created_at][end]",
                     "location": "query",
                 },
+                "include": {
+                    "openapi_types": (str,),
+                    "attribute": "include",
+                    "location": "query",
+                },
             },
             headers_map={
                 "accept": ["application/json"],
@@ -371,6 +386,11 @@ class KeyManagementApi:
                 "filter_created_at_end": {
                     "openapi_types": (str,),
                     "attribute": "filter[created_at][end]",
+                    "location": "query",
+                },
+                "include": {
+                    "openapi_types": (str,),
+                    "attribute": "include",
                     "location": "query",
                 },
             },
@@ -618,6 +638,8 @@ class KeyManagementApi:
         filter_modified_at_start: Union[str, UnsetType] = unset,
         filter_modified_at_end: Union[str, UnsetType] = unset,
         include: Union[str, UnsetType] = unset,
+        filter_remote_config_read_enabled: Union[bool, UnsetType] = unset,
+        filter_category: Union[str, UnsetType] = unset,
     ) -> APIKeysResponse:
         """Get all API keys.
 
@@ -643,6 +665,10 @@ class KeyManagementApi:
         :type filter_modified_at_end: str, optional
         :param include: Comma separated list of resource paths for related resources to include in the response. Supported resource paths are ``created_by`` and ``modified_by``.
         :type include: str, optional
+        :param filter_remote_config_read_enabled: Filter API keys by remote config read enabled status.
+        :type filter_remote_config_read_enabled: bool, optional
+        :param filter_category: Filter API keys by category.
+        :type filter_category: str, optional
         :rtype: APIKeysResponse
         """
         kwargs: Dict[str, Any] = {}
@@ -673,6 +699,12 @@ class KeyManagementApi:
         if include is not unset:
             kwargs["include"] = include
 
+        if filter_remote_config_read_enabled is not unset:
+            kwargs["filter_remote_config_read_enabled"] = filter_remote_config_read_enabled
+
+        if filter_category is not unset:
+            kwargs["filter_category"] = filter_category
+
         return self._list_api_keys_endpoint.call_with_http_info(**kwargs)
 
     def list_application_keys(
@@ -684,6 +716,7 @@ class KeyManagementApi:
         filter: Union[str, UnsetType] = unset,
         filter_created_at_start: Union[str, UnsetType] = unset,
         filter_created_at_end: Union[str, UnsetType] = unset,
+        include: Union[str, UnsetType] = unset,
     ) -> ListApplicationKeysResponse:
         """Get all application keys.
 
@@ -703,6 +736,8 @@ class KeyManagementApi:
         :type filter_created_at_start: str, optional
         :param filter_created_at_end: Only include application keys created on or before the specified date.
         :type filter_created_at_end: str, optional
+        :param include: Resource path for related resources to include in the response. Only ``owned_by`` is supported.
+        :type include: str, optional
         :rtype: ListApplicationKeysResponse
         """
         kwargs: Dict[str, Any] = {}
@@ -724,6 +759,9 @@ class KeyManagementApi:
         if filter_created_at_end is not unset:
             kwargs["filter_created_at_end"] = filter_created_at_end
 
+        if include is not unset:
+            kwargs["include"] = include
+
         return self._list_application_keys_endpoint.call_with_http_info(**kwargs)
 
     def list_current_user_application_keys(
@@ -735,6 +773,7 @@ class KeyManagementApi:
         filter: Union[str, UnsetType] = unset,
         filter_created_at_start: Union[str, UnsetType] = unset,
         filter_created_at_end: Union[str, UnsetType] = unset,
+        include: Union[str, UnsetType] = unset,
     ) -> ListApplicationKeysResponse:
         """Get all application keys owned by current user.
 
@@ -754,6 +793,8 @@ class KeyManagementApi:
         :type filter_created_at_start: str, optional
         :param filter_created_at_end: Only include application keys created on or before the specified date.
         :type filter_created_at_end: str, optional
+        :param include: Resource path for related resources to include in the response. Only ``owned_by`` is supported.
+        :type include: str, optional
         :rtype: ListApplicationKeysResponse
         """
         kwargs: Dict[str, Any] = {}
@@ -774,6 +815,9 @@ class KeyManagementApi:
 
         if filter_created_at_end is not unset:
             kwargs["filter_created_at_end"] = filter_created_at_end
+
+        if include is not unset:
+            kwargs["include"] = include
 
         return self._list_current_user_application_keys_endpoint.call_with_http_info(**kwargs)
 

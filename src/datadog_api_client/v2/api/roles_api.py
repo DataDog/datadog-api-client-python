@@ -255,6 +255,11 @@ class RolesApi:
                     "attribute": "filter",
                     "location": "query",
                 },
+                "filter_id": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[id]",
+                    "location": "query",
+                },
             },
             headers_map={
                 "accept": ["application/json"],
@@ -532,6 +537,7 @@ class RolesApi:
         page_number: Union[int, UnsetType] = unset,
         sort: Union[RolesSort, UnsetType] = unset,
         filter: Union[str, UnsetType] = unset,
+        filter_id: Union[str, UnsetType] = unset,
     ) -> RolesResponse:
         """List roles.
 
@@ -547,6 +553,8 @@ class RolesApi:
         :type sort: RolesSort, optional
         :param filter: Filter all roles by the given string.
         :type filter: str, optional
+        :param filter_id: Filter all roles by the given list of role IDs.
+        :type filter_id: str, optional
         :rtype: RolesResponse
         """
         kwargs: Dict[str, Any] = {}
@@ -561,6 +569,9 @@ class RolesApi:
 
         if filter is not unset:
             kwargs["filter"] = filter
+
+        if filter_id is not unset:
+            kwargs["filter_id"] = filter_id
 
         return self._list_roles_endpoint.call_with_http_info(**kwargs)
 

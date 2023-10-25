@@ -1,0 +1,21 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/team?fields%5Bteam%5D=id%2Cname%2Chandle
+  response:
+    body:
+      string: '{"data":[{"type":"team","id":"ac73040e-c8d4-11ed-b2ea-da7ad0900002","attributes":{"name":"Example
+        Team","handle":"api-spec-test-team"}},{"type":"team","id":"cc338b02-405b-11ee-835e-da7ad0900002","attributes":{"name":"test-name-12938712938","handle":"test-handle-12938712938"}},{"type":"team","id":"ecc8affc-27d6-11ee-b33c-da7ad0900002","attributes":{"name":"tf-testaccteamlinkbasic-local-1689951453","handle":"tf-testaccteamlinkbasic-local-1689951453"}}],"meta":{"pagination":{"offset":0,"first_offset":0,"prev_offset":0,"next_offset":100,"last_offset":0,"limit":100,"type":"offset_limit","total":3}},"links":{"self":"https://api.datadoghq.com/api/v2/team?fields%5Bteam%5D=id,name,handle","last":null,"next":"https://api.datadoghq.com/api/v2/team?fields%5Bteam%5D=id,name,handle&page[offset]=100&page[limit]=100","prev":null,"first":"https://api.datadoghq.com/api/v2/team?fields%5Bteam%5D=id,name,handle&page[offset]=0&page[limit]=100"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1
