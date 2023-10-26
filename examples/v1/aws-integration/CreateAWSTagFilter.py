@@ -8,7 +8,7 @@ from datadog_api_client.v1.model.aws_namespace import AWSNamespace
 from datadog_api_client.v1.model.aws_tag_filter_create_request import AWSTagFilterCreateRequest
 
 body = AWSTagFilterCreateRequest(
-    account_id="1234567",
+    account_id="123456789012",
     namespace=AWSNamespace.ELB,
     tag_filter_str="prod*",
 )

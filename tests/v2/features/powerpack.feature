@@ -110,8 +110,7 @@ Feature: Powerpack
 
   @replay-only @skip-validation @team:DataDog/dashboards-backend @with-pagination
   Scenario: Get all powerpacks returns "OK" response with pagination
-    Given there is a valid "powerpack" in the system
-    And new "ListPowerpacks" request
+    Given new "ListPowerpacks" request
     And request contains "page[limit]" parameter with value 2
     When the request with pagination is sent
     Then the response status is 200 OK

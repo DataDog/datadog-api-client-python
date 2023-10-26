@@ -12,6 +12,7 @@ from datadog_api_client.v2.model.powerpack_group_widget_definition import Powerp
 from datadog_api_client.v2.model.powerpack_group_widget_layout import PowerpackGroupWidgetLayout
 from datadog_api_client.v2.model.powerpack_inner_widgets import PowerpackInnerWidgets
 from datadog_api_client.v2.model.powerpack_template_variable import PowerpackTemplateVariable
+from datadog_api_client.v2.model.widget_live_span import WidgetLiveSpan
 
 body = Powerpack(
     data=PowerpackData(
@@ -35,6 +36,7 @@ body = Powerpack(
                     x=0,
                     y=0,
                 ),
+                live_span=WidgetLiveSpan.PAST_ONE_HOUR,
             ),
             name="Example-Powerpack",
             tags=[

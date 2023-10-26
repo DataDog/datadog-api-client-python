@@ -372,6 +372,26 @@
       "type": "safe"
     }
   },
+  "DeleteAWSEventBridgeSource": {
+    "tag": "AWS Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListAWSEventBridgeSources": {
+    "tag": "AWS Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateAWSEventBridgeSource": {
+    "tag": "AWS Integration",
+    "undo": {
+      "operationId": "DeleteAWSEventBridgeSource",
+      "parameters": [],
+      "type": "unsafe"
+    }
+  },
   "DeleteAWSTagFilter": {
     "tag": "AWS Integration",
     "undo": {
