@@ -21,6 +21,7 @@ class AzureAccount(ModelNormal):
             "automute": (bool,),
             "client_id": (str,),
             "client_secret": (str,),
+            "container_app_filters": (str,),
             "cspm_enabled": (bool,),
             "custom_metrics_enabled": (bool,),
             "errors": ([str],),
@@ -35,6 +36,7 @@ class AzureAccount(ModelNormal):
         "automute": "automute",
         "client_id": "client_id",
         "client_secret": "client_secret",
+        "container_app_filters": "container_app_filters",
         "cspm_enabled": "cspm_enabled",
         "custom_metrics_enabled": "custom_metrics_enabled",
         "errors": "errors",
@@ -50,6 +52,7 @@ class AzureAccount(ModelNormal):
         automute: Union[bool, UnsetType] = unset,
         client_id: Union[str, UnsetType] = unset,
         client_secret: Union[str, UnsetType] = unset,
+        container_app_filters: Union[str, UnsetType] = unset,
         cspm_enabled: Union[bool, UnsetType] = unset,
         custom_metrics_enabled: Union[bool, UnsetType] = unset,
         errors: Union[List[str], UnsetType] = unset,
@@ -74,6 +77,10 @@ class AzureAccount(ModelNormal):
 
         :param client_secret: Your Azure web application secret key.
         :type client_secret: str, optional
+
+        :param container_app_filters: Limit the Azure container apps that are pulled into Datadog using tags.
+            Only container apps that match one of the defined tags are imported into Datadog.
+        :type container_app_filters: str, optional
 
         :param cspm_enabled: Enable Cloud Security Management Misconfigurations for your organization.
         :type cspm_enabled: bool, optional
@@ -105,6 +112,8 @@ class AzureAccount(ModelNormal):
             kwargs["client_id"] = client_id
         if client_secret is not unset:
             kwargs["client_secret"] = client_secret
+        if container_app_filters is not unset:
+            kwargs["container_app_filters"] = container_app_filters
         if cspm_enabled is not unset:
             kwargs["cspm_enabled"] = cspm_enabled
         if custom_metrics_enabled is not unset:
