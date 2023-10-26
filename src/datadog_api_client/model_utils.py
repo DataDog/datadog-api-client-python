@@ -1055,7 +1055,7 @@ def deserialize_primitive(data, klass, path_to_item):
                 try:
                     converted_value = UUID(data)
                 except ValueError:
-                    print("This is not an UUID")
+                    raise ValueError("This is not an UUID")
             if isinstance(data, str) and klass == float:
                 converted_value = float(data)
                 if str(converted_value) != data:
