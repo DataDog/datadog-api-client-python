@@ -13,6 +13,7 @@ from datadog_api_client.model_utils import (
     none_type,
     unset,
     UnsetType,
+    UUID,
 )
 
 
@@ -31,6 +32,7 @@ class SpansAttributes(ModelNormal):
                         int,
                         list,
                         str,
+                        UUID,
                         none_type,
                     )
                 },
@@ -46,6 +48,7 @@ class SpansAttributes(ModelNormal):
                         int,
                         list,
                         str,
+                        UUID,
                         none_type,
                     )
                 },
@@ -112,10 +115,10 @@ class SpansAttributes(ModelNormal):
         JSON object containing all span attributes and their associated values.
 
         :param attributes: JSON object of attributes from your span.
-        :type attributes: {str: (bool, date, datetime, dict, float, int, list, str, none_type,)}, optional
+        :type attributes: {str: (bool, date, datetime, dict, float, int, list, str, UUID, none_type,)}, optional
 
         :param custom: JSON object of custom spans data.
-        :type custom: {str: (bool, date, datetime, dict, float, int, list, str, none_type,)}, optional
+        :type custom: {str: (bool, date, datetime, dict, float, int, list, str, UUID, none_type,)}, optional
 
         :param end_timestamp: End timestamp of your span.
         :type end_timestamp: datetime, optional

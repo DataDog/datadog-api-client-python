@@ -13,6 +13,7 @@ from datadog_api_client.model_utils import (
     none_type,
     unset,
     UnsetType,
+    UUID,
 )
 
 
@@ -31,6 +32,7 @@ class LogContent(ModelNormal):
                         int,
                         list,
                         str,
+                        UUID,
                         none_type,
                     )
                 },
@@ -65,7 +67,7 @@ class LogContent(ModelNormal):
         JSON object containing all log attributes and their associated values.
 
         :param attributes: JSON object of attributes from your log.
-        :type attributes: {str: (bool, date, datetime, dict, float, int, list, str, none_type,)}, optional
+        :type attributes: {str: (bool, date, datetime, dict, float, int, list, str, UUID, none_type,)}, optional
 
         :param host: Name of the machine from where the logs are being sent.
         :type host: str, optional

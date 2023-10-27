@@ -13,6 +13,7 @@ from datadog_api_client.model_utils import (
     none_type,
     unset,
     UnsetType,
+    UUID,
 )
 
 
@@ -28,6 +29,7 @@ class SecurityMonitoringSignalAttributes(ModelNormal):
             int,
             list,
             str,
+            UUID,
             none_type,
         )
 
@@ -45,6 +47,7 @@ class SecurityMonitoringSignalAttributes(ModelNormal):
                         int,
                         list,
                         str,
+                        UUID,
                         none_type,
                     )
                 },
@@ -74,7 +77,7 @@ class SecurityMonitoringSignalAttributes(ModelNormal):
         associated values.
 
         :param custom: A JSON object of attributes in the security signal.
-        :type custom: {str: (bool, date, datetime, dict, float, int, list, str, none_type,)}, optional
+        :type custom: {str: (bool, date, datetime, dict, float, int, list, str, UUID, none_type,)}, optional
 
         :param message: The message in the security signal defined by the rule that generated the signal.
         :type message: str, optional

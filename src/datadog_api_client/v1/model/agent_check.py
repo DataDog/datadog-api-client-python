@@ -10,6 +10,7 @@ from datadog_api_client.model_utils import (
     date,
     datetime,
     none_type,
+    UUID,
 )
 
 
@@ -18,11 +19,11 @@ class AgentCheck(ModelSimple):
     Array of strings.
 
 
-    :type value: [bool, date, datetime, dict, float, int, list, str, none_type]
+    :type value: [bool, date, datetime, dict, float, int, list, str, UUID, none_type]
     """
 
     @cached_property
     def openapi_types(_):
         return {
-            "value": ([bool, date, datetime, dict, float, int, list, str, none_type],),
+            "value": ([bool, date, datetime, dict, float, int, list, str, UUID, none_type],),
         }

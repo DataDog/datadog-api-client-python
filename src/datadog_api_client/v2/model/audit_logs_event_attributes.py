@@ -13,6 +13,7 @@ from datadog_api_client.model_utils import (
     none_type,
     unset,
     UnsetType,
+    UUID,
 )
 
 
@@ -31,6 +32,7 @@ class AuditLogsEventAttributes(ModelNormal):
                         int,
                         list,
                         str,
+                        UUID,
                         none_type,
                     )
                 },
@@ -62,7 +64,7 @@ class AuditLogsEventAttributes(ModelNormal):
         JSON object containing all event attributes and their associated values.
 
         :param attributes: JSON object of attributes from Audit Logs events.
-        :type attributes: {str: (bool, date, datetime, dict, float, int, list, str, none_type,)}, optional
+        :type attributes: {str: (bool, date, datetime, dict, float, int, list, str, UUID, none_type,)}, optional
 
         :param message: Message of the event.
         :type message: str, optional

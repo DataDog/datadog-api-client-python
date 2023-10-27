@@ -13,6 +13,7 @@ from datadog_api_client.model_utils import (
     none_type,
     unset,
     UnsetType,
+    UUID,
 )
 
 
@@ -41,6 +42,7 @@ class SyntheticsAssertionTarget(ModelNormal):
                 int,
                 list,
                 str,
+                UUID,
                 none_type,
             ),
             "timings_scope": (SyntheticsAssertionTimingsScope,),
@@ -74,7 +76,7 @@ class SyntheticsAssertionTarget(ModelNormal):
         :type _property: str, optional
 
         :param target: Value used by the operator.
-        :type target: bool, date, datetime, dict, float, int, list, str, none_type
+        :type target: bool, date, datetime, dict, float, int, list, str, UUID, none_type
 
         :param timings_scope: Timings scope for response time assertions.
         :type timings_scope: SyntheticsAssertionTimingsScope, optional

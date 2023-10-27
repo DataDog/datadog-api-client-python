@@ -13,6 +13,7 @@ from datadog_api_client.model_utils import (
     none_type,
     unset,
     UnsetType,
+    UUID,
 )
 
 
@@ -30,6 +31,7 @@ class SyntheticsAssertionXPathTargetTarget(ModelNormal):
                 int,
                 list,
                 str,
+                UUID,
                 none_type,
             ),
             "x_path": (str,),
@@ -55,7 +57,7 @@ class SyntheticsAssertionXPathTargetTarget(ModelNormal):
         :type operator: str, optional
 
         :param target_value: The path target value to compare to.
-        :type target_value: bool, date, datetime, dict, float, int, list, str, none_type, optional
+        :type target_value: bool, date, datetime, dict, float, int, list, str, UUID, none_type, optional
 
         :param x_path: The X path to assert.
         :type x_path: str, optional

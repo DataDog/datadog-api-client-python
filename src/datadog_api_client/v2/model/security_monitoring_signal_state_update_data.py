@@ -13,6 +13,7 @@ from datadog_api_client.model_utils import (
     none_type,
     unset,
     UnsetType,
+    UUID,
 )
 
 
@@ -46,6 +47,7 @@ class SecurityMonitoringSignalStateUpdateData(ModelNormal):
                 int,
                 list,
                 str,
+                UUID,
                 none_type,
             ),
             "type": (SecurityMonitoringSignalMetadataType,),
@@ -71,7 +73,7 @@ class SecurityMonitoringSignalStateUpdateData(ModelNormal):
         :type attributes: SecurityMonitoringSignalStateUpdateAttributes
 
         :param id: The unique ID of the security signal.
-        :type id: bool, date, datetime, dict, float, int, list, str, none_type, optional
+        :type id: bool, date, datetime, dict, float, int, list, str, UUID, none_type, optional
 
         :param type: The type of event.
         :type type: SecurityMonitoringSignalMetadataType, optional

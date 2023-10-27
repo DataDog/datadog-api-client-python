@@ -13,6 +13,7 @@ from datadog_api_client.model_utils import (
     none_type,
     unset,
     UnsetType,
+    UUID,
 )
 
 
@@ -47,6 +48,7 @@ class SensitiveDataScannerGetConfigResponseData(ModelNormal):
                         int,
                         list,
                         str,
+                        UUID,
                         none_type,
                     )
                 },
@@ -75,7 +77,7 @@ class SensitiveDataScannerGetConfigResponseData(ModelNormal):
         Response data related to the scanning groups.
 
         :param attributes: Attributes of the Sensitive Data configuration.
-        :type attributes: {str: (bool, date, datetime, dict, float, int, list, str, none_type,)}, optional
+        :type attributes: {str: (bool, date, datetime, dict, float, int, list, str, UUID, none_type,)}, optional
 
         :param id: ID of the configuration.
         :type id: str, optional

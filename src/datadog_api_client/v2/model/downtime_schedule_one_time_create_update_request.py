@@ -13,6 +13,7 @@ from datadog_api_client.model_utils import (
     none_type,
     unset,
     UnsetType,
+    UUID,
 )
 
 
@@ -28,6 +29,7 @@ class DowntimeScheduleOneTimeCreateUpdateRequest(ModelNormal):
             int,
             list,
             str,
+            UUID,
             none_type,
         )
 

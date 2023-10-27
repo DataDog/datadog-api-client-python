@@ -13,6 +13,7 @@ from datadog_api_client.model_utils import (
     none_type,
     unset,
     UnsetType,
+    UUID,
 )
 
 
@@ -39,6 +40,7 @@ class CIAppPipelineEventAttributes(ModelNormal):
                         int,
                         list,
                         str,
+                        UUID,
                         none_type,
                     )
                 },
@@ -64,7 +66,7 @@ class CIAppPipelineEventAttributes(ModelNormal):
         JSON object containing all event attributes and their associated values.
 
         :param attributes: JSON object of attributes from CI Visibility pipeline events.
-        :type attributes: {str: (bool, date, datetime, dict, float, int, list, str, none_type,)}, optional
+        :type attributes: {str: (bool, date, datetime, dict, float, int, list, str, UUID, none_type,)}, optional
 
         :param ci_level: Pipeline execution level.
         :type ci_level: CIAppPipelineLevel, optional

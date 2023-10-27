@@ -13,6 +13,7 @@ from datadog_api_client.model_utils import (
     none_type,
     unset,
     UnsetType,
+    UUID,
 )
 
 
@@ -31,6 +32,7 @@ class SyntheticsAssertionJSONPathTargetTarget(ModelNormal):
                 int,
                 list,
                 str,
+                UUID,
                 none_type,
             ),
         }
@@ -58,7 +60,7 @@ class SyntheticsAssertionJSONPathTargetTarget(ModelNormal):
         :type operator: str, optional
 
         :param target_value: The path target value to compare to.
-        :type target_value: bool, date, datetime, dict, float, int, list, str, none_type, optional
+        :type target_value: bool, date, datetime, dict, float, int, list, str, UUID, none_type, optional
         """
         if json_path is not unset:
             kwargs["json_path"] = json_path

@@ -19,7 +19,7 @@ class ServiceDefinitionSchema(ModelComposed):
         :type contact: ServiceDefinitionV1Contact, optional
 
         :param extensions: Extensions to V1 schema.
-        :type extensions: {str: (bool, date, datetime, dict, float, int, list, str, none_type,)}, optional
+        :type extensions: {str: (bool, date, datetime, dict, float, int, list, str, UUID, none_type,)}, optional
 
         :param external_resources: A list of external links related to the services.
         :type external_resources: [ServiceDefinitionV1Resource], optional

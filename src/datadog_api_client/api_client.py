@@ -9,6 +9,7 @@ import warnings
 import multiprocessing
 from multiprocessing.pool import ThreadPool
 from datetime import date, datetime
+from uuid import UUID
 import io
 import os
 import re
@@ -179,6 +180,8 @@ class ApiClient:
             if getattr(obj, "tzinfo", None) is not None:
                 return obj.isoformat()
             return "{}Z".format(obj.strftime("%Y-%m-%dT%H:%M:%S.%f")[:-3])
+        elif isinstance(obj, UUID):
+            return str(obj)
         elif isinstance(obj, ModelSimple):
             return cls.sanitize_for_serialization(obj.value)
         elif isinstance(obj, (list, tuple)):
