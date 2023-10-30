@@ -17,7 +17,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.finding_mute_reason import FindingMuteReason
 
 
-class MuteFindingResponseProperties(ModelNormal):
+class BulkMuteFindingsRequestProperties(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.finding_mute_reason import FindingMuteReason
@@ -38,35 +38,33 @@ class MuteFindingResponseProperties(ModelNormal):
 
     def __init__(
         self_,
+        muted: bool,
+        reason: FindingMuteReason,
         description: Union[str, UnsetType] = unset,
         expiration_date: Union[int, UnsetType] = unset,
-        muted: Union[bool, UnsetType] = unset,
-        reason: Union[FindingMuteReason, UnsetType] = unset,
         **kwargs,
     ):
         """
-        Information about the mute status of this finding.
+        Object containing the new mute properties of the findings.
 
-        :param description: Additional information about the reason why this finding is muted or unmuted.
-            This attribute will not be included in the response if the description is not provided in the request body.
+        :param description: Additional information about the reason why those findings are muted or unmuted. This field has a maximum limit of 280 characters.
         :type description: str, optional
 
-        :param expiration_date: The expiration date of the mute or unmute action.
-            If the expiration date is not provided in the request body, this attribute will not be included in the response and the finding will be muted or unmuted indefinitely.
+        :param expiration_date: The expiration date of the mute or unmute action (Unix ms). It must be set to a value greater than the current timestamp.
+            If this field is not provided, the finding will be muted or unmuted indefinitely, which is equivalent to setting the expiration date to 9999999999999.
         :type expiration_date: int, optional
 
-        :param muted: Whether this finding is muted or unmuted.
-        :type muted: bool, optional
+        :param muted: Whether those findings should be muted or unmuted.
+        :type muted: bool
 
         :param reason: The reason why this finding is muted or unmuted.
-        :type reason: FindingMuteReason, optional
+        :type reason: FindingMuteReason
         """
         if description is not unset:
             kwargs["description"] = description
         if expiration_date is not unset:
             kwargs["expiration_date"] = expiration_date
-        if muted is not unset:
-            kwargs["muted"] = muted
-        if reason is not unset:
-            kwargs["reason"] = reason
         super().__init__(kwargs)
+
+        self_.muted = muted
+        self_.reason = reason

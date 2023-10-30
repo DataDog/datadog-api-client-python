@@ -1,0 +1,20 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"mute":{"expiration_date":1778721573794,"muted":true,"reason":"ACCEPTED_RISK"}},"id":"dbe5f567-192b-4404-b908-29b70e1c9f76","meta":{"findings":[{"finding_id":"ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw=="}]},"type":"finding"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/posture_management/findings
+  response:
+    body:
+      string: '{"data":{"id":"dbe5f567-192b-4404-b908-29b70e1c9f76","type":"finding"}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1
