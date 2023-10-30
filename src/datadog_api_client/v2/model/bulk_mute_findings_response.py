@@ -12,28 +12,28 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.mute_finding_response_data import MuteFindingResponseData
+    from datadog_api_client.v2.model.bulk_mute_findings_response_data import BulkMuteFindingsResponseData
 
 
-class MuteFindingResponse(ModelNormal):
+class BulkMuteFindingsResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.mute_finding_response_data import MuteFindingResponseData
+        from datadog_api_client.v2.model.bulk_mute_findings_response_data import BulkMuteFindingsResponseData
 
         return {
-            "data": (MuteFindingResponseData,),
+            "data": (BulkMuteFindingsResponseData,),
         }
 
     attribute_map = {
         "data": "data",
     }
 
-    def __init__(self_, data: MuteFindingResponseData, **kwargs):
+    def __init__(self_, data: BulkMuteFindingsResponseData, **kwargs):
         """
         The expected response schema.
 
-        :param data: Data object containing the updated finding.
-        :type data: MuteFindingResponseData
+        :param data: Data object containing the ID of the request that was updated.
+        :type data: BulkMuteFindingsResponseData
         """
         super().__init__(kwargs)
 

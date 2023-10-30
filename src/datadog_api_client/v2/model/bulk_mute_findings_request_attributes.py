@@ -12,28 +12,28 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.mute_finding_request_properties import MuteFindingRequestProperties
+    from datadog_api_client.v2.model.bulk_mute_findings_request_properties import BulkMuteFindingsRequestProperties
 
 
-class MuteFindingRequestAttributes(ModelNormal):
+class BulkMuteFindingsRequestAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.mute_finding_request_properties import MuteFindingRequestProperties
+        from datadog_api_client.v2.model.bulk_mute_findings_request_properties import BulkMuteFindingsRequestProperties
 
         return {
-            "mute": (MuteFindingRequestProperties,),
+            "mute": (BulkMuteFindingsRequestProperties,),
         }
 
     attribute_map = {
         "mute": "mute",
     }
 
-    def __init__(self_, mute: MuteFindingRequestProperties, **kwargs):
+    def __init__(self_, mute: BulkMuteFindingsRequestProperties, **kwargs):
         """
         The mute properties to be updated.
 
-        :param mute: Object containing the new mute properties of the finding.
-        :type mute: MuteFindingRequestProperties
+        :param mute: Object containing the new mute properties of the findings.
+        :type mute: BulkMuteFindingsRequestProperties
         """
         super().__init__(kwargs)
 

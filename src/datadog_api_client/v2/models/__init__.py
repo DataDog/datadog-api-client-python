@@ -53,6 +53,14 @@ from datadog_api_client.v2.model.authn_mapping_update_request import AuthNMappin
 from datadog_api_client.v2.model.authn_mappings_response import AuthNMappingsResponse
 from datadog_api_client.v2.model.authn_mappings_sort import AuthNMappingsSort
 from datadog_api_client.v2.model.authn_mappings_type import AuthNMappingsType
+from datadog_api_client.v2.model.bulk_mute_findings_request import BulkMuteFindingsRequest
+from datadog_api_client.v2.model.bulk_mute_findings_request_attributes import BulkMuteFindingsRequestAttributes
+from datadog_api_client.v2.model.bulk_mute_findings_request_data import BulkMuteFindingsRequestData
+from datadog_api_client.v2.model.bulk_mute_findings_request_meta import BulkMuteFindingsRequestMeta
+from datadog_api_client.v2.model.bulk_mute_findings_request_meta_findings import BulkMuteFindingsRequestMetaFindings
+from datadog_api_client.v2.model.bulk_mute_findings_request_properties import BulkMuteFindingsRequestProperties
+from datadog_api_client.v2.model.bulk_mute_findings_response import BulkMuteFindingsResponse
+from datadog_api_client.v2.model.bulk_mute_findings_response_data import BulkMuteFindingsResponseData
 from datadog_api_client.v2.model.ci_app_aggregate_bucket_value import CIAppAggregateBucketValue
 from datadog_api_client.v2.model.ci_app_aggregate_bucket_value_timeseries import CIAppAggregateBucketValueTimeseries
 from datadog_api_client.v2.model.ci_app_aggregate_bucket_value_timeseries_point import (
@@ -762,14 +770,6 @@ from datadog_api_client.v2.model.monitor_downtime_match_response_attributes impo
 )
 from datadog_api_client.v2.model.monitor_downtime_match_response_data import MonitorDowntimeMatchResponseData
 from datadog_api_client.v2.model.monitor_type import MonitorType
-from datadog_api_client.v2.model.mute_finding_request import MuteFindingRequest
-from datadog_api_client.v2.model.mute_finding_request_attributes import MuteFindingRequestAttributes
-from datadog_api_client.v2.model.mute_finding_request_data import MuteFindingRequestData
-from datadog_api_client.v2.model.mute_finding_request_properties import MuteFindingRequestProperties
-from datadog_api_client.v2.model.mute_finding_response import MuteFindingResponse
-from datadog_api_client.v2.model.mute_finding_response_attributes import MuteFindingResponseAttributes
-from datadog_api_client.v2.model.mute_finding_response_data import MuteFindingResponseData
-from datadog_api_client.v2.model.mute_finding_response_properties import MuteFindingResponseProperties
 from datadog_api_client.v2.model.nullable_relationship_to_user import NullableRelationshipToUser
 from datadog_api_client.v2.model.nullable_relationship_to_user_data import NullableRelationshipToUserData
 from datadog_api_client.v2.model.on_demand_concurrency_cap import OnDemandConcurrencyCap
@@ -1484,6 +1484,14 @@ __all__ = [
     "AuthNMappingsResponse",
     "AuthNMappingsSort",
     "AuthNMappingsType",
+    "BulkMuteFindingsRequest",
+    "BulkMuteFindingsRequestAttributes",
+    "BulkMuteFindingsRequestData",
+    "BulkMuteFindingsRequestMeta",
+    "BulkMuteFindingsRequestMetaFindings",
+    "BulkMuteFindingsRequestProperties",
+    "BulkMuteFindingsResponse",
+    "BulkMuteFindingsResponseData",
     "CIAppAggregateBucketValue",
     "CIAppAggregateBucketValueTimeseries",
     "CIAppAggregateBucketValueTimeseriesPoint",
@@ -2081,14 +2089,6 @@ __all__ = [
     "MonitorDowntimeMatchResponseAttributes",
     "MonitorDowntimeMatchResponseData",
     "MonitorType",
-    "MuteFindingRequest",
-    "MuteFindingRequestAttributes",
-    "MuteFindingRequestData",
-    "MuteFindingRequestProperties",
-    "MuteFindingResponse",
-    "MuteFindingResponseAttributes",
-    "MuteFindingResponseData",
-    "MuteFindingResponseProperties",
     "NullableRelationshipToUser",
     "NullableRelationshipToUserData",
     "OnDemandConcurrencyCap",

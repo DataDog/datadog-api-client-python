@@ -386,6 +386,62 @@ authn\_mappings\_type
    :members:
    :show-inheritance:
 
+bulk\_mute\_findings\_request
+-----------------------------
+
+.. automodule:: datadog_api_client.v2.model.bulk_mute_findings_request
+   :members:
+   :show-inheritance:
+
+bulk\_mute\_findings\_request\_attributes
+-----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.bulk_mute_findings_request_attributes
+   :members:
+   :show-inheritance:
+
+bulk\_mute\_findings\_request\_data
+-----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.bulk_mute_findings_request_data
+   :members:
+   :show-inheritance:
+
+bulk\_mute\_findings\_request\_meta
+-----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.bulk_mute_findings_request_meta
+   :members:
+   :show-inheritance:
+
+bulk\_mute\_findings\_request\_meta\_findings
+---------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.bulk_mute_findings_request_meta_findings
+   :members:
+   :show-inheritance:
+
+bulk\_mute\_findings\_request\_properties
+-----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.bulk_mute_findings_request_properties
+   :members:
+   :show-inheritance:
+
+bulk\_mute\_findings\_response
+------------------------------
+
+.. automodule:: datadog_api_client.v2.model.bulk_mute_findings_response
+   :members:
+   :show-inheritance:
+
+bulk\_mute\_findings\_response\_data
+------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.bulk_mute_findings_response_data
+   :members:
+   :show-inheritance:
+
 chargeback\_breakdown
 ---------------------
 
@@ -4562,62 +4618,6 @@ monitor\_type
 -------------
 
 .. automodule:: datadog_api_client.v2.model.monitor_type
-   :members:
-   :show-inheritance:
-
-mute\_finding\_request
-----------------------
-
-.. automodule:: datadog_api_client.v2.model.mute_finding_request
-   :members:
-   :show-inheritance:
-
-mute\_finding\_request\_attributes
-----------------------------------
-
-.. automodule:: datadog_api_client.v2.model.mute_finding_request_attributes
-   :members:
-   :show-inheritance:
-
-mute\_finding\_request\_data
-----------------------------
-
-.. automodule:: datadog_api_client.v2.model.mute_finding_request_data
-   :members:
-   :show-inheritance:
-
-mute\_finding\_request\_properties
-----------------------------------
-
-.. automodule:: datadog_api_client.v2.model.mute_finding_request_properties
-   :members:
-   :show-inheritance:
-
-mute\_finding\_response
------------------------
-
-.. automodule:: datadog_api_client.v2.model.mute_finding_response
-   :members:
-   :show-inheritance:
-
-mute\_finding\_response\_attributes
------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.mute_finding_response_attributes
-   :members:
-   :show-inheritance:
-
-mute\_finding\_response\_data
------------------------------
-
-.. automodule:: datadog_api_client.v2.model.mute_finding_response_data
-   :members:
-   :show-inheritance:
-
-mute\_finding\_response\_properties
------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.mute_finding_response_properties
    :members:
    :show-inheritance:
 

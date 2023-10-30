@@ -19,9 +19,9 @@ from datadog_api_client.v2.model.list_findings_response import ListFindingsRespo
 from datadog_api_client.v2.model.finding_evaluation import FindingEvaluation
 from datadog_api_client.v2.model.finding_status import FindingStatus
 from datadog_api_client.v2.model.finding import Finding
+from datadog_api_client.v2.model.bulk_mute_findings_response import BulkMuteFindingsResponse
+from datadog_api_client.v2.model.bulk_mute_findings_request import BulkMuteFindingsRequest
 from datadog_api_client.v2.model.get_finding_response import GetFindingResponse
-from datadog_api_client.v2.model.mute_finding_response import MuteFindingResponse
-from datadog_api_client.v2.model.mute_finding_request import MuteFindingRequest
 from datadog_api_client.v2.model.security_filters_response import SecurityFiltersResponse
 from datadog_api_client.v2.model.security_filter_response import SecurityFilterResponse
 from datadog_api_client.v2.model.security_filter_create_request import SecurityFilterCreateRequest
@@ -508,6 +508,26 @@ class SecurityMonitoringApi:
             api_client=api_client,
         )
 
+        self._mute_findings_endpoint = _Endpoint(
+            settings={
+                "response_type": (BulkMuteFindingsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/posture_management/findings",
+                "operation_id": "mute_findings",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (BulkMuteFindingsRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._search_security_monitoring_signals_endpoint = _Endpoint(
             settings={
                 "response_type": (SecurityMonitoringSignalsListResponse,),
@@ -520,32 +540,6 @@ class SecurityMonitoringApi:
             params_map={
                 "body": {
                     "openapi_types": (SecurityMonitoringSignalListRequest,),
-                    "location": "body",
-                },
-            },
-            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
-            api_client=api_client,
-        )
-
-        self._update_finding_endpoint = _Endpoint(
-            settings={
-                "response_type": (MuteFindingResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
-                "endpoint_path": "/api/v2/posture_management/findings/{finding_id}",
-                "operation_id": "update_finding",
-                "http_method": "PATCH",
-                "version": "v2",
-            },
-            params_map={
-                "finding_id": {
-                    "required": True,
-                    "openapi_types": (str,),
-                    "attribute": "finding_id",
-                    "location": "path",
-                },
-                "body": {
-                    "required": True,
-                    "openapi_types": (MuteFindingRequest,),
                     "location": "body",
                 },
             },
@@ -1186,6 +1180,33 @@ class SecurityMonitoringApi:
         }
         return endpoint.call_with_http_info_paginated(pagination)
 
+    def mute_findings(
+        self,
+        body: BulkMuteFindingsRequest,
+    ) -> BulkMuteFindingsResponse:
+        """Mute or unmute a batch of findings.
+
+        Mute or unmute findings.
+
+        :param body: **Attributes**
+
+            All findings are updated with the same attributes. The request body must include at least two attributes: ``muted`` and ``reason``.
+            The allowed reasons depend on whether the finding is being muted or unmuted:
+
+            * To mute a finding: ``PENDING_FIX`` , ``FALSE_POSITIVE`` , ``ACCEPTED_RISK`` , ``OTHER``.
+            * To unmute a finding : ``NO_PENDING_FIX`` , ``HUMAN_ERROR`` , ``NO_LONGER_ACCEPTED_RISK`` , ``OTHER``.
+
+            **Meta**
+
+            The request body must include a list of the finding IDs to be updated.
+        :type body: BulkMuteFindingsRequest
+        :rtype: BulkMuteFindingsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._mute_findings_endpoint.call_with_http_info(**kwargs)
+
     def search_security_monitoring_signals(
         self,
         *,
@@ -1236,32 +1257,6 @@ class SecurityMonitoringApi:
             "kwargs": kwargs,
         }
         return endpoint.call_with_http_info_paginated(pagination)
-
-    def update_finding(
-        self,
-        finding_id: str,
-        body: MuteFindingRequest,
-    ) -> MuteFindingResponse:
-        """Mute or unmute a finding.
-
-        Mute or unmute a specific finding.
-        The API returns the updated finding object when the request is successful.
-
-        :param finding_id: The ID of the finding.
-        :type finding_id: str
-        :param body: To mute or unmute a finding, the request body should include at least two attributes: ``muted`` and ``reason``. The allowed reasons depend on whether the finding is being muted or unmuted:
-
-            * To mute a finding: ``PENDING_FIX`` , ``FALSE_POSITIVE`` , ``ACCEPTED_RISK`` , ``OTHER``.
-            * To unmute a finding : ``NO_PENDING_FIX`` , ``HUMAN_ERROR`` , ``NO_LONGER_ACCEPTED_RISK`` , ``OTHER``.
-        :type body: MuteFindingRequest
-        :rtype: MuteFindingResponse
-        """
-        kwargs: Dict[str, Any] = {}
-        kwargs["finding_id"] = finding_id
-
-        kwargs["body"] = body
-
-        return self._update_finding_endpoint.call_with_http_info(**kwargs)
 
     def update_security_filter(
         self,

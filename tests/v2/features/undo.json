@@ -1023,13 +1023,13 @@
       "type": "safe"
     }
   },
-  "GetFinding": {
+  "MuteFindings": {
     "tag": "Security Monitoring",
     "undo": {
       "type": "safe"
     }
   },
-  "UpdateFinding": {
+  "GetFinding": {
     "tag": "Security Monitoring",
     "undo": {
       "type": "safe"
