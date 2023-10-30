@@ -31,6 +31,10 @@ class MonthlyUsageAttributionValues(ModelNormal):
             "appsec_usage": (float,),
             "browser_percentage": (float,),
             "browser_usage": (float,),
+            "ci_pipeline_indexed_spans_percentage": (float,),
+            "ci_pipeline_indexed_spans_usage": (float,),
+            "ci_test_indexed_spans_percentage": (float,),
+            "ci_test_indexed_spans_usage": (float,),
             "ci_visibility_itr_percentage": (float,),
             "ci_visibility_itr_usage": (float,),
             "cloud_siem_percentage": (float,),
@@ -43,6 +47,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
             "cspm_containers_usage": (float,),
             "cspm_hosts_percentage": (float,),
             "cspm_hosts_usage": (float,),
+            "custom_event_percentage": (float,),
+            "custom_event_usage": (float,),
             "custom_ingested_timeseries_percentage": (float,),
             "custom_ingested_timeseries_usage": (float,),
             "custom_timeseries_percentage": (float,),
@@ -69,12 +75,38 @@ class MonthlyUsageAttributionValues(ModelNormal):
             "fargate_usage": (float,),
             "functions_percentage": (float,),
             "functions_usage": (float,),
+            "indexed_spans_percentage": (float,),
+            "indexed_spans_usage": (float,),
             "infra_host_percentage": (float,),
             "infra_host_usage": (float,),
+            "ingested_logs_bytes_percentage": (float,),
+            "ingested_logs_bytes_usage": (float,),
+            "ingested_spans_bytes_percentage": (float,),
+            "ingested_spans_bytes_usage": (float,),
             "invocations_percentage": (float,),
             "invocations_usage": (float,),
             "lambda_traced_invocations_percentage": (float,),
             "lambda_traced_invocations_usage": (float,),
+            "logs_indexed_15day_percentage": (float,),
+            "logs_indexed_15day_usage": (float,),
+            "logs_indexed_180day_percentage": (float,),
+            "logs_indexed_180day_usage": (float,),
+            "logs_indexed_30day_percentage": (float,),
+            "logs_indexed_30day_usage": (float,),
+            "logs_indexed_360day_percentage": (float,),
+            "logs_indexed_360day_usage": (float,),
+            "logs_indexed_3day_percentage": (float,),
+            "logs_indexed_3day_usage": (float,),
+            "logs_indexed_45day_percentage": (float,),
+            "logs_indexed_45day_usage": (float,),
+            "logs_indexed_60day_percentage": (float,),
+            "logs_indexed_60day_usage": (float,),
+            "logs_indexed_7day_percentage": (float,),
+            "logs_indexed_7day_usage": (float,),
+            "logs_indexed_90day_percentage": (float,),
+            "logs_indexed_90day_usage": (float,),
+            "logs_indexed_custom_retention_percentage": (float,),
+            "logs_indexed_custom_retention_usage": (float,),
             "mobile_app_testing_percentage": (float,),
             "mobile_app_testing_usage": (float,),
             "ndm_netflow_percentage": (float,),
@@ -89,10 +121,16 @@ class MonthlyUsageAttributionValues(ModelNormal):
             "profiled_fargate_usage": (float,),
             "profiled_host_percentage": (float,),
             "profiled_host_usage": (float,),
+            "rum_browser_mobile_sessions_percentage": (float,),
+            "rum_browser_mobile_sessions_usage": (float,),
+            "rum_replay_sessions_percentage": (float,),
+            "rum_replay_sessions_usage": (float,),
             "sds_scanned_bytes_percentage": (float,),
             "sds_scanned_bytes_usage": (float,),
             "serverless_apps_percentage": (float,),
             "serverless_apps_usage": (float,),
+            "siem_ingested_bytes_percentage": (float,),
+            "siem_ingested_bytes_usage": (float,),
             "snmp_percentage": (float,),
             "snmp_usage": (float,),
             "universal_service_monitoring_percentage": (float,),
@@ -116,6 +154,10 @@ class MonthlyUsageAttributionValues(ModelNormal):
         "appsec_usage": "appsec_usage",
         "browser_percentage": "browser_percentage",
         "browser_usage": "browser_usage",
+        "ci_pipeline_indexed_spans_percentage": "ci_pipeline_indexed_spans_percentage",
+        "ci_pipeline_indexed_spans_usage": "ci_pipeline_indexed_spans_usage",
+        "ci_test_indexed_spans_percentage": "ci_test_indexed_spans_percentage",
+        "ci_test_indexed_spans_usage": "ci_test_indexed_spans_usage",
         "ci_visibility_itr_percentage": "ci_visibility_itr_percentage",
         "ci_visibility_itr_usage": "ci_visibility_itr_usage",
         "cloud_siem_percentage": "cloud_siem_percentage",
@@ -128,6 +170,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         "cspm_containers_usage": "cspm_containers_usage",
         "cspm_hosts_percentage": "cspm_hosts_percentage",
         "cspm_hosts_usage": "cspm_hosts_usage",
+        "custom_event_percentage": "custom_event_percentage",
+        "custom_event_usage": "custom_event_usage",
         "custom_ingested_timeseries_percentage": "custom_ingested_timeseries_percentage",
         "custom_ingested_timeseries_usage": "custom_ingested_timeseries_usage",
         "custom_timeseries_percentage": "custom_timeseries_percentage",
@@ -154,12 +198,38 @@ class MonthlyUsageAttributionValues(ModelNormal):
         "fargate_usage": "fargate_usage",
         "functions_percentage": "functions_percentage",
         "functions_usage": "functions_usage",
+        "indexed_spans_percentage": "indexed_spans_percentage",
+        "indexed_spans_usage": "indexed_spans_usage",
         "infra_host_percentage": "infra_host_percentage",
         "infra_host_usage": "infra_host_usage",
+        "ingested_logs_bytes_percentage": "ingested_logs_bytes_percentage",
+        "ingested_logs_bytes_usage": "ingested_logs_bytes_usage",
+        "ingested_spans_bytes_percentage": "ingested_spans_bytes_percentage",
+        "ingested_spans_bytes_usage": "ingested_spans_bytes_usage",
         "invocations_percentage": "invocations_percentage",
         "invocations_usage": "invocations_usage",
         "lambda_traced_invocations_percentage": "lambda_traced_invocations_percentage",
         "lambda_traced_invocations_usage": "lambda_traced_invocations_usage",
+        "logs_indexed_15day_percentage": "logs_indexed_15day_percentage",
+        "logs_indexed_15day_usage": "logs_indexed_15day_usage",
+        "logs_indexed_180day_percentage": "logs_indexed_180day_percentage",
+        "logs_indexed_180day_usage": "logs_indexed_180day_usage",
+        "logs_indexed_30day_percentage": "logs_indexed_30day_percentage",
+        "logs_indexed_30day_usage": "logs_indexed_30day_usage",
+        "logs_indexed_360day_percentage": "logs_indexed_360day_percentage",
+        "logs_indexed_360day_usage": "logs_indexed_360day_usage",
+        "logs_indexed_3day_percentage": "logs_indexed_3day_percentage",
+        "logs_indexed_3day_usage": "logs_indexed_3day_usage",
+        "logs_indexed_45day_percentage": "logs_indexed_45day_percentage",
+        "logs_indexed_45day_usage": "logs_indexed_45day_usage",
+        "logs_indexed_60day_percentage": "logs_indexed_60day_percentage",
+        "logs_indexed_60day_usage": "logs_indexed_60day_usage",
+        "logs_indexed_7day_percentage": "logs_indexed_7day_percentage",
+        "logs_indexed_7day_usage": "logs_indexed_7day_usage",
+        "logs_indexed_90day_percentage": "logs_indexed_90day_percentage",
+        "logs_indexed_90day_usage": "logs_indexed_90day_usage",
+        "logs_indexed_custom_retention_percentage": "logs_indexed_custom_retention_percentage",
+        "logs_indexed_custom_retention_usage": "logs_indexed_custom_retention_usage",
         "mobile_app_testing_percentage": "mobile_app_testing_percentage",
         "mobile_app_testing_usage": "mobile_app_testing_usage",
         "ndm_netflow_percentage": "ndm_netflow_percentage",
@@ -174,10 +244,16 @@ class MonthlyUsageAttributionValues(ModelNormal):
         "profiled_fargate_usage": "profiled_fargate_usage",
         "profiled_host_percentage": "profiled_host_percentage",
         "profiled_host_usage": "profiled_host_usage",
+        "rum_browser_mobile_sessions_percentage": "rum_browser_mobile_sessions_percentage",
+        "rum_browser_mobile_sessions_usage": "rum_browser_mobile_sessions_usage",
+        "rum_replay_sessions_percentage": "rum_replay_sessions_percentage",
+        "rum_replay_sessions_usage": "rum_replay_sessions_usage",
         "sds_scanned_bytes_percentage": "sds_scanned_bytes_percentage",
         "sds_scanned_bytes_usage": "sds_scanned_bytes_usage",
         "serverless_apps_percentage": "serverless_apps_percentage",
         "serverless_apps_usage": "serverless_apps_usage",
+        "siem_ingested_bytes_percentage": "siem_ingested_bytes_percentage",
+        "siem_ingested_bytes_usage": "siem_ingested_bytes_usage",
         "snmp_percentage": "snmp_percentage",
         "snmp_usage": "snmp_usage",
         "universal_service_monitoring_percentage": "universal_service_monitoring_percentage",
@@ -202,6 +278,10 @@ class MonthlyUsageAttributionValues(ModelNormal):
         appsec_usage: Union[float, UnsetType] = unset,
         browser_percentage: Union[float, UnsetType] = unset,
         browser_usage: Union[float, UnsetType] = unset,
+        ci_pipeline_indexed_spans_percentage: Union[float, UnsetType] = unset,
+        ci_pipeline_indexed_spans_usage: Union[float, UnsetType] = unset,
+        ci_test_indexed_spans_percentage: Union[float, UnsetType] = unset,
+        ci_test_indexed_spans_usage: Union[float, UnsetType] = unset,
         ci_visibility_itr_percentage: Union[float, UnsetType] = unset,
         ci_visibility_itr_usage: Union[float, UnsetType] = unset,
         cloud_siem_percentage: Union[float, UnsetType] = unset,
@@ -214,6 +294,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         cspm_containers_usage: Union[float, UnsetType] = unset,
         cspm_hosts_percentage: Union[float, UnsetType] = unset,
         cspm_hosts_usage: Union[float, UnsetType] = unset,
+        custom_event_percentage: Union[float, UnsetType] = unset,
+        custom_event_usage: Union[float, UnsetType] = unset,
         custom_ingested_timeseries_percentage: Union[float, UnsetType] = unset,
         custom_ingested_timeseries_usage: Union[float, UnsetType] = unset,
         custom_timeseries_percentage: Union[float, UnsetType] = unset,
@@ -240,12 +322,38 @@ class MonthlyUsageAttributionValues(ModelNormal):
         fargate_usage: Union[float, UnsetType] = unset,
         functions_percentage: Union[float, UnsetType] = unset,
         functions_usage: Union[float, UnsetType] = unset,
+        indexed_spans_percentage: Union[float, UnsetType] = unset,
+        indexed_spans_usage: Union[float, UnsetType] = unset,
         infra_host_percentage: Union[float, UnsetType] = unset,
         infra_host_usage: Union[float, UnsetType] = unset,
+        ingested_logs_bytes_percentage: Union[float, UnsetType] = unset,
+        ingested_logs_bytes_usage: Union[float, UnsetType] = unset,
+        ingested_spans_bytes_percentage: Union[float, UnsetType] = unset,
+        ingested_spans_bytes_usage: Union[float, UnsetType] = unset,
         invocations_percentage: Union[float, UnsetType] = unset,
         invocations_usage: Union[float, UnsetType] = unset,
         lambda_traced_invocations_percentage: Union[float, UnsetType] = unset,
         lambda_traced_invocations_usage: Union[float, UnsetType] = unset,
+        logs_indexed_15day_percentage: Union[float, UnsetType] = unset,
+        logs_indexed_15day_usage: Union[float, UnsetType] = unset,
+        logs_indexed_180day_percentage: Union[float, UnsetType] = unset,
+        logs_indexed_180day_usage: Union[float, UnsetType] = unset,
+        logs_indexed_30day_percentage: Union[float, UnsetType] = unset,
+        logs_indexed_30day_usage: Union[float, UnsetType] = unset,
+        logs_indexed_360day_percentage: Union[float, UnsetType] = unset,
+        logs_indexed_360day_usage: Union[float, UnsetType] = unset,
+        logs_indexed_3day_percentage: Union[float, UnsetType] = unset,
+        logs_indexed_3day_usage: Union[float, UnsetType] = unset,
+        logs_indexed_45day_percentage: Union[float, UnsetType] = unset,
+        logs_indexed_45day_usage: Union[float, UnsetType] = unset,
+        logs_indexed_60day_percentage: Union[float, UnsetType] = unset,
+        logs_indexed_60day_usage: Union[float, UnsetType] = unset,
+        logs_indexed_7day_percentage: Union[float, UnsetType] = unset,
+        logs_indexed_7day_usage: Union[float, UnsetType] = unset,
+        logs_indexed_90day_percentage: Union[float, UnsetType] = unset,
+        logs_indexed_90day_usage: Union[float, UnsetType] = unset,
+        logs_indexed_custom_retention_percentage: Union[float, UnsetType] = unset,
+        logs_indexed_custom_retention_usage: Union[float, UnsetType] = unset,
         mobile_app_testing_percentage: Union[float, UnsetType] = unset,
         mobile_app_testing_usage: Union[float, UnsetType] = unset,
         ndm_netflow_percentage: Union[float, UnsetType] = unset,
@@ -260,10 +368,16 @@ class MonthlyUsageAttributionValues(ModelNormal):
         profiled_fargate_usage: Union[float, UnsetType] = unset,
         profiled_host_percentage: Union[float, UnsetType] = unset,
         profiled_host_usage: Union[float, UnsetType] = unset,
+        rum_browser_mobile_sessions_percentage: Union[float, UnsetType] = unset,
+        rum_browser_mobile_sessions_usage: Union[float, UnsetType] = unset,
+        rum_replay_sessions_percentage: Union[float, UnsetType] = unset,
+        rum_replay_sessions_usage: Union[float, UnsetType] = unset,
         sds_scanned_bytes_percentage: Union[float, UnsetType] = unset,
         sds_scanned_bytes_usage: Union[float, UnsetType] = unset,
         serverless_apps_percentage: Union[float, UnsetType] = unset,
         serverless_apps_usage: Union[float, UnsetType] = unset,
+        siem_ingested_bytes_percentage: Union[float, UnsetType] = unset,
+        siem_ingested_bytes_usage: Union[float, UnsetType] = unset,
         snmp_percentage: Union[float, UnsetType] = unset,
         snmp_usage: Union[float, UnsetType] = unset,
         universal_service_monitoring_percentage: Union[float, UnsetType] = unset,
@@ -317,6 +431,18 @@ class MonthlyUsageAttributionValues(ModelNormal):
         :param browser_usage: The synthetic browser test usage by tag(s).
         :type browser_usage: float, optional
 
+        :param ci_pipeline_indexed_spans_percentage: The percentage of CI Pipeline Indexed Spans usage by tag(s).
+        :type ci_pipeline_indexed_spans_percentage: float, optional
+
+        :param ci_pipeline_indexed_spans_usage: The total CI Pipeline Indexed Spans usage by tag(s).
+        :type ci_pipeline_indexed_spans_usage: float, optional
+
+        :param ci_test_indexed_spans_percentage: The percentage of CI Test Indexed Spans usage by tag(s).
+        :type ci_test_indexed_spans_percentage: float, optional
+
+        :param ci_test_indexed_spans_usage: The total CI Test Indexed Spans usage by tag(s).
+        :type ci_test_indexed_spans_usage: float, optional
+
         :param ci_visibility_itr_percentage: The percentage of Git committers for Intelligent Test Runner usage by tag(s).
         :type ci_visibility_itr_percentage: float, optional
 
@@ -352,6 +478,12 @@ class MonthlyUsageAttributionValues(ModelNormal):
 
         :param cspm_hosts_usage: The Cloud Security Management Pro host usage by tag(s).
         :type cspm_hosts_usage: float, optional
+
+        :param custom_event_percentage: The percentage of Custom Events usage by tag(s).
+        :type custom_event_percentage: float, optional
+
+        :param custom_event_usage: The total Custom Events usage by tag(s).
+        :type custom_event_usage: float, optional
 
         :param custom_ingested_timeseries_percentage: The percentage of ingested custom metrics usage by tag(s).
         :type custom_ingested_timeseries_percentage: float, optional
@@ -431,11 +563,29 @@ class MonthlyUsageAttributionValues(ModelNormal):
         :param functions_usage: The Lambda function usage by tag(s).
         :type functions_usage: float, optional
 
+        :param indexed_spans_percentage: The percentage of APM Indexed Spans usage by tag(s).
+        :type indexed_spans_percentage: float, optional
+
+        :param indexed_spans_usage: The total APM Indexed Spans usage by tag(s).
+        :type indexed_spans_usage: float, optional
+
         :param infra_host_percentage: The percentage of infrastructure host usage by tag(s).
         :type infra_host_percentage: float, optional
 
         :param infra_host_usage: The infrastructure host usage by tag(s).
         :type infra_host_usage: float, optional
+
+        :param ingested_logs_bytes_percentage: The percentage of Ingested Logs usage by tag(s).
+        :type ingested_logs_bytes_percentage: float, optional
+
+        :param ingested_logs_bytes_usage: The total Ingested Logs usage by tag(s).
+        :type ingested_logs_bytes_usage: float, optional
+
+        :param ingested_spans_bytes_percentage: The percentage of APM Ingested Spans usage by tag(s).
+        :type ingested_spans_bytes_percentage: float, optional
+
+        :param ingested_spans_bytes_usage: The total APM Ingested Spans usage by tag(s).
+        :type ingested_spans_bytes_usage: float, optional
 
         :param invocations_percentage: The percentage of Lambda invocation usage by tag(s).
         :type invocations_percentage: float, optional
@@ -448,6 +598,66 @@ class MonthlyUsageAttributionValues(ModelNormal):
 
         :param lambda_traced_invocations_usage: The Serverless APM usage by tag(s).
         :type lambda_traced_invocations_usage: float, optional
+
+        :param logs_indexed_15day_percentage: The percentage of Indexed Logs (15-day Retention) usage by tag(s).
+        :type logs_indexed_15day_percentage: float, optional
+
+        :param logs_indexed_15day_usage: The total Indexed Logs (15-day Retention) usage by tag(s).
+        :type logs_indexed_15day_usage: float, optional
+
+        :param logs_indexed_180day_percentage: The percentage of Indexed Logs (180-day Retention) usage by tag(s).
+        :type logs_indexed_180day_percentage: float, optional
+
+        :param logs_indexed_180day_usage: The total Indexed Logs (180-day Retention) usage by tag(s).
+        :type logs_indexed_180day_usage: float, optional
+
+        :param logs_indexed_30day_percentage: The percentage of Indexed Logs (30-day Retention) usage by tag(s).
+        :type logs_indexed_30day_percentage: float, optional
+
+        :param logs_indexed_30day_usage: The total Indexed Logs (30-day Retention) usage by tag(s).
+        :type logs_indexed_30day_usage: float, optional
+
+        :param logs_indexed_360day_percentage: The percentage of Indexed Logs (360-day Retention) usage by tag(s).
+        :type logs_indexed_360day_percentage: float, optional
+
+        :param logs_indexed_360day_usage: The total Indexed Logs (360-day Retention) usage by tag(s).
+        :type logs_indexed_360day_usage: float, optional
+
+        :param logs_indexed_3day_percentage: The percentage of Indexed Logs (3-day Retention) usage by tag(s).
+        :type logs_indexed_3day_percentage: float, optional
+
+        :param logs_indexed_3day_usage: The total Indexed Logs (3-day Retention) usage by tag(s).
+        :type logs_indexed_3day_usage: float, optional
+
+        :param logs_indexed_45day_percentage: The percentage of Indexed Logs (45-day Retention) usage by tag(s).
+        :type logs_indexed_45day_percentage: float, optional
+
+        :param logs_indexed_45day_usage: The total Indexed Logs (45-day Retention) usage by tag(s).
+        :type logs_indexed_45day_usage: float, optional
+
+        :param logs_indexed_60day_percentage: The percentage of Indexed Logs (60-day Retention) usage by tag(s).
+        :type logs_indexed_60day_percentage: float, optional
+
+        :param logs_indexed_60day_usage: The total Indexed Logs (60-day Retention) usage by tag(s).
+        :type logs_indexed_60day_usage: float, optional
+
+        :param logs_indexed_7day_percentage: The percentage of Indexed Logs (7-day Retention) usage by tag(s).
+        :type logs_indexed_7day_percentage: float, optional
+
+        :param logs_indexed_7day_usage: The total Indexed Logs (7-day Retention) usage by tag(s).
+        :type logs_indexed_7day_usage: float, optional
+
+        :param logs_indexed_90day_percentage: The percentage of Indexed Logs (90-day Retention) usage by tag(s).
+        :type logs_indexed_90day_percentage: float, optional
+
+        :param logs_indexed_90day_usage: The total Indexed Logs (90-day Retention) usage by tag(s).
+        :type logs_indexed_90day_usage: float, optional
+
+        :param logs_indexed_custom_retention_percentage: The percentage of Indexed Logs (Custom Retention) usage by tag(s).
+        :type logs_indexed_custom_retention_percentage: float, optional
+
+        :param logs_indexed_custom_retention_usage: The total Indexed Logs (Custom Retention) usage by tag(s).
+        :type logs_indexed_custom_retention_usage: float, optional
 
         :param mobile_app_testing_percentage: The percentage of Synthetic mobile application test usage by tag(s).
         :type mobile_app_testing_percentage: float, optional
@@ -491,6 +701,18 @@ class MonthlyUsageAttributionValues(ModelNormal):
         :param profiled_host_usage: The profiled hosts usage by tag(s).
         :type profiled_host_usage: float, optional
 
+        :param rum_browser_mobile_sessions_percentage: The percentage of RUM Browser and Mobile usage by tag(s).
+        :type rum_browser_mobile_sessions_percentage: float, optional
+
+        :param rum_browser_mobile_sessions_usage: The total RUM Browser and Mobile usage by tag(s).
+        :type rum_browser_mobile_sessions_usage: float, optional
+
+        :param rum_replay_sessions_percentage: The percentage of RUM Replay Sessions usage by tag(s).
+        :type rum_replay_sessions_percentage: float, optional
+
+        :param rum_replay_sessions_usage: The total RUM Replay Sessions usage by tag(s).
+        :type rum_replay_sessions_usage: float, optional
+
         :param sds_scanned_bytes_percentage: The percentage of Sensitive Data Scanner usage by tag(s).
         :type sds_scanned_bytes_percentage: float, optional
 
@@ -502,6 +724,12 @@ class MonthlyUsageAttributionValues(ModelNormal):
 
         :param serverless_apps_usage: The total Serverless Apps usage by tag(s).
         :type serverless_apps_usage: float, optional
+
+        :param siem_ingested_bytes_percentage: The percentage of SIEM usage by tag(s).
+        :type siem_ingested_bytes_percentage: float, optional
+
+        :param siem_ingested_bytes_usage: The total SIEM usage by tag(s).
+        :type siem_ingested_bytes_usage: float, optional
 
         :param snmp_percentage: The percentage of network device usage by tag(s).
         :type snmp_percentage: float, optional
@@ -549,6 +777,14 @@ class MonthlyUsageAttributionValues(ModelNormal):
             kwargs["browser_percentage"] = browser_percentage
         if browser_usage is not unset:
             kwargs["browser_usage"] = browser_usage
+        if ci_pipeline_indexed_spans_percentage is not unset:
+            kwargs["ci_pipeline_indexed_spans_percentage"] = ci_pipeline_indexed_spans_percentage
+        if ci_pipeline_indexed_spans_usage is not unset:
+            kwargs["ci_pipeline_indexed_spans_usage"] = ci_pipeline_indexed_spans_usage
+        if ci_test_indexed_spans_percentage is not unset:
+            kwargs["ci_test_indexed_spans_percentage"] = ci_test_indexed_spans_percentage
+        if ci_test_indexed_spans_usage is not unset:
+            kwargs["ci_test_indexed_spans_usage"] = ci_test_indexed_spans_usage
         if ci_visibility_itr_percentage is not unset:
             kwargs["ci_visibility_itr_percentage"] = ci_visibility_itr_percentage
         if ci_visibility_itr_usage is not unset:
@@ -573,6 +809,10 @@ class MonthlyUsageAttributionValues(ModelNormal):
             kwargs["cspm_hosts_percentage"] = cspm_hosts_percentage
         if cspm_hosts_usage is not unset:
             kwargs["cspm_hosts_usage"] = cspm_hosts_usage
+        if custom_event_percentage is not unset:
+            kwargs["custom_event_percentage"] = custom_event_percentage
+        if custom_event_usage is not unset:
+            kwargs["custom_event_usage"] = custom_event_usage
         if custom_ingested_timeseries_percentage is not unset:
             kwargs["custom_ingested_timeseries_percentage"] = custom_ingested_timeseries_percentage
         if custom_ingested_timeseries_usage is not unset:
@@ -625,10 +865,22 @@ class MonthlyUsageAttributionValues(ModelNormal):
             kwargs["functions_percentage"] = functions_percentage
         if functions_usage is not unset:
             kwargs["functions_usage"] = functions_usage
+        if indexed_spans_percentage is not unset:
+            kwargs["indexed_spans_percentage"] = indexed_spans_percentage
+        if indexed_spans_usage is not unset:
+            kwargs["indexed_spans_usage"] = indexed_spans_usage
         if infra_host_percentage is not unset:
             kwargs["infra_host_percentage"] = infra_host_percentage
         if infra_host_usage is not unset:
             kwargs["infra_host_usage"] = infra_host_usage
+        if ingested_logs_bytes_percentage is not unset:
+            kwargs["ingested_logs_bytes_percentage"] = ingested_logs_bytes_percentage
+        if ingested_logs_bytes_usage is not unset:
+            kwargs["ingested_logs_bytes_usage"] = ingested_logs_bytes_usage
+        if ingested_spans_bytes_percentage is not unset:
+            kwargs["ingested_spans_bytes_percentage"] = ingested_spans_bytes_percentage
+        if ingested_spans_bytes_usage is not unset:
+            kwargs["ingested_spans_bytes_usage"] = ingested_spans_bytes_usage
         if invocations_percentage is not unset:
             kwargs["invocations_percentage"] = invocations_percentage
         if invocations_usage is not unset:
@@ -637,6 +889,46 @@ class MonthlyUsageAttributionValues(ModelNormal):
             kwargs["lambda_traced_invocations_percentage"] = lambda_traced_invocations_percentage
         if lambda_traced_invocations_usage is not unset:
             kwargs["lambda_traced_invocations_usage"] = lambda_traced_invocations_usage
+        if logs_indexed_15day_percentage is not unset:
+            kwargs["logs_indexed_15day_percentage"] = logs_indexed_15day_percentage
+        if logs_indexed_15day_usage is not unset:
+            kwargs["logs_indexed_15day_usage"] = logs_indexed_15day_usage
+        if logs_indexed_180day_percentage is not unset:
+            kwargs["logs_indexed_180day_percentage"] = logs_indexed_180day_percentage
+        if logs_indexed_180day_usage is not unset:
+            kwargs["logs_indexed_180day_usage"] = logs_indexed_180day_usage
+        if logs_indexed_30day_percentage is not unset:
+            kwargs["logs_indexed_30day_percentage"] = logs_indexed_30day_percentage
+        if logs_indexed_30day_usage is not unset:
+            kwargs["logs_indexed_30day_usage"] = logs_indexed_30day_usage
+        if logs_indexed_360day_percentage is not unset:
+            kwargs["logs_indexed_360day_percentage"] = logs_indexed_360day_percentage
+        if logs_indexed_360day_usage is not unset:
+            kwargs["logs_indexed_360day_usage"] = logs_indexed_360day_usage
+        if logs_indexed_3day_percentage is not unset:
+            kwargs["logs_indexed_3day_percentage"] = logs_indexed_3day_percentage
+        if logs_indexed_3day_usage is not unset:
+            kwargs["logs_indexed_3day_usage"] = logs_indexed_3day_usage
+        if logs_indexed_45day_percentage is not unset:
+            kwargs["logs_indexed_45day_percentage"] = logs_indexed_45day_percentage
+        if logs_indexed_45day_usage is not unset:
+            kwargs["logs_indexed_45day_usage"] = logs_indexed_45day_usage
+        if logs_indexed_60day_percentage is not unset:
+            kwargs["logs_indexed_60day_percentage"] = logs_indexed_60day_percentage
+        if logs_indexed_60day_usage is not unset:
+            kwargs["logs_indexed_60day_usage"] = logs_indexed_60day_usage
+        if logs_indexed_7day_percentage is not unset:
+            kwargs["logs_indexed_7day_percentage"] = logs_indexed_7day_percentage
+        if logs_indexed_7day_usage is not unset:
+            kwargs["logs_indexed_7day_usage"] = logs_indexed_7day_usage
+        if logs_indexed_90day_percentage is not unset:
+            kwargs["logs_indexed_90day_percentage"] = logs_indexed_90day_percentage
+        if logs_indexed_90day_usage is not unset:
+            kwargs["logs_indexed_90day_usage"] = logs_indexed_90day_usage
+        if logs_indexed_custom_retention_percentage is not unset:
+            kwargs["logs_indexed_custom_retention_percentage"] = logs_indexed_custom_retention_percentage
+        if logs_indexed_custom_retention_usage is not unset:
+            kwargs["logs_indexed_custom_retention_usage"] = logs_indexed_custom_retention_usage
         if mobile_app_testing_percentage is not unset:
             kwargs["mobile_app_testing_percentage"] = mobile_app_testing_percentage
         if mobile_app_testing_usage is not unset:
@@ -665,6 +957,14 @@ class MonthlyUsageAttributionValues(ModelNormal):
             kwargs["profiled_host_percentage"] = profiled_host_percentage
         if profiled_host_usage is not unset:
             kwargs["profiled_host_usage"] = profiled_host_usage
+        if rum_browser_mobile_sessions_percentage is not unset:
+            kwargs["rum_browser_mobile_sessions_percentage"] = rum_browser_mobile_sessions_percentage
+        if rum_browser_mobile_sessions_usage is not unset:
+            kwargs["rum_browser_mobile_sessions_usage"] = rum_browser_mobile_sessions_usage
+        if rum_replay_sessions_percentage is not unset:
+            kwargs["rum_replay_sessions_percentage"] = rum_replay_sessions_percentage
+        if rum_replay_sessions_usage is not unset:
+            kwargs["rum_replay_sessions_usage"] = rum_replay_sessions_usage
         if sds_scanned_bytes_percentage is not unset:
             kwargs["sds_scanned_bytes_percentage"] = sds_scanned_bytes_percentage
         if sds_scanned_bytes_usage is not unset:
@@ -673,6 +973,10 @@ class MonthlyUsageAttributionValues(ModelNormal):
             kwargs["serverless_apps_percentage"] = serverless_apps_percentage
         if serverless_apps_usage is not unset:
             kwargs["serverless_apps_usage"] = serverless_apps_usage
+        if siem_ingested_bytes_percentage is not unset:
+            kwargs["siem_ingested_bytes_percentage"] = siem_ingested_bytes_percentage
+        if siem_ingested_bytes_usage is not unset:
+            kwargs["siem_ingested_bytes_usage"] = siem_ingested_bytes_usage
         if snmp_percentage is not unset:
             kwargs["snmp_percentage"] = snmp_percentage
         if snmp_usage is not unset:

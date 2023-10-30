@@ -16,7 +16,7 @@ class MonthlyUsageAttributionSupportedMetrics(ModelSimple):
     """
     Supported metrics for monthly usage attribution requests.
 
-    :param value: Must be one of ["api_usage", "api_percentage", "apm_fargate_usage", "apm_fargate_percentage", "appsec_fargate_usage", "appsec_fargate_percentage", "apm_host_usage", "apm_host_percentage", "apm_usm_usage", "apm_usm_percentage", "appsec_usage", "appsec_percentage", "browser_usage", "browser_percentage", "ci_visibility_itr_usage", "ci_visibility_itr_percentage", "cloud_siem_usage", "cloud_siem_percentage", "container_excl_agent_usage", "container_excl_agent_percentage", "container_usage", "container_percentage", "cspm_containers_percentage", "cspm_containers_usage", "cspm_hosts_percentage", "cspm_hosts_usage", "custom_timeseries_usage", "custom_timeseries_percentage", "custom_ingested_timeseries_usage", "custom_ingested_timeseries_percentage", "cws_containers_percentage", "cws_containers_usage", "cws_hosts_percentage", "cws_hosts_usage", "dbm_hosts_percentage", "dbm_hosts_usage", "dbm_queries_percentage", "dbm_queries_usage", "estimated_indexed_logs_usage", "estimated_indexed_logs_percentage", "estimated_ingested_logs_usage", "estimated_ingested_logs_percentage", "estimated_indexed_spans_usage", "estimated_indexed_spans_percentage", "estimated_ingested_spans_usage", "estimated_ingested_spans_percentage", "fargate_usage", "fargate_percentage", "functions_usage", "functions_percentage", "infra_host_usage", "infra_host_percentage", "invocations_usage", "invocations_percentage", "lambda_traced_invocations_usage", "lambda_traced_invocations_percentage", "mobile_app_testing_percentage", "mobile_app_testing_usage", "ndm_netflow_usage", "ndm_netflow_percentage", "npm_host_usage", "npm_host_percentage", "obs_pipeline_bytes_usage", "obs_pipeline_bytes_percentage", "profiled_container_usage", "profiled_container_percentage", "profiled_fargate_usage", "profiled_fargate_percentage", "profiled_host_usage", "profiled_host_percentage", "serverless_apps_usage", "serverless_apps_percentage", "snmp_usage", "snmp_percentage", "estimated_rum_sessions_usage", "estimated_rum_sessions_percentage", "universal_service_monitoring_usage", "universal_service_monitoring_percentage", "vuln_management_hosts_usage", "vuln_management_hosts_percentage", "sds_scanned_bytes_usage", "sds_scanned_bytes_percentage", "*"].
+    :param value: Must be one of ["api_usage", "api_percentage", "apm_fargate_usage", "apm_fargate_percentage", "appsec_fargate_usage", "appsec_fargate_percentage", "apm_host_usage", "apm_host_percentage", "apm_usm_usage", "apm_usm_percentage", "appsec_usage", "appsec_percentage", "browser_usage", "browser_percentage", "ci_visibility_itr_usage", "ci_visibility_itr_percentage", "cloud_siem_usage", "cloud_siem_percentage", "container_excl_agent_usage", "container_excl_agent_percentage", "container_usage", "container_percentage", "cspm_containers_percentage", "cspm_containers_usage", "cspm_hosts_percentage", "cspm_hosts_usage", "custom_timeseries_usage", "custom_timeseries_percentage", "custom_ingested_timeseries_usage", "custom_ingested_timeseries_percentage", "cws_containers_percentage", "cws_containers_usage", "cws_hosts_percentage", "cws_hosts_usage", "dbm_hosts_percentage", "dbm_hosts_usage", "dbm_queries_percentage", "dbm_queries_usage", "estimated_indexed_logs_usage", "estimated_indexed_logs_percentage", "estimated_ingested_logs_usage", "estimated_ingested_logs_percentage", "estimated_indexed_spans_usage", "estimated_indexed_spans_percentage", "estimated_ingested_spans_usage", "estimated_ingested_spans_percentage", "fargate_usage", "fargate_percentage", "functions_usage", "functions_percentage", "infra_host_usage", "infra_host_percentage", "invocations_usage", "invocations_percentage", "lambda_traced_invocations_usage", "lambda_traced_invocations_percentage", "mobile_app_testing_percentage", "mobile_app_testing_usage", "ndm_netflow_usage", "ndm_netflow_percentage", "npm_host_usage", "npm_host_percentage", "obs_pipeline_bytes_usage", "obs_pipeline_bytes_percentage", "profiled_container_usage", "profiled_container_percentage", "profiled_fargate_usage", "profiled_fargate_percentage", "profiled_host_usage", "profiled_host_percentage", "serverless_apps_usage", "serverless_apps_percentage", "snmp_usage", "snmp_percentage", "estimated_rum_sessions_usage", "estimated_rum_sessions_percentage", "universal_service_monitoring_usage", "universal_service_monitoring_percentage", "vuln_management_hosts_usage", "vuln_management_hosts_percentage", "sds_scanned_bytes_usage", "sds_scanned_bytes_percentage", "ci_test_indexed_spans_usage", "ci_test_indexed_spans_percentage", "ingested_logs_bytes_usage", "ingested_logs_bytes_percentage", "ci_pipeline_indexed_spans_usage", "ci_pipeline_indexed_spans_percentage", "indexed_spans_usage", "indexed_spans_percentage", "custom_event_usage", "custom_event_percentage", "logs_indexed_custom_retention_usage", "logs_indexed_custom_retention_percentage", "logs_indexed_360day_usage", "logs_indexed_360day_percentage", "logs_indexed_180day_usage", "logs_indexed_180day_percentage", "logs_indexed_90day_usage", "logs_indexed_90day_percentage", "logs_indexed_60day_usage", "logs_indexed_60day_percentage", "logs_indexed_45day_usage", "logs_indexed_45day_percentage", "logs_indexed_30day_usage", "logs_indexed_30day_percentage", "logs_indexed_15day_usage", "logs_indexed_15day_percentage", "logs_indexed_7day_usage", "logs_indexed_7day_percentage", "logs_indexed_3day_usage", "logs_indexed_3day_percentage", "rum_replay_sessions_usage", "rum_replay_sessions_percentage", "rum_browser_mobile_sessions_usage", "rum_browser_mobile_sessions_percentage", "ingested_spans_bytes_usage", "ingested_spans_bytes_percentage", "siem_ingested_bytes_usage", "siem_ingested_bytes_percentage", "*"].
     :type value: str
     """
 
@@ -103,6 +103,44 @@ class MonthlyUsageAttributionSupportedMetrics(ModelSimple):
         "vuln_management_hosts_percentage",
         "sds_scanned_bytes_usage",
         "sds_scanned_bytes_percentage",
+        "ci_test_indexed_spans_usage",
+        "ci_test_indexed_spans_percentage",
+        "ingested_logs_bytes_usage",
+        "ingested_logs_bytes_percentage",
+        "ci_pipeline_indexed_spans_usage",
+        "ci_pipeline_indexed_spans_percentage",
+        "indexed_spans_usage",
+        "indexed_spans_percentage",
+        "custom_event_usage",
+        "custom_event_percentage",
+        "logs_indexed_custom_retention_usage",
+        "logs_indexed_custom_retention_percentage",
+        "logs_indexed_360day_usage",
+        "logs_indexed_360day_percentage",
+        "logs_indexed_180day_usage",
+        "logs_indexed_180day_percentage",
+        "logs_indexed_90day_usage",
+        "logs_indexed_90day_percentage",
+        "logs_indexed_60day_usage",
+        "logs_indexed_60day_percentage",
+        "logs_indexed_45day_usage",
+        "logs_indexed_45day_percentage",
+        "logs_indexed_30day_usage",
+        "logs_indexed_30day_percentage",
+        "logs_indexed_15day_usage",
+        "logs_indexed_15day_percentage",
+        "logs_indexed_7day_usage",
+        "logs_indexed_7day_percentage",
+        "logs_indexed_3day_usage",
+        "logs_indexed_3day_percentage",
+        "rum_replay_sessions_usage",
+        "rum_replay_sessions_percentage",
+        "rum_browser_mobile_sessions_usage",
+        "rum_browser_mobile_sessions_percentage",
+        "ingested_spans_bytes_usage",
+        "ingested_spans_bytes_percentage",
+        "siem_ingested_bytes_usage",
+        "siem_ingested_bytes_percentage",
         "*",
     }
     API_USAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
@@ -187,6 +225,44 @@ class MonthlyUsageAttributionSupportedMetrics(ModelSimple):
     VULN_MANAGEMENT_HOSTS_PERCENTAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
     SDS_SCANNED_BYTES_USAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
     SDS_SCANNED_BYTES_PERCENTAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    CI_TEST_INDEXED_SPANS_USAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    CI_TEST_INDEXED_SPANS_PERCENTAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    INGESTED_LOGS_BYTES_USAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    INGESTED_LOGS_BYTES_PERCENTAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    CI_PIPELINE_INDEXED_SPANS_USAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    CI_PIPELINE_INDEXED_SPANS_PERCENTAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    INDEXED_SPANS_USAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    INDEXED_SPANS_PERCENTAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    CUSTOM_EVENT_USAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    CUSTOM_EVENT_PERCENTAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    LOGS_INDEXED_CUSTOM_RETENTION_USAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    LOGS_INDEXED_CUSTOM_RETENTION_PERCENTAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    LOGS_INDEXED_360DAY_USAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    LOGS_INDEXED_360DAY_PERCENTAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    LOGS_INDEXED_180DAY_USAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    LOGS_INDEXED_180DAY_PERCENTAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    LOGS_INDEXED_90DAY_USAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    LOGS_INDEXED_90DAY_PERCENTAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    LOGS_INDEXED_60DAY_USAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    LOGS_INDEXED_60DAY_PERCENTAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    LOGS_INDEXED_45DAY_USAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    LOGS_INDEXED_45DAY_PERCENTAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    LOGS_INDEXED_30DAY_USAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    LOGS_INDEXED_30DAY_PERCENTAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    LOGS_INDEXED_15DAY_USAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    LOGS_INDEXED_15DAY_PERCENTAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    LOGS_INDEXED_7DAY_USAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    LOGS_INDEXED_7DAY_PERCENTAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    LOGS_INDEXED_3DAY_USAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    LOGS_INDEXED_3DAY_PERCENTAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    RUM_REPLAY_SESSIONS_USAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    RUM_REPLAY_SESSIONS_PERCENTAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    RUM_BROWSER_MOBILE_SESSIONS_USAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    RUM_BROWSER_MOBILE_SESSIONS_PERCENTAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    INGESTED_SPANS_BYTES_USAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    INGESTED_SPANS_BYTES_PERCENTAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    SIEM_INGESTED_BYTES_USAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
+    SIEM_INGESTED_BYTES_PERCENTAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
     ALL: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
 
     @cached_property
@@ -397,5 +473,119 @@ MonthlyUsageAttributionSupportedMetrics.SDS_SCANNED_BYTES_USAGE = MonthlyUsageAt
 )
 MonthlyUsageAttributionSupportedMetrics.SDS_SCANNED_BYTES_PERCENTAGE = MonthlyUsageAttributionSupportedMetrics(
     "sds_scanned_bytes_percentage"
+)
+MonthlyUsageAttributionSupportedMetrics.CI_TEST_INDEXED_SPANS_USAGE = MonthlyUsageAttributionSupportedMetrics(
+    "ci_test_indexed_spans_usage"
+)
+MonthlyUsageAttributionSupportedMetrics.CI_TEST_INDEXED_SPANS_PERCENTAGE = MonthlyUsageAttributionSupportedMetrics(
+    "ci_test_indexed_spans_percentage"
+)
+MonthlyUsageAttributionSupportedMetrics.INGESTED_LOGS_BYTES_USAGE = MonthlyUsageAttributionSupportedMetrics(
+    "ingested_logs_bytes_usage"
+)
+MonthlyUsageAttributionSupportedMetrics.INGESTED_LOGS_BYTES_PERCENTAGE = MonthlyUsageAttributionSupportedMetrics(
+    "ingested_logs_bytes_percentage"
+)
+MonthlyUsageAttributionSupportedMetrics.CI_PIPELINE_INDEXED_SPANS_USAGE = MonthlyUsageAttributionSupportedMetrics(
+    "ci_pipeline_indexed_spans_usage"
+)
+MonthlyUsageAttributionSupportedMetrics.CI_PIPELINE_INDEXED_SPANS_PERCENTAGE = MonthlyUsageAttributionSupportedMetrics(
+    "ci_pipeline_indexed_spans_percentage"
+)
+MonthlyUsageAttributionSupportedMetrics.INDEXED_SPANS_USAGE = MonthlyUsageAttributionSupportedMetrics(
+    "indexed_spans_usage"
+)
+MonthlyUsageAttributionSupportedMetrics.INDEXED_SPANS_PERCENTAGE = MonthlyUsageAttributionSupportedMetrics(
+    "indexed_spans_percentage"
+)
+MonthlyUsageAttributionSupportedMetrics.CUSTOM_EVENT_USAGE = MonthlyUsageAttributionSupportedMetrics(
+    "custom_event_usage"
+)
+MonthlyUsageAttributionSupportedMetrics.CUSTOM_EVENT_PERCENTAGE = MonthlyUsageAttributionSupportedMetrics(
+    "custom_event_percentage"
+)
+MonthlyUsageAttributionSupportedMetrics.LOGS_INDEXED_CUSTOM_RETENTION_USAGE = MonthlyUsageAttributionSupportedMetrics(
+    "logs_indexed_custom_retention_usage"
+)
+MonthlyUsageAttributionSupportedMetrics.LOGS_INDEXED_CUSTOM_RETENTION_PERCENTAGE = (
+    MonthlyUsageAttributionSupportedMetrics("logs_indexed_custom_retention_percentage")
+)
+MonthlyUsageAttributionSupportedMetrics.LOGS_INDEXED_360DAY_USAGE = MonthlyUsageAttributionSupportedMetrics(
+    "logs_indexed_360day_usage"
+)
+MonthlyUsageAttributionSupportedMetrics.LOGS_INDEXED_360DAY_PERCENTAGE = MonthlyUsageAttributionSupportedMetrics(
+    "logs_indexed_360day_percentage"
+)
+MonthlyUsageAttributionSupportedMetrics.LOGS_INDEXED_180DAY_USAGE = MonthlyUsageAttributionSupportedMetrics(
+    "logs_indexed_180day_usage"
+)
+MonthlyUsageAttributionSupportedMetrics.LOGS_INDEXED_180DAY_PERCENTAGE = MonthlyUsageAttributionSupportedMetrics(
+    "logs_indexed_180day_percentage"
+)
+MonthlyUsageAttributionSupportedMetrics.LOGS_INDEXED_90DAY_USAGE = MonthlyUsageAttributionSupportedMetrics(
+    "logs_indexed_90day_usage"
+)
+MonthlyUsageAttributionSupportedMetrics.LOGS_INDEXED_90DAY_PERCENTAGE = MonthlyUsageAttributionSupportedMetrics(
+    "logs_indexed_90day_percentage"
+)
+MonthlyUsageAttributionSupportedMetrics.LOGS_INDEXED_60DAY_USAGE = MonthlyUsageAttributionSupportedMetrics(
+    "logs_indexed_60day_usage"
+)
+MonthlyUsageAttributionSupportedMetrics.LOGS_INDEXED_60DAY_PERCENTAGE = MonthlyUsageAttributionSupportedMetrics(
+    "logs_indexed_60day_percentage"
+)
+MonthlyUsageAttributionSupportedMetrics.LOGS_INDEXED_45DAY_USAGE = MonthlyUsageAttributionSupportedMetrics(
+    "logs_indexed_45day_usage"
+)
+MonthlyUsageAttributionSupportedMetrics.LOGS_INDEXED_45DAY_PERCENTAGE = MonthlyUsageAttributionSupportedMetrics(
+    "logs_indexed_45day_percentage"
+)
+MonthlyUsageAttributionSupportedMetrics.LOGS_INDEXED_30DAY_USAGE = MonthlyUsageAttributionSupportedMetrics(
+    "logs_indexed_30day_usage"
+)
+MonthlyUsageAttributionSupportedMetrics.LOGS_INDEXED_30DAY_PERCENTAGE = MonthlyUsageAttributionSupportedMetrics(
+    "logs_indexed_30day_percentage"
+)
+MonthlyUsageAttributionSupportedMetrics.LOGS_INDEXED_15DAY_USAGE = MonthlyUsageAttributionSupportedMetrics(
+    "logs_indexed_15day_usage"
+)
+MonthlyUsageAttributionSupportedMetrics.LOGS_INDEXED_15DAY_PERCENTAGE = MonthlyUsageAttributionSupportedMetrics(
+    "logs_indexed_15day_percentage"
+)
+MonthlyUsageAttributionSupportedMetrics.LOGS_INDEXED_7DAY_USAGE = MonthlyUsageAttributionSupportedMetrics(
+    "logs_indexed_7day_usage"
+)
+MonthlyUsageAttributionSupportedMetrics.LOGS_INDEXED_7DAY_PERCENTAGE = MonthlyUsageAttributionSupportedMetrics(
+    "logs_indexed_7day_percentage"
+)
+MonthlyUsageAttributionSupportedMetrics.LOGS_INDEXED_3DAY_USAGE = MonthlyUsageAttributionSupportedMetrics(
+    "logs_indexed_3day_usage"
+)
+MonthlyUsageAttributionSupportedMetrics.LOGS_INDEXED_3DAY_PERCENTAGE = MonthlyUsageAttributionSupportedMetrics(
+    "logs_indexed_3day_percentage"
+)
+MonthlyUsageAttributionSupportedMetrics.RUM_REPLAY_SESSIONS_USAGE = MonthlyUsageAttributionSupportedMetrics(
+    "rum_replay_sessions_usage"
+)
+MonthlyUsageAttributionSupportedMetrics.RUM_REPLAY_SESSIONS_PERCENTAGE = MonthlyUsageAttributionSupportedMetrics(
+    "rum_replay_sessions_percentage"
+)
+MonthlyUsageAttributionSupportedMetrics.RUM_BROWSER_MOBILE_SESSIONS_USAGE = MonthlyUsageAttributionSupportedMetrics(
+    "rum_browser_mobile_sessions_usage"
+)
+MonthlyUsageAttributionSupportedMetrics.RUM_BROWSER_MOBILE_SESSIONS_PERCENTAGE = (
+    MonthlyUsageAttributionSupportedMetrics("rum_browser_mobile_sessions_percentage")
+)
+MonthlyUsageAttributionSupportedMetrics.INGESTED_SPANS_BYTES_USAGE = MonthlyUsageAttributionSupportedMetrics(
+    "ingested_spans_bytes_usage"
+)
+MonthlyUsageAttributionSupportedMetrics.INGESTED_SPANS_BYTES_PERCENTAGE = MonthlyUsageAttributionSupportedMetrics(
+    "ingested_spans_bytes_percentage"
+)
+MonthlyUsageAttributionSupportedMetrics.SIEM_INGESTED_BYTES_USAGE = MonthlyUsageAttributionSupportedMetrics(
+    "siem_ingested_bytes_usage"
+)
+MonthlyUsageAttributionSupportedMetrics.SIEM_INGESTED_BYTES_PERCENTAGE = MonthlyUsageAttributionSupportedMetrics(
+    "siem_ingested_bytes_percentage"
 )
 MonthlyUsageAttributionSupportedMetrics.ALL = MonthlyUsageAttributionSupportedMetrics("*")
