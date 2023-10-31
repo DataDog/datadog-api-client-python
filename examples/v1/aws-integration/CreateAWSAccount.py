@@ -10,7 +10,6 @@ body = AWSAccount(
     account_id="123456789012",
     account_specific_namespace_rules=dict(
         auto_scaling=False,
-        opswork=False,
     ),
     cspm_resource_collection_enabled=True,
     excluded_regions=[
