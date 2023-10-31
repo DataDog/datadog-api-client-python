@@ -68,7 +68,7 @@ Feature: APM Retention Filters
     And new "ListApmRetentionFilters" request
     When the request is sent
     Then the response status is 200 OK
-    And the response "data[2].id" has the same value as "retention_filter.data.id"
+    And the response "data" has item with field "id" with value "{{ retention_filter.data.id }}"
 
   @generated @skip @team:DataDog/apm-trace-intake
   Scenario: Re-order retention filters returns "Bad Request" response
