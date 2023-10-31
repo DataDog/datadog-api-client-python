@@ -413,7 +413,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 404 Not Found: The requested finding cannot be found.
 
-  @team:DataDog/cloud-security-posture-management
+  @replay-only @team:DataDog/cloud-security-posture-management
   Scenario: Mute or unmute a batch of findings returns "OK" response
     Given operation "MuteFindings" enabled
     And new "MuteFindings" request
