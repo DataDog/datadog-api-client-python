@@ -454,7 +454,8 @@ class MetricsApi:
         Metrics are selected by passing a metric name prefix. Use the Delete method of this API path to remove tag configurations.
         Results can be sent to a set of account email addresses, just like the same operation in the Datadog web app.
         If multiple calls include the same metric, the last configuration applied (not by submit order) is used, do not
-        expect deterministic ordering of concurrent calls.
+        expect deterministic ordering of concurrent calls. The ``exclude_tags_mode`` value will set all metrics that match the prefix to
+        the same exclusion state, metric tag configurations do not support mixed inclusion and exclusion for tags on the same metric.
         Can only be used with application keys of users with the ``Manage Tags for Metrics`` permission.
 
         :type body: MetricBulkTagConfigCreateRequest
@@ -474,7 +475,8 @@ class MetricsApi:
 
         Create and define a list of queryable tag keys for an existing count/gauge/rate/distribution metric.
         Optionally, include percentile aggregations on any distribution metric or configure custom aggregations
-        on any count, rate, or gauge metric.
+        on any count, rate, or gauge metric. By setting ``exclude_tags_mode`` to true the behavior is changed
+        from an allow-list to a deny-list, and tags in the defined list will not be queryable.
         Can only be used with application keys of users with the ``Manage Tags for Metrics`` permission.
 
         :param metric_name: The name of the metric.

@@ -26,12 +26,14 @@ class MetricBulkTagConfigStatusAttributes(ModelNormal):
 
         return {
             "emails": (MetricBulkTagConfigEmailList,),
+            "exclude_tags_mode": (bool,),
             "status": (str,),
             "tags": (MetricBulkTagConfigTagNameList,),
         }
 
     attribute_map = {
         "emails": "emails",
+        "exclude_tags_mode": "exclude_tags_mode",
         "status": "status",
         "tags": "tags",
     }
@@ -39,6 +41,7 @@ class MetricBulkTagConfigStatusAttributes(ModelNormal):
     def __init__(
         self_,
         emails: Union[MetricBulkTagConfigEmailList, UnsetType] = unset,
+        exclude_tags_mode: Union[bool, UnsetType] = unset,
         status: Union[str, UnsetType] = unset,
         tags: Union[MetricBulkTagConfigTagNameList, UnsetType] = unset,
         **kwargs,
@@ -49,6 +52,10 @@ class MetricBulkTagConfigStatusAttributes(ModelNormal):
         :param emails: A list of account emails to notify when the configuration is applied.
         :type emails: MetricBulkTagConfigEmailList, optional
 
+        :param exclude_tags_mode: When set to true, the configuration will exclude the configured tags and include any other submitted tags.
+            When set to false, the configuration will include the configured tags and exclude any other submitted tags.
+        :type exclude_tags_mode: bool, optional
+
         :param status: The status of the request.
         :type status: str, optional
 
@@ -57,6 +64,8 @@ class MetricBulkTagConfigStatusAttributes(ModelNormal):
         """
         if emails is not unset:
             kwargs["emails"] = emails
+        if exclude_tags_mode is not unset:
+            kwargs["exclude_tags_mode"] = exclude_tags_mode
         if status is not unset:
             kwargs["status"] = status
         if tags is not unset:
