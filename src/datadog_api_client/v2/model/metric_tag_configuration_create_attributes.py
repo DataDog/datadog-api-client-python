@@ -26,6 +26,7 @@ class MetricTagConfigurationCreateAttributes(ModelNormal):
 
         return {
             "aggregations": (MetricCustomAggregations,),
+            "exclude_tags_mode": (bool,),
             "include_percentiles": (bool,),
             "metric_type": (MetricTagConfigurationMetricTypes,),
             "tags": ([str],),
@@ -33,6 +34,7 @@ class MetricTagConfigurationCreateAttributes(ModelNormal):
 
     attribute_map = {
         "aggregations": "aggregations",
+        "exclude_tags_mode": "exclude_tags_mode",
         "include_percentiles": "include_percentiles",
         "metric_type": "metric_type",
         "tags": "tags",
@@ -42,6 +44,7 @@ class MetricTagConfigurationCreateAttributes(ModelNormal):
         self_,
         metric_type: MetricTagConfigurationMetricTypes,
         aggregations: Union[MetricCustomAggregations, UnsetType] = unset,
+        exclude_tags_mode: Union[bool, UnsetType] = unset,
         include_percentiles: Union[bool, UnsetType] = unset,
         **kwargs,
     ):
@@ -66,6 +69,11 @@ class MetricTagConfigurationCreateAttributes(ModelNormal):
             Can only be applied to metrics that have a ``metric_type`` of ``count`` , ``rate`` , or ``gauge``.
         :type aggregations: MetricCustomAggregations, optional
 
+        :param exclude_tags_mode: When set to true, the configuration will exclude the configured tags and include any other submitted tags.
+            When set to false, the configuration will include the configured tags and exclude any other submitted tags.
+            Defaults to false. Requires ``tags`` property.
+        :type exclude_tags_mode: bool, optional
+
         :param include_percentiles: Toggle to include/exclude percentiles for a distribution metric.
             Defaults to false. Can only be applied to metrics that have a ``metric_type`` of ``distribution``.
         :type include_percentiles: bool, optional
@@ -78,6 +86,8 @@ class MetricTagConfigurationCreateAttributes(ModelNormal):
         """
         if aggregations is not unset:
             kwargs["aggregations"] = aggregations
+        if exclude_tags_mode is not unset:
+            kwargs["exclude_tags_mode"] = exclude_tags_mode
         if include_percentiles is not unset:
             kwargs["include_percentiles"] = include_percentiles
         super().__init__(kwargs)
