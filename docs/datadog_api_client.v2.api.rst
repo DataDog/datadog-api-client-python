@@ -253,6 +253,13 @@ service\_definition\_api
    :members:
    :show-inheritance:
 
+service\_scorecards\_api
+------------------------
+
+.. automodule:: datadog_api_client.v2.api.service_scorecards_api
+   :members:
+   :show-inheritance:
+
 spans\_api
 ----------
 

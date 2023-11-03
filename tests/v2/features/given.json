@@ -378,6 +378,18 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"rule\",\n    \"attributes\": {\n      \"name\": \"{{ unique }}\",\n      \"enabled\": true,\n      \"owner\": \"Datadog\",\n      \"scorecard_name\": \"OpenAPI Spec Test Best Practices\"\n    }\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"create_scorecard_rule\" in the system",
+    "key": "create_scorecard_rule",
+    "tag": "Service Scorecards",
+    "operationId": "CreateScorecardRule"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"type\": \"agent_rule\",\n    \"attributes\": {\n      \"name\": \"{{ unique_lower_alnum }}\",\n      \"description\": \"My Agent rule\",\n      \"expression\": \"exec.file.name == \\\"sh\\\"\",\n      \"enabled\": true\n     }\n  }\n}"
       }
     ],

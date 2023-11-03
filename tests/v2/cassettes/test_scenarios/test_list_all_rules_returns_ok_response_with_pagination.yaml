@@ -1,0 +1,50 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/scorecard/rules?page%5Bsize%5D=2&fields%5Brule%5D=name&filter%5Brule%5D%5Bcustom%5D=true
+  response:
+    body:
+      string: '{"data":[{"id":"a5352494-7fad-4e4b-9c7a-3ecd90f30d27","type":"rule","attributes":{"name":"Test-Typescript-Create_a_new_rule_returns_Created_response-1698870335"}},{"id":"c70e3b5f-a9f7-4ef8-8417-bf28ea153631","type":"rule","attributes":{"name":"Test-Typescript-Create_outcomes_batch_returns_OK_response-1698869315"}}],"links":{"next":"/api/v2/scorecard/rules?fields%5Brule%5D=name\u0026filter%5Brule%5D%5Bcustom%5D=true\u0026page%5Blimit%5D=2\u0026page%5Boffset%5D=2\u0026page%5Bsize%5D=2"}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/scorecard/rules?page%5Bsize%5D=2&page%5Boffset%5D=2&fields%5Brule%5D=name&filter%5Brule%5D%5Bcustom%5D=true
+  response:
+    body:
+      string: '{"data":[{"id":"be6867b9-bd71-497f-803f-208d7361fee2","type":"rule","attributes":{"name":"Test-Typescript-Create_outcomes_batch_returns_OK_response-1698870335"}},{"id":"76460cec-323c-4215-81ae-b16aa160d0f1","type":"rule","attributes":{"name":"Test-Typescript-Delete_a_rule_returns_OK_response-1698870335"}}],"links":{"next":"/api/v2/scorecard/rules?fields%5Brule%5D=name\u0026filter%5Brule%5D%5Bcustom%5D=true\u0026page%5Blimit%5D=2\u0026page%5Boffset%5D=4\u0026page%5Bsize%5D=2","previous":"/api/v2/scorecard/rules?fields%5Brule%5D=name\u0026filter%5Brule%5D%5Bcustom%5D=true\u0026page%5Blimit%5D=2\u0026page%5Boffset%5D=0\u0026page%5Bsize%5D=2"}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/scorecard/rules?page%5Bsize%5D=2&page%5Boffset%5D=4&fields%5Brule%5D=name&filter%5Brule%5D%5Bcustom%5D=true
+  response:
+    body:
+      string: '{"data":[],"links":{"next":"/api/v2/scorecard/rules?fields%5Brule%5D=name\u0026filter%5Brule%5D%5Bcustom%5D=true\u0026page%5Blimit%5D=2\u0026page%5Boffset%5D=6\u0026page%5Bsize%5D=2","previous":"/api/v2/scorecard/rules?fields%5Brule%5D=name\u0026filter%5Brule%5D%5Bcustom%5D=true\u0026page%5Blimit%5D=2\u0026page%5Boffset%5D=2\u0026page%5Bsize%5D=2"}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1

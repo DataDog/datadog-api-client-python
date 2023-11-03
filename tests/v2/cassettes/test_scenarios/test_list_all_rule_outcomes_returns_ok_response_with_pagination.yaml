@@ -1,0 +1,34 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/scorecard/outcomes?page%5Bsize%5D=2&fields%5Boutcome%5D=state&filter%5Boutcome%5D%5Bservice_name%5D=my-service
+  response:
+    body:
+      string: '{"data":[{"id":"be6867b9-bd71-497f-803f-208d7361fee2\\my-service","type":"outcome","attributes":{"state":"pass"}},{"id":"c70e3b5f-a9f7-4ef8-8417-bf28ea153631\\my-service","type":"outcome","attributes":{"state":"pass"}}],"links":{"next":"/api/v2/scorecard/outcomes?fields%5Boutcome%5D=state\u0026filter%5Boutcome%5D%5Bservice_name%5D=my-service\u0026page%5Blimit%5D=2\u0026page%5Boffset%5D=2\u0026page%5Bsize%5D=2"}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/scorecard/outcomes?page%5Bsize%5D=2&page%5Boffset%5D=2&fields%5Boutcome%5D=state&filter%5Boutcome%5D%5Bservice_name%5D=my-service
+  response:
+    body:
+      string: '{"data":[],"links":{"next":"/api/v2/scorecard/outcomes?fields%5Boutcome%5D=state\u0026filter%5Boutcome%5D%5Bservice_name%5D=my-service\u0026page%5Blimit%5D=2\u0026page%5Boffset%5D=4\u0026page%5Bsize%5D=2","previous":"/api/v2/scorecard/outcomes?fields%5Boutcome%5D=state\u0026filter%5Boutcome%5D%5Bservice_name%5D=my-service\u0026page%5Blimit%5D=2\u0026page%5Boffset%5D=0\u0026page%5Bsize%5D=2"}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1

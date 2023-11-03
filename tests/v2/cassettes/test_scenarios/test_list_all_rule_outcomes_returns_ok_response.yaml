@@ -1,0 +1,21 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/scorecard/outcomes
+  response:
+    body:
+      string: '{"data":[{"id":"c70e3b5f-a9f7-4ef8-8417-bf28ea153631\\my-service","type":"outcome","attributes":{"modified_at":"2023-11-01T20:08:35.478323Z","remarks":"See:
+        \u003ca href=\"https://app.datadoghq.com/services\"\u003eServices\u003c/a\u003e","service_name":"my-service","state":"pass"},"relationships":{"rule":{"data":{"id":"c70e3b5f-a9f7-4ef8-8417-bf28ea153631","type":"rule"}}}},{"id":"2609deb7-bbd0-4277-bf48-2265328bc4ca\\my-service","type":"outcome","attributes":{"modified_at":"2023-11-01T20:08:49.202899Z","remarks":"See:
+        \u003ca href=\"https://app.datadoghq.com/services\"\u003eServices\u003c/a\u003e","service_name":"my-service","state":"pass"},"relationships":{"rule":{"data":{"id":"2609deb7-bbd0-4277-bf48-2265328bc4ca","type":"rule"}}}},{"id":"be6867b9-bd71-497f-803f-208d7361fee2\\my-service","type":"outcome","attributes":{"modified_at":"2023-11-01T20:25:35.504243Z","remarks":"See:
+        \u003ca href=\"https://app.datadoghq.com/services\"\u003eServices\u003c/a\u003e","service_name":"my-service","state":"pass"},"relationships":{"rule":{"data":{"id":"be6867b9-bd71-497f-803f-208d7361fee2","type":"rule"}}}}],"links":{"next":"/api/v2/scorecard/outcomes?page%5Blimit%5D=100\u0026page%5Boffset%5D=100"}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1
