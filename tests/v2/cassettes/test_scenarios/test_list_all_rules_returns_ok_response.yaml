@@ -1,0 +1,26 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/scorecard/rules
+  response:
+    body:
+      string: '{"data":[{"id":"a5352494-7fad-4e4b-9c7a-3ecd90f30d27","type":"rule","attributes":{"category":"Observability
+        Best Practices","created_at":"2023-11-01T20:25:35.217803Z","custom":true,"enabled":true,"modified_at":"2023-11-01T20:25:35.217803Z","name":"Test-Typescript-Create_a_new_rule_returns_Created_response-1698870335","scorecard_name":"Observability
+        Best Practices"},"relationships":{"scorecard":{"data":{"id":"hA5zOZJXXJ4K","type":"scorecard"}}}},{"id":"c70e3b5f-a9f7-4ef8-8417-bf28ea153631","type":"rule","attributes":{"category":"OpenAPI
+        Spec Test Best Practices","created_at":"2023-11-01T20:08:35.347219Z","custom":true,"enabled":true,"modified_at":"2023-11-01T20:08:35.347219Z","name":"Test-Typescript-Create_outcomes_batch_returns_OK_response-1698869315","owner":"Datadog","scorecard_name":"OpenAPI
+        Spec Test Best Practices"},"relationships":{"scorecard":{"data":{"id":"qsxpoYRhU_yz","type":"scorecard"}}}},{"id":"be6867b9-bd71-497f-803f-208d7361fee2","type":"rule","attributes":{"category":"OpenAPI
+        Spec Test Best Practices","created_at":"2023-11-01T20:25:35.374915Z","custom":true,"enabled":true,"modified_at":"2023-11-01T20:25:35.374915Z","name":"Test-Typescript-Create_outcomes_batch_returns_OK_response-1698870335","owner":"Datadog","scorecard_name":"OpenAPI
+        Spec Test Best Practices"},"relationships":{"scorecard":{"data":{"id":"qsxpoYRhU_yz","type":"scorecard"}}}},{"id":"76460cec-323c-4215-81ae-b16aa160d0f1","type":"rule","attributes":{"category":"OpenAPI
+        Spec Test Best Practices","created_at":"2023-11-01T20:25:35.637942Z","custom":true,"enabled":true,"modified_at":"2023-11-01T20:25:35.637942Z","name":"Test-Typescript-Delete_a_rule_returns_OK_response-1698870335","owner":"Datadog","scorecard_name":"OpenAPI
+        Spec Test Best Practices"},"relationships":{"scorecard":{"data":{"id":"qsxpoYRhU_yz","type":"scorecard"}}}}],"links":{"next":"/api/v2/scorecard/rules?page%5Blimit%5D=100\u0026page%5Boffset%5D=100"}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1

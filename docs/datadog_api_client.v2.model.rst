@@ -1555,6 +1555,34 @@ cost\_by\_org\_type
    :members:
    :show-inheritance:
 
+create\_rule\_request
+---------------------
+
+.. automodule:: datadog_api_client.v2.model.create_rule_request
+   :members:
+   :show-inheritance:
+
+create\_rule\_request\_data
+---------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_rule_request_data
+   :members:
+   :show-inheritance:
+
+create\_rule\_response
+----------------------
+
+.. automodule:: datadog_api_client.v2.model.create_rule_response
+   :members:
+   :show-inheritance:
+
+create\_rule\_response\_data
+----------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_rule_response_data
+   :members:
+   :show-inheritance:
+
 creator
 -------
 
@@ -3480,6 +3508,27 @@ list\_powerpacks\_response
    :members:
    :show-inheritance:
 
+list\_rules\_response
+---------------------
+
+.. automodule:: datadog_api_client.v2.model.list_rules_response
+   :members:
+   :show-inheritance:
+
+list\_rules\_response\_data\_item
+---------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_rules_response_data_item
+   :members:
+   :show-inheritance:
+
+list\_rules\_response\_links
+----------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_rules_response_links
+   :members:
+   :show-inheritance:
+
 list\_teams\_include
 --------------------
 
@@ -4768,6 +4817,104 @@ organizations\_type
    :members:
    :show-inheritance:
 
+outcome\_type
+-------------
+
+.. automodule:: datadog_api_client.v2.model.outcome_type
+   :members:
+   :show-inheritance:
+
+outcomes\_batch\_attributes
+---------------------------
+
+.. automodule:: datadog_api_client.v2.model.outcomes_batch_attributes
+   :members:
+   :show-inheritance:
+
+outcomes\_batch\_request
+------------------------
+
+.. automodule:: datadog_api_client.v2.model.outcomes_batch_request
+   :members:
+   :show-inheritance:
+
+outcomes\_batch\_request\_data
+------------------------------
+
+.. automodule:: datadog_api_client.v2.model.outcomes_batch_request_data
+   :members:
+   :show-inheritance:
+
+outcomes\_batch\_request\_item
+------------------------------
+
+.. automodule:: datadog_api_client.v2.model.outcomes_batch_request_item
+   :members:
+   :show-inheritance:
+
+outcomes\_batch\_response
+-------------------------
+
+.. automodule:: datadog_api_client.v2.model.outcomes_batch_response
+   :members:
+   :show-inheritance:
+
+outcomes\_batch\_response\_attributes
+-------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.outcomes_batch_response_attributes
+   :members:
+   :show-inheritance:
+
+outcomes\_batch\_response\_meta
+-------------------------------
+
+.. automodule:: datadog_api_client.v2.model.outcomes_batch_response_meta
+   :members:
+   :show-inheritance:
+
+outcomes\_batch\_type
+---------------------
+
+.. automodule:: datadog_api_client.v2.model.outcomes_batch_type
+   :members:
+   :show-inheritance:
+
+outcomes\_response
+------------------
+
+.. automodule:: datadog_api_client.v2.model.outcomes_response
+   :members:
+   :show-inheritance:
+
+outcomes\_response\_data\_item
+------------------------------
+
+.. automodule:: datadog_api_client.v2.model.outcomes_response_data_item
+   :members:
+   :show-inheritance:
+
+outcomes\_response\_included\_item
+----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.outcomes_response_included_item
+   :members:
+   :show-inheritance:
+
+outcomes\_response\_included\_rule\_attributes
+----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.outcomes_response_included_rule_attributes
+   :members:
+   :show-inheritance:
+
+outcomes\_response\_links
+-------------------------
+
+.. automodule:: datadog_api_client.v2.model.outcomes_response_links
+   :members:
+   :show-inheritance:
+
 pagination
 ----------
 
@@ -5055,6 +5202,20 @@ relationship\_to\_organizations
    :members:
    :show-inheritance:
 
+relationship\_to\_outcome
+-------------------------
+
+.. automodule:: datadog_api_client.v2.model.relationship_to_outcome
+   :members:
+   :show-inheritance:
+
+relationship\_to\_outcome\_data
+-------------------------------
+
+.. automodule:: datadog_api_client.v2.model.relationship_to_outcome_data
+   :members:
+   :show-inheritance:
+
 relationship\_to\_permission
 ----------------------------
 
@@ -5094,6 +5255,27 @@ relationship\_to\_roles
 -----------------------
 
 .. automodule:: datadog_api_client.v2.model.relationship_to_roles
+   :members:
+   :show-inheritance:
+
+relationship\_to\_rule
+----------------------
+
+.. automodule:: datadog_api_client.v2.model.relationship_to_rule
+   :members:
+   :show-inheritance:
+
+relationship\_to\_rule\_data
+----------------------------
+
+.. automodule:: datadog_api_client.v2.model.relationship_to_rule_data
+   :members:
+   :show-inheritance:
+
+relationship\_to\_rule\_data\_object
+------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.relationship_to_rule_data_object
    :members:
    :show-inheritance:
 
@@ -5472,6 +5654,27 @@ roles\_type
 -----------
 
 .. automodule:: datadog_api_client.v2.model.roles_type
+   :members:
+   :show-inheritance:
+
+rule\_attributes
+----------------
+
+.. automodule:: datadog_api_client.v2.model.rule_attributes
+   :members:
+   :show-inheritance:
+
+rule\_outcome\_relationships
+----------------------------
+
+.. automodule:: datadog_api_client.v2.model.rule_outcome_relationships
+   :members:
+   :show-inheritance:
+
+rule\_type
+----------
+
+.. automodule:: datadog_api_client.v2.model.rule_type
    :members:
    :show-inheritance:
 
@@ -5920,6 +6123,13 @@ scalar\_response
 ----------------
 
 .. automodule:: datadog_api_client.v2.model.scalar_response
+   :members:
+   :show-inheritance:
+
+scorecard\_type
+---------------
+
+.. automodule:: datadog_api_client.v2.model.scorecard_type
    :members:
    :show-inheritance:
 
@@ -7677,6 +7887,13 @@ spans\_warning
 --------------
 
 .. automodule:: datadog_api_client.v2.model.spans_warning
+   :members:
+   :show-inheritance:
+
+state
+-----
+
+.. automodule:: datadog_api_client.v2.model.state
    :members:
    :show-inheritance:
 

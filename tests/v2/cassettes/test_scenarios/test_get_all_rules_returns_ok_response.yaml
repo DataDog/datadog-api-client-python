@@ -1,0 +1,36 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/scorecard/rules
+  response:
+    body:
+      string: '{"data":[{"id":"d45d511e-f03a-42e9-8ef6-5d00a9456c32","type":"rule","attributes":{"category":"Deployments
+        automated via Deployment Trains","created_at":"2023-11-01T14:11:49.302387Z","custom":true,"enabled":true,"modified_at":"2023-11-01T14:11:49.302387Z","name":"Team
+        Defined","scorecard_name":"Deployments automated via Deployment Trains"},"relationships":{"scorecard":{"data":{"id":"_M1Ygy3QcqRI","type":"scorecard"}}}},{"id":"0e6eac8b-5c4c-4438-a6c5-e631f7a2c90e","type":"rule","attributes":{"category":"Observability
+        Best Practices","created_at":"2023-11-01T18:04:56.125512Z","custom":true,"enabled":true,"modified_at":"2023-11-01T18:04:56.125512Z","name":"Test-Create_a_new_rule_returns_Created_response-1698861895","scorecard_name":"Observability
+        Best Practices"},"relationships":{"scorecard":{"data":{"id":"hA5zOZJXXJ4K","type":"scorecard"}}}},{"id":"2609deb7-bbd0-4277-bf48-2265328bc4ca","type":"rule","attributes":{"category":"OpenAPI
+        Spec Test Best Practices","created_at":"2023-11-01T20:08:49.073289Z","custom":true,"enabled":true,"modified_at":"2023-11-01T20:08:49.073289Z","name":"Test-Create_outcomes_batch_returns_OK_response-1698869328","owner":"Datadog","scorecard_name":"OpenAPI
+        Spec Test Best Practices"},"relationships":{"scorecard":{"data":{"id":"qsxpoYRhU_yz","type":"scorecard"}}}},{"id":"c939cd35-77ba-42af-aa04-f1a027e0dae6","type":"rule","attributes":{"category":"Observability
+        Best Practices","created_at":"2023-11-01T20:03:46.852914Z","custom":true,"enabled":true,"modified_at":"2023-11-01T20:03:46.852914Z","name":"Test-Typescript-Create_a_new_rule_returns_Created_response-1698869026","scorecard_name":"Observability
+        Best Practices"},"relationships":{"scorecard":{"data":{"id":"hA5zOZJXXJ4K","type":"scorecard"}}}},{"id":"e8ac31f0-488f-40b1-a83c-cd747e2eeadc","type":"rule","attributes":{"category":"Observability
+        Best Practices","created_at":"2023-11-01T20:05:34.033986Z","custom":true,"enabled":true,"modified_at":"2023-11-01T20:05:34.033986Z","name":"Test-Typescript-Create_a_new_rule_returns_Created_response-1698869133","scorecard_name":"Observability
+        Best Practices"},"relationships":{"scorecard":{"data":{"id":"hA5zOZJXXJ4K","type":"scorecard"}}}},{"id":"a5352494-7fad-4e4b-9c7a-3ecd90f30d27","type":"rule","attributes":{"category":"Observability
+        Best Practices","created_at":"2023-11-01T20:25:35.217803Z","custom":true,"enabled":true,"modified_at":"2023-11-01T20:25:35.217803Z","name":"Test-Typescript-Create_a_new_rule_returns_Created_response-1698870335","scorecard_name":"Observability
+        Best Practices"},"relationships":{"scorecard":{"data":{"id":"hA5zOZJXXJ4K","type":"scorecard"}}}},{"id":"c70e3b5f-a9f7-4ef8-8417-bf28ea153631","type":"rule","attributes":{"category":"OpenAPI
+        Spec Test Best Practices","created_at":"2023-11-01T20:08:35.347219Z","custom":true,"enabled":true,"modified_at":"2023-11-01T20:08:35.347219Z","name":"Test-Typescript-Create_outcomes_batch_returns_OK_response-1698869315","owner":"Datadog","scorecard_name":"OpenAPI
+        Spec Test Best Practices"},"relationships":{"scorecard":{"data":{"id":"qsxpoYRhU_yz","type":"scorecard"}}}},{"id":"be6867b9-bd71-497f-803f-208d7361fee2","type":"rule","attributes":{"category":"OpenAPI
+        Spec Test Best Practices","created_at":"2023-11-01T20:25:35.374915Z","custom":true,"enabled":true,"modified_at":"2023-11-01T20:25:35.374915Z","name":"Test-Typescript-Create_outcomes_batch_returns_OK_response-1698870335","owner":"Datadog","scorecard_name":"OpenAPI
+        Spec Test Best Practices"},"relationships":{"scorecard":{"data":{"id":"qsxpoYRhU_yz","type":"scorecard"}}}},{"id":"76460cec-323c-4215-81ae-b16aa160d0f1","type":"rule","attributes":{"category":"OpenAPI
+        Spec Test Best Practices","created_at":"2023-11-01T20:25:35.637942Z","custom":true,"enabled":true,"modified_at":"2023-11-01T20:25:35.637942Z","name":"Test-Typescript-Delete_a_rule_returns_OK_response-1698870335","owner":"Datadog","scorecard_name":"OpenAPI
+        Spec Test Best Practices"},"relationships":{"scorecard":{"data":{"id":"qsxpoYRhU_yz","type":"scorecard"}}}}],"links":{"next":"/api/v2/scorecard/rules?page%5Blimit%5D=100\u0026page%5Boffset%5D=100"}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1

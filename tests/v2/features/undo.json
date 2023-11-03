@@ -1255,6 +1255,43 @@
       "type": "idempotent"
     }
   },
+  "ListScorecardOutcomes": {
+    "tag": "Service Scorecards",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateScorecardOutcomesBatch": {
+    "tag": "Service Scorecards",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListScorecardRules": {
+    "tag": "Service Scorecards",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateScorecardRule": {
+    "tag": "Service Scorecards",
+    "undo": {
+      "operationId": "DeleteScorecardRule",
+      "parameters": [
+        {
+          "name": "rule_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteScorecardRule": {
+    "tag": "Service Scorecards",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "DownloadCloudWorkloadPolicyFile": {
     "tag": "Cloud Workload Security",
     "undo": {
