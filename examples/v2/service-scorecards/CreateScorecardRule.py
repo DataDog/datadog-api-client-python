@@ -21,8 +21,8 @@ body = CreateRuleRequest(
 )
 
 configuration = Configuration()
-configuration.unstable_operations["create_scorecard_rule"] = True
 configuration.unstable_operations["create_scorecard_outcomes_batch"] = True
+configuration.unstable_operations["create_scorecard_rule"] = True
 with ApiClient(configuration) as api_client:
     api_instance = ServiceScorecardsApi(api_client)
     response = api_instance.create_scorecard_rule(body=body)
