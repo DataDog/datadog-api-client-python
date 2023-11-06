@@ -268,6 +268,10 @@ from datadog_api_client.v2.model.cost_by_org import CostByOrg
 from datadog_api_client.v2.model.cost_by_org_attributes import CostByOrgAttributes
 from datadog_api_client.v2.model.cost_by_org_response import CostByOrgResponse
 from datadog_api_client.v2.model.cost_by_org_type import CostByOrgType
+from datadog_api_client.v2.model.create_rule_request import CreateRuleRequest
+from datadog_api_client.v2.model.create_rule_request_data import CreateRuleRequestData
+from datadog_api_client.v2.model.create_rule_response import CreateRuleResponse
+from datadog_api_client.v2.model.create_rule_response_data import CreateRuleResponseData
 from datadog_api_client.v2.model.creator import Creator
 from datadog_api_client.v2.model.dashboard_list_add_items_request import DashboardListAddItemsRequest
 from datadog_api_client.v2.model.dashboard_list_add_items_response import DashboardListAddItemsResponse
@@ -585,6 +589,9 @@ from datadog_api_client.v2.model.list_findings_meta import ListFindingsMeta
 from datadog_api_client.v2.model.list_findings_page import ListFindingsPage
 from datadog_api_client.v2.model.list_findings_response import ListFindingsResponse
 from datadog_api_client.v2.model.list_powerpacks_response import ListPowerpacksResponse
+from datadog_api_client.v2.model.list_rules_response import ListRulesResponse
+from datadog_api_client.v2.model.list_rules_response_data_item import ListRulesResponseDataItem
+from datadog_api_client.v2.model.list_rules_response_links import ListRulesResponseLinks
 from datadog_api_client.v2.model.list_teams_include import ListTeamsInclude
 from datadog_api_client.v2.model.list_teams_sort import ListTeamsSort
 from datadog_api_client.v2.model.log import Log
@@ -791,6 +798,22 @@ from datadog_api_client.v2.model.opsgenie_services_response import OpsgenieServi
 from datadog_api_client.v2.model.organization import Organization
 from datadog_api_client.v2.model.organization_attributes import OrganizationAttributes
 from datadog_api_client.v2.model.organizations_type import OrganizationsType
+from datadog_api_client.v2.model.outcome_type import OutcomeType
+from datadog_api_client.v2.model.outcomes_batch_attributes import OutcomesBatchAttributes
+from datadog_api_client.v2.model.outcomes_batch_request import OutcomesBatchRequest
+from datadog_api_client.v2.model.outcomes_batch_request_data import OutcomesBatchRequestData
+from datadog_api_client.v2.model.outcomes_batch_request_item import OutcomesBatchRequestItem
+from datadog_api_client.v2.model.outcomes_batch_response import OutcomesBatchResponse
+from datadog_api_client.v2.model.outcomes_batch_response_attributes import OutcomesBatchResponseAttributes
+from datadog_api_client.v2.model.outcomes_batch_response_meta import OutcomesBatchResponseMeta
+from datadog_api_client.v2.model.outcomes_batch_type import OutcomesBatchType
+from datadog_api_client.v2.model.outcomes_response import OutcomesResponse
+from datadog_api_client.v2.model.outcomes_response_data_item import OutcomesResponseDataItem
+from datadog_api_client.v2.model.outcomes_response_included_item import OutcomesResponseIncludedItem
+from datadog_api_client.v2.model.outcomes_response_included_rule_attributes import (
+    OutcomesResponseIncludedRuleAttributes,
+)
+from datadog_api_client.v2.model.outcomes_response_links import OutcomesResponseLinks
 from datadog_api_client.v2.model.pagination import Pagination
 from datadog_api_client.v2.model.partial_api_key import PartialAPIKey
 from datadog_api_client.v2.model.partial_api_key_attributes import PartialAPIKeyAttributes
@@ -885,12 +908,17 @@ from datadog_api_client.v2.model.relationship_to_incident_postmortem_data import
 from datadog_api_client.v2.model.relationship_to_organization import RelationshipToOrganization
 from datadog_api_client.v2.model.relationship_to_organization_data import RelationshipToOrganizationData
 from datadog_api_client.v2.model.relationship_to_organizations import RelationshipToOrganizations
+from datadog_api_client.v2.model.relationship_to_outcome import RelationshipToOutcome
+from datadog_api_client.v2.model.relationship_to_outcome_data import RelationshipToOutcomeData
 from datadog_api_client.v2.model.relationship_to_permission import RelationshipToPermission
 from datadog_api_client.v2.model.relationship_to_permission_data import RelationshipToPermissionData
 from datadog_api_client.v2.model.relationship_to_permissions import RelationshipToPermissions
 from datadog_api_client.v2.model.relationship_to_role import RelationshipToRole
 from datadog_api_client.v2.model.relationship_to_role_data import RelationshipToRoleData
 from datadog_api_client.v2.model.relationship_to_roles import RelationshipToRoles
+from datadog_api_client.v2.model.relationship_to_rule import RelationshipToRule
+from datadog_api_client.v2.model.relationship_to_rule_data import RelationshipToRuleData
+from datadog_api_client.v2.model.relationship_to_rule_data_object import RelationshipToRuleDataObject
 from datadog_api_client.v2.model.relationship_to_saml_assertion_attribute import RelationshipToSAMLAssertionAttribute
 from datadog_api_client.v2.model.relationship_to_saml_assertion_attribute_data import (
     RelationshipToSAMLAssertionAttributeData,
@@ -947,6 +975,9 @@ from datadog_api_client.v2.model.role_update_response_data import RoleUpdateResp
 from datadog_api_client.v2.model.roles_response import RolesResponse
 from datadog_api_client.v2.model.roles_sort import RolesSort
 from datadog_api_client.v2.model.roles_type import RolesType
+from datadog_api_client.v2.model.rule_attributes import RuleAttributes
+from datadog_api_client.v2.model.rule_outcome_relationships import RuleOutcomeRelationships
+from datadog_api_client.v2.model.rule_type import RuleType
 from datadog_api_client.v2.model.saml_assertion_attribute import SAMLAssertionAttribute
 from datadog_api_client.v2.model.saml_assertion_attribute_attributes import SAMLAssertionAttributeAttributes
 from datadog_api_client.v2.model.saml_assertion_attributes_type import SAMLAssertionAttributesType
@@ -964,6 +995,7 @@ from datadog_api_client.v2.model.scalar_formula_response_type import ScalarFormu
 from datadog_api_client.v2.model.scalar_meta import ScalarMeta
 from datadog_api_client.v2.model.scalar_query import ScalarQuery
 from datadog_api_client.v2.model.scalar_response import ScalarResponse
+from datadog_api_client.v2.model.scorecard_type import ScorecardType
 from datadog_api_client.v2.model.security_filter import SecurityFilter
 from datadog_api_client.v2.model.security_filter_attributes import SecurityFilterAttributes
 from datadog_api_client.v2.model.security_filter_create_attributes import SecurityFilterCreateAttributes
@@ -1325,6 +1357,7 @@ from datadog_api_client.v2.model.spans_sort import SpansSort
 from datadog_api_client.v2.model.spans_sort_order import SpansSortOrder
 from datadog_api_client.v2.model.spans_type import SpansType
 from datadog_api_client.v2.model.spans_warning import SpansWarning
+from datadog_api_client.v2.model.state import State
 from datadog_api_client.v2.model.tags_event_attribute import TagsEventAttribute
 from datadog_api_client.v2.model.team import Team
 from datadog_api_client.v2.model.team_attributes import TeamAttributes
@@ -1651,6 +1684,10 @@ __all__ = [
     "CostByOrgAttributes",
     "CostByOrgResponse",
     "CostByOrgType",
+    "CreateRuleRequest",
+    "CreateRuleRequestData",
+    "CreateRuleResponse",
+    "CreateRuleResponseData",
     "Creator",
     "DashboardListAddItemsRequest",
     "DashboardListAddItemsResponse",
@@ -1926,6 +1963,9 @@ __all__ = [
     "ListFindingsPage",
     "ListFindingsResponse",
     "ListPowerpacksResponse",
+    "ListRulesResponse",
+    "ListRulesResponseDataItem",
+    "ListRulesResponseLinks",
     "ListTeamsInclude",
     "ListTeamsSort",
     "Log",
@@ -2110,6 +2150,20 @@ __all__ = [
     "Organization",
     "OrganizationAttributes",
     "OrganizationsType",
+    "OutcomeType",
+    "OutcomesBatchAttributes",
+    "OutcomesBatchRequest",
+    "OutcomesBatchRequestData",
+    "OutcomesBatchRequestItem",
+    "OutcomesBatchResponse",
+    "OutcomesBatchResponseAttributes",
+    "OutcomesBatchResponseMeta",
+    "OutcomesBatchType",
+    "OutcomesResponse",
+    "OutcomesResponseDataItem",
+    "OutcomesResponseIncludedItem",
+    "OutcomesResponseIncludedRuleAttributes",
+    "OutcomesResponseLinks",
     "Pagination",
     "PartialAPIKey",
     "PartialAPIKeyAttributes",
@@ -2198,12 +2252,17 @@ __all__ = [
     "RelationshipToOrganization",
     "RelationshipToOrganizationData",
     "RelationshipToOrganizations",
+    "RelationshipToOutcome",
+    "RelationshipToOutcomeData",
     "RelationshipToPermission",
     "RelationshipToPermissionData",
     "RelationshipToPermissions",
     "RelationshipToRole",
     "RelationshipToRoleData",
     "RelationshipToRoles",
+    "RelationshipToRule",
+    "RelationshipToRuleData",
+    "RelationshipToRuleDataObject",
     "RelationshipToSAMLAssertionAttribute",
     "RelationshipToSAMLAssertionAttributeData",
     "RelationshipToTeamLinkData",
@@ -2258,6 +2317,9 @@ __all__ = [
     "RolesResponse",
     "RolesSort",
     "RolesType",
+    "RuleAttributes",
+    "RuleOutcomeRelationships",
+    "RuleType",
     "SAMLAssertionAttribute",
     "SAMLAssertionAttributeAttributes",
     "SAMLAssertionAttributesType",
@@ -2275,6 +2337,7 @@ __all__ = [
     "ScalarMeta",
     "ScalarQuery",
     "ScalarResponse",
+    "ScorecardType",
     "SecurityFilter",
     "SecurityFilterAttributes",
     "SecurityFilterCreateAttributes",
@@ -2530,6 +2593,7 @@ __all__ = [
     "SpansSortOrder",
     "SpansType",
     "SpansWarning",
+    "State",
     "TagsEventAttribute",
     "Team",
     "TeamAttributes",

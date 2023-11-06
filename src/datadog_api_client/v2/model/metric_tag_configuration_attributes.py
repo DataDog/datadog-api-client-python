@@ -28,6 +28,7 @@ class MetricTagConfigurationAttributes(ModelNormal):
         return {
             "aggregations": (MetricCustomAggregations,),
             "created_at": (datetime,),
+            "exclude_tags_mode": (bool,),
             "include_percentiles": (bool,),
             "metric_type": (MetricTagConfigurationMetricTypes,),
             "modified_at": (datetime,),
@@ -37,6 +38,7 @@ class MetricTagConfigurationAttributes(ModelNormal):
     attribute_map = {
         "aggregations": "aggregations",
         "created_at": "created_at",
+        "exclude_tags_mode": "exclude_tags_mode",
         "include_percentiles": "include_percentiles",
         "metric_type": "metric_type",
         "modified_at": "modified_at",
@@ -47,6 +49,7 @@ class MetricTagConfigurationAttributes(ModelNormal):
         self_,
         aggregations: Union[MetricCustomAggregations, UnsetType] = unset,
         created_at: Union[datetime, UnsetType] = unset,
+        exclude_tags_mode: Union[bool, UnsetType] = unset,
         include_percentiles: Union[bool, UnsetType] = unset,
         metric_type: Union[MetricTagConfigurationMetricTypes, UnsetType] = unset,
         modified_at: Union[datetime, UnsetType] = unset,
@@ -77,6 +80,11 @@ class MetricTagConfigurationAttributes(ModelNormal):
         :param created_at: Timestamp when the tag configuration was created.
         :type created_at: datetime, optional
 
+        :param exclude_tags_mode: When set to true, the configuration will exclude the configured tags and include any other submitted tags.
+            When set to false, the configuration will include the configured tags and exclude any other submitted tags.
+            Defaults to false. Requires ``tags`` property.
+        :type exclude_tags_mode: bool, optional
+
         :param include_percentiles: Toggle to include or exclude percentile aggregations for distribution metrics.
             Only present when the ``metric_type`` is ``distribution``.
         :type include_percentiles: bool, optional
@@ -94,6 +102,8 @@ class MetricTagConfigurationAttributes(ModelNormal):
             kwargs["aggregations"] = aggregations
         if created_at is not unset:
             kwargs["created_at"] = created_at
+        if exclude_tags_mode is not unset:
+            kwargs["exclude_tags_mode"] = exclude_tags_mode
         if include_percentiles is not unset:
             kwargs["include_percentiles"] = include_percentiles
         if metric_type is not unset:

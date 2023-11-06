@@ -1,0 +1,58 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"enabled":true,"name":"Test-Create_outcomes_batch_returns_Bad_Request_response-1698959951","owner":"Datadog","scorecard_name":"OpenAPI
+      Spec Test Best Practices"},"type":"rule"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/scorecard/rules
+  response:
+    body:
+      string: '{"data":{"id":"0451feb1-fb1b-463f-ba02-4568feb2795b","type":"rule","attributes":{"category":"OpenAPI
+        Spec Test Best Practices","created_at":"2023-11-02T21:19:11.70524Z","custom":true,"enabled":true,"modified_at":"2023-11-02T21:19:11.70524Z","name":"Test-Create_outcomes_batch_returns_Bad_Request_response-1698959951","owner":"Datadog","scorecard_name":"OpenAPI
+        Spec Test Best Practices"},"relationships":{"scorecard":{"data":{"id":"qsxpoYRhU_yz","type":"scorecard"}}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"results":[{"remarks":"See: <a href=\"https://app.datadoghq.com/services\">Services</a>","rule_id":"0451feb1-fb1b-463f-ba02-4568feb2795b","service_name":"","state":"pass"}]},"type":"batched-outcome"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/scorecard/outcomes/batch
+  response:
+    body:
+      string: '{"errors":[{"status":"400","title":"Bad Request","detail":"attribute
+        \"service_name\" is required"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 400
+      message: Bad Request
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/scorecard/rules/0451feb1-fb1b-463f-ba02-4568feb2795b
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 204
+      message: No Content
+version: 1
