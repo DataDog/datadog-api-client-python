@@ -20,7 +20,6 @@ Feature: Service Scorecards
   @team:DataDog/service-catalog
   Scenario: Create a new rule returns "Created" response
     Given operation "CreateScorecardRule" enabled
-    And operation "CreateScorecardOutcomesBatch" enabled
     And new "CreateScorecardRule" request
     And body with value {"data": {"attributes": {"enabled": true, "name": "{{unique}}", "scorecard_name": "Observability Best Practices"}, "type": "rule"}}
     When the request is sent
