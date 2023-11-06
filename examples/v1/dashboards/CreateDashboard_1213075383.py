@@ -15,7 +15,12 @@ from datadog_api_client.v1.model.formula_and_function_response_format import For
 from datadog_api_client.v1.model.query_sort_order import QuerySortOrder
 from datadog_api_client.v1.model.toplist_widget_definition import ToplistWidgetDefinition
 from datadog_api_client.v1.model.toplist_widget_definition_type import ToplistWidgetDefinitionType
+from datadog_api_client.v1.model.toplist_widget_legend import ToplistWidgetLegend
 from datadog_api_client.v1.model.toplist_widget_request import ToplistWidgetRequest
+from datadog_api_client.v1.model.toplist_widget_scaling import ToplistWidgetScaling
+from datadog_api_client.v1.model.toplist_widget_stacked import ToplistWidgetStacked
+from datadog_api_client.v1.model.toplist_widget_stacked_type import ToplistWidgetStackedType
+from datadog_api_client.v1.model.toplist_widget_style import ToplistWidgetStyle
 from datadog_api_client.v1.model.widget import Widget
 from datadog_api_client.v1.model.widget_formula import WidgetFormula
 from datadog_api_client.v1.model.widget_formula_limit import WidgetFormulaLimit
@@ -39,6 +44,13 @@ body = Dashboard(
                 title_size="16",
                 title_align=WidgetTextAlign.LEFT,
                 time=WidgetTime(),
+                style=ToplistWidgetStyle(
+                    display=ToplistWidgetStacked(
+                        type=ToplistWidgetStackedType.STACKED,
+                        legend=ToplistWidgetLegend.INLINE,
+                    ),
+                    scaling=ToplistWidgetScaling.RELATIVE,
+                ),
                 type=ToplistWidgetDefinitionType.TOPLIST,
                 requests=[
                     ToplistWidgetRequest(
