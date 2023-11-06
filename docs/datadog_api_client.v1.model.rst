@@ -4747,10 +4747,66 @@ toplist\_widget\_definition\_type
    :members:
    :show-inheritance:
 
+toplist\_widget\_display
+------------------------
+
+.. automodule:: datadog_api_client.v1.model.toplist_widget_display
+   :members:
+   :show-inheritance:
+
+toplist\_widget\_flat
+---------------------
+
+.. automodule:: datadog_api_client.v1.model.toplist_widget_flat
+   :members:
+   :show-inheritance:
+
+toplist\_widget\_flat\_type
+---------------------------
+
+.. automodule:: datadog_api_client.v1.model.toplist_widget_flat_type
+   :members:
+   :show-inheritance:
+
+toplist\_widget\_legend
+-----------------------
+
+.. automodule:: datadog_api_client.v1.model.toplist_widget_legend
+   :members:
+   :show-inheritance:
+
 toplist\_widget\_request
 ------------------------
 
 .. automodule:: datadog_api_client.v1.model.toplist_widget_request
+   :members:
+   :show-inheritance:
+
+toplist\_widget\_scaling
+------------------------
+
+.. automodule:: datadog_api_client.v1.model.toplist_widget_scaling
+   :members:
+   :show-inheritance:
+
+toplist\_widget\_stacked
+------------------------
+
+.. automodule:: datadog_api_client.v1.model.toplist_widget_stacked
+   :members:
+   :show-inheritance:
+
+toplist\_widget\_stacked\_type
+------------------------------
+
+.. automodule:: datadog_api_client.v1.model.toplist_widget_stacked_type
+   :members:
+   :show-inheritance:
+
+toplist\_widget\_style
+----------------------
+
+.. automodule:: datadog_api_client.v1.model.toplist_widget_style
    :members:
    :show-inheritance:
 
