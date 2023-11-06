@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class ScalarColumnTypeGroup(ModelSimple):
+class ScalarColumnTypeGroup(StringEnum):
     """
     The type of column present for groups.
 
@@ -24,12 +23,6 @@ class ScalarColumnTypeGroup(ModelSimple):
         "group",
     }
     GROUP: ClassVar["ScalarColumnTypeGroup"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 ScalarColumnTypeGroup.GROUP = ScalarColumnTypeGroup("group")

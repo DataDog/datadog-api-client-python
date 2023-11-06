@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class MonitorOverallStates(ModelSimple):
+class MonitorOverallStates(StringEnum):
     """
     The different states your monitor can be in.
 
@@ -36,12 +35,6 @@ class MonitorOverallStates(ModelSimple):
     SKIPPED: ClassVar["MonitorOverallStates"]
     UNKNOWN: ClassVar["MonitorOverallStates"]
     WARN: ClassVar["MonitorOverallStates"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 MonitorOverallStates.ALERT = MonitorOverallStates("Alert")

@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class ListTeamsInclude(ModelSimple):
+class ListTeamsInclude(StringEnum):
     """
     Included related resources optionally requested.
 
@@ -26,12 +25,6 @@ class ListTeamsInclude(ModelSimple):
     }
     TEAM_LINKS: ClassVar["ListTeamsInclude"]
     USER_TEAM_PERMISSIONS: ClassVar["ListTeamsInclude"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 ListTeamsInclude.TEAM_LINKS = ListTeamsInclude("team_links")

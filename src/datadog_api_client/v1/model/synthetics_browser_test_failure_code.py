@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class SyntheticsBrowserTestFailureCode(ModelSimple):
+class SyntheticsBrowserTestFailureCode(StringEnum):
     """
     Error code that can be returned by a Synthetic test.
 
@@ -88,12 +87,6 @@ class SyntheticsBrowserTestFailureCode(ModelSimple):
     UPLOAD_FILES_DIALOG: ClassVar["SyntheticsBrowserTestFailureCode"]
     UPLOAD_FILES_DYNAMIC_ELEMENT: ClassVar["SyntheticsBrowserTestFailureCode"]
     UPLOAD_FILES_NAME: ClassVar["SyntheticsBrowserTestFailureCode"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 SyntheticsBrowserTestFailureCode.API_REQUEST_FAILURE = SyntheticsBrowserTestFailureCode("API_REQUEST_FAILURE")

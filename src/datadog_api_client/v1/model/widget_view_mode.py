@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class WidgetViewMode(ModelSimple):
+class WidgetViewMode(StringEnum):
     """
     Define how you want the SLO to be displayed.
 
@@ -28,12 +27,6 @@ class WidgetViewMode(ModelSimple):
     OVERALL: ClassVar["WidgetViewMode"]
     COMPONENT: ClassVar["WidgetViewMode"]
     BOTH: ClassVar["WidgetViewMode"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 WidgetViewMode.OVERALL = WidgetViewMode("overall")

@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class AccessRole(ModelSimple):
+class AccessRole(StringEnum):
     """
     The access role of the user. Options are **st** (standard user), **adm** (admin user), or **ro** (read-only user).
 
@@ -32,12 +31,6 @@ class AccessRole(ModelSimple):
     ERROR: ClassVar["AccessRole"]
 
     _nullable = True
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 AccessRole.STANDARD = AccessRole("st")

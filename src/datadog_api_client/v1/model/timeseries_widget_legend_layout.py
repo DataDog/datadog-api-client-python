@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class TimeseriesWidgetLegendLayout(ModelSimple):
+class TimeseriesWidgetLegendLayout(StringEnum):
     """
     Layout of the legend.
 
@@ -28,12 +27,6 @@ class TimeseriesWidgetLegendLayout(ModelSimple):
     AUTO: ClassVar["TimeseriesWidgetLegendLayout"]
     HORIZONTAL: ClassVar["TimeseriesWidgetLegendLayout"]
     VERTICAL: ClassVar["TimeseriesWidgetLegendLayout"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 TimeseriesWidgetLegendLayout.AUTO = TimeseriesWidgetLegendLayout("auto")

@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class FormulaAndFunctionSLOQueryType(ModelSimple):
+class FormulaAndFunctionSLOQueryType(StringEnum):
     """
     Name of the query for use in formulas.
 
@@ -24,12 +23,6 @@ class FormulaAndFunctionSLOQueryType(ModelSimple):
         "metric",
     }
     METRIC: ClassVar["FormulaAndFunctionSLOQueryType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 FormulaAndFunctionSLOQueryType.METRIC = FormulaAndFunctionSLOQueryType("metric")

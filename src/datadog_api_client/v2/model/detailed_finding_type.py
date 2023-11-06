@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class DetailedFindingType(ModelSimple):
+class DetailedFindingType(StringEnum):
     """
     The JSON:API type for findings that have the message and resource configuration.
 
@@ -24,12 +23,6 @@ class DetailedFindingType(ModelSimple):
         "detailed_finding",
     }
     DETAILED_FINDING: ClassVar["DetailedFindingType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 DetailedFindingType.DETAILED_FINDING = DetailedFindingType("detailed_finding")

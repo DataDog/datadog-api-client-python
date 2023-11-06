@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class MonitorRenotifyStatusType(ModelSimple):
+class MonitorRenotifyStatusType(StringEnum):
     """
     The different statuses for which renotification is supported.
 
@@ -28,12 +27,6 @@ class MonitorRenotifyStatusType(ModelSimple):
     ALERT: ClassVar["MonitorRenotifyStatusType"]
     WARN: ClassVar["MonitorRenotifyStatusType"]
     NO_DATA: ClassVar["MonitorRenotifyStatusType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 MonitorRenotifyStatusType.ALERT = MonitorRenotifyStatusType("alert")

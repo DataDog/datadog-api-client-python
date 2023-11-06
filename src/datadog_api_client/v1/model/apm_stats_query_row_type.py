@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class ApmStatsQueryRowType(ModelSimple):
+class ApmStatsQueryRowType(StringEnum):
     """
     The level of detail for the request.
 
@@ -28,12 +27,6 @@ class ApmStatsQueryRowType(ModelSimple):
     SERVICE: ClassVar["ApmStatsQueryRowType"]
     RESOURCE: ClassVar["ApmStatsQueryRowType"]
     SPAN: ClassVar["ApmStatsQueryRowType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 ApmStatsQueryRowType.SERVICE = ApmStatsQueryRowType("service")

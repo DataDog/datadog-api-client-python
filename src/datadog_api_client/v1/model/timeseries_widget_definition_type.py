@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class TimeseriesWidgetDefinitionType(ModelSimple):
+class TimeseriesWidgetDefinitionType(StringEnum):
     """
     Type of the timeseries widget.
 
@@ -24,12 +23,6 @@ class TimeseriesWidgetDefinitionType(ModelSimple):
         "timeseries",
     }
     TIMESERIES: ClassVar["TimeseriesWidgetDefinitionType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 TimeseriesWidgetDefinitionType.TIMESERIES = TimeseriesWidgetDefinitionType("timeseries")

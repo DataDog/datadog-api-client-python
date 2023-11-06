@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class AWSNamespace(ModelSimple):
+class AWSNamespace(StringEnum):
     """
     The namespace associated with the tag filter entry.
 
@@ -36,12 +35,6 @@ class AWSNamespace(ModelSimple):
     CUSTOM: ClassVar["AWSNamespace"]
     NETWORK_ELB: ClassVar["AWSNamespace"]
     LAMBDA: ClassVar["AWSNamespace"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 AWSNamespace.ELB = AWSNamespace("elb")

@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class DashboardReflowType(ModelSimple):
+class DashboardReflowType(StringEnum):
     """
     Reflow type for a **new dashboard layout** dashboard. Set this only when layout type is 'ordered'.
         If set to 'fixed', the dashboard expects all widgets to have a layout, and if it's set to 'auto',
@@ -28,12 +27,6 @@ class DashboardReflowType(ModelSimple):
     }
     AUTO: ClassVar["DashboardReflowType"]
     FIXED: ClassVar["DashboardReflowType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 DashboardReflowType.AUTO = DashboardReflowType("auto")

@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class DistributionWidgetHistogramRequestType(ModelSimple):
+class DistributionWidgetHistogramRequestType(StringEnum):
     """
     Request type for the histogram request.
 
@@ -24,12 +23,6 @@ class DistributionWidgetHistogramRequestType(ModelSimple):
         "histogram",
     }
     HISTOGRAM: ClassVar["DistributionWidgetHistogramRequestType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 DistributionWidgetHistogramRequestType.HISTOGRAM = DistributionWidgetHistogramRequestType("histogram")

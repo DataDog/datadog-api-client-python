@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class WidgetSizeFormat(ModelSimple):
+class WidgetSizeFormat(StringEnum):
     """
     Size of the widget.
 
@@ -28,12 +27,6 @@ class WidgetSizeFormat(ModelSimple):
     SMALL: ClassVar["WidgetSizeFormat"]
     MEDIUM: ClassVar["WidgetSizeFormat"]
     LARGE: ClassVar["WidgetSizeFormat"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 WidgetSizeFormat.SMALL = WidgetSizeFormat("small")

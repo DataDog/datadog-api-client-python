@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class SyntheticsAssertionTimingsScope(ModelSimple):
+class SyntheticsAssertionTimingsScope(StringEnum):
     """
     Timings scope for response time assertions.
 
@@ -26,12 +25,6 @@ class SyntheticsAssertionTimingsScope(ModelSimple):
     }
     ALL: ClassVar["SyntheticsAssertionTimingsScope"]
     WITHOUT_DNS: ClassVar["SyntheticsAssertionTimingsScope"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 SyntheticsAssertionTimingsScope.ALL = SyntheticsAssertionTimingsScope("all")

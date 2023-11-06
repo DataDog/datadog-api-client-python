@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class LogsGeoIPParserType(ModelSimple):
+class LogsGeoIPParserType(StringEnum):
     """
     Type of GeoIP parser.
 
@@ -24,12 +23,6 @@ class LogsGeoIPParserType(ModelSimple):
         "geo-ip-parser",
     }
     GEO_IP_PARSER: ClassVar["LogsGeoIPParserType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 LogsGeoIPParserType.GEO_IP_PARSER = LogsGeoIPParserType("geo-ip-parser")

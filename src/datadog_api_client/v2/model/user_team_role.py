@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class UserTeamRole(ModelSimple):
+class UserTeamRole(StringEnum):
     """
     The user's role within the team
 
@@ -26,12 +25,6 @@ class UserTeamRole(ModelSimple):
     ADMIN: ClassVar["UserTeamRole"]
 
     _nullable = True
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 UserTeamRole.ADMIN = UserTeamRole("admin")

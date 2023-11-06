@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class SpansMetricType(ModelSimple):
+class SpansMetricType(StringEnum):
     """
     The type of resource. The value should always be spans_metrics.
 
@@ -24,12 +23,6 @@ class SpansMetricType(ModelSimple):
         "spans_metrics",
     }
     SPANS_METRICS: ClassVar["SpansMetricType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 SpansMetricType.SPANS_METRICS = SpansMetricType("spans_metrics")

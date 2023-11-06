@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class SyntheticsGlobalVariableParserType(ModelSimple):
+class SyntheticsGlobalVariableParserType(StringEnum):
     """
     Type of parser for a Synthetic global variable from a synthetics test.
 
@@ -30,12 +29,6 @@ class SyntheticsGlobalVariableParserType(ModelSimple):
     JSON_PATH: ClassVar["SyntheticsGlobalVariableParserType"]
     REGEX: ClassVar["SyntheticsGlobalVariableParserType"]
     X_PATH: ClassVar["SyntheticsGlobalVariableParserType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 SyntheticsGlobalVariableParserType.RAW = SyntheticsGlobalVariableParserType("raw")

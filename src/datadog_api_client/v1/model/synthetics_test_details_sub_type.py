@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class SyntheticsTestDetailsSubType(ModelSimple):
+class SyntheticsTestDetailsSubType(StringEnum):
     """
     The subtype of the Synthetic API test, `http`, `ssl`, `tcp`,
         `dns`, `icmp`, `udp`, `websocket`, `grpc` or `multi`.
@@ -41,12 +40,6 @@ class SyntheticsTestDetailsSubType(ModelSimple):
     UDP: ClassVar["SyntheticsTestDetailsSubType"]
     WEBSOCKET: ClassVar["SyntheticsTestDetailsSubType"]
     GRPC: ClassVar["SyntheticsTestDetailsSubType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 SyntheticsTestDetailsSubType.HTTP = SyntheticsTestDetailsSubType("http")

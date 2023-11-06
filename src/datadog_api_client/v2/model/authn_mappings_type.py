@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class AuthNMappingsType(ModelSimple):
+class AuthNMappingsType(StringEnum):
     """
     AuthN Mappings resource type.
 
@@ -24,12 +23,6 @@ class AuthNMappingsType(ModelSimple):
         "authn_mappings",
     }
     AUTHN_MAPPINGS: ClassVar["AuthNMappingsType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 AuthNMappingsType.AUTHN_MAPPINGS = AuthNMappingsType("authn_mappings")

@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class EventPriority(ModelSimple):
+class EventPriority(StringEnum):
     """
     The priority of the event. For example, `normal` or `low`.
 
@@ -28,12 +27,6 @@ class EventPriority(ModelSimple):
     LOW: ClassVar["EventPriority"]
 
     _nullable = True
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 EventPriority.NORMAL = EventPriority("normal")

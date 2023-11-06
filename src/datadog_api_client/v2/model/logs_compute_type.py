@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class LogsComputeType(ModelSimple):
+class LogsComputeType(StringEnum):
     """
     The type of compute
 
@@ -26,12 +25,6 @@ class LogsComputeType(ModelSimple):
     }
     TIMESERIES: ClassVar["LogsComputeType"]
     TOTAL: ClassVar["LogsComputeType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 LogsComputeType.TIMESERIES = LogsComputeType("timeseries")

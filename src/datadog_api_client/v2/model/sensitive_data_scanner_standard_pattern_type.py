@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class SensitiveDataScannerStandardPatternType(ModelSimple):
+class SensitiveDataScannerStandardPatternType(StringEnum):
     """
     Sensitive Data Scanner standard pattern type.
 
@@ -24,12 +23,6 @@ class SensitiveDataScannerStandardPatternType(ModelSimple):
         "sensitive_data_scanner_standard_pattern",
     }
     SENSITIVE_DATA_SCANNER_STANDARD_PATTERN: ClassVar["SensitiveDataScannerStandardPatternType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 SensitiveDataScannerStandardPatternType.SENSITIVE_DATA_SCANNER_STANDARD_PATTERN = (

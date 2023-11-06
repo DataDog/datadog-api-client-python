@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class EventsAggregation(ModelSimple):
+class EventsAggregation(StringEnum):
     """
     The type of aggregation that can be performed on events-based queries.
 
@@ -44,12 +43,6 @@ class EventsAggregation(ModelSimple):
     MIN: ClassVar["EventsAggregation"]
     MAX: ClassVar["EventsAggregation"]
     AVG: ClassVar["EventsAggregation"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 EventsAggregation.COUNT = EventsAggregation("count")

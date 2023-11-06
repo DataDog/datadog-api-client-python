@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class SyntheticsBasicAuthOauthROPType(ModelSimple):
+class SyntheticsBasicAuthOauthROPType(StringEnum):
     """
     The type of basic authentication to use when performing the test.
 
@@ -24,12 +23,6 @@ class SyntheticsBasicAuthOauthROPType(ModelSimple):
         "oauth-rop",
     }
     OAUTH_ROP: ClassVar["SyntheticsBasicAuthOauthROPType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 SyntheticsBasicAuthOauthROPType.OAUTH_ROP = SyntheticsBasicAuthOauthROPType("oauth-rop")

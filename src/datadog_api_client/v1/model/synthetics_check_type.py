@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class SyntheticsCheckType(ModelSimple):
+class SyntheticsCheckType(StringEnum):
     """
     Type of assertion to apply in an API test.
 
@@ -50,12 +49,6 @@ class SyntheticsCheckType(ModelSimple):
     BETWEEN: ClassVar["SyntheticsCheckType"]
     IS_EMPTY: ClassVar["SyntheticsCheckType"]
     NOT_IS_EMPTY: ClassVar["SyntheticsCheckType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 SyntheticsCheckType.EQUALS = SyntheticsCheckType("equals")

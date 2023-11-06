@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class ContainerMetaPageType(ModelSimple):
+class ContainerMetaPageType(StringEnum):
     """
     Type of Container pagination.
 
@@ -24,12 +23,6 @@ class ContainerMetaPageType(ModelSimple):
         "cursor_limit",
     }
     CURSOR_LIMIT: ClassVar["ContainerMetaPageType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 ContainerMetaPageType.CURSOR_LIMIT = ContainerMetaPageType("cursor_limit")

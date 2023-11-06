@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class SyntheticsStepType(ModelSimple):
+class SyntheticsStepType(StringEnum):
     """
     Step type used in your Synthetic test.
 
@@ -72,12 +71,6 @@ class SyntheticsStepType(ModelSimple):
     TYPE_TEXT: ClassVar["SyntheticsStepType"]
     UPLOAD_FILES: ClassVar["SyntheticsStepType"]
     WAIT: ClassVar["SyntheticsStepType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 SyntheticsStepType.ASSERT_CURRENT_URL = SyntheticsStepType("assertCurrentUrl")

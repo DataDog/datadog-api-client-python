@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class SunburstWidgetLegendInlineAutomaticType(ModelSimple):
+class SunburstWidgetLegendInlineAutomaticType(StringEnum):
     """
     Whether to show the legend inline or let it be automatically generated.
 
@@ -26,12 +25,6 @@ class SunburstWidgetLegendInlineAutomaticType(ModelSimple):
     }
     INLINE: ClassVar["SunburstWidgetLegendInlineAutomaticType"]
     AUTOMATIC: ClassVar["SunburstWidgetLegendInlineAutomaticType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 SunburstWidgetLegendInlineAutomaticType.INLINE = SunburstWidgetLegendInlineAutomaticType("inline")

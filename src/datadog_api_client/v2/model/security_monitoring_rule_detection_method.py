@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class SecurityMonitoringRuleDetectionMethod(ModelSimple):
+class SecurityMonitoringRuleDetectionMethod(StringEnum):
     """
     The detection method.
 
@@ -34,12 +33,6 @@ class SecurityMonitoringRuleDetectionMethod(ModelSimple):
     IMPOSSIBLE_TRAVEL: ClassVar["SecurityMonitoringRuleDetectionMethod"]
     HARDCODED: ClassVar["SecurityMonitoringRuleDetectionMethod"]
     THIRD_PARTY: ClassVar["SecurityMonitoringRuleDetectionMethod"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 SecurityMonitoringRuleDetectionMethod.THRESHOLD = SecurityMonitoringRuleDetectionMethod("threshold")

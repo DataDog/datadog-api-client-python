@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class SecurityFilterFilteredDataType(ModelSimple):
+class SecurityFilterFilteredDataType(StringEnum):
     """
     The filtered data type.
 
@@ -24,12 +23,6 @@ class SecurityFilterFilteredDataType(ModelSimple):
         "logs",
     }
     LOGS: ClassVar["SecurityFilterFilteredDataType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 SecurityFilterFilteredDataType.LOGS = SecurityFilterFilteredDataType("logs")

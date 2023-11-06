@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class LogsLookupProcessorType(ModelSimple):
+class LogsLookupProcessorType(StringEnum):
     """
     Type of logs lookup processor.
 
@@ -24,12 +23,6 @@ class LogsLookupProcessorType(ModelSimple):
         "lookup-processor",
     }
     LOOKUP_PROCESSOR: ClassVar["LogsLookupProcessorType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 LogsLookupProcessorType.LOOKUP_PROCESSOR = LogsLookupProcessorType("lookup-processor")

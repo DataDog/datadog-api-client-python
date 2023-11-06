@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class WidgetCompareTo(ModelSimple):
+class WidgetCompareTo(StringEnum):
     """
     Timeframe used for the change comparison.
 
@@ -30,12 +29,6 @@ class WidgetCompareTo(ModelSimple):
     DAY_BEFORE: ClassVar["WidgetCompareTo"]
     WEEK_BEFORE: ClassVar["WidgetCompareTo"]
     MONTH_BEFORE: ClassVar["WidgetCompareTo"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 WidgetCompareTo.HOUR_BEFORE = WidgetCompareTo("hour_before")

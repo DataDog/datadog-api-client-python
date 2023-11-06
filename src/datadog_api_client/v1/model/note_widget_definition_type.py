@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class NoteWidgetDefinitionType(ModelSimple):
+class NoteWidgetDefinitionType(StringEnum):
     """
     Type of the note widget.
 
@@ -24,12 +23,6 @@ class NoteWidgetDefinitionType(ModelSimple):
         "note",
     }
     NOTE: ClassVar["NoteWidgetDefinitionType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 NoteWidgetDefinitionType.NOTE = NoteWidgetDefinitionType("note")

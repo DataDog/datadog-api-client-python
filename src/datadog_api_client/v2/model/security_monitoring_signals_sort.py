@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class SecurityMonitoringSignalsSort(ModelSimple):
+class SecurityMonitoringSignalsSort(StringEnum):
     """
     The sort parameters used for querying security signals.
 
@@ -26,12 +25,6 @@ class SecurityMonitoringSignalsSort(ModelSimple):
     }
     TIMESTAMP_ASCENDING: ClassVar["SecurityMonitoringSignalsSort"]
     TIMESTAMP_DESCENDING: ClassVar["SecurityMonitoringSignalsSort"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 SecurityMonitoringSignalsSort.TIMESTAMP_ASCENDING = SecurityMonitoringSignalsSort("timestamp")

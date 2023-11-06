@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class CIAppPipelineEventStageStatus(ModelSimple):
+class CIAppPipelineEventStageStatus(StringEnum):
     """
     The final status of the stage.
 
@@ -30,12 +29,6 @@ class CIAppPipelineEventStageStatus(ModelSimple):
     ERROR: ClassVar["CIAppPipelineEventStageStatus"]
     CANCELED: ClassVar["CIAppPipelineEventStageStatus"]
     SKIPPED: ClassVar["CIAppPipelineEventStageStatus"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 CIAppPipelineEventStageStatus.SUCCESS = CIAppPipelineEventStageStatus("success")

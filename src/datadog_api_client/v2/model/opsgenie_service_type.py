@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class OpsgenieServiceType(ModelSimple):
+class OpsgenieServiceType(StringEnum):
     """
     Opsgenie service resource type.
 
@@ -24,12 +23,6 @@ class OpsgenieServiceType(ModelSimple):
         "opsgenie-service",
     }
     OPSGENIE_SERVICE: ClassVar["OpsgenieServiceType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 OpsgenieServiceType.OPSGENIE_SERVICE = OpsgenieServiceType("opsgenie-service")

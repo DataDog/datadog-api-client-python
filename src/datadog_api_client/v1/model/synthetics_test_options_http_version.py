@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class SyntheticsTestOptionsHTTPVersion(ModelSimple):
+class SyntheticsTestOptionsHTTPVersion(StringEnum):
     """
     HTTP version to use for a Synthetic test.
 
@@ -28,12 +27,6 @@ class SyntheticsTestOptionsHTTPVersion(ModelSimple):
     HTTP1: ClassVar["SyntheticsTestOptionsHTTPVersion"]
     HTTP2: ClassVar["SyntheticsTestOptionsHTTPVersion"]
     ANY: ClassVar["SyntheticsTestOptionsHTTPVersion"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 SyntheticsTestOptionsHTTPVersion.HTTP1 = SyntheticsTestOptionsHTTPVersion("http1")

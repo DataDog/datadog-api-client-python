@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class ImageWidgetDefinitionType(ModelSimple):
+class ImageWidgetDefinitionType(StringEnum):
     """
     Type of the image widget.
 
@@ -24,12 +23,6 @@ class ImageWidgetDefinitionType(ModelSimple):
         "image",
     }
     IMAGE: ClassVar["ImageWidgetDefinitionType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 ImageWidgetDefinitionType.IMAGE = ImageWidgetDefinitionType("image")

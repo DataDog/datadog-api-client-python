@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class MetricDistinctVolumeType(ModelSimple):
+class MetricDistinctVolumeType(StringEnum):
     """
     The metric distinct volume type.
 
@@ -24,12 +23,6 @@ class MetricDistinctVolumeType(ModelSimple):
         "distinct_metric_volumes",
     }
     DISTINCT_METRIC_VOLUMES: ClassVar["MetricDistinctVolumeType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 MetricDistinctVolumeType.DISTINCT_METRIC_VOLUMES = MetricDistinctVolumeType("distinct_metric_volumes")

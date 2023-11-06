@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class SyntheticsWarningType(ModelSimple):
+class SyntheticsWarningType(StringEnum):
     """
     User locator used.
 
@@ -24,12 +23,6 @@ class SyntheticsWarningType(ModelSimple):
         "user_locator",
     }
     USER_LOCATOR: ClassVar["SyntheticsWarningType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 SyntheticsWarningType.USER_LOCATOR = SyntheticsWarningType("user_locator")

@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class WidgetComparator(ModelSimple):
+class WidgetComparator(StringEnum):
     """
     Comparator to apply.
 
@@ -32,12 +31,6 @@ class WidgetComparator(ModelSimple):
     GREATER_THAN_OR_EQUAL_TO: ClassVar["WidgetComparator"]
     LESS_THAN: ClassVar["WidgetComparator"]
     LESS_THAN_OR_EQUAL_TO: ClassVar["WidgetComparator"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 WidgetComparator.EQUAL_TO = WidgetComparator("=")

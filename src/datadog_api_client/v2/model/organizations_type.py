@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class OrganizationsType(ModelSimple):
+class OrganizationsType(StringEnum):
     """
     Organizations resource type.
 
@@ -24,12 +23,6 @@ class OrganizationsType(ModelSimple):
         "orgs",
     }
     ORGS: ClassVar["OrganizationsType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 OrganizationsType.ORGS = OrganizationsType("orgs")

@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class MetricIngestedIndexedVolumeType(ModelSimple):
+class MetricIngestedIndexedVolumeType(StringEnum):
     """
     The metric ingested and indexed volume type.
 
@@ -24,12 +23,6 @@ class MetricIngestedIndexedVolumeType(ModelSimple):
         "metric_volumes",
     }
     METRIC_VOLUMES: ClassVar["MetricIngestedIndexedVolumeType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 MetricIngestedIndexedVolumeType.METRIC_VOLUMES = MetricIngestedIndexedVolumeType("metric_volumes")

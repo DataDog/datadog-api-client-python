@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class ServiceDefinitionV2Dot1MSTeamsType(ModelSimple):
+class ServiceDefinitionV2Dot1MSTeamsType(StringEnum):
     """
     Contact type.
 
@@ -24,12 +23,6 @@ class ServiceDefinitionV2Dot1MSTeamsType(ModelSimple):
         "microsoft-teams",
     }
     MICROSOFT_TEAMS: ClassVar["ServiceDefinitionV2Dot1MSTeamsType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 ServiceDefinitionV2Dot1MSTeamsType.MICROSOFT_TEAMS = ServiceDefinitionV2Dot1MSTeamsType("microsoft-teams")

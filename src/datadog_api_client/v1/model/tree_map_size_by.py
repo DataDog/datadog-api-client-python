@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class TreeMapSizeBy(ModelSimple):
+class TreeMapSizeBy(StringEnum):
     """
     (deprecated) The attribute formerly used to determine size in the widget.
 
@@ -26,12 +25,6 @@ class TreeMapSizeBy(ModelSimple):
     }
     PCT_CPU: ClassVar["TreeMapSizeBy"]
     PCT_MEM: ClassVar["TreeMapSizeBy"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 TreeMapSizeBy.PCT_CPU = TreeMapSizeBy("pct_cpu")

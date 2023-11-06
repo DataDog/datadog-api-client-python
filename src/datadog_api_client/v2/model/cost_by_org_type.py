@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class CostByOrgType(ModelSimple):
+class CostByOrgType(StringEnum):
     """
     Type of cost data.
 
@@ -24,12 +23,6 @@ class CostByOrgType(ModelSimple):
         "cost_by_org",
     }
     COST_BY_ORG: ClassVar["CostByOrgType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 CostByOrgType.COST_BY_ORG = CostByOrgType("cost_by_org")

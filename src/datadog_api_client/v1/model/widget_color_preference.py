@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class WidgetColorPreference(ModelSimple):
+class WidgetColorPreference(StringEnum):
     """
     Which color to use on the widget.
 
@@ -26,12 +25,6 @@ class WidgetColorPreference(ModelSimple):
     }
     BACKGROUND: ClassVar["WidgetColorPreference"]
     TEXT: ClassVar["WidgetColorPreference"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 WidgetColorPreference.BACKGROUND = WidgetColorPreference("background")

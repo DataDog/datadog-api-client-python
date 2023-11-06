@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class ContentEncoding(ModelSimple):
+class ContentEncoding(StringEnum):
     """
     HTTP header used to compress the media-type.
 
@@ -28,12 +27,6 @@ class ContentEncoding(ModelSimple):
     IDENTITY: ClassVar["ContentEncoding"]
     GZIP: ClassVar["ContentEncoding"]
     DEFLATE: ClassVar["ContentEncoding"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 ContentEncoding.IDENTITY = ContentEncoding("identity")

@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class SplitGraphVizSize(ModelSimple):
+class SplitGraphVizSize(StringEnum):
     """
     Size of the individual graphs in the split.
 
@@ -30,12 +29,6 @@ class SplitGraphVizSize(ModelSimple):
     SM: ClassVar["SplitGraphVizSize"]
     MD: ClassVar["SplitGraphVizSize"]
     LG: ClassVar["SplitGraphVizSize"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 SplitGraphVizSize.XS = SplitGraphVizSize("xs")

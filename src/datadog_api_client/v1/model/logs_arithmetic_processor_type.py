@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class LogsArithmeticProcessorType(ModelSimple):
+class LogsArithmeticProcessorType(StringEnum):
     """
     Type of logs arithmetic processor.
 
@@ -24,12 +23,6 @@ class LogsArithmeticProcessorType(ModelSimple):
         "arithmetic-processor",
     }
     ARITHMETIC_PROCESSOR: ClassVar["LogsArithmeticProcessorType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 LogsArithmeticProcessorType.ARITHMETIC_PROCESSOR = LogsArithmeticProcessorType("arithmetic-processor")

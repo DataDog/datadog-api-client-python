@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class LogsArchiveState(ModelSimple):
+class LogsArchiveState(StringEnum):
     """
     The state of the archive.
 
@@ -30,12 +29,6 @@ class LogsArchiveState(ModelSimple):
     WORKING: ClassVar["LogsArchiveState"]
     FAILING: ClassVar["LogsArchiveState"]
     WORKING_AUTH_LEGACY: ClassVar["LogsArchiveState"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 LogsArchiveState.UNKNOWN = LogsArchiveState("UNKNOWN")

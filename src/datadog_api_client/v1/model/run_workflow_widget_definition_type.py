@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class RunWorkflowWidgetDefinitionType(ModelSimple):
+class RunWorkflowWidgetDefinitionType(StringEnum):
     """
     Type of the run workflow widget.
 
@@ -24,12 +23,6 @@ class RunWorkflowWidgetDefinitionType(ModelSimple):
         "run_workflow",
     }
     RUN_WORKFLOW: ClassVar["RunWorkflowWidgetDefinitionType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 RunWorkflowWidgetDefinitionType.RUN_WORKFLOW = RunWorkflowWidgetDefinitionType("run_workflow")

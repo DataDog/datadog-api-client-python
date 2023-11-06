@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class SLOState(ModelSimple):
+class SLOState(StringEnum):
     """
     State of the SLO.
 
@@ -30,12 +29,6 @@ class SLOState(ModelSimple):
     WARNING: ClassVar["SLOState"]
     OK: ClassVar["SLOState"]
     NO_DATA: ClassVar["SLOState"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 SLOState.BREACHED = SLOState("breached")

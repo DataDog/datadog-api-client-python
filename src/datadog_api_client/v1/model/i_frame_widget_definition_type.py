@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class IFrameWidgetDefinitionType(ModelSimple):
+class IFrameWidgetDefinitionType(StringEnum):
     """
     Type of the iframe widget.
 
@@ -24,12 +23,6 @@ class IFrameWidgetDefinitionType(ModelSimple):
         "iframe",
     }
     IFRAME: ClassVar["IFrameWidgetDefinitionType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 IFrameWidgetDefinitionType.IFRAME = IFrameWidgetDefinitionType("iframe")

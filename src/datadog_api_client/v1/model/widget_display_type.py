@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class WidgetDisplayType(ModelSimple):
+class WidgetDisplayType(StringEnum):
     """
     Type of display to use for the request.
 
@@ -30,12 +29,6 @@ class WidgetDisplayType(ModelSimple):
     BARS: ClassVar["WidgetDisplayType"]
     LINE: ClassVar["WidgetDisplayType"]
     OVERLAY: ClassVar["WidgetDisplayType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 WidgetDisplayType.AREA = WidgetDisplayType("area")

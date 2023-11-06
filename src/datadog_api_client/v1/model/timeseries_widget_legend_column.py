@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class TimeseriesWidgetLegendColumn(ModelSimple):
+class TimeseriesWidgetLegendColumn(StringEnum):
     """
     Legend column.
 
@@ -32,12 +31,6 @@ class TimeseriesWidgetLegendColumn(ModelSimple):
     SUM: ClassVar["TimeseriesWidgetLegendColumn"]
     MIN: ClassVar["TimeseriesWidgetLegendColumn"]
     MAX: ClassVar["TimeseriesWidgetLegendColumn"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 TimeseriesWidgetLegendColumn.VALUE = TimeseriesWidgetLegendColumn("value")

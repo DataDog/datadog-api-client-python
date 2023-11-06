@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class IncidentTodoType(ModelSimple):
+class IncidentTodoType(StringEnum):
     """
     Todo resource type.
 
@@ -24,12 +23,6 @@ class IncidentTodoType(ModelSimple):
         "incident_todos",
     }
     INCIDENT_TODOS: ClassVar["IncidentTodoType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 IncidentTodoType.INCIDENT_TODOS = IncidentTodoType("incident_todos")

@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class MetricBulkConfigureTagsType(ModelSimple):
+class MetricBulkConfigureTagsType(StringEnum):
     """
     The metric bulk configure tags resource.
 
@@ -24,12 +23,6 @@ class MetricBulkConfigureTagsType(ModelSimple):
         "metric_bulk_configure_tags",
     }
     BULK_MANAGE_TAGS: ClassVar["MetricBulkConfigureTagsType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 MetricBulkConfigureTagsType.BULK_MANAGE_TAGS = MetricBulkConfigureTagsType("metric_bulk_configure_tags")

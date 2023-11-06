@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class SensitiveDataScannerGroupType(ModelSimple):
+class SensitiveDataScannerGroupType(StringEnum):
     """
     Sensitive Data Scanner group type.
 
@@ -24,12 +23,6 @@ class SensitiveDataScannerGroupType(ModelSimple):
         "sensitive_data_scanner_group",
     }
     SENSITIVE_DATA_SCANNER_GROUP: ClassVar["SensitiveDataScannerGroupType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 SensitiveDataScannerGroupType.SENSITIVE_DATA_SCANNER_GROUP = SensitiveDataScannerGroupType(

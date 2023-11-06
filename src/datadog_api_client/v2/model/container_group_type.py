@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class ContainerGroupType(ModelSimple):
+class ContainerGroupType(StringEnum):
     """
     Type of container group.
 
@@ -24,12 +23,6 @@ class ContainerGroupType(ModelSimple):
         "container_group",
     }
     CONTAINER_GROUP: ClassVar["ContainerGroupType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 ContainerGroupType.CONTAINER_GROUP = ContainerGroupType("container_group")

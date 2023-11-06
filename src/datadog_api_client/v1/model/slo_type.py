@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class SLOType(ModelSimple):
+class SLOType(StringEnum):
     """
     The type of the service level objective.
 
@@ -26,12 +25,6 @@ class SLOType(ModelSimple):
     }
     METRIC: ClassVar["SLOType"]
     MONITOR: ClassVar["SLOType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 SLOType.METRIC = SLOType("metric")

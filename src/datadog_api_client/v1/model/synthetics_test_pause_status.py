@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class SyntheticsTestPauseStatus(ModelSimple):
+class SyntheticsTestPauseStatus(StringEnum):
     """
     Define whether you want to start (`live`) or pause (`paused`) a
         Synthetic test.
@@ -27,12 +26,6 @@ class SyntheticsTestPauseStatus(ModelSimple):
     }
     LIVE: ClassVar["SyntheticsTestPauseStatus"]
     PAUSED: ClassVar["SyntheticsTestPauseStatus"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 SyntheticsTestPauseStatus.LIVE = SyntheticsTestPauseStatus("live")

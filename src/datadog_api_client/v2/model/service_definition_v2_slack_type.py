@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class ServiceDefinitionV2SlackType(ModelSimple):
+class ServiceDefinitionV2SlackType(StringEnum):
     """
     Contact type.
 
@@ -24,12 +23,6 @@ class ServiceDefinitionV2SlackType(ModelSimple):
         "slack",
     }
     SLACK: ClassVar["ServiceDefinitionV2SlackType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 ServiceDefinitionV2SlackType.SLACK = ServiceDefinitionV2SlackType("slack")

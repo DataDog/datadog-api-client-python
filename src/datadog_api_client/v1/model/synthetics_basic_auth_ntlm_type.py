@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class SyntheticsBasicAuthNTLMType(ModelSimple):
+class SyntheticsBasicAuthNTLMType(StringEnum):
     """
     The type of authentication to use when performing the test.
 
@@ -24,12 +23,6 @@ class SyntheticsBasicAuthNTLMType(ModelSimple):
         "ntlm",
     }
     NTLM: ClassVar["SyntheticsBasicAuthNTLMType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 SyntheticsBasicAuthNTLMType.NTLM = SyntheticsBasicAuthNTLMType("ntlm")

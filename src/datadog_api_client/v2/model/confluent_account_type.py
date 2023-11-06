@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class ConfluentAccountType(ModelSimple):
+class ConfluentAccountType(StringEnum):
     """
     The JSON:API type for this API. Should always be `confluent-cloud-accounts`.
 
@@ -24,12 +23,6 @@ class ConfluentAccountType(ModelSimple):
         "confluent-cloud-accounts",
     }
     CONFLUENT_CLOUD_ACCOUNTS: ClassVar["ConfluentAccountType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 ConfluentAccountType.CONFLUENT_CLOUD_ACCOUNTS = ConfluentAccountType("confluent-cloud-accounts")

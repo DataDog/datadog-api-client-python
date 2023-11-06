@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class SyntheticsBrowserErrorType(ModelSimple):
+class SyntheticsBrowserErrorType(StringEnum):
     """
     Error type returned by a browser test.
 
@@ -26,12 +25,6 @@ class SyntheticsBrowserErrorType(ModelSimple):
     }
     NETWORK: ClassVar["SyntheticsBrowserErrorType"]
     JS: ClassVar["SyntheticsBrowserErrorType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 SyntheticsBrowserErrorType.NETWORK = SyntheticsBrowserErrorType("network")

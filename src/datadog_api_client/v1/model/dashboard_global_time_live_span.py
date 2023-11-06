@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class DashboardGlobalTimeLiveSpan(ModelSimple):
+class DashboardGlobalTimeLiveSpan(StringEnum):
     """
     Dashboard global time live_span selection
 
@@ -38,12 +37,6 @@ class DashboardGlobalTimeLiveSpan(ModelSimple):
     PAST_ONE_WEEK: ClassVar["DashboardGlobalTimeLiveSpan"]
     PAST_ONE_MONTH: ClassVar["DashboardGlobalTimeLiveSpan"]
     PAST_THREE_MONTHS: ClassVar["DashboardGlobalTimeLiveSpan"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 DashboardGlobalTimeLiveSpan.PAST_FIFTEEN_MINUTES = DashboardGlobalTimeLiveSpan("15m")

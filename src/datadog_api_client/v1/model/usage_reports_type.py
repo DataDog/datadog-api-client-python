@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class UsageReportsType(ModelSimple):
+class UsageReportsType(StringEnum):
     """
     The type of reports.
 
@@ -24,12 +23,6 @@ class UsageReportsType(ModelSimple):
         "reports",
     }
     REPORTS: ClassVar["UsageReportsType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 UsageReportsType.REPORTS = UsageReportsType("reports")

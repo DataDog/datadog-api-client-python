@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class WidgetMonitorSummarySort(ModelSimple):
+class WidgetMonitorSummarySort(StringEnum):
     """
     Widget sorting methods.
 
@@ -56,12 +55,6 @@ class WidgetMonitorSummarySort(ModelSimple):
     TRIGGERED_DESCENDING: ClassVar["WidgetMonitorSummarySort"]
     PRIORITY_ASCENDING: ClassVar["WidgetMonitorSummarySort"]
     PRIORITY_DESCENDING: ClassVar["WidgetMonitorSummarySort"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 WidgetMonitorSummarySort.NAME = WidgetMonitorSummarySort("name")

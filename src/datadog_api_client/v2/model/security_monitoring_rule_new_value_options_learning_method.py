@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class SecurityMonitoringRuleNewValueOptionsLearningMethod(ModelSimple):
+class SecurityMonitoringRuleNewValueOptionsLearningMethod(StringEnum):
     """
     The learning method used to determine when signals should be generated for values that weren't learned.
 
@@ -26,12 +25,6 @@ class SecurityMonitoringRuleNewValueOptionsLearningMethod(ModelSimple):
     }
     DURATION: ClassVar["SecurityMonitoringRuleNewValueOptionsLearningMethod"]
     THRESHOLD: ClassVar["SecurityMonitoringRuleNewValueOptionsLearningMethod"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 SecurityMonitoringRuleNewValueOptionsLearningMethod.DURATION = SecurityMonitoringRuleNewValueOptionsLearningMethod(

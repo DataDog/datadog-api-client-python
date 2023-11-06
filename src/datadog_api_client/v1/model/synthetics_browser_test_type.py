@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class SyntheticsBrowserTestType(ModelSimple):
+class SyntheticsBrowserTestType(StringEnum):
     """
     Type of the Synthetic test, `browser`.
 
@@ -24,12 +23,6 @@ class SyntheticsBrowserTestType(ModelSimple):
         "browser",
     }
     BROWSER: ClassVar["SyntheticsBrowserTestType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 SyntheticsBrowserTestType.BROWSER = SyntheticsBrowserTestType("browser")

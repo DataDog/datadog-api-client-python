@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class SplitGraphWidgetDefinitionType(ModelSimple):
+class SplitGraphWidgetDefinitionType(StringEnum):
     """
     Type of the split graph widget
 
@@ -24,12 +23,6 @@ class SplitGraphWidgetDefinitionType(ModelSimple):
         "split_group",
     }
     SPLIT_GROUP: ClassVar["SplitGraphWidgetDefinitionType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 SplitGraphWidgetDefinitionType.SPLIT_GROUP = SplitGraphWidgetDefinitionType("split_group")

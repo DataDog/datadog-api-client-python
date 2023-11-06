@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class TargetFormatType(ModelSimple):
+class TargetFormatType(StringEnum):
     """
     If the `target_type` of the remapper is `attribute`, try to cast the value to a new specific type.
         If the cast is not possible, the original type is kept. `string`, `integer`, or `double` are the possible types.
@@ -32,12 +31,6 @@ class TargetFormatType(ModelSimple):
     STRING: ClassVar["TargetFormatType"]
     INTEGER: ClassVar["TargetFormatType"]
     DOUBLE: ClassVar["TargetFormatType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 TargetFormatType.AUTO = TargetFormatType("auto")

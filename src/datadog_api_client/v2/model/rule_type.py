@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class RuleType(ModelSimple):
+class RuleType(StringEnum):
     """
     The JSON:API type for scorecard rules.
 
@@ -24,12 +23,6 @@ class RuleType(ModelSimple):
         "rule",
     }
     RULE: ClassVar["RuleType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 RuleType.RULE = RuleType("rule")

@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class WidgetVerticalAlign(ModelSimple):
+class WidgetVerticalAlign(StringEnum):
     """
     Vertical alignment.
 
@@ -28,12 +27,6 @@ class WidgetVerticalAlign(ModelSimple):
     CENTER: ClassVar["WidgetVerticalAlign"]
     TOP: ClassVar["WidgetVerticalAlign"]
     BOTTOM: ClassVar["WidgetVerticalAlign"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 WidgetVerticalAlign.CENTER = WidgetVerticalAlign("center")

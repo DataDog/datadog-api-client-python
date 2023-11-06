@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class CIAppCIErrorDomain(ModelSimple):
+class CIAppCIErrorDomain(StringEnum):
     """
     Error category used to differentiate between issues related to the developer or provider environments.
 
@@ -28,12 +27,6 @@ class CIAppCIErrorDomain(ModelSimple):
     PROVIDER: ClassVar["CIAppCIErrorDomain"]
     USER: ClassVar["CIAppCIErrorDomain"]
     UNKNOWN: ClassVar["CIAppCIErrorDomain"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 CIAppCIErrorDomain.PROVIDER = CIAppCIErrorDomain("provider")

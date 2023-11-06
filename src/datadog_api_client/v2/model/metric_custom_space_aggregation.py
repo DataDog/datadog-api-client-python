@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class MetricCustomSpaceAggregation(ModelSimple):
+class MetricCustomSpaceAggregation(StringEnum):
     """
     A space aggregation for use in query.
 
@@ -30,12 +29,6 @@ class MetricCustomSpaceAggregation(ModelSimple):
     MAX: ClassVar["MetricCustomSpaceAggregation"]
     MIN: ClassVar["MetricCustomSpaceAggregation"]
     SUM: ClassVar["MetricCustomSpaceAggregation"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 MetricCustomSpaceAggregation.AVG = MetricCustomSpaceAggregation("avg")

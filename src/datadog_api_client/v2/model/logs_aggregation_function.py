@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class LogsAggregationFunction(ModelSimple):
+class LogsAggregationFunction(StringEnum):
     """
     An aggregation function
 
@@ -46,12 +45,6 @@ class LogsAggregationFunction(ModelSimple):
     MAX: ClassVar["LogsAggregationFunction"]
     AVG: ClassVar["LogsAggregationFunction"]
     MEDIAN: ClassVar["LogsAggregationFunction"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 LogsAggregationFunction.COUNT = LogsAggregationFunction("count")

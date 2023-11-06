@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class LogsMetricComputeAggregationType(ModelSimple):
+class LogsMetricComputeAggregationType(StringEnum):
     """
     The type of aggregation to use.
 
@@ -26,12 +25,6 @@ class LogsMetricComputeAggregationType(ModelSimple):
     }
     COUNT: ClassVar["LogsMetricComputeAggregationType"]
     DISTRIBUTION: ClassVar["LogsMetricComputeAggregationType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 LogsMetricComputeAggregationType.COUNT = LogsMetricComputeAggregationType("count")

@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class MonitorFormulaAndFunctionEventsDataSource(ModelSimple):
+class MonitorFormulaAndFunctionEventsDataSource(StringEnum):
     """
     Data source for event platform-based queries.
 
@@ -36,12 +35,6 @@ class MonitorFormulaAndFunctionEventsDataSource(ModelSimple):
     EVENTS: ClassVar["MonitorFormulaAndFunctionEventsDataSource"]
     LOGS: ClassVar["MonitorFormulaAndFunctionEventsDataSource"]
     SPANS: ClassVar["MonitorFormulaAndFunctionEventsDataSource"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 MonitorFormulaAndFunctionEventsDataSource.RUM = MonitorFormulaAndFunctionEventsDataSource("rum")

@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class FindingMuteReason(ModelSimple):
+class FindingMuteReason(StringEnum):
     """
     The reason why this finding is muted or unmuted.
 
@@ -36,12 +35,6 @@ class FindingMuteReason(ModelSimple):
     HUMAN_ERROR: ClassVar["FindingMuteReason"]
     NO_LONGER_ACCEPTED_RISK: ClassVar["FindingMuteReason"]
     OTHER: ClassVar["FindingMuteReason"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 FindingMuteReason.PENDING_FIX = FindingMuteReason("PENDING_FIX")

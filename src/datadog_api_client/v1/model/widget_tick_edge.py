@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class WidgetTickEdge(ModelSimple):
+class WidgetTickEdge(StringEnum):
     """
     Define how you want to align the text on the widget.
 
@@ -30,12 +29,6 @@ class WidgetTickEdge(ModelSimple):
     LEFT: ClassVar["WidgetTickEdge"]
     RIGHT: ClassVar["WidgetTickEdge"]
     TOP: ClassVar["WidgetTickEdge"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 WidgetTickEdge.BOTTOM = WidgetTickEdge("bottom")

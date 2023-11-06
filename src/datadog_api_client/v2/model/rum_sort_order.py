@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class RUMSortOrder(ModelSimple):
+class RUMSortOrder(StringEnum):
     """
     The order to use, ascending or descending.
 
@@ -26,12 +25,6 @@ class RUMSortOrder(ModelSimple):
     }
     ASCENDING: ClassVar["RUMSortOrder"]
     DESCENDING: ClassVar["RUMSortOrder"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 RUMSortOrder.ASCENDING = RUMSortOrder("asc")

@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class FormulaAndFunctionSLOMeasure(ModelSimple):
+class FormulaAndFunctionSLOMeasure(StringEnum):
     """
     SLO measures queries.
 
@@ -34,12 +33,6 @@ class FormulaAndFunctionSLOMeasure(ModelSimple):
     ERROR_BUDGET_REMAINING: ClassVar["FormulaAndFunctionSLOMeasure"]
     BURN_RATE: ClassVar["FormulaAndFunctionSLOMeasure"]
     ERROR_BUDGET_BURNDOWN: ClassVar["FormulaAndFunctionSLOMeasure"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 FormulaAndFunctionSLOMeasure.GOOD_EVENTS = FormulaAndFunctionSLOMeasure("good_events")

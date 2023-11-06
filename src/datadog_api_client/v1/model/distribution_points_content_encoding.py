@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class DistributionPointsContentEncoding(ModelSimple):
+class DistributionPointsContentEncoding(StringEnum):
     """
     HTTP header used to compress the media-type.
 
@@ -24,12 +23,6 @@ class DistributionPointsContentEncoding(ModelSimple):
         "deflate",
     }
     DEFLATE: ClassVar["DistributionPointsContentEncoding"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 DistributionPointsContentEncoding.DEFLATE = DistributionPointsContentEncoding("deflate")

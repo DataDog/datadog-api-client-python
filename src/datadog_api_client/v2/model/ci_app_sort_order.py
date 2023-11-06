@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class CIAppSortOrder(ModelSimple):
+class CIAppSortOrder(StringEnum):
     """
     The order to use, ascending or descending.
 
@@ -26,12 +25,6 @@ class CIAppSortOrder(ModelSimple):
     }
     ASCENDING: ClassVar["CIAppSortOrder"]
     DESCENDING: ClassVar["CIAppSortOrder"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 CIAppSortOrder.ASCENDING = CIAppSortOrder("asc")

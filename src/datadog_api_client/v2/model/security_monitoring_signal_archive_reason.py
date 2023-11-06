@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class SecurityMonitoringSignalArchiveReason(ModelSimple):
+class SecurityMonitoringSignalArchiveReason(StringEnum):
     """
     Reason a signal is archived.
 
@@ -32,12 +31,6 @@ class SecurityMonitoringSignalArchiveReason(ModelSimple):
     TESTING_OR_MAINTENANCE: ClassVar["SecurityMonitoringSignalArchiveReason"]
     INVESTIGATED_CASE_OPENED: ClassVar["SecurityMonitoringSignalArchiveReason"]
     OTHER: ClassVar["SecurityMonitoringSignalArchiveReason"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 SecurityMonitoringSignalArchiveReason.NONE = SecurityMonitoringSignalArchiveReason("none")

@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class FormulaAndFunctionCloudCostDataSource(ModelSimple):
+class FormulaAndFunctionCloudCostDataSource(StringEnum):
     """
     Data source for Cloud Cost queries.
 
@@ -24,12 +23,6 @@ class FormulaAndFunctionCloudCostDataSource(ModelSimple):
         "cloud_cost",
     }
     CLOUD_COST: ClassVar["FormulaAndFunctionCloudCostDataSource"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 FormulaAndFunctionCloudCostDataSource.CLOUD_COST = FormulaAndFunctionCloudCostDataSource("cloud_cost")

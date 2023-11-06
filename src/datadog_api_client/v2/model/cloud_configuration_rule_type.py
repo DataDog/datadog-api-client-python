@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class CloudConfigurationRuleType(ModelSimple):
+class CloudConfigurationRuleType(StringEnum):
     """
     The rule type.
 
@@ -24,12 +23,6 @@ class CloudConfigurationRuleType(ModelSimple):
         "cloud_configuration",
     }
     CLOUD_CONFIGURATION: ClassVar["CloudConfigurationRuleType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 CloudConfigurationRuleType.CLOUD_CONFIGURATION = CloudConfigurationRuleType("cloud_configuration")

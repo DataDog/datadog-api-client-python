@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class IPAllowlistType(ModelSimple):
+class IPAllowlistType(StringEnum):
     """
     IP allowlist type.
 
@@ -24,12 +23,6 @@ class IPAllowlistType(ModelSimple):
         "ip_allowlist",
     }
     IP_ALLOWLIST: ClassVar["IPAllowlistType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 IPAllowlistType.IP_ALLOWLIST = IPAllowlistType("ip_allowlist")

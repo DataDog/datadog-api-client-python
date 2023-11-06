@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class TopologyRequestType(ModelSimple):
+class TopologyRequestType(StringEnum):
     """
     Widget request type.
 
@@ -24,12 +23,6 @@ class TopologyRequestType(ModelSimple):
         "topology",
     }
     TOPOLOGY: ClassVar["TopologyRequestType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 TopologyRequestType.TOPOLOGY = TopologyRequestType("topology")

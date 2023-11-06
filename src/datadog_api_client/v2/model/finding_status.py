@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class FindingStatus(ModelSimple):
+class FindingStatus(StringEnum):
     """
     The status of the finding.
 
@@ -32,12 +31,6 @@ class FindingStatus(ModelSimple):
     MEDIUM: ClassVar["FindingStatus"]
     LOW: ClassVar["FindingStatus"]
     INFO: ClassVar["FindingStatus"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 FindingStatus.CRITICAL = FindingStatus("critical")

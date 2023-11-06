@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class NotebookStatus(ModelSimple):
+class NotebookStatus(StringEnum):
     """
     Publication status of the notebook. For now, always "published".
 
@@ -24,12 +23,6 @@ class NotebookStatus(ModelSimple):
         "published",
     }
     PUBLISHED: ClassVar["NotebookStatus"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 NotebookStatus.PUBLISHED = NotebookStatus("published")

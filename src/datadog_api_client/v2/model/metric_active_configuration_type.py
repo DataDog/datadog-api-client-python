@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class MetricActiveConfigurationType(ModelSimple):
+class MetricActiveConfigurationType(StringEnum):
     """
     The metric actively queried configuration resource type.
 
@@ -24,12 +23,6 @@ class MetricActiveConfigurationType(ModelSimple):
         "actively_queried_configurations",
     }
     ACTIVELY_QUERIED_CONFIGURATIONS: ClassVar["MetricActiveConfigurationType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 MetricActiveConfigurationType.ACTIVELY_QUERIED_CONFIGURATIONS = MetricActiveConfigurationType(

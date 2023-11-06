@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class AWSEventBridgeCreateStatus(ModelSimple):
+class AWSEventBridgeCreateStatus(StringEnum):
     """
     The event source status "created".
 
@@ -24,12 +23,6 @@ class AWSEventBridgeCreateStatus(ModelSimple):
         "created",
     }
     CREATED: ClassVar["AWSEventBridgeCreateStatus"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 AWSEventBridgeCreateStatus.CREATED = AWSEventBridgeCreateStatus("created")

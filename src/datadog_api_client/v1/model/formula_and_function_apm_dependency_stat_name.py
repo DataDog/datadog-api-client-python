@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class FormulaAndFunctionApmDependencyStatName(ModelSimple):
+class FormulaAndFunctionApmDependencyStatName(StringEnum):
     """
     APM statistic.
 
@@ -36,12 +35,6 @@ class FormulaAndFunctionApmDependencyStatName(ModelSimple):
     PCT_EXEC_TIME: ClassVar["FormulaAndFunctionApmDependencyStatName"]
     PCT_OF_TRACES: ClassVar["FormulaAndFunctionApmDependencyStatName"]
     TOTAL_TRACES_COUNT: ClassVar["FormulaAndFunctionApmDependencyStatName"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 FormulaAndFunctionApmDependencyStatName.AVG_DURATION = FormulaAndFunctionApmDependencyStatName("avg_duration")

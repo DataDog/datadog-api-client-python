@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class SensitiveDataScannerProduct(ModelSimple):
+class SensitiveDataScannerProduct(StringEnum):
     """
     Datadog product onto which Sensitive Data Scanner can be activated.
 
@@ -30,12 +29,6 @@ class SensitiveDataScannerProduct(ModelSimple):
     RUM: ClassVar["SensitiveDataScannerProduct"]
     EVENTS: ClassVar["SensitiveDataScannerProduct"]
     APM: ClassVar["SensitiveDataScannerProduct"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 SensitiveDataScannerProduct.LOGS = SensitiveDataScannerProduct("logs")

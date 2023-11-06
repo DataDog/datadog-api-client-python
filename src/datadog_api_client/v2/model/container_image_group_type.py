@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class ContainerImageGroupType(ModelSimple):
+class ContainerImageGroupType(StringEnum):
     """
     Type of Container Image Group.
 
@@ -24,12 +23,6 @@ class ContainerImageGroupType(ModelSimple):
         "container_image_group",
     }
     CONTAINER_IMAGE_GROUP: ClassVar["ContainerImageGroupType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 ContainerImageGroupType.CONTAINER_IMAGE_GROUP = ContainerImageGroupType("container_image_group")

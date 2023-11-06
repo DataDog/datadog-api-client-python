@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class ListStreamColumnWidth(ModelSimple):
+class ListStreamColumnWidth(StringEnum):
     """
     Widget column width.
 
@@ -28,12 +27,6 @@ class ListStreamColumnWidth(ModelSimple):
     AUTO: ClassVar["ListStreamColumnWidth"]
     COMPACT: ClassVar["ListStreamColumnWidth"]
     FULL: ClassVar["ListStreamColumnWidth"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 ListStreamColumnWidth.AUTO = ListStreamColumnWidth("auto")

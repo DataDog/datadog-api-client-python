@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class IncidentTodoAnonymousAssigneeSource(ModelSimple):
+class IncidentTodoAnonymousAssigneeSource(StringEnum):
     """
     The source of the anonymous assignee.
 
@@ -26,12 +25,6 @@ class IncidentTodoAnonymousAssigneeSource(ModelSimple):
     }
     SLACK: ClassVar["IncidentTodoAnonymousAssigneeSource"]
     MICROSOFT_TEAMS: ClassVar["IncidentTodoAnonymousAssigneeSource"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 IncidentTodoAnonymousAssigneeSource.SLACK = IncidentTodoAnonymousAssigneeSource("slack")

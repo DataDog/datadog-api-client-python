@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class FormulaAndFunctionApmResourceStatName(ModelSimple):
+class FormulaAndFunctionApmResourceStatName(StringEnum):
     """
     APM resource stat name.
 
@@ -44,12 +43,6 @@ class FormulaAndFunctionApmResourceStatName(ModelSimple):
     LATENCY_P90: ClassVar["FormulaAndFunctionApmResourceStatName"]
     LATENCY_P95: ClassVar["FormulaAndFunctionApmResourceStatName"]
     LATENCY_P99: ClassVar["FormulaAndFunctionApmResourceStatName"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 FormulaAndFunctionApmResourceStatName.ERRORS = FormulaAndFunctionApmResourceStatName("errors")

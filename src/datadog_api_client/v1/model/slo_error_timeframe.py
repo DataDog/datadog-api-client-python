@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class SLOErrorTimeframe(ModelSimple):
+class SLOErrorTimeframe(StringEnum):
     """
     The timeframe of the threshold associated with this error
         or "all" if all thresholds are affected.
@@ -31,12 +30,6 @@ class SLOErrorTimeframe(ModelSimple):
     THIRTY_DAYS: ClassVar["SLOErrorTimeframe"]
     NINETY_DAYS: ClassVar["SLOErrorTimeframe"]
     ALL: ClassVar["SLOErrorTimeframe"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 SLOErrorTimeframe.SEVEN_DAYS = SLOErrorTimeframe("7d")

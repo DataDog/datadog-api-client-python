@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class TableWidgetHasSearchBar(ModelSimple):
+class TableWidgetHasSearchBar(StringEnum):
     """
     Controls the display of the search bar.
 
@@ -28,12 +27,6 @@ class TableWidgetHasSearchBar(ModelSimple):
     ALWAYS: ClassVar["TableWidgetHasSearchBar"]
     NEVER: ClassVar["TableWidgetHasSearchBar"]
     AUTO: ClassVar["TableWidgetHasSearchBar"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 TableWidgetHasSearchBar.ALWAYS = TableWidgetHasSearchBar("always")

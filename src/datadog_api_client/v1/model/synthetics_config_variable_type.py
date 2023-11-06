@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class SyntheticsConfigVariableType(ModelSimple):
+class SyntheticsConfigVariableType(StringEnum):
     """
     Type of the configuration variable.
 
@@ -26,12 +25,6 @@ class SyntheticsConfigVariableType(ModelSimple):
     }
     GLOBAL: ClassVar["SyntheticsConfigVariableType"]
     TEXT: ClassVar["SyntheticsConfigVariableType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 SyntheticsConfigVariableType.GLOBAL = SyntheticsConfigVariableType("global")

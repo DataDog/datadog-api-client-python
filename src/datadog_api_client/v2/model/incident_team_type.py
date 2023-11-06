@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class IncidentTeamType(ModelSimple):
+class IncidentTeamType(StringEnum):
     """
     Incident Team resource type.
 
@@ -24,12 +23,6 @@ class IncidentTeamType(ModelSimple):
         "teams",
     }
     TEAMS: ClassVar["IncidentTeamType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 IncidentTeamType.TEAMS = IncidentTeamType("teams")

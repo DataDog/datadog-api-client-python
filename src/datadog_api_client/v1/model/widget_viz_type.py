@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class WidgetVizType(ModelSimple):
+class WidgetVizType(StringEnum):
     """
     Whether to display the Alert Graph as a timeseries or a top list.
 
@@ -26,12 +25,6 @@ class WidgetVizType(ModelSimple):
     }
     TIMESERIES: ClassVar["WidgetVizType"]
     TOPLIST: ClassVar["WidgetVizType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 WidgetVizType.TIMESERIES = WidgetVizType("timeseries")

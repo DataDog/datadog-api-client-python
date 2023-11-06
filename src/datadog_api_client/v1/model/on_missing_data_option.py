@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class OnMissingDataOption(ModelSimple):
+class OnMissingDataOption(StringEnum):
     """
     Controls how groups or monitors are treated if an evaluation does not return any data points.
         The default option results in different behavior depending on the monitor query type.
@@ -34,12 +33,6 @@ class OnMissingDataOption(ModelSimple):
     SHOW_NO_DATA: ClassVar["OnMissingDataOption"]
     SHOW_AND_NOTIFY_NO_DATA: ClassVar["OnMissingDataOption"]
     RESOLVE: ClassVar["OnMissingDataOption"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 OnMissingDataOption.DEFAULT = OnMissingDataOption("default")

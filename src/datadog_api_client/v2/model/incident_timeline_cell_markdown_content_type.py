@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class IncidentTimelineCellMarkdownContentType(ModelSimple):
+class IncidentTimelineCellMarkdownContentType(StringEnum):
     """
     Type of the Markdown timeline cell.
 
@@ -24,12 +23,6 @@ class IncidentTimelineCellMarkdownContentType(ModelSimple):
         "markdown",
     }
     MARKDOWN: ClassVar["IncidentTimelineCellMarkdownContentType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 IncidentTimelineCellMarkdownContentType.MARKDOWN = IncidentTimelineCellMarkdownContentType("markdown")

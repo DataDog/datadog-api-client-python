@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class PowerpackWidgetDefinitionType(ModelSimple):
+class PowerpackWidgetDefinitionType(StringEnum):
     """
     Type of the powerpack widget.
 
@@ -24,12 +23,6 @@ class PowerpackWidgetDefinitionType(ModelSimple):
         "powerpack",
     }
     POWERPACK: ClassVar["PowerpackWidgetDefinitionType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 PowerpackWidgetDefinitionType.POWERPACK = PowerpackWidgetDefinitionType("powerpack")

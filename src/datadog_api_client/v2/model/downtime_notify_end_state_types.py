@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class DowntimeNotifyEndStateTypes(ModelSimple):
+class DowntimeNotifyEndStateTypes(StringEnum):
     """
     State that will trigger a monitor notification when the `notify_end_types` action occurs.
 
@@ -28,12 +27,6 @@ class DowntimeNotifyEndStateTypes(ModelSimple):
     ALERT: ClassVar["DowntimeNotifyEndStateTypes"]
     NO_DATA: ClassVar["DowntimeNotifyEndStateTypes"]
     WARN: ClassVar["DowntimeNotifyEndStateTypes"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 DowntimeNotifyEndStateTypes.ALERT = DowntimeNotifyEndStateTypes("alert")

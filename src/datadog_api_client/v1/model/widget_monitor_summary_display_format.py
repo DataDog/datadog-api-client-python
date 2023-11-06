@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class WidgetMonitorSummaryDisplayFormat(ModelSimple):
+class WidgetMonitorSummaryDisplayFormat(StringEnum):
     """
     What to display on the widget.
 
@@ -28,12 +27,6 @@ class WidgetMonitorSummaryDisplayFormat(ModelSimple):
     COUNTS: ClassVar["WidgetMonitorSummaryDisplayFormat"]
     COUNTS_AND_LIST: ClassVar["WidgetMonitorSummaryDisplayFormat"]
     LIST: ClassVar["WidgetMonitorSummaryDisplayFormat"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 WidgetMonitorSummaryDisplayFormat.COUNTS = WidgetMonitorSummaryDisplayFormat("counts")

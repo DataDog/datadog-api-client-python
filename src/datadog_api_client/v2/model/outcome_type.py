@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class OutcomeType(ModelSimple):
+class OutcomeType(StringEnum):
     """
     The JSON:API type for an outcome.
 
@@ -24,12 +23,6 @@ class OutcomeType(ModelSimple):
         "outcome",
     }
     OUTCOME: ClassVar["OutcomeType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 OutcomeType.OUTCOME = OutcomeType("outcome")

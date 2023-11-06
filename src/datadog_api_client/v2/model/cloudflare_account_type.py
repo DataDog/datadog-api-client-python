@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class CloudflareAccountType(ModelSimple):
+class CloudflareAccountType(StringEnum):
     """
     The JSON:API type for this API. Should always be `cloudflare-accounts`.
 
@@ -24,12 +23,6 @@ class CloudflareAccountType(ModelSimple):
         "cloudflare-accounts",
     }
     CLOUDFLARE_ACCOUNTS: ClassVar["CloudflareAccountType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 CloudflareAccountType.CLOUDFLARE_ACCOUNTS = CloudflareAccountType("cloudflare-accounts")

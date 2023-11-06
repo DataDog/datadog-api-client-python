@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class TopologyMapWidgetDefinitionType(ModelSimple):
+class TopologyMapWidgetDefinitionType(StringEnum):
     """
     Type of the topology map widget.
 
@@ -24,12 +23,6 @@ class TopologyMapWidgetDefinitionType(ModelSimple):
         "topology_map",
     }
     TOPOLOGY_MAP: ClassVar["TopologyMapWidgetDefinitionType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 TopologyMapWidgetDefinitionType.TOPOLOGY_MAP = TopologyMapWidgetDefinitionType("topology_map")

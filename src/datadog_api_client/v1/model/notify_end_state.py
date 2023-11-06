@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class NotifyEndState(ModelSimple):
+class NotifyEndState(StringEnum):
     """
     A notification end state.
 
@@ -28,12 +27,6 @@ class NotifyEndState(ModelSimple):
     ALERT: ClassVar["NotifyEndState"]
     NO_DATA: ClassVar["NotifyEndState"]
     WARN: ClassVar["NotifyEndState"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 NotifyEndState.ALERT = NotifyEndState("alert")

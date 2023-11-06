@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class TopologyQueryDataSource(ModelSimple):
+class TopologyQueryDataSource(StringEnum):
     """
     Name of the data source
 
@@ -26,12 +25,6 @@ class TopologyQueryDataSource(ModelSimple):
     }
     DATA_STREAMS: ClassVar["TopologyQueryDataSource"]
     SERVICE_MAP: ClassVar["TopologyQueryDataSource"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 TopologyQueryDataSource.DATA_STREAMS = TopologyQueryDataSource("data_streams")

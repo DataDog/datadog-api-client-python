@@ -1648,6 +1648,15 @@ class UnparsedObject(ModelNormal):
             self.__dict__["_data_store"][var_name] = var_value
 
 
+class StringEnum(ModelSimple):
+
+    @cached_property
+    def openapi_types(_):
+        return {
+            "value": (str,),
+        }
+
+
 def get_attribute_from_path(obj, path, default=None):
     """Return an attribute at `path` from the passed object."""
     if not path:

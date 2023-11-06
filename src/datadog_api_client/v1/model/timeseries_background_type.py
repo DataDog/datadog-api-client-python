@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class TimeseriesBackgroundType(ModelSimple):
+class TimeseriesBackgroundType(StringEnum):
     """
     Timeseries is made using an area or bars.
 
@@ -26,12 +25,6 @@ class TimeseriesBackgroundType(ModelSimple):
     }
     BARS: ClassVar["TimeseriesBackgroundType"]
     AREA: ClassVar["TimeseriesBackgroundType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 TimeseriesBackgroundType.BARS = TimeseriesBackgroundType("bars")

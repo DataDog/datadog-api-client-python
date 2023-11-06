@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class FormulaAndFunctionEventsDataSource(ModelSimple):
+class FormulaAndFunctionEventsDataSource(StringEnum):
     """
     Data source for event platform-based queries.
 
@@ -42,12 +41,6 @@ class FormulaAndFunctionEventsDataSource(ModelSimple):
     EVENTS: ClassVar["FormulaAndFunctionEventsDataSource"]
     CI_TESTS: ClassVar["FormulaAndFunctionEventsDataSource"]
     CI_PIPELINES: ClassVar["FormulaAndFunctionEventsDataSource"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 FormulaAndFunctionEventsDataSource.LOGS = FormulaAndFunctionEventsDataSource("logs")

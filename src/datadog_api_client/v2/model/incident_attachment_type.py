@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class IncidentAttachmentType(ModelSimple):
+class IncidentAttachmentType(StringEnum):
     """
     The incident attachment resource type.
 
@@ -24,12 +23,6 @@ class IncidentAttachmentType(ModelSimple):
         "incident_attachments",
     }
     INCIDENT_ATTACHMENTS: ClassVar["IncidentAttachmentType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 IncidentAttachmentType.INCIDENT_ATTACHMENTS = IncidentAttachmentType("incident_attachments")

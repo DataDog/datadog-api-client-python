@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class ConfluentResourceType(ModelSimple):
+class ConfluentResourceType(StringEnum):
     """
     The JSON:API type for this request.
 
@@ -24,12 +23,6 @@ class ConfluentResourceType(ModelSimple):
         "confluent-cloud-resources",
     }
     CONFLUENT_CLOUD_RESOURCES: ClassVar["ConfluentResourceType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 ConfluentResourceType.CONFLUENT_CLOUD_RESOURCES = ConfluentResourceType("confluent-cloud-resources")

@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class ListStreamSource(ModelSimple):
+class ListStreamSource(StringEnum):
     """
     Source from which to query items to display in the stream.
 
@@ -44,12 +43,6 @@ class ListStreamSource(ModelSimple):
     LOGS_PATTERN_STREAM: ClassVar["ListStreamSource"]
     LOGS_TRANSACTION_STREAM: ClassVar["ListStreamSource"]
     EVENT_STREAM: ClassVar["ListStreamSource"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 ListStreamSource.LOGS_STREAM = ListStreamSource("logs_stream")

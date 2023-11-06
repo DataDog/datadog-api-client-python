@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class ServiceSummaryWidgetDefinitionType(ModelSimple):
+class ServiceSummaryWidgetDefinitionType(StringEnum):
     """
     Type of the service summary widget.
 
@@ -24,12 +23,6 @@ class ServiceSummaryWidgetDefinitionType(ModelSimple):
         "trace_service",
     }
     TRACE_SERVICE: ClassVar["ServiceSummaryWidgetDefinitionType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 ServiceSummaryWidgetDefinitionType.TRACE_SERVICE = ServiceSummaryWidgetDefinitionType("trace_service")

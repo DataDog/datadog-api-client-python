@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class ServiceDefinitionV2Dot1OpsgenieRegion(ModelSimple):
+class ServiceDefinitionV2Dot1OpsgenieRegion(StringEnum):
     """
     Opsgenie instance region.
 
@@ -26,12 +25,6 @@ class ServiceDefinitionV2Dot1OpsgenieRegion(ModelSimple):
     }
     US: ClassVar["ServiceDefinitionV2Dot1OpsgenieRegion"]
     EU: ClassVar["ServiceDefinitionV2Dot1OpsgenieRegion"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 ServiceDefinitionV2Dot1OpsgenieRegion.US = ServiceDefinitionV2Dot1OpsgenieRegion("US")

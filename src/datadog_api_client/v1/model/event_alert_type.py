@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class EventAlertType(ModelSimple):
+class EventAlertType(StringEnum):
     """
     If an alert event is enabled, set its type.
         For example, `error`, `warning`, `info`, `success`, `user_update`,
@@ -38,12 +37,6 @@ class EventAlertType(ModelSimple):
     USER_UPDATE: ClassVar["EventAlertType"]
     RECOMMENDATION: ClassVar["EventAlertType"]
     SNAPSHOT: ClassVar["EventAlertType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 EventAlertType.ERROR = EventAlertType("error")

@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class FunnelWidgetDefinitionType(ModelSimple):
+class FunnelWidgetDefinitionType(StringEnum):
     """
     Type of funnel widget.
 
@@ -24,12 +23,6 @@ class FunnelWidgetDefinitionType(ModelSimple):
         "funnel",
     }
     FUNNEL: ClassVar["FunnelWidgetDefinitionType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 FunnelWidgetDefinitionType.FUNNEL = FunnelWidgetDefinitionType("funnel")

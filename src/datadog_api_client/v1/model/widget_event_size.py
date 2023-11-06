@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class WidgetEventSize(ModelSimple):
+class WidgetEventSize(StringEnum):
     """
     Size to use to display an event.
 
@@ -26,12 +25,6 @@ class WidgetEventSize(ModelSimple):
     }
     SMALL: ClassVar["WidgetEventSize"]
     LARGE: ClassVar["WidgetEventSize"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 WidgetEventSize.SMALL = WidgetEventSize("s")

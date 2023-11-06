@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class WidgetLineType(ModelSimple):
+class WidgetLineType(StringEnum):
     """
     Type of lines displayed.
 
@@ -28,12 +27,6 @@ class WidgetLineType(ModelSimple):
     DASHED: ClassVar["WidgetLineType"]
     DOTTED: ClassVar["WidgetLineType"]
     SOLID: ClassVar["WidgetLineType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 WidgetLineType.DASHED = WidgetLineType("dashed")

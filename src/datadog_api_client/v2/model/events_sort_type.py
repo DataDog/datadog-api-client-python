@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class EventsSortType(ModelSimple):
+class EventsSortType(StringEnum):
     """
     The type of sort to use on the calculated value.
 
@@ -26,12 +25,6 @@ class EventsSortType(ModelSimple):
     }
     ALPHABETICAL: ClassVar["EventsSortType"]
     MEASURE: ClassVar["EventsSortType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 EventsSortType.ALPHABETICAL = EventsSortType("alphabetical")

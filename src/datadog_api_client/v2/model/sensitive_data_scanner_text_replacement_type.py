@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class SensitiveDataScannerTextReplacementType(ModelSimple):
+class SensitiveDataScannerTextReplacementType(StringEnum):
     """
     Type of the replacement text. None means no replacement.
         hash means the data will be stubbed. replacement_string means that
@@ -37,12 +36,6 @@ class SensitiveDataScannerTextReplacementType(ModelSimple):
     REPLACEMENT_STRING: ClassVar["SensitiveDataScannerTextReplacementType"]
     PARTIAL_REPLACEMENT_FROM_BEGINNING: ClassVar["SensitiveDataScannerTextReplacementType"]
     PARTIAL_REPLACEMENT_FROM_END: ClassVar["SensitiveDataScannerTextReplacementType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 SensitiveDataScannerTextReplacementType.NONE = SensitiveDataScannerTextReplacementType("none")

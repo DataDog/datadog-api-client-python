@@ -1,12 +1,17 @@
 from typing import ClassVar
 {%- set default = get_enum_default(model) %}
+{%- set enum_type = get_enum_type(model) %}
 
+{% if enum_type == "str" %}
+class {{ name }}(StringEnum):
+{%- else %}
 class {{ name }}(ModelSimple):
+{%- endif %}
     """
     {{ model.description|indent(8) }}
 
     :param value: {%- if default != None %} If omitted defaults to {{ default|format_value }}.{%- endif %} Must be one of [{%- for value in model.enum %}{{ value|format_value }}{% if not loop.last %}, {% endif %}{%- endfor %}].
-    :type value: {{ get_enum_type(model) }}
+    :type value: {{ enum_type }}
     """
 
     allowed_values = {
@@ -22,12 +27,14 @@ class {{ name }}(ModelSimple):
 {% if model.nullable %}
     _nullable = True
 {%- endif %}
+{% if enum_type != "str" %}
 
     @cached_property
     def openapi_types(_):
         return {
-            "value": ({{ get_enum_type(model) }},),
+            "value": ({{ enum_type }},),
         }
+{%- endif %}
 
 
 {%- for index, value in enumerate(model.enum) %}

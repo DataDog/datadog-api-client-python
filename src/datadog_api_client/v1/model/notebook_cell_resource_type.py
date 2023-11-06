@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class NotebookCellResourceType(ModelSimple):
+class NotebookCellResourceType(StringEnum):
     """
     Type of the Notebook Cell resource.
 
@@ -24,12 +23,6 @@ class NotebookCellResourceType(ModelSimple):
         "notebook_cells",
     }
     NOTEBOOK_CELLS: ClassVar["NotebookCellResourceType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 NotebookCellResourceType.NOTEBOOK_CELLS = NotebookCellResourceType("notebook_cells")

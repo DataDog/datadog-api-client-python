@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class UserTeamUserType(ModelSimple):
+class UserTeamUserType(StringEnum):
     """
     User team user type
 
@@ -24,12 +23,6 @@ class UserTeamUserType(ModelSimple):
         "users",
     }
     USERS: ClassVar["UserTeamUserType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 UserTeamUserType.USERS = UserTeamUserType("users")

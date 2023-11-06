@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class RUMSort(ModelSimple):
+class RUMSort(StringEnum):
     """
     Sort parameters when querying events.
 
@@ -26,12 +25,6 @@ class RUMSort(ModelSimple):
     }
     TIMESTAMP_ASCENDING: ClassVar["RUMSort"]
     TIMESTAMP_DESCENDING: ClassVar["RUMSort"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 RUMSort.TIMESTAMP_ASCENDING = RUMSort("timestamp")

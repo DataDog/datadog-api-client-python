@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class ScalarColumnTypeNumber(ModelSimple):
+class ScalarColumnTypeNumber(StringEnum):
     """
     The type of column present for numbers.
 
@@ -24,12 +23,6 @@ class ScalarColumnTypeNumber(ModelSimple):
         "number",
     }
     NUMBER: ClassVar["ScalarColumnTypeNumber"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 ScalarColumnTypeNumber.NUMBER = ScalarColumnTypeNumber("number")

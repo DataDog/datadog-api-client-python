@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class SyntheticsAPIStepSubtype(ModelSimple):
+class SyntheticsAPIStepSubtype(StringEnum):
     """
     The subtype of the Synthetic multistep API test step, currently only supporting `http`.
 
@@ -24,12 +23,6 @@ class SyntheticsAPIStepSubtype(ModelSimple):
         "http",
     }
     HTTP: ClassVar["SyntheticsAPIStepSubtype"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 SyntheticsAPIStepSubtype.HTTP = SyntheticsAPIStepSubtype("http")
