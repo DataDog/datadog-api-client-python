@@ -16,6 +16,13 @@
             "time":{
 
             },
+            "style":{
+               "display": {
+                   "type": "stacked",
+                   "legend": "inline"
+                },
+                "scaling": "relative"
+            },
             "type":"toplist",
             "requests":[
                {

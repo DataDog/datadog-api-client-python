@@ -777,7 +777,15 @@ from datadog_api_client.v1.model.timeseries_widget_legend_layout import Timeseri
 from datadog_api_client.v1.model.timeseries_widget_request import TimeseriesWidgetRequest
 from datadog_api_client.v1.model.toplist_widget_definition import ToplistWidgetDefinition
 from datadog_api_client.v1.model.toplist_widget_definition_type import ToplistWidgetDefinitionType
+from datadog_api_client.v1.model.toplist_widget_display import ToplistWidgetDisplay
+from datadog_api_client.v1.model.toplist_widget_flat import ToplistWidgetFlat
+from datadog_api_client.v1.model.toplist_widget_flat_type import ToplistWidgetFlatType
+from datadog_api_client.v1.model.toplist_widget_legend import ToplistWidgetLegend
 from datadog_api_client.v1.model.toplist_widget_request import ToplistWidgetRequest
+from datadog_api_client.v1.model.toplist_widget_scaling import ToplistWidgetScaling
+from datadog_api_client.v1.model.toplist_widget_stacked import ToplistWidgetStacked
+from datadog_api_client.v1.model.toplist_widget_stacked_type import ToplistWidgetStackedType
+from datadog_api_client.v1.model.toplist_widget_style import ToplistWidgetStyle
 from datadog_api_client.v1.model.topology_map_widget_definition import TopologyMapWidgetDefinition
 from datadog_api_client.v1.model.topology_map_widget_definition_type import TopologyMapWidgetDefinitionType
 from datadog_api_client.v1.model.topology_query import TopologyQuery
@@ -1626,7 +1634,15 @@ __all__ = [
     "TimeseriesWidgetRequest",
     "ToplistWidgetDefinition",
     "ToplistWidgetDefinitionType",
+    "ToplistWidgetDisplay",
+    "ToplistWidgetFlat",
+    "ToplistWidgetFlatType",
+    "ToplistWidgetLegend",
     "ToplistWidgetRequest",
+    "ToplistWidgetScaling",
+    "ToplistWidgetStacked",
+    "ToplistWidgetStackedType",
+    "ToplistWidgetStyle",
     "TopologyMapWidgetDefinition",
     "TopologyMapWidgetDefinitionType",
     "TopologyQuery",
