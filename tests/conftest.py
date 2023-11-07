@@ -282,8 +282,9 @@ def freezed_time(default_cassette_name, record_mode, vcr):
         freeze_file = pathlib.Path(vcr._path).with_suffix(".frozen")
         if not freeze_file.exists():
             msg = (
-                "Time file '{}' not found: create one setting `RECORD=true` or "
-                "ignore it using `RECORD=none`".format(freeze_file)
+                "Time file '{}' not found: create one setting `RECORD=true` or " "ignore it using `RECORD=none`".format(
+                    freeze_file
+                )
             )
             raise RuntimeError(msg)
         with freeze_file.open("r") as f:
@@ -291,8 +292,9 @@ def freezed_time(default_cassette_name, record_mode, vcr):
 
         if not pathlib.Path(vcr._path).exists():
             msg = (
-                "Cassette '{}' not found: create one setting `RECORD=true` or "
-                "ignore it using `RECORD=none`".format(vcr._path)
+                "Cassette '{}' not found: create one setting `RECORD=true` or " "ignore it using `RECORD=none`".format(
+                    vcr._path
+                )
             )
             raise RuntimeError(msg)
 
