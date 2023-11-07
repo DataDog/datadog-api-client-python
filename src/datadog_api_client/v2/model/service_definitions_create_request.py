@@ -33,8 +33,8 @@ class ServiceDefinitionsCreateRequest(ModelComposed):
         :param integrations: Third party integrations that Datadog supports.
         :type integrations: ServiceDefinitionV2Dot2Integrations, optional
 
-        :param langauges: The service's programming language. Datadog recognizes the following languages: `dotnet`, `go`, `java`, `js`, `php`, `python`, `ruby`, and `c++`.
-        :type langauges: [str], optional
+        :param languages: The service's programming language. Datadog recognizes the following languages: `dotnet`, `go`, `java`, `js`, `php`, `python`, `ruby`, and `c++`.
+        :type languages: [str], optional
 
         :param lifecycle: The current life cycle phase of the service.
         :type lifecycle: str, optional

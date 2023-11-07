@@ -72,8 +72,8 @@ class ServiceDefinitionSchema(ModelComposed):
         :param tier: Importance of the service.
         :type tier: str, optional
 
-        :param langauges: The service's programming language. Datadog recognizes the following languages: `dotnet`, `go`, `java`, `js`, `php`, `python`, `ruby`, and `c++`.
-        :type langauges: [str], optional
+        :param languages: The service's programming language. Datadog recognizes the following languages: `dotnet`, `go`, `java`, `js`, `php`, `python`, `ruby`, and `c++`.
+        :type languages: [str], optional
 
         :param type: The type of service.
         :type type: ServiceDefinitionV2Dot2Type, optional

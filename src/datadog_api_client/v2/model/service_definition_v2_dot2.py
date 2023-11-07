@@ -58,7 +58,7 @@ class ServiceDefinitionV2Dot2(ModelNormal):
                 },
             ),
             "integrations": (ServiceDefinitionV2Dot2Integrations,),
-            "langauges": ([str],),
+            "languages": ([str],),
             "lifecycle": (str,),
             "links": ([ServiceDefinitionV2Dot2Link],),
             "schema_version": (ServiceDefinitionV2Dot2Version,),
@@ -75,7 +75,7 @@ class ServiceDefinitionV2Dot2(ModelNormal):
         "description": "description",
         "extensions": "extensions",
         "integrations": "integrations",
-        "langauges": "langauges",
+        "languages": "languages",
         "lifecycle": "lifecycle",
         "links": "links",
         "schema_version": "schema-version",
@@ -94,7 +94,7 @@ class ServiceDefinitionV2Dot2(ModelNormal):
         description: Union[str, UnsetType] = unset,
         extensions: Union[Dict[str, Any], UnsetType] = unset,
         integrations: Union[ServiceDefinitionV2Dot2Integrations, UnsetType] = unset,
-        langauges: Union[List[str], UnsetType] = unset,
+        languages: Union[List[str], UnsetType] = unset,
         lifecycle: Union[str, UnsetType] = unset,
         links: Union[List[ServiceDefinitionV2Dot2Link], UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
@@ -124,8 +124,8 @@ class ServiceDefinitionV2Dot2(ModelNormal):
         :param integrations: Third party integrations that Datadog supports.
         :type integrations: ServiceDefinitionV2Dot2Integrations, optional
 
-        :param langauges: The service's programming language. Datadog recognizes the following languages: ``dotnet`` , ``go`` , ``java`` , ``js`` , ``php`` , ``python`` , ``ruby`` , and ``c++``.
-        :type langauges: [str], optional
+        :param languages: The service's programming language. Datadog recognizes the following languages: ``dotnet`` , ``go`` , ``java`` , ``js`` , ``php`` , ``python`` , ``ruby`` , and ``c++``.
+        :type languages: [str], optional
 
         :param lifecycle: The current life cycle phase of the service.
         :type lifecycle: str, optional
@@ -158,8 +158,8 @@ class ServiceDefinitionV2Dot2(ModelNormal):
             kwargs["extensions"] = extensions
         if integrations is not unset:
             kwargs["integrations"] = integrations
-        if langauges is not unset:
-            kwargs["langauges"] = langauges
+        if languages is not unset:
+            kwargs["languages"] = languages
         if lifecycle is not unset:
             kwargs["lifecycle"] = lifecycle
         if links is not unset:
