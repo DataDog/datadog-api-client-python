@@ -30,6 +30,7 @@ class SecurityMonitoringStandardRuleQuery(ModelNormal):
             "aggregation": (SecurityMonitoringRuleQueryAggregation,),
             "distinct_fields": ([str],),
             "group_by_fields": ([str],),
+            "has_optional_group_by_fields": (bool,),
             "metric": (str,),
             "metrics": ([str],),
             "name": (str,),
@@ -40,10 +41,14 @@ class SecurityMonitoringStandardRuleQuery(ModelNormal):
         "aggregation": "aggregation",
         "distinct_fields": "distinctFields",
         "group_by_fields": "groupByFields",
+        "has_optional_group_by_fields": "hasOptionalGroupByFields",
         "metric": "metric",
         "metrics": "metrics",
         "name": "name",
         "query": "query",
+    }
+    read_only_vars = {
+        "has_optional_group_by_fields",
     }
 
     def __init__(
@@ -51,6 +56,7 @@ class SecurityMonitoringStandardRuleQuery(ModelNormal):
         aggregation: Union[SecurityMonitoringRuleQueryAggregation, UnsetType] = unset,
         distinct_fields: Union[List[str], UnsetType] = unset,
         group_by_fields: Union[List[str], UnsetType] = unset,
+        has_optional_group_by_fields: Union[bool, UnsetType] = unset,
         metric: Union[str, UnsetType] = unset,
         metrics: Union[List[str], UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
@@ -68,6 +74,9 @@ class SecurityMonitoringStandardRuleQuery(ModelNormal):
 
         :param group_by_fields: Fields to group by.
         :type group_by_fields: [str], optional
+
+        :param has_optional_group_by_fields: When false, events without a group-by value are ignored by the rule. When true, events with missing group-by fields are processed with ``N/A`` , replacing the missing values.
+        :type has_optional_group_by_fields: bool, optional
 
         :param metric: (Deprecated) The target field to aggregate over when using the sum or max
             aggregations. ``metrics`` field should be used instead. **Deprecated**.
@@ -88,6 +97,8 @@ class SecurityMonitoringStandardRuleQuery(ModelNormal):
             kwargs["distinct_fields"] = distinct_fields
         if group_by_fields is not unset:
             kwargs["group_by_fields"] = group_by_fields
+        if has_optional_group_by_fields is not unset:
+            kwargs["has_optional_group_by_fields"] = has_optional_group_by_fields
         if metric is not unset:
             kwargs["metric"] = metric
         if metrics is not unset:
