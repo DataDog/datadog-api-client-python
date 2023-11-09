@@ -790,7 +790,8 @@ class MetricsApi:
         """Update a tag configuration.
 
         Update the tag configuration of a metric or percentile aggregations of a distribution metric or custom aggregations
-        of a count, rate, or gauge metric.
+        of a count, rate, or gauge metric. By setting ``exclude_tags_mode`` to true the behavior is changed
+        from an allow-list to a deny-list, and tags in the defined list will not be queryable.
         Can only be used with application keys from users with the ``Manage Tags for Metrics`` permission.
 
         :param metric_name: The name of the metric.
