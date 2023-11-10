@@ -16,7 +16,6 @@ from datadog_api_client.v1.model.monitor_options_scheduling_options_evaluation_w
 )
 from datadog_api_client.v1.model.monitor_thresholds import MonitorThresholds
 from datadog_api_client.v1.model.monitor_type import MonitorType
-from datadog_api_client.v1.model.on_missing_data_option import OnMissingDataOption
 
 body = Monitor(
     message="some message Notify: @hipchat-channel",
@@ -28,7 +27,6 @@ body = Monitor(
             critical=0.5,
         ),
         notify_audit=False,
-        on_missing_data=OnMissingDataOption.DEFAULT,
         include_tags=False,
         scheduling_options=MonitorOptionsSchedulingOptions(
             evaluation_window=MonitorOptionsSchedulingOptionsEvaluationWindow(

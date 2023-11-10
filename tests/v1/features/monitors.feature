@@ -94,7 +94,7 @@ Feature: Monitors
   @team:DataDog/monitor-app
   Scenario: Create a metric monitor with a custom schedule returns "OK" response
     Given new "CreateMonitor" request
-    And body with value {"message":"some message Notify: @hipchat-channel","name":"{{ unique }}","query":"avg(current_1mo):avg:system.load.5{*} > 0.5","tags":[],"options":{"thresholds":{"critical":0.5},"notify_audit":false,"on_missing_data":"default","include_tags":false,"scheduling_options":{"evaluation_window":{"day_starts":"04:00", "month_starts":1},"custom_schedule":{"recurrences":[{"rrule":"FREQ=DAILY;INTERVAL=1","timezone":"America/Los_Angeles","start":"2024-10-26T09:13:00"}]}}},"type":"query alert"}
+    And body with value {"message":"some message Notify: @hipchat-channel","name":"{{ unique }}","query":"avg(current_1mo):avg:system.load.5{*} > 0.5","tags":[],"options":{"thresholds":{"critical":0.5},"notify_audit":false,"include_tags":false,"scheduling_options":{"evaluation_window":{"day_starts":"04:00", "month_starts":1},"custom_schedule":{"recurrences":[{"rrule":"FREQ=DAILY;INTERVAL=1","timezone":"America/Los_Angeles","start":"2024-10-26T09:13:00"}]}}},"type":"query alert"}
     When the request is sent
     Then the response status is 200 OK
     And the response "name" is equal to "{{ unique }}"
