@@ -24,6 +24,9 @@ class SecurityMonitoringRuleQuery(ModelComposed):
         :param group_by_fields: Fields to group by.
         :type group_by_fields: [str], optional
 
+        :param has_optional_group_by_fields: When false, events without a group-by value are ignored by the rule. When true, events with missing group-by fields are processed with `N/A`, replacing the missing values.
+        :type has_optional_group_by_fields: bool, optional
+
         :param metric: (Deprecated) The target field to aggregate over when using the sum or max
             aggregations. `metrics` field should be used instead.
         :type metric: str, optional

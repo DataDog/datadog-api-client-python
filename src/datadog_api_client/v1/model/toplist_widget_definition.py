@@ -16,6 +16,7 @@ from datadog_api_client.model_utils import (
 if TYPE_CHECKING:
     from datadog_api_client.v1.model.widget_custom_link import WidgetCustomLink
     from datadog_api_client.v1.model.toplist_widget_request import ToplistWidgetRequest
+    from datadog_api_client.v1.model.toplist_widget_style import ToplistWidgetStyle
     from datadog_api_client.v1.model.widget_time import WidgetTime
     from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
     from datadog_api_client.v1.model.toplist_widget_definition_type import ToplistWidgetDefinitionType
@@ -26,6 +27,7 @@ class ToplistWidgetDefinition(ModelNormal):
     def openapi_types(_):
         from datadog_api_client.v1.model.widget_custom_link import WidgetCustomLink
         from datadog_api_client.v1.model.toplist_widget_request import ToplistWidgetRequest
+        from datadog_api_client.v1.model.toplist_widget_style import ToplistWidgetStyle
         from datadog_api_client.v1.model.widget_time import WidgetTime
         from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
         from datadog_api_client.v1.model.toplist_widget_definition_type import ToplistWidgetDefinitionType
@@ -33,6 +35,7 @@ class ToplistWidgetDefinition(ModelNormal):
         return {
             "custom_links": ([WidgetCustomLink],),
             "requests": ([ToplistWidgetRequest],),
+            "style": (ToplistWidgetStyle,),
             "time": (WidgetTime,),
             "title": (str,),
             "title_align": (WidgetTextAlign,),
@@ -43,6 +46,7 @@ class ToplistWidgetDefinition(ModelNormal):
     attribute_map = {
         "custom_links": "custom_links",
         "requests": "requests",
+        "style": "style",
         "time": "time",
         "title": "title",
         "title_align": "title_align",
@@ -55,6 +59,7 @@ class ToplistWidgetDefinition(ModelNormal):
         requests: List[ToplistWidgetRequest],
         type: ToplistWidgetDefinitionType,
         custom_links: Union[List[WidgetCustomLink], UnsetType] = unset,
+        style: Union[ToplistWidgetStyle, UnsetType] = unset,
         time: Union[WidgetTime, UnsetType] = unset,
         title: Union[str, UnsetType] = unset,
         title_align: Union[WidgetTextAlign, UnsetType] = unset,
@@ -69,6 +74,9 @@ class ToplistWidgetDefinition(ModelNormal):
 
         :param requests: List of top list widget requests.
         :type requests: [ToplistWidgetRequest]
+
+        :param style: Style customization for a top list widget.
+        :type style: ToplistWidgetStyle, optional
 
         :param time: Time setting for the widget.
         :type time: WidgetTime, optional
@@ -87,6 +95,8 @@ class ToplistWidgetDefinition(ModelNormal):
         """
         if custom_links is not unset:
             kwargs["custom_links"] = custom_links
+        if style is not unset:
+            kwargs["style"] = style
         if time is not unset:
             kwargs["time"] = time
         if title is not unset:

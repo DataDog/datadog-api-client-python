@@ -46,16 +46,13 @@ repos:
     pass_filenames: false
     additional_dependencies:
       - "poetry"
-- repo: https://github.com/psf/black
-  rev: 23.3.0
-  hooks:
-  - id: black
-    stages: [manual]
-    entry: black --fast --line-length 120 src examples tests
-    files: '^(src|examples|tests)'
-    pass_filenames: false
-- repo: https://github.com/charliermarsh/ruff-pre-commit
-  rev: v0.0.275
+- repo: https://github.com/astral-sh/ruff-pre-commit
+  rev: v0.1.4
   hooks:
   - id: ruff
     entry: ruff --fix --quiet --exit-zero --fixable I001,F401 --ignore E501 src examples tests
+    pass_filenames: false
+  - id: ruff-format
+    entry: ruff format src examples tests
+    pass_filenames: false
+      

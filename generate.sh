@@ -28,5 +28,5 @@ pre_commit_wrapper generator
 pre_commit_wrapper examples
 pre_commit_wrapper docs
 pre_commit_wrapper ruff
-pre_commit_wrapper black
+pre_commit_wrapper ruff-format 1
 pre_commit_wrapper api-docs

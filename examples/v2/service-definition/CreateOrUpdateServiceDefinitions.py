@@ -35,7 +35,7 @@ body = ServiceDefinitionV2Dot2(
             service_url="https://my-org.pagerduty.com/service-directory/PMyService",
         ),
     ),
-    langauges=[
+    languages=[
         "dotnet",
         "go",
         "java",
