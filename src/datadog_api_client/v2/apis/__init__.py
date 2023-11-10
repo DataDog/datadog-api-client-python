@@ -23,6 +23,7 @@ from datadog_api_client.v2.api.logs_archives_api import LogsArchivesApi
 from datadog_api_client.v2.api.logs_metrics_api import LogsMetricsApi
 from datadog_api_client.v2.api.metrics_api import MetricsApi
 from datadog_api_client.v2.api.monitors_api import MonitorsApi
+from datadog_api_client.v2.api.okta_integration_api import OktaIntegrationApi
 from datadog_api_client.v2.api.opsgenie_integration_api import OpsgenieIntegrationApi
 from datadog_api_client.v2.api.organizations_api import OrganizationsApi
 from datadog_api_client.v2.api.powerpack_api import PowerpackApi
@@ -69,6 +70,7 @@ __all__ = [
     "LogsMetricsApi",
     "MetricsApi",
     "MonitorsApi",
+    "OktaIntegrationApi",
     "OpsgenieIntegrationApi",
     "OrganizationsApi",
     "PowerpackApi",
