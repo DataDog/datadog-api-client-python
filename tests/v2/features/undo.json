@@ -748,6 +748,43 @@
       "type": "safe"
     }
   },
+  "ListOktaAccounts": {
+    "tag": "Okta Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateOktaAccount": {
+    "tag": "Okta Integration",
+    "undo": {
+      "operationId": "DeleteOktaAccount",
+      "parameters": [
+        {
+          "name": "account_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteOktaAccount": {
+    "tag": "Okta Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetOktaAccount": {
+    "tag": "Okta Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateOktaAccount": {
+    "tag": "Okta Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "GetIPAllowlist": {
     "tag": "IP Allowlist",
     "undo": {
