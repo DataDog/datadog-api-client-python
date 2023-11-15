@@ -1,5 +1,32 @@
 # Changelog
 
+## 2.19.0 / 2023-11-15
+
+### Fixed
+* Add minimal typing_extensions version by @therve in https://github.com/DataDog/datadog-api-client-python/pull/1728
+* Remove notify_no_data default by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1732
+* Fix SecurityMonitoringSignalAttribute field name by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1739
+* Fix typo in service definition field by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1754
+### Added
+* Update documentation for Cloud SIEM by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1722
+* Add containers API spec by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1723
+* Add serverless apm to usage attribution api by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1729
+* Document missing parameters by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1680
+* Powerpack Live Span Support by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1738
+* Add Amazon EventBridge endpoints to AWS Integration API by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1724
+* Add Container App filters to Azure API by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1703
+* Add UUID format support by @HantingZhang2 in https://github.com/DataDog/datadog-api-client-python/pull/1743
+* Add new UA products to usage metering docs by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1741
+* Add scorecards endpoints  by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1747
+* Document top list widget style by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1733
+* Add optional group-bys support to security signals by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1748
+### Changed
+* Add Beta Banner to Send Pipeline Events Endpoint by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1737
+* Remove endpoint for mute or unmute a finding and add support for bulk mute findings endpoint by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1734
+
+
+**Full Changelog**: https://github.com/DataDog/datadog-api-client-python/compare/2.18.0...2.19.0
+
 ## 2.18.0 / 2023-10-16
 
 ### Fixed
