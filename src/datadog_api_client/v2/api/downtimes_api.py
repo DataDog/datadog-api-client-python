@@ -41,16 +41,16 @@ class DowntimesApi:
             settings={
                 "response_type": None,
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/downtime/{downtime_id}",
+                "endpoint_path": "/api/v2/downtime/{downtime_uuid}",
                 "operation_id": "cancel_downtime",
                 "http_method": "DELETE",
                 "version": "v2",
             },
             params_map={
-                "downtime_id": {
+                "downtime_uuid": {
                     "required": True,
                     "openapi_types": (str,),
-                    "attribute": "downtime_id",
+                    "attribute": "downtime_uuid",
                     "location": "path",
                 },
             },
@@ -84,16 +84,16 @@ class DowntimesApi:
             settings={
                 "response_type": (DowntimeResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/downtime/{downtime_id}",
+                "endpoint_path": "/api/v2/downtime/{downtime_uuid}",
                 "operation_id": "get_downtime",
                 "http_method": "GET",
                 "version": "v2",
             },
             params_map={
-                "downtime_id": {
+                "downtime_uuid": {
                     "required": True,
                     "openapi_types": (str,),
-                    "attribute": "downtime_id",
+                    "attribute": "downtime_uuid",
                     "location": "path",
                 },
                 "include": {
@@ -172,16 +172,16 @@ class DowntimesApi:
             settings={
                 "response_type": (DowntimeResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/downtime/{downtime_id}",
+                "endpoint_path": "/api/v2/downtime/{downtime_uuid}",
                 "operation_id": "update_downtime",
                 "http_method": "PATCH",
                 "version": "v2",
             },
             params_map={
-                "downtime_id": {
+                "downtime_uuid": {
                     "required": True,
                     "openapi_types": (str,),
-                    "attribute": "downtime_id",
+                    "attribute": "downtime_uuid",
                     "location": "path",
                 },
                 "body": {
@@ -196,18 +196,18 @@ class DowntimesApi:
 
     def cancel_downtime(
         self,
-        downtime_id: str,
+        downtime_uuid: str,
     ) -> None:
         """Cancel a downtime.
 
         Cancel a downtime.
 
-        :param downtime_id: ID of the downtime to cancel.
-        :type downtime_id: str
+        :param downtime_uuid: ID of the downtime to cancel.
+        :type downtime_uuid: str
         :rtype: None
         """
         kwargs: Dict[str, Any] = {}
-        kwargs["downtime_id"] = downtime_id
+        kwargs["downtime_uuid"] = downtime_uuid
 
         return self._cancel_downtime_endpoint.call_with_http_info(**kwargs)
 
@@ -230,23 +230,23 @@ class DowntimesApi:
 
     def get_downtime(
         self,
-        downtime_id: str,
+        downtime_uuid: str,
         *,
         include: Union[str, UnsetType] = unset,
     ) -> DowntimeResponse:
         """Get a downtime.
 
-        Get downtime detail by ``downtime_id``.
+        Get downtime detail by ``downtime_uuid``.
 
-        :param downtime_id: ID of the downtime to fetch.
-        :type downtime_id: str
+        :param downtime_uuid: ID of the downtime to fetch.
+        :type downtime_uuid: str
         :param include: Comma-separated list of resource paths for related resources to include in the response. Supported resource
             paths are ``created_by`` and ``monitor``.
         :type include: str, optional
         :rtype: DowntimeResponse
         """
         kwargs: Dict[str, Any] = {}
-        kwargs["downtime_id"] = downtime_id
+        kwargs["downtime_uuid"] = downtime_uuid
 
         if include is not unset:
             kwargs["include"] = include
@@ -360,21 +360,21 @@ class DowntimesApi:
 
     def update_downtime(
         self,
-        downtime_id: str,
+        downtime_uuid: str,
         body: DowntimeUpdateRequest,
     ) -> DowntimeResponse:
         """Update a downtime.
 
-        Update a downtime by ``downtime_id``.
+        Update a downtime by ``downtime_uuid``.
 
-        :param downtime_id: ID of the downtime to update.
-        :type downtime_id: str
+        :param downtime_uuid: ID of the downtime to update.
+        :type downtime_uuid: str
         :param body: Update a downtime request body.
         :type body: DowntimeUpdateRequest
         :rtype: DowntimeResponse
         """
         kwargs: Dict[str, Any] = {}
-        kwargs["downtime_id"] = downtime_id
+        kwargs["downtime_uuid"] = downtime_uuid
 
         kwargs["body"] = body
 

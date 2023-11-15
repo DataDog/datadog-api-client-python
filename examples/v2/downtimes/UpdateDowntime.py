@@ -26,6 +26,6 @@ body = DowntimeUpdateRequest(
 configuration = Configuration()
 with ApiClient(configuration) as api_client:
     api_instance = DowntimesApi(api_client)
-    response = api_instance.update_downtime(downtime_id=DOWNTIME_V2_DATA_ID, body=body)
+    response = api_instance.update_downtime(downtime_uuid=DOWNTIME_V2_DATA_ID, body=body)
 
     print(response)

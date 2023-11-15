@@ -13,7 +13,7 @@ configuration = Configuration()
 with ApiClient(configuration) as api_client:
     api_instance = DowntimesApi(api_client)
     response = api_instance.get_downtime(
-        downtime_id=DOWNTIME_V2_DATA_ID,
+        downtime_uuid=DOWNTIME_V2_DATA_ID,
     )
 
     print(response)

@@ -316,7 +316,7 @@
       "operationId": "CancelDowntime",
       "parameters": [
         {
-          "name": "downtime_id",
+          "name": "downtime_uuid",
           "source": "data.id"
         }
       ],

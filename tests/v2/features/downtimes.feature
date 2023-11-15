@@ -16,7 +16,7 @@ Feature: Downtimes
   @skip-validation @team:DataDog/monitor-app
   Scenario: Cancel a downtime returns "Downtime not found" response
     Given new "CancelDowntime" request
-    And request contains "downtime_id" parameter with value "00000000-0000-1234-0000-000000000000"
+    And request contains "downtime_uuid" parameter with value "00000000-0000-1234-0000-000000000000"
     When the request is sent
     Then the response status is 404 Downtime not found
 
@@ -24,21 +24,21 @@ Feature: Downtimes
   Scenario: Cancel a downtime returns "OK" response
     Given there is a valid "downtime_v2" in the system
     And new "CancelDowntime" request
-    And request contains "downtime_id" parameter from "downtime_v2.data.id"
+    And request contains "downtime_uuid" parameter from "downtime_v2.data.id"
     When the request is sent
     Then the response status is 204 OK
 
   @skip-validation @team:DataDog/monitor-app
   Scenario: Get a downtime returns "Bad Request" response
     Given new "GetDowntime" request
-    And request contains "downtime_id" parameter with value "INVALID_UUID_LENGTH"
+    And request contains "downtime_uuid" parameter with value "INVALID_UUID_LENGTH"
     When the request is sent
     Then the response status is 400 Bad Request
 
   @skip-validation @team:DataDog/monitor-app
   Scenario: Get a downtime returns "Not Found" response
     Given new "GetDowntime" request
-    And request contains "downtime_id" parameter with value "00000000-0000-1234-0000-000000000000"
+    And request contains "downtime_uuid" parameter with value "00000000-0000-1234-0000-000000000000"
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -46,7 +46,7 @@ Feature: Downtimes
   Scenario: Get a downtime returns "OK" response
     Given there is a valid "downtime_v2" in the system
     And new "GetDowntime" request
-    And request contains "downtime_id" parameter from "downtime_v2.data.id"
+    And request contains "downtime_uuid" parameter from "downtime_v2.data.id"
     When the request is sent
     Then the response status is 200 OK
     And the response "data.attributes.message" is equal to "test message"
@@ -108,7 +108,7 @@ Feature: Downtimes
   Scenario: Update a downtime returns "Bad Request" response
     Given there is a valid "downtime_v2" in the system
     And new "UpdateDowntime" request
-    And request contains "downtime_id" parameter from "downtime_v2.data.id"
+    And request contains "downtime_uuid" parameter from "downtime_v2.data.id"
     And body with value {"data": {"attributes": {"invalid_field": "sophon"}, "id": "{{ downtime_v2.data.id }}", "type": "downtime"}}
     When the request is sent
     Then the response status is 400 Bad Request
@@ -116,7 +116,7 @@ Feature: Downtimes
   @skip-validation @team:DataDog/monitor-app
   Scenario: Update a downtime returns "Downtime not found" response
     Given new "UpdateDowntime" request
-    And request contains "downtime_id" parameter with value "00000000-0000-1234-0000-000000000000"
+    And request contains "downtime_uuid" parameter with value "00000000-0000-1234-0000-000000000000"
     And body with value {"data": {"attributes": {"message": "test msg"}, "id": "00000000-0000-1234-0000-000000000000", "type": "downtime"}}
     When the request is sent
     Then the response status is 404 Downtime not found
@@ -125,7 +125,7 @@ Feature: Downtimes
   Scenario: Update a downtime returns "OK" response
     Given there is a valid "downtime_v2" in the system
     And new "UpdateDowntime" request
-    And request contains "downtime_id" parameter from "downtime_v2.data.id"
+    And request contains "downtime_uuid" parameter from "downtime_v2.data.id"
     And body with value {"data": {"attributes": {"message": "light speed"}, "id": "{{ downtime_v2.data.id }}", "type": "downtime"}}
     When the request is sent
     Then the response status is 200 OK
