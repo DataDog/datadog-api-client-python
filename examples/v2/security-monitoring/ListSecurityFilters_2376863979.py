@@ -1,5 +1,5 @@
 """
-List security filters returns "OK" response
+Get all security filters returns "OK" response
 """
 
 from datadog_api_client import ApiClient, Configuration

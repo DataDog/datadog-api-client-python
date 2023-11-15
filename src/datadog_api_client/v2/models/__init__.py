@@ -1011,9 +1011,46 @@ from datadog_api_client.v2.model.security_filter_update_attributes import Securi
 from datadog_api_client.v2.model.security_filter_update_data import SecurityFilterUpdateData
 from datadog_api_client.v2.model.security_filter_update_request import SecurityFilterUpdateRequest
 from datadog_api_client.v2.model.security_filters_response import SecurityFiltersResponse
+from datadog_api_client.v2.model.security_monitoring_creator import SecurityMonitoringCreator
 from datadog_api_client.v2.model.security_monitoring_filter import SecurityMonitoringFilter
 from datadog_api_client.v2.model.security_monitoring_filter_action import SecurityMonitoringFilterAction
 from datadog_api_client.v2.model.security_monitoring_list_rules_response import SecurityMonitoringListRulesResponse
+from datadog_api_client.v2.model.security_monitoring_notification_rule_create_attributes import (
+    SecurityMonitoringNotificationRuleCreateAttributes,
+)
+from datadog_api_client.v2.model.security_monitoring_notification_rule_create_data import (
+    SecurityMonitoringNotificationRuleCreateData,
+)
+from datadog_api_client.v2.model.security_monitoring_notification_rule_create_request import (
+    SecurityMonitoringNotificationRuleCreateRequest,
+)
+from datadog_api_client.v2.model.security_monitoring_notification_rule_list_response import (
+    SecurityMonitoringNotificationRuleListResponse,
+)
+from datadog_api_client.v2.model.security_monitoring_notification_rule_response import (
+    SecurityMonitoringNotificationRuleResponse,
+)
+from datadog_api_client.v2.model.security_monitoring_notification_rule_response_attributes import (
+    SecurityMonitoringNotificationRuleResponseAttributes,
+)
+from datadog_api_client.v2.model.security_monitoring_notification_rule_response_data import (
+    SecurityMonitoringNotificationRuleResponseData,
+)
+from datadog_api_client.v2.model.security_monitoring_notification_rule_selectors import (
+    SecurityMonitoringNotificationRuleSelectors,
+)
+from datadog_api_client.v2.model.security_monitoring_notification_rule_type import (
+    SecurityMonitoringNotificationRuleType,
+)
+from datadog_api_client.v2.model.security_monitoring_notification_rule_update_attributes import (
+    SecurityMonitoringNotificationRuleUpdateAttributes,
+)
+from datadog_api_client.v2.model.security_monitoring_notification_rule_update_data import (
+    SecurityMonitoringNotificationRuleUpdateData,
+)
+from datadog_api_client.v2.model.security_monitoring_notification_rule_update_request import (
+    SecurityMonitoringNotificationRuleUpdateRequest,
+)
 from datadog_api_client.v2.model.security_monitoring_rule_case import SecurityMonitoringRuleCase
 from datadog_api_client.v2.model.security_monitoring_rule_case_create import SecurityMonitoringRuleCaseCreate
 from datadog_api_client.v2.model.security_monitoring_rule_create_payload import SecurityMonitoringRuleCreatePayload
@@ -1053,6 +1090,7 @@ from datadog_api_client.v2.model.security_monitoring_rule_response import Securi
 from datadog_api_client.v2.model.security_monitoring_rule_severity import SecurityMonitoringRuleSeverity
 from datadog_api_client.v2.model.security_monitoring_rule_type_create import SecurityMonitoringRuleTypeCreate
 from datadog_api_client.v2.model.security_monitoring_rule_type_read import SecurityMonitoringRuleTypeRead
+from datadog_api_client.v2.model.security_monitoring_rule_types import SecurityMonitoringRuleTypes
 from datadog_api_client.v2.model.security_monitoring_rule_update_payload import SecurityMonitoringRuleUpdatePayload
 from datadog_api_client.v2.model.security_monitoring_signal import SecurityMonitoringSignal
 from datadog_api_client.v2.model.security_monitoring_signal_archive_reason import SecurityMonitoringSignalArchiveReason
@@ -1133,6 +1171,7 @@ from datadog_api_client.v2.model.security_monitoring_standard_rule_response impo
     SecurityMonitoringStandardRuleResponse,
 )
 from datadog_api_client.v2.model.security_monitoring_triage_user import SecurityMonitoringTriageUser
+from datadog_api_client.v2.model.security_monitoring_updater import SecurityMonitoringUpdater
 from datadog_api_client.v2.model.sensitive_data_scanner_config_request import SensitiveDataScannerConfigRequest
 from datadog_api_client.v2.model.sensitive_data_scanner_configuration import SensitiveDataScannerConfiguration
 from datadog_api_client.v2.model.sensitive_data_scanner_configuration_data import SensitiveDataScannerConfigurationData
@@ -2353,9 +2392,22 @@ __all__ = [
     "SecurityFilterUpdateData",
     "SecurityFilterUpdateRequest",
     "SecurityFiltersResponse",
+    "SecurityMonitoringCreator",
     "SecurityMonitoringFilter",
     "SecurityMonitoringFilterAction",
     "SecurityMonitoringListRulesResponse",
+    "SecurityMonitoringNotificationRuleCreateAttributes",
+    "SecurityMonitoringNotificationRuleCreateData",
+    "SecurityMonitoringNotificationRuleCreateRequest",
+    "SecurityMonitoringNotificationRuleListResponse",
+    "SecurityMonitoringNotificationRuleResponse",
+    "SecurityMonitoringNotificationRuleResponseAttributes",
+    "SecurityMonitoringNotificationRuleResponseData",
+    "SecurityMonitoringNotificationRuleSelectors",
+    "SecurityMonitoringNotificationRuleType",
+    "SecurityMonitoringNotificationRuleUpdateAttributes",
+    "SecurityMonitoringNotificationRuleUpdateData",
+    "SecurityMonitoringNotificationRuleUpdateRequest",
     "SecurityMonitoringRuleCase",
     "SecurityMonitoringRuleCaseCreate",
     "SecurityMonitoringRuleCreatePayload",
@@ -2377,6 +2429,7 @@ __all__ = [
     "SecurityMonitoringRuleSeverity",
     "SecurityMonitoringRuleTypeCreate",
     "SecurityMonitoringRuleTypeRead",
+    "SecurityMonitoringRuleTypes",
     "SecurityMonitoringRuleUpdatePayload",
     "SecurityMonitoringSignal",
     "SecurityMonitoringSignalArchiveReason",
@@ -2415,6 +2468,7 @@ __all__ = [
     "SecurityMonitoringStandardRuleQuery",
     "SecurityMonitoringStandardRuleResponse",
     "SecurityMonitoringTriageUser",
+    "SecurityMonitoringUpdater",
     "SensitiveDataScannerConfigRequest",
     "SensitiveDataScannerConfiguration",
     "SensitiveDataScannerConfigurationData",
