@@ -1,6 +1,34 @@
 datadog\_api\_client.v2.model
 =============================
 
+active\_billing\_dimensions\_attributes
+---------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.active_billing_dimensions_attributes
+   :members:
+   :show-inheritance:
+
+active\_billing\_dimensions\_body
+---------------------------------
+
+.. automodule:: datadog_api_client.v2.model.active_billing_dimensions_body
+   :members:
+   :show-inheritance:
+
+active\_billing\_dimensions\_response
+-------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.active_billing_dimensions_response
+   :members:
+   :show-inheritance:
+
+active\_billing\_dimensions\_type
+---------------------------------
+
+.. automodule:: datadog_api_client.v2.model.active_billing_dimensions_type
+   :members:
+   :show-inheritance:
+
 api\_error\_response
 --------------------
 

@@ -11,6 +11,10 @@ from datadog_api_client.v2.model.api_key_update_request import APIKeyUpdateReque
 from datadog_api_client.v2.model.api_keys_response import APIKeysResponse
 from datadog_api_client.v2.model.api_keys_sort import APIKeysSort
 from datadog_api_client.v2.model.api_keys_type import APIKeysType
+from datadog_api_client.v2.model.active_billing_dimensions_attributes import ActiveBillingDimensionsAttributes
+from datadog_api_client.v2.model.active_billing_dimensions_body import ActiveBillingDimensionsBody
+from datadog_api_client.v2.model.active_billing_dimensions_response import ActiveBillingDimensionsResponse
+from datadog_api_client.v2.model.active_billing_dimensions_type import ActiveBillingDimensionsType
 from datadog_api_client.v2.model.apm_retention_filter_type import ApmRetentionFilterType
 from datadog_api_client.v2.model.application_key_create_attributes import ApplicationKeyCreateAttributes
 from datadog_api_client.v2.model.application_key_create_data import ApplicationKeyCreateData
@@ -1496,6 +1500,10 @@ __all__ = [
     "APIKeysResponse",
     "APIKeysSort",
     "APIKeysType",
+    "ActiveBillingDimensionsAttributes",
+    "ActiveBillingDimensionsBody",
+    "ActiveBillingDimensionsResponse",
+    "ActiveBillingDimensionsType",
     "ApmRetentionFilterType",
     "ApplicationKeyCreateAttributes",
     "ApplicationKeyCreateData",

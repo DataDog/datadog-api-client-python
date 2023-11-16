@@ -13,6 +13,7 @@ from datadog_api_client.model_utils import (
     UnsetType,
     unset,
 )
+from datadog_api_client.v2.model.active_billing_dimensions_response import ActiveBillingDimensionsResponse
 from datadog_api_client.v2.model.usage_application_security_monitoring_response import (
     UsageApplicationSecurityMonitoringResponse,
 )
@@ -41,6 +42,22 @@ class UsageMeteringApi:
         if api_client is None:
             api_client = ApiClient(Configuration())
         self.api_client = api_client
+
+        self._get_active_billing_dimensions_endpoint = _Endpoint(
+            settings={
+                "response_type": (ActiveBillingDimensionsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/cost_by_tag/active_billing_dimensions",
+                "operation_id": "get_active_billing_dimensions",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={},
+            headers_map={
+                "accept": ["application/json;datetime-format=rfc3339"],
+            },
+            api_client=api_client,
+        )
 
         self._get_cost_by_org_endpoint = _Endpoint(
             settings={
@@ -313,6 +330,18 @@ class UsageMeteringApi:
             },
             api_client=api_client,
         )
+
+    def get_active_billing_dimensions(
+        self,
+    ) -> ActiveBillingDimensionsResponse:
+        """Get active billing dimensions for cost attribution.
+
+        Get active billing dimensions for cost attribution. Cost data for a given month becomes available no later than the 17th of the following month.
+
+        :rtype: ActiveBillingDimensionsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._get_active_billing_dimensions_endpoint.call_with_http_info(**kwargs)
 
     def get_cost_by_org(
         self,

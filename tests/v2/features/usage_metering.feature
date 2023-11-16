@@ -15,6 +15,20 @@ Feature: Usage Metering
     And an instance of "UsageMetering" API
 
   @generated @skip @team:DataDog/red-zone-revenue-query
+  Scenario: Get active billing dimensions for cost attribution returns "Bad Request" response
+    Given operation "GetActiveBillingDimensions" enabled
+    And new "GetActiveBillingDimensions" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/red-zone-revenue-query
+  Scenario: Get active billing dimensions for cost attribution returns "OK" response
+    Given operation "GetActiveBillingDimensions" enabled
+    And new "GetActiveBillingDimensions" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/red-zone-revenue-query
   Scenario: Get cost across multi-org account returns "Bad Request" response
     Given new "GetCostByOrg" request
     And request contains "start_month" parameter from "REPLACE.ME"

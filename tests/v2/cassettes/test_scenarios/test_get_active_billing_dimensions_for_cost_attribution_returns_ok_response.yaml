@@ -1,0 +1,20 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json;datetime-format=rfc3339
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/cost_by_tag/active_billing_dimensions
+  response:
+    body:
+      string: '{"data":{"type":"billing_dimensions","id":"f145e21e840c6db03f75c179877629eb08531aa6f314f97658261680e49ab1f1","attributes":{"values":["apm_fargate","apm_host","apm_host_enterprise","apm_host_no_usm","apm_host_pro","apm_profiler_host","apm_trace_search","application_security_fargate","application_security_host","application_vulnerability_management_oss_host","audit_trail","ci_pipeline","ci_pipeline_indexed_spans","ci_test_indexed_spans","ci_testing","cloud_cost_management","csm_container_enterprise","csm_host_enterprise","csm_host_pro","cspm_container","cspm_host","custom_event","cws_container","cws_host","data_stream_monitoring","dbm_host","dbm_normalized_queries","fargate_container","fargate_container_apm_and_profiler","fargate_container_profiler","incident_management","infra_and_apm_host","infra_container","infra_container_excl_agent","infra_host","ingested_spans","ingested_timeseries","iot","lambda_function","logs_forwarding","logs_indexed_15day","logs_indexed_180day","logs_indexed_30day","logs_indexed_360day","logs_indexed_3day","logs_indexed_45day","logs_indexed_60day","logs_indexed_7day","logs_indexed_90day","logs_indexed_custom_retention","logs_ingested","network_device","npm_host","observability_pipeline","online_archive","premier_support","prof_container","prof_host","rum","rum_lite","rum_replay","sensitive_data_scanner","serverless_apm","serverless_infra","serverless_invocation","siem","standard_timeseries","synthetics_api_tests","synthetics_app_testing","synthetics_browser_checks","timeseries","usm_standalone","usm_within_infra_host","workflow_execution"],"month":"2023-10-01T00:00:00Z"}}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1
