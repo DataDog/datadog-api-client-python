@@ -3,11 +3,14 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    datetime,
+    unset,
+    UnsetType,
 )
 
 
@@ -33,17 +36,23 @@ class IncidentAttachmentLinkAttributes(ModelNormal):
         return {
             "attachment": (IncidentAttachmentLinkAttributesAttachmentObject,),
             "attachment_type": (IncidentAttachmentLinkAttachmentType,),
+            "modified": (datetime,),
         }
 
     attribute_map = {
         "attachment": "attachment",
         "attachment_type": "attachment_type",
+        "modified": "modified",
+    }
+    read_only_vars = {
+        "modified",
     }
 
     def __init__(
         self_,
         attachment: IncidentAttachmentLinkAttributesAttachmentObject,
         attachment_type: IncidentAttachmentLinkAttachmentType,
+        modified: Union[datetime, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -54,7 +63,12 @@ class IncidentAttachmentLinkAttributes(ModelNormal):
 
         :param attachment_type: The type of link attachment attributes.
         :type attachment_type: IncidentAttachmentLinkAttachmentType
+
+        :param modified: Timestamp when the incident attachment link was last modified.
+        :type modified: datetime, optional
         """
+        if modified is not unset:
+            kwargs["modified"] = modified
         super().__init__(kwargs)
 
         self_.attachment = attachment

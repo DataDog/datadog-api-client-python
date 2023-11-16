@@ -17,7 +17,9 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.incident_field_attributes import IncidentFieldAttributes
+    from datadog_api_client.v2.model.incident_non_datadog_creator import IncidentNonDatadogCreator
     from datadog_api_client.v2.model.incident_notification_handle import IncidentNotificationHandle
+    from datadog_api_client.v2.model.incident_severity import IncidentSeverity
     from datadog_api_client.v2.model.incident_field_attributes_single_value import IncidentFieldAttributesSingleValue
     from datadog_api_client.v2.model.incident_field_attributes_multiple_value import (
         IncidentFieldAttributesMultipleValue,
@@ -28,9 +30,13 @@ class IncidentResponseAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.incident_field_attributes import IncidentFieldAttributes
+        from datadog_api_client.v2.model.incident_non_datadog_creator import IncidentNonDatadogCreator
         from datadog_api_client.v2.model.incident_notification_handle import IncidentNotificationHandle
+        from datadog_api_client.v2.model.incident_severity import IncidentSeverity
 
         return {
+            "archived": (datetime, none_type),
+            "case_id": (int, none_type),
             "created": (datetime,),
             "customer_impact_duration": (int,),
             "customer_impact_end": (datetime, none_type),
@@ -40,17 +46,23 @@ class IncidentResponseAttributes(ModelNormal):
             "detected": (datetime, none_type),
             "fields": ({str: (IncidentFieldAttributes,)},),
             "modified": (datetime,),
+            "non_datadog_creator": (IncidentNonDatadogCreator,),
             "notification_handles": ([IncidentNotificationHandle], none_type),
             "public_id": (int,),
             "resolved": (datetime, none_type),
+            "severity": (IncidentSeverity,),
+            "state": (str, none_type),
             "time_to_detect": (int,),
             "time_to_internal_response": (int,),
             "time_to_repair": (int,),
             "time_to_resolve": (int,),
             "title": (str,),
+            "visibility": (str, none_type),
         }
 
     attribute_map = {
+        "archived": "archived",
+        "case_id": "case_id",
         "created": "created",
         "customer_impact_duration": "customer_impact_duration",
         "customer_impact_end": "customer_impact_end",
@@ -60,16 +72,21 @@ class IncidentResponseAttributes(ModelNormal):
         "detected": "detected",
         "fields": "fields",
         "modified": "modified",
+        "non_datadog_creator": "non_datadog_creator",
         "notification_handles": "notification_handles",
         "public_id": "public_id",
         "resolved": "resolved",
+        "severity": "severity",
+        "state": "state",
         "time_to_detect": "time_to_detect",
         "time_to_internal_response": "time_to_internal_response",
         "time_to_repair": "time_to_repair",
         "time_to_resolve": "time_to_resolve",
         "title": "title",
+        "visibility": "visibility",
     }
     read_only_vars = {
+        "archived",
         "created",
         "customer_impact_duration",
         "modified",
@@ -82,6 +99,8 @@ class IncidentResponseAttributes(ModelNormal):
     def __init__(
         self_,
         title: str,
+        archived: Union[datetime, none_type, UnsetType] = unset,
+        case_id: Union[int, none_type, UnsetType] = unset,
         created: Union[datetime, UnsetType] = unset,
         customer_impact_duration: Union[int, UnsetType] = unset,
         customer_impact_end: Union[datetime, none_type, UnsetType] = unset,
@@ -99,17 +118,27 @@ class IncidentResponseAttributes(ModelNormal):
             UnsetType,
         ] = unset,
         modified: Union[datetime, UnsetType] = unset,
+        non_datadog_creator: Union[IncidentNonDatadogCreator, none_type, UnsetType] = unset,
         notification_handles: Union[List[IncidentNotificationHandle], none_type, UnsetType] = unset,
         public_id: Union[int, UnsetType] = unset,
         resolved: Union[datetime, none_type, UnsetType] = unset,
+        severity: Union[IncidentSeverity, UnsetType] = unset,
+        state: Union[str, none_type, UnsetType] = unset,
         time_to_detect: Union[int, UnsetType] = unset,
         time_to_internal_response: Union[int, UnsetType] = unset,
         time_to_repair: Union[int, UnsetType] = unset,
         time_to_resolve: Union[int, UnsetType] = unset,
+        visibility: Union[str, none_type, UnsetType] = unset,
         **kwargs,
     ):
         """
         The incident's attributes from a response.
+
+        :param archived: Timestamp of when the incident was archived.
+        :type archived: datetime, none_type, optional
+
+        :param case_id: The incident case id.
+        :type case_id: int, none_type, optional
 
         :param created: Timestamp when the incident was created.
         :type created: datetime, optional
@@ -139,6 +168,9 @@ class IncidentResponseAttributes(ModelNormal):
         :param modified: Timestamp when the incident was last modified.
         :type modified: datetime, optional
 
+        :param non_datadog_creator: Incident's non Datadog creator.
+        :type non_datadog_creator: IncidentNonDatadogCreator, none_type, optional
+
         :param notification_handles: Notification handles that will be notified of the incident during update.
         :type notification_handles: [IncidentNotificationHandle], none_type, optional
 
@@ -147,6 +179,12 @@ class IncidentResponseAttributes(ModelNormal):
 
         :param resolved: Timestamp when the incident's state was last changed from active or stable to resolved or completed.
         :type resolved: datetime, none_type, optional
+
+        :param severity: The incident severity.
+        :type severity: IncidentSeverity, optional
+
+        :param state: The state incident.
+        :type state: str, none_type, optional
 
         :param time_to_detect: The amount of time in seconds to detect the incident.
             Equals the difference between ``customer_impact_start`` and ``detected``.
@@ -163,7 +201,14 @@ class IncidentResponseAttributes(ModelNormal):
 
         :param title: The title of the incident, which summarizes what happened.
         :type title: str
+
+        :param visibility: The incident visibility status.
+        :type visibility: str, none_type, optional
         """
+        if archived is not unset:
+            kwargs["archived"] = archived
+        if case_id is not unset:
+            kwargs["case_id"] = case_id
         if created is not unset:
             kwargs["created"] = created
         if customer_impact_duration is not unset:
@@ -182,12 +227,18 @@ class IncidentResponseAttributes(ModelNormal):
             kwargs["fields"] = fields
         if modified is not unset:
             kwargs["modified"] = modified
+        if non_datadog_creator is not unset:
+            kwargs["non_datadog_creator"] = non_datadog_creator
         if notification_handles is not unset:
             kwargs["notification_handles"] = notification_handles
         if public_id is not unset:
             kwargs["public_id"] = public_id
         if resolved is not unset:
             kwargs["resolved"] = resolved
+        if severity is not unset:
+            kwargs["severity"] = severity
+        if state is not unset:
+            kwargs["state"] = state
         if time_to_detect is not unset:
             kwargs["time_to_detect"] = time_to_detect
         if time_to_internal_response is not unset:
@@ -196,6 +247,8 @@ class IncidentResponseAttributes(ModelNormal):
             kwargs["time_to_repair"] = time_to_repair
         if time_to_resolve is not unset:
             kwargs["time_to_resolve"] = time_to_resolve
+        if visibility is not unset:
+            kwargs["visibility"] = visibility
         super().__init__(kwargs)
 
         self_.title = title

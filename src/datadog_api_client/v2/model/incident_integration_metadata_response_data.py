@@ -17,6 +17,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.incident_integration_metadata_attributes import (
         IncidentIntegrationMetadataAttributes,
     )
+    from datadog_api_client.v2.model.incident_integration_relationships import IncidentIntegrationRelationships
     from datadog_api_client.v2.model.incident_integration_metadata_type import IncidentIntegrationMetadataType
 
 
@@ -26,17 +27,20 @@ class IncidentIntegrationMetadataResponseData(ModelNormal):
         from datadog_api_client.v2.model.incident_integration_metadata_attributes import (
             IncidentIntegrationMetadataAttributes,
         )
+        from datadog_api_client.v2.model.incident_integration_relationships import IncidentIntegrationRelationships
         from datadog_api_client.v2.model.incident_integration_metadata_type import IncidentIntegrationMetadataType
 
         return {
             "attributes": (IncidentIntegrationMetadataAttributes,),
             "id": (str,),
+            "relationships": (IncidentIntegrationRelationships,),
             "type": (IncidentIntegrationMetadataType,),
         }
 
     attribute_map = {
         "attributes": "attributes",
         "id": "id",
+        "relationships": "relationships",
         "type": "type",
     }
 
@@ -45,6 +49,7 @@ class IncidentIntegrationMetadataResponseData(ModelNormal):
         id: str,
         type: IncidentIntegrationMetadataType,
         attributes: Union[IncidentIntegrationMetadataAttributes, UnsetType] = unset,
+        relationships: Union[IncidentIntegrationRelationships, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -56,11 +61,16 @@ class IncidentIntegrationMetadataResponseData(ModelNormal):
         :param id: The incident integration metadata's ID.
         :type id: str
 
+        :param relationships: The incident's integration relationships from a response.
+        :type relationships: IncidentIntegrationRelationships, optional
+
         :param type: Integration metadata resource type.
         :type type: IncidentIntegrationMetadataType
         """
         if attributes is not unset:
             kwargs["attributes"] = attributes
+        if relationships is not unset:
+            kwargs["relationships"] = relationships
         super().__init__(kwargs)
 
         self_.id = id

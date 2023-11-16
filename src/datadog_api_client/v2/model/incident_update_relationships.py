@@ -8,6 +8,7 @@ from typing import Union, TYPE_CHECKING
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    none_type,
     unset,
     UnsetType,
 )
@@ -44,7 +45,7 @@ class IncidentUpdateRelationships(ModelNormal):
 
     def __init__(
         self_,
-        commander_user: Union[NullableRelationshipToUser, UnsetType] = unset,
+        commander_user: Union[NullableRelationshipToUser, none_type, UnsetType] = unset,
         integrations: Union[RelationshipToIncidentIntegrationMetadatas, UnsetType] = unset,
         postmortem: Union[RelationshipToIncidentPostmortem, UnsetType] = unset,
         **kwargs,
@@ -53,7 +54,7 @@ class IncidentUpdateRelationships(ModelNormal):
         The incident's relationships for an update request.
 
         :param commander_user: Relationship to user.
-        :type commander_user: NullableRelationshipToUser, optional
+        :type commander_user: NullableRelationshipToUser, none_type, optional
 
         :param integrations: A relationship reference for multiple integration metadata objects.
         :type integrations: RelationshipToIncidentIntegrationMetadatas, optional
