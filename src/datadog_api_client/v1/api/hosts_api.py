@@ -246,7 +246,7 @@ class HostsApi:
     ) -> HostMuteResponse:
         """Mute a host.
 
-        Mute a host.
+        Mute a host. **Note:** This creates a `Downtime V2 <https://docs.datadoghq.com/api/latest/downtimes/#schedule-a-downtime>`_ for the host.
 
         :param host_name: Name of the host to mute.
         :type host_name: str
