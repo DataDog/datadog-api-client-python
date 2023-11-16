@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"name":"Test-Create_a_new_incident_team_returns_CREATED_response-1652349096"},"type":"teams"}}'
+    body: '{"data":{"attributes":{"name":"Test-Create_a_new_incident_team_returns_CREATED_response-1699307973"},"type":"teams"}}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,9 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/teams
   response:
     body:
-      string: '{"included":[{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0","attributes":{"name":null,"handle":"frog@datadoghq.com","created_at":"2019-10-02T08:15:39.795051+00:00","modified_at":"2020-06-15T12:33:12.884459+00:00","email":"frog@datadoghq.com","icon":"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro","title":null,"verified":true,"service_account":false,"disabled":false,"allowed_login_methods":[],"status":"Active"},"relationships":{"org":{"data":{"type":"orgs","id":"4dee724d-00cc-11ea-a77b-570c9d03c6c5"}}}}],"data":{"type":"teams","id":"1be2fa70-2fa1-51c7-aa84-6cab8defbe7d","attributes":{"name":"Test-Create_a_new_incident_team_returns_CREATED_response-1652349096","created":"2022-05-12T09:51:37.217606+00:00","modified":"2022-05-12T09:51:37.217606+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}},"created_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}}}}'
+      string: '{"data":{"type":"teams","id":"ad2b4266-f087-5b33-9da5-e726f61fd9b0","attributes":{"name":"Test-Create_a_new_incident_team_returns_CREATED_response-1699307973","created":"2023-11-06T21:59:33.756628+00:00","modified":"2023-11-06T21:59:33.756628+00:00"},"relationships":{"last_modified_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}},"created_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}}},"included":[{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0","attributes":{"name":null,"handle":"frog@datadoghq.com","created_at":"2019-10-02T08:15:39.795051+00:00","modified_at":"2020-06-15T12:33:12.884459+00:00","email":"frog@datadoghq.com","icon":"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro","title":null,"verified":true,"service_account":false,"disabled":false,"allowed_login_methods":[],"status":"Active"},"relationships":{"org":{"data":{"type":"orgs","id":"4dee724d-00cc-11ea-a77b-570c9d03c6c5"}}}}]}
+
+        '
     headers:
       content-type:
       - application/json
@@ -23,11 +25,13 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/teams/1be2fa70-2fa1-51c7-aa84-6cab8defbe7d
+    uri: https://api.datadoghq.com/api/v2/teams/ad2b4266-f087-5b33-9da5-e726f61fd9b0
   response:
     body:
       string: ''
-    headers: {}
+    headers:
+      content-type:
+      - text/html; charset=utf-8
     status:
       code: 204
       message: No Content

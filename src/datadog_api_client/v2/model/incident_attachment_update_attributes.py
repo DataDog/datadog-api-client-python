@@ -20,6 +20,9 @@ class IncidentAttachmentUpdateAttributes(ModelComposed):
 
         :param attachment_type: The type of postmortem attachment attributes.
         :type attachment_type: IncidentAttachmentPostmortemAttachmentType
+
+        :param modified: Timestamp when the incident attachment link was last modified.
+        :type modified: datetime, optional
         """
         super().__init__(kwargs)
 

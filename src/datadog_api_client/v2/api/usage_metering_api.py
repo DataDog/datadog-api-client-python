@@ -20,6 +20,7 @@ from datadog_api_client.v2.model.cost_by_org_response import CostByOrgResponse
 from datadog_api_client.v2.model.hourly_usage_response import HourlyUsageResponse
 from datadog_api_client.v2.model.usage_lambda_traced_invocations_response import UsageLambdaTracedInvocationsResponse
 from datadog_api_client.v2.model.usage_observability_pipelines_response import UsageObservabilityPipelinesResponse
+from datadog_api_client.v2.model.projected_cost_response import ProjectedCostResponse
 
 
 class UsageMeteringApi:
@@ -198,6 +199,28 @@ class UsageMeteringApi:
                 "page_next_record_id": {
                     "openapi_types": (str,),
                     "attribute": "page[next_record_id]",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json;datetime-format=rfc3339"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_projected_cost_endpoint = _Endpoint(
+            settings={
+                "response_type": (ProjectedCostResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/usage/projected_cost",
+                "operation_id": "get_projected_cost",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "view": {
+                    "openapi_types": (str,),
+                    "attribute": "view",
                     "location": "query",
                 },
             },
@@ -464,6 +487,27 @@ class UsageMeteringApi:
             kwargs["page_next_record_id"] = page_next_record_id
 
         return self._get_hourly_usage_endpoint.call_with_http_info(**kwargs)
+
+    def get_projected_cost(
+        self,
+        *,
+        view: Union[str, UnsetType] = unset,
+    ) -> ProjectedCostResponse:
+        """Get projected cost across your account.
+
+        Get projected cost across multi-org and single root-org accounts.
+        Projected cost data is only available for the current month and becomes available around the 12th of the month.
+        This endpoint requires the usage_read authorization scope.
+
+        :param view: String to specify whether cost is broken down at a parent-org level or at the sub-org level. Available views are ``summary`` and ``sub-org``. Defaults to ``summary``.
+        :type view: str, optional
+        :rtype: ProjectedCostResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if view is not unset:
+            kwargs["view"] = view
+
+        return self._get_projected_cost_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_application_security_monitoring(
         self,

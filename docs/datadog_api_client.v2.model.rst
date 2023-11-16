@@ -2780,6 +2780,13 @@ incident\_field\_attributes\_value\_type
    :members:
    :show-inheritance:
 
+incident\_impacts\_type
+-----------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_impacts_type
+   :members:
+   :show-inheritance:
+
 incident\_integration\_metadata\_attributes
 -------------------------------------------
 
@@ -2857,6 +2864,20 @@ incident\_integration\_metadata\_type
    :members:
    :show-inheritance:
 
+incident\_integration\_relationships
+------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_integration_relationships
+   :members:
+   :show-inheritance:
+
+incident\_non\_datadog\_creator
+-------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_non_datadog_creator
+   :members:
+   :show-inheritance:
+
 incident\_notification\_handle
 ------------------------------
 
@@ -2875,6 +2896,13 @@ incident\_related\_object
 -------------------------
 
 .. automodule:: datadog_api_client.v2.model.incident_related_object
+   :members:
+   :show-inheritance:
+
+incident\_responders\_type
+--------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_responders_type
    :members:
    :show-inheritance:
 
@@ -3109,6 +3137,13 @@ incident\_services\_response
    :members:
    :show-inheritance:
 
+incident\_severity
+------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_severity
+   :members:
+   :show-inheritance:
+
 incident\_team\_create\_attributes
 ----------------------------------
 
@@ -3298,6 +3333,13 @@ incident\_todo\_patch\_request
    :members:
    :show-inheritance:
 
+incident\_todo\_relationships
+-----------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_todo_relationships
+   :members:
+   :show-inheritance:
+
 incident\_todo\_response
 ------------------------
 
@@ -3358,6 +3400,13 @@ incident\_update\_request
 -------------------------
 
 .. automodule:: datadog_api_client.v2.model.incident_update_request
+   :members:
+   :show-inheritance:
+
+incident\_user\_defined\_field\_type
+------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_user_defined_field_type
    :members:
    :show-inheritance:
 
@@ -5125,6 +5174,34 @@ process\_summary\_type
    :members:
    :show-inheritance:
 
+projected\_cost
+---------------
+
+.. automodule:: datadog_api_client.v2.model.projected_cost
+   :members:
+   :show-inheritance:
+
+projected\_cost\_attributes
+---------------------------
+
+.. automodule:: datadog_api_client.v2.model.projected_cost_attributes
+   :members:
+   :show-inheritance:
+
+projected\_cost\_response
+-------------------------
+
+.. automodule:: datadog_api_client.v2.model.projected_cost_response
+   :members:
+   :show-inheritance:
+
+projected\_cost\_type
+---------------------
+
+.. automodule:: datadog_api_client.v2.model.projected_cost_type
+   :members:
+   :show-inheritance:
+
 query\_formula
 --------------
 
@@ -5153,6 +5230,20 @@ relationship\_to\_incident\_attachment\_data
    :members:
    :show-inheritance:
 
+relationship\_to\_incident\_impact\_data
+----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.relationship_to_incident_impact_data
+   :members:
+   :show-inheritance:
+
+relationship\_to\_incident\_impacts
+-----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.relationship_to_incident_impacts
+   :members:
+   :show-inheritance:
+
 relationship\_to\_incident\_integration\_metadata\_data
 -------------------------------------------------------
 
@@ -5178,6 +5269,34 @@ relationship\_to\_incident\_postmortem\_data
 --------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.relationship_to_incident_postmortem_data
+   :members:
+   :show-inheritance:
+
+relationship\_to\_incident\_responder\_data
+-------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.relationship_to_incident_responder_data
+   :members:
+   :show-inheritance:
+
+relationship\_to\_incident\_responders
+--------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.relationship_to_incident_responders
+   :members:
+   :show-inheritance:
+
+relationship\_to\_incident\_user\_defined\_field\_data
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.relationship_to_incident_user_defined_field_data
+   :members:
+   :show-inheritance:
+
+relationship\_to\_incident\_user\_defined\_fields
+-------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.relationship_to_incident_user_defined_fields
    :members:
    :show-inheritance:
 

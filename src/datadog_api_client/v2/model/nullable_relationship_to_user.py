@@ -17,6 +17,8 @@ if TYPE_CHECKING:
 
 
 class NullableRelationshipToUser(ModelNormal):
+    _nullable = True
+
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.nullable_relationship_to_user_data import NullableRelationshipToUserData

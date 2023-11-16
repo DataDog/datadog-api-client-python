@@ -8,6 +8,7 @@ from typing import Union, TYPE_CHECKING
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    datetime,
     none_type,
     unset,
     UnsetType,
@@ -27,16 +28,24 @@ class IncidentTodoAttributes(ModelNormal):
             "assignees": (IncidentTodoAssigneeArray,),
             "completed": (str, none_type),
             "content": (str,),
+            "created": (datetime,),
             "due_date": (str, none_type),
             "incident_id": (str,),
+            "modified": (datetime,),
         }
 
     attribute_map = {
         "assignees": "assignees",
         "completed": "completed",
         "content": "content",
+        "created": "created",
         "due_date": "due_date",
         "incident_id": "incident_id",
+        "modified": "modified",
+    }
+    read_only_vars = {
+        "created",
+        "modified",
     }
 
     def __init__(
@@ -44,8 +53,10 @@ class IncidentTodoAttributes(ModelNormal):
         assignees: IncidentTodoAssigneeArray,
         content: str,
         completed: Union[str, none_type, UnsetType] = unset,
+        created: Union[datetime, UnsetType] = unset,
         due_date: Union[str, none_type, UnsetType] = unset,
         incident_id: Union[str, UnsetType] = unset,
+        modified: Union[datetime, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -60,18 +71,28 @@ class IncidentTodoAttributes(ModelNormal):
         :param content: The follow-up task's content.
         :type content: str
 
+        :param created: Timestamp when the incident todo was created.
+        :type created: datetime, optional
+
         :param due_date: Timestamp when the todo should be completed by.
         :type due_date: str, none_type, optional
 
         :param incident_id: UUID of the incident this todo is connected to.
         :type incident_id: str, optional
+
+        :param modified: Timestamp when the incident todo was last modified.
+        :type modified: datetime, optional
         """
         if completed is not unset:
             kwargs["completed"] = completed
+        if created is not unset:
+            kwargs["created"] = created
         if due_date is not unset:
             kwargs["due_date"] = due_date
         if incident_id is not unset:
             kwargs["incident_id"] = incident_id
+        if modified is not unset:
+            kwargs["modified"] = modified
         super().__init__(kwargs)
 
         self_.assignees = assignees

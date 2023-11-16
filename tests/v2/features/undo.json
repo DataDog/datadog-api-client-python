@@ -1884,6 +1884,12 @@
       "type": "safe"
     }
   },
+  "GetProjectedCost": {
+    "tag": "Usage Metering",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "SendInvitations": {
     "tag": "Users",
     "undo": {
