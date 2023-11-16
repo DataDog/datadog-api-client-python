@@ -1555,6 +1555,27 @@ content\_encoding
    :members:
    :show-inheritance:
 
+cost\_attribution\_aggregates\_body
+-----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_attribution_aggregates_body
+   :members:
+   :show-inheritance:
+
+cost\_attribution\_tag\_names
+-----------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_attribution_tag_names
+   :members:
+   :show-inheritance:
+
+cost\_attribution\_type
+-----------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_attribution_type
+   :members:
+   :show-inheritance:
+
 cost\_by\_org
 -------------
 
@@ -4747,6 +4768,41 @@ monitor\_type
    :members:
    :show-inheritance:
 
+monthly\_cost\_attribution\_attributes
+--------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monthly_cost_attribution_attributes
+   :members:
+   :show-inheritance:
+
+monthly\_cost\_attribution\_body
+--------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monthly_cost_attribution_body
+   :members:
+   :show-inheritance:
+
+monthly\_cost\_attribution\_meta
+--------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monthly_cost_attribution_meta
+   :members:
+   :show-inheritance:
+
+monthly\_cost\_attribution\_pagination
+--------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monthly_cost_attribution_pagination
+   :members:
+   :show-inheritance:
+
+monthly\_cost\_attribution\_response
+------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monthly_cost_attribution_response
+   :members:
+   :show-inheritance:
+
 nullable\_relationship\_to\_user
 --------------------------------
 
@@ -7621,6 +7677,13 @@ slack\_integration\_metadata\_channel\_item
 -------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.slack_integration_metadata_channel_item
+   :members:
+   :show-inheritance:
+
+sort\_direction
+---------------
+
+.. automodule:: datadog_api_client.v2.model.sort_direction
    :members:
    :show-inheritance:
 

@@ -240,6 +240,7 @@ class Configuration:
                 "v2.list_container_images": False,
                 "v2.list_containers": False,
                 "v2.get_active_billing_dimensions": False,
+                "v2.get_monthly_cost_attribution": False,
                 "v2.list_events": False,
                 "v2.search_events": False,
                 "v2.create_incident": False,

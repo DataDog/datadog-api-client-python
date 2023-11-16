@@ -14,6 +14,8 @@ from datadog_api_client.model_utils import (
     unset,
 )
 from datadog_api_client.v2.model.active_billing_dimensions_response import ActiveBillingDimensionsResponse
+from datadog_api_client.v2.model.monthly_cost_attribution_response import MonthlyCostAttributionResponse
+from datadog_api_client.v2.model.sort_direction import SortDirection
 from datadog_api_client.v2.model.usage_application_security_monitoring_response import (
     UsageApplicationSecurityMonitoringResponse,
 )
@@ -216,6 +218,66 @@ class UsageMeteringApi:
                 "page_next_record_id": {
                     "openapi_types": (str,),
                     "attribute": "page[next_record_id]",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json;datetime-format=rfc3339"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_monthly_cost_attribution_endpoint = _Endpoint(
+            settings={
+                "response_type": (MonthlyCostAttributionResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/cost_by_tag/monthly_cost_attribution",
+                "operation_id": "get_monthly_cost_attribution",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "start_month": {
+                    "required": True,
+                    "openapi_types": (datetime,),
+                    "attribute": "start_month",
+                    "location": "query",
+                },
+                "end_month": {
+                    "required": True,
+                    "openapi_types": (datetime,),
+                    "attribute": "end_month",
+                    "location": "query",
+                },
+                "fields": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "fields",
+                    "location": "query",
+                },
+                "sort_direction": {
+                    "openapi_types": (SortDirection,),
+                    "attribute": "sort_direction",
+                    "location": "query",
+                },
+                "sort_name": {
+                    "openapi_types": (str,),
+                    "attribute": "sort_name",
+                    "location": "query",
+                },
+                "tag_breakdown_keys": {
+                    "openapi_types": (str,),
+                    "attribute": "tag_breakdown_keys",
+                    "location": "query",
+                },
+                "next_record_id": {
+                    "openapi_types": (str,),
+                    "attribute": "next_record_id",
+                    "location": "query",
+                },
+                "include_descendants": {
+                    "openapi_types": (bool,),
+                    "attribute": "include_descendants",
                     "location": "query",
                 },
             },
@@ -516,6 +578,83 @@ class UsageMeteringApi:
             kwargs["page_next_record_id"] = page_next_record_id
 
         return self._get_hourly_usage_endpoint.call_with_http_info(**kwargs)
+
+    def get_monthly_cost_attribution(
+        self,
+        start_month: datetime,
+        end_month: datetime,
+        fields: str,
+        *,
+        sort_direction: Union[SortDirection, UnsetType] = unset,
+        sort_name: Union[str, UnsetType] = unset,
+        tag_breakdown_keys: Union[str, UnsetType] = unset,
+        next_record_id: Union[str, UnsetType] = unset,
+        include_descendants: Union[bool, UnsetType] = unset,
+    ) -> MonthlyCostAttributionResponse:
+        """Get Monthly Cost Attribution.
+
+        Get monthly cost attribution by tag across multi-org and single root-org accounts.
+        Cost Attribution data for a given month becomes available no later than the 17th of the following month.
+        This API endpoint is paginated. To make sure you receive all records, check if the value of ``next_record_id`` is
+        set in the response. If it is, make another request and pass ``next_record_id`` as a parameter.
+        Pseudo code example:
+
+        .. code-block::
+
+           response := GetMonthlyCostAttribution(start_month, end_month)
+           cursor := response.metadata.pagination.next_record_id
+           WHILE cursor != null BEGIN
+             sleep(5 seconds)  # Avoid running into rate limit
+             response := GetMonthlyCostAttribution(start_month, end_month, next_record_id=cursor)
+             cursor := response.metadata.pagination.next_record_id
+           END
+
+        :param start_month: Datetime in ISO-8601 format, UTC, precise to month: ``[YYYY-MM]`` for cost beginning in this month.
+        :type start_month: datetime
+        :param end_month: Datetime in ISO-8601 format, UTC, precise to month: ``[YYYY-MM]`` for cost ending this month.
+        :type end_month: datetime
+        :param fields: Comma-separated list specifying cost types (e.g., ``<billing_dimension>_on_demand_cost`` , ``<billing_dimension>_committed_cost`` , ``<billing_dimension>_total_cost`` ) and the
+            proportions ( ``<billing_dimension>_percentage_in_org`` , ``<billing_dimension>_percentage_in_account`` ). Use ``*`` to retrieve all fields.
+            Example: ``infra_host_on_demand_cost,infra_host_percentage_in_account``
+            To obtain the complete list of active billing dimensions that can be used to replace
+            ``<billing_dimension>`` in the field names, make a request to the `Get active billing dimensions API <https://docs.datadoghq.com/api/latest/usage-metering/#get-active-billing-dimensions-for-cost-attribution>`_.
+        :type fields: str
+        :param sort_direction: The direction to sort by: ``[desc, asc]``.
+        :type sort_direction: SortDirection, optional
+        :param sort_name: The billing dimension to sort by. Always sorted by total cost. Example: ``infra_host``.
+        :type sort_name: str, optional
+        :param tag_breakdown_keys: Comma separated list of tag keys used to group cost. If no value is provided the cost will not be broken down by tags.
+            To see which tags are available, look for the value of ``tag_config_source`` in the API response.
+        :type tag_breakdown_keys: str, optional
+        :param next_record_id: List following results with a next_record_id provided in the previous query.
+        :type next_record_id: str, optional
+        :param include_descendants: Include child org cost in the response. Defaults to ``true``.
+        :type include_descendants: bool, optional
+        :rtype: MonthlyCostAttributionResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["start_month"] = start_month
+
+        kwargs["end_month"] = end_month
+
+        kwargs["fields"] = fields
+
+        if sort_direction is not unset:
+            kwargs["sort_direction"] = sort_direction
+
+        if sort_name is not unset:
+            kwargs["sort_name"] = sort_name
+
+        if tag_breakdown_keys is not unset:
+            kwargs["tag_breakdown_keys"] = tag_breakdown_keys
+
+        if next_record_id is not unset:
+            kwargs["next_record_id"] = next_record_id
+
+        if include_descendants is not unset:
+            kwargs["include_descendants"] = include_descendants
+
+        return self._get_monthly_cost_attribution_endpoint.call_with_http_info(**kwargs)
 
     def get_projected_cost(
         self,

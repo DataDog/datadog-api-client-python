@@ -14,6 +14,26 @@ Feature: Usage Metering
     And a valid "appKeyAuth" key in the system
     And an instance of "UsageMetering" API
 
+  @replay-only @team:DataDog/red-zone-revenue-query
+  Scenario: Get Monthly Cost Attribution returns "Bad Request" response
+    Given operation "GetMonthlyCostAttribution" enabled
+    And new "GetMonthlyCostAttribution" request
+    And request contains "start_month" parameter with value "{{ timeISO('now - 5d') }}"
+    And request contains "end_month" parameter with value "{{ timeISO('now - 3d') }}"
+    And request contains "fields" parameter with value "not_a_product"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @replay-only @team:DataDog/red-zone-revenue-query
+  Scenario: Get Monthly Cost Attribution returns "OK" response
+    Given operation "GetMonthlyCostAttribution" enabled
+    And new "GetMonthlyCostAttribution" request
+    And request contains "start_month" parameter with value "{{ timeISO('now - 5d') }}"
+    And request contains "end_month" parameter with value "{{ timeISO('now - 3d') }}"
+    And request contains "fields" parameter with value "infra_host_total_cost"
+    When the request is sent
+    Then the response status is 200 OK
+
   @generated @skip @team:DataDog/red-zone-revenue-query
   Scenario: Get active billing dimensions for cost attribution returns "Bad Request" response
     Given operation "GetActiveBillingDimensions" enabled
