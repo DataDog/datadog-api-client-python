@@ -5125,6 +5125,34 @@ process\_summary\_type
    :members:
    :show-inheritance:
 
+projected\_cost
+---------------
+
+.. automodule:: datadog_api_client.v2.model.projected_cost
+   :members:
+   :show-inheritance:
+
+projected\_cost\_attributes
+---------------------------
+
+.. automodule:: datadog_api_client.v2.model.projected_cost_attributes
+   :members:
+   :show-inheritance:
+
+projected\_cost\_response
+-------------------------
+
+.. automodule:: datadog_api_client.v2.model.projected_cost_response
+   :members:
+   :show-inheritance:
+
+projected\_cost\_type
+---------------------
+
+.. automodule:: datadog_api_client.v2.model.projected_cost_type
+   :members:
+   :show-inheritance:
+
 query\_formula
 --------------
 
