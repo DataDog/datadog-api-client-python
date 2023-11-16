@@ -844,6 +844,10 @@ from datadog_api_client.v2.model.process_summaries_response import ProcessSummar
 from datadog_api_client.v2.model.process_summary import ProcessSummary
 from datadog_api_client.v2.model.process_summary_attributes import ProcessSummaryAttributes
 from datadog_api_client.v2.model.process_summary_type import ProcessSummaryType
+from datadog_api_client.v2.model.projected_cost import ProjectedCost
+from datadog_api_client.v2.model.projected_cost_attributes import ProjectedCostAttributes
+from datadog_api_client.v2.model.projected_cost_response import ProjectedCostResponse
+from datadog_api_client.v2.model.projected_cost_type import ProjectedCostType
 from datadog_api_client.v2.model.query_formula import QueryFormula
 from datadog_api_client.v2.model.query_sort_order import QuerySortOrder
 from datadog_api_client.v2.model.rum_aggregate_bucket_value import RUMAggregateBucketValue
@@ -2194,6 +2198,10 @@ __all__ = [
     "ProcessSummary",
     "ProcessSummaryAttributes",
     "ProcessSummaryType",
+    "ProjectedCost",
+    "ProjectedCostAttributes",
+    "ProjectedCostResponse",
+    "ProjectedCostType",
     "QueryFormula",
     "QuerySortOrder",
     "RUMAggregateBucketValue",

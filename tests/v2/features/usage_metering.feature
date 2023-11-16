@@ -149,6 +149,19 @@ Feature: Usage Metering
     And the response "data[0].type" is equal to "usage_timeseries"
     And the response "data[0].attributes.product_family" is equal to "observability-pipelines"
 
+  @generated @skip @team:DataDog/red-zone-revenue-query
+  Scenario: Get projected cost across your account returns "Bad Request" response
+    Given new "GetProjectedCost" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @replay-only @team:DataDog/red-zone-revenue-query
+  Scenario: Get projected cost across your account returns "OK" response
+    Given new "GetProjectedCost" request
+    And request contains "view" parameter with value "sub-org"
+    When the request is sent
+    Then the response status is 200 OK
+
   @team:DataDog/red-zone-revenue-query
   Scenario: GetEstimatedCostByOrg with both start_month and start_date returns "Bad Request" response
     Given new "GetEstimatedCostByOrg" request
