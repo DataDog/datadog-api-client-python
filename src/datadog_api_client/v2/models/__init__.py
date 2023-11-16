@@ -268,6 +268,9 @@ from datadog_api_client.v2.model.container_type import ContainerType
 from datadog_api_client.v2.model.containers_response import ContainersResponse
 from datadog_api_client.v2.model.containers_response_links import ContainersResponseLinks
 from datadog_api_client.v2.model.content_encoding import ContentEncoding
+from datadog_api_client.v2.model.cost_attribution_aggregates_body import CostAttributionAggregatesBody
+from datadog_api_client.v2.model.cost_attribution_tag_names import CostAttributionTagNames
+from datadog_api_client.v2.model.cost_attribution_type import CostAttributionType
 from datadog_api_client.v2.model.cost_by_org import CostByOrg
 from datadog_api_client.v2.model.cost_by_org_attributes import CostByOrgAttributes
 from datadog_api_client.v2.model.cost_by_org_response import CostByOrgResponse
@@ -788,6 +791,11 @@ from datadog_api_client.v2.model.monitor_downtime_match_response_attributes impo
 )
 from datadog_api_client.v2.model.monitor_downtime_match_response_data import MonitorDowntimeMatchResponseData
 from datadog_api_client.v2.model.monitor_type import MonitorType
+from datadog_api_client.v2.model.monthly_cost_attribution_attributes import MonthlyCostAttributionAttributes
+from datadog_api_client.v2.model.monthly_cost_attribution_body import MonthlyCostAttributionBody
+from datadog_api_client.v2.model.monthly_cost_attribution_meta import MonthlyCostAttributionMeta
+from datadog_api_client.v2.model.monthly_cost_attribution_pagination import MonthlyCostAttributionPagination
+from datadog_api_client.v2.model.monthly_cost_attribution_response import MonthlyCostAttributionResponse
 from datadog_api_client.v2.model.nullable_relationship_to_user import NullableRelationshipToUser
 from datadog_api_client.v2.model.nullable_relationship_to_user_data import NullableRelationshipToUserData
 from datadog_api_client.v2.model.on_demand_concurrency_cap import OnDemandConcurrencyCap
@@ -1321,6 +1329,7 @@ from datadog_api_client.v2.model.service_definitions_create_request import Servi
 from datadog_api_client.v2.model.service_definitions_list_response import ServiceDefinitionsListResponse
 from datadog_api_client.v2.model.slack_integration_metadata import SlackIntegrationMetadata
 from datadog_api_client.v2.model.slack_integration_metadata_channel_item import SlackIntegrationMetadataChannelItem
+from datadog_api_client.v2.model.sort_direction import SortDirection
 from datadog_api_client.v2.model.span import Span
 from datadog_api_client.v2.model.spans_aggregate_bucket import SpansAggregateBucket
 from datadog_api_client.v2.model.spans_aggregate_bucket_attributes import SpansAggregateBucketAttributes
@@ -1709,6 +1718,9 @@ __all__ = [
     "ContainersResponse",
     "ContainersResponseLinks",
     "ContentEncoding",
+    "CostAttributionAggregatesBody",
+    "CostAttributionTagNames",
+    "CostAttributionType",
     "CostByOrg",
     "CostByOrgAttributes",
     "CostByOrgResponse",
@@ -2165,6 +2177,11 @@ __all__ = [
     "MonitorDowntimeMatchResponseAttributes",
     "MonitorDowntimeMatchResponseData",
     "MonitorType",
+    "MonthlyCostAttributionAttributes",
+    "MonthlyCostAttributionBody",
+    "MonthlyCostAttributionMeta",
+    "MonthlyCostAttributionPagination",
+    "MonthlyCostAttributionResponse",
     "NullableRelationshipToUser",
     "NullableRelationshipToUserData",
     "OnDemandConcurrencyCap",
@@ -2580,6 +2597,7 @@ __all__ = [
     "ServiceDefinitionsListResponse",
     "SlackIntegrationMetadata",
     "SlackIntegrationMetadataChannelItem",
+    "SortDirection",
     "Span",
     "SpansAggregateBucket",
     "SpansAggregateBucketAttributes",

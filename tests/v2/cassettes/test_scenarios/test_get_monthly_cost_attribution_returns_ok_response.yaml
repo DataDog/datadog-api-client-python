@@ -1,0 +1,20 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json;datetime-format=rfc3339
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/cost_by_tag/monthly_cost_attribution?start_month=2023-11-11T19%3A43%3A19.607Z&end_month=2023-11-13T19%3A43%3A19.607Z&fields=infra_host_total_cost
+  response:
+    body:
+      string: '{"data":[]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1
