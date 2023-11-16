@@ -243,6 +243,12 @@
       "type": "safe"
     }
   },
+  "GetActiveBillingDimensions": {
+    "tag": "Usage Metering",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListCurrentUserApplicationKeys": {
     "tag": "Key Management",
     "undo": {
