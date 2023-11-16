@@ -472,6 +472,7 @@ from datadog_api_client.v2.model.incident_field_attributes_single_value_type imp
     IncidentFieldAttributesSingleValueType,
 )
 from datadog_api_client.v2.model.incident_field_attributes_value_type import IncidentFieldAttributesValueType
+from datadog_api_client.v2.model.incident_impacts_type import IncidentImpactsType
 from datadog_api_client.v2.model.incident_integration_metadata_attributes import IncidentIntegrationMetadataAttributes
 from datadog_api_client.v2.model.incident_integration_metadata_create_data import IncidentIntegrationMetadataCreateData
 from datadog_api_client.v2.model.incident_integration_metadata_create_request import (
@@ -493,9 +494,12 @@ from datadog_api_client.v2.model.incident_integration_metadata_response_included
     IncidentIntegrationMetadataResponseIncludedItem,
 )
 from datadog_api_client.v2.model.incident_integration_metadata_type import IncidentIntegrationMetadataType
+from datadog_api_client.v2.model.incident_integration_relationships import IncidentIntegrationRelationships
+from datadog_api_client.v2.model.incident_non_datadog_creator import IncidentNonDatadogCreator
 from datadog_api_client.v2.model.incident_notification_handle import IncidentNotificationHandle
 from datadog_api_client.v2.model.incident_postmortem_type import IncidentPostmortemType
 from datadog_api_client.v2.model.incident_related_object import IncidentRelatedObject
+from datadog_api_client.v2.model.incident_responders_type import IncidentRespondersType
 from datadog_api_client.v2.model.incident_response import IncidentResponse
 from datadog_api_client.v2.model.incident_response_attributes import IncidentResponseAttributes
 from datadog_api_client.v2.model.incident_response_data import IncidentResponseData
@@ -535,6 +539,7 @@ from datadog_api_client.v2.model.incident_service_update_attributes import Incid
 from datadog_api_client.v2.model.incident_service_update_data import IncidentServiceUpdateData
 from datadog_api_client.v2.model.incident_service_update_request import IncidentServiceUpdateRequest
 from datadog_api_client.v2.model.incident_services_response import IncidentServicesResponse
+from datadog_api_client.v2.model.incident_severity import IncidentSeverity
 from datadog_api_client.v2.model.incident_team_create_attributes import IncidentTeamCreateAttributes
 from datadog_api_client.v2.model.incident_team_create_data import IncidentTeamCreateData
 from datadog_api_client.v2.model.incident_team_create_request import IncidentTeamCreateRequest
@@ -568,6 +573,7 @@ from datadog_api_client.v2.model.incident_todo_create_request import IncidentTod
 from datadog_api_client.v2.model.incident_todo_list_response import IncidentTodoListResponse
 from datadog_api_client.v2.model.incident_todo_patch_data import IncidentTodoPatchData
 from datadog_api_client.v2.model.incident_todo_patch_request import IncidentTodoPatchRequest
+from datadog_api_client.v2.model.incident_todo_relationships import IncidentTodoRelationships
 from datadog_api_client.v2.model.incident_todo_response import IncidentTodoResponse
 from datadog_api_client.v2.model.incident_todo_response_data import IncidentTodoResponseData
 from datadog_api_client.v2.model.incident_todo_response_included_item import IncidentTodoResponseIncludedItem
@@ -577,6 +583,7 @@ from datadog_api_client.v2.model.incident_update_attributes import IncidentUpdat
 from datadog_api_client.v2.model.incident_update_data import IncidentUpdateData
 from datadog_api_client.v2.model.incident_update_relationships import IncidentUpdateRelationships
 from datadog_api_client.v2.model.incident_update_request import IncidentUpdateRequest
+from datadog_api_client.v2.model.incident_user_defined_field_type import IncidentUserDefinedFieldType
 from datadog_api_client.v2.model.incidents_response import IncidentsResponse
 from datadog_api_client.v2.model.intake_payload_accepted import IntakePayloadAccepted
 from datadog_api_client.v2.model.jsonapi_error_item import JSONAPIErrorItem
@@ -901,6 +908,8 @@ from datadog_api_client.v2.model.rum_sort_order import RUMSortOrder
 from datadog_api_client.v2.model.rum_warning import RUMWarning
 from datadog_api_client.v2.model.relationship_to_incident_attachment import RelationshipToIncidentAttachment
 from datadog_api_client.v2.model.relationship_to_incident_attachment_data import RelationshipToIncidentAttachmentData
+from datadog_api_client.v2.model.relationship_to_incident_impact_data import RelationshipToIncidentImpactData
+from datadog_api_client.v2.model.relationship_to_incident_impacts import RelationshipToIncidentImpacts
 from datadog_api_client.v2.model.relationship_to_incident_integration_metadata_data import (
     RelationshipToIncidentIntegrationMetadataData,
 )
@@ -909,6 +918,14 @@ from datadog_api_client.v2.model.relationship_to_incident_integration_metadatas 
 )
 from datadog_api_client.v2.model.relationship_to_incident_postmortem import RelationshipToIncidentPostmortem
 from datadog_api_client.v2.model.relationship_to_incident_postmortem_data import RelationshipToIncidentPostmortemData
+from datadog_api_client.v2.model.relationship_to_incident_responder_data import RelationshipToIncidentResponderData
+from datadog_api_client.v2.model.relationship_to_incident_responders import RelationshipToIncidentResponders
+from datadog_api_client.v2.model.relationship_to_incident_user_defined_field_data import (
+    RelationshipToIncidentUserDefinedFieldData,
+)
+from datadog_api_client.v2.model.relationship_to_incident_user_defined_fields import (
+    RelationshipToIncidentUserDefinedFields,
+)
 from datadog_api_client.v2.model.relationship_to_organization import RelationshipToOrganization
 from datadog_api_client.v2.model.relationship_to_organization_data import RelationshipToOrganizationData
 from datadog_api_client.v2.model.relationship_to_organizations import RelationshipToOrganizations
@@ -1872,6 +1889,7 @@ __all__ = [
     "IncidentFieldAttributesSingleValue",
     "IncidentFieldAttributesSingleValueType",
     "IncidentFieldAttributesValueType",
+    "IncidentImpactsType",
     "IncidentIntegrationMetadataAttributes",
     "IncidentIntegrationMetadataCreateData",
     "IncidentIntegrationMetadataCreateRequest",
@@ -1883,9 +1901,12 @@ __all__ = [
     "IncidentIntegrationMetadataResponseData",
     "IncidentIntegrationMetadataResponseIncludedItem",
     "IncidentIntegrationMetadataType",
+    "IncidentIntegrationRelationships",
+    "IncidentNonDatadogCreator",
     "IncidentNotificationHandle",
     "IncidentPostmortemType",
     "IncidentRelatedObject",
+    "IncidentRespondersType",
     "IncidentResponse",
     "IncidentResponseAttributes",
     "IncidentResponseData",
@@ -1919,6 +1940,7 @@ __all__ = [
     "IncidentServiceUpdateData",
     "IncidentServiceUpdateRequest",
     "IncidentServicesResponse",
+    "IncidentSeverity",
     "IncidentTeamCreateAttributes",
     "IncidentTeamCreateData",
     "IncidentTeamCreateRequest",
@@ -1946,6 +1968,7 @@ __all__ = [
     "IncidentTodoListResponse",
     "IncidentTodoPatchData",
     "IncidentTodoPatchRequest",
+    "IncidentTodoRelationships",
     "IncidentTodoResponse",
     "IncidentTodoResponseData",
     "IncidentTodoResponseIncludedItem",
@@ -1955,6 +1978,7 @@ __all__ = [
     "IncidentUpdateData",
     "IncidentUpdateRelationships",
     "IncidentUpdateRequest",
+    "IncidentUserDefinedFieldType",
     "IncidentsResponse",
     "IntakePayloadAccepted",
     "JSONAPIErrorItem",
@@ -2253,10 +2277,16 @@ __all__ = [
     "RUMWarning",
     "RelationshipToIncidentAttachment",
     "RelationshipToIncidentAttachmentData",
+    "RelationshipToIncidentImpactData",
+    "RelationshipToIncidentImpacts",
     "RelationshipToIncidentIntegrationMetadataData",
     "RelationshipToIncidentIntegrationMetadatas",
     "RelationshipToIncidentPostmortem",
     "RelationshipToIncidentPostmortemData",
+    "RelationshipToIncidentResponderData",
+    "RelationshipToIncidentResponders",
+    "RelationshipToIncidentUserDefinedFieldData",
+    "RelationshipToIncidentUserDefinedFields",
     "RelationshipToOrganization",
     "RelationshipToOrganizationData",
     "RelationshipToOrganizations",

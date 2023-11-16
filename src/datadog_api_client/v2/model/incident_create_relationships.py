@@ -3,11 +3,12 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    none_type,
 )
 
 
@@ -28,12 +29,12 @@ class IncidentCreateRelationships(ModelNormal):
         "commander_user": "commander_user",
     }
 
-    def __init__(self_, commander_user: NullableRelationshipToUser, **kwargs):
+    def __init__(self_, commander_user: Union[NullableRelationshipToUser, none_type], **kwargs):
         """
         The relationships the incident will have with other resources once created.
 
         :param commander_user: Relationship to user.
-        :type commander_user: NullableRelationshipToUser
+        :type commander_user: NullableRelationshipToUser, none_type
         """
         super().__init__(kwargs)
 
