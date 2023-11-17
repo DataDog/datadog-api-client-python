@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -42,6 +42,7 @@ class CloudWorkloadSecurityAgentRuleAttributes(ModelNormal):
             "description": (str,),
             "enabled": (bool,),
             "expression": (str,),
+            "filters": ([str],),
             "name": (str,),
             "update_author_uu_id": (str,),
             "update_date": (int,),
@@ -60,6 +61,7 @@ class CloudWorkloadSecurityAgentRuleAttributes(ModelNormal):
         "description": "description",
         "enabled": "enabled",
         "expression": "expression",
+        "filters": "filters",
         "name": "name",
         "update_author_uu_id": "updateAuthorUuId",
         "update_date": "updateDate",
@@ -79,6 +81,7 @@ class CloudWorkloadSecurityAgentRuleAttributes(ModelNormal):
         description: Union[str, UnsetType] = unset,
         enabled: Union[bool, UnsetType] = unset,
         expression: Union[str, UnsetType] = unset,
+        filters: Union[List[str], UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
         update_author_uu_id: Union[str, UnsetType] = unset,
         update_date: Union[int, UnsetType] = unset,
@@ -117,6 +120,9 @@ class CloudWorkloadSecurityAgentRuleAttributes(ModelNormal):
         :param expression: The SECL expression of the Agent rule.
         :type expression: str, optional
 
+        :param filters: The platforms the Agent rule is supported on.
+        :type filters: [str], optional
+
         :param name: The name of the Agent rule.
         :type name: str, optional
 
@@ -153,6 +159,8 @@ class CloudWorkloadSecurityAgentRuleAttributes(ModelNormal):
             kwargs["enabled"] = enabled
         if expression is not unset:
             kwargs["expression"] = expression
+        if filters is not unset:
+            kwargs["filters"] = filters
         if name is not unset:
             kwargs["name"] = name
         if update_author_uu_id is not unset:
