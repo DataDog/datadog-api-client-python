@@ -8,6 +8,7 @@ from typing import Union
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    none_type,
     unset,
     UnsetType,
 )
@@ -18,7 +19,7 @@ class PowerpacksResponseMetaPagination(ModelNormal):
     def openapi_types(_):
         return {
             "first_offset": (int,),
-            "last_offset": (int,),
+            "last_offset": (int, none_type),
             "limit": (int,),
             "next_offset": (int,),
             "offset": (int,),
@@ -41,7 +42,7 @@ class PowerpacksResponseMetaPagination(ModelNormal):
     def __init__(
         self_,
         first_offset: Union[int, UnsetType] = unset,
-        last_offset: Union[int, UnsetType] = unset,
+        last_offset: Union[int, none_type, UnsetType] = unset,
         limit: Union[int, UnsetType] = unset,
         next_offset: Union[int, UnsetType] = unset,
         offset: Union[int, UnsetType] = unset,
@@ -57,7 +58,7 @@ class PowerpacksResponseMetaPagination(ModelNormal):
         :type first_offset: int, optional
 
         :param last_offset: The last offset.
-        :type last_offset: int, optional
+        :type last_offset: int, none_type, optional
 
         :param limit: Pagination limit.
         :type limit: int, optional
