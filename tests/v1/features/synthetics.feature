@@ -555,6 +555,31 @@ Feature: Synthetics
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/synthetics-app
+  Scenario: Patch a Synthetic test returns "- JSON format is wrong" response
+    Given new "PatchTest" request
+    And request contains "public_id" parameter from "REPLACE.ME"
+    And body with value {"data": [{"op": "replace", "path": "/name", "value": "New test name"}, {"op": "remove", "path": "/config/assertions/0"}]}
+    When the request is sent
+    Then the response status is 400 - JSON format is wrong
+
+  @generated @skip @team:DataDog/synthetics-app
+  Scenario: Patch a Synthetic test returns "- Synthetic Monitoring is not activated for the user" response
+    Given new "PatchTest" request
+    And request contains "public_id" parameter from "REPLACE.ME"
+    And body with value {"data": [{"op": "replace", "path": "/name", "value": "New test name"}, {"op": "remove", "path": "/config/assertions/0"}]}
+    When the request is sent
+    Then the response status is 404 - Synthetic Monitoring is not activated for the user
+
+  @team:DataDog/synthetics-app
+  Scenario: Patch a Synthetic test returns "OK" response
+    Given there is a valid "synthetics_api_test" in the system
+    And new "PatchTest" request
+    And request contains "public_id" parameter from "synthetics_api_test.public_id"
+    And body with value {"data": [{"op": "replace", "path": "/name", "value": "New test name"}, {"op": "remove", "path": "/config/assertions/0"}]}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/synthetics-app
   Scenario: Pause or start a test returns "- Synthetic Monitoring is not activated for the user" response
     Given new "UpdateTestPauseStatus" request
     And request contains "public_id" parameter from "REPLACE.ME"
