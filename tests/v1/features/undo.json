@@ -1202,6 +1202,12 @@
       "type": "safe"
     }
   },
+  "PatchTest": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "GetAPITestLatestResults": {
     "tag": "Synthetics",
     "undo": {

@@ -33,6 +33,7 @@ from datadog_api_client.v1.model.synthetics_delete_tests_payload import Syntheti
 from datadog_api_client.v1.model.synthetics_trigger_ci_tests_response import SyntheticsTriggerCITestsResponse
 from datadog_api_client.v1.model.synthetics_trigger_body import SyntheticsTriggerBody
 from datadog_api_client.v1.model.synthetics_ci_test_body import SyntheticsCITestBody
+from datadog_api_client.v1.model.synthetics_patch_test_body import SyntheticsPatchTestBody
 from datadog_api_client.v1.model.synthetics_get_api_test_latest_results_response import (
     SyntheticsGetAPITestLatestResultsResponse,
 )
@@ -578,6 +579,32 @@ class SyntheticsApi:
             headers_map={
                 "accept": ["application/json"],
             },
+            api_client=api_client,
+        )
+
+        self._patch_test_endpoint = _Endpoint(
+            settings={
+                "response_type": (SyntheticsTestDetails,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/synthetics/tests/{public_id}",
+                "operation_id": "patch_test",
+                "http_method": "PATCH",
+                "version": "v1",
+            },
+            params_map={
+                "public_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "public_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (SyntheticsPatchTestBody,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
         )
 
@@ -1187,6 +1214,28 @@ class SyntheticsApi:
         }
         return endpoint.call_with_http_info_paginated(pagination)
 
+    def patch_test(
+        self,
+        public_id: str,
+        body: SyntheticsPatchTestBody,
+    ) -> SyntheticsTestDetails:
+        """Patch a Synthetic test.
+
+        Patch the configuration of a Synthetic test with partial data.
+
+        :param public_id: The public ID of the test to patch.
+        :type public_id: str
+        :param body: `JSON Patch <https://jsonpatch.com/>`_ compliant list of operations
+        :type body: SyntheticsPatchTestBody
+        :rtype: SyntheticsTestDetails
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["public_id"] = public_id
+
+        kwargs["body"] = body
+
+        return self._patch_test_endpoint.call_with_http_info(**kwargs)
+
     def trigger_ci_tests(
         self,
         body: SyntheticsCITestBody,
@@ -1252,7 +1301,7 @@ class SyntheticsApi:
 
         Edit the configuration of a Synthetic browser test.
 
-        :param public_id: The public ID of the test to get details from.
+        :param public_id: The public ID of the test to edit.
         :type public_id: str
         :param body: New test details to be saved.
         :type body: SyntheticsBrowserTest

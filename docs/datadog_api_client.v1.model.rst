@@ -4292,6 +4292,27 @@ synthetics\_parsing\_options
    :members:
    :show-inheritance:
 
+synthetics\_patch\_test\_body
+-----------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_patch_test_body
+   :members:
+   :show-inheritance:
+
+synthetics\_patch\_test\_operation
+----------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_patch_test_operation
+   :members:
+   :show-inheritance:
+
+synthetics\_patch\_test\_operation\_name
+----------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_patch_test_operation_name
+   :members:
+   :show-inheritance:
+
 synthetics\_playing\_tab
 ------------------------
 
