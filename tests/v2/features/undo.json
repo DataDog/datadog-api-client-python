@@ -316,6 +316,18 @@
       "type": "safe"
     }
   },
+  "CreateDORADeployment": {
+    "tag": "DORA Metrics",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "CreateDORAIncident": {
+    "tag": "DORA Metrics",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListDowntimes": {
     "tag": "Downtimes",
     "undo": {

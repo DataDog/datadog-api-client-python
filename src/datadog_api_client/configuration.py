@@ -241,6 +241,8 @@ class Configuration:
                 "v2.list_containers": False,
                 "v2.get_active_billing_dimensions": False,
                 "v2.get_monthly_cost_attribution": False,
+                "v2.create_dora_deployment": False,
+                "v2.create_dora_incident": False,
                 "v2.list_events": False,
                 "v2.search_events": False,
                 "v2.create_incident": False,
