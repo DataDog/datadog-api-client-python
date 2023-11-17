@@ -8,6 +8,7 @@ from datadog_api_client.v2.api.cloudflare_integration_api import CloudflareInteg
 from datadog_api_client.v2.api.confluent_cloud_api import ConfluentCloudApi
 from datadog_api_client.v2.api.container_images_api import ContainerImagesApi
 from datadog_api_client.v2.api.containers_api import ContainersApi
+from datadog_api_client.v2.api.dora_metrics_api import DORAMetricsApi
 from datadog_api_client.v2.api.dashboard_lists_api import DashboardListsApi
 from datadog_api_client.v2.api.downtimes_api import DowntimesApi
 from datadog_api_client.v2.api.events_api import EventsApi
@@ -54,6 +55,7 @@ __all__ = [
     "ConfluentCloudApi",
     "ContainerImagesApi",
     "ContainersApi",
+    "DORAMetricsApi",
     "DashboardListsApi",
     "DowntimesApi",
     "EventsApi",

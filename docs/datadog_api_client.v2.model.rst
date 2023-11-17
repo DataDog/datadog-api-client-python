@@ -1,6 +1,34 @@
 datadog\_api\_client.v2.model
 =============================
 
+active\_billing\_dimensions\_attributes
+---------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.active_billing_dimensions_attributes
+   :members:
+   :show-inheritance:
+
+active\_billing\_dimensions\_body
+---------------------------------
+
+.. automodule:: datadog_api_client.v2.model.active_billing_dimensions_body
+   :members:
+   :show-inheritance:
+
+active\_billing\_dimensions\_response
+-------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.active_billing_dimensions_response
+   :members:
+   :show-inheritance:
+
+active\_billing\_dimensions\_type
+---------------------------------
+
+.. automodule:: datadog_api_client.v2.model.active_billing_dimensions_type
+   :members:
+   :show-inheritance:
+
 api\_error\_response
 --------------------
 
@@ -1527,6 +1555,27 @@ content\_encoding
    :members:
    :show-inheritance:
 
+cost\_attribution\_aggregates\_body
+-----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_attribution_aggregates_body
+   :members:
+   :show-inheritance:
+
+cost\_attribution\_tag\_names
+-----------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_attribution_tag_names
+   :members:
+   :show-inheritance:
+
+cost\_attribution\_type
+-----------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_attribution_type
+   :members:
+   :show-inheritance:
+
 cost\_by\_org
 -------------
 
@@ -1692,6 +1741,97 @@ detailed\_finding\_type
 -----------------------
 
 .. automodule:: datadog_api_client.v2.model.detailed_finding_type
+   :members:
+   :show-inheritance:
+
+dora\_deployment\_request
+-------------------------
+
+.. automodule:: datadog_api_client.v2.model.dora_deployment_request
+   :members:
+   :show-inheritance:
+
+dora\_deployment\_request\_attributes
+-------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dora_deployment_request_attributes
+   :members:
+   :show-inheritance:
+
+dora\_deployment\_request\_data
+-------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dora_deployment_request_data
+   :members:
+   :show-inheritance:
+
+dora\_deployment\_response
+--------------------------
+
+.. automodule:: datadog_api_client.v2.model.dora_deployment_response
+   :members:
+   :show-inheritance:
+
+dora\_deployment\_response\_data
+--------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dora_deployment_response_data
+   :members:
+   :show-inheritance:
+
+dora\_deployment\_type
+----------------------
+
+.. automodule:: datadog_api_client.v2.model.dora_deployment_type
+   :members:
+   :show-inheritance:
+
+dora\_git\_info
+---------------
+
+.. automodule:: datadog_api_client.v2.model.dora_git_info
+   :members:
+   :show-inheritance:
+
+dora\_incident\_request
+-----------------------
+
+.. automodule:: datadog_api_client.v2.model.dora_incident_request
+   :members:
+   :show-inheritance:
+
+dora\_incident\_request\_attributes
+-----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dora_incident_request_attributes
+   :members:
+   :show-inheritance:
+
+dora\_incident\_request\_data
+-----------------------------
+
+.. automodule:: datadog_api_client.v2.model.dora_incident_request_data
+   :members:
+   :show-inheritance:
+
+dora\_incident\_response
+------------------------
+
+.. automodule:: datadog_api_client.v2.model.dora_incident_response
+   :members:
+   :show-inheritance:
+
+dora\_incident\_response\_data
+------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dora_incident_response_data
+   :members:
+   :show-inheritance:
+
+dora\_incident\_type
+--------------------
+
+.. automodule:: datadog_api_client.v2.model.dora_incident_type
    :members:
    :show-inheritance:
 
@@ -4719,6 +4859,41 @@ monitor\_type
    :members:
    :show-inheritance:
 
+monthly\_cost\_attribution\_attributes
+--------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monthly_cost_attribution_attributes
+   :members:
+   :show-inheritance:
+
+monthly\_cost\_attribution\_body
+--------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monthly_cost_attribution_body
+   :members:
+   :show-inheritance:
+
+monthly\_cost\_attribution\_meta
+--------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monthly_cost_attribution_meta
+   :members:
+   :show-inheritance:
+
+monthly\_cost\_attribution\_pagination
+--------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monthly_cost_attribution_pagination
+   :members:
+   :show-inheritance:
+
+monthly\_cost\_attribution\_response
+------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monthly_cost_attribution_response
+   :members:
+   :show-inheritance:
+
 nullable\_relationship\_to\_user
 --------------------------------
 
@@ -7593,6 +7768,13 @@ slack\_integration\_metadata\_channel\_item
 -------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.slack_integration_metadata_channel_item
+   :members:
+   :show-inheritance:
+
+sort\_direction
+---------------
+
+.. automodule:: datadog_api_client.v2.model.sort_direction
    :members:
    :show-inheritance:
 

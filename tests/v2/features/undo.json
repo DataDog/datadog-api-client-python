@@ -243,6 +243,18 @@
       "type": "safe"
     }
   },
+  "GetActiveBillingDimensions": {
+    "tag": "Usage Metering",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetMonthlyCostAttribution": {
+    "tag": "Usage Metering",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListCurrentUserApplicationKeys": {
     "tag": "Key Management",
     "undo": {
@@ -302,6 +314,18 @@
     "tag": "Dashboard Lists",
     "undo": {
       "type": "safe"
+    }
+  },
+  "CreateDORADeployment": {
+    "tag": "DORA Metrics",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "CreateDORAIncident": {
+    "tag": "DORA Metrics",
+    "undo": {
+      "type": "idempotent"
     }
   },
   "ListDowntimes": {
