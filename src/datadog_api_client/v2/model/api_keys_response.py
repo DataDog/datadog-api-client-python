@@ -16,6 +16,7 @@ from datadog_api_client.model_utils import (
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.partial_api_key import PartialAPIKey
     from datadog_api_client.v2.model.api_key_response_included_item import APIKeyResponseIncludedItem
+    from datadog_api_client.v2.model.api_keys_response_meta import APIKeysResponseMeta
     from datadog_api_client.v2.model.user import User
 
 
@@ -24,21 +25,25 @@ class APIKeysResponse(ModelNormal):
     def openapi_types(_):
         from datadog_api_client.v2.model.partial_api_key import PartialAPIKey
         from datadog_api_client.v2.model.api_key_response_included_item import APIKeyResponseIncludedItem
+        from datadog_api_client.v2.model.api_keys_response_meta import APIKeysResponseMeta
 
         return {
             "data": ([PartialAPIKey],),
             "included": ([APIKeyResponseIncludedItem],),
+            "meta": (APIKeysResponseMeta,),
         }
 
     attribute_map = {
         "data": "data",
         "included": "included",
+        "meta": "meta",
     }
 
     def __init__(
         self_,
         data: Union[List[PartialAPIKey], UnsetType] = unset,
         included: Union[List[Union[APIKeyResponseIncludedItem, User]], UnsetType] = unset,
+        meta: Union[APIKeysResponseMeta, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -49,9 +54,14 @@ class APIKeysResponse(ModelNormal):
 
         :param included: Array of objects related to the API key.
         :type included: [APIKeyResponseIncludedItem], optional
+
+        :param meta: Additional information related to api keys response.
+        :type meta: APIKeysResponseMeta, optional
         """
         if data is not unset:
             kwargs["data"] = data
         if included is not unset:
             kwargs["included"] = included
+        if meta is not unset:
+            kwargs["meta"] = meta
         super().__init__(kwargs)
