@@ -280,6 +280,19 @@ from datadog_api_client.v2.model.create_rule_request_data import CreateRuleReque
 from datadog_api_client.v2.model.create_rule_response import CreateRuleResponse
 from datadog_api_client.v2.model.create_rule_response_data import CreateRuleResponseData
 from datadog_api_client.v2.model.creator import Creator
+from datadog_api_client.v2.model.dora_deployment_request import DORADeploymentRequest
+from datadog_api_client.v2.model.dora_deployment_request_attributes import DORADeploymentRequestAttributes
+from datadog_api_client.v2.model.dora_deployment_request_data import DORADeploymentRequestData
+from datadog_api_client.v2.model.dora_deployment_response import DORADeploymentResponse
+from datadog_api_client.v2.model.dora_deployment_response_data import DORADeploymentResponseData
+from datadog_api_client.v2.model.dora_deployment_type import DORADeploymentType
+from datadog_api_client.v2.model.dora_git_info import DORAGitInfo
+from datadog_api_client.v2.model.dora_incident_request import DORAIncidentRequest
+from datadog_api_client.v2.model.dora_incident_request_attributes import DORAIncidentRequestAttributes
+from datadog_api_client.v2.model.dora_incident_request_data import DORAIncidentRequestData
+from datadog_api_client.v2.model.dora_incident_response import DORAIncidentResponse
+from datadog_api_client.v2.model.dora_incident_response_data import DORAIncidentResponseData
+from datadog_api_client.v2.model.dora_incident_type import DORAIncidentType
 from datadog_api_client.v2.model.dashboard_list_add_items_request import DashboardListAddItemsRequest
 from datadog_api_client.v2.model.dashboard_list_add_items_response import DashboardListAddItemsResponse
 from datadog_api_client.v2.model.dashboard_list_delete_items_request import DashboardListDeleteItemsRequest
@@ -1730,6 +1743,19 @@ __all__ = [
     "CreateRuleResponse",
     "CreateRuleResponseData",
     "Creator",
+    "DORADeploymentRequest",
+    "DORADeploymentRequestAttributes",
+    "DORADeploymentRequestData",
+    "DORADeploymentResponse",
+    "DORADeploymentResponseData",
+    "DORADeploymentType",
+    "DORAGitInfo",
+    "DORAIncidentRequest",
+    "DORAIncidentRequestAttributes",
+    "DORAIncidentRequestData",
+    "DORAIncidentResponse",
+    "DORAIncidentResponseData",
+    "DORAIncidentType",
     "DashboardListAddItemsRequest",
     "DashboardListAddItemsResponse",
     "DashboardListDeleteItemsRequest",

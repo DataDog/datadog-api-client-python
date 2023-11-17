@@ -1744,6 +1744,97 @@ detailed\_finding\_type
    :members:
    :show-inheritance:
 
+dora\_deployment\_request
+-------------------------
+
+.. automodule:: datadog_api_client.v2.model.dora_deployment_request
+   :members:
+   :show-inheritance:
+
+dora\_deployment\_request\_attributes
+-------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dora_deployment_request_attributes
+   :members:
+   :show-inheritance:
+
+dora\_deployment\_request\_data
+-------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dora_deployment_request_data
+   :members:
+   :show-inheritance:
+
+dora\_deployment\_response
+--------------------------
+
+.. automodule:: datadog_api_client.v2.model.dora_deployment_response
+   :members:
+   :show-inheritance:
+
+dora\_deployment\_response\_data
+--------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dora_deployment_response_data
+   :members:
+   :show-inheritance:
+
+dora\_deployment\_type
+----------------------
+
+.. automodule:: datadog_api_client.v2.model.dora_deployment_type
+   :members:
+   :show-inheritance:
+
+dora\_git\_info
+---------------
+
+.. automodule:: datadog_api_client.v2.model.dora_git_info
+   :members:
+   :show-inheritance:
+
+dora\_incident\_request
+-----------------------
+
+.. automodule:: datadog_api_client.v2.model.dora_incident_request
+   :members:
+   :show-inheritance:
+
+dora\_incident\_request\_attributes
+-----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dora_incident_request_attributes
+   :members:
+   :show-inheritance:
+
+dora\_incident\_request\_data
+-----------------------------
+
+.. automodule:: datadog_api_client.v2.model.dora_incident_request_data
+   :members:
+   :show-inheritance:
+
+dora\_incident\_response
+------------------------
+
+.. automodule:: datadog_api_client.v2.model.dora_incident_response
+   :members:
+   :show-inheritance:
+
+dora\_incident\_response\_data
+------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dora_incident_response_data
+   :members:
+   :show-inheritance:
+
+dora\_incident\_type
+--------------------
+
+.. automodule:: datadog_api_client.v2.model.dora_incident_type
+   :members:
+   :show-inheritance:
+
 downtime\_create\_request
 -------------------------
 

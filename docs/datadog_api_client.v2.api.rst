@@ -78,6 +78,13 @@ dashboard\_lists\_api
    :members:
    :show-inheritance:
 
+dora\_metrics\_api
+------------------
+
+.. automodule:: datadog_api_client.v2.api.dora_metrics_api
+   :members:
+   :show-inheritance:
+
 downtimes\_api
 --------------
 
