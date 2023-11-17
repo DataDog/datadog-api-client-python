@@ -486,7 +486,7 @@ def build_given(version, operation):
             result = operation_method(**kwargs)
 
             if "body" in kwargs:
-                request_body = kwargs["body"]
+                request_body = kwargs.get("body","")
             else:
                 request_body = ""
 
@@ -598,7 +598,7 @@ def execute_request(undo, context, client, api_version, request):
     operation_id = api_request["request"].__name__
     response = api_request["response"][0]
     if "kwargs" in api_request and "body" in api_request["kwargs"]:
-        request_body = api_request["kwargs"]["body"]
+        request_body = api_request.get("kwargs",{}).get("body","")
     else:
         request_body = ""
 
