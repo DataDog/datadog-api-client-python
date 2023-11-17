@@ -699,6 +699,9 @@ from datadog_api_client.v1.model.synthetics_list_tests_response import Synthetic
 from datadog_api_client.v1.model.synthetics_location import SyntheticsLocation
 from datadog_api_client.v1.model.synthetics_locations import SyntheticsLocations
 from datadog_api_client.v1.model.synthetics_parsing_options import SyntheticsParsingOptions
+from datadog_api_client.v1.model.synthetics_patch_test_body import SyntheticsPatchTestBody
+from datadog_api_client.v1.model.synthetics_patch_test_operation import SyntheticsPatchTestOperation
+from datadog_api_client.v1.model.synthetics_patch_test_operation_name import SyntheticsPatchTestOperationName
 from datadog_api_client.v1.model.synthetics_playing_tab import SyntheticsPlayingTab
 from datadog_api_client.v1.model.synthetics_private_location import SyntheticsPrivateLocation
 from datadog_api_client.v1.model.synthetics_private_location_creation_response import (
@@ -1568,6 +1571,9 @@ __all__ = [
     "SyntheticsLocation",
     "SyntheticsLocations",
     "SyntheticsParsingOptions",
+    "SyntheticsPatchTestBody",
+    "SyntheticsPatchTestOperation",
+    "SyntheticsPatchTestOperationName",
     "SyntheticsPlayingTab",
     "SyntheticsPrivateLocation",
     "SyntheticsPrivateLocationCreationResponse",
