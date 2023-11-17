@@ -72,6 +72,8 @@ class UsageSummaryResponse(ModelNormal):
             "cspm_container_hwm_sum": (int,),
             "cspm_gcp_host_top99p_sum": (int,),
             "cspm_host_top99p_sum": (int,),
+            "custom_historical_ts_sum": (int,),
+            "custom_live_ts_sum": (int,),
             "custom_ts_sum": (int,),
             "cws_containers_avg_sum": (int,),
             "cws_host_top99p_sum": (int,),
@@ -186,6 +188,8 @@ class UsageSummaryResponse(ModelNormal):
         "cspm_container_hwm_sum": "cspm_container_hwm_sum",
         "cspm_gcp_host_top99p_sum": "cspm_gcp_host_top99p_sum",
         "cspm_host_top99p_sum": "cspm_host_top99p_sum",
+        "custom_historical_ts_sum": "custom_historical_ts_sum",
+        "custom_live_ts_sum": "custom_live_ts_sum",
         "custom_ts_sum": "custom_ts_sum",
         "cws_containers_avg_sum": "cws_containers_avg_sum",
         "cws_host_top99p_sum": "cws_host_top99p_sum",
@@ -301,6 +305,8 @@ class UsageSummaryResponse(ModelNormal):
         cspm_container_hwm_sum: Union[int, UnsetType] = unset,
         cspm_gcp_host_top99p_sum: Union[int, UnsetType] = unset,
         cspm_host_top99p_sum: Union[int, UnsetType] = unset,
+        custom_historical_ts_sum: Union[int, UnsetType] = unset,
+        custom_live_ts_sum: Union[int, UnsetType] = unset,
         custom_ts_sum: Union[int, UnsetType] = unset,
         cws_containers_avg_sum: Union[int, UnsetType] = unset,
         cws_host_top99p_sum: Union[int, UnsetType] = unset,
@@ -508,6 +514,12 @@ class UsageSummaryResponse(ModelNormal):
 
         :param cspm_host_top99p_sum: Shows the 99th percentile of all Cloud Security Management Pro hosts over all hours in the current months for all organizations.
         :type cspm_host_top99p_sum: int, optional
+
+        :param custom_historical_ts_sum: Shows the average number of distinct historical custom metrics over all hours in the current months for all organizations.
+        :type custom_historical_ts_sum: int, optional
+
+        :param custom_live_ts_sum: Shows the average number of distinct live custom metrics over all hours in the current months for all organizations.
+        :type custom_live_ts_sum: int, optional
 
         :param custom_ts_sum: Shows the average number of distinct custom metrics over all hours in the current months for all organizations.
         :type custom_ts_sum: int, optional
@@ -800,6 +812,10 @@ class UsageSummaryResponse(ModelNormal):
             kwargs["cspm_gcp_host_top99p_sum"] = cspm_gcp_host_top99p_sum
         if cspm_host_top99p_sum is not unset:
             kwargs["cspm_host_top99p_sum"] = cspm_host_top99p_sum
+        if custom_historical_ts_sum is not unset:
+            kwargs["custom_historical_ts_sum"] = custom_historical_ts_sum
+        if custom_live_ts_sum is not unset:
+            kwargs["custom_live_ts_sum"] = custom_live_ts_sum
         if custom_ts_sum is not unset:
             kwargs["custom_ts_sum"] = custom_ts_sum
         if cws_containers_avg_sum is not unset:

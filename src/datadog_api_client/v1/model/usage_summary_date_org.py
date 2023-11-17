@@ -62,6 +62,8 @@ class UsageSummaryDateOrg(ModelNormal):
             "cspm_container_hwm": (int,),
             "cspm_gcp_host_top99p": (int,),
             "cspm_host_top99p": (int,),
+            "custom_historical_ts_avg": (int,),
+            "custom_live_ts_avg": (int,),
             "custom_ts_avg": (int,),
             "cws_container_count_avg": (int,),
             "cws_host_top99p": (int,),
@@ -169,6 +171,8 @@ class UsageSummaryDateOrg(ModelNormal):
         "cspm_container_hwm": "cspm_container_hwm",
         "cspm_gcp_host_top99p": "cspm_gcp_host_top99p",
         "cspm_host_top99p": "cspm_host_top99p",
+        "custom_historical_ts_avg": "custom_historical_ts_avg",
+        "custom_live_ts_avg": "custom_live_ts_avg",
         "custom_ts_avg": "custom_ts_avg",
         "cws_container_count_avg": "cws_container_count_avg",
         "cws_host_top99p": "cws_host_top99p",
@@ -277,6 +281,8 @@ class UsageSummaryDateOrg(ModelNormal):
         cspm_container_hwm: Union[int, UnsetType] = unset,
         cspm_gcp_host_top99p: Union[int, UnsetType] = unset,
         cspm_host_top99p: Union[int, UnsetType] = unset,
+        custom_historical_ts_avg: Union[int, UnsetType] = unset,
+        custom_live_ts_avg: Union[int, UnsetType] = unset,
         custom_ts_avg: Union[int, UnsetType] = unset,
         cws_container_count_avg: Union[int, UnsetType] = unset,
         cws_host_top99p: Union[int, UnsetType] = unset,
@@ -475,6 +481,12 @@ class UsageSummaryDateOrg(ModelNormal):
 
         :param cspm_host_top99p: Shows the 99th percentile of all Cloud Security Management Pro hosts over all hours in the current date for the given org.
         :type cspm_host_top99p: int, optional
+
+        :param custom_historical_ts_avg: Shows the average number of distinct historical custom metrics over all hours in the current date for the given org.
+        :type custom_historical_ts_avg: int, optional
+
+        :param custom_live_ts_avg: Shows the average number of distinct live custom metrics over all hours in the current date for the given org.
+        :type custom_live_ts_avg: int, optional
 
         :param custom_ts_avg: Shows the average number of distinct custom metrics over all hours in the current date for the given org.
         :type custom_ts_avg: int, optional
@@ -745,6 +757,10 @@ class UsageSummaryDateOrg(ModelNormal):
             kwargs["cspm_gcp_host_top99p"] = cspm_gcp_host_top99p
         if cspm_host_top99p is not unset:
             kwargs["cspm_host_top99p"] = cspm_host_top99p
+        if custom_historical_ts_avg is not unset:
+            kwargs["custom_historical_ts_avg"] = custom_historical_ts_avg
+        if custom_live_ts_avg is not unset:
+            kwargs["custom_live_ts_avg"] = custom_live_ts_avg
         if custom_ts_avg is not unset:
             kwargs["custom_ts_avg"] = custom_ts_avg
         if cws_container_count_avg is not unset:
