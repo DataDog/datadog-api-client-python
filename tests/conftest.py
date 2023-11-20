@@ -593,10 +593,7 @@ def execute_request(undo, context, client, api_version, request):
     api = api_request["api"]
     operation_id = api_request["request"].__name__
     response = api_request["response"][0]
-    if "kwargs" in api_request and "body" in api_request["kwargs"]:
-        request_body = api_request.get("kwargs",{}).get("body","")
-    else:
-        request_body = ""
+    request_body = api_request.get("kwargs",{}).get("body","")
 
     def undo_operation():
         return undo(api, api_version, operation_id, response, request_body)
