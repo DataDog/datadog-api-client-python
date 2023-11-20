@@ -106,6 +106,20 @@ api\_keys\_response
    :members:
    :show-inheritance:
 
+api\_keys\_response\_meta
+-------------------------
+
+.. automodule:: datadog_api_client.v2.model.api_keys_response_meta
+   :members:
+   :show-inheritance:
+
+api\_keys\_response\_meta\_page
+-------------------------------
+
+.. automodule:: datadog_api_client.v2.model.api_keys_response_meta_page
+   :members:
+   :show-inheritance:
+
 api\_keys\_sort
 ---------------
 
@@ -166,6 +180,20 @@ application\_key\_response\_included\_item
 ------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.application_key_response_included_item
+   :members:
+   :show-inheritance:
+
+application\_key\_response\_meta
+--------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_key_response_meta
+   :members:
+   :show-inheritance:
+
+application\_key\_response\_meta\_page
+--------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_key_response_meta_page
    :members:
    :show-inheritance:
 

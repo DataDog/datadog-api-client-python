@@ -14,28 +14,28 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.creator import Creator
+    from datadog_api_client.v2.model.relationship_to_user import RelationshipToUser
 
 
 class PowerpackRelationships(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.creator import Creator
+        from datadog_api_client.v2.model.relationship_to_user import RelationshipToUser
 
         return {
-            "author": (Creator,),
+            "author": (RelationshipToUser,),
         }
 
     attribute_map = {
         "author": "author",
     }
 
-    def __init__(self_, author: Union[Creator, UnsetType] = unset, **kwargs):
+    def __init__(self_, author: Union[RelationshipToUser, UnsetType] = unset, **kwargs):
         """
         Powerpack relationship object.
 
-        :param author: Creator of the object.
-        :type author: Creator, optional
+        :param author: Relationship to user.
+        :type author: RelationshipToUser, optional
         """
         if author is not unset:
             kwargs["author"] = author

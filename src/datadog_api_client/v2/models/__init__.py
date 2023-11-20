@@ -9,6 +9,8 @@ from datadog_api_client.v2.model.api_key_update_attributes import APIKeyUpdateAt
 from datadog_api_client.v2.model.api_key_update_data import APIKeyUpdateData
 from datadog_api_client.v2.model.api_key_update_request import APIKeyUpdateRequest
 from datadog_api_client.v2.model.api_keys_response import APIKeysResponse
+from datadog_api_client.v2.model.api_keys_response_meta import APIKeysResponseMeta
+from datadog_api_client.v2.model.api_keys_response_meta_page import APIKeysResponseMetaPage
 from datadog_api_client.v2.model.api_keys_sort import APIKeysSort
 from datadog_api_client.v2.model.api_keys_type import APIKeysType
 from datadog_api_client.v2.model.active_billing_dimensions_attributes import ActiveBillingDimensionsAttributes
@@ -22,6 +24,8 @@ from datadog_api_client.v2.model.application_key_create_request import Applicati
 from datadog_api_client.v2.model.application_key_relationships import ApplicationKeyRelationships
 from datadog_api_client.v2.model.application_key_response import ApplicationKeyResponse
 from datadog_api_client.v2.model.application_key_response_included_item import ApplicationKeyResponseIncludedItem
+from datadog_api_client.v2.model.application_key_response_meta import ApplicationKeyResponseMeta
+from datadog_api_client.v2.model.application_key_response_meta_page import ApplicationKeyResponseMetaPage
 from datadog_api_client.v2.model.application_key_update_attributes import ApplicationKeyUpdateAttributes
 from datadog_api_client.v2.model.application_key_update_data import ApplicationKeyUpdateData
 from datadog_api_client.v2.model.application_key_update_request import ApplicationKeyUpdateRequest
@@ -1520,6 +1524,8 @@ __all__ = [
     "APIKeyUpdateData",
     "APIKeyUpdateRequest",
     "APIKeysResponse",
+    "APIKeysResponseMeta",
+    "APIKeysResponseMetaPage",
     "APIKeysSort",
     "APIKeysType",
     "ActiveBillingDimensionsAttributes",
@@ -1533,6 +1539,8 @@ __all__ = [
     "ApplicationKeyRelationships",
     "ApplicationKeyResponse",
     "ApplicationKeyResponseIncludedItem",
+    "ApplicationKeyResponseMeta",
+    "ApplicationKeyResponseMetaPage",
     "ApplicationKeyUpdateAttributes",
     "ApplicationKeyUpdateData",
     "ApplicationKeyUpdateRequest",
