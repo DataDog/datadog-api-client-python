@@ -177,7 +177,7 @@ Feature: Dashboards
   @team:DataDog/dashboards-backend
   Scenario: Create a new dashboard with a timeseries widget using formulas and functions cloud cost query
     Given new "CreateDashboard" request
-    And body with value { "title": "{{ unique }}", "widgets": [ { "definition": { "title": "Example Cloud Cost Query", "title_size": "16", "title_align": "left", "type": "timeseries",  "requests": [ { "formulas": [ { "formula": "query1" } ], "queries": [ { "data_source": "cloud_cost", "name": "query1", "query": "sum:aws.cost.amortized{*} by {aws_product}.rollup(sum, monthly)" } ], "response_format": "timeseries", "style": { "palette": "dog_classic", "line_type": "solid", "line_width": "normal" }, "display_type": "bars" } ] } } ], "layout_type": "ordered" }
+    And body with value { "title": "{{ unique }}", "widgets": [ { "definition": { "title": "Example Cloud Cost Query", "title_size": "16", "title_align": "left", "type": "timeseries",  "requests": [ { "formulas": [ { "formula": "query1" } ], "queries": [ { "data_source": "cloud_cost", "name": "query1", "query": "sum:aws.cost.amortized{*} by {aws_product}.rollup(sum, monthly)" } ], "response_format": "timeseries", "style": { "palette": "dog_classic", "line_type": "solid", "line_width": "normal" }, "display_type": "bars" } ], "time": { "live_span": "week_to_date" } } } ], "layout_type": "ordered" }
     When the request is sent
     Then the response status is 200 OK
     And the response "widgets[0].definition.requests[0].response_format" is equal to "timeseries"
@@ -185,6 +185,7 @@ Feature: Dashboards
     And the response "widgets[0].definition.requests[0].queries[0].name" is equal to "query1"
     And the response "widgets[0].definition.requests[0].queries[0].query" is equal to "sum:aws.cost.amortized{*} by {aws_product}.rollup(sum, monthly)"
     And the response "widgets[0].definition.requests[0].formulas[0].formula" is equal to "query1"
+    And the response "widgets[0].definition.time.live_span" is equal to "week_to_date"
 
   @team:DataDog/dashboards-backend
   Scenario: Create a new dashboard with alert_graph widget
