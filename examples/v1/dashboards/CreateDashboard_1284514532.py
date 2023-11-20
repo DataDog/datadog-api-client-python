@@ -21,8 +21,10 @@ from datadog_api_client.v1.model.widget_display_type import WidgetDisplayType
 from datadog_api_client.v1.model.widget_formula import WidgetFormula
 from datadog_api_client.v1.model.widget_line_type import WidgetLineType
 from datadog_api_client.v1.model.widget_line_width import WidgetLineWidth
+from datadog_api_client.v1.model.widget_live_span import WidgetLiveSpan
 from datadog_api_client.v1.model.widget_request_style import WidgetRequestStyle
 from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
+from datadog_api_client.v1.model.widget_time import WidgetTime
 
 body = Dashboard(
     title="Example-Dashboard",
@@ -56,6 +58,9 @@ body = Dashboard(
                         display_type=WidgetDisplayType.BARS,
                     ),
                 ],
+                time=WidgetTime(
+                    live_span=WidgetLiveSpan.WEEK_TO_DATE,
+                ),
             ),
         ),
     ],
