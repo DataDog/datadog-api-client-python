@@ -484,11 +484,7 @@ def build_given(version, operation):
                 escape_reserved_keyword(snake_case(p["name"])): build_param(p) for p in operation.get("parameters", [])
             }
             result = operation_method(**kwargs)
-
-            if "body" in kwargs:
-                request_body = kwargs.get("body","")
-            else:
-                request_body = ""
+            request_body = kwargs.get("body","")
 
             # register undo method
             def undo_operation():
