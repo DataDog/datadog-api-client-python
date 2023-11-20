@@ -178,7 +178,6 @@ class Configuration:
         self.server_variables = server_variables or {}
         self.server_operation_variables = server_operation_variables or {}
         self.temp_folder_path = None
-
         # Authentication Settings
         self.access_token = access_token
         self.api_key = {}

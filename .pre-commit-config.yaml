@@ -5,7 +5,7 @@ repos:
     name: Generate
     language: system
     entry: bash -c "./generate.sh"
-    files: '^(\.generator/.*|\.pre-commit-config\.yaml|Makefile|\tests/v*/features/.*)'
+    files: '^(\.generator/.*|\.pre-commit-config\.yaml|Makefile|\tests/v*/features/.*|src/.*)'
     pass_filenames: false
   - id: docs
     name: Format documentation
