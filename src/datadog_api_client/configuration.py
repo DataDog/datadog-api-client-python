@@ -237,8 +237,6 @@ class Configuration:
         self.unstable_operations = _UnstableOperations(
             {
                 "v2.create_ci_app_pipeline_event": False,
-                "v2.list_container_images": False,
-                "v2.list_containers": False,
                 "v2.get_active_billing_dimensions": False,
                 "v2.get_monthly_cost_attribution": False,
                 "v2.create_dora_deployment": False,

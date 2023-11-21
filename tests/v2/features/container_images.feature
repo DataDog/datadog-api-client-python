@@ -7,7 +7,6 @@ Feature: Container Images
     Given a valid "apiKeyAuth" key in the system
     And a valid "appKeyAuth" key in the system
     And an instance of "ContainerImages" API
-    And operation "ListContainerImages" enabled
     And new "ListContainerImages" request
 
   @replay-only @team:DataDog/processes
