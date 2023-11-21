@@ -7,7 +7,6 @@ Feature: Containers
     Given a valid "apiKeyAuth" key in the system
     And a valid "appKeyAuth" key in the system
     And an instance of "Containers" API
-    And operation "ListContainers" enabled
     And new "ListContainers" request
 
   @replay-only @team:DataDog/processes
