@@ -7,7 +7,7 @@ from datadog_api_client.v1.api.aws_integration_api import AWSIntegrationApi
 from datadog_api_client.v1.model.aws_account import AWSAccount
 
 body = AWSAccount(
-    account_id="123456789012",
+    account_id="163662907100",
     account_specific_namespace_rules=dict(
         auto_scaling=False,
     ),

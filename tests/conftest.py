@@ -484,11 +484,11 @@ def build_given(version, operation):
                 escape_reserved_keyword(snake_case(p["name"])): build_param(p) for p in operation.get("parameters", [])
             }
             result = operation_method(**kwargs)
-            request_body = kwargs.get("body","")
+            request_body = kwargs.get("body", "")
 
             # register undo method
             def undo_operation():
-                return undo(api, version, operation_name, result, request_body,client=client)
+                return undo(api, version, operation_name, result, request_body, client=client)
 
             if tracer:
                 undo_operation = tracer.wrap(name="undo", resource=operation["step"])(undo_operation)
@@ -512,6 +512,7 @@ for f in pathlib.Path(os.path.dirname(__file__)).rglob("given.json"):
         for settings in json.load(fp):
             given(settings["step"])(build_given(version, settings))
 
+
 def extract_parameters(kwargs, data, parameter):
     if "source" in parameter:
         kwargs[parameter["name"]] = glom(data, parameter["source"])
@@ -521,6 +522,7 @@ def extract_parameters(kwargs, data, parameter):
         for var in variables:
             ctx[var] = glom(data, var)
         kwargs[parameter["name"]] = json.loads(Template(parameter["template"]).render(**ctx))
+
 
 @pytest.fixture
 def undo(package_name, undo_operations, client):
@@ -549,12 +551,12 @@ def undo(package_name, undo_operations, client):
         operation_name = snake_case(operation["operationId"])
         method = getattr(api, operation_name)
         kwargs = {}
-        parameters= operation.get("parameters", [])
+        parameters = operation.get("parameters", [])
         for parameter in parameters:
             if "origin" not in parameter or parameter["origin"] == "response":
-                extract_parameters(kwargs,response,parameter)
+                extract_parameters(kwargs, response, parameter)
             elif parameter["origin"] == "request":
-                extract_parameters(kwargs,request,parameter)
+                extract_parameters(kwargs, request, parameter)
         if operation_name in client.configuration.unstable_operations:
             client.configuration.unstable_operations[operation_name] = True
 
@@ -593,7 +595,7 @@ def execute_request(undo, context, client, api_version, request):
     api = api_request["api"]
     operation_id = api_request["request"].__name__
     response = api_request["response"][0]
-    request_body = api_request.get("kwargs",{}).get("body","")
+    request_body = api_request.get("kwargs", {}).get("body", "")
 
     def undo_operation():
         return undo(api, api_version, operation_id, response, request_body)
