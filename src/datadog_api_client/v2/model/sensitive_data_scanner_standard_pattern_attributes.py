@@ -18,6 +18,7 @@ class SensitiveDataScannerStandardPatternAttributes(ModelNormal):
     def openapi_types(_):
         return {
             "description": (str,),
+            "included_keywords": ([str],),
             "name": (str,),
             "pattern": (str,),
             "tags": ([str],),
@@ -25,6 +26,7 @@ class SensitiveDataScannerStandardPatternAttributes(ModelNormal):
 
     attribute_map = {
         "description": "description",
+        "included_keywords": "included_keywords",
         "name": "name",
         "pattern": "pattern",
         "tags": "tags",
@@ -33,6 +35,7 @@ class SensitiveDataScannerStandardPatternAttributes(ModelNormal):
     def __init__(
         self_,
         description: Union[str, UnsetType] = unset,
+        included_keywords: Union[List[str], UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
         pattern: Union[str, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
@@ -43,6 +46,9 @@ class SensitiveDataScannerStandardPatternAttributes(ModelNormal):
 
         :param description: Description of the standard pattern.
         :type description: str, optional
+
+        :param included_keywords: List of included keywords.
+        :type included_keywords: [str], optional
 
         :param name: Name of the standard pattern.
         :type name: str, optional
@@ -55,6 +61,8 @@ class SensitiveDataScannerStandardPatternAttributes(ModelNormal):
         """
         if description is not unset:
             kwargs["description"] = description
+        if included_keywords is not unset:
+            kwargs["included_keywords"] = included_keywords
         if name is not unset:
             kwargs["name"] = name
         if pattern is not unset:
