@@ -484,10 +484,11 @@ def build_given(version, operation):
                 escape_reserved_keyword(snake_case(p["name"])): build_param(p) for p in operation.get("parameters", [])
             }
             result = operation_method(**kwargs)
+            request_body = kwargs.get("body", "")
 
             # register undo method
             def undo_operation():
-                return undo(api, version, operation_name, result, client=client)
+                return undo(api, version, operation_name, result, request_body, client=client)
 
             if tracer:
                 undo_operation = tracer.wrap(name="undo", resource=operation["step"])(undo_operation)
@@ -512,11 +513,22 @@ for f in pathlib.Path(os.path.dirname(__file__)).rglob("given.json"):
             given(settings["step"])(build_given(version, settings))
 
 
+def extract_parameters(kwargs, data, parameter):
+    if "source" in parameter:
+        kwargs[parameter["name"]] = glom(data, parameter["source"])
+    elif "template" in parameter:
+        variables = meta.find_undeclared_variables(Environment().parse(parameter["template"]))
+        ctx = {}
+        for var in variables:
+            ctx[var] = glom(data, var)
+        kwargs[parameter["name"]] = json.loads(Template(parameter["template"]).render(**ctx))
+
+
 @pytest.fixture
 def undo(package_name, undo_operations, client):
     """Clean after operation."""
 
-    def cleanup(api, version, operation_id, response, client=client):
+    def cleanup(api, version, operation_id, response, request, client=client):
         operation = undo_operations.get(version, {}).get(operation_id)
         if operation_id is None:
             raise NotImplementedError((version, operation_id))
@@ -539,16 +551,12 @@ def undo(package_name, undo_operations, client):
         operation_name = snake_case(operation["operationId"])
         method = getattr(api, operation_name)
         kwargs = {}
-        for parameter in operation.get("parameters", []):
-            if "source" in parameter:
-                kwargs[parameter["name"]] = glom(response, parameter["source"])
-            elif "template" in parameter:
-                variables = meta.find_undeclared_variables(Environment().parse(parameter["template"]))
-                ctx = {}
-                for var in variables:
-                    ctx[var] = glom(response, var)
-                kwargs[parameter["name"]] = json.loads(Template(parameter["template"]).render(**ctx))
-
+        parameters = operation.get("parameters", [])
+        for parameter in parameters:
+            if "origin" not in parameter or parameter["origin"] == "response":
+                extract_parameters(kwargs, response, parameter)
+            elif parameter["origin"] == "request":
+                extract_parameters(kwargs, request, parameter)
         if operation_name in client.configuration.unstable_operations:
             client.configuration.unstable_operations[operation_name] = True
 
@@ -587,9 +595,10 @@ def execute_request(undo, context, client, api_version, request):
     api = api_request["api"]
     operation_id = api_request["request"].__name__
     response = api_request["response"][0]
+    request_body = api_request.get("kwargs", {}).get("body", "")
 
     def undo_operation():
-        return undo(api, api_version, operation_id, response)
+        return undo(api, api_version, operation_id, response, request_body)
 
     if tracer:
         undo_operation = tracer.wrap(name="undo", resource="execute request")(undo_operation)
