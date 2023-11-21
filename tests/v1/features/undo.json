@@ -356,7 +356,13 @@
     "tag": "AWS Integration",
     "undo": {
       "operationId": "DeleteAWSAccount",
-      "parameters": [],
+      "parameters": [
+        {
+          "name": "body",
+          "origin": "request",
+          "template": "{\"account_id\": \"{{account_id}}\", \"role_name\": \"{{role_name}}\"}"
+        }
+      ],
       "type": "unsafe"
     }
   },
