@@ -24,17 +24,21 @@ class PartialAPIKeyAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
+            "category": (str,),
             "created_at": (str,),
             "last4": (str,),
             "modified_at": (str,),
             "name": (str,),
+            "remote_config_read_enabled": (bool,),
         }
 
     attribute_map = {
+        "category": "category",
         "created_at": "created_at",
         "last4": "last4",
         "modified_at": "modified_at",
         "name": "name",
+        "remote_config_read_enabled": "remote_config_read_enabled",
     }
     read_only_vars = {
         "created_at",
@@ -44,14 +48,19 @@ class PartialAPIKeyAttributes(ModelNormal):
 
     def __init__(
         self_,
+        category: Union[str, UnsetType] = unset,
         created_at: Union[str, UnsetType] = unset,
         last4: Union[str, UnsetType] = unset,
         modified_at: Union[str, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
+        remote_config_read_enabled: Union[bool, UnsetType] = unset,
         **kwargs,
     ):
         """
         Attributes of a partial API key.
+
+        :param category: The category of the API key.
+        :type category: str, optional
 
         :param created_at: Creation date of the API key.
         :type created_at: str, optional
@@ -64,7 +73,12 @@ class PartialAPIKeyAttributes(ModelNormal):
 
         :param name: Name of the API key.
         :type name: str, optional
+
+        :param remote_config_read_enabled: The remote config read enabled status.
+        :type remote_config_read_enabled: bool, optional
         """
+        if category is not unset:
+            kwargs["category"] = category
         if created_at is not unset:
             kwargs["created_at"] = created_at
         if last4 is not unset:
@@ -73,4 +87,6 @@ class PartialAPIKeyAttributes(ModelNormal):
             kwargs["modified_at"] = modified_at
         if name is not unset:
             kwargs["name"] = name
+        if remote_config_read_enabled is not unset:
+            kwargs["remote_config_read_enabled"] = remote_config_read_enabled
         super().__init__(kwargs)
