@@ -585,7 +585,7 @@ class SyntheticsApi:
         self._patch_test_endpoint = _Endpoint(
             settings={
                 "response_type": (SyntheticsTestDetails,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/synthetics/tests/{public_id}",
                 "operation_id": "patch_test",
                 "http_method": "PATCH",
