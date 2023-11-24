@@ -1,0 +1,101 @@
+interactions:
+- request:
+    body: '{"config":{"configVariables":[{"example":"content-type","name":"PROPERTY","pattern":"content-type","type":"text"}],"steps":[{"allowFailure":true,"assertions":[{"operator":"is","target":200,"type":"statusCode"}],"extractedValues":[{"field":"server","name":"EXTRACTED_VALUE","parser":{"type":"raw"},"secure":true,"type":"http_header"}],"isCritical":true,"name":"request
+      is sent","request":{"method":"GET","timeout":10,"url":"https://datadoghq.com"},"retry":{"count":5,"interval":1000},"subtype":"http"}]},"locations":["aws:us-east-2"],"message":"BDD
+      test payload: synthetics_api_test_multi_step_payload.json","name":"Test-Edit_a_global_variable_returns_OK_response-1700826955","options":{"accept_self_signed":false,"allow_insecure":true,"follow_redirects":true,"min_failure_duration":10,"min_location_failed":1,"monitor_name":"Test-Edit_a_global_variable_returns_OK_response-1700826955","monitor_priority":5,"retry":{"count":3,"interval":1000},"tick_every":60},"subtype":"multi","tags":["testing:api"],"type":"api"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/synthetics/tests/api
+  response:
+    body:
+      string: '{"public_id":"hsx-m6u-7ra","name":"Test-Edit_a_global_variable_returns_OK_response-1700826955","status":"live","type":"api","tags":["testing:api"],"created_at":"2023-11-24T11:55:56.133111+00:00","modified_at":"2023-11-24T11:55:56.133111+00:00","config":{"configVariables":[{"example":"content-type","name":"PROPERTY","pattern":"content-type","type":"text"}],"steps":[{"allowFailure":true,"assertions":[{"operator":"is","target":200,"type":"statusCode"}],"extractedValues":[{"field":"server","name":"EXTRACTED_VALUE","parser":{"type":"raw"},"secure":true,"type":"http_header"}],"isCritical":true,"name":"request
+        is sent","request":{"method":"GET","timeout":10,"url":"https://datadoghq.com"},"retry":{"count":5,"interval":1000},"subtype":"http","id":"nki-nbt-7re"}]},"message":"BDD
+        test payload: synthetics_api_test_multi_step_payload.json","options":{"accept_self_signed":false,"allow_insecure":true,"follow_redirects":true,"min_failure_duration":10,"min_location_failed":1,"monitor_name":"Test-Edit_a_global_variable_returns_OK_response-1700826955","monitor_priority":5,"retry":{"count":3,"interval":1000},"tick_every":60},"locations":["aws:us-east-2"],"subtype":"multi","created_by":{"name":null,"handle":"frog@datadoghq.com","email":"frog@datadoghq.com"},"deleted_at":null,"monitor_id":135330787,"org_id":321813,"modified_by":{"name":null,"handle":"frog@datadoghq.com","email":"frog@datadoghq.com"}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"description":"","name":"GLOBAL_VARIABLE_PAYLOAD_TESTEDITAGLOBALVARIABLERETURNSOKRESPONSE1700826955","parse_test_options":{"localVariableName":"EXTRACTED_VALUE","type":"local_variable"},"parse_test_public_id":"hsx-m6u-7ra","tags":[],"value":{"options":{"totp_parameters":{"digits":6,"refresh_interval":30}},"secure":false,"value":""}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/synthetics/variables
+  response:
+    body:
+      string: '{"id":"87d42bed-b100-4530-a5e8-50fa2d5351d3","name":"GLOBAL_VARIABLE_PAYLOAD_TESTEDITAGLOBALVARIABLERETURNSOKRESPONSE1700826955","description":"","type":"variable","tags":[],"parse_test_public_id":"hsx-m6u-7ra","parse_test_name":null,"parse_test_options":{"localVariableName":"EXTRACTED_VALUE","type":"local_variable"},"parse_test_extracted_at":null,"is_totp":null,"is_fido":null,"last_error":null,"value":{"options":{"totp_parameters":{"digits":6,"refresh_interval":30}},"secure":false,"value":""}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"description":"Updated description.","name":"GLOBAL_VARIABLE_PAYLOAD_TESTEDITAGLOBALVARIABLERETURNSOKRESPONSE1700826955","parse_test_options":{"localVariableName":"EXTRACTED_VALUE","type":"local_variable"},"parse_test_public_id":"hsx-m6u-7ra","tags":["test:mytag"],"value":{"secure":false,"value":""}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PUT
+    uri: https://api.datadoghq.com/api/v1/synthetics/variables/87d42bed-b100-4530-a5e8-50fa2d5351d3
+  response:
+    body:
+      string: '{"id":"87d42bed-b100-4530-a5e8-50fa2d5351d3","name":"GLOBAL_VARIABLE_PAYLOAD_TESTEDITAGLOBALVARIABLERETURNSOKRESPONSE1700826955","description":"Updated
+        description.","type":"variable","tags":["test:mytag"],"parse_test_public_id":"hsx-m6u-7ra","parse_test_name":null,"parse_test_options":{"localVariableName":"EXTRACTED_VALUE","type":"local_variable"},"parse_test_extracted_at":null,"is_totp":null,"is_fido":null,"last_error":null,"value":{"secure":false,"value":""}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/synthetics/variables/87d42bed-b100-4530-a5e8-50fa2d5351d3
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - text/html; charset=utf-8
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"public_ids":["hsx-m6u-7ra"]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/synthetics/tests/delete
+  response:
+    body:
+      string: '{"deleted_tests":[{"public_id":"hsx-m6u-7ra","deleted_at":"2023-11-24T11:55:58.160777+00:00"}]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

@@ -166,10 +166,11 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/k9-cloud-security-platform
+  @team:DataDog/k9-cloud-security-platform
   Scenario: Delete a security filter returns "OK" response
-    Given new "DeleteSecurityFilter" request
-    And request contains "security_filter_id" parameter from "REPLACE.ME"
+    Given there is a valid "security_filter" in the system
+    And new "DeleteSecurityFilter" request
+    And request contains "security_filter_id" parameter from "security_filter.data.id"
     When the request is sent
     Then the response status is 204 OK
 

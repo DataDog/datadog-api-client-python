@@ -1,0 +1,58 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"exclusion_filters":[{"name":"Exclude logs from
+      staging","query":"source:staging"}],"filtered_data_type":"logs","is_enabled":true,"name":"Test-Delete_a_security_filter_returns_OK_response-1700834850","query":"service:TestDeleteasecurityfilterreturnsOKresponse1700834850"},"type":"security_filters"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/security_filters
+  response:
+    body:
+      string: '{"data":{"id":"lnj-hn0-yvv","attributes":{"version":1,"name":"Test-Delete_a_security_filter_returns_OK_response-1700834850","query":"service:TestDeleteasecurityfilterreturnsOKresponse1700834850","is_enabled":true,"exclusion_filters":[{"name":"Exclude
+        logs from staging","query":"source:staging"}],"filtered_data_type":"logs","is_builtin":false},"type":"security_filters"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/security_filters/lnj-hn0-yvv
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - text/html; charset=utf-8
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/security_filters/lnj-hn0-yvv
+  response:
+    body:
+      string: '{"errors":["not_found(Security filter with id ''lnj-hn0-yvv'' not found)"]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 404
+      message: Not Found
+version: 1

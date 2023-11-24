@@ -1791,18 +1791,7 @@
   "CreateTeamMembership": {
     "tag": "Teams",
     "undo": {
-      "operationId": "DeleteTeamMembership",
-      "parameters": [
-        {
-          "name": "team_id",
-          "template": "{{team.data.id}}"
-        },
-        {
-          "name": "user_id",
-          "source": "data.relationships.user.data.id"
-        }
-      ],
-      "type": "unsafe"
+      "type": "safe"
     }
   },
   "DeleteTeamMembership": {

@@ -307,12 +307,15 @@ Feature: Teams
     When the request is sent
     Then the response status is 404 API error response.
 
-  @generated @skip @team:DataDog/core-app
+  @team:DataDog/core-app
   Scenario: Update a user's membership attributes on a team returns "Represents a user's association to a team" response
-    Given new "UpdateTeamMembership" request
-    And request contains "team_id" parameter from "REPLACE.ME"
-    And request contains "user_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"role": "admin"}, "type": "team_memberships"}}
+    Given there is a valid "user" in the system
+    And there is a valid "dd_team" in the system
+    And there is a valid "team_membership" in the system
+    And new "UpdateTeamMembership" request
+    And request contains "team_id" parameter from "dd_team.data.id"
+    And request contains "user_id" parameter from "user.data.id"
+    And body with value {"data": {"attributes": {"role": null}, "type": "team_memberships"}}
     When the request is sent
     Then the response status is 200 Represents a user's association to a team
 

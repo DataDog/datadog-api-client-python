@@ -54,10 +54,12 @@ Feature: Service Level Objective Corrections
     When the request is sent
     Then the response status is 404 Not found
 
-  @generated @skip @team:DataDog/slo-app
+  @team:DataDog/slo-app
   Scenario: Delete an SLO correction returns "OK" response
-    Given new "DeleteSLOCorrection" request
-    And request contains "slo_correction_id" parameter from "REPLACE.ME"
+    Given there is a valid "slo" in the system
+    And there is a valid "correction" for "slo"
+    And new "DeleteSLOCorrection" request
+    And request contains "slo_correction_id" parameter from "correction.data.id"
     When the request is sent
     Then the response status is 204 OK
 

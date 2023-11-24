@@ -1,0 +1,58 @@
+interactions:
+- request:
+    body: '{"name":"Test-Check_if_SLOs_can_be_safely_deleted_returns_OK_response-1700815602","query":{"denominator":"sum:httpservice.hits{!code:3xx}.as_count()","numerator":"sum:httpservice.hits{code:2xx}.as_count()"},"thresholds":[{"target":95,"timeframe":"7d","warning":98}],"type":"metric"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/slo
+  response:
+    body:
+      string: '{"data":[{"id":"646cb45adfe758818ede0f4dc9685a78","name":"Test-Check_if_SLOs_can_be_safely_deleted_returns_OK_response-1700815602","tags":[],"monitor_tags":[],"thresholds":[{"timeframe":"7d","target":95.0,"target_display":"95.","warning":98.0,"warning_display":"98."}],"type":"metric","type_id":1,"description":"","timeframe":"7d","warning_threshold":98,"target_threshold":95,"query":{"denominator":"sum:httpservice.hits{!code:3xx}.as_count()","numerator":"sum:httpservice.hits{code:2xx}.as_count()"},"creator":{"name":null,"handle":"frog@datadoghq.com","email":"frog@datadoghq.com"},"created_at":1700815602,"modified_at":1700815602}],"error":null}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v1/slo/can_delete?ids=646cb45adfe758818ede0f4dc9685a78
+  response:
+    body:
+      string: '{"data":{"ok":["646cb45adfe758818ede0f4dc9685a78"],"denied_ids":[]},"errors":null}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/slo/646cb45adfe758818ede0f4dc9685a78
+  response:
+    body:
+      string: '{"data":["646cb45adfe758818ede0f4dc9685a78"],"error":null}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

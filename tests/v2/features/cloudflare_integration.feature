@@ -60,10 +60,11 @@ Feature: Cloudflare Integration
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:Datadog/web-integrations
+  @replay-only @team:Datadog/web-integrations
   Scenario: Delete Cloudflare account returns "OK" response
-    Given new "DeleteCloudflareAccount" request
-    And request contains "account_id" parameter from "REPLACE.ME"
+    Given there is a valid "cloudflare_account" in the system
+    And new "DeleteCloudflareAccount" request
+    And request contains "account_id" parameter from "cloudflare_account.data.id"
     When the request is sent
     Then the response status is 204 OK
 

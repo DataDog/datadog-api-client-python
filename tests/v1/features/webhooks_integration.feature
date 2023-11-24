@@ -81,12 +81,14 @@ Feature: Webhooks Integration
     When the request is sent
     Then the response status is 404 Item Not Found
 
-  @generated @skip @team:Datadog/collaboration-integrations
+  @team:Datadog/collaboration-integrations
   Scenario: Get a custom variable returns "OK" response
-    Given new "GetWebhooksIntegrationCustomVariable" request
-    And request contains "custom_variable_name" parameter from "REPLACE.ME"
+    Given there is a valid "webhook_custom_variable" in the system
+    And new "GetWebhooksIntegrationCustomVariable" request
+    And request contains "custom_variable_name" parameter from "webhook_custom_variable.name"
     When the request is sent
     Then the response status is 200 OK
+    And the response "value" has the same value as "webhook_custom_variable.value"
 
   @generated @skip @team:Datadog/collaboration-integrations
   Scenario: Get a webhook integration returns "Bad Request" response
