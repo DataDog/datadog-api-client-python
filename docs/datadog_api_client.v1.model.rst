@@ -316,6 +316,20 @@ azure\_account\_list\_response
    :members:
    :show-inheritance:
 
+calendar\_interval
+------------------
+
+.. automodule:: datadog_api_client.v1.model.calendar_interval
+   :members:
+   :show-inheritance:
+
+calendar\_interval\_type
+------------------------
+
+.. automodule:: datadog_api_client.v1.model.calendar_interval_type
+   :members:
+   :show-inheritance:
+
 cancel\_downtimes\_by\_scope\_request
 -------------------------------------
 
