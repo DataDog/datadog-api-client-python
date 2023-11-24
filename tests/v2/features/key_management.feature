@@ -282,9 +282,11 @@ Feature: Key Management
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/credentials-management
+  @team:DataDog/credentials-management
   Scenario: Get one application key owned by current user returns "OK" response
-    Given new "GetCurrentUserApplicationKey" request
-    And request contains "app_key_id" parameter from "REPLACE.ME"
+    Given there is a valid "application_key" in the system
+    And new "GetCurrentUserApplicationKey" request
+    And request contains "app_key_id" parameter from "application_key.data.id"
     When the request is sent
     Then the response status is 200 OK
+    And the response "data.id" has the same value as "application_key.data.id"

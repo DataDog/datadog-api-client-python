@@ -1,0 +1,54 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"api_key":"fakekey","email":"dev@datadog.com","name":"testdeletecloudflareaccountreturnsokresponse1700829099"},"type":"cloudflare-accounts"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/integrations/cloudflare/accounts
+  response:
+    body:
+      string: '{"data":{"attributes":{"email":"new@email","name":"testdeletecloudflareaccountreturnsokresponse1700829099"},"type":"cloudflare-accounts","id":"328432a98957fd7bcba6f70daea72519"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/integrations/cloudflare/accounts/328432a98957fd7bcba6f70daea72519
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - text/html; charset=utf-8
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/integrations/cloudflare/accounts/328432a98957fd7bcba6f70daea72519
+  response:
+    body:
+      string: '{"errors":["not_found"]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 404
+      message: No Found
+version: 1

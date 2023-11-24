@@ -981,12 +981,15 @@ Feature: Dashboards
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:DataDog/dashboards-backend
+  @team:DataDog/dashboards-backend
   Scenario: Revoke a shared dashboard URL returns "OK" response
-    Given new "DeletePublicDashboard" request
-    And request contains "token" parameter from "REPLACE.ME"
+    Given there is a valid "dashboard" in the system
+    And there is a valid "shared_dashboard" in the system
+    And new "DeletePublicDashboard" request
+    And request contains "token" parameter from "shared_dashboard.token"
     When the request is sent
     Then the response status is 200 OK
+    And the response "deleted_public_dashboard_token" has the same value as "shared_dashboard.token"
 
   @generated @skip @team:DataDog/dashboards-backend
   Scenario: Revoke a shared dashboard URL returns "Shared Dashboard Not Found" response

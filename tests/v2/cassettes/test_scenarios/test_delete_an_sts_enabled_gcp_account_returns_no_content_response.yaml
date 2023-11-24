@@ -1,0 +1,54 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"client_email":"832ce4b0f6318b5e@example.com","host_filters":[]},"type":"gcp_service_account"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/integration/gcp/accounts
+  response:
+    body:
+      string: '{"data":{"type":"gcp_service_account","attributes":{"is_security_command_center_enabled":false,"host_filters":[],"is_cspm_enabled":false,"client_email":"832ce4b0f6318b5e@example.com","automute":false,"account_tags":[],"resource_collection_enabled":false},"id":"f9be086a-db3e-447b-a60a-956f876aa7d9"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/integration/gcp/accounts/f9be086a-db3e-447b-a60a-956f876aa7d9
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - text/html; charset=utf-8
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/integration/gcp/accounts/f9be086a-db3e-447b-a60a-956f876aa7d9
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - text/html; charset=utf-8
+    status:
+      code: 204
+      message: No Content
+version: 1

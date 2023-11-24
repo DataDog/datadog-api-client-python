@@ -41,12 +41,14 @@ Feature: Service Level Objectives
     When the request is sent
     Then the response status is 409 Conflict
 
-  @generated @skip @team:DataDog/slo-app
+  @team:DataDog/slo-app
   Scenario: Check if SLOs can be safely deleted returns "OK" response
-    Given new "CheckCanDeleteSLO" request
-    And request contains "ids" parameter from "REPLACE.ME"
+    Given there is a valid "slo" in the system
+    And new "CheckCanDeleteSLO" request
+    And request contains "ids" parameter from "slo.data[0].id"
     When the request is sent
     Then the response status is 200 OK
+    And the response "data.ok[0]" has the same value as "slo.data[0].id"
 
   @team:DataDog/slo-app
   Scenario: Create an SLO object returns "Bad Request" response

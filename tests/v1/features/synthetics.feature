@@ -218,10 +218,12 @@ Feature: Synthetics
     When the request is sent
     Then the response status is 404 Not found
 
-  @generated @skip @team:DataDog/synthetics-app
+  @team:DataDog/synthetics-app
   Scenario: Delete a global variable returns "OK" response
-    Given new "DeleteGlobalVariable" request
-    And request contains "variable_id" parameter from "REPLACE.ME"
+    Given there is a valid "synthetics_api_test_multi_step" in the system
+    And there is a valid "synthetics_global_variable" in the system
+    And new "DeleteGlobalVariable" request
+    And request contains "variable_id" parameter from "synthetics_global_variable.id"
     When the request is sent
     Then the response status is 200 OK
 
@@ -294,13 +296,16 @@ Feature: Synthetics
     When the request is sent
     Then the response status is 400 Invalid request
 
-  @generated @skip @team:DataDog/synthetics-app
+  @team:DataDog/synthetics-app
   Scenario: Edit a global variable returns "OK" response
-    Given new "EditGlobalVariable" request
-    And request contains "variable_id" parameter from "REPLACE.ME"
-    And body with value {"attributes": {"restricted_roles": ["xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"]}, "description": "Example description", "name": "MY_VARIABLE", "parse_test_options": {"field": "content-type", "localVariableName": "LOCAL_VARIABLE", "parser": {"type": "regex", "value": ".*"}, "type": "http_body"}, "parse_test_public_id": "abc-def-123", "tags": ["team:front", "test:workflow-1"], "value": {"secure": true, "value": "value"}}
+    Given there is a valid "synthetics_api_test_multi_step" in the system
+    And there is a valid "synthetics_global_variable" in the system
+    And new "EditGlobalVariable" request
+    And request contains "variable_id" parameter from "synthetics_global_variable.id"
+    And body with value {"description": "Updated description.", "name": "GLOBAL_VARIABLE_PAYLOAD_{{ unique_upper_alnum }}", "parse_test_options": {"type": "local_variable", "localVariableName": "EXTRACTED_VALUE"}, "parse_test_public_id": "{{ synthetics_api_test_multi_step.public_id }}", "value": {"secure": false, "value": ""}, "tags": ["test:mytag"]}
     When the request is sent
     Then the response status is 200 OK
+    And the response "description" is equal to "Updated description."
 
   @generated @skip @team:DataDog/synthetics-app
   Scenario: Edit a private location returns "- Private locations are not activated for the user" response
@@ -400,12 +405,15 @@ Feature: Synthetics
     When the request is sent
     Then the response status is 404 Not found
 
-  @generated @skip @team:DataDog/synthetics-app
+  @team:DataDog/synthetics-app
   Scenario: Get a global variable returns "OK" response
-    Given new "GetGlobalVariable" request
-    And request contains "variable_id" parameter from "REPLACE.ME"
+    Given there is a valid "synthetics_api_test_multi_step" in the system
+    And there is a valid "synthetics_global_variable" in the system
+    And new "GetGlobalVariable" request
+    And request contains "variable_id" parameter from "synthetics_global_variable.id"
     When the request is sent
     Then the response status is 200 OK
+    And the response "name" has the same value as "synthetics_global_variable.name"
 
   @generated @skip @team:DataDog/synthetics-app
   Scenario: Get a private location returns "- Synthetic private locations are not activated for the user" response
@@ -484,12 +492,14 @@ Feature: Synthetics
     When the request is sent
     Then the response status is 404 - Synthetic Monitoring is not activated for the user
 
-  @generated @skip @team:DataDog/synthetics-app
+  @team:DataDog/synthetics-app
   Scenario: Get an API test returns "OK" response
-    Given new "GetAPITest" request
-    And request contains "public_id" parameter from "REPLACE.ME"
+    Given there is a valid "synthetics_api_test" in the system
+    And new "GetAPITest" request
+    And request contains "public_id" parameter from "synthetics_api_test.public_id"
     When the request is sent
     Then the response status is 200 OK
+    And the response "name" has the same value as "synthetics_api_test.name"
 
   @generated @skip @team:DataDog/synthetics-app
   Scenario: Get an API test's latest results summaries returns "- Synthetic is not activated for the user" response

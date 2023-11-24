@@ -71,10 +71,11 @@ Feature: GCP Integration
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/gcp-integrations
+  @team:DataDog/gcp-integrations
   Scenario: Delete an STS enabled GCP Account returns "No Content" response
-    Given new "DeleteGCPSTSAccount" request
-    And request contains "account_id" parameter from "REPLACE.ME"
+    Given there is a valid "gcp_sts_account" in the system
+    And new "DeleteGCPSTSAccount" request
+    And request contains "account_id" parameter from "gcp_sts_account.data.id"
     When the request is sent
     Then the response status is 204 No Content
 

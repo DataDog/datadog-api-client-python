@@ -70,10 +70,11 @@ Feature: Fastly Integration
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:Datadog/web-integrations
+  @team:Datadog/web-integrations
   Scenario: Delete Fastly account returns "OK" response
-    Given new "DeleteFastlyAccount" request
-    And request contains "account_id" parameter from "REPLACE.ME"
+    Given there is a valid "fastly_account" in the system
+    And new "DeleteFastlyAccount" request
+    And request contains "account_id" parameter from "fastly_account.data.id"
     When the request is sent
     Then the response status is 204 OK
 

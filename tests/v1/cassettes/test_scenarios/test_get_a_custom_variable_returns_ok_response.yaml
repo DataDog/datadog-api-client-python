@@ -1,0 +1,58 @@
+interactions:
+- request:
+    body: '{"is_secret":false,"name":"TESTGETACUSTOMVARIABLERETURNSOKRESPONSE1700828955","value":"variable-value"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/integration/webhooks/configuration/custom-variables
+  response:
+    body:
+      string: '{"name":"TESTGETACUSTOMVARIABLERETURNSOKRESPONSE1700828955","is_secret":false,"value":"variable-value"}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v1/integration/webhooks/configuration/custom-variables/TESTGETACUSTOMVARIABLERETURNSOKRESPONSE1700828955
+  response:
+    body:
+      string: '{"name":"TESTGETACUSTOMVARIABLERETURNSOKRESPONSE1700828955","is_secret":false,"value":"variable-value"}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/integration/webhooks/configuration/custom-variables/TESTGETACUSTOMVARIABLERETURNSOKRESPONSE1700828955
+  response:
+    body:
+      string: '{}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1
