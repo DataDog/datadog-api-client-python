@@ -498,6 +498,20 @@ bulk\_mute\_findings\_response\_data
    :members:
    :show-inheritance:
 
+calendar\_interval
+------------------
+
+.. automodule:: datadog_api_client.v2.model.calendar_interval
+   :members:
+   :show-inheritance:
+
+calendar\_interval\_type
+------------------------
+
+.. automodule:: datadog_api_client.v2.model.calendar_interval_type
+   :members:
+   :show-inheritance:
+
 chargeback\_breakdown
 ---------------------
 
@@ -6413,10 +6427,10 @@ scalar\_formula\_request\_type
    :members:
    :show-inheritance:
 
-scalar\_formula\_response\_atrributes
+scalar\_formula\_response\_attributes
 -------------------------------------
 
-.. automodule:: datadog_api_client.v2.model.scalar_formula_response_atrributes
+.. automodule:: datadog_api_client.v2.model.scalar_formula_response_attributes
    :members:
    :show-inheritance:
 

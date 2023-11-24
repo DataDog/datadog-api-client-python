@@ -19,7 +19,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.data_scalar_column import DataScalarColumn
 
 
-class ScalarFormulaResponseAtrributes(ModelNormal):
+class ScalarFormulaResponseAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.scalar_column import ScalarColumn

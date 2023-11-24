@@ -151,6 +151,8 @@ from datadog_api_client.v2.model.ci_app_tests_bucket_response import CIAppTestsB
 from datadog_api_client.v2.model.ci_app_tests_group_by import CIAppTestsGroupBy
 from datadog_api_client.v2.model.ci_app_tests_query_filter import CIAppTestsQueryFilter
 from datadog_api_client.v2.model.ci_app_warning import CIAppWarning
+from datadog_api_client.v2.model.calendar_interval import CalendarInterval
+from datadog_api_client.v2.model.calendar_interval_type import CalendarIntervalType
 from datadog_api_client.v2.model.chargeback_breakdown import ChargebackBreakdown
 from datadog_api_client.v2.model.cloud_configuration_compliance_rule_options import (
     CloudConfigurationComplianceRuleOptions,
@@ -1040,7 +1042,7 @@ from datadog_api_client.v2.model.scalar_formula_request import ScalarFormulaRequ
 from datadog_api_client.v2.model.scalar_formula_request_attributes import ScalarFormulaRequestAttributes
 from datadog_api_client.v2.model.scalar_formula_request_queries import ScalarFormulaRequestQueries
 from datadog_api_client.v2.model.scalar_formula_request_type import ScalarFormulaRequestType
-from datadog_api_client.v2.model.scalar_formula_response_atrributes import ScalarFormulaResponseAtrributes
+from datadog_api_client.v2.model.scalar_formula_response_attributes import ScalarFormulaResponseAttributes
 from datadog_api_client.v2.model.scalar_formula_response_type import ScalarFormulaResponseType
 from datadog_api_client.v2.model.scalar_meta import ScalarMeta
 from datadog_api_client.v2.model.scalar_query import ScalarQuery
@@ -1654,6 +1656,8 @@ __all__ = [
     "CIAppTestsGroupBy",
     "CIAppTestsQueryFilter",
     "CIAppWarning",
+    "CalendarInterval",
+    "CalendarIntervalType",
     "ChargebackBreakdown",
     "CloudConfigurationComplianceRuleOptions",
     "CloudConfigurationRegoRule",
@@ -2429,7 +2433,7 @@ __all__ = [
     "ScalarFormulaRequestAttributes",
     "ScalarFormulaRequestQueries",
     "ScalarFormulaRequestType",
-    "ScalarFormulaResponseAtrributes",
+    "ScalarFormulaResponseAttributes",
     "ScalarFormulaResponseType",
     "ScalarMeta",
     "ScalarQuery",

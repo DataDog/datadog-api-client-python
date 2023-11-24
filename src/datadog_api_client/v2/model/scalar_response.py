@@ -14,18 +14,18 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.scalar_formula_response_atrributes import ScalarFormulaResponseAtrributes
+    from datadog_api_client.v2.model.scalar_formula_response_attributes import ScalarFormulaResponseAttributes
     from datadog_api_client.v2.model.scalar_formula_response_type import ScalarFormulaResponseType
 
 
 class ScalarResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.scalar_formula_response_atrributes import ScalarFormulaResponseAtrributes
+        from datadog_api_client.v2.model.scalar_formula_response_attributes import ScalarFormulaResponseAttributes
         from datadog_api_client.v2.model.scalar_formula_response_type import ScalarFormulaResponseType
 
         return {
-            "attributes": (ScalarFormulaResponseAtrributes,),
+            "attributes": (ScalarFormulaResponseAttributes,),
             "type": (ScalarFormulaResponseType,),
         }
 
@@ -36,7 +36,7 @@ class ScalarResponse(ModelNormal):
 
     def __init__(
         self_,
-        attributes: Union[ScalarFormulaResponseAtrributes, UnsetType] = unset,
+        attributes: Union[ScalarFormulaResponseAttributes, UnsetType] = unset,
         type: Union[ScalarFormulaResponseType, UnsetType] = unset,
         **kwargs,
     ):
@@ -44,7 +44,7 @@ class ScalarResponse(ModelNormal):
         A message containing the response to a scalar query.
 
         :param attributes: The object describing a scalar response.
-        :type attributes: ScalarFormulaResponseAtrributes, optional
+        :type attributes: ScalarFormulaResponseAttributes, optional
 
         :param type: The type of the resource. The value should always be scalar_response.
         :type type: ScalarFormulaResponseType, optional
