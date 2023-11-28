@@ -18,6 +18,9 @@ class MetricOrigin(ModelNormal):
         "metric_type": {
             "inclusive_maximum": 1000,
         },
+        "origin_product": {
+            "inclusive_maximum": 1000,
+        },
         "product": {
             "inclusive_maximum": 1000,
         },
@@ -30,12 +33,14 @@ class MetricOrigin(ModelNormal):
     def openapi_types(_):
         return {
             "metric_type": (int,),
+            "origin_product": (int,),
             "product": (int,),
             "service": (int,),
         }
 
     attribute_map = {
         "metric_type": "metric_type",
+        "origin_product": "origin_product",
         "product": "product",
         "service": "service",
     }
@@ -43,6 +48,7 @@ class MetricOrigin(ModelNormal):
     def __init__(
         self_,
         metric_type: Union[int, UnsetType] = unset,
+        origin_product: Union[int, UnsetType] = unset,
         product: Union[int, UnsetType] = unset,
         service: Union[int, UnsetType] = unset,
         **kwargs,
@@ -50,17 +56,22 @@ class MetricOrigin(ModelNormal):
         """
         Metric origin information.
 
-        :param metric_type: The origin metric type code
+        :param metric_type: The origin metric type code.
         :type metric_type: int, optional
 
-        :param product: The origin product code
+        :param origin_product: The origin product code.
+        :type origin_product: int, optional
+
+        :param product: The product code.
         :type product: int, optional
 
-        :param service: The origin service code
+        :param service: The service code.
         :type service: int, optional
         """
         if metric_type is not unset:
             kwargs["metric_type"] = metric_type
+        if origin_product is not unset:
+            kwargs["origin_product"] = origin_product
         if product is not unset:
             kwargs["product"] = product
         if service is not unset:
