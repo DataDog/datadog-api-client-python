@@ -72,10 +72,11 @@ Feature: AWS Integration
     When the request is sent
     Then the response status is 409 Conflict Error
 
-  @generated @skip @team:DataDog/cloud-integrations
+  @team:DataDog/cloud-integrations
   Scenario: Delete an AWS integration returns "OK" response
-    Given new "DeleteAWSAccount" request
-    And body with value {"account_id": "123456789012", "role_name": "DatadogAWSIntegrationRole"}
+    Given there is a valid "aws_account" in the system
+    And new "DeleteAWSAccount" request
+    And body with value {"account_id": "{{ timestamp("now") }}00", "role_name": "DatadogAWSIntegrationRole"}
     When the request is sent
     Then the response status is 200 OK
 
@@ -179,11 +180,12 @@ Feature: AWS Integration
     When the request is sent
     Then the response status is 409 Conflict Error
 
-  @replay-only @skip-typescript @team:DataDog/cloud-integrations
+  @team:DataDog/cloud-integrations
   Scenario: Update an AWS integration returns "OK" response
-    Given new "UpdateAWSAccount" request
-    And body with value {"account_id": "123456789012", "account_specific_namespace_rules": {"auto_scaling": false}, "cspm_resource_collection_enabled": true, "excluded_regions": ["us-east-1", "us-west-2"], "filter_tags": ["$KEY:$VALUE"], "host_tags": ["$KEY:$VALUE"], "metrics_collection_enabled": false, "resource_collection_enabled": true, "role_name": "datadog-role"}
-    And request contains "account_id" parameter with value "123456789012"
-    And request contains "role_name" parameter with value "datadog-role"
+    Given there is a valid "aws_account" in the system
+    And new "UpdateAWSAccount" request
+    And body with value {"account_id": "{{ timestamp("now") }}00", "account_specific_namespace_rules": {"auto_scaling": false}, "cspm_resource_collection_enabled": false, "excluded_regions": ["us-east-1", "us-west-2"], "filter_tags": ["$KEY:$VALUE"], "host_tags": ["$KEY:$VALUE"], "metrics_collection_enabled": true, "resource_collection_enabled": true, "role_name": "DatadogAWSIntegrationRole"}
+    And request contains "account_id" parameter with value "{{ timestamp("now") }}00"
+    And request contains "role_name" parameter with value "DatadogAWSIntegrationRole"
     When the request is sent
     Then the response status is 200 OK

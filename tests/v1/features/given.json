@@ -103,6 +103,19 @@
     "parameters": [
       {
         "name": "body",
+        "origin": "request",
+        "value": "{\n  \"account_id\": \"{{ timestamp(\"now\") }}00\",\n  \"account_specific_namespace_rules\": {\n      \"auto_scaling\": false\n  },\n  \"cspm_resource_collection_enabled\": true,\n  \"excluded_regions\": [\n      \"us-east-1\",\n      \"us-west-2\"\n  ],\n  \"filter_tags\": [\n      \"$KEY:$VALUE\"\n  ],\n  \"host_tags\": [\n      \"$KEY:$VALUE\"\n  ],\n  \"metrics_collection_enabled\": false,\n  \"resource_collection_enabled\": true,\n  \"role_name\": \"DatadogAWSIntegrationRole\"\n}"
+      }
+    ],
+    "step": "there is a valid \"aws_account\" in the system",
+    "key": "aws_account",
+    "tag": "AWS Integration",
+    "operationId": "CreateAWSAccount"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"name\": \"{{ unique_upper_alnum }}\",\n  \"value\": \"variable-value\",\n  \"is_secret\": false\n}"
       }
     ],

@@ -1,0 +1,60 @@
+interactions:
+- request:
+    body: '{"account_id":"170059471500","account_specific_namespace_rules":{"auto_scaling":false},"cspm_resource_collection_enabled":true,"excluded_regions":["us-east-1","us-west-2"],"filter_tags":["$KEY:$VALUE"],"host_tags":["$KEY:$VALUE"],"metrics_collection_enabled":false,"resource_collection_enabled":true,"role_name":"DatadogAWSIntegrationRole"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/integration/aws
+  response:
+    body:
+      string: '{"external_id":"77c77ead62584b0fa1bb6a9fe7d2fa28"}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"account_id":"170059471500","role_name":"DatadogAWSIntegrationRole"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/integration/aws
+  response:
+    body:
+      string: '{}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"account_id":"170059471500","role_name":"DatadogAWSIntegrationRole"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/integration/aws
+  response:
+    body:
+      string: '{"errors":["AWS account 170059471500 does not exist in integration"]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 400
+      message: Bad Request
+version: 1
