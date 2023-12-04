@@ -28,6 +28,7 @@ class AzureAccount(ModelNormal):
             "host_filters": (str,),
             "new_client_id": (str,),
             "new_tenant_name": (str,),
+            "resource_collection_enabled": (bool,),
             "tenant_name": (str,),
         }
 
@@ -43,6 +44,7 @@ class AzureAccount(ModelNormal):
         "host_filters": "host_filters",
         "new_client_id": "new_client_id",
         "new_tenant_name": "new_tenant_name",
+        "resource_collection_enabled": "resource_collection_enabled",
         "tenant_name": "tenant_name",
     }
 
@@ -59,6 +61,7 @@ class AzureAccount(ModelNormal):
         host_filters: Union[str, UnsetType] = unset,
         new_client_id: Union[str, UnsetType] = unset,
         new_tenant_name: Union[str, UnsetType] = unset,
+        resource_collection_enabled: Union[bool, UnsetType] = unset,
         tenant_name: Union[str, UnsetType] = unset,
         **kwargs,
     ):
@@ -82,7 +85,8 @@ class AzureAccount(ModelNormal):
             Only container apps that match one of the defined tags are imported into Datadog.
         :type container_app_filters: str, optional
 
-        :param cspm_enabled: Enable Cloud Security Management Misconfigurations for your organization.
+        :param cspm_enabled: When enabled, Datadog’s Cloud Security Management product will scan resource configurations monitored by this app registration.
+            Note: This requires resource_collection_enabled to be set to true.
         :type cspm_enabled: bool, optional
 
         :param custom_metrics_enabled: Enable custom metrics for your organization.
@@ -100,6 +104,9 @@ class AzureAccount(ModelNormal):
 
         :param new_tenant_name: Your New Azure Active Directory ID.
         :type new_tenant_name: str, optional
+
+        :param resource_collection_enabled: When enabled, Datadog collects metadata and configuration info from cloud resources (compute instances, databases, load balancers, etc.) monitored by this app registration.
+        :type resource_collection_enabled: bool, optional
 
         :param tenant_name: Your Azure Active Directory ID.
         :type tenant_name: str, optional
@@ -126,6 +133,8 @@ class AzureAccount(ModelNormal):
             kwargs["new_client_id"] = new_client_id
         if new_tenant_name is not unset:
             kwargs["new_tenant_name"] = new_tenant_name
+        if resource_collection_enabled is not unset:
+            kwargs["resource_collection_enabled"] = resource_collection_enabled
         if tenant_name is not unset:
             kwargs["tenant_name"] = tenant_name
         super().__init__(kwargs)

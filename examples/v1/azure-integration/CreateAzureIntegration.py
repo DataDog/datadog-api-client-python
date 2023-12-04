@@ -20,6 +20,7 @@ body = AzureAccount(
     host_filters="key:value,filter:example",
     new_client_id="new1c7f6-1234-5678-9101-3fcbf464test",
     new_tenant_name="new1c44-1234-5678-9101-cc00736ftest",
+    resource_collection_enabled=True,
     tenant_name="testc44-1234-5678-9101-cc00736ftest",
 )
 
