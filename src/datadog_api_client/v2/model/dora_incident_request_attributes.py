@@ -59,7 +59,7 @@ class DORAIncidentRequestAttributes(ModelNormal):
         """
         Attributes to create a DORA incident event.
 
-        :param finished_at: Unix timestamp in nanoseconds when the deployment finished. It should not be older than 3 hours.
+        :param finished_at: Unix timestamp in nanoseconds when the incident finished. It should not be older than 3 hours.
         :type finished_at: int, optional
 
         :param git: Git info for DORA Metrics events.
@@ -77,7 +77,7 @@ class DORAIncidentRequestAttributes(ModelNormal):
         :param severity: Incident severity.
         :type severity: str, optional
 
-        :param started_at: Unix timestamp in nanoseconds when the deployment started.
+        :param started_at: Unix timestamp in nanoseconds when the incident started.
         :type started_at: int
 
         :param version: Version to correlate with `APM Deployment Tracking <https://docs.datadoghq.com/tracing/services/deployment_tracking/>`_.
