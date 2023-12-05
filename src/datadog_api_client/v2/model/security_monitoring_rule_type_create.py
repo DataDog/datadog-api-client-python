@@ -16,14 +16,16 @@ class SecurityMonitoringRuleTypeCreate(ModelSimple):
     """
     The rule type.
 
-    :param value: Must be one of ["log_detection", "workload_security"].
+    :param value: Must be one of ["application_security", "log_detection", "workload_security"].
     :type value: str
     """
 
     allowed_values = {
+        "application_security",
         "log_detection",
         "workload_security",
     }
+    APPLICATION_SECURITY: ClassVar["SecurityMonitoringRuleTypeCreate"]
     LOG_DETECTION: ClassVar["SecurityMonitoringRuleTypeCreate"]
     WORKLOAD_SECURITY: ClassVar["SecurityMonitoringRuleTypeCreate"]
 
@@ -34,5 +36,6 @@ class SecurityMonitoringRuleTypeCreate(ModelSimple):
         }
 
 
+SecurityMonitoringRuleTypeCreate.APPLICATION_SECURITY = SecurityMonitoringRuleTypeCreate("application_security")
 SecurityMonitoringRuleTypeCreate.LOG_DETECTION = SecurityMonitoringRuleTypeCreate("log_detection")
 SecurityMonitoringRuleTypeCreate.WORKLOAD_SECURITY = SecurityMonitoringRuleTypeCreate("workload_security")
