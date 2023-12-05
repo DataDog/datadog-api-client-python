@@ -815,6 +815,16 @@ from datadog_api_client.v2.model.monthly_cost_attribution_pagination import Mont
 from datadog_api_client.v2.model.monthly_cost_attribution_response import MonthlyCostAttributionResponse
 from datadog_api_client.v2.model.nullable_relationship_to_user import NullableRelationshipToUser
 from datadog_api_client.v2.model.nullable_relationship_to_user_data import NullableRelationshipToUserData
+from datadog_api_client.v2.model.okta_account import OktaAccount
+from datadog_api_client.v2.model.okta_account_attributes import OktaAccountAttributes
+from datadog_api_client.v2.model.okta_account_request import OktaAccountRequest
+from datadog_api_client.v2.model.okta_account_response import OktaAccountResponse
+from datadog_api_client.v2.model.okta_account_response_data import OktaAccountResponseData
+from datadog_api_client.v2.model.okta_account_type import OktaAccountType
+from datadog_api_client.v2.model.okta_account_update_request import OktaAccountUpdateRequest
+from datadog_api_client.v2.model.okta_account_update_request_attributes import OktaAccountUpdateRequestAttributes
+from datadog_api_client.v2.model.okta_account_update_request_data import OktaAccountUpdateRequestData
+from datadog_api_client.v2.model.okta_accounts_response import OktaAccountsResponse
 from datadog_api_client.v2.model.on_demand_concurrency_cap import OnDemandConcurrencyCap
 from datadog_api_client.v2.model.on_demand_concurrency_cap_attributes import OnDemandConcurrencyCapAttributes
 from datadog_api_client.v2.model.on_demand_concurrency_cap_response import OnDemandConcurrencyCapResponse
@@ -2218,6 +2228,16 @@ __all__ = [
     "MonthlyCostAttributionResponse",
     "NullableRelationshipToUser",
     "NullableRelationshipToUserData",
+    "OktaAccount",
+    "OktaAccountAttributes",
+    "OktaAccountRequest",
+    "OktaAccountResponse",
+    "OktaAccountResponseData",
+    "OktaAccountType",
+    "OktaAccountUpdateRequest",
+    "OktaAccountUpdateRequestAttributes",
+    "OktaAccountUpdateRequestData",
+    "OktaAccountsResponse",
     "OnDemandConcurrencyCap",
     "OnDemandConcurrencyCapAttributes",
     "OnDemandConcurrencyCapResponse",

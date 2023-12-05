@@ -4936,6 +4936,76 @@ nullable\_relationship\_to\_user\_data
    :members:
    :show-inheritance:
 
+okta\_account
+-------------
+
+.. automodule:: datadog_api_client.v2.model.okta_account
+   :members:
+   :show-inheritance:
+
+okta\_account\_attributes
+-------------------------
+
+.. automodule:: datadog_api_client.v2.model.okta_account_attributes
+   :members:
+   :show-inheritance:
+
+okta\_account\_request
+----------------------
+
+.. automodule:: datadog_api_client.v2.model.okta_account_request
+   :members:
+   :show-inheritance:
+
+okta\_account\_response
+-----------------------
+
+.. automodule:: datadog_api_client.v2.model.okta_account_response
+   :members:
+   :show-inheritance:
+
+okta\_account\_response\_data
+-----------------------------
+
+.. automodule:: datadog_api_client.v2.model.okta_account_response_data
+   :members:
+   :show-inheritance:
+
+okta\_account\_type
+-------------------
+
+.. automodule:: datadog_api_client.v2.model.okta_account_type
+   :members:
+   :show-inheritance:
+
+okta\_account\_update\_request
+------------------------------
+
+.. automodule:: datadog_api_client.v2.model.okta_account_update_request
+   :members:
+   :show-inheritance:
+
+okta\_account\_update\_request\_attributes
+------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.okta_account_update_request_attributes
+   :members:
+   :show-inheritance:
+
+okta\_account\_update\_request\_data
+------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.okta_account_update_request_data
+   :members:
+   :show-inheritance:
+
+okta\_accounts\_response
+------------------------
+
+.. automodule:: datadog_api_client.v2.model.okta_accounts_response
+   :members:
+   :show-inheritance:
+
 on\_demand\_concurrency\_cap
 ----------------------------
 
