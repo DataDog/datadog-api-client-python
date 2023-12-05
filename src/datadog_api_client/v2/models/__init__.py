@@ -416,6 +416,7 @@ from datadog_api_client.v2.model.finding_type import FindingType
 from datadog_api_client.v2.model.formula_limit import FormulaLimit
 from datadog_api_client.v2.model.full_api_key import FullAPIKey
 from datadog_api_client.v2.model.full_api_key_attributes import FullAPIKeyAttributes
+from datadog_api_client.v2.model.full_api_key_last_used_date import FullAPIKeyLastUsedDate
 from datadog_api_client.v2.model.full_application_key import FullApplicationKey
 from datadog_api_client.v2.model.full_application_key_attributes import FullApplicationKeyAttributes
 from datadog_api_client.v2.model.gcpsts_delegate_account import GCPSTSDelegateAccount
@@ -1883,6 +1884,7 @@ __all__ = [
     "FormulaLimit",
     "FullAPIKey",
     "FullAPIKeyAttributes",
+    "FullAPIKeyLastUsedDate",
     "FullApplicationKey",
     "FullApplicationKeyAttributes",
     "GCPSTSDelegateAccount",

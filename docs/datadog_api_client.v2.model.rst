@@ -2521,6 +2521,13 @@ full\_api\_key\_attributes
    :members:
    :show-inheritance:
 
+full\_api\_key\_last\_used\_date
+--------------------------------
+
+.. automodule:: datadog_api_client.v2.model.full_api_key_last_used_date
+   :members:
+   :show-inheritance:
+
 full\_application\_key
 ----------------------
 
