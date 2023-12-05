@@ -183,6 +183,13 @@ monitors\_api
    :members:
    :show-inheritance:
 
+okta\_integration\_api
+----------------------
+
+.. automodule:: datadog_api_client.v2.api.okta_integration_api
+   :members:
+   :show-inheritance:
+
 opsgenie\_integration\_api
 --------------------------
 

@@ -1,0 +1,38 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"auth_method":"oauth","client_id":"client_id","client_secret":"client_secret","domain":"https://example.okta.com/","name":"Okta_Prod"},"id":"f749daaf-682e-4208-a38d-c9b43162c609","type":"okta-accounts"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/integrations/okta/accounts
+  response:
+    body:
+      string: '{"data":{"type":"okta-accounts","attributes":{"domain":"https://example.okta.com/","client_id":"client_id","auth_method":"oauth","name":"Okta_Prod"},"id":"6330b376-d352-4a06-a169-107002bd6e6c"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/integrations/okta/accounts/6330b376-d352-4a06-a169-107002bd6e6c
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - text/html; charset=utf-8
+    status:
+      code: 204
+      message: No Content
+version: 1
