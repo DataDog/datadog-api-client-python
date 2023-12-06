@@ -17,20 +17,29 @@ class Pagination(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
+            "max_page_size": (int,),
             "total_count": (int,),
             "total_filtered_count": (int,),
         }
 
     attribute_map = {
+        "max_page_size": "max_page_size",
         "total_count": "total_count",
         "total_filtered_count": "total_filtered_count",
     }
 
     def __init__(
-        self_, total_count: Union[int, UnsetType] = unset, total_filtered_count: Union[int, UnsetType] = unset, **kwargs
+        self_,
+        max_page_size: Union[int, UnsetType] = unset,
+        total_count: Union[int, UnsetType] = unset,
+        total_filtered_count: Union[int, UnsetType] = unset,
+        **kwargs,
     ):
         """
         Pagination object.
+
+        :param max_page_size: The maximum element count allowed per page.
+        :type max_page_size: int, optional
 
         :param total_count: Total count.
         :type total_count: int, optional
@@ -38,6 +47,8 @@ class Pagination(ModelNormal):
         :param total_filtered_count: Total count of elements matched by the filter.
         :type total_filtered_count: int, optional
         """
+        if max_page_size is not unset:
+            kwargs["max_page_size"] = max_page_size
         if total_count is not unset:
             kwargs["total_count"] = total_count
         if total_filtered_count is not unset:
