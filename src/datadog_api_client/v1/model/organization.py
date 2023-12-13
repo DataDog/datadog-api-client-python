@@ -81,7 +81,7 @@ class Organization(ModelNormal):
         :param description: Description of the organization.
         :type description: str, optional
 
-        :param name: The name of the new child-organization, limited to 32 characters.
+        :param name: The name of the child organization, limited to 32 characters.
         :type name: str, optional
 
         :param public_id: The ``public_id`` of the organization you are operating within.
