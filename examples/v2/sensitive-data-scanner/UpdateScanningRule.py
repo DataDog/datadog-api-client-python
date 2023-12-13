@@ -40,6 +40,7 @@ body = SensitiveDataScannerRuleUpdateRequest(
                 "sensitive_data:true",
             ],
             is_enabled=True,
+            priority=5,
         ),
         relationships=SensitiveDataScannerRuleRelationships(
             group=SensitiveDataScannerGroupData(
