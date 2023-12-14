@@ -18,6 +18,13 @@ if TYPE_CHECKING:
 
 
 class SensitiveDataScannerRuleAttributes(ModelNormal):
+    validations = {
+        "priority": {
+            "inclusive_maximum": 5,
+            "inclusive_minimum": 1,
+        },
+    }
+
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.sensitive_data_scanner_text_replacement import (
@@ -31,6 +38,7 @@ class SensitiveDataScannerRuleAttributes(ModelNormal):
             "name": (str,),
             "namespaces": ([str],),
             "pattern": (str,),
+            "priority": (int,),
             "tags": ([str],),
             "text_replacement": (SensitiveDataScannerTextReplacement,),
         }
@@ -42,6 +50,7 @@ class SensitiveDataScannerRuleAttributes(ModelNormal):
         "name": "name",
         "namespaces": "namespaces",
         "pattern": "pattern",
+        "priority": "priority",
         "tags": "tags",
         "text_replacement": "text_replacement",
     }
@@ -54,6 +63,7 @@ class SensitiveDataScannerRuleAttributes(ModelNormal):
         name: Union[str, UnsetType] = unset,
         namespaces: Union[List[str], UnsetType] = unset,
         pattern: Union[str, UnsetType] = unset,
+        priority: Union[int, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
         text_replacement: Union[SensitiveDataScannerTextReplacement, UnsetType] = unset,
         **kwargs,
@@ -80,6 +90,9 @@ class SensitiveDataScannerRuleAttributes(ModelNormal):
         :param pattern: Not included if there is a relationship to a standard pattern.
         :type pattern: str, optional
 
+        :param priority: Integer from 1 (high) to 5 (low) indicating rule issue severity.
+        :type priority: int, optional
+
         :param tags: List of tags.
         :type tags: [str], optional
 
@@ -98,6 +111,8 @@ class SensitiveDataScannerRuleAttributes(ModelNormal):
             kwargs["namespaces"] = namespaces
         if pattern is not unset:
             kwargs["pattern"] = pattern
+        if priority is not unset:
+            kwargs["priority"] = priority
         if tags is not unset:
             kwargs["tags"] = tags
         if text_replacement is not unset:
