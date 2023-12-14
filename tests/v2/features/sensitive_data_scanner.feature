@@ -39,7 +39,7 @@ Feature: Sensitive Data Scanner
     Given a valid "configuration" in the system
     And there is a valid "scanning_group" in the system
     And new "CreateScanningRule" request
-    And body with value {"meta":{},"data":{"type":"sensitive_data_scanner_rule","attributes":{"name":"{{ unique }}","pattern":"pattern", "namespaces": ["admin"], "excluded_namespaces": ["admin.name"], "text_replacement":{"type":"none"},"tags":["sensitive_data:true"],"is_enabled":true},"relationships":{"group":{"data":{"type":"{{ group.data.type }}","id":"{{ group.data.id }}"}}}}}
+    And body with value {"meta":{},"data":{"type":"sensitive_data_scanner_rule","attributes":{"name":"{{ unique }}","pattern":"pattern", "namespaces": ["admin"], "excluded_namespaces": ["admin.name"], "text_replacement":{"type":"none"},"tags":["sensitive_data:true"],"is_enabled":true,"priority":1},"relationships":{"group":{"data":{"type":"{{ group.data.type }}","id":"{{ group.data.id }}"}}}}}
     When the request is sent
     Then the response status is 200 OK
     And the response "data.type" is equal to "sensitive_data_scanner_rule"
@@ -196,6 +196,6 @@ Feature: Sensitive Data Scanner
     And the "scanning_group" has a "scanning_rule"
     And new "UpdateScanningRule" request
     And request contains "rule_id" parameter from "rule.data.id"
-    And body with value {"meta":{},"data":{"id": "{{ rule.data.id }}", "type":"sensitive_data_scanner_rule","attributes":{"name":"{{ unique }}","pattern":"pattern","text_replacement":{"type":"none"},"tags":["sensitive_data:true"],"is_enabled":true},"relationships":{"group":{"data":{"type":"{{ group.data.type }}","id":"{{ group.data.id }}"}}}}}
+    And body with value {"meta":{},"data":{"id": "{{ rule.data.id }}", "type":"sensitive_data_scanner_rule","attributes":{"name":"{{ unique }}","pattern":"pattern","text_replacement":{"type":"none"},"tags":["sensitive_data:true"],"is_enabled":true,"priority":5},"relationships":{"group":{"data":{"type":"{{ group.data.type }}","id":"{{ group.data.id }}"}}}}}
     When the request is sent
     Then the response status is 200 OK
