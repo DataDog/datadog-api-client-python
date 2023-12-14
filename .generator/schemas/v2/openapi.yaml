@@ -25603,7 +25603,9 @@ paths:
         queryable.
 
         Can only be used with application keys from users with the `Manage Tags for
-        Metrics` permission.'
+        Metrics` permission. This endpoint requires
+
+        a tag configuration to be created first.'
       operationId: UpdateTagConfiguration
       parameters:
       - $ref: '#/components/parameters/MetricName'
