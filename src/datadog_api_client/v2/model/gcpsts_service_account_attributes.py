@@ -22,6 +22,8 @@ class GCPSTSServiceAccountAttributes(ModelNormal):
             "client_email": (str,),
             "host_filters": ([str],),
             "is_cspm_enabled": (bool,),
+            "is_security_command_center_enabled": (bool,),
+            "resource_collection_enabled": (bool,),
         }
 
     attribute_map = {
@@ -30,6 +32,8 @@ class GCPSTSServiceAccountAttributes(ModelNormal):
         "client_email": "client_email",
         "host_filters": "host_filters",
         "is_cspm_enabled": "is_cspm_enabled",
+        "is_security_command_center_enabled": "is_security_command_center_enabled",
+        "resource_collection_enabled": "resource_collection_enabled",
     }
 
     def __init__(
@@ -39,6 +43,8 @@ class GCPSTSServiceAccountAttributes(ModelNormal):
         client_email: Union[str, UnsetType] = unset,
         host_filters: Union[List[str], UnsetType] = unset,
         is_cspm_enabled: Union[bool, UnsetType] = unset,
+        is_security_command_center_enabled: Union[bool, UnsetType] = unset,
+        resource_collection_enabled: Union[bool, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -56,8 +62,14 @@ class GCPSTSServiceAccountAttributes(ModelNormal):
         :param host_filters: Your Host Filters.
         :type host_filters: [str], optional
 
-        :param is_cspm_enabled: When enabled, Datadog performs configuration checks across your Google Cloud environment by continuously scanning every resource.
+        :param is_cspm_enabled: When enabled, Datadog will activate the Cloud Security Monitoring product for this service account. Note: This requires resource_collection_enabled to be set to true.
         :type is_cspm_enabled: bool, optional
+
+        :param is_security_command_center_enabled: When enabled, Datadog will attempt to collect Security Command Center Findings. Note: This requires additional permissions on the service account.
+        :type is_security_command_center_enabled: bool, optional
+
+        :param resource_collection_enabled: When enabled, Datadog scans for all resources in your GCP environment.
+        :type resource_collection_enabled: bool, optional
         """
         if account_tags is not unset:
             kwargs["account_tags"] = account_tags
@@ -69,4 +81,8 @@ class GCPSTSServiceAccountAttributes(ModelNormal):
             kwargs["host_filters"] = host_filters
         if is_cspm_enabled is not unset:
             kwargs["is_cspm_enabled"] = is_cspm_enabled
+        if is_security_command_center_enabled is not unset:
+            kwargs["is_security_command_center_enabled"] = is_security_command_center_enabled
+        if resource_collection_enabled is not unset:
+            kwargs["resource_collection_enabled"] = resource_collection_enabled
         super().__init__(kwargs)
