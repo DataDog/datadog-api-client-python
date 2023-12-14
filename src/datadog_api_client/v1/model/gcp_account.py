@@ -26,9 +26,11 @@ class GCPAccount(ModelNormal):
             "errors": ([str],),
             "host_filters": (str,),
             "is_cspm_enabled": (bool,),
+            "is_security_command_center_enabled": (bool,),
             "private_key": (str,),
             "private_key_id": (str,),
             "project_id": (str,),
+            "resource_collection_enabled": (bool,),
             "token_uri": (str,),
             "type": (str,),
         }
@@ -43,9 +45,11 @@ class GCPAccount(ModelNormal):
         "errors": "errors",
         "host_filters": "host_filters",
         "is_cspm_enabled": "is_cspm_enabled",
+        "is_security_command_center_enabled": "is_security_command_center_enabled",
         "private_key": "private_key",
         "private_key_id": "private_key_id",
         "project_id": "project_id",
+        "resource_collection_enabled": "resource_collection_enabled",
         "token_uri": "token_uri",
         "type": "type",
     }
@@ -61,9 +65,11 @@ class GCPAccount(ModelNormal):
         errors: Union[List[str], UnsetType] = unset,
         host_filters: Union[str, UnsetType] = unset,
         is_cspm_enabled: Union[bool, UnsetType] = unset,
+        is_security_command_center_enabled: Union[bool, UnsetType] = unset,
         private_key: Union[str, UnsetType] = unset,
         private_key_id: Union[str, UnsetType] = unset,
         project_id: Union[str, UnsetType] = unset,
+        resource_collection_enabled: Union[bool, UnsetType] = unset,
         token_uri: Union[str, UnsetType] = unset,
         type: Union[str, UnsetType] = unset,
         **kwargs,
@@ -97,8 +103,11 @@ class GCPAccount(ModelNormal):
             Only hosts that match one of the defined tags are imported into Datadog.
         :type host_filters: str, optional
 
-        :param is_cspm_enabled: When enabled, Datadog performs configuration checks across your Google Cloud environment by continuously scanning every resource.
+        :param is_cspm_enabled: When enabled, Datadog will activate the Cloud Security Monitoring product for this service account. Note: This requires resource_collection_enabled to be set to true.
         :type is_cspm_enabled: bool, optional
+
+        :param is_security_command_center_enabled: When enabled, Datadog will attempt to collect Security Command Center Findings. Note: This requires additional permissions on the service account.
+        :type is_security_command_center_enabled: bool, optional
 
         :param private_key: Your private key name found in your JSON service account key.
         :type private_key: str, optional
@@ -108,6 +117,9 @@ class GCPAccount(ModelNormal):
 
         :param project_id: Your Google Cloud project ID found in your JSON service account key.
         :type project_id: str, optional
+
+        :param resource_collection_enabled: When enabled, Datadog scans for all resources in your GCP environment.
+        :type resource_collection_enabled: bool, optional
 
         :param token_uri: Should be ``https://accounts.google.com/o/oauth2/token``.
         :type token_uri: str, optional
@@ -133,12 +145,16 @@ class GCPAccount(ModelNormal):
             kwargs["host_filters"] = host_filters
         if is_cspm_enabled is not unset:
             kwargs["is_cspm_enabled"] = is_cspm_enabled
+        if is_security_command_center_enabled is not unset:
+            kwargs["is_security_command_center_enabled"] = is_security_command_center_enabled
         if private_key is not unset:
             kwargs["private_key"] = private_key
         if private_key_id is not unset:
             kwargs["private_key_id"] = private_key_id
         if project_id is not unset:
             kwargs["project_id"] = project_id
+        if resource_collection_enabled is not unset:
+            kwargs["resource_collection_enabled"] = resource_collection_enabled
         if token_uri is not unset:
             kwargs["token_uri"] = token_uri
         if type is not unset:
