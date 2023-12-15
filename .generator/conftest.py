@@ -183,7 +183,6 @@ TIME_FORMATTER = {
     },
 }
 
-
 def relative_time(imports, calls, freezed_time, iso):
     time_re = re.compile(r"now( *([+-]) *(\d+)([smhdMy]))?")
 
@@ -229,7 +228,6 @@ def relative_time(imports, calls, freezed_time, iso):
 
     return store_calls
 
-
 @pytest.fixture
 def context(request, unique, freezed_time):
     """
@@ -266,6 +264,7 @@ def context(request, unique, freezed_time):
         "unique_hash": unique_hash,
         "timestamp": relative_time(imports, replace_values, freezed_time, False),
         "timeISO": relative_time(imports, replace_values, freezed_time, True),
+        "uuid": "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d",
         "_replace_values": replace_values,
         "_imports": imports,
         "_given": given,

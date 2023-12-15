@@ -67,7 +67,7 @@ Feature: GCP Integration
   @team:DataDog/gcp-integrations
   Scenario: Create a new entry for your service account with cspm enabled returns "OK" response
     Given new "CreateGCPSTSAccount" request
-    And body with value {"data": {"attributes": {"is_cspm_enabled": true, "client_email": "{{ unique_hash }}@test-project.iam.gserviceaccount.com", "host_filters": []}, "type": "gcp_service_account"}}
+    And body with value {"data": {"attributes": {"is_cspm_enabled": true, "resource_collection_enabled": true, "client_email": "{{ unique_hash }}@test-project.iam.gserviceaccount.com", "host_filters": []}, "type": "gcp_service_account"}}
     When the request is sent
     Then the response status is 201 OK
     And the response "data.type" is equal to "gcp_service_account"
