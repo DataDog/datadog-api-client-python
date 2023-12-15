@@ -193,7 +193,8 @@ def relative_time(freezed_time, iso):
 
 def generate_uuid(freezed_time):
     freezed_time_string = str(freezed_time.timestamp())
-    return  freezed_time_string[:8]+"-0000-0000-0000-"+freezed_time_string[:10]+"00"
+    return freezed_time_string[:8] + "-0000-0000-0000-" + freezed_time_string[:10] + "00"
+
 
 @pytest.fixture
 def context(vcr, unique, freezed_time):
