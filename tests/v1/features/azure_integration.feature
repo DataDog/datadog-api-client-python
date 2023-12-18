@@ -34,7 +34,7 @@ Feature: Azure Integration
   Scenario: Delete an Azure integration returns "OK" response
     Given there is a valid "azure_account" in the system
     And new "DeleteAzureIntegration" request
-    And body with value {"app_service_plan_filters": "key:value,filter:example", "automute": true, "client_id": "{{ uuid }}", "client_secret": "testingx./Sw*g/Y33t..R1cH+hScMDt", "container_app_filters": "key:value,filter:example", "cspm_enabled": true, "custom_metrics_enabled": true, "errors": ["*"], "host_filters": "key:value,filter:example", "new_client_id": "{{ uuid }}", "new_tenant_name": "{{ uuid }}", "resource_collection_enabled": true, "tenant_name": "{{ uuid }}"}
+    And body with value {"client_id": "{{ uuid }}", "tenant_name": "{{ uuid }}"}
     When the request is sent
     Then the response status is 200 OK
 
