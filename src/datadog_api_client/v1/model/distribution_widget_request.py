@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -17,12 +17,14 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.log_query_definition import LogQueryDefinition
     from datadog_api_client.v1.model.apm_stats_query_definition import ApmStatsQueryDefinition
     from datadog_api_client.v1.model.process_query_definition import ProcessQueryDefinition
+    from datadog_api_client.v1.model.formula_and_function_query_definition import FormulaAndFunctionQueryDefinition
     from datadog_api_client.v1.model.distribution_widget_histogram_request_query import (
         DistributionWidgetHistogramRequestQuery,
     )
     from datadog_api_client.v1.model.distribution_widget_histogram_request_type import (
         DistributionWidgetHistogramRequestType,
     )
+    from datadog_api_client.v1.model.formula_and_function_response_format import FormulaAndFunctionResponseFormat
     from datadog_api_client.v1.model.widget_style import WidgetStyle
     from datadog_api_client.v1.model.formula_and_function_metric_query_definition import (
         FormulaAndFunctionMetricQueryDefinition,
@@ -30,8 +32,20 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.formula_and_function_event_query_definition import (
         FormulaAndFunctionEventQueryDefinition,
     )
+    from datadog_api_client.v1.model.formula_and_function_process_query_definition import (
+        FormulaAndFunctionProcessQueryDefinition,
+    )
+    from datadog_api_client.v1.model.formula_and_function_apm_dependency_stats_query_definition import (
+        FormulaAndFunctionApmDependencyStatsQueryDefinition,
+    )
     from datadog_api_client.v1.model.formula_and_function_apm_resource_stats_query_definition import (
         FormulaAndFunctionApmResourceStatsQueryDefinition,
+    )
+    from datadog_api_client.v1.model.formula_and_function_slo_query_definition import (
+        FormulaAndFunctionSLOQueryDefinition,
+    )
+    from datadog_api_client.v1.model.formula_and_function_cloud_cost_query_definition import (
+        FormulaAndFunctionCloudCostQueryDefinition,
     )
 
 
@@ -41,12 +55,14 @@ class DistributionWidgetRequest(ModelNormal):
         from datadog_api_client.v1.model.log_query_definition import LogQueryDefinition
         from datadog_api_client.v1.model.apm_stats_query_definition import ApmStatsQueryDefinition
         from datadog_api_client.v1.model.process_query_definition import ProcessQueryDefinition
+        from datadog_api_client.v1.model.formula_and_function_query_definition import FormulaAndFunctionQueryDefinition
         from datadog_api_client.v1.model.distribution_widget_histogram_request_query import (
             DistributionWidgetHistogramRequestQuery,
         )
         from datadog_api_client.v1.model.distribution_widget_histogram_request_type import (
             DistributionWidgetHistogramRequestType,
         )
+        from datadog_api_client.v1.model.formula_and_function_response_format import FormulaAndFunctionResponseFormat
         from datadog_api_client.v1.model.widget_style import WidgetStyle
 
         return {
@@ -58,8 +74,10 @@ class DistributionWidgetRequest(ModelNormal):
             "process_query": (ProcessQueryDefinition,),
             "profile_metrics_query": (LogQueryDefinition,),
             "q": (str,),
+            "queries": ([FormulaAndFunctionQueryDefinition],),
             "query": (DistributionWidgetHistogramRequestQuery,),
             "request_type": (DistributionWidgetHistogramRequestType,),
+            "response_format": (FormulaAndFunctionResponseFormat,),
             "rum_query": (LogQueryDefinition,),
             "security_query": (LogQueryDefinition,),
             "style": (WidgetStyle,),
@@ -74,8 +92,10 @@ class DistributionWidgetRequest(ModelNormal):
         "process_query": "process_query",
         "profile_metrics_query": "profile_metrics_query",
         "q": "q",
+        "queries": "queries",
         "query": "query",
         "request_type": "request_type",
+        "response_format": "response_format",
         "rum_query": "rum_query",
         "security_query": "security_query",
         "style": "style",
@@ -91,6 +111,21 @@ class DistributionWidgetRequest(ModelNormal):
         process_query: Union[ProcessQueryDefinition, UnsetType] = unset,
         profile_metrics_query: Union[LogQueryDefinition, UnsetType] = unset,
         q: Union[str, UnsetType] = unset,
+        queries: Union[
+            List[
+                Union[
+                    FormulaAndFunctionQueryDefinition,
+                    FormulaAndFunctionMetricQueryDefinition,
+                    FormulaAndFunctionEventQueryDefinition,
+                    FormulaAndFunctionProcessQueryDefinition,
+                    FormulaAndFunctionApmDependencyStatsQueryDefinition,
+                    FormulaAndFunctionApmResourceStatsQueryDefinition,
+                    FormulaAndFunctionSLOQueryDefinition,
+                    FormulaAndFunctionCloudCostQueryDefinition,
+                ]
+            ],
+            UnsetType,
+        ] = unset,
         query: Union[
             DistributionWidgetHistogramRequestQuery,
             FormulaAndFunctionMetricQueryDefinition,
@@ -99,6 +134,7 @@ class DistributionWidgetRequest(ModelNormal):
             UnsetType,
         ] = unset,
         request_type: Union[DistributionWidgetHistogramRequestType, UnsetType] = unset,
+        response_format: Union[FormulaAndFunctionResponseFormat, UnsetType] = unset,
         rum_query: Union[LogQueryDefinition, UnsetType] = unset,
         security_query: Union[LogQueryDefinition, UnsetType] = unset,
         style: Union[WidgetStyle, UnsetType] = unset,
@@ -131,11 +167,17 @@ class DistributionWidgetRequest(ModelNormal):
         :param q: Widget query.
         :type q: str, optional
 
+        :param queries: List of queries that can be returned directly or used in formulas.
+        :type queries: [FormulaAndFunctionQueryDefinition], optional
+
         :param query: Query definition for Distribution Widget Histogram Request
         :type query: DistributionWidgetHistogramRequestQuery, optional
 
         :param request_type: Request type for the histogram request.
         :type request_type: DistributionWidgetHistogramRequestType, optional
+
+        :param response_format: Timeseries, scalar, or event list response. Event list response formats are supported by Geomap widgets.
+        :type response_format: FormulaAndFunctionResponseFormat, optional
 
         :param rum_query: The log query.
         :type rum_query: LogQueryDefinition, optional
@@ -162,10 +204,14 @@ class DistributionWidgetRequest(ModelNormal):
             kwargs["profile_metrics_query"] = profile_metrics_query
         if q is not unset:
             kwargs["q"] = q
+        if queries is not unset:
+            kwargs["queries"] = queries
         if query is not unset:
             kwargs["query"] = query
         if request_type is not unset:
             kwargs["request_type"] = request_type
+        if response_format is not unset:
+            kwargs["response_format"] = response_format
         if rum_query is not unset:
             kwargs["rum_query"] = rum_query
         if security_query is not unset:

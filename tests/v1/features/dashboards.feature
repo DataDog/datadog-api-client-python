@@ -667,6 +667,33 @@ Feature: Dashboards
     And the response "widgets[0].definition.has_uniform_y_axes" is equal to true
 
   @team:DataDog/dashboards-backend
+  Scenario: Create a new dashboard with split graph widget from distribution widget
+    Given new "CreateDashboard" request
+    And body from file "dashboards_json_payload/split_graph_widget_distribution.json"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.type" is equal to "split_group"
+    And the response "widgets[0].definition.source_widget_definition.type" is equal to "distribution"
+    And the response "widgets[0].definition.source_widget_definition.requests[0].response_format" is equal to "scalar"
+    And the response "widgets[0].definition.source_widget_definition.requests[0].queries[0].data_source" is equal to "metrics"
+    And the response "widgets[0].definition.source_widget_definition.requests[0].queries[0].aggregator" is equal to "avg"
+    And the response "widgets[0].definition.source_widget_definition.requests[0].queries[0].query" is equal to "avg:system.cpu.user{*} by {service}"
+    And the response "widgets[0].definition.source_widget_definition.xaxis.scale" is equal to "linear"
+    And the response "widgets[0].definition.source_widget_definition.xaxis.include_zero" is equal to true
+    And the response "widgets[0].definition.source_widget_definition.xaxis.min" is equal to "auto"
+    And the response "widgets[0].definition.source_widget_definition.xaxis.max" is equal to "auto"
+    And the response "widgets[0].definition.source_widget_definition.yaxis.scale" is equal to "linear"
+    And the response "widgets[0].definition.source_widget_definition.yaxis.include_zero" is equal to true
+    And the response "widgets[0].definition.source_widget_definition.yaxis.min" is equal to "auto"
+    And the response "widgets[0].definition.source_widget_definition.yaxis.max" is equal to "auto"
+    And the response "widgets[0].definition.split_config.split_dimensions[0].one_graph_per" is equal to "service"
+    And the response "widgets[0].definition.split_config.limit" is equal to 6
+    And the response "widgets[0].definition.split_config.sort.compute.aggregation" is equal to "sum"
+    And the response "widgets[0].definition.split_config.sort.compute.metric" is equal to "system.cpu.user"
+    And the response "widgets[0].definition.split_config.sort.order" is equal to "desc"
+    And the response "widgets[0].definition.size" is equal to "md"
+
+  @team:DataDog/dashboards-backend
   Scenario: Create a new dashboard with sunburst widget and metrics data
     Given new "CreateDashboard" request
     And body with value { "title": "{{ unique }}", "widgets": [ { "definition": { "title": "", "title_size": "16", "title_align": "left", "type": "sunburst", "requests": [ { "response_format": "scalar", "formulas": [ { "formula": "query1" } ], "queries": [ { "query": "sum:system.mem.used{*} by {service}", "data_source": "metrics", "name": "query1", "aggregator": "sum" } ], "style": { "palette": "dog_classic" } } ] }, "layout": { "x": 0, "y": 0, "width": 4, "height": 4 } } ], "layout_type": "ordered" }

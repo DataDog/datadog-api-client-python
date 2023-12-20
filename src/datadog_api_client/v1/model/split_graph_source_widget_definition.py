@@ -39,6 +39,21 @@ class SplitGraphSourceWidgetDefinition(ModelComposed):
         :param type: Type of the change widget.
         :type type: ChangeWidgetDefinitionType
 
+        :param legend_size: (Deprecated) The widget legend was replaced by a tooltip and sidebar.
+        :type legend_size: str, optional
+
+        :param markers: List of markers.
+        :type markers: [WidgetMarker], optional
+
+        :param show_legend: (Deprecated) The widget legend was replaced by a tooltip and sidebar.
+        :type show_legend: bool, optional
+
+        :param xaxis: X Axis controls for the distribution widget.
+        :type xaxis: DistributionWidgetXAxis, optional
+
+        :param yaxis: Y Axis controls for the distribution widget.
+        :type yaxis: DistributionWidgetYAxis, optional
+
         :param style: The style to apply to the widget.
         :type style: GeomapWidgetDefinitionStyle
 
@@ -63,12 +78,6 @@ class SplitGraphSourceWidgetDefinition(ModelComposed):
         :param color_by_groups: List of groups used for colors.
         :type color_by_groups: [str], optional
 
-        :param xaxis: Axis controls for the widget.
-        :type xaxis: WidgetAxis, optional
-
-        :param yaxis: Axis controls for the widget.
-        :type yaxis: WidgetAxis, optional
-
         :param hide_total: Show the total value in this widget.
         :type hide_total: bool, optional
 
@@ -87,17 +96,8 @@ class SplitGraphSourceWidgetDefinition(ModelComposed):
         :param legend_layout: Layout of the legend.
         :type legend_layout: TimeseriesWidgetLegendLayout, optional
 
-        :param legend_size: Available legend sizes for a widget. Should be one of "0", "2", "4", "8", "16", or "auto".
-        :type legend_size: str, optional
-
-        :param markers: List of markers.
-        :type markers: [WidgetMarker], optional
-
         :param right_yaxis: Axis controls for the widget.
         :type right_yaxis: WidgetAxis, optional
-
-        :param show_legend: (screenboard only) Show the legend for this widget.
-        :type show_legend: bool, optional
 
         :param color_by: (deprecated) The attribute formerly used to determine color in the widget.
         :type color_by: TreeMapColorBy, optional
@@ -120,6 +120,7 @@ class SplitGraphSourceWidgetDefinition(ModelComposed):
         # classes don't exist yet because their module has not finished
         # loading
         from datadog_api_client.v1.model.change_widget_definition import ChangeWidgetDefinition
+        from datadog_api_client.v1.model.distribution_widget_definition import DistributionWidgetDefinition
         from datadog_api_client.v1.model.geomap_widget_definition import GeomapWidgetDefinition
         from datadog_api_client.v1.model.query_value_widget_definition import QueryValueWidgetDefinition
         from datadog_api_client.v1.model.scatter_plot_widget_definition import ScatterPlotWidgetDefinition
@@ -132,6 +133,7 @@ class SplitGraphSourceWidgetDefinition(ModelComposed):
         return {
             "oneOf": [
                 ChangeWidgetDefinition,
+                DistributionWidgetDefinition,
                 GeomapWidgetDefinition,
                 QueryValueWidgetDefinition,
                 ScatterPlotWidgetDefinition,

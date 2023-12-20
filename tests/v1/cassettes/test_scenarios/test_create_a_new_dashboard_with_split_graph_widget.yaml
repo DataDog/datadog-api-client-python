@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"description":"","is_read_only":false,"layout_type":"ordered","notify_list":[],"template_variables":[],"title":"Test-Create_a_new_dashboard_with_split_graph_widget-1694700280","widgets":[{"definition":{"has_uniform_y_axes":true,"size":"md","source_widget_definition":{"requests":[{"display_type":"line","queries":[{"data_source":"metrics","name":"query1","query":"avg:system.cpu.user{*}"}],"response_format":"timeseries","style":{"line_type":"solid","line_width":"normal","palette":"dog_classic"}}],"title":"","title_align":"left","title_size":"16","type":"timeseries"},"split_config":{"limit":24,"sort":{"compute":{"aggregation":"sum","metric":"system.cpu.user"},"order":"desc"},"split_dimensions":[{"one_graph_per":"service"}],"static_splits":[[{"tag_key":"service","tag_values":["cassandra"]},{"tag_key":"datacenter","tag_values":[]}],[{"tag_key":"demo","tag_values":["env"]}]]},"title":"","type":"split_group"},"layout":{"height":8,"width":12,"x":0,"y":0}}]}'
+    body: '{"description":"","is_read_only":false,"layout_type":"ordered","notify_list":[],"template_variables":[],"title":"Test-Create_a_new_dashboard_with_split_graph_widget-1703090167","widgets":[{"definition":{"has_uniform_y_axes":true,"size":"md","source_widget_definition":{"requests":[{"display_type":"line","queries":[{"data_source":"metrics","name":"query1","query":"avg:system.cpu.user{*}"}],"response_format":"timeseries","style":{"line_type":"solid","line_width":"normal","palette":"dog_classic"}}],"title":"","title_align":"left","title_size":"16","type":"timeseries"},"split_config":{"limit":24,"sort":{"compute":{"aggregation":"sum","metric":"system.cpu.user"},"order":"desc"},"split_dimensions":[{"one_graph_per":"service"}],"static_splits":[[{"tag_key":"service","tag_values":["cassandra"]},{"tag_key":"datacenter","tag_values":[]}],[{"tag_key":"demo","tag_values":["env"]}]]},"title":"","type":"split_group"},"layout":{"height":8,"width":12,"x":0,"y":0}}]}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/dashboard
   response:
     body:
-      string: '{"id":"cjw-gqa-mgu","title":"Test-Create_a_new_dashboard_with_split_graph_widget-1694700280","description":"","author_handle":"frog@datadoghq.com","author_name":null,"layout_type":"ordered","url":"/dashboard/cjw-gqa-mgu/test-createanewdashboardwithsplitgraphwidget-1694700280","is_read_only":false,"template_variables":[],"widgets":[{"definition":{"has_uniform_y_axes":true,"size":"md","source_widget_definition":{"requests":[{"display_type":"line","queries":[{"data_source":"metrics","name":"query1","query":"avg:system.cpu.user{*}"}],"response_format":"timeseries","style":{"line_type":"solid","line_width":"normal","palette":"dog_classic"}}],"title":"","title_align":"left","title_size":"16","type":"timeseries"},"split_config":{"limit":24,"sort":{"compute":{"aggregation":"sum","metric":"system.cpu.user"},"order":"desc"},"split_dimensions":[{"one_graph_per":"service"}],"static_splits":[[{"tag_key":"service","tag_values":["cassandra"]},{"tag_key":"datacenter","tag_values":[]}],[{"tag_key":"demo","tag_values":["env"]}]]},"title":"","type":"split_group"},"layout":{"height":8,"width":12,"x":0,"y":0},"id":130983163053076}],"notify_list":[],"created_at":"2023-09-14T14:04:40.913735+00:00","modified_at":"2023-09-14T14:04:40.913735+00:00","restricted_roles":[]}
+      string: '{"id":"vxu-qte-rxf","title":"Test-Create_a_new_dashboard_with_split_graph_widget-1703090167","description":"","author_handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","author_name":"CI
+        Account","layout_type":"ordered","url":"/dashboard/vxu-qte-rxf/test-createanewdashboardwithsplitgraphwidget-1703090167","is_read_only":false,"template_variables":[],"widgets":[{"definition":{"has_uniform_y_axes":true,"size":"md","source_widget_definition":{"requests":[{"display_type":"line","queries":[{"data_source":"metrics","name":"query1","query":"avg:system.cpu.user{*}"}],"response_format":"timeseries","style":{"line_type":"solid","line_width":"normal","palette":"dog_classic"}}],"title":"","title_align":"left","title_size":"16","type":"timeseries"},"split_config":{"limit":24,"sort":{"compute":{"aggregation":"sum","metric":"system.cpu.user"},"order":"desc"},"split_dimensions":[{"one_graph_per":"service"}],"static_splits":[[{"tag_key":"service","tag_values":["cassandra"]},{"tag_key":"datacenter","tag_values":[]}],[{"tag_key":"demo","tag_values":["env"]}]]},"title":"","type":"split_group"},"layout":{"height":8,"width":12,"x":0,"y":0},"id":1001674649498969}],"notify_list":[],"created_at":"2023-12-20T16:36:07.715489+00:00","modified_at":"2023-12-20T16:36:07.715489+00:00","restricted_roles":[]}
 
         '
     headers:
@@ -25,10 +26,10 @@ interactions:
       accept:
       - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/dashboard/cjw-gqa-mgu
+    uri: https://api.datadoghq.com/api/v1/dashboard/vxu-qte-rxf
   response:
     body:
-      string: '{"deleted_dashboard_id":"cjw-gqa-mgu"}
+      string: '{"deleted_dashboard_id":"vxu-qte-rxf"}
 
         '
     headers:

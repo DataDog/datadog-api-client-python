@@ -20,6 +20,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.widget_time import WidgetTime
     from datadog_api_client.v1.model.split_graph_widget_definition_type import SplitGraphWidgetDefinitionType
     from datadog_api_client.v1.model.change_widget_definition import ChangeWidgetDefinition
+    from datadog_api_client.v1.model.distribution_widget_definition import DistributionWidgetDefinition
     from datadog_api_client.v1.model.geomap_widget_definition import GeomapWidgetDefinition
     from datadog_api_client.v1.model.query_value_widget_definition import QueryValueWidgetDefinition
     from datadog_api_client.v1.model.scatter_plot_widget_definition import ScatterPlotWidgetDefinition
@@ -65,6 +66,7 @@ class SplitGraphWidgetDefinition(ModelNormal):
         source_widget_definition: Union[
             SplitGraphSourceWidgetDefinition,
             ChangeWidgetDefinition,
+            DistributionWidgetDefinition,
             GeomapWidgetDefinition,
             QueryValueWidgetDefinition,
             ScatterPlotWidgetDefinition,
