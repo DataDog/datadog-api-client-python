@@ -523,7 +523,13 @@
     "tag": "GCP Integration",
     "undo": {
       "operationId": "DeleteGCPIntegration",
-      "parameters": [],
+      "parameters": [
+        {
+          "name": "body",
+          "origin": "request",
+          "template": "{\"client_email\": \"{{ client_email }}\", \"client_id\": \"{{ client_id }}\", \"project_id\": \"{{ project_id }}\"}"
+        }
+      ],
       "type": "unsafe"
     }
   },
