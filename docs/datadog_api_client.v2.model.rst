@@ -5727,6 +5727,20 @@ relationship\_to\_user\_team\_permission\_data
    :members:
    :show-inheritance:
 
+relationship\_to\_user\_team\_team
+----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.relationship_to_user_team_team
+   :members:
+   :show-inheritance:
+
+relationship\_to\_user\_team\_team\_data
+----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.relationship_to_user_team_team_data
+   :members:
+   :show-inheritance:
+
 relationship\_to\_user\_team\_user
 ----------------------------------
 
@@ -8916,6 +8930,13 @@ user\_team\_role
 ----------------
 
 .. automodule:: datadog_api_client.v2.model.user_team_role
+   :members:
+   :show-inheritance:
+
+user\_team\_team\_type
+----------------------
+
+.. automodule:: datadog_api_client.v2.model.user_team_team_type
    :members:
    :show-inheritance:
 

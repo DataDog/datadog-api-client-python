@@ -11,7 +11,7 @@ Feature: Teams
   Scenario: Add a user to a team returns "API error response." response
     Given new "CreateTeamMembership" request
     And request contains "team_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"role": "admin"}, "relationships": {"user": {"data": {"id": "b8626d7e-cedd-11eb-abf5-da7ad0900001", "type": "users"}}}, "type": "team_memberships"}}
+    And body with value {"data": {"attributes": {"role": "admin"}, "relationships": {"team": {"data": {"id": "d7e15d9d-d346-43da-81d8-3d9e71d9a5e9", "type": "team"}}, "user": {"data": {"id": "b8626d7e-cedd-11eb-abf5-da7ad0900001", "type": "users"}}}, "type": "team_memberships"}}
     When the request is sent
     Then the response status is 409 API error response.
 
@@ -19,7 +19,7 @@ Feature: Teams
   Scenario: Add a user to a team returns "Represents a user's association to a team" response
     Given new "CreateTeamMembership" request
     And request contains "team_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"role": "admin"}, "relationships": {"user": {"data": {"id": "b8626d7e-cedd-11eb-abf5-da7ad0900001", "type": "users"}}}, "type": "team_memberships"}}
+    And body with value {"data": {"attributes": {"role": "admin"}, "relationships": {"team": {"data": {"id": "d7e15d9d-d346-43da-81d8-3d9e71d9a5e9", "type": "team"}}, "user": {"data": {"id": "b8626d7e-cedd-11eb-abf5-da7ad0900001", "type": "users"}}}, "type": "team_memberships"}}
     When the request is sent
     Then the response status is 200 Represents a user's association to a team
 

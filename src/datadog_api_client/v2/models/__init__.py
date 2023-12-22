@@ -989,6 +989,8 @@ from datadog_api_client.v2.model.relationship_to_user import RelationshipToUser
 from datadog_api_client.v2.model.relationship_to_user_data import RelationshipToUserData
 from datadog_api_client.v2.model.relationship_to_user_team_permission import RelationshipToUserTeamPermission
 from datadog_api_client.v2.model.relationship_to_user_team_permission_data import RelationshipToUserTeamPermissionData
+from datadog_api_client.v2.model.relationship_to_user_team_team import RelationshipToUserTeamTeam
+from datadog_api_client.v2.model.relationship_to_user_team_team_data import RelationshipToUserTeamTeamData
 from datadog_api_client.v2.model.relationship_to_user_team_user import RelationshipToUserTeamUser
 from datadog_api_client.v2.model.relationship_to_user_team_user_data import RelationshipToUserTeamUserData
 from datadog_api_client.v2.model.relationship_to_users import RelationshipToUsers
@@ -1510,6 +1512,7 @@ from datadog_api_client.v2.model.user_team_relationships import UserTeamRelation
 from datadog_api_client.v2.model.user_team_request import UserTeamRequest
 from datadog_api_client.v2.model.user_team_response import UserTeamResponse
 from datadog_api_client.v2.model.user_team_role import UserTeamRole
+from datadog_api_client.v2.model.user_team_team_type import UserTeamTeamType
 from datadog_api_client.v2.model.user_team_type import UserTeamType
 from datadog_api_client.v2.model.user_team_update import UserTeamUpdate
 from datadog_api_client.v2.model.user_team_update_request import UserTeamUpdateRequest
@@ -2388,6 +2391,8 @@ __all__ = [
     "RelationshipToUserData",
     "RelationshipToUserTeamPermission",
     "RelationshipToUserTeamPermissionData",
+    "RelationshipToUserTeamTeam",
+    "RelationshipToUserTeamTeamData",
     "RelationshipToUserTeamUser",
     "RelationshipToUserTeamUserData",
     "RelationshipToUsers",
@@ -2801,6 +2806,7 @@ __all__ = [
     "UserTeamRequest",
     "UserTeamResponse",
     "UserTeamRole",
+    "UserTeamTeamType",
     "UserTeamType",
     "UserTeamUpdate",
     "UserTeamUpdateRequest",
