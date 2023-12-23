@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class LogsArchiveDestinationGCSType(ModelSimple):
+class LogsArchiveDestinationGCSType(StringEnum):
     """
     Type of the GCS archive destination.
 
@@ -24,12 +23,6 @@ class LogsArchiveDestinationGCSType(ModelSimple):
         "gcs",
     }
     GCS: ClassVar["LogsArchiveDestinationGCSType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 LogsArchiveDestinationGCSType.GCS = LogsArchiveDestinationGCSType("gcs")

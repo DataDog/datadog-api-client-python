@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class ScatterPlotWidgetDefinitionType(ModelSimple):
+class ScatterPlotWidgetDefinitionType(StringEnum):
     """
     Type of the scatter plot widget.
 
@@ -24,12 +23,6 @@ class ScatterPlotWidgetDefinitionType(ModelSimple):
         "scatterplot",
     }
     SCATTERPLOT: ClassVar["ScatterPlotWidgetDefinitionType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 ScatterPlotWidgetDefinitionType.SCATTERPLOT = ScatterPlotWidgetDefinitionType("scatterplot")

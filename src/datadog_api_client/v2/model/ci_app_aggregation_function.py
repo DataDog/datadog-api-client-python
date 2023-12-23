@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class CIAppAggregationFunction(ModelSimple):
+class CIAppAggregationFunction(StringEnum):
     """
     An aggregation function.
 
@@ -54,12 +53,6 @@ class CIAppAggregationFunction(ModelSimple):
     EARLIEST: ClassVar["CIAppAggregationFunction"]
     MOST_FREQUENT: ClassVar["CIAppAggregationFunction"]
     DELTA: ClassVar["CIAppAggregationFunction"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 CIAppAggregationFunction.COUNT = CIAppAggregationFunction("count")

@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class FormulaAndFunctionMetricDataSource(ModelSimple):
+class FormulaAndFunctionMetricDataSource(StringEnum):
     """
     Data source for metrics queries.
 
@@ -24,12 +23,6 @@ class FormulaAndFunctionMetricDataSource(ModelSimple):
         "metrics",
     }
     METRICS: ClassVar["FormulaAndFunctionMetricDataSource"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 FormulaAndFunctionMetricDataSource.METRICS = FormulaAndFunctionMetricDataSource("metrics")

@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class NotifyEndType(ModelSimple):
+class NotifyEndType(StringEnum):
     """
     A notification end type.
 
@@ -26,12 +25,6 @@ class NotifyEndType(ModelSimple):
     }
     CANCELED: ClassVar["NotifyEndType"]
     EXPIRED: ClassVar["NotifyEndType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 NotifyEndType.CANCELED = NotifyEndType("canceled")

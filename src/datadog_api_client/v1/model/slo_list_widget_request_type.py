@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class SLOListWidgetRequestType(ModelSimple):
+class SLOListWidgetRequestType(StringEnum):
     """
     Widget request type.
 
@@ -24,12 +23,6 @@ class SLOListWidgetRequestType(ModelSimple):
         "slo_list",
     }
     SLO_LIST: ClassVar["SLOListWidgetRequestType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 SLOListWidgetRequestType.SLO_LIST = SLOListWidgetRequestType("slo_list")

@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class MonitorType(ModelSimple):
+class MonitorType(StringEnum):
     """
     The type of the monitor. For more information about `type`, see the [monitor options](https://docs.datadoghq.com/monitors/guide/monitor_api_options/) docs.
 
@@ -56,12 +55,6 @@ class MonitorType(ModelSimple):
     CI_TESTS_ALERT: ClassVar["MonitorType"]
     ERROR_TRACKING_ALERT: ClassVar["MonitorType"]
     DATABASE_MONITORING_ALERT: ClassVar["MonitorType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 MonitorType.COMPOSITE = MonitorType("composite")

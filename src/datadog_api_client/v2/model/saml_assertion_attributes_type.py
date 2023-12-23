@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class SAMLAssertionAttributesType(ModelSimple):
+class SAMLAssertionAttributesType(StringEnum):
     """
     SAML assertion attributes resource type.
 
@@ -24,12 +23,6 @@ class SAMLAssertionAttributesType(ModelSimple):
         "saml_assertion_attributes",
     }
     SAML_ASSERTION_ATTRIBUTES: ClassVar["SAMLAssertionAttributesType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 SAMLAssertionAttributesType.SAML_ASSERTION_ATTRIBUTES = SAMLAssertionAttributesType("saml_assertion_attributes")

@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class UsageTimeSeriesType(ModelSimple):
+class UsageTimeSeriesType(StringEnum):
     """
     Type of usage data.
 
@@ -24,12 +23,6 @@ class UsageTimeSeriesType(ModelSimple):
         "usage_timeseries",
     }
     USAGE_TIMESERIES: ClassVar["UsageTimeSeriesType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 UsageTimeSeriesType.USAGE_TIMESERIES = UsageTimeSeriesType("usage_timeseries")

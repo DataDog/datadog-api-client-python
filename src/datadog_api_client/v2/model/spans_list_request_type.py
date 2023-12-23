@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class SpansListRequestType(ModelSimple):
+class SpansListRequestType(StringEnum):
     """
     The type of resource. The value should always be search_request.
 
@@ -24,12 +23,6 @@ class SpansListRequestType(ModelSimple):
         "search_request",
     }
     SEARCH_REQUEST: ClassVar["SpansListRequestType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 SpansListRequestType.SEARCH_REQUEST = SpansListRequestType("search_request")

@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class SLOWidgetDefinitionType(ModelSimple):
+class SLOWidgetDefinitionType(StringEnum):
     """
     Type of the SLO widget.
 
@@ -24,12 +23,6 @@ class SLOWidgetDefinitionType(ModelSimple):
         "slo",
     }
     SLO: ClassVar["SLOWidgetDefinitionType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 SLOWidgetDefinitionType.SLO = SLOWidgetDefinitionType("slo")

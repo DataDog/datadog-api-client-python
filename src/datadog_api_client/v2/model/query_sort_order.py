@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class QuerySortOrder(ModelSimple):
+class QuerySortOrder(StringEnum):
     """
     Direction of sort.
 
@@ -26,12 +25,6 @@ class QuerySortOrder(ModelSimple):
     }
     ASC: ClassVar["QuerySortOrder"]
     DESC: ClassVar["QuerySortOrder"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 QuerySortOrder.ASC = QuerySortOrder("asc")

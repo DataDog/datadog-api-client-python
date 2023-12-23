@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class DistributionPointsType(ModelSimple):
+class DistributionPointsType(StringEnum):
     """
     The type of the distribution point.
 
@@ -24,12 +23,6 @@ class DistributionPointsType(ModelSimple):
         "distribution",
     }
     DISTRIBUTION: ClassVar["DistributionPointsType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 DistributionPointsType.DISTRIBUTION = DistributionPointsType("distribution")

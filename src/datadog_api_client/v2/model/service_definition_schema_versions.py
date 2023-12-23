@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class ServiceDefinitionSchemaVersions(ModelSimple):
+class ServiceDefinitionSchemaVersions(StringEnum):
     """
     Schema versions
 
@@ -30,12 +29,6 @@ class ServiceDefinitionSchemaVersions(ModelSimple):
     V2: ClassVar["ServiceDefinitionSchemaVersions"]
     V2_1: ClassVar["ServiceDefinitionSchemaVersions"]
     V2_2: ClassVar["ServiceDefinitionSchemaVersions"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 ServiceDefinitionSchemaVersions.V1 = ServiceDefinitionSchemaVersions("v1")

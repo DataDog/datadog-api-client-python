@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class SecurityMonitoringRuleHardcodedEvaluatorType(ModelSimple):
+class SecurityMonitoringRuleHardcodedEvaluatorType(StringEnum):
     """
     Hardcoded evaluator type.
 
@@ -24,12 +23,6 @@ class SecurityMonitoringRuleHardcodedEvaluatorType(ModelSimple):
         "log4shell",
     }
     LOG4SHELL: ClassVar["SecurityMonitoringRuleHardcodedEvaluatorType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 SecurityMonitoringRuleHardcodedEvaluatorType.LOG4SHELL = SecurityMonitoringRuleHardcodedEvaluatorType("log4shell")

@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class WidgetTextAlign(ModelSimple):
+class WidgetTextAlign(StringEnum):
     """
     How to align the text on the widget.
 
@@ -28,12 +27,6 @@ class WidgetTextAlign(ModelSimple):
     CENTER: ClassVar["WidgetTextAlign"]
     LEFT: ClassVar["WidgetTextAlign"]
     RIGHT: ClassVar["WidgetTextAlign"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 WidgetTextAlign.CENTER = WidgetTextAlign("center")

@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class WidgetMargin(ModelSimple):
+class WidgetMargin(StringEnum):
     """
     Size of the margins around the image.
         **Note**: `small` and `large` values are deprecated.
@@ -33,12 +32,6 @@ class WidgetMargin(ModelSimple):
     LG: ClassVar["WidgetMargin"]
     SMALL: ClassVar["WidgetMargin"]
     LARGE: ClassVar["WidgetMargin"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 WidgetMargin.SM = WidgetMargin("sm")

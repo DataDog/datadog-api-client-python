@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class ServiceDefinitionV2Dot1LinkType(ModelSimple):
+class ServiceDefinitionV2Dot1LinkType(StringEnum):
     """
     Link type.
 
@@ -32,12 +31,6 @@ class ServiceDefinitionV2Dot1LinkType(ModelSimple):
     RUNBOOK: ClassVar["ServiceDefinitionV2Dot1LinkType"]
     DASHBOARD: ClassVar["ServiceDefinitionV2Dot1LinkType"]
     OTHER: ClassVar["ServiceDefinitionV2Dot1LinkType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 ServiceDefinitionV2Dot1LinkType.DOC = ServiceDefinitionV2Dot1LinkType("doc")

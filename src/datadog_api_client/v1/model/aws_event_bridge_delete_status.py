@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class AWSEventBridgeDeleteStatus(ModelSimple):
+class AWSEventBridgeDeleteStatus(StringEnum):
     """
     The event source status "empty".
 
@@ -24,12 +23,6 @@ class AWSEventBridgeDeleteStatus(ModelSimple):
         "empty",
     }
     EMPTY: ClassVar["AWSEventBridgeDeleteStatus"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 AWSEventBridgeDeleteStatus.EMPTY = AWSEventBridgeDeleteStatus("empty")

@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class SyntheticsGlobalVariableParseTestOptionsType(ModelSimple):
+class SyntheticsGlobalVariableParseTestOptionsType(StringEnum):
     """
     Property of the Synthetic Test Response to use for a Synthetic global variable.
 
@@ -28,12 +27,6 @@ class SyntheticsGlobalVariableParseTestOptionsType(ModelSimple):
     HTTP_BODY: ClassVar["SyntheticsGlobalVariableParseTestOptionsType"]
     HTTP_HEADER: ClassVar["SyntheticsGlobalVariableParseTestOptionsType"]
     LOCAL_VARIABLE: ClassVar["SyntheticsGlobalVariableParseTestOptionsType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 SyntheticsGlobalVariableParseTestOptionsType.HTTP_BODY = SyntheticsGlobalVariableParseTestOptionsType("http_body")

@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class RestrictionPolicyType(ModelSimple):
+class RestrictionPolicyType(StringEnum):
     """
     Restriction policy type.
 
@@ -24,12 +23,6 @@ class RestrictionPolicyType(ModelSimple):
         "restriction_policy",
     }
     RESTRICTION_POLICY: ClassVar["RestrictionPolicyType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 RestrictionPolicyType.RESTRICTION_POLICY = RestrictionPolicyType("restriction_policy")

@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class LogsArchiveDestinationAzureType(ModelSimple):
+class LogsArchiveDestinationAzureType(StringEnum):
     """
     Type of the Azure archive destination.
 
@@ -24,12 +23,6 @@ class LogsArchiveDestinationAzureType(ModelSimple):
         "azure",
     }
     AZURE: ClassVar["LogsArchiveDestinationAzureType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 LogsArchiveDestinationAzureType.AZURE = LogsArchiveDestinationAzureType("azure")

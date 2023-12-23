@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class RUMEventType(ModelSimple):
+class RUMEventType(StringEnum):
     """
     Type of the event.
 
@@ -24,12 +23,6 @@ class RUMEventType(ModelSimple):
         "rum",
     }
     RUM: ClassVar["RUMEventType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 RUMEventType.RUM = RUMEventType("rum")

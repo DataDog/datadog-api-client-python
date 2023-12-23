@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class LogsServiceRemapperType(ModelSimple):
+class LogsServiceRemapperType(StringEnum):
     """
     Type of logs service remapper.
 
@@ -24,12 +23,6 @@ class LogsServiceRemapperType(ModelSimple):
         "service-remapper",
     }
     SERVICE_REMAPPER: ClassVar["LogsServiceRemapperType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 LogsServiceRemapperType.SERVICE_REMAPPER = LogsServiceRemapperType("service-remapper")

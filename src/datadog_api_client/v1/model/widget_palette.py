@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class WidgetPalette(ModelSimple):
+class WidgetPalette(StringEnum):
     """
     Color palette to apply.
 
@@ -60,12 +59,6 @@ class WidgetPalette(ModelSimple):
     BLACK_ON_LIGHT_YELLOW: ClassVar["WidgetPalette"]
     BLACK_ON_LIGHT_GREEN: ClassVar["WidgetPalette"]
     BLACK_ON_LIGHT_RED: ClassVar["WidgetPalette"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 WidgetPalette.BLUE = WidgetPalette("blue")

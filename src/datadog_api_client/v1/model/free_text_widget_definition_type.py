@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class FreeTextWidgetDefinitionType(ModelSimple):
+class FreeTextWidgetDefinitionType(StringEnum):
     """
     Type of the free text widget.
 
@@ -24,12 +23,6 @@ class FreeTextWidgetDefinitionType(ModelSimple):
         "free_text",
     }
     FREE_TEXT: ClassVar["FreeTextWidgetDefinitionType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 FreeTextWidgetDefinitionType.FREE_TEXT = FreeTextWidgetDefinitionType("free_text")

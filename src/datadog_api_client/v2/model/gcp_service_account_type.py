@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class GCPServiceAccountType(ModelSimple):
+class GCPServiceAccountType(StringEnum):
     """
     The type of account.
 
@@ -24,12 +23,6 @@ class GCPServiceAccountType(ModelSimple):
         "gcp_service_account",
     }
     GCP_SERVICE_ACCOUNT: ClassVar["GCPServiceAccountType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 GCPServiceAccountType.GCP_SERVICE_ACCOUNT = GCPServiceAccountType("gcp_service_account")

@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class SyntheticsAssertionType(ModelSimple):
+class SyntheticsAssertionType(StringEnum):
     """
     Type of the assertion.
 
@@ -60,12 +59,6 @@ class SyntheticsAssertionType(ModelSimple):
     GRPC_METADATA: ClassVar["SyntheticsAssertionType"]
     GRPC_PROTO: ClassVar["SyntheticsAssertionType"]
     CONNECTION: ClassVar["SyntheticsAssertionType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 SyntheticsAssertionType.BODY = SyntheticsAssertionType("body")

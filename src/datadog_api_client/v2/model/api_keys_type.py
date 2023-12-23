@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class APIKeysType(ModelSimple):
+class APIKeysType(StringEnum):
     """
     API Keys resource type.
 
@@ -24,12 +23,6 @@ class APIKeysType(ModelSimple):
         "api_keys",
     }
     API_KEYS: ClassVar["APIKeysType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 APIKeysType.API_KEYS = APIKeysType("api_keys")

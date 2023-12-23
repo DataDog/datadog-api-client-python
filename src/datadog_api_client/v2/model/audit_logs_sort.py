@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class AuditLogsSort(ModelSimple):
+class AuditLogsSort(StringEnum):
     """
     Sort parameters when querying events.
 
@@ -26,12 +25,6 @@ class AuditLogsSort(ModelSimple):
     }
     TIMESTAMP_ASCENDING: ClassVar["AuditLogsSort"]
     TIMESTAMP_DESCENDING: ClassVar["AuditLogsSort"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 AuditLogsSort.TIMESTAMP_ASCENDING = AuditLogsSort("timestamp")

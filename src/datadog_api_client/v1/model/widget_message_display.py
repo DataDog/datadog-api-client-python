@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class WidgetMessageDisplay(ModelSimple):
+class WidgetMessageDisplay(StringEnum):
     """
     Amount of log lines to display
 
@@ -28,12 +27,6 @@ class WidgetMessageDisplay(ModelSimple):
     INLINE: ClassVar["WidgetMessageDisplay"]
     EXPANDED_MEDIUM: ClassVar["WidgetMessageDisplay"]
     EXPANDED_LARGE: ClassVar["WidgetMessageDisplay"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 WidgetMessageDisplay.INLINE = WidgetMessageDisplay("inline")

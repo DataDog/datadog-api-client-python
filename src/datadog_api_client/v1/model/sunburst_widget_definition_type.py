@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class SunburstWidgetDefinitionType(ModelSimple):
+class SunburstWidgetDefinitionType(StringEnum):
     """
     Type of the Sunburst widget.
 
@@ -24,12 +23,6 @@ class SunburstWidgetDefinitionType(ModelSimple):
         "sunburst",
     }
     SUNBURST: ClassVar["SunburstWidgetDefinitionType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 SunburstWidgetDefinitionType.SUNBURST = SunburstWidgetDefinitionType("sunburst")

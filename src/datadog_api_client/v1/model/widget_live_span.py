@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class WidgetLiveSpan(ModelSimple):
+class WidgetLiveSpan(StringEnum):
     """
     The available timeframes depend on the widget you are using.
 
@@ -56,12 +55,6 @@ class WidgetLiveSpan(ModelSimple):
     MONTH_TO_DATE: ClassVar["WidgetLiveSpan"]
     PAST_ONE_YEAR: ClassVar["WidgetLiveSpan"]
     ALERT: ClassVar["WidgetLiveSpan"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 WidgetLiveSpan.PAST_ONE_MINUTE = WidgetLiveSpan("1m")

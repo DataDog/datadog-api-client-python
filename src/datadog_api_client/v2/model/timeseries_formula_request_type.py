@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class TimeseriesFormulaRequestType(ModelSimple):
+class TimeseriesFormulaRequestType(StringEnum):
     """
     The type of the resource. The value should always be timeseries_request.
 
@@ -24,12 +23,6 @@ class TimeseriesFormulaRequestType(ModelSimple):
         "timeseries_request",
     }
     TIMESERIES_REQUEST: ClassVar["TimeseriesFormulaRequestType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 TimeseriesFormulaRequestType.TIMESERIES_REQUEST = TimeseriesFormulaRequestType("timeseries_request")

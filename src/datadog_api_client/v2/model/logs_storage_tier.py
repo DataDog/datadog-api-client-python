@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class LogsStorageTier(ModelSimple):
+class LogsStorageTier(StringEnum):
     """
     Specifies storage type as indexes or online-archives
 
@@ -26,12 +25,6 @@ class LogsStorageTier(ModelSimple):
     }
     INDEXES: ClassVar["LogsStorageTier"]
     ONLINE_ARCHIVES: ClassVar["LogsStorageTier"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 LogsStorageTier.INDEXES = LogsStorageTier("indexes")

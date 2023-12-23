@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class CIAppPipelineEventPipelineLevel(ModelSimple):
+class CIAppPipelineEventPipelineLevel(StringEnum):
     """
     Used to distinguish between pipelines, stages, jobs, and steps.
 
@@ -24,12 +23,6 @@ class CIAppPipelineEventPipelineLevel(ModelSimple):
         "pipeline",
     }
     PIPELINE: ClassVar["CIAppPipelineEventPipelineLevel"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 CIAppPipelineEventPipelineLevel.PIPELINE = CIAppPipelineEventPipelineLevel("pipeline")

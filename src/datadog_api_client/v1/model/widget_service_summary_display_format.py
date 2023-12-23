@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class WidgetServiceSummaryDisplayFormat(ModelSimple):
+class WidgetServiceSummaryDisplayFormat(StringEnum):
     """
     Number of columns to display.
 
@@ -28,12 +27,6 @@ class WidgetServiceSummaryDisplayFormat(ModelSimple):
     ONE_COLUMN: ClassVar["WidgetServiceSummaryDisplayFormat"]
     TWO_COLUMN: ClassVar["WidgetServiceSummaryDisplayFormat"]
     THREE_COLUMN: ClassVar["WidgetServiceSummaryDisplayFormat"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 WidgetServiceSummaryDisplayFormat.ONE_COLUMN = WidgetServiceSummaryDisplayFormat("one_column")

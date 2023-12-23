@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class SyntheticsTestProcessStatus(ModelSimple):
+class SyntheticsTestProcessStatus(StringEnum):
     """
     Status of a Synthetic test.
 
@@ -30,12 +29,6 @@ class SyntheticsTestProcessStatus(ModelSimple):
     SCHEDULED: ClassVar["SyntheticsTestProcessStatus"]
     FINISHED: ClassVar["SyntheticsTestProcessStatus"]
     FINISHED_WITH_ERROR: ClassVar["SyntheticsTestProcessStatus"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 SyntheticsTestProcessStatus.NOT_SCHEDULED = SyntheticsTestProcessStatus("not_scheduled")

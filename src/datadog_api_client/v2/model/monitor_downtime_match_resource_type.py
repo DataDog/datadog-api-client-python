@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class MonitorDowntimeMatchResourceType(ModelSimple):
+class MonitorDowntimeMatchResourceType(StringEnum):
     """
     Monitor Downtime Match resource type.
 
@@ -24,12 +23,6 @@ class MonitorDowntimeMatchResourceType(ModelSimple):
         "downtime_match",
     }
     DOWNTIME_MATCH: ClassVar["MonitorDowntimeMatchResourceType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 MonitorDowntimeMatchResourceType.DOWNTIME_MATCH = MonitorDowntimeMatchResourceType("downtime_match")

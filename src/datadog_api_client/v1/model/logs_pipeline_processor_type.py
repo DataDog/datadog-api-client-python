@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class LogsPipelineProcessorType(ModelSimple):
+class LogsPipelineProcessorType(StringEnum):
     """
     Type of logs pipeline processor.
 
@@ -24,12 +23,6 @@ class LogsPipelineProcessorType(ModelSimple):
         "pipeline",
     }
     PIPELINE: ClassVar["LogsPipelineProcessorType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 LogsPipelineProcessorType.PIPELINE = LogsPipelineProcessorType("pipeline")

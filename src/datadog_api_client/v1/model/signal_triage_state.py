@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class SignalTriageState(ModelSimple):
+class SignalTriageState(StringEnum):
     """
     The new triage state of the signal.
 
@@ -28,12 +27,6 @@ class SignalTriageState(ModelSimple):
     OPEN: ClassVar["SignalTriageState"]
     ARCHIVED: ClassVar["SignalTriageState"]
     UNDER_REVIEW: ClassVar["SignalTriageState"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 SignalTriageState.OPEN = SignalTriageState("open")

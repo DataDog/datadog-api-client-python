@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class DistributionWidgetDefinitionType(ModelSimple):
+class DistributionWidgetDefinitionType(StringEnum):
     """
     Type of the distribution widget.
 
@@ -24,12 +23,6 @@ class DistributionWidgetDefinitionType(ModelSimple):
         "distribution",
     }
     DISTRIBUTION: ClassVar["DistributionWidgetDefinitionType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 DistributionWidgetDefinitionType.DISTRIBUTION = DistributionWidgetDefinitionType("distribution")

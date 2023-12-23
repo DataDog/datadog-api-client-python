@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class CloudWorkloadSecurityAgentRuleType(ModelSimple):
+class CloudWorkloadSecurityAgentRuleType(StringEnum):
     """
     The type of the resource. The value should always be `agent_rule`.
 
@@ -24,12 +23,6 @@ class CloudWorkloadSecurityAgentRuleType(ModelSimple):
         "agent_rule",
     }
     AGENT_RULE: ClassVar["CloudWorkloadSecurityAgentRuleType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 CloudWorkloadSecurityAgentRuleType.AGENT_RULE = CloudWorkloadSecurityAgentRuleType("agent_rule")

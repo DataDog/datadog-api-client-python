@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class CIAppPipelineLevel(ModelSimple):
+class CIAppPipelineLevel(StringEnum):
     """
     Pipeline execution level.
 
@@ -32,12 +31,6 @@ class CIAppPipelineLevel(ModelSimple):
     JOB: ClassVar["CIAppPipelineLevel"]
     STEP: ClassVar["CIAppPipelineLevel"]
     CUSTOM: ClassVar["CIAppPipelineLevel"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 CIAppPipelineLevel.PIPELINE = CIAppPipelineLevel("pipeline")

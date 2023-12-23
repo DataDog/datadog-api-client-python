@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class SpansAggregateBucketType(ModelSimple):
+class SpansAggregateBucketType(StringEnum):
     """
     The spans aggregate bucket type.
 
@@ -24,12 +23,6 @@ class SpansAggregateBucketType(ModelSimple):
         "bucket",
     }
     BUCKET: ClassVar["SpansAggregateBucketType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 SpansAggregateBucketType.BUCKET = SpansAggregateBucketType("bucket")

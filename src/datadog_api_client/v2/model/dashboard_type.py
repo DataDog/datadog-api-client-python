@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class DashboardType(ModelSimple):
+class DashboardType(StringEnum):
     """
     The type of the dashboard.
 
@@ -32,12 +31,6 @@ class DashboardType(ModelSimple):
     INTEGRATION_SCREENBOARD: ClassVar["DashboardType"]
     INTEGRATION_TIMEBOARD: ClassVar["DashboardType"]
     HOST_TIMEBOARD: ClassVar["DashboardType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 DashboardType.CUSTOM_TIMEBOARD = DashboardType("custom_timeboard")

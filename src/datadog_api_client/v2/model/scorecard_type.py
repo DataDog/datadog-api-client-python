@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class ScorecardType(ModelSimple):
+class ScorecardType(StringEnum):
     """
     The JSON:API type for scorecard.
 
@@ -24,12 +23,6 @@ class ScorecardType(ModelSimple):
         "scorecard",
     }
     SCORECARD: ClassVar["ScorecardType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 ScorecardType.SCORECARD = ScorecardType("scorecard")

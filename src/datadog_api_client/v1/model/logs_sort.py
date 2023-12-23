@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class LogsSort(ModelSimple):
+class LogsSort(StringEnum):
     """
     Time-ascending `asc` or time-descending `desc` results.
 
@@ -26,12 +25,6 @@ class LogsSort(ModelSimple):
     }
     TIME_ASCENDING: ClassVar["LogsSort"]
     TIME_DESCENDING: ClassVar["LogsSort"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 LogsSort.TIME_ASCENDING = LogsSort("asc")

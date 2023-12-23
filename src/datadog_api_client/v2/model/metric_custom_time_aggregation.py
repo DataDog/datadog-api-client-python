@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class MetricCustomTimeAggregation(ModelSimple):
+class MetricCustomTimeAggregation(StringEnum):
     """
     A time aggregation for use in query.
 
@@ -32,12 +31,6 @@ class MetricCustomTimeAggregation(ModelSimple):
     MAX: ClassVar["MetricCustomTimeAggregation"]
     MIN: ClassVar["MetricCustomTimeAggregation"]
     SUM: ClassVar["MetricCustomTimeAggregation"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 MetricCustomTimeAggregation.AVG = MetricCustomTimeAggregation("avg")

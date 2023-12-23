@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class WidgetTimeWindows(ModelSimple):
+class WidgetTimeWindows(StringEnum):
     """
     Define a time window.
 
@@ -38,12 +37,6 @@ class WidgetTimeWindows(ModelSimple):
     MONTH_TO_DATE: ClassVar["WidgetTimeWindows"]
     PREVIOUS_MONTH: ClassVar["WidgetTimeWindows"]
     GLOBAL_TIME: ClassVar["WidgetTimeWindows"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 WidgetTimeWindows.SEVEN_DAYS = WidgetTimeWindows("7d")

@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class SyntheticsBasicAuthDigestType(ModelSimple):
+class SyntheticsBasicAuthDigestType(StringEnum):
     """
     The type of basic authentication to use when performing the test.
 
@@ -24,12 +23,6 @@ class SyntheticsBasicAuthDigestType(ModelSimple):
         "digest",
     }
     DIGEST: ClassVar["SyntheticsBasicAuthDigestType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 SyntheticsBasicAuthDigestType.DIGEST = SyntheticsBasicAuthDigestType("digest")

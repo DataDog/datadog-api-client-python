@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class DowntimeStatus(ModelSimple):
+class DowntimeStatus(StringEnum):
     """
     The current status of the downtime.
 
@@ -30,12 +29,6 @@ class DowntimeStatus(ModelSimple):
     CANCELED: ClassVar["DowntimeStatus"]
     ENDED: ClassVar["DowntimeStatus"]
     SCHEDULED: ClassVar["DowntimeStatus"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 DowntimeStatus.ACTIVE = DowntimeStatus("active")

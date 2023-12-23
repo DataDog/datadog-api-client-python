@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class EventTimelineWidgetDefinitionType(ModelSimple):
+class EventTimelineWidgetDefinitionType(StringEnum):
     """
     Type of the event timeline widget.
 
@@ -24,12 +23,6 @@ class EventTimelineWidgetDefinitionType(ModelSimple):
         "event_timeline",
     }
     EVENT_TIMELINE: ClassVar["EventTimelineWidgetDefinitionType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 EventTimelineWidgetDefinitionType.EVENT_TIMELINE = EventTimelineWidgetDefinitionType("event_timeline")

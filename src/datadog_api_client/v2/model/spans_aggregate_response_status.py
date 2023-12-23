@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class SpansAggregateResponseStatus(ModelSimple):
+class SpansAggregateResponseStatus(StringEnum):
     """
     The status of the response.
 
@@ -26,12 +25,6 @@ class SpansAggregateResponseStatus(ModelSimple):
     }
     DONE: ClassVar["SpansAggregateResponseStatus"]
     TIMEOUT: ClassVar["SpansAggregateResponseStatus"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 SpansAggregateResponseStatus.DONE = SpansAggregateResponseStatus("done")

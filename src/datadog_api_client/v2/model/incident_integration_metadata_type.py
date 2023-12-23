@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class IncidentIntegrationMetadataType(ModelSimple):
+class IncidentIntegrationMetadataType(StringEnum):
     """
     Integration metadata resource type.
 
@@ -24,12 +23,6 @@ class IncidentIntegrationMetadataType(ModelSimple):
         "incident_integrations",
     }
     INCIDENT_INTEGRATIONS: ClassVar["IncidentIntegrationMetadataType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 IncidentIntegrationMetadataType.INCIDENT_INTEGRATIONS = IncidentIntegrationMetadataType("incident_integrations")

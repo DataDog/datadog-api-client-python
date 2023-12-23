@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class IncidentAttachmentLinkAttachmentType(ModelSimple):
+class IncidentAttachmentLinkAttachmentType(StringEnum):
     """
     The type of link attachment attributes.
 
@@ -24,12 +23,6 @@ class IncidentAttachmentLinkAttachmentType(ModelSimple):
         "link",
     }
     LINK: ClassVar["IncidentAttachmentLinkAttachmentType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 IncidentAttachmentLinkAttachmentType.LINK = IncidentAttachmentLinkAttachmentType("link")

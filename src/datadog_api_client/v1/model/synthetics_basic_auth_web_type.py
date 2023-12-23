@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class SyntheticsBasicAuthWebType(ModelSimple):
+class SyntheticsBasicAuthWebType(StringEnum):
     """
     The type of basic authentication to use when performing the test.
 
@@ -24,12 +23,6 @@ class SyntheticsBasicAuthWebType(ModelSimple):
         "web",
     }
     WEB: ClassVar["SyntheticsBasicAuthWebType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 SyntheticsBasicAuthWebType.WEB = SyntheticsBasicAuthWebType("web")

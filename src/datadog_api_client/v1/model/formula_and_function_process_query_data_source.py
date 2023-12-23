@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class FormulaAndFunctionProcessQueryDataSource(ModelSimple):
+class FormulaAndFunctionProcessQueryDataSource(StringEnum):
     """
     Data sources that rely on the process backend.
 
@@ -26,12 +25,6 @@ class FormulaAndFunctionProcessQueryDataSource(ModelSimple):
     }
     PROCESS: ClassVar["FormulaAndFunctionProcessQueryDataSource"]
     CONTAINER: ClassVar["FormulaAndFunctionProcessQueryDataSource"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 FormulaAndFunctionProcessQueryDataSource.PROCESS = FormulaAndFunctionProcessQueryDataSource("process")

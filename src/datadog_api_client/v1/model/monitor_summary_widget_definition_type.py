@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class MonitorSummaryWidgetDefinitionType(ModelSimple):
+class MonitorSummaryWidgetDefinitionType(StringEnum):
     """
     Type of the monitor summary widget.
 
@@ -24,12 +23,6 @@ class MonitorSummaryWidgetDefinitionType(ModelSimple):
         "manage_status",
     }
     MANAGE_STATUS: ClassVar["MonitorSummaryWidgetDefinitionType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 MonitorSummaryWidgetDefinitionType.MANAGE_STATUS = MonitorSummaryWidgetDefinitionType("manage_status")

@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class SecurityMonitoringFilterAction(ModelSimple):
+class SecurityMonitoringFilterAction(StringEnum):
     """
     The type of filtering action.
 
@@ -26,12 +25,6 @@ class SecurityMonitoringFilterAction(ModelSimple):
     }
     REQUIRE: ClassVar["SecurityMonitoringFilterAction"]
     SUPPRESS: ClassVar["SecurityMonitoringFilterAction"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 SecurityMonitoringFilterAction.REQUIRE = SecurityMonitoringFilterAction("require")

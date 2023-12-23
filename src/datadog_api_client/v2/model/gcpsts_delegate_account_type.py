@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class GCPSTSDelegateAccountType(ModelSimple):
+class GCPSTSDelegateAccountType(StringEnum):
     """
     The type of account.
 
@@ -24,12 +23,6 @@ class GCPSTSDelegateAccountType(ModelSimple):
         "gcp_sts_delegate",
     }
     GCP_STS_DELEGATE: ClassVar["GCPSTSDelegateAccountType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 GCPSTSDelegateAccountType.GCP_STS_DELEGATE = GCPSTSDelegateAccountType("gcp_sts_delegate")

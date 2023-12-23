@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class IncidentSearchResultsType(ModelSimple):
+class IncidentSearchResultsType(StringEnum):
     """
     Incident search result type.
 
@@ -24,12 +23,6 @@ class IncidentSearchResultsType(ModelSimple):
         "incidents_search_results",
     }
     INCIDENTS_SEARCH_RESULTS: ClassVar["IncidentSearchResultsType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 IncidentSearchResultsType.INCIDENTS_SEARCH_RESULTS = IncidentSearchResultsType("incidents_search_results")

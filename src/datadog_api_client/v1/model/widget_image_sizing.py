@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class WidgetImageSizing(ModelSimple):
+class WidgetImageSizing(StringEnum):
     """
     How to size the image on the widget. The values are based on the image `object-fit` CSS properties.
         **Note**: `zoom`, `fit` and `center` values are deprecated.
@@ -39,12 +38,6 @@ class WidgetImageSizing(ModelSimple):
     ZOOM: ClassVar["WidgetImageSizing"]
     FIT: ClassVar["WidgetImageSizing"]
     CENTER: ClassVar["WidgetImageSizing"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 WidgetImageSizing.FILL = WidgetImageSizing("fill")

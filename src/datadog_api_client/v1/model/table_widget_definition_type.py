@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class TableWidgetDefinitionType(ModelSimple):
+class TableWidgetDefinitionType(StringEnum):
     """
     Type of the table widget.
 
@@ -24,12 +23,6 @@ class TableWidgetDefinitionType(ModelSimple):
         "query_table",
     }
     QUERY_TABLE: ClassVar["TableWidgetDefinitionType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 TableWidgetDefinitionType.QUERY_TABLE = TableWidgetDefinitionType("query_table")

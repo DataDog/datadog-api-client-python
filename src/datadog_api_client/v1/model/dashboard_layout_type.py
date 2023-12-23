@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class DashboardLayoutType(ModelSimple):
+class DashboardLayoutType(StringEnum):
     """
     Layout type of the dashboard.
 
@@ -26,12 +25,6 @@ class DashboardLayoutType(ModelSimple):
     }
     ORDERED: ClassVar["DashboardLayoutType"]
     FREE: ClassVar["DashboardLayoutType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 DashboardLayoutType.ORDERED = DashboardLayoutType("ordered")

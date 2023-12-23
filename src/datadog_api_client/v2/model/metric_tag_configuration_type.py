@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class MetricTagConfigurationType(ModelSimple):
+class MetricTagConfigurationType(StringEnum):
     """
     The metric tag configuration resource type.
 
@@ -24,12 +23,6 @@ class MetricTagConfigurationType(ModelSimple):
         "manage_tags",
     }
     MANAGE_TAGS: ClassVar["MetricTagConfigurationType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 MetricTagConfigurationType.MANAGE_TAGS = MetricTagConfigurationType("manage_tags")

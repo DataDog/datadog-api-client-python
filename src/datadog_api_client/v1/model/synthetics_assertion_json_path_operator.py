@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class SyntheticsAssertionJSONPathOperator(ModelSimple):
+class SyntheticsAssertionJSONPathOperator(StringEnum):
     """
     Assertion operator to apply.
 
@@ -24,12 +23,6 @@ class SyntheticsAssertionJSONPathOperator(ModelSimple):
         "validatesJSONPath",
     }
     VALIDATES_JSON_PATH: ClassVar["SyntheticsAssertionJSONPathOperator"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 SyntheticsAssertionJSONPathOperator.VALIDATES_JSON_PATH = SyntheticsAssertionJSONPathOperator("validatesJSONPath")

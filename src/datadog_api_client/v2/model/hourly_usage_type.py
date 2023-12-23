@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class HourlyUsageType(ModelSimple):
+class HourlyUsageType(StringEnum):
     """
     Usage type that is being measured.
 
@@ -28,12 +27,6 @@ class HourlyUsageType(ModelSimple):
     APP_SEC_HOST_COUNT: ClassVar["HourlyUsageType"]
     OBSERVABILITY_PIPELINES_BYTES_PROCESSSED: ClassVar["HourlyUsageType"]
     LAMBDA_TRACED_INVOCATIONS_COUNT: ClassVar["HourlyUsageType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 HourlyUsageType.APP_SEC_HOST_COUNT = HourlyUsageType("app_sec_host_count")

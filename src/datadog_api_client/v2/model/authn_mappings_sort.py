@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class AuthNMappingsSort(ModelSimple):
+class AuthNMappingsSort(StringEnum):
     """
     Sorting options for AuthN Mappings.
 
@@ -46,12 +45,6 @@ class AuthNMappingsSort(ModelSimple):
     SAML_ASSERTION_ATTRIBUTE_KEY_DESCENDING: ClassVar["AuthNMappingsSort"]
     SAML_ASSERTION_ATTRIBUTE_VALUE_ASCENDING: ClassVar["AuthNMappingsSort"]
     SAML_ASSERTION_ATTRIBUTE_VALUE_DESCENDING: ClassVar["AuthNMappingsSort"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 AuthNMappingsSort.CREATED_AT_ASCENDING = AuthNMappingsSort("created_at")

@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class UsageAttributionSupportedMetrics(ModelSimple):
+class UsageAttributionSupportedMetrics(StringEnum):
     """
     Supported fields for usage attribution requests (valid requests contain one or more metrics, or `*` for all).
 
@@ -116,12 +115,6 @@ class UsageAttributionSupportedMetrics(ModelSimple):
     ESTIMATED_RUM_USAGE_ATTRIBUTION_USAGE: ClassVar["UsageAttributionSupportedMetrics"]
     ESTIMATED_RUM_USAGE_ATTRIBUTION_PERCENTAGE: ClassVar["UsageAttributionSupportedMetrics"]
     ALL: ClassVar["UsageAttributionSupportedMetrics"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 UsageAttributionSupportedMetrics.CUSTOM_TIMESERIES_USAGE = UsageAttributionSupportedMetrics("custom_timeseries_usage")

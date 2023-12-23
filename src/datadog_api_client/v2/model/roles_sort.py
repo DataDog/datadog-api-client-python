@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class RolesSort(ModelSimple):
+class RolesSort(StringEnum):
     """
     Sorting options for roles.
 
@@ -34,12 +33,6 @@ class RolesSort(ModelSimple):
     MODIFIED_AT_DESCENDING: ClassVar["RolesSort"]
     USER_COUNT_ASCENDING: ClassVar["RolesSort"]
     USER_COUNT_DESCENDING: ClassVar["RolesSort"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 RolesSort.NAME_ASCENDING = RolesSort("name")

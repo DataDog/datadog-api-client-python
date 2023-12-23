@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class SecurityMonitoringRuleTypeRead(ModelSimple):
+class SecurityMonitoringRuleTypeRead(StringEnum):
     """
     The rule type.
 
@@ -32,12 +31,6 @@ class SecurityMonitoringRuleTypeRead(ModelSimple):
     WORKLOAD_SECURITY: ClassVar["SecurityMonitoringRuleTypeRead"]
     CLOUD_CONFIGURATION: ClassVar["SecurityMonitoringRuleTypeRead"]
     APPLICATION_SECURITY: ClassVar["SecurityMonitoringRuleTypeRead"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 SecurityMonitoringRuleTypeRead.LOG_DETECTION = SecurityMonitoringRuleTypeRead("log_detection")

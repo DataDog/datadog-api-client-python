@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class SecurityMonitoringRuleQueryAggregation(ModelSimple):
+class SecurityMonitoringRuleQueryAggregation(StringEnum):
     """
     The aggregation type.
 
@@ -38,12 +37,6 @@ class SecurityMonitoringRuleQueryAggregation(ModelSimple):
     GEO_DATA: ClassVar["SecurityMonitoringRuleQueryAggregation"]
     EVENT_COUNT: ClassVar["SecurityMonitoringRuleQueryAggregation"]
     NONE: ClassVar["SecurityMonitoringRuleQueryAggregation"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 SecurityMonitoringRuleQueryAggregation.COUNT = SecurityMonitoringRuleQueryAggregation("count")

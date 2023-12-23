@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class RetentionFilterAllType(ModelSimple):
+class RetentionFilterAllType(StringEnum):
     """
     The type of retention filter.
 
@@ -28,12 +27,6 @@ class RetentionFilterAllType(ModelSimple):
     SPANS_SAMPLING_PROCESSOR: ClassVar["RetentionFilterAllType"]
     SPANS_ERRORS_SAMPLING_PROCESSOR: ClassVar["RetentionFilterAllType"]
     SPANS_APPSEC_SAMPLING_PROCESSOR: ClassVar["RetentionFilterAllType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 RetentionFilterAllType.SPANS_SAMPLING_PROCESSOR = RetentionFilterAllType("spans-sampling-processor")

@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class IncidentFieldAttributesValueType(ModelSimple):
+class IncidentFieldAttributesValueType(StringEnum):
     """
     Type of the multiple value field definitions.
 
@@ -30,12 +29,6 @@ class IncidentFieldAttributesValueType(ModelSimple):
     TEXTARRAY: ClassVar["IncidentFieldAttributesValueType"]
     METRICTAG: ClassVar["IncidentFieldAttributesValueType"]
     AUTOCOMPLETE: ClassVar["IncidentFieldAttributesValueType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 IncidentFieldAttributesValueType.MULTISELECT = IncidentFieldAttributesValueType("multiselect")

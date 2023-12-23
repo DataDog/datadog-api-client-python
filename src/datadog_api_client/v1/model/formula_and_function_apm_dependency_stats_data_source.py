@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class FormulaAndFunctionApmDependencyStatsDataSource(ModelSimple):
+class FormulaAndFunctionApmDependencyStatsDataSource(StringEnum):
     """
     Data source for APM dependency stats queries.
 
@@ -24,12 +23,6 @@ class FormulaAndFunctionApmDependencyStatsDataSource(ModelSimple):
         "apm_dependency_stats",
     }
     APM_DEPENDENCY_STATS: ClassVar["FormulaAndFunctionApmDependencyStatsDataSource"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 FormulaAndFunctionApmDependencyStatsDataSource.APM_DEPENDENCY_STATS = FormulaAndFunctionApmDependencyStatsDataSource(

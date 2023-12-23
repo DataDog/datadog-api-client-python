@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class SpansType(ModelSimple):
+class SpansType(StringEnum):
     """
     Type of the span.
 
@@ -24,12 +23,6 @@ class SpansType(ModelSimple):
         "spans",
     }
     SPANS: ClassVar["SpansType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 SpansType.SPANS = SpansType("spans")

@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class TableWidgetCellDisplayMode(ModelSimple):
+class TableWidgetCellDisplayMode(StringEnum):
     """
     Define a display mode for the table cell.
 
@@ -26,12 +25,6 @@ class TableWidgetCellDisplayMode(ModelSimple):
     }
     NUMBER: ClassVar["TableWidgetCellDisplayMode"]
     BAR: ClassVar["TableWidgetCellDisplayMode"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 TableWidgetCellDisplayMode.NUMBER = TableWidgetCellDisplayMode("number")

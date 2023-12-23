@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class SyntheticsDeviceID(ModelSimple):
+class SyntheticsDeviceID(StringEnum):
     """
     The device ID.
 
@@ -46,12 +45,6 @@ class SyntheticsDeviceID(ModelSimple):
     EDGE_LAPTOP_LARGE: ClassVar["SyntheticsDeviceID"]
     EDGE_TABLET: ClassVar["SyntheticsDeviceID"]
     EDGE_MOBILE_SMALL: ClassVar["SyntheticsDeviceID"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 SyntheticsDeviceID.LAPTOP_LARGE = SyntheticsDeviceID("laptop_large")

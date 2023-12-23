@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class MetricEstimateType(ModelSimple):
+class MetricEstimateType(StringEnum):
     """
     Estimate type based on the queried configuration. By default, `count_or_gauge` is returned. `distribution` is returned for distribution metrics without percentiles enabled. Lastly, `percentile` is returned if `filter[pct]=true` is queried with a distribution metric.
 
@@ -28,12 +27,6 @@ class MetricEstimateType(ModelSimple):
     COUNT_OR_GAUGE: ClassVar["MetricEstimateType"]
     DISTRIBUTION: ClassVar["MetricEstimateType"]
     PERCENTILE: ClassVar["MetricEstimateType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 MetricEstimateType.COUNT_OR_GAUGE = MetricEstimateType("count_or_gauge")

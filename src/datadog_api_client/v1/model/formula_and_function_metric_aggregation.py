@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class FormulaAndFunctionMetricAggregation(ModelSimple):
+class FormulaAndFunctionMetricAggregation(StringEnum):
     """
     The aggregation methods available for metrics queries.
 
@@ -38,12 +37,6 @@ class FormulaAndFunctionMetricAggregation(ModelSimple):
     AREA: ClassVar["FormulaAndFunctionMetricAggregation"]
     L2NORM: ClassVar["FormulaAndFunctionMetricAggregation"]
     PERCENTILE: ClassVar["FormulaAndFunctionMetricAggregation"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 FormulaAndFunctionMetricAggregation.AVG = FormulaAndFunctionMetricAggregation("avg")

@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class SyntheticsAssertionOperator(ModelSimple):
+class SyntheticsAssertionOperator(StringEnum):
     """
     Assertion operator to apply.
 
@@ -52,12 +51,6 @@ class SyntheticsAssertionOperator(ModelSimple):
     IS_IN_LESS_DAYS_THAN: ClassVar["SyntheticsAssertionOperator"]
     DOES_NOT_EXIST: ClassVar["SyntheticsAssertionOperator"]
     IS_UNDEFINED: ClassVar["SyntheticsAssertionOperator"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 SyntheticsAssertionOperator.CONTAINS = SyntheticsAssertionOperator("contains")

@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class IncidentFieldAttributesSingleValueType(ModelSimple):
+class IncidentFieldAttributesSingleValueType(StringEnum):
     """
     Type of the single value field definitions.
 
@@ -26,12 +25,6 @@ class IncidentFieldAttributesSingleValueType(ModelSimple):
     }
     DROPDOWN: ClassVar["IncidentFieldAttributesSingleValueType"]
     TEXTBOX: ClassVar["IncidentFieldAttributesSingleValueType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 IncidentFieldAttributesSingleValueType.DROPDOWN = IncidentFieldAttributesSingleValueType("dropdown")

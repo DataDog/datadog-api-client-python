@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class State(ModelSimple):
+class State(StringEnum):
     """
     The state of the rule evaluation.
 
@@ -28,12 +27,6 @@ class State(ModelSimple):
     PASS: ClassVar["State"]
     FAIL: ClassVar["State"]
     SKIP: ClassVar["State"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 State.PASS = State("pass")

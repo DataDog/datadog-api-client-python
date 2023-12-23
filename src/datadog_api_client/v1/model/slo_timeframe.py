@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class SLOTimeframe(ModelSimple):
+class SLOTimeframe(StringEnum):
     """
     The SLO time window options.
 
@@ -30,12 +29,6 @@ class SLOTimeframe(ModelSimple):
     THIRTY_DAYS: ClassVar["SLOTimeframe"]
     NINETY_DAYS: ClassVar["SLOTimeframe"]
     CUSTOM: ClassVar["SLOTimeframe"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 SLOTimeframe.SEVEN_DAYS = SLOTimeframe("7d")

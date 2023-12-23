@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class TeamPermissionSettingType(ModelSimple):
+class TeamPermissionSettingType(StringEnum):
     """
     Team permission setting type
 
@@ -24,12 +23,6 @@ class TeamPermissionSettingType(ModelSimple):
         "team_permission_settings",
     }
     TEAM_PERMISSION_SETTINGS: ClassVar["TeamPermissionSettingType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 TeamPermissionSettingType.TEAM_PERMISSION_SETTINGS = TeamPermissionSettingType("team_permission_settings")

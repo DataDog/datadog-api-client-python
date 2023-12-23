@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class NotebookGraphSize(ModelSimple):
+class NotebookGraphSize(StringEnum):
     """
     The size of the graph.
 
@@ -32,12 +31,6 @@ class NotebookGraphSize(ModelSimple):
     MEDIUM: ClassVar["NotebookGraphSize"]
     LARGE: ClassVar["NotebookGraphSize"]
     EXTRA_LARGE: ClassVar["NotebookGraphSize"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 NotebookGraphSize.EXTRA_SMALL = NotebookGraphSize("xs")

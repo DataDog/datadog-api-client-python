@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class SyntheticsBasicAuthOauthTokenApiAuthentication(ModelSimple):
+class SyntheticsBasicAuthOauthTokenApiAuthentication(StringEnum):
     """
     Type of token to use when performing the authentication.
 
@@ -26,12 +25,6 @@ class SyntheticsBasicAuthOauthTokenApiAuthentication(ModelSimple):
     }
     HEADER: ClassVar["SyntheticsBasicAuthOauthTokenApiAuthentication"]
     BODY: ClassVar["SyntheticsBasicAuthOauthTokenApiAuthentication"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 SyntheticsBasicAuthOauthTokenApiAuthentication.HEADER = SyntheticsBasicAuthOauthTokenApiAuthentication("header")

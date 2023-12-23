@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class UsageAttributionSort(ModelSimple):
+class UsageAttributionSort(StringEnum):
     """
     The field to sort by.
 
@@ -94,12 +93,6 @@ class UsageAttributionSort(ModelSimple):
     APPSEC_FARGATE_PERCENTAGE: ClassVar["UsageAttributionSort"]
     ESTIMATED_RUM_USAGE_ATTRIBUTION_USAGE: ClassVar["UsageAttributionSort"]
     ESTIMATED_RUM_USAGE_ATTRIBUTION_PERCENTAGE: ClassVar["UsageAttributionSort"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 UsageAttributionSort.API_PERCENTAGE = UsageAttributionSort("api_percentage")

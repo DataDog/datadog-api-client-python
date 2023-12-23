@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class ApplicationKeysSort(ModelSimple):
+class ApplicationKeysSort(StringEnum):
     """
     Sorting options
 
@@ -34,12 +33,6 @@ class ApplicationKeysSort(ModelSimple):
     LAST4_DESCENDING: ClassVar["ApplicationKeysSort"]
     NAME_ASCENDING: ClassVar["ApplicationKeysSort"]
     NAME_DESCENDING: ClassVar["ApplicationKeysSort"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 ApplicationKeysSort.CREATED_AT_ASCENDING = ApplicationKeysSort("created_at")

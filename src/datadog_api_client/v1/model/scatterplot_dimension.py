@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class ScatterplotDimension(ModelSimple):
+class ScatterplotDimension(StringEnum):
     """
     Dimension of the Scatterplot.
 
@@ -30,12 +29,6 @@ class ScatterplotDimension(ModelSimple):
     Y: ClassVar["ScatterplotDimension"]
     RADIUS: ClassVar["ScatterplotDimension"]
     COLOR: ClassVar["ScatterplotDimension"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 ScatterplotDimension.X = ScatterplotDimension("x")

@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class FormulaAndFunctionSLODataSource(ModelSimple):
+class FormulaAndFunctionSLODataSource(StringEnum):
     """
     Data source for SLO measures queries.
 
@@ -24,12 +23,6 @@ class FormulaAndFunctionSLODataSource(ModelSimple):
         "slo",
     }
     SLO: ClassVar["FormulaAndFunctionSLODataSource"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 FormulaAndFunctionSLODataSource.SLO = FormulaAndFunctionSLODataSource("slo")

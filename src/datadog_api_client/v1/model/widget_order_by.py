@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class WidgetOrderBy(ModelSimple):
+class WidgetOrderBy(StringEnum):
     """
     What to order by.
 
@@ -30,12 +29,6 @@ class WidgetOrderBy(ModelSimple):
     NAME: ClassVar["WidgetOrderBy"]
     PRESENT: ClassVar["WidgetOrderBy"]
     PAST: ClassVar["WidgetOrderBy"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 WidgetOrderBy.CHANGE = WidgetOrderBy("change")

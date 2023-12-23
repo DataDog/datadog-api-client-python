@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class LogsArchiveDestinationS3Type(ModelSimple):
+class LogsArchiveDestinationS3Type(StringEnum):
     """
     Type of the S3 archive destination.
 
@@ -24,12 +23,6 @@ class LogsArchiveDestinationS3Type(ModelSimple):
         "s3",
     }
     S3: ClassVar["LogsArchiveDestinationS3Type"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 LogsArchiveDestinationS3Type.S3 = LogsArchiveDestinationS3Type("s3")

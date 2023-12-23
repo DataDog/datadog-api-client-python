@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class WidgetNodeType(ModelSimple):
+class WidgetNodeType(StringEnum):
     """
     Which type of node to use in the map.
 
@@ -26,12 +25,6 @@ class WidgetNodeType(ModelSimple):
     }
     HOST: ClassVar["WidgetNodeType"]
     CONTAINER: ClassVar["WidgetNodeType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 WidgetNodeType.HOST = WidgetNodeType("host")

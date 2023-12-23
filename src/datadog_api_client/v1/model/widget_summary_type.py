@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class WidgetSummaryType(ModelSimple):
+class WidgetSummaryType(StringEnum):
     """
     Which summary type should be used.
 
@@ -28,12 +27,6 @@ class WidgetSummaryType(ModelSimple):
     MONITORS: ClassVar["WidgetSummaryType"]
     GROUPS: ClassVar["WidgetSummaryType"]
     COMBINED: ClassVar["WidgetSummaryType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 WidgetSummaryType.MONITORS = WidgetSummaryType("monitors")

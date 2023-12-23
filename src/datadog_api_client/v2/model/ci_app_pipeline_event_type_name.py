@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class CIAppPipelineEventTypeName(ModelSimple):
+class CIAppPipelineEventTypeName(StringEnum):
     """
     Type of the event.
 
@@ -24,12 +23,6 @@ class CIAppPipelineEventTypeName(ModelSimple):
         "cipipeline",
     }
     CIPIPELINE: ClassVar["CIAppPipelineEventTypeName"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 CIAppPipelineEventTypeName.CIPIPELINE = CIAppPipelineEventTypeName("cipipeline")

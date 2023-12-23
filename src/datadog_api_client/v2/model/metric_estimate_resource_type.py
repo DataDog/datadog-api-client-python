@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class MetricEstimateResourceType(ModelSimple):
+class MetricEstimateResourceType(StringEnum):
     """
     The metric estimate resource type.
 
@@ -24,12 +23,6 @@ class MetricEstimateResourceType(ModelSimple):
         "metric_cardinality_estimate",
     }
     METRIC_CARDINALITY_ESTIMATE: ClassVar["MetricEstimateResourceType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 MetricEstimateResourceType.METRIC_CARDINALITY_ESTIMATE = MetricEstimateResourceType("metric_cardinality_estimate")

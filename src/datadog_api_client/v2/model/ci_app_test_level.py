@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class CIAppTestLevel(ModelSimple):
+class CIAppTestLevel(StringEnum):
     """
     Test run level.
 
@@ -30,12 +29,6 @@ class CIAppTestLevel(ModelSimple):
     MODULE: ClassVar["CIAppTestLevel"]
     SUITE: ClassVar["CIAppTestLevel"]
     TEST: ClassVar["CIAppTestLevel"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 CIAppTestLevel.SESSION = CIAppTestLevel("session")

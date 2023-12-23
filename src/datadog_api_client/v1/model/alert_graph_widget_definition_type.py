@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class AlertGraphWidgetDefinitionType(ModelSimple):
+class AlertGraphWidgetDefinitionType(StringEnum):
     """
     Type of the alert graph widget.
 
@@ -24,12 +23,6 @@ class AlertGraphWidgetDefinitionType(ModelSimple):
         "alert_graph",
     }
     ALERT_GRAPH: ClassVar["AlertGraphWidgetDefinitionType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 AlertGraphWidgetDefinitionType.ALERT_GRAPH = AlertGraphWidgetDefinitionType("alert_graph")

@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class HourlyUsageAttributionUsageType(ModelSimple):
+class HourlyUsageAttributionUsageType(StringEnum):
     """
     Supported products for hourly usage attribution requests.
 
@@ -142,12 +141,6 @@ class HourlyUsageAttributionUsageType(ModelSimple):
     SNMP_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
     UNIVERSAL_SERVICE_MONITORING_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
     VULN_MANAGEMENT_HOSTS_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 HourlyUsageAttributionUsageType.API_USAGE = HourlyUsageAttributionUsageType("api_usage")

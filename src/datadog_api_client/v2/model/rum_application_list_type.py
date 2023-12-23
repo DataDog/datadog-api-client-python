@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class RUMApplicationListType(ModelSimple):
+class RUMApplicationListType(StringEnum):
     """
     RUM application list type.
 
@@ -24,12 +23,6 @@ class RUMApplicationListType(ModelSimple):
         "rum_application",
     }
     RUM_APPLICATION: ClassVar["RUMApplicationListType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 RUMApplicationListType.RUM_APPLICATION = RUMApplicationListType("rum_application")

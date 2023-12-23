@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class WidgetAggregator(ModelSimple):
+class WidgetAggregator(StringEnum):
     """
     Aggregator used for the request.
 
@@ -34,12 +33,6 @@ class WidgetAggregator(ModelSimple):
     MINIMUM: ClassVar["WidgetAggregator"]
     SUM: ClassVar["WidgetAggregator"]
     PERCENTILE: ClassVar["WidgetAggregator"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 WidgetAggregator.AVERAGE = WidgetAggregator("avg")

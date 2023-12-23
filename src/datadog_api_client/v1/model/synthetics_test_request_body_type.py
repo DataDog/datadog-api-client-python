@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class SyntheticsTestRequestBodyType(ModelSimple):
+class SyntheticsTestRequestBodyType(StringEnum):
     """
     Type of the request body.
 
@@ -34,12 +33,6 @@ class SyntheticsTestRequestBodyType(ModelSimple):
     TEXT_HTML: ClassVar["SyntheticsTestRequestBodyType"]
     APPLICATION_X_WWW_FORM_URLENCODED: ClassVar["SyntheticsTestRequestBodyType"]
     GRAPHQL: ClassVar["SyntheticsTestRequestBodyType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 SyntheticsTestRequestBodyType.TEXT_PLAIN = SyntheticsTestRequestBodyType("text/plain")

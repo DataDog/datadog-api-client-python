@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class FunnelSource(ModelSimple):
+class FunnelSource(StringEnum):
     """
     Source from which to query items to display in the funnel.
 
@@ -24,12 +23,6 @@ class FunnelSource(ModelSimple):
         "rum",
     }
     RUM: ClassVar["FunnelSource"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 FunnelSource.RUM = FunnelSource("rum")

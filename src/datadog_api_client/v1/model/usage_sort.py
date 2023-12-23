@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class UsageSort(ModelSimple):
+class UsageSort(StringEnum):
     """
     The field to sort by.
 
@@ -30,12 +29,6 @@ class UsageSort(ModelSimple):
     SIZE: ClassVar["UsageSort"]
     START_DATE: ClassVar["UsageSort"]
     END_DATE: ClassVar["UsageSort"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 UsageSort.COMPUTED_ON = UsageSort("computed_on")

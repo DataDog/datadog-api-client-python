@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class ListStreamComputeAggregation(ModelSimple):
+class ListStreamComputeAggregation(StringEnum):
     """
     Aggregation value.
 
@@ -52,12 +51,6 @@ class ListStreamComputeAggregation(ModelSimple):
     EARLIEST: ClassVar["ListStreamComputeAggregation"]
     LATEST: ClassVar["ListStreamComputeAggregation"]
     MOST_FREQUENT: ClassVar["ListStreamComputeAggregation"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 ListStreamComputeAggregation.COUNT = ListStreamComputeAggregation("count")

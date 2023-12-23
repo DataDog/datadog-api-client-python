@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class ProcessSummaryType(ModelSimple):
+class ProcessSummaryType(StringEnum):
     """
     Type of process summary.
 
@@ -24,12 +23,6 @@ class ProcessSummaryType(ModelSimple):
         "process",
     }
     PROCESS: ClassVar["ProcessSummaryType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 ProcessSummaryType.PROCESS = ProcessSummaryType("process")

@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class RUMApplicationUpdateType(ModelSimple):
+class RUMApplicationUpdateType(StringEnum):
     """
     RUM application update type.
 
@@ -24,12 +23,6 @@ class RUMApplicationUpdateType(ModelSimple):
         "rum_application_update",
     }
     RUM_APPLICATION_UPDATE: ClassVar["RUMApplicationUpdateType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 RUMApplicationUpdateType.RUM_APPLICATION_UPDATE = RUMApplicationUpdateType("rum_application_update")

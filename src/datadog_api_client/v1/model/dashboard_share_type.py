@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class DashboardShareType(ModelSimple):
+class DashboardShareType(StringEnum):
     """
     Type of sharing access (either open to anyone who has the public URL or invite-only).
 
@@ -28,12 +27,6 @@ class DashboardShareType(ModelSimple):
     INVITE: ClassVar["DashboardShareType"]
 
     _nullable = True
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 DashboardShareType.OPEN = DashboardShareType("open")

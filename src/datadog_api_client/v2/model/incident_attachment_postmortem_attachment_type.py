@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class IncidentAttachmentPostmortemAttachmentType(ModelSimple):
+class IncidentAttachmentPostmortemAttachmentType(StringEnum):
     """
     The type of postmortem attachment attributes.
 
@@ -24,12 +23,6 @@ class IncidentAttachmentPostmortemAttachmentType(ModelSimple):
         "postmortem",
     }
     POSTMORTEM: ClassVar["IncidentAttachmentPostmortemAttachmentType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 IncidentAttachmentPostmortemAttachmentType.POSTMORTEM = IncidentAttachmentPostmortemAttachmentType("postmortem")

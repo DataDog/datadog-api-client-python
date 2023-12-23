@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class SpansSort(ModelSimple):
+class SpansSort(StringEnum):
     """
     Sort parameters when querying spans.
 
@@ -26,12 +25,6 @@ class SpansSort(ModelSimple):
     }
     TIMESTAMP_ASCENDING: ClassVar["SpansSort"]
     TIMESTAMP_DESCENDING: ClassVar["SpansSort"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 SpansSort.TIMESTAMP_ASCENDING = SpansSort("timestamp")

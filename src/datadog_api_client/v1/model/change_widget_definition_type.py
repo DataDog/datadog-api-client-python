@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class ChangeWidgetDefinitionType(ModelSimple):
+class ChangeWidgetDefinitionType(StringEnum):
     """
     Type of the change widget.
 
@@ -24,12 +23,6 @@ class ChangeWidgetDefinitionType(ModelSimple):
         "change",
     }
     CHANGE: ClassVar["ChangeWidgetDefinitionType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 ChangeWidgetDefinitionType.CHANGE = ChangeWidgetDefinitionType("change")

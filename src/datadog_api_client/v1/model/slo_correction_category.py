@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class SLOCorrectionCategory(ModelSimple):
+class SLOCorrectionCategory(StringEnum):
     """
     Category the SLO correction belongs to.
 
@@ -30,12 +29,6 @@ class SLOCorrectionCategory(ModelSimple):
     OUTSIDE_BUSINESS_HOURS: ClassVar["SLOCorrectionCategory"]
     DEPLOYMENT: ClassVar["SLOCorrectionCategory"]
     OTHER: ClassVar["SLOCorrectionCategory"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 SLOCorrectionCategory.SCHEDULED_MAINTENANCE = SLOCorrectionCategory("Scheduled Maintenance")

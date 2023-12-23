@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class SyntheticsBasicAuthSigv4Type(ModelSimple):
+class SyntheticsBasicAuthSigv4Type(StringEnum):
     """
     The type of authentication to use when performing the test.
 
@@ -24,12 +23,6 @@ class SyntheticsBasicAuthSigv4Type(ModelSimple):
         "sigv4",
     }
     SIGV4: ClassVar["SyntheticsBasicAuthSigv4Type"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 SyntheticsBasicAuthSigv4Type.SIGV4 = SyntheticsBasicAuthSigv4Type("sigv4")

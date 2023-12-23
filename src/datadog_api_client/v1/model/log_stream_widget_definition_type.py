@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class LogStreamWidgetDefinitionType(ModelSimple):
+class LogStreamWidgetDefinitionType(StringEnum):
     """
     Type of the log stream widget.
 
@@ -24,12 +23,6 @@ class LogStreamWidgetDefinitionType(ModelSimple):
         "log_stream",
     }
     LOG_STREAM: ClassVar["LogStreamWidgetDefinitionType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 LogStreamWidgetDefinitionType.LOG_STREAM = LogStreamWidgetDefinitionType("log_stream")

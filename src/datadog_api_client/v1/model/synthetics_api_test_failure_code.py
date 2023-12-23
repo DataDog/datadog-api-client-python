@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class SyntheticsApiTestFailureCode(ModelSimple):
+class SyntheticsApiTestFailureCode(StringEnum):
     """
     Error code that can be returned by a Synthetic test.
 
@@ -74,12 +73,6 @@ class SyntheticsApiTestFailureCode(ModelSimple):
     WEBSOCKET: ClassVar["SyntheticsApiTestFailureCode"]
     UNKNOWN: ClassVar["SyntheticsApiTestFailureCode"]
     INTERNAL_ERROR: ClassVar["SyntheticsApiTestFailureCode"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 SyntheticsApiTestFailureCode.BODY_TOO_LARGE = SyntheticsApiTestFailureCode("BODY_TOO_LARGE")

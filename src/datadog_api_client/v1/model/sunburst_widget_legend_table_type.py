@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class SunburstWidgetLegendTableType(ModelSimple):
+class SunburstWidgetLegendTableType(StringEnum):
     """
     Whether or not to show a table legend.
 
@@ -26,12 +25,6 @@ class SunburstWidgetLegendTableType(ModelSimple):
     }
     TABLE: ClassVar["SunburstWidgetLegendTableType"]
     NONE: ClassVar["SunburstWidgetLegendTableType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 SunburstWidgetLegendTableType.TABLE = SunburstWidgetLegendTableType("table")

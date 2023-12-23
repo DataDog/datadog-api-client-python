@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class IncidentSearchSortOrder(ModelSimple):
+class IncidentSearchSortOrder(StringEnum):
     """
     The ways searched incidents can be sorted.
 
@@ -26,12 +25,6 @@ class IncidentSearchSortOrder(ModelSimple):
     }
     CREATED_ASCENDING: ClassVar["IncidentSearchSortOrder"]
     CREATED_DESCENDING: ClassVar["IncidentSearchSortOrder"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 IncidentSearchSortOrder.CREATED_ASCENDING = IncidentSearchSortOrder("created")

@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class FastlyServiceType(ModelSimple):
+class FastlyServiceType(StringEnum):
     """
     The JSON:API type for this API. Should always be `fastly-services`.
 
@@ -24,12 +23,6 @@ class FastlyServiceType(ModelSimple):
         "fastly-services",
     }
     FASTLY_SERVICES: ClassVar["FastlyServiceType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 FastlyServiceType.FASTLY_SERVICES = FastlyServiceType("fastly-services")

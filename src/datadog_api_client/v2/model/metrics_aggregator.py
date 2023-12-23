@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class MetricsAggregator(ModelSimple):
+class MetricsAggregator(StringEnum):
     """
     The type of aggregation that can be performed on metrics-based queries.
 
@@ -40,12 +39,6 @@ class MetricsAggregator(ModelSimple):
     MEAN: ClassVar["MetricsAggregator"]
     L2NORM: ClassVar["MetricsAggregator"]
     AREA: ClassVar["MetricsAggregator"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 MetricsAggregator.AVG = MetricsAggregator("avg")

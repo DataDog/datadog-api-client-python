@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class FormulaAndFunctionResponseFormat(ModelSimple):
+class FormulaAndFunctionResponseFormat(StringEnum):
     """
     Timeseries, scalar, or event list response. Event list response formats are supported by Geomap widgets.
 
@@ -28,12 +27,6 @@ class FormulaAndFunctionResponseFormat(ModelSimple):
     TIMESERIES: ClassVar["FormulaAndFunctionResponseFormat"]
     SCALAR: ClassVar["FormulaAndFunctionResponseFormat"]
     EVENT_LIST: ClassVar["FormulaAndFunctionResponseFormat"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 FormulaAndFunctionResponseFormat.TIMESERIES = FormulaAndFunctionResponseFormat("timeseries")

@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class MetricTagConfigurationMetricTypes(ModelSimple):
+class MetricTagConfigurationMetricTypes(StringEnum):
     """
     The metric's type.
 
@@ -30,12 +29,6 @@ class MetricTagConfigurationMetricTypes(ModelSimple):
     COUNT: ClassVar["MetricTagConfigurationMetricTypes"]
     RATE: ClassVar["MetricTagConfigurationMetricTypes"]
     DISTRIBUTION: ClassVar["MetricTagConfigurationMetricTypes"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 MetricTagConfigurationMetricTypes.GAUGE = MetricTagConfigurationMetricTypes("gauge")

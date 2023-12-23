@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class MonitorFormulaAndFunctionEventAggregation(ModelSimple):
+class MonitorFormulaAndFunctionEventAggregation(StringEnum):
     """
     Aggregation methods for event platform queries.
 
@@ -46,12 +45,6 @@ class MonitorFormulaAndFunctionEventAggregation(ModelSimple):
     MIN: ClassVar["MonitorFormulaAndFunctionEventAggregation"]
     MAX: ClassVar["MonitorFormulaAndFunctionEventAggregation"]
     AVG: ClassVar["MonitorFormulaAndFunctionEventAggregation"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 MonitorFormulaAndFunctionEventAggregation.COUNT = MonitorFormulaAndFunctionEventAggregation("count")

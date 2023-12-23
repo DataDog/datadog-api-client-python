@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class LogsGrokParserType(ModelSimple):
+class LogsGrokParserType(StringEnum):
     """
     Type of logs grok parser.
 
@@ -24,12 +23,6 @@ class LogsGrokParserType(ModelSimple):
         "grok-parser",
     }
     GROK_PARSER: ClassVar["LogsGrokParserType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 LogsGrokParserType.GROK_PARSER = LogsGrokParserType("grok-parser")

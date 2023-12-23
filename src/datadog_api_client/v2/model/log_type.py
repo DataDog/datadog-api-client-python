@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class LogType(ModelSimple):
+class LogType(StringEnum):
     """
     Type of the event.
 
@@ -24,12 +23,6 @@ class LogType(ModelSimple):
         "log",
     }
     LOG: ClassVar["LogType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 LogType.LOG = LogType("log")

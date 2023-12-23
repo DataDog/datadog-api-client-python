@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class HeatMapWidgetDefinitionType(ModelSimple):
+class HeatMapWidgetDefinitionType(StringEnum):
     """
     Type of the heat map widget.
 
@@ -24,12 +23,6 @@ class HeatMapWidgetDefinitionType(ModelSimple):
         "heatmap",
     }
     HEATMAP: ClassVar["HeatMapWidgetDefinitionType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 HeatMapWidgetDefinitionType.HEATMAP = HeatMapWidgetDefinitionType("heatmap")

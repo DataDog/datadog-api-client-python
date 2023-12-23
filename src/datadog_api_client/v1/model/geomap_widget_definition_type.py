@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class GeomapWidgetDefinitionType(ModelSimple):
+class GeomapWidgetDefinitionType(StringEnum):
     """
     Type of the geomap widget.
 
@@ -24,12 +23,6 @@ class GeomapWidgetDefinitionType(ModelSimple):
         "geomap",
     }
     GEOMAP: ClassVar["GeomapWidgetDefinitionType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 GeomapWidgetDefinitionType.GEOMAP = GeomapWidgetDefinitionType("geomap")

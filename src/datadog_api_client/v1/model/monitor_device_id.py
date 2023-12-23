@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class MonitorDeviceID(ModelSimple):
+class MonitorDeviceID(StringEnum):
     """
     ID of the device the Synthetics monitor is running on. Same as `SyntheticsDeviceID`.
 
@@ -40,12 +39,6 @@ class MonitorDeviceID(ModelSimple):
     FIREFOX_LAPTOP_LARGE: ClassVar["MonitorDeviceID"]
     FIREFOX_TABLET: ClassVar["MonitorDeviceID"]
     FIREFOX_MOBILE_SMALL: ClassVar["MonitorDeviceID"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 MonitorDeviceID.LAPTOP_LARGE = MonitorDeviceID("laptop_large")

@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class QueryValueWidgetDefinitionType(ModelSimple):
+class QueryValueWidgetDefinitionType(StringEnum):
     """
     Type of the query value widget.
 
@@ -24,12 +23,6 @@ class QueryValueWidgetDefinitionType(ModelSimple):
         "query_value",
     }
     QUERY_VALUE: ClassVar["QueryValueWidgetDefinitionType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 QueryValueWidgetDefinitionType.QUERY_VALUE = QueryValueWidgetDefinitionType("query_value")

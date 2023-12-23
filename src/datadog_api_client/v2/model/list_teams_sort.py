@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class ListTeamsSort(ModelSimple):
+class ListTeamsSort(StringEnum):
     """
     Specifies the order of the returned teams
 
@@ -30,12 +29,6 @@ class ListTeamsSort(ModelSimple):
     _NAME: ClassVar["ListTeamsSort"]
     USER_COUNT: ClassVar["ListTeamsSort"]
     _USER_COUNT: ClassVar["ListTeamsSort"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 ListTeamsSort.NAME = ListTeamsSort("name")

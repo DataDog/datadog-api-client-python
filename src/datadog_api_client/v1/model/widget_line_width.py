@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class WidgetLineWidth(ModelSimple):
+class WidgetLineWidth(StringEnum):
     """
     Width of line displayed.
 
@@ -28,12 +27,6 @@ class WidgetLineWidth(ModelSimple):
     NORMAL: ClassVar["WidgetLineWidth"]
     THICK: ClassVar["WidgetLineWidth"]
     THIN: ClassVar["WidgetLineWidth"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 WidgetLineWidth.NORMAL = WidgetLineWidth("normal")

@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class DashboardInviteType(ModelSimple):
+class DashboardInviteType(StringEnum):
     """
     Type for shared dashboard invitation request body.
 
@@ -24,12 +23,6 @@ class DashboardInviteType(ModelSimple):
         "public_dashboard_invitation",
     }
     PUBLIC_DASHBOARD_INVITATION: ClassVar["DashboardInviteType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 DashboardInviteType.PUBLIC_DASHBOARD_INVITATION = DashboardInviteType("public_dashboard_invitation")

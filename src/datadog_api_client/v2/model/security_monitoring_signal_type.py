@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class SecurityMonitoringSignalType(ModelSimple):
+class SecurityMonitoringSignalType(StringEnum):
     """
     The type of event.
 
@@ -24,12 +23,6 @@ class SecurityMonitoringSignalType(ModelSimple):
         "signal",
     }
     SIGNAL: ClassVar["SecurityMonitoringSignalType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 SecurityMonitoringSignalType.SIGNAL = SecurityMonitoringSignalType("signal")

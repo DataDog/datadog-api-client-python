@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class LogsUserAgentParserType(ModelSimple):
+class LogsUserAgentParserType(StringEnum):
     """
     Type of logs User-Agent parser.
 
@@ -24,12 +23,6 @@ class LogsUserAgentParserType(ModelSimple):
         "user-agent-parser",
     }
     USER_AGENT_PARSER: ClassVar["LogsUserAgentParserType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 LogsUserAgentParserType.USER_AGENT_PARSER = LogsUserAgentParserType("user-agent-parser")

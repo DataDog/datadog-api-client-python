@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class MonitorConfigPolicyType(ModelSimple):
+class MonitorConfigPolicyType(StringEnum):
     """
     The monitor configuration policy type.
 
@@ -24,12 +23,6 @@ class MonitorConfigPolicyType(ModelSimple):
         "tag",
     }
     TAG: ClassVar["MonitorConfigPolicyType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 MonitorConfigPolicyType.TAG = MonitorConfigPolicyType("tag")

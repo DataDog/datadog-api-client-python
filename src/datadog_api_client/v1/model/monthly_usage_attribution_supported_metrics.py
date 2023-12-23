@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class MonthlyUsageAttributionSupportedMetrics(ModelSimple):
+class MonthlyUsageAttributionSupportedMetrics(StringEnum):
     """
     Supported metrics for monthly usage attribution requests.
 
@@ -264,12 +263,6 @@ class MonthlyUsageAttributionSupportedMetrics(ModelSimple):
     SIEM_INGESTED_BYTES_USAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
     SIEM_INGESTED_BYTES_PERCENTAGE: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
     ALL: ClassVar["MonthlyUsageAttributionSupportedMetrics"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 MonthlyUsageAttributionSupportedMetrics.API_USAGE = MonthlyUsageAttributionSupportedMetrics("api_usage")

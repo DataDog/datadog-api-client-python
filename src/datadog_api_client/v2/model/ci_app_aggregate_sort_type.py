@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class CIAppAggregateSortType(ModelSimple):
+class CIAppAggregateSortType(StringEnum):
     """
     The type of sorting algorithm.
 
@@ -26,12 +25,6 @@ class CIAppAggregateSortType(ModelSimple):
     }
     ALPHABETICAL: ClassVar["CIAppAggregateSortType"]
     MEASURE: ClassVar["CIAppAggregateSortType"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 CIAppAggregateSortType.ALPHABETICAL = CIAppAggregateSortType("alphabetical")

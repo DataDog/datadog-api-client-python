@@ -5,14 +5,13 @@ from __future__ import annotations
 
 
 from datadog_api_client.model_utils import (
-    ModelSimple,
-    cached_property,
+    StringEnum,
 )
 
 from typing import ClassVar
 
 
-class TeamsField(ModelSimple):
+class TeamsField(StringEnum):
     """
     Supported teams field.
 
@@ -52,12 +51,6 @@ class TeamsField(ModelSimple):
     LINK_COUNT: ClassVar["TeamsField"]
     TEAM_LINKS: ClassVar["TeamsField"]
     USER_TEAM_PERMISSIONS: ClassVar["TeamsField"]
-
-    @cached_property
-    def openapi_types(_):
-        return {
-            "value": (str,),
-        }
 
 
 TeamsField.ID = TeamsField("id")
