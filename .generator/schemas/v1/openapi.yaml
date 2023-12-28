@@ -22984,7 +22984,9 @@ paths:
       x-codegen-request-body-name: body
   /api/v1/downtime:
     get:
-      description: Get all scheduled downtimes.
+      deprecated: true
+      description: Get all scheduled downtimes. **Note:** This endpoint has been deprecated.
+        Please use v2 endpoints.
       operationId: ListDowntimes
       parameters:
       - description: Only return downtimes that are active when the request is made.
@@ -23025,7 +23027,9 @@ paths:
       tags:
       - Downtimes
     post:
-      description: Schedule a downtime.
+      deprecated: true
+      description: Schedule a downtime. **Note:** This endpoint has been deprecated.
+        Please use v2 endpoints.
       operationId: CreateDowntime
       requestBody:
         content:
@@ -23066,7 +23070,11 @@ paths:
       x-codegen-request-body-name: body
   /api/v1/downtime/cancel/by_scope:
     post:
-      description: Delete all downtimes that match the scope of `X`.
+      deprecated: true
+      description: Delete all downtimes that match the scope of `X`. **Note:** This
+        only interacts with Downtimes created using v1 endpoints. This endpoint has
+        been deprecated and will not be replaced. Please use v2 endpoints to find
+        and cancel downtimes.
       operationId: CancelDowntimesByScope
       requestBody:
         content:
@@ -23113,7 +23121,9 @@ paths:
       x-codegen-request-body-name: body
   /api/v1/downtime/{downtime_id}:
     delete:
-      description: Cancel a downtime.
+      deprecated: true
+      description: Cancel a downtime. **Note:** This endpoint has been deprecated.
+        Please use v2 endpoints.
       operationId: CancelDowntime
       parameters:
       - description: ID of the downtime to cancel.
@@ -23150,7 +23160,9 @@ paths:
       tags:
       - Downtimes
     get:
-      description: Get downtime detail by `downtime_id`.
+      deprecated: true
+      description: Get downtime detail by `downtime_id`. **Note:** This endpoint has
+        been deprecated. Please use v2 endpoints.
       operationId: GetDowntime
       parameters:
       - description: ID of the downtime to fetch.
@@ -23191,7 +23203,9 @@ paths:
       tags:
       - Downtimes
     put:
-      description: Update a single downtime by `downtime_id`.
+      deprecated: true
+      description: Update a single downtime by `downtime_id`. **Note:** This endpoint
+        has been deprecated. Please use v2 endpoints.
       operationId: UpdateDowntime
       parameters:
       - description: ID of the downtime to update.
@@ -27176,7 +27190,9 @@ paths:
       x-codegen-request-body-name: body
   /api/v1/monitor/{monitor_id}/downtimes:
     get:
-      description: Get all active downtimes for the specified monitor.
+      deprecated: true
+      description: Get all active v1 downtimes for the specified monitor. **Note:**
+        This endpoint has been deprecated. Please use v2 endpoints.
       operationId: ListMonitorDowntimes
       parameters:
       - description: The id of the monitor
