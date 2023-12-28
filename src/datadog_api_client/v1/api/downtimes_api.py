@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 from typing import Any, Dict, List, Union
+import warnings
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
@@ -195,9 +196,9 @@ class DowntimesApi:
         self,
         downtime_id: int,
     ) -> None:
-        """Cancel a downtime.
+        """Cancel a downtime. **Deprecated**.
 
-        Cancel a downtime.
+        Cancel a downtime. **Note:** This endpoint has been deprecated. Please use v2 endpoints.
 
         :param downtime_id: ID of the downtime to cancel.
         :type downtime_id: int
@@ -206,15 +207,16 @@ class DowntimesApi:
         kwargs: Dict[str, Any] = {}
         kwargs["downtime_id"] = downtime_id
 
+        warnings.warn("cancel_downtime is deprecated", DeprecationWarning, stacklevel=2)
         return self._cancel_downtime_endpoint.call_with_http_info(**kwargs)
 
     def cancel_downtimes_by_scope(
         self,
         body: CancelDowntimesByScopeRequest,
     ) -> CanceledDowntimesIds:
-        """Cancel downtimes by scope.
+        """Cancel downtimes by scope. **Deprecated**.
 
-        Delete all downtimes that match the scope of ``X``.
+        Delete all downtimes that match the scope of ``X``. **Note:** This only interacts with Downtimes created using v1 endpoints. This endpoint has been deprecated and will not be replaced. Please use v2 endpoints to find and cancel downtimes.
 
         :param body: Scope to cancel downtimes for.
         :type body: CancelDowntimesByScopeRequest
@@ -223,15 +225,16 @@ class DowntimesApi:
         kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
+        warnings.warn("cancel_downtimes_by_scope is deprecated", DeprecationWarning, stacklevel=2)
         return self._cancel_downtimes_by_scope_endpoint.call_with_http_info(**kwargs)
 
     def create_downtime(
         self,
         body: Downtime,
     ) -> Downtime:
-        """Schedule a downtime.
+        """Schedule a downtime. **Deprecated**.
 
-        Schedule a downtime.
+        Schedule a downtime. **Note:** This endpoint has been deprecated. Please use v2 endpoints.
 
         :param body: Schedule a downtime request body.
         :type body: Downtime
@@ -240,15 +243,16 @@ class DowntimesApi:
         kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
+        warnings.warn("create_downtime is deprecated", DeprecationWarning, stacklevel=2)
         return self._create_downtime_endpoint.call_with_http_info(**kwargs)
 
     def get_downtime(
         self,
         downtime_id: int,
     ) -> Downtime:
-        """Get a downtime.
+        """Get a downtime. **Deprecated**.
 
-        Get downtime detail by ``downtime_id``.
+        Get downtime detail by ``downtime_id``. **Note:** This endpoint has been deprecated. Please use v2 endpoints.
 
         :param downtime_id: ID of the downtime to fetch.
         :type downtime_id: int
@@ -257,6 +261,7 @@ class DowntimesApi:
         kwargs: Dict[str, Any] = {}
         kwargs["downtime_id"] = downtime_id
 
+        warnings.warn("get_downtime is deprecated", DeprecationWarning, stacklevel=2)
         return self._get_downtime_endpoint.call_with_http_info(**kwargs)
 
     def list_downtimes(
@@ -265,9 +270,9 @@ class DowntimesApi:
         current_only: Union[bool, UnsetType] = unset,
         with_creator: Union[bool, UnsetType] = unset,
     ) -> List[Downtime]:
-        """Get all downtimes.
+        """Get all downtimes. **Deprecated**.
 
-        Get all scheduled downtimes.
+        Get all scheduled downtimes. **Note:** This endpoint has been deprecated. Please use v2 endpoints.
 
         :param current_only: Only return downtimes that are active when the request is made.
         :type current_only: bool, optional
@@ -282,15 +287,16 @@ class DowntimesApi:
         if with_creator is not unset:
             kwargs["with_creator"] = with_creator
 
+        warnings.warn("list_downtimes is deprecated", DeprecationWarning, stacklevel=2)
         return self._list_downtimes_endpoint.call_with_http_info(**kwargs)
 
     def list_monitor_downtimes(
         self,
         monitor_id: int,
     ) -> List[Downtime]:
-        """Get active downtimes for a monitor.
+        """Get active downtimes for a monitor. **Deprecated**.
 
-        Get all active downtimes for the specified monitor.
+        Get all active v1 downtimes for the specified monitor. **Note:** This endpoint has been deprecated. Please use v2 endpoints.
 
         :param monitor_id: The id of the monitor
         :type monitor_id: int
@@ -299,6 +305,7 @@ class DowntimesApi:
         kwargs: Dict[str, Any] = {}
         kwargs["monitor_id"] = monitor_id
 
+        warnings.warn("list_monitor_downtimes is deprecated", DeprecationWarning, stacklevel=2)
         return self._list_monitor_downtimes_endpoint.call_with_http_info(**kwargs)
 
     def update_downtime(
@@ -306,9 +313,9 @@ class DowntimesApi:
         downtime_id: int,
         body: Downtime,
     ) -> Downtime:
-        """Update a downtime.
+        """Update a downtime. **Deprecated**.
 
-        Update a single downtime by ``downtime_id``.
+        Update a single downtime by ``downtime_id``. **Note:** This endpoint has been deprecated. Please use v2 endpoints.
 
         :param downtime_id: ID of the downtime to update.
         :type downtime_id: int
@@ -321,4 +328,5 @@ class DowntimesApi:
 
         kwargs["body"] = body
 
+        warnings.warn("update_downtime is deprecated", DeprecationWarning, stacklevel=2)
         return self._update_downtime_endpoint.call_with_http_info(**kwargs)
