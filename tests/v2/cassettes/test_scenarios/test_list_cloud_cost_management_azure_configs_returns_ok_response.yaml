@@ -1,0 +1,54 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/cost/azure_uc_config
+  response:
+    body:
+      string: '{"data": [{"type": "azure_uc_configs", "id": 1, "attributes": {"configs":
+        [{"id": 1, "export_name": "test_export_name", "scope": "test_scope", "created_at":
+        "2023-06-29T12:43:36.569819", "storage_container": "test_storage_container",
+        "status": "active", "updated_at": "2023-06-29T12:43:36.569819", "account_id":
+        "test_account_id", "client_id": "test_client_id", "dataset_type": "actual",
+        "status_updated_at": "2023-11-03T13:48:16.827724", "error_messages": [], "storage_account":
+        "test_storage_account", "months": 15, "export_path": "test_export_path"},
+        {"id": 1, "export_name": "test_export_name", "scope": "test_scope", "created_at":
+        "2023-06-29T12:43:36.569819", "storage_container": "test_storage_container",
+        "status": "active", "updated_at": "2023-06-29T12:43:36.569819", "account_id":
+        "test_account_id", "client_id": "test_client_id", "dataset_type": "amortized",
+        "status_updated_at": "2023-11-03T13:48:16.827724", "error_messages": [], "storage_account":
+        "test_storage_account", "months": 15, "export_path": "test_export_path"}]}},
+        {"type": "azure_uc_configs", "id": 1, "attributes": {"configs": [{"id": 1,
+        "export_name": "test_export_name", "scope": "test_scope", "created_at": "2023-11-09T16:26:33.859447",
+        "storage_container": "test_storage_container", "status": "active", "updated_at":
+        "2023-11-09T16:26:33.859447", "account_id": "test_account_id", "client_id":
+        "test_client_id", "dataset_type": "actual", "status_updated_at": "2023-11-09T16:26:33.849153",
+        "storage_account": "test_storage_account", "months": 15, "export_path": "test_export_path"},
+        {"id": 1, "export_name": "test_export_name", "scope": "test_scope", "created_at":
+        "2023-11-09T16:26:33.862026", "storage_container": "test_storage_container",
+        "status": "active", "updated_at": "2023-11-09T16:26:33.862026", "account_id":
+        "test_account_id", "client_id": "test_client_id", "dataset_type": "amortized",
+        "status_updated_at": "2023-11-09T16:26:33.849153", "storage_account": "test_storage_account",
+        "months": 15, "export_path": "test_export_path"}]}}, {"type": "azure_uc_configs",
+        "id": 1, "attributes": {"configs": [{"id": 1, "export_name": "test_export_name",
+        "scope": "test_scope", "created_at": "2023-11-09T20:20:35.959808", "storage_container":
+        "test_storage_container", "status": "active", "updated_at": "2023-11-09T20:20:35.959808",
+        "account_id": "test_account_id", "client_id": "test_client_id", "dataset_type":
+        "actual", "status_updated_at": "2023-11-09T20:20:35.956202", "storage_account":
+        "test_storage_account", "months": 15, "export_path": "test_export_path"},
+        {"id": 1, "export_name": "test_export_name", "scope": "test_scope", "created_at":
+        "2023-11-09T20:20:35.960815", "storage_container": "test_storage_container",
+        "status": "active", "updated_at": "2023-11-09T20:20:35.960815", "account_id":
+        "test_account_id", "client_id": "test_client_id", "dataset_type": "amortized",
+        "status_updated_at": "2023-11-09T20:20:35.956202", "storage_account": "test_storage_account",
+        "months": 15, "export_path": "test_export_path"}]}}]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

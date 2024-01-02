@@ -13,6 +13,10 @@ from datadog_api_client.v2.model.api_keys_response_meta import APIKeysResponseMe
 from datadog_api_client.v2.model.api_keys_response_meta_page import APIKeysResponseMetaPage
 from datadog_api_client.v2.model.api_keys_sort import APIKeysSort
 from datadog_api_client.v2.model.api_keys_type import APIKeysType
+from datadog_api_client.v2.model.aws_related_account import AWSRelatedAccount
+from datadog_api_client.v2.model.aws_related_account_attributes import AWSRelatedAccountAttributes
+from datadog_api_client.v2.model.aws_related_account_type import AWSRelatedAccountType
+from datadog_api_client.v2.model.aws_related_accounts_response import AWSRelatedAccountsResponse
 from datadog_api_client.v2.model.active_billing_dimensions_attributes import ActiveBillingDimensionsAttributes
 from datadog_api_client.v2.model.active_billing_dimensions_body import ActiveBillingDimensionsBody
 from datadog_api_client.v2.model.active_billing_dimensions_response import ActiveBillingDimensionsResponse
@@ -61,6 +65,34 @@ from datadog_api_client.v2.model.authn_mapping_update_request import AuthNMappin
 from datadog_api_client.v2.model.authn_mappings_response import AuthNMappingsResponse
 from datadog_api_client.v2.model.authn_mappings_sort import AuthNMappingsSort
 from datadog_api_client.v2.model.authn_mappings_type import AuthNMappingsType
+from datadog_api_client.v2.model.aws_cur_config import AwsCURConfig
+from datadog_api_client.v2.model.aws_cur_config_attributes import AwsCURConfigAttributes
+from datadog_api_client.v2.model.aws_cur_config_patch_data import AwsCURConfigPatchData
+from datadog_api_client.v2.model.aws_cur_config_patch_request import AwsCURConfigPatchRequest
+from datadog_api_client.v2.model.aws_cur_config_patch_request_attributes import AwsCURConfigPatchRequestAttributes
+from datadog_api_client.v2.model.aws_cur_config_patch_request_type import AwsCURConfigPatchRequestType
+from datadog_api_client.v2.model.aws_cur_config_post_data import AwsCURConfigPostData
+from datadog_api_client.v2.model.aws_cur_config_post_request import AwsCURConfigPostRequest
+from datadog_api_client.v2.model.aws_cur_config_post_request_attributes import AwsCURConfigPostRequestAttributes
+from datadog_api_client.v2.model.aws_cur_config_post_request_type import AwsCURConfigPostRequestType
+from datadog_api_client.v2.model.aws_cur_config_response import AwsCURConfigResponse
+from datadog_api_client.v2.model.aws_cur_config_type import AwsCURConfigType
+from datadog_api_client.v2.model.aws_cur_configs_response import AwsCURConfigsResponse
+from datadog_api_client.v2.model.azure_uc_config import AzureUCConfig
+from datadog_api_client.v2.model.azure_uc_config_pair import AzureUCConfigPair
+from datadog_api_client.v2.model.azure_uc_config_pair_attributes import AzureUCConfigPairAttributes
+from datadog_api_client.v2.model.azure_uc_config_pair_type import AzureUCConfigPairType
+from datadog_api_client.v2.model.azure_uc_config_pairs_response import AzureUCConfigPairsResponse
+from datadog_api_client.v2.model.azure_uc_config_patch_data import AzureUCConfigPatchData
+from datadog_api_client.v2.model.azure_uc_config_patch_request import AzureUCConfigPatchRequest
+from datadog_api_client.v2.model.azure_uc_config_patch_request_attributes import AzureUCConfigPatchRequestAttributes
+from datadog_api_client.v2.model.azure_uc_config_patch_request_type import AzureUCConfigPatchRequestType
+from datadog_api_client.v2.model.azure_uc_config_post_data import AzureUCConfigPostData
+from datadog_api_client.v2.model.azure_uc_config_post_request import AzureUCConfigPostRequest
+from datadog_api_client.v2.model.azure_uc_config_post_request_attributes import AzureUCConfigPostRequestAttributes
+from datadog_api_client.v2.model.azure_uc_config_post_request_type import AzureUCConfigPostRequestType
+from datadog_api_client.v2.model.azure_uc_configs_response import AzureUCConfigsResponse
+from datadog_api_client.v2.model.bill_config import BillConfig
 from datadog_api_client.v2.model.bulk_mute_findings_request import BulkMuteFindingsRequest
 from datadog_api_client.v2.model.bulk_mute_findings_request_attributes import BulkMuteFindingsRequestAttributes
 from datadog_api_client.v2.model.bulk_mute_findings_request_data import BulkMuteFindingsRequestData
@@ -163,6 +195,10 @@ from datadog_api_client.v2.model.cloud_configuration_rule_compliance_signal_opti
 from datadog_api_client.v2.model.cloud_configuration_rule_create_payload import CloudConfigurationRuleCreatePayload
 from datadog_api_client.v2.model.cloud_configuration_rule_options import CloudConfigurationRuleOptions
 from datadog_api_client.v2.model.cloud_configuration_rule_type import CloudConfigurationRuleType
+from datadog_api_client.v2.model.cloud_cost_activity import CloudCostActivity
+from datadog_api_client.v2.model.cloud_cost_activity_attributes import CloudCostActivityAttributes
+from datadog_api_client.v2.model.cloud_cost_activity_response import CloudCostActivityResponse
+from datadog_api_client.v2.model.cloud_cost_activity_type import CloudCostActivityType
 from datadog_api_client.v2.model.cloud_workload_security_agent_rule_attributes import (
     CloudWorkloadSecurityAgentRuleAttributes,
 )
@@ -1541,6 +1577,10 @@ __all__ = [
     "APIKeysResponseMetaPage",
     "APIKeysSort",
     "APIKeysType",
+    "AWSRelatedAccount",
+    "AWSRelatedAccountAttributes",
+    "AWSRelatedAccountType",
+    "AWSRelatedAccountsResponse",
     "ActiveBillingDimensionsAttributes",
     "ActiveBillingDimensionsBody",
     "ActiveBillingDimensionsResponse",
@@ -1589,6 +1629,34 @@ __all__ = [
     "AuthNMappingsResponse",
     "AuthNMappingsSort",
     "AuthNMappingsType",
+    "AwsCURConfig",
+    "AwsCURConfigAttributes",
+    "AwsCURConfigPatchData",
+    "AwsCURConfigPatchRequest",
+    "AwsCURConfigPatchRequestAttributes",
+    "AwsCURConfigPatchRequestType",
+    "AwsCURConfigPostData",
+    "AwsCURConfigPostRequest",
+    "AwsCURConfigPostRequestAttributes",
+    "AwsCURConfigPostRequestType",
+    "AwsCURConfigResponse",
+    "AwsCURConfigType",
+    "AwsCURConfigsResponse",
+    "AzureUCConfig",
+    "AzureUCConfigPair",
+    "AzureUCConfigPairAttributes",
+    "AzureUCConfigPairType",
+    "AzureUCConfigPairsResponse",
+    "AzureUCConfigPatchData",
+    "AzureUCConfigPatchRequest",
+    "AzureUCConfigPatchRequestAttributes",
+    "AzureUCConfigPatchRequestType",
+    "AzureUCConfigPostData",
+    "AzureUCConfigPostRequest",
+    "AzureUCConfigPostRequestAttributes",
+    "AzureUCConfigPostRequestType",
+    "AzureUCConfigsResponse",
+    "BillConfig",
     "BulkMuteFindingsRequest",
     "BulkMuteFindingsRequestAttributes",
     "BulkMuteFindingsRequestData",
@@ -1675,6 +1743,10 @@ __all__ = [
     "CloudConfigurationRuleCreatePayload",
     "CloudConfigurationRuleOptions",
     "CloudConfigurationRuleType",
+    "CloudCostActivity",
+    "CloudCostActivityAttributes",
+    "CloudCostActivityResponse",
+    "CloudCostActivityType",
     "CloudWorkloadSecurityAgentRuleAttributes",
     "CloudWorkloadSecurityAgentRuleCreateAttributes",
     "CloudWorkloadSecurityAgentRuleCreateData",
