@@ -36,6 +36,13 @@ ci\_visibility\_tests\_api
    :members:
    :show-inheritance:
 
+cloud\_cost\_management\_api
+----------------------------
+
+.. automodule:: datadog_api_client.v2.api.cloud_cost_management_api
+   :members:
+   :show-inheritance:
+
 cloud\_workload\_security\_api
 ------------------------------
 

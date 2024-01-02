@@ -1,0 +1,31 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/cost/aws_related_accounts?filter%5Bmanagement_account_id%5D=123456789123
+  response:
+    body:
+      string: '{"data": [{"type": "aws_account", "id": "000000000000", "attributes":
+        {"name": "test_name", "has_datadog_integration": false}}, {"type": "aws_account",
+        "id": "000000000000", "attributes": {"name": "test_name", "has_datadog_integration":
+        true}}, {"type": "aws_account", "id": "000000000000", "attributes": {"name":
+        "test_name", "has_datadog_integration": false}}, {"type": "aws_account", "id":
+        "000000000000", "attributes": {"name": "test_name", "has_datadog_integration":
+        false}}, {"type": "aws_account", "id": "000000000000", "attributes": {"name":
+        "test_name", "has_datadog_integration": true}}, {"type": "aws_account", "id":
+        "000000000000", "attributes": {"name": "test_name", "has_datadog_integration":
+        false}}, {"type": "aws_account", "id": "000000000000", "attributes": {"name":
+        "test_name", "has_datadog_integration": false}}, {"type": "aws_account", "id":
+        "000000000000", "attributes": {"name": "test_name", "has_datadog_integration":
+        true}}, {"type": "aws_account", "id": "000000000000", "attributes": {"name":
+        "test_name", "has_datadog_integration": false}}]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1
