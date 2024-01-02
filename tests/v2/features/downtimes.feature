@@ -67,6 +67,13 @@ Feature: Downtimes
     And the response "data" has length 1
     And the response "data" has item with field "id" with value "aeefc6a8-15d8-11ee-a8ef-da7ad0900002"
 
+  @generated @skip @team:DataDog/monitor-app @with-pagination
+  Scenario: Get active downtimes for a monitor returns "OK" response with pagination
+    Given new "ListMonitorDowntimes" request
+    And request contains "monitor_id" parameter from "REPLACE.ME"
+    When the request with pagination is sent
+    Then the response status is 200 OK
+
   @team:DataDog/monitor-app
   Scenario: Get all downtimes for a monitor returns "Monitor Not Found error" response
     Given new "ListMonitorDowntimes" request
