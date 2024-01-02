@@ -26896,6 +26896,16 @@ paths:
         schema:
           format: int64
           type: integer
+      - $ref: '#/components/parameters/PageOffset'
+      - description: Maximum number of downtimes in the response.
+        example: 100
+        in: query
+        name: page[limit]
+        required: false
+        schema:
+          default: 30
+          format: int64
+          type: integer
       responses:
         '200':
           content:
@@ -26920,6 +26930,10 @@ paths:
       tags:
       - Downtimes
       x-codegen-request-body-name: body
+      x-pagination:
+        limitParam: page[limit]
+        pageOffsetParam: page[offset]
+        resultsPath: data
   /api/v2/permissions:
     get:
       description: Returns a list of all permissions, including name, description,
