@@ -1460,7 +1460,7 @@ components:
           type: array
         months:
           deprecated: true
-          description: (deprecated) The number of months the report has been backfilled.
+          description: The number of months the report has been backfilled.
           format: int32
           maximum: 36
           type: integer
@@ -1657,7 +1657,7 @@ components:
           type: integer
         months:
           deprecated: true
-          description: (deprecated) The number of months the report has been backfilled.
+          description: The number of months the report has been backfilled.
           format: int32
           maximum: 36
           type: integer

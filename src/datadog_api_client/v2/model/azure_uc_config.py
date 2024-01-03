@@ -107,7 +107,7 @@ class AzureUCConfig(ModelNormal):
         :param id: The ID of the Azure config.
         :type id: int, optional
 
-        :param months: (deprecated) The number of months the report has been backfilled. **Deprecated**.
+        :param months: The number of months the report has been backfilled. **Deprecated**.
         :type months: int, optional
 
         :param scope: The scope of your observed subscription.

@@ -86,7 +86,7 @@ class AwsCURConfigAttributes(ModelNormal):
         :param error_messages: The error messages for the AWS CUR config.
         :type error_messages: [str], optional
 
-        :param months: (deprecated) The number of months the report has been backfilled. **Deprecated**.
+        :param months: The number of months the report has been backfilled. **Deprecated**.
         :type months: int, optional
 
         :param report_name: The name of the Cost and Usage Report.
