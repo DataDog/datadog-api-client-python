@@ -38,7 +38,6 @@ body = CIAppCreatePipelineEventRequest(
 )
 
 configuration = Configuration()
-configuration.unstable_operations["create_ci_app_pipeline_event"] = True
 with ApiClient(configuration) as api_client:
     api_instance = CIVisibilityPipelinesApi(api_client)
     response = api_instance.create_ci_app_pipeline_event(body=body)
