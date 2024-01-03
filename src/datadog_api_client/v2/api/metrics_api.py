@@ -642,7 +642,7 @@ class MetricsApi:
         :param filter_include_percentiles: Filter distributions with additional percentile
             aggregations enabled or disabled.
         :type filter_include_percentiles: bool, optional
-        :param filter_queried: Filter custom metrics that have or have not been queried in the specified window[seconds].
+        :param filter_queried: (Beta) Filter custom metrics that have or have not been queried in the specified window[seconds].
             If no window is provided or the window is less than 2 hours, a default of 2 hours will be applied.
         :type filter_queried: bool, optional
         :param filter_tags: Filter metrics that have been submitted with the given tags. Supports boolean and wildcard expressions.
