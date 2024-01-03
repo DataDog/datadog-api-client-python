@@ -34,14 +34,14 @@ Feature: GCP Integration
   @generated @skip @team:DataDog/gcp-integrations
   Scenario: Create a new entry for your service account returns "Bad Request" response
     Given new "CreateGCPSTSAccount" request
-    And body with value {"data": {"attributes": {"account_tags": [], "client_email": "datadog-service-account@test-project.iam.gserviceaccount.com", "host_filters": [], "is_security_command_center_enabled": true, "resource_collection_enabled": false}, "type": "gcp_service_account"}}
+    And body with value {"data": {"attributes": {"account_tags": [], "client_email": "datadog-service-account@test-project.iam.gserviceaccount.com", "host_filters": [], "is_security_command_center_enabled": true}, "type": "gcp_service_account"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/gcp-integrations
   Scenario: Create a new entry for your service account returns "Conflict" response
     Given new "CreateGCPSTSAccount" request
-    And body with value {"data": {"attributes": {"account_tags": [], "client_email": "datadog-service-account@test-project.iam.gserviceaccount.com", "host_filters": [], "is_security_command_center_enabled": true, "resource_collection_enabled": false}, "type": "gcp_service_account"}}
+    And body with value {"data": {"attributes": {"account_tags": [], "client_email": "datadog-service-account@test-project.iam.gserviceaccount.com", "host_filters": [], "is_security_command_center_enabled": true}, "type": "gcp_service_account"}}
     When the request is sent
     Then the response status is 409 Conflict
 
@@ -140,7 +140,7 @@ Feature: GCP Integration
   Scenario: Update STS Service Account returns "Bad Request" response
     Given new "UpdateGCPSTSAccount" request
     And request contains "account_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"account_tags": [], "client_email": "datadog-service-account@test-project.iam.gserviceaccount.com", "host_filters": [], "is_security_command_center_enabled": true, "resource_collection_enabled": false}, "id": "d291291f-12c2-22g4-j290-123456678897", "type": "gcp_service_account"}}
+    And body with value {"data": {"attributes": {"account_tags": [], "client_email": "datadog-service-account@test-project.iam.gserviceaccount.com", "host_filters": [], "is_security_command_center_enabled": true}, "id": "d291291f-12c2-22g4-j290-123456678897", "type": "gcp_service_account"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -148,7 +148,7 @@ Feature: GCP Integration
   Scenario: Update STS Service Account returns "Not Found" response
     Given new "UpdateGCPSTSAccount" request
     And request contains "account_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"account_tags": [], "client_email": "datadog-service-account@test-project.iam.gserviceaccount.com", "host_filters": [], "is_security_command_center_enabled": true, "resource_collection_enabled": false}, "id": "d291291f-12c2-22g4-j290-123456678897", "type": "gcp_service_account"}}
+    And body with value {"data": {"attributes": {"account_tags": [], "client_email": "datadog-service-account@test-project.iam.gserviceaccount.com", "host_filters": [], "is_security_command_center_enabled": true}, "id": "d291291f-12c2-22g4-j290-123456678897", "type": "gcp_service_account"}}
     When the request is sent
     Then the response status is 404 Not Found
 
