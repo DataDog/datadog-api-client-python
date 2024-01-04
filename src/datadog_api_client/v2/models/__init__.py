@@ -1149,6 +1149,9 @@ from datadog_api_client.v2.model.security_monitoring_rule_query_aggregation impo
 )
 from datadog_api_client.v2.model.security_monitoring_rule_response import SecurityMonitoringRuleResponse
 from datadog_api_client.v2.model.security_monitoring_rule_severity import SecurityMonitoringRuleSeverity
+from datadog_api_client.v2.model.security_monitoring_rule_third_party_options import (
+    SecurityMonitoringRuleThirdPartyOptions,
+)
 from datadog_api_client.v2.model.security_monitoring_rule_type_create import SecurityMonitoringRuleTypeCreate
 from datadog_api_client.v2.model.security_monitoring_rule_type_read import SecurityMonitoringRuleTypeRead
 from datadog_api_client.v2.model.security_monitoring_rule_update_payload import SecurityMonitoringRuleUpdatePayload
@@ -1229,6 +1232,11 @@ from datadog_api_client.v2.model.security_monitoring_standard_rule_create_payloa
 from datadog_api_client.v2.model.security_monitoring_standard_rule_query import SecurityMonitoringStandardRuleQuery
 from datadog_api_client.v2.model.security_monitoring_standard_rule_response import (
     SecurityMonitoringStandardRuleResponse,
+)
+from datadog_api_client.v2.model.security_monitoring_third_party_root_query import SecurityMonitoringThirdPartyRootQuery
+from datadog_api_client.v2.model.security_monitoring_third_party_rule_case import SecurityMonitoringThirdPartyRuleCase
+from datadog_api_client.v2.model.security_monitoring_third_party_rule_case_create import (
+    SecurityMonitoringThirdPartyRuleCaseCreate,
 )
 from datadog_api_client.v2.model.security_monitoring_triage_user import SecurityMonitoringTriageUser
 from datadog_api_client.v2.model.sensitive_data_scanner_config_request import SensitiveDataScannerConfigRequest
@@ -2569,6 +2577,7 @@ __all__ = [
     "SecurityMonitoringRuleQueryAggregation",
     "SecurityMonitoringRuleResponse",
     "SecurityMonitoringRuleSeverity",
+    "SecurityMonitoringRuleThirdPartyOptions",
     "SecurityMonitoringRuleTypeCreate",
     "SecurityMonitoringRuleTypeRead",
     "SecurityMonitoringRuleUpdatePayload",
@@ -2608,6 +2617,9 @@ __all__ = [
     "SecurityMonitoringStandardRuleCreatePayload",
     "SecurityMonitoringStandardRuleQuery",
     "SecurityMonitoringStandardRuleResponse",
+    "SecurityMonitoringThirdPartyRootQuery",
+    "SecurityMonitoringThirdPartyRuleCase",
+    "SecurityMonitoringThirdPartyRuleCaseCreate",
     "SecurityMonitoringTriageUser",
     "SensitiveDataScannerConfigRequest",
     "SensitiveDataScannerConfiguration",
