@@ -7050,6 +7050,13 @@ security\_monitoring\_rule\_severity
    :members:
    :show-inheritance:
 
+security\_monitoring\_rule\_third\_party\_options
+-------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_rule_third_party_options
+   :members:
+   :show-inheritance:
+
 security\_monitoring\_rule\_type\_create
 ----------------------------------------
 
@@ -7320,6 +7327,27 @@ security\_monitoring\_standard\_rule\_response
 ----------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.security_monitoring_standard_rule_response
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_third\_party\_root\_query
+-----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_third_party_root_query
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_third\_party\_rule\_case
+----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_third_party_rule_case
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_third\_party\_rule\_case\_create
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_third_party_rule_case_create
    :members:
    :show-inheritance:
 
