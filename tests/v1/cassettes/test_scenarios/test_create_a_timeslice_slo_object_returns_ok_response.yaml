@@ -1,0 +1,40 @@
+interactions:
+- request:
+    body: '{"description":"string","name":"Test-Create_a_time_slice_SLO_object_returns_OK_response-1704322484","sli_specification":{"time_slice":{"comparator":">","query":{"formulas":[{"formula":"query1"}],"queries":[{"data_source":"metrics","name":"query1","query":"trace.servlet.request{env:prod}"}]},"threshold":5}},"tags":["env:prod"],"target_threshold":97,"thresholds":[{"target":97,"target_display":"97.0","timeframe":"7d","warning":98,"warning_display":"98.0"}],"timeframe":"7d","type":"time_slice","warning_threshold":98}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/slo
+  response:
+    body:
+      string: '{"data":[{"id":"776b80141eda520bbfae33e897849f61","name":"Test-Create_a_time_slice_SLO_object_returns_OK_response-1704322484","tags":["env:prod"],"monitor_tags":[],"thresholds":[{"timeframe":"7d","target":97.0,"target_display":"97.","warning":98.0,"warning_display":"98."}],"type":"time_slice","type_id":2,"description":"string","timeframe":"7d","warning_threshold":98,"target_threshold":97,"creator":{"name":null,"handle":"frog@datadoghq.com","email":"frog@datadoghq.com"},"created_at":1704322485,"modified_at":1704322485,"sli_specification":{"time_slice":{"comparator":">","query":{"formulas":[{"formula":"query1"}],"queries":[{"data_source":"metrics","name":"query1","query":"trace.servlet.request{env:prod}"}]},"threshold":5,"query_interval_seconds":300}}}],"error":null}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/slo/776b80141eda520bbfae33e897849f61
+  response:
+    body:
+      string: '{"data":["776b80141eda520bbfae33e897849f61"],"error":null}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

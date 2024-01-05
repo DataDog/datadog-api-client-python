@@ -5,10 +5,10 @@ interactions:
       accept:
       - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/slo/testdeleteansloreturnsnotfoundresponse1641430270
+    uri: https://api.datadoghq.com/api/v1/slo/testdeleteansloreturnsnotfoundresponse1704322485
   response:
     body:
-      string: '{"errors":["SLO not found: testdeleteansloreturnsnotfoundresponse1641430270
+      string: '{"errors":["SLO not found: testdeleteansloreturnsnotfoundresponse1704322485
         not found"]}'
     headers:
       content-type:

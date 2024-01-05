@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"name":"Test-Create_an_SLO_object_returns_Bad_Request_response-1641430270","thresholds":[{"target":95,"target_display":"95.0","timeframe":"7d","warning":98,"warning_display":"98.0"}],"type":"monitor"}'
+    body: '{"name":"Test-Create_an_SLO_object_returns_Bad_Request_response-1704322485","thresholds":[{"target":95,"target_display":"95.0","timeframe":"7d","warning":98,"warning_display":"98.0"}],"type":"monitor"}'
     headers:
       accept:
       - application/json
