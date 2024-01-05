@@ -17,9 +17,11 @@ from datadog_api_client.model_utils import (
 if TYPE_CHECKING:
     from datadog_api_client.v1.model.creator import Creator
     from datadog_api_client.v1.model.service_level_objective_query import ServiceLevelObjectiveQuery
+    from datadog_api_client.v1.model.slo_sli_spec import SLOSliSpec
     from datadog_api_client.v1.model.slo_threshold import SLOThreshold
     from datadog_api_client.v1.model.slo_timeframe import SLOTimeframe
     from datadog_api_client.v1.model.slo_type import SLOType
+    from datadog_api_client.v1.model.slo_time_slice_spec import SLOTimeSliceSpec
 
 
 class SLOResponseData(ModelNormal):
@@ -27,6 +29,7 @@ class SLOResponseData(ModelNormal):
     def openapi_types(_):
         from datadog_api_client.v1.model.creator import Creator
         from datadog_api_client.v1.model.service_level_objective_query import ServiceLevelObjectiveQuery
+        from datadog_api_client.v1.model.slo_sli_spec import SLOSliSpec
         from datadog_api_client.v1.model.slo_threshold import SLOThreshold
         from datadog_api_client.v1.model.slo_timeframe import SLOTimeframe
         from datadog_api_client.v1.model.slo_type import SLOType
@@ -43,6 +46,7 @@ class SLOResponseData(ModelNormal):
             "monitor_tags": ([str],),
             "name": (str,),
             "query": (ServiceLevelObjectiveQuery,),
+            "sli_specification": (SLOSliSpec,),
             "tags": ([str],),
             "target_threshold": (float,),
             "thresholds": ([SLOThreshold],),
@@ -63,6 +67,7 @@ class SLOResponseData(ModelNormal):
         "monitor_tags": "monitor_tags",
         "name": "name",
         "query": "query",
+        "sli_specification": "sli_specification",
         "tags": "tags",
         "target_threshold": "target_threshold",
         "thresholds": "thresholds",
@@ -90,6 +95,7 @@ class SLOResponseData(ModelNormal):
         monitor_tags: Union[List[str], UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
         query: Union[ServiceLevelObjectiveQuery, UnsetType] = unset,
+        sli_specification: Union[SLOSliSpec, SLOTimeSliceSpec, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
         target_threshold: Union[float, UnsetType] = unset,
         thresholds: Union[List[SLOThreshold], UnsetType] = unset,
@@ -156,6 +162,9 @@ class SLOResponseData(ModelNormal):
             min of all of those requests.
         :type query: ServiceLevelObjectiveQuery, optional
 
+        :param sli_specification: A generic SLI specification. This is currently used for time-slice SLOs only.
+        :type sli_specification: SLOSliSpec, optional
+
         :param tags: A list of tags associated with this service level objective.
             Always included in service level objective responses (but may be empty).
             Optional in create/update requests.
@@ -203,6 +212,8 @@ class SLOResponseData(ModelNormal):
             kwargs["name"] = name
         if query is not unset:
             kwargs["query"] = query
+        if sli_specification is not unset:
+            kwargs["sli_specification"] = sli_specification
         if tags is not unset:
             kwargs["tags"] = tags
         if target_threshold is not unset:

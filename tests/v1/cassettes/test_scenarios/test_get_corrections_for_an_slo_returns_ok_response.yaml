@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"name":"Test-Get_Corrections_For_an_SLO_returns_OK_response-1652349024","query":{"denominator":"sum:httpservice.hits{!code:3xx}.as_count()","numerator":"sum:httpservice.hits{code:2xx}.as_count()"},"thresholds":[{"target":95,"timeframe":"7d","warning":98}],"type":"metric"}'
+    body: '{"name":"Test-Get_Corrections_For_an_SLO_returns_OK_response-1704322486","query":{"denominator":"sum:httpservice.hits{!code:3xx}.as_count()","numerator":"sum:httpservice.hits{code:2xx}.as_count()"},"thresholds":[{"target":95,"timeframe":"7d","warning":98}],"type":"metric"}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,9 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/slo
   response:
     body:
-      string: '{"data":[{"description":"","monitor_tags":[],"creator":{"handle":"frog@datadoghq.com","name":null,"email":"frog@datadoghq.com"},"thresholds":[{"warning":98.0,"warning_display":"98.","target":95.0,"target_display":"95.","timeframe":"7d"}],"type_id":1,"query":{"denominator":"sum:httpservice.hits{!code:3xx}.as_count()","numerator":"sum:httpservice.hits{code:2xx}.as_count()"},"id":"dd2615cf2fbf56098f3cf4965d37892f","name":"Test-Get_Corrections_For_an_SLO_returns_OK_response-1652349024","created_at":1652349025,"tags":[],"modified_at":1652349025,"type":"metric"}],"error":null}'
+      string: '{"data":[{"id":"029b3b619a6255eb899c46681dd7038f","name":"Test-Get_Corrections_For_an_SLO_returns_OK_response-1704322486","tags":[],"monitor_tags":[],"thresholds":[{"timeframe":"7d","target":95.0,"target_display":"95.","warning":98.0,"warning_display":"98."}],"type":"metric","type_id":1,"description":"","timeframe":"7d","warning_threshold":98,"target_threshold":95,"query":{"denominator":"sum:httpservice.hits{!code:3xx}.as_count()","numerator":"sum:httpservice.hits{code:2xx}.as_count()"},"creator":{"name":null,"handle":"frog@datadoghq.com","email":"frog@datadoghq.com"},"created_at":1704322486,"modified_at":1704322486}],"error":null}
+
+        '
     headers:
       content-type:
       - application/json
@@ -18,7 +20,7 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"data":{"attributes":{"category":"Other","description":"Test Correction","end":1652352624,"slo_id":"dd2615cf2fbf56098f3cf4965d37892f","start":1652349024,"timezone":"UTC"},"type":"correction"}}'
+    body: '{"data":{"attributes":{"category":"Other","description":"Test Correction","end":1704326086,"slo_id":"029b3b619a6255eb899c46681dd7038f","start":1704322486,"timezone":"UTC"},"type":"correction"}}'
     headers:
       accept:
       - application/json
@@ -28,8 +30,10 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/slo/correction
   response:
     body:
-      string: '{"data":{"type":"correction","id":"f2b8ad40-d1d8-11ec-a01e-da7ad0902002","attributes":{"slo_id":"dd2615cf2fbf56098f3cf4965d37892f","start":1652349024,"end":1652352624,"description":"Test
-        Correction","category":"Other","timezone":"UTC","created_at":null,"modified_at":null,"rrule":null,"duration":null,"creator":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0","attributes":{"uuid":"3ad549bf-eba0-11e9-a77a-0705486660d0","handle":"frog@datadoghq.com","email":"frog@datadoghq.com","name":null,"icon":"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro"}}},"modifier":null}}}'
+      string: '{"data":{"type":"correction","id":"17b61420-aa8b-11ee-97f2-da7ad0902002","attributes":{"slo_id":"029b3b619a6255eb899c46681dd7038f","start":1704322486,"end":1704326086,"description":"Test
+        Correction","category":"Other","timezone":"UTC","created_at":null,"modified_at":null,"rrule":null,"duration":null,"creator":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0","attributes":{"uuid":"3ad549bf-eba0-11e9-a77a-0705486660d0","handle":"frog@datadoghq.com","email":"frog@datadoghq.com","name":null,"icon":"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro"}}},"modifier":null}}}
+
+        '
     headers:
       content-type:
       - application/json
@@ -42,11 +46,13 @@ interactions:
       accept:
       - application/json
     method: GET
-    uri: https://api.datadoghq.com/api/v1/slo/dd2615cf2fbf56098f3cf4965d37892f/corrections
+    uri: https://api.datadoghq.com/api/v1/slo/029b3b619a6255eb899c46681dd7038f/corrections
   response:
     body:
-      string: '{"meta":{"pagination":{"type":"offset_limit","prev_offset":0,"next_offset":10,"offset":0,"limit":10,"total":1,"first_offset":0,"last_offset":0}},"data":[{"type":"correction","id":"f2b8ad40-d1d8-11ec-a01e-da7ad0902002","attributes":{"slo_id":"dd2615cf2fbf56098f3cf4965d37892f","start":1652349024,"end":1652352624,"description":"Test
-        Correction","category":"Other","timezone":"UTC","created_at":1652349025,"modified_at":1652349025,"rrule":null,"duration":null,"creator":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0","attributes":{"uuid":"3ad549bf-eba0-11e9-a77a-0705486660d0","handle":"frog@datadoghq.com","email":"frog@datadoghq.com","name":null,"icon":"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro"}}},"modifier":null}}],"links":{"next":"https://api.datadoghq.com/api/v1/slo/dd2615cf2fbf56098f3cf4965d37892f/corrections?page[offset]=10&page[limit]=10","self":"https://api.datadoghq.com/api/v1/slo/dd2615cf2fbf56098f3cf4965d37892f/corrections","prev":null,"last":null,"first":"https://api.datadoghq.com/api/v1/slo/dd2615cf2fbf56098f3cf4965d37892f/corrections?page[offset]=0&page[limit]=10"}}'
+      string: '{"data":[{"type":"correction","id":"17b61420-aa8b-11ee-97f2-da7ad0902002","attributes":{"slo_id":"029b3b619a6255eb899c46681dd7038f","start":1704322486,"end":1704326086,"description":"Test
+        Correction","category":"Other","timezone":"UTC","created_at":1704322487,"modified_at":1704322487,"rrule":null,"duration":null,"creator":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0","attributes":{"uuid":"3ad549bf-eba0-11e9-a77a-0705486660d0","handle":"frog@datadoghq.com","email":"frog@datadoghq.com","name":null,"icon":"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro"}}},"modifier":null}}],"meta":{"pagination":{"offset":0,"first_offset":0,"prev_offset":0,"next_offset":10,"last_offset":0,"limit":10,"type":"offset_limit","total":1}},"links":{"self":"https://api.datadoghq.com/api/v1/slo/029b3b619a6255eb899c46681dd7038f/corrections","last":null,"next":"https://api.datadoghq.com/api/v1/slo/029b3b619a6255eb899c46681dd7038f/corrections?page[offset]=10&page[limit]=10","prev":null,"first":"https://api.datadoghq.com/api/v1/slo/029b3b619a6255eb899c46681dd7038f/corrections?page[offset]=0&page[limit]=10"}}
+
+        '
     headers:
       content-type:
       - application/json
@@ -59,11 +65,13 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/slo/correction/f2b8ad40-d1d8-11ec-a01e-da7ad0902002
+    uri: https://api.datadoghq.com/api/v1/slo/correction/17b61420-aa8b-11ee-97f2-da7ad0902002
   response:
     body:
       string: ''
-    headers: {}
+    headers:
+      content-type:
+      - text/html; charset=utf-8
     status:
       code: 204
       message: No Content
@@ -73,10 +81,12 @@ interactions:
       accept:
       - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/slo/dd2615cf2fbf56098f3cf4965d37892f
+    uri: https://api.datadoghq.com/api/v1/slo/029b3b619a6255eb899c46681dd7038f
   response:
     body:
-      string: '{"data":["dd2615cf2fbf56098f3cf4965d37892f"],"error":null}'
+      string: '{"data":["029b3b619a6255eb899c46681dd7038f"],"error":null}
+
+        '
     headers:
       content-type:
       - application/json

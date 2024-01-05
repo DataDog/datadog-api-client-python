@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"name":"Test-Get_an_SLO_s_history_returns_OK_response-1646747953","query":{"denominator":"sum:httpservice.hits{!code:3xx}.as_count()","numerator":"sum:httpservice.hits{code:2xx}.as_count()"},"thresholds":[{"target":95,"timeframe":"7d","warning":98}],"type":"metric"}'
+    body: '{"name":"Test-Get_an_SLO_s_history_returns_OK_response-1704322488","query":{"denominator":"sum:httpservice.hits{!code:3xx}.as_count()","numerator":"sum:httpservice.hits{code:2xx}.as_count()"},"thresholds":[{"target":95,"timeframe":"7d","warning":98}],"type":"metric"}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,9 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/slo
   response:
     body:
-      string: '{"data":[{"description":"","monitor_tags":[],"creator":{"handle":"frog@datadoghq.com","name":null,"email":"frog@datadoghq.com"},"thresholds":[{"warning":98.0,"warning_display":"98.","target":95.0,"target_display":"95.","timeframe":"7d"}],"type_id":1,"query":{"denominator":"sum:httpservice.hits{!code:3xx}.as_count()","numerator":"sum:httpservice.hits{code:2xx}.as_count()"},"id":"9236f988e3d25ac6982fd4319912ec43","name":"Test-Get_an_SLO_s_history_returns_OK_response-1646747953","created_at":1646747953,"tags":[],"modified_at":1646747953,"type":"metric"}],"error":null}'
+      string: '{"data":[{"id":"627a3ccd24af50beb8eacbd36c5962f9","name":"Test-Get_an_SLO_s_history_returns_OK_response-1704322488","tags":[],"monitor_tags":[],"thresholds":[{"timeframe":"7d","target":95.0,"target_display":"95.","warning":98.0,"warning_display":"98."}],"type":"metric","type_id":1,"description":"","timeframe":"7d","warning_threshold":98,"target_threshold":95,"query":{"denominator":"sum:httpservice.hits{!code:3xx}.as_count()","numerator":"sum:httpservice.hits{code:2xx}.as_count()"},"creator":{"name":null,"handle":"frog@datadoghq.com","email":"frog@datadoghq.com"},"created_at":1704322488,"modified_at":1704322488}],"error":null}
+
+        '
     headers:
       content-type:
       - application/json
@@ -23,14 +25,16 @@ interactions:
       accept:
       - application/json
     method: GET
-    uri: https://api.datadoghq.com/api/v1/slo/9236f988e3d25ac6982fd4319912ec43/history?from_ts=1646661553&to_ts=1646747953
+    uri: https://api.datadoghq.com/api/v1/slo/627a3ccd24af50beb8eacbd36c5962f9/history?from_ts=1704236088&to_ts=1704322488
   response:
     body:
-      string: '{"errors":null,"data":{"to_ts":1646747953,"type_id":1,"series":{"res_type":"time_series","denominator":{"count":13,"sum":0.0,"values":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"metadata":{"unit":null,"query_index":1,"aggr":"sum","scope":"!code:3xx","metric":"default_zero(httpservice.hits)","expression":"default_zero(sum:httpservice.hits{!code:3xx}.as_count())","tag_set":[]}},"graph_query":"default_zero(sum:httpservice.hits{code:2xx}.as_count()),
-        default_zero(sum:httpservice.hits{!code:3xx}.as_count()) - default_zero(sum:httpservice.hits{code:2xx}.as_count())","resp_version":2,"interval":7200,"numerator":{"count":13,"sum":0.0,"values":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"metadata":{"unit":null,"query_index":0,"aggr":"sum","scope":"code:2xx","metric":"default_zero(httpservice.hits)","expression":"default_zero(sum:httpservice.hits{code:2xx}.as_count())","tag_set":[]}},"bad_series_query":"default_zero(sum:httpservice.hits{!code:3xx}.as_count())
-        - default_zero(sum:httpservice.hits{code:2xx}.as_count())","times":[1646654400000.0,1646661600000.0,1646668800000.0,1646676000000.0,1646683200000.0,1646690400000.0,1646697600000.0,1646704800000.0,1646712000000.0,1646719200000.0,1646726400000.0,1646733600000.0,1646740800000.0],"denominator_query":"default_zero(sum:httpservice.hits{!code:3xx}.as_count())","from_date":1646661553000,"numerator_query":"default_zero(sum:httpservice.hits{code:2xx}.as_count())","to_date":1646747953000,"timing":"0.0103521347046","query":"default_zero(sum:httpservice.hits{code:2xx}.as_count()),
-        default_zero(sum:httpservice.hits{!code:3xx}.as_count())","message":""},"thresholds":{"7d":{"warning":98.0,"warning_display":"98.","target":95.0,"target_display":"95.","timeframe":"7d"}},"overall":{"uptime":null,"errors":[{"error_type":"ZERO_VALUED_DENOMINATOR","error_message":"The
-        denominator is zero valued"}],"sli_value":null,"precision":{"7d":0},"corrections":[],"span_precision":2},"from_ts":1646661553,"group_by":[],"slo":{"description":"","monitor_tags":[],"creator":{"handle":"frog@datadoghq.com","name":null,"email":"frog@datadoghq.com"},"thresholds":[{"warning":98.0,"warning_display":"98.","target":95.0,"target_display":"95.","timeframe":"7d"}],"type_id":1,"query":{"denominator":"sum:httpservice.hits{!code:3xx}.as_count()","numerator":"sum:httpservice.hits{code:2xx}.as_count()"},"id":"9236f988e3d25ac6982fd4319912ec43","name":"Test-Get_an_SLO_s_history_returns_OK_response-1646747953","created_at":1646747953,"tags":[],"modified_at":1646747953,"type":"metric"},"type":"metric"}}'
+      string: '{"data":{"thresholds":{"7d":{"timeframe":"7d","target":95.0,"target_display":"95.","warning":98.0,"warning_display":"98."}},"from_ts":1704236088,"to_ts":1704322488,"type":"metric","type_id":1,"slo":{"id":"627a3ccd24af50beb8eacbd36c5962f9","name":"Test-Get_an_SLO_s_history_returns_OK_response-1704322488","tags":[],"monitor_tags":[],"thresholds":[{"timeframe":"7d","target":95.0,"target_display":"95.","warning":98.0,"warning_display":"98."}],"type":"metric","type_id":1,"description":"","timeframe":"7d","warning_threshold":98.0,"target_threshold":95.0,"query":{"denominator":"sum:httpservice.hits{!code:3xx}.as_count()","numerator":"sum:httpservice.hits{code:2xx}.as_count()"},"creator":{"name":null,"handle":"frog@datadoghq.com","email":"frog@datadoghq.com"},"created_at":1704322488,"modified_at":1704322488},"group_by":[],"series":{"timing":"0.02146005630493164","res_type":"time_series","resp_version":2,"query":"default_zero(sum:httpservice.hits{code:2xx}.as_count()),
+        default_zero(sum:httpservice.hits{!code:3xx}.as_count())","from_date":1704236088000,"to_date":1704322488000,"message":"","interval":7200,"times":[1704235800000.0,1704240000000.0,1704247200000.0,1704254400000.0,1704261600000.0,1704268800000.0,1704276000000.0,1704283200000.0,1704290400000.0,1704297600000.0,1704304800000.0,1704312000000.0,1704319200000.0],"numerator":{"values":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"metadata":{"unit":null,"query_index":0,"aggr":"sum","metric":"default_zero(httpservice.hits)","tag_set":[],"expression":"default_zero(sum:httpservice.hits{code:2xx}.as_count())","scope":"code:2xx"},"sum":0.0,"count":13},"denominator":{"values":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"metadata":{"unit":null,"query_index":1,"aggr":"sum","metric":"default_zero(httpservice.hits)","tag_set":[],"expression":"default_zero(sum:httpservice.hits{!code:3xx}.as_count())","scope":"!code:3xx"},"sum":0.0,"count":13},"numerator_query":"default_zero(sum:httpservice.hits{code:2xx}.as_count())","denominator_query":"default_zero(sum:httpservice.hits{!code:3xx}.as_count())","bad_series_query":"default_zero(sum:httpservice.hits{!code:3xx}.as_count())
+        - default_zero(sum:httpservice.hits{code:2xx}.as_count())","graph_query":"default_zero(sum:httpservice.hits{code:2xx}.as_count()),
+        default_zero(sum:httpservice.hits{!code:3xx}.as_count()) - default_zero(sum:httpservice.hits{code:2xx}.as_count())"},"overall":{"errors":[{"error_message":"The
+        denominator is zero valued","error_type":"ZERO_VALUED_DENOMINATOR"}],"sli_value":null,"span_precision":2,"precision":{"7d":0},"uptime":null,"corrections":[],"state":"no_data"}},"errors":null}
+
+        '
     headers:
       content-type:
       - application/json
@@ -43,10 +47,12 @@ interactions:
       accept:
       - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/slo/9236f988e3d25ac6982fd4319912ec43
+    uri: https://api.datadoghq.com/api/v1/slo/627a3ccd24af50beb8eacbd36c5962f9
   response:
     body:
-      string: '{"data":["9236f988e3d25ac6982fd4319912ec43"],"error":null}'
+      string: '{"data":["627a3ccd24af50beb8eacbd36c5962f9"],"error":null}
+
+        '
     headers:
       content-type:
       - application/json

@@ -483,9 +483,11 @@ from datadog_api_client.v1.model.slo_correction_update_data import SLOCorrection
 from datadog_api_client.v1.model.slo_correction_update_request import SLOCorrectionUpdateRequest
 from datadog_api_client.v1.model.slo_correction_update_request_attributes import SLOCorrectionUpdateRequestAttributes
 from datadog_api_client.v1.model.slo_creator import SLOCreator
+from datadog_api_client.v1.model.slo_data_source_query_definition import SLODataSourceQueryDefinition
 from datadog_api_client.v1.model.slo_delete_response import SLODeleteResponse
 from datadog_api_client.v1.model.slo_error_budget_remaining_data import SLOErrorBudgetRemainingData
 from datadog_api_client.v1.model.slo_error_timeframe import SLOErrorTimeframe
+from datadog_api_client.v1.model.slo_formula import SLOFormula
 from datadog_api_client.v1.model.slo_history_metrics import SLOHistoryMetrics
 from datadog_api_client.v1.model.slo_history_metrics_series import SLOHistoryMetricsSeries
 from datadog_api_client.v1.model.slo_history_metrics_series_metadata import SLOHistoryMetricsSeriesMetadata
@@ -508,9 +510,14 @@ from datadog_api_client.v1.model.slo_overall_statuses import SLOOverallStatuses
 from datadog_api_client.v1.model.slo_raw_error_budget_remaining import SLORawErrorBudgetRemaining
 from datadog_api_client.v1.model.slo_response import SLOResponse
 from datadog_api_client.v1.model.slo_response_data import SLOResponseData
+from datadog_api_client.v1.model.slo_sli_spec import SLOSliSpec
 from datadog_api_client.v1.model.slo_state import SLOState
 from datadog_api_client.v1.model.slo_status import SLOStatus
 from datadog_api_client.v1.model.slo_threshold import SLOThreshold
+from datadog_api_client.v1.model.slo_time_slice_comparator import SLOTimeSliceComparator
+from datadog_api_client.v1.model.slo_time_slice_condition import SLOTimeSliceCondition
+from datadog_api_client.v1.model.slo_time_slice_query import SLOTimeSliceQuery
+from datadog_api_client.v1.model.slo_time_slice_spec import SLOTimeSliceSpec
 from datadog_api_client.v1.model.slo_timeframe import SLOTimeframe
 from datadog_api_client.v1.model.slo_type import SLOType
 from datadog_api_client.v1.model.slo_type_numeric import SLOTypeNumeric
@@ -1381,9 +1388,11 @@ __all__ = [
     "SLOCorrectionUpdateRequest",
     "SLOCorrectionUpdateRequestAttributes",
     "SLOCreator",
+    "SLODataSourceQueryDefinition",
     "SLODeleteResponse",
     "SLOErrorBudgetRemainingData",
     "SLOErrorTimeframe",
+    "SLOFormula",
     "SLOHistoryMetrics",
     "SLOHistoryMetricsSeries",
     "SLOHistoryMetricsSeriesMetadata",
@@ -1406,9 +1415,14 @@ __all__ = [
     "SLORawErrorBudgetRemaining",
     "SLOResponse",
     "SLOResponseData",
+    "SLOSliSpec",
     "SLOState",
     "SLOStatus",
     "SLOThreshold",
+    "SLOTimeSliceComparator",
+    "SLOTimeSliceCondition",
+    "SLOTimeSliceQuery",
+    "SLOTimeSliceSpec",
     "SLOTimeframe",
     "SLOType",
     "SLOTypeNumeric",

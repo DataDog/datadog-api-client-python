@@ -49,6 +49,16 @@ Feature: Service Level Objectives
     Then the response status is 200 OK
 
   @team:DataDog/slo-app
+  Scenario: Create a time-slice SLO object returns "OK" response
+    Given new "CreateSLO" request
+    And body with value {"type":"time_slice","description":"string","name":"{{ unique }}","sli_specification":{"time_slice":{"query":{"formulas":[{"formula":"query1"}],"queries":[{"data_source":"metrics","name":"query1","query":"trace.servlet.request{env:prod}"}]},"comparator":">","threshold":5}},"tags":["env:prod"],"thresholds":[{"target":97.0,"target_display":"97.0","timeframe":"7d","warning":98,"warning_display":"98.0"}],"timeframe":"7d","target_threshold":97.0,"warning_threshold":98}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data[0].timeframe" is equal to "7d"
+    And the response "data[0].target_threshold" is equal to 97.0
+    And the response "data[0].warning_threshold" is equal to 98.0
+
+  @team:DataDog/slo-app
   Scenario: Create an SLO object returns "Bad Request" response
     Given new "CreateSLO" request
     And body with value {"type":"monitor","name":"{{ unique }}","thresholds":[{"target":95.0,"target_display":"95.0","timeframe":"7d","warning":98,"warning_display":"98.0"}]}
@@ -220,7 +230,7 @@ Feature: Service Level Objectives
   Scenario: Update an SLO returns "Not Found" response
     Given new "UpdateSLO" request
     And request contains "slo_id" parameter from "REPLACE.ME"
-    And body with value {"description": null, "groups": ["env:prod", "role:mysql"], "monitor_ids": [], "monitor_tags": [], "name": "Custom Metric SLO", "query": {"denominator": "sum:my.custom.metric{*}.as_count()", "numerator": "sum:my.custom.metric{type:good}.as_count()"}, "tags": ["env:prod", "app:core"], "target_threshold": 99.9, "thresholds": [{"target": 95, "timeframe": "7d"}, {"target": 95, "timeframe": "30d", "warning": 97}], "timeframe": "30d", "type": "metric", "warning_threshold": 99.95}
+    And body with value {"description": null, "groups": ["env:prod", "role:mysql"], "monitor_ids": [], "monitor_tags": [], "name": "Custom Metric SLO", "query": {"denominator": "sum:my.custom.metric{*}.as_count()", "numerator": "sum:my.custom.metric{type:good}.as_count()"}, "sli_specification": {"time_slice": {"comparator": "<", "query": {"formulas": [{"formula": "query2/query1"}], "queries": [{"data_source": "metrics", "name": "query1", "query": "sum:trace.servlet.request.hits{*} by {env}.as_count()"}, {"data_source": "metrics", "name": "query1", "query": "sum:trace.servlet.request.errors{*} by {env}.as_count()"}]}, "threshold": 5}}, "tags": ["env:prod", "app:core"], "target_threshold": 99.9, "thresholds": [{"target": 95, "timeframe": "7d"}, {"target": 95, "timeframe": "30d", "warning": 97}], "timeframe": "30d", "type": "metric", "warning_threshold": 99.95}
     When the request is sent
     Then the response status is 404 Not Found
 

@@ -16,16 +16,18 @@ class SLOType(ModelSimple):
     """
     The type of the service level objective.
 
-    :param value: Must be one of ["metric", "monitor"].
+    :param value: Must be one of ["metric", "monitor", "time_slice"].
     :type value: str
     """
 
     allowed_values = {
         "metric",
         "monitor",
+        "time_slice",
     }
     METRIC: ClassVar["SLOType"]
     MONITOR: ClassVar["SLOType"]
+    TIME_SLICE: ClassVar["SLOType"]
 
     @cached_property
     def openapi_types(_):
@@ -36,3 +38,4 @@ class SLOType(ModelSimple):
 
 SLOType.METRIC = SLOType("metric")
 SLOType.MONITOR = SLOType("monitor")
+SLOType.TIME_SLICE = SLOType("time_slice")

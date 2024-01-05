@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"name":"Test-Get_an_SLO_s_details_returns_OK_response-1646747470","query":{"denominator":"sum:httpservice.hits{!code:3xx}.as_count()","numerator":"sum:httpservice.hits{code:2xx}.as_count()"},"thresholds":[{"target":95,"timeframe":"7d","warning":98}],"type":"metric"}'
+    body: '{"name":"Test-Get_an_SLO_s_details_returns_OK_response-1704322488","query":{"denominator":"sum:httpservice.hits{!code:3xx}.as_count()","numerator":"sum:httpservice.hits{code:2xx}.as_count()"},"thresholds":[{"target":95,"timeframe":"7d","warning":98}],"type":"metric"}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,9 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/slo
   response:
     body:
-      string: '{"data":[{"description":"","monitor_tags":[],"creator":{"handle":"frog@datadoghq.com","name":null,"email":"frog@datadoghq.com"},"thresholds":[{"warning":98.0,"warning_display":"98.","target":95.0,"target_display":"95.","timeframe":"7d"}],"type_id":1,"query":{"denominator":"sum:httpservice.hits{!code:3xx}.as_count()","numerator":"sum:httpservice.hits{code:2xx}.as_count()"},"id":"152e72d970e15e799e4b195d7193ed18","name":"Test-Get_an_SLO_s_details_returns_OK_response-1646747470","created_at":1646747471,"tags":[],"modified_at":1646747471,"type":"metric"}],"error":null}'
+      string: '{"data":[{"id":"ebf2e048f49a5134b61a586438c66505","name":"Test-Get_an_SLO_s_details_returns_OK_response-1704322488","tags":[],"monitor_tags":[],"thresholds":[{"timeframe":"7d","target":95.0,"target_display":"95.","warning":98.0,"warning_display":"98."}],"type":"metric","type_id":1,"description":"","timeframe":"7d","warning_threshold":98,"target_threshold":95,"query":{"denominator":"sum:httpservice.hits{!code:3xx}.as_count()","numerator":"sum:httpservice.hits{code:2xx}.as_count()"},"creator":{"name":null,"handle":"frog@datadoghq.com","email":"frog@datadoghq.com"},"created_at":1704322488,"modified_at":1704322488}],"error":null}
+
+        '
     headers:
       content-type:
       - application/json
@@ -23,10 +25,12 @@ interactions:
       accept:
       - application/json
     method: GET
-    uri: https://api.datadoghq.com/api/v1/slo/152e72d970e15e799e4b195d7193ed18
+    uri: https://api.datadoghq.com/api/v1/slo/ebf2e048f49a5134b61a586438c66505
   response:
     body:
-      string: '{"data":{"description":"","monitor_tags":[],"creator":{"handle":"frog@datadoghq.com","name":null,"email":"frog@datadoghq.com"},"thresholds":[{"warning":98.0,"warning_display":"98.","target":95.0,"target_display":"95.","timeframe":"7d"}],"type_id":1,"query":{"denominator":"sum:httpservice.hits{!code:3xx}.as_count()","numerator":"sum:httpservice.hits{code:2xx}.as_count()"},"id":"152e72d970e15e799e4b195d7193ed18","name":"Test-Get_an_SLO_s_details_returns_OK_response-1646747470","created_at":1646747471,"tags":[],"modified_at":1646747471,"type":"metric"},"error":null}'
+      string: '{"data":{"id":"ebf2e048f49a5134b61a586438c66505","name":"Test-Get_an_SLO_s_details_returns_OK_response-1704322488","tags":[],"monitor_tags":[],"thresholds":[{"timeframe":"7d","target":95.0,"target_display":"95.","warning":98.0,"warning_display":"98."}],"type":"metric","type_id":1,"description":"","timeframe":"7d","warning_threshold":98.0,"target_threshold":95.0,"query":{"denominator":"sum:httpservice.hits{!code:3xx}.as_count()","numerator":"sum:httpservice.hits{code:2xx}.as_count()"},"creator":{"name":null,"handle":"frog@datadoghq.com","email":"frog@datadoghq.com"},"created_at":1704322488,"modified_at":1704322488},"error":null}
+
+        '
     headers:
       content-type:
       - application/json
@@ -39,10 +43,12 @@ interactions:
       accept:
       - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/slo/152e72d970e15e799e4b195d7193ed18
+    uri: https://api.datadoghq.com/api/v1/slo/ebf2e048f49a5134b61a586438c66505
   response:
     body:
-      string: '{"data":["152e72d970e15e799e4b195d7193ed18"],"error":null}'
+      string: '{"data":["ebf2e048f49a5134b61a586438c66505"],"error":null}
+
+        '
     headers:
       content-type:
       - application/json

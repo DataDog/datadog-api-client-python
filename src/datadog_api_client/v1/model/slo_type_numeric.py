@@ -18,16 +18,18 @@ class SLOTypeNumeric(ModelSimple):
         monitor, `1` for metric). Always included in service level objective responses.
         Ignored in create/update requests.
 
-    :param value: Must be one of [0, 1].
+    :param value: Must be one of [0, 1, 2].
     :type value: int
     """
 
     allowed_values = {
         0,
         1,
+        2,
     }
     MONITOR: ClassVar["SLOTypeNumeric"]
     METRIC: ClassVar["SLOTypeNumeric"]
+    TIME_SLICE: ClassVar["SLOTypeNumeric"]
 
     @cached_property
     def openapi_types(_):
@@ -38,3 +40,4 @@ class SLOTypeNumeric(ModelSimple):
 
 SLOTypeNumeric.MONITOR = SLOTypeNumeric(0)
 SLOTypeNumeric.METRIC = SLOTypeNumeric(1)
+SLOTypeNumeric.TIME_SLICE = SLOTypeNumeric(2)

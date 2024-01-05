@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"name":"Test-Update_an_SLO_returns_Bad_Request_response-1641430272","query":{"denominator":"sum:httpservice.hits{!code:3xx}.as_count()","numerator":"sum:httpservice.hits{code:2xx}.as_count()"},"thresholds":[{"target":95,"timeframe":"7d","warning":98}],"type":"metric"}'
+    body: '{"name":"Test-Update_an_SLO_returns_Bad_Request_response-1704322489","query":{"denominator":"sum:httpservice.hits{!code:3xx}.as_count()","numerator":"sum:httpservice.hits{code:2xx}.as_count()"},"thresholds":[{"target":95,"timeframe":"7d","warning":98}],"type":"metric"}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,9 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/slo
   response:
     body:
-      string: '{"data":[{"description":"","monitor_tags":[],"creator":{"handle":"frog@datadoghq.com","name":null,"email":"frog@datadoghq.com"},"thresholds":[{"warning":98,"warning_display":"98.","target":95,"target_display":"95.","timeframe":"7d"}],"type_id":1,"query":{"denominator":"sum:httpservice.hits{!code:3xx}.as_count()","numerator":"sum:httpservice.hits{code:2xx}.as_count()"},"id":"f21337f0ea7059f986448228aaa11f09","name":"Test-Update_an_SLO_returns_Bad_Request_response-1641430272","created_at":1641430273,"tags":[],"modified_at":1641430273,"type":"metric"}],"error":null}'
+      string: '{"data":[{"id":"9000070725e15b55a16fa1b2bcd1909c","name":"Test-Update_an_SLO_returns_Bad_Request_response-1704322489","tags":[],"monitor_tags":[],"thresholds":[{"timeframe":"7d","target":95.0,"target_display":"95.","warning":98.0,"warning_display":"98."}],"type":"metric","type_id":1,"description":"","timeframe":"7d","warning_threshold":98,"target_threshold":95,"query":{"denominator":"sum:httpservice.hits{!code:3xx}.as_count()","numerator":"sum:httpservice.hits{code:2xx}.as_count()"},"creator":{"name":null,"handle":"frog@datadoghq.com","email":"frog@datadoghq.com"},"created_at":1704322489,"modified_at":1704322489}],"error":null}
+
+        '
     headers:
       content-type:
       - application/json
@@ -18,14 +20,14 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"name":"Test-Update_an_SLO_returns_Bad_Request_response-1641430272","thresholds":[{"target":95,"target_display":"95.0","timeframe":"7d","warning":98,"warning_display":"98.0"}],"type":"monitor"}'
+    body: '{"name":"Test-Update_an_SLO_returns_Bad_Request_response-1704322489","thresholds":[{"target":95,"target_display":"95.0","timeframe":"7d","warning":98,"warning_display":"98.0"}],"type":"monitor"}'
     headers:
       accept:
       - application/json
       content-type:
       - application/json
     method: PUT
-    uri: https://api.datadoghq.com/api/v1/slo/f21337f0ea7059f986448228aaa11f09
+    uri: https://api.datadoghq.com/api/v1/slo/9000070725e15b55a16fa1b2bcd1909c
   response:
     body:
       string: '{"errors":["Invalid payload: must specify the query for count types"]}'
@@ -41,10 +43,12 @@ interactions:
       accept:
       - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/slo/f21337f0ea7059f986448228aaa11f09
+    uri: https://api.datadoghq.com/api/v1/slo/9000070725e15b55a16fa1b2bcd1909c
   response:
     body:
-      string: '{"data":["f21337f0ea7059f986448228aaa11f09"],"error":null}'
+      string: '{"data":["9000070725e15b55a16fa1b2bcd1909c"],"error":null}
+
+        '
     headers:
       content-type:
       - application/json

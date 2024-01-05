@@ -3333,6 +3333,13 @@ slo\_creator
    :members:
    :show-inheritance:
 
+slo\_data\_source\_query\_definition
+------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.slo_data_source_query_definition
+   :members:
+   :show-inheritance:
+
 slo\_delete\_response
 ---------------------
 
@@ -3351,6 +3358,13 @@ slo\_error\_timeframe
 ---------------------
 
 .. automodule:: datadog_api_client.v1.model.slo_error_timeframe
+   :members:
+   :show-inheritance:
+
+slo\_formula
+------------
+
+.. automodule:: datadog_api_client.v1.model.slo_formula
    :members:
    :show-inheritance:
 
@@ -3508,6 +3522,13 @@ slo\_response\_data
    :members:
    :show-inheritance:
 
+slo\_sli\_spec
+--------------
+
+.. automodule:: datadog_api_client.v1.model.slo_sli_spec
+   :members:
+   :show-inheritance:
+
 slo\_state
 ----------
 
@@ -3526,6 +3547,34 @@ slo\_threshold
 --------------
 
 .. automodule:: datadog_api_client.v1.model.slo_threshold
+   :members:
+   :show-inheritance:
+
+slo\_time\_slice\_comparator
+----------------------------
+
+.. automodule:: datadog_api_client.v1.model.slo_time_slice_comparator
+   :members:
+   :show-inheritance:
+
+slo\_time\_slice\_condition
+---------------------------
+
+.. automodule:: datadog_api_client.v1.model.slo_time_slice_condition
+   :members:
+   :show-inheritance:
+
+slo\_time\_slice\_query
+-----------------------
+
+.. automodule:: datadog_api_client.v1.model.slo_time_slice_query
+   :members:
+   :show-inheritance:
+
+slo\_time\_slice\_spec
+----------------------
+
+.. automodule:: datadog_api_client.v1.model.slo_time_slice_spec
    :members:
    :show-inheritance:
 
