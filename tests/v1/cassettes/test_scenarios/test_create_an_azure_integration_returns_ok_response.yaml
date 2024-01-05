@@ -1,0 +1,42 @@
+interactions:
+- request:
+    body: '{"app_service_plan_filters":"key:value,filter:example","automute":true,"client_id":"17026645-0000-0000-0000-170266451500","client_secret":"testingx./Sw*g/Y33t..R1cH+hScMDt","container_app_filters":"key:value,filter:example","cspm_enabled":true,"custom_metrics_enabled":true,"errors":["*"],"host_filters":"key:value,filter:example","new_client_id":"17026645-0000-0000-0000-170266451500","new_tenant_name":"17026645-0000-0000-0000-170266451500","resource_collection_enabled":true,"tenant_name":"17026645-0000-0000-0000-170266451500"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/integration/azure
+  response:
+    body:
+      string: '{}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"client_id":"17026645-0000-0000-0000-170266451500","tenant_name":"17026645-0000-0000-0000-170266451500"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/integration/azure
+  response:
+    body:
+      string: '{}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

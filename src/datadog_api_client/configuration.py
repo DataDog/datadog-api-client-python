@@ -236,13 +236,10 @@ class Configuration:
         # Keep track of unstable operations
         self.unstable_operations = _UnstableOperations(
             {
-                "v2.create_ci_app_pipeline_event": False,
                 "v2.get_active_billing_dimensions": False,
                 "v2.get_monthly_cost_attribution": False,
                 "v2.create_dora_deployment": False,
                 "v2.create_dora_incident": False,
-                "v2.list_events": False,
-                "v2.search_events": False,
                 "v2.create_incident": False,
                 "v2.create_incident_integration": False,
                 "v2.create_incident_todo": False,

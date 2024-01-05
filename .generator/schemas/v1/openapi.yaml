@@ -809,7 +809,7 @@ components:
           type: string
         cspm_enabled:
           description: "When enabled, Datadog\u2019s Cloud Security Management product
-            will scan resource configurations monitored by this app registration.\nNote:
+            scans resource configurations monitored by this app registration.\nNote:
             This requires resource_collection_enabled to be set to true."
           example: true
           type: boolean
@@ -3211,9 +3211,16 @@ components:
           example: key:value,filter:example
           type: string
         is_cspm_enabled:
+          description: 'When enabled, Datadog will activate the Cloud Security Monitoring
+            product for this service account. Note: This requires resource_collection_enabled
+            to be set to true.'
+          example: true
+          type: boolean
+        is_security_command_center_enabled:
           default: false
-          description: When enabled, Datadog performs configuration checks across
-            your Google Cloud environment by continuously scanning every resource.
+          description: 'When enabled, Datadog will attempt to collect Security Command
+            Center Findings. Note: This requires additional permissions on the service
+            account.'
           example: true
           type: boolean
         private_key:
@@ -3229,6 +3236,10 @@ components:
             key.
           example: datadog-apitest
           type: string
+        resource_collection_enabled:
+          description: When enabled, Datadog scans for all resources in your GCP environment.
+          example: true
+          type: boolean
         token_uri:
           description: Should be `https://accounts.google.com/o/oauth2/token`.
           example: https://accounts.google.com/o/oauth2/token
@@ -9348,7 +9359,7 @@ components:
           example: some description
           type: string
         name:
-          description: The name of the new child-organization, limited to 32 characters.
+          description: The name of the child organization, limited to 32 characters.
           example: New child org
           maxLength: 32
           type: string
@@ -22971,7 +22982,9 @@ paths:
       x-codegen-request-body-name: body
   /api/v1/downtime:
     get:
-      description: Get all scheduled downtimes.
+      deprecated: true
+      description: Get all scheduled downtimes. **Note:** This endpoint has been deprecated.
+        Please use v2 endpoints.
       operationId: ListDowntimes
       parameters:
       - description: Only return downtimes that are active when the request is made.
@@ -23012,7 +23025,9 @@ paths:
       tags:
       - Downtimes
     post:
-      description: Schedule a downtime.
+      deprecated: true
+      description: Schedule a downtime. **Note:** This endpoint has been deprecated.
+        Please use v2 endpoints.
       operationId: CreateDowntime
       requestBody:
         content:
@@ -23053,7 +23068,11 @@ paths:
       x-codegen-request-body-name: body
   /api/v1/downtime/cancel/by_scope:
     post:
-      description: Delete all downtimes that match the scope of `X`.
+      deprecated: true
+      description: Delete all downtimes that match the scope of `X`. **Note:** This
+        only interacts with Downtimes created using v1 endpoints. This endpoint has
+        been deprecated and will not be replaced. Please use v2 endpoints to find
+        and cancel downtimes.
       operationId: CancelDowntimesByScope
       requestBody:
         content:
@@ -23100,7 +23119,9 @@ paths:
       x-codegen-request-body-name: body
   /api/v1/downtime/{downtime_id}:
     delete:
-      description: Cancel a downtime.
+      deprecated: true
+      description: Cancel a downtime. **Note:** This endpoint has been deprecated.
+        Please use v2 endpoints.
       operationId: CancelDowntime
       parameters:
       - description: ID of the downtime to cancel.
@@ -23137,7 +23158,9 @@ paths:
       tags:
       - Downtimes
     get:
-      description: Get downtime detail by `downtime_id`.
+      deprecated: true
+      description: Get downtime detail by `downtime_id`. **Note:** This endpoint has
+        been deprecated. Please use v2 endpoints.
       operationId: GetDowntime
       parameters:
       - description: ID of the downtime to fetch.
@@ -23178,7 +23201,9 @@ paths:
       tags:
       - Downtimes
     put:
-      description: Update a single downtime by `downtime_id`.
+      deprecated: true
+      description: Update a single downtime by `downtime_id`. **Note:** This endpoint
+        has been deprecated. Please use v2 endpoints.
       operationId: UpdateDowntime
       parameters:
       - description: ID of the downtime to update.
@@ -26332,7 +26357,7 @@ paths:
 
         - SLO: `slo alert`
 
-        - watchdog: `event alert`
+        - watchdog: `event-v2 alert`
 
         - event-v2: `event-v2 alert`
 
@@ -27163,7 +27188,9 @@ paths:
       x-codegen-request-body-name: body
   /api/v1/monitor/{monitor_id}/downtimes:
     get:
-      description: Get all active downtimes for the specified monitor.
+      deprecated: true
+      description: Get all active v1 downtimes for the specified monitor. **Note:**
+        This endpoint has been deprecated. Please use v2 endpoints.
       operationId: ListMonitorDowntimes
       parameters:
       - description: The id of the monitor

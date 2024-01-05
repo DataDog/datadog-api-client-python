@@ -13,6 +13,10 @@ from datadog_api_client.v2.model.api_keys_response_meta import APIKeysResponseMe
 from datadog_api_client.v2.model.api_keys_response_meta_page import APIKeysResponseMetaPage
 from datadog_api_client.v2.model.api_keys_sort import APIKeysSort
 from datadog_api_client.v2.model.api_keys_type import APIKeysType
+from datadog_api_client.v2.model.aws_related_account import AWSRelatedAccount
+from datadog_api_client.v2.model.aws_related_account_attributes import AWSRelatedAccountAttributes
+from datadog_api_client.v2.model.aws_related_account_type import AWSRelatedAccountType
+from datadog_api_client.v2.model.aws_related_accounts_response import AWSRelatedAccountsResponse
 from datadog_api_client.v2.model.active_billing_dimensions_attributes import ActiveBillingDimensionsAttributes
 from datadog_api_client.v2.model.active_billing_dimensions_body import ActiveBillingDimensionsBody
 from datadog_api_client.v2.model.active_billing_dimensions_response import ActiveBillingDimensionsResponse
@@ -61,6 +65,34 @@ from datadog_api_client.v2.model.authn_mapping_update_request import AuthNMappin
 from datadog_api_client.v2.model.authn_mappings_response import AuthNMappingsResponse
 from datadog_api_client.v2.model.authn_mappings_sort import AuthNMappingsSort
 from datadog_api_client.v2.model.authn_mappings_type import AuthNMappingsType
+from datadog_api_client.v2.model.aws_cur_config import AwsCURConfig
+from datadog_api_client.v2.model.aws_cur_config_attributes import AwsCURConfigAttributes
+from datadog_api_client.v2.model.aws_cur_config_patch_data import AwsCURConfigPatchData
+from datadog_api_client.v2.model.aws_cur_config_patch_request import AwsCURConfigPatchRequest
+from datadog_api_client.v2.model.aws_cur_config_patch_request_attributes import AwsCURConfigPatchRequestAttributes
+from datadog_api_client.v2.model.aws_cur_config_patch_request_type import AwsCURConfigPatchRequestType
+from datadog_api_client.v2.model.aws_cur_config_post_data import AwsCURConfigPostData
+from datadog_api_client.v2.model.aws_cur_config_post_request import AwsCURConfigPostRequest
+from datadog_api_client.v2.model.aws_cur_config_post_request_attributes import AwsCURConfigPostRequestAttributes
+from datadog_api_client.v2.model.aws_cur_config_post_request_type import AwsCURConfigPostRequestType
+from datadog_api_client.v2.model.aws_cur_config_response import AwsCURConfigResponse
+from datadog_api_client.v2.model.aws_cur_config_type import AwsCURConfigType
+from datadog_api_client.v2.model.aws_cur_configs_response import AwsCURConfigsResponse
+from datadog_api_client.v2.model.azure_uc_config import AzureUCConfig
+from datadog_api_client.v2.model.azure_uc_config_pair import AzureUCConfigPair
+from datadog_api_client.v2.model.azure_uc_config_pair_attributes import AzureUCConfigPairAttributes
+from datadog_api_client.v2.model.azure_uc_config_pair_type import AzureUCConfigPairType
+from datadog_api_client.v2.model.azure_uc_config_pairs_response import AzureUCConfigPairsResponse
+from datadog_api_client.v2.model.azure_uc_config_patch_data import AzureUCConfigPatchData
+from datadog_api_client.v2.model.azure_uc_config_patch_request import AzureUCConfigPatchRequest
+from datadog_api_client.v2.model.azure_uc_config_patch_request_attributes import AzureUCConfigPatchRequestAttributes
+from datadog_api_client.v2.model.azure_uc_config_patch_request_type import AzureUCConfigPatchRequestType
+from datadog_api_client.v2.model.azure_uc_config_post_data import AzureUCConfigPostData
+from datadog_api_client.v2.model.azure_uc_config_post_request import AzureUCConfigPostRequest
+from datadog_api_client.v2.model.azure_uc_config_post_request_attributes import AzureUCConfigPostRequestAttributes
+from datadog_api_client.v2.model.azure_uc_config_post_request_type import AzureUCConfigPostRequestType
+from datadog_api_client.v2.model.azure_uc_configs_response import AzureUCConfigsResponse
+from datadog_api_client.v2.model.bill_config import BillConfig
 from datadog_api_client.v2.model.bulk_mute_findings_request import BulkMuteFindingsRequest
 from datadog_api_client.v2.model.bulk_mute_findings_request_attributes import BulkMuteFindingsRequestAttributes
 from datadog_api_client.v2.model.bulk_mute_findings_request_data import BulkMuteFindingsRequestData
@@ -163,6 +195,10 @@ from datadog_api_client.v2.model.cloud_configuration_rule_compliance_signal_opti
 from datadog_api_client.v2.model.cloud_configuration_rule_create_payload import CloudConfigurationRuleCreatePayload
 from datadog_api_client.v2.model.cloud_configuration_rule_options import CloudConfigurationRuleOptions
 from datadog_api_client.v2.model.cloud_configuration_rule_type import CloudConfigurationRuleType
+from datadog_api_client.v2.model.cloud_cost_activity import CloudCostActivity
+from datadog_api_client.v2.model.cloud_cost_activity_attributes import CloudCostActivityAttributes
+from datadog_api_client.v2.model.cloud_cost_activity_response import CloudCostActivityResponse
+from datadog_api_client.v2.model.cloud_cost_activity_type import CloudCostActivityType
 from datadog_api_client.v2.model.cloud_workload_security_agent_rule_attributes import (
     CloudWorkloadSecurityAgentRuleAttributes,
 )
@@ -815,6 +851,16 @@ from datadog_api_client.v2.model.monthly_cost_attribution_pagination import Mont
 from datadog_api_client.v2.model.monthly_cost_attribution_response import MonthlyCostAttributionResponse
 from datadog_api_client.v2.model.nullable_relationship_to_user import NullableRelationshipToUser
 from datadog_api_client.v2.model.nullable_relationship_to_user_data import NullableRelationshipToUserData
+from datadog_api_client.v2.model.okta_account import OktaAccount
+from datadog_api_client.v2.model.okta_account_attributes import OktaAccountAttributes
+from datadog_api_client.v2.model.okta_account_request import OktaAccountRequest
+from datadog_api_client.v2.model.okta_account_response import OktaAccountResponse
+from datadog_api_client.v2.model.okta_account_response_data import OktaAccountResponseData
+from datadog_api_client.v2.model.okta_account_type import OktaAccountType
+from datadog_api_client.v2.model.okta_account_update_request import OktaAccountUpdateRequest
+from datadog_api_client.v2.model.okta_account_update_request_attributes import OktaAccountUpdateRequestAttributes
+from datadog_api_client.v2.model.okta_account_update_request_data import OktaAccountUpdateRequestData
+from datadog_api_client.v2.model.okta_accounts_response import OktaAccountsResponse
 from datadog_api_client.v2.model.on_demand_concurrency_cap import OnDemandConcurrencyCap
 from datadog_api_client.v2.model.on_demand_concurrency_cap_attributes import OnDemandConcurrencyCapAttributes
 from datadog_api_client.v2.model.on_demand_concurrency_cap_response import OnDemandConcurrencyCapResponse
@@ -979,6 +1025,8 @@ from datadog_api_client.v2.model.relationship_to_user import RelationshipToUser
 from datadog_api_client.v2.model.relationship_to_user_data import RelationshipToUserData
 from datadog_api_client.v2.model.relationship_to_user_team_permission import RelationshipToUserTeamPermission
 from datadog_api_client.v2.model.relationship_to_user_team_permission_data import RelationshipToUserTeamPermissionData
+from datadog_api_client.v2.model.relationship_to_user_team_team import RelationshipToUserTeamTeam
+from datadog_api_client.v2.model.relationship_to_user_team_team_data import RelationshipToUserTeamTeamData
 from datadog_api_client.v2.model.relationship_to_user_team_user import RelationshipToUserTeamUser
 from datadog_api_client.v2.model.relationship_to_user_team_user_data import RelationshipToUserTeamUserData
 from datadog_api_client.v2.model.relationship_to_users import RelationshipToUsers
@@ -1101,6 +1149,9 @@ from datadog_api_client.v2.model.security_monitoring_rule_query_aggregation impo
 )
 from datadog_api_client.v2.model.security_monitoring_rule_response import SecurityMonitoringRuleResponse
 from datadog_api_client.v2.model.security_monitoring_rule_severity import SecurityMonitoringRuleSeverity
+from datadog_api_client.v2.model.security_monitoring_rule_third_party_options import (
+    SecurityMonitoringRuleThirdPartyOptions,
+)
 from datadog_api_client.v2.model.security_monitoring_rule_type_create import SecurityMonitoringRuleTypeCreate
 from datadog_api_client.v2.model.security_monitoring_rule_type_read import SecurityMonitoringRuleTypeRead
 from datadog_api_client.v2.model.security_monitoring_rule_update_payload import SecurityMonitoringRuleUpdatePayload
@@ -1181,6 +1232,11 @@ from datadog_api_client.v2.model.security_monitoring_standard_rule_create_payloa
 from datadog_api_client.v2.model.security_monitoring_standard_rule_query import SecurityMonitoringStandardRuleQuery
 from datadog_api_client.v2.model.security_monitoring_standard_rule_response import (
     SecurityMonitoringStandardRuleResponse,
+)
+from datadog_api_client.v2.model.security_monitoring_third_party_root_query import SecurityMonitoringThirdPartyRootQuery
+from datadog_api_client.v2.model.security_monitoring_third_party_rule_case import SecurityMonitoringThirdPartyRuleCase
+from datadog_api_client.v2.model.security_monitoring_third_party_rule_case_create import (
+    SecurityMonitoringThirdPartyRuleCaseCreate,
 )
 from datadog_api_client.v2.model.security_monitoring_triage_user import SecurityMonitoringTriageUser
 from datadog_api_client.v2.model.sensitive_data_scanner_config_request import SensitiveDataScannerConfigRequest
@@ -1500,6 +1556,7 @@ from datadog_api_client.v2.model.user_team_relationships import UserTeamRelation
 from datadog_api_client.v2.model.user_team_request import UserTeamRequest
 from datadog_api_client.v2.model.user_team_response import UserTeamResponse
 from datadog_api_client.v2.model.user_team_role import UserTeamRole
+from datadog_api_client.v2.model.user_team_team_type import UserTeamTeamType
 from datadog_api_client.v2.model.user_team_type import UserTeamType
 from datadog_api_client.v2.model.user_team_update import UserTeamUpdate
 from datadog_api_client.v2.model.user_team_update_request import UserTeamUpdateRequest
@@ -1528,6 +1585,10 @@ __all__ = [
     "APIKeysResponseMetaPage",
     "APIKeysSort",
     "APIKeysType",
+    "AWSRelatedAccount",
+    "AWSRelatedAccountAttributes",
+    "AWSRelatedAccountType",
+    "AWSRelatedAccountsResponse",
     "ActiveBillingDimensionsAttributes",
     "ActiveBillingDimensionsBody",
     "ActiveBillingDimensionsResponse",
@@ -1576,6 +1637,34 @@ __all__ = [
     "AuthNMappingsResponse",
     "AuthNMappingsSort",
     "AuthNMappingsType",
+    "AwsCURConfig",
+    "AwsCURConfigAttributes",
+    "AwsCURConfigPatchData",
+    "AwsCURConfigPatchRequest",
+    "AwsCURConfigPatchRequestAttributes",
+    "AwsCURConfigPatchRequestType",
+    "AwsCURConfigPostData",
+    "AwsCURConfigPostRequest",
+    "AwsCURConfigPostRequestAttributes",
+    "AwsCURConfigPostRequestType",
+    "AwsCURConfigResponse",
+    "AwsCURConfigType",
+    "AwsCURConfigsResponse",
+    "AzureUCConfig",
+    "AzureUCConfigPair",
+    "AzureUCConfigPairAttributes",
+    "AzureUCConfigPairType",
+    "AzureUCConfigPairsResponse",
+    "AzureUCConfigPatchData",
+    "AzureUCConfigPatchRequest",
+    "AzureUCConfigPatchRequestAttributes",
+    "AzureUCConfigPatchRequestType",
+    "AzureUCConfigPostData",
+    "AzureUCConfigPostRequest",
+    "AzureUCConfigPostRequestAttributes",
+    "AzureUCConfigPostRequestType",
+    "AzureUCConfigsResponse",
+    "BillConfig",
     "BulkMuteFindingsRequest",
     "BulkMuteFindingsRequestAttributes",
     "BulkMuteFindingsRequestData",
@@ -1662,6 +1751,10 @@ __all__ = [
     "CloudConfigurationRuleCreatePayload",
     "CloudConfigurationRuleOptions",
     "CloudConfigurationRuleType",
+    "CloudCostActivity",
+    "CloudCostActivityAttributes",
+    "CloudCostActivityResponse",
+    "CloudCostActivityType",
     "CloudWorkloadSecurityAgentRuleAttributes",
     "CloudWorkloadSecurityAgentRuleCreateAttributes",
     "CloudWorkloadSecurityAgentRuleCreateData",
@@ -2218,6 +2311,16 @@ __all__ = [
     "MonthlyCostAttributionResponse",
     "NullableRelationshipToUser",
     "NullableRelationshipToUserData",
+    "OktaAccount",
+    "OktaAccountAttributes",
+    "OktaAccountRequest",
+    "OktaAccountResponse",
+    "OktaAccountResponseData",
+    "OktaAccountType",
+    "OktaAccountUpdateRequest",
+    "OktaAccountUpdateRequestAttributes",
+    "OktaAccountUpdateRequestData",
+    "OktaAccountsResponse",
     "OnDemandConcurrencyCap",
     "OnDemandConcurrencyCapAttributes",
     "OnDemandConcurrencyCapResponse",
@@ -2368,6 +2471,8 @@ __all__ = [
     "RelationshipToUserData",
     "RelationshipToUserTeamPermission",
     "RelationshipToUserTeamPermissionData",
+    "RelationshipToUserTeamTeam",
+    "RelationshipToUserTeamTeamData",
     "RelationshipToUserTeamUser",
     "RelationshipToUserTeamUserData",
     "RelationshipToUsers",
@@ -2472,6 +2577,7 @@ __all__ = [
     "SecurityMonitoringRuleQueryAggregation",
     "SecurityMonitoringRuleResponse",
     "SecurityMonitoringRuleSeverity",
+    "SecurityMonitoringRuleThirdPartyOptions",
     "SecurityMonitoringRuleTypeCreate",
     "SecurityMonitoringRuleTypeRead",
     "SecurityMonitoringRuleUpdatePayload",
@@ -2511,6 +2617,9 @@ __all__ = [
     "SecurityMonitoringStandardRuleCreatePayload",
     "SecurityMonitoringStandardRuleQuery",
     "SecurityMonitoringStandardRuleResponse",
+    "SecurityMonitoringThirdPartyRootQuery",
+    "SecurityMonitoringThirdPartyRuleCase",
+    "SecurityMonitoringThirdPartyRuleCaseCreate",
     "SecurityMonitoringTriageUser",
     "SensitiveDataScannerConfigRequest",
     "SensitiveDataScannerConfiguration",
@@ -2781,6 +2890,7 @@ __all__ = [
     "UserTeamRequest",
     "UserTeamResponse",
     "UserTeamRole",
+    "UserTeamTeamType",
     "UserTeamType",
     "UserTeamUpdate",
     "UserTeamUpdateRequest",

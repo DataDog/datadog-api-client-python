@@ -191,6 +191,11 @@ def relative_time(freezed_time, iso):
     return func
 
 
+def generate_uuid(freezed_time):
+    freezed_time_string = str(freezed_time.timestamp())
+    return freezed_time_string[:8] + "-0000-0000-0000-" + freezed_time_string[:10] + "00"
+
+
 @pytest.fixture
 def context(vcr, unique, freezed_time):
     """
@@ -209,6 +214,7 @@ def context(vcr, unique, freezed_time):
         "unique_hash": unique_hash,
         "timestamp": relative_time(freezed_time, False),
         "timeISO": relative_time(freezed_time, True),
+        "uuid": generate_uuid(freezed_time),
     }
 
     yield ctx

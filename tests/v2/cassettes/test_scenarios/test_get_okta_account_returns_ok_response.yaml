@@ -1,0 +1,56 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"auth_method":"oauth","client_id":"fakeclientid","client_secret":"fakeclientsecret","domain":"https://dev-test.okta.com/","name":"testgetoktaaccountreturnsokresponse1700585984"},"type":"okta-accounts"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/integrations/okta/accounts
+  response:
+    body:
+      string: '{"data":{"type":"okta-accounts","attributes":{"client_id":"fakeclientid","auth_method":"oauth","domain":"https://dev-test.okta.com/","name":"testgetoktaaccountreturnsokresponse1700585984"},"id":"2bf39935-f5c8-46b1-b41b-eda0b4bd2e78"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/integrations/okta/accounts/2bf39935-f5c8-46b1-b41b-eda0b4bd2e78
+  response:
+    body:
+      string: '{"data":{"type":"okta-accounts","attributes":{"client_id":"fakeclientid","auth_method":"oauth","domain":"https://dev-test.okta.com/","name":"testgetoktaaccountreturnsokresponse1700585984"},"id":"2bf39935-f5c8-46b1-b41b-eda0b4bd2e78"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/integrations/okta/accounts/2bf39935-f5c8-46b1-b41b-eda0b4bd2e78
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - text/html; charset=utf-8
+    status:
+      code: 204
+      message: No Content
+version: 1

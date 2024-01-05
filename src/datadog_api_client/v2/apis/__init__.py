@@ -3,6 +3,7 @@ from datadog_api_client.v2.api.audit_api import AuditApi
 from datadog_api_client.v2.api.authn_mappings_api import AuthNMappingsApi
 from datadog_api_client.v2.api.ci_visibility_pipelines_api import CIVisibilityPipelinesApi
 from datadog_api_client.v2.api.ci_visibility_tests_api import CIVisibilityTestsApi
+from datadog_api_client.v2.api.cloud_cost_management_api import CloudCostManagementApi
 from datadog_api_client.v2.api.cloud_workload_security_api import CloudWorkloadSecurityApi
 from datadog_api_client.v2.api.cloudflare_integration_api import CloudflareIntegrationApi
 from datadog_api_client.v2.api.confluent_cloud_api import ConfluentCloudApi
@@ -24,6 +25,7 @@ from datadog_api_client.v2.api.logs_archives_api import LogsArchivesApi
 from datadog_api_client.v2.api.logs_metrics_api import LogsMetricsApi
 from datadog_api_client.v2.api.metrics_api import MetricsApi
 from datadog_api_client.v2.api.monitors_api import MonitorsApi
+from datadog_api_client.v2.api.okta_integration_api import OktaIntegrationApi
 from datadog_api_client.v2.api.opsgenie_integration_api import OpsgenieIntegrationApi
 from datadog_api_client.v2.api.organizations_api import OrganizationsApi
 from datadog_api_client.v2.api.powerpack_api import PowerpackApi
@@ -50,6 +52,7 @@ __all__ = [
     "AuthNMappingsApi",
     "CIVisibilityPipelinesApi",
     "CIVisibilityTestsApi",
+    "CloudCostManagementApi",
     "CloudWorkloadSecurityApi",
     "CloudflareIntegrationApi",
     "ConfluentCloudApi",
@@ -71,6 +74,7 @@ __all__ = [
     "LogsMetricsApi",
     "MetricsApi",
     "MonitorsApi",
+    "OktaIntegrationApi",
     "OpsgenieIntegrationApi",
     "OrganizationsApi",
     "PowerpackApi",

@@ -21,6 +21,9 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.security_monitoring_filter import SecurityMonitoringFilter
     from datadog_api_client.v2.model.security_monitoring_rule_options import SecurityMonitoringRuleOptions
     from datadog_api_client.v2.model.security_monitoring_standard_rule_query import SecurityMonitoringStandardRuleQuery
+    from datadog_api_client.v2.model.security_monitoring_third_party_rule_case import (
+        SecurityMonitoringThirdPartyRuleCase,
+    )
     from datadog_api_client.v2.model.security_monitoring_rule_type_read import SecurityMonitoringRuleTypeRead
 
 
@@ -35,6 +38,9 @@ class SecurityMonitoringStandardRuleResponse(ModelNormal):
         from datadog_api_client.v2.model.security_monitoring_rule_options import SecurityMonitoringRuleOptions
         from datadog_api_client.v2.model.security_monitoring_standard_rule_query import (
             SecurityMonitoringStandardRuleQuery,
+        )
+        from datadog_api_client.v2.model.security_monitoring_third_party_rule_case import (
+            SecurityMonitoringThirdPartyRuleCase,
         )
         from datadog_api_client.v2.model.security_monitoring_rule_type_read import SecurityMonitoringRuleTypeRead
 
@@ -55,6 +61,7 @@ class SecurityMonitoringStandardRuleResponse(ModelNormal):
             "options": (SecurityMonitoringRuleOptions,),
             "queries": ([SecurityMonitoringStandardRuleQuery],),
             "tags": ([str],),
+            "third_party_cases": ([SecurityMonitoringThirdPartyRuleCase],),
             "type": (SecurityMonitoringRuleTypeRead,),
             "update_author_id": (int,),
             "version": (int,),
@@ -77,6 +84,7 @@ class SecurityMonitoringStandardRuleResponse(ModelNormal):
         "options": "options",
         "queries": "queries",
         "tags": "tags",
+        "third_party_cases": "thirdPartyCases",
         "type": "type",
         "update_author_id": "updateAuthorId",
         "version": "version",
@@ -100,6 +108,7 @@ class SecurityMonitoringStandardRuleResponse(ModelNormal):
         options: Union[SecurityMonitoringRuleOptions, UnsetType] = unset,
         queries: Union[List[SecurityMonitoringStandardRuleQuery], UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
+        third_party_cases: Union[List[SecurityMonitoringThirdPartyRuleCase], UnsetType] = unset,
         type: Union[SecurityMonitoringRuleTypeRead, UnsetType] = unset,
         update_author_id: Union[int, UnsetType] = unset,
         version: Union[int, UnsetType] = unset,
@@ -156,6 +165,9 @@ class SecurityMonitoringStandardRuleResponse(ModelNormal):
         :param tags: Tags for generated signals.
         :type tags: [str], optional
 
+        :param third_party_cases: Cases for generating signals from third party rules. Only available for third party rules.
+        :type third_party_cases: [SecurityMonitoringThirdPartyRuleCase], optional
+
         :param type: The rule type.
         :type type: SecurityMonitoringRuleTypeRead, optional
 
@@ -197,6 +209,8 @@ class SecurityMonitoringStandardRuleResponse(ModelNormal):
             kwargs["queries"] = queries
         if tags is not unset:
             kwargs["tags"] = tags
+        if third_party_cases is not unset:
+            kwargs["third_party_cases"] = third_party_cases
         if type is not unset:
             kwargs["type"] = type
         if update_author_id is not unset:

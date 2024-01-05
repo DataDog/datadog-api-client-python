@@ -642,7 +642,7 @@ class MetricsApi:
         :param filter_include_percentiles: Filter distributions with additional percentile
             aggregations enabled or disabled.
         :type filter_include_percentiles: bool, optional
-        :param filter_queried: Filter custom metrics that have or have not been queried in the specified window[seconds].
+        :param filter_queried: (Beta) Filter custom metrics that have or have not been queried in the specified window[seconds].
             If no window is provided or the window is less than 2 hours, a default of 2 hours will be applied.
         :type filter_queried: bool, optional
         :param filter_tags: Filter metrics that have been submitted with the given tags. Supports boolean and wildcard expressions.
@@ -792,7 +792,8 @@ class MetricsApi:
         Update the tag configuration of a metric or percentile aggregations of a distribution metric or custom aggregations
         of a count, rate, or gauge metric. By setting ``exclude_tags_mode`` to true the behavior is changed
         from an allow-list to a deny-list, and tags in the defined list will not be queryable.
-        Can only be used with application keys from users with the ``Manage Tags for Metrics`` permission.
+        Can only be used with application keys from users with the ``Manage Tags for Metrics`` permission. This endpoint requires
+        a tag configuration to be created first.
 
         :param metric_name: The name of the metric.
         :type metric_name: str

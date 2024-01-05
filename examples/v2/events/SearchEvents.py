@@ -22,7 +22,6 @@ body = EventsListRequest(
 )
 
 configuration = Configuration()
-configuration.unstable_operations["search_events"] = True
 with ApiClient(configuration) as api_client:
     api_instance = EventsApi(api_client)
     response = api_instance.search_events(body=body)

@@ -85,7 +85,7 @@ class AzureAccount(ModelNormal):
             Only container apps that match one of the defined tags are imported into Datadog.
         :type container_app_filters: str, optional
 
-        :param cspm_enabled: When enabled, Datadog’s Cloud Security Management product will scan resource configurations monitored by this app registration.
+        :param cspm_enabled: When enabled, Datadog’s Cloud Security Management product scans resource configurations monitored by this app registration.
             Note: This requires resource_collection_enabled to be set to true.
         :type cspm_enabled: bool, optional
 

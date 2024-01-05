@@ -442,6 +442,230 @@ authn\_mappings\_type
    :members:
    :show-inheritance:
 
+aws\_cur\_config
+----------------
+
+.. automodule:: datadog_api_client.v2.model.aws_cur_config
+   :members:
+   :show-inheritance:
+
+aws\_cur\_config\_attributes
+----------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_cur_config_attributes
+   :members:
+   :show-inheritance:
+
+aws\_cur\_config\_patch\_data
+-----------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_cur_config_patch_data
+   :members:
+   :show-inheritance:
+
+aws\_cur\_config\_patch\_request
+--------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_cur_config_patch_request
+   :members:
+   :show-inheritance:
+
+aws\_cur\_config\_patch\_request\_attributes
+--------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_cur_config_patch_request_attributes
+   :members:
+   :show-inheritance:
+
+aws\_cur\_config\_patch\_request\_type
+--------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_cur_config_patch_request_type
+   :members:
+   :show-inheritance:
+
+aws\_cur\_config\_post\_data
+----------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_cur_config_post_data
+   :members:
+   :show-inheritance:
+
+aws\_cur\_config\_post\_request
+-------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_cur_config_post_request
+   :members:
+   :show-inheritance:
+
+aws\_cur\_config\_post\_request\_attributes
+-------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_cur_config_post_request_attributes
+   :members:
+   :show-inheritance:
+
+aws\_cur\_config\_post\_request\_type
+-------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_cur_config_post_request_type
+   :members:
+   :show-inheritance:
+
+aws\_cur\_config\_response
+--------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_cur_config_response
+   :members:
+   :show-inheritance:
+
+aws\_cur\_config\_type
+----------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_cur_config_type
+   :members:
+   :show-inheritance:
+
+aws\_cur\_configs\_response
+---------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_cur_configs_response
+   :members:
+   :show-inheritance:
+
+aws\_related\_account
+---------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_related_account
+   :members:
+   :show-inheritance:
+
+aws\_related\_account\_attributes
+---------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_related_account_attributes
+   :members:
+   :show-inheritance:
+
+aws\_related\_account\_type
+---------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_related_account_type
+   :members:
+   :show-inheritance:
+
+aws\_related\_accounts\_response
+--------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_related_accounts_response
+   :members:
+   :show-inheritance:
+
+azure\_uc\_config
+-----------------
+
+.. automodule:: datadog_api_client.v2.model.azure_uc_config
+   :members:
+   :show-inheritance:
+
+azure\_uc\_config\_pair
+-----------------------
+
+.. automodule:: datadog_api_client.v2.model.azure_uc_config_pair
+   :members:
+   :show-inheritance:
+
+azure\_uc\_config\_pair\_attributes
+-----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.azure_uc_config_pair_attributes
+   :members:
+   :show-inheritance:
+
+azure\_uc\_config\_pair\_type
+-----------------------------
+
+.. automodule:: datadog_api_client.v2.model.azure_uc_config_pair_type
+   :members:
+   :show-inheritance:
+
+azure\_uc\_config\_pairs\_response
+----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.azure_uc_config_pairs_response
+   :members:
+   :show-inheritance:
+
+azure\_uc\_config\_patch\_data
+------------------------------
+
+.. automodule:: datadog_api_client.v2.model.azure_uc_config_patch_data
+   :members:
+   :show-inheritance:
+
+azure\_uc\_config\_patch\_request
+---------------------------------
+
+.. automodule:: datadog_api_client.v2.model.azure_uc_config_patch_request
+   :members:
+   :show-inheritance:
+
+azure\_uc\_config\_patch\_request\_attributes
+---------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.azure_uc_config_patch_request_attributes
+   :members:
+   :show-inheritance:
+
+azure\_uc\_config\_patch\_request\_type
+---------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.azure_uc_config_patch_request_type
+   :members:
+   :show-inheritance:
+
+azure\_uc\_config\_post\_data
+-----------------------------
+
+.. automodule:: datadog_api_client.v2.model.azure_uc_config_post_data
+   :members:
+   :show-inheritance:
+
+azure\_uc\_config\_post\_request
+--------------------------------
+
+.. automodule:: datadog_api_client.v2.model.azure_uc_config_post_request
+   :members:
+   :show-inheritance:
+
+azure\_uc\_config\_post\_request\_attributes
+--------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.azure_uc_config_post_request_attributes
+   :members:
+   :show-inheritance:
+
+azure\_uc\_config\_post\_request\_type
+--------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.azure_uc_config_post_request_type
+   :members:
+   :show-inheritance:
+
+azure\_uc\_configs\_response
+----------------------------
+
+.. automodule:: datadog_api_client.v2.model.azure_uc_configs_response
+   :members:
+   :show-inheritance:
+
+bill\_config
+------------
+
+.. automodule:: datadog_api_client.v2.model.bill_config
+   :members:
+   :show-inheritance:
+
 bulk\_mute\_findings\_request
 -----------------------------
 
@@ -1041,6 +1265,34 @@ cloud\_configuration\_rule\_type
 --------------------------------
 
 .. automodule:: datadog_api_client.v2.model.cloud_configuration_rule_type
+   :members:
+   :show-inheritance:
+
+cloud\_cost\_activity
+---------------------
+
+.. automodule:: datadog_api_client.v2.model.cloud_cost_activity
+   :members:
+   :show-inheritance:
+
+cloud\_cost\_activity\_attributes
+---------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cloud_cost_activity_attributes
+   :members:
+   :show-inheritance:
+
+cloud\_cost\_activity\_response
+-------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cloud_cost_activity_response
+   :members:
+   :show-inheritance:
+
+cloud\_cost\_activity\_type
+---------------------------
+
+.. automodule:: datadog_api_client.v2.model.cloud_cost_activity_type
    :members:
    :show-inheritance:
 
@@ -4936,6 +5188,76 @@ nullable\_relationship\_to\_user\_data
    :members:
    :show-inheritance:
 
+okta\_account
+-------------
+
+.. automodule:: datadog_api_client.v2.model.okta_account
+   :members:
+   :show-inheritance:
+
+okta\_account\_attributes
+-------------------------
+
+.. automodule:: datadog_api_client.v2.model.okta_account_attributes
+   :members:
+   :show-inheritance:
+
+okta\_account\_request
+----------------------
+
+.. automodule:: datadog_api_client.v2.model.okta_account_request
+   :members:
+   :show-inheritance:
+
+okta\_account\_response
+-----------------------
+
+.. automodule:: datadog_api_client.v2.model.okta_account_response
+   :members:
+   :show-inheritance:
+
+okta\_account\_response\_data
+-----------------------------
+
+.. automodule:: datadog_api_client.v2.model.okta_account_response_data
+   :members:
+   :show-inheritance:
+
+okta\_account\_type
+-------------------
+
+.. automodule:: datadog_api_client.v2.model.okta_account_type
+   :members:
+   :show-inheritance:
+
+okta\_account\_update\_request
+------------------------------
+
+.. automodule:: datadog_api_client.v2.model.okta_account_update_request
+   :members:
+   :show-inheritance:
+
+okta\_account\_update\_request\_attributes
+------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.okta_account_update_request_attributes
+   :members:
+   :show-inheritance:
+
+okta\_account\_update\_request\_data
+------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.okta_account_update_request_data
+   :members:
+   :show-inheritance:
+
+okta\_accounts\_response
+------------------------
+
+.. automodule:: datadog_api_client.v2.model.okta_accounts_response
+   :members:
+   :show-inheritance:
+
 on\_demand\_concurrency\_cap
 ----------------------------
 
@@ -5654,6 +5976,20 @@ relationship\_to\_user\_team\_permission\_data
 ----------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.relationship_to_user_team_permission_data
+   :members:
+   :show-inheritance:
+
+relationship\_to\_user\_team\_team
+----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.relationship_to_user_team_team
+   :members:
+   :show-inheritance:
+
+relationship\_to\_user\_team\_team\_data
+----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.relationship_to_user_team_team_data
    :members:
    :show-inheritance:
 
@@ -6714,6 +7050,13 @@ security\_monitoring\_rule\_severity
    :members:
    :show-inheritance:
 
+security\_monitoring\_rule\_third\_party\_options
+-------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_rule_third_party_options
+   :members:
+   :show-inheritance:
+
 security\_monitoring\_rule\_type\_create
 ----------------------------------------
 
@@ -6984,6 +7327,27 @@ security\_monitoring\_standard\_rule\_response
 ----------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.security_monitoring_standard_rule_response
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_third\_party\_root\_query
+-----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_third_party_root_query
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_third\_party\_rule\_case
+----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_third_party_rule_case
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_third\_party\_rule\_case\_create
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_third_party_rule_case_create
    :members:
    :show-inheritance:
 
@@ -8846,6 +9210,13 @@ user\_team\_role
 ----------------
 
 .. automodule:: datadog_api_client.v2.model.user_team_role
+   :members:
+   :show-inheritance:
+
+user\_team\_team\_type
+----------------------
+
+.. automodule:: datadog_api_client.v2.model.user_team_team_type
    :members:
    :show-inheritance:
 

@@ -20,6 +20,7 @@ from datadog_api_client.v2.model.downtime_response import DowntimeResponse
 from datadog_api_client.v2.model.downtime_create_request import DowntimeCreateRequest
 from datadog_api_client.v2.model.downtime_update_request import DowntimeUpdateRequest
 from datadog_api_client.v2.model.monitor_downtime_match_response import MonitorDowntimeMatchResponse
+from datadog_api_client.v2.model.monitor_downtime_match_response_data import MonitorDowntimeMatchResponseData
 
 
 class DowntimesApi:
@@ -160,6 +161,16 @@ class DowntimesApi:
                     "openapi_types": (int,),
                     "attribute": "monitor_id",
                     "location": "path",
+                },
+                "page_offset": {
+                    "openapi_types": (int,),
+                    "attribute": "page[offset]",
+                    "location": "query",
+                },
+                "page_limit": {
+                    "openapi_types": (int,),
+                    "attribute": "page[limit]",
+                    "location": "query",
                 },
             },
             headers_map={
@@ -344,6 +355,9 @@ class DowntimesApi:
     def list_monitor_downtimes(
         self,
         monitor_id: int,
+        *,
+        page_offset: Union[int, UnsetType] = unset,
+        page_limit: Union[int, UnsetType] = unset,
     ) -> MonitorDowntimeMatchResponse:
         """Get active downtimes for a monitor.
 
@@ -351,12 +365,64 @@ class DowntimesApi:
 
         :param monitor_id: The id of the monitor.
         :type monitor_id: int
+        :param page_offset: Specific offset to use as the beginning of the returned page.
+        :type page_offset: int, optional
+        :param page_limit: Maximum number of downtimes in the response.
+        :type page_limit: int, optional
         :rtype: MonitorDowntimeMatchResponse
         """
         kwargs: Dict[str, Any] = {}
         kwargs["monitor_id"] = monitor_id
 
+        if page_offset is not unset:
+            kwargs["page_offset"] = page_offset
+
+        if page_limit is not unset:
+            kwargs["page_limit"] = page_limit
+
         return self._list_monitor_downtimes_endpoint.call_with_http_info(**kwargs)
+
+    def list_monitor_downtimes_with_pagination(
+        self,
+        monitor_id: int,
+        *,
+        page_offset: Union[int, UnsetType] = unset,
+        page_limit: Union[int, UnsetType] = unset,
+    ) -> collections.abc.Iterable[MonitorDowntimeMatchResponseData]:
+        """Get active downtimes for a monitor.
+
+        Provide a paginated version of :meth:`list_monitor_downtimes`, returning all items.
+
+        :param monitor_id: The id of the monitor.
+        :type monitor_id: int
+        :param page_offset: Specific offset to use as the beginning of the returned page.
+        :type page_offset: int, optional
+        :param page_limit: Maximum number of downtimes in the response.
+        :type page_limit: int, optional
+
+        :return: A generator of paginated results.
+        :rtype: collections.abc.Iterable[MonitorDowntimeMatchResponseData]
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["monitor_id"] = monitor_id
+
+        if page_offset is not unset:
+            kwargs["page_offset"] = page_offset
+
+        if page_limit is not unset:
+            kwargs["page_limit"] = page_limit
+
+        local_page_size = get_attribute_from_path(kwargs, "page_limit", 30)
+        endpoint = self._list_monitor_downtimes_endpoint
+        set_attribute_from_path(kwargs, "page_limit", local_page_size, endpoint.params_map)
+        pagination = {
+            "limit_value": local_page_size,
+            "results_path": "data",
+            "page_offset_param": "page_offset",
+            "endpoint": endpoint,
+            "kwargs": kwargs,
+        }
+        return endpoint.call_with_http_info_paginated(pagination)
 
     def update_downtime(
         self,

@@ -14,6 +14,13 @@ from datadog_api_client.model_utils import (
 
 
 class SensitiveDataScannerStandardPatternAttributes(ModelNormal):
+    validations = {
+        "priority": {
+            "inclusive_maximum": 5,
+            "inclusive_minimum": 1,
+        },
+    }
+
     @cached_property
     def openapi_types(_):
         return {
@@ -21,6 +28,7 @@ class SensitiveDataScannerStandardPatternAttributes(ModelNormal):
             "included_keywords": ([str],),
             "name": (str,),
             "pattern": (str,),
+            "priority": (int,),
             "tags": ([str],),
         }
 
@@ -29,6 +37,7 @@ class SensitiveDataScannerStandardPatternAttributes(ModelNormal):
         "included_keywords": "included_keywords",
         "name": "name",
         "pattern": "pattern",
+        "priority": "priority",
         "tags": "tags",
     }
 
@@ -38,6 +47,7 @@ class SensitiveDataScannerStandardPatternAttributes(ModelNormal):
         included_keywords: Union[List[str], UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
         pattern: Union[str, UnsetType] = unset,
+        priority: Union[int, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
         **kwargs,
     ):
@@ -56,6 +66,9 @@ class SensitiveDataScannerStandardPatternAttributes(ModelNormal):
         :param pattern: Regex to match.
         :type pattern: str, optional
 
+        :param priority: Integer from 1 (high) to 5 (low) indicating standard pattern issue severity.
+        :type priority: int, optional
+
         :param tags: List of tags.
         :type tags: [str], optional
         """
@@ -67,6 +80,8 @@ class SensitiveDataScannerStandardPatternAttributes(ModelNormal):
             kwargs["name"] = name
         if pattern is not unset:
             kwargs["pattern"] = pattern
+        if priority is not unset:
+            kwargs["priority"] = priority
         if tags is not unset:
             kwargs["tags"] = tags
         super().__init__(kwargs)

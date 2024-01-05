@@ -1,0 +1,58 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"auth_method":"oauth","client_id":"fakeclientid","client_secret":"fakeclientsecret","domain":"https://dev-test.okta.com/","name":"testupdateoktaaccountreturnsokresponse1700585987"},"type":"okta-accounts"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/integrations/okta/accounts
+  response:
+    body:
+      string: '{"data":{"type":"okta-accounts","attributes":{"domain":"https://dev-test.okta.com/","auth_method":"oauth","client_id":"fakeclientid","name":"testupdateoktaaccountreturnsokresponse1700585987"},"id":"c847a349-9687-4b80-8b0f-996e0e75f73e"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"auth_method":"oauth","client_id":"client_id","client_secret":"client_secret","domain":"https://example.okta.com/"},"type":"okta-accounts"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/integrations/okta/accounts/c847a349-9687-4b80-8b0f-996e0e75f73e
+  response:
+    body:
+      string: '{"data":{"type":"okta-accounts","id":"7343985f-6e86-4327-8792-538b4c9b38e9","attributes":{"auth_method":"oauth","client_id":"client_id","domain":"https://example.okta.com/","name":"testupdateoktaaccountreturnsokresponse1700585987"}}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/integrations/okta/accounts/c847a349-9687-4b80-8b0f-996e0e75f73e
+  response:
+    body:
+      string: '{"errors":["Unknown error occurred: "]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 400
+      message: Bad Request
+version: 1

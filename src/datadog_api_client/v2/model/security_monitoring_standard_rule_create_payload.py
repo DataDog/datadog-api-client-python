@@ -18,6 +18,9 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.security_monitoring_filter import SecurityMonitoringFilter
     from datadog_api_client.v2.model.security_monitoring_rule_options import SecurityMonitoringRuleOptions
     from datadog_api_client.v2.model.security_monitoring_standard_rule_query import SecurityMonitoringStandardRuleQuery
+    from datadog_api_client.v2.model.security_monitoring_third_party_rule_case_create import (
+        SecurityMonitoringThirdPartyRuleCaseCreate,
+    )
     from datadog_api_client.v2.model.security_monitoring_rule_type_create import SecurityMonitoringRuleTypeCreate
 
 
@@ -29,6 +32,9 @@ class SecurityMonitoringStandardRuleCreatePayload(ModelNormal):
         from datadog_api_client.v2.model.security_monitoring_rule_options import SecurityMonitoringRuleOptions
         from datadog_api_client.v2.model.security_monitoring_standard_rule_query import (
             SecurityMonitoringStandardRuleQuery,
+        )
+        from datadog_api_client.v2.model.security_monitoring_third_party_rule_case_create import (
+            SecurityMonitoringThirdPartyRuleCaseCreate,
         )
         from datadog_api_client.v2.model.security_monitoring_rule_type_create import SecurityMonitoringRuleTypeCreate
 
@@ -42,6 +48,7 @@ class SecurityMonitoringStandardRuleCreatePayload(ModelNormal):
             "options": (SecurityMonitoringRuleOptions,),
             "queries": ([SecurityMonitoringStandardRuleQuery],),
             "tags": ([str],),
+            "third_party_cases": ([SecurityMonitoringThirdPartyRuleCaseCreate],),
             "type": (SecurityMonitoringRuleTypeCreate,),
         }
 
@@ -55,6 +62,7 @@ class SecurityMonitoringStandardRuleCreatePayload(ModelNormal):
         "options": "options",
         "queries": "queries",
         "tags": "tags",
+        "third_party_cases": "thirdPartyCases",
         "type": "type",
     }
 
@@ -69,6 +77,7 @@ class SecurityMonitoringStandardRuleCreatePayload(ModelNormal):
         filters: Union[List[SecurityMonitoringFilter], UnsetType] = unset,
         has_extended_title: Union[bool, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
+        third_party_cases: Union[List[SecurityMonitoringThirdPartyRuleCaseCreate], UnsetType] = unset,
         type: Union[SecurityMonitoringRuleTypeCreate, UnsetType] = unset,
         **kwargs,
     ):
@@ -102,6 +111,9 @@ class SecurityMonitoringStandardRuleCreatePayload(ModelNormal):
         :param tags: Tags for generated signals.
         :type tags: [str], optional
 
+        :param third_party_cases: Cases for generating signals from third party rules. Only available for third party rules.
+        :type third_party_cases: [SecurityMonitoringThirdPartyRuleCaseCreate], optional
+
         :param type: The rule type.
         :type type: SecurityMonitoringRuleTypeCreate, optional
         """
@@ -111,6 +123,8 @@ class SecurityMonitoringStandardRuleCreatePayload(ModelNormal):
             kwargs["has_extended_title"] = has_extended_title
         if tags is not unset:
             kwargs["tags"] = tags
+        if third_party_cases is not unset:
+            kwargs["third_party_cases"] = third_party_cases
         if type is not unset:
             kwargs["type"] = type
         super().__init__(kwargs)

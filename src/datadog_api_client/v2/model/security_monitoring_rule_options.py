@@ -36,6 +36,9 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.security_monitoring_rule_new_value_options import (
         SecurityMonitoringRuleNewValueOptions,
     )
+    from datadog_api_client.v2.model.security_monitoring_rule_third_party_options import (
+        SecurityMonitoringRuleThirdPartyOptions,
+    )
 
 
 class SecurityMonitoringRuleOptions(ModelNormal):
@@ -63,6 +66,9 @@ class SecurityMonitoringRuleOptions(ModelNormal):
         from datadog_api_client.v2.model.security_monitoring_rule_new_value_options import (
             SecurityMonitoringRuleNewValueOptions,
         )
+        from datadog_api_client.v2.model.security_monitoring_rule_third_party_options import (
+            SecurityMonitoringRuleThirdPartyOptions,
+        )
 
         return {
             "compliance_rule_options": (CloudConfigurationComplianceRuleOptions,),
@@ -74,6 +80,7 @@ class SecurityMonitoringRuleOptions(ModelNormal):
             "keep_alive": (SecurityMonitoringRuleKeepAlive,),
             "max_signal_duration": (SecurityMonitoringRuleMaxSignalDuration,),
             "new_value_options": (SecurityMonitoringRuleNewValueOptions,),
+            "third_party_rule_options": (SecurityMonitoringRuleThirdPartyOptions,),
         }
 
     attribute_map = {
@@ -86,6 +93,7 @@ class SecurityMonitoringRuleOptions(ModelNormal):
         "keep_alive": "keepAlive",
         "max_signal_duration": "maxSignalDuration",
         "new_value_options": "newValueOptions",
+        "third_party_rule_options": "thirdPartyRuleOptions",
     }
 
     def __init__(
@@ -99,6 +107,7 @@ class SecurityMonitoringRuleOptions(ModelNormal):
         keep_alive: Union[SecurityMonitoringRuleKeepAlive, UnsetType] = unset,
         max_signal_duration: Union[SecurityMonitoringRuleMaxSignalDuration, UnsetType] = unset,
         new_value_options: Union[SecurityMonitoringRuleNewValueOptions, UnsetType] = unset,
+        third_party_rule_options: Union[SecurityMonitoringRuleThirdPartyOptions, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -136,6 +145,9 @@ class SecurityMonitoringRuleOptions(ModelNormal):
 
         :param new_value_options: Options on new value rules.
         :type new_value_options: SecurityMonitoringRuleNewValueOptions, optional
+
+        :param third_party_rule_options: Options on third party rules.
+        :type third_party_rule_options: SecurityMonitoringRuleThirdPartyOptions, optional
         """
         if compliance_rule_options is not unset:
             kwargs["compliance_rule_options"] = compliance_rule_options
@@ -155,4 +167,6 @@ class SecurityMonitoringRuleOptions(ModelNormal):
             kwargs["max_signal_duration"] = max_signal_duration
         if new_value_options is not unset:
             kwargs["new_value_options"] = new_value_options
+        if third_party_rule_options is not unset:
+            kwargs["third_party_rule_options"] = third_party_rule_options
         super().__init__(kwargs)
