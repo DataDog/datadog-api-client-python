@@ -284,9 +284,9 @@ class Configuration:
         # Load default values from environment
         if "DD_SITE" in os.environ:
             self.server_variables["site"] = os.environ["DD_SITE"]
-        if "DD_API_KEY" in os.environ:
+        if "DD_API_KEY" in os.environ and not self.api_key.get("apiKeyAuth"):
             self.api_key["apiKeyAuth"] = os.environ["DD_API_KEY"]
-        if "DD_APP_KEY" in os.environ:
+        if "DD_APP_KEY" in os.environ and not self.api_key.get("appKeyAuth"):
             self.api_key["appKeyAuth"] = os.environ["DD_APP_KEY"]
 
     def __deepcopy__(self, memo):
