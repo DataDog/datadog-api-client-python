@@ -1291,6 +1291,9 @@ from datadog_api_client.v2.model.sensitive_data_scanner_group_update_request imp
 from datadog_api_client.v2.model.sensitive_data_scanner_group_update_response import (
     SensitiveDataScannerGroupUpdateResponse,
 )
+from datadog_api_client.v2.model.sensitive_data_scanner_included_keyword_configuration import (
+    SensitiveDataScannerIncludedKeywordConfiguration,
+)
 from datadog_api_client.v2.model.sensitive_data_scanner_meta import SensitiveDataScannerMeta
 from datadog_api_client.v2.model.sensitive_data_scanner_meta_version_only import SensitiveDataScannerMetaVersionOnly
 from datadog_api_client.v2.model.sensitive_data_scanner_product import SensitiveDataScannerProduct
@@ -2649,6 +2652,7 @@ __all__ = [
     "SensitiveDataScannerGroupUpdate",
     "SensitiveDataScannerGroupUpdateRequest",
     "SensitiveDataScannerGroupUpdateResponse",
+    "SensitiveDataScannerIncludedKeywordConfiguration",
     "SensitiveDataScannerMeta",
     "SensitiveDataScannerMetaVersionOnly",
     "SensitiveDataScannerProduct",

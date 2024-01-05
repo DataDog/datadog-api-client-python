@@ -8,6 +8,9 @@ from datadog_api_client.v2.api.sensitive_data_scanner_api import SensitiveDataSc
 from datadog_api_client.v2.model.sensitive_data_scanner_group import SensitiveDataScannerGroup
 from datadog_api_client.v2.model.sensitive_data_scanner_group_data import SensitiveDataScannerGroupData
 from datadog_api_client.v2.model.sensitive_data_scanner_group_type import SensitiveDataScannerGroupType
+from datadog_api_client.v2.model.sensitive_data_scanner_included_keyword_configuration import (
+    SensitiveDataScannerIncludedKeywordConfiguration,
+)
 from datadog_api_client.v2.model.sensitive_data_scanner_meta_version_only import SensitiveDataScannerMetaVersionOnly
 from datadog_api_client.v2.model.sensitive_data_scanner_rule_attributes import SensitiveDataScannerRuleAttributes
 from datadog_api_client.v2.model.sensitive_data_scanner_rule_create import SensitiveDataScannerRuleCreate
@@ -43,6 +46,12 @@ body = SensitiveDataScannerRuleCreateRequest(
             ],
             is_enabled=True,
             priority=1,
+            included_keyword_configuration=SensitiveDataScannerIncludedKeywordConfiguration(
+                keywords=[
+                    "credit card",
+                ],
+                character_count=35,
+            ),
         ),
         relationships=SensitiveDataScannerRuleRelationships(
             group=SensitiveDataScannerGroupData(

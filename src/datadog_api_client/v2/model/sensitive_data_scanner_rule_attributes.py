@@ -14,6 +14,9 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.sensitive_data_scanner_included_keyword_configuration import (
+        SensitiveDataScannerIncludedKeywordConfiguration,
+    )
     from datadog_api_client.v2.model.sensitive_data_scanner_text_replacement import SensitiveDataScannerTextReplacement
 
 
@@ -27,6 +30,9 @@ class SensitiveDataScannerRuleAttributes(ModelNormal):
 
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.sensitive_data_scanner_included_keyword_configuration import (
+            SensitiveDataScannerIncludedKeywordConfiguration,
+        )
         from datadog_api_client.v2.model.sensitive_data_scanner_text_replacement import (
             SensitiveDataScannerTextReplacement,
         )
@@ -34,6 +40,7 @@ class SensitiveDataScannerRuleAttributes(ModelNormal):
         return {
             "description": (str,),
             "excluded_namespaces": ([str],),
+            "included_keyword_configuration": (SensitiveDataScannerIncludedKeywordConfiguration,),
             "is_enabled": (bool,),
             "name": (str,),
             "namespaces": ([str],),
@@ -46,6 +53,7 @@ class SensitiveDataScannerRuleAttributes(ModelNormal):
     attribute_map = {
         "description": "description",
         "excluded_namespaces": "excluded_namespaces",
+        "included_keyword_configuration": "included_keyword_configuration",
         "is_enabled": "is_enabled",
         "name": "name",
         "namespaces": "namespaces",
@@ -59,6 +67,7 @@ class SensitiveDataScannerRuleAttributes(ModelNormal):
         self_,
         description: Union[str, UnsetType] = unset,
         excluded_namespaces: Union[List[str], UnsetType] = unset,
+        included_keyword_configuration: Union[SensitiveDataScannerIncludedKeywordConfiguration, UnsetType] = unset,
         is_enabled: Union[bool, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
         namespaces: Union[List[str], UnsetType] = unset,
@@ -76,6 +85,12 @@ class SensitiveDataScannerRuleAttributes(ModelNormal):
 
         :param excluded_namespaces: Attributes excluded from the scan. If namespaces is provided, it has to be a sub-path of the namespaces array.
         :type excluded_namespaces: [str], optional
+
+        :param included_keyword_configuration: Object defining a set of keywords and a number of characters that help reduce noise.
+            You can provide a list of keywords you would like to check within a defined proximity of the matching pattern.
+            If any of the keywords are found within the proximity check, the match is kept.
+            If none are found, the match is discarded.
+        :type included_keyword_configuration: SensitiveDataScannerIncludedKeywordConfiguration, optional
 
         :param is_enabled: Whether or not the rule is enabled.
         :type is_enabled: bool, optional
@@ -103,6 +118,8 @@ class SensitiveDataScannerRuleAttributes(ModelNormal):
             kwargs["description"] = description
         if excluded_namespaces is not unset:
             kwargs["excluded_namespaces"] = excluded_namespaces
+        if included_keyword_configuration is not unset:
+            kwargs["included_keyword_configuration"] = included_keyword_configuration
         if is_enabled is not unset:
             kwargs["is_enabled"] = is_enabled
         if name is not unset:

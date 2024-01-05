@@ -8,7 +8,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/sensitive-data-scanner/config
   response:
     body:
-      string: '{"data":{"id":"7957915c634d4dcb581fa154157f5ad9c2947f50be632fb5599862069f4d2d87","attributes":{},"type":"sensitive_data_scanner_configuration","relationships":{"groups":{"data":[{"id":"z9vY6YO8R-2q6dv_rTUOCA","type":"sensitive_data_scanner_group"},{"id":"01OnORacS5qHeVO7C97drg","type":"sensitive_data_scanner_group"}]}}},"meta":{"version":127243,"count_limit":100,"group_count_limit":20,"is_pci_compliant":false,"has_highlight_enabled":true,"has_multi_pass_enabled":true},"included":[{"id":"z9vY6YO8R-2q6dv_rTUOCA","attributes":{"name":"Example-Update_Scanning_Group_returns_OK_response_1696199477","is_enabled":false,"filter":{"query":"*"},"product_list":["logs"]},"type":"sensitive_data_scanner_group","relationships":{"configuration":{"data":{"id":"7957915c634d4dcb581fa154157f5ad9c2947f50be632fb5599862069f4d2d87","type":"sensitive_data_scanner_configuration"}},"rules":{"data":[]}}},{"id":"01OnORacS5qHeVO7C97drg","attributes":{"name":"my-test-group","is_enabled":false,"filter":{"query":"*"},"product_list":["logs"]},"type":"sensitive_data_scanner_group","relationships":{"configuration":{"data":{"id":"7957915c634d4dcb581fa154157f5ad9c2947f50be632fb5599862069f4d2d87","type":"sensitive_data_scanner_configuration"}},"rules":{"data":[]}}}]}
+      string: '{"data":{"id":"7957915c634d4dcb581fa154157f5ad9c2947f50be632fb5599862069f4d2d87","attributes":{},"type":"sensitive_data_scanner_configuration","relationships":{"groups":{"data":[{"id":"z9vY6YO8R-2q6dv_rTUOCA","type":"sensitive_data_scanner_group"},{"id":"01OnORacS5qHeVO7C97drg","type":"sensitive_data_scanner_group"},{"id":"IuYiCydSTAWqDyW5242-XA","type":"sensitive_data_scanner_group"},{"id":"HwQk4sJHSRmhHyo6KyXHWw","type":"sensitive_data_scanner_group"},{"id":"NChKshYdT6SvdiJE62DQgg","type":"sensitive_data_scanner_group"},{"id":"q6h4G_icTLWHvnT9U90PfQ","type":"sensitive_data_scanner_group"},{"id":"sOpLckMyTYW1ZXMXMeJnnQ","type":"sensitive_data_scanner_group"},{"id":"_o1TJ7yVSoKJLD9ioIyjeQ","type":"sensitive_data_scanner_group"},{"id":"yWBB9T6cQwarJAo0GzrdXw","type":"sensitive_data_scanner_group"}]}}},"meta":{"version":135496,"count_limit":100,"group_count_limit":20,"is_pci_compliant":false,"has_highlight_enabled":true,"has_multi_pass_enabled":true},"included":[{"id":"z9vY6YO8R-2q6dv_rTUOCA","attributes":{"name":"Example-Update_Scanning_Group_returns_OK_response_1696199477","is_enabled":false,"filter":{"query":"*"},"product_list":["logs"]},"type":"sensitive_data_scanner_group","relationships":{"configuration":{"data":{"id":"7957915c634d4dcb581fa154157f5ad9c2947f50be632fb5599862069f4d2d87","type":"sensitive_data_scanner_configuration"}},"rules":{"data":[]}}},{"id":"01OnORacS5qHeVO7C97drg","attributes":{"name":"my-test-group","is_enabled":false,"filter":{"query":"*"},"product_list":["logs"]},"type":"sensitive_data_scanner_group","relationships":{"configuration":{"data":{"id":"7957915c634d4dcb581fa154157f5ad9c2947f50be632fb5599862069f4d2d87","type":"sensitive_data_scanner_configuration"}},"rules":{"data":[]}}},{"id":"IuYiCydSTAWqDyW5242-XA","attributes":{"name":"my-test-group","is_enabled":false,"filter":{"query":"*"},"product_list":["logs"]},"type":"sensitive_data_scanner_group","relationships":{"configuration":{"data":{"id":"7957915c634d4dcb581fa154157f5ad9c2947f50be632fb5599862069f4d2d87","type":"sensitive_data_scanner_configuration"}},"rules":{"data":[]}}},{"id":"HwQk4sJHSRmhHyo6KyXHWw","attributes":{"name":"Example-Create_Scanning_Group_returns_OK_response_1702721006","is_enabled":false,"filter":{"query":"*"},"product_list":["logs"]},"type":"sensitive_data_scanner_group","relationships":{"configuration":{"data":{"id":"7957915c634d4dcb581fa154157f5ad9c2947f50be632fb5599862069f4d2d87","type":"sensitive_data_scanner_configuration"}},"rules":{"data":[]}}},{"id":"NChKshYdT6SvdiJE62DQgg","attributes":{"name":"my-test-group","is_enabled":false,"filter":{"query":"*"},"product_list":["logs"]},"type":"sensitive_data_scanner_group","relationships":{"configuration":{"data":{"id":"7957915c634d4dcb581fa154157f5ad9c2947f50be632fb5599862069f4d2d87","type":"sensitive_data_scanner_configuration"}},"rules":{"data":[]}}},{"id":"q6h4G_icTLWHvnT9U90PfQ","attributes":{"name":"my-test-group","is_enabled":false,"filter":{"query":"*"},"product_list":["logs"]},"type":"sensitive_data_scanner_group","relationships":{"configuration":{"data":{"id":"7957915c634d4dcb581fa154157f5ad9c2947f50be632fb5599862069f4d2d87","type":"sensitive_data_scanner_configuration"}},"rules":{"data":[]}}},{"id":"sOpLckMyTYW1ZXMXMeJnnQ","attributes":{"name":"my-test-group","is_enabled":false,"filter":{"query":"*"},"product_list":["logs"]},"type":"sensitive_data_scanner_group","relationships":{"configuration":{"data":{"id":"7957915c634d4dcb581fa154157f5ad9c2947f50be632fb5599862069f4d2d87","type":"sensitive_data_scanner_configuration"}},"rules":{"data":[]}}},{"id":"_o1TJ7yVSoKJLD9ioIyjeQ","attributes":{"name":"Example-Create_Scanning_Group_returns_OK_response_1703945006","is_enabled":false,"filter":{"query":"*"},"product_list":["logs"]},"type":"sensitive_data_scanner_group","relationships":{"configuration":{"data":{"id":"7957915c634d4dcb581fa154157f5ad9c2947f50be632fb5599862069f4d2d87","type":"sensitive_data_scanner_configuration"}},"rules":{"data":[]}}},{"id":"yWBB9T6cQwarJAo0GzrdXw","attributes":{"name":"my-test-group","is_enabled":false,"filter":{"query":"*"},"product_list":["logs"]},"type":"sensitive_data_scanner_group","relationships":{"configuration":{"data":{"id":"7957915c634d4dcb581fa154157f5ad9c2947f50be632fb5599862069f4d2d87","type":"sensitive_data_scanner_configuration"}},"rules":{"data":[]}}}]}
 
         '
     headers:
@@ -28,7 +28,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/sensitive-data-scanner/config/groups
   response:
     body:
-      string: '{"data":{"id":"Dyurbbz2Tk23SMEr4fcHCw","attributes":{"name":"my-test-group","is_enabled":false,"filter":{"query":"*"},"product_list":["logs"]},"type":"sensitive_data_scanner_group","relationships":{"configuration":{"data":{"id":"7957915c634d4dcb581fa154157f5ad9c2947f50be632fb5599862069f4d2d87","type":"sensitive_data_scanner_configuration"}},"rules":{"data":[]}}},"meta":{"version":127244}}
+      string: '{"data":{"id":"bAkcDr-KRlCrw7Ojq_-tJg","attributes":{"name":"my-test-group","is_enabled":false,"filter":{"query":"*"},"product_list":["logs"]},"type":"sensitive_data_scanner_group","relationships":{"configuration":{"data":{"id":"7957915c634d4dcb581fa154157f5ad9c2947f50be632fb5599862069f4d2d87","type":"sensitive_data_scanner_configuration"}},"rules":{"data":[]}}},"meta":{"version":135497}}
 
         '
     headers:
@@ -38,7 +38,8 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"data":{"attributes":{"excluded_namespaces":["admin.name"],"is_enabled":true,"name":"Test-Create_Scanning_Rule_returns_OK_response-1702458398","namespaces":["admin"],"pattern":"pattern","priority":1,"tags":["sensitive_data:true"],"text_replacement":{"type":"none"}},"relationships":{"group":{"data":{"id":"Dyurbbz2Tk23SMEr4fcHCw","type":"sensitive_data_scanner_group"}}},"type":"sensitive_data_scanner_rule"},"meta":{}}'
+    body: '{"data":{"attributes":{"excluded_namespaces":["admin.name"],"included_keyword_configuration":{"character_count":35,"keywords":["credit
+      card"]},"is_enabled":true,"name":"Test-Create_Scanning_Rule_returns_OK_response-1704376263","namespaces":["admin"],"pattern":"pattern","priority":1,"tags":["sensitive_data:true"],"text_replacement":{"type":"none"}},"relationships":{"group":{"data":{"id":"bAkcDr-KRlCrw7Ojq_-tJg","type":"sensitive_data_scanner_group"}}},"type":"sensitive_data_scanner_rule"},"meta":{}}'
     headers:
       accept:
       - application/json
@@ -48,7 +49,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/sensitive-data-scanner/config/rules
   response:
     body:
-      string: '{"data":{"id":"Xp3fpaEhSGKqtDFmXvJZwQ","attributes":{"name":"Test-Create_Scanning_Rule_returns_OK_response-1702458398","namespaces":["admin"],"excluded_namespaces":["admin.name"],"pattern":"pattern","text_replacement":{"type":"none"},"tags":["sensitive_data:true"],"is_enabled":true,"priority":1},"type":"sensitive_data_scanner_rule","relationships":{"group":{"data":{"id":"Dyurbbz2Tk23SMEr4fcHCw","type":"sensitive_data_scanner_group"}}}},"meta":{"version":127245}}
+      string: '{"data":{"id":"UwDWflSLSumJJeTlczBlGQ","attributes":{"name":"Test-Create_Scanning_Rule_returns_OK_response-1704376263","namespaces":["admin"],"excluded_namespaces":["admin.name"],"pattern":"pattern","text_replacement":{"type":"none"},"tags":["sensitive_data:true"],"is_enabled":true,"priority":1,"included_keyword_configuration":{"keywords":["credit
+        card"],"character_count":35}},"type":"sensitive_data_scanner_rule","relationships":{"group":{"data":{"id":"bAkcDr-KRlCrw7Ojq_-tJg","type":"sensitive_data_scanner_group"}}}},"meta":{"version":135498}}
 
         '
     headers:
@@ -65,10 +67,10 @@ interactions:
       content-type:
       - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/sensitive-data-scanner/config/rules/Xp3fpaEhSGKqtDFmXvJZwQ
+    uri: https://api.datadoghq.com/api/v2/sensitive-data-scanner/config/rules/UwDWflSLSumJJeTlczBlGQ
   response:
     body:
-      string: '{"meta":{"version":127246}}
+      string: '{"meta":{"version":135499}}
 
         '
     headers:
@@ -85,10 +87,10 @@ interactions:
       content-type:
       - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/sensitive-data-scanner/config/groups/Dyurbbz2Tk23SMEr4fcHCw
+    uri: https://api.datadoghq.com/api/v2/sensitive-data-scanner/config/groups/bAkcDr-KRlCrw7Ojq_-tJg
   response:
     body:
-      string: '{"meta":{"version":127247}}
+      string: '{"meta":{"version":135500}}
 
         '
     headers:
