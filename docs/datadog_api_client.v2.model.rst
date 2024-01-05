@@ -7554,6 +7554,13 @@ sensitive\_data\_scanner\_group\_update\_response
    :members:
    :show-inheritance:
 
+sensitive\_data\_scanner\_included\_keyword\_configuration
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sensitive_data_scanner_included_keyword_configuration
+   :members:
+   :show-inheritance:
+
 sensitive\_data\_scanner\_meta
 ------------------------------
 

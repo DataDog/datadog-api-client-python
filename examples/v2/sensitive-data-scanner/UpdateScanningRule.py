@@ -5,12 +5,11 @@ Update Scanning Rule returns "OK" response
 from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.sensitive_data_scanner_api import SensitiveDataScannerApi
-from datadog_api_client.v2.model.sensitive_data_scanner_group import SensitiveDataScannerGroup
-from datadog_api_client.v2.model.sensitive_data_scanner_group_data import SensitiveDataScannerGroupData
-from datadog_api_client.v2.model.sensitive_data_scanner_group_type import SensitiveDataScannerGroupType
+from datadog_api_client.v2.model.sensitive_data_scanner_included_keyword_configuration import (
+    SensitiveDataScannerIncludedKeywordConfiguration,
+)
 from datadog_api_client.v2.model.sensitive_data_scanner_meta_version_only import SensitiveDataScannerMetaVersionOnly
 from datadog_api_client.v2.model.sensitive_data_scanner_rule_attributes import SensitiveDataScannerRuleAttributes
-from datadog_api_client.v2.model.sensitive_data_scanner_rule_relationships import SensitiveDataScannerRuleRelationships
 from datadog_api_client.v2.model.sensitive_data_scanner_rule_type import SensitiveDataScannerRuleType
 from datadog_api_client.v2.model.sensitive_data_scanner_rule_update import SensitiveDataScannerRuleUpdate
 from datadog_api_client.v2.model.sensitive_data_scanner_rule_update_request import SensitiveDataScannerRuleUpdateRequest
@@ -21,9 +20,6 @@ from datadog_api_client.v2.model.sensitive_data_scanner_text_replacement_type im
 
 # the "scanning_group" has a "scanning_rule"
 RULE_DATA_ID = environ["RULE_DATA_ID"]
-
-# there is a valid "scanning_group" in the system
-GROUP_DATA_ID = environ["GROUP_DATA_ID"]
 
 body = SensitiveDataScannerRuleUpdateRequest(
     meta=SensitiveDataScannerMetaVersionOnly(),
@@ -41,13 +37,12 @@ body = SensitiveDataScannerRuleUpdateRequest(
             ],
             is_enabled=True,
             priority=5,
-        ),
-        relationships=SensitiveDataScannerRuleRelationships(
-            group=SensitiveDataScannerGroupData(
-                data=SensitiveDataScannerGroup(
-                    type=SensitiveDataScannerGroupType.SENSITIVE_DATA_SCANNER_GROUP,
-                    id=GROUP_DATA_ID,
-                ),
+            included_keyword_configuration=SensitiveDataScannerIncludedKeywordConfiguration(
+                keywords=[
+                    "credit card",
+                    "cc",
+                ],
+                character_count=35,
             ),
         ),
     ),
