@@ -122,7 +122,7 @@ Feature: Sensitive Data Scanner
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/logs-app @team:DataDog/logs-core
+  @integration-only @team:DataDog/logs-app @team:DataDog/logs-core
   Scenario: List standard patterns returns "OK" response
     Given new "ListStandardPatterns" request
     When the request is sent
