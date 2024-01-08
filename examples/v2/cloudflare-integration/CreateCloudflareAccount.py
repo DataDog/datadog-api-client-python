@@ -15,7 +15,7 @@ body = CloudflareAccountCreateRequest(
     data=CloudflareAccountCreateRequestData(
         attributes=CloudflareAccountCreateRequestAttributes(
             api_key="fakekey",
-            email="new@email",
+            email="dev@datadoghq.com",
             name="examplecloudflareintegration",
         ),
         type=CloudflareAccountType.CLOUDFLARE_ACCOUNTS,

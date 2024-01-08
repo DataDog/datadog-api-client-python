@@ -191,7 +191,7 @@
     "parameters": [
       {
         "name": "body",
-        "value": "{\n  \"data\": {\n    \"type\": \"cloudflare-accounts\",\n    \"attributes\": {\n      \"api_key\": \"fakekey\",\n      \"name\": \"{{ unique_lower_alnum }}\",\n      \"email\": \"dev@datadog.com\"\n    }\n  }\n}"
+        "value": "{\n  \"data\": {\n    \"type\": \"cloudflare-accounts\",\n    \"attributes\": {\n      \"api_key\": \"fakekey\",\n      \"name\": \"{{ unique_lower_alnum }}\",\n      \"email\": \"dev@datadog.com\",\n      \"zones\": [\"zone-id-1\", \"zone-id-2\"],\n      \"resources\": [\"web\", \"dns\"]\n    }\n  }\n}"
       }
     ],
     "step": "there is a valid \"cloudflare_account\" in the system",

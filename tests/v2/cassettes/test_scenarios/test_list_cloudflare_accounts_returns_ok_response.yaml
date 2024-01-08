@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"api_key":"fakekey","email":"dev@datadog.com","name":"testlistcloudflareaccountsreturnsokresponse1674810001"},"type":"cloudflare-accounts"}}'
+    body: '{"data":{"attributes":{"api_key":"fakekey","email":"dev@datadog.com","name":"testlistcloudflareaccountsreturnsokresponse1704393643","resources":["web","dns"],"zones":["zone-id-1","zone-id-2"]},"type":"cloudflare-accounts"}}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/integrations/cloudflare/accounts
   response:
     body:
-      string: '{"data":{"attributes":{"email":"dev@datadog.com","name":"testlistcloudflareaccountsreturnsokresponse1674810001"},"type":"cloudflare-accounts","id":"1458cfdd2c5679bdc8693a9c5a32bf45"}}
+      string: '{"data":{"type":"cloudflare-accounts","id":"032c2a7bec2890a18b9ff810ffbaf789","attributes":{"resources":["web","dns"],"name":"testlistcloudflareaccountsreturnsokresponse1704393643","email":"dev@datadog.com","zones":["zone-id-1","zone-id-2"]}}}
 
         '
     headers:
@@ -28,7 +28,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/integrations/cloudflare/accounts
   response:
     body:
-      string: '{"data":[{"attributes":{"email":"dev@datadog.com","name":"testlistcloudflareaccountsreturnsokresponse1674810001"},"type":"cloudflare-accounts","id":"1458cfdd2c5679bdc8693a9c5a32bf45"}]}
+      string: '{"data":[{"type":"cloudflare-accounts","attributes":{"resources":["dns","worker"],"email":"dev@datadoghq.com","zones":["57d151866f1b1d5e4e0057aed6b9f4cb"],"name":"testing"},"id":"ae2b1fca515949e5d54fb22b8ed95575"},{"type":"cloudflare-accounts","attributes":{"resources":["web","dns"],"email":"dev@datadog.com","zones":["zone-id-1","zone-id-2"],"name":"testlistcloudflareaccountsreturnsokresponse1704393643"},"id":"032c2a7bec2890a18b9ff810ffbaf789"},{"type":"cloudflare-accounts","attributes":{"resources":[],"email":"","zones":[],"name":"testing_2"},"id":"8222b3d5b803354416362560a64a1725"},{"type":"cloudflare-accounts","attributes":{"resources":[],"email":"","zones":[],"name":"cloudflare-test"},"id":"fe0a70a58b246c3836c665e956f56bab"}]}
 
         '
     headers:
@@ -43,7 +43,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/integrations/cloudflare/accounts/1458cfdd2c5679bdc8693a9c5a32bf45
+    uri: https://api.datadoghq.com/api/v2/integrations/cloudflare/accounts/032c2a7bec2890a18b9ff810ffbaf789
   response:
     body:
       string: ''

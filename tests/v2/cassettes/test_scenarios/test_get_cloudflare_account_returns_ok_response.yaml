@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"api_key":"fakekey","email":"dev@datadog.com","name":"testgetcloudflareaccountreturnsokresponse1674810021"},"type":"cloudflare-accounts"}}'
+    body: '{"data":{"attributes":{"api_key":"fakekey","email":"dev@datadog.com","name":"testgetcloudflareaccountreturnsokresponse1704393642","resources":["web","dns"],"zones":["zone-id-1","zone-id-2"]},"type":"cloudflare-accounts"}}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/integrations/cloudflare/accounts
   response:
     body:
-      string: '{"data":{"attributes":{"email":"dev@datadog.com","name":"testgetcloudflareaccountreturnsokresponse1674810021"},"type":"cloudflare-accounts","id":"ec582035efa21742f8f4ef4393ded49c"}}
+      string: '{"data":{"type":"cloudflare-accounts","attributes":{"name":"testgetcloudflareaccountreturnsokresponse1704393642","email":"dev@datadog.com","zones":["zone-id-1","zone-id-2"],"resources":["web","dns"]},"id":"88d65a60026254bfaf976a427606c061"}}
 
         '
     headers:
@@ -25,10 +25,10 @@ interactions:
       accept:
       - application/json
     method: GET
-    uri: https://api.datadoghq.com/api/v2/integrations/cloudflare/accounts/ec582035efa21742f8f4ef4393ded49c
+    uri: https://api.datadoghq.com/api/v2/integrations/cloudflare/accounts/88d65a60026254bfaf976a427606c061
   response:
     body:
-      string: '{"data":{"attributes":{"email":"dev@datadog.com","name":"testgetcloudflareaccountreturnsokresponse1674810021"},"type":"cloudflare-accounts","id":"ec582035efa21742f8f4ef4393ded49c"}}
+      string: '{"data":{"type":"cloudflare-accounts","attributes":{"zones":["zone-id-1","zone-id-2"],"email":"dev@datadog.com","name":"testgetcloudflareaccountreturnsokresponse1704393642","resources":["web","dns"]},"id":"88d65a60026254bfaf976a427606c061"}}
 
         '
     headers:
@@ -43,7 +43,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/integrations/cloudflare/accounts/ec582035efa21742f8f4ef4393ded49c
+    uri: https://api.datadoghq.com/api/v2/integrations/cloudflare/accounts/88d65a60026254bfaf976a427606c061
   response:
     body:
       string: ''

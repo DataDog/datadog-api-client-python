@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"api_key":"fakekey","email":"dev@datadog.com","name":"testupdatecloudflareaccountreturnsbadrequestresponseduetoinvalidapikey1674809971"},"type":"cloudflare-accounts"}}'
+    body: '{"data":{"attributes":{"api_key":"fakekey","email":"dev@datadog.com","name":"testupdatecloudflareaccountreturnsbadrequestresponseduetoinvalidapikey1704393644","resources":["web","dns"],"zones":["zone-id-1","zone-id-2"]},"type":"cloudflare-accounts"}}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/integrations/cloudflare/accounts
   response:
     body:
-      string: '{"data":{"attributes":{"email":"dev@datadog.com","name":"testupdatecloudflareaccountreturnsbadrequestresponseduetoinvalidapikey1674809971"},"type":"cloudflare-accounts","id":"56a7295bd711e0aea34906a3bea8a2b3"}}
+      string: '{"data":{"type":"cloudflare-accounts","attributes":{"email":"dev@datadog.com","name":"testupdatecloudflareaccountreturnsbadrequestresponseduetoinvalidapikey1704393644","resources":["web","dns"],"zones":["zone-id-1","zone-id-2"]},"id":"25336f9851edaf58647eec09ce3b636f"}}
 
         '
     headers:
@@ -27,11 +27,11 @@ interactions:
       content-type:
       - application/json
     method: PATCH
-    uri: https://api.datadoghq.com/api/v2/integrations/cloudflare/accounts/56a7295bd711e0aea34906a3bea8a2b3
+    uri: https://api.datadoghq.com/api/v2/integrations/cloudflare/accounts/25336f9851edaf58647eec09ce3b636f
   response:
     body:
       string: '{"errors":["Invalid account. Your Cloudflare configuration is invalid.
-        Impossible to get zones for the account testupdatecloudflareaccountreturnsbadrequestresponseduetoinvalidapikey1674809971:
+        Impossible to get zones for the account testupdatecloudflareaccountreturnsbadrequestresponseduetoinvalidapikey1704393644:
         API key or email is unknown."]}'
     headers:
       content-type:
@@ -45,7 +45,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/integrations/cloudflare/accounts/56a7295bd711e0aea34906a3bea8a2b3
+    uri: https://api.datadoghq.com/api/v2/integrations/cloudflare/accounts/25336f9851edaf58647eec09ce3b636f
   response:
     body:
       string: ''

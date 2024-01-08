@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union
+from typing import List, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -19,14 +19,25 @@ class CloudflareAccountUpdateRequestAttributes(ModelNormal):
         return {
             "api_key": (str,),
             "email": (str,),
+            "resources": ([str],),
+            "zones": ([str],),
         }
 
     attribute_map = {
         "api_key": "api_key",
         "email": "email",
+        "resources": "resources",
+        "zones": "zones",
     }
 
-    def __init__(self_, api_key: str, email: Union[str, UnsetType] = unset, **kwargs):
+    def __init__(
+        self_,
+        api_key: str,
+        email: Union[str, UnsetType] = unset,
+        resources: Union[List[str], UnsetType] = unset,
+        zones: Union[List[str], UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Attributes object for updating a Cloudflare account.
 
@@ -35,9 +46,19 @@ class CloudflareAccountUpdateRequestAttributes(ModelNormal):
 
         :param email: The email associated with the Cloudflare account. If an API key is provided (and not a token), this field is also required.
         :type email: str, optional
+
+        :param resources: An allowlist of resources to restrict pulling metrics for.
+        :type resources: [str], optional
+
+        :param zones: An allowlist of zones to restrict pulling metrics for.
+        :type zones: [str], optional
         """
         if email is not unset:
             kwargs["email"] = email
+        if resources is not unset:
+            kwargs["resources"] = resources
+        if zones is not unset:
+            kwargs["zones"] = zones
         super().__init__(kwargs)
 
         self_.api_key = api_key

@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"api_key":"fakekey","email":"dev@datadog.com","name":"testupdatecloudflareaccountreturnsokresponse1674809929"},"type":"cloudflare-accounts"}}'
+    body: '{"data":{"attributes":{"api_key":"fakekey","email":"dev@datadog.com","name":"testupdatecloudflareaccountreturnsokresponse1704393647","resources":["web","dns"],"zones":["zone-id-1","zone-id-2"]},"type":"cloudflare-accounts"}}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/integrations/cloudflare/accounts
   response:
     body:
-      string: '{"data":{"attributes":{"email":"dev@datadog.com","name":"testupdatecloudflareaccountreturnsokresponse1674809929"},"type":"cloudflare-accounts","id":"4d22579092049210a1db06b632485219"}}
+      string: '{"data":{"type":"cloudflare-accounts","attributes":{"zones":["zone-id-1","zone-id-2"],"resources":["web","dns"],"name":"testupdatecloudflareaccountreturnsokresponse1704393647","email":"dev@datadog.com"},"id":"6956534375b31b062c809696f3c34ee8"}}
 
         '
     headers:
@@ -20,17 +20,17 @@ interactions:
       code: 201
       message: Created
 - request:
-    body: '{"data":{"attributes":{"api_key":"fakekey","email":"new@email"},"type":"cloudflare-accounts"}}'
+    body: '{"data":{"attributes":{"api_key":"fakekey","email":"dev@datadoghq.com","zones":["zone-id-3"]},"type":"cloudflare-accounts"}}'
     headers:
       accept:
       - application/json
       content-type:
       - application/json
     method: PATCH
-    uri: https://api.datadoghq.com/api/v2/integrations/cloudflare/accounts/4d22579092049210a1db06b632485219
+    uri: https://api.datadoghq.com/api/v2/integrations/cloudflare/accounts/6956534375b31b062c809696f3c34ee8
   response:
     body:
-      string: '{"data":{"attributes":{"email":"new@email","name":"testupdatecloudflareaccountreturnsokresponse1674809929"},"type":"cloudflare-accounts","id":"4d22579092049210a1db06b632485219"}}
+      string: '{"data":{"type":"cloudflare-accounts","attributes":{"resources":[],"email":"dev@datadoghq.com","zones":["zone-id-3"],"name":"testupdatecloudflareaccountreturnsokresponse1704393647"},"id":"6956534375b31b062c809696f3c34ee8"}}
 
         '
     headers:
@@ -45,7 +45,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/integrations/cloudflare/accounts/4d22579092049210a1db06b632485219
+    uri: https://api.datadoghq.com/api/v2/integrations/cloudflare/accounts/6956534375b31b062c809696f3c34ee8
   response:
     body:
       string: ''

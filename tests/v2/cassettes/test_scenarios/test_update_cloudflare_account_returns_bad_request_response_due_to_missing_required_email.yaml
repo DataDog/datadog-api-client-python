@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"api_key":"fakekey","email":"dev@datadog.com","name":"testupdatecloudflareaccountreturnsbadrequestresponseduetomissingrequiredemail1674809954"},"type":"cloudflare-accounts"}}'
+    body: '{"data":{"attributes":{"api_key":"fakekey","email":"dev@datadog.com","name":"testupdatecloudflareaccountreturnsbadrequestresponseduetomissingrequiredemail1704393646","resources":["web","dns"],"zones":["zone-id-1","zone-id-2"]},"type":"cloudflare-accounts"}}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/integrations/cloudflare/accounts
   response:
     body:
-      string: '{"data":{"attributes":{"email":"dev@datadog.com","name":"testupdatecloudflareaccountreturnsbadrequestresponseduetomissingrequiredemail1674809954"},"type":"cloudflare-accounts","id":"c588ce074fe908f56db516f007afd3fd"}}
+      string: '{"data":{"type":"cloudflare-accounts","attributes":{"zones":["zone-id-1","zone-id-2"],"resources":["web","dns"],"name":"testupdatecloudflareaccountreturnsbadrequestresponseduetomissingrequiredemail1704393646","email":"dev@datadog.com"},"id":"f1d4f10fbad4add4962f2bc1fcb18c36"}}
 
         '
     headers:
@@ -20,17 +20,17 @@ interactions:
       code: 201
       message: Created
 - request:
-    body: '{"data":{"attributes":{"api_key":"abcdefghijklmnopqrstuvwxyz"},"type":"cloudflare-accounts"}}'
+    body: '{"data":{"attributes":{"api_key":"fakekey"},"type":"cloudflare-accounts"}}'
     headers:
       accept:
       - application/json
       content-type:
       - application/json
     method: PATCH
-    uri: https://api.datadoghq.com/api/v2/integrations/cloudflare/accounts/c588ce074fe908f56db516f007afd3fd
+    uri: https://api.datadoghq.com/api/v2/integrations/cloudflare/accounts/f1d4f10fbad4add4962f2bc1fcb18c36
   response:
     body:
-      string: '{"errors":["{u''_schema'': [''Email address is required if providing
+      string: '{"errors":["{''_schema'': [''Email address is required if providing
         an api key and not an api token.'']}"]}'
     headers:
       content-type:
@@ -44,7 +44,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/integrations/cloudflare/accounts/c588ce074fe908f56db516f007afd3fd
+    uri: https://api.datadoghq.com/api/v2/integrations/cloudflare/accounts/f1d4f10fbad4add4962f2bc1fcb18c36
   response:
     body:
       string: ''
