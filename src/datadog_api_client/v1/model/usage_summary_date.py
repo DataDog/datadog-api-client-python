@@ -26,6 +26,7 @@ class UsageSummaryDate(ModelNormal):
         return {
             "agent_host_top99p": (int,),
             "apm_azure_app_service_host_top99p": (int,),
+            "apm_devsecops_host_top99p": (int,),
             "apm_fargate_count_avg": (int,),
             "apm_host_top99p": (int,),
             "appsec_fargate_count_avg": (int,),
@@ -131,6 +132,7 @@ class UsageSummaryDate(ModelNormal):
     attribute_map = {
         "agent_host_top99p": "agent_host_top99p",
         "apm_azure_app_service_host_top99p": "apm_azure_app_service_host_top99p",
+        "apm_devsecops_host_top99p": "apm_devsecops_host_top99p",
         "apm_fargate_count_avg": "apm_fargate_count_avg",
         "apm_host_top99p": "apm_host_top99p",
         "appsec_fargate_count_avg": "appsec_fargate_count_avg",
@@ -237,6 +239,7 @@ class UsageSummaryDate(ModelNormal):
         self_,
         agent_host_top99p: Union[int, UnsetType] = unset,
         apm_azure_app_service_host_top99p: Union[int, UnsetType] = unset,
+        apm_devsecops_host_top99p: Union[int, UnsetType] = unset,
         apm_fargate_count_avg: Union[int, UnsetType] = unset,
         apm_host_top99p: Union[int, UnsetType] = unset,
         appsec_fargate_count_avg: Union[int, UnsetType] = unset,
@@ -347,6 +350,9 @@ class UsageSummaryDate(ModelNormal):
 
         :param apm_azure_app_service_host_top99p: Shows the 99th percentile of all Azure app services using APM over all hours in the current date all organizations.
         :type apm_azure_app_service_host_top99p: int, optional
+
+        :param apm_devsecops_host_top99p: Shows the 99th percentile of all APM DevSecOps hosts over all hours in the current date for the given org.
+        :type apm_devsecops_host_top99p: int, optional
 
         :param apm_fargate_count_avg: Shows the average of all APM ECS Fargate tasks over all hours in the current date for all organizations.
         :type apm_fargate_count_avg: int, optional
@@ -652,6 +658,8 @@ class UsageSummaryDate(ModelNormal):
             kwargs["agent_host_top99p"] = agent_host_top99p
         if apm_azure_app_service_host_top99p is not unset:
             kwargs["apm_azure_app_service_host_top99p"] = apm_azure_app_service_host_top99p
+        if apm_devsecops_host_top99p is not unset:
+            kwargs["apm_devsecops_host_top99p"] = apm_devsecops_host_top99p
         if apm_fargate_count_avg is not unset:
             kwargs["apm_fargate_count_avg"] = apm_fargate_count_avg
         if apm_host_top99p is not unset:
