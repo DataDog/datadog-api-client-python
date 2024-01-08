@@ -28,6 +28,7 @@ class UsageSummaryResponse(ModelNormal):
         return {
             "agent_host_top99p_sum": (int,),
             "apm_azure_app_service_host_top99p_sum": (int,),
+            "apm_devsecops_host_top99p_sum": (int,),
             "apm_fargate_count_avg_sum": (int,),
             "apm_host_top99p_sum": (int,),
             "appsec_fargate_count_avg_sum": (int,),
@@ -144,6 +145,7 @@ class UsageSummaryResponse(ModelNormal):
     attribute_map = {
         "agent_host_top99p_sum": "agent_host_top99p_sum",
         "apm_azure_app_service_host_top99p_sum": "apm_azure_app_service_host_top99p_sum",
+        "apm_devsecops_host_top99p_sum": "apm_devsecops_host_top99p_sum",
         "apm_fargate_count_avg_sum": "apm_fargate_count_avg_sum",
         "apm_host_top99p_sum": "apm_host_top99p_sum",
         "appsec_fargate_count_avg_sum": "appsec_fargate_count_avg_sum",
@@ -261,6 +263,7 @@ class UsageSummaryResponse(ModelNormal):
         self_,
         agent_host_top99p_sum: Union[int, UnsetType] = unset,
         apm_azure_app_service_host_top99p_sum: Union[int, UnsetType] = unset,
+        apm_devsecops_host_top99p_sum: Union[int, UnsetType] = unset,
         apm_fargate_count_avg_sum: Union[int, UnsetType] = unset,
         apm_host_top99p_sum: Union[int, UnsetType] = unset,
         appsec_fargate_count_avg_sum: Union[int, UnsetType] = unset,
@@ -382,6 +385,9 @@ class UsageSummaryResponse(ModelNormal):
 
         :param apm_azure_app_service_host_top99p_sum: Shows the 99th percentile of all Azure app services using APM over all hours in the current months all organizations.
         :type apm_azure_app_service_host_top99p_sum: int, optional
+
+        :param apm_devsecops_host_top99p_sum: Shows the 99th percentile of all APM DevSecOps hosts over all hours in the current months for all organizations.
+        :type apm_devsecops_host_top99p_sum: int, optional
 
         :param apm_fargate_count_avg_sum: Shows the average of all APM ECS Fargate tasks over all hours in the current months for all organizations.
         :type apm_fargate_count_avg_sum: int, optional
@@ -720,6 +726,8 @@ class UsageSummaryResponse(ModelNormal):
             kwargs["agent_host_top99p_sum"] = agent_host_top99p_sum
         if apm_azure_app_service_host_top99p_sum is not unset:
             kwargs["apm_azure_app_service_host_top99p_sum"] = apm_azure_app_service_host_top99p_sum
+        if apm_devsecops_host_top99p_sum is not unset:
+            kwargs["apm_devsecops_host_top99p_sum"] = apm_devsecops_host_top99p_sum
         if apm_fargate_count_avg_sum is not unset:
             kwargs["apm_fargate_count_avg_sum"] = apm_fargate_count_avg_sum
         if apm_host_top99p_sum is not unset:
