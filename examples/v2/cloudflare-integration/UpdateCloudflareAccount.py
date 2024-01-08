@@ -19,7 +19,10 @@ body = CloudflareAccountUpdateRequest(
     data=CloudflareAccountUpdateRequestData(
         attributes=CloudflareAccountUpdateRequestAttributes(
             api_key="fakekey",
-            email="new@email",
+            email="dev@datadoghq.com",
+            zones=[
+                "zone-id-3",
+            ],
         ),
         type=CloudflareAccountType.CLOUDFLARE_ACCOUNTS,
     ),
