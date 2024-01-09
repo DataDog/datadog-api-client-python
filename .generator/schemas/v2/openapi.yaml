@@ -27706,10 +27706,9 @@ paths:
       - Metrics
       x-codegen-request-body-name: body
       x-unstable: '**Note**: This endpoint is GA for Metrics, Real User Monitoring
-        (RUM), and Cloud Cost Management data sources.
+        (RUM), Cloud Cost Management, and Log Management data sources.
 
-        Support for logs is in beta. We are gradually onboarding support for more
-        sources. If you have any
+        We are gradually onboarding support for more sources. If you have any
 
         feedback, contact [Datadog Support](https://docs.datadoghq.com/help/).'
   /api/v2/query/timeseries:
@@ -27749,10 +27748,9 @@ paths:
       - Metrics
       x-codegen-request-body-name: body
       x-unstable: '**Note**: This endpoint is GA for Metrics, Real User Monitoring
-        (RUM), and Cloud Cost Management data sources.
+        (RUM), Cloud Cost Management, and Log Management data sources.
 
-        Support for logs is in beta. We are gradually onboarding support for more
-        sources. If you have any
+        We are gradually onboarding support for more sources. If you have any
 
         feedback, contact [Datadog Support](https://docs.datadoghq.com/help/).'
   /api/v2/restriction_policy/{resource_id}:
