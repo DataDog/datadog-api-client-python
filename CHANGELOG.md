@@ -1,5 +1,25 @@
 # Changelog
 
+## 2.21.0 / 2024-01-10
+
+### Fixed
+* Prioritize auth configuration values over environment variables by @therve in https://github.com/DataDog/datadog-api-client-python/pull/1787
+### Added
+* Add priority field to SDS rule and standard-pattern by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1803
+* Document new `resource_collection` and `is_security_command_center_enabled` fields in GCP APIs by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1804
+* Add SAML attributes by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1797
+* Security Monitoring - Support custom third party rules by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1821
+* Add public API support for time-slice SLOs by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1813
+* Add included_keyword_configuration field to SDS rule by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1824
+* Update Documentation for APM DevSecOps by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1825
+### Changed
+* Mark v1 downtime endpoints as deprecated by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1818
+* Adding Cloud Cost Management API Documentation by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1811
+* Add support for Cloudflare API `zone` and `resource` fields by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1823
+
+
+**Full Changelog**: https://github.com/DataDog/datadog-api-client-python/compare/2.20.0...2.21.0
+
 ## 2.20.0 / 2023-12-12
 
 ### Fixed
