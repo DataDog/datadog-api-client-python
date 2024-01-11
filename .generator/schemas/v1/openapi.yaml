@@ -4750,7 +4750,7 @@ components:
         content:
           $ref: '#/components/schemas/LogContent'
         id:
-          description: Unique ID of the Log.
+          description: ID of the Log.
           example: AAAAAWgN8Xwgr1vKDQAAAABBV2dOOFh3ZzZobm1mWXJFYTR0OA
           type: string
       type: object
