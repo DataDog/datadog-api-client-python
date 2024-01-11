@@ -1,5 +1,25 @@
 interactions:
 - request:
+    body: '{"data":{"attributes":{"handle":"test-handle-c164c08030364bd8","name":"test-name-c164c08030364bd8"},"type":"team"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/team
+  response:
+    body:
+      string: '{"data":{"type":"team","id":"bfc08ce5-4a3c-4336-8544-0a366a1656fb","attributes":{"name":"test-name-c164c08030364bd8","handle":"test-handle-c164c08030364bd8","summary":null,"description":null,"avatar":null,"banner":1,"visible_modules":[],"hidden_modules":[],"created_at":"2024-01-10T16:09:16.773654+00:00","modified_at":"2024-01-10T16:09:16.773660+00:00","user_count":0,"link_count":0},"relationships":{"team_links":{"links":{"related":"/api/v2/team/bfc08ce5-4a3c-4336-8544-0a366a1656fb/links"}},"user_team_permissions":{"links":{"related":"/api/v2/team/bfc08ce5-4a3c-4336-8544-0a366a1656fb/permission-settings"}}}}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 201
+      message: Created
+- request:
     body: null
     headers:
       accept:
@@ -8,8 +28,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/team?fields%5Bteam%5D=id%2Cname%2Chandle
   response:
     body:
-      string: '{"data":[{"type":"team","id":"ac73040e-c8d4-11ed-b2ea-da7ad0900002","attributes":{"name":"Example
-        Team","handle":"api-spec-test-team"}},{"type":"team","id":"cc338b02-405b-11ee-835e-da7ad0900002","attributes":{"name":"test-name-12938712938","handle":"test-handle-12938712938"}},{"type":"team","id":"ecc8affc-27d6-11ee-b33c-da7ad0900002","attributes":{"name":"tf-testaccteamlinkbasic-local-1689951453","handle":"tf-testaccteamlinkbasic-local-1689951453"}}],"meta":{"pagination":{"offset":0,"first_offset":0,"prev_offset":0,"next_offset":100,"last_offset":0,"limit":100,"type":"offset_limit","total":3}},"links":{"self":"https://api.datadoghq.com/api/v2/team?fields%5Bteam%5D=id,name,handle","last":null,"next":"https://api.datadoghq.com/api/v2/team?fields%5Bteam%5D=id,name,handle&page[offset]=100&page[limit]=100","prev":null,"first":"https://api.datadoghq.com/api/v2/team?fields%5Bteam%5D=id,name,handle&page[offset]=0&page[limit]=100"}}
+      string: '{"data":[{"type":"team","id":"2e06bf2c-193b-41d4-b3c2-afccc080458f","attributes":{"name":"test-name-0d5eae310f4bffff","handle":"test-handle-0d5eae310f4bffff"}},{"type":"team","id":"bfc08ce5-4a3c-4336-8544-0a366a1656fb","attributes":{"name":"test-name-c164c08030364bd8","handle":"test-handle-c164c08030364bd8"}}],"meta":{"pagination":{"offset":0,"first_offset":0,"prev_offset":0,"next_offset":100,"last_offset":0,"limit":100,"type":"offset_limit","total":2}},"links":{"self":"https://api.datadoghq.com/api/v2/team?fields%5Bteam%5D=id,name,handle","last":null,"next":"https://api.datadoghq.com/api/v2/team?fields%5Bteam%5D=id,name,handle&page[offset]=100&page[limit]=100","prev":null,"first":"https://api.datadoghq.com/api/v2/team?fields%5Bteam%5D=id,name,handle&page[offset]=0&page[limit]=100"}}
 
         '
     headers:
@@ -18,4 +37,18 @@ interactions:
     status:
       code: 200
       message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/team/bfc08ce5-4a3c-4336-8544-0a366a1656fb
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
 version: 1

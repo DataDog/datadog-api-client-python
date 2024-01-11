@@ -129,6 +129,7 @@ Feature: Teams
   @team:DataDog/core-app
   Scenario: Get all teams with fields_team parameter returns "OK" response
     Given new "ListTeams" request
+    And there is a valid "dd_team" in the system
     And request contains "fields[team]" parameter with value ["id", "name", "handle"]
     When the request is sent
     Then the response status is 200 OK
