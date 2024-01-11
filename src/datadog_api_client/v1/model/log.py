@@ -39,7 +39,7 @@ class Log(ModelNormal):
         :param content: JSON object containing all log attributes and their associated values.
         :type content: LogContent, optional
 
-        :param id: Unique ID of the Log.
+        :param id: ID of the Log.
         :type id: str, optional
         """
         if content is not unset:
