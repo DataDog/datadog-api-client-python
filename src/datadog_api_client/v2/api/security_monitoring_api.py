@@ -26,6 +26,14 @@ from datadog_api_client.v2.model.security_filters_response import SecurityFilter
 from datadog_api_client.v2.model.security_filter_response import SecurityFilterResponse
 from datadog_api_client.v2.model.security_filter_create_request import SecurityFilterCreateRequest
 from datadog_api_client.v2.model.security_filter_update_request import SecurityFilterUpdateRequest
+from datadog_api_client.v2.model.security_monitoring_suppressions_response import SecurityMonitoringSuppressionsResponse
+from datadog_api_client.v2.model.security_monitoring_suppression_response import SecurityMonitoringSuppressionResponse
+from datadog_api_client.v2.model.security_monitoring_suppression_create_request import (
+    SecurityMonitoringSuppressionCreateRequest,
+)
+from datadog_api_client.v2.model.security_monitoring_suppression_update_request import (
+    SecurityMonitoringSuppressionUpdateRequest,
+)
 from datadog_api_client.v2.model.security_monitoring_list_rules_response import SecurityMonitoringListRulesResponse
 from datadog_api_client.v2.model.security_monitoring_rule_response import SecurityMonitoringRuleResponse
 from datadog_api_client.v2.model.security_monitoring_rule_create_payload import SecurityMonitoringRuleCreatePayload
@@ -107,6 +115,26 @@ class SecurityMonitoringApi:
             api_client=api_client,
         )
 
+        self._create_security_monitoring_suppression_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityMonitoringSuppressionResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/configuration/suppressions",
+                "operation_id": "create_security_monitoring_suppression",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (SecurityMonitoringSuppressionCreateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._delete_security_filter_endpoint = _Endpoint(
             settings={
                 "response_type": None,
@@ -144,6 +172,29 @@ class SecurityMonitoringApi:
                     "required": True,
                     "openapi_types": (str,),
                     "attribute": "rule_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
+        self._delete_security_monitoring_suppression_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/configuration/suppressions/{suppression_id}",
+                "operation_id": "delete_security_monitoring_suppression",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "suppression_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "suppression_id",
                     "location": "path",
                 },
             },
@@ -331,6 +382,29 @@ class SecurityMonitoringApi:
             api_client=api_client,
         )
 
+        self._get_security_monitoring_suppression_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityMonitoringSuppressionResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/configuration/suppressions/{suppression_id}",
+                "operation_id": "get_security_monitoring_suppression",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "suppression_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "suppression_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._list_findings_endpoint = _Endpoint(
             settings={
                 "response_type": (ListFindingsResponse,),
@@ -508,6 +582,22 @@ class SecurityMonitoringApi:
             api_client=api_client,
         )
 
+        self._list_security_monitoring_suppressions_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityMonitoringSuppressionsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/configuration/suppressions",
+                "operation_id": "list_security_monitoring_suppressions",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={},
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._mute_findings_endpoint = _Endpoint(
             settings={
                 "response_type": (BulkMuteFindingsResponse,),
@@ -599,6 +689,32 @@ class SecurityMonitoringApi:
             api_client=api_client,
         )
 
+        self._update_security_monitoring_suppression_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityMonitoringSuppressionResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/configuration/suppressions/{suppression_id}",
+                "operation_id": "update_security_monitoring_suppression",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "suppression_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "suppression_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (SecurityMonitoringSuppressionUpdateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
     def create_security_filter(
         self,
         body: SecurityFilterCreateRequest,
@@ -640,6 +756,23 @@ class SecurityMonitoringApi:
 
         return self._create_security_monitoring_rule_endpoint.call_with_http_info(**kwargs)
 
+    def create_security_monitoring_suppression(
+        self,
+        body: SecurityMonitoringSuppressionCreateRequest,
+    ) -> SecurityMonitoringSuppressionResponse:
+        """Create a suppression rule.
+
+        Create a new suppression rule.
+
+        :param body: The definition of the new suppression rule.
+        :type body: SecurityMonitoringSuppressionCreateRequest
+        :rtype: SecurityMonitoringSuppressionResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_security_monitoring_suppression_endpoint.call_with_http_info(**kwargs)
+
     def delete_security_filter(
         self,
         security_filter_id: str,
@@ -673,6 +806,23 @@ class SecurityMonitoringApi:
         kwargs["rule_id"] = rule_id
 
         return self._delete_security_monitoring_rule_endpoint.call_with_http_info(**kwargs)
+
+    def delete_security_monitoring_suppression(
+        self,
+        suppression_id: str,
+    ) -> None:
+        """Delete a suppression rule.
+
+        Delete a specific suppression rule.
+
+        :param suppression_id: The ID of the suppression rule
+        :type suppression_id: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["suppression_id"] = suppression_id
+
+        return self._delete_security_monitoring_suppression_endpoint.call_with_http_info(**kwargs)
 
     def edit_security_monitoring_signal_assignee(
         self,
@@ -817,6 +967,23 @@ class SecurityMonitoringApi:
         kwargs["signal_id"] = signal_id
 
         return self._get_security_monitoring_signal_endpoint.call_with_http_info(**kwargs)
+
+    def get_security_monitoring_suppression(
+        self,
+        suppression_id: str,
+    ) -> SecurityMonitoringSuppressionResponse:
+        """Get a suppression rule.
+
+        Get the details of a specific suppression rule.
+
+        :param suppression_id: The ID of the suppression rule
+        :type suppression_id: str
+        :rtype: SecurityMonitoringSuppressionResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["suppression_id"] = suppression_id
+
+        return self._get_security_monitoring_suppression_endpoint.call_with_http_info(**kwargs)
 
     def list_findings(
         self,
@@ -1180,6 +1347,18 @@ class SecurityMonitoringApi:
         }
         return endpoint.call_with_http_info_paginated(pagination)
 
+    def list_security_monitoring_suppressions(
+        self,
+    ) -> SecurityMonitoringSuppressionsResponse:
+        """Get all suppression rules.
+
+        Get the list of all suppression rules.
+
+        :rtype: SecurityMonitoringSuppressionsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._list_security_monitoring_suppressions_endpoint.call_with_http_info(**kwargs)
+
     def mute_findings(
         self,
         body: BulkMuteFindingsRequest,
@@ -1303,3 +1482,25 @@ class SecurityMonitoringApi:
         kwargs["body"] = body
 
         return self._update_security_monitoring_rule_endpoint.call_with_http_info(**kwargs)
+
+    def update_security_monitoring_suppression(
+        self,
+        suppression_id: str,
+        body: SecurityMonitoringSuppressionUpdateRequest,
+    ) -> SecurityMonitoringSuppressionResponse:
+        """Update a suppression rule.
+
+        Update a specific suppression rule.
+
+        :param suppression_id: The ID of the suppression rule
+        :type suppression_id: str
+        :param body: New definition of the suppression rule. Supports partial updates.
+        :type body: SecurityMonitoringSuppressionUpdateRequest
+        :rtype: SecurityMonitoringSuppressionResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["suppression_id"] = suppression_id
+
+        kwargs["body"] = body
+
+        return self._update_security_monitoring_suppression_endpoint.call_with_http_info(**kwargs)
