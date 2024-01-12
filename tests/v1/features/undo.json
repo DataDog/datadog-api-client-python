@@ -360,7 +360,7 @@
         {
           "name": "body",
           "origin": "request",
-          "template": "{\"account_id\": \"{{account_id}}\", \"role_name\": \"{{role_name}}\"}"
+          "template": "{\"account_id\": \"{{ account_id }}\", \"role_name\": \"{{ role_name }}\"}"
         }
       ],
       "type": "unsafe"
@@ -489,7 +489,7 @@
         {
           "name": "body",
           "origin": "request",
-          "template": "{\n  \"client_id\": \"{{client_id}}\",\n  \"tenant_name\": \"{{tenant_name}}\"\n}"
+          "template": "{\n  \"client_id\": \"{{ client_id }}\",\n  \"tenant_name\": \"{{ tenant_name }}\"\n}"
         }
       ],
       "type": "unsafe"
