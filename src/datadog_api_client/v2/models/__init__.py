@@ -1233,12 +1233,38 @@ from datadog_api_client.v2.model.security_monitoring_standard_rule_query import 
 from datadog_api_client.v2.model.security_monitoring_standard_rule_response import (
     SecurityMonitoringStandardRuleResponse,
 )
+from datadog_api_client.v2.model.security_monitoring_suppression import SecurityMonitoringSuppression
+from datadog_api_client.v2.model.security_monitoring_suppression_attributes import (
+    SecurityMonitoringSuppressionAttributes,
+)
+from datadog_api_client.v2.model.security_monitoring_suppression_create_attributes import (
+    SecurityMonitoringSuppressionCreateAttributes,
+)
+from datadog_api_client.v2.model.security_monitoring_suppression_create_data import (
+    SecurityMonitoringSuppressionCreateData,
+)
+from datadog_api_client.v2.model.security_monitoring_suppression_create_request import (
+    SecurityMonitoringSuppressionCreateRequest,
+)
+from datadog_api_client.v2.model.security_monitoring_suppression_response import SecurityMonitoringSuppressionResponse
+from datadog_api_client.v2.model.security_monitoring_suppression_type import SecurityMonitoringSuppressionType
+from datadog_api_client.v2.model.security_monitoring_suppression_update_attributes import (
+    SecurityMonitoringSuppressionUpdateAttributes,
+)
+from datadog_api_client.v2.model.security_monitoring_suppression_update_data import (
+    SecurityMonitoringSuppressionUpdateData,
+)
+from datadog_api_client.v2.model.security_monitoring_suppression_update_request import (
+    SecurityMonitoringSuppressionUpdateRequest,
+)
+from datadog_api_client.v2.model.security_monitoring_suppressions_response import SecurityMonitoringSuppressionsResponse
 from datadog_api_client.v2.model.security_monitoring_third_party_root_query import SecurityMonitoringThirdPartyRootQuery
 from datadog_api_client.v2.model.security_monitoring_third_party_rule_case import SecurityMonitoringThirdPartyRuleCase
 from datadog_api_client.v2.model.security_monitoring_third_party_rule_case_create import (
     SecurityMonitoringThirdPartyRuleCaseCreate,
 )
 from datadog_api_client.v2.model.security_monitoring_triage_user import SecurityMonitoringTriageUser
+from datadog_api_client.v2.model.security_monitoring_user import SecurityMonitoringUser
 from datadog_api_client.v2.model.sensitive_data_scanner_config_request import SensitiveDataScannerConfigRequest
 from datadog_api_client.v2.model.sensitive_data_scanner_configuration import SensitiveDataScannerConfiguration
 from datadog_api_client.v2.model.sensitive_data_scanner_configuration_data import SensitiveDataScannerConfigurationData
@@ -2620,10 +2646,22 @@ __all__ = [
     "SecurityMonitoringStandardRuleCreatePayload",
     "SecurityMonitoringStandardRuleQuery",
     "SecurityMonitoringStandardRuleResponse",
+    "SecurityMonitoringSuppression",
+    "SecurityMonitoringSuppressionAttributes",
+    "SecurityMonitoringSuppressionCreateAttributes",
+    "SecurityMonitoringSuppressionCreateData",
+    "SecurityMonitoringSuppressionCreateRequest",
+    "SecurityMonitoringSuppressionResponse",
+    "SecurityMonitoringSuppressionType",
+    "SecurityMonitoringSuppressionUpdateAttributes",
+    "SecurityMonitoringSuppressionUpdateData",
+    "SecurityMonitoringSuppressionUpdateRequest",
+    "SecurityMonitoringSuppressionsResponse",
     "SecurityMonitoringThirdPartyRootQuery",
     "SecurityMonitoringThirdPartyRuleCase",
     "SecurityMonitoringThirdPartyRuleCaseCreate",
     "SecurityMonitoringTriageUser",
+    "SecurityMonitoringUser",
     "SensitiveDataScannerConfigRequest",
     "SensitiveDataScannerConfiguration",
     "SensitiveDataScannerConfigurationData",

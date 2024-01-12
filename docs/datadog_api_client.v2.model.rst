@@ -7330,6 +7330,83 @@ security\_monitoring\_standard\_rule\_response
    :members:
    :show-inheritance:
 
+security\_monitoring\_suppression
+---------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_suppression
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_suppression\_attributes
+---------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_suppression_attributes
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_suppression\_create\_attributes
+-----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_suppression_create_attributes
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_suppression\_create\_data
+-----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_suppression_create_data
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_suppression\_create\_request
+--------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_suppression_create_request
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_suppression\_response
+-------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_suppression_response
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_suppression\_type
+---------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_suppression_type
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_suppression\_update\_attributes
+-----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_suppression_update_attributes
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_suppression\_update\_data
+-----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_suppression_update_data
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_suppression\_update\_request
+--------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_suppression_update_request
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_suppressions\_response
+--------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_suppressions_response
+   :members:
+   :show-inheritance:
+
 security\_monitoring\_third\_party\_root\_query
 -----------------------------------------------
 
@@ -7355,6 +7432,13 @@ security\_monitoring\_triage\_user
 ----------------------------------
 
 .. automodule:: datadog_api_client.v2.model.security_monitoring_triage_user
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_user
+--------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_user
    :members:
    :show-inheritance:
 
