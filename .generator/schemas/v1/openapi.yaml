@@ -10074,7 +10074,7 @@ components:
           description: 'The recurrence rules as defined in the iCalendar RFC 5545.
             The supported rules for SLO corrections
 
-            are `FREQ`, `INTERVAL`, `COUNT` and `UNTIL`.'
+            are `FREQ`, `INTERVAL`, `COUNT`, `UNTIL` and `BYDAY`.'
           example: FREQ=DAILY;INTERVAL=10;COUNT=5
           type: string
         slo_id:
@@ -10151,7 +10151,7 @@ components:
           description: 'The recurrence rules as defined in the iCalendar RFC 5545.
             The supported rules for SLO corrections
 
-            are `FREQ`, `INTERVAL`, `COUNT`, and `UNTIL`.'
+            are `FREQ`, `INTERVAL`, `COUNT`, `UNTIL` and `BYDAY`.'
           example: FREQ=DAILY;INTERVAL=10;COUNT=5
           nullable: true
           type: string
@@ -10227,7 +10227,7 @@ components:
           description: 'The recurrence rules as defined in the iCalendar RFC 5545.
             The supported rules for SLO corrections
 
-            are `FREQ`, `INTERVAL`, `COUNT`, and `UNTIL`.'
+            are `FREQ`, `INTERVAL`, `COUNT`, `UNTIL` and `BYDAY`.'
           example: FREQ=DAILY;INTERVAL=10;COUNT=5
           type: string
         start:
