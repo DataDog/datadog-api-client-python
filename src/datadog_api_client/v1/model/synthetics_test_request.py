@@ -60,6 +60,7 @@ class SyntheticsTestRequest(ModelNormal):
             "certificate": (SyntheticsTestRequestCertificate,),
             "certificate_domains": ([str],),
             "compressed_json_descriptor": (str,),
+            "compressed_proto_file": (str,),
             "dns_server": (str,),
             "dns_server_port": (int,),
             "follow_redirects": (bool,),
@@ -90,6 +91,7 @@ class SyntheticsTestRequest(ModelNormal):
         "certificate": "certificate",
         "certificate_domains": "certificateDomains",
         "compressed_json_descriptor": "compressedJsonDescriptor",
+        "compressed_proto_file": "compressedProtoFile",
         "dns_server": "dnsServer",
         "dns_server_port": "dnsServerPort",
         "follow_redirects": "follow_redirects",
@@ -130,6 +132,7 @@ class SyntheticsTestRequest(ModelNormal):
         certificate: Union[SyntheticsTestRequestCertificate, UnsetType] = unset,
         certificate_domains: Union[List[str], UnsetType] = unset,
         compressed_json_descriptor: Union[str, UnsetType] = unset,
+        compressed_proto_file: Union[str, UnsetType] = unset,
         dns_server: Union[str, UnsetType] = unset,
         dns_server_port: Union[int, UnsetType] = unset,
         follow_redirects: Union[bool, UnsetType] = unset,
@@ -177,6 +180,9 @@ class SyntheticsTestRequest(ModelNormal):
 
         :param compressed_json_descriptor: A protobuf JSON descriptor that needs to be gzipped first then base64 encoded.
         :type compressed_json_descriptor: str, optional
+
+        :param compressed_proto_file: A protobuf file that needs to be gzipped first then base64 encoded.
+        :type compressed_proto_file: str, optional
 
         :param dns_server: DNS server to use for DNS tests.
         :type dns_server: str, optional
@@ -253,6 +259,8 @@ class SyntheticsTestRequest(ModelNormal):
             kwargs["certificate_domains"] = certificate_domains
         if compressed_json_descriptor is not unset:
             kwargs["compressed_json_descriptor"] = compressed_json_descriptor
+        if compressed_proto_file is not unset:
+            kwargs["compressed_proto_file"] = compressed_proto_file
         if dns_server is not unset:
             kwargs["dns_server"] = dns_server
         if dns_server_port is not unset:
