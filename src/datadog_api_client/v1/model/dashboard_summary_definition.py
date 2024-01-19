@@ -77,6 +77,8 @@ class DashboardSummaryDefinition(ModelNormal):
         :type id: str, optional
 
         :param is_read_only: Whether this dashboard is read-only. If True, only the author and admins can make changes to it.
+
+            This property is deprecated; please use the `Restriction Policies API <https://docs.datadoghq.com/api/latest/restriction-policies/>`_ instead to manage write authorization for individual dashboards. **Deprecated**.
         :type is_read_only: bool, optional
 
         :param layout_type: Layout type of the dashboard.
