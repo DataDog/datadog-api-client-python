@@ -42,7 +42,7 @@ Feature: DORA Metrics
   Scenario: Send an incident event for DORA Metrics returns "OK - but delayed due to incident" response
     Given operation "CreateDORAIncident" enabled
     And new "CreateDORAIncident" request
-    And body with value {"data": {"attributes": {"finished_at": 1693491984000000000, "git": {"commit_sha": "66adc9350f2cc9b250b69abddab733dd55e1a588", "repository_url": "https://github.com/organization/example-repository"}, "name": "Webserver is down failing all requests", "service": "shopist", "severity": "High", "started_at": 1693491974000000000, "version": "v1.12.07"}}}
+    And body with value {"data": {"attributes": {"env": "staging", "finished_at": 1693491984000000000, "git": {"commit_sha": "66adc9350f2cc9b250b69abddab733dd55e1a588", "repository_url": "https://github.com/organization/example-repository"}, "name": "Webserver is down failing all requests", "service": "shopist", "severity": "High", "started_at": 1693491974000000000, "version": "v1.12.07"}}}
     When the request is sent
     Then the response status is 202 OK - but delayed due to incident
 
