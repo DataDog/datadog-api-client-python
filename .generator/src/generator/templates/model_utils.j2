@@ -113,7 +113,7 @@ class OpenApiModel(object):
 
     _nullable = False
 
-    validations: Mapping[str, Mapping[str, int]] = empty_dict
+    validations: Mapping[str, Mapping[str, Union[int, float]]] = empty_dict
 
     openapi_types = empty_dict
 
