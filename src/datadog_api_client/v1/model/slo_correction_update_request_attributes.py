@@ -69,7 +69,7 @@ class SLOCorrectionUpdateRequestAttributes(ModelNormal):
         :type end: int, optional
 
         :param rrule: The recurrence rules as defined in the iCalendar RFC 5545. The supported rules for SLO corrections
-            are ``FREQ`` , ``INTERVAL`` , ``COUNT`` , and ``UNTIL``.
+            are ``FREQ`` , ``INTERVAL`` , ``COUNT`` , ``UNTIL`` and ``BYDAY``.
         :type rrule: str, optional
 
         :param start: Starting time of the correction in epoch seconds.
