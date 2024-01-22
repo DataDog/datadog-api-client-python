@@ -14,18 +14,29 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v1.model.logs_daily_limit_reset import LogsDailyLimitReset
     from datadog_api_client.v1.model.logs_exclusion import LogsExclusion
     from datadog_api_client.v1.model.logs_filter import LogsFilter
 
 
 class LogsIndex(ModelNormal):
+    validations = {
+        "daily_limit_warning_threshold_percentage": {
+            "inclusive_maximum": 99.99,
+            "inclusive_minimum": 50,
+        },
+    }
+
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v1.model.logs_daily_limit_reset import LogsDailyLimitReset
         from datadog_api_client.v1.model.logs_exclusion import LogsExclusion
         from datadog_api_client.v1.model.logs_filter import LogsFilter
 
         return {
             "daily_limit": (int,),
+            "daily_limit_reset": (LogsDailyLimitReset,),
+            "daily_limit_warning_threshold_percentage": (float,),
             "exclusion_filters": ([LogsExclusion],),
             "filter": (LogsFilter,),
             "is_rate_limited": (bool,),
@@ -35,6 +46,8 @@ class LogsIndex(ModelNormal):
 
     attribute_map = {
         "daily_limit": "daily_limit",
+        "daily_limit_reset": "daily_limit_reset",
+        "daily_limit_warning_threshold_percentage": "daily_limit_warning_threshold_percentage",
         "exclusion_filters": "exclusion_filters",
         "filter": "filter",
         "is_rate_limited": "is_rate_limited",
@@ -50,6 +63,8 @@ class LogsIndex(ModelNormal):
         filter: LogsFilter,
         name: str,
         daily_limit: Union[int, UnsetType] = unset,
+        daily_limit_reset: Union[LogsDailyLimitReset, UnsetType] = unset,
+        daily_limit_warning_threshold_percentage: Union[float, UnsetType] = unset,
         exclusion_filters: Union[List[LogsExclusion], UnsetType] = unset,
         is_rate_limited: Union[bool, UnsetType] = unset,
         num_retention_days: Union[int, UnsetType] = unset,
@@ -60,6 +75,12 @@ class LogsIndex(ModelNormal):
 
         :param daily_limit: The number of log events you can send in this index per day before you are rate-limited.
         :type daily_limit: int, optional
+
+        :param daily_limit_reset: Object containing options to override the default daily limit reset time.
+        :type daily_limit_reset: LogsDailyLimitReset, optional
+
+        :param daily_limit_warning_threshold_percentage: A percentage threshold of the daily quota at which a Datadog warning event is generated.
+        :type daily_limit_warning_threshold_percentage: float, optional
 
         :param exclusion_filters: An array of exclusion objects. The logs are tested against the query of each filter,
             following the order of the array. Only the first matching active exclusion matters,
@@ -82,6 +103,10 @@ class LogsIndex(ModelNormal):
         """
         if daily_limit is not unset:
             kwargs["daily_limit"] = daily_limit
+        if daily_limit_reset is not unset:
+            kwargs["daily_limit_reset"] = daily_limit_reset
+        if daily_limit_warning_threshold_percentage is not unset:
+            kwargs["daily_limit_warning_threshold_percentage"] = daily_limit_warning_threshold_percentage
         if exclusion_filters is not unset:
             kwargs["exclusion_filters"] = exclusion_filters
         if is_rate_limited is not unset:
