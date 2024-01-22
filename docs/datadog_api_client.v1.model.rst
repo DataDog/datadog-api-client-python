@@ -1618,6 +1618,13 @@ logs\_category\_processor\_type
    :members:
    :show-inheritance:
 
+logs\_daily\_limit\_reset
+-------------------------
+
+.. automodule:: datadog_api_client.v1.model.logs_daily_limit_reset
+   :members:
+   :show-inheritance:
+
 logs\_date\_remapper
 --------------------
 
