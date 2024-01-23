@@ -478,10 +478,15 @@ def build_given(version, operation):
         with ApiClient(configuration) as client:
             api = getattr(package, name + "Api")(client)
             operation_method = getattr(api, operation_name)
+            params_map = getattr(api, f'_{operation_name}_endpoint').params_map
 
             # perform operation
             def build_param(p):
+                openapi_types = params_map[p["name"]]["openapi_types"]
                 if "value" in p:
+                    if openapi_types == (file_type,):
+                        filepath = os.path.join(os.path.dirname(__file__), version, "features", json.loads(Template(p["value"]).render(**context)))
+                        return open(filepath)
                     return json.loads(Template(p["value"]).render(**context))
                 if "source" in p:
                     return glom(context, p["source"])
