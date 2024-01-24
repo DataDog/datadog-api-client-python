@@ -7,7 +7,9 @@ Feature: Usage Metering
   **Note**: Usage data is delayed by up to 72 hours from when it was
   incurred. It is retained for 15 months.  You can retrieve up to 24 hours
   of hourly usage data for multiple organizations, and up to two months of
-  hourly usage data for a single organization in one request.
+  hourly usage data for a single organization in one request. Learn more on
+  the [usage details documentation](https://docs.datadoghq.com/account_manag
+  ement/billing/usage_details/).
 
   Background:
     Given a valid "apiKeyAuth" key in the system
@@ -482,20 +484,6 @@ Feature: Usage Metering
     Given new "GetIngestedSpans" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 5d') }}"
     And request contains "end_hr" parameter with value "{{ timeISO('now - 3d') }}"
-    When the request is sent
-    Then the response status is 200 OK
-
-  @generated @skip @team:DataDog/red-zone-revenue-query
-  Scenario: Get hourly usage for lambda returns "Bad Request" response
-    Given new "GetUsageLambda" request
-    And request contains "start_hr" parameter from "REPLACE.ME"
-    When the request is sent
-    Then the response status is 400 Bad Request
-
-  @generated @skip @team:DataDog/red-zone-revenue-query
-  Scenario: Get hourly usage for lambda returns "OK" response
-    Given new "GetUsageLambda" request
-    And request contains "start_hr" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 

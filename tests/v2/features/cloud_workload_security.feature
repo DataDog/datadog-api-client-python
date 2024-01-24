@@ -1,7 +1,9 @@
 @endpoint(cloud-workload-security) @endpoint(cloud-workload-security-v2)
 Feature: Cloud Workload Security
   Workload activity security rules for generating events using the Datadog
-  security Agent.
+  security Agent. See the [Setting up CSM Workload Security page](https://do
+  cs.datadoghq.com/security/cloud_security_management/setup/csm_workload_sec
+  urity/) for more information.
 
   Background:
     Given a valid "apiKeyAuth" key in the system

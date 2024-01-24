@@ -17,7 +17,7 @@ from datadog_api_client.v1.model.aws_logs_services_request import AWSLogsService
 class AWSLogsIntegrationApi:
     """
     Configure your Datadog-AWS-Logs integration directly through Datadog API.
-    For more information, see the `AWS integration page <https://docs.datadoghq.com/api/?lang=bash#integration-aws-logs>`_.
+    For more information, see the `AWS integration page <https://docs.datadoghq.com/integrations/amazon_web_services/#log-collection>`_.
     """
 
     def __init__(self, api_client=None):

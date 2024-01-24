@@ -2,7 +2,8 @@
 Feature: AWS Logs Integration
   Configure your Datadog-AWS-Logs integration directly through Datadog API.
   For more information, see the [AWS integration
-  page](https://docs.datadoghq.com/api/?lang=bash#integration-aws-logs).
+  page](https://docs.datadoghq.com/integrations/amazon_web_services/#log-
+  collection).
 
   Background:
     Given a valid "apiKeyAuth" key in the system

@@ -73,6 +73,7 @@ class UsageMeteringApi:
 
     You can retrieve up to 24 hours of hourly usage data for multiple organizations,
     and up to two months of hourly usage data for a single organization in one request.
+    Learn more on the `usage details documentation <https://docs.datadoghq.com/account_management/billing/usage_details/>`_.
     """
 
     def __init__(self, api_client=None):
@@ -1922,9 +1923,9 @@ class UsageMeteringApi:
         *,
         end_hr: Union[datetime, UnsetType] = unset,
     ) -> UsageLambdaResponse:
-        """Get hourly usage for lambda.
+        """Get hourly usage for Lambda.
 
-        Get hourly usage for lambda.
+        Get hourly usage for Lambda.
         **Note:** hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_. Refer to `Migrating from the V1 Hourly Usage APIs to V2 <https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/>`_ for the associated migration guide.
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.

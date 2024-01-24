@@ -1,5 +1,5 @@
 """
-Get hourly usage for lambda traced invocations returns "OK" response
+Get hourly usage for Lambda traced invocations returns "OK" response
 """
 
 from datetime import datetime

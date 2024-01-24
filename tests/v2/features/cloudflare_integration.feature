@@ -1,7 +1,9 @@
 @endpoint(cloudflare-integration) @endpoint(cloudflare-integration-v2)
 Feature: Cloudflare Integration
-  Configure your Datadog Cloudflare integration directly through the Datadog
-  API.
+  Manage your Datadog Cloudflare integration directly through the Datadog
+  API. See the [Cloudflare integration
+  page](https://docs.datadoghq.com/integrations/cloudflare/) for more
+  information.
 
   Background:
     Given a valid "apiKeyAuth" key in the system

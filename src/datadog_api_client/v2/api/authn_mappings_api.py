@@ -20,9 +20,9 @@ from datadog_api_client.v2.model.authn_mapping_update_request import AuthNMappin
 
 class AuthNMappingsApi:
     """
-    `AuthN Mappings API <https://docs.datadoghq.com/account_management/authn_mapping/?tab=example>`_
-    is used to automatically map group of users to roles in Datadog using attributes
-    sent from Identity Providers.
+    `The AuthN Mappings API <https://docs.datadoghq.com/account_management/authn_mapping/?tab=example>`_
+    is used to automatically map groups of users to roles in Datadog using attributes
+    sent from Identity Providers. Use these endpoints to manage your AuthN Mappings.
     """
 
     def __init__(self, api_client=None):

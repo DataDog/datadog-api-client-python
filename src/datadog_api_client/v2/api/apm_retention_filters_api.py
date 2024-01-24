@@ -16,7 +16,7 @@ from datadog_api_client.v2.model.retention_filter_update_request import Retentio
 
 class APMRetentionFiltersApi:
     """
-    Manage configuration of `APM retention filters <https://app.datadoghq.com/apm/traces/retention-filters>`_ for your organization. You need an API and application key with Admin rights to interact with this endpoint.
+    Manage configuration of `APM retention filters <https://app.datadoghq.com/apm/traces/retention-filters>`_ for your organization. You need an API and application key with Admin rights to interact with this endpoint. See `retention filters <https://docs.datadoghq.com/tracing/trace_pipeline/trace_retention/#retention-filters>`_ on the Trace Retention page for more information.
     """
 
     def __init__(self, api_client=None):

@@ -26,7 +26,7 @@ from datadog_api_client.v2.model.cloud_workload_security_agent_rule_update_reque
 
 class CloudWorkloadSecurityApi:
     """
-    Workload activity security rules for generating events using the Datadog security Agent.
+    Workload activity security rules for generating events using the Datadog security Agent. See the `Setting up CSM Workload Security page <https://docs.datadoghq.com/security/cloud_security_management/setup/csm_workload_security/>`_ for more information.
     """
 
     def __init__(self, api_client=None):

@@ -15,7 +15,7 @@ from datadog_api_client.v2.model.dora_incident_request import DORAIncidentReques
 
 class DORAMetricsApi:
     """
-    Send events for DORA Metrics to measure and improve software delivery.
+    Send events for DORA Metrics to measure and improve software delivery. See the `DORA Metrics page <https://docs.datadoghq.com/dora_metrics/>`_ for more information.
     """
 
     def __init__(self, api_client=None):
