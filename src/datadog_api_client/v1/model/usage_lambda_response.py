@@ -32,7 +32,7 @@ class UsageLambdaResponse(ModelNormal):
 
     def __init__(self_, usage: Union[List[UsageLambdaHour], UnsetType] = unset, **kwargs):
         """
-        Response containing the number of lambda functions and sum of the invocations of all lambda functions
+        Response containing the number of Lambda functions and sum of the invocations of all Lambda functions
         for each hour for a given organization.
 
         :param usage: Get hourly usage for Lambda.

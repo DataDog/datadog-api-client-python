@@ -1,8 +1,9 @@
 @endpoint(authn-mappings) @endpoint(authn-mappings-v2)
 Feature: AuthN Mappings
-  [AuthN Mappings API](https://docs.datadoghq.com/account_management/authn_m
-  apping/?tab=example) is used to automatically map group of users to roles
-  in Datadog using attributes sent from Identity Providers.
+  [The AuthN Mappings API](https://docs.datadoghq.com/account_management/aut
+  hn_mapping/?tab=example) is used to automatically map groups of users to
+  roles in Datadog using attributes sent from Identity Providers. Use these
+  endpoints to manage your AuthN Mappings.
 
   Background:
     Given a valid "apiKeyAuth" key in the system

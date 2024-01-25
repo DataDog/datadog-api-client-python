@@ -1,6 +1,8 @@
 @endpoint(dora-metrics) @endpoint(dora-metrics-v2)
 Feature: DORA Metrics
-  Send events for DORA Metrics to measure and improve software delivery.
+  Send events for DORA Metrics to measure and improve software delivery. See
+  the [DORA Metrics page](https://docs.datadoghq.com/dora_metrics/) for more
+  information.
 
   Background:
     Given a valid "apiKeyAuth" key in the system
