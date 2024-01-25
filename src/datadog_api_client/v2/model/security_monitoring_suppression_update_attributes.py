@@ -8,6 +8,7 @@ from typing import Union
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    none_type,
     unset,
     UnsetType,
 )
@@ -25,7 +26,7 @@ class SecurityMonitoringSuppressionUpdateAttributes(ModelNormal):
         return {
             "description": (str,),
             "enabled": (bool,),
-            "expiration_date": (int,),
+            "expiration_date": (int, none_type),
             "name": (str,),
             "rule_query": (str,),
             "suppression_query": (str,),
@@ -46,7 +47,7 @@ class SecurityMonitoringSuppressionUpdateAttributes(ModelNormal):
         self_,
         description: Union[str, UnsetType] = unset,
         enabled: Union[bool, UnsetType] = unset,
-        expiration_date: Union[int, UnsetType] = unset,
+        expiration_date: Union[int, none_type, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
         rule_query: Union[str, UnsetType] = unset,
         suppression_query: Union[str, UnsetType] = unset,
@@ -62,8 +63,8 @@ class SecurityMonitoringSuppressionUpdateAttributes(ModelNormal):
         :param enabled: Whether the suppression rule is enabled.
         :type enabled: bool, optional
 
-        :param expiration_date: A Unix millisecond timestamp giving an expiration date for the suppression rule. After this date, it won't suppress signals anymore.
-        :type expiration_date: int, optional
+        :param expiration_date: A Unix millisecond timestamp giving an expiration date for the suppression rule. After this date, it won't suppress signals anymore. If unset, the expiration date of the suppression rule is left untouched. If set to ``null`` , the expiration date is removed.
+        :type expiration_date: int, none_type, optional
 
         :param name: The name of the suppression rule.
         :type name: str, optional
