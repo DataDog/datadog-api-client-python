@@ -15,7 +15,7 @@ from datadog_api_client.v2.model.cloudflare_account_update_request import Cloudf
 
 class CloudflareIntegrationApi:
     """
-    Configure your Datadog Cloudflare integration directly through the Datadog API.
+    Manage your Datadog Cloudflare integration directly through the Datadog API. See the `Cloudflare integration page <https://docs.datadoghq.com/integrations/cloudflare/>`_ for more information.
     """
 
     def __init__(self, api_client=None):

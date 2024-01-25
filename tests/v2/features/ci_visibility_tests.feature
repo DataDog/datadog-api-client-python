@@ -1,6 +1,8 @@
 @endpoint(ci-visibility-tests) @endpoint(ci-visibility-tests-v2)
 Feature: CI Visibility Tests
-  Search or aggregate your CI Visibility test events over HTTP.
+  Search or aggregate your CI Visibility test events over HTTP. See the
+  [Test Visibility in Datadog page](https://docs.datadoghq.com/tests/) for
+  more information.
 
   Background:
     Given a valid "apiKeyAuth" key in the system

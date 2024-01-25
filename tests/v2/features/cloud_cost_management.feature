@@ -1,7 +1,9 @@
 @endpoint(cloud-cost-management) @endpoint(cloud-cost-management-v2)
 Feature: Cloud Cost Management
-  The Cloud Cost Management API allows you to setup, edit and delete cloud
-  cost management accounts for AWS & Azure.
+  The Cloud Cost Management API allows you to set up, edit, and delete Cloud
+  Cost Management accounts for AWS and Azure. See the [Cloud Cost Management
+  page](https://docs.datadoghq.com/cloud_cost_management/) for more
+  information.
 
   Background:
     Given a valid "apiKeyAuth" key in the system

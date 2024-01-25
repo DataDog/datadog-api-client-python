@@ -25,7 +25,7 @@ from datadog_api_client.v2.model.ci_app_test_events_request import CIAppTestEven
 
 class CIVisibilityTestsApi:
     """
-    Search or aggregate your CI Visibility test events over HTTP.
+    Search or aggregate your CI Visibility test events over HTTP. See the `Test Visibility in Datadog page <https://docs.datadoghq.com/tests/>`_ for more information.
     """
 
     def __init__(self, api_client=None):

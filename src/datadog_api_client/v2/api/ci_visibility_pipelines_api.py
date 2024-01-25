@@ -28,7 +28,7 @@ from datadog_api_client.v2.model.ci_app_pipeline_events_request import CIAppPipe
 
 class CIVisibilityPipelinesApi:
     """
-    Search or aggregate your CI Visibility pipeline events and send them to your Datadog site over HTTP.
+    Search or aggregate your CI Visibility pipeline events and send them to your Datadog site over HTTP. See the `CI Pipeline Visibility in Datadog page <https://docs.datadoghq.com/continuous_integration/pipelines/>`_ for more information.
     """
 
     def __init__(self, api_client=None):
