@@ -51,7 +51,7 @@ body = SyntheticsAPITest(
             execution_rule=SyntheticsTestExecutionRule.BLOCKING,
         ),
         device_ids=[
-            SyntheticsDeviceID.LAPTOP_LARGE,
+            SyntheticsDeviceID.CHROME_LAPTOP_LARGE,
         ],
         http_version=SyntheticsTestOptionsHTTPVersion.HTTP1,
         monitor_options=SyntheticsTestOptionsMonitorOptions(),
