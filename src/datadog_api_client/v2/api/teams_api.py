@@ -27,6 +27,7 @@ from datadog_api_client.v2.model.team_link_response import TeamLinkResponse
 from datadog_api_client.v2.model.team_link_create_request import TeamLinkCreateRequest
 from datadog_api_client.v2.model.user_teams_response import UserTeamsResponse
 from datadog_api_client.v2.model.get_team_memberships_sort import GetTeamMembershipsSort
+from datadog_api_client.v2.model.user_team import UserTeam
 from datadog_api_client.v2.model.user_team_response import UserTeamResponse
 from datadog_api_client.v2.model.user_team_request import UserTeamRequest
 from datadog_api_client.v2.model.user_team_update_request import UserTeamUpdateRequest
@@ -755,6 +756,60 @@ class TeamsApi:
             kwargs["filter_keyword"] = filter_keyword
 
         return self._get_team_memberships_endpoint.call_with_http_info(**kwargs)
+
+    def get_team_memberships_with_pagination(
+        self,
+        team_id: str,
+        *,
+        page_size: Union[int, UnsetType] = unset,
+        page_number: Union[int, UnsetType] = unset,
+        sort: Union[GetTeamMembershipsSort, UnsetType] = unset,
+        filter_keyword: Union[str, UnsetType] = unset,
+    ) -> collections.abc.Iterable[UserTeam]:
+        """Get team memberships.
+
+        Provide a paginated version of :meth:`get_team_memberships`, returning all items.
+
+        :param team_id: None
+        :type team_id: str
+        :param page_size: Size for a given page. The maximum allowed value is 100.
+        :type page_size: int, optional
+        :param page_number: Specific page number to return.
+        :type page_number: int, optional
+        :param sort: Specifies the order of returned team memberships
+        :type sort: GetTeamMembershipsSort, optional
+        :param filter_keyword: Search query, can be user email or name
+        :type filter_keyword: str, optional
+
+        :return: A generator of paginated results.
+        :rtype: collections.abc.Iterable[UserTeam]
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["team_id"] = team_id
+
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        if page_number is not unset:
+            kwargs["page_number"] = page_number
+
+        if sort is not unset:
+            kwargs["sort"] = sort
+
+        if filter_keyword is not unset:
+            kwargs["filter_keyword"] = filter_keyword
+
+        local_page_size = get_attribute_from_path(kwargs, "page_size", 10)
+        endpoint = self._get_team_memberships_endpoint
+        set_attribute_from_path(kwargs, "page_size", local_page_size, endpoint.params_map)
+        pagination = {
+            "limit_value": local_page_size,
+            "results_path": "data",
+            "page_param": "page_number",
+            "endpoint": endpoint,
+            "kwargs": kwargs,
+        }
+        return endpoint.call_with_http_info_paginated(pagination)
 
     def get_team_permission_settings(
         self,

@@ -182,6 +182,15 @@ Feature: Teams
     When the request is sent
     Then the response status is 200 Represents a user's association to a team
 
+  @replay-only @skip-validation @team:DataDog/core-app @with-pagination
+  Scenario: Get team memberships returns "Represents a user's association to a team" response with pagination
+    Given new "GetTeamMemberships" request
+    And request contains "team_id" parameter with value "2e06bf2c-193b-41d4-b3c2-afccc080458f"
+    And request contains "page[size]" parameter with value 2
+    When the request with pagination is sent
+    Then the response status is 200 OK
+    And the response has 3 items
+
   @generated @skip @team:DataDog/core-app
   Scenario: Get user memberships returns "API error response." response
     Given new "GetUserMemberships" request

@@ -1,0 +1,40 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/team/2e06bf2c-193b-41d4-b3c2-afccc080458f/memberships?page%5Bsize%5D=2&page%5Bnumber%5D=0
+  response:
+    body:
+      string: '{"data":[{"type":"team_memberships","id":"TeamMembership-2e06bf2c-193b-41d4-b3c2-afccc080458f-3736692","attributes":{"role":null,"provisioned_by":null,"provisioned_by_id":"6018c832-80a7-11ea-93dd-43183212bc7a"},"relationships":{"user":{"data":{"type":"users","id":"03b4bfc0-98b9-11ec-842d-da7ad0900002"}}}},{"type":"team_memberships","id":"TeamMembership-2e06bf2c-193b-41d4-b3c2-afccc080458f-4055096","attributes":{"role":null,"provisioned_by":null,"provisioned_by_id":"6018c832-80a7-11ea-93dd-43183212bc7a"},"relationships":{"user":{"data":{"type":"users","id":"170a64a1-d9c6-11ec-af01-da7ad0900002"}}}}],"included":[{"type":"users","id":"03b4bfc0-98b9-11ec-842d-da7ad0900002","attributes":{"name":"Datadog
+        API Client Python","handle":"example-create_a_user_returns_ok_response_1646068093@datadoghq.com","email":"example-create_a_user_returns_ok_response_1646068093@datadoghq.com","icon":"https://secure.gravatar.com/avatar/27fb863ad335246b65fe4989f1686f35?s=48&d=retro","disabled":false,"service_account":false}},{"type":"users","id":"170a64a1-d9c6-11ec-af01-da7ad0900002","attributes":{"name":"Datadog
+        API Client Python","handle":"example-create_a_user_returns_ok_response_1653220535@datadoghq.com","email":"example-create_a_user_returns_ok_response_1653220535@datadoghq.com","icon":"https://secure.gravatar.com/avatar/c5256983bba478dfd35e83bbb73621cc?s=48&d=retro","disabled":false,"service_account":false}}],"meta":{"pagination":{"number":0,"first_number":0,"prev_number":0,"next_number":1,"last_number":1,"size":2,"type":"number_size","total":3}},"links":{"self":"https://api.datadoghq.com/api/v2/team/2e06bf2c-193b-41d4-b3c2-afccc080458f/memberships?page%5Bsize%5D=2&page%5Bnumber%5D=0","last":"https://api.datadoghq.com/api/v2/team/2e06bf2c-193b-41d4-b3c2-afccc080458f/memberships?page[number]=1&page[size]=2","next":"https://api.datadoghq.com/api/v2/team/2e06bf2c-193b-41d4-b3c2-afccc080458f/memberships?page[number]=1&page[size]=2","prev":null,"first":"https://api.datadoghq.com/api/v2/team/2e06bf2c-193b-41d4-b3c2-afccc080458f/memberships?page[number]=0&page[size]=2"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/team/2e06bf2c-193b-41d4-b3c2-afccc080458f/memberships?page%5Bsize%5D=2&page%5Bnumber%5D=1
+  response:
+    body:
+      string: '{"data":[{"type":"team_memberships","id":"TeamMembership-2e06bf2c-193b-41d4-b3c2-afccc080458f-1445416","attributes":{"role":null,"provisioned_by":null,"provisioned_by_id":"6018c832-80a7-11ea-93dd-43183212bc7a"},"relationships":{"user":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}}}],"included":[{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0","attributes":{"name":null,"handle":"frog@datadoghq.com","email":"frog@datadoghq.com","icon":"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro","disabled":false,"service_account":false}}],"meta":{"pagination":{"number":1,"first_number":0,"prev_number":0,"next_number":2,"last_number":1,"size":2,"type":"number_size","total":3}},"links":{"self":"https://api.datadoghq.com/api/v2/team/2e06bf2c-193b-41d4-b3c2-afccc080458f/memberships?page%5Bsize%5D=2&page%5Bnumber%5D=1","last":"https://api.datadoghq.com/api/v2/team/2e06bf2c-193b-41d4-b3c2-afccc080458f/memberships?page[number]=1&page[size]=2","next":"https://api.datadoghq.com/api/v2/team/2e06bf2c-193b-41d4-b3c2-afccc080458f/memberships?page[number]=2&page[size]=2","prev":"https://api.datadoghq.com/api/v2/team/2e06bf2c-193b-41d4-b3c2-afccc080458f/memberships?page[number]=0&page[size]=2","first":"https://api.datadoghq.com/api/v2/team/2e06bf2c-193b-41d4-b3c2-afccc080458f/memberships?page[number]=0&page[size]=2"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1
