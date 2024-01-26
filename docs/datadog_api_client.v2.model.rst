@@ -1884,6 +1884,27 @@ cost\_by\_org\_type
    :members:
    :show-inheritance:
 
+create\_open\_api\_response
+---------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_open_api_response
+   :members:
+   :show-inheritance:
+
+create\_open\_api\_response\_attributes
+---------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_open_api_response_attributes
+   :members:
+   :show-inheritance:
+
+create\_open\_api\_response\_data
+---------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_open_api_response_data
+   :members:
+   :show-inheritance:
+
 create\_rule\_request
 ---------------------
 
@@ -5283,6 +5304,20 @@ on\_demand\_concurrency\_cap\_type
 ----------------------------------
 
 .. automodule:: datadog_api_client.v2.model.on_demand_concurrency_cap_type
+   :members:
+   :show-inheritance:
+
+open\_api\_endpoint
+-------------------
+
+.. automodule:: datadog_api_client.v2.model.open_api_endpoint
+   :members:
+   :show-inheritance:
+
+open\_api\_file
+---------------
+
+.. automodule:: datadog_api_client.v2.model.open_api_file
    :members:
    :show-inheritance:
 
@@ -9063,6 +9098,27 @@ unit
 ----
 
 .. automodule:: datadog_api_client.v2.model.unit
+   :members:
+   :show-inheritance:
+
+update\_open\_api\_response
+---------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_open_api_response
+   :members:
+   :show-inheritance:
+
+update\_open\_api\_response\_attributes
+---------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_open_api_response_attributes
+   :members:
+   :show-inheritance:
+
+update\_open\_api\_response\_data
+---------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_open_api_response_data
    :members:
    :show-inheritance:
 

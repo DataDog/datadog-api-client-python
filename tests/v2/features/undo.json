@@ -36,6 +36,37 @@
       "type": "idempotent"
     }
   },
+  "DeleteOpenAPI": {
+    "tag": "API Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetOpenAPI": {
+    "tag": "API Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateOpenAPI": {
+    "tag": "API Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "CreateOpenAPI": {
+    "tag": "API Management",
+    "undo": {
+      "operationId": "DeleteOpenAPI",
+      "parameters": [
+        {
+          "name": "id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
   "ListSpansMetrics": {
     "tag": "Spans Metrics",
     "undo": {
