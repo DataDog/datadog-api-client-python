@@ -31989,6 +31989,10 @@ paths:
       summary: Get team memberships
       tags:
       - Teams
+      x-pagination:
+        limitParam: page[size]
+        pageParam: page[number]
+        resultsPath: data
     post:
       description: Add a user to a team.
       operationId: CreateTeamMembership
