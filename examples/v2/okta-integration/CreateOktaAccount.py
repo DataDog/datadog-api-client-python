@@ -14,7 +14,7 @@ body = OktaAccountRequest(
         attributes=OktaAccountAttributes(
             auth_method="oauth",
             domain="https://example.okta.com/",
-            name="Okta_Prod",
+            name="exampleoktaintegration",
             client_id="client_id",
             client_secret="client_secret",
         ),
