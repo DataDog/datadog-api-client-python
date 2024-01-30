@@ -24,7 +24,7 @@ Feature: Okta Integration
   @team:DataDog/saas-integrations @team:DataDog/web-integrations
   Scenario: Add Okta account returns "OK" response
     Given new "CreateOktaAccount" request
-    And body with value {"data": {"attributes": {"auth_method": "oauth", "domain": "https://example.okta.com/", "name": "Okta_Prod", "client_id": "client_id", "client_secret":"client_secret"},"id": "f749daaf-682e-4208-a38d-c9b43162c609", "type": "okta-accounts"}}
+    And body with value {"data": {"attributes": {"auth_method": "oauth", "domain": "https://example.okta.com/", "name": "{{ unique_lower_alnum }}", "client_id": "client_id", "client_secret":"client_secret"},"id": "f749daaf-682e-4208-a38d-c9b43162c609", "type": "okta-accounts"}}
     When the request is sent
     Then the response status is 201 OK
 
