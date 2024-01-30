@@ -897,7 +897,14 @@
   "UpdateOktaAccount": {
     "tag": "Okta Integration",
     "undo": {
-      "type": "idempotent"
+      "operationId": "DeleteOktaAccount",
+      "parameters": [
+        {
+          "name": "account_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
     }
   },
   "GetIPAllowlist": {
