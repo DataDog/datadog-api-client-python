@@ -23026,7 +23026,8 @@ paths:
       security:
       - apiKeyAuth: []
         appKeyAuth: []
-      - AuthZ: []
+      - AuthZ:
+        - usage_read
       summary: Get active billing dimensions for cost attribution
       tags:
       - Usage Metering
@@ -23147,7 +23148,8 @@ paths:
       security:
       - apiKeyAuth: []
         appKeyAuth: []
-      - AuthZ: []
+      - AuthZ:
+        - usage_read
       summary: Get Monthly Cost Attribution
       tags:
       - Usage Metering
