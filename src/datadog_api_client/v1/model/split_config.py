@@ -22,7 +22,7 @@ if TYPE_CHECKING:
 class SplitConfig(ModelNormal):
     validations = {
         "limit": {
-            "inclusive_maximum": 100,
+            "inclusive_maximum": 500,
             "inclusive_minimum": 1,
         },
         "split_dimensions": {
@@ -30,7 +30,7 @@ class SplitConfig(ModelNormal):
             "min_items": 1,
         },
         "static_splits": {
-            "max_items": 100,
+            "max_items": 500,
         },
     }
 
