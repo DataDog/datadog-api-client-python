@@ -43,7 +43,7 @@ class SensitiveDataScannerIncludedKeywordConfiguration(ModelNormal):
         :type character_count: int
 
         :param keywords: Keyword list that will be checked during scanning in order to validate a match.
-            The number of keywords in the list must be less than or equal to 20.
+            The number of keywords in the list must be less than or equal to 30.
         :type keywords: [str]
         """
         super().__init__(kwargs)
