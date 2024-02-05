@@ -20,7 +20,7 @@ from datadog_api_client.v2.model.container_item import ContainerItem
 
 class ContainersApi:
     """
-    The Containers API allows you to query container data for your organization.
+    The Containers API allows you to query container data for your organization. See the `Container Monitoring page <https://docs.datadoghq.com/containers/>`_ for more information.
     """
 
     def __init__(self, api_client=None):

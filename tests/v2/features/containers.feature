@@ -1,7 +1,8 @@
 @endpoint(containers) @endpoint(containers-v2)
 Feature: Containers
   The Containers API allows you to query container data for your
-  organization.
+  organization. See the [Container Monitoring
+  page](https://docs.datadoghq.com/containers/) for more information.
 
   Background:
     Given a valid "apiKeyAuth" key in the system

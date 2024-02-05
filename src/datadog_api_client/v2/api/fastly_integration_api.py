@@ -18,7 +18,7 @@ from datadog_api_client.v2.model.fastly_service_request import FastlyServiceRequ
 
 class FastlyIntegrationApi:
     """
-    Configure your Datadog Fastly integration directly through the Datadog API.
+    Manage your Datadog Fastly integration accounts and services directly through the Datadog API. See the `Fastly integration page <https://docs.datadoghq.com/integrations/fastly/>`_ for more information.
     """
 
     def __init__(self, api_client=None):

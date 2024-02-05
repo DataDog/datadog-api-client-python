@@ -46,7 +46,7 @@ from datadog_api_client.v2.model.incident_todo_patch_request import IncidentTodo
 
 class IncidentsApi:
     """
-    Manage incident response.
+    Manage incident response, as well as associated attachments, metadata, and todos. See the `Incident Management page <https://docs.datadoghq.com/service_management/incident_management/>`_ for more information.
     """
 
     def __init__(self, api_client=None):

@@ -20,7 +20,7 @@ from datadog_api_client.v2.model.incident_service_update_request import Incident
 
 class IncidentServicesApi:
     """
-    Create, update, delete, and retrieve services which can be associated with incidents.
+    Create, update, delete, and retrieve services which can be associated with incidents. See the `Incident Management page <https://docs.datadoghq.com/service_management/incident_management/>`_ for more information.
     """
 
     def __init__(self, api_client=None):

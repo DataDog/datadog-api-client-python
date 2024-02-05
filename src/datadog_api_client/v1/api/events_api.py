@@ -20,10 +20,8 @@ from datadog_api_client.v1.model.event_response import EventResponse
 
 class EventsApi:
     """
-    The events service allows you to programmatically post events to the event stream
-    and fetch events from the event stream. Events are limited to 4000 characters.
-    If an event is sent out with a message containing more than 4000 characters, only the
-    first 4000 characters are displayed.
+    The Event Management API allows you to programmatically post events to the Events Explorer
+    and fetch events from the Events Explorer. See the `Event Management page <https://docs.datadoghq.com/service_management/events/>`_ for more information.
     """
 
     def __init__(self, api_client=None):
