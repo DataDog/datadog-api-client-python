@@ -1,6 +1,8 @@
 @endpoint(hosts) @endpoint(hosts-v1)
 Feature: Hosts
-  Get information about your live hosts in Datadog.
+  Get information about your infrastructure hosts in Datadog, and mute or
+  unmute any notifications from your hosts. See the [Infrastructure
+  page](https://docs.datadoghq.com/infrastructure/) for more information.
 
   Background:
     Given a valid "apiKeyAuth" key in the system

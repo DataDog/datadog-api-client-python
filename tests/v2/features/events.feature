@@ -1,9 +1,9 @@
 @endpoint(events) @endpoint(events-v2)
 Feature: Events
-  The events service allows you to programmatically post events to the event
-  stream and fetch events from the event stream. Events are limited to 4000
-  characters. If an event is sent out with a message containing more than
-  4000 characters, only the first 4000 characters are displayed.
+  The Event Management API allows you to programmatically post events to the
+  Events Explorer and fetch events from the Events Explorer. See the [Event
+  Management page](https://docs.datadoghq.com/service_management/events/)
+  for more information.
 
   Background:
     Given a valid "apiKeyAuth" key in the system

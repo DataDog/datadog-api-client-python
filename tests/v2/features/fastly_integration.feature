@@ -1,7 +1,9 @@
 @endpoint(fastly-integration) @endpoint(fastly-integration-v2)
 Feature: Fastly Integration
-  Configure your Datadog Fastly integration directly through the Datadog
-  API.
+  Manage your Datadog Fastly integration accounts and services directly
+  through the Datadog API. See the [Fastly integration
+  page](https://docs.datadoghq.com/integrations/fastly/) for more
+  information.
 
   Background:
     Given a valid "apiKeyAuth" key in the system

@@ -1,7 +1,9 @@
 @endpoint(incident-services) @endpoint(incident-services-v2)
 Feature: Incident Services
   Create, update, delete, and retrieve services which can be associated with
-  incidents.
+  incidents. See the [Incident Management
+  page](https://docs.datadoghq.com/service_management/incident_management/)
+  for more information.
 
   Background:
     Given a valid "apiKeyAuth" key in the system

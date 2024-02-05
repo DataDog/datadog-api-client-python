@@ -1,7 +1,9 @@
 @endpoint(confluent-cloud) @endpoint(confluent-cloud-v2)
 Feature: Confluent Cloud
-  Configure your Datadog Confluent Cloud integration directly through the
-  Datadog API.
+  Manage your Datadog Confluent Cloud integration accounts and account
+  resources directly through the Datadog API. See the [Confluent Cloud
+  page](https://docs.datadoghq.com/integrations/confluent_cloud/) for more
+  information.
 
   Background:
     Given a valid "apiKeyAuth" key in the system

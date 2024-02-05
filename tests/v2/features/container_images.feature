@@ -1,7 +1,8 @@
 @endpoint(container-images) @endpoint(container-images-v2)
 Feature: Container Images
   The Container Images API allows you to query Container Image data for your
-  organization.
+  organization. See the [Container Images View page](https://docs.datadoghq.
+  com/infrastructure/containers/container_images/) for more information.
 
   Background:
     Given a valid "apiKeyAuth" key in the system

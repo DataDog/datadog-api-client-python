@@ -28,8 +28,7 @@ from datadog_api_client.v1.model.dashboard_delete_response import DashboardDelet
 
 class DashboardsApi:
     """
-    Interact with your dashboard lists through the API to make it easier to organize,
-    find, and share all of your dashboards with your team and organization.
+    Manage all your dashboards, as well as access to your shared dashboards, through the API. See the `Dashboards page <https://docs.datadoghq.com/dashboards/>`_ for more information.
     """
 
     def __init__(self, api_client=None):
