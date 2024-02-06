@@ -32,7 +32,7 @@ class MetricsPayload(ModelNormal):
         """
         The metrics' payload.
 
-        :param series: A list of time series to submit to Datadog.
+        :param series: A list of timeseries to submit to Datadog.
         :type series: [Series]
         """
         super().__init__(kwargs)
