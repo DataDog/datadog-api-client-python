@@ -1,5 +1,26 @@
 # Changelog
 
+## 2.22.0 / 2024-02-06
+
+### Fixed
+* Add test support for file parameters by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1839
+* Make validation target type a union of int and float by @nkzou in https://github.com/DataDog/datadog-api-client-python/pull/1843
+* Security Monitoring Suppressions - Make expiration date nullable in update payload by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1849
+### Added
+* Security Monitoring - Add API support for suppression rules by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1834
+* Document support for BYDAY in SLO corrections by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1840
+* Add missing optional field env in DORA API endpoints by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1841
+* Add compressedProtoFile field to SyntheticsTestRequest by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1838
+* Add daily limit reset options to logs indexes api by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1842
+* Add support for API management API by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1837
+* Add pagination helper for team memberships by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1851
+* Increase limit on allowed number of graphs in split graph widget by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1856
+### Deprecated
+* Mark dashboard 'is_read_only' and 'restricted_roles' properties as deprecated by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1827
+
+
+**Full Changelog**: https://github.com/DataDog/datadog-api-client-python/compare/2.21.0...2.22.0
+
 ## 2.21.0 / 2024-01-10
 
 ### Fixed
