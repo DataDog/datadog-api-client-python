@@ -84,7 +84,7 @@ class SLOHistoryMonitor(ModelNormal):
         :param group: For groups in a grouped SLO, this is the group name.
         :type group: str, optional
 
-        :param history: For ``monitor`` based SLOs, this includes the aggregated history as arrays that include time series and uptime data where ``0=monitor`` is in ``OK`` state and ``1=monitor`` is in ``alert`` state.
+        :param history: For ``monitor`` based SLOs, this includes the aggregated history as arrays that include timeseries and uptime data where ``0=monitor`` is in ``OK`` state and ``1=monitor`` is in ``alert`` state.
         :type history: [[float]], optional
 
         :param monitor_modified: For ``monitor`` based SLOs, this is the last modified timestamp in epoch seconds of the monitor.

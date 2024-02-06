@@ -120,7 +120,7 @@ class MetricsQueryMetadata(ModelNormal):
         :param metric: Metric name.
         :type metric: str, optional
 
-        :param pointlist: List of points of the time series in milliseconds.
+        :param pointlist: List of points of the timeseries in milliseconds.
         :type pointlist: [Point], optional
 
         :param query_index: The index of the series' query within the request.
