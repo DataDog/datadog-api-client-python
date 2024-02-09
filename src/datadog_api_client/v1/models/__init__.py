@@ -263,6 +263,7 @@ from datadog_api_client.v1.model.logs_by_retention_orgs import LogsByRetentionOr
 from datadog_api_client.v1.model.logs_category_processor import LogsCategoryProcessor
 from datadog_api_client.v1.model.logs_category_processor_category import LogsCategoryProcessorCategory
 from datadog_api_client.v1.model.logs_category_processor_type import LogsCategoryProcessorType
+from datadog_api_client.v1.model.logs_daily_limit_reset import LogsDailyLimitReset
 from datadog_api_client.v1.model.logs_date_remapper import LogsDateRemapper
 from datadog_api_client.v1.model.logs_date_remapper_type import LogsDateRemapperType
 from datadog_api_client.v1.model.logs_exclusion import LogsExclusion
@@ -1196,6 +1197,7 @@ __all__ = [
     "LogsCategoryProcessor",
     "LogsCategoryProcessorCategory",
     "LogsCategoryProcessorType",
+    "LogsDailyLimitReset",
     "LogsDateRemapper",
     "LogsDateRemapperType",
     "LogsExclusion",

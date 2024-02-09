@@ -1,6 +1,9 @@
 @endpoint(incidents) @endpoint(incidents-v2)
 Feature: Incidents
-  Manage incident response.
+  Manage incident response, as well as associated attachments, metadata, and
+  todos. See the [Incident Management
+  page](https://docs.datadoghq.com/service_management/incident_management/)
+  for more information.
 
   Background:
     Given a valid "apiKeyAuth" key in the system

@@ -315,6 +315,9 @@ from datadog_api_client.v2.model.cost_by_org import CostByOrg
 from datadog_api_client.v2.model.cost_by_org_attributes import CostByOrgAttributes
 from datadog_api_client.v2.model.cost_by_org_response import CostByOrgResponse
 from datadog_api_client.v2.model.cost_by_org_type import CostByOrgType
+from datadog_api_client.v2.model.create_open_api_response import CreateOpenAPIResponse
+from datadog_api_client.v2.model.create_open_api_response_attributes import CreateOpenAPIResponseAttributes
+from datadog_api_client.v2.model.create_open_api_response_data import CreateOpenAPIResponseData
 from datadog_api_client.v2.model.create_rule_request import CreateRuleRequest
 from datadog_api_client.v2.model.create_rule_request_data import CreateRuleRequestData
 from datadog_api_client.v2.model.create_rule_response import CreateRuleResponse
@@ -865,6 +868,8 @@ from datadog_api_client.v2.model.on_demand_concurrency_cap import OnDemandConcur
 from datadog_api_client.v2.model.on_demand_concurrency_cap_attributes import OnDemandConcurrencyCapAttributes
 from datadog_api_client.v2.model.on_demand_concurrency_cap_response import OnDemandConcurrencyCapResponse
 from datadog_api_client.v2.model.on_demand_concurrency_cap_type import OnDemandConcurrencyCapType
+from datadog_api_client.v2.model.open_api_endpoint import OpenAPIEndpoint
+from datadog_api_client.v2.model.open_api_file import OpenAPIFile
 from datadog_api_client.v2.model.opsgenie_service_create_attributes import OpsgenieServiceCreateAttributes
 from datadog_api_client.v2.model.opsgenie_service_create_data import OpsgenieServiceCreateData
 from datadog_api_client.v2.model.opsgenie_service_create_request import OpsgenieServiceCreateRequest
@@ -1233,12 +1238,38 @@ from datadog_api_client.v2.model.security_monitoring_standard_rule_query import 
 from datadog_api_client.v2.model.security_monitoring_standard_rule_response import (
     SecurityMonitoringStandardRuleResponse,
 )
+from datadog_api_client.v2.model.security_monitoring_suppression import SecurityMonitoringSuppression
+from datadog_api_client.v2.model.security_monitoring_suppression_attributes import (
+    SecurityMonitoringSuppressionAttributes,
+)
+from datadog_api_client.v2.model.security_monitoring_suppression_create_attributes import (
+    SecurityMonitoringSuppressionCreateAttributes,
+)
+from datadog_api_client.v2.model.security_monitoring_suppression_create_data import (
+    SecurityMonitoringSuppressionCreateData,
+)
+from datadog_api_client.v2.model.security_monitoring_suppression_create_request import (
+    SecurityMonitoringSuppressionCreateRequest,
+)
+from datadog_api_client.v2.model.security_monitoring_suppression_response import SecurityMonitoringSuppressionResponse
+from datadog_api_client.v2.model.security_monitoring_suppression_type import SecurityMonitoringSuppressionType
+from datadog_api_client.v2.model.security_monitoring_suppression_update_attributes import (
+    SecurityMonitoringSuppressionUpdateAttributes,
+)
+from datadog_api_client.v2.model.security_monitoring_suppression_update_data import (
+    SecurityMonitoringSuppressionUpdateData,
+)
+from datadog_api_client.v2.model.security_monitoring_suppression_update_request import (
+    SecurityMonitoringSuppressionUpdateRequest,
+)
+from datadog_api_client.v2.model.security_monitoring_suppressions_response import SecurityMonitoringSuppressionsResponse
 from datadog_api_client.v2.model.security_monitoring_third_party_root_query import SecurityMonitoringThirdPartyRootQuery
 from datadog_api_client.v2.model.security_monitoring_third_party_rule_case import SecurityMonitoringThirdPartyRuleCase
 from datadog_api_client.v2.model.security_monitoring_third_party_rule_case_create import (
     SecurityMonitoringThirdPartyRuleCaseCreate,
 )
 from datadog_api_client.v2.model.security_monitoring_triage_user import SecurityMonitoringTriageUser
+from datadog_api_client.v2.model.security_monitoring_user import SecurityMonitoringUser
 from datadog_api_client.v2.model.sensitive_data_scanner_config_request import SensitiveDataScannerConfigRequest
 from datadog_api_client.v2.model.sensitive_data_scanner_configuration import SensitiveDataScannerConfiguration
 from datadog_api_client.v2.model.sensitive_data_scanner_configuration_data import SensitiveDataScannerConfigurationData
@@ -1523,6 +1554,9 @@ from datadog_api_client.v2.model.timeseries_response_times import TimeseriesResp
 from datadog_api_client.v2.model.timeseries_response_values import TimeseriesResponseValues
 from datadog_api_client.v2.model.timeseries_response_values_list import TimeseriesResponseValuesList
 from datadog_api_client.v2.model.unit import Unit
+from datadog_api_client.v2.model.update_open_api_response import UpdateOpenAPIResponse
+from datadog_api_client.v2.model.update_open_api_response_attributes import UpdateOpenAPIResponseAttributes
+from datadog_api_client.v2.model.update_open_api_response_data import UpdateOpenAPIResponseData
 from datadog_api_client.v2.model.usage_application_security_monitoring_response import (
     UsageApplicationSecurityMonitoringResponse,
 )
@@ -1842,6 +1876,9 @@ __all__ = [
     "CostByOrgAttributes",
     "CostByOrgResponse",
     "CostByOrgType",
+    "CreateOpenAPIResponse",
+    "CreateOpenAPIResponseAttributes",
+    "CreateOpenAPIResponseData",
     "CreateRuleRequest",
     "CreateRuleRequestData",
     "CreateRuleResponse",
@@ -2328,6 +2365,8 @@ __all__ = [
     "OnDemandConcurrencyCapAttributes",
     "OnDemandConcurrencyCapResponse",
     "OnDemandConcurrencyCapType",
+    "OpenAPIEndpoint",
+    "OpenAPIFile",
     "OpsgenieServiceCreateAttributes",
     "OpsgenieServiceCreateData",
     "OpsgenieServiceCreateRequest",
@@ -2620,10 +2659,22 @@ __all__ = [
     "SecurityMonitoringStandardRuleCreatePayload",
     "SecurityMonitoringStandardRuleQuery",
     "SecurityMonitoringStandardRuleResponse",
+    "SecurityMonitoringSuppression",
+    "SecurityMonitoringSuppressionAttributes",
+    "SecurityMonitoringSuppressionCreateAttributes",
+    "SecurityMonitoringSuppressionCreateData",
+    "SecurityMonitoringSuppressionCreateRequest",
+    "SecurityMonitoringSuppressionResponse",
+    "SecurityMonitoringSuppressionType",
+    "SecurityMonitoringSuppressionUpdateAttributes",
+    "SecurityMonitoringSuppressionUpdateData",
+    "SecurityMonitoringSuppressionUpdateRequest",
+    "SecurityMonitoringSuppressionsResponse",
     "SecurityMonitoringThirdPartyRootQuery",
     "SecurityMonitoringThirdPartyRuleCase",
     "SecurityMonitoringThirdPartyRuleCaseCreate",
     "SecurityMonitoringTriageUser",
+    "SecurityMonitoringUser",
     "SensitiveDataScannerConfigRequest",
     "SensitiveDataScannerConfiguration",
     "SensitiveDataScannerConfigurationData",
@@ -2860,6 +2911,9 @@ __all__ = [
     "TimeseriesResponseValues",
     "TimeseriesResponseValuesList",
     "Unit",
+    "UpdateOpenAPIResponse",
+    "UpdateOpenAPIResponseAttributes",
+    "UpdateOpenAPIResponseData",
     "UsageApplicationSecurityMonitoringResponse",
     "UsageAttributesObject",
     "UsageDataObject",

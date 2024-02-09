@@ -20,7 +20,7 @@ from datadog_api_client.v2.model.container_image_item import ContainerImageItem
 
 class ContainerImagesApi:
     """
-    The Container Images API allows you to query Container Image data for your organization.
+    The Container Images API allows you to query Container Image data for your organization. See the `Container Images View page <https://docs.datadoghq.com/infrastructure/containers/container_images/>`_ for more information.
     """
 
     def __init__(self, api_client=None):

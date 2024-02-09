@@ -23,6 +23,7 @@ class DORADeploymentRequestAttributes(ModelNormal):
         from datadog_api_client.v2.model.dora_git_info import DORAGitInfo
 
         return {
+            "env": (str,),
             "finished_at": (int,),
             "git": (DORAGitInfo,),
             "id": (str,),
@@ -32,6 +33,7 @@ class DORADeploymentRequestAttributes(ModelNormal):
         }
 
     attribute_map = {
+        "env": "env",
         "finished_at": "finished_at",
         "git": "git",
         "id": "id",
@@ -45,6 +47,7 @@ class DORADeploymentRequestAttributes(ModelNormal):
         finished_at: int,
         service: str,
         started_at: int,
+        env: Union[str, UnsetType] = unset,
         git: Union[DORAGitInfo, UnsetType] = unset,
         id: Union[str, UnsetType] = unset,
         version: Union[str, UnsetType] = unset,
@@ -52,6 +55,9 @@ class DORADeploymentRequestAttributes(ModelNormal):
     ):
         """
         Attributes to create a DORA deployment event.
+
+        :param env: Environment name to where the service was deployed.
+        :type env: str, optional
 
         :param finished_at: Unix timestamp in nanoseconds when the deployment finished. It should not be older than 3 hours.
         :type finished_at: int
@@ -71,6 +77,8 @@ class DORADeploymentRequestAttributes(ModelNormal):
         :param version: Version to correlate with `APM Deployment Tracking <https://docs.datadoghq.com/tracing/services/deployment_tracking/>`_.
         :type version: str, optional
         """
+        if env is not unset:
+            kwargs["env"] = env
         if git is not unset:
             kwargs["git"] = git
         if id is not unset:

@@ -155,6 +155,30 @@ Feature: Security Monitoring
     And the response "data.attributes.exclusion_filters[0].name" is equal to "Exclude staging"
     And the response "data.attributes.exclusion_filters[0].query" is equal to "source:staging"
 
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Create a suppression rule returns "Bad Request" response
+    Given new "CreateSecurityMonitoringSuppression" request
+    And body with value {"data": {"attributes": {"description": "This rule suppresses low-severity signals in staging environments.", "enabled": true, "expiration_date": 1703187336000, "name": "Custom suppression", "rule_query": "type:log_detection source:cloudtrail", "suppression_query": "env:staging status:low"}, "type": "suppressions"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Create a suppression rule returns "Conflict" response
+    Given new "CreateSecurityMonitoringSuppression" request
+    And body with value {"data": {"attributes": {"description": "This rule suppresses low-severity signals in staging environments.", "enabled": true, "expiration_date": 1703187336000, "name": "Custom suppression", "rule_query": "type:log_detection source:cloudtrail", "suppression_query": "env:staging status:low"}, "type": "suppressions"}}
+    When the request is sent
+    Then the response status is 409 Conflict
+
+  @team:DataDog/k9-cloud-security-platform
+  Scenario: Create a suppression rule returns "OK" response
+    Given new "CreateSecurityMonitoringSuppression" request
+    And body with value {"data": {"attributes": {"description": "This rule suppresses low-severity signals in staging environments.", "enabled": true, "expiration_date": 1703187336000, "name": "{{ unique }}", "rule_query": "type:log_detection source:cloudtrail", "suppression_query": "env:staging status:low"}, "type": "suppressions"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "suppressions"
+    And the response "data.attributes.enabled" is equal to true
+    And the response "data.attributes.rule_query" is equal to "type:log_detection source:cloudtrail"
+
   @skip @team:DataDog/k9-cloud-security-platform
   Scenario: Delete a non existing rule returns "Not Found" response
     Given new "DeleteSecurityMonitoringRule" request
@@ -181,6 +205,21 @@ Feature: Security Monitoring
   Scenario: Delete a security filter returns "OK" response
     Given new "DeleteSecurityFilter" request
     And request contains "security_filter_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 OK
+
+  @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Delete a suppression rule returns "Not Found" response
+    Given new "DeleteSecurityMonitoringSuppression" request
+    And request contains "suppression_id" parameter with value "does-not-exist"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/k9-cloud-security-platform
+  Scenario: Delete a suppression rule returns "OK" response
+    Given there is a valid "suppression" in the system
+    And new "DeleteSecurityMonitoringSuppression" request
+    And request contains "suppression_id" parameter from "suppression.data.id"
     When the request is sent
     Then the response status is 204 OK
 
@@ -328,12 +367,35 @@ Feature: Security Monitoring
     Then the response status is 200 OK
 
   @team:DataDog/k9-cloud-security-platform
+  Scenario: Get a suppression rule returns "Not Found" response
+    Given new "GetSecurityMonitoringSuppression" request
+    And request contains "suppression_id" parameter with value "this-does-not-exist"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/k9-cloud-security-platform
+  Scenario: Get a suppression rule returns "OK" response
+    Given new "GetSecurityMonitoringSuppression" request
+    And there is a valid "suppression" in the system
+    And request contains "suppression_id" parameter from "suppression.data.id"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.attributes.rule_query" has the same value as "suppression.data.attributes.rule_query"
+    And the response "data.attributes.suppression_query" is equal to "env:test"
+
+  @team:DataDog/k9-cloud-security-platform
   Scenario: Get all security filters returns "OK" response
     Given new "ListSecurityFilters" request
     When the request is sent
     Then the response status is 200 OK
     And the response "data" has item with field "attributes.filtered_data_type" with value "logs"
     And the response "data" has item with field "attributes.is_builtin" with value true
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Get all suppression rules returns "OK" response
+    Given new "ListSecurityMonitoringSuppressions" request
+    When the request is sent
+    Then the response status is 200 OK
 
   @generated @skip @team:DataDog/cloud-security-posture-management
   Scenario: List findings returns "Bad Request: The server cannot process the request due to invalid syntax in the request." response
@@ -478,6 +540,42 @@ Feature: Security Monitoring
     And the response "data.type" is equal to "security_filters"
     And the response "data.attributes.filtered_data_type" is equal to "logs"
     And the response "data.attributes.name" is equal to "{{ unique }}"
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Update a suppression rule returns "Bad Request" response
+    Given new "UpdateSecurityMonitoringSuppression" request
+    And request contains "suppression_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"description": "This rule suppresses low-severity signals in staging environments.", "enabled": true, "expiration_date": 1703187336000, "name": "Custom suppression", "rule_query": "type:log_detection source:cloudtrail", "suppression_query": "env:staging status:low"}, "type": "suppressions"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Update a suppression rule returns "Concurrent Modification" response
+    Given new "UpdateSecurityMonitoringSuppression" request
+    And request contains "suppression_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"description": "This rule suppresses low-severity signals in staging environments.", "enabled": true, "expiration_date": 1703187336000, "name": "Custom suppression", "rule_query": "type:log_detection source:cloudtrail", "suppression_query": "env:staging status:low"}, "type": "suppressions"}}
+    When the request is sent
+    Then the response status is 409 Concurrent Modification
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Update a suppression rule returns "Not Found" response
+    Given new "UpdateSecurityMonitoringSuppression" request
+    And request contains "suppression_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"description": "This rule suppresses low-severity signals in staging environments.", "enabled": true, "expiration_date": 1703187336000, "name": "Custom suppression", "rule_query": "type:log_detection source:cloudtrail", "suppression_query": "env:staging status:low"}, "type": "suppressions"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/k9-cloud-security-platform
+  Scenario: Update a suppression rule returns "OK" response
+    Given new "UpdateSecurityMonitoringSuppression" request
+    And there is a valid "suppression" in the system
+    And request contains "suppression_id" parameter from "suppression.data.id"
+    And body with value {"data": {"attributes": {"suppression_query": "env:staging status:low"}, "type": "suppressions"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "suppressions"
+    And the response "data.attributes.suppression_query" is equal to "env:staging status:low"
+    And the response "data.attributes.version" is equal to 2
 
   @skip-validation @team:DataDog/k9-cloud-security-platform
   Scenario: Update an existing rule returns "Bad Request" response

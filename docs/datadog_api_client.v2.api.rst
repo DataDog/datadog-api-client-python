@@ -1,6 +1,13 @@
 datadog\_api\_client.v2.api
 ===========================
 
+api\_management\_api
+--------------------
+
+.. automodule:: datadog_api_client.v2.api.api_management_api
+   :members:
+   :show-inheritance:
+
 apm\_retention\_filters\_api
 ----------------------------
 

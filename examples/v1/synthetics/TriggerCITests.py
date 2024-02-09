@@ -25,7 +25,7 @@ body = SyntheticsCITestBody(
                 username="my_username",
             ),
             device_ids=[
-                SyntheticsDeviceID.LAPTOP_LARGE,
+                SyntheticsDeviceID.CHROME_LAPTOP_LARGE,
             ],
             locations=[
                 "aws:eu-west-3",

@@ -18,7 +18,7 @@ from datadog_api_client.v2.model.confluent_resource_request import ConfluentReso
 
 class ConfluentCloudApi:
     """
-    Configure your Datadog Confluent Cloud integration directly through the Datadog API.
+    Manage your Datadog Confluent Cloud integration accounts and account resources directly through the Datadog API. See the `Confluent Cloud page <https://docs.datadoghq.com/integrations/confluent_cloud/>`_ for more information.
     """
 
     def __init__(self, api_client=None):

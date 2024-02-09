@@ -1,7 +1,9 @@
 @endpoint(ci-visibility-pipelines) @endpoint(ci-visibility-pipelines-v2)
 Feature: CI Visibility Pipelines
   Search or aggregate your CI Visibility pipeline events and send them to
-  your Datadog site over HTTP.
+  your Datadog site over HTTP. See the [CI Pipeline Visibility in Datadog
+  page](https://docs.datadoghq.com/continuous_integration/pipelines/) for
+  more information.
 
   Background:
     Given a valid "apiKeyAuth" key in the system

@@ -19,7 +19,7 @@ from datadog_api_client.v1.model.host_totals import HostTotals
 
 class HostsApi:
     """
-    Get information about your live hosts in Datadog.
+    Get information about your infrastructure hosts in Datadog, and mute or unmute any notifications from your hosts. See the `Infrastructure page <https://docs.datadoghq.com/infrastructure/>`_ for more information.
     """
 
     def __init__(self, api_client=None):

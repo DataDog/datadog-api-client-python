@@ -54,7 +54,7 @@ body = SyntheticsBrowserTest(
         accept_self_signed=False,
         allow_insecure=True,
         device_ids=[
-            SyntheticsDeviceID.TABLET,
+            SyntheticsDeviceID.CHROME_LAPTOP_LARGE,
         ],
         disable_cors=True,
         follow_redirects=True,

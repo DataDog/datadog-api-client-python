@@ -1,8 +1,8 @@
 @endpoint(dashboards) @endpoint(dashboards-v1)
 Feature: Dashboards
-  Interact with your dashboard lists through the API to make it easier to
-  organize, find, and share all of your dashboards with your team and
-  organization.
+  Manage all your dashboards, as well as access to your shared dashboards,
+  through the API. See the [Dashboards
+  page](https://docs.datadoghq.com/dashboards/) for more information.
 
   Background:
     Given a valid "apiKeyAuth" key in the system

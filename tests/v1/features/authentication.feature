@@ -7,7 +7,10 @@ Feature: Authentication
   site APIs. If you are on the Datadog EU site, set the environment variable
   `DATADOG_HOST` to `https://api.datadoghq.eu` or override this value
   directly when creating your client.  [Manage your account’s API and
-  application keys](https://app.datadoghq.com/account/settings#api).
+  application keys](https://app.datadoghq.com/organization-settings/) in
+  Datadog, and see the [API and Application Keys
+  page](https://docs.datadoghq.com/account_management/api-app-keys/) in the
+  documentation.
 
   Background:
     Given an instance of "Authentication" API

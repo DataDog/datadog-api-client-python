@@ -1,6 +1,8 @@
 @endpoint(dora-metrics) @endpoint(dora-metrics-v2)
 Feature: DORA Metrics
-  Send events for DORA Metrics to measure and improve software delivery.
+  Send events for DORA Metrics to measure and improve software delivery. See
+  the [DORA Metrics page](https://docs.datadoghq.com/dora_metrics/) for more
+  information.
 
   Background:
     Given a valid "apiKeyAuth" key in the system
@@ -42,7 +44,7 @@ Feature: DORA Metrics
   Scenario: Send an incident event for DORA Metrics returns "OK - but delayed due to incident" response
     Given operation "CreateDORAIncident" enabled
     And new "CreateDORAIncident" request
-    And body with value {"data": {"attributes": {"finished_at": 1693491984000000000, "git": {"commit_sha": "66adc9350f2cc9b250b69abddab733dd55e1a588", "repository_url": "https://github.com/organization/example-repository"}, "name": "Webserver is down failing all requests", "service": "shopist", "severity": "High", "started_at": 1693491974000000000, "version": "v1.12.07"}}}
+    And body with value {"data": {"attributes": {"env": "staging", "finished_at": 1693491984000000000, "git": {"commit_sha": "66adc9350f2cc9b250b69abddab733dd55e1a588", "repository_url": "https://github.com/organization/example-repository"}, "name": "Webserver is down failing all requests", "service": "shopist", "severity": "High", "started_at": 1693491974000000000, "version": "v1.12.07"}}}
     When the request is sent
     Then the response status is 202 OK - but delayed due to incident
 

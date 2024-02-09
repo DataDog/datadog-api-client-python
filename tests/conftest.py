@@ -55,7 +55,7 @@ from pytest_bdd import given, parsers, then, when
 from datadog_api_client import exceptions
 from datadog_api_client.api_client import ApiClient
 from datadog_api_client.configuration import Configuration
-from datadog_api_client.model_utils import OpenApiModel
+from datadog_api_client.model_utils import OpenApiModel, file_type
 
 logging.basicConfig()
 
@@ -478,10 +478,20 @@ def build_given(version, operation):
         with ApiClient(configuration) as client:
             api = getattr(package, name + "Api")(client)
             operation_method = getattr(api, operation_name)
+            params_map = getattr(api, f"_{operation_name}_endpoint").params_map
 
             # perform operation
             def build_param(p):
+                openapi_types = params_map[p["name"]]["openapi_types"]
                 if "value" in p:
+                    if openapi_types == (file_type,):
+                        filepath = os.path.join(
+                            os.path.dirname(__file__),
+                            version,
+                            "features",
+                            json.loads(Template(p["value"]).render(**context)),
+                        )
+                        return open(filepath)
                     return json.loads(Template(p["value"]).render(**context))
                 if "source" in p:
                     return glom(context, p["source"])
@@ -581,7 +591,13 @@ def execute_request(undo, context, client, api_version, request):
 
     params_map = getattr(api_request["api"], f'_{api_request["request"].__name__}_endpoint').params_map
     for k, v in api_request["kwargs"].items():
-        api_request["kwargs"][k] = client.deserialize(v, params_map[k]["openapi_types"], True)
+        openapi_types = params_map[k]["openapi_types"]
+        if openapi_types == (file_type,):
+            filepath = os.path.join(os.path.dirname(__file__), api_version, "features", json.loads(v))
+            # We let the GC collects it, this shouldn't be an issue
+            api_request["kwargs"][k] = open(filepath)
+        else:
+            api_request["kwargs"][k] = client.deserialize(v, openapi_types, True)
 
     try:
         response = api_request["request"](*api_request["args"], **api_request["kwargs"])

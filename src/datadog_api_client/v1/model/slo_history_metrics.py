@@ -61,7 +61,7 @@ class SLOHistoryMetrics(ModelNormal):
 
         This is not included in responses for ``monitor`` based SLOs.
 
-        :param denominator: A representation of ``metric`` based SLO time series for the provided queries.
+        :param denominator: A representation of ``metric`` based SLO timeseries for the provided queries.
             This is the same response type from ``batch_query`` endpoint.
         :type denominator: SLOHistoryMetricsSeries
 
@@ -71,7 +71,7 @@ class SLOHistoryMetrics(ModelNormal):
         :param message: Optional message if there are specific query issues/warnings.
         :type message: str, optional
 
-        :param numerator: A representation of ``metric`` based SLO time series for the provided queries.
+        :param numerator: A representation of ``metric`` based SLO timeseries for the provided queries.
             This is the same response type from ``batch_query`` endpoint.
         :type numerator: SLOHistoryMetricsSeries
 

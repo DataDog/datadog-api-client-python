@@ -14,6 +14,18 @@
   {
     "parameters": [
       {
+        "name": "openapi_spec_file",
+        "value": "\"openapi-spec.yaml\""
+      }
+    ],
+    "step": "there is a valid \"managed_api\" in the system",
+    "key": "managed_api",
+    "tag": "API Management",
+    "operationId": "CreateOpenAPI"
+  },
+  {
+    "parameters": [
+      {
         "name": "body",
         "value": "{\n  \"data\": {\n    \"id\": \"{{ unique }}\",\n    \"attributes\": {\n      \"filter\": {\n        \"query\": \"source:{{ unique }}\"\n      },\n      \"compute\": {\n        \"aggregation_type\": \"distribution\",\n        \"path\": \"@duration\",\n        \"include_percentiles\": false\n      },\n      \"group_by\": [\n        {\n            \"path\": \"resource_name\",\n            \"tag_name\": \"resource_name\"\n        }\n      ]\n    },\n    \"type\": \"spans_metrics\"\n  }\n}"
       }
@@ -421,6 +433,18 @@
     "key": "security_filter",
     "tag": "Security Monitoring",
     "operationId": "CreateSecurityFilter"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"suppressions\",\n    \"attributes\": {\n      \"enabled\": true,\n      \"name\": \"{{ unique }}\",\n      \"description\": \"{{ unique }}\",\n      \"rule_query\": \"source:cloudtrail\",\n      \"suppression_query\": \"env:test\"\n    }\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"suppression\" in the system",
+    "key": "suppression",
+    "tag": "Security Monitoring",
+    "operationId": "CreateSecurityMonitoringSuppression"
   },
   {
     "parameters": [

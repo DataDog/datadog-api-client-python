@@ -1884,6 +1884,27 @@ cost\_by\_org\_type
    :members:
    :show-inheritance:
 
+create\_open\_api\_response
+---------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_open_api_response
+   :members:
+   :show-inheritance:
+
+create\_open\_api\_response\_attributes
+---------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_open_api_response_attributes
+   :members:
+   :show-inheritance:
+
+create\_open\_api\_response\_data
+---------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_open_api_response_data
+   :members:
+   :show-inheritance:
+
 create\_rule\_request
 ---------------------
 
@@ -5286,6 +5307,20 @@ on\_demand\_concurrency\_cap\_type
    :members:
    :show-inheritance:
 
+open\_api\_endpoint
+-------------------
+
+.. automodule:: datadog_api_client.v2.model.open_api_endpoint
+   :members:
+   :show-inheritance:
+
+open\_api\_file
+---------------
+
+.. automodule:: datadog_api_client.v2.model.open_api_file
+   :members:
+   :show-inheritance:
+
 opsgenie\_service\_create\_attributes
 -------------------------------------
 
@@ -7330,6 +7365,83 @@ security\_monitoring\_standard\_rule\_response
    :members:
    :show-inheritance:
 
+security\_monitoring\_suppression
+---------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_suppression
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_suppression\_attributes
+---------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_suppression_attributes
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_suppression\_create\_attributes
+-----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_suppression_create_attributes
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_suppression\_create\_data
+-----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_suppression_create_data
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_suppression\_create\_request
+--------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_suppression_create_request
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_suppression\_response
+-------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_suppression_response
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_suppression\_type
+---------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_suppression_type
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_suppression\_update\_attributes
+-----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_suppression_update_attributes
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_suppression\_update\_data
+-----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_suppression_update_data
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_suppression\_update\_request
+--------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_suppression_update_request
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_suppressions\_response
+--------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_suppressions_response
+   :members:
+   :show-inheritance:
+
 security\_monitoring\_third\_party\_root\_query
 -----------------------------------------------
 
@@ -7355,6 +7467,13 @@ security\_monitoring\_triage\_user
 ----------------------------------
 
 .. automodule:: datadog_api_client.v2.model.security_monitoring_triage_user
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_user
+--------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_user
    :members:
    :show-inheritance:
 
@@ -8979,6 +9098,27 @@ unit
 ----
 
 .. automodule:: datadog_api_client.v2.model.unit
+   :members:
+   :show-inheritance:
+
+update\_open\_api\_response
+---------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_open_api_response
+   :members:
+   :show-inheritance:
+
+update\_open\_api\_response\_attributes
+---------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_open_api_response_attributes
+   :members:
+   :show-inheritance:
+
+update\_open\_api\_response\_data
+---------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_open_api_response_data
    :members:
    :show-inheritance:
 
