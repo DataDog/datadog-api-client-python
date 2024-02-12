@@ -1,0 +1,42 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"priority":"P4","title":"My new case","type":"STANDARD"},"relationships":{"project":{"data":{"id":"d4bbe1af-f36e-42f1-87c1-493ca35c320e","type":"project"}}},"type":"case"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/cases
+  response:
+    body:
+      string: '{"data":{"id":"60fdb1eb-209a-4072-9db3-4d08a9c4180c","type":"case","attributes":{"attributes":{},"created_at":"2024-02-07T18:00:44.723781245Z","creation_source":"MANUAL","description":"","insights":[],"internal_id":"60fdb1eb-209a-4072-9db3-4d08a9c4180c","key":"DDFC-13","priority":"P4","public_id":"73","status":"OPEN","title":"My
+        new case","type":"STANDARD"},"relationships":{"created_by":{"data":{"id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","type":"user"}},"project":{"data":{"id":"d4bbe1af-f36e-42f1-87c1-493ca35c320e","type":"project"}}}},"included":[{"id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","type":"user","attributes":{"email":"team-intg-tools-libs-spam@datadoghq.com","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+        Account"}}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"priority":"P3"},"type":"case"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/cases/60fdb1eb-209a-4072-9db3-4d08a9c4180c/priority
+  response:
+    body:
+      string: '{"data":{"id":"60fdb1eb-209a-4072-9db3-4d08a9c4180c","type":"case","attributes":{"attributes":{},"created_at":"2024-02-07T18:00:44.723781Z","creation_source":"MANUAL","description":"","insights":[],"internal_id":"60fdb1eb-209a-4072-9db3-4d08a9c4180c","key":"DDFC-13","modified_at":"2024-02-07T18:00:45.028076Z","priority":"P3","public_id":"73","status":"OPEN","title":"My
+        new case","type":"STANDARD"},"relationships":{"created_by":{"data":{"id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","type":"user"}},"modified_by":{"data":{"id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","type":"user"}},"project":{"data":{"id":"d4bbe1af-f36e-42f1-87c1-493ca35c320e","type":"project"}}}},"included":[{"id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","type":"user","attributes":{"email":"team-intg-tools-libs-spam@datadoghq.com","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+        Account"}}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1

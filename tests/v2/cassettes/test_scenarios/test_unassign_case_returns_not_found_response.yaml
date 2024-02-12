@@ -1,0 +1,20 @@
+interactions:
+- request:
+    body: '{"data":{"type":"case"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/cases/67d80aa3-36ff-44b9-a694-c501a7591737/unassign
+  response:
+    body:
+      string: '{"errors":[{"code":"resource_not_found","title":"case not found"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 404
+      message: Not Found
+version: 1

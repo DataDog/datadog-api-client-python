@@ -722,6 +722,202 @@ bulk\_mute\_findings\_response\_data
    :members:
    :show-inheritance:
 
+case
+----
+
+.. automodule:: datadog_api_client.v2.model.case
+   :members:
+   :show-inheritance:
+
+case3rd\_party\_ticket\_status
+------------------------------
+
+.. automodule:: datadog_api_client.v2.model.case3rd_party_ticket_status
+   :members:
+   :show-inheritance:
+
+case\_assign
+------------
+
+.. automodule:: datadog_api_client.v2.model.case_assign
+   :members:
+   :show-inheritance:
+
+case\_assign\_attributes
+------------------------
+
+.. automodule:: datadog_api_client.v2.model.case_assign_attributes
+   :members:
+   :show-inheritance:
+
+case\_assign\_request
+---------------------
+
+.. automodule:: datadog_api_client.v2.model.case_assign_request
+   :members:
+   :show-inheritance:
+
+case\_attributes
+----------------
+
+.. automodule:: datadog_api_client.v2.model.case_attributes
+   :members:
+   :show-inheritance:
+
+case\_create
+------------
+
+.. automodule:: datadog_api_client.v2.model.case_create
+   :members:
+   :show-inheritance:
+
+case\_create\_attributes
+------------------------
+
+.. automodule:: datadog_api_client.v2.model.case_create_attributes
+   :members:
+   :show-inheritance:
+
+case\_create\_relationships
+---------------------------
+
+.. automodule:: datadog_api_client.v2.model.case_create_relationships
+   :members:
+   :show-inheritance:
+
+case\_create\_request
+---------------------
+
+.. automodule:: datadog_api_client.v2.model.case_create_request
+   :members:
+   :show-inheritance:
+
+case\_empty
+-----------
+
+.. automodule:: datadog_api_client.v2.model.case_empty
+   :members:
+   :show-inheritance:
+
+case\_empty\_request
+--------------------
+
+.. automodule:: datadog_api_client.v2.model.case_empty_request
+   :members:
+   :show-inheritance:
+
+case\_priority
+--------------
+
+.. automodule:: datadog_api_client.v2.model.case_priority
+   :members:
+   :show-inheritance:
+
+case\_relationships
+-------------------
+
+.. automodule:: datadog_api_client.v2.model.case_relationships
+   :members:
+   :show-inheritance:
+
+case\_resource\_type
+--------------------
+
+.. automodule:: datadog_api_client.v2.model.case_resource_type
+   :members:
+   :show-inheritance:
+
+case\_response
+--------------
+
+.. automodule:: datadog_api_client.v2.model.case_response
+   :members:
+   :show-inheritance:
+
+case\_sortable\_field
+---------------------
+
+.. automodule:: datadog_api_client.v2.model.case_sortable_field
+   :members:
+   :show-inheritance:
+
+case\_status
+------------
+
+.. automodule:: datadog_api_client.v2.model.case_status
+   :members:
+   :show-inheritance:
+
+case\_type
+----------
+
+.. automodule:: datadog_api_client.v2.model.case_type
+   :members:
+   :show-inheritance:
+
+case\_update\_priority
+----------------------
+
+.. automodule:: datadog_api_client.v2.model.case_update_priority
+   :members:
+   :show-inheritance:
+
+case\_update\_priority\_attributes
+----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.case_update_priority_attributes
+   :members:
+   :show-inheritance:
+
+case\_update\_priority\_request
+-------------------------------
+
+.. automodule:: datadog_api_client.v2.model.case_update_priority_request
+   :members:
+   :show-inheritance:
+
+case\_update\_status
+--------------------
+
+.. automodule:: datadog_api_client.v2.model.case_update_status
+   :members:
+   :show-inheritance:
+
+case\_update\_status\_attributes
+--------------------------------
+
+.. automodule:: datadog_api_client.v2.model.case_update_status_attributes
+   :members:
+   :show-inheritance:
+
+case\_update\_status\_request
+-----------------------------
+
+.. automodule:: datadog_api_client.v2.model.case_update_status_request
+   :members:
+   :show-inheritance:
+
+cases\_response
+---------------
+
+.. automodule:: datadog_api_client.v2.model.cases_response
+   :members:
+   :show-inheritance:
+
+cases\_response\_meta
+---------------------
+
+.. automodule:: datadog_api_client.v2.model.cases_response_meta
+   :members:
+   :show-inheritance:
+
+cases\_response\_meta\_pagination
+---------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cases_response_meta_pagination
+   :members:
+   :show-inheritance:
+
 chargeback\_breakdown
 ---------------------
 
@@ -3942,6 +4138,20 @@ jira\_integration\_metadata\_issues\_item
    :members:
    :show-inheritance:
 
+jira\_issue
+-----------
+
+.. automodule:: datadog_api_client.v2.model.jira_issue
+   :members:
+   :show-inheritance:
+
+jira\_issue\_result
+-------------------
+
+.. automodule:: datadog_api_client.v2.model.jira_issue_result
+   :members:
+   :show-inheritance:
+
 jsonapi\_error\_item
 --------------------
 
@@ -5209,6 +5419,20 @@ nullable\_relationship\_to\_user\_data
    :members:
    :show-inheritance:
 
+nullable\_user\_relationship
+----------------------------
+
+.. automodule:: datadog_api_client.v2.model.nullable_user_relationship
+   :members:
+   :show-inheritance:
+
+nullable\_user\_relationship\_data
+----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.nullable_user_relationship_data
+   :members:
+   :show-inheritance:
+
 okta\_account
 -------------
 
@@ -5734,6 +5958,76 @@ process\_summary\_type
    :members:
    :show-inheritance:
 
+project
+-------
+
+.. automodule:: datadog_api_client.v2.model.project
+   :members:
+   :show-inheritance:
+
+project\_attributes
+-------------------
+
+.. automodule:: datadog_api_client.v2.model.project_attributes
+   :members:
+   :show-inheritance:
+
+project\_create
+---------------
+
+.. automodule:: datadog_api_client.v2.model.project_create
+   :members:
+   :show-inheritance:
+
+project\_create\_attributes
+---------------------------
+
+.. automodule:: datadog_api_client.v2.model.project_create_attributes
+   :members:
+   :show-inheritance:
+
+project\_create\_request
+------------------------
+
+.. automodule:: datadog_api_client.v2.model.project_create_request
+   :members:
+   :show-inheritance:
+
+project\_relationship
+---------------------
+
+.. automodule:: datadog_api_client.v2.model.project_relationship
+   :members:
+   :show-inheritance:
+
+project\_relationship\_data
+---------------------------
+
+.. automodule:: datadog_api_client.v2.model.project_relationship_data
+   :members:
+   :show-inheritance:
+
+project\_relationships
+----------------------
+
+.. automodule:: datadog_api_client.v2.model.project_relationships
+   :members:
+   :show-inheritance:
+
+project\_resource\_type
+-----------------------
+
+.. automodule:: datadog_api_client.v2.model.project_resource_type
+   :members:
+   :show-inheritance:
+
+project\_response
+-----------------
+
+.. automodule:: datadog_api_client.v2.model.project_response
+   :members:
+   :show-inheritance:
+
 projected\_cost
 ---------------
 
@@ -5759,6 +6053,13 @@ projected\_cost\_type
 ---------------------
 
 .. automodule:: datadog_api_client.v2.model.projected_cost_type
+   :members:
+   :show-inheritance:
+
+projects\_response
+------------------
+
+.. automodule:: datadog_api_client.v2.model.projects_response
    :members:
    :show-inheritance:
 
@@ -8275,6 +8576,20 @@ service\_definitions\_list\_response
    :members:
    :show-inheritance:
 
+service\_now\_ticket
+--------------------
+
+.. automodule:: datadog_api_client.v2.model.service_now_ticket
+   :members:
+   :show-inheritance:
+
+service\_now\_ticket\_result
+----------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_now_ticket_result
+   :members:
+   :show-inheritance:
+
 slack\_integration\_metadata
 ----------------------------
 
@@ -9262,10 +9577,24 @@ user\_invitations\_type
    :members:
    :show-inheritance:
 
+user\_relationship\_data
+------------------------
+
+.. automodule:: datadog_api_client.v2.model.user_relationship_data
+   :members:
+   :show-inheritance:
+
 user\_relationships
 -------------------
 
 .. automodule:: datadog_api_client.v2.model.user_relationships
+   :members:
+   :show-inheritance:
+
+user\_resource\_type
+--------------------
+
+.. automodule:: datadog_api_client.v2.model.user_resource_type
    :members:
    :show-inheritance:
 
@@ -9420,6 +9749,13 @@ user\_update\_request
 ---------------------
 
 .. automodule:: datadog_api_client.v2.model.user_update_request
+   :members:
+   :show-inheritance:
+
+users\_relationship
+-------------------
+
+.. automodule:: datadog_api_client.v2.model.users_relationship
    :members:
    :show-inheritance:
 

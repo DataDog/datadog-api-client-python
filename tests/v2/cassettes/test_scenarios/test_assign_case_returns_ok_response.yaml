@@ -1,0 +1,78 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"priority":"P4","title":"My new case","type":"STANDARD"},"relationships":{"project":{"data":{"id":"d4bbe1af-f36e-42f1-87c1-493ca35c320e","type":"project"}}},"type":"case"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/cases
+  response:
+    body:
+      string: '{"data":{"id":"a0801fce-a045-4b66-ad78-effcd959fa4f","type":"case","attributes":{"attributes":{},"created_at":"2024-02-07T18:00:38.353039559Z","creation_source":"MANUAL","description":"","insights":[],"internal_id":"a0801fce-a045-4b66-ad78-effcd959fa4f","key":"DDFC-5","priority":"P4","public_id":"65","status":"OPEN","title":"My
+        new case","type":"STANDARD"},"relationships":{"created_by":{"data":{"id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","type":"user"}},"project":{"data":{"id":"d4bbe1af-f36e-42f1-87c1-493ca35c320e","type":"project"}}}},"included":[{"id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","type":"user","attributes":{"email":"team-intg-tools-libs-spam@datadoghq.com","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+        Account"}}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"email":"Test-Assign_case_returns_OK_response-1707328838@datadoghq.com","title":"user
+      title"},"type":"users"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/users
+  response:
+    body:
+      string: '{"data":{"type":"users","id":"cced7029-c5e2-11ee-ac63-c24751e8bab0","attributes":{"name":null,"handle":"test-assign_case_returns_ok_response-1707328838@datadoghq.com","created_at":"2024-02-07T18:00:38.645791+00:00","modified_at":"2024-02-07T18:00:38.645791+00:00","email":"test-assign_case_returns_ok_response-1707328838@datadoghq.com","icon":"https://secure.gravatar.com/avatar/dd4005a3eca9e7c6aed30c77d193bc37?s=48&d=retro","title":"user
+        title","verified":false,"service_account":false,"disabled":false,"allowed_login_methods":[],"status":"Pending"},"relationships":{"roles":{"data":[]},"org":{"data":{"type":"orgs","id":"4dee724d-00cc-11ea-a77b-570c9d03c6c5"}}}}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"assignee_id":"cced7029-c5e2-11ee-ac63-c24751e8bab0"},"type":"case"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/cases/a0801fce-a045-4b66-ad78-effcd959fa4f/assign
+  response:
+    body:
+      string: '{"data":{"id":"a0801fce-a045-4b66-ad78-effcd959fa4f","type":"case","attributes":{"attributes":{},"created_at":"2024-02-07T18:00:38.35304Z","creation_source":"MANUAL","description":"","insights":[],"internal_id":"a0801fce-a045-4b66-ad78-effcd959fa4f","key":"DDFC-5","modified_at":"2024-02-07T18:00:39.010235Z","priority":"P4","public_id":"65","status":"OPEN","title":"My
+        new case","type":"STANDARD"},"relationships":{"assignee":{"data":{"id":"cced7029-c5e2-11ee-ac63-c24751e8bab0","type":"user"}},"created_by":{"data":{"id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","type":"user"}},"modified_by":{"data":{"id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","type":"user"}},"project":{"data":{"id":"d4bbe1af-f36e-42f1-87c1-493ca35c320e","type":"project"}}}},"included":[{"id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","type":"user","attributes":{"email":"team-intg-tools-libs-spam@datadoghq.com","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+        Account"}},{"id":"cced7029-c5e2-11ee-ac63-c24751e8bab0","type":"user","attributes":{"email":"test-assign_case_returns_ok_response-1707328838@datadoghq.com","handle":"test-assign_case_returns_ok_response-1707328838@datadoghq.com","name":""}}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/users/cced7029-c5e2-11ee-ac63-c24751e8bab0
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1

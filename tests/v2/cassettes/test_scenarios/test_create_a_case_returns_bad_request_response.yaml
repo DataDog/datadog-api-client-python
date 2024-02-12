@@ -1,0 +1,22 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"priority":"NOT_DEFINED","title":"Security breach
+      investigation","type":"STANDARD"},"relationships":{"assignee":{"data":{"id":"00000000-0000-0000-0000-000000000000","type":"userx"}},"project":{"data":{"id":"e555e290-ed65-49bd-ae18-8acbfcf18db7","type":"project"}}},"type":"case"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/cases
+  response:
+    body:
+      string: '{"errors":[{"status":"400","title":"Bad Request","detail":"got type
+        \"userx\" expected one of \"user\""}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 400
+      message: Bad Request
+version: 1

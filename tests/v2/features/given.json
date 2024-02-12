@@ -63,6 +63,19 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"title\": \"My new case\",\n      \"type\": \"STANDARD\",\n      \"priority\": \"P4\"\n    },\n    \"relationships\": {\n      \"project\": {\n        \"data\": {\n          \"id\": \"d4bbe1af-f36e-42f1-87c1-493ca35c320e\",\n          \"type\": \"project\"\n        }\n      }\n    },\n    \"type\": \"case\"\n  }\n}"
+      }
+    ],
+    "source": "data",
+    "step": "there is a valid \"case\" in the system",
+    "key": "case",
+    "tag": "Cases",
+    "operationId": "CreateCase"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"name\": \"{{ unique }}\"\n    },\n    \"type\": \"application_keys\"\n  }\n}"
       }
     ],
