@@ -183,6 +183,34 @@ from datadog_api_client.v2.model.ci_app_tests_bucket_response import CIAppTestsB
 from datadog_api_client.v2.model.ci_app_tests_group_by import CIAppTestsGroupBy
 from datadog_api_client.v2.model.ci_app_tests_query_filter import CIAppTestsQueryFilter
 from datadog_api_client.v2.model.ci_app_warning import CIAppWarning
+from datadog_api_client.v2.model.case import Case
+from datadog_api_client.v2.model.case3rd_party_ticket_status import Case3rdPartyTicketStatus
+from datadog_api_client.v2.model.case_assign import CaseAssign
+from datadog_api_client.v2.model.case_assign_attributes import CaseAssignAttributes
+from datadog_api_client.v2.model.case_assign_request import CaseAssignRequest
+from datadog_api_client.v2.model.case_attributes import CaseAttributes
+from datadog_api_client.v2.model.case_create import CaseCreate
+from datadog_api_client.v2.model.case_create_attributes import CaseCreateAttributes
+from datadog_api_client.v2.model.case_create_relationships import CaseCreateRelationships
+from datadog_api_client.v2.model.case_create_request import CaseCreateRequest
+from datadog_api_client.v2.model.case_empty import CaseEmpty
+from datadog_api_client.v2.model.case_empty_request import CaseEmptyRequest
+from datadog_api_client.v2.model.case_priority import CasePriority
+from datadog_api_client.v2.model.case_relationships import CaseRelationships
+from datadog_api_client.v2.model.case_resource_type import CaseResourceType
+from datadog_api_client.v2.model.case_response import CaseResponse
+from datadog_api_client.v2.model.case_sortable_field import CaseSortableField
+from datadog_api_client.v2.model.case_status import CaseStatus
+from datadog_api_client.v2.model.case_type import CaseType
+from datadog_api_client.v2.model.case_update_priority import CaseUpdatePriority
+from datadog_api_client.v2.model.case_update_priority_attributes import CaseUpdatePriorityAttributes
+from datadog_api_client.v2.model.case_update_priority_request import CaseUpdatePriorityRequest
+from datadog_api_client.v2.model.case_update_status import CaseUpdateStatus
+from datadog_api_client.v2.model.case_update_status_attributes import CaseUpdateStatusAttributes
+from datadog_api_client.v2.model.case_update_status_request import CaseUpdateStatusRequest
+from datadog_api_client.v2.model.cases_response import CasesResponse
+from datadog_api_client.v2.model.cases_response_meta import CasesResponseMeta
+from datadog_api_client.v2.model.cases_response_meta_pagination import CasesResponseMetaPagination
 from datadog_api_client.v2.model.chargeback_breakdown import ChargebackBreakdown
 from datadog_api_client.v2.model.cloud_configuration_compliance_rule_options import (
     CloudConfigurationComplianceRuleOptions,
@@ -653,6 +681,8 @@ from datadog_api_client.v2.model.jsonapi_error_item import JSONAPIErrorItem
 from datadog_api_client.v2.model.jsonapi_error_response import JSONAPIErrorResponse
 from datadog_api_client.v2.model.jira_integration_metadata import JiraIntegrationMetadata
 from datadog_api_client.v2.model.jira_integration_metadata_issues_item import JiraIntegrationMetadataIssuesItem
+from datadog_api_client.v2.model.jira_issue import JiraIssue
+from datadog_api_client.v2.model.jira_issue_result import JiraIssueResult
 from datadog_api_client.v2.model.list_application_keys_response import ListApplicationKeysResponse
 from datadog_api_client.v2.model.list_downtimes_response import ListDowntimesResponse
 from datadog_api_client.v2.model.list_findings_meta import ListFindingsMeta
@@ -854,6 +884,8 @@ from datadog_api_client.v2.model.monthly_cost_attribution_pagination import Mont
 from datadog_api_client.v2.model.monthly_cost_attribution_response import MonthlyCostAttributionResponse
 from datadog_api_client.v2.model.nullable_relationship_to_user import NullableRelationshipToUser
 from datadog_api_client.v2.model.nullable_relationship_to_user_data import NullableRelationshipToUserData
+from datadog_api_client.v2.model.nullable_user_relationship import NullableUserRelationship
+from datadog_api_client.v2.model.nullable_user_relationship_data import NullableUserRelationshipData
 from datadog_api_client.v2.model.okta_account import OktaAccount
 from datadog_api_client.v2.model.okta_account_attributes import OktaAccountAttributes
 from datadog_api_client.v2.model.okta_account_request import OktaAccountRequest
@@ -931,10 +963,21 @@ from datadog_api_client.v2.model.process_summaries_response import ProcessSummar
 from datadog_api_client.v2.model.process_summary import ProcessSummary
 from datadog_api_client.v2.model.process_summary_attributes import ProcessSummaryAttributes
 from datadog_api_client.v2.model.process_summary_type import ProcessSummaryType
+from datadog_api_client.v2.model.project import Project
+from datadog_api_client.v2.model.project_attributes import ProjectAttributes
+from datadog_api_client.v2.model.project_create import ProjectCreate
+from datadog_api_client.v2.model.project_create_attributes import ProjectCreateAttributes
+from datadog_api_client.v2.model.project_create_request import ProjectCreateRequest
+from datadog_api_client.v2.model.project_relationship import ProjectRelationship
+from datadog_api_client.v2.model.project_relationship_data import ProjectRelationshipData
+from datadog_api_client.v2.model.project_relationships import ProjectRelationships
+from datadog_api_client.v2.model.project_resource_type import ProjectResourceType
+from datadog_api_client.v2.model.project_response import ProjectResponse
 from datadog_api_client.v2.model.projected_cost import ProjectedCost
 from datadog_api_client.v2.model.projected_cost_attributes import ProjectedCostAttributes
 from datadog_api_client.v2.model.projected_cost_response import ProjectedCostResponse
 from datadog_api_client.v2.model.projected_cost_type import ProjectedCostType
+from datadog_api_client.v2.model.projects_response import ProjectsResponse
 from datadog_api_client.v2.model.query_formula import QueryFormula
 from datadog_api_client.v2.model.query_sort_order import QuerySortOrder
 from datadog_api_client.v2.model.rum_aggregate_bucket_value import RUMAggregateBucketValue
@@ -1434,6 +1477,8 @@ from datadog_api_client.v2.model.service_definition_v2_slack_type import Service
 from datadog_api_client.v2.model.service_definition_v2_version import ServiceDefinitionV2Version
 from datadog_api_client.v2.model.service_definitions_create_request import ServiceDefinitionsCreateRequest
 from datadog_api_client.v2.model.service_definitions_list_response import ServiceDefinitionsListResponse
+from datadog_api_client.v2.model.service_now_ticket import ServiceNowTicket
+from datadog_api_client.v2.model.service_now_ticket_result import ServiceNowTicketResult
 from datadog_api_client.v2.model.slack_integration_metadata import SlackIntegrationMetadata
 from datadog_api_client.v2.model.slack_integration_metadata_channel_item import SlackIntegrationMetadataChannelItem
 from datadog_api_client.v2.model.sort_direction import SortDirection
@@ -1579,7 +1624,9 @@ from datadog_api_client.v2.model.user_invitation_response_data import UserInvita
 from datadog_api_client.v2.model.user_invitations_request import UserInvitationsRequest
 from datadog_api_client.v2.model.user_invitations_response import UserInvitationsResponse
 from datadog_api_client.v2.model.user_invitations_type import UserInvitationsType
+from datadog_api_client.v2.model.user_relationship_data import UserRelationshipData
 from datadog_api_client.v2.model.user_relationships import UserRelationships
+from datadog_api_client.v2.model.user_resource_type import UserResourceType
 from datadog_api_client.v2.model.user_response import UserResponse
 from datadog_api_client.v2.model.user_response_included_item import UserResponseIncludedItem
 from datadog_api_client.v2.model.user_response_relationships import UserResponseRelationships
@@ -1602,6 +1649,7 @@ from datadog_api_client.v2.model.user_teams_response import UserTeamsResponse
 from datadog_api_client.v2.model.user_update_attributes import UserUpdateAttributes
 from datadog_api_client.v2.model.user_update_data import UserUpdateData
 from datadog_api_client.v2.model.user_update_request import UserUpdateRequest
+from datadog_api_client.v2.model.users_relationship import UsersRelationship
 from datadog_api_client.v2.model.users_response import UsersResponse
 from datadog_api_client.v2.model.users_type import UsersType
 from datadog_api_client.v2.model.widget_live_span import WidgetLiveSpan
@@ -1780,6 +1828,34 @@ __all__ = [
     "CIAppTestsGroupBy",
     "CIAppTestsQueryFilter",
     "CIAppWarning",
+    "Case",
+    "Case3rdPartyTicketStatus",
+    "CaseAssign",
+    "CaseAssignAttributes",
+    "CaseAssignRequest",
+    "CaseAttributes",
+    "CaseCreate",
+    "CaseCreateAttributes",
+    "CaseCreateRelationships",
+    "CaseCreateRequest",
+    "CaseEmpty",
+    "CaseEmptyRequest",
+    "CasePriority",
+    "CaseRelationships",
+    "CaseResourceType",
+    "CaseResponse",
+    "CaseSortableField",
+    "CaseStatus",
+    "CaseType",
+    "CaseUpdatePriority",
+    "CaseUpdatePriorityAttributes",
+    "CaseUpdatePriorityRequest",
+    "CaseUpdateStatus",
+    "CaseUpdateStatusAttributes",
+    "CaseUpdateStatusRequest",
+    "CasesResponse",
+    "CasesResponseMeta",
+    "CasesResponseMetaPagination",
     "ChargebackBreakdown",
     "CloudConfigurationComplianceRuleOptions",
     "CloudConfigurationRegoRule",
@@ -2172,6 +2248,8 @@ __all__ = [
     "JSONAPIErrorResponse",
     "JiraIntegrationMetadata",
     "JiraIntegrationMetadataIssuesItem",
+    "JiraIssue",
+    "JiraIssueResult",
     "ListApplicationKeysResponse",
     "ListDowntimesResponse",
     "ListFindingsMeta",
@@ -2351,6 +2429,8 @@ __all__ = [
     "MonthlyCostAttributionResponse",
     "NullableRelationshipToUser",
     "NullableRelationshipToUserData",
+    "NullableUserRelationship",
+    "NullableUserRelationshipData",
     "OktaAccount",
     "OktaAccountAttributes",
     "OktaAccountRequest",
@@ -2426,10 +2506,21 @@ __all__ = [
     "ProcessSummary",
     "ProcessSummaryAttributes",
     "ProcessSummaryType",
+    "Project",
+    "ProjectAttributes",
+    "ProjectCreate",
+    "ProjectCreateAttributes",
+    "ProjectCreateRequest",
+    "ProjectRelationship",
+    "ProjectRelationshipData",
+    "ProjectRelationships",
+    "ProjectResourceType",
+    "ProjectResponse",
     "ProjectedCost",
     "ProjectedCostAttributes",
     "ProjectedCostResponse",
     "ProjectedCostType",
+    "ProjectsResponse",
     "QueryFormula",
     "QuerySortOrder",
     "RUMAggregateBucketValue",
@@ -2793,6 +2884,8 @@ __all__ = [
     "ServiceDefinitionV2Version",
     "ServiceDefinitionsCreateRequest",
     "ServiceDefinitionsListResponse",
+    "ServiceNowTicket",
+    "ServiceNowTicketResult",
     "SlackIntegrationMetadata",
     "SlackIntegrationMetadataChannelItem",
     "SortDirection",
@@ -2934,7 +3027,9 @@ __all__ = [
     "UserInvitationsRequest",
     "UserInvitationsResponse",
     "UserInvitationsType",
+    "UserRelationshipData",
     "UserRelationships",
+    "UserResourceType",
     "UserResponse",
     "UserResponseIncludedItem",
     "UserResponseRelationships",
@@ -2957,6 +3052,7 @@ __all__ = [
     "UserUpdateAttributes",
     "UserUpdateData",
     "UserUpdateRequest",
+    "UsersRelationship",
     "UsersResponse",
     "UsersType",
     "WidgetLiveSpan",

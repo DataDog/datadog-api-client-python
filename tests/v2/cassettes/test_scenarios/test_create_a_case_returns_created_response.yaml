@@ -1,0 +1,59 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"email":"Test-Create_a_case_returns_CREATED_response-1707328839@datadoghq.com","title":"user
+      title"},"type":"users"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/users
+  response:
+    body:
+      string: '{"data":{"type":"users","id":"cda929dc-c5e2-11ee-883d-6ad03867f364","attributes":{"name":null,"handle":"test-create_a_case_returns_created_response-1707328839@datadoghq.com","created_at":"2024-02-07T18:00:39.876070+00:00","modified_at":"2024-02-07T18:00:39.876070+00:00","email":"test-create_a_case_returns_created_response-1707328839@datadoghq.com","icon":"https://secure.gravatar.com/avatar/e564f62a22caae2dd8e878a8d73c6328?s=48&d=retro","title":"user
+        title","verified":false,"service_account":false,"disabled":false,"allowed_login_methods":[],"status":"Pending"},"relationships":{"roles":{"data":[]},"org":{"data":{"type":"orgs","id":"4dee724d-00cc-11ea-a77b-570c9d03c6c5"}}}}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"priority":"NOT_DEFINED","title":"Security breach
+      investigation in 3b9b6a6abdcf0b9b","type":"STANDARD"},"relationships":{"assignee":{"data":{"id":"cda929dc-c5e2-11ee-883d-6ad03867f364","type":"user"}},"project":{"data":{"id":"d4bbe1af-f36e-42f1-87c1-493ca35c320e","type":"project"}}},"type":"case"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/cases
+  response:
+    body:
+      string: '{"data":{"id":"4045de8b-3808-4bb6-94c9-f55ced4811c7","type":"case","attributes":{"attributes":{},"created_at":"2024-02-07T18:00:40.197151067Z","creation_source":"MANUAL","description":"","insights":[],"internal_id":"4045de8b-3808-4bb6-94c9-f55ced4811c7","key":"DDFC-6","priority":"NOT_DEFINED","public_id":"66","status":"OPEN","title":"Security
+        breach investigation in 3b9b6a6abdcf0b9b","type":"STANDARD"},"relationships":{"assignee":{"data":{"id":"cda929dc-c5e2-11ee-883d-6ad03867f364","type":"user"}},"created_by":{"data":{"id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","type":"user"}},"project":{"data":{"id":"d4bbe1af-f36e-42f1-87c1-493ca35c320e","type":"project"}}}},"included":[{"id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","type":"user","attributes":{"email":"team-intg-tools-libs-spam@datadoghq.com","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+        Account"}},{"id":"cda929dc-c5e2-11ee-883d-6ad03867f364","type":"user","attributes":{"email":"test-create_a_case_returns_created_response-1707328839@datadoghq.com","handle":"test-create_a_case_returns_created_response-1707328839@datadoghq.com","name":""}}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/users/cda929dc-c5e2-11ee-883d-6ad03867f364
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1

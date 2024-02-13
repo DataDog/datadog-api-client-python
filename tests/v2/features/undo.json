@@ -220,6 +220,91 @@
       "type": "idempotent"
     }
   },
+  "SearchCases": {
+    "tag": "Cases",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateCase": {
+    "tag": "Cases",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetProjects": {
+    "tag": "Cases Projects",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateProject": {
+    "tag": "Cases Projects",
+    "undo": {
+      "operationId": "DeleteProject",
+      "parameters": [
+        {
+          "name": "project_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteProject": {
+    "tag": "Cases Projects",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetProject": {
+    "tag": "Cases Projects",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetCase": {
+    "tag": "Cases",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ArchiveCase": {
+    "tag": "Cases",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "AssignCase": {
+    "tag": "Cases",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdatePriority": {
+    "tag": "Cases",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateStatus": {
+    "tag": "Cases",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UnarchiveCase": {
+    "tag": "Cases",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UnassignCase": {
+    "tag": "Cases",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "CreateCIAppPipelineEvent": {
     "tag": "CI Visibility Pipelines",
     "undo": {

@@ -1,0 +1,41 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"priority":"P4","title":"My new case","type":"STANDARD"},"relationships":{"project":{"data":{"id":"d4bbe1af-f36e-42f1-87c1-493ca35c320e","type":"project"}}},"type":"case"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/cases
+  response:
+    body:
+      string: '{"data":{"id":"8a6e4254-7429-4398-99c2-ba9363fb3f98","type":"case","attributes":{"attributes":{},"created_at":"2024-02-07T18:00:42.908434394Z","creation_source":"MANUAL","description":"","insights":[],"internal_id":"8a6e4254-7429-4398-99c2-ba9363fb3f98","key":"DDFC-10","priority":"P4","public_id":"70","status":"OPEN","title":"My
+        new case","type":"STANDARD"},"relationships":{"created_by":{"data":{"id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","type":"user"}},"project":{"data":{"id":"d4bbe1af-f36e-42f1-87c1-493ca35c320e","type":"project"}}}},"included":[{"id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","type":"user","attributes":{"email":"team-intg-tools-libs-spam@datadoghq.com","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+        Account"}}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"type":"project"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/cases/8a6e4254-7429-4398-99c2-ba9363fb3f98/unassign
+  response:
+    body:
+      string: '{"errors":[{"status":"400","title":"Bad Request","detail":"got type
+        \"project\" expected one of \"case\""}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 400
+      message: Bad Request
+version: 1

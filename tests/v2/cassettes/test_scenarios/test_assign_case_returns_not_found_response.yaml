@@ -1,0 +1,56 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"email":"Test-Assign_case_returns_Not_Found_response-1707311348@datadoghq.com","title":"user
+      title"},"type":"users"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/users
+  response:
+    body:
+      string: '{"data":{"type":"users","id":"14040f89-c5ba-11ee-87b5-f6892353f87d","attributes":{"name":null,"handle":"test-assign_case_returns_not_found_response-1707311348@datadoghq.com","created_at":"2024-02-07T13:09:08.546371+00:00","modified_at":"2024-02-07T13:09:08.546371+00:00","email":"test-assign_case_returns_not_found_response-1707311348@datadoghq.com","icon":"https://secure.gravatar.com/avatar/e0a6ed9703a1166a2c07bca15e37d0d6?s=48&d=retro","title":"user
+        title","verified":false,"service_account":false,"disabled":false,"allowed_login_methods":[],"status":"Pending"},"relationships":{"roles":{"data":[]},"org":{"data":{"type":"orgs","id":"4dee724d-00cc-11ea-a77b-570c9d03c6c5"}}}}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"assignee_id":"14040f89-c5ba-11ee-87b5-f6892353f87d"},"type":"case"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/cases/67d80aa3-36ff-44b9-a694-c501a7591737/assign
+  response:
+    body:
+      string: '{"errors":[{"code":"resource_not_found","title":"case not found"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 404
+      message: Not Found
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/users/14040f89-c5ba-11ee-87b5-f6892353f87d
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1
