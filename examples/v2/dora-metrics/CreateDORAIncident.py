@@ -12,15 +12,18 @@ from datadog_api_client.v2.model.dora_incident_request_data import DORAIncidentR
 body = DORAIncidentRequest(
     data=DORAIncidentRequestData(
         attributes=DORAIncidentRequestAttributes(
-            finished_at=1693491984000000000,
+            finished_at=1707842944600000000,
             git=DORAGitInfo(
                 commit_sha="66adc9350f2cc9b250b69abddab733dd55e1a588",
                 repository_url="https://github.com/organization/example-repository",
             ),
             name="Webserver is down failing all requests",
-            service="shopist",
+            services=[
+                "shopist",
+            ],
             severity="High",
-            started_at=1693491974000000000,
+            started_at=1707842944500000000,
+            team="backend",
             version="v1.12.07",
         ),
     ),
