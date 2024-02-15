@@ -203,6 +203,7 @@ Feature: Synthetics
     And the response "config.steps[0].retry.count" is equal to 5
     And the response "config.steps[0].retry.interval" is equal to 1000
     And the response "config.steps[0].extractedValues[0].secure" is equal to true
+    And the response "config.steps[1].request.host" is equal to "grpcbin.test.k6.io"
 
   @generated @skip @team:DataDog/synthetics-app
   Scenario: Delete a global variable returns "JSON format is wrong" response
