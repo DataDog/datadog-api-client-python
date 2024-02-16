@@ -20,6 +20,7 @@ class GCPSTSServiceAccountAttributes(ModelNormal):
             "account_tags": ([str],),
             "automute": (bool,),
             "client_email": (str,),
+            "cloud_run_revision_filters": ([str],),
             "host_filters": ([str],),
             "is_cspm_enabled": (bool,),
             "is_security_command_center_enabled": (bool,),
@@ -30,6 +31,7 @@ class GCPSTSServiceAccountAttributes(ModelNormal):
         "account_tags": "account_tags",
         "automute": "automute",
         "client_email": "client_email",
+        "cloud_run_revision_filters": "cloud_run_revision_filters",
         "host_filters": "host_filters",
         "is_cspm_enabled": "is_cspm_enabled",
         "is_security_command_center_enabled": "is_security_command_center_enabled",
@@ -41,6 +43,7 @@ class GCPSTSServiceAccountAttributes(ModelNormal):
         account_tags: Union[List[str], UnsetType] = unset,
         automute: Union[bool, UnsetType] = unset,
         client_email: Union[str, UnsetType] = unset,
+        cloud_run_revision_filters: Union[List[str], UnsetType] = unset,
         host_filters: Union[List[str], UnsetType] = unset,
         is_cspm_enabled: Union[bool, UnsetType] = unset,
         is_security_command_center_enabled: Union[bool, UnsetType] = unset,
@@ -58,6 +61,10 @@ class GCPSTSServiceAccountAttributes(ModelNormal):
 
         :param client_email: Your service account email address.
         :type client_email: str, optional
+
+        :param cloud_run_revision_filters: List of filters to limit the Cloud Run revisions that are pulled into Datadog by using tags.
+            Only Cloud Run revision resources that apply to specified filters are imported into Datadog.
+        :type cloud_run_revision_filters: [str], optional
 
         :param host_filters: Your Host Filters.
         :type host_filters: [str], optional
@@ -77,6 +84,8 @@ class GCPSTSServiceAccountAttributes(ModelNormal):
             kwargs["automute"] = automute
         if client_email is not unset:
             kwargs["client_email"] = client_email
+        if cloud_run_revision_filters is not unset:
+            kwargs["cloud_run_revision_filters"] = cloud_run_revision_filters
         if host_filters is not unset:
             kwargs["host_filters"] = host_filters
         if is_cspm_enabled is not unset:

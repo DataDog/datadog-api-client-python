@@ -23,6 +23,7 @@ class GCPAccount(ModelNormal):
             "client_email": (str,),
             "client_id": (str,),
             "client_x509_cert_url": (str,),
+            "cloud_run_revision_filters": ([str],),
             "errors": ([str],),
             "host_filters": (str,),
             "is_cspm_enabled": (bool,),
@@ -42,6 +43,7 @@ class GCPAccount(ModelNormal):
         "client_email": "client_email",
         "client_id": "client_id",
         "client_x509_cert_url": "client_x509_cert_url",
+        "cloud_run_revision_filters": "cloud_run_revision_filters",
         "errors": "errors",
         "host_filters": "host_filters",
         "is_cspm_enabled": "is_cspm_enabled",
@@ -62,6 +64,7 @@ class GCPAccount(ModelNormal):
         client_email: Union[str, UnsetType] = unset,
         client_id: Union[str, UnsetType] = unset,
         client_x509_cert_url: Union[str, UnsetType] = unset,
+        cloud_run_revision_filters: Union[List[str], UnsetType] = unset,
         errors: Union[List[str], UnsetType] = unset,
         host_filters: Union[str, UnsetType] = unset,
         is_cspm_enabled: Union[bool, UnsetType] = unset,
@@ -95,6 +98,10 @@ class GCPAccount(ModelNormal):
         :param client_x509_cert_url: Should be ``https://www.googleapis.com/robot/v1/metadata/x509/$CLIENT_EMAIL``
             where ``$CLIENT_EMAIL`` is the email found in your JSON service account key.
         :type client_x509_cert_url: str, optional
+
+        :param cloud_run_revision_filters: Limit the Cloud Run revisions that are pulled into Datadog by using tags.
+            Only Cloud Run revision resources that apply to specified filters are imported into Datadog.
+        :type cloud_run_revision_filters: [str], optional
 
         :param errors: An array of errors.
         :type errors: [str], optional
@@ -139,6 +146,8 @@ class GCPAccount(ModelNormal):
             kwargs["client_id"] = client_id
         if client_x509_cert_url is not unset:
             kwargs["client_x509_cert_url"] = client_x509_cert_url
+        if cloud_run_revision_filters is not unset:
+            kwargs["cloud_run_revision_filters"] = cloud_run_revision_filters
         if errors is not unset:
             kwargs["errors"] = errors
         if host_filters is not unset:

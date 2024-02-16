@@ -1,5 +1,5 @@
 """
-Create a GCP integration returns "OK" response
+Update a GCP integration cloud run revision filters returns "OK" response
 """
 
 from datadog_api_client import ApiClient, Configuration
@@ -14,7 +14,7 @@ body = GCPAccount(
     client_x509_cert_url="https://www.googleapis.com/robot/v1/metadata/x509/$CLIENT_EMAIL",
     host_filters="key:value,filter:example",
     cloud_run_revision_filters=[
-        "dr:dre",
+        "merp:derp",
     ],
     is_cspm_enabled=True,
     is_security_command_center_enabled=True,
@@ -29,6 +29,6 @@ body = GCPAccount(
 configuration = Configuration()
 with ApiClient(configuration) as api_client:
     api_instance = GCPIntegrationApi(api_client)
-    response = api_instance.create_gcp_integration(body=body)
+    response = api_instance.update_gcp_integration(body=body)
 
     print(response)
