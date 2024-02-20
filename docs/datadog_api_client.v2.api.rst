@@ -29,17 +29,10 @@ authn\_mappings\_api
    :members:
    :show-inheritance:
 
-cases\_api
-----------
+case\_management\_api
+---------------------
 
-.. automodule:: datadog_api_client.v2.api.cases_api
-   :members:
-   :show-inheritance:
-
-cases\_projects\_api
---------------------
-
-.. automodule:: datadog_api_client.v2.api.cases_projects_api
+.. automodule:: datadog_api_client.v2.api.case_management_api
    :members:
    :show-inheritance:
 

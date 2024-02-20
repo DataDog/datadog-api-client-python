@@ -22766,7 +22766,7 @@ paths:
         - cases_read
       summary: Search cases
       tags:
-      - Cases
+      - Case Management
       x-pagination:
         limitParam: page[size]
         pageOffsetParam: page[offset]
@@ -22805,7 +22805,7 @@ paths:
         - cases_write
       summary: Create a case
       tags:
-      - Cases
+      - Case Management
   /api/v2/cases/projects:
     get:
       description: Get all projects.
@@ -22834,7 +22834,7 @@ paths:
         - cases_read
       summary: Get all projects
       tags:
-      - Cases Projects
+      - Case Management
     post:
       description: Create a project.
       operationId: CreateProject
@@ -22869,7 +22869,7 @@ paths:
         - cases_write
       summary: Create a project
       tags:
-      - Cases Projects
+      - Case Management
   /api/v2/cases/projects/{project_id}:
     delete:
       description: Remove a project using the project's `id`.
@@ -22896,7 +22896,7 @@ paths:
         - cases_write
       summary: Remove a project
       tags:
-      - Cases Projects
+      - Case Management
     get:
       description: Get the details of a project by `project_id`.
       operationId: GetProject
@@ -22926,7 +22926,7 @@ paths:
         - cases_read
       summary: Get the details of a project
       tags:
-      - Cases Projects
+      - Case Management
   /api/v2/cases/{case_id}:
     get:
       description: Get the details of case by `case_id`
@@ -22957,7 +22957,7 @@ paths:
         - cases_read
       summary: Get the details of a case
       tags:
-      - Cases
+      - Case Management
   /api/v2/cases/{case_id}/archive:
     post:
       description: Archive case
@@ -22995,7 +22995,7 @@ paths:
         - cases_write
       summary: Archive case
       tags:
-      - Cases
+      - Case Management
   /api/v2/cases/{case_id}/assign:
     post:
       description: Assign case to a user
@@ -23033,7 +23033,7 @@ paths:
         - cases_write
       summary: Assign case
       tags:
-      - Cases
+      - Case Management
   /api/v2/cases/{case_id}/priority:
     post:
       description: Update case priority
@@ -23071,7 +23071,7 @@ paths:
         - cases_write
       summary: Update case priority
       tags:
-      - Cases
+      - Case Management
   /api/v2/cases/{case_id}/status:
     post:
       description: Update case status
@@ -23109,7 +23109,7 @@ paths:
         - cases_write
       summary: Update case status
       tags:
-      - Cases
+      - Case Management
   /api/v2/cases/{case_id}/unarchive:
     post:
       description: Unarchive case
@@ -23147,7 +23147,7 @@ paths:
         - cases_write
       summary: Unarchive case
       tags:
-      - Cases
+      - Case Management
   /api/v2/cases/{case_id}/unassign:
     post:
       description: Unassign case
@@ -23185,7 +23185,7 @@ paths:
         - cases_write
       summary: Unassign case
       tags:
-      - Cases
+      - Case Management
   /api/v2/ci/pipeline:
     post:
       description: 'Send your pipeline event to your Datadog platform over HTTP. For
@@ -34532,10 +34532,8 @@ tags:
     [Test Visibility in Datadog page](https://docs.datadoghq.com/tests/) for more
     information.
   name: CI Visibility Tests
-- description: View and manage cases within Datadog
-  name: Cases
-- description: View and manage project within Case Management
-  name: Cases Projects
+- description: View and manage cases and project within Case Management
+  name: Case Management
 - description: The Cloud Cost Management API allows you to set up, edit, and delete
     Cloud Cost Management accounts for AWS and Azure. See the [Cloud Cost Management
     page](https://docs.datadoghq.com/cloud_cost_management/) for more information.

@@ -10,9 +10,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/cases
   response:
     body:
-      string: '{"data":{"id":"ceae478d-b504-4cb7-bad2-e8f8e5a0a77b","type":"case","attributes":{"attributes":{},"created_at":"2024-02-07T18:00:45.905784777Z","creation_source":"MANUAL","description":"","insights":[],"internal_id":"ceae478d-b504-4cb7-bad2-e8f8e5a0a77b","key":"DDFC-15","priority":"P4","public_id":"75","status":"OPEN","title":"My
-        new case","type":"STANDARD"},"relationships":{"created_by":{"data":{"id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","type":"user"}},"project":{"data":{"id":"d4bbe1af-f36e-42f1-87c1-493ca35c320e","type":"project"}}}},"included":[{"id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","type":"user","attributes":{"email":"team-intg-tools-libs-spam@datadoghq.com","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
-        Account"}}]}'
+      string: '{"data":{"id":"d1633979-1770-4e5b-a2d0-2ede9f2a8f43","type":"case","attributes":{"attributes":{},"created_at":"2024-02-14T18:55:19.487094769Z","creation_source":"MANUAL","description":"","insights":[],"internal_id":"d1633979-1770-4e5b-a2d0-2ede9f2a8f43","key":"DDFC-195","priority":"P4","public_id":"255","status":"OPEN","title":"My
+        new case","type":"STANDARD"},"relationships":{"created_by":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user"}},"project":{"data":{"id":"d4bbe1af-f36e-42f1-87c1-493ca35c320e","type":"project"}}}},"included":[{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user","attributes":{"email":"frog@datadoghq.com","handle":"frog@datadoghq.com","name":""}}]}'
     headers:
       content-type:
       - application/vnd.api+json
@@ -27,12 +26,11 @@ interactions:
       content-type:
       - application/json
     method: POST
-    uri: https://api.datadoghq.com/api/v2/cases/ceae478d-b504-4cb7-bad2-e8f8e5a0a77b/status
+    uri: https://api.datadoghq.com/api/v2/cases/d1633979-1770-4e5b-a2d0-2ede9f2a8f43/status
   response:
     body:
-      string: '{"data":{"id":"ceae478d-b504-4cb7-bad2-e8f8e5a0a77b","type":"case","attributes":{"attributes":{},"created_at":"2024-02-07T18:00:45.905785Z","creation_source":"MANUAL","description":"","insights":[],"internal_id":"ceae478d-b504-4cb7-bad2-e8f8e5a0a77b","key":"DDFC-15","modified_at":"2024-02-07T18:00:46.22949Z","priority":"P4","public_id":"75","status":"IN_PROGRESS","title":"My
-        new case","type":"STANDARD"},"relationships":{"created_by":{"data":{"id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","type":"user"}},"modified_by":{"data":{"id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","type":"user"}},"project":{"data":{"id":"d4bbe1af-f36e-42f1-87c1-493ca35c320e","type":"project"}}}},"included":[{"id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","type":"user","attributes":{"email":"team-intg-tools-libs-spam@datadoghq.com","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
-        Account"}}]}'
+      string: '{"data":{"id":"d1633979-1770-4e5b-a2d0-2ede9f2a8f43","type":"case","attributes":{"attributes":{},"created_at":"2024-02-14T18:55:19.487095Z","creation_source":"MANUAL","description":"","insights":[],"internal_id":"d1633979-1770-4e5b-a2d0-2ede9f2a8f43","key":"DDFC-195","modified_at":"2024-02-14T18:55:19.559421Z","priority":"P4","public_id":"255","status":"IN_PROGRESS","title":"My
+        new case","type":"STANDARD"},"relationships":{"created_by":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user"}},"modified_by":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user"}},"project":{"data":{"id":"d4bbe1af-f36e-42f1-87c1-493ca35c320e","type":"project"}}}},"included":[{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user","attributes":{"email":"frog@datadoghq.com","handle":"frog@datadoghq.com","name":""}}]}'
     headers:
       content-type:
       - application/vnd.api+json

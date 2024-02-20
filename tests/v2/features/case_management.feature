@@ -1,11 +1,11 @@
-@endpoint(cases) @endpoint(cases-v2)
-Feature: Cases
-  View and manage cases within Datadog
+@endpoint(case-management) @endpoint(case-management-v2)
+Feature: Case Management
+  View and manage cases and project within Case Management
 
   Background:
     Given a valid "apiKeyAuth" key in the system
     And a valid "appKeyAuth" key in the system
-    And an instance of "Cases" API
+    And an instance of "CaseManagement" API
 
   @team:DataDog/case-management
   Scenario: Archive case returns "Bad Request" response
@@ -87,6 +87,45 @@ Feature: Cases
     When the request is sent
     Then the response status is 404 Not Found
 
+  @generated @skip @team:DataDog/case-management
+  Scenario: Create a project returns "Bad Request" response
+    Given new "CreateProject" request
+    And body with value {"data": {"attributes": {"key": "SEC", "name": "Security Investigation"}, "type": "project"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/case-management
+  Scenario: Create a project returns "CREATED" response
+    Given new "CreateProject" request
+    And body with value {"data": {"attributes": {"key": "SEC", "name": "Security Investigation"}, "type": "project"}}
+    When the request is sent
+    Then the response status is 201 CREATED
+
+  @generated @skip @team:DataDog/case-management
+  Scenario: Create a project returns "Not Found" response
+    Given new "CreateProject" request
+    And body with value {"data": {"attributes": {"key": "SEC", "name": "Security Investigation"}, "type": "project"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/case-management
+  Scenario: Get all projects returns "Bad Request" response
+    Given new "GetProjects" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/case-management
+  Scenario: Get all projects returns "Not Found" response
+    Given new "GetProjects" request
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/case-management
+  Scenario: Get all projects returns "OK" response
+    Given new "GetProjects" request
+    When the request is sent
+    Then the response status is 200 OK
+
   @skip @team:DataDog/case-management
   Scenario: Get the details of a case returns "Bad Request" response
     Given new "GetCase" request
@@ -109,6 +148,41 @@ Feature: Cases
     And request contains "case_id" parameter from "case.id"
     When the request is sent
     Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/case-management
+  Scenario: Get the details of a project returns "Bad Request" response
+    Given new "GetProject" request
+    And request contains "project_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/case-management
+  Scenario: Get the details of a project returns "Not Found" response
+    Given new "GetProject" request
+    And request contains "project_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/case-management
+  Scenario: Get the details of a project returns "OK" response
+    Given new "GetProject" request
+    And request contains "project_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/case-management
+  Scenario: Remove a project returns "API error response" response
+    Given new "DeleteProject" request
+    And request contains "project_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 API error response
+
+  @generated @skip @team:DataDog/case-management
+  Scenario: Remove a project returns "No Content" response
+    Given new "DeleteProject" request
+    And request contains "project_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 No Content
 
   @generated @skip @team:DataDog/case-management
   Scenario: Search cases returns "Bad Request" response

@@ -10,9 +10,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/cases
   response:
     body:
-      string: '{"data":{"id":"1f205230-5ea9-444e-a5f9-48f93d6a2cde","type":"case","attributes":{"attributes":{},"created_at":"2024-02-07T18:00:36.54518451Z","creation_source":"MANUAL","description":"","insights":[],"internal_id":"1f205230-5ea9-444e-a5f9-48f93d6a2cde","key":"DDFC-2","priority":"P4","public_id":"62","status":"OPEN","title":"My
-        new case","type":"STANDARD"},"relationships":{"created_by":{"data":{"id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","type":"user"}},"project":{"data":{"id":"d4bbe1af-f36e-42f1-87c1-493ca35c320e","type":"project"}}}},"included":[{"id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","type":"user","attributes":{"email":"team-intg-tools-libs-spam@datadoghq.com","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
-        Account"}}]}'
+      string: '{"data":{"id":"4e49aede-4c04-42d3-b5bc-f8eb4c1340df","type":"case","attributes":{"attributes":{},"created_at":"2024-02-14T18:55:15.280494299Z","creation_source":"MANUAL","description":"","insights":[],"internal_id":"4e49aede-4c04-42d3-b5bc-f8eb4c1340df","key":"DDFC-182","priority":"P4","public_id":"242","status":"OPEN","title":"My
+        new case","type":"STANDARD"},"relationships":{"created_by":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user"}},"project":{"data":{"id":"d4bbe1af-f36e-42f1-87c1-493ca35c320e","type":"project"}}}},"included":[{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user","attributes":{"email":"frog@datadoghq.com","handle":"frog@datadoghq.com","name":""}}]}'
     headers:
       content-type:
       - application/vnd.api+json
@@ -27,7 +26,7 @@ interactions:
       content-type:
       - application/json
     method: POST
-    uri: https://api.datadoghq.com/api/v2/cases/1f205230-5ea9-444e-a5f9-48f93d6a2cde/archive
+    uri: https://api.datadoghq.com/api/v2/cases/4e49aede-4c04-42d3-b5bc-f8eb4c1340df/archive
   response:
     body:
       string: '{"errors":[{"status":"400","title":"Bad Request","detail":"got type
