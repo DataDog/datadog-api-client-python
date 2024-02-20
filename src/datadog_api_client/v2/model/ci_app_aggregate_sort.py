@@ -49,7 +49,7 @@ class CIAppAggregateSort(ModelNormal):
         **kwargs,
     ):
         """
-        A sort rule.
+        A sort rule. The ``aggregation`` field is required when ``type`` is ``measure``.
 
         :param aggregation: An aggregation function.
         :type aggregation: CIAppAggregationFunction, optional

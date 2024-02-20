@@ -25,7 +25,8 @@ any sensitive information.
 This project contains both Integration and Unit tests.
 __Never__ run the test suite against an organization with production data.
 
-Tests can be executed via [`pytest`](https://pytest.org).
+In the root directory, run `pip install .\[tests\]` then `./run-tests.sh` before tests can be executed via [`pytest`](https://pytest.org).
+
 You can optionally add `-k <testName>` to filter individual tests.
 
 By default integration tests use recorded API responses stored in cassettes. To record new API responses run the tests with `RECORD=true`. To run integration tests against API without recording cassettes, run the tests with `RECORD=none`.

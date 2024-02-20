@@ -16,14 +16,16 @@ class SyntheticsAPIStepSubtype(ModelSimple):
     """
     The subtype of the Synthetic multistep API test step, currently only supporting `http`.
 
-    :param value: If omitted defaults to "http". Must be one of ["http"].
+    :param value: Must be one of ["http", "grpc"].
     :type value: str
     """
 
     allowed_values = {
         "http",
+        "grpc",
     }
     HTTP: ClassVar["SyntheticsAPIStepSubtype"]
+    GRPC: ClassVar["SyntheticsAPIStepSubtype"]
 
     @cached_property
     def openapi_types(_):
@@ -33,3 +35,4 @@ class SyntheticsAPIStepSubtype(ModelSimple):
 
 
 SyntheticsAPIStepSubtype.HTTP = SyntheticsAPIStepSubtype("http")
+SyntheticsAPIStepSubtype.GRPC = SyntheticsAPIStepSubtype("grpc")
