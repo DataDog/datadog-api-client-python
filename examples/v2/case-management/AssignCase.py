@@ -4,7 +4,7 @@ Assign case returns "OK" response
 
 from os import environ
 from datadog_api_client import ApiClient, Configuration
-from datadog_api_client.v2.api.cases_api import CasesApi
+from datadog_api_client.v2.api.case_management_api import CaseManagementApi
 from datadog_api_client.v2.model.case_assign import CaseAssign
 from datadog_api_client.v2.model.case_assign_attributes import CaseAssignAttributes
 from datadog_api_client.v2.model.case_assign_request import CaseAssignRequest
@@ -27,7 +27,7 @@ body = CaseAssignRequest(
 
 configuration = Configuration()
 with ApiClient(configuration) as api_client:
-    api_instance = CasesApi(api_client)
+    api_instance = CaseManagementApi(api_client)
     response = api_instance.assign_case(case_id=CASE_ID, body=body)
 
     print(response)

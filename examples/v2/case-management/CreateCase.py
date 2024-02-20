@@ -4,7 +4,7 @@ Create a case returns "CREATED" response
 
 from os import environ
 from datadog_api_client import ApiClient, Configuration
-from datadog_api_client.v2.api.cases_api import CasesApi
+from datadog_api_client.v2.api.case_management_api import CaseManagementApi
 from datadog_api_client.v2.model.case_create import CaseCreate
 from datadog_api_client.v2.model.case_create_attributes import CaseCreateAttributes
 from datadog_api_client.v2.model.case_create_relationships import CaseCreateRelationships
@@ -26,7 +26,7 @@ body = CaseCreateRequest(
     data=CaseCreate(
         attributes=CaseCreateAttributes(
             priority=CasePriority.NOT_DEFINED,
-            title="Security breach investigation in 3dcc5b2ebf9bfb8f",
+            title="Security breach investigation in 0cfbc5cbc676ee71",
             type=CaseType.STANDARD,
         ),
         relationships=CaseCreateRelationships(
@@ -49,7 +49,7 @@ body = CaseCreateRequest(
 
 configuration = Configuration()
 with ApiClient(configuration) as api_client:
-    api_instance = CasesApi(api_client)
+    api_instance = CaseManagementApi(api_client)
     response = api_instance.create_case(body=body)
 
     print(response)

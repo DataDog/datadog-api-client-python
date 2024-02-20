@@ -69,7 +69,7 @@
     "source": "data",
     "step": "there is a valid \"case\" in the system",
     "key": "case",
-    "tag": "Cases",
+    "tag": "Case Management",
     "operationId": "CreateCase"
   },
   {

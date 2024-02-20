@@ -10,9 +10,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/cases
   response:
     body:
-      string: '{"data":{"id":"243feddb-69f8-4e22-988a-8ae954b643fa","type":"case","attributes":{"attributes":{},"created_at":"2024-02-07T18:00:45.265151303Z","creation_source":"MANUAL","description":"","insights":[],"internal_id":"243feddb-69f8-4e22-988a-8ae954b643fa","key":"DDFC-14","priority":"P4","public_id":"74","status":"OPEN","title":"My
-        new case","type":"STANDARD"},"relationships":{"created_by":{"data":{"id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","type":"user"}},"project":{"data":{"id":"d4bbe1af-f36e-42f1-87c1-493ca35c320e","type":"project"}}}},"included":[{"id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","type":"user","attributes":{"email":"team-intg-tools-libs-spam@datadoghq.com","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
-        Account"}}]}'
+      string: '{"data":{"id":"1732a7a1-667c-45e4-ad8c-73a1c1f9f6f0","type":"case","attributes":{"attributes":{},"created_at":"2024-02-14T18:55:19.251201316Z","creation_source":"MANUAL","description":"","insights":[],"internal_id":"1732a7a1-667c-45e4-ad8c-73a1c1f9f6f0","key":"DDFC-194","priority":"P4","public_id":"254","status":"OPEN","title":"My
+        new case","type":"STANDARD"},"relationships":{"created_by":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user"}},"project":{"data":{"id":"d4bbe1af-f36e-42f1-87c1-493ca35c320e","type":"project"}}}},"included":[{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user","attributes":{"email":"frog@datadoghq.com","handle":"frog@datadoghq.com","name":""}}]}'
     headers:
       content-type:
       - application/vnd.api+json
@@ -27,11 +26,11 @@ interactions:
       content-type:
       - application/json
     method: POST
-    uri: https://api.datadoghq.com/api/v2/cases/243feddb-69f8-4e22-988a-8ae954b643fa/status
+    uri: https://api.datadoghq.com/api/v2/cases/1732a7a1-667c-45e4-ad8c-73a1c1f9f6f0/status
   response:
     body:
       string: '{"errors":[{"title":"Generic Error","detail":"invalid status OPENED.
-        Must be one of CLOSED, SUNKNOWN, OPEN, IN_PROGRESS"}]}'
+        Must be one of SUNKNOWN, OPEN, IN_PROGRESS, CLOSED"}]}'
     headers:
       content-type:
       - application/vnd.api+json

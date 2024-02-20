@@ -221,25 +221,25 @@
     }
   },
   "SearchCases": {
-    "tag": "Cases",
+    "tag": "Case Management",
     "undo": {
       "type": "safe"
     }
   },
   "CreateCase": {
-    "tag": "Cases",
+    "tag": "Case Management",
     "undo": {
       "type": "safe"
     }
   },
   "GetProjects": {
-    "tag": "Cases Projects",
+    "tag": "Case Management",
     "undo": {
       "type": "safe"
     }
   },
   "CreateProject": {
-    "tag": "Cases Projects",
+    "tag": "Case Management",
     "undo": {
       "operationId": "DeleteProject",
       "parameters": [
@@ -252,55 +252,55 @@
     }
   },
   "DeleteProject": {
-    "tag": "Cases Projects",
+    "tag": "Case Management",
     "undo": {
       "type": "idempotent"
     }
   },
   "GetProject": {
-    "tag": "Cases Projects",
+    "tag": "Case Management",
     "undo": {
       "type": "safe"
     }
   },
   "GetCase": {
-    "tag": "Cases",
+    "tag": "Case Management",
     "undo": {
       "type": "safe"
     }
   },
   "ArchiveCase": {
-    "tag": "Cases",
+    "tag": "Case Management",
     "undo": {
       "type": "idempotent"
     }
   },
   "AssignCase": {
-    "tag": "Cases",
+    "tag": "Case Management",
     "undo": {
       "type": "idempotent"
     }
   },
   "UpdatePriority": {
-    "tag": "Cases",
+    "tag": "Case Management",
     "undo": {
       "type": "idempotent"
     }
   },
   "UpdateStatus": {
-    "tag": "Cases",
+    "tag": "Case Management",
     "undo": {
       "type": "idempotent"
     }
   },
   "UnarchiveCase": {
-    "tag": "Cases",
+    "tag": "Case Management",
     "undo": {
       "type": "idempotent"
     }
   },
   "UnassignCase": {
-    "tag": "Cases",
+    "tag": "Case Management",
     "undo": {
       "type": "idempotent"
     }
