@@ -72,7 +72,7 @@ class CIAppTestsGroupBy(ModelNormal):
         :param missing: The value to use for logs that don't have the facet used to group-by.
         :type missing: CIAppGroupByMissing, optional
 
-        :param sort: A sort rule.
+        :param sort: A sort rule. The ``aggregation`` field is required when ``type`` is ``measure``.
         :type sort: CIAppAggregateSort, optional
 
         :param total: A resulting object to put the given computes in over all the matching records.
