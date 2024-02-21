@@ -30,6 +30,7 @@ class UsageSummaryDate(ModelNormal):
             "apm_fargate_count_avg": (int,),
             "apm_host_top99p": (int,),
             "appsec_fargate_count_avg": (int,),
+            "asm_serverless_sum": (int,),
             "audit_logs_lines_indexed_sum": (int,),
             "audit_trail_enabled_hwm": (int,),
             "avg_profiled_fargate_tasks": (int,),
@@ -136,6 +137,7 @@ class UsageSummaryDate(ModelNormal):
         "apm_fargate_count_avg": "apm_fargate_count_avg",
         "apm_host_top99p": "apm_host_top99p",
         "appsec_fargate_count_avg": "appsec_fargate_count_avg",
+        "asm_serverless_sum": "asm_serverless_sum",
         "audit_logs_lines_indexed_sum": "audit_logs_lines_indexed_sum",
         "audit_trail_enabled_hwm": "audit_trail_enabled_hwm",
         "avg_profiled_fargate_tasks": "avg_profiled_fargate_tasks",
@@ -243,6 +245,7 @@ class UsageSummaryDate(ModelNormal):
         apm_fargate_count_avg: Union[int, UnsetType] = unset,
         apm_host_top99p: Union[int, UnsetType] = unset,
         appsec_fargate_count_avg: Union[int, UnsetType] = unset,
+        asm_serverless_sum: Union[int, UnsetType] = unset,
         audit_logs_lines_indexed_sum: Union[int, UnsetType] = unset,
         audit_trail_enabled_hwm: Union[int, UnsetType] = unset,
         avg_profiled_fargate_tasks: Union[int, UnsetType] = unset,
@@ -362,6 +365,9 @@ class UsageSummaryDate(ModelNormal):
 
         :param appsec_fargate_count_avg: Shows the average of all Application Security Monitoring ECS Fargate tasks over all hours in the current date for all organizations.
         :type appsec_fargate_count_avg: int, optional
+
+        :param asm_serverless_sum: Shows the sum of all Application Security Monitoring Serverless invocations over all hours in the current date for all organizations.
+        :type asm_serverless_sum: int, optional
 
         :param audit_logs_lines_indexed_sum: Shows the sum of audit logs lines indexed over all hours in the current date for all organizations. **Deprecated**.
         :type audit_logs_lines_indexed_sum: int, optional
@@ -666,6 +672,8 @@ class UsageSummaryDate(ModelNormal):
             kwargs["apm_host_top99p"] = apm_host_top99p
         if appsec_fargate_count_avg is not unset:
             kwargs["appsec_fargate_count_avg"] = appsec_fargate_count_avg
+        if asm_serverless_sum is not unset:
+            kwargs["asm_serverless_sum"] = asm_serverless_sum
         if audit_logs_lines_indexed_sum is not unset:
             kwargs["audit_logs_lines_indexed_sum"] = audit_logs_lines_indexed_sum
         if audit_trail_enabled_hwm is not unset:

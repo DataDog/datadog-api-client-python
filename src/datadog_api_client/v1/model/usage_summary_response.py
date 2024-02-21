@@ -32,6 +32,7 @@ class UsageSummaryResponse(ModelNormal):
             "apm_fargate_count_avg_sum": (int,),
             "apm_host_top99p_sum": (int,),
             "appsec_fargate_count_avg_sum": (int,),
+            "asm_serverless_agg_sum": (int,),
             "audit_logs_lines_indexed_agg_sum": (int,),
             "audit_trail_enabled_hwm_sum": (int,),
             "avg_profiled_fargate_tasks_sum": (int,),
@@ -149,6 +150,7 @@ class UsageSummaryResponse(ModelNormal):
         "apm_fargate_count_avg_sum": "apm_fargate_count_avg_sum",
         "apm_host_top99p_sum": "apm_host_top99p_sum",
         "appsec_fargate_count_avg_sum": "appsec_fargate_count_avg_sum",
+        "asm_serverless_agg_sum": "asm_serverless_agg_sum",
         "audit_logs_lines_indexed_agg_sum": "audit_logs_lines_indexed_agg_sum",
         "audit_trail_enabled_hwm_sum": "audit_trail_enabled_hwm_sum",
         "avg_profiled_fargate_tasks_sum": "avg_profiled_fargate_tasks_sum",
@@ -267,6 +269,7 @@ class UsageSummaryResponse(ModelNormal):
         apm_fargate_count_avg_sum: Union[int, UnsetType] = unset,
         apm_host_top99p_sum: Union[int, UnsetType] = unset,
         appsec_fargate_count_avg_sum: Union[int, UnsetType] = unset,
+        asm_serverless_agg_sum: Union[int, UnsetType] = unset,
         audit_logs_lines_indexed_agg_sum: Union[int, UnsetType] = unset,
         audit_trail_enabled_hwm_sum: Union[int, UnsetType] = unset,
         avg_profiled_fargate_tasks_sum: Union[int, UnsetType] = unset,
@@ -397,6 +400,9 @@ class UsageSummaryResponse(ModelNormal):
 
         :param appsec_fargate_count_avg_sum: Shows the average of all Application Security Monitoring ECS Fargate tasks over all hours in the current months for all organizations.
         :type appsec_fargate_count_avg_sum: int, optional
+
+        :param asm_serverless_agg_sum: Shows the sum of all Application Security Monitoring Serverless invocations over all hours in the current months for all organizations.
+        :type asm_serverless_agg_sum: int, optional
 
         :param audit_logs_lines_indexed_agg_sum: Shows the sum of all audit logs lines indexed over all hours in the current months for all organizations. **Deprecated**.
         :type audit_logs_lines_indexed_agg_sum: int, optional
@@ -734,6 +740,8 @@ class UsageSummaryResponse(ModelNormal):
             kwargs["apm_host_top99p_sum"] = apm_host_top99p_sum
         if appsec_fargate_count_avg_sum is not unset:
             kwargs["appsec_fargate_count_avg_sum"] = appsec_fargate_count_avg_sum
+        if asm_serverless_agg_sum is not unset:
+            kwargs["asm_serverless_agg_sum"] = asm_serverless_agg_sum
         if audit_logs_lines_indexed_agg_sum is not unset:
             kwargs["audit_logs_lines_indexed_agg_sum"] = audit_logs_lines_indexed_agg_sum
         if audit_trail_enabled_hwm_sum is not unset:
