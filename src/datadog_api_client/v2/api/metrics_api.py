@@ -171,6 +171,7 @@ class MetricsApi:
                 "filter_hours_ago": {
                     "validation": {
                         "inclusive_maximum": 2147483647,
+                        "inclusive_minimum": 49,
                     },
                     "openapi_types": (int,),
                     "attribute": "filter[hours_ago]",
@@ -546,7 +547,7 @@ class MetricsApi:
         :type metric_name: str
         :param filter_groups: Filtered tag keys that the metric is configured to query with.
         :type filter_groups: str, optional
-        :param filter_hours_ago: The number of hours of look back (from now) to estimate cardinality with.
+        :param filter_hours_ago: The number of hours of look back (from now) to estimate cardinality with. Estimates are based on historical data, and unspecified fields default to the minimum 49 hours.
         :type filter_hours_ago: int, optional
         :param filter_num_aggregations: The number of aggregations that a ``count`` , ``rate`` , or ``gauge`` metric is configured to use. Max number of aggregation combos is 9.
         :type filter_num_aggregations: int, optional
