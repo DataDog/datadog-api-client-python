@@ -1633,6 +1633,7 @@ from datadog_api_client.v2.model.user_response_relationships import UserResponse
 from datadog_api_client.v2.model.user_team import UserTeam
 from datadog_api_client.v2.model.user_team_attributes import UserTeamAttributes
 from datadog_api_client.v2.model.user_team_create import UserTeamCreate
+from datadog_api_client.v2.model.user_team_included import UserTeamIncluded
 from datadog_api_client.v2.model.user_team_permission import UserTeamPermission
 from datadog_api_client.v2.model.user_team_permission_attributes import UserTeamPermissionAttributes
 from datadog_api_client.v2.model.user_team_permission_type import UserTeamPermissionType
@@ -3036,6 +3037,7 @@ __all__ = [
     "UserTeam",
     "UserTeamAttributes",
     "UserTeamCreate",
+    "UserTeamIncluded",
     "UserTeamPermission",
     "UserTeamPermissionAttributes",
     "UserTeamPermissionType",
