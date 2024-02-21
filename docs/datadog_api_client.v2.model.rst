@@ -9640,6 +9640,13 @@ user\_team\_create
    :members:
    :show-inheritance:
 
+user\_team\_included
+--------------------
+
+.. automodule:: datadog_api_client.v2.model.user_team_included
+   :members:
+   :show-inheritance:
+
 user\_team\_permission
 ----------------------
 
