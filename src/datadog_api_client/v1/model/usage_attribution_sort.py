@@ -16,7 +16,7 @@ class UsageAttributionSort(ModelSimple):
     """
     The field to sort by.
 
-    :param value: If omitted defaults to "custom_timeseries_usage". Must be one of ["api_percentage", "snmp_usage", "apm_host_usage", "api_usage", "appsec_usage", "appsec_percentage", "container_usage", "custom_timeseries_percentage", "container_percentage", "apm_host_percentage", "npm_host_percentage", "browser_percentage", "browser_usage", "infra_host_percentage", "snmp_percentage", "npm_host_usage", "infra_host_usage", "custom_timeseries_usage", "lambda_functions_usage", "lambda_functions_percentage", "lambda_invocations_usage", "lambda_invocations_percentage", "estimated_indexed_logs_usage", "estimated_indexed_logs_percentage", "estimated_ingested_logs_usage", "estimated_ingested_logs_percentage", "estimated_indexed_spans_usage", "estimated_indexed_spans_percentage", "estimated_ingested_spans_usage", "estimated_ingested_spans_percentage", "apm_fargate_usage", "apm_fargate_percentage", "appsec_fargate_usage", "appsec_fargate_percentage", "estimated_rum_usage_attribution_usage", "estimated_rum_usage_attribution_percentage"].
+    :param value: If omitted defaults to "custom_timeseries_usage". Must be one of ["api_percentage", "snmp_usage", "apm_host_usage", "api_usage", "appsec_usage", "appsec_percentage", "container_usage", "custom_timeseries_percentage", "container_percentage", "apm_host_percentage", "npm_host_percentage", "browser_percentage", "browser_usage", "infra_host_percentage", "snmp_percentage", "npm_host_usage", "infra_host_usage", "custom_timeseries_usage", "lambda_functions_usage", "lambda_functions_percentage", "lambda_invocations_usage", "lambda_invocations_percentage", "estimated_indexed_logs_usage", "estimated_indexed_logs_percentage", "estimated_ingested_logs_usage", "estimated_ingested_logs_percentage", "estimated_indexed_spans_usage", "estimated_indexed_spans_percentage", "estimated_ingested_spans_usage", "estimated_ingested_spans_percentage", "apm_fargate_usage", "apm_fargate_percentage", "appsec_fargate_usage", "appsec_fargate_percentage", "estimated_rum_usage_attribution_usage", "estimated_rum_usage_attribution_percentage", "asm_serverless_traced_invocations_usage", "asm_serverless_traced_invocations_percentage"].
     :type value: str
     """
 
@@ -57,6 +57,8 @@ class UsageAttributionSort(ModelSimple):
         "appsec_fargate_percentage",
         "estimated_rum_usage_attribution_usage",
         "estimated_rum_usage_attribution_percentage",
+        "asm_serverless_traced_invocations_usage",
+        "asm_serverless_traced_invocations_percentage",
     }
     API_PERCENTAGE: ClassVar["UsageAttributionSort"]
     SNMP_USAGE: ClassVar["UsageAttributionSort"]
@@ -94,6 +96,8 @@ class UsageAttributionSort(ModelSimple):
     APPSEC_FARGATE_PERCENTAGE: ClassVar["UsageAttributionSort"]
     ESTIMATED_RUM_USAGE_ATTRIBUTION_USAGE: ClassVar["UsageAttributionSort"]
     ESTIMATED_RUM_USAGE_ATTRIBUTION_PERCENTAGE: ClassVar["UsageAttributionSort"]
+    ASM_SERVERLESS_TRACED_INVOCATIONS_USAGE: ClassVar["UsageAttributionSort"]
+    ASM_SERVERLESS_TRACED_INVOCATIONS_PERCENTAGE: ClassVar["UsageAttributionSort"]
 
     @cached_property
     def openapi_types(_):
@@ -141,4 +145,10 @@ UsageAttributionSort.ESTIMATED_RUM_USAGE_ATTRIBUTION_USAGE = UsageAttributionSor
 )
 UsageAttributionSort.ESTIMATED_RUM_USAGE_ATTRIBUTION_PERCENTAGE = UsageAttributionSort(
     "estimated_rum_usage_attribution_percentage"
+)
+UsageAttributionSort.ASM_SERVERLESS_TRACED_INVOCATIONS_USAGE = UsageAttributionSort(
+    "asm_serverless_traced_invocations_usage"
+)
+UsageAttributionSort.ASM_SERVERLESS_TRACED_INVOCATIONS_PERCENTAGE = UsageAttributionSort(
+    "asm_serverless_traced_invocations_percentage"
 )
