@@ -132,7 +132,7 @@ Feature: Metrics
     Then the response status is 200 Success
     And the response "data" has length 0
 
-  @team:DataDog/metrics-experience
+  @replay-only @team:DataDog/metrics-experience
   Scenario: Get a list of metrics with configured filter returns "Success" response
     Given a valid "appKeyAuth" key in the system
     And new "ListTagConfigurations" request
