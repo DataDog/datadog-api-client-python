@@ -532,8 +532,8 @@ class UsageMeteringApi:
         :type filter_timestamp_start: datetime
         :param filter_product_families: Comma separated list of product families to retrieve. Available families are ``all`` , ``analyzed_logs`` ,
             ``application_security`` , ``audit_trail`` , ``serverless`` , ``ci_app`` , ``cloud_cost_management`` ,
-            ``csm_container_enterprise`` , ``csm_host_enterprise`` , ``cspm`` , ``custom_events`` , ``cws`` , ``dbm`` , ``fargate`` ,
-            ``infra_hosts`` , ``incident_management`` , ``indexed_logs`` , ``indexed_spans`` , ``ingested_spans`` , ``iot`` ,
+            ``csm_container_enterprise`` , ``csm_host_enterprise`` , ``cspm`` , ``custom_events`` , ``cws`` , ``dbm`` , ``error_tracking`` ,
+            ``fargate`` , ``infra_hosts`` , ``incident_management`` , ``indexed_logs`` , ``indexed_spans`` , ``ingested_spans`` , ``iot`` ,
             ``lambda_traced_invocations`` , ``logs`` , ``network_flows`` , ``network_hosts`` , ``netflow_monitoring`` , ``observability_pipelines`` ,
             ``online_archive`` , ``profiling`` , ``rum`` , ``rum_browser_sessions`` , ``rum_mobile_sessions`` , ``sds`` , ``snmp`` ,
             ``synthetics_api`` , ``synthetics_browser`` , ``synthetics_mobile`` , ``synthetics_parallel_testing`` , and ``timeseries``.

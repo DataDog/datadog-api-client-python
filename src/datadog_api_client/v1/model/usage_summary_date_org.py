@@ -42,6 +42,7 @@ class UsageSummaryDateOrg(ModelNormal):
             "ci_visibility_test_committers_hwm": (int,),
             "cloud_cost_management_aws_host_count_avg": (int,),
             "cloud_cost_management_azure_host_count_avg": (int,),
+            "cloud_cost_management_gcp_host_count_avg": (int,),
             "cloud_cost_management_host_count_avg": (int,),
             "cloud_siem_events_sum": (int,),
             "container_avg": (int,),
@@ -71,8 +72,14 @@ class UsageSummaryDateOrg(ModelNormal):
             "cws_host_top99p": (int,),
             "dbm_host_top99p_sum": (int,),
             "dbm_queries_avg_sum": (int,),
+            "error_tracking_events_sum": (int,),
             "fargate_tasks_count_avg": (int,),
             "fargate_tasks_count_hwm": (int,),
+            "flex_logs_compute_large_avg": (int,),
+            "flex_logs_compute_medium_avg": (int,),
+            "flex_logs_compute_small_avg": (int,),
+            "flex_logs_compute_xsmall_avg": (int,),
+            "flex_stored_logs_avg": (int,),
             "forwarding_events_bytes_sum": (int,),
             "gcp_host_top99p": (int,),
             "heroku_host_top99p": (int,),
@@ -153,6 +160,7 @@ class UsageSummaryDateOrg(ModelNormal):
         "ci_visibility_test_committers_hwm": "ci_visibility_test_committers_hwm",
         "cloud_cost_management_aws_host_count_avg": "cloud_cost_management_aws_host_count_avg",
         "cloud_cost_management_azure_host_count_avg": "cloud_cost_management_azure_host_count_avg",
+        "cloud_cost_management_gcp_host_count_avg": "cloud_cost_management_gcp_host_count_avg",
         "cloud_cost_management_host_count_avg": "cloud_cost_management_host_count_avg",
         "cloud_siem_events_sum": "cloud_siem_events_sum",
         "container_avg": "container_avg",
@@ -182,8 +190,14 @@ class UsageSummaryDateOrg(ModelNormal):
         "cws_host_top99p": "cws_host_top99p",
         "dbm_host_top99p_sum": "dbm_host_top99p_sum",
         "dbm_queries_avg_sum": "dbm_queries_avg_sum",
+        "error_tracking_events_sum": "error_tracking_events_sum",
         "fargate_tasks_count_avg": "fargate_tasks_count_avg",
         "fargate_tasks_count_hwm": "fargate_tasks_count_hwm",
+        "flex_logs_compute_large_avg": "flex_logs_compute_large_avg",
+        "flex_logs_compute_medium_avg": "flex_logs_compute_medium_avg",
+        "flex_logs_compute_small_avg": "flex_logs_compute_small_avg",
+        "flex_logs_compute_xsmall_avg": "flex_logs_compute_xsmall_avg",
+        "flex_stored_logs_avg": "flex_stored_logs_avg",
         "forwarding_events_bytes_sum": "forwarding_events_bytes_sum",
         "gcp_host_top99p": "gcp_host_top99p",
         "heroku_host_top99p": "heroku_host_top99p",
@@ -265,6 +279,7 @@ class UsageSummaryDateOrg(ModelNormal):
         ci_visibility_test_committers_hwm: Union[int, UnsetType] = unset,
         cloud_cost_management_aws_host_count_avg: Union[int, UnsetType] = unset,
         cloud_cost_management_azure_host_count_avg: Union[int, UnsetType] = unset,
+        cloud_cost_management_gcp_host_count_avg: Union[int, UnsetType] = unset,
         cloud_cost_management_host_count_avg: Union[int, UnsetType] = unset,
         cloud_siem_events_sum: Union[int, UnsetType] = unset,
         container_avg: Union[int, UnsetType] = unset,
@@ -294,8 +309,14 @@ class UsageSummaryDateOrg(ModelNormal):
         cws_host_top99p: Union[int, UnsetType] = unset,
         dbm_host_top99p_sum: Union[int, UnsetType] = unset,
         dbm_queries_avg_sum: Union[int, UnsetType] = unset,
+        error_tracking_events_sum: Union[int, UnsetType] = unset,
         fargate_tasks_count_avg: Union[int, UnsetType] = unset,
         fargate_tasks_count_hwm: Union[int, UnsetType] = unset,
+        flex_logs_compute_large_avg: Union[int, UnsetType] = unset,
+        flex_logs_compute_medium_avg: Union[int, UnsetType] = unset,
+        flex_logs_compute_small_avg: Union[int, UnsetType] = unset,
+        flex_logs_compute_xsmall_avg: Union[int, UnsetType] = unset,
+        flex_stored_logs_avg: Union[int, UnsetType] = unset,
         forwarding_events_bytes_sum: Union[int, UnsetType] = unset,
         gcp_host_top99p: Union[int, UnsetType] = unset,
         heroku_host_top99p: Union[int, UnsetType] = unset,
@@ -428,6 +449,9 @@ class UsageSummaryDateOrg(ModelNormal):
         :param cloud_cost_management_azure_host_count_avg: Host count average of Cloud Cost Management for Azure for the given date and given org.
         :type cloud_cost_management_azure_host_count_avg: int, optional
 
+        :param cloud_cost_management_gcp_host_count_avg: Host count average of Cloud Cost Management for GCP for the given date and given org.
+        :type cloud_cost_management_gcp_host_count_avg: int, optional
+
         :param cloud_cost_management_host_count_avg: Host count average of Cloud Cost Management for all cloud providers for the given date and given org.
         :type cloud_cost_management_host_count_avg: int, optional
 
@@ -515,11 +539,29 @@ class UsageSummaryDateOrg(ModelNormal):
         :param dbm_queries_avg_sum: Shows the average of all distinct Database Monitoring normalized queries over all hours in the current month for the given org.
         :type dbm_queries_avg_sum: int, optional
 
+        :param error_tracking_events_sum: Shows the sum of all Error Tracking events over all hours in the current date for the given org.
+        :type error_tracking_events_sum: int, optional
+
         :param fargate_tasks_count_avg: The average task count for Fargate.
         :type fargate_tasks_count_avg: int, optional
 
         :param fargate_tasks_count_hwm: Shows the high-water mark of all Fargate tasks over all hours in the current date for the given org.
         :type fargate_tasks_count_hwm: int, optional
+
+        :param flex_logs_compute_large_avg: Shows the average number of Flex Logs Compute Large Instances over all hours in the current date for the given org.
+        :type flex_logs_compute_large_avg: int, optional
+
+        :param flex_logs_compute_medium_avg: Shows the average number of Flex Logs Compute Medium Instances over all hours in the current date for the given org.
+        :type flex_logs_compute_medium_avg: int, optional
+
+        :param flex_logs_compute_small_avg: Shows the average number of Flex Logs Compute Small Instances over all hours in the current date for the given org.
+        :type flex_logs_compute_small_avg: int, optional
+
+        :param flex_logs_compute_xsmall_avg: Shows the average number of Flex Logs Compute Extra Small Instances over all hours in the current date for the given org.
+        :type flex_logs_compute_xsmall_avg: int, optional
+
+        :param flex_stored_logs_avg: Shows the average of all Flex Stored Logs over all hours in the current date for the given org.
+        :type flex_stored_logs_avg: int, optional
 
         :param forwarding_events_bytes_sum: Shows the sum of all log bytes forwarded over all hours in the current date for the given org.
         :type forwarding_events_bytes_sum: int, optional
@@ -727,6 +769,8 @@ class UsageSummaryDateOrg(ModelNormal):
             kwargs["cloud_cost_management_aws_host_count_avg"] = cloud_cost_management_aws_host_count_avg
         if cloud_cost_management_azure_host_count_avg is not unset:
             kwargs["cloud_cost_management_azure_host_count_avg"] = cloud_cost_management_azure_host_count_avg
+        if cloud_cost_management_gcp_host_count_avg is not unset:
+            kwargs["cloud_cost_management_gcp_host_count_avg"] = cloud_cost_management_gcp_host_count_avg
         if cloud_cost_management_host_count_avg is not unset:
             kwargs["cloud_cost_management_host_count_avg"] = cloud_cost_management_host_count_avg
         if cloud_siem_events_sum is not unset:
@@ -787,10 +831,22 @@ class UsageSummaryDateOrg(ModelNormal):
             kwargs["dbm_host_top99p_sum"] = dbm_host_top99p_sum
         if dbm_queries_avg_sum is not unset:
             kwargs["dbm_queries_avg_sum"] = dbm_queries_avg_sum
+        if error_tracking_events_sum is not unset:
+            kwargs["error_tracking_events_sum"] = error_tracking_events_sum
         if fargate_tasks_count_avg is not unset:
             kwargs["fargate_tasks_count_avg"] = fargate_tasks_count_avg
         if fargate_tasks_count_hwm is not unset:
             kwargs["fargate_tasks_count_hwm"] = fargate_tasks_count_hwm
+        if flex_logs_compute_large_avg is not unset:
+            kwargs["flex_logs_compute_large_avg"] = flex_logs_compute_large_avg
+        if flex_logs_compute_medium_avg is not unset:
+            kwargs["flex_logs_compute_medium_avg"] = flex_logs_compute_medium_avg
+        if flex_logs_compute_small_avg is not unset:
+            kwargs["flex_logs_compute_small_avg"] = flex_logs_compute_small_avg
+        if flex_logs_compute_xsmall_avg is not unset:
+            kwargs["flex_logs_compute_xsmall_avg"] = flex_logs_compute_xsmall_avg
+        if flex_stored_logs_avg is not unset:
+            kwargs["flex_stored_logs_avg"] = flex_stored_logs_avg
         if forwarding_events_bytes_sum is not unset:
             kwargs["forwarding_events_bytes_sum"] = forwarding_events_bytes_sum
         if gcp_host_top99p is not unset:

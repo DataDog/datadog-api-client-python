@@ -29,6 +29,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
             "appsec_fargate_usage": (float,),
             "appsec_percentage": (float,),
             "appsec_usage": (float,),
+            "asm_serverless_traced_invocations_percentage": (float,),
+            "asm_serverless_traced_invocations_usage": (float,),
             "browser_percentage": (float,),
             "browser_usage": (float,),
             "ci_pipeline_indexed_spans_percentage": (float,),
@@ -61,6 +63,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
             "dbm_hosts_usage": (float,),
             "dbm_queries_percentage": (float,),
             "dbm_queries_usage": (float,),
+            "error_tracking_percentage": (float,),
+            "error_tracking_usage": (float,),
             "estimated_indexed_logs_percentage": (float,),
             "estimated_indexed_logs_usage": (float,),
             "estimated_indexed_spans_percentage": (float,),
@@ -152,6 +156,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         "appsec_fargate_usage": "appsec_fargate_usage",
         "appsec_percentage": "appsec_percentage",
         "appsec_usage": "appsec_usage",
+        "asm_serverless_traced_invocations_percentage": "asm_serverless_traced_invocations_percentage",
+        "asm_serverless_traced_invocations_usage": "asm_serverless_traced_invocations_usage",
         "browser_percentage": "browser_percentage",
         "browser_usage": "browser_usage",
         "ci_pipeline_indexed_spans_percentage": "ci_pipeline_indexed_spans_percentage",
@@ -184,6 +190,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         "dbm_hosts_usage": "dbm_hosts_usage",
         "dbm_queries_percentage": "dbm_queries_percentage",
         "dbm_queries_usage": "dbm_queries_usage",
+        "error_tracking_percentage": "error_tracking_percentage",
+        "error_tracking_usage": "error_tracking_usage",
         "estimated_indexed_logs_percentage": "estimated_indexed_logs_percentage",
         "estimated_indexed_logs_usage": "estimated_indexed_logs_usage",
         "estimated_indexed_spans_percentage": "estimated_indexed_spans_percentage",
@@ -276,6 +284,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         appsec_fargate_usage: Union[float, UnsetType] = unset,
         appsec_percentage: Union[float, UnsetType] = unset,
         appsec_usage: Union[float, UnsetType] = unset,
+        asm_serverless_traced_invocations_percentage: Union[float, UnsetType] = unset,
+        asm_serverless_traced_invocations_usage: Union[float, UnsetType] = unset,
         browser_percentage: Union[float, UnsetType] = unset,
         browser_usage: Union[float, UnsetType] = unset,
         ci_pipeline_indexed_spans_percentage: Union[float, UnsetType] = unset,
@@ -308,6 +318,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         dbm_hosts_usage: Union[float, UnsetType] = unset,
         dbm_queries_percentage: Union[float, UnsetType] = unset,
         dbm_queries_usage: Union[float, UnsetType] = unset,
+        error_tracking_percentage: Union[float, UnsetType] = unset,
+        error_tracking_usage: Union[float, UnsetType] = unset,
         estimated_indexed_logs_percentage: Union[float, UnsetType] = unset,
         estimated_indexed_logs_usage: Union[float, UnsetType] = unset,
         estimated_indexed_spans_percentage: Union[float, UnsetType] = unset,
@@ -425,6 +437,12 @@ class MonthlyUsageAttributionValues(ModelNormal):
         :param appsec_usage: The Application Security Monitoring host usage by tag(s).
         :type appsec_usage: float, optional
 
+        :param asm_serverless_traced_invocations_percentage: The percentage of Application Security Monitoring Serverless traced invocations usage by tag(s).
+        :type asm_serverless_traced_invocations_percentage: float, optional
+
+        :param asm_serverless_traced_invocations_usage: The Application Security Monitoring Serverless traced invocations usage by tag(s).
+        :type asm_serverless_traced_invocations_usage: float, optional
+
         :param browser_percentage: The percentage of synthetic browser test usage by tag(s).
         :type browser_percentage: float, optional
 
@@ -520,6 +538,12 @@ class MonthlyUsageAttributionValues(ModelNormal):
 
         :param dbm_queries_usage: The Database Monitoring queries usage by tag(s).
         :type dbm_queries_usage: float, optional
+
+        :param error_tracking_percentage: The percentage of error tracking events usage by tag(s).
+        :type error_tracking_percentage: float, optional
+
+        :param error_tracking_usage: The error tracking events usage by tag(s).
+        :type error_tracking_usage: float, optional
 
         :param estimated_indexed_logs_percentage: The percentage of estimated live indexed logs usage by tag(s).
         :type estimated_indexed_logs_percentage: float, optional
@@ -773,6 +797,10 @@ class MonthlyUsageAttributionValues(ModelNormal):
             kwargs["appsec_percentage"] = appsec_percentage
         if appsec_usage is not unset:
             kwargs["appsec_usage"] = appsec_usage
+        if asm_serverless_traced_invocations_percentage is not unset:
+            kwargs["asm_serverless_traced_invocations_percentage"] = asm_serverless_traced_invocations_percentage
+        if asm_serverless_traced_invocations_usage is not unset:
+            kwargs["asm_serverless_traced_invocations_usage"] = asm_serverless_traced_invocations_usage
         if browser_percentage is not unset:
             kwargs["browser_percentage"] = browser_percentage
         if browser_usage is not unset:
@@ -837,6 +865,10 @@ class MonthlyUsageAttributionValues(ModelNormal):
             kwargs["dbm_queries_percentage"] = dbm_queries_percentage
         if dbm_queries_usage is not unset:
             kwargs["dbm_queries_usage"] = dbm_queries_usage
+        if error_tracking_percentage is not unset:
+            kwargs["error_tracking_percentage"] = error_tracking_percentage
+        if error_tracking_usage is not unset:
+            kwargs["error_tracking_usage"] = error_tracking_usage
         if estimated_indexed_logs_percentage is not unset:
             kwargs["estimated_indexed_logs_percentage"] = estimated_indexed_logs_percentage
         if estimated_indexed_logs_usage is not unset:
