@@ -79,7 +79,7 @@ class UsageAttributionBody(ModelNormal):
             In this scenario the API returns the total usage, not broken down by tags.
         :type tags: UsageAttributionTagNames, none_type, optional
 
-        :param updated_at: Shows the the most recent hour in the current months for all organizations for which all usages were calculated.
+        :param updated_at: Shows the the most recent hour in the current month for all organizations for which all usages were calculated.
         :type updated_at: str, optional
 
         :param values: Fields in Usage Summary by tag(s).
