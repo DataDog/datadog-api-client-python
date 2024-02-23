@@ -193,6 +193,16 @@ class MonitorsApi:
                     "attribute": "page_size",
                     "location": "query",
                 },
+                "monitor_ids": {
+                    "openapi_types": (str,),
+                    "attribute": "monitor_ids",
+                    "location": "query",
+                },
+                "with_freshness": {
+                    "openapi_types": (bool,),
+                    "attribute": "with_freshness",
+                    "location": "query",
+                },
             },
             headers_map={
                 "accept": ["application/json"],
@@ -627,6 +637,8 @@ class MonitorsApi:
         id_offset: Union[int, UnsetType] = unset,
         page: Union[int, UnsetType] = unset,
         page_size: Union[int, UnsetType] = unset,
+        monitor_ids: Union[str, UnsetType] = unset,
+        with_freshness: Union[bool, UnsetType] = unset,
     ) -> List[Monitor]:
         """Get all monitor details.
 
@@ -651,6 +663,10 @@ class MonitorsApi:
         :type page: int, optional
         :param page_size: The number of monitors to return per page. If the page argument is not specified, the default behavior returns all monitors without a ``page_size`` limit. However, if page is specified and ``page_size`` is not, the argument defaults to 100.
         :type page_size: int, optional
+        :param monitor_ids: A comma separated list of monitor ids
+        :type monitor_ids: str, optional
+        :param with_freshness: If this argument is set to true, then the returned monitors include the monitor freshness, indicating whether the monitor is correctly evaluating
+        :type with_freshness: bool, optional
         :rtype: [Monitor]
         """
         kwargs: Dict[str, Any] = {}
@@ -678,6 +694,12 @@ class MonitorsApi:
         if page_size is not unset:
             kwargs["page_size"] = page_size
 
+        if monitor_ids is not unset:
+            kwargs["monitor_ids"] = monitor_ids
+
+        if with_freshness is not unset:
+            kwargs["with_freshness"] = with_freshness
+
         return self._list_monitors_endpoint.call_with_http_info(**kwargs)
 
     def list_monitors_with_pagination(
@@ -691,6 +713,8 @@ class MonitorsApi:
         id_offset: Union[int, UnsetType] = unset,
         page: Union[int, UnsetType] = unset,
         page_size: Union[int, UnsetType] = unset,
+        monitor_ids: Union[str, UnsetType] = unset,
+        with_freshness: Union[bool, UnsetType] = unset,
     ) -> collections.abc.Iterable[Monitor]:
         """Get all monitor details.
 
@@ -715,6 +739,10 @@ class MonitorsApi:
         :type page: int, optional
         :param page_size: The number of monitors to return per page. If the page argument is not specified, the default behavior returns all monitors without a ``page_size`` limit. However, if page is specified and ``page_size`` is not, the argument defaults to 100.
         :type page_size: int, optional
+        :param monitor_ids: A comma separated list of monitor ids
+        :type monitor_ids: str, optional
+        :param with_freshness: If this argument is set to true, then the returned monitors include the monitor freshness, indicating whether the monitor is correctly evaluating
+        :type with_freshness: bool, optional
 
         :return: A generator of paginated results.
         :rtype: collections.abc.Iterable[Monitor]
@@ -743,6 +771,12 @@ class MonitorsApi:
 
         if page_size is not unset:
             kwargs["page_size"] = page_size
+
+        if monitor_ids is not unset:
+            kwargs["monitor_ids"] = monitor_ids
+
+        if with_freshness is not unset:
+            kwargs["with_freshness"] = with_freshness
 
         local_page_size = get_attribute_from_path(kwargs, "page_size", 100)
         endpoint = self._list_monitors_endpoint

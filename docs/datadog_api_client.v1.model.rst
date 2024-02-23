@@ -2066,6 +2066,13 @@ monitor\_formula\_and\_function\_query\_definition
    :members:
    :show-inheritance:
 
+monitor\_freshness
+------------------
+
+.. automodule:: datadog_api_client.v1.model.monitor_freshness
+   :members:
+   :show-inheritance:
+
 monitor\_group\_search\_response
 --------------------------------
 

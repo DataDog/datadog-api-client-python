@@ -17,6 +17,7 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v1.model.creator import Creator
+    from datadog_api_client.v1.model.monitor_freshness import MonitorFreshness
     from datadog_api_client.v1.model.matching_downtime import MatchingDowntime
     from datadog_api_client.v1.model.monitor_options import MonitorOptions
     from datadog_api_client.v1.model.monitor_overall_states import MonitorOverallStates
@@ -35,6 +36,7 @@ class Monitor(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v1.model.creator import Creator
+        from datadog_api_client.v1.model.monitor_freshness import MonitorFreshness
         from datadog_api_client.v1.model.matching_downtime import MatchingDowntime
         from datadog_api_client.v1.model.monitor_options import MonitorOptions
         from datadog_api_client.v1.model.monitor_overall_states import MonitorOverallStates
@@ -45,6 +47,7 @@ class Monitor(ModelNormal):
             "created": (datetime,),
             "creator": (Creator,),
             "deleted": (datetime, none_type),
+            "freshness": (MonitorFreshness,),
             "id": (int,),
             "matching_downtimes": ([MatchingDowntime],),
             "message": (str,),
@@ -65,6 +68,7 @@ class Monitor(ModelNormal):
         "created": "created",
         "creator": "creator",
         "deleted": "deleted",
+        "freshness": "freshness",
         "id": "id",
         "matching_downtimes": "matching_downtimes",
         "message": "message",
@@ -84,6 +88,7 @@ class Monitor(ModelNormal):
         "created",
         "creator",
         "deleted",
+        "freshness",
         "id",
         "modified",
         "multi",
@@ -98,6 +103,7 @@ class Monitor(ModelNormal):
         created: Union[datetime, UnsetType] = unset,
         creator: Union[Creator, UnsetType] = unset,
         deleted: Union[datetime, none_type, UnsetType] = unset,
+        freshness: Union[MonitorFreshness, UnsetType] = unset,
         id: Union[int, UnsetType] = unset,
         matching_downtimes: Union[List[MatchingDowntime], UnsetType] = unset,
         message: Union[str, UnsetType] = unset,
@@ -123,6 +129,9 @@ class Monitor(ModelNormal):
 
         :param deleted: Whether or not the monitor is deleted. (Always ``null`` )
         :type deleted: datetime, none_type, optional
+
+        :param freshness: The freshness of the monitor, indicating if the monitor evaluation is up to date. **This feature is currently in private beta.**
+        :type freshness: MonitorFreshness, optional
 
         :param id: ID of this monitor.
         :type id: int, optional
@@ -172,6 +181,8 @@ class Monitor(ModelNormal):
             kwargs["creator"] = creator
         if deleted is not unset:
             kwargs["deleted"] = deleted
+        if freshness is not unset:
+            kwargs["freshness"] = freshness
         if id is not unset:
             kwargs["id"] = id
         if matching_downtimes is not unset:
