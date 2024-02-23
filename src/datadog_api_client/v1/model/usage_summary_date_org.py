@@ -362,13 +362,13 @@ class UsageSummaryDateOrg(ModelNormal):
         :param apm_devsecops_host_top99p: Shows the 99th percentile of all APM DevSecOps hosts over all hours in the current date for the given org.
         :type apm_devsecops_host_top99p: int, optional
 
-        :param apm_fargate_count_avg: Shows the average of all APM ECS Fargate tasks over all hours in the current months for the given org.
+        :param apm_fargate_count_avg: Shows the average of all APM ECS Fargate tasks over all hours in the current month for the given org.
         :type apm_fargate_count_avg: int, optional
 
         :param apm_host_top99p: Shows the 99th percentile of all distinct APM hosts over all hours in the current date for the given org.
         :type apm_host_top99p: int, optional
 
-        :param appsec_fargate_count_avg: Shows the average of all Application Security Monitoring ECS Fargate tasks over all hours in the current months for the given org.
+        :param appsec_fargate_count_avg: Shows the average of all Application Security Monitoring ECS Fargate tasks over all hours in the current month for the given org.
         :type appsec_fargate_count_avg: int, optional
 
         :param asm_serverless_sum: Shows the sum of all Application Security Monitoring Serverless invocations over all hours in the current month for the given org.
