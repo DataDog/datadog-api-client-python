@@ -6764,6 +6764,7 @@ components:
       - events
       - logs
       - spans
+      - database_queries
       example: rum
       type: string
       x-enum-varnames:
@@ -6774,6 +6775,7 @@ components:
       - EVENTS
       - LOGS
       - SPANS
+      - DATABASE_QUERIES
     MonitorFormulaAndFunctionQueryDefinition:
       description: A formula and function query.
       oneOf:
