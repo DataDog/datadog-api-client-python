@@ -18,6 +18,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.incident_integration_metadata_metadata import IncidentIntegrationMetadataMetadata
     from datadog_api_client.v2.model.slack_integration_metadata import SlackIntegrationMetadata
     from datadog_api_client.v2.model.jira_integration_metadata import JiraIntegrationMetadata
+    from datadog_api_client.v2.model.microsoft_teams_integration_metadata import MicrosoftTeamsIntegrationMetadata
 
 
 class IncidentIntegrationMetadataAttributes(ModelNormal):
@@ -61,7 +62,12 @@ class IncidentIntegrationMetadataAttributes(ModelNormal):
     def __init__(
         self_,
         integration_type: int,
-        metadata: Union[IncidentIntegrationMetadataMetadata, SlackIntegrationMetadata, JiraIntegrationMetadata],
+        metadata: Union[
+            IncidentIntegrationMetadataMetadata,
+            SlackIntegrationMetadata,
+            JiraIntegrationMetadata,
+            MicrosoftTeamsIntegrationMetadata,
+        ],
         created: Union[datetime, UnsetType] = unset,
         incident_id: Union[str, UnsetType] = unset,
         modified: Union[datetime, UnsetType] = unset,
@@ -78,6 +84,7 @@ class IncidentIntegrationMetadataAttributes(ModelNormal):
         :type incident_id: str, optional
 
         :param integration_type: A number indicating the type of integration this metadata is for. 1 indicates Slack;
+            7 indicates Microsoft Teams;
             8 indicates Jira.
         :type integration_type: int
 

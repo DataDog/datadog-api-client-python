@@ -846,6 +846,10 @@ from datadog_api_client.v2.model.metrics_and_metric_tag_configurations_response 
 from datadog_api_client.v2.model.metrics_data_source import MetricsDataSource
 from datadog_api_client.v2.model.metrics_scalar_query import MetricsScalarQuery
 from datadog_api_client.v2.model.metrics_timeseries_query import MetricsTimeseriesQuery
+from datadog_api_client.v2.model.microsoft_teams_integration_metadata import MicrosoftTeamsIntegrationMetadata
+from datadog_api_client.v2.model.microsoft_teams_integration_metadata_teams_item import (
+    MicrosoftTeamsIntegrationMetadataTeamsItem,
+)
 from datadog_api_client.v2.model.monitor_config_policy_attribute_create_request import (
     MonitorConfigPolicyAttributeCreateRequest,
 )
@@ -2402,6 +2406,8 @@ __all__ = [
     "MetricsDataSource",
     "MetricsScalarQuery",
     "MetricsTimeseriesQuery",
+    "MicrosoftTeamsIntegrationMetadata",
+    "MicrosoftTeamsIntegrationMetadataTeamsItem",
     "MonitorConfigPolicyAttributeCreateRequest",
     "MonitorConfigPolicyAttributeEditRequest",
     "MonitorConfigPolicyAttributeResponse",

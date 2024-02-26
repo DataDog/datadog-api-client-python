@@ -20,6 +20,9 @@ class IncidentIntegrationMetadataMetadata(ModelComposed):
 
         :param issues: Array of Jira issues in this integration metadata.
         :type issues: [JiraIntegrationMetadataIssuesItem]
+
+        :param teams: Array of Microsoft Teams teams in this integration metadata.
+        :type teams: [MicrosoftTeamsIntegrationMetadataTeamsItem]
         """
         super().__init__(kwargs)
 
@@ -34,10 +37,12 @@ class IncidentIntegrationMetadataMetadata(ModelComposed):
         # loading
         from datadog_api_client.v2.model.slack_integration_metadata import SlackIntegrationMetadata
         from datadog_api_client.v2.model.jira_integration_metadata import JiraIntegrationMetadata
+        from datadog_api_client.v2.model.microsoft_teams_integration_metadata import MicrosoftTeamsIntegrationMetadata
 
         return {
             "oneOf": [
                 SlackIntegrationMetadata,
                 JiraIntegrationMetadata,
+                MicrosoftTeamsIntegrationMetadata,
             ],
         }
