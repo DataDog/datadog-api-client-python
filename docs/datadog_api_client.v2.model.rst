@@ -5223,6 +5223,20 @@ metrics\_timeseries\_query
    :members:
    :show-inheritance:
 
+microsoft\_teams\_integration\_metadata
+---------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.microsoft_teams_integration_metadata
+   :members:
+   :show-inheritance:
+
+microsoft\_teams\_integration\_metadata\_teams\_item
+----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.microsoft_teams_integration_metadata_teams_item
+   :members:
+   :show-inheritance:
+
 monitor\_config\_policy\_attribute\_create\_request
 ---------------------------------------------------
 
