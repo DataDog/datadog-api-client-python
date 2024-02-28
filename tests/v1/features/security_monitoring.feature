@@ -1,6 +1,8 @@
 @endpoint(security-monitoring) @endpoint(security-monitoring-v1)
 Feature: Security Monitoring
-  Detection rules for generating signals and listing of generated signals.
+  Create and manage your security rules, signals, filters, and more. See the
+  [Datadog Security page](https://docs.datadoghq.com/security/) for more
+  information.
 
   Background:
     Given a valid "apiKeyAuth" key in the system

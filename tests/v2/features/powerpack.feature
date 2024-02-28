@@ -1,9 +1,12 @@
 @endpoint(powerpack) @endpoint(powerpack-v2)
 Feature: Powerpack
-  The powerpack endpoints allow you to:  - Get a powerpack - Create a
-  powerpack - Delete a powerpack - Get a list of all powerpacks  The Patch
-  and Delete API methods can only be performed on a powerpack by a user who
-  has the powerpack create permission for that specific powerpack.
+  The Powerpack endpoints allow you to:  - Get a Powerpack - Create a
+  Powerpack - Delete a Powerpack - Get a list of all Powerpacks  The Patch
+  and Delete API methods can only be performed on a Powerpack by a user who
+  has the powerpack create permission for that specific Powerpack.  Read
+  [Scale Graphing Expertise with
+  Powerpacks](https://docs.datadoghq.com/dashboards/guide/powerpacks-best-
+  practices/) for more information.
 
   Background:
     Given a valid "apiKeyAuth" key in the system

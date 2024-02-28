@@ -7,7 +7,8 @@ Feature: Metrics
   timeframe over which a metric is viewed increases, aggregation between
   points occurs to stay below that set number.  The Post, Patch, and Delete
   `manage_tags` API methods can only be performed by a user who has the
-  `Manage Tags for Metrics` permission.
+  `Manage Tags for Metrics` permission.  See the [Metrics
+  page](https://docs.datadoghq.com/metrics/) for more information.
 
   Background:
     Given a valid "apiKeyAuth" key in the system

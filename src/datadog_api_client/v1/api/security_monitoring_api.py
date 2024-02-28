@@ -15,8 +15,7 @@ from datadog_api_client.v1.model.signal_state_update_request import SignalStateU
 
 class SecurityMonitoringApi:
     """
-    Detection rules for generating signals and listing of generated
-    signals.
+    Create and manage your security rules, signals, filters, and more. See the `Datadog Security page <https://docs.datadoghq.com/security/>`_ for more information.
     """
 
     def __init__(self, api_client=None):

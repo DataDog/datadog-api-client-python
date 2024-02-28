@@ -51,6 +51,8 @@ class MetricsApi:
 
     The Post, Patch, and Delete ``manage_tags`` API methods can only be performed by
     a user who has the ``Manage Tags for Metrics`` permission.
+
+    See the `Metrics page <https://docs.datadoghq.com/metrics/>`_ for more information.
     """
 
     def __init__(self, api_client=None):

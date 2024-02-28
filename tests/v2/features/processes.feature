@@ -1,7 +1,9 @@
 @endpoint(processes) @endpoint(processes-v2)
 Feature: Processes
   The processes API allows you to query processes data for your
-  organization.
+  organization. See the [Live Processes
+  page](https://docs.datadoghq.com/infrastructure/process/) for more
+  information.
 
   Background:
     Given a valid "apiKeyAuth" key in the system
