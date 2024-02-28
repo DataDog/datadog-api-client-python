@@ -121,7 +121,7 @@
       }
     ],
     "step": "there is a valid \"azure_account\" in the system",
-    "key": "aws_account",
+    "key": "azure_account",
     "tag": "Azure Integration",
     "operationId": "CreateAzureIntegration"
   },
