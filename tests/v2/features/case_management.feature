@@ -1,6 +1,9 @@
 @endpoint(case-management) @endpoint(case-management-v2)
 Feature: Case Management
-  View and manage cases and project within Case Management
+  View and manage cases and projects within Case Management. See the [Case
+  Management
+  page](https://docs.datadoghq.com/service_management/case_management/) for
+  more information.
 
   Background:
     Given a valid "apiKeyAuth" key in the system
