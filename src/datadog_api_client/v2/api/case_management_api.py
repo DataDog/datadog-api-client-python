@@ -30,7 +30,7 @@ from datadog_api_client.v2.model.case_update_status_request import CaseUpdateSta
 
 class CaseManagementApi:
     """
-    View and manage cases and project within Case Management
+    View and manage cases and projects within Case Management. See the `Case Management page <https://docs.datadoghq.com/service_management/case_management/>`_ for more information.
     """
 
     def __init__(self, api_client=None):
