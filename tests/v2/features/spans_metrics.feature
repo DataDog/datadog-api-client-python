@@ -2,7 +2,8 @@
 Feature: Spans Metrics
   Manage configuration of [span-based
   metrics](https://app.datadoghq.com/apm/traces/generate-metrics) for your
-  organization.
+  organization. See [Generate Metrics from Spans](https://docs.datadoghq.com
+  /tracing/trace_pipeline/generate_metrics/) for more information.
 
   Background:
     Given a valid "apiKeyAuth" key in the system

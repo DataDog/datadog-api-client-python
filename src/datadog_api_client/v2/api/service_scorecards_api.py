@@ -26,7 +26,7 @@ from datadog_api_client.v2.model.create_rule_request import CreateRuleRequest
 
 class ServiceScorecardsApi:
     """
-    API to create, update scorecard rules and outcomes.
+    API to create, update scorecard rules and outcomes. See `Service Scorecards <https://docs.datadoghq.com/account_management/org_settings/service_accounts/>`_ for more information.
 
     This feature is currently in BETA. If you have any feedback, contact `Datadog support <https://docs.datadoghq.com/help/>`_.
     """

@@ -1,6 +1,8 @@
 @endpoint(team) @endpoint(team-v2) @endpoint(teams) @endpoint(teams-v2)
 Feature: Teams
-  View and manage teams within Datadog.
+  View and manage teams within Datadog. See the [Teams
+  page](https://docs.datadoghq.com/account_management/teams/) for more
+  information.
 
   Background:
     Given a valid "apiKeyAuth" key in the system

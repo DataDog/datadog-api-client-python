@@ -23,7 +23,7 @@ from datadog_api_client.v2.model.application_key_update_request import Applicati
 
 class ServiceAccountsApi:
     """
-    Create, edit, and disable service accounts.
+    Create, edit, and disable service accounts. See the `Service Accounts page <https://docs.datadoghq.com/account_management/org_settings/service_accounts/>`_ for more information.
     """
 
     def __init__(self, api_client=None):

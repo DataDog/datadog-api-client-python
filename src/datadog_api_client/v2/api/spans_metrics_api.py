@@ -15,7 +15,7 @@ from datadog_api_client.v2.model.spans_metric_update_request import SpansMetricU
 
 class SpansMetricsApi:
     """
-    Manage configuration of `span-based metrics <https://app.datadoghq.com/apm/traces/generate-metrics>`_ for your organization.
+    Manage configuration of `span-based metrics <https://app.datadoghq.com/apm/traces/generate-metrics>`_ for your organization. See `Generate Metrics from Spans <https://docs.datadoghq.com/tracing/trace_pipeline/generate_metrics/>`_ for more information.
     """
 
     def __init__(self, api_client=None):

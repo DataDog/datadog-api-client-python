@@ -38,7 +38,7 @@ from datadog_api_client.v2.model.team_permission_setting_update_request import T
 
 class TeamsApi:
     """
-    View and manage teams within Datadog.
+    View and manage teams within Datadog. See the `Teams page <https://docs.datadoghq.com/account_management/teams/>`_ for more information.
     """
 
     def __init__(self, api_client=None):

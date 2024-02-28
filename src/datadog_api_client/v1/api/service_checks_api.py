@@ -19,11 +19,11 @@ class ServiceChecksApi:
     are limited for checks with a Critical or Warning status, they are dropped for checks with
     an OK status.
 
-    * `Read more about Service Check monitors. <https://docs.datadoghq.com/monitors/create/types/host/?tab=checkalert>`_
-    * `Read more about Process Check monitors. <https://docs.datadoghq.com/monitors/create/types/process_check/?tab=checkalert>`_
-    * `Read more about Network Check monitors. <https://docs.datadoghq.com/monitors/create/types/network/?tab=checkalert>`_
-    * `Read more about Custom Check monitors. <https://docs.datadoghq.com/monitors/create/types/custom_check/?tab=checkalert>`_
-    * `Read more about Service Check and status codes. <https://docs.datadoghq.com/developers/service_checks/>`_
+    * `Read more about Service Check monitors <https://docs.datadoghq.com/monitors/types/service_check/>`_.
+    * `Read more about Process Check monitors <https://docs.datadoghq.com/monitors/create/types/process_check/?tab=checkalert>`_.
+    * `Read more about Network monitors <https://docs.datadoghq.com/monitors/create/types/network/?tab=checkalert>`_.
+    * `Read more about Custom Check monitors <https://docs.datadoghq.com/monitors/create/types/custom_check/?tab=checkalert>`_.
+    * `Read more about Service Checks and status codes <https://docs.datadoghq.com/developers/service_checks/>`_.
     """
 
     def __init__(self, api_client=None):

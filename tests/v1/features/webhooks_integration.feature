@@ -1,8 +1,9 @@
 @endpoint(webhooks-integration) @endpoint(webhooks-integration-v1)
 Feature: Webhooks Integration
   Configure your Datadog-Webhooks integration directly through the Datadog
-  API. For more information about the Datadog-Webhooks integration, see the
-  [integration page](https://docs.datadoghq.com/integrations/webhooks).
+  API. See the [Webhooks integration
+  page](https://docs.datadoghq.com/integrations/webhooks) for more
+  information.
 
   Background:
     Given a valid "apiKeyAuth" key in the system

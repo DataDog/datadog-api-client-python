@@ -27,8 +27,7 @@ class TagsApi:
     by a source. For example, some valid sources include nagios, hudson, jenkins,
     users, feed, chef, puppet, git, bitbucket, fabric, capistrano, etc.
 
-    Read more about tags on the dedicated
-    `documentation page <https://docs.datadoghq.com/tagging>`_.
+    Read more about tags on `Getting Started with Tags <https://docs.datadoghq.com/getting_started/tagging/>`_.
     """
 
     def __init__(self, api_client=None):

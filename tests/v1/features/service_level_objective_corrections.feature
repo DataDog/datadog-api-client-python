@@ -4,7 +4,9 @@ Feature: Service Level Objective Corrections
   negatively impacting your SLO’s status and error budget. You can use
   Status Corrections for various purposes, such as removing planned
   maintenance windows, non-business hours, or other time periods that do not
-  correspond to genuine issues.
+  correspond to genuine issues. See [SLO status corrections](https://docs.da
+  tadoghq.com/service_management/service_level_objectives/#slo-status-
+  corrections) for more information.
 
   Background:
     Given a valid "apiKeyAuth" key in the system
