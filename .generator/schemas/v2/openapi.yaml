@@ -10410,7 +10410,6 @@ components:
           example: project-id
           type: string
       required:
-      - project_id
       - client_email
       type: object
     LogsArchiveIntegrationS3:
