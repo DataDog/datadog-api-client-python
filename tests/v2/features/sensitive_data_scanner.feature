@@ -1,7 +1,9 @@
 @endpoint(sensitive-data-scanner) @endpoint(sensitive-data-scanner-v2) @endpoint(sensitivedatascanner) @endpoint(sensitivedatascanner-v2)
 Feature: Sensitive Data Scanner
   Create, update, delete, and retrieve sensitive data scanner groups and
-  rules.
+  rules. See the [Sensitive Data Scanner
+  page](https://docs.datadoghq.com/sensitive_data_scanner/) for more
+  information.
 
   Background:
     Given a valid "apiKeyAuth" key in the system

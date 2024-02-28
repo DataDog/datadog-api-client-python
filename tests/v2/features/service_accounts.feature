@@ -1,6 +1,8 @@
 @endpoint(service-accounts) @endpoint(service-accounts-v2)
 Feature: Service Accounts
-  Create, edit, and disable service accounts.
+  Create, edit, and disable service accounts. See the [Service Accounts page
+  ](https://docs.datadoghq.com/account_management/org_settings/service_accou
+  nts/) for more information.
 
   Background:
     Given a valid "apiKeyAuth" key in the system

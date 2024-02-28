@@ -21,8 +21,7 @@ from datadog_api_client.v1.model.webhooks_integration_update_request import Webh
 class WebhooksIntegrationApi:
     """
     Configure your Datadog-Webhooks integration directly through the Datadog API.
-    For more information about the Datadog-Webhooks integration,
-    see the `integration page <https://docs.datadoghq.com/integrations/webhooks>`_.
+    See the `Webhooks integration page <https://docs.datadoghq.com/integrations/webhooks>`_ for more information.
     """
 
     def __init__(self, api_client=None):

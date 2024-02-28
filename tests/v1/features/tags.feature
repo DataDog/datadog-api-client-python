@@ -6,8 +6,8 @@ Feature: Tags
   tags to a particular host.  The component of your infrastructure
   responsible for a tag is identified by a source. For example, some valid
   sources include nagios, hudson, jenkins, users, feed, chef, puppet, git,
-  bitbucket, fabric, capistrano, etc.  Read more about tags on the dedicated
-  [documentation page](https://docs.datadoghq.com/tagging).
+  bitbucket, fabric, capistrano, etc.  Read more about tags on [Getting
+  Started with Tags](https://docs.datadoghq.com/getting_started/tagging/).
 
   Background:
     Given a valid "apiKeyAuth" key in the system

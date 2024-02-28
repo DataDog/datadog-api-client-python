@@ -49,7 +49,7 @@ from datadog_api_client.v2.model.sensitive_data_scanner_standard_patterns_respon
 
 class SensitiveDataScannerApi:
     """
-    Create, update, delete, and retrieve sensitive data scanner groups and rules.
+    Create, update, delete, and retrieve sensitive data scanner groups and rules. See the `Sensitive Data Scanner page <https://docs.datadoghq.com/sensitive_data_scanner/>`_ for more information.
     """
 
     def __init__(self, api_client=None):
