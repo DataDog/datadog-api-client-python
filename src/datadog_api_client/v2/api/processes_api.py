@@ -20,7 +20,7 @@ from datadog_api_client.v2.model.process_summary import ProcessSummary
 
 class ProcessesApi:
     """
-    The processes API allows you to query processes data for your organization.
+    The processes API allows you to query processes data for your organization. See the `Live Processes page <https://docs.datadoghq.com/infrastructure/process/>`_ for more information.
     """
 
     def __init__(self, api_client=None):

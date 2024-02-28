@@ -1,6 +1,8 @@
 @endpoint(logs) @endpoint(logs-v1)
 Feature: Logs
-  Search your logs and send them to your Datadog platform over HTTP.
+  Search your logs and send them to your Datadog platform over HTTP. See the
+  [Log Management page](https://docs.datadoghq.com/logs/) for more
+  information.
 
   Background:
     Given a valid "apiKeyAuth" key in the system

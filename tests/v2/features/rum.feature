@@ -1,6 +1,9 @@
 @endpoint(rum) @endpoint(rum-v2)
 Feature: RUM
-  Search or aggregate your RUM events over HTTP.
+  Manage your Real User Monitoring (RUM) applications, and search or
+  aggregate your RUM events over HTTP. See the [RUM & Session Replay
+  page](https://docs.datadoghq.com/real_user_monitoring/) for more
+  information
 
   Background:
     Given a valid "apiKeyAuth" key in the system

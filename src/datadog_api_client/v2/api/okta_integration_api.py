@@ -15,7 +15,7 @@ from datadog_api_client.v2.model.okta_account_update_request import OktaAccountU
 
 class OktaIntegrationApi:
     """
-    Configure your Datadog Okta integration directly through the Datadog API.
+    Configure your `Datadog Okta integration <https://docs.datadoghq.com/integrations/okta/>`_ directly through the Datadog API.
     """
 
     def __init__(self, api_client=None):

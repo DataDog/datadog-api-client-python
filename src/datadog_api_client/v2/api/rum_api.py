@@ -29,7 +29,7 @@ from datadog_api_client.v2.model.rum_search_events_request import RUMSearchEvent
 
 class RUMApi:
     """
-    Search or aggregate your RUM events over HTTP.
+    Manage your Real User Monitoring (RUM) applications, and search or aggregate your RUM events over HTTP. See the `RUM & Session Replay page <https://docs.datadoghq.com/real_user_monitoring/>`_ for more information
     """
 
     def __init__(self, api_client=None):

@@ -20,7 +20,7 @@ class LogsArchivesApi:
     Archives forward all the logs ingested to a cloud storage system.
 
     See the `Archives Page <https://app.datadoghq.com/logs/pipelines/archives>`_
-    for a list of the archives currently configured in web UI.
+    for a list of the archives currently configured in Datadog.
     """
 
     def __init__(self, api_client=None):

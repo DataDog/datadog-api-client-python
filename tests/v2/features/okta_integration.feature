@@ -1,6 +1,8 @@
 @endpoint(okta-integration) @endpoint(okta-integration-v2)
 Feature: Okta Integration
-  Configure your Datadog Okta integration directly through the Datadog API.
+  Configure your [Datadog Okta
+  integration](https://docs.datadoghq.com/integrations/okta/) directly
+  through the Datadog API.
 
   Background:
     Given a valid "apiKeyAuth" key in the system

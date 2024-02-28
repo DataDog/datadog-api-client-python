@@ -28,7 +28,7 @@ from datadog_api_client.v2.model.logs_list_request import LogsListRequest
 
 class LogsApi:
     """
-    Search your logs and send them to your Datadog platform over HTTP.
+    Search your logs and send them to your Datadog platform over HTTP. See the `Log Management page <https://docs.datadoghq.com/logs/>`_ for more information.
     """
 
     def __init__(self, api_client=None):
