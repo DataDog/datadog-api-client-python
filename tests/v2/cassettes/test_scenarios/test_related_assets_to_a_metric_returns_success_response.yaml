@@ -1,0 +1,32 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/metrics/system.cpu.user/assets
+  response:
+    body:
+      string: '{"data":{"id":"system.cpu.user","type":"metrics","relationships":{"dashboards":{"data":[{"id":"d5e-dpd-umy","type":"dashboards"},{"id":"884-jxj-d7f","type":"dashboards"},{"id":"kqz-yw2-egk","type":"dashboards"},{"id":"43b-kw6-vqr","type":"dashboards"},{"id":"3bd-yi5-t9f","type":"dashboards"},{"id":"zfd-a24-thy","type":"dashboards"},{"id":"5qr-399-8wz","type":"dashboards"},{"id":"zst-bcm-gq6","type":"dashboards"},{"id":"ytd-nd3-bxu","type":"dashboards"},{"id":"7dp-46c-6tr","type":"dashboards"},{"id":"ug4-a8z-jva","type":"dashboards"},{"id":"89p-5x9-mfp","type":"dashboards"},{"id":"unw-hwk-68w","type":"dashboards"},{"id":"2m8-ht3-7kf","type":"dashboards"},{"id":"eq3-r74-a85","type":"dashboards"},{"id":"8yn-6s7-pue","type":"dashboards"},{"id":"b6n-8j5-2iz","type":"dashboards"},{"id":"4j8-nbn-4gi","type":"dashboards"},{"id":"tpx-f7m-z57","type":"dashboards"},{"id":"xfe-kap-e5y","type":"dashboards"},{"id":"5tp-tr6-93q","type":"dashboards"},{"id":"6md-r2g-kxc","type":"dashboards"},{"id":"neh-3bi-sgi","type":"dashboards"},{"id":"63v-49e-a7d","type":"dashboards"},{"id":"8w6-777-dbc","type":"dashboards"},{"id":"bgp-uee-rt3","type":"dashboards"},{"id":"p8w-deq-k6x","type":"dashboards"},{"id":"f4a-76m-nbn","type":"dashboards"},{"id":"9km-gj8-2rj","type":"dashboards"},{"id":"deh-2pa-jv8","type":"dashboards"}]},"monitors":{"data":[]},"notebooks":{"data":[{"id":"4758632","type":"notebooks"}]},"slos":{"data":[]}}},"included":[{"id":"d5e-dpd-umy","type":"dashboards","attributes":{"popularity":0,"title":"Cloud
+        Foundry - Infrastructure Overview"}},{"id":"884-jxj-d7f","type":"dashboards","attributes":{"popularity":0,"title":"Cloud
+        Foundry - Infrastructure Overview"}},{"id":"kqz-yw2-egk","type":"dashboards","attributes":{"popularity":0,"title":"PCF
+        Nozzle Testing (cloned)"}},{"id":"43b-kw6-vqr","type":"dashboards","attributes":{"popularity":0,"title":"Cloud
+        Foundry - Overview (cloned)"}},{"id":"3bd-yi5-t9f","type":"dashboards","attributes":{"popularity":0,"title":"Cloud
+        Foundry - Overview (cloned)"}},{"id":"zfd-a24-thy","type":"dashboards","attributes":{"popularity":0,"title":"PCF
+        Cloud Controller"}},{"id":"5qr-399-8wz","type":"dashboards","attributes":{"popularity":0,"title":"Example-Create_a_new_dashboard_with_formulas_and_functions_scatterplot_widget_1708538631"}},{"id":"zst-bcm-gq6","type":"dashboards","attributes":{"popularity":0,"title":"Ordered
+        Layout Dashboard"}},{"id":"ytd-nd3-bxu","type":"dashboards","attributes":{"popularity":0,"title":""}},{"id":"7dp-46c-6tr","type":"dashboards","attributes":{"popularity":0,"title":""}},{"id":"ug4-a8z-jva","type":"dashboards","attributes":{"popularity":0,"title":""}},{"id":"89p-5x9-mfp","type":"dashboards","attributes":{"popularity":0,"title":""}},{"id":"unw-hwk-68w","type":"dashboards","attributes":{"popularity":0,"title":""}},{"id":"2m8-ht3-7kf","type":"dashboards","attributes":{"popularity":0,"title":""}},{"id":"eq3-r74-a85","type":"dashboards","attributes":{"popularity":0,"title":""}},{"id":"8yn-6s7-pue","type":"dashboards","attributes":{"popularity":0,"title":""}},{"id":"b6n-8j5-2iz","type":"dashboards","attributes":{"popularity":0,"title":"Cloud
+        Foundry - Overview (cloned) (cloned)"}},{"id":"4j8-nbn-4gi","type":"dashboards","attributes":{"popularity":0,"title":""}},{"id":"tpx-f7m-z57","type":"dashboards","attributes":{"popularity":0,"title":"{{
+        unique }}"}},{"id":"xfe-kap-e5y","type":"dashboards","attributes":{"popularity":0,"title":""}},{"id":"5tp-tr6-93q","type":"dashboards","attributes":{"popularity":0,"title":""}},{"id":"6md-r2g-kxc","type":"dashboards","attributes":{"popularity":0,"title":""}},{"id":"neh-3bi-sgi","type":"dashboards","attributes":{"popularity":0,"title":""}},{"id":"63v-49e-a7d","type":"dashboards","attributes":{"popularity":0,"title":"sarah
+        test"}},{"id":"8w6-777-dbc","type":"dashboards","attributes":{"popularity":0,"title":""}},{"id":"bgp-uee-rt3","type":"dashboards","attributes":{"popularity":0,"title":""}},{"id":"p8w-deq-k6x","type":"dashboards","attributes":{"popularity":0,"title":"CRP-176"}},{"id":"f4a-76m-nbn","type":"dashboards","attributes":{"popularity":0,"title":"Hippolyte''s
+        Screenboard Fri, Apr 16, 10:20:54 am"}},{"id":"9km-gj8-2rj","type":"dashboards","attributes":{"popularity":0,"title":"Hippolyte''s
+        Screenboard Fri, Apr 16, 10:20:54 am"}},{"id":"deh-2pa-jv8","type":"dashboards","attributes":{"popularity":0,"title":"Hippolyte''s
+        Timeboard Wed, Mar 3, 10:57:28 am"}},{"id":"4758632","type":"notebooks","attributes":{"title":"PCF
+        Container Usage Attribution"}}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1

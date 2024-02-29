@@ -779,6 +779,19 @@ from datadog_api_client.v2.model.metric_active_configuration_type import MetricA
 from datadog_api_client.v2.model.metric_all_tags import MetricAllTags
 from datadog_api_client.v2.model.metric_all_tags_attributes import MetricAllTagsAttributes
 from datadog_api_client.v2.model.metric_all_tags_response import MetricAllTagsResponse
+from datadog_api_client.v2.model.metric_asset_attributes import MetricAssetAttributes
+from datadog_api_client.v2.model.metric_asset_dashboard_relationship import MetricAssetDashboardRelationship
+from datadog_api_client.v2.model.metric_asset_dashboard_relationships import MetricAssetDashboardRelationships
+from datadog_api_client.v2.model.metric_asset_monitor_relationship import MetricAssetMonitorRelationship
+from datadog_api_client.v2.model.metric_asset_monitor_relationships import MetricAssetMonitorRelationships
+from datadog_api_client.v2.model.metric_asset_notebook_relationship import MetricAssetNotebookRelationship
+from datadog_api_client.v2.model.metric_asset_notebook_relationships import MetricAssetNotebookRelationships
+from datadog_api_client.v2.model.metric_asset_response_data import MetricAssetResponseData
+from datadog_api_client.v2.model.metric_asset_response_included import MetricAssetResponseIncluded
+from datadog_api_client.v2.model.metric_asset_response_relationships import MetricAssetResponseRelationships
+from datadog_api_client.v2.model.metric_asset_slo_relationship import MetricAssetSLORelationship
+from datadog_api_client.v2.model.metric_asset_slo_relationships import MetricAssetSLORelationships
+from datadog_api_client.v2.model.metric_assets_response import MetricAssetsResponse
 from datadog_api_client.v2.model.metric_bulk_configure_tags_type import MetricBulkConfigureTagsType
 from datadog_api_client.v2.model.metric_bulk_tag_config_create import MetricBulkTagConfigCreate
 from datadog_api_client.v2.model.metric_bulk_tag_config_create_attributes import MetricBulkTagConfigCreateAttributes
@@ -796,6 +809,9 @@ from datadog_api_client.v2.model.metric_custom_aggregation import MetricCustomAg
 from datadog_api_client.v2.model.metric_custom_aggregations import MetricCustomAggregations
 from datadog_api_client.v2.model.metric_custom_space_aggregation import MetricCustomSpaceAggregation
 from datadog_api_client.v2.model.metric_custom_time_aggregation import MetricCustomTimeAggregation
+from datadog_api_client.v2.model.metric_dashboard_asset import MetricDashboardAsset
+from datadog_api_client.v2.model.metric_dashboard_attributes import MetricDashboardAttributes
+from datadog_api_client.v2.model.metric_dashboard_type import MetricDashboardType
 from datadog_api_client.v2.model.metric_distinct_volume import MetricDistinctVolume
 from datadog_api_client.v2.model.metric_distinct_volume_attributes import MetricDistinctVolumeAttributes
 from datadog_api_client.v2.model.metric_distinct_volume_type import MetricDistinctVolumeType
@@ -809,10 +825,16 @@ from datadog_api_client.v2.model.metric_ingested_indexed_volume_attributes impor
 from datadog_api_client.v2.model.metric_ingested_indexed_volume_type import MetricIngestedIndexedVolumeType
 from datadog_api_client.v2.model.metric_intake_type import MetricIntakeType
 from datadog_api_client.v2.model.metric_metadata import MetricMetadata
+from datadog_api_client.v2.model.metric_monitor_asset import MetricMonitorAsset
+from datadog_api_client.v2.model.metric_monitor_type import MetricMonitorType
+from datadog_api_client.v2.model.metric_notebook_asset import MetricNotebookAsset
+from datadog_api_client.v2.model.metric_notebook_type import MetricNotebookType
 from datadog_api_client.v2.model.metric_origin import MetricOrigin
 from datadog_api_client.v2.model.metric_payload import MetricPayload
 from datadog_api_client.v2.model.metric_point import MetricPoint
 from datadog_api_client.v2.model.metric_resource import MetricResource
+from datadog_api_client.v2.model.metric_slo_asset import MetricSLOAsset
+from datadog_api_client.v2.model.metric_slo_type import MetricSLOType
 from datadog_api_client.v2.model.metric_series import MetricSeries
 from datadog_api_client.v2.model.metric_suggested_aggregations import MetricSuggestedAggregations
 from datadog_api_client.v2.model.metric_suggested_tags_and_aggregations import MetricSuggestedTagsAndAggregations
@@ -2343,6 +2365,19 @@ __all__ = [
     "MetricAllTags",
     "MetricAllTagsAttributes",
     "MetricAllTagsResponse",
+    "MetricAssetAttributes",
+    "MetricAssetDashboardRelationship",
+    "MetricAssetDashboardRelationships",
+    "MetricAssetMonitorRelationship",
+    "MetricAssetMonitorRelationships",
+    "MetricAssetNotebookRelationship",
+    "MetricAssetNotebookRelationships",
+    "MetricAssetResponseData",
+    "MetricAssetResponseIncluded",
+    "MetricAssetResponseRelationships",
+    "MetricAssetSLORelationship",
+    "MetricAssetSLORelationships",
+    "MetricAssetsResponse",
     "MetricBulkConfigureTagsType",
     "MetricBulkTagConfigCreate",
     "MetricBulkTagConfigCreateAttributes",
@@ -2360,6 +2395,9 @@ __all__ = [
     "MetricCustomAggregations",
     "MetricCustomSpaceAggregation",
     "MetricCustomTimeAggregation",
+    "MetricDashboardAsset",
+    "MetricDashboardAttributes",
+    "MetricDashboardType",
     "MetricDistinctVolume",
     "MetricDistinctVolumeAttributes",
     "MetricDistinctVolumeType",
@@ -2373,10 +2411,16 @@ __all__ = [
     "MetricIngestedIndexedVolumeType",
     "MetricIntakeType",
     "MetricMetadata",
+    "MetricMonitorAsset",
+    "MetricMonitorType",
+    "MetricNotebookAsset",
+    "MetricNotebookType",
     "MetricOrigin",
     "MetricPayload",
     "MetricPoint",
     "MetricResource",
+    "MetricSLOAsset",
+    "MetricSLOType",
     "MetricSeries",
     "MetricSuggestedAggregations",
     "MetricSuggestedTagsAndAggregations",

@@ -1162,6 +1162,12 @@
       "type": "safe"
     }
   },
+  "ListMetricAssets": {
+    "tag": "Metrics",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "EstimateMetricsOutputSeries": {
     "tag": "Metrics",
     "undo": {

@@ -22,6 +22,7 @@ from datadog_api_client.v2.model.metric_suggested_tags_and_aggregations_response
     MetricSuggestedTagsAndAggregationsResponse,
 )
 from datadog_api_client.v2.model.metric_all_tags_response import MetricAllTagsResponse
+from datadog_api_client.v2.model.metric_assets_response import MetricAssetsResponse
 from datadog_api_client.v2.model.metric_estimate_response import MetricEstimateResponse
 from datadog_api_client.v2.model.metric_tag_configuration_response import MetricTagConfigurationResponse
 from datadog_api_client.v2.model.metric_tag_configuration_update_request import MetricTagConfigurationUpdateRequest
@@ -227,6 +228,29 @@ class MetricsApi:
                     "openapi_types": (int,),
                     "attribute": "window[seconds]",
                     "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_metric_assets_endpoint = _Endpoint(
+            settings={
+                "response_type": (MetricAssetsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/metrics/{metric_name}/assets",
+                "operation_id": "list_metric_assets",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "metric_name": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "metric_name",
+                    "location": "path",
                 },
             },
             headers_map={
@@ -603,6 +627,23 @@ class MetricsApi:
             kwargs["window_seconds"] = window_seconds
 
         return self._list_active_metric_configurations_endpoint.call_with_http_info(**kwargs)
+
+    def list_metric_assets(
+        self,
+        metric_name: str,
+    ) -> MetricAssetsResponse:
+        """Related Assets to a Metric.
+
+        Returns dashboards, monitors, notebooks, and SLOs that a metric is stored in, if any.  Updated every 24 hours.
+
+        :param metric_name: The name of the metric.
+        :type metric_name: str
+        :rtype: MetricAssetsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["metric_name"] = metric_name
+
+        return self._list_metric_assets_endpoint.call_with_http_info(**kwargs)
 
     def list_tag_configuration_by_name(
         self,
