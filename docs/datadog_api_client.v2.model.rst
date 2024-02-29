@@ -4810,6 +4810,97 @@ metric\_all\_tags\_response
    :members:
    :show-inheritance:
 
+metric\_asset\_attributes
+-------------------------
+
+.. automodule:: datadog_api_client.v2.model.metric_asset_attributes
+   :members:
+   :show-inheritance:
+
+metric\_asset\_dashboard\_relationship
+--------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.metric_asset_dashboard_relationship
+   :members:
+   :show-inheritance:
+
+metric\_asset\_dashboard\_relationships
+---------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.metric_asset_dashboard_relationships
+   :members:
+   :show-inheritance:
+
+metric\_asset\_monitor\_relationship
+------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.metric_asset_monitor_relationship
+   :members:
+   :show-inheritance:
+
+metric\_asset\_monitor\_relationships
+-------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.metric_asset_monitor_relationships
+   :members:
+   :show-inheritance:
+
+metric\_asset\_notebook\_relationship
+-------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.metric_asset_notebook_relationship
+   :members:
+   :show-inheritance:
+
+metric\_asset\_notebook\_relationships
+--------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.metric_asset_notebook_relationships
+   :members:
+   :show-inheritance:
+
+metric\_asset\_response\_data
+-----------------------------
+
+.. automodule:: datadog_api_client.v2.model.metric_asset_response_data
+   :members:
+   :show-inheritance:
+
+metric\_asset\_response\_included
+---------------------------------
+
+.. automodule:: datadog_api_client.v2.model.metric_asset_response_included
+   :members:
+   :show-inheritance:
+
+metric\_asset\_response\_relationships
+--------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.metric_asset_response_relationships
+   :members:
+   :show-inheritance:
+
+metric\_asset\_slo\_relationship
+--------------------------------
+
+.. automodule:: datadog_api_client.v2.model.metric_asset_slo_relationship
+   :members:
+   :show-inheritance:
+
+metric\_asset\_slo\_relationships
+---------------------------------
+
+.. automodule:: datadog_api_client.v2.model.metric_asset_slo_relationships
+   :members:
+   :show-inheritance:
+
+metric\_assets\_response
+------------------------
+
+.. automodule:: datadog_api_client.v2.model.metric_assets_response
+   :members:
+   :show-inheritance:
+
 metric\_bulk\_configure\_tags\_type
 -----------------------------------
 
@@ -4929,6 +5020,27 @@ metric\_custom\_time\_aggregation
    :members:
    :show-inheritance:
 
+metric\_dashboard\_asset
+------------------------
+
+.. automodule:: datadog_api_client.v2.model.metric_dashboard_asset
+   :members:
+   :show-inheritance:
+
+metric\_dashboard\_attributes
+-----------------------------
+
+.. automodule:: datadog_api_client.v2.model.metric_dashboard_attributes
+   :members:
+   :show-inheritance:
+
+metric\_dashboard\_type
+-----------------------
+
+.. automodule:: datadog_api_client.v2.model.metric_dashboard_type
+   :members:
+   :show-inheritance:
+
 metric\_distinct\_volume
 ------------------------
 
@@ -5020,6 +5132,34 @@ metric\_metadata
    :members:
    :show-inheritance:
 
+metric\_monitor\_asset
+----------------------
+
+.. automodule:: datadog_api_client.v2.model.metric_monitor_asset
+   :members:
+   :show-inheritance:
+
+metric\_monitor\_type
+---------------------
+
+.. automodule:: datadog_api_client.v2.model.metric_monitor_type
+   :members:
+   :show-inheritance:
+
+metric\_notebook\_asset
+-----------------------
+
+.. automodule:: datadog_api_client.v2.model.metric_notebook_asset
+   :members:
+   :show-inheritance:
+
+metric\_notebook\_type
+----------------------
+
+.. automodule:: datadog_api_client.v2.model.metric_notebook_type
+   :members:
+   :show-inheritance:
+
 metric\_origin
 --------------
 
@@ -5052,6 +5192,20 @@ metric\_series
 --------------
 
 .. automodule:: datadog_api_client.v2.model.metric_series
+   :members:
+   :show-inheritance:
+
+metric\_slo\_asset
+------------------
+
+.. automodule:: datadog_api_client.v2.model.metric_slo_asset
+   :members:
+   :show-inheritance:
+
+metric\_slo\_type
+-----------------
+
+.. automodule:: datadog_api_client.v2.model.metric_slo_type
    :members:
    :show-inheritance:
 
