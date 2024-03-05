@@ -63,7 +63,7 @@ class SensitiveDataScannerStandardPatternAttributes(ModelNormal):
         :param name: Name of the standard pattern.
         :type name: str, optional
 
-        :param pattern: Regex to match.
+        :param pattern: (Deprecated) Regex to match, optionally documented for older standard rules. Refer to the ``description`` field to understand what the rule does. **Deprecated**.
         :type pattern: str, optional
 
         :param priority: Integer from 1 (high) to 5 (low) indicating standard pattern issue severity.
