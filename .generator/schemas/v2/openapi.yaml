@@ -32455,7 +32455,7 @@ paths:
       - Service Definition
       x-pagination:
         limitParam: page[size]
-        pageOffsetParam: page[number]
+        pageParam: page[number]
         resultsPath: data
     post:
       description: Create or update service definition in the Datadog Service Catalog.

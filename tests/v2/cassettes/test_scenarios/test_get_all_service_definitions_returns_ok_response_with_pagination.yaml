@@ -5,7 +5,7 @@ interactions:
       accept:
       - application/json
     method: GET
-    uri: https://api.datadoghq.com/api/v2/services/definitions?page%5Bsize%5D=2
+    uri: https://api.datadoghq.com/api/v2/services/definitions?page%5Bsize%5D=2&page%5Bnumber%5D=0
   response:
     body:
       string: '{"data":[{"type":"service-definition","id":"000c4db9ae43787066748b39ad1c3059","attributes":{"meta":{"last-modified-time":"2023-04-03T20:23:00Z","github-html-url":"","ingestion-source":"api","origin":"unknown","origin-detail":"","warnings":[],"ingested-schema-version":"v2.1"},"schema":{"schema-version":"v2.1","dd-service":"service-examplecreateorupdateservicedefinitionusingschemav21returnscreatedresponse1680553380","team":"my-team","contacts":[{"name":"Team
@@ -29,7 +29,7 @@ interactions:
       accept:
       - application/json
     method: GET
-    uri: https://api.datadoghq.com/api/v2/services/definitions?page%5Bsize%5D=2&page%5Bnumber%5D=2
+    uri: https://api.datadoghq.com/api/v2/services/definitions?page%5Bsize%5D=2&page%5Bnumber%5D=1
   response:
     body:
       string: '{"data":[{"type":"service-definition","id":"0059bcab67b74e99cc832ca503019574","attributes":{"meta":{"last-modified-time":"2023-03-02T12:21:20Z","github-html-url":"","ingestion-source":"api","origin":"dd_terraform","origin-detail":"","warnings":[{"keyword-location":"/properties/contacts/items/$ref/allOf/1/then/properties/contact/pattern","instance-location":"/contacts/0/contact","message":"does
