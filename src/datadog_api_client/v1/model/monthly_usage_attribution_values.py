@@ -119,6 +119,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
             "npm_host_usage": (float,),
             "obs_pipeline_bytes_percentage": (float,),
             "obs_pipeline_bytes_usage": (float,),
+            "obs_pipelines_vcpu_percentage": (float,),
+            "obs_pipelines_vcpu_usage": (float,),
             "profiled_container_percentage": (float,),
             "profiled_container_usage": (float,),
             "profiled_fargate_percentage": (float,),
@@ -246,6 +248,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         "npm_host_usage": "npm_host_usage",
         "obs_pipeline_bytes_percentage": "obs_pipeline_bytes_percentage",
         "obs_pipeline_bytes_usage": "obs_pipeline_bytes_usage",
+        "obs_pipelines_vcpu_percentage": "obs_pipelines_vcpu_percentage",
+        "obs_pipelines_vcpu_usage": "obs_pipelines_vcpu_usage",
         "profiled_container_percentage": "profiled_container_percentage",
         "profiled_container_usage": "profiled_container_usage",
         "profiled_fargate_percentage": "profiled_fargate_percentage",
@@ -374,6 +378,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         npm_host_usage: Union[float, UnsetType] = unset,
         obs_pipeline_bytes_percentage: Union[float, UnsetType] = unset,
         obs_pipeline_bytes_usage: Union[float, UnsetType] = unset,
+        obs_pipelines_vcpu_percentage: Union[float, UnsetType] = unset,
+        obs_pipelines_vcpu_usage: Union[float, UnsetType] = unset,
         profiled_container_percentage: Union[float, UnsetType] = unset,
         profiled_container_usage: Union[float, UnsetType] = unset,
         profiled_fargate_percentage: Union[float, UnsetType] = unset,
@@ -707,6 +713,12 @@ class MonthlyUsageAttributionValues(ModelNormal):
         :param obs_pipeline_bytes_usage: The observability pipeline bytes usage by tag(s).
         :type obs_pipeline_bytes_usage: float, optional
 
+        :param obs_pipelines_vcpu_percentage: The percentage of observability pipeline per core usage by tag(s).
+        :type obs_pipelines_vcpu_percentage: float, optional
+
+        :param obs_pipelines_vcpu_usage: The observability pipeline per core usage by tag(s).
+        :type obs_pipelines_vcpu_usage: float, optional
+
         :param profiled_container_percentage: The percentage of profiled container usage by tag(s).
         :type profiled_container_percentage: float, optional
 
@@ -977,6 +989,10 @@ class MonthlyUsageAttributionValues(ModelNormal):
             kwargs["obs_pipeline_bytes_percentage"] = obs_pipeline_bytes_percentage
         if obs_pipeline_bytes_usage is not unset:
             kwargs["obs_pipeline_bytes_usage"] = obs_pipeline_bytes_usage
+        if obs_pipelines_vcpu_percentage is not unset:
+            kwargs["obs_pipelines_vcpu_percentage"] = obs_pipelines_vcpu_percentage
+        if obs_pipelines_vcpu_usage is not unset:
+            kwargs["obs_pipelines_vcpu_usage"] = obs_pipelines_vcpu_usage
         if profiled_container_percentage is not unset:
             kwargs["profiled_container_percentage"] = profiled_container_percentage
         if profiled_container_usage is not unset:

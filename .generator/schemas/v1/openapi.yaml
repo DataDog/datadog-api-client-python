@@ -4130,6 +4130,7 @@ components:
       - ndm_netflow_usage
       - npm_host_usage
       - obs_pipeline_bytes_usage
+      - obs_pipelines_vcpu_usage
       - profiled_container_usage
       - profiled_fargate_usage
       - profiled_host_usage
@@ -4196,6 +4197,7 @@ components:
       - NDM_NETFLOW_USAGE
       - NPM_HOST_USAGE
       - OBS_PIPELINE_BYTES_USAGE
+      - OBS_PIPELINE_VCPU_USAGE
       - PROFILED_CONTAINER_USAGE
       - PROFILED_FARGATE_USAGE
       - PROFILED_HOST_USAGE
@@ -7826,6 +7828,8 @@ components:
       - npm_host_percentage
       - obs_pipeline_bytes_usage
       - obs_pipeline_bytes_percentage
+      - obs_pipelines_vcpu_usage
+      - obs_pipelines_vcpu_percentage
       - profiled_container_usage
       - profiled_container_percentage
       - profiled_fargate_usage
@@ -7953,6 +7957,8 @@ components:
       - NPM_HOST_PERCENTAGE
       - OBS_PIPELINE_BYTES_USAGE
       - OBS_PIPELINE_BYTES_PERCENTAGE
+      - OBS_PIPELINES_VCPU_USAGE
+      - OBS_PIPELINES_VCPU_PERCENTAGE
       - PROFILED_CONTAINER_USAGE
       - PROFILED_CONTAINER_PERCENTAGE
       - PROFILED_FARGATE_USAGE
@@ -8442,6 +8448,15 @@ components:
           type: number
         obs_pipeline_bytes_usage:
           description: The observability pipeline bytes usage by tag(s).
+          format: double
+          type: number
+        obs_pipelines_vcpu_percentage:
+          description: The percentage of observability pipeline per core usage by
+            tag(s).
+          format: double
+          type: number
+        obs_pipelines_vcpu_usage:
+          description: The observability pipeline per core usage by tag(s).
           format: double
           type: number
         profiled_container_percentage:
