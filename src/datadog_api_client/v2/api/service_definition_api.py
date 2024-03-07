@@ -266,7 +266,7 @@ class ServiceDefinitionApi:
         pagination = {
             "limit_value": local_page_size,
             "results_path": "data",
-            "page_offset_param": "page_number",
+            "page_param": "page_number",
             "endpoint": endpoint,
             "kwargs": kwargs,
         }
