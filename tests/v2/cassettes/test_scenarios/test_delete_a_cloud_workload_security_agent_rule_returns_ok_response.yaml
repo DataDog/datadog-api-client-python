@@ -1,7 +1,7 @@
 interactions:
 - request:
     body: '{"data":{"attributes":{"description":"My Agent rule","enabled":true,"expression":"exec.file.name
-      == \"sh\"","name":"testdeleteacloudworkloadsecurityagentrulereturnsokresponse1652349081"},"type":"agent_rule"}}'
+      == \"sh\"","name":"testdeleteacloudworkloadsecurityagentrulereturnsokresponse1709907547"},"type":"agent_rule"}}'
     headers:
       accept:
       - application/json
@@ -11,12 +11,16 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/security_monitoring/cloud_workload_security/agent_rules
   response:
     body:
-      string: '{"data":{"attributes":{"category":"Process Activity","name":"testdeleteacloudworkloadsecurityagentrulereturnsokresponse1652349081","creator":{"handle":"frog@datadoghq.com","name":null},"description":"My
-        Agent rule","enabled":true,"defaultRule":false,"version":1,"updater":{"handle":"frog@datadoghq.com","name":null},"updateDate":1652349082186,"creationDate":1652349082186,"expression":"exec.file.name
-        == \"sh\""},"type":"agent_rule","id":"hqy-ez4-nci"}}'
+      string: '{"data":{"id":"bo0-5k6-vtc","attributes":{"version":1,"name":"testdeleteacloudworkloadsecurityagentrulereturnsokresponse1709907547","description":"My
+        Agent rule","expression":"exec.file.name == \"sh\"","category":"Process Activity","creationAuthorUuId":"cc32ddea-b5e4-11ec-93be-da7ad0900002","creationDate":1709907548216,"updateAuthorUuId":"cc32ddea-b5e4-11ec-93be-da7ad0900002","updateDate":1709907548216,"filters":["os
+        == \"linux\""],"actions":[],"agentConstraint":"","enabled":true,"defaultRule":false,"creator":{"name":"Malo
+        Le Goff","handle":"malo.legoff@datadoghq.com"},"updater":{"name":"Malo Le
+        Goff","handle":"malo.legoff@datadoghq.com"}},"type":"agent_rule"}}
+
+        '
     headers:
       content-type:
-      - application/json;charset=utf-8
+      - application/json
     status:
       code: 200
       message: OK
@@ -26,13 +30,11 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/cloud_workload_security/agent_rules/hqy-ez4-nci
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/cloud_workload_security/agent_rules/bo0-5k6-vtc
   response:
     body:
       string: ''
-    headers:
-      content-type:
-      - application/json;charset=utf-8
+    headers: {}
     status:
       code: 204
       message: No Content
@@ -42,10 +44,12 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/cloud_workload_security/agent_rules/hqy-ez4-nci
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/cloud_workload_security/agent_rules/bo0-5k6-vtc
   response:
     body:
-      string: '{"errors":["not_found(Agent rule not found: agentRuleId=hqy-ez4-nci)"]}'
+      string: '{"errors":["not_found(Agent rule not found: agentRuleId=bo0-5k6-vtc)"]}
+
+        '
     headers:
       content-type:
       - application/json

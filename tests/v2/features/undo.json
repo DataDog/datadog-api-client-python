@@ -1333,6 +1333,49 @@
       "type": "idempotent"
     }
   },
+  "ListCSMThreatsAgentRules": {
+    "tag": "Cloud Workload Security",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateCSMThreatsAgentRule": {
+    "tag": "Cloud Workload Security",
+    "undo": {
+      "operationId": "DeleteCSMThreatsAgentRule",
+      "parameters": [
+        {
+          "name": "agent_rule_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteCSMThreatsAgentRule": {
+    "tag": "Cloud Workload Security",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetCSMThreatsAgentRule": {
+    "tag": "Cloud Workload Security",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateCSMThreatsAgentRule": {
+    "tag": "Cloud Workload Security",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DownloadCSMThreatsPolicy": {
+    "tag": "Cloud Workload Security",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "DeleteRestrictionPolicy": {
     "tag": "Restriction Policies",
     "undo": {
