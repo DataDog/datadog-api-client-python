@@ -1492,6 +1492,13 @@ cloud\_cost\_activity\_type
    :members:
    :show-inheritance:
 
+cloud\_workload\_security\_agent\_rule\_action
+----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cloud_workload_security_agent_rule_action
+   :members:
+   :show-inheritance:
+
 cloud\_workload\_security\_agent\_rule\_attributes
 --------------------------------------------------
 
@@ -1531,6 +1538,13 @@ cloud\_workload\_security\_agent\_rule\_data
 --------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.cloud_workload_security_agent_rule_data
+   :members:
+   :show-inheritance:
+
+cloud\_workload\_security\_agent\_rule\_kill
+--------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cloud_workload_security_agent_rule_kill
    :members:
    :show-inheritance:
 
