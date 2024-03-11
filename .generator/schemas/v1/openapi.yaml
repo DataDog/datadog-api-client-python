@@ -4142,6 +4142,7 @@ components:
       - snmp_usage
       - universal_service_monitoring_usage
       - vuln_management_hosts_usage
+      - workflow_executions_usage
       type: string
       x-enum-varnames:
       - API_USAGE
@@ -4209,6 +4210,7 @@ components:
       - SNMP_USAGE
       - UNIVERSAL_SERVICE_MONITORING_USAGE
       - VULN_MANAGEMENT_HOSTS_USAGE
+      - WORKFLOW_EXECUTIONS_USAGE
     IFrameWidgetDefinition:
       description: The iframe widget allows you to embed a portion of any other web
         page on your dashboard. Only available on FREE layout dashboards.
@@ -7886,6 +7888,8 @@ components:
       - ingested_spans_bytes_percentage
       - siem_ingested_bytes_usage
       - siem_ingested_bytes_percentage
+      - workflow_executions_usage
+      - workflow_executions_percentage
       - '*'
       type: string
       x-enum-varnames:
@@ -8015,6 +8019,8 @@ components:
       - INGESTED_SPANS_BYTES_PERCENTAGE
       - SIEM_INGESTED_BYTES_USAGE
       - SIEM_INGESTED_BYTES_PERCENTAGE
+      - WORKFLOW_EXECUTIONS_USAGE
+      - WORKFLOW_EXECUTIONS_PERCENTAGE
       - ALL
     MonthlyUsageAttributionValues:
       description: Fields in Usage Summary by tag(s).
@@ -8546,6 +8552,14 @@ components:
           type: number
         vuln_management_hosts_usage:
           description: The Application Vulnerability Management usage by tag(s).
+          format: double
+          type: number
+        workflow_executions_percentage:
+          description: The percentage of workflow executions usage by tag(s).
+          format: double
+          type: number
+        workflow_executions_usage:
+          description: The total workflow executions usage by tag(s).
           format: double
           type: number
       type: object
