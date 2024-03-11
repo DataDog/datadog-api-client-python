@@ -111,7 +111,7 @@ Feature: Downtimes
     Then the response status is 200 OK
     And the response "data.attributes.message" is equal to "dark forest"
 
-  @skip-java @skip-python @skip-ruby @skip-typescript @skip-validation @team:DataDog/monitor-app
+  @skip-java @skip-python @skip-ruby @skip-rust @skip-typescript @skip-validation @team:DataDog/monitor-app
   Scenario: Update a downtime returns "Bad Request" response
     Given there is a valid "downtime_v2" in the system
     And new "UpdateDowntime" request
