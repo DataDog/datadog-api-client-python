@@ -1,7 +1,7 @@
 interactions:
 - request:
     body: '{"data":{"attributes":{"description":"Test Agent rule","enabled":true,"expression":"open.file.path
-      = sh","name":"testcreateacloudworkloadsecurityagentrulereturnsbadrequestresponse1641924695"},"type":"agent_rule"}}'
+      = sh","name":"testcreateacloudworkloadsecurityagentrulereturnsbadrequestresponse1709907543"},"type":"agent_rule"}}'
     headers:
       accept:
       - application/json
@@ -12,8 +12,10 @@ interactions:
   response:
     body:
       string: '{"errors":["input_validation_error(Field ''expression'' is invalid:
-        rule `testcreateacloudworkloadsecurityagentrulereturnsbadrequestresponse1641924695`
-        definition error: syntax error: 1:18: unexpected token \"sh\" (expected \"~\"))"]}'
+        rule `testcreateacloudworkloadsecurityagentrulereturnsbadrequestresponse1709907543`
+        error: syntax error `1:18: unexpected token \"sh\" (expected \"~\")`)"]}
+
+        '
     headers:
       content-type:
       - application/json

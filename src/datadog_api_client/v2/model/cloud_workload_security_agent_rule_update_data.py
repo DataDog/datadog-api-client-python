@@ -3,11 +3,13 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -30,11 +32,13 @@ class CloudWorkloadSecurityAgentRuleUpdateData(ModelNormal):
 
         return {
             "attributes": (CloudWorkloadSecurityAgentRuleUpdateAttributes,),
+            "id": (str,),
             "type": (CloudWorkloadSecurityAgentRuleType,),
         }
 
     attribute_map = {
         "attributes": "attributes",
+        "id": "id",
         "type": "type",
     }
 
@@ -42,6 +46,7 @@ class CloudWorkloadSecurityAgentRuleUpdateData(ModelNormal):
         self_,
         attributes: CloudWorkloadSecurityAgentRuleUpdateAttributes,
         type: CloudWorkloadSecurityAgentRuleType,
+        id: Union[str, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -50,9 +55,14 @@ class CloudWorkloadSecurityAgentRuleUpdateData(ModelNormal):
         :param attributes: Update an existing Cloud Workload Security Agent rule.
         :type attributes: CloudWorkloadSecurityAgentRuleUpdateAttributes
 
+        :param id: The ID of the agent rule.
+        :type id: str, optional
+
         :param type: The type of the resource. The value should always be ``agent_rule``.
         :type type: CloudWorkloadSecurityAgentRuleType
         """
+        if id is not unset:
+            kwargs["id"] = id
         super().__init__(kwargs)
 
         self_.attributes = attributes

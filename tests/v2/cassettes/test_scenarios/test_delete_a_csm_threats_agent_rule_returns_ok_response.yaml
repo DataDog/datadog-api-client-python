@@ -1,0 +1,59 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"description":"My Agent rule","enabled":true,"expression":"exec.file.name
+      == \"sh\"","name":"testdeleteacsmthreatsagentrulereturnsokresponse1709907545"},"type":"agent_rule"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules
+  response:
+    body:
+      string: '{"data":{"id":"e19-wln-ypy","type":"agent_rule","attributes":{"category":"Process
+        Activity","creationDate":1709907546083,"creator":{"name":"Malo Le Goff","handle":"malo.legoff@datadoghq.com"},"defaultRule":false,"description":"My
+        Agent rule","enabled":true,"expression":"exec.file.name == \"sh\"","filters":["os
+        == \"linux\""],"name":"testdeleteacsmthreatsagentrulereturnsokresponse1709907545","updateDate":1709907546083,"updater":{"name":"Malo
+        Le Goff","handle":"malo.legoff@datadoghq.com"}}}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules/e19-wln-ypy
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules/e19-wln-ypy
+  response:
+    body:
+      string: '{"errors":[{"title":"failed to delete rule"}]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 404
+      message: Not Found
+version: 1

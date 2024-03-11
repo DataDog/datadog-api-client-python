@@ -8,12 +8,16 @@ from typing import List, Union, TYPE_CHECKING
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    none_type,
     unset,
     UnsetType,
 )
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.cloud_workload_security_agent_rule_action import (
+        CloudWorkloadSecurityAgentRuleAction,
+    )
     from datadog_api_client.v2.model.cloud_workload_security_agent_rule_creator_attributes import (
         CloudWorkloadSecurityAgentRuleCreatorAttributes,
     )
@@ -25,6 +29,9 @@ if TYPE_CHECKING:
 class CloudWorkloadSecurityAgentRuleAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.cloud_workload_security_agent_rule_action import (
+            CloudWorkloadSecurityAgentRuleAction,
+        )
         from datadog_api_client.v2.model.cloud_workload_security_agent_rule_creator_attributes import (
             CloudWorkloadSecurityAgentRuleCreatorAttributes,
         )
@@ -33,6 +40,7 @@ class CloudWorkloadSecurityAgentRuleAttributes(ModelNormal):
         )
 
         return {
+            "actions": ([CloudWorkloadSecurityAgentRuleAction],),
             "agent_constraint": (str,),
             "category": (str,),
             "creation_author_uu_id": (str,),
@@ -52,6 +60,7 @@ class CloudWorkloadSecurityAgentRuleAttributes(ModelNormal):
         }
 
     attribute_map = {
+        "actions": "actions",
         "agent_constraint": "agentConstraint",
         "category": "category",
         "creation_author_uu_id": "creationAuthorUuId",
@@ -72,6 +81,7 @@ class CloudWorkloadSecurityAgentRuleAttributes(ModelNormal):
 
     def __init__(
         self_,
+        actions: Union[List[CloudWorkloadSecurityAgentRuleAction], none_type, UnsetType] = unset,
         agent_constraint: Union[str, UnsetType] = unset,
         category: Union[str, UnsetType] = unset,
         creation_author_uu_id: Union[str, UnsetType] = unset,
@@ -92,6 +102,9 @@ class CloudWorkloadSecurityAgentRuleAttributes(ModelNormal):
     ):
         """
         A Cloud Workload Security Agent rule returned by the API.
+
+        :param actions: The array of actions the rule can perform if triggered.
+        :type actions: [CloudWorkloadSecurityAgentRuleAction], none_type, optional
 
         :param agent_constraint: The version of the agent.
         :type agent_constraint: str, optional
@@ -141,6 +154,8 @@ class CloudWorkloadSecurityAgentRuleAttributes(ModelNormal):
         :param version: The version of the Agent rule.
         :type version: int, optional
         """
+        if actions is not unset:
+            kwargs["actions"] = actions
         if agent_constraint is not unset:
             kwargs["agent_constraint"] = agent_constraint
         if category is not unset:
