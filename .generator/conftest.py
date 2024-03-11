@@ -539,7 +539,7 @@ def expect_response_has_field(context, response_path, field):
 
 
 @then(parsers.parse('the response "{response_path}" does not have field "{field}"'))
-def expect_response_has_field(context, response_path, field):
+def expect_response_does_not_have_field(context, response_path, field):
     """Check that a response path does not have field."""
 
 
