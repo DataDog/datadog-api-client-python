@@ -699,6 +699,13 @@ def expect_response_has_field(context, response_path, field):
     assert field in response_value
 
 
+@then(parsers.parse('the response "{response_path}" does not have "{field}"'))
+def expect_response_has_field(context, response_path, field):
+    """Check that a response path has field."""
+    response_value = glom(context["api_request"]["response"][0], response_path)
+    assert field not in response_value
+
+
 @then(parsers.parse('the response "{response_path}" has item with field "{key_path}" with value {value}'))
 def expect_array_contains_object(context, response_path, key_path, value):
     from glom.core import PathAccessError

@@ -538,6 +538,11 @@ def expect_response_has_field(context, response_path, field):
     """Check that a response has field."""
 
 
+@then(parsers.parse('the response "{response_path}" does not have field "{field}"'))
+def expect_response_has_field(context, response_path, field):
+    """Check that a response path does not have field."""
+
+
 @then(parsers.parse('the response "{response_path}" has item with field "{key_path}" with value {value}'))
 def expect_array_contains_object(context, response_path, key_path, value):
     """Check that a response attribute contains an object with the specified key and value."""
