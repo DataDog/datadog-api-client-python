@@ -143,6 +143,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
             "universal_service_monitoring_usage": (float,),
             "vuln_management_hosts_percentage": (float,),
             "vuln_management_hosts_usage": (float,),
+            "workflow_executions_percentage": (float,),
+            "workflow_executions_usage": (float,),
         }
 
     attribute_map = {
@@ -272,6 +274,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         "universal_service_monitoring_usage": "universal_service_monitoring_usage",
         "vuln_management_hosts_percentage": "vuln_management_hosts_percentage",
         "vuln_management_hosts_usage": "vuln_management_hosts_usage",
+        "workflow_executions_percentage": "workflow_executions_percentage",
+        "workflow_executions_usage": "workflow_executions_usage",
     }
 
     def __init__(
@@ -402,6 +406,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         universal_service_monitoring_usage: Union[float, UnsetType] = unset,
         vuln_management_hosts_percentage: Union[float, UnsetType] = unset,
         vuln_management_hosts_usage: Union[float, UnsetType] = unset,
+        workflow_executions_percentage: Union[float, UnsetType] = unset,
+        workflow_executions_usage: Union[float, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -784,6 +790,12 @@ class MonthlyUsageAttributionValues(ModelNormal):
 
         :param vuln_management_hosts_usage: The Application Vulnerability Management usage by tag(s).
         :type vuln_management_hosts_usage: float, optional
+
+        :param workflow_executions_percentage: The percentage of workflow executions usage by tag(s).
+        :type workflow_executions_percentage: float, optional
+
+        :param workflow_executions_usage: The total workflow executions usage by tag(s).
+        :type workflow_executions_usage: float, optional
         """
         if api_percentage is not unset:
             kwargs["api_percentage"] = api_percentage
@@ -1037,4 +1049,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
             kwargs["vuln_management_hosts_percentage"] = vuln_management_hosts_percentage
         if vuln_management_hosts_usage is not unset:
             kwargs["vuln_management_hosts_usage"] = vuln_management_hosts_usage
+        if workflow_executions_percentage is not unset:
+            kwargs["workflow_executions_percentage"] = workflow_executions_percentage
+        if workflow_executions_usage is not unset:
+            kwargs["workflow_executions_usage"] = workflow_executions_usage
         super().__init__(kwargs)
