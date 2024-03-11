@@ -1,7 +1,7 @@
 interactions:
 - request:
     body: '{"data":{"attributes":{"description":"My Agent rule","enabled":true,"expression":"exec.file.name
-      == \"sh\"","name":"testupdateacloudworkloadsecurityagentrulereturnsokresponse1652349088"},"type":"agent_rule"}}'
+      == \"sh\"","name":"testupdateacloudworkloadsecurityagentrulereturnsokresponse1709907561"},"type":"agent_rule"}}'
     headers:
       accept:
       - application/json
@@ -11,12 +11,16 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/security_monitoring/cloud_workload_security/agent_rules
   response:
     body:
-      string: '{"data":{"attributes":{"category":"Process Activity","name":"testupdateacloudworkloadsecurityagentrulereturnsokresponse1652349088","creator":{"handle":"frog@datadoghq.com","name":null},"description":"My
-        Agent rule","enabled":true,"defaultRule":false,"version":1,"updater":{"handle":"frog@datadoghq.com","name":null},"updateDate":1652349088786,"creationDate":1652349088786,"expression":"exec.file.name
-        == \"sh\""},"type":"agent_rule","id":"ivl-0d3-hga"}}'
+      string: '{"data":{"id":"usl-wf5-qjp","attributes":{"version":1,"name":"testupdateacloudworkloadsecurityagentrulereturnsokresponse1709907561","description":"My
+        Agent rule","expression":"exec.file.name == \"sh\"","category":"Process Activity","creationAuthorUuId":"cc32ddea-b5e4-11ec-93be-da7ad0900002","creationDate":1709907562158,"updateAuthorUuId":"cc32ddea-b5e4-11ec-93be-da7ad0900002","updateDate":1709907562158,"filters":["os
+        == \"linux\""],"actions":[],"agentConstraint":"","enabled":true,"defaultRule":false,"creator":{"name":"Malo
+        Le Goff","handle":"malo.legoff@datadoghq.com"},"updater":{"name":"Malo Le
+        Goff","handle":"malo.legoff@datadoghq.com"}},"type":"agent_rule"}}
+
+        '
     headers:
       content-type:
-      - application/json;charset=utf-8
+      - application/json
     status:
       code: 200
       message: OK
@@ -29,15 +33,19 @@ interactions:
       content-type:
       - application/json
     method: PATCH
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/cloud_workload_security/agent_rules/ivl-0d3-hga
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/cloud_workload_security/agent_rules/usl-wf5-qjp
   response:
     body:
-      string: '{"data":{"attributes":{"category":"Process Activity","name":"testupdateacloudworkloadsecurityagentrulereturnsokresponse1652349088","creator":{"handle":"frog@datadoghq.com","name":null},"description":"Test
-        Agent rule","enabled":true,"defaultRule":false,"version":2,"updater":{"handle":"frog@datadoghq.com","name":null},"updateDate":1652349089262,"creationDate":1652349088786,"expression":"exec.file.name
-        == \"sh\""},"type":"agent_rule","id":"ivl-0d3-hga"}}'
+      string: '{"data":{"id":"usl-wf5-qjp","attributes":{"version":2,"name":"testupdateacloudworkloadsecurityagentrulereturnsokresponse1709907561","description":"Test
+        Agent rule","expression":"exec.file.name == \"sh\"","category":"Process Activity","creationAuthorUuId":"cc32ddea-b5e4-11ec-93be-da7ad0900002","creationDate":1709907562158,"updateAuthorUuId":"cc32ddea-b5e4-11ec-93be-da7ad0900002","updateDate":1709907562613,"filters":["os
+        == \"linux\""],"actions":[],"agentConstraint":"","enabled":true,"defaultRule":false,"creator":{"name":"Malo
+        Le Goff","handle":"malo.legoff@datadoghq.com"},"updater":{"name":"Malo Le
+        Goff","handle":"malo.legoff@datadoghq.com"}},"type":"agent_rule"}}
+
+        '
     headers:
       content-type:
-      - application/json;charset=utf-8
+      - application/json
     status:
       code: 200
       message: OK
@@ -47,13 +55,11 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/cloud_workload_security/agent_rules/ivl-0d3-hga
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/cloud_workload_security/agent_rules/usl-wf5-qjp
   response:
     body:
       string: ''
-    headers:
-      content-type:
-      - application/json;charset=utf-8
+    headers: {}
     status:
       code: 204
       message: No Content

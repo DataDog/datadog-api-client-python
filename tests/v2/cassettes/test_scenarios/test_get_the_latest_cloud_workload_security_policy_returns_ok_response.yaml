@@ -10,810 +10,1185 @@ interactions:
     body:
       string: "# IMPORTANT: Edits to this file will not be reflected in the Datadog\
         \ App and will be overwritten with new policy file downloads. Please modify\
-        \ rules in the Datadog App for full functionality.\nversion: '1652349086649'\n\
-        rules:\n- id: apparmor_modified_tty\n  version: a7f3b5c2\n  description: AppArmor\
-        \ Profile Modified\n  expression: exec.file.name in [\"aa-disable\", \"aa-complain\"\
-        , \"aa-audit\"] && exec.tty_name\n    !=\"\"\n- id: aws_metadata_service\n\
-        \  version: 4601e52e\n  description: EC2 Instance Metadata Service Accessed\
-        \ via Network Utility\n  expression: exec.file.path in [\"/usr/bin/wget\"\
-        , \"/usr/bin/curl\"] && exec.args in\n    [~\"*169.254.169.254*\"]\n- id:\
-        \ common_net_intrusion_util\n  version: c7198131\n  description: Nmap Execution\
-        \ Detected\n  expression: exec.file.path == \"/usr/bin/nmap\"\n- id: compiler_in_container\n\
-        \  version: 441a7e85\n  description: Compiler Executed in Container\n  expression:\
-        \ (exec.file.name in [\"javac\", \"clang\", \"gcc\",\"bcc\"] || (exec.file.name\n\
-        \    == \"go\" && exec.args in [~\"*build*\", ~\"*run*\"])) && container.id\
-        \ !=\"\" && process.ancestors.file.path\n    != \"/usr/bin/cilium-agent\"\n\
-        - id: credential_modified_chmod\n  version: 7e14d921\n  description: Either\
-        \ /etc/shadow/ or /etc/gshadow was modified by a non-standard\n    tool\n\
-        \  expression: \"(\\n    (chmod.file.path in [ \\\"/etc/shadow\\\", \\\"/etc/gshadow\\\
-        \" ])\\n\\\n    \\    && process.file.path not in [ \\\"/sbin/vipw\\\", \\\
-        \"/usr/sbin/vipw\\\", \\\"/sbin/vigr\\\"\\\n    , \\\"/usr/sbin/vigr\\\" ]\\\
-        n    && process.ancestors.file.path not in [\\\"/usr/bin/apt\\\"\\\n    ,\
-        \ \\\"/usr/bin/apt-get\\\", \\\"/usr/bin/apt-config\\\", \\\"/usr/bin/dpkg\\\
-        \", \\\"/usr/bin/aptitude-curses\\\"\\\n    , \\\"/usr/bin/rpm\\\", \\\"/usr/bin/unattended-upgrade\\\
-        \"]\\n) && chmod.mode != chmod.file.mode\"\n- id: credential_modified_chown\n\
-        \  version: 3731e0d5\n  description: Either /etc/shadow/ or /etc/gshadow was\
-        \ modified by a non-standard\n    tool\n  expression: \"(\\n    (chown.file.path\
-        \ in [ \\\"/etc/shadow\\\", \\\"/etc/gshadow\\\" ])\\n\\\n    \\    && process.file.path\
-        \ not in [ \\\"/sbin/vipw\\\", \\\"/usr/sbin/vipw\\\", \\\"/sbin/vigr\\\"\\\
-        \n    , \\\"/usr/sbin/vigr\\\" ]\\n    && process.ancestors.file.path not\
-        \ in [\\\"/usr/bin/apt\\\"\\\n    , \\\"/usr/bin/apt-get\\\", \\\"/usr/bin/apt-config\\\
-        \", \\\"/usr/bin/dpkg\\\", \\\"/usr/bin/aptitude-curses\\\"\\\n    , \\\"\
-        /usr/bin/rpm\\\", \\\"/usr/bin/unattended-upgrade\\\"]\\n) && (chown.uid !=\
-        \ chown.file.uid\\\n    \\ || chown.gid != chown.file.gid)\"\n- id: credential_modified_link\n\
-        \  version: 7594ec54\n  description: Either /etc/shadow/ or /etc/gshadow was\
-        \ modified by a non-standard\n    tool\n  expression: \"(\\n    (link.file.path\
-        \ in [ \\\"/etc/shadow\\\", \\\"/etc/gshadow\\\" ]\\n \\\n    \\   || link.file.destination.path\
-        \ in [ \\\"/etc/shadow\\\", \\\"/etc/gshadow\\\" ])\\n\\\n    \\    && process.file.path\
-        \ not in [ \\\"/sbin/vipw\\\", \\\"/usr/sbin/vipw\\\", \\\"/sbin/vigr\\\"\\\
-        \n    , \\\"/usr/sbin/vigr\\\" ]\\n    && process.ancestors.file.path not\
-        \ in [\\\"/usr/bin/apt\\\"\\\n    , \\\"/usr/bin/apt-get\\\", \\\"/usr/bin/apt-config\\\
-        \", \\\"/usr/bin/dpkg\\\", \\\"/usr/bin/aptitude-curses\\\"\\\n    , \\\"\
-        /usr/bin/rpm\\\", \\\"/usr/bin/unattended-upgrade\\\"]\\n)\"\n- id: credential_modified_open\n\
-        \  version: 2d65e37f\n  description: Either /etc/shadow/ or /etc/gshadow was\
-        \ modified by a non-standard\n    tool\n  expression: \"(\\n    open.flags\
-        \ & ((O_CREAT|O_RDWR|O_WRONLY|O_TRUNC)) > 0 &&\\n  \\\n    \\  (open.file.path\
-        \ in [ \\\"/etc/shadow\\\", \\\"/etc/gshadow\\\" ])\\n    && process.file.path\\\
-        \n    \\ not in [ \\\"/sbin/vipw\\\", \\\"/usr/sbin/vipw\\\", \\\"/sbin/vigr\\\
-        \", \\\"/usr/sbin/vigr\\\"\\\n    \\ ]\\n    && process.ancestors.file.path\
-        \ not in [\\\"/usr/bin/apt\\\", \\\"/usr/bin/apt-get\\\"\\\n    , \\\"/usr/bin/apt-config\\\
-        \", \\\"/usr/bin/dpkg\\\", \\\"/usr/bin/aptitude-curses\\\", \\\"\\\n    /usr/bin/rpm\\\
-        \", \\\"/usr/bin/unattended-upgrade\\\"]\\n)\"\n- id: credential_modified_rename\n\
-        \  version: 8bb8242b\n  description: Either /etc/shadow/ or /etc/gshadow was\
-        \ modified by a non-standard\n    tool\n  expression: \"(\\n    (rename.file.path\
-        \ in [ \\\"/etc/shadow\\\", \\\"/etc/gshadow\\\" ]\\n\\\n    \\    || rename.file.destination.path\
-        \ in [ \\\"/etc/shadow\\\", \\\"/etc/gshadow\\\" ])\\n\\\n    \\    && process.file.path\
-        \ not in [ \\\"/sbin/vipw\\\", \\\"/usr/sbin/vipw\\\", \\\"/sbin/vigr\\\"\\\
-        \n    , \\\"/usr/sbin/vigr\\\" ]\\n    && process.ancestors.file.path not\
-        \ in [\\\"/usr/bin/apt\\\"\\\n    , \\\"/usr/bin/apt-get\\\", \\\"/usr/bin/apt-config\\\
-        \", \\\"/usr/bin/dpkg\\\", \\\"/usr/bin/aptitude-curses\\\"\\\n    , \\\"\
-        /usr/bin/rpm\\\", \\\"/usr/bin/unattended-upgrade\\\"]\\n)\"\n- id: credential_modified_unlink\n\
-        \  version: 5af577d\n  description: Either /etc/shadow/ or /etc/gshadow was\
-        \ modified by a non-standard\n    tool\n  expression: \"(\\n    (unlink.file.path\
-        \ in [ \\\"/etc/shadow\\\", \\\"/etc/gshadow\\\" ])\\n\\\n    \\    && process.file.path\
-        \ not in [ \\\"/sbin/vipw\\\", \\\"/usr/sbin/vipw\\\", \\\"/sbin/vigr\\\"\\\
-        \n    , \\\"/usr/sbin/vigr\\\" ]\\n    && process.ancestors.file.path not\
-        \ in [\\\"/usr/bin/apt\\\"\\\n    , \\\"/usr/bin/apt-get\\\", \\\"/usr/bin/apt-config\\\
-        \", \\\"/usr/bin/dpkg\\\", \\\"/usr/bin/aptitude-curses\\\"\\\n    , \\\"\
-        /usr/bin/rpm\\\", \\\"/usr/bin/unattended-upgrade\\\"]\\n)\"\n- id: credential_modified_utimes\n\
-        \  version: 1c101338\n  description: Either /etc/shadow/ or /etc/gshadow was\
-        \ modified by a non-standard\n    tool\n  expression: \"(\\n    (utimes.file.path\
-        \ in [ \\\"/etc/shadow\\\", \\\"/etc/gshadow\\\" ])\\n\\\n    \\    && process.file.path\
-        \ not in [ \\\"/sbin/vipw\\\", \\\"/usr/sbin/vipw\\\", \\\"/sbin/vigr\\\"\\\
-        \n    , \\\"/usr/sbin/vigr\\\" ]\\n    && process.ancestors.file.path not\
-        \ in [\\\"/usr/bin/apt\\\"\\\n    , \\\"/usr/bin/apt-get\\\", \\\"/usr/bin/apt-config\\\
-        \", \\\"/usr/bin/dpkg\\\", \\\"/usr/bin/aptitude-curses\\\"\\\n    , \\\"\
-        /usr/bin/rpm\\\", \\\"/usr/bin/unattended-upgrade\\\"]\\n)\"\n- id: cron_at_job_creation_chmod\n\
-        \  version: 13512ebc\n  description: Cron AT Job Creation\n  expression: \"\
-        (\\n    (chmod.file.path in [ ~\\\"/var/spool/cron/*\\\" ])\\n    && process.file.path\\\
-        \n    \\ not in [ \\\"/usr/bin/at\\\", \\\"/usr/bin/crontab\\\" ]\\n) && chmod.mode\
-        \ != chmod.file.mode\"\n- id: cron_at_job_creation_chown\n  version: ee7b306c\n\
-        \  description: Cron AT Job Creation\n  expression: \"(\\n    (chown.file.path\
-        \ in [ ~\\\"/var/spool/cron/*\\\" ])\\n    && process.file.path\\\n    \\\
-        \ not in [ \\\"/usr/bin/at\\\", \\\"/usr/bin/crontab\\\" ]\\n) && (chown.uid\
-        \ != chown.file.uid\\\n    \\ || chown.gid != chown.file.gid)\"\n- id: cron_at_job_creation_link\n\
-        \  version: b83e03f6\n  description: Cron AT Job Creation\n  expression: \"\
-        (\\n    (link.file.path in [ ~\\\"/var/spool/cron/*\\\" ]\\n    || link.file.destination.path\\\
-        \n    \\ in [ ~\\\"/var/spool/cron/*\\\" ])\\n    && process.file.path not\
-        \ in [ \\\"/usr/bin/at\\\"\\\n    , \\\"/usr/bin/crontab\\\" ]\\n)\"\n- id:\
-        \ cron_at_job_creation_open\n  version: 561ad06\n  description: Cron AT Job\
-        \ Creation\n  expression: \"(\\n    open.flags & (O_CREAT|O_RDWR|O_WRONLY)\
-        \ > 0 &&\\n    (open.file.path\\\n    \\ in [ ~\\\"/var/spool/cron/*\\\" ])\\\
-        n    && process.file.path not in [ \\\"/usr/bin/at\\\"\\\n    , \\\"/usr/bin/crontab\\\
-        \" ]\\n)\"\n- id: cron_at_job_creation_rename\n  version: 59b739d8\n  description:\
-        \ Cron AT Job Creation\n  expression: \"(\\n    (rename.file.path in [ ~\\\
-        \"/var/spool/cron/*\\\" ]\\n    || rename.file.destination.path\\\n    \\\
-        \ in [ ~\\\"/var/spool/cron/*\\\" ])\\n    && process.file.path not in [ \\\
-        \"/usr/bin/at\\\"\\\n    , \\\"/usr/bin/crontab\\\" ]\\n)\"\n- id: cron_at_job_creation_unlink\n\
-        \  version: 82b6d187\n  description: Cron AT Job Creation\n  expression: \"\
-        (\\n    (unlink.file.path in [ ~\\\"/var/spool/cron/*\\\" ])\\n    && process.file.path\\\
-        \n    \\ not in [ \\\"/usr/bin/at\\\", \\\"/usr/bin/crontab\\\" ]\\n)\"\n\
-        - id: cron_at_job_creation_utimes\n  version: d460ba68\n  description: Cron\
-        \ AT Job Creation\n  expression: \"(\\n    (utimes.file.path in [ ~\\\"/var/spool/cron/*\\\
-        \" ])\\n    && process.file.path\\\n    \\ not in [ \\\"/usr/bin/at\\\", \\\
-        \"/usr/bin/crontab\\\" ]\\n)\"\n- id: database_shell_execution\n  version:\
-        \ 3508c713\n  description: A database application spawned a shell, shell utility,\
-        \ or HTTP utility\n  expression: \"(exec.file.path in [ \\\"/bin/dash\\\"\
-        , \\\"/usr/bin/dash\\\",\\n  \\\"/bin/sh\\\"\\\n    , \\\"/bin/static-sh\\\
-        \", \\\"/usr/bin/sh\\\",\\n  \\\"/usr/bin/bash\\\",\\n  \\\"/bin/bash-static\\\
-        \"\\\n    ,\\n  \\\"/usr/bin/zsh\\\",\\n  \\\"/usr/bin/ash\\\",\\n  \\\"/usr/bin/csh\\\
-        \",\\n  \\\"/usr/bin/ksh\\\"\\\n    ,\\n  \\\"/usr/bin/tcsh\\\",\\n  \\\"\
-        /usr/lib/initramfs-tools/bin/busybox\\\",\\n  \\\"/bin/busybox\\\"\\\n   \
-        \ ,\\n  \\\"/usr/bin/fish\\\",\\n  \\\"/bin/ksh93\\\",\\n  \\\"/bin/rksh\\\
-        \", \\\"/bin/rksh93\\\",\\n\\\n    \\  \\\"/bin/lksh\\\",\\n  \\\"/bin/mksh\\\
-        \", \\\"/bin/mksh-static\\\",\\n  \\\"/usr/bin/csharp\\\"\\\n    ,\\n  \\\"\
-        /bin/posh\\\",\\n  \\\"/usr/bin/rc\\\",\\n  \\\"/bin/sash\\\",\\n  \\\"/usr/bin/yash\\\
-        \"\\\n    ,\\n  \\\"/bin/zsh5\\\", \\\"/bin/zsh5-static\\\" ] ||\\n exec.file.path\
-        \ in [\\\"/usr/bin/wget\\\"\\\n    , \\\"/usr/bin/curl\\\"] ||\\n exec.file.path\
-        \ in [\\\"/bin/cat\\\",\\\"/bin/chgrp\\\",\\\"/bin/chmod\\\"\\\n    ,\\\"\
-        /bin/chown\\\",\\\"/bin/cp\\\",\\\"/bin/date\\\",\\\"/bin/dd\\\",\\\"/bin/df\\\
-        \",\\\"/bin/dir\\\"\\\n    ,\\\"/bin/echo\\\",\\\"/bin/ln\\\",\\\"/bin/ls\\\
-        \",\\\"/bin/mkdir\\\",\\\"/bin/mknod\\\",\\\"/bin/mktemp\\\"\\\n    ,\\\"\
-        /bin/mv\\\",\\\"/bin/pwd\\\",\\\"/bin/readlink\\\",\\\"/bin/rm\\\",\\\"/bin/rmdir\\\
-        \",\\\"/bin/sleep\\\"\\\n    ,\\\"/bin/stty\\\",\\\"/bin/sync\\\",\\\"/bin/touch\\\
-        \",\\\"/bin/uname\\\",\\\"/bin/vdir\\\",\\\"/usr/bin/arch\\\"\\\n    ,\\\"\
-        /usr/bin/b2sum\\\",\\\"/usr/bin/base32\\\",\\\"/usr/bin/base64\\\",\\\"/usr/bin/basename\\\
-        \"\\\n    ,\\\"/usr/bin/chcon\\\",\\\"/usr/bin/cksum\\\",\\\"/usr/bin/comm\\\
-        \",\\\"/usr/bin/csplit\\\",\\\"\\\n    /usr/bin/cut\\\",\\\"/usr/bin/dircolors\\\
-        \",\\\"/usr/bin/dirname\\\",\\\"/usr/bin/du\\\",\\\"\\\n    /usr/bin/env\\\
-        \",\\\"/usr/bin/expand\\\",\\\"/usr/bin/expr\\\",\\\"/usr/bin/factor\\\",\\\
-        \"/usr/bin/fmt\\\"\\\n    ,\\\"/usr/bin/fold\\\",\\\"/usr/bin/groups\\\",\\\
-        \"/usr/bin/head\\\",\\\"/usr/bin/hostid\\\",\\\"\\\n    /usr/bin/id\\\",\\\
-        \"/usr/bin/install\\\",\\\"/usr/bin/join\\\",\\\"/usr/bin/link\\\",\\\"/usr/bin/logname\\\
-        \"\\\n    ,\\\"/usr/bin/md5sum\\\",\\\"/usr/bin/md5sum.textutils\\\",\\\"\
-        /usr/bin/mkfifo\\\",\\\"/usr/bin/nice\\\"\\\n    ,\\\"/usr/bin/nl\\\",\\\"\
-        /usr/bin/nohup\\\",\\\"/usr/bin/nproc\\\",\\\"/usr/bin/numfmt\\\",\\\"\\\n\
-        \    /usr/bin/od\\\",\\\"/usr/bin/paste\\\",\\\"/usr/bin/pathchk\\\",\\\"\
-        /usr/bin/pinky\\\",\\\"/usr/bin/pr\\\"\\\n    ,\\\"/usr/bin/printenv\\\",\\\
-        \"/usr/bin/printf\\\",\\\"/usr/bin/ptx\\\",\\\"/usr/bin/realpath\\\"\\\n \
-        \   ,\\\"/usr/bin/runcon\\\",\\\"/usr/bin/seq\\\",\\\"/usr/bin/sha1sum\\\"\
-        ,\\\"/usr/bin/sha224sum\\\"\\\n    ,\\\"/usr/bin/sha256sum\\\",\\\"/usr/bin/sha384sum\\\
-        \",\\\"/usr/bin/sha512sum\\\",\\\"/usr/bin/shred\\\"\\\n    ,\\\"/usr/bin/shuf\\\
-        \",\\\"/usr/bin/sort\\\",\\\"/usr/bin/split\\\",\\\"/usr/bin/stat\\\",\\\"\
-        /usr/bin/stdbuf\\\"\\\n    ,\\\"/usr/bin/sum\\\",\\\"/usr/bin/tac\\\",\\\"\
-        /usr/bin/tail\\\",\\\"/usr/bin/tee\\\",\\\"/usr/bin/test\\\"\\\n    ,\\\"\
-        /usr/bin/timeout\\\",\\\"/usr/bin/tr\\\",\\\"/usr/bin/truncate\\\",\\\"/usr/bin/tsort\\\
-        \"\\\n    ,\\\"/usr/bin/tty\\\",\\\"/usr/bin/unexpand\\\",\\\"/usr/bin/uniq\\\
-        \",\\\"/usr/bin/unlink\\\"\\\n    ,\\\"/usr/bin/users\\\",\\\"/usr/bin/wc\\\
-        \",\\\"/usr/bin/who\\\",\\\"/usr/bin/whoami\\\",\\\"/usr/sbin/chroot\\\"\\\
-        \n    ]) &&\\nprocess.ancestors.file.name in [\\\"mysqld\\\", \\\"mongod\\\
-        \", \\\"postgres\\\"] &&\\n\\\n    !(process.ancestors.file.name == \\\"initdb\\\
-        \" &&\\nexec.args == ~\\\"*locale -a*\\\")\"\n- id: dirty_pipe_attempt\n \
-        \ version: 8814807c\n  description: Potential Dirty pipe exploitation attempt\n\
+        \ rules in the Datadog App for full functionality.\nversion: '1709907555575'\n\
+        rules:\n- id: Deno_unauthorized_network_access_performed\n  version: 482a395e\n\
+        \  description: Unauthorized network access by deno runtime\n  expression:\
+        \ bind.addr.family>=0 && process.comm==\"deno\" && process.args not in [r\"\
+        .*(allow-net|allow-ffi|-A|allow-all).*\"]\n  agent_version: ''\n  filters:\
+        \ []\n- id: Deno_unauthorized_subprocess_created\n  version: d2d82b09\n  description:\
+        \ Unauthorized subprocess created by deno runtime\n  expression: exec.comm\
+        \ !=\"\" && process.ancestors.comm==\"deno\" && process.ancestors.args\n \
+        \   not in [r\".*(allow-run|-A|allow-all).*\"]\n  agent_version: ''\n  filters:\
+        \ []\n- id: apparmor_modified_tty\n  version: a7f3b5c2\n  description: An\
+        \ AppArmor profile was modified in an interactive session\n  expression: exec.file.name\
+        \ in [\"aa-disable\", \"aa-complain\", \"aa-audit\"] && exec.tty_name\n  \
+        \  !=\"\"\n  agent_version: ''\n  filters:\n  - os == \"linux\"\n- id: auditctl_usage\n\
+        \  version: fdc2412d\n  description: The auditctl command was used to modify\
+        \ auditd\n  expression: exec.file.name == \"auditctl\"\n  agent_version: ''\n\
+        \  filters: []\n- id: auditd_config_modified\n  version: c7f52a7a\n  description:\
+        \ The auditd configuration file was modified without using auditctl\n  expression:\
+        \ open.file.path == \"/etc/audit/auditd.conf\" && open.flags & (O_CREAT|O_TRUNC|O_RDWR|O_WRONLY)\n\
+        \    > 0 && process.file.name != \"auditctl\"\n  agent_version: ''\n  filters:\n\
+        \  - os == \"linux\"\n- id: auditd_rule_file_modified\n  version: c533115d\n\
+        \  description: The auditd rules file was modified without using auditctl\n\
+        \  expression: open.file.path in [\"/etc/audit/rules.d/audit.rules\", \"/etc/audit/audit.rules\"\
+        ]\n    && open.flags & (O_CREAT|O_TRUNC|O_RDWR|O_WRONLY) > 0 && process.file.name\
+        \ !=\n    \"auditctl\"\n  agent_version: ''\n  filters:\n  - os == \"linux\"\
+        \n- id: aws_eks_service_account_token_accessed\n  version: d6a7a4a0\n  description:\
+        \ The AWS EKS service account token was accessed\n  expression: open.file.path\
+        \ =~ \"/var/run/secrets/eks.amazonaws.com/serviceaccount/**\"\n    && open.file.name\
+        \ == \"token\" && process.file.path not in [\"/opt/datadog-agent/embedded/bin/agent\"\
+        ,\n    \"/opt/datadog-agent/embedded/bin/system-probe\", \"/opt/datadog-agent/embedded/bin/security-agent\"\
+        ,\n    \"/opt/datadog-agent/embedded/bin/process-agent\", \"/opt/datadog-agent/bin/agent/agent\"\
+        ,\n    \"/opt/datadog/apm/inject/auto_inject_runc\", \"/usr/bin/dd-host-install\"\
+        , \"/usr/bin/dd-host-container-install\",\n    \"/usr/bin/dd-container-install\"\
+        , \"/opt/datadog-agent/bin/datadog-cluster-agent\"]\n  agent_version: ''\n\
+        \  filters: []\n- id: aws_imds\n  version: 6d47fcfe\n  description: An AWS\
+        \ IMDS was called via a network utility\n  expression: exec.comm in [\"wget\"\
+        , \"curl\", \"lwp-download\"] && exec.args in [~\"*169.254.169.254/latest/meta-data/iam/security-credentials/*\"\
+        ,\n    \"*169.254.170.2$AWS_CONTAINER_CREDENTIALS_RELATIVE_URI\", ~\"*169.254.170.2/*/credentials?id=*\"\
+        ]\n  agent_version: ''\n  filters: []\n- id: azure_imds\n  version: 784f9a83\n\
+        \  description: An Azure IMDS was called via a network utility\n  expression:\
+        \ exec.comm in [\"wget\", \"curl\", \"lwp-download\"] && exec.args in [~\"\
+        *169.254.169.254/metadata/identity/oauth2/token?api-version=*\"]\n  agent_version:\
+        \ ''\n  filters: []\n- id: base64_decode\n  version: dd942ef2\n  description:\
+        \ The base64 command was used to decode information\n  expression: exec.file.name\
+        \ == \"base64\" && exec.args_flags in [\"d\"]\n  agent_version: ''\n  filters:\
+        \ []\n- id: certutil_usage\n  version: 4b9c58b5\n  description: Certutil was\
+        \ executed to transmit or decode a potentially malicious\n    file\n  expression:\
+        \ exec.file.name == \"certutil.exe\" && ((exec.cmdline =~ \"*urlcache*\" &&\n\
+        \    exec.cmdline =~ \"*split*\") || exec.cmdline =~ \"*decode*\")\n  agent_version:\
+        \ ''\n  filters:\n  - os == \"windows\"\n- id: chatroom_request\n  version:\
+        \ 91aa2a0f\n  description: A newly created file contacted a chatroom domain\n\
+        \  expression: dns.question.name in [\"discord.com\", \"api.telegram.org\"\
+        , \"cdn.discordapp.com\"]\n    && process.file.in_upper_layer && process.file.change_time\
+        \ < 60s\n  agent_version: ''\n  filters:\n  - os == \"linux\"\n- id: compile_after_delivery\n\
+        \  version: f41c1e36\n  description: A compiler wrote a suspicious file in\
+        \ a container\n  expression: |-\n    open.flags & O_CREAT > 0\n    && (\n\
+        \      (open.file.path =~ \"/tmp/**\" && open.file.name in [~\"*.ko\", ~\"\
+        .*\"])\n      || open.file.path in [~\"/var/tmp/**\", ~\"/dev/shm/**\", ~\"\
+        /root/**\", ~\"*/bin/*\", ~\"/usr/local/lib/**\"]\n    )\n    && (process.comm\
+        \ in [\"javac\", \"clang\", \"gcc\",\"bcc\"] || process.ancestors.comm in\
+        \ [\"javac\", \"clang\", \"gcc\",\"bcc\"])\n    && process.file.name not in\
+        \ [\"pip\", ~\"python*\"]\n    && container.id != \"\"\n  agent_version: ''\n\
+        \  filters:\n  - os == \"linux\"\n- id: compiler_in_container\n  version:\
+        \ 441a7e85\n  description: Compiler Executed in Container\n  expression: (exec.file.name\
+        \ in [\"javac\", \"clang\", \"gcc\",\"bcc\"] || (exec.file.name\n    == \"\
+        go\" && exec.args in [~\"*build*\", ~\"*run*\"])) && container.id !=\"\" &&\
+        \ process.ancestors.file.path\n    != \"/usr/bin/cilium-agent\"\n  agent_version:\
+        \ ''\n  filters: []\n- id: crackmap_exec_executed\n  version: 62b05d89\n \
+        \ description: Known offensive tool crackmap exec executed\n  expression:\
+        \ exec.cmdline in [~\"*crackmapexec*\", ~\"*cme*\"]\n  agent_version: ''\n\
+        \  filters:\n  - os == \"windows\"\n- id: credential_modified_chown\n  version:\
+        \ b5e2cf51\n  description: Sensitive credential files were modified using\
+        \ a non-standard tool\n  expression: |-\n    (\n        (chown.file.path in\
+        \ [ \"/etc/shadow\", \"/etc/gshadow\" ])\n        && process.file.path not\
+        \ in [ \"/sbin/vipw\", \"/usr/sbin/vipw\", \"/sbin/vigr\", \"/usr/sbin/vigr\"\
+        , \"/usr/bin/containerd\", \"/usr/local/bin/containerd\", \"/usr/bin/dockerd\"\
+        , \"/usr/local/bin/dockerd\", \"/usr/sbin/groupadd\", \"/usr/sbin/useradd\"\
+        , \"/usr/sbin/usermod\", \"/usr/sbin/userdel\", \"/usr/bin/gpasswd\", \"/usr/bin/chage\"\
+        , \"/usr/sbin/chpasswd\", \"/usr/bin/passwd\" ]\n        && process.ancestors.file.path\
+        \ not in [~\"/usr/bin/apt*\", \"/usr/bin/dpkg\", \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\"\
+        , \"/usr/bin/npm\", ~\"/usr/bin/pip*\", \"/usr/bin/yum\", \"/sbin/apk\", \"\
+        /usr/lib/snapd/snapd\"]\n    ) && (chown.file.destination.uid != chown.file.uid\
+        \ || chown.file.destination.gid != chown.file.gid)\n  agent_version: ''\n\
+        \  filters: []\n- id: credential_modified_link\n  version: 5fe23f72\n  description:\
+        \ Sensitive credential files were modified using a non-standard tool\n  expression:\
+        \ |-\n    (\n        (link.file.path in [ \"/etc/shadow\", \"/etc/gshadow\"\
+        \ ]\n        || link.file.destination.path in [ \"/etc/shadow\", \"/etc/gshadow\"\
+        \ ])\n        && process.file.path not in [ \"/sbin/vipw\", \"/usr/sbin/vipw\"\
+        , \"/sbin/vigr\", \"/usr/sbin/vigr\", \"/usr/bin/containerd\", \"/usr/local/bin/containerd\"\
+        , \"/usr/bin/dockerd\", \"/usr/local/bin/dockerd\", \"/usr/sbin/groupadd\"\
+        , \"/usr/sbin/useradd\", \"/usr/sbin/usermod\", \"/usr/sbin/userdel\", \"\
+        /usr/bin/gpasswd\", \"/usr/bin/chage\", \"/usr/sbin/chpasswd\", \"/usr/bin/passwd\"\
+        \ ]\n        && process.ancestors.file.path not in [~\"/usr/bin/apt*\", \"\
+        /usr/bin/dpkg\", \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\", \"/usr/bin/npm\"\
+        , ~\"/usr/bin/pip*\", \"/usr/bin/yum\", \"/sbin/apk\", \"/usr/lib/snapd/snapd\"\
+        ]\n    )\n  agent_version: ''\n  filters: []\n- id: credential_modified_open_v2\n\
+        \  version: 5aec9afe\n  description: Sensitive credential files were modified\
+        \ using a non-standard tool\n  expression: |-\n    (\n        open.flags &\
+        \ ((O_CREAT|O_RDWR|O_WRONLY|O_TRUNC)) > 0 &&\n        (open.file.path in [\
+        \ \"/etc/shadow\", \"/etc/gshadow\" ])\n        && process.file.path not in\
+        \ [ \"/sbin/vipw\", \"/usr/sbin/vipw\", \"/sbin/vigr\", \"/usr/sbin/vigr\"\
+        , \"/usr/bin/containerd\", \"/usr/local/bin/containerd\", \"/usr/bin/dockerd\"\
+        , \"/usr/local/bin/dockerd\", \"/usr/sbin/groupadd\", \"/usr/sbin/useradd\"\
+        , \"/usr/sbin/usermod\", \"/usr/sbin/userdel\", \"/usr/bin/gpasswd\", \"/usr/bin/chage\"\
+        , \"/usr/sbin/chpasswd\", \"/usr/bin/passwd\" ]\n        && process.ancestors.file.path\
+        \ not in [~\"/usr/bin/apt*\", \"/usr/bin/dpkg\", \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\"\
+        , \"/usr/bin/npm\", ~\"/usr/bin/pip*\", \"/usr/bin/yum\", \"/sbin/apk\", \"\
+        /usr/lib/snapd/snapd\"]\n    ) && container.created_at > 90s\n  agent_version:\
+        \ ''\n  filters:\n  - os == \"linux\"\n- id: credential_modified_rename\n\
+        \  version: b7458786\n  description: Sensitive credential files were modified\
+        \ using a non-standard tool\n  expression: |-\n    (\n        (rename.file.path\
+        \ in [ \"/etc/shadow\", \"/etc/gshadow\" ]\n        || rename.file.destination.path\
+        \ in [ \"/etc/shadow\", \"/etc/gshadow\" ])\n        && process.file.path\
+        \ not in [ \"/sbin/vipw\", \"/usr/sbin/vipw\", \"/sbin/vigr\", \"/usr/sbin/vigr\"\
+        , \"/usr/bin/containerd\", \"/usr/local/bin/containerd\", \"/usr/bin/dockerd\"\
+        , \"/usr/local/bin/dockerd\", \"/usr/sbin/groupadd\", \"/usr/sbin/useradd\"\
+        , \"/usr/sbin/usermod\", \"/usr/sbin/userdel\", \"/usr/bin/gpasswd\", \"/usr/bin/chage\"\
+        , \"/usr/sbin/chpasswd\", \"/usr/bin/passwd\" ]\n        && process.ancestors.file.path\
+        \ not in [~\"/usr/bin/apt*\", \"/usr/bin/dpkg\", \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\"\
+        , \"/usr/bin/npm\", ~\"/usr/bin/pip*\", \"/usr/bin/yum\", \"/sbin/apk\", \"\
+        /usr/lib/snapd/snapd\"]\n    )\n  agent_version: ''\n  filters: []\n- id:\
+        \ credential_modified_unlink\n  version: 557758b6\n  description: Sensitive\
+        \ credential files were modified using a non-standard tool\n  expression:\
+        \ |-\n    (\n        (unlink.file.path in [ \"/etc/shadow\", \"/etc/gshadow\"\
+        \ ])\n        && process.file.path not in [ \"/sbin/vipw\", \"/usr/sbin/vipw\"\
+        , \"/sbin/vigr\", \"/usr/sbin/vigr\", \"/usr/bin/containerd\", \"/usr/local/bin/containerd\"\
+        , \"/usr/bin/dockerd\", \"/usr/local/bin/dockerd\", \"/usr/sbin/groupadd\"\
+        , \"/usr/sbin/useradd\", \"/usr/sbin/usermod\", \"/usr/sbin/userdel\", \"\
+        /usr/bin/gpasswd\", \"/usr/bin/chage\", \"/usr/sbin/chpasswd\", \"/usr/bin/passwd\"\
+        \ ]\n        && process.ancestors.file.path not in [~\"/usr/bin/apt*\", \"\
+        /usr/bin/dpkg\", \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\", \"/usr/bin/npm\"\
+        , ~\"/usr/bin/pip*\", \"/usr/bin/yum\", \"/sbin/apk\", \"/usr/lib/snapd/snapd\"\
+        ]\n    )\n  agent_version: ''\n  filters: []\n- id: credential_modified_utimes\n\
+        \  version: de8d14c5\n  description: Sensitive credential files were modified\
+        \ using a non-standard tool\n  expression: |-\n    (\n        (utimes.file.path\
+        \ in [ \"/etc/shadow\", \"/etc/gshadow\" ])\n        && process.file.path\
+        \ not in [ \"/sbin/vipw\", \"/usr/sbin/vipw\", \"/sbin/vigr\", \"/usr/sbin/vigr\"\
+        , \"/usr/bin/containerd\", \"/usr/local/bin/containerd\", \"/usr/bin/dockerd\"\
+        , \"/usr/local/bin/dockerd\", \"/usr/sbin/groupadd\", \"/usr/sbin/useradd\"\
+        , \"/usr/sbin/usermod\", \"/usr/sbin/userdel\", \"/usr/bin/gpasswd\", \"/usr/bin/chage\"\
+        , \"/usr/sbin/chpasswd\", \"/usr/bin/passwd\" ]\n        && process.ancestors.file.path\
+        \ not in [~\"/usr/bin/apt*\", \"/usr/bin/dpkg\", \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\"\
+        , \"/usr/bin/npm\", ~\"/usr/bin/pip*\", \"/usr/bin/yum\", \"/sbin/apk\", \"\
+        /usr/lib/snapd/snapd\"]\n    )\n  agent_version: ''\n  filters: []\n- id:\
+        \ cryptominer_envs\n  version: 735b7690\n  description: Process environment\
+        \ variables match cryptocurrency miner\n  expression: exec.envs in [~\"*POOL_USER*\"\
+        , ~\"*POOL_URL*\", ~\"*POOL_PASS*\", ~\"*DONATE_LEVEL*\"]\n  agent_version:\
+        \ ''\n  filters:\n  - os == \"linux\"\n- id: curl_docker_socket\n  version:\
+        \ f736b6e6\n  description: The Docker socket was referenced in a cURL command\n\
+        \  expression: exec.file.name == \"curl\" && exec.args_flags in [\"unix-socket\"\
+        ] && exec.args\n    in [\"*docker.sock*\"] && container.id != \"\"\n  agent_version:\
+        \ ''\n  filters: []\n- id: database_shell_execution\n  version: 3508c713\n\
+        \  description: A database application spawned a shell, shell utility, or\
+        \ HTTP utility\n  expression: |-\n    (exec.file.path in [ \"/bin/dash\",\n\
+        \      \"/usr/bin/dash\",\n      \"/bin/sh\",\n      \"/bin/static-sh\",\n\
+        \      \"/usr/bin/sh\",\n      \"/bin/bash\",\n      \"/usr/bin/bash\",\n\
+        \      \"/bin/bash-static\",\n      \"/usr/bin/zsh\",\n      \"/usr/bin/ash\"\
+        ,\n      \"/usr/bin/csh\",\n      \"/usr/bin/ksh\",\n      \"/usr/bin/tcsh\"\
+        ,\n      \"/usr/lib/initramfs-tools/bin/busybox\",\n      \"/bin/busybox\"\
+        ,\n      \"/usr/bin/fish\",\n      \"/bin/ksh93\",\n      \"/bin/rksh\",\n\
+        \      \"/bin/rksh93\",\n      \"/bin/lksh\",\n      \"/bin/mksh\",\n    \
+        \  \"/bin/mksh-static\",\n      \"/usr/bin/csharp\",\n      \"/bin/posh\"\
+        ,\n      \"/usr/bin/rc\",\n      \"/bin/sash\",\n      \"/usr/bin/yash\",\n\
+        \      \"/bin/zsh5\",\n      \"/bin/zsh5-static\" ] ||\n     exec.comm in\
+        \ [\"wget\", \"curl\", \"lwp-download\"] ||\n     exec.file.path in [\"/bin/cat\"\
+        ,\"/bin/chgrp\",\"/bin/chmod\",\"/bin/chown\",\"/bin/cp\",\"/bin/date\",\"\
+        /bin/dd\",\"/bin/df\",\"/bin/dir\",\"/bin/echo\",\"/bin/ln\",\"/bin/ls\",\"\
+        /bin/mkdir\",\"/bin/mknod\",\"/bin/mktemp\",\"/bin/mv\",\"/bin/pwd\",\"/bin/readlink\"\
+        ,\"/bin/rm\",\"/bin/rmdir\",\"/bin/sleep\",\"/bin/stty\",\"/bin/sync\",\"\
+        /bin/touch\",\"/bin/uname\",\"/bin/vdir\",\"/usr/bin/arch\",\"/usr/bin/b2sum\"\
+        ,\"/usr/bin/base32\",\"/usr/bin/base64\",\"/usr/bin/basename\",\"/usr/bin/chcon\"\
+        ,\"/usr/bin/cksum\",\"/usr/bin/comm\",\"/usr/bin/csplit\",\"/usr/bin/cut\"\
+        ,\"/usr/bin/dircolors\",\"/usr/bin/dirname\",\"/usr/bin/du\",\"/usr/bin/env\"\
+        ,\"/usr/bin/expand\",\"/usr/bin/expr\",\"/usr/bin/factor\",\"/usr/bin/fmt\"\
+        ,\"/usr/bin/fold\",\"/usr/bin/groups\",\"/usr/bin/head\",\"/usr/bin/hostid\"\
+        ,\"/usr/bin/id\",\"/usr/bin/install\",\"/usr/bin/join\",\"/usr/bin/link\"\
+        ,\"/usr/bin/logname\",\"/usr/bin/md5sum\",\"/usr/bin/md5sum.textutils\",\"\
+        /usr/bin/mkfifo\",\"/usr/bin/nice\",\"/usr/bin/nl\",\"/usr/bin/nohup\",\"\
+        /usr/bin/nproc\",\"/usr/bin/numfmt\",\"/usr/bin/od\",\"/usr/bin/paste\",\"\
+        /usr/bin/pathchk\",\"/usr/bin/pinky\",\"/usr/bin/pr\",\"/usr/bin/printenv\"\
+        ,\"/usr/bin/printf\",\"/usr/bin/ptx\",\"/usr/bin/realpath\",\"/usr/bin/runcon\"\
+        ,\"/usr/bin/seq\",\"/usr/bin/sha1sum\",\"/usr/bin/sha224sum\",\"/usr/bin/sha256sum\"\
+        ,\"/usr/bin/sha384sum\",\"/usr/bin/sha512sum\",\"/usr/bin/shred\",\"/usr/bin/shuf\"\
+        ,\"/usr/bin/sort\",\"/usr/bin/split\",\"/usr/bin/stat\",\"/usr/bin/stdbuf\"\
+        ,\"/usr/bin/sum\",\"/usr/bin/tac\",\"/usr/bin/tail\",\"/usr/bin/tee\",\"/usr/bin/test\"\
+        ,\"/usr/bin/timeout\",\"/usr/bin/tr\",\"/usr/bin/truncate\",\"/usr/bin/tsort\"\
+        ,\"/usr/bin/tty\",\"/usr/bin/unexpand\",\"/usr/bin/uniq\",\"/usr/bin/unlink\"\
+        ,\"/usr/bin/users\",\"/usr/bin/wc\",\"/usr/bin/who\",\"/usr/bin/whoami\",\"\
+        /usr/sbin/chroot\"]) &&\n    process.parent.file.name in [\"mysqld\", \"mongod\"\
+        , \"postgres\"] &&\n    !(process.parent.file.name == \"initdb\" &&\n    exec.args\
+        \ == \"-c locale -a\") &&\n    !(process.parent.file.name == \"postgres\"\
+        \ &&\n    exec.args == ~\"*pg_wal*\")\n  agent_version: ''\n  filters:\n \
+        \ - os == \"linux\"\n- id: delete_system_log\n  version: 5436807c\n  description:\
+        \ A process deleted common system log files\n  expression: unlink.file.path\
+        \ in [\"/var/run/utmp\", \"/var/log/wtmp\", \"/var/log/btmp\",\n    \"/var/log/lastlog\"\
+        , \"/var/log/faillog\", \"/var/log/syslog\", \"/var/log/messages\",\n    \"\
+        /var/log/secure\", \"/var/log/auth.log\", \"/var/log/boot.log\", \"/var/log/kern.log\"\
+        ]\n    && process.comm not in [\"dockerd\", \"containerd\"]\n  agent_version:\
+        \ ''\n  filters:\n  - os == \"linux\"\n- id: deploy_priv_container\n  version:\
+        \ 356d5ee7\n  description: A privileged container was created\n  expression:\
+        \ exec.file.name != \"\" && container.created_at < 1s && process.cap_permitted\n\
+        \    & CAP_SYS_ADMIN > 0\n  agent_version: ''\n  filters: []\n- id: dirty_pipe_attempt\n\
+        \  version: 8814807c\n  description: Potential Dirty pipe exploitation attempt\n\
         \  expression: (splice.pipe_entry_flag & PIPE_BUF_FLAG_CAN_MERGE) != 0 &&\
-        \ (splice.pipe_exit_flag\n    & PIPE_BUF_FLAG_CAN_MERGE) == 0\n- id: dirty_pipe_exploitation\n\
+        \ (splice.pipe_exit_flag\n    & PIPE_BUF_FLAG_CAN_MERGE) == 0 && (process.uid\
+        \ != 0 && process.gid != 0)\n  agent_version: ''\n  filters: []\n- id: dirty_pipe_exploitation\n\
         \  version: 9bcacfe3\n  description: Potential Dirty pipe exploitation\n \
-        \ expression: (splice.pipe_exit_flag & PIPE_BUF_FLAG_CAN_MERGE) > 0\n- id:\
-        \ example_agent_rule\n  version: 28ba1078\n  description: An example agent\
-        \ rule generated in terraform\n  expression: exec.file.name == \"java\"\n\
-        - id: java_shell_execution\n  version: 24c2eb7c\n  description: Java process\
-        \ spawned shell/utility\n  expression: \"(exec.file.path in [ \\\"/bin/dash\\\
-        \", \\\"/usr/bin/dash\\\",\\n  \\\"/bin/sh\\\"\\\n    , \\\"/bin/static-sh\\\
-        \", \\\"/usr/bin/sh\\\",\\n  \\\"/usr/bin/bash\\\",\\n  \\\"/bin/bash-static\\\
-        \"\\\n    ,\\n  \\\"/usr/bin/zsh\\\",\\n  \\\"/usr/bin/ash\\\",\\n  \\\"/usr/bin/csh\\\
-        \",\\n  \\\"/usr/bin/ksh\\\"\\\n    ,\\n  \\\"/usr/bin/tcsh\\\",\\n  \\\"\
-        /usr/lib/initramfs-tools/bin/busybox\\\",\\n  \\\"/bin/busybox\\\"\\\n   \
-        \ ,\\n  \\\"/usr/bin/fish\\\",\\n  \\\"/bin/ksh93\\\",\\n  \\\"/bin/rksh\\\
-        \", \\\"/bin/rksh93\\\",\\n\\\n    \\  \\\"/bin/lksh\\\",\\n  \\\"/bin/mksh\\\
-        \", \\\"/bin/mksh-static\\\",\\n  \\\"/usr/bin/csharp\\\"\\\n    ,\\n  \\\"\
-        /bin/posh\\\",\\n  \\\"/usr/bin/rc\\\",\\n  \\\"/bin/sash\\\",\\n  \\\"/usr/bin/yash\\\
-        \"\\\n    ,\\n  \\\"/bin/zsh5\\\", \\\"/bin/zsh5-static\\\" ] ||\\n exec.file.path\
-        \ in [\\\"/usr/bin/wget\\\"\\\n    , \\\"/usr/bin/curl\\\"] ||\\n exec.file.path\
-        \ in [\\\"/bin/cat\\\",\\\"/bin/chgrp\\\",\\\"/bin/chmod\\\"\\\n    ,\\\"\
-        /bin/chown\\\",\\\"/bin/cp\\\",\\\"/bin/date\\\",\\\"/bin/dd\\\",\\\"/bin/df\\\
-        \",\\\"/bin/dir\\\"\\\n    ,\\\"/bin/echo\\\",\\\"/bin/ln\\\",\\\"/bin/ls\\\
-        \",\\\"/bin/mkdir\\\",\\\"/bin/mknod\\\",\\\"/bin/mktemp\\\"\\\n    ,\\\"\
-        /bin/mv\\\",\\\"/bin/pwd\\\",\\\"/bin/readlink\\\",\\\"/bin/rm\\\",\\\"/bin/rmdir\\\
-        \",\\\"/bin/sleep\\\"\\\n    ,\\\"/bin/stty\\\",\\\"/bin/sync\\\",\\\"/bin/touch\\\
-        \",\\\"/bin/uname\\\",\\\"/bin/vdir\\\",\\\"/usr/bin/arch\\\"\\\n    ,\\\"\
-        /usr/bin/b2sum\\\",\\\"/usr/bin/base32\\\",\\\"/usr/bin/base64\\\",\\\"/usr/bin/basename\\\
-        \"\\\n    ,\\\"/usr/bin/chcon\\\",\\\"/usr/bin/cksum\\\",\\\"/usr/bin/comm\\\
-        \",\\\"/usr/bin/csplit\\\",\\\"\\\n    /usr/bin/cut\\\",\\\"/usr/bin/dircolors\\\
-        \",\\\"/usr/bin/dirname\\\",\\\"/usr/bin/du\\\",\\\"\\\n    /usr/bin/env\\\
-        \",\\\"/usr/bin/expand\\\",\\\"/usr/bin/expr\\\",\\\"/usr/bin/factor\\\",\\\
-        \"/usr/bin/fmt\\\"\\\n    ,\\\"/usr/bin/fold\\\",\\\"/usr/bin/groups\\\",\\\
-        \"/usr/bin/head\\\",\\\"/usr/bin/hostid\\\",\\\"\\\n    /usr/bin/id\\\",\\\
-        \"/usr/bin/install\\\",\\\"/usr/bin/join\\\",\\\"/usr/bin/link\\\",\\\"/usr/bin/logname\\\
-        \"\\\n    ,\\\"/usr/bin/md5sum\\\",\\\"/usr/bin/md5sum.textutils\\\",\\\"\
-        /usr/bin/mkfifo\\\",\\\"/usr/bin/nice\\\"\\\n    ,\\\"/usr/bin/nl\\\",\\\"\
-        /usr/bin/nohup\\\",\\\"/usr/bin/nproc\\\",\\\"/usr/bin/numfmt\\\",\\\"\\\n\
-        \    /usr/bin/od\\\",\\\"/usr/bin/paste\\\",\\\"/usr/bin/pathchk\\\",\\\"\
-        /usr/bin/pinky\\\",\\\"/usr/bin/pr\\\"\\\n    ,\\\"/usr/bin/printenv\\\",\\\
-        \"/usr/bin/printf\\\",\\\"/usr/bin/ptx\\\",\\\"/usr/bin/realpath\\\"\\\n \
-        \   ,\\\"/usr/bin/runcon\\\",\\\"/usr/bin/seq\\\",\\\"/usr/bin/sha1sum\\\"\
-        ,\\\"/usr/bin/sha224sum\\\"\\\n    ,\\\"/usr/bin/sha256sum\\\",\\\"/usr/bin/sha384sum\\\
-        \",\\\"/usr/bin/sha512sum\\\",\\\"/usr/bin/shred\\\"\\\n    ,\\\"/usr/bin/shuf\\\
-        \",\\\"/usr/bin/sort\\\",\\\"/usr/bin/split\\\",\\\"/usr/bin/stat\\\",\\\"\
-        /usr/bin/stdbuf\\\"\\\n    ,\\\"/usr/bin/sum\\\",\\\"/usr/bin/tac\\\",\\\"\
-        /usr/bin/tail\\\",\\\"/usr/bin/tee\\\",\\\"/usr/bin/test\\\"\\\n    ,\\\"\
-        /usr/bin/timeout\\\",\\\"/usr/bin/tr\\\",\\\"/usr/bin/truncate\\\",\\\"/usr/bin/tsort\\\
-        \"\\\n    ,\\\"/usr/bin/tty\\\",\\\"/usr/bin/unexpand\\\",\\\"/usr/bin/uniq\\\
-        \",\\\"/usr/bin/unlink\\\"\\\n    ,\\\"/usr/bin/users\\\",\\\"/usr/bin/wc\\\
-        \",\\\"/usr/bin/who\\\",\\\"/usr/bin/whoami\\\",\\\"/usr/sbin/chroot\\\"\\\
-        \n    ])\\n&& process.ancestors.file.name == \\\"java\\\"\"\n- id: kernel_module_chmod\n\
-        \  version: 82c61c82\n  description: A kernel module was added to /lib/modules/\n\
-        \  expression: \"(\\n    (chmod.file.path in [ ~\\\"/lib/modules/*\\\", ~\\\
-        \"/usr/lib/modules/*\\\"\\\n    \\ ])\\n    && process.file.path not in [\\\
-        \"/usr/bin/apt\\\", \\\"/usr/bin/apt-get\\\"\\\n    , \\\"/usr/bin/apt-config\\\
-        \", \\\"/usr/bin/dpkg\\\", \\\"/usr/bin/aptitude-curses\\\", \\\"\\\n    /usr/bin/rpm\\\
-        \", \\\"/usr/bin/unattended-upgrade\\\"]\\n    && process.ancestors.file.path\\\
-        \n    \\ not in [\\\"/usr/bin/apt\\\", \\\"/usr/bin/apt-get\\\", \\\"/usr/bin/apt-config\\\
-        \", \\\"\\\n    /usr/bin/dpkg\\\", \\\"/usr/bin/aptitude-curses\\\", \\\"\
-        /usr/bin/rpm\\\", \\\"/usr/bin/unattended-upgrade\\\"\\\n    ] && process.ancestors.file.path\
-        \ != \\\"/usr/bin/kmod\\\"\\n) && chmod.mode != chmod.file.mode\"\n- id: kernel_module_chown\n\
-        \  version: ca2cf124\n  description: A kernel module was added to /lib/modules/\n\
-        \  expression: \"(\\n    (chown.file.path in [ ~\\\"/lib/modules/*\\\", ~\\\
-        \"/usr/lib/modules/*\\\"\\\n    \\ ])\\n    && process.file.path not in [\\\
-        \"/usr/bin/apt\\\", \\\"/usr/bin/apt-get\\\"\\\n    , \\\"/usr/bin/apt-config\\\
-        \", \\\"/usr/bin/dpkg\\\", \\\"/usr/bin/aptitude-curses\\\", \\\"\\\n    /usr/bin/rpm\\\
-        \", \\\"/usr/bin/unattended-upgrade\\\"]\\n    && process.ancestors.file.path\\\
-        \n    \\ not in [\\\"/usr/bin/apt\\\", \\\"/usr/bin/apt-get\\\", \\\"/usr/bin/apt-config\\\
-        \", \\\"\\\n    /usr/bin/dpkg\\\", \\\"/usr/bin/aptitude-curses\\\", \\\"\
-        /usr/bin/rpm\\\", \\\"/usr/bin/unattended-upgrade\\\"\\\n    ] && process.ancestors.file.path\
-        \ != \\\"/usr/bin/kmod\\\"\\n) && (chown.uid != chown.file.uid\\\n    \\ ||\
-        \ chown.gid != chown.file.gid)\"\n- id: kernel_module_link\n  version: a18ca197\n\
-        \  description: A kernel module was added to /lib/modules/\n  expression:\
-        \ \"(\\n    (link.file.path in [ ~\\\"/lib/modules/*\\\", ~\\\"/usr/lib/modules/*\\\
-        \"\\\n    \\ ]\\n    || link.file.destination.path in [ ~\\\"/lib/modules/*\\\
-        \", ~\\\"/usr/lib/modules/*\\\"\\\n    \\ ])\\n    && process.file.path not\
-        \ in [\\\"/usr/bin/apt\\\", \\\"/usr/bin/apt-get\\\"\\\n    , \\\"/usr/bin/apt-config\\\
-        \", \\\"/usr/bin/dpkg\\\", \\\"/usr/bin/aptitude-curses\\\", \\\"\\\n    /usr/bin/rpm\\\
-        \", \\\"/usr/bin/unattended-upgrade\\\"]\\n    && process.ancestors.file.path\\\
-        \n    \\ not in [\\\"/usr/bin/apt\\\", \\\"/usr/bin/apt-get\\\", \\\"/usr/bin/apt-config\\\
-        \", \\\"\\\n    /usr/bin/dpkg\\\", \\\"/usr/bin/aptitude-curses\\\", \\\"\
-        /usr/bin/rpm\\\", \\\"/usr/bin/unattended-upgrade\\\"\\\n    ] && process.ancestors.file.path\
-        \ != \\\"/usr/bin/kmod\\\"\\n)\"\n- id: kernel_module_load\n  version: 904592b4\n\
-        \  description: A kernel module was loaded\n  expression: load_module.name\
-        \ != \"\"\n- id: kernel_module_load_container\n  version: 139b666a\n  description:\
-        \ A container loaded a new kernel module\n  expression: load_module.name !=\
-        \ \"\" && container.id !=\"\"\n- id: kernel_module_load_from_memory\n  version:\
-        \ 78122acd\n  description: A kernel module was loaded from memory\n  expression:\
-        \ load_module.loaded_from_memory == true\n- id: kernel_module_load_from_memory_container\n\
+        \ expression: (splice.pipe_exit_flag & PIPE_BUF_FLAG_CAN_MERGE) > 0  && (process.uid\n\
+        \    != 0 && process.gid != 0)\n  agent_version: ''\n  filters: []\n- id:\
+        \ dynamic_linker_config_unlink\n  version: 1924611e\n  description: A process\
+        \ unlinked a dynamic linker config file\n  expression: unlink.file.path in\
+        \ [\"/etc/ld.so.preload\", \"/etc/ld.so.conf\", ~\"/etc/ld.so.conf.d/*.conf\"\
+        ]\n    && process.file.path not in [~\"/usr/bin/apt*\", \"/usr/bin/dpkg\"\
+        , \"/usr/bin/rpm\",\n    \"/usr/bin/unattended-upgrade\", \"/usr/bin/npm\"\
+        , ~\"/usr/bin/pip*\", \"/usr/bin/yum\",\n    \"/sbin/apk\", \"/usr/lib/snapd/snapd\"\
+        ]\n  agent_version: ''\n  filters:\n  - os == \"linux\"\n- id: dynamic_linker_config_write\n\
+        \  version: 764fc516\n  description: A process wrote to a dynamic linker config\
+        \ file\n  expression: open.file.path in [\"/etc/ld.so.preload\", \"/etc/ld.so.conf\"\
+        , \"/etc/ld.so.conf.d/*.conf\"]\n    && open.flags & (O_CREAT|O_TRUNC|O_RDWR|O_WRONLY)\
+        \ > 0 && process.file.path not\n    in [~\"/usr/bin/apt*\", \"/usr/bin/dpkg\"\
+        , \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\",\n    \"/usr/bin/containerd\"\
+        , \"/usr/local/bin/containerd\", \"/usr/bin/dockerd\", \"/usr/bin/npm\",\n\
+        \    ~\"/usr/bin/pip*\"] && process.ancestors.file.path not in [\"/opt/datadog-agent/embedded/bin/agent\"\
+        ,\n    \"/opt/datadog-agent/embedded/bin/system-probe\", \"/opt/datadog-agent/embedded/bin/security-agent\"\
+        ,\n    \"/opt/datadog-agent/embedded/bin/process-agent\", \"/opt/datadog-agent/bin/agent/agent\"\
+        ,\n    \"/opt/datadog/apm/inject/auto_inject_runc\", \"/usr/bin/dd-host-install\"\
+        , \"/usr/bin/dd-host-container-install\",\n    \"/usr/bin/dd-container-install\"\
+        , \"/opt/datadog-agent/bin/datadog-cluster-agent\"]\n  agent_version: ''\n\
+        \  filters: []\n- id: exec_lsmod\n  version: 1a14c811\n  description: Kernel\
+        \ modules were listed using the lsmod command\n  expression: exec.comm ==\
+        \ \"lsmod\"\n  agent_version: ''\n  filters:\n  - os == \"linux\"\n- id: exec_whoami\n\
+        \  version: 90ea91b6\n  description: The whoami command was executed\n  expression:\
+        \ exec.comm == \"whoami\"\n  agent_version: ''\n  filters:\n  - os == \"linux\"\
+        \n- id: exec_wrmsr\n  version: 13ea7d84\n  description: The wrmsr program\
+        \ executed\n  expression: exec.comm == \"wrmsr\"\n  agent_version: ''\n  filters:\n\
+        \  - os == \"linux\"\n- id: executable_bit_added\n  version: 6f8761f\n  description:\
+        \ The executable bit was added to a newly created file\n  expression: |-\n\
+        \    chmod.file.in_upper_layer &&\n    chmod.file.change_time < 30s &&\n \
+        \   container.id != \"\" &&\n    chmod.file.destination.mode != chmod.file.mode\
+        \ &&\n    chmod.file.destination.mode & S_IXUSR|S_IXGRP|S_IXOTH > 0 &&\n \
+        \   process.argv in [\"+x\"]\n  agent_version: ''\n  filters: []\n- id: gcp_imds\n\
+        \  version: 3035dbbf\n  description: An GCP IMDS was called via a network\
+        \ utility\n  expression: exec.comm in [\"wget\", \"curl\", \"lwp-download\"\
+        ] && exec.args in [~\"*metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/token\"\
+        ,\n    ~\"*169.254.169.254/computeMetadata/v1/instance/service-accounts/default/token\"\
+        ]\n  agent_version: ''\n  filters: []\n- id: hidden_file_executed\n  version:\
+        \ 60fd84a9\n  description: A hidden file was executed in a suspicious folder\n\
+        \  expression: exec.file.name =~ \".*\" && exec.file.path in [~\"/home/**\"\
+        , ~\"/tmp/**\",\n    ~\"/var/tmp/**\", ~\"/dev/shm/**\"]\n  agent_version:\
+        \ ''\n  filters: []\n- id: interactive_shell_in_container\n  version: f8bc8845\n\
+        \  description: An interactive shell was started inside of a container\n \
+        \ expression: |-\n    exec.file.path in [ \"/bin/dash\",\n      \"/usr/bin/dash\"\
+        ,\n      \"/bin/sh\",\n      \"/bin/static-sh\",\n      \"/usr/bin/sh\",\n\
+        \      \"/bin/bash\",\n      \"/usr/bin/bash\",\n      \"/bin/bash-static\"\
+        ,\n      \"/usr/bin/zsh\",\n      \"/usr/bin/ash\",\n      \"/usr/bin/csh\"\
+        ,\n      \"/usr/bin/ksh\",\n      \"/usr/bin/tcsh\",\n      \"/usr/lib/initramfs-tools/bin/busybox\"\
+        ,\n      \"/bin/busybox\",\n      \"/usr/bin/fish\",\n      \"/bin/ksh93\"\
+        ,\n      \"/bin/rksh\",\n      \"/bin/rksh93\",\n      \"/bin/lksh\",\n  \
+        \    \"/bin/mksh\",\n      \"/bin/mksh-static\",\n      \"/usr/bin/csharp\"\
+        ,\n      \"/bin/posh\",\n      \"/usr/bin/rc\",\n      \"/bin/sash\",\n  \
+        \    \"/usr/bin/yash\",\n      \"/bin/zsh5\",\n      \"/bin/zsh5-static\"\
+        \ ] && exec.args_flags in [\"i\"] && container.id !=\"\"\n  agent_version:\
+        \ ''\n  filters:\n  - os == \"linux\"\n- id: ip_check_domain\n  version: d8a9934\n\
+        \  description: A DNS lookup was done for a IP check service\n  expression:\
+        \ dns.question.name in [\"icanhazip.com\", \"ip-api.com\", \"myip.opendns.com\"\
+        ,\n    \"checkip.amazonaws.com\", \"whatismyip.akamai.com\"] && process.file.name\
+        \ != \"\"\n  agent_version: ''\n  filters: []\n- id: iptables_egress_allowed\n\
+        \  version: a5be0ef9\n  description: Egress traffic allowed using iptables\n\
+        \  expression: exec.comm == \"iptables\" && process.args in [r\".*OUTPUT.*((25[0-5]|(2[0-4]|1\\\
+        d|[1-9]|)\\d)\\.?\\b){4}.*ACCEPT\"]\n    && process.args not in [r\"(127\\\
+        .)|(10\\.)|(172\\.1[6-9]\\.)|(172\\.2[0-9]\\.)|(^172\\.3[0-1]\\.)|(192\\.168\\\
+        .)|(169\\.254\\.)\"]\n  agent_version: ''\n  filters:\n  - os == \"linux\"\
+        \n- id: java_shell_execution_parent\n  version: 1bcff0aa\n  description: A\
+        \ java process spawned a shell, shell utility, or HTTP utility\n  expression:\
+        \ |-\n    (exec.file.path in [ \"/bin/dash\",\n      \"/usr/bin/dash\",\n\
+        \      \"/bin/sh\",\n      \"/bin/static-sh\",\n      \"/usr/bin/sh\",\n \
+        \     \"/bin/bash\",\n      \"/usr/bin/bash\",\n      \"/bin/bash-static\"\
+        ,\n      \"/usr/bin/zsh\",\n      \"/usr/bin/ash\",\n      \"/usr/bin/csh\"\
+        ,\n      \"/usr/bin/ksh\",\n      \"/usr/bin/tcsh\",\n      \"/usr/lib/initramfs-tools/bin/busybox\"\
+        ,\n      \"/bin/busybox\",\n      \"/usr/bin/fish\",\n      \"/bin/ksh93\"\
+        ,\n      \"/bin/rksh\",\n      \"/bin/rksh93\",\n      \"/bin/lksh\",\n  \
+        \    \"/bin/mksh\",\n      \"/bin/mksh-static\",\n      \"/usr/bin/csharp\"\
+        ,\n      \"/bin/posh\",\n      \"/usr/bin/rc\",\n      \"/bin/sash\",\n  \
+        \    \"/usr/bin/yash\",\n      \"/bin/zsh5\",\n      \"/bin/zsh5-static\"\
+        \ ] ||\n     exec.comm in [\"wget\", \"curl\", \"lwp-download\"] ||\n    \
+        \ exec.file.path in [\"/bin/cat\",\"/bin/chgrp\",\"/bin/chmod\",\"/bin/chown\"\
+        ,\"/bin/cp\",\"/bin/date\",\"/bin/dd\",\"/bin/df\",\"/bin/dir\",\"/bin/echo\"\
+        ,\"/bin/ln\",\"/bin/ls\",\"/bin/mkdir\",\"/bin/mknod\",\"/bin/mktemp\",\"\
+        /bin/mv\",\"/bin/pwd\",\"/bin/readlink\",\"/bin/rm\",\"/bin/rmdir\",\"/bin/sleep\"\
+        ,\"/bin/stty\",\"/bin/sync\",\"/bin/touch\",\"/bin/uname\",\"/bin/vdir\",\"\
+        /usr/bin/arch\",\"/usr/bin/b2sum\",\"/usr/bin/base32\",\"/usr/bin/base64\"\
+        ,\"/usr/bin/basename\",\"/usr/bin/chcon\",\"/usr/bin/cksum\",\"/usr/bin/comm\"\
+        ,\"/usr/bin/csplit\",\"/usr/bin/cut\",\"/usr/bin/dircolors\",\"/usr/bin/dirname\"\
+        ,\"/usr/bin/du\",\"/usr/bin/env\",\"/usr/bin/expand\",\"/usr/bin/expr\",\"\
+        /usr/bin/factor\",\"/usr/bin/fmt\",\"/usr/bin/fold\",\"/usr/bin/groups\",\"\
+        /usr/bin/head\",\"/usr/bin/hostid\",\"/usr/bin/id\",\"/usr/bin/install\",\"\
+        /usr/bin/join\",\"/usr/bin/link\",\"/usr/bin/logname\",\"/usr/bin/md5sum\"\
+        ,\"/usr/bin/md5sum.textutils\",\"/usr/bin/mkfifo\",\"/usr/bin/nice\",\"/usr/bin/nl\"\
+        ,\"/usr/bin/nohup\",\"/usr/bin/nproc\",\"/usr/bin/numfmt\",\"/usr/bin/od\"\
+        ,\"/usr/bin/paste\",\"/usr/bin/pathchk\",\"/usr/bin/pinky\",\"/usr/bin/pr\"\
+        ,\"/usr/bin/printenv\",\"/usr/bin/printf\",\"/usr/bin/ptx\",\"/usr/bin/realpath\"\
+        ,\"/usr/bin/runcon\",\"/usr/bin/seq\",\"/usr/bin/sha1sum\",\"/usr/bin/sha224sum\"\
+        ,\"/usr/bin/sha256sum\",\"/usr/bin/sha384sum\",\"/usr/bin/sha512sum\",\"/usr/bin/shred\"\
+        ,\"/usr/bin/shuf\",\"/usr/bin/sort\",\"/usr/bin/split\",\"/usr/bin/stat\"\
+        ,\"/usr/bin/stdbuf\",\"/usr/bin/sum\",\"/usr/bin/tac\",\"/usr/bin/tail\",\"\
+        /usr/bin/tee\",\"/usr/bin/test\",\"/usr/bin/timeout\",\"/usr/bin/tr\",\"/usr/bin/truncate\"\
+        ,\"/usr/bin/tsort\",\"/usr/bin/tty\",\"/usr/bin/unexpand\",\"/usr/bin/uniq\"\
+        ,\"/usr/bin/unlink\",\"/usr/bin/users\",\"/usr/bin/wc\",\"/usr/bin/who\",\"\
+        /usr/bin/whoami\",\"/usr/sbin/chroot\"])\n    && process.parent.file.name\
+        \ == \"java\"\n  agent_version: ''\n  filters:\n  - os == \"linux\"\n- id:\
+        \ jupyterhub_shell\n  version: ee1b8429\n  description: A shell command was\
+        \ executed from a JupyterHub code cell\n  expression: exec.file.path == \"\
+        /usr/bin/bash\" && process.ancestors.comm == \"jupyterhub-sing\"\n  agent_version:\
+        \ ''\n  filters: []\n- id: k8s_pod_service_account_token_accessed\n  version:\
+        \ 88c0ee3a\n  description: The Kubernetes pod service account token was accessed\n\
+        \  expression: open.file.path in [~\"/var/run/secrets/kubernetes.io/serviceaccount/**\"\
+        ,\n    ~\"/run/secrets/kubernetes.io/serviceaccount/**\"] && open.file.name\
+        \ == \"token\"\n    && process.file.path not in [\"/opt/datadog-agent/embedded/bin/agent\"\
+        , \"/opt/datadog-agent/embedded/bin/system-probe\",\n    \"/opt/datadog-agent/embedded/bin/security-agent\"\
+        , \"/opt/datadog-agent/embedded/bin/process-agent\",\n    \"/opt/datadog-agent/bin/agent/agent\"\
+        , \"/opt/datadog/apm/inject/auto_inject_runc\",\n    \"/usr/bin/dd-host-install\"\
+        , \"/usr/bin/dd-host-container-install\", \"/usr/bin/dd-container-install\"\
+        ,\n    \"/opt/datadog-agent/bin/datadog-cluster-agent\"] && process.file.path\
+        \ not in  [\"/usr/bin/cilium-agent\",\n    \"/coredns\", \"/usr/bin/cilium-operator\"\
+        , \"/manager\", \"/fluent-bit/bin/fluent-bit\",\n    \"/usr/local/bin/cloud-node-manager\"\
+        , \"/secrets-store-csi\", \"/bin/secrets-store-csi-driver-provider-aws\",\n\
+        \    \"/usr/bin/calico-node\", \"/opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent\"\
+        ,\n    \"/nginx-ingress-controller\", \"/cluster-autoscaler\", \"/cluster-proportional-autoscaler\"\
+        ,\n    \"/haproxy-ingress-controller\", \"/kube-state-metrics\", \"/fluent-bit-gke-exporter\"\
+        ,\n    \"/bin/external-secrets\", \"/node-termination-handler\", \"/fluent-bit-gke-exporter\"\
+        ]\n    && process.ancestors.file.path not in [\"/opt/datadog-agent/embedded/bin/agent\"\
+        ,\n    \"/opt/datadog-agent/embedded/bin/system-probe\", \"/opt/datadog-agent/embedded/bin/security-agent\"\
+        ,\n    \"/opt/datadog-agent/embedded/bin/process-agent\", \"/opt/datadog-agent/bin/agent/agent\"\
+        ,\n    \"/opt/datadog/apm/inject/auto_inject_runc\", \"/usr/bin/dd-host-install\"\
+        , \"/usr/bin/dd-host-container-install\",\n    \"/usr/bin/dd-container-install\"\
+        , \"/opt/datadog-agent/bin/datadog-cluster-agent\"]\n  agent_version: ''\n\
+        \  filters:\n  - os == \"linux\"\n- id: kernel_module_chmod\n  version: 93da2ba6\n\
+        \  description: A new kernel module was added\n  expression: |-\n    (\n \
+        \       (chmod.file.path in [ ~\"/lib/modules/**\", ~\"/usr/lib/modules/**\"\
+        \ ])\n        && process.file.path not in [~\"/usr/bin/apt*\", \"/usr/bin/dpkg\"\
+        , \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\", \"/usr/bin/npm\", ~\"\
+        /usr/bin/pip*\", \"/usr/bin/yum\", \"/sbin/apk\", \"/usr/lib/snapd/snapd\"\
+        ]\n        && process.ancestors.file.path not in [~\"/usr/bin/apt*\", \"/usr/bin/dpkg\"\
+        , \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\", \"/usr/bin/npm\", ~\"\
+        /usr/bin/pip*\", \"/usr/bin/yum\", \"/sbin/apk\", \"/usr/lib/snapd/snapd\"\
+        ] && process.ancestors.file.path != \"/usr/bin/kmod\"\n    ) && chmod.file.destination.mode\
+        \ != chmod.file.mode\n  agent_version: ''\n  filters:\n  - os == \"linux\"\
+        \n- id: kernel_module_chown\n  version: ca2cf124\n  description: A new kernel\
+        \ module was added\n  expression: |-\n    (\n        (chown.file.path in [\
+        \ ~\"/lib/modules/**\", ~\"/usr/lib/modules/**\" ])\n        && process.file.path\
+        \ not in [~\"/usr/bin/apt*\", \"/usr/bin/dpkg\", \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\"\
+        , \"/usr/bin/npm\", ~\"/usr/bin/pip*\", \"/usr/bin/yum\", \"/sbin/apk\", \"\
+        /usr/lib/snapd/snapd\"]\n        && process.ancestors.file.path not in [~\"\
+        /usr/bin/apt*\", \"/usr/bin/dpkg\", \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\"\
+        , \"/usr/bin/npm\", ~\"/usr/bin/pip*\", \"/usr/bin/yum\", \"/sbin/apk\", \"\
+        /usr/lib/snapd/snapd\"] && process.ancestors.file.path != \"/usr/bin/kmod\"\
+        \n    ) && (chown.file.destination.uid != chown.file.uid || chown.file.destination.gid\
+        \ != chown.file.gid)\n  agent_version: ''\n  filters: []\n- id: kernel_module_link\n\
+        \  version: ae6469e5\n  description: A new kernel module was added\n  expression:\
+        \ |-\n    (\n        (link.file.path in [ ~\"/lib/modules/**\", ~\"/usr/lib/modules/**\"\
+        \ ]\n        || link.file.destination.path in [ ~\"/lib/modules/**\", ~\"\
+        /usr/lib/modules/**\" ])\n        && process.file.path not in [~\"/usr/bin/apt*\"\
+        , \"/usr/bin/dpkg\", \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\", \"\
+        /usr/bin/npm\", ~\"/usr/bin/pip*\", \"/usr/bin/yum\", \"/sbin/apk\", \"/usr/lib/snapd/snapd\"\
+        ]\n        && process.ancestors.file.path not in [~\"/usr/bin/apt*\", \"/usr/bin/dpkg\"\
+        , \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\", \"/usr/bin/npm\", ~\"\
+        /usr/bin/pip*\", \"/usr/bin/yum\", \"/sbin/apk\", \"/usr/lib/snapd/snapd\"\
+        ] && process.ancestors.file.path != \"/usr/bin/kmod\"\n    )\n  agent_version:\
+        \ ''\n  filters: []\n- id: kernel_module_load\n  version: 904592b4\n  description:\
+        \ A kernel module was loaded\n  expression: load_module.name not in [\"nf_tables\"\
+        , \"iptable_filter\", \"ip6table_filter\",\n    \"bpfilter\", \"ip6_tables\"\
+        , \"ip6table_nat\", \"nf_reject_ipv4\", \"ipt_REJECT\", \"iptable_raw\"]\n\
+        \    && process.ancestors.file.name not in [~\"falcon*\", \"unattended-upgrade\"\
+        , \"apt.systemd.daily\",\n    \"xtables-legacy-multi\", \"ssm-agent-worker\"\
+        ]\n  agent_version: ''\n  filters:\n  - os == \"linux\"\n- id: kernel_module_load_container\n\
+        \  version: 139b666a\n  description: A container loaded a new kernel module\n\
+        \  expression: load_module.name != \"\" && container.id !=\"\"\n  agent_version:\
+        \ ''\n  filters: []\n- id: kernel_module_load_from_memory\n  version: 78122acd\n\
+        \  description: A kernel module was loaded from memory\n  expression: load_module.loaded_from_memory\
+        \ == true\n  agent_version: ''\n  filters:\n  - os == \"linux\"\n- id: kernel_module_load_from_memory_container\n\
         \  version: a277c753\n  description: A kernel module was loaded from memory\
         \ inside a container\n  expression: load_module.loaded_from_memory == true\
-        \ && container.id !=\"\"\n- id: kernel_module_open\n  version: 55f9569\n \
-        \ description: A kernel module was added to /lib/modules/\n  expression: \"\
-        (\\n    open.flags & (O_CREAT|O_TRUNC|O_RDWR|O_WRONLY) > 0 &&\\n    (open.file.path\\\
-        \n    \\ in [ ~\\\"/lib/modules/*\\\", ~\\\"/usr/lib/modules/*\\\" ])\\n \
-        \   && process.file.path\\\n    \\ not in [\\\"/usr/bin/apt\\\", \\\"/usr/bin/apt-get\\\
-        \", \\\"/usr/bin/apt-config\\\", \\\"\\\n    /usr/bin/dpkg\\\", \\\"/usr/bin/aptitude-curses\\\
-        \", \\\"/usr/bin/rpm\\\", \\\"/usr/bin/unattended-upgrade\\\"\\\n    ]\\n\
-        \    && process.ancestors.file.path not in [\\\"/usr/bin/apt\\\", \\\"/usr/bin/apt-get\\\
-        \"\\\n    , \\\"/usr/bin/apt-config\\\", \\\"/usr/bin/dpkg\\\", \\\"/usr/bin/aptitude-curses\\\
-        \", \\\"\\\n    /usr/bin/rpm\\\", \\\"/usr/bin/unattended-upgrade\\\"] &&\
-        \ process.ancestors.file.path\\\n    \\ != \\\"/usr/bin/kmod\\\"\\n)\"\n-\
-        \ id: kernel_module_rename\n  version: 9d8cb7d8\n  description: A kernel module\
-        \ was added to /lib/modules/\n  expression: \"(\\n    (rename.file.path in\
-        \ [ ~\\\"/lib/modules/*\\\", ~\\\"/usr/lib/modules/*\\\"\\\n    \\ ]\\n  \
-        \  || rename.file.destination.path in [ ~\\\"/lib/modules/*\\\", ~\\\"/usr/lib/modules/*\\\
-        \"\\\n    \\ ])\\n    && process.file.path not in [\\\"/usr/bin/apt\\\", \\\
-        \"/usr/bin/apt-get\\\"\\\n    , \\\"/usr/bin/apt-config\\\", \\\"/usr/bin/dpkg\\\
-        \", \\\"/usr/bin/aptitude-curses\\\", \\\"\\\n    /usr/bin/rpm\\\", \\\"/usr/bin/unattended-upgrade\\\
-        \"]\\n    && process.ancestors.file.path\\\n    \\ not in [\\\"/usr/bin/apt\\\
-        \", \\\"/usr/bin/apt-get\\\", \\\"/usr/bin/apt-config\\\", \\\"\\\n    /usr/bin/dpkg\\\
-        \", \\\"/usr/bin/aptitude-curses\\\", \\\"/usr/bin/rpm\\\", \\\"/usr/bin/unattended-upgrade\\\
-        \"\\\n    ] && process.ancestors.file.path != \\\"/usr/bin/kmod\\\"\\n)\"\n\
-        - id: kernel_module_unlink\n  version: 652391be\n  description: A kernel module\
-        \ was added to /lib/modules/\n  expression: \"(\\n    (unlink.file.path in\
-        \ [ ~\\\"/lib/modules/*\\\", ~\\\"/usr/lib/modules/*\\\"\\\n    \\ ])\\n \
-        \   && process.file.path not in [\\\"/usr/bin/apt\\\", \\\"/usr/bin/apt-get\\\
-        \"\\\n    , \\\"/usr/bin/apt-config\\\", \\\"/usr/bin/dpkg\\\", \\\"/usr/bin/aptitude-curses\\\
-        \", \\\"\\\n    /usr/bin/rpm\\\", \\\"/usr/bin/unattended-upgrade\\\"]\\n\
-        \    && process.ancestors.file.path\\\n    \\ not in [\\\"/usr/bin/apt\\\"\
-        , \\\"/usr/bin/apt-get\\\", \\\"/usr/bin/apt-config\\\", \\\"\\\n    /usr/bin/dpkg\\\
-        \", \\\"/usr/bin/aptitude-curses\\\", \\\"/usr/bin/rpm\\\", \\\"/usr/bin/unattended-upgrade\\\
-        \"\\\n    ] && process.ancestors.file.path != \\\"/usr/bin/kmod\\\"\\n)\"\n\
-        - id: kernel_module_utimes\n  version: 405d45e7\n  description: A kernel module\
-        \ was added to /lib/modules/\n  expression: \"(\\n    (utimes.file.path in\
-        \ [ ~\\\"/lib/modules/*\\\", ~\\\"/usr/lib/modules/*\\\"\\\n    \\ ])\\n \
-        \   && process.file.path not in [\\\"/usr/bin/apt\\\", \\\"/usr/bin/apt-get\\\
-        \"\\\n    , \\\"/usr/bin/apt-config\\\", \\\"/usr/bin/dpkg\\\", \\\"/usr/bin/aptitude-curses\\\
-        \", \\\"\\\n    /usr/bin/rpm\\\", \\\"/usr/bin/unattended-upgrade\\\"]\\n\
-        \    && process.ancestors.file.path\\\n    \\ not in [\\\"/usr/bin/apt\\\"\
-        , \\\"/usr/bin/apt-get\\\", \\\"/usr/bin/apt-config\\\", \\\"\\\n    /usr/bin/dpkg\\\
-        \", \\\"/usr/bin/aptitude-curses\\\", \\\"/usr/bin/rpm\\\", \\\"/usr/bin/unattended-upgrade\\\
-        \"\\\n    ] && process.ancestors.file.path != \\\"/usr/bin/kmod\\\"\\n)\"\n\
-        - id: net_util\n  version: fc362090\n  description: A network utility was\
-        \ executed from a suspicious location\n  expression: \"(exec.file.path in\
-        \ [\\\"/usr/bin/socat\\\", \\\"/usr/bin/dig\\\", \\\"/usr/bin/nslookup\\\"\
-        \\\n    , \\\"/usr/bin/netcat\\\", \\\"/usr/bin/nc\\\"] ||\\n exec.file.path\
-        \ in [\\\"/usr/bin/wget\\\"\\\n    , \\\"/usr/bin/curl\\\"]) &&\\ncontainer.id\
-        \ == \\\"\\\" && (exec.args not in [ ~\\\"*localhost*\\\"\\\n    , ~\\\"*127.0.0.1*\\\
-        \", ~\\\"*motd.ubuntu.com*\\\" ] || process.ancestors.comm != \\\"50-motd-news\\\
-        \"\\\n    ) && process.ancestors.file.path in [ ~\\\"/tmp/**\\\", ~\\\"/var/tmp/**\\\
-        \", ~\\\"/home/**\\\"\\\n    , ~\\\"/run/user/**\\\" ]\"\n- id: net_util_in_container\n\
-        \  version: 69e03ac1\n  description: A network utility was executed from a\
-        \ suspicious location in a container\n  expression: \"(exec.file.path in [\\\
-        \"/usr/bin/socat\\\", \\\"/usr/bin/dig\\\", \\\"/usr/bin/nslookup\\\"\\\n\
-        \    , \\\"/usr/bin/netcat\\\", \\\"/usr/bin/nc\\\"] ||\\n exec.file.path\
-        \ in [\\\"/usr/bin/wget\\\"\\\n    , \\\"/usr/bin/curl\\\"]) &&\\ncontainer.id\
-        \ != \\\"\\\" && (exec.args not in [ ~\\\"*localhost*\\\"\\\n    , ~\\\"*127.0.0.1*\\\
-        \", ~\\\"*motd.ubuntu.com*\\\" ] || process.ancestors.comm != \\\"50-motd-news\\\
-        \"\\\n    ) && process.ancestors.file.path in [ ~\\\"/tmp/**\\\", ~\\\"/var/tmp/**\\\
-        \", ~\\\"/home/**\\\"\\\n    , ~\\\"/run/user/**\\\" ]\"\n- id: new_binary_execution_in_container\n\
-        \  version: 9dc42e1d\n  description: A container executed a new a binary not\
-        \ found in the container image\n  expression: container.id !=\"\" && !process.file.in_upper_layer\
-        \ && process.file.modification_time\n    < 30s && exec.file.name !=\"\"\n\
-        - id: new_kernel_module_audit\n  version: 904592b4\n  description: A kernel\
-        \ module was loaded\n  expression: load_module.name != \"\"\n- id: new_kernel_module_audit_container\n\
-        \  version: 139b666a\n  description: A kernel module was loaded\n  expression:\
-        \ load_module.name != \"\" && container.id !=\"\"\n- id: nsswitch_conf_mod_chmod\n\
-        \  version: d301aedf\n  description: Nsswitch Configuration Modified\n  expression:\
-        \ \"(\\n    (chmod.file.path in [ \\\"/etc/nsswitch.conf\\\" ])\\n) && chmod.mode\\\
-        \n    \\ != chmod.file.mode\"\n- id: nsswitch_conf_mod_chown\n  version: '69383592'\n\
-        \  description: Nsswitch Configuration Modified\n  expression: \"(\\n    (chown.file.path\
-        \ in [ \\\"/etc/nsswitch.conf\\\" ])\\n) && (chown.uid\\\n    \\ != chown.file.uid\
-        \ || chown.gid != chown.file.gid)\"\n- id: nsswitch_conf_mod_link\n  version:\
-        \ e0565b29\n  description: Nsswitch Configuration Modified\n  expression:\
-        \ \"(\\n    (link.file.path in [ \\\"/etc/nsswitch.conf\\\" ]\\n    || link.file.destination.path\\\
-        \n    \\ in [ \\\"/etc/nsswitch.conf\\\" ])\\n)\"\n- id: nsswitch_conf_mod_open\n\
-        \  version: b5602c6f\n  description: Nsswitch Configuration Modified\n  expression:\
-        \ \"(\\n    open.flags & ((O_RDWR|O_WRONLY|O_CREAT)) > 0 &&\\n    (open.file.path\\\
-        \n    \\ in [ \\\"/etc/nsswitch.conf\\\" ])\\n)\"\n- id: nsswitch_conf_mod_rename\n\
-        \  version: aad34176\n  description: Nsswitch Configuration Modified\n  expression:\
-        \ \"(\\n    (rename.file.path in [ \\\"/etc/nsswitch.conf\\\" ]\\n    || rename.file.destination.path\\\
-        \n    \\ in [ \\\"/etc/nsswitch.conf\\\" ])\\n)\"\n- id: nsswitch_conf_mod_unlink\n\
-        \  version: 8a3e2fbb\n  description: Nsswitch Configuration Modified\n  expression:\
-        \ \"(\\n    (unlink.file.path in [ \\\"/etc/nsswitch.conf\\\" ])\\n)\"\n-\
-        \ id: nsswitch_conf_mod_utimes\n  version: 902597c0\n  description: Nsswitch\
-        \ Configuration Modified\n  expression: \"(\\n    (utimes.file.path in [ \\\
-        \"/etc/nsswitch.conf\\\" ])\\n)\"\n- id: package_management_in_container\n\
-        \  version: c152fcaf\n  description: Package management in container\n  expression:\
-        \ exec.file.path in [\"/usr/bin/apt\", \"/usr/bin/apt-get\", \"/usr/bin/apt-config\"\
-        ,\n    \"/usr/bin/dpkg\", \"/usr/bin/aptitude-curses\", \"/usr/bin/rpm\",\
-        \ \"/usr/bin/unattended-upgrade\"]\n    && container.id != \"\"\n- id: pam_modification_chmod\n\
-        \  version: 974a676e\n  description: PAM Configuration Files Modification\n\
-        \  expression: \"(\\n    (chmod.file.path in [ ~\\\"/etc/pam.d/*\\\", \\\"\
-        /etc/pam.conf\\\" ])\\n\\\n    ) && chmod.mode != chmod.file.mode\"\n- id:\
-        \ pam_modification_chown\n  version: ca22d0ab\n  description: PAM Configuration\
-        \ Files Modification\n  expression: \"(\\n    (chown.file.path in [ ~\\\"\
-        /etc/pam.d/*\\\", \\\"/etc/pam.conf\\\" ])\\n\\\n    ) && (chown.uid != chown.file.uid\
-        \ || chown.gid != chown.file.gid)\"\n- id: pam_modification_link\n  version:\
-        \ 3d5d6b31\n  description: PAM Configuration Files Modification\n  expression:\
-        \ \"(\\n    (link.file.path in [ ~\\\"/etc/pam.d/*\\\", \\\"/etc/pam.conf\\\
-        \" ]\\n\\\n    \\    || link.file.destination.path in [ ~\\\"/etc/pam.d/*\\\
-        \", \\\"/etc/pam.conf\\\" ])\\n\\\n    )\"\n- id: pam_modification_open\n\
-        \  version: 9440f452\n  description: PAM Configuration Files Modification\n\
-        \  expression: \"(\\n    open.flags & (O_CREAT|O_TRUNC|O_RDWR|O_WRONLY) >\
-        \ 0 &&\\n    (open.file.path\\\n    \\ in [ ~\\\"/etc/pam.d/*\\\", \\\"/etc/pam.conf\\\
-        \" ])\\n)\"\n- id: pam_modification_rename\n  version: bd1d257a\n  description:\
-        \ PAM Configuration Files Modification\n  expression: \"(\\n    (rename.file.path\
-        \ in [ ~\\\"/etc/pam.d/*\\\", \\\"/etc/pam.conf\\\"\\\n    \\ ]\\n    || rename.file.destination.path\
-        \ in [ ~\\\"/etc/pam.d/*\\\", \\\"/etc/pam.conf\\\"\\\n    \\ ])\\n)\"\n-\
-        \ id: pam_modification_unlink\n  version: c3dc53e1\n  description: PAM Configuration\
-        \ Files Modification\n  expression: \"(\\n    (unlink.file.path in [ ~\\\"\
-        /etc/pam.d/*\\\", \\\"/etc/pam.conf\\\"\\\n    \\ ])\\n)\"\n- id: pam_modification_utimes\n\
-        \  version: d377b599\n  description: PAM Configuration Files Modification\n\
-        \  expression: \"(\\n    (utimes.file.path in [ ~\\\"/etc/pam.d/*\\\", \\\"\
-        /etc/pam.conf\\\"\\\n    \\ ])\\n)\"\n- id: passwd_execution\n  version: e1d41f5e\n\
-        \  description: Passwd utility executed\n  expression: exec.file.path == \"\
-        /usr/bin/passwd\"\n- id: pci_11_5_critical_binaries_chmod\n  version: 1945831d\n\
-        \  description: Critical System Binaries\n  expression: \"(\\n    (chmod.file.path\
-        \ in [ ~\\\"/bin/*\\\", ~\\\"/sbin/*\\\", ~\\\"/usr/bin/*\\\"\\\n    , ~\\\
-        \"/usr/sbin/*\\\", ~\\\"/usr/local/bin/*\\\", ~\\\"/usr/local/sbin/*\\\",\
-        \ ~\\\"/boot/*\\\"\\\n    \\ ])\\n    && process.file.path not in [\\\"/usr/bin/apt\\\
-        \", \\\"/usr/bin/apt-get\\\"\\\n    , \\\"/usr/bin/apt-config\\\", \\\"/usr/bin/dpkg\\\
-        \", \\\"/usr/bin/aptitude-curses\\\", \\\"\\\n    /usr/bin/rpm\\\", \\\"/usr/bin/unattended-upgrade\\\
-        \"]\\n    && process.ancestors.file.path\\\n    \\ not in [\\\"/usr/bin/apt\\\
-        \", \\\"/usr/bin/apt-get\\\", \\\"/usr/bin/apt-config\\\", \\\"\\\n    /usr/bin/dpkg\\\
-        \", \\\"/usr/bin/aptitude-curses\\\", \\\"/usr/bin/rpm\\\", \\\"/usr/bin/unattended-upgrade\\\
-        \"\\\n    ]\\n) && chmod.mode != chmod.file.mode\"\n- id: pci_11_5_critical_binaries_chown\n\
-        \  version: 21da2189\n  description: Critical System Binaries\n  expression:\
-        \ \"(\\n    (chown.file.path in [ ~\\\"/bin/*\\\", ~\\\"/sbin/*\\\", ~\\\"\
-        /usr/bin/*\\\"\\\n    , ~\\\"/usr/sbin/*\\\", ~\\\"/usr/local/bin/*\\\", ~\\\
-        \"/usr/local/sbin/*\\\", ~\\\"/boot/*\\\"\\\n    \\ ])\\n    && process.file.path\
-        \ not in [\\\"/usr/bin/apt\\\", \\\"/usr/bin/apt-get\\\"\\\n    , \\\"/usr/bin/apt-config\\\
-        \", \\\"/usr/bin/dpkg\\\", \\\"/usr/bin/aptitude-curses\\\", \\\"\\\n    /usr/bin/rpm\\\
-        \", \\\"/usr/bin/unattended-upgrade\\\"]\\n    && process.ancestors.file.path\\\
-        \n    \\ not in [\\\"/usr/bin/apt\\\", \\\"/usr/bin/apt-get\\\", \\\"/usr/bin/apt-config\\\
-        \", \\\"\\\n    /usr/bin/dpkg\\\", \\\"/usr/bin/aptitude-curses\\\", \\\"\
-        /usr/bin/rpm\\\", \\\"/usr/bin/unattended-upgrade\\\"\\\n    ]\\n) && (chown.uid\
-        \ != chown.file.uid || chown.gid != chown.file.gid)\"\n- id: pci_11_5_critical_binaries_link\n\
-        \  version: a7ac587c\n  description: Critical System Binaries\n  expression:\
-        \ \"(\\n    (link.file.path in [ ~\\\"/bin/*\\\", ~\\\"/sbin/*\\\", ~\\\"\
-        /usr/bin/*\\\"\\\n    , ~\\\"/usr/sbin/*\\\", ~\\\"/usr/local/bin/*\\\", ~\\\
-        \"/usr/local/sbin/*\\\", ~\\\"/boot/*\\\"\\\n    \\ ]\\n    || link.file.destination.path\
-        \ in [ ~\\\"/bin/*\\\", ~\\\"/sbin/*\\\", ~\\\"/usr/bin/*\\\"\\\n    , ~\\\
-        \"/usr/sbin/*\\\", ~\\\"/usr/local/bin/*\\\", ~\\\"/usr/local/sbin/*\\\",\
-        \ ~\\\"/boot/*\\\"\\\n    \\ ])\\n    && process.file.path not in [\\\"/usr/bin/apt\\\
-        \", \\\"/usr/bin/apt-get\\\"\\\n    , \\\"/usr/bin/apt-config\\\", \\\"/usr/bin/dpkg\\\
-        \", \\\"/usr/bin/aptitude-curses\\\", \\\"\\\n    /usr/bin/rpm\\\", \\\"/usr/bin/unattended-upgrade\\\
-        \"]\\n    && process.ancestors.file.path\\\n    \\ not in [\\\"/usr/bin/apt\\\
-        \", \\\"/usr/bin/apt-get\\\", \\\"/usr/bin/apt-config\\\", \\\"\\\n    /usr/bin/dpkg\\\
-        \", \\\"/usr/bin/aptitude-curses\\\", \\\"/usr/bin/rpm\\\", \\\"/usr/bin/unattended-upgrade\\\
-        \"\\\n    ]\\n)\"\n- id: pci_11_5_critical_binaries_open\n  version: f583ba7c\n\
-        \  description: Critical System Binaries\n  expression: \"(\\n    open.flags\
-        \ & (O_CREAT|O_TRUNC|O_RDWR|O_WRONLY) > 0 &&\\n    (open.file.path\\\n   \
-        \ \\ in [ ~\\\"/bin/*\\\", ~\\\"/sbin/*\\\", ~\\\"/usr/bin/*\\\", ~\\\"/usr/sbin/*\\\
-        \", ~\\\"/usr/local/bin/*\\\"\\\n    , ~\\\"/usr/local/sbin/*\\\", ~\\\"/boot/*\\\
-        \" ])\\n    && process.file.path not in [\\\"\\\n    /usr/bin/apt\\\", \\\"\
-        /usr/bin/apt-get\\\", \\\"/usr/bin/apt-config\\\", \\\"/usr/bin/dpkg\\\"\\\
-        \n    , \\\"/usr/bin/aptitude-curses\\\", \\\"/usr/bin/rpm\\\", \\\"/usr/bin/unattended-upgrade\\\
-        \"\\\n    ]\\n    && process.ancestors.file.path not in [\\\"/usr/bin/apt\\\
-        \", \\\"/usr/bin/apt-get\\\"\\\n    , \\\"/usr/bin/apt-config\\\", \\\"/usr/bin/dpkg\\\
-        \", \\\"/usr/bin/aptitude-curses\\\", \\\"\\\n    /usr/bin/rpm\\\", \\\"/usr/bin/unattended-upgrade\\\
-        \"]\\n)\"\n- id: pci_11_5_critical_binaries_rename\n  version: e0bc0857\n\
-        \  description: Critical System Binaries\n  expression: \"(\\n    (rename.file.path\
-        \ in [ ~\\\"/bin/*\\\", ~\\\"/sbin/*\\\", ~\\\"/usr/bin/*\\\"\\\n    , ~\\\
-        \"/usr/sbin/*\\\", ~\\\"/usr/local/bin/*\\\", ~\\\"/usr/local/sbin/*\\\",\
-        \ ~\\\"/boot/*\\\"\\\n    \\ ]\\n    || rename.file.destination.path in [\
-        \ ~\\\"/bin/*\\\", ~\\\"/sbin/*\\\", ~\\\"/usr/bin/*\\\"\\\n    , ~\\\"/usr/sbin/*\\\
-        \", ~\\\"/usr/local/bin/*\\\", ~\\\"/usr/local/sbin/*\\\", ~\\\"/boot/*\\\"\
-        \\\n    \\ ])\\n    && process.file.path not in [\\\"/usr/bin/apt\\\", \\\"\
-        /usr/bin/apt-get\\\"\\\n    , \\\"/usr/bin/apt-config\\\", \\\"/usr/bin/dpkg\\\
-        \", \\\"/usr/bin/aptitude-curses\\\", \\\"\\\n    /usr/bin/rpm\\\", \\\"/usr/bin/unattended-upgrade\\\
-        \"]\\n    && process.ancestors.file.path\\\n    \\ not in [\\\"/usr/bin/apt\\\
-        \", \\\"/usr/bin/apt-get\\\", \\\"/usr/bin/apt-config\\\", \\\"\\\n    /usr/bin/dpkg\\\
-        \", \\\"/usr/bin/aptitude-curses\\\", \\\"/usr/bin/rpm\\\", \\\"/usr/bin/unattended-upgrade\\\
-        \"\\\n    ]\\n)\"\n- id: pci_11_5_critical_binaries_unlink\n  version: 3bb086ca\n\
-        \  description: Critical System Binaries\n  expression: \"(\\n    (unlink.file.path\
-        \ in [ ~\\\"/bin/*\\\", ~\\\"/sbin/*\\\", ~\\\"/usr/bin/*\\\"\\\n    , ~\\\
-        \"/usr/sbin/*\\\", ~\\\"/usr/local/bin/*\\\", ~\\\"/usr/local/sbin/*\\\",\
-        \ ~\\\"/boot/*\\\"\\\n    \\ ])\\n    && process.file.path not in [\\\"/usr/bin/apt\\\
-        \", \\\"/usr/bin/apt-get\\\"\\\n    , \\\"/usr/bin/apt-config\\\", \\\"/usr/bin/dpkg\\\
-        \", \\\"/usr/bin/aptitude-curses\\\", \\\"\\\n    /usr/bin/rpm\\\", \\\"/usr/bin/unattended-upgrade\\\
-        \"]\\n    && process.ancestors.file.path\\\n    \\ not in [\\\"/usr/bin/apt\\\
-        \", \\\"/usr/bin/apt-get\\\", \\\"/usr/bin/apt-config\\\", \\\"\\\n    /usr/bin/dpkg\\\
-        \", \\\"/usr/bin/aptitude-curses\\\", \\\"/usr/bin/rpm\\\", \\\"/usr/bin/unattended-upgrade\\\
-        \"\\\n    ]\\n)\"\n- id: pci_11_5_critical_binaries_utimes\n  version: 6d979630\n\
-        \  description: Critical System Binaries\n  expression: \"(\\n    (utimes.file.path\
-        \ in [ ~\\\"/bin/*\\\", ~\\\"/sbin/*\\\", ~\\\"/usr/bin/*\\\"\\\n    , ~\\\
-        \"/usr/sbin/*\\\", ~\\\"/usr/local/bin/*\\\", ~\\\"/usr/local/sbin/*\\\",\
-        \ ~\\\"/boot/*\\\"\\\n    \\ ])\\n    && process.file.path not in [\\\"/usr/bin/apt\\\
-        \", \\\"/usr/bin/apt-get\\\"\\\n    , \\\"/usr/bin/apt-config\\\", \\\"/usr/bin/dpkg\\\
-        \", \\\"/usr/bin/aptitude-curses\\\", \\\"\\\n    /usr/bin/rpm\\\", \\\"/usr/bin/unattended-upgrade\\\
-        \"]\\n    && process.ancestors.file.path\\\n    \\ not in [\\\"/usr/bin/apt\\\
-        \", \\\"/usr/bin/apt-get\\\", \\\"/usr/bin/apt-config\\\", \\\"\\\n    /usr/bin/dpkg\\\
-        \", \\\"/usr/bin/aptitude-curses\\\", \\\"/usr/bin/rpm\\\", \\\"/usr/bin/unattended-upgrade\\\
-        \"\\\n    ]\\n)\"\n- id: potential_web_shell\n  version: dcaa6f4d\n  description:\
-        \ A webapp process (language engine or webserver) spawned a shell, shell\n\
-        \    utility, or HTTP utility\n  expression: \"(exec.file.path in [ \\\"/bin/dash\\\
-        \", \\\"/usr/bin/dash\\\",\\n  \\\"/bin/sh\\\"\\\n    , \\\"/bin/static-sh\\\
-        \", \\\"/usr/bin/sh\\\",\\n  \\\"/usr/bin/bash\\\",\\n  \\\"/bin/bash-static\\\
-        \"\\\n    ,\\n  \\\"/usr/bin/zsh\\\",\\n  \\\"/usr/bin/ash\\\",\\n  \\\"/usr/bin/csh\\\
-        \",\\n  \\\"/usr/bin/ksh\\\"\\\n    ,\\n  \\\"/usr/bin/tcsh\\\",\\n  \\\"\
-        /usr/lib/initramfs-tools/bin/busybox\\\",\\n  \\\"/bin/busybox\\\"\\\n   \
-        \ ,\\n  \\\"/usr/bin/fish\\\",\\n  \\\"/bin/ksh93\\\",\\n  \\\"/bin/rksh\\\
-        \", \\\"/bin/rksh93\\\",\\n\\\n    \\  \\\"/bin/lksh\\\",\\n  \\\"/bin/mksh\\\
-        \", \\\"/bin/mksh-static\\\",\\n  \\\"/usr/bin/csharp\\\"\\\n    ,\\n  \\\"\
-        /bin/posh\\\",\\n  \\\"/usr/bin/rc\\\",\\n  \\\"/bin/sash\\\",\\n  \\\"/usr/bin/yash\\\
-        \"\\\n    ,\\n  \\\"/bin/zsh5\\\", \\\"/bin/zsh5-static\\\" ] || exec.file.path\
-        \ in [\\\"/usr/bin/wget\\\"\\\n    , \\\"/usr/bin/curl\\\"] || exec.file.path\
-        \ in [\\\"/bin/cat\\\",\\\"/bin/chgrp\\\",\\\"/bin/chmod\\\"\\\n    ,\\\"\
-        /bin/chown\\\",\\\"/bin/cp\\\",\\\"/bin/date\\\",\\\"/bin/dd\\\",\\\"/bin/df\\\
-        \",\\\"/bin/dir\\\"\\\n    ,\\\"/bin/echo\\\",\\\"/bin/ln\\\",\\\"/bin/ls\\\
-        \",\\\"/bin/mkdir\\\",\\\"/bin/mknod\\\",\\\"/bin/mktemp\\\"\\\n    ,\\\"\
-        /bin/mv\\\",\\\"/bin/pwd\\\",\\\"/bin/readlink\\\",\\\"/bin/rm\\\",\\\"/bin/rmdir\\\
-        \",\\\"/bin/sleep\\\"\\\n    ,\\\"/bin/stty\\\",\\\"/bin/sync\\\",\\\"/bin/touch\\\
-        \",\\\"/bin/uname\\\",\\\"/bin/vdir\\\",\\\"/usr/bin/arch\\\"\\\n    ,\\\"\
-        /usr/bin/b2sum\\\",\\\"/usr/bin/base32\\\",\\\"/usr/bin/base64\\\",\\\"/usr/bin/basename\\\
-        \"\\\n    ,\\\"/usr/bin/chcon\\\",\\\"/usr/bin/cksum\\\",\\\"/usr/bin/comm\\\
-        \",\\\"/usr/bin/csplit\\\",\\\"\\\n    /usr/bin/cut\\\",\\\"/usr/bin/dircolors\\\
-        \",\\\"/usr/bin/dirname\\\",\\\"/usr/bin/du\\\",\\\"\\\n    /usr/bin/env\\\
-        \",\\\"/usr/bin/expand\\\",\\\"/usr/bin/expr\\\",\\\"/usr/bin/factor\\\",\\\
-        \"/usr/bin/fmt\\\"\\\n    ,\\\"/usr/bin/fold\\\",\\\"/usr/bin/groups\\\",\\\
-        \"/usr/bin/head\\\",\\\"/usr/bin/hostid\\\",\\\"\\\n    /usr/bin/id\\\",\\\
-        \"/usr/bin/install\\\",\\\"/usr/bin/join\\\",\\\"/usr/bin/link\\\",\\\"/usr/bin/logname\\\
-        \"\\\n    ,\\\"/usr/bin/md5sum\\\",\\\"/usr/bin/md5sum.textutils\\\",\\\"\
-        /usr/bin/mkfifo\\\",\\\"/usr/bin/nice\\\"\\\n    ,\\\"/usr/bin/nl\\\",\\\"\
-        /usr/bin/nohup\\\",\\\"/usr/bin/nproc\\\",\\\"/usr/bin/numfmt\\\",\\\"\\\n\
-        \    /usr/bin/od\\\",\\\"/usr/bin/paste\\\",\\\"/usr/bin/pathchk\\\",\\\"\
-        /usr/bin/pinky\\\",\\\"/usr/bin/pr\\\"\\\n    ,\\\"/usr/bin/printenv\\\",\\\
-        \"/usr/bin/printf\\\",\\\"/usr/bin/ptx\\\",\\\"/usr/bin/realpath\\\"\\\n \
-        \   ,\\\"/usr/bin/runcon\\\",\\\"/usr/bin/seq\\\",\\\"/usr/bin/sha1sum\\\"\
-        ,\\\"/usr/bin/sha224sum\\\"\\\n    ,\\\"/usr/bin/sha256sum\\\",\\\"/usr/bin/sha384sum\\\
-        \",\\\"/usr/bin/sha512sum\\\",\\\"/usr/bin/shred\\\"\\\n    ,\\\"/usr/bin/shuf\\\
-        \",\\\"/usr/bin/sort\\\",\\\"/usr/bin/split\\\",\\\"/usr/bin/stat\\\",\\\"\
-        /usr/bin/stdbuf\\\"\\\n    ,\\\"/usr/bin/sum\\\",\\\"/usr/bin/tac\\\",\\\"\
-        /usr/bin/tail\\\",\\\"/usr/bin/tee\\\",\\\"/usr/bin/test\\\"\\\n    ,\\\"\
-        /usr/bin/timeout\\\",\\\"/usr/bin/tr\\\",\\\"/usr/bin/truncate\\\",\\\"/usr/bin/tsort\\\
-        \"\\\n    ,\\\"/usr/bin/tty\\\",\\\"/usr/bin/unexpand\\\",\\\"/usr/bin/uniq\\\
-        \",\\\"/usr/bin/unlink\\\"\\\n    ,\\\"/usr/bin/users\\\",\\\"/usr/bin/wc\\\
-        \",\\\"/usr/bin/who\\\",\\\"/usr/bin/whoami\\\",\\\"/usr/sbin/chroot\\\"\\\
-        \n    ]) &&\\n(process.ancestors.file.name in [~\\\"python2*\\\", ~\\\"python3*\\\
-        \", \\\"node\\\"\\\n    , \\\"apache2\\\", \\\"nginx\\\", ~\\\"tomcat*\\\"\
-        ] || process.ancestors.file.name =~ \\\"php*\\\"\\\n    ) &&\\nprocess.ancestors.comm\
-        \ not in [\\\"pip3\\\", \\\"pip\\\", \\\"npm\\\"]\"\n- id: ptrace_antidebug\n\
-        \  version: a6289ff7\n  description: A process uses an anti-debugging technique\
-        \ to block debuggers\n  expression: ptrace.request == PTRACE_TRACEME\n- id:\
-        \ ptrace_injection\n  version: 6d290a43\n  description: A process attempted\
-        \ to inject code into another process\n  expression: ptrace.request == PTRACE_POKETEXT\
-        \ || ptrace.request == PTRACE_POKEDATA\n    || ptrace.request == PTRACE_POKEUSR\n\
-        - id: pwnkit_privilege_escalation\n  version: c83bbabc\n  description: A process\
-        \ was spawned with indicators of exploitation of CVE-2021-4034\n  expression:\
-        \ (exec.file.path == \"/usr/bin/pkexec\" && exec.envs in [~\"*SHELL*\", ~\"\
-        *PATH*\"]\n    && exec.uid != 0)\n- id: runc_modification\n  version: c7144439\n\
-        \  description: Runc Binary Modified\n  expression: 'open.file.path in [\"\
-        /usr/bin/runc\", \"/usr/sbin/runc\", \"/usr/bin/docker-runc\"]\n\n    && open.flags\
-        \ & O_CREAT|O_TRUNC|O_RDWR|O_WRONLY > 0\n\n    && process.file.path not in\
-        \ [\"/usr/bin/apt\", \"/usr/bin/apt-get\", \"/usr/bin/apt-config\",\n    \"\
-        /usr/bin/dpkg\", \"/usr/bin/aptitude-curses\", \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\"\
-        ]\n\n    && process.ancestors.file.path not in [\"/usr/bin/apt\", \"/usr/bin/apt-get\"\
-        , \"/usr/bin/apt-config\",\n    \"/usr/bin/dpkg\", \"/usr/bin/aptitude-curses\"\
-        , \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\"]'\n- id: selinux_disable_enforcement\n\
-        \  version: afa9a8ba\n  description: SELinux enforcement status was disabled\n\
-        \  expression: selinux.enforce.status in [\"permissive\", \"disabled\"]\n\
-        - id: ssh_authorized_keys_chmod\n  version: e4096f79\n  description: SSH Authorized\
-        \ Keys Modified\n  expression: \"(\\n    chmod.file.name == \\\"authorized_keys\\\
-        \" && (chmod.file.path in\\\n    \\ [ ~\\\"*/.ssh/*\\\" ])\\n) && chmod.mode\
-        \ != chmod.file.mode\"\n- id: ssh_authorized_keys_chown\n  version: 9639bf6\n\
-        \  description: SSH Authorized Keys Modified\n  expression: \"(\\n    chown.file.name\
-        \ == \\\"authorized_keys\\\" && (chown.file.path in\\\n    \\ [ ~\\\"*/.ssh/*\\\
-        \" ])\\n) && (chown.uid != chown.file.uid || chown.gid != chown.file.gid)\"\
-        \n- id: ssh_authorized_keys_link\n  version: 81382bdd\n  description: SSH\
-        \ Authorized Keys Modified\n  expression: \"(\\n    link.file.name == \\\"\
-        authorized_keys\\\" && (link.file.path in\\\n    \\ [ ~\\\"*/.ssh/*\\\" ]\\\
-        n    || link.file.destination.path in [ ~\\\"*/.ssh/*\\\" ])\\n\\\n    )\"\
-        \n- id: ssh_authorized_keys_open\n  version: 1ae8f7d6\n  description: SSH\
-        \ Authorized Keys Modified\n  expression: \"(\\n    open.flags & (O_CREAT|O_TRUNC|O_RDWR|O_WRONLY)\
-        \ > 0 &&\\n    open.file.name\\\n    \\ == \\\"authorized_keys\\\" && (open.file.path\
-        \ in [ ~\\\"*/.ssh/*\\\" ])\\n)\"\n- id: ssh_authorized_keys_rename\n  version:\
-        \ fd3bdabf\n  description: SSH Authorized Keys Modified\n  expression: \"\
-        (\\n    rename.file.name == \\\"authorized_keys\\\" && (rename.file.path\\\
-        \n    \\ in [ ~\\\"*/.ssh/*\\\" ]\\n    || rename.file.destination.path in\
-        \ [ ~\\\"*/.ssh/*\\\"\\\n    \\ ])\\n)\"\n- id: ssh_authorized_keys_unlink\n\
-        \  version: 54cf4a88\n  description: SSH Authorized Keys Modified\n  expression:\
-        \ \"(\\n    unlink.file.name == \\\"authorized_keys\\\" && (unlink.file.path\\\
-        \n    \\ in [ ~\\\"*/.ssh/*\\\" ])\\n)\"\n- id: ssh_authorized_keys_utimes\n\
-        \  version: 59377e61\n  description: SSH Authorized Keys Modified\n  expression:\
-        \ \"(\\n    utimes.file.name == \\\"authorized_keys\\\" && (utimes.file.path\\\
-        \n    \\ in [ ~\\\"*/.ssh/*\\\" ])\\n)\"\n- id: ssl_certificate_tampering_chmod\n\
-        \  version: d8ac6517\n  description: SSL Certificate Tampering\n  expression:\
-        \ \"(\\n    (chmod.file.path in [ ~\\\"/etc/ssl/certs/*\\\" ])\\n    && process.file.path\\\
-        \n    \\ not in [\\\"/usr/bin/apt\\\", \\\"/usr/bin/apt-get\\\", \\\"/usr/bin/apt-config\\\
-        \", \\\"\\\n    /usr/bin/dpkg\\\", \\\"/usr/bin/aptitude-curses\\\", \\\"\
-        /usr/bin/rpm\\\", \\\"/usr/bin/unattended-upgrade\\\"\\\n    ]\\n) && chmod.mode\
-        \ != chmod.file.mode\"\n- id: ssl_certificate_tampering_chown\n  version:\
-        \ 3d04895f\n  description: SSL Certificate Tampering\n  expression: \"(\\\
-        n    (chown.file.path in [ ~\\\"/etc/ssl/certs/*\\\" ])\\n    && process.file.path\\\
-        \n    \\ not in [\\\"/usr/bin/apt\\\", \\\"/usr/bin/apt-get\\\", \\\"/usr/bin/apt-config\\\
-        \", \\\"\\\n    /usr/bin/dpkg\\\", \\\"/usr/bin/aptitude-curses\\\", \\\"\
-        /usr/bin/rpm\\\", \\\"/usr/bin/unattended-upgrade\\\"\\\n    ]\\n) && (chown.uid\
-        \ != chown.file.uid || chown.gid != chown.file.gid)\"\n- id: ssl_certificate_tampering_link\n\
-        \  version: eb594616\n  description: SSL Certificate Tampering\n  expression:\
-        \ \"(\\n    (link.file.path in [ ~\\\"/etc/ssl/certs/*\\\" ]\\n    || link.file.destination.path\\\
-        \n    \\ in [ ~\\\"/etc/ssl/certs/*\\\" ])\\n    && process.file.path not\
-        \ in [\\\"/usr/bin/apt\\\"\\\n    , \\\"/usr/bin/apt-get\\\", \\\"/usr/bin/apt-config\\\
-        \", \\\"/usr/bin/dpkg\\\", \\\"/usr/bin/aptitude-curses\\\"\\\n    , \\\"\
-        /usr/bin/rpm\\\", \\\"/usr/bin/unattended-upgrade\\\"]\\n)\"\n- id: ssl_certificate_tampering_open\n\
-        \  version: 59d94d53\n  description: SSL Certificate Tampering\n  expression:\
-        \ \"(\\n    open.flags & (O_CREAT|O_RDWR|O_WRONLY) > 0 &&\\n    (open.file.path\\\
-        \n    \\ in [ ~\\\"/etc/ssl/certs/*\\\" ])\\n    && process.file.path not\
-        \ in [\\\"/usr/bin/apt\\\"\\\n    , \\\"/usr/bin/apt-get\\\", \\\"/usr/bin/apt-config\\\
-        \", \\\"/usr/bin/dpkg\\\", \\\"/usr/bin/aptitude-curses\\\"\\\n    , \\\"\
-        /usr/bin/rpm\\\", \\\"/usr/bin/unattended-upgrade\\\"]\\n)\"\n- id: ssl_certificate_tampering_rename\n\
-        \  version: e42eefb4\n  description: SSL Certificate Tampering\n  expression:\
-        \ \"(\\n    (rename.file.path in [ ~\\\"/etc/ssl/certs/*\\\" ]\\n    || rename.file.destination.path\\\
-        \n    \\ in [ ~\\\"/etc/ssl/certs/*\\\" ])\\n    && process.file.path not\
-        \ in [\\\"/usr/bin/apt\\\"\\\n    , \\\"/usr/bin/apt-get\\\", \\\"/usr/bin/apt-config\\\
-        \", \\\"/usr/bin/dpkg\\\", \\\"/usr/bin/aptitude-curses\\\"\\\n    , \\\"\
-        /usr/bin/rpm\\\", \\\"/usr/bin/unattended-upgrade\\\"]\\n)\"\n- id: ssl_certificate_tampering_unlink\n\
-        \  version: 37c40311\n  description: SSL Certificate Tampering\n  expression:\
-        \ \"(\\n    (unlink.file.path in [ ~\\\"/etc/ssl/certs/*\\\" ])\\n    && process.file.path\\\
-        \n    \\ not in [\\\"/usr/bin/apt\\\", \\\"/usr/bin/apt-get\\\", \\\"/usr/bin/apt-config\\\
-        \", \\\"\\\n    /usr/bin/dpkg\\\", \\\"/usr/bin/aptitude-curses\\\", \\\"\
-        /usr/bin/rpm\\\", \\\"/usr/bin/unattended-upgrade\\\"\\\n    ]\\n)\"\n- id:\
-        \ ssl_certificate_tampering_utimes\n  version: de3d3032\n  description: SSL\
-        \ Certificate Tampering\n  expression: \"(\\n    (utimes.file.path in [ ~\\\
-        \"/etc/ssl/certs/*\\\" ])\\n    && process.file.path\\\n    \\ not in [\\\"\
-        /usr/bin/apt\\\", \\\"/usr/bin/apt-get\\\", \\\"/usr/bin/apt-config\\\", \\\
-        \"\\\n    /usr/bin/dpkg\\\", \\\"/usr/bin/aptitude-curses\\\", \\\"/usr/bin/rpm\\\
-        \", \\\"/usr/bin/unattended-upgrade\\\"\\\n    ]\\n)\"\n- id: suspicious_container_client\n\
-        \  version: 8b9461f4\n  description: A container management utility was executed\
-        \ in a container\n  expression: exec.file.name in [\"docker\", \"kubectl\"\
-        ] && container.id != \"\"\n- id: systemd_modification_chmod\n  version: b0643139\n\
-        \  description: Systemd Modification\n  expression: \"(\\n    (chmod.file.path\
-        \ in [ ~\\\"/lib/systemd/system/*\\\", ~\\\"/usr/lib/systemd/system/*\\\"\\\
-        \n    , ~\\\"/etc/systemd/system/*\\\" ])\\n    && process.file.path not in\
-        \ [\\\"/usr/bin/apt\\\"\\\n    , \\\"/usr/bin/apt-get\\\", \\\"/usr/bin/apt-config\\\
-        \", \\\"/usr/bin/dpkg\\\", \\\"/usr/bin/aptitude-curses\\\"\\\n    , \\\"\
-        /usr/bin/rpm\\\", \\\"/usr/bin/unattended-upgrade\\\"]\\n) && chmod.mode !=\
-        \ chmod.file.mode\"\n- id: systemd_modification_chown\n  version: 380d501\n\
-        \  description: Systemd Modification\n  expression: \"(\\n    (chown.file.path\
-        \ in [ ~\\\"/lib/systemd/system/*\\\", ~\\\"/usr/lib/systemd/system/*\\\"\\\
-        \n    , ~\\\"/etc/systemd/system/*\\\" ])\\n    && process.file.path not in\
-        \ [\\\"/usr/bin/apt\\\"\\\n    , \\\"/usr/bin/apt-get\\\", \\\"/usr/bin/apt-config\\\
-        \", \\\"/usr/bin/dpkg\\\", \\\"/usr/bin/aptitude-curses\\\"\\\n    , \\\"\
-        /usr/bin/rpm\\\", \\\"/usr/bin/unattended-upgrade\\\"]\\n) && (chown.uid !=\
-        \ chown.file.uid\\\n    \\ || chown.gid != chown.file.gid)\"\n- id: systemd_modification_link\n\
-        \  version: cbd89cec\n  description: Systemd Modification\n  expression: \"\
-        (\\n    (link.file.path in [ ~\\\"/lib/systemd/system/*\\\", ~\\\"/usr/lib/systemd/system/*\\\
-        \"\\\n    , ~\\\"/etc/systemd/system/*\\\" ]\\n    || link.file.destination.path\
-        \ in [ ~\\\"/lib/systemd/system/*\\\"\\\n    , ~\\\"/usr/lib/systemd/system/*\\\
-        \", ~\\\"/etc/systemd/system/*\\\" ])\\n    && process.file.path\\\n    \\\
-        \ not in [\\\"/usr/bin/apt\\\", \\\"/usr/bin/apt-get\\\", \\\"/usr/bin/apt-config\\\
-        \", \\\"\\\n    /usr/bin/dpkg\\\", \\\"/usr/bin/aptitude-curses\\\", \\\"\
-        /usr/bin/rpm\\\", \\\"/usr/bin/unattended-upgrade\\\"\\\n    ]\\n)\"\n- id:\
-        \ systemd_modification_open\n  version: b6dce303\n  description: Systemd Modification\n\
-        \  expression: \"(\\n    open.flags & (O_CREAT|O_RDWR|O_WRONLY) > 0 &&\\n\
-        \    (open.file.path\\\n    \\ in [ ~\\\"/lib/systemd/system/*\\\", ~\\\"\
-        /usr/lib/systemd/system/*\\\", ~\\\"/etc/systemd/system/*\\\"\\\n    \\ ])\\\
-        n    && process.file.path not in [\\\"/usr/bin/apt\\\", \\\"/usr/bin/apt-get\\\
-        \"\\\n    , \\\"/usr/bin/apt-config\\\", \\\"/usr/bin/dpkg\\\", \\\"/usr/bin/aptitude-curses\\\
-        \", \\\"\\\n    /usr/bin/rpm\\\", \\\"/usr/bin/unattended-upgrade\\\"]\\n)\"\
-        \n- id: systemd_modification_rename\n  version: 1e723c46\n  description: Systemd\
-        \ Modification\n  expression: \"(\\n    (rename.file.path in [ ~\\\"/lib/systemd/system/*\\\
-        \", ~\\\"/usr/lib/systemd/system/*\\\"\\\n    , ~\\\"/etc/systemd/system/*\\\
-        \" ]\\n    || rename.file.destination.path in [ ~\\\"/lib/systemd/system/*\\\
-        \"\\\n    , ~\\\"/usr/lib/systemd/system/*\\\", ~\\\"/etc/systemd/system/*\\\
-        \" ])\\n    && process.file.path\\\n    \\ not in [\\\"/usr/bin/apt\\\", \\\
-        \"/usr/bin/apt-get\\\", \\\"/usr/bin/apt-config\\\", \\\"\\\n    /usr/bin/dpkg\\\
-        \", \\\"/usr/bin/aptitude-curses\\\", \\\"/usr/bin/rpm\\\", \\\"/usr/bin/unattended-upgrade\\\
-        \"\\\n    ]\\n)\"\n- id: systemd_modification_unlink\n  version: dcb17382\n\
-        \  description: Systemd Modification\n  expression: \"(\\n    (unlink.file.path\
-        \ in [ ~\\\"/lib/systemd/system/*\\\", ~\\\"/usr/lib/systemd/system/*\\\"\\\
-        \n    , ~\\\"/etc/systemd/system/*\\\" ])\\n    && process.file.path not in\
-        \ [\\\"/usr/bin/apt\\\"\\\n    , \\\"/usr/bin/apt-get\\\", \\\"/usr/bin/apt-config\\\
-        \", \\\"/usr/bin/dpkg\\\", \\\"/usr/bin/aptitude-curses\\\"\\\n    , \\\"\
-        /usr/bin/rpm\\\", \\\"/usr/bin/unattended-upgrade\\\"]\\n)\"\n- id: systemd_modification_utimes\n\
-        \  version: 6b596fc5\n  description: Systemd Modification\n  expression: \"\
-        (\\n    (utimes.file.path in [ ~\\\"/lib/systemd/system/*\\\", ~\\\"/usr/lib/systemd/system/*\\\
-        \"\\\n    , ~\\\"/etc/systemd/system/*\\\" ])\\n    && process.file.path not\
-        \ in [\\\"/usr/bin/apt\\\"\\\n    , \\\"/usr/bin/apt-get\\\", \\\"/usr/bin/apt-config\\\
-        \", \\\"/usr/bin/dpkg\\\", \\\"/usr/bin/aptitude-curses\\\"\\\n    , \\\"\
-        /usr/bin/rpm\\\", \\\"/usr/bin/unattended-upgrade\\\"]\\n)\"\n- id: testtypescriptcreateacloudworkloadsecurityagentrulereturnsokresponse1651997883\n\
-        \  version: f43786f8\n  description: Test Agent rule\n  expression: exec.file.name\
-        \ == \"sh\"\n- id: testtypescriptdeleteacloudworkloadsecurityagentrulereturnsokresponse1651997884\n\
-        \  version: f43786f8\n  description: My Agent rule\n  expression: exec.file.name\
-        \ == \"sh\"\n- id: testtypescriptgetacloudworkloadsecurityagentrulereturnsokresponse1651997885\n\
-        \  version: f43786f8\n  description: My Agent rule\n  expression: exec.file.name\
-        \ == \"sh\"\n- id: testtypescriptgetallcloudworkloadsecurityagentrulesreturnsokresponse1651867149\n\
-        \  version: f43786f8\n  description: My Agent rule\n  expression: exec.file.name\
-        \ == \"sh\"\n- id: testtypescriptgetallcloudworkloadsecurityagentrulesreturnsokresponse1651912469\n\
-        \  version: f43786f8\n  description: My Agent rule\n  expression: exec.file.name\
-        \ == \"sh\"\n- id: testtypescriptgetallcloudworkloadsecurityagentrulesreturnsokresponse1651915814\n\
-        \  version: f43786f8\n  description: My Agent rule\n  expression: exec.file.name\
-        \ == \"sh\"\n- id: testtypescriptgetallcloudworkloadsecurityagentrulesreturnsokresponse1651943471\n\
-        \  version: f43786f8\n  description: My Agent rule\n  expression: exec.file.name\
-        \ == \"sh\"\n- id: testtypescriptgetallcloudworkloadsecurityagentrulesreturnsokresponse1651997885\n\
-        \  version: f43786f8\n  description: My Agent rule\n  expression: exec.file.name\
-        \ == \"sh\"\n- id: testtypescriptgetallcloudworkloadsecurityagentrulesreturnsokresponse1652008845\n\
-        \  version: f43786f8\n  description: My Agent rule\n  expression: exec.file.name\
-        \ == \"sh\"\n- id: testtypescriptupdateacloudworkloadsecurityagentrulereturnsbadrequestresponse1651997886\n\
-        \  version: f43786f8\n  description: My Agent rule\n  expression: exec.file.name\
-        \ == \"sh\"\n- id: testtypescriptupdateacloudworkloadsecurityagentrulereturnsokresponse1651997887\n\
-        \  version: f43786f8\n  description: Test Agent rule\n  expression: exec.file.name\
-        \ == \"sh\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643386657\n\
-        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643386695\n\
-        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643386742\n\
-        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643386809\n\
-        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643386858\n\
-        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643386909\n\
-        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643387039\n\
-        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643387090\n\
-        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643387148\n\
-        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643387484\n\
-        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643387531\n\
-        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643387579\n\
-        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643388161\n\
-        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643388208\n\
-        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643388257\n\
-        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643388666\n\
-        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643388726\n\
-        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643388847\n\
-        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643388890\n\
-        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643388939\n\
-        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643389111\n\
-        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643389165\n\
-        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643389210\n\
-        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643389339\n\
-        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643389389\n\
-        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643389484\n\
-        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643389530\n\
-        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643389627\n\
-        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643389685\n\
-        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643389756\n\
-        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643389931\n\
-        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643389977\n\
-        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643390108\n\
-        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643390130\n\
-        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643390151\n\
-        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643391687\n\
-        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643391707\n\
-        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643391729\n\
-        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643391983\n\
-        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643392003\n\
-        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643392026\n\
-        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643392419\n\
-        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643392438\n\
-        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643392458\n\
-        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643392885\n\
-        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643392903\n\
-        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRule_local_1643392923\n\
-        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRulesDatasource_local_1643386718\n\
-        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRulesDatasource_local_1643386786\n\
-        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRulesDatasource_local_1643386831\n\
-        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRulesDatasource_local_1643386882\n\
-        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRulesDatasource_local_1643387014\n\
-        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRulesDatasource_local_1643387063\n\
-        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRulesDatasource_local_1643387120\n\
-        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRulesDatasource_local_1643387461\n\
-        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRulesDatasource_local_1643387505\n\
-        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRulesDatasource_local_1643387554\n\
-        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRulesDatasource_local_1643387992\n\
-        \  version: 28ba1078\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"java\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRulesDatasource_local_1643388137\n\
-        \  version: 2dd188de\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"go\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRulesDatasource_local_1643388182\n\
-        \  version: 2dd188de\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"go\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRulesDatasource_local_1643388230\n\
-        \  version: 2dd188de\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"go\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRulesDatasource_local_1643388700\n\
-        \  version: 2dd188de\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"go\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRulesDatasource_local_1643388825\n\
-        \  version: 2dd188de\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"go\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRulesDatasource_local_1643388866\n\
-        \  version: 2dd188de\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"go\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRulesDatasource_local_1643388912\n\
-        \  version: 2dd188de\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"go\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRulesDatasource_local_1643389088\n\
-        \  version: 2dd188de\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"go\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRulesDatasource_local_1643389136\n\
-        \  version: 2dd188de\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"go\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRulesDatasource_local_1643389186\n\
-        \  version: 2dd188de\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"go\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRulesDatasource_local_1643389317\n\
-        \  version: 2dd188de\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"go\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRulesDatasource_local_1643389363\n\
-        \  version: 2dd188de\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"go\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRulesDatasource_local_1643389411\n\
-        \  version: 2dd188de\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"go\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRulesDatasource_local_1643389460\n\
-        \  version: 2dd188de\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"go\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRulesDatasource_local_1643389507\n\
-        \  version: 2dd188de\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"go\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRulesDatasource_local_1643389553\n\
-        \  version: 2dd188de\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"go\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRulesDatasource_local_1643389911\n\
-        \  version: 2dd188de\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"go\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRulesDatasource_local_1643389955\n\
-        \  version: 2dd188de\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"go\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRulesDatasource_local_1643390389\n\
-        \  version: 2dd188de\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"go\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRulesDatasource_local_1643390410\n\
-        \  version: 2dd188de\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"go\"\n- id: tf_TestAccDatadogCloudWorkloadSecurityAgentRulesDatasource_local_1643390432\n\
-        \  version: 2dd188de\n  description: an agent rule\n  expression: exec.file.name\
-        \ == \"go\"\n- id: user_created_tty\n  version: 5b5f4a52\n  description: User\
-        \ Created Interactively\n  expression: exec.file.name in [\"useradd\", \"\
-        newusers\"] && exec.tty_name !=\"\"\n"
+        \ && container.id !=\"\"\n  agent_version: ''\n  filters: []\n- id: kernel_module_open\n\
+        \  version: 55f9569\n  description: A new kernel module was added\n  expression:\
+        \ |-\n    (\n        open.flags & (O_CREAT|O_TRUNC|O_RDWR|O_WRONLY) > 0 &&\n\
+        \        (open.file.path in [ ~\"/lib/modules/**\", ~\"/usr/lib/modules/**\"\
+        \ ])\n        && process.file.path not in [~\"/usr/bin/apt*\", \"/usr/bin/dpkg\"\
+        , \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\", \"/usr/bin/npm\", ~\"\
+        /usr/bin/pip*\", \"/usr/bin/yum\", \"/sbin/apk\", \"/usr/lib/snapd/snapd\"\
+        ]\n        && process.ancestors.file.path not in [~\"/usr/bin/apt*\", \"/usr/bin/dpkg\"\
+        , \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\", \"/usr/bin/npm\", ~\"\
+        /usr/bin/pip*\", \"/usr/bin/yum\", \"/sbin/apk\", \"/usr/lib/snapd/snapd\"\
+        ] && process.ancestors.file.path != \"/usr/bin/kmod\"\n    )\n  agent_version:\
+        \ ''\n  filters: []\n- id: kernel_module_rename\n  version: 8dd78e74\n  description:\
+        \ A new kernel module was added\n  expression: |-\n    (\n        (rename.file.path\
+        \ in [ ~\"/lib/modules/**\", ~\"/usr/lib/modules/**\" ]\n        || rename.file.destination.path\
+        \ in [ ~\"/lib/modules/**\", ~\"/usr/lib/modules/**\" ])\n        && process.file.path\
+        \ not in [~\"/usr/bin/apt*\", \"/usr/bin/dpkg\", \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\"\
+        , \"/usr/bin/npm\", ~\"/usr/bin/pip*\", \"/usr/bin/yum\", \"/sbin/apk\", \"\
+        /usr/lib/snapd/snapd\"]\n        && process.ancestors.file.path not in [~\"\
+        /usr/bin/apt*\", \"/usr/bin/dpkg\", \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\"\
+        , \"/usr/bin/npm\", ~\"/usr/bin/pip*\", \"/usr/bin/yum\", \"/sbin/apk\", \"\
+        /usr/lib/snapd/snapd\"] && process.ancestors.file.path != \"/usr/bin/kmod\"\
+        \n    )\n  agent_version: ''\n  filters: []\n- id: kernel_module_unlink\n\
+        \  version: 652391be\n  description: A new kernel module was added\n  expression:\
+        \ |-\n    (\n        (unlink.file.path in [ ~\"/lib/modules/**\", ~\"/usr/lib/modules/**\"\
+        \ ])\n        && process.file.path not in [~\"/usr/bin/apt*\", \"/usr/bin/dpkg\"\
+        , \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\", \"/usr/bin/npm\", ~\"\
+        /usr/bin/pip*\", \"/usr/bin/yum\", \"/sbin/apk\", \"/usr/lib/snapd/snapd\"\
+        ]\n        && process.ancestors.file.path not in [~\"/usr/bin/apt*\", \"/usr/bin/dpkg\"\
+        , \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\", \"/usr/bin/npm\", ~\"\
+        /usr/bin/pip*\", \"/usr/bin/yum\", \"/sbin/apk\", \"/usr/lib/snapd/snapd\"\
+        ] && process.ancestors.file.path != \"/usr/bin/kmod\"\n    )\n  agent_version:\
+        \ ''\n  filters: []\n- id: kernel_module_utimes\n  version: 405d45e7\n  description:\
+        \ A new kernel module was added\n  expression: |-\n    (\n        (utimes.file.path\
+        \ in [ ~\"/lib/modules/**\", ~\"/usr/lib/modules/**\" ])\n        && process.file.path\
+        \ not in [~\"/usr/bin/apt*\", \"/usr/bin/dpkg\", \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\"\
+        , \"/usr/bin/npm\", ~\"/usr/bin/pip*\", \"/usr/bin/yum\", \"/sbin/apk\", \"\
+        /usr/lib/snapd/snapd\"]\n        && process.ancestors.file.path not in [~\"\
+        /usr/bin/apt*\", \"/usr/bin/dpkg\", \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\"\
+        , \"/usr/bin/npm\", ~\"/usr/bin/pip*\", \"/usr/bin/yum\", \"/sbin/apk\", \"\
+        /usr/lib/snapd/snapd\"] && process.ancestors.file.path != \"/usr/bin/kmod\"\
+        \n    )\n  agent_version: ''\n  filters: []\n- id: kernel_msr_write\n  version:\
+        \ 2c433a21\n  description: A process attempted to enable writing to model-specific\
+        \ registers\n  expression: exec.comm == \"modprobe\" && process.args =~ \"\
+        *msr*allow_writes*\"\n  agent_version: ''\n  filters:\n  - os == \"linux\"\
+        \n- id: kmod_list\n  version: c353a548\n  description: Kernel modules were\
+        \ listed using the kmod command\n  expression: exec.comm == \"kmod\" && exec.args\
+        \ in [~\"*list*\"]\n  agent_version: ''\n  filters:\n  - os == \"linux\"\n\
+        - id: kubernetes_dns_enumeration\n  version: 70a1304\n  description: Kubernetes\
+        \ DNS enumeration\n  expression: dns.question.name == \"any.any.svc.cluster.local\"\
+        \ && dns.question.type\n    == SRV && container.id != \"\"\n  agent_version:\
+        \ ''\n  filters:\n  - os == \"linux\"\n- id: kubernetes_offensive_tool_executed\n\
+        \  version: 18130cbb\n  description: Kubernetes offensive tool executed\n\
+        \  expression: (exec.file.name in [ ~\"python*\" ] && (\"KubiScan.py\" in\
+        \ exec.argv ||\n    \"kubestriker\" in exec.argv )) || exec.file.name in [\"\
+        kubiscan\",\"kdigger\",\"kube-hunter\",\"rakkess\",\"peirates\",\"kubescape\"\
+        ,\"kubeaudit\",\"kube-linter\",\"stratus\",~\"botb-*\"]\n  agent_version:\
+        \ ''\n  filters: []\n- id: ld_preload_unusual_library_path\n  version: cc6fd0c4\n\
+        \  description: The LD_PRELOAD variable is populated by a link to a suspicious\
+        \ file\n    directory\n  expression: exec.envs in [~\"LD_PRELOAD=*/tmp/*\"\
+        \ ,~\"LD_PRELOAD=/dev/shm/*\" ]\n  agent_version: ''\n  filters: []\n- id:\
+        \ libpam_ebpf_hook\n  version: adbe1bb1\n  description: Library libpam.so\
+        \ hooked using eBPF\n  expression: bpf.cmd == BPF_MAP_CREATE && process.args\
+        \ in [r\".*libpam.so.*\"]\n  agent_version: ''\n  filters:\n  - os == \"linux\"\
+        \n- id: looney_tunables_exploit\n  version: 7e9f4346\n  description: Looney\
+        \ Tunables (CVE-2023-4911) exploit attempted\n  expression: exec.file.mode\
+        \ & S_ISUID > 0 && exec.file.uid == 0 && exec.uid != 0\n    && exec.envs in\
+        \ [~\"*GLIBC_TUNABLES*\"]\n  agent_version: ''\n  filters:\n  - os == \"linux\"\
+        \n- id: memfd_create\n  version: 5908512a\n  description: memfd object created\n\
+        \  expression: exec.file.name =~ \"memfd*\" && exec.file.path == \"\"\n  agent_version:\
+        \ ''\n  filters: []\n- id: minidump_usage\n  version: 3de40e55\n  description:\
+        \ Process memory was dumped using the minidump function from comsvcs.dll\n\
+        \  expression: exec.cmdline =~ \"*MiniDump*\"\n  agent_version: ''\n  filters:\n\
+        \  - os == \"windows\"\n- id: mount_host_fs\n  version: accb4f\n  description:\
+        \ The host file system was mounted in a container\n  expression: mount.source.path\
+        \ == \"/\" && mount.fs_type != \"overlay\" && container.id\n    != \"\"\n\
+        \  agent_version: ''\n  filters: []\n- id: net_file_download\n  version: 75b930ad\n\
+        \  description: A suspicious file was written by a network utility\n  expression:\
+        \ |-\n    open.flags & O_CREAT > 0 && process.comm in [\"wget\", \"curl\"\
+        , \"lwp-download\"]\n    && (\n      (open.file.path =~ \"/tmp/**\" && open.file.name\
+        \ in [~\"*.sh\", ~\"*.c\", ~\"*.so\", ~\"*.ko\"])\n      || open.file.path\
+        \ in [~\"/usr/**\", ~\"/lib/**\", ~\"/etc/**\", ~\"/var/tmp/**\", ~\"/dev/shm/**\"\
+        ]\n    )\n  agent_version: ''\n  filters:\n  - os == \"linux\"\n- id: net_unusual_request\n\
+        \  version: 3df2d9ef\n  description: Network utility executed with suspicious\
+        \ URI\n  expression: 'exec.comm in [\"wget\", \"curl\", \"lwp-download\"]\
+        \ && exec.args in [~\"*.php*\",\n    ~\"*.jpg*\"] '\n  agent_version: ''\n\
+        \  filters: []\n- id: net_util\n  version: c3f2117b\n  description: A network\
+        \ utility was executed\n  expression: |-\n    (exec.comm in [\"socat\", \"\
+        dig\", \"nslookup\", \"host\", ~\"netcat*\", ~\"nc*\", \"ncat\"] ||\n    \
+        \ exec.comm in [\"wget\", \"curl\", \"lwp-download\"]) &&\n    container.id\
+        \ == \"\" && exec.args not in [ ~\"*localhost*\", ~\"*127.0.0.1*\", ~\"*motd.ubuntu.com*\"\
+        \ ]\n  agent_version: ''\n  filters: []\n- id: net_util_exfiltration\n  version:\
+        \ 5f7c8871\n  description: Exfiltration attempt via network utility\n  expression:\
+        \ \"exec.comm in [\\\"wget\\\", \\\"curl\\\", \\\"lwp-download\\\"] && \\\
+        nexec.args_options\\\n    \\ in [ ~\\\"post-file=*\\\", ~\\\"post-data=*\\\
+        \", ~\\\"T=*\\\", ~\\\"d=@*\\\", ~\\\"upload-file=*\\\"\\\n    , ~\\\"F=file*\\\
+        \"] &&\\nexec.args not in [~\\\"*localhost*\\\", ~\\\"*127.0.0.1*\\\"]\"\n\
+        \  agent_version: ''\n  filters:\n  - os == \"linux\"\n- id: net_util_in_container\n\
+        \  version: 69e03ac1\n  description: A network utility was executed in a container\n\
+        \  expression: |-\n    (exec.comm in [\"socat\", \"dig\", \"nslookup\", \"\
+        host\", ~\"netcat*\", ~\"nc*\", \"ncat\"] ||\n     exec.comm in [\"wget\"\
+        , \"curl\", \"lwp-download\"]) &&\n    container.id != \"\" && exec.args not\
+        \ in [ ~\"*localhost*\", ~\"*127.0.0.1*\", ~\"*motd.ubuntu.com*\" ]\n  agent_version:\
+        \ ''\n  filters: []\n- id: net_util_in_container_v2\n  version: 26d8eba1\n\
+        \  description: A network utility was executed in a container\n  expression:\
+        \ |-\n    (exec.comm in [\"socat\", \"dig\", \"nslookup\", \"host\", ~\"netcat*\"\
+        , ~\"nc*\", \"ncat\"] ||\n     exec.comm in [\"wget\", \"curl\", \"lwp-download\"\
+        ]) &&\n    container.id != \"\" && exec.args not in [ ~\"*localhost*\", ~\"\
+        *127.0.0.1*\", ~\"*motd.ubuntu.com*\" ] && container.created_at > 180s\n \
+        \ agent_version: ''\n  filters: []\n- id: network_sniffing_tool\n  version:\
+        \ 4ae409bf\n  description: Local account groups were enumerated after container\
+        \ start up\n  expression: exec.file.name in [\"tcpdump\", \"tshark\"]\n  agent_version:\
+        \ ''\n  filters:\n  - os == \"linux\"\n- id: new_binary_execution_in_container\n\
+        \  version: 9dc42e1d\n  description: A container executed a new binary not\
+        \ found in the container image\n  expression: container.id != \"\" && process.file.in_upper_layer\
+        \ && process.file.modification_time\n    < 30s && exec.file.name != \"\"\n\
+        \  agent_version: ''\n  filters: []\n- id: nsswitch_conf_mod_chmod\n  version:\
+        \ d301aedf\n  description: nsswitch may have been modified without authorization\n\
+        \  expression: |-\n    (\n        (chmod.file.path in [ \"/etc/nsswitch.conf\"\
+        \ ])\n    ) && chmod.file.destination.mode != chmod.file.mode && process.file.path\
+        \ not in [~\"/usr/bin/apt*\", \"/usr/bin/dpkg\", \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\"\
+        , \"/usr/bin/containerd\", \"/usr/local/bin/containerd\", \"/usr/bin/dockerd\"\
+        , \"/usr/bin/npm\", ~\"/usr/bin/pip*\"]\n  agent_version: ''\n  filters:\n\
+        \  - os == \"linux\"\n- id: nsswitch_conf_mod_chown\n  version: '69383592'\n\
+        \  description: nsswitch may have been modified without authorization\n  expression:\
+        \ |-\n    (\n        (chown.file.path in [ \"/etc/nsswitch.conf\" ])\n   \
+        \ ) && (chown.file.destination.uid != chown.file.uid || chown.file.destination.gid\
+        \ != chown.file.gid) && process.file.path not in [~\"/usr/bin/apt*\", \"/usr/bin/dpkg\"\
+        , \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\", \"/usr/bin/containerd\"\
+        , \"/usr/local/bin/containerd\", \"/usr/bin/dockerd\", \"/usr/bin/npm\", ~\"\
+        /usr/bin/pip*\"]\n  agent_version: ''\n  filters:\n  - os == \"linux\"\n-\
+        \ id: nsswitch_conf_mod_link\n  version: e0565b29\n  description: Nsswitch\
+        \ Configuration Modified\n  expression: |-\n    (\n        (link.file.path\
+        \ in [ \"/etc/nsswitch.conf\" ]\n        || link.file.destination.path in\
+        \ [ \"/etc/nsswitch.conf\" ])\n    )\n  agent_version: ''\n  filters: []\n\
+        - id: nsswitch_conf_mod_open\n  version: b5602c6f\n  description: nsswitch\
+        \ may have been modified without authorization\n  expression: |-\n    (\n\
+        \        open.flags & ((O_RDWR|O_WRONLY|O_CREAT)) > 0 &&\n        (open.file.path\
+        \ in [ \"/etc/nsswitch.conf\" ])\n    ) && process.file.path not in [~\"/usr/bin/apt*\"\
+        , \"/usr/bin/dpkg\", \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\", \"\
+        /usr/bin/containerd\", \"/usr/local/bin/containerd\", \"/usr/bin/dockerd\"\
+        , \"/usr/bin/npm\", ~\"/usr/bin/pip*\"]\n  agent_version: ''\n  filters:\n\
+        \  - os == \"linux\"\n- id: nsswitch_conf_mod_open_v2\n  version: abef53c9\n\
+        \  description: nsswitch may have been modified without authorization\n  expression:\
+        \ |-\n    (\n        open.flags & ((O_RDWR|O_WRONLY|O_CREAT)) > 0 &&\n   \
+        \     (open.file.path in [ \"/etc/nsswitch.conf\" ])\n    ) && container.created_at\
+        \ > 90s && process.file.path not in [~\"/usr/bin/apt*\", \"/usr/bin/dpkg\"\
+        , \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\", \"/usr/bin/containerd\"\
+        , \"/usr/local/bin/containerd\", \"/usr/bin/dockerd\", \"/usr/bin/npm\", ~\"\
+        /usr/bin/pip*\"]\n  agent_version: ''\n  filters:\n  - os == \"linux\"\n-\
+        \ id: nsswitch_conf_mod_rename\n  version: aad34176\n  description: Nsswitch\
+        \ Configuration Modified\n  expression: |-\n    (\n        (rename.file.path\
+        \ in [ \"/etc/nsswitch.conf\" ]\n        || rename.file.destination.path in\
+        \ [ \"/etc/nsswitch.conf\" ])\n    )\n  agent_version: ''\n  filters: []\n\
+        - id: nsswitch_conf_mod_unlink\n  version: 8a3e2fbb\n  description: Nsswitch\
+        \ Configuration Modified\n  expression: |-\n    (\n        (unlink.file.path\
+        \ in [ \"/etc/nsswitch.conf\" ])\n    )\n  agent_version: ''\n  filters: []\n\
+        - id: nsswitch_conf_mod_utimes\n  version: 902597c0\n  description: Nsswitch\
+        \ Configuration Modified\n  expression: |-\n    (\n        (utimes.file.path\
+        \ in [ \"/etc/nsswitch.conf\" ])\n    )\n  agent_version: ''\n  filters: []\n\
+        - id: ntds_in_commandline\n  version: 5cdd4bba\n  description: NTDS file referenced\
+        \ in commandline\n  expression: exec.cmdline =~ \"*ntds.dit*\"\n  agent_version:\
+        \ ''\n  filters:\n  - os == \"windows\"\n- id: offensive_k8s_tool\n  version:\
+        \ b83fba22\n  description: A known kubernetes pentesting tool has been executed\n\
+        \  expression: (exec.file.name in [ ~\"python*\" ] && (\"KubiScan.py\" in\
+        \ exec.argv ||\n    \"kubestriker\" in exec.argv ) ) || exec.file.name in\
+        \ [ \"kubiscan\",\"kdigger\",\"kube-hunter\",\"rakkess\",\"peirates\",\"kubescape\"\
+        ,\"kubeaudit\",\"kube-linter\",\"stratus\",~\"botb-*\"]\n  agent_version:\
+        \ ''\n  filters: []\n- id: omigod\n  version: 2064b3b4\n  description: Omiagent\
+        \ spawns a privileged child process\n  expression: exec.uid >= 0 && process.ancestors.file.name\
+        \ == \"omiagent\"\n  agent_version: ''\n  filters:\n  - os == \"linux\"\n\
+        - id: open_msr_writes\n  version: 261f8f98\n  description: A process opened\
+        \ a model-specific register (MSR) configuration file\n  expression: open.file.path\
+        \ == \"/sys/module/msr/parameters/allow_writes\" && open.flags\n    & O_CREAT|O_TRUNC|O_RDWR|O_WRONLY\
+        \ > 0\n  agent_version: ''\n  filters:\n  - os == \"linux\"\n- id: package_management_in_container\n\
+        \  version: c152fcaf\n  description: Package management was detected in a\
+        \ container\n  expression: exec.file.path in [~\"/usr/bin/apt*\", \"/usr/bin/dpkg\"\
+        , \"/usr/bin/rpm\",\n    \"/usr/bin/unattended-upgrade\", \"/usr/bin/npm\"\
+        , ~\"/usr/bin/pip*\", \"/usr/bin/yum\",\n    \"/sbin/apk\", \"/usr/lib/snapd/snapd\"\
+        ] && container.id != \"\"\n  agent_version: ''\n  filters: []\n- id: package_management_in_container_v2\n\
+        \  version: 7eb85510\n  description: Package management was detected in a\
+        \ conatiner outside of container\n    start_up\n  expression: exec.file.path\
+        \ in [~\"/usr/bin/apt*\", \"/usr/bin/dpkg\", \"/usr/bin/rpm\",\n    \"/usr/bin/unattended-upgrade\"\
+        , \"/usr/bin/npm\", ~\"/usr/bin/pip*\", \"/usr/bin/yum\",\n    \"/sbin/apk\"\
+        , \"/usr/lib/snapd/snapd\"] && container.id != \"\" && container.created_at\n\
+        \    > 90s\n  agent_version: ''\n  filters:\n  - os == \"linux\"\n- id: pam_modification_chmod\n\
+        \  version: 974a676e\n  description: PAM may have been modified without authorization\n\
+        \  expression: |-\n    (\n        (chmod.file.path in [ ~\"/etc/pam.d/**\"\
+        , \"/etc/pam.conf\" ])\n    ) && chmod.file.destination.mode != chmod.file.mode\n\
+        \  agent_version: ''\n  filters: []\n- id: pam_modification_chown\n  version:\
+        \ d89aa0a7\n  description: PAM may have been modified without authorization\n\
+        \  expression: |-\n    (\n        (chown.file.path in [ ~\"/etc/pam.d/**\"\
+        , \"/etc/pam.conf\" ])\n    ) && (chown.file.destination.uid != chown.file.uid\
+        \ || chown.file.destination.gid != chown.file.gid)\n  agent_version: ''\n\
+        \  filters: []\n- id: pam_modification_link\n  version: aa68153f\n  description:\
+        \ PAM may have been modified without authorization\n  expression: |-\n   \
+        \ (\n        (link.file.path in [ ~\"/etc/pam.d/**\", \"/etc/pam.conf\" ]\n\
+        \        || link.file.destination.path in [ ~\"/etc/pam.d/**\", \"/etc/pam.conf\"\
+        \ ])\n    )\n  agent_version: ''\n  filters: []\n- id: pam_modification_open\n\
+        \  version: e22e05b7\n  description: PAM may have been modified without authorization\n\
+        \  expression: |-\n    (\n        open.flags & (O_CREAT|O_TRUNC|O_RDWR|O_WRONLY)\
+        \ > 0 &&\n        (open.file.path in [ ~\"/etc/pam.d/**\", \"/etc/pam.conf\"\
+        \ ])\n    )\n  agent_version: ''\n  filters: []\n- id: pam_modification_rename\n\
+        \  version: bd1d257a\n  description: PAM may have been modified without authorization\n\
+        \  expression: |-\n    (\n        (rename.file.path in [ ~\"/etc/pam.d/**\"\
+        , \"/etc/pam.conf\" ]\n        || rename.file.destination.path in [ ~\"/etc/pam.d/**\"\
+        , \"/etc/pam.conf\" ])\n    )\n  agent_version: ''\n  filters: []\n- id: pam_modification_unlink\n\
+        \  version: c3dc53e1\n  description: PAM may have been modified without authorization\n\
+        \  expression: |-\n    (\n        (unlink.file.path in [ ~\"/etc/pam.d/**\"\
+        , \"/etc/pam.conf\" ])\n    )\n  agent_version: ''\n  filters: []\n- id: pam_modification_utimes\n\
+        \  version: d377b599\n  description: PAM may have been modified without authorization\n\
+        \  expression: |-\n    (\n        (utimes.file.path in [ ~\"/etc/pam.d/**\"\
+        , \"/etc/pam.conf\" ])\n    ) && process.file.path not in [~\"/usr/bin/apt*\"\
+        , \"/usr/bin/dpkg\", \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\", \"\
+        /usr/bin/containerd\", \"/usr/local/bin/containerd\", \"/usr/bin/dockerd\"\
+        , \"/usr/bin/npm\", ~\"/usr/bin/pip*\"]\n  agent_version: ''\n  filters: []\n\
+        - id: passwd_execution\n  version: e1d41f5e\n  description: The passwd or\
+        \ chpasswd utility was used to modify an account password\n  expression: exec.file.path\
+        \ in [\"/usr/bin/passwd\", \"/usr/sbin/chpasswd\"] && exec.args_flags\n  \
+        \  not in [\"S\", \"status\"]\n  agent_version: ''\n  filters: []\n- id: paste_site\n\
+        \  version: 3dcef11\n  description: A DNS lookup was done for a pastebin-like\
+        \ site\n  expression: dns.question.name in [\"pastebin.com\", \"ghostbin.com\"\
+        , \"termbin.com\",\n    \"klgrth.io\"] && process.file.name != \"\"\n  agent_version:\
+        \ ''\n  filters: []\n- id: pci_11_5_critical_binaries_chmod\n  version: b858137e\n\
+        \  description: Critical system binaries may have been modified\n  expression:\
+        \ |-\n    (\n        (chmod.file.path in [ ~\"/bin/*\", ~\"/sbin/*\", ~\"\
+        /usr/bin/*\", ~\"/usr/sbin/*\", ~\"/usr/local/bin/*\", ~\"/usr/local/sbin/*\"\
+        , ~\"/boot/**\" ])\n        && process.file.path not in [~\"/usr/bin/apt*\"\
+        , \"/usr/bin/dpkg\", \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\", \"\
+        /usr/bin/containerd\", \"/usr/local/bin/containerd\", \"/usr/bin/dockerd\"\
+        , \"/usr/bin/npm\", ~\"/usr/bin/pip*\"]\n        && process.ancestors.file.path\
+        \ not in [~\"/usr/bin/apt*\", \"/usr/bin/dpkg\", \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\"\
+        , \"/usr/bin/npm\", ~\"/usr/bin/pip*\", \"/usr/bin/yum\", \"/sbin/apk\", \"\
+        /usr/lib/snapd/snapd\"]\n    ) && chmod.file.destination.mode != chmod.file.mode\n\
+        \  agent_version: ''\n  filters: []\n- id: pci_11_5_critical_binaries_chown\n\
+        \  version: d6630ebc\n  description: Critical system binaries may have been\
+        \ modified\n  expression: |-\n    (\n        (chown.file.path in [ ~\"/bin/*\"\
+        , ~\"/sbin/*\", ~\"/usr/bin/*\", ~\"/usr/sbin/*\", ~\"/usr/local/bin/*\",\
+        \ ~\"/usr/local/sbin/*\", ~\"/boot/**\" ])\n        && process.file.path not\
+        \ in [~\"/usr/bin/apt*\", \"/usr/bin/dpkg\", \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\"\
+        , \"/usr/bin/containerd\", \"/usr/local/bin/containerd\", \"/usr/bin/dockerd\"\
+        , \"/usr/bin/npm\", ~\"/usr/bin/pip*\"]\n        && process.ancestors.file.path\
+        \ not in [~\"/usr/bin/apt*\", \"/usr/bin/dpkg\", \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\"\
+        , \"/usr/bin/npm\", ~\"/usr/bin/pip*\", \"/usr/bin/yum\", \"/sbin/apk\", \"\
+        /usr/lib/snapd/snapd\"]\n    ) && (chown.file.destination.uid != chown.file.uid\
+        \ || chown.file.destination.gid != chown.file.gid)\n  agent_version: ''\n\
+        \  filters: []\n- id: pci_11_5_critical_binaries_link\n  version: 9b8182c6\n\
+        \  description: Critical system binaries may have been modified\n  expression:\
+        \ |-\n    (\n        (link.file.path in [ ~\"/bin/*\", ~\"/sbin/*\", ~\"/usr/bin/*\"\
+        , ~\"/usr/sbin/*\", ~\"/usr/local/bin/*\", ~\"/usr/local/sbin/*\", ~\"/boot/**\"\
+        \ ]\n        || link.file.destination.path in [ ~\"/bin/*\", ~\"/sbin/*\"\
+        , ~\"/usr/bin/*\", ~\"/usr/sbin/*\", ~\"/usr/local/bin/*\", ~\"/usr/local/sbin/*\"\
+        , ~\"/boot/**\" ])\n        && process.file.path not in [~\"/usr/bin/apt*\"\
+        , \"/usr/bin/dpkg\", \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\", \"\
+        /usr/bin/containerd\", \"/usr/local/bin/containerd\", \"/usr/bin/dockerd\"\
+        , \"/usr/bin/npm\", ~\"/usr/bin/pip*\"]\n        && process.ancestors.file.path\
+        \ not in [~\"/usr/bin/apt*\", \"/usr/bin/dpkg\", \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\"\
+        , \"/usr/bin/npm\", ~\"/usr/bin/pip*\", \"/usr/bin/yum\", \"/sbin/apk\", \"\
+        /usr/lib/snapd/snapd\"]\n    )\n  agent_version: ''\n  filters: []\n- id:\
+        \ pci_11_5_critical_binaries_open\n  version: ce1c6918\n  description: Critical\
+        \ system binaries may have been modified\n  expression: |-\n    (\n      \
+        \  open.flags & (O_CREAT|O_TRUNC|O_RDWR|O_WRONLY) > 0 &&\n        open.file.path\
+        \ in [ ~\"/bin/*\", ~\"/sbin/*\", ~\"/usr/bin/*\", ~\"/usr/sbin/*\", ~\"/usr/local/bin/*\"\
+        , ~\"/usr/local/sbin/*\", ~\"/boot/**\" ]\n        && process.file.path not\
+        \ in [~\"/usr/bin/apt*\", \"/usr/bin/dpkg\", \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\"\
+        , \"/usr/bin/containerd\", \"/usr/local/bin/containerd\", \"/usr/bin/dockerd\"\
+        , \"/usr/bin/npm\", ~\"/usr/bin/pip*\"]\n        && process.ancestors.file.path\
+        \ not in [~\"/usr/bin/apt*\", \"/usr/bin/dpkg\", \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\"\
+        , \"/usr/bin/npm\", ~\"/usr/bin/pip*\", \"/usr/bin/yum\", \"/sbin/apk\", \"\
+        /usr/lib/snapd/snapd\"]\n    )\n  agent_version: ''\n  filters:\n  - os ==\
+        \ \"linux\"\n- id: pci_11_5_critical_binaries_open_v2\n  version: 45abd074\n\
+        \  description: Critical system binaries may have been modified\n  expression:\
+        \ |-\n    (\n        open.flags & (O_CREAT|O_TRUNC|O_RDWR|O_WRONLY) > 0 &&\n\
+        \        open.file.path in [ ~\"/bin/*\", ~\"/sbin/*\", ~\"/usr/bin/*\", ~\"\
+        /usr/sbin/*\", ~\"/usr/local/bin/*\", ~\"/usr/local/sbin/*\", ~\"/boot/**\"\
+        \ ]\n        && process.file.path not in [~\"/usr/bin/apt*\", \"/usr/bin/dpkg\"\
+        , \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\", \"/usr/bin/containerd\"\
+        , \"/usr/local/bin/containerd\", \"/usr/bin/dockerd\", \"/usr/bin/npm\", ~\"\
+        /usr/bin/pip*\"]\n        && process.ancestors.file.path not in [~\"/usr/bin/apt*\"\
+        , \"/usr/bin/dpkg\", \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\", \"\
+        /usr/bin/npm\", ~\"/usr/bin/pip*\", \"/usr/bin/yum\", \"/sbin/apk\", \"/usr/lib/snapd/snapd\"\
+        ]\n    ) && container.created_at > 90s\n  agent_version: ''\n  filters:\n\
+        \  - os == \"linux\"\n- id: pci_11_5_critical_binaries_rename\n  version:\
+        \ 2a133ffc\n  description: Critical system binaries may have been modified\n\
+        \  expression: |-\n    (\n        (rename.file.path in [ ~\"/bin/*\", ~\"\
+        /sbin/*\", ~\"/usr/bin/*\", ~\"/usr/sbin/*\", ~\"/usr/local/bin/*\", ~\"/usr/local/sbin/*\"\
+        , ~\"/boot/**\" ]\n        || rename.file.destination.path in [ ~\"/bin/*\"\
+        , ~\"/sbin/*\", ~\"/usr/bin/*\", ~\"/usr/sbin/*\", ~\"/usr/local/bin/*\",\
+        \ ~\"/usr/local/sbin/*\", ~\"/boot/**\" ])\n        && process.file.path not\
+        \ in [~\"/usr/bin/apt*\", \"/usr/bin/dpkg\", \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\"\
+        , \"/usr/bin/containerd\", \"/usr/local/bin/containerd\", \"/usr/bin/dockerd\"\
+        , \"/usr/bin/npm\", ~\"/usr/bin/pip*\"]\n        && process.ancestors.file.path\
+        \ not in [~\"/usr/bin/apt*\", \"/usr/bin/dpkg\", \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\"\
+        , \"/usr/bin/npm\", ~\"/usr/bin/pip*\", \"/usr/bin/yum\", \"/sbin/apk\", \"\
+        /usr/lib/snapd/snapd\"]\n    )\n  agent_version: ''\n  filters: []\n- id:\
+        \ pci_11_5_critical_binaries_unlink\n  version: a750ab26\n  description: Critical\
+        \ system binaries may have been modified\n  expression: |-\n    (\n      \
+        \  (unlink.file.path in [ ~\"/bin/*\", ~\"/sbin/*\", ~\"/usr/bin/*\", ~\"\
+        /usr/sbin/*\", ~\"/usr/local/bin/*\", ~\"/usr/local/sbin/*\", ~\"/boot/**\"\
+        \ ])\n        && process.file.path not in [~\"/usr/bin/apt*\", \"/usr/bin/dpkg\"\
+        , \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\", \"/usr/bin/containerd\"\
+        , \"/usr/local/bin/containerd\", \"/usr/bin/dockerd\", \"/usr/bin/npm\", ~\"\
+        /usr/bin/pip*\"]\n        && process.ancestors.file.path not in [~\"/usr/bin/apt*\"\
+        , \"/usr/bin/dpkg\", \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\", \"\
+        /usr/bin/npm\", ~\"/usr/bin/pip*\", \"/usr/bin/yum\", \"/sbin/apk\", \"/usr/lib/snapd/snapd\"\
+        ]\n    )\n  agent_version: ''\n  filters:\n  - os == \"linux\"\n- id: pci_11_5_critical_binaries_utimes\n\
+        \  version: 5e2a9d6f\n  description: Critical system binaries may have been\
+        \ modified\n  expression: |-\n    (\n        (utimes.file.path in [ ~\"/bin/*\"\
+        , ~\"/sbin/*\", ~\"/usr/bin/*\", ~\"/usr/sbin/*\", ~\"/usr/local/bin/*\",\
+        \ ~\"/usr/local/sbin/*\", ~\"/boot/**\" ])\n        && process.file.path not\
+        \ in [~\"/usr/bin/apt*\", \"/usr/bin/dpkg\", \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\"\
+        , \"/usr/bin/containerd\", \"/usr/local/bin/containerd\", \"/usr/bin/dockerd\"\
+        , \"/usr/bin/npm\", ~\"/usr/bin/pip*\"]\n        && process.ancestors.file.path\
+        \ not in [~\"/usr/bin/apt*\", \"/usr/bin/dpkg\", \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\"\
+        , \"/usr/bin/npm\", ~\"/usr/bin/pip*\", \"/usr/bin/yum\", \"/sbin/apk\", \"\
+        /usr/lib/snapd/snapd\"]\n    )\n  agent_version: ''\n  filters: []\n- id:\
+        \ potential_cryptominer\n  version: 47048a42\n  description: A process resolved\
+        \ a DNS name associated with cryptomining activity\n  expression: dns.question.name\
+        \ in [~\"*minexmr.com\", ~\"*nanopool.org\", ~\"*supportxmr.com\",\n    ~\"\
+        *c3pool.com\", ~\"*p2pool.io\", ~\"*ethermine.org\", ~\"*f2pool.com\", ~\"\
+        *poolin.me\",\n    ~\"*rplant.xyz\"] && process.file.name != \"\"\n  agent_version:\
+        \ ''\n  filters: []\n- id: potential_web_shell_parent\n  version: b67ffbcd\n\
+        \  description: A web application spawned a shell or shell utility\n  expression:\
+        \ |-\n    (exec.file.path in [ \"/bin/dash\",\n      \"/usr/bin/dash\",\n\
+        \      \"/bin/sh\",\n      \"/bin/static-sh\",\n      \"/usr/bin/sh\",\n \
+        \     \"/bin/bash\",\n      \"/usr/bin/bash\",\n      \"/bin/bash-static\"\
+        ,\n      \"/usr/bin/zsh\",\n      \"/usr/bin/ash\",\n      \"/usr/bin/csh\"\
+        ,\n      \"/usr/bin/ksh\",\n      \"/usr/bin/tcsh\",\n      \"/usr/lib/initramfs-tools/bin/busybox\"\
+        ,\n      \"/bin/busybox\",\n      \"/usr/bin/fish\",\n      \"/bin/ksh93\"\
+        ,\n      \"/bin/rksh\",\n      \"/bin/rksh93\",\n      \"/bin/lksh\",\n  \
+        \    \"/bin/mksh\",\n      \"/bin/mksh-static\",\n      \"/usr/bin/csharp\"\
+        ,\n      \"/bin/posh\",\n      \"/usr/bin/rc\",\n      \"/bin/sash\",\n  \
+        \    \"/usr/bin/yash\",\n      \"/bin/zsh5\",\n      \"/bin/zsh5-static\"\
+        \ ] || exec.comm in [\"wget\", \"curl\", \"lwp-download\"] || exec.file.path\
+        \ in [\"/bin/cat\",\"/bin/chgrp\",\"/bin/chmod\",\"/bin/chown\",\"/bin/cp\"\
+        ,\"/bin/date\",\"/bin/dd\",\"/bin/df\",\"/bin/dir\",\"/bin/echo\",\"/bin/ln\"\
+        ,\"/bin/ls\",\"/bin/mkdir\",\"/bin/mknod\",\"/bin/mktemp\",\"/bin/mv\",\"\
+        /bin/pwd\",\"/bin/readlink\",\"/bin/rm\",\"/bin/rmdir\",\"/bin/sleep\",\"\
+        /bin/stty\",\"/bin/sync\",\"/bin/touch\",\"/bin/uname\",\"/bin/vdir\",\"/usr/bin/arch\"\
+        ,\"/usr/bin/b2sum\",\"/usr/bin/base32\",\"/usr/bin/base64\",\"/usr/bin/basename\"\
+        ,\"/usr/bin/chcon\",\"/usr/bin/cksum\",\"/usr/bin/comm\",\"/usr/bin/csplit\"\
+        ,\"/usr/bin/cut\",\"/usr/bin/dircolors\",\"/usr/bin/dirname\",\"/usr/bin/du\"\
+        ,\"/usr/bin/env\",\"/usr/bin/expand\",\"/usr/bin/expr\",\"/usr/bin/factor\"\
+        ,\"/usr/bin/fmt\",\"/usr/bin/fold\",\"/usr/bin/groups\",\"/usr/bin/head\"\
+        ,\"/usr/bin/hostid\",\"/usr/bin/id\",\"/usr/bin/install\",\"/usr/bin/join\"\
+        ,\"/usr/bin/link\",\"/usr/bin/logname\",\"/usr/bin/md5sum\",\"/usr/bin/md5sum.textutils\"\
+        ,\"/usr/bin/mkfifo\",\"/usr/bin/nice\",\"/usr/bin/nl\",\"/usr/bin/nohup\"\
+        ,\"/usr/bin/nproc\",\"/usr/bin/numfmt\",\"/usr/bin/od\",\"/usr/bin/paste\"\
+        ,\"/usr/bin/pathchk\",\"/usr/bin/pinky\",\"/usr/bin/pr\",\"/usr/bin/printenv\"\
+        ,\"/usr/bin/printf\",\"/usr/bin/ptx\",\"/usr/bin/realpath\",\"/usr/bin/runcon\"\
+        ,\"/usr/bin/seq\",\"/usr/bin/sha1sum\",\"/usr/bin/sha224sum\",\"/usr/bin/sha256sum\"\
+        ,\"/usr/bin/sha384sum\",\"/usr/bin/sha512sum\",\"/usr/bin/shred\",\"/usr/bin/shuf\"\
+        ,\"/usr/bin/sort\",\"/usr/bin/split\",\"/usr/bin/stat\",\"/usr/bin/stdbuf\"\
+        ,\"/usr/bin/sum\",\"/usr/bin/tac\",\"/usr/bin/tail\",\"/usr/bin/tee\",\"/usr/bin/test\"\
+        ,\"/usr/bin/timeout\",\"/usr/bin/tr\",\"/usr/bin/truncate\",\"/usr/bin/tsort\"\
+        ,\"/usr/bin/tty\",\"/usr/bin/unexpand\",\"/usr/bin/uniq\",\"/usr/bin/unlink\"\
+        ,\"/usr/bin/users\",\"/usr/bin/wc\",\"/usr/bin/who\",\"/usr/bin/whoami\",\"\
+        /usr/sbin/chroot\"]) &&\n    (process.parent.file.name in [\"apache2\", \"\
+        nginx\", ~\"tomcat*\", \"httpd\"] || process.parent.file.name =~ \"php*\"\
+        )\n  agent_version: ''\n  filters: []\n- id: procdump_execution\n  version:\
+        \ bfcebb5c\n  description: A tool used to dump process memory has been executed\n\
+        \  expression: exec.file.name in [\"procmon.exe\",\"procdump.exe\"]\n  agent_version:\
+        \ ''\n  filters:\n  - os == \"windows\"\n- id: ptrace_antidebug\n  version:\
+        \ a6289ff7\n  description: A process uses an anti-debugging technique to block\
+        \ debuggers\n  expression: ptrace.request == PTRACE_TRACEME && process.file.name\
+        \ != \"\"\n  agent_version: ''\n  filters: []\n- id: ptrace_injection\n  version:\
+        \ 6d290a43\n  description: A process attempted to inject code into another\
+        \ process\n  expression: ptrace.request == PTRACE_POKETEXT || ptrace.request\
+        \ == PTRACE_POKEDATA\n    || ptrace.request == PTRACE_POKEUSR\n  agent_version:\
+        \ ''\n  filters: []\n- id: pwnkit_privilege_escalation\n  version: c83bbabc\n\
+        \  description: A process was spawned with indicators of exploitation of CVE-2021-4034\n\
+        \  expression: (exec.file.path == \"/usr/bin/pkexec\" && exec.envs in [~\"\
+        *SHELL*\", ~\"*PATH*\"]\n    && exec.envs not in [~\"*DISPLAY*\", ~\"*DESKTOP_SESSION*\"\
+        ] && exec.uid != 0)\n  agent_version: ''\n  filters:\n  - os == \"linux\"\n\
+        - id: python_cli_code\n  version: '989474'\n  description: Python code was\
+        \ provided on the command line\n  expression: exec.file.name == ~\"python*\"\
+        \ && exec.args_flags in [\"c\"] && exec.args\n    in [~\"*-c*SOCK_STREAM*\"\
+        , ~\"*-c*subprocess*\", \"*-c*/bash*\", \"*-c*/bin/sh*\", \"*-c*pty.spawn*\"\
+        ]\n    && exec.args !~ \"*setuptools*\"\n  agent_version: ''\n  filters: []\n\
+        - id: ransomware_note\n  version: ffd9b885\n  description: Possible ransomware\
+        \ note created under common user directories\n  expression: open.flags & O_CREAT\
+        \ > 0 && open.file.path in [~\"/home/**\", ~\"/root/**\",\n    ~\"/bin/**\"\
+        , ~\"/usr/bin/**\", ~\"/opt/**\", ~\"/etc/**\", ~\"/var/log/**\", ~\"/var/lib/log/**\"\
+        ,\n    ~\"/var/backup/**\", ~\"/var/www/**\"] && open.file.name in [r\"(?i).*(restore|recovery|readme|instruction|how_to|ransom).*|.*(your_|crypt|lock|important).*\\\
+        .txt$\"]\n    && open.file.name != \"README.md\"\n  agent_version: ''\n  filters:\n\
+        \  - os == \"linux\"\n- id: rc_scripts_modified\n  version: af295b08\n  description:\
+        \ RC scripts modified\n  expression: (open.flags & (O_CREAT|O_TRUNC|O_RDWR|O_WRONLY)\
+        \ > 0 && (open.file.path\n    in [\"/etc/rc.common\", \"/etc/rc.local\"]))\
+        \ && process.ancestors.file.path not in\n    [~\"/usr/bin/apt*\", \"/usr/bin/dpkg\"\
+        , \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\",\n    \"/usr/bin/npm\"\
+        , ~\"/usr/bin/pip*\", \"/usr/bin/yum\", \"/sbin/apk\", \"/usr/lib/snapd/snapd\"\
+        ]\n  agent_version: ''\n  filters: []\n- id: read_kubeconfig\n  version: '80926379'\n\
+        \  description: The kubeconfig file was accessed\n  expression: open.file.path\
+        \ in [~\"/home/*/.kube/config\", \"/root/.kube/config\"]\n  agent_version:\
+        \ ''\n  filters: []\n- id: read_release_info\n  version: d0cc9710\n  description:\
+        \ OS information was read from the /etc/lsb-release file\n  expression: open.file.path\
+        \ == \"/etc/lsb-release\" && open.flags & O_RDONLY > 0\n  agent_version: ''\n\
+        \  filters: []\n- id: redis_sandbox_escape\n  version: d7eb615a\n  description:\
+        \ Detects CVE-2022-0543\n  expression: (open.file.path =~ \"/usr/lib/x86_64-linux-gnu/*\"\
+        \ && open.file.name in\n    [\"libc-2.29.so\", \"libc-2.30.so\", \"libc-2.31.so\"\
+        , \"libc-2.32.so\", \"libc-2.33.so\",\n    \"libc-2.34.so\", \"libc-2.35.so\"\
+        , \"libc-2.36.so\", \"libc-2.37.so\"]) && process.ancestors.comm\n    in [\"\
+        redis-check-rdb\", \"redis-server\"]\n  agent_version: ''\n  filters: []\n\
+        - id: redis_save_module\n  version: b1cb9110\n  description: Redis module\
+        \ has been created\n  expression: (open.flags & (O_CREAT|O_TRUNC|O_RDWR|O_WRONLY)\
+        \ > 0 && open.file.path\n    =~ \"/tmp/**\" && open.file.name in [~\"*.rdb\"\
+        , ~\"*.aof\", ~\"*.so\"]) && process.file.name\n    in [\"redis-check-rdb\"\
+        , \"redis-server\"]\n  agent_version: ''\n  filters: []\n- id: runc_modification\n\
+        \  version: c7144439\n  description: The runc binary was modified in a non-standard\
+        \ way\n  expression: |-\n    open.file.path in [\"/usr/bin/runc\", \"/usr/sbin/runc\"\
+        , \"/usr/bin/docker-runc\"]\n    && open.flags & O_CREAT|O_TRUNC|O_RDWR|O_WRONLY\
+        \ > 0\n    && process.file.path not in [~\"/usr/bin/apt*\", \"/usr/bin/dpkg\"\
+        , \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\", \"/usr/bin/containerd\"\
+        , \"/usr/local/bin/containerd\", \"/usr/bin/dockerd\", \"/usr/bin/npm\", ~\"\
+        /usr/bin/pip*\"]\n    && process.ancestors.file.path not in [~\"/usr/bin/apt*\"\
+        , \"/usr/bin/dpkg\", \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\", \"\
+        /usr/bin/npm\", ~\"/usr/bin/pip*\", \"/usr/bin/yum\", \"/sbin/apk\", \"/usr/lib/snapd/snapd\"\
+        ]\n  agent_version: ''\n  filters: []\n- id: scheduled_task_creation\n  version:\
+        \ 9c3f2289\n  description: A scheduled task was created\n  expression: exec.file.name\
+        \ in [\"at.exe\",\"schtasks.exe\"]\n  agent_version: ''\n  filters:\n  - os\
+        \ == \"windows\"\n- id: selinux_disable_enforcement\n  version: afa9a8ba\n\
+        \  description: SELinux enforcement status was disabled\n  expression: selinux.enforce.status\
+        \ in [\"permissive\", \"disabled\"] && process.ancestors.args\n    != ~\"\
+        *BECOME-SUCCESS*\"\n  agent_version: ''\n  filters: []\n- id: sensitive_tracing\n\
+        \  version: c4585b20\n  description: A process is tracing privileged processes\
+        \ or sshd for possible credential\n    dumping\n  expression: (ptrace.request\
+        \ == PTRACE_PEEKTEXT || ptrace.request == PTRACE_PEEKDATA\n    || ptrace.request\
+        \ == PTRACE_PEEKUSR) && ptrace.tracee.euid == 0 && process.comm\n    not in\
+        \ [\"dlv\", \"dlv-linux-amd64\", \"strace\", \"gdb\", \"lldb-server\"]\n \
+        \ agent_version: ''\n  filters:\n  - os == \"linux\"\n- id: service_stop\n\
+        \  version: 8e434232\n  description: systemctl used to stop a service\n  expression:\
+        \ exec.file.name == \"systemctl\" && exec.args in [~\"*stop*\"]\n  agent_version:\
+        \ ''\n  filters: []\n- id: shell_history_deleted\n  version: ff763e6\n  description:\
+        \ Shell History was Deleted\n  expression: (unlink.file.name  =~ r\".([dbazfi]*sh)(_history)$\"\
+        ) && process.comm\n    not in  [\"dockerd\", \"containerd\"]\n  agent_version:\
+        \ ''\n  filters: []\n- id: shell_history_symlink\n  version: 31982e4d\n  description:\
+        \ A symbolic link for shell history was created targeting /dev/null\n  expression:\
+        \ exec.comm == \"ln\" && exec.args in [~\"*.*history*\", \"/dev/null\"]\n\
+        \  agent_version: ''\n  filters: []\n- id: shell_history_truncated\n  version:\
+        \ 38ec83e8\n  description: Shell History was Deleted\n  expression: open.flags\
+        \ & (O_CREAT|O_TRUNC|O_RDWR|O_WRONLY) > 0 && open.file.name\n    =~ r\".([dbazfi]*sh)(_history)$\"\
+        \ && open.file.path in [~\"/root/*\", ~\"/home/**\"]\n    && process.file.name\
+        \ == \"truncate\"\n  agent_version: ''\n  filters: []\n- id: shell_profile_modification\n\
+        \  version: d1cecdac\n  description: Shell profile was modified\n  expression:\
+        \ open.file.path in [~\"/home/*/*profile\", ~\"/home/*/*rc\"] && open.flags\n\
+        \    & ((O_CREAT|O_TRUNC|O_RDWR|O_WRONLY)) > 0\n  agent_version: ''\n  filters:\
+        \ []\n- id: ssh_authorized_keys_chmod\n  version: 79be8a18\n  description:\
+        \ SSH modified keys may have been modified\n  expression: |-\n    (\n    \
+        \    chmod.file.name in [ \"authorized_keys\", \"authorized_keys2\" ] && (chmod.file.path\
+        \ in [ ~\"/root/.ssh/*\", ~\"/home/*/.ssh/*\", ~\"/var/lib/*/.ssh/*\" ])\n\
+        \    ) && chmod.file.destination.mode != chmod.file.mode\n  agent_version:\
+        \ ''\n  filters: []\n- id: ssh_authorized_keys_chown\n  version: 7c835bfd\n\
+        \  description: SSH modified keys may have been modified\n  expression: |-\n\
+        \    (\n        chown.file.name in [ \"authorized_keys\", \"authorized_keys2\"\
+        \ ] && (chown.file.path in [ ~\"/root/.ssh/*\", ~\"/home/*/.ssh/*\", ~\"/var/lib/*/.ssh/*\"\
+        \ ])\n    ) && (chown.file.destination.uid != chown.file.uid || chown.file.destination.gid\
+        \ != chown.file.gid)\n  agent_version: ''\n  filters:\n  - os == \"linux\"\
+        \n- id: ssh_authorized_keys_link\n  version: 979d56a1\n  description: SSH\
+        \ modified keys may have been modified\n  expression: |-\n    (\n        link.file.name\
+        \ in [ \"authorized_keys\", \"authorized_keys2\" ] && (link.file.path in [\
+        \ ~\"/root/.ssh/*\", ~\"/home/*/.ssh/*\", ~\"/var/lib/*/.ssh/*\" ]\n     \
+        \   || link.file.destination.path in [ ~\"/root/.ssh/*\", ~\"/home/*/.ssh/*\"\
+        , ~\"/var/lib/*/.ssh/*\" ])\n    )\n  agent_version: ''\n  filters: []\n-\
+        \ id: ssh_authorized_keys_open\n  version: c4fa7b8f\n  description: SSH modified\
+        \ keys may have been modified\n  expression: |-\n    (\n        open.flags\
+        \ & (O_CREAT|O_TRUNC|O_RDWR|O_WRONLY) > 0 &&\n        open.file.name in [\
+        \ \"authorized_keys\", \"authorized_keys2\" ] && (open.file.path in [ ~\"\
+        /root/.ssh/*\", ~\"/home/*/.ssh/*\", ~\"/var/lib/*/.ssh/*\" ])\n    )\n  agent_version:\
+        \ ''\n  filters: []\n- id: ssh_authorized_keys_open_v2\n  version: 513f8108\n\
+        \  description: SSH modified keys may have been modified\n  expression: |-\n\
+        \    (\n        open.flags & (O_CREAT|O_TRUNC|O_RDWR|O_WRONLY) > 0 &&\n  \
+        \      open.file.name in [ \"authorized_keys\", \"authorized_keys2\" ] &&\
+        \ (open.file.path in [ ~\"/root/.ssh/*\", ~\"/home/*/.ssh/*\", ~\"/var/lib/*/.ssh/*\"\
+        \ ])\n    ) && container.created_at > 90s\n  agent_version: ''\n  filters:\n\
+        \  - os == \"linux\"\n- id: ssh_authorized_keys_rename\n  version: 6f58449a\n\
+        \  description: SSH modified keys may have been modified\n  expression: |-\n\
+        \    (\n        rename.file.name in [ \"authorized_keys\", \"authorized_keys2\"\
+        \ ] && (rename.file.path in [ ~\"/root/.ssh/*\", ~\"/home/*/.ssh/*\", ~\"\
+        /var/lib/*/.ssh/*\" ]\n        || rename.file.destination.path in [ ~\"/root/.ssh/*\"\
+        , ~\"/home/*/.ssh/*\", ~\"/var/lib/*/.ssh/*\" ])\n    )\n  agent_version:\
+        \ ''\n  filters:\n  - os == \"linux\"\n- id: ssh_authorized_keys_unlink\n\
+        \  version: 41090e4e\n  description: SSH modified keys may have been modified\n\
+        \  expression: |-\n    (\n        unlink.file.name in [ \"authorized_keys\"\
+        , \"authorized_keys2\" ] && (unlink.file.path in [ ~\"/root/.ssh/*\", ~\"\
+        /home/*/.ssh/*\", ~\"/var/lib/*/.ssh/*\" ])\n    )\n  agent_version: ''\n\
+        \  filters:\n  - os == \"linux\"\n- id: ssh_authorized_keys_utimes\n  version:\
+        \ c614f0d\n  description: SSH modified keys may have been modified\n  expression:\
+        \ |-\n    (\n        utimes.file.name in [ \"authorized_keys\", \"authorized_keys2\"\
+        \ ] && (utimes.file.path in [ ~\"/root/.ssh/*\", ~\"/home/*/.ssh/*\", ~\"\
+        /var/lib/*/.ssh/*\" ])\n    )\n  agent_version: ''\n  filters: []\n- id: ssl_certificate_tampering_chmod\n\
+        \  version: 128236e9\n  description: SSL certificates may have been tampered\
+        \ with\n  expression: |-\n    (\n        (chmod.file.path in [ ~\"/etc/ssl/certs/**\"\
+        , ~\"/etc/pki/**\" ])\n        && process.file.path not in [~\"/usr/bin/apt*\"\
+        , \"/usr/bin/dpkg\", \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\", \"\
+        /usr/bin/npm\", ~\"/usr/bin/pip*\", \"/usr/bin/yum\", \"/sbin/apk\", \"/usr/lib/snapd/snapd\"\
+        ]\n    ) && chmod.file.mode != chmod.file.destination.mode\n    && process.file.path\
+        \ != \"/usr/sbin/update-ca-certificates\"\n    && process.ancestors.file.path\
+        \ != \"/usr/sbin/update-ca-certificates\"\n    && process.ancestors.file.path\
+        \ not in [~\"/usr/bin/apt*\", \"/usr/bin/dpkg\", \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\"\
+        , \"/usr/bin/npm\", ~\"/usr/bin/pip*\", \"/usr/bin/yum\", \"/sbin/apk\", \"\
+        /usr/lib/snapd/snapd\"]\n    && process.file.name !~ \"runc*\"\n  agent_version:\
+        \ ''\n  filters: []\n- id: ssl_certificate_tampering_chown\n  version: 5af3db18\n\
+        \  description: SSL certificates may have been tampered with\n  expression:\
+        \ |-\n    (\n        (chown.file.path in [ ~\"/etc/ssl/certs/**\", ~\"/etc/pki/**\"\
+        \ ])\n        && process.file.path not in [~\"/usr/bin/apt*\", \"/usr/bin/dpkg\"\
+        , \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\", \"/usr/bin/npm\", ~\"\
+        /usr/bin/pip*\", \"/usr/bin/yum\", \"/sbin/apk\", \"/usr/lib/snapd/snapd\"\
+        ]\n    ) && (chown.file.destination.uid != chown.file.uid || chown.file.destination.gid\
+        \ != chown.file.gid)\n    && process.file.path != \"/usr/sbin/update-ca-certificates\"\
+        \n    && process.ancestors.file.path != \"/usr/sbin/update-ca-certificates\"\
+        \n    && process.ancestors.file.path not in [~\"/usr/bin/apt*\", \"/usr/bin/dpkg\"\
+        , \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\", \"/usr/bin/npm\", ~\"\
+        /usr/bin/pip*\", \"/usr/bin/yum\", \"/sbin/apk\", \"/usr/lib/snapd/snapd\"\
+        ]\n    && process.file.name !~ \"runc*\"\n  agent_version: ''\n  filters:\n\
+        \  - os == \"linux\"\n- id: ssl_certificate_tampering_link\n  version: 1f02b72d\n\
+        \  description: SSL certificates may have been tampered with\n  expression:\
+        \ |-\n    (\n        (link.file.path in [ ~\"/etc/ssl/certs/**\", ~\"/etc/pki/**\"\
+        \ ]\n        || link.file.destination.path in [ ~\"/etc/ssl/certs/**\", ~\"\
+        /etc/pki/**\" ])\n        && process.file.path not in [~\"/usr/bin/apt*\"\
+        , \"/usr/bin/dpkg\", \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\", \"\
+        /usr/bin/npm\", ~\"/usr/bin/pip*\", \"/usr/bin/yum\", \"/sbin/apk\", \"/usr/lib/snapd/snapd\"\
+        ]\n        && process.file.path != \"/usr/sbin/update-ca-certificates\"\n\
+        \        && process.ancestors.file.path != \"/usr/sbin/update-ca-certificates\"\
+        \n        && process.ancestors.file.path not in [~\"/usr/bin/apt*\", \"/usr/bin/dpkg\"\
+        , \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\", \"/usr/bin/npm\", ~\"\
+        /usr/bin/pip*\", \"/usr/bin/yum\", \"/sbin/apk\", \"/usr/lib/snapd/snapd\"\
+        ]\n        && process.file.name !~ \"runc*\"\n    )\n  agent_version: ''\n\
+        \  filters: []\n- id: ssl_certificate_tampering_open\n  version: c34bcf3a\n\
+        \  description: SSL certificates may have been tampered with\n  expression:\
+        \ |-\n    (\n        open.flags & (O_CREAT|O_RDWR|O_WRONLY) > 0 &&\n     \
+        \   (open.file.path in [ ~\"/etc/ssl/certs/**\", ~\"/etc/pki/**\" ])\n   \
+        \ )\n    && process.file.path != \"/usr/sbin/update-ca-certificates\"\n  \
+        \  && process.ancestors.file.path != \"/usr/sbin/update-ca-certificates\"\n\
+        \    && process.ancestors.file.path not in [~\"/usr/bin/apt*\", \"/usr/bin/dpkg\"\
+        , \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\", \"/usr/bin/npm\", ~\"\
+        /usr/bin/pip*\", \"/usr/bin/yum\", \"/sbin/apk\", \"/usr/lib/snapd/snapd\"\
+        ]\n    && process.file.name !~ \"runc*\"\n  agent_version: ''\n  filters:\
+        \ []\n- id: ssl_certificate_tampering_open_v2\n  version: a90058eb\n  description:\
+        \ SSL certificates may have been tampered with\n  expression: |-\n    (\n\
+        \        open.flags & (O_CREAT|O_RDWR|O_WRONLY) > 0 &&\n        (open.file.path\
+        \ in [ ~\"/etc/ssl/certs/**\", ~\"/etc/pki/**\" ])\n    )\n    && process.file.path\
+        \ != \"/usr/sbin/update-ca-certificates\"\n    && process.ancestors.file.path\
+        \ != \"/usr/sbin/update-ca-certificates\"\n    && process.ancestors.file.path\
+        \ not in [~\"/usr/bin/apt*\", \"/usr/bin/dpkg\", \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\"\
+        , \"/usr/bin/npm\", ~\"/usr/bin/pip*\", \"/usr/bin/yum\", \"/sbin/apk\", \"\
+        /usr/lib/snapd/snapd\"]\n    && process.file.name !~ \"runc*\"\n    && container.created_at\
+        \ > 90s\n  agent_version: ''\n  filters:\n  - os == \"linux\"\n- id: ssl_certificate_tampering_rename\n\
+        \  version: e74f2226\n  description: SSL certificates may have been tampered\
+        \ with\n  expression: |-\n    (\n        (rename.file.path in [ ~\"/etc/ssl/certs/**\"\
+        , ~\"/etc/pki/**\" ]\n        || rename.file.destination.path in [ ~\"/etc/ssl/certs/**\"\
+        , ~\"/etc/pki/**\" ])\n        && process.file.path not in [~\"/usr/bin/apt*\"\
+        , \"/usr/bin/dpkg\", \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\", \"\
+        /usr/bin/npm\", ~\"/usr/bin/pip*\", \"/usr/bin/yum\", \"/sbin/apk\", \"/usr/lib/snapd/snapd\"\
+        ]\n    )\n    && process.file.path != \"/usr/sbin/update-ca-certificates\"\
+        \n    && process.ancestors.file.path != \"/usr/sbin/update-ca-certificates\"\
+        \n    && process.ancestors.file.path not in [~\"/usr/bin/apt*\", \"/usr/bin/dpkg\"\
+        , \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\", \"/usr/bin/npm\", ~\"\
+        /usr/bin/pip*\", \"/usr/bin/yum\", \"/sbin/apk\", \"/usr/lib/snapd/snapd\"\
+        ]\n    && process.file.name !~ \"runc*\"\n  agent_version: ''\n  filters:\
+        \ []\n- id: ssl_certificate_tampering_unlink\n  version: 774e2aea\n  description:\
+        \ SSL certificates may have been tampered with\n  expression: |-\n    (\n\
+        \        (unlink.file.path in [ ~\"/etc/ssl/certs/**\" ])\n        && process.file.path\
+        \ not in [~\"/usr/bin/apt*\", \"/usr/bin/dpkg\", \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\"\
+        , \"/usr/bin/npm\", ~\"/usr/bin/pip*\", \"/usr/bin/yum\", \"/sbin/apk\", \"\
+        /usr/lib/snapd/snapd\"]\n    )\n    && process.file.path != \"/usr/sbin/update-ca-certificates\"\
+        \n    && process.ancestors.file.path != \"/usr/sbin/update-ca-certificates\"\
+        \n    && process.ancestors.file.path not in [~\"/usr/bin/apt*\", \"/usr/bin/dpkg\"\
+        , \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\", \"/usr/bin/npm\", ~\"\
+        /usr/bin/pip*\", \"/usr/bin/yum\", \"/sbin/apk\", \"/usr/lib/snapd/snapd\"\
+        ]\n    && process.file.name !~ \"runc*\"\n  agent_version: ''\n  filters:\
+        \ []\n- id: ssl_certificate_tampering_utimes\n  version: 29db81c1\n  description:\
+        \ SSL certificates may have been tampered with\n  expression: |-\n    (\n\
+        \        (utimes.file.path in [ ~\"/etc/ssl/certs/**\" ])\n        && process.file.path\
+        \ not in [~\"/usr/bin/apt*\", \"/usr/bin/dpkg\", \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\"\
+        , \"/usr/bin/npm\", ~\"/usr/bin/pip*\", \"/usr/bin/yum\", \"/sbin/apk\", \"\
+        /usr/lib/snapd/snapd\"]\n    )\n    && process.file.path != \"/usr/sbin/update-ca-certificates\"\
+        \n    && process.ancestors.file.path != \"/usr/sbin/update-ca-certificates\"\
+        \n    && process.ancestors.file.path not in [~\"/usr/bin/apt*\", \"/usr/bin/dpkg\"\
+        , \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\", \"/usr/bin/npm\", ~\"\
+        /usr/bin/pip*\", \"/usr/bin/yum\", \"/sbin/apk\", \"/usr/lib/snapd/snapd\"\
+        ]\n    && process.file.name !~ \"runc*\"\n  agent_version: ''\n  filters:\n\
+        \  - os == \"linux\"\n- id: sudoers_policy_modified_chmod\n  version: ae70daab\n\
+        \  description: Sudoers policy file may have been modified without authorization\n\
+        \  expression: \"(\\n    (chmod.file.path == \\\"/etc/sudoers\\\") \\n) &&\
+        \ chmod.file.destination.mode\\\n    \\ != chmod.file.mode && process.ancestors.file.path\
+        \ not in [~\\\"/usr/bin/apt*\\\"\\\n    , \\\"/usr/bin/dpkg\\\", \\\"/usr/bin/rpm\\\
+        \", \\\"/usr/bin/unattended-upgrade\\\", \\\"/usr/bin/npm\\\"\\\n    , ~\\\
+        \"/usr/bin/pip*\\\", \\\"/usr/bin/yum\\\", \\\"/sbin/apk\\\", \\\"/usr/lib/snapd/snapd\\\
+        \"\\\n    ]\"\n  agent_version: ''\n  filters:\n  - os == \"linux\"\n- id:\
+        \ sudoers_policy_modified_chown\n  version: 898b1aa0\n  description: Sudoers\
+        \ policy file may have been modified without authorization\n  expression:\
+        \ |-\n    (\n        (chown.file.path == \"/etc/sudoers\")\n    ) && (chown.file.destination.uid\
+        \ != chown.file.uid || chown.file.destination.gid != chown.file.gid)\n  agent_version:\
+        \ ''\n  filters: []\n- id: sudoers_policy_modified_link\n  version: 1f1b8962\n\
+        \  description: Sudoers policy file may have been modified without authorization\n\
+        \  expression: |-\n    (\n        (link.file.path == \"/etc/sudoers\"\n  \
+        \      || link.file.destination.path == \"/etc/sudoers\")\n    )\n  agent_version:\
+        \ ''\n  filters: []\n- id: sudoers_policy_modified_open\n  version: af2610b6\n\
+        \  description: Sudoers policy file may have been modified without authorization\n\
+        \  expression: |2-\n\n    (open.flags & (O_CREAT|O_TRUNC|O_RDWR|O_WRONLY)\
+        \ > 0 &&\n    (open.file.path == \"/etc/sudoers\")) && process.file.path not\
+        \ in [~\"/usr/bin/apt*\", \"/usr/bin/dpkg\", \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\"\
+        , \"/usr/bin/npm\", ~\"/usr/bin/pip*\", \"/usr/bin/yum\", \"/sbin/apk\", \"\
+        /usr/lib/snapd/snapd\"]\n  agent_version: ''\n  filters:\n  - os == \"linux\"\
+        \n- id: sudoers_policy_modified_rename\n  version: 531fc9ae\n  description:\
+        \ Sudoers policy file may have been modified without authorization\n  expression:\
+        \ |-\n    (\n        (rename.file.path == \"/etc/sudoers\"\n        || rename.file.destination.path\
+        \ == \"/etc/sudoers\")\n    )\n  agent_version: ''\n  filters:\n  - os ==\
+        \ \"linux\"\n- id: sudoers_policy_modified_unlink\n  version: 5568da57\n \
+        \ description: Sudoers policy file may have been modified without authorization\n\
+        \  expression: |-\n    (\n        (unlink.file.path == \"/etc/sudoers\")\n\
+        \    )\n  agent_version: ''\n  filters: []\n- id: sudoers_policy_modified_utimes\n\
+        \  version: d99c2466\n  description: Sudoers policy file may have been modified\
+        \ without authorization\n  expression: |-\n    (\n        (utimes.file.path\
+        \ == \"/etc/sudoers\")\n    ) && process.file.path not in [~\"/usr/bin/apt*\"\
+        , \"/usr/bin/dpkg\", \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\", \"\
+        /usr/bin/containerd\", \"/usr/local/bin/containerd\", \"/usr/bin/dockerd\"\
+        , \"/usr/bin/npm\", ~\"/usr/bin/pip*\"]\n  agent_version: ''\n  filters:\n\
+        \  - os == \"linux\"\n- id: suid_file_execution\n  version: 1b4f4075\n  description:\
+        \ a SUID file was executed\n  expression: (setuid.euid == 0 || setuid.uid\
+        \  == 0)  && process.file.mode & S_ISUID\n    > 0  && process.file.uid ==\
+        \ 0  && process.uid != 0  && process.file.path != \"/usr/bin/sudo\"\n  agent_version:\
+        \ ''\n  filters: []\n- id: suspicious_bitsadmin_usage\n  version: 86c03d62\n\
+        \  description: A suspicious bitsadmin command has been executed\n  expression:\
+        \ exec.file.name == \"bitsadmin.exe\" && exec.cmdline in [~\"*addfile*\",\n\
+        \    ~\"*create*\", ~\"*resume*\"]\n  agent_version: ''\n  filters:\n  - os\
+        \ == \"windows\"\n- id: suspicious_container_client\n  version: 8b9461f4\n\
+        \  description: A container management utility was executed in a container\n\
+        \  expression: exec.file.name in [\"docker\", \"kubectl\"] && container.id\
+        \ != \"\"\n  agent_version: ''\n  filters:\n  - os == \"linux\"\n- id: suspicious_suid_execution\n\
+        \  version: 216c8207\n  description: Recently written or modified suid file\
+        \ has been executed\n  expression: ((process.file.mode & S_ISUID > 0) && process.file.modification_time\n\
+        \    < 30s) && exec.file.name != \"\" && process.ancestors.file.path not in\
+        \ [\"/opt/datadog-agent/embedded/bin/agent\",\n    \"/opt/datadog-agent/embedded/bin/system-probe\"\
+        , \"/opt/datadog-agent/embedded/bin/security-agent\",\n    \"/opt/datadog-agent/embedded/bin/process-agent\"\
+        , \"/opt/datadog-agent/bin/agent/agent\",\n    \"/opt/datadog/apm/inject/auto_inject_runc\"\
+        , \"/usr/bin/dd-host-install\", \"/usr/bin/dd-host-container-install\",\n\
+        \    \"/usr/bin/dd-container-install\", \"/opt/datadog-agent/bin/datadog-cluster-agent\"\
+        ]\n  agent_version: ''\n  filters:\n  - os == \"linux\"\n- id: systemd_modification_chmod\n\
+        \  version: e555b2b0\n  description: A service may have been modified without\
+        \ authorization\n  expression: |-\n    (\n        (chmod.file.path in [ ~\"\
+        /lib/systemd/system/**\", ~\"/usr/lib/systemd/system/**\", ~\"/etc/systemd/system/**\"\
+        \ ])\n        && process.file.path not in [~\"/usr/bin/apt*\", \"/usr/bin/dpkg\"\
+        , \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\", \"/usr/bin/npm\", ~\"\
+        /usr/bin/pip*\", \"/usr/bin/yum\", \"/sbin/apk\", \"/usr/lib/snapd/snapd\"\
+        ]\n    ) && chmod.file.destination.mode != chmod.file.mode\n  agent_version:\
+        \ ''\n  filters: []\n- id: systemd_modification_chown\n  version: a0497885\n\
+        \  description: A service may have been modified without authorization\n \
+        \ expression: |-\n    (\n        (chown.file.path in [ ~\"/lib/systemd/system/**\"\
+        , ~\"/usr/lib/systemd/system/**\", ~\"/etc/systemd/system/**\" ])\n      \
+        \  && process.file.path not in [~\"/usr/bin/apt*\", \"/usr/bin/dpkg\", \"\
+        /usr/bin/rpm\", \"/usr/bin/unattended-upgrade\", \"/usr/bin/npm\", ~\"/usr/bin/pip*\"\
+        , \"/usr/bin/yum\", \"/sbin/apk\", \"/usr/lib/snapd/snapd\"]\n    ) && (chown.file.destination.uid\
+        \ != chown.file.uid || chown.file.destination.gid != chown.file.gid)\n  agent_version:\
+        \ ''\n  filters: []\n- id: systemd_modification_link\n  version: 11a77f5b\n\
+        \  description: A service may have been modified without authorization\n \
+        \ expression: |-\n    (\n        (link.file.path in [ ~\"/lib/systemd/system/**\"\
+        , ~\"/usr/lib/systemd/system/**\", ~\"/etc/systemd/system/**\" ]\n       \
+        \ || link.file.destination.path in [ ~\"/lib/systemd/system/**\", ~\"/usr/lib/systemd/system/**\"\
+        , ~\"/etc/systemd/system/**\" ])\n        && process.file.path not in [~\"\
+        /usr/bin/apt*\", \"/usr/bin/dpkg\", \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\"\
+        , \"/usr/bin/npm\", ~\"/usr/bin/pip*\", \"/usr/bin/yum\", \"/sbin/apk\", \"\
+        /usr/lib/snapd/snapd\"]\n    )\n  agent_version: ''\n  filters: []\n- id:\
+        \ systemd_modification_open\n  version: 13b2daf3\n  description: A service\
+        \ may have been modified without authorization\n  expression: |-\n    (\n\
+        \        open.flags & (O_CREAT|O_RDWR|O_WRONLY) > 0 &&\n        (open.file.path\
+        \ in [ ~\"/lib/systemd/system/**\", ~\"/usr/lib/systemd/system/**\", ~\"/etc/systemd/system/**\"\
+        \ ])\n        && process.file.path not in [~\"/usr/bin/apt*\", \"/usr/bin/dpkg\"\
+        , \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\", \"/usr/bin/npm\", ~\"\
+        /usr/bin/pip*\", \"/usr/bin/yum\", \"/sbin/apk\", \"/usr/lib/snapd/snapd\"\
+        ]\n    )\n  agent_version: ''\n  filters:\n  - os == \"linux\"\n- id: systemd_modification_rename\n\
+        \  version: 9759ce6\n  description: A service may have been modified without\
+        \ authorization\n  expression: |-\n    (\n        (rename.file.path in [ ~\"\
+        /lib/systemd/system/**\", ~\"/usr/lib/systemd/system/**\", ~\"/etc/systemd/system/**\"\
+        \ ]\n        || rename.file.destination.path in [ ~\"/lib/systemd/system/**\"\
+        , ~\"/usr/lib/systemd/system/**\", ~\"/etc/systemd/system/**\" ])\n      \
+        \  && process.file.path not in [~\"/usr/bin/apt*\", \"/usr/bin/dpkg\", \"\
+        /usr/bin/rpm\", \"/usr/bin/unattended-upgrade\", \"/usr/bin/npm\", ~\"/usr/bin/pip*\"\
+        , \"/usr/bin/yum\", \"/sbin/apk\", \"/usr/lib/snapd/snapd\"]\n    )\n  agent_version:\
+        \ ''\n  filters: []\n- id: systemd_modification_unlink\n  version: 8400ece8\n\
+        \  description: A service may have been modified without authorization\n \
+        \ expression: |-\n    (\n        (unlink.file.path in [ ~\"/lib/systemd/system/**\"\
+        , ~\"/usr/lib/systemd/system/**\", ~\"/etc/systemd/system/**\" ])\n      \
+        \  && process.file.path not in [~\"/usr/bin/apt*\", \"/usr/bin/dpkg\", \"\
+        /usr/bin/rpm\", \"/usr/bin/unattended-upgrade\", \"/usr/bin/npm\", ~\"/usr/bin/pip*\"\
+        , \"/usr/bin/yum\", \"/sbin/apk\", \"/usr/lib/snapd/snapd\"]\n    )\n  agent_version:\
+        \ ''\n  filters:\n  - os == \"linux\"\n- id: systemd_modification_utimes\n\
+        \  version: 82acf2d\n  description: A service may have been modified without\
+        \ authorization\n  expression: |-\n    (\n        (utimes.file.path in [ ~\"\
+        /lib/systemd/system/**\", ~\"/usr/lib/systemd/system/**\", ~\"/etc/systemd/system/**\"\
+        \ ])\n        && process.file.path not in [~\"/usr/bin/apt*\", \"/usr/bin/dpkg\"\
+        , \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\", \"/usr/bin/npm\", ~\"\
+        /usr/bin/pip*\", \"/usr/bin/yum\", \"/sbin/apk\", \"/usr/lib/snapd/snapd\"\
+        ]\n    )\n  agent_version: ''\n  filters:\n  - os == \"linux\"\n- id: tar_execution\n\
+        \  version: e63af392\n  description: Tar archive created\n  expression: exec.file.path\
+        \ == \"/usr/bin/tar\" && exec.args_flags in [\"create\",\"c\"]\n  agent_version:\
+        \ ''\n  filters:\n  - os == \"linux\"\n- id: tde_malware_egress_traffic_allowed_iptables\n\
+        \  version: 14f124d7\n  description: iptables used to allow egress traffic\n\
+        \  expression: exec.comm == \"iptables\" && process.args in [r\".*OUTPUT.*((25[0-5]|(2[0-4]|1\\\
+        d|[1-9]|)\\d)\\.?\\b){4}.*ACCEPT\"]\n    && process.args not in [r\"(127\\\
+        .)|(10\\.)|(172\\.1[6-9]\\.)|(172\\.2[0-9]\\.)|(172\\.3[0-1]|\\.)|(192\\.168\\\
+        .)|(169\\.254\\.)\"]\n  agent_version: ''\n  filters:\n  - os == \"linux\"\
+        \n- id: tde_malware_files_with_extensions_created\n  version: 161c317f\n \
+        \ description: Multiple files with extensions created under common user directories\n\
+        \  expression: rename.file.path in [~\"/home/**\", ~\"/root/**\", ~\"/bin/**\"\
+        , ~\"/usr/bin/**\",\n    ~\"/var/log/**\", ~\"/var/lib/log/**\", ~\"/var/backup/*\"\
+        , ~\"/var/www/**\"] && rename.file.destination.name\n    in [r\"\\.[0-9a-z]+$\"\
+        ] && rename.file.destination.name not in [r\".*\\.(lock|dbtmp|log|journal|ini|sh|json|yml|tmp|snap|txt|pyc|stat|hcl|[0-9])+$\"\
+        ]\n    && process.comm not in [\"python\",\"python3\",\"agent\",\"security-agent\"\
+        ,\"kubectl\",\"kubelet\",\"datadog-cluster\"]\n  agent_version: ''\n  filters:\n\
+        \  - os == \"linux\"\n- id: tde_malware_kernel_module_loaded_from_tmp\n  version:\
+        \ 7673f399\n  description: Kernel module loaded from common tmp directories\n\
+        \  expression: load_module.file.path in [ ~\"/tmp/**\", ~\"/var/tmp/**\" ]\n\
+        \  agent_version: ''\n  filters:\n  - os == \"linux\"\n- id: tde_malware_libpam_hooked_using_ebpf\n\
+        \  version: adbe1bb1\n  description: Libpam.so library hooked using ebpf\n\
+        \  expression: bpf.cmd == BPF_MAP_CREATE && process.args in [r\".*libpam.so.*\"\
+        ]\n  agent_version: ''\n  filters:\n  - os == \"linux\"\n- id: tde_malware_privileged_processes_or_sshd_traced\n\
+        \  version: eda95b21\n  description: A process is tracing privileged processes\
+        \ or sshd for possible credential\n    dumping\n  expression: ((ptrace.tracee.euid==0\
+        \ && ptrace.tracee.uid ==0)||ptrace.tracee.comm\n    in [~\"*sshd*\"]) &&\
+        \ process.comm not in [\"dlv\"]\n  agent_version: ''\n  filters:\n  - os ==\
+        \ \"linux\"\n- id: tde_malware_proxychains_executed\n  version: 192a7f03\n\
+        \  description: Proxychaining technique used\n  expression: exec.comm == \"\
+        proxychains\"\n  agent_version: ''\n  filters:\n  - os == \"linux\"\n- id:\
+        \ tde_malware_ransomware_notes_written\n  version: 6d3052dc\n  description:\
+        \ A possible ransomware note created under common user directories\n  expression:\
+        \ open.file.path in [~\"/home/**\", ~\"/root/**\", ~\"/bin/**\", ~\"/usr/bin/**\"\
+        ,\n    ~\"/opt/**\", ~\"/etc/**\", ~\"/var/log/**\", ~\"/var/lib/log/**\"\
+        , ~\"/var/backup/**\",\n    ~\"/var/www/**\"] && open.file.name in [r\".*(restore|recovery|readme|instruction|how_to|ransom).*\"\
+        ,\n    r\".*(your_|crypt|lock|important).*\\.txt$\"]\n  agent_version: ''\n\
+        \  filters:\n  - os == \"linux\"\n- id: tde_malware_system_logs_deleted\n\
+        \  version: f5fec42d\n  description: A process deleted common system log files\n\
+        \  expression: unlink.file.path in [\"/var/run/utmp\", \"/var/log/wtmp\",\
+        \ \"/var/log/btmp\",\n    \"/var/log/lastlog\", \"/var/log/faillog\", \"/var/log/syslog\"\
+        , \"/var/log/messages\",\n    \"/var/log/secure\", \"/var/log/auth.log\",\
+        \ \"/var/log/boot.log\", \"/var/log/kern.log\"]\n    && process.comm !=\"\
+        dockerd\"\n  agent_version: ''\n  filters:\n  - os == \"linux\"\n- id: tde_malware_tunneling_and_port_forwarding_technique_used\n\
+        \  version: e253fced\n  description: Tunneling and port forwarding tool used\n\
+        \  expression: ((exec.comm == \"pivotnacci\" || exec.comm == \"gost\") &&\
+        \ process.args\n    in [r\".*(-L|-C|-R).*\"])||(exec.comm in [\"ssh\", \"\
+        sshd\"] && process.args in [r\".*(-R|-L|-D|w).*\"]\n    && process.args in\
+        \ [r\"((25[0-5]|(2[0-4]|1\\d|[1-9])\\d)\\.?\\b){4}\"] ) || (exec.comm\n  \
+        \  == \"sshuttle\" && process.args in [r\".*(-r|--remote|-l|--listen).*\"\
+        ]) || (exec.comm\n    == \"socat\" && process.args in [r\".*(TCP4-LISTEN:|SOCKS).*\"\
+        ]) || (exec.comm in\n    [\"iodine\", \"iodined\", \"dnscat\", \"hans\", \"\
+        hans-ubuntu\", \"ptunnel-ng\", \"ssf\", \"3proxy\",\n    \"ngrok\"] && process.parent.comm\
+        \ in [\"bash\", \"dash\", \"ash\", \"sh\", \"tcsh\", \"csh\",\n    \"zsh\"\
+        , \"ksh\", \"fish\"])\n  agent_version: ''\n  filters:\n  - os == \"linux\"\
+        \n- id: tde_nsenter_pid1_detection\n  version: 7a2d42c7\n  description: nsenter\
+        \ used in container to execute code on the OS PID1\n  expression: exec.file.name\
+        \ == \"nsenter\" && exec.args_options in [\"target=1\", \"t=1\"]\n    && container.id\
+        \ !=\"\"\n  agent_version: ''\n  filters:\n  - os == \"linux\"\n- id: tde_red_team_domains_used\n\
+        \  version: 1b507607\n  description: Connection to red team domain\n  expression:\
+        \ dns.question.name in [~\"*.interact.sh\" , ~\"*.oast.pro\" , ~\"*.oast.live\"\
+        \n    , ~\"*.oast.site\" , ~\"*.oast.online\" , ~\"*.oast.fun\" , ~\"*.oast.me\"\
+        \ , ~\"*.burpcollaborator.net\"\n    , ~\"*.oastify.com\" , ~\"*canarytokens.com\"\
+        \ , ~\"*.requestbin.net\" , ~\"*.dnslog.cn\"]\n  agent_version: ''\n  filters:\n\
+        \  - os == \"linux\"\n- id: tde_testing_tampering\n  version: c2be3b92\n \
+        \ description: testing only\n  expression: exec.comm == \"abcdefgh\"\n  agent_version:\
+        \ ''\n  filters:\n  - os == \"linux\"\n- id: tty_shell_in_container\n  version:\
+        \ 3d9489bb\n  description: A shell with a TTY was executed in a container\n\
+        \  expression: |-\n    exec.file.path in [ \"/bin/dash\",\n      \"/usr/bin/dash\"\
+        ,\n      \"/bin/sh\",\n      \"/bin/static-sh\",\n      \"/usr/bin/sh\",\n\
+        \      \"/bin/bash\",\n      \"/usr/bin/bash\",\n      \"/bin/bash-static\"\
+        ,\n      \"/usr/bin/zsh\",\n      \"/usr/bin/ash\",\n      \"/usr/bin/csh\"\
+        ,\n      \"/usr/bin/ksh\",\n      \"/usr/bin/tcsh\",\n      \"/usr/lib/initramfs-tools/bin/busybox\"\
+        ,\n      \"/bin/busybox\",\n      \"/usr/bin/fish\",\n      \"/bin/ksh93\"\
+        ,\n      \"/bin/rksh\",\n      \"/bin/rksh93\",\n      \"/bin/lksh\",\n  \
+        \    \"/bin/mksh\",\n      \"/bin/mksh-static\",\n      \"/usr/bin/csharp\"\
+        ,\n      \"/bin/posh\",\n      \"/usr/bin/rc\",\n      \"/bin/sash\",\n  \
+        \    \"/usr/bin/yash\",\n      \"/bin/zsh5\",\n      \"/bin/zsh5-static\"\
+        \ ] && process.tty_name != \"\" && process.container.id != \"\"\n  agent_version:\
+        \ ''\n  filters: []\n- id: tunnel_traffic\n  version: 816201a5\n  description:\
+        \ Tunneling or port forwarding tool used\n  expression: ((exec.comm == \"\
+        pivotnacci\" || exec.comm == \"gost\") && process.args\n    in [r\".*(-L|-C|-R).*\"\
+        ]) || (exec.comm in [\"ssh\", \"sshd\"] && process.args in [r\".*(-R|-L|-D|w).*\"\
+        ]\n    && process.args in [r\"((25[0-5]|(2[0-4]|1\\d|[1-9])\\d)\\.?\\b){4}\"\
+        ] ) || (exec.comm\n    == \"sshuttle\" && process.args in [r\".*(-r|--remote|-l|--listen).*\"\
+        ]) || (exec.comm\n    == \"socat\" && process.args in [r\".*(TCP4-LISTEN:|SOCKS).*\"\
+        ]) || (exec.comm in\n    [\"iodine\", \"iodined\", \"dnscat\", \"hans\", \"\
+        hans-ubuntu\", \"ptunnel-ng\", \"ssf\", \"3proxy\",\n    \"ngrok\"] && process.parent.comm\
+        \ in [\"bash\", \"dash\", \"ash\", \"sh\", \"tcsh\", \"csh\",\n    \"zsh\"\
+        , \"ksh\", \"fish\"])\n  agent_version: ''\n  filters:\n  - os == \"linux\"\
+        \n- id: user_created_tty\n  version: 5b5f4a52\n  description: A user was created\
+        \ via an interactive session\n  expression: exec.file.name in [\"useradd\"\
+        , \"newusers\", \"adduser\"] && exec.tty_name\n    !=\"\" && process.ancestors.file.path\
+        \ not in [~\"/usr/bin/apt*\", \"/usr/bin/dpkg\",\n    \"/usr/bin/rpm\", \"\
+        /usr/bin/unattended-upgrade\", \"/usr/bin/npm\", ~\"/usr/bin/pip*\",\n   \
+        \ \"/usr/bin/yum\", \"/sbin/apk\", \"/usr/lib/snapd/snapd\"] && exec.args_flags\
+        \ not in\n    [\"D\"]\n  agent_version: ''\n  filters: []\n- id: user_deleted_tty\n\
+        \  version: ad8edbe\n  description: A user was deleted via an interactive\
+        \ session\n  expression: exec.file.name in [\"userdel\", \"deluser\"] && exec.tty_name\
+        \ !=\"\" && process.ancestors.file.path\n    not in [~\"/usr/bin/apt*\", \"\
+        /usr/bin/dpkg\", \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\",\n    \"\
+        /usr/bin/npm\", ~\"/usr/bin/pip*\", \"/usr/bin/yum\", \"/sbin/apk\", \"/usr/lib/snapd/snapd\"\
+        ]\n  agent_version: ''\n  filters: []\n- id: wmi_spawning_shell\n  version:\
+        \ 6b9ff5c7\n  description: Command executed via WMI\n  expression: exec.file.name\
+        \ in [~\"powershell*\",\"cmd.exe\"] && process.parent.file.name\n    == \"\
+        WmiPrvSE.exe\"\n  agent_version: ''\n  filters:\n  - os == \"windows\"\n"
     headers:
       content-type:
       - application/yaml

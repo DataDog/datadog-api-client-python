@@ -1,7 +1,7 @@
 interactions:
 - request:
     body: '{"data":{"attributes":{"description":"My Agent rule","enabled":true,"expression":"exec.file.name
-      == \"sh\"","name":"testupdateacloudworkloadsecurityagentrulereturnsbadrequestresponse1652349086"},"type":"agent_rule"}}'
+      == \"sh\"","name":"testupdateacloudworkloadsecurityagentrulereturnsbadrequestresponse1709907560"},"type":"agent_rule"}}'
     headers:
       accept:
       - application/json
@@ -11,12 +11,16 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/security_monitoring/cloud_workload_security/agent_rules
   response:
     body:
-      string: '{"data":{"attributes":{"category":"Process Activity","name":"testupdateacloudworkloadsecurityagentrulereturnsbadrequestresponse1652349086","creator":{"handle":"frog@datadoghq.com","name":null},"description":"My
-        Agent rule","enabled":true,"defaultRule":false,"version":1,"updater":{"handle":"frog@datadoghq.com","name":null},"updateDate":1652349087367,"creationDate":1652349087367,"expression":"exec.file.name
-        == \"sh\""},"type":"agent_rule","id":"ezf-mkn-g0o"}}'
+      string: '{"data":{"id":"bvz-vbk-lmb","attributes":{"version":1,"name":"testupdateacloudworkloadsecurityagentrulereturnsbadrequestresponse1709907560","description":"My
+        Agent rule","expression":"exec.file.name == \"sh\"","category":"Process Activity","creationAuthorUuId":"cc32ddea-b5e4-11ec-93be-da7ad0900002","creationDate":1709907560595,"updateAuthorUuId":"cc32ddea-b5e4-11ec-93be-da7ad0900002","updateDate":1709907560595,"filters":["os
+        == \"linux\""],"actions":[],"agentConstraint":"","enabled":true,"defaultRule":false,"creator":{"name":"Malo
+        Le Goff","handle":"malo.legoff@datadoghq.com"},"updater":{"name":"Malo Le
+        Goff","handle":"malo.legoff@datadoghq.com"}},"type":"agent_rule"}}
+
+        '
     headers:
       content-type:
-      - application/json;charset=utf-8
+      - application/json
     status:
       code: 200
       message: OK
@@ -29,12 +33,14 @@ interactions:
       content-type:
       - application/json
     method: PATCH
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/cloud_workload_security/agent_rules/ezf-mkn-g0o
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/cloud_workload_security/agent_rules/bvz-vbk-lmb
   response:
     body:
       string: '{"errors":["input_validation_error(Field ''expression'' is invalid:
-        rule `testupdateacloudworkloadsecurityagentrulereturnsbadrequestresponse1652349086`
-        definition error: syntax error: 1:18: unexpected token \"sh\" (expected \"~\"))"]}'
+        rule `testupdateacloudworkloadsecurityagentrulereturnsbadrequestresponse1709907560`
+        error: syntax error `1:18: unexpected token \"sh\" (expected \"~\")`)"]}
+
+        '
     headers:
       content-type:
       - application/json
@@ -47,13 +53,11 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/cloud_workload_security/agent_rules/ezf-mkn-g0o
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/cloud_workload_security/agent_rules/bvz-vbk-lmb
   response:
     body:
       string: ''
-    headers:
-      content-type:
-      - application/json;charset=utf-8
+    headers: {}
     status:
       code: 204
       message: No Content

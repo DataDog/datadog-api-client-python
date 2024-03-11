@@ -227,6 +227,7 @@ from datadog_api_client.v2.model.cloud_cost_activity import CloudCostActivity
 from datadog_api_client.v2.model.cloud_cost_activity_attributes import CloudCostActivityAttributes
 from datadog_api_client.v2.model.cloud_cost_activity_response import CloudCostActivityResponse
 from datadog_api_client.v2.model.cloud_cost_activity_type import CloudCostActivityType
+from datadog_api_client.v2.model.cloud_workload_security_agent_rule_action import CloudWorkloadSecurityAgentRuleAction
 from datadog_api_client.v2.model.cloud_workload_security_agent_rule_attributes import (
     CloudWorkloadSecurityAgentRuleAttributes,
 )
@@ -243,6 +244,7 @@ from datadog_api_client.v2.model.cloud_workload_security_agent_rule_creator_attr
     CloudWorkloadSecurityAgentRuleCreatorAttributes,
 )
 from datadog_api_client.v2.model.cloud_workload_security_agent_rule_data import CloudWorkloadSecurityAgentRuleData
+from datadog_api_client.v2.model.cloud_workload_security_agent_rule_kill import CloudWorkloadSecurityAgentRuleKill
 from datadog_api_client.v2.model.cloud_workload_security_agent_rule_response import (
     CloudWorkloadSecurityAgentRuleResponse,
 )
@@ -1891,12 +1893,14 @@ __all__ = [
     "CloudCostActivityAttributes",
     "CloudCostActivityResponse",
     "CloudCostActivityType",
+    "CloudWorkloadSecurityAgentRuleAction",
     "CloudWorkloadSecurityAgentRuleAttributes",
     "CloudWorkloadSecurityAgentRuleCreateAttributes",
     "CloudWorkloadSecurityAgentRuleCreateData",
     "CloudWorkloadSecurityAgentRuleCreateRequest",
     "CloudWorkloadSecurityAgentRuleCreatorAttributes",
     "CloudWorkloadSecurityAgentRuleData",
+    "CloudWorkloadSecurityAgentRuleKill",
     "CloudWorkloadSecurityAgentRuleResponse",
     "CloudWorkloadSecurityAgentRuleType",
     "CloudWorkloadSecurityAgentRuleUpdateAttributes",
