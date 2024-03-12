@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 from typing import Any, Dict, Union
+import warnings
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
@@ -166,7 +167,7 @@ class IncidentServicesApi:
         self,
         body: IncidentServiceCreateRequest,
     ) -> IncidentServiceResponse:
-        """Create a new incident service.
+        """Create a new incident service. **Deprecated**.
 
         Creates a new incident service.
 
@@ -177,13 +178,14 @@ class IncidentServicesApi:
         kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
+        warnings.warn("create_incident_service is deprecated", DeprecationWarning, stacklevel=2)
         return self._create_incident_service_endpoint.call_with_http_info(**kwargs)
 
     def delete_incident_service(
         self,
         service_id: str,
     ) -> None:
-        """Delete an existing incident service.
+        """Delete an existing incident service. **Deprecated**.
 
         Deletes an existing incident service.
 
@@ -194,6 +196,7 @@ class IncidentServicesApi:
         kwargs: Dict[str, Any] = {}
         kwargs["service_id"] = service_id
 
+        warnings.warn("delete_incident_service is deprecated", DeprecationWarning, stacklevel=2)
         return self._delete_incident_service_endpoint.call_with_http_info(**kwargs)
 
     def get_incident_service(
@@ -202,7 +205,7 @@ class IncidentServicesApi:
         *,
         include: Union[IncidentRelatedObject, UnsetType] = unset,
     ) -> IncidentServiceResponse:
-        """Get details of an incident service.
+        """Get details of an incident service. **Deprecated**.
 
         Get details of an incident service. If the ``include[users]`` query parameter is provided,
         the included attribute will contain the users related to these incident services.
@@ -219,6 +222,7 @@ class IncidentServicesApi:
         if include is not unset:
             kwargs["include"] = include
 
+        warnings.warn("get_incident_service is deprecated", DeprecationWarning, stacklevel=2)
         return self._get_incident_service_endpoint.call_with_http_info(**kwargs)
 
     def list_incident_services(
@@ -229,7 +233,7 @@ class IncidentServicesApi:
         page_offset: Union[int, UnsetType] = unset,
         filter: Union[str, UnsetType] = unset,
     ) -> IncidentServicesResponse:
-        """Get a list of all incident services.
+        """Get a list of all incident services. **Deprecated**.
 
         Get all incident services uploaded for the requesting user's organization. If the ``include[users]`` query parameter is provided, the included attribute will contain the users related to these incident services.
 
@@ -256,6 +260,7 @@ class IncidentServicesApi:
         if filter is not unset:
             kwargs["filter"] = filter
 
+        warnings.warn("list_incident_services is deprecated", DeprecationWarning, stacklevel=2)
         return self._list_incident_services_endpoint.call_with_http_info(**kwargs)
 
     def update_incident_service(
@@ -263,7 +268,7 @@ class IncidentServicesApi:
         service_id: str,
         body: IncidentServiceUpdateRequest,
     ) -> IncidentServiceResponse:
-        """Update an existing incident service.
+        """Update an existing incident service. **Deprecated**.
 
         Updates an existing incident service. Only provide the attributes which should be updated as this request is a partial update.
 
@@ -278,4 +283,5 @@ class IncidentServicesApi:
 
         kwargs["body"] = body
 
+        warnings.warn("update_incident_service is deprecated", DeprecationWarning, stacklevel=2)
         return self._update_incident_service_endpoint.call_with_http_info(**kwargs)
