@@ -699,7 +699,7 @@ def expect_response_has_field(context, response_path, field):
     assert field in response_value
 
 
-@then(parsers.parse('the response "{response_path}" does not have "{field}"'))
+@then(parsers.parse('the response "{response_path}" does not have field "{field}"'))
 def expect_response_does_not_have_field(context, response_path, field):
     """Check that a response path does not have field."""
     response_value = glom(context["api_request"]["response"][0], response_path)
