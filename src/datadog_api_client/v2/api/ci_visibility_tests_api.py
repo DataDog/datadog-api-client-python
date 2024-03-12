@@ -150,7 +150,7 @@ class CIVisibilityTestsApi:
     ) -> CIAppTestEventsResponse:
         """Get a list of tests events.
 
-        List endpoint returns CI Visibility test events that match a `log search query <https://docs.datadoghq.com/logs/explorer/search_syntax/>`_.
+        List endpoint returns CI Visibility test events that match a `search query <https://docs.datadoghq.com/continuous_integration/explorer/search_syntax/>`_.
         `Results are paginated similarly to logs <https://docs.datadoghq.com/logs/guide/collect-multiple-logs-with-pagination>`_.
 
         Use this endpoint to see your latest test events.
@@ -259,7 +259,7 @@ class CIVisibilityTestsApi:
     ) -> CIAppTestEventsResponse:
         """Search tests events.
 
-        List endpoint returns CI Visibility test events that match a `log search query <https://docs.datadoghq.com/logs/explorer/search_syntax/>`_.
+        List endpoint returns CI Visibility test events that match a `search query <https://docs.datadoghq.com/continuous_integration/explorer/search_syntax/>`_.
         `Results are paginated similarly to logs <https://docs.datadoghq.com/logs/guide/collect-multiple-logs-with-pagination>`_.
 
         Use this endpoint to build complex events filtering and search.
