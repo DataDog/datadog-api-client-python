@@ -23,6 +23,7 @@ from datadog_api_client.v1.model.synthetics_test_call_type import SyntheticsTest
 from datadog_api_client.v1.model.synthetics_test_details_sub_type import SyntheticsTestDetailsSubType
 from datadog_api_client.v1.model.synthetics_test_metadata import SyntheticsTestMetadata
 from datadog_api_client.v1.model.synthetics_test_options import SyntheticsTestOptions
+from datadog_api_client.v1.model.synthetics_test_options_http_version import SyntheticsTestOptionsHTTPVersion
 from datadog_api_client.v1.model.synthetics_test_options_retry import SyntheticsTestOptionsRetry
 from datadog_api_client.v1.model.synthetics_test_request import SyntheticsTestRequest
 from datadog_api_client.v1.model.synthetics_variable_parser import SyntheticsVariableParser
@@ -64,6 +65,7 @@ body = SyntheticsAPITest(
                     method="GET",
                     timeout=10.0,
                     url="https://datadoghq.com",
+                    http_version=SyntheticsTestOptionsHTTPVersion.HTTP2,
                 ),
                 retry=SyntheticsTestOptionsRetry(
                     count=5,

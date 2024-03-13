@@ -19,6 +19,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.synthetics_test_call_type import SyntheticsTestCallType
     from datadog_api_client.v1.model.synthetics_test_request_certificate import SyntheticsTestRequestCertificate
     from datadog_api_client.v1.model.synthetics_test_headers import SyntheticsTestHeaders
+    from datadog_api_client.v1.model.synthetics_test_options_http_version import SyntheticsTestOptionsHTTPVersion
     from datadog_api_client.v1.model.synthetics_test_metadata import SyntheticsTestMetadata
     from datadog_api_client.v1.model.synthetics_test_request_proxy import SyntheticsTestRequestProxy
     from datadog_api_client.v1.model.synthetics_basic_auth_web import SyntheticsBasicAuthWeb
@@ -48,6 +49,7 @@ class SyntheticsTestRequest(ModelNormal):
         from datadog_api_client.v1.model.synthetics_test_call_type import SyntheticsTestCallType
         from datadog_api_client.v1.model.synthetics_test_request_certificate import SyntheticsTestRequestCertificate
         from datadog_api_client.v1.model.synthetics_test_headers import SyntheticsTestHeaders
+        from datadog_api_client.v1.model.synthetics_test_options_http_version import SyntheticsTestOptionsHTTPVersion
         from datadog_api_client.v1.model.synthetics_test_metadata import SyntheticsTestMetadata
         from datadog_api_client.v1.model.synthetics_test_request_proxy import SyntheticsTestRequestProxy
 
@@ -66,6 +68,7 @@ class SyntheticsTestRequest(ModelNormal):
             "follow_redirects": (bool,),
             "headers": (SyntheticsTestHeaders,),
             "host": (str,),
+            "http_version": (SyntheticsTestOptionsHTTPVersion,),
             "message": (str,),
             "metadata": (SyntheticsTestMetadata,),
             "method": (str,),
@@ -97,6 +100,7 @@ class SyntheticsTestRequest(ModelNormal):
         "follow_redirects": "follow_redirects",
         "headers": "headers",
         "host": "host",
+        "http_version": "httpVersion",
         "message": "message",
         "metadata": "metadata",
         "method": "method",
@@ -138,6 +142,7 @@ class SyntheticsTestRequest(ModelNormal):
         follow_redirects: Union[bool, UnsetType] = unset,
         headers: Union[SyntheticsTestHeaders, UnsetType] = unset,
         host: Union[str, UnsetType] = unset,
+        http_version: Union[SyntheticsTestOptionsHTTPVersion, UnsetType] = unset,
         message: Union[str, UnsetType] = unset,
         metadata: Union[SyntheticsTestMetadata, UnsetType] = unset,
         method: Union[str, UnsetType] = unset,
@@ -198,6 +203,9 @@ class SyntheticsTestRequest(ModelNormal):
 
         :param host: Host name to perform the test with.
         :type host: str, optional
+
+        :param http_version: HTTP version to use for a Synthetic test.
+        :type http_version: SyntheticsTestOptionsHTTPVersion, optional
 
         :param message: Message to send for UDP or WebSocket tests.
         :type message: str, optional
@@ -271,6 +279,8 @@ class SyntheticsTestRequest(ModelNormal):
             kwargs["headers"] = headers
         if host is not unset:
             kwargs["host"] = host
+        if http_version is not unset:
+            kwargs["http_version"] = http_version
         if message is not unset:
             kwargs["message"] = message
         if metadata is not unset:
