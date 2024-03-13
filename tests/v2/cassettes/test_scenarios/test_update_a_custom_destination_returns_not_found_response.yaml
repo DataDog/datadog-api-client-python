@@ -1,0 +1,23 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"enabled":false,"forward_tags":false,"forward_tags_restriction_list":["datacenter","host"],"forward_tags_restriction_list_type":"ALLOW_LIST","forwarder_destination":{"auth":{"password":"datadog-custom-destination-password","type":"basic","username":"datadog-custom-destination-username"},"endpoint":"https://example.com","type":"http"},"name":"Nginx
+      logs","query":"source:nginx"},"id":"id-from-non-existing-custom-destination","type":"custom_destination"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/logs/config/custom-destinations/id-from-non-existing-custom-destination
+  response:
+    body:
+      string: '{"errors":["NotFound"]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 404
+      message: Not Found
+version: 1

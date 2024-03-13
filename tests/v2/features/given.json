@@ -288,6 +288,18 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"name\": \"{{ unique }}\",\n      \"query\": \"source:nginx\",\n      \"enabled\": false,\n      \"forwarder_destination\": {\n        \"type\": \"http\",\n        \"endpoint\": \"https://example.com\",\n        \"auth\": {\n          \"type\": \"basic\",\n          \"username\": \"my-username\",\n          \"password\": \"my-password\"\n        }\n      },\n      \"forward_tags_restriction_list_type\": \"BLOCK_LIST\",\n      \"forward_tags_restriction_list\": [\"host\"],\n      \"forward_tags\": false\n    },\n    \"type\": \"custom_destination\"\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"custom_destination\" in the system",
+    "key": "custom_destination",
+    "tag": "Logs Custom Destinations",
+    "operationId": "CreateLogsCustomDestination"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"id\": \"{{ unique }}\",\n    \"attributes\": {\n      \"filter\": {\n        \"query\": \"source:{{ unique }}\"\n      },\n      \"compute\": {\n        \"aggregation_type\": \"count\"\n      }\n    },\n    \"type\": \"logs_metrics\"\n  }\n}"
       }
     ],

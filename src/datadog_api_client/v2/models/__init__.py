@@ -353,6 +353,102 @@ from datadog_api_client.v2.model.create_rule_request_data import CreateRuleReque
 from datadog_api_client.v2.model.create_rule_response import CreateRuleResponse
 from datadog_api_client.v2.model.create_rule_response_data import CreateRuleResponseData
 from datadog_api_client.v2.model.creator import Creator
+from datadog_api_client.v2.model.custom_destination_attribute_tags_restriction_list_type import (
+    CustomDestinationAttributeTagsRestrictionListType,
+)
+from datadog_api_client.v2.model.custom_destination_create_request import CustomDestinationCreateRequest
+from datadog_api_client.v2.model.custom_destination_create_request_attributes import (
+    CustomDestinationCreateRequestAttributes,
+)
+from datadog_api_client.v2.model.custom_destination_create_request_definition import (
+    CustomDestinationCreateRequestDefinition,
+)
+from datadog_api_client.v2.model.custom_destination_elasticsearch_destination_auth import (
+    CustomDestinationElasticsearchDestinationAuth,
+)
+from datadog_api_client.v2.model.custom_destination_forward_destination import CustomDestinationForwardDestination
+from datadog_api_client.v2.model.custom_destination_forward_destination_elasticsearch import (
+    CustomDestinationForwardDestinationElasticsearch,
+)
+from datadog_api_client.v2.model.custom_destination_forward_destination_elasticsearch_type import (
+    CustomDestinationForwardDestinationElasticsearchType,
+)
+from datadog_api_client.v2.model.custom_destination_forward_destination_http import (
+    CustomDestinationForwardDestinationHttp,
+)
+from datadog_api_client.v2.model.custom_destination_forward_destination_http_type import (
+    CustomDestinationForwardDestinationHttpType,
+)
+from datadog_api_client.v2.model.custom_destination_forward_destination_splunk import (
+    CustomDestinationForwardDestinationSplunk,
+)
+from datadog_api_client.v2.model.custom_destination_forward_destination_splunk_type import (
+    CustomDestinationForwardDestinationSplunkType,
+)
+from datadog_api_client.v2.model.custom_destination_http_destination_auth import CustomDestinationHttpDestinationAuth
+from datadog_api_client.v2.model.custom_destination_http_destination_auth_basic import (
+    CustomDestinationHttpDestinationAuthBasic,
+)
+from datadog_api_client.v2.model.custom_destination_http_destination_auth_basic_type import (
+    CustomDestinationHttpDestinationAuthBasicType,
+)
+from datadog_api_client.v2.model.custom_destination_http_destination_auth_custom_header import (
+    CustomDestinationHttpDestinationAuthCustomHeader,
+)
+from datadog_api_client.v2.model.custom_destination_http_destination_auth_custom_header_type import (
+    CustomDestinationHttpDestinationAuthCustomHeaderType,
+)
+from datadog_api_client.v2.model.custom_destination_response import CustomDestinationResponse
+from datadog_api_client.v2.model.custom_destination_response_attributes import CustomDestinationResponseAttributes
+from datadog_api_client.v2.model.custom_destination_response_definition import CustomDestinationResponseDefinition
+from datadog_api_client.v2.model.custom_destination_response_elasticsearch_destination_auth import (
+    CustomDestinationResponseElasticsearchDestinationAuth,
+)
+from datadog_api_client.v2.model.custom_destination_response_forward_destination import (
+    CustomDestinationResponseForwardDestination,
+)
+from datadog_api_client.v2.model.custom_destination_response_forward_destination_elasticsearch import (
+    CustomDestinationResponseForwardDestinationElasticsearch,
+)
+from datadog_api_client.v2.model.custom_destination_response_forward_destination_elasticsearch_type import (
+    CustomDestinationResponseForwardDestinationElasticsearchType,
+)
+from datadog_api_client.v2.model.custom_destination_response_forward_destination_http import (
+    CustomDestinationResponseForwardDestinationHttp,
+)
+from datadog_api_client.v2.model.custom_destination_response_forward_destination_http_type import (
+    CustomDestinationResponseForwardDestinationHttpType,
+)
+from datadog_api_client.v2.model.custom_destination_response_forward_destination_splunk import (
+    CustomDestinationResponseForwardDestinationSplunk,
+)
+from datadog_api_client.v2.model.custom_destination_response_forward_destination_splunk_type import (
+    CustomDestinationResponseForwardDestinationSplunkType,
+)
+from datadog_api_client.v2.model.custom_destination_response_http_destination_auth import (
+    CustomDestinationResponseHttpDestinationAuth,
+)
+from datadog_api_client.v2.model.custom_destination_response_http_destination_auth_basic import (
+    CustomDestinationResponseHttpDestinationAuthBasic,
+)
+from datadog_api_client.v2.model.custom_destination_response_http_destination_auth_basic_type import (
+    CustomDestinationResponseHttpDestinationAuthBasicType,
+)
+from datadog_api_client.v2.model.custom_destination_response_http_destination_auth_custom_header import (
+    CustomDestinationResponseHttpDestinationAuthCustomHeader,
+)
+from datadog_api_client.v2.model.custom_destination_response_http_destination_auth_custom_header_type import (
+    CustomDestinationResponseHttpDestinationAuthCustomHeaderType,
+)
+from datadog_api_client.v2.model.custom_destination_type import CustomDestinationType
+from datadog_api_client.v2.model.custom_destination_update_request import CustomDestinationUpdateRequest
+from datadog_api_client.v2.model.custom_destination_update_request_attributes import (
+    CustomDestinationUpdateRequestAttributes,
+)
+from datadog_api_client.v2.model.custom_destination_update_request_definition import (
+    CustomDestinationUpdateRequestDefinition,
+)
+from datadog_api_client.v2.model.custom_destinations_response import CustomDestinationsResponse
 from datadog_api_client.v2.model.dora_deployment_request import DORADeploymentRequest
 from datadog_api_client.v2.model.dora_deployment_request_attributes import DORADeploymentRequestAttributes
 from datadog_api_client.v2.model.dora_deployment_request_data import DORADeploymentRequestData
@@ -1987,6 +2083,44 @@ __all__ = [
     "CreateRuleResponse",
     "CreateRuleResponseData",
     "Creator",
+    "CustomDestinationAttributeTagsRestrictionListType",
+    "CustomDestinationCreateRequest",
+    "CustomDestinationCreateRequestAttributes",
+    "CustomDestinationCreateRequestDefinition",
+    "CustomDestinationElasticsearchDestinationAuth",
+    "CustomDestinationForwardDestination",
+    "CustomDestinationForwardDestinationElasticsearch",
+    "CustomDestinationForwardDestinationElasticsearchType",
+    "CustomDestinationForwardDestinationHttp",
+    "CustomDestinationForwardDestinationHttpType",
+    "CustomDestinationForwardDestinationSplunk",
+    "CustomDestinationForwardDestinationSplunkType",
+    "CustomDestinationHttpDestinationAuth",
+    "CustomDestinationHttpDestinationAuthBasic",
+    "CustomDestinationHttpDestinationAuthBasicType",
+    "CustomDestinationHttpDestinationAuthCustomHeader",
+    "CustomDestinationHttpDestinationAuthCustomHeaderType",
+    "CustomDestinationResponse",
+    "CustomDestinationResponseAttributes",
+    "CustomDestinationResponseDefinition",
+    "CustomDestinationResponseElasticsearchDestinationAuth",
+    "CustomDestinationResponseForwardDestination",
+    "CustomDestinationResponseForwardDestinationElasticsearch",
+    "CustomDestinationResponseForwardDestinationElasticsearchType",
+    "CustomDestinationResponseForwardDestinationHttp",
+    "CustomDestinationResponseForwardDestinationHttpType",
+    "CustomDestinationResponseForwardDestinationSplunk",
+    "CustomDestinationResponseForwardDestinationSplunkType",
+    "CustomDestinationResponseHttpDestinationAuth",
+    "CustomDestinationResponseHttpDestinationAuthBasic",
+    "CustomDestinationResponseHttpDestinationAuthBasicType",
+    "CustomDestinationResponseHttpDestinationAuthCustomHeader",
+    "CustomDestinationResponseHttpDestinationAuthCustomHeaderType",
+    "CustomDestinationType",
+    "CustomDestinationUpdateRequest",
+    "CustomDestinationUpdateRequestAttributes",
+    "CustomDestinationUpdateRequestDefinition",
+    "CustomDestinationsResponse",
     "DORADeploymentRequest",
     "DORADeploymentRequestAttributes",
     "DORADeploymentRequestData",
