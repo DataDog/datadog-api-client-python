@@ -48,67 +48,67 @@ Feature: GCP Integration
   @team:DataDog/gcp-integrations
   Scenario: Create a new entry for your service account returns "OK" response
     Given new "CreateGCPSTSAccount" request
-    And body with value {"data": {"attributes": {"client_email": "{{ unique_hash }}@test-project.iam.gserviceaccount.com", "host_filters": []}, "type": "gcp_service_account"}}
+    And body with value {"data": {"attributes": {"client_email": "Test-{{ unique_hash }}@test-project.iam.gserviceaccount.com", "host_filters": []}, "type": "gcp_service_account"}}
     When the request is sent
     Then the response status is 201 OK
     And the response "data.type" is equal to "gcp_service_account"
-    And the response "data.attributes.client_email" is equal to "{{ unique_hash }}@test-project.iam.gserviceaccount.com"
+    And the response "data.attributes.client_email" is equal to "Test-{{ unique_hash }}@test-project.iam.gserviceaccount.com"
 
   @team:DataDog/gcp-integrations
   Scenario: Create a new entry for your service account with account_tags returns "OK" response
     Given new "CreateGCPSTSAccount" request
-    And body with value {"data": {"attributes": {"account_tags": ["lorem", "ipsum"], "client_email": "{{ unique_hash }}@test-project.iam.gserviceaccount.com", "host_filters": []}, "type": "gcp_service_account"}}
+    And body with value {"data": {"attributes": {"account_tags": ["lorem", "ipsum"], "client_email": "Test-{{ unique_hash }}@test-project.iam.gserviceaccount.com", "host_filters": []}, "type": "gcp_service_account"}}
     When the request is sent
     Then the response status is 201 OK
     And the response "data.type" is equal to "gcp_service_account"
-    And the response "data.attributes.client_email" is equal to "{{ unique_hash }}@test-project.iam.gserviceaccount.com"
+    And the response "data.attributes.client_email" is equal to "Test-{{ unique_hash }}@test-project.iam.gserviceaccount.com"
     And the response "data.attributes.account_tags" is equal to ["lorem", "ipsum"]
 
   @team:DataDog/gcp-integrations
   Scenario: Create a new entry for your service account with cloud run revision filters enabled returns "OK" response
     Given new "CreateGCPSTSAccount" request
-    And body with value {"data": {"attributes": {"cloud_run_revision_filters": ["meh:bleh"], "client_email": "{{ unique_hash }}@test-project.iam.gserviceaccount.com", "host_filters": []}, "type": "gcp_service_account"}}
+    And body with value {"data": {"attributes": {"cloud_run_revision_filters": ["meh:bleh"], "client_email": "Test-{{ unique_hash }}@test-project.iam.gserviceaccount.com", "host_filters": []}, "type": "gcp_service_account"}}
     When the request is sent
     Then the response status is 201 OK
     And the response "data.type" is equal to "gcp_service_account"
-    And the response "data.attributes.client_email" is equal to "{{ unique_hash }}@test-project.iam.gserviceaccount.com"
+    And the response "data.attributes.client_email" is equal to "Test-{{ unique_hash }}@test-project.iam.gserviceaccount.com"
     And the response "data.attributes.cloud_run_revision_filters" is equal to ["meh:bleh"]
 
   @team:DataDog/gcp-integrations
   Scenario: Create a new entry for your service account with cspm enabled returns "OK" response
     Given new "CreateGCPSTSAccount" request
-    And body with value {"data": {"attributes": {"is_cspm_enabled": true, "resource_collection_enabled": true, "client_email": "{{ unique_hash }}@test-project.iam.gserviceaccount.com", "host_filters": []}, "type": "gcp_service_account"}}
+    And body with value {"data": {"attributes": {"is_cspm_enabled": true, "resource_collection_enabled": true, "client_email": "Test-{{ unique_hash }}@test-project.iam.gserviceaccount.com", "host_filters": []}, "type": "gcp_service_account"}}
     When the request is sent
     Then the response status is 201 OK
     And the response "data.type" is equal to "gcp_service_account"
-    And the response "data.attributes.client_email" is equal to "{{ unique_hash }}@test-project.iam.gserviceaccount.com"
+    And the response "data.attributes.client_email" is equal to "Test-{{ unique_hash }}@test-project.iam.gserviceaccount.com"
     And the response "data.attributes.is_cspm_enabled" is equal to true
 
   @team:DataDog/gcp-integrations
   Scenario: Create a new entry for your service account with resource collection enabled disabled and cspm enabled returns "Bad Request" response
     Given new "CreateGCPSTSAccount" request
-    And body with value {"data": {"attributes": {"resource_collection_enabled": false, "is_cspm_enabled": true, "client_email": "{{ unique_hash }}@test-project.iam.gserviceaccount.com", "host_filters": []}, "type": "gcp_service_account"}}
+    And body with value {"data": {"attributes": {"resource_collection_enabled": false, "is_cspm_enabled": true, "client_email": "Test-{{ unique_hash }}@test-project.iam.gserviceaccount.com", "host_filters": []}, "type": "gcp_service_account"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @team:DataDog/gcp-integrations
   Scenario: Create a new entry for your service account with resource collection enabled returns "OK" response
     Given new "CreateGCPSTSAccount" request
-    And body with value {"data": {"attributes": {"resource_collection_enabled": true, "client_email": "{{ unique_hash }}@test-project.iam.gserviceaccount.com", "host_filters": []}, "type": "gcp_service_account"}}
+    And body with value {"data": {"attributes": {"resource_collection_enabled": true, "client_email": "Test-{{ unique_hash }}@test-project.iam.gserviceaccount.com", "host_filters": []}, "type": "gcp_service_account"}}
     When the request is sent
     Then the response status is 201 OK
     And the response "data.type" is equal to "gcp_service_account"
-    And the response "data.attributes.client_email" is equal to "{{ unique_hash }}@test-project.iam.gserviceaccount.com"
+    And the response "data.attributes.client_email" is equal to "Test-{{ unique_hash }}@test-project.iam.gserviceaccount.com"
     And the response "data.attributes.resource_collection_enabled" is equal to true
 
   @team:DataDog/gcp-integrations
   Scenario: Create a new entry for your service account with security command center enabled returns "OK" response
     Given new "CreateGCPSTSAccount" request
-    And body with value {"data": {"attributes": {"is_security_command_center_enabled": true, "client_email": "{{ unique_hash }}@test-project.iam.gserviceaccount.com", "host_filters": []}, "type": "gcp_service_account"}}
+    And body with value {"data": {"attributes": {"is_security_command_center_enabled": true, "client_email": "Test-{{ unique_hash }}@test-project.iam.gserviceaccount.com", "host_filters": []}, "type": "gcp_service_account"}}
     When the request is sent
     Then the response status is 201 OK
     And the response "data.type" is equal to "gcp_service_account"
-    And the response "data.attributes.client_email" is equal to "{{ unique_hash }}@test-project.iam.gserviceaccount.com"
+    And the response "data.attributes.client_email" is equal to "Test-{{ unique_hash }}@test-project.iam.gserviceaccount.com"
     And the response "data.attributes.is_security_command_center_enabled" is equal to true
 
   @generated @skip @team:DataDog/gcp-integrations
@@ -167,7 +167,7 @@ Feature: GCP Integration
     Given there is a valid "gcp_sts_account" in the system
     And new "UpdateGCPSTSAccount" request
     And request contains "account_id" parameter from "gcp_sts_account.data.id"
-    And body with value {"data": {"attributes": {"client_email": "{{ unique_hash }}@example.com", "host_filters": ["foo:bar"]}, "id": "{{ gcp_sts_account.data.id }}", "type": "gcp_service_account"}}
+    And body with value {"data": {"attributes": {"client_email": "Test-{{ unique_hash }}@example.com", "host_filters": ["foo:bar"]}, "id": "{{ gcp_sts_account.data.id }}", "type": "gcp_service_account"}}
     When the request is sent
     Then the response status is 201 OK
 
@@ -176,7 +176,7 @@ Feature: GCP Integration
     Given there is a valid "gcp_sts_account" in the system
     And new "UpdateGCPSTSAccount" request
     And request contains "account_id" parameter from "gcp_sts_account.data.id"
-    And body with value {"data": {"attributes": {"client_email": "{{ unique_hash }}@example.com", "cloud_run_revision_filters": ["merp:derp"]}, "id": "{{ gcp_sts_account.data.id }}", "type": "gcp_service_account"}}
+    And body with value {"data": {"attributes": {"client_email": "Test-{{ unique_hash }}@example.com", "cloud_run_revision_filters": ["merp:derp"]}, "id": "{{ gcp_sts_account.data.id }}", "type": "gcp_service_account"}}
     When the request is sent
     Then the response status is 201 OK
 
@@ -185,6 +185,6 @@ Feature: GCP Integration
     Given there is a valid "gcp_sts_account" in the system
     And new "UpdateGCPSTSAccount" request
     And request contains "account_id" parameter from "gcp_sts_account.data.id"
-    And body with value {"data": {"attributes": {"client_email": "{{ unique_hash }}@example.com", "resource_collection_enabled": true}, "id": "{{ gcp_sts_account.data.id }}", "type": "gcp_service_account"}}
+    And body with value {"data": {"attributes": {"client_email": "Test-{{ unique_hash }}@example.com", "resource_collection_enabled": true}, "id": "{{ gcp_sts_account.data.id }}", "type": "gcp_service_account"}}
     When the request is sent
     Then the response status is 201 OK

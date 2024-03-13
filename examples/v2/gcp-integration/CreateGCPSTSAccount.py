@@ -12,7 +12,7 @@ from datadog_api_client.v2.model.gcpsts_service_account_data import GCPSTSServic
 body = GCPSTSServiceAccountCreateRequest(
     data=GCPSTSServiceAccountData(
         attributes=GCPSTSServiceAccountAttributes(
-            client_email="252bf553ef04b351@test-project.iam.gserviceaccount.com",
+            client_email="Test-252bf553ef04b351@test-project.iam.gserviceaccount.com",
             host_filters=[],
         ),
         type=GCPServiceAccountType.GCP_SERVICE_ACCOUNT,
