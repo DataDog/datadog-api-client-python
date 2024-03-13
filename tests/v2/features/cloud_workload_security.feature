@@ -13,6 +13,7 @@ Feature: Cloud Workload Security
   @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
   Scenario: Create a CSM Threats Agent rule returns "Bad Request" response
     Given new "CreateCSMThreatsAgentRule" request
+    And operation "CreateCSMThreatsAgentRule" enabled
     And body with value {"data": {"attributes": {"description": "My Agent rule", "enabled": true, "expression": "exec.file.name == sh", "name": "my_agent_rule"}, "type": "agent_rule"}}
     When the request is sent
     Then the response status is 400 Bad Request
@@ -27,6 +28,7 @@ Feature: Cloud Workload Security
   @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
   Scenario: Create a CSM Threats Agent rule returns "OK" response
     Given new "CreateCSMThreatsAgentRule" request
+    And operation "CreateCSMThreatsAgentRule" enabled
     And body with value {"data": {"attributes": {"description": "My Agent rule", "enabled": true, "expression": "exec.file.name == \"sh\"", "name": "my_agent_rule"}, "type": "agent_rule"}}
     When the request is sent
     Then the response status is 200 OK
@@ -57,6 +59,7 @@ Feature: Cloud Workload Security
   @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
   Scenario: Delete a CSM Threats Agent rule returns "Not Found" response
     Given new "DeleteCSMThreatsAgentRule" request
+    And operation "DeleteCSMThreatsAgentRule" enabled
     And request contains "agent_rule_id" parameter with value "abc-123-xyz"
     When the request is sent
     Then the response status is 404 Not Found
@@ -65,6 +68,7 @@ Feature: Cloud Workload Security
   Scenario: Delete a CSM Threats Agent rule returns "OK" response
     Given there is a valid "agent_rule_rc" in the system
     And new "DeleteCSMThreatsAgentRule" request
+    And operation "DeleteCSMThreatsAgentRule" enabled
     And request contains "agent_rule_id" parameter from "agent_rule.data.id"
     When the request is sent
     Then the response status is 204 OK
@@ -87,6 +91,7 @@ Feature: Cloud Workload Security
   @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
   Scenario: Get a CSM Threats Agent rule returns "Not Found" response
     Given new "GetCSMThreatsAgentRule" request
+    And operation "GetCSMThreatsAgentRule" enabled
     And request contains "agent_rule_id" parameter with value "abc-123-xyz"
     When the request is sent
     Then the response status is 404 Not Found
@@ -95,6 +100,7 @@ Feature: Cloud Workload Security
   Scenario: Get a CSM Threats Agent rule returns "OK" response
     Given there is a valid "agent_rule_rc" in the system
     And new "GetCSMThreatsAgentRule" request
+    And operation "GetCSMThreatsAgentRule" enabled
     And request contains "agent_rule_id" parameter from "agent_rule.data.id"
     When the request is sent
     Then the response status is 200 OK
@@ -121,6 +127,7 @@ Feature: Cloud Workload Security
   @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
   Scenario: Get all CSM Threats Agent rules returns "OK" response
     Given new "ListCSMThreatsAgentRules" request
+    And operation "ListCSMThreatsAgentRules" enabled
     When the request is sent
     Then the response status is 200 OK
 
@@ -135,6 +142,7 @@ Feature: Cloud Workload Security
   @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
   Scenario: Get the latest CSM Threats policy returns "OK" response
     Given new "DownloadCSMThreatsPolicy" request
+    And operation "DownloadCSMThreatsPolicy" enabled
     When the request is sent
     Then the response status is 200 OK
 
@@ -148,6 +156,7 @@ Feature: Cloud Workload Security
   Scenario: Update a CSM Threats Agent rule returns "Bad Request" response
     Given there is a valid "agent_rule_rc" in the system
     And new "UpdateCSMThreatsAgentRule" request
+    And operation "UpdateCSMThreatsAgentRule" enabled
     And request contains "agent_rule_id" parameter from "agent_rule.data.id"
     And body with value {"data": {"attributes": {"description": "Test Agent rule", "enabled": true, "expression": "open.file.path = sh"}, "type": "agent_rule", "id":"abc-123-xyz"}}
     When the request is sent
@@ -164,6 +173,7 @@ Feature: Cloud Workload Security
   @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
   Scenario: Update a CSM Threats Agent rule returns "Not Found" response
     Given new "UpdateCSMThreatsAgentRule" request
+    And operation "UpdateCSMThreatsAgentRule" enabled
     And request contains "agent_rule_id" parameter with value "abc-123-xyz"
     And body with value {"data": {"attributes": {"description": "My Agent rule", "enabled": true, "expression": "exec.file.name == \"sh\""}, "type": "agent_rule", "id":"abc-123-xyz"}}
     When the request is sent
@@ -173,6 +183,7 @@ Feature: Cloud Workload Security
   Scenario: Update a CSM Threats Agent rule returns "OK" response
     Given there is a valid "agent_rule_rc" in the system
     And new "UpdateCSMThreatsAgentRule" request
+    And operation "UpdateCSMThreatsAgentRule" enabled
     And request contains "agent_rule_id" parameter from "agent_rule.data.id"
     And body with value {"data": {"attributes": {"description": "Test Agent rule", "enabled": true, "expression": "exec.file.name == \"sh\""}, "type": "agent_rule", "id":"{{ agent_rule.data.id }}"}}
     When the request is sent

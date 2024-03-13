@@ -32,6 +32,7 @@ body = CloudWorkloadSecurityAgentRuleUpdateRequest(
 )
 
 configuration = Configuration()
+configuration.unstable_operations["update_csm_threats_agent_rule"] = True
 with ApiClient(configuration) as api_client:
     api_instance = CloudWorkloadSecurityApi(api_client)
     response = api_instance.update_csm_threats_agent_rule(agent_rule_id=AGENT_RULE_DATA_ID, body=body)

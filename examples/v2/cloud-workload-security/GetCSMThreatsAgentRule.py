@@ -10,6 +10,7 @@ from datadog_api_client.v2.api.cloud_workload_security_api import CloudWorkloadS
 AGENT_RULE_DATA_ID = environ["AGENT_RULE_DATA_ID"]
 
 configuration = Configuration()
+configuration.unstable_operations["get_csm_threats_agent_rule"] = True
 with ApiClient(configuration) as api_client:
     api_instance = CloudWorkloadSecurityApi(api_client)
     response = api_instance.get_csm_threats_agent_rule(
