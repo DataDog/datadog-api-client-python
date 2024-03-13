@@ -14,7 +14,7 @@ body = GCPSTSServiceAccountCreateRequest(
         attributes=GCPSTSServiceAccountAttributes(
             is_cspm_enabled=True,
             resource_collection_enabled=True,
-            client_email="252bf553ef04b351@test-project.iam.gserviceaccount.com",
+            client_email="Test-252bf553ef04b351@test-project.iam.gserviceaccount.com",
             host_filters=[],
         ),
         type=GCPServiceAccountType.GCP_SERVICE_ACCOUNT,

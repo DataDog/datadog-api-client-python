@@ -16,7 +16,7 @@ GCP_STS_ACCOUNT_DATA_ID = environ["GCP_STS_ACCOUNT_DATA_ID"]
 body = GCPSTSServiceAccountUpdateRequest(
     data=GCPSTSServiceAccountUpdateRequestData(
         attributes=GCPSTSServiceAccountAttributes(
-            client_email="252bf553ef04b351@example.com",
+            client_email="Test-252bf553ef04b351@example.com",
             resource_collection_enabled=True,
         ),
         id=GCP_STS_ACCOUNT_DATA_ID,
