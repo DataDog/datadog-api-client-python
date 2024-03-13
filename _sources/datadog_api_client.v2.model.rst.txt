@@ -2150,6 +2150,272 @@ creator
    :members:
    :show-inheritance:
 
+custom\_destination\_attribute\_tags\_restriction\_list\_type
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_destination_attribute_tags_restriction_list_type
+   :members:
+   :show-inheritance:
+
+custom\_destination\_create\_request
+------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_destination_create_request
+   :members:
+   :show-inheritance:
+
+custom\_destination\_create\_request\_attributes
+------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_destination_create_request_attributes
+   :members:
+   :show-inheritance:
+
+custom\_destination\_create\_request\_definition
+------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_destination_create_request_definition
+   :members:
+   :show-inheritance:
+
+custom\_destination\_elasticsearch\_destination\_auth
+-----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_destination_elasticsearch_destination_auth
+   :members:
+   :show-inheritance:
+
+custom\_destination\_forward\_destination
+-----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_destination_forward_destination
+   :members:
+   :show-inheritance:
+
+custom\_destination\_forward\_destination\_elasticsearch
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_destination_forward_destination_elasticsearch
+   :members:
+   :show-inheritance:
+
+custom\_destination\_forward\_destination\_elasticsearch\_type
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_destination_forward_destination_elasticsearch_type
+   :members:
+   :show-inheritance:
+
+custom\_destination\_forward\_destination\_http
+-----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_destination_forward_destination_http
+   :members:
+   :show-inheritance:
+
+custom\_destination\_forward\_destination\_http\_type
+-----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_destination_forward_destination_http_type
+   :members:
+   :show-inheritance:
+
+custom\_destination\_forward\_destination\_splunk
+-------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_destination_forward_destination_splunk
+   :members:
+   :show-inheritance:
+
+custom\_destination\_forward\_destination\_splunk\_type
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_destination_forward_destination_splunk_type
+   :members:
+   :show-inheritance:
+
+custom\_destination\_http\_destination\_auth
+--------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_destination_http_destination_auth
+   :members:
+   :show-inheritance:
+
+custom\_destination\_http\_destination\_auth\_basic
+---------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_destination_http_destination_auth_basic
+   :members:
+   :show-inheritance:
+
+custom\_destination\_http\_destination\_auth\_basic\_type
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_destination_http_destination_auth_basic_type
+   :members:
+   :show-inheritance:
+
+custom\_destination\_http\_destination\_auth\_custom\_header
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_destination_http_destination_auth_custom_header
+   :members:
+   :show-inheritance:
+
+custom\_destination\_http\_destination\_auth\_custom\_header\_type
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_destination_http_destination_auth_custom_header_type
+   :members:
+   :show-inheritance:
+
+custom\_destination\_response
+-----------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_destination_response
+   :members:
+   :show-inheritance:
+
+custom\_destination\_response\_attributes
+-----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_destination_response_attributes
+   :members:
+   :show-inheritance:
+
+custom\_destination\_response\_definition
+-----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_destination_response_definition
+   :members:
+   :show-inheritance:
+
+custom\_destination\_response\_elasticsearch\_destination\_auth
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_destination_response_elasticsearch_destination_auth
+   :members:
+   :show-inheritance:
+
+custom\_destination\_response\_forward\_destination
+---------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_destination_response_forward_destination
+   :members:
+   :show-inheritance:
+
+custom\_destination\_response\_forward\_destination\_elasticsearch
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_destination_response_forward_destination_elasticsearch
+   :members:
+   :show-inheritance:
+
+custom\_destination\_response\_forward\_destination\_elasticsearch\_type
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_destination_response_forward_destination_elasticsearch_type
+   :members:
+   :show-inheritance:
+
+custom\_destination\_response\_forward\_destination\_http
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_destination_response_forward_destination_http
+   :members:
+   :show-inheritance:
+
+custom\_destination\_response\_forward\_destination\_http\_type
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_destination_response_forward_destination_http_type
+   :members:
+   :show-inheritance:
+
+custom\_destination\_response\_forward\_destination\_splunk
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_destination_response_forward_destination_splunk
+   :members:
+   :show-inheritance:
+
+custom\_destination\_response\_forward\_destination\_splunk\_type
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_destination_response_forward_destination_splunk_type
+   :members:
+   :show-inheritance:
+
+custom\_destination\_response\_http\_destination\_auth
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_destination_response_http_destination_auth
+   :members:
+   :show-inheritance:
+
+custom\_destination\_response\_http\_destination\_auth\_basic
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_destination_response_http_destination_auth_basic
+   :members:
+   :show-inheritance:
+
+custom\_destination\_response\_http\_destination\_auth\_basic\_type
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_destination_response_http_destination_auth_basic_type
+   :members:
+   :show-inheritance:
+
+custom\_destination\_response\_http\_destination\_auth\_custom\_header
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_destination_response_http_destination_auth_custom_header
+   :members:
+   :show-inheritance:
+
+custom\_destination\_response\_http\_destination\_auth\_custom\_header\_type
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_destination_response_http_destination_auth_custom_header_type
+   :members:
+   :show-inheritance:
+
+custom\_destination\_type
+-------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_destination_type
+   :members:
+   :show-inheritance:
+
+custom\_destination\_update\_request
+------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_destination_update_request
+   :members:
+   :show-inheritance:
+
+custom\_destination\_update\_request\_attributes
+------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_destination_update_request_attributes
+   :members:
+   :show-inheritance:
+
+custom\_destination\_update\_request\_definition
+------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_destination_update_request_definition
+   :members:
+   :show-inheritance:
+
+custom\_destinations\_response
+------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_destinations_response
+   :members:
+   :show-inheritance:
+
 dashboard\_list\_add\_items\_request
 ------------------------------------
 
