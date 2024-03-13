@@ -1,0 +1,40 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"enabled":false,"forward_tags":false,"forward_tags_restriction_list":["datacenter","host"],"forward_tags_restriction_list_type":"ALLOW_LIST","forwarder_destination":{"auth":{"password":"my-password","username":"my-username"},"endpoint":"https://example.com","index_name":"nginx-logs","index_rotation":"yyyy-MM-dd","type":"elasticsearch"},"name":"Nginx
+      logs","query":"source:nginx"},"type":"custom_destination"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/logs/config/custom-destinations
+  response:
+    body:
+      string: '{"data":{"id":"922dba96-00c4-49fb-969c-aabf48a3d5c3","attributes":{"name":"Nginx
+        logs","query":"source:nginx","enabled":false,"forwarder_destination":{"index_name":"nginx-logs","index_rotation":"yyyy-MM-dd","endpoint":"https://example.com","auth":{},"type":"elasticsearch"},"forward_tags_restriction_list_type":"ALLOW_LIST","forward_tags_restriction_list":["datacenter","host"],"forward_tags":false},"type":"custom_destination"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/logs/config/custom-destinations/922dba96-00c4-49fb-969c-aabf48a3d5c3
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - text/html; charset=utf-8
+    status:
+      code: 204
+      message: No Content
+version: 1
