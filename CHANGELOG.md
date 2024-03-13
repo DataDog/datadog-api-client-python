@@ -1,5 +1,33 @@
 # Changelog
 
+## 2.23.0 / 2024-03-13
+
+### Fixed
+* Move under common tag Case Management by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1867
+* Include user data with team membership resource by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1863
+* Disable additionalProperties for Downtime Schedule UpdateRequest oneOfs by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1873
+* Fix ListServiceDefinitions pagination information by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1897
+### Added
+* Case Management Public API documentation by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1848
+* Make grpc steps available for synthetics api multisteps tests by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1866
+* Add cloud run filter to GCP v1 and v2 spec by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1845
+* add ASM serverless to usage metering API docs by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1876
+* Add new products to usage API docs by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1880
+* Adds support for `ListMetricAssets` endpoint by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1878
+* Add support for new CRUD agent rules endpoints by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1892
+* Add documentation for workflow usage attribution by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1898
+* Add Custom Destinations Public API by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1902
+### Changed
+* Update spec for DORA Metrics Incident endpoint by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1865
+### Deprecated
+* Deprecate the pattern property for SDS Standard Pattern Attributes by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1893
+* Deprecate Incident Services endpoints by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1904
+
+## New Contributors
+* @antonio-ramadas-dd made their first contribution in https://github.com/DataDog/datadog-api-client-python/pull/1901
+
+**Full Changelog**: https://github.com/DataDog/datadog-api-client-python/compare/2.22.0...2.23.0
+
 ## 2.22.0 / 2024-02-06
 
 ### Fixed
