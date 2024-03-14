@@ -87,11 +87,13 @@ Feature: Roles
   @team:DataDog/aaa-core-access
   Scenario: Create role returns "OK" response
     Given new "CreateRole" request
-    And body with value {"data": {"type": "roles", "attributes": {"name": "{{ unique }}"}}}
+    And there is a valid "permission" in the system
+    And body with value {"data": {"type": "roles", "attributes": {"name": "{{ unique }}"}, "relationships": {"permissions": {"data": [{"id": "{{ permission.id }}", "type": "{{ permission.type }}"}]}}}}
     When the request is sent
     Then the response status is 200 OK
     And the response "data.attributes.name" is equal to "{{ unique }}"
     And the response "data.type" is equal to "roles"
+    And the response "data.relationships.permissions.data" array contains value "\"type\":\"{{ permission.type }}\",\"id\":\"{{ permission.id }}\""
 
   @generated @skip @team:DataDog/aaa-core-access
   Scenario: Delete role returns "Not found" response
@@ -169,6 +171,7 @@ Feature: Roles
     When the request is sent
     Then the response status is 200 OK
     And the response "data[0].type" is equal to "permissions"
+    And the response "data[0].id" is equal to "{{ permission.id }}"
 
   @generated @skip @team:DataDog/aaa-core-access
   Scenario: List permissions for a role returns "Not found" response
