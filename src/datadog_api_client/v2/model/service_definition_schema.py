@@ -72,6 +72,9 @@ class ServiceDefinitionSchema(ModelComposed):
         :param tier: Importance of the service.
         :type tier: str, optional
 
+        :param ci_pipeline_fingerprints: A set of CI fingerprints.
+        :type ci_pipeline_fingerprints: [str], optional
+
         :param languages: The service's programming language. Datadog recognizes the following languages: `dotnet`, `go`, `java`, `js`, `php`, `python`, `ruby`, and `c++`.
         :type languages: [str], optional
 
