@@ -16,6 +16,10 @@ from datadog_api_client.v2.model.service_definition_v2_dot2_version import Servi
 
 body = ServiceDefinitionV2Dot2(
     application="my-app",
+    ci_pipeline_fingerprints=[
+        "j88xdEy0J5lc",
+        "eZ7LMljCk8vo",
+    ],
     contacts=[
         ServiceDefinitionV2Dot2Contact(
             contact="https://teams.microsoft.com/myteam",
