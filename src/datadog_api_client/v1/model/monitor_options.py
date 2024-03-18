@@ -279,7 +279,8 @@ class MonitorOptions(ModelNormal):
 
         :param require_full_window: A Boolean indicating whether this monitor needs a full window of data before it’s evaluated.
             We highly recommend you set this to ``false`` for sparse metrics,
-            otherwise some evaluations are skipped. Default is false.
+            otherwise some evaluations are skipped. Default is false. This setting only applies to
+            metric monitors.
         :type require_full_window: bool, optional
 
         :param scheduling_options: Configuration options for scheduling.
