@@ -17868,7 +17868,8 @@ It only re-notifies if it’s not resolved.</p></li>
 <li><p><strong>renotify_statuses</strong> (<em>[</em><a class="reference internal" href="#datadog_api_client.v1.model.monitor_renotify_status_type.MonitorRenotifyStatusType" title="datadog_api_client.v1.model.monitor_renotify_status_type.MonitorRenotifyStatusType"><em>MonitorRenotifyStatusType</em></a><em>]</em><em>, </em><em>none_type</em><em>, </em><em>optional</em>) – The types of monitor statuses for which re-notification messages are sent.</p></li>
 <li><p><strong>require_full_window</strong> (<em>bool</em><em>, </em><em>optional</em>) – A Boolean indicating whether this monitor needs a full window of data before it’s evaluated.
 We highly recommend you set this to <code class="docutils literal notranslate"><span class="pre">false</span></code> for sparse metrics,
-otherwise some evaluations are skipped. Default is false.</p></li>
+otherwise some evaluations are skipped. Default is false. This setting only applies to
+metric monitors.</p></li>
 <li><p><strong>scheduling_options</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.monitor_options_scheduling_options.MonitorOptionsSchedulingOptions" title="datadog_api_client.v1.model.monitor_options_scheduling_options.MonitorOptionsSchedulingOptions"><em>MonitorOptionsSchedulingOptions</em></a><em>, </em><em>optional</em>) – Configuration options for scheduling.</p></li>
 <li><p><strong>silenced</strong> (<em>{str:</em><em> (</em><em>int</em><em>, </em><em>none_type</em><em>,</em><em>)</em><em>}</em><em>, </em><em>optional</em>) – Information about the downtime applied to the monitor. Only shows v1 downtimes. <strong>Deprecated</strong>.</p></li>
 <li><p><strong>synthetics_check_id</strong> (<em>str</em><em>, </em><em>none_type</em><em>, </em><em>optional</em>) – ID of the corresponding Synthetic check. <strong>Deprecated</strong>.</p></li>
