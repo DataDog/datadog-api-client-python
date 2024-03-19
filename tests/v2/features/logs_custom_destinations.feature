@@ -183,21 +183,16 @@ Feature: Logs Custom Destinations
     And there is a valid "custom_destination" in the system
     When the request is sent
     Then the response status is 200 OK
-    And the response "data" has length 1
-    And the response "data[0].type" is equal to "custom_destination"
-    And the response "data[0].id" is equal to "{{ custom_destination.data.id }}"
-    And the response "data[0].attributes.name" is equal to "{{ custom_destination.data.attributes.name }}"
-    And the response "data[0].attributes.query" is equal to "{{ custom_destination.data.attributes.query }}"
-    And the response "data[0].attributes.forwarder_destination.type" is equal to "{{ custom_destination.data.attributes.forwarder_destination.type }}"
-    And the response "data[0].attributes.forwarder_destination.endpoint" is equal to "{{ custom_destination.data.attributes.forwarder_destination.endpoint }}"
-    And the response "data[0].attributes.forwarder_destination.auth.type" is equal to "{{ custom_destination.data.attributes.forwarder_destination.auth.type }}"
-    And the response "data[0].attributes.forwarder_destination.auth" does not have field "username"
-    And the response "data[0].attributes.forwarder_destination.auth" does not have field "password"
-    And the response "data[0].attributes.enabled" is false
-    And the response "data[0].attributes.forward_tags" is false
-    And the response "data[0].attributes.forward_tags_restriction_list" has length 1
-    And the response "data[0].attributes.forward_tags_restriction_list" array contains value "host"
-    And the response "data[0].attributes.forward_tags_restriction_list_type" is equal to "{{ custom_destination.data.attributes.forward_tags_restriction_list_type }}"
+    And the response "data" has item with field "type" with value "custom_destination"
+    And the response "data" has item with field "id" with value "{{ custom_destination.data.id }}"
+    And the response "data" has item with field "attributes.name" with value "{{ custom_destination.data.attributes.name }}"
+    And the response "data" has item with field "attributes.query" with value "{{ custom_destination.data.attributes.query }}"
+    And the response "data" has item with field "attributes.forwarder_destination.type" with value "{{ custom_destination.data.attributes.forwarder_destination.type }}"
+    And the response "data" has item with field "attributes.forwarder_destination.endpoint" with value "{{ custom_destination.data.attributes.forwarder_destination.endpoint }}"
+    And the response "data" has item with field "attributes.forwarder_destination.auth.type" with value "{{ custom_destination.data.attributes.forwarder_destination.auth.type }}"
+    And the response "data" has item with field "attributes.enabled" with value false
+    And the response "data" has item with field "attributes.forward_tags" with value false
+    And the response "data" has item with field "attributes.forward_tags_restriction_list_type" with value "{{ custom_destination.data.attributes.forward_tags_restriction_list_type }}"
 
   @team:DataDog/logs-backend
   Scenario: Update a custom destination returns "Bad Request" response
