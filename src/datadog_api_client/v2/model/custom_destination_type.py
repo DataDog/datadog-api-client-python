@@ -23,7 +23,7 @@ class CustomDestinationType(ModelSimple):
     allowed_values = {
         "custom_destination",
     }
-    custom_destination: ClassVar["CustomDestinationType"]
+    CUSTOM_DESTINATION: ClassVar["CustomDestinationType"]
 
     @cached_property
     def openapi_types(_):
@@ -32,4 +32,4 @@ class CustomDestinationType(ModelSimple):
         }
 
 
-CustomDestinationType.custom_destination = CustomDestinationType("custom_destination")
+CustomDestinationType.CUSTOM_DESTINATION = CustomDestinationType("custom_destination")

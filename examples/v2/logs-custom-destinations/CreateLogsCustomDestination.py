@@ -50,7 +50,7 @@ body = CustomDestinationCreateRequest(
             name="Nginx logs",
             query="source:nginx",
         ),
-        type=CustomDestinationType.custom_destination,
+        type=CustomDestinationType.CUSTOM_DESTINATION,
     ),
 )
 
