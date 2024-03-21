@@ -75,7 +75,7 @@ Feature: Logs Custom Destinations
     And the response "data.attributes.forward_tags_restriction_list" array contains value "host"
     And the response "data.attributes.forward_tags_restriction_list_type" is equal to "ALLOW_LIST"
 
-  @skip-java @skip-python @skip-typescript @team:DataDog/logs-backend
+  @skip-java @skip-python @skip-rust @skip-typescript @team:DataDog/logs-backend
   Scenario: Create a custom destination returns "Bad Request" response
     Given new "CreateLogsCustomDestination" request
     And body with value {"data": {"attributes": {"name": "Nginx logs"}, "type": "custom_destination"}}
