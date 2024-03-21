@@ -58,7 +58,7 @@ class Series(ModelNormal):
         :param host: The name of the host that produced the metric.
         :type host: str, optional
 
-        :param interval: If the type of the metric is rate or count, define the corresponding interval.
+        :param interval: If the type of the metric is rate or count, define the corresponding interval in seconds.
         :type interval: int, none_type, optional
 
         :param metric: The name of the timeseries.
