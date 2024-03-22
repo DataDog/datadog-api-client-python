@@ -69,7 +69,7 @@ class MetricSeries(ModelNormal):
         A metric to submit to Datadog.
         See `Datadog metrics <https://docs.datadoghq.com/developers/metrics/#custom-metrics-properties>`_.
 
-        :param interval: If the type of the metric is rate or count, define the corresponding interval.
+        :param interval: If the type of the metric is rate or count, define the corresponding interval in seconds.
         :type interval: int, optional
 
         :param metadata: Metadata for the metric.
