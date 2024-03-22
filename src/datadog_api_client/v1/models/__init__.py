@@ -813,14 +813,7 @@ from datadog_api_client.v1.model.usage_analyzed_logs_hour import UsageAnalyzedLo
 from datadog_api_client.v1.model.usage_analyzed_logs_response import UsageAnalyzedLogsResponse
 from datadog_api_client.v1.model.usage_attribution_aggregates import UsageAttributionAggregates
 from datadog_api_client.v1.model.usage_attribution_aggregates_body import UsageAttributionAggregatesBody
-from datadog_api_client.v1.model.usage_attribution_body import UsageAttributionBody
-from datadog_api_client.v1.model.usage_attribution_metadata import UsageAttributionMetadata
-from datadog_api_client.v1.model.usage_attribution_pagination import UsageAttributionPagination
-from datadog_api_client.v1.model.usage_attribution_response import UsageAttributionResponse
-from datadog_api_client.v1.model.usage_attribution_sort import UsageAttributionSort
-from datadog_api_client.v1.model.usage_attribution_supported_metrics import UsageAttributionSupportedMetrics
 from datadog_api_client.v1.model.usage_attribution_tag_names import UsageAttributionTagNames
-from datadog_api_client.v1.model.usage_attribution_values import UsageAttributionValues
 from datadog_api_client.v1.model.usage_audit_logs_hour import UsageAuditLogsHour
 from datadog_api_client.v1.model.usage_audit_logs_response import UsageAuditLogsResponse
 from datadog_api_client.v1.model.usage_billable_summary_body import UsageBillableSummaryBody
@@ -1681,14 +1674,7 @@ __all__ = [
     "UsageAnalyzedLogsResponse",
     "UsageAttributionAggregates",
     "UsageAttributionAggregatesBody",
-    "UsageAttributionBody",
-    "UsageAttributionMetadata",
-    "UsageAttributionPagination",
-    "UsageAttributionResponse",
-    "UsageAttributionSort",
-    "UsageAttributionSupportedMetrics",
     "UsageAttributionTagNames",
-    "UsageAttributionValues",
     "UsageAuditLogsHour",
     "UsageAuditLogsResponse",
     "UsageBillableSummaryBody",

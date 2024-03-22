@@ -1322,12 +1322,6 @@
       "type": "safe"
     }
   },
-  "GetUsageAttribution": {
-    "tag": "Usage Metering",
-    "undo": {
-      "type": "safe"
-    }
-  },
   "GetUsageAuditLogs": {
     "tag": "Usage Metering",
     "undo": {
