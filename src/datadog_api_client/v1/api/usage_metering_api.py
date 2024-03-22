@@ -18,9 +18,6 @@ from datadog_api_client.v1.model.usage_sort_direction import UsageSortDirection
 from datadog_api_client.v1.model.usage_sort import UsageSort
 from datadog_api_client.v1.model.usage_specified_custom_reports_response import UsageSpecifiedCustomReportsResponse
 from datadog_api_client.v1.model.usage_analyzed_logs_response import UsageAnalyzedLogsResponse
-from datadog_api_client.v1.model.usage_attribution_response import UsageAttributionResponse
-from datadog_api_client.v1.model.usage_attribution_supported_metrics import UsageAttributionSupportedMetrics
-from datadog_api_client.v1.model.usage_attribution_sort import UsageAttributionSort
 from datadog_api_client.v1.model.usage_audit_logs_response import UsageAuditLogsResponse
 from datadog_api_client.v1.model.usage_lambda_response import UsageLambdaResponse
 from datadog_api_client.v1.model.usage_billable_summary_response import UsageBillableSummaryResponse
@@ -384,65 +381,6 @@ class UsageMeteringApi:
                 "end_hr": {
                     "openapi_types": (datetime,),
                     "attribute": "end_hr",
-                    "location": "query",
-                },
-            },
-            headers_map={
-                "accept": ["application/json;datetime-format=rfc3339"],
-            },
-            api_client=api_client,
-        )
-
-        self._get_usage_attribution_endpoint = _Endpoint(
-            settings={
-                "response_type": (UsageAttributionResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v1/usage/attribution",
-                "operation_id": "get_usage_attribution",
-                "http_method": "GET",
-                "version": "v1",
-            },
-            params_map={
-                "start_month": {
-                    "required": True,
-                    "openapi_types": (datetime,),
-                    "attribute": "start_month",
-                    "location": "query",
-                },
-                "fields": {
-                    "required": True,
-                    "openapi_types": (UsageAttributionSupportedMetrics,),
-                    "attribute": "fields",
-                    "location": "query",
-                },
-                "end_month": {
-                    "openapi_types": (datetime,),
-                    "attribute": "end_month",
-                    "location": "query",
-                },
-                "sort_direction": {
-                    "openapi_types": (UsageSortDirection,),
-                    "attribute": "sort_direction",
-                    "location": "query",
-                },
-                "sort_name": {
-                    "openapi_types": (UsageAttributionSort,),
-                    "attribute": "sort_name",
-                    "location": "query",
-                },
-                "include_descendants": {
-                    "openapi_types": (bool,),
-                    "attribute": "include_descendants",
-                    "location": "query",
-                },
-                "offset": {
-                    "openapi_types": (int,),
-                    "attribute": "offset",
-                    "location": "query",
-                },
-                "limit": {
-                    "openapi_types": (int,),
-                    "attribute": "limit",
                     "location": "query",
                 },
             },
@@ -1602,69 +1540,6 @@ class UsageMeteringApi:
             kwargs["end_hr"] = end_hr
 
         return self._get_usage_analyzed_logs_endpoint.call_with_http_info(**kwargs)
-
-    def get_usage_attribution(
-        self,
-        start_month: datetime,
-        fields: UsageAttributionSupportedMetrics,
-        *,
-        end_month: Union[datetime, UnsetType] = unset,
-        sort_direction: Union[UsageSortDirection, UnsetType] = unset,
-        sort_name: Union[UsageAttributionSort, UnsetType] = unset,
-        include_descendants: Union[bool, UnsetType] = unset,
-        offset: Union[int, UnsetType] = unset,
-        limit: Union[int, UnsetType] = unset,
-    ) -> UsageAttributionResponse:
-        """Get usage attribution. **Deprecated**.
-
-        Get usage attribution.
-        **Note:** This endpoint will be fully deprecated on December 1, 2022.
-        Refer to `Migrating from v1 to v2 of the Usage Attribution API <https://docs.datadoghq.com/account_management/guide/usage-attribution-migration/>`_ for the associated migration guide.
-
-        :param start_month: Datetime in ISO-8601 format, UTC, precise to month: ``[YYYY-MM]`` for usage beginning in this month.
-            Maximum of 15 months ago.
-        :type start_month: datetime
-        :param fields: Comma-separated list of usage types to return, or ``*`` for all usage types.
-        :type fields: UsageAttributionSupportedMetrics
-        :param end_month: Datetime in ISO-8601 format, UTC, precise to month: ``[YYYY-MM]`` for usage ending this month.
-        :type end_month: datetime, optional
-        :param sort_direction: The direction to sort by: ``[desc, asc]``.
-        :type sort_direction: UsageSortDirection, optional
-        :param sort_name: The field to sort by.
-        :type sort_name: UsageAttributionSort, optional
-        :param include_descendants: Include child org usage in the response. Defaults to false.
-        :type include_descendants: bool, optional
-        :param offset: Number of records to skip before beginning to return.
-        :type offset: int, optional
-        :param limit: Maximum number of records to be returned.
-        :type limit: int, optional
-        :rtype: UsageAttributionResponse
-        """
-        kwargs: Dict[str, Any] = {}
-        kwargs["start_month"] = start_month
-
-        kwargs["fields"] = fields
-
-        if end_month is not unset:
-            kwargs["end_month"] = end_month
-
-        if sort_direction is not unset:
-            kwargs["sort_direction"] = sort_direction
-
-        if sort_name is not unset:
-            kwargs["sort_name"] = sort_name
-
-        if include_descendants is not unset:
-            kwargs["include_descendants"] = include_descendants
-
-        if offset is not unset:
-            kwargs["offset"] = offset
-
-        if limit is not unset:
-            kwargs["limit"] = limit
-
-        warnings.warn("get_usage_attribution is deprecated", DeprecationWarning, stacklevel=2)
-        return self._get_usage_attribution_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_audit_logs(
         self,

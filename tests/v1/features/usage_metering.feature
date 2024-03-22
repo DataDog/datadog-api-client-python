@@ -702,16 +702,6 @@ Feature: Usage Metering
     Then the response status is 200 OK
 
   @skip @team:DataDog/red-zone-revenue-query
-  Scenario: Get usage attribution returns "OK" response
-    Given new "GetUsageAttribution" request
-    And request contains "start_month" parameter with value "{{ timeISO('now - 3d') }}"
-    And request contains "fields" parameter with value "*"
-    And request contains "offset" parameter with value 0
-    And request contains "limit" parameter with value 1
-    When the request is sent
-    Then the response status is 200 OK
-
-  @skip @team:DataDog/red-zone-revenue-query
   Scenario: Paginate monthly usage attribution
     Given there is a valid "monthly_usage_attribution" response
     And new "GetMonthlyUsageAttribution" request

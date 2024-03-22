@@ -4999,59 +4999,10 @@ usage\_attribution\_aggregates\_body
    :members:
    :show-inheritance:
 
-usage\_attribution\_body
-------------------------
-
-.. automodule:: datadog_api_client.v1.model.usage_attribution_body
-   :members:
-   :show-inheritance:
-
-usage\_attribution\_metadata
-----------------------------
-
-.. automodule:: datadog_api_client.v1.model.usage_attribution_metadata
-   :members:
-   :show-inheritance:
-
-usage\_attribution\_pagination
-------------------------------
-
-.. automodule:: datadog_api_client.v1.model.usage_attribution_pagination
-   :members:
-   :show-inheritance:
-
-usage\_attribution\_response
-----------------------------
-
-.. automodule:: datadog_api_client.v1.model.usage_attribution_response
-   :members:
-   :show-inheritance:
-
-usage\_attribution\_sort
-------------------------
-
-.. automodule:: datadog_api_client.v1.model.usage_attribution_sort
-   :members:
-   :show-inheritance:
-
-usage\_attribution\_supported\_metrics
---------------------------------------
-
-.. automodule:: datadog_api_client.v1.model.usage_attribution_supported_metrics
-   :members:
-   :show-inheritance:
-
 usage\_attribution\_tag\_names
 ------------------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_attribution_tag_names
-   :members:
-   :show-inheritance:
-
-usage\_attribution\_values
---------------------------
-
-.. automodule:: datadog_api_client.v1.model.usage_attribution_values
    :members:
    :show-inheritance:
 
