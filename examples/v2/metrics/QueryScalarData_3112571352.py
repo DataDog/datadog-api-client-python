@@ -28,7 +28,7 @@ body = ScalarFormulaQueryRequest(
                     ),
                 ),
             ],
-            _from=1671612804000,
+            _from=1636625471000,
             queries=ScalarFormulaRequestQueries(
                 [
                     MetricsScalarQuery(
@@ -39,7 +39,7 @@ body = ScalarFormulaQueryRequest(
                     ),
                 ]
             ),
-            to=1671620004000,
+            to=1636629071000,
         ),
         type=ScalarFormulaRequestType.SCALAR_REQUEST,
     ),
