@@ -2010,6 +2010,24 @@
       "type": "idempotent"
     }
   },
+  "CreateSLOReportJob": {
+    "tag": "Service Level Objectives",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetSLOReport": {
+    "tag": "Service Level Objectives",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetSLOReportJobStatus": {
+    "tag": "Service Level Objectives",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "AggregateSpans": {
     "tag": "Spans",
     "undo": {

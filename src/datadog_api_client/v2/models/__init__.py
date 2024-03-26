@@ -1247,6 +1247,15 @@ from datadog_api_client.v2.model.rule_type import RuleType
 from datadog_api_client.v2.model.saml_assertion_attribute import SAMLAssertionAttribute
 from datadog_api_client.v2.model.saml_assertion_attribute_attributes import SAMLAssertionAttributeAttributes
 from datadog_api_client.v2.model.saml_assertion_attributes_type import SAMLAssertionAttributesType
+from datadog_api_client.v2.model.slo_report_interval import SLOReportInterval
+from datadog_api_client.v2.model.slo_report_post_request import SLOReportPostRequest
+from datadog_api_client.v2.model.slo_report_post_request_data import SLOReportPostRequestData
+from datadog_api_client.v2.model.slo_report_post_response import SLOReportPostResponse
+from datadog_api_client.v2.model.slo_report_post_response_data import SLOReportPostResponseData
+from datadog_api_client.v2.model.slo_report_status import SLOReportStatus
+from datadog_api_client.v2.model.slo_report_status_get_response import SLOReportStatusGetResponse
+from datadog_api_client.v2.model.slo_report_status_get_response_attributes import SLOReportStatusGetResponseAttributes
+from datadog_api_client.v2.model.slo_report_status_get_response_data import SLOReportStatusGetResponseData
 from datadog_api_client.v2.model.scalar_column import ScalarColumn
 from datadog_api_client.v2.model.scalar_column_type_group import ScalarColumnTypeGroup
 from datadog_api_client.v2.model.scalar_column_type_number import ScalarColumnTypeNumber
@@ -1601,6 +1610,7 @@ from datadog_api_client.v2.model.service_now_ticket import ServiceNowTicket
 from datadog_api_client.v2.model.service_now_ticket_result import ServiceNowTicketResult
 from datadog_api_client.v2.model.slack_integration_metadata import SlackIntegrationMetadata
 from datadog_api_client.v2.model.slack_integration_metadata_channel_item import SlackIntegrationMetadataChannelItem
+from datadog_api_client.v2.model.slo_report_post_request_attributes import SloReportPostRequestAttributes
 from datadog_api_client.v2.model.sort_direction import SortDirection
 from datadog_api_client.v2.model.span import Span
 from datadog_api_client.v2.model.spans_aggregate_bucket import SpansAggregateBucket
@@ -2841,6 +2851,15 @@ __all__ = [
     "SAMLAssertionAttribute",
     "SAMLAssertionAttributeAttributes",
     "SAMLAssertionAttributesType",
+    "SLOReportInterval",
+    "SLOReportPostRequest",
+    "SLOReportPostRequestData",
+    "SLOReportPostResponse",
+    "SLOReportPostResponseData",
+    "SLOReportStatus",
+    "SLOReportStatusGetResponse",
+    "SLOReportStatusGetResponseAttributes",
+    "SLOReportStatusGetResponseData",
     "ScalarColumn",
     "ScalarColumnTypeGroup",
     "ScalarColumnTypeNumber",
@@ -3071,6 +3090,7 @@ __all__ = [
     "ServiceNowTicketResult",
     "SlackIntegrationMetadata",
     "SlackIntegrationMetadataChannelItem",
+    "SloReportPostRequestAttributes",
     "SortDirection",
     "Span",
     "SpansAggregateBucket",
