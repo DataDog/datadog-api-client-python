@@ -1,0 +1,37 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"from_ts":1690901870,"interval":"monthly","query":"slo_type:metric
+      \"SLO Reporting Test\"","to_ts":1706803070}}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/slo/report
+  response:
+    body:
+      string: '{"data":{"id":"b33e9726-eaf2-11ee-a52a-bbb0426c78fe","type":"report_id"}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/slo/report/b33e9726-eaf2-11ee-a52a-bbb0426c78fe/status
+  response:
+    body:
+      string: '{"data":{"id":"b33e9726-eaf2-11ee-a52a-bbb0426c78fe","type":"report_id","attributes":{"status":"IN_PROGRESS"}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1
