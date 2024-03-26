@@ -20,7 +20,7 @@ interactions:
       code: 201
       message: Created
 - request:
-    body: '{"data":{"attributes":{"label":"Link label","position":0,"url":"https://example.com"},"type":"team_links"}}'
+    body: '{"data":{"attributes":{"label":"Link label","position":0,"url":"https://example.com/one"},"type":"team_links"}}'
     headers:
       accept:
       - application/json
@@ -31,7 +31,7 @@ interactions:
   response:
     body:
       string: '{"data":{"type":"team_links","id":"2d348dee-405b-11ee-b5db-da7ad0900002","attributes":{"team_id":"2d0e6d4e-405b-11ee-84bc-da7ad0900002","label":"Link
-        label","url":"https://example.com","position":0}}}
+        label","url":"https://example.com/one","position":0}}}
 
         '
     headers:

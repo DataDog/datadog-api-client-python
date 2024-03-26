@@ -27,7 +27,7 @@ body = TimeseriesFormulaQueryRequest(
                     ),
                 ),
             ],
-            _from=1636625471000,
+            _from=1671612804000,
             interval=5000,
             queries=TimeseriesFormulaRequestQueries(
                 [
@@ -38,7 +38,7 @@ body = TimeseriesFormulaQueryRequest(
                     ),
                 ]
             ),
-            to=1636629071000,
+            to=1671620004000,
         ),
         type=TimeseriesFormulaRequestType.TIMESERIES_REQUEST,
     ),

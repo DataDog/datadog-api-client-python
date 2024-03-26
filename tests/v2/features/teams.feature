@@ -39,11 +39,11 @@ Feature: Teams
     Given new "CreateTeamLink" request
     And there is a valid "dd_team" in the system
     And request contains "team_id" parameter from "dd_team.data.id"
-    And body with value {"data": {"attributes": {"label": "Link label", "url": "https://example.com", "position": 0}, "type": "team_links"}}
+    And body with value {"data": {"attributes": {"label": "Link label", "url": "https://example.com/one", "position": 0}, "type": "team_links"}}
     When the request is sent
     Then the response status is 200 OK
     And the response "data.attributes.label" is equal to "Link label"
-    And the response "data.attributes.url" is equal to "https://example.com"
+    And the response "data.attributes.url" is equal to "https://example.com/one"
     And the response "data.attributes.position" is equal to 0
 
   @team:DataDog/core-app
