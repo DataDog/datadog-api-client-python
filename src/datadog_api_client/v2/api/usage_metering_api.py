@@ -684,10 +684,10 @@ class UsageMeteringApi:
         *,
         end_hr: Union[datetime, UnsetType] = unset,
     ) -> UsageApplicationSecurityMonitoringResponse:
-        """Get hourly usage for application security.
+        """Get hourly usage for application security. **Deprecated**.
 
         Get hourly usage for application security .
-        **Note:** hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_
+        **Note:** This endpoint has been deprecated. Hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage beginning at this hour.
         :type start_hr: datetime
@@ -702,6 +702,7 @@ class UsageMeteringApi:
         if end_hr is not unset:
             kwargs["end_hr"] = end_hr
 
+        warnings.warn("get_usage_application_security_monitoring is deprecated", DeprecationWarning, stacklevel=2)
         return self._get_usage_application_security_monitoring_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_lambda_traced_invocations(
@@ -710,10 +711,10 @@ class UsageMeteringApi:
         *,
         end_hr: Union[datetime, UnsetType] = unset,
     ) -> UsageLambdaTracedInvocationsResponse:
-        """Get hourly usage for Lambda traced invocations.
+        """Get hourly usage for Lambda traced invocations. **Deprecated**.
 
         Get hourly usage for Lambda traced invocations.
-        **Note:** hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_
+        **Note:** This endpoint has been deprecated.. Hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage beginning at this hour.
         :type start_hr: datetime
@@ -728,6 +729,7 @@ class UsageMeteringApi:
         if end_hr is not unset:
             kwargs["end_hr"] = end_hr
 
+        warnings.warn("get_usage_lambda_traced_invocations is deprecated", DeprecationWarning, stacklevel=2)
         return self._get_usage_lambda_traced_invocations_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_observability_pipelines(
@@ -736,10 +738,10 @@ class UsageMeteringApi:
         *,
         end_hr: Union[datetime, UnsetType] = unset,
     ) -> UsageObservabilityPipelinesResponse:
-        """Get hourly usage for observability pipelines.
+        """Get hourly usage for observability pipelines. **Deprecated**.
 
         Get hourly usage for observability pipelines.
-        **Note:** hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_
+        **Note:** This endpoint has been deprecated. Hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage beginning at this hour.
         :type start_hr: datetime
@@ -754,4 +756,5 @@ class UsageMeteringApi:
         if end_hr is not unset:
             kwargs["end_hr"] = end_hr
 
+        warnings.warn("get_usage_observability_pipelines is deprecated", DeprecationWarning, stacklevel=2)
         return self._get_usage_observability_pipelines_endpoint.call_with_http_info(**kwargs)

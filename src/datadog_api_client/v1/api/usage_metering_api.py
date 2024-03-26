@@ -1313,10 +1313,10 @@ class UsageMeteringApi:
         *,
         end_hr: Union[datetime, UnsetType] = unset,
     ) -> UsageIncidentManagementResponse:
-        """Get hourly usage for incident management.
+        """Get hourly usage for incident management. **Deprecated**.
 
         Get hourly usage for incident management.
-        **Note:** hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_. Refer to `Migrating from the V1 Hourly Usage APIs to V2 <https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/>`_ for the associated migration guide.
+        **Note:** This endpoint has been deprecated. Hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_. Refer to `Migrating from the V1 Hourly Usage APIs to V2 <https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/>`_ for the associated migration guide.
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage beginning at this hour.
         :type start_hr: datetime
@@ -1331,6 +1331,7 @@ class UsageMeteringApi:
         if end_hr is not unset:
             kwargs["end_hr"] = end_hr
 
+        warnings.warn("get_incident_management is deprecated", DeprecationWarning, stacklevel=2)
         return self._get_incident_management_endpoint.call_with_http_info(**kwargs)
 
     def get_ingested_spans(
@@ -1339,10 +1340,10 @@ class UsageMeteringApi:
         *,
         end_hr: Union[datetime, UnsetType] = unset,
     ) -> UsageIngestedSpansResponse:
-        """Get hourly usage for ingested spans.
+        """Get hourly usage for ingested spans. **Deprecated**.
 
         Get hourly usage for ingested spans.
-        **Note:** hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_. Refer to `Migrating from the V1 Hourly Usage APIs to V2 <https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/>`_ for the associated migration guide.
+        **Note:** This endpoint has been deprecated. Hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_. Refer to `Migrating from the V1 Hourly Usage APIs to V2 <https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/>`_ for the associated migration guide.
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage beginning at this hour.
         :type start_hr: datetime
@@ -1357,6 +1358,7 @@ class UsageMeteringApi:
         if end_hr is not unset:
             kwargs["end_hr"] = end_hr
 
+        warnings.warn("get_ingested_spans is deprecated", DeprecationWarning, stacklevel=2)
         return self._get_ingested_spans_endpoint.call_with_http_info(**kwargs)
 
     def get_monthly_custom_reports(
@@ -1521,10 +1523,10 @@ class UsageMeteringApi:
         *,
         end_hr: Union[datetime, UnsetType] = unset,
     ) -> UsageAnalyzedLogsResponse:
-        """Get hourly usage for analyzed logs.
+        """Get hourly usage for analyzed logs. **Deprecated**.
 
         Get hourly usage for analyzed logs (Security Monitoring).
-        **Note:** hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_. Refer to `Migrating from the V1 Hourly Usage APIs to V2 <https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/>`_ for the associated migration guide.
+        **Note:** This endpoint has been deprecated. Hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_. Refer to `Migrating from the V1 Hourly Usage APIs to V2 <https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/>`_ for the associated migration guide.
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage beginning at this hour.
         :type start_hr: datetime
@@ -1539,6 +1541,7 @@ class UsageMeteringApi:
         if end_hr is not unset:
             kwargs["end_hr"] = end_hr
 
+        warnings.warn("get_usage_analyzed_logs is deprecated", DeprecationWarning, stacklevel=2)
         return self._get_usage_analyzed_logs_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_audit_logs(
@@ -1593,10 +1596,10 @@ class UsageMeteringApi:
         *,
         end_hr: Union[datetime, UnsetType] = unset,
     ) -> UsageCIVisibilityResponse:
-        """Get hourly usage for CI visibility.
+        """Get hourly usage for CI visibility. **Deprecated**.
 
         Get hourly usage for CI visibility (tests, pipeline, and spans).
-        **Note:** hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_. Refer to `Migrating from the V1 Hourly Usage APIs to V2 <https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/>`_ for the associated migration guide.
+        **Note:** This endpoint has been deprecated. Hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_. Refer to `Migrating from the V1 Hourly Usage APIs to V2 <https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/>`_ for the associated migration guide.
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage beginning at this hour.
         :type start_hr: datetime
@@ -1611,6 +1614,7 @@ class UsageMeteringApi:
         if end_hr is not unset:
             kwargs["end_hr"] = end_hr
 
+        warnings.warn("get_usage_ci_app is deprecated", DeprecationWarning, stacklevel=2)
         return self._get_usage_ci_app_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_cloud_security_posture_management(
@@ -1619,10 +1623,10 @@ class UsageMeteringApi:
         *,
         end_hr: Union[datetime, UnsetType] = unset,
     ) -> UsageCloudSecurityPostureManagementResponse:
-        """Get hourly usage for CSM Pro.
+        """Get hourly usage for CSM Pro. **Deprecated**.
 
         Get hourly usage for cloud security management (CSM) pro.
-        **Note:** hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_. Refer to `Migrating from the V1 Hourly Usage APIs to V2 <https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/>`_ for the associated migration guide.
+        **Note:** This endpoint has been deprecated. Hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_. Refer to `Migrating from the V1 Hourly Usage APIs to V2 <https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/>`_ for the associated migration guide.
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage beginning at this hour.
         :type start_hr: datetime
@@ -1637,6 +1641,7 @@ class UsageMeteringApi:
         if end_hr is not unset:
             kwargs["end_hr"] = end_hr
 
+        warnings.warn("get_usage_cloud_security_posture_management is deprecated", DeprecationWarning, stacklevel=2)
         return self._get_usage_cloud_security_posture_management_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_cws(
@@ -1645,10 +1650,10 @@ class UsageMeteringApi:
         *,
         end_hr: Union[datetime, UnsetType] = unset,
     ) -> UsageCWSResponse:
-        """Get hourly usage for cloud workload security.
+        """Get hourly usage for cloud workload security. **Deprecated**.
 
         Get hourly usage for cloud workload security.
-        **Note:** hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_. Refer to `Migrating from the V1 Hourly Usage APIs to V2 <https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/>`_ for the associated migration guide.
+        **Note:** This endpoint has been deprecated. Hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_. Refer to `Migrating from the V1 Hourly Usage APIs to V2 <https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/>`_ for the associated migration guide.
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage beginning at this hour.
         :type start_hr: datetime
@@ -1663,6 +1668,7 @@ class UsageMeteringApi:
         if end_hr is not unset:
             kwargs["end_hr"] = end_hr
 
+        warnings.warn("get_usage_cws is deprecated", DeprecationWarning, stacklevel=2)
         return self._get_usage_cws_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_dbm(
@@ -1671,10 +1677,10 @@ class UsageMeteringApi:
         *,
         end_hr: Union[datetime, UnsetType] = unset,
     ) -> UsageDBMResponse:
-        """Get hourly usage for database monitoring.
+        """Get hourly usage for database monitoring. **Deprecated**.
 
         Get hourly usage for database monitoring
-        **Note:** hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_. Refer to `Migrating from the V1 Hourly Usage APIs to V2 <https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/>`_ for the associated migration guide.
+        **Note:** This endpoint has been deprecated. Hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_. Refer to `Migrating from the V1 Hourly Usage APIs to V2 <https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/>`_ for the associated migration guide.
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage beginning at this hour.
         :type start_hr: datetime
@@ -1689,6 +1695,7 @@ class UsageMeteringApi:
         if end_hr is not unset:
             kwargs["end_hr"] = end_hr
 
+        warnings.warn("get_usage_dbm is deprecated", DeprecationWarning, stacklevel=2)
         return self._get_usage_dbm_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_fargate(
@@ -1697,10 +1704,10 @@ class UsageMeteringApi:
         *,
         end_hr: Union[datetime, UnsetType] = unset,
     ) -> UsageFargateResponse:
-        """Get hourly usage for Fargate.
+        """Get hourly usage for Fargate. **Deprecated**.
 
         Get hourly usage for `Fargate <https://docs.datadoghq.com/integrations/ecs_fargate/>`_.
-        **Note:** hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_. Refer to `Migrating from the V1 Hourly Usage APIs to V2 <https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/>`_ for the associated migration guide.
+        **Note:** This endpoint has been deprecated. Hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_. Refer to `Migrating from the V1 Hourly Usage APIs to V2 <https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/>`_ for the associated migration guide.
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
         :type start_hr: datetime
@@ -1714,6 +1721,7 @@ class UsageMeteringApi:
         if end_hr is not unset:
             kwargs["end_hr"] = end_hr
 
+        warnings.warn("get_usage_fargate is deprecated", DeprecationWarning, stacklevel=2)
         return self._get_usage_fargate_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_hosts(
@@ -1722,10 +1730,10 @@ class UsageMeteringApi:
         *,
         end_hr: Union[datetime, UnsetType] = unset,
     ) -> UsageHostsResponse:
-        """Get hourly usage for hosts and containers.
+        """Get hourly usage for hosts and containers. **Deprecated**.
 
         Get hourly usage for hosts and containers.
-        **Note:** hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_. Refer to `Migrating from the V1 Hourly Usage APIs to V2 <https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/>`_ for the associated migration guide.
+        **Note:** This endpoint has been deprecated. Hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_. Refer to `Migrating from the V1 Hourly Usage APIs to V2 <https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/>`_ for the associated migration guide.
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
         :type start_hr: datetime
@@ -1739,6 +1747,7 @@ class UsageMeteringApi:
         if end_hr is not unset:
             kwargs["end_hr"] = end_hr
 
+        warnings.warn("get_usage_hosts is deprecated", DeprecationWarning, stacklevel=2)
         return self._get_usage_hosts_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_indexed_spans(
@@ -1747,10 +1756,10 @@ class UsageMeteringApi:
         *,
         end_hr: Union[datetime, UnsetType] = unset,
     ) -> UsageIndexedSpansResponse:
-        """Get hourly usage for indexed spans.
+        """Get hourly usage for indexed spans. **Deprecated**.
 
         Get hourly usage for indexed spans.
-        **Note:** hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_. Refer to `Migrating from the V1 Hourly Usage APIs to V2 <https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/>`_ for the associated migration guide.
+        **Note:** This endpoint has been deprecated. Hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_. Refer to `Migrating from the V1 Hourly Usage APIs to V2 <https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/>`_ for the associated migration guide.
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage beginning at this hour.
         :type start_hr: datetime
@@ -1764,6 +1773,7 @@ class UsageMeteringApi:
         if end_hr is not unset:
             kwargs["end_hr"] = end_hr
 
+        warnings.warn("get_usage_indexed_spans is deprecated", DeprecationWarning, stacklevel=2)
         return self._get_usage_indexed_spans_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_internet_of_things(
@@ -1772,10 +1782,10 @@ class UsageMeteringApi:
         *,
         end_hr: Union[datetime, UnsetType] = unset,
     ) -> UsageIoTResponse:
-        """Get hourly usage for IoT.
+        """Get hourly usage for IoT. **Deprecated**.
 
         Get hourly usage for IoT.
-        **Note:** hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_. Refer to `Migrating from the V1 Hourly Usage APIs to V2 <https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/>`_ for the associated migration guide.
+        **Note:** This endpoint has been deprecated. Hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_. Refer to `Migrating from the V1 Hourly Usage APIs to V2 <https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/>`_ for the associated migration guide.
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage beginning at this hour.
         :type start_hr: datetime
@@ -1790,6 +1800,7 @@ class UsageMeteringApi:
         if end_hr is not unset:
             kwargs["end_hr"] = end_hr
 
+        warnings.warn("get_usage_internet_of_things is deprecated", DeprecationWarning, stacklevel=2)
         return self._get_usage_internet_of_things_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_lambda(
@@ -1798,10 +1809,10 @@ class UsageMeteringApi:
         *,
         end_hr: Union[datetime, UnsetType] = unset,
     ) -> UsageLambdaResponse:
-        """Get hourly usage for Lambda.
+        """Get hourly usage for Lambda. **Deprecated**.
 
         Get hourly usage for Lambda.
-        **Note:** hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_. Refer to `Migrating from the V1 Hourly Usage APIs to V2 <https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/>`_ for the associated migration guide.
+        **Note:** This endpoint has been deprecated. Hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_. Refer to `Migrating from the V1 Hourly Usage APIs to V2 <https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/>`_ for the associated migration guide.
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
         :type start_hr: datetime
@@ -1815,6 +1826,7 @@ class UsageMeteringApi:
         if end_hr is not unset:
             kwargs["end_hr"] = end_hr
 
+        warnings.warn("get_usage_lambda is deprecated", DeprecationWarning, stacklevel=2)
         return self._get_usage_lambda_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_logs(
@@ -1823,10 +1835,10 @@ class UsageMeteringApi:
         *,
         end_hr: Union[datetime, UnsetType] = unset,
     ) -> UsageLogsResponse:
-        """Get hourly usage for logs.
+        """Get hourly usage for logs. **Deprecated**.
 
         Get hourly usage for logs.
-        **Note:** hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_. Refer to `Migrating from the V1 Hourly Usage APIs to V2 <https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/>`_ for the associated migration guide.
+        **Note:** This endpoint has been deprecated. Hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_. Refer to `Migrating from the V1 Hourly Usage APIs to V2 <https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/>`_ for the associated migration guide.
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
         :type start_hr: datetime
@@ -1840,6 +1852,7 @@ class UsageMeteringApi:
         if end_hr is not unset:
             kwargs["end_hr"] = end_hr
 
+        warnings.warn("get_usage_logs is deprecated", DeprecationWarning, stacklevel=2)
         return self._get_usage_logs_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_logs_by_index(
@@ -1878,10 +1891,10 @@ class UsageMeteringApi:
         *,
         end_hr: Union[datetime, UnsetType] = unset,
     ) -> UsageLogsByRetentionResponse:
-        """Get hourly logs usage by retention.
+        """Get hourly logs usage by retention. **Deprecated**.
 
         Get hourly usage for indexed logs by retention period.
-        **Note:** hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_. Refer to `Migrating from the V1 Hourly Usage APIs to V2 <https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/>`_ for the associated migration guide.
+        **Note:** This endpoint has been deprecated. Hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_. Refer to `Migrating from the V1 Hourly Usage APIs to V2 <https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/>`_ for the associated migration guide.
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage beginning at this hour.
         :type start_hr: datetime
@@ -1896,6 +1909,7 @@ class UsageMeteringApi:
         if end_hr is not unset:
             kwargs["end_hr"] = end_hr
 
+        warnings.warn("get_usage_logs_by_retention is deprecated", DeprecationWarning, stacklevel=2)
         return self._get_usage_logs_by_retention_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_network_flows(
@@ -1904,10 +1918,10 @@ class UsageMeteringApi:
         *,
         end_hr: Union[datetime, UnsetType] = unset,
     ) -> UsageNetworkFlowsResponse:
-        """get hourly usage for network flows.
+        """get hourly usage for network flows. **Deprecated**.
 
         Get hourly usage for network flows.
-        **Note:** hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_. Refer to `Migrating from the V1 Hourly Usage APIs to V2 <https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/>`_ for the associated migration guide.
+        **Note:** This endpoint has been deprecated. Hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_. Refer to `Migrating from the V1 Hourly Usage APIs to V2 <https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/>`_ for the associated migration guide.
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage beginning at this hour.
         :type start_hr: datetime
@@ -1922,6 +1936,7 @@ class UsageMeteringApi:
         if end_hr is not unset:
             kwargs["end_hr"] = end_hr
 
+        warnings.warn("get_usage_network_flows is deprecated", DeprecationWarning, stacklevel=2)
         return self._get_usage_network_flows_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_network_hosts(
@@ -1930,10 +1945,10 @@ class UsageMeteringApi:
         *,
         end_hr: Union[datetime, UnsetType] = unset,
     ) -> UsageNetworkHostsResponse:
-        """Get hourly usage for network hosts.
+        """Get hourly usage for network hosts. **Deprecated**.
 
         Get hourly usage for network hosts.
-        **Note:** hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_. Refer to `Migrating from the V1 Hourly Usage APIs to V2 <https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/>`_ for the associated migration guide.
+        **Note:** This endpoint has been deprecated. Hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_. Refer to `Migrating from the V1 Hourly Usage APIs to V2 <https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/>`_ for the associated migration guide.
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
         :type start_hr: datetime
@@ -1947,6 +1962,7 @@ class UsageMeteringApi:
         if end_hr is not unset:
             kwargs["end_hr"] = end_hr
 
+        warnings.warn("get_usage_network_hosts is deprecated", DeprecationWarning, stacklevel=2)
         return self._get_usage_network_hosts_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_online_archive(
@@ -1955,10 +1971,10 @@ class UsageMeteringApi:
         *,
         end_hr: Union[datetime, UnsetType] = unset,
     ) -> UsageOnlineArchiveResponse:
-        """Get hourly usage for online archive.
+        """Get hourly usage for online archive. **Deprecated**.
 
         Get hourly usage for online archive.
-        **Note:** hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_. Refer to `Migrating from the V1 Hourly Usage APIs to V2 <https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/>`_ for the associated migration guide.
+        **Note:** This endpoint has been deprecated. Hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_. Refer to `Migrating from the V1 Hourly Usage APIs to V2 <https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/>`_ for the associated migration guide.
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage beginning at this hour.
         :type start_hr: datetime
@@ -1973,6 +1989,7 @@ class UsageMeteringApi:
         if end_hr is not unset:
             kwargs["end_hr"] = end_hr
 
+        warnings.warn("get_usage_online_archive is deprecated", DeprecationWarning, stacklevel=2)
         return self._get_usage_online_archive_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_profiling(
@@ -1981,10 +1998,10 @@ class UsageMeteringApi:
         *,
         end_hr: Union[datetime, UnsetType] = unset,
     ) -> UsageProfilingResponse:
-        """Get hourly usage for profiled hosts.
+        """Get hourly usage for profiled hosts. **Deprecated**.
 
         Get hourly usage for profiled hosts.
-        **Note:** hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_. Refer to `Migrating from the V1 Hourly Usage APIs to V2 <https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/>`_ for the associated migration guide.
+        **Note:** This endpoint has been deprecated. Hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_. Refer to `Migrating from the V1 Hourly Usage APIs to V2 <https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/>`_ for the associated migration guide.
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage beginning at this hour.
         :type start_hr: datetime
@@ -1999,6 +2016,7 @@ class UsageMeteringApi:
         if end_hr is not unset:
             kwargs["end_hr"] = end_hr
 
+        warnings.warn("get_usage_profiling is deprecated", DeprecationWarning, stacklevel=2)
         return self._get_usage_profiling_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_rum_sessions(
@@ -2008,10 +2026,10 @@ class UsageMeteringApi:
         end_hr: Union[datetime, UnsetType] = unset,
         type: Union[str, UnsetType] = unset,
     ) -> UsageRumSessionsResponse:
-        """Get hourly usage for RUM sessions.
+        """Get hourly usage for RUM sessions. **Deprecated**.
 
         Get hourly usage for `RUM <https://docs.datadoghq.com/real_user_monitoring/>`_ Sessions.
-        **Note:** hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_. Refer to `Migrating from the V1 Hourly Usage APIs to V2 <https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/>`_ for the associated migration guide.
+        **Note:** This endpoint has been deprecated. Hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_. Refer to `Migrating from the V1 Hourly Usage APIs to V2 <https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/>`_ for the associated migration guide.
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
         :type start_hr: datetime
@@ -2030,6 +2048,7 @@ class UsageMeteringApi:
         if type is not unset:
             kwargs["type"] = type
 
+        warnings.warn("get_usage_rum_sessions is deprecated", DeprecationWarning, stacklevel=2)
         return self._get_usage_rum_sessions_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_rum_units(
@@ -2038,10 +2057,10 @@ class UsageMeteringApi:
         *,
         end_hr: Union[datetime, UnsetType] = unset,
     ) -> UsageRumUnitsResponse:
-        """Get hourly usage for RUM units.
+        """Get hourly usage for RUM units. **Deprecated**.
 
         Get hourly usage for `RUM <https://docs.datadoghq.com/real_user_monitoring/>`_ Units.
-        **Note:** hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_. Refer to `Migrating from the V1 Hourly Usage APIs to V2 <https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/>`_ for the associated migration guide.
+        **Note:** This endpoint has been deprecated. Hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_. Refer to `Migrating from the V1 Hourly Usage APIs to V2 <https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/>`_ for the associated migration guide.
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
         :type start_hr: datetime
@@ -2055,6 +2074,7 @@ class UsageMeteringApi:
         if end_hr is not unset:
             kwargs["end_hr"] = end_hr
 
+        warnings.warn("get_usage_rum_units is deprecated", DeprecationWarning, stacklevel=2)
         return self._get_usage_rum_units_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_sds(
@@ -2063,10 +2083,10 @@ class UsageMeteringApi:
         *,
         end_hr: Union[datetime, UnsetType] = unset,
     ) -> UsageSDSResponse:
-        """Get hourly usage for sensitive data scanner.
+        """Get hourly usage for sensitive data scanner. **Deprecated**.
 
         Get hourly usage for sensitive data scanner.
-        **Note:** hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_. Refer to `Migrating from the V1 Hourly Usage APIs to V2 <https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/>`_ for the associated migration guide.
+        **Note:** This endpoint has been deprecated. Hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_. Refer to `Migrating from the V1 Hourly Usage APIs to V2 <https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/>`_ for the associated migration guide.
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage beginning at this hour.
         :type start_hr: datetime
@@ -2081,6 +2101,7 @@ class UsageMeteringApi:
         if end_hr is not unset:
             kwargs["end_hr"] = end_hr
 
+        warnings.warn("get_usage_sds is deprecated", DeprecationWarning, stacklevel=2)
         return self._get_usage_sds_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_snmp(
@@ -2089,10 +2110,10 @@ class UsageMeteringApi:
         *,
         end_hr: Union[datetime, UnsetType] = unset,
     ) -> UsageSNMPResponse:
-        """Get hourly usage for SNMP devices.
+        """Get hourly usage for SNMP devices. **Deprecated**.
 
         Get hourly usage for SNMP devices.
-        **Note:** hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_. Refer to `Migrating from the V1 Hourly Usage APIs to V2 <https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/>`_ for the associated migration guide.
+        **Note:** This endpoint has been deprecated. Hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_. Refer to `Migrating from the V1 Hourly Usage APIs to V2 <https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/>`_ for the associated migration guide.
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage beginning at this hour.
         :type start_hr: datetime
@@ -2107,6 +2128,7 @@ class UsageMeteringApi:
         if end_hr is not unset:
             kwargs["end_hr"] = end_hr
 
+        warnings.warn("get_usage_snmp is deprecated", DeprecationWarning, stacklevel=2)
         return self._get_usage_snmp_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_summary(
@@ -2149,7 +2171,7 @@ class UsageMeteringApi:
         """Get hourly usage for synthetics checks. **Deprecated**.
 
         Get hourly usage for `synthetics checks <https://docs.datadoghq.com/synthetics/>`_.
-        **Note:** hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_. Refer to `Migrating from the V1 Hourly Usage APIs to V2 <https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/>`_ for the associated migration guide.
+        **Note:** This endpoint has been deprecated. Hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_. Refer to `Migrating from the V1 Hourly Usage APIs to V2 <https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/>`_ for the associated migration guide.
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
         :type start_hr: datetime
@@ -2172,10 +2194,10 @@ class UsageMeteringApi:
         *,
         end_hr: Union[datetime, UnsetType] = unset,
     ) -> UsageSyntheticsAPIResponse:
-        """Get hourly usage for synthetics API checks.
+        """Get hourly usage for synthetics API checks. **Deprecated**.
 
         Get hourly usage for `synthetics API checks <https://docs.datadoghq.com/synthetics/>`_.
-        **Note:** hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_. Refer to `Migrating from the V1 Hourly Usage APIs to V2 <https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/>`_ for the associated migration guide.
+        **Note:** This endpoint has been deprecated. Hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_. Refer to `Migrating from the V1 Hourly Usage APIs to V2 <https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/>`_ for the associated migration guide.
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
         :type start_hr: datetime
@@ -2189,6 +2211,7 @@ class UsageMeteringApi:
         if end_hr is not unset:
             kwargs["end_hr"] = end_hr
 
+        warnings.warn("get_usage_synthetics_api is deprecated", DeprecationWarning, stacklevel=2)
         return self._get_usage_synthetics_api_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_synthetics_browser(
@@ -2197,10 +2220,10 @@ class UsageMeteringApi:
         *,
         end_hr: Union[datetime, UnsetType] = unset,
     ) -> UsageSyntheticsBrowserResponse:
-        """Get hourly usage for synthetics browser checks.
+        """Get hourly usage for synthetics browser checks. **Deprecated**.
 
         Get hourly usage for synthetics browser checks.
-        **Note:** hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_. Refer to `Migrating from the V1 Hourly Usage APIs to V2 <https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/>`_ for the associated migration guide.
+        **Note:** This endpoint has been deprecated. Hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_. Refer to `Migrating from the V1 Hourly Usage APIs to V2 <https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/>`_ for the associated migration guide.
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
         :type start_hr: datetime
@@ -2214,6 +2237,7 @@ class UsageMeteringApi:
         if end_hr is not unset:
             kwargs["end_hr"] = end_hr
 
+        warnings.warn("get_usage_synthetics_browser is deprecated", DeprecationWarning, stacklevel=2)
         return self._get_usage_synthetics_browser_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_timeseries(
@@ -2222,10 +2246,10 @@ class UsageMeteringApi:
         *,
         end_hr: Union[datetime, UnsetType] = unset,
     ) -> UsageTimeseriesResponse:
-        """Get hourly usage for custom metrics.
+        """Get hourly usage for custom metrics. **Deprecated**.
 
         Get hourly usage for `custom metrics <https://docs.datadoghq.com/developers/metrics/custom_metrics/>`_.
-        **Note:** hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_. Refer to `Migrating from the V1 Hourly Usage APIs to V2 <https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/>`_ for the associated migration guide.
+        **Note:** This endpoint has been deprecated. Hourly usage data for all products is now available in the `Get hourly usage by product family API <https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family>`_. Refer to `Migrating from the V1 Hourly Usage APIs to V2 <https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/>`_ for the associated migration guide.
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
         :type start_hr: datetime
@@ -2239,6 +2263,7 @@ class UsageMeteringApi:
         if end_hr is not unset:
             kwargs["end_hr"] = end_hr
 
+        warnings.warn("get_usage_timeseries is deprecated", DeprecationWarning, stacklevel=2)
         return self._get_usage_timeseries_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_top_avg_metrics(
