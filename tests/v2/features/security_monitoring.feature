@@ -9,7 +9,7 @@ Feature: Security Monitoring
     And a valid "appKeyAuth" key in the system
     And an instance of "SecurityMonitoring" API
 
-  @generated @skip @team:DataDog/k9-cloud-security-platform
+  @generated @skip @team:DataDog/api-clients @team:DataDog/k9-cloud-security-platform
   Scenario: Change the related incidents of a security signal returns "Bad Request" response
     Given new "EditSecurityMonitoringSignalIncidents" request
     And request contains "signal_id" parameter from "REPLACE.ME"
@@ -17,7 +17,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/k9-cloud-security-platform
+  @generated @skip @team:DataDog/api-clients @team:DataDog/k9-cloud-security-platform
   Scenario: Change the related incidents of a security signal returns "Not Found" response
     Given new "EditSecurityMonitoringSignalIncidents" request
     And request contains "signal_id" parameter from "REPLACE.ME"
@@ -25,7 +25,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 404 Not Found
 
-  @replay-only @team:DataDog/k9-cloud-security-platform
+  @replay-only @team:DataDog/api-clients @team:DataDog/k9-cloud-security-platform
   Scenario: Change the related incidents of a security signal returns "OK" response
     Given new "EditSecurityMonitoringSignalIncidents" request
     And request contains "signal_id" parameter with value "AQAAAYG1bl5K4HuUewAAAABBWUcxYmw1S0FBQmt2RmhRN0V4ZUVnQUE"
@@ -33,7 +33,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/k9-cloud-security-platform
+  @generated @skip @team:DataDog/api-clients @team:DataDog/k9-cloud-security-platform
   Scenario: Change the triage state of a security signal returns "Bad Request" response
     Given new "EditSecurityMonitoringSignalState" request
     And request contains "signal_id" parameter from "REPLACE.ME"
@@ -41,7 +41,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/k9-cloud-security-platform
+  @generated @skip @team:DataDog/api-clients @team:DataDog/k9-cloud-security-platform
   Scenario: Change the triage state of a security signal returns "Not Found" response
     Given new "EditSecurityMonitoringSignalState" request
     And request contains "signal_id" parameter from "REPLACE.ME"
@@ -49,7 +49,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 404 Not Found
 
-  @replay-only @team:DataDog/k9-cloud-security-platform
+  @replay-only @team:DataDog/api-clients @team:DataDog/k9-cloud-security-platform
   Scenario: Change the triage state of a security signal returns "OK" response
     Given new "EditSecurityMonitoringSignalState" request
     And request contains "signal_id" parameter with value "AQAAAYG1bl5K4HuUewAAAABBWUcxYmw1S0FBQmt2RmhRN0V4ZUVnQUE"
@@ -57,7 +57,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
 
-  @skip-validation @team:DataDog/k9-cloud-security-platform
+  @skip-validation @team:DataDog/api-clients @team:DataDog/k9-cloud-security-platform
   Scenario: Create a cloud_configuration rule returns "OK" response
     Given new "CreateSecurityMonitoringRule" request
     And body with value {"type":"cloud_configuration","name":"{{ unique }}_cloud","isEnabled":false,"cases":[{"status":"info","notifications":["channel"]}],"options":{"complianceRuleOptions":{"resourceType":"gcp_compute_disk","complexRule": false,"regoRule":{"policy":"package datadog\n\nimport data.datadog.output as dd_output\n\nimport future.keywords.contains\nimport future.keywords.if\nimport future.keywords.in\n\nmilliseconds_in_a_day := ((1000 * 60) * 60) * 24\n\neval(iam_service_account_key) = \"skip\" if {\n\tiam_service_account_key.disabled\n} else = \"pass\" if {\n\t(iam_service_account_key.resource_seen_at / milliseconds_in_a_day) - (iam_service_account_key.valid_after_time / milliseconds_in_a_day) <= 90\n} else = \"fail\"\n\n# This part remains unchanged for all rules\nresults contains result if {\n\tsome resource in input.resources[input.main_resource_type]\n\tresult := dd_output.format(resource, eval(resource))\n}\n","resourceTypes":["gcp_compute_disk"]}}},"message":"ddd","tags":["my:tag"],"complianceSignalOptions":{"userActivationStatus":true,"userGroupByFields":["@account_id"]},"filters":[{"action":"require","query":"resource_id:helo*"},{"action":"suppress","query":"control:helo*"}]}
@@ -68,14 +68,14 @@ Feature: Security Monitoring
     And the response "message" is equal to "ddd"
     And the response "options.complianceRuleOptions.resourceType" is equal to "gcp_compute_disk"
 
-  @team:DataDog/k9-cloud-security-platform
+  @team:DataDog/api-clients @team:DataDog/k9-cloud-security-platform
   Scenario: Create a detection rule returns "Bad Request" response
     Given new "CreateSecurityMonitoringRule" request
     And body with value {"name":"{{ unique }}", "queries":[{"query":""}],"cases":[{"status":"info"}],"options":{},"message":"Test rule","tags":[],"isEnabled":true}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip-validation @team:DataDog/k9-cloud-security-platform
+  @skip-validation @team:DataDog/api-clients @team:DataDog/k9-cloud-security-platform
   Scenario: Create a detection rule returns "OK" response
     Given new "CreateSecurityMonitoringRule" request
     And body with value {"name":"{{ unique }}", "queries":[{"query":"@test:true","aggregation":"count","groupByFields":[],"distinctFields":[],"metric":""}],"filters":[],"cases":[{"name":"","status":"info","condition":"a > 0","notifications":[]}],"options":{"evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"message":"Test rule","tags":[],"isEnabled":true, "type":"log_detection"}
@@ -85,7 +85,7 @@ Feature: Security Monitoring
     And the response "type" is equal to "log_detection"
     And the response "message" is equal to "Test rule"
 
-  @team:DataDog/k9-cloud-security-platform
+  @team:DataDog/api-clients @team:DataDog/k9-cloud-security-platform
   Scenario: Create a detection rule with detection method 'third_party' returns "OK" response
     Given new "CreateSecurityMonitoringRule" request
     And body with value {"name":"{{ unique }}","type":"log_detection","isEnabled":true,"thirdPartyCases":[{"query":"status:error","name":"high","status":"high"},{"query":"status:info","name":"low","status":"low"}],"queries":[],"cases":[],"message":"This is a third party rule","options":{"detectionMethod":"third_party","keepAlive":0,"maxSignalDuration":0,"thirdPartyRuleOptions":{"defaultStatus":"info","rootQueries":[{"query":"source:guardduty @details.alertType:*EC2*", "groupByFields":["instance-id"]},{"query":"source:guardduty", "groupByFields":[]}]}}}
@@ -96,7 +96,7 @@ Feature: Security Monitoring
     And the response "options.detectionMethod" is equal to "third_party"
     And the response "thirdPartyCases[0].query" is equal to "status:error"
 
-  @skip-validation @team:DataDog/k9-cloud-security-platform
+  @skip-validation @team:DataDog/api-clients @team:DataDog/k9-cloud-security-platform
   Scenario: Create a detection rule with type 'impossible_travel' returns "OK" response
     Given new "CreateSecurityMonitoringRule" request
     And body with value {"queries":[{"aggregation":"geo_data","groupByFields":["@usr.id"],"distinctFields":[],"metric":"@network.client.geoip","query":"*"}],"cases":[{"name":"","status":"info","notifications":[]}],"hasExtendedTitle":true,"message":"test","isEnabled":true,"options":{"maxSignalDuration":86400,"evaluationWindow":900,"keepAlive":3600,"detectionMethod":"impossible_travel","impossibleTravelOptions":{"baselineUserLocations":false}},"name":"{{ unique }}","type":"log_detection","tags":[],"filters":[]}
@@ -107,7 +107,7 @@ Feature: Security Monitoring
     And the response "message" is equal to "test"
     And the response "options.detectionMethod" is equal to "impossible_travel"
 
-  @skip-validation @team:DataDog/k9-cloud-security-platform
+  @skip-validation @team:DataDog/api-clients @team:DataDog/k9-cloud-security-platform
   Scenario: Create a detection rule with type 'signal_correlation' returns "OK" response
     Given there is a valid "security_rule" in the system
     And there is a valid "security_rule_bis" in the system
@@ -120,7 +120,7 @@ Feature: Security Monitoring
     And the response "message" is equal to "Test signal correlation rule"
     And the response "isEnabled" is equal to true
 
-  @skip-validation @team:DataDog/k9-cloud-security-platform
+  @skip-validation @team:DataDog/api-clients @team:DataDog/k9-cloud-security-platform
   Scenario: Create a detection rule with type 'workload_security' returns "OK" response
     Given new "CreateSecurityMonitoringRule" request
     And body with value {"name":"{{ unique }}", "queries":[{"query":"@test:true","aggregation":"count","groupByFields":[],"distinctFields":[],"metric":""}],"filters":[],"cases":[{"name":"","status":"info","condition":"a > 0","notifications":[]}],"options":{"evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"message":"Test rule","tags":[],"isEnabled":true, "type": "workload_security"}
@@ -131,21 +131,21 @@ Feature: Security Monitoring
     And the response "message" is equal to "Test rule"
     And the response "isEnabled" is equal to true
 
-  @generated @skip @team:DataDog/k9-cloud-security-platform
+  @generated @skip @team:DataDog/api-clients @team:DataDog/k9-cloud-security-platform
   Scenario: Create a security filter returns "Bad Request" response
     Given new "CreateSecurityFilter" request
     And body with value {"data": {"attributes": {"exclusion_filters": [{"name": "Exclude staging", "query": "source:staging"}], "filtered_data_type": "logs", "is_enabled": true, "name": "Custom security filter", "query": "service:api"}, "type": "security_filters"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/k9-cloud-security-platform
+  @generated @skip @team:DataDog/api-clients @team:DataDog/k9-cloud-security-platform
   Scenario: Create a security filter returns "Conflict" response
     Given new "CreateSecurityFilter" request
     And body with value {"data": {"attributes": {"exclusion_filters": [{"name": "Exclude staging", "query": "source:staging"}], "filtered_data_type": "logs", "is_enabled": true, "name": "Custom security filter", "query": "service:api"}, "type": "security_filters"}}
     When the request is sent
     Then the response status is 409 Conflict
 
-  @team:DataDog/k9-cloud-security-platform
+  @team:DataDog/api-clients @team:DataDog/k9-cloud-security-platform
   Scenario: Create a security filter returns "OK" response
     Given new "CreateSecurityFilter" request
     And body with value {"data": {"attributes": {"exclusion_filters": [{"name": "Exclude staging", "query": "source:staging"}], "filtered_data_type": "logs", "is_enabled": true, "name": "{{ unique }}", "query": "service:{{ unique_alnum }}"}, "type": "security_filters"}}
@@ -157,21 +157,21 @@ Feature: Security Monitoring
     And the response "data.attributes.exclusion_filters[0].name" is equal to "Exclude staging"
     And the response "data.attributes.exclusion_filters[0].query" is equal to "source:staging"
 
-  @generated @skip @team:DataDog/k9-cloud-security-platform
+  @generated @skip @team:DataDog/api-clients @team:DataDog/k9-cloud-security-platform
   Scenario: Create a suppression rule returns "Bad Request" response
     Given new "CreateSecurityMonitoringSuppression" request
     And body with value {"data": {"attributes": {"description": "This rule suppresses low-severity signals in staging environments.", "enabled": true, "expiration_date": 1703187336000, "name": "Custom suppression", "rule_query": "type:log_detection source:cloudtrail", "suppression_query": "env:staging status:low"}, "type": "suppressions"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/k9-cloud-security-platform
+  @generated @skip @team:DataDog/api-clients @team:DataDog/k9-cloud-security-platform
   Scenario: Create a suppression rule returns "Conflict" response
     Given new "CreateSecurityMonitoringSuppression" request
     And body with value {"data": {"attributes": {"description": "This rule suppresses low-severity signals in staging environments.", "enabled": true, "expiration_date": 1703187336000, "name": "Custom suppression", "rule_query": "type:log_detection source:cloudtrail", "suppression_query": "env:staging status:low"}, "type": "suppressions"}}
     When the request is sent
     Then the response status is 409 Conflict
 
-  @team:DataDog/k9-cloud-security-platform
+  @team:DataDog/api-clients @team:DataDog/k9-cloud-security-platform
   Scenario: Create a suppression rule returns "OK" response
     Given new "CreateSecurityMonitoringSuppression" request
     And body with value {"data": {"attributes": {"description": "This rule suppresses low-severity signals in staging environments.", "enabled": true, "expiration_date": 1703187336000, "name": "{{ unique }}", "rule_query": "type:log_detection source:cloudtrail", "suppression_query": "env:staging status:low"}, "type": "suppressions"}}
@@ -181,14 +181,14 @@ Feature: Security Monitoring
     And the response "data.attributes.enabled" is equal to true
     And the response "data.attributes.rule_query" is equal to "type:log_detection source:cloudtrail"
 
-  @skip @team:DataDog/k9-cloud-security-platform
+  @skip @team:DataDog/api-clients @team:DataDog/k9-cloud-security-platform
   Scenario: Delete a non existing rule returns "Not Found" response
     Given new "DeleteSecurityMonitoringRule" request
     And request contains "rule_id" parameter with value "ThisRuleIdProbablyDoesntExist"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/k9-cloud-security-platform
+  @team:DataDog/api-clients @team:DataDog/k9-cloud-security-platform
   Scenario: Delete a security filter returns "No Content" response
     Given there is a valid "security_filter" in the system
     And new "DeleteSecurityFilter" request
@@ -196,28 +196,28 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:DataDog/k9-cloud-security-platform
+  @generated @skip @team:DataDog/api-clients @team:DataDog/k9-cloud-security-platform
   Scenario: Delete a security filter returns "Not Found" response
     Given new "DeleteSecurityFilter" request
     And request contains "security_filter_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/k9-cloud-security-platform
+  @generated @skip @team:DataDog/api-clients @team:DataDog/k9-cloud-security-platform
   Scenario: Delete a security filter returns "OK" response
     Given new "DeleteSecurityFilter" request
     And request contains "security_filter_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 204 OK
 
-  @skip @team:DataDog/k9-cloud-security-platform
+  @skip @team:DataDog/api-clients @team:DataDog/k9-cloud-security-platform
   Scenario: Delete a suppression rule returns "Not Found" response
     Given new "DeleteSecurityMonitoringSuppression" request
     And request contains "suppression_id" parameter with value "does-not-exist"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/k9-cloud-security-platform
+  @team:DataDog/api-clients @team:DataDog/k9-cloud-security-platform
   Scenario: Delete a suppression rule returns "OK" response
     Given there is a valid "suppression" in the system
     And new "DeleteSecurityMonitoringSuppression" request
@@ -225,14 +225,14 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 204 OK
 
-  @generated @skip @team:DataDog/k9-cloud-security-platform
+  @generated @skip @team:DataDog/api-clients @team:DataDog/k9-cloud-security-platform
   Scenario: Delete an existing rule returns "Not Found" response
     Given new "DeleteSecurityMonitoringRule" request
     And request contains "rule_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @skip-validation @team:DataDog/k9-cloud-security-platform
+  @skip-validation @team:DataDog/api-clients @team:DataDog/k9-cloud-security-platform
   Scenario: Delete an existing rule returns "OK" response
     Given there is a valid "security_rule" in the system
     And new "DeleteSecurityMonitoringRule" request
@@ -240,7 +240,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 204 OK
 
-  @skip-validation @team:DataDog/k9-cloud-security-platform
+  @skip-validation @team:DataDog/api-clients @team:DataDog/k9-cloud-security-platform
   Scenario: Get a cloud configuration rule's details returns "OK" response
     Given there is a valid "cloud_configuration_rule" in the system
     And new "GetSecurityMonitoringRule" request
@@ -275,21 +275,21 @@ Feature: Security Monitoring
     Then the response status is 200 OK
     And the response "data.attributes.evaluation" is equal to "pass"
 
-  @generated @skip @team:DataDog/k9-cloud-security-platform
+  @generated @skip @team:DataDog/api-clients @team:DataDog/k9-cloud-security-platform
   Scenario: Get a list of security signals returns "Bad Request" response
     Given new "SearchSecurityMonitoringSignals" request
     And body with value {"filter": {"from": "2019-01-02T09:42:36.320Z", "query": "security:attack status:high", "to": "2019-01-03T09:42:36.320Z"}, "page": {"cursor": "eyJzdGFydEF0IjoiQVFBQUFYS2tMS3pPbm40NGV3QUFBQUJCV0V0clRFdDZVbG8zY3pCRmNsbHJiVmxDWlEifQ==", "limit": 25}, "sort": "timestamp"}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/k9-cloud-security-platform
+  @generated @skip @team:DataDog/api-clients @team:DataDog/k9-cloud-security-platform
   Scenario: Get a list of security signals returns "OK" response
     Given new "SearchSecurityMonitoringSignals" request
     And body with value {"filter": {"from": "2019-01-02T09:42:36.320Z", "query": "security:attack status:high", "to": "2019-01-03T09:42:36.320Z"}, "page": {"cursor": "eyJzdGFydEF0IjoiQVFBQUFYS2tMS3pPbm40NGV3QUFBQUJCV0V0clRFdDZVbG8zY3pCRmNsbHJiVmxDWlEifQ==", "limit": 25}, "sort": "timestamp"}
     When the request is sent
     Then the response status is 200 OK
 
-  @replay-only @skip-validation @team:DataDog/k9-cloud-security-platform @with-pagination
+  @replay-only @skip-validation @team:DataDog/api-clients @team:DataDog/k9-cloud-security-platform @with-pagination
   Scenario: Get a list of security signals returns "OK" response with pagination
     Given new "SearchSecurityMonitoringSignals" request
     And body with value {"filter": {"from": "{{ timeISO("now-15m") }}", "query": "security:attack status:high", "to": "{{ timeISO("now") }}"}, "page": {"limit": 2}, "sort": "timestamp"}
@@ -297,19 +297,19 @@ Feature: Security Monitoring
     Then the response status is 200 OK
     And the response has 3 items
 
-  @generated @skip @team:DataDog/k9-cloud-security-platform
+  @generated @skip @team:DataDog/api-clients @team:DataDog/k9-cloud-security-platform
   Scenario: Get a quick list of security signals returns "Bad Request" response
     Given new "ListSecurityMonitoringSignals" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/k9-cloud-security-platform
+  @generated @skip @team:DataDog/api-clients @team:DataDog/k9-cloud-security-platform
   Scenario: Get a quick list of security signals returns "OK" response
     Given new "ListSecurityMonitoringSignals" request
     When the request is sent
     Then the response status is 200 OK
 
-  @replay-only @skip-validation @team:DataDog/k9-cloud-security-platform @with-pagination
+  @replay-only @skip-validation @team:DataDog/api-clients @team:DataDog/k9-cloud-security-platform @with-pagination
   Scenario: Get a quick list of security signals returns "OK" response with pagination
     Given new "ListSecurityMonitoringSignals" request
     And request contains "page[limit]" parameter with value 2
@@ -317,14 +317,14 @@ Feature: Security Monitoring
     Then the response status is 200 OK
     And the response has 3 items
 
-  @team:DataDog/k9-cloud-security-platform
+  @team:DataDog/api-clients @team:DataDog/k9-cloud-security-platform
   Scenario: Get a rule's details returns "Not Found" response
     Given new "GetSecurityMonitoringRule" request
     And request contains "rule_id" parameter with value "abcde-12345"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @skip-validation @team:DataDog/k9-cloud-security-platform
+  @skip-validation @team:DataDog/api-clients @team:DataDog/k9-cloud-security-platform
   Scenario: Get a rule's details returns "OK" response
     Given new "GetSecurityMonitoringRule" request
     And there is a valid "security_rule" in the system
@@ -334,14 +334,14 @@ Feature: Security Monitoring
     And the response "name" is equal to "{{ unique }}"
     And the response "id" has the same value as "security_rule.id"
 
-  @generated @skip @team:DataDog/k9-cloud-security-platform
+  @generated @skip @team:DataDog/api-clients @team:DataDog/k9-cloud-security-platform
   Scenario: Get a security filter returns "Not Found" response
     Given new "GetSecurityFilter" request
     And request contains "security_filter_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/k9-cloud-security-platform
+  @team:DataDog/api-clients @team:DataDog/k9-cloud-security-platform
   Scenario: Get a security filter returns "OK" response
     Given there is a valid "security_filter" in the system
     And new "GetSecurityFilter" request
@@ -354,28 +354,28 @@ Feature: Security Monitoring
     And the response "data.attributes.exclusion_filters[0].name" is equal to "Exclude logs from staging"
     And the response "data.attributes.exclusion_filters[0].query" is equal to "source:staging"
 
-  @replay-only @team:DataDog/k9-cloud-security-platform
+  @replay-only @team:DataDog/api-clients @team:DataDog/k9-cloud-security-platform
   Scenario: Get a signal's details returns "Not Found" response
     Given new "GetSecurityMonitoringSignal" request
     And request contains "signal_id" parameter with value "AQAAAYNqUBVU4-rffwAAAABBWU5xVUJWVUFBQjJBd3ptCL3QUEm3nt2"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @replay-only @team:DataDog/k9-cloud-security-platform
+  @replay-only @team:DataDog/api-clients @team:DataDog/k9-cloud-security-platform
   Scenario: Get a signal's details returns "OK" response
     Given new "GetSecurityMonitoringSignal" request
     And request contains "signal_id" parameter with value "AQAAAYNqUBVU4-rffwAAAABBWU5xVUJWVUFBQjJBd3ptMDdQUnF3QUE"
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/k9-cloud-security-platform
+  @team:DataDog/api-clients @team:DataDog/k9-cloud-security-platform
   Scenario: Get a suppression rule returns "Not Found" response
     Given new "GetSecurityMonitoringSuppression" request
     And request contains "suppression_id" parameter with value "this-does-not-exist"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/k9-cloud-security-platform
+  @team:DataDog/api-clients @team:DataDog/k9-cloud-security-platform
   Scenario: Get a suppression rule returns "OK" response
     Given new "GetSecurityMonitoringSuppression" request
     And there is a valid "suppression" in the system
@@ -385,7 +385,7 @@ Feature: Security Monitoring
     And the response "data.attributes.rule_query" has the same value as "suppression.data.attributes.rule_query"
     And the response "data.attributes.suppression_query" is equal to "env:test"
 
-  @team:DataDog/k9-cloud-security-platform
+  @team:DataDog/api-clients @team:DataDog/k9-cloud-security-platform
   Scenario: Get all security filters returns "OK" response
     Given new "ListSecurityFilters" request
     When the request is sent
@@ -393,7 +393,7 @@ Feature: Security Monitoring
     And the response "data" has item with field "attributes.filtered_data_type" with value "logs"
     And the response "data" has item with field "attributes.is_builtin" with value true
 
-  @generated @skip @team:DataDog/k9-cloud-security-platform
+  @generated @skip @team:DataDog/api-clients @team:DataDog/k9-cloud-security-platform
   Scenario: Get all suppression rules returns "OK" response
     Given new "ListSecurityMonitoringSuppressions" request
     When the request is sent
@@ -428,19 +428,19 @@ Feature: Security Monitoring
     When the request with pagination is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/k9-cloud-security-platform
+  @generated @skip @team:DataDog/api-clients @team:DataDog/k9-cloud-security-platform
   Scenario: List rules returns "Bad Request" response
     Given new "ListSecurityMonitoringRules" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip-validation @team:DataDog/k9-cloud-security-platform
+  @skip-validation @team:DataDog/api-clients @team:DataDog/k9-cloud-security-platform
   Scenario: List rules returns "OK" response
     Given new "ListSecurityMonitoringRules" request
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/k9-cloud-security-platform
+  @generated @skip @team:DataDog/api-clients @team:DataDog/k9-cloud-security-platform
   Scenario: Modify the triage assignee of a security signal returns "Bad Request" response
     Given new "EditSecurityMonitoringSignalAssignee" request
     And request contains "signal_id" parameter from "REPLACE.ME"
@@ -448,7 +448,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/k9-cloud-security-platform
+  @generated @skip @team:DataDog/api-clients @team:DataDog/k9-cloud-security-platform
   Scenario: Modify the triage assignee of a security signal returns "Not Found" response
     Given new "EditSecurityMonitoringSignalAssignee" request
     And request contains "signal_id" parameter from "REPLACE.ME"
@@ -456,7 +456,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 404 Not Found
 
-  @replay-only @team:DataDog/k9-cloud-security-platform
+  @replay-only @team:DataDog/api-clients @team:DataDog/k9-cloud-security-platform
   Scenario: Modify the triage assignee of a security signal returns "OK" response
     Given new "EditSecurityMonitoringSignalAssignee" request
     And request contains "signal_id" parameter with value "AQAAAYG1bl5K4HuUewAAAABBWUcxYmw1S0FBQmt2RmhRN0V4ZUVnQUE"
@@ -496,7 +496,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
 
-  @skip-validation @team:DataDog/k9-cloud-security-platform
+  @skip-validation @team:DataDog/api-clients @team:DataDog/k9-cloud-security-platform
   Scenario: Update a cloud configuration rule's details returns "OK" response
     Given new "UpdateSecurityMonitoringRule" request
     And there is a valid "cloud_configuration_rule" in the system
@@ -507,7 +507,7 @@ Feature: Security Monitoring
     And the response "name" is equal to "{{ unique }}_cloud_updated"
     And the response "id" has the same value as "cloud_configuration_rule.id"
 
-  @generated @skip @team:DataDog/k9-cloud-security-platform
+  @generated @skip @team:DataDog/api-clients @team:DataDog/k9-cloud-security-platform
   Scenario: Update a security filter returns "Bad Request" response
     Given new "UpdateSecurityFilter" request
     And request contains "security_filter_id" parameter from "REPLACE.ME"
@@ -515,7 +515,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/k9-cloud-security-platform
+  @generated @skip @team:DataDog/api-clients @team:DataDog/k9-cloud-security-platform
   Scenario: Update a security filter returns "Concurrent Modification" response
     Given new "UpdateSecurityFilter" request
     And request contains "security_filter_id" parameter from "REPLACE.ME"
@@ -523,7 +523,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 409 Concurrent Modification
 
-  @generated @skip @team:DataDog/k9-cloud-security-platform
+  @generated @skip @team:DataDog/api-clients @team:DataDog/k9-cloud-security-platform
   Scenario: Update a security filter returns "Not Found" response
     Given new "UpdateSecurityFilter" request
     And request contains "security_filter_id" parameter from "REPLACE.ME"
@@ -531,7 +531,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/k9-cloud-security-platform
+  @team:DataDog/api-clients @team:DataDog/k9-cloud-security-platform
   Scenario: Update a security filter returns "OK" response
     Given new "UpdateSecurityFilter" request
     And there is a valid "security_filter" in the system
@@ -543,7 +543,7 @@ Feature: Security Monitoring
     And the response "data.attributes.filtered_data_type" is equal to "logs"
     And the response "data.attributes.name" is equal to "{{ unique }}"
 
-  @generated @skip @team:DataDog/k9-cloud-security-platform
+  @generated @skip @team:DataDog/api-clients @team:DataDog/k9-cloud-security-platform
   Scenario: Update a suppression rule returns "Bad Request" response
     Given new "UpdateSecurityMonitoringSuppression" request
     And request contains "suppression_id" parameter from "REPLACE.ME"
@@ -551,7 +551,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/k9-cloud-security-platform
+  @generated @skip @team:DataDog/api-clients @team:DataDog/k9-cloud-security-platform
   Scenario: Update a suppression rule returns "Concurrent Modification" response
     Given new "UpdateSecurityMonitoringSuppression" request
     And request contains "suppression_id" parameter from "REPLACE.ME"
@@ -559,7 +559,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 409 Concurrent Modification
 
-  @generated @skip @team:DataDog/k9-cloud-security-platform
+  @generated @skip @team:DataDog/api-clients @team:DataDog/k9-cloud-security-platform
   Scenario: Update a suppression rule returns "Not Found" response
     Given new "UpdateSecurityMonitoringSuppression" request
     And request contains "suppression_id" parameter from "REPLACE.ME"
@@ -567,7 +567,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/k9-cloud-security-platform
+  @team:DataDog/api-clients @team:DataDog/k9-cloud-security-platform
   Scenario: Update a suppression rule returns "OK" response
     Given new "UpdateSecurityMonitoringSuppression" request
     And there is a valid "suppression" in the system
@@ -579,7 +579,7 @@ Feature: Security Monitoring
     And the response "data.attributes.suppression_query" is equal to "env:staging status:low"
     And the response "data.attributes.version" is equal to 2
 
-  @skip-validation @team:DataDog/k9-cloud-security-platform
+  @skip-validation @team:DataDog/api-clients @team:DataDog/k9-cloud-security-platform
   Scenario: Update an existing rule returns "Bad Request" response
     Given new "UpdateSecurityMonitoringRule" request
     And there is a valid "security_rule" in the system
@@ -588,7 +588,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/k9-cloud-security-platform
+  @team:DataDog/api-clients @team:DataDog/k9-cloud-security-platform
   Scenario: Update an existing rule returns "Not Found" response
     Given new "UpdateSecurityMonitoringRule" request
     And request contains "rule_id" parameter with value "abcde-12345"
@@ -596,7 +596,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 404 Not Found
 
-  @skip-validation @team:DataDog/k9-cloud-security-platform
+  @skip-validation @team:DataDog/api-clients @team:DataDog/k9-cloud-security-platform
   Scenario: Update an existing rule returns "OK" response
     Given new "UpdateSecurityMonitoringRule" request
     And there is a valid "security_rule" in the system

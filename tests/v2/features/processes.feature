@@ -11,12 +11,12 @@ Feature: Processes
     And an instance of "Processes" API
     And new "ListProcesses" request
 
-  @generated @skip @team:DataDog/processes
+  @generated @skip @team:DataDog/api-clients @team:DataDog/processes
   Scenario: Get all processes returns "Bad Request" response
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/processes
+  @team:DataDog/api-clients @team:DataDog/processes
   Scenario: Get all processes returns "OK" response
     Given request contains "search" parameter with value "process-agent"
     And request contains "tags" parameter with value "testing:true"
@@ -24,7 +24,7 @@ Feature: Processes
     When the request is sent
     Then the response status is 200 OK
 
-  @replay-only @skip-validation @team:DataDog/processes @with-pagination
+  @replay-only @skip-validation @team:DataDog/api-clients @team:DataDog/processes @with-pagination
   Scenario: Get all processes returns "OK" response with pagination
     Given request contains "page[limit]" parameter with value 2
     When the request with pagination is sent
