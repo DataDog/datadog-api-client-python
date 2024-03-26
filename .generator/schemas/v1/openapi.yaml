@@ -30678,10 +30678,11 @@ paths:
       x-codegen-request-body-name: body
   /api/v1/usage/analyzed_logs:
     get:
+      deprecated: true
       description: 'Get hourly usage for analyzed logs (Security Monitoring).
 
-        **Note:** hourly usage data for all products is now available in the [Get
-        hourly usage by product family API](https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family).
+        **Note:** This endpoint has been deprecated. Hourly usage data for all products
+        is now available in the [Get hourly usage by product family API](https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family).
         Refer to [Migrating from the V1 Hourly Usage APIs to V2](https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/)
         for the associated migration guide.'
       operationId: GetUsageAnalyzedLogs
@@ -30798,10 +30799,11 @@ paths:
       - Usage Metering
   /api/v1/usage/aws_lambda:
     get:
+      deprecated: true
       description: 'Get hourly usage for Lambda.
 
-        **Note:** hourly usage data for all products is now available in the [Get
-        hourly usage by product family API](https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family).
+        **Note:** This endpoint has been deprecated. Hourly usage data for all products
+        is now available in the [Get hourly usage by product family API](https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family).
         Refer to [Migrating from the V1 Hourly Usage APIs to V2](https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/)
         for the associated migration guide.'
       operationId: GetUsageLambda
@@ -30903,10 +30905,11 @@ paths:
       - Usage Metering
   /api/v1/usage/ci-app:
     get:
+      deprecated: true
       description: 'Get hourly usage for CI visibility (tests, pipeline, and spans).
 
-        **Note:** hourly usage data for all products is now available in the [Get
-        hourly usage by product family API](https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family).
+        **Note:** This endpoint has been deprecated. Hourly usage data for all products
+        is now available in the [Get hourly usage by product family API](https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family).
         Refer to [Migrating from the V1 Hourly Usage APIs to V2](https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/)
         for the associated migration guide.'
       operationId: GetUsageCIApp
@@ -30964,10 +30967,11 @@ paths:
       - Usage Metering
   /api/v1/usage/cspm:
     get:
+      deprecated: true
       description: 'Get hourly usage for cloud security management (CSM) pro.
 
-        **Note:** hourly usage data for all products is now available in the [Get
-        hourly usage by product family API](https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family).
+        **Note:** This endpoint has been deprecated. Hourly usage data for all products
+        is now available in the [Get hourly usage by product family API](https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family).
         Refer to [Migrating from the V1 Hourly Usage APIs to V2](https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/)
         for the associated migration guide.'
       operationId: GetUsageCloudSecurityPostureManagement
@@ -31025,10 +31029,11 @@ paths:
       - Usage Metering
   /api/v1/usage/cws:
     get:
+      deprecated: true
       description: 'Get hourly usage for cloud workload security.
 
-        **Note:** hourly usage data for all products is now available in the [Get
-        hourly usage by product family API](https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family).
+        **Note:** This endpoint has been deprecated. Hourly usage data for all products
+        is now available in the [Get hourly usage by product family API](https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family).
         Refer to [Migrating from the V1 Hourly Usage APIs to V2](https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/)
         for the associated migration guide.'
       operationId: GetUsageCWS
@@ -31086,10 +31091,11 @@ paths:
       - Usage Metering
   /api/v1/usage/dbm:
     get:
+      deprecated: true
       description: 'Get hourly usage for database monitoring
 
-        **Note:** hourly usage data for all products is now available in the [Get
-        hourly usage by product family API](https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family).
+        **Note:** This endpoint has been deprecated. Hourly usage data for all products
+        is now available in the [Get hourly usage by product family API](https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family).
         Refer to [Migrating from the V1 Hourly Usage APIs to V2](https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/)
         for the associated migration guide.'
       operationId: GetUsageDBM
@@ -31147,10 +31153,11 @@ paths:
       - Usage Metering
   /api/v1/usage/fargate:
     get:
+      deprecated: true
       description: 'Get hourly usage for [Fargate](https://docs.datadoghq.com/integrations/ecs_fargate/).
 
-        **Note:** hourly usage data for all products is now available in the [Get
-        hourly usage by product family API](https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family).
+        **Note:** This endpoint has been deprecated. Hourly usage data for all products
+        is now available in the [Get hourly usage by product family API](https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family).
         Refer to [Migrating from the V1 Hourly Usage APIs to V2](https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/)
         for the associated migration guide.'
       operationId: GetUsageFargate
@@ -31206,10 +31213,11 @@ paths:
       - Usage Metering
   /api/v1/usage/hosts:
     get:
+      deprecated: true
       description: 'Get hourly usage for hosts and containers.
 
-        **Note:** hourly usage data for all products is now available in the [Get
-        hourly usage by product family API](https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family).
+        **Note:** This endpoint has been deprecated. Hourly usage data for all products
+        is now available in the [Get hourly usage by product family API](https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family).
         Refer to [Migrating from the V1 Hourly Usage APIs to V2](https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/)
         for the associated migration guide.'
       operationId: GetUsageHosts
@@ -31353,10 +31361,11 @@ paths:
       - Usage Metering
   /api/v1/usage/incident-management:
     get:
+      deprecated: true
       description: 'Get hourly usage for incident management.
 
-        **Note:** hourly usage data for all products is now available in the [Get
-        hourly usage by product family API](https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family).
+        **Note:** This endpoint has been deprecated. Hourly usage data for all products
+        is now available in the [Get hourly usage by product family API](https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family).
         Refer to [Migrating from the V1 Hourly Usage APIs to V2](https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/)
         for the associated migration guide.'
       operationId: GetIncidentManagement
@@ -31414,10 +31423,11 @@ paths:
       - Usage Metering
   /api/v1/usage/indexed-spans:
     get:
+      deprecated: true
       description: 'Get hourly usage for indexed spans.
 
-        **Note:** hourly usage data for all products is now available in the [Get
-        hourly usage by product family API](https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family).
+        **Note:** This endpoint has been deprecated. Hourly usage data for all products
+        is now available in the [Get hourly usage by product family API](https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family).
         Refer to [Migrating from the V1 Hourly Usage APIs to V2](https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/)
         for the associated migration guide.'
       operationId: GetUsageIndexedSpans
@@ -31473,10 +31483,11 @@ paths:
       - Usage Metering
   /api/v1/usage/ingested-spans:
     get:
+      deprecated: true
       description: 'Get hourly usage for ingested spans.
 
-        **Note:** hourly usage data for all products is now available in the [Get
-        hourly usage by product family API](https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family).
+        **Note:** This endpoint has been deprecated. Hourly usage data for all products
+        is now available in the [Get hourly usage by product family API](https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family).
         Refer to [Migrating from the V1 Hourly Usage APIs to V2](https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/)
         for the associated migration guide.'
       operationId: GetIngestedSpans
@@ -31534,10 +31545,11 @@ paths:
       - Usage Metering
   /api/v1/usage/iot:
     get:
+      deprecated: true
       description: 'Get hourly usage for IoT.
 
-        **Note:** hourly usage data for all products is now available in the [Get
-        hourly usage by product family API](https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family).
+        **Note:** This endpoint has been deprecated. Hourly usage data for all products
+        is now available in the [Get hourly usage by product family API](https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family).
         Refer to [Migrating from the V1 Hourly Usage APIs to V2](https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/)
         for the associated migration guide.'
       operationId: GetUsageInternetOfThings
@@ -31595,10 +31607,11 @@ paths:
       - Usage Metering
   /api/v1/usage/logs:
     get:
+      deprecated: true
       description: 'Get hourly usage for logs.
 
-        **Note:** hourly usage data for all products is now available in the [Get
-        hourly usage by product family API](https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family).
+        **Note:** This endpoint has been deprecated. Hourly usage data for all products
+        is now available in the [Get hourly usage by product family API](https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family).
         Refer to [Migrating from the V1 Hourly Usage APIs to V2](https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/)
         for the associated migration guide.'
       operationId: GetUsageLogs
@@ -31654,10 +31667,11 @@ paths:
       - Usage Metering
   /api/v1/usage/logs-by-retention:
     get:
+      deprecated: true
       description: 'Get hourly usage for indexed logs by retention period.
 
-        **Note:** hourly usage data for all products is now available in the [Get
-        hourly usage by product family API](https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family).
+        **Note:** This endpoint has been deprecated. Hourly usage data for all products
+        is now available in the [Get hourly usage by product family API](https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family).
         Refer to [Migrating from the V1 Hourly Usage APIs to V2](https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/)
         for the associated migration guide.'
       operationId: GetUsageLogsByRetention
@@ -31878,10 +31892,11 @@ paths:
       - Usage Metering
   /api/v1/usage/network_flows:
     get:
+      deprecated: true
       description: 'Get hourly usage for network flows.
 
-        **Note:** hourly usage data for all products is now available in the [Get
-        hourly usage by product family API](https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family).
+        **Note:** This endpoint has been deprecated. Hourly usage data for all products
+        is now available in the [Get hourly usage by product family API](https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family).
         Refer to [Migrating from the V1 Hourly Usage APIs to V2](https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/)
         for the associated migration guide.'
       operationId: GetUsageNetworkFlows
@@ -31939,10 +31954,11 @@ paths:
       - Usage Metering
   /api/v1/usage/network_hosts:
     get:
+      deprecated: true
       description: 'Get hourly usage for network hosts.
 
-        **Note:** hourly usage data for all products is now available in the [Get
-        hourly usage by product family API](https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family).
+        **Note:** This endpoint has been deprecated. Hourly usage data for all products
+        is now available in the [Get hourly usage by product family API](https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family).
         Refer to [Migrating from the V1 Hourly Usage APIs to V2](https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/)
         for the associated migration guide.'
       operationId: GetUsageNetworkHosts
@@ -31998,10 +32014,11 @@ paths:
       - Usage Metering
   /api/v1/usage/online-archive:
     get:
+      deprecated: true
       description: 'Get hourly usage for online archive.
 
-        **Note:** hourly usage data for all products is now available in the [Get
-        hourly usage by product family API](https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family).
+        **Note:** This endpoint has been deprecated. Hourly usage data for all products
+        is now available in the [Get hourly usage by product family API](https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family).
         Refer to [Migrating from the V1 Hourly Usage APIs to V2](https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/)
         for the associated migration guide.'
       operationId: GetUsageOnlineArchive
@@ -32059,10 +32076,11 @@ paths:
       - Usage Metering
   /api/v1/usage/profiling:
     get:
+      deprecated: true
       description: 'Get hourly usage for profiled hosts.
 
-        **Note:** hourly usage data for all products is now available in the [Get
-        hourly usage by product family API](https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family).
+        **Note:** This endpoint has been deprecated. Hourly usage data for all products
+        is now available in the [Get hourly usage by product family API](https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family).
         Refer to [Migrating from the V1 Hourly Usage APIs to V2](https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/)
         for the associated migration guide.'
       operationId: GetUsageProfiling
@@ -32120,11 +32138,12 @@ paths:
       - Usage Metering
   /api/v1/usage/rum:
     get:
+      deprecated: true
       description: 'Get hourly usage for [RUM](https://docs.datadoghq.com/real_user_monitoring/)
         Units.
 
-        **Note:** hourly usage data for all products is now available in the [Get
-        hourly usage by product family API](https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family).
+        **Note:** This endpoint has been deprecated. Hourly usage data for all products
+        is now available in the [Get hourly usage by product family API](https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family).
         Refer to [Migrating from the V1 Hourly Usage APIs to V2](https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/)
         for the associated migration guide.'
       operationId: GetUsageRumUnits
@@ -32180,11 +32199,12 @@ paths:
       - Usage Metering
   /api/v1/usage/rum_sessions:
     get:
+      deprecated: true
       description: 'Get hourly usage for [RUM](https://docs.datadoghq.com/real_user_monitoring/)
         Sessions.
 
-        **Note:** hourly usage data for all products is now available in the [Get
-        hourly usage by product family API](https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family).
+        **Note:** This endpoint has been deprecated. Hourly usage data for all products
+        is now available in the [Get hourly usage by product family API](https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family).
         Refer to [Migrating from the V1 Hourly Usage APIs to V2](https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/)
         for the associated migration guide.'
       operationId: GetUsageRumSessions
@@ -32246,10 +32266,11 @@ paths:
       - Usage Metering
   /api/v1/usage/sds:
     get:
+      deprecated: true
       description: 'Get hourly usage for sensitive data scanner.
 
-        **Note:** hourly usage data for all products is now available in the [Get
-        hourly usage by product family API](https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family).
+        **Note:** This endpoint has been deprecated. Hourly usage data for all products
+        is now available in the [Get hourly usage by product family API](https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family).
         Refer to [Migrating from the V1 Hourly Usage APIs to V2](https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/)
         for the associated migration guide.'
       operationId: GetUsageSDS
@@ -32307,10 +32328,11 @@ paths:
       - Usage Metering
   /api/v1/usage/snmp:
     get:
+      deprecated: true
       description: 'Get hourly usage for SNMP devices.
 
-        **Note:** hourly usage data for all products is now available in the [Get
-        hourly usage by product family API](https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family).
+        **Note:** This endpoint has been deprecated. Hourly usage data for all products
+        is now available in the [Get hourly usage by product family API](https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family).
         Refer to [Migrating from the V1 Hourly Usage APIs to V2](https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/)
         for the associated migration guide.'
       operationId: GetUsageSNMP
@@ -32433,8 +32455,8 @@ paths:
       deprecated: true
       description: 'Get hourly usage for [synthetics checks](https://docs.datadoghq.com/synthetics/).
 
-        **Note:** hourly usage data for all products is now available in the [Get
-        hourly usage by product family API](https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family).
+        **Note:** This endpoint has been deprecated. Hourly usage data for all products
+        is now available in the [Get hourly usage by product family API](https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family).
         Refer to [Migrating from the V1 Hourly Usage APIs to V2](https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/)
         for the associated migration guide.'
       operationId: GetUsageSynthetics
@@ -32490,10 +32512,11 @@ paths:
       - Usage Metering
   /api/v1/usage/synthetics_api:
     get:
+      deprecated: true
       description: 'Get hourly usage for [synthetics API checks](https://docs.datadoghq.com/synthetics/).
 
-        **Note:** hourly usage data for all products is now available in the [Get
-        hourly usage by product family API](https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family).
+        **Note:** This endpoint has been deprecated. Hourly usage data for all products
+        is now available in the [Get hourly usage by product family API](https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family).
         Refer to [Migrating from the V1 Hourly Usage APIs to V2](https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/)
         for the associated migration guide.'
       operationId: GetUsageSyntheticsAPI
@@ -32549,10 +32572,11 @@ paths:
       - Usage Metering
   /api/v1/usage/synthetics_browser:
     get:
+      deprecated: true
       description: 'Get hourly usage for synthetics browser checks.
 
-        **Note:** hourly usage data for all products is now available in the [Get
-        hourly usage by product family API](https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family).
+        **Note:** This endpoint has been deprecated. Hourly usage data for all products
+        is now available in the [Get hourly usage by product family API](https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family).
         Refer to [Migrating from the V1 Hourly Usage APIs to V2](https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/)
         for the associated migration guide.'
       operationId: GetUsageSyntheticsBrowser
@@ -32608,10 +32632,11 @@ paths:
       - Usage Metering
   /api/v1/usage/timeseries:
     get:
+      deprecated: true
       description: 'Get hourly usage for [custom metrics](https://docs.datadoghq.com/developers/metrics/custom_metrics/).
 
-        **Note:** hourly usage data for all products is now available in the [Get
-        hourly usage by product family API](https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family).
+        **Note:** This endpoint has been deprecated. Hourly usage data for all products
+        is now available in the [Get hourly usage by product family API](https://docs.datadoghq.com/api/latest/usage-metering/#get-hourly-usage-by-product-family).
         Refer to [Migrating from the V1 Hourly Usage APIs to V2](https://docs.datadoghq.com/account_management/guide/hourly-usage-migration/)
         for the associated migration guide.'
       operationId: GetUsageTimeseries
