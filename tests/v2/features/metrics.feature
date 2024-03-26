@@ -15,7 +15,7 @@ Feature: Metrics
     Given a valid "apiKeyAuth" key in the system
     And an instance of "Metrics" API
 
-  @skip-typescript @team:DataDog/metrics-experience
+  @skip-typescript @team:DataDog/api-clients @team:DataDog/metrics-experience
   Scenario: Configure tags for multiple metrics returns "Accepted" response
     Given a valid "appKeyAuth" key in the system
     And there is a valid "user" in the system
@@ -24,7 +24,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 202 Accepted
 
-  @generated @skip @team:DataDog/metrics-experience
+  @generated @skip @team:DataDog/api-clients @team:DataDog/metrics-experience
   Scenario: Configure tags for multiple metrics returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And new "CreateBulkTagsMetricsConfiguration" request
@@ -32,7 +32,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/metrics-experience
+  @generated @skip @team:DataDog/api-clients @team:DataDog/metrics-experience
   Scenario: Configure tags for multiple metrics returns "Not Found" response
     Given a valid "appKeyAuth" key in the system
     And new "CreateBulkTagsMetricsConfiguration" request
@@ -40,7 +40,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/metrics-experience
+  @generated @skip @team:DataDog/api-clients @team:DataDog/metrics-experience
   Scenario: Create a tag configuration returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And new "CreateTagConfiguration" request
@@ -49,7 +49,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/metrics-experience
+  @generated @skip @team:DataDog/api-clients @team:DataDog/metrics-experience
   Scenario: Create a tag configuration returns "Conflict" response
     Given a valid "appKeyAuth" key in the system
     And new "CreateTagConfiguration" request
@@ -58,7 +58,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 409 Conflict
 
-  @replay-only @skip-validation @team:DataDog/metrics-experience
+  @replay-only @skip-validation @team:DataDog/api-clients @team:DataDog/metrics-experience
   Scenario: Create a tag configuration returns "Created" response
     Given a valid "appKeyAuth" key in the system
     And new "CreateTagConfiguration" request
@@ -68,7 +68,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 201 Created
 
-  @replay-only @skip-validation @team:DataDog/metrics-experience
+  @replay-only @skip-validation @team:DataDog/api-clients @team:DataDog/metrics-experience
   Scenario: Delete a tag configuration returns "No Content" response
     Given there is a valid "metric" in the system
     And there is a valid "metric_tag_configuration" in the system
@@ -78,7 +78,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:DataDog/metrics-experience
+  @generated @skip @team:DataDog/api-clients @team:DataDog/metrics-experience
   Scenario: Delete a tag configuration returns "Not found" response
     Given a valid "appKeyAuth" key in the system
     And new "DeleteTagConfiguration" request
@@ -86,7 +86,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 404 Not found
 
-  @generated @skip @team:DataDog/metrics-experience
+  @generated @skip @team:DataDog/api-clients @team:DataDog/metrics-experience
   Scenario: Delete tags for multiple metrics returns "Accepted" response
     Given a valid "appKeyAuth" key in the system
     And new "DeleteBulkTagsMetricsConfiguration" request
@@ -94,7 +94,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 202 Accepted
 
-  @generated @skip @team:DataDog/metrics-experience
+  @generated @skip @team:DataDog/api-clients @team:DataDog/metrics-experience
   Scenario: Delete tags for multiple metrics returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And new "DeleteBulkTagsMetricsConfiguration" request
@@ -102,7 +102,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/metrics-experience
+  @generated @skip @team:DataDog/api-clients @team:DataDog/metrics-experience
   Scenario: Delete tags for multiple metrics returns "Not Found" response
     Given a valid "appKeyAuth" key in the system
     And new "DeleteBulkTagsMetricsConfiguration" request
@@ -110,14 +110,14 @@ Feature: Metrics
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/metrics-experience
+  @generated @skip @team:DataDog/api-clients @team:DataDog/metrics-experience
   Scenario: Get a list of metrics returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And new "ListTagConfigurations" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip @team:DataDog/metrics-experience
+  @skip @team:DataDog/api-clients @team:DataDog/metrics-experience
   Scenario: Get a list of metrics returns "Success" response
     Given a valid "appKeyAuth" key in the system
     And there is a valid "metric_tag_configuration" in the system
@@ -125,7 +125,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 200 Success
 
-  @team:DataDog/metrics-experience
+  @team:DataDog/api-clients @team:DataDog/metrics-experience
   Scenario: Get a list of metrics with a tag filter returns "Success" response
     Given a valid "appKeyAuth" key in the system
     And new "ListTagConfigurations" request
@@ -134,7 +134,7 @@ Feature: Metrics
     Then the response status is 200 Success
     And the response "data" has length 0
 
-  @replay-only @team:DataDog/metrics-experience
+  @replay-only @team:DataDog/api-clients @team:DataDog/metrics-experience
   Scenario: Get a list of metrics with configured filter returns "Success" response
     Given a valid "appKeyAuth" key in the system
     And new "ListTagConfigurations" request
@@ -143,7 +143,7 @@ Feature: Metrics
     Then the response status is 200 Success
     And the response "data[0].type" is equal to "manage_tags"
 
-  @generated @skip @team:DataDog/metrics-experience
+  @generated @skip @team:DataDog/api-clients @team:DataDog/metrics-experience
   Scenario: List active tags and aggregations returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And new "ListActiveMetricConfigurations" request
@@ -151,7 +151,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/metrics-experience
+  @generated @skip @team:DataDog/api-clients @team:DataDog/metrics-experience
   Scenario: List active tags and aggregations returns "Not Found" response
     Given a valid "appKeyAuth" key in the system
     And new "ListActiveMetricConfigurations" request
@@ -159,7 +159,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 404 Not Found
 
-  @skip-validation @team:DataDog/metrics-experience
+  @skip-validation @team:DataDog/api-clients @team:DataDog/metrics-experience
   Scenario: List active tags and aggregations returns "Success" response
     Given a valid "appKeyAuth" key in the system
     And there is a valid "metric_static" in the system
@@ -170,7 +170,7 @@ Feature: Metrics
     And the response "data.type" is equal to "actively_queried_configurations"
     And the response "data.id" is equal to "static_test_metric_donotdelete"
 
-  @generated @skip @team:DataDog/metrics-experience
+  @generated @skip @team:DataDog/api-clients @team:DataDog/metrics-experience
   Scenario: List distinct metric volumes by metric name returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And new "ListVolumesByMetricName" request
@@ -178,7 +178,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/metrics-experience
+  @generated @skip @team:DataDog/api-clients @team:DataDog/metrics-experience
   Scenario: List distinct metric volumes by metric name returns "Not Found" response
     Given a valid "appKeyAuth" key in the system
     And new "ListVolumesByMetricName" request
@@ -186,7 +186,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 404 Not Found
 
-  @skip-validation @team:DataDog/metrics-experience
+  @skip-validation @team:DataDog/api-clients @team:DataDog/metrics-experience
   Scenario: List distinct metric volumes by metric name returns "Success" response
     Given a valid "appKeyAuth" key in the system
     And there is a valid "metric_static" in the system
@@ -197,7 +197,7 @@ Feature: Metrics
     And the response "data.type" is equal to "metric_volumes"
     And the response "data.id" is equal to "static_test_metric_donotdelete"
 
-  @generated @skip @team:DataDog/metrics-experience
+  @generated @skip @team:DataDog/api-clients @team:DataDog/metrics-experience
   Scenario: List tag configuration by name returns "Not Found" response
     Given a valid "appKeyAuth" key in the system
     And new "ListTagConfigurationByName" request
@@ -205,7 +205,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 404 Not Found
 
-  @replay-only @skip-validation @team:DataDog/metrics-experience
+  @replay-only @skip-validation @team:DataDog/api-clients @team:DataDog/metrics-experience
   Scenario: List tag configuration by name returns "Success" response
     Given a valid "appKeyAuth" key in the system
     And there is a valid "metric" in the system
@@ -216,7 +216,7 @@ Feature: Metrics
     Then the response status is 200 Success
     And the response "data.id" has the same value as "metric_tag_configuration.data.id"
 
-  @generated @skip @team:DataDog/metrics-experience
+  @generated @skip @team:DataDog/api-clients @team:DataDog/metrics-experience
   Scenario: List tags by metric name returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And new "ListTagsByMetricName" request
@@ -224,7 +224,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/metrics-experience
+  @generated @skip @team:DataDog/api-clients @team:DataDog/metrics-experience
   Scenario: List tags by metric name returns "Not Found" response
     Given a valid "appKeyAuth" key in the system
     And new "ListTagsByMetricName" request
@@ -232,7 +232,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 404 Not Found
 
-  @replay-only @skip-validation @team:DataDog/metrics-experience
+  @replay-only @skip-validation @team:DataDog/api-clients @team:DataDog/metrics-experience
   Scenario: List tags by metric name returns "Success" response
     Given a valid "appKeyAuth" key in the system
     And there is a valid "metric" in the system
@@ -243,7 +243,7 @@ Feature: Metrics
     Then the response status is 200 Success
     And the response "data.id" has the same value as "metric_tag_configuration.data.id"
 
-  @generated @skip @team:Datadog/timeseries-query
+  @generated @skip @team:DataDog/api-clients @team:Datadog/timeseries-query
   Scenario: Query scalar data across multiple products returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And operation "QueryScalarData" enabled
@@ -252,7 +252,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:Datadog/timeseries-query
+  @generated @skip @team:DataDog/api-clients @team:Datadog/timeseries-query
   Scenario: Query scalar data across multiple products returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And operation "QueryScalarData" enabled
@@ -261,7 +261,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:Datadog/timeseries-query
+  @generated @skip @team:DataDog/api-clients @team:Datadog/timeseries-query
   Scenario: Query timeseries data across multiple products returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And operation "QueryTimeseriesData" enabled
@@ -270,7 +270,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:Datadog/timeseries-query
+  @generated @skip @team:DataDog/api-clients @team:Datadog/timeseries-query
   Scenario: Query timeseries data across multiple products returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And operation "QueryTimeseriesData" enabled
@@ -279,7 +279,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/metrics-experience
+  @generated @skip @team:DataDog/api-clients @team:DataDog/metrics-experience
   Scenario: Related Assets to a Metric returns "API error response." response
     Given a valid "appKeyAuth" key in the system
     And new "ListMetricAssets" request
@@ -287,7 +287,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 404 API error response.
 
-  @team:DataDog/metrics-experience
+  @team:DataDog/api-clients @team:DataDog/metrics-experience
   Scenario: Related Assets to a Metric returns "Success" response
     Given a valid "appKeyAuth" key in the system
     And new "ListMetricAssets" request
@@ -297,7 +297,7 @@ Feature: Metrics
     And the response "data.type" is equal to "metrics"
     And the response "data.id" is equal to "system.cpu.user"
 
-  @team:Datadog/timeseries-query
+  @team:DataDog/api-clients @team:Datadog/timeseries-query
   Scenario: Scalar cross product query returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And operation "QueryScalarData" enabled
@@ -306,7 +306,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:Datadog/timeseries-query
+  @team:DataDog/api-clients @team:Datadog/timeseries-query
   Scenario: Scalar cross product query returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And operation "QueryScalarData" enabled
@@ -317,14 +317,14 @@ Feature: Metrics
     And the response "data.type" is equal to "scalar_response"
     And the response "data.attributes.columns[0].name" is equal to "a"
 
-  @generated @skip @team:DataDog/metrics-intake @team:DataDog/metrics-query
+  @generated @skip @team:DataDog/api-clients @team:DataDog/metrics-intake @team:DataDog/metrics-query
   Scenario: Submit metrics returns "Bad Request" response
     Given new "SubmitMetrics" request
     And body with value {"series": [{"metric": "system.load.1", "points": [{"timestamp": 1475317847, "value": 0.7}], "resources": [{"name": "dummyhost", "type": "host"}]}]}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/metrics-intake @team:DataDog/metrics-query
+  @team:DataDog/api-clients @team:DataDog/metrics-intake @team:DataDog/metrics-query
   Scenario: Submit metrics returns "Payload accepted" response
     Given new "SubmitMetrics" request
     And body with value {"series": [{"metric": "system.load.1", "type": 0, "points": [{"timestamp": {{ timestamp('now') }}, "value": 0.7}], "resources": [{"name": "dummyhost", "type": "host"}]}]}
@@ -332,21 +332,21 @@ Feature: Metrics
     Then the response status is 202 Payload accepted
     And the response "errors" has length 0
 
-  @generated @skip @team:DataDog/metrics-intake @team:DataDog/metrics-query
+  @generated @skip @team:DataDog/api-clients @team:DataDog/metrics-intake @team:DataDog/metrics-query
   Scenario: Submit metrics returns "Payload too large" response
     Given new "SubmitMetrics" request
     And body with value {"series": [{"metric": "system.load.1", "points": [{"timestamp": 1475317847, "value": 0.7}], "resources": [{"name": "dummyhost", "type": "host"}]}]}
     When the request is sent
     Then the response status is 413 Payload too large
 
-  @generated @skip @team:DataDog/metrics-intake @team:DataDog/metrics-query
+  @generated @skip @team:DataDog/api-clients @team:DataDog/metrics-intake @team:DataDog/metrics-query
   Scenario: Submit metrics returns "Request timeout" response
     Given new "SubmitMetrics" request
     And body with value {"series": [{"metric": "system.load.1", "points": [{"timestamp": 1475317847, "value": 0.7}], "resources": [{"name": "dummyhost", "type": "host"}]}]}
     When the request is sent
     Then the response status is 408 Request timeout
 
-  @integration-only @skip-terraform-config @skip-validation @team:DataDog/metrics-intake @team:DataDog/metrics-query
+  @integration-only @skip-terraform-config @skip-validation @team:DataDog/api-clients @team:DataDog/metrics-intake @team:DataDog/metrics-query
   Scenario: Submit metrics with compression returns "Payload accepted" response
     Given new "SubmitMetrics" request
     And body with value {"series": [{"metric": "system.load.1", "type": 0, "points": [{"timestamp": {{ timestamp('now') }}, "value": 0.7}]}]}
@@ -354,7 +354,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 202 Payload accepted
 
-  @generated @skip @team:DataDog/metrics-experience
+  @generated @skip @team:DataDog/api-clients @team:DataDog/metrics-experience
   Scenario: Tag Configuration Cardinality Estimator returns "API error response." response
     Given a valid "appKeyAuth" key in the system
     And new "EstimateMetricsOutputSeries" request
@@ -362,7 +362,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 404 API error response.
 
-  @replay-only @team:DataDog/metrics-experience
+  @replay-only @team:DataDog/api-clients @team:DataDog/metrics-experience
   Scenario: Tag Configuration Cardinality Estimator returns "Success" response
     Given new "EstimateMetricsOutputSeries" request
     And request contains "metric_name" parameter with value "system.cpu.idle"
@@ -371,7 +371,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 200 Success
 
-  @skip @team:Datadog/timeseries-query
+  @skip @team:DataDog/api-clients @team:Datadog/timeseries-query
   Scenario: Timeseries cross product query returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And operation "QueryTimeseriesData" enabled
@@ -380,7 +380,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:Datadog/timeseries-query
+  @team:DataDog/api-clients @team:Datadog/timeseries-query
   Scenario: Timeseries cross product query returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And operation "QueryTimeseriesData" enabled
@@ -391,7 +391,7 @@ Feature: Metrics
     And the response "data.type" is equal to "timeseries_response"
     And the response "data.attributes.series[0].unit[0].name" is equal to "percent"
 
-  @generated @skip @team:DataDog/metrics-experience
+  @generated @skip @team:DataDog/api-clients @team:DataDog/metrics-experience
   Scenario: Update a tag configuration returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And new "UpdateTagConfiguration" request
@@ -400,7 +400,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @replay-only @skip-validation @team:DataDog/metrics-experience
+  @replay-only @skip-validation @team:DataDog/api-clients @team:DataDog/metrics-experience
   Scenario: Update a tag configuration returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And there is a valid "metric" in the system
@@ -412,7 +412,7 @@ Feature: Metrics
     Then the response status is 200 OK
     And the response "data.attributes.tags[0]" is equal to "app"
 
-  @generated @skip @team:DataDog/metrics-experience
+  @generated @skip @team:DataDog/api-clients @team:DataDog/metrics-experience
   Scenario: Update a tag configuration returns "Unprocessable Entity" response
     Given a valid "appKeyAuth" key in the system
     And new "UpdateTagConfiguration" request

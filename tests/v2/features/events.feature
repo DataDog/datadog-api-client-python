@@ -10,19 +10,19 @@ Feature: Events
     And a valid "appKeyAuth" key in the system
     And an instance of "Events" API
 
-  @generated @skip @team:DataDog/event-management
+  @generated @skip @team:DataDog/api-clients @team:DataDog/event-management
   Scenario: Get a list of events returns "Bad Request" response
     Given new "ListEvents" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip-validation @team:DataDog/event-management
+  @skip-validation @team:DataDog/api-clients @team:DataDog/event-management
   Scenario: Get a list of events returns "OK" response
     Given new "ListEvents" request
     When the request is sent
     Then the response status is 200 OK
 
-  @replay-only @skip-validation @team:DataDog/event-management @with-pagination
+  @replay-only @skip-validation @team:DataDog/api-clients @team:DataDog/event-management @with-pagination
   Scenario: Get a list of events returns "OK" response with pagination
     Given new "ListEvents" request
     And request contains "filter[from]" parameter with value "now-15m"
@@ -32,7 +32,7 @@ Feature: Events
     Then the response status is 200 OK
     And the response has 3 items
 
-  @team:DataDog/event-management
+  @team:DataDog/api-clients @team:DataDog/event-management
   Scenario: Get a quick list of events returns "OK" response
     Given new "ListEvents" request
     And request contains "filter[query]" parameter with value "datadog-agent"
@@ -43,14 +43,14 @@ Feature: Events
     Then the response status is 200 OK
     And the response "data" has length 0
 
-  @team:DataDog/event-management
+  @team:DataDog/api-clients @team:DataDog/event-management
   Scenario: Search events returns "Bad Request" response
     Given new "SearchEvents" request
     And body with value {"filter": {"from": "now-15m", "query": "service:web* AND @http.status_code:[200 TO 299]", "to": "now"}, "options": {"timezone": "GMT"}, "page": {"cursor": "eyJzdGFydEF0IjoiQVFBQUFYS2tMS3pPbm40NGV3QUFBQUJCV0V0clRFdDZVbG8zY3pCRmNsbHJiVmxDWlEifQ==", "limit": 25}, "sort": "timestamp"}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/event-management
+  @team:DataDog/api-clients @team:DataDog/event-management
   Scenario: Search events returns "OK" response
     Given new "SearchEvents" request
     And body with value {"filter": {"query": "datadog-agent", "from": "2020-09-17T11:48:36+01:00", "to": "2020-09-17T12:48:36+01:00"}, "sort": "timestamp", "page": {"limit": 5}}
@@ -58,7 +58,7 @@ Feature: Events
     Then the response status is 200 OK
     And the response "data" has length 0
 
-  @replay-only @skip-validation @team:DataDog/event-management @with-pagination
+  @replay-only @skip-validation @team:DataDog/api-clients @team:DataDog/event-management @with-pagination
   Scenario: Search events returns "OK" response with pagination
     Given new "SearchEvents" request
     And body with value {"filter": {"from": "now-15m", "to": "now"}, "options": {"timezone": "GMT"}, "page": {"limit": 2}, "sort": "timestamp"}

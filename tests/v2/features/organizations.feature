@@ -9,18 +9,18 @@ Feature: Organizations
     And an instance of "Organizations" API
     And new "UploadIdPMetadata" request
 
-  @skip-go @skip-java @skip-python @skip-ruby @skip-rust @skip-terraform-config @skip-typescript @skip-validation @team:DataDog/team-aaa-identity
+  @skip-go @skip-java @skip-python @skip-ruby @skip-rust @skip-terraform-config @skip-typescript @skip-validation @team:DataDog/api-clients @team:DataDog/team-aaa-identity
   Scenario: Upload IdP metadata returns "Bad Request - caused by either malformed XML or invalid SAML IdP metadata" response
     Given request contains "idp_file" parameter with value "fixtures/organizations/saml_configurations/invalid_idp_metadata.xml"
     When the request is sent
     Then the response status is 400 Bad Request - caused by either malformed XML or invalid SAML IdP metadata
 
-  @generated @skip @team:DataDog/team-aaa-identity
+  @generated @skip @team:DataDog/api-clients @team:DataDog/team-aaa-identity
   Scenario: Upload IdP metadata returns "Bad Request" response
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @integration-only @skip-terraform-config @skip-validation @team:DataDog/team-aaa-identity
+  @integration-only @skip-terraform-config @skip-validation @team:DataDog/api-clients @team:DataDog/team-aaa-identity
   Scenario: Upload IdP metadata returns "OK" response
     Given request contains "idp_file" parameter with value "fixtures/organizations/saml_configurations/valid_idp_metadata.xml"
     When the request is sent

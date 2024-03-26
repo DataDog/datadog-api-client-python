@@ -8,7 +8,7 @@ Feature: Logs
     Given a valid "apiKeyAuth" key in the system
     And an instance of "Logs" API
 
-  @team:DataDog/logs-app
+  @team:DataDog/api-clients @team:DataDog/logs-app
   Scenario: Aggregate compute events returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "AggregateLogs" request
@@ -17,7 +17,7 @@ Feature: Logs
     Then the response status is 200 OK
     And the response "meta.status" is equal to "done"
 
-  @team:DataDog/logs-app
+  @team:DataDog/api-clients @team:DataDog/logs-app
   Scenario: Aggregate compute events with group by returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "AggregateLogs" request
@@ -26,7 +26,7 @@ Feature: Logs
     Then the response status is 200 OK
     And the response "meta.status" is equal to "done"
 
-  @generated @skip @team:DataDog/logs-app
+  @generated @skip @team:DataDog/api-clients @team:DataDog/logs-app
   Scenario: Aggregate events returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And new "AggregateLogs" request
@@ -34,7 +34,7 @@ Feature: Logs
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/logs-app
+  @team:DataDog/api-clients @team:DataDog/logs-app
   Scenario: Aggregate events returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "AggregateLogs" request
@@ -43,21 +43,21 @@ Feature: Logs
     Then the response status is 200 OK
     And the response "meta.status" is equal to "done"
 
-  @generated @skip @team:DataDog/logs-app
+  @generated @skip @team:DataDog/api-clients @team:DataDog/logs-app
   Scenario: Get a list of logs returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And new "ListLogsGet" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/logs-app
+  @generated @skip @team:DataDog/api-clients @team:DataDog/logs-app
   Scenario: Get a list of logs returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "ListLogsGet" request
     When the request is sent
     Then the response status is 200 OK
 
-  @replay-only @skip-validation @team:DataDog/logs-app @with-pagination
+  @replay-only @skip-validation @team:DataDog/api-clients @team:DataDog/logs-app @with-pagination
   Scenario: Get a list of logs returns "OK" response with pagination
     Given a valid "appKeyAuth" key in the system
     And new "ListLogsGet" request
@@ -66,7 +66,7 @@ Feature: Logs
     Then the response status is 200 OK
     And the response has 3 items
 
-  @team:DataDog/logs-app
+  @team:DataDog/api-clients @team:DataDog/logs-app
   Scenario: Get a quick list of logs returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "ListLogsGet" request
@@ -79,7 +79,7 @@ Feature: Logs
     Then the response status is 200 OK
     And the response "data" has length 0
 
-  @generated @skip @team:DataDog/logs-app
+  @generated @skip @team:DataDog/api-clients @team:DataDog/logs-app
   Scenario: Search logs returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And new "ListLogs" request
@@ -87,7 +87,7 @@ Feature: Logs
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/logs-app
+  @team:DataDog/api-clients @team:DataDog/logs-app
   Scenario: Search logs returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "ListLogs" request
@@ -96,7 +96,7 @@ Feature: Logs
     Then the response status is 200 OK
     And the response "data" has length 0
 
-  @replay-only @skip-validation @team:DataDog/logs-app @with-pagination
+  @replay-only @skip-validation @team:DataDog/api-clients @team:DataDog/logs-app @with-pagination
   Scenario: Search logs returns "OK" response with pagination
     Given a valid "appKeyAuth" key in the system
     And new "ListLogs" request
@@ -105,7 +105,7 @@ Feature: Logs
     Then the response status is 200 OK
     And the response has 3 items
 
-  @integration-only @skip-terraform-config @skip-validation @team:DataDog/event-platform-intake @team:DataDog/logs-backend
+  @integration-only @skip-terraform-config @skip-validation @team:DataDog/api-clients @team:DataDog/event-platform-intake @team:DataDog/logs-backend
   Scenario: Send deflate logs returns "Request accepted for processing (always 202 empty JSON)." response
     Given new "SubmitLog" request
     And body with value [{"ddsource": "nginx", "ddtags": "env:staging,version:5.1", "hostname": "i-012345678", "message": "2019-11-19T14:37:58,995 INFO [process.name][20081] Hello World", "service": "payment"}]
@@ -113,7 +113,7 @@ Feature: Logs
     When the request is sent
     Then the response status is 202 Response from server (always 202 empty JSON).
 
-  @integration-only @skip-terraform-config @skip-validation @team:DataDog/event-platform-intake @team:DataDog/logs-backend
+  @integration-only @skip-terraform-config @skip-validation @team:DataDog/api-clients @team:DataDog/event-platform-intake @team:DataDog/logs-backend
   Scenario: Send gzip logs returns "Request accepted for processing (always 202 empty JSON)." response
     Given new "SubmitLog" request
     And body with value [{"ddsource": "nginx", "ddtags": "env:staging,version:5.1", "hostname": "i-012345678", "message": "2019-11-19T14:37:58,995 INFO [process.name][20081] Hello World", "service": "payment"}]
@@ -121,28 +121,28 @@ Feature: Logs
     When the request is sent
     Then the response status is 202 Request accepted for processing (always 202 empty JSON).
 
-  @generated @skip @team:DataDog/event-platform-intake @team:DataDog/logs-backend
+  @generated @skip @team:DataDog/api-clients @team:DataDog/event-platform-intake @team:DataDog/logs-backend
   Scenario: Send logs returns "Bad Request" response
     Given new "SubmitLog" request
     And body with value [{"ddsource": "nginx", "ddtags": "env:staging,version:5.1", "hostname": "i-012345678", "message": "2019-11-19T14:37:58,995 INFO [process.name][20081] Hello World", "service": "payment"}]
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/event-platform-intake @team:DataDog/logs-backend
+  @generated @skip @team:DataDog/api-clients @team:DataDog/event-platform-intake @team:DataDog/logs-backend
   Scenario: Send logs returns "Payload Too Large" response
     Given new "SubmitLog" request
     And body with value [{"ddsource": "nginx", "ddtags": "env:staging,version:5.1", "hostname": "i-012345678", "message": "2019-11-19T14:37:58,995 INFO [process.name][20081] Hello World", "service": "payment"}]
     When the request is sent
     Then the response status is 413 Payload Too Large
 
-  @generated @skip @team:DataDog/event-platform-intake @team:DataDog/logs-backend
+  @generated @skip @team:DataDog/api-clients @team:DataDog/event-platform-intake @team:DataDog/logs-backend
   Scenario: Send logs returns "Request Timeout" response
     Given new "SubmitLog" request
     And body with value [{"ddsource": "nginx", "ddtags": "env:staging,version:5.1", "hostname": "i-012345678", "message": "2019-11-19T14:37:58,995 INFO [process.name][20081] Hello World", "service": "payment"}]
     When the request is sent
     Then the response status is 408 Request Timeout
 
-  @team:DataDog/event-platform-intake @team:DataDog/logs-backend
+  @team:DataDog/api-clients @team:DataDog/event-platform-intake @team:DataDog/logs-backend
   Scenario: Send logs returns "Request accepted for processing (always 202 empty JSON)." response
     Given new "SubmitLog" request
     And body with value [{"ddsource": "nginx", "ddtags": "env:staging,version:5.1", "hostname": "i-012345678", "message": "2019-11-19T14:37:58,995 INFO [process.name][20081] Hello World", "service": "payment", "status": "info"}]

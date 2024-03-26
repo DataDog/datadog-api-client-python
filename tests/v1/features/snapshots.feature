@@ -8,14 +8,14 @@ Feature: Snapshots
     And an instance of "Snapshots" API
     And new "GetGraphSnapshot" request
 
-  @generated @skip @team:DataDog/monitor-app
+  @generated @skip @team:DataDog/api-clients @team:DataDog/monitor-app
   Scenario: Take graph snapshots returns "Bad Request" response
     Given request contains "start" parameter from "REPLACE.ME"
     And request contains "end" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @integration-only @team:DataDog/monitor-app
+  @integration-only @team:DataDog/api-clients @team:DataDog/monitor-app
   Scenario: Take graph snapshots returns "OK" response
     Given request contains "start" parameter with value {{ timestamp("now - 1d") }}
     And request contains "end" parameter with value {{ timestamp("now") }}

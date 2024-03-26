@@ -10,7 +10,7 @@ Feature: Incidents
     And a valid "appKeyAuth" key in the system
     And an instance of "Incidents" API
 
-  @team:DataDog/incident-app
+  @team:DataDog/api-clients @team:DataDog/incident-app
   Scenario: Add commander to an incident returns "OK" response
     Given operation "UpdateIncident" enabled
     And there is a valid "user" in the system
@@ -21,7 +21,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/incident-app
+  @team:DataDog/api-clients @team:DataDog/incident-app
   Scenario: Create an incident attachment returns "OK" response
     Given operation "UpdateIncidentAttachments" enabled
     And there is a valid "incident" in the system
@@ -35,7 +35,7 @@ Feature: Incidents
     And the response "data[0].attributes.attachment_type" is equal to "link"
     And the response "data[0].attributes.attachment.documentUrl" is equal to "https://www.example.com/doc"
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:DataDog/api-clients @team:DataDog/incident-app
   Scenario: Create an incident integration metadata returns "Bad Request" response
     Given operation "CreateIncidentIntegration" enabled
     And new "CreateIncidentIntegration" request
@@ -44,7 +44,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/incident-app
+  @team:DataDog/api-clients @team:DataDog/incident-app
   Scenario: Create an incident integration metadata returns "CREATED" response
     Given operation "CreateIncidentIntegration" enabled
     And new "CreateIncidentIntegration" request
@@ -57,7 +57,7 @@ Feature: Incidents
     And the response "data.attributes.metadata.channels" has length 1
     And the response "data.attributes.metadata.channels[0].channel_name" is equal to "#new-channel"
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:DataDog/api-clients @team:DataDog/incident-app
   Scenario: Create an incident integration metadata returns "Not Found" response
     Given operation "CreateIncidentIntegration" enabled
     And new "CreateIncidentIntegration" request
@@ -66,7 +66,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:DataDog/api-clients @team:DataDog/incident-app
   Scenario: Create an incident returns "Bad Request" response
     Given operation "CreateIncident" enabled
     And new "CreateIncident" request
@@ -74,7 +74,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/incident-app
+  @team:DataDog/api-clients @team:DataDog/incident-app
   Scenario: Create an incident returns "CREATED" response
     Given there is a valid "user" in the system
     And operation "CreateIncident" enabled
@@ -85,7 +85,7 @@ Feature: Incidents
     And the response "data.relationships.commander_user.data.id" has the same value as "user.data.id"
     And the response "data.attributes.title" has the same value as "unique"
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:DataDog/api-clients @team:DataDog/incident-app
   Scenario: Create an incident returns "Not Found" response
     Given operation "CreateIncident" enabled
     And new "CreateIncident" request
@@ -93,7 +93,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:DataDog/api-clients @team:Datadog/incident-app
   Scenario: Create an incident todo returns "Bad Request" response
     Given operation "CreateIncidentTodo" enabled
     And new "CreateIncidentTodo" request
@@ -102,7 +102,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @replay-only @team:Datadog/incident-app
+  @replay-only @team:DataDog/api-clients @team:Datadog/incident-app
   Scenario: Create an incident todo returns "CREATED" response
     Given operation "CreateIncidentTodo" enabled
     And new "CreateIncidentTodo" request
@@ -113,7 +113,7 @@ Feature: Incidents
     Then the response status is 201 CREATED
     And the response "data.attributes.assignees" has length 1
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:DataDog/api-clients @team:Datadog/incident-app
   Scenario: Create an incident todo returns "Not Found" response
     Given operation "CreateIncidentTodo" enabled
     And new "CreateIncidentTodo" request
@@ -122,7 +122,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:DataDog/api-clients @team:DataDog/incident-app
   Scenario: Create, update, and delete incident attachments returns "Bad Request" response
     Given operation "UpdateIncidentAttachments" enabled
     And new "UpdateIncidentAttachments" request
@@ -131,7 +131,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:DataDog/api-clients @team:DataDog/incident-app
   Scenario: Create, update, and delete incident attachments returns "Not Found" response
     Given operation "UpdateIncidentAttachments" enabled
     And new "UpdateIncidentAttachments" request
@@ -140,7 +140,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:DataDog/api-clients @team:DataDog/incident-app
   Scenario: Create, update, and delete incident attachments returns "OK" response
     Given operation "UpdateIncidentAttachments" enabled
     And new "UpdateIncidentAttachments" request
@@ -149,7 +149,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:DataDog/api-clients @team:DataDog/incident-app
   Scenario: Delete an existing incident returns "Bad Request" response
     Given operation "DeleteIncident" enabled
     And new "DeleteIncident" request
@@ -157,7 +157,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:DataDog/api-clients @team:DataDog/incident-app
   Scenario: Delete an existing incident returns "Not Found" response
     Given operation "DeleteIncident" enabled
     And new "DeleteIncident" request
@@ -165,7 +165,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/incident-app
+  @team:DataDog/api-clients @team:DataDog/incident-app
   Scenario: Delete an existing incident returns "OK" response
     Given operation "DeleteIncident" enabled
     And there is a valid "incident" in the system
@@ -174,7 +174,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 204 OK
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:DataDog/api-clients @team:DataDog/incident-app
   Scenario: Delete an incident integration metadata returns "Bad Request" response
     Given operation "DeleteIncidentIntegration" enabled
     And new "DeleteIncidentIntegration" request
@@ -183,7 +183,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:DataDog/api-clients @team:DataDog/incident-app
   Scenario: Delete an incident integration metadata returns "Not Found" response
     Given operation "DeleteIncidentIntegration" enabled
     And new "DeleteIncidentIntegration" request
@@ -192,7 +192,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/incident-app
+  @team:DataDog/api-clients @team:DataDog/incident-app
   Scenario: Delete an incident integration metadata returns "OK" response
     Given operation "DeleteIncidentIntegration" enabled
     And new "DeleteIncidentIntegration" request
@@ -203,7 +203,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 204 OK
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:DataDog/api-clients @team:Datadog/incident-app
   Scenario: Delete an incident todo returns "Bad Request" response
     Given operation "DeleteIncidentTodo" enabled
     And new "DeleteIncidentTodo" request
@@ -212,7 +212,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:DataDog/api-clients @team:Datadog/incident-app
   Scenario: Delete an incident todo returns "Not Found" response
     Given operation "DeleteIncidentTodo" enabled
     And new "DeleteIncidentTodo" request
@@ -221,7 +221,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @replay-only @team:Datadog/incident-app
+  @replay-only @team:DataDog/api-clients @team:Datadog/incident-app
   Scenario: Delete an incident todo returns "OK" response
     Given operation "DeleteIncidentTodo" enabled
     And new "DeleteIncidentTodo" request
@@ -232,7 +232,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 204 OK
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:DataDog/api-clients @team:DataDog/incident-app
   Scenario: Get a list of an incident's integration metadata returns "Bad Request" response
     Given operation "ListIncidentIntegrations" enabled
     And new "ListIncidentIntegrations" request
@@ -240,7 +240,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:DataDog/api-clients @team:DataDog/incident-app
   Scenario: Get a list of an incident's integration metadata returns "Not Found" response
     Given operation "ListIncidentIntegrations" enabled
     And new "ListIncidentIntegrations" request
@@ -248,7 +248,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/incident-app
+  @team:DataDog/api-clients @team:DataDog/incident-app
   Scenario: Get a list of an incident's integration metadata returns "OK" response
     Given operation "ListIncidentIntegrations" enabled
     And new "ListIncidentIntegrations" request
@@ -259,7 +259,7 @@ Feature: Incidents
     Then the response status is 200 OK
     And the response "data[0].attributes.metadata.channels[0].channel_name" is equal to "#example-channel-name"
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:DataDog/api-clients @team:Datadog/incident-app
   Scenario: Get a list of an incident's todos returns "Bad Request" response
     Given operation "ListIncidentTodos" enabled
     And new "ListIncidentTodos" request
@@ -267,7 +267,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:DataDog/api-clients @team:Datadog/incident-app
   Scenario: Get a list of an incident's todos returns "Not Found" response
     Given operation "ListIncidentTodos" enabled
     And new "ListIncidentTodos" request
@@ -275,7 +275,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @replay-only @team:Datadog/incident-app
+  @replay-only @team:DataDog/api-clients @team:Datadog/incident-app
   Scenario: Get a list of an incident's todos returns "OK" response
     Given operation "ListIncidentTodos" enabled
     And new "ListIncidentTodos" request
@@ -288,7 +288,7 @@ Feature: Incidents
     And the response "data[0].attributes.assignees" has length 2
     And the response "data[0].attributes.content" is equal to "Follow up with customer about the impact they saw."
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:DataDog/api-clients @team:DataDog/incident-app
   Scenario: Get a list of attachments returns "Bad Request" response
     Given operation "ListIncidentAttachments" enabled
     And new "ListIncidentAttachments" request
@@ -296,7 +296,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:DataDog/api-clients @team:DataDog/incident-app
   Scenario: Get a list of attachments returns "Not Found" response
     Given operation "ListIncidentAttachments" enabled
     And new "ListIncidentAttachments" request
@@ -304,7 +304,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:DataDog/api-clients @team:DataDog/incident-app
   Scenario: Get a list of attachments returns "OK" response
     Given operation "ListIncidentAttachments" enabled
     And new "ListIncidentAttachments" request
@@ -312,21 +312,21 @@ Feature: Incidents
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:DataDog/api-clients @team:DataDog/incident-app
   Scenario: Get a list of incidents returns "Bad Request" response
     Given operation "ListIncidents" enabled
     And new "ListIncidents" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:DataDog/api-clients @team:DataDog/incident-app
   Scenario: Get a list of incidents returns "Not Found" response
     Given operation "ListIncidents" enabled
     And new "ListIncidents" request
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/incident-app
+  @team:DataDog/api-clients @team:DataDog/incident-app
   Scenario: Get a list of incidents returns "OK" response
     Given operation "ListIncidents" enabled
     And there is a valid "incident" in the system
@@ -335,7 +335,7 @@ Feature: Incidents
     Then the response status is 200 OK
     And the response "data[0].type" is equal to "incidents"
 
-  @replay-only @skip-validation @team:DataDog/incident-app @with-pagination
+  @replay-only @skip-validation @team:DataDog/api-clients @team:DataDog/incident-app @with-pagination
   Scenario: Get a list of incidents returns "OK" response with pagination
     Given operation "ListIncidents" enabled
     And new "ListIncidents" request
@@ -344,7 +344,7 @@ Feature: Incidents
     Then the response status is 200 OK
     And the response has 3 items
 
-  @team:DataDog/incident-app
+  @team:DataDog/api-clients @team:DataDog/incident-app
   Scenario: Get incident attachments returns "OK" response
     Given operation "ListIncidentAttachments" enabled
     And there is a valid "incident" in the system
@@ -358,7 +358,7 @@ Feature: Incidents
     And the response "data[0].attributes.attachment_type" is equal to "link"
     And the response "data[0].attributes.attachment.documentUrl" is equal to "https://www.example.com/doc"
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:DataDog/api-clients @team:DataDog/incident-app
   Scenario: Get incident integration metadata details returns "Bad Request" response
     Given operation "GetIncidentIntegration" enabled
     And new "GetIncidentIntegration" request
@@ -367,7 +367,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:DataDog/api-clients @team:DataDog/incident-app
   Scenario: Get incident integration metadata details returns "Not Found" response
     Given operation "GetIncidentIntegration" enabled
     And new "GetIncidentIntegration" request
@@ -376,7 +376,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/incident-app
+  @team:DataDog/api-clients @team:DataDog/incident-app
   Scenario: Get incident integration metadata details returns "OK" response
     Given operation "GetIncidentIntegration" enabled
     And new "GetIncidentIntegration" request
@@ -387,7 +387,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:DataDog/api-clients @team:Datadog/incident-app
   Scenario: Get incident todo details returns "Bad Request" response
     Given operation "GetIncidentTodo" enabled
     And new "GetIncidentTodo" request
@@ -396,7 +396,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:DataDog/api-clients @team:Datadog/incident-app
   Scenario: Get incident todo details returns "Not Found" response
     Given operation "GetIncidentTodo" enabled
     And new "GetIncidentTodo" request
@@ -405,7 +405,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @replay-only @team:Datadog/incident-app
+  @replay-only @team:DataDog/api-clients @team:Datadog/incident-app
   Scenario: Get incident todo details returns "OK" response
     Given operation "GetIncidentTodo" enabled
     And new "GetIncidentTodo" request
@@ -418,7 +418,7 @@ Feature: Incidents
     And the response "data.attributes.assignees" has length 2
     And the response "data.attributes.content" is equal to "Follow up with customer about the impact they saw."
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:DataDog/api-clients @team:DataDog/incident-app
   Scenario: Get the details of an incident returns "Bad Request" response
     Given operation "GetIncident" enabled
     And new "GetIncident" request
@@ -426,7 +426,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:DataDog/api-clients @team:DataDog/incident-app
   Scenario: Get the details of an incident returns "Not Found" response
     Given operation "GetIncident" enabled
     And new "GetIncident" request
@@ -434,7 +434,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/incident-app
+  @team:DataDog/api-clients @team:DataDog/incident-app
   Scenario: Get the details of an incident returns "OK" response
     Given operation "GetIncident" enabled
     And there is a valid "incident" in the system
@@ -444,7 +444,7 @@ Feature: Incidents
     Then the response status is 200 OK
     And the response "data.attributes.title" has the same value as "incident.data.attributes.title"
 
-  @team:DataDog/incident-app
+  @team:DataDog/api-clients @team:DataDog/incident-app
   Scenario: Remove commander from an incident returns "OK" response
     Given operation "UpdateIncident" enabled
     And there is a valid "incident" in the system
@@ -455,7 +455,7 @@ Feature: Incidents
     Then the response status is 200 OK
     And the response "data.relationships.commander_user.data" is equal to null
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:DataDog/api-clients @team:DataDog/incident-app
   Scenario: Search for incidents returns "Bad Request" response
     Given operation "SearchIncidents" enabled
     And new "SearchIncidents" request
@@ -463,7 +463,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:DataDog/api-clients @team:DataDog/incident-app
   Scenario: Search for incidents returns "Not Found" response
     Given operation "SearchIncidents" enabled
     And new "SearchIncidents" request
@@ -471,7 +471,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @skip-validation @team:DataDog/incident-app
+  @skip-validation @team:DataDog/api-clients @team:DataDog/incident-app
   Scenario: Search for incidents returns "OK" response
     Given operation "SearchIncidents" enabled
     And there is a valid "incident" in the system
@@ -482,7 +482,7 @@ Feature: Incidents
     And the response "data.type" is equal to "incidents_search_results"
     And the response "data.attributes.incidents[0].data.type" is equal to "incidents"
 
-  @replay-only @skip-validation @team:DataDog/incident-app @with-pagination
+  @replay-only @skip-validation @team:DataDog/api-clients @team:DataDog/incident-app @with-pagination
   Scenario: Search for incidents returns "OK" response with pagination
     Given operation "SearchIncidents" enabled
     And new "SearchIncidents" request
@@ -492,7 +492,7 @@ Feature: Incidents
     Then the response status is 200 OK
     And the response has 3 items
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:DataDog/api-clients @team:DataDog/incident-app
   Scenario: Update an existing incident integration metadata returns "Bad Request" response
     Given operation "UpdateIncidentIntegration" enabled
     And new "UpdateIncidentIntegration" request
@@ -502,7 +502,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:DataDog/api-clients @team:DataDog/incident-app
   Scenario: Update an existing incident integration metadata returns "Not Found" response
     Given operation "UpdateIncidentIntegration" enabled
     And new "UpdateIncidentIntegration" request
@@ -512,7 +512,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/incident-app
+  @team:DataDog/api-clients @team:DataDog/incident-app
   Scenario: Update an existing incident integration metadata returns "OK" response
     Given operation "UpdateIncidentIntegration" enabled
     And new "UpdateIncidentIntegration" request
@@ -525,7 +525,7 @@ Feature: Incidents
     Then the response status is 200 OK
     And the response "data.attributes.metadata.channels[0].channel_name" is equal to "#updated-channel-name"
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:DataDog/api-clients @team:DataDog/incident-app
   Scenario: Update an existing incident returns "Bad Request" response
     Given operation "UpdateIncident" enabled
     And new "UpdateIncident" request
@@ -534,7 +534,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:DataDog/api-clients @team:DataDog/incident-app
   Scenario: Update an existing incident returns "Not Found" response
     Given operation "UpdateIncident" enabled
     And new "UpdateIncident" request
@@ -543,7 +543,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/incident-app
+  @team:DataDog/api-clients @team:DataDog/incident-app
   Scenario: Update an existing incident returns "OK" response
     Given operation "UpdateIncident" enabled
     And there is a valid "incident" in the system
@@ -554,7 +554,7 @@ Feature: Incidents
     Then the response status is 200 OK
     And the response "data.attributes.title" is equal to "{{ incident.data.attributes.title }}-updated"
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:DataDog/api-clients @team:Datadog/incident-app
   Scenario: Update an incident todo returns "Bad Request" response
     Given operation "UpdateIncidentTodo" enabled
     And new "UpdateIncidentTodo" request
@@ -564,7 +564,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:DataDog/api-clients @team:Datadog/incident-app
   Scenario: Update an incident todo returns "Not Found" response
     Given operation "UpdateIncidentTodo" enabled
     And new "UpdateIncidentTodo" request
@@ -574,7 +574,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:Datadog/incident-app
+  @team:DataDog/api-clients @team:Datadog/incident-app
   Scenario: Update an incident todo returns "OK" response
     Given operation "UpdateIncidentTodo" enabled
     And new "UpdateIncidentTodo" request
