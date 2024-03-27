@@ -714,6 +714,26 @@ class SecurityMonitoringApi:
             api_client=api_client,
         )
 
+        self._validate_security_monitoring_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/rules/validation",
+                "operation_id": "validate_security_monitoring_rule",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (SecurityMonitoringRuleCreatePayload,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
     def create_security_filter(
         self,
         body: SecurityFilterCreateRequest,
@@ -1503,3 +1523,24 @@ class SecurityMonitoringApi:
         kwargs["body"] = body
 
         return self._update_security_monitoring_suppression_endpoint.call_with_http_info(**kwargs)
+
+    def validate_security_monitoring_rule(
+        self,
+        body: Union[
+            SecurityMonitoringRuleCreatePayload,
+            SecurityMonitoringStandardRuleCreatePayload,
+            SecurityMonitoringSignalRuleCreatePayload,
+            CloudConfigurationRuleCreatePayload,
+        ],
+    ) -> None:
+        """Validate a detection rule.
+
+        Validate a detection rule.
+
+        :type body: SecurityMonitoringRuleCreatePayload
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._validate_security_monitoring_rule_endpoint.call_with_http_info(**kwargs)

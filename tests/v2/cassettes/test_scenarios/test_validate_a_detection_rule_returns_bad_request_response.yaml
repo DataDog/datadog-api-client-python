@@ -1,0 +1,26 @@
+interactions:
+- request:
+    body: '{"cases":[{"condition":"a > 0","name":"","notifications":[],"status":"info"}],"hasExtendedTitle":true,"isEnabled":true,"message":"My
+      security monitoring rule","name":"My security monitoring rule","options":{"detectionMethod":"threshold","evaluationWindow":1800,"keepAlive":999999,"maxSignalDuration":1800},"queries":[{"aggregation":"count","distinctFields":[],"groupByFields":["@userIdentity.assumed_role"],"name":"","query":"source:source_here"}],"tags":["env:prod","team:security"],"type":"log_detection"}'
+    headers:
+      accept:
+      - '*/*'
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/validation
+  response:
+    body:
+      string: '{"error":{"code":"InvalidArgument","message":"Invalid rule configuration","details":[{"code":"InvalidArgument","message":"Max
+        signal duration must be greater than or equal to keep alive","target":"maxSignalDuration"},{"code":"InvalidArgument","message":"Keep
+        alive is not in allowed durations: 0, 1, 5, 10, 15, 30, 60, 120, 180, 360
+        (in minutes)","target":"keepAlive"}]}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 400
+      message: Bad Request
+version: 1

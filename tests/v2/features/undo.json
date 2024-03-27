@@ -1751,6 +1751,12 @@
       "type": "unsafe"
     }
   },
+  "ValidateSecurityMonitoringRule": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "DeleteSecurityMonitoringRule": {
     "tag": "Security Monitoring",
     "undo": {
