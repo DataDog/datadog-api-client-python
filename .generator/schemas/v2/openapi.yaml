@@ -32287,6 +32287,34 @@ paths:
       tags:
       - Security Monitoring
       x-codegen-request-body-name: body
+  /api/v2/security_monitoring/rules/validation:
+    post:
+      description: Validate a detection rule.
+      operationId: ValidateSecurityMonitoringRule
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SecurityMonitoringRuleCreatePayload'
+        required: true
+      responses:
+        '204':
+          description: OK
+        '400':
+          $ref: '#/components/responses/BadRequestResponse'
+        '403':
+          $ref: '#/components/responses/NotAuthorizedResponse'
+        '429':
+          $ref: '#/components/responses/TooManyRequestsResponse'
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ:
+        - security_monitoring_rules_write
+      summary: Validate a detection rule
+      tags:
+      - Security Monitoring
+      x-codegen-request-body-name: body
   /api/v2/security_monitoring/rules/{rule_id}:
     delete:
       description: Delete an existing rule. Default rules cannot be deleted.
