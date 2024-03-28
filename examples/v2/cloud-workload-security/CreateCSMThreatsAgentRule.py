@@ -21,7 +21,7 @@ body = CloudWorkloadSecurityAgentRuleCreateRequest(
             description="My Agent rule",
             enabled=True,
             expression='exec.file.name == "sh"',
-            name="my_agent_rule",
+            name="examplecloudworkloadsecurity",
         ),
         type=CloudWorkloadSecurityAgentRuleType.AGENT_RULE,
     ),
