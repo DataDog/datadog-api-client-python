@@ -17,6 +17,8 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.authn_mapping_update_attributes import AuthNMappingUpdateAttributes
     from datadog_api_client.v2.model.authn_mapping_update_relationships import AuthNMappingUpdateRelationships
     from datadog_api_client.v2.model.authn_mappings_type import AuthNMappingsType
+    from datadog_api_client.v2.model.authn_mapping_relationship_to_role import AuthNMappingRelationshipToRole
+    from datadog_api_client.v2.model.authn_mapping_relationship_to_team import AuthNMappingRelationshipToTeam
 
 
 class AuthNMappingUpdateData(ModelNormal):
@@ -45,7 +47,9 @@ class AuthNMappingUpdateData(ModelNormal):
         id: str,
         type: AuthNMappingsType,
         attributes: Union[AuthNMappingUpdateAttributes, UnsetType] = unset,
-        relationships: Union[AuthNMappingUpdateRelationships, UnsetType] = unset,
+        relationships: Union[
+            AuthNMappingUpdateRelationships, AuthNMappingRelationshipToRole, AuthNMappingRelationshipToTeam, UnsetType
+        ] = unset,
         **kwargs,
     ):
         """
@@ -57,7 +61,7 @@ class AuthNMappingUpdateData(ModelNormal):
         :param id: ID of the AuthN Mapping.
         :type id: str
 
-        :param relationships: Relationship of AuthN Mapping update object to Role.
+        :param relationships: Relationship of AuthN Mapping update object to a Role or Team.
         :type relationships: AuthNMappingUpdateRelationships, optional
 
         :param type: AuthN Mappings resource type.

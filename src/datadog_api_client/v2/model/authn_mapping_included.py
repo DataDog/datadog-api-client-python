@@ -40,10 +40,12 @@ class AuthNMappingIncluded(ModelComposed):
         # loading
         from datadog_api_client.v2.model.saml_assertion_attribute import SAMLAssertionAttribute
         from datadog_api_client.v2.model.role import Role
+        from datadog_api_client.v2.model.authn_mapping_team import AuthNMappingTeam
 
         return {
             "oneOf": [
                 SAMLAssertionAttribute,
                 Role,
+                AuthNMappingTeam,
             ],
         }

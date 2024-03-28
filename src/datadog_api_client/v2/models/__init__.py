@@ -56,8 +56,12 @@ from datadog_api_client.v2.model.authn_mapping_create_data import AuthNMappingCr
 from datadog_api_client.v2.model.authn_mapping_create_relationships import AuthNMappingCreateRelationships
 from datadog_api_client.v2.model.authn_mapping_create_request import AuthNMappingCreateRequest
 from datadog_api_client.v2.model.authn_mapping_included import AuthNMappingIncluded
+from datadog_api_client.v2.model.authn_mapping_relationship_to_role import AuthNMappingRelationshipToRole
+from datadog_api_client.v2.model.authn_mapping_relationship_to_team import AuthNMappingRelationshipToTeam
 from datadog_api_client.v2.model.authn_mapping_relationships import AuthNMappingRelationships
 from datadog_api_client.v2.model.authn_mapping_response import AuthNMappingResponse
+from datadog_api_client.v2.model.authn_mapping_team import AuthNMappingTeam
+from datadog_api_client.v2.model.authn_mapping_team_attributes import AuthNMappingTeamAttributes
 from datadog_api_client.v2.model.authn_mapping_update_attributes import AuthNMappingUpdateAttributes
 from datadog_api_client.v2.model.authn_mapping_update_data import AuthNMappingUpdateData
 from datadog_api_client.v2.model.authn_mapping_update_relationships import AuthNMappingUpdateRelationships
@@ -1187,6 +1191,8 @@ from datadog_api_client.v2.model.relationship_to_saml_assertion_attribute import
 from datadog_api_client.v2.model.relationship_to_saml_assertion_attribute_data import (
     RelationshipToSAMLAssertionAttributeData,
 )
+from datadog_api_client.v2.model.relationship_to_team import RelationshipToTeam
+from datadog_api_client.v2.model.relationship_to_team_data import RelationshipToTeamData
 from datadog_api_client.v2.model.relationship_to_team_link_data import RelationshipToTeamLinkData
 from datadog_api_client.v2.model.relationship_to_team_links import RelationshipToTeamLinks
 from datadog_api_client.v2.model.relationship_to_user import RelationshipToUser
@@ -1834,8 +1840,12 @@ __all__ = [
     "AuthNMappingCreateRelationships",
     "AuthNMappingCreateRequest",
     "AuthNMappingIncluded",
+    "AuthNMappingRelationshipToRole",
+    "AuthNMappingRelationshipToTeam",
     "AuthNMappingRelationships",
     "AuthNMappingResponse",
+    "AuthNMappingTeam",
+    "AuthNMappingTeamAttributes",
     "AuthNMappingUpdateAttributes",
     "AuthNMappingUpdateData",
     "AuthNMappingUpdateRelationships",
@@ -2781,6 +2791,8 @@ __all__ = [
     "RelationshipToRuleDataObject",
     "RelationshipToSAMLAssertionAttribute",
     "RelationshipToSAMLAssertionAttributeData",
+    "RelationshipToTeam",
+    "RelationshipToTeamData",
     "RelationshipToTeamLinkData",
     "RelationshipToTeamLinks",
     "RelationshipToUser",

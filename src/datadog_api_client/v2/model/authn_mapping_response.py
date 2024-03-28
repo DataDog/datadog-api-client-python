@@ -18,6 +18,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.authn_mapping_included import AuthNMappingIncluded
     from datadog_api_client.v2.model.saml_assertion_attribute import SAMLAssertionAttribute
     from datadog_api_client.v2.model.role import Role
+    from datadog_api_client.v2.model.authn_mapping_team import AuthNMappingTeam
 
 
 class AuthNMappingResponse(ModelNormal):
@@ -39,7 +40,9 @@ class AuthNMappingResponse(ModelNormal):
     def __init__(
         self_,
         data: Union[AuthNMapping, UnsetType] = unset,
-        included: Union[List[Union[AuthNMappingIncluded, SAMLAssertionAttribute, Role]], UnsetType] = unset,
+        included: Union[
+            List[Union[AuthNMappingIncluded, SAMLAssertionAttribute, Role, AuthNMappingTeam]], UnsetType
+        ] = unset,
         **kwargs,
     ):
         """

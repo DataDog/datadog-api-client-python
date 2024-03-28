@@ -3,40 +3,41 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
-    ModelNormal,
+    ModelComposed,
     cached_property,
-    unset,
-    UnsetType,
 )
 
 
-if TYPE_CHECKING:
-    from datadog_api_client.v2.model.relationship_to_role import RelationshipToRole
-
-
-class AuthNMappingCreateRelationships(ModelNormal):
-    @cached_property
-    def openapi_types(_):
-        from datadog_api_client.v2.model.relationship_to_role import RelationshipToRole
-
-        return {
-            "role": (RelationshipToRole,),
-        }
-
-    attribute_map = {
-        "role": "role",
-    }
-
-    def __init__(self_, role: Union[RelationshipToRole, UnsetType] = unset, **kwargs):
+class AuthNMappingCreateRelationships(ModelComposed):
+    def __init__(self, **kwargs):
         """
-        Relationship of AuthN Mapping create object to Role.
+        Relationship of AuthN Mapping create object to a Role or Team.
 
         :param role: Relationship to role.
-        :type role: RelationshipToRole, optional
+        :type role: RelationshipToRole
+
+        :param team: Relationship to team.
+        :type team: RelationshipToTeam
         """
-        if role is not unset:
-            kwargs["role"] = role
         super().__init__(kwargs)
+
+    @cached_property
+    def _composed_schemas(_):
+        # we need this here to make our import statements work
+        # we must store _composed_schemas in here so the code is only run
+        # when we invoke this method. If we kept this at the class
+        # level we would get an error because the class level
+        # code would be run when this module is imported, and these composed
+        # classes don't exist yet because their module has not finished
+        # loading
+        from datadog_api_client.v2.model.authn_mapping_relationship_to_role import AuthNMappingRelationshipToRole
+        from datadog_api_client.v2.model.authn_mapping_relationship_to_team import AuthNMappingRelationshipToTeam
+
+        return {
+            "oneOf": [
+                AuthNMappingRelationshipToRole,
+                AuthNMappingRelationshipToTeam,
+            ],
+        }
