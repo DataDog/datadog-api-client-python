@@ -34,7 +34,7 @@ class TimeseriesResponseSeries(ModelNormal):
         return {
             "group_tags": (GroupTags,),
             "query_index": (int,),
-            "unit": ([Unit, none_type],),
+            "unit": ([Unit, none_type], none_type),
         }
 
     attribute_map = {
@@ -47,7 +47,7 @@ class TimeseriesResponseSeries(ModelNormal):
         self_,
         group_tags: Union[GroupTags, UnsetType] = unset,
         query_index: Union[int, UnsetType] = unset,
-        unit: Union[List[Unit], UnsetType] = unset,
+        unit: Union[List[Unit], none_type, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -63,7 +63,7 @@ class TimeseriesResponseSeries(ModelNormal):
             The first element describes the "primary unit" (for example, ``bytes`` in ``bytes per second`` ).
             The second element describes the "per unit" (for example, ``second`` in ``bytes per second`` ).
             If the second element is not present, the API returns null.
-        :type unit: [Unit, none_type], optional
+        :type unit: [Unit, none_type], none_type, optional
         """
         if group_tags is not unset:
             kwargs["group_tags"] = group_tags
