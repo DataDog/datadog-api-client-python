@@ -18,7 +18,7 @@ class SecurityMonitoringRuleCreatePayload(ModelComposed):
         :param cases: Cases for generating signals.
         :type cases: [SecurityMonitoringRuleCaseCreate]
 
-        :param filters: Additional queries to filter matched events before they are processed.
+        :param filters: Additional queries to filter matched events before they are processed. This field is deprecated for log detection, signal correlation, and workload security rules.
         :type filters: [SecurityMonitoringFilter], optional
 
         :param has_extended_title: Whether the notifications include the triggering group-by values in their title.

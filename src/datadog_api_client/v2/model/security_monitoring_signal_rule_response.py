@@ -113,7 +113,7 @@ class SecurityMonitoringSignalRuleResponse(ModelNormal):
         :param deprecation_date: When the rule will be deprecated, timestamp in milliseconds.
         :type deprecation_date: int, optional
 
-        :param filters: Additional queries to filter matched events before they are processed.
+        :param filters: Additional queries to filter matched events before they are processed. This field is deprecated for log detection, signal correlation, and workload security rules.
         :type filters: [SecurityMonitoringFilter], optional
 
         :param has_extended_title: Whether the notifications include the triggering group-by values in their title.
