@@ -275,6 +275,8 @@ class MonitorOptions(ModelNormal):
         :type renotify_occurrences: int, none_type, optional
 
         :param renotify_statuses: The types of monitor statuses for which re-notification messages are sent.
+            Default: **null** if ``renotify_interval`` is **null**.
+            If ``renotify_interval`` is set, defaults to renotify on ``Alert`` and ``No Data``.
         :type renotify_statuses: [MonitorRenotifyStatusType], none_type, optional
 
         :param require_full_window: A Boolean indicating whether this monitor needs a full window of data before it’s evaluated.
