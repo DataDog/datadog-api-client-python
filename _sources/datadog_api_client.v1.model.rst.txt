@@ -3571,6 +3571,13 @@ slo\_time\_slice\_condition
    :members:
    :show-inheritance:
 
+slo\_time\_slice\_interval
+--------------------------
+
+.. automodule:: datadog_api_client.v1.model.slo_time_slice_interval
+   :members:
+   :show-inheritance:
+
 slo\_time\_slice\_query
 -----------------------
 

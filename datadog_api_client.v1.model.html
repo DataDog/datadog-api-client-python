@@ -3302,6 +3302,12 @@
         </li></ul>
             </nav>
         </li>
+        <li class="md-nav__item"><a href="#module-datadog_api_client.v1.model.slo_time_slice_interval" class="md-nav__link">slo_time_slice_interval</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v1.model.slo_time_slice_interval.SLOTimeSliceInterval" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SLOTimeSliceInterval</span></code></a>
+        </li></ul>
+            </nav>
+        </li>
         <li class="md-nav__item"><a href="#module-datadog_api_client.v1.model.slo_time_slice_query" class="md-nav__link">slo_time_slice_query</a><nav class="md-nav">
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#datadog_api_client.v1.model.slo_time_slice_query.SLOTimeSliceQuery" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SLOTimeSliceQuery</span></code></a>
@@ -8975,6 +8981,12 @@
         <li class="md-nav__item"><a href="#module-datadog_api_client.v1.model.slo_time_slice_condition" class="md-nav__link">slo_time_slice_condition</a><nav class="md-nav">
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#datadog_api_client.v1.model.slo_time_slice_condition.SLOTimeSliceCondition" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SLOTimeSliceCondition</span></code></a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#module-datadog_api_client.v1.model.slo_time_slice_interval" class="md-nav__link">slo_time_slice_interval</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v1.model.slo_time_slice_interval.SLOTimeSliceInterval" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SLOTimeSliceInterval</span></code></a>
         </li></ul>
             </nav>
         </li>
@@ -22290,7 +22302,7 @@ threshold.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>time_slice</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.slo_time_slice_condition.SLOTimeSliceCondition" title="datadog_api_client.v1.model.slo_time_slice_condition.SLOTimeSliceCondition"><em>SLOTimeSliceCondition</em></a>) – The time-slice condition, composed of 3 parts: 1. the metric timeseries query, 2. the comparator,
-and 3. the threshold.</p>
+and 3. the threshold. Optionally, a fourth part, the query interval, can be provided.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -22408,13 +22420,47 @@ type conversion is done.</p></li>
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SLOTimeSliceCondition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datadog_api_client.v1.model.slo_time_slice_condition.SLOTimeSliceCondition" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.ModelNormal" title="datadog_api_client.model_utils.ModelNormal"><code class="xref py py-class docutils literal notranslate"><span class="pre">ModelNormal</span></code></a></p>
 <p>The time-slice condition, composed of 3 parts: 1. the metric timeseries query, 2. the comparator,
-and 3. the threshold.</p>
+and 3. the threshold. Optionally, a fourth part, the query interval, can be provided.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>comparator</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.slo_time_slice_comparator.SLOTimeSliceComparator" title="datadog_api_client.v1.model.slo_time_slice_comparator.SLOTimeSliceComparator"><em>SLOTimeSliceComparator</em></a>) – The comparator used to compare the SLI value to the threshold.</p></li>
 <li><p><strong>query</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.slo_time_slice_query.SLOTimeSliceQuery" title="datadog_api_client.v1.model.slo_time_slice_query.SLOTimeSliceQuery"><em>SLOTimeSliceQuery</em></a>) – The queries and formula used to calculate the SLI value.</p></li>
+<li><p><strong>query_interval_seconds</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.slo_time_slice_interval.SLOTimeSliceInterval" title="datadog_api_client.v1.model.slo_time_slice_interval.SLOTimeSliceInterval"><em>SLOTimeSliceInterval</em></a><em>, </em><em>optional</em>) – The interval used when querying data, which defines the size of a time slice.
+Two values are allowed: 60 (1 minute) and 300 (5 minutes).
+If not provided, the value defaults to 300 (5 minutes).</p></li>
 <li><p><strong>threshold</strong> (<em>float</em>) – The threshold value to which each SLI value will be compared.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+</section>
+<section id="module-datadog_api_client.v1.model.slo_time_slice_interval">
+<span id="slo-time-slice-interval"></span><h2 id="module-datadog_api_client.v1.model.slo_time_slice_interval">slo_time_slice_interval<a class="headerlink" href="#module-datadog_api_client.v1.model.slo_time_slice_interval" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datadog_api_client.v1.model.slo_time_slice_interval.SLOTimeSliceInterval">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SLOTimeSliceInterval</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datadog_api_client.v1.model.slo_time_slice_interval.SLOTimeSliceInterval" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.ModelSimple" title="datadog_api_client.model_utils.ModelSimple"><code class="xref py py-class docutils literal notranslate"><span class="pre">ModelSimple</span></code></a></p>
+<dl class="simple">
+<dt>The interval used when querying data, which defines the size of a time slice.</dt><dd><p>Two values are allowed: 60 (1 minute) and 300 (5 minutes).
+If not provided, the value defaults to 300 (5 minutes).</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> (<em>int</em>) – Must be one of [60, 300].</p></li>
+<li><p><strong>_check_type</strong> (<em>bool</em>) – If True, values for parameters in openapi_types
+will be type checked and a TypeError will be raised if the wrong type is input.
+Defaults to True.</p></li>
+<li><p><strong>_path_to_item</strong> (<em>tuple/list</em>) – This is a list of keys or values to drill down to
+the model in received_data when deserializing a response.</p></li>
+<li><p><strong>_spec_property_naming</strong> (<em>bool</em>) – True if the variable names in the input
+data are serialized names, as specified in the OpenAPI document.  False if the
+variable names in the input data are pythonic names, e.g. snake case (default).</p></li>
+<li><p><strong>_configuration</strong> (<a class="reference internal" href="datadog_api_client.v1.html#datadog_api_client.v1.Configuration" title="datadog_api_client.v1.Configuration"><em>Configuration</em></a>) – The instance to use when deserializing a
+file_type parameter.  If passed, type conversion is attempted If omitted no
+type conversion is done.</p></li>
 </ul>
 </dd>
 </dl>
@@ -22447,7 +22493,7 @@ and 3. the threshold.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>time_slice</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.slo_time_slice_condition.SLOTimeSliceCondition" title="datadog_api_client.v1.model.slo_time_slice_condition.SLOTimeSliceCondition"><em>SLOTimeSliceCondition</em></a>) – The time-slice condition, composed of 3 parts: 1. the metric timeseries query, 2. the comparator,
-and 3. the threshold.</p>
+and 3. the threshold. Optionally, a fourth part, the query interval, can be provided.</p>
 </dd>
 </dl>
 </dd></dl>
