@@ -517,6 +517,7 @@ from datadog_api_client.v1.model.slo_status import SLOStatus
 from datadog_api_client.v1.model.slo_threshold import SLOThreshold
 from datadog_api_client.v1.model.slo_time_slice_comparator import SLOTimeSliceComparator
 from datadog_api_client.v1.model.slo_time_slice_condition import SLOTimeSliceCondition
+from datadog_api_client.v1.model.slo_time_slice_interval import SLOTimeSliceInterval
 from datadog_api_client.v1.model.slo_time_slice_query import SLOTimeSliceQuery
 from datadog_api_client.v1.model.slo_time_slice_spec import SLOTimeSliceSpec
 from datadog_api_client.v1.model.slo_timeframe import SLOTimeframe
@@ -1416,6 +1417,7 @@ __all__ = [
     "SLOThreshold",
     "SLOTimeSliceComparator",
     "SLOTimeSliceCondition",
+    "SLOTimeSliceInterval",
     "SLOTimeSliceQuery",
     "SLOTimeSliceSpec",
     "SLOTimeframe",
