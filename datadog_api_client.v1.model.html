@@ -4202,6 +4202,12 @@
         </li></ul>
             </nav>
         </li>
+        <li class="md-nav__item"><a href="#module-datadog_api_client.v1.model.synthetics_test_request_body_file" class="md-nav__link">synthetics_test_request_body_file</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v1.model.synthetics_test_request_body_file.SyntheticsTestRequestBodyFile" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SyntheticsTestRequestBodyFile</span></code></a>
+        </li></ul>
+            </nav>
+        </li>
         <li class="md-nav__item"><a href="#module-datadog_api_client.v1.model.synthetics_test_request_body_type" class="md-nav__link">synthetics_test_request_body_type</a><nav class="md-nav">
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#datadog_api_client.v1.model.synthetics_test_request_body_type.SyntheticsTestRequestBodyType" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SyntheticsTestRequestBodyType</span></code></a>
@@ -9881,6 +9887,12 @@
         <li class="md-nav__item"><a href="#module-datadog_api_client.v1.model.synthetics_test_request" class="md-nav__link">synthetics_test_request</a><nav class="md-nav">
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#datadog_api_client.v1.model.synthetics_test_request.SyntheticsTestRequest" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SyntheticsTestRequest</span></code></a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#module-datadog_api_client.v1.model.synthetics_test_request_body_file" class="md-nav__link">synthetics_test_request_body_file</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v1.model.synthetics_test_request_body_file.SyntheticsTestRequestBodyFile" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SyntheticsTestRequestBodyFile</span></code></a>
         </li></ul>
             </nav>
         </li>
@@ -25768,6 +25780,7 @@ type conversion is done.</p></li>
 <li><p><strong>compressed_proto_file</strong> (<em>str</em><em>, </em><em>optional</em>) – A protobuf file that needs to be gzipped first then base64 encoded.</p></li>
 <li><p><strong>dns_server</strong> (<em>str</em><em>, </em><em>optional</em>) – DNS server to use for DNS tests.</p></li>
 <li><p><strong>dns_server_port</strong> (<em>int</em><em>, </em><em>optional</em>) – DNS server port to use for DNS tests.</p></li>
+<li><p><strong>files</strong> (<em>[</em><a class="reference internal" href="#datadog_api_client.v1.model.synthetics_test_request_body_file.SyntheticsTestRequestBodyFile" title="datadog_api_client.v1.model.synthetics_test_request_body_file.SyntheticsTestRequestBodyFile"><em>SyntheticsTestRequestBodyFile</em></a><em>]</em><em>, </em><em>optional</em>) – Files to be used as part of the request in the test.</p></li>
 <li><p><strong>follow_redirects</strong> (<em>bool</em><em>, </em><em>optional</em>) – Specifies whether or not the request follows redirects.</p></li>
 <li><p><strong>headers</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.synthetics_test_headers.SyntheticsTestHeaders" title="datadog_api_client.v1.model.synthetics_test_headers.SyntheticsTestHeaders"><em>SyntheticsTestHeaders</em></a><em>, </em><em>optional</em>) – Headers to include when performing the test.</p></li>
 <li><p><strong>host</strong> (<em>str</em><em>, </em><em>optional</em>) – Host name to perform the test with.</p></li>
@@ -25793,6 +25806,26 @@ the same IP address and TCP port number.</p></li>
 </dl>
 </dd></dl>
 </section>
+<section id="module-datadog_api_client.v1.model.synthetics_test_request_body_file">
+<span id="synthetics-test-request-body-file"></span><h2 id="module-datadog_api_client.v1.model.synthetics_test_request_body_file">synthetics_test_request_body_file<a class="headerlink" href="#module-datadog_api_client.v1.model.synthetics_test_request_body_file" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datadog_api_client.v1.model.synthetics_test_request_body_file.SyntheticsTestRequestBodyFile">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SyntheticsTestRequestBodyFile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datadog_api_client.v1.model.synthetics_test_request_body_file.SyntheticsTestRequestBodyFile" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.ModelNormal" title="datadog_api_client.model_utils.ModelNormal"><code class="xref py py-class docutils literal notranslate"><span class="pre">ModelNormal</span></code></a></p>
+<p>Object describing a file to be used as part of the request in the test.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>bucket_key</strong> (<em>str</em><em>, </em><em>optional</em>) – Bucket key of the file.</p></li>
+<li><p><strong>content</strong> (<em>str</em><em>, </em><em>optional</em>) – Content of the file.</p></li>
+<li><p><strong>name</strong> (<em>str</em><em>, </em><em>optional</em>) – Name of the file.</p></li>
+<li><p><strong>size</strong> (<em>int</em><em>, </em><em>optional</em>) – Size of the file.</p></li>
+<li><p><strong>type</strong> (<em>str</em><em>, </em><em>optional</em>) – Type of the file.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+</section>
 <section id="module-datadog_api_client.v1.model.synthetics_test_request_body_type">
 <span id="synthetics-test-request-body-type"></span><h2 id="module-datadog_api_client.v1.model.synthetics_test_request_body_type">synthetics_test_request_body_type<a class="headerlink" href="#module-datadog_api_client.v1.model.synthetics_test_request_body_type" title="Link to this heading">¶</a></h2>
 <dl class="py class">
@@ -25803,7 +25836,7 @@ the same IP address and TCP port number.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>value</strong> (<em>str</em>) – Must be one of [“text/plain”, “application/json”, “text/xml”, “text/html”, “application/x-www-form-urlencoded”, “graphql”].</p></li>
+<li><p><strong>value</strong> (<em>str</em>) – Must be one of [“text/plain”, “application/json”, “text/xml”, “text/html”, “application/x-www-form-urlencoded”, “graphql”, “application/octet-stream”, “multipart/form-data”].</p></li>
 <li><p><strong>_check_type</strong> (<em>bool</em>) – If True, values for parameters in openapi_types
 will be type checked and a TypeError will be raised if the wrong type is input.
 Defaults to True.</p></li>
