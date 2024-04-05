@@ -757,6 +757,7 @@ from datadog_api_client.v1.model.synthetics_test_options_scheduling_timeframe im
 from datadog_api_client.v1.model.synthetics_test_pause_status import SyntheticsTestPauseStatus
 from datadog_api_client.v1.model.synthetics_test_process_status import SyntheticsTestProcessStatus
 from datadog_api_client.v1.model.synthetics_test_request import SyntheticsTestRequest
+from datadog_api_client.v1.model.synthetics_test_request_body_file import SyntheticsTestRequestBodyFile
 from datadog_api_client.v1.model.synthetics_test_request_body_type import SyntheticsTestRequestBodyType
 from datadog_api_client.v1.model.synthetics_test_request_certificate import SyntheticsTestRequestCertificate
 from datadog_api_client.v1.model.synthetics_test_request_certificate_item import SyntheticsTestRequestCertificateItem
@@ -1621,6 +1622,7 @@ __all__ = [
     "SyntheticsTestPauseStatus",
     "SyntheticsTestProcessStatus",
     "SyntheticsTestRequest",
+    "SyntheticsTestRequestBodyFile",
     "SyntheticsTestRequestBodyType",
     "SyntheticsTestRequestCertificate",
     "SyntheticsTestRequestCertificateItem",
