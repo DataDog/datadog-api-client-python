@@ -16,7 +16,7 @@ class SyntheticsTestRequestBodyType(ModelSimple):
     """
     Type of the request body.
 
-    :param value: Must be one of ["text/plain", "application/json", "text/xml", "text/html", "application/x-www-form-urlencoded", "graphql"].
+    :param value: Must be one of ["text/plain", "application/json", "text/xml", "text/html", "application/x-www-form-urlencoded", "graphql", "application/octet-stream", "multipart/form-data"].
     :type value: str
     """
 
@@ -27,6 +27,8 @@ class SyntheticsTestRequestBodyType(ModelSimple):
         "text/html",
         "application/x-www-form-urlencoded",
         "graphql",
+        "application/octet-stream",
+        "multipart/form-data",
     }
     TEXT_PLAIN: ClassVar["SyntheticsTestRequestBodyType"]
     APPLICATION_JSON: ClassVar["SyntheticsTestRequestBodyType"]
@@ -34,6 +36,8 @@ class SyntheticsTestRequestBodyType(ModelSimple):
     TEXT_HTML: ClassVar["SyntheticsTestRequestBodyType"]
     APPLICATION_X_WWW_FORM_URLENCODED: ClassVar["SyntheticsTestRequestBodyType"]
     GRAPHQL: ClassVar["SyntheticsTestRequestBodyType"]
+    APPLICATION_OCTET_STREAM: ClassVar["SyntheticsTestRequestBodyType"]
+    MULTIPART_FORM_DATA: ClassVar["SyntheticsTestRequestBodyType"]
 
     @cached_property
     def openapi_types(_):
@@ -50,3 +54,5 @@ SyntheticsTestRequestBodyType.APPLICATION_X_WWW_FORM_URLENCODED = SyntheticsTest
     "application/x-www-form-urlencoded"
 )
 SyntheticsTestRequestBodyType.GRAPHQL = SyntheticsTestRequestBodyType("graphql")
+SyntheticsTestRequestBodyType.APPLICATION_OCTET_STREAM = SyntheticsTestRequestBodyType("application/octet-stream")
+SyntheticsTestRequestBodyType.MULTIPART_FORM_DATA = SyntheticsTestRequestBodyType("multipart/form-data")
