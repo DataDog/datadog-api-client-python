@@ -17,6 +17,8 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.authn_mapping_create_attributes import AuthNMappingCreateAttributes
     from datadog_api_client.v2.model.authn_mapping_create_relationships import AuthNMappingCreateRelationships
     from datadog_api_client.v2.model.authn_mappings_type import AuthNMappingsType
+    from datadog_api_client.v2.model.authn_mapping_relationship_to_role import AuthNMappingRelationshipToRole
+    from datadog_api_client.v2.model.authn_mapping_relationship_to_team import AuthNMappingRelationshipToTeam
 
 
 class AuthNMappingCreateData(ModelNormal):
@@ -42,7 +44,9 @@ class AuthNMappingCreateData(ModelNormal):
         self_,
         type: AuthNMappingsType,
         attributes: Union[AuthNMappingCreateAttributes, UnsetType] = unset,
-        relationships: Union[AuthNMappingCreateRelationships, UnsetType] = unset,
+        relationships: Union[
+            AuthNMappingCreateRelationships, AuthNMappingRelationshipToRole, AuthNMappingRelationshipToTeam, UnsetType
+        ] = unset,
         **kwargs,
     ):
         """
@@ -51,7 +55,7 @@ class AuthNMappingCreateData(ModelNormal):
         :param attributes: Key/Value pair of attributes used for create request.
         :type attributes: AuthNMappingCreateAttributes, optional
 
-        :param relationships: Relationship of AuthN Mapping create object to Role.
+        :param relationships: Relationship of AuthN Mapping create object to a Role or Team.
         :type relationships: AuthNMappingCreateRelationships, optional
 
         :param type: AuthN Mappings resource type.
