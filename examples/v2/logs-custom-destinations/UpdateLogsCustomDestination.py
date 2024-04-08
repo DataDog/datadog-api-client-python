@@ -5,6 +5,9 @@ Update a custom destination returns "OK" response
 from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.logs_custom_destinations_api import LogsCustomDestinationsApi
+from datadog_api_client.v2.model.custom_destination_attribute_tags_restriction_list_type import (
+    CustomDestinationAttributeTagsRestrictionListType,
+)
 from datadog_api_client.v2.model.custom_destination_type import CustomDestinationType
 from datadog_api_client.v2.model.custom_destination_update_request import CustomDestinationUpdateRequest
 from datadog_api_client.v2.model.custom_destination_update_request_attributes import (
@@ -21,6 +24,10 @@ body = CustomDestinationUpdateRequest(
     data=CustomDestinationUpdateRequestDefinition(
         attributes=CustomDestinationUpdateRequestAttributes(
             name="Nginx logs (Updated)",
+            query="source:nginx",
+            enabled=False,
+            forward_tags=False,
+            forward_tags_restriction_list_type=CustomDestinationAttributeTagsRestrictionListType.BLOCK_LIST,
         ),
         type=CustomDestinationType.CUSTOM_DESTINATION,
         id=CUSTOM_DESTINATION_DATA_ID,

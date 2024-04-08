@@ -226,7 +226,7 @@ Feature: Logs Custom Destinations
     Given new "UpdateLogsCustomDestination" request
     And there is a valid "custom_destination" in the system
     And request contains "custom_destination_id" parameter from "custom_destination.data.id"
-    And body with value {"data": {"attributes": {"name": "Nginx logs (Updated)"}, "type": "custom_destination", "id": "{{ custom_destination.data.id }}" }}
+    And body with value {"data": {"attributes": {"name": "Nginx logs (Updated)", "query": "source:nginx", "enabled":false, "forward_tags":false, "forward_tags_restriction_list_type":"BLOCK_LIST"}, "type": "custom_destination", "id": "{{ custom_destination.data.id }}"}}
     When the request is sent
     Then the response status is 200 OK
     And the response "data.type" is equal to "custom_destination"
