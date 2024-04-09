@@ -379,6 +379,20 @@ authn\_mapping\_included
    :members:
    :show-inheritance:
 
+authn\_mapping\_relationship\_to\_role
+--------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.authn_mapping_relationship_to_role
+   :members:
+   :show-inheritance:
+
+authn\_mapping\_relationship\_to\_team
+--------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.authn_mapping_relationship_to_team
+   :members:
+   :show-inheritance:
+
 authn\_mapping\_relationships
 -----------------------------
 
@@ -390,6 +404,20 @@ authn\_mapping\_response
 ------------------------
 
 .. automodule:: datadog_api_client.v2.model.authn_mapping_response
+   :members:
+   :show-inheritance:
+
+authn\_mapping\_team
+--------------------
+
+.. automodule:: datadog_api_client.v2.model.authn_mapping_team
+   :members:
+   :show-inheritance:
+
+authn\_mapping\_team\_attributes
+--------------------------------
+
+.. automodule:: datadog_api_client.v2.model.authn_mapping_team_attributes
    :members:
    :show-inheritance:
 
@@ -6704,6 +6732,20 @@ relationship\_to\_saml\_assertion\_attribute\_data
 --------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.relationship_to_saml_assertion_attribute_data
+   :members:
+   :show-inheritance:
+
+relationship\_to\_team
+----------------------
+
+.. automodule:: datadog_api_client.v2.model.relationship_to_team
+   :members:
+   :show-inheritance:
+
+relationship\_to\_team\_data
+----------------------------
+
+.. automodule:: datadog_api_client.v2.model.relationship_to_team_data
    :members:
    :show-inheritance:
 
