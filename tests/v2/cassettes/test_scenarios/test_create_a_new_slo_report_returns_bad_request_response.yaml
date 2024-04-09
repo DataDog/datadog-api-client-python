@@ -1,0 +1,22 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"from_ts":1690901870,"interval":"bad-interval","query":"slo_type:metric
+      \"SLO Reporting Test\"","to_ts":1706803070}}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/slo/report
+  response:
+    body:
+      string: '{"errors":[{"title":"Invalid Argument","detail":"bad-interval is not
+        a valid interval"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 400
+      message: Bad Request
+version: 1
