@@ -18,6 +18,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.relationship_to_saml_assertion_attribute import (
         RelationshipToSAMLAssertionAttribute,
     )
+    from datadog_api_client.v2.model.relationship_to_team import RelationshipToTeam
 
 
 class AuthNMappingRelationships(ModelNormal):
@@ -27,21 +28,25 @@ class AuthNMappingRelationships(ModelNormal):
         from datadog_api_client.v2.model.relationship_to_saml_assertion_attribute import (
             RelationshipToSAMLAssertionAttribute,
         )
+        from datadog_api_client.v2.model.relationship_to_team import RelationshipToTeam
 
         return {
             "role": (RelationshipToRole,),
             "saml_assertion_attribute": (RelationshipToSAMLAssertionAttribute,),
+            "team": (RelationshipToTeam,),
         }
 
     attribute_map = {
         "role": "role",
         "saml_assertion_attribute": "saml_assertion_attribute",
+        "team": "team",
     }
 
     def __init__(
         self_,
         role: Union[RelationshipToRole, UnsetType] = unset,
         saml_assertion_attribute: Union[RelationshipToSAMLAssertionAttribute, UnsetType] = unset,
+        team: Union[RelationshipToTeam, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -52,9 +57,14 @@ class AuthNMappingRelationships(ModelNormal):
 
         :param saml_assertion_attribute: AuthN Mapping relationship to SAML Assertion Attribute.
         :type saml_assertion_attribute: RelationshipToSAMLAssertionAttribute, optional
+
+        :param team: Relationship to team.
+        :type team: RelationshipToTeam, optional
         """
         if role is not unset:
             kwargs["role"] = role
         if saml_assertion_attribute is not unset:
             kwargs["saml_assertion_attribute"] = saml_assertion_attribute
+        if team is not unset:
+            kwargs["team"] = team
         super().__init__(kwargs)
