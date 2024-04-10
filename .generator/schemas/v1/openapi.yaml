@@ -90,6 +90,12 @@ components:
             description: Regions to exclude.
             type: string
           type: array
+        extended_resource_collection_enabled:
+          default: false
+          description: Whether Datadog collects additional attributes and configuration
+            information about the resources in your AWS account. Required for `cspm_resource_collection`.
+          example: true
+          type: boolean
         filter_tags:
           description: 'The array of EC2 tags (in the form `key:value`) defines a
             filter that Datadog uses when collecting metrics from EC2.
@@ -128,8 +134,9 @@ components:
           type: boolean
         resource_collection_enabled:
           default: false
-          description: Whether Datadog collects a standard set of resources from your
-            AWS account.
+          deprecated: true
+          description: Deprecated in favor of 'extended_resource_collection_enabled'.
+            Whether Datadog collects a standard set of resources from your AWS account.
           example: true
           type: boolean
         role_name:
