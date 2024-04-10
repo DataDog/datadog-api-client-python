@@ -11437,6 +11437,7 @@ AWS account only.</p></li>
 <li><p><strong>cspm_resource_collection_enabled</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether Datadog collects cloud security posture management resources from your AWS account. This includes additional resources not covered under the general <code class="docutils literal notranslate"><span class="pre">resource_collection</span></code>.</p></li>
 <li><p><strong>excluded_regions</strong> (<em>[</em><em>str</em><em>]</em><em>, </em><em>optional</em>) – An array of <a class="reference external" href="https://docs.aws.amazon.com/general/latest/gr/rande.html#regional-endpoints">AWS regions</a>
 to exclude from metrics collection.</p></li>
+<li><p><strong>extended_resource_collection_enabled</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether Datadog collects additional attributes and configuration information about the resources in your AWS account. Required for <code class="docutils literal notranslate"><span class="pre">cspm_resource_collection</span></code>.</p></li>
 <li><p><strong>filter_tags</strong> (<em>[</em><em>str</em><em>]</em><em>, </em><em>optional</em>) – The array of EC2 tags (in the form <code class="docutils literal notranslate"><span class="pre">key:value</span></code> ) defines a filter that Datadog uses when collecting metrics from EC2.
 Wildcards, such as <code class="docutils literal notranslate"><span class="pre">?</span></code> (for single characters) and <code class="docutils literal notranslate"><span class="pre">*</span></code> (for multiple characters) can also be used.
 Only hosts that match one of the defined tags
@@ -11446,7 +11447,7 @@ For example, <code class="docutils literal notranslate"><span class="pre">env:pr
 <li><p><strong>host_tags</strong> (<em>[</em><em>str</em><em>]</em><em>, </em><em>optional</em>) – Array of tags (in the form <code class="docutils literal notranslate"><span class="pre">key:value</span></code> ) to add to all hosts
 and metrics reporting through this integration.</p></li>
 <li><p><strong>metrics_collection_enabled</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether Datadog collects metrics for this AWS account.</p></li>
-<li><p><strong>resource_collection_enabled</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether Datadog collects a standard set of resources from your AWS account.</p></li>
+<li><p><strong>resource_collection_enabled</strong> (<em>bool</em><em>, </em><em>optional</em>) – Deprecated in favor of ‘extended_resource_collection_enabled’. Whether Datadog collects a standard set of resources from your AWS account. <strong>Deprecated</strong>.</p></li>
 <li><p><strong>role_name</strong> (<em>str</em><em>, </em><em>optional</em>) – Your Datadog role delegation name.</p></li>
 <li><p><strong>secret_access_key</strong> (<em>str</em><em>, </em><em>optional</em>) – Your AWS secret access key. Only required if your AWS account is a GovCloud or China account.</p></li>
 </ul>
