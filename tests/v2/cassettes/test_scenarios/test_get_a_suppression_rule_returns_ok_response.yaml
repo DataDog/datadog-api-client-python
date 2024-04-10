@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"description":"Test-Get_a_suppression_rule_returns_OK_response-1704967591","enabled":true,"name":"Test-Get_a_suppression_rule_returns_OK_response-1704967591","rule_query":"source:cloudtrail","suppression_query":"env:test"},"type":"suppressions"}}'
+    body: '{"data":{"attributes":{"description":"Test-Get_a_suppression_rule_returns_OK_response-1712570251","enabled":true,"name":"Test-Get_a_suppression_rule_returns_OK_response-1712570251","rule_query":"source:cloudtrail","suppression_query":"env:test"},"type":"suppressions"}}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/suppressions
   response:
     body:
-      string: '{"data":{"id":"vac-d9u-mmr","attributes":{"name":"Test-Get_a_suppression_rule_returns_OK_response-1704967591","enabled":true,"description":"Test-Get_a_suppression_rule_returns_OK_response-1704967591","rule_query":"source:cloudtrail","suppression_query":"env:test","version":1,"creation_date":1704967592204,"update_date":1704967592204,"creator":{"name":null,"handle":"frog@datadoghq.com"},"updater":{"name":null,"handle":"frog@datadoghq.com"}},"type":"suppressions"}}
+      string: '{"data":{"id":"zrh-zwa-bgu","attributes":{"name":"Test-Get_a_suppression_rule_returns_OK_response-1712570251","enabled":true,"description":"Test-Get_a_suppression_rule_returns_OK_response-1712570251","rule_query":"source:cloudtrail","suppression_query":"env:test","log_exclusion_query":"","data_exclusion_query":"","version":1,"creation_date":1712570252683,"update_date":1712570252683,"creator":{"name":null,"handle":"frog@datadoghq.com"},"updater":{"name":null,"handle":"frog@datadoghq.com"}},"type":"suppressions"}}
 
         '
     headers:
@@ -25,10 +25,10 @@ interactions:
       accept:
       - application/json
     method: GET
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/suppressions/vac-d9u-mmr
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/suppressions/zrh-zwa-bgu
   response:
     body:
-      string: '{"data":{"id":"vac-d9u-mmr","attributes":{"name":"Test-Get_a_suppression_rule_returns_OK_response-1704967591","enabled":true,"description":"Test-Get_a_suppression_rule_returns_OK_response-1704967591","rule_query":"source:cloudtrail","suppression_query":"env:test","version":1,"creation_date":1704967592204,"update_date":1704967592204,"creator":{"name":null,"handle":"frog@datadoghq.com"},"updater":{"name":null,"handle":"frog@datadoghq.com"}},"type":"suppressions"}}
+      string: '{"data":{"id":"zrh-zwa-bgu","attributes":{"name":"Test-Get_a_suppression_rule_returns_OK_response-1712570251","enabled":true,"description":"Test-Get_a_suppression_rule_returns_OK_response-1712570251","rule_query":"source:cloudtrail","suppression_query":"env:test","log_exclusion_query":"","data_exclusion_query":"","version":1,"creation_date":1712570252683,"update_date":1712570252683,"creator":{"name":null,"handle":"frog@datadoghq.com"},"updater":{"name":null,"handle":"frog@datadoghq.com"}},"type":"suppressions"}}
 
         '
     headers:
@@ -43,7 +43,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/suppressions/vac-d9u-mmr
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/suppressions/zrh-zwa-bgu
   response:
     body:
       string: ''

@@ -24,6 +24,7 @@ class SecurityMonitoringSuppressionUpdateAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
+            "data_exclusion_query": (str,),
             "description": (str,),
             "enabled": (bool,),
             "expiration_date": (int, none_type),
@@ -34,6 +35,7 @@ class SecurityMonitoringSuppressionUpdateAttributes(ModelNormal):
         }
 
     attribute_map = {
+        "data_exclusion_query": "data_exclusion_query",
         "description": "description",
         "enabled": "enabled",
         "expiration_date": "expiration_date",
@@ -45,6 +47,7 @@ class SecurityMonitoringSuppressionUpdateAttributes(ModelNormal):
 
     def __init__(
         self_,
+        data_exclusion_query: Union[str, UnsetType] = unset,
         description: Union[str, UnsetType] = unset,
         enabled: Union[bool, UnsetType] = unset,
         expiration_date: Union[int, none_type, UnsetType] = unset,
@@ -56,6 +59,9 @@ class SecurityMonitoringSuppressionUpdateAttributes(ModelNormal):
     ):
         """
         The suppression rule properties to be updated.
+
+        :param data_exclusion_query: An exclusion query on the input data of the security rules, which could be logs, Agent events, or other types of data based on the security rule. Events matching this query are ignored by any detection rules referenced in the suppression rule.
+        :type data_exclusion_query: str, optional
 
         :param description: A description for the suppression rule.
         :type description: str, optional
@@ -78,6 +84,8 @@ class SecurityMonitoringSuppressionUpdateAttributes(ModelNormal):
         :param version: The current version of the suppression. This is optional, but it can help prevent concurrent modifications.
         :type version: int, optional
         """
+        if data_exclusion_query is not unset:
+            kwargs["data_exclusion_query"] = data_exclusion_query
         if description is not unset:
             kwargs["description"] = description
         if enabled is not unset:
