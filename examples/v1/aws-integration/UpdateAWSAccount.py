@@ -16,6 +16,7 @@ body = AWSAccount(
         "us-east-1",
         "us-west-2",
     ],
+    extended_resource_collection_enabled=True,
     filter_tags=[
         "$KEY:$VALUE",
     ],
@@ -23,7 +24,6 @@ body = AWSAccount(
         "$KEY:$VALUE",
     ],
     metrics_collection_enabled=True,
-    resource_collection_enabled=True,
     role_name="DatadogAWSIntegrationRole",
 )
 

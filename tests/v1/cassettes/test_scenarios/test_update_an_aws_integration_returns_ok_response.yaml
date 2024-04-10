@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"account_id":"170076337600","account_specific_namespace_rules":{"auto_scaling":false},"cspm_resource_collection_enabled":true,"excluded_regions":["us-east-1","us-west-2"],"filter_tags":["$KEY:$VALUE"],"host_tags":["$KEY:$VALUE"],"metrics_collection_enabled":false,"resource_collection_enabled":true,"role_name":"DatadogAWSIntegrationRole"}'
+    body: '{"account_id":"171234183400","account_specific_namespace_rules":{"auto_scaling":false},"cspm_resource_collection_enabled":true,"excluded_regions":["us-east-1","us-west-2"],"extended_resource_collection_enabled":true,"filter_tags":["$KEY:$VALUE"],"host_tags":["$KEY:$VALUE"],"metrics_collection_enabled":false,"role_name":"DatadogAWSIntegrationRole"}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/integration/aws
   response:
     body:
-      string: '{"external_id":"c7298c166e774bf1bd1bc0419e68f1a0"}
+      string: '{"external_id":"c8ceedec95fc472fb6156f3104d425c9"}
 
         '
     headers:
@@ -20,14 +20,14 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"account_id":"170076337600","account_specific_namespace_rules":{"auto_scaling":false},"cspm_resource_collection_enabled":false,"excluded_regions":["us-east-1","us-west-2"],"filter_tags":["$KEY:$VALUE"],"host_tags":["$KEY:$VALUE"],"metrics_collection_enabled":true,"resource_collection_enabled":true,"role_name":"DatadogAWSIntegrationRole"}'
+    body: '{"account_id":"171234183400","account_specific_namespace_rules":{"auto_scaling":false},"cspm_resource_collection_enabled":false,"excluded_regions":["us-east-1","us-west-2"],"extended_resource_collection_enabled":true,"filter_tags":["$KEY:$VALUE"],"host_tags":["$KEY:$VALUE"],"metrics_collection_enabled":true,"role_name":"DatadogAWSIntegrationRole"}'
     headers:
       accept:
       - application/json
       content-type:
       - application/json
     method: PUT
-    uri: https://api.datadoghq.com/api/v1/integration/aws?account_id=170076337600&role_name=DatadogAWSIntegrationRole
+    uri: https://api.datadoghq.com/api/v1/integration/aws?account_id=171234183400&role_name=DatadogAWSIntegrationRole
   response:
     body:
       string: '{}
@@ -40,7 +40,7 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"account_id":"170076337600","role_name":"DatadogAWSIntegrationRole"}'
+    body: '{"account_id":"171234183400","role_name":"DatadogAWSIntegrationRole"}'
     headers:
       accept:
       - application/json

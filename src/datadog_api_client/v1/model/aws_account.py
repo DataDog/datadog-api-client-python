@@ -22,6 +22,7 @@ class AWSAccount(ModelNormal):
             "account_specific_namespace_rules": ({str: (bool,)},),
             "cspm_resource_collection_enabled": (bool,),
             "excluded_regions": ([str],),
+            "extended_resource_collection_enabled": (bool,),
             "filter_tags": ([str],),
             "host_tags": ([str],),
             "metrics_collection_enabled": (bool,),
@@ -36,6 +37,7 @@ class AWSAccount(ModelNormal):
         "account_specific_namespace_rules": "account_specific_namespace_rules",
         "cspm_resource_collection_enabled": "cspm_resource_collection_enabled",
         "excluded_regions": "excluded_regions",
+        "extended_resource_collection_enabled": "extended_resource_collection_enabled",
         "filter_tags": "filter_tags",
         "host_tags": "host_tags",
         "metrics_collection_enabled": "metrics_collection_enabled",
@@ -51,6 +53,7 @@ class AWSAccount(ModelNormal):
         account_specific_namespace_rules: Union[Dict[str, bool], UnsetType] = unset,
         cspm_resource_collection_enabled: Union[bool, UnsetType] = unset,
         excluded_regions: Union[List[str], UnsetType] = unset,
+        extended_resource_collection_enabled: Union[bool, UnsetType] = unset,
         filter_tags: Union[List[str], UnsetType] = unset,
         host_tags: Union[List[str], UnsetType] = unset,
         metrics_collection_enabled: Union[bool, UnsetType] = unset,
@@ -80,6 +83,9 @@ class AWSAccount(ModelNormal):
             to exclude from metrics collection.
         :type excluded_regions: [str], optional
 
+        :param extended_resource_collection_enabled: Whether Datadog collects additional attributes and configuration information about the resources in your AWS account. Required for ``cspm_resource_collection``.
+        :type extended_resource_collection_enabled: bool, optional
+
         :param filter_tags: The array of EC2 tags (in the form ``key:value`` ) defines a filter that Datadog uses when collecting metrics from EC2.
             Wildcards, such as ``?`` (for single characters) and ``*`` (for multiple characters) can also be used.
             Only hosts that match one of the defined tags
@@ -95,7 +101,7 @@ class AWSAccount(ModelNormal):
         :param metrics_collection_enabled: Whether Datadog collects metrics for this AWS account.
         :type metrics_collection_enabled: bool, optional
 
-        :param resource_collection_enabled: Whether Datadog collects a standard set of resources from your AWS account.
+        :param resource_collection_enabled: Deprecated in favor of 'extended_resource_collection_enabled'. Whether Datadog collects a standard set of resources from your AWS account. **Deprecated**.
         :type resource_collection_enabled: bool, optional
 
         :param role_name: Your Datadog role delegation name.
@@ -114,6 +120,8 @@ class AWSAccount(ModelNormal):
             kwargs["cspm_resource_collection_enabled"] = cspm_resource_collection_enabled
         if excluded_regions is not unset:
             kwargs["excluded_regions"] = excluded_regions
+        if extended_resource_collection_enabled is not unset:
+            kwargs["extended_resource_collection_enabled"] = extended_resource_collection_enabled
         if filter_tags is not unset:
             kwargs["filter_tags"] = filter_tags
         if host_tags is not unset:

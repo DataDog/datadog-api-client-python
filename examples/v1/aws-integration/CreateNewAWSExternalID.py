@@ -17,6 +17,7 @@ body = AWSAccount(
         "us-east-1",
         "us-west-2",
     ],
+    extended_resource_collection_enabled=True,
     filter_tags=[
         "$KEY:$VALUE",
     ],
