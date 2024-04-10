@@ -9080,6 +9080,76 @@ slack\_integration\_metadata\_channel\_item
    :members:
    :show-inheritance:
 
+slo\_report\_create\_request
+----------------------------
+
+.. automodule:: datadog_api_client.v2.model.slo_report_create_request
+   :members:
+   :show-inheritance:
+
+slo\_report\_create\_request\_attributes
+----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.slo_report_create_request_attributes
+   :members:
+   :show-inheritance:
+
+slo\_report\_create\_request\_data
+----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.slo_report_create_request_data
+   :members:
+   :show-inheritance:
+
+slo\_report\_interval
+---------------------
+
+.. automodule:: datadog_api_client.v2.model.slo_report_interval
+   :members:
+   :show-inheritance:
+
+slo\_report\_post\_response
+---------------------------
+
+.. automodule:: datadog_api_client.v2.model.slo_report_post_response
+   :members:
+   :show-inheritance:
+
+slo\_report\_post\_response\_data
+---------------------------------
+
+.. automodule:: datadog_api_client.v2.model.slo_report_post_response_data
+   :members:
+   :show-inheritance:
+
+slo\_report\_status
+-------------------
+
+.. automodule:: datadog_api_client.v2.model.slo_report_status
+   :members:
+   :show-inheritance:
+
+slo\_report\_status\_get\_response
+----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.slo_report_status_get_response
+   :members:
+   :show-inheritance:
+
+slo\_report\_status\_get\_response\_attributes
+----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.slo_report_status_get_response_attributes
+   :members:
+   :show-inheritance:
+
+slo\_report\_status\_get\_response\_data
+----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.slo_report_status_get_response_data
+   :members:
+   :show-inheritance:
+
 sort\_direction
 ---------------
 

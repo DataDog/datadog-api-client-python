@@ -1263,6 +1263,20 @@
         </li></ul>
             </nav>
         </li>
+        <li class="md-nav__item"><a href="#module-datadog_api_client.v2.api.service_level_objectives_api" class="md-nav__link">service_level_objectives_api</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.service_level_objectives_api.ServiceLevelObjectivesApi" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ServiceLevelObjectivesApi</span></code></a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.service_level_objectives_api.ServiceLevelObjectivesApi.create_slo_report_job" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ServiceLevelObjectivesApi.create_slo_report_job()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.service_level_objectives_api.ServiceLevelObjectivesApi.get_slo_report" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ServiceLevelObjectivesApi.get_slo_report()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.service_level_objectives_api.ServiceLevelObjectivesApi.get_slo_report_job_status" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ServiceLevelObjectivesApi.get_slo_report_job_status()</span></code></a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
         <li class="md-nav__item"><a href="#module-datadog_api_client.v2.api.service_scorecards_api" class="md-nav__link">service_scorecards_api</a><nav class="md-nav">
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.service_scorecards_api.ServiceScorecardsApi" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ServiceScorecardsApi</span></code></a><nav class="md-nav">
@@ -2873,6 +2887,20 @@
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.service_definition_api.ServiceDefinitionApi.list_service_definitions" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ServiceDefinitionApi.list_service_definitions()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.service_definition_api.ServiceDefinitionApi.list_service_definitions_with_pagination" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ServiceDefinitionApi.list_service_definitions_with_pagination()</span></code></a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#module-datadog_api_client.v2.api.service_level_objectives_api" class="md-nav__link">service_level_objectives_api</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.service_level_objectives_api.ServiceLevelObjectivesApi" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ServiceLevelObjectivesApi</span></code></a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.service_level_objectives_api.ServiceLevelObjectivesApi.create_slo_report_job" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ServiceLevelObjectivesApi.create_slo_report_job()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.service_level_objectives_api.ServiceLevelObjectivesApi.get_slo_report" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ServiceLevelObjectivesApi.get_slo_report()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.service_level_objectives_api.ServiceLevelObjectivesApi.get_slo_report_job_status" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ServiceLevelObjectivesApi.get_slo_report_job_status()</span></code></a>
         </li></ul>
             </nav>
         </li></ul>
@@ -8362,6 +8390,64 @@ attribute with a minus sign.</p></li>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>collections.abc.Iterable[<a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.service_definition_data.ServiceDefinitionData" title="datadog_api_client.v2.model.service_definition_data.ServiceDefinitionData">ServiceDefinitionData</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+</section>
+<section id="module-datadog_api_client.v2.api.service_level_objectives_api">
+<span id="service-level-objectives-api"></span><h2 id="module-datadog_api_client.v2.api.service_level_objectives_api">service_level_objectives_api<a class="headerlink" href="#module-datadog_api_client.v2.api.service_level_objectives_api" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.service_level_objectives_api.ServiceLevelObjectivesApi">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ServiceLevelObjectivesApi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_client</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datadog_api_client.v2.api.service_level_objectives_api.ServiceLevelObjectivesApi" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p><a class="reference external" href="https://docs.datadoghq.com/monitors/service_level_objectives/#configuration">Service Level Objectives</a>
+(SLOs) are a key part of the site reliability engineering toolkit.
+SLOs provide a framework for defining clear targets around application performance,
+which ultimately help teams provide a consistent customer experience,
+balance feature development with platform stability,
+and improve communication with internal and external users.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.service_level_objectives_api.ServiceLevelObjectivesApi.create_slo_report_job">
+<span class="sig-name descname"><span class="pre">create_slo_report_job</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.slo_report_create_request.SloReportCreateRequest" title="datadog_api_client.v2.model.slo_report_create_request.SloReportCreateRequest"><span class="pre">SloReportCreateRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.slo_report_post_response.SLOReportPostResponse" title="datadog_api_client.v2.model.slo_report_post_response.SLOReportPostResponse"><span class="pre">SLOReportPostResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.service_level_objectives_api.ServiceLevelObjectivesApi.create_slo_report_job" title="Link to this definition">¶</a></dt>
+<dd><p>Create a new SLO report.</p>
+<p>Create a job to generate an SLO report. The report job is processed asynchronously and eventually results in a CSV report being available for download.</p>
+<p>Check the status of the job and download the CSV report using the returned <code class="docutils literal notranslate"><span class="pre">report_id</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>body</strong> (<a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.slo_report_create_request.SloReportCreateRequest" title="datadog_api_client.v2.model.slo_report_create_request.SloReportCreateRequest"><em>SloReportCreateRequest</em></a>) – Create SLO report job request body.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.slo_report_post_response.SLOReportPostResponse" title="datadog_api_client.v2.model.slo_report_post_response.SLOReportPostResponse">SLOReportPostResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.service_level_objectives_api.ServiceLevelObjectivesApi.get_slo_report">
+<span class="sig-name descname"><span class="pre">get_slo_report</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">report_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#datadog_api_client.v2.api.service_level_objectives_api.ServiceLevelObjectivesApi.get_slo_report" title="Link to this definition">¶</a></dt>
+<dd><p>Get SLO report.</p>
+<p>Download an SLO report. This can only be performed after the report job has completed.</p>
+<p>Reports are not guaranteed to exist indefinitely. Datadog recommends that you download the report as soon as it is available.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>report_id</strong> (<em>str</em>) – The ID of the report job.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.service_level_objectives_api.ServiceLevelObjectivesApi.get_slo_report_job_status">
+<span class="sig-name descname"><span class="pre">get_slo_report_job_status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">report_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.slo_report_status_get_response.SLOReportStatusGetResponse" title="datadog_api_client.v2.model.slo_report_status_get_response.SLOReportStatusGetResponse"><span class="pre">SLOReportStatusGetResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.service_level_objectives_api.ServiceLevelObjectivesApi.get_slo_report_job_status" title="Link to this definition">¶</a></dt>
+<dd><p>Get SLO report status.</p>
+<p>Get the status of the SLO report job.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>report_id</strong> (<em>str</em>) – The ID of the report job.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.slo_report_status_get_response.SLOReportStatusGetResponse" title="datadog_api_client.v2.model.slo_report_status_get_response.SLOReportStatusGetResponse">SLOReportStatusGetResponse</a></p>
 </dd>
 </dl>
 </dd></dl>
