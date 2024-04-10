@@ -1,0 +1,18 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - text/csv, application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/slo/report/2b468c54-f2a7-11ee-b0b4-ffe56bb6ad43/download
+  response:
+    body:
+      string: '{"errors":[{"title":"Not Found","detail":"report ID not found: 2b468c54-f2a7-11ee-b0b4-ffe56bb6ad43"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 404
+      message: Not Found
+version: 1

@@ -40,6 +40,7 @@ from datadog_api_client.v2.api.security_monitoring_api import SecurityMonitoring
 from datadog_api_client.v2.api.sensitive_data_scanner_api import SensitiveDataScannerApi
 from datadog_api_client.v2.api.service_accounts_api import ServiceAccountsApi
 from datadog_api_client.v2.api.service_definition_api import ServiceDefinitionApi
+from datadog_api_client.v2.api.service_level_objectives_api import ServiceLevelObjectivesApi
 from datadog_api_client.v2.api.service_scorecards_api import ServiceScorecardsApi
 from datadog_api_client.v2.api.spans_api import SpansApi
 from datadog_api_client.v2.api.spans_metrics_api import SpansMetricsApi
@@ -92,6 +93,7 @@ __all__ = [
     "SensitiveDataScannerApi",
     "ServiceAccountsApi",
     "ServiceDefinitionApi",
+    "ServiceLevelObjectivesApi",
     "ServiceScorecardsApi",
     "SpansApi",
     "SpansMetricsApi",
