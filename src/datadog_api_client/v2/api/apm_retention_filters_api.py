@@ -161,6 +161,8 @@ class APMRetentionFiltersApi:
         Create a retention filter to index spans in your organization.
         Returns the retention filter definition when the request is successful.
 
+        Default filters with types spans-errors-sampling-processor and spans-appsec-sampling-processor cannot be created.
+
         :param body: The definition of the new retention filter.
         :type body: RetentionFilterCreateRequest
         :rtype: RetentionFilterResponse
@@ -177,6 +179,8 @@ class APMRetentionFiltersApi:
         """Delete a retention filter.
 
         Delete a specific retention filter from your organization.
+
+        Default filters with types spans-errors-sampling-processor and spans-appsec-sampling-processor cannot be deleted.
 
         :param filter_id: The ID of the retention filter.
         :type filter_id: str
@@ -241,6 +245,8 @@ class APMRetentionFiltersApi:
         """Update a retention filter.
 
         Update a retention filter from your organization.
+
+        Default filters (filters with types spans-errors-sampling-processor and spans-appsec-sampling-processor) cannot be renamed or removed.
 
         :param filter_id: The ID of the retention filter.
         :type filter_id: str

@@ -1222,6 +1222,7 @@ from datadog_api_client.v2.model.retention_filter_create_data import RetentionFi
 from datadog_api_client.v2.model.retention_filter_create_request import RetentionFilterCreateRequest
 from datadog_api_client.v2.model.retention_filter_response import RetentionFilterResponse
 from datadog_api_client.v2.model.retention_filter_type import RetentionFilterType
+from datadog_api_client.v2.model.retention_filter_update_attributes import RetentionFilterUpdateAttributes
 from datadog_api_client.v2.model.retention_filter_update_data import RetentionFilterUpdateData
 from datadog_api_client.v2.model.retention_filter_update_request import RetentionFilterUpdateRequest
 from datadog_api_client.v2.model.retention_filter_without_attributes import RetentionFilterWithoutAttributes
@@ -2832,6 +2833,7 @@ __all__ = [
     "RetentionFilterCreateRequest",
     "RetentionFilterResponse",
     "RetentionFilterType",
+    "RetentionFilterUpdateAttributes",
     "RetentionFilterUpdateData",
     "RetentionFilterUpdateRequest",
     "RetentionFilterWithoutAttributes",

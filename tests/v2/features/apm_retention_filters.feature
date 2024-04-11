@@ -13,6 +13,13 @@ Feature: APM Retention Filters
     And an instance of "APMRetentionFilters" API
 
   @team:DataDog/apm-trace-intake
+  Scenario: Create a default retention filter returns "Bad Request" response
+    Given new "CreateApmRetentionFilter" request
+    And body with value {"data": {"attributes": {"enabled": true, "filter": {"query": "@http.status_code:200 service:my-service"}, "filter_type": "spans-errors-sampling-processor", "name": "my retention filter", "rate": 1.0}, "type": "apm_retention_filter"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/apm-trace-intake
   Scenario: Create a retention filter returns "Bad Request" response
     Given new "CreateApmRetentionFilter" request
     And body with value {"data": {"attributes": {"enabled": true, "filter": {"query": "@http.status_code:200 service:my-service"}, "filter_type": "spans-sampling-processor", "name": "my retention filter", "rate": 2.0}, "type": "apm_retention_filter"}}
