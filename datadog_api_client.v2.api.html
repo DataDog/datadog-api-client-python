@@ -3181,6 +3181,7 @@ The ID is returned by the create API, or can be found in the URL in the API cata
 <dd><p>Create a retention filter.</p>
 <p>Create a retention filter to index spans in your organization.
 Returns the retention filter definition when the request is successful.</p>
+<p>Default filters with types spans-errors-sampling-processor and spans-appsec-sampling-processor cannot be created.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>body</strong> (<a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.retention_filter_create_request.RetentionFilterCreateRequest" title="datadog_api_client.v2.model.retention_filter_create_request.RetentionFilterCreateRequest"><em>RetentionFilterCreateRequest</em></a>) – The definition of the new retention filter.</p>
@@ -3195,6 +3196,7 @@ Returns the retention filter definition when the request is successful.</p>
 <span class="sig-name descname"><span class="pre">delete_apm_retention_filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filter_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#datadog_api_client.v2.api.apm_retention_filters_api.APMRetentionFiltersApi.delete_apm_retention_filter" title="Link to this definition">¶</a></dt>
 <dd><p>Delete a retention filter.</p>
 <p>Delete a specific retention filter from your organization.</p>
+<p>Default filters with types spans-errors-sampling-processor and spans-appsec-sampling-processor cannot be deleted.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>filter_id</strong> (<em>str</em>) – The ID of the retention filter.</p>
@@ -3248,6 +3250,7 @@ Returns the retention filter definition when the request is successful.</p>
 <span class="sig-name descname"><span class="pre">update_apm_retention_filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filter_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.retention_filter_update_request.RetentionFilterUpdateRequest" title="datadog_api_client.v2.model.retention_filter_update_request.RetentionFilterUpdateRequest"><span class="pre">RetentionFilterUpdateRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.retention_filter_response.RetentionFilterResponse" title="datadog_api_client.v2.model.retention_filter_response.RetentionFilterResponse"><span class="pre">RetentionFilterResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.apm_retention_filters_api.APMRetentionFiltersApi.update_apm_retention_filter" title="Link to this definition">¶</a></dt>
 <dd><p>Update a retention filter.</p>
 <p>Update a retention filter from your organization.</p>
+<p>Default filters (filters with types spans-errors-sampling-processor and spans-appsec-sampling-processor) cannot be renamed or removed.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">

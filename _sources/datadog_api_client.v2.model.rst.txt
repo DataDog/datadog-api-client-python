@@ -6952,6 +6952,13 @@ retention\_filter\_type
    :members:
    :show-inheritance:
 
+retention\_filter\_update\_attributes
+-------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.retention_filter_update_attributes
+   :members:
+   :show-inheritance:
+
 retention\_filter\_update\_data
 -------------------------------
 
