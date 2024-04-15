@@ -230,9 +230,9 @@ class CaseManagementApi:
                     "attribute": "page[size]",
                     "location": "query",
                 },
-                "page_offset": {
+                "page_number": {
                     "openapi_types": (int,),
-                    "attribute": "page[offset]",
+                    "attribute": "page[number]",
                     "location": "query",
                 },
                 "sort_field": {
@@ -506,7 +506,7 @@ class CaseManagementApi:
         self,
         *,
         page_size: Union[int, UnsetType] = unset,
-        page_offset: Union[int, UnsetType] = unset,
+        page_number: Union[int, UnsetType] = unset,
         sort_field: Union[CaseSortableField, UnsetType] = unset,
         filter: Union[str, UnsetType] = unset,
         sort_asc: Union[bool, UnsetType] = unset,
@@ -517,8 +517,8 @@ class CaseManagementApi:
 
         :param page_size: Size for a given page. The maximum allowed value is 100.
         :type page_size: int, optional
-        :param page_offset: Specific offset to use as the beginning of the returned page.
-        :type page_offset: int, optional
+        :param page_number: Specific page number to return.
+        :type page_number: int, optional
         :param sort_field: Specify which field to sort
         :type sort_field: CaseSortableField, optional
         :param filter: Search query
@@ -531,8 +531,8 @@ class CaseManagementApi:
         if page_size is not unset:
             kwargs["page_size"] = page_size
 
-        if page_offset is not unset:
-            kwargs["page_offset"] = page_offset
+        if page_number is not unset:
+            kwargs["page_number"] = page_number
 
         if sort_field is not unset:
             kwargs["sort_field"] = sort_field
@@ -549,7 +549,7 @@ class CaseManagementApi:
         self,
         *,
         page_size: Union[int, UnsetType] = unset,
-        page_offset: Union[int, UnsetType] = unset,
+        page_number: Union[int, UnsetType] = unset,
         sort_field: Union[CaseSortableField, UnsetType] = unset,
         filter: Union[str, UnsetType] = unset,
         sort_asc: Union[bool, UnsetType] = unset,
@@ -560,8 +560,8 @@ class CaseManagementApi:
 
         :param page_size: Size for a given page. The maximum allowed value is 100.
         :type page_size: int, optional
-        :param page_offset: Specific offset to use as the beginning of the returned page.
-        :type page_offset: int, optional
+        :param page_number: Specific page number to return.
+        :type page_number: int, optional
         :param sort_field: Specify which field to sort
         :type sort_field: CaseSortableField, optional
         :param filter: Search query
@@ -576,8 +576,8 @@ class CaseManagementApi:
         if page_size is not unset:
             kwargs["page_size"] = page_size
 
-        if page_offset is not unset:
-            kwargs["page_offset"] = page_offset
+        if page_number is not unset:
+            kwargs["page_number"] = page_number
 
         if sort_field is not unset:
             kwargs["sort_field"] = sort_field
@@ -594,7 +594,7 @@ class CaseManagementApi:
         pagination = {
             "limit_value": local_page_size,
             "results_path": "data",
-            "page_offset_param": "page_offset",
+            "page_param": "page_number",
             "endpoint": endpoint,
             "kwargs": kwargs,
         }
