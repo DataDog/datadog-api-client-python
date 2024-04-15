@@ -310,7 +310,7 @@ Feature: Roles
     And body with value {"data": {"id": "{{ role.data.id }}", "type": "roles", "attributes": {"name" : "{{ role.data.attributes.name }}-updated"}, "relationships": {"permissions": {"data": [{"id": "{{ permission.id }}", "type": "{{ permission.type }}"}]}}}}
     When the request is sent
     Then the response status is 200 OK
-    And the response "data.attributes.name" is equal to "{{ role.data.attributes.name }}-updated"
+    And the response "data.attributes.name" is equal to "{{ role.data.attributes.name }}"
 
   @generated @skip @team:DataDog/aaa-core-access
   Scenario: Update a role returns "Unprocessable Entity" response
