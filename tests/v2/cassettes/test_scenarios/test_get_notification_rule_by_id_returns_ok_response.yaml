@@ -1,0 +1,56 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"enabled":true,"name":"Test-Get_notification_rule_by_ID_returns_OK_response-1699997662","selectors":{"attributes":["fim:true"],"implicit_vm_rule_match":false,"rule_tags":["fim:true"],"rule_types":["log_detection","cloud_configuration"],"severities":["high"],"signal_tags":[]},"targets":["test"]},"type":"notification_rules"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/notification_rules
+  response:
+    body:
+      string: '{"data":{"id":"dml-zjl-z1h","attributes":{"version":1,"name":"Test-Get_notification_rule_by_ID_returns_OK_response-1699997662","targets":["test"],"selectors":{"severities":["high"],"rule_types":["log_detection","cloud_configuration"],"rule_tags":["fim:true"],"signal_tags":[],"attributes":["fim:true"],"implicit_vm_rule_match":false},"enabled":true,"creation_date":1699997662686,"update_date":1699997662686,"creator":{"name":null,"handle":"frog@datadoghq.com"},"updater":{"name":null,"handle":"frog@datadoghq.com"}},"type":"notification_rules"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/notification_rules/dml-zjl-z1h
+  response:
+    body:
+      string: '{"data":{"id":"dml-zjl-z1h","attributes":{"version":1,"name":"Test-Get_notification_rule_by_ID_returns_OK_response-1699997662","targets":["test"],"selectors":{"severities":["high"],"rule_types":["log_detection","cloud_configuration"],"rule_tags":["fim:true"],"signal_tags":[],"attributes":["fim:true"],"implicit_vm_rule_match":false},"enabled":true,"creation_date":1699997662686,"update_date":1699997662686,"creator":{"name":null,"handle":"frog@datadoghq.com"},"updater":{"name":null,"handle":"frog@datadoghq.com"}},"type":"notification_rules"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/notification_rules/dml-zjl-z1h
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - text/html; charset=utf-8
+    status:
+      code: 204
+      message: No Content
+version: 1

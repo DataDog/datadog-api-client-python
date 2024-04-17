@@ -22,6 +22,18 @@ from datadog_api_client.v2.model.finding import Finding
 from datadog_api_client.v2.model.bulk_mute_findings_response import BulkMuteFindingsResponse
 from datadog_api_client.v2.model.bulk_mute_findings_request import BulkMuteFindingsRequest
 from datadog_api_client.v2.model.get_finding_response import GetFindingResponse
+from datadog_api_client.v2.model.security_monitoring_notification_rule_list_response import (
+    SecurityMonitoringNotificationRuleListResponse,
+)
+from datadog_api_client.v2.model.security_monitoring_notification_rule_response import (
+    SecurityMonitoringNotificationRuleResponse,
+)
+from datadog_api_client.v2.model.security_monitoring_notification_rule_create_request import (
+    SecurityMonitoringNotificationRuleCreateRequest,
+)
+from datadog_api_client.v2.model.security_monitoring_notification_rule_update_request import (
+    SecurityMonitoringNotificationRuleUpdateRequest,
+)
 from datadog_api_client.v2.model.security_filters_response import SecurityFiltersResponse
 from datadog_api_client.v2.model.security_filter_response import SecurityFilterResponse
 from datadog_api_client.v2.model.security_filter_create_request import SecurityFilterCreateRequest
@@ -94,6 +106,26 @@ class SecurityMonitoringApi:
             api_client=api_client,
         )
 
+        self._create_security_monitoring_notification_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityMonitoringNotificationRuleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/configuration/notification_rules",
+                "operation_id": "create_security_monitoring_notification_rule",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (SecurityMonitoringNotificationRuleCreateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._create_security_monitoring_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (SecurityMonitoringRuleResponse,),
@@ -157,6 +189,29 @@ class SecurityMonitoringApi:
             api_client=api_client,
         )
 
+        self._delete_security_monitoring_notification_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/configuration/notification_rules/{notification_rule_id}",
+                "operation_id": "delete_security_monitoring_notification_rule",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "notification_rule_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "notification_rule_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
         self._delete_security_monitoring_rule_endpoint = _Endpoint(
             settings={
                 "response_type": None,
@@ -200,6 +255,32 @@ class SecurityMonitoringApi:
             headers_map={
                 "accept": ["*/*"],
             },
+            api_client=api_client,
+        )
+
+        self._edit_security_monitoring_notification_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityMonitoringNotificationRuleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/configuration/notification_rules/{notification_rule_id}",
+                "operation_id": "edit_security_monitoring_notification_rule",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "notification_rule_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "notification_rule_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (SecurityMonitoringNotificationRuleUpdateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
         )
 
@@ -326,6 +407,29 @@ class SecurityMonitoringApi:
                     "required": True,
                     "openapi_types": (str,),
                     "attribute": "security_filter_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_security_monitoring_notification_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityMonitoringNotificationRuleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/configuration/notification_rules/{notification_rule_id}",
+                "operation_id": "get_security_monitoring_notification_rule",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "notification_rule_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "notification_rule_id",
                     "location": "path",
                 },
             },
@@ -494,6 +598,22 @@ class SecurityMonitoringApi:
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security_monitoring/configuration/security_filters",
                 "operation_id": "list_security_filters",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={},
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_security_monitoring_notification_rules_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityMonitoringNotificationRuleListResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/configuration/notification_rules",
+                "operation_id": "list_security_monitoring_notification_rules",
                 "http_method": "GET",
                 "version": "v2",
             },
@@ -754,6 +874,22 @@ class SecurityMonitoringApi:
 
         return self._create_security_filter_endpoint.call_with_http_info(**kwargs)
 
+    def create_security_monitoring_notification_rule(
+        self,
+        body: SecurityMonitoringNotificationRuleCreateRequest,
+    ) -> SecurityMonitoringNotificationRuleResponse:
+        """Create a notification rule.
+
+        Create a notification rule.
+
+        :type body: SecurityMonitoringNotificationRuleCreateRequest
+        :rtype: SecurityMonitoringNotificationRuleResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_security_monitoring_notification_rule_endpoint.call_with_http_info(**kwargs)
+
     def create_security_monitoring_rule(
         self,
         body: Union[
@@ -809,6 +945,23 @@ class SecurityMonitoringApi:
 
         return self._delete_security_filter_endpoint.call_with_http_info(**kwargs)
 
+    def delete_security_monitoring_notification_rule(
+        self,
+        notification_rule_id: str,
+    ) -> None:
+        """Delete a notification rule.
+
+        Delete a specific notification rule.
+
+        :param notification_rule_id: The ID of the notification rule.
+        :type notification_rule_id: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["notification_rule_id"] = notification_rule_id
+
+        return self._delete_security_monitoring_notification_rule_endpoint.call_with_http_info(**kwargs)
+
     def delete_security_monitoring_rule(
         self,
         rule_id: str,
@@ -842,6 +995,28 @@ class SecurityMonitoringApi:
         kwargs["suppression_id"] = suppression_id
 
         return self._delete_security_monitoring_suppression_endpoint.call_with_http_info(**kwargs)
+
+    def edit_security_monitoring_notification_rule(
+        self,
+        notification_rule_id: str,
+        body: SecurityMonitoringNotificationRuleUpdateRequest,
+    ) -> SecurityMonitoringNotificationRuleResponse:
+        """Update a notification rule.
+
+        Update a specific notification rule.
+
+        :param notification_rule_id: The ID of the notification rule.
+        :type notification_rule_id: str
+        :param body: Attributes describing the signal update.
+        :type body: SecurityMonitoringNotificationRuleUpdateRequest
+        :rtype: SecurityMonitoringNotificationRuleResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["notification_rule_id"] = notification_rule_id
+
+        kwargs["body"] = body
+
+        return self._edit_security_monitoring_notification_rule_endpoint.call_with_http_info(**kwargs)
 
     def edit_security_monitoring_signal_assignee(
         self,
@@ -952,6 +1127,23 @@ class SecurityMonitoringApi:
         kwargs["security_filter_id"] = security_filter_id
 
         return self._get_security_filter_endpoint.call_with_http_info(**kwargs)
+
+    def get_security_monitoring_notification_rule(
+        self,
+        notification_rule_id: str,
+    ) -> SecurityMonitoringNotificationRuleResponse:
+        """Get notification rule by ID.
+
+        Get notification rule by ID.
+
+        :param notification_rule_id: The ID of the notification rule.
+        :type notification_rule_id: str
+        :rtype: SecurityMonitoringNotificationRuleResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["notification_rule_id"] = notification_rule_id
+
+        return self._get_security_monitoring_notification_rule_endpoint.call_with_http_info(**kwargs)
 
     def get_security_monitoring_rule(
         self,
@@ -1219,14 +1411,26 @@ class SecurityMonitoringApi:
     def list_security_filters(
         self,
     ) -> SecurityFiltersResponse:
-        """Get all security filters.
+        """List security filters.
 
-        Get the list of configured security filters with their definitions.
+        List all configured security filters with their definitions.
 
         :rtype: SecurityFiltersResponse
         """
         kwargs: Dict[str, Any] = {}
         return self._list_security_filters_endpoint.call_with_http_info(**kwargs)
+
+    def list_security_monitoring_notification_rules(
+        self,
+    ) -> SecurityMonitoringNotificationRuleListResponse:
+        """List notification rules.
+
+        List all notification rules.
+
+        :rtype: SecurityMonitoringNotificationRuleListResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._list_security_monitoring_notification_rules_endpoint.call_with_http_info(**kwargs)
 
     def list_security_monitoring_rules(
         self,
@@ -1236,7 +1440,7 @@ class SecurityMonitoringApi:
     ) -> SecurityMonitoringListRulesResponse:
         """List rules.
 
-        List rules.
+        List all rules.
 
         :param page_size: Size for a given page. The maximum allowed value is 100.
         :type page_size: int, optional

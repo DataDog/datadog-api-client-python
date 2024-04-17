@@ -1,0 +1,38 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"enabled":true,"name":"Test-Create_a_notification_rule_returns_OK_response-1699976710","selectors":{"attributes":["test:123","env:prod"],"implicit_vm_rule_match":false,"rule_tags":["test:123"],"rule_types":["application_security","log_detection"],"severities":["high"],"signal_tags":["env:prod"]},"targets":["@slack-test"]},"type":"notification_rules"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/notification_rules
+  response:
+    body:
+      string: '{"data":{"id":"ixf-lse-ptb","attributes":{"version":1,"name":"Test-Create_a_notification_rule_returns_OK_response-1699976710","targets":["@slack-test"],"selectors":{"severities":["high"],"rule_types":["application_security","log_detection"],"rule_tags":["test:123"],"signal_tags":["env:prod"],"attributes":["env:prod","test:123"],"implicit_vm_rule_match":false},"enabled":true,"creation_date":1699976710570,"update_date":1699976710570,"creator":{"name":null,"handle":"frog@datadoghq.com"},"updater":{"name":null,"handle":"frog@datadoghq.com"}},"type":"notification_rules"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/notification_rules/ixf-lse-ptb
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - text/html; charset=utf-8
+    status:
+      code: 204
+      message: No Content
+version: 1

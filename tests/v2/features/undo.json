@@ -1658,6 +1658,43 @@
       "type": "idempotent"
     }
   },
+  "ListSecurityMonitoringNotificationRules": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateSecurityMonitoringNotificationRule": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "operationId": "DeleteSecurityMonitoringNotificationRule",
+      "parameters": [
+        {
+          "name": "notification_rule_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteSecurityMonitoringNotificationRule": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetSecurityMonitoringNotificationRule": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "EditSecurityMonitoringNotificationRule": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListSecurityFilters": {
     "tag": "Security Monitoring",
     "undo": {

@@ -463,6 +463,18 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"notification_rules\",\n    \"attributes\": {\n      \"name\": \"{{ unique }}\",\n      \"enabled\": true,\n      \"selectors\": {\n        \"rule_tags\": [\"fim:true\"],\n        \"severities\": [\"high\"],\n        \"signal_tags\": [],\n        \"rule_types\": [\"log_detection\", \"cloud_configuration\"],\n        \"attributes\": [\"fim:true\"],\n        \"implicit_vm_rule_match\": false,\n        \"trigger_source\": \"security_signals\"\n      },\n      \"targets\": [\"test\"]\n    }\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"notification_rule\" in the system",
+    "key": "notification_rule",
+    "tag": "Security Monitoring",
+    "operationId": "CreateSecurityMonitoringNotificationRule"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"type\": \"security_filters\",\n    \"attributes\": {\n      \"name\": \"{{ unique }}\",\n      \"query\": \"service:{{ unique_alnum }}\",\n      \"exclusion_filters\":[\n        {\n          \"name\": \"Exclude logs from staging\",\n          \"query\": \"source:staging\"\n        }\n     ],\n      \"filtered_data_type\":\"logs\",\n      \"is_enabled\": true\n     }\n  }\n}"
       }
     ],
