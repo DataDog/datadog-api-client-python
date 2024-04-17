@@ -1,0 +1,60 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"enabled":true,"name":"Test-Update_a_notification_rule_returns_OK_response-1713390912","selectors":{"attributes":["fim:true"],"implicit_vm_rule_match":false,"rule_tags":["fim:true"],"rule_types":["log_detection","cloud_configuration"],"severities":["high"],"signal_tags":[],"trigger_source":"security_signals"},"targets":["test"]},"type":"notification_rules"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/notification_rules
+  response:
+    body:
+      string: '{"data":{"id":"bsv-8qu-rcb","attributes":{"version":1,"name":"Test-Update_a_notification_rule_returns_OK_response-1713390912","targets":["test"],"selectors":{"severities":["high"],"rule_types":["log_detection","cloud_configuration"],"rule_tags":["fim:true"],"signal_tags":[],"attributes":["fim:true"],"query":"(fim:\"true\"
+        OR @fim:\"true\")","migrated":true,"trigger_source":"security_signals","implicit_vm_rule_match":false},"enabled":true,"creation_date":1713390912199,"update_date":1713390912199,"creator":{"name":null,"handle":"frog@datadoghq.com"},"updater":{"name":null,"handle":"frog@datadoghq.com"}},"type":"notification_rules"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data":{"attributes":{"enabled":false,"name":"Test-Update_a_notification_rule_returns_OK_response-1713390912","selectors":{"attributes":["fim:true"],"implicit_vm_rule_match":false,"rule_tags":["fim:true"],"rule_types":["log_detection","cloud_configuration"],"severities":["high"],"signal_tags":[]},"targets":["test2"],"version":1},"type":"notification_rules"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/notification_rules/bsv-8qu-rcb
+  response:
+    body:
+      string: '{"data":{"id":"bsv-8qu-rcb","attributes":{"version":2,"name":"Test-Update_a_notification_rule_returns_OK_response-1713390912","targets":["test2"],"selectors":{"severities":["high"],"rule_types":["log_detection","cloud_configuration"],"rule_tags":["fim:true"],"signal_tags":[],"attributes":["fim:true"],"query":"(fim:\"true\"
+        OR @fim:\"true\")","migrated":true,"implicit_vm_rule_match":false},"enabled":false,"creation_date":1713390912199,"update_date":1713390912355,"creator":{"name":null,"handle":"frog@datadoghq.com"},"updater":{"name":null,"handle":"frog@datadoghq.com"}},"type":"notification_rules"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/notification_rules/bsv-8qu-rcb
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - text/html; charset=utf-8
+    status:
+      code: 204
+      message: No Content
+version: 1

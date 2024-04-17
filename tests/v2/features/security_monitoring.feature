@@ -132,6 +132,23 @@ Feature: Security Monitoring
     And the response "isEnabled" is equal to true
 
   @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Create a notification rule returns "Bad Request" response
+    Given new "CreateSecurityMonitoringNotificationRule" request
+    And body with value {"data": {"attributes": {"enabled": true, "name": "Interesting signals", "selectors": {"attributes": ["test:123", "env:prod"], "implicit_vm_rule_match": false, "migrated": false, "query": "(fim:true OR @fim:true)", "rule_tags": ["test:123"], "rule_types": ["application_security", "log_detection"], "severities": ["high"], "signal_tags": ["env:prod"], "trigger_source": "security_signals"}, "targets": ["@slack-test"]}, "type": "notification_rules"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/k9-cloud-security-platform
+  Scenario: Create a notification rule returns "OK" response
+    Given new "CreateSecurityMonitoringNotificationRule" request
+    And body with value {"data": {"attributes": {"enabled": true, "name":"{{ unique }}", "selectors": {"attributes": ["test:123", "env:prod"], "implicit_vm_rule_match": false, "rule_tags": ["test:123"], "rule_types": ["application_security", "log_detection"], "severities": ["high"], "signal_tags": ["env:prod"]}, "targets": ["@slack-test"]}, "type": "notification_rules"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "notification_rules"
+    And the response "data.attributes.name" is equal to "{{ unique }}"
+    And the response "data.attributes.enabled" is equal to true
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
   Scenario: Create a security filter returns "Bad Request" response
     Given new "CreateSecurityFilter" request
     And body with value {"data": {"attributes": {"exclusion_filters": [{"name": "Exclude staging", "query": "source:staging"}], "filtered_data_type": "logs", "is_enabled": true, "name": "Custom security filter", "query": "service:api"}, "type": "security_filters"}}
@@ -198,6 +215,21 @@ Feature: Security Monitoring
     And request contains "rule_id" parameter with value "ThisRuleIdProbablyDoesntExist"
     When the request is sent
     Then the response status is 404 Not Found
+
+  @team:DataDog/k9-cloud-security-platform
+  Scenario: Delete a notification rule returns "Not Found" response
+    Given new "DeleteSecurityMonitoringNotificationRule" request
+    And request contains "notification_rule_id" parameter with value "ThisRuleIdProbablyDoesntExist"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/k9-cloud-security-platform
+  Scenario: Delete a notification rule returns "OK" response
+    Given there is a valid "notification_rule" in the system
+    And new "DeleteSecurityMonitoringNotificationRule" request
+    And request contains "notification_rule_id" parameter from "notification_rule.data.id"
+    When the request is sent
+    Then the response status is 204 OK
 
   @skip-validation @team:DataDog/k9-cloud-security-platform
   Scenario: Delete a security filter returns "No Content" response
@@ -410,6 +442,32 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
 
+  @team:DataDog/k9-cloud-security-platform
+  Scenario: Get notification profile by id returns "OK" response
+    Given there is a valid "notification_rule" in the system
+    And new "GetSecurityMonitoringNotificationRule" request
+    And request contains "notification_rule_id" parameter from "notification_rule.data.id"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.id" has the same value as "notification_rule.data.id"
+    And the response "data.type" has the same value as "notification_rule.data.type"
+    And the response "data.attributes.name" has the same value as "notification_rule.data.attributes.name"
+    And the response "data.attributes.enabled" has the same value as "notification_rule.data.attributes.enabled"
+
+  @team:DataDog/k9-cloud-security-platform
+  Scenario: Get notification rule by ID returns "Not Found" response
+    Given new "GetSecurityMonitoringNotificationRule" request
+    And request contains "notification_rule_id" parameter with value "ThisRuleIdProbablyDoesntExist"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Get notification rule by ID returns "OK" response
+    Given new "GetSecurityMonitoringNotificationRule" request
+    And request contains "notification_rule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
   @generated @skip @team:DataDog/cloud-security-posture-management
   Scenario: List findings returns "Bad Request: The server cannot process the request due to invalid syntax in the request." response
     Given operation "ListFindings" enabled
@@ -440,6 +498,20 @@ Feature: Security Monitoring
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: List notification rules returns "Not Found" response
+    Given new "ListSecurityMonitoringNotificationRules" request
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/k9-cloud-security-platform
+  Scenario: List notification rules returns "OK" response
+    Given there is a valid "notification_rule" in the system
+    And new "ListSecurityMonitoringNotificationRules" request
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data[0].type" is equal to "notification_rules"
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
   Scenario: List rules returns "Bad Request" response
     Given new "ListSecurityMonitoringRules" request
     When the request is sent
@@ -448,6 +520,12 @@ Feature: Security Monitoring
   @skip-validation @team:DataDog/k9-cloud-security-platform
   Scenario: List rules returns "OK" response
     Given new "ListSecurityMonitoringRules" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: List security filters returns "OK" response
+    Given new "ListSecurityFilters" request
     When the request is sent
     Then the response status is 200 OK
 
@@ -517,6 +595,36 @@ Feature: Security Monitoring
     Then the response status is 200 OK
     And the response "name" is equal to "{{ unique }}_cloud_updated"
     And the response "id" has the same value as "cloud_configuration_rule.id"
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Update a notification rule returns "Bad Request" response
+    Given new "EditSecurityMonitoringNotificationRule" request
+    And request contains "notification_rule_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"enabled": true, "name": "Interesting signals", "selectors": {"attributes": ["test:123", "env:prod"], "implicit_vm_rule_match": false, "migrated": false, "query": "(fim:true OR @fim:true)", "rule_tags": ["test:123"], "rule_types": ["application_security", "log_detection"], "severities": ["high"], "signal_tags": ["env:prod"], "trigger_source": "security_signals"}, "targets": ["@slack-test"], "version": 1}, "id": "ntf-prf-001", "type": "notification_rules"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/k9-cloud-security-platform
+  Scenario: Update a notification rule returns "Not Found" response
+    Given new "EditSecurityMonitoringNotificationRule" request
+    And request contains "notification_rule_id" parameter with value "ThisRuleIdProbablyDoesntExist"
+    And body with value {"data": {"attributes": {"version": 1, "name": "{{ unique }}","enabled": false, "selectors": {"attributes": ["fim:true"], "implicit_vm_rule_match": false, "rule_tags": ["fim:true"], "severities": ["high"],"signal_tags": [],"rule_types": ["log_detection", "cloud_configuration"]}, "targets": ["test2"]}, "type": "notification_rules"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/k9-cloud-security-platform
+  Scenario: Update a notification rule returns "OK" response
+    Given new "EditSecurityMonitoringNotificationRule" request
+    And there is a valid "notification_rule" in the system
+    And request contains "notification_rule_id" parameter from "notification_rule.data.id"
+    And body with value {"data": {"attributes": {"version": 1, "name": "{{ unique }}","enabled": false, "selectors": {"attributes": ["fim:true"], "implicit_vm_rule_match": false, "rule_tags": ["fim:true"], "severities": ["high"],"signal_tags": [],"rule_types": ["log_detection", "cloud_configuration"]}, "targets": ["test2"]}, "type": "notification_rules"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.id" has the same value as "notification_rule.data.id"
+    And the response "data.type" has the same value as "notification_rule.data.type"
+    And the response "data.attributes.name" has the same value as "notification_rule.data.attributes.name"
+    And the response "data.attributes.enabled" is equal to false
+    And the response "data.attributes.targets" is equal to ["test2"]
 
   @generated @skip @team:DataDog/k9-cloud-security-platform
   Scenario: Update a security filter returns "Bad Request" response

@@ -7715,6 +7715,13 @@ security\_filters\_response
    :members:
    :show-inheritance:
 
+security\_monitoring\_creator
+-----------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_creator
+   :members:
+   :show-inheritance:
+
 security\_monitoring\_filter
 ----------------------------
 
@@ -7733,6 +7740,97 @@ security\_monitoring\_list\_rules\_response
 -------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.security_monitoring_list_rules_response
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_notification\_rule\_create\_attributes
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_notification_rule_create_attributes
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_notification\_rule\_create\_data
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_notification_rule_create_data
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_notification\_rule\_create\_request
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_notification_rule_create_request
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_notification\_rule\_list\_response
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_notification_rule_list_response
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_notification\_rule\_response
+--------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_notification_rule_response
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_notification\_rule\_response\_attributes
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_notification_rule_response_attributes
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_notification\_rule\_response\_data
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_notification_rule_response_data
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_notification\_rule\_selectors
+---------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_notification_rule_selectors
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_notification\_rule\_trigger\_source
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_notification_rule_trigger_source
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_notification\_rule\_type
+----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_notification_rule_type
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_notification\_rule\_update\_attributes
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_notification_rule_update_attributes
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_notification\_rule\_update\_data
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_notification_rule_update_data
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_notification\_rule\_update\_request
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_notification_rule_update_request
    :members:
    :show-inheritance:
 
@@ -7887,6 +7985,13 @@ security\_monitoring\_rule\_type\_read
 --------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.security_monitoring_rule_type_read
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_rule\_types
+---------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_rule_types
    :members:
    :show-inheritance:
 
@@ -8251,6 +8356,13 @@ security\_monitoring\_triage\_user
 ----------------------------------
 
 .. automodule:: datadog_api_client.v2.model.security_monitoring_triage_user
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_updater
+-----------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_updater
    :members:
    :show-inheritance:
 

@@ -186,9 +186,9 @@ interactions:
         Apps Read","description":"View RUM Applications data.","created":"2021-08-02T09:46:07.671535+00:00","group_name":"Real
         User Monitoring","display_type":"read","restricted":true}},{"type":"permissions","id":"7605ef25-f376-11eb-b90b-da7ad0900002","attributes":{"name":"rum_session_replay_read","display_name":"RUM
         Session Replay Read","description":"View Session Replays.","created":"2021-08-02T09:46:07.674640+00:00","group_name":"Real
-        User Monitoring","display_type":"read","restricted":false}},{"type":"permissions","id":"c95412b8-16c7-11ec-85c0-da7ad0900002","attributes":{"name":"security_monitoring_notification_profiles_read","display_name":"Security
+        User Monitoring","display_type":"read","restricted":false}},{"type":"permissions","id":"c95412b8-16c7-11ec-85c0-da7ad0900002","attributes":{"name":"security_monitoring_notification_rules_read","display_name":"Security
         Notification Rules Read","description":"Read Notification Rules.","created":"2021-09-16T08:26:27.366789+00:00","group_name":"Cloud
-        Security Platform","display_type":"read","restricted":false}},{"type":"permissions","id":"c95412b9-16c7-11ec-85c0-da7ad0900002","attributes":{"name":"security_monitoring_notification_profiles_write","display_name":"Security
+        Security Platform","display_type":"read","restricted":false}},{"type":"permissions","id":"c95412b9-16c7-11ec-85c0-da7ad0900002","attributes":{"name":"security_monitoring_notification_rules_write","display_name":"Security
         Notification Rules Write","description":"Create, edit, and delete Notification
         Rules.","created":"2021-09-16T08:26:27.369359+00:00","group_name":"Cloud Security
         Platform","display_type":"write","restricted":false}},{"type":"permissions","id":"26c79920-1703-11ec-85d2-da7ad0900002","attributes":{"name":"apm_generate_metrics","display_name":"APM

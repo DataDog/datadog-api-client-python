@@ -1,0 +1,39 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"enabled":true,"name":"Test-Create_a_notification_rule_returns_OK_response-1713390902","selectors":{"attributes":["test:123","env:prod"],"implicit_vm_rule_match":false,"rule_tags":["test:123"],"rule_types":["application_security","log_detection"],"severities":["high"],"signal_tags":["env:prod"]},"targets":["@slack-test"]},"type":"notification_rules"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/notification_rules
+  response:
+    body:
+      string: '{"data":{"id":"ntc-9ny-wdj","attributes":{"version":1,"name":"Test-Create_a_notification_rule_returns_OK_response-1713390902","targets":["@slack-test"],"selectors":{"severities":["high"],"rule_types":["application_security","log_detection"],"rule_tags":["test:123"],"signal_tags":["env:prod"],"attributes":["env:prod","test:123"],"query":"(env:\"prod\"
+        OR @env:\"prod\") AND (test:\"123\" OR @test:\"123\")","migrated":true,"implicit_vm_rule_match":false},"enabled":true,"creation_date":1713390903036,"update_date":1713390903036,"creator":{"name":null,"handle":"frog@datadoghq.com"},"updater":{"name":null,"handle":"frog@datadoghq.com"}},"type":"notification_rules"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/notification_rules/ntc-9ny-wdj
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - text/html; charset=utf-8
+    status:
+      code: 204
+      message: No Content
+version: 1

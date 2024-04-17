@@ -1,0 +1,23 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"enabled":false,"name":"Test-Update_a_notification_rule_returns_Not_Found_response-1699976717","selectors":{"attributes":["fim:true"],"implicit_vm_rule_match":false,"rule_tags":["fim:true"],"rule_types":["log_detection","cloud_configuration"],"severities":["high"],"signal_tags":[]},"targets":["test2"],"version":1},"type":"notification_rules"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/notification_rules/ThisRuleIdProbablyDoesntExist
+  response:
+    body:
+      string: '{"errors":["not_found(Notification profile with id ''ThisRuleIdProbablyDoesntExist''
+        not found)"]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 404
+      message: Not Found
+version: 1
