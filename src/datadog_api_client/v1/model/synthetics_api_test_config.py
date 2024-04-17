@@ -36,6 +36,7 @@ class SyntheticsAPITestConfig(ModelNormal):
             "config_variables": ([SyntheticsConfigVariable],),
             "request": (SyntheticsTestRequest,),
             "steps": ([SyntheticsAPIStep],),
+            "variables_from_script": (str,),
         }
 
     attribute_map = {
@@ -43,6 +44,7 @@ class SyntheticsAPITestConfig(ModelNormal):
         "config_variables": "configVariables",
         "request": "request",
         "steps": "steps",
+        "variables_from_script": "variablesFromScript",
     }
 
     def __init__(
@@ -61,6 +63,7 @@ class SyntheticsAPITestConfig(ModelNormal):
         config_variables: Union[List[SyntheticsConfigVariable], UnsetType] = unset,
         request: Union[SyntheticsTestRequest, UnsetType] = unset,
         steps: Union[List[SyntheticsAPIStep], UnsetType] = unset,
+        variables_from_script: Union[str, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -77,6 +80,9 @@ class SyntheticsAPITestConfig(ModelNormal):
 
         :param steps: When the test subtype is ``multi`` , the steps of the test.
         :type steps: [SyntheticsAPIStep], optional
+
+        :param variables_from_script: Variables defined from JavaScript code.
+        :type variables_from_script: str, optional
         """
         if assertions is not unset:
             kwargs["assertions"] = assertions
@@ -86,4 +92,6 @@ class SyntheticsAPITestConfig(ModelNormal):
             kwargs["request"] = request
         if steps is not unset:
             kwargs["steps"] = steps
+        if variables_from_script is not unset:
+            kwargs["variables_from_script"] = variables_from_script
         super().__init__(kwargs)
