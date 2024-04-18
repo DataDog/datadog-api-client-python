@@ -78,6 +78,7 @@ body = SyntheticsAPITest(
                 type=SyntheticsConfigVariableType.TEXT,
             ),
         ],
+        variables_from_script='dd.variable.set("FOO", "foo")',
         request=SyntheticsTestRequest(
             certificate=SyntheticsTestRequestCertificate(
                 cert=SyntheticsTestRequestCertificateItem(
