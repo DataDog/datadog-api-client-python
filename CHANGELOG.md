@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.24.1 / 2024-04-18
+
+### Fixed
+* fix case search documentation by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1943
+### Added
+* Add support variablesFromScript in Synthetics API test by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1945
+
+
+**Full Changelog**: https://github.com/DataDog/datadog-api-client-python/compare/2.24.0...2.24.1
+
 ## 2.24.0 / 2024-04-11
 
 ### Fixed
