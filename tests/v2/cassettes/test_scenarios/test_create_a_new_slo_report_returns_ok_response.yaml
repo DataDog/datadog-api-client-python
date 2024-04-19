@@ -11,7 +11,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/slo/report
   response:
     body:
-      string: '{"data":{"id":"8226c9b6-f69a-11ee-8916-13e390f416b9","type":"report_id"}}'
+      string: '{"data":{"id":"98c67bea-fdbf-11ee-8a01-bfd37432018b","type":"report_id"}}'
     headers:
       content-type:
       - application/vnd.api+json
