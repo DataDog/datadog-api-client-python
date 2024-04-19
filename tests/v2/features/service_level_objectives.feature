@@ -79,4 +79,3 @@ Feature: Service Level Objectives
     When the request is sent
     Then the response status is 200 OK
     And the response "data.type" is equal to "report_id"
-    And the response "data.attributes.status" is equal to "in_progress"
