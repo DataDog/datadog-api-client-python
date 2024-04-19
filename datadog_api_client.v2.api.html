@@ -9167,8 +9167,7 @@ If the <code class="docutils literal notranslate"><span class="pre">team_links</
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>The usage metering API allows you to get hourly, daily, and
 monthly usage across multiple facets of Datadog.
-This API is available to all Pro and Enterprise customers.
-Usage is only accessible for <a class="reference external" href="https://docs.datadoghq.com/account_management/multi_organization/">parent-level organizations</a>.</p>
+This API is available to all Pro and Enterprise customers.</p>
 <p><strong>Note</strong> : Usage data is delayed by up to 72 hours from when it was incurred.
 It is retained for 15 months.</p>
 <p>You can retrieve up to 24 hours of hourly usage data for multiple organizations,
@@ -9194,6 +9193,7 @@ Cost by org data for a given month becomes available no later than the 16th of t
 <strong>Note:</strong> This endpoint has been deprecated. Please use the new endpoint
 ` <code class="docutils literal notranslate"><span class="pre">/historical_cost</span></code> &lt;<a class="reference external" href="https://docs.datadoghq.com/api/latest/usage-metering/#get-historical-cost-across-your-account">https://docs.datadoghq.com/api/latest/usage-metering/#get-historical-cost-across-your-account</a>&gt;`_
 instead.</p>
+<p>This endpoint is only accessible for <a class="reference external" href="https://docs.datadoghq.com/account_management/multi_organization/">parent-level organizations</a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -9214,6 +9214,7 @@ instead.</p>
 Estimated cost data is only available for the current month and previous month
 and is delayed by up to 72 hours from when it was incurred.
 To access historical costs prior to this, use the <code class="docutils literal notranslate"><span class="pre">/historical_cost</span></code> endpoint.</p>
+<p>This endpoint is only accessible for <a class="reference external" href="https://docs.datadoghq.com/account_management/multi_organization/">parent-level organizations</a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -9235,6 +9236,7 @@ To access historical costs prior to this, use the <code class="docutils literal 
 <dd><p>Get historical cost across your account.</p>
 <p>Get historical cost across multi-org and single root-org accounts.
 Cost data for a given month becomes available no later than the 16th of the following month.</p>
+<p>This endpoint is only accessible for <a class="reference external" href="https://docs.datadoghq.com/account_management/multi_organization/">parent-level organizations</a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -9298,6 +9300,7 @@ Pseudo code example:</p>
 <span class="n">END</span>
 </pre></div>
 </div>
+<p>This endpoint is only accessible for <a class="reference external" href="https://docs.datadoghq.com/account_management/multi_organization/">parent-level organizations</a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -9326,8 +9329,8 @@ To see which tags are available, look for the value of <code class="docutils lit
 <span class="sig-name descname"><span class="pre">get_projected_cost</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">view</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.projected_cost_response.ProjectedCostResponse" title="datadog_api_client.v2.model.projected_cost_response.ProjectedCostResponse"><span class="pre">ProjectedCostResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.usage_metering_api.UsageMeteringApi.get_projected_cost" title="Link to this definition">¶</a></dt>
 <dd><p>Get projected cost across your account.</p>
 <p>Get projected cost across multi-org and single root-org accounts.
-Projected cost data is only available for the current month and becomes available around the 12th of the month.
-This endpoint requires the usage_read authorization scope.</p>
+Projected cost data is only available for the current month and becomes available around the 12th of the month.</p>
+<p>This endpoint is only accessible for <a class="reference external" href="https://docs.datadoghq.com/account_management/multi_organization/">parent-level organizations</a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>view</strong> (<em>str</em><em>, </em><em>optional</em>) – String to specify whether cost is broken down at a parent-org level or at the sub-org level. Available views are <code class="docutils literal notranslate"><span class="pre">summary</span></code> and <code class="docutils literal notranslate"><span class="pre">sub-org</span></code>. Defaults to <code class="docutils literal notranslate"><span class="pre">summary</span></code>.</p>
