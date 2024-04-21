@@ -633,7 +633,7 @@ class AsyncApiClient(ApiClient):
         host: Optional[str] = None,
         check_type: Optional[bool] = None,
     ):
-        params = pagination["endpoint"].get_pagination_params(pagination["kwargs"])
+        params = pagination["endpoint"].gather_params(pagination["kwargs"])
         while True:
             response = await self.call_api(
                 resource_path,
