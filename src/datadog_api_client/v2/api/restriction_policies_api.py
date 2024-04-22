@@ -142,9 +142,9 @@ class RestrictionPoliciesApi:
 
         Restriction policies can be applied to the following resources:
 
-        * Connections: ``connection``
         * Dashboards: ``dashboard``
         * Notebooks: ``notebook``
+        * Powerpacks: ``powerpack``
         * Security Rules: ``security-rule``
         * Service Level Objectives: ``slo``
 
@@ -155,11 +155,11 @@ class RestrictionPoliciesApi:
 
            * - Resource Type
              - Supported Relations
-           * - Connections
-             - ``viewer`` , ``editor`` , ``resolver``
            * - Dashboards
              - ``viewer`` , ``editor``
            * - Notebooks
+             - ``viewer`` , ``editor``
+           * - Powerpacks
              - ``viewer`` , ``editor``
            * - Security Rules
              - ``viewer`` , ``editor``
