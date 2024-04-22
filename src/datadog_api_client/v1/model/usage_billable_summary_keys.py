@@ -75,6 +75,7 @@ class UsageBillableSummaryKeys(ModelNormal):
             "logs_forwarding_sum": (UsageBillableSummaryBody,),
             "logs_indexed_15day_sum": (UsageBillableSummaryBody,),
             "logs_indexed_180day_sum": (UsageBillableSummaryBody,),
+            "logs_indexed_1day_sum": (UsageBillableSummaryBody,),
             "logs_indexed_30day_sum": (UsageBillableSummaryBody,),
             "logs_indexed_360day_sum": (UsageBillableSummaryBody,),
             "logs_indexed_3day_sum": (UsageBillableSummaryBody,),
@@ -166,6 +167,7 @@ class UsageBillableSummaryKeys(ModelNormal):
         "logs_forwarding_sum": "logs_forwarding_sum",
         "logs_indexed_15day_sum": "logs_indexed_15day_sum",
         "logs_indexed_180day_sum": "logs_indexed_180day_sum",
+        "logs_indexed_1day_sum": "logs_indexed_1day_sum",
         "logs_indexed_30day_sum": "logs_indexed_30day_sum",
         "logs_indexed_360day_sum": "logs_indexed_360day_sum",
         "logs_indexed_3day_sum": "logs_indexed_3day_sum",
@@ -258,6 +260,7 @@ class UsageBillableSummaryKeys(ModelNormal):
         logs_forwarding_sum: Union[UsageBillableSummaryBody, UnsetType] = unset,
         logs_indexed_15day_sum: Union[UsageBillableSummaryBody, UnsetType] = unset,
         logs_indexed_180day_sum: Union[UsageBillableSummaryBody, UnsetType] = unset,
+        logs_indexed_1day_sum: Union[UsageBillableSummaryBody, UnsetType] = unset,
         logs_indexed_30day_sum: Union[UsageBillableSummaryBody, UnsetType] = unset,
         logs_indexed_360day_sum: Union[UsageBillableSummaryBody, UnsetType] = unset,
         logs_indexed_3day_sum: Union[UsageBillableSummaryBody, UnsetType] = unset,
@@ -454,6 +457,9 @@ class UsageBillableSummaryKeys(ModelNormal):
 
         :param logs_indexed_180day_sum: Response with properties for each aggregated usage type.
         :type logs_indexed_180day_sum: UsageBillableSummaryBody, optional
+
+        :param logs_indexed_1day_sum: Response with properties for each aggregated usage type.
+        :type logs_indexed_1day_sum: UsageBillableSummaryBody, optional
 
         :param logs_indexed_30day_sum: Response with properties for each aggregated usage type.
         :type logs_indexed_30day_sum: UsageBillableSummaryBody, optional
@@ -667,6 +673,8 @@ class UsageBillableSummaryKeys(ModelNormal):
             kwargs["logs_indexed_15day_sum"] = logs_indexed_15day_sum
         if logs_indexed_180day_sum is not unset:
             kwargs["logs_indexed_180day_sum"] = logs_indexed_180day_sum
+        if logs_indexed_1day_sum is not unset:
+            kwargs["logs_indexed_1day_sum"] = logs_indexed_1day_sum
         if logs_indexed_30day_sum is not unset:
             kwargs["logs_indexed_30day_sum"] = logs_indexed_30day_sum
         if logs_indexed_360day_sum is not unset:
