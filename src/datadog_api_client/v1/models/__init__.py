@@ -624,6 +624,14 @@ from datadog_api_client.v1.model.synthetics_assertion_json_path_target import Sy
 from datadog_api_client.v1.model.synthetics_assertion_json_path_target_target import (
     SyntheticsAssertionJSONPathTargetTarget,
 )
+from datadog_api_client.v1.model.synthetics_assertion_json_schema_meta_schema import (
+    SyntheticsAssertionJSONSchemaMetaSchema,
+)
+from datadog_api_client.v1.model.synthetics_assertion_json_schema_operator import SyntheticsAssertionJSONSchemaOperator
+from datadog_api_client.v1.model.synthetics_assertion_json_schema_target import SyntheticsAssertionJSONSchemaTarget
+from datadog_api_client.v1.model.synthetics_assertion_json_schema_target_target import (
+    SyntheticsAssertionJSONSchemaTargetTarget,
+)
 from datadog_api_client.v1.model.synthetics_assertion_operator import SyntheticsAssertionOperator
 from datadog_api_client.v1.model.synthetics_assertion_target import SyntheticsAssertionTarget
 from datadog_api_client.v1.model.synthetics_assertion_timings_scope import SyntheticsAssertionTimingsScope
@@ -1513,6 +1521,10 @@ __all__ = [
     "SyntheticsAssertionJSONPathOperator",
     "SyntheticsAssertionJSONPathTarget",
     "SyntheticsAssertionJSONPathTargetTarget",
+    "SyntheticsAssertionJSONSchemaMetaSchema",
+    "SyntheticsAssertionJSONSchemaOperator",
+    "SyntheticsAssertionJSONSchemaTarget",
+    "SyntheticsAssertionJSONSchemaTargetTarget",
     "SyntheticsAssertionOperator",
     "SyntheticsAssertionTarget",
     "SyntheticsAssertionTimingsScope",
