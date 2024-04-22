@@ -6938,6 +6938,13 @@ retention\_filter\_create\_request
    :members:
    :show-inheritance:
 
+retention\_filter\_create\_response
+-----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.retention_filter_create_response
+   :members:
+   :show-inheritance:
+
 retention\_filter\_response
 ---------------------------
 
