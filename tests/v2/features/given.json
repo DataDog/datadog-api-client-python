@@ -349,7 +349,7 @@
     "operationId": "CreateMonitorConfigPolicy"
   },
   {
-    "source": "data[0]",
+    "source": "data[4]",
     "step": "there is a valid \"permission\" in the system",
     "key": "permission",
     "tag": "Roles",
