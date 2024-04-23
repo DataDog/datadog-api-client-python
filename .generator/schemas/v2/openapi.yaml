@@ -30864,11 +30864,11 @@ paths:
 
         Restriction policies can be applied to the following resources:
 
-        - Connections: `connection`
-
         - Dashboards: `dashboard`
 
         - Notebooks: `notebook`
+
+        - Powerpacks: `powerpack`
 
         - Security Rules: `security-rule`
 
@@ -30881,11 +30881,11 @@ paths:
 
         -------------------------|--------------------------
 
-        Connections              | `viewer`, `editor`, `resolver`
-
         Dashboards               | `viewer`, `editor`
 
         Notebooks                | `viewer`, `editor`
+
+        Powerpacks               | `viewer`, `editor`
 
         Security Rules           | `viewer`, `editor`
 
