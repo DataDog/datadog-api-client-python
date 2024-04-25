@@ -3865,6 +3865,34 @@ synthetics\_assertion\_json\_path\_target\_target
    :members:
    :show-inheritance:
 
+synthetics\_assertion\_json\_schema\_meta\_schema
+-------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_assertion_json_schema_meta_schema
+   :members:
+   :show-inheritance:
+
+synthetics\_assertion\_json\_schema\_operator
+---------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_assertion_json_schema_operator
+   :members:
+   :show-inheritance:
+
+synthetics\_assertion\_json\_schema\_target
+-------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_assertion_json_schema_target
+   :members:
+   :show-inheritance:
+
+synthetics\_assertion\_json\_schema\_target\_target
+---------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_assertion_json_schema_target_target
+   :members:
+   :show-inheritance:
+
 synthetics\_assertion\_operator
 -------------------------------
 

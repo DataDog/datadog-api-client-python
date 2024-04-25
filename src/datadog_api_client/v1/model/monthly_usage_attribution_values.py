@@ -97,6 +97,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
             "logs_indexed_15day_usage": (float,),
             "logs_indexed_180day_percentage": (float,),
             "logs_indexed_180day_usage": (float,),
+            "logs_indexed_1day_percentage": (float,),
+            "logs_indexed_1day_usage": (float,),
             "logs_indexed_30day_percentage": (float,),
             "logs_indexed_30day_usage": (float,),
             "logs_indexed_360day_percentage": (float,),
@@ -232,6 +234,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         "logs_indexed_15day_usage": "logs_indexed_15day_usage",
         "logs_indexed_180day_percentage": "logs_indexed_180day_percentage",
         "logs_indexed_180day_usage": "logs_indexed_180day_usage",
+        "logs_indexed_1day_percentage": "logs_indexed_1day_percentage",
+        "logs_indexed_1day_usage": "logs_indexed_1day_usage",
         "logs_indexed_30day_percentage": "logs_indexed_30day_percentage",
         "logs_indexed_30day_usage": "logs_indexed_30day_usage",
         "logs_indexed_360day_percentage": "logs_indexed_360day_percentage",
@@ -368,6 +372,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         logs_indexed_15day_usage: Union[float, UnsetType] = unset,
         logs_indexed_180day_percentage: Union[float, UnsetType] = unset,
         logs_indexed_180day_usage: Union[float, UnsetType] = unset,
+        logs_indexed_1day_percentage: Union[float, UnsetType] = unset,
+        logs_indexed_1day_usage: Union[float, UnsetType] = unset,
         logs_indexed_30day_percentage: Union[float, UnsetType] = unset,
         logs_indexed_30day_usage: Union[float, UnsetType] = unset,
         logs_indexed_360day_percentage: Union[float, UnsetType] = unset,
@@ -664,6 +670,12 @@ class MonthlyUsageAttributionValues(ModelNormal):
 
         :param logs_indexed_180day_usage: The total Indexed Logs (180-day Retention) usage by tag(s).
         :type logs_indexed_180day_usage: float, optional
+
+        :param logs_indexed_1day_percentage: The percentage of Indexed Logs (1-day Retention) usage by tag(s).
+        :type logs_indexed_1day_percentage: float, optional
+
+        :param logs_indexed_1day_usage: The total Indexed Logs (1-day Retention) usage by tag(s).
+        :type logs_indexed_1day_usage: float, optional
 
         :param logs_indexed_30day_percentage: The percentage of Indexed Logs (30-day Retention) usage by tag(s).
         :type logs_indexed_30day_percentage: float, optional
@@ -983,6 +995,10 @@ class MonthlyUsageAttributionValues(ModelNormal):
             kwargs["logs_indexed_180day_percentage"] = logs_indexed_180day_percentage
         if logs_indexed_180day_usage is not unset:
             kwargs["logs_indexed_180day_usage"] = logs_indexed_180day_usage
+        if logs_indexed_1day_percentage is not unset:
+            kwargs["logs_indexed_1day_percentage"] = logs_indexed_1day_percentage
+        if logs_indexed_1day_usage is not unset:
+            kwargs["logs_indexed_1day_usage"] = logs_indexed_1day_usage
         if logs_indexed_30day_percentage is not unset:
             kwargs["logs_indexed_30day_percentage"] = logs_indexed_30day_percentage
         if logs_indexed_30day_usage is not unset:

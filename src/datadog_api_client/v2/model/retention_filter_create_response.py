@@ -14,28 +14,28 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.retention_filter_all import RetentionFilterAll
+    from datadog_api_client.v2.model.retention_filter import RetentionFilter
 
 
-class RetentionFilterResponse(ModelNormal):
+class RetentionFilterCreateResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.retention_filter_all import RetentionFilterAll
+        from datadog_api_client.v2.model.retention_filter import RetentionFilter
 
         return {
-            "data": (RetentionFilterAll,),
+            "data": (RetentionFilter,),
         }
 
     attribute_map = {
         "data": "data",
     }
 
-    def __init__(self_, data: Union[RetentionFilterAll, UnsetType] = unset, **kwargs):
+    def __init__(self_, data: Union[RetentionFilter, UnsetType] = unset, **kwargs):
         """
         The retention filters definition.
 
         :param data: The definition of the retention filter.
-        :type data: RetentionFilterAll, optional
+        :type data: RetentionFilter, optional
         """
         if data is not unset:
             kwargs["data"] = data
