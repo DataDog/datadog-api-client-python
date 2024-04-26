@@ -376,7 +376,7 @@
     ],
     "step": "there is a valid \"agent_rule_rc\" in the system",
     "key": "agent_rule",
-    "tag": "Cloud Workload Security",
+    "tag": "CSM Threats",
     "operationId": "CreateCSMThreatsAgentRule"
   },
   {
@@ -456,7 +456,7 @@
     ],
     "step": "there is a valid \"agent_rule\" in the system",
     "key": "agent_rule",
-    "tag": "Cloud Workload Security",
+    "tag": "CSM Threats",
     "operationId": "CreateCloudWorkloadSecurityAgentRule"
   },
   {

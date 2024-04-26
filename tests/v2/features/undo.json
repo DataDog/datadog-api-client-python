@@ -1371,13 +1371,13 @@
     }
   },
   "ListCSMThreatsAgentRules": {
-    "tag": "Cloud Workload Security",
+    "tag": "CSM Threats",
     "undo": {
       "type": "safe"
     }
   },
   "CreateCSMThreatsAgentRule": {
-    "tag": "Cloud Workload Security",
+    "tag": "CSM Threats",
     "undo": {
       "operationId": "DeleteCSMThreatsAgentRule",
       "parameters": [
@@ -1390,25 +1390,25 @@
     }
   },
   "DeleteCSMThreatsAgentRule": {
-    "tag": "Cloud Workload Security",
+    "tag": "CSM Threats",
     "undo": {
       "type": "idempotent"
     }
   },
   "GetCSMThreatsAgentRule": {
-    "tag": "Cloud Workload Security",
+    "tag": "CSM Threats",
     "undo": {
       "type": "safe"
     }
   },
   "UpdateCSMThreatsAgentRule": {
-    "tag": "Cloud Workload Security",
+    "tag": "CSM Threats",
     "undo": {
       "type": "idempotent"
     }
   },
   "DownloadCSMThreatsPolicy": {
-    "tag": "Cloud Workload Security",
+    "tag": "CSM Threats",
     "undo": {
       "type": "safe"
     }
@@ -1616,19 +1616,19 @@
     }
   },
   "DownloadCloudWorkloadPolicyFile": {
-    "tag": "Cloud Workload Security",
+    "tag": "CSM Threats",
     "undo": {
       "type": "safe"
     }
   },
   "ListCloudWorkloadSecurityAgentRules": {
-    "tag": "Cloud Workload Security",
+    "tag": "CSM Threats",
     "undo": {
       "type": "safe"
     }
   },
   "CreateCloudWorkloadSecurityAgentRule": {
-    "tag": "Cloud Workload Security",
+    "tag": "CSM Threats",
     "undo": {
       "operationId": "DeleteCloudWorkloadSecurityAgentRule",
       "parameters": [
@@ -1641,19 +1641,19 @@
     }
   },
   "DeleteCloudWorkloadSecurityAgentRule": {
-    "tag": "Cloud Workload Security",
+    "tag": "CSM Threats",
     "undo": {
       "type": "idempotent"
     }
   },
   "GetCloudWorkloadSecurityAgentRule": {
-    "tag": "Cloud Workload Security",
+    "tag": "CSM Threats",
     "undo": {
       "type": "safe"
     }
   },
   "UpdateCloudWorkloadSecurityAgentRule": {
-    "tag": "Cloud Workload Security",
+    "tag": "CSM Threats",
     "undo": {
       "type": "idempotent"
     }
