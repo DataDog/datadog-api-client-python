@@ -39,9 +39,11 @@ class UserTeamIncluded(ModelComposed):
         # classes don't exist yet because their module has not finished
         # loading
         from datadog_api_client.v2.model.user import User
+        from datadog_api_client.v2.model.team import Team
 
         return {
             "oneOf": [
                 User,
+                Team,
             ],
         }
