@@ -1,7 +1,7 @@
 interactions:
 - request:
     body: '{"data":{"attributes":{"description":"My Agent rule","enabled":true,"expression":"exec.file.name
-      == sh","name":"testcreateacsmthreatsagentrulereturnsbadrequestresponse1711634267"},"type":"agent_rule"}}'
+      == sh","name":"testcreateacsmthreatsagentrulereturnsbadrequestresponse1713895064"},"type":"agent_rule"}}'
     headers:
       accept:
       - application/json
@@ -12,7 +12,7 @@ interactions:
   response:
     body:
       string: '{"errors":["input_validation_error(Field ''expression'' is invalid:
-        rule `testcreateacsmthreatsagentrulereturnsbadrequestresponse1711634267` error:
+        rule `testcreateacsmthreatsagentrulereturnsbadrequestresponse1713895064` error:
         rule compilation error: field `sh` not found)"]}'
     headers:
       content-type:

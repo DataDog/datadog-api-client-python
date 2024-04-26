@@ -24,9 +24,9 @@ from datadog_api_client.v2.model.cloud_workload_security_agent_rule_update_reque
 )
 
 
-class CloudWorkloadSecurityApi:
+class CSMThreatsApi:
     """
-    Workload activity security rules for generating events using the Datadog security Agent. See the `Setting up CSM Workload Security page <https://docs.datadoghq.com/security/cloud_security_management/setup/csm_workload_security/>`_ for more information.
+    Cloud Security Management Threats (CSM Threats) monitors file, network, and process activity across your environment to detect real-time threats to your infrastructure. See `Cloud Security Management Threats <https://docs.datadoghq.com/security/threats/>`_ for more information on setting up CSM Threats.
     """
 
     def __init__(self, api_client=None):

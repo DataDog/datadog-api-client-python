@@ -1,7 +1,7 @@
 interactions:
 - request:
     body: '{"data":{"attributes":{"description":"My Agent rule","enabled":true,"expression":"exec.file.name
-      == \"sh\"","name":"testupdateacsmthreatsagentrulereturnsbadrequestresponse1709907555"},"type":"agent_rule"}}'
+      == \"sh\"","name":"testupdateacsmthreatsagentrulereturnsbadrequestresponse1713895070"},"type":"agent_rule"}}'
     headers:
       accept:
       - application/json
@@ -11,11 +11,10 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules
   response:
     body:
-      string: '{"data":{"id":"oes-jfu-tm8","type":"agent_rule","attributes":{"category":"Process
-        Activity","creationDate":1709907556177,"creator":{"name":"Malo Le Goff","handle":"malo.legoff@datadoghq.com"},"defaultRule":false,"description":"My
+      string: '{"data":{"id":"rgf-aao-lo8","type":"agent_rule","attributes":{"category":"Process
+        Activity","creationDate":1713895070561,"creator":{"name":"","handle":"frog@datadoghq.com"},"defaultRule":false,"description":"My
         Agent rule","enabled":true,"expression":"exec.file.name == \"sh\"","filters":["os
-        == \"linux\""],"name":"testupdateacsmthreatsagentrulereturnsbadrequestresponse1709907555","updateDate":1709907556177,"updater":{"name":"Malo
-        Le Goff","handle":"malo.legoff@datadoghq.com"}}}}'
+        == \"linux\""],"name":"testupdateacsmthreatsagentrulereturnsbadrequestresponse1713895070","updateDate":1713895070561,"updater":{"name":"","handle":"frog@datadoghq.com"}}}}'
     headers:
       content-type:
       - application/json
@@ -31,7 +30,7 @@ interactions:
       content-type:
       - application/json
     method: PATCH
-    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules/oes-jfu-tm8
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules/rgf-aao-lo8
   response:
     body:
       string: '{"errors":[{"title":"failed to update rule"}]}
@@ -49,7 +48,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules/oes-jfu-tm8
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules/rgf-aao-lo8
   response:
     body:
       string: ''
