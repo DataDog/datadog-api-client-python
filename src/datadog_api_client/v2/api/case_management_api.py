@@ -41,7 +41,7 @@ class CaseManagementApi:
         self._archive_case_endpoint = _Endpoint(
             settings={
                 "response_type": (CaseResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/cases/{case_id}/archive",
                 "operation_id": "archive_case",
                 "http_method": "POST",
@@ -67,7 +67,7 @@ class CaseManagementApi:
         self._assign_case_endpoint = _Endpoint(
             settings={
                 "response_type": (CaseResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/cases/{case_id}/assign",
                 "operation_id": "assign_case",
                 "http_method": "POST",
@@ -93,7 +93,7 @@ class CaseManagementApi:
         self._create_case_endpoint = _Endpoint(
             settings={
                 "response_type": (CaseResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/cases",
                 "operation_id": "create_case",
                 "http_method": "POST",
@@ -113,7 +113,7 @@ class CaseManagementApi:
         self._create_project_endpoint = _Endpoint(
             settings={
                 "response_type": (ProjectResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/cases/projects",
                 "operation_id": "create_project",
                 "http_method": "POST",
@@ -133,7 +133,7 @@ class CaseManagementApi:
         self._delete_project_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/cases/projects/{project_id}",
                 "operation_id": "delete_project",
                 "http_method": "DELETE",
@@ -156,7 +156,7 @@ class CaseManagementApi:
         self._get_case_endpoint = _Endpoint(
             settings={
                 "response_type": (CaseResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/cases/{case_id}",
                 "operation_id": "get_case",
                 "http_method": "GET",
@@ -179,7 +179,7 @@ class CaseManagementApi:
         self._get_project_endpoint = _Endpoint(
             settings={
                 "response_type": (ProjectResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/cases/projects/{project_id}",
                 "operation_id": "get_project",
                 "http_method": "GET",
@@ -202,7 +202,7 @@ class CaseManagementApi:
         self._get_projects_endpoint = _Endpoint(
             settings={
                 "response_type": (ProjectsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/cases/projects",
                 "operation_id": "get_projects",
                 "http_method": "GET",
@@ -218,7 +218,7 @@ class CaseManagementApi:
         self._search_cases_endpoint = _Endpoint(
             settings={
                 "response_type": (CasesResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/cases",
                 "operation_id": "search_cases",
                 "http_method": "GET",
@@ -260,7 +260,7 @@ class CaseManagementApi:
         self._unarchive_case_endpoint = _Endpoint(
             settings={
                 "response_type": (CaseResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/cases/{case_id}/unarchive",
                 "operation_id": "unarchive_case",
                 "http_method": "POST",
@@ -286,7 +286,7 @@ class CaseManagementApi:
         self._unassign_case_endpoint = _Endpoint(
             settings={
                 "response_type": (CaseResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/cases/{case_id}/unassign",
                 "operation_id": "unassign_case",
                 "http_method": "POST",
@@ -312,7 +312,7 @@ class CaseManagementApi:
         self._update_priority_endpoint = _Endpoint(
             settings={
                 "response_type": (CaseResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/cases/{case_id}/priority",
                 "operation_id": "update_priority",
                 "http_method": "POST",
@@ -338,7 +338,7 @@ class CaseManagementApi:
         self._update_status_endpoint = _Endpoint(
             settings={
                 "response_type": (CaseResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/cases/{case_id}/status",
                 "operation_id": "update_status",
                 "http_method": "POST",
