@@ -22728,11 +22728,17 @@ components:
             ci_visibility_pipelines_write: Create CI Visibility pipeline spans using
               the API.
             ci_visibility_read: View CI Visibility.
+            cloud_cost_management_read: View Cloud Cost pages. This does not restrict
+              access to the cloud cost data source in dashboards and notebooks.
+            cloud_cost_management_write: Configure cloud cost accounts and global
+              customizations.
             create_webhooks: Create webhooks integrations.
             dashboards_public_share: Generate public and authenticated links to share
               dashboards or embeddable graphs externally.
             dashboards_read: View dashboards.
             dashboards_write: Create and change dashboards.
+            data_scanner_read: View Data Scanner configurations.
+            data_scanner_write: Edit Data Scanner configurations.
             events_read: Read Events data.
             incident_notification_settings_write: Configure Incidents Notification
               settings.
@@ -22741,7 +22747,7 @@ components:
             incident_write: Create, view, and manage incidents in Datadog.
             metrics_read: View custom metrics.
             monitors_downtime: Set downtimes to suppress alerts from any monitor in
-              an organization. Mute and unmute hosts. The ability to write monitors
+              an organization. Mute and unmute monitors. The ability to write monitors
               is not required to set downtimes.
             monitors_read: View monitors.
             monitors_write: Edit and delete individual monitors.
@@ -23745,10 +23751,6 @@ paths:
           description: Authentication Error
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
-      security:
-      - apiKeyAuth: []
-        appKeyAuth: []
-      - AuthZ: []
       summary: List all AuthN Mappings
       tags:
       - AuthN Mappings
@@ -23789,11 +23791,6 @@ paths:
           description: Not Found
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
-      security:
-      - apiKeyAuth: []
-        appKeyAuth: []
-      - AuthZ:
-        - user_access_manage
       summary: Create an AuthN Mapping
       tags:
       - AuthN Mappings
@@ -24896,6 +24893,11 @@ paths:
           description: Forbidden
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ:
+        - cloud_cost_management_read
       summary: List Cloud Cost Management AWS CUR configs
       tags:
       - Cloud Cost Management
@@ -24933,6 +24935,11 @@ paths:
           description: Forbidden
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ:
+        - cloud_cost_management_write
       summary: Create Cloud Cost Management AWS CUR config
       tags:
       - Cloud Cost Management
@@ -24963,6 +24970,11 @@ paths:
           description: Not Found
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ:
+        - cloud_cost_management_write
       summary: Delete Cloud Cost Management AWS CUR config
       tags:
       - Cloud Cost Management
@@ -24996,6 +25008,11 @@ paths:
           description: Forbidden
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ:
+        - cloud_cost_management_write
       summary: Update Cloud Cost Management AWS CUR config
       tags:
       - Cloud Cost Management
@@ -25037,6 +25054,11 @@ paths:
           description: Forbidden
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ:
+        - cloud_cost_management_read
       summary: List related AWS accounts
       tags:
       - Cloud Cost Management
@@ -25063,6 +25085,11 @@ paths:
           description: Forbidden
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ:
+        - cloud_cost_management_read
       summary: List Cloud Cost Management Azure configs
       tags:
       - Cloud Cost Management
@@ -25100,6 +25127,11 @@ paths:
           description: Forbidden
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ:
+        - cloud_cost_management_write
       summary: Create Cloud Cost Management Azure configs
       tags:
       - Cloud Cost Management
@@ -25130,6 +25162,11 @@ paths:
           description: Not Found
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ:
+        - cloud_cost_management_write
       summary: Delete Cloud Cost Management Azure config
       tags:
       - Cloud Cost Management
@@ -25169,6 +25206,11 @@ paths:
           description: Forbidden
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ:
+        - cloud_cost_management_write
       summary: Update Cloud Cost Management Azure config
       tags:
       - Cloud Cost Management
@@ -25195,6 +25237,11 @@ paths:
           description: Forbidden
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ:
+        - cloud_cost_management_read
       summary: Cloud Cost Enabled
       tags:
       - Cloud Cost Management
@@ -26180,11 +26227,6 @@ paths:
           $ref: '#/components/responses/NotAuthorizedResponse'
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
-      security:
-      - apiKeyAuth: []
-        appKeyAuth: []
-      - AuthZ:
-        - events_read
       summary: Search events
       tags:
       - Events
@@ -28253,10 +28295,6 @@ paths:
           description: Forbidden
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
-      security:
-      - apiKeyAuth: []
-        appKeyAuth: []
-      - AuthZ: []
       summary: Get archive order
       tags:
       - Logs Archives
@@ -28329,10 +28367,6 @@ paths:
           description: Forbidden
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
-      security:
-      - apiKeyAuth: []
-        appKeyAuth: []
-      - AuthZ: []
       summary: Get all archives
       tags:
       - Logs Archives
@@ -28435,10 +28469,6 @@ paths:
           description: Not found
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
-      security:
-      - apiKeyAuth: []
-        appKeyAuth: []
-      - AuthZ: []
       summary: Get an archive
       tags:
       - Logs Archives
@@ -28561,10 +28591,6 @@ paths:
           description: Not found
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
-      security:
-      - apiKeyAuth: []
-        appKeyAuth: []
-      - AuthZ: []
       summary: List read roles for an archive
       tags:
       - Logs Archives
@@ -28751,10 +28777,6 @@ paths:
           $ref: '#/components/responses/NotAuthorizedResponse'
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
-      security:
-      - apiKeyAuth: []
-        appKeyAuth: []
-      - AuthZ: []
       summary: Get all log-based metrics
       tags:
       - Logs Metrics
@@ -28826,10 +28848,6 @@ paths:
           $ref: '#/components/responses/NotFoundResponse'
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
-      security:
-      - apiKeyAuth: []
-        appKeyAuth: []
-      - AuthZ: []
       summary: Get a log-based metric
       tags:
       - Logs Metrics
@@ -29296,11 +29314,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Too Many Requests
-      security:
-      - apiKeyAuth: []
-        appKeyAuth: []
-      - AuthZ:
-        - metrics_read
       summary: List active tags and aggregations
       tags:
       - Metrics
@@ -29480,10 +29493,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Too Many Requests
-      security:
-      - apiKeyAuth: []
-        appKeyAuth: []
-      - AuthZ: []
       summary: Tag Configuration Cardinality Estimator
       tags:
       - Metrics
@@ -29715,10 +29724,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Too Many Requests
-      security:
-      - apiKeyAuth: []
-        appKeyAuth: []
-      - AuthZ: []
       summary: List distinct metric volumes by metric name
       tags:
       - Metrics

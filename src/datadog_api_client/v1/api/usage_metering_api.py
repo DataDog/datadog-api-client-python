@@ -80,7 +80,7 @@ class UsageMeteringApi:
         self._get_daily_custom_reports_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageCustomReportsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/daily_custom_reports",
                 "operation_id": "get_daily_custom_reports",
                 "http_method": "GET",
@@ -222,7 +222,7 @@ class UsageMeteringApi:
         self._get_monthly_custom_reports_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageCustomReportsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/monthly_custom_reports",
                 "operation_id": "get_monthly_custom_reports",
                 "http_method": "GET",
@@ -318,7 +318,7 @@ class UsageMeteringApi:
         self._get_specified_daily_custom_reports_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageSpecifiedCustomReportsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/daily_custom_reports/{report_id}",
                 "operation_id": "get_specified_daily_custom_reports",
                 "http_method": "GET",
@@ -341,7 +341,7 @@ class UsageMeteringApi:
         self._get_specified_monthly_custom_reports_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageSpecifiedCustomReportsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/monthly_custom_reports/{report_id}",
                 "operation_id": "get_specified_monthly_custom_reports",
                 "http_method": "GET",

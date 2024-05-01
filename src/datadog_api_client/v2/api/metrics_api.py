@@ -153,7 +153,7 @@ class MetricsApi:
         self._estimate_metrics_output_series_endpoint = _Endpoint(
             settings={
                 "response_type": (MetricEstimateResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/metrics/{metric_name}/estimate",
                 "operation_id": "estimate_metrics_output_series",
                 "http_method": "GET",
@@ -211,7 +211,7 @@ class MetricsApi:
         self._list_active_metric_configurations_endpoint = _Endpoint(
             settings={
                 "response_type": (MetricSuggestedTagsAndAggregationsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/metrics/{metric_name}/active-configurations",
                 "operation_id": "list_active_metric_configurations",
                 "http_method": "GET",
@@ -360,7 +360,7 @@ class MetricsApi:
         self._list_volumes_by_metric_name_endpoint = _Endpoint(
             settings={
                 "response_type": (MetricVolumesResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/metrics/{metric_name}/volumes",
                 "operation_id": "list_volumes_by_metric_name",
                 "http_method": "GET",

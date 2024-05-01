@@ -33,7 +33,7 @@ class AuthNMappingsApi:
         self._create_authn_mapping_endpoint = _Endpoint(
             settings={
                 "response_type": (AuthNMappingResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/authn_mappings",
                 "operation_id": "create_authn_mapping",
                 "http_method": "POST",
@@ -99,7 +99,7 @@ class AuthNMappingsApi:
         self._list_authn_mappings_endpoint = _Endpoint(
             settings={
                 "response_type": (AuthNMappingsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/authn_mappings",
                 "operation_id": "list_authn_mappings",
                 "http_method": "GET",
