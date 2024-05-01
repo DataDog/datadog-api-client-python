@@ -26,7 +26,7 @@ class UsersApi:
         self._create_user_endpoint = _Endpoint(
             settings={
                 "response_type": (UserResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/user",
                 "operation_id": "create_user",
                 "http_method": "POST",
