@@ -35,7 +35,7 @@ class SpansApi:
         self._aggregate_spans_endpoint = _Endpoint(
             settings={
                 "response_type": (SpansAggregateResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/spans/analytics/aggregate",
                 "operation_id": "aggregate_spans",
                 "http_method": "POST",
