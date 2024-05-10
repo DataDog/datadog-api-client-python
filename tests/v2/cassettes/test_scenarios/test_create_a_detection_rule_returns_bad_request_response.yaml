@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"cases":[{"status":"info"}],"isEnabled":true,"message":"Test rule","name":"Test-Create_a_detection_rule_returns_Bad_Request_response-1666186593","options":{},"queries":[{"query":""}],"tags":[]}'
+    body: '{"cases":[{"status":"info"}],"isEnabled":true,"message":"Test rule","name":"Test-Create_a_detection_rule_returns_Bad_Request_response-1715358868","options":{},"queries":[{"query":""}],"tags":[]}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/security_monitoring/rules
   response:
     body:
-      string: '{"errors":["Internal error"]}
+      string: '{"errors":["Invalid rule configuration","Query filter cannot be empty"]}
 
         '
     headers:

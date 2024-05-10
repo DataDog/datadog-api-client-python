@@ -1,7 +1,7 @@
 interactions:
 - request:
     body: '{"cases":[{"notifications":["channel"],"status":"info"}],"complianceSignalOptions":{"userActivationStatus":true,"userGroupByFields":["@account_id"]},"isEnabled":false,"message":"Cloud
-      configuration rule","name":"Test-Get_a_cloud_configuration_rule_s_details_returns_OK_response-1693483107_cloud","options":{"complianceRuleOptions":{"complexRule":false,"regoRule":{"policy":"package
+      configuration rule","name":"Test-Get_a_cloud_configuration_rule_s_details_returns_OK_response-1715358882_cloud","options":{"complianceRuleOptions":{"complexRule":false,"regoRule":{"policy":"package
       datadog\n\nimport data.datadog.output as dd_output\n\nimport future.keywords.contains\nimport
       future.keywords.if\nimport future.keywords.in\n\nmilliseconds_in_a_day := ((1000
       * 60) * 60) * 24\n\neval(iam_service_account_key) = \"skip\" if {\n\tiam_service_account_key.disabled\n}
@@ -19,7 +19,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/security_monitoring/rules
   response:
     body:
-      string: '{"id":"ijx-ftp-oew","version":1,"name":"Test-Get_a_cloud_configuration_rule_s_details_returns_OK_response-1693483107_cloud","createdAt":1693483108023,"creationAuthorId":1445416,"isDefault":false,"isEnabled":false,"isDeleted":false,"isDeprecated":false,"queries":[{"query":"resource_type:gcp_compute_disk","groupByFields":["resource_type","resource_id"],"distinctFields":[],"aggregation":"count","name":"a"}],"options":{"keepAlive":21600,"maxSignalDuration":86400,"detectionMethod":"threshold","evaluationWindow":7200,"complianceRuleOptions":{"resourceType":"gcp_compute_disk","regoRule":{"policy":"package
+      string: '{"id":"y8m-i7k-y9h","version":1,"name":"Test-Get_a_cloud_configuration_rule_s_details_returns_OK_response-1715358882_cloud","createdAt":1715358882351,"creationAuthorId":1445416,"isDefault":false,"isPartner":false,"isEnabled":false,"isDeleted":false,"isDeprecated":false,"queries":[{"query":"resource_type:gcp_compute_disk","groupByFields":["resource_type","resource_id"],"hasOptionalGroupByFields":false,"distinctFields":[],"aggregation":"count","name":"a"}],"options":{"keepAlive":21600,"maxSignalDuration":86400,"detectionMethod":"threshold","evaluationWindow":7200,"complianceRuleOptions":{"resourceType":"gcp_compute_disk","regoRule":{"policy":"package
         datadog\n\nimport data.datadog.output as dd_output\n\nimport future.keywords.contains\nimport
         future.keywords.if\nimport future.keywords.in\n\nmilliseconds_in_a_day :=
         ((1000 * 60) * 60) * 24\n\neval(iam_service_account_key) = \"skip\" if {\n\tiam_service_account_key.disabled\n}
@@ -43,10 +43,10 @@ interactions:
       accept:
       - application/json
     method: GET
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/ijx-ftp-oew
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/y8m-i7k-y9h
   response:
     body:
-      string: '{"id":"ijx-ftp-oew","version":1,"name":"Test-Get_a_cloud_configuration_rule_s_details_returns_OK_response-1693483107_cloud","createdAt":1693483108023,"creationAuthorId":1445416,"isDefault":false,"isEnabled":false,"isDeleted":false,"isDeprecated":false,"queries":[{"query":"resource_type:gcp_compute_disk","groupByFields":["resource_type","resource_id"],"distinctFields":[],"aggregation":"count","name":"a"}],"options":{"keepAlive":21600,"maxSignalDuration":86400,"detectionMethod":"threshold","evaluationWindow":7200,"complianceRuleOptions":{"resourceType":"gcp_compute_disk","regoRule":{"policy":"package
+      string: '{"id":"y8m-i7k-y9h","version":1,"name":"Test-Get_a_cloud_configuration_rule_s_details_returns_OK_response-1715358882_cloud","createdAt":1715358882351,"creationAuthorId":1445416,"isDefault":false,"isPartner":false,"isEnabled":false,"isDeleted":false,"isDeprecated":false,"queries":[{"query":"resource_type:gcp_compute_disk","groupByFields":["resource_type","resource_id"],"hasOptionalGroupByFields":false,"distinctFields":[],"aggregation":"count","name":"a"}],"options":{"keepAlive":21600,"maxSignalDuration":86400,"detectionMethod":"threshold","evaluationWindow":7200,"complianceRuleOptions":{"resourceType":"gcp_compute_disk","regoRule":{"policy":"package
         datadog\n\nimport data.datadog.output as dd_output\n\nimport future.keywords.contains\nimport
         future.keywords.if\nimport future.keywords.in\n\nmilliseconds_in_a_day :=
         ((1000 * 60) * 60) * 24\n\neval(iam_service_account_key) = \"skip\" if {\n\tiam_service_account_key.disabled\n}
@@ -70,7 +70,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/ijx-ftp-oew
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/y8m-i7k-y9h
   response:
     body:
       string: ''
