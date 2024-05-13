@@ -1,7 +1,7 @@
 interactions:
 - request:
     body: '{"data":{"attributes":{"data_exclusion_query":"account_id:12345","description":"This
-      rule suppresses low-severity signals in staging environments.","enabled":true,"expiration_date":1703187336000,"name":"Test-Create_a_suppression_rule_with_an_exclusion_query_returns_OK_response-1712570221","rule_query":"type:log_detection
+      rule suppresses low-severity signals in staging environments.","enabled":true,"expiration_date":1703187336000,"name":"Test-Create_a_suppression_rule_with_an_exclusion_query_returns_OK_response-1715358876","rule_query":"type:log_detection
       source:cloudtrail"},"type":"suppressions"}}'
     headers:
       accept:
@@ -12,9 +12,9 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/suppressions
   response:
     body:
-      string: '{"data":{"id":"2dj-cxs-dg6","attributes":{"name":"Test-Create_a_suppression_rule_with_an_exclusion_query_returns_OK_response-1712570221","enabled":true,"description":"This
+      string: '{"data":{"id":"ted-g18-ebn","attributes":{"name":"Test-Create_a_suppression_rule_with_an_exclusion_query_returns_OK_response-1715358876","enabled":true,"description":"This
         rule suppresses low-severity signals in staging environments.","rule_query":"type:log_detection
-        source:cloudtrail","suppression_query":"","log_exclusion_query":"account_id:12345","data_exclusion_query":"account_id:12345","expiration_date":1703187336000,"version":1,"creation_date":1712570222285,"update_date":1712570222285,"creator":{"name":null,"handle":"frog@datadoghq.com"},"updater":{"name":null,"handle":"frog@datadoghq.com"}},"type":"suppressions"}}
+        source:cloudtrail","suppression_query":"","data_exclusion_query":"account_id:12345","expiration_date":1703187336000,"version":1,"creation_date":1715358876924,"update_date":1715358876924,"creator":{"name":null,"handle":"frog@datadoghq.com"},"updater":{"name":null,"handle":"frog@datadoghq.com"}},"type":"suppressions"}}
 
         '
     headers:
@@ -29,7 +29,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/suppressions/2dj-cxs-dg6
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/suppressions/ted-g18-ebn
   response:
     body:
       string: ''

@@ -27,6 +27,9 @@ class SecurityMonitoringRuleResponse(ModelComposed):
         :param creation_author_id: User ID of the user who created the rule.
         :type creation_author_id: int, optional
 
+        :param default_tags: Default Tags for default rules (included in tags)
+        :type default_tags: [str], optional
+
         :param deprecation_date: When the rule will be deprecated, timestamp in milliseconds.
         :type deprecation_date: int, optional
 

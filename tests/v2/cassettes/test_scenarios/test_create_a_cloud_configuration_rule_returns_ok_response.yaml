@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"cases":[{"notifications":["channel"],"status":"info"}],"complianceSignalOptions":{"userActivationStatus":true,"userGroupByFields":["@account_id"]},"filters":[{"action":"require","query":"resource_id:helo*"},{"action":"suppress","query":"control:helo*"}],"isEnabled":false,"message":"ddd","name":"Test-Create_a_cloud_configuration_rule_returns_OK_response-1693482688_cloud","options":{"complianceRuleOptions":{"complexRule":false,"regoRule":{"policy":"package
+    body: '{"cases":[{"notifications":["channel"],"status":"info"}],"complianceSignalOptions":{"userActivationStatus":true,"userGroupByFields":["@account_id"]},"filters":[{"action":"require","query":"resource_id:helo*"},{"action":"suppress","query":"control:helo*"}],"isEnabled":false,"message":"ddd","name":"Test-Create_a_cloud_configuration_rule_returns_OK_response-1715358867_cloud","options":{"complianceRuleOptions":{"complexRule":false,"regoRule":{"policy":"package
       datadog\n\nimport data.datadog.output as dd_output\n\nimport future.keywords.contains\nimport
       future.keywords.if\nimport future.keywords.in\n\nmilliseconds_in_a_day := ((1000
       * 60) * 60) * 24\n\neval(iam_service_account_key) = \"skip\" if {\n\tiam_service_account_key.disabled\n}
@@ -18,7 +18,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/security_monitoring/rules
   response:
     body:
-      string: '{"id":"m0o-cza-uq9","version":1,"name":"Test-Create_a_cloud_configuration_rule_returns_OK_response-1693482688_cloud","createdAt":1693482689435,"creationAuthorId":1445416,"isDefault":false,"isEnabled":false,"isDeleted":false,"isDeprecated":false,"queries":[{"query":"resource_type:gcp_compute_disk","groupByFields":["resource_type","resource_id"],"distinctFields":[],"aggregation":"count","name":"a"}],"options":{"keepAlive":21600,"maxSignalDuration":86400,"detectionMethod":"threshold","evaluationWindow":7200,"complianceRuleOptions":{"resourceType":"gcp_compute_disk","regoRule":{"policy":"package
+      string: '{"id":"fy5-crt-9n1","version":1,"name":"Test-Create_a_cloud_configuration_rule_returns_OK_response-1715358867_cloud","createdAt":1715358867822,"creationAuthorId":1445416,"isDefault":false,"isPartner":false,"isEnabled":false,"isDeleted":false,"isDeprecated":false,"queries":[{"query":"resource_type:gcp_compute_disk","groupByFields":["resource_type","resource_id"],"hasOptionalGroupByFields":false,"distinctFields":[],"aggregation":"count","name":"a"}],"options":{"keepAlive":21600,"maxSignalDuration":86400,"detectionMethod":"threshold","evaluationWindow":7200,"complianceRuleOptions":{"resourceType":"gcp_compute_disk","regoRule":{"policy":"package
         datadog\n\nimport data.datadog.output as dd_output\n\nimport future.keywords.contains\nimport
         future.keywords.if\nimport future.keywords.in\n\nmilliseconds_in_a_day :=
         ((1000 * 60) * 60) * 24\n\neval(iam_service_account_key) = \"skip\" if {\n\tiam_service_account_key.disabled\n}
@@ -42,7 +42,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/m0o-cza-uq9
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/fy5-crt-9n1
   response:
     body:
       string: ''

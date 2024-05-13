@@ -1,7 +1,7 @@
 interactions:
 - request:
     body: '{"data":{"attributes":{"exclusion_filters":[{"name":"Exclude logs from
-      staging","query":"source:staging"}],"filtered_data_type":"logs","is_enabled":true,"name":"Test-Delete_a_security_filter_returns_No_Content_response-1666186600","query":"service:TestDeleteasecurityfilterreturnsNoContentresponse1666186600"},"type":"security_filters"}}'
+      staging","query":"source:staging"}],"filtered_data_type":"logs","is_enabled":true,"name":"Test-Delete_a_security_filter_returns_No_Content_response-1715358877","query":"service:TestDeleteasecurityfilterreturnsNoContentresponse1715358877"},"type":"security_filters"}}'
     headers:
       accept:
       - application/json
@@ -11,8 +11,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/security_filters
   response:
     body:
-      string: '{"data":{"attributes":{"is_enabled":true,"name":"Test-Delete_a_security_filter_returns_No_Content_response-1666186600","filtered_data_type":"logs","exclusion_filters":[{"query":"source:staging","name":"Exclude
-        logs from staging"}],"version":1,"query":"service:TestDeleteasecurityfilterreturnsNoContentresponse1666186600","is_builtin":false},"type":"security_filters","id":"874-kvc-vus"}}
+      string: '{"data":{"id":"4ks-yda-fdg","attributes":{"version":1,"name":"Test-Delete_a_security_filter_returns_No_Content_response-1715358877","query":"service:TestDeleteasecurityfilterreturnsNoContentresponse1715358877","is_enabled":true,"exclusion_filters":[{"name":"Exclude
+        logs from staging","query":"source:staging"}],"filtered_data_type":"logs","is_builtin":false},"type":"security_filters"}}
 
         '
     headers:
@@ -27,7 +27,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/security_filters/874-kvc-vus
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/security_filters/4ks-yda-fdg
   response:
     body:
       string: ''
@@ -43,10 +43,10 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/security_filters/874-kvc-vus
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/security_filters/4ks-yda-fdg
   response:
     body:
-      string: '{"errors":["not_found(Security filter with id ''874-kvc-vus'' not found)"]}
+      string: '{"errors":["not_found(Security filter with id ''4ks-yda-fdg'' not found)"]}
 
         '
     headers:

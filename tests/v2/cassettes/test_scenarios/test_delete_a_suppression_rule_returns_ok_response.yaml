@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"description":"Test-Delete_a_suppression_rule_returns_OK_response-1704967585","enabled":true,"name":"Test-Delete_a_suppression_rule_returns_OK_response-1704967585","rule_query":"source:cloudtrail","suppression_query":"env:test"},"type":"suppressions"}}'
+    body: '{"data":{"attributes":{"description":"Test-Delete_a_suppression_rule_returns_OK_response-1715358879","enabled":true,"name":"Test-Delete_a_suppression_rule_returns_OK_response-1715358879","rule_query":"source:cloudtrail","suppression_query":"env:test"},"type":"suppressions"}}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/suppressions
   response:
     body:
-      string: '{"data":{"id":"kpz-5gs-wn9","attributes":{"name":"Test-Delete_a_suppression_rule_returns_OK_response-1704967585","enabled":true,"description":"Test-Delete_a_suppression_rule_returns_OK_response-1704967585","rule_query":"source:cloudtrail","suppression_query":"env:test","version":1,"creation_date":1704967585721,"update_date":1704967585721,"creator":{"name":null,"handle":"frog@datadoghq.com"},"updater":{"name":null,"handle":"frog@datadoghq.com"}},"type":"suppressions"}}
+      string: '{"data":{"id":"csf-zrg-af0","attributes":{"name":"Test-Delete_a_suppression_rule_returns_OK_response-1715358879","enabled":true,"description":"Test-Delete_a_suppression_rule_returns_OK_response-1715358879","rule_query":"source:cloudtrail","suppression_query":"env:test","data_exclusion_query":"","version":1,"creation_date":1715358880145,"update_date":1715358880145,"creator":{"name":null,"handle":"frog@datadoghq.com"},"updater":{"name":null,"handle":"frog@datadoghq.com"}},"type":"suppressions"}}
 
         '
     headers:
@@ -25,7 +25,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/suppressions/kpz-5gs-wn9
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/suppressions/csf-zrg-af0
   response:
     body:
       string: ''
@@ -41,10 +41,10 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/suppressions/kpz-5gs-wn9
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/suppressions/csf-zrg-af0
   response:
     body:
-      string: '{"errors":["not_found(Suppression with ID kpz-5gs-wn9 not found)"]}
+      string: '{"errors":["not_found(Suppression with ID csf-zrg-af0 not found)"]}
 
         '
     headers:
