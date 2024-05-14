@@ -20870,7 +20870,8 @@ Optional in create/update requests.</p></li>
 threshold over the given timeframe, the objective is being met.</p></li>
 <li><p><strong>thresholds</strong> (<em>[</em><a class="reference internal" href="#datadog_api_client.v1.model.slo_threshold.SLOThreshold" title="datadog_api_client.v1.model.slo_threshold.SLOThreshold"><em>SLOThreshold</em></a><em>]</em>) – The thresholds (timeframes and associated targets) for this service level
 objective object.</p></li>
-<li><p><strong>timeframe</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.slo_timeframe.SLOTimeframe" title="datadog_api_client.v1.model.slo_timeframe.SLOTimeframe"><em>SLOTimeframe</em></a><em>, </em><em>optional</em>) – The SLO time window options.</p></li>
+<li><p><strong>timeframe</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.slo_timeframe.SLOTimeframe" title="datadog_api_client.v1.model.slo_timeframe.SLOTimeframe"><em>SLOTimeframe</em></a><em>, </em><em>optional</em>) – The SLO time window options. Note that “custom” is not a valid option for creating
+or updating SLOs. It is only used when querying SLO history over custom timeframes.</p></li>
 <li><p><strong>type</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.slo_type.SLOType" title="datadog_api_client.v1.model.slo_type.SLOType"><em>SLOType</em></a>) – The type of the service level objective.</p></li>
 <li><p><strong>warning_threshold</strong> (<em>float</em><em>, </em><em>optional</em>) – The optional warning threshold such that when the service level indicator is
 below this value for the given threshold, but above the target threshold, the
@@ -20934,7 +20935,8 @@ Optional in create/update requests.</p></li>
 threshold over the given timeframe, the objective is being met.</p></li>
 <li><p><strong>thresholds</strong> (<em>[</em><a class="reference internal" href="#datadog_api_client.v1.model.slo_threshold.SLOThreshold" title="datadog_api_client.v1.model.slo_threshold.SLOThreshold"><em>SLOThreshold</em></a><em>]</em>) – The thresholds (timeframes and associated targets) for this service level
 objective object.</p></li>
-<li><p><strong>timeframe</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.slo_timeframe.SLOTimeframe" title="datadog_api_client.v1.model.slo_timeframe.SLOTimeframe"><em>SLOTimeframe</em></a><em>, </em><em>optional</em>) – The SLO time window options.</p></li>
+<li><p><strong>timeframe</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.slo_timeframe.SLOTimeframe" title="datadog_api_client.v1.model.slo_timeframe.SLOTimeframe"><em>SLOTimeframe</em></a><em>, </em><em>optional</em>) – The SLO time window options. Note that “custom” is not a valid option for creating
+or updating SLOs. It is only used when querying SLO history over custom timeframes.</p></li>
 <li><p><strong>type</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.slo_type.SLOType" title="datadog_api_client.v1.model.slo_type.SLOType"><em>SLOType</em></a>) – The type of the service level objective.</p></li>
 <li><p><strong>warning_threshold</strong> (<em>float</em><em>, </em><em>optional</em>) – The optional warning threshold such that when the service level indicator is
 below this value for the given threshold, but above the target threshold, the
@@ -22253,7 +22255,8 @@ were calculated.</p></li>
 <li><p><strong>state</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.slo_state.SLOState" title="datadog_api_client.v1.model.slo_state.SLOState"><em>SLOState</em></a><em>, </em><em>optional</em>) – State of the SLO.</p></li>
 <li><p><strong>status</strong> (<em>float</em><em>, </em><em>none_type</em><em>, </em><em>optional</em>) – The status of the SLO.</p></li>
 <li><p><strong>target</strong> (<em>float</em><em>, </em><em>optional</em>) – The target of the SLO.</p></li>
-<li><p><strong>timeframe</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.slo_timeframe.SLOTimeframe" title="datadog_api_client.v1.model.slo_timeframe.SLOTimeframe"><em>SLOTimeframe</em></a><em>, </em><em>optional</em>) – The SLO time window options.</p></li>
+<li><p><strong>timeframe</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.slo_timeframe.SLOTimeframe" title="datadog_api_client.v1.model.slo_timeframe.SLOTimeframe"><em>SLOTimeframe</em></a><em>, </em><em>optional</em>) – The SLO time window options. Note that “custom” is not a valid option for creating
+or updating SLOs. It is only used when querying SLO history over custom timeframes.</p></li>
 </ul>
 </dd>
 </dl>
@@ -22346,7 +22349,8 @@ Optional in create/update requests.</p></li>
 threshold over the given timeframe, the objective is being met.</p></li>
 <li><p><strong>thresholds</strong> (<em>[</em><a class="reference internal" href="#datadog_api_client.v1.model.slo_threshold.SLOThreshold" title="datadog_api_client.v1.model.slo_threshold.SLOThreshold"><em>SLOThreshold</em></a><em>]</em><em>, </em><em>optional</em>) – The thresholds (timeframes and associated targets) for this service level
 objective object.</p></li>
-<li><p><strong>timeframe</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.slo_timeframe.SLOTimeframe" title="datadog_api_client.v1.model.slo_timeframe.SLOTimeframe"><em>SLOTimeframe</em></a><em>, </em><em>optional</em>) – The SLO time window options.</p></li>
+<li><p><strong>timeframe</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.slo_timeframe.SLOTimeframe" title="datadog_api_client.v1.model.slo_timeframe.SLOTimeframe"><em>SLOTimeframe</em></a><em>, </em><em>optional</em>) – The SLO time window options. Note that “custom” is not a valid option for creating
+or updating SLOs. It is only used when querying SLO history over custom timeframes.</p></li>
 <li><p><strong>type</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.slo_type.SLOType" title="datadog_api_client.v1.model.slo_type.SLOType"><em>SLOType</em></a><em>, </em><em>optional</em>) – The type of the service level objective.</p></li>
 <li><p><strong>warning_threshold</strong> (<em>float</em><em>, </em><em>optional</em>) – The optional warning threshold such that when the service level indicator is
 below this value for the given threshold, but above the target threshold, the
@@ -22439,7 +22443,8 @@ It uses trailing zeros to show significant decimal places (for example <code cla
 <p>Always included in service level objective responses. Ignored in
 create/update requests.</p>
 </p></li>
-<li><p><strong>timeframe</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.slo_timeframe.SLOTimeframe" title="datadog_api_client.v1.model.slo_timeframe.SLOTimeframe"><em>SLOTimeframe</em></a>) – The SLO time window options.</p></li>
+<li><p><strong>timeframe</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.slo_timeframe.SLOTimeframe" title="datadog_api_client.v1.model.slo_timeframe.SLOTimeframe"><em>SLOTimeframe</em></a>) – The SLO time window options. Note that “custom” is not a valid option for creating
+or updating SLOs. It is only used when querying SLO history over custom timeframes.</p></li>
 <li><p><strong>warning</strong> (<em>float</em><em>, </em><em>optional</em>) – The warning value for the service level objective.</p></li>
 <li><p><strong>warning_display</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>A string representation of the warning target (see the description of
 the <code class="docutils literal notranslate"><span class="pre">target_display</span></code> field for details).</p>
@@ -22569,7 +22574,10 @@ and 3. the threshold. Optionally, a fourth part, the query interval, can be prov
 <dt class="sig sig-object py" id="datadog_api_client.v1.model.slo_timeframe.SLOTimeframe">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SLOTimeframe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datadog_api_client.v1.model.slo_timeframe.SLOTimeframe" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.ModelSimple" title="datadog_api_client.model_utils.ModelSimple"><code class="xref py py-class docutils literal notranslate"><span class="pre">ModelSimple</span></code></a></p>
-<p>The SLO time window options.</p>
+<dl class="simple">
+<dt>The SLO time window options. Note that “custom” is not a valid option for creating</dt><dd><p>or updating SLOs. It is only used when querying SLO history over custom timeframes.</p>
+</dd>
+</dl>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
