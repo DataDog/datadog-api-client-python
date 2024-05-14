@@ -123,7 +123,8 @@ class ServiceLevelObjectiveRequest(ModelNormal):
             objective object.
         :type thresholds: [SLOThreshold]
 
-        :param timeframe: The SLO time window options.
+        :param timeframe: The SLO time window options. Note that "custom" is not a valid option for creating
+            or updating SLOs. It is only used when querying SLO history over custom timeframes.
         :type timeframe: SLOTimeframe, optional
 
         :param type: The type of the service level objective.

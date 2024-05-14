@@ -92,7 +92,8 @@ class SLOOverallStatuses(ModelNormal):
         :param target: The target of the SLO.
         :type target: float, optional
 
-        :param timeframe: The SLO time window options.
+        :param timeframe: The SLO time window options. Note that "custom" is not a valid option for creating
+            or updating SLOs. It is only used when querying SLO history over custom timeframes.
         :type timeframe: SLOTimeframe, optional
         """
         if error is not unset:
