@@ -61,7 +61,8 @@ class SLOThreshold(ModelNormal):
             create/update requests.
         :type target_display: str, optional
 
-        :param timeframe: The SLO time window options.
+        :param timeframe: The SLO time window options. Note that "custom" is not a valid option for creating
+            or updating SLOs. It is only used when querying SLO history over custom timeframes.
         :type timeframe: SLOTimeframe
 
         :param warning: The warning value for the service level objective.
