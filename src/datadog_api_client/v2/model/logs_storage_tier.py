@@ -14,18 +14,20 @@ from typing import ClassVar
 
 class LogsStorageTier(ModelSimple):
     """
-    Specifies storage type as indexes or online-archives
+    Specifies storage type as indexes, online-archives or flex
 
-    :param value: If omitted defaults to "indexes". Must be one of ["indexes", "online-archives"].
+    :param value: If omitted defaults to "indexes". Must be one of ["indexes", "online-archives", "flex"].
     :type value: str
     """
 
     allowed_values = {
         "indexes",
         "online-archives",
+        "flex",
     }
     INDEXES: ClassVar["LogsStorageTier"]
     ONLINE_ARCHIVES: ClassVar["LogsStorageTier"]
+    FLEX: ClassVar["LogsStorageTier"]
 
     @cached_property
     def openapi_types(_):
@@ -36,3 +38,4 @@ class LogsStorageTier(ModelSimple):
 
 LogsStorageTier.INDEXES = LogsStorageTier("indexes")
 LogsStorageTier.ONLINE_ARCHIVES = LogsStorageTier("online-archives")
+LogsStorageTier.FLEX = LogsStorageTier("flex")
