@@ -55,7 +55,7 @@ class SpansApi:
         self._list_spans_endpoint = _Endpoint(
             settings={
                 "response_type": (SpansListResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/spans/events/search",
                 "operation_id": "list_spans",
                 "http_method": "POST",
@@ -75,7 +75,7 @@ class SpansApi:
         self._list_spans_get_endpoint = _Endpoint(
             settings={
                 "response_type": (SpansListResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/spans/events",
                 "operation_id": "list_spans_get",
                 "http_method": "GET",
