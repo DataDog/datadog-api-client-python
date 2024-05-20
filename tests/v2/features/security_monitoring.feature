@@ -174,7 +174,7 @@ Feature: Security Monitoring
   @skip-validation @team:DataDog/k9-cloud-security-platform
   Scenario: Create a suppression rule returns "OK" response
     Given new "CreateSecurityMonitoringSuppression" request
-    And body with value {"data": {"attributes": {"description": "This rule suppresses low-severity signals in staging environments.", "enabled": true, "expiration_date": 1703187336000, "name": "{{ unique }}", "rule_query": "type:log_detection source:cloudtrail", "suppression_query": "env:staging status:low"}, "type": "suppressions"}}
+    And body with value {"data": {"attributes": {"description": "This rule suppresses low-severity signals in staging environments.", "enabled": true, "expiration_date": {{ timestamp('now + 21d') }}000, "name": "{{ unique }}", "rule_query": "type:log_detection source:cloudtrail", "suppression_query": "env:staging status:low"}, "type": "suppressions"}}
     When the request is sent
     Then the response status is 200 OK
     And the response "data.type" is equal to "suppressions"
@@ -184,7 +184,7 @@ Feature: Security Monitoring
   @skip-validation @team:DataDog/k9-cloud-security-platform
   Scenario: Create a suppression rule with an exclusion query returns "OK" response
     Given new "CreateSecurityMonitoringSuppression" request
-    And body with value {"data": {"attributes": {"description": "This rule suppresses low-severity signals in staging environments.", "enabled": true, "expiration_date": 1703187336000, "name": "{{ unique }}", "rule_query": "type:log_detection source:cloudtrail", "data_exclusion_query": "account_id:12345"}, "type": "suppressions"}}
+    And body with value {"data": {"attributes": {"description": "This rule suppresses low-severity signals in staging environments.", "enabled": true, "expiration_date": {{ timestamp('now + 21d') }}000, "name": "{{ unique }}", "rule_query": "type:log_detection source:cloudtrail", "data_exclusion_query": "account_id:12345"}, "type": "suppressions"}}
     When the request is sent
     Then the response status is 200 OK
     And the response "data.type" is equal to "suppressions"
