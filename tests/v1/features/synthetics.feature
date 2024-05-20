@@ -100,7 +100,7 @@ Feature: Synthetics
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/synthetics-app
+  @replay-only @team:DataDog/synthetics-app
   Scenario: Create a private location returns "OK" response
     Given there is a valid "role" in the system
     And new "CreatePrivateLocation" request
