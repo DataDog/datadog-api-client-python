@@ -1,5 +1,23 @@
 # Changelog
 
+## 2.25.0 / 2024-05-21
+
+### Fixed
+* Fix param retrieval for async client paginated calls by @garretruh in https://github.com/DataDog/datadog-api-client-python/pull/1951
+### Added
+* Add JSONSchema assertion support to API and multistep tests by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1925
+* add 1 day logs to usage api docs by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1952
+* Update UserTeamIncluded to include teams by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1957
+* Security Monitoring - Make Default Tags available in the response by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1966
+* Add flex logs storage tier by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1968
+### Changed
+* Rename the Cloud Workload Security tag to CSM Threats by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1956
+
+## New Contributors
+* @garretruh made their first contribution in https://github.com/DataDog/datadog-api-client-python/pull/1951
+
+**Full Changelog**: https://github.com/DataDog/datadog-api-client-python/compare/2.24.1...2.25.0
+
 ## 2.24.1 / 2024-04-18
 
 ### Fixed
