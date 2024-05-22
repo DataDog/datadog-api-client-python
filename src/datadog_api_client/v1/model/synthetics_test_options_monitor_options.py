@@ -16,7 +16,6 @@ from datadog_api_client.model_utils import (
 class SyntheticsTestOptionsMonitorOptions(ModelNormal):
     validations = {
         "renotify_interval": {
-            "inclusive_maximum": 1440,
             "inclusive_minimum": 0,
         },
     }
