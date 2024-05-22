@@ -1,7 +1,7 @@
 interactions:
 - request:
     body: '{"data":{"attributes":{"description":"My Agent rule","enabled":true,"expression":"exec.file.name
-      == \"sh\"","name":"testdeleteacloudworkloadsecurityagentrulereturnsokresponse1709907547"},"type":"agent_rule"}}'
+      == \"sh\"","name":"testdeleteacloudworkloadsecurityagentrulereturnsokresponse1713895066"},"type":"agent_rule"}}'
     headers:
       accept:
       - application/json
@@ -11,11 +11,9 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/security_monitoring/cloud_workload_security/agent_rules
   response:
     body:
-      string: '{"data":{"id":"bo0-5k6-vtc","attributes":{"version":1,"name":"testdeleteacloudworkloadsecurityagentrulereturnsokresponse1709907547","description":"My
-        Agent rule","expression":"exec.file.name == \"sh\"","category":"Process Activity","creationAuthorUuId":"cc32ddea-b5e4-11ec-93be-da7ad0900002","creationDate":1709907548216,"updateAuthorUuId":"cc32ddea-b5e4-11ec-93be-da7ad0900002","updateDate":1709907548216,"filters":["os
-        == \"linux\""],"actions":[],"agentConstraint":"","enabled":true,"defaultRule":false,"creator":{"name":"Malo
-        Le Goff","handle":"malo.legoff@datadoghq.com"},"updater":{"name":"Malo Le
-        Goff","handle":"malo.legoff@datadoghq.com"}},"type":"agent_rule"}}
+      string: '{"data":{"id":"tlm-pl7-gkc","attributes":{"version":1,"name":"testdeleteacloudworkloadsecurityagentrulereturnsokresponse1713895066","description":"My
+        Agent rule","expression":"exec.file.name == \"sh\"","category":"Process Activity","creationAuthorUuId":"3ad549bf-eba0-11e9-a77a-0705486660d0","creationDate":1713895066982,"updateAuthorUuId":"3ad549bf-eba0-11e9-a77a-0705486660d0","updateDate":1713895066982,"filters":["os
+        == \"linux\""],"actions":[],"agentConstraint":"","enabled":true,"defaultRule":false,"creator":{"name":null,"handle":"frog@datadoghq.com"},"updater":{"name":null,"handle":"frog@datadoghq.com"}},"type":"agent_rule"}}
 
         '
     headers:
@@ -30,7 +28,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/cloud_workload_security/agent_rules/bo0-5k6-vtc
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/cloud_workload_security/agent_rules/tlm-pl7-gkc
   response:
     body:
       string: ''
@@ -44,10 +42,10 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/cloud_workload_security/agent_rules/bo0-5k6-vtc
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/cloud_workload_security/agent_rules/tlm-pl7-gkc
   response:
     body:
-      string: '{"errors":["not_found(Agent rule not found: agentRuleId=bo0-5k6-vtc)"]}
+      string: '{"errors":["not_found(Agent rule not found: agentRuleId=tlm-pl7-gkc)"]}
 
         '
     headers:
