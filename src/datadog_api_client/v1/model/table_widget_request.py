@@ -24,6 +24,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.process_query_definition import ProcessQueryDefinition
     from datadog_api_client.v1.model.formula_and_function_query_definition import FormulaAndFunctionQueryDefinition
     from datadog_api_client.v1.model.formula_and_function_response_format import FormulaAndFunctionResponseFormat
+    from datadog_api_client.v1.model.widget_sort_by import WidgetSortBy
     from datadog_api_client.v1.model.formula_and_function_metric_query_definition import (
         FormulaAndFunctionMetricQueryDefinition,
     )
@@ -60,6 +61,7 @@ class TableWidgetRequest(ModelNormal):
         from datadog_api_client.v1.model.process_query_definition import ProcessQueryDefinition
         from datadog_api_client.v1.model.formula_and_function_query_definition import FormulaAndFunctionQueryDefinition
         from datadog_api_client.v1.model.formula_and_function_response_format import FormulaAndFunctionResponseFormat
+        from datadog_api_client.v1.model.widget_sort_by import WidgetSortBy
 
         return {
             "aggregator": (WidgetAggregator,),
@@ -81,6 +83,7 @@ class TableWidgetRequest(ModelNormal):
             "response_format": (FormulaAndFunctionResponseFormat,),
             "rum_query": (LogQueryDefinition,),
             "security_query": (LogQueryDefinition,),
+            "sort": (WidgetSortBy,),
         }
 
     attribute_map = {
@@ -103,6 +106,7 @@ class TableWidgetRequest(ModelNormal):
         "response_format": "response_format",
         "rum_query": "rum_query",
         "security_query": "security_query",
+        "sort": "sort",
     }
 
     def __init__(
@@ -140,6 +144,7 @@ class TableWidgetRequest(ModelNormal):
         response_format: Union[FormulaAndFunctionResponseFormat, UnsetType] = unset,
         rum_query: Union[LogQueryDefinition, UnsetType] = unset,
         security_query: Union[LogQueryDefinition, UnsetType] = unset,
+        sort: Union[WidgetSortBy, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -201,6 +206,9 @@ class TableWidgetRequest(ModelNormal):
 
         :param security_query: The log query.
         :type security_query: LogQueryDefinition, optional
+
+        :param sort: The controls for sorting the widget.
+        :type sort: WidgetSortBy, optional
         """
         if aggregator is not unset:
             kwargs["aggregator"] = aggregator
@@ -240,4 +248,6 @@ class TableWidgetRequest(ModelNormal):
             kwargs["rum_query"] = rum_query
         if security_query is not unset:
             kwargs["security_query"] = security_query
+        if sort is not unset:
+            kwargs["sort"] = sort
         super().__init__(kwargs)

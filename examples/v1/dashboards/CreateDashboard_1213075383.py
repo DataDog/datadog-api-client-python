@@ -12,7 +12,7 @@ from datadog_api_client.v1.model.formula_and_function_metric_query_definition im
     FormulaAndFunctionMetricQueryDefinition,
 )
 from datadog_api_client.v1.model.formula_and_function_response_format import FormulaAndFunctionResponseFormat
-from datadog_api_client.v1.model.query_sort_order import QuerySortOrder
+from datadog_api_client.v1.model.formula_type import FormulaType
 from datadog_api_client.v1.model.toplist_widget_definition import ToplistWidgetDefinition
 from datadog_api_client.v1.model.toplist_widget_definition_type import ToplistWidgetDefinitionType
 from datadog_api_client.v1.model.toplist_widget_legend import ToplistWidgetLegend
@@ -23,8 +23,10 @@ from datadog_api_client.v1.model.toplist_widget_stacked_type import ToplistWidge
 from datadog_api_client.v1.model.toplist_widget_style import ToplistWidgetStyle
 from datadog_api_client.v1.model.widget import Widget
 from datadog_api_client.v1.model.widget_formula import WidgetFormula
-from datadog_api_client.v1.model.widget_formula_limit import WidgetFormulaLimit
+from datadog_api_client.v1.model.widget_formula_sort import WidgetFormulaSort
 from datadog_api_client.v1.model.widget_layout import WidgetLayout
+from datadog_api_client.v1.model.widget_sort import WidgetSort
+from datadog_api_client.v1.model.widget_sort_by import WidgetSortBy
 from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
 from datadog_api_client.v1.model.widget_time import WidgetTime
 
@@ -65,12 +67,18 @@ body = Dashboard(
                         formulas=[
                             WidgetFormula(
                                 formula="query1",
-                                limit=WidgetFormulaLimit(
-                                    count=10,
-                                    order=QuerySortOrder.DESC,
-                                ),
                             ),
                         ],
+                        sort=WidgetSortBy(
+                            count=10,
+                            order_by=[
+                                WidgetFormulaSort(
+                                    type=FormulaType.FORMULA,
+                                    index=0,
+                                    order=WidgetSort.DESCENDING,
+                                ),
+                            ],
+                        ),
                         response_format=FormulaAndFunctionResponseFormat.SCALAR,
                     ),
                 ],

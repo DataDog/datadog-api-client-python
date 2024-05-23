@@ -953,6 +953,13 @@ formula\_and\_function\_slo\_query\_type
    :members:
    :show-inheritance:
 
+formula\_type
+-------------
+
+.. automodule:: datadog_api_client.v1.model.formula_type
+   :members:
+   :show-inheritance:
+
 free\_text\_widget\_definition
 ------------------------------
 
@@ -1069,6 +1076,13 @@ graph\_snapshot
 ---------------
 
 .. automodule:: datadog_api_client.v1.model.graph_snapshot
+   :members:
+   :show-inheritance:
+
+group\_type
+-----------
+
+.. automodule:: datadog_api_client.v1.model.group_type
    :members:
    :show-inheritance:
 
@@ -5783,10 +5797,24 @@ widget\_formula\_limit
    :members:
    :show-inheritance:
 
+widget\_formula\_sort
+---------------------
+
+.. automodule:: datadog_api_client.v1.model.widget_formula_sort
+   :members:
+   :show-inheritance:
+
 widget\_formula\_style
 ----------------------
 
 .. automodule:: datadog_api_client.v1.model.widget_formula_style
+   :members:
+   :show-inheritance:
+
+widget\_group\_sort
+-------------------
+
+.. automodule:: datadog_api_client.v1.model.widget_group_sort
    :members:
    :show-inheritance:
 
@@ -5927,6 +5955,20 @@ widget\_sort
 ------------
 
 .. automodule:: datadog_api_client.v1.model.widget_sort
+   :members:
+   :show-inheritance:
+
+widget\_sort\_by
+----------------
+
+.. automodule:: datadog_api_client.v1.model.widget_sort_by
+   :members:
+   :show-inheritance:
+
+widget\_sort\_order\_by
+-----------------------
+
+.. automodule:: datadog_api_client.v1.model.widget_sort_order_by
    :members:
    :show-inheritance:
 
