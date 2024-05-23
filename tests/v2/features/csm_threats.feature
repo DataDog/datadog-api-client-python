@@ -28,7 +28,7 @@ Feature: CSM Threats
   @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
   Scenario: Create a CSM Threats Agent rule returns "OK" response
     Given new "CreateCSMThreatsAgentRule" request
-    And body with value {"data": {"attributes": {"description": "My Agent rule", "enabled": true, "expression": "exec.file.name == \"sh\"", "name": "{{ unique_lower_alnum }}"}, "type": "agent_rule"}}
+    And body with value {"data": {"attributes": {"description": "My Agent rule", "enabled": true, "expression": "exec.file.name == \"sh\"", "filters": ["os == \"linux\""], "name": "{{ unique_lower_alnum }}"}, "type": "agent_rule"}}
     When the request is sent
     Then the response status is 200 OK
 

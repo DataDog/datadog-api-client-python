@@ -1,7 +1,7 @@
 interactions:
 - request:
     body: '{"data":{"attributes":{"description":"My Agent rule","enabled":true,"expression":"exec.file.name
-      == \"sh\"","name":"testcreateacsmthreatsagentrulereturnsokresponse1713895064"},"type":"agent_rule"}}'
+      == \"sh\"","filters":["os == \"linux\""],"name":"testcreateacsmthreatsagentrulereturnsokresponse1716394942"},"type":"agent_rule"}}'
     headers:
       accept:
       - application/json
@@ -11,10 +11,10 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules
   response:
     body:
-      string: '{"data":{"id":"922-a60-32v","type":"agent_rule","attributes":{"category":"Process
-        Activity","creationDate":1713895064438,"creator":{"name":"","handle":"frog@datadoghq.com"},"defaultRule":false,"description":"My
+      string: '{"data":{"id":"pn4-mo8-u5r","type":"agent_rule","attributes":{"category":"Process
+        Activity","creationDate":1716394942614,"creator":{"name":"","handle":"frog@datadoghq.com"},"defaultRule":false,"description":"My
         Agent rule","enabled":true,"expression":"exec.file.name == \"sh\"","filters":["os
-        == \"linux\""],"name":"testcreateacsmthreatsagentrulereturnsokresponse1713895064","updateDate":1713895064438,"updater":{"name":"","handle":"frog@datadoghq.com"}}}}'
+        == \"linux\""],"name":"testcreateacsmthreatsagentrulereturnsokresponse1716394942","updateDate":1716394942614,"updater":{"name":"","handle":"frog@datadoghq.com"}}}}'
     headers:
       content-type:
       - application/json
@@ -27,7 +27,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules/922-a60-32v
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules/pn4-mo8-u5r
   response:
     body:
       string: ''
