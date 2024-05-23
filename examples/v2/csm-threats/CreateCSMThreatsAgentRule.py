@@ -21,6 +21,9 @@ body = CloudWorkloadSecurityAgentRuleCreateRequest(
             description="My Agent rule",
             enabled=True,
             expression='exec.file.name == "sh"',
+            filters=[
+                'os == "linux"',
+            ],
             name="examplecsmthreat",
         ),
         type=CloudWorkloadSecurityAgentRuleType.AGENT_RULE,

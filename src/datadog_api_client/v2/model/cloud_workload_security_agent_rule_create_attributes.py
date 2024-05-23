@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union
+from typing import List, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -20,6 +20,7 @@ class CloudWorkloadSecurityAgentRuleCreateAttributes(ModelNormal):
             "description": (str,),
             "enabled": (bool,),
             "expression": (str,),
+            "filters": ([str],),
             "name": (str,),
         }
 
@@ -27,6 +28,7 @@ class CloudWorkloadSecurityAgentRuleCreateAttributes(ModelNormal):
         "description": "description",
         "enabled": "enabled",
         "expression": "expression",
+        "filters": "filters",
         "name": "name",
     }
 
@@ -36,6 +38,7 @@ class CloudWorkloadSecurityAgentRuleCreateAttributes(ModelNormal):
         name: str,
         description: Union[str, UnsetType] = unset,
         enabled: Union[bool, UnsetType] = unset,
+        filters: Union[List[str], UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -50,6 +53,9 @@ class CloudWorkloadSecurityAgentRuleCreateAttributes(ModelNormal):
         :param expression: The SECL expression of the Agent rule.
         :type expression: str
 
+        :param filters: The platforms the Agent rule is supported on.
+        :type filters: [str], optional
+
         :param name: The name of the Agent rule.
         :type name: str
         """
@@ -57,6 +63,8 @@ class CloudWorkloadSecurityAgentRuleCreateAttributes(ModelNormal):
             kwargs["description"] = description
         if enabled is not unset:
             kwargs["enabled"] = enabled
+        if filters is not unset:
+            kwargs["filters"] = filters
         super().__init__(kwargs)
 
         self_.expression = expression
