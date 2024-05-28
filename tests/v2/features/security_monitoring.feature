@@ -507,6 +507,52 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
 
+  @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Test a rule returns "Bad Request" response
+    Given new "TestSecurityMonitoringRule" request
+    And body with value {"rule": {"cases": [], "filters": [{"action": "require"}], "hasExtendedTitle": true, "isEnabled": true, "message": "", "name": "My security monitoring rule.", "options": {"decreaseCriticalityBasedOnEnv": false, "detectionMethod": "threshold", "evaluationWindow": 0, "hardcodedEvaluatorType": "log4shell", "impossibleTravelOptions": {"baselineUserLocations": true}, "keepAlive": 0, "maxSignalDuration": 0, "newValueOptions": {"forgetAfter": 1, "learningDuration": 0, "learningMethod": "duration", "learningThreshold": 0}, "thirdPartyRuleOptions": {"defaultNotifications": [], "defaultStatus": "critical", "rootQueries": [{"groupByFields": [], "query": "source:cloudtrail"}]}}, "queries": [], "tags": ["env:prod", "team:security"], "thirdPartyCases": [], "type": "application_security"}, "ruleQueryPayloads": [{"expectedResult": true, "index": 0, "payload": {"ddsource": "nginx", "ddtags": "env:staging,version:5.1", "hostname": "i-012345678", "message": "2019-11-19T14:37:58,995 INFO [process.name][20081] Hello World", "service": "payment"}}]}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Test a rule returns "Not Found" response
+    Given new "TestSecurityMonitoringRule" request
+    And body with value {"rule": {"cases": [], "filters": [{"action": "require"}], "hasExtendedTitle": true, "isEnabled": true, "message": "", "name": "My security monitoring rule.", "options": {"decreaseCriticalityBasedOnEnv": false, "detectionMethod": "threshold", "evaluationWindow": 0, "hardcodedEvaluatorType": "log4shell", "impossibleTravelOptions": {"baselineUserLocations": true}, "keepAlive": 0, "maxSignalDuration": 0, "newValueOptions": {"forgetAfter": 1, "learningDuration": 0, "learningMethod": "duration", "learningThreshold": 0}, "thirdPartyRuleOptions": {"defaultNotifications": [], "defaultStatus": "critical", "rootQueries": [{"groupByFields": [], "query": "source:cloudtrail"}]}}, "queries": [], "tags": ["env:prod", "team:security"], "thirdPartyCases": [], "type": "application_security"}, "ruleQueryPayloads": [{"expectedResult": true, "index": 0, "payload": {"ddsource": "nginx", "ddtags": "env:staging,version:5.1", "hostname": "i-012345678", "message": "2019-11-19T14:37:58,995 INFO [process.name][20081] Hello World", "service": "payment"}}]}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @skip-go @skip-java @skip-ruby @skip-typescript @team:DataDog/k9-cloud-security-platform
+  Scenario: Test a rule returns "OK" response
+    Given new "TestSecurityMonitoringRule" request
+    And body with value {"rule": {"cases": [{"name": "","status": "info","notifications": [],"condition": "a > 0"}],"hasExtendedTitle": true,"isEnabled": true,"message": "My security monitoring rule message.","name": "My security monitoring rule.","options": {"decreaseCriticalityBasedOnEnv": false,"detectionMethod": "threshold","evaluationWindow": 0,"keepAlive": 0,"maxSignalDuration": 0},"queries": [{"query": "source:source_here","groupByFields": ["@userIdentity.assumed_role"],"distinctFields": [],"aggregation": "count","name": ""}],"tags": ["env:prod", "team:security"],"type": "log_detection"}, "ruleQueryPayloads": [{"expectedResult": true,"index": 0,"payload": {"ddsource": "source_here","ddtags": "env:staging,version:5.1","hostname": "i-012345678","message": "2019-11-19T14:37:58,995 INFO [process.name][20081] Hello World","service": "payment","userIdentity": {"assumed_role" : "fake assumed_role"}}}]}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "results[0]" is equal to true
+
+  @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Test an existing rule returns "Bad Request" response
+    Given new "TestExistingSecurityMonitoringRule" request
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    And body with value {"ruleQueryPayloads": [{"expectedResult": true, "index": 0, "payload": {"ddsource": "nginx", "ddtags": "env:staging,version:5.1", "hostname": "i-012345678", "message": "2019-11-19T14:37:58,995 INFO [process.name][20081] Hello World", "service": "payment"}}]}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Test an existing rule returns "Not Found" response
+    Given new "TestExistingSecurityMonitoringRule" request
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    And body with value {"ruleQueryPayloads": [{"expectedResult": true, "index": 0, "payload": {"ddsource": "nginx", "ddtags": "env:staging,version:5.1", "hostname": "i-012345678", "message": "2019-11-19T14:37:58,995 INFO [process.name][20081] Hello World", "service": "payment"}}]}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Test an existing rule returns "OK" response
+    Given new "TestExistingSecurityMonitoringRule" request
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    And body with value {"ruleQueryPayloads": [{"expectedResult": true, "index": 0, "payload": {"ddsource": "nginx", "ddtags": "env:staging,version:5.1", "hostname": "i-012345678", "message": "2019-11-19T14:37:58,995 INFO [process.name][20081] Hello World", "service": "payment"}}]}
+    When the request is sent
+    Then the response status is 200 OK
+
   @skip-validation @team:DataDog/k9-cloud-security-platform
   Scenario: Update a cloud configuration rule's details returns "OK" response
     Given new "UpdateSecurityMonitoringRule" request

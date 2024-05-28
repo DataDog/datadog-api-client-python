@@ -44,6 +44,8 @@ from datadog_api_client.v2.model.security_monitoring_signal_rule_create_payload 
     SecurityMonitoringSignalRuleCreatePayload,
 )
 from datadog_api_client.v2.model.cloud_configuration_rule_create_payload import CloudConfigurationRuleCreatePayload
+from datadog_api_client.v2.model.security_monitoring_rule_test_response import SecurityMonitoringRuleTestResponse
+from datadog_api_client.v2.model.security_monitoring_rule_test_request import SecurityMonitoringRuleTestRequest
 from datadog_api_client.v2.model.security_monitoring_rule_update_payload import SecurityMonitoringRuleUpdatePayload
 from datadog_api_client.v2.model.security_monitoring_signals_list_response import SecurityMonitoringSignalsListResponse
 from datadog_api_client.v2.model.security_monitoring_signals_sort import SecurityMonitoringSignalsSort
@@ -629,6 +631,52 @@ class SecurityMonitoringApi:
             params_map={
                 "body": {
                     "openapi_types": (SecurityMonitoringSignalListRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._test_existing_security_monitoring_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityMonitoringRuleTestResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/rules/{rule_id}/test",
+                "operation_id": "test_existing_security_monitoring_rule",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "rule_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "rule_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (SecurityMonitoringRuleTestRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._test_security_monitoring_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityMonitoringRuleTestResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/rules/test",
+                "operation_id": "test_security_monitoring_rule",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (SecurityMonitoringRuleTestRequest,),
                     "location": "body",
                 },
             },
@@ -1455,6 +1503,43 @@ class SecurityMonitoringApi:
             "kwargs": kwargs,
         }
         return endpoint.call_with_http_info_paginated(pagination)
+
+    def test_existing_security_monitoring_rule(
+        self,
+        rule_id: str,
+        body: SecurityMonitoringRuleTestRequest,
+    ) -> SecurityMonitoringRuleTestResponse:
+        """Test an existing rule.
+
+        Test an existing rule.
+
+        :param rule_id: The ID of the rule.
+        :type rule_id: str
+        :type body: SecurityMonitoringRuleTestRequest
+        :rtype: SecurityMonitoringRuleTestResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["rule_id"] = rule_id
+
+        kwargs["body"] = body
+
+        return self._test_existing_security_monitoring_rule_endpoint.call_with_http_info(**kwargs)
+
+    def test_security_monitoring_rule(
+        self,
+        body: SecurityMonitoringRuleTestRequest,
+    ) -> SecurityMonitoringRuleTestResponse:
+        """Test a rule.
+
+        Test a rule.
+
+        :type body: SecurityMonitoringRuleTestRequest
+        :rtype: SecurityMonitoringRuleTestResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._test_security_monitoring_rule_endpoint.call_with_http_info(**kwargs)
 
     def update_security_filter(
         self,
