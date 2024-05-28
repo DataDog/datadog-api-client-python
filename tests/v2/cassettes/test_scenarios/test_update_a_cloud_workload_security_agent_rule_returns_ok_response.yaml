@@ -24,7 +24,7 @@ interactions:
       message: OK
 - request:
     body: '{"data":{"attributes":{"description":"Test Agent rule","enabled":true,"expression":"exec.file.name
-      == \"sh\""},"type":"agent_rule"}}'
+      == \"sh\""},"id":"sir-mer-toj","type":"agent_rule"}}'
     headers:
       accept:
       - application/json

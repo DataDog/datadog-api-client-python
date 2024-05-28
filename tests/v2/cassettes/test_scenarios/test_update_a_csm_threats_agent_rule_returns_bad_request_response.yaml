@@ -23,7 +23,7 @@ interactions:
       message: OK
 - request:
     body: '{"data":{"attributes":{"description":"Test Agent rule","enabled":true,"expression":"open.file.path
-      = sh"},"id":"abc-123-xyz","type":"agent_rule"}}'
+      = sh"},"id":"rgf-aao-lo8","type":"agent_rule"}}'
     headers:
       accept:
       - application/json

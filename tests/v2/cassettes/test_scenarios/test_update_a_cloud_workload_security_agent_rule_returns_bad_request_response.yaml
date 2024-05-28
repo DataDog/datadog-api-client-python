@@ -24,7 +24,7 @@ interactions:
       message: OK
 - request:
     body: '{"data":{"attributes":{"description":"Test Agent rule","enabled":true,"expression":"open.file.path
-      = sh"},"type":"agent_rule"}}'
+      = sh"},"id":"1su-fqy-sjj","type":"agent_rule"}}'
     headers:
       accept:
       - application/json
