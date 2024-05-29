@@ -127,8 +127,8 @@ class APIManagementApi:
         """Create a new API.
 
         Create a new API from the `OpenAPI <https://spec.openapis.org/oas/latest.html>`_ specification given.
-        It supports version ``2.0`` , ``3.0`` and ``3.1`` of the specification. A specific extension section, ``x-datadog`` ,
-        let you specify the ``teamHandle`` for your team responsible for the API in Datadog.
+        See the `API Catalog documentation <https://docs.datadoghq.com/api_catalog/add_metadata/>`_ for additional
+        information about the possible metadata.
         It returns the created API ID.
 
         :param openapi_spec_file: Binary ``OpenAPI`` spec file
