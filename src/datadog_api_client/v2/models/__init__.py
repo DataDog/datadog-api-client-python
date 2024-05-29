@@ -1330,8 +1330,14 @@ from datadog_api_client.v2.model.security_monitoring_rule_query import SecurityM
 from datadog_api_client.v2.model.security_monitoring_rule_query_aggregation import (
     SecurityMonitoringRuleQueryAggregation,
 )
+from datadog_api_client.v2.model.security_monitoring_rule_query_payload import SecurityMonitoringRuleQueryPayload
+from datadog_api_client.v2.model.security_monitoring_rule_query_payload_data import (
+    SecurityMonitoringRuleQueryPayloadData,
+)
 from datadog_api_client.v2.model.security_monitoring_rule_response import SecurityMonitoringRuleResponse
 from datadog_api_client.v2.model.security_monitoring_rule_severity import SecurityMonitoringRuleSeverity
+from datadog_api_client.v2.model.security_monitoring_rule_test_request import SecurityMonitoringRuleTestRequest
+from datadog_api_client.v2.model.security_monitoring_rule_test_response import SecurityMonitoringRuleTestResponse
 from datadog_api_client.v2.model.security_monitoring_rule_third_party_options import (
     SecurityMonitoringRuleThirdPartyOptions,
 )
@@ -2924,8 +2930,12 @@ __all__ = [
     "SecurityMonitoringRuleOptions",
     "SecurityMonitoringRuleQuery",
     "SecurityMonitoringRuleQueryAggregation",
+    "SecurityMonitoringRuleQueryPayload",
+    "SecurityMonitoringRuleQueryPayloadData",
     "SecurityMonitoringRuleResponse",
     "SecurityMonitoringRuleSeverity",
+    "SecurityMonitoringRuleTestRequest",
+    "SecurityMonitoringRuleTestResponse",
     "SecurityMonitoringRuleThirdPartyOptions",
     "SecurityMonitoringRuleTypeCreate",
     "SecurityMonitoringRuleTypeRead",

@@ -1751,6 +1751,12 @@
       "type": "unsafe"
     }
   },
+  "TestSecurityMonitoringRule": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ValidateSecurityMonitoringRule": {
     "tag": "Security Monitoring",
     "undo": {
@@ -1770,6 +1776,12 @@
     }
   },
   "UpdateSecurityMonitoringRule": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "TestExistingSecurityMonitoringRule": {
     "tag": "Security Monitoring",
     "undo": {
       "type": "idempotent"
