@@ -7862,6 +7862,20 @@ security\_monitoring\_rule\_query\_aggregation
    :members:
    :show-inheritance:
 
+security\_monitoring\_rule\_query\_payload
+------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_rule_query_payload
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_rule\_query\_payload\_data
+------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_rule_query_payload_data
+   :members:
+   :show-inheritance:
+
 security\_monitoring\_rule\_response
 ------------------------------------
 
@@ -7873,6 +7887,20 @@ security\_monitoring\_rule\_severity
 ------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.security_monitoring_rule_severity
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_rule\_test\_request
+-----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_rule_test_request
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_rule\_test\_response
+------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_rule_test_response
    :members:
    :show-inheritance:
 
