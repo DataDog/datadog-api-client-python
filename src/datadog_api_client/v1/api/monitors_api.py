@@ -765,11 +765,10 @@ class MonitorsApi:
 
         Search and filter your monitor groups details.
 
-        :param query: After entering a search query in your `Manage Monitor page <https://app.datadoghq.com/monitors/manage>`_ use the query parameter value in the
-            URL of the page as value for this parameter. Consult the dedicated `manage monitor documentation </monitors/manage/#find-the-monitors>`_
-            page to learn more.
+        :param query: After entering a search query on the `Triggered Monitors page <https://app.datadoghq.com/monitors/triggered>`_ , use the query parameter value in the
+            URL of the page as a value for this parameter. For more information, see the `Manage Monitors documentation </monitors/manage/#triggered-monitors>`_.
 
-            The query can contain any number of space-separated monitor attributes, for instance ``query="type:metric status:alert"``.
+            The query can contain any number of space-separated monitor attributes, for instance: ``query="type:metric group_status:alert"``.
         :type query: str, optional
         :param page: Page to start paginating from.
         :type page: int, optional
