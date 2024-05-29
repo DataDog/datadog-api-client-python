@@ -4258,10 +4258,9 @@ Tags created in the Datadog UI automatically have the service key prepended. For
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>query</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>After entering a search query in your <a class="reference external" href="https://app.datadoghq.com/monitors/manage">Manage Monitor page</a> use the query parameter value in the
-URL of the page as value for this parameter. Consult the dedicated <a class="reference external" href="/monitors/manage/#find-the-monitors">manage monitor documentation</a>
-page to learn more.</p>
-<p>The query can contain any number of space-separated monitor attributes, for instance <code class="docutils literal notranslate"><span class="pre">query="type:metric</span> <span class="pre">status:alert"</span></code>.</p>
+<li><p><strong>query</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>After entering a search query on the <a class="reference external" href="https://app.datadoghq.com/monitors/triggered">Triggered Monitors page</a> , use the query parameter value in the
+URL of the page as a value for this parameter. For more information, see the <a class="reference external" href="/monitors/manage/#triggered-monitors">Manage Monitors documentation</a>.</p>
+<p>The query can contain any number of space-separated monitor attributes, for instance: <code class="docutils literal notranslate"><span class="pre">query="type:metric</span> <span class="pre">group_status:alert"</span></code>.</p>
 </p></li>
 <li><p><strong>page</strong> (<em>int</em><em>, </em><em>optional</em>) – Page to start paginating from.</p></li>
 <li><p><strong>per_page</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of monitors to return per page.</p></li>
@@ -5212,7 +5211,7 @@ and should be formatted to a single line then URL encoded.</p></li>
 </dd></dl>
 </section>
 <section id="module-datadog_api_client.v1.api.synthetics_api">
-<span id="id10"></span><h2 id="module-datadog_api_client.v1.api.synthetics_api">synthetics_api<a class="headerlink" href="#module-datadog_api_client.v1.api.synthetics_api" title="Link to this heading">¶</a></h2>
+<span id="id8"></span><h2 id="module-datadog_api_client.v1.api.synthetics_api">synthetics_api<a class="headerlink" href="#module-datadog_api_client.v1.api.synthetics_api" title="Link to this heading">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="datadog_api_client.v1.api.synthetics_api.SyntheticsApi">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SyntheticsApi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_client</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datadog_api_client.v1.api.synthetics_api.SyntheticsApi" title="Link to this definition">¶</a></dt>
