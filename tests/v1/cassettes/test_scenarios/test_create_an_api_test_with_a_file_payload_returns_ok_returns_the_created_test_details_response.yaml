@@ -1,8 +1,8 @@
 interactions:
 - request:
     body: '{"config":{"assertions":[{"operator":"is","property":"{{ PROPERTY }}","target":"text/html","type":"header"},{"operator":"lessThan","target":2000,"timingsScope":"withoutDNS","type":"responseTime"},{"operator":"validatesJSONPath","target":{"jsonPath":"topKey","operator":"isNot","targetValue":"0"},"type":"body"},{"operator":"validatesXPath","target":{"operator":"contains","targetValue":"0","xPath":"target-xpath"},"type":"body"}],"configVariables":[{"example":"content-type","name":"PROPERTY","pattern":"content-type","type":"text"}],"request":{"basicAuth":{"accessTokenUrl":"https://datadog-token.com","audience":"audience","clientId":"client-id","clientSecret":"client-secret","resource":"resource","scope":"yoyo","tokenApiAuthentication":"header","type":"oauth-client"},"bodyType":"application/octet-stream","certificate":{"cert":{"content":"cert-content","filename":"cert-filename","updatedAt":"2020-10-16T09:23:24.857Z"},"key":{"content":"key-content","filename":"key-filename","updatedAt":"2020-10-16T09:23:24.857Z"}},"files":[{"content":"file
-      content","name":"file name","type":"file type"}],"headers":{"unique":"testcreateanapitestwithafilepayloadreturnsokreturnsthecreatedtestdetailsresponse1712072139"},"method":"GET","persistCookies":true,"proxy":{"headers":{},"url":"https://datadoghq.com"},"timeout":10,"url":"https://datadoghq.com"}},"locations":["aws:us-east-2"],"message":"BDD
-      test payload: synthetics_api_http_test_payload.json","name":"Test-Create_an_API_test_with_a_file_payload_returns_OK_Returns_the_created_test_details_response-1712072139","options":{"accept_self_signed":false,"allow_insecure":true,"follow_redirects":true,"httpVersion":"http2","min_failure_duration":10,"min_location_failed":1,"monitor_name":"Test-Create_an_API_test_with_a_file_payload_returns_OK_Returns_the_created_test_details_response-1712072139","monitor_priority":5,"retry":{"count":3,"interval":10},"tick_every":60},"subtype":"http","tags":["testing:api"],"type":"api"}'
+      content","name":"file name","originalFileName":"image.png","type":"file type"}],"headers":{"unique":"testcreateanapitestwithafilepayloadreturnsokreturnsthecreatedtestdetailsresponse1717062297"},"method":"GET","persistCookies":true,"proxy":{"headers":{},"url":"https://datadoghq.com"},"timeout":10,"url":"https://datadoghq.com"}},"locations":["aws:us-east-2"],"message":"BDD
+      test payload: synthetics_api_http_test_payload.json","name":"Test-Create_an_API_test_with_a_file_payload_returns_OK_Returns_the_created_test_details_response-1717062297","options":{"accept_self_signed":false,"allow_insecure":true,"follow_redirects":true,"httpVersion":"http2","min_failure_duration":10,"min_location_failed":1,"monitor_name":"Test-Create_an_API_test_with_a_file_payload_returns_OK_Returns_the_created_test_details_response-1717062297","monitor_priority":5,"retry":{"count":3,"interval":10},"tick_every":60},"subtype":"http","tags":["testing:api"],"type":"api"}'
     headers:
       accept:
       - application/json
@@ -12,10 +12,10 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/synthetics/tests/api
   response:
     body:
-      string: '{"public_id":"sxp-kz5-mk7","name":"Test-Create_an_API_test_with_a_file_payload_returns_OK_Returns_the_created_test_details_response-1712072139","status":"live","type":"api","tags":["testing:api"],"created_at":"2024-04-02T15:35:40.509801+00:00","modified_at":"2024-04-02T15:35:40.509801+00:00","config":{"assertions":[{"operator":"is","property":"{{
+      string: '{"public_id":"3xr-qbb-evc","name":"Test-Create_an_API_test_with_a_file_payload_returns_OK_Returns_the_created_test_details_response-1717062297","status":"live","type":"api","tags":["testing:api"],"created_at":"2024-05-30T09:44:58.275857+00:00","modified_at":"2024-05-30T09:44:58.275857+00:00","config":{"assertions":[{"operator":"is","property":"{{
         PROPERTY }}","target":"text/html","type":"header"},{"operator":"lessThan","target":2000,"timingsScope":"withoutDNS","type":"responseTime"},{"operator":"validatesJSONPath","target":{"jsonPath":"topKey","operator":"isNot","targetValue":"0"},"type":"body"},{"operator":"validatesXPath","target":{"operator":"contains","targetValue":"0","xPath":"target-xpath"},"type":"body"}],"configVariables":[{"example":"content-type","name":"PROPERTY","pattern":"content-type","type":"text"}],"request":{"basicAuth":{"accessTokenUrl":"https://datadog-token.com","audience":"audience","clientId":"client-id","clientSecret":"client-secret","resource":"resource","scope":"yoyo","tokenApiAuthentication":"header","type":"oauth-client"},"bodyType":"application/octet-stream","certificate":{"cert":{"filename":"cert-filename","updatedAt":"2020-10-16T09:23:24.857Z"},"key":{"filename":"key-filename","updatedAt":"2020-10-16T09:23:24.857Z"}},"files":[{"name":"file
-        name","type":"file type","bucketKey":"api-upload-file/sxp-kz5-mk7/2024-04-02T15:35:40.363501_da19b48f-1756-453d-a03d-90526e629d7e.json"}],"headers":{"unique":"testcreateanapitestwithafilepayloadreturnsokreturnsthecreatedtestdetailsresponse1712072139"},"method":"GET","persistCookies":true,"proxy":{"headers":{},"url":"https://datadoghq.com"},"timeout":10,"url":"https://datadoghq.com"}},"message":"BDD
-        test payload: synthetics_api_http_test_payload.json","options":{"accept_self_signed":false,"allow_insecure":true,"follow_redirects":true,"httpVersion":"http2","min_failure_duration":10,"min_location_failed":1,"monitor_name":"Test-Create_an_API_test_with_a_file_payload_returns_OK_Returns_the_created_test_details_response-1712072139","monitor_priority":5,"retry":{"count":3,"interval":10},"tick_every":60},"locations":["aws:us-east-2"],"subtype":"http","created_by":{"name":null,"handle":"frog@datadoghq.com","email":"frog@datadoghq.com"},"deleted_at":null,"monitor_id":142439982,"org_id":321813,"modified_by":{"name":null,"handle":"frog@datadoghq.com","email":"frog@datadoghq.com"}}'
+        name","originalFileName":"image.png","type":"file type","bucketKey":"api-upload-file/3xr-qbb-evc/2024-05-30T09:44:58.051795_6d9345ed-356e-48ed-8a9b-db75a97b1002.json"}],"headers":{"unique":"testcreateanapitestwithafilepayloadreturnsokreturnsthecreatedtestdetailsresponse1717062297"},"method":"GET","persistCookies":true,"proxy":{"headers":{},"url":"https://datadoghq.com"},"timeout":10,"url":"https://datadoghq.com"}},"message":"BDD
+        test payload: synthetics_api_http_test_payload.json","options":{"accept_self_signed":false,"allow_insecure":true,"follow_redirects":true,"httpVersion":"http2","min_failure_duration":10,"min_location_failed":1,"monitor_name":"Test-Create_an_API_test_with_a_file_payload_returns_OK_Returns_the_created_test_details_response-1717062297","monitor_priority":5,"retry":{"count":3,"interval":10},"tick_every":60},"locations":["aws:us-east-2"],"subtype":"http","created_by":{"name":null,"handle":"frog@datadoghq.com","email":"frog@datadoghq.com"},"deleted_at":null,"monitor_id":145979793,"org_id":321813,"modified_by":{"name":null,"handle":"frog@datadoghq.com","email":"frog@datadoghq.com"}}'
     headers:
       content-type:
       - application/json
@@ -23,7 +23,7 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"public_ids":["sxp-kz5-mk7"]}'
+    body: '{"public_ids":["3xr-qbb-evc"]}'
     headers:
       accept:
       - application/json
@@ -33,7 +33,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/synthetics/tests/delete
   response:
     body:
-      string: '{"deleted_tests":[{"public_id":"sxp-kz5-mk7","deleted_at":"2024-04-02T15:35:41.326918+00:00"}]}
+      string: '{"deleted_tests":[{"public_id":"3xr-qbb-evc","deleted_at":"2024-05-30T09:44:59.066954+00:00"}]}
 
         '
     headers:

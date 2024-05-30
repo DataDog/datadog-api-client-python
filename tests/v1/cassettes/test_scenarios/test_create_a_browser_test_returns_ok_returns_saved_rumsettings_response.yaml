@@ -1,7 +1,7 @@
 interactions:
 - request:
     body: '{"config":{"assertions":[],"configVariables":[{"example":"content-type","name":"PROPERTY","pattern":"content-type","type":"text"}],"request":{"certificateDomains":["https://datadoghq.com"],"method":"GET","url":"https://datadoghq.com"},"setCookie":"name:test"},"locations":["aws:us-east-2"],"message":"Test
-      message","name":"Test-Create_a_browser_test_returns_OK_Returns_saved_rumSettings_response-1706264421","options":{"accept_self_signed":false,"allow_insecure":true,"ci":{"executionRule":"skipped"},"device_ids":["tablet"],"disableCors":true,"disableCsp":true,"follow_redirects":true,"ignoreServerCertificateError":true,"initialNavigationTimeout":200,"min_failure_duration":10,"min_location_failed":1,"noScreenshot":true,"retry":{"count":2,"interval":10},"rumSettings":{"applicationId":"mockApplicationId","clientTokenId":12345,"isEnabled":true},"tick_every":300},"steps":[{"allowFailure":false,"isCritical":true,"name":"Refresh
+      message","name":"Test-Create_a_browser_test_returns_OK_Returns_saved_rumSettings_response-1717062276","options":{"accept_self_signed":false,"allow_insecure":true,"ci":{"executionRule":"skipped"},"device_ids":["tablet"],"disableCors":true,"disableCsp":true,"follow_redirects":true,"ignoreServerCertificateError":true,"initialNavigationTimeout":200,"min_failure_duration":10,"min_location_failed":1,"noScreenshot":true,"retry":{"count":2,"interval":10},"rumSettings":{"applicationId":"mockApplicationId","clientTokenId":12345,"isEnabled":true},"tick_every":300},"steps":[{"allowFailure":false,"isCritical":true,"name":"Refresh
       page","params":{},"type":"refresh"}],"tags":["testing:browser"],"type":"browser"}'
     headers:
       accept:
@@ -12,8 +12,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/synthetics/tests/browser
   response:
     body:
-      string: '{"public_id":"y2r-gnr-i3n","name":"Test-Create_a_browser_test_returns_OK_Returns_saved_rumSettings_response-1706264421","status":"paused","type":"browser","tags":["testing:browser"],"created_at":"2024-01-26T10:20:22.506547+00:00","modified_at":"2024-01-26T10:20:22.506547+00:00","config":{"assertions":[],"configVariables":[{"example":"content-type","name":"PROPERTY","pattern":"content-type","type":"text"}],"request":{"certificateDomains":["https://datadoghq.com"],"method":"GET","url":"https://datadoghq.com"},"setCookie":"name:test"},"message":"Test
-        message","options":{"accept_self_signed":false,"allow_insecure":true,"ci":{"executionRule":"skipped"},"device_ids":["tablet"],"disableCors":true,"disableCsp":true,"follow_redirects":true,"ignoreServerCertificateError":true,"initialNavigationTimeout":200,"min_failure_duration":10,"min_location_failed":1,"noScreenshot":true,"retry":{"count":2,"interval":10},"rumSettings":{"applicationId":"mockApplicationId","clientTokenId":12345,"isEnabled":true},"tick_every":300},"locations":["aws:us-east-2"],"created_by":{"name":"Frog","handle":"frog@datadoghq.com","email":"frog@datadoghq.com"},"deleted_at":null,"monitor_id":138446062,"org_id":569509,"modified_by":{"name":"Frog","handle":"frog@datadoghq.com","email":"frog@datadoghq.com"},"steps":[{"name":"Refresh
+      string: '{"public_id":"esp-wxi-ksh","name":"Test-Create_a_browser_test_returns_OK_Returns_saved_rumSettings_response-1717062276","status":"paused","type":"browser","tags":["testing:browser"],"created_at":"2024-05-30T09:44:37.374324+00:00","modified_at":"2024-05-30T09:44:37.374324+00:00","config":{"assertions":[],"configVariables":[{"example":"content-type","name":"PROPERTY","pattern":"content-type","type":"text"}],"request":{"certificateDomains":["https://datadoghq.com"],"method":"GET","url":"https://datadoghq.com"},"setCookie":"name:test"},"message":"Test
+        message","options":{"accept_self_signed":false,"allow_insecure":true,"ci":{"executionRule":"skipped"},"device_ids":["tablet"],"disableCors":true,"disableCsp":true,"follow_redirects":true,"ignoreServerCertificateError":true,"initialNavigationTimeout":200,"min_failure_duration":10,"min_location_failed":1,"noScreenshot":true,"retry":{"count":2,"interval":10},"rumSettings":{"applicationId":"mockApplicationId","clientTokenId":12345,"isEnabled":true},"tick_every":300},"locations":["aws:us-east-2"],"created_by":{"name":null,"handle":"frog@datadoghq.com","email":"frog@datadoghq.com"},"deleted_at":null,"monitor_id":145979781,"org_id":321813,"modified_by":{"name":null,"handle":"frog@datadoghq.com","email":"frog@datadoghq.com"},"steps":[{"name":"Refresh
         page","params":{},"type":"refresh","allowFailure":false,"isCritical":true}],"stepCount":{"assertions":0,"subtests":0,"total":1}}'
     headers:
       content-type:
@@ -22,7 +22,7 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"public_ids":["y2r-gnr-i3n"]}'
+    body: '{"public_ids":["esp-wxi-ksh"]}'
     headers:
       accept:
       - application/json
@@ -32,7 +32,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/synthetics/tests/delete
   response:
     body:
-      string: '{"deleted_tests":[{"public_id":"y2r-gnr-i3n","deleted_at":"2024-01-26T10:20:23.057714+00:00"}]}
+      string: '{"deleted_tests":[{"public_id":"esp-wxi-ksh","deleted_at":"2024-05-30T09:44:38.322426+00:00"}]}
 
         '
     headers:

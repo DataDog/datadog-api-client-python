@@ -2,7 +2,7 @@ interactions:
 - request:
     body: '{"config":{"assertions":[{"operator":"is","target":1,"type":"grpcHealthcheckStatus"},{"operator":"is","target":"proto
       target","type":"grpcProto"},{"operator":"is","property":"property","target":"123","type":"grpcMetadata"}],"request":{"host":"localhost","message":"","metadata":{},"method":"GET","port":50051,"service":"Hello"}},"locations":["aws:us-east-2"],"message":"BDD
-      test payload: synthetics_api_grpc_test_payload.json","name":"Test-Create_an_API_GRPC_test_returns_OK_Returns_the_created_test_details_response-1706264439","options":{"min_failure_duration":0,"min_location_failed":1,"monitor_name":"Test-Create_an_API_GRPC_test_returns_OK_Returns_the_created_test_details_response-1706264439","monitor_options":{"renotify_interval":0},"tick_every":60},"subtype":"grpc","tags":["testing:api"],"type":"api"}'
+      test payload: synthetics_api_grpc_test_payload.json","name":"Test-Create_an_API_GRPC_test_returns_OK_Returns_the_created_test_details_response-1717062285","options":{"min_failure_duration":0,"min_location_failed":1,"monitor_name":"Test-Create_an_API_GRPC_test_returns_OK_Returns_the_created_test_details_response-1717062285","monitor_options":{"renotify_interval":0},"tick_every":60},"subtype":"grpc","tags":["testing:api"],"type":"api"}'
     headers:
       accept:
       - application/json
@@ -12,9 +12,9 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/synthetics/tests/api
   response:
     body:
-      string: '{"public_id":"d9f-drx-gbw","name":"Test-Create_an_API_GRPC_test_returns_OK_Returns_the_created_test_details_response-1706264439","status":"live","type":"api","tags":["testing:api"],"created_at":"2024-01-26T10:20:40.001199+00:00","modified_at":"2024-01-26T10:20:40.001199+00:00","config":{"assertions":[{"operator":"is","target":1,"type":"grpcHealthcheckStatus"},{"operator":"is","target":"proto
+      string: '{"public_id":"zcr-b3b-s43","name":"Test-Create_an_API_GRPC_test_returns_OK_Returns_the_created_test_details_response-1717062285","status":"live","type":"api","tags":["testing:api"],"created_at":"2024-05-30T09:44:46.524872+00:00","modified_at":"2024-05-30T09:44:46.524872+00:00","config":{"assertions":[{"operator":"is","target":1,"type":"grpcHealthcheckStatus"},{"operator":"is","target":"proto
         target","type":"grpcProto"},{"operator":"is","property":"property","target":"123","type":"grpcMetadata"}],"request":{"host":"localhost","message":"","metadata":{},"method":"GET","port":50051,"service":"Hello"}},"message":"BDD
-        test payload: synthetics_api_grpc_test_payload.json","options":{"min_failure_duration":0,"min_location_failed":1,"monitor_name":"Test-Create_an_API_GRPC_test_returns_OK_Returns_the_created_test_details_response-1706264439","monitor_options":{"renotify_interval":0,"on_missing_data":"show_no_data","notify_audit":false,"new_host_delay":300,"include_tags":true},"tick_every":60},"locations":["aws:us-east-2"],"subtype":"grpc","created_by":{"name":"Frog","handle":"frog@datadoghq.com","email":"frog@datadoghq.com"},"deleted_at":null,"monitor_id":138446066,"org_id":569509,"modified_by":{"name":"Frog","handle":"frog@datadoghq.com","email":"frog@datadoghq.com"}}'
+        test payload: synthetics_api_grpc_test_payload.json","options":{"min_failure_duration":0,"min_location_failed":1,"monitor_name":"Test-Create_an_API_GRPC_test_returns_OK_Returns_the_created_test_details_response-1717062285","monitor_options":{"renotify_interval":0,"on_missing_data":"show_no_data","notify_audit":false,"new_host_delay":300,"include_tags":true},"tick_every":60},"locations":["aws:us-east-2"],"subtype":"grpc","created_by":{"name":null,"handle":"frog@datadoghq.com","email":"frog@datadoghq.com"},"deleted_at":null,"monitor_id":145979785,"org_id":321813,"modified_by":{"name":null,"handle":"frog@datadoghq.com","email":"frog@datadoghq.com"}}'
     headers:
       content-type:
       - application/json
@@ -22,7 +22,7 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"public_ids":["d9f-drx-gbw"]}'
+    body: '{"public_ids":["zcr-b3b-s43"]}'
     headers:
       accept:
       - application/json
@@ -32,7 +32,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/synthetics/tests/delete
   response:
     body:
-      string: '{"deleted_tests":[{"public_id":"d9f-drx-gbw","deleted_at":"2024-01-26T10:20:40.516126+00:00"}]}
+      string: '{"deleted_tests":[{"public_id":"zcr-b3b-s43","deleted_at":"2024-05-30T09:44:47.290366+00:00"}]}
 
         '
     headers:

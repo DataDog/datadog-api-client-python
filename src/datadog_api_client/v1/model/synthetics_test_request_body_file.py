@@ -21,6 +21,9 @@ class SyntheticsTestRequestBodyFile(ModelNormal):
         "name": {
             "max_length": 1500,
         },
+        "original_file_name": {
+            "max_length": 1500,
+        },
         "size": {
             "inclusive_maximum": 3145728,
             "inclusive_minimum": 1,
@@ -36,6 +39,7 @@ class SyntheticsTestRequestBodyFile(ModelNormal):
             "bucket_key": (str,),
             "content": (str,),
             "name": (str,),
+            "original_file_name": (str,),
             "size": (int,),
             "type": (str,),
         }
@@ -44,6 +48,7 @@ class SyntheticsTestRequestBodyFile(ModelNormal):
         "bucket_key": "bucketKey",
         "content": "content",
         "name": "name",
+        "original_file_name": "originalFileName",
         "size": "size",
         "type": "type",
     }
@@ -53,6 +58,7 @@ class SyntheticsTestRequestBodyFile(ModelNormal):
         bucket_key: Union[str, UnsetType] = unset,
         content: Union[str, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
+        original_file_name: Union[str, UnsetType] = unset,
         size: Union[int, UnsetType] = unset,
         type: Union[str, UnsetType] = unset,
         **kwargs,
@@ -69,6 +75,9 @@ class SyntheticsTestRequestBodyFile(ModelNormal):
         :param name: Name of the file.
         :type name: str, optional
 
+        :param original_file_name: Original name of the file.
+        :type original_file_name: str, optional
+
         :param size: Size of the file.
         :type size: int, optional
 
@@ -81,6 +90,8 @@ class SyntheticsTestRequestBodyFile(ModelNormal):
             kwargs["content"] = content
         if name is not unset:
             kwargs["name"] = name
+        if original_file_name is not unset:
+            kwargs["original_file_name"] = original_file_name
         if size is not unset:
             kwargs["size"] = size
         if type is not unset:

@@ -201,6 +201,7 @@ Feature: Synthetics
     Then the response status is 200 OK - Returns the created test details.
     And the response "name" is equal to "{{ unique }}"
     And the response "config.request.files[0].name" is equal to "file name"
+    And the response "config.request.files[0].originalFileName" is equal to "image.png"
     And the response "config.request.files[0].type" is equal to "file type"
     And the response "config.request.files[0]" has field "bucketKey"
 
