@@ -21,10 +21,10 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.security_monitoring_third_party_rule_case_create import (
         SecurityMonitoringThirdPartyRuleCaseCreate,
     )
-    from datadog_api_client.v2.model.security_monitoring_rule_type_create import SecurityMonitoringRuleTypeCreate
+    from datadog_api_client.v2.model.security_monitoring_rule_type_test import SecurityMonitoringRuleTypeTest
 
 
-class SecurityMonitoringStandardRuleCreatePayload(ModelNormal):
+class SecurityMonitoringStandardRuleTestPayload(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.security_monitoring_rule_case_create import SecurityMonitoringRuleCaseCreate
@@ -36,7 +36,7 @@ class SecurityMonitoringStandardRuleCreatePayload(ModelNormal):
         from datadog_api_client.v2.model.security_monitoring_third_party_rule_case_create import (
             SecurityMonitoringThirdPartyRuleCaseCreate,
         )
-        from datadog_api_client.v2.model.security_monitoring_rule_type_create import SecurityMonitoringRuleTypeCreate
+        from datadog_api_client.v2.model.security_monitoring_rule_type_test import SecurityMonitoringRuleTypeTest
 
         return {
             "cases": ([SecurityMonitoringRuleCaseCreate],),
@@ -49,7 +49,7 @@ class SecurityMonitoringStandardRuleCreatePayload(ModelNormal):
             "queries": ([SecurityMonitoringStandardRuleQuery],),
             "tags": ([str],),
             "third_party_cases": ([SecurityMonitoringThirdPartyRuleCaseCreate],),
-            "type": (SecurityMonitoringRuleTypeCreate,),
+            "type": (SecurityMonitoringRuleTypeTest,),
         }
 
     attribute_map = {
@@ -78,11 +78,11 @@ class SecurityMonitoringStandardRuleCreatePayload(ModelNormal):
         has_extended_title: Union[bool, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
         third_party_cases: Union[List[SecurityMonitoringThirdPartyRuleCaseCreate], UnsetType] = unset,
-        type: Union[SecurityMonitoringRuleTypeCreate, UnsetType] = unset,
+        type: Union[SecurityMonitoringRuleTypeTest, UnsetType] = unset,
         **kwargs,
     ):
         """
-        Create a new rule.
+        The payload of a rule to test
 
         :param cases: Cases for generating signals.
         :type cases: [SecurityMonitoringRuleCaseCreate]
@@ -115,7 +115,7 @@ class SecurityMonitoringStandardRuleCreatePayload(ModelNormal):
         :type third_party_cases: [SecurityMonitoringThirdPartyRuleCaseCreate], optional
 
         :param type: The rule type.
-        :type type: SecurityMonitoringRuleTypeCreate, optional
+        :type type: SecurityMonitoringRuleTypeTest, optional
         """
         if filters is not unset:
             kwargs["filters"] = filters

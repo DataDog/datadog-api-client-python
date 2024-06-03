@@ -10,10 +10,10 @@ from datadog_api_client.model_utils import (
 )
 
 
-class SecurityMonitoringRuleCreatePayload(ModelComposed):
+class SecurityMonitoringRuleTestPayload(ModelComposed):
     def __init__(self, **kwargs):
         """
-        Create a new rule.
+        Test a rule.
 
         :param cases: Cases for generating signals.
         :type cases: [SecurityMonitoringRuleCaseCreate]
@@ -46,10 +46,7 @@ class SecurityMonitoringRuleCreatePayload(ModelComposed):
         :type third_party_cases: [SecurityMonitoringThirdPartyRuleCaseCreate], optional
 
         :param type: The rule type.
-        :type type: SecurityMonitoringRuleTypeCreate, optional
-
-        :param compliance_signal_options: How to generate compliance signals. Useful for cloud_configuration rules only.
-        :type compliance_signal_options: CloudConfigurationRuleComplianceSignalOptions
+        :type type: SecurityMonitoringRuleTypeTest, optional
         """
         super().__init__(kwargs)
 
@@ -62,20 +59,12 @@ class SecurityMonitoringRuleCreatePayload(ModelComposed):
         # code would be run when this module is imported, and these composed
         # classes don't exist yet because their module has not finished
         # loading
-        from datadog_api_client.v2.model.security_monitoring_standard_rule_create_payload import (
-            SecurityMonitoringStandardRuleCreatePayload,
-        )
-        from datadog_api_client.v2.model.security_monitoring_signal_rule_create_payload import (
-            SecurityMonitoringSignalRuleCreatePayload,
-        )
-        from datadog_api_client.v2.model.cloud_configuration_rule_create_payload import (
-            CloudConfigurationRuleCreatePayload,
+        from datadog_api_client.v2.model.security_monitoring_standard_rule_test_payload import (
+            SecurityMonitoringStandardRuleTestPayload,
         )
 
         return {
             "oneOf": [
-                SecurityMonitoringStandardRuleCreatePayload,
-                SecurityMonitoringSignalRuleCreatePayload,
-                CloudConfigurationRuleCreatePayload,
+                SecurityMonitoringStandardRuleTestPayload,
             ],
         }

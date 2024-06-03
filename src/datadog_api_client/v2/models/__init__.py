@@ -226,6 +226,7 @@ from datadog_api_client.v2.model.cloud_configuration_rule_compliance_signal_opti
 )
 from datadog_api_client.v2.model.cloud_configuration_rule_create_payload import CloudConfigurationRuleCreatePayload
 from datadog_api_client.v2.model.cloud_configuration_rule_options import CloudConfigurationRuleOptions
+from datadog_api_client.v2.model.cloud_configuration_rule_payload import CloudConfigurationRulePayload
 from datadog_api_client.v2.model.cloud_configuration_rule_type import CloudConfigurationRuleType
 from datadog_api_client.v2.model.cloud_cost_activity import CloudCostActivity
 from datadog_api_client.v2.model.cloud_cost_activity_attributes import CloudCostActivityAttributes
@@ -1336,6 +1337,7 @@ from datadog_api_client.v2.model.security_monitoring_rule_query_payload_data imp
 )
 from datadog_api_client.v2.model.security_monitoring_rule_response import SecurityMonitoringRuleResponse
 from datadog_api_client.v2.model.security_monitoring_rule_severity import SecurityMonitoringRuleSeverity
+from datadog_api_client.v2.model.security_monitoring_rule_test_payload import SecurityMonitoringRuleTestPayload
 from datadog_api_client.v2.model.security_monitoring_rule_test_request import SecurityMonitoringRuleTestRequest
 from datadog_api_client.v2.model.security_monitoring_rule_test_response import SecurityMonitoringRuleTestResponse
 from datadog_api_client.v2.model.security_monitoring_rule_third_party_options import (
@@ -1343,7 +1345,9 @@ from datadog_api_client.v2.model.security_monitoring_rule_third_party_options im
 )
 from datadog_api_client.v2.model.security_monitoring_rule_type_create import SecurityMonitoringRuleTypeCreate
 from datadog_api_client.v2.model.security_monitoring_rule_type_read import SecurityMonitoringRuleTypeRead
+from datadog_api_client.v2.model.security_monitoring_rule_type_test import SecurityMonitoringRuleTypeTest
 from datadog_api_client.v2.model.security_monitoring_rule_update_payload import SecurityMonitoringRuleUpdatePayload
+from datadog_api_client.v2.model.security_monitoring_rule_validate_payload import SecurityMonitoringRuleValidatePayload
 from datadog_api_client.v2.model.security_monitoring_signal import SecurityMonitoringSignal
 from datadog_api_client.v2.model.security_monitoring_signal_archive_reason import SecurityMonitoringSignalArchiveReason
 from datadog_api_client.v2.model.security_monitoring_signal_assignee_update_attributes import (
@@ -1378,6 +1382,7 @@ from datadog_api_client.v2.model.security_monitoring_signal_response import Secu
 from datadog_api_client.v2.model.security_monitoring_signal_rule_create_payload import (
     SecurityMonitoringSignalRuleCreatePayload,
 )
+from datadog_api_client.v2.model.security_monitoring_signal_rule_payload import SecurityMonitoringSignalRulePayload
 from datadog_api_client.v2.model.security_monitoring_signal_rule_query import SecurityMonitoringSignalRuleQuery
 from datadog_api_client.v2.model.security_monitoring_signal_rule_response import SecurityMonitoringSignalRuleResponse
 from datadog_api_client.v2.model.security_monitoring_signal_rule_response_query import (
@@ -1418,9 +1423,13 @@ from datadog_api_client.v2.model.security_monitoring_signals_sort import Securit
 from datadog_api_client.v2.model.security_monitoring_standard_rule_create_payload import (
     SecurityMonitoringStandardRuleCreatePayload,
 )
+from datadog_api_client.v2.model.security_monitoring_standard_rule_payload import SecurityMonitoringStandardRulePayload
 from datadog_api_client.v2.model.security_monitoring_standard_rule_query import SecurityMonitoringStandardRuleQuery
 from datadog_api_client.v2.model.security_monitoring_standard_rule_response import (
     SecurityMonitoringStandardRuleResponse,
+)
+from datadog_api_client.v2.model.security_monitoring_standard_rule_test_payload import (
+    SecurityMonitoringStandardRuleTestPayload,
 )
 from datadog_api_client.v2.model.security_monitoring_suppression import SecurityMonitoringSuppression
 from datadog_api_client.v2.model.security_monitoring_suppression_attributes import (
@@ -2012,6 +2021,7 @@ __all__ = [
     "CloudConfigurationRuleComplianceSignalOptions",
     "CloudConfigurationRuleCreatePayload",
     "CloudConfigurationRuleOptions",
+    "CloudConfigurationRulePayload",
     "CloudConfigurationRuleType",
     "CloudCostActivity",
     "CloudCostActivityAttributes",
@@ -2934,12 +2944,15 @@ __all__ = [
     "SecurityMonitoringRuleQueryPayloadData",
     "SecurityMonitoringRuleResponse",
     "SecurityMonitoringRuleSeverity",
+    "SecurityMonitoringRuleTestPayload",
     "SecurityMonitoringRuleTestRequest",
     "SecurityMonitoringRuleTestResponse",
     "SecurityMonitoringRuleThirdPartyOptions",
     "SecurityMonitoringRuleTypeCreate",
     "SecurityMonitoringRuleTypeRead",
+    "SecurityMonitoringRuleTypeTest",
     "SecurityMonitoringRuleUpdatePayload",
+    "SecurityMonitoringRuleValidatePayload",
     "SecurityMonitoringSignal",
     "SecurityMonitoringSignalArchiveReason",
     "SecurityMonitoringSignalAssigneeUpdateAttributes",
@@ -2956,6 +2969,7 @@ __all__ = [
     "SecurityMonitoringSignalMetadataType",
     "SecurityMonitoringSignalResponse",
     "SecurityMonitoringSignalRuleCreatePayload",
+    "SecurityMonitoringSignalRulePayload",
     "SecurityMonitoringSignalRuleQuery",
     "SecurityMonitoringSignalRuleResponse",
     "SecurityMonitoringSignalRuleResponseQuery",
@@ -2974,8 +2988,10 @@ __all__ = [
     "SecurityMonitoringSignalsListResponseMetaPage",
     "SecurityMonitoringSignalsSort",
     "SecurityMonitoringStandardRuleCreatePayload",
+    "SecurityMonitoringStandardRulePayload",
     "SecurityMonitoringStandardRuleQuery",
     "SecurityMonitoringStandardRuleResponse",
+    "SecurityMonitoringStandardRuleTestPayload",
     "SecurityMonitoringSuppression",
     "SecurityMonitoringSuppressionAttributes",
     "SecurityMonitoringSuppressionCreateAttributes",

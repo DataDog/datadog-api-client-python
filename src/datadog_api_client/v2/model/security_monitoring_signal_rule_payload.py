@@ -17,26 +17,18 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.security_monitoring_rule_case_create import SecurityMonitoringRuleCaseCreate
     from datadog_api_client.v2.model.security_monitoring_filter import SecurityMonitoringFilter
     from datadog_api_client.v2.model.security_monitoring_rule_options import SecurityMonitoringRuleOptions
-    from datadog_api_client.v2.model.security_monitoring_standard_rule_query import SecurityMonitoringStandardRuleQuery
-    from datadog_api_client.v2.model.security_monitoring_third_party_rule_case_create import (
-        SecurityMonitoringThirdPartyRuleCaseCreate,
-    )
-    from datadog_api_client.v2.model.security_monitoring_rule_type_create import SecurityMonitoringRuleTypeCreate
+    from datadog_api_client.v2.model.security_monitoring_signal_rule_query import SecurityMonitoringSignalRuleQuery
+    from datadog_api_client.v2.model.security_monitoring_signal_rule_type import SecurityMonitoringSignalRuleType
 
 
-class SecurityMonitoringStandardRuleCreatePayload(ModelNormal):
+class SecurityMonitoringSignalRulePayload(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.security_monitoring_rule_case_create import SecurityMonitoringRuleCaseCreate
         from datadog_api_client.v2.model.security_monitoring_filter import SecurityMonitoringFilter
         from datadog_api_client.v2.model.security_monitoring_rule_options import SecurityMonitoringRuleOptions
-        from datadog_api_client.v2.model.security_monitoring_standard_rule_query import (
-            SecurityMonitoringStandardRuleQuery,
-        )
-        from datadog_api_client.v2.model.security_monitoring_third_party_rule_case_create import (
-            SecurityMonitoringThirdPartyRuleCaseCreate,
-        )
-        from datadog_api_client.v2.model.security_monitoring_rule_type_create import SecurityMonitoringRuleTypeCreate
+        from datadog_api_client.v2.model.security_monitoring_signal_rule_query import SecurityMonitoringSignalRuleQuery
+        from datadog_api_client.v2.model.security_monitoring_signal_rule_type import SecurityMonitoringSignalRuleType
 
         return {
             "cases": ([SecurityMonitoringRuleCaseCreate],),
@@ -46,10 +38,9 @@ class SecurityMonitoringStandardRuleCreatePayload(ModelNormal):
             "message": (str,),
             "name": (str,),
             "options": (SecurityMonitoringRuleOptions,),
-            "queries": ([SecurityMonitoringStandardRuleQuery],),
+            "queries": ([SecurityMonitoringSignalRuleQuery],),
             "tags": ([str],),
-            "third_party_cases": ([SecurityMonitoringThirdPartyRuleCaseCreate],),
-            "type": (SecurityMonitoringRuleTypeCreate,),
+            "type": (SecurityMonitoringSignalRuleType,),
         }
 
     attribute_map = {
@@ -62,7 +53,6 @@ class SecurityMonitoringStandardRuleCreatePayload(ModelNormal):
         "options": "options",
         "queries": "queries",
         "tags": "tags",
-        "third_party_cases": "thirdPartyCases",
         "type": "type",
     }
 
@@ -73,16 +63,15 @@ class SecurityMonitoringStandardRuleCreatePayload(ModelNormal):
         message: str,
         name: str,
         options: SecurityMonitoringRuleOptions,
-        queries: List[SecurityMonitoringStandardRuleQuery],
+        queries: List[SecurityMonitoringSignalRuleQuery],
         filters: Union[List[SecurityMonitoringFilter], UnsetType] = unset,
         has_extended_title: Union[bool, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
-        third_party_cases: Union[List[SecurityMonitoringThirdPartyRuleCaseCreate], UnsetType] = unset,
-        type: Union[SecurityMonitoringRuleTypeCreate, UnsetType] = unset,
+        type: Union[SecurityMonitoringSignalRuleType, UnsetType] = unset,
         **kwargs,
     ):
         """
-        Create a new rule.
+        The payload of a signal correlation rule.
 
         :param cases: Cases for generating signals.
         :type cases: [SecurityMonitoringRuleCaseCreate]
@@ -105,17 +94,14 @@ class SecurityMonitoringStandardRuleCreatePayload(ModelNormal):
         :param options: Options on rules.
         :type options: SecurityMonitoringRuleOptions
 
-        :param queries: Queries for selecting logs which are part of the rule.
-        :type queries: [SecurityMonitoringStandardRuleQuery]
+        :param queries: Queries for selecting signals which are part of the rule.
+        :type queries: [SecurityMonitoringSignalRuleQuery]
 
         :param tags: Tags for generated signals.
         :type tags: [str], optional
 
-        :param third_party_cases: Cases for generating signals from third-party rules. Only available for third-party rules.
-        :type third_party_cases: [SecurityMonitoringThirdPartyRuleCaseCreate], optional
-
         :param type: The rule type.
-        :type type: SecurityMonitoringRuleTypeCreate, optional
+        :type type: SecurityMonitoringSignalRuleType, optional
         """
         if filters is not unset:
             kwargs["filters"] = filters
@@ -123,8 +109,6 @@ class SecurityMonitoringStandardRuleCreatePayload(ModelNormal):
             kwargs["has_extended_title"] = has_extended_title
         if tags is not unset:
             kwargs["tags"] = tags
-        if third_party_cases is not unset:
-            kwargs["third_party_cases"] = third_party_cases
         if type is not unset:
             kwargs["type"] = type
         super().__init__(kwargs)

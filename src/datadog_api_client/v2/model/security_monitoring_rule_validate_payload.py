@@ -10,10 +10,10 @@ from datadog_api_client.model_utils import (
 )
 
 
-class SecurityMonitoringRuleCreatePayload(ModelComposed):
+class SecurityMonitoringRuleValidatePayload(ModelComposed):
     def __init__(self, **kwargs):
         """
-        Create a new rule.
+        Validate a rule.
 
         :param cases: Cases for generating signals.
         :type cases: [SecurityMonitoringRuleCaseCreate]
@@ -62,20 +62,18 @@ class SecurityMonitoringRuleCreatePayload(ModelComposed):
         # code would be run when this module is imported, and these composed
         # classes don't exist yet because their module has not finished
         # loading
-        from datadog_api_client.v2.model.security_monitoring_standard_rule_create_payload import (
-            SecurityMonitoringStandardRuleCreatePayload,
+        from datadog_api_client.v2.model.security_monitoring_standard_rule_payload import (
+            SecurityMonitoringStandardRulePayload,
         )
-        from datadog_api_client.v2.model.security_monitoring_signal_rule_create_payload import (
-            SecurityMonitoringSignalRuleCreatePayload,
+        from datadog_api_client.v2.model.security_monitoring_signal_rule_payload import (
+            SecurityMonitoringSignalRulePayload,
         )
-        from datadog_api_client.v2.model.cloud_configuration_rule_create_payload import (
-            CloudConfigurationRuleCreatePayload,
-        )
+        from datadog_api_client.v2.model.cloud_configuration_rule_payload import CloudConfigurationRulePayload
 
         return {
             "oneOf": [
-                SecurityMonitoringStandardRuleCreatePayload,
-                SecurityMonitoringSignalRuleCreatePayload,
-                CloudConfigurationRuleCreatePayload,
+                SecurityMonitoringStandardRulePayload,
+                SecurityMonitoringSignalRulePayload,
+                CloudConfigurationRulePayload,
             ],
         }
