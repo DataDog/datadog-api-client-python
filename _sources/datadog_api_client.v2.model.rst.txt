@@ -1485,6 +1485,13 @@ cloud\_configuration\_rule\_options
    :members:
    :show-inheritance:
 
+cloud\_configuration\_rule\_payload
+-----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cloud_configuration_rule_payload
+   :members:
+   :show-inheritance:
+
 cloud\_configuration\_rule\_type
 --------------------------------
 
@@ -7890,6 +7897,13 @@ security\_monitoring\_rule\_severity
    :members:
    :show-inheritance:
 
+security\_monitoring\_rule\_test\_payload
+-----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_rule_test_payload
+   :members:
+   :show-inheritance:
+
 security\_monitoring\_rule\_test\_request
 -----------------------------------------
 
@@ -7925,10 +7939,24 @@ security\_monitoring\_rule\_type\_read
    :members:
    :show-inheritance:
 
+security\_monitoring\_rule\_type\_test
+--------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_rule_type_test
+   :members:
+   :show-inheritance:
+
 security\_monitoring\_rule\_update\_payload
 -------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.security_monitoring_rule_update_payload
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_rule\_validate\_payload
+---------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_rule_validate_payload
    :members:
    :show-inheritance:
 
@@ -8041,6 +8069,13 @@ security\_monitoring\_signal\_rule\_create\_payload
 ---------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.security_monitoring_signal_rule_create_payload
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_signal\_rule\_payload
+-------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_signal_rule_payload
    :members:
    :show-inheritance:
 
@@ -8170,6 +8205,13 @@ security\_monitoring\_standard\_rule\_create\_payload
    :members:
    :show-inheritance:
 
+security\_monitoring\_standard\_rule\_payload
+---------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_standard_rule_payload
+   :members:
+   :show-inheritance:
+
 security\_monitoring\_standard\_rule\_query
 -------------------------------------------
 
@@ -8181,6 +8223,13 @@ security\_monitoring\_standard\_rule\_response
 ----------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.security_monitoring_standard_rule_response
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_standard\_rule\_test\_payload
+---------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_standard_rule_test_payload
    :members:
    :show-inheritance:
 
