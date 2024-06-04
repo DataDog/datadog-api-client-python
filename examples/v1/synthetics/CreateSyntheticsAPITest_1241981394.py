@@ -107,6 +107,7 @@ body = SyntheticsAPITest(
             files=[
                 SyntheticsTestRequestBodyFile(
                     name="file name",
+                    original_file_name="image.png",
                     content="file content",
                     type="file type",
                 ),
