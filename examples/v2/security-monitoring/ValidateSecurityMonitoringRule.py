@@ -19,12 +19,10 @@ from datadog_api_client.v2.model.security_monitoring_rule_query_aggregation impo
 )
 from datadog_api_client.v2.model.security_monitoring_rule_severity import SecurityMonitoringRuleSeverity
 from datadog_api_client.v2.model.security_monitoring_rule_type_create import SecurityMonitoringRuleTypeCreate
-from datadog_api_client.v2.model.security_monitoring_standard_rule_create_payload import (
-    SecurityMonitoringStandardRuleCreatePayload,
-)
+from datadog_api_client.v2.model.security_monitoring_standard_rule_payload import SecurityMonitoringStandardRulePayload
 from datadog_api_client.v2.model.security_monitoring_standard_rule_query import SecurityMonitoringStandardRuleQuery
 
-body = SecurityMonitoringStandardRuleCreatePayload(
+body = SecurityMonitoringStandardRulePayload(
     cases=[
         SecurityMonitoringRuleCaseCreate(
             name="",

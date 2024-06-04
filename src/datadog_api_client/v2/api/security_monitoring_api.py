@@ -46,6 +46,10 @@ from datadog_api_client.v2.model.security_monitoring_signal_rule_create_payload 
 from datadog_api_client.v2.model.cloud_configuration_rule_create_payload import CloudConfigurationRuleCreatePayload
 from datadog_api_client.v2.model.security_monitoring_rule_test_response import SecurityMonitoringRuleTestResponse
 from datadog_api_client.v2.model.security_monitoring_rule_test_request import SecurityMonitoringRuleTestRequest
+from datadog_api_client.v2.model.security_monitoring_rule_validate_payload import SecurityMonitoringRuleValidatePayload
+from datadog_api_client.v2.model.security_monitoring_standard_rule_payload import SecurityMonitoringStandardRulePayload
+from datadog_api_client.v2.model.security_monitoring_signal_rule_payload import SecurityMonitoringSignalRulePayload
+from datadog_api_client.v2.model.cloud_configuration_rule_payload import CloudConfigurationRulePayload
 from datadog_api_client.v2.model.security_monitoring_rule_update_payload import SecurityMonitoringRuleUpdatePayload
 from datadog_api_client.v2.model.security_monitoring_signals_list_response import SecurityMonitoringSignalsListResponse
 from datadog_api_client.v2.model.security_monitoring_signals_sort import SecurityMonitoringSignalsSort
@@ -774,7 +778,7 @@ class SecurityMonitoringApi:
             params_map={
                 "body": {
                     "required": True,
-                    "openapi_types": (SecurityMonitoringRuleCreatePayload,),
+                    "openapi_types": (SecurityMonitoringRuleValidatePayload,),
                     "location": "body",
                 },
             },
@@ -1613,17 +1617,17 @@ class SecurityMonitoringApi:
     def validate_security_monitoring_rule(
         self,
         body: Union[
-            SecurityMonitoringRuleCreatePayload,
-            SecurityMonitoringStandardRuleCreatePayload,
-            SecurityMonitoringSignalRuleCreatePayload,
-            CloudConfigurationRuleCreatePayload,
+            SecurityMonitoringRuleValidatePayload,
+            SecurityMonitoringStandardRulePayload,
+            SecurityMonitoringSignalRulePayload,
+            CloudConfigurationRulePayload,
         ],
     ) -> None:
         """Validate a detection rule.
 
         Validate a detection rule.
 
-        :type body: SecurityMonitoringRuleCreatePayload
+        :type body: SecurityMonitoringRuleValidatePayload
         :rtype: None
         """
         kwargs: Dict[str, Any] = {}

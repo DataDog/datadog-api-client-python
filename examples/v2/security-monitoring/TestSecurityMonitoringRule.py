@@ -23,14 +23,14 @@ from datadog_api_client.v2.model.security_monitoring_rule_query_payload_data imp
 )
 from datadog_api_client.v2.model.security_monitoring_rule_severity import SecurityMonitoringRuleSeverity
 from datadog_api_client.v2.model.security_monitoring_rule_test_request import SecurityMonitoringRuleTestRequest
-from datadog_api_client.v2.model.security_monitoring_rule_type_create import SecurityMonitoringRuleTypeCreate
-from datadog_api_client.v2.model.security_monitoring_standard_rule_create_payload import (
-    SecurityMonitoringStandardRuleCreatePayload,
-)
+from datadog_api_client.v2.model.security_monitoring_rule_type_test import SecurityMonitoringRuleTypeTest
 from datadog_api_client.v2.model.security_monitoring_standard_rule_query import SecurityMonitoringStandardRuleQuery
+from datadog_api_client.v2.model.security_monitoring_standard_rule_test_payload import (
+    SecurityMonitoringStandardRuleTestPayload,
+)
 
 body = SecurityMonitoringRuleTestRequest(
-    rule=SecurityMonitoringStandardRuleCreatePayload(
+    rule=SecurityMonitoringStandardRuleTestPayload(
         cases=[
             SecurityMonitoringRuleCaseCreate(
                 name="",
@@ -65,7 +65,7 @@ body = SecurityMonitoringRuleTestRequest(
             "env:prod",
             "team:security",
         ],
-        type=SecurityMonitoringRuleTypeCreate.LOG_DETECTION,
+        type=SecurityMonitoringRuleTypeTest.LOG_DETECTION,
     ),
     rule_query_payloads=[
         SecurityMonitoringRuleQueryPayload(

@@ -14,29 +14,23 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.security_monitoring_rule_create_payload import SecurityMonitoringRuleCreatePayload
+    from datadog_api_client.v2.model.security_monitoring_rule_test_payload import SecurityMonitoringRuleTestPayload
     from datadog_api_client.v2.model.security_monitoring_rule_query_payload import SecurityMonitoringRuleQueryPayload
-    from datadog_api_client.v2.model.security_monitoring_standard_rule_create_payload import (
-        SecurityMonitoringStandardRuleCreatePayload,
+    from datadog_api_client.v2.model.security_monitoring_standard_rule_test_payload import (
+        SecurityMonitoringStandardRuleTestPayload,
     )
-    from datadog_api_client.v2.model.security_monitoring_signal_rule_create_payload import (
-        SecurityMonitoringSignalRuleCreatePayload,
-    )
-    from datadog_api_client.v2.model.cloud_configuration_rule_create_payload import CloudConfigurationRuleCreatePayload
 
 
 class SecurityMonitoringRuleTestRequest(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.security_monitoring_rule_create_payload import (
-            SecurityMonitoringRuleCreatePayload,
-        )
+        from datadog_api_client.v2.model.security_monitoring_rule_test_payload import SecurityMonitoringRuleTestPayload
         from datadog_api_client.v2.model.security_monitoring_rule_query_payload import (
             SecurityMonitoringRuleQueryPayload,
         )
 
         return {
-            "rule": (SecurityMonitoringRuleCreatePayload,),
+            "rule": (SecurityMonitoringRuleTestPayload,),
             "rule_query_payloads": ([SecurityMonitoringRuleQueryPayload],),
         }
 
@@ -47,21 +41,15 @@ class SecurityMonitoringRuleTestRequest(ModelNormal):
 
     def __init__(
         self_,
-        rule: Union[
-            SecurityMonitoringRuleCreatePayload,
-            SecurityMonitoringStandardRuleCreatePayload,
-            SecurityMonitoringSignalRuleCreatePayload,
-            CloudConfigurationRuleCreatePayload,
-            UnsetType,
-        ] = unset,
+        rule: Union[SecurityMonitoringRuleTestPayload, SecurityMonitoringStandardRuleTestPayload, UnsetType] = unset,
         rule_query_payloads: Union[List[SecurityMonitoringRuleQueryPayload], UnsetType] = unset,
         **kwargs,
     ):
         """
-        Test the rule queries of a rule.
+        Test the rule queries of a rule (rule property is ignored when applied to an existing rule)
 
-        :param rule: Create a new rule.
-        :type rule: SecurityMonitoringRuleCreatePayload, optional
+        :param rule: Test a rule.
+        :type rule: SecurityMonitoringRuleTestPayload, optional
 
         :param rule_query_payloads: Data payloads used to test rules query with the expected result.
         :type rule_query_payloads: [SecurityMonitoringRuleQueryPayload], optional

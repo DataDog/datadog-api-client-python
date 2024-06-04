@@ -24,7 +24,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.security_monitoring_rule_type_create import SecurityMonitoringRuleTypeCreate
 
 
-class SecurityMonitoringStandardRuleCreatePayload(ModelNormal):
+class SecurityMonitoringStandardRulePayload(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.security_monitoring_rule_case_create import SecurityMonitoringRuleCaseCreate
@@ -82,7 +82,7 @@ class SecurityMonitoringStandardRuleCreatePayload(ModelNormal):
         **kwargs,
     ):
         """
-        Create a new rule.
+        The payload of a rule.
 
         :param cases: Cases for generating signals.
         :type cases: [SecurityMonitoringRuleCaseCreate]

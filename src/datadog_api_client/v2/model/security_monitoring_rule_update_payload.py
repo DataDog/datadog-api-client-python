@@ -134,7 +134,7 @@ class SecurityMonitoringRuleUpdatePayload(ModelNormal):
         :param tags: Tags for generated signals.
         :type tags: [str], optional
 
-        :param third_party_cases: Cases for generating signals from third party rules. Only available for third party rules.
+        :param third_party_cases: Cases for generating signals from third-party rules. Only available for third-party rules.
         :type third_party_cases: [SecurityMonitoringThirdPartyRuleCase], optional
 
         :param version: The version of the rule being updated.
