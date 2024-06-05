@@ -150,15 +150,16 @@ Feature: CSM Threats
     Given there is a valid "agent_rule_rc" in the system
     And new "UpdateCSMThreatsAgentRule" request
     And request contains "agent_rule_id" parameter from "agent_rule.data.id"
-    And body with value {"data": {"attributes": {"description": "Test Agent rule", "enabled": true, "expression": "open.file.path = sh"}, "type": "agent_rule", "id":"abc-123-xyz"}}
+    And body with value {"data": {"attributes": {"description": "Test Agent rule", "enabled": true, "expression": "open.file.path = sh"}, "type": "agent_rule", "id":"{{ agent_rule.data.id }}"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @skip @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
   Scenario: Update a CSM Threats Agent rule returns "Concurrent Modification" response
     Given new "UpdateCSMThreatsAgentRule" request
-    And request contains "agent_rule_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"description": "My Agent rule", "enabled": true, "expression": "exec.file.name == \"sh\""}, "type": "agent_rule"}}
+    And there is a valid "agent_rule" in the system
+    And request contains "agent_rule_id" parameter from "agent_rule.data.id"
+    And body with value {"data": {"attributes": {"description": "My Agent rule", "enabled": true, "expression": "exec.file.name == \"sh\""}, "type": "agent_rule", "id":"{{ agent_rule.data.id }}"}}
     When the request is sent
     Then the response status is 409 Concurrent Modification
 
@@ -186,7 +187,7 @@ Feature: CSM Threats
     Given there is a valid "agent_rule" in the system
     And new "UpdateCloudWorkloadSecurityAgentRule" request
     And request contains "agent_rule_id" parameter from "agent_rule.data.id"
-    And body with value {"data": {"attributes": {"description": "Test Agent rule", "enabled": true, "expression": "open.file.path = sh"}, "type": "agent_rule"}}
+    And body with value {"data": {"attributes": {"description": "Test Agent rule", "enabled": true, "expression": "open.file.path = sh"}, "type": "agent_rule", "id":"{{ agent_rule.data.id }}"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -195,7 +196,7 @@ Feature: CSM Threats
     Given there is a valid "agent_rule" in the system
     And new "UpdateCloudWorkloadSecurityAgentRule" request
     And request contains "agent_rule_id" parameter from "agent_rule.data.id"
-    And body with value {"data": {"attributes": {"description": "Test Agent rule", "enabled": true, "expression": "exec.file.name == \"sh\""}, "type": "agent_rule"}}
+    And body with value {"data": {"attributes": {"description": "Test Agent rule", "enabled": true, "expression": "exec.file.name == \"sh\""}, "type": "agent_rule", "id":"{{ agent_rule.data.id }}"}}
     When the request is sent
     Then the response status is 409 Concurrent Modification
 
@@ -203,7 +204,7 @@ Feature: CSM Threats
   Scenario: Update a Cloud Workload Security Agent rule returns "Not Found" response
     Given new "UpdateCloudWorkloadSecurityAgentRule" request
     And request contains "agent_rule_id" parameter with value "abc-123-xyz"
-    And body with value {"data": {"attributes": {"description": "Test Agent rule", "enabled": true, "expression": "exec.file.name == \"sh\""}, "type": "agent_rule"}}
+    And body with value {"data": {"attributes": {"description": "Test Agent rule", "enabled": true, "expression": "exec.file.name == \"sh\""}, "type": "agent_rule", "id":"abc-123-xyz"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -212,7 +213,7 @@ Feature: CSM Threats
     Given there is a valid "agent_rule" in the system
     And new "UpdateCloudWorkloadSecurityAgentRule" request
     And request contains "agent_rule_id" parameter from "agent_rule.data.id"
-    And body with value {"data": {"attributes": {"description": "Test Agent rule", "enabled": true, "expression": "exec.file.name == \"sh\""}, "type": "agent_rule"}}
+    And body with value {"data": {"attributes": {"description": "Test Agent rule", "enabled": true, "expression": "exec.file.name == \"sh\""}, "type": "agent_rule", "id":"{{ agent_rule.data.id }}"}}
     When the request is sent
     Then the response status is 200 OK
     And the response "data.type" is equal to "agent_rule"
