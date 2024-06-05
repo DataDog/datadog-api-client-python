@@ -27,6 +27,7 @@ body = CloudWorkloadSecurityAgentRuleUpdateRequest(
             expression='exec.file.name == "sh"',
         ),
         type=CloudWorkloadSecurityAgentRuleType.AGENT_RULE,
+        id=AGENT_RULE_DATA_ID,
     ),
 )
 
