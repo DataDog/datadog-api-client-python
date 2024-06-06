@@ -13,10 +13,31 @@ from datadog_api_client.v2.model.api_keys_response_meta import APIKeysResponseMe
 from datadog_api_client.v2.model.api_keys_response_meta_page import APIKeysResponseMetaPage
 from datadog_api_client.v2.model.api_keys_sort import APIKeysSort
 from datadog_api_client.v2.model.api_keys_type import APIKeysType
+from datadog_api_client.v2.model.aws_account import AWSAccount
+from datadog_api_client.v2.model.aws_account_attributes import AWSAccountAttributes
+from datadog_api_client.v2.model.aws_account_create import AWSAccountCreate
+from datadog_api_client.v2.model.aws_account_create_attributes import AWSAccountCreateAttributes
+from datadog_api_client.v2.model.aws_account_create_request import AWSAccountCreateRequest
+from datadog_api_client.v2.model.aws_account_patch import AWSAccountPatch
+from datadog_api_client.v2.model.aws_account_patch_attributes import AWSAccountPatchAttributes
+from datadog_api_client.v2.model.aws_account_patch_request import AWSAccountPatchRequest
+from datadog_api_client.v2.model.aws_account_response import AWSAccountResponse
+from datadog_api_client.v2.model.aws_account_type import AWSAccountType
+from datadog_api_client.v2.model.aws_accounts_response import AWSAccountsResponse
+from datadog_api_client.v2.model.aws_auth_config import AWSAuthConfig
+from datadog_api_client.v2.model.aws_lambda_forwarder import AWSLambdaForwarder
+from datadog_api_client.v2.model.aws_logs import AWSLogs
+from datadog_api_client.v2.model.aws_metrics import AWSMetrics
+from datadog_api_client.v2.model.aws_namespace_tag_filter import AWSNamespaceTagFilter
+from datadog_api_client.v2.model.aws_namespaces_list import AWSNamespacesList
+from datadog_api_client.v2.model.aws_regions_list import AWSRegionsList
 from datadog_api_client.v2.model.aws_related_account import AWSRelatedAccount
 from datadog_api_client.v2.model.aws_related_account_attributes import AWSRelatedAccountAttributes
 from datadog_api_client.v2.model.aws_related_account_type import AWSRelatedAccountType
 from datadog_api_client.v2.model.aws_related_accounts_response import AWSRelatedAccountsResponse
+from datadog_api_client.v2.model.aws_resources import AWSResources
+from datadog_api_client.v2.model.aws_traces import AWSTraces
+from datadog_api_client.v2.model.awsx_ray_services_list import AWSXRayServicesList
 from datadog_api_client.v2.model.active_billing_dimensions_attributes import ActiveBillingDimensionsAttributes
 from datadog_api_client.v2.model.active_billing_dimensions_body import ActiveBillingDimensionsBody
 from datadog_api_client.v2.model.active_billing_dimensions_response import ActiveBillingDimensionsResponse
@@ -1824,10 +1845,31 @@ __all__ = [
     "APIKeysResponseMetaPage",
     "APIKeysSort",
     "APIKeysType",
+    "AWSAccount",
+    "AWSAccountAttributes",
+    "AWSAccountCreate",
+    "AWSAccountCreateAttributes",
+    "AWSAccountCreateRequest",
+    "AWSAccountPatch",
+    "AWSAccountPatchAttributes",
+    "AWSAccountPatchRequest",
+    "AWSAccountResponse",
+    "AWSAccountType",
+    "AWSAccountsResponse",
+    "AWSAuthConfig",
+    "AWSLambdaForwarder",
+    "AWSLogs",
+    "AWSMetrics",
+    "AWSNamespaceTagFilter",
+    "AWSNamespacesList",
+    "AWSRegionsList",
     "AWSRelatedAccount",
     "AWSRelatedAccountAttributes",
     "AWSRelatedAccountType",
     "AWSRelatedAccountsResponse",
+    "AWSResources",
+    "AWSTraces",
+    "AWSXRayServicesList",
     "ActiveBillingDimensionsAttributes",
     "ActiveBillingDimensionsBody",
     "ActiveBillingDimensionsResponse",

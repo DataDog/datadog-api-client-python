@@ -29,6 +29,13 @@ authn\_mappings\_api
    :members:
    :show-inheritance:
 
+aws\_integration\_api
+---------------------
+
+.. automodule:: datadog_api_client.v2.api.aws_integration_api
+   :members:
+   :show-inheritance:
+
 case\_management\_api
 ---------------------
 

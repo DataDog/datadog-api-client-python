@@ -690,6 +690,43 @@
       "type": "idempotent"
     }
   },
+  "ListAWSAccountsv2": {
+    "tag": "AWS Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateAWSAccountv2": {
+    "tag": "AWS Integration",
+    "undo": {
+      "operationId": "DeleteAWSAccountv2",
+      "parameters": [
+        {
+          "name": "aws_account_config_id",
+          "source": "data.attributes.aws_account_id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteAWSAccountv2": {
+    "tag": "AWS Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetAWSAccountv2": {
+    "tag": "AWS Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "PatchAWSAccountv2": {
+    "tag": "AWS Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListGCPSTSAccounts": {
     "tag": "GCP Integration",
     "undo": {
