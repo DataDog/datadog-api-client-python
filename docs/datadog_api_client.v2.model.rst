@@ -470,6 +470,90 @@ authn\_mappings\_type
    :members:
    :show-inheritance:
 
+aws\_account
+------------
+
+.. automodule:: datadog_api_client.v2.model.aws_account
+   :members:
+   :show-inheritance:
+
+aws\_account\_attributes
+------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_account_attributes
+   :members:
+   :show-inheritance:
+
+aws\_account\_create
+--------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_account_create
+   :members:
+   :show-inheritance:
+
+aws\_account\_create\_attributes
+--------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_account_create_attributes
+   :members:
+   :show-inheritance:
+
+aws\_account\_create\_request
+-----------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_account_create_request
+   :members:
+   :show-inheritance:
+
+aws\_account\_patch
+-------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_account_patch
+   :members:
+   :show-inheritance:
+
+aws\_account\_patch\_attributes
+-------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_account_patch_attributes
+   :members:
+   :show-inheritance:
+
+aws\_account\_patch\_request
+----------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_account_patch_request
+   :members:
+   :show-inheritance:
+
+aws\_account\_response
+----------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_account_response
+   :members:
+   :show-inheritance:
+
+aws\_account\_type
+------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_account_type
+   :members:
+   :show-inheritance:
+
+aws\_accounts\_response
+-----------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_accounts_response
+   :members:
+   :show-inheritance:
+
+aws\_auth\_config
+-----------------
+
+.. automodule:: datadog_api_client.v2.model.aws_auth_config
+   :members:
+   :show-inheritance:
+
 aws\_cur\_config
 ----------------
 
@@ -561,6 +645,48 @@ aws\_cur\_configs\_response
    :members:
    :show-inheritance:
 
+aws\_lambda\_forwarder
+----------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_lambda_forwarder
+   :members:
+   :show-inheritance:
+
+aws\_logs
+---------
+
+.. automodule:: datadog_api_client.v2.model.aws_logs
+   :members:
+   :show-inheritance:
+
+aws\_metrics
+------------
+
+.. automodule:: datadog_api_client.v2.model.aws_metrics
+   :members:
+   :show-inheritance:
+
+aws\_namespace\_tag\_filter
+---------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_namespace_tag_filter
+   :members:
+   :show-inheritance:
+
+aws\_namespaces\_list
+---------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_namespaces_list
+   :members:
+   :show-inheritance:
+
+aws\_regions\_list
+------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_regions_list
+   :members:
+   :show-inheritance:
+
 aws\_related\_account
 ---------------------
 
@@ -586,6 +712,27 @@ aws\_related\_accounts\_response
 --------------------------------
 
 .. automodule:: datadog_api_client.v2.model.aws_related_accounts_response
+   :members:
+   :show-inheritance:
+
+aws\_resources
+--------------
+
+.. automodule:: datadog_api_client.v2.model.aws_resources
+   :members:
+   :show-inheritance:
+
+aws\_traces
+-----------
+
+.. automodule:: datadog_api_client.v2.model.aws_traces
+   :members:
+   :show-inheritance:
+
+awsx\_ray\_services\_list
+-------------------------
+
+.. automodule:: datadog_api_client.v2.model.awsx_ray_services_list
    :members:
    :show-inheritance:
 
