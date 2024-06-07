@@ -23896,7 +23896,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ApplicationKeyResponse'
+                $ref: '#/components/schemas/PartialApplicationKeyResponse'
           description: OK
         '400':
           content:

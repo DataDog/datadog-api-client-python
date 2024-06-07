@@ -275,6 +275,17 @@ Feature: Key Management
     And the response "data.type" is equal to "application_keys"
     And the response "data.id" has the same value as "application_key.data.id"
 
+  @integration-only @team:DataDog/credentials-management
+  Scenario: Get an application key returns "OK" response and response does not contain field "key"
+    Given there is a valid "application_key" in the system
+    And new "GetApplicationKey" request
+    And request contains "app_key_id" parameter from "application_key.data.id"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "application_keys"
+    And the response "data.id" has the same value as "application_key.data.id"
+    And the response "data.attributes" does not have field "key"
+
   @generated @skip @team:DataDog/credentials-management
   Scenario: Get one application key owned by current user returns "Not Found" response
     Given new "GetCurrentUserApplicationKey" request

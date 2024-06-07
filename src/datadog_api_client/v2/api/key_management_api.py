@@ -18,6 +18,7 @@ from datadog_api_client.v2.model.api_key_create_request import APIKeyCreateReque
 from datadog_api_client.v2.model.api_key_update_request import APIKeyUpdateRequest
 from datadog_api_client.v2.model.list_application_keys_response import ListApplicationKeysResponse
 from datadog_api_client.v2.model.application_keys_sort import ApplicationKeysSort
+from datadog_api_client.v2.model.partial_application_key_response import PartialApplicationKeyResponse
 from datadog_api_client.v2.model.application_key_response import ApplicationKeyResponse
 from datadog_api_client.v2.model.application_key_update_request import ApplicationKeyUpdateRequest
 from datadog_api_client.v2.model.application_key_create_request import ApplicationKeyCreateRequest
@@ -175,7 +176,7 @@ class KeyManagementApi:
 
         self._get_application_key_endpoint = _Endpoint(
             settings={
-                "response_type": (ApplicationKeyResponse,),
+                "response_type": (PartialApplicationKeyResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/application_keys/{app_key_id}",
                 "operation_id": "get_application_key",
@@ -590,7 +591,7 @@ class KeyManagementApi:
         app_key_id: str,
         *,
         include: Union[str, UnsetType] = unset,
-    ) -> ApplicationKeyResponse:
+    ) -> PartialApplicationKeyResponse:
         """Get an application key.
 
         Get an application key for your org.
@@ -599,7 +600,7 @@ class KeyManagementApi:
         :type app_key_id: str
         :param include: Resource path for related resources to include in the response. Only ``owned_by`` is supported.
         :type include: str, optional
-        :rtype: ApplicationKeyResponse
+        :rtype: PartialApplicationKeyResponse
         """
         kwargs: Dict[str, Any] = {}
         kwargs["app_key_id"] = app_key_id
