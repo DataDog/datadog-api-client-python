@@ -43,6 +43,7 @@ class SyntheticsAssertion(ModelComposed):
         # classes don't exist yet because their module has not finished
         # loading
         from datadog_api_client.v1.model.synthetics_assertion_target import SyntheticsAssertionTarget
+        from datadog_api_client.v1.model.synthetics_assertion_body_hash_target import SyntheticsAssertionBodyHashTarget
         from datadog_api_client.v1.model.synthetics_assertion_json_path_target import SyntheticsAssertionJSONPathTarget
         from datadog_api_client.v1.model.synthetics_assertion_json_schema_target import (
             SyntheticsAssertionJSONSchemaTarget,
@@ -52,6 +53,7 @@ class SyntheticsAssertion(ModelComposed):
         return {
             "oneOf": [
                 SyntheticsAssertionTarget,
+                SyntheticsAssertionBodyHashTarget,
                 SyntheticsAssertionJSONPathTarget,
                 SyntheticsAssertionJSONSchemaTarget,
                 SyntheticsAssertionXPathTarget,
