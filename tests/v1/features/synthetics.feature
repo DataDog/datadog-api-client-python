@@ -133,6 +133,16 @@ Feature: Synthetics
     And the response "name" is equal to "{{ unique }}"
 
   @team:DataDog/synthetics-app
+  Scenario: Create an API HTTP test has bodyHash filled out
+    Given new "CreateSyntheticsAPITest" request
+    And body from file "synthetics_api_http_test_payload.json"
+    When the request is sent
+    Then the response status is 200 OK - Returns the created test details.
+    And the response "config.assertions[5].operator" is equal to "md5"
+    And the response "config.assertions[5].target" is equal to "a"
+    And the response "config.assertions[5].type" is equal to "bodyHash"
+
+  @team:DataDog/synthetics-app
   Scenario: Create an API HTTP test returns "OK - Returns the created test details." response
     Given new "CreateSyntheticsAPITest" request
     And body from file "synthetics_api_http_test_payload.json"

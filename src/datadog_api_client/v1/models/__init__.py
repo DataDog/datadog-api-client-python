@@ -621,6 +621,9 @@ from datadog_api_client.v1.model.synthetics_api_test_type import SyntheticsAPITe
 from datadog_api_client.v1.model.synthetics_api_test_failure_code import SyntheticsApiTestFailureCode
 from datadog_api_client.v1.model.synthetics_api_test_result_failure import SyntheticsApiTestResultFailure
 from datadog_api_client.v1.model.synthetics_assertion import SyntheticsAssertion
+from datadog_api_client.v1.model.synthetics_assertion_body_hash_operator import SyntheticsAssertionBodyHashOperator
+from datadog_api_client.v1.model.synthetics_assertion_body_hash_target import SyntheticsAssertionBodyHashTarget
+from datadog_api_client.v1.model.synthetics_assertion_body_hash_type import SyntheticsAssertionBodyHashType
 from datadog_api_client.v1.model.synthetics_assertion_json_path_operator import SyntheticsAssertionJSONPathOperator
 from datadog_api_client.v1.model.synthetics_assertion_json_path_target import SyntheticsAssertionJSONPathTarget
 from datadog_api_client.v1.model.synthetics_assertion_json_path_target_target import (
@@ -1526,6 +1529,9 @@ __all__ = [
     "SyntheticsApiTestFailureCode",
     "SyntheticsApiTestResultFailure",
     "SyntheticsAssertion",
+    "SyntheticsAssertionBodyHashOperator",
+    "SyntheticsAssertionBodyHashTarget",
+    "SyntheticsAssertionBodyHashType",
     "SyntheticsAssertionJSONPathOperator",
     "SyntheticsAssertionJSONPathTarget",
     "SyntheticsAssertionJSONPathTargetTarget",

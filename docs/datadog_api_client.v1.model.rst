@@ -3858,6 +3858,27 @@ synthetics\_assertion
    :members:
    :show-inheritance:
 
+synthetics\_assertion\_body\_hash\_operator
+-------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_assertion_body_hash_operator
+   :members:
+   :show-inheritance:
+
+synthetics\_assertion\_body\_hash\_target
+-----------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_assertion_body_hash_target
+   :members:
+   :show-inheritance:
+
+synthetics\_assertion\_body\_hash\_type
+---------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_assertion_body_hash_type
+   :members:
+   :show-inheritance:
+
 synthetics\_assertion\_json\_path\_operator
 -------------------------------------------
 
