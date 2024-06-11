@@ -74,6 +74,20 @@ Feature: API Management
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/api-management
+  Scenario: List APIs returns "Bad request" response
+    Given operation "ListAPIs" enabled
+    And new "ListAPIs" request
+    When the request is sent
+    Then the response status is 400 Bad request
+
+  @generated @skip @team:DataDog/api-management
+  Scenario: List APIs returns "OK" response
+    Given operation "ListAPIs" enabled
+    And new "ListAPIs" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/api-management
   Scenario: Update an API returns "API not found error" response
     Given operation "UpdateOpenAPI" enabled
     And new "UpdateOpenAPI" request

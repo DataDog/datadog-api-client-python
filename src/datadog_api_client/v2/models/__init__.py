@@ -786,6 +786,10 @@ from datadog_api_client.v2.model.jira_integration_metadata import JiraIntegratio
 from datadog_api_client.v2.model.jira_integration_metadata_issues_item import JiraIntegrationMetadataIssuesItem
 from datadog_api_client.v2.model.jira_issue import JiraIssue
 from datadog_api_client.v2.model.jira_issue_result import JiraIssueResult
+from datadog_api_client.v2.model.list_ap_is_response import ListAPIsResponse
+from datadog_api_client.v2.model.list_ap_is_response_data import ListAPIsResponseData
+from datadog_api_client.v2.model.list_ap_is_response_meta import ListAPIsResponseMeta
+from datadog_api_client.v2.model.list_ap_is_response_meta_pagination import ListAPIsResponseMetaPagination
 from datadog_api_client.v2.model.list_application_keys_response import ListApplicationKeysResponse
 from datadog_api_client.v2.model.list_downtimes_response import ListDowntimesResponse
 from datadog_api_client.v2.model.list_findings_meta import ListFindingsMeta
@@ -2449,6 +2453,10 @@ __all__ = [
     "JiraIntegrationMetadataIssuesItem",
     "JiraIssue",
     "JiraIssueResult",
+    "ListAPIsResponse",
+    "ListAPIsResponseData",
+    "ListAPIsResponseMeta",
+    "ListAPIsResponseMetaPagination",
     "ListApplicationKeysResponse",
     "ListDowntimesResponse",
     "ListFindingsMeta",

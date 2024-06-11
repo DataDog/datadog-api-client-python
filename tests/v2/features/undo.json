@@ -36,6 +36,12 @@
       "type": "idempotent"
     }
   },
+  "ListAPIs": {
+    "tag": "API Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "DeleteOpenAPI": {
     "tag": "API Management",
     "undo": {

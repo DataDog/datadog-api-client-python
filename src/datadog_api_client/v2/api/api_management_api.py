@@ -13,6 +13,7 @@ from datadog_api_client.model_utils import (
     unset,
     UUID,
 )
+from datadog_api_client.v2.model.list_ap_is_response import ListAPIsResponse
 from datadog_api_client.v2.model.update_open_api_response import UpdateOpenAPIResponse
 from datadog_api_client.v2.model.create_open_api_response import CreateOpenAPIResponse
 
@@ -89,6 +90,44 @@ class APIManagementApi:
             },
             headers_map={
                 "accept": ["multipart/form-data", "application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_ap_is_endpoint = _Endpoint(
+            settings={
+                "response_type": (ListAPIsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/apicatalog/api",
+                "operation_id": "list_ap_is",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "query": {
+                    "openapi_types": (str,),
+                    "attribute": "query",
+                    "location": "query",
+                },
+                "page_limit": {
+                    "validation": {
+                        "inclusive_minimum": 1,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "page[limit]",
+                    "location": "query",
+                },
+                "page_offset": {
+                    "validation": {
+                        "inclusive_minimum": 0,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "page[offset]",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
             },
             api_client=api_client,
         )
@@ -174,6 +213,37 @@ class APIManagementApi:
         kwargs["id"] = id
 
         return self._get_open_api_endpoint.call_with_http_info(**kwargs)
+
+    def list_ap_is(
+        self,
+        *,
+        query: Union[str, UnsetType] = unset,
+        page_limit: Union[int, UnsetType] = unset,
+        page_offset: Union[int, UnsetType] = unset,
+    ) -> ListAPIsResponse:
+        """List APIs.
+
+        List APIs and their IDs.
+
+        :param query: Filter APIs by name
+        :type query: str, optional
+        :param page_limit: Number of items per page.
+        :type page_limit: int, optional
+        :param page_offset: Offset for pagination.
+        :type page_offset: int, optional
+        :rtype: ListAPIsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if query is not unset:
+            kwargs["query"] = query
+
+        if page_limit is not unset:
+            kwargs["page_limit"] = page_limit
+
+        if page_offset is not unset:
+            kwargs["page_offset"] = page_offset
+
+        return self._list_ap_is_endpoint.call_with_http_info(**kwargs)
 
     def update_open_api(
         self,
