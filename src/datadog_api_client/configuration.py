@@ -239,6 +239,7 @@ class Configuration:
                 "v2.create_open_api": False,
                 "v2.delete_open_api": False,
                 "v2.get_open_api": False,
+                "v2.list_ap_is": False,
                 "v2.update_open_api": False,
                 "v2.get_active_billing_dimensions": False,
                 "v2.get_monthly_cost_attribution": False,
