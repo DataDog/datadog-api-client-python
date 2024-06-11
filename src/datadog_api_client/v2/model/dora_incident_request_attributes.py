@@ -68,7 +68,7 @@ class DORAIncidentRequestAttributes(ModelNormal):
         :param env: Environment name that was impacted by the incident.
         :type env: str, optional
 
-        :param finished_at: Unix timestamp in nanoseconds when the incident finished. It should not be older than 3 hours.
+        :param finished_at: Unix timestamp in nanoseconds when the incident finished. It should not be older than 1 hour.
         :type finished_at: int, optional
 
         :param git: Git info for DORA Metrics events.
