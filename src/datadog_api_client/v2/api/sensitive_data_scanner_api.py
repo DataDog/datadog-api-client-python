@@ -60,7 +60,7 @@ class SensitiveDataScannerApi:
         self._create_scanning_group_endpoint = _Endpoint(
             settings={
                 "response_type": (SensitiveDataScannerCreateGroupResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/sensitive-data-scanner/config/groups",
                 "operation_id": "create_scanning_group",
                 "http_method": "POST",
@@ -80,7 +80,7 @@ class SensitiveDataScannerApi:
         self._create_scanning_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (SensitiveDataScannerCreateRuleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/sensitive-data-scanner/config/rules",
                 "operation_id": "create_scanning_rule",
                 "http_method": "POST",
@@ -100,7 +100,7 @@ class SensitiveDataScannerApi:
         self._delete_scanning_group_endpoint = _Endpoint(
             settings={
                 "response_type": (SensitiveDataScannerGroupDeleteResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/sensitive-data-scanner/config/groups/{group_id}",
                 "operation_id": "delete_scanning_group",
                 "http_method": "DELETE",
@@ -126,7 +126,7 @@ class SensitiveDataScannerApi:
         self._delete_scanning_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (SensitiveDataScannerRuleDeleteResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/sensitive-data-scanner/config/rules/{rule_id}",
                 "operation_id": "delete_scanning_rule",
                 "http_method": "DELETE",
@@ -152,7 +152,7 @@ class SensitiveDataScannerApi:
         self._list_scanning_groups_endpoint = _Endpoint(
             settings={
                 "response_type": (SensitiveDataScannerGetConfigResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/sensitive-data-scanner/config",
                 "operation_id": "list_scanning_groups",
                 "http_method": "GET",
@@ -168,7 +168,7 @@ class SensitiveDataScannerApi:
         self._list_standard_patterns_endpoint = _Endpoint(
             settings={
                 "response_type": (SensitiveDataScannerStandardPatternsResponseData,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/sensitive-data-scanner/config/standard-patterns",
                 "operation_id": "list_standard_patterns",
                 "http_method": "GET",
@@ -184,7 +184,7 @@ class SensitiveDataScannerApi:
         self._reorder_scanning_groups_endpoint = _Endpoint(
             settings={
                 "response_type": (SensitiveDataScannerReorderGroupsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/sensitive-data-scanner/config",
                 "operation_id": "reorder_scanning_groups",
                 "http_method": "PATCH",
@@ -204,7 +204,7 @@ class SensitiveDataScannerApi:
         self._update_scanning_group_endpoint = _Endpoint(
             settings={
                 "response_type": (SensitiveDataScannerGroupUpdateResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/sensitive-data-scanner/config/groups/{group_id}",
                 "operation_id": "update_scanning_group",
                 "http_method": "PATCH",
@@ -230,7 +230,7 @@ class SensitiveDataScannerApi:
         self._update_scanning_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (SensitiveDataScannerRuleUpdateResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/sensitive-data-scanner/config/rules/{rule_id}",
                 "operation_id": "update_scanning_rule",
                 "http_method": "PATCH",

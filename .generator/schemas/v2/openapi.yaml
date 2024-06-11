@@ -33494,6 +33494,11 @@ paths:
           description: Authentication Error
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ:
+        - data_scanner_read
       summary: List Scanning Groups
       tags:
       - Sensitive Data Scanner
@@ -33527,6 +33532,11 @@ paths:
           description: Authentication Error
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ:
+        - data_scanner_write
       summary: Reorder Groups
       tags:
       - Sensitive Data Scanner
@@ -33571,6 +33581,11 @@ paths:
           description: Authentication Error
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ:
+        - data_scanner_write
       summary: Create Scanning Group
       tags:
       - Sensitive Data Scanner
@@ -33610,6 +33625,11 @@ paths:
           $ref: '#/components/responses/NotFoundResponse'
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ:
+        - data_scanner_write
       summary: Delete Scanning Group
       tags:
       - Sensitive Data Scanner
@@ -33656,6 +33676,11 @@ paths:
           $ref: '#/components/responses/NotFoundResponse'
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ:
+        - data_scanner_write
       summary: Update Scanning Group
       tags:
       - Sensitive Data Scanner
@@ -33701,6 +33726,11 @@ paths:
           description: Authentication Error
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ:
+        - data_scanner_write
       summary: Create Scanning Rule
       tags:
       - Sensitive Data Scanner
@@ -33740,6 +33770,11 @@ paths:
           $ref: '#/components/responses/NotFoundResponse'
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ:
+        - data_scanner_write
       summary: Delete Scanning Rule
       tags:
       - Sensitive Data Scanner
@@ -33785,6 +33820,11 @@ paths:
           $ref: '#/components/responses/NotFoundResponse'
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ:
+        - data_scanner_write
       summary: Update Scanning Rule
       tags:
       - Sensitive Data Scanner
@@ -33814,6 +33854,11 @@ paths:
           description: Authentication Error
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ:
+        - data_scanner_read
       summary: List standard patterns
       tags:
       - Sensitive Data Scanner
