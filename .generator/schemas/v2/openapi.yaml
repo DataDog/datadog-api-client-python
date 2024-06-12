@@ -1576,6 +1576,7 @@ components:
         error_messages:
           description: The error messages for the AWS CUR config.
           items:
+            description: List of error_messages.
             type: string
           type: array
         months:
@@ -1761,6 +1762,7 @@ components:
         error_messages:
           description: The error messages for the Azure config.
           items:
+            description: List of error_messages.
             type: string
           type: array
         export_name:
@@ -2465,6 +2467,7 @@ components:
           - ubuntu-18.04
           - n2.large
           items:
+            description: List of labels.
             type: string
           type: array
         name:
@@ -3846,6 +3849,7 @@ components:
           - gcp_iam_service_account
           - gcp_iam_policy
           items:
+            description: List of resourceTypes.
             type: string
           type: array
       required:
@@ -3877,6 +3881,7 @@ components:
         defaultGroupByFields:
           description: The default group by fields.
           items:
+            description: List of defaultGroupByFields.
             type: string
           nullable: true
           type: array
@@ -3887,6 +3892,7 @@ components:
         userGroupByFields:
           description: Fields to use to group findings by when sending signals.
           items:
+            description: List of userGroupByFields.
             type: string
           nullable: true
           type: array
@@ -4124,6 +4130,7 @@ components:
         filters:
           description: The platforms the Agent rule is supported on.
           items:
+            description: List of filters.
             type: string
           type: array
         name:
@@ -4170,6 +4177,7 @@ components:
         filters:
           description: The platforms the Agent rule is supported on.
           items:
+            description: List of filters.
             type: string
           type: array
         name:
@@ -4340,6 +4348,7 @@ components:
           - web
           - dns
           items:
+            description: List of resources.
             type: string
           type: array
         zones:
@@ -4348,6 +4357,7 @@ components:
           - zone_id_1
           - zone_id_2
           items:
+            description: List of zones.
             type: string
           type: array
       required:
@@ -4388,6 +4398,7 @@ components:
           - web
           - dns
           items:
+            description: List of resources.
             type: string
           type: array
         zones:
@@ -4396,6 +4407,7 @@ components:
           - zone_id_1
           - zone_id_2
           items:
+            description: List of zones.
             type: string
           type: array
       required:
@@ -4452,6 +4464,7 @@ components:
           - web
           - dns
           items:
+            description: List of resources.
             type: string
           type: array
         zones:
@@ -4460,6 +4473,7 @@ components:
           - zone_id_1
           - zone_id_2
           items:
+            description: List of zones.
             type: string
           type: array
       required:
@@ -4514,6 +4528,7 @@ components:
           - myTag
           - myTag2:myValue
           items:
+            description: List of tags.
             type: string
           type: array
       required:
@@ -4556,6 +4571,7 @@ components:
           - myTag
           - myTag2:myValue
           items:
+            description: List of tags.
             type: string
           type: array
       required:
@@ -4587,6 +4603,7 @@ components:
           - myTag
           - myTag2:myValue
           items:
+            description: List of tags.
             type: string
           type: array
       required:
@@ -4643,6 +4660,7 @@ components:
           - myTag
           - myTag2:myValue
           items:
+            description: List of tags.
             type: string
           type: array
       required:
@@ -4698,6 +4716,7 @@ components:
           - myTag
           - myTag2:myValue
           items:
+            description: List of tags.
             type: string
           type: array
       required:
@@ -4750,6 +4769,7 @@ components:
           - myTag
           - myTag2:myValue
           items:
+            description: List of tags.
             type: string
           type: array
       required:
@@ -4822,6 +4842,7 @@ components:
         image_tags:
           description: List of image tags associated with the container image.
           items:
+            description: List of image_tags.
             type: string
           nullable: true
           type: array
@@ -4837,6 +4858,7 @@ components:
         tags:
           description: List of tags associated with the container.
           items:
+            description: List of tags.
             type: string
           type: array
       type: object
@@ -6237,6 +6259,7 @@ components:
           example:
           - shopist
           items:
+            description: List of services.
             type: string
           type: array
         severity:
@@ -7783,6 +7806,7 @@ components:
           - myTag
           - myTag2:myValue
           items:
+            description: List of tags.
             type: string
           type: array
       required:
@@ -7797,6 +7821,7 @@ components:
           - myTag
           - myTag2:myValue
           items:
+            description: List of tags.
             type: string
           type: array
       type: object
@@ -13199,6 +13224,7 @@ components:
           - prod
           - staging
           items:
+            description: List of valid_tag_values.
             maxLength: 255
             type: string
           type: array
@@ -13221,6 +13247,7 @@ components:
           - prod
           - staging
           items:
+            description: List of valid_tag_values.
             maxLength: 255
             type: string
           type: array
@@ -14240,6 +14267,7 @@ components:
           example:
           - tag:foo1
           items:
+            description: List of tags.
             maxLength: 80
             type: string
           maxItems: 8
@@ -17604,6 +17632,7 @@ components:
 
             False otherwise.'
           items:
+            description: List of results.
             type: boolean
           type: array
       type: object
@@ -19317,6 +19346,7 @@ components:
           - credit card
           - cc
           items:
+            description: List of keywords.
             type: string
           type: array
       required:
@@ -19414,6 +19444,7 @@ components:
           example:
           - admin.name
           items:
+            description: List of excluded_namespaces.
             type: string
           type: array
         included_keyword_configuration:
@@ -19432,6 +19463,7 @@ components:
           example:
           - admin
           items:
+            description: List of namespaces.
             type: string
           type: array
         pattern:
@@ -19446,6 +19478,7 @@ components:
         tags:
           description: List of tags.
           items:
+            description: List of tags.
             type: string
           type: array
         text_replacement:
@@ -19590,6 +19623,7 @@ components:
         included_keywords:
           description: List of included keywords.
           items:
+            description: List of included_keywords.
             type: string
           type: array
         name:
@@ -19611,6 +19645,7 @@ components:
         tags:
           description: List of tags.
           items:
+            description: List of tags.
             type: string
           type: array
       type: object
@@ -19873,6 +19908,7 @@ components:
           - my:tag
           - service:tag
           items:
+            description: List of tags.
             type: string
           type: array
       required:
@@ -20037,6 +20073,7 @@ components:
           - my:tag
           - service:tag
           items:
+            description: List of tags.
             type: string
           type: array
         team:
@@ -20119,6 +20156,7 @@ components:
           - my:tag
           - service:tag
           items:
+            description: List of tags.
             type: string
           type: array
         team:
@@ -20315,6 +20353,7 @@ components:
           - j88xdEy0J5lc
           - eZ7LMljCk8vo
           items:
+            description: List of ci-pipeline-fingerprints.
             type: string
           type: array
         contacts:
@@ -20353,6 +20392,7 @@ components:
           - ruby
           - c++
           items:
+            description: List of languages.
             type: string
           type: array
         lifecycle:
@@ -20372,6 +20412,7 @@ components:
           - my:tag
           - service:tag
           items:
+            description: List of tags.
             type: string
           type: array
         team:
