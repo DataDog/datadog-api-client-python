@@ -59,7 +59,7 @@ class LogsQueryFilter(ModelNormal):
         :param query: The search query - following the log search syntax.
         :type query: str, optional
 
-        :param storage_tier: Specifies storage type as indexes or online-archives
+        :param storage_tier: Specifies storage type as indexes, online-archives or flex
         :type storage_tier: LogsStorageTier, optional
 
         :param to: The maximum time for the requested logs, supports date math and regular timestamps (milliseconds).

@@ -1,7 +1,7 @@
 interactions:
 - request:
     body: '{"data":{"attributes":{"exclusion_filters":[{"name":"Exclude logs from
-      staging","query":"source:staging"}],"filtered_data_type":"logs","is_enabled":true,"name":"Test-Update_a_security_filter_returns_OK_response-1666186606","query":"service:TestUpdateasecurityfilterreturnsOKresponse1666186606"},"type":"security_filters"}}'
+      staging","query":"source:staging"}],"filtered_data_type":"logs","is_enabled":true,"name":"Test-Update_a_security_filter_returns_OK_response-1715358890","query":"service:TestUpdateasecurityfilterreturnsOKresponse1715358890"},"type":"security_filters"}}'
     headers:
       accept:
       - application/json
@@ -11,8 +11,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/security_filters
   response:
     body:
-      string: '{"data":{"attributes":{"is_enabled":true,"name":"Test-Update_a_security_filter_returns_OK_response-1666186606","filtered_data_type":"logs","exclusion_filters":[{"query":"source:staging","name":"Exclude
-        logs from staging"}],"version":1,"query":"service:TestUpdateasecurityfilterreturnsOKresponse1666186606","is_builtin":false},"type":"security_filters","id":"dtb-n4z-x9c"}}
+      string: '{"data":{"id":"kk9-x1s-rgi","attributes":{"version":1,"name":"Test-Update_a_security_filter_returns_OK_response-1715358890","query":"service:TestUpdateasecurityfilterreturnsOKresponse1715358890","is_enabled":true,"exclusion_filters":[{"name":"Exclude
+        logs from staging","query":"source:staging"}],"filtered_data_type":"logs","is_builtin":false},"type":"security_filters"}}
 
         '
     headers:
@@ -22,17 +22,17 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"data":{"attributes":{"exclusion_filters":[],"filtered_data_type":"logs","is_enabled":true,"name":"Test-Update_a_security_filter_returns_OK_response-1666186606","query":"service:TestUpdateasecurityfilterreturnsOKresponse1666186606","version":1},"type":"security_filters"}}'
+    body: '{"data":{"attributes":{"exclusion_filters":[],"filtered_data_type":"logs","is_enabled":true,"name":"Test-Update_a_security_filter_returns_OK_response-1715358890","query":"service:TestUpdateasecurityfilterreturnsOKresponse1715358890","version":1},"type":"security_filters"}}'
     headers:
       accept:
       - application/json
       content-type:
       - application/json
     method: PATCH
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/security_filters/dtb-n4z-x9c
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/security_filters/kk9-x1s-rgi
   response:
     body:
-      string: '{"data":{"attributes":{"is_enabled":true,"name":"Test-Update_a_security_filter_returns_OK_response-1666186606","filtered_data_type":"logs","exclusion_filters":[],"version":2,"query":"service:TestUpdateasecurityfilterreturnsOKresponse1666186606","is_builtin":false},"type":"security_filters","id":"dtb-n4z-x9c"}}
+      string: '{"data":{"id":"kk9-x1s-rgi","attributes":{"version":2,"name":"Test-Update_a_security_filter_returns_OK_response-1715358890","query":"service:TestUpdateasecurityfilterreturnsOKresponse1715358890","is_enabled":true,"exclusion_filters":[],"filtered_data_type":"logs","is_builtin":false},"type":"security_filters"}}
 
         '
     headers:
@@ -47,7 +47,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/security_filters/dtb-n4z-x9c
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/security_filters/kk9-x1s-rgi
   response:
     body:
       string: ''

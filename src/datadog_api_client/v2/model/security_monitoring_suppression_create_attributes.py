@@ -17,6 +17,7 @@ class SecurityMonitoringSuppressionCreateAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
+            "data_exclusion_query": (str,),
             "description": (str,),
             "enabled": (bool,),
             "expiration_date": (int,),
@@ -26,6 +27,7 @@ class SecurityMonitoringSuppressionCreateAttributes(ModelNormal):
         }
 
     attribute_map = {
+        "data_exclusion_query": "data_exclusion_query",
         "description": "description",
         "enabled": "enabled",
         "expiration_date": "expiration_date",
@@ -39,13 +41,17 @@ class SecurityMonitoringSuppressionCreateAttributes(ModelNormal):
         enabled: bool,
         name: str,
         rule_query: str,
-        suppression_query: str,
+        data_exclusion_query: Union[str, UnsetType] = unset,
         description: Union[str, UnsetType] = unset,
         expiration_date: Union[int, UnsetType] = unset,
+        suppression_query: Union[str, UnsetType] = unset,
         **kwargs,
     ):
         """
         Object containing the attributes of the suppression rule to be created.
+
+        :param data_exclusion_query: An exclusion query on the input data of the security rules, which could be logs, Agent events, or other types of data based on the security rule. Events matching this query are ignored by any detection rules referenced in the suppression rule.
+        :type data_exclusion_query: str, optional
 
         :param description: A description for the suppression rule.
         :type description: str, optional
@@ -62,16 +68,19 @@ class SecurityMonitoringSuppressionCreateAttributes(ModelNormal):
         :param rule_query: The rule query of the suppression rule, with the same syntax as the search bar for detection rules.
         :type rule_query: str
 
-        :param suppression_query: The suppression query of the suppression rule. If a signal matches this query, it is suppressed and is not triggered . Same syntax as the queries to search signals in the signal explorer.
-        :type suppression_query: str
+        :param suppression_query: The suppression query of the suppression rule. If a signal matches this query, it is suppressed and is not triggered. It uses the same syntax as the queries to search signals in the Signals Explorer.
+        :type suppression_query: str, optional
         """
+        if data_exclusion_query is not unset:
+            kwargs["data_exclusion_query"] = data_exclusion_query
         if description is not unset:
             kwargs["description"] = description
         if expiration_date is not unset:
             kwargs["expiration_date"] = expiration_date
+        if suppression_query is not unset:
+            kwargs["suppression_query"] = suppression_query
         super().__init__(kwargs)
 
         self_.enabled = enabled
         self_.name = name
         self_.rule_query = rule_query
-        self_.suppression_query = suppression_query

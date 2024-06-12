@@ -4,9 +4,9 @@ from datadog_api_client.v2.api.audit_api import AuditApi
 from datadog_api_client.v2.api.authn_mappings_api import AuthNMappingsApi
 from datadog_api_client.v2.api.ci_visibility_pipelines_api import CIVisibilityPipelinesApi
 from datadog_api_client.v2.api.ci_visibility_tests_api import CIVisibilityTestsApi
+from datadog_api_client.v2.api.csm_threats_api import CSMThreatsApi
 from datadog_api_client.v2.api.case_management_api import CaseManagementApi
 from datadog_api_client.v2.api.cloud_cost_management_api import CloudCostManagementApi
-from datadog_api_client.v2.api.cloud_workload_security_api import CloudWorkloadSecurityApi
 from datadog_api_client.v2.api.cloudflare_integration_api import CloudflareIntegrationApi
 from datadog_api_client.v2.api.confluent_cloud_api import ConfluentCloudApi
 from datadog_api_client.v2.api.container_images_api import ContainerImagesApi
@@ -40,6 +40,7 @@ from datadog_api_client.v2.api.security_monitoring_api import SecurityMonitoring
 from datadog_api_client.v2.api.sensitive_data_scanner_api import SensitiveDataScannerApi
 from datadog_api_client.v2.api.service_accounts_api import ServiceAccountsApi
 from datadog_api_client.v2.api.service_definition_api import ServiceDefinitionApi
+from datadog_api_client.v2.api.service_level_objectives_api import ServiceLevelObjectivesApi
 from datadog_api_client.v2.api.service_scorecards_api import ServiceScorecardsApi
 from datadog_api_client.v2.api.spans_api import SpansApi
 from datadog_api_client.v2.api.spans_metrics_api import SpansMetricsApi
@@ -56,9 +57,9 @@ __all__ = [
     "AuthNMappingsApi",
     "CIVisibilityPipelinesApi",
     "CIVisibilityTestsApi",
+    "CSMThreatsApi",
     "CaseManagementApi",
     "CloudCostManagementApi",
-    "CloudWorkloadSecurityApi",
     "CloudflareIntegrationApi",
     "ConfluentCloudApi",
     "ContainerImagesApi",
@@ -92,6 +93,7 @@ __all__ = [
     "SensitiveDataScannerApi",
     "ServiceAccountsApi",
     "ServiceDefinitionApi",
+    "ServiceLevelObjectivesApi",
     "ServiceScorecardsApi",
     "SpansApi",
     "SpansMetricsApi",

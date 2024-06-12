@@ -31,7 +31,6 @@ class UsageMeteringApi:
     The usage metering API allows you to get hourly, daily, and
     monthly usage across multiple facets of Datadog.
     This API is available to all Pro and Enterprise customers.
-    Usage is only accessible for `parent-level organizations <https://docs.datadoghq.com/account_management/multi_organization/>`_.
 
     **Note** : Usage data is delayed by up to 72 hours from when it was incurred.
     It is retained for 15 months.
@@ -420,6 +419,8 @@ class UsageMeteringApi:
         ` ``/historical_cost`` <https://docs.datadoghq.com/api/latest/usage-metering/#get-historical-cost-across-your-account>`_
         instead.
 
+        This endpoint is only accessible for `parent-level organizations <https://docs.datadoghq.com/account_management/multi_organization/>`_.
+
         :param start_month: Datetime in ISO-8601 format, UTC, precise to month: ``[YYYY-MM]`` for cost beginning this month.
         :type start_month: datetime
         :param end_month: Datetime in ISO-8601 format, UTC, precise to month: ``[YYYY-MM]`` for cost ending this month.
@@ -450,6 +451,8 @@ class UsageMeteringApi:
         Estimated cost data is only available for the current month and previous month
         and is delayed by up to 72 hours from when it was incurred.
         To access historical costs prior to this, use the ``/historical_cost`` endpoint.
+
+        This endpoint is only accessible for `parent-level organizations <https://docs.datadoghq.com/account_management/multi_organization/>`_.
 
         :param view: String to specify whether cost is broken down at a parent-org level or at the sub-org level. Available views are ``summary`` and ``sub-org``. Defaults to ``summary``.
         :type view: str, optional
@@ -492,6 +495,8 @@ class UsageMeteringApi:
 
         Get historical cost across multi-org and single root-org accounts.
         Cost data for a given month becomes available no later than the 16th of the following month.
+
+        This endpoint is only accessible for `parent-level organizations <https://docs.datadoghq.com/account_management/multi_organization/>`_.
 
         :param start_month: Datetime in ISO-8601 format, UTC, precise to month: ``[YYYY-MM]`` for cost beginning this month.
         :type start_month: datetime
@@ -610,6 +615,8 @@ class UsageMeteringApi:
              cursor := response.metadata.pagination.next_record_id
            END
 
+        This endpoint is only accessible for `parent-level organizations <https://docs.datadoghq.com/account_management/multi_organization/>`_.
+
         :param start_month: Datetime in ISO-8601 format, UTC, precise to month: ``[YYYY-MM]`` for cost beginning in this month.
         :type start_month: datetime
         :param end_month: Datetime in ISO-8601 format, UTC, precise to month: ``[YYYY-MM]`` for cost ending this month.
@@ -666,7 +673,8 @@ class UsageMeteringApi:
 
         Get projected cost across multi-org and single root-org accounts.
         Projected cost data is only available for the current month and becomes available around the 12th of the month.
-        This endpoint requires the usage_read authorization scope.
+
+        This endpoint is only accessible for `parent-level organizations <https://docs.datadoghq.com/account_management/multi_organization/>`_.
 
         :param view: String to specify whether cost is broken down at a parent-org level or at the sub-org level. Available views are ``summary`` and ``sub-org``. Defaults to ``summary``.
         :type view: str, optional

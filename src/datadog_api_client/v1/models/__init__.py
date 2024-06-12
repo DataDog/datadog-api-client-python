@@ -168,6 +168,7 @@ from datadog_api_client.v1.model.formula_and_function_slo_group_mode import Form
 from datadog_api_client.v1.model.formula_and_function_slo_measure import FormulaAndFunctionSLOMeasure
 from datadog_api_client.v1.model.formula_and_function_slo_query_definition import FormulaAndFunctionSLOQueryDefinition
 from datadog_api_client.v1.model.formula_and_function_slo_query_type import FormulaAndFunctionSLOQueryType
+from datadog_api_client.v1.model.formula_type import FormulaType
 from datadog_api_client.v1.model.free_text_widget_definition import FreeTextWidgetDefinition
 from datadog_api_client.v1.model.free_text_widget_definition_type import FreeTextWidgetDefinitionType
 from datadog_api_client.v1.model.funnel_query import FunnelQuery
@@ -185,6 +186,7 @@ from datadog_api_client.v1.model.geomap_widget_definition_type import GeomapWidg
 from datadog_api_client.v1.model.geomap_widget_definition_view import GeomapWidgetDefinitionView
 from datadog_api_client.v1.model.geomap_widget_request import GeomapWidgetRequest
 from datadog_api_client.v1.model.graph_snapshot import GraphSnapshot
+from datadog_api_client.v1.model.group_type import GroupType
 from datadog_api_client.v1.model.group_widget_definition import GroupWidgetDefinition
 from datadog_api_client.v1.model.group_widget_definition_type import GroupWidgetDefinitionType
 from datadog_api_client.v1.model.http_log import HTTPLog
@@ -517,6 +519,7 @@ from datadog_api_client.v1.model.slo_status import SLOStatus
 from datadog_api_client.v1.model.slo_threshold import SLOThreshold
 from datadog_api_client.v1.model.slo_time_slice_comparator import SLOTimeSliceComparator
 from datadog_api_client.v1.model.slo_time_slice_condition import SLOTimeSliceCondition
+from datadog_api_client.v1.model.slo_time_slice_interval import SLOTimeSliceInterval
 from datadog_api_client.v1.model.slo_time_slice_query import SLOTimeSliceQuery
 from datadog_api_client.v1.model.slo_time_slice_spec import SLOTimeSliceSpec
 from datadog_api_client.v1.model.slo_timeframe import SLOTimeframe
@@ -618,10 +621,21 @@ from datadog_api_client.v1.model.synthetics_api_test_type import SyntheticsAPITe
 from datadog_api_client.v1.model.synthetics_api_test_failure_code import SyntheticsApiTestFailureCode
 from datadog_api_client.v1.model.synthetics_api_test_result_failure import SyntheticsApiTestResultFailure
 from datadog_api_client.v1.model.synthetics_assertion import SyntheticsAssertion
+from datadog_api_client.v1.model.synthetics_assertion_body_hash_operator import SyntheticsAssertionBodyHashOperator
+from datadog_api_client.v1.model.synthetics_assertion_body_hash_target import SyntheticsAssertionBodyHashTarget
+from datadog_api_client.v1.model.synthetics_assertion_body_hash_type import SyntheticsAssertionBodyHashType
 from datadog_api_client.v1.model.synthetics_assertion_json_path_operator import SyntheticsAssertionJSONPathOperator
 from datadog_api_client.v1.model.synthetics_assertion_json_path_target import SyntheticsAssertionJSONPathTarget
 from datadog_api_client.v1.model.synthetics_assertion_json_path_target_target import (
     SyntheticsAssertionJSONPathTargetTarget,
+)
+from datadog_api_client.v1.model.synthetics_assertion_json_schema_meta_schema import (
+    SyntheticsAssertionJSONSchemaMetaSchema,
+)
+from datadog_api_client.v1.model.synthetics_assertion_json_schema_operator import SyntheticsAssertionJSONSchemaOperator
+from datadog_api_client.v1.model.synthetics_assertion_json_schema_target import SyntheticsAssertionJSONSchemaTarget
+from datadog_api_client.v1.model.synthetics_assertion_json_schema_target_target import (
+    SyntheticsAssertionJSONSchemaTargetTarget,
 )
 from datadog_api_client.v1.model.synthetics_assertion_operator import SyntheticsAssertionOperator
 from datadog_api_client.v1.model.synthetics_assertion_target import SyntheticsAssertionTarget
@@ -756,6 +770,7 @@ from datadog_api_client.v1.model.synthetics_test_options_scheduling_timeframe im
 from datadog_api_client.v1.model.synthetics_test_pause_status import SyntheticsTestPauseStatus
 from datadog_api_client.v1.model.synthetics_test_process_status import SyntheticsTestProcessStatus
 from datadog_api_client.v1.model.synthetics_test_request import SyntheticsTestRequest
+from datadog_api_client.v1.model.synthetics_test_request_body_file import SyntheticsTestRequestBodyFile
 from datadog_api_client.v1.model.synthetics_test_request_body_type import SyntheticsTestRequestBodyType
 from datadog_api_client.v1.model.synthetics_test_request_certificate import SyntheticsTestRequestCertificate
 from datadog_api_client.v1.model.synthetics_test_request_certificate_item import SyntheticsTestRequestCertificateItem
@@ -927,7 +942,9 @@ from datadog_api_client.v1.model.widget_event_size import WidgetEventSize
 from datadog_api_client.v1.model.widget_field_sort import WidgetFieldSort
 from datadog_api_client.v1.model.widget_formula import WidgetFormula
 from datadog_api_client.v1.model.widget_formula_limit import WidgetFormulaLimit
+from datadog_api_client.v1.model.widget_formula_sort import WidgetFormulaSort
 from datadog_api_client.v1.model.widget_formula_style import WidgetFormulaStyle
+from datadog_api_client.v1.model.widget_group_sort import WidgetGroupSort
 from datadog_api_client.v1.model.widget_grouping import WidgetGrouping
 from datadog_api_client.v1.model.widget_horizontal_align import WidgetHorizontalAlign
 from datadog_api_client.v1.model.widget_image_sizing import WidgetImageSizing
@@ -948,6 +965,8 @@ from datadog_api_client.v1.model.widget_request_style import WidgetRequestStyle
 from datadog_api_client.v1.model.widget_service_summary_display_format import WidgetServiceSummaryDisplayFormat
 from datadog_api_client.v1.model.widget_size_format import WidgetSizeFormat
 from datadog_api_client.v1.model.widget_sort import WidgetSort
+from datadog_api_client.v1.model.widget_sort_by import WidgetSortBy
+from datadog_api_client.v1.model.widget_sort_order_by import WidgetSortOrderBy
 from datadog_api_client.v1.model.widget_style import WidgetStyle
 from datadog_api_client.v1.model.widget_summary_type import WidgetSummaryType
 from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
@@ -1095,6 +1114,7 @@ __all__ = [
     "FormulaAndFunctionSLOMeasure",
     "FormulaAndFunctionSLOQueryDefinition",
     "FormulaAndFunctionSLOQueryType",
+    "FormulaType",
     "FreeTextWidgetDefinition",
     "FreeTextWidgetDefinitionType",
     "FunnelQuery",
@@ -1112,6 +1132,7 @@ __all__ = [
     "GeomapWidgetDefinitionView",
     "GeomapWidgetRequest",
     "GraphSnapshot",
+    "GroupType",
     "GroupWidgetDefinition",
     "GroupWidgetDefinitionType",
     "HTTPLog",
@@ -1416,6 +1437,7 @@ __all__ = [
     "SLOThreshold",
     "SLOTimeSliceComparator",
     "SLOTimeSliceCondition",
+    "SLOTimeSliceInterval",
     "SLOTimeSliceQuery",
     "SLOTimeSliceSpec",
     "SLOTimeframe",
@@ -1507,9 +1529,16 @@ __all__ = [
     "SyntheticsApiTestFailureCode",
     "SyntheticsApiTestResultFailure",
     "SyntheticsAssertion",
+    "SyntheticsAssertionBodyHashOperator",
+    "SyntheticsAssertionBodyHashTarget",
+    "SyntheticsAssertionBodyHashType",
     "SyntheticsAssertionJSONPathOperator",
     "SyntheticsAssertionJSONPathTarget",
     "SyntheticsAssertionJSONPathTargetTarget",
+    "SyntheticsAssertionJSONSchemaMetaSchema",
+    "SyntheticsAssertionJSONSchemaOperator",
+    "SyntheticsAssertionJSONSchemaTarget",
+    "SyntheticsAssertionJSONSchemaTargetTarget",
     "SyntheticsAssertionOperator",
     "SyntheticsAssertionTarget",
     "SyntheticsAssertionTimingsScope",
@@ -1619,6 +1648,7 @@ __all__ = [
     "SyntheticsTestPauseStatus",
     "SyntheticsTestProcessStatus",
     "SyntheticsTestRequest",
+    "SyntheticsTestRequestBodyFile",
     "SyntheticsTestRequestBodyType",
     "SyntheticsTestRequestCertificate",
     "SyntheticsTestRequestCertificateItem",
@@ -1780,7 +1810,9 @@ __all__ = [
     "WidgetFieldSort",
     "WidgetFormula",
     "WidgetFormulaLimit",
+    "WidgetFormulaSort",
     "WidgetFormulaStyle",
+    "WidgetGroupSort",
     "WidgetGrouping",
     "WidgetHorizontalAlign",
     "WidgetImageSizing",
@@ -1801,6 +1833,8 @@ __all__ = [
     "WidgetServiceSummaryDisplayFormat",
     "WidgetSizeFormat",
     "WidgetSort",
+    "WidgetSortBy",
+    "WidgetSortOrderBy",
     "WidgetStyle",
     "WidgetSummaryType",
     "WidgetTextAlign",

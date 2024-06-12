@@ -188,6 +188,17 @@ Feature: Dashboards
     And the response "widgets[0].definition.time.live_span" is equal to "week_to_date"
 
   @team:DataDog/dashboards-backend
+  Scenario: Create a new dashboard with a toplist widget sorted by group
+    Given new "CreateDashboard" request
+    And body with value {"title":"{{ unique }}","description":"","widgets":[{"layout":{"x":0,"y":0,"width":47,"height":15},"definition":{"title":"","title_size":"16","title_align":"left","time":{},"style":{"display": {"type": "stacked","legend": "inline"},"scaling": "relative"},"type":"toplist","requests":[{"queries":[{"data_source":"metrics","name":"query1","query":"avg:system.cpu.user{*} by {service}","aggregator":"avg"}],"formulas":[{"formula":"query1"}],"sort":{"count":10,"order_by":[{"type":"group","name":"service","order":"asc"}]},"response_format":"scalar"}]}}],"template_variables":[],"layout_type":"free","is_read_only":false,"notify_list":[]}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.type" is equal to "toplist"
+    And the response "widgets[0].definition.requests[0].sort.order_by[0].order" is equal to "asc"
+    And the response "widgets[0].definition.requests[0].sort.order_by[0].type" is equal to "group"
+    And the response "widgets[0].definition.requests[0].sort.order_by[0].name" is equal to "service"
+
+  @team:DataDog/dashboards-backend
   Scenario: Create a new dashboard with alert_graph widget
     Given there is a valid "monitor" in the system
     And new "CreateDashboard" request
@@ -386,6 +397,9 @@ Feature: Dashboards
     When the request is sent
     Then the response status is 200 OK
     And the response "widgets[0].definition.type" is equal to "geomap"
+    And the response "widgets[0].definition.requests[0].sort.order_by[0].order" is equal to "desc"
+    And the response "widgets[0].definition.requests[0].sort.order_by[0].type" is equal to "formula"
+    And the response "widgets[0].definition.requests[0].sort.order_by[0].index" is equal to 0
 
   @team:DataDog/dashboards-backend
   Scenario: Create a new dashboard with heatmap widget
@@ -478,12 +492,15 @@ Feature: Dashboards
   @team:DataDog/dashboards-backend
   Scenario: Create a new dashboard with logs query table widget and storage parameter
     Given new "CreateDashboard" request
-    And body with value {"layout_type":"ordered","title":"{{ unique }} with query table widget and storage parameter","widgets":[{"definition":{"type":"query_table","requests":[{"queries":[{"data_source":"logs","name":"query1","search":{"query":""},"indexes":["*"],"compute":{"aggregation":"count"},"group_by":[],"storage":"online_archives"}],"formulas":[{"conditional_formats":[],"cell_display_mode":"bar","formula":"query1","limit":{"count":50,"order":"desc"}}],"response_format":"scalar"}]}}]}
+    And body with value {"layout_type":"ordered","title":"{{ unique }} with query table widget and storage parameter","widgets":[{"definition":{"type":"query_table","requests":[{"queries":[{"data_source":"logs","name":"query1","search":{"query":""},"indexes":["*"],"compute":{"aggregation":"count"},"group_by":[],"storage":"online_archives"}],"formulas":[{"conditional_formats":[],"cell_display_mode":"bar","formula":"query1"}],"sort":{"count":50, "order_by":[{"type":"formula","index":0,"order":"desc"}]},"response_format":"scalar"}]}}]}
     When the request is sent
     Then the response status is 200 OK
     And the response "widgets[0].definition.type" is equal to "query_table"
     And the response "widgets[0].definition.requests[0].queries[0].data_source" is equal to "logs"
     And the response "widgets[0].definition.requests[0].queries[0].storage" is equal to "online_archives"
+    And the response "widgets[0].definition.requests[0].sort.order_by[0].order" is equal to "desc"
+    And the response "widgets[0].definition.requests[0].sort.order_by[0].type" is equal to "formula"
+    And the response "widgets[0].definition.requests[0].sort.order_by[0].index" is equal to 0
 
   @team:DataDog/dashboards-backend
   Scenario: Create a new dashboard with logs_pattern_stream list_stream widget
@@ -559,6 +576,9 @@ Feature: Dashboards
     When the request is sent
     Then the response status is 200 OK
     And the response "widgets[0].definition.type" is equal to "query_table"
+    And the response "widgets[0].definition.requests[0].sort.order_by[0].order" is equal to "desc"
+    And the response "widgets[0].definition.requests[0].sort.order_by[0].type" is equal to "formula"
+    And the response "widgets[0].definition.requests[0].sort.order_by[0].index" is equal to 0
 
   @team:DataDog/dashboards-backend
   Scenario: Create a new dashboard with query_value widget
@@ -758,6 +778,9 @@ Feature: Dashboards
     When the request is sent
     Then the response status is 200 OK
     And the response "widgets[0].definition.type" is equal to "toplist"
+    And the response "widgets[0].definition.requests[0].sort.order_by[0].order" is equal to "desc"
+    And the response "widgets[0].definition.requests[0].sort.order_by[0].type" is equal to "formula"
+    And the response "widgets[0].definition.requests[0].sort.order_by[0].index" is equal to 0
 
   @team:DataDog/dashboards-backend
   Scenario: Create a new dashboard with topology_map widget

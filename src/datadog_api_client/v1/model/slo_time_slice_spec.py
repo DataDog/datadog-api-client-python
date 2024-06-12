@@ -33,7 +33,7 @@ class SLOTimeSliceSpec(ModelNormal):
         A time-slice SLI specification.
 
         :param time_slice: The time-slice condition, composed of 3 parts: 1. the metric timeseries query, 2. the comparator,
-            and 3. the threshold.
+            and 3. the threshold. Optionally, a fourth part, the query interval, can be provided.
         :type time_slice: SLOTimeSliceCondition
         """
         super().__init__(kwargs)

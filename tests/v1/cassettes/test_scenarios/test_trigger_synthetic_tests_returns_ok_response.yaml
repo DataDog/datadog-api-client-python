@@ -1,7 +1,8 @@
 interactions:
 - request:
-    body: '{"config":{"assertions":[{"operator":"is","property":"{{ PROPERTY }}","target":"text/html","type":"header"},{"operator":"lessThan","target":2000,"timingsScope":"withoutDNS","type":"responseTime"},{"operator":"validatesJSONPath","target":{"jsonPath":"topKey","operator":"isNot","targetValue":"0"},"type":"body"},{"operator":"validatesXPath","target":{"operator":"contains","targetValue":"0","xPath":"target-xpath"},"type":"body"}],"configVariables":[{"example":"content-type","name":"PROPERTY","pattern":"content-type","type":"text"}],"request":{"basicAuth":{"accessTokenUrl":"https://datadog-token.com","audience":"audience","clientId":"client-id","clientSecret":"client-secret","resource":"resource","scope":"yoyo","tokenApiAuthentication":"header","type":"oauth-client"},"certificate":{"cert":{"content":"cert-content","filename":"cert-filename","updatedAt":"2020-10-16T09:23:24.857Z"},"key":{"content":"key-content","filename":"key-filename","updatedAt":"2020-10-16T09:23:24.857Z"}},"headers":{"unique":"testtriggersynthetictestsreturnsokresponse1706264452"},"method":"GET","persistCookies":true,"proxy":{"headers":{},"url":"https://datadoghq.com"},"timeout":10,"url":"https://datadoghq.com"}},"locations":["aws:us-east-2"],"message":"BDD
-      test payload: synthetics_api_http_test_payload.json","name":"Test-Trigger_Synthetic_tests_returns_OK_response-1706264452","options":{"accept_self_signed":false,"allow_insecure":true,"follow_redirects":true,"httpVersion":"http2","min_failure_duration":10,"min_location_failed":1,"monitor_name":"Test-Trigger_Synthetic_tests_returns_OK_response-1706264452","monitor_priority":5,"retry":{"count":3,"interval":10},"tick_every":60},"subtype":"http","tags":["testing:api"],"type":"api"}'
+    body: '{"config":{"assertions":[{"operator":"is","property":"{{ PROPERTY }}","target":"text/html","type":"header"},{"operator":"lessThan","target":2000,"timingsScope":"withoutDNS","type":"responseTime"},{"operator":"validatesJSONPath","target":{"jsonPath":"topKey","operator":"isNot","targetValue":"0"},"type":"body"},{"operator":"validatesJSONSchema","target":{"jsonSchema":"{\"type\":
+      \"object\", \"properties\":{\"slideshow\":{\"type\":\"object\"}}}","metaSchema":"draft-07"},"type":"body"},{"operator":"validatesXPath","target":{"operator":"contains","targetValue":"0","xPath":"target-xpath"},"type":"body"},{"operator":"md5","target":"a","type":"bodyHash"}],"configVariables":[{"example":"content-type","name":"PROPERTY","pattern":"content-type","type":"text"}],"request":{"basicAuth":{"accessTokenUrl":"https://datadog-token.com","audience":"audience","clientId":"client-id","clientSecret":"client-secret","resource":"resource","scope":"yoyo","tokenApiAuthentication":"header","type":"oauth-client"},"certificate":{"cert":{"content":"cert-content","filename":"cert-filename","updatedAt":"2020-10-16T09:23:24.857Z"},"key":{"content":"key-content","filename":"key-filename","updatedAt":"2020-10-16T09:23:24.857Z"}},"headers":{"unique":"testtriggersynthetictestsreturnsokresponse1717780274"},"method":"GET","persistCookies":true,"proxy":{"headers":{},"url":"https://datadoghq.com"},"timeout":10,"url":"https://datadoghq.com"},"variablesFromScript":"dd.variable.set(\"FOO\",
+      \"foo\")"},"locations":["aws:us-east-2"],"message":"BDD test payload: synthetics_api_http_test_payload.json","name":"Test-Trigger_Synthetic_tests_returns_OK_response-1717780274","options":{"accept_self_signed":false,"allow_insecure":true,"follow_redirects":true,"httpVersion":"http2","min_failure_duration":10,"min_location_failed":1,"monitor_name":"Test-Trigger_Synthetic_tests_returns_OK_response-1717780274","monitor_priority":5,"retry":{"count":3,"interval":10},"tick_every":60},"subtype":"http","tags":["testing:api"],"type":"api"}'
     headers:
       accept:
       - application/json
@@ -11,9 +12,12 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/synthetics/tests/api
   response:
     body:
-      string: '{"public_id":"nnz-ibr-d7f","name":"Test-Trigger_Synthetic_tests_returns_OK_response-1706264452","status":"live","type":"api","tags":["testing:api"],"created_at":"2024-01-26T10:20:52.952483+00:00","modified_at":"2024-01-26T10:20:52.952483+00:00","config":{"assertions":[{"operator":"is","property":"{{
-        PROPERTY }}","target":"text/html","type":"header"},{"operator":"lessThan","target":2000,"timingsScope":"withoutDNS","type":"responseTime"},{"operator":"validatesJSONPath","target":{"jsonPath":"topKey","operator":"isNot","targetValue":"0"},"type":"body"},{"operator":"validatesXPath","target":{"operator":"contains","targetValue":"0","xPath":"target-xpath"},"type":"body"}],"configVariables":[{"example":"content-type","name":"PROPERTY","pattern":"content-type","type":"text"}],"request":{"basicAuth":{"accessTokenUrl":"https://datadog-token.com","audience":"audience","clientId":"client-id","clientSecret":"client-secret","resource":"resource","scope":"yoyo","tokenApiAuthentication":"header","type":"oauth-client"},"certificate":{"cert":{"filename":"cert-filename","updatedAt":"2020-10-16T09:23:24.857Z"},"key":{"filename":"key-filename","updatedAt":"2020-10-16T09:23:24.857Z"}},"headers":{"unique":"testtriggersynthetictestsreturnsokresponse1706264452"},"method":"GET","persistCookies":true,"proxy":{"headers":{},"url":"https://datadoghq.com"},"timeout":10,"url":"https://datadoghq.com"}},"message":"BDD
-        test payload: synthetics_api_http_test_payload.json","options":{"accept_self_signed":false,"allow_insecure":true,"follow_redirects":true,"httpVersion":"http2","min_failure_duration":10,"min_location_failed":1,"monitor_name":"Test-Trigger_Synthetic_tests_returns_OK_response-1706264452","monitor_priority":5,"retry":{"count":3,"interval":10},"tick_every":60},"locations":["aws:us-east-2"],"subtype":"http","created_by":{"name":"Frog","handle":"frog@datadoghq.com","email":"frog@datadoghq.com"},"deleted_at":null,"monitor_id":138446075,"org_id":569509,"modified_by":{"name":"Frog","handle":"frog@datadoghq.com","email":"frog@datadoghq.com"}}'
+      string: '{"public_id":"fbg-cs6-aq7","name":"Test-Trigger_Synthetic_tests_returns_OK_response-1717780274","status":"live","type":"api","tags":["testing:api"],"created_at":"2024-06-07T17:11:14.930630+00:00","modified_at":"2024-06-07T17:11:14.930630+00:00","config":{"assertions":[{"operator":"is","property":"{{
+        PROPERTY }}","target":"text/html","type":"header"},{"operator":"lessThan","target":2000,"timingsScope":"withoutDNS","type":"responseTime"},{"operator":"validatesJSONPath","target":{"jsonPath":"topKey","operator":"isNot","targetValue":"0"},"type":"body"},{"operator":"validatesJSONSchema","target":{"jsonSchema":"{\"type\":
+        \"object\", \"properties\":{\"slideshow\":{\"type\":\"object\"}}}","metaSchema":"draft-07"},"type":"body"},{"operator":"validatesXPath","target":{"operator":"contains","targetValue":"0","xPath":"target-xpath"},"type":"body"},{"operator":"md5","target":"a","type":"bodyHash"}],"configVariables":[{"example":"content-type","name":"PROPERTY","pattern":"content-type","type":"text"}],"request":{"basicAuth":{"accessTokenUrl":"https://datadog-token.com","audience":"audience","clientId":"client-id","clientSecret":"client-secret","resource":"resource","scope":"yoyo","tokenApiAuthentication":"header","type":"oauth-client"},"certificate":{"cert":{"filename":"cert-filename","updatedAt":"2020-10-16T09:23:24.857Z"},"key":{"filename":"key-filename","updatedAt":"2020-10-16T09:23:24.857Z"}},"headers":{"unique":"testtriggersynthetictestsreturnsokresponse1717780274"},"method":"GET","persistCookies":true,"proxy":{"headers":{},"url":"https://datadoghq.com"},"timeout":10,"url":"https://datadoghq.com"},"variablesFromScript":"dd.variable.set(\"FOO\",
+        \"foo\")"},"message":"BDD test payload: synthetics_api_http_test_payload.json","options":{"accept_self_signed":false,"allow_insecure":true,"follow_redirects":true,"httpVersion":"http2","min_failure_duration":10,"min_location_failed":1,"monitor_name":"Test-Trigger_Synthetic_tests_returns_OK_response-1717780274","monitor_priority":5,"retry":{"count":3,"interval":10},"tick_every":60},"locations":["aws:us-east-2"],"subtype":"http","created_by":{"name":"CI
+        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","email":"team-intg-tools-libs-spam@datadoghq.com"},"deleted_at":null,"monitor_id":146628228,"org_id":321813,"modified_by":{"name":"CI
+        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","email":"team-intg-tools-libs-spam@datadoghq.com"}}'
     headers:
       content-type:
       - application/json
@@ -21,7 +25,7 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"tests":[{"public_id":"nnz-ibr-d7f"}]}'
+    body: '{"tests":[{"public_id":"fbg-cs6-aq7"}]}'
     headers:
       accept:
       - application/json
@@ -31,7 +35,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/synthetics/tests/trigger
   response:
     body:
-      string: '{"triggered_check_ids":["nnz-ibr-d7f"],"results":[{"public_id":"nnz-ibr-d7f","location":30005,"result_id":"3934706466876721718"}],"locations":[{"id":30005,"name":"aws:us-east-2","display_name":"Ohio
+      string: '{"triggered_check_ids":["fbg-cs6-aq7"],"results":[{"public_id":"fbg-cs6-aq7","location":30005,"result_id":"2808787540874411699"}],"locations":[{"id":30005,"name":"aws:us-east-2","display_name":"Ohio
         (AWS)","region":"Americas","is_active":true,"is_public":true,"metadata":null}],"batch_id":null}
 
         '
@@ -42,7 +46,7 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"public_ids":["nnz-ibr-d7f"]}'
+    body: '{"public_ids":["fbg-cs6-aq7"]}'
     headers:
       accept:
       - application/json
@@ -52,7 +56,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/synthetics/tests/delete
   response:
     body:
-      string: '{"deleted_tests":[{"public_id":"nnz-ibr-d7f","deleted_at":"2024-01-26T10:20:53.938026+00:00"}]}
+      string: '{"deleted_tests":[{"public_id":"fbg-cs6-aq7","deleted_at":"2024-06-07T17:11:17.222801+00:00"}]}
 
         '
     headers:

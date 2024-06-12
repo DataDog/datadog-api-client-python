@@ -63,7 +63,6 @@ class UsageMeteringApi:
     The usage metering API allows you to get hourly, daily, and
     monthly usage across multiple facets of Datadog.
     This API is available to all Pro and Enterprise customers.
-    Usage is only accessible for `parent-level organizations <https://docs.datadoghq.com/account_management/multi_organization/>`_.
 
     **Note** : Usage data is delayed by up to 72 hours from when it was incurred.
     It is retained for 15 months.
@@ -81,7 +80,7 @@ class UsageMeteringApi:
         self._get_daily_custom_reports_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageCustomReportsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/daily_custom_reports",
                 "operation_id": "get_daily_custom_reports",
                 "http_method": "GET",
@@ -223,7 +222,7 @@ class UsageMeteringApi:
         self._get_monthly_custom_reports_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageCustomReportsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/monthly_custom_reports",
                 "operation_id": "get_monthly_custom_reports",
                 "http_method": "GET",
@@ -319,7 +318,7 @@ class UsageMeteringApi:
         self._get_specified_daily_custom_reports_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageSpecifiedCustomReportsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/daily_custom_reports/{report_id}",
                 "operation_id": "get_specified_daily_custom_reports",
                 "http_method": "GET",
@@ -342,7 +341,7 @@ class UsageMeteringApi:
         self._get_specified_monthly_custom_reports_endpoint = _Endpoint(
             settings={
                 "response_type": (UsageSpecifiedCustomReportsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/monthly_custom_reports/{report_id}",
                 "operation_id": "get_specified_monthly_custom_reports",
                 "http_method": "GET",
@@ -1580,6 +1579,8 @@ class UsageMeteringApi:
 
         Get billable usage across your account.
 
+        This endpoint is only accessible for `parent-level organizations <https://docs.datadoghq.com/account_management/multi_organization/>`_.
+
         :param month: Datetime in ISO-8601 format, UTC, precise to month: ``[YYYY-MM]`` for usage starting this month.
         :type month: datetime, optional
         :rtype: UsageBillableSummaryResponse
@@ -2141,6 +2142,8 @@ class UsageMeteringApi:
         """Get usage across your account.
 
         Get all usage across your account.
+
+        This endpoint is only accessible for `parent-level organizations <https://docs.datadoghq.com/account_management/multi_organization/>`_.
 
         :param start_month: Datetime in ISO-8601 format, UTC, precise to month: ``[YYYY-MM]`` for usage beginning in this month.
             Maximum of 15 months ago.

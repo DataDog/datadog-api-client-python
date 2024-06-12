@@ -12,18 +12,18 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.retention_filter_create_attributes import RetentionFilterCreateAttributes
+    from datadog_api_client.v2.model.retention_filter_update_attributes import RetentionFilterUpdateAttributes
     from datadog_api_client.v2.model.apm_retention_filter_type import ApmRetentionFilterType
 
 
 class RetentionFilterUpdateData(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.retention_filter_create_attributes import RetentionFilterCreateAttributes
+        from datadog_api_client.v2.model.retention_filter_update_attributes import RetentionFilterUpdateAttributes
         from datadog_api_client.v2.model.apm_retention_filter_type import ApmRetentionFilterType
 
         return {
-            "attributes": (RetentionFilterCreateAttributes,),
+            "attributes": (RetentionFilterUpdateAttributes,),
             "id": (str,),
             "type": (ApmRetentionFilterType,),
         }
@@ -34,12 +34,12 @@ class RetentionFilterUpdateData(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, attributes: RetentionFilterCreateAttributes, id: str, type: ApmRetentionFilterType, **kwargs):
+    def __init__(self_, attributes: RetentionFilterUpdateAttributes, id: str, type: ApmRetentionFilterType, **kwargs):
         """
         The body of the retention filter to be updated.
 
         :param attributes: The object describing the configuration of the retention filter to create/update.
-        :type attributes: RetentionFilterCreateAttributes
+        :type attributes: RetentionFilterUpdateAttributes
 
         :param id: The ID of the retention filter.
         :type id: str

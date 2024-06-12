@@ -8,9 +8,10 @@ from typing import Any, Dict
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
 from datadog_api_client.v2.model.retention_filters_response import RetentionFiltersResponse
-from datadog_api_client.v2.model.retention_filter_response import RetentionFilterResponse
+from datadog_api_client.v2.model.retention_filter_create_response import RetentionFilterCreateResponse
 from datadog_api_client.v2.model.retention_filter_create_request import RetentionFilterCreateRequest
 from datadog_api_client.v2.model.reorder_retention_filters_request import ReorderRetentionFiltersRequest
+from datadog_api_client.v2.model.retention_filter_response import RetentionFilterResponse
 from datadog_api_client.v2.model.retention_filter_update_request import RetentionFilterUpdateRequest
 
 
@@ -26,7 +27,7 @@ class APMRetentionFiltersApi:
 
         self._create_apm_retention_filter_endpoint = _Endpoint(
             settings={
-                "response_type": (RetentionFilterResponse,),
+                "response_type": (RetentionFilterCreateResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/apm/config/retention-filters",
                 "operation_id": "create_apm_retention_filter",
@@ -155,15 +156,17 @@ class APMRetentionFiltersApi:
     def create_apm_retention_filter(
         self,
         body: RetentionFilterCreateRequest,
-    ) -> RetentionFilterResponse:
+    ) -> RetentionFilterCreateResponse:
         """Create a retention filter.
 
         Create a retention filter to index spans in your organization.
         Returns the retention filter definition when the request is successful.
 
+        Default filters with types spans-errors-sampling-processor and spans-appsec-sampling-processor cannot be created.
+
         :param body: The definition of the new retention filter.
         :type body: RetentionFilterCreateRequest
-        :rtype: RetentionFilterResponse
+        :rtype: RetentionFilterCreateResponse
         """
         kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
@@ -177,6 +180,8 @@ class APMRetentionFiltersApi:
         """Delete a retention filter.
 
         Delete a specific retention filter from your organization.
+
+        Default filters with types spans-errors-sampling-processor and spans-appsec-sampling-processor cannot be deleted.
 
         :param filter_id: The ID of the retention filter.
         :type filter_id: str
@@ -241,6 +246,8 @@ class APMRetentionFiltersApi:
         """Update a retention filter.
 
         Update a retention filter from your organization.
+
+        Default filters (filters with types spans-errors-sampling-processor and spans-appsec-sampling-processor) cannot be renamed or removed.
 
         :param filter_id: The ID of the retention filter.
         :type filter_id: str

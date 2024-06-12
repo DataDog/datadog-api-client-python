@@ -18,6 +18,14 @@
         "type": "body"
       },
       {
+        "operator": "validatesJSONSchema",
+        "target": {
+          "metaSchema": "draft-07",
+          "jsonSchema": "{\"type\": \"object\", \"properties\":{\"slideshow\":{\"type\":\"object\"}}}"
+        },
+        "type": "body"
+      },
+      {
         "operator": "validatesXPath",
         "target": {
           "xPath": "target-xpath",
@@ -25,6 +33,11 @@
           "operator": "contains"
         },
         "type": "body"
+      },
+      {
+        "operator": "md5",
+        "target": "a",
+        "type": "bodyHash"
       }
     ],
     "configVariables": [
@@ -35,6 +48,7 @@
         "type": "text"
       }
     ],
+    "variablesFromScript": "dd.variable.set(\"FOO\", \"foo\")",
     "request": {
       "certificate": {
         "cert": {

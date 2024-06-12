@@ -49,6 +49,7 @@ class SecurityMonitoringStandardRuleResponse(ModelNormal):
             "compliance_signal_options": (CloudConfigurationRuleComplianceSignalOptions,),
             "created_at": (int,),
             "creation_author_id": (int,),
+            "default_tags": ([str],),
             "deprecation_date": (int,),
             "filters": ([SecurityMonitoringFilter],),
             "has_extended_title": (bool,),
@@ -72,6 +73,7 @@ class SecurityMonitoringStandardRuleResponse(ModelNormal):
         "compliance_signal_options": "complianceSignalOptions",
         "created_at": "createdAt",
         "creation_author_id": "creationAuthorId",
+        "default_tags": "defaultTags",
         "deprecation_date": "deprecationDate",
         "filters": "filters",
         "has_extended_title": "hasExtendedTitle",
@@ -96,6 +98,7 @@ class SecurityMonitoringStandardRuleResponse(ModelNormal):
         compliance_signal_options: Union[CloudConfigurationRuleComplianceSignalOptions, UnsetType] = unset,
         created_at: Union[int, UnsetType] = unset,
         creation_author_id: Union[int, UnsetType] = unset,
+        default_tags: Union[List[str], UnsetType] = unset,
         deprecation_date: Union[int, UnsetType] = unset,
         filters: Union[List[SecurityMonitoringFilter], UnsetType] = unset,
         has_extended_title: Union[bool, UnsetType] = unset,
@@ -129,10 +132,13 @@ class SecurityMonitoringStandardRuleResponse(ModelNormal):
         :param creation_author_id: User ID of the user who created the rule.
         :type creation_author_id: int, optional
 
+        :param default_tags: Default Tags for default rules (included in tags)
+        :type default_tags: [str], optional
+
         :param deprecation_date: When the rule will be deprecated, timestamp in milliseconds.
         :type deprecation_date: int, optional
 
-        :param filters: Additional queries to filter matched events before they are processed.
+        :param filters: Additional queries to filter matched events before they are processed. This field is deprecated for log detection, signal correlation, and workload security rules.
         :type filters: [SecurityMonitoringFilter], optional
 
         :param has_extended_title: Whether the notifications include the triggering group-by values in their title.
@@ -165,7 +171,7 @@ class SecurityMonitoringStandardRuleResponse(ModelNormal):
         :param tags: Tags for generated signals.
         :type tags: [str], optional
 
-        :param third_party_cases: Cases for generating signals from third party rules. Only available for third party rules.
+        :param third_party_cases: Cases for generating signals from third-party rules. Only available for third-party rules.
         :type third_party_cases: [SecurityMonitoringThirdPartyRuleCase], optional
 
         :param type: The rule type.
@@ -185,6 +191,8 @@ class SecurityMonitoringStandardRuleResponse(ModelNormal):
             kwargs["created_at"] = created_at
         if creation_author_id is not unset:
             kwargs["creation_author_id"] = creation_author_id
+        if default_tags is not unset:
+            kwargs["default_tags"] = default_tags
         if deprecation_date is not unset:
             kwargs["deprecation_date"] = deprecation_date
         if filters is not unset:

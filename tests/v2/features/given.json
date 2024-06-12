@@ -349,7 +349,7 @@
     "operationId": "CreateMonitorConfigPolicy"
   },
   {
-    "source": "data[0]",
+    "source": "data[4]",
     "step": "there is a valid \"permission\" in the system",
     "key": "permission",
     "tag": "Roles",
@@ -376,7 +376,7 @@
     ],
     "step": "there is a valid \"agent_rule_rc\" in the system",
     "key": "agent_rule",
-    "tag": "Cloud Workload Security",
+    "tag": "CSM Threats",
     "operationId": "CreateCSMThreatsAgentRule"
   },
   {
@@ -456,7 +456,7 @@
     ],
     "step": "there is a valid \"agent_rule\" in the system",
     "key": "agent_rule",
-    "tag": "Cloud Workload Security",
+    "tag": "CSM Threats",
     "operationId": "CreateCloudWorkloadSecurityAgentRule"
   },
   {
@@ -600,6 +600,18 @@
     "key": "service_definition",
     "tag": "Service Definition",
     "operationId": "CreateOrUpdateServiceDefinitions"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"query\": \"slo_type:metric \\\"SLO Reporting Test\\\"\",\n      \"interval\": \"monthly\",\n      \"from_ts\": {{ timestamp(\"now - 21d\") }},\n      \"to_ts\":  {{ timestamp(\"now\") }}\n    }\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"report\" in the system",
+    "key": "report",
+    "tag": "Service Level Objectives",
+    "operationId": "CreateSLOReportJob"
   },
   {
     "parameters": [

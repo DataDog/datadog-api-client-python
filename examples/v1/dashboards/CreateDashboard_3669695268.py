@@ -18,14 +18,16 @@ from datadog_api_client.v1.model.formula_and_function_event_query_definition_sea
 )
 from datadog_api_client.v1.model.formula_and_function_events_data_source import FormulaAndFunctionEventsDataSource
 from datadog_api_client.v1.model.formula_and_function_response_format import FormulaAndFunctionResponseFormat
-from datadog_api_client.v1.model.query_sort_order import QuerySortOrder
+from datadog_api_client.v1.model.formula_type import FormulaType
 from datadog_api_client.v1.model.table_widget_cell_display_mode import TableWidgetCellDisplayMode
 from datadog_api_client.v1.model.table_widget_definition import TableWidgetDefinition
 from datadog_api_client.v1.model.table_widget_definition_type import TableWidgetDefinitionType
 from datadog_api_client.v1.model.table_widget_request import TableWidgetRequest
 from datadog_api_client.v1.model.widget import Widget
 from datadog_api_client.v1.model.widget_formula import WidgetFormula
-from datadog_api_client.v1.model.widget_formula_limit import WidgetFormulaLimit
+from datadog_api_client.v1.model.widget_formula_sort import WidgetFormulaSort
+from datadog_api_client.v1.model.widget_sort import WidgetSort
+from datadog_api_client.v1.model.widget_sort_by import WidgetSortBy
 
 body = Dashboard(
     layout_type=DashboardLayoutType.ORDERED,
@@ -58,12 +60,18 @@ body = Dashboard(
                                 conditional_formats=[],
                                 cell_display_mode=TableWidgetCellDisplayMode.BAR,
                                 formula="query1",
-                                limit=WidgetFormulaLimit(
-                                    count=50,
-                                    order=QuerySortOrder.DESC,
-                                ),
                             ),
                         ],
+                        sort=WidgetSortBy(
+                            count=50,
+                            order_by=[
+                                WidgetFormulaSort(
+                                    type=FormulaType.FORMULA,
+                                    index=0,
+                                    order=WidgetSort.DESCENDING,
+                                ),
+                            ],
+                        ),
                         response_format=FormulaAndFunctionResponseFormat.SCALAR,
                     ),
                 ],

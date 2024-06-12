@@ -70,7 +70,7 @@ class LogsIndexesApi:
         self._get_logs_index_order_endpoint = _Endpoint(
             settings={
                 "response_type": (LogsIndexesOrder,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/logs/config/index-order",
                 "operation_id": "get_logs_index_order",
                 "http_method": "GET",

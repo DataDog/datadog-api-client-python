@@ -110,7 +110,7 @@ class SecurityMonitoringRuleUpdatePayload(ModelNormal):
         :param compliance_signal_options: How to generate compliance signals. Useful for cloud_configuration rules only.
         :type compliance_signal_options: CloudConfigurationRuleComplianceSignalOptions, optional
 
-        :param filters: Additional queries to filter matched events before they are processed.
+        :param filters: Additional queries to filter matched events before they are processed. This field is deprecated for log detection, signal correlation, and workload security rules.
         :type filters: [SecurityMonitoringFilter], optional
 
         :param has_extended_title: Whether the notifications include the triggering group-by values in their title.
@@ -134,7 +134,7 @@ class SecurityMonitoringRuleUpdatePayload(ModelNormal):
         :param tags: Tags for generated signals.
         :type tags: [str], optional
 
-        :param third_party_cases: Cases for generating signals from third party rules. Only available for third party rules.
+        :param third_party_cases: Cases for generating signals from third-party rules. Only available for third-party rules.
         :type third_party_cases: [SecurityMonitoringThirdPartyRuleCase], optional
 
         :param version: The version of the rule being updated.

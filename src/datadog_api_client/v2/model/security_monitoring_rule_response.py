@@ -27,10 +27,13 @@ class SecurityMonitoringRuleResponse(ModelComposed):
         :param creation_author_id: User ID of the user who created the rule.
         :type creation_author_id: int, optional
 
+        :param default_tags: Default Tags for default rules (included in tags)
+        :type default_tags: [str], optional
+
         :param deprecation_date: When the rule will be deprecated, timestamp in milliseconds.
         :type deprecation_date: int, optional
 
-        :param filters: Additional queries to filter matched events before they are processed.
+        :param filters: Additional queries to filter matched events before they are processed. This field is deprecated for log detection, signal correlation, and workload security rules.
         :type filters: [SecurityMonitoringFilter], optional
 
         :param has_extended_title: Whether the notifications include the triggering group-by values in their title.
@@ -63,7 +66,7 @@ class SecurityMonitoringRuleResponse(ModelComposed):
         :param tags: Tags for generated signals.
         :type tags: [str], optional
 
-        :param third_party_cases: Cases for generating signals from third party rules. Only available for third party rules.
+        :param third_party_cases: Cases for generating signals from third-party rules. Only available for third-party rules.
         :type third_party_cases: [SecurityMonitoringThirdPartyRuleCase], optional
 
         :param type: The rule type.

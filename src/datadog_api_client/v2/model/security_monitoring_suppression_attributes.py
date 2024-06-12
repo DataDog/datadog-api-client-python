@@ -31,6 +31,7 @@ class SecurityMonitoringSuppressionAttributes(ModelNormal):
         return {
             "creation_date": (int,),
             "creator": (SecurityMonitoringUser,),
+            "data_exclusion_query": (str,),
             "description": (str,),
             "enabled": (bool,),
             "expiration_date": (int,),
@@ -45,6 +46,7 @@ class SecurityMonitoringSuppressionAttributes(ModelNormal):
     attribute_map = {
         "creation_date": "creation_date",
         "creator": "creator",
+        "data_exclusion_query": "data_exclusion_query",
         "description": "description",
         "enabled": "enabled",
         "expiration_date": "expiration_date",
@@ -60,6 +62,7 @@ class SecurityMonitoringSuppressionAttributes(ModelNormal):
         self_,
         creation_date: Union[int, UnsetType] = unset,
         creator: Union[SecurityMonitoringUser, UnsetType] = unset,
+        data_exclusion_query: Union[str, UnsetType] = unset,
         description: Union[str, UnsetType] = unset,
         enabled: Union[bool, UnsetType] = unset,
         expiration_date: Union[int, UnsetType] = unset,
@@ -79,6 +82,9 @@ class SecurityMonitoringSuppressionAttributes(ModelNormal):
 
         :param creator: A user.
         :type creator: SecurityMonitoringUser, optional
+
+        :param data_exclusion_query: An exclusion query on the input data of the security rules, which could be logs, Agent events, or other types of data based on the security rule. Events matching this query are ignored by any detection rules referenced in the suppression rule.
+        :type data_exclusion_query: str, optional
 
         :param description: A description for the suppression rule.
         :type description: str, optional
@@ -111,6 +117,8 @@ class SecurityMonitoringSuppressionAttributes(ModelNormal):
             kwargs["creation_date"] = creation_date
         if creator is not unset:
             kwargs["creator"] = creator
+        if data_exclusion_query is not unset:
+            kwargs["data_exclusion_query"] = data_exclusion_query
         if description is not unset:
             kwargs["description"] = description
         if enabled is not unset:

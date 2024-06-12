@@ -57,13 +57,6 @@ cloud\_cost\_management\_api
    :members:
    :show-inheritance:
 
-cloud\_workload\_security\_api
-------------------------------
-
-.. automodule:: datadog_api_client.v2.api.cloud_workload_security_api
-   :members:
-   :show-inheritance:
-
 cloudflare\_integration\_api
 ----------------------------
 
@@ -89,6 +82,13 @@ containers\_api
 ---------------
 
 .. automodule:: datadog_api_client.v2.api.containers_api
+   :members:
+   :show-inheritance:
+
+csm\_threats\_api
+-----------------
+
+.. automodule:: datadog_api_client.v2.api.csm_threats_api
    :members:
    :show-inheritance:
 
@@ -292,6 +292,13 @@ service\_definition\_api
 ------------------------
 
 .. automodule:: datadog_api_client.v2.api.service_definition_api
+   :members:
+   :show-inheritance:
+
+service\_level\_objectives\_api
+-------------------------------
+
+.. automodule:: datadog_api_client.v2.api.service_level_objectives_api
    :members:
    :show-inheritance:
 

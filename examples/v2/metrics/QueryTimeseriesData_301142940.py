@@ -33,7 +33,7 @@ body = TimeseriesFormulaQueryRequest(
                 [
                     MetricsTimeseriesQuery(
                         data_source=MetricsDataSource.METRICS,
-                        query="avg:system.cpu.user{*}",
+                        query="avg:datadog.estimated_usage.metrics.custom{*}",
                         name="a",
                     ),
                 ]

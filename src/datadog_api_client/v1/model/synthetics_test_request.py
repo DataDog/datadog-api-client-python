@@ -18,6 +18,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.synthetics_test_request_body_type import SyntheticsTestRequestBodyType
     from datadog_api_client.v1.model.synthetics_test_call_type import SyntheticsTestCallType
     from datadog_api_client.v1.model.synthetics_test_request_certificate import SyntheticsTestRequestCertificate
+    from datadog_api_client.v1.model.synthetics_test_request_body_file import SyntheticsTestRequestBodyFile
     from datadog_api_client.v1.model.synthetics_test_headers import SyntheticsTestHeaders
     from datadog_api_client.v1.model.synthetics_test_options_http_version import SyntheticsTestOptionsHTTPVersion
     from datadog_api_client.v1.model.synthetics_test_metadata import SyntheticsTestMetadata
@@ -48,6 +49,7 @@ class SyntheticsTestRequest(ModelNormal):
         from datadog_api_client.v1.model.synthetics_test_request_body_type import SyntheticsTestRequestBodyType
         from datadog_api_client.v1.model.synthetics_test_call_type import SyntheticsTestCallType
         from datadog_api_client.v1.model.synthetics_test_request_certificate import SyntheticsTestRequestCertificate
+        from datadog_api_client.v1.model.synthetics_test_request_body_file import SyntheticsTestRequestBodyFile
         from datadog_api_client.v1.model.synthetics_test_headers import SyntheticsTestHeaders
         from datadog_api_client.v1.model.synthetics_test_options_http_version import SyntheticsTestOptionsHTTPVersion
         from datadog_api_client.v1.model.synthetics_test_metadata import SyntheticsTestMetadata
@@ -65,6 +67,7 @@ class SyntheticsTestRequest(ModelNormal):
             "compressed_proto_file": (str,),
             "dns_server": (str,),
             "dns_server_port": (int,),
+            "files": ([SyntheticsTestRequestBodyFile],),
             "follow_redirects": (bool,),
             "headers": (SyntheticsTestHeaders,),
             "host": (str,),
@@ -97,6 +100,7 @@ class SyntheticsTestRequest(ModelNormal):
         "compressed_proto_file": "compressedProtoFile",
         "dns_server": "dnsServer",
         "dns_server_port": "dnsServerPort",
+        "files": "files",
         "follow_redirects": "follow_redirects",
         "headers": "headers",
         "host": "host",
@@ -139,6 +143,7 @@ class SyntheticsTestRequest(ModelNormal):
         compressed_proto_file: Union[str, UnsetType] = unset,
         dns_server: Union[str, UnsetType] = unset,
         dns_server_port: Union[int, UnsetType] = unset,
+        files: Union[List[SyntheticsTestRequestBodyFile], UnsetType] = unset,
         follow_redirects: Union[bool, UnsetType] = unset,
         headers: Union[SyntheticsTestHeaders, UnsetType] = unset,
         host: Union[str, UnsetType] = unset,
@@ -194,6 +199,9 @@ class SyntheticsTestRequest(ModelNormal):
 
         :param dns_server_port: DNS server port to use for DNS tests.
         :type dns_server_port: int, optional
+
+        :param files: Files to be used as part of the request in the test.
+        :type files: [SyntheticsTestRequestBodyFile], optional
 
         :param follow_redirects: Specifies whether or not the request follows redirects.
         :type follow_redirects: bool, optional
@@ -273,6 +281,8 @@ class SyntheticsTestRequest(ModelNormal):
             kwargs["dns_server"] = dns_server
         if dns_server_port is not unset:
             kwargs["dns_server_port"] = dns_server_port
+        if files is not unset:
+            kwargs["files"] = files
         if follow_redirects is not unset:
             kwargs["follow_redirects"] = follow_redirects
         if headers is not unset:

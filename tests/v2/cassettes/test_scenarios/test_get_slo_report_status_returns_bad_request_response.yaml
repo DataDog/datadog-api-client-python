@@ -1,0 +1,19 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/slo/report/invalid-report-id/status
+  response:
+    body:
+      string: '{"errors":[{"title":"Invalid Argument","detail":"invalid report ID:
+        invalid-report-id"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 400
+      message: Bad Request
+version: 1

@@ -1,0 +1,22 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"enabled":true,"filter":{"query":"@http.status_code:200
+      service:my-service"},"filter_type":"spans-errors-sampling-processor","name":"my
+      retention filter","rate":1},"type":"apm_retention_filter"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/apm/config/retention-filters
+  response:
+    body:
+      string: '{"errors":["Field ''filter_type'' is invalid, expected value is ''spans-sampling-processor''"]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 400
+      message: Bad Request
+version: 1

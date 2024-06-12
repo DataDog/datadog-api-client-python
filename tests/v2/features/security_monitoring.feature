@@ -160,26 +160,37 @@ Feature: Security Monitoring
   @generated @skip @team:DataDog/k9-cloud-security-platform
   Scenario: Create a suppression rule returns "Bad Request" response
     Given new "CreateSecurityMonitoringSuppression" request
-    And body with value {"data": {"attributes": {"description": "This rule suppresses low-severity signals in staging environments.", "enabled": true, "expiration_date": 1703187336000, "name": "Custom suppression", "rule_query": "type:log_detection source:cloudtrail", "suppression_query": "env:staging status:low"}, "type": "suppressions"}}
+    And body with value {"data": {"attributes": {"data_exclusion_query": "source:cloudtrail account_id:12345", "description": "This rule suppresses low-severity signals in staging environments.", "enabled": true, "expiration_date": 1703187336000, "name": "Custom suppression", "rule_query": "type:log_detection source:cloudtrail", "suppression_query": "env:staging status:low"}, "type": "suppressions"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/k9-cloud-security-platform
   Scenario: Create a suppression rule returns "Conflict" response
     Given new "CreateSecurityMonitoringSuppression" request
-    And body with value {"data": {"attributes": {"description": "This rule suppresses low-severity signals in staging environments.", "enabled": true, "expiration_date": 1703187336000, "name": "Custom suppression", "rule_query": "type:log_detection source:cloudtrail", "suppression_query": "env:staging status:low"}, "type": "suppressions"}}
+    And body with value {"data": {"attributes": {"data_exclusion_query": "source:cloudtrail account_id:12345", "description": "This rule suppresses low-severity signals in staging environments.", "enabled": true, "expiration_date": 1703187336000, "name": "Custom suppression", "rule_query": "type:log_detection source:cloudtrail", "suppression_query": "env:staging status:low"}, "type": "suppressions"}}
     When the request is sent
     Then the response status is 409 Conflict
 
-  @team:DataDog/k9-cloud-security-platform
+  @skip-validation @team:DataDog/k9-cloud-security-platform
   Scenario: Create a suppression rule returns "OK" response
     Given new "CreateSecurityMonitoringSuppression" request
-    And body with value {"data": {"attributes": {"description": "This rule suppresses low-severity signals in staging environments.", "enabled": true, "expiration_date": 1703187336000, "name": "{{ unique }}", "rule_query": "type:log_detection source:cloudtrail", "suppression_query": "env:staging status:low"}, "type": "suppressions"}}
+    And body with value {"data": {"attributes": {"description": "This rule suppresses low-severity signals in staging environments.", "enabled": true, "expiration_date": {{ timestamp('now + 21d') }}000, "name": "{{ unique }}", "rule_query": "type:log_detection source:cloudtrail", "suppression_query": "env:staging status:low"}, "type": "suppressions"}}
     When the request is sent
     Then the response status is 200 OK
     And the response "data.type" is equal to "suppressions"
     And the response "data.attributes.enabled" is equal to true
     And the response "data.attributes.rule_query" is equal to "type:log_detection source:cloudtrail"
+
+  @skip-validation @team:DataDog/k9-cloud-security-platform
+  Scenario: Create a suppression rule with an exclusion query returns "OK" response
+    Given new "CreateSecurityMonitoringSuppression" request
+    And body with value {"data": {"attributes": {"description": "This rule suppresses low-severity signals in staging environments.", "enabled": true, "expiration_date": {{ timestamp('now + 21d') }}000, "name": "{{ unique }}", "rule_query": "type:log_detection source:cloudtrail", "data_exclusion_query": "account_id:12345"}, "type": "suppressions"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "suppressions"
+    And the response "data.attributes.enabled" is equal to true
+    And the response "data.attributes.rule_query" is equal to "type:log_detection source:cloudtrail"
+    And the response "data.attributes.data_exclusion_query" is equal to "account_id:12345"
 
   @skip @team:DataDog/k9-cloud-security-platform
   Scenario: Delete a non existing rule returns "Not Found" response
@@ -188,7 +199,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/k9-cloud-security-platform
+  @skip-validation @team:DataDog/k9-cloud-security-platform
   Scenario: Delete a security filter returns "No Content" response
     Given there is a valid "security_filter" in the system
     And new "DeleteSecurityFilter" request
@@ -217,7 +228,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/k9-cloud-security-platform
+  @skip-validation @team:DataDog/k9-cloud-security-platform
   Scenario: Delete a suppression rule returns "OK" response
     Given there is a valid "suppression" in the system
     And new "DeleteSecurityMonitoringSuppression" request
@@ -368,14 +379,14 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/k9-cloud-security-platform
+  @skip-validation @team:DataDog/k9-cloud-security-platform
   Scenario: Get a suppression rule returns "Not Found" response
     Given new "GetSecurityMonitoringSuppression" request
     And request contains "suppression_id" parameter with value "this-does-not-exist"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/k9-cloud-security-platform
+  @skip-validation @team:DataDog/k9-cloud-security-platform
   Scenario: Get a suppression rule returns "OK" response
     Given new "GetSecurityMonitoringSuppression" request
     And there is a valid "suppression" in the system
@@ -496,6 +507,52 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
 
+  @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Test a rule returns "Bad Request" response
+    Given new "TestSecurityMonitoringRule" request
+    And body with value {"rule": {"cases": [], "filters": [{"action": "require"}], "hasExtendedTitle": true, "isEnabled": true, "message": "", "name": "My security monitoring rule.", "options": {"decreaseCriticalityBasedOnEnv": false, "detectionMethod": "threshold", "evaluationWindow": 0, "hardcodedEvaluatorType": "log4shell", "impossibleTravelOptions": {"baselineUserLocations": true}, "keepAlive": 0, "maxSignalDuration": 0, "newValueOptions": {"forgetAfter": 1, "learningDuration": 0, "learningMethod": "duration", "learningThreshold": 0}, "thirdPartyRuleOptions": {"defaultNotifications": [], "defaultStatus": "critical", "rootQueries": [{"groupByFields": [], "query": "source:cloudtrail"}]}}, "queries": [], "tags": ["env:prod", "team:security"], "thirdPartyCases": [], "type": "application_security"}, "ruleQueryPayloads": [{"expectedResult": true, "index": 0, "payload": {"ddsource": "nginx", "ddtags": "env:staging,version:5.1", "hostname": "i-012345678", "message": "2019-11-19T14:37:58,995 INFO [process.name][20081] Hello World", "service": "payment"}}]}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Test a rule returns "Not Found" response
+    Given new "TestSecurityMonitoringRule" request
+    And body with value {"rule": {"cases": [], "filters": [{"action": "require"}], "hasExtendedTitle": true, "isEnabled": true, "message": "", "name": "My security monitoring rule.", "options": {"decreaseCriticalityBasedOnEnv": false, "detectionMethod": "threshold", "evaluationWindow": 0, "hardcodedEvaluatorType": "log4shell", "impossibleTravelOptions": {"baselineUserLocations": true}, "keepAlive": 0, "maxSignalDuration": 0, "newValueOptions": {"forgetAfter": 1, "learningDuration": 0, "learningMethod": "duration", "learningThreshold": 0}, "thirdPartyRuleOptions": {"defaultNotifications": [], "defaultStatus": "critical", "rootQueries": [{"groupByFields": [], "query": "source:cloudtrail"}]}}, "queries": [], "tags": ["env:prod", "team:security"], "thirdPartyCases": [], "type": "application_security"}, "ruleQueryPayloads": [{"expectedResult": true, "index": 0, "payload": {"ddsource": "nginx", "ddtags": "env:staging,version:5.1", "hostname": "i-012345678", "message": "2019-11-19T14:37:58,995 INFO [process.name][20081] Hello World", "service": "payment"}}]}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @skip-go @skip-java @skip-ruby @skip-typescript @team:DataDog/k9-cloud-security-platform
+  Scenario: Test a rule returns "OK" response
+    Given new "TestSecurityMonitoringRule" request
+    And body with value {"rule": {"cases": [{"name": "","status": "info","notifications": [],"condition": "a > 0"}],"hasExtendedTitle": true,"isEnabled": true,"message": "My security monitoring rule message.","name": "My security monitoring rule.","options": {"decreaseCriticalityBasedOnEnv": false,"detectionMethod": "threshold","evaluationWindow": 0,"keepAlive": 0,"maxSignalDuration": 0},"queries": [{"query": "source:source_here","groupByFields": ["@userIdentity.assumed_role"],"distinctFields": [],"aggregation": "count","name": ""}],"tags": ["env:prod", "team:security"],"type": "log_detection"}, "ruleQueryPayloads": [{"expectedResult": true,"index": 0,"payload": {"ddsource": "source_here","ddtags": "env:staging,version:5.1","hostname": "i-012345678","message": "2019-11-19T14:37:58,995 INFO [process.name][20081] Hello World","service": "payment","userIdentity": {"assumed_role" : "fake assumed_role"}}}]}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "results[0]" is equal to true
+
+  @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Test an existing rule returns "Bad Request" response
+    Given new "TestExistingSecurityMonitoringRule" request
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    And body with value {"ruleQueryPayloads": [{"expectedResult": true, "index": 0, "payload": {"ddsource": "nginx", "ddtags": "env:staging,version:5.1", "hostname": "i-012345678", "message": "2019-11-19T14:37:58,995 INFO [process.name][20081] Hello World", "service": "payment"}}]}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Test an existing rule returns "Not Found" response
+    Given new "TestExistingSecurityMonitoringRule" request
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    And body with value {"ruleQueryPayloads": [{"expectedResult": true, "index": 0, "payload": {"ddsource": "nginx", "ddtags": "env:staging,version:5.1", "hostname": "i-012345678", "message": "2019-11-19T14:37:58,995 INFO [process.name][20081] Hello World", "service": "payment"}}]}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Test an existing rule returns "OK" response
+    Given new "TestExistingSecurityMonitoringRule" request
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    And body with value {"ruleQueryPayloads": [{"expectedResult": true, "index": 0, "payload": {"ddsource": "nginx", "ddtags": "env:staging,version:5.1", "hostname": "i-012345678", "message": "2019-11-19T14:37:58,995 INFO [process.name][20081] Hello World", "service": "payment"}}]}
+    When the request is sent
+    Then the response status is 200 OK
+
   @skip-validation @team:DataDog/k9-cloud-security-platform
   Scenario: Update a cloud configuration rule's details returns "OK" response
     Given new "UpdateSecurityMonitoringRule" request
@@ -547,7 +604,7 @@ Feature: Security Monitoring
   Scenario: Update a suppression rule returns "Bad Request" response
     Given new "UpdateSecurityMonitoringSuppression" request
     And request contains "suppression_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"description": "This rule suppresses low-severity signals in staging environments.", "enabled": true, "expiration_date": 1703187336000, "name": "Custom suppression", "rule_query": "type:log_detection source:cloudtrail", "suppression_query": "env:staging status:low"}, "type": "suppressions"}}
+    And body with value {"data": {"attributes": {"data_exclusion_query": "source:cloudtrail account_id:12345", "description": "This rule suppresses low-severity signals in staging environments.", "enabled": true, "expiration_date": 1703187336000, "name": "Custom suppression", "rule_query": "type:log_detection source:cloudtrail", "suppression_query": "env:staging status:low"}, "type": "suppressions"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -555,7 +612,7 @@ Feature: Security Monitoring
   Scenario: Update a suppression rule returns "Concurrent Modification" response
     Given new "UpdateSecurityMonitoringSuppression" request
     And request contains "suppression_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"description": "This rule suppresses low-severity signals in staging environments.", "enabled": true, "expiration_date": 1703187336000, "name": "Custom suppression", "rule_query": "type:log_detection source:cloudtrail", "suppression_query": "env:staging status:low"}, "type": "suppressions"}}
+    And body with value {"data": {"attributes": {"data_exclusion_query": "source:cloudtrail account_id:12345", "description": "This rule suppresses low-severity signals in staging environments.", "enabled": true, "expiration_date": 1703187336000, "name": "Custom suppression", "rule_query": "type:log_detection source:cloudtrail", "suppression_query": "env:staging status:low"}, "type": "suppressions"}}
     When the request is sent
     Then the response status is 409 Concurrent Modification
 
@@ -563,11 +620,11 @@ Feature: Security Monitoring
   Scenario: Update a suppression rule returns "Not Found" response
     Given new "UpdateSecurityMonitoringSuppression" request
     And request contains "suppression_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"description": "This rule suppresses low-severity signals in staging environments.", "enabled": true, "expiration_date": 1703187336000, "name": "Custom suppression", "rule_query": "type:log_detection source:cloudtrail", "suppression_query": "env:staging status:low"}, "type": "suppressions"}}
+    And body with value {"data": {"attributes": {"data_exclusion_query": "source:cloudtrail account_id:12345", "description": "This rule suppresses low-severity signals in staging environments.", "enabled": true, "expiration_date": 1703187336000, "name": "Custom suppression", "rule_query": "type:log_detection source:cloudtrail", "suppression_query": "env:staging status:low"}, "type": "suppressions"}}
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/k9-cloud-security-platform
+  @skip-validation @team:DataDog/k9-cloud-security-platform
   Scenario: Update a suppression rule returns "OK" response
     Given new "UpdateSecurityMonitoringSuppression" request
     And there is a valid "suppression" in the system
@@ -606,3 +663,17 @@ Feature: Security Monitoring
     Then the response status is 200 OK
     And the response "name" is equal to "{{ unique }}-Updated"
     And the response "id" has the same value as "security_rule.id"
+
+  @skip-go @skip-java @skip-python @skip-ruby @skip-rust @skip-typescript @skip-validation @team:DataDog/k9-cloud-security-platform
+  Scenario: Validate a detection rule returns "Bad Request" response
+    Given new "ValidateSecurityMonitoringRule" request
+    And body with value {"cases":[{"name":"","status":"info","notifications":[],"condition":"a > 0"}],"hasExtendedTitle":true,"isEnabled":true,"message":"My security monitoring rule","name":"My security monitoring rule","options":{"evaluationWindow":1800,"keepAlive":999999,"maxSignalDuration":1800,"detectionMethod":"threshold"},"queries":[{"query":"source:source_here","groupByFields":["@userIdentity.assumed_role"],"distinctFields":[],"aggregation":"count","name":""}],"tags":["env:prod","team:security"],"type":"log_detection"}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/k9-cloud-security-platform
+  Scenario: Validate a detection rule returns "OK" response
+    Given new "ValidateSecurityMonitoringRule" request
+    And body with value {"cases":[{"name":"","status":"info","notifications":[],"condition":"a > 0"}],"hasExtendedTitle":true,"isEnabled":true,"message":"My security monitoring rule","name":"My security monitoring rule","options":{"evaluationWindow":1800,"keepAlive":1800,"maxSignalDuration":1800,"detectionMethod":"threshold"},"queries":[{"query":"source:source_here","groupByFields":["@userIdentity.assumed_role"],"distinctFields":[],"aggregation":"count","name":""}],"tags":["env:prod","team:security"],"type":"log_detection"}
+    When the request is sent
+    Then the response status is 204 OK

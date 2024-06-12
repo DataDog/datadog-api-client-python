@@ -12,21 +12,21 @@ Feature: AWS Integration
   @generated @skip @team:DataDog/cloud-integrations
   Scenario: Create an AWS integration returns "Bad Request" response
     Given new "CreateAWSAccount" request
-    And body with value {"account_id": "123456789012", "account_specific_namespace_rules": {"auto_scaling": false, "opswork": false}, "cspm_resource_collection_enabled": true, "excluded_regions": ["us-east-1", "us-west-2"], "filter_tags": ["$KEY:$VALUE"], "host_tags": ["$KEY:$VALUE"], "metrics_collection_enabled": false, "resource_collection_enabled": true, "role_name": "DatadogAWSIntegrationRole"}
+    And body with value {"account_id": "123456789012", "account_specific_namespace_rules": {"auto_scaling": false, "opswork": false}, "cspm_resource_collection_enabled": true, "excluded_regions": ["us-east-1", "us-west-2"], "extended_resource_collection_enabled": true, "filter_tags": ["$KEY:$VALUE"], "host_tags": ["$KEY:$VALUE"], "metrics_collection_enabled": false, "resource_collection_enabled": true, "role_name": "DatadogAWSIntegrationRole"}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/cloud-integrations
   Scenario: Create an AWS integration returns "Conflict Error" response
     Given new "CreateAWSAccount" request
-    And body with value {"account_id": "123456789012", "account_specific_namespace_rules": {"auto_scaling": false, "opswork": false}, "cspm_resource_collection_enabled": true, "excluded_regions": ["us-east-1", "us-west-2"], "filter_tags": ["$KEY:$VALUE"], "host_tags": ["$KEY:$VALUE"], "metrics_collection_enabled": false, "resource_collection_enabled": true, "role_name": "DatadogAWSIntegrationRole"}
+    And body with value {"account_id": "123456789012", "account_specific_namespace_rules": {"auto_scaling": false, "opswork": false}, "cspm_resource_collection_enabled": true, "excluded_regions": ["us-east-1", "us-west-2"], "extended_resource_collection_enabled": true, "filter_tags": ["$KEY:$VALUE"], "host_tags": ["$KEY:$VALUE"], "metrics_collection_enabled": false, "resource_collection_enabled": true, "role_name": "DatadogAWSIntegrationRole"}
     When the request is sent
     Then the response status is 409 Conflict Error
 
   @team:DataDog/cloud-integrations
   Scenario: Create an AWS integration returns "OK" response
     Given new "CreateAWSAccount" request
-    And body with value {"account_id": "{{ timestamp("now") }}00", "account_specific_namespace_rules": {"auto_scaling": false}, "cspm_resource_collection_enabled": true, "excluded_regions": ["us-east-1", "us-west-2"], "filter_tags": ["$KEY:$VALUE"], "host_tags": ["$KEY:$VALUE"], "metrics_collection_enabled": false, "resource_collection_enabled": true, "role_name": "DatadogAWSIntegrationRole"}
+    And body with value {"account_id": "{{ timestamp("now") }}00", "account_specific_namespace_rules": {"auto_scaling": false}, "cspm_resource_collection_enabled": true, "excluded_regions": ["us-east-1", "us-west-2"], "extended_resource_collection_enabled": true, "filter_tags": ["$KEY:$VALUE"], "host_tags": ["$KEY:$VALUE"], "metrics_collection_enabled": false, "role_name": "DatadogAWSIntegrationRole"}
     When the request is sent
     Then the response status is 200 OK
 
@@ -97,14 +97,14 @@ Feature: AWS Integration
   @generated @skip @team:DataDog/cloud-integrations
   Scenario: Generate a new external ID returns "Bad Request" response
     Given new "CreateNewAWSExternalID" request
-    And body with value {"account_id": "123456789012", "account_specific_namespace_rules": {"auto_scaling": false, "opswork": false}, "cspm_resource_collection_enabled": true, "excluded_regions": ["us-east-1", "us-west-2"], "filter_tags": ["$KEY:$VALUE"], "host_tags": ["$KEY:$VALUE"], "metrics_collection_enabled": false, "resource_collection_enabled": true, "role_name": "DatadogAWSIntegrationRole"}
+    And body with value {"account_id": "123456789012", "account_specific_namespace_rules": {"auto_scaling": false, "opswork": false}, "cspm_resource_collection_enabled": true, "excluded_regions": ["us-east-1", "us-west-2"], "extended_resource_collection_enabled": true, "filter_tags": ["$KEY:$VALUE"], "host_tags": ["$KEY:$VALUE"], "metrics_collection_enabled": false, "resource_collection_enabled": true, "role_name": "DatadogAWSIntegrationRole"}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/cloud-integrations
   Scenario: Generate a new external ID returns "OK" response
     Given new "CreateNewAWSExternalID" request
-    And body with value {"account_id": "123456789012", "account_specific_namespace_rules": {"auto_scaling": false, "opswork": false}, "cspm_resource_collection_enabled": true, "excluded_regions": ["us-east-1", "us-west-2"], "filter_tags": ["$KEY:$VALUE"], "host_tags": ["$KEY:$VALUE"], "metrics_collection_enabled": false, "resource_collection_enabled": true, "role_name": "DatadogAWSIntegrationRole"}
+    And body with value {"account_id": "123456789012", "account_specific_namespace_rules": {"auto_scaling": false, "opswork": false}, "cspm_resource_collection_enabled": true, "excluded_regions": ["us-east-1", "us-west-2"], "extended_resource_collection_enabled": true, "filter_tags": ["$KEY:$VALUE"], "host_tags": ["$KEY:$VALUE"], "metrics_collection_enabled": false, "resource_collection_enabled": true, "role_name": "DatadogAWSIntegrationRole"}
     When the request is sent
     Then the response status is 200 OK
 
@@ -169,14 +169,14 @@ Feature: AWS Integration
   @generated @skip @team:DataDog/cloud-integrations
   Scenario: Update an AWS integration returns "Bad Request" response
     Given new "UpdateAWSAccount" request
-    And body with value {"account_id": "123456789012", "account_specific_namespace_rules": {"auto_scaling": false, "opswork": false}, "cspm_resource_collection_enabled": true, "excluded_regions": ["us-east-1", "us-west-2"], "filter_tags": ["$KEY:$VALUE"], "host_tags": ["$KEY:$VALUE"], "metrics_collection_enabled": false, "resource_collection_enabled": true, "role_name": "DatadogAWSIntegrationRole"}
+    And body with value {"account_id": "123456789012", "account_specific_namespace_rules": {"auto_scaling": false, "opswork": false}, "cspm_resource_collection_enabled": true, "excluded_regions": ["us-east-1", "us-west-2"], "extended_resource_collection_enabled": true, "filter_tags": ["$KEY:$VALUE"], "host_tags": ["$KEY:$VALUE"], "metrics_collection_enabled": false, "resource_collection_enabled": true, "role_name": "DatadogAWSIntegrationRole"}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/cloud-integrations
   Scenario: Update an AWS integration returns "Conflict Error" response
     Given new "UpdateAWSAccount" request
-    And body with value {"account_id": "123456789012", "account_specific_namespace_rules": {"auto_scaling": false, "opswork": false}, "cspm_resource_collection_enabled": true, "excluded_regions": ["us-east-1", "us-west-2"], "filter_tags": ["$KEY:$VALUE"], "host_tags": ["$KEY:$VALUE"], "metrics_collection_enabled": false, "resource_collection_enabled": true, "role_name": "DatadogAWSIntegrationRole"}
+    And body with value {"account_id": "123456789012", "account_specific_namespace_rules": {"auto_scaling": false, "opswork": false}, "cspm_resource_collection_enabled": true, "excluded_regions": ["us-east-1", "us-west-2"], "extended_resource_collection_enabled": true, "filter_tags": ["$KEY:$VALUE"], "host_tags": ["$KEY:$VALUE"], "metrics_collection_enabled": false, "resource_collection_enabled": true, "role_name": "DatadogAWSIntegrationRole"}
     When the request is sent
     Then the response status is 409 Conflict Error
 
@@ -184,7 +184,7 @@ Feature: AWS Integration
   Scenario: Update an AWS integration returns "OK" response
     Given there is a valid "aws_account" in the system
     And new "UpdateAWSAccount" request
-    And body with value {"account_id": "{{ timestamp("now") }}00", "account_specific_namespace_rules": {"auto_scaling": false}, "cspm_resource_collection_enabled": false, "excluded_regions": ["us-east-1", "us-west-2"], "filter_tags": ["$KEY:$VALUE"], "host_tags": ["$KEY:$VALUE"], "metrics_collection_enabled": true, "resource_collection_enabled": true, "role_name": "DatadogAWSIntegrationRole"}
+    And body with value {"account_id": "{{ timestamp("now") }}00", "account_specific_namespace_rules": {"auto_scaling": false}, "cspm_resource_collection_enabled": false, "excluded_regions": ["us-east-1", "us-west-2"], "extended_resource_collection_enabled": true, "filter_tags": ["$KEY:$VALUE"], "host_tags": ["$KEY:$VALUE"], "metrics_collection_enabled": true, "role_name": "DatadogAWSIntegrationRole"}
     And request contains "account_id" parameter with value "{{ timestamp("now") }}00"
     And request contains "role_name" parameter with value "DatadogAWSIntegrationRole"
     When the request is sent

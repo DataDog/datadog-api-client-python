@@ -1,7 +1,7 @@
 interactions:
 - request:
     body: '{"data":{"attributes":{"description":"My Agent rule","enabled":true,"expression":"exec.file.name
-      == \"sh\"","name":"testgetacsmthreatsagentrulereturnsokresponse1709907549"},"type":"agent_rule"}}'
+      == \"sh\"","name":"testgetacsmthreatsagentrulereturnsokresponse1713895067"},"type":"agent_rule"}}'
     headers:
       accept:
       - application/json
@@ -11,11 +11,10 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules
   response:
     body:
-      string: '{"data":{"id":"hod-pqw-spq","type":"agent_rule","attributes":{"category":"Process
-        Activity","creationDate":1709907549922,"creator":{"name":"Malo Le Goff","handle":"malo.legoff@datadoghq.com"},"defaultRule":false,"description":"My
+      string: '{"data":{"id":"6wy-t98-466","type":"agent_rule","attributes":{"category":"Process
+        Activity","creationDate":1713895067605,"creator":{"name":"","handle":"frog@datadoghq.com"},"defaultRule":false,"description":"My
         Agent rule","enabled":true,"expression":"exec.file.name == \"sh\"","filters":["os
-        == \"linux\""],"name":"testgetacsmthreatsagentrulereturnsokresponse1709907549","updateDate":1709907549922,"updater":{"name":"Malo
-        Le Goff","handle":"malo.legoff@datadoghq.com"}}}}'
+        == \"linux\""],"name":"testgetacsmthreatsagentrulereturnsokresponse1713895067","updateDate":1713895067605,"updater":{"name":"","handle":"frog@datadoghq.com"}}}}'
     headers:
       content-type:
       - application/json
@@ -28,14 +27,13 @@ interactions:
       accept:
       - application/json
     method: GET
-    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules/hod-pqw-spq
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules/6wy-t98-466
   response:
     body:
-      string: '{"data":{"id":"hod-pqw-spq","type":"agent_rule","attributes":{"category":"Process
-        Activity","creationDate":1709907549000,"creator":{"name":"Malo Le Goff","handle":"malo.legoff@datadoghq.com"},"defaultRule":false,"description":"My
+      string: '{"data":{"id":"6wy-t98-466","type":"agent_rule","attributes":{"category":"Process
+        Activity","creationDate":1713895067000,"creator":{"name":"","handle":"frog@datadoghq.com"},"defaultRule":false,"description":"My
         Agent rule","enabled":true,"expression":"exec.file.name == \"sh\"","filters":["os
-        == \"linux\""],"name":"testgetacsmthreatsagentrulereturnsokresponse1709907549","updateDate":1709907549000,"updater":{"name":"Malo
-        Le Goff","handle":"malo.legoff@datadoghq.com"}}}}'
+        == \"linux\""],"name":"testgetacsmthreatsagentrulereturnsokresponse1713895067","updateDate":1713895067000,"updater":{"name":"","handle":"frog@datadoghq.com"}}}}'
     headers:
       content-type:
       - application/json
@@ -48,7 +46,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules/hod-pqw-spq
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules/6wy-t98-466
   response:
     body:
       string: ''

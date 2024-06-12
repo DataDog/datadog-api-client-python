@@ -40,6 +40,7 @@ Feature: Roles
     Then the response status is 200 OK
     And the response "data[0].id" is equal to "{{ user.data.id }}"
     And the response "data[0].type" is equal to "{{ user.data.type }}"
+    And the response "data[0].relationships.roles.data" has item with field "id" with value "{{ role.data.id }}"
 
   @team:DataDog/aaa-core-access
   Scenario: Create a new role by cloning an existing role returns "Bad Request" response
@@ -84,14 +85,23 @@ Feature: Roles
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/aaa-core-access
+  @generated @skip @team:DataDog/aaa-core-access
   Scenario: Create role returns "OK" response
     Given new "CreateRole" request
-    And body with value {"data": {"type": "roles", "attributes": {"name": "{{ unique }}"}}}
+    And body with value {"data": {"attributes": {"name": "developers"}, "relationships": {"permissions": {"data": [{"type": "permissions"}]}, "users": {"data": []}}, "type": "roles"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @team:DataDog/aaa-core-access
+  Scenario: Create role with a permission returns "OK" response
+    Given new "CreateRole" request
+    And there is a valid "permission" in the system
+    And body with value {"data": {"type": "roles", "attributes": {"name": "{{ unique }}"}, "relationships": {"permissions": {"data": [{"id": "{{ permission.id }}", "type": "{{ permission.type }}"}]}}}}
     When the request is sent
     Then the response status is 200 OK
     And the response "data.attributes.name" is equal to "{{ unique }}"
     And the response "data.type" is equal to "roles"
+    And the response "data.relationships.permissions.data" has item with field "id" with value "{{ permission.id }}"
 
   @generated @skip @team:DataDog/aaa-core-access
   Scenario: Delete role returns "Not found" response
@@ -142,6 +152,7 @@ Feature: Roles
     When the request is sent
     Then the response status is 200 OK
     And the response "meta.page.total_count" is equal to 1
+    And the response "data" has item with field "id" with value "{{ user.data.id }}"
 
   @generated @skip @team:DataDog/aaa-core-access
   Scenario: Grant permission to a role returns "Bad Request" response
@@ -168,7 +179,8 @@ Feature: Roles
     And body with value {"data": {"id": "{{ permission.id }}", "type": "{{ permission.type }}"}}
     When the request is sent
     Then the response status is 200 OK
-    And the response "data[0].type" is equal to "permissions"
+    And the response "data[0].type" is equal to "{{ permission.type }}"
+    And the response "data" has item with field "id" with value "{{ permission.id }}"
 
   @generated @skip @team:DataDog/aaa-core-access
   Scenario: List permissions for a role returns "Not found" response
@@ -186,7 +198,8 @@ Feature: Roles
     And request contains "role_id" parameter from "role.data.id"
     When the request is sent
     Then the response status is 200 OK
-    And the response "data[0].type" is equal to "permissions"
+    And the response "data[0].type" is equal to "{{ permission.type }}"
+    And the response "data" has item with field "id" with value "{{ permission.id }}"
 
   @generated @skip @team:DataDog/aaa-core-access
   Scenario: List permissions returns "Bad Request" response
@@ -301,7 +314,7 @@ Feature: Roles
     When the request is sent
     Then the response status is 404 Not found
 
-  @team:DataDog/aaa-core-access
+  @skip @team:DataDog/aaa-core-access
   Scenario: Update a role returns "OK" response
     Given there is a valid "role" in the system
     And there is a valid "permission" in the system

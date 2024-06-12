@@ -1,7 +1,7 @@
 interactions:
 - request:
     body: '{"data":{"attributes":{"description":"My Agent rule","enabled":true,"expression":"exec.file.name
-      == \"sh\"","name":"testupdateacloudworkloadsecurityagentrulereturnsokresponse1709907561"},"type":"agent_rule"}}'
+      == \"sh\"","name":"testupdateacloudworkloadsecurityagentrulereturnsokresponse1716925090"},"type":"agent_rule"}}'
     headers:
       accept:
       - application/json
@@ -11,11 +11,11 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/security_monitoring/cloud_workload_security/agent_rules
   response:
     body:
-      string: '{"data":{"id":"usl-wf5-qjp","attributes":{"version":1,"name":"testupdateacloudworkloadsecurityagentrulereturnsokresponse1709907561","description":"My
-        Agent rule","expression":"exec.file.name == \"sh\"","category":"Process Activity","creationAuthorUuId":"cc32ddea-b5e4-11ec-93be-da7ad0900002","creationDate":1709907562158,"updateAuthorUuId":"cc32ddea-b5e4-11ec-93be-da7ad0900002","updateDate":1709907562158,"filters":["os
-        == \"linux\""],"actions":[],"agentConstraint":"","enabled":true,"defaultRule":false,"creator":{"name":"Malo
-        Le Goff","handle":"malo.legoff@datadoghq.com"},"updater":{"name":"Malo Le
-        Goff","handle":"malo.legoff@datadoghq.com"}},"type":"agent_rule"}}
+      string: '{"data":{"id":"wmz-xld-san","attributes":{"version":1,"name":"testupdateacloudworkloadsecurityagentrulereturnsokresponse1716925090","description":"My
+        Agent rule","expression":"exec.file.name == \"sh\"","category":"Process Activity","creationAuthorUuId":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","creationDate":1716925090332,"updateAuthorUuId":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","updateDate":1716925090332,"filters":["os
+        == \"linux\""],"actions":[],"agentConstraint":"","enabled":true,"defaultRule":false,"creator":{"name":"CI
+        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"updater":{"name":"CI
+        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"}},"type":"agent_rule"}}
 
         '
     headers:
@@ -26,21 +26,21 @@ interactions:
       message: OK
 - request:
     body: '{"data":{"attributes":{"description":"Test Agent rule","enabled":true,"expression":"exec.file.name
-      == \"sh\""},"type":"agent_rule"}}'
+      == \"sh\""},"id":"wmz-xld-san","type":"agent_rule"}}'
     headers:
       accept:
       - application/json
       content-type:
       - application/json
     method: PATCH
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/cloud_workload_security/agent_rules/usl-wf5-qjp
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/cloud_workload_security/agent_rules/wmz-xld-san
   response:
     body:
-      string: '{"data":{"id":"usl-wf5-qjp","attributes":{"version":2,"name":"testupdateacloudworkloadsecurityagentrulereturnsokresponse1709907561","description":"Test
-        Agent rule","expression":"exec.file.name == \"sh\"","category":"Process Activity","creationAuthorUuId":"cc32ddea-b5e4-11ec-93be-da7ad0900002","creationDate":1709907562158,"updateAuthorUuId":"cc32ddea-b5e4-11ec-93be-da7ad0900002","updateDate":1709907562613,"filters":["os
-        == \"linux\""],"actions":[],"agentConstraint":"","enabled":true,"defaultRule":false,"creator":{"name":"Malo
-        Le Goff","handle":"malo.legoff@datadoghq.com"},"updater":{"name":"Malo Le
-        Goff","handle":"malo.legoff@datadoghq.com"}},"type":"agent_rule"}}
+      string: '{"data":{"id":"wmz-xld-san","attributes":{"version":2,"name":"testupdateacloudworkloadsecurityagentrulereturnsokresponse1716925090","description":"Test
+        Agent rule","expression":"exec.file.name == \"sh\"","category":"Process Activity","creationAuthorUuId":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","creationDate":1716925090332,"updateAuthorUuId":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","updateDate":1716925090525,"filters":["os
+        == \"linux\""],"actions":[],"agentConstraint":"","enabled":true,"defaultRule":false,"creator":{"name":"CI
+        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"updater":{"name":"CI
+        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"}},"type":"agent_rule"}}
 
         '
     headers:
@@ -55,7 +55,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/cloud_workload_security/agent_rules/usl-wf5-qjp
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/cloud_workload_security/agent_rules/wmz-xld-san
   response:
     body:
       string: ''

@@ -22,6 +22,7 @@ from datadog_api_client.v1.model.formula_and_function_event_query_group_by_sort 
 )
 from datadog_api_client.v1.model.formula_and_function_events_data_source import FormulaAndFunctionEventsDataSource
 from datadog_api_client.v1.model.formula_and_function_response_format import FormulaAndFunctionResponseFormat
+from datadog_api_client.v1.model.formula_type import FormulaType
 from datadog_api_client.v1.model.geomap_widget_definition import GeomapWidgetDefinition
 from datadog_api_client.v1.model.geomap_widget_definition_style import GeomapWidgetDefinitionStyle
 from datadog_api_client.v1.model.geomap_widget_definition_type import GeomapWidgetDefinitionType
@@ -30,8 +31,10 @@ from datadog_api_client.v1.model.geomap_widget_request import GeomapWidgetReques
 from datadog_api_client.v1.model.query_sort_order import QuerySortOrder
 from datadog_api_client.v1.model.widget import Widget
 from datadog_api_client.v1.model.widget_formula import WidgetFormula
-from datadog_api_client.v1.model.widget_formula_limit import WidgetFormulaLimit
+from datadog_api_client.v1.model.widget_formula_sort import WidgetFormulaSort
 from datadog_api_client.v1.model.widget_layout import WidgetLayout
+from datadog_api_client.v1.model.widget_sort import WidgetSort
+from datadog_api_client.v1.model.widget_sort_by import WidgetSortBy
 from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
 from datadog_api_client.v1.model.widget_time import WidgetTime
 
@@ -57,10 +60,6 @@ body = Dashboard(
                         formulas=[
                             WidgetFormula(
                                 formula="query1",
-                                limit=WidgetFormulaLimit(
-                                    count=250,
-                                    order=QuerySortOrder.DESC,
-                                ),
                             ),
                         ],
                         queries=[
@@ -88,6 +87,16 @@ body = Dashboard(
                                 ],
                             ),
                         ],
+                        sort=WidgetSortBy(
+                            count=250,
+                            order_by=[
+                                WidgetFormulaSort(
+                                    type=FormulaType.FORMULA,
+                                    index=0,
+                                    order=WidgetSort.DESCENDING,
+                                ),
+                            ],
+                        ),
                         response_format=FormulaAndFunctionResponseFormat.SCALAR,
                     ),
                 ],

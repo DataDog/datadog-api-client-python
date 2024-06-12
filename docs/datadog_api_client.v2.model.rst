@@ -379,6 +379,20 @@ authn\_mapping\_included
    :members:
    :show-inheritance:
 
+authn\_mapping\_relationship\_to\_role
+--------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.authn_mapping_relationship_to_role
+   :members:
+   :show-inheritance:
+
+authn\_mapping\_relationship\_to\_team
+--------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.authn_mapping_relationship_to_team
+   :members:
+   :show-inheritance:
+
 authn\_mapping\_relationships
 -----------------------------
 
@@ -390,6 +404,20 @@ authn\_mapping\_response
 ------------------------
 
 .. automodule:: datadog_api_client.v2.model.authn_mapping_response
+   :members:
+   :show-inheritance:
+
+authn\_mapping\_team
+--------------------
+
+.. automodule:: datadog_api_client.v2.model.authn_mapping_team
+   :members:
+   :show-inheritance:
+
+authn\_mapping\_team\_attributes
+--------------------------------
+
+.. automodule:: datadog_api_client.v2.model.authn_mapping_team_attributes
    :members:
    :show-inheritance:
 
@@ -1454,6 +1482,13 @@ cloud\_configuration\_rule\_options
 -----------------------------------
 
 .. automodule:: datadog_api_client.v2.model.cloud_configuration_rule_options
+   :members:
+   :show-inheritance:
+
+cloud\_configuration\_rule\_payload
+-----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cloud_configuration_rule_payload
    :members:
    :show-inheritance:
 
@@ -4446,6 +4481,34 @@ jsonapi\_error\_response
    :members:
    :show-inheritance:
 
+list\_ap\_is\_response
+----------------------
+
+.. automodule:: datadog_api_client.v2.model.list_ap_is_response
+   :members:
+   :show-inheritance:
+
+list\_ap\_is\_response\_data
+----------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_ap_is_response_data
+   :members:
+   :show-inheritance:
+
+list\_ap\_is\_response\_meta
+----------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_ap_is_response_meta
+   :members:
+   :show-inheritance:
+
+list\_ap\_is\_response\_meta\_pagination
+----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_ap_is_response_meta_pagination
+   :members:
+   :show-inheritance:
+
 list\_application\_keys\_response
 ---------------------------------
 
@@ -6707,6 +6770,20 @@ relationship\_to\_saml\_assertion\_attribute\_data
    :members:
    :show-inheritance:
 
+relationship\_to\_team
+----------------------
+
+.. automodule:: datadog_api_client.v2.model.relationship_to_team
+   :members:
+   :show-inheritance:
+
+relationship\_to\_team\_data
+----------------------------
+
+.. automodule:: datadog_api_client.v2.model.relationship_to_team_data
+   :members:
+   :show-inheritance:
+
 relationship\_to\_team\_link\_data
 ----------------------------------
 
@@ -6896,6 +6973,13 @@ retention\_filter\_create\_request
    :members:
    :show-inheritance:
 
+retention\_filter\_create\_response
+-----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.retention_filter_create_response
+   :members:
+   :show-inheritance:
+
 retention\_filter\_response
 ---------------------------
 
@@ -6907,6 +6991,13 @@ retention\_filter\_type
 -----------------------
 
 .. automodule:: datadog_api_client.v2.model.retention_filter_type
+   :members:
+   :show-inheritance:
+
+retention\_filter\_update\_attributes
+-------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.retention_filter_update_attributes
    :members:
    :show-inheritance:
 
@@ -7806,6 +7897,20 @@ security\_monitoring\_rule\_query\_aggregation
    :members:
    :show-inheritance:
 
+security\_monitoring\_rule\_query\_payload
+------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_rule_query_payload
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_rule\_query\_payload\_data
+------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_rule_query_payload_data
+   :members:
+   :show-inheritance:
+
 security\_monitoring\_rule\_response
 ------------------------------------
 
@@ -7817,6 +7922,27 @@ security\_monitoring\_rule\_severity
 ------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.security_monitoring_rule_severity
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_rule\_test\_payload
+-----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_rule_test_payload
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_rule\_test\_request
+-----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_rule_test_request
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_rule\_test\_response
+------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_rule_test_response
    :members:
    :show-inheritance:
 
@@ -7841,10 +7967,24 @@ security\_monitoring\_rule\_type\_read
    :members:
    :show-inheritance:
 
+security\_monitoring\_rule\_type\_test
+--------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_rule_type_test
+   :members:
+   :show-inheritance:
+
 security\_monitoring\_rule\_update\_payload
 -------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.security_monitoring_rule_update_payload
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_rule\_validate\_payload
+---------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_rule_validate_payload
    :members:
    :show-inheritance:
 
@@ -7957,6 +8097,13 @@ security\_monitoring\_signal\_rule\_create\_payload
 ---------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.security_monitoring_signal_rule_create_payload
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_signal\_rule\_payload
+-------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_signal_rule_payload
    :members:
    :show-inheritance:
 
@@ -8086,6 +8233,13 @@ security\_monitoring\_standard\_rule\_create\_payload
    :members:
    :show-inheritance:
 
+security\_monitoring\_standard\_rule\_payload
+---------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_standard_rule_payload
+   :members:
+   :show-inheritance:
+
 security\_monitoring\_standard\_rule\_query
 -------------------------------------------
 
@@ -8097,6 +8251,13 @@ security\_monitoring\_standard\_rule\_response
 ----------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.security_monitoring_standard_rule_response
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_standard\_rule\_test\_payload
+---------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_standard_rule_test_payload
    :members:
    :show-inheritance:
 
@@ -9035,6 +9196,76 @@ slack\_integration\_metadata\_channel\_item
 -------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.slack_integration_metadata_channel_item
+   :members:
+   :show-inheritance:
+
+slo\_report\_create\_request
+----------------------------
+
+.. automodule:: datadog_api_client.v2.model.slo_report_create_request
+   :members:
+   :show-inheritance:
+
+slo\_report\_create\_request\_attributes
+----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.slo_report_create_request_attributes
+   :members:
+   :show-inheritance:
+
+slo\_report\_create\_request\_data
+----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.slo_report_create_request_data
+   :members:
+   :show-inheritance:
+
+slo\_report\_interval
+---------------------
+
+.. automodule:: datadog_api_client.v2.model.slo_report_interval
+   :members:
+   :show-inheritance:
+
+slo\_report\_post\_response
+---------------------------
+
+.. automodule:: datadog_api_client.v2.model.slo_report_post_response
+   :members:
+   :show-inheritance:
+
+slo\_report\_post\_response\_data
+---------------------------------
+
+.. automodule:: datadog_api_client.v2.model.slo_report_post_response_data
+   :members:
+   :show-inheritance:
+
+slo\_report\_status
+-------------------
+
+.. automodule:: datadog_api_client.v2.model.slo_report_status
+   :members:
+   :show-inheritance:
+
+slo\_report\_status\_get\_response
+----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.slo_report_status_get_response
+   :members:
+   :show-inheritance:
+
+slo\_report\_status\_get\_response\_attributes
+----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.slo_report_status_get_response_attributes
+   :members:
+   :show-inheritance:
+
+slo\_report\_status\_get\_response\_data
+----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.slo_report_status_get_response_data
    :members:
    :show-inheritance:
 

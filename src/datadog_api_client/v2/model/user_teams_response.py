@@ -19,6 +19,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.teams_response_links import TeamsResponseLinks
     from datadog_api_client.v2.model.teams_response_meta import TeamsResponseMeta
     from datadog_api_client.v2.model.user import User
+    from datadog_api_client.v2.model.team import Team
 
 
 class UserTeamsResponse(ModelNormal):
@@ -46,7 +47,7 @@ class UserTeamsResponse(ModelNormal):
     def __init__(
         self_,
         data: Union[List[UserTeam], UnsetType] = unset,
-        included: Union[List[Union[UserTeamIncluded, User]], UnsetType] = unset,
+        included: Union[List[Union[UserTeamIncluded, User, Team]], UnsetType] = unset,
         links: Union[TeamsResponseLinks, UnsetType] = unset,
         meta: Union[TeamsResponseMeta, UnsetType] = unset,
         **kwargs,

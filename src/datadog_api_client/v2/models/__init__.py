@@ -56,8 +56,12 @@ from datadog_api_client.v2.model.authn_mapping_create_data import AuthNMappingCr
 from datadog_api_client.v2.model.authn_mapping_create_relationships import AuthNMappingCreateRelationships
 from datadog_api_client.v2.model.authn_mapping_create_request import AuthNMappingCreateRequest
 from datadog_api_client.v2.model.authn_mapping_included import AuthNMappingIncluded
+from datadog_api_client.v2.model.authn_mapping_relationship_to_role import AuthNMappingRelationshipToRole
+from datadog_api_client.v2.model.authn_mapping_relationship_to_team import AuthNMappingRelationshipToTeam
 from datadog_api_client.v2.model.authn_mapping_relationships import AuthNMappingRelationships
 from datadog_api_client.v2.model.authn_mapping_response import AuthNMappingResponse
+from datadog_api_client.v2.model.authn_mapping_team import AuthNMappingTeam
+from datadog_api_client.v2.model.authn_mapping_team_attributes import AuthNMappingTeamAttributes
 from datadog_api_client.v2.model.authn_mapping_update_attributes import AuthNMappingUpdateAttributes
 from datadog_api_client.v2.model.authn_mapping_update_data import AuthNMappingUpdateData
 from datadog_api_client.v2.model.authn_mapping_update_relationships import AuthNMappingUpdateRelationships
@@ -222,6 +226,7 @@ from datadog_api_client.v2.model.cloud_configuration_rule_compliance_signal_opti
 )
 from datadog_api_client.v2.model.cloud_configuration_rule_create_payload import CloudConfigurationRuleCreatePayload
 from datadog_api_client.v2.model.cloud_configuration_rule_options import CloudConfigurationRuleOptions
+from datadog_api_client.v2.model.cloud_configuration_rule_payload import CloudConfigurationRulePayload
 from datadog_api_client.v2.model.cloud_configuration_rule_type import CloudConfigurationRuleType
 from datadog_api_client.v2.model.cloud_cost_activity import CloudCostActivity
 from datadog_api_client.v2.model.cloud_cost_activity_attributes import CloudCostActivityAttributes
@@ -781,6 +786,10 @@ from datadog_api_client.v2.model.jira_integration_metadata import JiraIntegratio
 from datadog_api_client.v2.model.jira_integration_metadata_issues_item import JiraIntegrationMetadataIssuesItem
 from datadog_api_client.v2.model.jira_issue import JiraIssue
 from datadog_api_client.v2.model.jira_issue_result import JiraIssueResult
+from datadog_api_client.v2.model.list_ap_is_response import ListAPIsResponse
+from datadog_api_client.v2.model.list_ap_is_response_data import ListAPIsResponseData
+from datadog_api_client.v2.model.list_ap_is_response_meta import ListAPIsResponseMeta
+from datadog_api_client.v2.model.list_ap_is_response_meta_pagination import ListAPIsResponseMetaPagination
 from datadog_api_client.v2.model.list_application_keys_response import ListApplicationKeysResponse
 from datadog_api_client.v2.model.list_downtimes_response import ListDowntimesResponse
 from datadog_api_client.v2.model.list_findings_meta import ListFindingsMeta
@@ -1187,6 +1196,8 @@ from datadog_api_client.v2.model.relationship_to_saml_assertion_attribute import
 from datadog_api_client.v2.model.relationship_to_saml_assertion_attribute_data import (
     RelationshipToSAMLAssertionAttributeData,
 )
+from datadog_api_client.v2.model.relationship_to_team import RelationshipToTeam
+from datadog_api_client.v2.model.relationship_to_team_data import RelationshipToTeamData
 from datadog_api_client.v2.model.relationship_to_team_link_data import RelationshipToTeamLinkData
 from datadog_api_client.v2.model.relationship_to_team_links import RelationshipToTeamLinks
 from datadog_api_client.v2.model.relationship_to_user import RelationshipToUser
@@ -1214,8 +1225,10 @@ from datadog_api_client.v2.model.retention_filter_attributes import RetentionFil
 from datadog_api_client.v2.model.retention_filter_create_attributes import RetentionFilterCreateAttributes
 from datadog_api_client.v2.model.retention_filter_create_data import RetentionFilterCreateData
 from datadog_api_client.v2.model.retention_filter_create_request import RetentionFilterCreateRequest
+from datadog_api_client.v2.model.retention_filter_create_response import RetentionFilterCreateResponse
 from datadog_api_client.v2.model.retention_filter_response import RetentionFilterResponse
 from datadog_api_client.v2.model.retention_filter_type import RetentionFilterType
+from datadog_api_client.v2.model.retention_filter_update_attributes import RetentionFilterUpdateAttributes
 from datadog_api_client.v2.model.retention_filter_update_data import RetentionFilterUpdateData
 from datadog_api_client.v2.model.retention_filter_update_request import RetentionFilterUpdateRequest
 from datadog_api_client.v2.model.retention_filter_without_attributes import RetentionFilterWithoutAttributes
@@ -1247,6 +1260,13 @@ from datadog_api_client.v2.model.rule_type import RuleType
 from datadog_api_client.v2.model.saml_assertion_attribute import SAMLAssertionAttribute
 from datadog_api_client.v2.model.saml_assertion_attribute_attributes import SAMLAssertionAttributeAttributes
 from datadog_api_client.v2.model.saml_assertion_attributes_type import SAMLAssertionAttributesType
+from datadog_api_client.v2.model.slo_report_interval import SLOReportInterval
+from datadog_api_client.v2.model.slo_report_post_response import SLOReportPostResponse
+from datadog_api_client.v2.model.slo_report_post_response_data import SLOReportPostResponseData
+from datadog_api_client.v2.model.slo_report_status import SLOReportStatus
+from datadog_api_client.v2.model.slo_report_status_get_response import SLOReportStatusGetResponse
+from datadog_api_client.v2.model.slo_report_status_get_response_attributes import SLOReportStatusGetResponseAttributes
+from datadog_api_client.v2.model.slo_report_status_get_response_data import SLOReportStatusGetResponseData
 from datadog_api_client.v2.model.scalar_column import ScalarColumn
 from datadog_api_client.v2.model.scalar_column_type_group import ScalarColumnTypeGroup
 from datadog_api_client.v2.model.scalar_column_type_number import ScalarColumnTypeNumber
@@ -1315,14 +1335,23 @@ from datadog_api_client.v2.model.security_monitoring_rule_query import SecurityM
 from datadog_api_client.v2.model.security_monitoring_rule_query_aggregation import (
     SecurityMonitoringRuleQueryAggregation,
 )
+from datadog_api_client.v2.model.security_monitoring_rule_query_payload import SecurityMonitoringRuleQueryPayload
+from datadog_api_client.v2.model.security_monitoring_rule_query_payload_data import (
+    SecurityMonitoringRuleQueryPayloadData,
+)
 from datadog_api_client.v2.model.security_monitoring_rule_response import SecurityMonitoringRuleResponse
 from datadog_api_client.v2.model.security_monitoring_rule_severity import SecurityMonitoringRuleSeverity
+from datadog_api_client.v2.model.security_monitoring_rule_test_payload import SecurityMonitoringRuleTestPayload
+from datadog_api_client.v2.model.security_monitoring_rule_test_request import SecurityMonitoringRuleTestRequest
+from datadog_api_client.v2.model.security_monitoring_rule_test_response import SecurityMonitoringRuleTestResponse
 from datadog_api_client.v2.model.security_monitoring_rule_third_party_options import (
     SecurityMonitoringRuleThirdPartyOptions,
 )
 from datadog_api_client.v2.model.security_monitoring_rule_type_create import SecurityMonitoringRuleTypeCreate
 from datadog_api_client.v2.model.security_monitoring_rule_type_read import SecurityMonitoringRuleTypeRead
+from datadog_api_client.v2.model.security_monitoring_rule_type_test import SecurityMonitoringRuleTypeTest
 from datadog_api_client.v2.model.security_monitoring_rule_update_payload import SecurityMonitoringRuleUpdatePayload
+from datadog_api_client.v2.model.security_monitoring_rule_validate_payload import SecurityMonitoringRuleValidatePayload
 from datadog_api_client.v2.model.security_monitoring_signal import SecurityMonitoringSignal
 from datadog_api_client.v2.model.security_monitoring_signal_archive_reason import SecurityMonitoringSignalArchiveReason
 from datadog_api_client.v2.model.security_monitoring_signal_assignee_update_attributes import (
@@ -1357,6 +1386,7 @@ from datadog_api_client.v2.model.security_monitoring_signal_response import Secu
 from datadog_api_client.v2.model.security_monitoring_signal_rule_create_payload import (
     SecurityMonitoringSignalRuleCreatePayload,
 )
+from datadog_api_client.v2.model.security_monitoring_signal_rule_payload import SecurityMonitoringSignalRulePayload
 from datadog_api_client.v2.model.security_monitoring_signal_rule_query import SecurityMonitoringSignalRuleQuery
 from datadog_api_client.v2.model.security_monitoring_signal_rule_response import SecurityMonitoringSignalRuleResponse
 from datadog_api_client.v2.model.security_monitoring_signal_rule_response_query import (
@@ -1397,9 +1427,13 @@ from datadog_api_client.v2.model.security_monitoring_signals_sort import Securit
 from datadog_api_client.v2.model.security_monitoring_standard_rule_create_payload import (
     SecurityMonitoringStandardRuleCreatePayload,
 )
+from datadog_api_client.v2.model.security_monitoring_standard_rule_payload import SecurityMonitoringStandardRulePayload
 from datadog_api_client.v2.model.security_monitoring_standard_rule_query import SecurityMonitoringStandardRuleQuery
 from datadog_api_client.v2.model.security_monitoring_standard_rule_response import (
     SecurityMonitoringStandardRuleResponse,
+)
+from datadog_api_client.v2.model.security_monitoring_standard_rule_test_payload import (
+    SecurityMonitoringStandardRuleTestPayload,
 )
 from datadog_api_client.v2.model.security_monitoring_suppression import SecurityMonitoringSuppression
 from datadog_api_client.v2.model.security_monitoring_suppression_attributes import (
@@ -1601,6 +1635,9 @@ from datadog_api_client.v2.model.service_now_ticket import ServiceNowTicket
 from datadog_api_client.v2.model.service_now_ticket_result import ServiceNowTicketResult
 from datadog_api_client.v2.model.slack_integration_metadata import SlackIntegrationMetadata
 from datadog_api_client.v2.model.slack_integration_metadata_channel_item import SlackIntegrationMetadataChannelItem
+from datadog_api_client.v2.model.slo_report_create_request import SloReportCreateRequest
+from datadog_api_client.v2.model.slo_report_create_request_attributes import SloReportCreateRequestAttributes
+from datadog_api_client.v2.model.slo_report_create_request_data import SloReportCreateRequestData
 from datadog_api_client.v2.model.sort_direction import SortDirection
 from datadog_api_client.v2.model.span import Span
 from datadog_api_client.v2.model.spans_aggregate_bucket import SpansAggregateBucket
@@ -1834,8 +1871,12 @@ __all__ = [
     "AuthNMappingCreateRelationships",
     "AuthNMappingCreateRequest",
     "AuthNMappingIncluded",
+    "AuthNMappingRelationshipToRole",
+    "AuthNMappingRelationshipToTeam",
     "AuthNMappingRelationships",
     "AuthNMappingResponse",
+    "AuthNMappingTeam",
+    "AuthNMappingTeamAttributes",
     "AuthNMappingUpdateAttributes",
     "AuthNMappingUpdateData",
     "AuthNMappingUpdateRelationships",
@@ -1984,6 +2025,7 @@ __all__ = [
     "CloudConfigurationRuleComplianceSignalOptions",
     "CloudConfigurationRuleCreatePayload",
     "CloudConfigurationRuleOptions",
+    "CloudConfigurationRulePayload",
     "CloudConfigurationRuleType",
     "CloudCostActivity",
     "CloudCostActivityAttributes",
@@ -2411,6 +2453,10 @@ __all__ = [
     "JiraIntegrationMetadataIssuesItem",
     "JiraIssue",
     "JiraIssueResult",
+    "ListAPIsResponse",
+    "ListAPIsResponseData",
+    "ListAPIsResponseMeta",
+    "ListAPIsResponseMetaPagination",
     "ListApplicationKeysResponse",
     "ListDowntimesResponse",
     "ListFindingsMeta",
@@ -2781,6 +2827,8 @@ __all__ = [
     "RelationshipToRuleDataObject",
     "RelationshipToSAMLAssertionAttribute",
     "RelationshipToSAMLAssertionAttributeData",
+    "RelationshipToTeam",
+    "RelationshipToTeamData",
     "RelationshipToTeamLinkData",
     "RelationshipToTeamLinks",
     "RelationshipToUser",
@@ -2808,8 +2856,10 @@ __all__ = [
     "RetentionFilterCreateAttributes",
     "RetentionFilterCreateData",
     "RetentionFilterCreateRequest",
+    "RetentionFilterCreateResponse",
     "RetentionFilterResponse",
     "RetentionFilterType",
+    "RetentionFilterUpdateAttributes",
     "RetentionFilterUpdateData",
     "RetentionFilterUpdateRequest",
     "RetentionFilterWithoutAttributes",
@@ -2841,6 +2891,13 @@ __all__ = [
     "SAMLAssertionAttribute",
     "SAMLAssertionAttributeAttributes",
     "SAMLAssertionAttributesType",
+    "SLOReportInterval",
+    "SLOReportPostResponse",
+    "SLOReportPostResponseData",
+    "SLOReportStatus",
+    "SLOReportStatusGetResponse",
+    "SLOReportStatusGetResponseAttributes",
+    "SLOReportStatusGetResponseData",
     "ScalarColumn",
     "ScalarColumnTypeGroup",
     "ScalarColumnTypeNumber",
@@ -2891,12 +2948,19 @@ __all__ = [
     "SecurityMonitoringRuleOptions",
     "SecurityMonitoringRuleQuery",
     "SecurityMonitoringRuleQueryAggregation",
+    "SecurityMonitoringRuleQueryPayload",
+    "SecurityMonitoringRuleQueryPayloadData",
     "SecurityMonitoringRuleResponse",
     "SecurityMonitoringRuleSeverity",
+    "SecurityMonitoringRuleTestPayload",
+    "SecurityMonitoringRuleTestRequest",
+    "SecurityMonitoringRuleTestResponse",
     "SecurityMonitoringRuleThirdPartyOptions",
     "SecurityMonitoringRuleTypeCreate",
     "SecurityMonitoringRuleTypeRead",
+    "SecurityMonitoringRuleTypeTest",
     "SecurityMonitoringRuleUpdatePayload",
+    "SecurityMonitoringRuleValidatePayload",
     "SecurityMonitoringSignal",
     "SecurityMonitoringSignalArchiveReason",
     "SecurityMonitoringSignalAssigneeUpdateAttributes",
@@ -2913,6 +2977,7 @@ __all__ = [
     "SecurityMonitoringSignalMetadataType",
     "SecurityMonitoringSignalResponse",
     "SecurityMonitoringSignalRuleCreatePayload",
+    "SecurityMonitoringSignalRulePayload",
     "SecurityMonitoringSignalRuleQuery",
     "SecurityMonitoringSignalRuleResponse",
     "SecurityMonitoringSignalRuleResponseQuery",
@@ -2931,8 +2996,10 @@ __all__ = [
     "SecurityMonitoringSignalsListResponseMetaPage",
     "SecurityMonitoringSignalsSort",
     "SecurityMonitoringStandardRuleCreatePayload",
+    "SecurityMonitoringStandardRulePayload",
     "SecurityMonitoringStandardRuleQuery",
     "SecurityMonitoringStandardRuleResponse",
+    "SecurityMonitoringStandardRuleTestPayload",
     "SecurityMonitoringSuppression",
     "SecurityMonitoringSuppressionAttributes",
     "SecurityMonitoringSuppressionCreateAttributes",
@@ -3071,6 +3138,9 @@ __all__ = [
     "ServiceNowTicketResult",
     "SlackIntegrationMetadata",
     "SlackIntegrationMetadataChannelItem",
+    "SloReportCreateRequest",
+    "SloReportCreateRequestAttributes",
+    "SloReportCreateRequestData",
     "SortDirection",
     "Span",
     "SpansAggregateBucket",

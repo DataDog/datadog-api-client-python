@@ -227,7 +227,7 @@ class AWSIntegrationApi:
         self._list_aws_event_bridge_sources_endpoint = _Endpoint(
             settings={
                 "response_type": (AWSEventBridgeListResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/integration/aws/event_bridge",
                 "operation_id": "list_aws_event_bridge_sources",
                 "http_method": "GET",

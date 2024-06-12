@@ -79,6 +79,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
             "fargate_usage": (float,),
             "functions_percentage": (float,),
             "functions_usage": (float,),
+            "incident_management_monthly_active_users_percentage": (float,),
+            "incident_management_monthly_active_users_usage": (float,),
             "indexed_spans_percentage": (float,),
             "indexed_spans_usage": (float,),
             "infra_host_percentage": (float,),
@@ -95,6 +97,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
             "logs_indexed_15day_usage": (float,),
             "logs_indexed_180day_percentage": (float,),
             "logs_indexed_180day_usage": (float,),
+            "logs_indexed_1day_percentage": (float,),
+            "logs_indexed_1day_usage": (float,),
             "logs_indexed_30day_percentage": (float,),
             "logs_indexed_30day_usage": (float,),
             "logs_indexed_360day_percentage": (float,),
@@ -121,6 +125,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
             "obs_pipeline_bytes_usage": (float,),
             "obs_pipelines_vcpu_percentage": (float,),
             "obs_pipelines_vcpu_usage": (float,),
+            "online_archive_percentage": (float,),
+            "online_archive_usage": (float,),
             "profiled_container_percentage": (float,),
             "profiled_container_usage": (float,),
             "profiled_fargate_percentage": (float,),
@@ -210,6 +216,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         "fargate_usage": "fargate_usage",
         "functions_percentage": "functions_percentage",
         "functions_usage": "functions_usage",
+        "incident_management_monthly_active_users_percentage": "incident_management_monthly_active_users_percentage",
+        "incident_management_monthly_active_users_usage": "incident_management_monthly_active_users_usage",
         "indexed_spans_percentage": "indexed_spans_percentage",
         "indexed_spans_usage": "indexed_spans_usage",
         "infra_host_percentage": "infra_host_percentage",
@@ -226,6 +234,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         "logs_indexed_15day_usage": "logs_indexed_15day_usage",
         "logs_indexed_180day_percentage": "logs_indexed_180day_percentage",
         "logs_indexed_180day_usage": "logs_indexed_180day_usage",
+        "logs_indexed_1day_percentage": "logs_indexed_1day_percentage",
+        "logs_indexed_1day_usage": "logs_indexed_1day_usage",
         "logs_indexed_30day_percentage": "logs_indexed_30day_percentage",
         "logs_indexed_30day_usage": "logs_indexed_30day_usage",
         "logs_indexed_360day_percentage": "logs_indexed_360day_percentage",
@@ -252,6 +262,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         "obs_pipeline_bytes_usage": "obs_pipeline_bytes_usage",
         "obs_pipelines_vcpu_percentage": "obs_pipelines_vcpu_percentage",
         "obs_pipelines_vcpu_usage": "obs_pipelines_vcpu_usage",
+        "online_archive_percentage": "online_archive_percentage",
+        "online_archive_usage": "online_archive_usage",
         "profiled_container_percentage": "profiled_container_percentage",
         "profiled_container_usage": "profiled_container_usage",
         "profiled_fargate_percentage": "profiled_fargate_percentage",
@@ -342,6 +354,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         fargate_usage: Union[float, UnsetType] = unset,
         functions_percentage: Union[float, UnsetType] = unset,
         functions_usage: Union[float, UnsetType] = unset,
+        incident_management_monthly_active_users_percentage: Union[float, UnsetType] = unset,
+        incident_management_monthly_active_users_usage: Union[float, UnsetType] = unset,
         indexed_spans_percentage: Union[float, UnsetType] = unset,
         indexed_spans_usage: Union[float, UnsetType] = unset,
         infra_host_percentage: Union[float, UnsetType] = unset,
@@ -358,6 +372,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         logs_indexed_15day_usage: Union[float, UnsetType] = unset,
         logs_indexed_180day_percentage: Union[float, UnsetType] = unset,
         logs_indexed_180day_usage: Union[float, UnsetType] = unset,
+        logs_indexed_1day_percentage: Union[float, UnsetType] = unset,
+        logs_indexed_1day_usage: Union[float, UnsetType] = unset,
         logs_indexed_30day_percentage: Union[float, UnsetType] = unset,
         logs_indexed_30day_usage: Union[float, UnsetType] = unset,
         logs_indexed_360day_percentage: Union[float, UnsetType] = unset,
@@ -384,6 +400,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         obs_pipeline_bytes_usage: Union[float, UnsetType] = unset,
         obs_pipelines_vcpu_percentage: Union[float, UnsetType] = unset,
         obs_pipelines_vcpu_usage: Union[float, UnsetType] = unset,
+        online_archive_percentage: Union[float, UnsetType] = unset,
+        online_archive_usage: Union[float, UnsetType] = unset,
         profiled_container_percentage: Union[float, UnsetType] = unset,
         profiled_container_usage: Union[float, UnsetType] = unset,
         profiled_fargate_percentage: Union[float, UnsetType] = unset,
@@ -599,6 +617,12 @@ class MonthlyUsageAttributionValues(ModelNormal):
         :param functions_usage: The Lambda function usage by tag(s).
         :type functions_usage: float, optional
 
+        :param incident_management_monthly_active_users_percentage: The percentage of Incident Management monthly active users usage by tag(s).
+        :type incident_management_monthly_active_users_percentage: float, optional
+
+        :param incident_management_monthly_active_users_usage: The Incident Management monthly active users usage by tag(s).
+        :type incident_management_monthly_active_users_usage: float, optional
+
         :param indexed_spans_percentage: The percentage of APM Indexed Spans usage by tag(s).
         :type indexed_spans_percentage: float, optional
 
@@ -646,6 +670,12 @@ class MonthlyUsageAttributionValues(ModelNormal):
 
         :param logs_indexed_180day_usage: The total Indexed Logs (180-day Retention) usage by tag(s).
         :type logs_indexed_180day_usage: float, optional
+
+        :param logs_indexed_1day_percentage: The percentage of Indexed Logs (1-day Retention) usage by tag(s).
+        :type logs_indexed_1day_percentage: float, optional
+
+        :param logs_indexed_1day_usage: The total Indexed Logs (1-day Retention) usage by tag(s).
+        :type logs_indexed_1day_usage: float, optional
 
         :param logs_indexed_30day_percentage: The percentage of Indexed Logs (30-day Retention) usage by tag(s).
         :type logs_indexed_30day_percentage: float, optional
@@ -724,6 +754,12 @@ class MonthlyUsageAttributionValues(ModelNormal):
 
         :param obs_pipelines_vcpu_usage: The observability pipeline per core usage by tag(s).
         :type obs_pipelines_vcpu_usage: float, optional
+
+        :param online_archive_percentage: The percentage of online archive usage by tag(s).
+        :type online_archive_percentage: float, optional
+
+        :param online_archive_usage: The online archive usage by tag(s).
+        :type online_archive_usage: float, optional
 
         :param profiled_container_percentage: The percentage of profiled container usage by tag(s).
         :type profiled_container_percentage: float, optional
@@ -921,6 +957,12 @@ class MonthlyUsageAttributionValues(ModelNormal):
             kwargs["functions_percentage"] = functions_percentage
         if functions_usage is not unset:
             kwargs["functions_usage"] = functions_usage
+        if incident_management_monthly_active_users_percentage is not unset:
+            kwargs[
+                "incident_management_monthly_active_users_percentage"
+            ] = incident_management_monthly_active_users_percentage
+        if incident_management_monthly_active_users_usage is not unset:
+            kwargs["incident_management_monthly_active_users_usage"] = incident_management_monthly_active_users_usage
         if indexed_spans_percentage is not unset:
             kwargs["indexed_spans_percentage"] = indexed_spans_percentage
         if indexed_spans_usage is not unset:
@@ -953,6 +995,10 @@ class MonthlyUsageAttributionValues(ModelNormal):
             kwargs["logs_indexed_180day_percentage"] = logs_indexed_180day_percentage
         if logs_indexed_180day_usage is not unset:
             kwargs["logs_indexed_180day_usage"] = logs_indexed_180day_usage
+        if logs_indexed_1day_percentage is not unset:
+            kwargs["logs_indexed_1day_percentage"] = logs_indexed_1day_percentage
+        if logs_indexed_1day_usage is not unset:
+            kwargs["logs_indexed_1day_usage"] = logs_indexed_1day_usage
         if logs_indexed_30day_percentage is not unset:
             kwargs["logs_indexed_30day_percentage"] = logs_indexed_30day_percentage
         if logs_indexed_30day_usage is not unset:
@@ -1005,6 +1051,10 @@ class MonthlyUsageAttributionValues(ModelNormal):
             kwargs["obs_pipelines_vcpu_percentage"] = obs_pipelines_vcpu_percentage
         if obs_pipelines_vcpu_usage is not unset:
             kwargs["obs_pipelines_vcpu_usage"] = obs_pipelines_vcpu_usage
+        if online_archive_percentage is not unset:
+            kwargs["online_archive_percentage"] = online_archive_percentage
+        if online_archive_usage is not unset:
+            kwargs["online_archive_usage"] = online_archive_usage
         if profiled_container_percentage is not unset:
             kwargs["profiled_container_percentage"] = profiled_container_percentage
         if profiled_container_usage is not unset:

@@ -7,10 +7,21 @@ from datadog_api_client.v1.api.synthetics_api import SyntheticsApi
 from datadog_api_client.v1.model.synthetics_api_test import SyntheticsAPITest
 from datadog_api_client.v1.model.synthetics_api_test_config import SyntheticsAPITestConfig
 from datadog_api_client.v1.model.synthetics_api_test_type import SyntheticsAPITestType
+from datadog_api_client.v1.model.synthetics_assertion_body_hash_operator import SyntheticsAssertionBodyHashOperator
+from datadog_api_client.v1.model.synthetics_assertion_body_hash_target import SyntheticsAssertionBodyHashTarget
+from datadog_api_client.v1.model.synthetics_assertion_body_hash_type import SyntheticsAssertionBodyHashType
 from datadog_api_client.v1.model.synthetics_assertion_json_path_operator import SyntheticsAssertionJSONPathOperator
 from datadog_api_client.v1.model.synthetics_assertion_json_path_target import SyntheticsAssertionJSONPathTarget
 from datadog_api_client.v1.model.synthetics_assertion_json_path_target_target import (
     SyntheticsAssertionJSONPathTargetTarget,
+)
+from datadog_api_client.v1.model.synthetics_assertion_json_schema_meta_schema import (
+    SyntheticsAssertionJSONSchemaMetaSchema,
+)
+from datadog_api_client.v1.model.synthetics_assertion_json_schema_operator import SyntheticsAssertionJSONSchemaOperator
+from datadog_api_client.v1.model.synthetics_assertion_json_schema_target import SyntheticsAssertionJSONSchemaTarget
+from datadog_api_client.v1.model.synthetics_assertion_json_schema_target_target import (
+    SyntheticsAssertionJSONSchemaTargetTarget,
 )
 from datadog_api_client.v1.model.synthetics_assertion_operator import SyntheticsAssertionOperator
 from datadog_api_client.v1.model.synthetics_assertion_target import SyntheticsAssertionTarget
@@ -60,6 +71,14 @@ body = SyntheticsAPITest(
                 ),
                 type=SyntheticsAssertionType.BODY,
             ),
+            SyntheticsAssertionJSONSchemaTarget(
+                operator=SyntheticsAssertionJSONSchemaOperator.VALIDATES_JSON_SCHEMA,
+                target=SyntheticsAssertionJSONSchemaTargetTarget(
+                    meta_schema=SyntheticsAssertionJSONSchemaMetaSchema.DRAFT_07,
+                    json_schema='{"type": "object", "properties":{"slideshow":{"type":"object"}}}',
+                ),
+                type=SyntheticsAssertionType.BODY,
+            ),
             SyntheticsAssertionXPathTarget(
                 operator=SyntheticsAssertionXPathOperator.VALIDATES_X_PATH,
                 target=SyntheticsAssertionXPathTargetTarget(
@@ -68,6 +87,11 @@ body = SyntheticsAPITest(
                     operator="contains",
                 ),
                 type=SyntheticsAssertionType.BODY,
+            ),
+            SyntheticsAssertionBodyHashTarget(
+                operator=SyntheticsAssertionBodyHashOperator.MD5,
+                target="a",
+                type=SyntheticsAssertionBodyHashType.BODY_HASH,
             ),
         ],
         config_variables=[
@@ -78,6 +102,7 @@ body = SyntheticsAPITest(
                 type=SyntheticsConfigVariableType.TEXT,
             ),
         ],
+        variables_from_script='dd.variable.set("FOO", "foo")',
         request=SyntheticsTestRequest(
             certificate=SyntheticsTestRequestCertificate(
                 cert=SyntheticsTestRequestCertificateItem(

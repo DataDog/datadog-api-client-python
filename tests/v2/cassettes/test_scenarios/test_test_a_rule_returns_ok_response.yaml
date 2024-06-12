@@ -1,0 +1,25 @@
+interactions:
+- request:
+    body: '{"rule":{"cases":[{"condition":"a > 0","name":"","notifications":[],"status":"info"}],"hasExtendedTitle":true,"isEnabled":true,"message":"My
+      security monitoring rule message.","name":"My security monitoring rule.","options":{"decreaseCriticalityBasedOnEnv":false,"detectionMethod":"threshold","evaluationWindow":0,"keepAlive":0,"maxSignalDuration":0},"queries":[{"aggregation":"count","distinctFields":[],"groupByFields":["@userIdentity.assumed_role"],"name":"","query":"source:source_here"}],"tags":["env:prod","team:security"],"type":"log_detection"},"ruleQueryPayloads":[{"expectedResult":true,"index":0,"payload":{"ddsource":"source_here","ddtags":"env:staging,version:5.1","hostname":"i-012345678","message":"2019-11-19T14:37:58,995
+      INFO [process.name][20081] Hello World","service":"payment","userIdentity":{"assumed_role":"fake
+      assumed_role"}}}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/test
+  response:
+    body:
+      string: '{"results":[true]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

@@ -32,7 +32,7 @@ class CloudCostManagementApi:
         self._create_cost_awscur_config_endpoint = _Endpoint(
             settings={
                 "response_type": (AwsCURConfigResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/cost/aws_cur_config",
                 "operation_id": "create_cost_awscur_config",
                 "http_method": "POST",
@@ -52,7 +52,7 @@ class CloudCostManagementApi:
         self._create_cost_azure_uc_configs_endpoint = _Endpoint(
             settings={
                 "response_type": (AzureUCConfigPairsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/cost/azure_uc_config",
                 "operation_id": "create_cost_azure_uc_configs",
                 "http_method": "POST",
@@ -72,7 +72,7 @@ class CloudCostManagementApi:
         self._delete_cost_awscur_config_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/cost/aws_cur_config/{cloud_account_id}",
                 "operation_id": "delete_cost_awscur_config",
                 "http_method": "DELETE",
@@ -95,7 +95,7 @@ class CloudCostManagementApi:
         self._delete_cost_azure_uc_config_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/cost/azure_uc_config/{cloud_account_id}",
                 "operation_id": "delete_cost_azure_uc_config",
                 "http_method": "DELETE",
@@ -118,7 +118,7 @@ class CloudCostManagementApi:
         self._get_cloud_cost_activity_endpoint = _Endpoint(
             settings={
                 "response_type": (CloudCostActivityResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/cost/enabled",
                 "operation_id": "get_cloud_cost_activity",
                 "http_method": "GET",
@@ -134,7 +134,7 @@ class CloudCostManagementApi:
         self._list_aws_related_accounts_endpoint = _Endpoint(
             settings={
                 "response_type": (AWSRelatedAccountsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/cost/aws_related_accounts",
                 "operation_id": "list_aws_related_accounts",
                 "http_method": "GET",
@@ -157,7 +157,7 @@ class CloudCostManagementApi:
         self._list_cost_awscur_configs_endpoint = _Endpoint(
             settings={
                 "response_type": (AwsCURConfigsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/cost/aws_cur_config",
                 "operation_id": "list_cost_awscur_configs",
                 "http_method": "GET",
@@ -173,7 +173,7 @@ class CloudCostManagementApi:
         self._list_cost_azure_uc_configs_endpoint = _Endpoint(
             settings={
                 "response_type": (AzureUCConfigsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/cost/azure_uc_config",
                 "operation_id": "list_cost_azure_uc_configs",
                 "http_method": "GET",
@@ -189,7 +189,7 @@ class CloudCostManagementApi:
         self._update_cost_awscur_config_endpoint = _Endpoint(
             settings={
                 "response_type": (AwsCURConfigsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/cost/aws_cur_config/{cloud_account_id}",
                 "operation_id": "update_cost_awscur_config",
                 "http_method": "PATCH",
@@ -215,7 +215,7 @@ class CloudCostManagementApi:
         self._update_cost_azure_uc_configs_endpoint = _Endpoint(
             settings={
                 "response_type": (AzureUCConfigPairsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/cost/azure_uc_config/{cloud_account_id}",
                 "operation_id": "update_cost_azure_uc_configs",
                 "http_method": "PATCH",

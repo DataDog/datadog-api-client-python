@@ -95,7 +95,7 @@ class Event(ModelNormal):
         :type alert_type: EventAlertType, optional
 
         :param date_happened: POSIX timestamp of the event. Must be sent as an integer (that is no quotes).
-            Limited to events no older than 18 hours.
+            Limited to events up to 18 hours in the past and two hours in the future.
         :type date_happened: int, optional
 
         :param device_name: A device name.

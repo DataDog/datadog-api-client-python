@@ -41,7 +41,7 @@ class CaseManagementApi:
         self._archive_case_endpoint = _Endpoint(
             settings={
                 "response_type": (CaseResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/cases/{case_id}/archive",
                 "operation_id": "archive_case",
                 "http_method": "POST",
@@ -67,7 +67,7 @@ class CaseManagementApi:
         self._assign_case_endpoint = _Endpoint(
             settings={
                 "response_type": (CaseResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/cases/{case_id}/assign",
                 "operation_id": "assign_case",
                 "http_method": "POST",
@@ -93,7 +93,7 @@ class CaseManagementApi:
         self._create_case_endpoint = _Endpoint(
             settings={
                 "response_type": (CaseResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/cases",
                 "operation_id": "create_case",
                 "http_method": "POST",
@@ -113,7 +113,7 @@ class CaseManagementApi:
         self._create_project_endpoint = _Endpoint(
             settings={
                 "response_type": (ProjectResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/cases/projects",
                 "operation_id": "create_project",
                 "http_method": "POST",
@@ -133,7 +133,7 @@ class CaseManagementApi:
         self._delete_project_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/cases/projects/{project_id}",
                 "operation_id": "delete_project",
                 "http_method": "DELETE",
@@ -156,7 +156,7 @@ class CaseManagementApi:
         self._get_case_endpoint = _Endpoint(
             settings={
                 "response_type": (CaseResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/cases/{case_id}",
                 "operation_id": "get_case",
                 "http_method": "GET",
@@ -179,7 +179,7 @@ class CaseManagementApi:
         self._get_project_endpoint = _Endpoint(
             settings={
                 "response_type": (ProjectResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/cases/projects/{project_id}",
                 "operation_id": "get_project",
                 "http_method": "GET",
@@ -202,7 +202,7 @@ class CaseManagementApi:
         self._get_projects_endpoint = _Endpoint(
             settings={
                 "response_type": (ProjectsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/cases/projects",
                 "operation_id": "get_projects",
                 "http_method": "GET",
@@ -218,7 +218,7 @@ class CaseManagementApi:
         self._search_cases_endpoint = _Endpoint(
             settings={
                 "response_type": (CasesResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/cases",
                 "operation_id": "search_cases",
                 "http_method": "GET",
@@ -230,9 +230,9 @@ class CaseManagementApi:
                     "attribute": "page[size]",
                     "location": "query",
                 },
-                "page_offset": {
+                "page_number": {
                     "openapi_types": (int,),
-                    "attribute": "page[offset]",
+                    "attribute": "page[number]",
                     "location": "query",
                 },
                 "sort_field": {
@@ -260,7 +260,7 @@ class CaseManagementApi:
         self._unarchive_case_endpoint = _Endpoint(
             settings={
                 "response_type": (CaseResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/cases/{case_id}/unarchive",
                 "operation_id": "unarchive_case",
                 "http_method": "POST",
@@ -286,7 +286,7 @@ class CaseManagementApi:
         self._unassign_case_endpoint = _Endpoint(
             settings={
                 "response_type": (CaseResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/cases/{case_id}/unassign",
                 "operation_id": "unassign_case",
                 "http_method": "POST",
@@ -312,7 +312,7 @@ class CaseManagementApi:
         self._update_priority_endpoint = _Endpoint(
             settings={
                 "response_type": (CaseResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/cases/{case_id}/priority",
                 "operation_id": "update_priority",
                 "http_method": "POST",
@@ -338,7 +338,7 @@ class CaseManagementApi:
         self._update_status_endpoint = _Endpoint(
             settings={
                 "response_type": (CaseResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/cases/{case_id}/status",
                 "operation_id": "update_status",
                 "http_method": "POST",
@@ -506,7 +506,7 @@ class CaseManagementApi:
         self,
         *,
         page_size: Union[int, UnsetType] = unset,
-        page_offset: Union[int, UnsetType] = unset,
+        page_number: Union[int, UnsetType] = unset,
         sort_field: Union[CaseSortableField, UnsetType] = unset,
         filter: Union[str, UnsetType] = unset,
         sort_asc: Union[bool, UnsetType] = unset,
@@ -517,8 +517,8 @@ class CaseManagementApi:
 
         :param page_size: Size for a given page. The maximum allowed value is 100.
         :type page_size: int, optional
-        :param page_offset: Specific offset to use as the beginning of the returned page.
-        :type page_offset: int, optional
+        :param page_number: Specific page number to return.
+        :type page_number: int, optional
         :param sort_field: Specify which field to sort
         :type sort_field: CaseSortableField, optional
         :param filter: Search query
@@ -531,8 +531,8 @@ class CaseManagementApi:
         if page_size is not unset:
             kwargs["page_size"] = page_size
 
-        if page_offset is not unset:
-            kwargs["page_offset"] = page_offset
+        if page_number is not unset:
+            kwargs["page_number"] = page_number
 
         if sort_field is not unset:
             kwargs["sort_field"] = sort_field
@@ -549,7 +549,7 @@ class CaseManagementApi:
         self,
         *,
         page_size: Union[int, UnsetType] = unset,
-        page_offset: Union[int, UnsetType] = unset,
+        page_number: Union[int, UnsetType] = unset,
         sort_field: Union[CaseSortableField, UnsetType] = unset,
         filter: Union[str, UnsetType] = unset,
         sort_asc: Union[bool, UnsetType] = unset,
@@ -560,8 +560,8 @@ class CaseManagementApi:
 
         :param page_size: Size for a given page. The maximum allowed value is 100.
         :type page_size: int, optional
-        :param page_offset: Specific offset to use as the beginning of the returned page.
-        :type page_offset: int, optional
+        :param page_number: Specific page number to return.
+        :type page_number: int, optional
         :param sort_field: Specify which field to sort
         :type sort_field: CaseSortableField, optional
         :param filter: Search query
@@ -576,8 +576,8 @@ class CaseManagementApi:
         if page_size is not unset:
             kwargs["page_size"] = page_size
 
-        if page_offset is not unset:
-            kwargs["page_offset"] = page_offset
+        if page_number is not unset:
+            kwargs["page_number"] = page_number
 
         if sort_field is not unset:
             kwargs["sort_field"] = sort_field
@@ -594,7 +594,7 @@ class CaseManagementApi:
         pagination = {
             "limit_value": local_page_size,
             "results_path": "data",
-            "page_offset_param": "page_offset",
+            "page_param": "page_number",
             "endpoint": endpoint,
             "kwargs": kwargs,
         }
