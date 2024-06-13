@@ -341,10 +341,13 @@ class AWSIntegrationApi:
     ) -> dict:
         """Set an AWS tag filter.
 
-        Set an AWS tag filter.
+        Set an AWS tag filter for a specific AWS account and namespace. Before setting a tag filter, ensure that you have queried the available AWS namespaces by using ``api_instance.list_available_aws_namespaces()``.
 
-        :param body: Set an AWS tag filter using an ``aws_account_identifier`` , ``namespace`` , and filtering string.
-            Namespace options are ``application_elb`` , ``elb`` , ``lambda`` , ``network_elb`` , ``rds`` , ``sqs`` , and ``custom``.
+        :param body: Set an AWS tag filter by providing the following parameters:
+
+            * ``account_id`` : The identifier for your AWS account.
+            * ``namespace`` : The namespace to filter. Query the available namespaces using ``api_instance.list_available_aws_namespaces()`` to determine the appropriate options.
+            * ``tag_filter_str`` : The filtering criteria as a string.
         :type body: AWSTagFilterCreateRequest
         :rtype: dict
         """

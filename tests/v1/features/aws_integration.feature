@@ -47,14 +47,14 @@ Feature: AWS Integration
   @generated @skip @team:DataDog/cloud-integrations
   Scenario: Delete a tag filtering entry returns "Bad Request" response
     Given new "DeleteAWSTagFilter" request
-    And body with value {"account_id": "FAKEAC0FAKEAC2FAKEAC", "namespace": "elb"}
+    And body with value {"account_id": "FAKEAC0FAKEAC2FAKEAC", "namespace": "api_gateway"}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/cloud-integrations
   Scenario: Delete a tag filtering entry returns "OK" response
     Given new "DeleteAWSTagFilter" request
-    And body with value {"account_id": "FAKEAC0FAKEAC2FAKEAC", "namespace": "elb"}
+    And body with value {"account_id": "FAKEAC0FAKEAC2FAKEAC", "namespace": "api_gateway"}
     When the request is sent
     Then the response status is 200 OK
 
@@ -155,14 +155,14 @@ Feature: AWS Integration
   @generated @skip @team:DataDog/cloud-integrations
   Scenario: Set an AWS tag filter returns "Bad Request" response
     Given new "CreateAWSTagFilter" request
-    And body with value {"account_id": "123456789012", "namespace": "elb", "tag_filter_str": "prod*"}
+    And body with value {"account_id": "123456789012", "namespace": "api_gateway", "tag_filter_str": "prod*"}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/cloud-integrations
   Scenario: Set an AWS tag filter returns "OK" response
     Given new "CreateAWSTagFilter" request
-    And body with value {"account_id": "123456789012", "namespace": "elb", "tag_filter_str": "prod*"}
+    And body with value {"account_id": "123456789012", "namespace": "api_gateway", "tag_filter_str": "prod*"}
     When the request is sent
     Then the response status is 200 OK
 
