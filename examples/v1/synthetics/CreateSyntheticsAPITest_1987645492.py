@@ -71,6 +71,16 @@ body = SyntheticsAPITest(
                 ),
                 type=SyntheticsAssertionType.BODY,
             ),
+            SyntheticsAssertionJSONPathTarget(
+                operator=SyntheticsAssertionJSONPathOperator.VALIDATES_JSON_PATH,
+                target=SyntheticsAssertionJSONPathTargetTarget(
+                    elements_operator="atLeastOneElementMatches",
+                    json_path="topKey",
+                    operator="isNot",
+                    target_value="0",
+                ),
+                type=SyntheticsAssertionType.BODY,
+            ),
             SyntheticsAssertionJSONSchemaTarget(
                 operator=SyntheticsAssertionJSONSchemaOperator.VALIDATES_JSON_SCHEMA,
                 target=SyntheticsAssertionJSONSchemaTargetTarget(
