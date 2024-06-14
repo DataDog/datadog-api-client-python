@@ -77,6 +77,8 @@ jobs:
           DD_TAGS: "team:integrations-tools-and-libraries"
           DD_TEST_CLIENT_API_KEY: ${{ secrets.DD_CLIENT_API_KEY }}
           DD_TEST_CLIENT_APP_KEY: ${{ secrets.DD_CLIENT_APP_KEY }}
+          DD_CIVISIBILITY_CODE_COVERAGE_ENABLED: "true"
+          DD_CIVISIBILITY_ITR_ENABLED: "true"
           RECORD: "none"
           SLEEP_AFTER_REQUEST: ${{ vars.SLEEP_AFTER_REQUEST }}
           PYTEST_ADDOPTS: "--ddtrace"
