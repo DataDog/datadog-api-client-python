@@ -334,7 +334,7 @@ def test_get_api_test():
             "request": {"method": "GET", "url": "https://example.org", "httpVersion": "any"},
             "id": "5p7-km2-d22",
         },
-        {"name": "Wait", "subtype": "wait", "value": 180, "id": "rjn-fmj-sqw"},
+        {"name": "Wait", "subtype": "wait", "id": "rjn-fmj-sqw"},
     ]
     required_types_mixed = ([SyntheticsAPIStep],)
     path_to_item = ["received_data", "config", "steps"]
