@@ -30,6 +30,7 @@ body = LogsIndex(
         query="source:python",
     ),
     name="main",
+    num_flex_logs_retention_days=180,
     num_retention_days=15,
 )
 
