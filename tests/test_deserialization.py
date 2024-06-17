@@ -320,9 +320,23 @@ def test_unknown_model_value():
     assert "allowed_login_methods" in serialized["data"]["attributes"]
     assert serialized["data"]["attributes"]["allowed_login_methods"] == []
 
+
 def test_get_api_test():
-    value = [{'name': 'wait', 'subtype': 'http', 'extractedValues': [], 'allowFailure': False, 'isCritical': True, 'retry': {'count': 0, 'interval': 300}, 'assertions': [], 'request': {'method': 'GET', 'url': 'https://example.org', 'httpVersion': 'any'}, 'id': '5p7-km2-d22'}, {'name': 'Wait', 'subtype': 'wait', 'value': 180, 'id': 'rjn-fmj-sqw'}]
+    value = [
+        {
+            "name": "wait",
+            "subtype": "http",
+            "extractedValues": [],
+            "allowFailure": False,
+            "isCritical": True,
+            "retry": {"count": 0, "interval": 300},
+            "assertions": [],
+            "request": {"method": "GET", "url": "https://example.org", "httpVersion": "any"},
+            "id": "5p7-km2-d22",
+        },
+        {"name": "Wait", "subtype": "wait", "value": 180, "id": "rjn-fmj-sqw"},
+    ]
     required_types_mixed = ([SyntheticsAPIStep],)
-    path_to_item = ['received_data', 'config', 'steps']
+    path_to_item = ["received_data", "config", "steps"]
     converted_value = validate_and_convert_types(value, required_types_mixed, path_to_item, True, True, Configuration())
     assert isinstance(converted_value[1], UnparsedObject)
