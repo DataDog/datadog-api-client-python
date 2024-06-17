@@ -21,6 +21,7 @@ class SyntheticsAssertionJSONPathTargetTarget(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
+            "elements_operator": (str,),
             "json_path": (str,),
             "operator": (str,),
             "target_value": (
@@ -38,6 +39,7 @@ class SyntheticsAssertionJSONPathTargetTarget(ModelNormal):
         }
 
     attribute_map = {
+        "elements_operator": "elementsOperator",
         "json_path": "jsonPath",
         "operator": "operator",
         "target_value": "targetValue",
@@ -45,6 +47,7 @@ class SyntheticsAssertionJSONPathTargetTarget(ModelNormal):
 
     def __init__(
         self_,
+        elements_operator: Union[str, UnsetType] = unset,
         json_path: Union[str, UnsetType] = unset,
         operator: Union[str, UnsetType] = unset,
         target_value: Union[Any, UnsetType] = unset,
@@ -52,6 +55,9 @@ class SyntheticsAssertionJSONPathTargetTarget(ModelNormal):
     ):
         """
         Composed target for ``validatesJSONPath`` operator.
+
+        :param elements_operator: The element from the list of results to assert on.  To choose from the first element in the list ``firstElementMatches`` , every element in the list ``everyElementMatches`` , at least one element in the list ``atLeastOneElementMatches`` or the serialized value of the list ``serializationMatches``.
+        :type elements_operator: str, optional
 
         :param json_path: The JSON path to assert.
         :type json_path: str, optional
@@ -62,6 +68,8 @@ class SyntheticsAssertionJSONPathTargetTarget(ModelNormal):
         :param target_value: The path target value to compare to.
         :type target_value: bool, date, datetime, dict, float, int, list, str, UUID, none_type, optional
         """
+        if elements_operator is not unset:
+            kwargs["elements_operator"] = elements_operator
         if json_path is not unset:
             kwargs["json_path"] = json_path
         if operator is not unset:
