@@ -1,0 +1,23 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"value":"UTC"},"type":"org_configs"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/org_configs/monitor_timezone
+  response:
+    body:
+      string: '{"data":{"type":"org_configs","id":"54efd4ec-bb21-5e8a-9cb8-712e18f8b6b7","attributes":{"name":"monitor_timezone","description":"Sets
+        the time zone used for monitoring alerts","value_type":"enum","value":"UTC","modified_at":"2024-06-12T14:43:55.693935+00:00"}}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

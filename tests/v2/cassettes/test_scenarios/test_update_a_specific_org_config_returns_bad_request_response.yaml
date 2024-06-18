@@ -1,0 +1,21 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"value":"not-a-boolean"},"type":"org_configs"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/org_configs/custom_roles
+  response:
+    body:
+      string: '{"errors":["The value provided for parameter ''OrgConfig: not-a-boolean''
+        is invalid"]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 400
+      message: Bad Request
+version: 1

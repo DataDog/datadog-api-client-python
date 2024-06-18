@@ -12,6 +12,9 @@ from datadog_api_client.model_utils import (
     UnsetType,
     unset,
 )
+from datadog_api_client.v2.model.org_config_list_response import OrgConfigListResponse
+from datadog_api_client.v2.model.org_config_get_response import OrgConfigGetResponse
+from datadog_api_client.v2.model.org_config_write_request import OrgConfigWriteRequest
 
 
 class OrganizationsApi:
@@ -23,6 +26,71 @@ class OrganizationsApi:
         if api_client is None:
             api_client = ApiClient(Configuration())
         self.api_client = api_client
+
+        self._get_org_config_endpoint = _Endpoint(
+            settings={
+                "response_type": (OrgConfigGetResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/org_configs/{org_config_name}",
+                "operation_id": "get_org_config",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "org_config_name": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "org_config_name",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_org_configs_endpoint = _Endpoint(
+            settings={
+                "response_type": (OrgConfigListResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/org_configs",
+                "operation_id": "list_org_configs",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={},
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._update_org_config_endpoint = _Endpoint(
+            settings={
+                "response_type": (OrgConfigGetResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/org_configs/{org_config_name}",
+                "operation_id": "update_org_config",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "org_config_name": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "org_config_name",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (OrgConfigWriteRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
 
         self._upload_idp_metadata_endpoint = _Endpoint(
             settings={
@@ -43,6 +111,56 @@ class OrganizationsApi:
             headers_map={"accept": ["*/*"], "content_type": ["multipart/form-data"]},
             api_client=api_client,
         )
+
+    def get_org_config(
+        self,
+        org_config_name: str,
+    ) -> OrgConfigGetResponse:
+        """Get a specific Org Config value.
+
+        Return the name, description, and value of a specific Org Config.
+
+        :param org_config_name: The name of an Org Config.
+        :type org_config_name: str
+        :rtype: OrgConfigGetResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["org_config_name"] = org_config_name
+
+        return self._get_org_config_endpoint.call_with_http_info(**kwargs)
+
+    def list_org_configs(
+        self,
+    ) -> OrgConfigListResponse:
+        """List Org Configs.
+
+        Returns all Org Configs (name, description, and value).
+
+        :rtype: OrgConfigListResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._list_org_configs_endpoint.call_with_http_info(**kwargs)
+
+    def update_org_config(
+        self,
+        org_config_name: str,
+        body: OrgConfigWriteRequest,
+    ) -> OrgConfigGetResponse:
+        """Update a specific Org Config.
+
+        Update the value of a specific Org Config.
+
+        :param org_config_name: The name of an Org Config.
+        :type org_config_name: str
+        :type body: OrgConfigWriteRequest
+        :rtype: OrgConfigGetResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["org_config_name"] = org_config_name
+
+        kwargs["body"] = body
+
+        return self._update_org_config_endpoint.call_with_http_info(**kwargs)
 
     def upload_idp_metadata(
         self,

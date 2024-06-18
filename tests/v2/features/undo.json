@@ -1297,6 +1297,24 @@
       "type": "safe"
     }
   },
+  "ListOrgConfigs": {
+    "tag": "Organizations",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetOrgConfig": {
+    "tag": "Organizations",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateOrgConfig": {
+    "tag": "Organizations",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListPermissions": {
     "tag": "Roles",
     "undo": {
