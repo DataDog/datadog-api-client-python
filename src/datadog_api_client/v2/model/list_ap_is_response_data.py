@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -14,31 +14,42 @@ from datadog_api_client.model_utils import (
 )
 
 
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.list_ap_is_response_data_attributes import ListAPIsResponseDataAttributes
+
+
 class ListAPIsResponseData(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.list_ap_is_response_data_attributes import ListAPIsResponseDataAttributes
+
         return {
+            "attributes": (ListAPIsResponseDataAttributes,),
             "id": (UUID,),
-            "name": (str,),
         }
 
     attribute_map = {
+        "attributes": "attributes",
         "id": "id",
-        "name": "name",
     }
 
-    def __init__(self_, id: Union[UUID, UnsetType] = unset, name: Union[str, UnsetType] = unset, **kwargs):
+    def __init__(
+        self_,
+        attributes: Union[ListAPIsResponseDataAttributes, UnsetType] = unset,
+        id: Union[UUID, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Data envelope for ``ListAPIsResponse``.
 
+        :param attributes: Attributes for ``ListAPIsResponseData``.
+        :type attributes: ListAPIsResponseDataAttributes, optional
+
         :param id: API identifier.
         :type id: UUID, optional
-
-        :param name: API name.
-        :type name: str, optional
         """
+        if attributes is not unset:
+            kwargs["attributes"] = attributes
         if id is not unset:
             kwargs["id"] = id
-        if name is not unset:
-            kwargs["name"] = name
         super().__init__(kwargs)
