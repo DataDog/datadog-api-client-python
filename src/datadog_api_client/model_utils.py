@@ -149,6 +149,10 @@ class OpenApiModel(object):
                 self._check_type,
                 configuration=self._configuration,
             )
+            if isinstance(value, list):
+                for x in value:
+                    if isinstance(x, UnparsedObject):
+                        self._unparsed = True
         if name in self.validations:
             check_validations(self.validations[name], name, value, self._configuration)
         self.__dict__["_data_store"][name] = value
@@ -1335,16 +1339,19 @@ def validate_and_convert_types(
         for index, inner_value in enumerate(input_value):
             inner_path = list(path_to_item)
             inner_path.append(index)
-            result.append(
-                validate_and_convert_types(
-                    inner_value,
-                    inner_required_types,
-                    inner_path,
-                    spec_property_naming,
-                    check_type,
-                    configuration=configuration,
+            try:
+                result.append(
+                    validate_and_convert_types(
+                        inner_value,
+                        inner_required_types,
+                        inner_path,
+                        spec_property_naming,
+                        check_type,
+                        configuration=configuration,
+                    )
                 )
-            )
+            except TypeError:
+                result.append(UnparsedObject(**inner_value))
         return result
     elif isinstance(input_value, dict):
         if input_value == {}:
