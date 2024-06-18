@@ -6133,6 +6133,62 @@ opsgenie\_services\_response
    :members:
    :show-inheritance:
 
+org\_config\_get\_response
+--------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_config_get_response
+   :members:
+   :show-inheritance:
+
+org\_config\_list\_response
+---------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_config_list_response
+   :members:
+   :show-inheritance:
+
+org\_config\_read
+-----------------
+
+.. automodule:: datadog_api_client.v2.model.org_config_read
+   :members:
+   :show-inheritance:
+
+org\_config\_read\_attributes
+-----------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_config_read_attributes
+   :members:
+   :show-inheritance:
+
+org\_config\_type
+-----------------
+
+.. automodule:: datadog_api_client.v2.model.org_config_type
+   :members:
+   :show-inheritance:
+
+org\_config\_write
+------------------
+
+.. automodule:: datadog_api_client.v2.model.org_config_write
+   :members:
+   :show-inheritance:
+
+org\_config\_write\_attributes
+------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_config_write_attributes
+   :members:
+   :show-inheritance:
+
+org\_config\_write\_request
+---------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_config_write_request
+   :members:
+   :show-inheritance:
+
 organization
 ------------
 
