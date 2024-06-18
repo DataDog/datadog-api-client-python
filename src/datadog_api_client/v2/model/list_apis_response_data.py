@@ -3,11 +3,18 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import Any, Dict, List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
+    ApiTypeError,
+    ModelComposed,
     ModelNormal,
+    ModelSimple,
     cached_property,
+    date,
+    datetime,
+    file_type,
+    none_type,
     unset,
     UnsetType,
     UUID,
@@ -15,30 +22,22 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.list_ap_is_response_data_attributes import ListAPIsResponseDataAttributes
-
+    from datadog_api_client.v2.model.list_apis_response_data_attributes import ListAPIsResponseDataAttributes
 
 class ListAPIsResponseData(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.list_ap_is_response_data_attributes import ListAPIsResponseDataAttributes
-
+        from datadog_api_client.v2.model.list_apis_response_data_attributes import ListAPIsResponseDataAttributes
         return {
             "attributes": (ListAPIsResponseDataAttributes,),
             "id": (UUID,),
         }
-
     attribute_map = {
         "attributes": "attributes",
         "id": "id",
     }
 
-    def __init__(
-        self_,
-        attributes: Union[ListAPIsResponseDataAttributes, UnsetType] = unset,
-        id: Union[UUID, UnsetType] = unset,
-        **kwargs,
-    ):
+    def __init__(self_, attributes: Union[ListAPIsResponseDataAttributes, UnsetType]=unset, id: Union[UUID, UnsetType]=unset, **kwargs):
         """
         Data envelope for ``ListAPIsResponse``.
 
@@ -49,7 +48,9 @@ class ListAPIsResponseData(ModelNormal):
         :type id: UUID, optional
         """
         if attributes is not unset:
-            kwargs["attributes"] = attributes
+             kwargs["attributes"] = attributes
         if id is not unset:
-            kwargs["id"] = id
+             kwargs["id"] = id
         super().__init__(kwargs)
+
+

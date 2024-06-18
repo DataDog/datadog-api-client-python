@@ -3,43 +3,43 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, Union, TYPE_CHECKING
+from typing import Any, Dict, List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
+    ApiTypeError,
+    ModelComposed,
     ModelNormal,
+    ModelSimple,
     cached_property,
+    date,
+    datetime,
+    file_type,
+    none_type,
     unset,
     UnsetType,
+    UUID,
 )
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.list_ap_is_response_data import ListAPIsResponseData
-    from datadog_api_client.v2.model.list_ap_is_response_meta import ListAPIsResponseMeta
-
+    from datadog_api_client.v2.model.list_apis_response_data import ListAPIsResponseData
+    from datadog_api_client.v2.model.list_apis_response_meta import ListAPIsResponseMeta
 
 class ListAPIsResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.list_ap_is_response_data import ListAPIsResponseData
-        from datadog_api_client.v2.model.list_ap_is_response_meta import ListAPIsResponseMeta
-
+        from datadog_api_client.v2.model.list_apis_response_data import ListAPIsResponseData
+        from datadog_api_client.v2.model.list_apis_response_meta import ListAPIsResponseMeta
         return {
             "data": ([ListAPIsResponseData],),
             "meta": (ListAPIsResponseMeta,),
         }
-
     attribute_map = {
         "data": "data",
         "meta": "meta",
     }
 
-    def __init__(
-        self_,
-        data: Union[List[ListAPIsResponseData], UnsetType] = unset,
-        meta: Union[ListAPIsResponseMeta, UnsetType] = unset,
-        **kwargs,
-    ):
+    def __init__(self_, data: Union[List[ListAPIsResponseData], UnsetType]=unset, meta: Union[ListAPIsResponseMeta, UnsetType]=unset, **kwargs):
         """
         Response for ``ListAPIs``.
 
@@ -50,7 +50,9 @@ class ListAPIsResponse(ModelNormal):
         :type meta: ListAPIsResponseMeta, optional
         """
         if data is not unset:
-            kwargs["data"] = data
+             kwargs["data"] = data
         if meta is not unset:
-            kwargs["meta"] = meta
+             kwargs["meta"] = meta
         super().__init__(kwargs)
+
+
