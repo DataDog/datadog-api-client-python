@@ -1,0 +1,21 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/org_configs/custom_roles
+  response:
+    body:
+      string: '{"data":{"type":"org_configs","id":"d4a6259b-5599-5120-8bdb-22718cb09118","attributes":{"name":"custom_roles","description":"Enables
+        the custom roles (RBAC) UI.","value_type":"bool","value":false,"modified_at":null}}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1
