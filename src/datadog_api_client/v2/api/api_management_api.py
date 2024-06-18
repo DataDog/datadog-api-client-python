@@ -13,7 +13,7 @@ from datadog_api_client.model_utils import (
     unset,
     UUID,
 )
-from datadog_api_client.v2.model.list_ap_is_response import ListAPIsResponse
+from datadog_api_client.v2.model.list_apis_response import ListAPIsResponse
 from datadog_api_client.v2.model.update_open_api_response import UpdateOpenAPIResponse
 from datadog_api_client.v2.model.create_open_api_response import CreateOpenAPIResponse
 
@@ -94,12 +94,12 @@ class APIManagementApi:
             api_client=api_client,
         )
 
-        self._list_ap_is_endpoint = _Endpoint(
+        self._list_apis_endpoint = _Endpoint(
             settings={
                 "response_type": (ListAPIsResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/apicatalog/api",
-                "operation_id": "list_ap_is",
+                "operation_id": "list_apis",
                 "http_method": "GET",
                 "version": "v2",
             },
@@ -214,7 +214,7 @@ class APIManagementApi:
 
         return self._get_open_api_endpoint.call_with_http_info(**kwargs)
 
-    def list_ap_is(
+    def list_apis(
         self,
         *,
         query: Union[str, UnsetType] = unset,
@@ -243,7 +243,7 @@ class APIManagementApi:
         if page_offset is not unset:
             kwargs["page_offset"] = page_offset
 
-        return self._list_ap_is_endpoint.call_with_http_info(**kwargs)
+        return self._list_apis_endpoint.call_with_http_info(**kwargs)
 
     def update_open_api(
         self,

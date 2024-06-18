@@ -3,23 +3,14 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Any, Dict, List, Union, TYPE_CHECKING
+from typing import Union
 
 from datadog_api_client.model_utils import (
-    ApiTypeError,
-    ModelComposed,
     ModelNormal,
-    ModelSimple,
     cached_property,
-    date,
-    datetime,
-    file_type,
-    none_type,
     unset,
     UnsetType,
-    UUID,
 )
-
 
 
 class ListAPIsResponseMetaPagination(ModelNormal):
@@ -30,13 +21,20 @@ class ListAPIsResponseMetaPagination(ModelNormal):
             "offset": (int,),
             "total_count": (int,),
         }
+
     attribute_map = {
         "limit": "limit",
         "offset": "offset",
         "total_count": "total_count",
     }
 
-    def __init__(self_, limit: Union[int, UnsetType]=unset, offset: Union[int, UnsetType]=unset, total_count: Union[int, UnsetType]=unset, **kwargs):
+    def __init__(
+        self_,
+        limit: Union[int, UnsetType] = unset,
+        offset: Union[int, UnsetType] = unset,
+        total_count: Union[int, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Pagination metadata information for ``ListAPIsResponse``.
 
@@ -50,11 +48,9 @@ class ListAPIsResponseMetaPagination(ModelNormal):
         :type total_count: int, optional
         """
         if limit is not unset:
-             kwargs["limit"] = limit
+            kwargs["limit"] = limit
         if offset is not unset:
-             kwargs["offset"] = offset
+            kwargs["offset"] = offset
         if total_count is not unset:
-             kwargs["total_count"] = total_count
+            kwargs["total_count"] = total_count
         super().__init__(kwargs)
-
-

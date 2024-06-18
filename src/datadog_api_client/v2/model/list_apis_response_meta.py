@@ -3,39 +3,34 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Any, Dict, List, Union, TYPE_CHECKING
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
-    ApiTypeError,
-    ModelComposed,
     ModelNormal,
-    ModelSimple,
     cached_property,
-    date,
-    datetime,
-    file_type,
-    none_type,
     unset,
     UnsetType,
-    UUID,
 )
 
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.list_apis_response_meta_pagination import ListAPIsResponseMetaPagination
 
+
 class ListAPIsResponseMeta(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.list_apis_response_meta_pagination import ListAPIsResponseMetaPagination
+
         return {
             "pagination": (ListAPIsResponseMetaPagination,),
         }
+
     attribute_map = {
         "pagination": "pagination",
     }
 
-    def __init__(self_, pagination: Union[ListAPIsResponseMetaPagination, UnsetType]=unset, **kwargs):
+    def __init__(self_, pagination: Union[ListAPIsResponseMetaPagination, UnsetType] = unset, **kwargs):
         """
         Metadata for ``ListAPIsResponse``.
 
@@ -43,7 +38,5 @@ class ListAPIsResponseMeta(ModelNormal):
         :type pagination: ListAPIsResponseMetaPagination, optional
         """
         if pagination is not unset:
-             kwargs["pagination"] = pagination
+            kwargs["pagination"] = pagination
         super().__init__(kwargs)
-
-

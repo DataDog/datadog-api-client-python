@@ -3,23 +3,14 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Any, Dict, List, Union, TYPE_CHECKING
+from typing import Union
 
 from datadog_api_client.model_utils import (
-    ApiTypeError,
-    ModelComposed,
     ModelNormal,
-    ModelSimple,
     cached_property,
-    date,
-    datetime,
-    file_type,
-    none_type,
     unset,
     UnsetType,
-    UUID,
 )
-
 
 
 class ListAPIsResponseDataAttributes(ModelNormal):
@@ -28,11 +19,12 @@ class ListAPIsResponseDataAttributes(ModelNormal):
         return {
             "name": (str,),
         }
+
     attribute_map = {
         "name": "name",
     }
 
-    def __init__(self_, name: Union[str, UnsetType]=unset, **kwargs):
+    def __init__(self_, name: Union[str, UnsetType] = unset, **kwargs):
         """
         Attributes for ``ListAPIsResponseData``.
 
@@ -40,7 +32,5 @@ class ListAPIsResponseDataAttributes(ModelNormal):
         :type name: str, optional
         """
         if name is not unset:
-             kwargs["name"] = name
+            kwargs["name"] = name
         super().__init__(kwargs)
-
-
