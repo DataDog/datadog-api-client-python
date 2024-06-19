@@ -20,7 +20,7 @@ if TYPE_CHECKING:
 class EventsGroupBy(ModelNormal):
     validations = {
         "limit": {
-            "inclusive_maximum": 2147483647,
+            "inclusive_maximum": 10000,
         },
     }
 
@@ -53,7 +53,8 @@ class EventsGroupBy(ModelNormal):
         :param facet: The facet by which to split groups.
         :type facet: str
 
-        :param limit: The maximum number of groups to return.
+        :param limit: The maximum buckets to return for this group by. Note: at most 10000 buckets are allowed.
+            If grouping by multiple facets, the product of limits must not exceed 10000.
         :type limit: int, optional
 
         :param sort: The dimension by which to sort a query's results.
