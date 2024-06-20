@@ -4481,38 +4481,38 @@ jsonapi\_error\_response
    :members:
    :show-inheritance:
 
-list\_ap\_is\_response
-----------------------
+list\_apis\_response
+--------------------
 
-.. automodule:: datadog_api_client.v2.model.list_ap_is_response
+.. automodule:: datadog_api_client.v2.model.list_apis_response
    :members:
    :show-inheritance:
 
-list\_ap\_is\_response\_data
-----------------------------
+list\_apis\_response\_data
+--------------------------
 
-.. automodule:: datadog_api_client.v2.model.list_ap_is_response_data
+.. automodule:: datadog_api_client.v2.model.list_apis_response_data
    :members:
    :show-inheritance:
 
-list\_ap\_is\_response\_data\_attributes
-----------------------------------------
+list\_apis\_response\_data\_attributes
+--------------------------------------
 
-.. automodule:: datadog_api_client.v2.model.list_ap_is_response_data_attributes
+.. automodule:: datadog_api_client.v2.model.list_apis_response_data_attributes
    :members:
    :show-inheritance:
 
-list\_ap\_is\_response\_meta
-----------------------------
+list\_apis\_response\_meta
+--------------------------
 
-.. automodule:: datadog_api_client.v2.model.list_ap_is_response_meta
+.. automodule:: datadog_api_client.v2.model.list_apis_response_meta
    :members:
    :show-inheritance:
 
-list\_ap\_is\_response\_meta\_pagination
-----------------------------------------
+list\_apis\_response\_meta\_pagination
+--------------------------------------
 
-.. automodule:: datadog_api_client.v2.model.list_ap_is_response_meta_pagination
+.. automodule:: datadog_api_client.v2.model.list_apis_response_meta_pagination
    :members:
    :show-inheritance:
 
