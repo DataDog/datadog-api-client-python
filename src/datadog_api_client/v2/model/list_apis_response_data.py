@@ -15,13 +15,13 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.list_ap_is_response_data_attributes import ListAPIsResponseDataAttributes
+    from datadog_api_client.v2.model.list_apis_response_data_attributes import ListAPIsResponseDataAttributes
 
 
 class ListAPIsResponseData(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.list_ap_is_response_data_attributes import ListAPIsResponseDataAttributes
+        from datadog_api_client.v2.model.list_apis_response_data_attributes import ListAPIsResponseDataAttributes
 
         return {
             "attributes": (ListAPIsResponseDataAttributes,),
