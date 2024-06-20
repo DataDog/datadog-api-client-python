@@ -1,0 +1,41 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/org_configs
+  response:
+    body:
+      string: '{"data":[{"type":"org_configs","id":"4c2b0cec-de6d-5030-b3fd-391b34ff99eb","attributes":{"name":"invalid_session_30_days","description":"Test
+        test test","value_type":"bool","value":true,"modified_at":null}},{"type":"org_configs","id":"ae6ea27d-7945-56c9-a12b-37fc3b094459","attributes":{"name":"my_new_org_config_key_name","description":"This
+        is a description","value_type":"bool","value":false,"modified_at":null}},{"type":"org_configs","id":"0e63d108-84c3-55c7-9767-e00b21e5bc30","attributes":{"name":"domain_allowlist","description":"domain
+        allowlist for emails to be sent","value_type":"email_domain_list","value":[],"modified_at":null}},{"type":"org_configs","id":"3081bbc5-6227-5e58-86e3-835fa2b72858","attributes":{"name":"enable_domain_allowlist","description":"domain
+        allowlist enablement for emails to be sent","value_type":"bool","value":false,"modified_at":null}},{"type":"org_configs","id":"86f9a647-f7f9-5181-aa4a-2530bdcb4374","attributes":{"name":"30d_invite_expiration","description":"This
+        will set the expiration date of Org invites to 30 days instead of the default
+        2 days","value_type":"bool","value":false,"modified_at":null}},{"type":"org_configs","id":"5639dc2d-d96a-558a-b2bb-c563b5a7d609","attributes":{"name":"oauth_client_disallow_list","description":"Disallow
+        list for oauth clients users can authorize with in a given org.","value_type":"list","value":[],"modified_at":null}},{"type":"org_configs","id":"336c724c-521f-559e-9b43-28b38289ab64","attributes":{"name":"restrict_export_to_csv","description":"Disables
+        the ability to export Logs to CSV via the API and UI for all users of an org.","value_type":"bool","value":false,"modified_at":null}},{"type":"org_configs","id":"b2935166-5372-53a7-9c91-632d39c81dba","attributes":{"name":"pci_enabled","description":"pci
+        compliance is enabled for this org","value_type":"bool","value":false,"modified_at":null}},{"type":"org_configs","id":"bddab2d2-e3b8-5103-b74f-be209608a3cf","attributes":{"name":"invalid_session_forced_logout","description":"Force
+        reload on current_user 403 response / invalid session. Checked every minute.","value_type":"bool","value":false,"modified_at":null}},{"type":"org_configs","id":"d4a6259b-5599-5120-8bdb-22718cb09118","attributes":{"name":"custom_roles","description":"Enables
+        the custom roles (RBAC) UI.","value_type":"bool","value":false,"modified_at":null}},{"type":"org_configs","id":"61d24356-1d0a-51b2-ac77-16bddb9a4fbc","attributes":{"name":"log_anomaly_detection","description":"Whether
+        the API should return results for Logs Anomaly detection","value_type":"bool","value":true,"modified_at":null}},{"type":"org_configs","id":"4fcf5523-7578-5ebb-bf7f-cc0b96047ea5","attributes":{"name":"logs_has_set_flex_log_compute","description":"Org
+        config used to know an org has set flex log compute. This is useful to sync
+        the log query UI and preferred query storage type with flex log enablement.","value_type":"bool","value":false,"modified_at":null}},{"type":"org_configs","id":"1e20f9a8-ef08-5716-a466-d650854c9c62","attributes":{"name":"open_retentions","description":"Enables
+        users to set out of contract retentions.","value_type":"bool","value":false,"modified_at":null}},{"type":"org_configs","id":"87eeb191-0e80-575d-9b1f-2efed8aae16d","attributes":{"name":"admin_only_invites","description":"Restrict
+        user invites to only admins","value_type":"bool","value":false,"modified_at":null}},{"type":"org_configs","id":"47d07447-cee4-5f45-820a-3595c8c1ce21","attributes":{"name":"security_contacts","description":"List
+        of emails for security event notifications of an organization","value_type":"security_contacts_list","value":[],"modified_at":"2024-05-06T13:51:46.470206+00:00"}},{"type":"org_configs","id":"ba76efd8-79f3-52ee-8742-856c18e754c7","attributes":{"name":"teams_manage_membership","description":"Controls
+        who can manage membership for teams","value_type":"enum","value":"organization","modified_at":null}},{"type":"org_configs","id":"63be605e-4cc3-566b-94d8-475ab5137e25","attributes":{"name":"teams_edit_details","description":"Controls
+        who can edit team details","value_type":"enum","value":"members","modified_at":null}},{"type":"org_configs","id":"855e9fc7-449d-5fbf-9607-9f9bfca3dddf","attributes":{"name":"teams_provisioning_sources","description":"Determines
+        how users can be added to teams","value_type":"enum","value":"manually","modified_at":null}},{"type":"org_configs","id":"54efd4ec-bb21-5e8a-9cb8-712e18f8b6b7","attributes":{"name":"monitor_timezone","description":"Sets
+        the time zone used for monitoring alerts","value_type":"enum","value":"UTC","modified_at":null}}]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

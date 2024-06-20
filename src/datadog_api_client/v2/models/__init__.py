@@ -1044,6 +1044,14 @@ from datadog_api_client.v2.model.opsgenie_service_update_attributes import Opsge
 from datadog_api_client.v2.model.opsgenie_service_update_data import OpsgenieServiceUpdateData
 from datadog_api_client.v2.model.opsgenie_service_update_request import OpsgenieServiceUpdateRequest
 from datadog_api_client.v2.model.opsgenie_services_response import OpsgenieServicesResponse
+from datadog_api_client.v2.model.org_config_get_response import OrgConfigGetResponse
+from datadog_api_client.v2.model.org_config_list_response import OrgConfigListResponse
+from datadog_api_client.v2.model.org_config_read import OrgConfigRead
+from datadog_api_client.v2.model.org_config_read_attributes import OrgConfigReadAttributes
+from datadog_api_client.v2.model.org_config_type import OrgConfigType
+from datadog_api_client.v2.model.org_config_write import OrgConfigWrite
+from datadog_api_client.v2.model.org_config_write_attributes import OrgConfigWriteAttributes
+from datadog_api_client.v2.model.org_config_write_request import OrgConfigWriteRequest
 from datadog_api_client.v2.model.organization import Organization
 from datadog_api_client.v2.model.organization_attributes import OrganizationAttributes
 from datadog_api_client.v2.model.organizations_type import OrganizationsType
@@ -2690,6 +2698,14 @@ __all__ = [
     "OpsgenieServiceUpdateData",
     "OpsgenieServiceUpdateRequest",
     "OpsgenieServicesResponse",
+    "OrgConfigGetResponse",
+    "OrgConfigListResponse",
+    "OrgConfigRead",
+    "OrgConfigReadAttributes",
+    "OrgConfigType",
+    "OrgConfigWrite",
+    "OrgConfigWriteAttributes",
+    "OrgConfigWriteRequest",
     "Organization",
     "OrganizationAttributes",
     "OrganizationsType",
