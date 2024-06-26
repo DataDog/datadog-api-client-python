@@ -16,16 +16,18 @@ class SyntheticsAPIStepSubtype(ModelSimple):
     """
     The subtype of the Synthetic multistep API test step, currently only supporting `http`.
 
-    :param value: Must be one of ["http", "grpc"].
+    :param value: Must be one of ["http", "grpc", "wait"].
     :type value: str
     """
 
     allowed_values = {
         "http",
         "grpc",
+        "wait",
     }
     HTTP: ClassVar["SyntheticsAPIStepSubtype"]
     GRPC: ClassVar["SyntheticsAPIStepSubtype"]
+    WAIT: ClassVar["SyntheticsAPIStepSubtype"]
 
     @cached_property
     def openapi_types(_):
@@ -36,3 +38,4 @@ class SyntheticsAPIStepSubtype(ModelSimple):
 
 SyntheticsAPIStepSubtype.HTTP = SyntheticsAPIStepSubtype("http")
 SyntheticsAPIStepSubtype.GRPC = SyntheticsAPIStepSubtype("grpc")
+SyntheticsAPIStepSubtype.WAIT = SyntheticsAPIStepSubtype("wait")

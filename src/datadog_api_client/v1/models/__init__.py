@@ -617,7 +617,9 @@ from datadog_api_client.v1.model.synthetics_api_test_result_full import Syntheti
 from datadog_api_client.v1.model.synthetics_api_test_result_full_check import SyntheticsAPITestResultFullCheck
 from datadog_api_client.v1.model.synthetics_api_test_result_short import SyntheticsAPITestResultShort
 from datadog_api_client.v1.model.synthetics_api_test_result_short_result import SyntheticsAPITestResultShortResult
+from datadog_api_client.v1.model.synthetics_api_test_step import SyntheticsAPITestStep
 from datadog_api_client.v1.model.synthetics_api_test_type import SyntheticsAPITestType
+from datadog_api_client.v1.model.synthetics_api_wait_step import SyntheticsAPIWaitStep
 from datadog_api_client.v1.model.synthetics_api_test_failure_code import SyntheticsApiTestFailureCode
 from datadog_api_client.v1.model.synthetics_api_test_result_failure import SyntheticsApiTestResultFailure
 from datadog_api_client.v1.model.synthetics_assertion import SyntheticsAssertion
@@ -1525,7 +1527,9 @@ __all__ = [
     "SyntheticsAPITestResultFullCheck",
     "SyntheticsAPITestResultShort",
     "SyntheticsAPITestResultShortResult",
+    "SyntheticsAPITestStep",
     "SyntheticsAPITestType",
+    "SyntheticsAPIWaitStep",
     "SyntheticsApiTestFailureCode",
     "SyntheticsApiTestResultFailure",
     "SyntheticsAssertion",

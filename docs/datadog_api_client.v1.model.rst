@@ -3844,10 +3844,24 @@ synthetics\_api\_test\_result\_short\_result
    :members:
    :show-inheritance:
 
+synthetics\_api\_test\_step
+---------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_api_test_step
+   :members:
+   :show-inheritance:
+
 synthetics\_api\_test\_type
 ---------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_api_test_type
+   :members:
+   :show-inheritance:
+
+synthetics\_api\_wait\_step
+---------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_api_wait_step
    :members:
    :show-inheritance:
 

@@ -3,67 +3,17 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
-    ModelNormal,
+    ModelComposed,
     cached_property,
-    unset,
-    UnsetType,
 )
 
 
-if TYPE_CHECKING:
-    from datadog_api_client.v1.model.synthetics_parsing_options import SyntheticsParsingOptions
-    from datadog_api_client.v1.model.synthetics_test_request import SyntheticsTestRequest
-    from datadog_api_client.v1.model.synthetics_test_options_retry import SyntheticsTestOptionsRetry
-    from datadog_api_client.v1.model.synthetics_api_step_subtype import SyntheticsAPIStepSubtype
-
-
-class SyntheticsAPIStep(ModelNormal):
-    @cached_property
-    def openapi_types(_):
-        from datadog_api_client.v1.model.synthetics_assertion import SyntheticsAssertion
-        from datadog_api_client.v1.model.synthetics_parsing_options import SyntheticsParsingOptions
-        from datadog_api_client.v1.model.synthetics_test_request import SyntheticsTestRequest
-        from datadog_api_client.v1.model.synthetics_test_options_retry import SyntheticsTestOptionsRetry
-        from datadog_api_client.v1.model.synthetics_api_step_subtype import SyntheticsAPIStepSubtype
-
-        return {
-            "allow_failure": (bool,),
-            "assertions": ([SyntheticsAssertion],),
-            "extracted_values": ([SyntheticsParsingOptions],),
-            "is_critical": (bool,),
-            "name": (str,),
-            "request": (SyntheticsTestRequest,),
-            "retry": (SyntheticsTestOptionsRetry,),
-            "subtype": (SyntheticsAPIStepSubtype,),
-        }
-
-    attribute_map = {
-        "allow_failure": "allowFailure",
-        "assertions": "assertions",
-        "extracted_values": "extractedValues",
-        "is_critical": "isCritical",
-        "name": "name",
-        "request": "request",
-        "retry": "retry",
-        "subtype": "subtype",
-    }
-
-    def __init__(
-        self_,
-        name: str,
-        request: SyntheticsTestRequest,
-        subtype: SyntheticsAPIStepSubtype,
-        allow_failure: Union[bool, UnsetType] = unset,
-        extracted_values: Union[List[SyntheticsParsingOptions], UnsetType] = unset,
-        is_critical: Union[bool, UnsetType] = unset,
-        retry: Union[SyntheticsTestOptionsRetry, UnsetType] = unset,
-        **kwargs,
-    ):
+class SyntheticsAPIStep(ModelComposed):
+    def __init__(self, **kwargs):
         """
-        The steps used in a Synthetic multistep API test.
+        The steps used in a Synthetic multi-step API test.
 
         :param allow_failure: Determines whether or not to continue with test if this step fails.
         :type allow_failure: bool, optional
@@ -75,7 +25,7 @@ class SyntheticsAPIStep(ModelNormal):
         :type extracted_values: [SyntheticsParsingOptions], optional
 
         :param is_critical: Determines whether or not to consider the entire test as failed if this step fails.
-            Can be used only if ``allowFailure`` is ``true``.
+            Can be used only if `allowFailure` is `true`.
         :type is_critical: bool, optional
 
         :param name: The name of the step.
@@ -87,21 +37,29 @@ class SyntheticsAPIStep(ModelNormal):
         :param retry: Object describing the retry strategy to apply to a Synthetic test.
         :type retry: SyntheticsTestOptionsRetry, optional
 
-        :param subtype: The subtype of the Synthetic multistep API test step, currently only supporting ``http``.
+        :param subtype: The subtype of the Synthetic multistep API test step, currently only supporting `http`.
         :type subtype: SyntheticsAPIStepSubtype
-        """
-        if allow_failure is not unset:
-            kwargs["allow_failure"] = allow_failure
-        if extracted_values is not unset:
-            kwargs["extracted_values"] = extracted_values
-        if is_critical is not unset:
-            kwargs["is_critical"] = is_critical
-        if retry is not unset:
-            kwargs["retry"] = retry
-        super().__init__(kwargs)
-        assertions = kwargs.get("assertions", [])
 
-        self_.assertions = assertions
-        self_.name = name
-        self_.request = request
-        self_.subtype = subtype
+        :param value: The time to wait in seconds. Minimum value: 0. Maximum value: 180.
+        :type value: int
+        """
+        super().__init__(kwargs)
+
+    @cached_property
+    def _composed_schemas(_):
+        # we need this here to make our import statements work
+        # we must store _composed_schemas in here so the code is only run
+        # when we invoke this method. If we kept this at the class
+        # level we would get an error because the class level
+        # code would be run when this module is imported, and these composed
+        # classes don't exist yet because their module has not finished
+        # loading
+        from datadog_api_client.v1.model.synthetics_api_test_step import SyntheticsAPITestStep
+        from datadog_api_client.v1.model.synthetics_api_wait_step import SyntheticsAPIWaitStep
+
+        return {
+            "oneOf": [
+                SyntheticsAPITestStep,
+                SyntheticsAPIWaitStep,
+            ],
+        }
