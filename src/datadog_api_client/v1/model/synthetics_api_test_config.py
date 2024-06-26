@@ -23,6 +23,8 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.synthetics_assertion_json_path_target import SyntheticsAssertionJSONPathTarget
     from datadog_api_client.v1.model.synthetics_assertion_json_schema_target import SyntheticsAssertionJSONSchemaTarget
     from datadog_api_client.v1.model.synthetics_assertion_x_path_target import SyntheticsAssertionXPathTarget
+    from datadog_api_client.v1.model.synthetics_api_test_step import SyntheticsAPITestStep
+    from datadog_api_client.v1.model.synthetics_api_wait_step import SyntheticsAPIWaitStep
 
 
 class SyntheticsAPITestConfig(ModelNormal):
@@ -66,7 +68,7 @@ class SyntheticsAPITestConfig(ModelNormal):
         ] = unset,
         config_variables: Union[List[SyntheticsConfigVariable], UnsetType] = unset,
         request: Union[SyntheticsTestRequest, UnsetType] = unset,
-        steps: Union[List[SyntheticsAPIStep], UnsetType] = unset,
+        steps: Union[List[Union[SyntheticsAPIStep, SyntheticsAPITestStep, SyntheticsAPIWaitStep]], UnsetType] = unset,
         variables_from_script: Union[str, UnsetType] = unset,
         **kwargs,
     ):
