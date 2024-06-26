@@ -24344,7 +24344,6 @@ paths:
       summary: List all AuthN Mappings
       tags:
       - AuthN Mappings
-      x-permission: OPEN()
     post:
       description: Create an AuthN Mapping.
       operationId: CreateAuthNMapping
@@ -24385,7 +24384,6 @@ paths:
       tags:
       - AuthN Mappings
       x-codegen-request-body-name: body
-      x-permission: OR(USER_ACCESS_MANAGE)
   /api/v2/authn_mappings/{authn_mapping_id}:
     delete:
       description: Delete an AuthN Mapping specified by AuthN Mapping UUID.
@@ -24417,7 +24415,6 @@ paths:
       summary: Delete an AuthN Mapping
       tags:
       - AuthN Mappings
-      x-permission: OR(USER_ACCESS_MANAGE)
     get:
       description: Get an AuthN Mapping specified by the AuthN Mapping UUID.
       operationId: GetAuthNMapping
@@ -24451,7 +24448,6 @@ paths:
       summary: Get an AuthN Mapping by UUID
       tags:
       - AuthN Mappings
-      x-permission: OPEN()
     patch:
       description: Edit an AuthN Mapping.
       operationId: UpdateAuthNMapping
@@ -24511,7 +24507,6 @@ paths:
       tags:
       - AuthN Mappings
       x-codegen-request-body-name: body
-      x-permission: OR(USER_ACCESS_MANAGE)
   /api/v2/cases:
     get:
       description: Search cases.
@@ -25491,10 +25486,6 @@ paths:
       summary: List Cloud Cost Management AWS CUR configs
       tags:
       - Cloud Cost Management
-      x-permission:
-        operator: OR
-        permissions:
-        - CLOUD_COST_MANAGEMENT_READ
     post:
       description: Create a Cloud Cost Management account for an AWS CUR config.
       operationId: CreateCostAWSCURConfig
@@ -25533,10 +25524,6 @@ paths:
       summary: Create Cloud Cost Management AWS CUR config
       tags:
       - Cloud Cost Management
-      x-permission:
-        operator: OR
-        permissions:
-        - CLOUD_COST_MANAGEMENT_WRITE
   /api/v2/cost/aws_cur_config/{cloud_account_id}:
     delete:
       description: Archive a Cloud Cost Management Account.
@@ -25568,10 +25555,6 @@ paths:
       summary: Delete Cloud Cost Management AWS CUR config
       tags:
       - Cloud Cost Management
-      x-permission:
-        operator: OR
-        permissions:
-        - CLOUD_COST_MANAGEMENT_WRITE
     patch:
       description: Update the status of an AWS CUR config (active/archived).
       operationId: UpdateCostAWSCURConfig
@@ -25606,10 +25589,6 @@ paths:
       summary: Update Cloud Cost Management AWS CUR config
       tags:
       - Cloud Cost Management
-      x-permission:
-        operator: OR
-        permissions:
-        - CLOUD_COST_MANAGEMENT_WRITE
   /api/v2/cost/aws_related_accounts:
     get:
       description: List the AWS accounts in an organization by calling 'organizations:ListAccounts'
@@ -25652,10 +25631,6 @@ paths:
       summary: List related AWS accounts
       tags:
       - Cloud Cost Management
-      x-permission:
-        operator: OR
-        permissions:
-        - CLOUD_COST_MANAGEMENT_READ
   /api/v2/cost/azure_uc_config:
     get:
       description: List the Azure configs.
@@ -25683,10 +25658,6 @@ paths:
       summary: List Cloud Cost Management Azure configs
       tags:
       - Cloud Cost Management
-      x-permission:
-        operator: OR
-        permissions:
-        - CLOUD_COST_MANAGEMENT_READ
     post:
       description: Create a Cloud Cost Management account for an Azure config.
       operationId: CreateCostAzureUCConfigs
@@ -25725,10 +25696,6 @@ paths:
       summary: Create Cloud Cost Management Azure configs
       tags:
       - Cloud Cost Management
-      x-permission:
-        operator: OR
-        permissions:
-        - CLOUD_COST_MANAGEMENT_WRITE
   /api/v2/cost/azure_uc_config/{cloud_account_id}:
     delete:
       description: Archive a Cloud Cost Management Account.
@@ -25760,10 +25727,6 @@ paths:
       summary: Delete Cloud Cost Management Azure config
       tags:
       - Cloud Cost Management
-      x-permission:
-        operator: OR
-        permissions:
-        - CLOUD_COST_MANAGEMENT_WRITE
     patch:
       description: Update the status of an  Azure config (active/archived).
       operationId: UpdateCostAzureUCConfigs
@@ -25804,10 +25767,6 @@ paths:
       summary: Update Cloud Cost Management Azure config
       tags:
       - Cloud Cost Management
-      x-permission:
-        operator: OR
-        permissions:
-        - CLOUD_COST_MANAGEMENT_WRITE
   /api/v2/cost/enabled:
     get:
       description: Get the Cloud Cost Management activity.
@@ -25835,10 +25794,6 @@ paths:
       summary: Cloud Cost Enabled
       tags:
       - Cloud Cost Management
-      x-permission:
-        operator: OR
-        permissions:
-        - CLOUD_COST_MANAGEMENT_READ
   /api/v2/cost_by_tag/active_billing_dimensions:
     get:
       description: Get active billing dimensions for cost attribution. Cost data for
@@ -28166,10 +28121,6 @@ paths:
       tags:
       - Confluent Cloud
       x-codegen-request-body-name: body
-      x-permission:
-        operator: OR
-        permissions:
-        - STANDARD
   /api/v2/integrations/fastly/accounts:
     get:
       description: List Fastly accounts.
@@ -31817,7 +31768,6 @@ paths:
       tags:
       - Roles
       x-codegen-request-body-name: body
-      x-permission: OR(USER_ACCESS_MANAGE)
   /api/v2/roles/{role_id}/permissions:
     delete:
       description: Removes a permission from a role.
