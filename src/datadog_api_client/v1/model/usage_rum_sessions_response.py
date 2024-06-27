@@ -32,9 +32,9 @@ class UsageRumSessionsResponse(ModelNormal):
 
     def __init__(self_, usage: Union[List[UsageRumSessionsHour], UnsetType] = unset, **kwargs):
         """
-        Response containing the number of RUM Sessions for each hour for a given organization.
+        Response containing the number of RUM sessions for each hour for a given organization.
 
-        :param usage: Get hourly usage for RUM Sessions.
+        :param usage: Get hourly usage for RUM sessions.
         :type usage: [UsageRumSessionsHour], optional
         """
         if usage is not unset:
