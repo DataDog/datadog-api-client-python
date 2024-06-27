@@ -114,6 +114,21 @@ class UsageSummaryDate(ModelNormal):
             "profiling_aas_count_top99p": (int,),
             "profiling_host_top99p": (int,),
             "rum_browser_and_mobile_session_count": (int,),
+            "rum_browser_legacy_session_count_sum": (int,),
+            "rum_browser_lite_session_count_sum": (int,),
+            "rum_browser_replay_session_count_sum": (int,),
+            "rum_lite_session_count_sum": (int,),
+            "rum_mobile_legacy_session_count_android_sum": (int,),
+            "rum_mobile_legacy_session_count_flutter_sum": (int,),
+            "rum_mobile_legacy_session_count_ios_sum": (int,),
+            "rum_mobile_legacy_session_count_reactnative_sum": (int,),
+            "rum_mobile_legacy_session_count_roku_sum": (int,),
+            "rum_mobile_lite_session_count_android_sum": (int,),
+            "rum_mobile_lite_session_count_flutter_sum": (int,),
+            "rum_mobile_lite_session_count_ios_sum": (int,),
+            "rum_mobile_lite_session_count_reactnative_sum": (int,),
+            "rum_mobile_lite_session_count_roku_sum": (int,),
+            "rum_replay_session_count_sum": (int,),
             "rum_session_count_sum": (int,),
             "rum_total_session_count_sum": (int,),
             "rum_units_sum": (int,),
@@ -228,6 +243,21 @@ class UsageSummaryDate(ModelNormal):
         "profiling_aas_count_top99p": "profiling_aas_count_top99p",
         "profiling_host_top99p": "profiling_host_top99p",
         "rum_browser_and_mobile_session_count": "rum_browser_and_mobile_session_count",
+        "rum_browser_legacy_session_count_sum": "rum_browser_legacy_session_count_sum",
+        "rum_browser_lite_session_count_sum": "rum_browser_lite_session_count_sum",
+        "rum_browser_replay_session_count_sum": "rum_browser_replay_session_count_sum",
+        "rum_lite_session_count_sum": "rum_lite_session_count_sum",
+        "rum_mobile_legacy_session_count_android_sum": "rum_mobile_legacy_session_count_android_sum",
+        "rum_mobile_legacy_session_count_flutter_sum": "rum_mobile_legacy_session_count_flutter_sum",
+        "rum_mobile_legacy_session_count_ios_sum": "rum_mobile_legacy_session_count_ios_sum",
+        "rum_mobile_legacy_session_count_reactnative_sum": "rum_mobile_legacy_session_count_reactnative_sum",
+        "rum_mobile_legacy_session_count_roku_sum": "rum_mobile_legacy_session_count_roku_sum",
+        "rum_mobile_lite_session_count_android_sum": "rum_mobile_lite_session_count_android_sum",
+        "rum_mobile_lite_session_count_flutter_sum": "rum_mobile_lite_session_count_flutter_sum",
+        "rum_mobile_lite_session_count_ios_sum": "rum_mobile_lite_session_count_ios_sum",
+        "rum_mobile_lite_session_count_reactnative_sum": "rum_mobile_lite_session_count_reactnative_sum",
+        "rum_mobile_lite_session_count_roku_sum": "rum_mobile_lite_session_count_roku_sum",
+        "rum_replay_session_count_sum": "rum_replay_session_count_sum",
         "rum_session_count_sum": "rum_session_count_sum",
         "rum_total_session_count_sum": "rum_total_session_count_sum",
         "rum_units_sum": "rum_units_sum",
@@ -343,6 +373,21 @@ class UsageSummaryDate(ModelNormal):
         profiling_aas_count_top99p: Union[int, UnsetType] = unset,
         profiling_host_top99p: Union[int, UnsetType] = unset,
         rum_browser_and_mobile_session_count: Union[int, UnsetType] = unset,
+        rum_browser_legacy_session_count_sum: Union[int, UnsetType] = unset,
+        rum_browser_lite_session_count_sum: Union[int, UnsetType] = unset,
+        rum_browser_replay_session_count_sum: Union[int, UnsetType] = unset,
+        rum_lite_session_count_sum: Union[int, UnsetType] = unset,
+        rum_mobile_legacy_session_count_android_sum: Union[int, UnsetType] = unset,
+        rum_mobile_legacy_session_count_flutter_sum: Union[int, UnsetType] = unset,
+        rum_mobile_legacy_session_count_ios_sum: Union[int, UnsetType] = unset,
+        rum_mobile_legacy_session_count_reactnative_sum: Union[int, UnsetType] = unset,
+        rum_mobile_legacy_session_count_roku_sum: Union[int, UnsetType] = unset,
+        rum_mobile_lite_session_count_android_sum: Union[int, UnsetType] = unset,
+        rum_mobile_lite_session_count_flutter_sum: Union[int, UnsetType] = unset,
+        rum_mobile_lite_session_count_ios_sum: Union[int, UnsetType] = unset,
+        rum_mobile_lite_session_count_reactnative_sum: Union[int, UnsetType] = unset,
+        rum_mobile_lite_session_count_roku_sum: Union[int, UnsetType] = unset,
+        rum_replay_session_count_sum: Union[int, UnsetType] = unset,
         rum_session_count_sum: Union[int, UnsetType] = unset,
         rum_total_session_count_sum: Union[int, UnsetType] = unset,
         rum_units_sum: Union[int, UnsetType] = unset,
@@ -390,7 +435,7 @@ class UsageSummaryDate(ModelNormal):
         :param asm_serverless_sum: Shows the sum of all Application Security Monitoring Serverless invocations over all hours in the current date for all organizations.
         :type asm_serverless_sum: int, optional
 
-        :param audit_logs_lines_indexed_sum: Shows the sum of audit logs lines indexed over all hours in the current date for all organizations. **Deprecated**.
+        :param audit_logs_lines_indexed_sum: Shows the sum of audit logs lines indexed over all hours in the current date for all organizations (To be deprecated on October 1st, 2024). **Deprecated**.
         :type audit_logs_lines_indexed_sum: int, optional
 
         :param audit_trail_enabled_hwm: Shows the number of organizations that had Audit Trail enabled in the current date.
@@ -414,13 +459,13 @@ class UsageSummaryDate(ModelNormal):
         :param billable_ingested_bytes_sum: Shows the sum of all log bytes ingested over all hours in the current date for all organizations.
         :type billable_ingested_bytes_sum: int, optional
 
-        :param browser_rum_lite_session_count_sum: Shows the sum of all browser lite sessions over all hours in the current date for all organizations.
+        :param browser_rum_lite_session_count_sum: Shows the sum of all browser lite sessions over all hours in the current date for all organizations (To be deprecated on October 1st, 2024). **Deprecated**.
         :type browser_rum_lite_session_count_sum: int, optional
 
-        :param browser_rum_replay_session_count_sum: Shows the sum of all browser replay sessions over all hours in the current date for all organizations.
+        :param browser_rum_replay_session_count_sum: Shows the sum of all browser replay sessions over all hours in the current date for all organizations (To be deprecated on October 1st, 2024).
         :type browser_rum_replay_session_count_sum: int, optional
 
-        :param browser_rum_units_sum: Shows the sum of all browser RUM units over all hours in the current date for all organizations.
+        :param browser_rum_units_sum: Shows the sum of all browser RUM units over all hours in the current date for all organizations (To be deprecated on October 1st, 2024). **Deprecated**.
         :type browser_rum_units_sum: int, optional
 
         :param ci_pipeline_indexed_spans_sum: Shows the sum of all CI pipeline indexed spans over all hours in the current month for all organizations.
@@ -582,34 +627,34 @@ class UsageSummaryDate(ModelNormal):
         :param iot_device_top99p: Shows the 99th percentile of all IoT devices over all hours in the current date all organizations.
         :type iot_device_top99p: int, optional
 
-        :param mobile_rum_lite_session_count_sum: Shows the sum of all mobile lite sessions over all hours in the current date for all organizations.
+        :param mobile_rum_lite_session_count_sum: Shows the sum of all mobile lite sessions over all hours in the current date for all organizations (To be deprecated on October 1st, 2024). **Deprecated**.
         :type mobile_rum_lite_session_count_sum: int, optional
 
-        :param mobile_rum_session_count_android_sum: Shows the sum of all mobile RUM Sessions on Android over all hours in the current date for all organizations.
+        :param mobile_rum_session_count_android_sum: Shows the sum of all mobile RUM sessions on Android over all hours in the current date for all organizations (To be deprecated on October 1st, 2024). **Deprecated**.
         :type mobile_rum_session_count_android_sum: int, optional
 
-        :param mobile_rum_session_count_flutter_sum: Shows the sum of all mobile RUM Sessions on Flutter over all hours in the current date for all organizations.
+        :param mobile_rum_session_count_flutter_sum: Shows the sum of all mobile RUM sessions on Flutter over all hours in the current date for all organizations (To be deprecated on October 1st, 2024). **Deprecated**.
         :type mobile_rum_session_count_flutter_sum: int, optional
 
-        :param mobile_rum_session_count_ios_sum: Shows the sum of all mobile RUM Sessions on iOS over all hours in the current date for all organizations.
+        :param mobile_rum_session_count_ios_sum: Shows the sum of all mobile RUM sessions on iOS over all hours in the current date for all organizations (To be deprecated on October 1st, 2024). **Deprecated**.
         :type mobile_rum_session_count_ios_sum: int, optional
 
-        :param mobile_rum_session_count_reactnative_sum: Shows the sum of all mobile RUM Sessions on React Native over all hours in the current date for all organizations.
+        :param mobile_rum_session_count_reactnative_sum: Shows the sum of all mobile RUM sessions on React Native over all hours in the current date for all organizations (To be deprecated on October 1st, 2024). **Deprecated**.
         :type mobile_rum_session_count_reactnative_sum: int, optional
 
-        :param mobile_rum_session_count_roku_sum: Shows the sum of all mobile RUM Sessions on Roku over all hours in the current date for all organizations.
+        :param mobile_rum_session_count_roku_sum: Shows the sum of all mobile RUM sessions on Roku over all hours in the current date for all organizations (To be deprecated on October 1st, 2024). **Deprecated**.
         :type mobile_rum_session_count_roku_sum: int, optional
 
-        :param mobile_rum_session_count_sum: Shows the sum of all mobile RUM Sessions over all hours in the current date for all organizations
+        :param mobile_rum_session_count_sum: Shows the sum of all mobile RUM sessions over all hours in the current date for all organizations (To be deprecated on October 1st, 2024). **Deprecated**.
         :type mobile_rum_session_count_sum: int, optional
 
-        :param mobile_rum_units_sum: Shows the sum of all mobile RUM units over all hours in the current date for all organizations.
+        :param mobile_rum_units_sum: Shows the sum of all mobile RUM units over all hours in the current date for all organizations (To be deprecated on October 1st, 2024). **Deprecated**.
         :type mobile_rum_units_sum: int, optional
 
         :param ndm_netflow_events_sum: Shows the sum of all Network Device Monitoring NetFlow events over all hours in the current date for the given org.
         :type ndm_netflow_events_sum: int, optional
 
-        :param netflow_indexed_events_count_sum: Shows the sum of all Network flows indexed over all hours in the current date for all organizations.
+        :param netflow_indexed_events_count_sum: Shows the sum of all Network flows indexed over all hours in the current date for all organizations (To be deprecated on October 1st, 2024). **Deprecated**.
         :type netflow_indexed_events_count_sum: int, optional
 
         :param npm_host_top99p: Shows the 99th percentile of all distinct Networks hosts over all hours in the current date for all organizations.
@@ -636,16 +681,61 @@ class UsageSummaryDate(ModelNormal):
         :param profiling_host_top99p: Shows the 99th percentile of all profiled hosts over all hours in the current date for all organizations.
         :type profiling_host_top99p: int, optional
 
-        :param rum_browser_and_mobile_session_count: Shows the sum of all mobile sessions and all browser lite and legacy sessions over all hours in the current month for all organizations.
+        :param rum_browser_and_mobile_session_count: Shows the sum of all mobile sessions and all browser lite and legacy sessions over all hours in the current month for all organizations (To be deprecated on October 1st, 2024).
         :type rum_browser_and_mobile_session_count: int, optional
 
-        :param rum_session_count_sum: Shows the sum of all browser RUM Lite Sessions over all hours in the current date for all organizations
+        :param rum_browser_legacy_session_count_sum: Shows the sum of all browser RUM legacy sessions over all hours in the current date for all organizations (To be introduced on October 1st, 2024).
+        :type rum_browser_legacy_session_count_sum: int, optional
+
+        :param rum_browser_lite_session_count_sum: Shows the sum of all browser RUM lite sessions over all hours in the current date for all organizations (To be introduced on October 1st, 2024).
+        :type rum_browser_lite_session_count_sum: int, optional
+
+        :param rum_browser_replay_session_count_sum: Shows the sum of all browser RUM Session Replay counts over all hours in the current date for all organizations (To be introduced on October 1st, 2024).
+        :type rum_browser_replay_session_count_sum: int, optional
+
+        :param rum_lite_session_count_sum: Shows the sum of all RUM lite sessions (browser and mobile) over all hours in the current date for all organizations (To be introduced on October 1st, 2024).
+        :type rum_lite_session_count_sum: int, optional
+
+        :param rum_mobile_legacy_session_count_android_sum: Shows the sum of all mobile RUM legacy sessions on Android over all hours in the current date for all organizations (To be introduced on October 1st, 2024).
+        :type rum_mobile_legacy_session_count_android_sum: int, optional
+
+        :param rum_mobile_legacy_session_count_flutter_sum: Shows the sum of all mobile RUM legacy Sessions on Flutter over all hours in the current date for all organizations (To be introduced on October 1st, 2024).
+        :type rum_mobile_legacy_session_count_flutter_sum: int, optional
+
+        :param rum_mobile_legacy_session_count_ios_sum: Shows the sum of all mobile RUM legacy sessions on iOS over all hours in the current date for all organizations (To be introduced on October 1st, 2024).
+        :type rum_mobile_legacy_session_count_ios_sum: int, optional
+
+        :param rum_mobile_legacy_session_count_reactnative_sum: Shows the sum of all mobile RUM legacy sessions on React Native over all hours in the current date for all organizations (To be introduced on October 1st, 2024).
+        :type rum_mobile_legacy_session_count_reactnative_sum: int, optional
+
+        :param rum_mobile_legacy_session_count_roku_sum: Shows the sum of all mobile RUM legacy sessions on Roku over all hours in the current date for all organizations (To be introduced on October 1st, 2024).
+        :type rum_mobile_legacy_session_count_roku_sum: int, optional
+
+        :param rum_mobile_lite_session_count_android_sum: Shows the sum of all mobile RUM lite sessions on Android over all hours in the current date for all organizations (To be introduced on October 1st, 2024).
+        :type rum_mobile_lite_session_count_android_sum: int, optional
+
+        :param rum_mobile_lite_session_count_flutter_sum: Shows the sum of all mobile RUM lite sessions on Flutter over all hours in the current date for all organizations (To be introduced on October 1st, 2024).
+        :type rum_mobile_lite_session_count_flutter_sum: int, optional
+
+        :param rum_mobile_lite_session_count_ios_sum: Shows the sum of all mobile RUM lite sessions on iOS over all hours in the current date for all organizations (To be introduced on October 1st, 2024).
+        :type rum_mobile_lite_session_count_ios_sum: int, optional
+
+        :param rum_mobile_lite_session_count_reactnative_sum: Shows the sum of all mobile RUM lite sessions on React Native over all hours in the current date for all organizations (To be introduced on October 1st, 2024).
+        :type rum_mobile_lite_session_count_reactnative_sum: int, optional
+
+        :param rum_mobile_lite_session_count_roku_sum: Shows the sum of all mobile RUM lite sessions on Roku over all hours in the current date for all organizations (To be introduced on October 1st, 2024).
+        :type rum_mobile_lite_session_count_roku_sum: int, optional
+
+        :param rum_replay_session_count_sum: Shows the sum of all RUM Session Replay counts over all hours in the current date for all organizations (To be introduced on October 1st, 2024).
+        :type rum_replay_session_count_sum: int, optional
+
+        :param rum_session_count_sum: Shows the sum of all browser RUM lite sessions over all hours in the current date for all organizations (To be deprecated on October 1st, 2024). **Deprecated**.
         :type rum_session_count_sum: int, optional
 
-        :param rum_total_session_count_sum: Shows the sum of RUM Sessions (browser and mobile) over all hours in the current date for all organizations.
+        :param rum_total_session_count_sum: Shows the sum of RUM sessions (browser and mobile) over all hours in the current date for all organizations.
         :type rum_total_session_count_sum: int, optional
 
-        :param rum_units_sum: Shows the sum of all browser and mobile RUM units over all hours in the current date for all organizations.
+        :param rum_units_sum: Shows the sum of all browser and mobile RUM units over all hours in the current date for all organizations (To be deprecated on October 1st, 2024). **Deprecated**.
         :type rum_units_sum: int, optional
 
         :param sds_apm_scanned_bytes_sum: Sum of all APM bytes scanned with sensitive data scanner over all hours in the current date for all organizations.
@@ -884,6 +974,36 @@ class UsageSummaryDate(ModelNormal):
             kwargs["profiling_host_top99p"] = profiling_host_top99p
         if rum_browser_and_mobile_session_count is not unset:
             kwargs["rum_browser_and_mobile_session_count"] = rum_browser_and_mobile_session_count
+        if rum_browser_legacy_session_count_sum is not unset:
+            kwargs["rum_browser_legacy_session_count_sum"] = rum_browser_legacy_session_count_sum
+        if rum_browser_lite_session_count_sum is not unset:
+            kwargs["rum_browser_lite_session_count_sum"] = rum_browser_lite_session_count_sum
+        if rum_browser_replay_session_count_sum is not unset:
+            kwargs["rum_browser_replay_session_count_sum"] = rum_browser_replay_session_count_sum
+        if rum_lite_session_count_sum is not unset:
+            kwargs["rum_lite_session_count_sum"] = rum_lite_session_count_sum
+        if rum_mobile_legacy_session_count_android_sum is not unset:
+            kwargs["rum_mobile_legacy_session_count_android_sum"] = rum_mobile_legacy_session_count_android_sum
+        if rum_mobile_legacy_session_count_flutter_sum is not unset:
+            kwargs["rum_mobile_legacy_session_count_flutter_sum"] = rum_mobile_legacy_session_count_flutter_sum
+        if rum_mobile_legacy_session_count_ios_sum is not unset:
+            kwargs["rum_mobile_legacy_session_count_ios_sum"] = rum_mobile_legacy_session_count_ios_sum
+        if rum_mobile_legacy_session_count_reactnative_sum is not unset:
+            kwargs["rum_mobile_legacy_session_count_reactnative_sum"] = rum_mobile_legacy_session_count_reactnative_sum
+        if rum_mobile_legacy_session_count_roku_sum is not unset:
+            kwargs["rum_mobile_legacy_session_count_roku_sum"] = rum_mobile_legacy_session_count_roku_sum
+        if rum_mobile_lite_session_count_android_sum is not unset:
+            kwargs["rum_mobile_lite_session_count_android_sum"] = rum_mobile_lite_session_count_android_sum
+        if rum_mobile_lite_session_count_flutter_sum is not unset:
+            kwargs["rum_mobile_lite_session_count_flutter_sum"] = rum_mobile_lite_session_count_flutter_sum
+        if rum_mobile_lite_session_count_ios_sum is not unset:
+            kwargs["rum_mobile_lite_session_count_ios_sum"] = rum_mobile_lite_session_count_ios_sum
+        if rum_mobile_lite_session_count_reactnative_sum is not unset:
+            kwargs["rum_mobile_lite_session_count_reactnative_sum"] = rum_mobile_lite_session_count_reactnative_sum
+        if rum_mobile_lite_session_count_roku_sum is not unset:
+            kwargs["rum_mobile_lite_session_count_roku_sum"] = rum_mobile_lite_session_count_roku_sum
+        if rum_replay_session_count_sum is not unset:
+            kwargs["rum_replay_session_count_sum"] = rum_replay_session_count_sum
         if rum_session_count_sum is not unset:
             kwargs["rum_session_count_sum"] = rum_session_count_sum
         if rum_total_session_count_sum is not unset:

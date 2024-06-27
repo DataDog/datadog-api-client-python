@@ -56,7 +56,7 @@ class UsageRumSessionsHour(ModelNormal):
         **kwargs,
     ):
         """
-        Number of RUM Sessions recorded for each hour for a given organization.
+        Number of RUM sessions recorded for each hour for a given organization.
 
         :param hour: The hour for the usage.
         :type hour: datetime, optional
@@ -67,22 +67,22 @@ class UsageRumSessionsHour(ModelNormal):
         :param public_id: The organization public ID.
         :type public_id: str, optional
 
-        :param replay_session_count: Contains the number of RUM Replay Sessions (data available beginning November 1, 2021).
+        :param replay_session_count: Contains the number of RUM Session Replay counts (data available beginning November 1, 2021).
         :type replay_session_count: int, optional
 
-        :param session_count: Contains the number of browser RUM Lite Sessions.
+        :param session_count: Contains the number of browser RUM lite Sessions.
         :type session_count: int, none_type, optional
 
-        :param session_count_android: Contains the number of mobile RUM Sessions on Android (data available beginning December 1, 2020).
+        :param session_count_android: Contains the number of mobile RUM sessions on Android (data available beginning December 1, 2020).
         :type session_count_android: int, none_type, optional
 
-        :param session_count_flutter: Contains the number of mobile RUM Sessions on Flutter (data available beginning March 1, 2023).
+        :param session_count_flutter: Contains the number of mobile RUM sessions on Flutter (data available beginning March 1, 2023).
         :type session_count_flutter: int, none_type, optional
 
-        :param session_count_ios: Contains the number of mobile RUM Sessions on iOS (data available beginning December 1, 2020).
+        :param session_count_ios: Contains the number of mobile RUM sessions on iOS (data available beginning December 1, 2020).
         :type session_count_ios: int, none_type, optional
 
-        :param session_count_reactnative: Contains the number of mobile RUM Sessions on React Native (data available beginning May 1, 2022).
+        :param session_count_reactnative: Contains the number of mobile RUM sessions on React Native (data available beginning May 1, 2022).
         :type session_count_reactnative: int, none_type, optional
         """
         if hour is not unset:
