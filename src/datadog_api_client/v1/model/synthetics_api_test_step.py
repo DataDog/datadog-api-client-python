@@ -63,7 +63,7 @@ class SyntheticsAPITestStep(ModelNormal):
         **kwargs,
     ):
         """
-        The Test step used in a Synthetic multistep API test.
+        The Test step used in a Synthetic multi-step API test.
 
         :param allow_failure: Determines whether or not to continue with test if this step fails.
         :type allow_failure: bool, optional

@@ -13369,7 +13369,7 @@ components:
           $ref: '#/components/schemas/WidgetStyle'
       type: object
     SyntheticsAPIStep:
-      description: The steps used in a Synthetic multistep API test.
+      description: The steps used in a Synthetic multi-step API test.
       oneOf:
       - $ref: '#/components/schemas/SyntheticsAPITestStep'
       - $ref: '#/components/schemas/SyntheticsAPIWaitStep'
@@ -13579,7 +13579,7 @@ components:
           $ref: '#/components/schemas/SyntheticsTiming'
       type: object
     SyntheticsAPITestStep:
-      description: The Test step used in a Synthetic multistep API test.
+      description: The Test step used in a Synthetic multi-step API test.
       properties:
         allowFailure:
           description: Determines whether or not to continue with test if this step
@@ -13632,7 +13632,7 @@ components:
       x-enum-varnames:
       - API
     SyntheticsAPIWaitStep:
-      description: The Wait step used in a Synthetic multistep API test.
+      description: The Wait step used in a Synthetic multi-step API test.
       properties:
         name:
           description: The name of the step.
@@ -13641,8 +13641,8 @@ components:
         subtype:
           $ref: '#/components/schemas/SyntheticsAPIStepSubtype'
         value:
-          description: The time to wait in seconds. Minimum value is 0, maximum value
-            is 180.
+          description: 'The time to wait in seconds. Minimum value: 0. Maximum value:
+            180.'
           example: 5
           format: int32
           maximum: 180

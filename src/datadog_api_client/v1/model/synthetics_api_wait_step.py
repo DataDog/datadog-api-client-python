@@ -41,7 +41,7 @@ class SyntheticsAPIWaitStep(ModelNormal):
 
     def __init__(self_, name: str, subtype: SyntheticsAPIStepSubtype, value: int, **kwargs):
         """
-        The Wait step used in a Synthetic multistep API test.
+        The Wait step used in a Synthetic multi-step API test.
 
         :param name: The name of the step.
         :type name: str
@@ -49,7 +49,7 @@ class SyntheticsAPIWaitStep(ModelNormal):
         :param subtype: The subtype of the Synthetic multistep API test step, currently only supporting ``http``.
         :type subtype: SyntheticsAPIStepSubtype
 
-        :param value: The time to wait in seconds. Minimum value is 0, maximum value is 180.
+        :param value: The time to wait in seconds. Minimum value: 0. Maximum value: 180.
         :type value: int
         """
         super().__init__(kwargs)

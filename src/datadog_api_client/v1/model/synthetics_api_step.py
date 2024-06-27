@@ -13,7 +13,7 @@ from datadog_api_client.model_utils import (
 class SyntheticsAPIStep(ModelComposed):
     def __init__(self, **kwargs):
         """
-        The steps used in a Synthetic multistep API test.
+        The steps used in a Synthetic multi-step API test.
 
         :param allow_failure: Determines whether or not to continue with test if this step fails.
         :type allow_failure: bool, optional
@@ -40,7 +40,7 @@ class SyntheticsAPIStep(ModelComposed):
         :param subtype: The subtype of the Synthetic multistep API test step, currently only supporting `http`.
         :type subtype: SyntheticsAPIStepSubtype
 
-        :param value: The time to wait in seconds. Minimum value is 0, maximum value is 180.
+        :param value: The time to wait in seconds. Minimum value: 0. Maximum value: 180.
         :type value: int
         """
         super().__init__(kwargs)
