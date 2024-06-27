@@ -24,13 +24,6 @@ if TYPE_CHECKING:
 
 
 class MonitorUpdateRequest(ModelNormal):
-    validations = {
-        "priority": {
-            "inclusive_maximum": 5,
-            "inclusive_minimum": 1,
-        },
-    }
-
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v1.model.creator import Creator
@@ -50,7 +43,7 @@ class MonitorUpdateRequest(ModelNormal):
             "name": (str,),
             "options": (MonitorOptions,),
             "overall_state": (MonitorOverallStates,),
-            "priority": (int,),
+            "priority": (int, none_type),
             "query": (str,),
             "restricted_roles": ([str], none_type),
             "state": (MonitorState,),
@@ -99,7 +92,7 @@ class MonitorUpdateRequest(ModelNormal):
         name: Union[str, UnsetType] = unset,
         options: Union[MonitorOptions, UnsetType] = unset,
         overall_state: Union[MonitorOverallStates, UnsetType] = unset,
-        priority: Union[int, UnsetType] = unset,
+        priority: Union[int, none_type, UnsetType] = unset,
         query: Union[str, UnsetType] = unset,
         restricted_roles: Union[List[str], none_type, UnsetType] = unset,
         state: Union[MonitorState, UnsetType] = unset,
@@ -141,7 +134,7 @@ class MonitorUpdateRequest(ModelNormal):
         :type overall_state: MonitorOverallStates, optional
 
         :param priority: Integer from 1 (high) to 5 (low) indicating alert severity.
-        :type priority: int, optional
+        :type priority: int, none_type, optional
 
         :param query: The monitor query.
         :type query: str, optional

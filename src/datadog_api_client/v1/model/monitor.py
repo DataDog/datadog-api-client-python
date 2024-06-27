@@ -25,13 +25,6 @@ if TYPE_CHECKING:
 
 
 class Monitor(ModelNormal):
-    validations = {
-        "priority": {
-            "inclusive_maximum": 5,
-            "inclusive_minimum": 1,
-        },
-    }
-
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v1.model.creator import Creator
