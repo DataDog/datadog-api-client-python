@@ -609,7 +609,6 @@ from datadog_api_client.v1.model.sunburst_widget_legend_table import SunburstWid
 from datadog_api_client.v1.model.sunburst_widget_legend_table_type import SunburstWidgetLegendTableType
 from datadog_api_client.v1.model.sunburst_widget_request import SunburstWidgetRequest
 from datadog_api_client.v1.model.synthetics_api_step import SyntheticsAPIStep
-from datadog_api_client.v1.model.synthetics_api_step_subtype import SyntheticsAPIStepSubtype
 from datadog_api_client.v1.model.synthetics_api_test import SyntheticsAPITest
 from datadog_api_client.v1.model.synthetics_api_test_config import SyntheticsAPITestConfig
 from datadog_api_client.v1.model.synthetics_api_test_result_data import SyntheticsAPITestResultData
@@ -618,8 +617,10 @@ from datadog_api_client.v1.model.synthetics_api_test_result_full_check import Sy
 from datadog_api_client.v1.model.synthetics_api_test_result_short import SyntheticsAPITestResultShort
 from datadog_api_client.v1.model.synthetics_api_test_result_short_result import SyntheticsAPITestResultShortResult
 from datadog_api_client.v1.model.synthetics_api_test_step import SyntheticsAPITestStep
+from datadog_api_client.v1.model.synthetics_api_test_step_subtype import SyntheticsAPITestStepSubtype
 from datadog_api_client.v1.model.synthetics_api_test_type import SyntheticsAPITestType
 from datadog_api_client.v1.model.synthetics_api_wait_step import SyntheticsAPIWaitStep
+from datadog_api_client.v1.model.synthetics_api_wait_step_subtype import SyntheticsAPIWaitStepSubtype
 from datadog_api_client.v1.model.synthetics_api_test_failure_code import SyntheticsApiTestFailureCode
 from datadog_api_client.v1.model.synthetics_api_test_result_failure import SyntheticsApiTestResultFailure
 from datadog_api_client.v1.model.synthetics_assertion import SyntheticsAssertion
@@ -1519,7 +1520,6 @@ __all__ = [
     "SunburstWidgetLegendTableType",
     "SunburstWidgetRequest",
     "SyntheticsAPIStep",
-    "SyntheticsAPIStepSubtype",
     "SyntheticsAPITest",
     "SyntheticsAPITestConfig",
     "SyntheticsAPITestResultData",
@@ -1528,8 +1528,10 @@ __all__ = [
     "SyntheticsAPITestResultShort",
     "SyntheticsAPITestResultShortResult",
     "SyntheticsAPITestStep",
+    "SyntheticsAPITestStepSubtype",
     "SyntheticsAPITestType",
     "SyntheticsAPIWaitStep",
+    "SyntheticsAPIWaitStepSubtype",
     "SyntheticsApiTestFailureCode",
     "SyntheticsApiTestResultFailure",
     "SyntheticsAssertion",

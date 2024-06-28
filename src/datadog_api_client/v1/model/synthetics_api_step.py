@@ -37,8 +37,8 @@ class SyntheticsAPIStep(ModelComposed):
         :param retry: Object describing the retry strategy to apply to a Synthetic test.
         :type retry: SyntheticsTestOptionsRetry, optional
 
-        :param subtype: The subtype of the Synthetic multistep API test step, currently only supporting `http`.
-        :type subtype: SyntheticsAPIStepSubtype
+        :param subtype: The subtype of the Synthetic multi-step API test step.
+        :type subtype: SyntheticsAPITestStepSubtype
 
         :param value: The time to wait in seconds. Minimum value: 0. Maximum value: 180.
         :type value: int

@@ -12,7 +12,7 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v1.model.synthetics_api_step_subtype import SyntheticsAPIStepSubtype
+    from datadog_api_client.v1.model.synthetics_api_wait_step_subtype import SyntheticsAPIWaitStepSubtype
 
 
 class SyntheticsAPIWaitStep(ModelNormal):
@@ -25,11 +25,11 @@ class SyntheticsAPIWaitStep(ModelNormal):
 
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v1.model.synthetics_api_step_subtype import SyntheticsAPIStepSubtype
+        from datadog_api_client.v1.model.synthetics_api_wait_step_subtype import SyntheticsAPIWaitStepSubtype
 
         return {
             "name": (str,),
-            "subtype": (SyntheticsAPIStepSubtype,),
+            "subtype": (SyntheticsAPIWaitStepSubtype,),
             "value": (int,),
         }
 
@@ -39,15 +39,15 @@ class SyntheticsAPIWaitStep(ModelNormal):
         "value": "value",
     }
 
-    def __init__(self_, name: str, subtype: SyntheticsAPIStepSubtype, value: int, **kwargs):
+    def __init__(self_, name: str, subtype: SyntheticsAPIWaitStepSubtype, value: int, **kwargs):
         """
         The Wait step used in a Synthetic multi-step API test.
 
         :param name: The name of the step.
         :type name: str
 
-        :param subtype: The subtype of the Synthetic multistep API test step, currently only supporting ``http``.
-        :type subtype: SyntheticsAPIStepSubtype
+        :param subtype: The subtype of the Synthetic multi-step API wait step.
+        :type subtype: SyntheticsAPIWaitStepSubtype
 
         :param value: The time to wait in seconds. Minimum value: 0. Maximum value: 180.
         :type value: int

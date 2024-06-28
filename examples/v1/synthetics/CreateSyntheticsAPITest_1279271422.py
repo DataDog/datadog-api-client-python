@@ -4,12 +4,13 @@ Create an API test with multi subtype returns "OK - Returns the created test det
 
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.synthetics_api import SyntheticsApi
-from datadog_api_client.v1.model.synthetics_api_step_subtype import SyntheticsAPIStepSubtype
 from datadog_api_client.v1.model.synthetics_api_test import SyntheticsAPITest
 from datadog_api_client.v1.model.synthetics_api_test_config import SyntheticsAPITestConfig
 from datadog_api_client.v1.model.synthetics_api_test_step import SyntheticsAPITestStep
+from datadog_api_client.v1.model.synthetics_api_test_step_subtype import SyntheticsAPITestStepSubtype
 from datadog_api_client.v1.model.synthetics_api_test_type import SyntheticsAPITestType
 from datadog_api_client.v1.model.synthetics_api_wait_step import SyntheticsAPIWaitStep
+from datadog_api_client.v1.model.synthetics_api_wait_step_subtype import SyntheticsAPIWaitStepSubtype
 from datadog_api_client.v1.model.synthetics_assertion_operator import SyntheticsAssertionOperator
 from datadog_api_client.v1.model.synthetics_assertion_target import SyntheticsAssertionTarget
 from datadog_api_client.v1.model.synthetics_assertion_type import SyntheticsAssertionType
@@ -72,16 +73,16 @@ body = SyntheticsAPITest(
                     count=5,
                     interval=1000.0,
                 ),
-                subtype=SyntheticsAPIStepSubtype.HTTP,
+                subtype=SyntheticsAPITestStepSubtype.HTTP,
             ),
             SyntheticsAPIWaitStep(
                 name="Wait",
-                subtype=SyntheticsAPIStepSubtype.WAIT,
+                subtype=SyntheticsAPIWaitStepSubtype.WAIT,
                 value=1,
             ),
             SyntheticsAPITestStep(
                 name="GRPC CALL",
-                subtype=SyntheticsAPIStepSubtype.GRPC,
+                subtype=SyntheticsAPITestStepSubtype.GRPC,
                 extracted_values=[],
                 allow_failure=False,
                 is_critical=True,

@@ -3774,13 +3774,6 @@ synthetics\_api\_step
    :members:
    :show-inheritance:
 
-synthetics\_api\_step\_subtype
-------------------------------
-
-.. automodule:: datadog_api_client.v1.model.synthetics_api_step_subtype
-   :members:
-   :show-inheritance:
-
 synthetics\_api\_test
 ---------------------
 
@@ -3851,6 +3844,13 @@ synthetics\_api\_test\_step
    :members:
    :show-inheritance:
 
+synthetics\_api\_test\_step\_subtype
+------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_api_test_step_subtype
+   :members:
+   :show-inheritance:
+
 synthetics\_api\_test\_type
 ---------------------------
 
@@ -3862,6 +3862,13 @@ synthetics\_api\_wait\_step
 ---------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_api_wait_step
+   :members:
+   :show-inheritance:
+
+synthetics\_api\_wait\_step\_subtype
+------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_api_wait_step_subtype
    :members:
    :show-inheritance:
 

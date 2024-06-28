@@ -785,10 +785,10 @@ class MonthlyUsageAttributionValues(ModelNormal):
         :param rum_browser_mobile_sessions_usage: The total RUM Browser and Mobile usage by tag(s).
         :type rum_browser_mobile_sessions_usage: float, optional
 
-        :param rum_replay_sessions_percentage: The percentage of RUM Replay Sessions usage by tag(s).
+        :param rum_replay_sessions_percentage: The percentage of RUM Session Replay usage by tag(s).
         :type rum_replay_sessions_percentage: float, optional
 
-        :param rum_replay_sessions_usage: The total RUM Replay Sessions usage by tag(s).
+        :param rum_replay_sessions_usage: The total RUM Session Replay usage by tag(s).
         :type rum_replay_sessions_usage: float, optional
 
         :param sds_scanned_bytes_percentage: The percentage of Sensitive Data Scanner usage by tag(s).

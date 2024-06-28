@@ -17,7 +17,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.synthetics_parsing_options import SyntheticsParsingOptions
     from datadog_api_client.v1.model.synthetics_test_request import SyntheticsTestRequest
     from datadog_api_client.v1.model.synthetics_test_options_retry import SyntheticsTestOptionsRetry
-    from datadog_api_client.v1.model.synthetics_api_step_subtype import SyntheticsAPIStepSubtype
+    from datadog_api_client.v1.model.synthetics_api_test_step_subtype import SyntheticsAPITestStepSubtype
 
 
 class SyntheticsAPITestStep(ModelNormal):
@@ -27,7 +27,7 @@ class SyntheticsAPITestStep(ModelNormal):
         from datadog_api_client.v1.model.synthetics_parsing_options import SyntheticsParsingOptions
         from datadog_api_client.v1.model.synthetics_test_request import SyntheticsTestRequest
         from datadog_api_client.v1.model.synthetics_test_options_retry import SyntheticsTestOptionsRetry
-        from datadog_api_client.v1.model.synthetics_api_step_subtype import SyntheticsAPIStepSubtype
+        from datadog_api_client.v1.model.synthetics_api_test_step_subtype import SyntheticsAPITestStepSubtype
 
         return {
             "allow_failure": (bool,),
@@ -37,7 +37,7 @@ class SyntheticsAPITestStep(ModelNormal):
             "name": (str,),
             "request": (SyntheticsTestRequest,),
             "retry": (SyntheticsTestOptionsRetry,),
-            "subtype": (SyntheticsAPIStepSubtype,),
+            "subtype": (SyntheticsAPITestStepSubtype,),
         }
 
     attribute_map = {
@@ -55,7 +55,7 @@ class SyntheticsAPITestStep(ModelNormal):
         self_,
         name: str,
         request: SyntheticsTestRequest,
-        subtype: SyntheticsAPIStepSubtype,
+        subtype: SyntheticsAPITestStepSubtype,
         allow_failure: Union[bool, UnsetType] = unset,
         extracted_values: Union[List[SyntheticsParsingOptions], UnsetType] = unset,
         is_critical: Union[bool, UnsetType] = unset,
@@ -87,8 +87,8 @@ class SyntheticsAPITestStep(ModelNormal):
         :param retry: Object describing the retry strategy to apply to a Synthetic test.
         :type retry: SyntheticsTestOptionsRetry, optional
 
-        :param subtype: The subtype of the Synthetic multistep API test step, currently only supporting ``http``.
-        :type subtype: SyntheticsAPIStepSubtype
+        :param subtype: The subtype of the Synthetic multi-step API test step.
+        :type subtype: SyntheticsAPITestStepSubtype
         """
         if allow_failure is not unset:
             kwargs["allow_failure"] = allow_failure
