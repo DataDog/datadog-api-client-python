@@ -157,7 +157,7 @@ Feature: Monitors
   Scenario: Edit a monitor returns "Bad Request" response
     Given new "UpdateMonitor" request
     And request contains "monitor_id" parameter from "REPLACE.ME"
-    And body with value {"options": {"evaluation_delay": null, "include_tags": true, "min_failure_duration": 0, "min_location_failed": 1, "new_group_delay": null, "new_host_delay": 300, "no_data_timeframe": null, "notification_preset_name": "show_all", "notify_audit": false, "notify_by": [], "on_missing_data": "default", "renotify_interval": null, "renotify_occurrences": null, "renotify_statuses": ["alert"], "scheduling_options": {"custom_schedule": {"recurrences": [{"rrule": "FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR", "start": "2023-08-31T16:30:00", "timezone": "Europe/Paris"}]}, "evaluation_window": {"day_starts": "04:00", "hour_starts": 0, "month_starts": 1}}, "synthetics_check_id": null, "threshold_windows": {"recovery_window": null, "trigger_window": null}, "thresholds": {"critical_recovery": null, "ok": null, "unknown": null, "warning": null, "warning_recovery": null}, "timeout_h": null, "variables": [{"compute": {"aggregation": "avg", "interval": 60000, "metric": "@duration"}, "data_source": "rum", "group_by": [{"facet": "status", "limit": 10, "sort": {"aggregation": "avg", "order": "desc"}}], "indexes": ["days-3", "days-7"], "name": "query_errors", "search": {"query": "service:query"}}]}, "restricted_roles": [], "tags": [], "type": "query alert"}
+    And body with value {"options": {"evaluation_delay": null, "include_tags": true, "min_failure_duration": 0, "min_location_failed": 1, "new_group_delay": null, "new_host_delay": 300, "no_data_timeframe": null, "notification_preset_name": "show_all", "notify_audit": false, "notify_by": [], "on_missing_data": "default", "renotify_interval": null, "renotify_occurrences": null, "renotify_statuses": ["alert"], "scheduling_options": {"custom_schedule": {"recurrences": [{"rrule": "FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR", "start": "2023-08-31T16:30:00", "timezone": "Europe/Paris"}]}, "evaluation_window": {"day_starts": "04:00", "hour_starts": 0, "month_starts": 1}}, "synthetics_check_id": null, "threshold_windows": {"recovery_window": null, "trigger_window": null}, "thresholds": {"critical_recovery": null, "ok": null, "unknown": null, "warning": null, "warning_recovery": null}, "timeout_h": null, "variables": [{"compute": {"aggregation": "avg", "interval": 60000, "metric": "@duration"}, "data_source": "rum", "group_by": [{"facet": "status", "limit": 10, "sort": {"aggregation": "avg", "order": "desc"}}], "indexes": ["days-3", "days-7"], "name": "query_errors", "search": {"query": "service:query"}}]}, "priority": null, "restricted_roles": [], "tags": [], "type": "query alert"}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -174,10 +174,11 @@ Feature: Monitors
     Given there is a valid "monitor" in the system
     And new "UpdateMonitor" request
     And request contains "monitor_id" parameter from "monitor.id"
-    And body with value {"name": "{{ monitor.name }}-updated", "options": {"evaluation_delay": null, "new_group_delay": 600, "new_host_delay":null, "renotify_interval":null, "thresholds": {"critical":2, "warning": null}, "timeout_h": null}}
+    And body with value {"name": "{{ monitor.name }}-updated", "priority": null, "options": {"evaluation_delay": null, "new_group_delay": 600, "new_host_delay":null, "renotify_interval":null, "thresholds": {"critical":2, "warning": null}, "timeout_h": null}}
     When the request is sent
     Then the response status is 200 OK
     And the response "name" is equal to "{{ monitor.name }}-updated"
+    And the response "priority" is equal to null
 
   @generated @skip @team:DataDog/monitor-app
   Scenario: Get a monitor's details returns "Bad Request" response

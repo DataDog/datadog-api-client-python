@@ -15,6 +15,7 @@ MONITOR_NAME = environ["MONITOR_NAME"]
 
 body = MonitorUpdateRequest(
     name="My monitor-updated",
+    priority=None,
     options=MonitorOptions(
         evaluation_delay=None,
         new_group_delay=600,
