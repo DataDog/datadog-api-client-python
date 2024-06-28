@@ -4,7 +4,6 @@ from datadog_api_client.configuration import Configuration
 from datadog_api_client.model_utils import validate_and_convert_types, model_to_dict
 
 from datadog_api_client.model_utils import UnparsedObject
-from datadog_api_client.v1.model.synthetics_api_step import SyntheticsAPIStep
 from datadog_api_client.v1.model.synthetics_api_wait_step import SyntheticsAPIWaitStep
 from datadog_api_client.v1.model.synthetics_api_test import SyntheticsAPITest
 from datadog_api_client.v1.model.synthetics_browser_test import SyntheticsBrowserTest
