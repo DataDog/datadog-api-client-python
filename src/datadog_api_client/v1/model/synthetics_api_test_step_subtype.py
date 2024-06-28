@@ -12,9 +12,9 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class SyntheticsAPIStepSubtype(ModelSimple):
+class SyntheticsAPITestStepSubtype(ModelSimple):
     """
-    The subtype of the Synthetic multistep API test step, currently only supporting `http`.
+    The subtype of the Synthetic multi-step API test step.
 
     :param value: Must be one of ["http", "grpc"].
     :type value: str
@@ -24,8 +24,8 @@ class SyntheticsAPIStepSubtype(ModelSimple):
         "http",
         "grpc",
     }
-    HTTP: ClassVar["SyntheticsAPIStepSubtype"]
-    GRPC: ClassVar["SyntheticsAPIStepSubtype"]
+    HTTP: ClassVar["SyntheticsAPITestStepSubtype"]
+    GRPC: ClassVar["SyntheticsAPITestStepSubtype"]
 
     @cached_property
     def openapi_types(_):
@@ -34,5 +34,5 @@ class SyntheticsAPIStepSubtype(ModelSimple):
         }
 
 
-SyntheticsAPIStepSubtype.HTTP = SyntheticsAPIStepSubtype("http")
-SyntheticsAPIStepSubtype.GRPC = SyntheticsAPIStepSubtype("grpc")
+SyntheticsAPITestStepSubtype.HTTP = SyntheticsAPITestStepSubtype("http")
+SyntheticsAPITestStepSubtype.GRPC = SyntheticsAPITestStepSubtype("grpc")
