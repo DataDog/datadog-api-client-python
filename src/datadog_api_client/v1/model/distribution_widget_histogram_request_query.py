@@ -18,6 +18,9 @@ class DistributionWidgetHistogramRequestQuery(ModelComposed):
         :param aggregator: The aggregation methods available for metrics queries.
         :type aggregator: FormulaAndFunctionMetricAggregation, optional
 
+        :param cross_org_uuids: The source organization UUID for cross organization queries. Feature in Private Beta.
+        :type cross_org_uuids: [str], optional
+
         :param data_source: Data source for metrics queries.
         :type data_source: FormulaAndFunctionMetricDataSource
 

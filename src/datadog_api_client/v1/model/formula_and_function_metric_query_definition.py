@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -19,6 +19,12 @@ if TYPE_CHECKING:
 
 
 class FormulaAndFunctionMetricQueryDefinition(ModelNormal):
+    validations = {
+        "cross_org_uuids": {
+            "max_items": 1,
+        },
+    }
+
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v1.model.formula_and_function_metric_aggregation import (
@@ -30,6 +36,7 @@ class FormulaAndFunctionMetricQueryDefinition(ModelNormal):
 
         return {
             "aggregator": (FormulaAndFunctionMetricAggregation,),
+            "cross_org_uuids": ([str],),
             "data_source": (FormulaAndFunctionMetricDataSource,),
             "name": (str,),
             "query": (str,),
@@ -37,6 +44,7 @@ class FormulaAndFunctionMetricQueryDefinition(ModelNormal):
 
     attribute_map = {
         "aggregator": "aggregator",
+        "cross_org_uuids": "cross_org_uuids",
         "data_source": "data_source",
         "name": "name",
         "query": "query",
@@ -48,6 +56,7 @@ class FormulaAndFunctionMetricQueryDefinition(ModelNormal):
         name: str,
         query: str,
         aggregator: Union[FormulaAndFunctionMetricAggregation, UnsetType] = unset,
+        cross_org_uuids: Union[List[str], UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -55,6 +64,9 @@ class FormulaAndFunctionMetricQueryDefinition(ModelNormal):
 
         :param aggregator: The aggregation methods available for metrics queries.
         :type aggregator: FormulaAndFunctionMetricAggregation, optional
+
+        :param cross_org_uuids: The source organization UUID for cross organization queries. Feature in Private Beta.
+        :type cross_org_uuids: [str], optional
 
         :param data_source: Data source for metrics queries.
         :type data_source: FormulaAndFunctionMetricDataSource
@@ -67,6 +79,8 @@ class FormulaAndFunctionMetricQueryDefinition(ModelNormal):
         """
         if aggregator is not unset:
             kwargs["aggregator"] = aggregator
+        if cross_org_uuids is not unset:
+            kwargs["cross_org_uuids"] = cross_org_uuids
         super().__init__(kwargs)
 
         self_.data_source = data_source

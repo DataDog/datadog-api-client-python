@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -21,6 +21,12 @@ if TYPE_CHECKING:
 
 
 class FormulaAndFunctionSLOQueryDefinition(ModelNormal):
+    validations = {
+        "cross_org_uuids": {
+            "max_items": 1,
+        },
+    }
+
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v1.model.formula_and_function_slo_data_source import FormulaAndFunctionSLODataSource
@@ -30,6 +36,7 @@ class FormulaAndFunctionSLOQueryDefinition(ModelNormal):
 
         return {
             "additional_query_filters": (str,),
+            "cross_org_uuids": ([str],),
             "data_source": (FormulaAndFunctionSLODataSource,),
             "group_mode": (FormulaAndFunctionSLOGroupMode,),
             "measure": (FormulaAndFunctionSLOMeasure,),
@@ -40,6 +47,7 @@ class FormulaAndFunctionSLOQueryDefinition(ModelNormal):
 
     attribute_map = {
         "additional_query_filters": "additional_query_filters",
+        "cross_org_uuids": "cross_org_uuids",
         "data_source": "data_source",
         "group_mode": "group_mode",
         "measure": "measure",
@@ -54,6 +62,7 @@ class FormulaAndFunctionSLOQueryDefinition(ModelNormal):
         measure: FormulaAndFunctionSLOMeasure,
         slo_id: str,
         additional_query_filters: Union[str, UnsetType] = unset,
+        cross_org_uuids: Union[List[str], UnsetType] = unset,
         group_mode: Union[FormulaAndFunctionSLOGroupMode, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
         slo_query_type: Union[FormulaAndFunctionSLOQueryType, UnsetType] = unset,
@@ -64,6 +73,9 @@ class FormulaAndFunctionSLOQueryDefinition(ModelNormal):
 
         :param additional_query_filters: Additional filters applied to the SLO query.
         :type additional_query_filters: str, optional
+
+        :param cross_org_uuids: The source organization UUID for cross organization queries. Feature in Private Beta.
+        :type cross_org_uuids: [str], optional
 
         :param data_source: Data source for SLO measures queries.
         :type data_source: FormulaAndFunctionSLODataSource
@@ -85,6 +97,8 @@ class FormulaAndFunctionSLOQueryDefinition(ModelNormal):
         """
         if additional_query_filters is not unset:
             kwargs["additional_query_filters"] = additional_query_filters
+        if cross_org_uuids is not unset:
+            kwargs["cross_org_uuids"] = cross_org_uuids
         if group_mode is not unset:
             kwargs["group_mode"] = group_mode
         if name is not unset:

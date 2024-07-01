@@ -22,6 +22,12 @@ if TYPE_CHECKING:
 
 
 class FormulaAndFunctionProcessQueryDefinition(ModelNormal):
+    validations = {
+        "cross_org_uuids": {
+            "max_items": 1,
+        },
+    }
+
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v1.model.formula_and_function_metric_aggregation import (
@@ -34,6 +40,7 @@ class FormulaAndFunctionProcessQueryDefinition(ModelNormal):
 
         return {
             "aggregator": (FormulaAndFunctionMetricAggregation,),
+            "cross_org_uuids": ([str],),
             "data_source": (FormulaAndFunctionProcessQueryDataSource,),
             "is_normalized_cpu": (bool,),
             "limit": (int,),
@@ -46,6 +53,7 @@ class FormulaAndFunctionProcessQueryDefinition(ModelNormal):
 
     attribute_map = {
         "aggregator": "aggregator",
+        "cross_org_uuids": "cross_org_uuids",
         "data_source": "data_source",
         "is_normalized_cpu": "is_normalized_cpu",
         "limit": "limit",
@@ -62,6 +70,7 @@ class FormulaAndFunctionProcessQueryDefinition(ModelNormal):
         metric: str,
         name: str,
         aggregator: Union[FormulaAndFunctionMetricAggregation, UnsetType] = unset,
+        cross_org_uuids: Union[List[str], UnsetType] = unset,
         is_normalized_cpu: Union[bool, UnsetType] = unset,
         limit: Union[int, UnsetType] = unset,
         sort: Union[QuerySortOrder, UnsetType] = unset,
@@ -74,6 +83,9 @@ class FormulaAndFunctionProcessQueryDefinition(ModelNormal):
 
         :param aggregator: The aggregation methods available for metrics queries.
         :type aggregator: FormulaAndFunctionMetricAggregation, optional
+
+        :param cross_org_uuids: The source organization UUID for cross organization queries. Feature in Private Beta.
+        :type cross_org_uuids: [str], optional
 
         :param data_source: Data sources that rely on the process backend.
         :type data_source: FormulaAndFunctionProcessQueryDataSource
@@ -101,6 +113,8 @@ class FormulaAndFunctionProcessQueryDefinition(ModelNormal):
         """
         if aggregator is not unset:
             kwargs["aggregator"] = aggregator
+        if cross_org_uuids is not unset:
+            kwargs["cross_org_uuids"] = cross_org_uuids
         if is_normalized_cpu is not unset:
             kwargs["is_normalized_cpu"] = is_normalized_cpu
         if limit is not unset:

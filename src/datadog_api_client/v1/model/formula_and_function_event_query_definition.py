@@ -27,6 +27,12 @@ if TYPE_CHECKING:
 
 
 class FormulaAndFunctionEventQueryDefinition(ModelNormal):
+    validations = {
+        "cross_org_uuids": {
+            "max_items": 1,
+        },
+    }
+
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v1.model.formula_and_function_event_query_definition_compute import (
@@ -44,6 +50,7 @@ class FormulaAndFunctionEventQueryDefinition(ModelNormal):
 
         return {
             "compute": (FormulaAndFunctionEventQueryDefinitionCompute,),
+            "cross_org_uuids": ([str],),
             "data_source": (FormulaAndFunctionEventsDataSource,),
             "group_by": ([FormulaAndFunctionEventQueryGroupBy],),
             "indexes": ([str],),
@@ -54,6 +61,7 @@ class FormulaAndFunctionEventQueryDefinition(ModelNormal):
 
     attribute_map = {
         "compute": "compute",
+        "cross_org_uuids": "cross_org_uuids",
         "data_source": "data_source",
         "group_by": "group_by",
         "indexes": "indexes",
@@ -67,6 +75,7 @@ class FormulaAndFunctionEventQueryDefinition(ModelNormal):
         compute: FormulaAndFunctionEventQueryDefinitionCompute,
         data_source: FormulaAndFunctionEventsDataSource,
         name: str,
+        cross_org_uuids: Union[List[str], UnsetType] = unset,
         group_by: Union[List[FormulaAndFunctionEventQueryGroupBy], UnsetType] = unset,
         indexes: Union[List[str], UnsetType] = unset,
         search: Union[FormulaAndFunctionEventQueryDefinitionSearch, UnsetType] = unset,
@@ -78,6 +87,9 @@ class FormulaAndFunctionEventQueryDefinition(ModelNormal):
 
         :param compute: Compute options.
         :type compute: FormulaAndFunctionEventQueryDefinitionCompute
+
+        :param cross_org_uuids: The source organization UUID for cross organization queries. Feature in Private Beta.
+        :type cross_org_uuids: [str], optional
 
         :param data_source: Data source for event platform-based queries.
         :type data_source: FormulaAndFunctionEventsDataSource
@@ -97,6 +109,8 @@ class FormulaAndFunctionEventQueryDefinition(ModelNormal):
         :param storage: Option for storage location. Feature in Private Beta.
         :type storage: str, optional
         """
+        if cross_org_uuids is not unset:
+            kwargs["cross_org_uuids"] = cross_org_uuids
         if group_by is not unset:
             kwargs["group_by"] = group_by
         if indexes is not unset:

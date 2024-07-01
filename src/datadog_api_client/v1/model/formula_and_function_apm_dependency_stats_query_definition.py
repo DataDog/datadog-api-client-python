@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -23,6 +23,12 @@ if TYPE_CHECKING:
 
 
 class FormulaAndFunctionApmDependencyStatsQueryDefinition(ModelNormal):
+    validations = {
+        "cross_org_uuids": {
+            "max_items": 1,
+        },
+    }
+
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v1.model.formula_and_function_apm_dependency_stats_data_source import (
@@ -33,6 +39,7 @@ class FormulaAndFunctionApmDependencyStatsQueryDefinition(ModelNormal):
         )
 
         return {
+            "cross_org_uuids": ([str],),
             "data_source": (FormulaAndFunctionApmDependencyStatsDataSource,),
             "env": (str,),
             "is_upstream": (bool,),
@@ -46,6 +53,7 @@ class FormulaAndFunctionApmDependencyStatsQueryDefinition(ModelNormal):
         }
 
     attribute_map = {
+        "cross_org_uuids": "cross_org_uuids",
         "data_source": "data_source",
         "env": "env",
         "is_upstream": "is_upstream",
@@ -67,6 +75,7 @@ class FormulaAndFunctionApmDependencyStatsQueryDefinition(ModelNormal):
         resource_name: str,
         service: str,
         stat: FormulaAndFunctionApmDependencyStatName,
+        cross_org_uuids: Union[List[str], UnsetType] = unset,
         is_upstream: Union[bool, UnsetType] = unset,
         primary_tag_name: Union[str, UnsetType] = unset,
         primary_tag_value: Union[str, UnsetType] = unset,
@@ -74,6 +83,9 @@ class FormulaAndFunctionApmDependencyStatsQueryDefinition(ModelNormal):
     ):
         """
         A formula and functions APM dependency stats query.
+
+        :param cross_org_uuids: The source organization UUID for cross organization queries. Feature in Private Beta.
+        :type cross_org_uuids: [str], optional
 
         :param data_source: Data source for APM dependency stats queries.
         :type data_source: FormulaAndFunctionApmDependencyStatsDataSource
@@ -105,6 +117,8 @@ class FormulaAndFunctionApmDependencyStatsQueryDefinition(ModelNormal):
         :param stat: APM statistic.
         :type stat: FormulaAndFunctionApmDependencyStatName
         """
+        if cross_org_uuids is not unset:
+            kwargs["cross_org_uuids"] = cross_org_uuids
         if is_upstream is not unset:
             kwargs["is_upstream"] = is_upstream
         if primary_tag_name is not unset:
