@@ -226,8 +226,10 @@ Feature: Synthetics
     And the response "config.steps[0].retry.interval" is equal to 1000
     And the response "config.steps[0].request.httpVersion" is equal to "http2"
     And the response "config.steps[0].extractedValues[0].secure" is equal to true
-    And the response "config.steps[1].request.host" is equal to "grpcbin.test.k6.io"
-    And the response "config.steps[1].request.host" is equal to "grpcbin.test.k6.io"
+    And the response "config.steps[1].subtype" is equal to "wait"
+    And the response "config.steps[1].value" is equal to 1
+    And the response "config.steps[2].request.host" is equal to "grpcbin.test.k6.io"
+    And the response "config.steps[2].request.host" is equal to "grpcbin.test.k6.io"
 
   @generated @skip @team:DataDog/synthetics-ct
   Scenario: Delete a global variable returns "JSON format is wrong" response
