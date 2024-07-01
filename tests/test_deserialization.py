@@ -4,7 +4,7 @@ from datadog_api_client.configuration import Configuration
 from datadog_api_client.model_utils import validate_and_convert_types, model_to_dict
 
 from datadog_api_client.model_utils import UnparsedObject
-from datadog_api_client.v1.model.synthetics_api_step import SyntheticsAPIStep
+from datadog_api_client.v1.model.synthetics_api_wait_step import SyntheticsAPIWaitStep
 from datadog_api_client.v1.model.synthetics_api_test import SyntheticsAPITest
 from datadog_api_client.v1.model.synthetics_browser_test import SyntheticsBrowserTest
 from datadog_api_client.v1.model.synthetics_assertion import SyntheticsAssertion
@@ -324,19 +324,12 @@ def test_unknown_model_value():
 def test_get_api_test():
     value = [
         {
-            "name": "wait",
-            "subtype": "http",
-            "extractedValues": [],
-            "allowFailure": False,
-            "isCritical": True,
-            "retry": {"count": 0, "interval": 300},
-            "assertions": [],
-            "request": {"method": "GET", "url": "https://example.org", "httpVersion": "any"},
-            "id": "5p7-km2-d22",
+            "name": "Wait",
+            "id": "rjn-fmj-sqw",
+            "value": 1,
         },
-        {"name": "Wait", "subtype": "wait", "id": "rjn-fmj-sqw"},
     ]
-    required_types_mixed = ([SyntheticsAPIStep],)
+    required_types_mixed = ([SyntheticsAPIWaitStep],)
     path_to_item = ["received_data", "config", "steps"]
     converted_value = validate_and_convert_types(value, required_types_mixed, path_to_item, True, True, Configuration())
-    assert isinstance(converted_value[1], UnparsedObject)
+    assert isinstance(converted_value[0], UnparsedObject)
