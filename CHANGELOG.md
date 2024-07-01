@@ -1,5 +1,32 @@
 # Changelog
 
+## 2.26.0 / 2024-07-01
+
+### Fixed
+* Security Monitoring - Define specific payload for rule validation/testing by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1987
+* Remove the maximum limitation for the synthetics renotify_interval monitor option by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1991
+* Add bodyHash as a synthetics assertion type. by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1992
+* Handle unparseable objects in the Python client. by @jack-edmonds-dd in https://github.com/DataDog/datadog-api-client-python/pull/2009
+* Add missing attributes envelope in ListAPIs response by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/2000
+### Added
+* Allow the usage of the filters field when creating an agent rule by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1967
+* Add tileDef sort attribute by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1969
+* Add Security Monitoring rule test endpoint by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1983
+* Add originalFileName field to the SyntheticsTestRequestBodyFile definition by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1988
+* Add support for API management ListAPIs by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/1995
+* Add elementsOperator to json path assertion for synthetic HTTP tests by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/2006
+* Add /api/v2/org_configs specs by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/2005
+* Update docs for RU Rollout New and Deprecated Keys planned for Oct 1st by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/2020
+* Add option for wait step in multistep api tests by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/2019
+### Changed
+* Monitor priority can have custom ranges and be null by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/2017
+
+## New Contributors
+* @tim-chaplin-dd made their first contribution in https://github.com/DataDog/datadog-api-client-python/pull/1927
+* @jack-edmonds-dd made their first contribution in https://github.com/DataDog/datadog-api-client-python/pull/2009
+
+**Full Changelog**: https://github.com/DataDog/datadog-api-client-python/compare/2.25.0...2.26.0
+
 ## 2.25.0 / 2024-05-21
 
 ### Fixed
