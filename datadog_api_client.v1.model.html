@@ -13110,6 +13110,7 @@ type conversion is done.</p></li>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>aggregator</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.formula_and_function_metric_aggregation.FormulaAndFunctionMetricAggregation" title="datadog_api_client.v1.model.formula_and_function_metric_aggregation.FormulaAndFunctionMetricAggregation"><em>FormulaAndFunctionMetricAggregation</em></a><em>, </em><em>optional</em>) – The aggregation methods available for metrics queries.</p></li>
+<li><p><strong>cross_org_uuids</strong> (<em>[</em><em>str</em><em>]</em><em>, </em><em>optional</em>) – The source organization UUID for cross organization queries. Feature in Private Beta.</p></li>
 <li><p><strong>data_source</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.formula_and_function_metric_data_source.FormulaAndFunctionMetricDataSource" title="datadog_api_client.v1.model.formula_and_function_metric_data_source.FormulaAndFunctionMetricDataSource"><em>FormulaAndFunctionMetricDataSource</em></a>) – Data source for metrics queries.</p></li>
 <li><p><strong>name</strong> (<em>str</em>) – Name of the query for use in formulas.</p></li>
 <li><p><strong>query</strong> (<em>str</em>) – Metrics query definition.</p></li>
@@ -13717,6 +13718,7 @@ type conversion is done.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
+<li><p><strong>cross_org_uuids</strong> (<em>[</em><em>str</em><em>]</em><em>, </em><em>optional</em>) – The source organization UUID for cross organization queries. Feature in Private Beta.</p></li>
 <li><p><strong>data_source</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.formula_and_function_apm_dependency_stats_data_source.FormulaAndFunctionApmDependencyStatsDataSource" title="datadog_api_client.v1.model.formula_and_function_apm_dependency_stats_data_source.FormulaAndFunctionApmDependencyStatsDataSource"><em>FormulaAndFunctionApmDependencyStatsDataSource</em></a>) – Data source for APM dependency stats queries.</p></li>
 <li><p><strong>env</strong> (<em>str</em>) – APM environment.</p></li>
 <li><p><strong>is_upstream</strong> (<em>bool</em><em>, </em><em>optional</em>) – Determines whether stats for upstream or downstream dependencies should be queried.</p></li>
@@ -13796,6 +13798,7 @@ type conversion is done.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
+<li><p><strong>cross_org_uuids</strong> (<em>[</em><em>str</em><em>]</em><em>, </em><em>optional</em>) – The source organization UUID for cross organization queries. Feature in Private Beta.</p></li>
 <li><p><strong>data_source</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.formula_and_function_apm_resource_stats_data_source.FormulaAndFunctionApmResourceStatsDataSource" title="datadog_api_client.v1.model.formula_and_function_apm_resource_stats_data_source.FormulaAndFunctionApmResourceStatsDataSource"><em>FormulaAndFunctionApmResourceStatsDataSource</em></a>) – Data source for APM resource stats queries.</p></li>
 <li><p><strong>env</strong> (<em>str</em>) – APM environment.</p></li>
 <li><p><strong>group_by</strong> (<em>[</em><em>str</em><em>]</em><em>, </em><em>optional</em>) – Array of fields to group results by.</p></li>
@@ -13849,6 +13852,7 @@ type conversion is done.</p></li>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>aggregator</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.widget_aggregator.WidgetAggregator" title="datadog_api_client.v1.model.widget_aggregator.WidgetAggregator"><em>WidgetAggregator</em></a><em>, </em><em>optional</em>) – Aggregator used for the request.</p></li>
+<li><p><strong>cross_org_uuids</strong> (<em>[</em><em>str</em><em>]</em><em>, </em><em>optional</em>) – The source organization UUID for cross organization queries. Feature in Private Beta.</p></li>
 <li><p><strong>data_source</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.formula_and_function_cloud_cost_data_source.FormulaAndFunctionCloudCostDataSource" title="datadog_api_client.v1.model.formula_and_function_cloud_cost_data_source.FormulaAndFunctionCloudCostDataSource"><em>FormulaAndFunctionCloudCostDataSource</em></a>) – Data source for Cloud Cost queries.</p></li>
 <li><p><strong>name</strong> (<em>str</em>) – Name of the query for use in formulas.</p></li>
 <li><p><strong>query</strong> (<em>str</em>) – Query for Cloud Cost data.</p></li>
@@ -13895,6 +13899,7 @@ type conversion is done.</p></li>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>compute</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.formula_and_function_event_query_definition_compute.FormulaAndFunctionEventQueryDefinitionCompute" title="datadog_api_client.v1.model.formula_and_function_event_query_definition_compute.FormulaAndFunctionEventQueryDefinitionCompute"><em>FormulaAndFunctionEventQueryDefinitionCompute</em></a>) – Compute options.</p></li>
+<li><p><strong>cross_org_uuids</strong> (<em>[</em><em>str</em><em>]</em><em>, </em><em>optional</em>) – The source organization UUID for cross organization queries. Feature in Private Beta.</p></li>
 <li><p><strong>data_source</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.formula_and_function_events_data_source.FormulaAndFunctionEventsDataSource" title="datadog_api_client.v1.model.formula_and_function_events_data_source.FormulaAndFunctionEventsDataSource"><em>FormulaAndFunctionEventsDataSource</em></a>) – Data source for event platform-based queries.</p></li>
 <li><p><strong>group_by</strong> (<em>[</em><a class="reference internal" href="#datadog_api_client.v1.model.formula_and_function_event_query_group_by.FormulaAndFunctionEventQueryGroupBy" title="datadog_api_client.v1.model.formula_and_function_event_query_group_by.FormulaAndFunctionEventQueryGroupBy"><em>FormulaAndFunctionEventQueryGroupBy</em></a><em>]</em><em>, </em><em>optional</em>) – Group by options.</p></li>
 <li><p><strong>indexes</strong> (<em>[</em><em>str</em><em>]</em><em>, </em><em>optional</em>) – An array of index names to query in the stream. Omit or use <code class="docutils literal notranslate"><span class="pre">[]</span></code> to query all indexes at once.</p></li>
@@ -14066,6 +14071,7 @@ type conversion is done.</p></li>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>aggregator</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.formula_and_function_metric_aggregation.FormulaAndFunctionMetricAggregation" title="datadog_api_client.v1.model.formula_and_function_metric_aggregation.FormulaAndFunctionMetricAggregation"><em>FormulaAndFunctionMetricAggregation</em></a><em>, </em><em>optional</em>) – The aggregation methods available for metrics queries.</p></li>
+<li><p><strong>cross_org_uuids</strong> (<em>[</em><em>str</em><em>]</em><em>, </em><em>optional</em>) – The source organization UUID for cross organization queries. Feature in Private Beta.</p></li>
 <li><p><strong>data_source</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.formula_and_function_metric_data_source.FormulaAndFunctionMetricDataSource" title="datadog_api_client.v1.model.formula_and_function_metric_data_source.FormulaAndFunctionMetricDataSource"><em>FormulaAndFunctionMetricDataSource</em></a>) – Data source for metrics queries.</p></li>
 <li><p><strong>name</strong> (<em>str</em>) – Name of the query for use in formulas.</p></li>
 <li><p><strong>query</strong> (<em>str</em>) – Metrics query definition.</p></li>
@@ -14112,6 +14118,7 @@ type conversion is done.</p></li>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>aggregator</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.formula_and_function_metric_aggregation.FormulaAndFunctionMetricAggregation" title="datadog_api_client.v1.model.formula_and_function_metric_aggregation.FormulaAndFunctionMetricAggregation"><em>FormulaAndFunctionMetricAggregation</em></a><em>, </em><em>optional</em>) – The aggregation methods available for metrics queries.</p></li>
+<li><p><strong>cross_org_uuids</strong> (<em>[</em><em>str</em><em>]</em><em>, </em><em>optional</em>) – The source organization UUID for cross organization queries. Feature in Private Beta.</p></li>
 <li><p><strong>data_source</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.formula_and_function_process_query_data_source.FormulaAndFunctionProcessQueryDataSource" title="datadog_api_client.v1.model.formula_and_function_process_query_data_source.FormulaAndFunctionProcessQueryDataSource"><em>FormulaAndFunctionProcessQueryDataSource</em></a>) – Data sources that rely on the process backend.</p></li>
 <li><p><strong>is_normalized_cpu</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to normalize the CPU percentages.</p></li>
 <li><p><strong>limit</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of hits to return.</p></li>
@@ -14136,6 +14143,7 @@ type conversion is done.</p></li>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>aggregator</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.formula_and_function_metric_aggregation.FormulaAndFunctionMetricAggregation" title="datadog_api_client.v1.model.formula_and_function_metric_aggregation.FormulaAndFunctionMetricAggregation"><em>FormulaAndFunctionMetricAggregation</em></a><em>, </em><em>optional</em>) – The aggregation methods available for metrics queries.</p></li>
+<li><p><strong>cross_org_uuids</strong> (<em>[</em><em>str</em><em>]</em><em>, </em><em>optional</em>) – The source organization UUID for cross organization queries. Feature in Private Beta.</p></li>
 <li><p><strong>data_source</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.formula_and_function_metric_data_source.FormulaAndFunctionMetricDataSource" title="datadog_api_client.v1.model.formula_and_function_metric_data_source.FormulaAndFunctionMetricDataSource"><em>FormulaAndFunctionMetricDataSource</em></a>) – Data source for metrics queries.</p></li>
 <li><p><strong>name</strong> (<em>str</em>) – Name of the query for use in formulas.</p></li>
 <li><p><strong>query</strong> (<em>str</em>) – Metrics query definition.</p></li>
@@ -14287,6 +14295,7 @@ type conversion is done.</p></li>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>additional_query_filters</strong> (<em>str</em><em>, </em><em>optional</em>) – Additional filters applied to the SLO query.</p></li>
+<li><p><strong>cross_org_uuids</strong> (<em>[</em><em>str</em><em>]</em><em>, </em><em>optional</em>) – The source organization UUID for cross organization queries. Feature in Private Beta.</p></li>
 <li><p><strong>data_source</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.formula_and_function_slo_data_source.FormulaAndFunctionSLODataSource" title="datadog_api_client.v1.model.formula_and_function_slo_data_source.FormulaAndFunctionSLODataSource"><em>FormulaAndFunctionSLODataSource</em></a>) – Data source for SLO measures queries.</p></li>
 <li><p><strong>group_mode</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.formula_and_function_slo_group_mode.FormulaAndFunctionSLOGroupMode" title="datadog_api_client.v1.model.formula_and_function_slo_group_mode.FormulaAndFunctionSLOGroupMode"><em>FormulaAndFunctionSLOGroupMode</em></a><em>, </em><em>optional</em>) – Group mode to query measures.</p></li>
 <li><p><strong>measure</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.formula_and_function_slo_measure.FormulaAndFunctionSLOMeasure" title="datadog_api_client.v1.model.formula_and_function_slo_measure.FormulaAndFunctionSLOMeasure"><em>FormulaAndFunctionSLOMeasure</em></a>) – SLO measures queries.</p></li>
@@ -21966,6 +21975,7 @@ are <code class="docutils literal notranslate"><span class="pre">FREQ</span></co
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>aggregator</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.formula_and_function_metric_aggregation.FormulaAndFunctionMetricAggregation" title="datadog_api_client.v1.model.formula_and_function_metric_aggregation.FormulaAndFunctionMetricAggregation"><em>FormulaAndFunctionMetricAggregation</em></a><em>, </em><em>optional</em>) – The aggregation methods available for metrics queries.</p></li>
+<li><p><strong>cross_org_uuids</strong> (<em>[</em><em>str</em><em>]</em><em>, </em><em>optional</em>) – The source organization UUID for cross organization queries. Feature in Private Beta.</p></li>
 <li><p><strong>data_source</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.formula_and_function_metric_data_source.FormulaAndFunctionMetricDataSource" title="datadog_api_client.v1.model.formula_and_function_metric_data_source.FormulaAndFunctionMetricDataSource"><em>FormulaAndFunctionMetricDataSource</em></a>) – Data source for metrics queries.</p></li>
 <li><p><strong>name</strong> (<em>str</em>) – Name of the query for use in formulas.</p></li>
 <li><p><strong>query</strong> (<em>str</em>) – Metrics query definition.</p></li>
