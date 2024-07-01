@@ -1116,6 +1116,17 @@ components:
           type: string
       readOnly: true
       type: object
+    CrossOrgUuids:
+      description: The source organization UUID for cross organization queries. Feature
+        in Private Beta.
+      example:
+      - 6434abde-xxxx-yyyy-zzzz-da7ad0900001
+      items:
+        description: The source organization UUID.
+        example: 6434abde-xxxx-yyyy-zzzz-da7ad0900001
+        type: string
+      maxItems: 1
+      type: array
     Dashboard:
       description: "A dashboard is Datadog\u2019s tool for visually tracking, analyzing,
         and displaying\nkey performance metrics, which enable you to monitor the health
@@ -2519,6 +2530,8 @@ components:
     FormulaAndFunctionApmDependencyStatsQueryDefinition:
       description: A formula and functions APM dependency stats query.
       properties:
+        cross_org_uuids:
+          $ref: '#/components/schemas/CrossOrgUuids'
         data_source:
           $ref: '#/components/schemas/FormulaAndFunctionApmDependencyStatsDataSource'
         env:
@@ -2606,6 +2619,8 @@ components:
     FormulaAndFunctionApmResourceStatsQueryDefinition:
       description: APM resource stats query using formulas and functions.
       properties:
+        cross_org_uuids:
+          $ref: '#/components/schemas/CrossOrgUuids'
         data_source:
           $ref: '#/components/schemas/FormulaAndFunctionApmResourceStatsDataSource'
         env:
@@ -2671,6 +2686,8 @@ components:
       properties:
         aggregator:
           $ref: '#/components/schemas/WidgetAggregator'
+        cross_org_uuids:
+          $ref: '#/components/schemas/CrossOrgUuids'
         data_source:
           $ref: '#/components/schemas/FormulaAndFunctionCloudCostDataSource'
         name:
@@ -2721,6 +2738,8 @@ components:
       properties:
         compute:
           $ref: '#/components/schemas/FormulaAndFunctionEventQueryDefinitionCompute'
+        cross_org_uuids:
+          $ref: '#/components/schemas/CrossOrgUuids'
         data_source:
           $ref: '#/components/schemas/FormulaAndFunctionEventsDataSource'
         group_by:
@@ -2877,6 +2896,8 @@ components:
       properties:
         aggregator:
           $ref: '#/components/schemas/FormulaAndFunctionMetricAggregation'
+        cross_org_uuids:
+          $ref: '#/components/schemas/CrossOrgUuids'
         data_source:
           $ref: '#/components/schemas/FormulaAndFunctionMetricDataSource'
         name:
@@ -2907,6 +2928,8 @@ components:
       properties:
         aggregator:
           $ref: '#/components/schemas/FormulaAndFunctionMetricAggregation'
+        cross_org_uuids:
+          $ref: '#/components/schemas/CrossOrgUuids'
         data_source:
           $ref: '#/components/schemas/FormulaAndFunctionProcessQueryDataSource'
         is_normalized_cpu:
@@ -3014,6 +3037,8 @@ components:
           description: Additional filters applied to the SLO query.
           example: host:host_a,env:prod
           type: string
+        cross_org_uuids:
+          $ref: '#/components/schemas/CrossOrgUuids'
         data_source:
           $ref: '#/components/schemas/FormulaAndFunctionSLODataSource'
         group_mode:
