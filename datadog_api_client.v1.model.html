@@ -25085,7 +25085,11 @@ type conversion is done.</p></li>
 to delete.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>public_ids</strong> (<em>[</em><em>str</em><em>]</em><em>, </em><em>optional</em>) – An array of Synthetic test IDs you want to delete.</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>force_delete_dependencies</strong> (<em>bool</em><em>, </em><em>optional</em>) – Delete the Synthetic test even if it’s referenced by other resources
+(for example, SLOs and composite monitors).</p></li>
+<li><p><strong>public_ids</strong> (<em>[</em><em>str</em><em>]</em><em>, </em><em>optional</em>) – An array of Synthetic test IDs you want to delete.</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
