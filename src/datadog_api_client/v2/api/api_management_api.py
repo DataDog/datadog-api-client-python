@@ -31,7 +31,7 @@ class APIManagementApi:
         self._create_open_api_endpoint = _Endpoint(
             settings={
                 "response_type": (CreateOpenAPIResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/apicatalog/openapi",
                 "operation_id": "create_open_api",
                 "http_method": "POST",
@@ -51,7 +51,7 @@ class APIManagementApi:
         self._delete_open_api_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/apicatalog/api/{id}",
                 "operation_id": "delete_open_api",
                 "http_method": "DELETE",
@@ -74,7 +74,7 @@ class APIManagementApi:
         self._get_open_api_endpoint = _Endpoint(
             settings={
                 "response_type": (file_type,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/apicatalog/api/{id}/openapi",
                 "operation_id": "get_open_api",
                 "http_method": "GET",
@@ -97,7 +97,7 @@ class APIManagementApi:
         self._list_apis_endpoint = _Endpoint(
             settings={
                 "response_type": (ListAPIsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/apicatalog/api",
                 "operation_id": "list_apis",
                 "http_method": "GET",
@@ -135,7 +135,7 @@ class APIManagementApi:
         self._update_open_api_endpoint = _Endpoint(
             settings={
                 "response_type": (UpdateOpenAPIResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/apicatalog/api/{id}/openapi",
                 "operation_id": "update_open_api",
                 "http_method": "PUT",
