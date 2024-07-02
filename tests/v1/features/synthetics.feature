@@ -269,14 +269,14 @@ Feature: Synthetics
   @generated @skip @team:DataDog/synthetics-ct
   Scenario: Delete tests returns "- JSON format is wrong" response
     Given new "DeleteTests" request
-    And body with value {"public_ids": []}
+    And body with value {"force_delete_dependencies": false, "public_ids": []}
     When the request is sent
     Then the response status is 400 - JSON format is wrong
 
   @generated @skip @team:DataDog/synthetics-ct
   Scenario: Delete tests returns "- Tests to be deleted can't be found" response
     Given new "DeleteTests" request
-    And body with value {"public_ids": []}
+    And body with value {"force_delete_dependencies": false, "public_ids": []}
     When the request is sent
     Then the response status is 404 - Tests to be deleted can't be found
 
