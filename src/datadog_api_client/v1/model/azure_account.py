@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, Union
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -13,9 +13,15 @@ from datadog_api_client.model_utils import (
 )
 
 
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.azure_account_metrics_config import AzureAccountMetricsConfig
+
+
 class AzureAccount(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v1.model.azure_account_metrics_config import AzureAccountMetricsConfig
+
         return {
             "app_service_plan_filters": (str,),
             "automute": (bool,),
@@ -26,6 +32,7 @@ class AzureAccount(ModelNormal):
             "custom_metrics_enabled": (bool,),
             "errors": ([str],),
             "host_filters": (str,),
+            "metrics_config": (AzureAccountMetricsConfig,),
             "new_client_id": (str,),
             "new_tenant_name": (str,),
             "resource_collection_enabled": (bool,),
@@ -42,6 +49,7 @@ class AzureAccount(ModelNormal):
         "custom_metrics_enabled": "custom_metrics_enabled",
         "errors": "errors",
         "host_filters": "host_filters",
+        "metrics_config": "metrics_config",
         "new_client_id": "new_client_id",
         "new_tenant_name": "new_tenant_name",
         "resource_collection_enabled": "resource_collection_enabled",
@@ -59,6 +67,7 @@ class AzureAccount(ModelNormal):
         custom_metrics_enabled: Union[bool, UnsetType] = unset,
         errors: Union[List[str], UnsetType] = unset,
         host_filters: Union[str, UnsetType] = unset,
+        metrics_config: Union[AzureAccountMetricsConfig, UnsetType] = unset,
         new_client_id: Union[str, UnsetType] = unset,
         new_tenant_name: Union[str, UnsetType] = unset,
         resource_collection_enabled: Union[bool, UnsetType] = unset,
@@ -99,6 +108,12 @@ class AzureAccount(ModelNormal):
             Only hosts that match one of the defined tags are imported into Datadog.
         :type host_filters: str, optional
 
+        :param metrics_config: Dictionary containing the key ``excluded_resource_providers`` which has to be a list of Microsoft Azure Resource Provider names.
+            This feature is currently being beta tested.
+            In order to enable all resource providers for metric collection, pass:
+            ``metrics_config: {"excluded_resource_providers": []}`` (i.e., an empty list for ``excluded_resource_providers`` ).
+        :type metrics_config: AzureAccountMetricsConfig, optional
+
         :param new_client_id: Your New Azure web application ID.
         :type new_client_id: str, optional
 
@@ -129,6 +144,8 @@ class AzureAccount(ModelNormal):
             kwargs["errors"] = errors
         if host_filters is not unset:
             kwargs["host_filters"] = host_filters
+        if metrics_config is not unset:
+            kwargs["metrics_config"] = metrics_config
         if new_client_id is not unset:
             kwargs["new_client_id"] = new_client_id
         if new_tenant_name is not unset:

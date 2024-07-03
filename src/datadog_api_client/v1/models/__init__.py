@@ -43,6 +43,7 @@ from datadog_api_client.v1.model.application_key_response import ApplicationKeyR
 from datadog_api_client.v1.model.authentication_validation_response import AuthenticationValidationResponse
 from datadog_api_client.v1.model.azure_account import AzureAccount
 from datadog_api_client.v1.model.azure_account_list_response import AzureAccountListResponse
+from datadog_api_client.v1.model.azure_account_metrics_config import AzureAccountMetricsConfig
 from datadog_api_client.v1.model.cancel_downtimes_by_scope_request import CancelDowntimesByScopeRequest
 from datadog_api_client.v1.model.canceled_downtimes_ids import CanceledDowntimesIds
 from datadog_api_client.v1.model.change_widget_definition import ChangeWidgetDefinition
@@ -1026,6 +1027,7 @@ __all__ = [
     "AuthenticationValidationResponse",
     "AzureAccount",
     "AzureAccountListResponse",
+    "AzureAccountMetricsConfig",
     "CancelDowntimesByScopeRequest",
     "CanceledDowntimesIds",
     "ChangeWidgetDefinition",

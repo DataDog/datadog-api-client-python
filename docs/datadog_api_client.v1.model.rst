@@ -316,6 +316,13 @@ azure\_account\_list\_response
    :members:
    :show-inheritance:
 
+azure\_account\_metrics\_config
+-------------------------------
+
+.. automodule:: datadog_api_client.v1.model.azure_account_metrics_config
+   :members:
+   :show-inheritance:
+
 cancel\_downtimes\_by\_scope\_request
 -------------------------------------
 

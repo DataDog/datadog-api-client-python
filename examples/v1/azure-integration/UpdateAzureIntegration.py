@@ -5,6 +5,7 @@ Update an Azure integration returns "OK" response
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.azure_integration_api import AzureIntegrationApi
 from datadog_api_client.v1.model.azure_account import AzureAccount
+from datadog_api_client.v1.model.azure_account_metrics_config import AzureAccountMetricsConfig
 
 body = AzureAccount(
     app_service_plan_filters="key:value,filter:example",
@@ -21,6 +22,12 @@ body = AzureAccount(
     new_client_id="9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d",
     new_tenant_name="9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d",
     resource_collection_enabled=True,
+    metrics_config=AzureAccountMetricsConfig(
+        excluded_resource_providers=[
+            "Microsoft.Sql",
+            "Microsoft.Cdn",
+        ],
+    ),
     tenant_name="9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d",
 )
 

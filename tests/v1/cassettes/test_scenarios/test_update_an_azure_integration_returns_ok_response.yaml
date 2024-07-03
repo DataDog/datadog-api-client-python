@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"app_service_plan_filters":"key:value,filter:example","automute":true,"client_id":"17091519-0000-0000-0000-170915196000","client_secret":"testingx./Sw*g/Y33t..R1cH+hScMDt","container_app_filters":"key:value,filter:example","cspm_enabled":true,"custom_metrics_enabled":true,"errors":["*"],"host_filters":"key:value,filter:example","new_client_id":"17091519-0000-0000-0000-170915196000","new_tenant_name":"17091519-0000-0000-0000-170915196000","resource_collection_enabled":true,"tenant_name":"17091519-0000-0000-0000-170915196000"}'
+    body: '{"app_service_plan_filters":"key:value,filter:example","automute":true,"client_id":"17198592-0000-0000-0000-171985920500","client_secret":"testingx./Sw*g/Y33t..R1cH+hScMDt","container_app_filters":"key:value,filter:example","cspm_enabled":true,"custom_metrics_enabled":true,"errors":["*"],"host_filters":"key:value,filter:example","metrics_config":{"excluded_resource_providers":["Microsoft.Sql","Microsoft.Cdn"]},"new_client_id":"17198592-0000-0000-0000-171985920500","new_tenant_name":"17198592-0000-0000-0000-171985920500","resource_collection_enabled":true,"tenant_name":"17198592-0000-0000-0000-171985920500"}'
     headers:
       accept:
       - application/json
@@ -20,7 +20,7 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"app_service_plan_filters":"key:value,filter:example","automute":true,"client_id":"17091519-0000-0000-0000-170915196000","client_secret":"testingx./Sw*g/Y33t..R1cH+hScMDt","container_app_filters":"key:value,filter:example","cspm_enabled":true,"custom_metrics_enabled":true,"errors":["*"],"host_filters":"key:value,filter:example","new_client_id":"17091519-0000-0000-0000-170915196000","new_tenant_name":"17091519-0000-0000-0000-170915196000","resource_collection_enabled":true,"tenant_name":"17091519-0000-0000-0000-170915196000"}'
+    body: '{"app_service_plan_filters":"key:value,filter:example","automute":true,"client_id":"17198592-0000-0000-0000-171985920500","client_secret":"testingx./Sw*g/Y33t..R1cH+hScMDt","container_app_filters":"key:value,filter:example","cspm_enabled":true,"custom_metrics_enabled":true,"errors":["*"],"host_filters":"key:value,filter:example","metrics_config":{"excluded_resource_providers":["Microsoft.Sql","Microsoft.Cdn"]},"new_client_id":"17198592-0000-0000-0000-171985920500","new_tenant_name":"17198592-0000-0000-0000-171985920500","resource_collection_enabled":true,"tenant_name":"17198592-0000-0000-0000-171985920500"}'
     headers:
       accept:
       - application/json
@@ -40,7 +40,7 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"client_id":"17091519-0000-0000-0000-170915196000","tenant_name":"17091519-0000-0000-0000-170915196000"}'
+    body: '{"client_id":"17198592-0000-0000-0000-171985920500","tenant_name":"17198592-0000-0000-0000-171985920500"}'
     headers:
       accept:
       - application/json
