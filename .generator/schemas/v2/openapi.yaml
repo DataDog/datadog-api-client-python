@@ -36932,6 +36932,8 @@ paths:
       summary: Get user memberships
       tags:
       - Teams
+  x-merge-override:
+    /api/v2/apicatalog/api: true
 security:
 - apiKeyAuth: []
   appKeyAuth: []
