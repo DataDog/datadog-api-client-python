@@ -15096,7 +15096,8 @@ components:
           type: integer
         type:
           description: Type of the RUM application. Supported values are `browser`,
-            `ios`, `android`, `react-native`, `flutter`.
+            `ios`, `android`, `react-native`, `flutter`, `roku`, `electron`, `unity`,
+            `kotlin-multiplatform`.
           example: browser
           type: string
         updated_at:
@@ -15139,7 +15140,8 @@ components:
           type: string
         type:
           description: Type of the RUM application. Supported values are `browser`,
-            `ios`, `android`, `react-native`, `flutter`.
+            `ios`, `android`, `react-native`, `flutter`, `roku`, `electron`, `unity`,
+            `kotlin-multiplatform`.
           example: browser
           type: string
       required:
@@ -15212,7 +15214,8 @@ components:
           type: integer
         type:
           description: Type of the RUM application. Supported values are `browser`,
-            `ios`, `android`, `react-native`, `flutter`.
+            `ios`, `android`, `react-native`, `flutter`, `roku`, `electron`, `unity`,
+            `kotlin-multiplatform`.
           example: browser
           type: string
         updated_at:
@@ -15282,7 +15285,8 @@ components:
           type: string
         type:
           description: Type of the RUM application. Supported values are `browser`,
-            `ios`, `android`, `react-native`, `flutter`.
+            `ios`, `android`, `react-native`, `flutter`, `roku`, `electron`, `unity`,
+            `kotlin-multiplatform`.
           example: browser
           type: string
       type: object
