@@ -36933,7 +36933,7 @@ paths:
       tags:
       - Teams
   x-merge-override:
-    /api/v2/apicatalog/api: true
+    /api/v2/logs/config/archives: true
 security:
 - apiKeyAuth: []
   appKeyAuth: []
