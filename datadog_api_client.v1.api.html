@@ -3320,7 +3320,7 @@ Results are paginated with a max of 1000 results at a time.</p>
 <li><p><strong>filter</strong> (<em>str</em><em>, </em><em>optional</em>) – String to filter search results.</p></li>
 <li><p><strong>sort_field</strong> (<em>str</em><em>, </em><em>optional</em>) – Sort hosts by this field.</p></li>
 <li><p><strong>sort_dir</strong> (<em>str</em><em>, </em><em>optional</em>) – Direction of sort. Options include <code class="docutils literal notranslate"><span class="pre">asc</span></code> and <code class="docutils literal notranslate"><span class="pre">desc</span></code>.</p></li>
-<li><p><strong>start</strong> (<em>int</em><em>, </em><em>optional</em>) – Host result to start search from.</p></li>
+<li><p><strong>start</strong> (<em>int</em><em>, </em><em>optional</em>) – Specify the starting point for the host search results. For example, if you set <code class="docutils literal notranslate"><span class="pre">count</span></code> to 100 and the first 100 results have already been returned, you can set <code class="docutils literal notranslate"><span class="pre">start</span></code> to <code class="docutils literal notranslate"><span class="pre">101</span></code> to get the next 100 results.</p></li>
 <li><p><strong>count</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of hosts to return. Max 1000.</p></li>
 <li><p><strong>_from</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of seconds since UNIX epoch from which you want to search your hosts.</p></li>
 <li><p><strong>include_muted_hosts_data</strong> (<em>bool</em><em>, </em><em>optional</em>) – Include information on the muted status of hosts and when the mute expires.</p></li>
