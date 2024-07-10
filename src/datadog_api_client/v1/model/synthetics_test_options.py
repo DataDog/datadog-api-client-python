@@ -57,6 +57,8 @@ class SyntheticsTestOptions(ModelNormal):
             "device_ids": ([SyntheticsDeviceID],),
             "disable_cors": (bool,),
             "disable_csp": (bool,),
+            "enable_profiling": (bool,),
+            "enable_security_testing": (bool,),
             "follow_redirects": (bool,),
             "http_version": (SyntheticsTestOptionsHTTPVersion,),
             "ignore_server_certificate_error": (bool,),
@@ -82,6 +84,8 @@ class SyntheticsTestOptions(ModelNormal):
         "device_ids": "device_ids",
         "disable_cors": "disableCors",
         "disable_csp": "disableCsp",
+        "enable_profiling": "enableProfiling",
+        "enable_security_testing": "enableSecurityTesting",
         "follow_redirects": "follow_redirects",
         "http_version": "httpVersion",
         "ignore_server_certificate_error": "ignoreServerCertificateError",
@@ -108,6 +112,8 @@ class SyntheticsTestOptions(ModelNormal):
         device_ids: Union[List[SyntheticsDeviceID], UnsetType] = unset,
         disable_cors: Union[bool, UnsetType] = unset,
         disable_csp: Union[bool, UnsetType] = unset,
+        enable_profiling: Union[bool, UnsetType] = unset,
+        enable_security_testing: Union[bool, UnsetType] = unset,
         follow_redirects: Union[bool, UnsetType] = unset,
         http_version: Union[SyntheticsTestOptionsHTTPVersion, UnsetType] = unset,
         ignore_server_certificate_error: Union[bool, UnsetType] = unset,
@@ -149,6 +155,12 @@ class SyntheticsTestOptions(ModelNormal):
 
         :param disable_csp: Disable Content Security Policy for browser tests.
         :type disable_csp: bool, optional
+
+        :param enable_profiling: Enable profiling for browser tests.
+        :type enable_profiling: bool, optional
+
+        :param enable_security_testing: Enable security testing for browser tests. Security testing is not available anymore. This field is deprecated and won't be used. **Deprecated**.
+        :type enable_security_testing: bool, optional
 
         :param follow_redirects: For API HTTP test, whether or not the test should follow redirects.
         :type follow_redirects: bool, optional
@@ -221,6 +233,10 @@ class SyntheticsTestOptions(ModelNormal):
             kwargs["disable_cors"] = disable_cors
         if disable_csp is not unset:
             kwargs["disable_csp"] = disable_csp
+        if enable_profiling is not unset:
+            kwargs["enable_profiling"] = enable_profiling
+        if enable_security_testing is not unset:
+            kwargs["enable_security_testing"] = enable_security_testing
         if follow_redirects is not unset:
             kwargs["follow_redirects"] = follow_redirects
         if http_version is not unset:
