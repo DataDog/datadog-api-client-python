@@ -100,6 +100,21 @@ Feature: Synthetics
     When the request is sent
     Then the response status is 200 OK
 
+  @team:DataDog/synthetics-ct
+  Scenario: Create a multi-step api test with every type of basicAuth returns "OK - Returns the created test details." response
+    Given new "CreateSyntheticsAPITest" request
+    And body from file "synthetics_api_test_multi_step_with_every_type_of_basic_auth.json"
+    When the request is sent
+    Then the response status is 200 OK - Returns the created test details.
+    And the response "name" is equal to "{{ unique }}"
+    And the response "config.steps[0].request.basicAuth" is equal to {"password": "password", "username": "username"}
+    And the response "config.steps[1].request.basicAuth.type" is equal to "web"
+    And the response "config.steps[2].request.basicAuth.type" is equal to "sigv4"
+    And the response "config.steps[3].request.basicAuth.type" is equal to "ntlm"
+    And the response "config.steps[4].request.basicAuth.type" is equal to "digest"
+    And the response "config.steps[5].request.basicAuth.type" is equal to "oauth-client"
+    And the response "config.steps[6].request.basicAuth.type" is equal to "oauth-rop"
+
   @replay-only @team:DataDog/synthetics-ct
   Scenario: Create a private location returns "OK" response
     Given there is a valid "role" in the system

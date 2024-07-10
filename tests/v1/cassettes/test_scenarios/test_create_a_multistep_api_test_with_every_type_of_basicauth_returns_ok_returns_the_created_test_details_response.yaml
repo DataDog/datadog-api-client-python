@@ -1,0 +1,56 @@
+interactions:
+- request:
+    body: '{"config":{"steps":[{"assertions":[{"operator":"is","target":200,"type":"statusCode"}],"name":"request
+      is sent","request":{"basicAuth":{"password":"password","username":"username"},"method":"GET","url":"https://httpbin.org/status/200"},"subtype":"http"},{"assertions":[{"operator":"is","target":200,"type":"statusCode"}],"name":"request
+      is sent","request":{"basicAuth":{"password":"password","type":"web","username":"username"},"method":"GET","url":"https://httpbin.org/status/200"},"subtype":"http"},{"assertions":[{"operator":"is","target":200,"type":"statusCode"}],"name":"request
+      is sent","request":{"basicAuth":{"accessKey":"accessKey","secretKey":"secretKey","type":"sigv4"},"method":"GET","url":"https://httpbin.org/status/200"},"subtype":"http"},{"assertions":[{"operator":"is","target":200,"type":"statusCode"}],"name":"request
+      is sent","request":{"basicAuth":{"type":"ntlm"},"method":"GET","url":"https://httpbin.org/status/200"},"subtype":"http"},{"assertions":[{"operator":"is","target":200,"type":"statusCode"}],"name":"request
+      is sent","request":{"basicAuth":{"password":"password","type":"digest","username":"username"},"method":"GET","url":"https://httpbin.org/status/200"},"subtype":"http"},{"assertions":[{"operator":"is","target":200,"type":"statusCode"}],"name":"request
+      is sent","request":{"basicAuth":{"accessTokenUrl":"accessTokenUrl","clientId":"clientId","clientSecret":"clientSecret","tokenApiAuthentication":"header","type":"oauth-client"},"method":"GET","url":"https://httpbin.org/status/200"},"subtype":"http"},{"assertions":[{"operator":"is","target":200,"type":"statusCode"}],"name":"request
+      is sent","request":{"basicAuth":{"accessTokenUrl":"accessTokenUrl","password":"password","tokenApiAuthentication":"header","type":"oauth-rop","username":"username"},"method":"GET","url":"https://httpbin.org/status/200"},"subtype":"http"}]},"locations":["aws:us-east-2"],"message":"BDD
+      test payload: synthetics_api_test_multi_step_with_every_type_of_basic_auth.json","name":"Test-Create_a_multi_step_api_test_with_every_type_of_basicAuth_returns_OK_Returns_the_created_test_detail-1720184297","options":{"tick_every":60},"subtype":"multi","type":"api"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/synthetics/tests/api
+  response:
+    body:
+      string: '{"public_id":"56p-u4n-28g","name":"Test-Create_a_multi_step_api_test_with_every_type_of_basicAuth_returns_OK_Returns_the_created_test_detail-1720184297","status":"live","type":"api","tags":[],"created_at":"2024-07-05T12:58:18.584903+00:00","modified_at":"2024-07-05T12:58:18.584903+00:00","config":{"steps":[{"assertions":[{"operator":"is","target":200,"type":"statusCode"}],"name":"request
+        is sent","request":{"basicAuth":{"password":"password","username":"username"},"method":"GET","url":"https://httpbin.org/status/200"},"subtype":"http","id":"ff5-wjd-ccw"},{"assertions":[{"operator":"is","target":200,"type":"statusCode"}],"name":"request
+        is sent","request":{"basicAuth":{"password":"password","type":"web","username":"username"},"method":"GET","url":"https://httpbin.org/status/200"},"subtype":"http","id":"db3-du3-8gk"},{"assertions":[{"operator":"is","target":200,"type":"statusCode"}],"name":"request
+        is sent","request":{"basicAuth":{"accessKey":"accessKey","secretKey":"secretKey","type":"sigv4"},"method":"GET","url":"https://httpbin.org/status/200"},"subtype":"http","id":"3f9-7ax-tft"},{"assertions":[{"operator":"is","target":200,"type":"statusCode"}],"name":"request
+        is sent","request":{"basicAuth":{"type":"ntlm"},"method":"GET","url":"https://httpbin.org/status/200"},"subtype":"http","id":"aid-ufz-avb"},{"assertions":[{"operator":"is","target":200,"type":"statusCode"}],"name":"request
+        is sent","request":{"basicAuth":{"password":"password","type":"digest","username":"username"},"method":"GET","url":"https://httpbin.org/status/200"},"subtype":"http","id":"y54-ebw-t9y"},{"assertions":[{"operator":"is","target":200,"type":"statusCode"}],"name":"request
+        is sent","request":{"basicAuth":{"accessTokenUrl":"accessTokenUrl","clientId":"clientId","clientSecret":"clientSecret","tokenApiAuthentication":"header","type":"oauth-client"},"method":"GET","url":"https://httpbin.org/status/200"},"subtype":"http","id":"kt9-j8b-s5x"},{"assertions":[{"operator":"is","target":200,"type":"statusCode"}],"name":"request
+        is sent","request":{"basicAuth":{"accessTokenUrl":"accessTokenUrl","password":"password","tokenApiAuthentication":"header","type":"oauth-rop","username":"username"},"method":"GET","url":"https://httpbin.org/status/200"},"subtype":"http","id":"ump-bpw-fa4"}]},"message":"BDD
+        test payload: synthetics_api_test_multi_step_with_every_type_of_basic_auth.json","options":{"tick_every":60},"locations":["aws:us-east-2"],"subtype":"multi","created_by":{"name":null,"handle":"frog@datadoghq.com","email":"frog@datadoghq.com"},"deleted_at":null,"monitor_id":148635778,"org_id":321813,"modified_by":{"name":null,"handle":"frog@datadoghq.com","email":"frog@datadoghq.com"}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"public_ids":["56p-u4n-28g"]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/synthetics/tests/delete
+  response:
+    body:
+      string: '{"deleted_tests":[{"public_id":"56p-u4n-28g","deleted_at":"2024-07-05T12:58:19.277853+00:00"}]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1
