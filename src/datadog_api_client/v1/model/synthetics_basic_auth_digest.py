@@ -3,13 +3,11 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    unset,
-    UnsetType,
 )
 
 
@@ -34,9 +32,7 @@ class SyntheticsBasicAuthDigest(ModelNormal):
         "username": "username",
     }
 
-    def __init__(
-        self_, password: str, username: str, type: Union[SyntheticsBasicAuthDigestType, UnsetType] = unset, **kwargs
-    ):
+    def __init__(self_, password: str, type: SyntheticsBasicAuthDigestType, username: str, **kwargs):
         """
         Object to handle digest authentication when performing the test.
 
@@ -44,14 +40,13 @@ class SyntheticsBasicAuthDigest(ModelNormal):
         :type password: str
 
         :param type: The type of basic authentication to use when performing the test.
-        :type type: SyntheticsBasicAuthDigestType, optional
+        :type type: SyntheticsBasicAuthDigestType
 
         :param username: Username to use for the digest authentication.
         :type username: str
         """
-        if type is not unset:
-            kwargs["type"] = type
         super().__init__(kwargs)
 
         self_.password = password
+        self_.type = type
         self_.username = username
