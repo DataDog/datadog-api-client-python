@@ -15127,6 +15127,9 @@ components:
           type: array
         value:
           $ref: '#/components/schemas/SyntheticsGlobalVariableValue'
+        is_totp:
+          description: Boolean indicating if this global variable is type MFA Token.
+          type: boolean
       required:
       - description
       - name

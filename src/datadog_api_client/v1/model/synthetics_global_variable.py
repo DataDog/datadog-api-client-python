@@ -14,21 +14,29 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v1.model.synthetics_global_variable_attributes import SyntheticsGlobalVariableAttributes
+    from datadog_api_client.v1.model.synthetics_global_variable_attributes import (
+        SyntheticsGlobalVariableAttributes,
+    )
     from datadog_api_client.v1.model.synthetics_global_variable_parse_test_options import (
         SyntheticsGlobalVariableParseTestOptions,
     )
-    from datadog_api_client.v1.model.synthetics_global_variable_value import SyntheticsGlobalVariableValue
+    from datadog_api_client.v1.model.synthetics_global_variable_value import (
+        SyntheticsGlobalVariableValue,
+    )
 
 
 class SyntheticsGlobalVariable(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v1.model.synthetics_global_variable_attributes import SyntheticsGlobalVariableAttributes
+        from datadog_api_client.v1.model.synthetics_global_variable_attributes import (
+            SyntheticsGlobalVariableAttributes,
+        )
         from datadog_api_client.v1.model.synthetics_global_variable_parse_test_options import (
             SyntheticsGlobalVariableParseTestOptions,
         )
-        from datadog_api_client.v1.model.synthetics_global_variable_value import SyntheticsGlobalVariableValue
+        from datadog_api_client.v1.model.synthetics_global_variable_value import (
+            SyntheticsGlobalVariableValue,
+        )
 
         return {
             "attributes": (SyntheticsGlobalVariableAttributes,),
@@ -39,6 +47,7 @@ class SyntheticsGlobalVariable(ModelNormal):
             "parse_test_public_id": (str,),
             "tags": ([str],),
             "value": (SyntheticsGlobalVariableValue,),
+            "is_totp": (bool,),
         }
 
     attribute_map = {
@@ -50,6 +59,7 @@ class SyntheticsGlobalVariable(ModelNormal):
         "parse_test_public_id": "parse_test_public_id",
         "tags": "tags",
         "value": "value",
+        "is_totp": "is_totp",
     }
     read_only_vars = {
         "id",
@@ -63,8 +73,11 @@ class SyntheticsGlobalVariable(ModelNormal):
         value: SyntheticsGlobalVariableValue,
         attributes: Union[SyntheticsGlobalVariableAttributes, UnsetType] = unset,
         id: Union[str, UnsetType] = unset,
-        parse_test_options: Union[SyntheticsGlobalVariableParseTestOptions, UnsetType] = unset,
+        parse_test_options: Union[
+            SyntheticsGlobalVariableParseTestOptions, UnsetType
+        ] = unset,
         parse_test_public_id: Union[str, UnsetType] = unset,
+        is_totp: Union[bool, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -93,6 +106,9 @@ class SyntheticsGlobalVariable(ModelNormal):
 
         :param value: Value of the global variable.
         :type value: SyntheticsGlobalVariableValue
+
+        :param is_totp: Boolean to indicate if the global variable is an MFA Global Variable.
+        :type is_totp: boolean, optional
         """
         if attributes is not unset:
             kwargs["attributes"] = attributes
@@ -102,6 +118,8 @@ class SyntheticsGlobalVariable(ModelNormal):
             kwargs["parse_test_options"] = parse_test_options
         if parse_test_public_id is not unset:
             kwargs["parse_test_public_id"] = parse_test_public_id
+        if is_totp is not unset:
+            kwargs["is_totp"] = is_totp
         super().__init__(kwargs)
 
         self_.description = description

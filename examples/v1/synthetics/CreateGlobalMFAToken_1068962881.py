@@ -48,6 +48,7 @@ body = SyntheticsGlobalVariable(
         type=SyntheticsGlobalVariableParseTestOptionsType.LOCAL_VARIABLE,
         local_variable_name="EXTRACTED_VALUE",
     ),
+    is_totp=True,
 )
 
 configuration = Configuration()
