@@ -298,11 +298,6 @@ class RolesApi:
                     "attribute": "sort",
                     "location": "query",
                 },
-                "filter": {
-                    "openapi_types": (str,),
-                    "attribute": "filter",
-                    "location": "query",
-                },
             },
             headers_map={
                 "accept": ["application/json"],
@@ -582,7 +577,6 @@ class RolesApi:
         page_size: Union[int, UnsetType] = unset,
         page_number: Union[int, UnsetType] = unset,
         sort: Union[str, UnsetType] = unset,
-        filter: Union[str, UnsetType] = unset,
     ) -> UsersResponse:
         """Get all users of a role.
 
@@ -598,8 +592,6 @@ class RolesApi:
             Sort order is **descending** if the field is prefixed by a negative sign,
             for example ``sort=-name``. Options: ``name`` , ``email`` , ``status``.
         :type sort: str, optional
-        :param filter: Filter all users by the given string. Defaults to no filtering.
-        :type filter: str, optional
         :rtype: UsersResponse
         """
         kwargs: Dict[str, Any] = {}
@@ -613,9 +605,6 @@ class RolesApi:
 
         if sort is not unset:
             kwargs["sort"] = sort
-
-        if filter is not unset:
-            kwargs["filter"] = filter
 
         return self._list_role_users_endpoint.call_with_http_info(**kwargs)
 
