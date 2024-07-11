@@ -1775,6 +1775,12 @@
       "type": "unsafe"
     }
   },
+  "ConvertSecurityMonitoringRuleFromJSONToTerraform": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "TestSecurityMonitoringRule": {
     "tag": "Security Monitoring",
     "undo": {
@@ -1800,6 +1806,12 @@
     }
   },
   "UpdateSecurityMonitoringRule": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ConvertExistingSecurityMonitoringRule": {
     "tag": "Security Monitoring",
     "undo": {
       "type": "idempotent"

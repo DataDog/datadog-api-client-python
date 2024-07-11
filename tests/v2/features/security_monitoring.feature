@@ -57,6 +57,53 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
 
+  @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Convert a rule from JSON to Terraform returns "Bad Request" response
+    Given new "ConvertSecurityMonitoringRuleFromJSONToTerraform" request
+    And body with value {"name":"{{ unique }}", "queries":[{"query":"@test:true","aggregation":"count","groupByFields":[],"distinctFields":[],"metric":""}],"filters":[],"cases":[{"name":"","status":"info","condition":"a > 0","notifications":[]}],"options":{"evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"message":"Test rule","tags":[],"isEnabled":true, "type":"log_detection"}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Convert a rule from JSON to Terraform returns "Not Found" response
+    Given new "ConvertSecurityMonitoringRuleFromJSONToTerraform" request
+    And body with value {"name":"{{ unique }}", "queries":[{"query":"@test:true","aggregation":"count","groupByFields":[],"distinctFields":[],"metric":""}],"filters":[],"cases":[{"name":"","status":"info","condition":"a > 0","notifications":[]}],"options":{"evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"message":"Test rule","tags":[],"isEnabled":true, "type":"log_detection"}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/k9-cloud-security-platform
+  Scenario: Convert a rule from JSON to Terraform returns "OK" response
+    Given operation "ConvertSecurityMonitoringRuleFromJSONToTerraform" enabled
+    And new "ConvertSecurityMonitoringRuleFromJSONToTerraform" request
+    And body with value {"name":"{{ unique }}", "queries":[{"query":"@test:true","aggregation":"count","groupByFields":[],"distinctFields":[],"metric":""}],"filters":[],"cases":[{"name":"","status":"info","condition":"a > 0","notifications":[]}],"options":{"evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"message":"Test rule","tags":[],"isEnabled":true, "type":"log_detection"}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "terraformContent" is equal to "resource \"datadog_security_monitoring_rule\" \"{{ unique_lower }}\" {\n\tname = \"{{ unique }}\"\n\tenabled = true\n\tquery {\n\t\tquery = \"@test:true\"\n\t\tgroup_by_fields = []\n\t\tdistinct_fields = []\n\t\taggregation = \"count\"\n\t\tname = \"\"\n\t}\n\toptions {\n\t\tkeep_alive = 3600\n\t\tmax_signal_duration = 86400\n\t\tdetection_method = \"threshold\"\n\t\tevaluation_window = 900\n\t}\n\tcase {\n\t\tname = \"\"\n\t\tstatus = \"info\"\n\t\tnotifications = []\n\t\tcondition = \"a > 0\"\n\t}\n\tmessage = \"Test rule\"\n\ttags = []\n\thas_extended_title = false\n\ttype = \"log_detection\"\n}\n"
+
+  @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Convert an existing rule from JSON to Terraform returns "Bad Request" response
+    Given new "ConvertExistingSecurityMonitoringRule" request
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Convert an existing rule from JSON to Terraform returns "Not Found" response
+    Given new "ConvertExistingSecurityMonitoringRule" request
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/k9-cloud-security-platform
+  Scenario: Convert an existing rule from JSON to Terraform returns "OK" response
+    Given operation "ConvertExistingSecurityMonitoringRule" enabled
+    And new "ConvertExistingSecurityMonitoringRule" request
+    And there is a valid "security_rule" in the system
+    And request contains "rule_id" parameter from "security_rule.id"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "terraformContent" is equal to "resource \"datadog_security_monitoring_rule\" \"{{ unique_lower }}\" {\n\tname = \"{{ unique }}\"\n\tenabled = true\n\tquery {\n\t\tquery = \"@test:true\"\n\t\tgroup_by_fields = []\n\t\tdistinct_fields = []\n\t\taggregation = \"count\"\n\t\tname = \"\"\n\t}\n\toptions {\n\t\tkeep_alive = 3600\n\t\tmax_signal_duration = 86400\n\t\tdetection_method = \"threshold\"\n\t\tevaluation_window = 900\n\t}\n\tcase {\n\t\tname = \"\"\n\t\tstatus = \"info\"\n\t\tnotifications = []\n\t\tcondition = \"a > 0\"\n\t}\n\tmessage = \"Test rule\"\n\ttags = []\n\thas_extended_title = false\n\ttype = \"log_detection\"\n}\n"
+
   @skip-validation @team:DataDog/k9-cloud-security-platform
   Scenario: Create a cloud_configuration rule returns "OK" response
     Given new "CreateSecurityMonitoringRule" request

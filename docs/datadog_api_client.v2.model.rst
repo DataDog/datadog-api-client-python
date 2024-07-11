@@ -7855,6 +7855,20 @@ security\_monitoring\_rule\_case\_create
    :members:
    :show-inheritance:
 
+security\_monitoring\_rule\_convert\_payload
+--------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_rule_convert_payload
+   :members:
+   :show-inheritance:
+
+security\_monitoring\_rule\_convert\_response
+---------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_rule_convert_response
+   :members:
+   :show-inheritance:
+
 security\_monitoring\_rule\_create\_payload
 -------------------------------------------
 
