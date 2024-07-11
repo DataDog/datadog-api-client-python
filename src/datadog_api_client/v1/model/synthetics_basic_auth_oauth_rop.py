@@ -59,13 +59,13 @@ class SyntheticsBasicAuthOauthROP(ModelNormal):
         access_token_url: str,
         password: str,
         token_api_authentication: SyntheticsBasicAuthOauthTokenApiAuthentication,
+        type: SyntheticsBasicAuthOauthROPType,
         username: str,
         audience: Union[str, UnsetType] = unset,
         client_id: Union[str, UnsetType] = unset,
         client_secret: Union[str, UnsetType] = unset,
         resource: Union[str, UnsetType] = unset,
         scope: Union[str, UnsetType] = unset,
-        type: Union[SyntheticsBasicAuthOauthROPType, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -96,7 +96,7 @@ class SyntheticsBasicAuthOauthROP(ModelNormal):
         :type token_api_authentication: SyntheticsBasicAuthOauthTokenApiAuthentication
 
         :param type: The type of basic authentication to use when performing the test.
-        :type type: SyntheticsBasicAuthOauthROPType, optional
+        :type type: SyntheticsBasicAuthOauthROPType
 
         :param username: Username to use when performing the authentication.
         :type username: str
@@ -111,11 +111,10 @@ class SyntheticsBasicAuthOauthROP(ModelNormal):
             kwargs["resource"] = resource
         if scope is not unset:
             kwargs["scope"] = scope
-        if type is not unset:
-            kwargs["type"] = type
         super().__init__(kwargs)
 
         self_.access_token_url = access_token_url
         self_.password = password
         self_.token_api_authentication = token_api_authentication
+        self_.type = type
         self_.username = username
