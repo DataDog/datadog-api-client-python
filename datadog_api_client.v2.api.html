@@ -1147,6 +1147,10 @@
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi</span></code></a><nav class="md-nav">
               <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.convert_existing_security_monitoring_rule" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.convert_existing_security_monitoring_rule()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.convert_security_monitoring_rule_from_json_to_terraform" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.convert_security_monitoring_rule_from_json_to_terraform()</span></code></a>
+        </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.create_security_filter" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.create_security_filter()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.create_security_monitoring_rule" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.create_security_monitoring_rule()</span></code></a>
@@ -2788,6 +2792,10 @@
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi</span></code></a><nav class="md-nav">
               <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.convert_existing_security_monitoring_rule" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.convert_existing_security_monitoring_rule()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.convert_security_monitoring_rule_from_json_to_terraform" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.convert_security_monitoring_rule_from_json_to_terraform()</span></code></a>
+        </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.create_security_filter" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.create_security_filter()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.create_security_monitoring_rule" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.create_security_monitoring_rule()</span></code></a>
@@ -7656,6 +7664,33 @@ Sort order is <strong>descending</strong> if the field is prefixed by a negative
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SecurityMonitoringApi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_client</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Create and manage your security rules, signals, filters, and more. See the <a class="reference external" href="https://docs.datadoghq.com/security/">Datadog Security page</a> for more information.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.convert_existing_security_monitoring_rule">
+<span class="sig-name descname"><span class="pre">convert_existing_security_monitoring_rule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rule_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.security_monitoring_rule_convert_response.SecurityMonitoringRuleConvertResponse" title="datadog_api_client.v2.model.security_monitoring_rule_convert_response.SecurityMonitoringRuleConvertResponse"><span class="pre">SecurityMonitoringRuleConvertResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.convert_existing_security_monitoring_rule" title="Link to this definition">¶</a></dt>
+<dd><p>Convert an existing rule from JSON to Terraform.</p>
+<p>Convert an existing rule from JSON to Terraform for datadog provider
+resource datadog_security_monitoring_rule.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>rule_id</strong> (<em>str</em>) – The ID of the rule.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.security_monitoring_rule_convert_response.SecurityMonitoringRuleConvertResponse" title="datadog_api_client.v2.model.security_monitoring_rule_convert_response.SecurityMonitoringRuleConvertResponse">SecurityMonitoringRuleConvertResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.convert_security_monitoring_rule_from_json_to_terraform">
+<span class="sig-name descname"><span class="pre">convert_security_monitoring_rule_from_json_to_terraform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.security_monitoring_rule_convert_payload.SecurityMonitoringRuleConvertPayload" title="datadog_api_client.v2.model.security_monitoring_rule_convert_payload.SecurityMonitoringRuleConvertPayload"><span class="pre">SecurityMonitoringRuleConvertPayload</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.security_monitoring_standard_rule_payload.SecurityMonitoringStandardRulePayload" title="datadog_api_client.v2.model.security_monitoring_standard_rule_payload.SecurityMonitoringStandardRulePayload"><span class="pre">SecurityMonitoringStandardRulePayload</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.security_monitoring_signal_rule_payload.SecurityMonitoringSignalRulePayload" title="datadog_api_client.v2.model.security_monitoring_signal_rule_payload.SecurityMonitoringSignalRulePayload"><span class="pre">SecurityMonitoringSignalRulePayload</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.security_monitoring_rule_convert_response.SecurityMonitoringRuleConvertResponse" title="datadog_api_client.v2.model.security_monitoring_rule_convert_response.SecurityMonitoringRuleConvertResponse"><span class="pre">SecurityMonitoringRuleConvertResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.convert_security_monitoring_rule_from_json_to_terraform" title="Link to this definition">¶</a></dt>
+<dd><p>Convert a rule from JSON to Terraform.</p>
+<p>Convert a rule that doesn’t (yet) exist from JSON to Terraform for datadog provider
+resource datadog_security_monitoring_rule.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.security_monitoring_rule_convert_response.SecurityMonitoringRuleConvertResponse" title="datadog_api_client.v2.model.security_monitoring_rule_convert_response.SecurityMonitoringRuleConvertResponse">SecurityMonitoringRuleConvertResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.create_security_filter">
 <span class="sig-name descname"><span class="pre">create_security_filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.security_filter_create_request.SecurityFilterCreateRequest" title="datadog_api_client.v2.model.security_filter_create_request.SecurityFilterCreateRequest"><span class="pre">SecurityFilterCreateRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.security_filter_response.SecurityFilterResponse" title="datadog_api_client.v2.model.security_filter_response.SecurityFilterResponse"><span class="pre">SecurityFilterResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.create_security_filter" title="Link to this definition">¶</a></dt>
