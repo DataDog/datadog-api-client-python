@@ -6855,6 +6855,7 @@ components:
       - spans
       - database_queries
       - network_performance_queries
+      - network
       example: rum
       type: string
       x-enum-varnames:
@@ -6867,6 +6868,7 @@ components:
       - SPANS
       - DATABASE_QUERIES
       - NETWORK_PERFORMANCE_QUERIES
+      - NETWORK
     MonitorFormulaAndFunctionQueryDefinition:
       description: A formula and function query.
       oneOf:
