@@ -35,6 +35,7 @@ class SnapshotsApi:
             },
             params_map={
                 "metric_query": {
+                    "required": True,
                     "openapi_types": (str,),
                     "attribute": "metric_query",
                     "location": "query",
@@ -85,10 +86,10 @@ class SnapshotsApi:
 
     def get_graph_snapshot(
         self,
+        metric_query: str,
         start: int,
         end: int,
         *,
-        metric_query: Union[str, UnsetType] = unset,
         event_query: Union[str, UnsetType] = unset,
         graph_def: Union[str, UnsetType] = unset,
         title: Union[str, UnsetType] = unset,
@@ -100,12 +101,12 @@ class SnapshotsApi:
         Take graph snapshots.
         **Note** : When a snapshot is created, there is some delay before it is available.
 
+        :param metric_query: The metric query. Either ``metric_query`` or ``graph_def`` is required.
+        :type metric_query: str
         :param start: The POSIX timestamp of the start of the query in seconds.
         :type start: int
         :param end: The POSIX timestamp of the end of the query in seconds.
         :type end: int
-        :param metric_query: The metric query.
-        :type metric_query: str, optional
         :param event_query: A query that adds event bands to the graph.
         :type event_query: str, optional
         :param graph_def: A JSON document defining the graph. ``graph_def`` can be used instead of ``metric_query``.
@@ -121,8 +122,7 @@ class SnapshotsApi:
         :rtype: GraphSnapshot
         """
         kwargs: Dict[str, Any] = {}
-        if metric_query is not unset:
-            kwargs["metric_query"] = metric_query
+        kwargs["metric_query"] = metric_query
 
         kwargs["start"] = start
 
