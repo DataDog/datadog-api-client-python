@@ -432,6 +432,11 @@ class UsageMeteringApi:
                     "attribute": "month",
                     "location": "query",
                 },
+                "include_connected_accounts": {
+                    "openapi_types": (bool,),
+                    "attribute": "include_connected_accounts",
+                    "location": "query",
+                },
             },
             headers_map={
                 "accept": ["application/json;datetime-format=rfc3339"],
@@ -1574,6 +1579,7 @@ class UsageMeteringApi:
         self,
         *,
         month: Union[datetime, UnsetType] = unset,
+        include_connected_accounts: Union[bool, UnsetType] = unset,
     ) -> UsageBillableSummaryResponse:
         """Get billable usage across your account.
 
@@ -1583,11 +1589,16 @@ class UsageMeteringApi:
 
         :param month: Datetime in ISO-8601 format, UTC, precise to month: ``[YYYY-MM]`` for usage starting this month.
         :type month: datetime, optional
+        :param include_connected_accounts: Boolean to specify whether to include accounts connected to the current account as partner customers in the Datadog partner network program. Defaults to ``false``.
+        :type include_connected_accounts: bool, optional
         :rtype: UsageBillableSummaryResponse
         """
         kwargs: Dict[str, Any] = {}
         if month is not unset:
             kwargs["month"] = month
+
+        if include_connected_accounts is not unset:
+            kwargs["include_connected_accounts"] = include_connected_accounts
 
         return self._get_usage_billable_summary_endpoint.call_with_http_info(**kwargs)
 

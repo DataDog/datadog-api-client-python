@@ -24,6 +24,8 @@ class UsageBillableSummaryHour(ModelNormal):
         from datadog_api_client.v1.model.usage_billable_summary_keys import UsageBillableSummaryKeys
 
         return {
+            "account_name": (str,),
+            "account_public_id": (str,),
             "billing_plan": (str,),
             "end_date": (datetime,),
             "num_orgs": (int,),
@@ -36,6 +38,8 @@ class UsageBillableSummaryHour(ModelNormal):
         }
 
     attribute_map = {
+        "account_name": "account_name",
+        "account_public_id": "account_public_id",
         "billing_plan": "billing_plan",
         "end_date": "end_date",
         "num_orgs": "num_orgs",
@@ -49,6 +53,8 @@ class UsageBillableSummaryHour(ModelNormal):
 
     def __init__(
         self_,
+        account_name: Union[str, UnsetType] = unset,
+        account_public_id: Union[str, UnsetType] = unset,
         billing_plan: Union[str, UnsetType] = unset,
         end_date: Union[datetime, UnsetType] = unset,
         num_orgs: Union[int, UnsetType] = unset,
@@ -62,6 +68,12 @@ class UsageBillableSummaryHour(ModelNormal):
     ):
         """
         Response with monthly summary of data billed by Datadog.
+
+        :param account_name: The account name.
+        :type account_name: str, optional
+
+        :param account_public_id: The account public ID.
+        :type account_public_id: str, optional
 
         :param billing_plan: The billing plan.
         :type billing_plan: str, optional
@@ -90,6 +102,10 @@ class UsageBillableSummaryHour(ModelNormal):
         :param usage: Response with aggregated usage types.
         :type usage: UsageBillableSummaryKeys, optional
         """
+        if account_name is not unset:
+            kwargs["account_name"] = account_name
+        if account_public_id is not unset:
+            kwargs["account_public_id"] = account_public_id
         if billing_plan is not unset:
             kwargs["billing_plan"] = billing_plan
         if end_date is not unset:
