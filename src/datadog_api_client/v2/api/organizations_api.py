@@ -69,7 +69,7 @@ class OrganizationsApi:
         self._update_org_config_endpoint = _Endpoint(
             settings={
                 "response_type": (OrgConfigGetResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/org_configs/{org_config_name}",
                 "operation_id": "update_org_config",
                 "http_method": "PATCH",
