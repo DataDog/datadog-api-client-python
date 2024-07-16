@@ -311,7 +311,7 @@ def operation_specs(specs):
     for version, spec in specs.items():
         by_operation[version] = {}
         for path in spec["paths"]:
-            if path == "x-merge-override":
+            if path.startswith("x-"):
                 continue
             for method, operation in spec["paths"][path].items():
                 by_operation[version][operation["operationId"]] = openapi.Operation(
