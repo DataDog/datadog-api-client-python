@@ -200,7 +200,7 @@ class HostsApi:
         :type sort_field: str, optional
         :param sort_dir: Direction of sort. Options include ``asc`` and ``desc``.
         :type sort_dir: str, optional
-        :param start: Host result to start search from.
+        :param start: Specify the starting point for the host search results. For example, if you set ``count`` to 100 and the first 100 results have already been returned, you can set ``start`` to ``101`` to get the next 100 results.
         :type start: int, optional
         :param count: Number of hosts to return. Max 1000.
         :type count: int, optional

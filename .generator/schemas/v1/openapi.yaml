@@ -15918,6 +15918,14 @@ components:
         disableCsp:
           description: Disable Content Security Policy for browser tests.
           type: boolean
+        enableProfiling:
+          description: Enable profiling for browser tests.
+          type: boolean
+        enableSecurityTesting:
+          deprecated: true
+          description: Enable security testing for browser tests. Security testing
+            is not available anymore. This field is deprecated and won't be used.
+          type: boolean
         follow_redirects:
           description: For API HTTP test, whether or not the test should follow redirects.
           type: boolean
@@ -17261,6 +17269,12 @@ components:
     UsageBillableSummaryHour:
       description: Response with monthly summary of data billed by Datadog.
       properties:
+        account_name:
+          description: The account name.
+          type: string
+        account_public_id:
+          description: The account public ID.
+          type: string
         billing_plan:
           description: The billing plan.
           type: string
@@ -24344,7 +24358,9 @@ paths:
         required: false
         schema:
           type: string
-      - description: Host result to start search from.
+      - description: Specify the starting point for the host search results. For example,
+          if you set `count` to 100 and the first 100 results have already been returned,
+          you can set `start` to `101` to get the next 100 results.
         in: query
         name: start
         required: false
@@ -31636,6 +31652,15 @@ paths:
         schema:
           format: date-time
           type: string
+      - description: 'Boolean to specify whether to include accounts connected to
+          the current account as partner customers in the Datadog partner network
+          program. Defaults to `false`. '
+        in: query
+        name: include_connected_accounts
+        required: false
+        schema:
+          default: false
+          type: boolean
       responses:
         '200':
           content:

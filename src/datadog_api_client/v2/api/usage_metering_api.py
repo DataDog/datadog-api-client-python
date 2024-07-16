@@ -124,6 +124,11 @@ class UsageMeteringApi:
                     "attribute": "end_date",
                     "location": "query",
                 },
+                "include_connected_accounts": {
+                    "openapi_types": (bool,),
+                    "attribute": "include_connected_accounts",
+                    "location": "query",
+                },
             },
             headers_map={
                 "accept": ["application/json;datetime-format=rfc3339"],
@@ -444,6 +449,7 @@ class UsageMeteringApi:
         end_month: Union[datetime, UnsetType] = unset,
         start_date: Union[datetime, UnsetType] = unset,
         end_date: Union[datetime, UnsetType] = unset,
+        include_connected_accounts: Union[bool, UnsetType] = unset,
     ) -> CostByOrgResponse:
         """Get estimated cost across your account.
 
@@ -464,6 +470,8 @@ class UsageMeteringApi:
         :type start_date: datetime, optional
         :param end_date: Datetime in ISO-8601 format, UTC, precise to day: ``[YYYY-MM-DD]`` for cost ending this day.
         :type end_date: datetime, optional
+        :param include_connected_accounts: Boolean to specify whether to include accounts connected to the current account as partner customers in the Datadog partner network program. Defaults to ``false``.
+        :type include_connected_accounts: bool, optional
         :rtype: CostByOrgResponse
         """
         kwargs: Dict[str, Any] = {}
@@ -481,6 +489,9 @@ class UsageMeteringApi:
 
         if end_date is not unset:
             kwargs["end_date"] = end_date
+
+        if include_connected_accounts is not unset:
+            kwargs["include_connected_accounts"] = include_connected_accounts
 
         return self._get_estimated_cost_by_org_endpoint.call_with_http_info(**kwargs)
 
