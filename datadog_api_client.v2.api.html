@@ -983,6 +983,20 @@
         </li></ul>
             </nav>
         </li>
+        <li class="md-nav__item"><a href="#module-datadog_api_client.v2.api.network_device_monitoring_api" class="md-nav__link">network_device_monitoring_api</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.network_device_monitoring_api.NetworkDeviceMonitoringApi" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">NetworkDeviceMonitoringApi</span></code></a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.network_device_monitoring_api.NetworkDeviceMonitoringApi.get_device" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">NetworkDeviceMonitoringApi.get_device()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.network_device_monitoring_api.NetworkDeviceMonitoringApi.get_interfaces" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">NetworkDeviceMonitoringApi.get_interfaces()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.network_device_monitoring_api.NetworkDeviceMonitoringApi.list_devices" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">NetworkDeviceMonitoringApi.list_devices()</span></code></a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
         <li class="md-nav__item"><a href="#module-datadog_api_client.v2.api.okta_integration_api" class="md-nav__link">okta_integration_api</a><nav class="md-nav">
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.okta_integration_api.OktaIntegrationApi" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">OktaIntegrationApi</span></code></a><nav class="md-nav">
@@ -2623,6 +2637,20 @@
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.monitors_api.MonitorsApi.list_monitor_config_policies" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">MonitorsApi.list_monitor_config_policies()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.monitors_api.MonitorsApi.update_monitor_config_policy" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">MonitorsApi.update_monitor_config_policy()</span></code></a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#module-datadog_api_client.v2.api.network_device_monitoring_api" class="md-nav__link">network_device_monitoring_api</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.network_device_monitoring_api.NetworkDeviceMonitoringApi" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">NetworkDeviceMonitoringApi</span></code></a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.network_device_monitoring_api.NetworkDeviceMonitoringApi.get_device" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">NetworkDeviceMonitoringApi.get_device()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.network_device_monitoring_api.NetworkDeviceMonitoringApi.get_interfaces" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">NetworkDeviceMonitoringApi.get_interfaces()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.network_device_monitoring_api.NetworkDeviceMonitoringApi.list_devices" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">NetworkDeviceMonitoringApi.list_devices()</span></code></a>
         </li></ul>
             </nav>
         </li></ul>
@@ -6803,6 +6831,62 @@ notifies your team when a defined threshold has exceeded.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.monitor_config_policy_response.MonitorConfigPolicyResponse" title="datadog_api_client.v2.model.monitor_config_policy_response.MonitorConfigPolicyResponse">MonitorConfigPolicyResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+</section>
+<section id="module-datadog_api_client.v2.api.network_device_monitoring_api">
+<span id="network-device-monitoring-api"></span><h2 id="module-datadog_api_client.v2.api.network_device_monitoring_api">network_device_monitoring_api<a class="headerlink" href="#module-datadog_api_client.v2.api.network_device_monitoring_api" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.network_device_monitoring_api.NetworkDeviceMonitoringApi">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">NetworkDeviceMonitoringApi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_client</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datadog_api_client.v2.api.network_device_monitoring_api.NetworkDeviceMonitoringApi" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The Network Device Monitoring API allows you to fetch devices and interfaces and their attributes. See the <a class="reference external" href="https://docs.datadoghq.com/network_monitoring/">Network Device Monitoring page</a> for more information.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.network_device_monitoring_api.NetworkDeviceMonitoringApi.get_device">
+<span class="sig-name descname"><span class="pre">get_device</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">device_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.get_device_response.GetDeviceResponse" title="datadog_api_client.v2.model.get_device_response.GetDeviceResponse"><span class="pre">GetDeviceResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.network_device_monitoring_api.NetworkDeviceMonitoringApi.get_device" title="Link to this definition">¶</a></dt>
+<dd><p>Get the device details.</p>
+<p>Get the device details.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>device_id</strong> (<em>str</em>) – The id of the device to fetch.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.get_device_response.GetDeviceResponse" title="datadog_api_client.v2.model.get_device_response.GetDeviceResponse">GetDeviceResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.network_device_monitoring_api.NetworkDeviceMonitoringApi.get_interfaces">
+<span class="sig-name descname"><span class="pre">get_interfaces</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">device_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.get_interfaces_response.GetInterfacesResponse" title="datadog_api_client.v2.model.get_interfaces_response.GetInterfacesResponse"><span class="pre">GetInterfacesResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.network_device_monitoring_api.NetworkDeviceMonitoringApi.get_interfaces" title="Link to this definition">¶</a></dt>
+<dd><p>Get the list of interfaces of the device.</p>
+<p>Get the list of interfaces of the device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>device_id</strong> (<em>str</em>) – The ID of the device to get interfaces from.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.get_interfaces_response.GetInterfacesResponse" title="datadog_api_client.v2.model.get_interfaces_response.GetInterfacesResponse">GetInterfacesResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.network_device_monitoring_api.NetworkDeviceMonitoringApi.list_devices">
+<span class="sig-name descname"><span class="pre">list_devices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">page_number</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">page_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter_tag</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.list_devices_response.ListDevicesResponse" title="datadog_api_client.v2.model.list_devices_response.ListDevicesResponse"><span class="pre">ListDevicesResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.network_device_monitoring_api.NetworkDeviceMonitoringApi.list_devices" title="Link to this definition">¶</a></dt>
+<dd><p>Get the list of devices.</p>
+<p>Get the list of devices.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>page_number</strong> (<em>int</em><em>, </em><em>optional</em>) – The page number to fetch.</p></li>
+<li><p><strong>page_size</strong> (<em>int</em><em>, </em><em>optional</em>) – The number of devices to return per page.</p></li>
+<li><p><strong>sort</strong> (<em>str</em><em>, </em><em>optional</em>) – The field to sort the devices by.</p></li>
+<li><p><strong>filter_tag</strong> (<em>str</em><em>, </em><em>optional</em>) – Filter devices by tag.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.list_devices_response.ListDevicesResponse" title="datadog_api_client.v2.model.list_devices_response.ListDevicesResponse">ListDevicesResponse</a></p>
 </dd>
 </dl>
 </dd></dl>
