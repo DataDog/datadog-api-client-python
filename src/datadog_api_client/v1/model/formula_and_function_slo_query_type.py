@@ -16,14 +16,16 @@ class FormulaAndFunctionSLOQueryType(ModelSimple):
     """
     Name of the query for use in formulas.
 
-    :param value: If omitted defaults to "metric". Must be one of ["metric"].
+    :param value: Must be one of ["metric", "time_slice"].
     :type value: str
     """
 
     allowed_values = {
         "metric",
+        "time_slice",
     }
     METRIC: ClassVar["FormulaAndFunctionSLOQueryType"]
+    TIME_SLICE: ClassVar["FormulaAndFunctionSLOQueryType"]
 
     @cached_property
     def openapi_types(_):
@@ -33,3 +35,4 @@ class FormulaAndFunctionSLOQueryType(ModelSimple):
 
 
 FormulaAndFunctionSLOQueryType.METRIC = FormulaAndFunctionSLOQueryType("metric")
+FormulaAndFunctionSLOQueryType.TIME_SLICE = FormulaAndFunctionSLOQueryType("time_slice")
