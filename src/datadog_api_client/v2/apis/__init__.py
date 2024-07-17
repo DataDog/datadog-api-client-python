@@ -28,6 +28,7 @@ from datadog_api_client.v2.api.logs_custom_destinations_api import LogsCustomDes
 from datadog_api_client.v2.api.logs_metrics_api import LogsMetricsApi
 from datadog_api_client.v2.api.metrics_api import MetricsApi
 from datadog_api_client.v2.api.monitors_api import MonitorsApi
+from datadog_api_client.v2.api.network_device_monitoring_api import NetworkDeviceMonitoringApi
 from datadog_api_client.v2.api.okta_integration_api import OktaIntegrationApi
 from datadog_api_client.v2.api.opsgenie_integration_api import OpsgenieIntegrationApi
 from datadog_api_client.v2.api.organizations_api import OrganizationsApi
@@ -81,6 +82,7 @@ __all__ = [
     "LogsMetricsApi",
     "MetricsApi",
     "MonitorsApi",
+    "NetworkDeviceMonitoringApi",
     "OktaIntegrationApi",
     "OpsgenieIntegrationApi",
     "OrganizationsApi",

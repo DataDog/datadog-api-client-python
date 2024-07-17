@@ -2556,6 +2556,27 @@ detailed\_finding\_type
    :members:
    :show-inheritance:
 
+device\_attributes
+------------------
+
+.. automodule:: datadog_api_client.v2.model.device_attributes
+   :members:
+   :show-inheritance:
+
+device\_attributes\_interface\_statuses
+---------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.device_attributes_interface_statuses
+   :members:
+   :show-inheritance:
+
+devices\_list\_data
+-------------------
+
+.. automodule:: datadog_api_client.v2.model.devices_list_data
+   :members:
+   :show-inheritance:
+
 dora\_deployment\_request
 -------------------------
 
@@ -3417,10 +3438,45 @@ gcpsts\_service\_accounts\_response
    :members:
    :show-inheritance:
 
+get\_device\_attributes
+-----------------------
+
+.. automodule:: datadog_api_client.v2.model.get_device_attributes
+   :members:
+   :show-inheritance:
+
+get\_device\_data
+-----------------
+
+.. automodule:: datadog_api_client.v2.model.get_device_data
+   :members:
+   :show-inheritance:
+
+get\_device\_response
+---------------------
+
+.. automodule:: datadog_api_client.v2.model.get_device_response
+   :members:
+   :show-inheritance:
+
 get\_finding\_response
 ----------------------
 
 .. automodule:: datadog_api_client.v2.model.get_finding_response
+   :members:
+   :show-inheritance:
+
+get\_interfaces\_data
+---------------------
+
+.. automodule:: datadog_api_client.v2.model.get_interfaces_data
+   :members:
+   :show-inheritance:
+
+get\_interfaces\_response
+-------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_interfaces_response
    :members:
    :show-inheritance:
 
@@ -4376,6 +4432,20 @@ intake\_payload\_accepted
    :members:
    :show-inheritance:
 
+interface\_attributes
+---------------------
+
+.. automodule:: datadog_api_client.v2.model.interface_attributes
+   :members:
+   :show-inheritance:
+
+interface\_attributes\_status
+-----------------------------
+
+.. automodule:: datadog_api_client.v2.model.interface_attributes_status
+   :members:
+   :show-inheritance:
+
 ip\_allowlist\_attributes
 -------------------------
 
@@ -4520,6 +4590,27 @@ list\_application\_keys\_response
 ---------------------------------
 
 .. automodule:: datadog_api_client.v2.model.list_application_keys_response
+   :members:
+   :show-inheritance:
+
+list\_devices\_response
+-----------------------
+
+.. automodule:: datadog_api_client.v2.model.list_devices_response
+   :members:
+   :show-inheritance:
+
+list\_devices\_response\_metadata
+---------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_devices_response_metadata
+   :members:
+   :show-inheritance:
+
+list\_devices\_response\_metadata\_page
+---------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_devices_response_metadata_page
    :members:
    :show-inheritance:
 
