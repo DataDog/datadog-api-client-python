@@ -482,6 +482,9 @@ from datadog_api_client.v2.model.data_scalar_column import DataScalarColumn
 from datadog_api_client.v2.model.detailed_finding import DetailedFinding
 from datadog_api_client.v2.model.detailed_finding_attributes import DetailedFindingAttributes
 from datadog_api_client.v2.model.detailed_finding_type import DetailedFindingType
+from datadog_api_client.v2.model.device_attributes import DeviceAttributes
+from datadog_api_client.v2.model.device_attributes_interface_statuses import DeviceAttributesInterfaceStatuses
+from datadog_api_client.v2.model.devices_list_data import DevicesListData
 from datadog_api_client.v2.model.downtime_create_request import DowntimeCreateRequest
 from datadog_api_client.v2.model.downtime_create_request_attributes import DowntimeCreateRequestAttributes
 from datadog_api_client.v2.model.downtime_create_request_data import DowntimeCreateRequestData
@@ -602,7 +605,12 @@ from datadog_api_client.v2.model.gcpsts_service_account_update_request_data impo
 from datadog_api_client.v2.model.gcpsts_service_accounts_response import GCPSTSServiceAccountsResponse
 from datadog_api_client.v2.model.gcp_service_account_meta import GCPServiceAccountMeta
 from datadog_api_client.v2.model.gcp_service_account_type import GCPServiceAccountType
+from datadog_api_client.v2.model.get_device_attributes import GetDeviceAttributes
+from datadog_api_client.v2.model.get_device_data import GetDeviceData
+from datadog_api_client.v2.model.get_device_response import GetDeviceResponse
 from datadog_api_client.v2.model.get_finding_response import GetFindingResponse
+from datadog_api_client.v2.model.get_interfaces_data import GetInterfacesData
+from datadog_api_client.v2.model.get_interfaces_response import GetInterfacesResponse
 from datadog_api_client.v2.model.get_team_memberships_sort import GetTeamMembershipsSort
 from datadog_api_client.v2.model.group_scalar_column import GroupScalarColumn
 from datadog_api_client.v2.model.group_tags import GroupTags
@@ -780,6 +788,8 @@ from datadog_api_client.v2.model.incident_update_request import IncidentUpdateRe
 from datadog_api_client.v2.model.incident_user_defined_field_type import IncidentUserDefinedFieldType
 from datadog_api_client.v2.model.incidents_response import IncidentsResponse
 from datadog_api_client.v2.model.intake_payload_accepted import IntakePayloadAccepted
+from datadog_api_client.v2.model.interface_attributes import InterfaceAttributes
+from datadog_api_client.v2.model.interface_attributes_status import InterfaceAttributesStatus
 from datadog_api_client.v2.model.jsonapi_error_item import JSONAPIErrorItem
 from datadog_api_client.v2.model.jsonapi_error_response import JSONAPIErrorResponse
 from datadog_api_client.v2.model.jira_integration_metadata import JiraIntegrationMetadata
@@ -792,6 +802,9 @@ from datadog_api_client.v2.model.list_apis_response_data_attributes import ListA
 from datadog_api_client.v2.model.list_apis_response_meta import ListAPIsResponseMeta
 from datadog_api_client.v2.model.list_apis_response_meta_pagination import ListAPIsResponseMetaPagination
 from datadog_api_client.v2.model.list_application_keys_response import ListApplicationKeysResponse
+from datadog_api_client.v2.model.list_devices_response import ListDevicesResponse
+from datadog_api_client.v2.model.list_devices_response_metadata import ListDevicesResponseMetadata
+from datadog_api_client.v2.model.list_devices_response_metadata_page import ListDevicesResponseMetadataPage
 from datadog_api_client.v2.model.list_downtimes_response import ListDowntimesResponse
 from datadog_api_client.v2.model.list_findings_meta import ListFindingsMeta
 from datadog_api_client.v2.model.list_findings_page import ListFindingsPage
@@ -2202,6 +2215,9 @@ __all__ = [
     "DetailedFinding",
     "DetailedFindingAttributes",
     "DetailedFindingType",
+    "DeviceAttributes",
+    "DeviceAttributesInterfaceStatuses",
+    "DevicesListData",
     "DowntimeCreateRequest",
     "DowntimeCreateRequestAttributes",
     "DowntimeCreateRequestData",
@@ -2312,7 +2328,12 @@ __all__ = [
     "GCPSTSServiceAccountsResponse",
     "GCPServiceAccountMeta",
     "GCPServiceAccountType",
+    "GetDeviceAttributes",
+    "GetDeviceData",
+    "GetDeviceResponse",
     "GetFindingResponse",
+    "GetInterfacesData",
+    "GetInterfacesResponse",
     "GetTeamMembershipsSort",
     "GroupScalarColumn",
     "GroupTags",
@@ -2458,6 +2479,8 @@ __all__ = [
     "IncidentUserDefinedFieldType",
     "IncidentsResponse",
     "IntakePayloadAccepted",
+    "InterfaceAttributes",
+    "InterfaceAttributesStatus",
     "JSONAPIErrorItem",
     "JSONAPIErrorResponse",
     "JiraIntegrationMetadata",
@@ -2470,6 +2493,9 @@ __all__ = [
     "ListAPIsResponseMeta",
     "ListAPIsResponseMetaPagination",
     "ListApplicationKeysResponse",
+    "ListDevicesResponse",
+    "ListDevicesResponseMetadata",
+    "ListDevicesResponseMetadataPage",
     "ListDowntimesResponse",
     "ListFindingsMeta",
     "ListFindingsPage",

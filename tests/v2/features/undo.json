@@ -1297,6 +1297,24 @@
       "type": "safe"
     }
   },
+  "ListDevices": {
+    "tag": "Network Device Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetDevice": {
+    "tag": "Network Device Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetInterfaces": {
+    "tag": "Network Device Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListOrgConfigs": {
     "tag": "Organizations",
     "undo": {
