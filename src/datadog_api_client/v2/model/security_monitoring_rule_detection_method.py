@@ -16,7 +16,7 @@ class SecurityMonitoringRuleDetectionMethod(ModelSimple):
     """
     The detection method.
 
-    :param value: Must be one of ["threshold", "new_value", "anomaly_detection", "impossible_travel", "hardcoded", "third_party"].
+    :param value: Must be one of ["threshold", "new_value", "anomaly_detection", "impossible_travel", "hardcoded", "third_party", "anomaly_threshold"].
     :type value: str
     """
 
@@ -27,6 +27,7 @@ class SecurityMonitoringRuleDetectionMethod(ModelSimple):
         "impossible_travel",
         "hardcoded",
         "third_party",
+        "anomaly_threshold",
     }
     THRESHOLD: ClassVar["SecurityMonitoringRuleDetectionMethod"]
     NEW_VALUE: ClassVar["SecurityMonitoringRuleDetectionMethod"]
@@ -34,6 +35,7 @@ class SecurityMonitoringRuleDetectionMethod(ModelSimple):
     IMPOSSIBLE_TRAVEL: ClassVar["SecurityMonitoringRuleDetectionMethod"]
     HARDCODED: ClassVar["SecurityMonitoringRuleDetectionMethod"]
     THIRD_PARTY: ClassVar["SecurityMonitoringRuleDetectionMethod"]
+    ANOMALY_THRESHOLD: ClassVar["SecurityMonitoringRuleDetectionMethod"]
 
     @cached_property
     def openapi_types(_):
@@ -48,3 +50,4 @@ SecurityMonitoringRuleDetectionMethod.ANOMALY_DETECTION = SecurityMonitoringRule
 SecurityMonitoringRuleDetectionMethod.IMPOSSIBLE_TRAVEL = SecurityMonitoringRuleDetectionMethod("impossible_travel")
 SecurityMonitoringRuleDetectionMethod.HARDCODED = SecurityMonitoringRuleDetectionMethod("hardcoded")
 SecurityMonitoringRuleDetectionMethod.THIRD_PARTY = SecurityMonitoringRuleDetectionMethod("third_party")
+SecurityMonitoringRuleDetectionMethod.ANOMALY_THRESHOLD = SecurityMonitoringRuleDetectionMethod("anomaly_threshold")
