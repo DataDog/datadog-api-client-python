@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 from typing import Any, Dict
+import warnings
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
@@ -320,7 +321,7 @@ class CloudCostManagementApi:
         self,
         filter_management_account_id: str,
     ) -> AWSRelatedAccountsResponse:
-        """List related AWS accounts.
+        """List related AWS accounts. **Deprecated**.
 
         List the AWS accounts in an organization by calling 'organizations:ListAccounts' from the specified management account.
 
@@ -331,6 +332,7 @@ class CloudCostManagementApi:
         kwargs: Dict[str, Any] = {}
         kwargs["filter_management_account_id"] = filter_management_account_id
 
+        warnings.warn("list_aws_related_accounts is deprecated", DeprecationWarning, stacklevel=2)
         return self._list_aws_related_accounts_endpoint.call_with_http_info(**kwargs)
 
     def list_cost_awscur_configs(
