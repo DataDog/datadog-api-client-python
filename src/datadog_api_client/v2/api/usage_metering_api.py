@@ -201,6 +201,11 @@ class UsageMeteringApi:
                     "attribute": "filter[include_descendants]",
                     "location": "query",
                 },
+                "filter_include_connected_accounts": {
+                    "openapi_types": (bool,),
+                    "attribute": "filter[include_connected_accounts]",
+                    "location": "query",
+                },
                 "filter_include_breakdown": {
                     "openapi_types": (bool,),
                     "attribute": "filter[include_breakdown]",
@@ -535,6 +540,7 @@ class UsageMeteringApi:
         *,
         filter_timestamp_end: Union[datetime, UnsetType] = unset,
         filter_include_descendants: Union[bool, UnsetType] = unset,
+        filter_include_connected_accounts: Union[bool, UnsetType] = unset,
         filter_include_breakdown: Union[bool, UnsetType] = unset,
         filter_versions: Union[str, UnsetType] = unset,
         page_limit: Union[int, UnsetType] = unset,
@@ -559,6 +565,8 @@ class UsageMeteringApi:
         :type filter_timestamp_end: datetime, optional
         :param filter_include_descendants: Include child org usage in the response. Defaults to false.
         :type filter_include_descendants: bool, optional
+        :param filter_include_connected_accounts: Boolean to specify whether to include accounts connected to the current account as partner customers in the Datadog partner network program. Defaults to false.
+        :type filter_include_connected_accounts: bool, optional
         :param filter_include_breakdown: Include breakdown of usage by subcategories where applicable (for product family logs only). Defaults to false.
         :type filter_include_breakdown: bool, optional
         :param filter_versions: Comma separated list of product family versions to use in the format ``product_family:version``. For example,
@@ -581,6 +589,9 @@ class UsageMeteringApi:
 
         if filter_include_descendants is not unset:
             kwargs["filter_include_descendants"] = filter_include_descendants
+
+        if filter_include_connected_accounts is not unset:
+            kwargs["filter_include_connected_accounts"] = filter_include_connected_accounts
 
         if filter_include_breakdown is not unset:
             kwargs["filter_include_breakdown"] = filter_include_breakdown

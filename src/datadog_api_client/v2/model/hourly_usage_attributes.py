@@ -24,6 +24,8 @@ class HourlyUsageAttributes(ModelNormal):
         from datadog_api_client.v2.model.hourly_usage_measurement import HourlyUsageMeasurement
 
         return {
+            "account_name": (str,),
+            "account_public_id": (str,),
             "measurements": ([HourlyUsageMeasurement],),
             "org_name": (str,),
             "product_family": (str,),
@@ -33,6 +35,8 @@ class HourlyUsageAttributes(ModelNormal):
         }
 
     attribute_map = {
+        "account_name": "account_name",
+        "account_public_id": "account_public_id",
         "measurements": "measurements",
         "org_name": "org_name",
         "product_family": "product_family",
@@ -43,6 +47,8 @@ class HourlyUsageAttributes(ModelNormal):
 
     def __init__(
         self_,
+        account_name: Union[str, UnsetType] = unset,
+        account_public_id: Union[str, UnsetType] = unset,
         measurements: Union[List[HourlyUsageMeasurement], UnsetType] = unset,
         org_name: Union[str, UnsetType] = unset,
         product_family: Union[str, UnsetType] = unset,
@@ -53,6 +59,12 @@ class HourlyUsageAttributes(ModelNormal):
     ):
         """
         Attributes of hourly usage for a product family for an org for a time period.
+
+        :param account_name: The account name.
+        :type account_name: str, optional
+
+        :param account_public_id: The account public ID.
+        :type account_public_id: str, optional
 
         :param measurements: List of the measured usage values for the product family for the org for the time period.
         :type measurements: [HourlyUsageMeasurement], optional
@@ -72,6 +84,10 @@ class HourlyUsageAttributes(ModelNormal):
         :param timestamp: Datetime in ISO-8601 format, UTC. The hour for the usage.
         :type timestamp: datetime, optional
         """
+        if account_name is not unset:
+            kwargs["account_name"] = account_name
+        if account_public_id is not unset:
+            kwargs["account_public_id"] = account_public_id
         if measurements is not unset:
             kwargs["measurements"] = measurements
         if org_name is not unset:
