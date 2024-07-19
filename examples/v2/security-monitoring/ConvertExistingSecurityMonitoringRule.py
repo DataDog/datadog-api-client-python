@@ -10,7 +10,6 @@ from datadog_api_client.v2.api.security_monitoring_api import SecurityMonitoring
 SECURITY_RULE_ID = environ["SECURITY_RULE_ID"]
 
 configuration = Configuration()
-configuration.unstable_operations["convert_existing_security_monitoring_rule"] = True
 with ApiClient(configuration) as api_client:
     api_instance = SecurityMonitoringApi(api_client)
     response = api_instance.convert_existing_security_monitoring_rule(

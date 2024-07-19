@@ -53,7 +53,6 @@ body = SecurityMonitoringStandardRulePayload(
 )
 
 configuration = Configuration()
-configuration.unstable_operations["convert_security_monitoring_rule_from_json_to_terraform"] = True
 with ApiClient(configuration) as api_client:
     api_instance = SecurityMonitoringApi(api_client)
     response = api_instance.convert_security_monitoring_rule_from_json_to_terraform(body=body)
