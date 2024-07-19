@@ -400,6 +400,13 @@ authn\_mapping\_relationships
    :members:
    :show-inheritance:
 
+authn\_mapping\_resource\_type
+------------------------------
+
+.. automodule:: datadog_api_client.v2.model.authn_mapping_resource_type
+   :members:
+   :show-inheritance:
+
 authn\_mapping\_response
 ------------------------
 
