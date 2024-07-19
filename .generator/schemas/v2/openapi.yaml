@@ -37480,9 +37480,8 @@ paths:
       summary: Get user memberships
       tags:
       - Teams
-  x-merge-override:
-    /api/v2/team/{team_id}/links: true
-    /api/v2/team/{team_id}/links/{link_id}: true
+  x-test:
+    /api/v2/apicatalog/api: true
 security:
 - apiKeyAuth: []
   appKeyAuth: []
