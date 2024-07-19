@@ -33741,8 +33741,6 @@ paths:
       tags:
       - Security Monitoring
       x-codegen-request-body-name: body
-      x-unstable: '**Note**: This feature is in private beta. Reach out to support
-        to request access.'
   /api/v2/security_monitoring/rules/test:
     post:
       description: Test a rule.
@@ -33931,8 +33929,6 @@ paths:
       summary: Convert an existing rule from JSON to Terraform
       tags:
       - Security Monitoring
-      x-unstable: '**Note**: This feature is in private beta. Reach out to support
-        to request access.'
   /api/v2/security_monitoring/rules/{rule_id}/test:
     post:
       description: Test an existing rule.

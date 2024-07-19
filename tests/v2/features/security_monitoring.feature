@@ -73,8 +73,7 @@ Feature: Security Monitoring
 
   @team:DataDog/k9-cloud-security-platform
   Scenario: Convert a rule from JSON to Terraform returns "OK" response
-    Given operation "ConvertSecurityMonitoringRuleFromJSONToTerraform" enabled
-    And new "ConvertSecurityMonitoringRuleFromJSONToTerraform" request
+    Given new "ConvertSecurityMonitoringRuleFromJSONToTerraform" request
     And body with value {"name":"{{ unique }}", "queries":[{"query":"@test:true","aggregation":"count","groupByFields":[],"distinctFields":[],"metric":""}],"filters":[],"cases":[{"name":"","status":"info","condition":"a > 0","notifications":[]}],"options":{"evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"message":"Test rule","tags":[],"isEnabled":true, "type":"log_detection"}
     When the request is sent
     Then the response status is 200 OK
@@ -96,8 +95,7 @@ Feature: Security Monitoring
 
   @team:DataDog/k9-cloud-security-platform
   Scenario: Convert an existing rule from JSON to Terraform returns "OK" response
-    Given operation "ConvertExistingSecurityMonitoringRule" enabled
-    And new "ConvertExistingSecurityMonitoringRule" request
+    Given new "ConvertExistingSecurityMonitoringRule" request
     And there is a valid "security_rule" in the system
     And request contains "rule_id" parameter from "security_rule.id"
     When the request is sent
