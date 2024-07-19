@@ -8,6 +8,7 @@ from typing import Union, TYPE_CHECKING
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    none_type,
     unset,
     UnsetType,
 )
@@ -15,16 +16,18 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.relationship_to_user import RelationshipToUser
+    from datadog_api_client.v2.model.nullable_relationship_to_user import NullableRelationshipToUser
 
 
 class APIKeyRelationships(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.relationship_to_user import RelationshipToUser
+        from datadog_api_client.v2.model.nullable_relationship_to_user import NullableRelationshipToUser
 
         return {
             "created_by": (RelationshipToUser,),
-            "modified_by": (RelationshipToUser,),
+            "modified_by": (NullableRelationshipToUser,),
         }
 
     attribute_map = {
@@ -35,7 +38,7 @@ class APIKeyRelationships(ModelNormal):
     def __init__(
         self_,
         created_by: Union[RelationshipToUser, UnsetType] = unset,
-        modified_by: Union[RelationshipToUser, UnsetType] = unset,
+        modified_by: Union[NullableRelationshipToUser, none_type, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -45,7 +48,7 @@ class APIKeyRelationships(ModelNormal):
         :type created_by: RelationshipToUser, optional
 
         :param modified_by: Relationship to user.
-        :type modified_by: RelationshipToUser, optional
+        :type modified_by: NullableRelationshipToUser, none_type, optional
         """
         if created_by is not unset:
             kwargs["created_by"] = created_by
