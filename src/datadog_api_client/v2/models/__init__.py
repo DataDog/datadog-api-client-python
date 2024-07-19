@@ -59,6 +59,7 @@ from datadog_api_client.v2.model.authn_mapping_included import AuthNMappingInclu
 from datadog_api_client.v2.model.authn_mapping_relationship_to_role import AuthNMappingRelationshipToRole
 from datadog_api_client.v2.model.authn_mapping_relationship_to_team import AuthNMappingRelationshipToTeam
 from datadog_api_client.v2.model.authn_mapping_relationships import AuthNMappingRelationships
+from datadog_api_client.v2.model.authn_mapping_resource_type import AuthNMappingResourceType
 from datadog_api_client.v2.model.authn_mapping_response import AuthNMappingResponse
 from datadog_api_client.v2.model.authn_mapping_team import AuthNMappingTeam
 from datadog_api_client.v2.model.authn_mapping_team_attributes import AuthNMappingTeamAttributes
@@ -1898,6 +1899,7 @@ __all__ = [
     "AuthNMappingRelationshipToRole",
     "AuthNMappingRelationshipToTeam",
     "AuthNMappingRelationships",
+    "AuthNMappingResourceType",
     "AuthNMappingResponse",
     "AuthNMappingTeam",
     "AuthNMappingTeamAttributes",
