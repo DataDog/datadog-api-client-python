@@ -302,7 +302,7 @@ def format_data_with_schema(
                 result = repr(UUID(x))
                 return result
 
-            formatter = {
+            formatters = {
                 "double": lambda s: repr(float(s)),
                 "int32": lambda s: repr(int(s)),
                 "int64": lambda s: repr(int(s)),
@@ -312,7 +312,9 @@ def format_data_with_schema(
                 "email": repr,
                 "uuid": format_uuid,
                 None: repr, 
-            }[schema.get("format")]
+            }
+            schema_type = schema.get("type")
+            formatter = formatters.get(schema.get("format", schema_type), formatters.get(schema_type)) or repr
 
             # TODO format date and datetime
             parameters = formatter(data)
