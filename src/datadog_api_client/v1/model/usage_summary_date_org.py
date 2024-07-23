@@ -17,6 +17,8 @@ class UsageSummaryDateOrg(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
+            "account_name": (str,),
+            "account_public_id": (str,),
             "agent_host_top99p": (int,),
             "apm_azure_app_service_host_top99p": (int,),
             "apm_devsecops_host_top99p": (int,),
@@ -150,6 +152,8 @@ class UsageSummaryDateOrg(ModelNormal):
         }
 
     attribute_map = {
+        "account_name": "account_name",
+        "account_public_id": "account_public_id",
         "agent_host_top99p": "agent_host_top99p",
         "apm_azure_app_service_host_top99p": "apm_azure_app_service_host_top99p",
         "apm_devsecops_host_top99p": "apm_devsecops_host_top99p",
@@ -284,6 +288,8 @@ class UsageSummaryDateOrg(ModelNormal):
 
     def __init__(
         self_,
+        account_name: Union[str, UnsetType] = unset,
+        account_public_id: Union[str, UnsetType] = unset,
         agent_host_top99p: Union[int, UnsetType] = unset,
         apm_azure_app_service_host_top99p: Union[int, UnsetType] = unset,
         apm_devsecops_host_top99p: Union[int, UnsetType] = unset,
@@ -418,6 +424,12 @@ class UsageSummaryDateOrg(ModelNormal):
     ):
         """
         Global hourly report of all data billed by Datadog for a given organization.
+
+        :param account_name: The account name.
+        :type account_name: str, optional
+
+        :param account_public_id: The account public id.
+        :type account_public_id: str, optional
 
         :param agent_host_top99p: Shows the 99th percentile of all agent hosts over all hours in the current date for the given org.
         :type agent_host_top99p: int, optional
@@ -809,6 +821,10 @@ class UsageSummaryDateOrg(ModelNormal):
         :param workflow_executions_usage_sum: Sum of all workflows executed over all hours in the current date for the given org.
         :type workflow_executions_usage_sum: int, optional
         """
+        if account_name is not unset:
+            kwargs["account_name"] = account_name
+        if account_public_id is not unset:
+            kwargs["account_public_id"] = account_public_id
         if agent_host_top99p is not unset:
             kwargs["agent_host_top99p"] = agent_host_top99p
         if apm_azure_app_service_host_top99p is not unset:
