@@ -162,6 +162,11 @@ class UsageMeteringApi:
                     "attribute": "end_month",
                     "location": "query",
                 },
+                "include_connected_accounts": {
+                    "openapi_types": (bool,),
+                    "attribute": "include_connected_accounts",
+                    "location": "query",
+                },
             },
             headers_map={
                 "accept": ["application/json;datetime-format=rfc3339"],
@@ -310,6 +315,11 @@ class UsageMeteringApi:
                 "view": {
                     "openapi_types": (str,),
                     "attribute": "view",
+                    "location": "query",
+                },
+                "include_connected_accounts": {
+                    "openapi_types": (bool,),
+                    "attribute": "include_connected_accounts",
                     "location": "query",
                 },
             },
@@ -506,6 +516,7 @@ class UsageMeteringApi:
         *,
         view: Union[str, UnsetType] = unset,
         end_month: Union[datetime, UnsetType] = unset,
+        include_connected_accounts: Union[bool, UnsetType] = unset,
     ) -> CostByOrgResponse:
         """Get historical cost across your account.
 
@@ -520,6 +531,8 @@ class UsageMeteringApi:
         :type view: str, optional
         :param end_month: Datetime in ISO-8601 format, UTC, precise to month: ``[YYYY-MM]`` for cost ending this month.
         :type end_month: datetime, optional
+        :param include_connected_accounts: Boolean to specify whether to include accounts connected to the current account as partner customers in the Datadog partner network program. Defaults to ``false``.
+        :type include_connected_accounts: bool, optional
         :rtype: CostByOrgResponse
         """
         kwargs: Dict[str, Any] = {}
@@ -530,6 +543,9 @@ class UsageMeteringApi:
 
         if end_month is not unset:
             kwargs["end_month"] = end_month
+
+        if include_connected_accounts is not unset:
+            kwargs["include_connected_accounts"] = include_connected_accounts
 
         return self._get_historical_cost_by_org_endpoint.call_with_http_info(**kwargs)
 
@@ -690,6 +706,7 @@ class UsageMeteringApi:
         self,
         *,
         view: Union[str, UnsetType] = unset,
+        include_connected_accounts: Union[bool, UnsetType] = unset,
     ) -> ProjectedCostResponse:
         """Get projected cost across your account.
 
@@ -700,11 +717,16 @@ class UsageMeteringApi:
 
         :param view: String to specify whether cost is broken down at a parent-org level or at the sub-org level. Available views are ``summary`` and ``sub-org``. Defaults to ``summary``.
         :type view: str, optional
+        :param include_connected_accounts: Boolean to specify whether to include accounts connected to the current account as partner customers in the Datadog partner network program. Defaults to ``false``.
+        :type include_connected_accounts: bool, optional
         :rtype: ProjectedCostResponse
         """
         kwargs: Dict[str, Any] = {}
         if view is not unset:
             kwargs["view"] = view
+
+        if include_connected_accounts is not unset:
+            kwargs["include_connected_accounts"] = include_connected_accounts
 
         return self._get_projected_cost_endpoint.call_with_http_info(**kwargs)
 

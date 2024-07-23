@@ -24,6 +24,8 @@ class ProjectedCostAttributes(ModelNormal):
         from datadog_api_client.v2.model.chargeback_breakdown import ChargebackBreakdown
 
         return {
+            "account_name": (str,),
+            "account_public_id": (str,),
             "charges": ([ChargebackBreakdown],),
             "date": (datetime,),
             "org_name": (str,),
@@ -33,6 +35,8 @@ class ProjectedCostAttributes(ModelNormal):
         }
 
     attribute_map = {
+        "account_name": "account_name",
+        "account_public_id": "account_public_id",
         "charges": "charges",
         "date": "date",
         "org_name": "org_name",
@@ -43,6 +47,8 @@ class ProjectedCostAttributes(ModelNormal):
 
     def __init__(
         self_,
+        account_name: Union[str, UnsetType] = unset,
+        account_public_id: Union[str, UnsetType] = unset,
         charges: Union[List[ChargebackBreakdown], UnsetType] = unset,
         date: Union[datetime, UnsetType] = unset,
         org_name: Union[str, UnsetType] = unset,
@@ -53,6 +59,12 @@ class ProjectedCostAttributes(ModelNormal):
     ):
         """
         Projected Cost attributes data.
+
+        :param account_name: The account name.
+        :type account_name: str, optional
+
+        :param account_public_id: The account public ID.
+        :type account_public_id: str, optional
 
         :param charges: List of charges data reported for the requested month.
         :type charges: [ChargebackBreakdown], optional
@@ -72,6 +84,10 @@ class ProjectedCostAttributes(ModelNormal):
         :param region: The region of the Datadog instance that the organization belongs to.
         :type region: str, optional
         """
+        if account_name is not unset:
+            kwargs["account_name"] = account_name
+        if account_public_id is not unset:
+            kwargs["account_public_id"] = account_public_id
         if charges is not unset:
             kwargs["charges"] = charges
         if date is not unset:
