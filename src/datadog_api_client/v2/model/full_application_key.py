@@ -42,10 +42,10 @@ class FullApplicationKey(ModelNormal):
 
     def __init__(
         self_,
+        id: str,
+        type: ApplicationKeysType,
         attributes: Union[FullApplicationKeyAttributes, UnsetType] = unset,
-        id: Union[str, UnsetType] = unset,
         relationships: Union[ApplicationKeyRelationships, UnsetType] = unset,
-        type: Union[ApplicationKeysType, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -55,20 +55,19 @@ class FullApplicationKey(ModelNormal):
         :type attributes: FullApplicationKeyAttributes, optional
 
         :param id: ID of the application key.
-        :type id: str, optional
+        :type id: str
 
         :param relationships: Resources related to the application key.
         :type relationships: ApplicationKeyRelationships, optional
 
         :param type: Application Keys resource type.
-        :type type: ApplicationKeysType, optional
+        :type type: ApplicationKeysType
         """
         if attributes is not unset:
             kwargs["attributes"] = attributes
-        if id is not unset:
-            kwargs["id"] = id
         if relationships is not unset:
             kwargs["relationships"] = relationships
-        if type is not unset:
-            kwargs["type"] = type
         super().__init__(kwargs)
+
+        self_.id = id
+        self_.type = type

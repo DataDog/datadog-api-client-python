@@ -8,6 +8,7 @@ from typing import List, Union
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    datetime,
     none_type,
     unset,
     UnsetType,
@@ -25,7 +26,7 @@ class FullApplicationKeyAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
-            "created_at": (str,),
+            "created_at": (datetime,),
             "key": (str,),
             "last4": (str,),
             "name": (str,),
@@ -47,7 +48,7 @@ class FullApplicationKeyAttributes(ModelNormal):
 
     def __init__(
         self_,
-        created_at: Union[str, UnsetType] = unset,
+        created_at: Union[datetime, UnsetType] = unset,
         key: Union[str, UnsetType] = unset,
         last4: Union[str, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
@@ -58,7 +59,7 @@ class FullApplicationKeyAttributes(ModelNormal):
         Attributes of a full application key.
 
         :param created_at: Creation date of the application key.
-        :type created_at: str, optional
+        :type created_at: datetime, optional
 
         :param key: The application key.
         :type key: str, optional
