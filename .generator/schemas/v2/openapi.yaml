@@ -7806,6 +7806,11 @@ components:
     FastlyAccounResponseAttributes:
       description: Attributes object of a Fastly account.
       properties:
+        api_key:
+          description: The API key for the Fastly account.
+          example: ABCDEFG123
+          type: string
+          writeOnly: true
         name:
           description: The name of the Fastly account.
           example: test-name
@@ -7817,6 +7822,7 @@ components:
           type: array
       required:
       - name
+      - api_key
       type: object
     FastlyAccountCreateRequest:
       description: Payload schema when adding a Fastly account.
@@ -7903,6 +7909,13 @@ components:
           description: The API key of the Fastly account.
           example: ABCDEFG123
           type: string
+        name:
+          description: The name of the Fastly account.
+          example: test-name
+          type: string
+      required:
+      - api_key
+      - name
       type: object
     FastlyAccountUpdateRequestData:
       description: Data object for updating a Fastly account.
@@ -7911,6 +7924,9 @@ components:
           $ref: '#/components/schemas/FastlyAccountUpdateRequestAttributes'
         type:
           $ref: '#/components/schemas/FastlyAccountType'
+      required:
+      - attributes
+      - type
       type: object
     FastlyAccountsResponse:
       description: The expected response schema when getting Fastly accounts.

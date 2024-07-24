@@ -197,7 +197,7 @@ Feature: Fastly Integration
   Scenario: Update Fastly account returns "Bad Request" response
     Given new "UpdateFastlyAccount" request
     And request contains "account_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"api_key": "ABCDEFG123"}, "type": "fastly-accounts"}}
+    And body with value {"data": {"attributes": {"api_key": "ABCDEFG123", "name": "test-name"}, "type": "fastly-accounts"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -205,7 +205,7 @@ Feature: Fastly Integration
   Scenario: Update Fastly account returns "Not Found" response
     Given new "UpdateFastlyAccount" request
     And request contains "account_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"api_key": "ABCDEFG123"}, "type": "fastly-accounts"}}
+    And body with value {"data": {"attributes": {"api_key": "ABCDEFG123", "name": "test-name"}, "type": "fastly-accounts"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -214,7 +214,7 @@ Feature: Fastly Integration
     Given there is a valid "fastly_account" in the system
     And new "UpdateFastlyAccount" request
     And request contains "account_id" parameter from "fastly_account.data.id"
-    And body with value {"data": {"attributes": {"api_key": "update-secret"}, "type": "fastly-accounts"}}
+    And body with value {"data": {"attributes": {"api_key": "update-secret", "name": "test-name"}, "type": "fastly-accounts"}}
     When the request is sent
     Then the response status is 200 OK
     And the response "data.id" is equal to "{{fastly_account.data.id }}"

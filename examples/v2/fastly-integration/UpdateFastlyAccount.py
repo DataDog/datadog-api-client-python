@@ -17,6 +17,7 @@ body = FastlyAccountUpdateRequest(
     data=FastlyAccountUpdateRequestData(
         attributes=FastlyAccountUpdateRequestAttributes(
             api_key="update-secret",
+            name="test-name",
         ),
         type=FastlyAccountType.FASTLY_ACCOUNTS,
     ),
