@@ -3,13 +3,10 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    unset,
-    UnsetType,
 )
 
 
@@ -18,19 +15,25 @@ class FastlyAccountUpdateRequestAttributes(ModelNormal):
     def openapi_types(_):
         return {
             "api_key": (str,),
+            "name": (str,),
         }
 
     attribute_map = {
         "api_key": "api_key",
+        "name": "name",
     }
 
-    def __init__(self_, api_key: Union[str, UnsetType] = unset, **kwargs):
+    def __init__(self_, api_key: str, name: str, **kwargs):
         """
         Attributes object for updating a Fastly account.
 
         :param api_key: The API key of the Fastly account.
-        :type api_key: str, optional
+        :type api_key: str
+
+        :param name: The name of the Fastly account.
+        :type name: str
         """
-        if api_key is not unset:
-            kwargs["api_key"] = api_key
         super().__init__(kwargs)
+
+        self_.api_key = api_key
+        self_.name = name

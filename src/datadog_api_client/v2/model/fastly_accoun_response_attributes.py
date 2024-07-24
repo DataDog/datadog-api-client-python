@@ -23,18 +23,23 @@ class FastlyAccounResponseAttributes(ModelNormal):
         from datadog_api_client.v2.model.fastly_service import FastlyService
 
         return {
+            "api_key": (str,),
             "name": (str,),
             "services": ([FastlyService],),
         }
 
     attribute_map = {
+        "api_key": "api_key",
         "name": "name",
         "services": "services",
     }
 
-    def __init__(self_, name: str, services: Union[List[FastlyService], UnsetType] = unset, **kwargs):
+    def __init__(self_, api_key: str, name: str, services: Union[List[FastlyService], UnsetType] = unset, **kwargs):
         """
         Attributes object of a Fastly account.
+
+        :param api_key: The API key for the Fastly account.
+        :type api_key: str
 
         :param name: The name of the Fastly account.
         :type name: str
@@ -46,4 +51,5 @@ class FastlyAccounResponseAttributes(ModelNormal):
             kwargs["services"] = services
         super().__init__(kwargs)
 
+        self_.api_key = api_key
         self_.name = name

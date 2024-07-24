@@ -3,13 +3,11 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    unset,
-    UnsetType,
 )
 
 
@@ -38,23 +36,17 @@ class FastlyAccountUpdateRequestData(ModelNormal):
         "type": "type",
     }
 
-    def __init__(
-        self_,
-        attributes: Union[FastlyAccountUpdateRequestAttributes, UnsetType] = unset,
-        type: Union[FastlyAccountType, UnsetType] = unset,
-        **kwargs,
-    ):
+    def __init__(self_, attributes: FastlyAccountUpdateRequestAttributes, type: FastlyAccountType, **kwargs):
         """
         Data object for updating a Fastly account.
 
         :param attributes: Attributes object for updating a Fastly account.
-        :type attributes: FastlyAccountUpdateRequestAttributes, optional
+        :type attributes: FastlyAccountUpdateRequestAttributes
 
         :param type: The JSON:API type for this API. Should always be ``fastly-accounts``.
-        :type type: FastlyAccountType, optional
+        :type type: FastlyAccountType
         """
-        if attributes is not unset:
-            kwargs["attributes"] = attributes
-        if type is not unset:
-            kwargs["type"] = type
         super().__init__(kwargs)
+
+        self_.attributes = attributes
+        self_.type = type
