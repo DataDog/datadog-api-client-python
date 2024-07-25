@@ -804,7 +804,7 @@ components:
           type: string
         client_secret:
           description: Your Azure web application secret key.
-          example: testingx./Sw*g/Y33t..R1cH+hScMDt
+          example: TestingRh2nx664kUy5dIApvM54T4AtO
           type: string
         container_app_filters:
           description: 'Limit the Azure container apps that are pulled into Datadog
