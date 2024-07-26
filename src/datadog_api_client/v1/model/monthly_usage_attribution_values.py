@@ -137,6 +137,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
             "rum_browser_mobile_sessions_usage": (float,),
             "rum_replay_sessions_percentage": (float,),
             "rum_replay_sessions_usage": (float,),
+            "sca_fargate_percentage": (float,),
+            "sca_fargate_usage": (float,),
             "sds_scanned_bytes_percentage": (float,),
             "sds_scanned_bytes_usage": (float,),
             "serverless_apps_percentage": (float,),
@@ -276,6 +278,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         "rum_browser_mobile_sessions_usage": "rum_browser_mobile_sessions_usage",
         "rum_replay_sessions_percentage": "rum_replay_sessions_percentage",
         "rum_replay_sessions_usage": "rum_replay_sessions_usage",
+        "sca_fargate_percentage": "sca_fargate_percentage",
+        "sca_fargate_usage": "sca_fargate_usage",
         "sds_scanned_bytes_percentage": "sds_scanned_bytes_percentage",
         "sds_scanned_bytes_usage": "sds_scanned_bytes_usage",
         "serverless_apps_percentage": "serverless_apps_percentage",
@@ -416,6 +420,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         rum_browser_mobile_sessions_usage: Union[float, UnsetType] = unset,
         rum_replay_sessions_percentage: Union[float, UnsetType] = unset,
         rum_replay_sessions_usage: Union[float, UnsetType] = unset,
+        sca_fargate_percentage: Union[float, UnsetType] = unset,
+        sca_fargate_usage: Union[float, UnsetType] = unset,
         sds_scanned_bytes_percentage: Union[float, UnsetType] = unset,
         sds_scanned_bytes_usage: Union[float, UnsetType] = unset,
         serverless_apps_percentage: Union[float, UnsetType] = unset,
@@ -797,6 +803,12 @@ class MonthlyUsageAttributionValues(ModelNormal):
         :param rum_replay_sessions_usage: The total RUM Session Replay usage by tag(s).
         :type rum_replay_sessions_usage: float, optional
 
+        :param sca_fargate_percentage: The percentage of Software Composition Analysis Fargate task usage by tag(s).
+        :type sca_fargate_percentage: float, optional
+
+        :param sca_fargate_usage: The total Software Composition Analysis Fargate task usage by tag(s).
+        :type sca_fargate_usage: float, optional
+
         :param sds_scanned_bytes_percentage: The percentage of Sensitive Data Scanner usage by tag(s).
         :type sds_scanned_bytes_percentage: float, optional
 
@@ -1087,6 +1099,10 @@ class MonthlyUsageAttributionValues(ModelNormal):
             kwargs["rum_replay_sessions_percentage"] = rum_replay_sessions_percentage
         if rum_replay_sessions_usage is not unset:
             kwargs["rum_replay_sessions_usage"] = rum_replay_sessions_usage
+        if sca_fargate_percentage is not unset:
+            kwargs["sca_fargate_percentage"] = sca_fargate_percentage
+        if sca_fargate_usage is not unset:
+            kwargs["sca_fargate_usage"] = sca_fargate_usage
         if sds_scanned_bytes_percentage is not unset:
             kwargs["sds_scanned_bytes_percentage"] = sds_scanned_bytes_percentage
         if sds_scanned_bytes_usage is not unset:
