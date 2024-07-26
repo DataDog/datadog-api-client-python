@@ -151,6 +151,7 @@ class UsageSummaryResponse(ModelNormal):
             "serverless_apps_azure_count_avg_sum": (int,),
             "serverless_apps_google_count_avg_sum": (int,),
             "serverless_apps_total_count_avg_sum": (int,),
+            "siem_analyzed_logs_add_on_count_agg_sum": (int,),
             "start_date": (datetime,),
             "synthetics_browser_check_calls_count_agg_sum": (int,),
             "synthetics_check_calls_count_agg_sum": (int,),
@@ -291,6 +292,7 @@ class UsageSummaryResponse(ModelNormal):
         "serverless_apps_azure_count_avg_sum": "serverless_apps_azure_count_avg_sum",
         "serverless_apps_google_count_avg_sum": "serverless_apps_google_count_avg_sum",
         "serverless_apps_total_count_avg_sum": "serverless_apps_total_count_avg_sum",
+        "siem_analyzed_logs_add_on_count_agg_sum": "siem_analyzed_logs_add_on_count_agg_sum",
         "start_date": "start_date",
         "synthetics_browser_check_calls_count_agg_sum": "synthetics_browser_check_calls_count_agg_sum",
         "synthetics_check_calls_count_agg_sum": "synthetics_check_calls_count_agg_sum",
@@ -432,6 +434,7 @@ class UsageSummaryResponse(ModelNormal):
         serverless_apps_azure_count_avg_sum: Union[int, UnsetType] = unset,
         serverless_apps_google_count_avg_sum: Union[int, UnsetType] = unset,
         serverless_apps_total_count_avg_sum: Union[int, UnsetType] = unset,
+        siem_analyzed_logs_add_on_count_agg_sum: Union[int, UnsetType] = unset,
         start_date: Union[datetime, UnsetType] = unset,
         synthetics_browser_check_calls_count_agg_sum: Union[int, UnsetType] = unset,
         synthetics_check_calls_count_agg_sum: Union[int, UnsetType] = unset,
@@ -824,6 +827,9 @@ class UsageSummaryResponse(ModelNormal):
         :param serverless_apps_total_count_avg_sum: Sum of the average number of Serverless Apps for Azure and Google Cloud in the current month for all organizations.
         :type serverless_apps_total_count_avg_sum: int, optional
 
+        :param siem_analyzed_logs_add_on_count_agg_sum: Shows the sum of all log events analyzed by Cloud SIEM over all hours in the current month for all organizations.
+        :type siem_analyzed_logs_add_on_count_agg_sum: int, optional
+
         :param start_date: Shows the first date of usage in the current month for all organizations.
         :type start_date: datetime, optional
 
@@ -1120,6 +1126,8 @@ class UsageSummaryResponse(ModelNormal):
             kwargs["serverless_apps_google_count_avg_sum"] = serverless_apps_google_count_avg_sum
         if serverless_apps_total_count_avg_sum is not unset:
             kwargs["serverless_apps_total_count_avg_sum"] = serverless_apps_total_count_avg_sum
+        if siem_analyzed_logs_add_on_count_agg_sum is not unset:
+            kwargs["siem_analyzed_logs_add_on_count_agg_sum"] = siem_analyzed_logs_add_on_count_agg_sum
         if start_date is not unset:
             kwargs["start_date"] = start_date
         if synthetics_browser_check_calls_count_agg_sum is not unset:
