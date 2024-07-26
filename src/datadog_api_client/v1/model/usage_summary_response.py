@@ -143,6 +143,8 @@ class UsageSummaryResponse(ModelNormal):
             "rum_session_count_agg_sum": (int,),
             "rum_total_session_count_agg_sum": (int,),
             "rum_units_agg_sum": (int,),
+            "sca_fargate_count_avg_sum": (int,),
+            "sca_fargate_count_hwm_sum": (int,),
             "sds_apm_scanned_bytes_sum": (int,),
             "sds_events_scanned_bytes_sum": (int,),
             "sds_logs_scanned_bytes_sum": (int,),
@@ -284,6 +286,8 @@ class UsageSummaryResponse(ModelNormal):
         "rum_session_count_agg_sum": "rum_session_count_agg_sum",
         "rum_total_session_count_agg_sum": "rum_total_session_count_agg_sum",
         "rum_units_agg_sum": "rum_units_agg_sum",
+        "sca_fargate_count_avg_sum": "sca_fargate_count_avg_sum",
+        "sca_fargate_count_hwm_sum": "sca_fargate_count_hwm_sum",
         "sds_apm_scanned_bytes_sum": "sds_apm_scanned_bytes_sum",
         "sds_events_scanned_bytes_sum": "sds_events_scanned_bytes_sum",
         "sds_logs_scanned_bytes_sum": "sds_logs_scanned_bytes_sum",
@@ -426,6 +430,8 @@ class UsageSummaryResponse(ModelNormal):
         rum_session_count_agg_sum: Union[int, UnsetType] = unset,
         rum_total_session_count_agg_sum: Union[int, UnsetType] = unset,
         rum_units_agg_sum: Union[int, UnsetType] = unset,
+        sca_fargate_count_avg_sum: Union[int, UnsetType] = unset,
+        sca_fargate_count_hwm_sum: Union[int, UnsetType] = unset,
         sds_apm_scanned_bytes_sum: Union[int, UnsetType] = unset,
         sds_events_scanned_bytes_sum: Union[int, UnsetType] = unset,
         sds_logs_scanned_bytes_sum: Union[int, UnsetType] = unset,
@@ -803,6 +809,12 @@ class UsageSummaryResponse(ModelNormal):
         :param rum_units_agg_sum: Shows the sum of all browser and mobile RUM units over all hours in the current month for all organizations (To be deprecated on October 1st, 2024). **Deprecated**.
         :type rum_units_agg_sum: int, optional
 
+        :param sca_fargate_count_avg_sum: Shows the average of all Software Composition Analysis Fargate tasks over all hours in the current months for all organizations.
+        :type sca_fargate_count_avg_sum: int, optional
+
+        :param sca_fargate_count_hwm_sum: Shows the sum of the high-water marks of all Software Composition Analysis Fargate tasks over all hours in the current months for all organizations.
+        :type sca_fargate_count_hwm_sum: int, optional
+
         :param sds_apm_scanned_bytes_sum: Sum of all APM bytes scanned with sensitive data scanner in the current month for all organizations.
         :type sds_apm_scanned_bytes_sum: int, optional
 
@@ -1110,6 +1122,10 @@ class UsageSummaryResponse(ModelNormal):
             kwargs["rum_total_session_count_agg_sum"] = rum_total_session_count_agg_sum
         if rum_units_agg_sum is not unset:
             kwargs["rum_units_agg_sum"] = rum_units_agg_sum
+        if sca_fargate_count_avg_sum is not unset:
+            kwargs["sca_fargate_count_avg_sum"] = sca_fargate_count_avg_sum
+        if sca_fargate_count_hwm_sum is not unset:
+            kwargs["sca_fargate_count_hwm_sum"] = sca_fargate_count_hwm_sum
         if sds_apm_scanned_bytes_sum is not unset:
             kwargs["sds_apm_scanned_bytes_sum"] = sds_apm_scanned_bytes_sum
         if sds_events_scanned_bytes_sum is not unset:
