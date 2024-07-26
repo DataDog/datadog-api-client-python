@@ -2192,6 +2192,97 @@ creator
    :members:
    :show-inheritance:
 
+custom\_cost\_get\_response\_meta
+---------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_cost_get_response_meta
+   :members:
+   :show-inheritance:
+
+custom\_cost\_list\_response\_meta
+----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_cost_list_response_meta
+   :members:
+   :show-inheritance:
+
+custom\_cost\_upload\_response\_meta
+------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_cost_upload_response_meta
+   :members:
+   :show-inheritance:
+
+custom\_costs\_file\_get\_response
+----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_costs_file_get_response
+   :members:
+   :show-inheritance:
+
+custom\_costs\_file\_line\_item
+-------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_costs_file_line_item
+   :members:
+   :show-inheritance:
+
+custom\_costs\_file\_list\_response
+-----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_costs_file_list_response
+   :members:
+   :show-inheritance:
+
+custom\_costs\_file\_metadata
+-----------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_costs_file_metadata
+   :members:
+   :show-inheritance:
+
+custom\_costs\_file\_metadata\_high\_level
+------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_costs_file_metadata_high_level
+   :members:
+   :show-inheritance:
+
+custom\_costs\_file\_metadata\_with\_content
+--------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_costs_file_metadata_with_content
+   :members:
+   :show-inheritance:
+
+custom\_costs\_file\_metadata\_with\_content\_high\_level
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_costs_file_metadata_with_content_high_level
+   :members:
+   :show-inheritance:
+
+custom\_costs\_file\_upload\_response
+-------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_costs_file_upload_response
+   :members:
+   :show-inheritance:
+
+custom\_costs\_file\_usage\_charge\_period
+------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_costs_file_usage_charge_period
+   :members:
+   :show-inheritance:
+
+custom\_costs\_user
+-------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_costs_user
+   :members:
+   :show-inheritance:
+
 custom\_destination\_attribute\_tags\_restriction\_list\_type
 -------------------------------------------------------------
 
