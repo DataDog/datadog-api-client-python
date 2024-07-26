@@ -150,7 +150,7 @@ class RESTClientObject:
             # For `POST`, `PUT`, `PATCH`, `OPTIONS`, `DELETE`
             if method in ("POST", "PUT", "PATCH", "OPTIONS", "DELETE"):
                 # Only set a default Content-Type for POST, PUT, PATCH and OPTIONS requests
-                if method != "DELETE" and "Content-Type" not in headers:
+                if method != "DELETE" and "Content-Type" not in headers and body is not None:
                     headers["Content-Type"] = "application/json"
                 if query_params:
                     url += "?" + urlencode(query_params)
