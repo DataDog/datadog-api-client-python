@@ -141,6 +141,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
             "sds_scanned_bytes_usage": (float,),
             "serverless_apps_percentage": (float,),
             "serverless_apps_usage": (float,),
+            "siem_analyzed_logs_add_on_percentage": (float,),
+            "siem_analyzed_logs_add_on_usage": (float,),
             "siem_ingested_bytes_percentage": (float,),
             "siem_ingested_bytes_usage": (float,),
             "snmp_percentage": (float,),
@@ -278,6 +280,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         "sds_scanned_bytes_usage": "sds_scanned_bytes_usage",
         "serverless_apps_percentage": "serverless_apps_percentage",
         "serverless_apps_usage": "serverless_apps_usage",
+        "siem_analyzed_logs_add_on_percentage": "siem_analyzed_logs_add_on_percentage",
+        "siem_analyzed_logs_add_on_usage": "siem_analyzed_logs_add_on_usage",
         "siem_ingested_bytes_percentage": "siem_ingested_bytes_percentage",
         "siem_ingested_bytes_usage": "siem_ingested_bytes_usage",
         "snmp_percentage": "snmp_percentage",
@@ -416,6 +420,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         sds_scanned_bytes_usage: Union[float, UnsetType] = unset,
         serverless_apps_percentage: Union[float, UnsetType] = unset,
         serverless_apps_usage: Union[float, UnsetType] = unset,
+        siem_analyzed_logs_add_on_percentage: Union[float, UnsetType] = unset,
+        siem_analyzed_logs_add_on_usage: Union[float, UnsetType] = unset,
         siem_ingested_bytes_percentage: Union[float, UnsetType] = unset,
         siem_ingested_bytes_usage: Union[float, UnsetType] = unset,
         snmp_percentage: Union[float, UnsetType] = unset,
@@ -803,6 +809,12 @@ class MonthlyUsageAttributionValues(ModelNormal):
         :param serverless_apps_usage: The total Serverless Apps usage by tag(s).
         :type serverless_apps_usage: float, optional
 
+        :param siem_analyzed_logs_add_on_percentage: The percentage of log events analyzed by Cloud SIEM usage by tag(s).
+        :type siem_analyzed_logs_add_on_percentage: float, optional
+
+        :param siem_analyzed_logs_add_on_usage: The log events analyzed by Cloud SIEM usage by tag(s).
+        :type siem_analyzed_logs_add_on_usage: float, optional
+
         :param siem_ingested_bytes_percentage: The percentage of SIEM usage by tag(s).
         :type siem_ingested_bytes_percentage: float, optional
 
@@ -1083,6 +1095,10 @@ class MonthlyUsageAttributionValues(ModelNormal):
             kwargs["serverless_apps_percentage"] = serverless_apps_percentage
         if serverless_apps_usage is not unset:
             kwargs["serverless_apps_usage"] = serverless_apps_usage
+        if siem_analyzed_logs_add_on_percentage is not unset:
+            kwargs["siem_analyzed_logs_add_on_percentage"] = siem_analyzed_logs_add_on_percentage
+        if siem_analyzed_logs_add_on_usage is not unset:
+            kwargs["siem_analyzed_logs_add_on_usage"] = siem_analyzed_logs_add_on_usage
         if siem_ingested_bytes_percentage is not unset:
             kwargs["siem_ingested_bytes_percentage"] = siem_ingested_bytes_percentage
         if siem_ingested_bytes_usage is not unset:

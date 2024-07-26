@@ -140,6 +140,7 @@ class UsageSummaryDate(ModelNormal):
             "serverless_apps_azure_count_avg": (int,),
             "serverless_apps_google_count_avg": (int,),
             "serverless_apps_total_count_avg": (int,),
+            "siem_analyzed_logs_add_on_count_sum": (int,),
             "synthetics_browser_check_calls_count_sum": (int,),
             "synthetics_check_calls_count_sum": (int,),
             "synthetics_mobile_test_runs_sum": (int,),
@@ -269,6 +270,7 @@ class UsageSummaryDate(ModelNormal):
         "serverless_apps_azure_count_avg": "serverless_apps_azure_count_avg",
         "serverless_apps_google_count_avg": "serverless_apps_google_count_avg",
         "serverless_apps_total_count_avg": "serverless_apps_total_count_avg",
+        "siem_analyzed_logs_add_on_count_sum": "siem_analyzed_logs_add_on_count_sum",
         "synthetics_browser_check_calls_count_sum": "synthetics_browser_check_calls_count_sum",
         "synthetics_check_calls_count_sum": "synthetics_check_calls_count_sum",
         "synthetics_mobile_test_runs_sum": "synthetics_mobile_test_runs_sum",
@@ -399,6 +401,7 @@ class UsageSummaryDate(ModelNormal):
         serverless_apps_azure_count_avg: Union[int, UnsetType] = unset,
         serverless_apps_google_count_avg: Union[int, UnsetType] = unset,
         serverless_apps_total_count_avg: Union[int, UnsetType] = unset,
+        siem_analyzed_logs_add_on_count_sum: Union[int, UnsetType] = unset,
         synthetics_browser_check_calls_count_sum: Union[int, UnsetType] = unset,
         synthetics_check_calls_count_sum: Union[int, UnsetType] = unset,
         synthetics_mobile_test_runs_sum: Union[int, UnsetType] = unset,
@@ -762,6 +765,9 @@ class UsageSummaryDate(ModelNormal):
         :param serverless_apps_total_count_avg: Shows the average of the number of Serverless Apps for Azure and Google Cloud for the given date and given org.
         :type serverless_apps_total_count_avg: int, optional
 
+        :param siem_analyzed_logs_add_on_count_sum: Shows the sum of all log events analyzed by Cloud SIEM over all hours in the current date for the given org.
+        :type siem_analyzed_logs_add_on_count_sum: int, optional
+
         :param synthetics_browser_check_calls_count_sum: Shows the sum of all Synthetic browser tests over all hours in the current date for all organizations.
         :type synthetics_browser_check_calls_count_sum: int, optional
 
@@ -1026,6 +1032,8 @@ class UsageSummaryDate(ModelNormal):
             kwargs["serverless_apps_google_count_avg"] = serverless_apps_google_count_avg
         if serverless_apps_total_count_avg is not unset:
             kwargs["serverless_apps_total_count_avg"] = serverless_apps_total_count_avg
+        if siem_analyzed_logs_add_on_count_sum is not unset:
+            kwargs["siem_analyzed_logs_add_on_count_sum"] = siem_analyzed_logs_add_on_count_sum
         if synthetics_browser_check_calls_count_sum is not unset:
             kwargs["synthetics_browser_check_calls_count_sum"] = synthetics_browser_check_calls_count_sum
         if synthetics_check_calls_count_sum is not unset:
