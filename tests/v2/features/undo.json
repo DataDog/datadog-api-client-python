@@ -419,6 +419,30 @@
       "type": "idempotent"
     }
   },
+  "ListCustomCostsFiles": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UploadCustomCostsFile": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DeleteCustomCostsFile": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetCustomCostsFile": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "GetCloudCostActivity": {
     "tag": "Cloud Cost Management",
     "undo": {

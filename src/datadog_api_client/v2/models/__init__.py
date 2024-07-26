@@ -359,6 +359,21 @@ from datadog_api_client.v2.model.create_rule_request_data import CreateRuleReque
 from datadog_api_client.v2.model.create_rule_response import CreateRuleResponse
 from datadog_api_client.v2.model.create_rule_response_data import CreateRuleResponseData
 from datadog_api_client.v2.model.creator import Creator
+from datadog_api_client.v2.model.custom_cost_get_response_meta import CustomCostGetResponseMeta
+from datadog_api_client.v2.model.custom_cost_list_response_meta import CustomCostListResponseMeta
+from datadog_api_client.v2.model.custom_cost_upload_response_meta import CustomCostUploadResponseMeta
+from datadog_api_client.v2.model.custom_costs_file_get_response import CustomCostsFileGetResponse
+from datadog_api_client.v2.model.custom_costs_file_line_item import CustomCostsFileLineItem
+from datadog_api_client.v2.model.custom_costs_file_list_response import CustomCostsFileListResponse
+from datadog_api_client.v2.model.custom_costs_file_metadata import CustomCostsFileMetadata
+from datadog_api_client.v2.model.custom_costs_file_metadata_high_level import CustomCostsFileMetadataHighLevel
+from datadog_api_client.v2.model.custom_costs_file_metadata_with_content import CustomCostsFileMetadataWithContent
+from datadog_api_client.v2.model.custom_costs_file_metadata_with_content_high_level import (
+    CustomCostsFileMetadataWithContentHighLevel,
+)
+from datadog_api_client.v2.model.custom_costs_file_upload_response import CustomCostsFileUploadResponse
+from datadog_api_client.v2.model.custom_costs_file_usage_charge_period import CustomCostsFileUsageChargePeriod
+from datadog_api_client.v2.model.custom_costs_user import CustomCostsUser
 from datadog_api_client.v2.model.custom_destination_attribute_tags_restriction_list_type import (
     CustomDestinationAttributeTagsRestrictionListType,
 )
@@ -2151,6 +2166,19 @@ __all__ = [
     "CreateRuleResponse",
     "CreateRuleResponseData",
     "Creator",
+    "CustomCostGetResponseMeta",
+    "CustomCostListResponseMeta",
+    "CustomCostUploadResponseMeta",
+    "CustomCostsFileGetResponse",
+    "CustomCostsFileLineItem",
+    "CustomCostsFileListResponse",
+    "CustomCostsFileMetadata",
+    "CustomCostsFileMetadataHighLevel",
+    "CustomCostsFileMetadataWithContent",
+    "CustomCostsFileMetadataWithContentHighLevel",
+    "CustomCostsFileUploadResponse",
+    "CustomCostsFileUsageChargePeriod",
+    "CustomCostsUser",
     "CustomDestinationAttributeTagsRestrictionListType",
     "CustomDestinationCreateRequest",
     "CustomDestinationCreateRequestAttributes",

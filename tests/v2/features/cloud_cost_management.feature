@@ -89,6 +89,36 @@ Feature: Cloud Cost Management
     Then the response status is 404 Not Found
 
   @replay-only @team:Datadog/cloud-cost-management
+  Scenario: Delete Custom Costs File returns "No Content" response
+    Given new "DeleteCustomCostsFile" request
+    And request contains "file_id" parameter with value "9d055d22-a838-4e9f-bc34-a4f9ab66280c"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:Datadog/cloud-cost-management
+  Scenario: Delete Custom Costs file returns "No Content" response
+    Given new "DeleteCustomCostsFile" request
+    And request contains "file_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @replay-only @team:Datadog/cloud-cost-management
+  Scenario: Get Custom Costs File returns "OK" response
+    Given new "GetCustomCostsFile" request
+    And request contains "file_id" parameter with value "9d055d22-a838-4e9f-bc34-a4f9ab66280c"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.attributes.name" is equal to "data.json"
+    And the response "data.attributes.content[0].ChargeDescription" is equal to "my_description"
+
+  @generated @skip @team:Datadog/cloud-cost-management
+  Scenario: Get Custom Costs file returns "OK" response
+    Given new "GetCustomCostsFile" request
+    And request contains "file_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @replay-only @team:Datadog/cloud-cost-management
   Scenario: List Cloud Cost Management AWS CUR configs returns "OK" response
     Given new "ListCostAWSCURConfigs" request
     When the request is sent
@@ -101,6 +131,19 @@ Feature: Cloud Cost Management
     When the request is sent
     Then the response status is 200 OK
     And the response "data[0].attributes.configs[0].export_name" is equal to "test_export_name"
+
+  @replay-only @team:Datadog/cloud-cost-management
+  Scenario: List Custom Costs Files returns "OK" response
+    Given new "ListCustomCostsFiles" request
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data[0].attributes.name" is equal to "data.json"
+
+  @generated @skip @team:Datadog/cloud-cost-management
+  Scenario: List Custom Costs files returns "OK" response
+    Given new "ListCustomCostsFiles" request
+    When the request is sent
+    Then the response status is 200 OK
 
   @generated @skip @team:Datadog/cloud-cost-management
   Scenario: List related AWS accounts returns "Bad Request" response
@@ -142,3 +185,18 @@ Feature: Cloud Cost Management
     When the request is sent
     Then the response status is 200 OK
     And the response "data.type" is equal to "azure_uc_configs"
+
+  @replay-only @team:Datadog/cloud-cost-management
+  Scenario: Upload Custom Costs File returns "Accepted" response
+    Given new "UploadCustomCostsFile" request
+    And body with value [{ "ProviderName": "my_provider", "ChargePeriodStart": "2023-05-06", "ChargePeriodEnd": "2023-06-06","ChargeDescription": "my_description","BilledCost": 250,"BillingCurrency": "USD","Tags": {"key": "value"}}]
+    When the request is sent
+    Then the response status is 202 Accepted
+    And the response "data.attributes.name" is equal to "data.json"
+
+  @generated @skip @team:Datadog/cloud-cost-management
+  Scenario: Upload Custom Costs file returns "Accepted" response
+    Given new "UploadCustomCostsFile" request
+    And body with value [{"BilledCost": 100.5, "BillingCurrency": "USD", "ChargeDescription": "Monthly usage charge for my service", "ChargePeriodEnd": "2023-02-28", "ChargePeriodStart": "2023-02-01"}]
+    When the request is sent
+    Then the response status is 202 Accepted
