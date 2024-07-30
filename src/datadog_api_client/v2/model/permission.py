@@ -37,11 +37,7 @@ class Permission(ModelNormal):
     }
 
     def __init__(
-        self_,
-        type: PermissionsType,
-        attributes: Union[PermissionAttributes, UnsetType] = unset,
-        id: Union[str, UnsetType] = unset,
-        **kwargs,
+        self_, id: str, type: PermissionsType, attributes: Union[PermissionAttributes, UnsetType] = unset, **kwargs
     ):
         """
         Permission object.
@@ -50,15 +46,14 @@ class Permission(ModelNormal):
         :type attributes: PermissionAttributes, optional
 
         :param id: ID of the permission.
-        :type id: str, optional
+        :type id: str
 
         :param type: Permissions resource type.
         :type type: PermissionsType
         """
         if attributes is not unset:
             kwargs["attributes"] = attributes
-        if id is not unset:
-            kwargs["id"] = id
         super().__init__(kwargs)
 
+        self_.id = id
         self_.type = type

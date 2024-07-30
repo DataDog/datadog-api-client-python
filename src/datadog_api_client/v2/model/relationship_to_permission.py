@@ -3,13 +3,11 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    unset,
-    UnsetType,
 )
 
 
@@ -30,13 +28,13 @@ class RelationshipToPermission(ModelNormal):
         "data": "data",
     }
 
-    def __init__(self_, data: Union[RelationshipToPermissionData, UnsetType] = unset, **kwargs):
+    def __init__(self_, data: RelationshipToPermissionData, **kwargs):
         """
         Relationship to a permissions object.
 
         :param data: Relationship to permission object.
-        :type data: RelationshipToPermissionData, optional
+        :type data: RelationshipToPermissionData
         """
-        if data is not unset:
-            kwargs["data"] = data
         super().__init__(kwargs)
+
+        self_.data = data
