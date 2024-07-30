@@ -1,0 +1,23 @@
+interactions:
+- request:
+    body: '{"meta":{"payload":{"input":"value"}}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/workflows/malformed/instances
+  response:
+    body:
+      string: '{"errors":[{"code":"INVALID_FIELD_VALUE","detail":"value <no value>
+        is invalid for field workflow_id"}]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 400
+      message: Bad Request
+version: 1

@@ -1,0 +1,21 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/workflows/malformed/instances/malformed
+  response:
+    body:
+      string: '{"errors":[{"code":"INVALID_FIELD_VALUE","detail":"value <no value>
+        is invalid for field workflow_id"}]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 400
+      message: Bad Request
+version: 1

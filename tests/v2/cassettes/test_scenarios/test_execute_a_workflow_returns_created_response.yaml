@@ -1,0 +1,22 @@
+interactions:
+- request:
+    body: '{"meta":{"payload":{"input":"value"}}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/workflows/ccf73164-1998-4785-a7a3-8d06c7e5f558/instances
+  response:
+    body:
+      string: '{"data":{"attributes":{},"id":"111e18d6-3f19-4ada-91d3-ab1e1546b8b4","type":"instances"},"meta":{"workflowId":"ccf73164-1998-4785-a7a3-8d06c7e5f558"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1
