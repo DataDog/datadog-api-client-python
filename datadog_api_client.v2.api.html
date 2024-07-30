@@ -1838,6 +1838,22 @@
         </li></ul>
             </nav>
         </li>
+        <li class="md-nav__item"><a href="#module-datadog_api_client.v2.api.workflow_automation_api" class="md-nav__link">datadog_api_client.v2.api.workflow_automation_api module</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.workflow_automation_api.WorkflowAutomationApi" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">WorkflowAutomationApi</span></code></a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.workflow_automation_api.WorkflowAutomationApi.cancel_workflow_instance" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">WorkflowAutomationApi.cancel_workflow_instance()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.workflow_automation_api.WorkflowAutomationApi.create_workflow_instance" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">WorkflowAutomationApi.create_workflow_instance()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.workflow_automation_api.WorkflowAutomationApi.get_workflow_instance" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">WorkflowAutomationApi.get_workflow_instance()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.workflow_automation_api.WorkflowAutomationApi.list_workflow_instances" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">WorkflowAutomationApi.list_workflow_instances()</span></code></a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
         <li class="md-nav__item"><a href="#module-datadog_api_client.v2.api" class="md-nav__link">Module contents</a>
         </li></ul>
             </nav>
@@ -8557,6 +8573,81 @@ to an administrator user.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.user_response.UserResponse" title="datadog_api_client.v2.model.user_response.UserResponse">UserResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+</section>
+<section id="module-datadog_api_client.v2.api.workflow_automation_api">
+<span id="datadog-api-client-v2-api-workflow-automation-api-module"></span><h2 id="module-datadog_api_client.v2.api.workflow_automation_api">datadog_api_client.v2.api.workflow_automation_api module<a class="headerlink" href="#module-datadog_api_client.v2.api.workflow_automation_api" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.workflow_automation_api.WorkflowAutomationApi">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">WorkflowAutomationApi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_client</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datadog_api_client.v2.api.workflow_automation_api.WorkflowAutomationApi" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Automate your teams operational processes with Datadog Workflow Automation.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.workflow_automation_api.WorkflowAutomationApi.cancel_workflow_instance">
+<span class="sig-name descname"><span class="pre">cancel_workflow_instance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">workflow_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">instance_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.worklflow_cancel_instance_response.WorklflowCancelInstanceResponse" title="datadog_api_client.v2.model.worklflow_cancel_instance_response.WorklflowCancelInstanceResponse"><span class="pre">WorklflowCancelInstanceResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.workflow_automation_api.WorkflowAutomationApi.cancel_workflow_instance" title="Link to this definition">¶</a></dt>
+<dd><p>Cancel a workflow instance.</p>
+<p>Cancels a specific execution of a given workflow.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>workflow_id</strong> (<em>str</em>) – The ID of the workflow.</p></li>
+<li><p><strong>instance_id</strong> (<em>str</em>) – The ID of the workflow instance.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.worklflow_cancel_instance_response.WorklflowCancelInstanceResponse" title="datadog_api_client.v2.model.worklflow_cancel_instance_response.WorklflowCancelInstanceResponse">WorklflowCancelInstanceResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.workflow_automation_api.WorkflowAutomationApi.create_workflow_instance">
+<span class="sig-name descname"><span class="pre">create_workflow_instance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">workflow_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.workflow_instance_create_request.WorkflowInstanceCreateRequest" title="datadog_api_client.v2.model.workflow_instance_create_request.WorkflowInstanceCreateRequest"><span class="pre">WorkflowInstanceCreateRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.workflow_instance_create_response.WorkflowInstanceCreateResponse" title="datadog_api_client.v2.model.workflow_instance_create_response.WorkflowInstanceCreateResponse"><span class="pre">WorkflowInstanceCreateResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.workflow_automation_api.WorkflowAutomationApi.create_workflow_instance" title="Link to this definition">¶</a></dt>
+<dd><p>Execute a workflow.</p>
+<p>Execute the given workflow</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>workflow_id</strong> (<em>str</em>) – The ID of the workflow.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.workflow_instance_create_response.WorkflowInstanceCreateResponse" title="datadog_api_client.v2.model.workflow_instance_create_response.WorkflowInstanceCreateResponse">WorkflowInstanceCreateResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.workflow_automation_api.WorkflowAutomationApi.get_workflow_instance">
+<span class="sig-name descname"><span class="pre">get_workflow_instance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">workflow_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">instance_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.worklflow_get_instance_response.WorklflowGetInstanceResponse" title="datadog_api_client.v2.model.worklflow_get_instance_response.WorklflowGetInstanceResponse"><span class="pre">WorklflowGetInstanceResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.workflow_automation_api.WorkflowAutomationApi.get_workflow_instance" title="Link to this definition">¶</a></dt>
+<dd><p>Get a workflow instance.</p>
+<p>Get a specific execution of a given workflow.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>workflow_id</strong> (<em>str</em>) – The ID of the workflow.</p></li>
+<li><p><strong>instance_id</strong> (<em>str</em>) – The ID of the workflow instance.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.worklflow_get_instance_response.WorklflowGetInstanceResponse" title="datadog_api_client.v2.model.worklflow_get_instance_response.WorklflowGetInstanceResponse">WorklflowGetInstanceResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.workflow_automation_api.WorkflowAutomationApi.list_workflow_instances">
+<span class="sig-name descname"><span class="pre">list_workflow_instances</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">workflow_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">page_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">page_number</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.workflow_list_instances_response.WorkflowListInstancesResponse" title="datadog_api_client.v2.model.workflow_list_instances_response.WorkflowListInstancesResponse"><span class="pre">WorkflowListInstancesResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.workflow_automation_api.WorkflowAutomationApi.list_workflow_instances" title="Link to this definition">¶</a></dt>
+<dd><p>List workflow instances.</p>
+<p>List all instances of a given workflow.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>workflow_id</strong> (<em>str</em>) – The ID of the workflow.</p></li>
+<li><p><strong>page_size</strong> (<em>int</em><em>, </em><em>optional</em>) – Size for a given page. The maximum allowed value is 100.</p></li>
+<li><p><strong>page_number</strong> (<em>int</em><em>, </em><em>optional</em>) – Specific page number to return.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.workflow_list_instances_response.WorkflowListInstancesResponse" title="datadog_api_client.v2.model.workflow_list_instances_response.WorkflowListInstancesResponse">WorkflowListInstancesResponse</a></p>
 </dd>
 </dl>
 </dd></dl>
