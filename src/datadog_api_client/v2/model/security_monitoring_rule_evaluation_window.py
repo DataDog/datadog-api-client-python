@@ -15,7 +15,7 @@ from typing import ClassVar
 class SecurityMonitoringRuleEvaluationWindow(ModelSimple):
     """
     A time window is specified to match when at least one of the cases matches true. This is a sliding window
-        and evaluates in real time.
+        and evaluates in real time. For third party rules, it should equal max signal duration.
 
     :param value: Must be one of [0, 60, 300, 600, 900, 1800, 3600, 7200].
     :type value: int

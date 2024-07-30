@@ -126,7 +126,7 @@ class SecurityMonitoringRuleOptions(ModelNormal):
         :type detection_method: SecurityMonitoringRuleDetectionMethod, optional
 
         :param evaluation_window: A time window is specified to match when at least one of the cases matches true. This is a sliding window
-            and evaluates in real time.
+            and evaluates in real time. For third party rules, it should equal max signal duration.
         :type evaluation_window: SecurityMonitoringRuleEvaluationWindow, optional
 
         :param hardcoded_evaluator_type: Hardcoded evaluator type.
@@ -136,7 +136,7 @@ class SecurityMonitoringRuleOptions(ModelNormal):
         :type impossible_travel_options: SecurityMonitoringRuleImpossibleTravelOptions, optional
 
         :param keep_alive: Once a signal is generated, the signal will remain “open” if a case is matched at least once within
-            this keep alive window.
+            this keep alive window. For third party rules, it should equal max signal duration.
         :type keep_alive: SecurityMonitoringRuleKeepAlive, optional
 
         :param max_signal_duration: A signal will “close” regardless of the query being matched once the time exceeds the maximum duration.
