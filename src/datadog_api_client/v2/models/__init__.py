@@ -1851,6 +1851,21 @@ from datadog_api_client.v2.model.users_relationship import UsersRelationship
 from datadog_api_client.v2.model.users_response import UsersResponse
 from datadog_api_client.v2.model.users_type import UsersType
 from datadog_api_client.v2.model.widget_live_span import WidgetLiveSpan
+from datadog_api_client.v2.model.workflow_instance_create_meta import WorkflowInstanceCreateMeta
+from datadog_api_client.v2.model.workflow_instance_create_request import WorkflowInstanceCreateRequest
+from datadog_api_client.v2.model.workflow_instance_create_response import WorkflowInstanceCreateResponse
+from datadog_api_client.v2.model.workflow_instance_create_response_data import WorkflowInstanceCreateResponseData
+from datadog_api_client.v2.model.workflow_instance_list_item import WorkflowInstanceListItem
+from datadog_api_client.v2.model.workflow_list_instances_response import WorkflowListInstancesResponse
+from datadog_api_client.v2.model.workflow_list_instances_response_meta import WorkflowListInstancesResponseMeta
+from datadog_api_client.v2.model.workflow_list_instances_response_meta_page import WorkflowListInstancesResponseMetaPage
+from datadog_api_client.v2.model.worklflow_cancel_instance_response import WorklflowCancelInstanceResponse
+from datadog_api_client.v2.model.worklflow_cancel_instance_response_data import WorklflowCancelInstanceResponseData
+from datadog_api_client.v2.model.worklflow_get_instance_response import WorklflowGetInstanceResponse
+from datadog_api_client.v2.model.worklflow_get_instance_response_data import WorklflowGetInstanceResponseData
+from datadog_api_client.v2.model.worklflow_get_instance_response_data_attributes import (
+    WorklflowGetInstanceResponseDataAttributes,
+)
 
 __all__ = [
     "APIErrorResponse",
@@ -3388,4 +3403,17 @@ __all__ = [
     "UsersResponse",
     "UsersType",
     "WidgetLiveSpan",
+    "WorkflowInstanceCreateMeta",
+    "WorkflowInstanceCreateRequest",
+    "WorkflowInstanceCreateResponse",
+    "WorkflowInstanceCreateResponseData",
+    "WorkflowInstanceListItem",
+    "WorkflowListInstancesResponse",
+    "WorkflowListInstancesResponseMeta",
+    "WorkflowListInstancesResponseMetaPage",
+    "WorklflowCancelInstanceResponse",
+    "WorklflowCancelInstanceResponseData",
+    "WorklflowGetInstanceResponse",
+    "WorklflowGetInstanceResponseData",
+    "WorklflowGetInstanceResponseDataAttributes",
 ]

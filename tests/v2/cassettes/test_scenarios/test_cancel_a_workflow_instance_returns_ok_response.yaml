@@ -1,0 +1,20 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: PUT
+    uri: https://api.datadoghq.com/api/v2/workflows/ccf73164-1998-4785-a7a3-8d06c7e5f558/instances/305a472b-71ab-4ce8-8f8d-75db635627b5/cancel
+  response:
+    body:
+      string: '{}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

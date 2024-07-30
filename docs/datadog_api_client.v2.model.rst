@@ -10721,6 +10721,97 @@ datadog\_api\_client.v2.model.widget\_live\_span module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.workflow\_instance\_create\_meta module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.workflow_instance_create_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.workflow\_instance\_create\_request module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.workflow_instance_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.workflow\_instance\_create\_response module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.workflow_instance_create_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.workflow\_instance\_create\_response\_data module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.workflow_instance_create_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.workflow\_instance\_list\_item module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.workflow_instance_list_item
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.workflow\_list\_instances\_response module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.workflow_list_instances_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.workflow\_list\_instances\_response\_meta module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.workflow_list_instances_response_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.workflow\_list\_instances\_response\_meta\_page module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.workflow_list_instances_response_meta_page
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.worklflow\_cancel\_instance\_response module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.worklflow_cancel_instance_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.worklflow\_cancel\_instance\_response\_data module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.worklflow_cancel_instance_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.worklflow\_get\_instance\_response module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.worklflow_get_instance_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.worklflow\_get\_instance\_response\_data module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.worklflow_get_instance_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.worklflow\_get\_instance\_response\_data\_attributes module
+-----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.worklflow_get_instance_response_data_attributes
+   :members:
+   :show-inheritance:
+
 Module contents
 ---------------
 

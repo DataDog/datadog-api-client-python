@@ -2430,5 +2430,29 @@
     "undo": {
       "type": "safe"
     }
+  },
+  "ListWorkflowInstances": {
+    "tag": "Workflow Automation",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateWorkflowInstance": {
+    "tag": "Workflow Automation",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetWorkflowInstance": {
+    "tag": "Workflow Automation",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CancelWorkflowInstance": {
+    "tag": "Workflow Automation",
+    "undo": {
+      "type": "safe"
+    }
   }
 }
