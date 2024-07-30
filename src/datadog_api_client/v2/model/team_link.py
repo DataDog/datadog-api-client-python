@@ -3,11 +3,13 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -34,7 +36,9 @@ class TeamLink(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, attributes: TeamLinkAttributes, id: str, type: TeamLinkType, **kwargs):
+    def __init__(
+        self_, attributes: TeamLinkAttributes, type: TeamLinkType, id: Union[str, UnsetType] = unset, **kwargs
+    ):
         """
         Team link
 
@@ -42,13 +46,14 @@ class TeamLink(ModelNormal):
         :type attributes: TeamLinkAttributes
 
         :param id: The team link's identifier
-        :type id: str
+        :type id: str, optional
 
         :param type: Team link type
         :type type: TeamLinkType
         """
+        if id is not unset:
+            kwargs["id"] = id
         super().__init__(kwargs)
 
         self_.attributes = attributes
-        self_.id = id
         self_.type = type
