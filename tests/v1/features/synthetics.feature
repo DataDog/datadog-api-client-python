@@ -31,6 +31,24 @@ Feature: Synthetics
     And the response "tests[3].type" is equal to "A non existent test type"
     And the response "tests[4].config.request.method" is equal to "A non existent method"
 
+  @team:DataDog/synthetics-ct
+  Scenario: Create a FIDO global variable returns "OK" response
+    Given there is a valid "synthetics_api_test_multi_step" in the system
+    And new "CreateGlobalVariable" request
+    And body from file "synthetics_global_variable_fido_payload.json"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "name" is equal to "GLOBAL_VARIABLE_FIDO_PAYLOAD_{{ unique_upper_alnum }}"
+
+  @team:DataDog/synthetics-ct
+  Scenario: Create a TOTP global variable returns "OK" response
+    Given there is a valid "synthetics_api_test_multi_step" in the system
+    And new "CreateGlobalVariable" request
+    And body from file "synthetics_global_variable_totp_payload.json"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "name" is equal to "GLOBAL_VARIABLE_TOTP_PAYLOAD_{{ unique_upper_alnum }}"
+
   @generated @skip @team:DataDog/synthetics-ct
   Scenario: Create a browser test returns "- JSON format is wrong" response
     Given new "CreateSyntheticsBrowserTest" request
@@ -81,10 +99,10 @@ Feature: Synthetics
   Scenario: Create a global variable from test returns "OK" response
     Given there is a valid "synthetics_api_test_multi_step" in the system
     And new "CreateGlobalVariable" request
-    And body from file "synthetics_global_variable_payload.json"
+    And body from file "synthetics_global_variable_from_test_payload.json"
     When the request is sent
     Then the response status is 200 OK
-    And the response "name" is equal to "GLOBAL_VARIABLE_PAYLOAD_{{ unique_upper_alnum }}"
+    And the response "name" is equal to "GLOBAL_VARIABLE_FROM_TEST_PAYLOAD_{{ unique_upper_alnum }}"
 
   @generated @skip @team:DataDog/synthetics-ct
   Scenario: Create a global variable returns "Conflict" response
