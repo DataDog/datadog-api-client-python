@@ -1,0 +1,6 @@
+{
+  "description": "",
+  "is_fido": true,
+  "name": "GLOBAL_VARIABLE_FIDO_PAYLOAD_{{ unique_upper_alnum }}",
+  "tags": []
+}
