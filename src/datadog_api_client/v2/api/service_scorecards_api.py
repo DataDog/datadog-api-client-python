@@ -22,11 +22,13 @@ from datadog_api_client.v2.model.list_rules_response import ListRulesResponse
 from datadog_api_client.v2.model.list_rules_response_data_item import ListRulesResponseDataItem
 from datadog_api_client.v2.model.create_rule_response import CreateRuleResponse
 from datadog_api_client.v2.model.create_rule_request import CreateRuleRequest
+from datadog_api_client.v2.model.update_rule_response import UpdateRuleResponse
+from datadog_api_client.v2.model.update_rule_request import UpdateRuleRequest
 
 
 class ServiceScorecardsApi:
     """
-    API to create, update scorecard rules and outcomes. See `Service Scorecards <https://docs.datadoghq.com/service_catalog/scorecards>`_ for more information.
+    API to create and update scorecard rules and outcomes. See `Service Scorecards <https://docs.datadoghq.com/service_catalog/scorecards>`_ for more information.
 
     This feature is currently in BETA. If you have any feedback, contact `Datadog support <https://docs.datadoghq.com/help/>`_.
     """
@@ -233,6 +235,32 @@ class ServiceScorecardsApi:
             api_client=api_client,
         )
 
+        self._update_scorecard_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": (UpdateRuleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/scorecard/rules/{rule_id}",
+                "operation_id": "update_scorecard_rule",
+                "http_method": "PUT",
+                "version": "v2",
+            },
+            params_map={
+                "rule_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "rule_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (UpdateRuleRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
     def create_scorecard_outcomes_batch(
         self,
         body: OutcomesBatchRequest,
@@ -275,7 +303,7 @@ class ServiceScorecardsApi:
 
         Deletes a single rule.
 
-        :param rule_id: The ID of the rule/scorecard.
+        :param rule_id: The ID of the rule.
         :type rule_id: str
         :rtype: None
         """
@@ -599,3 +627,25 @@ class ServiceScorecardsApi:
             "kwargs": kwargs,
         }
         return endpoint.call_with_http_info_paginated(pagination)
+
+    def update_scorecard_rule(
+        self,
+        rule_id: str,
+        body: UpdateRuleRequest,
+    ) -> UpdateRuleResponse:
+        """Update an existing rule.
+
+        Updates an existing rule.
+
+        :param rule_id: The ID of the rule.
+        :type rule_id: str
+        :param body: Rule attributes.
+        :type body: UpdateRuleRequest
+        :rtype: UpdateRuleResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["rule_id"] = rule_id
+
+        kwargs["body"] = body
+
+        return self._update_scorecard_rule_endpoint.call_with_http_info(**kwargs)

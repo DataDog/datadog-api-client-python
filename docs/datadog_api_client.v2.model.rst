@@ -10371,6 +10371,34 @@ datadog\_api\_client.v2.model.update\_open\_api\_response\_data module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.update\_rule\_request module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_rule_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_rule\_request\_data module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_rule_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_rule\_response module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_rule_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_rule\_response\_data module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_rule_response_data
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.usage\_application\_security\_monitoring\_response module
 ---------------------------------------------------------------------------------------
 
