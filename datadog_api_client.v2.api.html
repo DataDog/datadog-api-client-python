@@ -1683,6 +1683,8 @@
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.service_scorecards_api.ServiceScorecardsApi.list_scorecard_rules" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ServiceScorecardsApi.list_scorecard_rules()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.service_scorecards_api.ServiceScorecardsApi.list_scorecard_rules_with_pagination" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ServiceScorecardsApi.list_scorecard_rules_with_pagination()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.service_scorecards_api.ServiceScorecardsApi.update_scorecard_rule" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ServiceScorecardsApi.update_scorecard_rule()</span></code></a>
         </li></ul>
             </nav>
         </li></ul>
@@ -7460,7 +7462,7 @@ and improve communication with internal and external users.</p>
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.service_scorecards_api.ServiceScorecardsApi">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ServiceScorecardsApi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_client</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datadog_api_client.v2.api.service_scorecards_api.ServiceScorecardsApi" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>API to create, update scorecard rules and outcomes. See <a class="reference external" href="https://docs.datadoghq.com/service_catalog/scorecards">Service Scorecards</a> for more information.</p>
+<p>API to create and update scorecard rules and outcomes. See <a class="reference external" href="https://docs.datadoghq.com/service_catalog/scorecards">Service Scorecards</a> for more information.</p>
 <p>This feature is currently in BETA. If you have any feedback, contact <a class="reference external" href="https://docs.datadoghq.com/help/">Datadog support</a>.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.service_scorecards_api.ServiceScorecardsApi.create_scorecard_outcomes_batch">
@@ -7497,7 +7499,7 @@ and improve communication with internal and external users.</p>
 <p>Deletes a single rule.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>rule_id</strong> (<em>str</em>) – The ID of the rule/scorecard.</p>
+<dd class="field-odd"><p><strong>rule_id</strong> (<em>str</em>) – The ID of the rule.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>None</p>
@@ -7607,6 +7609,23 @@ and improve communication with internal and external users.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>collections.abc.Iterable[<a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.list_rules_response_data_item.ListRulesResponseDataItem" title="datadog_api_client.v2.model.list_rules_response_data_item.ListRulesResponseDataItem">ListRulesResponseDataItem</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.service_scorecards_api.ServiceScorecardsApi.update_scorecard_rule">
+<span class="sig-name descname"><span class="pre">update_scorecard_rule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rule_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.update_rule_request.UpdateRuleRequest" title="datadog_api_client.v2.model.update_rule_request.UpdateRuleRequest"><span class="pre">UpdateRuleRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.update_rule_response.UpdateRuleResponse" title="datadog_api_client.v2.model.update_rule_response.UpdateRuleResponse"><span class="pre">UpdateRuleResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.service_scorecards_api.ServiceScorecardsApi.update_scorecard_rule" title="Link to this definition">¶</a></dt>
+<dd><p>Update an existing rule.</p>
+<p>Updates an existing rule.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rule_id</strong> (<em>str</em>) – The ID of the rule.</p></li>
+<li><p><strong>body</strong> (<a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.update_rule_request.UpdateRuleRequest" title="datadog_api_client.v2.model.update_rule_request.UpdateRuleRequest"><em>UpdateRuleRequest</em></a>) – Rule attributes.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.update_rule_response.UpdateRuleResponse" title="datadog_api_client.v2.model.update_rule_response.UpdateRuleResponse">UpdateRuleResponse</a></p>
 </dd>
 </dl>
 </dd></dl>
