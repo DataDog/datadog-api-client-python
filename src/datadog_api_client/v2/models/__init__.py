@@ -1799,6 +1799,10 @@ from datadog_api_client.v2.model.unit import Unit
 from datadog_api_client.v2.model.update_open_api_response import UpdateOpenAPIResponse
 from datadog_api_client.v2.model.update_open_api_response_attributes import UpdateOpenAPIResponseAttributes
 from datadog_api_client.v2.model.update_open_api_response_data import UpdateOpenAPIResponseData
+from datadog_api_client.v2.model.update_rule_request import UpdateRuleRequest
+from datadog_api_client.v2.model.update_rule_request_data import UpdateRuleRequestData
+from datadog_api_client.v2.model.update_rule_response import UpdateRuleResponse
+from datadog_api_client.v2.model.update_rule_response_data import UpdateRuleResponseData
 from datadog_api_client.v2.model.usage_application_security_monitoring_response import (
     UsageApplicationSecurityMonitoringResponse,
 )
@@ -3353,6 +3357,10 @@ __all__ = [
     "UpdateOpenAPIResponse",
     "UpdateOpenAPIResponseAttributes",
     "UpdateOpenAPIResponseData",
+    "UpdateRuleRequest",
+    "UpdateRuleRequestData",
+    "UpdateRuleResponse",
+    "UpdateRuleResponseData",
     "UsageApplicationSecurityMonitoringResponse",
     "UsageAttributesObject",
     "UsageDataObject",

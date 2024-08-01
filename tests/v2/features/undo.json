@@ -1681,6 +1681,12 @@
       "type": "idempotent"
     }
   },
+  "UpdateScorecardRule": {
+    "tag": "Service Scorecards",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "DownloadCloudWorkloadPolicyFile": {
     "tag": "CSM Threats",
     "undo": {

@@ -1,0 +1,61 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"enabled":true,"name":"Test-Update_an_existing_rule_returns_Rule_updated_successfully_response-1722307632","owner":"Datadog","scorecard_name":"OpenAPI
+      Spec Test Best Practices"},"type":"rule"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/scorecard/rules
+  response:
+    body:
+      string: '{"data":{"id":"L2uJseIxQCRLg_2z","type":"rule","attributes":{"category":"OpenAPI
+        Spec Test Best Practices","created_at":"2024-07-30T02:47:13.117302334Z","custom":true,"enabled":true,"modified_at":"2024-07-30T02:47:13.117302334Z","name":"Test-Update_an_existing_rule_returns_Rule_updated_successfully_response-1722307632","owner":"Datadog","scorecard_name":"OpenAPI
+        Spec Test Best Practices"},"relationships":{"scorecard":{"data":{"id":"qsxpoYRhU_yz","type":"scorecard"}}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"description":"Updated description via test","enabled":true,"name":"Test-Update_an_existing_rule_returns_Rule_updated_successfully_response-1722307632","scorecard_name":"OpenAPI
+      Spec Test Best Practices"}}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PUT
+    uri: https://api.datadoghq.com/api/v2/scorecard/rules/L2uJseIxQCRLg_2z
+  response:
+    body:
+      string: '{"data":{"id":"L2uJseIxQCRLg_2z","type":"rule","attributes":{"category":"OpenAPI
+        Spec Test Best Practices","created_at":"2024-07-30T02:47:13.117302Z","custom":true,"description":"Updated
+        description via test","enabled":true,"modified_at":"2024-07-30T02:47:13.231478Z","name":"Test-Update_an_existing_rule_returns_Rule_updated_successfully_response-1722307632","scorecard_name":"OpenAPI
+        Spec Test Best Practices"},"relationships":{"scorecard":{"data":{"id":"qsxpoYRhU_yz","type":"scorecard"}}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/scorecard/rules/L2uJseIxQCRLg_2z
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 204
+      message: No Content
+version: 1
