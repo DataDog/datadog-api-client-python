@@ -152,7 +152,7 @@ class WorkflowAutomationApi:
     ) -> WorklflowCancelInstanceResponse:
         """Cancel a workflow instance.
 
-        Cancels a specific execution of a given workflow.
+        Cancels a specific execution of a given workflow. This API requires an application key scoped with the workflows_run permission.
 
         :param workflow_id: The ID of the workflow.
         :type workflow_id: str
@@ -174,7 +174,7 @@ class WorkflowAutomationApi:
     ) -> WorkflowInstanceCreateResponse:
         """Execute a workflow.
 
-        Execute the given workflow
+        Execute the given workflow. This API requires an application key scoped with the workflows_run permission.
 
         :param workflow_id: The ID of the workflow.
         :type workflow_id: str
@@ -195,7 +195,7 @@ class WorkflowAutomationApi:
     ) -> WorklflowGetInstanceResponse:
         """Get a workflow instance.
 
-        Get a specific execution of a given workflow.
+        Get a specific execution of a given workflow. This API requires an application key scoped with the workflows_read permission.
 
         :param workflow_id: The ID of the workflow.
         :type workflow_id: str
@@ -219,7 +219,7 @@ class WorkflowAutomationApi:
     ) -> WorkflowListInstancesResponse:
         """List workflow instances.
 
-        List all instances of a given workflow.
+        List all instances of a given workflow. This API requires an application key scoped with the workflows_read permission.
 
         :param workflow_id: The ID of the workflow.
         :type workflow_id: str
