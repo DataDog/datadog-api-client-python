@@ -81,14 +81,14 @@ Feature: Roles
   @generated @skip @team:DataDog/aaa-core-access
   Scenario: Create role returns "Bad Request" response
     Given new "CreateRole" request
-    And body with value {"data": {"attributes": {"name": "developers"}, "relationships": {"permissions": {"data": [{"type": "permissions"}]}, "users": {"data": []}}, "type": "roles"}}
+    And body with value {"data": {"attributes": {"name": "developers"}, "relationships": {"permissions": {"data": [{"type": "permissions"}]}}, "type": "roles"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/aaa-core-access
   Scenario: Create role returns "OK" response
     Given new "CreateRole" request
-    And body with value {"data": {"attributes": {"name": "developers"}, "relationships": {"permissions": {"data": [{"type": "permissions"}]}, "users": {"data": []}}, "type": "roles"}}
+    And body with value {"data": {"attributes": {"name": "developers"}, "relationships": {"permissions": {"data": [{"type": "permissions"}]}}, "type": "roles"}}
     When the request is sent
     Then the response status is 200 OK
 
@@ -329,6 +329,6 @@ Feature: Roles
   Scenario: Update a role returns "Unprocessable Entity" response
     Given new "UpdateRole" request
     And request contains "role_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {}, "id": "00000000-0000-1111-0000-000000000000", "relationships": {"permissions": {"data": [{"type": "permissions"}]}, "users": {"data": []}}, "type": "roles"}}
+    And body with value {"data": {"attributes": {}, "id": "00000000-0000-1111-0000-000000000000", "relationships": {"permissions": {"data": [{"type": "permissions"}]}}, "type": "roles"}}
     When the request is sent
     Then the response status is 422 Unprocessable Entity

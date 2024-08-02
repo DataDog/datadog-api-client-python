@@ -15,18 +15,26 @@ from datadog_api_client.model_utils import (
 
 
 class RoleUpdateAttributes(ModelNormal):
+    validations = {
+        "user_count": {
+            "inclusive_maximum": 2147483647,
+        },
+    }
+
     @cached_property
     def openapi_types(_):
         return {
             "created_at": (datetime,),
             "modified_at": (datetime,),
             "name": (str,),
+            "user_count": (int,),
         }
 
     attribute_map = {
         "created_at": "created_at",
         "modified_at": "modified_at",
         "name": "name",
+        "user_count": "user_count",
     }
     read_only_vars = {
         "created_at",
@@ -38,6 +46,7 @@ class RoleUpdateAttributes(ModelNormal):
         created_at: Union[datetime, UnsetType] = unset,
         modified_at: Union[datetime, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
+        user_count: Union[int, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -51,6 +60,9 @@ class RoleUpdateAttributes(ModelNormal):
 
         :param name: Name of the role.
         :type name: str, optional
+
+        :param user_count: The user count.
+        :type user_count: int, optional
         """
         if created_at is not unset:
             kwargs["created_at"] = created_at
@@ -58,4 +70,6 @@ class RoleUpdateAttributes(ModelNormal):
             kwargs["modified_at"] = modified_at
         if name is not unset:
             kwargs["name"] = name
+        if user_count is not unset:
+            kwargs["user_count"] = user_count
         super().__init__(kwargs)
