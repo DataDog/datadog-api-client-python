@@ -115,7 +115,7 @@ class WorkflowAutomationApi:
         self._list_workflow_instances_endpoint = _Endpoint(
             settings={
                 "response_type": (WorkflowListInstancesResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/workflows/{workflow_id}/instances",
                 "operation_id": "list_workflow_instances",
                 "http_method": "GET",
@@ -152,7 +152,7 @@ class WorkflowAutomationApi:
     ) -> WorklflowCancelInstanceResponse:
         """Cancel a workflow instance.
 
-        Cancels a specific execution of a given workflow. This API requires an application key scoped with the workflows_run permission.
+        Cancels a specific execution of a given workflow.
 
         :param workflow_id: The ID of the workflow.
         :type workflow_id: str
@@ -174,7 +174,7 @@ class WorkflowAutomationApi:
     ) -> WorkflowInstanceCreateResponse:
         """Execute a workflow.
 
-        Execute the given workflow. This API requires an application key scoped with the workflows_run permission.
+        Execute the given workflow
 
         :param workflow_id: The ID of the workflow.
         :type workflow_id: str
@@ -195,7 +195,7 @@ class WorkflowAutomationApi:
     ) -> WorklflowGetInstanceResponse:
         """Get a workflow instance.
 
-        Get a specific execution of a given workflow. This API requires an application key scoped with the workflows_read permission.
+        Get a specific execution of a given workflow.
 
         :param workflow_id: The ID of the workflow.
         :type workflow_id: str
@@ -219,7 +219,7 @@ class WorkflowAutomationApi:
     ) -> WorkflowListInstancesResponse:
         """List workflow instances.
 
-        List all instances of a given workflow. This API requires an application key scoped with the workflows_read permission.
+        List all instances of a given workflow.
 
         :param workflow_id: The ID of the workflow.
         :type workflow_id: str
