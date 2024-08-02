@@ -16491,6 +16491,7 @@ components:
       properties:
         id:
           description: ID of the permission.
+          example: '219'
           type: string
         type:
           $ref: '#/components/schemas/PermissionsType'
@@ -17108,6 +17109,7 @@ components:
           $ref: '#/components/schemas/RoleAttributes'
         id:
           description: The unique identifier of the role.
+          example: 00000000-0000-1111-0000-000000000000
           type: string
         relationships:
           $ref: '#/components/schemas/RoleResponseRelationships'
@@ -17115,6 +17117,7 @@ components:
           $ref: '#/components/schemas/RolesType'
       required:
       - type
+      - id
       type: object
     RoleAttributes:
       description: Attributes of the role.

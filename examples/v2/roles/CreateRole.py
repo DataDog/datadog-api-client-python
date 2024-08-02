@@ -22,6 +22,7 @@ body = RoleCreateRequest(
             permissions=RelationshipToPermissions(
                 data=[
                     RelationshipToPermissionData(
+                        id="219",
                         type=PermissionsType.PERMISSIONS,
                     ),
                 ],

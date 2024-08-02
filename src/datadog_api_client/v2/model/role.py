@@ -42,9 +42,9 @@ class Role(ModelNormal):
 
     def __init__(
         self_,
+        id: str,
         type: RolesType,
         attributes: Union[RoleAttributes, UnsetType] = unset,
-        id: Union[str, UnsetType] = unset,
         relationships: Union[RoleResponseRelationships, UnsetType] = unset,
         **kwargs,
     ):
@@ -55,7 +55,7 @@ class Role(ModelNormal):
         :type attributes: RoleAttributes, optional
 
         :param id: The unique identifier of the role.
-        :type id: str, optional
+        :type id: str
 
         :param relationships: Relationships of the role object returned by the API.
         :type relationships: RoleResponseRelationships, optional
@@ -65,10 +65,9 @@ class Role(ModelNormal):
         """
         if attributes is not unset:
             kwargs["attributes"] = attributes
-        if id is not unset:
-            kwargs["id"] = id
         if relationships is not unset:
             kwargs["relationships"] = relationships
         super().__init__(kwargs)
 
+        self_.id = id
         self_.type = type
