@@ -829,6 +829,9 @@ from datadog_api_client.v2.model.list_powerpacks_response import ListPowerpacksR
 from datadog_api_client.v2.model.list_rules_response import ListRulesResponse
 from datadog_api_client.v2.model.list_rules_response_data_item import ListRulesResponseDataItem
 from datadog_api_client.v2.model.list_rules_response_links import ListRulesResponseLinks
+from datadog_api_client.v2.model.list_tags_response import ListTagsResponse
+from datadog_api_client.v2.model.list_tags_response_data import ListTagsResponseData
+from datadog_api_client.v2.model.list_tags_response_data_attributes import ListTagsResponseDataAttributes
 from datadog_api_client.v2.model.list_teams_include import ListTeamsInclude
 from datadog_api_client.v2.model.list_teams_sort import ListTeamsSort
 from datadog_api_client.v2.model.log import Log
@@ -2553,6 +2556,9 @@ __all__ = [
     "ListRulesResponse",
     "ListRulesResponseDataItem",
     "ListRulesResponseLinks",
+    "ListTagsResponse",
+    "ListTagsResponseData",
+    "ListTagsResponseDataAttributes",
     "ListTeamsInclude",
     "ListTeamsSort",
     "Log",

@@ -97,3 +97,41 @@ Feature: Network Device Monitoring
     And the response "data[1].attributes.alias" is equal to "interface_999"
     And the response "data[1].attributes.index" is equal to 999
     And the response "data[1].attributes.status" is equal to "down"
+
+  @replay-only @team:DataDog/network-device-monitoring
+  Scenario: Get the list of tags for a device returns "Not Found" response
+    Given new "ListDeviceUserTags" request
+    And request contains "device_id" parameter with value "unknown_device_id"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @replay-only @team:DataDog/network-device-monitoring
+  Scenario: Get the list of tags for a device returns "OK" response
+    Given new "ListDeviceUserTags" request
+    And request contains "device_id" parameter with value "default_device"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.id" is equal to "default_device"
+    And the response "data.type" is equal to "tags"
+    And the response "data.attributes.tags[0]" is equal to "tag:test"
+    And the response "data.attributes.tags[1]" is equal to "tag:testbis"
+
+  @replay-only @team:DataDog/network-device-monitoring
+  Scenario: Update the tags for a device returns "Not Found" response
+    Given new "UpdateDeviceUserTags" request
+    And request contains "device_id" parameter with value "unknown_device_id"
+    And body with value {"data": {"attributes": {"tags": ["tag:test", "tag:testbis"]}, "id": "unknown_device_id", "type":"tags"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @replay-only @team:DataDog/network-device-monitoring
+  Scenario: Update the tags for a device returns "OK" response
+    Given new "UpdateDeviceUserTags" request
+    And request contains "device_id" parameter with value "default_device"
+    And body with value {"data": {"attributes": {"tags": ["tag:test", "tag:testbis"]}, "id": "default_device", "type":"tags"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.id" is equal to "default_device"
+    And the response "data.type" is equal to "tags"
+    And the response "data.attributes.tags[0]" is equal to "tag:test"
+    And the response "data.attributes.tags[1]" is equal to "tag:testbis"

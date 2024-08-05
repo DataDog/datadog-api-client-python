@@ -1339,6 +1339,18 @@
       "type": "safe"
     }
   },
+  "ListDeviceUserTags": {
+    "tag": "Network Device Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateDeviceUserTags": {
+    "tag": "Network Device Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListOrgConfigs": {
     "tag": "Organizations",
     "undo": {

@@ -4771,6 +4771,27 @@ datadog\_api\_client.v2.model.list\_rules\_response\_links module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.list\_tags\_response module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_tags_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.list\_tags\_response\_data module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_tags_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.list\_tags\_response\_data\_attributes module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_tags_response_data_attributes
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.list\_teams\_include module
 ---------------------------------------------------------
 

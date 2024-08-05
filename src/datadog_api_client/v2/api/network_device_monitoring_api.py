@@ -14,6 +14,7 @@ from datadog_api_client.model_utils import (
 from datadog_api_client.v2.model.list_devices_response import ListDevicesResponse
 from datadog_api_client.v2.model.get_device_response import GetDeviceResponse
 from datadog_api_client.v2.model.get_interfaces_response import GetInterfacesResponse
+from datadog_api_client.v2.model.list_tags_response import ListTagsResponse
 
 
 class NetworkDeviceMonitoringApi:
@@ -109,6 +110,55 @@ class NetworkDeviceMonitoringApi:
             api_client=api_client,
         )
 
+        self._list_device_user_tags_endpoint = _Endpoint(
+            settings={
+                "response_type": (ListTagsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/ndm/tags/devices/{device_id}",
+                "operation_id": "list_device_user_tags",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "device_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "device_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._update_device_user_tags_endpoint = _Endpoint(
+            settings={
+                "response_type": (ListTagsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/ndm/tags/devices/{device_id}",
+                "operation_id": "update_device_user_tags",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "device_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "device_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (ListTagsResponse,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
     def get_device(
         self,
         device_id: str,
@@ -179,3 +229,41 @@ class NetworkDeviceMonitoringApi:
             kwargs["filter_tag"] = filter_tag
 
         return self._list_devices_endpoint.call_with_http_info(**kwargs)
+
+    def list_device_user_tags(
+        self,
+        device_id: str,
+    ) -> ListTagsResponse:
+        """Get the list of tags for a device.
+
+        Get the list of tags for a device.
+
+        :param device_id: The id of the device to fetch tags for.
+        :type device_id: str
+        :rtype: ListTagsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["device_id"] = device_id
+
+        return self._list_device_user_tags_endpoint.call_with_http_info(**kwargs)
+
+    def update_device_user_tags(
+        self,
+        device_id: str,
+        body: ListTagsResponse,
+    ) -> ListTagsResponse:
+        """Update the tags for a device.
+
+        Update the tags for a device.
+
+        :param device_id: The id of the device to update tags for.
+        :type device_id: str
+        :type body: ListTagsResponse
+        :rtype: ListTagsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["device_id"] = device_id
+
+        kwargs["body"] = body
+
+        return self._update_device_user_tags_endpoint.call_with_http_info(**kwargs)
