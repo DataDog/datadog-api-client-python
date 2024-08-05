@@ -1350,7 +1350,11 @@
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.network_device_monitoring_api.NetworkDeviceMonitoringApi.get_interfaces" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">NetworkDeviceMonitoringApi.get_interfaces()</span></code></a>
         </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.network_device_monitoring_api.NetworkDeviceMonitoringApi.list_device_user_tags" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">NetworkDeviceMonitoringApi.list_device_user_tags()</span></code></a>
+        </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.network_device_monitoring_api.NetworkDeviceMonitoringApi.list_devices" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">NetworkDeviceMonitoringApi.list_devices()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.network_device_monitoring_api.NetworkDeviceMonitoringApi.update_device_user_tags" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">NetworkDeviceMonitoringApi.update_device_user_tags()</span></code></a>
         </li></ul>
             </nav>
         </li></ul>
@@ -5646,6 +5650,20 @@ notifies your team when a defined threshold has exceeded.</p>
 </dl>
 </dd></dl>
 <dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.network_device_monitoring_api.NetworkDeviceMonitoringApi.list_device_user_tags">
+<span class="sig-name descname"><span class="pre">list_device_user_tags</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">device_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.list_tags_response.ListTagsResponse" title="datadog_api_client.v2.model.list_tags_response.ListTagsResponse"><span class="pre">ListTagsResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.network_device_monitoring_api.NetworkDeviceMonitoringApi.list_device_user_tags" title="Link to this definition">¶</a></dt>
+<dd><p>Get the list of tags for a device.</p>
+<p>Get the list of tags for a device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>device_id</strong> (<em>str</em>) – The id of the device to fetch tags for.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.list_tags_response.ListTagsResponse" title="datadog_api_client.v2.model.list_tags_response.ListTagsResponse">ListTagsResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.network_device_monitoring_api.NetworkDeviceMonitoringApi.list_devices">
 <span class="sig-name descname"><span class="pre">list_devices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">page_number</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">page_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter_tag</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.list_devices_response.ListDevicesResponse" title="datadog_api_client.v2.model.list_devices_response.ListDevicesResponse"><span class="pre">ListDevicesResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.network_device_monitoring_api.NetworkDeviceMonitoringApi.list_devices" title="Link to this definition">¶</a></dt>
 <dd><p>Get the list of devices.</p>
@@ -5661,6 +5679,20 @@ notifies your team when a defined threshold has exceeded.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.list_devices_response.ListDevicesResponse" title="datadog_api_client.v2.model.list_devices_response.ListDevicesResponse">ListDevicesResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.network_device_monitoring_api.NetworkDeviceMonitoringApi.update_device_user_tags">
+<span class="sig-name descname"><span class="pre">update_device_user_tags</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">device_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.list_tags_response.ListTagsResponse" title="datadog_api_client.v2.model.list_tags_response.ListTagsResponse"><span class="pre">ListTagsResponse</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.list_tags_response.ListTagsResponse" title="datadog_api_client.v2.model.list_tags_response.ListTagsResponse"><span class="pre">ListTagsResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.network_device_monitoring_api.NetworkDeviceMonitoringApi.update_device_user_tags" title="Link to this definition">¶</a></dt>
+<dd><p>Update the tags for a device.</p>
+<p>Update the tags for a device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>device_id</strong> (<em>str</em>) – The id of the device to update tags for.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.list_tags_response.ListTagsResponse" title="datadog_api_client.v2.model.list_tags_response.ListTagsResponse">ListTagsResponse</a></p>
 </dd>
 </dl>
 </dd></dl>
