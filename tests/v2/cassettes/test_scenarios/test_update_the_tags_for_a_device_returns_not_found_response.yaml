@@ -1,0 +1,20 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"tags":["tag:test","tag:testbis"]},"id":"unknown_device_id","type":"tags"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/ndm/tags/devices/unknown_device_id
+  response:
+    body:
+      string: '{"errors":[{"status":"404","title":"Not Found"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 404
+      message: Not Found
+version: 1
