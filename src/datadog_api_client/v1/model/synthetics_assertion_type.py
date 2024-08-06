@@ -16,7 +16,7 @@ class SyntheticsAssertionType(ModelSimple):
     """
     Type of the assertion.
 
-    :param value: Must be one of ["body", "header", "statusCode", "certificate", "responseTime", "property", "recordEvery", "recordSome", "tlsVersion", "minTlsVersion", "latency", "packetLossPercentage", "packetsReceived", "networkHop", "receivedMessage", "grpcHealthcheckStatus", "grpcMetadata", "grpcProto", "connection"].
+    :param value: Must be one of ["body", "header", "statusCode", "certificate", "responseTime", "property", "recordEvery", "recordSome", "tlsVersion", "minTlsVersion", "latency", "packetLossPercentage", "packetsReceived", "networkHop", "receivedMessage", "grpcHealthcheckStatus", "grpcMetadata", "grpcProto", "connection", "javascript"].
     :type value: str
     """
 
@@ -40,6 +40,7 @@ class SyntheticsAssertionType(ModelSimple):
         "grpcMetadata",
         "grpcProto",
         "connection",
+        "javascript",
     }
     BODY: ClassVar["SyntheticsAssertionType"]
     HEADER: ClassVar["SyntheticsAssertionType"]
@@ -60,6 +61,7 @@ class SyntheticsAssertionType(ModelSimple):
     GRPC_METADATA: ClassVar["SyntheticsAssertionType"]
     GRPC_PROTO: ClassVar["SyntheticsAssertionType"]
     CONNECTION: ClassVar["SyntheticsAssertionType"]
+    JAVASCRIPT: ClassVar["SyntheticsAssertionType"]
 
     @cached_property
     def openapi_types(_):
@@ -87,3 +89,4 @@ SyntheticsAssertionType.GRPC_HEALTHCHECK_STATUS = SyntheticsAssertionType("grpcH
 SyntheticsAssertionType.GRPC_METADATA = SyntheticsAssertionType("grpcMetadata")
 SyntheticsAssertionType.GRPC_PROTO = SyntheticsAssertionType("grpcProto")
 SyntheticsAssertionType.CONNECTION = SyntheticsAssertionType("connection")
+SyntheticsAssertionType.JAVASCRIPT = SyntheticsAssertionType("javascript")
