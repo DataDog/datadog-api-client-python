@@ -90,6 +90,9 @@ class UsageSummaryResponse(ModelNormal):
             "flex_logs_compute_medium_avg_sum": (int,),
             "flex_logs_compute_small_avg_sum": (int,),
             "flex_logs_compute_xsmall_avg_sum": (int,),
+            "flex_logs_starter_avg_sum": (int,),
+            "flex_logs_starter_storage_index_avg_sum": (int,),
+            "flex_logs_starter_storage_retention_adjustment_avg_sum": (int,),
             "flex_stored_logs_avg_sum": (int,),
             "forwarding_events_bytes_agg_sum": (int,),
             "gcp_host_top99p_sum": (int,),
@@ -233,6 +236,9 @@ class UsageSummaryResponse(ModelNormal):
         "flex_logs_compute_medium_avg_sum": "flex_logs_compute_medium_avg_sum",
         "flex_logs_compute_small_avg_sum": "flex_logs_compute_small_avg_sum",
         "flex_logs_compute_xsmall_avg_sum": "flex_logs_compute_xsmall_avg_sum",
+        "flex_logs_starter_avg_sum": "flex_logs_starter_avg_sum",
+        "flex_logs_starter_storage_index_avg_sum": "flex_logs_starter_storage_index_avg_sum",
+        "flex_logs_starter_storage_retention_adjustment_avg_sum": "flex_logs_starter_storage_retention_adjustment_avg_sum",
         "flex_stored_logs_avg_sum": "flex_stored_logs_avg_sum",
         "forwarding_events_bytes_agg_sum": "forwarding_events_bytes_agg_sum",
         "gcp_host_top99p_sum": "gcp_host_top99p_sum",
@@ -377,6 +383,9 @@ class UsageSummaryResponse(ModelNormal):
         flex_logs_compute_medium_avg_sum: Union[int, UnsetType] = unset,
         flex_logs_compute_small_avg_sum: Union[int, UnsetType] = unset,
         flex_logs_compute_xsmall_avg_sum: Union[int, UnsetType] = unset,
+        flex_logs_starter_avg_sum: Union[int, UnsetType] = unset,
+        flex_logs_starter_storage_index_avg_sum: Union[int, UnsetType] = unset,
+        flex_logs_starter_storage_retention_adjustment_avg_sum: Union[int, UnsetType] = unset,
         flex_stored_logs_avg_sum: Union[int, UnsetType] = unset,
         forwarding_events_bytes_agg_sum: Union[int, UnsetType] = unset,
         gcp_host_top99p_sum: Union[int, UnsetType] = unset,
@@ -649,6 +658,15 @@ class UsageSummaryResponse(ModelNormal):
 
         :param flex_logs_compute_xsmall_avg_sum: Shows the average number of Flex Logs Compute Extra Small Instances over all hours in the current months for all organizations.
         :type flex_logs_compute_xsmall_avg_sum: int, optional
+
+        :param flex_logs_starter_avg_sum: Shows the average number of Flex Logs Starter Instances over all hours in the current months for all organizations.
+        :type flex_logs_starter_avg_sum: int, optional
+
+        :param flex_logs_starter_storage_index_avg_sum: Shows the average number of Flex Logs Starter Storage Index Instances over all hours in the current months for all organizations.
+        :type flex_logs_starter_storage_index_avg_sum: int, optional
+
+        :param flex_logs_starter_storage_retention_adjustment_avg_sum: Shows the average number of Flex Logs Starter Storage Retention Adjustment Instances over all hours in the current months for all organizations.
+        :type flex_logs_starter_storage_retention_adjustment_avg_sum: int, optional
 
         :param flex_stored_logs_avg_sum: Shows the average of all Flex Stored Logs over all hours in the current months for all organizations.
         :type flex_stored_logs_avg_sum: int, optional
@@ -1010,6 +1028,14 @@ class UsageSummaryResponse(ModelNormal):
             kwargs["flex_logs_compute_small_avg_sum"] = flex_logs_compute_small_avg_sum
         if flex_logs_compute_xsmall_avg_sum is not unset:
             kwargs["flex_logs_compute_xsmall_avg_sum"] = flex_logs_compute_xsmall_avg_sum
+        if flex_logs_starter_avg_sum is not unset:
+            kwargs["flex_logs_starter_avg_sum"] = flex_logs_starter_avg_sum
+        if flex_logs_starter_storage_index_avg_sum is not unset:
+            kwargs["flex_logs_starter_storage_index_avg_sum"] = flex_logs_starter_storage_index_avg_sum
+        if flex_logs_starter_storage_retention_adjustment_avg_sum is not unset:
+            kwargs[
+                "flex_logs_starter_storage_retention_adjustment_avg_sum"
+            ] = flex_logs_starter_storage_retention_adjustment_avg_sum
         if flex_stored_logs_avg_sum is not unset:
             kwargs["flex_stored_logs_avg_sum"] = flex_stored_logs_avg_sum
         if forwarding_events_bytes_agg_sum is not unset:
