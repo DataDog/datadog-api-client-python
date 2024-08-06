@@ -85,6 +85,9 @@ class UsageSummaryDate(ModelNormal):
             "flex_logs_compute_medium_avg": (int,),
             "flex_logs_compute_small_avg": (int,),
             "flex_logs_compute_xsmall_avg": (int,),
+            "flex_logs_starter_avg": (int,),
+            "flex_logs_starter_storage_index_avg": (int,),
+            "flex_logs_starter_storage_retention_adjustment_avg": (int,),
             "flex_stored_logs_avg": (int,),
             "forwarding_events_bytes_sum": (int,),
             "gcp_host_top99p": (int,),
@@ -217,6 +220,9 @@ class UsageSummaryDate(ModelNormal):
         "flex_logs_compute_medium_avg": "flex_logs_compute_medium_avg",
         "flex_logs_compute_small_avg": "flex_logs_compute_small_avg",
         "flex_logs_compute_xsmall_avg": "flex_logs_compute_xsmall_avg",
+        "flex_logs_starter_avg": "flex_logs_starter_avg",
+        "flex_logs_starter_storage_index_avg": "flex_logs_starter_storage_index_avg",
+        "flex_logs_starter_storage_retention_adjustment_avg": "flex_logs_starter_storage_retention_adjustment_avg",
         "flex_stored_logs_avg": "flex_stored_logs_avg",
         "forwarding_events_bytes_sum": "forwarding_events_bytes_sum",
         "gcp_host_top99p": "gcp_host_top99p",
@@ -350,6 +356,9 @@ class UsageSummaryDate(ModelNormal):
         flex_logs_compute_medium_avg: Union[int, UnsetType] = unset,
         flex_logs_compute_small_avg: Union[int, UnsetType] = unset,
         flex_logs_compute_xsmall_avg: Union[int, UnsetType] = unset,
+        flex_logs_starter_avg: Union[int, UnsetType] = unset,
+        flex_logs_starter_storage_index_avg: Union[int, UnsetType] = unset,
+        flex_logs_starter_storage_retention_adjustment_avg: Union[int, UnsetType] = unset,
         flex_stored_logs_avg: Union[int, UnsetType] = unset,
         forwarding_events_bytes_sum: Union[int, UnsetType] = unset,
         gcp_host_top99p: Union[int, UnsetType] = unset,
@@ -605,6 +614,15 @@ class UsageSummaryDate(ModelNormal):
 
         :param flex_logs_compute_xsmall_avg: Shows the average number of Flex Logs Compute Extra Small Instances over all hours in the current date for the given org.
         :type flex_logs_compute_xsmall_avg: int, optional
+
+        :param flex_logs_starter_avg: Shows the average number of Flex Logs Starter Instances over all hours in the current date for the given org.
+        :type flex_logs_starter_avg: int, optional
+
+        :param flex_logs_starter_storage_index_avg: Shows the average number of Flex Logs Starter Storage Index Instances over all hours in the current date for the given org.
+        :type flex_logs_starter_storage_index_avg: int, optional
+
+        :param flex_logs_starter_storage_retention_adjustment_avg: Shows the average number of Flex Logs Starter Storage Retention Adjustment Instances over all hours in the current date for the given org.
+        :type flex_logs_starter_storage_retention_adjustment_avg: int, optional
 
         :param flex_stored_logs_avg: Shows the average of all Flex Stored Logs over all hours in the current date for the given org.
         :type flex_stored_logs_avg: int, optional
@@ -934,6 +952,14 @@ class UsageSummaryDate(ModelNormal):
             kwargs["flex_logs_compute_small_avg"] = flex_logs_compute_small_avg
         if flex_logs_compute_xsmall_avg is not unset:
             kwargs["flex_logs_compute_xsmall_avg"] = flex_logs_compute_xsmall_avg
+        if flex_logs_starter_avg is not unset:
+            kwargs["flex_logs_starter_avg"] = flex_logs_starter_avg
+        if flex_logs_starter_storage_index_avg is not unset:
+            kwargs["flex_logs_starter_storage_index_avg"] = flex_logs_starter_storage_index_avg
+        if flex_logs_starter_storage_retention_adjustment_avg is not unset:
+            kwargs[
+                "flex_logs_starter_storage_retention_adjustment_avg"
+            ] = flex_logs_starter_storage_retention_adjustment_avg
         if flex_stored_logs_avg is not unset:
             kwargs["flex_stored_logs_avg"] = flex_stored_logs_avg
         if forwarding_events_bytes_sum is not unset:
