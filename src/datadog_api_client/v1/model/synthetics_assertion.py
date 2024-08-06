@@ -30,6 +30,9 @@ class SyntheticsAssertion(ModelComposed):
 
         :param type: Type of the assertion.
         :type type: SyntheticsAssertionType
+
+        :param code: The JavaScript code that performs the assertions.
+        :type code: str
         """
         super().__init__(kwargs)
 
@@ -49,6 +52,7 @@ class SyntheticsAssertion(ModelComposed):
             SyntheticsAssertionJSONSchemaTarget,
         )
         from datadog_api_client.v1.model.synthetics_assertion_x_path_target import SyntheticsAssertionXPathTarget
+        from datadog_api_client.v1.model.synthetics_assertion_javascript import SyntheticsAssertionJavascript
 
         return {
             "oneOf": [
@@ -57,5 +61,6 @@ class SyntheticsAssertion(ModelComposed):
                 SyntheticsAssertionJSONPathTarget,
                 SyntheticsAssertionJSONSchemaTarget,
                 SyntheticsAssertionXPathTarget,
+                SyntheticsAssertionJavascript,
             ],
         }
