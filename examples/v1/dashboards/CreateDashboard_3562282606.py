@@ -20,10 +20,10 @@ from datadog_api_client.v1.model.widget import Widget
 from datadog_api_client.v1.model.widget_change_type import WidgetChangeType
 from datadog_api_client.v1.model.widget_formula import WidgetFormula
 from datadog_api_client.v1.model.widget_layout import WidgetLayout
+from datadog_api_client.v1.model.widget_legacy_live_span import WidgetLegacyLiveSpan
 from datadog_api_client.v1.model.widget_order_by import WidgetOrderBy
 from datadog_api_client.v1.model.widget_sort import WidgetSort
 from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
-from datadog_api_client.v1.model.widget_time import WidgetTime
 
 # there is a valid "slo" in the system
 SLO_DATA_0_ID = environ["SLO_DATA_0_ID"]
@@ -36,7 +36,7 @@ body = Dashboard(
                 title="",
                 title_size="16",
                 title_align=WidgetTextAlign.LEFT,
-                time=WidgetTime(),
+                time=WidgetLegacyLiveSpan(),
                 type=ChangeWidgetDefinitionType.CHANGE,
                 requests=[
                     ChangeWidgetRequest(

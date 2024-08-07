@@ -11,8 +11,8 @@ from datadog_api_client.v1.model.run_workflow_widget_definition_type import RunW
 from datadog_api_client.v1.model.run_workflow_widget_input import RunWorkflowWidgetInput
 from datadog_api_client.v1.model.widget import Widget
 from datadog_api_client.v1.model.widget_layout import WidgetLayout
+from datadog_api_client.v1.model.widget_legacy_live_span import WidgetLegacyLiveSpan
 from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
-from datadog_api_client.v1.model.widget_time import WidgetTime
 
 body = Dashboard(
     title="Example-Dashboard",
@@ -29,7 +29,7 @@ body = Dashboard(
                 title="Run workflow title",
                 title_size="16",
                 title_align=WidgetTextAlign.LEFT,
-                time=WidgetTime(),
+                time=WidgetLegacyLiveSpan(),
                 type=RunWorkflowWidgetDefinitionType.RUN_WORKFLOW,
                 workflow_id="2e055f16-8b6a-4cdd-b452-17a34c44b160",
                 inputs=[
