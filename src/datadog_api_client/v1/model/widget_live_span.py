@@ -16,7 +16,7 @@ class WidgetLiveSpan(ModelSimple):
     """
     The available timeframes depend on the widget you are using.
 
-    :param value: Must be one of ["1m", "5m", "10m", "15m", "30m", "1h", "4h", "1d", "2d", "1w", "1mo", "3mo", "6mo", "week_to_date", "month_to_date", "1y", "alert"].
+    :param value: Must be one of ["1m", "5m", "10m", "15m", "30m", "1h", "4h", "1d", "2d", "1w", "1mo", "3mo", "6mo", "week_to_date", "month_to_date", "last_month", "1y", "alert"].
     :type value: str
     """
 
@@ -36,6 +36,7 @@ class WidgetLiveSpan(ModelSimple):
         "6mo",
         "week_to_date",
         "month_to_date",
+        "last_month",
         "1y",
         "alert",
     }
@@ -54,6 +55,7 @@ class WidgetLiveSpan(ModelSimple):
     PAST_SIX_MONTHS: ClassVar["WidgetLiveSpan"]
     WEEK_TO_DATE: ClassVar["WidgetLiveSpan"]
     MONTH_TO_DATE: ClassVar["WidgetLiveSpan"]
+    LAST_MONTH: ClassVar["WidgetLiveSpan"]
     PAST_ONE_YEAR: ClassVar["WidgetLiveSpan"]
     ALERT: ClassVar["WidgetLiveSpan"]
 
@@ -79,5 +81,6 @@ WidgetLiveSpan.PAST_THREE_MONTHS = WidgetLiveSpan("3mo")
 WidgetLiveSpan.PAST_SIX_MONTHS = WidgetLiveSpan("6mo")
 WidgetLiveSpan.WEEK_TO_DATE = WidgetLiveSpan("week_to_date")
 WidgetLiveSpan.MONTH_TO_DATE = WidgetLiveSpan("month_to_date")
+WidgetLiveSpan.LAST_MONTH = WidgetLiveSpan("last_month")
 WidgetLiveSpan.PAST_ONE_YEAR = WidgetLiveSpan("1y")
 WidgetLiveSpan.ALERT = WidgetLiveSpan("alert")

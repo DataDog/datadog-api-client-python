@@ -21792,6 +21792,7 @@ components:
       - 6mo
       - week_to_date
       - month_to_date
+      - last_month
       - 1y
       - alert
       example: 5m
@@ -21812,6 +21813,7 @@ components:
       - PAST_SIX_MONTHS
       - WEEK_TO_DATE
       - MONTH_TO_DATE
+      - LAST_MONTH
       - PAST_ONE_YEAR
       - ALERT
     WidgetMargin:
