@@ -19,6 +19,9 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.widget_time import WidgetTime
     from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
     from datadog_api_client.v1.model.change_widget_definition_type import ChangeWidgetDefinitionType
+    from datadog_api_client.v1.model.widget_legacy_live_span import WidgetLegacyLiveSpan
+    from datadog_api_client.v1.model.widget_new_live_span import WidgetNewLiveSpan
+    from datadog_api_client.v1.model.widget_new_fixed_span import WidgetNewFixedSpan
 
 
 class ChangeWidgetDefinition(ModelNormal):
@@ -62,7 +65,7 @@ class ChangeWidgetDefinition(ModelNormal):
         requests: List[ChangeWidgetRequest],
         type: ChangeWidgetDefinitionType,
         custom_links: Union[List[WidgetCustomLink], UnsetType] = unset,
-        time: Union[WidgetTime, UnsetType] = unset,
+        time: Union[WidgetTime, WidgetLegacyLiveSpan, WidgetNewLiveSpan, WidgetNewFixedSpan, UnsetType] = unset,
         title: Union[str, UnsetType] = unset,
         title_align: Union[WidgetTextAlign, UnsetType] = unset,
         title_size: Union[str, UnsetType] = unset,

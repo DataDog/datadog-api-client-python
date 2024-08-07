@@ -21,8 +21,8 @@ from datadog_api_client.v1.model.widget import Widget
 from datadog_api_client.v1.model.widget_axis import WidgetAxis
 from datadog_api_client.v1.model.widget_formula import WidgetFormula
 from datadog_api_client.v1.model.widget_layout import WidgetLayout
+from datadog_api_client.v1.model.widget_legacy_live_span import WidgetLegacyLiveSpan
 from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
-from datadog_api_client.v1.model.widget_time import WidgetTime
 
 body = Dashboard(
     layout_type=DashboardLayoutType.ORDERED,
@@ -34,7 +34,7 @@ body = Dashboard(
                 title="",
                 title_align=WidgetTextAlign.LEFT,
                 precision=2,
-                time=WidgetTime(),
+                time=WidgetLegacyLiveSpan(),
                 autoscale=True,
                 requests=[
                     QueryValueWidgetRequest(
