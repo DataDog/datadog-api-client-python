@@ -24,6 +24,7 @@ class UserAttributes(ModelNormal):
             "email": (str,),
             "handle": (str,),
             "icon": (str,),
+            "mfa_enabled": (bool,),
             "modified_at": (datetime,),
             "name": (str, none_type),
             "service_account": (bool,),
@@ -38,12 +39,16 @@ class UserAttributes(ModelNormal):
         "email": "email",
         "handle": "handle",
         "icon": "icon",
+        "mfa_enabled": "mfa_enabled",
         "modified_at": "modified_at",
         "name": "name",
         "service_account": "service_account",
         "status": "status",
         "title": "title",
         "verified": "verified",
+    }
+    read_only_vars = {
+        "mfa_enabled",
     }
 
     def __init__(
@@ -53,6 +58,7 @@ class UserAttributes(ModelNormal):
         email: Union[str, UnsetType] = unset,
         handle: Union[str, UnsetType] = unset,
         icon: Union[str, UnsetType] = unset,
+        mfa_enabled: Union[bool, UnsetType] = unset,
         modified_at: Union[datetime, UnsetType] = unset,
         name: Union[str, none_type, UnsetType] = unset,
         service_account: Union[bool, UnsetType] = unset,
@@ -78,6 +84,9 @@ class UserAttributes(ModelNormal):
 
         :param icon: URL of the user's icon.
         :type icon: str, optional
+
+        :param mfa_enabled: If user has MFA enabled.
+        :type mfa_enabled: bool, optional
 
         :param modified_at: Time that the user was last modified.
         :type modified_at: datetime, optional
@@ -107,6 +116,8 @@ class UserAttributes(ModelNormal):
             kwargs["handle"] = handle
         if icon is not unset:
             kwargs["icon"] = icon
+        if mfa_enabled is not unset:
+            kwargs["mfa_enabled"] = mfa_enabled
         if modified_at is not unset:
             kwargs["modified_at"] = modified_at
         if name is not unset:
