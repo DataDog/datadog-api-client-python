@@ -147,9 +147,10 @@ class RestrictionPoliciesApi:
         * Powerpacks: ``powerpack``
         * Security Rules: ``security-rule``
         * Service Level Objectives: ``slo``
-        * Synthetic Global Variable: ``synthetic-global-variable``
-        * Synthetic Test: ``synthetic-test``
-        * Synthetic Private Location: ``synthetic-private-location``
+        * Synthetic Global Variables: ``synthetic-global-variable``
+        * Synthetic Tests: ``synthetic-test``
+        * Synthetic Private Locations: ``synthetic-private-location``
+        * Monitors: ``monitor``
 
         **Supported relations for resources**
 
@@ -168,11 +169,13 @@ class RestrictionPoliciesApi:
              - ``viewer`` , ``editor``
            * - Service Level Objectives
              - ``viewer`` , ``editor``
-           * - Synthetic Global Variable
+           * - Synthetic Global Variables
              - ``viewer`` , ``editor``
-           * - Synthetic Test
+           * - Synthetic Tests
              - ``viewer`` , ``editor``
-           * - Synthetic Private Location
+           * - Synthetic Private Locations
+             - ``viewer`` , ``editor``
+           * - Monitors
              - ``viewer`` , ``editor``
 
 
