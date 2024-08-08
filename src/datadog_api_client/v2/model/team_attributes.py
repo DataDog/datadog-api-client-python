@@ -42,6 +42,7 @@ class TeamAttributes(ModelNormal):
             "created_at": (datetime,),
             "description": (str, none_type),
             "handle": (str,),
+            "handles": (str,),
             "hidden_modules": ([str],),
             "link_count": (int,),
             "modified_at": (datetime,),
@@ -57,6 +58,7 @@ class TeamAttributes(ModelNormal):
         "created_at": "created_at",
         "description": "description",
         "handle": "handle",
+        "handles": "handles",
         "hidden_modules": "hidden_modules",
         "link_count": "link_count",
         "modified_at": "modified_at",
@@ -78,6 +80,7 @@ class TeamAttributes(ModelNormal):
         banner: Union[int, none_type, UnsetType] = unset,
         created_at: Union[datetime, UnsetType] = unset,
         description: Union[str, none_type, UnsetType] = unset,
+        handles: Union[str, UnsetType] = unset,
         hidden_modules: Union[List[str], UnsetType] = unset,
         link_count: Union[int, UnsetType] = unset,
         modified_at: Union[datetime, UnsetType] = unset,
@@ -103,6 +106,9 @@ class TeamAttributes(ModelNormal):
 
         :param handle: The team's identifier
         :type handle: str
+
+        :param handles: The TeamAttributes handles.
+        :type handles: str, optional
 
         :param hidden_modules: Collection of hidden modules for the team
         :type hidden_modules: [str], optional
@@ -133,6 +139,8 @@ class TeamAttributes(ModelNormal):
             kwargs["created_at"] = created_at
         if description is not unset:
             kwargs["description"] = description
+        if handles is not unset:
+            kwargs["handles"] = handles
         if hidden_modules is not unset:
             kwargs["hidden_modules"] = hidden_modules
         if link_count is not unset:

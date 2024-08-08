@@ -3,11 +3,12 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    none_type,
 )
 
 
@@ -24,7 +25,7 @@ class ConfluentResourceRequestData(ModelNormal):
 
         return {
             "attributes": (ConfluentResourceRequestAttributes,),
-            "id": (str,),
+            "id": (str, none_type),
             "type": (ConfluentResourceType,),
         }
 
@@ -34,15 +35,21 @@ class ConfluentResourceRequestData(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, attributes: ConfluentResourceRequestAttributes, id: str, type: ConfluentResourceType, **kwargs):
+    def __init__(
+        self_,
+        attributes: ConfluentResourceRequestAttributes,
+        id: Union[str, none_type],
+        type: ConfluentResourceType,
+        **kwargs,
+    ):
         """
         JSON:API request for updating a Confluent resource.
 
         :param attributes: Attributes object for updating a Confluent resource.
         :type attributes: ConfluentResourceRequestAttributes
 
-        :param id: The ID associated with a Confluent resource.
-        :type id: str
+        :param id: The ConfluentResourceRequestData id.
+        :type id: str, none_type
 
         :param type: The JSON:API type for this request.
         :type type: ConfluentResourceType

@@ -39,16 +39,28 @@ class ContainerImagesApi:
             },
             params_map={
                 "filter_tags": {
+                    "validation": {
+                        "max_length": 1024,
+                        "min_length": 1,
+                    },
                     "openapi_types": (str,),
                     "attribute": "filter[tags]",
                     "location": "query",
                 },
                 "group_by": {
+                    "validation": {
+                        "max_length": 1024,
+                        "min_length": 1,
+                    },
                     "openapi_types": (str,),
                     "attribute": "group_by",
                     "location": "query",
                 },
                 "sort": {
+                    "validation": {
+                        "max_length": 1024,
+                        "min_length": 1,
+                    },
                     "openapi_types": (str,),
                     "attribute": "sort",
                     "location": "query",
@@ -63,6 +75,9 @@ class ContainerImagesApi:
                     "location": "query",
                 },
                 "page_cursor": {
+                    "validation": {
+                        "min_length": 0,
+                    },
                     "openapi_types": (str,),
                     "attribute": "page[cursor]",
                     "location": "query",

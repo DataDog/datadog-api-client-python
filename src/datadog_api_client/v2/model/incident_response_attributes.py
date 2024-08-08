@@ -27,6 +27,15 @@ if TYPE_CHECKING:
 
 
 class IncidentResponseAttributes(ModelNormal):
+    validations = {
+        "case_id": {
+            "inclusive_minimum": 0,
+        },
+        "duration": {
+            "inclusive_maximum": 2147483647,
+        },
+    }
+
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.incident_field_attributes import IncidentFieldAttributes
@@ -35,16 +44,22 @@ class IncidentResponseAttributes(ModelNormal):
         from datadog_api_client.v2.model.incident_severity import IncidentSeverity
 
         return {
+            "additional_notifications": (str, none_type),
             "archived": (datetime, none_type),
             "case_id": (int, none_type),
             "created": (datetime,),
+            "created_by_uuid": (str, none_type),
+            "creation_idempotency_key": (str, none_type),
             "customer_impact_duration": (int,),
             "customer_impact_end": (datetime, none_type),
             "customer_impact_scope": (str, none_type),
             "customer_impact_start": (datetime, none_type),
             "customer_impacted": (bool,),
             "detected": (datetime, none_type),
+            "duration": (int, none_type),
             "fields": ({str: (IncidentFieldAttributes,)},),
+            "incident_type_uuid": (str, none_type),
+            "last_modified_by_uuid": (str, none_type),
             "modified": (datetime,),
             "non_datadog_creator": (IncidentNonDatadogCreator,),
             "notification_handles": ([IncidentNotificationHandle], none_type),
@@ -61,16 +76,22 @@ class IncidentResponseAttributes(ModelNormal):
         }
 
     attribute_map = {
+        "additional_notifications": "additional_notifications",
         "archived": "archived",
         "case_id": "case_id",
         "created": "created",
+        "created_by_uuid": "created_by_uuid",
+        "creation_idempotency_key": "creation_idempotency_key",
         "customer_impact_duration": "customer_impact_duration",
         "customer_impact_end": "customer_impact_end",
         "customer_impact_scope": "customer_impact_scope",
         "customer_impact_start": "customer_impact_start",
         "customer_impacted": "customer_impacted",
         "detected": "detected",
+        "duration": "duration",
         "fields": "fields",
+        "incident_type_uuid": "incident_type_uuid",
+        "last_modified_by_uuid": "last_modified_by_uuid",
         "modified": "modified",
         "non_datadog_creator": "non_datadog_creator",
         "notification_handles": "notification_handles",
@@ -99,15 +120,19 @@ class IncidentResponseAttributes(ModelNormal):
     def __init__(
         self_,
         title: str,
+        additional_notifications: Union[str, none_type, UnsetType] = unset,
         archived: Union[datetime, none_type, UnsetType] = unset,
         case_id: Union[int, none_type, UnsetType] = unset,
         created: Union[datetime, UnsetType] = unset,
+        created_by_uuid: Union[str, none_type, UnsetType] = unset,
+        creation_idempotency_key: Union[str, none_type, UnsetType] = unset,
         customer_impact_duration: Union[int, UnsetType] = unset,
         customer_impact_end: Union[datetime, none_type, UnsetType] = unset,
         customer_impact_scope: Union[str, none_type, UnsetType] = unset,
         customer_impact_start: Union[datetime, none_type, UnsetType] = unset,
         customer_impacted: Union[bool, UnsetType] = unset,
         detected: Union[datetime, none_type, UnsetType] = unset,
+        duration: Union[int, none_type, UnsetType] = unset,
         fields: Union[
             Dict[
                 str,
@@ -117,6 +142,8 @@ class IncidentResponseAttributes(ModelNormal):
             ],
             UnsetType,
         ] = unset,
+        incident_type_uuid: Union[str, none_type, UnsetType] = unset,
+        last_modified_by_uuid: Union[str, none_type, UnsetType] = unset,
         modified: Union[datetime, UnsetType] = unset,
         non_datadog_creator: Union[IncidentNonDatadogCreator, none_type, UnsetType] = unset,
         notification_handles: Union[List[IncidentNotificationHandle], none_type, UnsetType] = unset,
@@ -134,6 +161,9 @@ class IncidentResponseAttributes(ModelNormal):
         """
         The incident's attributes from a response.
 
+        :param additional_notifications: The IncidentResponseAttributes additional_notifications.
+        :type additional_notifications: str, none_type, optional
+
         :param archived: Timestamp of when the incident was archived.
         :type archived: datetime, none_type, optional
 
@@ -142,6 +172,12 @@ class IncidentResponseAttributes(ModelNormal):
 
         :param created: Timestamp when the incident was created.
         :type created: datetime, optional
+
+        :param created_by_uuid: The IncidentResponseAttributes created_by_uuid.
+        :type created_by_uuid: str, none_type, optional
+
+        :param creation_idempotency_key: The IncidentResponseAttributes creation_idempotency_key.
+        :type creation_idempotency_key: str, none_type, optional
 
         :param customer_impact_duration: Length of the incident's customer impact in seconds.
             Equals the difference between ``customer_impact_start`` and ``customer_impact_end``.
@@ -162,8 +198,17 @@ class IncidentResponseAttributes(ModelNormal):
         :param detected: Timestamp when the incident was detected.
         :type detected: datetime, none_type, optional
 
+        :param duration: The IncidentResponseAttributes duration.
+        :type duration: int, none_type, optional
+
         :param fields: A condensed view of the user-defined fields attached to incidents.
         :type fields: {str: (IncidentFieldAttributes,)}, optional
+
+        :param incident_type_uuid: The IncidentResponseAttributes incident_type_uuid.
+        :type incident_type_uuid: str, none_type, optional
+
+        :param last_modified_by_uuid: The IncidentResponseAttributes last_modified_by_uuid.
+        :type last_modified_by_uuid: str, none_type, optional
 
         :param modified: Timestamp when the incident was last modified.
         :type modified: datetime, optional
@@ -205,12 +250,18 @@ class IncidentResponseAttributes(ModelNormal):
         :param visibility: The incident visibility status.
         :type visibility: str, none_type, optional
         """
+        if additional_notifications is not unset:
+            kwargs["additional_notifications"] = additional_notifications
         if archived is not unset:
             kwargs["archived"] = archived
         if case_id is not unset:
             kwargs["case_id"] = case_id
         if created is not unset:
             kwargs["created"] = created
+        if created_by_uuid is not unset:
+            kwargs["created_by_uuid"] = created_by_uuid
+        if creation_idempotency_key is not unset:
+            kwargs["creation_idempotency_key"] = creation_idempotency_key
         if customer_impact_duration is not unset:
             kwargs["customer_impact_duration"] = customer_impact_duration
         if customer_impact_end is not unset:
@@ -223,8 +274,14 @@ class IncidentResponseAttributes(ModelNormal):
             kwargs["customer_impacted"] = customer_impacted
         if detected is not unset:
             kwargs["detected"] = detected
+        if duration is not unset:
+            kwargs["duration"] = duration
         if fields is not unset:
             kwargs["fields"] = fields
+        if incident_type_uuid is not unset:
+            kwargs["incident_type_uuid"] = incident_type_uuid
+        if last_modified_by_uuid is not unset:
+            kwargs["last_modified_by_uuid"] = last_modified_by_uuid
         if modified is not unset:
             kwargs["modified"] = modified
         if non_datadog_creator is not unset:

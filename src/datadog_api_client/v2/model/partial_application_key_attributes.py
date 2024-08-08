@@ -8,6 +8,7 @@ from typing import List, Union
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    datetime,
     none_type,
     unset,
     UnsetType,
@@ -25,7 +26,7 @@ class PartialApplicationKeyAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
-            "created_at": (str,),
+            "created_at": (datetime,),
             "last4": (str,),
             "name": (str,),
             "scopes": ([str], none_type),
@@ -44,7 +45,7 @@ class PartialApplicationKeyAttributes(ModelNormal):
 
     def __init__(
         self_,
-        created_at: Union[str, UnsetType] = unset,
+        created_at: Union[datetime, UnsetType] = unset,
         last4: Union[str, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
         scopes: Union[List[str], none_type, UnsetType] = unset,
@@ -54,7 +55,7 @@ class PartialApplicationKeyAttributes(ModelNormal):
         Attributes of a partial application key.
 
         :param created_at: Creation date of the application key.
-        :type created_at: str, optional
+        :type created_at: datetime, optional
 
         :param last4: The last four characters of the application key.
         :type last4: str, optional

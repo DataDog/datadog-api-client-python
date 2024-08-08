@@ -15,42 +15,28 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.relationship_to_team_link_data import RelationshipToTeamLinkData
-    from datadog_api_client.v2.model.team_relationships_links import TeamRelationshipsLinks
 
 
 class RelationshipToTeamLinks(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.relationship_to_team_link_data import RelationshipToTeamLinkData
-        from datadog_api_client.v2.model.team_relationships_links import TeamRelationshipsLinks
 
         return {
             "data": ([RelationshipToTeamLinkData],),
-            "links": (TeamRelationshipsLinks,),
         }
 
     attribute_map = {
         "data": "data",
-        "links": "links",
     }
 
-    def __init__(
-        self_,
-        data: Union[List[RelationshipToTeamLinkData], UnsetType] = unset,
-        links: Union[TeamRelationshipsLinks, UnsetType] = unset,
-        **kwargs,
-    ):
+    def __init__(self_, data: Union[List[RelationshipToTeamLinkData], UnsetType] = unset, **kwargs):
         """
         Relationship between a team and a team link
 
         :param data: Related team links
         :type data: [RelationshipToTeamLinkData], optional
-
-        :param links: Links attributes.
-        :type links: TeamRelationshipsLinks, optional
         """
         if data is not unset:
             kwargs["data"] = data
-        if links is not unset:
-            kwargs["links"] = links
         super().__init__(kwargs)

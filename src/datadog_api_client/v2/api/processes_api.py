@@ -39,11 +39,19 @@ class ProcessesApi:
             },
             params_map={
                 "search": {
+                    "validation": {
+                        "max_length": 1024,
+                        "min_length": 1,
+                    },
                     "openapi_types": (str,),
                     "attribute": "search",
                     "location": "query",
                 },
                 "tags": {
+                    "validation": {
+                        "max_length": 1024,
+                        "min_length": 1,
+                    },
                     "openapi_types": (str,),
                     "attribute": "tags",
                     "location": "query",
@@ -68,6 +76,10 @@ class ProcessesApi:
                     "location": "query",
                 },
                 "page_cursor": {
+                    "validation": {
+                        "max_length": 56,
+                        "min_length": 56,
+                    },
                     "openapi_types": (str,),
                     "attribute": "page[cursor]",
                     "location": "query",

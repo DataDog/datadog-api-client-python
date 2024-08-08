@@ -26,26 +26,39 @@ class UserTeamUpdate(ModelNormal):
 
         return {
             "attributes": (UserTeamAttributes,),
+            "id": (str,),
             "type": (UserTeamType,),
         }
 
     attribute_map = {
         "attributes": "attributes",
+        "id": "id",
         "type": "type",
     }
 
-    def __init__(self_, type: UserTeamType, attributes: Union[UserTeamAttributes, UnsetType] = unset, **kwargs):
+    def __init__(
+        self_,
+        type: UserTeamType,
+        attributes: Union[UserTeamAttributes, UnsetType] = unset,
+        id: Union[str, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         A user's relationship with a team
 
         :param attributes: Team membership attributes
         :type attributes: UserTeamAttributes, optional
 
+        :param id: ID of user team
+        :type id: str, optional
+
         :param type: Team membership type
         :type type: UserTeamType
         """
         if attributes is not unset:
             kwargs["attributes"] = attributes
+        if id is not unset:
+            kwargs["id"] = id
         super().__init__(kwargs)
 
         self_.type = type

@@ -19,6 +19,12 @@ if TYPE_CHECKING:
 
 
 class OpsgenieServiceResponseAttributes(ModelNormal):
+    validations = {
+        "name": {
+            "max_length": 100,
+        },
+    }
+
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.opsgenie_service_region_type import OpsgenieServiceRegionType
@@ -26,12 +32,14 @@ class OpsgenieServiceResponseAttributes(ModelNormal):
         return {
             "custom_url": (str, none_type),
             "name": (str,),
+            "opsgenie_api_key": (str,),
             "region": (OpsgenieServiceRegionType,),
         }
 
     attribute_map = {
         "custom_url": "custom_url",
         "name": "name",
+        "opsgenie_api_key": "opsgenie_api_key",
         "region": "region",
     }
 
@@ -39,6 +47,7 @@ class OpsgenieServiceResponseAttributes(ModelNormal):
         self_,
         custom_url: Union[str, none_type, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
+        opsgenie_api_key: Union[str, UnsetType] = unset,
         region: Union[OpsgenieServiceRegionType, UnsetType] = unset,
         **kwargs,
     ):
@@ -51,6 +60,9 @@ class OpsgenieServiceResponseAttributes(ModelNormal):
         :param name: The name for the Opsgenie service.
         :type name: str, optional
 
+        :param opsgenie_api_key: The OpsgenieServiceResponseAttributes opsgenie_api_key.
+        :type opsgenie_api_key: str, optional
+
         :param region: The region for the Opsgenie service.
         :type region: OpsgenieServiceRegionType, optional
         """
@@ -58,6 +70,8 @@ class OpsgenieServiceResponseAttributes(ModelNormal):
             kwargs["custom_url"] = custom_url
         if name is not unset:
             kwargs["name"] = name
+        if opsgenie_api_key is not unset:
+            kwargs["opsgenie_api_key"] = opsgenie_api_key
         if region is not unset:
             kwargs["region"] = region
         super().__init__(kwargs)
