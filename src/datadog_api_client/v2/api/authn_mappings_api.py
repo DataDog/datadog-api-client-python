@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Any, Dict, Union
+from typing import Any, Dict, List, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
@@ -108,11 +108,18 @@ class AuthNMappingsApi:
             },
             params_map={
                 "page_size": {
+                    "validation": {
+                        "inclusive_maximum": 9223372036854775807,
+                        "inclusive_minimum": 1,
+                    },
                     "openapi_types": (int,),
                     "attribute": "page[size]",
                     "location": "query",
                 },
                 "page_number": {
+                    "validation": {
+                        "inclusive_minimum": 0,
+                    },
                     "openapi_types": (int,),
                     "attribute": "page[number]",
                     "location": "query",
@@ -131,6 +138,12 @@ class AuthNMappingsApi:
                     "openapi_types": (AuthNMappingResourceType,),
                     "attribute": "resource_type",
                     "location": "query",
+                },
+                "include": {
+                    "openapi_types": ([str],),
+                    "attribute": "include",
+                    "location": "query",
+                    "collection_format": "multi",
                 },
             },
             headers_map={
@@ -223,6 +236,7 @@ class AuthNMappingsApi:
         sort: Union[AuthNMappingsSort, UnsetType] = unset,
         filter: Union[str, UnsetType] = unset,
         resource_type: Union[AuthNMappingResourceType, UnsetType] = unset,
+        include: Union[List[str], UnsetType] = unset,
     ) -> AuthNMappingsResponse:
         """List all AuthN Mappings.
 
@@ -238,6 +252,8 @@ class AuthNMappingsApi:
         :type filter: str, optional
         :param resource_type: Filter by mapping resource type. Defaults to "role" if not specified.
         :type resource_type: AuthNMappingResourceType, optional
+        :param include: include mapping
+        :type include: [str], optional
         :rtype: AuthNMappingsResponse
         """
         kwargs: Dict[str, Any] = {}
@@ -255,6 +271,9 @@ class AuthNMappingsApi:
 
         if resource_type is not unset:
             kwargs["resource_type"] = resource_type
+
+        if include is not unset:
+            kwargs["include"] = include
 
         return self._list_authn_mappings_endpoint.call_with_http_info(**kwargs)
 

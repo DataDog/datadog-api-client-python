@@ -3,11 +3,12 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Any, Dict, Union
+from typing import Any, Dict, List, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
 from datadog_api_client.model_utils import (
+    datetime,
     UnsetType,
     unset,
 )
@@ -15,6 +16,9 @@ from datadog_api_client.v2.model.user_response import UserResponse
 from datadog_api_client.v2.model.service_account_create_request import ServiceAccountCreateRequest
 from datadog_api_client.v2.model.list_application_keys_response import ListApplicationKeysResponse
 from datadog_api_client.v2.model.application_keys_sort import ApplicationKeysSort
+from datadog_api_client.v2.model.list_service_account_application_keys_include import (
+    ListServiceAccountApplicationKeysInclude,
+)
 from datadog_api_client.v2.model.application_key_response import ApplicationKeyResponse
 from datadog_api_client.v2.model.application_key_create_request import ApplicationKeyCreateRequest
 from datadog_api_client.v2.model.partial_application_key_response import PartialApplicationKeyResponse
@@ -152,11 +156,18 @@ class ServiceAccountsApi:
                     "location": "path",
                 },
                 "page_size": {
+                    "validation": {
+                        "inclusive_maximum": 9223372036854775807,
+                        "inclusive_minimum": 1,
+                    },
                     "openapi_types": (int,),
                     "attribute": "page[size]",
                     "location": "query",
                 },
                 "page_number": {
+                    "validation": {
+                        "inclusive_minimum": 0,
+                    },
                     "openapi_types": (int,),
                     "attribute": "page[number]",
                     "location": "query",
@@ -172,14 +183,20 @@ class ServiceAccountsApi:
                     "location": "query",
                 },
                 "filter_created_at_start": {
-                    "openapi_types": (str,),
+                    "openapi_types": (datetime,),
                     "attribute": "filter[created_at][start]",
                     "location": "query",
                 },
                 "filter_created_at_end": {
-                    "openapi_types": (str,),
+                    "openapi_types": (datetime,),
                     "attribute": "filter[created_at][end]",
                     "location": "query",
+                },
+                "include": {
+                    "openapi_types": ([ListServiceAccountApplicationKeysInclude],),
+                    "attribute": "include",
+                    "location": "query",
+                    "collection_format": "multi",
                 },
             },
             headers_map={
@@ -309,8 +326,9 @@ class ServiceAccountsApi:
         page_number: Union[int, UnsetType] = unset,
         sort: Union[ApplicationKeysSort, UnsetType] = unset,
         filter: Union[str, UnsetType] = unset,
-        filter_created_at_start: Union[str, UnsetType] = unset,
-        filter_created_at_end: Union[str, UnsetType] = unset,
+        filter_created_at_start: Union[datetime, UnsetType] = unset,
+        filter_created_at_end: Union[datetime, UnsetType] = unset,
+        include: Union[List[ListServiceAccountApplicationKeysInclude], UnsetType] = unset,
     ) -> ListApplicationKeysResponse:
         """List application keys for this service account.
 
@@ -329,9 +347,11 @@ class ServiceAccountsApi:
         :param filter: Filter application keys by the specified string.
         :type filter: str, optional
         :param filter_created_at_start: Only include application keys created on or after the specified date.
-        :type filter_created_at_start: str, optional
+        :type filter_created_at_start: datetime, optional
         :param filter_created_at_end: Only include application keys created on or before the specified date.
-        :type filter_created_at_end: str, optional
+        :type filter_created_at_end: datetime, optional
+        :param include: service account id
+        :type include: [ListServiceAccountApplicationKeysInclude], optional
         :rtype: ListApplicationKeysResponse
         """
         kwargs: Dict[str, Any] = {}
@@ -354,6 +374,9 @@ class ServiceAccountsApi:
 
         if filter_created_at_end is not unset:
             kwargs["filter_created_at_end"] = filter_created_at_end
+
+        if include is not unset:
+            kwargs["include"] = include
 
         return self._list_service_account_application_keys_endpoint.call_with_http_info(**kwargs)
 

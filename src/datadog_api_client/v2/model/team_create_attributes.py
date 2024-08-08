@@ -19,6 +19,9 @@ class TeamCreateAttributes(ModelNormal):
         "handle": {
             "max_length": 195,
         },
+        "link_count": {
+            "inclusive_maximum": 2147483647,
+        },
         "name": {
             "max_length": 200,
         },
@@ -31,8 +34,11 @@ class TeamCreateAttributes(ModelNormal):
             "banner": (int, none_type),
             "description": (str,),
             "handle": (str,),
+            "handles": (str,),
             "hidden_modules": ([str],),
+            "link_count": (int,),
             "name": (str,),
+            "summary": (str,),
             "visible_modules": ([str],),
         }
 
@@ -41,9 +47,16 @@ class TeamCreateAttributes(ModelNormal):
         "banner": "banner",
         "description": "description",
         "handle": "handle",
+        "handles": "handles",
         "hidden_modules": "hidden_modules",
+        "link_count": "link_count",
         "name": "name",
+        "summary": "summary",
         "visible_modules": "visible_modules",
+    }
+    read_only_vars = {
+        "link_count",
+        "summary",
     }
 
     def __init__(
@@ -53,7 +66,10 @@ class TeamCreateAttributes(ModelNormal):
         avatar: Union[str, none_type, UnsetType] = unset,
         banner: Union[int, none_type, UnsetType] = unset,
         description: Union[str, UnsetType] = unset,
+        handles: Union[str, UnsetType] = unset,
         hidden_modules: Union[List[str], UnsetType] = unset,
+        link_count: Union[int, UnsetType] = unset,
+        summary: Union[str, UnsetType] = unset,
         visible_modules: Union[List[str], UnsetType] = unset,
         **kwargs,
     ):
@@ -72,11 +88,20 @@ class TeamCreateAttributes(ModelNormal):
         :param handle: The team's identifier
         :type handle: str
 
+        :param handles: The TeamCreateAttributes handles.
+        :type handles: str, optional
+
         :param hidden_modules: Collection of hidden modules for the team
         :type hidden_modules: [str], optional
 
+        :param link_count: The number of links belonging to the team
+        :type link_count: int, optional
+
         :param name: The name of the team
         :type name: str
+
+        :param summary: A brief summary of the team
+        :type summary: str, optional
 
         :param visible_modules: Collection of visible modules for the team
         :type visible_modules: [str], optional
@@ -87,8 +112,14 @@ class TeamCreateAttributes(ModelNormal):
             kwargs["banner"] = banner
         if description is not unset:
             kwargs["description"] = description
+        if handles is not unset:
+            kwargs["handles"] = handles
         if hidden_modules is not unset:
             kwargs["hidden_modules"] = hidden_modules
+        if link_count is not unset:
+            kwargs["link_count"] = link_count
+        if summary is not unset:
+            kwargs["summary"] = summary
         if visible_modules is not unset:
             kwargs["visible_modules"] = visible_modules
         super().__init__(kwargs)

@@ -116,6 +116,10 @@ class IncidentServicesApi:
                     "location": "query",
                 },
                 "page_size": {
+                    "validation": {
+                        "inclusive_maximum": 9223372036854775807,
+                        "inclusive_minimum": 1,
+                    },
                     "openapi_types": (int,),
                     "attribute": "page[size]",
                     "location": "query",

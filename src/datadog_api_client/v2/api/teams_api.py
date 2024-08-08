@@ -291,11 +291,18 @@ class TeamsApi:
                     "location": "path",
                 },
                 "page_size": {
+                    "validation": {
+                        "inclusive_maximum": 9223372036854775807,
+                        "inclusive_minimum": 1,
+                    },
                     "openapi_types": (int,),
                     "attribute": "page[size]",
                     "location": "query",
                 },
                 "page_number": {
+                    "validation": {
+                        "inclusive_minimum": 0,
+                    },
                     "openapi_types": (int,),
                     "attribute": "page[number]",
                     "location": "query",
@@ -374,11 +381,18 @@ class TeamsApi:
             },
             params_map={
                 "page_number": {
+                    "validation": {
+                        "inclusive_minimum": 0,
+                    },
                     "openapi_types": (int,),
                     "attribute": "page[number]",
                     "location": "query",
                 },
                 "page_size": {
+                    "validation": {
+                        "inclusive_maximum": 9223372036854775807,
+                        "inclusive_minimum": 1,
+                    },
                     "openapi_types": (int,),
                     "attribute": "page[size]",
                     "location": "query",

@@ -19,16 +19,25 @@ class ConfluentAccountUpdateRequestAttributes(ModelNormal):
         return {
             "api_key": (str,),
             "api_secret": (str,),
+            "resources": (str,),
             "tags": ([str],),
         }
 
     attribute_map = {
         "api_key": "api_key",
         "api_secret": "api_secret",
+        "resources": "resources",
         "tags": "tags",
     }
 
-    def __init__(self_, api_key: str, api_secret: str, tags: Union[List[str], UnsetType] = unset, **kwargs):
+    def __init__(
+        self_,
+        api_key: str,
+        api_secret: str,
+        resources: Union[str, UnsetType] = unset,
+        tags: Union[List[str], UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Attributes object for updating a Confluent account.
 
@@ -38,9 +47,14 @@ class ConfluentAccountUpdateRequestAttributes(ModelNormal):
         :param api_secret: The API secret associated with your Confluent account.
         :type api_secret: str
 
+        :param resources: The ConfluentAccountUpdateRequestAttributes resources.
+        :type resources: str, optional
+
         :param tags: A list of strings representing tags. Can be a single key, or key-value pairs separated by a colon.
         :type tags: [str], optional
         """
+        if resources is not unset:
+            kwargs["resources"] = resources
         if tags is not unset:
             kwargs["tags"] = tags
         super().__init__(kwargs)

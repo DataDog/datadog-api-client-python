@@ -16,8 +16,6 @@ from datadog_api_client.model_utils import (
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.user_team import UserTeam
     from datadog_api_client.v2.model.user_team_included import UserTeamIncluded
-    from datadog_api_client.v2.model.teams_response_links import TeamsResponseLinks
-    from datadog_api_client.v2.model.teams_response_meta import TeamsResponseMeta
     from datadog_api_client.v2.model.user import User
     from datadog_api_client.v2.model.team import Team
 
@@ -27,29 +25,21 @@ class UserTeamsResponse(ModelNormal):
     def openapi_types(_):
         from datadog_api_client.v2.model.user_team import UserTeam
         from datadog_api_client.v2.model.user_team_included import UserTeamIncluded
-        from datadog_api_client.v2.model.teams_response_links import TeamsResponseLinks
-        from datadog_api_client.v2.model.teams_response_meta import TeamsResponseMeta
 
         return {
             "data": ([UserTeam],),
             "included": ([UserTeamIncluded],),
-            "links": (TeamsResponseLinks,),
-            "meta": (TeamsResponseMeta,),
         }
 
     attribute_map = {
         "data": "data",
         "included": "included",
-        "links": "links",
-        "meta": "meta",
     }
 
     def __init__(
         self_,
         data: Union[List[UserTeam], UnsetType] = unset,
         included: Union[List[Union[UserTeamIncluded, User, Team]], UnsetType] = unset,
-        links: Union[TeamsResponseLinks, UnsetType] = unset,
-        meta: Union[TeamsResponseMeta, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -60,19 +50,9 @@ class UserTeamsResponse(ModelNormal):
 
         :param included: Resources related to the team memberships
         :type included: [UserTeamIncluded], optional
-
-        :param links: Teams response links.
-        :type links: TeamsResponseLinks, optional
-
-        :param meta: Teams response metadata.
-        :type meta: TeamsResponseMeta, optional
         """
         if data is not unset:
             kwargs["data"] = data
         if included is not unset:
             kwargs["included"] = included
-        if links is not unset:
-            kwargs["links"] = links
-        if meta is not unset:
-            kwargs["meta"] = meta
         super().__init__(kwargs)

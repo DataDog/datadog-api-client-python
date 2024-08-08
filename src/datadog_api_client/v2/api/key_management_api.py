@@ -8,6 +8,7 @@ from typing import Any, Dict, Union
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
 from datadog_api_client.model_utils import (
+    datetime,
     UnsetType,
     unset,
 )
@@ -194,6 +195,11 @@ class KeyManagementApi:
                     "attribute": "include",
                     "location": "query",
                 },
+                "hide_key": {
+                    "openapi_types": (bool,),
+                    "attribute": "hide_key",
+                    "location": "query",
+                },
             },
             headers_map={
                 "accept": ["application/json"],
@@ -235,11 +241,18 @@ class KeyManagementApi:
             },
             params_map={
                 "page_size": {
+                    "validation": {
+                        "inclusive_maximum": 9223372036854775807,
+                        "inclusive_minimum": 1,
+                    },
                     "openapi_types": (int,),
                     "attribute": "page[size]",
                     "location": "query",
                 },
                 "page_number": {
+                    "validation": {
+                        "inclusive_minimum": 0,
+                    },
                     "openapi_types": (int,),
                     "attribute": "page[number]",
                     "location": "query",
@@ -255,22 +268,22 @@ class KeyManagementApi:
                     "location": "query",
                 },
                 "filter_created_at_start": {
-                    "openapi_types": (str,),
+                    "openapi_types": (datetime,),
                     "attribute": "filter[created_at][start]",
                     "location": "query",
                 },
                 "filter_created_at_end": {
-                    "openapi_types": (str,),
+                    "openapi_types": (datetime,),
                     "attribute": "filter[created_at][end]",
                     "location": "query",
                 },
                 "filter_modified_at_start": {
-                    "openapi_types": (str,),
+                    "openapi_types": (datetime,),
                     "attribute": "filter[modified_at][start]",
                     "location": "query",
                 },
                 "filter_modified_at_end": {
-                    "openapi_types": (str,),
+                    "openapi_types": (datetime,),
                     "attribute": "filter[modified_at][end]",
                     "location": "query",
                 },
@@ -307,11 +320,18 @@ class KeyManagementApi:
             },
             params_map={
                 "page_size": {
+                    "validation": {
+                        "inclusive_maximum": 9223372036854775807,
+                        "inclusive_minimum": 1,
+                    },
                     "openapi_types": (int,),
                     "attribute": "page[size]",
                     "location": "query",
                 },
                 "page_number": {
+                    "validation": {
+                        "inclusive_minimum": 0,
+                    },
                     "openapi_types": (int,),
                     "attribute": "page[number]",
                     "location": "query",
@@ -327,12 +347,12 @@ class KeyManagementApi:
                     "location": "query",
                 },
                 "filter_created_at_start": {
-                    "openapi_types": (str,),
+                    "openapi_types": (datetime,),
                     "attribute": "filter[created_at][start]",
                     "location": "query",
                 },
                 "filter_created_at_end": {
-                    "openapi_types": (str,),
+                    "openapi_types": (datetime,),
                     "attribute": "filter[created_at][end]",
                     "location": "query",
                 },
@@ -359,11 +379,18 @@ class KeyManagementApi:
             },
             params_map={
                 "page_size": {
+                    "validation": {
+                        "inclusive_maximum": 9223372036854775807,
+                        "inclusive_minimum": 1,
+                    },
                     "openapi_types": (int,),
                     "attribute": "page[size]",
                     "location": "query",
                 },
                 "page_number": {
+                    "validation": {
+                        "inclusive_minimum": 0,
+                    },
                     "openapi_types": (int,),
                     "attribute": "page[number]",
                     "location": "query",
@@ -379,12 +406,12 @@ class KeyManagementApi:
                     "location": "query",
                 },
                 "filter_created_at_start": {
-                    "openapi_types": (str,),
+                    "openapi_types": (datetime,),
                     "attribute": "filter[created_at][start]",
                     "location": "query",
                 },
                 "filter_created_at_end": {
-                    "openapi_types": (str,),
+                    "openapi_types": (datetime,),
                     "attribute": "filter[created_at][end]",
                     "location": "query",
                 },
@@ -590,6 +617,7 @@ class KeyManagementApi:
         app_key_id: str,
         *,
         include: Union[str, UnsetType] = unset,
+        hide_key: Union[bool, UnsetType] = unset,
     ) -> ApplicationKeyResponse:
         """Get an application key.
 
@@ -599,6 +627,8 @@ class KeyManagementApi:
         :type app_key_id: str
         :param include: Resource path for related resources to include in the response. Only ``owned_by`` is supported.
         :type include: str, optional
+        :param hide_key: app key id
+        :type hide_key: bool, optional
         :rtype: ApplicationKeyResponse
         """
         kwargs: Dict[str, Any] = {}
@@ -606,6 +636,9 @@ class KeyManagementApi:
 
         if include is not unset:
             kwargs["include"] = include
+
+        if hide_key is not unset:
+            kwargs["hide_key"] = hide_key
 
         return self._get_application_key_endpoint.call_with_http_info(**kwargs)
 
@@ -633,10 +666,10 @@ class KeyManagementApi:
         page_number: Union[int, UnsetType] = unset,
         sort: Union[APIKeysSort, UnsetType] = unset,
         filter: Union[str, UnsetType] = unset,
-        filter_created_at_start: Union[str, UnsetType] = unset,
-        filter_created_at_end: Union[str, UnsetType] = unset,
-        filter_modified_at_start: Union[str, UnsetType] = unset,
-        filter_modified_at_end: Union[str, UnsetType] = unset,
+        filter_created_at_start: Union[datetime, UnsetType] = unset,
+        filter_created_at_end: Union[datetime, UnsetType] = unset,
+        filter_modified_at_start: Union[datetime, UnsetType] = unset,
+        filter_modified_at_end: Union[datetime, UnsetType] = unset,
         include: Union[str, UnsetType] = unset,
         filter_remote_config_read_enabled: Union[bool, UnsetType] = unset,
         filter_category: Union[str, UnsetType] = unset,
@@ -656,13 +689,13 @@ class KeyManagementApi:
         :param filter: Filter API keys by the specified string.
         :type filter: str, optional
         :param filter_created_at_start: Only include API keys created on or after the specified date.
-        :type filter_created_at_start: str, optional
+        :type filter_created_at_start: datetime, optional
         :param filter_created_at_end: Only include API keys created on or before the specified date.
-        :type filter_created_at_end: str, optional
+        :type filter_created_at_end: datetime, optional
         :param filter_modified_at_start: Only include API keys modified on or after the specified date.
-        :type filter_modified_at_start: str, optional
+        :type filter_modified_at_start: datetime, optional
         :param filter_modified_at_end: Only include API keys modified on or before the specified date.
-        :type filter_modified_at_end: str, optional
+        :type filter_modified_at_end: datetime, optional
         :param include: Comma separated list of resource paths for related resources to include in the response. Supported resource paths are ``created_by`` and ``modified_by``.
         :type include: str, optional
         :param filter_remote_config_read_enabled: Filter API keys by remote config read enabled status.
@@ -714,8 +747,8 @@ class KeyManagementApi:
         page_number: Union[int, UnsetType] = unset,
         sort: Union[ApplicationKeysSort, UnsetType] = unset,
         filter: Union[str, UnsetType] = unset,
-        filter_created_at_start: Union[str, UnsetType] = unset,
-        filter_created_at_end: Union[str, UnsetType] = unset,
+        filter_created_at_start: Union[datetime, UnsetType] = unset,
+        filter_created_at_end: Union[datetime, UnsetType] = unset,
         include: Union[str, UnsetType] = unset,
     ) -> ListApplicationKeysResponse:
         """Get all application keys.
@@ -733,9 +766,9 @@ class KeyManagementApi:
         :param filter: Filter application keys by the specified string.
         :type filter: str, optional
         :param filter_created_at_start: Only include application keys created on or after the specified date.
-        :type filter_created_at_start: str, optional
+        :type filter_created_at_start: datetime, optional
         :param filter_created_at_end: Only include application keys created on or before the specified date.
-        :type filter_created_at_end: str, optional
+        :type filter_created_at_end: datetime, optional
         :param include: Resource path for related resources to include in the response. Only ``owned_by`` is supported.
         :type include: str, optional
         :rtype: ListApplicationKeysResponse
@@ -771,8 +804,8 @@ class KeyManagementApi:
         page_number: Union[int, UnsetType] = unset,
         sort: Union[ApplicationKeysSort, UnsetType] = unset,
         filter: Union[str, UnsetType] = unset,
-        filter_created_at_start: Union[str, UnsetType] = unset,
-        filter_created_at_end: Union[str, UnsetType] = unset,
+        filter_created_at_start: Union[datetime, UnsetType] = unset,
+        filter_created_at_end: Union[datetime, UnsetType] = unset,
         include: Union[str, UnsetType] = unset,
     ) -> ListApplicationKeysResponse:
         """Get all application keys owned by current user.
@@ -790,9 +823,9 @@ class KeyManagementApi:
         :param filter: Filter application keys by the specified string.
         :type filter: str, optional
         :param filter_created_at_start: Only include application keys created on or after the specified date.
-        :type filter_created_at_start: str, optional
+        :type filter_created_at_start: datetime, optional
         :param filter_created_at_end: Only include application keys created on or before the specified date.
-        :type filter_created_at_end: str, optional
+        :type filter_created_at_end: datetime, optional
         :param include: Resource path for related resources to include in the response. Only ``owned_by`` is supported.
         :type include: str, optional
         :rtype: ListApplicationKeysResponse

@@ -18,6 +18,7 @@ components:
       required: false
       schema:
         example: '2020-11-24T18:46:21+00:00'
+        format: date-time
         type: string
     APIKeyFilterCreatedAtStartParameter:
       description: Only include API keys created on or after the specified date.
@@ -26,6 +27,7 @@ components:
       required: false
       schema:
         example: '2020-11-24T18:46:21+00:00'
+        format: date-time
         type: string
     APIKeyFilterModifiedAtEndParameter:
       description: Only include API keys modified on or before the specified date.
@@ -34,6 +36,7 @@ components:
       required: false
       schema:
         example: '2020-11-24T18:46:21+00:00'
+        format: date-time
         type: string
     APIKeyFilterModifiedAtStartParameter:
       description: Only include API keys modified on or after the specified date.
@@ -42,6 +45,7 @@ components:
       required: false
       schema:
         example: '2020-11-24T18:46:21+00:00'
+        format: date-time
         type: string
     APIKeyFilterParameter:
       description: Filter API keys by the specified string.
@@ -92,6 +96,7 @@ components:
       required: false
       schema:
         example: '2020-11-24T18:46:21+00:00'
+        format: date-time
         type: string
     ApplicationKeyFilterCreatedAtStartParameter:
       description: Only include application keys created on or after the specified
@@ -101,6 +106,7 @@ components:
       required: false
       schema:
         example: '2020-11-24T18:46:21+00:00'
+        format: date-time
         type: string
     ApplicationKeyFilterParameter:
       description: Filter application keys by the specified string.
@@ -404,6 +410,7 @@ components:
         default: 0
         example: 0
         format: int64
+        minimum: 0
         type: integer
     PageOffset:
       description: Specific offset to use as the beginning of the returned page.
@@ -424,6 +431,8 @@ components:
         default: 10
         example: 10
         format: int64
+        maximum: 9223372036854775807
+        minimum: 1
         type: integer
     ProjectIDPathParameter:
       description: Project UUID
@@ -673,10 +682,16 @@ components:
     APIKeyCreateAttributes:
       description: Attributes used to create an API Key.
       properties:
+        category:
+          description: The APIKeyCreateAttributes category.
+          type: string
         name:
           description: Name of the API key.
           example: API Key for submitting metrics
           type: string
+        remote_config_read_enabled:
+          description: The APIKeyCreateAttributes remote_config_read_enabled.
+          type: boolean
       required:
       - name
       type: object
@@ -725,10 +740,16 @@ components:
     APIKeyUpdateAttributes:
       description: Attributes used to update an API Key.
       properties:
+        category:
+          description: The APIKeyUpdateAttributes category.
+          type: string
         name:
           description: Name of the API key.
           example: API Key for submitting metrics
           type: string
+        remote_config_read_enabled:
+          description: The APIKeyUpdateAttributes remote_config_read_enabled.
+          type: boolean
       required:
       - name
       type: object
@@ -769,26 +790,6 @@ components:
           items:
             $ref: '#/components/schemas/APIKeyResponseIncludedItem'
           type: array
-        meta:
-          $ref: '#/components/schemas/APIKeysResponseMeta'
-      type: object
-    APIKeysResponseMeta:
-      description: Additional information related to api keys response.
-      properties:
-        max_allowed:
-          description: Max allowed number of API keys.
-          format: int64
-          type: integer
-        page:
-          $ref: '#/components/schemas/APIKeysResponseMetaPage'
-      type: object
-    APIKeysResponseMetaPage:
-      description: Additional information related to the API keys response.
-      properties:
-        total_filtered_count:
-          description: Total filtered application key count.
-          format: int64
-          type: integer
       type: object
     APIKeysSort:
       default: name
@@ -922,6 +923,13 @@ components:
     ApplicationKeyCreateAttributes:
       description: Attributes used to create an application Key.
       properties:
+        created_at:
+          description: The ApplicationKeyCreateAttributes created_at.
+          format: date-time
+          type: string
+        last4:
+          description: The ApplicationKeyCreateAttributes last4.
+          type: string
         name:
           description: Name of the application key.
           example: Application Key for managing dashboards
@@ -961,9 +969,7 @@ components:
       type: object
     ApplicationKeyRelationships:
       description: Resources related to the application key.
-      properties:
-        owned_by:
-          $ref: '#/components/schemas/RelationshipToUser'
+      properties: {}
       type: object
     ApplicationKeyResponse:
       description: Response for retrieving an application key.
@@ -981,27 +987,16 @@ components:
       oneOf:
       - $ref: '#/components/schemas/User'
       - $ref: '#/components/schemas/Role'
-    ApplicationKeyResponseMeta:
-      description: Additional information related to the application key response.
-      properties:
-        max_allowed_per_user:
-          description: Max allowed number of application keys per user.
-          format: int64
-          type: integer
-        page:
-          $ref: '#/components/schemas/ApplicationKeyResponseMetaPage'
-      type: object
-    ApplicationKeyResponseMetaPage:
-      description: Additional information related to the application key response.
-      properties:
-        total_filtered_count:
-          description: Total filtered application key count.
-          format: int64
-          type: integer
-      type: object
     ApplicationKeyUpdateAttributes:
       description: Attributes used to update an application Key.
       properties:
+        created_at:
+          description: The ApplicationKeyUpdateAttributes created_at.
+          format: date-time
+          type: string
+        last4:
+          description: The ApplicationKeyUpdateAttributes last4.
+          type: string
         name:
           description: Name of the application key.
           example: Application Key for managing dashboards
@@ -1536,8 +1531,6 @@ components:
           items:
             $ref: '#/components/schemas/AuthNMappingIncluded'
           type: array
-        meta:
-          $ref: '#/components/schemas/ResponseMetaAttributes'
       type: object
     AuthNMappingsSort:
       description: Sorting options for AuthN Mappings.
@@ -4412,6 +4405,10 @@ components:
     CloudflareAccountResponseAttributes:
       description: Attributes object of a Cloudflare account.
       properties:
+        api_key:
+          description: The CloudflareAccountResponseAttributes api_key.
+          type: string
+          writeOnly: true
         email:
           description: The email associated with the Cloudflare account.
           example: test-email@example.com
@@ -4483,6 +4480,9 @@ components:
           description: The email associated with the Cloudflare account. If an API
             key is provided (and not a token), this field is also required.
           example: test-email@example.com
+          type: string
+        name:
+          description: The CloudflareAccountUpdateRequestAttributes name.
           type: string
         resources:
           description: An allowlist of resources to restrict pulling metrics for.
@@ -4674,6 +4674,9 @@ components:
           description: The API secret associated with your Confluent account.
           example: test-api-secret-123
           type: string
+        resources:
+          description: The ConfluentAccountUpdateRequestAttributes resources.
+          type: string
         tags:
           description: A list of strings representing tags. Can be a single key, or
             key-value pairs separated by a colon.
@@ -4747,8 +4750,9 @@ components:
         attributes:
           $ref: '#/components/schemas/ConfluentResourceRequestAttributes'
         id:
-          description: The ID associated with a Confluent resource.
+          description: The ConfluentResourceRequestData id.
           example: resource-id-123
+          nullable: true
           type: string
         type:
           $ref: '#/components/schemas/ConfluentResourceType'
@@ -4772,10 +4776,6 @@ components:
             extra metric tags.
           example: false
           type: boolean
-        id:
-          description: The ID associated with the Confluent resource.
-          example: resource_id_abc123
-          type: string
         resource_type:
           description: The resource type of the Resource. Can be `kafka`, `connector`,
             `ksql`, or `schema_registry`.
@@ -5132,47 +5132,6 @@ components:
       oneOf:
       - $ref: '#/components/schemas/ContainerImage'
       - $ref: '#/components/schemas/ContainerImageGroup'
-    ContainerImageMeta:
-      description: Response metadata object.
-      properties:
-        pagination:
-          $ref: '#/components/schemas/ContainerImageMetaPage'
-      type: object
-    ContainerImageMetaPage:
-      description: Paging attributes.
-      properties:
-        cursor:
-          description: The cursor used to get the current results, if any.
-          type: string
-        limit:
-          description: Number of results returned
-          format: int32
-          maximum: 10000
-          minimum: 0
-          type: integer
-        next_cursor:
-          description: The cursor used to get the next results, if any.
-          type: string
-        prev_cursor:
-          description: The cursor used to get the previous results, if any.
-          nullable: true
-          type: string
-        total:
-          description: Total number of records that match the query.
-          format: int64
-          type: integer
-        type:
-          $ref: '#/components/schemas/ContainerImageMetaPageType'
-      type: object
-    ContainerImageMetaPageType:
-      default: cursor_limit
-      description: Type of Container Image pagination.
-      enum:
-      - cursor_limit
-      example: cursor_limit
-      type: string
-      x-enum-varnames:
-      - CURSOR_LIMIT
     ContainerImageType:
       default: container_image
       description: Type of Container Image.
@@ -5221,32 +5180,6 @@ components:
           items:
             $ref: '#/components/schemas/ContainerImageItem'
           type: array
-        links:
-          $ref: '#/components/schemas/ContainerImagesResponseLinks'
-        meta:
-          $ref: '#/components/schemas/ContainerImageMeta'
-      type: object
-    ContainerImagesResponseLinks:
-      description: Pagination links.
-      properties:
-        first:
-          description: Link to the first page.
-          type: string
-        last:
-          description: Link to the last page.
-          nullable: true
-          type: string
-        next:
-          description: Link to the next page.
-          nullable: true
-          type: string
-        prev:
-          description: Link to previous page.
-          nullable: true
-          type: string
-        self:
-          description: Link to current page.
-          type: string
       type: object
     ContainerItem:
       description: Possible Container models.
@@ -8055,6 +7988,10 @@ components:
     FastlyAccounResponseAttributes:
       description: Attributes object of a Fastly account.
       properties:
+        api_key:
+          description: The FastlyAccounResponseAttributes api_key.
+          type: string
+          writeOnly: true
         name:
           description: The name of the Fastly account.
           example: test-name
@@ -8151,6 +8088,9 @@ components:
         api_key:
           description: The API key of the Fastly account.
           example: ABCDEFG123
+          type: string
+        name:
+          description: The FastlyAccountUpdateRequestAttributes name.
           type: string
       type: object
     FastlyAccountUpdateRequestData:
@@ -8448,6 +8388,7 @@ components:
         created_at:
           description: Creation date of the API key.
           example: '2020-11-23T10:00:00.000Z'
+          format: date-time
           readOnly: true
           type: string
         key:
@@ -8464,6 +8405,7 @@ components:
         modified_at:
           description: Date the API key was last modified.
           example: '2020-11-23T10:00:00.000Z'
+          format: date-time
           readOnly: true
           type: string
         name:
@@ -8493,10 +8435,7 @@ components:
         created_at:
           description: Creation date of the application key.
           example: '2020-11-23T10:00:00.000Z'
-          readOnly: true
-          type: string
-        key:
-          description: The application key.
+          format: date-time
           readOnly: true
           type: string
         last4:
@@ -9429,15 +9368,56 @@ components:
     IncidentCreateAttributes:
       description: The incident's attributes for a create request.
       properties:
+        additional_notifications:
+          description: The IncidentCreateAttributes additional_notifications.
+          nullable: true
+          type: string
+        archived:
+          description: The IncidentCreateAttributes archived.
+          format: date-time
+          nullable: true
+          type: string
+        case_id:
+          description: The IncidentCreateAttributes case_id.
+          format: int32
+          maximum: 2147483647
+          minimum: 0
+          nullable: true
+          type: integer
+        creation_idempotency_key:
+          description: The IncidentCreateAttributes creation_idempotency_key.
+          nullable: true
+          type: string
+        customer_impact_end:
+          description: The IncidentCreateAttributes customer_impact_end.
+          format: date-time
+          nullable: true
+          type: string
         customer_impact_scope:
           description: Required if `customer_impacted:"true"`. A summary of the impact
             customers experienced during the incident.
           example: Example customer impact scope
           type: string
+        customer_impact_start:
+          description: The IncidentCreateAttributes customer_impact_start.
+          format: date-time
+          nullable: true
+          type: string
         customer_impacted:
           description: A flag indicating whether the incident caused customer impact.
           example: false
           type: boolean
+        detected:
+          description: The IncidentCreateAttributes detected.
+          format: date-time
+          nullable: true
+          type: string
+        duration:
+          description: The IncidentCreateAttributes duration.
+          format: int32
+          maximum: 2147483647
+          nullable: true
+          type: integer
         fields:
           additionalProperties:
             $ref: '#/components/schemas/IncidentFieldAttributes'
@@ -9448,6 +9428,10 @@ components:
               type: dropdown
               value: SEV-5
           type: object
+        incident_type_uuid:
+          description: The IncidentCreateAttributes incident_type_uuid.
+          nullable: true
+          type: string
         initial_cells:
           description: An array of initial timeline cells to be placed at the beginning
             of the incident timeline.
@@ -9460,6 +9444,31 @@ components:
           items:
             $ref: '#/components/schemas/IncidentNotificationHandle'
           type: array
+        public_id:
+          description: The IncidentCreateAttributes public_id.
+          format: int32
+          maximum: 2147483647
+          nullable: true
+          type: integer
+        resolved:
+          description: The IncidentCreateAttributes resolved.
+          format: date-time
+          nullable: true
+          type: string
+        severity:
+          description: The IncidentCreateAttributes severity.
+          nullable: true
+          type: string
+        state:
+          description: The IncidentCreateAttributes state.
+          nullable: true
+          type: string
+        time_to_resolve:
+          description: The IncidentCreateAttributes time_to_resolve.
+          format: int32
+          maximum: 2147483647
+          nullable: true
+          type: integer
         title:
           description: The title of the incident, which summarizes what happened.
           example: A test incident title
@@ -9792,6 +9801,10 @@ components:
     IncidentResponseAttributes:
       description: The incident's attributes from a response.
       properties:
+        additional_notifications:
+          description: The IncidentResponseAttributes additional_notifications.
+          nullable: true
+          type: string
         archived:
           description: Timestamp of when the incident was archived.
           format: date-time
@@ -9801,12 +9814,21 @@ components:
         case_id:
           description: The incident case id.
           format: int64
+          minimum: 0
           nullable: true
           type: integer
         created:
           description: Timestamp when the incident was created.
           format: date-time
           readOnly: true
+          type: string
+        created_by_uuid:
+          description: The IncidentResponseAttributes created_by_uuid.
+          nullable: true
+          type: string
+        creation_idempotency_key:
+          description: The IncidentResponseAttributes creation_idempotency_key.
+          nullable: true
           type: string
         customer_impact_duration:
           description: 'Length of the incident''s customer impact in seconds.
@@ -9839,6 +9861,12 @@ components:
           format: date-time
           nullable: true
           type: string
+        duration:
+          description: The IncidentResponseAttributes duration.
+          format: int32
+          maximum: 2147483647
+          nullable: true
+          type: integer
         fields:
           additionalProperties:
             $ref: '#/components/schemas/IncidentFieldAttributes'
@@ -9848,6 +9876,14 @@ components:
               type: dropdown
               value: SEV-5
           type: object
+        incident_type_uuid:
+          description: The IncidentResponseAttributes incident_type_uuid.
+          nullable: true
+          type: string
+        last_modified_by_uuid:
+          description: The IncidentResponseAttributes last_modified_by_uuid.
+          nullable: true
+          type: string
         modified:
           description: Timestamp when the incident was last modified.
           format: date-time
@@ -11191,8 +11227,6 @@ components:
           items:
             $ref: '#/components/schemas/ApplicationKeyResponseIncludedItem'
           type: array
-        meta:
-          $ref: '#/components/schemas/ApplicationKeyResponseMeta'
       type: object
     ListDevicesResponse:
       description: List devices response.
@@ -11330,6 +11364,15 @@ components:
           example: /api/v2/scorecard/rules?page%5Blimit%5D=2&page%5Boffset%5D=2&page%5Bsize%5D=2
           type: string
       type: object
+    ListServiceAccountApplicationKeysInclude:
+      description: The definition of ListServiceAccountApplicationKeysInclude object.
+      enum:
+      - leak_information
+      - owned_by
+      type: string
+      x-enum-varnames:
+      - LEAK_INFORMATION
+      - OWNED_BY
     ListTagsResponse:
       description: List tags response.
       properties:
@@ -14289,10 +14332,12 @@ components:
         custom_url:
           description: The custom URL for a custom region.
           example: https://example.com
+          format: url
           type: string
         name:
           description: The name for the Opsgenie service.
           example: fake-opsgenie-service-name
+          maxLength: 100
           type: string
         opsgenie_api_key:
           description: The Opsgenie API key for your Opsgenie service.
@@ -14350,12 +14395,18 @@ components:
         custom_url:
           description: The custom URL for a custom region.
           example: null
+          format: url
           nullable: true
           type: string
         name:
           description: The name for the Opsgenie service.
           example: fake-opsgenie-service-name
+          maxLength: 100
           type: string
+        opsgenie_api_key:
+          description: The OpsgenieServiceResponseAttributes opsgenie_api_key.
+          type: string
+          writeOnly: true
         region:
           $ref: '#/components/schemas/OpsgenieServiceRegionType'
       type: object
@@ -14367,6 +14418,8 @@ components:
         id:
           description: The ID of the Opsgenie service.
           example: 596da4af-0563-4097-90ff-07230c3f9db3
+          maxLength: 100
+          minLength: 1
           type: string
         type:
           $ref: '#/components/schemas/OpsgenieServiceType'
@@ -14390,11 +14443,13 @@ components:
         custom_url:
           description: The custom URL for a custom region.
           example: https://example.com
+          format: url
           nullable: true
           type: string
         name:
           description: The name for the Opsgenie service.
           example: fake-opsgenie-service-name
+          maxLength: 100
           type: string
         opsgenie_api_key:
           description: The Opsgenie API key for your Opsgenie service.
@@ -14411,6 +14466,8 @@ components:
         id:
           description: The ID of the Opsgenie service.
           example: 596da4af-0563-4097-90ff-07230c3f9db3
+          maxLength: 100
+          minLength: 1
           type: string
         type:
           $ref: '#/components/schemas/OpsgenieServiceType'
@@ -14814,6 +14871,7 @@ components:
         created_at:
           description: Creation date of the API key.
           example: '2020-11-23T10:00:00.000Z'
+          format: date-time
           readOnly: true
           type: string
         last4:
@@ -14826,6 +14884,7 @@ components:
         modified_at:
           description: Date the API key was last modified.
           example: '2020-11-23T10:00:00.000Z'
+          format: date-time
           readOnly: true
           type: string
         name:
@@ -14855,6 +14914,7 @@ components:
         created_at:
           description: Creation date of the application key.
           example: '2020-11-23T10:00:00.000Z'
+          format: date-time
           readOnly: true
           type: string
         last4:
@@ -15244,29 +15304,6 @@ components:
           description: Offset type.
           type: string
       type: object
-    ProcessSummariesMeta:
-      description: Response metadata object.
-      properties:
-        page:
-          $ref: '#/components/schemas/ProcessSummariesMetaPage'
-      type: object
-    ProcessSummariesMetaPage:
-      description: Paging attributes.
-      properties:
-        after:
-          description: 'The cursor used to get the next results, if any. To make the
-            next request, use the same
-
-            parameters with the addition of the `page[cursor]`.'
-          example: 911abf1204838d9cdfcb9a96d0b6a1bd03e1b514074f1ce1737c4cbd
-          type: string
-        size:
-          description: Number of results returned.
-          format: int32
-          maximum: 10000
-          minimum: 0
-          type: integer
-      type: object
     ProcessSummariesResponse:
       description: List of process summaries.
       properties:
@@ -15275,8 +15312,6 @@ components:
           items:
             $ref: '#/components/schemas/ProcessSummary'
           type: array
-        meta:
-          $ref: '#/components/schemas/ProcessSummariesMeta'
       type: object
     ProcessSummary:
       description: Process summary object.
@@ -16640,8 +16675,6 @@ components:
           items:
             $ref: '#/components/schemas/RelationshipToTeamLinkData'
           type: array
-        links:
-          $ref: '#/components/schemas/TeamRelationshipsLinks'
       type: object
     RelationshipToUser:
       description: Relationship to user.
@@ -16669,8 +16702,6 @@ components:
       properties:
         data:
           $ref: '#/components/schemas/RelationshipToUserTeamPermissionData'
-        links:
-          $ref: '#/components/schemas/TeamRelationshipsLinks'
       type: object
     RelationshipToUserTeamPermissionData:
       description: Related user team permission data
@@ -16681,27 +16712,6 @@ components:
           type: string
         type:
           $ref: '#/components/schemas/UserTeamPermissionType'
-      required:
-      - id
-      - type
-      type: object
-    RelationshipToUserTeamTeam:
-      description: Relationship between team membership and team
-      properties:
-        data:
-          $ref: '#/components/schemas/RelationshipToUserTeamTeamData'
-      required:
-      - data
-      type: object
-    RelationshipToUserTeamTeamData:
-      description: The team associated with the membership
-      properties:
-        id:
-          description: The ID of the team associated with the membership
-          example: d7e15d9d-d346-43da-81d8-3d9e71d9a5e9
-          type: string
-        type:
-          $ref: '#/components/schemas/UserTeamTeamType'
       required:
       - id
       - type
@@ -22499,6 +22509,9 @@ components:
           example: example-team
           maxLength: 195
           type: string
+        handles:
+          description: The TeamAttributes handles.
+          type: string
         hidden_modules:
           description: Collection of hidden modules for the team
           items:
@@ -22576,16 +22589,29 @@ components:
           example: example-team
           maxLength: 195
           type: string
+        handles:
+          description: The TeamCreateAttributes handles.
+          type: string
         hidden_modules:
           description: Collection of hidden modules for the team
           items:
             description: String identifier of the module
             type: string
           type: array
+        link_count:
+          description: The number of links belonging to the team
+          format: int32
+          maximum: 2147483647
+          readOnly: true
+          type: integer
         name:
           description: The name of the team
           example: Example Team
           maxLength: 200
+          type: string
+        summary:
+          description: A brief summary of the team
+          readOnly: true
           type: string
         visible_modules:
           description: Collection of visible modules for the team
@@ -22823,14 +22849,6 @@ components:
         user_team_permissions:
           $ref: '#/components/schemas/RelationshipToUserTeamPermission'
       type: object
-    TeamRelationshipsLinks:
-      description: Links attributes.
-      properties:
-        related:
-          description: Related link.
-          example: /api/v2/team/c75a4a8e-20c7-11ee-a3a5-da7ad0900002/links
-          type: string
-      type: object
     TeamResponse:
       description: Response with a team
       properties:
@@ -22873,12 +22891,6 @@ components:
           format: int64
           nullable: true
           type: integer
-        color:
-          description: An identifier for the color representing the team
-          format: int32
-          maximum: 13
-          minimum: 0
-          type: integer
         description:
           description: Free-form markdown description/content for the team's homepage
           type: string
@@ -22887,16 +22899,29 @@ components:
           example: example-team
           maxLength: 195
           type: string
+        handles:
+          description: The TeamUpdateAttributes handles.
+          type: string
         hidden_modules:
           description: Collection of hidden modules for the team
           items:
             description: String identifier of the module
             type: string
           type: array
+        link_count:
+          description: The number of links belonging to the team
+          format: int32
+          maximum: 2147483647
+          readOnly: true
+          type: integer
         name:
           description: The name of the team
           example: Example Team
           maxLength: 200
+          type: string
+        summary:
+          description: A brief summary of the team
+          readOnly: true
           type: string
         visible_modules:
           description: Collection of visible modules for the team
@@ -22970,72 +22995,6 @@ components:
           items:
             $ref: '#/components/schemas/TeamIncluded'
           type: array
-        links:
-          $ref: '#/components/schemas/TeamsResponseLinks'
-        meta:
-          $ref: '#/components/schemas/TeamsResponseMeta'
-      type: object
-    TeamsResponseLinks:
-      description: Teams response links.
-      properties:
-        first:
-          description: First link.
-          type: string
-        last:
-          description: Last link.
-          nullable: true
-          type: string
-        next:
-          description: Next link.
-          type: string
-        prev:
-          description: Previous link.
-          nullable: true
-          type: string
-        self:
-          description: Current link.
-          type: string
-      type: object
-    TeamsResponseMeta:
-      description: Teams response metadata.
-      properties:
-        pagination:
-          $ref: '#/components/schemas/TeamsResponseMetaPagination'
-      type: object
-    TeamsResponseMetaPagination:
-      description: Teams response metadata.
-      properties:
-        first_offset:
-          description: The first offset.
-          format: int64
-          type: integer
-        last_offset:
-          description: The last offset.
-          format: int64
-          type: integer
-        limit:
-          description: Pagination limit.
-          format: int64
-          type: integer
-        next_offset:
-          description: The next offset.
-          format: int64
-          type: integer
-        offset:
-          description: The offset.
-          format: int64
-          type: integer
-        prev_offset:
-          description: The previous offset.
-          format: int64
-          type: integer
-        total:
-          description: Total results.
-          format: int64
-          type: integer
-        type:
-          description: Offset type.
-          type: string
       type: object
     TimeseriesFormulaQueryRequest:
       description: A request wrapper around a single timeseries query to be executed.
@@ -23657,6 +23616,9 @@ components:
       properties:
         attributes:
           $ref: '#/components/schemas/UserTeamAttributes'
+        id:
+          description: ID of user team
+          type: string
         relationships:
           $ref: '#/components/schemas/UserTeamRelationships'
         type:
@@ -23705,8 +23667,6 @@ components:
     UserTeamRelationships:
       description: Relationship between membership and a user
       properties:
-        team:
-          $ref: '#/components/schemas/RelationshipToUserTeamTeam'
         user:
           $ref: '#/components/schemas/RelationshipToUserTeamUser'
       type: object
@@ -23737,15 +23697,6 @@ components:
       type: string
       x-enum-varnames:
       - ADMIN
-    UserTeamTeamType:
-      default: team
-      description: User team team type
-      enum:
-      - team
-      example: team
-      type: string
-      x-enum-varnames:
-      - TEAM
     UserTeamType:
       default: team_memberships
       description: Team membership type
@@ -23760,6 +23711,9 @@ components:
       properties:
         attributes:
           $ref: '#/components/schemas/UserTeamAttributes'
+        id:
+          description: ID of user team
+          type: string
         type:
           $ref: '#/components/schemas/UserTeamType'
       required:
@@ -23795,10 +23749,6 @@ components:
           items:
             $ref: '#/components/schemas/UserTeamIncluded'
           type: array
-        links:
-          $ref: '#/components/schemas/TeamsResponseLinks'
-        meta:
-          $ref: '#/components/schemas/TeamsResponseMeta'
       type: object
     UserUpdateAttributes:
       description: Attributes of the edited user.
@@ -24917,6 +24867,12 @@ paths:
       parameters:
       - $ref: '#/components/parameters/ApplicationKeyID'
       - $ref: '#/components/parameters/ApplicationKeyIncludeParameter'
+      - description: app key id
+        in: query
+        name: hide_key
+        required: false
+        schema:
+          type: boolean
       responses:
         '200':
           content:
@@ -25135,6 +25091,14 @@ paths:
         name: resource_type
         schema:
           $ref: '#/components/schemas/AuthNMappingResourceType'
+      - description: include mapping
+        in: query
+        name: include
+        required: false
+        schema:
+          items:
+            type: string
+          type: array
       responses:
         '200':
           content:
@@ -26190,6 +26154,9 @@ paths:
         name: filter[tags]
         required: false
         schema:
+          maxLength: 1024
+          minLength: 1
+          pattern: ^[A-Za-z][A-Za-z0-9_\-:./]*[A-Za-z0-9_\-./](,[A-Za-z][A-Za-z0-9_\-:./]*[A-Za-z0-9_\-./])*$
           type: string
       - description: Comma-separated list of tags to group Container Images by.
         example: registry,image_tags
@@ -26197,6 +26164,9 @@ paths:
         name: group_by
         required: false
         schema:
+          maxLength: 1024
+          minLength: 1
+          pattern: ^[A-Za-z][A-Za-z0-9_\-:./]*[A-Za-z0-9_\-./](,[A-Za-z][A-Za-z0-9_\-:./]*[A-Za-z0-9_\-./])*$
           type: string
       - description: Attribute to sort Container Images by.
         example: container_count
@@ -26204,6 +26174,8 @@ paths:
         name: sort
         required: false
         schema:
+          maxLength: 1024
+          minLength: 1
           type: string
       - description: Maximum number of results returned.
         in: query
@@ -26214,6 +26186,7 @@ paths:
           format: int32
           maximum: 10000
           minimum: 1
+          pattern: ^[0-9]+$
           type: integer
       - description: 'String to query the next page of results.
 
@@ -26222,6 +26195,8 @@ paths:
         name: page[cursor]
         required: false
         schema:
+          minLength: 0
+          pattern: ^[A-Za-z0-9+/=]+$
           type: string
       responses:
         '200':
@@ -32219,6 +32194,8 @@ paths:
         name: search
         required: false
         schema:
+          maxLength: 1024
+          minLength: 1
           type: string
       - description: Comma-separated list of tags to filter processes by.
         example: account:prod,user:admin
@@ -32226,6 +32203,9 @@ paths:
         name: tags
         required: false
         schema:
+          maxLength: 1024
+          minLength: 1
+          pattern: ^[A-Za-z][A-Za-z0-9_\-:./]*[A-Za-z0-9_\-./](,[A-Za-z][A-Za-z0-9_\-:./]*[A-Za-z0-9_\-./])*$
           type: string
       - description: 'Unix timestamp (number of seconds since epoch) of the start
           of the query window.
@@ -32270,6 +32250,9 @@ paths:
         name: page[cursor]
         required: false
         schema:
+          maxLength: 56
+          minLength: 56
+          pattern: ^[A-Fa-f0-9]+$
           type: string
       responses:
         '200':
@@ -35365,6 +35348,14 @@ paths:
       - $ref: '#/components/parameters/ApplicationKeyFilterParameter'
       - $ref: '#/components/parameters/ApplicationKeyFilterCreatedAtStartParameter'
       - $ref: '#/components/parameters/ApplicationKeyFilterCreatedAtEndParameter'
+      - description: service account id
+        in: query
+        name: include
+        required: false
+        schema:
+          items:
+            $ref: '#/components/schemas/ListServiceAccountApplicationKeysInclude'
+          type: array
       responses:
         '200':
           content:
@@ -36222,12 +36213,15 @@ paths:
         name: filter[keyword]
         required: false
         schema:
+          description: Search query, can be team name, team handle, or email of team
+            member
           type: string
       - description: When true, only returns teams the current user belongs to
         in: query
         name: filter[me]
         required: false
         schema:
+          description: when true, only returns teams the current user belongs to
           type: boolean
       - description: List of fields that need to be fetched.
         explode: false
@@ -36235,6 +36229,7 @@ paths:
         name: fields[team]
         required: false
         schema:
+          description: list of fields that need to be fetched
           items:
             $ref: '#/components/schemas/TeamsField'
           type: array
@@ -36660,6 +36655,7 @@ paths:
         name: filter[keyword]
         required: false
         schema:
+          description: Search query, can be user email or name
           type: string
       responses:
         '200':

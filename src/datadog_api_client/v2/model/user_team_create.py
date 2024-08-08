@@ -28,12 +28,14 @@ class UserTeamCreate(ModelNormal):
 
         return {
             "attributes": (UserTeamAttributes,),
+            "id": (str,),
             "relationships": (UserTeamRelationships,),
             "type": (UserTeamType,),
         }
 
     attribute_map = {
         "attributes": "attributes",
+        "id": "id",
         "relationships": "relationships",
         "type": "type",
     }
@@ -42,6 +44,7 @@ class UserTeamCreate(ModelNormal):
         self_,
         type: UserTeamType,
         attributes: Union[UserTeamAttributes, UnsetType] = unset,
+        id: Union[str, UnsetType] = unset,
         relationships: Union[UserTeamRelationships, UnsetType] = unset,
         **kwargs,
     ):
@@ -51,6 +54,9 @@ class UserTeamCreate(ModelNormal):
         :param attributes: Team membership attributes
         :type attributes: UserTeamAttributes, optional
 
+        :param id: ID of user team
+        :type id: str, optional
+
         :param relationships: Relationship between membership and a user
         :type relationships: UserTeamRelationships, optional
 
@@ -59,6 +65,8 @@ class UserTeamCreate(ModelNormal):
         """
         if attributes is not unset:
             kwargs["attributes"] = attributes
+        if id is not unset:
+            kwargs["id"] = id
         if relationships is not unset:
             kwargs["relationships"] = relationships
         super().__init__(kwargs)

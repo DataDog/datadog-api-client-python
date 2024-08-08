@@ -8,6 +8,7 @@ from typing import List, Union
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    datetime,
     none_type,
     unset,
     UnsetType,
@@ -25,8 +26,7 @@ class FullApplicationKeyAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
-            "created_at": (str,),
-            "key": (str,),
+            "created_at": (datetime,),
             "last4": (str,),
             "name": (str,),
             "scopes": ([str], none_type),
@@ -34,21 +34,18 @@ class FullApplicationKeyAttributes(ModelNormal):
 
     attribute_map = {
         "created_at": "created_at",
-        "key": "key",
         "last4": "last4",
         "name": "name",
         "scopes": "scopes",
     }
     read_only_vars = {
         "created_at",
-        "key",
         "last4",
     }
 
     def __init__(
         self_,
-        created_at: Union[str, UnsetType] = unset,
-        key: Union[str, UnsetType] = unset,
+        created_at: Union[datetime, UnsetType] = unset,
         last4: Union[str, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
         scopes: Union[List[str], none_type, UnsetType] = unset,
@@ -58,10 +55,7 @@ class FullApplicationKeyAttributes(ModelNormal):
         Attributes of a full application key.
 
         :param created_at: Creation date of the application key.
-        :type created_at: str, optional
-
-        :param key: The application key.
-        :type key: str, optional
+        :type created_at: datetime, optional
 
         :param last4: The last four characters of the application key.
         :type last4: str, optional
@@ -74,8 +68,6 @@ class FullApplicationKeyAttributes(ModelNormal):
         """
         if created_at is not unset:
             kwargs["created_at"] = created_at
-        if key is not unset:
-            kwargs["key"] = key
         if last4 is not unset:
             kwargs["last4"] = last4
         if name is not unset:

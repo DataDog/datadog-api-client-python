@@ -16,12 +16,11 @@ from datadog_api_client.model_utils import (
 
 class TeamUpdateAttributes(ModelNormal):
     validations = {
-        "color": {
-            "inclusive_maximum": 13,
-            "inclusive_minimum": 0,
-        },
         "handle": {
             "max_length": 195,
+        },
+        "link_count": {
+            "inclusive_maximum": 2147483647,
         },
         "name": {
             "max_length": 200,
@@ -33,23 +32,31 @@ class TeamUpdateAttributes(ModelNormal):
         return {
             "avatar": (str, none_type),
             "banner": (int, none_type),
-            "color": (int,),
             "description": (str,),
             "handle": (str,),
+            "handles": (str,),
             "hidden_modules": ([str],),
+            "link_count": (int,),
             "name": (str,),
+            "summary": (str,),
             "visible_modules": ([str],),
         }
 
     attribute_map = {
         "avatar": "avatar",
         "banner": "banner",
-        "color": "color",
         "description": "description",
         "handle": "handle",
+        "handles": "handles",
         "hidden_modules": "hidden_modules",
+        "link_count": "link_count",
         "name": "name",
+        "summary": "summary",
         "visible_modules": "visible_modules",
+    }
+    read_only_vars = {
+        "link_count",
+        "summary",
     }
 
     def __init__(
@@ -58,9 +65,11 @@ class TeamUpdateAttributes(ModelNormal):
         name: str,
         avatar: Union[str, none_type, UnsetType] = unset,
         banner: Union[int, none_type, UnsetType] = unset,
-        color: Union[int, UnsetType] = unset,
         description: Union[str, UnsetType] = unset,
+        handles: Union[str, UnsetType] = unset,
         hidden_modules: Union[List[str], UnsetType] = unset,
+        link_count: Union[int, UnsetType] = unset,
+        summary: Union[str, UnsetType] = unset,
         visible_modules: Union[List[str], UnsetType] = unset,
         **kwargs,
     ):
@@ -73,20 +82,26 @@ class TeamUpdateAttributes(ModelNormal):
         :param banner: Banner selection for the team
         :type banner: int, none_type, optional
 
-        :param color: An identifier for the color representing the team
-        :type color: int, optional
-
         :param description: Free-form markdown description/content for the team's homepage
         :type description: str, optional
 
         :param handle: The team's identifier
         :type handle: str
 
+        :param handles: The TeamUpdateAttributes handles.
+        :type handles: str, optional
+
         :param hidden_modules: Collection of hidden modules for the team
         :type hidden_modules: [str], optional
 
+        :param link_count: The number of links belonging to the team
+        :type link_count: int, optional
+
         :param name: The name of the team
         :type name: str
+
+        :param summary: A brief summary of the team
+        :type summary: str, optional
 
         :param visible_modules: Collection of visible modules for the team
         :type visible_modules: [str], optional
@@ -95,12 +110,16 @@ class TeamUpdateAttributes(ModelNormal):
             kwargs["avatar"] = avatar
         if banner is not unset:
             kwargs["banner"] = banner
-        if color is not unset:
-            kwargs["color"] = color
         if description is not unset:
             kwargs["description"] = description
+        if handles is not unset:
+            kwargs["handles"] = handles
         if hidden_modules is not unset:
             kwargs["hidden_modules"] = hidden_modules
+        if link_count is not unset:
+            kwargs["link_count"] = link_count
+        if summary is not unset:
+            kwargs["summary"] = summary
         if visible_modules is not unset:
             kwargs["visible_modules"] = visible_modules
         super().__init__(kwargs)

@@ -17,7 +17,6 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.relationship_to_user_team_permission_data import (
         RelationshipToUserTeamPermissionData,
     )
-    from datadog_api_client.v2.model.team_relationships_links import TeamRelationshipsLinks
 
 
 class RelationshipToUserTeamPermission(ModelNormal):
@@ -26,35 +25,22 @@ class RelationshipToUserTeamPermission(ModelNormal):
         from datadog_api_client.v2.model.relationship_to_user_team_permission_data import (
             RelationshipToUserTeamPermissionData,
         )
-        from datadog_api_client.v2.model.team_relationships_links import TeamRelationshipsLinks
 
         return {
             "data": (RelationshipToUserTeamPermissionData,),
-            "links": (TeamRelationshipsLinks,),
         }
 
     attribute_map = {
         "data": "data",
-        "links": "links",
     }
 
-    def __init__(
-        self_,
-        data: Union[RelationshipToUserTeamPermissionData, UnsetType] = unset,
-        links: Union[TeamRelationshipsLinks, UnsetType] = unset,
-        **kwargs,
-    ):
+    def __init__(self_, data: Union[RelationshipToUserTeamPermissionData, UnsetType] = unset, **kwargs):
         """
         Relationship between a user team permission and a team
 
         :param data: Related user team permission data
         :type data: RelationshipToUserTeamPermissionData, optional
-
-        :param links: Links attributes.
-        :type links: TeamRelationshipsLinks, optional
         """
         if data is not unset:
             kwargs["data"] = data
-        if links is not unset:
-            kwargs["links"] = links
         super().__init__(kwargs)
