@@ -86,7 +86,7 @@ class WorkflowAutomationApi:
         self._get_workflow_instance_endpoint = _Endpoint(
             settings={
                 "response_type": (WorklflowGetInstanceResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/workflows/{workflow_id}/instances/{instance_id}",
                 "operation_id": "get_workflow_instance",
                 "http_method": "GET",
