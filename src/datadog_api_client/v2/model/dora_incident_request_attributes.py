@@ -68,7 +68,7 @@ class DORAIncidentRequestAttributes(ModelNormal):
         :param env: Environment name that was impacted by the incident.
         :type env: str, optional
 
-        :param finished_at: Unix timestamp in nanoseconds when the incident finished. It should not be older than 1 hour.
+        :param finished_at: Unix timestamp when the incident finished. It must be in nanoseconds, milliseconds, or seconds, and it should not be older than 1 hour.
         :type finished_at: int, optional
 
         :param git: Git info for DORA Metrics events.
@@ -86,7 +86,7 @@ class DORAIncidentRequestAttributes(ModelNormal):
         :param severity: Incident severity.
         :type severity: str, optional
 
-        :param started_at: Unix timestamp in nanoseconds when the incident started.
+        :param started_at: Unix timestamp when the incident started. It must be in nanoseconds, milliseconds, or seconds.
         :type started_at: int
 
         :param team: Name of the team owning the services impacted. If possible, use team handles registered in Datadog. Required when the services field is not provided.

@@ -59,7 +59,7 @@ class DORADeploymentRequestAttributes(ModelNormal):
         :param env: Environment name to where the service was deployed.
         :type env: str, optional
 
-        :param finished_at: Unix timestamp in nanoseconds when the deployment finished. It should not be older than 1 hour.
+        :param finished_at: Unix timestamp when the deployment finished. It must be in nanoseconds, milliseconds, or seconds, and it should not be older than 1 hour.
         :type finished_at: int
 
         :param git: Git info for DORA Metrics events.
@@ -71,7 +71,7 @@ class DORADeploymentRequestAttributes(ModelNormal):
         :param service: Service name from a service available in the Service Catalog.
         :type service: str
 
-        :param started_at: Unix timestamp in nanoseconds when the deployment started.
+        :param started_at: Unix timestamp when the deployment started. It must be in nanoseconds, milliseconds, or seconds.
         :type started_at: int
 
         :param version: Version to correlate with `APM Deployment Tracking <https://docs.datadoghq.com/tracing/services/deployment_tracking/>`_.
