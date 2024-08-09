@@ -15,7 +15,7 @@ from typing import ClassVar
 class SecurityMonitoringRuleKeepAlive(ModelSimple):
     """
     Once a signal is generated, the signal will remain “open” if a case is matched at least once within
-        this keep alive window. For third party rules, it should equal max signal duration.
+        this keep alive window. For third party rules, this field is not used.
 
     :param value: Must be one of [0, 60, 300, 600, 900, 1800, 3600, 7200, 10800, 21600].
     :type value: int
