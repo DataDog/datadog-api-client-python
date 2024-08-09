@@ -16165,10 +16165,7 @@ components:
           type: string
         dnsServerPort:
           description: DNS server port to use for DNS tests.
-          format: int32
-          maximum: 65535
-          minimum: 1
-          type: integer
+          type: string
         files:
           description: Files to be used as part of the request in the test.
           items:
@@ -16208,8 +16205,7 @@ components:
           type: boolean
         port:
           description: Port to use when performing the test.
-          format: int64
-          type: integer
+          type: string
         proxy:
           $ref: '#/components/schemas/SyntheticsTestRequestProxy'
         query:
