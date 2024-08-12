@@ -382,6 +382,9 @@ def format_data_with_schema_dict(
         missing = required_properties - set(data.keys())
         if missing:
             raise ValueError(f"missing required properties: {missing}")
+        additional_properties = set(data.keys()) - set(schema["properties"].keys())
+        if schema.get("additionalProperties") == False and additional_properties:
+            raise ValueError(f"additional properties not allowed: {additional_properties}")
 
         for k, v in data.items():
             if k in schema["properties"]:
