@@ -18,6 +18,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.application_key_response_included_item import ApplicationKeyResponseIncludedItem
     from datadog_api_client.v2.model.user import User
     from datadog_api_client.v2.model.role import Role
+    from datadog_api_client.v2.model.leaked_key import LeakedKey
 
 
 class ApplicationKeyResponse(ModelNormal):
@@ -41,7 +42,7 @@ class ApplicationKeyResponse(ModelNormal):
     def __init__(
         self_,
         data: Union[FullApplicationKey, UnsetType] = unset,
-        included: Union[List[Union[ApplicationKeyResponseIncludedItem, User, Role]], UnsetType] = unset,
+        included: Union[List[Union[ApplicationKeyResponseIncludedItem, User, Role, LeakedKey]], UnsetType] = unset,
         **kwargs,
     ):
         """

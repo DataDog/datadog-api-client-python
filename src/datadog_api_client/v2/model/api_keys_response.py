@@ -18,6 +18,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.api_key_response_included_item import APIKeyResponseIncludedItem
     from datadog_api_client.v2.model.api_keys_response_meta import APIKeysResponseMeta
     from datadog_api_client.v2.model.user import User
+    from datadog_api_client.v2.model.leaked_key import LeakedKey
 
 
 class APIKeysResponse(ModelNormal):
@@ -42,7 +43,7 @@ class APIKeysResponse(ModelNormal):
     def __init__(
         self_,
         data: Union[List[PartialAPIKey], UnsetType] = unset,
-        included: Union[List[Union[APIKeyResponseIncludedItem, User]], UnsetType] = unset,
+        included: Union[List[Union[APIKeyResponseIncludedItem, User, LeakedKey]], UnsetType] = unset,
         meta: Union[APIKeysResponseMeta, UnsetType] = unset,
         **kwargs,
     ):

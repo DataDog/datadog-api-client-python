@@ -4652,6 +4652,27 @@ datadog\_api\_client.v2.model.jsonapi\_error\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.leaked\_key module
+------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.leaked_key
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.leaked\_key\_attributes module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.leaked_key_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.leaked\_key\_type module
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.leaked_key_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.list\_apis\_response module
 ---------------------------------------------------------
 
