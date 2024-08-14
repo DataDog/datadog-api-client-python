@@ -14304,10 +14304,12 @@ components:
         custom_url:
           description: The custom URL for a custom region.
           example: https://example.com
+          format: url
           type: string
         name:
           description: The name for the Opsgenie service.
           example: fake-opsgenie-service-name
+          maxLength: 100
           type: string
         opsgenie_api_key:
           description: The Opsgenie API key for your Opsgenie service.
@@ -14365,12 +14367,18 @@ components:
         custom_url:
           description: The custom URL for a custom region.
           example: null
+          format: url
           nullable: true
           type: string
         name:
           description: The name for the Opsgenie service.
           example: fake-opsgenie-service-name
+          maxLength: 100
           type: string
+        opsgenie_api_key:
+          description: The OpsgenieServiceResponseAttributes opsgenie_api_key.
+          type: string
+          writeOnly: true
         region:
           $ref: '#/components/schemas/OpsgenieServiceRegionType'
       type: object
@@ -14382,6 +14390,8 @@ components:
         id:
           description: The ID of the Opsgenie service.
           example: 596da4af-0563-4097-90ff-07230c3f9db3
+          maxLength: 100
+          minLength: 1
           type: string
         type:
           $ref: '#/components/schemas/OpsgenieServiceType'
@@ -14405,11 +14415,13 @@ components:
         custom_url:
           description: The custom URL for a custom region.
           example: https://example.com
+          format: url
           nullable: true
           type: string
         name:
           description: The name for the Opsgenie service.
           example: fake-opsgenie-service-name
+          maxLength: 100
           type: string
         opsgenie_api_key:
           description: The Opsgenie API key for your Opsgenie service.
@@ -14426,6 +14438,8 @@ components:
         id:
           description: The ID of the Opsgenie service.
           example: 596da4af-0563-4097-90ff-07230c3f9db3
+          maxLength: 100
+          minLength: 1
           type: string
         type:
           $ref: '#/components/schemas/OpsgenieServiceType'
