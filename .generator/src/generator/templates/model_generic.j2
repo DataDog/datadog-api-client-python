@@ -56,7 +56,7 @@ class {{ name }}(ModelNormal):
 
 {%- set additionalProperties = model.get("additionalProperties") %}
 {#- Only add additional_properties_type property if additionalProperties is disabled or has a custom type #}
-{%- if (additionalProperties and additionalProperties is not true) or additionalProperties is false %}
+{%- if (additionalProperties is false) or (additionalProperties and additionalProperties is not true) %}
     @cached_property
     def additional_properties_type(_):
 {%- if additionalProperties is false %}
