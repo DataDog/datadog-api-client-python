@@ -21,6 +21,10 @@ if TYPE_CHECKING:
 
 class DowntimeScheduleRecurrencesUpdateRequest(ModelNormal):
     @cached_property
+    def additional_properties_type(_):
+        return None
+
+    @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.downtime_schedule_recurrence_create_update_request import (
             DowntimeScheduleRecurrenceCreateUpdateRequest,
