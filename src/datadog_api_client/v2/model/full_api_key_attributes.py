@@ -8,6 +8,7 @@ from typing import Union
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    datetime,
     unset,
     UnsetType,
 )
@@ -25,10 +26,10 @@ class FullAPIKeyAttributes(ModelNormal):
     def openapi_types(_):
         return {
             "category": (str,),
-            "created_at": (str,),
+            "created_at": (datetime,),
             "key": (str,),
             "last4": (str,),
-            "modified_at": (str,),
+            "modified_at": (datetime,),
             "name": (str,),
             "remote_config_read_enabled": (bool,),
         }
@@ -52,10 +53,10 @@ class FullAPIKeyAttributes(ModelNormal):
     def __init__(
         self_,
         category: Union[str, UnsetType] = unset,
-        created_at: Union[str, UnsetType] = unset,
+        created_at: Union[datetime, UnsetType] = unset,
         key: Union[str, UnsetType] = unset,
         last4: Union[str, UnsetType] = unset,
-        modified_at: Union[str, UnsetType] = unset,
+        modified_at: Union[datetime, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
         remote_config_read_enabled: Union[bool, UnsetType] = unset,
         **kwargs,
@@ -67,7 +68,7 @@ class FullAPIKeyAttributes(ModelNormal):
         :type category: str, optional
 
         :param created_at: Creation date of the API key.
-        :type created_at: str, optional
+        :type created_at: datetime, optional
 
         :param key: The API key.
         :type key: str, optional
@@ -76,7 +77,7 @@ class FullAPIKeyAttributes(ModelNormal):
         :type last4: str, optional
 
         :param modified_at: Date the API key was last modified.
-        :type modified_at: str, optional
+        :type modified_at: datetime, optional
 
         :param name: Name of the API key.
         :type name: str, optional

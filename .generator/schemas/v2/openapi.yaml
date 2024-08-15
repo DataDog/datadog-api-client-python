@@ -673,10 +673,16 @@ components:
     APIKeyCreateAttributes:
       description: Attributes used to create an API Key.
       properties:
+        category:
+          description: The APIKeyCreateAttributes category.
+          type: string
         name:
           description: Name of the API key.
           example: API Key for submitting metrics
           type: string
+        remote_config_read_enabled:
+          description: The APIKeyCreateAttributes remote_config_read_enabled.
+          type: boolean
       required:
       - name
       type: object
@@ -722,13 +728,20 @@ components:
       description: An object related to an API key.
       oneOf:
       - $ref: '#/components/schemas/User'
+      - $ref: '#/components/schemas/LeakedKey'
     APIKeyUpdateAttributes:
       description: Attributes used to update an API Key.
       properties:
+        category:
+          description: The APIKeyUpdateAttributes category.
+          type: string
         name:
           description: Name of the API key.
           example: API Key for submitting metrics
           type: string
+        remote_config_read_enabled:
+          description: The APIKeyUpdateAttributes remote_config_read_enabled.
+          type: boolean
       required:
       - name
       type: object
@@ -981,6 +994,7 @@ components:
       oneOf:
       - $ref: '#/components/schemas/User'
       - $ref: '#/components/schemas/Role'
+      - $ref: '#/components/schemas/LeakedKey'
     ApplicationKeyResponseMeta:
       description: Additional information related to the application key response.
       properties:
@@ -4412,6 +4426,10 @@ components:
     CloudflareAccountResponseAttributes:
       description: Attributes object of a Cloudflare account.
       properties:
+        api_key:
+          description: The CloudflareAccountResponseAttributes api_key.
+          type: string
+          writeOnly: true
         email:
           description: The email associated with the Cloudflare account.
           example: test-email@example.com
@@ -4483,6 +4501,9 @@ components:
           description: The email associated with the Cloudflare account. If an API
             key is provided (and not a token), this field is also required.
           example: test-email@example.com
+          type: string
+        name:
+          description: The CloudflareAccountUpdateRequestAttributes name.
           type: string
         resources:
           description: An allowlist of resources to restrict pulling metrics for.
@@ -8054,6 +8075,10 @@ components:
     FastlyAccounResponseAttributes:
       description: Attributes object of a Fastly account.
       properties:
+        api_key:
+          description: The FastlyAccounResponseAttributes api_key.
+          type: string
+          writeOnly: true
         name:
           description: The name of the Fastly account.
           example: test-name
@@ -8150,6 +8175,9 @@ components:
         api_key:
           description: The API key of the Fastly account.
           example: ABCDEFG123
+          type: string
+        name:
+          description: The FastlyAccountUpdateRequestAttributes name.
           type: string
       type: object
     FastlyAccountUpdateRequestData:
@@ -8447,6 +8475,7 @@ components:
         created_at:
           description: Creation date of the API key.
           example: '2020-11-23T10:00:00.000Z'
+          format: date-time
           readOnly: true
           type: string
         key:
@@ -8463,6 +8492,7 @@ components:
         modified_at:
           description: Date the API key was last modified.
           example: '2020-11-23T10:00:00.000Z'
+          format: date-time
           readOnly: true
           type: string
         name:
@@ -11126,6 +11156,45 @@ components:
           description: Jira project key
           type: string
       type: object
+    LeakedKey:
+      description: The definition of LeakedKey object.
+      properties:
+        attributes:
+          $ref: '#/components/schemas/LeakedKeyAttributes'
+        id:
+          description: The LeakedKey id.
+          example: id
+          type: string
+        type:
+          $ref: '#/components/schemas/LeakedKeyType'
+      required:
+      - attributes
+      - id
+      - type
+      type: object
+    LeakedKeyAttributes:
+      description: The definition of LeakedKeyAttributes object.
+      properties:
+        date:
+          description: The LeakedKeyAttributes date.
+          example: '2017-07-21T17:32:28Z'
+          format: date-time
+          type: string
+        leak_source:
+          description: The LeakedKeyAttributes leak_source.
+          type: string
+      required:
+      - date
+      type: object
+    LeakedKeyType:
+      default: leaked_keys
+      description: The definition of LeakedKeyType object.
+      enum:
+      - leaked_keys
+      example: leaked_keys
+      type: string
+      x-enum-varnames:
+      - LEAKED_KEYS
     ListAPIsResponse:
       description: Response for `ListAPIs`.
       properties:
@@ -14290,10 +14359,12 @@ components:
         custom_url:
           description: The custom URL for a custom region.
           example: https://example.com
+          format: url
           type: string
         name:
           description: The name for the Opsgenie service.
           example: fake-opsgenie-service-name
+          maxLength: 100
           type: string
         opsgenie_api_key:
           description: The Opsgenie API key for your Opsgenie service.
@@ -14351,12 +14422,18 @@ components:
         custom_url:
           description: The custom URL for a custom region.
           example: null
+          format: url
           nullable: true
           type: string
         name:
           description: The name for the Opsgenie service.
           example: fake-opsgenie-service-name
+          maxLength: 100
           type: string
+        opsgenie_api_key:
+          description: The OpsgenieServiceResponseAttributes opsgenie_api_key.
+          type: string
+          writeOnly: true
         region:
           $ref: '#/components/schemas/OpsgenieServiceRegionType'
       type: object
@@ -14368,6 +14445,8 @@ components:
         id:
           description: The ID of the Opsgenie service.
           example: 596da4af-0563-4097-90ff-07230c3f9db3
+          maxLength: 100
+          minLength: 1
           type: string
         type:
           $ref: '#/components/schemas/OpsgenieServiceType'
@@ -14391,11 +14470,13 @@ components:
         custom_url:
           description: The custom URL for a custom region.
           example: https://example.com
+          format: url
           nullable: true
           type: string
         name:
           description: The name for the Opsgenie service.
           example: fake-opsgenie-service-name
+          maxLength: 100
           type: string
         opsgenie_api_key:
           description: The Opsgenie API key for your Opsgenie service.
@@ -14412,6 +14493,8 @@ components:
         id:
           description: The ID of the Opsgenie service.
           example: 596da4af-0563-4097-90ff-07230c3f9db3
+          maxLength: 100
+          minLength: 1
           type: string
         type:
           $ref: '#/components/schemas/OpsgenieServiceType'

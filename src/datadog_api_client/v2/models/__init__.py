@@ -812,6 +812,9 @@ from datadog_api_client.v2.model.jira_integration_metadata import JiraIntegratio
 from datadog_api_client.v2.model.jira_integration_metadata_issues_item import JiraIntegrationMetadataIssuesItem
 from datadog_api_client.v2.model.jira_issue import JiraIssue
 from datadog_api_client.v2.model.jira_issue_result import JiraIssueResult
+from datadog_api_client.v2.model.leaked_key import LeakedKey
+from datadog_api_client.v2.model.leaked_key_attributes import LeakedKeyAttributes
+from datadog_api_client.v2.model.leaked_key_type import LeakedKeyType
 from datadog_api_client.v2.model.list_apis_response import ListAPIsResponse
 from datadog_api_client.v2.model.list_apis_response_data import ListAPIsResponseData
 from datadog_api_client.v2.model.list_apis_response_data_attributes import ListAPIsResponseDataAttributes
@@ -2539,6 +2542,9 @@ __all__ = [
     "JiraIntegrationMetadataIssuesItem",
     "JiraIssue",
     "JiraIssueResult",
+    "LeakedKey",
+    "LeakedKeyAttributes",
+    "LeakedKeyType",
     "ListAPIsResponse",
     "ListAPIsResponseData",
     "ListAPIsResponseDataAttributes",
