@@ -24,6 +24,10 @@ if TYPE_CHECKING:
 
 class NotebookCellCreateRequest(ModelNormal):
     @cached_property
+    def additional_properties_type(_):
+        return None
+
+    @cached_property
     def openapi_types(_):
         from datadog_api_client.v1.model.notebook_cell_create_request_attributes import (
             NotebookCellCreateRequestAttributes,

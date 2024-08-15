@@ -109,7 +109,18 @@ class OpenApiModel(object):
 
     _composed_schemas = empty_dict
 
-    additional_properties_type = None
+    additional_properties_type = (
+        bool,
+        date,
+        datetime,
+        dict,
+        float,
+        int,
+        list,
+        str,
+        UUID,
+        none_type,
+    )
 
     attribute_map: Mapping[str, str] = empty_dict
 
@@ -399,7 +410,7 @@ class ModelNormal(OpenApiModel):
                 var_name not in self.attribute_map
                 and self._configuration is not None
                 and self._configuration.discard_unknown_keys
-                and self.additional_properties_type is None
+                and self.additional_properties_type is not None
             ):
                 if self._spec_property_naming:
                     # If it's returned from the API, store it if we need to send it back

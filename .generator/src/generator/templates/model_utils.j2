@@ -107,7 +107,7 @@ class OpenApiModel(object):
 
     _composed_schemas = empty_dict
 
-    additional_properties_type = None
+    additional_properties_type = ({{ type_to_python(True) }},)
 
     attribute_map: Mapping[str, str] = empty_dict
 

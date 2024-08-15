@@ -54,16 +54,21 @@ class {{ name }}(ModelNormal):
     }
 {%- endif %}
 
-{%- set additionalProperties = model.get("additionalProperties", true) %}
-{%- if additionalProperties is not false %}
+{%- set additionalProperties = model.get("additionalProperties") %}
+{#- Only add additional_properties_type property if additionalProperties is disabled or has a custom type #}
+{%- if (additionalProperties and additionalProperties is not true) or additionalProperties is false %}
     @cached_property
     def additional_properties_type(_):
+{%- if additionalProperties is false %}
+        return None
+{%- else -%}
 {%- if refs %}
 {%- for ref in refs %}
         from {{ package }}.{{ version }}.model.{{ ref|safe_snake_case }} import {{ ref }}
 {%- endfor %}
 {%- endif %}
-        return ({{ type_to_python(additionalProperties) }},)
+        return ({{ type_to_python(model["additionalProperties"]) }},)
+{%- endif %}
 {%- endif %}
 
 {%- if model.nullable %}
