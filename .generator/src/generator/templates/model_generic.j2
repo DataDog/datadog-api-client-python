@@ -54,7 +54,8 @@ class {{ name }}(ModelNormal):
     }
 {%- endif %}
 
-{%- if model.get("additionalProperties", false) is not false %}
+{%- set additionalProperties = model.get("additionalProperties", false) %}
+{%- if additionalProperties is not false %}
     @cached_property
     def additional_properties_type(_):
 {%- if refs %}
@@ -62,7 +63,7 @@ class {{ name }}(ModelNormal):
         from {{ package }}.{{ version }}.model.{{ ref|safe_snake_case }} import {{ ref }}
 {%- endfor %}
 {%- endif %}
-        return ({{ type_to_python(model["additionalProperties"]) }},)
+        return ({{ type_to_python(additionalProperties) }},)
 {%- endif %}
 
 {%- if model.nullable %}
