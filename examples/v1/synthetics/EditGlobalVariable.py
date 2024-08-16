@@ -4,7 +4,6 @@ Edit a global variable returns "OK" response
 
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.synthetics_api import SyntheticsApi
-from datadog_api_client.v1.model.synthetics_global_variable import SyntheticsGlobalVariable
 from datadog_api_client.v1.model.synthetics_global_variable_attributes import SyntheticsGlobalVariableAttributes
 from datadog_api_client.v1.model.synthetics_global_variable_parse_test_options import (
     SyntheticsGlobalVariableParseTestOptions,
@@ -13,11 +12,12 @@ from datadog_api_client.v1.model.synthetics_global_variable_parse_test_options_t
     SyntheticsGlobalVariableParseTestOptionsType,
 )
 from datadog_api_client.v1.model.synthetics_global_variable_parser_type import SyntheticsGlobalVariableParserType
+from datadog_api_client.v1.model.synthetics_global_variable_request import SyntheticsGlobalVariableRequest
 from datadog_api_client.v1.model.synthetics_global_variable_value import SyntheticsGlobalVariableValue
 from datadog_api_client.v1.model.synthetics_restricted_roles import SyntheticsRestrictedRoles
 from datadog_api_client.v1.model.synthetics_variable_parser import SyntheticsVariableParser
 
-body = SyntheticsGlobalVariable(
+body = SyntheticsGlobalVariableRequest(
     attributes=SyntheticsGlobalVariableAttributes(
         restricted_roles=SyntheticsRestrictedRoles(
             [

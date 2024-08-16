@@ -21,7 +21,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.synthetics_global_variable_value import SyntheticsGlobalVariableValue
 
 
-class SyntheticsGlobalVariable(ModelNormal):
+class SyntheticsGlobalVariableRequest(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v1.model.synthetics_global_variable_attributes import SyntheticsGlobalVariableAttributes
@@ -64,17 +64,17 @@ class SyntheticsGlobalVariable(ModelNormal):
         description: str,
         name: str,
         tags: List[str],
-        value: SyntheticsGlobalVariableValue,
         attributes: Union[SyntheticsGlobalVariableAttributes, UnsetType] = unset,
         id: Union[str, UnsetType] = unset,
         is_fido: Union[bool, UnsetType] = unset,
         is_totp: Union[bool, UnsetType] = unset,
         parse_test_options: Union[SyntheticsGlobalVariableParseTestOptions, UnsetType] = unset,
         parse_test_public_id: Union[str, UnsetType] = unset,
+        value: Union[SyntheticsGlobalVariableValue, UnsetType] = unset,
         **kwargs,
     ):
         """
-        Synthetic global variable.
+        Details of the global variable to create.
 
         :param attributes: Attributes of the global variable.
         :type attributes: SyntheticsGlobalVariableAttributes, optional
@@ -104,7 +104,7 @@ class SyntheticsGlobalVariable(ModelNormal):
         :type tags: [str]
 
         :param value: Value of the global variable.
-        :type value: SyntheticsGlobalVariableValue
+        :type value: SyntheticsGlobalVariableValue, optional
         """
         if attributes is not unset:
             kwargs["attributes"] = attributes
@@ -118,9 +118,10 @@ class SyntheticsGlobalVariable(ModelNormal):
             kwargs["parse_test_options"] = parse_test_options
         if parse_test_public_id is not unset:
             kwargs["parse_test_public_id"] = parse_test_public_id
+        if value is not unset:
+            kwargs["value"] = value
         super().__init__(kwargs)
 
         self_.description = description
         self_.name = name
         self_.tags = tags
-        self_.value = value
