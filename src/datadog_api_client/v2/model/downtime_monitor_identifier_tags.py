@@ -8,10 +8,6 @@ from typing import List
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    date,
-    datetime,
-    none_type,
-    UUID,
 )
 
 
@@ -21,21 +17,6 @@ class DowntimeMonitorIdentifierTags(ModelNormal):
             "min_items": 1,
         },
     }
-
-    @cached_property
-    def additional_properties_type(_):
-        return (
-            bool,
-            date,
-            datetime,
-            dict,
-            float,
-            int,
-            list,
-            str,
-            UUID,
-            none_type,
-        )
 
     @cached_property
     def openapi_types(_):

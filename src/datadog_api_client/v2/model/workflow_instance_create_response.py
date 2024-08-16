@@ -8,12 +8,8 @@ from typing import Union, TYPE_CHECKING
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    date,
-    datetime,
-    none_type,
     unset,
     UnsetType,
-    UUID,
 )
 
 
@@ -22,21 +18,6 @@ if TYPE_CHECKING:
 
 
 class WorkflowInstanceCreateResponse(ModelNormal):
-    @cached_property
-    def additional_properties_type(_):
-        return (
-            bool,
-            date,
-            datetime,
-            dict,
-            float,
-            int,
-            list,
-            str,
-            UUID,
-            none_type,
-        )
-
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.workflow_instance_create_response_data import (
