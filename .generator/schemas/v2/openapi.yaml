@@ -8075,10 +8075,6 @@ components:
     FastlyAccounResponseAttributes:
       description: Attributes object of a Fastly account.
       properties:
-        api_key:
-          description: The FastlyAccounResponseAttributes api_key.
-          type: string
-          writeOnly: true
         name:
           description: The name of the Fastly account.
           example: test-name
@@ -8175,9 +8171,6 @@ components:
         api_key:
           description: The API key of the Fastly account.
           example: ABCDEFG123
-          type: string
-        name:
-          description: The FastlyAccountUpdateRequestAttributes name.
           type: string
       type: object
     FastlyAccountUpdateRequestData:
