@@ -8,31 +8,12 @@ from typing import Union
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    date,
-    datetime,
-    none_type,
     unset,
     UnsetType,
-    UUID,
 )
 
 
 class WorkflowListInstancesResponseMetaPage(ModelNormal):
-    @cached_property
-    def additional_properties_type(_):
-        return (
-            bool,
-            date,
-            datetime,
-            dict,
-            float,
-            int,
-            list,
-            str,
-            UUID,
-            none_type,
-        )
-
     @cached_property
     def openapi_types(_):
         return {

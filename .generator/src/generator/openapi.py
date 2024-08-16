@@ -67,6 +67,10 @@ def basic_type_to_python(type_, schema, typing=False):
 def type_to_python(schema, typing=False):
     """Return Python type name for the type."""
 
+    # Special case for additionalProperties: True
+    if schema is True:
+        return basic_type_to_python(None, {}, typing=typing)
+
     name = formatter.get_name(schema)
 
     if "oneOf" in schema:

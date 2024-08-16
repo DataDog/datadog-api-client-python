@@ -7,29 +7,10 @@ from __future__ import annotations
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    date,
-    datetime,
-    none_type,
-    UUID,
 )
 
 
 class DowntimeMonitorIdentifierId(ModelNormal):
-    @cached_property
-    def additional_properties_type(_):
-        return (
-            bool,
-            date,
-            datetime,
-            dict,
-            float,
-            int,
-            list,
-            str,
-            UUID,
-            none_type,
-        )
-
     @cached_property
     def openapi_types(_):
         return {
