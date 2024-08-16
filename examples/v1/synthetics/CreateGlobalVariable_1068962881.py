@@ -5,35 +5,25 @@ Create a global variable from test returns "OK" response
 from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.synthetics_api import SyntheticsApi
-from datadog_api_client.v1.model.synthetics_global_variable import SyntheticsGlobalVariable
-from datadog_api_client.v1.model.synthetics_global_variable_options import SyntheticsGlobalVariableOptions
 from datadog_api_client.v1.model.synthetics_global_variable_parse_test_options import (
     SyntheticsGlobalVariableParseTestOptions,
 )
 from datadog_api_client.v1.model.synthetics_global_variable_parse_test_options_type import (
     SyntheticsGlobalVariableParseTestOptionsType,
 )
-from datadog_api_client.v1.model.synthetics_global_variable_totp_parameters import (
-    SyntheticsGlobalVariableTOTPParameters,
-)
+from datadog_api_client.v1.model.synthetics_global_variable_request import SyntheticsGlobalVariableRequest
 from datadog_api_client.v1.model.synthetics_global_variable_value import SyntheticsGlobalVariableValue
 
 # there is a valid "synthetics_api_test_multi_step" in the system
 SYNTHETICS_API_TEST_MULTI_STEP_PUBLIC_ID = environ["SYNTHETICS_API_TEST_MULTI_STEP_PUBLIC_ID"]
 
-body = SyntheticsGlobalVariable(
+body = SyntheticsGlobalVariableRequest(
     description="",
-    name="GLOBAL_VARIABLE_PAYLOAD_EXAMPLESYNTHETIC",
+    name="GLOBAL_VARIABLE_FROM_TEST_PAYLOAD_EXAMPLESYNTHETIC",
     tags=[],
     value=SyntheticsGlobalVariableValue(
         secure=False,
         value="",
-        options=SyntheticsGlobalVariableOptions(
-            totp_parameters=SyntheticsGlobalVariableTOTPParameters(
-                digits=6,
-                refresh_interval=30,
-            ),
-        ),
     ),
     parse_test_public_id=SYNTHETICS_API_TEST_MULTI_STEP_PUBLIC_ID,
     parse_test_options=SyntheticsGlobalVariableParseTestOptions(
