@@ -43,6 +43,7 @@ from datadog_api_client.v1.model.synthetics_update_test_pause_status_payload imp
 )
 from datadog_api_client.v1.model.synthetics_list_global_variables_response import SyntheticsListGlobalVariablesResponse
 from datadog_api_client.v1.model.synthetics_global_variable import SyntheticsGlobalVariable
+from datadog_api_client.v1.model.synthetics_global_variable_request import SyntheticsGlobalVariableRequest
 
 
 class SyntheticsApi:
@@ -73,7 +74,7 @@ class SyntheticsApi:
             params_map={
                 "body": {
                     "required": True,
-                    "openapi_types": (SyntheticsGlobalVariable,),
+                    "openapi_types": (SyntheticsGlobalVariableRequest,),
                     "location": "body",
                 },
             },
@@ -225,7 +226,7 @@ class SyntheticsApi:
                 },
                 "body": {
                     "required": True,
-                    "openapi_types": (SyntheticsGlobalVariable,),
+                    "openapi_types": (SyntheticsGlobalVariableRequest,),
                     "location": "body",
                 },
             },
@@ -754,14 +755,14 @@ class SyntheticsApi:
 
     def create_global_variable(
         self,
-        body: SyntheticsGlobalVariable,
+        body: SyntheticsGlobalVariableRequest,
     ) -> SyntheticsGlobalVariable:
         """Create a global variable.
 
         Create a Synthetic global variable.
 
         :param body: Details of the global variable to create.
-        :type body: SyntheticsGlobalVariable
+        :type body: SyntheticsGlobalVariableRequest
         :rtype: SyntheticsGlobalVariable
         """
         kwargs: Dict[str, Any] = {}
@@ -874,7 +875,7 @@ class SyntheticsApi:
     def edit_global_variable(
         self,
         variable_id: str,
-        body: SyntheticsGlobalVariable,
+        body: SyntheticsGlobalVariableRequest,
     ) -> SyntheticsGlobalVariable:
         """Edit a global variable.
 
@@ -883,7 +884,7 @@ class SyntheticsApi:
         :param variable_id: The ID of the global variable.
         :type variable_id: str
         :param body: Details of the global variable to update.
-        :type body: SyntheticsGlobalVariable
+        :type body: SyntheticsGlobalVariableRequest
         :rtype: SyntheticsGlobalVariable
         """
         kwargs: Dict[str, Any] = {}

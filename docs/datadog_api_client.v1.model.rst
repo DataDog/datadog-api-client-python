@@ -4400,6 +4400,13 @@ datadog\_api\_client.v1.model.synthetics\_global\_variable\_parser\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.synthetics\_global\_variable\_request module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_global_variable_request
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.synthetics\_global\_variable\_totp\_parameters module
 -----------------------------------------------------------------------------------
 

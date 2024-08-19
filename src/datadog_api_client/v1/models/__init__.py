@@ -716,6 +716,7 @@ from datadog_api_client.v1.model.synthetics_global_variable_parse_test_options_t
     SyntheticsGlobalVariableParseTestOptionsType,
 )
 from datadog_api_client.v1.model.synthetics_global_variable_parser_type import SyntheticsGlobalVariableParserType
+from datadog_api_client.v1.model.synthetics_global_variable_request import SyntheticsGlobalVariableRequest
 from datadog_api_client.v1.model.synthetics_global_variable_totp_parameters import (
     SyntheticsGlobalVariableTOTPParameters,
 )
@@ -1610,6 +1611,7 @@ __all__ = [
     "SyntheticsGlobalVariableParseTestOptions",
     "SyntheticsGlobalVariableParseTestOptionsType",
     "SyntheticsGlobalVariableParserType",
+    "SyntheticsGlobalVariableRequest",
     "SyntheticsGlobalVariableTOTPParameters",
     "SyntheticsGlobalVariableValue",
     "SyntheticsListGlobalVariablesResponse",
