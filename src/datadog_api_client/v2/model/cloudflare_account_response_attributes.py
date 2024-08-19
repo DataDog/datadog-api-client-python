@@ -17,7 +17,6 @@ class CloudflareAccountResponseAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
-            "api_key": (str,),
             "email": (str,),
             "name": (str,),
             "resources": ([str],),
@@ -25,7 +24,6 @@ class CloudflareAccountResponseAttributes(ModelNormal):
         }
 
     attribute_map = {
-        "api_key": "api_key",
         "email": "email",
         "name": "name",
         "resources": "resources",
@@ -35,7 +33,6 @@ class CloudflareAccountResponseAttributes(ModelNormal):
     def __init__(
         self_,
         name: str,
-        api_key: Union[str, UnsetType] = unset,
         email: Union[str, UnsetType] = unset,
         resources: Union[List[str], UnsetType] = unset,
         zones: Union[List[str], UnsetType] = unset,
@@ -43,9 +40,6 @@ class CloudflareAccountResponseAttributes(ModelNormal):
     ):
         """
         Attributes object of a Cloudflare account.
-
-        :param api_key: The CloudflareAccountResponseAttributes api_key.
-        :type api_key: str, optional
 
         :param email: The email associated with the Cloudflare account.
         :type email: str, optional
@@ -59,8 +53,6 @@ class CloudflareAccountResponseAttributes(ModelNormal):
         :param zones: An allowlist of zones to restrict pulling metrics for.
         :type zones: [str], optional
         """
-        if api_key is not unset:
-            kwargs["api_key"] = api_key
         if email is not unset:
             kwargs["email"] = email
         if resources is not unset:

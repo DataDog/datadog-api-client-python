@@ -4426,10 +4426,6 @@ components:
     CloudflareAccountResponseAttributes:
       description: Attributes object of a Cloudflare account.
       properties:
-        api_key:
-          description: The CloudflareAccountResponseAttributes api_key.
-          type: string
-          writeOnly: true
         email:
           description: The email associated with the Cloudflare account.
           example: test-email@example.com
@@ -4501,9 +4497,6 @@ components:
           description: The email associated with the Cloudflare account. If an API
             key is provided (and not a token), this field is also required.
           example: test-email@example.com
-          type: string
-        name:
-          description: The CloudflareAccountUpdateRequestAttributes name.
           type: string
         resources:
           description: An allowlist of resources to restrict pulling metrics for.
