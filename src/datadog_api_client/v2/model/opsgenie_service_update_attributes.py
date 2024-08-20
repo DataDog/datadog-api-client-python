@@ -19,12 +19,6 @@ if TYPE_CHECKING:
 
 
 class OpsgenieServiceUpdateAttributes(ModelNormal):
-    validations = {
-        "name": {
-            "max_length": 100,
-        },
-    }
-
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.opsgenie_service_region_type import OpsgenieServiceRegionType

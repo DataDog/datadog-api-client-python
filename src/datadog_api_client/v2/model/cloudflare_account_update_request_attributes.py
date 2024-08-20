@@ -19,7 +19,6 @@ class CloudflareAccountUpdateRequestAttributes(ModelNormal):
         return {
             "api_key": (str,),
             "email": (str,),
-            "name": (str,),
             "resources": ([str],),
             "zones": ([str],),
         }
@@ -27,7 +26,6 @@ class CloudflareAccountUpdateRequestAttributes(ModelNormal):
     attribute_map = {
         "api_key": "api_key",
         "email": "email",
-        "name": "name",
         "resources": "resources",
         "zones": "zones",
     }
@@ -36,7 +34,6 @@ class CloudflareAccountUpdateRequestAttributes(ModelNormal):
         self_,
         api_key: str,
         email: Union[str, UnsetType] = unset,
-        name: Union[str, UnsetType] = unset,
         resources: Union[List[str], UnsetType] = unset,
         zones: Union[List[str], UnsetType] = unset,
         **kwargs,
@@ -50,9 +47,6 @@ class CloudflareAccountUpdateRequestAttributes(ModelNormal):
         :param email: The email associated with the Cloudflare account. If an API key is provided (and not a token), this field is also required.
         :type email: str, optional
 
-        :param name: The CloudflareAccountUpdateRequestAttributes name.
-        :type name: str, optional
-
         :param resources: An allowlist of resources to restrict pulling metrics for.
         :type resources: [str], optional
 
@@ -61,8 +55,6 @@ class CloudflareAccountUpdateRequestAttributes(ModelNormal):
         """
         if email is not unset:
             kwargs["email"] = email
-        if name is not unset:
-            kwargs["name"] = name
         if resources is not unset:
             kwargs["resources"] = resources
         if zones is not unset:
