@@ -4,12 +4,13 @@ name: "Stale issues and pull requests"
 on:
   schedule:
     - cron: "0 0 * * *"
+  workflow_dispatch:
 
 jobs:
   stale:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/stale@v8
+      - uses: actions/stale@v9
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           stale-issue-message: >-
@@ -29,11 +30,13 @@ jobs:
               1. Comment that the issue is still reproducible and include updated details requested in the issue template.
           days-before-stale: 30
           days-before-close: 99999
+          days-before-pr-close: 90
           stale-issue-label: "stale"
-          exempt-issue-label: "stale/exempt"
+          exempt-issue-labels: "stale/exempt"
           stale-pr-message: >-
-            This issue has been automatically marked as stale because it has not had activity in the last 30 days.
+            This PR has been automatically marked as stale because it has not had activity in the last 30 days.
 
-            Note that the issue will not be automatically closed, but this notification will remind us to investigate why there's been inactivity.
+            If there is no activity for another 90 days, this issue will be automatically closed.
           stale-pr-label: "stale"
-          exempt-pr-label: "stale/exempt"
+          exempt-pr-labels: "stale/exempt"
+          delete-branch: true
