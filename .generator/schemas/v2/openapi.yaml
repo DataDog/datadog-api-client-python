@@ -2384,7 +2384,6 @@ components:
         author_email:
           description: The commit author email.
           example: author@example.com
-          format: email
           type: string
         author_name:
           description: The commit author name.
@@ -2409,7 +2408,6 @@ components:
         committer_email:
           description: The committer email.
           example: committer@example.com
-          format: email
           nullable: true
           type: string
         committer_name:
@@ -12864,7 +12862,6 @@ components:
       - bob@example.com
       items:
         description: An email address.
-        format: email
         type: string
       type: array
     MetricBulkTagConfigNamePrefix:
@@ -14383,7 +14380,6 @@ components:
         custom_url:
           description: The custom URL for a custom region.
           example: https://example.com
-          format: url
           type: string
         name:
           description: The name for the Opsgenie service.
@@ -14446,7 +14442,6 @@ components:
         custom_url:
           description: The custom URL for a custom region.
           example: null
-          format: url
           nullable: true
           type: string
         name:
@@ -14490,7 +14485,6 @@ components:
         custom_url:
           description: The custom URL for a custom region.
           example: https://example.com
-          format: url
           nullable: true
           type: string
         name:
@@ -20759,7 +20753,6 @@ components:
         email:
           description: "Service owner\u2019s email."
           example: contact@datadoghq.com
-          format: email
           type: string
         slack:
           description: "Service owner\u2019s Slack channel."
@@ -21020,7 +21013,6 @@ components:
         contact:
           description: Contact value.
           example: contact@datadoghq.com
-          format: email
           type: string
         name:
           description: Contact email.
@@ -21381,7 +21373,6 @@ components:
         contact:
           description: Contact value.
           example: contact@datadoghq.com
-          format: email
           type: string
         name:
           description: Contact email.
@@ -22765,7 +22756,6 @@ components:
         url:
           description: The URL for the link
           example: https://example.com
-          format: url
           type: string
       required:
       - label
