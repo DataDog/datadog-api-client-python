@@ -336,6 +336,8 @@ def format_data_with_schema_list(
 ):
     """Format data with schema."""
     assert version is not None
+    if not isinstance(schema, dict):
+        raise ValueError(f"Schema mismatch for list data: {schema}")
 
     imports = imports or defaultdict(set)
     name, r_imports = get_name_and_imports(schema, version, None)
