@@ -68,7 +68,7 @@ class DORADeploymentRequestAttributes(ModelNormal):
         :param id: Deployment ID.
         :type id: str, optional
 
-        :param service: Service name from a service available in the Service Catalog.
+        :param service: Service name.
         :type service: str
 
         :param started_at: Unix timestamp when the deployment started. It must be in nanoseconds, milliseconds, or seconds.
