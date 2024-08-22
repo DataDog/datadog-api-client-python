@@ -28,7 +28,7 @@ class ListStreamQuery(ModelNormal):
             "min_items": 1,
         },
         "group_by": {
-            "max_items": 3,
+            "max_items": 4,
         },
     }
 
@@ -86,7 +86,7 @@ class ListStreamQuery(ModelNormal):
         :param event_size: Size to use to display an event.
         :type event_size: WidgetEventSize, optional
 
-        :param group_by: Group by configuration for the List Stream Widget. Group by can be used only with logs_pattern_stream (up to 3 items) or logs_transaction_stream (one group by item is required) list stream source.
+        :param group_by: Group by configuration for the List Stream Widget. Group by can be used only with logs_pattern_stream (up to 4 items) or logs_transaction_stream (one group by item is required) list stream source.
         :type group_by: [ListStreamGroupByItems], optional
 
         :param indexes: List of indexes.

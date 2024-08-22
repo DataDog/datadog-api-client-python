@@ -42,7 +42,7 @@ class MetricSLOAsset(ModelNormal):
         """
         A SLO object with title.
 
-        :param attributes: Assets where only included attribute is its title
+        :param attributes: Assets related to the object, including title and url.
         :type attributes: MetricAssetAttributes, optional
 
         :param id: The SLO ID.
