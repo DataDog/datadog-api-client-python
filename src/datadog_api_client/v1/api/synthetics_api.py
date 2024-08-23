@@ -33,6 +33,7 @@ from datadog_api_client.v1.model.synthetics_delete_tests_payload import Syntheti
 from datadog_api_client.v1.model.synthetics_trigger_ci_tests_response import SyntheticsTriggerCITestsResponse
 from datadog_api_client.v1.model.synthetics_trigger_body import SyntheticsTriggerBody
 from datadog_api_client.v1.model.synthetics_ci_test_body import SyntheticsCITestBody
+from datadog_api_client.v1.model.synthetics_fetch_uptimes_payload import SyntheticsFetchUptimesPayload
 from datadog_api_client.v1.model.synthetics_patch_test_body import SyntheticsPatchTestBody
 from datadog_api_client.v1.model.synthetics_get_api_test_latest_results_response import (
     SyntheticsGetAPITestLatestResultsResponse,
@@ -227,6 +228,26 @@ class SyntheticsApi:
                 "body": {
                     "required": True,
                     "openapi_types": (SyntheticsGlobalVariableRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._fetch_uptimes_endpoint = _Endpoint(
+            settings={
+                "response_type": ([SyntheticsTestUptime],),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v1/synthetics/tests/uptimes",
+                "operation_id": "fetch_uptimes",
+                "http_method": "POST",
+                "version": "v1",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (SyntheticsFetchUptimesPayload,),
                     "location": "body",
                 },
             },
@@ -893,6 +914,23 @@ class SyntheticsApi:
         kwargs["body"] = body
 
         return self._edit_global_variable_endpoint.call_with_http_info(**kwargs)
+
+    def fetch_uptimes(
+        self,
+        body: SyntheticsFetchUptimesPayload,
+    ) -> List[SyntheticsTestUptime]:
+        """Fetch uptime for multiple tests.
+
+        Fetch uptime for multiple Synthetic tests by ID.
+
+        :param body: Public ID list of the Synthetic tests and timeframe.
+        :type body: SyntheticsFetchUptimesPayload
+        :rtype: [SyntheticsTestUptime]
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._fetch_uptimes_endpoint.call_with_http_info(**kwargs)
 
     def get_api_test(
         self,

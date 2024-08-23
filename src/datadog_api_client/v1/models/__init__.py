@@ -700,6 +700,7 @@ from datadog_api_client.v1.model.synthetics_delete_tests_response import Synthet
 from datadog_api_client.v1.model.synthetics_deleted_test import SyntheticsDeletedTest
 from datadog_api_client.v1.model.synthetics_device import SyntheticsDevice
 from datadog_api_client.v1.model.synthetics_device_id import SyntheticsDeviceID
+from datadog_api_client.v1.model.synthetics_fetch_uptimes_payload import SyntheticsFetchUptimesPayload
 from datadog_api_client.v1.model.synthetics_get_api_test_latest_results_response import (
     SyntheticsGetAPITestLatestResultsResponse,
 )
@@ -780,6 +781,7 @@ from datadog_api_client.v1.model.synthetics_test_request_body_type import Synthe
 from datadog_api_client.v1.model.synthetics_test_request_certificate import SyntheticsTestRequestCertificate
 from datadog_api_client.v1.model.synthetics_test_request_certificate_item import SyntheticsTestRequestCertificateItem
 from datadog_api_client.v1.model.synthetics_test_request_proxy import SyntheticsTestRequestProxy
+from datadog_api_client.v1.model.synthetics_test_uptime import SyntheticsTestUptime
 from datadog_api_client.v1.model.synthetics_timing import SyntheticsTiming
 from datadog_api_client.v1.model.synthetics_trigger_body import SyntheticsTriggerBody
 from datadog_api_client.v1.model.synthetics_trigger_ci_test_location import SyntheticsTriggerCITestLocation
@@ -789,6 +791,7 @@ from datadog_api_client.v1.model.synthetics_trigger_test import SyntheticsTrigge
 from datadog_api_client.v1.model.synthetics_update_test_pause_status_payload import (
     SyntheticsUpdateTestPauseStatusPayload,
 )
+from datadog_api_client.v1.model.synthetics_uptime import SyntheticsUptime
 from datadog_api_client.v1.model.synthetics_variable_parser import SyntheticsVariableParser
 from datadog_api_client.v1.model.synthetics_warning_type import SyntheticsWarningType
 from datadog_api_client.v1.model.table_widget_cell_display_mode import TableWidgetCellDisplayMode
@@ -1603,6 +1606,7 @@ __all__ = [
     "SyntheticsDeletedTest",
     "SyntheticsDevice",
     "SyntheticsDeviceID",
+    "SyntheticsFetchUptimesPayload",
     "SyntheticsGetAPITestLatestResultsResponse",
     "SyntheticsGetBrowserTestLatestResultsResponse",
     "SyntheticsGlobalVariable",
@@ -1663,6 +1667,7 @@ __all__ = [
     "SyntheticsTestRequestCertificate",
     "SyntheticsTestRequestCertificateItem",
     "SyntheticsTestRequestProxy",
+    "SyntheticsTestUptime",
     "SyntheticsTiming",
     "SyntheticsTriggerBody",
     "SyntheticsTriggerCITestLocation",
@@ -1670,6 +1675,7 @@ __all__ = [
     "SyntheticsTriggerCITestsResponse",
     "SyntheticsTriggerTest",
     "SyntheticsUpdateTestPauseStatusPayload",
+    "SyntheticsUptime",
     "SyntheticsVariableParser",
     "SyntheticsWarningType",
     "TableWidgetCellDisplayMode",

@@ -1208,6 +1208,12 @@
       "type": "idempotent"
     }
   },
+  "FetchUptimes": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "GetTest": {
     "tag": "Synthetics",
     "undo": {

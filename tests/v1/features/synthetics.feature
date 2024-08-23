@@ -412,6 +412,20 @@ Feature: Synthetics
     And the response "name" is equal to "{{ synthetics_api_test.name }}-updated"
 
   @generated @skip @team:DataDog/synthetics-ct
+  Scenario: Fetch uptime for multiple tests returns "- JSON format is wrong" response
+    Given new "FetchUptimes" request
+    And body with value {"from_ts": 0, "public_ids": [], "to_ts": 0}
+    When the request is sent
+    Then the response status is 400 - JSON format is wrong
+
+  @generated @skip @team:DataDog/synthetics-ct
+  Scenario: Fetch uptime for multiple tests returns "OK." response
+    Given new "FetchUptimes" request
+    And body with value {"from_ts": 0, "public_ids": [], "to_ts": 0}
+    When the request is sent
+    Then the response status is 200 OK.
+
+  @generated @skip @team:DataDog/synthetics-ct
   Scenario: Get a browser test result returns "- Synthetic Monitoring is not activated for the user" response
     Given new "GetBrowserTestResult" request
     And request contains "public_id" parameter from "REPLACE.ME"
