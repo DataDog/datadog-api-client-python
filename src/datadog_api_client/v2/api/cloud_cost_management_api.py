@@ -26,7 +26,7 @@ from datadog_api_client.v2.model.cloud_cost_activity_response import CloudCostAc
 
 class CloudCostManagementApi:
     """
-    The Cloud Cost Management API allows you to set up, edit, and delete Cloud Cost Management accounts for AWS and Azure. See the `Cloud Cost Management page <https://docs.datadoghq.com/cloud_cost_management/>`_ for more information.
+    The Cloud Cost Management API allows you to set up, edit, and delete Cloud Cost Management accounts for AWS and Azure. You can query your cost data by using the `Metrics endpoint <https://docs.datadoghq.com/api/latest/metrics/#query-timeseries-data-across-multiple-products>`_ and the ``cloud_cost`` data source. For more information, see the `Cloud Cost Management documentation <https://docs.datadoghq.com/cloud_cost_management/>`_.
     """
 
     def __init__(self, api_client=None):
