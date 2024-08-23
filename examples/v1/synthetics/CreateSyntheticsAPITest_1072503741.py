@@ -25,7 +25,7 @@ body = SyntheticsAPITest(
         ],
         request=SyntheticsTestRequest(
             host="datadoghq.com",
-            port=443,
+            port="443",
         ),
     ),
     locations=[
