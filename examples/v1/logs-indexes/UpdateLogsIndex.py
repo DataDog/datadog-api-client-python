@@ -30,6 +30,7 @@ body = LogsIndexUpdateRequest(
     filter=LogsFilter(
         query="source:python",
     ),
+    num_flex_logs_retention_days=360,
     num_retention_days=15,
 )
 

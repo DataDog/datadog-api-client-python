@@ -41,6 +41,7 @@ class LogsIndex(ModelNormal):
             "filter": (LogsFilter,),
             "is_rate_limited": (bool,),
             "name": (str,),
+            "num_flex_logs_retention_days": (int,),
             "num_retention_days": (int,),
         }
 
@@ -52,6 +53,7 @@ class LogsIndex(ModelNormal):
         "filter": "filter",
         "is_rate_limited": "is_rate_limited",
         "name": "name",
+        "num_flex_logs_retention_days": "num_flex_logs_retention_days",
         "num_retention_days": "num_retention_days",
     }
     read_only_vars = {
@@ -67,6 +69,7 @@ class LogsIndex(ModelNormal):
         daily_limit_warning_threshold_percentage: Union[float, UnsetType] = unset,
         exclusion_filters: Union[List[LogsExclusion], UnsetType] = unset,
         is_rate_limited: Union[bool, UnsetType] = unset,
+        num_flex_logs_retention_days: Union[int, UnsetType] = unset,
         num_retention_days: Union[int, UnsetType] = unset,
         **kwargs,
     ):
@@ -97,8 +100,14 @@ class LogsIndex(ModelNormal):
         :param name: The name of the index.
         :type name: str
 
-        :param num_retention_days: The number of days before logs are deleted from this index. Available values depend on
-            retention plans specified in your organization's contract/subscriptions.
+        :param num_flex_logs_retention_days: The total number of days logs are stored in Standard and Flex Tier before being deleted from the index.
+            If Standard Tier is enabled on this index, logs are first retained in Standard Tier for the number of days specified through ``num_retention_days`` ,
+            and then stored in Flex Tier until the number of days specified in ``num_flex_logs_retention_days`` is reached.
+            The available values depend on retention plans specified in your organization's contract/subscriptions.
+        :type num_flex_logs_retention_days: int, optional
+
+        :param num_retention_days: The number of days logs are stored in Standard Tier before aging into the Flex Tier or being deleted from the index.
+            The available values depend on retention plans specified in your organization's contract/subscriptions.
         :type num_retention_days: int, optional
         """
         if daily_limit is not unset:
@@ -111,6 +120,8 @@ class LogsIndex(ModelNormal):
             kwargs["exclusion_filters"] = exclusion_filters
         if is_rate_limited is not unset:
             kwargs["is_rate_limited"] = is_rate_limited
+        if num_flex_logs_retention_days is not unset:
+            kwargs["num_flex_logs_retention_days"] = num_flex_logs_retention_days
         if num_retention_days is not unset:
             kwargs["num_retention_days"] = num_retention_days
         super().__init__(kwargs)

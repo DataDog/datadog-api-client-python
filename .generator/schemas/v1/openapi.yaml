@@ -39,6 +39,8 @@ components:
       properties:
         errors:
           description: Array of errors returned by the API.
+          example:
+          - Bad Request
           items:
             description: Error description.
             example: Bad Request
@@ -1683,6 +1685,10 @@ components:
           description: Points relating to the distribution point metric. All points
             must be tuples with timestamp and a list of values (cannot be a string).
             Timestamps should be in POSIX time in seconds.
+          example:
+          - - 1575317847.0
+            - - 0.5
+              - 1.0
           items:
             $ref: '#/components/schemas/DistributionPoint'
           type: array
@@ -4730,11 +4736,11 @@ components:
           $ref: '#/components/schemas/WidgetEventSize'
         group_by:
           description: Group by configuration for the List Stream Widget. Group by
-            can be used only with logs_pattern_stream (up to 3 items) or logs_transaction_stream
+            can be used only with logs_pattern_stream (up to 4 items) or logs_transaction_stream
             (one group by item is required) list stream source.
           items:
             $ref: '#/components/schemas/ListStreamGroupByItems'
-          maxItems: 3
+          maxItems: 4
           type: array
         indexes:
           description: List of indexes.
@@ -5570,11 +5576,27 @@ components:
           description: The name of the index.
           example: main
           type: string
-        num_retention_days:
-          description: 'The number of days before logs are deleted from this index.
-            Available values depend on
+        num_flex_logs_retention_days:
+          description: 'The total number of days logs are stored in Standard and Flex
+            Tier before being deleted from the index.
 
-            retention plans specified in your organization''s contract/subscriptions.'
+            If Standard Tier is enabled on this index, logs are first retained in
+            Standard Tier for the number of days specified through `num_retention_days`,
+
+            and then stored in Flex Tier until the number of days specified in `num_flex_logs_retention_days`
+            is reached.
+
+            The available values depend on retention plans specified in your organization''s
+            contract/subscriptions.'
+          example: 360
+          format: int64
+          type: integer
+        num_retention_days:
+          description: 'The number of days logs are stored in Standard Tier before
+            aging into the Flex Tier or being deleted from the index.
+
+            The available values depend on retention plans specified in your organization''s
+            contract/subscriptions.'
           example: 15
           format: int64
           type: integer
@@ -5633,17 +5655,35 @@ components:
           type: array
         filter:
           $ref: '#/components/schemas/LogsFilter'
+        num_flex_logs_retention_days:
+          description: 'The total number of days logs are stored in Standard and Flex
+            Tier before being deleted from the index.
+
+            If Standard Tier is enabled on this index, logs are first retained in
+            Standard Tier for the number of days specified through `num_retention_days`,
+
+            and then stored in Flex Tier until the number of days specified in `num_flex_logs_retention_days`
+            is reached.
+
+            The available values depend on retention plans specified in your organization''s
+            contract/subscriptions.
+
+
+            **Note**: Changing this value affects all logs already in this index.
+            It may also affect billing.'
+          example: 360
+          format: int64
+          type: integer
         num_retention_days:
-          description: 'The number of days before logs are deleted from this index.
-            Available values depend on
+          description: 'The number of days logs are stored in Standard Tier before
+            aging into the Flex Tier or being deleted from the index.
 
-            retention plans specified in your organization''s contract/subscriptions.
+            The available values depend on retention plans specified in your organization''s
+            contract/subscriptions.
 
 
-            **Note:** Changing the retention for an index adjusts the length of retention
-            for all logs
-
-            already in this index. It may also affect billing.'
+            **Note**: Changing this value affects all logs already in this index.
+            It may also affect billing.'
           example: 15
           format: int64
           type: integer
@@ -9313,6 +9353,8 @@ components:
       properties:
         keys:
           description: Keys to split on.
+          example:
+          - environment
           items:
             description: A key to split on.
             example: environment
@@ -9320,6 +9362,8 @@ components:
           type: array
         tags:
           description: Tags to split on.
+          example:
+          - environment:staging
           items:
             description: A tag to split on.
             example: environment:staging
@@ -10532,6 +10576,7 @@ components:
       description: A formula and function query.
       example:
         data_source: metrics
+        name: query1
         query: sum:trace.servlet.request.hits{*} by {env}.as_count()
       oneOf:
       - $ref: '#/components/schemas/FormulaAndFunctionMetricQueryDefinition'
@@ -11596,6 +11641,8 @@ components:
         formulas:
           description: A list that contains exactly one formula, as only a single
             formula may be used in a time-slice SLO.
+          example:
+          - formula: query1 - default_zero(query2)
           items:
             $ref: '#/components/schemas/SLOFormula'
           maxItems: 1
@@ -11603,6 +11650,10 @@ components:
           type: array
         queries:
           description: A list of queries that are used to calculate the SLI value.
+          example:
+          - data_source: metrics
+            name: query1
+            query: sum:trace.servlet.request.hits{*} by {env}.as_count()
           items:
             $ref: '#/components/schemas/SLODataSourceQueryDefinition'
           type: array
@@ -12317,6 +12368,9 @@ components:
             timestamp and a scalar value (cannot be a string). Timestamps should be
             in POSIX time in seconds, and cannot be more than ten minutes in the future
             or more than one hour in the past.
+          example:
+          - - 1575317847.0
+            - 0.5
           items:
             $ref: '#/components/schemas/Point'
           type: array
@@ -12843,7 +12897,6 @@ components:
           items:
             description: Email address that can receive an invitation to access the
               shared dashboard.
-            format: email
             type: string
           nullable: true
           type: array
@@ -13028,7 +13081,6 @@ components:
           items:
             description: Email address that can receive an invitation to access the
               shared dashboard.
-            format: email
             type: string
           nullable: true
           type: array
@@ -13164,6 +13216,8 @@ components:
           $ref: '#/components/schemas/SplitSort'
         split_dimensions:
           description: The dimension(s) on which to split the graph
+          example:
+          - one_graph_per: service
           items:
             $ref: '#/components/schemas/SplitDimension'
           maxItems: 1
@@ -16217,10 +16271,7 @@ components:
           type: string
         dnsServerPort:
           description: DNS server port to use for DNS tests.
-          format: int32
-          maximum: 65535
-          minimum: 1
-          type: integer
+          type: string
         files:
           description: Files to be used as part of the request in the test.
           items:
@@ -16260,8 +16311,7 @@ components:
           type: boolean
         port:
           description: Port to use when performing the test.
-          format: int64
-          type: integer
+          type: string
         proxy:
           $ref: '#/components/schemas/SyntheticsTestRequestProxy'
         query:
@@ -21162,12 +21212,10 @@ components:
         email:
           description: The new email of the user.
           example: test@datadoghq.com
-          format: email
           type: string
         handle:
           description: The user handle, must be a valid email.
           example: test@datadoghq.com
-          format: email
           type: string
         icon:
           description: Gravatar icon associated to the user.
@@ -24356,6 +24404,7 @@ paths:
         name: metric_query
         schema:
           type: string
+        x-docs-curl-required: true
       - description: The POSIX timestamp of the start of the query in seconds.
         in: query
         name: start
@@ -33854,7 +33903,6 @@ paths:
         required: true
         schema:
           example: test@datadoghq.com
-          format: email
           type: string
       responses:
         '200':
@@ -33896,7 +33944,6 @@ paths:
         required: true
         schema:
           example: test@datadoghq.com
-          format: email
           type: string
       responses:
         '200':
@@ -33935,7 +33982,6 @@ paths:
         required: true
         schema:
           example: test@datadoghq.com
-          format: email
           type: string
       requestBody:
         content:
