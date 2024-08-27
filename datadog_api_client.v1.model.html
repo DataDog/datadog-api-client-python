@@ -11402,8 +11402,12 @@ others (if any) are ignored.</p></li>
 <li><p><strong>is_rate_limited</strong> (<em>bool</em><em>, </em><em>optional</em>) – A boolean stating if the index is rate limited, meaning more logs than the daily limit have been sent.
 Rate limit is reset every-day at 2pm UTC.</p></li>
 <li><p><strong>name</strong> (<em>str</em>) – The name of the index.</p></li>
-<li><p><strong>num_retention_days</strong> (<em>int</em><em>, </em><em>optional</em>) – The number of days before logs are deleted from this index. Available values depend on
-retention plans specified in your organization’s contract/subscriptions.</p></li>
+<li><p><strong>num_flex_logs_retention_days</strong> (<em>int</em><em>, </em><em>optional</em>) – The total number of days logs are stored in Standard and Flex Tier before being deleted from the index.
+If Standard Tier is enabled on this index, logs are first retained in Standard Tier for the number of days specified through <code class="docutils literal notranslate"><span class="pre">num_retention_days</span></code> ,
+and then stored in Flex Tier until the number of days specified in <code class="docutils literal notranslate"><span class="pre">num_flex_logs_retention_days</span></code> is reached.
+The available values depend on retention plans specified in your organization’s contract/subscriptions.</p></li>
+<li><p><strong>num_retention_days</strong> (<em>int</em><em>, </em><em>optional</em>) – The number of days logs are stored in Standard Tier before aging into the Flex Tier or being deleted from the index.
+The available values depend on retention plans specified in your organization’s contract/subscriptions.</p></li>
 </ul>
 </dd>
 </dl>
@@ -11443,10 +11447,15 @@ specified <code class="docutils literal notranslate"><span class="pre">daily_lim
 following the order of the array. Only the first matching active exclusion matters,
 others (if any) are ignored.</p></li>
 <li><p><strong>filter</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.logs_filter.LogsFilter" title="datadog_api_client.v1.model.logs_filter.LogsFilter"><em>LogsFilter</em></a>) – Filter for logs.</p></li>
-<li><p><strong>num_retention_days</strong> (<em>int</em><em>, </em><em>optional</em>) – <p>The number of days before logs are deleted from this index. Available values depend on
-retention plans specified in your organization’s contract/subscriptions.</p>
-<p><strong>Note:</strong> Changing the retention for an index adjusts the length of retention for all logs
-already in this index. It may also affect billing.</p>
+<li><p><strong>num_flex_logs_retention_days</strong> (<em>int</em><em>, </em><em>optional</em>) – <p>The total number of days logs are stored in Standard and Flex Tier before being deleted from the index.
+If Standard Tier is enabled on this index, logs are first retained in Standard Tier for the number of days specified through <code class="docutils literal notranslate"><span class="pre">num_retention_days</span></code> ,
+and then stored in Flex Tier until the number of days specified in <code class="docutils literal notranslate"><span class="pre">num_flex_logs_retention_days</span></code> is reached.
+The available values depend on retention plans specified in your organization’s contract/subscriptions.</p>
+<p><strong>Note</strong> : Changing this value affects all logs already in this index. It may also affect billing.</p>
+</p></li>
+<li><p><strong>num_retention_days</strong> (<em>int</em><em>, </em><em>optional</em>) – <p>The number of days logs are stored in Standard Tier before aging into the Flex Tier or being deleted from the index.
+The available values depend on retention plans specified in your organization’s contract/subscriptions.</p>
+<p><strong>Note</strong> : Changing this value affects all logs already in this index. It may also affect billing.</p>
 </p></li>
 </ul>
 </dd>
