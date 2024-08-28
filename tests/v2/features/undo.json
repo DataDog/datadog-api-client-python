@@ -311,6 +311,31 @@
       "type": "idempotent"
     }
   },
+  "ListCatalogEntity": {
+    "tag": "Software Catalog",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpsertCatalogEntity": {
+    "tag": "Software Catalog",
+    "undo": {
+      "operationId": "DeleteCatalogEntity",
+      "parameters": [
+        {
+          "name": "entity_id",
+          "source": "data[0].id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteCatalogEntity": {
+    "tag": "Software Catalog",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "CreateCIAppPipelineEvent": {
     "tag": "CI Visibility Pipelines",
     "undo": {
