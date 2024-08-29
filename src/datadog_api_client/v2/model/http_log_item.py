@@ -60,8 +60,12 @@ class HTTPLogItem(ModelNormal):
         :type hostname: str, optional
 
         :param message: The message `reserved attribute <https://docs.datadoghq.com/logs/log_configuration/attributes_naming_convention/#reserved-attributes>`_
-            of your log. By default, Datadog ingests the value of the message attribute as the body of the log entry.
-            That value is then highlighted and displayed in the Logstream, where it is indexed for full text search.
+            of your log. By default, Datadog ingests the value of the message attribute as the body of the log entry. That value is then highlighted and displayed in the Logstream, where it is indexed for full text search.
+
+            * Messages truncate to 25 KiB for non-message fields, and 75 KiB for the message field.
+            * Queries match against the truncated version.
+            * The truncated version displays only when doing a grouped query, for example, logs grouped by that truncated field or similar operations that display that specific field.
+            * Datadog stores the full text for the fields, and you can see the full log in regular list queries in the Logs Explorer.
         :type message: str
 
         :param service: The name of the application or service generating the log events.
