@@ -2,6 +2,8 @@
 Create a new SLO report returns "OK" response
 """
 
+from datetime import datetime
+from dateutil.relativedelta import relativedelta
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.service_level_objectives_api import ServiceLevelObjectivesApi
 from datadog_api_client.v2.model.slo_report_create_request import SloReportCreateRequest
@@ -12,8 +14,8 @@ from datadog_api_client.v2.model.slo_report_interval import SLOReportInterval
 body = SloReportCreateRequest(
     data=SloReportCreateRequestData(
         attributes=SloReportCreateRequestAttributes(
-            from_ts=1690901870,
-            to_ts=1706803070,
+            from_ts=int((datetime.now() + relativedelta(days=-40)).timestamp()),
+            to_ts=int(datetime.now().timestamp()),
             query='slo_type:metric "SLO Reporting Test"',
             interval=SLOReportInterval.MONTHLY,
             timezone="America/New_York",

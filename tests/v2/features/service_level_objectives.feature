@@ -17,7 +17,7 @@ Feature: Service Level Objectives
   Scenario: Create a new SLO report returns "Bad Request" response
     Given operation "CreateSLOReportJob" enabled
     And new "CreateSLOReportJob" request
-    And body with value {"data": {"attributes": {"from_ts": 1690901870,  "to_ts": 1706803070, "query": "slo_type:metric \"SLO Reporting Test\"", "interval": "bad-interval"}}}
+    And body with value {"data": {"attributes": {"from_ts": {{ timestamp('now - 40d') }},  "to_ts": {{ timestamp('now') }}, "query": "slo_type:metric \"SLO Reporting Test\"", "interval": "bad-interval"}}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -25,7 +25,7 @@ Feature: Service Level Objectives
   Scenario: Create a new SLO report returns "OK" response
     Given operation "CreateSLOReportJob" enabled
     And new "CreateSLOReportJob" request
-    And body with value {"data": {"attributes": {"from_ts": 1690901870,  "to_ts": 1706803070, "query": "slo_type:metric \"SLO Reporting Test\"", "interval": "monthly", "timezone": "America/New_York"}}}
+    And body with value {"data": {"attributes": {"from_ts": {{ timestamp('now - 40d') }},  "to_ts": {{ timestamp('now') }}, "query": "slo_type:metric \"SLO Reporting Test\"", "interval": "monthly", "timezone": "America/New_York"}}}
     When the request is sent
     Then the response status is 200 OK
     And the response "data.type" is equal to "report_id"
