@@ -1,7 +1,7 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"from_ts":1711656584,"interval":"monthly","query":"slo_type:metric
-      \"SLO Reporting Test\"","to_ts":1713470984}}}'
+    body: '{"data":{"attributes":{"from_ts":1723146831,"interval":"monthly","query":"slo_type:metric
+      \"SLO Reporting Test\"","to_ts":1724961231}}}'
     headers:
       accept:
       - application/json
@@ -11,7 +11,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/slo/report
   response:
     body:
-      string: '{"data":{"id":"990d70d6-fdbf-11ee-99ae-1f9640631fbf","type":"report_id"}}'
+      string: '{"data":{"id":"6a25239c-6640-11ef-943f-83644ac57ee3","type":"report_id"}}'
     headers:
       content-type:
       - application/vnd.api+json
@@ -24,10 +24,10 @@ interactions:
       accept:
       - application/json
     method: GET
-    uri: https://api.datadoghq.com/api/v2/slo/report/990d70d6-fdbf-11ee-99ae-1f9640631fbf/status
+    uri: https://api.datadoghq.com/api/v2/slo/report/6a25239c-6640-11ef-943f-83644ac57ee3/status
   response:
     body:
-      string: '{"data":{"id":"990d70d6-fdbf-11ee-99ae-1f9640631fbf","type":"report_id","attributes":{"status":"in_progress"}}}'
+      string: '{"data":{"id":"6a25239c-6640-11ef-943f-83644ac57ee3","type":"report_id","attributes":{"status":"in_progress"}}}'
     headers:
       content-type:
       - application/vnd.api+json

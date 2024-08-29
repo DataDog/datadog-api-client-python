@@ -1,7 +1,7 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"from_ts":1690901870,"interval":"monthly","query":"slo_type:metric
-      \"SLO Reporting Test\"","timezone":"America/New_York","to_ts":1706803070}}}'
+    body: '{"data":{"attributes":{"from_ts":1721505230,"interval":"monthly","query":"slo_type:metric
+      \"SLO Reporting Test\"","timezone":"America/New_York","to_ts":1724961230}}}'
     headers:
       accept:
       - application/json
@@ -11,7 +11,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/slo/report
   response:
     body:
-      string: '{"data":{"id":"98c67bea-fdbf-11ee-8a01-bfd37432018b","type":"report_id"}}'
+      string: '{"data":{"id":"69cfaa02-6640-11ef-8501-33b2b403f044","type":"report_id"}}'
     headers:
       content-type:
       - application/vnd.api+json
