@@ -1387,8 +1387,11 @@ def model_to_dict(model_instance, serialize=True):
     result = {}
 
     model_instances = [model_instance]
-    if model_instance._composed_schemas:
-        model_instances.extend(model_instance._composed_instances)
+    model = model_instance
+    while model._composed_schemas:
+        model_instances.extend(model._composed_instances)
+        model = model.get_oneof_instance()
+
     seen_json_attribute_names = set()
     used_fallback_python_attribute_names = set()
     py_to_json_map = {}
