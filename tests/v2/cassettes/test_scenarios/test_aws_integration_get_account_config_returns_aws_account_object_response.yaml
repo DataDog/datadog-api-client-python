@@ -1,0 +1,52 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"account_tags":["$KEY:$VALUE"],"auth_config":{"role_name":"DatadogAWSIntegrationRole"},"aws_account_id":"123456789012","aws_partition":"aws","aws_regions":{"include_only":["us-east-2","us-west-1"]},"logs_config":{},"metrics_config":{"automute_enabled":true,"enabled":false,"namespace_filters":{"exclude_only":["AWS/AutoScaling","AWS/ElasticMapReduce","AWS/SQS"]},"tag_filters":[{"namespace":"AWS/EC2","tags":["$KEY:$VALUE"]}]},"resources_config":{"cloud_security_posture_management_collection":true,"extended_collection":true},"traces_config":{"xray_services":{"include_only":["AWS/AppSync"]}}},"id":"123456789012","type":"account"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/integration/aws/accounts
+  response:
+    body:
+      string: '{"data":{"id":"c59a664c-db34-477f-8a3c-583598fb2aba","type":"account","attributes":{"account_tags":["$KEY:$VALUE"],"auth_config":{"role_name":"DatadogAWSIntegrationRole","external_id":"cea32c6830d7418e8d44c1f5b75b5952"},"aws_account_id":"123456789012","aws_partition":"aws","aws_regions":{"include_only":["us-east-2","us-west-1"]},"created_at":"2024-08-21T20:16:51.577022335Z","logs_config":{"lambda_forwarder":{}},"metrics_config":{"enabled":false,"automute_enabled":true,"collect_custom_metrics":true,"collect_cloudwatch_alarms":true,"tag_filters":[{"namespace":"AWS/EC2","tags":["$KEY:$VALUE"]}],"namespace_filters":{"exclude_only":["AWS/AutoScaling","AWS/ElasticMapReduce","AWS/SQS"]}},"modified_at":"2024-08-21T20:16:51.577025805Z","resources_config":{"cloud_security_posture_management_collection":true,"extended_collection":true}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/integration/aws/accounts/123456789012
+  response:
+    body:
+      string: '{"data":{"id":"c59a664c-db34-477f-8a3c-583598fb2aba","type":"account","attributes":{"account_tags":["$KEY:$VALUE"],"auth_config":{"role_name":"DatadogAWSIntegrationRole","external_id":"cea32c6830d7418e8d44c1f5b75b5952"},"aws_account_id":"123456789012","aws_partition":"aws","aws_regions":{"include_only":["us-east-2","us-west-1"]},"created_at":"2024-08-21T20:16:51.577022Z","logs_config":{"lambda_forwarder":{}},"metrics_config":{"enabled":false,"automute_enabled":true,"collect_custom_metrics":true,"collect_cloudwatch_alarms":true,"tag_filters":[{"namespace":"AWS/EC2","tags":["$KEY:$VALUE"]}],"namespace_filters":{"exclude_only":["AWS/AutoScaling","AWS/ElasticMapReduce","AWS/SQS"]}},"modified_at":"2024-08-21T20:16:51.577026Z","resources_config":{"cloud_security_posture_management_collection":true,"extended_collection":true}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/integration/aws/accounts/123456789012
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 204
+      message: No Content
+version: 1
