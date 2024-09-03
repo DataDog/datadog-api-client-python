@@ -5919,6 +5919,13 @@ datadog\_api\_client.v1.model.widget\_layout\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.widget\_legacy\_live\_span module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.widget_legacy_live_span
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.widget\_line\_type module
 -------------------------------------------------------
 
@@ -5937,6 +5944,13 @@ datadog\_api\_client.v1.model.widget\_live\_span module
 -------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.widget_live_span
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.widget\_live\_span\_unit module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.widget_live_span_unit
    :members:
    :show-inheritance:
 
@@ -5972,6 +5986,34 @@ datadog\_api\_client.v1.model.widget\_monitor\_summary\_sort module
 -------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.widget_monitor_summary_sort
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.widget\_new\_fixed\_span module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.widget_new_fixed_span
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.widget\_new\_fixed\_span\_type module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.widget_new_fixed_span_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.widget\_new\_live\_span module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.widget_new_live_span
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.widget\_new\_live\_span\_type module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.widget_new_live_span_type
    :members:
    :show-inheritance:
 
