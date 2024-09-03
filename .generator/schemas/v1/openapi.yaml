@@ -15267,17 +15267,18 @@ components:
       - type
       type: object
     SyntheticsGlobalVariableParseTestOptionsType:
-      description: Property of the Synthetic Test Response to use for a Synthetic
-        global variable.
+      description: Type of value to extract from a test for a Synthetic global variable.
       enum:
       - http_body
       - http_header
+      - http_status_code
       - local_variable
       example: http_body
       type: string
       x-enum-varnames:
       - HTTP_BODY
       - HTTP_HEADER
+      - HTTP_STATUS_CODE
       - LOCAL_VARIABLE
     SyntheticsGlobalVariableParserType:
       description: Type of parser for a Synthetic global variable from a synthetics
@@ -15396,6 +15397,23 @@ components:
             $ref: '#/components/schemas/SyntheticsTestDetails'
           type: array
       type: object
+    SyntheticsLocalVariableParsingOptionsType:
+      description: Property of the Synthetic Test Response to extract into a local
+        variable.
+      enum:
+      - grpc_message
+      - grpc_metadata
+      - http_body
+      - http_header
+      - http_status_code
+      example: http_body
+      type: string
+      x-enum-varnames:
+      - GRPC_MESSAGE
+      - GRPC_METADATA
+      - HTTP_BODY
+      - HTTP_HEADER
+      - HTTP_STATUS_CODE
     SyntheticsLocation:
       description: 'Synthetic location that can be used when creating or editing a
 
@@ -15422,8 +15440,8 @@ components:
       example: {}
       properties:
         field:
-          description: When type is `http_header`, name of the header to use to extract
-            the value.
+          description: When type is `http_header` or `grpc_metadata`, name of the
+            header or metadatum to extract.
           example: content-type
           type: string
         name:
@@ -15435,7 +15453,7 @@ components:
           description: Determines whether or not the extracted value will be obfuscated.
           type: boolean
         type:
-          $ref: '#/components/schemas/SyntheticsGlobalVariableParseTestOptionsType'
+          $ref: '#/components/schemas/SyntheticsLocalVariableParsingOptionsType'
       type: object
     SyntheticsPatchTestBody:
       description: Wrapper around an array of [JSON Patch](https://jsonpatch.com)
@@ -16010,7 +16028,7 @@ components:
       type: object
     SyntheticsTestMetadata:
       additionalProperties:
-        description: A single Metadatum.
+        description: A single metadatum.
         type: string
       description: Metadata to include when performing the gRPC test.
       type: object

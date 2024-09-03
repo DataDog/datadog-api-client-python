@@ -16,10 +16,10 @@ from datadog_api_client.v1.model.synthetics_assertion_target import SyntheticsAs
 from datadog_api_client.v1.model.synthetics_assertion_type import SyntheticsAssertionType
 from datadog_api_client.v1.model.synthetics_config_variable import SyntheticsConfigVariable
 from datadog_api_client.v1.model.synthetics_config_variable_type import SyntheticsConfigVariableType
-from datadog_api_client.v1.model.synthetics_global_variable_parse_test_options_type import (
-    SyntheticsGlobalVariableParseTestOptionsType,
-)
 from datadog_api_client.v1.model.synthetics_global_variable_parser_type import SyntheticsGlobalVariableParserType
+from datadog_api_client.v1.model.synthetics_local_variable_parsing_options_type import (
+    SyntheticsLocalVariableParsingOptionsType,
+)
 from datadog_api_client.v1.model.synthetics_parsing_options import SyntheticsParsingOptions
 from datadog_api_client.v1.model.synthetics_test_call_type import SyntheticsTestCallType
 from datadog_api_client.v1.model.synthetics_test_details_sub_type import SyntheticsTestDetailsSubType
@@ -57,7 +57,7 @@ body = SyntheticsAPITest(
                         parser=SyntheticsVariableParser(
                             type=SyntheticsGlobalVariableParserType.RAW,
                         ),
-                        type=SyntheticsGlobalVariableParseTestOptionsType.HTTP_HEADER,
+                        type=SyntheticsLocalVariableParsingOptionsType.HTTP_HEADER,
                         secure=True,
                     ),
                 ],
