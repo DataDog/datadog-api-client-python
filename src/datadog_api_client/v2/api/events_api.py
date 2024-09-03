@@ -119,9 +119,9 @@ class EventsApi:
 
         :param filter_query: Search query following events syntax.
         :type filter_query: str, optional
-        :param filter_from: Minimum timestamp for requested events.
+        :param filter_from: Minimum timestamp for requested events, in milliseconds.
         :type filter_from: str, optional
-        :param filter_to: Maximum timestamp for requested events.
+        :param filter_to: Maximum timestamp for requested events, in milliseconds.
         :type filter_to: str, optional
         :param sort: Order of events in results.
         :type sort: EventsSort, optional
@@ -168,9 +168,9 @@ class EventsApi:
 
         :param filter_query: Search query following events syntax.
         :type filter_query: str, optional
-        :param filter_from: Minimum timestamp for requested events.
+        :param filter_from: Minimum timestamp for requested events, in milliseconds.
         :type filter_from: str, optional
-        :param filter_to: Maximum timestamp for requested events.
+        :param filter_to: Maximum timestamp for requested events, in milliseconds.
         :type filter_to: str, optional
         :param sort: Order of events in results.
         :type sort: EventsSort, optional
