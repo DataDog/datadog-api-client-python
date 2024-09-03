@@ -1,7 +1,7 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"from_ts":1690901870,"interval":"bad-interval","query":"slo_type:metric
-      \"SLO Reporting Test\"","to_ts":1706803070}}}'
+    body: '{"data":{"attributes":{"from_ts":1721505230,"interval":"bad-interval","query":"slo_type:metric
+      \"SLO Reporting Test\"","to_ts":1724961230}}}'
     headers:
       accept:
       - application/json
