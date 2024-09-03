@@ -43,6 +43,7 @@ from datadog_api_client.v2.api.service_accounts_api import ServiceAccountsApi
 from datadog_api_client.v2.api.service_definition_api import ServiceDefinitionApi
 from datadog_api_client.v2.api.service_level_objectives_api import ServiceLevelObjectivesApi
 from datadog_api_client.v2.api.service_scorecards_api import ServiceScorecardsApi
+from datadog_api_client.v2.api.software_catalog_api import SoftwareCatalogApi
 from datadog_api_client.v2.api.spans_api import SpansApi
 from datadog_api_client.v2.api.spans_metrics_api import SpansMetricsApi
 from datadog_api_client.v2.api.synthetics_api import SyntheticsApi
@@ -98,6 +99,7 @@ __all__ = [
     "ServiceDefinitionApi",
     "ServiceLevelObjectivesApi",
     "ServiceScorecardsApi",
+    "SoftwareCatalogApi",
     "SpansApi",
     "SpansMetricsApi",
     "SyntheticsApi",

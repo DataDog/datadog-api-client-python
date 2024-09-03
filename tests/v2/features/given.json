@@ -76,6 +76,18 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"apiVersion\": \"v3\",\n  \"kind\": \"service\",\n  \"metadata\": {\n    \"name\": \"service-{{ unique_lower_alnum }}\",\n    \"displayName\": \"Shopping Cart\",\n    \"inheritFrom\": \"service:otherService\",\n    \"tags\": [\n      \"tag:value\"\n    ],\n    \"links\": [\n      {\n        \"name\": \"shopping-cart runbook\",\n        \"type\": \"runbook\",\n        \"url\": \"https://runbook/shopping-cart\"\n      },\n      {\n        \"name\": \"shopping-cart architecture\",\n        \"provider\": \"gdoc\",\n        \"url\": \"https://google.drive/shopping-cart-architecture\",\n        \"type\": \"doc\"\n      },\n      {\n        \"name\": \"shopping-cart Wiki\",\n        \"provider\": \"wiki\",\n        \"url\": \"https://wiki/shopping-cart\",\n        \"type\": \"doc\"\n      },\n      {\n        \"name\": \"shopping-cart source code\",\n        \"provider\": \"github\",\n        \"url\": \"http://github/shopping-cart\",\n        \"type\": \"repo\"\n      }\n    ],\n    \"contacts\": [\n      {\n        \"name\": \"Support Email\",\n        \"type\": \"email\",\n        \"contact\": \"team@shopping.com\"\n      },\n      {\n        \"name\": \"Support Slack\",\n        \"type\": \"slack\",\n        \"contact\": \"https://www.slack.com/archives/shopping-cart\"\n      }\n    ],\n    \"owner\": \"myteam\",\n    \"additionalOwners\": [\n      {\n        \"name\": \"opsTeam\",\n        \"type\": \"operator\"\n      }\n    ]\n  },\n  \"integrations\": {\n    \"pagerduty\": {\n      \"serviceURL\": \"https://www.pagerduty.com/service-directory/Pshopping-cart\"\n    },\n    \"opsgenie\": {\n      \"serviceURL\": \"https://www.opsgenie.com/service/shopping-cart\",\n      \"region\": \"US\"\n    }\n  },\n  \"extensions\": {\n    \"datadoghq.com/shopping-cart\": {\n      \"customField\": \"customValue\"\n    }\n  },\n  \"spec\": {\n    \"lifecycle\": \"production\",\n    \"tier\": \"1\",\n    \"type\": \"web\",\n    \"languages\": [\n      \"go\",\n      \"python\"\n    ],\n    \"dependsOn\": [\n      \"service:serviceA\",\n      \"service:serviceB\"\n    ]\n  },\n  \"datadog\": {\n    \"performanceData\": {\n      \"tags\": [\n        \"service:shopping-cart\",\n        \"hostname:shopping-cart\"\n      ]\n    },\n    \"events\": [\n      {\n        \"name\": \"deployment events\",\n        \"query\": \"app:myapp AND type:github\"\n      },\n      {\n        \"name\": \"event type B\",\n        \"query\": \"app:myapp AND type:github\"\n      }\n    ],\n    \"logs\": [\n      {\n        \"name\": \"critical logs\",\n        \"query\": \"app:myapp AND type:github\"\n      },\n      {\n        \"name\": \"ops logs\",\n        \"query\": \"app:myapp AND type:github\"\n      }\n    ],\n    \"pipelines\": {\n      \"fingerprints\": [\n        \"fp1\",\n        \"fp2\"\n      ]\n    },\n    \"codeLocations\": [\n      {\n        \"repositoryURL\": \"http://github/shopping-cart.git\",\n        \"paths\": [\n          \"baz/*.c\",\n          \"bat/**/*\",\n          \"../plop/*.java\"\n        ]\n      },\n      {\n        \"repositoryURL\": \"http://github/shopping-cart-2.git\",\n        \"paths\": [\n          \"baz/*.c\",\n          \"bat/**/*\",\n          \"../plop/*.java\"\n        ]\n      }\n    ]\n  }\n}"
+      }
+    ],
+    "step": "there is a valid entity in the system",
+    "key": "entity",
+    "tag": "Software Catalog",
+    "operationId": "UpsertCatalogEntity"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"name\": \"{{ unique }}\"\n    },\n    \"type\": \"application_keys\"\n  }\n}"
       }
     ],
