@@ -15,8 +15,8 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v1.model.synthetics_variable_parser import SyntheticsVariableParser
-    from datadog_api_client.v1.model.synthetics_global_variable_parse_test_options_type import (
-        SyntheticsGlobalVariableParseTestOptionsType,
+    from datadog_api_client.v1.model.synthetics_local_variable_parsing_options_type import (
+        SyntheticsLocalVariableParsingOptionsType,
     )
 
 
@@ -24,8 +24,8 @@ class SyntheticsParsingOptions(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v1.model.synthetics_variable_parser import SyntheticsVariableParser
-        from datadog_api_client.v1.model.synthetics_global_variable_parse_test_options_type import (
-            SyntheticsGlobalVariableParseTestOptionsType,
+        from datadog_api_client.v1.model.synthetics_local_variable_parsing_options_type import (
+            SyntheticsLocalVariableParsingOptionsType,
         )
 
         return {
@@ -33,7 +33,7 @@ class SyntheticsParsingOptions(ModelNormal):
             "name": (str,),
             "parser": (SyntheticsVariableParser,),
             "secure": (bool,),
-            "type": (SyntheticsGlobalVariableParseTestOptionsType,),
+            "type": (SyntheticsLocalVariableParsingOptionsType,),
         }
 
     attribute_map = {
@@ -50,13 +50,13 @@ class SyntheticsParsingOptions(ModelNormal):
         name: Union[str, UnsetType] = unset,
         parser: Union[SyntheticsVariableParser, UnsetType] = unset,
         secure: Union[bool, UnsetType] = unset,
-        type: Union[SyntheticsGlobalVariableParseTestOptionsType, UnsetType] = unset,
+        type: Union[SyntheticsLocalVariableParsingOptionsType, UnsetType] = unset,
         **kwargs,
     ):
         """
         Parsing options for variables to extract.
 
-        :param field: When type is ``http_header`` , name of the header to use to extract the value.
+        :param field: When type is ``http_header`` or ``grpc_metadata`` , name of the header or metadatum to extract.
         :type field: str, optional
 
         :param name: Name of the variable to extract.
@@ -68,8 +68,8 @@ class SyntheticsParsingOptions(ModelNormal):
         :param secure: Determines whether or not the extracted value will be obfuscated.
         :type secure: bool, optional
 
-        :param type: Property of the Synthetic Test Response to use for a Synthetic global variable.
-        :type type: SyntheticsGlobalVariableParseTestOptionsType, optional
+        :param type: Property of the Synthetic Test Response to extract into a local variable.
+        :type type: SyntheticsLocalVariableParsingOptionsType, optional
         """
         if field is not unset:
             kwargs["field"] = field
