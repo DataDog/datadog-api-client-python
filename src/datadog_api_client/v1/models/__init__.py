@@ -723,6 +723,9 @@ from datadog_api_client.v1.model.synthetics_global_variable_totp_parameters impo
 from datadog_api_client.v1.model.synthetics_global_variable_value import SyntheticsGlobalVariableValue
 from datadog_api_client.v1.model.synthetics_list_global_variables_response import SyntheticsListGlobalVariablesResponse
 from datadog_api_client.v1.model.synthetics_list_tests_response import SyntheticsListTestsResponse
+from datadog_api_client.v1.model.synthetics_local_variable_parsing_options_type import (
+    SyntheticsLocalVariableParsingOptionsType,
+)
 from datadog_api_client.v1.model.synthetics_location import SyntheticsLocation
 from datadog_api_client.v1.model.synthetics_locations import SyntheticsLocations
 from datadog_api_client.v1.model.synthetics_parsing_options import SyntheticsParsingOptions
@@ -1616,6 +1619,7 @@ __all__ = [
     "SyntheticsGlobalVariableValue",
     "SyntheticsListGlobalVariablesResponse",
     "SyntheticsListTestsResponse",
+    "SyntheticsLocalVariableParsingOptionsType",
     "SyntheticsLocation",
     "SyntheticsLocations",
     "SyntheticsParsingOptions",

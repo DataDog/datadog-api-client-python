@@ -62,7 +62,7 @@ class SyntheticsGlobalVariableParseTestOptions(ModelNormal):
         :param parser: Details of the parser to use for the global variable.
         :type parser: SyntheticsVariableParser, optional
 
-        :param type: Property of the Synthetic Test Response to use for a Synthetic global variable.
+        :param type: Type of value to extract from a test for a Synthetic global variable.
         :type type: SyntheticsGlobalVariableParseTestOptionsType
         """
         if field is not unset:
