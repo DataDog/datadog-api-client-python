@@ -1,5 +1,5 @@
 """
-Create a new dashboard with timeseries widget and formula style attributes
+Create a new timeseries widget with new live span time format
 """
 
 from datadog_api_client import ApiClient, Configuration
@@ -7,10 +7,17 @@ from datadog_api_client.v1.api.dashboards_api import DashboardsApi
 from datadog_api_client.v1.model.dashboard import Dashboard
 from datadog_api_client.v1.model.dashboard_layout_type import DashboardLayoutType
 from datadog_api_client.v1.model.dashboard_reflow_type import DashboardReflowType
-from datadog_api_client.v1.model.formula_and_function_metric_data_source import FormulaAndFunctionMetricDataSource
-from datadog_api_client.v1.model.formula_and_function_metric_query_definition import (
-    FormulaAndFunctionMetricQueryDefinition,
+from datadog_api_client.v1.model.formula_and_function_event_aggregation import FormulaAndFunctionEventAggregation
+from datadog_api_client.v1.model.formula_and_function_event_query_definition import (
+    FormulaAndFunctionEventQueryDefinition,
 )
+from datadog_api_client.v1.model.formula_and_function_event_query_definition_compute import (
+    FormulaAndFunctionEventQueryDefinitionCompute,
+)
+from datadog_api_client.v1.model.formula_and_function_event_query_definition_search import (
+    FormulaAndFunctionEventQueryDefinitionSearch,
+)
+from datadog_api_client.v1.model.formula_and_function_events_data_source import FormulaAndFunctionEventsDataSource
 from datadog_api_client.v1.model.formula_and_function_response_format import FormulaAndFunctionResponseFormat
 from datadog_api_client.v1.model.timeseries_widget_definition import TimeseriesWidgetDefinition
 from datadog_api_client.v1.model.timeseries_widget_definition_type import TimeseriesWidgetDefinitionType
@@ -20,18 +27,19 @@ from datadog_api_client.v1.model.timeseries_widget_request import TimeseriesWidg
 from datadog_api_client.v1.model.widget import Widget
 from datadog_api_client.v1.model.widget_display_type import WidgetDisplayType
 from datadog_api_client.v1.model.widget_formula import WidgetFormula
-from datadog_api_client.v1.model.widget_formula_style import WidgetFormulaStyle
-from datadog_api_client.v1.model.widget_legacy_live_span import WidgetLegacyLiveSpan
 from datadog_api_client.v1.model.widget_line_type import WidgetLineType
 from datadog_api_client.v1.model.widget_line_width import WidgetLineWidth
+from datadog_api_client.v1.model.widget_live_span_unit import WidgetLiveSpanUnit
+from datadog_api_client.v1.model.widget_new_live_span import WidgetNewLiveSpan
+from datadog_api_client.v1.model.widget_new_live_span_type import WidgetNewLiveSpanType
 from datadog_api_client.v1.model.widget_request_style import WidgetRequestStyle
 
 body = Dashboard(
-    title="Example-Dashboard with formula style",
+    title="Example-Dashboard with new live span time",
     widgets=[
         Widget(
             definition=TimeseriesWidgetDefinition(
-                title="styled timeseries",
+                title="",
                 show_legend=True,
                 legend_layout=TimeseriesWidgetLegendLayout.AUTO,
                 legend_columns=[
@@ -41,24 +49,34 @@ body = Dashboard(
                     TimeseriesWidgetLegendColumn.VALUE,
                     TimeseriesWidgetLegendColumn.SUM,
                 ],
-                time=WidgetLegacyLiveSpan(),
+                time=WidgetNewLiveSpan(
+                    type=WidgetNewLiveSpanType.LIVE,
+                    unit=WidgetLiveSpanUnit.MINUTE,
+                    value=8,
+                ),
                 type=TimeseriesWidgetDefinitionType.TIMESERIES,
                 requests=[
                     TimeseriesWidgetRequest(
                         formulas=[
                             WidgetFormula(
                                 formula="query1",
-                                style=WidgetFormulaStyle(
-                                    palette_index=4,
-                                    palette="classic",
-                                ),
                             ),
                         ],
                         queries=[
-                            FormulaAndFunctionMetricQueryDefinition(
-                                query="avg:system.cpu.user{*}",
-                                data_source=FormulaAndFunctionMetricDataSource.METRICS,
+                            FormulaAndFunctionEventQueryDefinition(
+                                data_source=FormulaAndFunctionEventsDataSource.CI_PIPELINES,
                                 name="query1",
+                                search=FormulaAndFunctionEventQueryDefinitionSearch(
+                                    query="ci_level:job",
+                                ),
+                                indexes=[
+                                    "*",
+                                ],
+                                compute=FormulaAndFunctionEventQueryDefinitionCompute(
+                                    aggregation=FormulaAndFunctionEventAggregation.COUNT,
+                                    metric="@ci.queue_time",
+                                ),
+                                group_by=[],
                             ),
                         ],
                         response_format=FormulaAndFunctionResponseFormat.TIMESERIES,

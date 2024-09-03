@@ -21,6 +21,9 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.tree_map_size_by import TreeMapSizeBy
     from datadog_api_client.v1.model.widget_time import WidgetTime
     from datadog_api_client.v1.model.tree_map_widget_definition_type import TreeMapWidgetDefinitionType
+    from datadog_api_client.v1.model.widget_legacy_live_span import WidgetLegacyLiveSpan
+    from datadog_api_client.v1.model.widget_new_live_span import WidgetNewLiveSpan
+    from datadog_api_client.v1.model.widget_new_fixed_span import WidgetNewFixedSpan
 
 
 class TreeMapWidgetDefinition(ModelNormal):
@@ -71,7 +74,7 @@ class TreeMapWidgetDefinition(ModelNormal):
         custom_links: Union[List[WidgetCustomLink], UnsetType] = unset,
         group_by: Union[TreeMapGroupBy, UnsetType] = unset,
         size_by: Union[TreeMapSizeBy, UnsetType] = unset,
-        time: Union[WidgetTime, UnsetType] = unset,
+        time: Union[WidgetTime, WidgetLegacyLiveSpan, WidgetNewLiveSpan, WidgetNewFixedSpan, UnsetType] = unset,
         title: Union[str, UnsetType] = unset,
         **kwargs,
     ):
