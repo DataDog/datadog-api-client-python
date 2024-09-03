@@ -3035,6 +3035,370 @@ datadog\_api\_client.v2.model.downtime\_update\_request\_data module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.entity\_attributes module
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_data module
+-------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_meta module
+-------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_relationships module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_response\_included\_incident module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_response_included_incident
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_response\_included\_oncall module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_response_included_oncall
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_response\_included\_raw\_schema module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_response_included_raw_schema
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_response\_included\_raw\_schema\_attributes module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_response_included_raw_schema_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_response\_included\_related\_entity module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_response_included_related_entity
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_response\_included\_related\_entity\_attributes module
+--------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_response_included_related_entity_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_response\_included\_related\_entity\_meta module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_response_included_related_entity_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_response\_included\_related\_incident\_attributes module
+----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_response_included_related_incident_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_response\_included\_related\_oncall\_attributes module
+--------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_response_included_related_oncall_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_response\_included\_related\_oncall\_escalation\_item module
+--------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_response_included_related_oncall_escalation_item
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_response\_included\_schema module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_response_included_schema
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_response\_included\_schema\_attributes module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_response_included_schema_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_response\_meta module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_response_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_to\_incidents module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_to_incidents
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_to\_oncalls module
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_to_oncalls
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_to\_raw\_schema module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_to_raw_schema
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_to\_related\_entities module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_to_related_entities
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_to\_schema module
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_to_schema
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_v3 module
+-----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_v3
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_v3\_datadog\_code\_location\_item module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_v3_datadog_code_location_item
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_v3\_datadog\_event\_item module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_v3_datadog_event_item
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_v3\_datadog\_integration\_opsgenie module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_v3_datadog_integration_opsgenie
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_v3\_datadog\_integration\_pagerduty module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_v3_datadog_integration_pagerduty
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_v3\_datadog\_log\_item module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_v3_datadog_log_item
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_v3\_datadog\_performance module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_v3_datadog_performance
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_v3\_datadog\_pipelines module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_v3_datadog_pipelines
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_v3\_datastore module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_v3_datastore
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_v3\_datastore\_datadog module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_v3_datastore_datadog
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_v3\_datastore\_kind module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_v3_datastore_kind
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_v3\_datastore\_spec module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_v3_datastore_spec
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_v3\_integrations module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_v3_integrations
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_v3\_metadata module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_v3_metadata
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_v3\_metadata\_additional\_owners\_items module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_v3_metadata_additional_owners_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_v3\_metadata\_contacts\_items module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_v3_metadata_contacts_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_v3\_metadata\_links\_items module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_v3_metadata_links_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_v3\_metadata\_owner module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_v3_metadata_owner
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_v3\_queue module
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_v3_queue
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_v3\_queue\_datadog module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_v3_queue_datadog
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_v3\_queue\_kind module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_v3_queue_kind
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_v3\_queue\_spec module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_v3_queue_spec
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_v3\_service module
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_v3_service
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_v3\_service\_datadog module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_v3_service_datadog
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_v3\_service\_kind module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_v3_service_kind
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_v3\_service\_spec module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_v3_service_spec
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_v3\_system module
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_v3_system
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_v3\_system\_datadog module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_v3_system_datadog
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_v3\_system\_kind module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_v3_system_kind
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_v3\_system\_spec module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_v3_system_spec
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.event module
 ------------------------------------------
 
@@ -4526,6 +4890,13 @@ datadog\_api\_client.v2.model.incidents\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.include\_type module
+--------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.include_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.intake\_payload\_accepted module
 --------------------------------------------------------------
 
@@ -4740,6 +5111,27 @@ datadog\_api\_client.v2.model.list\_downtimes\_response module
 --------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.list_downtimes_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.list\_entity\_catalog\_response module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_entity_catalog_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.list\_entity\_catalog\_response\_included\_item module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_entity_catalog_response_included_item
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.list\_entity\_catalog\_response\_links module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_entity_catalog_response_links
    :members:
    :show-inheritance:
 
@@ -6868,6 +7260,20 @@ datadog\_api\_client.v2.model.query\_sort\_order module
 -------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.query_sort_order
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.relation\_type module
+---------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.relation_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.relationship\_item module
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.relationship_item
    :members:
    :show-inheritance:
 
@@ -10438,6 +10844,27 @@ datadog\_api\_client.v2.model.update\_rule\_response\_data module
 -----------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.update_rule_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.upsert\_catalog\_entity\_request module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.upsert_catalog_entity_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.upsert\_catalog\_entity\_response module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.upsert_catalog_entity_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.upsert\_catalog\_entity\_response\_included\_item module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.upsert_catalog_entity_response_included_item
    :members:
    :show-inheritance:
 
