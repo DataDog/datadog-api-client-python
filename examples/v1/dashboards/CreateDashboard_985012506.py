@@ -27,10 +27,10 @@ from datadog_api_client.v1.model.timeseries_widget_request import TimeseriesWidg
 from datadog_api_client.v1.model.widget import Widget
 from datadog_api_client.v1.model.widget_display_type import WidgetDisplayType
 from datadog_api_client.v1.model.widget_formula import WidgetFormula
+from datadog_api_client.v1.model.widget_legacy_live_span import WidgetLegacyLiveSpan
 from datadog_api_client.v1.model.widget_line_type import WidgetLineType
 from datadog_api_client.v1.model.widget_line_width import WidgetLineWidth
 from datadog_api_client.v1.model.widget_request_style import WidgetRequestStyle
-from datadog_api_client.v1.model.widget_time import WidgetTime
 
 body = Dashboard(
     title="Example-Dashboard with incident_analytics datasource",
@@ -47,7 +47,7 @@ body = Dashboard(
                     TimeseriesWidgetLegendColumn.VALUE,
                     TimeseriesWidgetLegendColumn.SUM,
                 ],
-                time=WidgetTime(),
+                time=WidgetLegacyLiveSpan(),
                 type=TimeseriesWidgetDefinitionType.TIMESERIES,
                 requests=[
                     TimeseriesWidgetRequest(

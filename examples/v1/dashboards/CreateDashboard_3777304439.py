@@ -17,9 +17,9 @@ from datadog_api_client.v1.model.heat_map_widget_request import HeatMapWidgetReq
 from datadog_api_client.v1.model.widget import Widget
 from datadog_api_client.v1.model.widget_formula import WidgetFormula
 from datadog_api_client.v1.model.widget_layout import WidgetLayout
+from datadog_api_client.v1.model.widget_legacy_live_span import WidgetLegacyLiveSpan
 from datadog_api_client.v1.model.widget_style import WidgetStyle
 from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
-from datadog_api_client.v1.model.widget_time import WidgetTime
 
 body = Dashboard(
     title="Example-Dashboard",
@@ -35,7 +35,7 @@ body = Dashboard(
                 title="",
                 title_size="16",
                 title_align=WidgetTextAlign.LEFT,
-                time=WidgetTime(),
+                time=WidgetLegacyLiveSpan(),
                 type=HeatMapWidgetDefinitionType.HEATMAP,
                 requests=[
                     HeatMapWidgetRequest(

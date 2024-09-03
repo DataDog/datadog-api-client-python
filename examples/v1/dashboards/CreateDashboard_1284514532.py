@@ -19,12 +19,12 @@ from datadog_api_client.v1.model.timeseries_widget_request import TimeseriesWidg
 from datadog_api_client.v1.model.widget import Widget
 from datadog_api_client.v1.model.widget_display_type import WidgetDisplayType
 from datadog_api_client.v1.model.widget_formula import WidgetFormula
+from datadog_api_client.v1.model.widget_legacy_live_span import WidgetLegacyLiveSpan
 from datadog_api_client.v1.model.widget_line_type import WidgetLineType
 from datadog_api_client.v1.model.widget_line_width import WidgetLineWidth
 from datadog_api_client.v1.model.widget_live_span import WidgetLiveSpan
 from datadog_api_client.v1.model.widget_request_style import WidgetRequestStyle
 from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
-from datadog_api_client.v1.model.widget_time import WidgetTime
 
 body = Dashboard(
     title="Example-Dashboard",
@@ -58,7 +58,7 @@ body = Dashboard(
                         display_type=WidgetDisplayType.BARS,
                     ),
                 ],
-                time=WidgetTime(
+                time=WidgetLegacyLiveSpan(
                     live_span=WidgetLiveSpan.WEEK_TO_DATE,
                 ),
             ),

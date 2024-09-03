@@ -3,40 +3,55 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
-    ModelNormal,
+    ModelComposed,
     cached_property,
-    unset,
-    UnsetType,
 )
 
 
-if TYPE_CHECKING:
-    from datadog_api_client.v1.model.widget_live_span import WidgetLiveSpan
-
-
-class WidgetTime(ModelNormal):
-    @cached_property
-    def openapi_types(_):
-        from datadog_api_client.v1.model.widget_live_span import WidgetLiveSpan
-
-        return {
-            "live_span": (WidgetLiveSpan,),
-        }
-
-    attribute_map = {
-        "live_span": "live_span",
-    }
-
-    def __init__(self_, live_span: Union[WidgetLiveSpan, UnsetType] = unset, **kwargs):
+class WidgetTime(ModelComposed):
+    def __init__(self, **kwargs):
         """
         Time setting for the widget.
 
         :param live_span: The available timeframes depend on the widget you are using.
         :type live_span: WidgetLiveSpan, optional
+
+        :param type: Type "live" denotes a live span in the new format.
+        :type type: WidgetNewLiveSpanType
+
+        :param unit: Unit of the time span.
+        :type unit: WidgetLiveSpanUnit
+
+        :param value: Value of the time span.
+        :type value: int
+
+        :param _from: Start time in seconds since epoch.
+        :type _from: int
+
+        :param to: End time in seconds since epoch.
+        :type to: int
         """
-        if live_span is not unset:
-            kwargs["live_span"] = live_span
         super().__init__(kwargs)
+
+    @cached_property
+    def _composed_schemas(_):
+        # we need this here to make our import statements work
+        # we must store _composed_schemas in here so the code is only run
+        # when we invoke this method. If we kept this at the class
+        # level we would get an error because the class level
+        # code would be run when this module is imported, and these composed
+        # classes don't exist yet because their module has not finished
+        # loading
+        from datadog_api_client.v1.model.widget_legacy_live_span import WidgetLegacyLiveSpan
+        from datadog_api_client.v1.model.widget_new_live_span import WidgetNewLiveSpan
+        from datadog_api_client.v1.model.widget_new_fixed_span import WidgetNewFixedSpan
+
+        return {
+            "oneOf": [
+                WidgetLegacyLiveSpan,
+                WidgetNewLiveSpan,
+                WidgetNewFixedSpan,
+            ],
+        }

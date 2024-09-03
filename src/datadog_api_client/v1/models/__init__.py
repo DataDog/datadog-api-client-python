@@ -958,14 +958,20 @@ from datadog_api_client.v1.model.widget_horizontal_align import WidgetHorizontal
 from datadog_api_client.v1.model.widget_image_sizing import WidgetImageSizing
 from datadog_api_client.v1.model.widget_layout import WidgetLayout
 from datadog_api_client.v1.model.widget_layout_type import WidgetLayoutType
+from datadog_api_client.v1.model.widget_legacy_live_span import WidgetLegacyLiveSpan
 from datadog_api_client.v1.model.widget_line_type import WidgetLineType
 from datadog_api_client.v1.model.widget_line_width import WidgetLineWidth
 from datadog_api_client.v1.model.widget_live_span import WidgetLiveSpan
+from datadog_api_client.v1.model.widget_live_span_unit import WidgetLiveSpanUnit
 from datadog_api_client.v1.model.widget_margin import WidgetMargin
 from datadog_api_client.v1.model.widget_marker import WidgetMarker
 from datadog_api_client.v1.model.widget_message_display import WidgetMessageDisplay
 from datadog_api_client.v1.model.widget_monitor_summary_display_format import WidgetMonitorSummaryDisplayFormat
 from datadog_api_client.v1.model.widget_monitor_summary_sort import WidgetMonitorSummarySort
+from datadog_api_client.v1.model.widget_new_fixed_span import WidgetNewFixedSpan
+from datadog_api_client.v1.model.widget_new_fixed_span_type import WidgetNewFixedSpanType
+from datadog_api_client.v1.model.widget_new_live_span import WidgetNewLiveSpan
+from datadog_api_client.v1.model.widget_new_live_span_type import WidgetNewLiveSpanType
 from datadog_api_client.v1.model.widget_node_type import WidgetNodeType
 from datadog_api_client.v1.model.widget_order_by import WidgetOrderBy
 from datadog_api_client.v1.model.widget_palette import WidgetPalette
@@ -1832,14 +1838,20 @@ __all__ = [
     "WidgetImageSizing",
     "WidgetLayout",
     "WidgetLayoutType",
+    "WidgetLegacyLiveSpan",
     "WidgetLineType",
     "WidgetLineWidth",
     "WidgetLiveSpan",
+    "WidgetLiveSpanUnit",
     "WidgetMargin",
     "WidgetMarker",
     "WidgetMessageDisplay",
     "WidgetMonitorSummaryDisplayFormat",
     "WidgetMonitorSummarySort",
+    "WidgetNewFixedSpan",
+    "WidgetNewFixedSpanType",
+    "WidgetNewLiveSpan",
+    "WidgetNewLiveSpanType",
     "WidgetNodeType",
     "WidgetOrderBy",
     "WidgetPalette",

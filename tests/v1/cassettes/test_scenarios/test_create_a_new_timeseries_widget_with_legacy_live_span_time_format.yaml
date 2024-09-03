@@ -1,0 +1,43 @@
+interactions:
+- request:
+    body: '{"layout_type":"ordered","reflow_type":"auto","title":"Test-Create_a_new_timeseries_widget_with_legacy_live_span_time_format-1723133329
+      with legacy live span time","widgets":[{"definition":{"legend_columns":["avg","min","max","value","sum"],"legend_layout":"auto","requests":[{"display_type":"line","formulas":[{"formula":"query1"}],"queries":[{"compute":{"aggregation":"count","metric":"@ci.queue_time"},"data_source":"ci_pipelines","group_by":[],"indexes":["*"],"name":"query1","search":{"query":"ci_level:job"}}],"response_format":"timeseries","style":{"line_type":"solid","line_width":"normal","palette":"dog_classic"}}],"show_legend":true,"time":{"live_span":"5m"},"title":"","type":"timeseries"}}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/dashboard
+  response:
+    body:
+      string: '{"id":"dfy-yby-e2c","title":"Test-Create_a_new_timeseries_widget_with_legacy_live_span_time_format-1723133329
+        with legacy live span time","description":null,"author_handle":"d5459c54-9e9d-11ee-a5c9-ce6dc639753f","author_name":"CI
+        Service Account","layout_type":"ordered","url":"/dashboard/dfy-yby-e2c/test-createanewtimeserieswidgetwithlegacylivespantimeformat-1723133329-with-lega","is_read_only":false,"template_variables":null,"widgets":[{"definition":{"legend_columns":["avg","min","max","value","sum"],"legend_layout":"auto","requests":[{"display_type":"line","formulas":[{"formula":"query1"}],"queries":[{"compute":{"aggregation":"count","metric":"@ci.queue_time"},"data_source":"ci_pipelines","group_by":[],"indexes":["*"],"name":"query1","search":{"query":"ci_level:job"}}],"response_format":"timeseries","style":{"line_type":"solid","line_width":"normal","palette":"dog_classic"}}],"show_legend":true,"time":{"live_span":"5m"},"title":"","type":"timeseries"},"id":6745766981061097}],"notify_list":null,"created_at":"2024-08-08T16:08:49.543129+00:00","modified_at":"2024-08-08T16:08:49.543129+00:00","reflow_type":"auto","restricted_roles":[]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/dashboard/dfy-yby-e2c
+  response:
+    body:
+      string: '{"deleted_dashboard_id":"dfy-yby-e2c"}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1
