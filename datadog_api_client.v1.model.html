@@ -4476,6 +4476,12 @@
         </li></ul>
             </nav>
         </li>
+        <li class="md-nav__item"><a href="#module-datadog_api_client.v1.model.synthetics_local_variable_parsing_options_type" class="md-nav__link">datadog_api_client.v1.model.synthetics_local_variable_parsing_options_type module</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v1.model.synthetics_local_variable_parsing_options_type.SyntheticsLocalVariableParsingOptionsType" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SyntheticsLocalVariableParsingOptionsType</span></code></a>
+        </li></ul>
+            </nav>
+        </li>
         <li class="md-nav__item"><a href="#module-datadog_api_client.v1.model.synthetics_location" class="md-nav__link">datadog_api_client.v1.model.synthetics_location module</a><nav class="md-nav">
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#datadog_api_client.v1.model.synthetics_location.SyntheticsLocation" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SyntheticsLocation</span></code></a>
@@ -19986,7 +19992,7 @@ type conversion is done.</p></li>
 <li><p><strong>field</strong> (<em>str</em><em>, </em><em>optional</em>) – When type is <code class="docutils literal notranslate"><span class="pre">http_header</span></code> , name of the header to use to extract the value.</p></li>
 <li><p><strong>local_variable_name</strong> (<em>str</em><em>, </em><em>optional</em>) – When type is <code class="docutils literal notranslate"><span class="pre">local_variable</span></code> , name of the local variable to use to extract the value.</p></li>
 <li><p><strong>parser</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.synthetics_variable_parser.SyntheticsVariableParser" title="datadog_api_client.v1.model.synthetics_variable_parser.SyntheticsVariableParser"><em>SyntheticsVariableParser</em></a><em>, </em><em>optional</em>) – Details of the parser to use for the global variable.</p></li>
-<li><p><strong>type</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.synthetics_global_variable_parse_test_options_type.SyntheticsGlobalVariableParseTestOptionsType" title="datadog_api_client.v1.model.synthetics_global_variable_parse_test_options_type.SyntheticsGlobalVariableParseTestOptionsType"><em>SyntheticsGlobalVariableParseTestOptionsType</em></a>) – Property of the Synthetic Test Response to use for a Synthetic global variable.</p></li>
+<li><p><strong>type</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.synthetics_global_variable_parse_test_options_type.SyntheticsGlobalVariableParseTestOptionsType" title="datadog_api_client.v1.model.synthetics_global_variable_parse_test_options_type.SyntheticsGlobalVariableParseTestOptionsType"><em>SyntheticsGlobalVariableParseTestOptionsType</em></a>) – Type of value to extract from a test for a Synthetic global variable.</p></li>
 </ul>
 </dd>
 </dl>
@@ -19998,11 +20004,11 @@ type conversion is done.</p></li>
 <dt class="sig sig-object py" id="datadog_api_client.v1.model.synthetics_global_variable_parse_test_options_type.SyntheticsGlobalVariableParseTestOptionsType">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SyntheticsGlobalVariableParseTestOptionsType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datadog_api_client.v1.model.synthetics_global_variable_parse_test_options_type.SyntheticsGlobalVariableParseTestOptionsType" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.ModelSimple" title="datadog_api_client.model_utils.ModelSimple"><code class="xref py py-class docutils literal notranslate"><span class="pre">ModelSimple</span></code></a></p>
-<p>Property of the Synthetic Test Response to use for a Synthetic global variable.</p>
+<p>Type of value to extract from a test for a Synthetic global variable.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>value</strong> (<em>str</em>) – Must be one of [“http_body”, “http_header”, “local_variable”].</p></li>
+<li><p><strong>value</strong> (<em>str</em>) – Must be one of [“http_body”, “http_header”, “http_status_code”, “local_variable”].</p></li>
 <li><p><strong>_check_type</strong> (<em>bool</em>) – If True, values for parameters in openapi_types
 will be type checked and a TypeError will be raised if the wrong type is input.
 Defaults to True.</p></li>
@@ -20135,6 +20141,33 @@ the value will not be present if the variable is hidden with the <code class="do
 </dl>
 </dd></dl>
 </section>
+<section id="module-datadog_api_client.v1.model.synthetics_local_variable_parsing_options_type">
+<span id="datadog-api-client-v1-model-synthetics-local-variable-parsing-options-type-module"></span><h2 id="module-datadog_api_client.v1.model.synthetics_local_variable_parsing_options_type">datadog_api_client.v1.model.synthetics_local_variable_parsing_options_type module<a class="headerlink" href="#module-datadog_api_client.v1.model.synthetics_local_variable_parsing_options_type" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datadog_api_client.v1.model.synthetics_local_variable_parsing_options_type.SyntheticsLocalVariableParsingOptionsType">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SyntheticsLocalVariableParsingOptionsType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datadog_api_client.v1.model.synthetics_local_variable_parsing_options_type.SyntheticsLocalVariableParsingOptionsType" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.ModelSimple" title="datadog_api_client.model_utils.ModelSimple"><code class="xref py py-class docutils literal notranslate"><span class="pre">ModelSimple</span></code></a></p>
+<p>Property of the Synthetic Test Response to extract into a local variable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> (<em>str</em>) – Must be one of [“grpc_message”, “grpc_metadata”, “http_body”, “http_header”, “http_status_code”].</p></li>
+<li><p><strong>_check_type</strong> (<em>bool</em>) – If True, values for parameters in openapi_types
+will be type checked and a TypeError will be raised if the wrong type is input.
+Defaults to True.</p></li>
+<li><p><strong>_path_to_item</strong> (<em>tuple/list</em>) – This is a list of keys or values to drill down to
+the model in received_data when deserializing a response.</p></li>
+<li><p><strong>_spec_property_naming</strong> (<em>bool</em>) – True if the variable names in the input
+data are serialized names, as specified in the OpenAPI document.  False if the
+variable names in the input data are pythonic names, e.g. snake case (default).</p></li>
+<li><p><strong>_configuration</strong> (<a class="reference internal" href="datadog_api_client.v1.html#datadog_api_client.v1.Configuration" title="datadog_api_client.v1.Configuration"><em>Configuration</em></a>) – The instance to use when deserializing a
+file_type parameter.  If passed, type conversion is attempted If omitted no
+type conversion is done.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+</section>
 <section id="module-datadog_api_client.v1.model.synthetics_location">
 <span id="datadog-api-client-v1-model-synthetics-location-module"></span><h2 id="module-datadog_api_client.v1.model.synthetics_location">datadog_api_client.v1.model.synthetics_location module<a class="headerlink" href="#module-datadog_api_client.v1.model.synthetics_location" title="Link to this heading">¶</a></h2>
 <dl class="py class">
@@ -20177,11 +20210,11 @@ test.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>field</strong> (<em>str</em><em>, </em><em>optional</em>) – When type is <code class="docutils literal notranslate"><span class="pre">http_header</span></code> , name of the header to use to extract the value.</p></li>
+<li><p><strong>field</strong> (<em>str</em><em>, </em><em>optional</em>) – When type is <code class="docutils literal notranslate"><span class="pre">http_header</span></code> or <code class="docutils literal notranslate"><span class="pre">grpc_metadata</span></code> , name of the header or metadatum to extract.</p></li>
 <li><p><strong>name</strong> (<em>str</em><em>, </em><em>optional</em>) – Name of the variable to extract.</p></li>
 <li><p><strong>parser</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.synthetics_variable_parser.SyntheticsVariableParser" title="datadog_api_client.v1.model.synthetics_variable_parser.SyntheticsVariableParser"><em>SyntheticsVariableParser</em></a><em>, </em><em>optional</em>) – Details of the parser to use for the global variable.</p></li>
 <li><p><strong>secure</strong> (<em>bool</em><em>, </em><em>optional</em>) – Determines whether or not the extracted value will be obfuscated.</p></li>
-<li><p><strong>type</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.synthetics_global_variable_parse_test_options_type.SyntheticsGlobalVariableParseTestOptionsType" title="datadog_api_client.v1.model.synthetics_global_variable_parse_test_options_type.SyntheticsGlobalVariableParseTestOptionsType"><em>SyntheticsGlobalVariableParseTestOptionsType</em></a><em>, </em><em>optional</em>) – Property of the Synthetic Test Response to use for a Synthetic global variable.</p></li>
+<li><p><strong>type</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.synthetics_local_variable_parsing_options_type.SyntheticsLocalVariableParsingOptionsType" title="datadog_api_client.v1.model.synthetics_local_variable_parsing_options_type.SyntheticsLocalVariableParsingOptionsType"><em>SyntheticsLocalVariableParsingOptionsType</em></a><em>, </em><em>optional</em>) – Property of the Synthetic Test Response to extract into a local variable.</p></li>
 </ul>
 </dd>
 </dl>

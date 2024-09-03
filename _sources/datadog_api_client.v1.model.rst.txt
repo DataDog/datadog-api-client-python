@@ -4435,6 +4435,13 @@ datadog\_api\_client.v1.model.synthetics\_list\_tests\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.synthetics\_local\_variable\_parsing\_options\_type module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_local_variable_parsing_options_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.synthetics\_location module
 ---------------------------------------------------------
 
