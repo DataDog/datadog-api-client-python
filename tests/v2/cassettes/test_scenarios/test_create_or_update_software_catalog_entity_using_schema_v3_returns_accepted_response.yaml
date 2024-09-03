@@ -1,0 +1,36 @@
+interactions:
+- request:
+    body: '{"apiVersion":"v3","datadog":{"codeLocations":[{"paths":[]}],"events":[{}],"logs":[{}],"performanceData":{"tags":[]},"pipelines":{"fingerprints":[]}},"integrations":{"opsgenie":{"serviceURL":"https://www.opsgenie.com/service/shopping-cart"},"pagerduty":{"serviceURL":"https://www.pagerduty.com/service-directory/Pshopping-cart"}},"kind":"service","metadata":{"additionalOwners":[],"contacts":[{"contact":"https://slack/","type":"slack"}],"id":"4b163705-23c0-4573-b2fb-f6cea2163fcb","inheritFrom":"application:default/myapp","links":[{"name":"mylink","type":"link","url":"https://mylink"}],"name":"service-testcreateorupdatesoftwarecatalogentityusingschemav3returnsacceptedresponse1724786638","tags":["this:tag","that:tag"]},"spec":{"dependsOn":[],"languages":[]}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/catalog/entity
+  response:
+    body:
+      string: '{"data":[{"id":"4806b73a-3a45-48bf-bd44-0d68fb5aa96a","type":"entity","attributes":{"apiVersion":"v3","kind":"service","name":"service-testcreateorupdatesoftwarecatalogentityusingschemav3returnsacceptedresponse1724786638","namespace":"default","tags":["this:tag","that:tag"]},"relationships":{"schema":{"data":{"id":"4806b73a-3a45-48bf-bd44-0d68fb5aa96a","type":"schema"}}},"meta":{"createdAt":"2024-08-27T19:23:58.355389417Z","modifiedAt":"2024-08-27T19:23:58.355389228Z","ingestionSource":"api","origin":"unknown"}}],"meta":{"count":1,"includeCount":1},"included":[{"id":"4806b73a-3a45-48bf-bd44-0d68fb5aa96a","type":"schema","attributes":{"schema":{"apiVersion":"v3","kind":"service","metadata":{"name":"service-testcreateorupdatesoftwarecatalogentityusingschemav3returnsacceptedresponse1724786638","namespace":"default","inheritFrom":"application:default/myapp","tags":["this:tag","that:tag"],"links":[{"name":"mylink","type":"link","url":"https://mylink"}],"contacts":[{"type":"slack","contact":"https://slack/"}],"managed":{"origin":{"origin":"unknown"},"ingestionSource":"api","createdAt":"2024-08-27T19:23:58.355389417Z","modifiedAt":"2024-08-27T19:23:58.355389228Z"}},"integrations":{"pagerduty":{"serviceURL":"https://www.pagerduty.com/service-directory/Pshopping-cart"},"opsgenie":{"serviceURL":"https://www.opsgenie.com/service/shopping-cart"}},"datadog":{"performanceData":{"tags":[]},"events":[{"name":"","query":""}],"logs":[{"name":"","query":""}],"pipelines":{"fingerprints":[]},"codeLocations":[{}]},"spec":{}}}}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 202
+      message: Accepted
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/catalog/entity/4806b73a-3a45-48bf-bd44-0d68fb5aa96a
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 204
+      message: No Content
+version: 1
