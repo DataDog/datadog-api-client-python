@@ -45,7 +45,7 @@ Feature: GCP Integration
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/gcp-integrations
+  @skip-terraform-config @team:DataDog/gcp-integrations
   Scenario: List all GCP integrations returns "OK" response
     Given new "ListGCPIntegration" request
     When the request is sent
