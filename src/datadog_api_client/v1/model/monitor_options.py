@@ -202,7 +202,7 @@ class MonitorOptions(ModelNormal):
             This option is only available for APM Trace Analytics, Audit Trail, CI, Error Tracking, Event, Logs, and RUM monitors.
         :type group_retention_duration: str, optional
 
-        :param groupby_simple_monitor: Whether the log alert monitor triggers a single alert or multiple alerts when any group breaches a threshold.
+        :param groupby_simple_monitor: Whether the log alert monitor triggers a single alert or multiple alerts when any group breaches a threshold. Use ``notify_by`` instead. **Deprecated**.
         :type groupby_simple_monitor: bool, optional
 
         :param include_tags: A Boolean indicating whether notifications from this monitor automatically inserts its triggering tags into the title.
