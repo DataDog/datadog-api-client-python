@@ -1,5 +1,31 @@
 # Changelog
 
+## 2.28.0 / 2024-09-04
+
+### Fixed
+* Enable additionalProperties by default by @skarimo in https://github.com/DataDog/datadog-api-client-python/pull/2111
+* Add `is_totp` and `is_fido` to Synthetic global variables by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/2059
+* Handle nested oneOfs during serialization by @skarimo in https://github.com/DataDog/datadog-api-client-python/pull/2136
+### Added
+* Enable automerging for cloudflare routes. by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/2105
+* Enable automerging for Fastly routes. by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/2106
+* Enable automerging for opsgenie routes. by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/2107
+* Enable auto-merging for keys routes. by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/2108
+* Allow 4 group-bys for pattern viz by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/2116
+* add url attribute to metrics assets v2 api by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/2118
+* Add editable field to suppression rule by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/2021
+* Add `num_flex_logs_retention_days` field to logs_indexes api spec by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/2119
+* Software catalog openapi spec by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/2137
+### Changed
+* allow variables in port by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/2092
+* Fix VFTs and extracted local variables enum types by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/2078
+* Extend Widget time schema with support for new fixed_span and live_span object by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/2097
+### Deprecated
+* mark groupby_simple_monitor as deprecated by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/2134
+
+
+**Full Changelog**: https://github.com/DataDog/datadog-api-client-python/compare/2.27.0...2.28.0
+
 ## 2.27.0 / 2024-08-12
 
 ### Fixed
