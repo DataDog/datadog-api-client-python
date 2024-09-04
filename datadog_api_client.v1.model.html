@@ -4026,6 +4026,18 @@
         </li></ul>
             </nav>
         </li>
+        <li class="md-nav__item"><a href="#module-datadog_api_client.v1.model.synthetics_assertion_javascript" class="md-nav__link">datadog_api_client.v1.model.synthetics_assertion_javascript module</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v1.model.synthetics_assertion_javascript.SyntheticsAssertionJavascript" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SyntheticsAssertionJavascript</span></code></a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#module-datadog_api_client.v1.model.synthetics_assertion_javascript_type" class="md-nav__link">datadog_api_client.v1.model.synthetics_assertion_javascript_type module</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v1.model.synthetics_assertion_javascript_type.SyntheticsAssertionJavascriptType" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SyntheticsAssertionJavascriptType</span></code></a>
+        </li></ul>
+            </nav>
+        </li>
         <li class="md-nav__item"><a href="#module-datadog_api_client.v1.model.synthetics_assertion_json_path_operator" class="md-nav__link">datadog_api_client.v1.model.synthetics_assertion_json_path_operator module</a><nav class="md-nav">
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#datadog_api_client.v1.model.synthetics_assertion_json_path_operator.SyntheticsAssertionJSONPathOperator" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SyntheticsAssertionJSONPathOperator</span></code></a>
@@ -18465,6 +18477,7 @@ which property they apply, and upon which target.</p>
 <li><p><strong>target</strong> (<em>bool</em><em>, </em><em>date</em><em>, </em><em>datetime</em><em>, </em><em>dict</em><em>, </em><em>float</em><em>, </em><em>int</em><em>, </em><em>list</em><em>, </em><em>str</em><em>, </em><em>UUID</em><em>, </em><em>none_type</em>) – Value used by the operator.</p></li>
 <li><p><strong>timings_scope</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.synthetics_assertion_timings_scope.SyntheticsAssertionTimingsScope" title="datadog_api_client.v1.model.synthetics_assertion_timings_scope.SyntheticsAssertionTimingsScope"><em>SyntheticsAssertionTimingsScope</em></a><em>, </em><em>optional</em>) – Timings scope for response time assertions.</p></li>
 <li><p><strong>type</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.synthetics_assertion_type.SyntheticsAssertionType" title="datadog_api_client.v1.model.synthetics_assertion_type.SyntheticsAssertionType"><em>SyntheticsAssertionType</em></a>) – Type of the assertion.</p></li>
+<li><p><strong>code</strong> (<em>str</em>) – The JavaScript code that performs the assertions.</p></li>
 </ul>
 </dd>
 </dl>
@@ -18526,6 +18539,50 @@ type conversion is done.</p></li>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>value</strong> (<em>str</em>) – If omitted defaults to “bodyHash”. Must be one of [“bodyHash”].</p></li>
+<li><p><strong>_check_type</strong> (<em>bool</em>) – If True, values for parameters in openapi_types
+will be type checked and a TypeError will be raised if the wrong type is input.
+Defaults to True.</p></li>
+<li><p><strong>_path_to_item</strong> (<em>tuple/list</em>) – This is a list of keys or values to drill down to
+the model in received_data when deserializing a response.</p></li>
+<li><p><strong>_spec_property_naming</strong> (<em>bool</em>) – True if the variable names in the input
+data are serialized names, as specified in the OpenAPI document.  False if the
+variable names in the input data are pythonic names, e.g. snake case (default).</p></li>
+<li><p><strong>_configuration</strong> (<a class="reference internal" href="datadog_api_client.v1.html#datadog_api_client.v1.Configuration" title="datadog_api_client.v1.Configuration"><em>Configuration</em></a>) – The instance to use when deserializing a
+file_type parameter.  If passed, type conversion is attempted If omitted no
+type conversion is done.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+</section>
+<section id="module-datadog_api_client.v1.model.synthetics_assertion_javascript">
+<span id="datadog-api-client-v1-model-synthetics-assertion-javascript-module"></span><h2 id="module-datadog_api_client.v1.model.synthetics_assertion_javascript">datadog_api_client.v1.model.synthetics_assertion_javascript module<a class="headerlink" href="#module-datadog_api_client.v1.model.synthetics_assertion_javascript" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datadog_api_client.v1.model.synthetics_assertion_javascript.SyntheticsAssertionJavascript">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SyntheticsAssertionJavascript</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datadog_api_client.v1.model.synthetics_assertion_javascript.SyntheticsAssertionJavascript" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.ModelNormal" title="datadog_api_client.model_utils.ModelNormal"><code class="xref py py-class docutils literal notranslate"><span class="pre">ModelNormal</span></code></a></p>
+<p>A JavaScript assertion.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>code</strong> (<em>str</em>) – The JavaScript code that performs the assertions.</p></li>
+<li><p><strong>type</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.synthetics_assertion_javascript_type.SyntheticsAssertionJavascriptType" title="datadog_api_client.v1.model.synthetics_assertion_javascript_type.SyntheticsAssertionJavascriptType"><em>SyntheticsAssertionJavascriptType</em></a>) – Type of the assertion.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+</section>
+<section id="module-datadog_api_client.v1.model.synthetics_assertion_javascript_type">
+<span id="datadog-api-client-v1-model-synthetics-assertion-javascript-type-module"></span><h2 id="module-datadog_api_client.v1.model.synthetics_assertion_javascript_type">datadog_api_client.v1.model.synthetics_assertion_javascript_type module<a class="headerlink" href="#module-datadog_api_client.v1.model.synthetics_assertion_javascript_type" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datadog_api_client.v1.model.synthetics_assertion_javascript_type.SyntheticsAssertionJavascriptType">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SyntheticsAssertionJavascriptType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datadog_api_client.v1.model.synthetics_assertion_javascript_type.SyntheticsAssertionJavascriptType" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.ModelSimple" title="datadog_api_client.model_utils.ModelSimple"><code class="xref py py-class docutils literal notranslate"><span class="pre">ModelSimple</span></code></a></p>
+<p>Type of the assertion.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> (<em>str</em>) – If omitted defaults to “javascript”. Must be one of [“javascript”].</p></li>
 <li><p><strong>_check_type</strong> (<em>bool</em>) – If True, values for parameters in openapi_types
 will be type checked and a TypeError will be raised if the wrong type is input.
 Defaults to True.</p></li>
