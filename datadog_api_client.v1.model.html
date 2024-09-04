@@ -12766,7 +12766,7 @@ This is useful for AWS CloudWatch and other backfilled metrics to ensure the mon
 The minimum value is one hour, and the maximum value is 72 hours.
 Example values are: “60m”, “1h”, and “2d”.
 This option is only available for APM Trace Analytics, Audit Trail, CI, Error Tracking, Event, Logs, and RUM monitors.</p></li>
-<li><p><strong>groupby_simple_monitor</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether the log alert monitor triggers a single alert or multiple alerts when any group breaches a threshold.</p></li>
+<li><p><strong>groupby_simple_monitor</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether the log alert monitor triggers a single alert or multiple alerts when any group breaches a threshold. Use <code class="docutils literal notranslate"><span class="pre">notify_by</span></code> instead. <strong>Deprecated</strong>.</p></li>
 <li><p><strong>include_tags</strong> (<em>bool</em><em>, </em><em>optional</em>) – <p>A Boolean indicating whether notifications from this monitor automatically inserts its triggering tags into the title.</p>
 <p><strong>Examples</strong></p>
 <ul>
