@@ -189,6 +189,8 @@ Feature: Synthetics
     When the request is sent
     Then the response status is 200 OK - Returns the created test details.
     And the response "name" is equal to "{{ unique }}"
+    And the response "config.assertions[7].type" is equal to "javascript"
+    And the response "config.assertions[7].code" is equal to "const hello = 'world';"
 
   @team:DataDog/synthetics-ct
   Scenario: Create an API HTTP with oauth-rop test returns "OK - Returns the created test details." response

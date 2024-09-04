@@ -7,7 +7,12 @@
         "target": "text/html",
         "type": "header"
       },
-      { "operator": "lessThan", "target": 2000, "type": "responseTime", "timingsScope": "withoutDNS" },
+      {
+        "operator": "lessThan",
+        "target": 2000,
+        "type": "responseTime",
+        "timingsScope": "withoutDNS"
+      },
       {
         "operator": "validatesJSONPath",
         "target": {
@@ -48,6 +53,10 @@
         "operator": "md5",
         "target": "a",
         "type": "bodyHash"
+      },
+      {
+        "code": "const hello = 'world';",
+        "type": "javascript"
       }
     ],
     "configVariables": [

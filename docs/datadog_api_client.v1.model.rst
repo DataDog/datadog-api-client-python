@@ -3910,6 +3910,20 @@ datadog\_api\_client.v1.model.synthetics\_assertion\_body\_hash\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.synthetics\_assertion\_javascript module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_assertion_javascript
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.synthetics\_assertion\_javascript\_type module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_assertion_javascript_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.synthetics\_assertion\_json\_path\_operator module
 --------------------------------------------------------------------------------
 

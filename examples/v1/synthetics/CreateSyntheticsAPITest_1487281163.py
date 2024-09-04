@@ -10,6 +10,8 @@ from datadog_api_client.v1.model.synthetics_api_test_type import SyntheticsAPITe
 from datadog_api_client.v1.model.synthetics_assertion_body_hash_operator import SyntheticsAssertionBodyHashOperator
 from datadog_api_client.v1.model.synthetics_assertion_body_hash_target import SyntheticsAssertionBodyHashTarget
 from datadog_api_client.v1.model.synthetics_assertion_body_hash_type import SyntheticsAssertionBodyHashType
+from datadog_api_client.v1.model.synthetics_assertion_javascript import SyntheticsAssertionJavascript
+from datadog_api_client.v1.model.synthetics_assertion_javascript_type import SyntheticsAssertionJavascriptType
 from datadog_api_client.v1.model.synthetics_assertion_json_path_operator import SyntheticsAssertionJSONPathOperator
 from datadog_api_client.v1.model.synthetics_assertion_json_path_target import SyntheticsAssertionJSONPathTarget
 from datadog_api_client.v1.model.synthetics_assertion_json_path_target_target import (
@@ -102,6 +104,10 @@ body = SyntheticsAPITest(
                 operator=SyntheticsAssertionBodyHashOperator.MD5,
                 target="a",
                 type=SyntheticsAssertionBodyHashType.BODY_HASH,
+            ),
+            SyntheticsAssertionJavascript(
+                code="const hello = 'world';",
+                type=SyntheticsAssertionJavascriptType.JAVASCRIPT,
             ),
         ],
         config_variables=[
