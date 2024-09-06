@@ -28,17 +28,20 @@ class ToplistWidgetStyle(ModelNormal):
 
         return {
             "display": (ToplistWidgetDisplay,),
+            "palette": (str,),
             "scaling": (ToplistWidgetScaling,),
         }
 
     attribute_map = {
         "display": "display",
+        "palette": "palette",
         "scaling": "scaling",
     }
 
     def __init__(
         self_,
         display: Union[ToplistWidgetDisplay, ToplistWidgetStacked, ToplistWidgetFlat, UnsetType] = unset,
+        palette: Union[str, UnsetType] = unset,
         scaling: Union[ToplistWidgetScaling, UnsetType] = unset,
         **kwargs,
     ):
@@ -48,11 +51,16 @@ class ToplistWidgetStyle(ModelNormal):
         :param display: Top list widget display options.
         :type display: ToplistWidgetDisplay, optional
 
+        :param palette: Color palette to apply to the widget.
+        :type palette: str, optional
+
         :param scaling: Top list widget scaling definition.
         :type scaling: ToplistWidgetScaling, optional
         """
         if display is not unset:
             kwargs["display"] = display
+        if palette is not unset:
+            kwargs["palette"] = palette
         if scaling is not unset:
             kwargs["scaling"] = scaling
         super().__init__(kwargs)

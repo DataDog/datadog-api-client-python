@@ -52,6 +52,7 @@ body = Dashboard(
                         legend=ToplistWidgetLegend.INLINE,
                     ),
                     scaling=ToplistWidgetScaling.RELATIVE,
+                    palette="dog_classic",
                 ),
                 type=ToplistWidgetDefinitionType.TOPLIST,
                 requests=[
