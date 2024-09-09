@@ -264,7 +264,12 @@ def get_references_for_model(model, model_name):
                     if formatter.is_list_model_whitelisted(items_name):
                         result[items_name] = None
                     elif definition["items"].get("type") == "array":
-                        result[formatter.get_name(definition["items"]["items"])] = None
+                        nested_model = definition["items"]["items"]
+                        nested_model_name = formatter.get_name(nested_model)
+                        result[nested_model_name] = None
+                        result.update(
+                            {k: None for k in get_oneof_references_for_model(nested_model, nested_model_name)}
+                        )
                     elif find_non_primitive_type(definition["items"]):
                         result[items_name] = None
         elif definition.get("properties") and top_name:
@@ -428,13 +433,16 @@ def parameters(operation):
         if "multipart/form-data" in operation["requestBody"]["content"]:
             parent = operation["requestBody"]["content"]["multipart/form-data"]["schema"]
             for name, schema in parent["properties"].items():
-                yield name, {
-                    "in": "form",
-                    "schema": schema,
-                    "name": name,
-                    "description": schema.get("description"),
-                    "required": name in parent.get("required", []),
-                }
+                yield (
+                    name,
+                    {
+                        "in": "form",
+                        "schema": schema,
+                        "name": name,
+                        "description": schema.get("description"),
+                        "required": name in parent.get("required", []),
+                    },
+                )
         else:
             name = operation.get("x-codegen-request-body-name", "body")
             yield name, operation["requestBody"]
