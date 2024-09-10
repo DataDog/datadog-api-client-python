@@ -13,6 +13,21 @@ from datadog_api_client.v2.model.api_keys_response_meta import APIKeysResponseMe
 from datadog_api_client.v2.model.api_keys_response_meta_page import APIKeysResponseMetaPage
 from datadog_api_client.v2.model.api_keys_sort import APIKeysSort
 from datadog_api_client.v2.model.api_keys_type import APIKeysType
+from datadog_api_client.v2.model.asm_exclusion_filter_attributes import ASMExclusionFilterAttributes
+from datadog_api_client.v2.model.asm_exclusion_filter_create_attributes import ASMExclusionFilterCreateAttributes
+from datadog_api_client.v2.model.asm_exclusion_filter_create_data import ASMExclusionFilterCreateData
+from datadog_api_client.v2.model.asm_exclusion_filter_create_request import ASMExclusionFilterCreateRequest
+from datadog_api_client.v2.model.asm_exclusion_filter_data import ASMExclusionFilterData
+from datadog_api_client.v2.model.asm_exclusion_filter_list_response import ASMExclusionFilterListResponse
+from datadog_api_client.v2.model.asm_exclusion_filter_metadata import ASMExclusionFilterMetadata
+from datadog_api_client.v2.model.asm_exclusion_filter_response import ASMExclusionFilterResponse
+from datadog_api_client.v2.model.asm_exclusion_filter_rule_target import ASMExclusionFilterRuleTarget
+from datadog_api_client.v2.model.asm_exclusion_filter_rule_target_tags import ASMExclusionFilterRuleTargetTags
+from datadog_api_client.v2.model.asm_exclusion_filter_scope import ASMExclusionFilterScope
+from datadog_api_client.v2.model.asm_exclusion_filter_type import ASMExclusionFilterType
+from datadog_api_client.v2.model.asm_exclusion_filter_update_attributes import ASMExclusionFilterUpdateAttributes
+from datadog_api_client.v2.model.asm_exclusion_filter_update_data import ASMExclusionFilterUpdateData
+from datadog_api_client.v2.model.asm_exclusion_filter_update_request import ASMExclusionFilterUpdateRequest
 from datadog_api_client.v2.model.aws_related_account import AWSRelatedAccount
 from datadog_api_client.v2.model.aws_related_account_attributes import AWSRelatedAccountAttributes
 from datadog_api_client.v2.model.aws_related_account_type import AWSRelatedAccountType
@@ -1971,6 +1986,21 @@ __all__ = [
     "APIKeysResponseMetaPage",
     "APIKeysSort",
     "APIKeysType",
+    "ASMExclusionFilterAttributes",
+    "ASMExclusionFilterCreateAttributes",
+    "ASMExclusionFilterCreateData",
+    "ASMExclusionFilterCreateRequest",
+    "ASMExclusionFilterData",
+    "ASMExclusionFilterListResponse",
+    "ASMExclusionFilterMetadata",
+    "ASMExclusionFilterResponse",
+    "ASMExclusionFilterRuleTarget",
+    "ASMExclusionFilterRuleTargetTags",
+    "ASMExclusionFilterScope",
+    "ASMExclusionFilterType",
+    "ASMExclusionFilterUpdateAttributes",
+    "ASMExclusionFilterUpdateData",
+    "ASMExclusionFilterUpdateRequest",
     "AWSRelatedAccount",
     "AWSRelatedAccountAttributes",
     "AWSRelatedAccountType",

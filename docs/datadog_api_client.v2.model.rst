@@ -235,6 +235,111 @@ datadog\_api\_client.v2.model.application\_keys\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.asm\_exclusion\_filter\_attributes module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.asm_exclusion_filter_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.asm\_exclusion\_filter\_create\_attributes module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.asm_exclusion_filter_create_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.asm\_exclusion\_filter\_create\_data module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.asm_exclusion_filter_create_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.asm\_exclusion\_filter\_create\_request module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.asm_exclusion_filter_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.asm\_exclusion\_filter\_data module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.asm_exclusion_filter_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.asm\_exclusion\_filter\_list\_response module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.asm_exclusion_filter_list_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.asm\_exclusion\_filter\_metadata module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.asm_exclusion_filter_metadata
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.asm\_exclusion\_filter\_response module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.asm_exclusion_filter_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.asm\_exclusion\_filter\_rule\_target module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.asm_exclusion_filter_rule_target
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.asm\_exclusion\_filter\_rule\_target\_tags module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.asm_exclusion_filter_rule_target_tags
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.asm\_exclusion\_filter\_scope module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.asm_exclusion_filter_scope
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.asm\_exclusion\_filter\_type module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.asm_exclusion_filter_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.asm\_exclusion\_filter\_update\_attributes module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.asm_exclusion_filter_update_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.asm\_exclusion\_filter\_update\_data module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.asm_exclusion_filter_update_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.asm\_exclusion\_filter\_update\_request module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.asm_exclusion_filter_update_request
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.audit\_logs\_event module
 -------------------------------------------------------
 
