@@ -1,5 +1,6 @@
 from datadog_api_client.v2.api.api_management_api import APIManagementApi
 from datadog_api_client.v2.api.apm_retention_filters_api import APMRetentionFiltersApi
+from datadog_api_client.v2.api.asm_exclusion_filters_api import ASMExclusionFiltersApi
 from datadog_api_client.v2.api.audit_api import AuditApi
 from datadog_api_client.v2.api.authn_mappings_api import AuthNMappingsApi
 from datadog_api_client.v2.api.ci_visibility_pipelines_api import CIVisibilityPipelinesApi
@@ -56,6 +57,7 @@ from datadog_api_client.v2.api.workflow_automation_api import WorkflowAutomation
 __all__ = [
     "APIManagementApi",
     "APMRetentionFiltersApi",
+    "ASMExclusionFiltersApi",
     "AuditApi",
     "AuthNMappingsApi",
     "CIVisibilityPipelinesApi",

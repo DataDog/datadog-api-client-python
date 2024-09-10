@@ -1473,6 +1473,43 @@
       "type": "idempotent"
     }
   },
+  "ListASMExclusionFilters": {
+    "tag": "ASM Exclusion Filters",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateASMExclusionFilter": {
+    "tag": "ASM Exclusion Filters",
+    "undo": {
+      "operationId": "DeleteASMExclusionFilter",
+      "parameters": [
+        {
+          "name": "exclusion_filter_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteASMExclusionFilter": {
+    "tag": "ASM Exclusion Filters",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetASMExclusionFilters": {
+    "tag": "ASM Exclusion Filters",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateASMExclusionFilter": {
+    "tag": "ASM Exclusion Filters",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListCSMThreatsAgentRules": {
     "tag": "CSM Threats",
     "undo": {
