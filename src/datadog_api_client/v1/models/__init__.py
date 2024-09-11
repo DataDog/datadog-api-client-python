@@ -801,6 +801,17 @@ from datadog_api_client.v1.model.table_widget_definition import TableWidgetDefin
 from datadog_api_client.v1.model.table_widget_definition_type import TableWidgetDefinitionType
 from datadog_api_client.v1.model.table_widget_has_search_bar import TableWidgetHasSearchBar
 from datadog_api_client.v1.model.table_widget_request import TableWidgetRequest
+from datadog_api_client.v1.model.table_widget_text_format_match import TableWidgetTextFormatMatch
+from datadog_api_client.v1.model.table_widget_text_format_match_type import TableWidgetTextFormatMatchType
+from datadog_api_client.v1.model.table_widget_text_format_palette import TableWidgetTextFormatPalette
+from datadog_api_client.v1.model.table_widget_text_format_replace import TableWidgetTextFormatReplace
+from datadog_api_client.v1.model.table_widget_text_format_replace_all import TableWidgetTextFormatReplaceAll
+from datadog_api_client.v1.model.table_widget_text_format_replace_all_type import TableWidgetTextFormatReplaceAllType
+from datadog_api_client.v1.model.table_widget_text_format_replace_substring import TableWidgetTextFormatReplaceSubstring
+from datadog_api_client.v1.model.table_widget_text_format_replace_substring_type import (
+    TableWidgetTextFormatReplaceSubstringType,
+)
+from datadog_api_client.v1.model.table_widget_text_format_rule import TableWidgetTextFormatRule
 from datadog_api_client.v1.model.tag_to_hosts import TagToHosts
 from datadog_api_client.v1.model.target_format_type import TargetFormatType
 from datadog_api_client.v1.model.timeseries_background import TimeseriesBackground
@@ -1691,6 +1702,15 @@ __all__ = [
     "TableWidgetDefinitionType",
     "TableWidgetHasSearchBar",
     "TableWidgetRequest",
+    "TableWidgetTextFormatMatch",
+    "TableWidgetTextFormatMatchType",
+    "TableWidgetTextFormatPalette",
+    "TableWidgetTextFormatReplace",
+    "TableWidgetTextFormatReplaceAll",
+    "TableWidgetTextFormatReplaceAllType",
+    "TableWidgetTextFormatReplaceSubstring",
+    "TableWidgetTextFormatReplaceSubstringType",
+    "TableWidgetTextFormatRule",
     "TagToHosts",
     "TargetFormatType",
     "TimeseriesBackground",
