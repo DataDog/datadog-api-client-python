@@ -22,6 +22,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.synthetics_test_headers import SyntheticsTestHeaders
     from datadog_api_client.v1.model.synthetics_test_options_http_version import SyntheticsTestOptionsHTTPVersion
     from datadog_api_client.v1.model.synthetics_test_metadata import SyntheticsTestMetadata
+    from datadog_api_client.v1.model.synthetics_test_request_port import SyntheticsTestRequestPort
     from datadog_api_client.v1.model.synthetics_test_request_proxy import SyntheticsTestRequestProxy
     from datadog_api_client.v1.model.synthetics_basic_auth_web import SyntheticsBasicAuthWeb
     from datadog_api_client.v1.model.synthetics_basic_auth_sigv4 import SyntheticsBasicAuthSigv4
@@ -49,6 +50,7 @@ class SyntheticsTestRequest(ModelNormal):
         from datadog_api_client.v1.model.synthetics_test_headers import SyntheticsTestHeaders
         from datadog_api_client.v1.model.synthetics_test_options_http_version import SyntheticsTestOptionsHTTPVersion
         from datadog_api_client.v1.model.synthetics_test_metadata import SyntheticsTestMetadata
+        from datadog_api_client.v1.model.synthetics_test_request_port import SyntheticsTestRequestPort
         from datadog_api_client.v1.model.synthetics_test_request_proxy import SyntheticsTestRequestProxy
 
         return {
@@ -74,7 +76,7 @@ class SyntheticsTestRequest(ModelNormal):
             "no_saving_response_body": (bool,),
             "number_of_packets": (int,),
             "persist_cookies": (bool,),
-            "port": (str,),
+            "port": (SyntheticsTestRequestPort,),
             "proxy": (SyntheticsTestRequestProxy,),
             "query": (dict,),
             "servername": (str,),
@@ -150,7 +152,7 @@ class SyntheticsTestRequest(ModelNormal):
         no_saving_response_body: Union[bool, UnsetType] = unset,
         number_of_packets: Union[int, UnsetType] = unset,
         persist_cookies: Union[bool, UnsetType] = unset,
-        port: Union[str, UnsetType] = unset,
+        port: Union[SyntheticsTestRequestPort, int, str, UnsetType] = unset,
         proxy: Union[SyntheticsTestRequestProxy, UnsetType] = unset,
         query: Union[dict, UnsetType] = unset,
         servername: Union[str, UnsetType] = unset,
@@ -230,7 +232,7 @@ class SyntheticsTestRequest(ModelNormal):
         :type persist_cookies: bool, optional
 
         :param port: Port to use when performing the test.
-        :type port: str, optional
+        :type port: SyntheticsTestRequestPort, optional
 
         :param proxy: The proxy to perform the test.
         :type proxy: SyntheticsTestRequestProxy, optional
