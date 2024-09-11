@@ -99,7 +99,7 @@ body = SyntheticsAPITest(
                 ],
                 request=SyntheticsTestRequest(
                     host="grpcbin.test.k6.io",
-                    port="9000",
+                    port=9000,
                     service="grpcbin.GRPCBin",
                     method="Index",
                     message="{}",

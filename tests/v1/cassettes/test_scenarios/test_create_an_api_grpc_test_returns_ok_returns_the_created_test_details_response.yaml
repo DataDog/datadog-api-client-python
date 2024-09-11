@@ -1,8 +1,8 @@
 interactions:
 - request:
     body: '{"config":{"assertions":[{"operator":"is","target":1,"type":"grpcHealthcheckStatus"},{"operator":"is","target":"proto
-      target","type":"grpcProto"},{"operator":"is","property":"property","target":"123","type":"grpcMetadata"}],"request":{"host":"localhost","message":"","metadata":{},"method":"GET","port":"50051","service":"Hello"}},"locations":["aws:us-east-2"],"message":"BDD
-      test payload: synthetics_api_grpc_test_payload.json","name":"Test-Create_an_API_GRPC_test_returns_OK_Returns_the_created_test_details_response-1724244924","options":{"min_failure_duration":0,"min_location_failed":1,"monitor_name":"Test-Create_an_API_GRPC_test_returns_OK_Returns_the_created_test_details_response-1724244924","monitor_options":{"renotify_interval":0},"tick_every":60},"subtype":"grpc","tags":["testing:api"],"type":"api"}'
+      target","type":"grpcProto"},{"operator":"is","property":"property","target":"123","type":"grpcMetadata"}],"request":{"host":"localhost","message":"","metadata":{},"method":"GET","port":50051,"service":"Hello"}},"locations":["aws:us-east-2"],"message":"BDD
+      test payload: synthetics_api_grpc_test_payload.json","name":"Test-Create_an_API_GRPC_test_returns_OK_Returns_the_created_test_details_response-1725997017","options":{"min_failure_duration":0,"min_location_failed":1,"monitor_name":"Test-Create_an_API_GRPC_test_returns_OK_Returns_the_created_test_details_response-1725997017","monitor_options":{"renotify_interval":0},"tick_every":60},"subtype":"grpc","tags":["testing:api"],"type":"api"}'
     headers:
       accept:
       - application/json
@@ -12,11 +12,9 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/synthetics/tests/api
   response:
     body:
-      string: '{"public_id":"g6v-hzu-yzk","name":"Test-Create_an_API_GRPC_test_returns_OK_Returns_the_created_test_details_response-1724244924","status":"live","type":"api","tags":["testing:api"],"created_at":"2024-08-21T12:55:24.937652+00:00","modified_at":"2024-08-21T12:55:24.937652+00:00","config":{"assertions":[{"operator":"is","target":1,"type":"grpcHealthcheckStatus"},{"operator":"is","target":"proto
-        target","type":"grpcProto"},{"operator":"is","property":"property","target":"123","type":"grpcMetadata"}],"request":{"host":"localhost","message":"","metadata":{},"method":"GET","port":"50051","service":"Hello"}},"message":"BDD
-        test payload: synthetics_api_grpc_test_payload.json","options":{"min_failure_duration":0,"min_location_failed":1,"monitor_name":"Test-Create_an_API_GRPC_test_returns_OK_Returns_the_created_test_details_response-1724244924","monitor_options":{"renotify_interval":0,"on_missing_data":"show_no_data","notify_audit":false,"new_host_delay":300,"include_tags":true},"tick_every":60},"locations":["aws:us-east-2"],"subtype":"grpc","created_by":{"name":"CI
-        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","email":"team-intg-tools-libs-spam@datadoghq.com"},"deleted_at":null,"monitor_id":151907393,"org_id":321813,"modified_by":{"name":"CI
-        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","email":"team-intg-tools-libs-spam@datadoghq.com"}}'
+      string: '{"public_id":"7n6-kjn-5k4","name":"Test-Create_an_API_GRPC_test_returns_OK_Returns_the_created_test_details_response-1725997017","status":"live","type":"api","tags":["testing:api"],"created_at":"2024-09-10T19:36:57.684391+00:00","modified_at":"2024-09-10T19:36:57.684391+00:00","config":{"assertions":[{"operator":"is","target":1,"type":"grpcHealthcheckStatus"},{"operator":"is","target":"proto
+        target","type":"grpcProto"},{"operator":"is","property":"property","target":"123","type":"grpcMetadata"}],"request":{"host":"localhost","message":"","metadata":{},"method":"GET","port":50051,"service":"Hello"}},"message":"BDD
+        test payload: synthetics_api_grpc_test_payload.json","options":{"min_failure_duration":0,"min_location_failed":1,"monitor_name":"Test-Create_an_API_GRPC_test_returns_OK_Returns_the_created_test_details_response-1725997017","monitor_options":{"renotify_interval":0,"on_missing_data":"show_no_data","notify_audit":false,"new_host_delay":300,"include_tags":true},"tick_every":60},"locations":["aws:us-east-2"],"subtype":"grpc","created_by":{"name":null,"handle":"frog@datadoghq.com","email":"frog@datadoghq.com"},"deleted_at":null,"monitor_id":153513838,"org_id":321813,"modified_by":{"name":null,"handle":"frog@datadoghq.com","email":"frog@datadoghq.com"}}'
     headers:
       content-type:
       - application/json
@@ -24,7 +22,7 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"public_ids":["g6v-hzu-yzk"]}'
+    body: '{"public_ids":["7n6-kjn-5k4"]}'
     headers:
       accept:
       - application/json
@@ -34,7 +32,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/synthetics/tests/delete
   response:
     body:
-      string: '{"deleted_tests":[{"public_id":"g6v-hzu-yzk","deleted_at":"2024-08-21T12:55:25.563691+00:00"}]}
+      string: '{"deleted_tests":[{"public_id":"7n6-kjn-5k4","deleted_at":"2024-09-10T19:36:58.253366+00:00"}]}
 
         '
     headers:
