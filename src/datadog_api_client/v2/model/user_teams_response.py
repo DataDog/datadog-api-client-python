@@ -20,6 +20,8 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.teams_response_meta import TeamsResponseMeta
     from datadog_api_client.v2.model.user import User
     from datadog_api_client.v2.model.team import Team
+    from datadog_api_client.v2.model.abbreviated_team import AbbreviatedTeam
+    from datadog_api_client.v2.model.user_team_user import UserTeamUser
 
 
 class UserTeamsResponse(ModelNormal):
@@ -47,7 +49,7 @@ class UserTeamsResponse(ModelNormal):
     def __init__(
         self_,
         data: Union[List[UserTeam], UnsetType] = unset,
-        included: Union[List[Union[UserTeamIncluded, User, Team]], UnsetType] = unset,
+        included: Union[List[Union[UserTeamIncluded, User, Team, AbbreviatedTeam, UserTeamUser]], UnsetType] = unset,
         links: Union[TeamsResponseLinks, UnsetType] = unset,
         meta: Union[TeamsResponseMeta, UnsetType] = unset,
         **kwargs,
