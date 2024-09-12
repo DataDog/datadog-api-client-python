@@ -784,6 +784,7 @@ from datadog_api_client.v1.model.synthetics_test_request_body_file import Synthe
 from datadog_api_client.v1.model.synthetics_test_request_body_type import SyntheticsTestRequestBodyType
 from datadog_api_client.v1.model.synthetics_test_request_certificate import SyntheticsTestRequestCertificate
 from datadog_api_client.v1.model.synthetics_test_request_certificate_item import SyntheticsTestRequestCertificateItem
+from datadog_api_client.v1.model.synthetics_test_request_port import SyntheticsTestRequestPort
 from datadog_api_client.v1.model.synthetics_test_request_proxy import SyntheticsTestRequestProxy
 from datadog_api_client.v1.model.synthetics_timing import SyntheticsTiming
 from datadog_api_client.v1.model.synthetics_trigger_body import SyntheticsTriggerBody
@@ -1676,6 +1677,7 @@ __all__ = [
     "SyntheticsTestRequestBodyType",
     "SyntheticsTestRequestCertificate",
     "SyntheticsTestRequestCertificateItem",
+    "SyntheticsTestRequestPort",
     "SyntheticsTestRequestProxy",
     "SyntheticsTiming",
     "SyntheticsTriggerBody",

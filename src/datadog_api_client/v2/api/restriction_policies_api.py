@@ -26,7 +26,7 @@ class RestrictionPoliciesApi:
         self._delete_restriction_policy_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/restriction_policy/{resource_id}",
                 "operation_id": "delete_restriction_policy",
                 "http_method": "DELETE",
@@ -49,7 +49,7 @@ class RestrictionPoliciesApi:
         self._get_restriction_policy_endpoint = _Endpoint(
             settings={
                 "response_type": (RestrictionPolicyResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/restriction_policy/{resource_id}",
                 "operation_id": "get_restriction_policy",
                 "http_method": "GET",
@@ -72,7 +72,7 @@ class RestrictionPoliciesApi:
         self._update_restriction_policy_endpoint = _Endpoint(
             settings={
                 "response_type": (RestrictionPolicyResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/restriction_policy/{resource_id}",
                 "operation_id": "update_restriction_policy",
                 "http_method": "POST",

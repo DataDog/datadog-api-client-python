@@ -54,7 +54,7 @@ class AuthNMappingsApi:
         self._delete_authn_mapping_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/authn_mappings/{authn_mapping_id}",
                 "operation_id": "delete_authn_mapping",
                 "http_method": "DELETE",
@@ -77,7 +77,7 @@ class AuthNMappingsApi:
         self._get_authn_mapping_endpoint = _Endpoint(
             settings={
                 "response_type": (AuthNMappingResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/authn_mappings/{authn_mapping_id}",
                 "operation_id": "get_authn_mapping",
                 "http_method": "GET",
@@ -142,7 +142,7 @@ class AuthNMappingsApi:
         self._update_authn_mapping_endpoint = _Endpoint(
             settings={
                 "response_type": (AuthNMappingResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/authn_mappings/{authn_mapping_id}",
                 "operation_id": "update_authn_mapping",
                 "http_method": "PATCH",
