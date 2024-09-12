@@ -26324,11 +26324,6 @@ paths:
           description: Not Found
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
-      security:
-      - apiKeyAuth: []
-        appKeyAuth: []
-      - AuthZ:
-        - user_access_manage
       summary: Delete an AuthN Mapping
       tags:
       - AuthN Mappings
@@ -26358,10 +26353,6 @@ paths:
           description: Not Found
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
-      security:
-      - apiKeyAuth: []
-        appKeyAuth: []
-      - AuthZ: []
       summary: Get an AuthN Mapping by UUID
       tags:
       - AuthN Mappings
@@ -26415,11 +26406,6 @@ paths:
           description: Unprocessable Entity
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
-      security:
-      - apiKeyAuth: []
-        appKeyAuth: []
-      - AuthZ:
-        - user_access_manage
       summary: Edit an AuthN Mapping
       tags:
       - AuthN Mappings
@@ -29232,11 +29218,6 @@ paths:
           $ref: '#/components/responses/NotFoundResponse'
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
-      security:
-      - apiKeyAuth: []
-        appKeyAuth: []
-      - AuthZ:
-        - incident_read
       summary: Get a list of attachments
       tags:
       - Incidents
@@ -32900,9 +32881,6 @@ paths:
           $ref: '#/components/responses/ForbiddenResponse'
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
-      security:
-      - apiKeyAuth: []
-        appKeyAuth: []
       summary: List Org Configs
       tags:
       - Organizations
@@ -32929,9 +32907,6 @@ paths:
           $ref: '#/components/responses/NotFoundResponse'
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
-      security:
-      - apiKeyAuth: []
-        appKeyAuth: []
       summary: Get a specific Org Config value
       tags:
       - Organizations
@@ -33768,6 +33743,7 @@ paths:
       security:
       - apiKeyAuth: []
         appKeyAuth: []
+      - AuthZ: []
       summary: Delete a restriction policy
       tags:
       - Restriction Policies
@@ -33792,6 +33768,7 @@ paths:
       security:
       - apiKeyAuth: []
         appKeyAuth: []
+      - AuthZ: []
       summary: Get a restriction policy
       tags:
       - Restriction Policies
@@ -33871,6 +33848,7 @@ paths:
       security:
       - apiKeyAuth: []
         appKeyAuth: []
+      - AuthZ: []
       summary: Update a restriction policy
       tags:
       - Restriction Policies
