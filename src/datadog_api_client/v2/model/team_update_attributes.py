@@ -16,10 +16,6 @@ from datadog_api_client.model_utils import (
 
 class TeamUpdateAttributes(ModelNormal):
     validations = {
-        "color": {
-            "inclusive_maximum": 13,
-            "inclusive_minimum": 0,
-        },
         "handle": {
             "max_length": 195,
         },
@@ -33,7 +29,6 @@ class TeamUpdateAttributes(ModelNormal):
         return {
             "avatar": (str, none_type),
             "banner": (int, none_type),
-            "color": (int,),
             "description": (str,),
             "handle": (str,),
             "hidden_modules": ([str],),
@@ -44,7 +39,6 @@ class TeamUpdateAttributes(ModelNormal):
     attribute_map = {
         "avatar": "avatar",
         "banner": "banner",
-        "color": "color",
         "description": "description",
         "handle": "handle",
         "hidden_modules": "hidden_modules",
@@ -58,7 +52,6 @@ class TeamUpdateAttributes(ModelNormal):
         name: str,
         avatar: Union[str, none_type, UnsetType] = unset,
         banner: Union[int, none_type, UnsetType] = unset,
-        color: Union[int, UnsetType] = unset,
         description: Union[str, UnsetType] = unset,
         hidden_modules: Union[List[str], UnsetType] = unset,
         visible_modules: Union[List[str], UnsetType] = unset,
@@ -72,9 +65,6 @@ class TeamUpdateAttributes(ModelNormal):
 
         :param banner: Banner selection for the team
         :type banner: int, none_type, optional
-
-        :param color: An identifier for the color representing the team
-        :type color: int, optional
 
         :param description: Free-form markdown description/content for the team's homepage
         :type description: str, optional
@@ -95,8 +85,6 @@ class TeamUpdateAttributes(ModelNormal):
             kwargs["avatar"] = avatar
         if banner is not unset:
             kwargs["banner"] = banner
-        if color is not unset:
-            kwargs["color"] = color
         if description is not unset:
             kwargs["description"] = description
         if hidden_modules is not unset:
