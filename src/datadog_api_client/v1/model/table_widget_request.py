@@ -25,6 +25,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.formula_and_function_query_definition import FormulaAndFunctionQueryDefinition
     from datadog_api_client.v1.model.formula_and_function_response_format import FormulaAndFunctionResponseFormat
     from datadog_api_client.v1.model.widget_sort_by import WidgetSortBy
+    from datadog_api_client.v1.model.table_widget_text_format_rule import TableWidgetTextFormatRule
     from datadog_api_client.v1.model.formula_and_function_metric_query_definition import (
         FormulaAndFunctionMetricQueryDefinition,
     )
@@ -62,6 +63,7 @@ class TableWidgetRequest(ModelNormal):
         from datadog_api_client.v1.model.formula_and_function_query_definition import FormulaAndFunctionQueryDefinition
         from datadog_api_client.v1.model.formula_and_function_response_format import FormulaAndFunctionResponseFormat
         from datadog_api_client.v1.model.widget_sort_by import WidgetSortBy
+        from datadog_api_client.v1.model.table_widget_text_format_rule import TableWidgetTextFormatRule
 
         return {
             "aggregator": (WidgetAggregator,),
@@ -84,6 +86,7 @@ class TableWidgetRequest(ModelNormal):
             "rum_query": (LogQueryDefinition,),
             "security_query": (LogQueryDefinition,),
             "sort": (WidgetSortBy,),
+            "text_formats": ([[TableWidgetTextFormatRule]],),
         }
 
     attribute_map = {
@@ -107,6 +110,7 @@ class TableWidgetRequest(ModelNormal):
         "rum_query": "rum_query",
         "security_query": "security_query",
         "sort": "sort",
+        "text_formats": "text_formats",
     }
 
     def __init__(
@@ -145,6 +149,7 @@ class TableWidgetRequest(ModelNormal):
         rum_query: Union[LogQueryDefinition, UnsetType] = unset,
         security_query: Union[LogQueryDefinition, UnsetType] = unset,
         sort: Union[WidgetSortBy, UnsetType] = unset,
+        text_formats: Union[List[List[TableWidgetTextFormatRule]], UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -209,6 +214,9 @@ class TableWidgetRequest(ModelNormal):
 
         :param sort: The controls for sorting the widget.
         :type sort: WidgetSortBy, optional
+
+        :param text_formats: List of text formats for columns produced by tags.
+        :type text_formats: [[TableWidgetTextFormatRule]], optional
         """
         if aggregator is not unset:
             kwargs["aggregator"] = aggregator
@@ -250,4 +258,6 @@ class TableWidgetRequest(ModelNormal):
             kwargs["security_query"] = security_query
         if sort is not unset:
             kwargs["sort"] = sort
+        if text_formats is not unset:
+            kwargs["text_formats"] = text_formats
         super().__init__(kwargs)
