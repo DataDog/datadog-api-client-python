@@ -1,5 +1,8 @@
 name: Run Tests
 
+permissions: 
+  contents: read
+
 env:
   GIT_AUTHOR_EMAIL: "packages@datadoghq.com"
   GIT_AUTHOR_NAME: "ci.datadog-api-spec"

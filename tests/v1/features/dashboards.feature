@@ -581,6 +581,22 @@ Feature: Dashboards
     And the response "widgets[0].definition.requests[0].sort.order_by[0].index" is equal to 0
 
   @team:DataDog/dashboards-backend
+  Scenario: Create a new dashboard with query_table widget and text formatting
+    Given new "CreateDashboard" request
+    And body from file "dashboards_json_payload/query_table_widget_text_formatting.json"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.type" is equal to "query_table"
+    And the response "widgets[0].definition.requests[0].text_formats[0][0].match.type" is equal to "is"
+    And the response "widgets[0].definition.requests[0].text_formats[0][0].match.value" is equal to "fruit"
+    And the response "widgets[0].definition.requests[0].text_formats[0][0].palette" is equal to "white_on_red"
+    And the response "widgets[0].definition.requests[0].text_formats[0][0].replace.type" is equal to "all"
+    And the response "widgets[0].definition.requests[0].text_formats[0][0].replace.with" is equal to "vegetable"
+    And the response "widgets[0].definition.requests[0].text_formats[0][1].palette" is equal to "custom_bg"
+    And the response "widgets[0].definition.requests[0].text_formats[0][1].custom_bg_color" is equal to "#632ca6"
+    And the response "widgets[0].definition.requests[0].text_formats[5][2].custom_fg_color" is equal to "#632ca6"
+
+  @team:DataDog/dashboards-backend
   Scenario: Create a new dashboard with query_value widget
     Given new "CreateDashboard" request
     And body from file "dashboards_json_payload/query_value_widget.json"

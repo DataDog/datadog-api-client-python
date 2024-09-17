@@ -4883,6 +4883,69 @@ datadog\_api\_client.v1.model.table\_widget\_request module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.table\_widget\_text\_format\_match module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.table_widget_text_format_match
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.table\_widget\_text\_format\_match\_type module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.table_widget_text_format_match_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.table\_widget\_text\_format\_palette module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.table_widget_text_format_palette
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.table\_widget\_text\_format\_replace module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.table_widget_text_format_replace
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.table\_widget\_text\_format\_replace\_all module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.table_widget_text_format_replace_all
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.table\_widget\_text\_format\_replace\_all\_type module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.table_widget_text_format_replace_all_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.table\_widget\_text\_format\_replace\_substring module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.table_widget_text_format_replace_substring
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.table\_widget\_text\_format\_replace\_substring\_type module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.table_widget_text_format_replace_substring_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.table\_widget\_text\_format\_rule module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.table_widget_text_format_rule
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.tag\_to\_hosts module
 ---------------------------------------------------
 

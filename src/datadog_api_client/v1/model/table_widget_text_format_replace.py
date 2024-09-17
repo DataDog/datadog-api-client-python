@@ -10,22 +10,19 @@ from datadog_api_client.model_utils import (
 )
 
 
-class UserTeamIncluded(ModelComposed):
+class TableWidgetTextFormatReplace(ModelComposed):
     def __init__(self, **kwargs):
         """
-        Included resources related to the team membership
+        Replace rule for the table widget text format.
 
-        :param attributes: Attributes of user object returned by the API.
-        :type attributes: UserAttributes, optional
+        :param type: Table widget text format replace all type.
+        :type type: TableWidgetTextFormatReplaceAllType
 
-        :param id: ID of the user.
-        :type id: str, optional
+        :param _with: Replace All type.
+        :type _with: str
 
-        :param relationships: Relationships of the user object returned by the API.
-        :type relationships: UserResponseRelationships, optional
-
-        :param type: Users resource type.
-        :type type: UsersType, optional
+        :param substring: Text that will be replaced.
+        :type substring: str
         """
         super().__init__(kwargs)
 
@@ -38,16 +35,14 @@ class UserTeamIncluded(ModelComposed):
         # code would be run when this module is imported, and these composed
         # classes don't exist yet because their module has not finished
         # loading
-        from datadog_api_client.v2.model.user import User
-        from datadog_api_client.v2.model.team import Team
-        from datadog_api_client.v2.model.abbreviated_team import AbbreviatedTeam
-        from datadog_api_client.v2.model.user_team_user import UserTeamUser
+        from datadog_api_client.v1.model.table_widget_text_format_replace_all import TableWidgetTextFormatReplaceAll
+        from datadog_api_client.v1.model.table_widget_text_format_replace_substring import (
+            TableWidgetTextFormatReplaceSubstring,
+        )
 
         return {
             "oneOf": [
-                User,
-                Team,
-                AbbreviatedTeam,
-                UserTeamUser,
+                TableWidgetTextFormatReplaceAll,
+                TableWidgetTextFormatReplaceSubstring,
             ],
         }
