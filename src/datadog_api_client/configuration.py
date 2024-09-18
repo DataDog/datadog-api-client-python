@@ -242,6 +242,7 @@ class Configuration:
                 "v2.list_apis": False,
                 "v2.update_open_api": False,
                 "v2.get_active_billing_dimensions": False,
+                "v2.get_billing_dimension_mapping": False,
                 "v2.get_monthly_cost_attribution": False,
                 "v2.create_dora_deployment": False,
                 "v2.create_dora_incident": False,
