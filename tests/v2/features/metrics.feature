@@ -125,6 +125,13 @@ Feature: Metrics
     When the request is sent
     Then the response status is 200 Success
 
+  @generated @skip @team:DataDog/metrics-experience @with-pagination
+  Scenario: Get a list of metrics returns "Success" response with pagination
+    Given a valid "appKeyAuth" key in the system
+    And new "ListTagConfigurations" request
+    When the request with pagination is sent
+    Then the response status is 200 Success
+
   @team:DataDog/metrics-experience
   Scenario: Get a list of metrics with a tag filter returns "Success" response
     Given a valid "appKeyAuth" key in the system
