@@ -11029,6 +11029,48 @@ datadog\_api\_client.v2.model.user\_invitations\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.user\_orgs\_serializable module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.user_orgs_serializable
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.user\_orgs\_serializable\_attributes module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.user_orgs_serializable_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.user\_orgs\_serializable\_type module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.user_orgs_serializable_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.user\_override\_identity\_provider module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.user_override_identity_provider
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.user\_override\_identity\_provider\_attributes module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.user_override_identity_provider_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.user\_override\_identity\_provider\_type module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.user_override_identity_provider_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.user\_relationship\_data module
 -------------------------------------------------------------
 
