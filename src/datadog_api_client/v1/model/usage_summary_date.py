@@ -75,6 +75,7 @@ class UsageSummaryDate(ModelNormal):
             "custom_ts_avg": (int,),
             "cws_container_count_avg": (int,),
             "cws_host_top99p": (int,),
+            "data_jobs_monitoring_host_hr_sum": (int,),
             "date": (datetime,),
             "dbm_host_top99p": (int,),
             "dbm_queries_count_avg": (int,),
@@ -210,6 +211,7 @@ class UsageSummaryDate(ModelNormal):
         "custom_ts_avg": "custom_ts_avg",
         "cws_container_count_avg": "cws_container_count_avg",
         "cws_host_top99p": "cws_host_top99p",
+        "data_jobs_monitoring_host_hr_sum": "data_jobs_monitoring_host_hr_sum",
         "date": "date",
         "dbm_host_top99p": "dbm_host_top99p",
         "dbm_queries_count_avg": "dbm_queries_count_avg",
@@ -346,6 +348,7 @@ class UsageSummaryDate(ModelNormal):
         custom_ts_avg: Union[int, UnsetType] = unset,
         cws_container_count_avg: Union[int, UnsetType] = unset,
         cws_host_top99p: Union[int, UnsetType] = unset,
+        data_jobs_monitoring_host_hr_sum: Union[int, UnsetType] = unset,
         date: Union[datetime, UnsetType] = unset,
         dbm_host_top99p: Union[int, UnsetType] = unset,
         dbm_queries_count_avg: Union[int, UnsetType] = unset,
@@ -584,6 +587,9 @@ class UsageSummaryDate(ModelNormal):
 
         :param cws_host_top99p: Shows the 99th percentile of all Cloud Workload Security hosts over all hours in the current date for all organizations.
         :type cws_host_top99p: int, optional
+
+        :param data_jobs_monitoring_host_hr_sum: Shows the sum of all Data Jobs Monitoring hosts over all hours in the current date for the given org.
+        :type data_jobs_monitoring_host_hr_sum: int, optional
 
         :param date: The date for the usage.
         :type date: datetime, optional
@@ -932,6 +938,8 @@ class UsageSummaryDate(ModelNormal):
             kwargs["cws_container_count_avg"] = cws_container_count_avg
         if cws_host_top99p is not unset:
             kwargs["cws_host_top99p"] = cws_host_top99p
+        if data_jobs_monitoring_host_hr_sum is not unset:
+            kwargs["data_jobs_monitoring_host_hr_sum"] = data_jobs_monitoring_host_hr_sum
         if date is not unset:
             kwargs["date"] = date
         if dbm_host_top99p is not unset:
