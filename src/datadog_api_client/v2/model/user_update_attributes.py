@@ -8,6 +8,8 @@ from typing import Union
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    datetime,
+    none_type,
     unset,
     UnsetType,
 )
@@ -17,26 +19,47 @@ class UserUpdateAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
+            "created_at": (datetime,),
             "disabled": (bool,),
             "email": (str,),
+            "handle": (str,),
+            "modified_at": (datetime,),
             "name": (str,),
+            "service_account": (bool,),
+            "title": (str, none_type),
+            "verified": (bool,),
         }
 
     attribute_map = {
+        "created_at": "created_at",
         "disabled": "disabled",
         "email": "email",
+        "handle": "handle",
+        "modified_at": "modified_at",
         "name": "name",
+        "service_account": "service_account",
+        "title": "title",
+        "verified": "verified",
     }
 
     def __init__(
         self_,
+        created_at: Union[datetime, UnsetType] = unset,
         disabled: Union[bool, UnsetType] = unset,
         email: Union[str, UnsetType] = unset,
+        handle: Union[str, UnsetType] = unset,
+        modified_at: Union[datetime, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
+        service_account: Union[bool, UnsetType] = unset,
+        title: Union[str, none_type, UnsetType] = unset,
+        verified: Union[bool, UnsetType] = unset,
         **kwargs,
     ):
         """
         Attributes of the edited user.
+
+        :param created_at: The ``UserUpdateAttributes`` ``created_at``.
+        :type created_at: datetime, optional
 
         :param disabled: If the user is enabled or disabled.
         :type disabled: bool, optional
@@ -44,13 +67,40 @@ class UserUpdateAttributes(ModelNormal):
         :param email: The email of the user.
         :type email: str, optional
 
+        :param handle: The ``UserUpdateAttributes`` ``handle``.
+        :type handle: str, optional
+
+        :param modified_at: The ``UserUpdateAttributes`` ``modified_at``.
+        :type modified_at: datetime, optional
+
         :param name: The name of the user.
         :type name: str, optional
+
+        :param service_account: The ``UserUpdateAttributes`` ``service_account``.
+        :type service_account: bool, optional
+
+        :param title: The ``UserUpdateAttributes`` ``title``.
+        :type title: str, none_type, optional
+
+        :param verified: The ``UserUpdateAttributes`` ``verified``.
+        :type verified: bool, optional
         """
+        if created_at is not unset:
+            kwargs["created_at"] = created_at
         if disabled is not unset:
             kwargs["disabled"] = disabled
         if email is not unset:
             kwargs["email"] = email
+        if handle is not unset:
+            kwargs["handle"] = handle
+        if modified_at is not unset:
+            kwargs["modified_at"] = modified_at
         if name is not unset:
             kwargs["name"] = name
+        if service_account is not unset:
+            kwargs["service_account"] = service_account
+        if title is not unset:
+            kwargs["title"] = title
+        if verified is not unset:
+            kwargs["verified"] = verified
         super().__init__(kwargs)

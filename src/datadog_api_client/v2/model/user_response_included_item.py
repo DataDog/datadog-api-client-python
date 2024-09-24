@@ -41,11 +41,15 @@ class UserResponseIncludedItem(ModelComposed):
         from datadog_api_client.v2.model.organization import Organization
         from datadog_api_client.v2.model.permission import Permission
         from datadog_api_client.v2.model.role import Role
+        from datadog_api_client.v2.model.user_override_identity_provider import UserOverrideIdentityProvider
+        from datadog_api_client.v2.model.user_orgs_serializable import UserOrgsSerializable
 
         return {
             "oneOf": [
                 Organization,
                 Permission,
                 Role,
+                UserOverrideIdentityProvider,
+                UserOrgsSerializable,
             ],
         }

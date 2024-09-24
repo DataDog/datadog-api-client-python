@@ -9,6 +9,7 @@ from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     datetime,
+    none_type,
     unset,
     UnsetType,
 )
@@ -21,6 +22,7 @@ class UserInvitationDataAttributes(ModelNormal):
             "created_at": (datetime,),
             "expires_at": (datetime,),
             "invite_type": (str,),
+            "login_method": (str, none_type),
             "uuid": (str,),
         }
 
@@ -28,6 +30,7 @@ class UserInvitationDataAttributes(ModelNormal):
         "created_at": "created_at",
         "expires_at": "expires_at",
         "invite_type": "invite_type",
+        "login_method": "login_method",
         "uuid": "uuid",
     }
 
@@ -36,6 +39,7 @@ class UserInvitationDataAttributes(ModelNormal):
         created_at: Union[datetime, UnsetType] = unset,
         expires_at: Union[datetime, UnsetType] = unset,
         invite_type: Union[str, UnsetType] = unset,
+        login_method: Union[str, none_type, UnsetType] = unset,
         uuid: Union[str, UnsetType] = unset,
         **kwargs,
     ):
@@ -51,6 +55,9 @@ class UserInvitationDataAttributes(ModelNormal):
         :param invite_type: Type of invitation.
         :type invite_type: str, optional
 
+        :param login_method: The ``UserInvitationDataAttributes`` ``login_method``.
+        :type login_method: str, none_type, optional
+
         :param uuid: UUID of the user invitation.
         :type uuid: str, optional
         """
@@ -60,6 +67,8 @@ class UserInvitationDataAttributes(ModelNormal):
             kwargs["expires_at"] = expires_at
         if invite_type is not unset:
             kwargs["invite_type"] = invite_type
+        if login_method is not unset:
+            kwargs["login_method"] = login_method
         if uuid is not unset:
             kwargs["uuid"] = uuid
         super().__init__(kwargs)

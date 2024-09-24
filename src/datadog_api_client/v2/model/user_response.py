@@ -19,6 +19,8 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.organization import Organization
     from datadog_api_client.v2.model.permission import Permission
     from datadog_api_client.v2.model.role import Role
+    from datadog_api_client.v2.model.user_override_identity_provider import UserOverrideIdentityProvider
+    from datadog_api_client.v2.model.user_orgs_serializable import UserOrgsSerializable
 
 
 class UserResponse(ModelNormal):
@@ -40,7 +42,19 @@ class UserResponse(ModelNormal):
     def __init__(
         self_,
         data: Union[User, UnsetType] = unset,
-        included: Union[List[Union[UserResponseIncludedItem, Organization, Permission, Role]], UnsetType] = unset,
+        included: Union[
+            List[
+                Union[
+                    UserResponseIncludedItem,
+                    Organization,
+                    Permission,
+                    Role,
+                    UserOverrideIdentityProvider,
+                    UserOrgsSerializable,
+                ]
+            ],
+            UnsetType,
+        ] = unset,
         **kwargs,
     ):
         """

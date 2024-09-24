@@ -1912,6 +1912,14 @@ from datadog_api_client.v2.model.user_invitation_response_data import UserInvita
 from datadog_api_client.v2.model.user_invitations_request import UserInvitationsRequest
 from datadog_api_client.v2.model.user_invitations_response import UserInvitationsResponse
 from datadog_api_client.v2.model.user_invitations_type import UserInvitationsType
+from datadog_api_client.v2.model.user_orgs_serializable import UserOrgsSerializable
+from datadog_api_client.v2.model.user_orgs_serializable_attributes import UserOrgsSerializableAttributes
+from datadog_api_client.v2.model.user_orgs_serializable_type import UserOrgsSerializableType
+from datadog_api_client.v2.model.user_override_identity_provider import UserOverrideIdentityProvider
+from datadog_api_client.v2.model.user_override_identity_provider_attributes import (
+    UserOverrideIdentityProviderAttributes,
+)
+from datadog_api_client.v2.model.user_override_identity_provider_type import UserOverrideIdentityProviderType
 from datadog_api_client.v2.model.user_relationship_data import UserRelationshipData
 from datadog_api_client.v2.model.user_relationships import UserRelationships
 from datadog_api_client.v2.model.user_resource_type import UserResourceType
@@ -3541,6 +3549,12 @@ __all__ = [
     "UserInvitationsRequest",
     "UserInvitationsResponse",
     "UserInvitationsType",
+    "UserOrgsSerializable",
+    "UserOrgsSerializableAttributes",
+    "UserOrgsSerializableType",
+    "UserOverrideIdentityProvider",
+    "UserOverrideIdentityProviderAttributes",
+    "UserOverrideIdentityProviderType",
     "UserRelationshipData",
     "UserRelationships",
     "UserResourceType",
