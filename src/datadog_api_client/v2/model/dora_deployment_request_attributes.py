@@ -29,6 +29,7 @@ class DORADeploymentRequestAttributes(ModelNormal):
             "id": (str,),
             "service": (str,),
             "started_at": (int,),
+            "team": (str,),
             "version": (str,),
         }
 
@@ -39,6 +40,7 @@ class DORADeploymentRequestAttributes(ModelNormal):
         "id": "id",
         "service": "service",
         "started_at": "started_at",
+        "team": "team",
         "version": "version",
     }
 
@@ -50,6 +52,7 @@ class DORADeploymentRequestAttributes(ModelNormal):
         env: Union[str, UnsetType] = unset,
         git: Union[DORAGitInfo, UnsetType] = unset,
         id: Union[str, UnsetType] = unset,
+        team: Union[str, UnsetType] = unset,
         version: Union[str, UnsetType] = unset,
         **kwargs,
     ):
@@ -74,6 +77,9 @@ class DORADeploymentRequestAttributes(ModelNormal):
         :param started_at: Unix timestamp when the deployment started. It must be in nanoseconds, milliseconds, or seconds.
         :type started_at: int
 
+        :param team: Name of the team owning the deployed service. If not provided, this is automatically populated with the team associated with the service in the Service Catalog.
+        :type team: str, optional
+
         :param version: Version to correlate with `APM Deployment Tracking <https://docs.datadoghq.com/tracing/services/deployment_tracking/>`_.
         :type version: str, optional
         """
@@ -83,6 +89,8 @@ class DORADeploymentRequestAttributes(ModelNormal):
             kwargs["git"] = git
         if id is not unset:
             kwargs["id"] = id
+        if team is not unset:
+            kwargs["team"] = team
         if version is not unset:
             kwargs["version"] = version
         super().__init__(kwargs)
