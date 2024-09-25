@@ -4,27 +4,6 @@ datadog\_api\_client.v2.model package
 Submodules
 ----------
 
-datadog\_api\_client.v2.model.abbreviated\_team module
-------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.abbreviated_team
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.abbreviated\_team\_attributes module
-------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.abbreviated_team_attributes
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.abbreviated\_team\_type module
-------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.abbreviated_team_type
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v2.model.active\_billing\_dimensions\_attributes module
 ----------------------------------------------------------------------------
 
@@ -11173,20 +11152,6 @@ datadog\_api\_client.v2.model.user\_team\_update\_request module
 ----------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.user_team_update_request
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.user\_team\_user module
------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.user_team_user
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.user\_team\_user\_attributes module
------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.user_team_user_attributes
    :members:
    :show-inheritance:
 
