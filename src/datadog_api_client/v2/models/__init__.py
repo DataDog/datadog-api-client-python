@@ -663,6 +663,7 @@ from datadog_api_client.v2.model.fastly_service_type import FastlyServiceType
 from datadog_api_client.v2.model.fastly_services_response import FastlyServicesResponse
 from datadog_api_client.v2.model.finding import Finding
 from datadog_api_client.v2.model.finding_attributes import FindingAttributes
+from datadog_api_client.v2.model.finding_detection_type import FindingDetectionType
 from datadog_api_client.v2.model.finding_evaluation import FindingEvaluation
 from datadog_api_client.v2.model.finding_mute import FindingMute
 from datadog_api_client.v2.model.finding_mute_reason import FindingMuteReason
@@ -2489,6 +2490,7 @@ __all__ = [
     "FastlyServicesResponse",
     "Finding",
     "FindingAttributes",
+    "FindingDetectionType",
     "FindingEvaluation",
     "FindingMute",
     "FindingMuteReason",
