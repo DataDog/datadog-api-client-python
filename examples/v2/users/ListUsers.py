@@ -13,9 +13,6 @@ USER_DATA_ATTRIBUTES_EMAIL = environ["USER_DATA_ATTRIBUTES_EMAIL"]
 configuration = Configuration()
 with ApiClient(configuration) as api_client:
     api_instance = UsersApi(api_client)
-    response = api_instance.list_users(
-        filter=USER_DATA_ATTRIBUTES_EMAIL,
-        page_size=100
-    )
+    response = api_instance.list_users(filter=USER_DATA_ATTRIBUTES_EMAIL, page_size=100)
 
     print(response)
