@@ -40,14 +40,10 @@ class UserTeamIncluded(ModelComposed):
         # loading
         from datadog_api_client.v2.model.user import User
         from datadog_api_client.v2.model.team import Team
-        from datadog_api_client.v2.model.abbreviated_team import AbbreviatedTeam
-        from datadog_api_client.v2.model.user_team_user import UserTeamUser
 
         return {
             "oneOf": [
                 User,
                 Team,
-                AbbreviatedTeam,
-                UserTeamUser,
             ],
         }

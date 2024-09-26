@@ -569,12 +569,13 @@ class UsageMeteringApi:
         :param filter_timestamp_start: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
         :type filter_timestamp_start: datetime
         :param filter_product_families: Comma separated list of product families to retrieve. Available families are ``all`` , ``analyzed_logs`` ,
-            ``application_security`` , ``audit_trail`` , ``serverless`` , ``ci_app`` , ``cloud_cost_management`` ,
+            ``application_security`` , ``audit_trail`` , ``serverless`` , ``ci_app`` , ``cloud_cost_management`` , ``cloud_siem`` ,
             ``csm_container_enterprise`` , ``csm_host_enterprise`` , ``cspm`` , ``custom_events`` , ``cws`` , ``dbm`` , ``error_tracking`` ,
             ``fargate`` , ``infra_hosts`` , ``incident_management`` , ``indexed_logs`` , ``indexed_spans`` , ``ingested_spans`` , ``iot`` ,
-            ``lambda_traced_invocations`` , ``logs`` , ``network_flows`` , ``network_hosts`` , ``netflow_monitoring`` , ``observability_pipelines`` ,
+            ``lambda_traced_invocations`` , ``logs`` , ``network_flows`` , ``network_hosts`` , ``network_monitoring`` , ``observability_pipelines`` ,
             ``online_archive`` , ``profiling`` , ``rum`` , ``rum_browser_sessions`` , ``rum_mobile_sessions`` , ``sds`` , ``snmp`` ,
-            ``synthetics_api`` , ``synthetics_browser`` , ``synthetics_mobile`` , ``synthetics_parallel_testing`` , and ``timeseries``.
+            ``synthetics_api`` , ``synthetics_browser`` , ``synthetics_mobile`` , ``synthetics_parallel_testing`` , ``timeseries`` , ``vuln_management`` ,
+            and ``workflow_executions``.
             The following product family has been **deprecated** : ``audit_logs``.
         :type filter_product_families: str
         :param filter_timestamp_end: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.
