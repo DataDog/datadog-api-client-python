@@ -4,7 +4,7 @@
 from __future__ import annotations
 
 import collections
-from typing import Any, Dict, Union
+from typing import Any, Dict, List, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
@@ -16,6 +16,7 @@ from datadog_api_client.model_utils import (
     unset,
 )
 from datadog_api_client.v2.model.list_findings_response import ListFindingsResponse
+from datadog_api_client.v2.model.finding_detection_type import FindingDetectionType
 from datadog_api_client.v2.model.finding_evaluation import FindingEvaluation
 from datadog_api_client.v2.model.finding_status import FindingStatus
 from datadog_api_client.v2.model.finding import Finding
@@ -486,6 +487,12 @@ class SecurityMonitoringApi:
                     "openapi_types": (str,),
                     "attribute": "page[cursor]",
                     "location": "query",
+                },
+                "filter_detection_type": {
+                    "openapi_types": ([FindingDetectionType],),
+                    "attribute": "filter[detection_type]",
+                    "location": "query",
+                    "collection_format": "multi",
                 },
                 "filter_tags": {
                     "openapi_types": (str,),
@@ -1146,6 +1153,7 @@ class SecurityMonitoringApi:
         page_limit: Union[int, UnsetType] = unset,
         snapshot_timestamp: Union[int, UnsetType] = unset,
         page_cursor: Union[str, UnsetType] = unset,
+        filter_detection_type: Union[List[FindingDetectionType], UnsetType] = unset,
         filter_tags: Union[str, UnsetType] = unset,
         filter_evaluation_changed_at: Union[str, UnsetType] = unset,
         filter_muted: Union[bool, UnsetType] = unset,
@@ -1195,6 +1203,8 @@ class SecurityMonitoringApi:
         :type snapshot_timestamp: int, optional
         :param page_cursor: Return the next page of findings pointed to by the cursor.
         :type page_cursor: str, optional
+        :param filter_detection_type: Return findings that match the selected detection types (repeatable).
+        :type filter_detection_type: [FindingDetectionType], optional
         :param filter_tags: Return findings that have these associated tags (repeatable).
         :type filter_tags: str, optional
         :param filter_evaluation_changed_at: Return findings that have changed from pass to fail or vice versa on a specified date (Unix ms) or date range (using comparison operators).
@@ -1224,6 +1234,9 @@ class SecurityMonitoringApi:
 
         if page_cursor is not unset:
             kwargs["page_cursor"] = page_cursor
+
+        if filter_detection_type is not unset:
+            kwargs["filter_detection_type"] = filter_detection_type
 
         if filter_tags is not unset:
             kwargs["filter_tags"] = filter_tags
@@ -1260,6 +1273,7 @@ class SecurityMonitoringApi:
         page_limit: Union[int, UnsetType] = unset,
         snapshot_timestamp: Union[int, UnsetType] = unset,
         page_cursor: Union[str, UnsetType] = unset,
+        filter_detection_type: Union[List[FindingDetectionType], UnsetType] = unset,
         filter_tags: Union[str, UnsetType] = unset,
         filter_evaluation_changed_at: Union[str, UnsetType] = unset,
         filter_muted: Union[bool, UnsetType] = unset,
@@ -1280,6 +1294,8 @@ class SecurityMonitoringApi:
         :type snapshot_timestamp: int, optional
         :param page_cursor: Return the next page of findings pointed to by the cursor.
         :type page_cursor: str, optional
+        :param filter_detection_type: Return findings that match the selected detection types (repeatable).
+        :type filter_detection_type: [FindingDetectionType], optional
         :param filter_tags: Return findings that have these associated tags (repeatable).
         :type filter_tags: str, optional
         :param filter_evaluation_changed_at: Return findings that have changed from pass to fail or vice versa on a specified date (Unix ms) or date range (using comparison operators).
@@ -1311,6 +1327,9 @@ class SecurityMonitoringApi:
 
         if page_cursor is not unset:
             kwargs["page_cursor"] = page_cursor
+
+        if filter_detection_type is not unset:
+            kwargs["filter_detection_type"] = filter_detection_type
 
         if filter_tags is not unset:
             kwargs["filter_tags"] = filter_tags
