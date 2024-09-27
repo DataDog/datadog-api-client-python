@@ -5367,10 +5367,10 @@ keys from users with the <code class="docutils literal notranslate"><span class=
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>metric_name</strong> (<em>str</em>) – The name of the metric.</p></li>
 <li><p><strong>filter_groups</strong> (<em>str</em><em>, </em><em>optional</em>) – Filtered tag keys that the metric is configured to query with.</p></li>
-<li><p><strong>filter_hours_ago</strong> (<em>int</em><em>, </em><em>optional</em>) – The number of hours of look back (from now) to estimate cardinality with. Estimates are based on historical data, and unspecified fields default to the minimum 49 hours.</p></li>
+<li><p><strong>filter_hours_ago</strong> (<em>int</em><em>, </em><em>optional</em>) – The number of hours of look back (from now) to estimate cardinality with. If unspecified, it defaults to 0 hours.</p></li>
 <li><p><strong>filter_num_aggregations</strong> (<em>int</em><em>, </em><em>optional</em>) – The number of aggregations that a <code class="docutils literal notranslate"><span class="pre">count</span></code> , <code class="docutils literal notranslate"><span class="pre">rate</span></code> , or <code class="docutils literal notranslate"><span class="pre">gauge</span></code> metric is configured to use. Max number of aggregation combos is 9.</p></li>
 <li><p><strong>filter_pct</strong> (<em>bool</em><em>, </em><em>optional</em>) – A boolean, for distribution metrics only, to estimate cardinality if the metric includes additional percentile aggregators.</p></li>
-<li><p><strong>filter_timespan_h</strong> (<em>int</em><em>, </em><em>optional</em>) – A window, in hours, from the look back to estimate cardinality with.</p></li>
+<li><p><strong>filter_timespan_h</strong> (<em>int</em><em>, </em><em>optional</em>) – A window, in hours, from the look back to estimate cardinality with. The minimum and default is 1 hour.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
