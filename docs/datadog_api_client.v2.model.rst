@@ -8488,13 +8488,6 @@ datadog\_api\_client.v2.model.security\_monitoring\_list\_rules\_response module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.security\_monitoring\_reference\_table module
----------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.security_monitoring_reference_table
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v2.model.security\_monitoring\_rule\_case module
 ---------------------------------------------------------------------
 

@@ -16,7 +16,7 @@ class ToplistWidgetDisplay(ModelComposed):
         Top list widget display options.
 
         :param legend: Top list widget stacked legend behavior.
-        :type legend: ToplistWidgetLegend
+        :type legend: ToplistWidgetLegend, optional
 
         :param type: Top list widget stacked display type.
         :type type: ToplistWidgetStackedType

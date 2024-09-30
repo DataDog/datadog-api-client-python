@@ -123,13 +123,12 @@ Feature: Security Monitoring
   @skip-validation @team:DataDog/k9-cloud-security-platform
   Scenario: Create a detection rule returns "OK" response
     Given new "CreateSecurityMonitoringRule" request
-    And body with value {"name":"{{ unique }}", "queries":[{"query":"@test:true","aggregation":"count","groupByFields":[],"distinctFields":[],"metric":""}],"filters":[],"cases":[{"name":"","status":"info","condition":"a > 0","notifications":[]}],"options":{"evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"message":"Test rule","tags":[],"isEnabled":true, "type":"log_detection", "referenceTables":[{"tableName": "synthetics_test_reference_table_dont_delete", "columnName": "value", "logFieldPath":"testtag", "checkPresence":true, "ruleQueryName":"a"}]}
+    And body with value {"name":"{{ unique }}", "queries":[{"query":"@test:true","aggregation":"count","groupByFields":[],"distinctFields":[],"metric":""}],"filters":[],"cases":[{"name":"","status":"info","condition":"a > 0","notifications":[]}],"options":{"evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"message":"Test rule","tags":[],"isEnabled":true, "type":"log_detection"}
     When the request is sent
     Then the response status is 200 OK
     And the response "name" is equal to "{{ unique }}"
     And the response "type" is equal to "log_detection"
     And the response "message" is equal to "Test rule"
-    And the response "referenceTables" is equal to [{"tableName": "synthetics_test_reference_table_dont_delete", "columnName": "value", "logFieldPath":"testtag", "checkPresence":true, "ruleQueryName":"a"}]
 
   @team:DataDog/k9-cloud-security-platform
   Scenario: Create a detection rule with detection method 'third_party' returns "OK" response
