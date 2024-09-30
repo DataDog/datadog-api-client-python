@@ -6248,6 +6248,13 @@ datadog\_api\_client.v2.model.metric\_tag\_configuration\_create\_request module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.metric\_tag\_configuration\_metric\_type\_category module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.metric_tag_configuration_metric_type_category
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.metric\_tag\_configuration\_metric\_types module
 ------------------------------------------------------------------------------
 

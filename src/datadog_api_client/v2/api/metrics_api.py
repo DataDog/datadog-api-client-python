@@ -14,7 +14,9 @@ from datadog_api_client.model_utils import (
 from datadog_api_client.v2.model.metrics_and_metric_tag_configurations_response import (
     MetricsAndMetricTagConfigurationsResponse,
 )
-from datadog_api_client.v2.model.metric_tag_configuration_metric_types import MetricTagConfigurationMetricTypes
+from datadog_api_client.v2.model.metric_tag_configuration_metric_type_category import (
+    MetricTagConfigurationMetricTypeCategory,
+)
 from datadog_api_client.v2.model.metric_bulk_tag_config_response import MetricBulkTagConfigResponse
 from datadog_api_client.v2.model.metric_bulk_tag_config_delete_request import MetricBulkTagConfigDeleteRequest
 from datadog_api_client.v2.model.metric_bulk_tag_config_create_request import MetricBulkTagConfigCreateRequest
@@ -303,7 +305,7 @@ class MetricsApi:
                     "location": "query",
                 },
                 "filter_metric_type": {
-                    "openapi_types": (MetricTagConfigurationMetricTypes,),
+                    "openapi_types": (MetricTagConfigurationMetricTypeCategory,),
                     "attribute": "filter[metric_type]",
                     "location": "query",
                 },
@@ -667,7 +669,7 @@ class MetricsApi:
         *,
         filter_configured: Union[bool, UnsetType] = unset,
         filter_tags_configured: Union[str, UnsetType] = unset,
-        filter_metric_type: Union[MetricTagConfigurationMetricTypes, UnsetType] = unset,
+        filter_metric_type: Union[MetricTagConfigurationMetricTypeCategory, UnsetType] = unset,
         filter_include_percentiles: Union[bool, UnsetType] = unset,
         filter_queried: Union[bool, UnsetType] = unset,
         filter_tags: Union[str, UnsetType] = unset,
@@ -682,7 +684,7 @@ class MetricsApi:
         :param filter_tags_configured: Filter tag configurations by configured tags.
         :type filter_tags_configured: str, optional
         :param filter_metric_type: Filter metrics by metric type.
-        :type filter_metric_type: MetricTagConfigurationMetricTypes, optional
+        :type filter_metric_type: MetricTagConfigurationMetricTypeCategory, optional
         :param filter_include_percentiles: Filter distributions with additional percentile
             aggregations enabled or disabled.
         :type filter_include_percentiles: bool, optional
