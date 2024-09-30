@@ -65,6 +65,7 @@ Feature: Synthetics
     And the response "options.rumSettings.isEnabled" is equal to true
     And the response "options.rumSettings.applicationId" is equal to "mockApplicationId"
     And the response "options.rumSettings.clientTokenId" is equal to 12345
+    And the response "steps[0]" has field "public_id"
 
   @team:DataDog/synthetics-ct
   Scenario: Create a browser test returns "OK - Returns the created test details." response
