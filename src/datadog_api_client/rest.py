@@ -243,6 +243,9 @@ class AsyncRESTClientObject:
         self._client = aiosonic.HTTPClient(proxy=proxy, verify_ssl=configuration.verify_ssl)
         self._configuration = configuration
 
+    def close(self):
+        pass
+
     def _retry(self, method, response, counter):
         if (
             not self._configuration.enable_retry
