@@ -9,6 +9,14 @@ Feature: Dashboards
     And a valid "appKeyAuth" key in the system
     And an instance of "Dashboards" API
 
+  @replay-only @team:DataDog/dashboards-backend
+  Scenario: Clients deserialize a dashboard with a empty time object
+    Given new "CreateDashboard" request
+    And body with value { "title": "{{ unique }}", "widgets": [ { "definition": { "title": "Example Cloud Cost Query", "title_size": "16", "title_align": "left", "type": "timeseries",  "requests": [ { "formulas": [ { "formula": "query1" } ], "queries": [ { "data_source": "cloud_cost", "name": "query1", "query": "sum:aws.cost.amortized{*} by {aws_product}.rollup(sum, monthly)" } ], "response_format": "timeseries", "style": { "palette": "dog_classic", "line_type": "solid", "line_width": "normal" }, "display_type": "bars" } ], "time": {} } } ], "layout_type": "ordered" }
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.time" is equal to {}
+
   @team:DataDog/dashboards-backend
   Scenario: Create a distribution widget using a histogram request containing a formulas and functions APM Stats query
     Given new "CreateDashboard" request
