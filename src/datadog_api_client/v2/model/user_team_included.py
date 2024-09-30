@@ -15,17 +15,14 @@ class UserTeamIncluded(ModelComposed):
         """
         Included resources related to the team membership
 
-        :param attributes: Attributes of user object returned by the API.
-        :type attributes: UserAttributes, optional
+        :param attributes: The definition of `AbbreviatedTeamAttributes` object.
+        :type attributes: AbbreviatedTeamAttributes
 
-        :param id: ID of the user.
+        :param id: ID of the team
         :type id: str, optional
 
-        :param relationships: Relationships of the user object returned by the API.
-        :type relationships: UserResponseRelationships, optional
-
-        :param type: Users resource type.
-        :type type: UsersType, optional
+        :param type: The definition of `AbbreviatedTeamType` object.
+        :type type: AbbreviatedTeamType
         """
         super().__init__(kwargs)
 
@@ -38,12 +35,12 @@ class UserTeamIncluded(ModelComposed):
         # code would be run when this module is imported, and these composed
         # classes don't exist yet because their module has not finished
         # loading
-        from datadog_api_client.v2.model.user import User
-        from datadog_api_client.v2.model.team import Team
+        from datadog_api_client.v2.model.abbreviated_team import AbbreviatedTeam
+        from datadog_api_client.v2.model.user_team_user import UserTeamUser
 
         return {
             "oneOf": [
-                User,
-                Team,
+                AbbreviatedTeam,
+                UserTeamUser,
             ],
         }
