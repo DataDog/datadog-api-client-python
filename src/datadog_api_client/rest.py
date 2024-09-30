@@ -244,6 +244,7 @@ class AsyncRESTClientObject:
         self._configuration = configuration
 
     def close(self):
+        # aiosonic doesn't close its clients
         pass
 
     def _retry(self, method, response, counter):
