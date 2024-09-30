@@ -39,6 +39,9 @@ class SecurityMonitoringRuleValidatePayload(ModelComposed):
         :param queries: Queries for selecting logs which are part of the rule.
         :type queries: [SecurityMonitoringStandardRuleQuery]
 
+        :param reference_tables: Reference tables for the rule.
+        :type reference_tables: [SecurityMonitoringReferenceTable], optional
+
         :param tags: Tags for generated signals.
         :type tags: [str], optional
 

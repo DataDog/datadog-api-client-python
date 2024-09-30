@@ -4,6 +4,7 @@ Create a detection rule returns "OK" response
 
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.security_monitoring_api import SecurityMonitoringApi
+from datadog_api_client.v2.model.security_monitoring_reference_table import SecurityMonitoringReferenceTable
 from datadog_api_client.v2.model.security_monitoring_rule_case_create import SecurityMonitoringRuleCaseCreate
 from datadog_api_client.v2.model.security_monitoring_rule_evaluation_window import (
     SecurityMonitoringRuleEvaluationWindow,
@@ -52,6 +53,15 @@ body = SecurityMonitoringStandardRuleCreatePayload(
     tags=[],
     is_enabled=True,
     type=SecurityMonitoringRuleTypeCreate.LOG_DETECTION,
+    reference_tables=[
+        SecurityMonitoringReferenceTable(
+            table_name="synthetics_test_reference_table_dont_delete",
+            column_name="value",
+            log_field_path="testtag",
+            check_presence=True,
+            rule_query_name="a",
+        ),
+    ],
 )
 
 configuration = Configuration()
