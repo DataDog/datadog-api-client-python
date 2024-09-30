@@ -207,6 +207,19 @@ Feature: Dashboards
     And the response "widgets[0].definition.requests[0].sort.order_by[0].name" is equal to "service"
 
   @team:DataDog/dashboards-backend
+  Scenario: Create a new dashboard with a toplist widget with stacked type and no legend specified
+    Given new "CreateDashboard" request
+    And body with value {"title":"{{ unique }}","description":"","widgets":[{"layout":{"x":0,"y":0,"width":47,"height":15},"definition":{"title":"","title_size":"16","title_align":"left","time":{},"style":{"display": {"type": "stacked"},"scaling": "relative","palette": "dog_classic"},"type":"toplist","requests":[{"queries":[{"data_source":"metrics","name":"query1","query":"avg:system.cpu.user{*} by {service}","aggregator":"avg"}],"formulas":[{"formula":"query1"}],"sort":{"count":10,"order_by":[{"type":"group","name":"service","order":"asc"}]},"response_format":"scalar"}]}}],"template_variables":[],"layout_type":"free","is_read_only":false,"notify_list":[]}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.type" is equal to "toplist"
+    And the response "widgets[0].definition.requests[0].sort.order_by[0].order" is equal to "asc"
+    And the response "widgets[0].definition.requests[0].sort.order_by[0].type" is equal to "group"
+    And the response "widgets[0].definition.requests[0].sort.order_by[0].name" is equal to "service"
+    And the response "widgets[0].definition.style.display.type" is equal to "stacked"
+    And the response "widgets[0].definition.style.display.legend" is equal to null
+
+  @team:DataDog/dashboards-backend
   Scenario: Create a new dashboard with alert_graph widget
     Given there is a valid "monitor" in the system
     And new "CreateDashboard" request

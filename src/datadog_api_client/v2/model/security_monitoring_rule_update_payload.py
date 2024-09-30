@@ -21,7 +21,6 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.security_monitoring_filter import SecurityMonitoringFilter
     from datadog_api_client.v2.model.security_monitoring_rule_options import SecurityMonitoringRuleOptions
     from datadog_api_client.v2.model.security_monitoring_rule_query import SecurityMonitoringRuleQuery
-    from datadog_api_client.v2.model.security_monitoring_reference_table import SecurityMonitoringReferenceTable
     from datadog_api_client.v2.model.security_monitoring_third_party_rule_case import (
         SecurityMonitoringThirdPartyRuleCase,
     )
@@ -45,7 +44,6 @@ class SecurityMonitoringRuleUpdatePayload(ModelNormal):
         from datadog_api_client.v2.model.security_monitoring_filter import SecurityMonitoringFilter
         from datadog_api_client.v2.model.security_monitoring_rule_options import SecurityMonitoringRuleOptions
         from datadog_api_client.v2.model.security_monitoring_rule_query import SecurityMonitoringRuleQuery
-        from datadog_api_client.v2.model.security_monitoring_reference_table import SecurityMonitoringReferenceTable
         from datadog_api_client.v2.model.security_monitoring_third_party_rule_case import (
             SecurityMonitoringThirdPartyRuleCase,
         )
@@ -60,7 +58,6 @@ class SecurityMonitoringRuleUpdatePayload(ModelNormal):
             "name": (str,),
             "options": (SecurityMonitoringRuleOptions,),
             "queries": ([SecurityMonitoringRuleQuery],),
-            "reference_tables": ([SecurityMonitoringReferenceTable],),
             "tags": ([str],),
             "third_party_cases": ([SecurityMonitoringThirdPartyRuleCase],),
             "version": (int,),
@@ -76,7 +73,6 @@ class SecurityMonitoringRuleUpdatePayload(ModelNormal):
         "name": "name",
         "options": "options",
         "queries": "queries",
-        "reference_tables": "referenceTables",
         "tags": "tags",
         "third_party_cases": "thirdPartyCases",
         "version": "version",
@@ -100,7 +96,6 @@ class SecurityMonitoringRuleUpdatePayload(ModelNormal):
             ],
             UnsetType,
         ] = unset,
-        reference_tables: Union[List[SecurityMonitoringReferenceTable], UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
         third_party_cases: Union[List[SecurityMonitoringThirdPartyRuleCase], UnsetType] = unset,
         version: Union[int, UnsetType] = unset,
@@ -136,9 +131,6 @@ class SecurityMonitoringRuleUpdatePayload(ModelNormal):
         :param queries: Queries for selecting logs which are part of the rule.
         :type queries: [SecurityMonitoringRuleQuery], optional
 
-        :param reference_tables: Reference tables for the rule.
-        :type reference_tables: [SecurityMonitoringReferenceTable], optional
-
         :param tags: Tags for generated signals.
         :type tags: [str], optional
 
@@ -166,8 +158,6 @@ class SecurityMonitoringRuleUpdatePayload(ModelNormal):
             kwargs["options"] = options
         if queries is not unset:
             kwargs["queries"] = queries
-        if reference_tables is not unset:
-            kwargs["reference_tables"] = reference_tables
         if tags is not unset:
             kwargs["tags"] = tags
         if third_party_cases is not unset:

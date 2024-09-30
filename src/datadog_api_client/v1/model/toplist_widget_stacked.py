@@ -3,11 +3,13 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -32,17 +34,20 @@ class ToplistWidgetStacked(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, legend: ToplistWidgetLegend, type: ToplistWidgetStackedType, **kwargs):
+    def __init__(
+        self_, type: ToplistWidgetStackedType, legend: Union[ToplistWidgetLegend, UnsetType] = unset, **kwargs
+    ):
         """
         Top list widget stacked display options.
 
         :param legend: Top list widget stacked legend behavior.
-        :type legend: ToplistWidgetLegend
+        :type legend: ToplistWidgetLegend, optional
 
         :param type: Top list widget stacked display type.
         :type type: ToplistWidgetStackedType
         """
+        if legend is not unset:
+            kwargs["legend"] = legend
         super().__init__(kwargs)
 
-        self_.legend = legend
         self_.type = type

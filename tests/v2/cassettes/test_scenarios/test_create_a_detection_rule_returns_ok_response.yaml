@@ -1,7 +1,7 @@
 interactions:
 - request:
     body: '{"cases":[{"condition":"a > 0","name":"","notifications":[],"status":"info"}],"filters":[],"isEnabled":true,"message":"Test
-      rule","name":"Test-Create_a_detection_rule_returns_OK_response-1726078486","options":{"evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"queries":[{"aggregation":"count","distinctFields":[],"groupByFields":[],"metric":"","query":"@test:true"}],"referenceTables":[{"checkPresence":true,"columnName":"value","logFieldPath":"testtag","ruleQueryName":"a","tableName":"synthetics_test_reference_table_dont_delete"}],"tags":[],"type":"log_detection"}'
+      rule","name":"Test-Create_a_detection_rule_returns_OK_response-1715358868","options":{"evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"queries":[{"aggregation":"count","distinctFields":[],"groupByFields":[],"metric":"","query":"@test:true"}],"tags":[],"type":"log_detection"}'
     headers:
       accept:
       - application/json
@@ -11,8 +11,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/security_monitoring/rules
   response:
     body:
-      string: '{"id":"5br-mto-gse","version":1,"name":"Test-Create_a_detection_rule_returns_OK_response-1726078486","createdAt":1726078486689,"creationAuthorId":1445416,"isDefault":false,"isPartner":false,"isEnabled":true,"isBeta":false,"isDeleted":false,"isDeprecated":false,"queries":[{"query":"@test:true","groupByFields":[],"hasOptionalGroupByFields":false,"distinctFields":[],"aggregation":"count","name":""}],"options":{"keepAlive":3600,"maxSignalDuration":86400,"detectionMethod":"threshold","evaluationWindow":900},"cases":[{"name":"","status":"info","notifications":[],"condition":"a
-        > 0"}],"message":"Test rule","tags":[],"hasExtendedTitle":false,"type":"log_detection","filters":[],"referenceTables":[{"tableName":"synthetics_test_reference_table_dont_delete","columnName":"value","logFieldPath":"testtag","checkPresence":true,"ruleQueryName":"a"}]}
+      string: '{"id":"oka-fqr-yqa","version":1,"name":"Test-Create_a_detection_rule_returns_OK_response-1715358868","createdAt":1715358869030,"creationAuthorId":1445416,"isDefault":false,"isPartner":false,"isEnabled":true,"isDeleted":false,"isDeprecated":false,"queries":[{"query":"@test:true","groupByFields":[],"hasOptionalGroupByFields":false,"distinctFields":[],"aggregation":"count","name":""}],"options":{"keepAlive":3600,"maxSignalDuration":86400,"detectionMethod":"threshold","evaluationWindow":900},"cases":[{"name":"","status":"info","notifications":[],"condition":"a
+        > 0"}],"message":"Test rule","tags":[],"hasExtendedTitle":false,"type":"log_detection","filters":[]}
 
         '
     headers:
@@ -27,7 +27,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/5br-mto-gse
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/oka-fqr-yqa
   response:
     body:
       string: ''
