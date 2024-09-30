@@ -16,8 +16,8 @@ from datadog_api_client.model_utils import (
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.user_team import UserTeam
     from datadog_api_client.v2.model.user_team_included import UserTeamIncluded
-    from datadog_api_client.v2.model.user import User
-    from datadog_api_client.v2.model.team import Team
+    from datadog_api_client.v2.model.abbreviated_team import AbbreviatedTeam
+    from datadog_api_client.v2.model.user_team_user import UserTeamUser
 
 
 class UserTeamResponse(ModelNormal):
@@ -39,7 +39,7 @@ class UserTeamResponse(ModelNormal):
     def __init__(
         self_,
         data: Union[UserTeam, UnsetType] = unset,
-        included: Union[List[Union[UserTeamIncluded, User, Team]], UnsetType] = unset,
+        included: Union[List[Union[UserTeamIncluded, AbbreviatedTeam, UserTeamUser]], UnsetType] = unset,
         **kwargs,
     ):
         """

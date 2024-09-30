@@ -12,9 +12,9 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class UserTeamTeamType(ModelSimple):
+class AbbreviatedTeamType(ModelSimple):
     """
-    User team team type
+    The definition of `AbbreviatedTeamType` object.
 
     :param value: If omitted defaults to "team". Must be one of ["team"].
     :type value: str
@@ -23,7 +23,7 @@ class UserTeamTeamType(ModelSimple):
     allowed_values = {
         "team",
     }
-    TEAM: ClassVar["UserTeamTeamType"]
+    TEAM: ClassVar["AbbreviatedTeamType"]
 
     @cached_property
     def openapi_types(_):
@@ -32,4 +32,4 @@ class UserTeamTeamType(ModelSimple):
         }
 
 
-UserTeamTeamType.TEAM = UserTeamTeamType("team")
+AbbreviatedTeamType.TEAM = AbbreviatedTeamType("team")

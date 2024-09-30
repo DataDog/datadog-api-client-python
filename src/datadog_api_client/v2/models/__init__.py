@@ -17,6 +17,9 @@ from datadog_api_client.v2.model.aws_related_account import AWSRelatedAccount
 from datadog_api_client.v2.model.aws_related_account_attributes import AWSRelatedAccountAttributes
 from datadog_api_client.v2.model.aws_related_account_type import AWSRelatedAccountType
 from datadog_api_client.v2.model.aws_related_accounts_response import AWSRelatedAccountsResponse
+from datadog_api_client.v2.model.abbreviated_team import AbbreviatedTeam
+from datadog_api_client.v2.model.abbreviated_team_attributes import AbbreviatedTeamAttributes
+from datadog_api_client.v2.model.abbreviated_team_type import AbbreviatedTeamType
 from datadog_api_client.v2.model.active_billing_dimensions_attributes import ActiveBillingDimensionsAttributes
 from datadog_api_client.v2.model.active_billing_dimensions_body import ActiveBillingDimensionsBody
 from datadog_api_client.v2.model.active_billing_dimensions_response import ActiveBillingDimensionsResponse
@@ -1324,8 +1327,6 @@ from datadog_api_client.v2.model.relationship_to_user import RelationshipToUser
 from datadog_api_client.v2.model.relationship_to_user_data import RelationshipToUserData
 from datadog_api_client.v2.model.relationship_to_user_team_permission import RelationshipToUserTeamPermission
 from datadog_api_client.v2.model.relationship_to_user_team_permission_data import RelationshipToUserTeamPermissionData
-from datadog_api_client.v2.model.relationship_to_user_team_team import RelationshipToUserTeamTeam
-from datadog_api_client.v2.model.relationship_to_user_team_team_data import RelationshipToUserTeamTeamData
 from datadog_api_client.v2.model.relationship_to_user_team_user import RelationshipToUserTeamUser
 from datadog_api_client.v2.model.relationship_to_user_team_user_data import RelationshipToUserTeamUserData
 from datadog_api_client.v2.model.relationship_to_users import RelationshipToUsers
@@ -1929,10 +1930,11 @@ from datadog_api_client.v2.model.user_team_relationships import UserTeamRelation
 from datadog_api_client.v2.model.user_team_request import UserTeamRequest
 from datadog_api_client.v2.model.user_team_response import UserTeamResponse
 from datadog_api_client.v2.model.user_team_role import UserTeamRole
-from datadog_api_client.v2.model.user_team_team_type import UserTeamTeamType
 from datadog_api_client.v2.model.user_team_type import UserTeamType
 from datadog_api_client.v2.model.user_team_update import UserTeamUpdate
 from datadog_api_client.v2.model.user_team_update_request import UserTeamUpdateRequest
+from datadog_api_client.v2.model.user_team_user import UserTeamUser
+from datadog_api_client.v2.model.user_team_user_attributes import UserTeamUserAttributes
 from datadog_api_client.v2.model.user_team_user_type import UserTeamUserType
 from datadog_api_client.v2.model.user_teams_response import UserTeamsResponse
 from datadog_api_client.v2.model.user_update_attributes import UserUpdateAttributes
@@ -1978,6 +1980,9 @@ __all__ = [
     "AWSRelatedAccountAttributes",
     "AWSRelatedAccountType",
     "AWSRelatedAccountsResponse",
+    "AbbreviatedTeam",
+    "AbbreviatedTeamAttributes",
+    "AbbreviatedTeamType",
     "ActiveBillingDimensionsAttributes",
     "ActiveBillingDimensionsBody",
     "ActiveBillingDimensionsResponse",
@@ -3083,8 +3088,6 @@ __all__ = [
     "RelationshipToUserData",
     "RelationshipToUserTeamPermission",
     "RelationshipToUserTeamPermissionData",
-    "RelationshipToUserTeamTeam",
-    "RelationshipToUserTeamTeamData",
     "RelationshipToUserTeamUser",
     "RelationshipToUserTeamUserData",
     "RelationshipToUsers",
@@ -3554,10 +3557,11 @@ __all__ = [
     "UserTeamRequest",
     "UserTeamResponse",
     "UserTeamRole",
-    "UserTeamTeamType",
     "UserTeamType",
     "UserTeamUpdate",
     "UserTeamUpdateRequest",
+    "UserTeamUser",
+    "UserTeamUserAttributes",
     "UserTeamUserType",
     "UserTeamsResponse",
     "UserUpdateAttributes",
