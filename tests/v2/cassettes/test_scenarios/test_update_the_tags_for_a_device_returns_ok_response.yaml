@@ -1,0 +1,20 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"tags":["tag:test","tag:testbis"]},"id":"default_device","type":"tags"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/ndm/tags/devices/default_device
+  response:
+    body:
+      string: '{"data":{"id":"default_device","type":"tags","attributes":{"tags":["tag:test","tag:testbis"]}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1

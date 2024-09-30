@@ -22,6 +22,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.synthetics_test_headers import SyntheticsTestHeaders
     from datadog_api_client.v1.model.synthetics_test_options_http_version import SyntheticsTestOptionsHTTPVersion
     from datadog_api_client.v1.model.synthetics_test_metadata import SyntheticsTestMetadata
+    from datadog_api_client.v1.model.synthetics_test_request_port import SyntheticsTestRequestPort
     from datadog_api_client.v1.model.synthetics_test_request_proxy import SyntheticsTestRequestProxy
     from datadog_api_client.v1.model.synthetics_basic_auth_web import SyntheticsBasicAuthWeb
     from datadog_api_client.v1.model.synthetics_basic_auth_sigv4 import SyntheticsBasicAuthSigv4
@@ -33,10 +34,6 @@ if TYPE_CHECKING:
 
 class SyntheticsTestRequest(ModelNormal):
     validations = {
-        "dns_server_port": {
-            "inclusive_maximum": 65535,
-            "inclusive_minimum": 1,
-        },
         "number_of_packets": {
             "inclusive_maximum": 10,
             "inclusive_minimum": 0,
@@ -53,6 +50,7 @@ class SyntheticsTestRequest(ModelNormal):
         from datadog_api_client.v1.model.synthetics_test_headers import SyntheticsTestHeaders
         from datadog_api_client.v1.model.synthetics_test_options_http_version import SyntheticsTestOptionsHTTPVersion
         from datadog_api_client.v1.model.synthetics_test_metadata import SyntheticsTestMetadata
+        from datadog_api_client.v1.model.synthetics_test_request_port import SyntheticsTestRequestPort
         from datadog_api_client.v1.model.synthetics_test_request_proxy import SyntheticsTestRequestProxy
 
         return {
@@ -66,7 +64,7 @@ class SyntheticsTestRequest(ModelNormal):
             "compressed_json_descriptor": (str,),
             "compressed_proto_file": (str,),
             "dns_server": (str,),
-            "dns_server_port": (int,),
+            "dns_server_port": (str,),
             "files": ([SyntheticsTestRequestBodyFile],),
             "follow_redirects": (bool,),
             "headers": (SyntheticsTestHeaders,),
@@ -78,7 +76,7 @@ class SyntheticsTestRequest(ModelNormal):
             "no_saving_response_body": (bool,),
             "number_of_packets": (int,),
             "persist_cookies": (bool,),
-            "port": (int,),
+            "port": (SyntheticsTestRequestPort,),
             "proxy": (SyntheticsTestRequestProxy,),
             "query": (dict,),
             "servername": (str,),
@@ -142,7 +140,7 @@ class SyntheticsTestRequest(ModelNormal):
         compressed_json_descriptor: Union[str, UnsetType] = unset,
         compressed_proto_file: Union[str, UnsetType] = unset,
         dns_server: Union[str, UnsetType] = unset,
-        dns_server_port: Union[int, UnsetType] = unset,
+        dns_server_port: Union[str, UnsetType] = unset,
         files: Union[List[SyntheticsTestRequestBodyFile], UnsetType] = unset,
         follow_redirects: Union[bool, UnsetType] = unset,
         headers: Union[SyntheticsTestHeaders, UnsetType] = unset,
@@ -154,7 +152,7 @@ class SyntheticsTestRequest(ModelNormal):
         no_saving_response_body: Union[bool, UnsetType] = unset,
         number_of_packets: Union[int, UnsetType] = unset,
         persist_cookies: Union[bool, UnsetType] = unset,
-        port: Union[int, UnsetType] = unset,
+        port: Union[SyntheticsTestRequestPort, int, str, UnsetType] = unset,
         proxy: Union[SyntheticsTestRequestProxy, UnsetType] = unset,
         query: Union[dict, UnsetType] = unset,
         servername: Union[str, UnsetType] = unset,
@@ -198,7 +196,7 @@ class SyntheticsTestRequest(ModelNormal):
         :type dns_server: str, optional
 
         :param dns_server_port: DNS server port to use for DNS tests.
-        :type dns_server_port: int, optional
+        :type dns_server_port: str, optional
 
         :param files: Files to be used as part of the request in the test.
         :type files: [SyntheticsTestRequestBodyFile], optional
@@ -234,7 +232,7 @@ class SyntheticsTestRequest(ModelNormal):
         :type persist_cookies: bool, optional
 
         :param port: Port to use when performing the test.
-        :type port: int, optional
+        :type port: SyntheticsTestRequestPort, optional
 
         :param proxy: The proxy to perform the test.
         :type proxy: SyntheticsTestRequestProxy, optional

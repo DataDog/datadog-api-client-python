@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"cases":[],"isEnabled":true,"message":"This is a third party rule","name":"Test-Create_a_detection_rule_with_detection_method_third_party_returns_OK_response-1715358869","options":{"detectionMethod":"third_party","keepAlive":0,"maxSignalDuration":0,"thirdPartyRuleOptions":{"defaultStatus":"info","rootQueries":[{"groupByFields":["instance-id"],"query":"source:guardduty
+    body: '{"cases":[],"isEnabled":true,"message":"This is a third party rule","name":"Test-Create_a_detection_rule_with_detection_method_third_party_returns_OK_response-1725456730","options":{"detectionMethod":"third_party","keepAlive":0,"maxSignalDuration":600,"thirdPartyRuleOptions":{"defaultStatus":"info","rootQueries":[{"groupByFields":["instance-id"],"query":"source:guardduty
       @details.alertType:*EC2*"},{"groupByFields":[],"query":"source:guardduty"}]}},"queries":[],"thirdPartyCases":[{"name":"high","query":"status:error","status":"high"},{"name":"low","query":"status:info","status":"low"}],"type":"log_detection"}'
     headers:
       accept:
@@ -11,7 +11,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/security_monitoring/rules
   response:
     body:
-      string: '{"id":"uys-ie9-xgd","version":1,"name":"Test-Create_a_detection_rule_with_detection_method_third_party_returns_OK_response-1715358869","createdAt":1715358869757,"creationAuthorId":1445416,"isDefault":false,"isPartner":false,"isEnabled":true,"isDeleted":false,"isDeprecated":false,"queries":[{"query":"status:error","groupByFields":[],"hasOptionalGroupByFields":false,"distinctFields":[],"aggregation":"none","name":""},{"query":"status:info","groupByFields":[],"hasOptionalGroupByFields":false,"distinctFields":[],"aggregation":"none","name":""}],"options":{"keepAlive":0,"maxSignalDuration":0,"detectionMethod":"third_party","evaluationWindow":0,"thirdPartyRuleOptions":{"defaultStatus":"info","defaultNotifications":[],"rootQueries":[{"query":"source:guardduty
+      string: '{"id":"rvf-kfc-pxh","version":1,"name":"Test-Create_a_detection_rule_with_detection_method_third_party_returns_OK_response-1725456730","createdAt":1725456731210,"creationAuthorId":1445416,"isDefault":false,"isPartner":false,"isEnabled":true,"isBeta":false,"isDeleted":false,"isDeprecated":false,"queries":[{"query":"status:error","groupByFields":[],"hasOptionalGroupByFields":false,"distinctFields":[],"aggregation":"none","name":""},{"query":"status:info","groupByFields":[],"hasOptionalGroupByFields":false,"distinctFields":[],"aggregation":"none","name":""}],"options":{"keepAlive":0,"maxSignalDuration":600,"detectionMethod":"third_party","evaluationWindow":0,"thirdPartyRuleOptions":{"defaultStatus":"info","defaultNotifications":[],"rootQueries":[{"query":"source:guardduty
         @details.alertType:*EC2*","groupByFields":["instance-id"]},{"query":"source:guardduty","groupByFields":[]}]}},"cases":[{"name":"high","status":"high","notifications":[]},{"name":"low","status":"low","notifications":[]}],"message":"This
         is a third party rule","tags":[],"hasExtendedTitle":false,"type":"log_detection","filters":[],"thirdPartyCases":[{"name":"high","status":"high","notifications":[],"query":"status:error"},{"name":"low","status":"low","notifications":[],"query":"status:info"}]}
 
@@ -28,7 +28,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/uys-ie9-xgd
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/rvf-kfc-pxh
   response:
     body:
       string: ''

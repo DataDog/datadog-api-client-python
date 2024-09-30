@@ -58,10 +58,10 @@ class SyntheticsBasicAuthOauthClient(ModelNormal):
         client_id: str,
         client_secret: str,
         token_api_authentication: SyntheticsBasicAuthOauthTokenApiAuthentication,
+        type: SyntheticsBasicAuthOauthClientType,
         audience: Union[str, UnsetType] = unset,
         resource: Union[str, UnsetType] = unset,
         scope: Union[str, UnsetType] = unset,
-        type: Union[SyntheticsBasicAuthOauthClientType, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -89,7 +89,7 @@ class SyntheticsBasicAuthOauthClient(ModelNormal):
         :type token_api_authentication: SyntheticsBasicAuthOauthTokenApiAuthentication
 
         :param type: The type of basic authentication to use when performing the test.
-        :type type: SyntheticsBasicAuthOauthClientType, optional
+        :type type: SyntheticsBasicAuthOauthClientType
         """
         if audience is not unset:
             kwargs["audience"] = audience
@@ -97,11 +97,10 @@ class SyntheticsBasicAuthOauthClient(ModelNormal):
             kwargs["resource"] = resource
         if scope is not unset:
             kwargs["scope"] = scope
-        if type is not unset:
-            kwargs["type"] = type
         super().__init__(kwargs)
 
         self_.access_token_url = access_token_url
         self_.client_id = client_id
         self_.client_secret = client_secret
         self_.token_api_authentication = token_api_authentication
+        self_.type = type

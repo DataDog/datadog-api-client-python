@@ -34,6 +34,8 @@ class SyntheticsGlobalVariable(ModelNormal):
             "attributes": (SyntheticsGlobalVariableAttributes,),
             "description": (str,),
             "id": (str,),
+            "is_fido": (bool,),
+            "is_totp": (bool,),
             "name": (str,),
             "parse_test_options": (SyntheticsGlobalVariableParseTestOptions,),
             "parse_test_public_id": (str,),
@@ -45,6 +47,8 @@ class SyntheticsGlobalVariable(ModelNormal):
         "attributes": "attributes",
         "description": "description",
         "id": "id",
+        "is_fido": "is_fido",
+        "is_totp": "is_totp",
         "name": "name",
         "parse_test_options": "parse_test_options",
         "parse_test_public_id": "parse_test_public_id",
@@ -63,6 +67,8 @@ class SyntheticsGlobalVariable(ModelNormal):
         value: SyntheticsGlobalVariableValue,
         attributes: Union[SyntheticsGlobalVariableAttributes, UnsetType] = unset,
         id: Union[str, UnsetType] = unset,
+        is_fido: Union[bool, UnsetType] = unset,
+        is_totp: Union[bool, UnsetType] = unset,
         parse_test_options: Union[SyntheticsGlobalVariableParseTestOptions, UnsetType] = unset,
         parse_test_public_id: Union[str, UnsetType] = unset,
         **kwargs,
@@ -78,6 +84,12 @@ class SyntheticsGlobalVariable(ModelNormal):
 
         :param id: Unique identifier of the global variable.
         :type id: str, optional
+
+        :param is_fido: Determines if the global variable is a FIDO variable.
+        :type is_fido: bool, optional
+
+        :param is_totp: Determines if the global variable is a TOTP/MFA variable.
+        :type is_totp: bool, optional
 
         :param name: Name of the global variable. Unique across Synthetic global variables.
         :type name: str
@@ -98,6 +110,10 @@ class SyntheticsGlobalVariable(ModelNormal):
             kwargs["attributes"] = attributes
         if id is not unset:
             kwargs["id"] = id
+        if is_fido is not unset:
+            kwargs["is_fido"] = is_fido
+        if is_totp is not unset:
+            kwargs["is_totp"] = is_totp
         if parse_test_options is not unset:
             kwargs["parse_test_options"] = parse_test_options
         if parse_test_public_id is not unset:

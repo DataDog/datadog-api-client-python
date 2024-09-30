@@ -31,6 +31,24 @@ Feature: Synthetics
     And the response "tests[3].type" is equal to "A non existent test type"
     And the response "tests[4].config.request.method" is equal to "A non existent method"
 
+  @team:DataDog/synthetics-ct
+  Scenario: Create a FIDO global variable returns "OK" response
+    Given there is a valid "synthetics_api_test_multi_step" in the system
+    And new "CreateGlobalVariable" request
+    And body from file "synthetics_global_variable_fido_payload.json"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "name" is equal to "GLOBAL_VARIABLE_FIDO_PAYLOAD_{{ unique_upper_alnum }}"
+
+  @team:DataDog/synthetics-ct
+  Scenario: Create a TOTP global variable returns "OK" response
+    Given there is a valid "synthetics_api_test_multi_step" in the system
+    And new "CreateGlobalVariable" request
+    And body from file "synthetics_global_variable_totp_payload.json"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "name" is equal to "GLOBAL_VARIABLE_TOTP_PAYLOAD_{{ unique_upper_alnum }}"
+
   @generated @skip @team:DataDog/synthetics-ct
   Scenario: Create a browser test returns "- JSON format is wrong" response
     Given new "CreateSyntheticsBrowserTest" request
@@ -81,10 +99,17 @@ Feature: Synthetics
   Scenario: Create a global variable from test returns "OK" response
     Given there is a valid "synthetics_api_test_multi_step" in the system
     And new "CreateGlobalVariable" request
-    And body from file "synthetics_global_variable_payload.json"
+    And body from file "synthetics_global_variable_from_test_payload.json"
     When the request is sent
     Then the response status is 200 OK
-    And the response "name" is equal to "GLOBAL_VARIABLE_PAYLOAD_{{ unique_upper_alnum }}"
+    And the response "name" is equal to "GLOBAL_VARIABLE_FROM_TEST_PAYLOAD_{{ unique_upper_alnum }}"
+
+  @generated @skip @team:DataDog/synthetics-ct
+  Scenario: Create a global variable returns "Conflict" response
+    Given new "CreateGlobalVariable" request
+    And body with value {"attributes": {"restricted_roles": ["xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"]}, "description": "Example description", "name": "MY_VARIABLE", "parse_test_options": {"field": "content-type", "localVariableName": "LOCAL_VARIABLE", "parser": {"type": "regex", "value": ".*"}, "type": "http_body"}, "parse_test_public_id": "abc-def-123", "tags": ["team:front", "test:workflow-1"], "value": {"secure": true, "value": "value"}}
+    When the request is sent
+    Then the response status is 409 Conflict
 
   @generated @skip @team:DataDog/synthetics-ct
   Scenario: Create a global variable returns "Invalid request" response
@@ -99,6 +124,21 @@ Feature: Synthetics
     And body with value {"attributes": {"restricted_roles": ["xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"]}, "description": "Example description", "name": "MY_VARIABLE", "parse_test_options": {"field": "content-type", "localVariableName": "LOCAL_VARIABLE", "parser": {"type": "regex", "value": ".*"}, "type": "http_body"}, "parse_test_public_id": "abc-def-123", "tags": ["team:front", "test:workflow-1"], "value": {"secure": true, "value": "value"}}
     When the request is sent
     Then the response status is 200 OK
+
+  @team:DataDog/synthetics-ct
+  Scenario: Create a multi-step api test with every type of basicAuth returns "OK - Returns the created test details." response
+    Given new "CreateSyntheticsAPITest" request
+    And body from file "synthetics_api_test_multi_step_with_every_type_of_basic_auth.json"
+    When the request is sent
+    Then the response status is 200 OK - Returns the created test details.
+    And the response "name" is equal to "{{ unique }}"
+    And the response "config.steps[0].request.basicAuth" is equal to {"password": "password", "username": "username"}
+    And the response "config.steps[1].request.basicAuth.type" is equal to "web"
+    And the response "config.steps[2].request.basicAuth.type" is equal to "sigv4"
+    And the response "config.steps[3].request.basicAuth.type" is equal to "ntlm"
+    And the response "config.steps[4].request.basicAuth.type" is equal to "digest"
+    And the response "config.steps[5].request.basicAuth.type" is equal to "oauth-client"
+    And the response "config.steps[6].request.basicAuth.type" is equal to "oauth-rop"
 
   @replay-only @team:DataDog/synthetics-ct
   Scenario: Create a private location returns "OK" response
@@ -149,6 +189,8 @@ Feature: Synthetics
     When the request is sent
     Then the response status is 200 OK - Returns the created test details.
     And the response "name" is equal to "{{ unique }}"
+    And the response "config.assertions[7].type" is equal to "javascript"
+    And the response "config.assertions[7].code" is equal to "const hello = 'world';"
 
   @team:DataDog/synthetics-ct
   Scenario: Create an API HTTP with oauth-rop test returns "OK - Returns the created test details." response

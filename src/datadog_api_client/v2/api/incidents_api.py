@@ -297,7 +297,7 @@ class IncidentsApi:
         self._list_incident_attachments_endpoint = _Endpoint(
             settings={
                 "response_type": (IncidentAttachmentsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/incidents/{incident_id}/attachments",
                 "operation_id": "list_incident_attachments",
                 "http_method": "GET",

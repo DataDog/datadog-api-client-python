@@ -66,6 +66,8 @@ body = SyntheticsBrowserTest(
             interval=10.0,
         ),
         tick_every=300,
+        enable_profiling=True,
+        enable_security_testing=True,
     ),
     tags=[
         "testing:browser",

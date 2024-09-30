@@ -7,7 +7,6 @@ from datadog_api_client.v2.api.roles_api import RolesApi
 from datadog_api_client.v2.model.permissions_type import PermissionsType
 from datadog_api_client.v2.model.relationship_to_permission_data import RelationshipToPermissionData
 from datadog_api_client.v2.model.relationship_to_permissions import RelationshipToPermissions
-from datadog_api_client.v2.model.relationship_to_users import RelationshipToUsers
 from datadog_api_client.v2.model.role_create_attributes import RoleCreateAttributes
 from datadog_api_client.v2.model.role_create_data import RoleCreateData
 from datadog_api_client.v2.model.role_create_request import RoleCreateRequest
@@ -26,9 +25,6 @@ body = RoleCreateRequest(
                         type=PermissionsType.PERMISSIONS,
                     ),
                 ],
-            ),
-            users=RelationshipToUsers(
-                data=[],
             ),
         ),
         type=RolesType.ROLES,

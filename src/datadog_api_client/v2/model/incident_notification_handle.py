@@ -33,7 +33,7 @@ class IncidentNotificationHandle(ModelNormal):
         :param display_name: The name of the notified handle.
         :type display_name: str, optional
 
-        :param handle: The email address used for the notification.
+        :param handle: The handle used for the notification. This includes an email address, Slack channel, or workflow.
         :type handle: str, optional
         """
         if display_name is not unset:

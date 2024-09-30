@@ -1,0 +1,19 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/cost/custom_costs/9d055d22-a838-4e9f-bc34-a4f9ab66280c
+  response:
+    body:
+      string: '{"data":{"id":"9d055d22-a838-4e9f-bc34-a4f9ab66280c","type":"cost_metadata","attributes":{"billed_cost":250,"billing_currency":"USD","charge_period":{"start":1683331200000,"end":1686009600000},"content":[{"BilledCost":250,"BillingCurrency":"USD","ChargeDescription":"my_description","Tags":{"key":"value"},"ProviderName":"my_provider","ChargePeriodStart":"2023-05-06","ChargePeriodEnd":"2023-06-06"}],"name":"data.json","provider_names":["my_provider"],"status":"ACTIVE","uploaded_at":1721322924169,"uploaded_by":{"name":"Julien
+        Hemery","icon":"https://secure.gravatar.com/avatar/f12684c6ebe1bdd70c36789c5270aac0?d=retro\u0026s=48","email":"julien.hemery@datadoghq.com"}}},"meta":{"version":"1.0"}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1

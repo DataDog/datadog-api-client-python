@@ -131,7 +131,7 @@ Feature: GCP Integration
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/gcp-integrations
+  @skip-terraform-config @team:DataDog/gcp-integrations
   Scenario: List all GCP STS-enabled service accounts returns "OK" response
     Given there is a valid "gcp_sts_account" in the system
     And new "ListGCPSTSAccounts" request

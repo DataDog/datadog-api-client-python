@@ -26,25 +26,38 @@ class MetricDashboardAttributes(ModelNormal):
         return {
             "popularity": (float,),
             "title": (str,),
+            "url": (str,),
         }
 
     attribute_map = {
         "popularity": "popularity",
         "title": "title",
+        "url": "url",
     }
 
-    def __init__(self_, popularity: Union[float, UnsetType] = unset, title: Union[str, UnsetType] = unset, **kwargs):
+    def __init__(
+        self_,
+        popularity: Union[float, UnsetType] = unset,
+        title: Union[str, UnsetType] = unset,
+        url: Union[str, UnsetType] = unset,
+        **kwargs,
+    ):
         """
-        Attributes related to the dashboard, including title and popularity.
+        Attributes related to the dashboard, including title, popularity, and url.
 
         :param popularity: Value from 0 to 5 that ranks popularity of the dashboard.
         :type popularity: float, optional
 
         :param title: Title of the asset.
         :type title: str, optional
+
+        :param url: URL path of the asset.
+        :type url: str, optional
         """
         if popularity is not unset:
             kwargs["popularity"] = popularity
         if title is not unset:
             kwargs["title"] = title
+        if url is not unset:
+            kwargs["url"] = url
         super().__init__(kwargs)

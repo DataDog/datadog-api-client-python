@@ -13,6 +13,7 @@ from datadog_api_client.model_utils import (
 )
 from datadog_api_client.v2.model.authn_mappings_response import AuthNMappingsResponse
 from datadog_api_client.v2.model.authn_mappings_sort import AuthNMappingsSort
+from datadog_api_client.v2.model.authn_mapping_resource_type import AuthNMappingResourceType
 from datadog_api_client.v2.model.authn_mapping_response import AuthNMappingResponse
 from datadog_api_client.v2.model.authn_mapping_create_request import AuthNMappingCreateRequest
 from datadog_api_client.v2.model.authn_mapping_update_request import AuthNMappingUpdateRequest
@@ -53,7 +54,7 @@ class AuthNMappingsApi:
         self._delete_authn_mapping_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/authn_mappings/{authn_mapping_id}",
                 "operation_id": "delete_authn_mapping",
                 "http_method": "DELETE",
@@ -76,7 +77,7 @@ class AuthNMappingsApi:
         self._get_authn_mapping_endpoint = _Endpoint(
             settings={
                 "response_type": (AuthNMappingResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/authn_mappings/{authn_mapping_id}",
                 "operation_id": "get_authn_mapping",
                 "http_method": "GET",
@@ -126,6 +127,11 @@ class AuthNMappingsApi:
                     "attribute": "filter",
                     "location": "query",
                 },
+                "resource_type": {
+                    "openapi_types": (AuthNMappingResourceType,),
+                    "attribute": "resource_type",
+                    "location": "query",
+                },
             },
             headers_map={
                 "accept": ["application/json"],
@@ -136,7 +142,7 @@ class AuthNMappingsApi:
         self._update_authn_mapping_endpoint = _Endpoint(
             settings={
                 "response_type": (AuthNMappingResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/authn_mappings/{authn_mapping_id}",
                 "operation_id": "update_authn_mapping",
                 "http_method": "PATCH",
@@ -216,6 +222,7 @@ class AuthNMappingsApi:
         page_number: Union[int, UnsetType] = unset,
         sort: Union[AuthNMappingsSort, UnsetType] = unset,
         filter: Union[str, UnsetType] = unset,
+        resource_type: Union[AuthNMappingResourceType, UnsetType] = unset,
     ) -> AuthNMappingsResponse:
         """List all AuthN Mappings.
 
@@ -229,6 +236,8 @@ class AuthNMappingsApi:
         :type sort: AuthNMappingsSort, optional
         :param filter: Filter all mappings by the given string.
         :type filter: str, optional
+        :param resource_type: Filter by mapping resource type. Defaults to "role" if not specified.
+        :type resource_type: AuthNMappingResourceType, optional
         :rtype: AuthNMappingsResponse
         """
         kwargs: Dict[str, Any] = {}
@@ -243,6 +252,9 @@ class AuthNMappingsApi:
 
         if filter is not unset:
             kwargs["filter"] = filter
+
+        if resource_type is not unset:
+            kwargs["resource_type"] = resource_type
 
         return self._list_authn_mappings_endpoint.call_with_http_info(**kwargs)
 

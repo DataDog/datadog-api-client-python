@@ -1,0 +1,20 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/ndm/interfaces?device_id=default:1.2.3.4
+  response:
+    body:
+      string: '{"data":[{"id":"default:1.2.3.4:99","type":"interface","attributes":{"name":"if99","status":"up","description":"a
+        network interface","mac_address":"00:00:00:00:00:00","alias":"interface_99","index":99}},{"id":"default:1.2.3.4:999","type":"interface","attributes":{"name":"if999","status":"down","description":"another
+        network interface","mac_address":"99:99:99:99:99:99","alias":"interface_999","index":999}}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1

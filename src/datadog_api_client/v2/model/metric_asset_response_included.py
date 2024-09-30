@@ -15,7 +15,7 @@ class MetricAssetResponseIncluded(ModelComposed):
         """
         List of included assets with full set of attributes.
 
-        :param attributes: Attributes related to the dashboard, including title and popularity.
+        :param attributes: Attributes related to the dashboard, including title, popularity, and url.
         :type attributes: MetricDashboardAttributes, optional
 
         :param id: The related dashboard's ID.

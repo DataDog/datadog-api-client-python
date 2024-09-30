@@ -302,7 +302,7 @@ def format_data_with_schema(
                 result = repr(UUID(x))
                 return result
 
-            formatter = {
+            formatters = {
                 "double": lambda s: repr(float(s)),
                 "int32": lambda s: repr(int(s)),
                 "int64": lambda s: repr(int(s)),
@@ -312,7 +312,9 @@ def format_data_with_schema(
                 "email": repr,
                 "uuid": format_uuid,
                 None: repr, 
-            }[schema.get("format")]
+            }
+            schema_type = schema.get("type")
+            formatter = formatters.get(schema.get("format", schema_type), formatters.get(schema_type)) or repr
 
             # TODO format date and datetime
             parameters = formatter(data)
@@ -334,6 +336,8 @@ def format_data_with_schema_list(
 ):
     """Format data with schema."""
     assert version is not None
+    if not isinstance(schema, dict):
+        raise ValueError(f"Schema mismatch for list data: {schema}")
 
     imports = imports or defaultdict(set)
     name, r_imports = get_name_and_imports(schema, version, None)
@@ -380,6 +384,9 @@ def format_data_with_schema_dict(
         missing = required_properties - set(data.keys())
         if missing:
             raise ValueError(f"missing required properties: {missing}")
+        additional_properties = set(data.keys()) - set(schema["properties"].keys())
+        if schema.get("additionalProperties") == False and additional_properties:
+            raise ValueError(f"additional properties not allowed: {additional_properties}")
 
         for k, v in data.items():
             if k in schema["properties"]:

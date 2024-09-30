@@ -1,0 +1,102 @@
+"""
+Create a new timeseries widget with new fixed span time format
+"""
+
+from datadog_api_client import ApiClient, Configuration
+from datadog_api_client.v1.api.dashboards_api import DashboardsApi
+from datadog_api_client.v1.model.dashboard import Dashboard
+from datadog_api_client.v1.model.dashboard_layout_type import DashboardLayoutType
+from datadog_api_client.v1.model.dashboard_reflow_type import DashboardReflowType
+from datadog_api_client.v1.model.formula_and_function_event_aggregation import FormulaAndFunctionEventAggregation
+from datadog_api_client.v1.model.formula_and_function_event_query_definition import (
+    FormulaAndFunctionEventQueryDefinition,
+)
+from datadog_api_client.v1.model.formula_and_function_event_query_definition_compute import (
+    FormulaAndFunctionEventQueryDefinitionCompute,
+)
+from datadog_api_client.v1.model.formula_and_function_event_query_definition_search import (
+    FormulaAndFunctionEventQueryDefinitionSearch,
+)
+from datadog_api_client.v1.model.formula_and_function_events_data_source import FormulaAndFunctionEventsDataSource
+from datadog_api_client.v1.model.formula_and_function_response_format import FormulaAndFunctionResponseFormat
+from datadog_api_client.v1.model.timeseries_widget_definition import TimeseriesWidgetDefinition
+from datadog_api_client.v1.model.timeseries_widget_definition_type import TimeseriesWidgetDefinitionType
+from datadog_api_client.v1.model.timeseries_widget_legend_column import TimeseriesWidgetLegendColumn
+from datadog_api_client.v1.model.timeseries_widget_legend_layout import TimeseriesWidgetLegendLayout
+from datadog_api_client.v1.model.timeseries_widget_request import TimeseriesWidgetRequest
+from datadog_api_client.v1.model.widget import Widget
+from datadog_api_client.v1.model.widget_display_type import WidgetDisplayType
+from datadog_api_client.v1.model.widget_formula import WidgetFormula
+from datadog_api_client.v1.model.widget_line_type import WidgetLineType
+from datadog_api_client.v1.model.widget_line_width import WidgetLineWidth
+from datadog_api_client.v1.model.widget_new_fixed_span import WidgetNewFixedSpan
+from datadog_api_client.v1.model.widget_new_fixed_span_type import WidgetNewFixedSpanType
+from datadog_api_client.v1.model.widget_request_style import WidgetRequestStyle
+
+body = Dashboard(
+    title="Example-Dashboard with new fixed span time",
+    widgets=[
+        Widget(
+            definition=TimeseriesWidgetDefinition(
+                title="",
+                show_legend=True,
+                legend_layout=TimeseriesWidgetLegendLayout.AUTO,
+                legend_columns=[
+                    TimeseriesWidgetLegendColumn.AVG,
+                    TimeseriesWidgetLegendColumn.MIN,
+                    TimeseriesWidgetLegendColumn.MAX,
+                    TimeseriesWidgetLegendColumn.VALUE,
+                    TimeseriesWidgetLegendColumn.SUM,
+                ],
+                time=WidgetNewFixedSpan(
+                    type=WidgetNewFixedSpanType.FIXED,
+                    _from=1712080128,
+                    to=1712083128,
+                ),
+                type=TimeseriesWidgetDefinitionType.TIMESERIES,
+                requests=[
+                    TimeseriesWidgetRequest(
+                        formulas=[
+                            WidgetFormula(
+                                formula="query1",
+                            ),
+                        ],
+                        queries=[
+                            FormulaAndFunctionEventQueryDefinition(
+                                data_source=FormulaAndFunctionEventsDataSource.CI_PIPELINES,
+                                name="query1",
+                                search=FormulaAndFunctionEventQueryDefinitionSearch(
+                                    query="ci_level:job",
+                                ),
+                                indexes=[
+                                    "*",
+                                ],
+                                compute=FormulaAndFunctionEventQueryDefinitionCompute(
+                                    aggregation=FormulaAndFunctionEventAggregation.COUNT,
+                                    metric="@ci.queue_time",
+                                ),
+                                group_by=[],
+                            ),
+                        ],
+                        response_format=FormulaAndFunctionResponseFormat.TIMESERIES,
+                        style=WidgetRequestStyle(
+                            palette="dog_classic",
+                            line_type=WidgetLineType.SOLID,
+                            line_width=WidgetLineWidth.NORMAL,
+                        ),
+                        display_type=WidgetDisplayType.LINE,
+                    ),
+                ],
+            ),
+        ),
+    ],
+    layout_type=DashboardLayoutType.ORDERED,
+    reflow_type=DashboardReflowType.AUTO,
+)
+
+configuration = Configuration()
+with ApiClient(configuration) as api_client:
+    api_instance = DashboardsApi(api_client)
+    response = api_instance.create_dashboard(body=body)
+
+    print(response)

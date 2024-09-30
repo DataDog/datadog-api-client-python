@@ -1,0 +1,22 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/workflows/ccf73164-1998-4785-a7a3-8d06c7e5f558/instances
+  response:
+    body:
+      string: '{"data":[{"attributes":{"instanceStatus":{"detailsKind":"IN_PROGRESS","displayName":"Running"},"source":{"api":{"actingUser":{"userEmail":"max.gale@datadoghq.com","userName":"Max
+        Gale","userUuid":"e39535f4-306b-11ee-9383-6ac9a4415a29"}}},"startTimestamp":"2024-07-24T18:39:58.396793Z"},"id":"111e18d6-3f19-4ada-91d3-ab1e1546b8b4","type":"instances"},{"attributes":{"endTimestamp":"2024-07-24T18:39:58.219283Z","instanceStatus":{"detailsKind":"CANCELED","displayName":"Canceled"},"source":{"manual":{"actingUser":{"userEmail":"max.gale@datadoghq.com","userName":"Max
+        Gale","userUuid":"e39535f4-306b-11ee-9383-6ac9a4415a29"}}},"startTimestamp":"2024-07-24T18:38:31.326418Z"},"id":"305a472b-71ab-4ce8-8f8d-75db635627b5","type":"instances"}],"meta":{"canceledCount":1,"failedCount":0,"page":{"totalCount":2,"totalFilteredCount":2},"succeededCount":0}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

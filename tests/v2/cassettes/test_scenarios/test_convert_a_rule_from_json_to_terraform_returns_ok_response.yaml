@@ -1,0 +1,31 @@
+interactions:
+- request:
+    body: '{"cases":[{"condition":"a > 0","name":"","notifications":[],"status":"info"}],"filters":[],"isEnabled":true,"message":"Test
+      rule","name":"Test-Convert_a_rule_from_JSON_to_Terraform_returns_OK_response-1719258432","options":{"evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"queries":[{"aggregation":"count","distinctFields":[],"groupByFields":[],"metric":"","query":"@test:true"}],"tags":[],"type":"log_detection"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/convert
+  response:
+    body:
+      string: '{"terraformContent":"resource \"datadog_security_monitoring_rule\"
+        \"test-convert_a_rule_from_json_to_terraform_returns_ok_response-1719258432\"
+        {\n\tname = \"Test-Convert_a_rule_from_JSON_to_Terraform_returns_OK_response-1719258432\"\n\tenabled
+        = true\n\tquery {\n\t\tquery = \"@test:true\"\n\t\tgroup_by_fields = []\n\t\tdistinct_fields
+        = []\n\t\taggregation = \"count\"\n\t\tname = \"\"\n\t}\n\toptions {\n\t\tkeep_alive
+        = 3600\n\t\tmax_signal_duration = 86400\n\t\tdetection_method = \"threshold\"\n\t\tevaluation_window
+        = 900\n\t}\n\tcase {\n\t\tname = \"\"\n\t\tstatus = \"info\"\n\t\tnotifications
+        = []\n\t\tcondition = \"a > 0\"\n\t}\n\tmessage = \"Test rule\"\n\ttags =
+        []\n\thas_extended_title = false\n\ttype = \"log_detection\"\n}\n"}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

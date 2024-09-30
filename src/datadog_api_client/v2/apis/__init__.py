@@ -28,6 +28,7 @@ from datadog_api_client.v2.api.logs_custom_destinations_api import LogsCustomDes
 from datadog_api_client.v2.api.logs_metrics_api import LogsMetricsApi
 from datadog_api_client.v2.api.metrics_api import MetricsApi
 from datadog_api_client.v2.api.monitors_api import MonitorsApi
+from datadog_api_client.v2.api.network_device_monitoring_api import NetworkDeviceMonitoringApi
 from datadog_api_client.v2.api.okta_integration_api import OktaIntegrationApi
 from datadog_api_client.v2.api.opsgenie_integration_api import OpsgenieIntegrationApi
 from datadog_api_client.v2.api.organizations_api import OrganizationsApi
@@ -42,12 +43,14 @@ from datadog_api_client.v2.api.service_accounts_api import ServiceAccountsApi
 from datadog_api_client.v2.api.service_definition_api import ServiceDefinitionApi
 from datadog_api_client.v2.api.service_level_objectives_api import ServiceLevelObjectivesApi
 from datadog_api_client.v2.api.service_scorecards_api import ServiceScorecardsApi
+from datadog_api_client.v2.api.software_catalog_api import SoftwareCatalogApi
 from datadog_api_client.v2.api.spans_api import SpansApi
 from datadog_api_client.v2.api.spans_metrics_api import SpansMetricsApi
 from datadog_api_client.v2.api.synthetics_api import SyntheticsApi
 from datadog_api_client.v2.api.teams_api import TeamsApi
 from datadog_api_client.v2.api.usage_metering_api import UsageMeteringApi
 from datadog_api_client.v2.api.users_api import UsersApi
+from datadog_api_client.v2.api.workflow_automation_api import WorkflowAutomationApi
 
 
 __all__ = [
@@ -81,6 +84,7 @@ __all__ = [
     "LogsMetricsApi",
     "MetricsApi",
     "MonitorsApi",
+    "NetworkDeviceMonitoringApi",
     "OktaIntegrationApi",
     "OpsgenieIntegrationApi",
     "OrganizationsApi",
@@ -95,10 +99,12 @@ __all__ = [
     "ServiceDefinitionApi",
     "ServiceLevelObjectivesApi",
     "ServiceScorecardsApi",
+    "SoftwareCatalogApi",
     "SpansApi",
     "SpansMetricsApi",
     "SyntheticsApi",
     "TeamsApi",
     "UsageMeteringApi",
     "UsersApi",
+    "WorkflowAutomationApi",
 ]

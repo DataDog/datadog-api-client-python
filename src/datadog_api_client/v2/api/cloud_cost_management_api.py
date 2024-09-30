@@ -3,7 +3,8 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Any, Dict
+from typing import Any, Dict, List
+import warnings
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
@@ -16,12 +17,16 @@ from datadog_api_client.v2.model.azure_uc_configs_response import AzureUCConfigs
 from datadog_api_client.v2.model.azure_uc_config_pairs_response import AzureUCConfigPairsResponse
 from datadog_api_client.v2.model.azure_uc_config_post_request import AzureUCConfigPostRequest
 from datadog_api_client.v2.model.azure_uc_config_patch_request import AzureUCConfigPatchRequest
+from datadog_api_client.v2.model.custom_costs_file_list_response import CustomCostsFileListResponse
+from datadog_api_client.v2.model.custom_costs_file_upload_response import CustomCostsFileUploadResponse
+from datadog_api_client.v2.model.custom_costs_file_line_item import CustomCostsFileLineItem
+from datadog_api_client.v2.model.custom_costs_file_get_response import CustomCostsFileGetResponse
 from datadog_api_client.v2.model.cloud_cost_activity_response import CloudCostActivityResponse
 
 
 class CloudCostManagementApi:
     """
-    The Cloud Cost Management API allows you to set up, edit, and delete Cloud Cost Management accounts for AWS and Azure. See the `Cloud Cost Management page <https://docs.datadoghq.com/cloud_cost_management/>`_ for more information.
+    The Cloud Cost Management API allows you to set up, edit, and delete Cloud Cost Management accounts for AWS and Azure. You can query your cost data by using the `Metrics endpoint <https://docs.datadoghq.com/api/latest/metrics/#query-timeseries-data-across-multiple-products>`_ and the ``cloud_cost`` data source. For more information, see the `Cloud Cost Management documentation <https://docs.datadoghq.com/cloud_cost_management/>`_.
     """
 
     def __init__(self, api_client=None):
@@ -115,6 +120,29 @@ class CloudCostManagementApi:
             api_client=api_client,
         )
 
+        self._delete_custom_costs_file_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/cost/custom_costs/{file_id}",
+                "operation_id": "delete_custom_costs_file",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "file_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "file_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
         self._get_cloud_cost_activity_endpoint = _Endpoint(
             settings={
                 "response_type": (CloudCostActivityResponse,),
@@ -125,6 +153,29 @@ class CloudCostManagementApi:
                 "version": "v2",
             },
             params_map={},
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_custom_costs_file_endpoint = _Endpoint(
+            settings={
+                "response_type": (CustomCostsFileGetResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/cost/custom_costs/{file_id}",
+                "operation_id": "get_custom_costs_file",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "file_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "file_id",
+                    "location": "path",
+                },
+            },
             headers_map={
                 "accept": ["application/json"],
             },
@@ -186,6 +237,22 @@ class CloudCostManagementApi:
             api_client=api_client,
         )
 
+        self._list_custom_costs_files_endpoint = _Endpoint(
+            settings={
+                "response_type": (CustomCostsFileListResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/cost/custom_costs",
+                "operation_id": "list_custom_costs_files",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={},
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._update_cost_awscur_config_endpoint = _Endpoint(
             settings={
                 "response_type": (AwsCURConfigsResponse,),
@@ -232,6 +299,27 @@ class CloudCostManagementApi:
                     "required": True,
                     "openapi_types": (AzureUCConfigPatchRequest,),
                     "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._upload_custom_costs_file_endpoint = _Endpoint(
+            settings={
+                "response_type": (CustomCostsFileUploadResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/cost/custom_costs",
+                "operation_id": "upload_custom_costs_file",
+                "http_method": "PUT",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": ([CustomCostsFileLineItem],),
+                    "location": "body",
+                    "collection_format": "multi",
                 },
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
@@ -304,6 +392,23 @@ class CloudCostManagementApi:
 
         return self._delete_cost_azure_uc_config_endpoint.call_with_http_info(**kwargs)
 
+    def delete_custom_costs_file(
+        self,
+        file_id: str,
+    ) -> None:
+        """Delete Custom Costs file.
+
+        Delete the specified Custom Costs file.
+
+        :param file_id: File ID.
+        :type file_id: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["file_id"] = file_id
+
+        return self._delete_custom_costs_file_endpoint.call_with_http_info(**kwargs)
+
     def get_cloud_cost_activity(
         self,
     ) -> CloudCostActivityResponse:
@@ -316,11 +421,28 @@ class CloudCostManagementApi:
         kwargs: Dict[str, Any] = {}
         return self._get_cloud_cost_activity_endpoint.call_with_http_info(**kwargs)
 
+    def get_custom_costs_file(
+        self,
+        file_id: str,
+    ) -> CustomCostsFileGetResponse:
+        """Get Custom Costs file.
+
+        Fetch the specified Custom Costs file.
+
+        :param file_id: File ID.
+        :type file_id: str
+        :rtype: CustomCostsFileGetResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["file_id"] = file_id
+
+        return self._get_custom_costs_file_endpoint.call_with_http_info(**kwargs)
+
     def list_aws_related_accounts(
         self,
         filter_management_account_id: str,
     ) -> AWSRelatedAccountsResponse:
-        """List related AWS accounts.
+        """List related AWS accounts. **Deprecated**.
 
         List the AWS accounts in an organization by calling 'organizations:ListAccounts' from the specified management account.
 
@@ -331,6 +453,7 @@ class CloudCostManagementApi:
         kwargs: Dict[str, Any] = {}
         kwargs["filter_management_account_id"] = filter_management_account_id
 
+        warnings.warn("list_aws_related_accounts is deprecated", DeprecationWarning, stacklevel=2)
         return self._list_aws_related_accounts_endpoint.call_with_http_info(**kwargs)
 
     def list_cost_awscur_configs(
@@ -356,6 +479,18 @@ class CloudCostManagementApi:
         """
         kwargs: Dict[str, Any] = {}
         return self._list_cost_azure_uc_configs_endpoint.call_with_http_info(**kwargs)
+
+    def list_custom_costs_files(
+        self,
+    ) -> CustomCostsFileListResponse:
+        """List Custom Costs files.
+
+        List the Custom Costs files.
+
+        :rtype: CustomCostsFileListResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._list_custom_costs_files_endpoint.call_with_http_info(**kwargs)
 
     def update_cost_awscur_config(
         self,
@@ -398,3 +533,19 @@ class CloudCostManagementApi:
         kwargs["body"] = body
 
         return self._update_cost_azure_uc_configs_endpoint.call_with_http_info(**kwargs)
+
+    def upload_custom_costs_file(
+        self,
+        body: List[CustomCostsFileLineItem],
+    ) -> CustomCostsFileUploadResponse:
+        """Upload Custom Costs file.
+
+        Upload a Custom Costs file.
+
+        :type body: [CustomCostsFileLineItem]
+        :rtype: CustomCostsFileUploadResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._upload_custom_costs_file_endpoint.call_with_http_info(**kwargs)

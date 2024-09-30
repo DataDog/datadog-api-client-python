@@ -1,6 +1,6 @@
 @endpoint(service-scorecards) @endpoint(service-scorecards-v2)
 Feature: Service Scorecards
-  API to create, update scorecard rules and outcomes. See [Service
+  API to create and update scorecard rules and outcomes. See [Service
   Scorecards](https://docs.datadoghq.com/service_catalog/scorecards) for
   more information.  This feature is currently in BETA. If you have any
   feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -120,3 +120,22 @@ Feature: Service Scorecards
     When the request with pagination is sent
     Then the response status is 200 OK
     And the response has 4 items
+
+  @generated @skip @team:DataDog/service-catalog
+  Scenario: Update an existing rule returns "Bad Request" response
+    Given operation "UpdateScorecardRule" enabled
+    And new "UpdateScorecardRule" request
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"enabled": true, "name": "Team Defined", "scorecard_name": "Deployments automated via Deployment Trains"}, "type": "rule"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/service-catalog
+  Scenario: Update an existing rule returns "Rule updated successfully" response
+    Given operation "UpdateScorecardRule" enabled
+    And there is a valid "create_scorecard_rule" in the system
+    And new "UpdateScorecardRule" request
+    And request contains "rule_id" parameter from "create_scorecard_rule.data.id"
+    And body with value {"data": { "attributes" : {"enabled": true, "name": "{{create_scorecard_rule.data.attributes.name}}", "scorecard_name": "{{create_scorecard_rule.data.attributes.scorecard_name}}", "description": "Updated description via test"}}}
+    When the request is sent
+    Then the response status is 200 Rule updated successfully

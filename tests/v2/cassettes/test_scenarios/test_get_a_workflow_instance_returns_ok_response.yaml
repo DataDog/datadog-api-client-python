@@ -1,0 +1,23 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/workflows/ccf73164-1998-4785-a7a3-8d06c7e5f558/instances/305a472b-71ab-4ce8-8f8d-75db635627b5
+  response:
+    body:
+      string: '{"data":{"attributes":{"endTimestamp":"2024-07-24T18:39:58.219283Z","instanceStatus":{"detailsKind":"CANCELED","displayName":"Canceled"},"outputs":{},"source":{"manual":{"actingUser":{"userEmail":"max.gale@datadoghq.com","userName":"Max
+        Gale","userUuid":"e39535f4-306b-11ee-9383-6ac9a4415a29"}}},"sourceForTemplating":{"initiator":{"email":"max.gale@datadoghq.com","id":"e39535f4-306b-11ee-9383-6ac9a4415a29","name":"Max
+        Gale"},"name":"Max Jul 24 2024 02:38","type":"manual","url":"https://app.datadoghq.com/workflow/ccf73164-1998-4785-a7a3-8d06c7e5f558?instance=305a472b-71ab-4ce8-8f8d-75db635627b5"},"startTimestamp":"2024-07-24T18:38:31.326418Z","stepStateAssociations":[{"stepName":"Sleep","stepState":"CANCELED"}],"trigger":{}},"id":"305a472b-71ab-4ce8-8f8d-75db635627b5","relationships":{"specVersion":{"data":{"id":"37d9abeb-2ac1-4185-91f8-86d92d5cbf7f","type":"spec_versions"}},"workflow":{"data":{"id":"ccf73164-1998-4785-a7a3-8d06c7e5f558","type":"workflows"}}},"type":"instances"},"included":[{"attributes":{"createdAt":"2024-07-24T18:38:29.839739Z","spec":{"steps":[{"actionId":"com.datadoghq.core.sleep","display":{"bounds":{"y":186}},"name":"Sleep","parameters":[{"name":"durationSeconds","value":300}]}],"triggers":[{"apiTrigger":{},"startStepNames":["Sleep"]}]},"workflowId":"ccf73164-1998-4785-a7a3-8d06c7e5f558"},"id":"37d9abeb-2ac1-4185-91f8-86d92d5cbf7f","type":"spec_versions"},{"attributes":{"createdAt":"2024-07-24T18:38:05.701669Z","creationSource":"workflows_ui","name":"Max
+        Jul 24 2024 02:38","specVersionId":"3d660f9c-7dfe-4fbd-bea5-f61eccea0600","updatedAt":"2024-07-24T18:38:59.939929Z"},"id":"ccf73164-1998-4785-a7a3-8d06c7e5f558","type":"workflows"}],"meta":{"outputsTooBig":false,"sourceTooBig":false,"triggerTooBig":false}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

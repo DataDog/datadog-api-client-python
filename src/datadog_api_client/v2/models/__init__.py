@@ -59,6 +59,7 @@ from datadog_api_client.v2.model.authn_mapping_included import AuthNMappingInclu
 from datadog_api_client.v2.model.authn_mapping_relationship_to_role import AuthNMappingRelationshipToRole
 from datadog_api_client.v2.model.authn_mapping_relationship_to_team import AuthNMappingRelationshipToTeam
 from datadog_api_client.v2.model.authn_mapping_relationships import AuthNMappingRelationships
+from datadog_api_client.v2.model.authn_mapping_resource_type import AuthNMappingResourceType
 from datadog_api_client.v2.model.authn_mapping_response import AuthNMappingResponse
 from datadog_api_client.v2.model.authn_mapping_team import AuthNMappingTeam
 from datadog_api_client.v2.model.authn_mapping_team_attributes import AuthNMappingTeamAttributes
@@ -358,6 +359,21 @@ from datadog_api_client.v2.model.create_rule_request_data import CreateRuleReque
 from datadog_api_client.v2.model.create_rule_response import CreateRuleResponse
 from datadog_api_client.v2.model.create_rule_response_data import CreateRuleResponseData
 from datadog_api_client.v2.model.creator import Creator
+from datadog_api_client.v2.model.custom_cost_get_response_meta import CustomCostGetResponseMeta
+from datadog_api_client.v2.model.custom_cost_list_response_meta import CustomCostListResponseMeta
+from datadog_api_client.v2.model.custom_cost_upload_response_meta import CustomCostUploadResponseMeta
+from datadog_api_client.v2.model.custom_costs_file_get_response import CustomCostsFileGetResponse
+from datadog_api_client.v2.model.custom_costs_file_line_item import CustomCostsFileLineItem
+from datadog_api_client.v2.model.custom_costs_file_list_response import CustomCostsFileListResponse
+from datadog_api_client.v2.model.custom_costs_file_metadata import CustomCostsFileMetadata
+from datadog_api_client.v2.model.custom_costs_file_metadata_high_level import CustomCostsFileMetadataHighLevel
+from datadog_api_client.v2.model.custom_costs_file_metadata_with_content import CustomCostsFileMetadataWithContent
+from datadog_api_client.v2.model.custom_costs_file_metadata_with_content_high_level import (
+    CustomCostsFileMetadataWithContentHighLevel,
+)
+from datadog_api_client.v2.model.custom_costs_file_upload_response import CustomCostsFileUploadResponse
+from datadog_api_client.v2.model.custom_costs_file_usage_charge_period import CustomCostsFileUsageChargePeriod
+from datadog_api_client.v2.model.custom_costs_user import CustomCostsUser
 from datadog_api_client.v2.model.custom_destination_attribute_tags_restriction_list_type import (
     CustomDestinationAttributeTagsRestrictionListType,
 )
@@ -482,6 +498,9 @@ from datadog_api_client.v2.model.data_scalar_column import DataScalarColumn
 from datadog_api_client.v2.model.detailed_finding import DetailedFinding
 from datadog_api_client.v2.model.detailed_finding_attributes import DetailedFindingAttributes
 from datadog_api_client.v2.model.detailed_finding_type import DetailedFindingType
+from datadog_api_client.v2.model.device_attributes import DeviceAttributes
+from datadog_api_client.v2.model.device_attributes_interface_statuses import DeviceAttributesInterfaceStatuses
+from datadog_api_client.v2.model.devices_list_data import DevicesListData
 from datadog_api_client.v2.model.downtime_create_request import DowntimeCreateRequest
 from datadog_api_client.v2.model.downtime_create_request_attributes import DowntimeCreateRequestAttributes
 from datadog_api_client.v2.model.downtime_create_request_data import DowntimeCreateRequestData
@@ -530,6 +549,73 @@ from datadog_api_client.v2.model.downtime_status import DowntimeStatus
 from datadog_api_client.v2.model.downtime_update_request import DowntimeUpdateRequest
 from datadog_api_client.v2.model.downtime_update_request_attributes import DowntimeUpdateRequestAttributes
 from datadog_api_client.v2.model.downtime_update_request_data import DowntimeUpdateRequestData
+from datadog_api_client.v2.model.entity_attributes import EntityAttributes
+from datadog_api_client.v2.model.entity_data import EntityData
+from datadog_api_client.v2.model.entity_meta import EntityMeta
+from datadog_api_client.v2.model.entity_relationships import EntityRelationships
+from datadog_api_client.v2.model.entity_response_included_incident import EntityResponseIncludedIncident
+from datadog_api_client.v2.model.entity_response_included_oncall import EntityResponseIncludedOncall
+from datadog_api_client.v2.model.entity_response_included_raw_schema import EntityResponseIncludedRawSchema
+from datadog_api_client.v2.model.entity_response_included_raw_schema_attributes import (
+    EntityResponseIncludedRawSchemaAttributes,
+)
+from datadog_api_client.v2.model.entity_response_included_related_entity import EntityResponseIncludedRelatedEntity
+from datadog_api_client.v2.model.entity_response_included_related_entity_attributes import (
+    EntityResponseIncludedRelatedEntityAttributes,
+)
+from datadog_api_client.v2.model.entity_response_included_related_entity_meta import (
+    EntityResponseIncludedRelatedEntityMeta,
+)
+from datadog_api_client.v2.model.entity_response_included_related_incident_attributes import (
+    EntityResponseIncludedRelatedIncidentAttributes,
+)
+from datadog_api_client.v2.model.entity_response_included_related_oncall_attributes import (
+    EntityResponseIncludedRelatedOncallAttributes,
+)
+from datadog_api_client.v2.model.entity_response_included_related_oncall_escalation_item import (
+    EntityResponseIncludedRelatedOncallEscalationItem,
+)
+from datadog_api_client.v2.model.entity_response_included_schema import EntityResponseIncludedSchema
+from datadog_api_client.v2.model.entity_response_included_schema_attributes import (
+    EntityResponseIncludedSchemaAttributes,
+)
+from datadog_api_client.v2.model.entity_response_meta import EntityResponseMeta
+from datadog_api_client.v2.model.entity_to_incidents import EntityToIncidents
+from datadog_api_client.v2.model.entity_to_oncalls import EntityToOncalls
+from datadog_api_client.v2.model.entity_to_raw_schema import EntityToRawSchema
+from datadog_api_client.v2.model.entity_to_related_entities import EntityToRelatedEntities
+from datadog_api_client.v2.model.entity_to_schema import EntityToSchema
+from datadog_api_client.v2.model.entity_v3 import EntityV3
+from datadog_api_client.v2.model.entity_v3_api_version import EntityV3APIVersion
+from datadog_api_client.v2.model.entity_v3_datadog_code_location_item import EntityV3DatadogCodeLocationItem
+from datadog_api_client.v2.model.entity_v3_datadog_event_item import EntityV3DatadogEventItem
+from datadog_api_client.v2.model.entity_v3_datadog_integration_opsgenie import EntityV3DatadogIntegrationOpsgenie
+from datadog_api_client.v2.model.entity_v3_datadog_integration_pagerduty import EntityV3DatadogIntegrationPagerduty
+from datadog_api_client.v2.model.entity_v3_datadog_log_item import EntityV3DatadogLogItem
+from datadog_api_client.v2.model.entity_v3_datadog_performance import EntityV3DatadogPerformance
+from datadog_api_client.v2.model.entity_v3_datadog_pipelines import EntityV3DatadogPipelines
+from datadog_api_client.v2.model.entity_v3_datastore import EntityV3Datastore
+from datadog_api_client.v2.model.entity_v3_datastore_datadog import EntityV3DatastoreDatadog
+from datadog_api_client.v2.model.entity_v3_datastore_kind import EntityV3DatastoreKind
+from datadog_api_client.v2.model.entity_v3_datastore_spec import EntityV3DatastoreSpec
+from datadog_api_client.v2.model.entity_v3_integrations import EntityV3Integrations
+from datadog_api_client.v2.model.entity_v3_metadata import EntityV3Metadata
+from datadog_api_client.v2.model.entity_v3_metadata_additional_owners_items import EntityV3MetadataAdditionalOwnersItems
+from datadog_api_client.v2.model.entity_v3_metadata_contacts_items import EntityV3MetadataContactsItems
+from datadog_api_client.v2.model.entity_v3_metadata_links_items import EntityV3MetadataLinksItems
+from datadog_api_client.v2.model.entity_v3_metadata_owner import EntityV3MetadataOwner
+from datadog_api_client.v2.model.entity_v3_queue import EntityV3Queue
+from datadog_api_client.v2.model.entity_v3_queue_datadog import EntityV3QueueDatadog
+from datadog_api_client.v2.model.entity_v3_queue_kind import EntityV3QueueKind
+from datadog_api_client.v2.model.entity_v3_queue_spec import EntityV3QueueSpec
+from datadog_api_client.v2.model.entity_v3_service import EntityV3Service
+from datadog_api_client.v2.model.entity_v3_service_datadog import EntityV3ServiceDatadog
+from datadog_api_client.v2.model.entity_v3_service_kind import EntityV3ServiceKind
+from datadog_api_client.v2.model.entity_v3_service_spec import EntityV3ServiceSpec
+from datadog_api_client.v2.model.entity_v3_system import EntityV3System
+from datadog_api_client.v2.model.entity_v3_system_datadog import EntityV3SystemDatadog
+from datadog_api_client.v2.model.entity_v3_system_kind import EntityV3SystemKind
+from datadog_api_client.v2.model.entity_v3_system_spec import EntityV3SystemSpec
 from datadog_api_client.v2.model.event import Event
 from datadog_api_client.v2.model.event_attributes import EventAttributes
 from datadog_api_client.v2.model.event_priority import EventPriority
@@ -602,7 +688,12 @@ from datadog_api_client.v2.model.gcpsts_service_account_update_request_data impo
 from datadog_api_client.v2.model.gcpsts_service_accounts_response import GCPSTSServiceAccountsResponse
 from datadog_api_client.v2.model.gcp_service_account_meta import GCPServiceAccountMeta
 from datadog_api_client.v2.model.gcp_service_account_type import GCPServiceAccountType
+from datadog_api_client.v2.model.get_device_attributes import GetDeviceAttributes
+from datadog_api_client.v2.model.get_device_data import GetDeviceData
+from datadog_api_client.v2.model.get_device_response import GetDeviceResponse
 from datadog_api_client.v2.model.get_finding_response import GetFindingResponse
+from datadog_api_client.v2.model.get_interfaces_data import GetInterfacesData
+from datadog_api_client.v2.model.get_interfaces_response import GetInterfacesResponse
 from datadog_api_client.v2.model.get_team_memberships_sort import GetTeamMembershipsSort
 from datadog_api_client.v2.model.group_scalar_column import GroupScalarColumn
 from datadog_api_client.v2.model.group_tags import GroupTags
@@ -779,20 +870,32 @@ from datadog_api_client.v2.model.incident_update_relationships import IncidentUp
 from datadog_api_client.v2.model.incident_update_request import IncidentUpdateRequest
 from datadog_api_client.v2.model.incident_user_defined_field_type import IncidentUserDefinedFieldType
 from datadog_api_client.v2.model.incidents_response import IncidentsResponse
+from datadog_api_client.v2.model.include_type import IncludeType
 from datadog_api_client.v2.model.intake_payload_accepted import IntakePayloadAccepted
+from datadog_api_client.v2.model.interface_attributes import InterfaceAttributes
+from datadog_api_client.v2.model.interface_attributes_status import InterfaceAttributesStatus
 from datadog_api_client.v2.model.jsonapi_error_item import JSONAPIErrorItem
 from datadog_api_client.v2.model.jsonapi_error_response import JSONAPIErrorResponse
 from datadog_api_client.v2.model.jira_integration_metadata import JiraIntegrationMetadata
 from datadog_api_client.v2.model.jira_integration_metadata_issues_item import JiraIntegrationMetadataIssuesItem
 from datadog_api_client.v2.model.jira_issue import JiraIssue
 from datadog_api_client.v2.model.jira_issue_result import JiraIssueResult
+from datadog_api_client.v2.model.leaked_key import LeakedKey
+from datadog_api_client.v2.model.leaked_key_attributes import LeakedKeyAttributes
+from datadog_api_client.v2.model.leaked_key_type import LeakedKeyType
 from datadog_api_client.v2.model.list_apis_response import ListAPIsResponse
 from datadog_api_client.v2.model.list_apis_response_data import ListAPIsResponseData
 from datadog_api_client.v2.model.list_apis_response_data_attributes import ListAPIsResponseDataAttributes
 from datadog_api_client.v2.model.list_apis_response_meta import ListAPIsResponseMeta
 from datadog_api_client.v2.model.list_apis_response_meta_pagination import ListAPIsResponseMetaPagination
 from datadog_api_client.v2.model.list_application_keys_response import ListApplicationKeysResponse
+from datadog_api_client.v2.model.list_devices_response import ListDevicesResponse
+from datadog_api_client.v2.model.list_devices_response_metadata import ListDevicesResponseMetadata
+from datadog_api_client.v2.model.list_devices_response_metadata_page import ListDevicesResponseMetadataPage
 from datadog_api_client.v2.model.list_downtimes_response import ListDowntimesResponse
+from datadog_api_client.v2.model.list_entity_catalog_response import ListEntityCatalogResponse
+from datadog_api_client.v2.model.list_entity_catalog_response_included_item import ListEntityCatalogResponseIncludedItem
+from datadog_api_client.v2.model.list_entity_catalog_response_links import ListEntityCatalogResponseLinks
 from datadog_api_client.v2.model.list_findings_meta import ListFindingsMeta
 from datadog_api_client.v2.model.list_findings_page import ListFindingsPage
 from datadog_api_client.v2.model.list_findings_response import ListFindingsResponse
@@ -800,6 +903,9 @@ from datadog_api_client.v2.model.list_powerpacks_response import ListPowerpacksR
 from datadog_api_client.v2.model.list_rules_response import ListRulesResponse
 from datadog_api_client.v2.model.list_rules_response_data_item import ListRulesResponseDataItem
 from datadog_api_client.v2.model.list_rules_response_links import ListRulesResponseLinks
+from datadog_api_client.v2.model.list_tags_response import ListTagsResponse
+from datadog_api_client.v2.model.list_tags_response_data import ListTagsResponseData
+from datadog_api_client.v2.model.list_tags_response_data_attributes import ListTagsResponseDataAttributes
 from datadog_api_client.v2.model.list_teams_include import ListTeamsInclude
 from datadog_api_client.v2.model.list_teams_sort import ListTeamsSort
 from datadog_api_client.v2.model.log import Log
@@ -1167,6 +1273,8 @@ from datadog_api_client.v2.model.rum_search_events_request import RUMSearchEvent
 from datadog_api_client.v2.model.rum_sort import RUMSort
 from datadog_api_client.v2.model.rum_sort_order import RUMSortOrder
 from datadog_api_client.v2.model.rum_warning import RUMWarning
+from datadog_api_client.v2.model.relation_type import RelationType
+from datadog_api_client.v2.model.relationship_item import RelationshipItem
 from datadog_api_client.v2.model.relationship_to_incident_attachment import RelationshipToIncidentAttachment
 from datadog_api_client.v2.model.relationship_to_incident_attachment_data import RelationshipToIncidentAttachmentData
 from datadog_api_client.v2.model.relationship_to_incident_impact_data import RelationshipToIncidentImpactData
@@ -1311,6 +1419,8 @@ from datadog_api_client.v2.model.security_monitoring_filter_action import Securi
 from datadog_api_client.v2.model.security_monitoring_list_rules_response import SecurityMonitoringListRulesResponse
 from datadog_api_client.v2.model.security_monitoring_rule_case import SecurityMonitoringRuleCase
 from datadog_api_client.v2.model.security_monitoring_rule_case_create import SecurityMonitoringRuleCaseCreate
+from datadog_api_client.v2.model.security_monitoring_rule_convert_payload import SecurityMonitoringRuleConvertPayload
+from datadog_api_client.v2.model.security_monitoring_rule_convert_response import SecurityMonitoringRuleConvertResponse
 from datadog_api_client.v2.model.security_monitoring_rule_create_payload import SecurityMonitoringRuleCreatePayload
 from datadog_api_client.v2.model.security_monitoring_rule_detection_method import SecurityMonitoringRuleDetectionMethod
 from datadog_api_client.v2.model.security_monitoring_rule_evaluation_window import (
@@ -1768,6 +1878,15 @@ from datadog_api_client.v2.model.unit import Unit
 from datadog_api_client.v2.model.update_open_api_response import UpdateOpenAPIResponse
 from datadog_api_client.v2.model.update_open_api_response_attributes import UpdateOpenAPIResponseAttributes
 from datadog_api_client.v2.model.update_open_api_response_data import UpdateOpenAPIResponseData
+from datadog_api_client.v2.model.update_rule_request import UpdateRuleRequest
+from datadog_api_client.v2.model.update_rule_request_data import UpdateRuleRequestData
+from datadog_api_client.v2.model.update_rule_response import UpdateRuleResponse
+from datadog_api_client.v2.model.update_rule_response_data import UpdateRuleResponseData
+from datadog_api_client.v2.model.upsert_catalog_entity_request import UpsertCatalogEntityRequest
+from datadog_api_client.v2.model.upsert_catalog_entity_response import UpsertCatalogEntityResponse
+from datadog_api_client.v2.model.upsert_catalog_entity_response_included_item import (
+    UpsertCatalogEntityResponseIncludedItem,
+)
 from datadog_api_client.v2.model.usage_application_security_monitoring_response import (
     UsageApplicationSecurityMonitoringResponse,
 )
@@ -1820,6 +1939,21 @@ from datadog_api_client.v2.model.users_relationship import UsersRelationship
 from datadog_api_client.v2.model.users_response import UsersResponse
 from datadog_api_client.v2.model.users_type import UsersType
 from datadog_api_client.v2.model.widget_live_span import WidgetLiveSpan
+from datadog_api_client.v2.model.workflow_instance_create_meta import WorkflowInstanceCreateMeta
+from datadog_api_client.v2.model.workflow_instance_create_request import WorkflowInstanceCreateRequest
+from datadog_api_client.v2.model.workflow_instance_create_response import WorkflowInstanceCreateResponse
+from datadog_api_client.v2.model.workflow_instance_create_response_data import WorkflowInstanceCreateResponseData
+from datadog_api_client.v2.model.workflow_instance_list_item import WorkflowInstanceListItem
+from datadog_api_client.v2.model.workflow_list_instances_response import WorkflowListInstancesResponse
+from datadog_api_client.v2.model.workflow_list_instances_response_meta import WorkflowListInstancesResponseMeta
+from datadog_api_client.v2.model.workflow_list_instances_response_meta_page import WorkflowListInstancesResponseMetaPage
+from datadog_api_client.v2.model.worklflow_cancel_instance_response import WorklflowCancelInstanceResponse
+from datadog_api_client.v2.model.worklflow_cancel_instance_response_data import WorklflowCancelInstanceResponseData
+from datadog_api_client.v2.model.worklflow_get_instance_response import WorklflowGetInstanceResponse
+from datadog_api_client.v2.model.worklflow_get_instance_response_data import WorklflowGetInstanceResponseData
+from datadog_api_client.v2.model.worklflow_get_instance_response_data_attributes import (
+    WorklflowGetInstanceResponseDataAttributes,
+)
 
 __all__ = [
     "APIErrorResponse",
@@ -1883,6 +2017,7 @@ __all__ = [
     "AuthNMappingRelationshipToRole",
     "AuthNMappingRelationshipToTeam",
     "AuthNMappingRelationships",
+    "AuthNMappingResourceType",
     "AuthNMappingResponse",
     "AuthNMappingTeam",
     "AuthNMappingTeamAttributes",
@@ -2134,6 +2269,19 @@ __all__ = [
     "CreateRuleResponse",
     "CreateRuleResponseData",
     "Creator",
+    "CustomCostGetResponseMeta",
+    "CustomCostListResponseMeta",
+    "CustomCostUploadResponseMeta",
+    "CustomCostsFileGetResponse",
+    "CustomCostsFileLineItem",
+    "CustomCostsFileListResponse",
+    "CustomCostsFileMetadata",
+    "CustomCostsFileMetadataHighLevel",
+    "CustomCostsFileMetadataWithContent",
+    "CustomCostsFileMetadataWithContentHighLevel",
+    "CustomCostsFileUploadResponse",
+    "CustomCostsFileUsageChargePeriod",
+    "CustomCostsUser",
     "CustomDestinationAttributeTagsRestrictionListType",
     "CustomDestinationCreateRequest",
     "CustomDestinationCreateRequestAttributes",
@@ -2200,6 +2348,9 @@ __all__ = [
     "DetailedFinding",
     "DetailedFindingAttributes",
     "DetailedFindingType",
+    "DeviceAttributes",
+    "DeviceAttributesInterfaceStatuses",
+    "DevicesListData",
     "DowntimeCreateRequest",
     "DowntimeCreateRequestAttributes",
     "DowntimeCreateRequestData",
@@ -2238,6 +2389,59 @@ __all__ = [
     "DowntimeUpdateRequest",
     "DowntimeUpdateRequestAttributes",
     "DowntimeUpdateRequestData",
+    "EntityAttributes",
+    "EntityData",
+    "EntityMeta",
+    "EntityRelationships",
+    "EntityResponseIncludedIncident",
+    "EntityResponseIncludedOncall",
+    "EntityResponseIncludedRawSchema",
+    "EntityResponseIncludedRawSchemaAttributes",
+    "EntityResponseIncludedRelatedEntity",
+    "EntityResponseIncludedRelatedEntityAttributes",
+    "EntityResponseIncludedRelatedEntityMeta",
+    "EntityResponseIncludedRelatedIncidentAttributes",
+    "EntityResponseIncludedRelatedOncallAttributes",
+    "EntityResponseIncludedRelatedOncallEscalationItem",
+    "EntityResponseIncludedSchema",
+    "EntityResponseIncludedSchemaAttributes",
+    "EntityResponseMeta",
+    "EntityToIncidents",
+    "EntityToOncalls",
+    "EntityToRawSchema",
+    "EntityToRelatedEntities",
+    "EntityToSchema",
+    "EntityV3",
+    "EntityV3APIVersion",
+    "EntityV3DatadogCodeLocationItem",
+    "EntityV3DatadogEventItem",
+    "EntityV3DatadogIntegrationOpsgenie",
+    "EntityV3DatadogIntegrationPagerduty",
+    "EntityV3DatadogLogItem",
+    "EntityV3DatadogPerformance",
+    "EntityV3DatadogPipelines",
+    "EntityV3Datastore",
+    "EntityV3DatastoreDatadog",
+    "EntityV3DatastoreKind",
+    "EntityV3DatastoreSpec",
+    "EntityV3Integrations",
+    "EntityV3Metadata",
+    "EntityV3MetadataAdditionalOwnersItems",
+    "EntityV3MetadataContactsItems",
+    "EntityV3MetadataLinksItems",
+    "EntityV3MetadataOwner",
+    "EntityV3Queue",
+    "EntityV3QueueDatadog",
+    "EntityV3QueueKind",
+    "EntityV3QueueSpec",
+    "EntityV3Service",
+    "EntityV3ServiceDatadog",
+    "EntityV3ServiceKind",
+    "EntityV3ServiceSpec",
+    "EntityV3System",
+    "EntityV3SystemDatadog",
+    "EntityV3SystemKind",
+    "EntityV3SystemSpec",
     "Event",
     "EventAttributes",
     "EventPriority",
@@ -2310,7 +2514,12 @@ __all__ = [
     "GCPSTSServiceAccountsResponse",
     "GCPServiceAccountMeta",
     "GCPServiceAccountType",
+    "GetDeviceAttributes",
+    "GetDeviceData",
+    "GetDeviceResponse",
     "GetFindingResponse",
+    "GetInterfacesData",
+    "GetInterfacesResponse",
     "GetTeamMembershipsSort",
     "GroupScalarColumn",
     "GroupTags",
@@ -2455,20 +2664,32 @@ __all__ = [
     "IncidentUpdateRequest",
     "IncidentUserDefinedFieldType",
     "IncidentsResponse",
+    "IncludeType",
     "IntakePayloadAccepted",
+    "InterfaceAttributes",
+    "InterfaceAttributesStatus",
     "JSONAPIErrorItem",
     "JSONAPIErrorResponse",
     "JiraIntegrationMetadata",
     "JiraIntegrationMetadataIssuesItem",
     "JiraIssue",
     "JiraIssueResult",
+    "LeakedKey",
+    "LeakedKeyAttributes",
+    "LeakedKeyType",
     "ListAPIsResponse",
     "ListAPIsResponseData",
     "ListAPIsResponseDataAttributes",
     "ListAPIsResponseMeta",
     "ListAPIsResponseMetaPagination",
     "ListApplicationKeysResponse",
+    "ListDevicesResponse",
+    "ListDevicesResponseMetadata",
+    "ListDevicesResponseMetadataPage",
     "ListDowntimesResponse",
+    "ListEntityCatalogResponse",
+    "ListEntityCatalogResponseIncludedItem",
+    "ListEntityCatalogResponseLinks",
     "ListFindingsMeta",
     "ListFindingsPage",
     "ListFindingsResponse",
@@ -2476,6 +2697,9 @@ __all__ = [
     "ListRulesResponse",
     "ListRulesResponseDataItem",
     "ListRulesResponseLinks",
+    "ListTagsResponse",
+    "ListTagsResponseData",
+    "ListTagsResponseDataAttributes",
     "ListTeamsInclude",
     "ListTeamsSort",
     "Log",
@@ -2817,6 +3041,8 @@ __all__ = [
     "RUMSort",
     "RUMSortOrder",
     "RUMWarning",
+    "RelationType",
+    "RelationshipItem",
     "RelationshipToIncidentAttachment",
     "RelationshipToIncidentAttachmentData",
     "RelationshipToIncidentImpactData",
@@ -2951,6 +3177,8 @@ __all__ = [
     "SecurityMonitoringListRulesResponse",
     "SecurityMonitoringRuleCase",
     "SecurityMonitoringRuleCaseCreate",
+    "SecurityMonitoringRuleConvertPayload",
+    "SecurityMonitoringRuleConvertResponse",
     "SecurityMonitoringRuleCreatePayload",
     "SecurityMonitoringRuleDetectionMethod",
     "SecurityMonitoringRuleEvaluationWindow",
@@ -3278,6 +3506,13 @@ __all__ = [
     "UpdateOpenAPIResponse",
     "UpdateOpenAPIResponseAttributes",
     "UpdateOpenAPIResponseData",
+    "UpdateRuleRequest",
+    "UpdateRuleRequestData",
+    "UpdateRuleResponse",
+    "UpdateRuleResponseData",
+    "UpsertCatalogEntityRequest",
+    "UpsertCatalogEntityResponse",
+    "UpsertCatalogEntityResponseIncludedItem",
     "UsageApplicationSecurityMonitoringResponse",
     "UsageAttributesObject",
     "UsageDataObject",
@@ -3328,4 +3563,17 @@ __all__ = [
     "UsersResponse",
     "UsersType",
     "WidgetLiveSpan",
+    "WorkflowInstanceCreateMeta",
+    "WorkflowInstanceCreateRequest",
+    "WorkflowInstanceCreateResponse",
+    "WorkflowInstanceCreateResponseData",
+    "WorkflowInstanceListItem",
+    "WorkflowListInstancesResponse",
+    "WorkflowListInstancesResponseMeta",
+    "WorkflowListInstancesResponseMetaPage",
+    "WorklflowCancelInstanceResponse",
+    "WorklflowCancelInstanceResponseData",
+    "WorklflowGetInstanceResponse",
+    "WorklflowGetInstanceResponseData",
+    "WorklflowGetInstanceResponseDataAttributes",
 ]

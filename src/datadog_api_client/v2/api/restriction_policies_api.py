@@ -26,7 +26,7 @@ class RestrictionPoliciesApi:
         self._delete_restriction_policy_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/restriction_policy/{resource_id}",
                 "operation_id": "delete_restriction_policy",
                 "http_method": "DELETE",
@@ -49,7 +49,7 @@ class RestrictionPoliciesApi:
         self._get_restriction_policy_endpoint = _Endpoint(
             settings={
                 "response_type": (RestrictionPolicyResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/restriction_policy/{resource_id}",
                 "operation_id": "get_restriction_policy",
                 "http_method": "GET",
@@ -72,7 +72,7 @@ class RestrictionPoliciesApi:
         self._update_restriction_policy_endpoint = _Endpoint(
             settings={
                 "response_type": (RestrictionPolicyResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/restriction_policy/{resource_id}",
                 "operation_id": "update_restriction_policy",
                 "http_method": "POST",
@@ -147,6 +147,10 @@ class RestrictionPoliciesApi:
         * Powerpacks: ``powerpack``
         * Security Rules: ``security-rule``
         * Service Level Objectives: ``slo``
+        * Synthetic Global Variables: ``synthetics-global-variable``
+        * Synthetic Tests: ``synthetics-test``
+        * Synthetic Private Locations: ``synthetics-private-location``
+        * Monitors: ``monitor``
 
         **Supported relations for resources**
 
@@ -164,6 +168,14 @@ class RestrictionPoliciesApi:
            * - Security Rules
              - ``viewer`` , ``editor``
            * - Service Level Objectives
+             - ``viewer`` , ``editor``
+           * - Synthetic Global Variables
+             - ``viewer`` , ``editor``
+           * - Synthetic Tests
+             - ``viewer`` , ``editor``
+           * - Synthetic Private Locations
+             - ``viewer`` , ``editor``
+           * - Monitors
              - ``viewer`` , ``editor``
 
 

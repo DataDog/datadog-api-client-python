@@ -641,6 +641,8 @@ from datadog_api_client.v1.model.synthetics_assertion_json_schema_target import 
 from datadog_api_client.v1.model.synthetics_assertion_json_schema_target_target import (
     SyntheticsAssertionJSONSchemaTargetTarget,
 )
+from datadog_api_client.v1.model.synthetics_assertion_javascript import SyntheticsAssertionJavascript
+from datadog_api_client.v1.model.synthetics_assertion_javascript_type import SyntheticsAssertionJavascriptType
 from datadog_api_client.v1.model.synthetics_assertion_operator import SyntheticsAssertionOperator
 from datadog_api_client.v1.model.synthetics_assertion_target import SyntheticsAssertionTarget
 from datadog_api_client.v1.model.synthetics_assertion_timings_scope import SyntheticsAssertionTimingsScope
@@ -716,12 +718,16 @@ from datadog_api_client.v1.model.synthetics_global_variable_parse_test_options_t
     SyntheticsGlobalVariableParseTestOptionsType,
 )
 from datadog_api_client.v1.model.synthetics_global_variable_parser_type import SyntheticsGlobalVariableParserType
+from datadog_api_client.v1.model.synthetics_global_variable_request import SyntheticsGlobalVariableRequest
 from datadog_api_client.v1.model.synthetics_global_variable_totp_parameters import (
     SyntheticsGlobalVariableTOTPParameters,
 )
 from datadog_api_client.v1.model.synthetics_global_variable_value import SyntheticsGlobalVariableValue
 from datadog_api_client.v1.model.synthetics_list_global_variables_response import SyntheticsListGlobalVariablesResponse
 from datadog_api_client.v1.model.synthetics_list_tests_response import SyntheticsListTestsResponse
+from datadog_api_client.v1.model.synthetics_local_variable_parsing_options_type import (
+    SyntheticsLocalVariableParsingOptionsType,
+)
 from datadog_api_client.v1.model.synthetics_location import SyntheticsLocation
 from datadog_api_client.v1.model.synthetics_locations import SyntheticsLocations
 from datadog_api_client.v1.model.synthetics_parsing_options import SyntheticsParsingOptions
@@ -778,6 +784,7 @@ from datadog_api_client.v1.model.synthetics_test_request_body_file import Synthe
 from datadog_api_client.v1.model.synthetics_test_request_body_type import SyntheticsTestRequestBodyType
 from datadog_api_client.v1.model.synthetics_test_request_certificate import SyntheticsTestRequestCertificate
 from datadog_api_client.v1.model.synthetics_test_request_certificate_item import SyntheticsTestRequestCertificateItem
+from datadog_api_client.v1.model.synthetics_test_request_port import SyntheticsTestRequestPort
 from datadog_api_client.v1.model.synthetics_test_request_proxy import SyntheticsTestRequestProxy
 from datadog_api_client.v1.model.synthetics_timing import SyntheticsTiming
 from datadog_api_client.v1.model.synthetics_trigger_body import SyntheticsTriggerBody
@@ -795,6 +802,17 @@ from datadog_api_client.v1.model.table_widget_definition import TableWidgetDefin
 from datadog_api_client.v1.model.table_widget_definition_type import TableWidgetDefinitionType
 from datadog_api_client.v1.model.table_widget_has_search_bar import TableWidgetHasSearchBar
 from datadog_api_client.v1.model.table_widget_request import TableWidgetRequest
+from datadog_api_client.v1.model.table_widget_text_format_match import TableWidgetTextFormatMatch
+from datadog_api_client.v1.model.table_widget_text_format_match_type import TableWidgetTextFormatMatchType
+from datadog_api_client.v1.model.table_widget_text_format_palette import TableWidgetTextFormatPalette
+from datadog_api_client.v1.model.table_widget_text_format_replace import TableWidgetTextFormatReplace
+from datadog_api_client.v1.model.table_widget_text_format_replace_all import TableWidgetTextFormatReplaceAll
+from datadog_api_client.v1.model.table_widget_text_format_replace_all_type import TableWidgetTextFormatReplaceAllType
+from datadog_api_client.v1.model.table_widget_text_format_replace_substring import TableWidgetTextFormatReplaceSubstring
+from datadog_api_client.v1.model.table_widget_text_format_replace_substring_type import (
+    TableWidgetTextFormatReplaceSubstringType,
+)
+from datadog_api_client.v1.model.table_widget_text_format_rule import TableWidgetTextFormatRule
 from datadog_api_client.v1.model.tag_to_hosts import TagToHosts
 from datadog_api_client.v1.model.target_format_type import TargetFormatType
 from datadog_api_client.v1.model.timeseries_background import TimeseriesBackground
@@ -954,14 +972,20 @@ from datadog_api_client.v1.model.widget_horizontal_align import WidgetHorizontal
 from datadog_api_client.v1.model.widget_image_sizing import WidgetImageSizing
 from datadog_api_client.v1.model.widget_layout import WidgetLayout
 from datadog_api_client.v1.model.widget_layout_type import WidgetLayoutType
+from datadog_api_client.v1.model.widget_legacy_live_span import WidgetLegacyLiveSpan
 from datadog_api_client.v1.model.widget_line_type import WidgetLineType
 from datadog_api_client.v1.model.widget_line_width import WidgetLineWidth
 from datadog_api_client.v1.model.widget_live_span import WidgetLiveSpan
+from datadog_api_client.v1.model.widget_live_span_unit import WidgetLiveSpanUnit
 from datadog_api_client.v1.model.widget_margin import WidgetMargin
 from datadog_api_client.v1.model.widget_marker import WidgetMarker
 from datadog_api_client.v1.model.widget_message_display import WidgetMessageDisplay
 from datadog_api_client.v1.model.widget_monitor_summary_display_format import WidgetMonitorSummaryDisplayFormat
 from datadog_api_client.v1.model.widget_monitor_summary_sort import WidgetMonitorSummarySort
+from datadog_api_client.v1.model.widget_new_fixed_span import WidgetNewFixedSpan
+from datadog_api_client.v1.model.widget_new_fixed_span_type import WidgetNewFixedSpanType
+from datadog_api_client.v1.model.widget_new_live_span import WidgetNewLiveSpan
+from datadog_api_client.v1.model.widget_new_live_span_type import WidgetNewLiveSpanType
 from datadog_api_client.v1.model.widget_node_type import WidgetNodeType
 from datadog_api_client.v1.model.widget_order_by import WidgetOrderBy
 from datadog_api_client.v1.model.widget_palette import WidgetPalette
@@ -1547,6 +1571,8 @@ __all__ = [
     "SyntheticsAssertionJSONSchemaOperator",
     "SyntheticsAssertionJSONSchemaTarget",
     "SyntheticsAssertionJSONSchemaTargetTarget",
+    "SyntheticsAssertionJavascript",
+    "SyntheticsAssertionJavascriptType",
     "SyntheticsAssertionOperator",
     "SyntheticsAssertionTarget",
     "SyntheticsAssertionTimingsScope",
@@ -1610,10 +1636,12 @@ __all__ = [
     "SyntheticsGlobalVariableParseTestOptions",
     "SyntheticsGlobalVariableParseTestOptionsType",
     "SyntheticsGlobalVariableParserType",
+    "SyntheticsGlobalVariableRequest",
     "SyntheticsGlobalVariableTOTPParameters",
     "SyntheticsGlobalVariableValue",
     "SyntheticsListGlobalVariablesResponse",
     "SyntheticsListTestsResponse",
+    "SyntheticsLocalVariableParsingOptionsType",
     "SyntheticsLocation",
     "SyntheticsLocations",
     "SyntheticsParsingOptions",
@@ -1660,6 +1688,7 @@ __all__ = [
     "SyntheticsTestRequestBodyType",
     "SyntheticsTestRequestCertificate",
     "SyntheticsTestRequestCertificateItem",
+    "SyntheticsTestRequestPort",
     "SyntheticsTestRequestProxy",
     "SyntheticsTiming",
     "SyntheticsTriggerBody",
@@ -1675,6 +1704,15 @@ __all__ = [
     "TableWidgetDefinitionType",
     "TableWidgetHasSearchBar",
     "TableWidgetRequest",
+    "TableWidgetTextFormatMatch",
+    "TableWidgetTextFormatMatchType",
+    "TableWidgetTextFormatPalette",
+    "TableWidgetTextFormatReplace",
+    "TableWidgetTextFormatReplaceAll",
+    "TableWidgetTextFormatReplaceAllType",
+    "TableWidgetTextFormatReplaceSubstring",
+    "TableWidgetTextFormatReplaceSubstringType",
+    "TableWidgetTextFormatRule",
     "TagToHosts",
     "TargetFormatType",
     "TimeseriesBackground",
@@ -1826,14 +1864,20 @@ __all__ = [
     "WidgetImageSizing",
     "WidgetLayout",
     "WidgetLayoutType",
+    "WidgetLegacyLiveSpan",
     "WidgetLineType",
     "WidgetLineWidth",
     "WidgetLiveSpan",
+    "WidgetLiveSpanUnit",
     "WidgetMargin",
     "WidgetMarker",
     "WidgetMessageDisplay",
     "WidgetMonitorSummaryDisplayFormat",
     "WidgetMonitorSummarySort",
+    "WidgetNewFixedSpan",
+    "WidgetNewFixedSpanType",
+    "WidgetNewLiveSpan",
+    "WidgetNewLiveSpanType",
     "WidgetNodeType",
     "WidgetOrderBy",
     "WidgetPalette",

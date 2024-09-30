@@ -17,6 +17,8 @@ class UsageSummaryDateOrg(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
+            "account_name": (str,),
+            "account_public_id": (str,),
             "agent_host_top99p": (int,),
             "apm_azure_app_service_host_top99p": (int,),
             "apm_devsecops_host_top99p": (int,),
@@ -70,6 +72,7 @@ class UsageSummaryDateOrg(ModelNormal):
             "custom_ts_avg": (int,),
             "cws_container_count_avg": (int,),
             "cws_host_top99p": (int,),
+            "data_jobs_monitoring_host_hr_sum": (int,),
             "dbm_host_top99p_sum": (int,),
             "dbm_queries_avg_sum": (int,),
             "error_tracking_events_sum": (int,),
@@ -79,6 +82,9 @@ class UsageSummaryDateOrg(ModelNormal):
             "flex_logs_compute_medium_avg": (int,),
             "flex_logs_compute_small_avg": (int,),
             "flex_logs_compute_xsmall_avg": (int,),
+            "flex_logs_starter_avg": (int,),
+            "flex_logs_starter_storage_index_avg": (int,),
+            "flex_logs_starter_storage_retention_adjustment_avg": (int,),
             "flex_stored_logs_avg": (int,),
             "forwarding_events_bytes_sum": (int,),
             "gcp_host_top99p": (int,),
@@ -129,6 +135,8 @@ class UsageSummaryDateOrg(ModelNormal):
             "rum_session_count_sum": (int,),
             "rum_total_session_count_sum": (int,),
             "rum_units_sum": (int,),
+            "sca_fargate_count_avg": (int,),
+            "sca_fargate_count_hwm": (int,),
             "sds_apm_scanned_bytes_sum": (int,),
             "sds_events_scanned_bytes_sum": (int,),
             "sds_logs_scanned_bytes_sum": (int,),
@@ -137,6 +145,7 @@ class UsageSummaryDateOrg(ModelNormal):
             "serverless_apps_azure_count_avg": (int,),
             "serverless_apps_google_count_avg": (int,),
             "serverless_apps_total_count_avg": (int,),
+            "siem_analyzed_logs_add_on_count_sum": (int,),
             "synthetics_browser_check_calls_count_sum": (int,),
             "synthetics_check_calls_count_sum": (int,),
             "synthetics_mobile_test_runs_sum": (int,),
@@ -150,6 +159,8 @@ class UsageSummaryDateOrg(ModelNormal):
         }
 
     attribute_map = {
+        "account_name": "account_name",
+        "account_public_id": "account_public_id",
         "agent_host_top99p": "agent_host_top99p",
         "apm_azure_app_service_host_top99p": "apm_azure_app_service_host_top99p",
         "apm_devsecops_host_top99p": "apm_devsecops_host_top99p",
@@ -203,6 +214,7 @@ class UsageSummaryDateOrg(ModelNormal):
         "custom_ts_avg": "custom_ts_avg",
         "cws_container_count_avg": "cws_container_count_avg",
         "cws_host_top99p": "cws_host_top99p",
+        "data_jobs_monitoring_host_hr_sum": "data_jobs_monitoring_host_hr_sum",
         "dbm_host_top99p_sum": "dbm_host_top99p_sum",
         "dbm_queries_avg_sum": "dbm_queries_avg_sum",
         "error_tracking_events_sum": "error_tracking_events_sum",
@@ -212,6 +224,9 @@ class UsageSummaryDateOrg(ModelNormal):
         "flex_logs_compute_medium_avg": "flex_logs_compute_medium_avg",
         "flex_logs_compute_small_avg": "flex_logs_compute_small_avg",
         "flex_logs_compute_xsmall_avg": "flex_logs_compute_xsmall_avg",
+        "flex_logs_starter_avg": "flex_logs_starter_avg",
+        "flex_logs_starter_storage_index_avg": "flex_logs_starter_storage_index_avg",
+        "flex_logs_starter_storage_retention_adjustment_avg": "flex_logs_starter_storage_retention_adjustment_avg",
         "flex_stored_logs_avg": "flex_stored_logs_avg",
         "forwarding_events_bytes_sum": "forwarding_events_bytes_sum",
         "gcp_host_top99p": "gcp_host_top99p",
@@ -262,6 +277,8 @@ class UsageSummaryDateOrg(ModelNormal):
         "rum_session_count_sum": "rum_session_count_sum",
         "rum_total_session_count_sum": "rum_total_session_count_sum",
         "rum_units_sum": "rum_units_sum",
+        "sca_fargate_count_avg": "sca_fargate_count_avg",
+        "sca_fargate_count_hwm": "sca_fargate_count_hwm",
         "sds_apm_scanned_bytes_sum": "sds_apm_scanned_bytes_sum",
         "sds_events_scanned_bytes_sum": "sds_events_scanned_bytes_sum",
         "sds_logs_scanned_bytes_sum": "sds_logs_scanned_bytes_sum",
@@ -270,6 +287,7 @@ class UsageSummaryDateOrg(ModelNormal):
         "serverless_apps_azure_count_avg": "serverless_apps_azure_count_avg",
         "serverless_apps_google_count_avg": "serverless_apps_google_count_avg",
         "serverless_apps_total_count_avg": "serverless_apps_total_count_avg",
+        "siem_analyzed_logs_add_on_count_sum": "siem_analyzed_logs_add_on_count_sum",
         "synthetics_browser_check_calls_count_sum": "synthetics_browser_check_calls_count_sum",
         "synthetics_check_calls_count_sum": "synthetics_check_calls_count_sum",
         "synthetics_mobile_test_runs_sum": "synthetics_mobile_test_runs_sum",
@@ -284,6 +302,8 @@ class UsageSummaryDateOrg(ModelNormal):
 
     def __init__(
         self_,
+        account_name: Union[str, UnsetType] = unset,
+        account_public_id: Union[str, UnsetType] = unset,
         agent_host_top99p: Union[int, UnsetType] = unset,
         apm_azure_app_service_host_top99p: Union[int, UnsetType] = unset,
         apm_devsecops_host_top99p: Union[int, UnsetType] = unset,
@@ -337,6 +357,7 @@ class UsageSummaryDateOrg(ModelNormal):
         custom_ts_avg: Union[int, UnsetType] = unset,
         cws_container_count_avg: Union[int, UnsetType] = unset,
         cws_host_top99p: Union[int, UnsetType] = unset,
+        data_jobs_monitoring_host_hr_sum: Union[int, UnsetType] = unset,
         dbm_host_top99p_sum: Union[int, UnsetType] = unset,
         dbm_queries_avg_sum: Union[int, UnsetType] = unset,
         error_tracking_events_sum: Union[int, UnsetType] = unset,
@@ -346,6 +367,9 @@ class UsageSummaryDateOrg(ModelNormal):
         flex_logs_compute_medium_avg: Union[int, UnsetType] = unset,
         flex_logs_compute_small_avg: Union[int, UnsetType] = unset,
         flex_logs_compute_xsmall_avg: Union[int, UnsetType] = unset,
+        flex_logs_starter_avg: Union[int, UnsetType] = unset,
+        flex_logs_starter_storage_index_avg: Union[int, UnsetType] = unset,
+        flex_logs_starter_storage_retention_adjustment_avg: Union[int, UnsetType] = unset,
         flex_stored_logs_avg: Union[int, UnsetType] = unset,
         forwarding_events_bytes_sum: Union[int, UnsetType] = unset,
         gcp_host_top99p: Union[int, UnsetType] = unset,
@@ -396,6 +420,8 @@ class UsageSummaryDateOrg(ModelNormal):
         rum_session_count_sum: Union[int, UnsetType] = unset,
         rum_total_session_count_sum: Union[int, UnsetType] = unset,
         rum_units_sum: Union[int, UnsetType] = unset,
+        sca_fargate_count_avg: Union[int, UnsetType] = unset,
+        sca_fargate_count_hwm: Union[int, UnsetType] = unset,
         sds_apm_scanned_bytes_sum: Union[int, UnsetType] = unset,
         sds_events_scanned_bytes_sum: Union[int, UnsetType] = unset,
         sds_logs_scanned_bytes_sum: Union[int, UnsetType] = unset,
@@ -404,6 +430,7 @@ class UsageSummaryDateOrg(ModelNormal):
         serverless_apps_azure_count_avg: Union[int, UnsetType] = unset,
         serverless_apps_google_count_avg: Union[int, UnsetType] = unset,
         serverless_apps_total_count_avg: Union[int, UnsetType] = unset,
+        siem_analyzed_logs_add_on_count_sum: Union[int, UnsetType] = unset,
         synthetics_browser_check_calls_count_sum: Union[int, UnsetType] = unset,
         synthetics_check_calls_count_sum: Union[int, UnsetType] = unset,
         synthetics_mobile_test_runs_sum: Union[int, UnsetType] = unset,
@@ -418,6 +445,12 @@ class UsageSummaryDateOrg(ModelNormal):
     ):
         """
         Global hourly report of all data billed by Datadog for a given organization.
+
+        :param account_name: The account name.
+        :type account_name: str, optional
+
+        :param account_public_id: The account public id.
+        :type account_public_id: str, optional
 
         :param agent_host_top99p: Shows the 99th percentile of all agent hosts over all hours in the current date for the given org.
         :type agent_host_top99p: int, optional
@@ -578,6 +611,9 @@ class UsageSummaryDateOrg(ModelNormal):
         :param cws_host_top99p: Shows the 99th percentile of all Cloud Workload Security hosts over all hours in the current date for the given org.
         :type cws_host_top99p: int, optional
 
+        :param data_jobs_monitoring_host_hr_sum: Shows the sum of all Data Jobs Monitoring hosts over all hours in the current date for the given org.
+        :type data_jobs_monitoring_host_hr_sum: int, optional
+
         :param dbm_host_top99p_sum: Shows the 99th percentile of all Database Monitoring hosts over all hours in the current month for the given org.
         :type dbm_host_top99p_sum: int, optional
 
@@ -604,6 +640,15 @@ class UsageSummaryDateOrg(ModelNormal):
 
         :param flex_logs_compute_xsmall_avg: Shows the average number of Flex Logs Compute Extra Small Instances over all hours in the current date for the given org.
         :type flex_logs_compute_xsmall_avg: int, optional
+
+        :param flex_logs_starter_avg: Shows the average number of Flex Logs Starter Instances over all hours in the current date for the given org.
+        :type flex_logs_starter_avg: int, optional
+
+        :param flex_logs_starter_storage_index_avg: Shows the average number of Flex Logs Starter Storage Index Instances over all hours in the current date for the given org.
+        :type flex_logs_starter_storage_index_avg: int, optional
+
+        :param flex_logs_starter_storage_retention_adjustment_avg: Shows the average number of Flex Logs Starter Storage Retention Adjustment Instances over all hours in the current date for the given org.
+        :type flex_logs_starter_storage_retention_adjustment_avg: int, optional
 
         :param flex_stored_logs_avg: Shows the average of all Flex Stored Logs over all hours in the current date for the given org.
         :type flex_stored_logs_avg: int, optional
@@ -755,6 +800,12 @@ class UsageSummaryDateOrg(ModelNormal):
         :param rum_units_sum: Shows the sum of all browser and mobile RUM units over all hours in the current date for the given org (To be deprecated on October 1st, 2024). **Deprecated**.
         :type rum_units_sum: int, optional
 
+        :param sca_fargate_count_avg: Shows the average of all Software Composition Analysis Fargate tasks over all hours in the current date for the given org.
+        :type sca_fargate_count_avg: int, optional
+
+        :param sca_fargate_count_hwm: Shows the sum of the high-water marks of all Software Composition Analysis Fargate tasks over all hours in the current date for the given org.
+        :type sca_fargate_count_hwm: int, optional
+
         :param sds_apm_scanned_bytes_sum: Sum of all APM bytes scanned with sensitive data scanner over all hours in the current date for the given org.
         :type sds_apm_scanned_bytes_sum: int, optional
 
@@ -778,6 +829,9 @@ class UsageSummaryDateOrg(ModelNormal):
 
         :param serverless_apps_total_count_avg: Shows the average of the number of Serverless Apps for Azure and Google Cloud for the given date and given org.
         :type serverless_apps_total_count_avg: int, optional
+
+        :param siem_analyzed_logs_add_on_count_sum: Shows the sum of all log events analyzed by Cloud SIEM over all hours in the current date for the given org.
+        :type siem_analyzed_logs_add_on_count_sum: int, optional
 
         :param synthetics_browser_check_calls_count_sum: Shows the sum of all Synthetic browser tests over all hours in the current date for the given org.
         :type synthetics_browser_check_calls_count_sum: int, optional
@@ -809,6 +863,10 @@ class UsageSummaryDateOrg(ModelNormal):
         :param workflow_executions_usage_sum: Sum of all workflows executed over all hours in the current date for the given org.
         :type workflow_executions_usage_sum: int, optional
         """
+        if account_name is not unset:
+            kwargs["account_name"] = account_name
+        if account_public_id is not unset:
+            kwargs["account_public_id"] = account_public_id
         if agent_host_top99p is not unset:
             kwargs["agent_host_top99p"] = agent_host_top99p
         if apm_azure_app_service_host_top99p is not unset:
@@ -917,6 +975,8 @@ class UsageSummaryDateOrg(ModelNormal):
             kwargs["cws_container_count_avg"] = cws_container_count_avg
         if cws_host_top99p is not unset:
             kwargs["cws_host_top99p"] = cws_host_top99p
+        if data_jobs_monitoring_host_hr_sum is not unset:
+            kwargs["data_jobs_monitoring_host_hr_sum"] = data_jobs_monitoring_host_hr_sum
         if dbm_host_top99p_sum is not unset:
             kwargs["dbm_host_top99p_sum"] = dbm_host_top99p_sum
         if dbm_queries_avg_sum is not unset:
@@ -935,6 +995,14 @@ class UsageSummaryDateOrg(ModelNormal):
             kwargs["flex_logs_compute_small_avg"] = flex_logs_compute_small_avg
         if flex_logs_compute_xsmall_avg is not unset:
             kwargs["flex_logs_compute_xsmall_avg"] = flex_logs_compute_xsmall_avg
+        if flex_logs_starter_avg is not unset:
+            kwargs["flex_logs_starter_avg"] = flex_logs_starter_avg
+        if flex_logs_starter_storage_index_avg is not unset:
+            kwargs["flex_logs_starter_storage_index_avg"] = flex_logs_starter_storage_index_avg
+        if flex_logs_starter_storage_retention_adjustment_avg is not unset:
+            kwargs[
+                "flex_logs_starter_storage_retention_adjustment_avg"
+            ] = flex_logs_starter_storage_retention_adjustment_avg
         if flex_stored_logs_avg is not unset:
             kwargs["flex_stored_logs_avg"] = flex_stored_logs_avg
         if forwarding_events_bytes_sum is not unset:
@@ -1035,6 +1103,10 @@ class UsageSummaryDateOrg(ModelNormal):
             kwargs["rum_total_session_count_sum"] = rum_total_session_count_sum
         if rum_units_sum is not unset:
             kwargs["rum_units_sum"] = rum_units_sum
+        if sca_fargate_count_avg is not unset:
+            kwargs["sca_fargate_count_avg"] = sca_fargate_count_avg
+        if sca_fargate_count_hwm is not unset:
+            kwargs["sca_fargate_count_hwm"] = sca_fargate_count_hwm
         if sds_apm_scanned_bytes_sum is not unset:
             kwargs["sds_apm_scanned_bytes_sum"] = sds_apm_scanned_bytes_sum
         if sds_events_scanned_bytes_sum is not unset:
@@ -1051,6 +1123,8 @@ class UsageSummaryDateOrg(ModelNormal):
             kwargs["serverless_apps_google_count_avg"] = serverless_apps_google_count_avg
         if serverless_apps_total_count_avg is not unset:
             kwargs["serverless_apps_total_count_avg"] = serverless_apps_total_count_avg
+        if siem_analyzed_logs_add_on_count_sum is not unset:
+            kwargs["siem_analyzed_logs_add_on_count_sum"] = siem_analyzed_logs_add_on_count_sum
         if synthetics_browser_check_calls_count_sum is not unset:
             kwargs["synthetics_browser_check_calls_count_sum"] = synthetics_browser_check_calls_count_sum
         if synthetics_check_calls_count_sum is not unset:

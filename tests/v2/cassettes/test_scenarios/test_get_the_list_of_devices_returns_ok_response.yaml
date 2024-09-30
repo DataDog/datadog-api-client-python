@@ -1,0 +1,21 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/ndm/devices?page%5Bsize%5D=1&page%5Bnumber%5D=0&filter%5Btag%5D=device_namespace%3Adefault
+  response:
+    body:
+      string: '{"data":[{"id":"default:1.2.3.4","type":"device","attributes":{"description":"a
+        device monitored with NDM","device_type":"other","interface_statuses":{"up":2,"warning":4,"down":13},"ip_address":"1.2.3.4","location":"paris","model":"xx-123","name":"example
+        device","os_name":"example OS","os_version":"1.0.2","ping_status":"unmonitored","product_name":"example
+        device","serial_number":"X12345","status":"ok","sys_object_id":"1.3.6.1.4.1.99999","tags":["device_ip:1.2.3.4","device_id:default:1.2.3.4"]}}],"meta":{"page":{"total_filtered_count":1}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1

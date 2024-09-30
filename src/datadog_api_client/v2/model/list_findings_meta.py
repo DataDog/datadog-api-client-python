@@ -25,6 +25,10 @@ class ListFindingsMeta(ModelNormal):
     }
 
     @cached_property
+    def additional_properties_type(_):
+        return None
+
+    @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.list_findings_page import ListFindingsPage
 

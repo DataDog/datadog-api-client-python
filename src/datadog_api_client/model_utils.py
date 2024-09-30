@@ -109,7 +109,18 @@ class OpenApiModel(object):
 
     _composed_schemas = empty_dict
 
-    additional_properties_type = None
+    additional_properties_type = (
+        bool,
+        date,
+        datetime,
+        dict,
+        float,
+        int,
+        list,
+        str,
+        UUID,
+        none_type,
+    )
 
     attribute_map: Mapping[str, str] = empty_dict
 
@@ -395,16 +406,6 @@ class ModelNormal(OpenApiModel):
     def __init__(self, kwargs):
         super().__init__(kwargs)
         for var_name, var_value in kwargs.items():
-            if (
-                var_name not in self.attribute_map
-                and self._configuration is not None
-                and self._configuration.discard_unknown_keys
-                and self.additional_properties_type is None
-            ):
-                if self._spec_property_naming:
-                    # If it's returned from the API, store it if we need to send it back
-                    self.__dict__["_data_store"][var_name] = var_value
-                continue
             setattr(self, var_name, var_value)
             if not self._spec_property_naming and var_name in self.read_only_vars:
                 raise ApiAttributeError(f"`{var_name}` is a read-only attribute.")
@@ -1386,8 +1387,11 @@ def model_to_dict(model_instance, serialize=True):
     result = {}
 
     model_instances = [model_instance]
-    if model_instance._composed_schemas:
-        model_instances.extend(model_instance._composed_instances)
+    model = model_instance
+    while model._composed_schemas:
+        model_instances.extend(model._composed_instances)
+        model = model.get_oneof_instance()
+
     seen_json_attribute_names = set()
     used_fallback_python_attribute_names = set()
     py_to_json_map = {}

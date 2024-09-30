@@ -44,11 +44,13 @@ from datadog_api_client.v2.model.security_monitoring_signal_rule_create_payload 
     SecurityMonitoringSignalRuleCreatePayload,
 )
 from datadog_api_client.v2.model.cloud_configuration_rule_create_payload import CloudConfigurationRuleCreatePayload
+from datadog_api_client.v2.model.security_monitoring_rule_convert_response import SecurityMonitoringRuleConvertResponse
+from datadog_api_client.v2.model.security_monitoring_rule_convert_payload import SecurityMonitoringRuleConvertPayload
+from datadog_api_client.v2.model.security_monitoring_standard_rule_payload import SecurityMonitoringStandardRulePayload
+from datadog_api_client.v2.model.security_monitoring_signal_rule_payload import SecurityMonitoringSignalRulePayload
 from datadog_api_client.v2.model.security_monitoring_rule_test_response import SecurityMonitoringRuleTestResponse
 from datadog_api_client.v2.model.security_monitoring_rule_test_request import SecurityMonitoringRuleTestRequest
 from datadog_api_client.v2.model.security_monitoring_rule_validate_payload import SecurityMonitoringRuleValidatePayload
-from datadog_api_client.v2.model.security_monitoring_standard_rule_payload import SecurityMonitoringStandardRulePayload
-from datadog_api_client.v2.model.security_monitoring_signal_rule_payload import SecurityMonitoringSignalRulePayload
 from datadog_api_client.v2.model.cloud_configuration_rule_payload import CloudConfigurationRulePayload
 from datadog_api_client.v2.model.security_monitoring_rule_update_payload import SecurityMonitoringRuleUpdatePayload
 from datadog_api_client.v2.model.security_monitoring_signals_list_response import SecurityMonitoringSignalsListResponse
@@ -79,6 +81,49 @@ class SecurityMonitoringApi:
         if api_client is None:
             api_client = ApiClient(Configuration())
         self.api_client = api_client
+
+        self._convert_existing_security_monitoring_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityMonitoringRuleConvertResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/rules/{rule_id}/convert",
+                "operation_id": "convert_existing_security_monitoring_rule",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "rule_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "rule_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._convert_security_monitoring_rule_from_json_to_terraform_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityMonitoringRuleConvertResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/rules/convert",
+                "operation_id": "convert_security_monitoring_rule_from_json_to_terraform",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (SecurityMonitoringRuleConvertPayload,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
 
         self._create_security_filter_endpoint = _Endpoint(
             settings={
@@ -785,6 +830,45 @@ class SecurityMonitoringApi:
             headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
             api_client=api_client,
         )
+
+    def convert_existing_security_monitoring_rule(
+        self,
+        rule_id: str,
+    ) -> SecurityMonitoringRuleConvertResponse:
+        """Convert an existing rule from JSON to Terraform.
+
+        Convert an existing rule from JSON to Terraform for datadog provider
+        resource datadog_security_monitoring_rule.
+
+        :param rule_id: The ID of the rule.
+        :type rule_id: str
+        :rtype: SecurityMonitoringRuleConvertResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["rule_id"] = rule_id
+
+        return self._convert_existing_security_monitoring_rule_endpoint.call_with_http_info(**kwargs)
+
+    def convert_security_monitoring_rule_from_json_to_terraform(
+        self,
+        body: Union[
+            SecurityMonitoringRuleConvertPayload,
+            SecurityMonitoringStandardRulePayload,
+            SecurityMonitoringSignalRulePayload,
+        ],
+    ) -> SecurityMonitoringRuleConvertResponse:
+        """Convert a rule from JSON to Terraform.
+
+        Convert a rule that doesn't (yet) exist from JSON to Terraform for datadog provider
+        resource datadog_security_monitoring_rule.
+
+        :type body: SecurityMonitoringRuleConvertPayload
+        :rtype: SecurityMonitoringRuleConvertResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._convert_security_monitoring_rule_from_json_to_terraform_endpoint.call_with_http_info(**kwargs)
 
     def create_security_filter(
         self,

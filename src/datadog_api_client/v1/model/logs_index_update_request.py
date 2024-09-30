@@ -40,6 +40,7 @@ class LogsIndexUpdateRequest(ModelNormal):
             "disable_daily_limit": (bool,),
             "exclusion_filters": ([LogsExclusion],),
             "filter": (LogsFilter,),
+            "num_flex_logs_retention_days": (int,),
             "num_retention_days": (int,),
         }
 
@@ -50,6 +51,7 @@ class LogsIndexUpdateRequest(ModelNormal):
         "disable_daily_limit": "disable_daily_limit",
         "exclusion_filters": "exclusion_filters",
         "filter": "filter",
+        "num_flex_logs_retention_days": "num_flex_logs_retention_days",
         "num_retention_days": "num_retention_days",
     }
 
@@ -61,6 +63,7 @@ class LogsIndexUpdateRequest(ModelNormal):
         daily_limit_warning_threshold_percentage: Union[float, UnsetType] = unset,
         disable_daily_limit: Union[bool, UnsetType] = unset,
         exclusion_filters: Union[List[LogsExclusion], UnsetType] = unset,
+        num_flex_logs_retention_days: Union[int, UnsetType] = unset,
         num_retention_days: Union[int, UnsetType] = unset,
         **kwargs,
     ):
@@ -89,11 +92,18 @@ class LogsIndexUpdateRequest(ModelNormal):
         :param filter: Filter for logs.
         :type filter: LogsFilter
 
-        :param num_retention_days: The number of days before logs are deleted from this index. Available values depend on
-            retention plans specified in your organization's contract/subscriptions.
+        :param num_flex_logs_retention_days: The total number of days logs are stored in Standard and Flex Tier before being deleted from the index.
+            If Standard Tier is enabled on this index, logs are first retained in Standard Tier for the number of days specified through ``num_retention_days`` ,
+            and then stored in Flex Tier until the number of days specified in ``num_flex_logs_retention_days`` is reached.
+            The available values depend on retention plans specified in your organization's contract/subscriptions.
 
-            **Note:** Changing the retention for an index adjusts the length of retention for all logs
-            already in this index. It may also affect billing.
+            **Note** : Changing this value affects all logs already in this index. It may also affect billing.
+        :type num_flex_logs_retention_days: int, optional
+
+        :param num_retention_days: The number of days logs are stored in Standard Tier before aging into the Flex Tier or being deleted from the index.
+            The available values depend on retention plans specified in your organization's contract/subscriptions.
+
+            **Note** : Changing this value affects all logs already in this index. It may also affect billing.
         :type num_retention_days: int, optional
         """
         if daily_limit is not unset:
@@ -106,6 +116,8 @@ class LogsIndexUpdateRequest(ModelNormal):
             kwargs["disable_daily_limit"] = disable_daily_limit
         if exclusion_filters is not unset:
             kwargs["exclusion_filters"] = exclusion_filters
+        if num_flex_logs_retention_days is not unset:
+            kwargs["num_flex_logs_retention_days"] = num_flex_logs_retention_days
         if num_retention_days is not unset:
             kwargs["num_retention_days"] = num_retention_days
         super().__init__(kwargs)

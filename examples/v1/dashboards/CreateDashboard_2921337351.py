@@ -10,9 +10,9 @@ from datadog_api_client.v1.model.service_summary_widget_definition import Servic
 from datadog_api_client.v1.model.service_summary_widget_definition_type import ServiceSummaryWidgetDefinitionType
 from datadog_api_client.v1.model.widget import Widget
 from datadog_api_client.v1.model.widget_layout import WidgetLayout
+from datadog_api_client.v1.model.widget_legacy_live_span import WidgetLegacyLiveSpan
 from datadog_api_client.v1.model.widget_service_summary_display_format import WidgetServiceSummaryDisplayFormat
 from datadog_api_client.v1.model.widget_size_format import WidgetSizeFormat
-from datadog_api_client.v1.model.widget_time import WidgetTime
 
 body = Dashboard(
     title="Example-Dashboard",
@@ -27,7 +27,7 @@ body = Dashboard(
             ),
             definition=ServiceSummaryWidgetDefinition(
                 title="Service Summary",
-                time=WidgetTime(),
+                time=WidgetLegacyLiveSpan(),
                 type=ServiceSummaryWidgetDefinitionType.TRACE_SERVICE,
                 env="none",
                 service="",

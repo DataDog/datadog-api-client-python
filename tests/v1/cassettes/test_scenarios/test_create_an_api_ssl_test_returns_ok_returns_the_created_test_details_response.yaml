@@ -1,7 +1,8 @@
 interactions:
 - request:
-    body: '{"config":{"assertions":[{"operator":"isInMoreThan","target":10,"type":"certificate"}],"request":{"host":"datadoghq.com","port":443}},"locations":["aws:us-east-2"],"message":"BDD
-      test payload: synthetics_api_ssl_test_payload.json","name":"Test-Create_an_API_SSL_test_returns_OK_Returns_the_created_test_details_response-1706264443","options":{"accept_self_signed":true,"checkCertificateRevocation":true,"tick_every":60},"subtype":"ssl","tags":["testing:api"],"type":"api"}'
+    body: '{"config":{"assertions":[{"operator":"isInMoreThan","target":10,"type":"certificate"}],"request":{"host":"datadoghq.com","port":"{{
+      DATADOG_PORT }}"}},"locations":["aws:us-east-2"],"message":"BDD test payload:
+      synthetics_api_ssl_test_payload.json","name":"Test-Create_an_API_SSL_test_returns_OK_Returns_the_created_test_details_response-1726081858","options":{"accept_self_signed":true,"checkCertificateRevocation":true,"tick_every":60},"subtype":"ssl","tags":["testing:api"],"type":"api"}'
     headers:
       accept:
       - application/json
@@ -11,8 +12,9 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/synthetics/tests/api
   response:
     body:
-      string: '{"public_id":"q3p-xte-pfv","name":"Test-Create_an_API_SSL_test_returns_OK_Returns_the_created_test_details_response-1706264443","status":"live","type":"api","tags":["testing:api"],"created_at":"2024-01-26T10:20:43.545261+00:00","modified_at":"2024-01-26T10:20:43.545261+00:00","config":{"assertions":[{"operator":"isInMoreThan","target":10,"type":"certificate"}],"request":{"host":"datadoghq.com","port":443}},"message":"BDD
-        test payload: synthetics_api_ssl_test_payload.json","options":{"accept_self_signed":true,"checkCertificateRevocation":true,"tick_every":60},"locations":["aws:us-east-2"],"subtype":"ssl","created_by":{"name":"Frog","handle":"frog@datadoghq.com","email":"frog@datadoghq.com"},"deleted_at":null,"monitor_id":138446069,"org_id":569509,"modified_by":{"name":"Frog","handle":"frog@datadoghq.com","email":"frog@datadoghq.com"}}'
+      string: '{"public_id":"tc7-rje-6ji","name":"Test-Create_an_API_SSL_test_returns_OK_Returns_the_created_test_details_response-1726081858","status":"live","type":"api","tags":["testing:api"],"created_at":"2024-09-11T19:10:58.309955+00:00","modified_at":"2024-09-11T19:10:58.309955+00:00","config":{"assertions":[{"operator":"isInMoreThan","target":10,"type":"certificate"}],"request":{"host":"datadoghq.com","port":"{{
+        DATADOG_PORT }}"},"configVariables":[{"id":"7865d47f-47df-43b5-a612-e2dea9ed40e8","name":"DATADOG_PORT","type":"global"}]},"message":"BDD
+        test payload: synthetics_api_ssl_test_payload.json","options":{"accept_self_signed":true,"checkCertificateRevocation":true,"tick_every":60},"locations":["aws:us-east-2"],"subtype":"ssl","created_by":{"name":null,"handle":"frog@datadoghq.com","email":"frog@datadoghq.com"},"deleted_at":null,"monitor_id":153634381,"org_id":321813,"modified_by":{"name":null,"handle":"frog@datadoghq.com","email":"frog@datadoghq.com"}}'
     headers:
       content-type:
       - application/json
@@ -20,7 +22,7 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"public_ids":["q3p-xte-pfv"]}'
+    body: '{"public_ids":["tc7-rje-6ji"]}'
     headers:
       accept:
       - application/json
@@ -30,7 +32,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/synthetics/tests/delete
   response:
     body:
-      string: '{"deleted_tests":[{"public_id":"q3p-xte-pfv","deleted_at":"2024-01-26T10:20:44.591012+00:00"}]}
+      string: '{"deleted_tests":[{"public_id":"tc7-rje-6ji","deleted_at":"2024-09-11T19:10:58.896767+00:00"}]}
 
         '
     headers:

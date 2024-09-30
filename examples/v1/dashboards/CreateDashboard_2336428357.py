@@ -22,10 +22,10 @@ from datadog_api_client.v1.model.widget import Widget
 from datadog_api_client.v1.model.widget_formula import WidgetFormula
 from datadog_api_client.v1.model.widget_formula_sort import WidgetFormulaSort
 from datadog_api_client.v1.model.widget_layout import WidgetLayout
+from datadog_api_client.v1.model.widget_legacy_live_span import WidgetLegacyLiveSpan
 from datadog_api_client.v1.model.widget_sort import WidgetSort
 from datadog_api_client.v1.model.widget_sort_by import WidgetSortBy
 from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
-from datadog_api_client.v1.model.widget_time import WidgetTime
 
 body = Dashboard(
     title="Example-Dashboard",
@@ -42,7 +42,7 @@ body = Dashboard(
                 title="",
                 title_size="16",
                 title_align=WidgetTextAlign.LEFT,
-                time=WidgetTime(),
+                time=WidgetLegacyLiveSpan(),
                 type=TableWidgetDefinitionType.QUERY_TABLE,
                 requests=[
                     TableWidgetRequest(

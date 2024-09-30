@@ -33,6 +33,7 @@ class SecurityMonitoringSuppressionAttributes(ModelNormal):
             "creator": (SecurityMonitoringUser,),
             "data_exclusion_query": (str,),
             "description": (str,),
+            "editable": (bool,),
             "enabled": (bool,),
             "expiration_date": (int,),
             "name": (str,),
@@ -48,6 +49,7 @@ class SecurityMonitoringSuppressionAttributes(ModelNormal):
         "creator": "creator",
         "data_exclusion_query": "data_exclusion_query",
         "description": "description",
+        "editable": "editable",
         "enabled": "enabled",
         "expiration_date": "expiration_date",
         "name": "name",
@@ -64,6 +66,7 @@ class SecurityMonitoringSuppressionAttributes(ModelNormal):
         creator: Union[SecurityMonitoringUser, UnsetType] = unset,
         data_exclusion_query: Union[str, UnsetType] = unset,
         description: Union[str, UnsetType] = unset,
+        editable: Union[bool, UnsetType] = unset,
         enabled: Union[bool, UnsetType] = unset,
         expiration_date: Union[int, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
@@ -88,6 +91,9 @@ class SecurityMonitoringSuppressionAttributes(ModelNormal):
 
         :param description: A description for the suppression rule.
         :type description: str, optional
+
+        :param editable: Whether the suppression rule is editable.
+        :type editable: bool, optional
 
         :param enabled: Whether the suppression rule is enabled.
         :type enabled: bool, optional
@@ -121,6 +127,8 @@ class SecurityMonitoringSuppressionAttributes(ModelNormal):
             kwargs["data_exclusion_query"] = data_exclusion_query
         if description is not unset:
             kwargs["description"] = description
+        if editable is not unset:
+            kwargs["editable"] = editable
         if enabled is not unset:
             kwargs["enabled"] = enabled
         if expiration_date is not unset:

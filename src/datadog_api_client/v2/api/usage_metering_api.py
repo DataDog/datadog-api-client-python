@@ -124,6 +124,11 @@ class UsageMeteringApi:
                     "attribute": "end_date",
                     "location": "query",
                 },
+                "include_connected_accounts": {
+                    "openapi_types": (bool,),
+                    "attribute": "include_connected_accounts",
+                    "location": "query",
+                },
             },
             headers_map={
                 "accept": ["application/json;datetime-format=rfc3339"],
@@ -155,6 +160,11 @@ class UsageMeteringApi:
                 "end_month": {
                     "openapi_types": (datetime,),
                     "attribute": "end_month",
+                    "location": "query",
+                },
+                "include_connected_accounts": {
+                    "openapi_types": (bool,),
+                    "attribute": "include_connected_accounts",
                     "location": "query",
                 },
             },
@@ -194,6 +204,11 @@ class UsageMeteringApi:
                 "filter_include_descendants": {
                     "openapi_types": (bool,),
                     "attribute": "filter[include_descendants]",
+                    "location": "query",
+                },
+                "filter_include_connected_accounts": {
+                    "openapi_types": (bool,),
+                    "attribute": "filter[include_connected_accounts]",
                     "location": "query",
                 },
                 "filter_include_breakdown": {
@@ -300,6 +315,11 @@ class UsageMeteringApi:
                 "view": {
                     "openapi_types": (str,),
                     "attribute": "view",
+                    "location": "query",
+                },
+                "include_connected_accounts": {
+                    "openapi_types": (bool,),
+                    "attribute": "include_connected_accounts",
                     "location": "query",
                 },
             },
@@ -444,6 +464,7 @@ class UsageMeteringApi:
         end_month: Union[datetime, UnsetType] = unset,
         start_date: Union[datetime, UnsetType] = unset,
         end_date: Union[datetime, UnsetType] = unset,
+        include_connected_accounts: Union[bool, UnsetType] = unset,
     ) -> CostByOrgResponse:
         """Get estimated cost across your account.
 
@@ -464,6 +485,8 @@ class UsageMeteringApi:
         :type start_date: datetime, optional
         :param end_date: Datetime in ISO-8601 format, UTC, precise to day: ``[YYYY-MM-DD]`` for cost ending this day.
         :type end_date: datetime, optional
+        :param include_connected_accounts: Boolean to specify whether to include accounts connected to the current account as partner customers in the Datadog partner network program. Defaults to ``false``.
+        :type include_connected_accounts: bool, optional
         :rtype: CostByOrgResponse
         """
         kwargs: Dict[str, Any] = {}
@@ -482,6 +505,9 @@ class UsageMeteringApi:
         if end_date is not unset:
             kwargs["end_date"] = end_date
 
+        if include_connected_accounts is not unset:
+            kwargs["include_connected_accounts"] = include_connected_accounts
+
         return self._get_estimated_cost_by_org_endpoint.call_with_http_info(**kwargs)
 
     def get_historical_cost_by_org(
@@ -490,6 +516,7 @@ class UsageMeteringApi:
         *,
         view: Union[str, UnsetType] = unset,
         end_month: Union[datetime, UnsetType] = unset,
+        include_connected_accounts: Union[bool, UnsetType] = unset,
     ) -> CostByOrgResponse:
         """Get historical cost across your account.
 
@@ -504,6 +531,8 @@ class UsageMeteringApi:
         :type view: str, optional
         :param end_month: Datetime in ISO-8601 format, UTC, precise to month: ``[YYYY-MM]`` for cost ending this month.
         :type end_month: datetime, optional
+        :param include_connected_accounts: Boolean to specify whether to include accounts connected to the current account as partner customers in the Datadog partner network program. Defaults to ``false``.
+        :type include_connected_accounts: bool, optional
         :rtype: CostByOrgResponse
         """
         kwargs: Dict[str, Any] = {}
@@ -515,6 +544,9 @@ class UsageMeteringApi:
         if end_month is not unset:
             kwargs["end_month"] = end_month
 
+        if include_connected_accounts is not unset:
+            kwargs["include_connected_accounts"] = include_connected_accounts
+
         return self._get_historical_cost_by_org_endpoint.call_with_http_info(**kwargs)
 
     def get_hourly_usage(
@@ -524,6 +556,7 @@ class UsageMeteringApi:
         *,
         filter_timestamp_end: Union[datetime, UnsetType] = unset,
         filter_include_descendants: Union[bool, UnsetType] = unset,
+        filter_include_connected_accounts: Union[bool, UnsetType] = unset,
         filter_include_breakdown: Union[bool, UnsetType] = unset,
         filter_versions: Union[str, UnsetType] = unset,
         page_limit: Union[int, UnsetType] = unset,
@@ -536,18 +569,21 @@ class UsageMeteringApi:
         :param filter_timestamp_start: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
         :type filter_timestamp_start: datetime
         :param filter_product_families: Comma separated list of product families to retrieve. Available families are ``all`` , ``analyzed_logs`` ,
-            ``application_security`` , ``audit_trail`` , ``serverless`` , ``ci_app`` , ``cloud_cost_management`` ,
+            ``application_security`` , ``audit_trail`` , ``serverless`` , ``ci_app`` , ``cloud_cost_management`` , ``cloud_siem`` ,
             ``csm_container_enterprise`` , ``csm_host_enterprise`` , ``cspm`` , ``custom_events`` , ``cws`` , ``dbm`` , ``error_tracking`` ,
             ``fargate`` , ``infra_hosts`` , ``incident_management`` , ``indexed_logs`` , ``indexed_spans`` , ``ingested_spans`` , ``iot`` ,
-            ``lambda_traced_invocations`` , ``logs`` , ``network_flows`` , ``network_hosts`` , ``netflow_monitoring`` , ``observability_pipelines`` ,
+            ``lambda_traced_invocations`` , ``logs`` , ``network_flows`` , ``network_hosts`` , ``network_monitoring`` , ``observability_pipelines`` ,
             ``online_archive`` , ``profiling`` , ``rum`` , ``rum_browser_sessions`` , ``rum_mobile_sessions`` , ``sds`` , ``snmp`` ,
-            ``synthetics_api`` , ``synthetics_browser`` , ``synthetics_mobile`` , ``synthetics_parallel_testing`` , and ``timeseries``.
+            ``synthetics_api`` , ``synthetics_browser`` , ``synthetics_mobile`` , ``synthetics_parallel_testing`` , ``timeseries`` , ``vuln_management`` ,
+            and ``workflow_executions``.
             The following product family has been **deprecated** : ``audit_logs``.
         :type filter_product_families: str
         :param filter_timestamp_end: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage ending **before** this hour.
         :type filter_timestamp_end: datetime, optional
         :param filter_include_descendants: Include child org usage in the response. Defaults to false.
         :type filter_include_descendants: bool, optional
+        :param filter_include_connected_accounts: Boolean to specify whether to include accounts connected to the current account as partner customers in the Datadog partner network program. Defaults to false.
+        :type filter_include_connected_accounts: bool, optional
         :param filter_include_breakdown: Include breakdown of usage by subcategories where applicable (for product family logs only). Defaults to false.
         :type filter_include_breakdown: bool, optional
         :param filter_versions: Comma separated list of product family versions to use in the format ``product_family:version``. For example,
@@ -570,6 +606,9 @@ class UsageMeteringApi:
 
         if filter_include_descendants is not unset:
             kwargs["filter_include_descendants"] = filter_include_descendants
+
+        if filter_include_connected_accounts is not unset:
+            kwargs["filter_include_connected_accounts"] = filter_include_connected_accounts
 
         if filter_include_breakdown is not unset:
             kwargs["filter_include_breakdown"] = filter_include_breakdown
@@ -668,6 +707,7 @@ class UsageMeteringApi:
         self,
         *,
         view: Union[str, UnsetType] = unset,
+        include_connected_accounts: Union[bool, UnsetType] = unset,
     ) -> ProjectedCostResponse:
         """Get projected cost across your account.
 
@@ -678,11 +718,16 @@ class UsageMeteringApi:
 
         :param view: String to specify whether cost is broken down at a parent-org level or at the sub-org level. Available views are ``summary`` and ``sub-org``. Defaults to ``summary``.
         :type view: str, optional
+        :param include_connected_accounts: Boolean to specify whether to include accounts connected to the current account as partner customers in the Datadog partner network program. Defaults to ``false``.
+        :type include_connected_accounts: bool, optional
         :rtype: ProjectedCostResponse
         """
         kwargs: Dict[str, Any] = {}
         if view is not unset:
             kwargs["view"] = view
+
+        if include_connected_accounts is not unset:
+            kwargs["include_connected_accounts"] = include_connected_accounts
 
         return self._get_projected_cost_endpoint.call_with_http_info(**kwargs)
 

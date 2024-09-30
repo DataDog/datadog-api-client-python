@@ -40,10 +40,12 @@ class ApplicationKeyResponseIncludedItem(ModelComposed):
         # loading
         from datadog_api_client.v2.model.user import User
         from datadog_api_client.v2.model.role import Role
+        from datadog_api_client.v2.model.leaked_key import LeakedKey
 
         return {
             "oneOf": [
                 User,
                 Role,
+                LeakedKey,
             ],
         }
