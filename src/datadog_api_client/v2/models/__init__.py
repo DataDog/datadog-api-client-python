@@ -1063,6 +1063,9 @@ from datadog_api_client.v2.model.metric_tag_configuration_create_attributes impo
 )
 from datadog_api_client.v2.model.metric_tag_configuration_create_data import MetricTagConfigurationCreateData
 from datadog_api_client.v2.model.metric_tag_configuration_create_request import MetricTagConfigurationCreateRequest
+from datadog_api_client.v2.model.metric_tag_configuration_metric_type_category import (
+    MetricTagConfigurationMetricTypeCategory,
+)
 from datadog_api_client.v2.model.metric_tag_configuration_metric_types import MetricTagConfigurationMetricTypes
 from datadog_api_client.v2.model.metric_tag_configuration_response import MetricTagConfigurationResponse
 from datadog_api_client.v2.model.metric_tag_configuration_type import MetricTagConfigurationType
@@ -2849,6 +2852,7 @@ __all__ = [
     "MetricTagConfigurationCreateAttributes",
     "MetricTagConfigurationCreateData",
     "MetricTagConfigurationCreateRequest",
+    "MetricTagConfigurationMetricTypeCategory",
     "MetricTagConfigurationMetricTypes",
     "MetricTagConfigurationResponse",
     "MetricTagConfigurationType",
