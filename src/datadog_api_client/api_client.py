@@ -573,6 +573,9 @@ class AsyncApiClient(ApiClient):
             raise exc
         await self.rest_client._client.shutdown()
 
+    def close(self):
+        self.rest_client.close()
+
     async def _call_api(
         self,
         method: str,
