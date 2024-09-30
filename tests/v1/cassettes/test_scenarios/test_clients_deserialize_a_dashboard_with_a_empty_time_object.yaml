@@ -1,0 +1,44 @@
+interactions:
+- request:
+    body: '{"layout_type":"ordered","title":"Test-Clients_deserialize_a_dashboard_with_a_empty_time_object-1727205571","widgets":[{"definition":{"requests":[{"display_type":"bars","formulas":[{"formula":"query1"}],"queries":[{"data_source":"cloud_cost","name":"query1","query":"sum:aws.cost.amortized{*}
+      by {aws_product}.rollup(sum, monthly)"}],"response_format":"timeseries","style":{"line_type":"solid","line_width":"normal","palette":"dog_classic"}}],"time":{},"title":"Example
+      Cloud Cost Query","title_align":"left","title_size":"16","type":"timeseries"}}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/dashboard
+  response:
+    body:
+      string: '{"id":"han-5zg-c32","title":"Test-Clients_deserialize_a_dashboard_with_a_empty_time_object-1727205571","description":null,"author_handle":"frog@datadoghq.com","author_name":null,"layout_type":"ordered","url":"/dashboard/han-5zg-c32/test-clientsdeserializeadashboardwithaemptytimeobject-1727205571","is_read_only":false,"template_variables":null,"widgets":[{"definition":{"requests":[{"display_type":"bars","formulas":[{"formula":"query1"}],"queries":[{"data_source":"cloud_cost","name":"query1","query":"sum:aws.cost.amortized{*}
+        by {aws_product}.rollup(sum, monthly)"}],"response_format":"timeseries","style":{"line_type":"solid","line_width":"normal","palette":"dog_classic"}}],"time":{},"title":"Example
+        Cloud Cost Query","title_align":"left","title_size":"16","type":"timeseries"},"id":4274057372149908}],"notify_list":null,"created_at":"2024-09-24T19:19:32.071328+00:00","modified_at":"2024-09-24T19:19:32.071328+00:00","experience_type":"default","restricted_roles":[]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/dashboard/han-5zg-c32
+  response:
+    body:
+      string: '{"deleted_dashboard_id":"han-5zg-c32"}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1
