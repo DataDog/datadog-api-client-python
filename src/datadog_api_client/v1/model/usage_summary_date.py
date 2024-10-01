@@ -111,6 +111,8 @@ class UsageSummaryDate(ModelNormal):
             "netflow_indexed_events_count_sum": (int,),
             "npm_host_top99p": (int,),
             "observability_pipelines_bytes_processed_sum": (int,),
+            "oci_host_sum": (int,),
+            "oci_host_top99p": (int,),
             "online_archive_events_count_sum": (int,),
             "opentelemetry_apm_host_top99p": (int,),
             "opentelemetry_host_top99p": (int,),
@@ -247,6 +249,8 @@ class UsageSummaryDate(ModelNormal):
         "netflow_indexed_events_count_sum": "netflow_indexed_events_count_sum",
         "npm_host_top99p": "npm_host_top99p",
         "observability_pipelines_bytes_processed_sum": "observability_pipelines_bytes_processed_sum",
+        "oci_host_sum": "oci_host_sum",
+        "oci_host_top99p": "oci_host_top99p",
         "online_archive_events_count_sum": "online_archive_events_count_sum",
         "opentelemetry_apm_host_top99p": "opentelemetry_apm_host_top99p",
         "opentelemetry_host_top99p": "opentelemetry_host_top99p",
@@ -384,6 +388,8 @@ class UsageSummaryDate(ModelNormal):
         netflow_indexed_events_count_sum: Union[int, UnsetType] = unset,
         npm_host_top99p: Union[int, UnsetType] = unset,
         observability_pipelines_bytes_processed_sum: Union[int, UnsetType] = unset,
+        oci_host_sum: Union[int, UnsetType] = unset,
+        oci_host_top99p: Union[int, UnsetType] = unset,
         online_archive_events_count_sum: Union[int, UnsetType] = unset,
         opentelemetry_apm_host_top99p: Union[int, UnsetType] = unset,
         opentelemetry_host_top99p: Union[int, UnsetType] = unset,
@@ -695,6 +701,12 @@ class UsageSummaryDate(ModelNormal):
 
         :param observability_pipelines_bytes_processed_sum: Sum of all observability pipelines bytes processed over all hours in the current date for the given org.
         :type observability_pipelines_bytes_processed_sum: int, optional
+
+        :param oci_host_sum: Shows the sum of all Oracle Cloud Infrastructure hosts over all hours in the current date for the given org.
+        :type oci_host_sum: int, optional
+
+        :param oci_host_top99p: Shows the 99th percentile of all Oracle Cloud Infrastructure hosts over all hours in the current date for the given org.
+        :type oci_host_top99p: int, optional
 
         :param online_archive_events_count_sum: Sum of all online archived events over all hours in the current date for all organizations.
         :type online_archive_events_count_sum: int, optional
@@ -1012,6 +1024,10 @@ class UsageSummaryDate(ModelNormal):
             kwargs["npm_host_top99p"] = npm_host_top99p
         if observability_pipelines_bytes_processed_sum is not unset:
             kwargs["observability_pipelines_bytes_processed_sum"] = observability_pipelines_bytes_processed_sum
+        if oci_host_sum is not unset:
+            kwargs["oci_host_sum"] = oci_host_sum
+        if oci_host_top99p is not unset:
+            kwargs["oci_host_top99p"] = oci_host_top99p
         if online_archive_events_count_sum is not unset:
             kwargs["online_archive_events_count_sum"] = online_archive_events_count_sum
         if opentelemetry_apm_host_top99p is not unset:
