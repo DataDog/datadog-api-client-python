@@ -1324,6 +1324,28 @@
         </li></ul>
             </nav>
         </li>
+        <li class="md-nav__item"><a href="#module-datadog_api_client.v2.api.microsoft_teams_integration_api" class="md-nav__link">datadog_api_client.v2.api.microsoft_teams_integration_api module</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.microsoft_teams_integration_api.MicrosoftTeamsIntegrationApi" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">MicrosoftTeamsIntegrationApi</span></code></a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.microsoft_teams_integration_api.MicrosoftTeamsIntegrationApi.create_api_handle" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">MicrosoftTeamsIntegrationApi.create_api_handle()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.microsoft_teams_integration_api.MicrosoftTeamsIntegrationApi.delete_api_handle" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">MicrosoftTeamsIntegrationApi.delete_api_handle()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.microsoft_teams_integration_api.MicrosoftTeamsIntegrationApi.get_api_handle" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">MicrosoftTeamsIntegrationApi.get_api_handle()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.microsoft_teams_integration_api.MicrosoftTeamsIntegrationApi.get_api_handle_by_name" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">MicrosoftTeamsIntegrationApi.get_api_handle_by_name()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.microsoft_teams_integration_api.MicrosoftTeamsIntegrationApi.get_channel_by_name" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">MicrosoftTeamsIntegrationApi.get_channel_by_name()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.microsoft_teams_integration_api.MicrosoftTeamsIntegrationApi.list_api_handles" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">MicrosoftTeamsIntegrationApi.list_api_handles()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.microsoft_teams_integration_api.MicrosoftTeamsIntegrationApi.update_api_handle" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">MicrosoftTeamsIntegrationApi.update_api_handle()</span></code></a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
         <li class="md-nav__item"><a href="#module-datadog_api_client.v2.api.monitors_api" class="md-nav__link">datadog_api_client.v2.api.monitors_api module</a><nav class="md-nav">
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.monitors_api.MonitorsApi" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">MonitorsApi</span></code></a><nav class="md-nav">
@@ -5543,6 +5565,121 @@ a tag configuration to be created first.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.metric_tag_configuration_response.MetricTagConfigurationResponse" title="datadog_api_client.v2.model.metric_tag_configuration_response.MetricTagConfigurationResponse">MetricTagConfigurationResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+</section>
+<section id="module-datadog_api_client.v2.api.microsoft_teams_integration_api">
+<span id="datadog-api-client-v2-api-microsoft-teams-integration-api-module"></span><h2 id="module-datadog_api_client.v2.api.microsoft_teams_integration_api">datadog_api_client.v2.api.microsoft_teams_integration_api module<a class="headerlink" href="#module-datadog_api_client.v2.api.microsoft_teams_integration_api" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.microsoft_teams_integration_api.MicrosoftTeamsIntegrationApi">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MicrosoftTeamsIntegrationApi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_client</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datadog_api_client.v2.api.microsoft_teams_integration_api.MicrosoftTeamsIntegrationApi" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Configure your <a class="reference external" href="https://docs.datadoghq.com/integrations/microsoft_teams/">Datadog Microsoft Teams integration</a>
+directly through the Datadog API. Note: These endpoints do not support legacy connector handles.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.microsoft_teams_integration_api.MicrosoftTeamsIntegrationApi.create_api_handle">
+<span class="sig-name descname"><span class="pre">create_api_handle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.microsoft_teams_create_api_handle_request.MicrosoftTeamsCreateApiHandleRequest" title="datadog_api_client.v2.model.microsoft_teams_create_api_handle_request.MicrosoftTeamsCreateApiHandleRequest"><span class="pre">MicrosoftTeamsCreateApiHandleRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.microsoft_teams_create_api_handle_response.MicrosoftTeamsCreateApiHandleResponse" title="datadog_api_client.v2.model.microsoft_teams_create_api_handle_response.MicrosoftTeamsCreateApiHandleResponse"><span class="pre">MicrosoftTeamsCreateApiHandleResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.microsoft_teams_integration_api.MicrosoftTeamsIntegrationApi.create_api_handle" title="Link to this definition">¶</a></dt>
+<dd><p>Create handle.</p>
+<p>Create a handle in the Datadog Microsoft Teams integration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>body</strong> (<a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.microsoft_teams_create_api_handle_request.MicrosoftTeamsCreateApiHandleRequest" title="datadog_api_client.v2.model.microsoft_teams_create_api_handle_request.MicrosoftTeamsCreateApiHandleRequest"><em>MicrosoftTeamsCreateApiHandleRequest</em></a>) – Handle payload.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.microsoft_teams_create_api_handle_response.MicrosoftTeamsCreateApiHandleResponse" title="datadog_api_client.v2.model.microsoft_teams_create_api_handle_response.MicrosoftTeamsCreateApiHandleResponse">MicrosoftTeamsCreateApiHandleResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.microsoft_teams_integration_api.MicrosoftTeamsIntegrationApi.delete_api_handle">
+<span class="sig-name descname"><span class="pre">delete_api_handle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#datadog_api_client.v2.api.microsoft_teams_integration_api.MicrosoftTeamsIntegrationApi.delete_api_handle" title="Link to this definition">¶</a></dt>
+<dd><p>Delete handle.</p>
+<p>Delete a handle from the Datadog Microsoft Teams integration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>handle_id</strong> (<em>str</em>) – Your handle id.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.microsoft_teams_integration_api.MicrosoftTeamsIntegrationApi.get_api_handle">
+<span class="sig-name descname"><span class="pre">get_api_handle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.microsoft_teams_api_handle_info_response.MicrosoftTeamsApiHandleInfoResponse" title="datadog_api_client.v2.model.microsoft_teams_api_handle_info_response.MicrosoftTeamsApiHandleInfoResponse"><span class="pre">MicrosoftTeamsApiHandleInfoResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.microsoft_teams_integration_api.MicrosoftTeamsIntegrationApi.get_api_handle" title="Link to this definition">¶</a></dt>
+<dd><p>Get handle information.</p>
+<p>Get the tenant, team, and channel information of a handle from the Datadog Microsoft Teams integration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>handle_id</strong> (<em>str</em>) – Your handle id.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.microsoft_teams_api_handle_info_response.MicrosoftTeamsApiHandleInfoResponse" title="datadog_api_client.v2.model.microsoft_teams_api_handle_info_response.MicrosoftTeamsApiHandleInfoResponse">MicrosoftTeamsApiHandleInfoResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.microsoft_teams_integration_api.MicrosoftTeamsIntegrationApi.get_api_handle_by_name">
+<span class="sig-name descname"><span class="pre">get_api_handle_by_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.microsoft_teams_api_handle_info_response.MicrosoftTeamsApiHandleInfoResponse" title="datadog_api_client.v2.model.microsoft_teams_api_handle_info_response.MicrosoftTeamsApiHandleInfoResponse"><span class="pre">MicrosoftTeamsApiHandleInfoResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.microsoft_teams_integration_api.MicrosoftTeamsIntegrationApi.get_api_handle_by_name" title="Link to this definition">¶</a></dt>
+<dd><p>Get handle information by name.</p>
+<p>Get the tenant, team, and channel information of a handle by name from the Datadog Microsoft Teams integration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>handle_name</strong> (<em>str</em>) – Your handle name.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.microsoft_teams_api_handle_info_response.MicrosoftTeamsApiHandleInfoResponse" title="datadog_api_client.v2.model.microsoft_teams_api_handle_info_response.MicrosoftTeamsApiHandleInfoResponse">MicrosoftTeamsApiHandleInfoResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.microsoft_teams_integration_api.MicrosoftTeamsIntegrationApi.get_channel_by_name">
+<span class="sig-name descname"><span class="pre">get_channel_by_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tenant_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">team_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.microsoft_teams_get_channel_by_name_response.MicrosoftTeamsGetChannelByNameResponse" title="datadog_api_client.v2.model.microsoft_teams_get_channel_by_name_response.MicrosoftTeamsGetChannelByNameResponse"><span class="pre">MicrosoftTeamsGetChannelByNameResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.microsoft_teams_integration_api.MicrosoftTeamsIntegrationApi.get_channel_by_name" title="Link to this definition">¶</a></dt>
+<dd><p>Get channel information by name.</p>
+<p>Get the tenant, team, and channel ID of a channel in the Datadog Microsoft Teams integration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tenant_name</strong> (<em>str</em>) – Your tenant name.</p></li>
+<li><p><strong>team_name</strong> (<em>str</em>) – Your team name.</p></li>
+<li><p><strong>channel_name</strong> (<em>str</em>) – Your channel name.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.microsoft_teams_get_channel_by_name_response.MicrosoftTeamsGetChannelByNameResponse" title="datadog_api_client.v2.model.microsoft_teams_get_channel_by_name_response.MicrosoftTeamsGetChannelByNameResponse">MicrosoftTeamsGetChannelByNameResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.microsoft_teams_integration_api.MicrosoftTeamsIntegrationApi.list_api_handles">
+<span class="sig-name descname"><span class="pre">list_api_handles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tenant_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.microsoft_teams_api_handles_response.MicrosoftTeamsApiHandlesResponse" title="datadog_api_client.v2.model.microsoft_teams_api_handles_response.MicrosoftTeamsApiHandlesResponse"><span class="pre">MicrosoftTeamsApiHandlesResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.microsoft_teams_integration_api.MicrosoftTeamsIntegrationApi.list_api_handles" title="Link to this definition">¶</a></dt>
+<dd><p>Get all handles.</p>
+<p>Get a list of all handles from the Datadog Microsoft Teams integration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>tenant_id</strong> (<em>str</em><em>, </em><em>optional</em>) – Your tenant id.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.microsoft_teams_api_handles_response.MicrosoftTeamsApiHandlesResponse" title="datadog_api_client.v2.model.microsoft_teams_api_handles_response.MicrosoftTeamsApiHandlesResponse">MicrosoftTeamsApiHandlesResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.microsoft_teams_integration_api.MicrosoftTeamsIntegrationApi.update_api_handle">
+<span class="sig-name descname"><span class="pre">update_api_handle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.microsoft_teams_update_api_handle_request.MicrosoftTeamsUpdateApiHandleRequest" title="datadog_api_client.v2.model.microsoft_teams_update_api_handle_request.MicrosoftTeamsUpdateApiHandleRequest"><span class="pre">MicrosoftTeamsUpdateApiHandleRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.microsoft_teams_api_handle_info_response.MicrosoftTeamsApiHandleInfoResponse" title="datadog_api_client.v2.model.microsoft_teams_api_handle_info_response.MicrosoftTeamsApiHandleInfoResponse"><span class="pre">MicrosoftTeamsApiHandleInfoResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.microsoft_teams_integration_api.MicrosoftTeamsIntegrationApi.update_api_handle" title="Link to this definition">¶</a></dt>
+<dd><p>Update handle.</p>
+<p>Update a handle from the Datadog Microsoft Teams integration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>handle_id</strong> (<em>str</em>) – Your handle id.</p></li>
+<li><p><strong>body</strong> (<a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.microsoft_teams_update_api_handle_request.MicrosoftTeamsUpdateApiHandleRequest" title="datadog_api_client.v2.model.microsoft_teams_update_api_handle_request.MicrosoftTeamsUpdateApiHandleRequest"><em>MicrosoftTeamsUpdateApiHandleRequest</em></a>) – Opsgenie service payload.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.microsoft_teams_api_handle_info_response.MicrosoftTeamsApiHandleInfoResponse" title="datadog_api_client.v2.model.microsoft_teams_api_handle_info_response.MicrosoftTeamsApiHandleInfoResponse">MicrosoftTeamsApiHandleInfoResponse</a></p>
 </dd>
 </dl>
 </dd></dl>

@@ -207,6 +207,13 @@ datadog\_api\_client.v2.api.metrics\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.microsoft\_teams\_integration\_api module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.microsoft_teams_integration_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.monitors\_api module
 ------------------------------------------------
 

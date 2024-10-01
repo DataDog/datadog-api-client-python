@@ -6360,6 +6360,132 @@ datadog\_api\_client.v2.model.metrics\_timeseries\_query module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.microsoft\_teams\_api\_handle\_attributes module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.microsoft_teams_api_handle_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.microsoft\_teams\_api\_handle\_info\_response module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.microsoft_teams_api_handle_info_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.microsoft\_teams\_api\_handle\_info\_response\_attributes module
+----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.microsoft_teams_api_handle_info_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.microsoft\_teams\_api\_handle\_info\_response\_data module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.microsoft_teams_api_handle_info_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.microsoft\_teams\_api\_handle\_info\_type module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.microsoft_teams_api_handle_info_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.microsoft\_teams\_api\_handle\_request\_attributes module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.microsoft_teams_api_handle_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.microsoft\_teams\_api\_handle\_request\_data module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.microsoft_teams_api_handle_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.microsoft\_teams\_api\_handle\_response\_data module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.microsoft_teams_api_handle_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.microsoft\_teams\_api\_handle\_type module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.microsoft_teams_api_handle_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.microsoft\_teams\_api\_handles\_response module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.microsoft_teams_api_handles_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.microsoft\_teams\_channel\_info\_response\_attributes module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.microsoft_teams_channel_info_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.microsoft\_teams\_channel\_info\_response\_data module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.microsoft_teams_channel_info_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.microsoft\_teams\_channel\_info\_type module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.microsoft_teams_channel_info_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.microsoft\_teams\_create\_api\_handle\_request module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.microsoft_teams_create_api_handle_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.microsoft\_teams\_create\_api\_handle\_response module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.microsoft_teams_create_api_handle_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.microsoft\_teams\_get\_channel\_by\_name\_response module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.microsoft_teams_get_channel_by_name_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.microsoft\_teams\_update\_api\_handle\_request module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.microsoft_teams_update_api_handle_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.microsoft\_teams\_update\_api\_handle\_request\_data module
+-----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.microsoft_teams_update_api_handle_request_data
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.monitor\_config\_policy\_attribute\_create\_request module
 ----------------------------------------------------------------------------------------
 
