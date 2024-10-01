@@ -200,6 +200,13 @@ datadog\_api\_client.v2.api.logs\_metrics\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.logs\_restriction\_queries\_api module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.logs_restriction_queries_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.metrics\_api module
 -----------------------------------------------
 
