@@ -1085,6 +1085,36 @@ from datadog_api_client.v2.model.metrics_and_metric_tag_configurations_response 
 from datadog_api_client.v2.model.metrics_data_source import MetricsDataSource
 from datadog_api_client.v2.model.metrics_scalar_query import MetricsScalarQuery
 from datadog_api_client.v2.model.metrics_timeseries_query import MetricsTimeseriesQuery
+from datadog_api_client.v2.model.microsoft_teams_api_handle_attributes import MicrosoftTeamsApiHandleAttributes
+from datadog_api_client.v2.model.microsoft_teams_api_handle_info_response import MicrosoftTeamsApiHandleInfoResponse
+from datadog_api_client.v2.model.microsoft_teams_api_handle_info_response_attributes import (
+    MicrosoftTeamsApiHandleInfoResponseAttributes,
+)
+from datadog_api_client.v2.model.microsoft_teams_api_handle_info_response_data import (
+    MicrosoftTeamsApiHandleInfoResponseData,
+)
+from datadog_api_client.v2.model.microsoft_teams_api_handle_info_type import MicrosoftTeamsApiHandleInfoType
+from datadog_api_client.v2.model.microsoft_teams_api_handle_request_attributes import (
+    MicrosoftTeamsApiHandleRequestAttributes,
+)
+from datadog_api_client.v2.model.microsoft_teams_api_handle_request_data import MicrosoftTeamsApiHandleRequestData
+from datadog_api_client.v2.model.microsoft_teams_api_handle_response_data import MicrosoftTeamsApiHandleResponseData
+from datadog_api_client.v2.model.microsoft_teams_api_handle_type import MicrosoftTeamsApiHandleType
+from datadog_api_client.v2.model.microsoft_teams_api_handles_response import MicrosoftTeamsApiHandlesResponse
+from datadog_api_client.v2.model.microsoft_teams_channel_info_response_attributes import (
+    MicrosoftTeamsChannelInfoResponseAttributes,
+)
+from datadog_api_client.v2.model.microsoft_teams_channel_info_response_data import MicrosoftTeamsChannelInfoResponseData
+from datadog_api_client.v2.model.microsoft_teams_channel_info_type import MicrosoftTeamsChannelInfoType
+from datadog_api_client.v2.model.microsoft_teams_create_api_handle_request import MicrosoftTeamsCreateApiHandleRequest
+from datadog_api_client.v2.model.microsoft_teams_create_api_handle_response import MicrosoftTeamsCreateApiHandleResponse
+from datadog_api_client.v2.model.microsoft_teams_get_channel_by_name_response import (
+    MicrosoftTeamsGetChannelByNameResponse,
+)
+from datadog_api_client.v2.model.microsoft_teams_update_api_handle_request import MicrosoftTeamsUpdateApiHandleRequest
+from datadog_api_client.v2.model.microsoft_teams_update_api_handle_request_data import (
+    MicrosoftTeamsUpdateApiHandleRequestData,
+)
 from datadog_api_client.v2.model.monitor_config_policy_attribute_create_request import (
     MonitorConfigPolicyAttributeCreateRequest,
 )
@@ -2869,6 +2899,24 @@ __all__ = [
     "MetricsDataSource",
     "MetricsScalarQuery",
     "MetricsTimeseriesQuery",
+    "MicrosoftTeamsApiHandleAttributes",
+    "MicrosoftTeamsApiHandleInfoResponse",
+    "MicrosoftTeamsApiHandleInfoResponseAttributes",
+    "MicrosoftTeamsApiHandleInfoResponseData",
+    "MicrosoftTeamsApiHandleInfoType",
+    "MicrosoftTeamsApiHandleRequestAttributes",
+    "MicrosoftTeamsApiHandleRequestData",
+    "MicrosoftTeamsApiHandleResponseData",
+    "MicrosoftTeamsApiHandleType",
+    "MicrosoftTeamsApiHandlesResponse",
+    "MicrosoftTeamsChannelInfoResponseAttributes",
+    "MicrosoftTeamsChannelInfoResponseData",
+    "MicrosoftTeamsChannelInfoType",
+    "MicrosoftTeamsCreateApiHandleRequest",
+    "MicrosoftTeamsCreateApiHandleResponse",
+    "MicrosoftTeamsGetChannelByNameResponse",
+    "MicrosoftTeamsUpdateApiHandleRequest",
+    "MicrosoftTeamsUpdateApiHandleRequestData",
     "MonitorConfigPolicyAttributeCreateRequest",
     "MonitorConfigPolicyAttributeEditRequest",
     "MonitorConfigPolicyAttributeResponse",
