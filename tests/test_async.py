@@ -70,3 +70,7 @@ async def test_body():
         api_instance = metrics_api.MetricsApi(api_client)
         _, code, headers = await api_instance.submit_metrics(body=body)
         assert code == 202
+
+
+def test_close():
+    AsyncApiClient(Configuration()).close()

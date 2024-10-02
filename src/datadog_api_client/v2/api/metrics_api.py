@@ -14,7 +14,9 @@ from datadog_api_client.model_utils import (
 from datadog_api_client.v2.model.metrics_and_metric_tag_configurations_response import (
     MetricsAndMetricTagConfigurationsResponse,
 )
-from datadog_api_client.v2.model.metric_tag_configuration_metric_types import MetricTagConfigurationMetricTypes
+from datadog_api_client.v2.model.metric_tag_configuration_metric_type_category import (
+    MetricTagConfigurationMetricTypeCategory,
+)
 from datadog_api_client.v2.model.metric_bulk_tag_config_response import MetricBulkTagConfigResponse
 from datadog_api_client.v2.model.metric_bulk_tag_config_delete_request import MetricBulkTagConfigDeleteRequest
 from datadog_api_client.v2.model.metric_bulk_tag_config_create_request import MetricBulkTagConfigCreateRequest
@@ -303,7 +305,7 @@ class MetricsApi:
                     "location": "query",
                 },
                 "filter_metric_type": {
-                    "openapi_types": (MetricTagConfigurationMetricTypes,),
+                    "openapi_types": (MetricTagConfigurationMetricTypeCategory,),
                     "attribute": "filter[metric_type]",
                     "location": "query",
                 },
@@ -573,13 +575,13 @@ class MetricsApi:
         :type metric_name: str
         :param filter_groups: Filtered tag keys that the metric is configured to query with.
         :type filter_groups: str, optional
-        :param filter_hours_ago: The number of hours of look back (from now) to estimate cardinality with. Estimates are based on historical data, and unspecified fields default to the minimum 49 hours.
+        :param filter_hours_ago: The number of hours of look back (from now) to estimate cardinality with. If unspecified, it defaults to 0 hours.
         :type filter_hours_ago: int, optional
         :param filter_num_aggregations: The number of aggregations that a ``count`` , ``rate`` , or ``gauge`` metric is configured to use. Max number of aggregation combos is 9.
         :type filter_num_aggregations: int, optional
         :param filter_pct: A boolean, for distribution metrics only, to estimate cardinality if the metric includes additional percentile aggregators.
         :type filter_pct: bool, optional
-        :param filter_timespan_h: A window, in hours, from the look back to estimate cardinality with.
+        :param filter_timespan_h: A window, in hours, from the look back to estimate cardinality with. The minimum and default is 1 hour.
         :type filter_timespan_h: int, optional
         :rtype: MetricEstimateResponse
         """
@@ -667,7 +669,7 @@ class MetricsApi:
         *,
         filter_configured: Union[bool, UnsetType] = unset,
         filter_tags_configured: Union[str, UnsetType] = unset,
-        filter_metric_type: Union[MetricTagConfigurationMetricTypes, UnsetType] = unset,
+        filter_metric_type: Union[MetricTagConfigurationMetricTypeCategory, UnsetType] = unset,
         filter_include_percentiles: Union[bool, UnsetType] = unset,
         filter_queried: Union[bool, UnsetType] = unset,
         filter_tags: Union[str, UnsetType] = unset,
@@ -682,7 +684,7 @@ class MetricsApi:
         :param filter_tags_configured: Filter tag configurations by configured tags.
         :type filter_tags_configured: str, optional
         :param filter_metric_type: Filter metrics by metric type.
-        :type filter_metric_type: MetricTagConfigurationMetricTypes, optional
+        :type filter_metric_type: MetricTagConfigurationMetricTypeCategory, optional
         :param filter_include_percentiles: Filter distributions with additional percentile
             aggregations enabled or disabled.
         :type filter_include_percentiles: bool, optional

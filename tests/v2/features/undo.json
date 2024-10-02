@@ -788,6 +788,55 @@
       "type": "idempotent"
     }
   },
+  "GetChannelByName": {
+    "tag": "Microsoft Teams Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListApiHandles": {
+    "tag": "Microsoft Teams Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateApiHandle": {
+    "tag": "Microsoft Teams Integration",
+    "undo": {
+      "operationId": "DeleteApiHandle",
+      "parameters": [
+        {
+          "name": "handle_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "GetApiHandleByName": {
+    "tag": "Microsoft Teams Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "DeleteApiHandle": {
+    "tag": "Microsoft Teams Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetApiHandle": {
+    "tag": "Microsoft Teams Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateApiHandle": {
+    "tag": "Microsoft Teams Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListOpsgenieServices": {
     "tag": "Opsgenie Integration",
     "undo": {

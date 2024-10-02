@@ -1196,6 +1196,31 @@
       "type": "idempotent"
     }
   },
+  "CreateSyntheticsMobileTest": {
+    "tag": "Synthetics",
+    "undo": {
+      "operationId": "DeleteTests",
+      "parameters": [
+        {
+          "name": "body",
+          "template": "{\"public_ids\": [\"{{ public_id }}\"]}"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "GetMobileTest": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateMobileTest": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "TriggerTests": {
     "tag": "Synthetics",
     "undo": {

@@ -27,6 +27,7 @@ from datadog_api_client.v2.api.logs_archives_api import LogsArchivesApi
 from datadog_api_client.v2.api.logs_custom_destinations_api import LogsCustomDestinationsApi
 from datadog_api_client.v2.api.logs_metrics_api import LogsMetricsApi
 from datadog_api_client.v2.api.metrics_api import MetricsApi
+from datadog_api_client.v2.api.microsoft_teams_integration_api import MicrosoftTeamsIntegrationApi
 from datadog_api_client.v2.api.monitors_api import MonitorsApi
 from datadog_api_client.v2.api.network_device_monitoring_api import NetworkDeviceMonitoringApi
 from datadog_api_client.v2.api.okta_integration_api import OktaIntegrationApi
@@ -83,6 +84,7 @@ __all__ = [
     "LogsCustomDestinationsApi",
     "LogsMetricsApi",
     "MetricsApi",
+    "MicrosoftTeamsIntegrationApi",
     "MonitorsApi",
     "NetworkDeviceMonitoringApi",
     "OktaIntegrationApi",

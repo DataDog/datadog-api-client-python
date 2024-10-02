@@ -1,0 +1,57 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"channel_id":"19:iD_D2xy_sAa-JV851JJYwIa6mlW9F9Nxm3SLyZq68qY1@thread.tacv2","name":"Test-Get_all_api_handles_returns_OK_response-1727794144","team_id":"e5f50a58-c929-4fb3-8866-e2cd836de3c2","tenant_id":"4d3bac44-0230-4732-9e70-cc00736f0a97"},"type":"handle"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/integration/ms-teams/configuration/tenant-based-handles
+  response:
+    body:
+      string: '{"data":{"id":"4dd2b640-8004-11ef-a398-da7ad0900002","type":"handle","attributes":{"channel_id":"19:iD_D2xy_sAa-JV851JJYwIa6mlW9F9Nxm3SLyZq68qY1@thread.tacv2","name":"Test-Get_all_api_handles_returns_OK_response-1727794144","team_id":"e5f50a58-c929-4fb3-8866-e2cd836de3c2","tenant_id":"4d3bac44-0230-4732-9e70-cc00736f0a97"}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/integration/ms-teams/configuration/tenant-based-handles
+  response:
+    body:
+      string: '{"data":[{"id":"5f002dba-7cd2-11ef-8717-da7ad0900002","type":"ms-teams-handle-info","attributes":{"channel_id":"19:m2LnqTUOkhuzGCyeG_0xql4rbKc2ZSJ25JS6UZINc-01@thread.tacv2","channel_name":"General","name":"test","team_id":"008b01f1-4b68-4e81-b8a9-cfa27ba6c112","team_name":"incident-6252-is_this_a_new_title","tenant_id":"4d3bac44-0230-4732-9e70-cc00736f0a97","tenant_name":"Datadog,
+        Inc."}},{"id":"9fc79cf6-7ffd-11ef-b391-da7ad0900002","type":"ms-teams-handle-info","attributes":{"channel_id":"19:iD_D2xy_sAa-JV851JJYwIa6mlW9F9Nxm3SLyZq68qY1@thread.tacv2","channel_name":"General-1","name":"TwA43H2NIrilngRZ6dOvNBVNFx4fZvPgdYaroSwcvoObDbJ8RRJtSyKCjkiV2AaVziZSfxNKrL7oV4XHAC0gDv4cuZwGzkv3hJyPGqCuUEHP89CyJMOrtkCRgCM5XeNqoK28J2todRY8ibd3S3xwIwmCK83F2bnBjVB6WEDbmO92F7B9XcIglNwPpy7KMeNRjzxy8Y3c0Ji6jYQIIMRDnawdBGWqCQmGtJ7mFPCHpYlZHKBT7uyV1gIAuGtwIr","team_id":"e5f50a58-c929-4fb3-8866-e2cd836de3c2","team_name":"Chat
+        Integrations","tenant_id":"4d3bac44-0230-4732-9e70-cc00736f0a97","tenant_name":"Datadog,
+        Inc."}},{"id":"73ffbd06-8002-11ef-af80-da7ad0900002","type":"ms-teams-handle-info","attributes":{"channel_id":"19:iD_D2xy_sAa-JV851JJYwIa6mlW9F9Nxm3SLyZq68qY1@thread.tacv2","channel_name":"General-1","name":"TwA43H2NIrilngRZ6dOvNBVNFx4fZvPgdYaroSwcvoObDbJ8RRJtSyKCjkiV2AaVziZSfxNKrL7oV4XHAC0gDv4cuZwGzkv3hJyPGqCuUEHP89CyJMOrtkCRgCM5XeNqoK28J2todRY8ibd3S3xwIwmCK83F2bnBjVB6WEDbmO92F7B9XcIglNwPpy7KMeNRjzxy8Y3c0Ji6jYQIIMRDnawdBGWqCQmGtJ7mFPCHpYlZHKBT7uyV1gIAuGtwI","team_id":"e5f50a58-c929-4fb3-8866-e2cd836de3c2","team_name":"Chat
+        Integrations","tenant_id":"4d3bac44-0230-4732-9e70-cc00736f0a97","tenant_name":"Datadog,
+        Inc."}},{"id":"4dd2b640-8004-11ef-a398-da7ad0900002","type":"ms-teams-handle-info","attributes":{"channel_id":"19:iD_D2xy_sAa-JV851JJYwIa6mlW9F9Nxm3SLyZq68qY1@thread.tacv2","channel_name":"General-1","name":"Test-Get_all_api_handles_returns_OK_response-1727794144","team_id":"e5f50a58-c929-4fb3-8866-e2cd836de3c2","team_name":"Chat
+        Integrations","tenant_id":"4d3bac44-0230-4732-9e70-cc00736f0a97","tenant_name":"Datadog,
+        Inc."}}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/integration/ms-teams/configuration/tenant-based-handles/4dd2b640-8004-11ef-a398-da7ad0900002
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1

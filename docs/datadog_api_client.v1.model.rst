@@ -4470,6 +4470,125 @@ datadog\_api\_client.v1.model.synthetics\_locations module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.synthetics\_mobile\_device\_id module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_mobile_device_id
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.synthetics\_mobile\_step module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_mobile_step
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.synthetics\_mobile\_step\_type module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_mobile_step_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.synthetics\_mobile\_test module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_mobile_test
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.synthetics\_mobile\_test\_binding module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_mobile_test_binding
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.synthetics\_mobile\_test\_binding\_items module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_mobile_test_binding_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.synthetics\_mobile\_test\_binding\_items\_role module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_mobile_test_binding_items_role
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.synthetics\_mobile\_test\_ci\_options module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_mobile_test_ci_options
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.synthetics\_mobile\_test\_config module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_mobile_test_config
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.synthetics\_mobile\_test\_initial\_application\_arguments module
+----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_mobile_test_initial_application_arguments
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.synthetics\_mobile\_test\_initial\_application\_arguments\_property\_names module
+---------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_mobile_test_initial_application_arguments_property_names
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.synthetics\_mobile\_test\_options module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_mobile_test_options
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.synthetics\_mobile\_test\_options\_monitor\_options module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_mobile_test_options_monitor_options
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.synthetics\_mobile\_test\_options\_monitor\_options\_notification\_preset\_name module
+--------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_mobile_test_options_monitor_options_notification_preset_name
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.synthetics\_mobile\_test\_type module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_mobile_test_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.synthetics\_mobile\_tests\_mobile\_application module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_mobile_tests_mobile_application
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.synthetics\_mobile\_tests\_mobile\_application\_reference\_type module
+----------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_mobile_tests_mobile_application_reference_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.synthetics\_parsing\_options module
 -----------------------------------------------------------------
 

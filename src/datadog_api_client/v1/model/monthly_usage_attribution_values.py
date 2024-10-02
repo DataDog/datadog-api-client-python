@@ -59,6 +59,7 @@ class MonthlyUsageAttributionValues(ModelNormal):
             "cws_containers_usage": (float,),
             "cws_hosts_percentage": (float,),
             "cws_hosts_usage": (float,),
+            "data_jobs_monitoring_usage": (float,),
             "dbm_hosts_percentage": (float,),
             "dbm_hosts_usage": (float,),
             "dbm_queries_percentage": (float,),
@@ -200,6 +201,7 @@ class MonthlyUsageAttributionValues(ModelNormal):
         "cws_containers_usage": "cws_containers_usage",
         "cws_hosts_percentage": "cws_hosts_percentage",
         "cws_hosts_usage": "cws_hosts_usage",
+        "data_jobs_monitoring_usage": "data_jobs_monitoring_usage",
         "dbm_hosts_percentage": "dbm_hosts_percentage",
         "dbm_hosts_usage": "dbm_hosts_usage",
         "dbm_queries_percentage": "dbm_queries_percentage",
@@ -342,6 +344,7 @@ class MonthlyUsageAttributionValues(ModelNormal):
         cws_containers_usage: Union[float, UnsetType] = unset,
         cws_hosts_percentage: Union[float, UnsetType] = unset,
         cws_hosts_usage: Union[float, UnsetType] = unset,
+        data_jobs_monitoring_usage: Union[float, UnsetType] = unset,
         dbm_hosts_percentage: Union[float, UnsetType] = unset,
         dbm_hosts_usage: Union[float, UnsetType] = unset,
         dbm_queries_percentage: Union[float, UnsetType] = unset,
@@ -568,6 +571,9 @@ class MonthlyUsageAttributionValues(ModelNormal):
 
         :param cws_hosts_usage: The Cloud Workload Security host usage by tag(s).
         :type cws_hosts_usage: float, optional
+
+        :param data_jobs_monitoring_usage: The Data Jobs Monitoring usage by tag(s).
+        :type data_jobs_monitoring_usage: float, optional
 
         :param dbm_hosts_percentage: The percentage of Database Monitoring host usage by tag(s).
         :type dbm_hosts_percentage: float, optional
@@ -941,6 +947,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
             kwargs["cws_hosts_percentage"] = cws_hosts_percentage
         if cws_hosts_usage is not unset:
             kwargs["cws_hosts_usage"] = cws_hosts_usage
+        if data_jobs_monitoring_usage is not unset:
+            kwargs["data_jobs_monitoring_usage"] = data_jobs_monitoring_usage
         if dbm_hosts_percentage is not unset:
             kwargs["dbm_hosts_percentage"] = dbm_hosts_percentage
         if dbm_hosts_usage is not unset:

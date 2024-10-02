@@ -1063,6 +1063,9 @@ from datadog_api_client.v2.model.metric_tag_configuration_create_attributes impo
 )
 from datadog_api_client.v2.model.metric_tag_configuration_create_data import MetricTagConfigurationCreateData
 from datadog_api_client.v2.model.metric_tag_configuration_create_request import MetricTagConfigurationCreateRequest
+from datadog_api_client.v2.model.metric_tag_configuration_metric_type_category import (
+    MetricTagConfigurationMetricTypeCategory,
+)
 from datadog_api_client.v2.model.metric_tag_configuration_metric_types import MetricTagConfigurationMetricTypes
 from datadog_api_client.v2.model.metric_tag_configuration_response import MetricTagConfigurationResponse
 from datadog_api_client.v2.model.metric_tag_configuration_type import MetricTagConfigurationType
@@ -1082,6 +1085,36 @@ from datadog_api_client.v2.model.metrics_and_metric_tag_configurations_response 
 from datadog_api_client.v2.model.metrics_data_source import MetricsDataSource
 from datadog_api_client.v2.model.metrics_scalar_query import MetricsScalarQuery
 from datadog_api_client.v2.model.metrics_timeseries_query import MetricsTimeseriesQuery
+from datadog_api_client.v2.model.microsoft_teams_api_handle_attributes import MicrosoftTeamsApiHandleAttributes
+from datadog_api_client.v2.model.microsoft_teams_api_handle_info_response import MicrosoftTeamsApiHandleInfoResponse
+from datadog_api_client.v2.model.microsoft_teams_api_handle_info_response_attributes import (
+    MicrosoftTeamsApiHandleInfoResponseAttributes,
+)
+from datadog_api_client.v2.model.microsoft_teams_api_handle_info_response_data import (
+    MicrosoftTeamsApiHandleInfoResponseData,
+)
+from datadog_api_client.v2.model.microsoft_teams_api_handle_info_type import MicrosoftTeamsApiHandleInfoType
+from datadog_api_client.v2.model.microsoft_teams_api_handle_request_attributes import (
+    MicrosoftTeamsApiHandleRequestAttributes,
+)
+from datadog_api_client.v2.model.microsoft_teams_api_handle_request_data import MicrosoftTeamsApiHandleRequestData
+from datadog_api_client.v2.model.microsoft_teams_api_handle_response_data import MicrosoftTeamsApiHandleResponseData
+from datadog_api_client.v2.model.microsoft_teams_api_handle_type import MicrosoftTeamsApiHandleType
+from datadog_api_client.v2.model.microsoft_teams_api_handles_response import MicrosoftTeamsApiHandlesResponse
+from datadog_api_client.v2.model.microsoft_teams_channel_info_response_attributes import (
+    MicrosoftTeamsChannelInfoResponseAttributes,
+)
+from datadog_api_client.v2.model.microsoft_teams_channel_info_response_data import MicrosoftTeamsChannelInfoResponseData
+from datadog_api_client.v2.model.microsoft_teams_channel_info_type import MicrosoftTeamsChannelInfoType
+from datadog_api_client.v2.model.microsoft_teams_create_api_handle_request import MicrosoftTeamsCreateApiHandleRequest
+from datadog_api_client.v2.model.microsoft_teams_create_api_handle_response import MicrosoftTeamsCreateApiHandleResponse
+from datadog_api_client.v2.model.microsoft_teams_get_channel_by_name_response import (
+    MicrosoftTeamsGetChannelByNameResponse,
+)
+from datadog_api_client.v2.model.microsoft_teams_update_api_handle_request import MicrosoftTeamsUpdateApiHandleRequest
+from datadog_api_client.v2.model.microsoft_teams_update_api_handle_request_data import (
+    MicrosoftTeamsUpdateApiHandleRequestData,
+)
 from datadog_api_client.v2.model.monitor_config_policy_attribute_create_request import (
     MonitorConfigPolicyAttributeCreateRequest,
 )
@@ -1417,6 +1450,7 @@ from datadog_api_client.v2.model.security_filters_response import SecurityFilter
 from datadog_api_client.v2.model.security_monitoring_filter import SecurityMonitoringFilter
 from datadog_api_client.v2.model.security_monitoring_filter_action import SecurityMonitoringFilterAction
 from datadog_api_client.v2.model.security_monitoring_list_rules_response import SecurityMonitoringListRulesResponse
+from datadog_api_client.v2.model.security_monitoring_reference_table import SecurityMonitoringReferenceTable
 from datadog_api_client.v2.model.security_monitoring_rule_case import SecurityMonitoringRuleCase
 from datadog_api_client.v2.model.security_monitoring_rule_case_create import SecurityMonitoringRuleCaseCreate
 from datadog_api_client.v2.model.security_monitoring_rule_convert_payload import SecurityMonitoringRuleConvertPayload
@@ -2849,6 +2883,7 @@ __all__ = [
     "MetricTagConfigurationCreateAttributes",
     "MetricTagConfigurationCreateData",
     "MetricTagConfigurationCreateRequest",
+    "MetricTagConfigurationMetricTypeCategory",
     "MetricTagConfigurationMetricTypes",
     "MetricTagConfigurationResponse",
     "MetricTagConfigurationType",
@@ -2864,6 +2899,24 @@ __all__ = [
     "MetricsDataSource",
     "MetricsScalarQuery",
     "MetricsTimeseriesQuery",
+    "MicrosoftTeamsApiHandleAttributes",
+    "MicrosoftTeamsApiHandleInfoResponse",
+    "MicrosoftTeamsApiHandleInfoResponseAttributes",
+    "MicrosoftTeamsApiHandleInfoResponseData",
+    "MicrosoftTeamsApiHandleInfoType",
+    "MicrosoftTeamsApiHandleRequestAttributes",
+    "MicrosoftTeamsApiHandleRequestData",
+    "MicrosoftTeamsApiHandleResponseData",
+    "MicrosoftTeamsApiHandleType",
+    "MicrosoftTeamsApiHandlesResponse",
+    "MicrosoftTeamsChannelInfoResponseAttributes",
+    "MicrosoftTeamsChannelInfoResponseData",
+    "MicrosoftTeamsChannelInfoType",
+    "MicrosoftTeamsCreateApiHandleRequest",
+    "MicrosoftTeamsCreateApiHandleResponse",
+    "MicrosoftTeamsGetChannelByNameResponse",
+    "MicrosoftTeamsUpdateApiHandleRequest",
+    "MicrosoftTeamsUpdateApiHandleRequestData",
     "MonitorConfigPolicyAttributeCreateRequest",
     "MonitorConfigPolicyAttributeEditRequest",
     "MonitorConfigPolicyAttributeResponse",
@@ -3175,6 +3228,7 @@ __all__ = [
     "SecurityMonitoringFilter",
     "SecurityMonitoringFilterAction",
     "SecurityMonitoringListRulesResponse",
+    "SecurityMonitoringReferenceTable",
     "SecurityMonitoringRuleCase",
     "SecurityMonitoringRuleCaseCreate",
     "SecurityMonitoringRuleConvertPayload",

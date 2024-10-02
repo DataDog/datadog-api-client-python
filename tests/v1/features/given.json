@@ -274,6 +274,18 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n    \"name\": \"{{ unique }}\",\n    \"status\": \"paused\",\n    \"type\": \"mobile\",\n    \"config\": {\n        \"variables\": []\n    },\n    \"message\": \"\",\n    \"options\": {\n        \"device_ids\": [\n            \"synthetics:mobile:device:iphone_15_ios_17\"\n        ],\n        \"mobileApplication\": {\n            \"applicationId\": \"ab0e0aed-536d-411a-9a99-5428c27d8f8e\",\n            \"referenceId\": \"6115922a-5f5d-455e-bc7e-7955a57f3815\",\n            \"referenceType\": \"version\"\n        },\n        \"tick_every\": 3600\n    },\n    \"steps\": []\n}"
+      }
+    ],
+    "step": "there is a valid \"synthetics_mobile_test\" in the system",
+    "key": "synthetics_mobile_test",
+    "tag": "Synthetics",
+    "operationId": "CreateSyntheticsMobileTest"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\"tests\": [{\"public_id\": \"{{ synthetics_api_test_with_wrong_dns.public_id }}\"}]}"
       }
     ],
