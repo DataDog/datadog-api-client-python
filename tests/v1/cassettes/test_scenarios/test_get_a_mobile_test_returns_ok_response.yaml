@@ -1,0 +1,60 @@
+interactions:
+- request:
+    body: '{"config":{"variables":[]},"message":"","name":"Test-Get_a_Mobile_test_returns_OK_response-1727789081","options":{"device_ids":["synthetics:mobile:device:iphone_15_ios_17"],"mobileApplication":{"applicationId":"ab0e0aed-536d-411a-9a99-5428c27d8f8e","referenceId":"6115922a-5f5d-455e-bc7e-7955a57f3815","referenceType":"version"},"tick_every":3600},"status":"paused","steps":[],"type":"mobile"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/synthetics/tests/mobile
+  response:
+    body:
+      string: '{"public_id":"hxp-wk7-q37","name":"Test-Get_a_Mobile_test_returns_OK_response-1727789081","status":"paused","type":"mobile","tags":[],"created_at":"2024-10-01T13:24:42.354666+00:00","modified_at":"2024-10-01T13:24:42.354666+00:00","config":{"variables":[]},"message":"","options":{"device_ids":["synthetics:mobile:device:iphone_15_ios_17"],"mobileApplication":{"applicationId":"ab0e0aed-536d-411a-9a99-5428c27d8f8e","referenceId":"6115922a-5f5d-455e-bc7e-7955a57f3815","referenceType":"version"},"tick_every":3600},"locations":["aws:us-west-2"],"created_by":{"name":null,"handle":"frog@datadoghq.com","email":"frog@datadoghq.com"},"deleted_at":null,"monitor_id":155152455,"org_id":321813,"modified_by":{"name":null,"handle":"frog@datadoghq.com","email":"frog@datadoghq.com"},"stepCount":{"assertions":0,"subtests":0,"total":0}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v1/synthetics/tests/mobile/hxp-wk7-q37
+  response:
+    body:
+      string: '{"public_id":"hxp-wk7-q37","name":"Test-Get_a_Mobile_test_returns_OK_response-1727789081","status":"paused","type":"mobile","tags":[],"created_at":"2024-10-01T13:24:42.354666+00:00","modified_at":"2024-10-01T13:24:42.354666+00:00","config":{"variables":[]},"message":"","options":{"device_ids":["synthetics:mobile:device:iphone_15_ios_17"],"mobileApplication":{"applicationId":"ab0e0aed-536d-411a-9a99-5428c27d8f8e","referenceId":"6115922a-5f5d-455e-bc7e-7955a57f3815","referenceType":"version"},"tick_every":3600},"locations":["aws:us-west-2"],"monitor_id":155152455,"creator":{"name":null,"handle":"frog@datadoghq.com","email":"frog@datadoghq.com"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"public_ids":["hxp-wk7-q37"]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/synthetics/tests/delete
+  response:
+    body:
+      string: '{"deleted_tests":[{"public_id":"hxp-wk7-q37","deleted_at":"2024-10-01T13:24:43.687553+00:00"}]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1
