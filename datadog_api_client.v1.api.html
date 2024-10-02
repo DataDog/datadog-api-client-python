@@ -1190,6 +1190,8 @@
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v1.api.synthetics_api.SyntheticsApi.create_synthetics_browser_test" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SyntheticsApi.create_synthetics_browser_test()</span></code></a>
         </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v1.api.synthetics_api.SyntheticsApi.create_synthetics_mobile_test" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SyntheticsApi.create_synthetics_mobile_test()</span></code></a>
+        </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v1.api.synthetics_api.SyntheticsApi.delete_global_variable" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SyntheticsApi.delete_global_variable()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v1.api.synthetics_api.SyntheticsApi.delete_private_location" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SyntheticsApi.delete_private_location()</span></code></a>
@@ -1211,6 +1213,8 @@
         <li class="md-nav__item"><a href="#datadog_api_client.v1.api.synthetics_api.SyntheticsApi.get_browser_test_result" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SyntheticsApi.get_browser_test_result()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v1.api.synthetics_api.SyntheticsApi.get_global_variable" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SyntheticsApi.get_global_variable()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v1.api.synthetics_api.SyntheticsApi.get_mobile_test" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SyntheticsApi.get_mobile_test()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v1.api.synthetics_api.SyntheticsApi.get_private_location" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SyntheticsApi.get_private_location()</span></code></a>
         </li>
@@ -1237,6 +1241,8 @@
         <li class="md-nav__item"><a href="#datadog_api_client.v1.api.synthetics_api.SyntheticsApi.update_api_test" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SyntheticsApi.update_api_test()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v1.api.synthetics_api.SyntheticsApi.update_browser_test" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SyntheticsApi.update_browser_test()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v1.api.synthetics_api.SyntheticsApi.update_mobile_test" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SyntheticsApi.update_mobile_test()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v1.api.synthetics_api.SyntheticsApi.update_private_location" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SyntheticsApi.update_private_location()</span></code></a>
         </li>
@@ -4428,6 +4434,20 @@ manage both test types programmatically.</p>
 </dl>
 </dd></dl>
 <dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v1.api.synthetics_api.SyntheticsApi.create_synthetics_mobile_test">
+<span class="sig-name descname"><span class="pre">create_synthetics_mobile_test</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v1.model.html#datadog_api_client.v1.model.synthetics_mobile_test.SyntheticsMobileTest" title="datadog_api_client.v1.model.synthetics_mobile_test.SyntheticsMobileTest"><span class="pre">SyntheticsMobileTest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v1.model.html#datadog_api_client.v1.model.synthetics_mobile_test.SyntheticsMobileTest" title="datadog_api_client.v1.model.synthetics_mobile_test.SyntheticsMobileTest"><span class="pre">SyntheticsMobileTest</span></a></span></span><a class="headerlink" href="#datadog_api_client.v1.api.synthetics_api.SyntheticsApi.create_synthetics_mobile_test" title="Link to this definition">¶</a></dt>
+<dd><p>Create a mobile test.</p>
+<p>Create a Synthetic mobile test.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>body</strong> (<a class="reference internal" href="datadog_api_client.v1.model.html#datadog_api_client.v1.model.synthetics_mobile_test.SyntheticsMobileTest" title="datadog_api_client.v1.model.synthetics_mobile_test.SyntheticsMobileTest"><em>SyntheticsMobileTest</em></a>) – Details of the test to create.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v1.model.html#datadog_api_client.v1.model.synthetics_mobile_test.SyntheticsMobileTest" title="datadog_api_client.v1.model.synthetics_mobile_test.SyntheticsMobileTest">SyntheticsMobileTest</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v1.api.synthetics_api.SyntheticsApi.delete_global_variable">
 <span class="sig-name descname"><span class="pre">delete_global_variable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">variable_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#datadog_api_client.v1.api.synthetics_api.SyntheticsApi.delete_global_variable" title="Link to this definition">¶</a></dt>
 <dd><p>Delete a global variable.</p>
@@ -4601,6 +4621,21 @@ belongs.</p></li>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v1.model.html#datadog_api_client.v1.model.synthetics_global_variable.SyntheticsGlobalVariable" title="datadog_api_client.v1.model.synthetics_global_variable.SyntheticsGlobalVariable">SyntheticsGlobalVariable</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v1.api.synthetics_api.SyntheticsApi.get_mobile_test">
+<span class="sig-name descname"><span class="pre">get_mobile_test</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">public_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v1.model.html#datadog_api_client.v1.model.synthetics_mobile_test.SyntheticsMobileTest" title="datadog_api_client.v1.model.synthetics_mobile_test.SyntheticsMobileTest"><span class="pre">SyntheticsMobileTest</span></a></span></span><a class="headerlink" href="#datadog_api_client.v1.api.synthetics_api.SyntheticsApi.get_mobile_test" title="Link to this definition">¶</a></dt>
+<dd><p>Get a Mobile test.</p>
+<p>Get the detailed configuration associated with
+a Synthetic Mobile test.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>public_id</strong> (<em>str</em>) – The public ID of the test to get details from.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v1.model.html#datadog_api_client.v1.model.synthetics_mobile_test.SyntheticsMobileTest" title="datadog_api_client.v1.model.synthetics_mobile_test.SyntheticsMobileTest">SyntheticsMobileTest</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -4793,6 +4828,23 @@ tests. No arguments required.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v1.model.html#datadog_api_client.v1.model.synthetics_browser_test.SyntheticsBrowserTest" title="datadog_api_client.v1.model.synthetics_browser_test.SyntheticsBrowserTest">SyntheticsBrowserTest</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v1.api.synthetics_api.SyntheticsApi.update_mobile_test">
+<span class="sig-name descname"><span class="pre">update_mobile_test</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">public_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v1.model.html#datadog_api_client.v1.model.synthetics_mobile_test.SyntheticsMobileTest" title="datadog_api_client.v1.model.synthetics_mobile_test.SyntheticsMobileTest"><span class="pre">SyntheticsMobileTest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v1.model.html#datadog_api_client.v1.model.synthetics_mobile_test.SyntheticsMobileTest" title="datadog_api_client.v1.model.synthetics_mobile_test.SyntheticsMobileTest"><span class="pre">SyntheticsMobileTest</span></a></span></span><a class="headerlink" href="#datadog_api_client.v1.api.synthetics_api.SyntheticsApi.update_mobile_test" title="Link to this definition">¶</a></dt>
+<dd><p>Edit a Mobile test.</p>
+<p>Edit the configuration of a Synthetic Mobile test.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>public_id</strong> (<em>str</em>) – The public ID of the test to get details from.</p></li>
+<li><p><strong>body</strong> (<a class="reference internal" href="datadog_api_client.v1.model.html#datadog_api_client.v1.model.synthetics_mobile_test.SyntheticsMobileTest" title="datadog_api_client.v1.model.synthetics_mobile_test.SyntheticsMobileTest"><em>SyntheticsMobileTest</em></a>) – New test details to be saved.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v1.model.html#datadog_api_client.v1.model.synthetics_mobile_test.SyntheticsMobileTest" title="datadog_api_client.v1.model.synthetics_mobile_test.SyntheticsMobileTest">SyntheticsMobileTest</a></p>
 </dd>
 </dl>
 </dd></dl>
