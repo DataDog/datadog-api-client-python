@@ -10,7 +10,9 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/logs/events/search
   response:
     body:
-      string: '{"data":[]}'
+      string: '{"data":[],"meta":{"elapsed":0,"request_id":"pddv1ChZDajdxSjQ4ZFJOT1VyZ2xURmRrSW5BIi0KHTBXibXkWStvRXkS72BJw44UvhZhIF-UDmT52UYhEgyW3j58vq2SlrrUWNc","status":"done"}}
+
+        '
     headers:
       content-type:
       - application/json

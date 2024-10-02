@@ -40,7 +40,6 @@ body = LogsAggregateRequest(
                 aggregation=LogsAggregationFunction.PERCENTILE_90,
                 metric="@duration",
             ),
-            total="recall",
         ),
     ],
 )

@@ -8,7 +8,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/logs/events?filter%5Bquery%5D=datadog-agent&filter%5Bindexes%5D=main&filter%5Bfrom%5D=2020-09-17T11%3A48%3A36%2B01%3A00&filter%5Bto%5D=2020-09-17T12%3A48%3A36%2B01%3A00&page%5Blimit%5D=5
   response:
     body:
-      string: '{"data":[],"meta":{"elapsed":0,"request_id":"pddv1ChZVZjdFSUNKdlM3LVBKNXNPcjR6R1hnIiwKHP4qJC1KWavJCGIvcezlUg3AhhLxU4JfitQ_QFESDFVjhmcEEEIN8NN7KA","status":"done"}}
+      string: '{"data":[],"meta":{"elapsed":0,"request_id":"pddv1ChZnUldBVG01WlRMU2Q0d2xmaG1NWG1BIiwKHFtksVd_gLLg8oGdAfyjZkpusj-6_bbNxRpOSeoSDCx7sBKmq-5VxGtliw","status":"done"}}
 
         '
     headers:
