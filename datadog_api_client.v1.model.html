@@ -4410,6 +4410,12 @@
         </li></ul>
             </nav>
         </li>
+        <li class="md-nav__item"><a href="#module-datadog_api_client.v1.model.synthetics_fetch_uptimes_payload" class="md-nav__link">datadog_api_client.v1.model.synthetics_fetch_uptimes_payload module</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v1.model.synthetics_fetch_uptimes_payload.SyntheticsFetchUptimesPayload" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SyntheticsFetchUptimesPayload</span></code></a>
+        </li></ul>
+            </nav>
+        </li>
         <li class="md-nav__item"><a href="#module-datadog_api_client.v1.model.synthetics_get_api_test_latest_results_response" class="md-nav__link">datadog_api_client.v1.model.synthetics_get_api_test_latest_results_response module</a><nav class="md-nav">
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#datadog_api_client.v1.model.synthetics_get_api_test_latest_results_response.SyntheticsGetAPITestLatestResultsResponse" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SyntheticsGetAPITestLatestResultsResponse</span></code></a>
@@ -4878,6 +4884,12 @@
         </li></ul>
             </nav>
         </li>
+        <li class="md-nav__item"><a href="#module-datadog_api_client.v1.model.synthetics_test_uptime" class="md-nav__link">datadog_api_client.v1.model.synthetics_test_uptime module</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v1.model.synthetics_test_uptime.SyntheticsTestUptime" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SyntheticsTestUptime</span></code></a>
+        </li></ul>
+            </nav>
+        </li>
         <li class="md-nav__item"><a href="#module-datadog_api_client.v1.model.synthetics_timing" class="md-nav__link">datadog_api_client.v1.model.synthetics_timing module</a><nav class="md-nav">
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#datadog_api_client.v1.model.synthetics_timing.SyntheticsTiming" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SyntheticsTiming</span></code></a>
@@ -4917,6 +4929,12 @@
         <li class="md-nav__item"><a href="#module-datadog_api_client.v1.model.synthetics_update_test_pause_status_payload" class="md-nav__link">datadog_api_client.v1.model.synthetics_update_test_pause_status_payload module</a><nav class="md-nav">
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#datadog_api_client.v1.model.synthetics_update_test_pause_status_payload.SyntheticsUpdateTestPauseStatusPayload" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SyntheticsUpdateTestPauseStatusPayload</span></code></a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#module-datadog_api_client.v1.model.synthetics_uptime" class="md-nav__link">datadog_api_client.v1.model.synthetics_uptime module</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v1.model.synthetics_uptime.SyntheticsUptime" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SyntheticsUptime</span></code></a>
         </li></ul>
             </nav>
         </li>
@@ -20152,6 +20170,24 @@ type conversion is done.</p></li>
 </dl>
 </dd></dl>
 </section>
+<section id="module-datadog_api_client.v1.model.synthetics_fetch_uptimes_payload">
+<span id="datadog-api-client-v1-model-synthetics-fetch-uptimes-payload-module"></span><h2 id="module-datadog_api_client.v1.model.synthetics_fetch_uptimes_payload">datadog_api_client.v1.model.synthetics_fetch_uptimes_payload module<a class="headerlink" href="#module-datadog_api_client.v1.model.synthetics_fetch_uptimes_payload" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datadog_api_client.v1.model.synthetics_fetch_uptimes_payload.SyntheticsFetchUptimesPayload">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SyntheticsFetchUptimesPayload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datadog_api_client.v1.model.synthetics_fetch_uptimes_payload.SyntheticsFetchUptimesPayload" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.ModelNormal" title="datadog_api_client.model_utils.ModelNormal"><code class="xref py py-class docutils literal notranslate"><span class="pre">ModelNormal</span></code></a></p>
+<p>Object containing IDs of Synthetic tests and a timeframe.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>from_ts</strong> (<em>int</em>) – Timestamp in seconds (Unix epoch) for the start of uptime.</p></li>
+<li><p><strong>public_ids</strong> (<em>[</em><em>str</em><em>]</em>) – An array of Synthetic test IDs you want to delete.</p></li>
+<li><p><strong>to_ts</strong> (<em>int</em>) – Timestamp in seconds (Unix epoch) for the end of uptime.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+</section>
 <section id="module-datadog_api_client.v1.model.synthetics_get_api_test_latest_results_response">
 <span id="datadog-api-client-v1-model-synthetics-get-api-test-latest-results-response-module"></span><h2 id="module-datadog_api_client.v1.model.synthetics_get_api_test_latest_results_response">datadog_api_client.v1.model.synthetics_get_api_test_latest_results_response module<a class="headerlink" href="#module-datadog_api_client.v1.model.synthetics_get_api_test_latest_results_response" title="Link to this heading">¶</a></h2>
 <dl class="py class">
@@ -21842,6 +21878,25 @@ type conversion is done.</p></li>
 </dl>
 </dd></dl>
 </section>
+<section id="module-datadog_api_client.v1.model.synthetics_test_uptime">
+<span id="datadog-api-client-v1-model-synthetics-test-uptime-module"></span><h2 id="module-datadog_api_client.v1.model.synthetics_test_uptime">datadog_api_client.v1.model.synthetics_test_uptime module<a class="headerlink" href="#module-datadog_api_client.v1.model.synthetics_test_uptime" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datadog_api_client.v1.model.synthetics_test_uptime.SyntheticsTestUptime">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SyntheticsTestUptime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datadog_api_client.v1.model.synthetics_test_uptime.SyntheticsTestUptime" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.ModelNormal" title="datadog_api_client.model_utils.ModelNormal"><code class="xref py py-class docutils literal notranslate"><span class="pre">ModelNormal</span></code></a></p>
+<p>Object containing the uptime for a Synthetic test ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>from_ts</strong> (<em>int</em><em>, </em><em>optional</em>) – Timestamp in seconds for the start of uptime.</p></li>
+<li><p><strong>overall</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.synthetics_uptime.SyntheticsUptime" title="datadog_api_client.v1.model.synthetics_uptime.SyntheticsUptime"><em>SyntheticsUptime</em></a><em>, </em><em>optional</em>) – Object containing the uptime information.</p></li>
+<li><p><strong>public_id</strong> (<em>str</em><em>, </em><em>optional</em>) – A Synthetic test ID.</p></li>
+<li><p><strong>to_ts</strong> (<em>int</em><em>, </em><em>optional</em>) – Timestamp in seconds for the end of uptime.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+</section>
 <section id="module-datadog_api_client.v1.model.synthetics_timing">
 <span id="datadog-api-client-v1-model-synthetics-timing-module"></span><h2 id="module-datadog_api_client.v1.model.synthetics_timing">datadog_api_client.v1.model.synthetics_timing module<a class="headerlink" href="#module-datadog_api_client.v1.model.synthetics_timing" title="Link to this heading">¶</a></h2>
 <dl class="py class">
@@ -21964,6 +22019,30 @@ See the <a class="reference external" href="https://docs.datadoghq.com/synthetic
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>new_status</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.synthetics_test_pause_status.SyntheticsTestPauseStatus" title="datadog_api_client.v1.model.synthetics_test_pause_status.SyntheticsTestPauseStatus"><em>SyntheticsTestPauseStatus</em></a><em>, </em><em>optional</em>) – Define whether you want to start ( <code class="docutils literal notranslate"><span class="pre">live</span></code> ) or pause ( <code class="docutils literal notranslate"><span class="pre">paused</span></code> ) a
 Synthetic test.</p>
+</dd>
+</dl>
+</dd></dl>
+</section>
+<section id="module-datadog_api_client.v1.model.synthetics_uptime">
+<span id="datadog-api-client-v1-model-synthetics-uptime-module"></span><h2 id="module-datadog_api_client.v1.model.synthetics_uptime">datadog_api_client.v1.model.synthetics_uptime module<a class="headerlink" href="#module-datadog_api_client.v1.model.synthetics_uptime" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datadog_api_client.v1.model.synthetics_uptime.SyntheticsUptime">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SyntheticsUptime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datadog_api_client.v1.model.synthetics_uptime.SyntheticsUptime" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.ModelNormal" title="datadog_api_client.model_utils.ModelNormal"><code class="xref py py-class docutils literal notranslate"><span class="pre">ModelNormal</span></code></a></p>
+<p>Object containing the uptime information.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>errors</strong> (<em>[</em><a class="reference internal" href="#datadog_api_client.v1.model.slo_history_response_error_with_type.SLOHistoryResponseErrorWithType" title="datadog_api_client.v1.model.slo_history_response_error_with_type.SLOHistoryResponseErrorWithType"><em>SLOHistoryResponseErrorWithType</em></a><em>]</em><em>, </em><em>none_type</em><em>, </em><em>optional</em>) – An array of error objects returned while querying the history data for the service level objective.</p></li>
+<li><p><strong>group</strong> (<em>str</em><em>, </em><em>optional</em>) – The location name</p></li>
+<li><p><strong>history</strong> (<em>[</em><em>[</em><em>float</em><em>]</em><em>]</em><em>, </em><em>optional</em>) – The state transition history for the monitor, represented as an array of
+pairs. Each pair is an array where the first element is the transition timestamp
+in Unix epoch format (integer) and the second element is the state (integer).
+For the state, an integer value of <code class="docutils literal notranslate"><span class="pre">0</span></code> indicates uptime, <code class="docutils literal notranslate"><span class="pre">1</span></code> indicates downtime,
+and <code class="docutils literal notranslate"><span class="pre">2</span></code> indicates no data.</p></li>
+<li><p><strong>span_precision</strong> (<em>float</em><em>, </em><em>optional</em>) – The number of decimal places to which the SLI value is accurate for the given from-to timestamps.</p></li>
+<li><p><strong>uptime</strong> (<em>float</em><em>, </em><em>optional</em>) – The overall uptime.</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>

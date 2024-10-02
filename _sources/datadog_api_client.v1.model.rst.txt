@@ -4358,6 +4358,13 @@ datadog\_api\_client.v1.model.synthetics\_device\_id module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.synthetics\_fetch\_uptimes\_payload module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_fetch_uptimes_payload
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.synthetics\_get\_api\_test\_latest\_results\_response module
 ------------------------------------------------------------------------------------------
 
@@ -4904,6 +4911,13 @@ datadog\_api\_client.v1.model.synthetics\_test\_request\_proxy module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.synthetics\_test\_uptime module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_test_uptime
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.synthetics\_timing module
 -------------------------------------------------------
 
@@ -4950,6 +4964,13 @@ datadog\_api\_client.v1.model.synthetics\_update\_test\_pause\_status\_payload m
 -------------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_update_test_pause_status_payload
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.synthetics\_uptime module
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_uptime
    :members:
    :show-inheritance:
 

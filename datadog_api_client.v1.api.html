@@ -1200,6 +1200,8 @@
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v1.api.synthetics_api.SyntheticsApi.edit_global_variable" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SyntheticsApi.edit_global_variable()</span></code></a>
         </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v1.api.synthetics_api.SyntheticsApi.fetch_uptimes" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SyntheticsApi.fetch_uptimes()</span></code></a>
+        </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v1.api.synthetics_api.SyntheticsApi.get_api_test" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SyntheticsApi.get_api_test()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v1.api.synthetics_api.SyntheticsApi.get_api_test_latest_results" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SyntheticsApi.get_api_test_latest_results()</span></code></a>
@@ -4503,6 +4505,20 @@ manage both test types programmatically.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v1.model.html#datadog_api_client.v1.model.synthetics_global_variable.SyntheticsGlobalVariable" title="datadog_api_client.v1.model.synthetics_global_variable.SyntheticsGlobalVariable">SyntheticsGlobalVariable</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v1.api.synthetics_api.SyntheticsApi.fetch_uptimes">
+<span class="sig-name descname"><span class="pre">fetch_uptimes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v1.model.html#datadog_api_client.v1.model.synthetics_fetch_uptimes_payload.SyntheticsFetchUptimesPayload" title="datadog_api_client.v1.model.synthetics_fetch_uptimes_payload.SyntheticsFetchUptimesPayload"><span class="pre">SyntheticsFetchUptimesPayload</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="datadog_api_client.v1.model.html#datadog_api_client.v1.model.synthetics_test_uptime.SyntheticsTestUptime" title="datadog_api_client.v1.model.synthetics_test_uptime.SyntheticsTestUptime"><span class="pre">SyntheticsTestUptime</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#datadog_api_client.v1.api.synthetics_api.SyntheticsApi.fetch_uptimes" title="Link to this definition">¶</a></dt>
+<dd><p>Fetch uptime for multiple tests.</p>
+<p>Fetch uptime for multiple Synthetic tests by ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>body</strong> (<a class="reference internal" href="datadog_api_client.v1.model.html#datadog_api_client.v1.model.synthetics_fetch_uptimes_payload.SyntheticsFetchUptimesPayload" title="datadog_api_client.v1.model.synthetics_fetch_uptimes_payload.SyntheticsFetchUptimesPayload"><em>SyntheticsFetchUptimesPayload</em></a>) – Public ID list of the Synthetic tests and timeframe.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>[<a class="reference internal" href="datadog_api_client.v1.model.html#datadog_api_client.v1.model.synthetics_test_uptime.SyntheticsTestUptime" title="datadog_api_client.v1.model.synthetics_test_uptime.SyntheticsTestUptime">SyntheticsTestUptime</a>]</p>
 </dd>
 </dl>
 </dd></dl>
