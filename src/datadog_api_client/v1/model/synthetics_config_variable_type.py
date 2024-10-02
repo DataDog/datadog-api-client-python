@@ -16,16 +16,18 @@ class SyntheticsConfigVariableType(ModelSimple):
     """
     Type of the configuration variable.
 
-    :param value: Must be one of ["global", "text"].
+    :param value: Must be one of ["global", "text", "email"].
     :type value: str
     """
 
     allowed_values = {
         "global",
         "text",
+        "email",
     }
     GLOBAL: ClassVar["SyntheticsConfigVariableType"]
     TEXT: ClassVar["SyntheticsConfigVariableType"]
+    EMAIL: ClassVar["SyntheticsConfigVariableType"]
 
     @cached_property
     def openapi_types(_):
@@ -36,3 +38,4 @@ class SyntheticsConfigVariableType(ModelSimple):
 
 SyntheticsConfigVariableType.GLOBAL = SyntheticsConfigVariableType("global")
 SyntheticsConfigVariableType.TEXT = SyntheticsConfigVariableType("text")
+SyntheticsConfigVariableType.EMAIL = SyntheticsConfigVariableType("email")

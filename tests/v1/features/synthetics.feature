@@ -125,6 +125,32 @@ Feature: Synthetics
     When the request is sent
     Then the response status is 200 OK
 
+  @generated @skip @team:DataDog/synthetics-ct
+  Scenario: Create a mobile test returns "- JSON format is wrong" response
+    Given new "CreateSyntheticsMobileTest" request
+    And body with value {"config": {"initialApplicationArguments": {"propertyNames": {"pattern": "^(?!_dd).*$"}}, "variables": [{"name": "VARIABLE_NAME", "secure": false, "type": "text"}]}, "device_ids": ["apple ipad (2022),16.4"], "message": "Notification message", "name": "Example test name", "options": {"bindings": [{"items": {"principals": [], "role": "editor"}}], "ci": {"executionRule": "blocking"}, "device_ids": ["apple ipad (2022),16.4"], "mobileApplication": {"referenceType": "latest"}, "monitor_options": {"notification_preset_name": "show_all"}, "restricted_roles": ["xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"], "retry": {}, "scheduling": {"timeframes": [{"day": 1, "from": "07:00", "to": "16:00"}, {"day": 3, "from": "07:00", "to": "16:00"}], "timezone": "America/New_York"}}, "status": "live", "steps": [{"publicId": "pub-lic-id0", "type": "assertElementContent"}], "tags": ["env:production"], "type": "mobile"}
+    When the request is sent
+    Then the response status is 400 - JSON format is wrong
+
+  @team:DataDog/synthetics-ct
+  Scenario: Create a mobile test returns "OK - Returns the created test details." response
+    Given new "CreateSyntheticsMobileTest" request
+    And body from file "synthetics_mobile_test_payload.json"
+    When the request is sent
+    Then the response status is 200 OK - Returns the created test details.
+    And the response "name" is equal to "{{ unique }}"
+    And the response "options.device_ids[0]" is equal to "synthetics:mobile:device:iphone_15_ios_17"
+    And the response "options.mobileApplication.applicationId" is equal to "ab0e0aed-536d-411a-9a99-5428c27d8f8e"
+    And the response "options.mobileApplication.referenceId" is equal to "6115922a-5f5d-455e-bc7e-7955a57f3815"
+    And the response "options.mobileApplication.referenceType" is equal to "version"
+
+  @generated @skip @team:DataDog/synthetics-ct
+  Scenario: Create a mobile test returns "Test quota is reached" response
+    Given new "CreateSyntheticsMobileTest" request
+    And body with value {"config": {"initialApplicationArguments": {"propertyNames": {"pattern": "^(?!_dd).*$"}}, "variables": [{"name": "VARIABLE_NAME", "secure": false, "type": "text"}]}, "device_ids": ["apple ipad (2022),16.4"], "message": "Notification message", "name": "Example test name", "options": {"bindings": [{"items": {"principals": [], "role": "editor"}}], "ci": {"executionRule": "blocking"}, "device_ids": ["apple ipad (2022),16.4"], "mobileApplication": {"referenceType": "latest"}, "monitor_options": {"notification_preset_name": "show_all"}, "restricted_roles": ["xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"], "retry": {}, "scheduling": {"timeframes": [{"day": 1, "from": "07:00", "to": "16:00"}, {"day": 3, "from": "07:00", "to": "16:00"}], "timezone": "America/New_York"}}, "status": "live", "steps": [{"publicId": "pub-lic-id0", "type": "assertElementContent"}], "tags": ["env:production"], "type": "mobile"}
+    When the request is sent
+    Then the response status is 402 Test quota is reached
+
   @team:DataDog/synthetics-ct
   Scenario: Create a multi-step api test with every type of basicAuth returns "OK - Returns the created test details." response
     Given new "CreateSyntheticsAPITest" request
@@ -332,6 +358,36 @@ Feature: Synthetics
     And the response "deleted_tests[0].public_id" is equal to "{{ synthetics_api_test.public_id }}"
 
   @generated @skip @team:DataDog/synthetics-ct
+  Scenario: Edit a Mobile test returns "- JSON format is wrong" response
+    Given new "UpdateMobileTest" request
+    And request contains "public_id" parameter from "REPLACE.ME"
+    And body with value {"config": {"initialApplicationArguments": {"propertyNames": {"pattern": "^(?!_dd).*$"}}, "variables": [{"name": "VARIABLE_NAME", "secure": false, "type": "text"}]}, "device_ids": ["apple ipad (2022),16.4"], "message": "Notification message", "name": "Example test name", "options": {"bindings": [{"items": {"principals": [], "role": "editor"}}], "ci": {"executionRule": "blocking"}, "device_ids": ["apple ipad (2022),16.4"], "mobileApplication": {"referenceType": "latest"}, "monitor_options": {"notification_preset_name": "show_all"}, "restricted_roles": ["xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"], "retry": {}, "scheduling": {"timeframes": [{"day": 1, "from": "07:00", "to": "16:00"}, {"day": 3, "from": "07:00", "to": "16:00"}], "timezone": "America/New_York"}}, "status": "live", "steps": [{"publicId": "pub-lic-id0", "type": "assertElementContent"}], "tags": ["env:production"], "type": "mobile"}
+    When the request is sent
+    Then the response status is 400 - JSON format is wrong
+
+  @generated @skip @team:DataDog/synthetics-ct
+  Scenario: Edit a Mobile test returns "- Synthetic Monitoring is not activated for the user" response
+    Given new "UpdateMobileTest" request
+    And request contains "public_id" parameter from "REPLACE.ME"
+    And body with value {"config": {"initialApplicationArguments": {"propertyNames": {"pattern": "^(?!_dd).*$"}}, "variables": [{"name": "VARIABLE_NAME", "secure": false, "type": "text"}]}, "device_ids": ["apple ipad (2022),16.4"], "message": "Notification message", "name": "Example test name", "options": {"bindings": [{"items": {"principals": [], "role": "editor"}}], "ci": {"executionRule": "blocking"}, "device_ids": ["apple ipad (2022),16.4"], "mobileApplication": {"referenceType": "latest"}, "monitor_options": {"notification_preset_name": "show_all"}, "restricted_roles": ["xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"], "retry": {}, "scheduling": {"timeframes": [{"day": 1, "from": "07:00", "to": "16:00"}, {"day": 3, "from": "07:00", "to": "16:00"}], "timezone": "America/New_York"}}, "status": "live", "steps": [{"publicId": "pub-lic-id0", "type": "assertElementContent"}], "tags": ["env:production"], "type": "mobile"}
+    When the request is sent
+    Then the response status is 404 - Synthetic Monitoring is not activated for the user
+
+  @team:DataDog/synthetics-ct
+  Scenario: Edit a Mobile test returns "OK" response
+    Given there is a valid "synthetics_mobile_test" in the system
+    And new "UpdateMobileTest" request
+    And request contains "public_id" parameter from "synthetics_mobile_test.public_id"
+    And body from file "synthetics_mobile_test_update_payload.json"
+    When the request is sent
+    Then the response status is 200 OK - Returns the created test details.
+    And the response "name" is equal to "{{ unique }}-updated"
+    And the response "options.device_ids[0]" is equal to "synthetics:mobile:device:iphone_15_ios_17"
+    And the response "options.mobileApplication.applicationId" is equal to "ab0e0aed-536d-411a-9a99-5428c27d8f8e"
+    And the response "options.mobileApplication.referenceId" is equal to "6115922a-5f5d-455e-bc7e-7955a57f3815"
+    And the response "options.mobileApplication.referenceType" is equal to "version"
+
+  @generated @skip @team:DataDog/synthetics-ct
   Scenario: Edit a browser test returns "- JSON format is wrong" response
     Given new "UpdateBrowserTest" request
     And request contains "public_id" parameter from "REPLACE.ME"
@@ -412,6 +468,27 @@ Feature: Synthetics
     When the request is sent
     Then the response status is 200 OK
     And the response "name" is equal to "{{ synthetics_api_test.name }}-updated"
+
+  @generated @skip @team:DataDog/synthetics-ct
+  Scenario: Get a Mobile test returns "- Synthetic Monitoring is not activated for the user" response
+    Given new "GetMobileTest" request
+    And request contains "public_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 - Synthetic Monitoring is not activated for the user
+
+  @team:DataDog/synthetics-ct
+  Scenario: Get a Mobile test returns "OK" response
+    Given there is a valid "synthetics_mobile_test" in the system
+    And new "GetMobileTest" request
+    And request contains "public_id" parameter from "synthetics_mobile_test.public_id"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "name" is equal to "{{ synthetics_mobile_test.name }}"
+    And the response "options.device_ids[0]" is equal to "synthetics:mobile:device:iphone_15_ios_17"
+    And the response "options.mobileApplication.applicationId" is equal to "ab0e0aed-536d-411a-9a99-5428c27d8f8e"
+    And the response "options.mobileApplication.referenceId" is equal to "6115922a-5f5d-455e-bc7e-7955a57f3815"
+    And the response "options.mobileApplication.referenceType" is equal to "version"
+    And the response "type" is equal to "mobile"
 
   @generated @skip @team:DataDog/synthetics-ct
   Scenario: Get a browser test result returns "- Synthetic Monitoring is not activated for the user" response

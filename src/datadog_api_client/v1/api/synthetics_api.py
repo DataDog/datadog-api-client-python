@@ -30,6 +30,7 @@ from datadog_api_client.v1.model.synthetics_get_browser_test_latest_results_resp
 from datadog_api_client.v1.model.synthetics_browser_test_result_full import SyntheticsBrowserTestResultFull
 from datadog_api_client.v1.model.synthetics_delete_tests_response import SyntheticsDeleteTestsResponse
 from datadog_api_client.v1.model.synthetics_delete_tests_payload import SyntheticsDeleteTestsPayload
+from datadog_api_client.v1.model.synthetics_mobile_test import SyntheticsMobileTest
 from datadog_api_client.v1.model.synthetics_trigger_ci_tests_response import SyntheticsTriggerCITestsResponse
 from datadog_api_client.v1.model.synthetics_trigger_body import SyntheticsTriggerBody
 from datadog_api_client.v1.model.synthetics_ci_test_body import SyntheticsCITestBody
@@ -135,6 +136,26 @@ class SyntheticsApi:
                 "body": {
                     "required": True,
                     "openapi_types": (SyntheticsBrowserTest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._create_synthetics_mobile_test_endpoint = _Endpoint(
+            settings={
+                "response_type": (SyntheticsMobileTest,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v1/synthetics/tests/mobile",
+                "operation_id": "create_synthetics_mobile_test",
+                "http_method": "POST",
+                "version": "v1",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (SyntheticsMobileTest,),
                     "location": "body",
                 },
             },
@@ -439,6 +460,29 @@ class SyntheticsApi:
             api_client=api_client,
         )
 
+        self._get_mobile_test_endpoint = _Endpoint(
+            settings={
+                "response_type": (SyntheticsMobileTest,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v1/synthetics/tests/mobile/{public_id}",
+                "operation_id": "get_mobile_test",
+                "http_method": "GET",
+                "version": "v1",
+            },
+            params_map={
+                "public_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "public_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._get_private_location_endpoint = _Endpoint(
             settings={
                 "response_type": (SyntheticsPrivateLocation,),
@@ -701,6 +745,32 @@ class SyntheticsApi:
             api_client=api_client,
         )
 
+        self._update_mobile_test_endpoint = _Endpoint(
+            settings={
+                "response_type": (SyntheticsMobileTest,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v1/synthetics/tests/mobile/{public_id}",
+                "operation_id": "update_mobile_test",
+                "http_method": "PUT",
+                "version": "v1",
+            },
+            params_map={
+                "public_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "public_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (SyntheticsMobileTest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._update_private_location_endpoint = _Endpoint(
             settings={
                 "response_type": (SyntheticsPrivateLocation,),
@@ -820,6 +890,23 @@ class SyntheticsApi:
         kwargs["body"] = body
 
         return self._create_synthetics_browser_test_endpoint.call_with_http_info(**kwargs)
+
+    def create_synthetics_mobile_test(
+        self,
+        body: SyntheticsMobileTest,
+    ) -> SyntheticsMobileTest:
+        """Create a mobile test.
+
+        Create a Synthetic mobile test.
+
+        :param body: Details of the test to create.
+        :type body: SyntheticsMobileTest
+        :rtype: SyntheticsMobileTest
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_synthetics_mobile_test_endpoint.call_with_http_info(**kwargs)
 
     def delete_global_variable(
         self,
@@ -1064,6 +1151,24 @@ class SyntheticsApi:
         kwargs["variable_id"] = variable_id
 
         return self._get_global_variable_endpoint.call_with_http_info(**kwargs)
+
+    def get_mobile_test(
+        self,
+        public_id: str,
+    ) -> SyntheticsMobileTest:
+        """Get a Mobile test.
+
+        Get the detailed configuration associated with
+        a Synthetic Mobile test.
+
+        :param public_id: The public ID of the test to get details from.
+        :type public_id: str
+        :rtype: SyntheticsMobileTest
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["public_id"] = public_id
+
+        return self._get_mobile_test_endpoint.call_with_http_info(**kwargs)
 
     def get_private_location(
         self,
@@ -1314,6 +1419,28 @@ class SyntheticsApi:
         kwargs["body"] = body
 
         return self._update_browser_test_endpoint.call_with_http_info(**kwargs)
+
+    def update_mobile_test(
+        self,
+        public_id: str,
+        body: SyntheticsMobileTest,
+    ) -> SyntheticsMobileTest:
+        """Edit a Mobile test.
+
+        Edit the configuration of a Synthetic Mobile test.
+
+        :param public_id: The public ID of the test to get details from.
+        :type public_id: str
+        :param body: New test details to be saved.
+        :type body: SyntheticsMobileTest
+        :rtype: SyntheticsMobileTest
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["public_id"] = public_id
+
+        kwargs["body"] = body
+
+        return self._update_mobile_test_endpoint.call_with_http_info(**kwargs)
 
     def update_private_location(
         self,
