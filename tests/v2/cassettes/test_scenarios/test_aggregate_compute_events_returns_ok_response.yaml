@@ -10,7 +10,9 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/logs/analytics/aggregate
   response:
     body:
-      string: '{"meta":{"status":"done","request_id":"pddv1ChZ0Y2dJQVlDMVJOYWlYcjNJcDZfSnNnIiwKHJISw_RInEtZkOv0RnvMfFE5pDSf1A5hU7Jf6FISDPKeDBOH5N-0CxRhGA","elapsed":3},"data":{"buckets":[{"computes":{"c0":[{"value":1,"time":"2022-01-06T00:40:00.000Z"},{"value":1,"time":"2022-01-06T00:50:00.000Z"}]},"by":{}}]}}'
+      string: '{"meta":{"elapsed":165,"request_id":"pddv1ChY3VUd0WGZFS1IzNkpzaENGMDQ5dVlRIi0KHQwfsxs3-LlbabIdJPhP3_aSOsxZS1WRUrEaBffcEgxNrSsbB0hv7ccJCGk","status":"done"},"data":{"buckets":[]}}
+
+        '
     headers:
       content-type:
       - application/json
