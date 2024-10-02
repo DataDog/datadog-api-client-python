@@ -21,7 +21,7 @@ Feature: Logs
   Scenario: Aggregate compute events with group by returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "AggregateLogs" request
-    And body with value {"compute": [{"aggregation": "count", "interval": "5m", "type": "timeseries"}], "filter": {"from": "now-15m", "indexes": ["main"], "query": "*", "to": "now"}, "group_by": [{"facet": "host", "missing": "miss", "sort": {"type": "measure", "order": "asc", "aggregation": "pc90", "metric": "@duration"}, "total": "recall"}]}
+    And body with value {"compute": [{"aggregation": "count", "interval": "5m", "type": "timeseries"}], "filter": {"from": "now-15m", "indexes": ["main"], "query": "*", "to": "now"}, "group_by": [{"facet": "host", "missing": "miss", "sort": {"type": "measure", "order": "asc", "aggregation": "pc90", "metric": "@duration"}}]}
     When the request is sent
     Then the response status is 200 OK
     And the response "meta.status" is equal to "done"
