@@ -1,0 +1,21 @@
+interactions:
+- request:
+    body: '{"from_ts":0,"public_ids":[],"to_ts":0}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/synthetics/tests/uptimes
+  response:
+    body:
+      string: '{"errors":["Minimum number of elements in parameter ''public_ids''
+        should be 1"]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 400
+      message: Bad Request
+version: 1
