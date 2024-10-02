@@ -138,6 +138,9 @@ def glom(value, path):
     if not isinstance(value, dict):
         path = ".".join(snake_case(p) for p in path.split("."))
 
+    # Support top level array indexing
+    path = re.sub(r"^[.]+", "", path)
+
     return g(value, path) if path else value
 
 
