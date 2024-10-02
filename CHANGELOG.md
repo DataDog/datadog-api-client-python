@@ -1,5 +1,32 @@
 # Changelog
 
+## 2.29.0 / 2024-10-02
+
+### Fixed
+* change schema used in FastlyServicesResponse by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/2173
+* Fix crash when closing an async client. by @jack-edmonds-dd in https://github.com/DataDog/datadog-api-client-python/pull/2186
+### Added
+* Add new synthetics HTTP javascript assertion by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/2091
+* Dashboards - Toplist widget style - Add palette by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/2146
+* Allow Table Widget requests to specify text replace formatting in dashboards by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/2147
+* Add documentation for Data Jobs Monitoring summary keys by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/2154
+* Update estimate docs with realtime changes by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/2177
+* Ensure clients can handle empty oneOf objects by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/2175
+* Add referenceTables field to security monitoring endpoints by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/2170
+* Add UA documentation for new DJM usage_type by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/2171
+* Add v2 endpoints for MS Teams Integration by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/2180
+* Add documention for OCI Integration by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/2188
+* Add schema for mobile test by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/2163
+* Add Synthetics endpoint to fetch uptimes in API spec by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/2140
+### Changed
+* Split the synthetics request port field into a oneOf by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/2157
+* Remove unused field `color` in `TeamUpdateAttributes` by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/2155
+* Powerpack add support for prefix and available values by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/2164
+* Update v2 metrics list endpoint filter by metric type to use metric type category by @api-clients-generation-pipeline in https://github.com/DataDog/datadog-api-client-python/pull/2179
+
+
+**Full Changelog**: https://github.com/DataDog/datadog-api-client-python/compare/2.28.0...2.29.0
+
 ## 2.28.0 / 2024-09-04
 
 ### Fixed
