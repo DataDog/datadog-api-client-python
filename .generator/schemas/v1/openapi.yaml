@@ -18188,7 +18188,6 @@ components:
           $ref: '#/components/schemas/ToplistWidgetStackedType'
       required:
       - type
-      - legend
       type: object
     ToplistWidgetStackedType:
       default: stacked
