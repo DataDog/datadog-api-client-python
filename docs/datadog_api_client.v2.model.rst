@@ -3728,6 +3728,13 @@ datadog\_api\_client.v2.model.finding\_attributes module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.finding\_detection\_type module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.finding_detection_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.finding\_evaluation module
 --------------------------------------------------------
 
