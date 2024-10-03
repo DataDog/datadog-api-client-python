@@ -4876,6 +4876,20 @@ datadog\_api\_client.v2.model.incident\_update\_request module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.incident\_user\_attributes module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_user_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_user\_data module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_user_data
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.incident\_user\_defined\_field\_type module
 -------------------------------------------------------------------------
 

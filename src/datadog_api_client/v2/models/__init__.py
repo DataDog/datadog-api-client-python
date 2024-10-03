@@ -868,6 +868,8 @@ from datadog_api_client.v2.model.incident_update_attributes import IncidentUpdat
 from datadog_api_client.v2.model.incident_update_data import IncidentUpdateData
 from datadog_api_client.v2.model.incident_update_relationships import IncidentUpdateRelationships
 from datadog_api_client.v2.model.incident_update_request import IncidentUpdateRequest
+from datadog_api_client.v2.model.incident_user_attributes import IncidentUserAttributes
+from datadog_api_client.v2.model.incident_user_data import IncidentUserData
 from datadog_api_client.v2.model.incident_user_defined_field_type import IncidentUserDefinedFieldType
 from datadog_api_client.v2.model.incidents_response import IncidentsResponse
 from datadog_api_client.v2.model.include_type import IncludeType
@@ -2696,6 +2698,8 @@ __all__ = [
     "IncidentUpdateData",
     "IncidentUpdateRelationships",
     "IncidentUpdateRequest",
+    "IncidentUserAttributes",
+    "IncidentUserData",
     "IncidentUserDefinedFieldType",
     "IncidentsResponse",
     "IncludeType",
