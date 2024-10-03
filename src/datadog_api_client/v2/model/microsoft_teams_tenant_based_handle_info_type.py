@@ -12,18 +12,18 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class MicrosoftTeamsApiHandleInfoType(ModelSimple):
+class MicrosoftTeamsTenantBasedHandleInfoType(ModelSimple):
     """
-    Handle resource type.
+    Tenant-based handle resource type.
 
-    :param value: If omitted defaults to "ms-teams-handle-info". Must be one of ["ms-teams-handle-info"].
+    :param value: If omitted defaults to "ms-teams-tenant-based-handle-info". Must be one of ["ms-teams-tenant-based-handle-info"].
     :type value: str
     """
 
     allowed_values = {
-        "ms-teams-handle-info",
+        "ms-teams-tenant-based-handle-info",
     }
-    MS_TEAMS_HANDLE_INFO: ClassVar["MicrosoftTeamsApiHandleInfoType"]
+    MS_TEAMS_TENANT_BASED_HANDLE_INFO: ClassVar["MicrosoftTeamsTenantBasedHandleInfoType"]
 
     @cached_property
     def openapi_types(_):
@@ -32,4 +32,6 @@ class MicrosoftTeamsApiHandleInfoType(ModelSimple):
         }
 
 
-MicrosoftTeamsApiHandleInfoType.MS_TEAMS_HANDLE_INFO = MicrosoftTeamsApiHandleInfoType("ms-teams-handle-info")
+MicrosoftTeamsTenantBasedHandleInfoType.MS_TEAMS_TENANT_BASED_HANDLE_INFO = MicrosoftTeamsTenantBasedHandleInfoType(
+    "ms-teams-tenant-based-handle-info"
+)

@@ -13,7 +13,7 @@ from datadog_api_client.model_utils import (
 )
 
 
-class MicrosoftTeamsApiHandleInfoResponseAttributes(ModelNormal):
+class MicrosoftTeamsTenantBasedHandleInfoResponseAttributes(ModelNormal):
     validations = {
         "channel_id": {
             "max_length": 255,
@@ -72,7 +72,7 @@ class MicrosoftTeamsApiHandleInfoResponseAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        Handle attributes.
+        Tenant-based handle attributes.
 
         :param channel_id: Channel id.
         :type channel_id: str, optional
@@ -80,7 +80,7 @@ class MicrosoftTeamsApiHandleInfoResponseAttributes(ModelNormal):
         :param channel_name: Channel name.
         :type channel_name: str, optional
 
-        :param name: Handle name.
+        :param name: Tenant-based handle name.
         :type name: str, optional
 
         :param team_id: Team id.
