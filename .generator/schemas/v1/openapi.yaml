@@ -28967,6 +28967,8 @@ paths:
 
         - network-performance: `network-performance alert`
 
+        - cloud cost: `cost alert`
+
 
         **Notes**:
 
