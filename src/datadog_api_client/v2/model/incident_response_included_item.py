@@ -16,16 +16,16 @@ class IncidentResponseIncludedItem(ModelComposed):
         An object related to an incident that is included in the response.
 
         :param attributes: Attributes of user object returned by the API.
-        :type attributes: UserAttributes, optional
+        :type attributes: IncidentUserAttributes, optional
 
         :param id: ID of the user.
         :type id: str, optional
 
-        :param relationships: Relationships of the user object returned by the API.
-        :type relationships: UserResponseRelationships, optional
-
         :param type: Users resource type.
         :type type: UsersType, optional
+
+        :param relationships: The incident attachment's relationships.
+        :type relationships: IncidentAttachmentRelationships
         """
         super().__init__(kwargs)
 
@@ -38,12 +38,12 @@ class IncidentResponseIncludedItem(ModelComposed):
         # code would be run when this module is imported, and these composed
         # classes don't exist yet because their module has not finished
         # loading
-        from datadog_api_client.v2.model.user import User
+        from datadog_api_client.v2.model.incident_user_data import IncidentUserData
         from datadog_api_client.v2.model.incident_attachment_data import IncidentAttachmentData
 
         return {
             "oneOf": [
-                User,
+                IncidentUserData,
                 IncidentAttachmentData,
             ],
         }
