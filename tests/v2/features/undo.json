@@ -794,16 +794,16 @@
       "type": "safe"
     }
   },
-  "ListApiHandles": {
+  "ListTenantBasedHandles": {
     "tag": "Microsoft Teams Integration",
     "undo": {
       "type": "safe"
     }
   },
-  "CreateApiHandle": {
+  "CreateTenantBasedHandle": {
     "tag": "Microsoft Teams Integration",
     "undo": {
-      "operationId": "DeleteApiHandle",
+      "operationId": "DeleteTenantBasedHandle",
       "parameters": [
         {
           "name": "handle_id",
@@ -813,25 +813,19 @@
       "type": "unsafe"
     }
   },
-  "GetApiHandleByName": {
-    "tag": "Microsoft Teams Integration",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "DeleteApiHandle": {
+  "DeleteTenantBasedHandle": {
     "tag": "Microsoft Teams Integration",
     "undo": {
       "type": "idempotent"
     }
   },
-  "GetApiHandle": {
+  "GetTenantBasedHandle": {
     "tag": "Microsoft Teams Integration",
     "undo": {
       "type": "safe"
     }
   },
-  "UpdateApiHandle": {
+  "UpdateTenantBasedHandle": {
     "tag": "Microsoft Teams Integration",
     "undo": {
       "type": "idempotent"

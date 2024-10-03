@@ -14,11 +14,18 @@ from datadog_api_client.model_utils import (
 from datadog_api_client.v2.model.microsoft_teams_get_channel_by_name_response import (
     MicrosoftTeamsGetChannelByNameResponse,
 )
-from datadog_api_client.v2.model.microsoft_teams_api_handles_response import MicrosoftTeamsApiHandlesResponse
-from datadog_api_client.v2.model.microsoft_teams_create_api_handle_response import MicrosoftTeamsCreateApiHandleResponse
-from datadog_api_client.v2.model.microsoft_teams_create_api_handle_request import MicrosoftTeamsCreateApiHandleRequest
-from datadog_api_client.v2.model.microsoft_teams_api_handle_info_response import MicrosoftTeamsApiHandleInfoResponse
-from datadog_api_client.v2.model.microsoft_teams_update_api_handle_request import MicrosoftTeamsUpdateApiHandleRequest
+from datadog_api_client.v2.model.microsoft_teams_tenant_based_handles_response import (
+    MicrosoftTeamsTenantBasedHandlesResponse,
+)
+from datadog_api_client.v2.model.microsoft_teams_tenant_based_handle_response import (
+    MicrosoftTeamsTenantBasedHandleResponse,
+)
+from datadog_api_client.v2.model.microsoft_teams_create_tenant_based_handle_request import (
+    MicrosoftTeamsCreateTenantBasedHandleRequest,
+)
+from datadog_api_client.v2.model.microsoft_teams_update_tenant_based_handle_request import (
+    MicrosoftTeamsUpdateTenantBasedHandleRequest,
+)
 
 
 class MicrosoftTeamsIntegrationApi:
@@ -32,19 +39,19 @@ class MicrosoftTeamsIntegrationApi:
             api_client = ApiClient(Configuration())
         self.api_client = api_client
 
-        self._create_api_handle_endpoint = _Endpoint(
+        self._create_tenant_based_handle_endpoint = _Endpoint(
             settings={
-                "response_type": (MicrosoftTeamsCreateApiHandleResponse,),
+                "response_type": (MicrosoftTeamsTenantBasedHandleResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/integration/ms-teams/configuration/tenant-based-handles",
-                "operation_id": "create_api_handle",
+                "operation_id": "create_tenant_based_handle",
                 "http_method": "POST",
                 "version": "v2",
             },
             params_map={
                 "body": {
                     "required": True,
-                    "openapi_types": (MicrosoftTeamsCreateApiHandleRequest,),
+                    "openapi_types": (MicrosoftTeamsCreateTenantBasedHandleRequest,),
                     "location": "body",
                 },
             },
@@ -52,12 +59,12 @@ class MicrosoftTeamsIntegrationApi:
             api_client=api_client,
         )
 
-        self._delete_api_handle_endpoint = _Endpoint(
+        self._delete_tenant_based_handle_endpoint = _Endpoint(
             settings={
                 "response_type": None,
                 "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/integration/ms-teams/configuration/tenant-based-handles/{handle_id}",
-                "operation_id": "delete_api_handle",
+                "operation_id": "delete_tenant_based_handle",
                 "http_method": "DELETE",
                 "version": "v2",
             },
@@ -71,52 +78,6 @@ class MicrosoftTeamsIntegrationApi:
             },
             headers_map={
                 "accept": ["*/*"],
-            },
-            api_client=api_client,
-        )
-
-        self._get_api_handle_endpoint = _Endpoint(
-            settings={
-                "response_type": (MicrosoftTeamsApiHandleInfoResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
-                "endpoint_path": "/api/v2/integration/ms-teams/configuration/tenant-based-handles/{handle_id}",
-                "operation_id": "get_api_handle",
-                "http_method": "GET",
-                "version": "v2",
-            },
-            params_map={
-                "handle_id": {
-                    "required": True,
-                    "openapi_types": (str,),
-                    "attribute": "handle_id",
-                    "location": "path",
-                },
-            },
-            headers_map={
-                "accept": ["application/json"],
-            },
-            api_client=api_client,
-        )
-
-        self._get_api_handle_by_name_endpoint = _Endpoint(
-            settings={
-                "response_type": (MicrosoftTeamsApiHandleInfoResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
-                "endpoint_path": "/api/v2/integration/ms-teams/configuration/tenant-based-handles/name/{handle_name}",
-                "operation_id": "get_api_handle_by_name",
-                "http_method": "GET",
-                "version": "v2",
-            },
-            params_map={
-                "handle_name": {
-                    "required": True,
-                    "openapi_types": (str,),
-                    "attribute": "handle_name",
-                    "location": "path",
-                },
-            },
-            headers_map={
-                "accept": ["application/json"],
             },
             api_client=api_client,
         )
@@ -156,12 +117,35 @@ class MicrosoftTeamsIntegrationApi:
             api_client=api_client,
         )
 
-        self._list_api_handles_endpoint = _Endpoint(
+        self._get_tenant_based_handle_endpoint = _Endpoint(
             settings={
-                "response_type": (MicrosoftTeamsApiHandlesResponse,),
+                "response_type": (MicrosoftTeamsTenantBasedHandleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/integration/ms-teams/configuration/tenant-based-handles/{handle_id}",
+                "operation_id": "get_tenant_based_handle",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "handle_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "handle_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_tenant_based_handles_endpoint = _Endpoint(
+            settings={
+                "response_type": (MicrosoftTeamsTenantBasedHandlesResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/integration/ms-teams/configuration/tenant-based-handles",
-                "operation_id": "list_api_handles",
+                "operation_id": "list_tenant_based_handles",
                 "http_method": "GET",
                 "version": "v2",
             },
@@ -171,6 +155,11 @@ class MicrosoftTeamsIntegrationApi:
                     "attribute": "tenant_id",
                     "location": "query",
                 },
+                "name": {
+                    "openapi_types": (str,),
+                    "attribute": "name",
+                    "location": "query",
+                },
             },
             headers_map={
                 "accept": ["application/json"],
@@ -178,12 +167,12 @@ class MicrosoftTeamsIntegrationApi:
             api_client=api_client,
         )
 
-        self._update_api_handle_endpoint = _Endpoint(
+        self._update_tenant_based_handle_endpoint = _Endpoint(
             settings={
-                "response_type": (MicrosoftTeamsApiHandleInfoResponse,),
+                "response_type": (MicrosoftTeamsTenantBasedHandleResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/integration/ms-teams/configuration/tenant-based-handles/{handle_id}",
-                "operation_id": "update_api_handle",
+                "operation_id": "update_tenant_based_handle",
                 "http_method": "PATCH",
                 "version": "v2",
             },
@@ -196,7 +185,7 @@ class MicrosoftTeamsIntegrationApi:
                 },
                 "body": {
                     "required": True,
-                    "openapi_types": (MicrosoftTeamsUpdateApiHandleRequest,),
+                    "openapi_types": (MicrosoftTeamsUpdateTenantBasedHandleRequest,),
                     "location": "body",
                 },
             },
@@ -204,73 +193,39 @@ class MicrosoftTeamsIntegrationApi:
             api_client=api_client,
         )
 
-    def create_api_handle(
+    def create_tenant_based_handle(
         self,
-        body: MicrosoftTeamsCreateApiHandleRequest,
-    ) -> MicrosoftTeamsCreateApiHandleResponse:
-        """Create handle.
+        body: MicrosoftTeamsCreateTenantBasedHandleRequest,
+    ) -> MicrosoftTeamsTenantBasedHandleResponse:
+        """Create tenant-based handle.
 
-        Create a handle in the Datadog Microsoft Teams integration.
+        Create a tenant-based handle in the Datadog Microsoft Teams integration.
 
-        :param body: Handle payload.
-        :type body: MicrosoftTeamsCreateApiHandleRequest
-        :rtype: MicrosoftTeamsCreateApiHandleResponse
+        :param body: Tenant-based handle payload.
+        :type body: MicrosoftTeamsCreateTenantBasedHandleRequest
+        :rtype: MicrosoftTeamsTenantBasedHandleResponse
         """
         kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
-        return self._create_api_handle_endpoint.call_with_http_info(**kwargs)
+        return self._create_tenant_based_handle_endpoint.call_with_http_info(**kwargs)
 
-    def delete_api_handle(
+    def delete_tenant_based_handle(
         self,
         handle_id: str,
     ) -> None:
-        """Delete handle.
+        """Delete tenant-based handle.
 
-        Delete a handle from the Datadog Microsoft Teams integration.
+        Delete a tenant-based handle from the Datadog Microsoft Teams integration.
 
-        :param handle_id: Your handle id.
+        :param handle_id: Your tenant-based handle id.
         :type handle_id: str
         :rtype: None
         """
         kwargs: Dict[str, Any] = {}
         kwargs["handle_id"] = handle_id
 
-        return self._delete_api_handle_endpoint.call_with_http_info(**kwargs)
-
-    def get_api_handle(
-        self,
-        handle_id: str,
-    ) -> MicrosoftTeamsApiHandleInfoResponse:
-        """Get handle information.
-
-        Get the tenant, team, and channel information of a handle from the Datadog Microsoft Teams integration.
-
-        :param handle_id: Your handle id.
-        :type handle_id: str
-        :rtype: MicrosoftTeamsApiHandleInfoResponse
-        """
-        kwargs: Dict[str, Any] = {}
-        kwargs["handle_id"] = handle_id
-
-        return self._get_api_handle_endpoint.call_with_http_info(**kwargs)
-
-    def get_api_handle_by_name(
-        self,
-        handle_name: str,
-    ) -> MicrosoftTeamsApiHandleInfoResponse:
-        """Get handle information by name.
-
-        Get the tenant, team, and channel information of a handle by name from the Datadog Microsoft Teams integration.
-
-        :param handle_name: Your handle name.
-        :type handle_name: str
-        :rtype: MicrosoftTeamsApiHandleInfoResponse
-        """
-        kwargs: Dict[str, Any] = {}
-        kwargs["handle_name"] = handle_name
-
-        return self._get_api_handle_by_name_endpoint.call_with_http_info(**kwargs)
+        return self._delete_tenant_based_handle_endpoint.call_with_http_info(**kwargs)
 
     def get_channel_by_name(
         self,
@@ -299,43 +254,66 @@ class MicrosoftTeamsIntegrationApi:
 
         return self._get_channel_by_name_endpoint.call_with_http_info(**kwargs)
 
-    def list_api_handles(
+    def get_tenant_based_handle(
+        self,
+        handle_id: str,
+    ) -> MicrosoftTeamsTenantBasedHandleResponse:
+        """Get tenant-based handle information.
+
+        Get the tenant, team, and channel information of a tenant-based handle from the Datadog Microsoft Teams integration.
+
+        :param handle_id: Your tenant-based handle id.
+        :type handle_id: str
+        :rtype: MicrosoftTeamsTenantBasedHandleResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["handle_id"] = handle_id
+
+        return self._get_tenant_based_handle_endpoint.call_with_http_info(**kwargs)
+
+    def list_tenant_based_handles(
         self,
         *,
         tenant_id: Union[str, UnsetType] = unset,
-    ) -> MicrosoftTeamsApiHandlesResponse:
-        """Get all handles.
+        name: Union[str, UnsetType] = unset,
+    ) -> MicrosoftTeamsTenantBasedHandlesResponse:
+        """Get all tenant-based handles.
 
-        Get a list of all handles from the Datadog Microsoft Teams integration.
+        Get a list of all tenant-based handles from the Datadog Microsoft Teams integration.
 
         :param tenant_id: Your tenant id.
         :type tenant_id: str, optional
-        :rtype: MicrosoftTeamsApiHandlesResponse
+        :param name: Your tenant-based handle name.
+        :type name: str, optional
+        :rtype: MicrosoftTeamsTenantBasedHandlesResponse
         """
         kwargs: Dict[str, Any] = {}
         if tenant_id is not unset:
             kwargs["tenant_id"] = tenant_id
 
-        return self._list_api_handles_endpoint.call_with_http_info(**kwargs)
+        if name is not unset:
+            kwargs["name"] = name
 
-    def update_api_handle(
+        return self._list_tenant_based_handles_endpoint.call_with_http_info(**kwargs)
+
+    def update_tenant_based_handle(
         self,
         handle_id: str,
-        body: MicrosoftTeamsUpdateApiHandleRequest,
-    ) -> MicrosoftTeamsApiHandleInfoResponse:
-        """Update handle.
+        body: MicrosoftTeamsUpdateTenantBasedHandleRequest,
+    ) -> MicrosoftTeamsTenantBasedHandleResponse:
+        """Update tenant-based handle.
 
-        Update a handle from the Datadog Microsoft Teams integration.
+        Update a tenant-based handle from the Datadog Microsoft Teams integration.
 
-        :param handle_id: Your handle id.
+        :param handle_id: Your tenant-based handle id.
         :type handle_id: str
-        :param body: Opsgenie service payload.
-        :type body: MicrosoftTeamsUpdateApiHandleRequest
-        :rtype: MicrosoftTeamsApiHandleInfoResponse
+        :param body: Tenant-based handle payload.
+        :type body: MicrosoftTeamsUpdateTenantBasedHandleRequest
+        :rtype: MicrosoftTeamsTenantBasedHandleResponse
         """
         kwargs: Dict[str, Any] = {}
         kwargs["handle_id"] = handle_id
 
         kwargs["body"] = body
 
-        return self._update_api_handle_endpoint.call_with_http_info(**kwargs)
+        return self._update_tenant_based_handle_endpoint.call_with_http_info(**kwargs)

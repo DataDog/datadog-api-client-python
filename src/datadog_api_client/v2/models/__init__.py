@@ -1087,35 +1087,50 @@ from datadog_api_client.v2.model.metrics_and_metric_tag_configurations_response 
 from datadog_api_client.v2.model.metrics_data_source import MetricsDataSource
 from datadog_api_client.v2.model.metrics_scalar_query import MetricsScalarQuery
 from datadog_api_client.v2.model.metrics_timeseries_query import MetricsTimeseriesQuery
-from datadog_api_client.v2.model.microsoft_teams_api_handle_attributes import MicrosoftTeamsApiHandleAttributes
-from datadog_api_client.v2.model.microsoft_teams_api_handle_info_response import MicrosoftTeamsApiHandleInfoResponse
-from datadog_api_client.v2.model.microsoft_teams_api_handle_info_response_attributes import (
-    MicrosoftTeamsApiHandleInfoResponseAttributes,
-)
-from datadog_api_client.v2.model.microsoft_teams_api_handle_info_response_data import (
-    MicrosoftTeamsApiHandleInfoResponseData,
-)
-from datadog_api_client.v2.model.microsoft_teams_api_handle_info_type import MicrosoftTeamsApiHandleInfoType
-from datadog_api_client.v2.model.microsoft_teams_api_handle_request_attributes import (
-    MicrosoftTeamsApiHandleRequestAttributes,
-)
-from datadog_api_client.v2.model.microsoft_teams_api_handle_request_data import MicrosoftTeamsApiHandleRequestData
-from datadog_api_client.v2.model.microsoft_teams_api_handle_response_data import MicrosoftTeamsApiHandleResponseData
-from datadog_api_client.v2.model.microsoft_teams_api_handle_type import MicrosoftTeamsApiHandleType
-from datadog_api_client.v2.model.microsoft_teams_api_handles_response import MicrosoftTeamsApiHandlesResponse
 from datadog_api_client.v2.model.microsoft_teams_channel_info_response_attributes import (
     MicrosoftTeamsChannelInfoResponseAttributes,
 )
 from datadog_api_client.v2.model.microsoft_teams_channel_info_response_data import MicrosoftTeamsChannelInfoResponseData
 from datadog_api_client.v2.model.microsoft_teams_channel_info_type import MicrosoftTeamsChannelInfoType
-from datadog_api_client.v2.model.microsoft_teams_create_api_handle_request import MicrosoftTeamsCreateApiHandleRequest
-from datadog_api_client.v2.model.microsoft_teams_create_api_handle_response import MicrosoftTeamsCreateApiHandleResponse
+from datadog_api_client.v2.model.microsoft_teams_create_tenant_based_handle_request import (
+    MicrosoftTeamsCreateTenantBasedHandleRequest,
+)
 from datadog_api_client.v2.model.microsoft_teams_get_channel_by_name_response import (
     MicrosoftTeamsGetChannelByNameResponse,
 )
-from datadog_api_client.v2.model.microsoft_teams_update_api_handle_request import MicrosoftTeamsUpdateApiHandleRequest
-from datadog_api_client.v2.model.microsoft_teams_update_api_handle_request_data import (
-    MicrosoftTeamsUpdateApiHandleRequestData,
+from datadog_api_client.v2.model.microsoft_teams_tenant_based_handle_attributes import (
+    MicrosoftTeamsTenantBasedHandleAttributes,
+)
+from datadog_api_client.v2.model.microsoft_teams_tenant_based_handle_info_response_attributes import (
+    MicrosoftTeamsTenantBasedHandleInfoResponseAttributes,
+)
+from datadog_api_client.v2.model.microsoft_teams_tenant_based_handle_info_response_data import (
+    MicrosoftTeamsTenantBasedHandleInfoResponseData,
+)
+from datadog_api_client.v2.model.microsoft_teams_tenant_based_handle_info_type import (
+    MicrosoftTeamsTenantBasedHandleInfoType,
+)
+from datadog_api_client.v2.model.microsoft_teams_tenant_based_handle_request_attributes import (
+    MicrosoftTeamsTenantBasedHandleRequestAttributes,
+)
+from datadog_api_client.v2.model.microsoft_teams_tenant_based_handle_request_data import (
+    MicrosoftTeamsTenantBasedHandleRequestData,
+)
+from datadog_api_client.v2.model.microsoft_teams_tenant_based_handle_response import (
+    MicrosoftTeamsTenantBasedHandleResponse,
+)
+from datadog_api_client.v2.model.microsoft_teams_tenant_based_handle_response_data import (
+    MicrosoftTeamsTenantBasedHandleResponseData,
+)
+from datadog_api_client.v2.model.microsoft_teams_tenant_based_handle_type import MicrosoftTeamsTenantBasedHandleType
+from datadog_api_client.v2.model.microsoft_teams_tenant_based_handles_response import (
+    MicrosoftTeamsTenantBasedHandlesResponse,
+)
+from datadog_api_client.v2.model.microsoft_teams_update_tenant_based_handle_request import (
+    MicrosoftTeamsUpdateTenantBasedHandleRequest,
+)
+from datadog_api_client.v2.model.microsoft_teams_update_tenant_based_handle_request_data import (
+    MicrosoftTeamsUpdateTenantBasedHandleRequestData,
 )
 from datadog_api_client.v2.model.monitor_config_policy_attribute_create_request import (
     MonitorConfigPolicyAttributeCreateRequest,
@@ -2903,24 +2918,23 @@ __all__ = [
     "MetricsDataSource",
     "MetricsScalarQuery",
     "MetricsTimeseriesQuery",
-    "MicrosoftTeamsApiHandleAttributes",
-    "MicrosoftTeamsApiHandleInfoResponse",
-    "MicrosoftTeamsApiHandleInfoResponseAttributes",
-    "MicrosoftTeamsApiHandleInfoResponseData",
-    "MicrosoftTeamsApiHandleInfoType",
-    "MicrosoftTeamsApiHandleRequestAttributes",
-    "MicrosoftTeamsApiHandleRequestData",
-    "MicrosoftTeamsApiHandleResponseData",
-    "MicrosoftTeamsApiHandleType",
-    "MicrosoftTeamsApiHandlesResponse",
     "MicrosoftTeamsChannelInfoResponseAttributes",
     "MicrosoftTeamsChannelInfoResponseData",
     "MicrosoftTeamsChannelInfoType",
-    "MicrosoftTeamsCreateApiHandleRequest",
-    "MicrosoftTeamsCreateApiHandleResponse",
+    "MicrosoftTeamsCreateTenantBasedHandleRequest",
     "MicrosoftTeamsGetChannelByNameResponse",
-    "MicrosoftTeamsUpdateApiHandleRequest",
-    "MicrosoftTeamsUpdateApiHandleRequestData",
+    "MicrosoftTeamsTenantBasedHandleAttributes",
+    "MicrosoftTeamsTenantBasedHandleInfoResponseAttributes",
+    "MicrosoftTeamsTenantBasedHandleInfoResponseData",
+    "MicrosoftTeamsTenantBasedHandleInfoType",
+    "MicrosoftTeamsTenantBasedHandleRequestAttributes",
+    "MicrosoftTeamsTenantBasedHandleRequestData",
+    "MicrosoftTeamsTenantBasedHandleResponse",
+    "MicrosoftTeamsTenantBasedHandleResponseData",
+    "MicrosoftTeamsTenantBasedHandleType",
+    "MicrosoftTeamsTenantBasedHandlesResponse",
+    "MicrosoftTeamsUpdateTenantBasedHandleRequest",
+    "MicrosoftTeamsUpdateTenantBasedHandleRequestData",
     "MonitorConfigPolicyAttributeCreateRequest",
     "MonitorConfigPolicyAttributeEditRequest",
     "MonitorConfigPolicyAttributeResponse",

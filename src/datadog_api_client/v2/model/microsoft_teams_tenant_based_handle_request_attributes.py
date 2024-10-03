@@ -3,17 +3,14 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    unset,
-    UnsetType,
 )
 
 
-class MicrosoftTeamsApiHandleAttributes(ModelNormal):
+class MicrosoftTeamsTenantBasedHandleRequestAttributes(ModelNormal):
     validations = {
         "channel_id": {
             "max_length": 255,
@@ -45,35 +42,25 @@ class MicrosoftTeamsApiHandleAttributes(ModelNormal):
         "tenant_id": "tenant_id",
     }
 
-    def __init__(
-        self_,
-        channel_id: Union[str, UnsetType] = unset,
-        name: Union[str, UnsetType] = unset,
-        team_id: Union[str, UnsetType] = unset,
-        tenant_id: Union[str, UnsetType] = unset,
-        **kwargs,
-    ):
+    def __init__(self_, channel_id: str, name: str, team_id: str, tenant_id: str, **kwargs):
         """
-        Handle attributes.
+        Tenant-based handle attributes.
 
         :param channel_id: Channel id.
-        :type channel_id: str, optional
+        :type channel_id: str
 
-        :param name: Handle name.
-        :type name: str, optional
+        :param name: Tenant-based handle name.
+        :type name: str
 
         :param team_id: Team id.
-        :type team_id: str, optional
+        :type team_id: str
 
         :param tenant_id: Tenant id.
-        :type tenant_id: str, optional
+        :type tenant_id: str
         """
-        if channel_id is not unset:
-            kwargs["channel_id"] = channel_id
-        if name is not unset:
-            kwargs["name"] = name
-        if team_id is not unset:
-            kwargs["team_id"] = team_id
-        if tenant_id is not unset:
-            kwargs["tenant_id"] = tenant_id
         super().__init__(kwargs)
+
+        self_.channel_id = channel_id
+        self_.name = name
+        self_.team_id = team_id
+        self_.tenant_id = tenant_id
