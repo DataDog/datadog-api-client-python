@@ -15,7 +15,6 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v1.model.synthetics_mobile_test_config import SyntheticsMobileTestConfig
-    from datadog_api_client.v1.model.synthetics_mobile_device_id import SyntheticsMobileDeviceID
     from datadog_api_client.v1.model.synthetics_mobile_test_options import SyntheticsMobileTestOptions
     from datadog_api_client.v1.model.synthetics_test_pause_status import SyntheticsTestPauseStatus
     from datadog_api_client.v1.model.synthetics_mobile_step import SyntheticsMobileStep
@@ -26,7 +25,6 @@ class SyntheticsMobileTest(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v1.model.synthetics_mobile_test_config import SyntheticsMobileTestConfig
-        from datadog_api_client.v1.model.synthetics_mobile_device_id import SyntheticsMobileDeviceID
         from datadog_api_client.v1.model.synthetics_mobile_test_options import SyntheticsMobileTestOptions
         from datadog_api_client.v1.model.synthetics_test_pause_status import SyntheticsTestPauseStatus
         from datadog_api_client.v1.model.synthetics_mobile_step import SyntheticsMobileStep
@@ -34,7 +32,7 @@ class SyntheticsMobileTest(ModelNormal):
 
         return {
             "config": (SyntheticsMobileTestConfig,),
-            "device_ids": ([SyntheticsMobileDeviceID],),
+            "device_ids": ([str],),
             "message": (str,),
             "monitor_id": (int,),
             "name": (str,),
@@ -70,7 +68,7 @@ class SyntheticsMobileTest(ModelNormal):
         name: str,
         options: SyntheticsMobileTestOptions,
         type: SyntheticsMobileTestType,
-        device_ids: Union[List[SyntheticsMobileDeviceID], UnsetType] = unset,
+        device_ids: Union[List[str], UnsetType] = unset,
         message: Union[str, UnsetType] = unset,
         monitor_id: Union[int, UnsetType] = unset,
         public_id: Union[str, UnsetType] = unset,
@@ -86,7 +84,7 @@ class SyntheticsMobileTest(ModelNormal):
         :type config: SyntheticsMobileTestConfig
 
         :param device_ids: The ``SyntheticsMobileTest`` ``device_ids``.
-        :type device_ids: [SyntheticsMobileDeviceID], optional
+        :type device_ids: [str], optional
 
         :param message: Notification message associated with the test.
         :type message: str, optional

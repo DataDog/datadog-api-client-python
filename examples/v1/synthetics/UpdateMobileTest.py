@@ -5,7 +5,6 @@ Edit a Mobile test returns "OK" response
 from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.synthetics_api import SyntheticsApi
-from datadog_api_client.v1.model.synthetics_mobile_device_id import SyntheticsMobileDeviceID
 from datadog_api_client.v1.model.synthetics_mobile_test import SyntheticsMobileTest
 from datadog_api_client.v1.model.synthetics_mobile_test_config import SyntheticsMobileTestConfig
 from datadog_api_client.v1.model.synthetics_mobile_test_options import SyntheticsMobileTestOptions
@@ -31,7 +30,7 @@ body = SyntheticsMobileTest(
     message="",
     options=SyntheticsMobileTestOptions(
         device_ids=[
-            SyntheticsMobileDeviceID.SYNTHETICS_MOBILE_DEVICE_IPHONE_15_IOS_17,
+            "synthetics:mobile:device:iphone_15_ios_17",
         ],
         mobile_application=SyntheticsMobileTestsMobileApplication(
             application_id="ab0e0aed-536d-411a-9a99-5428c27d8f8e",

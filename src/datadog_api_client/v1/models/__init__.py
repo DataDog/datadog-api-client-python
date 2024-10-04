@@ -731,7 +731,6 @@ from datadog_api_client.v1.model.synthetics_local_variable_parsing_options_type 
 )
 from datadog_api_client.v1.model.synthetics_location import SyntheticsLocation
 from datadog_api_client.v1.model.synthetics_locations import SyntheticsLocations
-from datadog_api_client.v1.model.synthetics_mobile_device_id import SyntheticsMobileDeviceID
 from datadog_api_client.v1.model.synthetics_mobile_step import SyntheticsMobileStep
 from datadog_api_client.v1.model.synthetics_mobile_step_type import SyntheticsMobileStepType
 from datadog_api_client.v1.model.synthetics_mobile_test import SyntheticsMobileTest
@@ -1677,7 +1676,6 @@ __all__ = [
     "SyntheticsLocalVariableParsingOptionsType",
     "SyntheticsLocation",
     "SyntheticsLocations",
-    "SyntheticsMobileDeviceID",
     "SyntheticsMobileStep",
     "SyntheticsMobileStepType",
     "SyntheticsMobileTest",

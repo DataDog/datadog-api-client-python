@@ -16,7 +16,6 @@ from datadog_api_client.model_utils import (
 if TYPE_CHECKING:
     from datadog_api_client.v1.model.synthetics_mobile_test_binding import SyntheticsMobileTestBinding
     from datadog_api_client.v1.model.synthetics_mobile_test_ci_options import SyntheticsMobileTestCiOptions
-    from datadog_api_client.v1.model.synthetics_mobile_device_id import SyntheticsMobileDeviceID
     from datadog_api_client.v1.model.synthetics_mobile_tests_mobile_application import (
         SyntheticsMobileTestsMobileApplication,
     )
@@ -56,7 +55,6 @@ class SyntheticsMobileTestOptions(ModelNormal):
     def openapi_types(_):
         from datadog_api_client.v1.model.synthetics_mobile_test_binding import SyntheticsMobileTestBinding
         from datadog_api_client.v1.model.synthetics_mobile_test_ci_options import SyntheticsMobileTestCiOptions
-        from datadog_api_client.v1.model.synthetics_mobile_device_id import SyntheticsMobileDeviceID
         from datadog_api_client.v1.model.synthetics_mobile_tests_mobile_application import (
             SyntheticsMobileTestsMobileApplication,
         )
@@ -72,7 +70,7 @@ class SyntheticsMobileTestOptions(ModelNormal):
             "bindings": ([SyntheticsMobileTestBinding],),
             "ci": (SyntheticsMobileTestCiOptions,),
             "default_step_timeout": (int,),
-            "device_ids": ([SyntheticsMobileDeviceID],),
+            "device_ids": ([str],),
             "disable_auto_accept_alert": (bool,),
             "min_failure_duration": (int,),
             "mobile_application": (SyntheticsMobileTestsMobileApplication,),
@@ -113,7 +111,7 @@ class SyntheticsMobileTestOptions(ModelNormal):
         bindings: Union[List[SyntheticsMobileTestBinding], UnsetType] = unset,
         ci: Union[SyntheticsMobileTestCiOptions, UnsetType] = unset,
         default_step_timeout: Union[int, UnsetType] = unset,
-        device_ids: Union[List[SyntheticsMobileDeviceID], UnsetType] = unset,
+        device_ids: Union[List[str], UnsetType] = unset,
         disable_auto_accept_alert: Union[bool, UnsetType] = unset,
         min_failure_duration: Union[int, UnsetType] = unset,
         mobile_application: Union[SyntheticsMobileTestsMobileApplication, UnsetType] = unset,
@@ -144,7 +142,7 @@ class SyntheticsMobileTestOptions(ModelNormal):
         :type default_step_timeout: int, optional
 
         :param device_ids: For mobile test, array with the different device IDs used to run the test.
-        :type device_ids: [SyntheticsMobileDeviceID], optional
+        :type device_ids: [str], optional
 
         :param disable_auto_accept_alert: The ``SyntheticsMobileTestOptions`` ``disableAutoAcceptAlert``.
         :type disable_auto_accept_alert: bool, optional
