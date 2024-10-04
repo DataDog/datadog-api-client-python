@@ -990,6 +990,8 @@ from datadog_api_client.v2.model.logs_sort import LogsSort
 from datadog_api_client.v2.model.logs_sort_order import LogsSortOrder
 from datadog_api_client.v2.model.logs_storage_tier import LogsStorageTier
 from datadog_api_client.v2.model.logs_warning import LogsWarning
+from datadog_api_client.v2.model.ms_teams_integration_metadata import MSTeamsIntegrationMetadata
+from datadog_api_client.v2.model.ms_teams_integration_metadata_teams_item import MSTeamsIntegrationMetadataTeamsItem
 from datadog_api_client.v2.model.metric import Metric
 from datadog_api_client.v2.model.metric_active_configuration_type import MetricActiveConfigurationType
 from datadog_api_client.v2.model.metric_all_tags import MetricAllTags
@@ -2831,6 +2833,8 @@ __all__ = [
     "LogsSortOrder",
     "LogsStorageTier",
     "LogsWarning",
+    "MSTeamsIntegrationMetadata",
+    "MSTeamsIntegrationMetadataTeamsItem",
     "Metric",
     "MetricActiveConfigurationType",
     "MetricAllTags",
