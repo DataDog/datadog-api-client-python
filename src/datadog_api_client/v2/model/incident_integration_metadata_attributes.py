@@ -18,6 +18,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.incident_integration_metadata_metadata import IncidentIntegrationMetadataMetadata
     from datadog_api_client.v2.model.slack_integration_metadata import SlackIntegrationMetadata
     from datadog_api_client.v2.model.jira_integration_metadata import JiraIntegrationMetadata
+    from datadog_api_client.v2.model.ms_teams_integration_metadata import MSTeamsIntegrationMetadata
 
 
 class IncidentIntegrationMetadataAttributes(ModelNormal):
@@ -61,7 +62,12 @@ class IncidentIntegrationMetadataAttributes(ModelNormal):
     def __init__(
         self_,
         integration_type: int,
-        metadata: Union[IncidentIntegrationMetadataMetadata, SlackIntegrationMetadata, JiraIntegrationMetadata],
+        metadata: Union[
+            IncidentIntegrationMetadataMetadata,
+            SlackIntegrationMetadata,
+            JiraIntegrationMetadata,
+            MSTeamsIntegrationMetadata,
+        ],
         created: Union[datetime, UnsetType] = unset,
         incident_id: Union[str, UnsetType] = unset,
         modified: Union[datetime, UnsetType] = unset,
