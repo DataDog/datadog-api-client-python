@@ -4477,13 +4477,6 @@ datadog\_api\_client.v1.model.synthetics\_locations module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_mobile\_device\_id module
--------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v1.model.synthetics_mobile_device_id
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v1.model.synthetics\_mobile\_step module
 -------------------------------------------------------------
 

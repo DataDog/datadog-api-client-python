@@ -16,16 +16,18 @@ class SyntheticsTestDetailsType(ModelSimple):
     """
     Type of the Synthetic test, either `api` or `browser`.
 
-    :param value: Must be one of ["api", "browser"].
+    :param value: Must be one of ["api", "browser", "mobile"].
     :type value: str
     """
 
     allowed_values = {
         "api",
         "browser",
+        "mobile",
     }
     API: ClassVar["SyntheticsTestDetailsType"]
     BROWSER: ClassVar["SyntheticsTestDetailsType"]
+    MOBILE: ClassVar["SyntheticsTestDetailsType"]
 
     @cached_property
     def openapi_types(_):
@@ -36,3 +38,4 @@ class SyntheticsTestDetailsType(ModelSimple):
 
 SyntheticsTestDetailsType.API = SyntheticsTestDetailsType("api")
 SyntheticsTestDetailsType.BROWSER = SyntheticsTestDetailsType("browser")
+SyntheticsTestDetailsType.MOBILE = SyntheticsTestDetailsType("mobile")
