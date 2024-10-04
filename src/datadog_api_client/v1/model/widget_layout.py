@@ -35,8 +35,8 @@ class WidgetLayout(ModelNormal):
             "height": (int,),
             "is_column_break": (bool,),
             "width": (int,),
-            "x": (int,),
-            "y": (int,),
+            "x": (float,),
+            "y": (float,),
         }
 
     attribute_map = {
@@ -48,7 +48,7 @@ class WidgetLayout(ModelNormal):
     }
 
     def __init__(
-        self_, height: int, width: int, x: int, y: int, is_column_break: Union[bool, UnsetType] = unset, **kwargs
+        self_, height: int, width: int, x: float, y: float, is_column_break: Union[bool, UnsetType] = unset, **kwargs
     ):
         """
         The layout for a widget on a ``free`` or **new dashboard layout** dashboard.
@@ -63,11 +63,11 @@ class WidgetLayout(ModelNormal):
         :param width: The width of the widget. Should be a non-negative integer.
         :type width: int
 
-        :param x: The position of the widget on the x (horizontal) axis. Should be a non-negative integer.
-        :type x: int
+        :param x: The position of the widget on the x (horizontal) axis. Should be a non-negative number.
+        :type x: float
 
-        :param y: The position of the widget on the y (vertical) axis. Should be a non-negative integer.
-        :type y: int
+        :param y: The position of the widget on the y (vertical) axis. Should be a non-negative number.
+        :type y: float
         """
         if is_column_break is not unset:
             kwargs["is_column_break"] = is_column_break
