@@ -6675,6 +6675,20 @@ datadog\_api\_client.v2.model.monthly\_cost\_attribution\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.ms\_teams\_integration\_metadata module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ms_teams_integration_metadata
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ms\_teams\_integration\_metadata\_teams\_item module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ms_teams_integration_metadata_teams_item
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.nullable\_relationship\_to\_user module
 ---------------------------------------------------------------------
 
