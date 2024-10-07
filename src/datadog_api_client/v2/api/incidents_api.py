@@ -19,6 +19,10 @@ from datadog_api_client.v2.model.incident_related_object import IncidentRelatedO
 from datadog_api_client.v2.model.incident_response_data import IncidentResponseData
 from datadog_api_client.v2.model.incident_response import IncidentResponse
 from datadog_api_client.v2.model.incident_create_request import IncidentCreateRequest
+from datadog_api_client.v2.model.incident_type_list_response import IncidentTypeListResponse
+from datadog_api_client.v2.model.incident_type_response import IncidentTypeResponse
+from datadog_api_client.v2.model.incident_type_create_request import IncidentTypeCreateRequest
+from datadog_api_client.v2.model.incident_type_patch_request import IncidentTypePatchRequest
 from datadog_api_client.v2.model.incident_search_response import IncidentSearchResponse
 from datadog_api_client.v2.model.incident_search_sort_order import IncidentSearchSortOrder
 from datadog_api_client.v2.model.incident_search_response_incidents_data import IncidentSearchResponseIncidentsData
@@ -126,6 +130,26 @@ class IncidentsApi:
             api_client=api_client,
         )
 
+        self._create_incident_type_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentTypeResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/config/types",
+                "operation_id": "create_incident_type",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (IncidentTypeCreateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._delete_incident_endpoint = _Endpoint(
             settings={
                 "response_type": None,
@@ -198,6 +222,29 @@ class IncidentsApi:
                     "required": True,
                     "openapi_types": (str,),
                     "attribute": "todo_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
+        self._delete_incident_type_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/config/types/{incident_type_id}",
+                "operation_id": "delete_incident_type",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "incident_type_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "incident_type_id",
                     "location": "path",
                 },
             },
@@ -285,6 +332,29 @@ class IncidentsApi:
                     "required": True,
                     "openapi_types": (str,),
                     "attribute": "todo_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_incident_type_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentTypeResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/config/types/{incident_type_id}",
+                "operation_id": "get_incident_type",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "incident_type_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "incident_type_id",
                     "location": "path",
                 },
             },
@@ -400,6 +470,28 @@ class IncidentsApi:
                     "openapi_types": (str,),
                     "attribute": "incident_id",
                     "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_incident_types_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentTypeListResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/config/types",
+                "operation_id": "list_incident_types",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "include_deleted": {
+                    "openapi_types": (bool,),
+                    "attribute": "include_deleted",
+                    "location": "query",
                 },
             },
             headers_map={
@@ -579,6 +671,32 @@ class IncidentsApi:
             api_client=api_client,
         )
 
+        self._update_incident_type_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentTypeResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/config/types/{incident_type_id}",
+                "operation_id": "update_incident_type",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "incident_type_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "incident_type_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (IncidentTypePatchRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
     def create_incident(
         self,
         body: IncidentCreateRequest,
@@ -640,6 +758,23 @@ class IncidentsApi:
 
         return self._create_incident_todo_endpoint.call_with_http_info(**kwargs)
 
+    def create_incident_type(
+        self,
+        body: IncidentTypeCreateRequest,
+    ) -> IncidentTypeResponse:
+        """Create an incident type.
+
+        Create an incident type.
+
+        :param body: Incident type payload.
+        :type body: IncidentTypeCreateRequest
+        :rtype: IncidentTypeResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_incident_type_endpoint.call_with_http_info(**kwargs)
+
     def delete_incident(
         self,
         incident_id: str,
@@ -700,6 +835,23 @@ class IncidentsApi:
         kwargs["todo_id"] = todo_id
 
         return self._delete_incident_todo_endpoint.call_with_http_info(**kwargs)
+
+    def delete_incident_type(
+        self,
+        incident_type_id: str,
+    ) -> None:
+        """Delete an incident type.
+
+        Delete an incident type.
+
+        :param incident_type_id: The UUID of the incident type.
+        :type incident_type_id: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["incident_type_id"] = incident_type_id
+
+        return self._delete_incident_type_endpoint.call_with_http_info(**kwargs)
 
     def get_incident(
         self,
@@ -768,6 +920,23 @@ class IncidentsApi:
         kwargs["todo_id"] = todo_id
 
         return self._get_incident_todo_endpoint.call_with_http_info(**kwargs)
+
+    def get_incident_type(
+        self,
+        incident_type_id: str,
+    ) -> IncidentTypeResponse:
+        """Get incident type details.
+
+        Get incident type details.
+
+        :param incident_type_id: The UUID of the incident type.
+        :type incident_type_id: str
+        :rtype: IncidentTypeResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["incident_type_id"] = incident_type_id
+
+        return self._get_incident_type_endpoint.call_with_http_info(**kwargs)
 
     def list_incident_attachments(
         self,
@@ -906,6 +1075,25 @@ class IncidentsApi:
         kwargs["incident_id"] = incident_id
 
         return self._list_incident_todos_endpoint.call_with_http_info(**kwargs)
+
+    def list_incident_types(
+        self,
+        *,
+        include_deleted: Union[bool, UnsetType] = unset,
+    ) -> IncidentTypeListResponse:
+        """Get a list of incident types.
+
+        Get all incident types.
+
+        :param include_deleted: Include deleted incident types in the response.
+        :type include_deleted: bool, optional
+        :rtype: IncidentTypeListResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if include_deleted is not unset:
+            kwargs["include_deleted"] = include_deleted
+
+        return self._list_incident_types_endpoint.call_with_http_info(**kwargs)
 
     def search_incidents(
         self,
@@ -1118,3 +1306,25 @@ class IncidentsApi:
         kwargs["body"] = body
 
         return self._update_incident_todo_endpoint.call_with_http_info(**kwargs)
+
+    def update_incident_type(
+        self,
+        incident_type_id: str,
+        body: IncidentTypePatchRequest,
+    ) -> IncidentTypeResponse:
+        """Update an incident type.
+
+        Update an incident type.
+
+        :param incident_type_id: The UUID of the incident type.
+        :type incident_type_id: str
+        :param body: Incident type payload.
+        :type body: IncidentTypePatchRequest
+        :rtype: IncidentTypeResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["incident_type_id"] = incident_type_id
+
+        kwargs["body"] = body
+
+        return self._update_incident_type_endpoint.call_with_http_info(**kwargs)

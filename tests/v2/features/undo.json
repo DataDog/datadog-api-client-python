@@ -627,6 +627,43 @@
       "type": "unsafe"
     }
   },
+  "ListIncidentTypes": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateIncidentType": {
+    "tag": "Incidents",
+    "undo": {
+      "operationId": "DeleteIncidentType",
+      "parameters": [
+        {
+          "name": "incident_type_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteIncidentType": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetIncidentType": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateIncidentType": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "SearchIncidents": {
     "tag": "Incidents",
     "undo": {
