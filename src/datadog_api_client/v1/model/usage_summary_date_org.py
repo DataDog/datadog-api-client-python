@@ -47,6 +47,8 @@ class UsageSummaryDateOrg(ModelNormal):
             "cloud_cost_management_gcp_host_count_avg": (int,),
             "cloud_cost_management_host_count_avg": (int,),
             "cloud_siem_events_sum": (int,),
+            "code_analysis_sa_committers_hwm": (int,),
+            "code_analysis_sca_committers_hwm": (int,),
             "container_avg": (int,),
             "container_excl_agent_avg": (int,),
             "container_hwm": (int,),
@@ -191,6 +193,8 @@ class UsageSummaryDateOrg(ModelNormal):
         "cloud_cost_management_gcp_host_count_avg": "cloud_cost_management_gcp_host_count_avg",
         "cloud_cost_management_host_count_avg": "cloud_cost_management_host_count_avg",
         "cloud_siem_events_sum": "cloud_siem_events_sum",
+        "code_analysis_sa_committers_hwm": "code_analysis_sa_committers_hwm",
+        "code_analysis_sca_committers_hwm": "code_analysis_sca_committers_hwm",
         "container_avg": "container_avg",
         "container_excl_agent_avg": "container_excl_agent_avg",
         "container_hwm": "container_hwm",
@@ -336,6 +340,8 @@ class UsageSummaryDateOrg(ModelNormal):
         cloud_cost_management_gcp_host_count_avg: Union[int, UnsetType] = unset,
         cloud_cost_management_host_count_avg: Union[int, UnsetType] = unset,
         cloud_siem_events_sum: Union[int, UnsetType] = unset,
+        code_analysis_sa_committers_hwm: Union[int, UnsetType] = unset,
+        code_analysis_sca_committers_hwm: Union[int, UnsetType] = unset,
         container_avg: Union[int, UnsetType] = unset,
         container_excl_agent_avg: Union[int, UnsetType] = unset,
         container_hwm: Union[int, UnsetType] = unset,
@@ -541,6 +547,12 @@ class UsageSummaryDateOrg(ModelNormal):
 
         :param cloud_siem_events_sum: Shows the sum of all Cloud Security Information and Event Management events over all hours in the current date for the given org.
         :type cloud_siem_events_sum: int, optional
+
+        :param code_analysis_sa_committers_hwm: Shows the high-water mark of all Static Analysis committers over all hours in the current date for the given org.
+        :type code_analysis_sa_committers_hwm: int, optional
+
+        :param code_analysis_sca_committers_hwm: Shows the high-water mark of all static Software Composition Analysis committers over all hours in the current date for the given org.
+        :type code_analysis_sca_committers_hwm: int, optional
 
         :param container_avg: Shows the average of all distinct containers over all hours in the current date for the given org.
         :type container_avg: int, optional
@@ -935,6 +947,10 @@ class UsageSummaryDateOrg(ModelNormal):
             kwargs["cloud_cost_management_host_count_avg"] = cloud_cost_management_host_count_avg
         if cloud_siem_events_sum is not unset:
             kwargs["cloud_siem_events_sum"] = cloud_siem_events_sum
+        if code_analysis_sa_committers_hwm is not unset:
+            kwargs["code_analysis_sa_committers_hwm"] = code_analysis_sa_committers_hwm
+        if code_analysis_sca_committers_hwm is not unset:
+            kwargs["code_analysis_sca_committers_hwm"] = code_analysis_sca_committers_hwm
         if container_avg is not unset:
             kwargs["container_avg"] = container_avg
         if container_excl_agent_avg is not unset:
