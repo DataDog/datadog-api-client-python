@@ -13,6 +13,7 @@ body = GCPSTSServiceAccountCreateRequest(
     data=GCPSTSServiceAccountData(
         attributes=GCPSTSServiceAccountAttributes(
             is_security_command_center_enabled=True,
+            is_resource_change_collection_enabled=True,
             client_email="Test-252bf553ef04b351@test-project.iam.gserviceaccount.com",
             host_filters=[],
         ),

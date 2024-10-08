@@ -27,6 +27,7 @@ class GCPAccount(ModelNormal):
             "errors": ([str],),
             "host_filters": (str,),
             "is_cspm_enabled": (bool,),
+            "is_resource_change_collection_enabled": (bool,),
             "is_security_command_center_enabled": (bool,),
             "private_key": (str,),
             "private_key_id": (str,),
@@ -47,6 +48,7 @@ class GCPAccount(ModelNormal):
         "errors": "errors",
         "host_filters": "host_filters",
         "is_cspm_enabled": "is_cspm_enabled",
+        "is_resource_change_collection_enabled": "is_resource_change_collection_enabled",
         "is_security_command_center_enabled": "is_security_command_center_enabled",
         "private_key": "private_key",
         "private_key_id": "private_key_id",
@@ -68,6 +70,7 @@ class GCPAccount(ModelNormal):
         errors: Union[List[str], UnsetType] = unset,
         host_filters: Union[str, UnsetType] = unset,
         is_cspm_enabled: Union[bool, UnsetType] = unset,
+        is_resource_change_collection_enabled: Union[bool, UnsetType] = unset,
         is_security_command_center_enabled: Union[bool, UnsetType] = unset,
         private_key: Union[str, UnsetType] = unset,
         private_key_id: Union[str, UnsetType] = unset,
@@ -113,6 +116,9 @@ class GCPAccount(ModelNormal):
         :param is_cspm_enabled: When enabled, Datadog will activate the Cloud Security Monitoring product for this service account. Note: This requires resource_collection_enabled to be set to true.
         :type is_cspm_enabled: bool, optional
 
+        :param is_resource_change_collection_enabled: When enabled, Datadog scans for all resource change data in your Google Cloud environment.
+        :type is_resource_change_collection_enabled: bool, optional
+
         :param is_security_command_center_enabled: When enabled, Datadog will attempt to collect Security Command Center Findings. Note: This requires additional permissions on the service account.
         :type is_security_command_center_enabled: bool, optional
 
@@ -154,6 +160,8 @@ class GCPAccount(ModelNormal):
             kwargs["host_filters"] = host_filters
         if is_cspm_enabled is not unset:
             kwargs["is_cspm_enabled"] = is_cspm_enabled
+        if is_resource_change_collection_enabled is not unset:
+            kwargs["is_resource_change_collection_enabled"] = is_resource_change_collection_enabled
         if is_security_command_center_enabled is not unset:
             kwargs["is_security_command_center_enabled"] = is_security_command_center_enabled
         if private_key is not unset:
