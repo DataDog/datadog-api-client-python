@@ -259,7 +259,6 @@ class UsageMeteringApi:
                     "location": "query",
                 },
                 "end_month": {
-                    "required": True,
                     "openapi_types": (datetime,),
                     "attribute": "end_month",
                     "location": "query",
@@ -627,9 +626,9 @@ class UsageMeteringApi:
     def get_monthly_cost_attribution(
         self,
         start_month: datetime,
-        end_month: datetime,
         fields: str,
         *,
+        end_month: Union[datetime, UnsetType] = unset,
         sort_direction: Union[SortDirection, UnsetType] = unset,
         sort_name: Union[str, UnsetType] = unset,
         tag_breakdown_keys: Union[str, UnsetType] = unset,
@@ -658,14 +657,14 @@ class UsageMeteringApi:
 
         :param start_month: Datetime in ISO-8601 format, UTC, precise to month: ``[YYYY-MM]`` for cost beginning in this month.
         :type start_month: datetime
-        :param end_month: Datetime in ISO-8601 format, UTC, precise to month: ``[YYYY-MM]`` for cost ending this month.
-        :type end_month: datetime
         :param fields: Comma-separated list specifying cost types (e.g., ``<billing_dimension>_on_demand_cost`` , ``<billing_dimension>_committed_cost`` , ``<billing_dimension>_total_cost`` ) and the
             proportions ( ``<billing_dimension>_percentage_in_org`` , ``<billing_dimension>_percentage_in_account`` ). Use ``*`` to retrieve all fields.
             Example: ``infra_host_on_demand_cost,infra_host_percentage_in_account``
             To obtain the complete list of active billing dimensions that can be used to replace
             ``<billing_dimension>`` in the field names, make a request to the `Get active billing dimensions API <https://docs.datadoghq.com/api/latest/usage-metering/#get-active-billing-dimensions-for-cost-attribution>`_.
         :type fields: str
+        :param end_month: Datetime in ISO-8601 format, UTC, precise to month: ``[YYYY-MM]`` for cost ending this month.
+        :type end_month: datetime, optional
         :param sort_direction: The direction to sort by: ``[desc, asc]``.
         :type sort_direction: SortDirection, optional
         :param sort_name: The billing dimension to sort by. Always sorted by total cost. Example: ``infra_host``.
@@ -682,7 +681,8 @@ class UsageMeteringApi:
         kwargs: Dict[str, Any] = {}
         kwargs["start_month"] = start_month
 
-        kwargs["end_month"] = end_month
+        if end_month is not unset:
+            kwargs["end_month"] = end_month
 
         kwargs["fields"] = fields
 
