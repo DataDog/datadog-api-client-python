@@ -9507,6 +9507,7 @@ Only Cloud Run revision resources that apply to specified filters are imported i
 <li><p><strong>host_filters</strong> (<em>str</em><em>, </em><em>optional</em>) – Limit the GCE instances that are pulled into Datadog by using tags.
 Only hosts that match one of the defined tags are imported into Datadog.</p></li>
 <li><p><strong>is_cspm_enabled</strong> (<em>bool</em><em>, </em><em>optional</em>) – When enabled, Datadog will activate the Cloud Security Monitoring product for this service account. Note: This requires resource_collection_enabled to be set to true.</p></li>
+<li><p><strong>is_resource_change_collection_enabled</strong> (<em>bool</em><em>, </em><em>optional</em>) – When enabled, Datadog scans for all resource change data in your Google Cloud environment.</p></li>
 <li><p><strong>is_security_command_center_enabled</strong> (<em>bool</em><em>, </em><em>optional</em>) – When enabled, Datadog will attempt to collect Security Command Center Findings. Note: This requires additional permissions on the service account.</p></li>
 <li><p><strong>private_key</strong> (<em>str</em><em>, </em><em>optional</em>) – Your private key name found in your JSON service account key.</p></li>
 <li><p><strong>private_key_id</strong> (<em>str</em><em>, </em><em>optional</em>) – Your private key ID found in your JSON service account key.</p></li>
