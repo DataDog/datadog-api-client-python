@@ -729,7 +729,7 @@ class MetricsApi:
     ) -> MetricAllTagsResponse:
         """List tags by metric name.
 
-        View indexed tag key-value pairs for a given metric name.
+        View indexed tag key-value pairs for a given metric name over the previous hour.
 
         :param metric_name: The name of the metric.
         :type metric_name: str
