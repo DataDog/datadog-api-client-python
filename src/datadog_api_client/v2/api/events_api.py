@@ -17,6 +17,8 @@ from datadog_api_client.model_utils import (
 from datadog_api_client.v2.model.events_list_response import EventsListResponse
 from datadog_api_client.v2.model.events_sort import EventsSort
 from datadog_api_client.v2.model.event_response import EventResponse
+from datadog_api_client.v2.model.change_event_create_response import ChangeEventCreateResponse
+from datadog_api_client.v2.model.change_event_create_request import ChangeEventCreateRequest
 from datadog_api_client.v2.model.events_list_request import EventsListRequest
 
 
@@ -30,6 +32,26 @@ class EventsApi:
         if api_client is None:
             api_client = ApiClient(Configuration())
         self.api_client = api_client
+
+        self._create_event_endpoint = _Endpoint(
+            settings={
+                "response_type": (ChangeEventCreateResponse,),
+                "auth": ["apiKeyAuth"],
+                "endpoint_path": "/api/v2/events",
+                "operation_id": "create_event",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (ChangeEventCreateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
 
         self._list_events_endpoint = _Endpoint(
             settings={
@@ -99,6 +121,23 @@ class EventsApi:
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
         )
+
+    def create_event(
+        self,
+        body: ChangeEventCreateRequest,
+    ) -> ChangeEventCreateResponse:
+        """Post a change event.
+
+        This endpoint allows you to post events. Only events with ``change`` category are supported.
+
+        :param body: Event request object
+        :type body: ChangeEventCreateRequest
+        :rtype: ChangeEventCreateResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_event_endpoint.call_with_http_info(**kwargs)
 
     def list_events(
         self,
