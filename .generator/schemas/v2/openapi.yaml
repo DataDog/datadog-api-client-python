@@ -9230,6 +9230,8 @@ components:
           $ref: '#/components/schemas/FindingStatus'
         tags:
           $ref: '#/components/schemas/FindingTags'
+        vulnerability_type:
+          $ref: '#/components/schemas/FindingVulnerabilityType'
       type: object
     FindingEvaluation:
       description: The evaluation of the finding.
@@ -9363,6 +9365,20 @@ components:
       type: string
       x-enum-varnames:
       - FINDING
+    FindingVulnerabilityType:
+      description: The vulnerability type of the finding.
+      enum:
+      - misconfiguration
+      - attack_path
+      - identity_risk
+      - api_security
+      example: misconfiguration
+      type: string
+      x-enum-varnames:
+      - MISCONFIGURATION
+      - ATTACK_PATH
+      - IDENTITY_RISK
+      - API_SECURITY
     FormulaLimit:
       description: 'Message for specifying limits to the number of values returned
         by a query.
@@ -34377,6 +34393,17 @@ paths:
         required: false
         schema:
           $ref: '#/components/schemas/FindingStatus'
+      - description: Return findings that match the selected vulnerability types (repeatable).
+        example:
+        - misconfiguration
+        explode: true
+        in: query
+        name: filter[vulnerability_type]
+        required: false
+        schema:
+          items:
+            $ref: '#/components/schemas/FindingVulnerabilityType'
+          type: array
       responses:
         '200':
           content:

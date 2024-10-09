@@ -4,7 +4,7 @@
 from __future__ import annotations
 
 import collections
-from typing import Any, Dict, Union
+from typing import Any, Dict, List, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
@@ -18,6 +18,7 @@ from datadog_api_client.model_utils import (
 from datadog_api_client.v2.model.list_findings_response import ListFindingsResponse
 from datadog_api_client.v2.model.finding_evaluation import FindingEvaluation
 from datadog_api_client.v2.model.finding_status import FindingStatus
+from datadog_api_client.v2.model.finding_vulnerability_type import FindingVulnerabilityType
 from datadog_api_client.v2.model.finding import Finding
 from datadog_api_client.v2.model.bulk_mute_findings_response import BulkMuteFindingsResponse
 from datadog_api_client.v2.model.bulk_mute_findings_request import BulkMuteFindingsRequest
@@ -531,6 +532,12 @@ class SecurityMonitoringApi:
                     "openapi_types": (FindingStatus,),
                     "attribute": "filter[status]",
                     "location": "query",
+                },
+                "filter_vulnerability_type": {
+                    "openapi_types": ([FindingVulnerabilityType],),
+                    "attribute": "filter[vulnerability_type]",
+                    "location": "query",
+                    "collection_format": "multi",
                 },
             },
             headers_map={
@@ -1155,6 +1162,7 @@ class SecurityMonitoringApi:
         filter_discovery_timestamp: Union[str, UnsetType] = unset,
         filter_evaluation: Union[FindingEvaluation, UnsetType] = unset,
         filter_status: Union[FindingStatus, UnsetType] = unset,
+        filter_vulnerability_type: Union[List[FindingVulnerabilityType], UnsetType] = unset,
     ) -> ListFindingsResponse:
         """List findings.
 
@@ -1213,6 +1221,8 @@ class SecurityMonitoringApi:
         :type filter_evaluation: FindingEvaluation, optional
         :param filter_status: Return only findings with the specified status.
         :type filter_status: FindingStatus, optional
+        :param filter_vulnerability_type: Return findings that match the selected vulnerability types (repeatable).
+        :type filter_vulnerability_type: [FindingVulnerabilityType], optional
         :rtype: ListFindingsResponse
         """
         kwargs: Dict[str, Any] = {}
@@ -1252,6 +1262,9 @@ class SecurityMonitoringApi:
         if filter_status is not unset:
             kwargs["filter_status"] = filter_status
 
+        if filter_vulnerability_type is not unset:
+            kwargs["filter_vulnerability_type"] = filter_vulnerability_type
+
         return self._list_findings_endpoint.call_with_http_info(**kwargs)
 
     def list_findings_with_pagination(
@@ -1269,6 +1282,7 @@ class SecurityMonitoringApi:
         filter_discovery_timestamp: Union[str, UnsetType] = unset,
         filter_evaluation: Union[FindingEvaluation, UnsetType] = unset,
         filter_status: Union[FindingStatus, UnsetType] = unset,
+        filter_vulnerability_type: Union[List[FindingVulnerabilityType], UnsetType] = unset,
     ) -> collections.abc.Iterable[Finding]:
         """List findings.
 
@@ -1298,6 +1312,8 @@ class SecurityMonitoringApi:
         :type filter_evaluation: FindingEvaluation, optional
         :param filter_status: Return only findings with the specified status.
         :type filter_status: FindingStatus, optional
+        :param filter_vulnerability_type: Return findings that match the selected vulnerability types (repeatable).
+        :type filter_vulnerability_type: [FindingVulnerabilityType], optional
 
         :return: A generator of paginated results.
         :rtype: collections.abc.Iterable[Finding]
@@ -1338,6 +1354,9 @@ class SecurityMonitoringApi:
 
         if filter_status is not unset:
             kwargs["filter_status"] = filter_status
+
+        if filter_vulnerability_type is not unset:
+            kwargs["filter_vulnerability_type"] = filter_vulnerability_type
 
         local_page_size = get_attribute_from_path(kwargs, "page_limit", 100)
         endpoint = self._list_findings_endpoint

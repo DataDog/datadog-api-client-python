@@ -669,6 +669,7 @@ from datadog_api_client.v2.model.finding_mute_reason import FindingMuteReason
 from datadog_api_client.v2.model.finding_rule import FindingRule
 from datadog_api_client.v2.model.finding_status import FindingStatus
 from datadog_api_client.v2.model.finding_type import FindingType
+from datadog_api_client.v2.model.finding_vulnerability_type import FindingVulnerabilityType
 from datadog_api_client.v2.model.formula_limit import FormulaLimit
 from datadog_api_client.v2.model.full_api_key import FullAPIKey
 from datadog_api_client.v2.model.full_api_key_attributes import FullAPIKeyAttributes
@@ -2548,6 +2549,7 @@ __all__ = [
     "FindingRule",
     "FindingStatus",
     "FindingType",
+    "FindingVulnerabilityType",
     "FormulaLimit",
     "FullAPIKey",
     "FullAPIKeyAttributes",
