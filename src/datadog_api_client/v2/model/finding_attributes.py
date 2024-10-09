@@ -18,6 +18,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.finding_mute import FindingMute
     from datadog_api_client.v2.model.finding_rule import FindingRule
     from datadog_api_client.v2.model.finding_status import FindingStatus
+    from datadog_api_client.v2.model.finding_vulnerability_type import FindingVulnerabilityType
 
 
 class FindingAttributes(ModelNormal):
@@ -36,6 +37,7 @@ class FindingAttributes(ModelNormal):
         from datadog_api_client.v2.model.finding_mute import FindingMute
         from datadog_api_client.v2.model.finding_rule import FindingRule
         from datadog_api_client.v2.model.finding_status import FindingStatus
+        from datadog_api_client.v2.model.finding_vulnerability_type import FindingVulnerabilityType
 
         return {
             "evaluation": (FindingEvaluation,),
@@ -47,6 +49,7 @@ class FindingAttributes(ModelNormal):
             "rule": (FindingRule,),
             "status": (FindingStatus,),
             "tags": ([str],),
+            "vulnerability_type": (FindingVulnerabilityType,),
         }
 
     attribute_map = {
@@ -59,6 +62,7 @@ class FindingAttributes(ModelNormal):
         "rule": "rule",
         "status": "status",
         "tags": "tags",
+        "vulnerability_type": "vulnerability_type",
     }
 
     def __init__(
@@ -72,6 +76,7 @@ class FindingAttributes(ModelNormal):
         rule: Union[FindingRule, UnsetType] = unset,
         status: Union[FindingStatus, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
+        vulnerability_type: Union[FindingVulnerabilityType, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -103,6 +108,9 @@ class FindingAttributes(ModelNormal):
 
         :param tags: The tags associated with this finding.
         :type tags: [str], optional
+
+        :param vulnerability_type: The vulnerability type of the finding.
+        :type vulnerability_type: FindingVulnerabilityType, optional
         """
         if evaluation is not unset:
             kwargs["evaluation"] = evaluation
@@ -122,4 +130,6 @@ class FindingAttributes(ModelNormal):
             kwargs["status"] = status
         if tags is not unset:
             kwargs["tags"] = tags
+        if vulnerability_type is not unset:
+            kwargs["vulnerability_type"] = vulnerability_type
         super().__init__(kwargs)
