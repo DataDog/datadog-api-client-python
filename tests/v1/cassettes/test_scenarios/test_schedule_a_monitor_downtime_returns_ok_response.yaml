@@ -1,9 +1,9 @@
 interactions:
 - request:
-    body: '{"message":"some message Notify: @hipchat-channel","name":"Test-Schedule_a_monitor_downtime_returns_OK_response-1674067037","options":{"enable_logs_sample":true,"escalation_message":"the
-      situation has escalated","evaluation_delay":700,"groupby_simple_monitor":true,"include_tags":true,"locked":false,"new_host_delay":600,"no_data_timeframe":null,"notification_preset_name":"hide_handles","notify_audit":false,"notify_no_data":false,"on_missing_data":"show_and_notify_no_data","renotify_interval":60,"require_full_window":true,"thresholds":{"critical":2,"warning":1},"timeout_h":24},"priority":3,"query":"logs(\"service:foo
+    body: '{"message":"some message Notify: @hipchat-channel","name":"Test-Schedule_a_monitor_downtime_returns_OK_response-1728501048","options":{"enable_logs_sample":true,"escalation_message":"the
+      situation has escalated","evaluation_delay":700,"include_tags":true,"locked":false,"new_host_delay":600,"no_data_timeframe":null,"notification_preset_name":"hide_handles","notify_audit":false,"notify_no_data":false,"on_missing_data":"show_and_notify_no_data","renotify_interval":60,"require_full_window":true,"thresholds":{"critical":2,"warning":1},"timeout_h":24},"priority":3,"query":"logs(\"service:foo
       AND type:error\").index(\"main\").rollup(\"count\").by(\"source\").last(\"5m\")
-      > 2","tags":["test:testscheduleamonitordowntimereturnsokresponse1674067037","env:ci"],"type":"log
+      > 2","tags":["test:testscheduleamonitordowntimereturnsokresponse1728501048","env:ci"],"type":"log
       alert"}'
     headers:
       accept:
@@ -14,12 +14,12 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/monitor
   response:
     body:
-      string: '{"id":108260301,"org_id":321813,"type":"log alert","name":"Test-Schedule_a_monitor_downtime_returns_OK_response-1674067037","message":"some
-        message Notify: @hipchat-channel","tags":["test:testscheduleamonitordowntimereturnsokresponse1674067037","env:ci"],"query":"logs(\"service:foo
+      string: '{"id":155777976,"org_id":321813,"type":"log alert","name":"Test-Schedule_a_monitor_downtime_returns_OK_response-1728501048","message":"some
+        message Notify: @hipchat-channel","tags":["test:testscheduleamonitordowntimereturnsokresponse1728501048","env:ci"],"query":"logs(\"service:foo
         AND type:error\").index(\"main\").rollup(\"count\").by(\"source\").last(\"5m\")
         > 2","options":{"enable_logs_sample":true,"escalation_message":"the situation
-        has escalated","evaluation_delay":700,"groupby_simple_monitor":true,"include_tags":true,"locked":false,"new_host_delay":600,"no_data_timeframe":null,"notification_preset_name":"hide_handles","notify_audit":false,"notify_no_data":false,"on_missing_data":"show_and_notify_no_data","renotify_interval":60,"require_full_window":true,"thresholds":{"critical":2.0,"warning":1.0},"timeout_h":24,"silenced":{}},"multi":true,"created_at":1674067037000,"created":"2023-01-18T18:37:17.701290+00:00","modified":"2023-01-18T18:37:17.701290+00:00","deleted":null,"restricted_roles":null,"priority":3,"overall_state_modified":null,"overall_state":"No
-        Data","creator":{"name":null,"handle":"frog@datadoghq.com","email":"frog@datadoghq.com","id":1445416}}
+        has escalated","evaluation_delay":700,"include_tags":true,"locked":false,"new_host_delay":600,"no_data_timeframe":null,"notification_preset_name":"hide_handles","notify_audit":false,"notify_no_data":false,"on_missing_data":"show_and_notify_no_data","renotify_interval":60,"require_full_window":true,"thresholds":{"critical":2.0,"warning":1.0},"timeout_h":24,"groupby_simple_monitor":false,"silenced":{}},"multi":true,"created_at":1728501049000,"created":"2024-10-09T19:10:49.823767+00:00","modified":"2024-10-09T19:10:49.823767+00:00","deleted":null,"restricted_roles":null,"priority":3,"restriction_policy":null,"overall_state_modified":null,"overall_state":"No
+        Data","creator":{"name":"CI Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","email":"team-intg-tools-libs-spam@datadoghq.com","id":2320499}}
 
         '
     headers:
@@ -29,7 +29,7 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"message":"Test-Schedule_a_monitor_downtime_returns_OK_response-1674067037","monitor_id":108260301,"scope":["test:testscheduleamonitordowntimereturnsokresponse1674067037"],"start":1674067037,"timezone":"Etc/UTC"}'
+    body: '{"message":"Test-Schedule_a_monitor_downtime_returns_OK_response-1728501048","monitor_id":155777976,"scope":["test:testscheduleamonitordowntimereturnsokresponse1728501048"],"start":1728501048,"timezone":"Etc/UTC"}'
     headers:
       accept:
       - application/json
@@ -39,7 +39,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/downtime
   response:
     body:
-      string: '{"id":2598558218,"monitor_id":108260301,"org_id":321813,"start":1674067037,"end":null,"canceled":null,"created":1674067037,"modified":1674067037,"message":"Test-Schedule_a_monitor_downtime_returns_OK_response-1674067037","active":true,"disabled":false,"recurrence":null,"timezone":"Etc/UTC","parent_id":null,"child_id":null,"creator_id":1445416,"updater_id":null,"downtime_type":2,"monitor_tags":["*"],"mute_first_recovery_notification":false,"scope":["test:testscheduleamonitordowntimereturnsokresponse1674067037"]}
+      string: '{"id":4428559092,"monitor_id":155777976,"org_id":321813,"start":1728501048,"end":null,"canceled":null,"created":1728501050,"modified":1728501050,"message":"Test-Schedule_a_monitor_downtime_returns_OK_response-1728501048","active":true,"disabled":false,"recurrence":null,"timezone":"Etc/UTC","parent_id":null,"child_id":null,"creator_id":2320499,"updater_id":null,"downtime_type":2,"status":"active","monitor_tags":["*"],"mute_first_recovery_notification":false,"notify_end_types":["expired"],"notify_end_states":["alert","no
+        data","warn"],"uuid":"3c71a4ea-c643-4321-977b-854c7014643d","scope":["test:testscheduleamonitordowntimereturnsokresponse1728501048"]}
 
         '
     headers:
@@ -54,7 +55,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/downtime/2598558218
+    uri: https://api.datadoghq.com/api/v1/downtime/4428559092
   response:
     body:
       string: ''
@@ -70,10 +71,10 @@ interactions:
       accept:
       - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/monitor/108260301
+    uri: https://api.datadoghq.com/api/v1/monitor/155777976
   response:
     body:
-      string: '{"deleted_monitor_id":108260301}
+      string: '{"deleted_monitor_id":155777976}
 
         '
     headers:
