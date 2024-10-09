@@ -3770,6 +3770,13 @@ datadog\_api\_client.v2.model.finding\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.finding\_vulnerability\_type module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.finding_vulnerability_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.formula\_limit module
 ---------------------------------------------------
 
