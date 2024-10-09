@@ -25,7 +25,6 @@ body = Monitor(
         escalation_message="the situation has escalated",
         evaluation_delay=700,
         group_retention_duration="2d",
-        groupby_simple_monitor=False,
         include_tags=True,
         locked=False,
         new_host_delay=600,
