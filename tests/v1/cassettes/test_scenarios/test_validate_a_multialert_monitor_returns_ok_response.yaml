@@ -1,9 +1,9 @@
 interactions:
 - request:
-    body: '{"message":"some message Notify: @hipchat-channel","name":"Test-Validate_a_multi_alert_monitor_returns_OK_response-1664556093","options":{"enable_logs_sample":true,"escalation_message":"the
-      situation has escalated","evaluation_delay":700,"group_retention_duration":"2d","groupby_simple_monitor":false,"include_tags":true,"locked":false,"new_host_delay":600,"no_data_timeframe":null,"notify_audit":false,"notify_by":["status"],"notify_no_data":false,"on_missing_data":"show_and_notify_no_data","renotify_interval":60,"require_full_window":true,"thresholds":{"critical":2,"warning":1},"timeout_h":24},"priority":3,"query":"logs(\"service:foo
+    body: '{"message":"some message Notify: @hipchat-channel","name":"Test-Validate_a_multi_alert_monitor_returns_OK_response-1728485695","options":{"enable_logs_sample":true,"escalation_message":"the
+      situation has escalated","evaluation_delay":700,"group_retention_duration":"2d","include_tags":true,"locked":false,"new_host_delay":600,"no_data_timeframe":null,"notify_audit":false,"notify_by":["status"],"notify_no_data":false,"on_missing_data":"show_and_notify_no_data","renotify_interval":60,"require_full_window":true,"thresholds":{"critical":2,"warning":1},"timeout_h":24},"priority":3,"query":"logs(\"service:foo
       AND type:error\").index(\"main\").rollup(\"count\").by(\"source,status\").last(\"5m\")
-      > 2","tags":["test:testvalidateamultialertmonitorreturnsokresponse1664556093","env:ci"],"type":"log
+      > 2","tags":["test:testvalidateamultialertmonitorreturnsokresponse1728485695","env:ci"],"type":"log
       alert"}'
     headers:
       accept:
