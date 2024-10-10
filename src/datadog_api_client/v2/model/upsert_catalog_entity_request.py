@@ -13,7 +13,7 @@ from datadog_api_client.model_utils import (
 class UpsertCatalogEntityRequest(ModelComposed):
     def __init__(self, **kwargs):
         """
-        Create / Update entity request.
+        Create or update entity request.
         """
         super().__init__(kwargs)
 

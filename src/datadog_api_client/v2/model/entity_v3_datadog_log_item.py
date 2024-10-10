@@ -32,12 +32,12 @@ class EntityV3DatadogLogItem(ModelNormal):
 
     def __init__(self_, name: Union[str, UnsetType] = unset, query: Union[str, UnsetType] = unset, **kwargs):
         """
-        log association item.
+        Log association item.
 
-        :param name: The name of the query
+        :param name: The name of the query.
         :type name: str, optional
 
-        :param query: The query to run
+        :param query: The query to run.
         :type query: str, optional
         """
         if name is not unset:

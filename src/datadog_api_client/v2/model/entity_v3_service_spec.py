@@ -57,7 +57,7 @@ class EntityV3ServiceSpec(ModelNormal):
         """
         The definition of Entity V3 Service Spec object.
 
-        :param depends_on: A list of components the service depends on
+        :param depends_on: A list of components the service depends on.
         :type depends_on: [str], optional
 
         :param languages: The service's programming language.
@@ -66,10 +66,10 @@ class EntityV3ServiceSpec(ModelNormal):
         :param lifecycle: The lifecycle state of the component.
         :type lifecycle: str, optional
 
-        :param tier: The importance of the component
+        :param tier: The importance of the component.
         :type tier: str, optional
 
-        :param type: The type of service
+        :param type: The type of service.
         :type type: str, optional
         """
         if depends_on is not unset:

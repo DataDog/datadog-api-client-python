@@ -41,12 +41,12 @@ class EntityV3DatadogIntegrationOpsgenie(ModelNormal):
 
     def __init__(self_, service_url: str, region: Union[str, UnsetType] = unset, **kwargs):
         """
-        An Opsgenie integration schema
+        An Opsgenie integration schema.
 
         :param region: The region for the Opsgenie integration.
         :type region: str, optional
 
-        :param service_url: The service url for the Opsgenie integration.
+        :param service_url: The service URL for the Opsgenie integration.
         :type service_url: str
         """
         if region is not unset:

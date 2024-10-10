@@ -36,7 +36,7 @@ class EntityResponseIncludedRelatedOncallEscalationItem(ModelNormal):
         **kwargs,
     ):
         """
-        Oncall escalation
+        Oncall escalation.
 
         :param email: Oncall email.
         :type email: str, optional

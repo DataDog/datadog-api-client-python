@@ -49,12 +49,12 @@ class EntityV3Integrations(ModelNormal):
         **kwargs,
     ):
         """
-        A base schema for defining third party integrations
+        A base schema for defining third-party integrations.
 
-        :param opsgenie: An Opsgenie integration schema
+        :param opsgenie: An Opsgenie integration schema.
         :type opsgenie: EntityV3DatadogIntegrationOpsgenie, optional
 
-        :param pagerduty: An PagerDuty integration schema
+        :param pagerduty: A PagerDuty integration schema.
         :type pagerduty: EntityV3DatadogIntegrationPagerduty, optional
         """
         if opsgenie is not unset:

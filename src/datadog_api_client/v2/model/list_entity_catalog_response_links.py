@@ -38,13 +38,13 @@ class ListEntityCatalogResponseLinks(ModelNormal):
         """
         List entity response links.
 
-        :param next: next link.
+        :param next: Next link.
         :type next: str, optional
 
-        :param previous: previous link.
+        :param previous: Previous link.
         :type previous: str, optional
 
-        :param self: current link.
+        :param self: Current link.
         :type self: str, optional
         """
         if next is not unset:

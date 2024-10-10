@@ -18,7 +18,7 @@ class ListEntityCatalogResponseIncludedItem(ModelComposed):
         :param attributes: Included schema.
         :type attributes: EntityResponseIncludedSchemaAttributes, optional
 
-        :param id: Entity id.
+        :param id: Entity ID.
         :type id: str, optional
 
         :param type: Schema type.

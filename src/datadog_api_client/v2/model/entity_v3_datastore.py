@@ -87,18 +87,18 @@ class EntityV3Datastore(ModelNormal):
         **kwargs,
     ):
         """
-        Schema for datastore entities
+        Schema for datastore entities.
 
-        :param api_version: The schema version of entity type. The field is known as schema-version in the previous version
+        :param api_version: The schema version of entity type. The field is known as schema-version in the previous version.
         :type api_version: EntityV3APIVersion
 
-        :param datadog: Datadog product integrations for the datastore entity
+        :param datadog: Datadog product integrations for the datastore entity.
         :type datadog: EntityV3DatastoreDatadog, optional
 
         :param extensions: Custom extensions. This is the free-formed field to send client side metadata. No Datadog features are affected by this field.
         :type extensions: {str: (bool, date, datetime, dict, float, int, list, str, UUID, none_type,)}, optional
 
-        :param integrations: A base schema for defining third party integrations
+        :param integrations: A base schema for defining third-party integrations.
         :type integrations: EntityV3Integrations, optional
 
         :param kind: The definition of Entity V3 Datastore Kind object.

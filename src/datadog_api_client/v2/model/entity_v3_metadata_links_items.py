@@ -38,7 +38,7 @@ class EntityV3MetadataLinksItems(ModelNormal):
         """
         The definition of Entity V3 Metadata Links Items object.
 
-        :param name: Link name
+        :param name: Link name.
         :type name: str
 
         :param provider: Link provider.
@@ -47,7 +47,7 @@ class EntityV3MetadataLinksItems(ModelNormal):
         :param type: Link type.
         :type type: str
 
-        :param url: Link url
+        :param url: Link URL.
         :type url: str
         """
         if provider is not unset:

@@ -51,7 +51,7 @@ class EntityResponseIncludedRawSchema(ModelNormal):
         :param attributes: Included raw schema attributes.
         :type attributes: EntityResponseIncludedRawSchemaAttributes, optional
 
-        :param id: Raw schema id.
+        :param id: Raw schema ID.
         :type id: str, optional
 
         :param type: Raw schema type.

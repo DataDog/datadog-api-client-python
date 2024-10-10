@@ -34,10 +34,10 @@ class EntityV3DatadogEventItem(ModelNormal):
         """
         Events association item.
 
-        :param name: The name of the query
+        :param name: The name of the query.
         :type name: str, optional
 
-        :param query: The query to run
+        :param query: The query to run.
         :type query: str, optional
         """
         if name is not unset:

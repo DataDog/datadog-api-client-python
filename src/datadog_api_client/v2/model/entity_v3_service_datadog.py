@@ -60,21 +60,21 @@ class EntityV3ServiceDatadog(ModelNormal):
         **kwargs,
     ):
         """
-        Datadog product integrations for the service entity
+        Datadog product integrations for the service entity.
 
-        :param code_locations: Schema for mapping source code locations to an entity
+        :param code_locations: Schema for mapping source code locations to an entity.
         :type code_locations: [EntityV3DatadogCodeLocationItem], optional
 
-        :param events: Events associations
+        :param events: Events associations.
         :type events: [EntityV3DatadogEventItem], optional
 
-        :param logs: Logs association
+        :param logs: Logs association.
         :type logs: [EntityV3DatadogLogItem], optional
 
-        :param performance_data: Performance stats association
+        :param performance_data: Performance stats association.
         :type performance_data: EntityV3DatadogPerformance, optional
 
-        :param pipelines: CI Pipelines association
+        :param pipelines: CI Pipelines association.
         :type pipelines: EntityV3DatadogPipelines, optional
         """
         if code_locations is not unset:

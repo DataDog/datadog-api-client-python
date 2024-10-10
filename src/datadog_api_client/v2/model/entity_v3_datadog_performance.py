@@ -30,9 +30,9 @@ class EntityV3DatadogPerformance(ModelNormal):
 
     def __init__(self_, tags: Union[List[str], UnsetType] = unset, **kwargs):
         """
-        Performance stats association
+        Performance stats association.
 
-        :param tags: A list of APM entity tags that associates the APM Stats data with the entity
+        :param tags: A list of APM entity tags that associates the APM Stats data with the entity.
         :type tags: [str], optional
         """
         if tags is not unset:

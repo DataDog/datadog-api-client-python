@@ -57,7 +57,7 @@ class EntityData(ModelNormal):
         :param attributes: Entity attributes.
         :type attributes: EntityAttributes, optional
 
-        :param id: Entity id.
+        :param id: Entity ID.
         :type id: str, optional
 
         :param meta: Entity metadata.
