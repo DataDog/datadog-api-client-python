@@ -42,10 +42,10 @@ class EntityV3MetadataContactsItems(ModelNormal):
         """
         The definition of Entity V3 Metadata Contacts Items object.
 
-        :param contact: Contact value
+        :param contact: Contact value.
         :type contact: str
 
-        :param name: Contact name
+        :param name: Contact name.
         :type name: str, optional
 
         :param type: Contact type.

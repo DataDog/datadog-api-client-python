@@ -51,7 +51,7 @@ class EntityResponseIncludedIncident(ModelNormal):
         :param attributes: Incident attributes.
         :type attributes: EntityResponseIncludedRelatedIncidentAttributes, optional
 
-        :param id: Incident id.
+        :param id: Incident ID.
         :type id: str, optional
 
         :param type: Incident description.

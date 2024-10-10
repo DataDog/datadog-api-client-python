@@ -45,7 +45,7 @@ class EntityResponseIncludedRelatedOncallAttributes(ModelNormal):
         """
         Included related oncall attributes.
 
-        :param escalations: Oncall escalations
+        :param escalations: Oncall escalations.
         :type escalations: [EntityResponseIncludedRelatedOncallEscalationItem], optional
 
         :param provider: Oncall provider.

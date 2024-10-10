@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class IncludeType(ModelSimple):
     """
-    supported include types.
+    Supported include types.
 
     :param value: Must be one of ["schema", "raw_schema", "oncall", "incident", "relation"].
     :type value: str

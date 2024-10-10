@@ -30,9 +30,9 @@ class EntityV3MetadataOwner(ModelNormal):
 
     def __init__(self_, name: Union[str, UnsetType] = unset, **kwargs):
         """
-        The owner of the entity, usually a team
+        The owner of the entity, usually a team.
 
-        :param name: Team name
+        :param name: Team name.
         :type name: str, optional
         """
         if name is not unset:

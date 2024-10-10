@@ -53,7 +53,7 @@ class EntityAttributes(ModelNormal):
         """
         Entity attributes.
 
-        :param api_version: The api version.
+        :param api_version: The API version.
         :type api_version: str, optional
 
         :param description: The description.

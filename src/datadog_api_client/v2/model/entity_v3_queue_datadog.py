@@ -50,15 +50,15 @@ class EntityV3QueueDatadog(ModelNormal):
         **kwargs,
     ):
         """
-        Datadog product integrations for the datastore entity
+        Datadog product integrations for the datastore entity.
 
-        :param events: Events associations
+        :param events: Events associations.
         :type events: [EntityV3DatadogEventItem], optional
 
-        :param logs: Logs association
+        :param logs: Logs association.
         :type logs: [EntityV3DatadogLogItem], optional
 
-        :param performance_data: Performance stats association
+        :param performance_data: Performance stats association.
         :type performance_data: EntityV3DatadogPerformance, optional
         """
         if events is not unset:

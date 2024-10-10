@@ -1,6 +1,6 @@
 @endpoint(software-catalog) @endpoint(software-catalog-v2)
 Feature: Software Catalog
-  API to create, update, retrieve and delete Software Catalog entities.
+  API to create, update, retrieve, and delete Software Catalog entities.
 
   Background:
     Given a valid "apiKeyAuth" key in the system

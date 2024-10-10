@@ -25,7 +25,7 @@ from datadog_api_client.v2.model.entity_v3 import EntityV3
 
 class SoftwareCatalogApi:
     """
-    API to create, update, retrieve and delete Software Catalog entities.
+    API to create, update, retrieve, and delete Software Catalog entities.
     """
 
     def __init__(self, api_client=None):
@@ -76,39 +76,39 @@ class SoftwareCatalogApi:
                     "attribute": "page[limit]",
                     "location": "query",
                 },
-                "fitler_id": {
+                "filter_id": {
                     "openapi_types": (str,),
-                    "attribute": "fitler[id]",
+                    "attribute": "filter[id]",
                     "location": "query",
                 },
-                "fitler_ref": {
+                "filter_ref": {
                     "openapi_types": (str,),
-                    "attribute": "fitler[ref]",
+                    "attribute": "filter[ref]",
                     "location": "query",
                 },
-                "fitler_name": {
+                "filter_name": {
                     "openapi_types": (str,),
-                    "attribute": "fitler[name]",
+                    "attribute": "filter[name]",
                     "location": "query",
                 },
-                "fitler_kind": {
+                "filter_kind": {
                     "openapi_types": (str,),
-                    "attribute": "fitler[kind]",
+                    "attribute": "filter[kind]",
                     "location": "query",
                 },
-                "fitler_owner": {
+                "filter_owner": {
                     "openapi_types": (str,),
-                    "attribute": "fitler[owner]",
+                    "attribute": "filter[owner]",
                     "location": "query",
                 },
-                "fitler_relation_type": {
+                "filter_relation_type": {
                     "openapi_types": (RelationType,),
-                    "attribute": "fitler[relation][type]",
+                    "attribute": "filter[relation][type]",
                     "location": "query",
                 },
-                "fitler_exclude_snapshot": {
+                "filter_exclude_snapshot": {
                     "openapi_types": (str,),
-                    "attribute": "fitler[exclude_snapshot]",
+                    "attribute": "filter[exclude_snapshot]",
                     "location": "query",
                 },
                 "include": {
@@ -151,7 +151,7 @@ class SoftwareCatalogApi:
 
         Delete a single entity in Software Catalog.
 
-        :param entity_id: UUID or Entity Ref
+        :param entity_id: UUID or Entity Ref.
         :type entity_id: str
         :rtype: None
         """
@@ -165,13 +165,13 @@ class SoftwareCatalogApi:
         *,
         page_offset: Union[int, UnsetType] = unset,
         page_limit: Union[int, UnsetType] = unset,
-        fitler_id: Union[str, UnsetType] = unset,
-        fitler_ref: Union[str, UnsetType] = unset,
-        fitler_name: Union[str, UnsetType] = unset,
-        fitler_kind: Union[str, UnsetType] = unset,
-        fitler_owner: Union[str, UnsetType] = unset,
-        fitler_relation_type: Union[RelationType, UnsetType] = unset,
-        fitler_exclude_snapshot: Union[str, UnsetType] = unset,
+        filter_id: Union[str, UnsetType] = unset,
+        filter_ref: Union[str, UnsetType] = unset,
+        filter_name: Union[str, UnsetType] = unset,
+        filter_kind: Union[str, UnsetType] = unset,
+        filter_owner: Union[str, UnsetType] = unset,
+        filter_relation_type: Union[RelationType, UnsetType] = unset,
+        filter_exclude_snapshot: Union[str, UnsetType] = unset,
         include: Union[IncludeType, UnsetType] = unset,
     ) -> ListEntityCatalogResponse:
         """Get a list of entities.
@@ -182,21 +182,21 @@ class SoftwareCatalogApi:
         :type page_offset: int, optional
         :param page_limit: Maximum number of entities in the response.
         :type page_limit: int, optional
-        :param fitler_id: Filter entities by UUID
-        :type fitler_id: str, optional
-        :param fitler_ref: Filter entities by reference
-        :type fitler_ref: str, optional
-        :param fitler_name: Filter entities by name
-        :type fitler_name: str, optional
-        :param fitler_kind: Filter entities by kind
-        :type fitler_kind: str, optional
-        :param fitler_owner: Filter entities by owner
-        :type fitler_owner: str, optional
-        :param fitler_relation_type: Filter entities by relation type
-        :type fitler_relation_type: RelationType, optional
-        :param fitler_exclude_snapshot: Filter entities by excluding snapshotted entities
-        :type fitler_exclude_snapshot: str, optional
-        :param include: include relationship data
+        :param filter_id: Filter entities by UUID.
+        :type filter_id: str, optional
+        :param filter_ref: Filter entities by reference
+        :type filter_ref: str, optional
+        :param filter_name: Filter entities by name.
+        :type filter_name: str, optional
+        :param filter_kind: Filter entities by kind.
+        :type filter_kind: str, optional
+        :param filter_owner: Filter entities by owner.
+        :type filter_owner: str, optional
+        :param filter_relation_type: Filter entities by relation type.
+        :type filter_relation_type: RelationType, optional
+        :param filter_exclude_snapshot: Filter entities by excluding snapshotted entities.
+        :type filter_exclude_snapshot: str, optional
+        :param include: Include relationship data.
         :type include: IncludeType, optional
         :rtype: ListEntityCatalogResponse
         """
@@ -207,26 +207,26 @@ class SoftwareCatalogApi:
         if page_limit is not unset:
             kwargs["page_limit"] = page_limit
 
-        if fitler_id is not unset:
-            kwargs["fitler_id"] = fitler_id
+        if filter_id is not unset:
+            kwargs["filter_id"] = filter_id
 
-        if fitler_ref is not unset:
-            kwargs["fitler_ref"] = fitler_ref
+        if filter_ref is not unset:
+            kwargs["filter_ref"] = filter_ref
 
-        if fitler_name is not unset:
-            kwargs["fitler_name"] = fitler_name
+        if filter_name is not unset:
+            kwargs["filter_name"] = filter_name
 
-        if fitler_kind is not unset:
-            kwargs["fitler_kind"] = fitler_kind
+        if filter_kind is not unset:
+            kwargs["filter_kind"] = filter_kind
 
-        if fitler_owner is not unset:
-            kwargs["fitler_owner"] = fitler_owner
+        if filter_owner is not unset:
+            kwargs["filter_owner"] = filter_owner
 
-        if fitler_relation_type is not unset:
-            kwargs["fitler_relation_type"] = fitler_relation_type
+        if filter_relation_type is not unset:
+            kwargs["filter_relation_type"] = filter_relation_type
 
-        if fitler_exclude_snapshot is not unset:
-            kwargs["fitler_exclude_snapshot"] = fitler_exclude_snapshot
+        if filter_exclude_snapshot is not unset:
+            kwargs["filter_exclude_snapshot"] = filter_exclude_snapshot
 
         if include is not unset:
             kwargs["include"] = include
@@ -238,13 +238,13 @@ class SoftwareCatalogApi:
         *,
         page_offset: Union[int, UnsetType] = unset,
         page_limit: Union[int, UnsetType] = unset,
-        fitler_id: Union[str, UnsetType] = unset,
-        fitler_ref: Union[str, UnsetType] = unset,
-        fitler_name: Union[str, UnsetType] = unset,
-        fitler_kind: Union[str, UnsetType] = unset,
-        fitler_owner: Union[str, UnsetType] = unset,
-        fitler_relation_type: Union[RelationType, UnsetType] = unset,
-        fitler_exclude_snapshot: Union[str, UnsetType] = unset,
+        filter_id: Union[str, UnsetType] = unset,
+        filter_ref: Union[str, UnsetType] = unset,
+        filter_name: Union[str, UnsetType] = unset,
+        filter_kind: Union[str, UnsetType] = unset,
+        filter_owner: Union[str, UnsetType] = unset,
+        filter_relation_type: Union[RelationType, UnsetType] = unset,
+        filter_exclude_snapshot: Union[str, UnsetType] = unset,
         include: Union[IncludeType, UnsetType] = unset,
     ) -> collections.abc.Iterable[EntityData]:
         """Get a list of entities.
@@ -255,21 +255,21 @@ class SoftwareCatalogApi:
         :type page_offset: int, optional
         :param page_limit: Maximum number of entities in the response.
         :type page_limit: int, optional
-        :param fitler_id: Filter entities by UUID
-        :type fitler_id: str, optional
-        :param fitler_ref: Filter entities by reference
-        :type fitler_ref: str, optional
-        :param fitler_name: Filter entities by name
-        :type fitler_name: str, optional
-        :param fitler_kind: Filter entities by kind
-        :type fitler_kind: str, optional
-        :param fitler_owner: Filter entities by owner
-        :type fitler_owner: str, optional
-        :param fitler_relation_type: Filter entities by relation type
-        :type fitler_relation_type: RelationType, optional
-        :param fitler_exclude_snapshot: Filter entities by excluding snapshotted entities
-        :type fitler_exclude_snapshot: str, optional
-        :param include: include relationship data
+        :param filter_id: Filter entities by UUID.
+        :type filter_id: str, optional
+        :param filter_ref: Filter entities by reference
+        :type filter_ref: str, optional
+        :param filter_name: Filter entities by name.
+        :type filter_name: str, optional
+        :param filter_kind: Filter entities by kind.
+        :type filter_kind: str, optional
+        :param filter_owner: Filter entities by owner.
+        :type filter_owner: str, optional
+        :param filter_relation_type: Filter entities by relation type.
+        :type filter_relation_type: RelationType, optional
+        :param filter_exclude_snapshot: Filter entities by excluding snapshotted entities.
+        :type filter_exclude_snapshot: str, optional
+        :param include: Include relationship data.
         :type include: IncludeType, optional
 
         :return: A generator of paginated results.
@@ -282,26 +282,26 @@ class SoftwareCatalogApi:
         if page_limit is not unset:
             kwargs["page_limit"] = page_limit
 
-        if fitler_id is not unset:
-            kwargs["fitler_id"] = fitler_id
+        if filter_id is not unset:
+            kwargs["filter_id"] = filter_id
 
-        if fitler_ref is not unset:
-            kwargs["fitler_ref"] = fitler_ref
+        if filter_ref is not unset:
+            kwargs["filter_ref"] = filter_ref
 
-        if fitler_name is not unset:
-            kwargs["fitler_name"] = fitler_name
+        if filter_name is not unset:
+            kwargs["filter_name"] = filter_name
 
-        if fitler_kind is not unset:
-            kwargs["fitler_kind"] = fitler_kind
+        if filter_kind is not unset:
+            kwargs["filter_kind"] = filter_kind
 
-        if fitler_owner is not unset:
-            kwargs["fitler_owner"] = fitler_owner
+        if filter_owner is not unset:
+            kwargs["filter_owner"] = filter_owner
 
-        if fitler_relation_type is not unset:
-            kwargs["fitler_relation_type"] = fitler_relation_type
+        if filter_relation_type is not unset:
+            kwargs["filter_relation_type"] = filter_relation_type
 
-        if fitler_exclude_snapshot is not unset:
-            kwargs["fitler_exclude_snapshot"] = fitler_exclude_snapshot
+        if filter_exclude_snapshot is not unset:
+            kwargs["filter_exclude_snapshot"] = filter_exclude_snapshot
 
         if include is not unset:
             kwargs["include"] = include
@@ -326,7 +326,7 @@ class SoftwareCatalogApi:
 
         Create or update entities in Software Catalog.
 
-        :param body: Entity YAML/JSON.
+        :param body: Entity YAML or JSON.
         :type body: UpsertCatalogEntityRequest
         :rtype: UpsertCatalogEntityResponse
         """

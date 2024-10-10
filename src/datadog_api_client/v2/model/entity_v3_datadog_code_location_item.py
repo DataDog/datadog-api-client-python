@@ -38,12 +38,12 @@ class EntityV3DatadogCodeLocationItem(ModelNormal):
         self_, paths: Union[List[str], UnsetType] = unset, repository_url: Union[str, UnsetType] = unset, **kwargs
     ):
         """
-        code location item.
+        Code location item.
 
-        :param paths: The paths (glob) to the source code of the service
+        :param paths: The paths (glob) to the source code of the service.
         :type paths: [str], optional
 
-        :param repository_url: The repository path of the source code of the entity
+        :param repository_url: The repository path of the source code of the entity.
         :type repository_url: str, optional
         """
         if paths is not unset:

@@ -54,10 +54,10 @@ class EntityV3DatastoreSpec(ModelNormal):
         :param lifecycle: The lifecycle state of the datastore.
         :type lifecycle: str, optional
 
-        :param tier: The importance of the datastore
+        :param tier: The importance of the datastore.
         :type tier: str, optional
 
-        :param type: The type of datastore
+        :param type: The type of datastore.
         :type type: str, optional
         """
         if lifecycle is not unset:

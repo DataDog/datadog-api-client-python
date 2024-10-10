@@ -33,9 +33,9 @@ class EntityV3DatadogIntegrationPagerduty(ModelNormal):
 
     def __init__(self_, service_url: str, **kwargs):
         """
-        An PagerDuty integration schema
+        A PagerDuty integration schema.
 
-        :param service_url: The service url for the PagerDuty integration.
+        :param service_url: The service URL for the PagerDuty integration.
         :type service_url: str
         """
         super().__init__(kwargs)

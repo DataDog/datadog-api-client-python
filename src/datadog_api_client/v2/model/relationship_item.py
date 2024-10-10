@@ -30,7 +30,7 @@ class RelationshipItem(ModelNormal):
         """
         Relationship entry.
 
-        :param id: Associated data id.
+        :param id: Associated data ID.
         :type id: str, optional
 
         :param type: Relationship type.

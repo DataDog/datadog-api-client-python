@@ -30,10 +30,10 @@ class EntityV3MetadataAdditionalOwnersItems(ModelNormal):
         """
         The definition of Entity V3 Metadata Additional Owners Items object.
 
-        :param name: Team name
+        :param name: Team name.
         :type name: str
 
-        :param type: Team type
+        :param type: Team type.
         :type type: str, optional
         """
         if type is not unset:

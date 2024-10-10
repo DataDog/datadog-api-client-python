@@ -54,10 +54,10 @@ class EntityV3QueueSpec(ModelNormal):
         :param lifecycle: The lifecycle state of the queue.
         :type lifecycle: str, optional
 
-        :param tier: The importance of the queue
+        :param tier: The importance of the queue.
         :type tier: str, optional
 
-        :param type: The type of queue
+        :param type: The type of queue.
         :type type: str, optional
         """
         if lifecycle is not unset:

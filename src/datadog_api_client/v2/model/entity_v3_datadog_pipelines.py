@@ -30,9 +30,9 @@ class EntityV3DatadogPipelines(ModelNormal):
 
     def __init__(self_, fingerprints: Union[List[str], UnsetType] = unset, **kwargs):
         """
-        CI Pipelines association
+        CI Pipelines association.
 
-        :param fingerprints: A list of CI Fingerprints that associate CI Pipelines with the entity
+        :param fingerprints: A list of CI Fingerprints that associate CI Pipelines with the entity.
         :type fingerprints: [str], optional
         """
         if fingerprints is not unset:

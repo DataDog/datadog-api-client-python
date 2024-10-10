@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class RelationType(ModelSimple):
     """
-    supported relation types
+    Supported relation types.
 
     :param value: Must be one of ["RelationTypeOwns", "RelationTypeOwnedBy", "RelationTypeDependsOn", "RelationTypeDependencyOf", "RelationTypePartsOf", "RelationTypeHasPart", "RelationTypeOtherOwns", "RelationTypeOtherOwnedBy", "RelationTypeImplementedBy", "RelationTypeImplements"].
     :type value: str

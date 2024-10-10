@@ -55,18 +55,18 @@ class EntityV3SystemDatadog(ModelNormal):
         **kwargs,
     ):
         """
-        Datadog product integrations for the service entity
+        Datadog product integrations for the service entity.
 
-        :param events: Events associations
+        :param events: Events associations.
         :type events: [EntityV3DatadogEventItem], optional
 
-        :param logs: Logs association
+        :param logs: Logs association.
         :type logs: [EntityV3DatadogLogItem], optional
 
-        :param performance_data: Performance stats association
+        :param performance_data: Performance stats association.
         :type performance_data: EntityV3DatadogPerformance, optional
 
-        :param pipelines: CI Pipelines association
+        :param pipelines: CI Pipelines association.
         :type pipelines: EntityV3DatadogPipelines, optional
         """
         if events is not unset:
