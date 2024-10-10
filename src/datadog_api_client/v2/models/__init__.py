@@ -216,6 +216,33 @@ from datadog_api_client.v2.model.case_update_status_request import CaseUpdateSta
 from datadog_api_client.v2.model.cases_response import CasesResponse
 from datadog_api_client.v2.model.cases_response_meta import CasesResponseMeta
 from datadog_api_client.v2.model.cases_response_meta_pagination import CasesResponseMetaPagination
+from datadog_api_client.v2.model.change_event import ChangeEvent
+from datadog_api_client.v2.model.change_event_category import ChangeEventCategory
+from datadog_api_client.v2.model.change_event_create_request import ChangeEventCreateRequest
+from datadog_api_client.v2.model.change_event_create_request_type import ChangeEventCreateRequestType
+from datadog_api_client.v2.model.change_event_create_response import ChangeEventCreateResponse
+from datadog_api_client.v2.model.change_event_create_response_attributes import ChangeEventCreateResponseAttributes
+from datadog_api_client.v2.model.change_event_create_response_attributes_attributes import (
+    ChangeEventCreateResponseAttributesAttributes,
+)
+from datadog_api_client.v2.model.change_event_create_response_attributes_attributes_evt import (
+    ChangeEventCreateResponseAttributesAttributesEvt,
+)
+from datadog_api_client.v2.model.change_event_custom_attributes import ChangeEventCustomAttributes
+from datadog_api_client.v2.model.change_event_custom_attributes_author import ChangeEventCustomAttributesAuthor
+from datadog_api_client.v2.model.change_event_custom_attributes_author_type import ChangeEventCustomAttributesAuthorType
+from datadog_api_client.v2.model.change_event_custom_attributes_changed_resource import (
+    ChangeEventCustomAttributesChangedResource,
+)
+from datadog_api_client.v2.model.change_event_custom_attributes_changed_resource_type import (
+    ChangeEventCustomAttributesChangedResourceType,
+)
+from datadog_api_client.v2.model.change_event_custom_attributes_impacted_resources_items import (
+    ChangeEventCustomAttributesImpactedResourcesItems,
+)
+from datadog_api_client.v2.model.change_event_custom_attributes_impacted_resources_items_type import (
+    ChangeEventCustomAttributesImpactedResourcesItemsType,
+)
 from datadog_api_client.v2.model.chargeback_breakdown import ChargebackBreakdown
 from datadog_api_client.v2.model.cloud_configuration_compliance_rule_options import (
     CloudConfigurationComplianceRuleOptions,
@@ -2216,6 +2243,21 @@ __all__ = [
     "CasesResponse",
     "CasesResponseMeta",
     "CasesResponseMetaPagination",
+    "ChangeEvent",
+    "ChangeEventCategory",
+    "ChangeEventCreateRequest",
+    "ChangeEventCreateRequestType",
+    "ChangeEventCreateResponse",
+    "ChangeEventCreateResponseAttributes",
+    "ChangeEventCreateResponseAttributesAttributes",
+    "ChangeEventCreateResponseAttributesAttributesEvt",
+    "ChangeEventCustomAttributes",
+    "ChangeEventCustomAttributesAuthor",
+    "ChangeEventCustomAttributesAuthorType",
+    "ChangeEventCustomAttributesChangedResource",
+    "ChangeEventCustomAttributesChangedResourceType",
+    "ChangeEventCustomAttributesImpactedResourcesItems",
+    "ChangeEventCustomAttributesImpactedResourcesItemsType",
     "ChargebackBreakdown",
     "CloudConfigurationComplianceRuleOptions",
     "CloudConfigurationRegoRule",
