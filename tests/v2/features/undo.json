@@ -602,6 +602,12 @@
       "type": "safe"
     }
   },
+  "CreateEvent": {
+    "tag": "Events",
+    "undo": {
+      "type": "unsafe"
+    }
+  },
   "SearchEvents": {
     "tag": "Events",
     "undo": {
