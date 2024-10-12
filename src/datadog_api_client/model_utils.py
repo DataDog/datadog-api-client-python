@@ -109,7 +109,18 @@ class OpenApiModel(object):
 
     _composed_schemas = empty_dict
 
-    additional_properties_type = (bool, date, datetime, dict, float, int, list, str, UUID, none_type,)
+    additional_properties_type = (
+        bool,
+        date,
+        datetime,
+        dict,
+        float,
+        int,
+        list,
+        str,
+        UUID,
+        none_type,
+    )
 
     attribute_map: Mapping[str, str] = empty_dict
 
@@ -450,8 +461,9 @@ class ModelComposed(OpenApiModel):
         self._composed_instances = composed_info[0]
         self._var_name_to_model_instances = composed_info[1]
         self._additional_properties_model_instances = composed_info[2]
-        self._unparsed = any(isinstance(composed_instance, UnparsedObject)
-                             for composed_instance in self._composed_instances)
+        self._unparsed = any(
+            isinstance(composed_instance, UnparsedObject) for composed_instance in self._composed_instances
+        )
 
     def __setitem__(self, name, value):
         """Set the value of an attribute using square-bracket notation: `instance[attr] = val`."""
@@ -1054,7 +1066,7 @@ def deserialize_primitive(data, klass, path_to_item):
                 if str(converted_value) != data:
                     # '7' -> 7.0 -> '7.0' != '7'
                     raise ValueError("This is not a float")
-            else: 
+            else:
                 converted_value = klass(data)
             return converted_value
     except (OverflowError, ValueError) as ex:
@@ -1658,7 +1670,6 @@ class UnparsedObject(ModelNormal):
     )
 
     def __init__(self, **kwargs):
-
         self._data_store = {}
         self._unparsed = True
 

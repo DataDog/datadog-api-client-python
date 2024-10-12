@@ -456,7 +456,6 @@ class ApiClient:
 
 
 class ThreadedApiClient(ApiClient):
-
     _pool = None
 
     def __init__(self, configuration: Configuration, pool_threads: int = 1):
@@ -547,7 +546,6 @@ class AsyncApiClient(ApiClient):
         request_timeout: Optional[Union[int, float, Tuple[Union[int, float], Union[int, float]]]] = None,
         check_type: Optional[bool] = None,
     ):
-
         # perform request and return response
         response = await self.rest_client.request(
             method,
@@ -812,7 +810,7 @@ class Endpoint:
             check_type=self.api_client.configuration.check_return_type,
             request_timeout=self.api_client.configuration.request_timeout,
             host=host,
-            pagination=pagination
+            pagination=pagination,
         )
 
     def update_params_for_auth(self, headers, queries) -> None:
