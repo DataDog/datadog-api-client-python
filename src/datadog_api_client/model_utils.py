@@ -1376,6 +1376,53 @@ def validate_and_convert_types(
     return input_value
 
 
+def get_file_data_and_close_file(file_instance: io.IOBase) -> bytes:
+    file_data = file_instance.read()
+    file_instance.close()
+    return file_data
+
+
+def data_to_dict(instance, serialize=True):
+    """Prepares data for transmission before it is sent with the rest client.
+
+    If obj is None, return None.
+    If obj is str, int, long, float, bool, return directly.
+    If obj is datetime.datetime, datetime.date convert to string in iso8601 format.
+    If obj is list, sanitize each element in the list.
+    If obj is dict, return the dict.
+    If obj is OpenAPI model, return the properties dict.
+    If obj is io.IOBase, return the bytes.
+
+    :param obj: The data to serialize.
+    :param serialize: If True, return data safe for wire. Forwarded to model_to_dict.
+    :type serialize: bool
+    :return: The serialized form of data.
+    """
+    if isinstance(instance, (ModelNormal, ModelComposed)):
+        return {key: data_to_dict(val) for key, val in model_to_dict(instance, serialize).items()}
+    elif isinstance(instance, io.IOBase):
+        return get_file_data_and_close_file(instance)
+    elif isinstance(instance, (str, int, float, bool)) or instance is None:
+        return instance
+    elif isinstance(instance, (datetime, date)):
+        if not serialize:
+            return instance
+        if getattr(instance, "tzinfo", None) is not None:
+            return instance.isoformat()
+        return "{}Z".format(instance.strftime("%Y-%m-%dT%H:%M:%S.%f")[:-3])
+    elif isinstance(instance, UUID):
+        if not serialize:
+            return instance
+        return str(instance)
+    elif isinstance(instance, ModelSimple):
+        return data_to_dict(instance.value)
+    elif isinstance(instance, (list, tuple)):
+        return [data_to_dict(item) for item in instance]
+    if isinstance(instance, dict):
+        return {key: data_to_dict(val) for key, val in instance.items()}
+    raise ApiValueError("Unable to handle type {}".format(instance.__class__.__name__))
+
+
 def model_to_dict(model_instance, serialize=True):
     """Returns the model properties as a dict.
 
@@ -1406,37 +1453,7 @@ def model_to_dict(model_instance, serialize=True):
                     seen_json_attribute_names.add(attr)
                 except KeyError:
                     used_fallback_python_attribute_names.add(attr)
-            if isinstance(value, list):
-                if not value:
-                    # empty list or None
-                    result[attr] = value
-                else:
-                    res = []
-                    for v in value:
-                        if isinstance(v, PRIMITIVE_TYPES) or v is None:
-                            res.append(v)
-                        elif isinstance(v, ModelSimple):
-                            res.append(v.value)
-                        elif isinstance(v, OpenApiModel):
-                            res.append(model_to_dict(v, serialize=serialize))
-                        else:
-                            res.append(v)
-                    result[attr] = res
-            elif isinstance(value, dict):
-                result[attr] = dict(
-                    map(
-                        lambda item: (item[0], model_to_dict(item[1], serialize=serialize))
-                        if hasattr(item[1], "_data_store")
-                        else item,
-                        value.items(),
-                    )
-                )
-            elif isinstance(value, ModelSimple):
-                result[attr] = value.value
-            elif hasattr(value, "_data_store"):
-                result[attr] = model_to_dict(value, serialize=serialize)
-            else:
-                result[attr] = value
+            result[attr] = data_to_dict(value, serialize)
     if serialize:
         for python_key in used_fallback_python_attribute_names:
             json_key = py_to_json_map.get(python_key)
