@@ -163,7 +163,7 @@ Feature: GCP Integration
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/gcp-integrations
+  @skip-terraform-config @team:DataDog/gcp-integrations
   Scenario: Update STS Service Account returns "OK" response
     Given there is a valid "gcp_sts_account" in the system
     And new "UpdateGCPSTSAccount" request
@@ -172,7 +172,7 @@ Feature: GCP Integration
     When the request is sent
     Then the response status is 201 OK
 
-  @team:DataDog/gcp-integrations
+  @skip-terraform-config @team:DataDog/gcp-integrations
   Scenario: Update STS Service Account returns "OK" response with cloud run revision filters
     Given there is a valid "gcp_sts_account" in the system
     And new "UpdateGCPSTSAccount" request
@@ -181,7 +181,7 @@ Feature: GCP Integration
     When the request is sent
     Then the response status is 201 OK
 
-  @team:DataDog/gcp-integrations
+  @skip-terraform-config @team:DataDog/gcp-integrations
   Scenario: Update STS Service Account returns "OK" response with enable resource collection turned on
     Given there is a valid "gcp_sts_account" in the system
     And new "UpdateGCPSTSAccount" request
