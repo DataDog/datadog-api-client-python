@@ -15,7 +15,7 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v1.model.synthetics_mobile_test_binding import SyntheticsMobileTestBinding
-    from datadog_api_client.v1.model.synthetics_mobile_test_ci_options import SyntheticsMobileTestCiOptions
+    from datadog_api_client.v1.model.synthetics_test_ci_options import SyntheticsTestCiOptions
     from datadog_api_client.v1.model.synthetics_mobile_tests_mobile_application import (
         SyntheticsMobileTestsMobileApplication,
     )
@@ -54,7 +54,7 @@ class SyntheticsMobileTestOptions(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v1.model.synthetics_mobile_test_binding import SyntheticsMobileTestBinding
-        from datadog_api_client.v1.model.synthetics_mobile_test_ci_options import SyntheticsMobileTestCiOptions
+        from datadog_api_client.v1.model.synthetics_test_ci_options import SyntheticsTestCiOptions
         from datadog_api_client.v1.model.synthetics_mobile_tests_mobile_application import (
             SyntheticsMobileTestsMobileApplication,
         )
@@ -68,7 +68,7 @@ class SyntheticsMobileTestOptions(ModelNormal):
         return {
             "allow_application_crash": (bool,),
             "bindings": ([SyntheticsMobileTestBinding],),
-            "ci": (SyntheticsMobileTestCiOptions,),
+            "ci": (SyntheticsTestCiOptions,),
             "default_step_timeout": (int,),
             "device_ids": ([str],),
             "disable_auto_accept_alert": (bool,),
@@ -109,7 +109,7 @@ class SyntheticsMobileTestOptions(ModelNormal):
         self_,
         allow_application_crash: Union[bool, UnsetType] = unset,
         bindings: Union[List[SyntheticsMobileTestBinding], UnsetType] = unset,
-        ci: Union[SyntheticsMobileTestCiOptions, UnsetType] = unset,
+        ci: Union[SyntheticsTestCiOptions, UnsetType] = unset,
         default_step_timeout: Union[int, UnsetType] = unset,
         device_ids: Union[List[str], UnsetType] = unset,
         disable_auto_accept_alert: Union[bool, UnsetType] = unset,
@@ -136,7 +136,7 @@ class SyntheticsMobileTestOptions(ModelNormal):
         :type bindings: [SyntheticsMobileTestBinding], optional
 
         :param ci: CI/CD options for a Synthetic test.
-        :type ci: SyntheticsMobileTestCiOptions, optional
+        :type ci: SyntheticsTestCiOptions, optional
 
         :param default_step_timeout: The ``SyntheticsMobileTestOptions`` ``defaultStepTimeout``.
         :type default_step_timeout: int, optional

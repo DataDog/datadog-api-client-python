@@ -732,18 +732,37 @@ from datadog_api_client.v1.model.synthetics_local_variable_parsing_options_type 
 from datadog_api_client.v1.model.synthetics_location import SyntheticsLocation
 from datadog_api_client.v1.model.synthetics_locations import SyntheticsLocations
 from datadog_api_client.v1.model.synthetics_mobile_step import SyntheticsMobileStep
+from datadog_api_client.v1.model.synthetics_mobile_step_params import SyntheticsMobileStepParams
+from datadog_api_client.v1.model.synthetics_mobile_step_params_check import SyntheticsMobileStepParamsCheck
+from datadog_api_client.v1.model.synthetics_mobile_step_params_direction import SyntheticsMobileStepParamsDirection
+from datadog_api_client.v1.model.synthetics_mobile_step_params_element import SyntheticsMobileStepParamsElement
+from datadog_api_client.v1.model.synthetics_mobile_step_params_element_context_type import (
+    SyntheticsMobileStepParamsElementContextType,
+)
+from datadog_api_client.v1.model.synthetics_mobile_step_params_element_relative_position import (
+    SyntheticsMobileStepParamsElementRelativePosition,
+)
+from datadog_api_client.v1.model.synthetics_mobile_step_params_element_user_locator import (
+    SyntheticsMobileStepParamsElementUserLocator,
+)
+from datadog_api_client.v1.model.synthetics_mobile_step_params_element_user_locator_values_items import (
+    SyntheticsMobileStepParamsElementUserLocatorValuesItems,
+)
+from datadog_api_client.v1.model.synthetics_mobile_step_params_element_user_locator_values_items_type import (
+    SyntheticsMobileStepParamsElementUserLocatorValuesItemsType,
+)
+from datadog_api_client.v1.model.synthetics_mobile_step_params_position import SyntheticsMobileStepParamsPosition
+from datadog_api_client.v1.model.synthetics_mobile_step_params_position_positions_items import (
+    SyntheticsMobileStepParamsPositionPositionsItems,
+)
+from datadog_api_client.v1.model.synthetics_mobile_step_params_variable import SyntheticsMobileStepParamsVariable
 from datadog_api_client.v1.model.synthetics_mobile_step_type import SyntheticsMobileStepType
 from datadog_api_client.v1.model.synthetics_mobile_test import SyntheticsMobileTest
 from datadog_api_client.v1.model.synthetics_mobile_test_binding import SyntheticsMobileTestBinding
-from datadog_api_client.v1.model.synthetics_mobile_test_binding_items import SyntheticsMobileTestBindingItems
-from datadog_api_client.v1.model.synthetics_mobile_test_binding_items_role import SyntheticsMobileTestBindingItemsRole
-from datadog_api_client.v1.model.synthetics_mobile_test_ci_options import SyntheticsMobileTestCiOptions
+from datadog_api_client.v1.model.synthetics_mobile_test_binding_relation import SyntheticsMobileTestBindingRelation
 from datadog_api_client.v1.model.synthetics_mobile_test_config import SyntheticsMobileTestConfig
 from datadog_api_client.v1.model.synthetics_mobile_test_initial_application_arguments import (
     SyntheticsMobileTestInitialApplicationArguments,
-)
-from datadog_api_client.v1.model.synthetics_mobile_test_initial_application_arguments_property_names import (
-    SyntheticsMobileTestInitialApplicationArgumentsPropertyNames,
 )
 from datadog_api_client.v1.model.synthetics_mobile_test_options import SyntheticsMobileTestOptions
 from datadog_api_client.v1.model.synthetics_mobile_test_options_monitor_options import (
@@ -1677,15 +1696,24 @@ __all__ = [
     "SyntheticsLocation",
     "SyntheticsLocations",
     "SyntheticsMobileStep",
+    "SyntheticsMobileStepParams",
+    "SyntheticsMobileStepParamsCheck",
+    "SyntheticsMobileStepParamsDirection",
+    "SyntheticsMobileStepParamsElement",
+    "SyntheticsMobileStepParamsElementContextType",
+    "SyntheticsMobileStepParamsElementRelativePosition",
+    "SyntheticsMobileStepParamsElementUserLocator",
+    "SyntheticsMobileStepParamsElementUserLocatorValuesItems",
+    "SyntheticsMobileStepParamsElementUserLocatorValuesItemsType",
+    "SyntheticsMobileStepParamsPosition",
+    "SyntheticsMobileStepParamsPositionPositionsItems",
+    "SyntheticsMobileStepParamsVariable",
     "SyntheticsMobileStepType",
     "SyntheticsMobileTest",
     "SyntheticsMobileTestBinding",
-    "SyntheticsMobileTestBindingItems",
-    "SyntheticsMobileTestBindingItemsRole",
-    "SyntheticsMobileTestCiOptions",
+    "SyntheticsMobileTestBindingRelation",
     "SyntheticsMobileTestConfig",
     "SyntheticsMobileTestInitialApplicationArguments",
-    "SyntheticsMobileTestInitialApplicationArgumentsPropertyNames",
     "SyntheticsMobileTestOptions",
     "SyntheticsMobileTestOptionsMonitorOptions",
     "SyntheticsMobileTestOptionsMonitorOptionsNotificationPresetName",
