@@ -245,6 +245,7 @@ class Configuration:
                 "v2.get_monthly_cost_attribution": False,
                 "v2.create_dora_deployment": False,
                 "v2.create_dora_incident": False,
+                "v2.create_event": False,
                 "v2.create_incident": False,
                 "v2.create_incident_integration": False,
                 "v2.create_incident_todo": False,
