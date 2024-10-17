@@ -16,7 +16,7 @@ class ListStreamSource(ModelSimple):
     """
     Source from which to query items to display in the stream.
 
-    :param value: If omitted defaults to "apm_issue_stream". Must be one of ["logs_stream", "audit_stream", "ci_pipeline_stream", "ci_test_stream", "rum_issue_stream", "apm_issue_stream", "trace_stream", "logs_issue_stream", "logs_pattern_stream", "logs_transaction_stream", "event_stream", "rum_stream"].
+    :param value: If omitted defaults to "apm_issue_stream". Must be one of ["logs_stream", "audit_stream", "ci_pipeline_stream", "ci_test_stream", "rum_issue_stream", "apm_issue_stream", "trace_stream", "logs_issue_stream", "logs_pattern_stream", "logs_transaction_stream", "event_stream", "rum_stream", "llm_observability_stream"].
     :type value: str
     """
 
@@ -33,6 +33,7 @@ class ListStreamSource(ModelSimple):
         "logs_transaction_stream",
         "event_stream",
         "rum_stream",
+        "llm_observability_stream",
     }
     LOGS_STREAM: ClassVar["ListStreamSource"]
     AUDIT_STREAM: ClassVar["ListStreamSource"]
@@ -46,6 +47,7 @@ class ListStreamSource(ModelSimple):
     LOGS_TRANSACTION_STREAM: ClassVar["ListStreamSource"]
     EVENT_STREAM: ClassVar["ListStreamSource"]
     RUM_STREAM: ClassVar["ListStreamSource"]
+    LLM_OBSERVABILITY_STREAM: ClassVar["ListStreamSource"]
 
     @cached_property
     def openapi_types(_):
@@ -66,3 +68,4 @@ ListStreamSource.LOGS_PATTERN_STREAM = ListStreamSource("logs_pattern_stream")
 ListStreamSource.LOGS_TRANSACTION_STREAM = ListStreamSource("logs_transaction_stream")
 ListStreamSource.EVENT_STREAM = ListStreamSource("event_stream")
 ListStreamSource.RUM_STREAM = ListStreamSource("rum_stream")
+ListStreamSource.LLM_OBSERVABILITY_STREAM = ListStreamSource("llm_observability_stream")

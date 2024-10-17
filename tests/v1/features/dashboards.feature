@@ -501,6 +501,14 @@ Feature: Dashboards
     And the response "widgets[0].definition.requests[0].query.sort.order" is equal to "desc"
 
   @team:DataDog/dashboards-backend
+  Scenario: Create a new dashboard with llm_observability_stream list_stream widget
+    Given new "CreateDashboard" request
+    And body with value {"layout_type":"ordered","title":"{{ unique }} with list_stream widget","widgets":[{"definition":{"type":"list_stream","requests":[{"response_format":"event_list","query":{"data_source":"llm_observability_stream","query_string":"@event_type:span @parent_id:undefined","indexes":[]},"columns":[{"field":"@status","width":"compact"},{"field":"@content.prompt","width":"auto"},{"field":"@content.response.content","width":"auto"},{"field":"timestamp","width":"auto"},{"field":"@ml_app","width":"auto"},{"field":"service","width":"auto"},{"field":"@meta.evaluations.quality","width":"auto"},{"field":"@meta.evaluations.security","width":"auto"},{"field":"@duration","width":"auto"}]}]}}]}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.requests[0].query.data_source" is equal to "llm_observability_stream"
+
+  @team:DataDog/dashboards-backend
   Scenario: Create a new dashboard with log_stream widget
     Given new "CreateDashboard" request
     And body from file "dashboards_json_payload/log_stream_widget.json"
