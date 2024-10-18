@@ -3,13 +3,10 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    unset,
-    UnsetType,
 )
 
 
@@ -35,29 +32,21 @@ class SyntheticsTestOptionsSchedulingTimeframe(ModelNormal):
         "to": "to",
     }
 
-    def __init__(
-        self_,
-        day: Union[int, UnsetType] = unset,
-        _from: Union[str, UnsetType] = unset,
-        to: Union[str, UnsetType] = unset,
-        **kwargs,
-    ):
+    def __init__(self_, day: int, _from: str, to: str, **kwargs):
         """
         Object describing a timeframe.
 
         :param day: Number representing the day of the week.
-        :type day: int, optional
+        :type day: int
 
         :param _from: The hour of the day on which scheduling starts.
-        :type _from: str, optional
+        :type _from: str
 
         :param to: The hour of the day on which scheduling ends.
-        :type to: str, optional
+        :type to: str
         """
-        if day is not unset:
-            kwargs["day"] = day
-        if _from is not unset:
-            kwargs["_from"] = _from
-        if to is not unset:
-            kwargs["to"] = to
         super().__init__(kwargs)
+
+        self_.day = day
+        self_._from = _from
+        self_.to = to

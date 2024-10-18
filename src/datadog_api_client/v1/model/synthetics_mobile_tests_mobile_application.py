@@ -3,13 +3,11 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    unset,
-    UnsetType,
 )
 
 
@@ -49,27 +47,25 @@ class SyntheticsMobileTestsMobileApplication(ModelNormal):
 
     def __init__(
         self_,
-        application_id: Union[str, UnsetType] = unset,
-        reference_id: Union[str, UnsetType] = unset,
-        reference_type: Union[SyntheticsMobileTestsMobileApplicationReferenceType, UnsetType] = unset,
+        application_id: str,
+        reference_id: str,
+        reference_type: SyntheticsMobileTestsMobileApplicationReferenceType,
         **kwargs,
     ):
         """
         Mobile application for mobile synthetics test.
 
         :param application_id: Application ID of the mobile application.
-        :type application_id: str, optional
+        :type application_id: str
 
         :param reference_id: Reference ID of the mobile application.
-        :type reference_id: str, optional
+        :type reference_id: str
 
         :param reference_type: Reference type for the mobile application for a mobile synthetics test.
-        :type reference_type: SyntheticsMobileTestsMobileApplicationReferenceType, optional
+        :type reference_type: SyntheticsMobileTestsMobileApplicationReferenceType
         """
-        if application_id is not unset:
-            kwargs["application_id"] = application_id
-        if reference_id is not unset:
-            kwargs["reference_id"] = reference_id
-        if reference_type is not unset:
-            kwargs["reference_type"] = reference_type
         super().__init__(kwargs)
+
+        self_.application_id = application_id
+        self_.reference_id = reference_id
+        self_.reference_type = reference_type

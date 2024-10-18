@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -14,29 +14,43 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v1.model.synthetics_mobile_test_binding_items import SyntheticsMobileTestBindingItems
+    from datadog_api_client.v1.model.synthetics_mobile_test_binding_relation import SyntheticsMobileTestBindingRelation
 
 
 class SyntheticsMobileTestBinding(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v1.model.synthetics_mobile_test_binding_items import SyntheticsMobileTestBindingItems
+        from datadog_api_client.v1.model.synthetics_mobile_test_binding_relation import (
+            SyntheticsMobileTestBindingRelation,
+        )
 
         return {
-            "items": (SyntheticsMobileTestBindingItems,),
+            "principals": ([str],),
+            "relation": (SyntheticsMobileTestBindingRelation,),
         }
 
     attribute_map = {
-        "items": "items",
+        "principals": "principals",
+        "relation": "relation",
     }
 
-    def __init__(self_, items: Union[SyntheticsMobileTestBindingItems, UnsetType] = unset, **kwargs):
+    def __init__(
+        self_,
+        principals: Union[List[str], UnsetType] = unset,
+        relation: Union[SyntheticsMobileTestBindingRelation, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Objects describing the binding used for a mobile test.
 
-        :param items: Object describing the binding used for a mobile test.
-        :type items: SyntheticsMobileTestBindingItems, optional
+        :param principals: List of principals for a mobile test binding.
+        :type principals: [str], optional
+
+        :param relation: The definition of ``SyntheticsMobileTestBindingRelation`` object.
+        :type relation: SyntheticsMobileTestBindingRelation, optional
         """
-        if items is not unset:
-            kwargs["items"] = items
+        if principals is not unset:
+            kwargs["principals"] = principals
+        if relation is not unset:
+            kwargs["relation"] = relation
         super().__init__(kwargs)

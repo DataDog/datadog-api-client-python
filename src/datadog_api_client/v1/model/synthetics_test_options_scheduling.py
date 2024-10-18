@@ -3,13 +3,11 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, Union, TYPE_CHECKING
+from typing import List, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    unset,
-    UnsetType,
 )
 
 
@@ -36,23 +34,17 @@ class SyntheticsTestOptionsScheduling(ModelNormal):
         "timezone": "timezone",
     }
 
-    def __init__(
-        self_,
-        timeframes: Union[List[SyntheticsTestOptionsSchedulingTimeframe], UnsetType] = unset,
-        timezone: Union[str, UnsetType] = unset,
-        **kwargs,
-    ):
+    def __init__(self_, timeframes: List[SyntheticsTestOptionsSchedulingTimeframe], timezone: str, **kwargs):
         """
         Object containing timeframes and timezone used for advanced scheduling.
 
         :param timeframes: Array containing objects describing the scheduling pattern to apply to each day.
-        :type timeframes: [SyntheticsTestOptionsSchedulingTimeframe], optional
+        :type timeframes: [SyntheticsTestOptionsSchedulingTimeframe]
 
         :param timezone: Timezone in which the timeframe is based.
-        :type timezone: str, optional
+        :type timezone: str
         """
-        if timeframes is not unset:
-            kwargs["timeframes"] = timeframes
-        if timezone is not unset:
-            kwargs["timezone"] = timezone
         super().__init__(kwargs)
+
+        self_.timeframes = timeframes
+        self_.timezone = timezone
