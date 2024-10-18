@@ -12,9 +12,9 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class SyntheticsMobileTestBindingItemsRole(ModelSimple):
+class SyntheticsMobileTestBindingRelation(ModelSimple):
     """
-    The definition of `SyntheticsMobileTestBindingItemsRole` object.
+    The definition of `SyntheticsMobileTestBindingRelation` object.
 
     :param value: Must be one of ["editor", "viewer"].
     :type value: str
@@ -24,8 +24,8 @@ class SyntheticsMobileTestBindingItemsRole(ModelSimple):
         "editor",
         "viewer",
     }
-    EDITOR: ClassVar["SyntheticsMobileTestBindingItemsRole"]
-    VIEWER: ClassVar["SyntheticsMobileTestBindingItemsRole"]
+    EDITOR: ClassVar["SyntheticsMobileTestBindingRelation"]
+    VIEWER: ClassVar["SyntheticsMobileTestBindingRelation"]
 
     @cached_property
     def openapi_types(_):
@@ -34,5 +34,5 @@ class SyntheticsMobileTestBindingItemsRole(ModelSimple):
         }
 
 
-SyntheticsMobileTestBindingItemsRole.EDITOR = SyntheticsMobileTestBindingItemsRole("editor")
-SyntheticsMobileTestBindingItemsRole.VIEWER = SyntheticsMobileTestBindingItemsRole("viewer")
+SyntheticsMobileTestBindingRelation.EDITOR = SyntheticsMobileTestBindingRelation("editor")
+SyntheticsMobileTestBindingRelation.VIEWER = SyntheticsMobileTestBindingRelation("viewer")
