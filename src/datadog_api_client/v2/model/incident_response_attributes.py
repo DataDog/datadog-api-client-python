@@ -45,6 +45,7 @@ class IncidentResponseAttributes(ModelNormal):
             "customer_impacted": (bool,),
             "detected": (datetime, none_type),
             "fields": ({str: (IncidentFieldAttributes,)},),
+            "incident_type_uuid": (str,),
             "modified": (datetime,),
             "non_datadog_creator": (IncidentNonDatadogCreator,),
             "notification_handles": ([IncidentNotificationHandle], none_type),
@@ -71,6 +72,7 @@ class IncidentResponseAttributes(ModelNormal):
         "customer_impacted": "customer_impacted",
         "detected": "detected",
         "fields": "fields",
+        "incident_type_uuid": "incident_type_uuid",
         "modified": "modified",
         "non_datadog_creator": "non_datadog_creator",
         "notification_handles": "notification_handles",
@@ -117,6 +119,7 @@ class IncidentResponseAttributes(ModelNormal):
             ],
             UnsetType,
         ] = unset,
+        incident_type_uuid: Union[str, UnsetType] = unset,
         modified: Union[datetime, UnsetType] = unset,
         non_datadog_creator: Union[IncidentNonDatadogCreator, none_type, UnsetType] = unset,
         notification_handles: Union[List[IncidentNotificationHandle], none_type, UnsetType] = unset,
@@ -164,6 +167,9 @@ class IncidentResponseAttributes(ModelNormal):
 
         :param fields: A condensed view of the user-defined fields attached to incidents.
         :type fields: {str: (IncidentFieldAttributes,)}, optional
+
+        :param incident_type_uuid: A unique identifier that represents an incident type.
+        :type incident_type_uuid: str, optional
 
         :param modified: Timestamp when the incident was last modified.
         :type modified: datetime, optional
@@ -225,6 +231,8 @@ class IncidentResponseAttributes(ModelNormal):
             kwargs["detected"] = detected
         if fields is not unset:
             kwargs["fields"] = fields
+        if incident_type_uuid is not unset:
+            kwargs["incident_type_uuid"] = incident_type_uuid
         if modified is not unset:
             kwargs["modified"] = modified
         if non_datadog_creator is not unset:
