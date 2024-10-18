@@ -1376,6 +1376,19 @@ def validate_and_convert_types(
     return input_value
 
 
+def unwrap_list(items, serialize=True):
+    """
+    Unwraps a list for use in model_to_dict.
+    """
+    for item in items:
+        if isinstance(item, list):
+            yield list(unwrap_list(item, serialize=serialize))
+        elif isinstance(item, PRIMITIVE_TYPES):
+            yield item
+        else:
+            yield model_to_dict(item, serialize=serialize)
+
+
 def model_to_dict(model_instance, serialize=True):
     """Returns the model properties as a dict.
 
@@ -1413,7 +1426,9 @@ def model_to_dict(model_instance, serialize=True):
                 else:
                     res = []
                     for v in value:
-                        if isinstance(v, PRIMITIVE_TYPES) or v is None:
+                        if isinstance(v, list):
+                            res.append(list(unwrap_list(v, serialize=serialize)))
+                        elif isinstance(v, PRIMITIVE_TYPES) or v is None:
                             res.append(v)
                         elif isinstance(v, ModelSimple):
                             res.append(v.value)
