@@ -19,8 +19,8 @@ Feature: Usage Metering
     Given operation "GetMonthlyCostAttribution" enabled
     And new "GetMonthlyCostAttribution" request
     And request contains "start_month" parameter with value "{{ timeISO('now - 5d') }}"
-    And request contains "end_month" parameter with value "{{ timeISO('now - 3d') }}"
     And request contains "fields" parameter with value "not_a_product"
+    And request contains "end_month" parameter with value "{{ timeISO('now - 3d') }}"
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -29,8 +29,8 @@ Feature: Usage Metering
     Given operation "GetMonthlyCostAttribution" enabled
     And new "GetMonthlyCostAttribution" request
     And request contains "start_month" parameter with value "{{ timeISO('now - 5d') }}"
-    And request contains "end_month" parameter with value "{{ timeISO('now - 3d') }}"
     And request contains "fields" parameter with value "infra_host_total_cost"
+    And request contains "end_month" parameter with value "{{ timeISO('now - 3d') }}"
     When the request is sent
     Then the response status is 200 OK
 
