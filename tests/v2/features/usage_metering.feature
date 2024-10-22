@@ -49,6 +49,20 @@ Feature: Usage Metering
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/revenue-query
+  Scenario: Get billing dimension mapping for usage endpoints returns "Bad Request" response
+    Given operation "GetBillingDimensionMapping" enabled
+    And new "GetBillingDimensionMapping" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/revenue-query
+  Scenario: Get billing dimension mapping for usage endpoints returns "OK" response
+    Given operation "GetBillingDimensionMapping" enabled
+    And new "GetBillingDimensionMapping" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/revenue-query
   Scenario: Get cost across multi-org account returns "Bad Request" response
     Given new "GetCostByOrg" request
     And request contains "start_month" parameter from "REPLACE.ME"
