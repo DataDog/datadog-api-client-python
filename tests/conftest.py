@@ -55,7 +55,7 @@ from pytest_bdd import given, parsers, then, when
 from datadog_api_client import exceptions
 from datadog_api_client.api_client import ApiClient
 from datadog_api_client.configuration import Configuration
-from datadog_api_client.model_utils import OpenApiModel, file_type
+from datadog_api_client.model_utils import OpenApiModel, file_type, data_to_dict
 
 logging.basicConfig()
 
@@ -519,7 +519,7 @@ def build_given(version, operation):
                 result = glom(result, operation["source"])
 
             # store response in fixtures
-            result_body_json = client.sanitize_for_serialization(result)
+            result_body_json = data_to_dict(result)
             context[operation["key"]] = result_body_json
 
     return wrapper
@@ -605,7 +605,7 @@ def execute_request(undo, context, client, api_version, request):
     try:
         response = api_request["request"](*api_request["args"], **api_request["kwargs"])
         # Reserialise the response body to JSON to facilitate test assertions
-        response_body_json = client.sanitize_for_serialization(response[0])
+        response_body_json = data_to_dict(response[0])
         api_request["response"] = [response_body_json, response[1], response[2]]
     except exceptions.ApiException as e:
         # If we have an exception, make a stub response object to use for assertions
@@ -646,7 +646,7 @@ def execute_request_with_pagination(undo, context, client, api_version):
     try:
         response = list(method(*api_request["args"], **kwargs))
         # Reserialise the response body to JSON to facilitate test assertions
-        response_body_json = client.sanitize_for_serialization(response)
+        response_body_json = data_to_dict(response)
         api_request["response"] = [response_body_json, 200, None]
     except exceptions.ApiException as e:
         # If we have an exception, make a stub response object to use for assertions
