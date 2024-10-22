@@ -953,6 +953,125 @@ cases\_response\_meta\_pagination
    :members:
    :show-inheritance:
 
+change\_event
+-------------
+
+.. automodule:: datadog_api_client.v2.model.change_event
+   :members:
+   :show-inheritance:
+
+change\_event\_category
+-----------------------
+
+.. automodule:: datadog_api_client.v2.model.change_event_category
+   :members:
+   :show-inheritance:
+
+change\_event\_create\_request
+------------------------------
+
+.. automodule:: datadog_api_client.v2.model.change_event_create_request
+   :members:
+   :show-inheritance:
+
+change\_event\_create\_request\_payload
+---------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.change_event_create_request_payload
+   :members:
+   :show-inheritance:
+
+change\_event\_create\_request\_type
+------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.change_event_create_request_type
+   :members:
+   :show-inheritance:
+
+change\_event\_create\_response
+-------------------------------
+
+.. automodule:: datadog_api_client.v2.model.change_event_create_response
+   :members:
+   :show-inheritance:
+
+change\_event\_create\_response\_attributes
+-------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.change_event_create_response_attributes
+   :members:
+   :show-inheritance:
+
+change\_event\_create\_response\_attributes\_attributes
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.change_event_create_response_attributes_attributes
+   :members:
+   :show-inheritance:
+
+change\_event\_create\_response\_attributes\_attributes\_evt
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.change_event_create_response_attributes_attributes_evt
+   :members:
+   :show-inheritance:
+
+change\_event\_create\_response\_payload
+----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.change_event_create_response_payload
+   :members:
+   :show-inheritance:
+
+change\_event\_custom\_attributes
+---------------------------------
+
+.. automodule:: datadog_api_client.v2.model.change_event_custom_attributes
+   :members:
+   :show-inheritance:
+
+change\_event\_custom\_attributes\_author
+-----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.change_event_custom_attributes_author
+   :members:
+   :show-inheritance:
+
+change\_event\_custom\_attributes\_author\_type
+-----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.change_event_custom_attributes_author_type
+   :members:
+   :show-inheritance:
+
+change\_event\_custom\_attributes\_changed\_resource
+----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.change_event_custom_attributes_changed_resource
+   :members:
+   :show-inheritance:
+
+change\_event\_custom\_attributes\_changed\_resource\_type
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.change_event_custom_attributes_changed_resource_type
+   :members:
+   :show-inheritance:
+
+change\_event\_custom\_attributes\_impacted\_resources\_items
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.change_event_custom_attributes_impacted_resources_items
+   :members:
+   :show-inheritance:
+
+change\_event\_custom\_attributes\_impacted\_resources\_items\_type
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.change_event_custom_attributes_impacted_resources_items_type
+   :members:
+   :show-inheritance:
+
 chargeback\_breakdown
 ---------------------
 
