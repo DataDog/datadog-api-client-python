@@ -485,6 +485,14 @@ Feature: Security Monitoring
     When the request with pagination is sent
     Then the response status is 200 OK
 
+  @team:DataDog/cloud-security-posture-management
+  Scenario: List findings with detection_type query param returns "OK" response
+    Given operation "ListFindings" enabled
+    And new "ListFindings" request
+    And request contains "filter[vulnerability_type]" parameter with value ["misconfiguration", "attack_path"]
+    When the request is sent
+    Then the response status is 200 OK
+
   @generated @skip @team:DataDog/k9-cloud-security-platform
   Scenario: List rules returns "Bad Request" response
     Given new "ListSecurityMonitoringRules" request
