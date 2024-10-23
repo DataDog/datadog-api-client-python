@@ -20,6 +20,7 @@ from datadog_api_client.model_utils import (
 if TYPE_CHECKING:
     from datadog_api_client.v1.model.synthetics_browser_error import SyntheticsBrowserError
     from datadog_api_client.v1.model.synthetics_check_type import SyntheticsCheckType
+    from datadog_api_client.v1.model.synthetics_browser_test_result_failure import SyntheticsBrowserTestResultFailure
     from datadog_api_client.v1.model.synthetics_playing_tab import SyntheticsPlayingTab
     from datadog_api_client.v1.model.synthetics_step_type import SyntheticsStepType
     from datadog_api_client.v1.model.synthetics_core_web_vitals import SyntheticsCoreWebVitals
@@ -31,17 +32,22 @@ class SyntheticsStepDetail(ModelNormal):
     def openapi_types(_):
         from datadog_api_client.v1.model.synthetics_browser_error import SyntheticsBrowserError
         from datadog_api_client.v1.model.synthetics_check_type import SyntheticsCheckType
+        from datadog_api_client.v1.model.synthetics_browser_test_result_failure import (
+            SyntheticsBrowserTestResultFailure,
+        )
         from datadog_api_client.v1.model.synthetics_playing_tab import SyntheticsPlayingTab
         from datadog_api_client.v1.model.synthetics_step_type import SyntheticsStepType
         from datadog_api_client.v1.model.synthetics_core_web_vitals import SyntheticsCoreWebVitals
         from datadog_api_client.v1.model.synthetics_step_detail_warning import SyntheticsStepDetailWarning
 
         return {
+            "allow_failure": (bool,),
             "browser_errors": ([SyntheticsBrowserError],),
             "check_type": (SyntheticsCheckType,),
             "description": (str,),
             "duration": (float,),
             "error": (str,),
+            "failure": (SyntheticsBrowserTestResultFailure,),
             "playing_tab": (SyntheticsPlayingTab,),
             "screenshot_bucket_key": (bool,),
             "skipped": (bool,),
@@ -68,11 +74,13 @@ class SyntheticsStepDetail(ModelNormal):
         }
 
     attribute_map = {
+        "allow_failure": "allowFailure",
         "browser_errors": "browserErrors",
         "check_type": "checkType",
         "description": "description",
         "duration": "duration",
         "error": "error",
+        "failure": "failure",
         "playing_tab": "playingTab",
         "screenshot_bucket_key": "screenshotBucketKey",
         "skipped": "skipped",
@@ -89,11 +97,13 @@ class SyntheticsStepDetail(ModelNormal):
 
     def __init__(
         self_,
+        allow_failure: Union[bool, UnsetType] = unset,
         browser_errors: Union[List[SyntheticsBrowserError], UnsetType] = unset,
         check_type: Union[SyntheticsCheckType, UnsetType] = unset,
         description: Union[str, UnsetType] = unset,
         duration: Union[float, UnsetType] = unset,
         error: Union[str, UnsetType] = unset,
+        failure: Union[SyntheticsBrowserTestResultFailure, UnsetType] = unset,
         playing_tab: Union[SyntheticsPlayingTab, UnsetType] = unset,
         screenshot_bucket_key: Union[bool, UnsetType] = unset,
         skipped: Union[bool, UnsetType] = unset,
@@ -111,6 +121,9 @@ class SyntheticsStepDetail(ModelNormal):
         """
         Object describing a step for a Synthetic test.
 
+        :param allow_failure: Whether or not the step was allowed to fail.
+        :type allow_failure: bool, optional
+
         :param browser_errors: Array of errors collected for a browser test.
         :type browser_errors: [SyntheticsBrowserError], optional
 
@@ -125,6 +138,9 @@ class SyntheticsStepDetail(ModelNormal):
 
         :param error: Error returned by the test.
         :type error: str, optional
+
+        :param failure: The browser test failure details.
+        :type failure: SyntheticsBrowserTestResultFailure, optional
 
         :param playing_tab: Navigate between different tabs for your browser test.
         :type playing_tab: SyntheticsPlayingTab, optional
@@ -163,6 +179,8 @@ class SyntheticsStepDetail(ModelNormal):
         :param warnings: Warning collected that didn't failed the step.
         :type warnings: [SyntheticsStepDetailWarning], optional
         """
+        if allow_failure is not unset:
+            kwargs["allow_failure"] = allow_failure
         if browser_errors is not unset:
             kwargs["browser_errors"] = browser_errors
         if check_type is not unset:
@@ -173,6 +191,8 @@ class SyntheticsStepDetail(ModelNormal):
             kwargs["duration"] = duration
         if error is not unset:
             kwargs["error"] = error
+        if failure is not unset:
+            kwargs["failure"] = failure
         if playing_tab is not unset:
             kwargs["playing_tab"] = playing_tab
         if screenshot_bucket_key is not unset:
