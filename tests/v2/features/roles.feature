@@ -254,13 +254,12 @@ Feature: Roles
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/aaa-core-access
+  @skip-validation @team:DataDog/aaa-core-access
   Scenario: Revoke permission returns "Bad Request" response
     Given there is a valid "role" in the system
-    And there is a valid "permission" in the system
     And new "RemovePermissionFromRole" request
     And request contains "role_id" parameter from "role.data.id"
-    And body with value {"data": {"id": "11111111-dead-beef-dead-ffffffffffff", "type": "{{ permission.type }}"}}
+    And body with value {"data": {"id": "11111111-dead-beef-dead-ffffffffffff", "type": "bad_permission_type"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
