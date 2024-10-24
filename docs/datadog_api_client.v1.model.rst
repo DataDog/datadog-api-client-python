@@ -4481,6 +4481,76 @@ synthetics\_mobile\_step
    :members:
    :show-inheritance:
 
+synthetics\_mobile\_step\_params
+--------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_mobile_step_params
+   :members:
+   :show-inheritance:
+
+synthetics\_mobile\_step\_params\_direction
+-------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_mobile_step_params_direction
+   :members:
+   :show-inheritance:
+
+synthetics\_mobile\_step\_params\_element
+-----------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_mobile_step_params_element
+   :members:
+   :show-inheritance:
+
+synthetics\_mobile\_step\_params\_element\_context\_type
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_mobile_step_params_element_context_type
+   :members:
+   :show-inheritance:
+
+synthetics\_mobile\_step\_params\_element\_relative\_position
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_mobile_step_params_element_relative_position
+   :members:
+   :show-inheritance:
+
+synthetics\_mobile\_step\_params\_element\_user\_locator
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_mobile_step_params_element_user_locator
+   :members:
+   :show-inheritance:
+
+synthetics\_mobile\_step\_params\_element\_user\_locator\_values\_items
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_mobile_step_params_element_user_locator_values_items
+   :members:
+   :show-inheritance:
+
+synthetics\_mobile\_step\_params\_element\_user\_locator\_values\_items\_type
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_mobile_step_params_element_user_locator_values_items_type
+   :members:
+   :show-inheritance:
+
+synthetics\_mobile\_step\_params\_positions\_items
+--------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_mobile_step_params_positions_items
+   :members:
+   :show-inheritance:
+
+synthetics\_mobile\_step\_params\_variable
+------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_mobile_step_params_variable
+   :members:
+   :show-inheritance:
+
 synthetics\_mobile\_step\_type
 ------------------------------
 
@@ -4502,24 +4572,10 @@ synthetics\_mobile\_test\_binding
    :members:
    :show-inheritance:
 
-synthetics\_mobile\_test\_binding\_items
-----------------------------------------
+synthetics\_mobile\_test\_binding\_relation
+-------------------------------------------
 
-.. automodule:: datadog_api_client.v1.model.synthetics_mobile_test_binding_items
-   :members:
-   :show-inheritance:
-
-synthetics\_mobile\_test\_binding\_items\_role
-----------------------------------------------
-
-.. automodule:: datadog_api_client.v1.model.synthetics_mobile_test_binding_items_role
-   :members:
-   :show-inheritance:
-
-synthetics\_mobile\_test\_ci\_options
--------------------------------------
-
-.. automodule:: datadog_api_client.v1.model.synthetics_mobile_test_ci_options
+.. automodule:: datadog_api_client.v1.model.synthetics_mobile_test_binding_relation
    :members:
    :show-inheritance:
 
@@ -4534,13 +4590,6 @@ synthetics\_mobile\_test\_initial\_application\_arguments
 ---------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_mobile_test_initial_application_arguments
-   :members:
-   :show-inheritance:
-
-synthetics\_mobile\_test\_initial\_application\_arguments\_property\_names
---------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v1.model.synthetics_mobile_test_initial_application_arguments_property_names
    :members:
    :show-inheritance:
 

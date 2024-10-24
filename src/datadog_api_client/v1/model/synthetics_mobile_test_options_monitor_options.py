@@ -63,14 +63,14 @@ class SyntheticsMobileTestOptionsMonitorOptions(ModelNormal):
         :param escalation_message: Message to include in the escalation notification.
         :type escalation_message: str, optional
 
-        :param notification_preset_name: The definition of ``SyntheticsMobileTestOptionsMonitorOptionsNotificationPresetName`` object.
+        :param notification_preset_name: The name of the preset for the notification for the monitor.
         :type notification_preset_name: SyntheticsMobileTestOptionsMonitorOptionsNotificationPresetName, optional
 
         :param renotify_interval: Time interval before renotifying if the test is still failing
             (in minutes).
         :type renotify_interval: int, optional
 
-        :param renotify_occurrences: The ``SyntheticsMobileTestOptionsMonitorOptions`` ``renotify_occurrences``.
+        :param renotify_occurrences: The number renotify_occurrences for the test.
         :type renotify_occurrences: int, optional
         """
         if escalation_message is not unset:
