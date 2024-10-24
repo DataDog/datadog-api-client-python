@@ -16,7 +16,7 @@ class HourlyUsageAttributionUsageType(ModelSimple):
     """
     Supported products for hourly usage attribution requests.
 
-    :param value: Must be one of ["api_usage", "apm_fargate_usage", "apm_host_usage", "apm_usm_usage", "appsec_fargate_usage", "appsec_usage", "asm_serverless_traced_invocations_usage", "asm_serverless_traced_invocations_percentage", "browser_usage", "ci_pipeline_indexed_spans_usage", "ci_test_indexed_spans_usage", "ci_visibility_itr_usage", "cloud_siem_usage", "container_excl_agent_usage", "container_usage", "cspm_containers_usage", "cspm_hosts_usage", "custom_event_usage", "custom_ingested_timeseries_usage", "custom_timeseries_usage", "cws_containers_usage", "cws_hosts_usage", "data_jobs_monitoring_usage", "data_stream_monitoring_usage", "dbm_hosts_usage", "dbm_queries_usage", "error_tracking_usage", "error_tracking_percentage", "estimated_indexed_logs_usage", "estimated_indexed_spans_usage", "estimated_ingested_logs_usage", "estimated_ingested_spans_usage", "estimated_rum_sessions_usage", "fargate_usage", "functions_usage", "incident_management_monthly_active_users_usage", "indexed_spans_usage", "infra_host_usage", "ingested_logs_bytes_usage", "ingested_spans_bytes_usage", "invocations_usage", "lambda_traced_invocations_usage", "logs_indexed_15day_usage", "logs_indexed_180day_usage", "logs_indexed_1day_usage", "logs_indexed_30day_usage", "logs_indexed_360day_usage", "logs_indexed_3day_usage", "logs_indexed_45day_usage", "logs_indexed_60day_usage", "logs_indexed_7day_usage", "logs_indexed_90day_usage", "logs_indexed_custom_retention_usage", "mobile_app_testing_usage", "ndm_netflow_usage", "npm_host_usage", "obs_pipeline_bytes_usage", "obs_pipelines_vcpu_usage", "online_archive_usage", "profiled_container_usage", "profiled_fargate_usage", "profiled_host_usage", "rum_browser_mobile_sessions_usage", "rum_replay_sessions_usage", "sca_fargate_usage", "sds_scanned_bytes_usage", "serverless_apps_usage", "siem_analyzed_logs_add_on_usage", "siem_ingested_bytes_usage", "snmp_usage", "universal_service_monitoring_usage", "vuln_management_hosts_usage", "workflow_executions_usage"].
+    :param value: Must be one of ["api_usage", "apm_fargate_usage", "apm_host_usage", "apm_usm_usage", "appsec_fargate_usage", "appsec_usage", "asm_serverless_traced_invocations_usage", "asm_serverless_traced_invocations_percentage", "browser_usage", "ci_pipeline_indexed_spans_usage", "ci_test_indexed_spans_usage", "ci_visibility_itr_usage", "cloud_siem_usage", "container_excl_agent_usage", "container_usage", "cspm_containers_usage", "cspm_hosts_usage", "custom_event_usage", "custom_ingested_timeseries_usage", "custom_timeseries_usage", "cws_containers_usage", "cws_hosts_usage", "data_jobs_monitoring_usage", "data_stream_monitoring_usage", "dbm_hosts_usage", "dbm_queries_usage", "error_tracking_usage", "error_tracking_percentage", "estimated_indexed_spans_usage", "estimated_ingested_spans_usage", "fargate_usage", "functions_usage", "incident_management_monthly_active_users_usage", "indexed_spans_usage", "infra_host_usage", "ingested_logs_bytes_usage", "ingested_spans_bytes_usage", "invocations_usage", "lambda_traced_invocations_usage", "logs_indexed_15day_usage", "logs_indexed_180day_usage", "logs_indexed_1day_usage", "logs_indexed_30day_usage", "logs_indexed_360day_usage", "logs_indexed_3day_usage", "logs_indexed_45day_usage", "logs_indexed_60day_usage", "logs_indexed_7day_usage", "logs_indexed_90day_usage", "logs_indexed_custom_retention_usage", "mobile_app_testing_usage", "ndm_netflow_usage", "npm_host_usage", "obs_pipeline_bytes_usage", "obs_pipelines_vcpu_usage", "online_archive_usage", "profiled_container_usage", "profiled_fargate_usage", "profiled_host_usage", "rum_browser_mobile_sessions_usage", "rum_replay_sessions_usage", "sca_fargate_usage", "sds_scanned_bytes_usage", "serverless_apps_usage", "siem_analyzed_logs_add_on_usage", "siem_ingested_bytes_usage", "snmp_usage", "universal_service_monitoring_usage", "vuln_management_hosts_usage", "workflow_executions_usage"].
     :type value: str
     """
 
@@ -49,11 +49,8 @@ class HourlyUsageAttributionUsageType(ModelSimple):
         "dbm_queries_usage",
         "error_tracking_usage",
         "error_tracking_percentage",
-        "estimated_indexed_logs_usage",
         "estimated_indexed_spans_usage",
-        "estimated_ingested_logs_usage",
         "estimated_ingested_spans_usage",
-        "estimated_rum_sessions_usage",
         "fargate_usage",
         "functions_usage",
         "incident_management_monthly_active_users_usage",
@@ -123,11 +120,8 @@ class HourlyUsageAttributionUsageType(ModelSimple):
     DBM_QUERIES_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
     ERROR_TRACKING_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
     ERROR_TRACKING_PERCENTAGE: ClassVar["HourlyUsageAttributionUsageType"]
-    ESTIMATED_INDEXED_LOGS_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
     ESTIMATED_INDEXED_SPANS_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
-    ESTIMATED_INGESTED_LOGS_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
     ESTIMATED_INGESTED_SPANS_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
-    ESTIMATED_RUM_SESSIONS_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
     FARGATE_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
     FUNCTIONS_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
     INCIDENT_MANAGEMENT_MONTHLY_ACTIVE_USERS_USAGE: ClassVar["HourlyUsageAttributionUsageType"]
@@ -220,20 +214,11 @@ HourlyUsageAttributionUsageType.DBM_HOSTS_USAGE = HourlyUsageAttributionUsageTyp
 HourlyUsageAttributionUsageType.DBM_QUERIES_USAGE = HourlyUsageAttributionUsageType("dbm_queries_usage")
 HourlyUsageAttributionUsageType.ERROR_TRACKING_USAGE = HourlyUsageAttributionUsageType("error_tracking_usage")
 HourlyUsageAttributionUsageType.ERROR_TRACKING_PERCENTAGE = HourlyUsageAttributionUsageType("error_tracking_percentage")
-HourlyUsageAttributionUsageType.ESTIMATED_INDEXED_LOGS_USAGE = HourlyUsageAttributionUsageType(
-    "estimated_indexed_logs_usage"
-)
 HourlyUsageAttributionUsageType.ESTIMATED_INDEXED_SPANS_USAGE = HourlyUsageAttributionUsageType(
     "estimated_indexed_spans_usage"
 )
-HourlyUsageAttributionUsageType.ESTIMATED_INGESTED_LOGS_USAGE = HourlyUsageAttributionUsageType(
-    "estimated_ingested_logs_usage"
-)
 HourlyUsageAttributionUsageType.ESTIMATED_INGESTED_SPANS_USAGE = HourlyUsageAttributionUsageType(
     "estimated_ingested_spans_usage"
-)
-HourlyUsageAttributionUsageType.ESTIMATED_RUM_SESSIONS_USAGE = HourlyUsageAttributionUsageType(
-    "estimated_rum_sessions_usage"
 )
 HourlyUsageAttributionUsageType.FARGATE_USAGE = HourlyUsageAttributionUsageType("fargate_usage")
 HourlyUsageAttributionUsageType.FUNCTIONS_USAGE = HourlyUsageAttributionUsageType("functions_usage")

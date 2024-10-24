@@ -67,16 +67,10 @@ class MonthlyUsageAttributionValues(ModelNormal):
             "dbm_queries_usage": (float,),
             "error_tracking_percentage": (float,),
             "error_tracking_usage": (float,),
-            "estimated_indexed_logs_percentage": (float,),
-            "estimated_indexed_logs_usage": (float,),
             "estimated_indexed_spans_percentage": (float,),
             "estimated_indexed_spans_usage": (float,),
-            "estimated_ingested_logs_percentage": (float,),
-            "estimated_ingested_logs_usage": (float,),
             "estimated_ingested_spans_percentage": (float,),
             "estimated_ingested_spans_usage": (float,),
-            "estimated_rum_sessions_percentage": (float,),
-            "estimated_rum_sessions_usage": (float,),
             "fargate_percentage": (float,),
             "fargate_usage": (float,),
             "functions_percentage": (float,),
@@ -210,16 +204,10 @@ class MonthlyUsageAttributionValues(ModelNormal):
         "dbm_queries_usage": "dbm_queries_usage",
         "error_tracking_percentage": "error_tracking_percentage",
         "error_tracking_usage": "error_tracking_usage",
-        "estimated_indexed_logs_percentage": "estimated_indexed_logs_percentage",
-        "estimated_indexed_logs_usage": "estimated_indexed_logs_usage",
         "estimated_indexed_spans_percentage": "estimated_indexed_spans_percentage",
         "estimated_indexed_spans_usage": "estimated_indexed_spans_usage",
-        "estimated_ingested_logs_percentage": "estimated_ingested_logs_percentage",
-        "estimated_ingested_logs_usage": "estimated_ingested_logs_usage",
         "estimated_ingested_spans_percentage": "estimated_ingested_spans_percentage",
         "estimated_ingested_spans_usage": "estimated_ingested_spans_usage",
-        "estimated_rum_sessions_percentage": "estimated_rum_sessions_percentage",
-        "estimated_rum_sessions_usage": "estimated_rum_sessions_usage",
         "fargate_percentage": "fargate_percentage",
         "fargate_usage": "fargate_usage",
         "functions_percentage": "functions_percentage",
@@ -354,16 +342,10 @@ class MonthlyUsageAttributionValues(ModelNormal):
         dbm_queries_usage: Union[float, UnsetType] = unset,
         error_tracking_percentage: Union[float, UnsetType] = unset,
         error_tracking_usage: Union[float, UnsetType] = unset,
-        estimated_indexed_logs_percentage: Union[float, UnsetType] = unset,
-        estimated_indexed_logs_usage: Union[float, UnsetType] = unset,
         estimated_indexed_spans_percentage: Union[float, UnsetType] = unset,
         estimated_indexed_spans_usage: Union[float, UnsetType] = unset,
-        estimated_ingested_logs_percentage: Union[float, UnsetType] = unset,
-        estimated_ingested_logs_usage: Union[float, UnsetType] = unset,
         estimated_ingested_spans_percentage: Union[float, UnsetType] = unset,
         estimated_ingested_spans_usage: Union[float, UnsetType] = unset,
-        estimated_rum_sessions_percentage: Union[float, UnsetType] = unset,
-        estimated_rum_sessions_usage: Union[float, UnsetType] = unset,
         fargate_percentage: Union[float, UnsetType] = unset,
         fargate_usage: Union[float, UnsetType] = unset,
         functions_percentage: Union[float, UnsetType] = unset,
@@ -599,35 +581,17 @@ class MonthlyUsageAttributionValues(ModelNormal):
         :param error_tracking_usage: The error tracking events usage by tag(s).
         :type error_tracking_usage: float, optional
 
-        :param estimated_indexed_logs_percentage: The percentage of estimated live indexed logs usage by tag(s).
-        :type estimated_indexed_logs_percentage: float, optional
-
-        :param estimated_indexed_logs_usage: The estimated live indexed logs usage by tag(s).
-        :type estimated_indexed_logs_usage: float, optional
-
         :param estimated_indexed_spans_percentage: The percentage of estimated indexed spans usage by tag(s).
         :type estimated_indexed_spans_percentage: float, optional
 
         :param estimated_indexed_spans_usage: The estimated indexed spans usage by tag(s).
         :type estimated_indexed_spans_usage: float, optional
 
-        :param estimated_ingested_logs_percentage: The percentage of estimated live ingested logs usage by tag(s).
-        :type estimated_ingested_logs_percentage: float, optional
-
-        :param estimated_ingested_logs_usage: The estimated live ingested logs usage by tag(s).
-        :type estimated_ingested_logs_usage: float, optional
-
         :param estimated_ingested_spans_percentage: The percentage of estimated ingested spans usage by tag(s).
         :type estimated_ingested_spans_percentage: float, optional
 
         :param estimated_ingested_spans_usage: The estimated ingested spans usage by tag(s).
         :type estimated_ingested_spans_usage: float, optional
-
-        :param estimated_rum_sessions_percentage: The percentage of estimated rum sessions usage by tag(s).
-        :type estimated_rum_sessions_percentage: float, optional
-
-        :param estimated_rum_sessions_usage: The estimated rum sessions usage by tag(s).
-        :type estimated_rum_sessions_usage: float, optional
 
         :param fargate_percentage: The percentage of Fargate usage by tags.
         :type fargate_percentage: float, optional
@@ -969,26 +933,14 @@ class MonthlyUsageAttributionValues(ModelNormal):
             kwargs["error_tracking_percentage"] = error_tracking_percentage
         if error_tracking_usage is not unset:
             kwargs["error_tracking_usage"] = error_tracking_usage
-        if estimated_indexed_logs_percentage is not unset:
-            kwargs["estimated_indexed_logs_percentage"] = estimated_indexed_logs_percentage
-        if estimated_indexed_logs_usage is not unset:
-            kwargs["estimated_indexed_logs_usage"] = estimated_indexed_logs_usage
         if estimated_indexed_spans_percentage is not unset:
             kwargs["estimated_indexed_spans_percentage"] = estimated_indexed_spans_percentage
         if estimated_indexed_spans_usage is not unset:
             kwargs["estimated_indexed_spans_usage"] = estimated_indexed_spans_usage
-        if estimated_ingested_logs_percentage is not unset:
-            kwargs["estimated_ingested_logs_percentage"] = estimated_ingested_logs_percentage
-        if estimated_ingested_logs_usage is not unset:
-            kwargs["estimated_ingested_logs_usage"] = estimated_ingested_logs_usage
         if estimated_ingested_spans_percentage is not unset:
             kwargs["estimated_ingested_spans_percentage"] = estimated_ingested_spans_percentage
         if estimated_ingested_spans_usage is not unset:
             kwargs["estimated_ingested_spans_usage"] = estimated_ingested_spans_usage
-        if estimated_rum_sessions_percentage is not unset:
-            kwargs["estimated_rum_sessions_percentage"] = estimated_rum_sessions_percentage
-        if estimated_rum_sessions_usage is not unset:
-            kwargs["estimated_rum_sessions_usage"] = estimated_rum_sessions_usage
         if fargate_percentage is not unset:
             kwargs["fargate_percentage"] = fargate_percentage
         if fargate_usage is not unset:
