@@ -1,0 +1,54 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"compute":{"aggregation_type":"distribution","include_percentiles":true,"path":"@duration"},"event_type":"session","filter":{"query":"source:Test-Update_a_rum_based_metric_returns_Bad_Request_response-1729785964"},"group_by":[{"path":"@browser.name","tag":"browser_name"}],"uniqueness":{"when":"match"}},"id":"Test-Update_a_rum_based_metric_returns_Bad_Request_response-1729785964","type":"rum_metrics"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/rum/config/metrics
+  response:
+    body:
+      string: '{"data":{"id":"Test_Update_a_rum_based_metric_returns_Bad_Request_response_1729785964","type":"rum_metrics","attributes":{"compute":{"aggregation_type":"distribution","include_percentiles":true,"path":"@duration"},"event_type":"session","filter":{"query":"source:Test-Update_a_rum_based_metric_returns_Bad_Request_response-1729785964"},"group_by":[{"path":"@browser.name","tag_name":"browser.name"}],"uniqueness":{"when":"MATCH"}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"compute":{"include_percentiles":"NaN"}},"id":"rum.sessions.webui.count","type":"rum_metrics"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/rum/config/metrics/Test_Update_a_rum_based_metric_returns_Bad_Request_response_1729785964
+  response:
+    body:
+      string: '{"errors":[{"status":"400","title":"Bad Request","detail":"json: cannot
+        unmarshal string into Go struct field RumMetricUpdateCompute.compute.include_percentiles
+        of type bool"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 400
+      message: Bad Request
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/rum/config/metrics/Test_Update_a_rum_based_metric_returns_Bad_Request_response_1729785964
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1

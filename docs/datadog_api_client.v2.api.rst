@@ -281,6 +281,13 @@ rum\_api
    :members:
    :show-inheritance:
 
+rum\_metrics\_api
+-----------------
+
+.. automodule:: datadog_api_client.v2.api.rum_metrics_api
+   :members:
+   :show-inheritance:
+
 security\_monitoring\_api
 -------------------------
 

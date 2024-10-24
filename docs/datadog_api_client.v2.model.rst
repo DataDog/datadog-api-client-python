@@ -8310,6 +8310,181 @@ rum\_group\_by\_total
    :members:
    :show-inheritance:
 
+rum\_metric\_compute
+--------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_metric_compute
+   :members:
+   :show-inheritance:
+
+rum\_metric\_compute\_aggregation\_type
+---------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_metric_compute_aggregation_type
+   :members:
+   :show-inheritance:
+
+rum\_metric\_create\_attributes
+-------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_metric_create_attributes
+   :members:
+   :show-inheritance:
+
+rum\_metric\_create\_data
+-------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_metric_create_data
+   :members:
+   :show-inheritance:
+
+rum\_metric\_create\_request
+----------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_metric_create_request
+   :members:
+   :show-inheritance:
+
+rum\_metric\_event\_type
+------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_metric_event_type
+   :members:
+   :show-inheritance:
+
+rum\_metric\_filter
+-------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_metric_filter
+   :members:
+   :show-inheritance:
+
+rum\_metric\_group\_by
+----------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_metric_group_by
+   :members:
+   :show-inheritance:
+
+rum\_metric\_response
+---------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_metric_response
+   :members:
+   :show-inheritance:
+
+rum\_metric\_response\_attributes
+---------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_metric_response_attributes
+   :members:
+   :show-inheritance:
+
+rum\_metric\_response\_compute
+------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_metric_response_compute
+   :members:
+   :show-inheritance:
+
+rum\_metric\_response\_compute\_aggregation\_type
+-------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_metric_response_compute_aggregation_type
+   :members:
+   :show-inheritance:
+
+rum\_metric\_response\_data
+---------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_metric_response_data
+   :members:
+   :show-inheritance:
+
+rum\_metric\_response\_filter
+-----------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_metric_response_filter
+   :members:
+   :show-inheritance:
+
+rum\_metric\_response\_group\_by
+--------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_metric_response_group_by
+   :members:
+   :show-inheritance:
+
+rum\_metric\_response\_uniqueness
+---------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_metric_response_uniqueness
+   :members:
+   :show-inheritance:
+
+rum\_metric\_response\_uniqueness\_when
+---------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_metric_response_uniqueness_when
+   :members:
+   :show-inheritance:
+
+rum\_metric\_type
+-----------------
+
+.. automodule:: datadog_api_client.v2.model.rum_metric_type
+   :members:
+   :show-inheritance:
+
+rum\_metric\_uniqueness
+-----------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_metric_uniqueness
+   :members:
+   :show-inheritance:
+
+rum\_metric\_uniqueness\_when
+-----------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_metric_uniqueness_when
+   :members:
+   :show-inheritance:
+
+rum\_metric\_update\_attributes
+-------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_metric_update_attributes
+   :members:
+   :show-inheritance:
+
+rum\_metric\_update\_compute
+----------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_metric_update_compute
+   :members:
+   :show-inheritance:
+
+rum\_metric\_update\_data
+-------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_metric_update_data
+   :members:
+   :show-inheritance:
+
+rum\_metric\_update\_request
+----------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_metric_update_request
+   :members:
+   :show-inheritance:
+
+rum\_metrics\_response
+----------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_metrics_response
+   :members:
+   :show-inheritance:
+
 rum\_query\_filter
 ------------------
 
