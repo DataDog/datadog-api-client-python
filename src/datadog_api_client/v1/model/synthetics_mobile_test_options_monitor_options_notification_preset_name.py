@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class SyntheticsMobileTestOptionsMonitorOptionsNotificationPresetName(ModelSimple):
     """
-    The definition of `SyntheticsMobileTestOptionsMonitorOptionsNotificationPresetName` object.
+    The name of the preset for the notification for the monitor.
 
     :param value: Must be one of ["show_all", "hide_all", "hide_query", "hide_handles"].
     :type value: str
