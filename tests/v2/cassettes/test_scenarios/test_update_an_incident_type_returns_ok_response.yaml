@@ -1,0 +1,52 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"name":"7a71352d63ea9891"},"type":"incident_types"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/incidents/config/types
+  response:
+    body:
+      string: '{"data":{"id":"54ee8a4c-591e-48eb-8207-c12ad57617a9","type":"incident_types","attributes":{"createdAt":"2024-10-24T16:03:10.596580603Z","createdBy":"3ad549bf-eba0-11e9-a77a-0705486660d0","description":"","is_default":false,"lastModifiedBy":"3ad549bf-eba0-11e9-a77a-0705486660d0","modifiedAt":"2024-10-24T16:03:10.596580603Z","name":"7a71352d63ea9891","prefix":"IR"}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"name":"7a71352d63ea9891-updated"},"id":"54ee8a4c-591e-48eb-8207-c12ad57617a9","type":"incident_types"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/incidents/config/types/54ee8a4c-591e-48eb-8207-c12ad57617a9
+  response:
+    body:
+      string: '{"data":{"id":"54ee8a4c-591e-48eb-8207-c12ad57617a9","type":"incident_types","attributes":{"createdAt":"2024-10-24T16:03:10.596581Z","createdBy":"3ad549bf-eba0-11e9-a77a-0705486660d0","description":"","is_default":false,"lastModifiedBy":"3ad549bf-eba0-11e9-a77a-0705486660d0","modifiedAt":"2024-10-24T16:03:10.974980567Z","name":"7a71352d63ea9891-updated","prefix":"IR"}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/incidents/config/types/54ee8a4c-591e-48eb-8207-c12ad57617a9
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1
