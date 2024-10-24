@@ -4852,6 +4852,76 @@ incident\_type
    :members:
    :show-inheritance:
 
+incident\_type\_attributes
+--------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_type_attributes
+   :members:
+   :show-inheritance:
+
+incident\_type\_create\_data
+----------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_type_create_data
+   :members:
+   :show-inheritance:
+
+incident\_type\_create\_request
+-------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_type_create_request
+   :members:
+   :show-inheritance:
+
+incident\_type\_list\_response
+------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_type_list_response
+   :members:
+   :show-inheritance:
+
+incident\_type\_object
+----------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_type_object
+   :members:
+   :show-inheritance:
+
+incident\_type\_patch\_data
+---------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_type_patch_data
+   :members:
+   :show-inheritance:
+
+incident\_type\_patch\_request
+------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_type_patch_request
+   :members:
+   :show-inheritance:
+
+incident\_type\_response
+------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_type_response
+   :members:
+   :show-inheritance:
+
+incident\_type\_type
+--------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_type_type
+   :members:
+   :show-inheritance:
+
+incident\_type\_update\_attributes
+----------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_type_update_attributes
+   :members:
+   :show-inheritance:
+
 incident\_update\_attributes
 ----------------------------
 

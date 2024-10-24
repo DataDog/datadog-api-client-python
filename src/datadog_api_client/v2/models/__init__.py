@@ -865,6 +865,16 @@ from datadog_api_client.v2.model.incident_todo_response_data import IncidentTodo
 from datadog_api_client.v2.model.incident_todo_response_included_item import IncidentTodoResponseIncludedItem
 from datadog_api_client.v2.model.incident_todo_type import IncidentTodoType
 from datadog_api_client.v2.model.incident_type import IncidentType
+from datadog_api_client.v2.model.incident_type_attributes import IncidentTypeAttributes
+from datadog_api_client.v2.model.incident_type_create_data import IncidentTypeCreateData
+from datadog_api_client.v2.model.incident_type_create_request import IncidentTypeCreateRequest
+from datadog_api_client.v2.model.incident_type_list_response import IncidentTypeListResponse
+from datadog_api_client.v2.model.incident_type_object import IncidentTypeObject
+from datadog_api_client.v2.model.incident_type_patch_data import IncidentTypePatchData
+from datadog_api_client.v2.model.incident_type_patch_request import IncidentTypePatchRequest
+from datadog_api_client.v2.model.incident_type_response import IncidentTypeResponse
+from datadog_api_client.v2.model.incident_type_type import IncidentTypeType
+from datadog_api_client.v2.model.incident_type_update_attributes import IncidentTypeUpdateAttributes
 from datadog_api_client.v2.model.incident_update_attributes import IncidentUpdateAttributes
 from datadog_api_client.v2.model.incident_update_data import IncidentUpdateData
 from datadog_api_client.v2.model.incident_update_relationships import IncidentUpdateRelationships
@@ -2713,6 +2723,16 @@ __all__ = [
     "IncidentTodoResponseIncludedItem",
     "IncidentTodoType",
     "IncidentType",
+    "IncidentTypeAttributes",
+    "IncidentTypeCreateData",
+    "IncidentTypeCreateRequest",
+    "IncidentTypeListResponse",
+    "IncidentTypeObject",
+    "IncidentTypePatchData",
+    "IncidentTypePatchRequest",
+    "IncidentTypeResponse",
+    "IncidentTypeType",
+    "IncidentTypeUpdateAttributes",
     "IncidentUpdateAttributes",
     "IncidentUpdateData",
     "IncidentUpdateRelationships",

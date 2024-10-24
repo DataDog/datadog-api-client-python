@@ -1,0 +1,37 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"description":"e4408b9cd8ee3d61","is_default":true,"name":"e4408b9cd8ee3d61"},"type":"incident_types"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/incidents/config/types
+  response:
+    body:
+      string: '{"data":{"id":"56ec8c33-78bf-469b-a45c-7aa57f5c2328","type":"incident_types","attributes":{"createdAt":"2024-10-24T15:20:11.007569706Z","createdBy":"3ad549bf-eba0-11e9-a77a-0705486660d0","description":"e4408b9cd8ee3d61","is_default":true,"lastModifiedBy":"3ad549bf-eba0-11e9-a77a-0705486660d0","modifiedAt":"2024-10-24T15:20:11.007569706Z","name":"e4408b9cd8ee3d61","prefix":"IR"}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/incidents/config/types/56ec8c33-78bf-469b-a45c-7aa57f5c2328
+  response:
+    body:
+      string: '{"errors":[{"title":"Generic Error","detail":"cannot delete default
+        incident type 56ec8c33-78bf-469b-a45c-7aa57f5c2328"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 400
+      message: Bad Request
+version: 1
