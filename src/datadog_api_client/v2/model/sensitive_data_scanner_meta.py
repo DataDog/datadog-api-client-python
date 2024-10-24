@@ -59,10 +59,10 @@ class SensitiveDataScannerMeta(ModelNormal):
         :param group_count_limit: Maximum number of scanning groups allowed for the org.
         :type group_count_limit: int, optional
 
-        :param has_highlight_enabled: Whether or not scanned events are highlighted in Logs or RUM for the org.
+        :param has_highlight_enabled: (Deprecated) Whether or not scanned events are highlighted in Logs or RUM for the org. **Deprecated**.
         :type has_highlight_enabled: bool, optional
 
-        :param has_multi_pass_enabled: Whether or not scanned events have multi-pass enabled.
+        :param has_multi_pass_enabled: (Deprecated) Whether or not scanned events have multi-pass enabled. **Deprecated**.
         :type has_multi_pass_enabled: bool, optional
 
         :param is_pci_compliant: Whether or not the org is compliant to the payment card industry standard.
