@@ -45,7 +45,7 @@ Feature: GCP Integration
     When the request is sent
     Then the response status is 409 Conflict
 
-  @replay-only @team:DataDog/gcp-integrations
+  @team:DataDog/gcp-integrations
   Scenario: Create a new entry for your service account returns "OK" response
     Given new "CreateGCPSTSAccount" request
     And body with value {"data": {"attributes": {"client_email": "Test-{{ unique_hash }}@test-project.iam.gserviceaccount.com", "host_filters": []}, "type": "gcp_service_account"}}
@@ -54,7 +54,7 @@ Feature: GCP Integration
     And the response "data.type" is equal to "gcp_service_account"
     And the response "data.attributes.client_email" is equal to "Test-{{ unique_hash }}@test-project.iam.gserviceaccount.com"
 
-  @replay-only @team:DataDog/gcp-integrations
+  @team:DataDog/gcp-integrations
   Scenario: Create a new entry for your service account with account_tags returns "OK" response
     Given new "CreateGCPSTSAccount" request
     And body with value {"data": {"attributes": {"account_tags": ["lorem", "ipsum"], "client_email": "Test-{{ unique_hash }}@test-project.iam.gserviceaccount.com", "host_filters": []}, "type": "gcp_service_account"}}
@@ -64,7 +64,7 @@ Feature: GCP Integration
     And the response "data.attributes.client_email" is equal to "Test-{{ unique_hash }}@test-project.iam.gserviceaccount.com"
     And the response "data.attributes.account_tags" is equal to ["lorem", "ipsum"]
 
-  @replay-only @team:DataDog/gcp-integrations
+  @team:DataDog/gcp-integrations
   Scenario: Create a new entry for your service account with cloud run revision filters enabled returns "OK" response
     Given new "CreateGCPSTSAccount" request
     And body with value {"data": {"attributes": {"cloud_run_revision_filters": ["meh:bleh"], "client_email": "Test-{{ unique_hash }}@test-project.iam.gserviceaccount.com", "host_filters": []}, "type": "gcp_service_account"}}
@@ -74,7 +74,7 @@ Feature: GCP Integration
     And the response "data.attributes.client_email" is equal to "Test-{{ unique_hash }}@test-project.iam.gserviceaccount.com"
     And the response "data.attributes.cloud_run_revision_filters" is equal to ["meh:bleh"]
 
-  @replay-only @team:DataDog/gcp-integrations
+  @team:DataDog/gcp-integrations
   Scenario: Create a new entry for your service account with cspm enabled returns "OK" response
     Given new "CreateGCPSTSAccount" request
     And body with value {"data": {"attributes": {"is_cspm_enabled": true, "resource_collection_enabled": true, "client_email": "Test-{{ unique_hash }}@test-project.iam.gserviceaccount.com", "host_filters": []}, "type": "gcp_service_account"}}
@@ -84,14 +84,14 @@ Feature: GCP Integration
     And the response "data.attributes.client_email" is equal to "Test-{{ unique_hash }}@test-project.iam.gserviceaccount.com"
     And the response "data.attributes.is_cspm_enabled" is equal to true
 
-  @replay-only @team:DataDog/gcp-integrations
+  @team:DataDog/gcp-integrations
   Scenario: Create a new entry for your service account with resource collection enabled disabled and cspm enabled returns "Bad Request" response
     Given new "CreateGCPSTSAccount" request
     And body with value {"data": {"attributes": {"resource_collection_enabled": false, "is_cspm_enabled": true, "client_email": "Test-{{ unique_hash }}@test-project.iam.gserviceaccount.com", "host_filters": []}, "type": "gcp_service_account"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @replay-only @team:DataDog/gcp-integrations
+  @team:DataDog/gcp-integrations
   Scenario: Create a new entry for your service account with resource collection enabled returns "OK" response
     Given new "CreateGCPSTSAccount" request
     And body with value {"data": {"attributes": {"resource_collection_enabled": true, "client_email": "Test-{{ unique_hash }}@test-project.iam.gserviceaccount.com", "host_filters": []}, "type": "gcp_service_account"}}
@@ -101,7 +101,7 @@ Feature: GCP Integration
     And the response "data.attributes.client_email" is equal to "Test-{{ unique_hash }}@test-project.iam.gserviceaccount.com"
     And the response "data.attributes.resource_collection_enabled" is equal to true
 
-  @replay-only @team:DataDog/gcp-integrations
+  @team:DataDog/gcp-integrations
   Scenario: Create a new entry for your service account with security command center enabled returns "OK" response
     Given new "CreateGCPSTSAccount" request
     And body with value {"data": {"attributes": {"is_security_command_center_enabled": true, "is_resource_change_collection_enabled": true, "client_email": "Test-{{ unique_hash }}@test-project.iam.gserviceaccount.com", "host_filters": []}, "type": "gcp_service_account"}}
@@ -132,7 +132,7 @@ Feature: GCP Integration
     When the request is sent
     Then the response status is 404 Not Found
 
-  @replay-only @team:DataDog/gcp-integrations
+  @skip-terraform-config @team:DataDog/gcp-integrations
   Scenario: List all GCP STS-enabled service accounts returns "OK" response
     Given there is a valid "gcp_sts_account" in the system
     And new "ListGCPSTSAccounts" request
@@ -140,7 +140,7 @@ Feature: GCP Integration
     Then the response status is 200 OK
     And the response "data" has item with field "type" with value "gcp_service_account"
 
-  @replay-only @team:DataDog/gcp-integrations
+  @team:DataDog/gcp-integrations
   Scenario: List delegate account returns "OK" response
     Given new "GetGCPSTSDelegate" request
     When the request is sent
@@ -163,7 +163,7 @@ Feature: GCP Integration
     When the request is sent
     Then the response status is 404 Not Found
 
-  @replay-only @team:DataDog/gcp-integrations
+  @team:DataDog/gcp-integrations
   Scenario: Update STS Service Account returns "OK" response
     Given there is a valid "gcp_sts_account" in the system
     And new "UpdateGCPSTSAccount" request
@@ -172,7 +172,7 @@ Feature: GCP Integration
     When the request is sent
     Then the response status is 201 OK
 
-  @replay-only @team:DataDog/gcp-integrations
+  @team:DataDog/gcp-integrations
   Scenario: Update STS Service Account returns "OK" response with cloud run revision filters
     Given there is a valid "gcp_sts_account" in the system
     And new "UpdateGCPSTSAccount" request
@@ -181,7 +181,7 @@ Feature: GCP Integration
     When the request is sent
     Then the response status is 201 OK
 
-  @replay-only @team:DataDog/gcp-integrations
+  @team:DataDog/gcp-integrations
   Scenario: Update STS Service Account returns "OK" response with enable resource collection turned on
     Given there is a valid "gcp_sts_account" in the system
     And new "UpdateGCPSTSAccount" request
