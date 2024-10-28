@@ -19,6 +19,9 @@ from datadog_api_client.v1.model.synthetics_test_execution_rule import Synthetic
 from datadog_api_client.v1.model.synthetics_test_options import SyntheticsTestOptions
 from datadog_api_client.v1.model.synthetics_test_options_http_version import SyntheticsTestOptionsHTTPVersion
 from datadog_api_client.v1.model.synthetics_test_options_monitor_options import SyntheticsTestOptionsMonitorOptions
+from datadog_api_client.v1.model.synthetics_test_options_monitor_options_notification_preset_name import (
+    SyntheticsTestOptionsMonitorOptionsNotificationPresetName,
+)
 from datadog_api_client.v1.model.synthetics_test_options_retry import SyntheticsTestOptionsRetry
 from datadog_api_client.v1.model.synthetics_test_options_scheduling import SyntheticsTestOptionsScheduling
 from datadog_api_client.v1.model.synthetics_test_options_scheduling_timeframe import (
@@ -54,7 +57,9 @@ body = SyntheticsAPITest(
             SyntheticsDeviceID.CHROME_LAPTOP_LARGE,
         ],
         http_version=SyntheticsTestOptionsHTTPVersion.HTTP1,
-        monitor_options=SyntheticsTestOptionsMonitorOptions(),
+        monitor_options=SyntheticsTestOptionsMonitorOptions(
+            notification_preset_name=SyntheticsTestOptionsMonitorOptionsNotificationPresetName.SHOW_ALL,
+        ),
         restricted_roles=SyntheticsRestrictedRoles(
             [
                 "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",

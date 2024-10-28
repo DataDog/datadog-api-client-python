@@ -14,14 +14,14 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v1.model.synthetics_mobile_test_binding import SyntheticsMobileTestBinding
-    from datadog_api_client.v1.model.synthetics_mobile_test_ci_options import SyntheticsMobileTestCiOptions
+    from datadog_api_client.v1.model.synthetics_test_restriction_policy_binding import (
+        SyntheticsTestRestrictionPolicyBinding,
+    )
+    from datadog_api_client.v1.model.synthetics_test_ci_options import SyntheticsTestCiOptions
     from datadog_api_client.v1.model.synthetics_mobile_tests_mobile_application import (
         SyntheticsMobileTestsMobileApplication,
     )
-    from datadog_api_client.v1.model.synthetics_mobile_test_options_monitor_options import (
-        SyntheticsMobileTestOptionsMonitorOptions,
-    )
+    from datadog_api_client.v1.model.synthetics_test_options_monitor_options import SyntheticsTestOptionsMonitorOptions
     from datadog_api_client.v1.model.synthetics_restricted_roles import SyntheticsRestrictedRoles
     from datadog_api_client.v1.model.synthetics_test_options_retry import SyntheticsTestOptionsRetry
     from datadog_api_client.v1.model.synthetics_test_options_scheduling import SyntheticsTestOptionsScheduling
@@ -53,13 +53,15 @@ class SyntheticsMobileTestOptions(ModelNormal):
 
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v1.model.synthetics_mobile_test_binding import SyntheticsMobileTestBinding
-        from datadog_api_client.v1.model.synthetics_mobile_test_ci_options import SyntheticsMobileTestCiOptions
+        from datadog_api_client.v1.model.synthetics_test_restriction_policy_binding import (
+            SyntheticsTestRestrictionPolicyBinding,
+        )
+        from datadog_api_client.v1.model.synthetics_test_ci_options import SyntheticsTestCiOptions
         from datadog_api_client.v1.model.synthetics_mobile_tests_mobile_application import (
             SyntheticsMobileTestsMobileApplication,
         )
-        from datadog_api_client.v1.model.synthetics_mobile_test_options_monitor_options import (
-            SyntheticsMobileTestOptionsMonitorOptions,
+        from datadog_api_client.v1.model.synthetics_test_options_monitor_options import (
+            SyntheticsTestOptionsMonitorOptions,
         )
         from datadog_api_client.v1.model.synthetics_restricted_roles import SyntheticsRestrictedRoles
         from datadog_api_client.v1.model.synthetics_test_options_retry import SyntheticsTestOptionsRetry
@@ -67,15 +69,15 @@ class SyntheticsMobileTestOptions(ModelNormal):
 
         return {
             "allow_application_crash": (bool,),
-            "bindings": ([SyntheticsMobileTestBinding],),
-            "ci": (SyntheticsMobileTestCiOptions,),
+            "bindings": ([SyntheticsTestRestrictionPolicyBinding],),
+            "ci": (SyntheticsTestCiOptions,),
             "default_step_timeout": (int,),
             "device_ids": ([str],),
             "disable_auto_accept_alert": (bool,),
             "min_failure_duration": (int,),
             "mobile_application": (SyntheticsMobileTestsMobileApplication,),
             "monitor_name": (str,),
-            "monitor_options": (SyntheticsMobileTestOptionsMonitorOptions,),
+            "monitor_options": (SyntheticsTestOptionsMonitorOptions,),
             "monitor_priority": (int,),
             "no_screenshot": (bool,),
             "restricted_roles": (SyntheticsRestrictedRoles,),
@@ -107,63 +109,63 @@ class SyntheticsMobileTestOptions(ModelNormal):
 
     def __init__(
         self_,
+        device_ids: List[str],
+        mobile_application: SyntheticsMobileTestsMobileApplication,
+        tick_every: int,
         allow_application_crash: Union[bool, UnsetType] = unset,
-        bindings: Union[List[SyntheticsMobileTestBinding], UnsetType] = unset,
-        ci: Union[SyntheticsMobileTestCiOptions, UnsetType] = unset,
+        bindings: Union[List[SyntheticsTestRestrictionPolicyBinding], UnsetType] = unset,
+        ci: Union[SyntheticsTestCiOptions, UnsetType] = unset,
         default_step_timeout: Union[int, UnsetType] = unset,
-        device_ids: Union[List[str], UnsetType] = unset,
         disable_auto_accept_alert: Union[bool, UnsetType] = unset,
         min_failure_duration: Union[int, UnsetType] = unset,
-        mobile_application: Union[SyntheticsMobileTestsMobileApplication, UnsetType] = unset,
         monitor_name: Union[str, UnsetType] = unset,
-        monitor_options: Union[SyntheticsMobileTestOptionsMonitorOptions, UnsetType] = unset,
+        monitor_options: Union[SyntheticsTestOptionsMonitorOptions, UnsetType] = unset,
         monitor_priority: Union[int, UnsetType] = unset,
         no_screenshot: Union[bool, UnsetType] = unset,
         restricted_roles: Union[SyntheticsRestrictedRoles, UnsetType] = unset,
         retry: Union[SyntheticsTestOptionsRetry, UnsetType] = unset,
         scheduling: Union[SyntheticsTestOptionsScheduling, UnsetType] = unset,
-        tick_every: Union[int, UnsetType] = unset,
         verbosity: Union[int, UnsetType] = unset,
         **kwargs,
     ):
         """
         Object describing the extra options for a Synthetic test.
 
-        :param allow_application_crash: The ``SyntheticsMobileTestOptions`` ``allowApplicationCrash``.
+        :param allow_application_crash: A boolean to set if an application crash would mark the test as failed.
         :type allow_application_crash: bool, optional
 
         :param bindings: Array of bindings used for the mobile test.
-        :type bindings: [SyntheticsMobileTestBinding], optional
+        :type bindings: [SyntheticsTestRestrictionPolicyBinding], optional
 
         :param ci: CI/CD options for a Synthetic test.
-        :type ci: SyntheticsMobileTestCiOptions, optional
+        :type ci: SyntheticsTestCiOptions, optional
 
-        :param default_step_timeout: The ``SyntheticsMobileTestOptions`` ``defaultStepTimeout``.
+        :param default_step_timeout: The default timeout for steps in the test (in seconds).
         :type default_step_timeout: int, optional
 
         :param device_ids: For mobile test, array with the different device IDs used to run the test.
-        :type device_ids: [str], optional
+        :type device_ids: [str]
 
-        :param disable_auto_accept_alert: The ``SyntheticsMobileTestOptions`` ``disableAutoAcceptAlert``.
+        :param disable_auto_accept_alert: A boolean to disable auto accepting alerts.
         :type disable_auto_accept_alert: bool, optional
 
         :param min_failure_duration: Minimum amount of time in failure required to trigger an alert.
         :type min_failure_duration: int, optional
 
         :param mobile_application: Mobile application for mobile synthetics test.
-        :type mobile_application: SyntheticsMobileTestsMobileApplication, optional
+        :type mobile_application: SyntheticsMobileTestsMobileApplication
 
         :param monitor_name: The monitor name is used for the alert title as well as for all monitor dashboard widgets and SLOs.
         :type monitor_name: str, optional
 
-        :param monitor_options: Object containing the options for a mobile Synthetic test as a monitor
+        :param monitor_options: Object containing the options for a Synthetic test as a monitor
             (for example, renotification).
-        :type monitor_options: SyntheticsMobileTestOptionsMonitorOptions, optional
+        :type monitor_options: SyntheticsTestOptionsMonitorOptions, optional
 
         :param monitor_priority: Integer from 1 (high) to 5 (low) indicating alert severity.
         :type monitor_priority: int, optional
 
-        :param no_screenshot: The ``SyntheticsMobileTestOptions`` ``noScreenshot``.
+        :param no_screenshot: A boolean set to not take a screenshot for the step.
         :type no_screenshot: bool, optional
 
         :param restricted_roles: A list of role identifiers that can be pulled from the Roles API, for restricting read and write access.
@@ -176,9 +178,9 @@ class SyntheticsMobileTestOptions(ModelNormal):
         :type scheduling: SyntheticsTestOptionsScheduling, optional
 
         :param tick_every: The frequency at which to run the Synthetic test (in seconds).
-        :type tick_every: int, optional
+        :type tick_every: int
 
-        :param verbosity: The ``SyntheticsMobileTestOptions`` ``verbosity``.
+        :param verbosity: The level of verbosity for the mobile test.
         :type verbosity: int, optional
         """
         if allow_application_crash is not unset:
@@ -189,14 +191,10 @@ class SyntheticsMobileTestOptions(ModelNormal):
             kwargs["ci"] = ci
         if default_step_timeout is not unset:
             kwargs["default_step_timeout"] = default_step_timeout
-        if device_ids is not unset:
-            kwargs["device_ids"] = device_ids
         if disable_auto_accept_alert is not unset:
             kwargs["disable_auto_accept_alert"] = disable_auto_accept_alert
         if min_failure_duration is not unset:
             kwargs["min_failure_duration"] = min_failure_duration
-        if mobile_application is not unset:
-            kwargs["mobile_application"] = mobile_application
         if monitor_name is not unset:
             kwargs["monitor_name"] = monitor_name
         if monitor_options is not unset:
@@ -211,8 +209,10 @@ class SyntheticsMobileTestOptions(ModelNormal):
             kwargs["retry"] = retry
         if scheduling is not unset:
             kwargs["scheduling"] = scheduling
-        if tick_every is not unset:
-            kwargs["tick_every"] = tick_every
         if verbosity is not unset:
             kwargs["verbosity"] = verbosity
         super().__init__(kwargs)
+
+        self_.device_ids = device_ids
+        self_.mobile_application = mobile_application
+        self_.tick_every = tick_every

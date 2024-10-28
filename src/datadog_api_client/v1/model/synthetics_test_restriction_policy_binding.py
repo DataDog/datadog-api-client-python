@@ -14,45 +14,45 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v1.model.synthetics_mobile_test_binding_items_role import (
-        SyntheticsMobileTestBindingItemsRole,
+    from datadog_api_client.v1.model.synthetics_test_restriction_policy_binding_relation import (
+        SyntheticsTestRestrictionPolicyBindingRelation,
     )
 
 
-class SyntheticsMobileTestBindingItems(ModelNormal):
+class SyntheticsTestRestrictionPolicyBinding(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v1.model.synthetics_mobile_test_binding_items_role import (
-            SyntheticsMobileTestBindingItemsRole,
+        from datadog_api_client.v1.model.synthetics_test_restriction_policy_binding_relation import (
+            SyntheticsTestRestrictionPolicyBindingRelation,
         )
 
         return {
             "principals": ([str],),
-            "role": (SyntheticsMobileTestBindingItemsRole,),
+            "relation": (SyntheticsTestRestrictionPolicyBindingRelation,),
         }
 
     attribute_map = {
         "principals": "principals",
-        "role": "role",
+        "relation": "relation",
     }
 
     def __init__(
         self_,
         principals: Union[List[str], UnsetType] = unset,
-        role: Union[SyntheticsMobileTestBindingItemsRole, UnsetType] = unset,
+        relation: Union[SyntheticsTestRestrictionPolicyBindingRelation, UnsetType] = unset,
         **kwargs,
     ):
         """
-        Object describing the binding used for a mobile test.
+        Objects describing the binding used for a mobile test.
 
         :param principals: List of principals for a mobile test binding.
         :type principals: [str], optional
 
-        :param role: The definition of ``SyntheticsMobileTestBindingItemsRole`` object.
-        :type role: SyntheticsMobileTestBindingItemsRole, optional
+        :param relation: The type of relation for the binding.
+        :type relation: SyntheticsTestRestrictionPolicyBindingRelation, optional
         """
         if principals is not unset:
             kwargs["principals"] = principals
-        if role is not unset:
-            kwargs["role"] = role
+        if relation is not unset:
+            kwargs["relation"] = relation
         super().__init__(kwargs)
