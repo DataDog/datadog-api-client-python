@@ -83,7 +83,7 @@ class SyntheticsMobileTest(ModelNormal):
         :param config: Configuration object for a Synthetic mobile test.
         :type config: SyntheticsMobileTestConfig
 
-        :param device_ids: The ``SyntheticsMobileTest`` ``device_ids``.
+        :param device_ids: Array with the different device IDs used to run the test.
         :type device_ids: [str], optional
 
         :param message: Notification message associated with the test.

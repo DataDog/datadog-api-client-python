@@ -3,34 +3,37 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    unset,
-    UnsetType,
 )
 
 
-class SyntheticsMobileTestInitialApplicationArgumentsPropertyNames(ModelNormal):
+class SyntheticsMobileStepParamsVariable(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
-            "pattern": (str,),
+            "example": (str,),
+            "name": (str,),
         }
 
     attribute_map = {
-        "pattern": "pattern",
+        "example": "example",
+        "name": "name",
     }
 
-    def __init__(self_, pattern: Union[str, UnsetType] = unset, **kwargs):
+    def __init__(self_, example: str, name: str, **kwargs):
         """
-        Name of the property.
+        Variable object for ``extractVariable`` step type.
 
-        :param pattern: The ``propertyNames`` ``pattern``.
-        :type pattern: str, optional
+        :param example: An example for the variable.
+        :type example: str
+
+        :param name: The variable name.
+        :type name: str
         """
-        if pattern is not unset:
-            kwargs["pattern"] = pattern
         super().__init__(kwargs)
+
+        self_.example = example
+        self_.name = name

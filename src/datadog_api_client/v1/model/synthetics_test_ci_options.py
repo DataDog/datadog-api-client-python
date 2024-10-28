@@ -3,13 +3,11 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    unset,
-    UnsetType,
 )
 
 
@@ -30,13 +28,13 @@ class SyntheticsTestCiOptions(ModelNormal):
         "execution_rule": "executionRule",
     }
 
-    def __init__(self_, execution_rule: Union[SyntheticsTestExecutionRule, UnsetType] = unset, **kwargs):
+    def __init__(self_, execution_rule: SyntheticsTestExecutionRule, **kwargs):
         """
         CI/CD options for a Synthetic test.
 
         :param execution_rule: Execution rule for a Synthetic test.
-        :type execution_rule: SyntheticsTestExecutionRule, optional
+        :type execution_rule: SyntheticsTestExecutionRule
         """
-        if execution_rule is not unset:
-            kwargs["execution_rule"] = execution_rule
         super().__init__(kwargs)
+
+        self_.execution_rule = execution_rule

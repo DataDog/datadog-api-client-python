@@ -14,6 +14,7 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v1.model.synthetics_mobile_step_params import SyntheticsMobileStepParams
     from datadog_api_client.v1.model.synthetics_mobile_step_type import SyntheticsMobileStepType
 
 
@@ -26,6 +27,7 @@ class SyntheticsMobileStep(ModelNormal):
 
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v1.model.synthetics_mobile_step_params import SyntheticsMobileStepParams
         from datadog_api_client.v1.model.synthetics_mobile_step_type import SyntheticsMobileStepType
 
         return {
@@ -34,7 +36,7 @@ class SyntheticsMobileStep(ModelNormal):
             "is_critical": (bool,),
             "name": (str,),
             "no_screenshot": (bool,),
-            "params": (dict,),
+            "params": (SyntheticsMobileStepParams,),
             "public_id": (str,),
             "timeout": (int,),
             "type": (SyntheticsMobileStepType,),
@@ -54,15 +56,15 @@ class SyntheticsMobileStep(ModelNormal):
 
     def __init__(
         self_,
+        name: str,
+        params: SyntheticsMobileStepParams,
+        type: SyntheticsMobileStepType,
         allow_failure: Union[bool, UnsetType] = unset,
         has_new_step_element: Union[bool, UnsetType] = unset,
         is_critical: Union[bool, UnsetType] = unset,
-        name: Union[str, UnsetType] = unset,
         no_screenshot: Union[bool, UnsetType] = unset,
-        params: Union[dict, UnsetType] = unset,
         public_id: Union[str, UnsetType] = unset,
         timeout: Union[int, UnsetType] = unset,
-        type: Union[SyntheticsMobileStepType, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -78,13 +80,13 @@ class SyntheticsMobileStep(ModelNormal):
         :type is_critical: bool, optional
 
         :param name: The name of the step.
-        :type name: str, optional
+        :type name: str
 
         :param no_screenshot: A boolean set to not take a screenshot for the step.
         :type no_screenshot: bool, optional
 
-        :param params: The parameters of the mobile step.
-        :type params: dict, optional
+        :param params: The parameters of a mobile step.
+        :type params: SyntheticsMobileStepParams
 
         :param public_id: The public ID of the step.
         :type public_id: str, optional
@@ -93,7 +95,7 @@ class SyntheticsMobileStep(ModelNormal):
         :type timeout: int, optional
 
         :param type: Step type used in your mobile Synthetic test.
-        :type type: SyntheticsMobileStepType, optional
+        :type type: SyntheticsMobileStepType
         """
         if allow_failure is not unset:
             kwargs["allow_failure"] = allow_failure
@@ -101,16 +103,14 @@ class SyntheticsMobileStep(ModelNormal):
             kwargs["has_new_step_element"] = has_new_step_element
         if is_critical is not unset:
             kwargs["is_critical"] = is_critical
-        if name is not unset:
-            kwargs["name"] = name
         if no_screenshot is not unset:
             kwargs["no_screenshot"] = no_screenshot
-        if params is not unset:
-            kwargs["params"] = params
         if public_id is not unset:
             kwargs["public_id"] = public_id
         if timeout is not unset:
             kwargs["timeout"] = timeout
-        if type is not unset:
-            kwargs["type"] = type
         super().__init__(kwargs)
+
+        self_.name = name
+        self_.params = params
+        self_.type = type
