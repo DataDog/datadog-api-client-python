@@ -32582,6 +32582,10 @@ paths:
       tags:
       - Synthetics
       x-codegen-request-body-name: body
+      x-permission:
+        operator: OR
+        permissions:
+        - synthetics_write
   /api/v1/synthetics/tests/mobile/{public_id}:
     get:
       description: 'Get the detailed configuration associated with
@@ -32626,6 +32630,10 @@ paths:
       summary: Get a Mobile test
       tags:
       - Synthetics
+      x-permission:
+        operator: OR
+        permissions:
+        - synthetics_read
     put:
       description: Edit the configuration of a Synthetic Mobile test.
       operationId: UpdateMobileTest
@@ -32685,6 +32693,10 @@ paths:
       tags:
       - Synthetics
       x-codegen-request-body-name: body
+      x-permission:
+        operator: OR
+        permissions:
+        - synthetics_write
   /api/v1/synthetics/tests/trigger:
     post:
       description: Trigger a set of Synthetic tests.
@@ -32806,6 +32818,10 @@ paths:
       tags:
       - Synthetics
       x-codegen-request-body-name: body
+      x-permission:
+        operator: OR
+        permissions:
+        - synthetics_read
   /api/v1/synthetics/tests/{public_id}:
     get:
       description: Get the detailed configuration associated with a Synthetic test.
