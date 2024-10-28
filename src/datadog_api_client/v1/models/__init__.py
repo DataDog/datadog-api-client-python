@@ -732,26 +732,35 @@ from datadog_api_client.v1.model.synthetics_local_variable_parsing_options_type 
 from datadog_api_client.v1.model.synthetics_location import SyntheticsLocation
 from datadog_api_client.v1.model.synthetics_locations import SyntheticsLocations
 from datadog_api_client.v1.model.synthetics_mobile_step import SyntheticsMobileStep
+from datadog_api_client.v1.model.synthetics_mobile_step_params import SyntheticsMobileStepParams
+from datadog_api_client.v1.model.synthetics_mobile_step_params_direction import SyntheticsMobileStepParamsDirection
+from datadog_api_client.v1.model.synthetics_mobile_step_params_element import SyntheticsMobileStepParamsElement
+from datadog_api_client.v1.model.synthetics_mobile_step_params_element_context_type import (
+    SyntheticsMobileStepParamsElementContextType,
+)
+from datadog_api_client.v1.model.synthetics_mobile_step_params_element_relative_position import (
+    SyntheticsMobileStepParamsElementRelativePosition,
+)
+from datadog_api_client.v1.model.synthetics_mobile_step_params_element_user_locator import (
+    SyntheticsMobileStepParamsElementUserLocator,
+)
+from datadog_api_client.v1.model.synthetics_mobile_step_params_element_user_locator_values_items import (
+    SyntheticsMobileStepParamsElementUserLocatorValuesItems,
+)
+from datadog_api_client.v1.model.synthetics_mobile_step_params_element_user_locator_values_items_type import (
+    SyntheticsMobileStepParamsElementUserLocatorValuesItemsType,
+)
+from datadog_api_client.v1.model.synthetics_mobile_step_params_positions_items import (
+    SyntheticsMobileStepParamsPositionsItems,
+)
+from datadog_api_client.v1.model.synthetics_mobile_step_params_variable import SyntheticsMobileStepParamsVariable
 from datadog_api_client.v1.model.synthetics_mobile_step_type import SyntheticsMobileStepType
 from datadog_api_client.v1.model.synthetics_mobile_test import SyntheticsMobileTest
-from datadog_api_client.v1.model.synthetics_mobile_test_binding import SyntheticsMobileTestBinding
-from datadog_api_client.v1.model.synthetics_mobile_test_binding_items import SyntheticsMobileTestBindingItems
-from datadog_api_client.v1.model.synthetics_mobile_test_binding_items_role import SyntheticsMobileTestBindingItemsRole
-from datadog_api_client.v1.model.synthetics_mobile_test_ci_options import SyntheticsMobileTestCiOptions
 from datadog_api_client.v1.model.synthetics_mobile_test_config import SyntheticsMobileTestConfig
 from datadog_api_client.v1.model.synthetics_mobile_test_initial_application_arguments import (
     SyntheticsMobileTestInitialApplicationArguments,
 )
-from datadog_api_client.v1.model.synthetics_mobile_test_initial_application_arguments_property_names import (
-    SyntheticsMobileTestInitialApplicationArgumentsPropertyNames,
-)
 from datadog_api_client.v1.model.synthetics_mobile_test_options import SyntheticsMobileTestOptions
-from datadog_api_client.v1.model.synthetics_mobile_test_options_monitor_options import (
-    SyntheticsMobileTestOptionsMonitorOptions,
-)
-from datadog_api_client.v1.model.synthetics_mobile_test_options_monitor_options_notification_preset_name import (
-    SyntheticsMobileTestOptionsMonitorOptionsNotificationPresetName,
-)
 from datadog_api_client.v1.model.synthetics_mobile_test_type import SyntheticsMobileTestType
 from datadog_api_client.v1.model.synthetics_mobile_tests_mobile_application import (
     SyntheticsMobileTestsMobileApplication,
@@ -801,6 +810,9 @@ from datadog_api_client.v1.model.synthetics_test_monitor_status import Synthetic
 from datadog_api_client.v1.model.synthetics_test_options import SyntheticsTestOptions
 from datadog_api_client.v1.model.synthetics_test_options_http_version import SyntheticsTestOptionsHTTPVersion
 from datadog_api_client.v1.model.synthetics_test_options_monitor_options import SyntheticsTestOptionsMonitorOptions
+from datadog_api_client.v1.model.synthetics_test_options_monitor_options_notification_preset_name import (
+    SyntheticsTestOptionsMonitorOptionsNotificationPresetName,
+)
 from datadog_api_client.v1.model.synthetics_test_options_retry import SyntheticsTestOptionsRetry
 from datadog_api_client.v1.model.synthetics_test_options_scheduling import SyntheticsTestOptionsScheduling
 from datadog_api_client.v1.model.synthetics_test_options_scheduling_timeframe import (
@@ -815,6 +827,12 @@ from datadog_api_client.v1.model.synthetics_test_request_certificate import Synt
 from datadog_api_client.v1.model.synthetics_test_request_certificate_item import SyntheticsTestRequestCertificateItem
 from datadog_api_client.v1.model.synthetics_test_request_port import SyntheticsTestRequestPort
 from datadog_api_client.v1.model.synthetics_test_request_proxy import SyntheticsTestRequestProxy
+from datadog_api_client.v1.model.synthetics_test_restriction_policy_binding import (
+    SyntheticsTestRestrictionPolicyBinding,
+)
+from datadog_api_client.v1.model.synthetics_test_restriction_policy_binding_relation import (
+    SyntheticsTestRestrictionPolicyBindingRelation,
+)
 from datadog_api_client.v1.model.synthetics_test_uptime import SyntheticsTestUptime
 from datadog_api_client.v1.model.synthetics_timing import SyntheticsTiming
 from datadog_api_client.v1.model.synthetics_trigger_body import SyntheticsTriggerBody
@@ -1677,18 +1695,21 @@ __all__ = [
     "SyntheticsLocation",
     "SyntheticsLocations",
     "SyntheticsMobileStep",
+    "SyntheticsMobileStepParams",
+    "SyntheticsMobileStepParamsDirection",
+    "SyntheticsMobileStepParamsElement",
+    "SyntheticsMobileStepParamsElementContextType",
+    "SyntheticsMobileStepParamsElementRelativePosition",
+    "SyntheticsMobileStepParamsElementUserLocator",
+    "SyntheticsMobileStepParamsElementUserLocatorValuesItems",
+    "SyntheticsMobileStepParamsElementUserLocatorValuesItemsType",
+    "SyntheticsMobileStepParamsPositionsItems",
+    "SyntheticsMobileStepParamsVariable",
     "SyntheticsMobileStepType",
     "SyntheticsMobileTest",
-    "SyntheticsMobileTestBinding",
-    "SyntheticsMobileTestBindingItems",
-    "SyntheticsMobileTestBindingItemsRole",
-    "SyntheticsMobileTestCiOptions",
     "SyntheticsMobileTestConfig",
     "SyntheticsMobileTestInitialApplicationArguments",
-    "SyntheticsMobileTestInitialApplicationArgumentsPropertyNames",
     "SyntheticsMobileTestOptions",
-    "SyntheticsMobileTestOptionsMonitorOptions",
-    "SyntheticsMobileTestOptionsMonitorOptionsNotificationPresetName",
     "SyntheticsMobileTestType",
     "SyntheticsMobileTestsMobileApplication",
     "SyntheticsMobileTestsMobileApplicationReferenceType",
@@ -1726,6 +1747,7 @@ __all__ = [
     "SyntheticsTestOptions",
     "SyntheticsTestOptionsHTTPVersion",
     "SyntheticsTestOptionsMonitorOptions",
+    "SyntheticsTestOptionsMonitorOptionsNotificationPresetName",
     "SyntheticsTestOptionsRetry",
     "SyntheticsTestOptionsScheduling",
     "SyntheticsTestOptionsSchedulingTimeframe",
@@ -1738,6 +1760,8 @@ __all__ = [
     "SyntheticsTestRequestCertificateItem",
     "SyntheticsTestRequestPort",
     "SyntheticsTestRequestProxy",
+    "SyntheticsTestRestrictionPolicyBinding",
+    "SyntheticsTestRestrictionPolicyBindingRelation",
     "SyntheticsTestUptime",
     "SyntheticsTiming",
     "SyntheticsTriggerBody",

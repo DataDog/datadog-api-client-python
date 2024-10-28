@@ -4484,6 +4484,76 @@ datadog\_api\_client.v1.model.synthetics\_mobile\_step module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.synthetics\_mobile\_step\_params module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_mobile_step_params
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.synthetics\_mobile\_step\_params\_direction module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_mobile_step_params_direction
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.synthetics\_mobile\_step\_params\_element module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_mobile_step_params_element
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.synthetics\_mobile\_step\_params\_element\_context\_type module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_mobile_step_params_element_context_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.synthetics\_mobile\_step\_params\_element\_relative\_position module
+--------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_mobile_step_params_element_relative_position
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.synthetics\_mobile\_step\_params\_element\_user\_locator module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_mobile_step_params_element_user_locator
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.synthetics\_mobile\_step\_params\_element\_user\_locator\_values\_items module
+------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_mobile_step_params_element_user_locator_values_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.synthetics\_mobile\_step\_params\_element\_user\_locator\_values\_items\_type module
+------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_mobile_step_params_element_user_locator_values_items_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.synthetics\_mobile\_step\_params\_positions\_items module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_mobile_step_params_positions_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.synthetics\_mobile\_step\_params\_variable module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_mobile_step_params_variable
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.synthetics\_mobile\_step\_type module
 -------------------------------------------------------------------
 
@@ -4495,34 +4565,6 @@ datadog\_api\_client.v1.model.synthetics\_mobile\_test module
 -------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_mobile_test
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v1.model.synthetics\_mobile\_test\_binding module
-----------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v1.model.synthetics_mobile_test_binding
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v1.model.synthetics\_mobile\_test\_binding\_items module
------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v1.model.synthetics_mobile_test_binding_items
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v1.model.synthetics\_mobile\_test\_binding\_items\_role module
------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v1.model.synthetics_mobile_test_binding_items_role
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v1.model.synthetics\_mobile\_test\_ci\_options module
---------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v1.model.synthetics_mobile_test_ci_options
    :members:
    :show-inheritance:
 
@@ -4540,31 +4582,10 @@ datadog\_api\_client.v1.model.synthetics\_mobile\_test\_initial\_application\_ar
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_mobile\_test\_initial\_application\_arguments\_property\_names module
----------------------------------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v1.model.synthetics_mobile_test_initial_application_arguments_property_names
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v1.model.synthetics\_mobile\_test\_options module
 ----------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_mobile_test_options
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v1.model.synthetics\_mobile\_test\_options\_monitor\_options module
-----------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v1.model.synthetics_mobile_test_options_monitor_options
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v1.model.synthetics\_mobile\_test\_options\_monitor\_options\_notification\_preset\_name module
---------------------------------------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v1.model.synthetics_mobile_test_options_monitor_options_notification_preset_name
    :members:
    :show-inheritance:
 
@@ -4820,6 +4841,13 @@ datadog\_api\_client.v1.model.synthetics\_test\_options\_monitor\_options module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.synthetics\_test\_options\_monitor\_options\_notification\_preset\_name module
+------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_test_options_monitor_options_notification_preset_name
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.synthetics\_test\_options\_retry module
 ---------------------------------------------------------------------
 
@@ -4901,6 +4929,20 @@ datadog\_api\_client.v1.model.synthetics\_test\_request\_proxy module
 ---------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_test_request_proxy
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.synthetics\_test\_restriction\_policy\_binding module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_test_restriction_policy_binding
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.synthetics\_test\_restriction\_policy\_binding\_relation module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_test_restriction_policy_binding_relation
    :members:
    :show-inheritance:
 
