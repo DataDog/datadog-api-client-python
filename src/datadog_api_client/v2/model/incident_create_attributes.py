@@ -41,6 +41,7 @@ class IncidentCreateAttributes(ModelNormal):
             "customer_impact_scope": (str,),
             "customer_impacted": (bool,),
             "fields": ({str: (IncidentFieldAttributes,)},),
+            "incident_type_uuid": (str,),
             "initial_cells": ([IncidentTimelineCellCreateAttributes],),
             "notification_handles": ([IncidentNotificationHandle],),
             "title": (str,),
@@ -50,6 +51,7 @@ class IncidentCreateAttributes(ModelNormal):
         "customer_impact_scope": "customer_impact_scope",
         "customer_impacted": "customer_impacted",
         "fields": "fields",
+        "incident_type_uuid": "incident_type_uuid",
         "initial_cells": "initial_cells",
         "notification_handles": "notification_handles",
         "title": "title",
@@ -69,6 +71,7 @@ class IncidentCreateAttributes(ModelNormal):
             ],
             UnsetType,
         ] = unset,
+        incident_type_uuid: Union[str, UnsetType] = unset,
         initial_cells: Union[
             List[Union[IncidentTimelineCellCreateAttributes, IncidentTimelineCellMarkdownCreateAttributes]], UnsetType
         ] = unset,
@@ -87,6 +90,9 @@ class IncidentCreateAttributes(ModelNormal):
         :param fields: A condensed view of the user-defined fields for which to create initial selections.
         :type fields: {str: (IncidentFieldAttributes,)}, optional
 
+        :param incident_type_uuid: A unique identifier that represents an incident type. The default incident type will be used if this property is not provided.
+        :type incident_type_uuid: str, optional
+
         :param initial_cells: An array of initial timeline cells to be placed at the beginning of the incident timeline.
         :type initial_cells: [IncidentTimelineCellCreateAttributes], optional
 
@@ -100,6 +106,8 @@ class IncidentCreateAttributes(ModelNormal):
             kwargs["customer_impact_scope"] = customer_impact_scope
         if fields is not unset:
             kwargs["fields"] = fields
+        if incident_type_uuid is not unset:
+            kwargs["incident_type_uuid"] = incident_type_uuid
         if initial_cells is not unset:
             kwargs["initial_cells"] = initial_cells
         if notification_handles is not unset:

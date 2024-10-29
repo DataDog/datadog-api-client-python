@@ -4855,6 +4855,76 @@ datadog\_api\_client.v2.model.incident\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.incident\_type\_attributes module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_type_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_type\_create\_data module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_type_create_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_type\_create\_request module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_type_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_type\_list\_response module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_type_list_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_type\_object module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_type_object
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_type\_patch\_data module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_type_patch_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_type\_patch\_request module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_type_patch_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_type\_response module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_type_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_type\_type module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_type_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_type\_update\_attributes module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_type_update_attributes
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.incident\_update\_attributes module
 -----------------------------------------------------------------
 
