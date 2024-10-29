@@ -1123,11 +1123,15 @@
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.incidents_api.IncidentsApi.create_incident_todo" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">IncidentsApi.create_incident_todo()</span></code></a>
         </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.incidents_api.IncidentsApi.create_incident_type" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">IncidentsApi.create_incident_type()</span></code></a>
+        </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.incidents_api.IncidentsApi.delete_incident" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">IncidentsApi.delete_incident()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.incidents_api.IncidentsApi.delete_incident_integration" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">IncidentsApi.delete_incident_integration()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.incidents_api.IncidentsApi.delete_incident_todo" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">IncidentsApi.delete_incident_todo()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.incidents_api.IncidentsApi.delete_incident_type" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">IncidentsApi.delete_incident_type()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.incidents_api.IncidentsApi.get_incident" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">IncidentsApi.get_incident()</span></code></a>
         </li>
@@ -1135,11 +1139,15 @@
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.incidents_api.IncidentsApi.get_incident_todo" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">IncidentsApi.get_incident_todo()</span></code></a>
         </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.incidents_api.IncidentsApi.get_incident_type" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">IncidentsApi.get_incident_type()</span></code></a>
+        </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.incidents_api.IncidentsApi.list_incident_attachments" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">IncidentsApi.list_incident_attachments()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.incidents_api.IncidentsApi.list_incident_integrations" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">IncidentsApi.list_incident_integrations()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.incidents_api.IncidentsApi.list_incident_todos" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">IncidentsApi.list_incident_todos()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.incidents_api.IncidentsApi.list_incident_types" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">IncidentsApi.list_incident_types()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.incidents_api.IncidentsApi.list_incidents" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">IncidentsApi.list_incidents()</span></code></a>
         </li>
@@ -1156,6 +1164,8 @@
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.incidents_api.IncidentsApi.update_incident_integration" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">IncidentsApi.update_incident_integration()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.incidents_api.IncidentsApi.update_incident_todo" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">IncidentsApi.update_incident_todo()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.incidents_api.IncidentsApi.update_incident_type" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">IncidentsApi.update_incident_type()</span></code></a>
         </li></ul>
             </nav>
         </li></ul>
@@ -4254,6 +4264,20 @@ the included attribute will contain the users related to these incident teams.</
 </dl>
 </dd></dl>
 <dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.incidents_api.IncidentsApi.create_incident_type">
+<span class="sig-name descname"><span class="pre">create_incident_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.incident_type_create_request.IncidentTypeCreateRequest" title="datadog_api_client.v2.model.incident_type_create_request.IncidentTypeCreateRequest"><span class="pre">IncidentTypeCreateRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.incident_type_response.IncidentTypeResponse" title="datadog_api_client.v2.model.incident_type_response.IncidentTypeResponse"><span class="pre">IncidentTypeResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.incidents_api.IncidentsApi.create_incident_type" title="Link to this definition">¶</a></dt>
+<dd><p>Create an incident type.</p>
+<p>Create an incident type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>body</strong> (<a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.incident_type_create_request.IncidentTypeCreateRequest" title="datadog_api_client.v2.model.incident_type_create_request.IncidentTypeCreateRequest"><em>IncidentTypeCreateRequest</em></a>) – Incident type payload.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.incident_type_response.IncidentTypeResponse" title="datadog_api_client.v2.model.incident_type_response.IncidentTypeResponse">IncidentTypeResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.incidents_api.IncidentsApi.delete_incident">
 <span class="sig-name descname"><span class="pre">delete_incident</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">incident_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#datadog_api_client.v2.api.incidents_api.IncidentsApi.delete_incident" title="Link to this definition">¶</a></dt>
 <dd><p>Delete an existing incident.</p>
@@ -4295,6 +4319,20 @@ the included attribute will contain the users related to these incident teams.</
 <li><p><strong>incident_id</strong> (<em>str</em>) – The UUID of the incident.</p></li>
 <li><p><strong>todo_id</strong> (<em>str</em>) – The UUID of the incident todo.</p></li>
 </ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.incidents_api.IncidentsApi.delete_incident_type">
+<span class="sig-name descname"><span class="pre">delete_incident_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">incident_type_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#datadog_api_client.v2.api.incidents_api.IncidentsApi.delete_incident_type" title="Link to this definition">¶</a></dt>
+<dd><p>Delete an incident type.</p>
+<p>Delete an incident type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>incident_type_id</strong> (<em>str</em>) – The UUID of the incident type.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>None</p>
@@ -4353,6 +4391,20 @@ the included attribute will contain the users related to these incident teams.</
 </dl>
 </dd></dl>
 <dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.incidents_api.IncidentsApi.get_incident_type">
+<span class="sig-name descname"><span class="pre">get_incident_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">incident_type_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.incident_type_response.IncidentTypeResponse" title="datadog_api_client.v2.model.incident_type_response.IncidentTypeResponse"><span class="pre">IncidentTypeResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.incidents_api.IncidentsApi.get_incident_type" title="Link to this definition">¶</a></dt>
+<dd><p>Get incident type details.</p>
+<p>Get incident type details.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>incident_type_id</strong> (<em>str</em>) – The UUID of the incident type.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.incident_type_response.IncidentTypeResponse" title="datadog_api_client.v2.model.incident_type_response.IncidentTypeResponse">IncidentTypeResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.incidents_api.IncidentsApi.list_incident_attachments">
 <span class="sig-name descname"><span class="pre">list_incident_attachments</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">incident_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.incident_attachment_related_object.IncidentAttachmentRelatedObject" title="datadog_api_client.v2.model.incident_attachment_related_object.IncidentAttachmentRelatedObject"><span class="pre">IncidentAttachmentRelatedObject</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter_attachment_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.incident_attachment_attachment_type.IncidentAttachmentAttachmentType" title="datadog_api_client.v2.model.incident_attachment_attachment_type.IncidentAttachmentAttachmentType"><span class="pre">IncidentAttachmentAttachmentType</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.incident_attachments_response.IncidentAttachmentsResponse" title="datadog_api_client.v2.model.incident_attachments_response.IncidentAttachmentsResponse"><span class="pre">IncidentAttachmentsResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.incidents_api.IncidentsApi.list_incident_attachments" title="Link to this definition">¶</a></dt>
 <dd><p>Get a list of attachments.</p>
@@ -4395,6 +4447,20 @@ the included attribute will contain the users related to these incident teams.</
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.incident_todo_list_response.IncidentTodoListResponse" title="datadog_api_client.v2.model.incident_todo_list_response.IncidentTodoListResponse">IncidentTodoListResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.incidents_api.IncidentsApi.list_incident_types">
+<span class="sig-name descname"><span class="pre">list_incident_types</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_deleted</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.incident_type_list_response.IncidentTypeListResponse" title="datadog_api_client.v2.model.incident_type_list_response.IncidentTypeListResponse"><span class="pre">IncidentTypeListResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.incidents_api.IncidentsApi.list_incident_types" title="Link to this definition">¶</a></dt>
+<dd><p>Get a list of incident types.</p>
+<p>Get all incident types.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>include_deleted</strong> (<em>bool</em><em>, </em><em>optional</em>) – Include deleted incident types in the response.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.incident_type_list_response.IncidentTypeListResponse" title="datadog_api_client.v2.model.incident_type_list_response.IncidentTypeListResponse">IncidentTypeListResponse</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -4553,6 +4619,23 @@ example: <code class="docutils literal notranslate"><span class="pre">state:acti
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.incident_todo_response.IncidentTodoResponse" title="datadog_api_client.v2.model.incident_todo_response.IncidentTodoResponse">IncidentTodoResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.incidents_api.IncidentsApi.update_incident_type">
+<span class="sig-name descname"><span class="pre">update_incident_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">incident_type_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.incident_type_patch_request.IncidentTypePatchRequest" title="datadog_api_client.v2.model.incident_type_patch_request.IncidentTypePatchRequest"><span class="pre">IncidentTypePatchRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.incident_type_response.IncidentTypeResponse" title="datadog_api_client.v2.model.incident_type_response.IncidentTypeResponse"><span class="pre">IncidentTypeResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.incidents_api.IncidentsApi.update_incident_type" title="Link to this definition">¶</a></dt>
+<dd><p>Update an incident type.</p>
+<p>Update an incident type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>incident_type_id</strong> (<em>str</em>) – The UUID of the incident type.</p></li>
+<li><p><strong>body</strong> (<a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.incident_type_patch_request.IncidentTypePatchRequest" title="datadog_api_client.v2.model.incident_type_patch_request.IncidentTypePatchRequest"><em>IncidentTypePatchRequest</em></a>) – Incident type payload.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.incident_type_response.IncidentTypeResponse" title="datadog_api_client.v2.model.incident_type_response.IncidentTypeResponse">IncidentTypeResponse</a></p>
 </dd>
 </dl>
 </dd></dl>
