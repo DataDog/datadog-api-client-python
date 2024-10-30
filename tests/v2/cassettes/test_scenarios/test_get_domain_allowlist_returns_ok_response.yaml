@@ -1,0 +1,20 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/domain_allowlist
+  response:
+    body:
+      string: '{"data":{"type":"domain_allowlist","attributes":{"enabled":false,"domains":["@static-test-domain.test"]}}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

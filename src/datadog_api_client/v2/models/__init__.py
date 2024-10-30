@@ -501,6 +501,13 @@ from datadog_api_client.v2.model.detailed_finding_type import DetailedFindingTyp
 from datadog_api_client.v2.model.device_attributes import DeviceAttributes
 from datadog_api_client.v2.model.device_attributes_interface_statuses import DeviceAttributesInterfaceStatuses
 from datadog_api_client.v2.model.devices_list_data import DevicesListData
+from datadog_api_client.v2.model.domain_allowlist import DomainAllowlist
+from datadog_api_client.v2.model.domain_allowlist_attributes import DomainAllowlistAttributes
+from datadog_api_client.v2.model.domain_allowlist_request import DomainAllowlistRequest
+from datadog_api_client.v2.model.domain_allowlist_response import DomainAllowlistResponse
+from datadog_api_client.v2.model.domain_allowlist_response_data import DomainAllowlistResponseData
+from datadog_api_client.v2.model.domain_allowlist_response_data_attributes import DomainAllowlistResponseDataAttributes
+from datadog_api_client.v2.model.domain_allowlist_type import DomainAllowlistType
 from datadog_api_client.v2.model.downtime_create_request import DowntimeCreateRequest
 from datadog_api_client.v2.model.downtime_create_request_attributes import DowntimeCreateRequestAttributes
 from datadog_api_client.v2.model.downtime_create_request_data import DowntimeCreateRequestData
@@ -2415,6 +2422,13 @@ __all__ = [
     "DeviceAttributes",
     "DeviceAttributesInterfaceStatuses",
     "DevicesListData",
+    "DomainAllowlist",
+    "DomainAllowlistAttributes",
+    "DomainAllowlistRequest",
+    "DomainAllowlistResponse",
+    "DomainAllowlistResponseData",
+    "DomainAllowlistResponseDataAttributes",
+    "DomainAllowlistType",
     "DowntimeCreateRequest",
     "DowntimeCreateRequestAttributes",
     "DowntimeCreateRequestData",
