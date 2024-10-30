@@ -977,6 +977,18 @@
         </li></ul>
             </nav>
         </li>
+        <li class="md-nav__item"><a href="#module-datadog_api_client.v2.api.domain_allowlist_api" class="md-nav__link">datadog_api_client.v2.api.domain_allowlist_api module</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.domain_allowlist_api.DomainAllowlistApi" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">DomainAllowlistApi</span></code></a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.domain_allowlist_api.DomainAllowlistApi.get_domain_allowlist" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">DomainAllowlistApi.get_domain_allowlist()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.domain_allowlist_api.DomainAllowlistApi.patch_domain_allowlist" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">DomainAllowlistApi.patch_domain_allowlist()</span></code></a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
         <li class="md-nav__item"><a href="#module-datadog_api_client.v2.api.dora_metrics_api" class="md-nav__link">datadog_api_client.v2.api.dora_metrics_api module</a><nav class="md-nav">
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.dora_metrics_api.DORAMetricsApi" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">DORAMetricsApi</span></code></a><nav class="md-nav">
@@ -3500,6 +3512,39 @@ organization.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.dashboard_list_update_items_response.DashboardListUpdateItemsResponse" title="datadog_api_client.v2.model.dashboard_list_update_items_response.DashboardListUpdateItemsResponse">DashboardListUpdateItemsResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+</section>
+<section id="module-datadog_api_client.v2.api.domain_allowlist_api">
+<span id="datadog-api-client-v2-api-domain-allowlist-api-module"></span><h2 id="module-datadog_api_client.v2.api.domain_allowlist_api">datadog_api_client.v2.api.domain_allowlist_api module<a class="headerlink" href="#module-datadog_api_client.v2.api.domain_allowlist_api" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.domain_allowlist_api.DomainAllowlistApi">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DomainAllowlistApi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_client</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datadog_api_client.v2.api.domain_allowlist_api.DomainAllowlistApi" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Configure your Datadog Email Domain Allowlist directly through the Datadog API.
+The Email Domain Allowlist controls the domains that certain datadog emails can be sent to.
+For more information, see the <a class="reference external" href="https://docs.datadoghq.com/account_management/org_settings/domain_allowlist">Domain Allowlist docs page</a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.domain_allowlist_api.DomainAllowlistApi.get_domain_allowlist">
+<span class="sig-name descname"><span class="pre">get_domain_allowlist</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.domain_allowlist_response.DomainAllowlistResponse" title="datadog_api_client.v2.model.domain_allowlist_response.DomainAllowlistResponse"><span class="pre">DomainAllowlistResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.domain_allowlist_api.DomainAllowlistApi.get_domain_allowlist" title="Link to this definition">¶</a></dt>
+<dd><p>Get Domain Allowlist.</p>
+<p>Get the domain allowlist for an organization.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.domain_allowlist_response.DomainAllowlistResponse" title="datadog_api_client.v2.model.domain_allowlist_response.DomainAllowlistResponse">DomainAllowlistResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.domain_allowlist_api.DomainAllowlistApi.patch_domain_allowlist">
+<span class="sig-name descname"><span class="pre">patch_domain_allowlist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.domain_allowlist_request.DomainAllowlistRequest" title="datadog_api_client.v2.model.domain_allowlist_request.DomainAllowlistRequest"><span class="pre">DomainAllowlistRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.domain_allowlist_response.DomainAllowlistResponse" title="datadog_api_client.v2.model.domain_allowlist_response.DomainAllowlistResponse"><span class="pre">DomainAllowlistResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.domain_allowlist_api.DomainAllowlistApi.patch_domain_allowlist" title="Link to this definition">¶</a></dt>
+<dd><p>Sets Domain Allowlist.</p>
+<p>Update the domain allowlist for an organization.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.domain_allowlist_response.DomainAllowlistResponse" title="datadog_api_client.v2.model.domain_allowlist_response.DomainAllowlistResponse">DomainAllowlistResponse</a></p>
 </dd>
 </dl>
 </dd></dl>

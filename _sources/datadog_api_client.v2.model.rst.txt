@@ -2678,6 +2678,55 @@ datadog\_api\_client.v2.model.devices\_list\_data module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.domain\_allowlist module
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.domain_allowlist
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.domain\_allowlist\_attributes module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.domain_allowlist_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.domain\_allowlist\_request module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.domain_allowlist_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.domain\_allowlist\_response module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.domain_allowlist_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.domain\_allowlist\_response\_data module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.domain_allowlist_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.domain\_allowlist\_response\_data\_attributes module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.domain_allowlist_response_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.domain\_allowlist\_type module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.domain_allowlist_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.dora\_deployment\_request module
 --------------------------------------------------------------
 
