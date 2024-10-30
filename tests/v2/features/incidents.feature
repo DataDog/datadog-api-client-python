@@ -70,7 +70,7 @@ Feature: Incidents
   Scenario: Create an incident returns "Bad Request" response
     Given operation "CreateIncident" enabled
     And new "CreateIncident" request
-    And body with value {"data": {"attributes": {"customer_impact_scope": "Example customer impact scope", "customer_impacted": false, "fields": {"severity": {"type": "dropdown", "value": "SEV-5"}}, "initial_cells": [{"cell_type": "markdown", "content": {"content": "An example timeline cell message."}, "important": false}], "notification_handles": [{"display_name": "Jane Doe", "handle": "@user@email.com"}, {"display_name": "Slack Channel", "handle": "@slack-channel"}, {"display_name": "Incident Workflow", "handle": "@workflow-from-incident"}], "title": "A test incident title"}, "relationships": {"commander_user": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "users"}}}, "type": "incidents"}}
+    And body with value {"data": {"attributes": {"customer_impact_scope": "Example customer impact scope", "customer_impacted": false, "fields": {"severity": {"type": "dropdown", "value": "SEV-5"}}, "incident_type_uuid": "00000000-0000-0000-0000-000000000000", "initial_cells": [{"cell_type": "markdown", "content": {"content": "An example timeline cell message."}, "important": false}], "notification_handles": [{"display_name": "Jane Doe", "handle": "@user@email.com"}, {"display_name": "Slack Channel", "handle": "@slack-channel"}, {"display_name": "Incident Workflow", "handle": "@workflow-from-incident"}], "title": "A test incident title"}, "relationships": {"commander_user": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "users"}}}, "type": "incidents"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -89,7 +89,7 @@ Feature: Incidents
   Scenario: Create an incident returns "Not Found" response
     Given operation "CreateIncident" enabled
     And new "CreateIncident" request
-    And body with value {"data": {"attributes": {"customer_impact_scope": "Example customer impact scope", "customer_impacted": false, "fields": {"severity": {"type": "dropdown", "value": "SEV-5"}}, "initial_cells": [{"cell_type": "markdown", "content": {"content": "An example timeline cell message."}, "important": false}], "notification_handles": [{"display_name": "Jane Doe", "handle": "@user@email.com"}, {"display_name": "Slack Channel", "handle": "@slack-channel"}, {"display_name": "Incident Workflow", "handle": "@workflow-from-incident"}], "title": "A test incident title"}, "relationships": {"commander_user": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "users"}}}, "type": "incidents"}}
+    And body with value {"data": {"attributes": {"customer_impact_scope": "Example customer impact scope", "customer_impacted": false, "fields": {"severity": {"type": "dropdown", "value": "SEV-5"}}, "incident_type_uuid": "00000000-0000-0000-0000-000000000000", "initial_cells": [{"cell_type": "markdown", "content": {"content": "An example timeline cell message."}, "important": false}], "notification_handles": [{"display_name": "Jane Doe", "handle": "@user@email.com"}, {"display_name": "Slack Channel", "handle": "@slack-channel"}, {"display_name": "Incident Workflow", "handle": "@workflow-from-incident"}], "title": "A test incident title"}, "relationships": {"commander_user": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "users"}}}, "type": "incidents"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -119,6 +119,30 @@ Feature: Incidents
     And new "CreateIncidentTodo" request
     And request contains "incident_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"assignees": ["@test.user@test.com"], "completed": "2023-03-06T22:00:00.000000+00:00", "content": "Restore lost data.", "due_date": "2023-07-10T05:00:00.000000+00:00", "incident_id": "00000000-aaaa-0000-0000-000000000000"}, "type": "incident_todos"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:Datadog/incident-app
+  Scenario: Create an incident type returns "Bad Request" response
+    Given operation "CreateIncidentType" enabled
+    And new "CreateIncidentType" request
+    And body with value {"data": {"attributes": {"description": "Any incidents that harm (or have the potential to) the confidentiality, integrity, or availability of our data.", "is_default": true, "name": "Security Incident"}, "type": "incident_types"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @skip-validation @team:Datadog/incident-app
+  Scenario: Create an incident type returns "CREATED" response
+    Given operation "CreateIncidentType" enabled
+    And new "CreateIncidentType" request
+    And body with value {"data": {"attributes": {"description": "{{unique_hash}}", "is_default": true, "name": "{{unique_hash}}"}, "type": "incident_types"}}
+    When the request is sent
+    Then the response status is 201 CREATED
+
+  @generated @skip @team:Datadog/incident-app
+  Scenario: Create an incident type returns "Not Found" response
+    Given operation "CreateIncidentType" enabled
+    And new "CreateIncidentType" request
+    And body with value {"data": {"attributes": {"description": "Any incidents that harm (or have the potential to) the confidentiality, integrity, or availability of our data.", "is_default": true, "name": "Security Incident"}, "type": "incident_types"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -232,6 +256,31 @@ Feature: Incidents
     When the request is sent
     Then the response status is 204 OK
 
+  @generated @skip @team:Datadog/incident-app
+  Scenario: Delete an incident type returns "Bad Request" response
+    Given operation "DeleteIncidentType" enabled
+    And new "DeleteIncidentType" request
+    And request contains "incident_type_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:Datadog/incident-app
+  Scenario: Delete an incident type returns "Not Found" response
+    Given operation "DeleteIncidentType" enabled
+    And new "DeleteIncidentType" request
+    And request contains "incident_type_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @skip-validation @team:Datadog/incident-app
+  Scenario: Delete an incident type returns "OK" response
+    Given operation "DeleteIncidentType" enabled
+    And new "DeleteIncidentType" request
+    And there is a valid "incident_type" in the system
+    And request contains "incident_type_id" parameter from "incident_type.data.id"
+    When the request is sent
+    Then the response status is 204 OK
+
   @generated @skip @team:DataDog/incident-app
   Scenario: Get a list of an incident's integration metadata returns "Bad Request" response
     Given operation "ListIncidentIntegrations" enabled
@@ -309,6 +358,20 @@ Feature: Incidents
     Given operation "ListIncidentAttachments" enabled
     And new "ListIncidentAttachments" request
     And request contains "incident_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:Datadog/incident-app
+  Scenario: Get a list of incident types returns "Bad Request" response
+    Given operation "ListIncidentTypes" enabled
+    And new "ListIncidentTypes" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:Datadog/incident-app
+  Scenario: Get a list of incident types returns "OK" response
+    Given operation "ListIncidentTypes" enabled
+    And new "ListIncidentTypes" request
     When the request is sent
     Then the response status is 200 OK
 
@@ -417,6 +480,30 @@ Feature: Incidents
     Then the response status is 200 OK
     And the response "data.attributes.assignees" has length 2
     And the response "data.attributes.content" is equal to "Follow up with customer about the impact they saw."
+
+  @generated @skip @team:Datadog/incident-app
+  Scenario: Get incident type details returns "Bad Request" response
+    Given operation "GetIncidentType" enabled
+    And new "GetIncidentType" request
+    And request contains "incident_type_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:Datadog/incident-app
+  Scenario: Get incident type details returns "Not Found" response
+    Given operation "GetIncidentType" enabled
+    And new "GetIncidentType" request
+    And request contains "incident_type_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:Datadog/incident-app
+  Scenario: Get incident type details returns "OK" response
+    Given operation "GetIncidentType" enabled
+    And new "GetIncidentType" request
+    And request contains "incident_type_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
 
   @generated @skip @team:DataDog/incident-app
   Scenario: Get the details of an incident returns "Bad Request" response
@@ -587,3 +674,31 @@ Feature: Incidents
     Then the response status is 200 OK
     And the response "data.attributes.assignees" has length 1
     And the response "data.attributes.content" is equal to "Restore lost data."
+
+  @generated @skip @team:Datadog/incident-app
+  Scenario: Update an incident type returns "Bad Request" response
+    Given operation "UpdateIncidentType" enabled
+    And new "UpdateIncidentType" request
+    And request contains "incident_type_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"description": "Any incidents that harm (or have the potential to) the confidentiality, integrity, or availability of our data. Note: This will notify the security team.", "is_default": true, "name": "Security Incident"}, "id": "00000000-0000-0000-0000-000000000000", "type": "incident_types"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:Datadog/incident-app
+  Scenario: Update an incident type returns "Not Found" response
+    Given operation "UpdateIncidentType" enabled
+    And new "UpdateIncidentType" request
+    And request contains "incident_type_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"description": "Any incidents that harm (or have the potential to) the confidentiality, integrity, or availability of our data. Note: This will notify the security team.", "is_default": true, "name": "Security Incident"}, "id": "00000000-0000-0000-0000-000000000000", "type": "incident_types"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @skip-validation @team:Datadog/incident-app
+  Scenario: Update an incident type returns "OK" response
+    Given operation "UpdateIncidentType" enabled
+    And new "UpdateIncidentType" request
+    And there is a valid "incident_type" in the system
+    And request contains "incident_type_id" parameter from "incident_type.data.id"
+    And body with value {"data": {"id": "{{incident_type.data.id}}", "attributes": {"name": "{{incident_type.data.attributes.name}}-updated"}, "type": "incident_types"}}
+    When the request is sent
+    Then the response status is 200 OK

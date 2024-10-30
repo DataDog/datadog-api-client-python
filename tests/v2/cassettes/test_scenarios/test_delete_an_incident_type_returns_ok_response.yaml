@@ -1,0 +1,48 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"name":"5864bf8d69a3a3e5"},"type":"incident_types"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/incidents/config/types
+  response:
+    body:
+      string: '{"data":{"id":"6bffa77c-491c-42a6-bc83-30c49a657fce","type":"incident_types","attributes":{"createdAt":"2024-10-24T15:24:42.956582093Z","createdBy":"3ad549bf-eba0-11e9-a77a-0705486660d0","description":"","is_default":false,"lastModifiedBy":"3ad549bf-eba0-11e9-a77a-0705486660d0","modifiedAt":"2024-10-24T15:24:42.956582093Z","name":"5864bf8d69a3a3e5","prefix":"IR"}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/incidents/config/types/6bffa77c-491c-42a6-bc83-30c49a657fce
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/incidents/config/types/6bffa77c-491c-42a6-bc83-30c49a657fce
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1

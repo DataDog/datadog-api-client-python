@@ -155,6 +155,18 @@
   {
     "parameters": [
       {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"name\": \"{{unique_hash}}\"\n    },\n    \"type\": \"incident_types\"\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"incident_type\" in the system",
+    "key": "incident_type",
+    "tag": "Incidents",
+    "operationId": "CreateIncidentType"
+  },
+  {
+    "parameters": [
+      {
         "name": "incident_id",
         "source": "incident.data.id"
       },
