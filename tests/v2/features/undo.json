@@ -547,6 +547,18 @@
       "type": "safe"
     }
   },
+  "GetDomainAllowlist": {
+    "tag": "Domain Allowlist",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "PatchDomainAllowlist": {
+    "tag": "Domain Allowlist",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "CreateDORADeployment": {
     "tag": "DORA Metrics",
     "undo": {

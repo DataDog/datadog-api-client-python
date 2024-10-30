@@ -13,6 +13,7 @@ from datadog_api_client.v2.api.container_images_api import ContainerImagesApi
 from datadog_api_client.v2.api.containers_api import ContainersApi
 from datadog_api_client.v2.api.dora_metrics_api import DORAMetricsApi
 from datadog_api_client.v2.api.dashboard_lists_api import DashboardListsApi
+from datadog_api_client.v2.api.domain_allowlist_api import DomainAllowlistApi
 from datadog_api_client.v2.api.downtimes_api import DowntimesApi
 from datadog_api_client.v2.api.events_api import EventsApi
 from datadog_api_client.v2.api.fastly_integration_api import FastlyIntegrationApi
@@ -70,6 +71,7 @@ __all__ = [
     "ContainersApi",
     "DORAMetricsApi",
     "DashboardListsApi",
+    "DomainAllowlistApi",
     "DowntimesApi",
     "EventsApi",
     "FastlyIntegrationApi",
