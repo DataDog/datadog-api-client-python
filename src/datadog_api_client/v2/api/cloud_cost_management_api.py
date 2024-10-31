@@ -4,7 +4,6 @@
 from __future__ import annotations
 
 from typing import Any, Dict, List
-import warnings
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
@@ -12,7 +11,6 @@ from datadog_api_client.v2.model.aws_cur_configs_response import AwsCURConfigsRe
 from datadog_api_client.v2.model.aws_cur_config_response import AwsCURConfigResponse
 from datadog_api_client.v2.model.aws_cur_config_post_request import AwsCURConfigPostRequest
 from datadog_api_client.v2.model.aws_cur_config_patch_request import AwsCURConfigPatchRequest
-from datadog_api_client.v2.model.aws_related_accounts_response import AWSRelatedAccountsResponse
 from datadog_api_client.v2.model.azure_uc_configs_response import AzureUCConfigsResponse
 from datadog_api_client.v2.model.azure_uc_config_pairs_response import AzureUCConfigPairsResponse
 from datadog_api_client.v2.model.azure_uc_config_post_request import AzureUCConfigPostRequest
@@ -174,29 +172,6 @@ class CloudCostManagementApi:
                     "openapi_types": (str,),
                     "attribute": "file_id",
                     "location": "path",
-                },
-            },
-            headers_map={
-                "accept": ["application/json"],
-            },
-            api_client=api_client,
-        )
-
-        self._list_aws_related_accounts_endpoint = _Endpoint(
-            settings={
-                "response_type": (AWSRelatedAccountsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/cost/aws_related_accounts",
-                "operation_id": "list_aws_related_accounts",
-                "http_method": "GET",
-                "version": "v2",
-            },
-            params_map={
-                "filter_management_account_id": {
-                    "required": True,
-                    "openapi_types": (str,),
-                    "attribute": "filter[management_account_id]",
-                    "location": "query",
                 },
             },
             headers_map={
@@ -437,24 +412,6 @@ class CloudCostManagementApi:
         kwargs["file_id"] = file_id
 
         return self._get_custom_costs_file_endpoint.call_with_http_info(**kwargs)
-
-    def list_aws_related_accounts(
-        self,
-        filter_management_account_id: str,
-    ) -> AWSRelatedAccountsResponse:
-        """List related AWS accounts. **Deprecated**.
-
-        List the AWS accounts in an organization by calling 'organizations:ListAccounts' from the specified management account.
-
-        :param filter_management_account_id: The ID of the management account to filter by.
-        :type filter_management_account_id: str
-        :rtype: AWSRelatedAccountsResponse
-        """
-        kwargs: Dict[str, Any] = {}
-        kwargs["filter_management_account_id"] = filter_management_account_id
-
-        warnings.warn("list_aws_related_accounts is deprecated", DeprecationWarning, stacklevel=2)
-        return self._list_aws_related_accounts_endpoint.call_with_http_info(**kwargs)
 
     def list_cost_awscur_configs(
         self,
