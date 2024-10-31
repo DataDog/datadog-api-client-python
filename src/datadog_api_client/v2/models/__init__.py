@@ -98,6 +98,17 @@ from datadog_api_client.v2.model.azure_uc_config_post_request_attributes import 
 from datadog_api_client.v2.model.azure_uc_config_post_request_type import AzureUCConfigPostRequestType
 from datadog_api_client.v2.model.azure_uc_configs_response import AzureUCConfigsResponse
 from datadog_api_client.v2.model.bill_config import BillConfig
+from datadog_api_client.v2.model.billing_dimensions_mapping_body_item import BillingDimensionsMappingBodyItem
+from datadog_api_client.v2.model.billing_dimensions_mapping_body_item_attributes import (
+    BillingDimensionsMappingBodyItemAttributes,
+)
+from datadog_api_client.v2.model.billing_dimensions_mapping_body_item_attributes_endpoints_items import (
+    BillingDimensionsMappingBodyItemAttributesEndpointsItems,
+)
+from datadog_api_client.v2.model.billing_dimensions_mapping_body_item_attributes_endpoints_items_status import (
+    BillingDimensionsMappingBodyItemAttributesEndpointsItemsStatus,
+)
+from datadog_api_client.v2.model.billing_dimensions_mapping_response import BillingDimensionsMappingResponse
 from datadog_api_client.v2.model.bulk_mute_findings_request import BulkMuteFindingsRequest
 from datadog_api_client.v2.model.bulk_mute_findings_request_attributes import BulkMuteFindingsRequestAttributes
 from datadog_api_client.v2.model.bulk_mute_findings_request_data import BulkMuteFindingsRequestData
@@ -2150,6 +2161,11 @@ __all__ = [
     "AzureUCConfigPostRequestType",
     "AzureUCConfigsResponse",
     "BillConfig",
+    "BillingDimensionsMappingBodyItem",
+    "BillingDimensionsMappingBodyItemAttributes",
+    "BillingDimensionsMappingBodyItemAttributesEndpointsItems",
+    "BillingDimensionsMappingBodyItemAttributesEndpointsItemsStatus",
+    "BillingDimensionsMappingResponse",
     "BulkMuteFindingsRequest",
     "BulkMuteFindingsRequestAttributes",
     "BulkMuteFindingsRequestData",

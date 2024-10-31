@@ -704,6 +704,41 @@ datadog\_api\_client.v2.model.bill\_config module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.billing\_dimensions\_mapping\_body\_item module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.billing_dimensions_mapping_body_item
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.billing\_dimensions\_mapping\_body\_item\_attributes module
+-----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.billing_dimensions_mapping_body_item_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.billing\_dimensions\_mapping\_body\_item\_attributes\_endpoints\_items module
+-----------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.billing_dimensions_mapping_body_item_attributes_endpoints_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.billing\_dimensions\_mapping\_body\_item\_attributes\_endpoints\_items\_status module
+-------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.billing_dimensions_mapping_body_item_attributes_endpoints_items_status
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.billing\_dimensions\_mapping\_response module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.billing_dimensions_mapping_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.bulk\_mute\_findings\_request module
 ------------------------------------------------------------------
 

@@ -19,6 +19,7 @@ from datadog_api_client.v2.model.sort_direction import SortDirection
 from datadog_api_client.v2.model.usage_application_security_monitoring_response import (
     UsageApplicationSecurityMonitoringResponse,
 )
+from datadog_api_client.v2.model.billing_dimensions_mapping_response import BillingDimensionsMappingResponse
 from datadog_api_client.v2.model.cost_by_org_response import CostByOrgResponse
 from datadog_api_client.v2.model.hourly_usage_response import HourlyUsageResponse
 from datadog_api_client.v2.model.usage_lambda_traced_invocations_response import UsageLambdaTracedInvocationsResponse
@@ -55,6 +56,33 @@ class UsageMeteringApi:
                 "version": "v2",
             },
             params_map={},
+            headers_map={
+                "accept": ["application/json;datetime-format=rfc3339"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_billing_dimension_mapping_endpoint = _Endpoint(
+            settings={
+                "response_type": (BillingDimensionsMappingResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/usage/billing_dimension_mapping",
+                "operation_id": "get_billing_dimension_mapping",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "filter_month": {
+                    "openapi_types": (datetime,),
+                    "attribute": "filter[month]",
+                    "location": "query",
+                },
+                "filter_view": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[view]",
+                    "location": "query",
+                },
+            },
             headers_map={
                 "accept": ["application/json;datetime-format=rfc3339"],
             },
@@ -423,6 +451,34 @@ class UsageMeteringApi:
         """
         kwargs: Dict[str, Any] = {}
         return self._get_active_billing_dimensions_endpoint.call_with_http_info(**kwargs)
+
+    def get_billing_dimension_mapping(
+        self,
+        *,
+        filter_month: Union[datetime, UnsetType] = unset,
+        filter_view: Union[str, UnsetType] = unset,
+    ) -> BillingDimensionsMappingResponse:
+        """Get billing dimension mapping for usage endpoints.
+
+        Get a mapping of billing dimensions to the corresponding keys for the supported usage metering public API endpoints.
+        Mapping data is updated on a monthly cadence.
+
+        This endpoint is only accessible to `parent-level organizations <https://docs.datadoghq.com/account_management/multi_organization/>`_.
+
+        :param filter_month: Datetime in ISO-8601 format, UTC, and for mappings beginning this month. Defaults to the current month.
+        :type filter_month: datetime, optional
+        :param filter_view: String to specify whether to retrieve active billing dimension mappings for the contract or for all available mappings. Allowed views have the string ``active`` or ``all``. Defaults to ``active``.
+        :type filter_view: str, optional
+        :rtype: BillingDimensionsMappingResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if filter_month is not unset:
+            kwargs["filter_month"] = filter_month
+
+        if filter_view is not unset:
+            kwargs["filter_view"] = filter_view
+
+        return self._get_billing_dimension_mapping_endpoint.call_with_http_info(**kwargs)
 
     def get_cost_by_org(
         self,
