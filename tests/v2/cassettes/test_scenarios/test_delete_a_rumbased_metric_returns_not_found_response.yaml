@@ -1,0 +1,20 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/rum/config/metrics/Test-Delete_a_rum_based_metric_returns_Not_Found_response-1730203163
+  response:
+    body:
+      string: '{"errors":[{"status":"404","title":"Not Found","detail":"not_found(Metric
+        with name ''Test-Delete_a_rum_based_metric_returns_Not_Found_response-1730203163''
+        not found)"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 404
+      message: Not Found
+version: 1
