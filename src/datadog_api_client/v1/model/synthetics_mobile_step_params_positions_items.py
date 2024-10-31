@@ -17,8 +17,8 @@ class SyntheticsMobileStepParamsPositionsItems(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
-            "x": (int,),
-            "y": (int,),
+            "x": (float,),
+            "y": (float,),
         }
 
     attribute_map = {
@@ -26,15 +26,15 @@ class SyntheticsMobileStepParamsPositionsItems(ModelNormal):
         "y": "y",
     }
 
-    def __init__(self_, x: Union[int, UnsetType] = unset, y: Union[int, UnsetType] = unset, **kwargs):
+    def __init__(self_, x: Union[float, UnsetType] = unset, y: Union[float, UnsetType] = unset, **kwargs):
         """
         A description of a single position for a ``flick`` step type.
 
         :param x: The ``x`` position for the flick.
-        :type x: int, optional
+        :type x: float, optional
 
         :param y: The ``y`` position for the flick.
-        :type y: int, optional
+        :type y: float, optional
         """
         if x is not unset:
             kwargs["x"] = x
