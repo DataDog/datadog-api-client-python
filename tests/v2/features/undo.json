@@ -2494,6 +2494,12 @@
       "type": "safe"
     }
   },
+  "GetBillingDimensionMapping": {
+    "tag": "Usage Metering",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "GetCostByOrg": {
     "tag": "Usage Metering",
     "undo": {
