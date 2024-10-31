@@ -4547,6 +4547,13 @@ datadog\_api\_client.v1.model.synthetics\_mobile\_step\_params\_positions\_items
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.synthetics\_mobile\_step\_params\_value module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_mobile_step_params_value
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.synthetics\_mobile\_step\_params\_variable module
 -------------------------------------------------------------------------------
 

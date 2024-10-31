@@ -4579,6 +4579,12 @@
         </li></ul>
             </nav>
         </li>
+        <li class="md-nav__item"><a href="#module-datadog_api_client.v1.model.synthetics_mobile_step_params_value" class="md-nav__link">datadog_api_client.v1.model.synthetics_mobile_step_params_value module</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v1.model.synthetics_mobile_step_params_value.SyntheticsMobileStepParamsValue" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SyntheticsMobileStepParamsValue</span></code></a>
+        </li></ul>
+            </nav>
+        </li>
         <li class="md-nav__item"><a href="#module-datadog_api_client.v1.model.synthetics_mobile_step_params_variable" class="md-nav__link">datadog_api_client.v1.model.synthetics_mobile_step_params_variable module</a><nav class="md-nav">
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#datadog_api_client.v1.model.synthetics_mobile_step_params_variable.SyntheticsMobileStepParamsVariable" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SyntheticsMobileStepParamsVariable</span></code></a>
@@ -20568,15 +20574,15 @@ test.</p>
 <li><p><strong>delay</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of milliseconds to wait between inputs in a <code class="docutils literal notranslate"><span class="pre">typeText</span></code> step type.</p></li>
 <li><p><strong>direction</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.synthetics_mobile_step_params_direction.SyntheticsMobileStepParamsDirection" title="datadog_api_client.v1.model.synthetics_mobile_step_params_direction.SyntheticsMobileStepParamsDirection"><em>SyntheticsMobileStepParamsDirection</em></a><em>, </em><em>optional</em>) – The direction of the scroll for a <code class="docutils literal notranslate"><span class="pre">scrollToElement</span></code> step type.</p></li>
 <li><p><strong>element</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.synthetics_mobile_step_params_element.SyntheticsMobileStepParamsElement" title="datadog_api_client.v1.model.synthetics_mobile_step_params_element.SyntheticsMobileStepParamsElement"><em>SyntheticsMobileStepParamsElement</em></a><em>, </em><em>optional</em>) – Information about the element used for a step.</p></li>
-<li><p><strong>enable</strong> (<em>bool</em><em>, </em><em>optional</em>) – Boolean to change the state of the wifi for a <code class="docutils literal notranslate"><span class="pre">toggleWiFi</span></code> step type.</p></li>
+<li><p><strong>enabled</strong> (<em>bool</em><em>, </em><em>optional</em>) – Boolean to change the state of the wifi for a <code class="docutils literal notranslate"><span class="pre">toggleWiFi</span></code> step type.</p></li>
 <li><p><strong>max_scrolls</strong> (<em>int</em><em>, </em><em>optional</em>) – Maximum number of scrolls to do for a <code class="docutils literal notranslate"><span class="pre">scrollToElement</span></code> step type.</p></li>
 <li><p><strong>positions</strong> (<em>[</em><a class="reference internal" href="#datadog_api_client.v1.model.synthetics_mobile_step_params_positions_items.SyntheticsMobileStepParamsPositionsItems" title="datadog_api_client.v1.model.synthetics_mobile_step_params_positions_items.SyntheticsMobileStepParamsPositionsItems"><em>SyntheticsMobileStepParamsPositionsItems</em></a><em>]</em><em>, </em><em>optional</em>) – List of positions for the <code class="docutils literal notranslate"><span class="pre">flick</span></code> step type. The maximum is 10 flicks per step</p></li>
 <li><p><strong>subtest_public_id</strong> (<em>str</em><em>, </em><em>optional</em>) – Public ID of the test to be played as part of a <code class="docutils literal notranslate"><span class="pre">playSubTest</span></code> step type.</p></li>
-<li><p><strong>value</strong> (<em>str</em><em>, </em><em>optional</em>) – Values used in the step. Used in multiple step types.</p></li>
+<li><p><strong>value</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.synthetics_mobile_step_params_value.SyntheticsMobileStepParamsValue" title="datadog_api_client.v1.model.synthetics_mobile_step_params_value.SyntheticsMobileStepParamsValue"><em>SyntheticsMobileStepParamsValue</em></a><em>, </em><em>optional</em>) – Values used in the step for in multiple step types.</p></li>
 <li><p><strong>variable</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.synthetics_mobile_step_params_variable.SyntheticsMobileStepParamsVariable" title="datadog_api_client.v1.model.synthetics_mobile_step_params_variable.SyntheticsMobileStepParamsVariable"><em>SyntheticsMobileStepParamsVariable</em></a><em>, </em><em>optional</em>) – Variable object for <code class="docutils literal notranslate"><span class="pre">extractVariable</span></code> step type.</p></li>
 <li><p><strong>with_enter</strong> (<em>bool</em><em>, </em><em>optional</em>) – Boolean to indicate if <code class="docutils literal notranslate"><span class="pre">Enter</span></code> should be pressed at the end of the <code class="docutils literal notranslate"><span class="pre">typeText</span></code> step type.</p></li>
-<li><p><strong>x</strong> (<em>int</em><em>, </em><em>optional</em>) – Amount to scroll by on the <code class="docutils literal notranslate"><span class="pre">x</span></code> axis for a <code class="docutils literal notranslate"><span class="pre">scroll</span></code> step type.</p></li>
-<li><p><strong>y</strong> (<em>int</em><em>, </em><em>optional</em>) – Amount to scroll by on the <code class="docutils literal notranslate"><span class="pre">y</span></code> axis for a <code class="docutils literal notranslate"><span class="pre">scroll</span></code> step type.</p></li>
+<li><p><strong>x</strong> (<em>float</em><em>, </em><em>optional</em>) – Amount to scroll by on the <code class="docutils literal notranslate"><span class="pre">x</span></code> axis for a <code class="docutils literal notranslate"><span class="pre">scroll</span></code> step type.</p></li>
+<li><p><strong>y</strong> (<em>float</em><em>, </em><em>optional</em>) – Amount to scroll by on the <code class="docutils literal notranslate"><span class="pre">y</span></code> axis for a <code class="docutils literal notranslate"><span class="pre">scroll</span></code> step type.</p></li>
 </ul>
 </dd>
 </dl>
@@ -20669,8 +20675,8 @@ type conversion is done.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>x</strong> (<em>int</em><em>, </em><em>optional</em>) – The <code class="docutils literal notranslate"><span class="pre">relativePosition</span></code> on the <code class="docutils literal notranslate"><span class="pre">x</span></code> axis for the element.</p></li>
-<li><p><strong>y</strong> (<em>int</em><em>, </em><em>optional</em>) – The <code class="docutils literal notranslate"><span class="pre">relativePosition</span></code> on the <code class="docutils literal notranslate"><span class="pre">y</span></code> axis for the element.</p></li>
+<li><p><strong>x</strong> (<em>float</em><em>, </em><em>optional</em>) – The <code class="docutils literal notranslate"><span class="pre">relativePosition</span></code> on the <code class="docutils literal notranslate"><span class="pre">x</span></code> axis for the element.</p></li>
+<li><p><strong>y</strong> (<em>float</em><em>, </em><em>optional</em>) – The <code class="docutils literal notranslate"><span class="pre">relativePosition</span></code> on the <code class="docutils literal notranslate"><span class="pre">y</span></code> axis for the element.</p></li>
 </ul>
 </dd>
 </dl>
@@ -20747,11 +20753,20 @@ type conversion is done.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>x</strong> (<em>int</em><em>, </em><em>optional</em>) – The <code class="docutils literal notranslate"><span class="pre">x</span></code> position for the flick.</p></li>
-<li><p><strong>y</strong> (<em>int</em><em>, </em><em>optional</em>) – The <code class="docutils literal notranslate"><span class="pre">y</span></code> position for the flick.</p></li>
+<li><p><strong>x</strong> (<em>float</em><em>, </em><em>optional</em>) – The <code class="docutils literal notranslate"><span class="pre">x</span></code> position for the flick.</p></li>
+<li><p><strong>y</strong> (<em>float</em><em>, </em><em>optional</em>) – The <code class="docutils literal notranslate"><span class="pre">y</span></code> position for the flick.</p></li>
 </ul>
 </dd>
 </dl>
+</dd></dl>
+</section>
+<section id="module-datadog_api_client.v1.model.synthetics_mobile_step_params_value">
+<span id="datadog-api-client-v1-model-synthetics-mobile-step-params-value-module"></span><h2 id="module-datadog_api_client.v1.model.synthetics_mobile_step_params_value">datadog_api_client.v1.model.synthetics_mobile_step_params_value module<a class="headerlink" href="#module-datadog_api_client.v1.model.synthetics_mobile_step_params_value" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datadog_api_client.v1.model.synthetics_mobile_step_params_value.SyntheticsMobileStepParamsValue">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SyntheticsMobileStepParamsValue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datadog_api_client.v1.model.synthetics_mobile_step_params_value.SyntheticsMobileStepParamsValue" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.ModelComposed" title="datadog_api_client.model_utils.ModelComposed"><code class="xref py py-class docutils literal notranslate"><span class="pre">ModelComposed</span></code></a></p>
+<p>Values used in the step for in multiple step types.</p>
 </dd></dl>
 </section>
 <section id="module-datadog_api_client.v1.model.synthetics_mobile_step_params_variable">
