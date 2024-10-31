@@ -13,7 +13,7 @@ Feature: Cloudflare Integration
   @generated @skip @team:DataDog/saas-integrations
   Scenario: Add Cloudflare account returns "Bad Request" response
     Given new "CreateCloudflareAccount" request
-    And body with value {"data": {"attributes": {"api_key": "a94a8fe5ccb19ba61c4c0873d391e987982fbbd3", "email": "test-email@example.com", "name": "test-name", "resources": ["web", "dns"], "zones": ["zone_id_1", "zone_id_2"]}, "type": "cloudflare-accounts"}}
+    And body with value {"data": {"attributes": {"api_key": "a94a8fe5ccb19ba61c4c0873d391e987982fbbd3", "email": "test-email@example.com", "name": "test-name", "resources": ["web", "dns", "lb", "worker"], "zones": ["zone_id_1", "zone_id_2"]}, "type": "cloudflare-accounts"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -44,7 +44,7 @@ Feature: Cloudflare Integration
   @generated @skip @team:DataDog/saas-integrations
   Scenario: Add Cloudflare account returns "Not Found" response
     Given new "CreateCloudflareAccount" request
-    And body with value {"data": {"attributes": {"api_key": "a94a8fe5ccb19ba61c4c0873d391e987982fbbd3", "email": "test-email@example.com", "name": "test-name", "resources": ["web", "dns"], "zones": ["zone_id_1", "zone_id_2"]}, "type": "cloudflare-accounts"}}
+    And body with value {"data": {"attributes": {"api_key": "a94a8fe5ccb19ba61c4c0873d391e987982fbbd3", "email": "test-email@example.com", "name": "test-name", "resources": ["web", "dns", "lb", "worker"], "zones": ["zone_id_1", "zone_id_2"]}, "type": "cloudflare-accounts"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -118,7 +118,7 @@ Feature: Cloudflare Integration
   Scenario: Update Cloudflare account returns "Bad Request" response
     Given new "UpdateCloudflareAccount" request
     And request contains "account_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"api_key": "a94a8fe5ccb19ba61c4c0873d391e987982fbbd3", "email": "test-email@example.com", "resources": ["web", "dns"], "zones": ["zone_id_1", "zone_id_2"]}, "type": "cloudflare-accounts"}}
+    And body with value {"data": {"attributes": {"api_key": "a94a8fe5ccb19ba61c4c0873d391e987982fbbd3", "email": "test-email@example.com", "resources": ["web", "dns", "lb", "worker"], "zones": ["zone_id_1", "zone_id_2"]}, "type": "cloudflare-accounts"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -144,7 +144,7 @@ Feature: Cloudflare Integration
   Scenario: Update Cloudflare account returns "Not Found" response
     Given new "UpdateCloudflareAccount" request
     And request contains "account_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"api_key": "a94a8fe5ccb19ba61c4c0873d391e987982fbbd3", "email": "test-email@example.com", "resources": ["web", "dns"], "zones": ["zone_id_1", "zone_id_2"]}, "type": "cloudflare-accounts"}}
+    And body with value {"data": {"attributes": {"api_key": "a94a8fe5ccb19ba61c4c0873d391e987982fbbd3", "email": "test-email@example.com", "resources": ["web", "dns", "lb", "worker"], "zones": ["zone_id_1", "zone_id_2"]}, "type": "cloudflare-accounts"}}
     When the request is sent
     Then the response status is 404 Not Found
 

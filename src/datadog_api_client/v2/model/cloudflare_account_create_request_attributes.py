@@ -53,7 +53,7 @@ class CloudflareAccountCreateRequestAttributes(ModelNormal):
         :param name: The name of the Cloudflare account.
         :type name: str
 
-        :param resources: An allowlist of resources to restrict pulling metrics for.
+        :param resources: An allowlist of resources to restrict pulling metrics for including ``'web', 'dns', 'lb' (load balancer), 'worker'``.
         :type resources: [str], optional
 
         :param zones: An allowlist of zones to restrict pulling metrics for.
