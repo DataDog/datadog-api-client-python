@@ -13,10 +13,6 @@ from datadog_api_client.v2.model.api_keys_response_meta import APIKeysResponseMe
 from datadog_api_client.v2.model.api_keys_response_meta_page import APIKeysResponseMetaPage
 from datadog_api_client.v2.model.api_keys_sort import APIKeysSort
 from datadog_api_client.v2.model.api_keys_type import APIKeysType
-from datadog_api_client.v2.model.aws_related_account import AWSRelatedAccount
-from datadog_api_client.v2.model.aws_related_account_attributes import AWSRelatedAccountAttributes
-from datadog_api_client.v2.model.aws_related_account_type import AWSRelatedAccountType
-from datadog_api_client.v2.model.aws_related_accounts_response import AWSRelatedAccountsResponse
 from datadog_api_client.v2.model.active_billing_dimensions_attributes import ActiveBillingDimensionsAttributes
 from datadog_api_client.v2.model.active_billing_dimensions_body import ActiveBillingDimensionsBody
 from datadog_api_client.v2.model.active_billing_dimensions_response import ActiveBillingDimensionsResponse
@@ -2076,10 +2072,6 @@ __all__ = [
     "APIKeysResponseMetaPage",
     "APIKeysSort",
     "APIKeysType",
-    "AWSRelatedAccount",
-    "AWSRelatedAccountAttributes",
-    "AWSRelatedAccountType",
-    "AWSRelatedAccountsResponse",
     "ActiveBillingDimensionsAttributes",
     "ActiveBillingDimensionsBody",
     "ActiveBillingDimensionsResponse",

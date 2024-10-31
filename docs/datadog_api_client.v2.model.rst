@@ -571,34 +571,6 @@ datadog\_api\_client.v2.model.aws\_cur\_configs\_response module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.aws\_related\_account module
-----------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.aws_related_account
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.aws\_related\_account\_attributes module
-----------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.aws_related_account_attributes
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.aws\_related\_account\_type module
-----------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.aws_related_account_type
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.aws\_related\_accounts\_response module
----------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.aws_related_accounts_response
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v2.model.azure\_uc\_config module
 ------------------------------------------------------
 

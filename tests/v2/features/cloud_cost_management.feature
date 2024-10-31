@@ -148,21 +148,6 @@ Feature: Cloud Cost Management
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:Datadog/cloud-cost-management
-  Scenario: List related AWS accounts returns "Bad Request" response
-    Given new "ListAWSRelatedAccounts" request
-    And request contains "filter[management_account_id]" parameter from "REPLACE.ME"
-    When the request is sent
-    Then the response status is 400 Bad Request
-
-  @replay-only @team:Datadog/cloud-cost-management
-  Scenario: List related AWS accounts returns "OK" response
-    Given new "ListAWSRelatedAccounts" request
-    And request contains "filter[management_account_id]" parameter with value "123456789123"
-    When the request is sent
-    Then the response status is 200 OK
-    And the response "data[0].attributes.name" is equal to "test_name"
-
   @replay-only @team:Datadog/cloud-cost-management
   Scenario: Update Cloud Cost Management AWS CUR config returns "OK" response
     Given new "UpdateCostAWSCURConfig" request

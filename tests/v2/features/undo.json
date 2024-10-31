@@ -414,12 +414,6 @@
       "type": "idempotent"
     }
   },
-  "ListAWSRelatedAccounts": {
-    "tag": "Cloud Cost Management",
-    "undo": {
-      "type": "safe"
-    }
-  },
   "ListCostAzureUCConfigs": {
     "tag": "Cloud Cost Management",
     "undo": {
