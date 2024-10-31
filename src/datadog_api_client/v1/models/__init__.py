@@ -753,6 +753,7 @@ from datadog_api_client.v1.model.synthetics_mobile_step_params_element_user_loca
 from datadog_api_client.v1.model.synthetics_mobile_step_params_positions_items import (
     SyntheticsMobileStepParamsPositionsItems,
 )
+from datadog_api_client.v1.model.synthetics_mobile_step_params_value import SyntheticsMobileStepParamsValue
 from datadog_api_client.v1.model.synthetics_mobile_step_params_variable import SyntheticsMobileStepParamsVariable
 from datadog_api_client.v1.model.synthetics_mobile_step_type import SyntheticsMobileStepType
 from datadog_api_client.v1.model.synthetics_mobile_test import SyntheticsMobileTest
@@ -1704,6 +1705,7 @@ __all__ = [
     "SyntheticsMobileStepParamsElementUserLocatorValuesItems",
     "SyntheticsMobileStepParamsElementUserLocatorValuesItemsType",
     "SyntheticsMobileStepParamsPositionsItems",
+    "SyntheticsMobileStepParamsValue",
     "SyntheticsMobileStepParamsVariable",
     "SyntheticsMobileStepType",
     "SyntheticsMobileTest",

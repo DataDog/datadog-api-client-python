@@ -20,6 +20,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.synthetics_mobile_step_params_positions_items import (
         SyntheticsMobileStepParamsPositionsItems,
     )
+    from datadog_api_client.v1.model.synthetics_mobile_step_params_value import SyntheticsMobileStepParamsValue
     from datadog_api_client.v1.model.synthetics_mobile_step_params_variable import SyntheticsMobileStepParamsVariable
 
 
@@ -41,6 +42,7 @@ class SyntheticsMobileStepParams(ModelNormal):
         from datadog_api_client.v1.model.synthetics_mobile_step_params_positions_items import (
             SyntheticsMobileStepParamsPositionsItems,
         )
+        from datadog_api_client.v1.model.synthetics_mobile_step_params_value import SyntheticsMobileStepParamsValue
         from datadog_api_client.v1.model.synthetics_mobile_step_params_variable import (
             SyntheticsMobileStepParamsVariable,
         )
@@ -50,15 +52,15 @@ class SyntheticsMobileStepParams(ModelNormal):
             "delay": (int,),
             "direction": (SyntheticsMobileStepParamsDirection,),
             "element": (SyntheticsMobileStepParamsElement,),
-            "enable": (bool,),
+            "enabled": (bool,),
             "max_scrolls": (int,),
             "positions": ([SyntheticsMobileStepParamsPositionsItems],),
             "subtest_public_id": (str,),
-            "value": (str,),
+            "value": (SyntheticsMobileStepParamsValue,),
             "variable": (SyntheticsMobileStepParamsVariable,),
             "with_enter": (bool,),
-            "x": (int,),
-            "y": (int,),
+            "x": (float,),
+            "y": (float,),
         }
 
     attribute_map = {
@@ -66,7 +68,7 @@ class SyntheticsMobileStepParams(ModelNormal):
         "delay": "delay",
         "direction": "direction",
         "element": "element",
-        "enable": "enable",
+        "enabled": "enabled",
         "max_scrolls": "maxScrolls",
         "positions": "positions",
         "subtest_public_id": "subtestPublicId",
@@ -83,15 +85,15 @@ class SyntheticsMobileStepParams(ModelNormal):
         delay: Union[int, UnsetType] = unset,
         direction: Union[SyntheticsMobileStepParamsDirection, UnsetType] = unset,
         element: Union[SyntheticsMobileStepParamsElement, UnsetType] = unset,
-        enable: Union[bool, UnsetType] = unset,
+        enabled: Union[bool, UnsetType] = unset,
         max_scrolls: Union[int, UnsetType] = unset,
         positions: Union[List[SyntheticsMobileStepParamsPositionsItems], UnsetType] = unset,
         subtest_public_id: Union[str, UnsetType] = unset,
-        value: Union[str, UnsetType] = unset,
+        value: Union[SyntheticsMobileStepParamsValue, str, int, UnsetType] = unset,
         variable: Union[SyntheticsMobileStepParamsVariable, UnsetType] = unset,
         with_enter: Union[bool, UnsetType] = unset,
-        x: Union[int, UnsetType] = unset,
-        y: Union[int, UnsetType] = unset,
+        x: Union[float, UnsetType] = unset,
+        y: Union[float, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -109,8 +111,8 @@ class SyntheticsMobileStepParams(ModelNormal):
         :param element: Information about the element used for a step.
         :type element: SyntheticsMobileStepParamsElement, optional
 
-        :param enable: Boolean to change the state of the wifi for a ``toggleWiFi`` step type.
-        :type enable: bool, optional
+        :param enabled: Boolean to change the state of the wifi for a ``toggleWiFi`` step type.
+        :type enabled: bool, optional
 
         :param max_scrolls: Maximum number of scrolls to do for a ``scrollToElement`` step type.
         :type max_scrolls: int, optional
@@ -121,8 +123,8 @@ class SyntheticsMobileStepParams(ModelNormal):
         :param subtest_public_id: Public ID of the test to be played as part of a ``playSubTest`` step type.
         :type subtest_public_id: str, optional
 
-        :param value: Values used in the step. Used in multiple step types.
-        :type value: str, optional
+        :param value: Values used in the step for in multiple step types.
+        :type value: SyntheticsMobileStepParamsValue, optional
 
         :param variable: Variable object for ``extractVariable`` step type.
         :type variable: SyntheticsMobileStepParamsVariable, optional
@@ -131,10 +133,10 @@ class SyntheticsMobileStepParams(ModelNormal):
         :type with_enter: bool, optional
 
         :param x: Amount to scroll by on the ``x`` axis for a ``scroll`` step type.
-        :type x: int, optional
+        :type x: float, optional
 
         :param y: Amount to scroll by on the ``y`` axis for a ``scroll`` step type.
-        :type y: int, optional
+        :type y: float, optional
         """
         if check is not unset:
             kwargs["check"] = check
@@ -144,8 +146,8 @@ class SyntheticsMobileStepParams(ModelNormal):
             kwargs["direction"] = direction
         if element is not unset:
             kwargs["element"] = element
-        if enable is not unset:
-            kwargs["enable"] = enable
+        if enabled is not unset:
+            kwargs["enabled"] = enabled
         if max_scrolls is not unset:
             kwargs["max_scrolls"] = max_scrolls
         if positions is not unset:
