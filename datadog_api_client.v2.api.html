@@ -1877,6 +1877,8 @@
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.usage_metering_api.UsageMeteringApi.get_active_billing_dimensions" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">UsageMeteringApi.get_active_billing_dimensions()</span></code></a>
         </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.usage_metering_api.UsageMeteringApi.get_billing_dimension_mapping" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">UsageMeteringApi.get_billing_dimension_mapping()</span></code></a>
+        </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.usage_metering_api.UsageMeteringApi.get_cost_by_org" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">UsageMeteringApi.get_cost_by_org()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.usage_metering_api.UsageMeteringApi.get_estimated_cost_by_org" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">UsageMeteringApi.get_estimated_cost_by_org()</span></code></a>
@@ -8712,6 +8714,25 @@ Learn more on the <a class="reference external" href="https://docs.datadoghq.com
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.active_billing_dimensions_response.ActiveBillingDimensionsResponse" title="datadog_api_client.v2.model.active_billing_dimensions_response.ActiveBillingDimensionsResponse">ActiveBillingDimensionsResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.usage_metering_api.UsageMeteringApi.get_billing_dimension_mapping">
+<span class="sig-name descname"><span class="pre">get_billing_dimension_mapping</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter_month</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">datetime</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter_view</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.billing_dimensions_mapping_response.BillingDimensionsMappingResponse" title="datadog_api_client.v2.model.billing_dimensions_mapping_response.BillingDimensionsMappingResponse"><span class="pre">BillingDimensionsMappingResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.usage_metering_api.UsageMeteringApi.get_billing_dimension_mapping" title="Link to this definition">¶</a></dt>
+<dd><p>Get billing dimension mapping for usage endpoints.</p>
+<p>Get a mapping of billing dimensions to the corresponding keys for the supported usage metering public API endpoints.
+Mapping data is updated on a monthly cadence.</p>
+<p>This endpoint is only accessible to <a class="reference external" href="https://docs.datadoghq.com/account_management/multi_organization/">parent-level organizations</a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filter_month</strong> (<em>datetime</em><em>, </em><em>optional</em>) – Datetime in ISO-8601 format, UTC, and for mappings beginning this month. Defaults to the current month.</p></li>
+<li><p><strong>filter_view</strong> (<em>str</em><em>, </em><em>optional</em>) – String to specify whether to retrieve active billing dimension mappings for the contract or for all available mappings. Allowed views have the string <code class="docutils literal notranslate"><span class="pre">active</span></code> or <code class="docutils literal notranslate"><span class="pre">all</span></code>. Defaults to <code class="docutils literal notranslate"><span class="pre">active</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.billing_dimensions_mapping_response.BillingDimensionsMappingResponse" title="datadog_api_client.v2.model.billing_dimensions_mapping_response.BillingDimensionsMappingResponse">BillingDimensionsMappingResponse</a></p>
 </dd>
 </dl>
 </dd></dl>
