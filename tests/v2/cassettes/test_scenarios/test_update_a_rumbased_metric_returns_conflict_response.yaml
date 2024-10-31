@@ -1,0 +1,53 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"compute":{"aggregation_type":"distribution","include_percentiles":true,"path":"@duration"},"event_type":"session","filter":{"query":"source:Test-Update_a_rum_based_metric_returns_Conflict_response-1730203167"},"group_by":[{"path":"@browser.name","tag_name":"browser_name"}],"uniqueness":{"when":"match"}},"id":"Test-Update_a_rum_based_metric_returns_Conflict_response-1730203167","type":"rum_metrics"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/rum/config/metrics
+  response:
+    body:
+      string: '{"data":{"id":"Test_Update_a_rum_based_metric_returns_Conflict_response_1730203167","type":"rum_metrics","attributes":{"compute":{"aggregation_type":"distribution","include_percentiles":true,"path":"@duration"},"event_type":"session","filter":{"query":"source:Test-Update_a_rum_based_metric_returns_Conflict_response-1730203167"},"group_by":[{"path":"@browser.name","tag_name":"browser_name"}],"uniqueness":{"when":"match"}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"compute":{"include_percentiles":true}},"id":"conflicting.id","type":"rum_metrics"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/rum/config/metrics/Test_Update_a_rum_based_metric_returns_Conflict_response_1730203167
+  response:
+    body:
+      string: '{"errors":[{"status":"409","title":"Conflict","detail":"ID provided
+        in the payload does not match the url parameter"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 409
+      message: Conflict
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/rum/config/metrics/Test_Update_a_rum_based_metric_returns_Conflict_response_1730203167
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1

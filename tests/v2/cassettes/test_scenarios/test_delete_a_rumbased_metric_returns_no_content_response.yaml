@@ -1,0 +1,52 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"compute":{"aggregation_type":"distribution","include_percentiles":true,"path":"@duration"},"event_type":"session","filter":{"query":"source:Test-Delete_a_rum_based_metric_returns_No_Content_response-1730203162"},"group_by":[{"path":"@browser.name","tag_name":"browser_name"}],"uniqueness":{"when":"match"}},"id":"Test-Delete_a_rum_based_metric_returns_No_Content_response-1730203162","type":"rum_metrics"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/rum/config/metrics
+  response:
+    body:
+      string: '{"data":{"id":"Test_Delete_a_rum_based_metric_returns_No_Content_response_1730203162","type":"rum_metrics","attributes":{"compute":{"aggregation_type":"distribution","include_percentiles":true,"path":"@duration"},"event_type":"session","filter":{"query":"source:Test-Delete_a_rum_based_metric_returns_No_Content_response-1730203162"},"group_by":[{"path":"@browser.name","tag_name":"browser_name"}],"uniqueness":{"when":"match"}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/rum/config/metrics/Test_Delete_a_rum_based_metric_returns_No_Content_response_1730203162
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/rum/config/metrics/Test_Delete_a_rum_based_metric_returns_No_Content_response_1730203162
+  response:
+    body:
+      string: '{"errors":[{"status":"404","title":"Not Found","detail":"not_found(Metric
+        with name ''Test_Delete_a_rum_based_metric_returns_No_Content_response_1730203162''
+        not found)"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 404
+      message: Not Found
+version: 1

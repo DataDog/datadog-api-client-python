@@ -1444,6 +1444,29 @@ from datadog_api_client.v2.model.roles_type import RolesType
 from datadog_api_client.v2.model.rule_attributes import RuleAttributes
 from datadog_api_client.v2.model.rule_outcome_relationships import RuleOutcomeRelationships
 from datadog_api_client.v2.model.rule_type import RuleType
+from datadog_api_client.v2.model.rum_metric_compute import RumMetricCompute
+from datadog_api_client.v2.model.rum_metric_compute_aggregation_type import RumMetricComputeAggregationType
+from datadog_api_client.v2.model.rum_metric_create_attributes import RumMetricCreateAttributes
+from datadog_api_client.v2.model.rum_metric_create_data import RumMetricCreateData
+from datadog_api_client.v2.model.rum_metric_create_request import RumMetricCreateRequest
+from datadog_api_client.v2.model.rum_metric_event_type import RumMetricEventType
+from datadog_api_client.v2.model.rum_metric_filter import RumMetricFilter
+from datadog_api_client.v2.model.rum_metric_group_by import RumMetricGroupBy
+from datadog_api_client.v2.model.rum_metric_response import RumMetricResponse
+from datadog_api_client.v2.model.rum_metric_response_attributes import RumMetricResponseAttributes
+from datadog_api_client.v2.model.rum_metric_response_compute import RumMetricResponseCompute
+from datadog_api_client.v2.model.rum_metric_response_data import RumMetricResponseData
+from datadog_api_client.v2.model.rum_metric_response_filter import RumMetricResponseFilter
+from datadog_api_client.v2.model.rum_metric_response_group_by import RumMetricResponseGroupBy
+from datadog_api_client.v2.model.rum_metric_response_uniqueness import RumMetricResponseUniqueness
+from datadog_api_client.v2.model.rum_metric_type import RumMetricType
+from datadog_api_client.v2.model.rum_metric_uniqueness import RumMetricUniqueness
+from datadog_api_client.v2.model.rum_metric_uniqueness_when import RumMetricUniquenessWhen
+from datadog_api_client.v2.model.rum_metric_update_attributes import RumMetricUpdateAttributes
+from datadog_api_client.v2.model.rum_metric_update_compute import RumMetricUpdateCompute
+from datadog_api_client.v2.model.rum_metric_update_data import RumMetricUpdateData
+from datadog_api_client.v2.model.rum_metric_update_request import RumMetricUpdateRequest
+from datadog_api_client.v2.model.rum_metrics_response import RumMetricsResponse
 from datadog_api_client.v2.model.saml_assertion_attribute import SAMLAssertionAttribute
 from datadog_api_client.v2.model.saml_assertion_attribute_attributes import SAMLAssertionAttributeAttributes
 from datadog_api_client.v2.model.saml_assertion_attributes_type import SAMLAssertionAttributesType
@@ -3243,6 +3266,29 @@ __all__ = [
     "RuleAttributes",
     "RuleOutcomeRelationships",
     "RuleType",
+    "RumMetricCompute",
+    "RumMetricComputeAggregationType",
+    "RumMetricCreateAttributes",
+    "RumMetricCreateData",
+    "RumMetricCreateRequest",
+    "RumMetricEventType",
+    "RumMetricFilter",
+    "RumMetricGroupBy",
+    "RumMetricResponse",
+    "RumMetricResponseAttributes",
+    "RumMetricResponseCompute",
+    "RumMetricResponseData",
+    "RumMetricResponseFilter",
+    "RumMetricResponseGroupBy",
+    "RumMetricResponseUniqueness",
+    "RumMetricType",
+    "RumMetricUniqueness",
+    "RumMetricUniquenessWhen",
+    "RumMetricUpdateAttributes",
+    "RumMetricUpdateCompute",
+    "RumMetricUpdateData",
+    "RumMetricUpdateRequest",
+    "RumMetricsResponse",
     "SAMLAssertionAttribute",
     "SAMLAssertionAttributeAttributes",
     "SAMLAssertionAttributesType",

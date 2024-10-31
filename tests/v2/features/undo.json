@@ -1755,6 +1755,43 @@
       "type": "idempotent"
     }
   },
+  "ListRumMetrics": {
+    "tag": "Rum Metrics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateRumMetric": {
+    "tag": "Rum Metrics",
+    "undo": {
+      "operationId": "DeleteRumMetric",
+      "parameters": [
+        {
+          "name": "metric_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteRumMetric": {
+    "tag": "Rum Metrics",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetRumMetric": {
+    "tag": "Rum Metrics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateRumMetric": {
+    "tag": "Rum Metrics",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListRUMEvents": {
     "tag": "RUM",
     "undo": {
