@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class RumMetricUniquenessWhen(ModelSimple):
     """
-    When to count updatable events. "match" when the event is first seen, or "end" when the event is complete.
+    When to count updatable events. `match` when the event is first seen, or `end` when the event is complete.
 
     :param value: Must be one of ["match", "end"].
     :type value: str

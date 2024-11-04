@@ -48,10 +48,11 @@ class RumMetricResponseCompute(ModelNormal):
         :type aggregation_type: RumMetricComputeAggregationType, optional
 
         :param include_percentiles: Toggle to include or exclude percentile aggregations for distribution metrics.
-            Only present when the ``aggregation_type`` is ``distribution``.
+            Only present when ``aggregation_type`` is ``distribution``.
         :type include_percentiles: bool, optional
 
-        :param path: The path to the value the rum-based metric will aggregate on (only used if the aggregation type is a "distribution").
+        :param path: The path to the value the rum-based metric will aggregate on.
+            Only present when ``aggregation_type`` is ``distribution``.
         :type path: str, optional
         """
         if aggregation_type is not unset:

@@ -25,7 +25,7 @@ class RumMetricFilter(ModelNormal):
         """
         The rum-based metric filter. Events matching this filter will be aggregated in this metric.
 
-        :param query: The search query - following the RUM search syntax. Must include an @type facet query.
+        :param query: The search query - following the RUM search syntax.
         :type query: str
         """
         super().__init__(kwargs)

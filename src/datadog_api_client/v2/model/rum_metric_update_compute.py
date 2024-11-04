@@ -29,7 +29,7 @@ class RumMetricUpdateCompute(ModelNormal):
         The compute rule to compute the rum-based metric.
 
         :param include_percentiles: Toggle to include or exclude percentile aggregations for distribution metrics.
-            Only present when the ``aggregation_type`` is ``distribution``.
+            Only present when ``aggregation_type`` is ``distribution``.
         :type include_percentiles: bool, optional
         """
         if include_percentiles is not unset:

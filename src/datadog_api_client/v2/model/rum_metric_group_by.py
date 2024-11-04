@@ -33,7 +33,7 @@ class RumMetricGroupBy(ModelNormal):
         :param path: The path to the value the rum-based metric will be aggregated over.
         :type path: str
 
-        :param tag_name: Eventual name of the tag that gets created. By default, the path attribute is used as the tag name.
+        :param tag_name: Eventual name of the tag that gets created. By default, ``path`` is used as the tag name.
         :type tag_name: str, optional
         """
         if tag_name is not unset:
