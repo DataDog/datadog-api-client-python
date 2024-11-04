@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 from typing import Any, Dict, List
+import warnings
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
@@ -387,13 +388,14 @@ class CloudCostManagementApi:
     def get_cloud_cost_activity(
         self,
     ) -> CloudCostActivityResponse:
-        """Cloud Cost Enabled.
+        """Cloud Cost Enabled. **Deprecated**.
 
         Get the Cloud Cost Management activity.
 
         :rtype: CloudCostActivityResponse
         """
         kwargs: Dict[str, Any] = {}
+        warnings.warn("get_cloud_cost_activity is deprecated", DeprecationWarning, stacklevel=2)
         return self._get_cloud_cost_activity_endpoint.call_with_http_info(**kwargs)
 
     def get_custom_costs_file(
