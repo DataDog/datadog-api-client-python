@@ -1,6 +1,8 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"description":"e4408b9cd8ee3d61","is_default":true,"name":"e4408b9cd8ee3d61"},"type":"incident_types"}}'
+    body: '{"data":{"attributes":{"description":"Any incidents that harm (or have
+      the potential to) the confidentiality, integrity, or availability of our data.","is_default":false,"name":"Security
+      Incident"},"type":"incident_types"}}'
     headers:
       accept:
       - application/json
@@ -10,7 +12,10 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/incidents/config/types
   response:
     body:
-      string: '{"data":{"id":"56ec8c33-78bf-469b-a45c-7aa57f5c2328","type":"incident_types","attributes":{"createdAt":"2024-10-24T15:20:11.007569706Z","createdBy":"3ad549bf-eba0-11e9-a77a-0705486660d0","description":"e4408b9cd8ee3d61","is_default":true,"lastModifiedBy":"3ad549bf-eba0-11e9-a77a-0705486660d0","modifiedAt":"2024-10-24T15:20:11.007569706Z","name":"e4408b9cd8ee3d61","prefix":"IR"}}}'
+      string: '{"data":{"id":"012f4059-541e-473c-bc9e-d0ed44c6d4b7","type":"incident_types","attributes":{"createdAt":"2024-11-04T16:31:38.988312006Z","createdBy":"3ad549bf-eba0-11e9-a77a-0705486660d0","description":"Any
+        incidents that harm (or have the potential to) the confidentiality, integrity,
+        or availability of our data.","is_default":false,"lastModifiedBy":"3ad549bf-eba0-11e9-a77a-0705486660d0","modifiedAt":"2024-11-04T16:31:38.988312006Z","name":"Security
+        Incident","prefix":"IR"}}}'
     headers:
       content-type:
       - application/vnd.api+json
@@ -23,15 +28,12 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/incidents/config/types/56ec8c33-78bf-469b-a45c-7aa57f5c2328
+    uri: https://api.datadoghq.com/api/v2/incidents/config/types/012f4059-541e-473c-bc9e-d0ed44c6d4b7
   response:
     body:
-      string: '{"errors":[{"title":"Generic Error","detail":"cannot delete default
-        incident type 56ec8c33-78bf-469b-a45c-7aa57f5c2328"}]}'
-    headers:
-      content-type:
-      - application/vnd.api+json
+      string: ''
+    headers: {}
     status:
-      code: 400
-      message: Bad Request
+      code: 204
+      message: No Content
 version: 1

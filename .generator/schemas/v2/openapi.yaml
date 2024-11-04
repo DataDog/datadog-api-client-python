@@ -11964,7 +11964,7 @@ components:
           default: false
           description: If true, this incident type will be used as the default incident
             type if a type is not specified during the creation of incident resources.
-          example: true
+          example: false
           type: boolean
         lastModifiedBy:
           description: A unique identifier that represents the user that last modified
@@ -12099,7 +12099,7 @@ components:
         is_default:
           description: When true, this incident type will be used as the default type
             when an incident type is not specified.
-          example: true
+          example: false
           type: boolean
         lastModifiedBy:
           description: A unique identifier that represents the user that last modified

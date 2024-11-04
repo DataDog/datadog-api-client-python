@@ -1,6 +1,8 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"name":"5864bf8d69a3a3e5"},"type":"incident_types"}}'
+    body: '{"data":{"attributes":{"description":"Any incidents that harm (or have
+      the potential to) the confidentiality, integrity, or availability of our data.","is_default":false,"name":"Security
+      Incident"},"type":"incident_types"}}'
     headers:
       accept:
       - application/json
@@ -10,7 +12,10 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/incidents/config/types
   response:
     body:
-      string: '{"data":{"id":"6bffa77c-491c-42a6-bc83-30c49a657fce","type":"incident_types","attributes":{"createdAt":"2024-10-24T15:24:42.956582093Z","createdBy":"3ad549bf-eba0-11e9-a77a-0705486660d0","description":"","is_default":false,"lastModifiedBy":"3ad549bf-eba0-11e9-a77a-0705486660d0","modifiedAt":"2024-10-24T15:24:42.956582093Z","name":"5864bf8d69a3a3e5","prefix":"IR"}}}'
+      string: '{"data":{"id":"9f1a4d75-3a34-47b7-9eab-692f290e7b1b","type":"incident_types","attributes":{"createdAt":"2024-11-04T18:02:45.286101149Z","createdBy":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","description":"Any
+        incidents that harm (or have the potential to) the confidentiality, integrity,
+        or availability of our data.","is_default":false,"lastModifiedBy":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","modifiedAt":"2024-11-04T18:02:45.286101149Z","name":"Security
+        Incident","prefix":"IR"}}}'
     headers:
       content-type:
       - application/vnd.api+json
@@ -23,7 +28,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/incidents/config/types/6bffa77c-491c-42a6-bc83-30c49a657fce
+    uri: https://api.datadoghq.com/api/v2/incidents/config/types/9f1a4d75-3a34-47b7-9eab-692f290e7b1b
   response:
     body:
       string: ''
@@ -37,7 +42,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/incidents/config/types/6bffa77c-491c-42a6-bc83-30c49a657fce
+    uri: https://api.datadoghq.com/api/v2/incidents/config/types/9f1a4d75-3a34-47b7-9eab-692f290e7b1b
   response:
     body:
       string: ''
