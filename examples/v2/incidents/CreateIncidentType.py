@@ -12,9 +12,9 @@ from datadog_api_client.v2.model.incident_type_type import IncidentTypeType
 body = IncidentTypeCreateRequest(
     data=IncidentTypeCreateData(
         attributes=IncidentTypeAttributes(
-            description="8d4bbb66dccf2456",
-            is_default=True,
-            name="8d4bbb66dccf2456",
+            description="Any incidents that harm (or have the potential to) the confidentiality, integrity, or availability of our data.",
+            is_default=False,
+            name="Security Incident",
         ),
         type=IncidentTypeType.INCIDENT_TYPES,
     ),

@@ -126,7 +126,7 @@ Feature: Incidents
   Scenario: Create an incident type returns "Bad Request" response
     Given operation "CreateIncidentType" enabled
     And new "CreateIncidentType" request
-    And body with value {"data": {"attributes": {"description": "Any incidents that harm (or have the potential to) the confidentiality, integrity, or availability of our data.", "is_default": true, "name": "Security Incident"}, "type": "incident_types"}}
+    And body with value {"data": {"attributes": {"description": "Any incidents that harm (or have the potential to) the confidentiality, integrity, or availability of our data.", "is_default": false, "name": "Security Incident"}, "type": "incident_types"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -134,7 +134,7 @@ Feature: Incidents
   Scenario: Create an incident type returns "CREATED" response
     Given operation "CreateIncidentType" enabled
     And new "CreateIncidentType" request
-    And body with value {"data": {"attributes": {"description": "{{unique_hash}}", "is_default": true, "name": "{{unique_hash}}"}, "type": "incident_types"}}
+    And body with value {"data": {"attributes": {"description": "Any incidents that harm (or have the potential to) the confidentiality, integrity, or availability of our data.", "is_default": false, "name": "Security Incident"}, "type": "incident_types"}}
     When the request is sent
     Then the response status is 201 CREATED
 
@@ -142,7 +142,7 @@ Feature: Incidents
   Scenario: Create an incident type returns "Not Found" response
     Given operation "CreateIncidentType" enabled
     And new "CreateIncidentType" request
-    And body with value {"data": {"attributes": {"description": "Any incidents that harm (or have the potential to) the confidentiality, integrity, or availability of our data.", "is_default": true, "name": "Security Incident"}, "type": "incident_types"}}
+    And body with value {"data": {"attributes": {"description": "Any incidents that harm (or have the potential to) the confidentiality, integrity, or availability of our data.", "is_default": false, "name": "Security Incident"}, "type": "incident_types"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -680,7 +680,7 @@ Feature: Incidents
     Given operation "UpdateIncidentType" enabled
     And new "UpdateIncidentType" request
     And request contains "incident_type_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"description": "Any incidents that harm (or have the potential to) the confidentiality, integrity, or availability of our data. Note: This will notify the security team.", "is_default": true, "name": "Security Incident"}, "id": "00000000-0000-0000-0000-000000000000", "type": "incident_types"}}
+    And body with value {"data": {"attributes": {"description": "Any incidents that harm (or have the potential to) the confidentiality, integrity, or availability of our data. Note: This will notify the security team.", "is_default": false, "name": "Security Incident"}, "id": "00000000-0000-0000-0000-000000000000", "type": "incident_types"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -689,7 +689,7 @@ Feature: Incidents
     Given operation "UpdateIncidentType" enabled
     And new "UpdateIncidentType" request
     And request contains "incident_type_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"description": "Any incidents that harm (or have the potential to) the confidentiality, integrity, or availability of our data. Note: This will notify the security team.", "is_default": true, "name": "Security Incident"}, "id": "00000000-0000-0000-0000-000000000000", "type": "incident_types"}}
+    And body with value {"data": {"attributes": {"description": "Any incidents that harm (or have the potential to) the confidentiality, integrity, or availability of our data. Note: This will notify the security team.", "is_default": false, "name": "Security Incident"}, "id": "00000000-0000-0000-0000-000000000000", "type": "incident_types"}}
     When the request is sent
     Then the response status is 404 Not Found
 
