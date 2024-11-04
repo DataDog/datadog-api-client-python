@@ -1,6416 +1,6411 @@
-datadog\_api\_client.v1.model package
-=====================================
+datadog\_api\_client.v1.model
+=============================
 
-Submodules
-----------
-
-datadog\_api\_client.v1.model.access\_role module
--------------------------------------------------
+access\_role
+------------
 
 .. automodule:: datadog_api_client.v1.model.access_role
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.add\_signal\_to\_incident\_request module
------------------------------------------------------------------------
+add\_signal\_to\_incident\_request
+----------------------------------
 
 .. automodule:: datadog_api_client.v1.model.add_signal_to_incident_request
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.agent\_check module
--------------------------------------------------
+agent\_check
+------------
 
 .. automodule:: datadog_api_client.v1.model.agent_check
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.alert\_graph\_widget\_definition module
----------------------------------------------------------------------
+alert\_graph\_widget\_definition
+--------------------------------
 
 .. automodule:: datadog_api_client.v1.model.alert_graph_widget_definition
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.alert\_graph\_widget\_definition\_type module
----------------------------------------------------------------------------
+alert\_graph\_widget\_definition\_type
+--------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.alert_graph_widget_definition_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.alert\_value\_widget\_definition module
----------------------------------------------------------------------
+alert\_value\_widget\_definition
+--------------------------------
 
 .. automodule:: datadog_api_client.v1.model.alert_value_widget_definition
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.alert\_value\_widget\_definition\_type module
----------------------------------------------------------------------------
+alert\_value\_widget\_definition\_type
+--------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.alert_value_widget_definition_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.api\_error\_response module
----------------------------------------------------------
+api\_error\_response
+--------------------
 
 .. automodule:: datadog_api_client.v1.model.api_error_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.api\_key module
----------------------------------------------
+api\_key
+--------
 
 .. automodule:: datadog_api_client.v1.model.api_key
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.api\_key\_list\_response module
--------------------------------------------------------------
+api\_key\_list\_response
+------------------------
 
 .. automodule:: datadog_api_client.v1.model.api_key_list_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.api\_key\_response module
--------------------------------------------------------
+api\_key\_response
+------------------
 
 .. automodule:: datadog_api_client.v1.model.api_key_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.apm\_stats\_query\_column\_type module
---------------------------------------------------------------------
+apm\_stats\_query\_column\_type
+-------------------------------
 
 .. automodule:: datadog_api_client.v1.model.apm_stats_query_column_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.apm\_stats\_query\_definition module
-------------------------------------------------------------------
+apm\_stats\_query\_definition
+-----------------------------
 
 .. automodule:: datadog_api_client.v1.model.apm_stats_query_definition
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.apm\_stats\_query\_row\_type module
------------------------------------------------------------------
+apm\_stats\_query\_row\_type
+----------------------------
 
 .. automodule:: datadog_api_client.v1.model.apm_stats_query_row_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.application\_key module
------------------------------------------------------
+application\_key
+----------------
 
 .. automodule:: datadog_api_client.v1.model.application_key
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.application\_key\_list\_response module
----------------------------------------------------------------------
+application\_key\_list\_response
+--------------------------------
 
 .. automodule:: datadog_api_client.v1.model.application_key_list_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.application\_key\_response module
----------------------------------------------------------------
+application\_key\_response
+--------------------------
 
 .. automodule:: datadog_api_client.v1.model.application_key_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.authentication\_validation\_response module
--------------------------------------------------------------------------
+authentication\_validation\_response
+------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.authentication_validation_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.aws\_account module
--------------------------------------------------
+aws\_account
+------------
 
 .. automodule:: datadog_api_client.v1.model.aws_account
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.aws\_account\_and\_lambda\_request module
------------------------------------------------------------------------
+aws\_account\_and\_lambda\_request
+----------------------------------
 
 .. automodule:: datadog_api_client.v1.model.aws_account_and_lambda_request
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.aws\_account\_create\_response module
--------------------------------------------------------------------
+aws\_account\_create\_response
+------------------------------
 
 .. automodule:: datadog_api_client.v1.model.aws_account_create_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.aws\_account\_delete\_request module
-------------------------------------------------------------------
+aws\_account\_delete\_request
+-----------------------------
 
 .. automodule:: datadog_api_client.v1.model.aws_account_delete_request
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.aws\_account\_list\_response module
------------------------------------------------------------------
+aws\_account\_list\_response
+----------------------------
 
 .. automodule:: datadog_api_client.v1.model.aws_account_list_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.aws\_event\_bridge\_account\_configuration module
--------------------------------------------------------------------------------
+aws\_event\_bridge\_account\_configuration
+------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.aws_event_bridge_account_configuration
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.aws\_event\_bridge\_create\_request module
-------------------------------------------------------------------------
+aws\_event\_bridge\_create\_request
+-----------------------------------
 
 .. automodule:: datadog_api_client.v1.model.aws_event_bridge_create_request
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.aws\_event\_bridge\_create\_response module
--------------------------------------------------------------------------
+aws\_event\_bridge\_create\_response
+------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.aws_event_bridge_create_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.aws\_event\_bridge\_create\_status module
------------------------------------------------------------------------
+aws\_event\_bridge\_create\_status
+----------------------------------
 
 .. automodule:: datadog_api_client.v1.model.aws_event_bridge_create_status
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.aws\_event\_bridge\_delete\_request module
-------------------------------------------------------------------------
+aws\_event\_bridge\_delete\_request
+-----------------------------------
 
 .. automodule:: datadog_api_client.v1.model.aws_event_bridge_delete_request
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.aws\_event\_bridge\_delete\_response module
--------------------------------------------------------------------------
+aws\_event\_bridge\_delete\_response
+------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.aws_event_bridge_delete_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.aws\_event\_bridge\_delete\_status module
------------------------------------------------------------------------
+aws\_event\_bridge\_delete\_status
+----------------------------------
 
 .. automodule:: datadog_api_client.v1.model.aws_event_bridge_delete_status
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.aws\_event\_bridge\_list\_response module
------------------------------------------------------------------------
+aws\_event\_bridge\_list\_response
+----------------------------------
 
 .. automodule:: datadog_api_client.v1.model.aws_event_bridge_list_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.aws\_event\_bridge\_source module
----------------------------------------------------------------
+aws\_event\_bridge\_source
+--------------------------
 
 .. automodule:: datadog_api_client.v1.model.aws_event_bridge_source
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.aws\_logs\_async\_error module
-------------------------------------------------------------
+aws\_logs\_async\_error
+-----------------------
 
 .. automodule:: datadog_api_client.v1.model.aws_logs_async_error
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.aws\_logs\_async\_response module
----------------------------------------------------------------
+aws\_logs\_async\_response
+--------------------------
 
 .. automodule:: datadog_api_client.v1.model.aws_logs_async_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.aws\_logs\_lambda module
-------------------------------------------------------
+aws\_logs\_lambda
+-----------------
 
 .. automodule:: datadog_api_client.v1.model.aws_logs_lambda
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.aws\_logs\_list\_response module
---------------------------------------------------------------
+aws\_logs\_list\_response
+-------------------------
 
 .. automodule:: datadog_api_client.v1.model.aws_logs_list_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.aws\_logs\_list\_services\_response module
-------------------------------------------------------------------------
+aws\_logs\_list\_services\_response
+-----------------------------------
 
 .. automodule:: datadog_api_client.v1.model.aws_logs_list_services_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.aws\_logs\_services\_request module
------------------------------------------------------------------
+aws\_logs\_services\_request
+----------------------------
 
 .. automodule:: datadog_api_client.v1.model.aws_logs_services_request
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.aws\_namespace module
----------------------------------------------------
+aws\_namespace
+--------------
 
 .. automodule:: datadog_api_client.v1.model.aws_namespace
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.aws\_tag\_filter module
------------------------------------------------------
+aws\_tag\_filter
+----------------
 
 .. automodule:: datadog_api_client.v1.model.aws_tag_filter
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.aws\_tag\_filter\_create\_request module
-----------------------------------------------------------------------
+aws\_tag\_filter\_create\_request
+---------------------------------
 
 .. automodule:: datadog_api_client.v1.model.aws_tag_filter_create_request
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.aws\_tag\_filter\_delete\_request module
-----------------------------------------------------------------------
+aws\_tag\_filter\_delete\_request
+---------------------------------
 
 .. automodule:: datadog_api_client.v1.model.aws_tag_filter_delete_request
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.aws\_tag\_filter\_list\_response module
----------------------------------------------------------------------
+aws\_tag\_filter\_list\_response
+--------------------------------
 
 .. automodule:: datadog_api_client.v1.model.aws_tag_filter_list_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.azure\_account module
----------------------------------------------------
+azure\_account
+--------------
 
 .. automodule:: datadog_api_client.v1.model.azure_account
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.azure\_account\_list\_response module
--------------------------------------------------------------------
+azure\_account\_list\_response
+------------------------------
 
 .. automodule:: datadog_api_client.v1.model.azure_account_list_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.azure\_account\_metrics\_config module
---------------------------------------------------------------------
+azure\_account\_metrics\_config
+-------------------------------
 
 .. automodule:: datadog_api_client.v1.model.azure_account_metrics_config
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.cancel\_downtimes\_by\_scope\_request module
---------------------------------------------------------------------------
+cancel\_downtimes\_by\_scope\_request
+-------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.cancel_downtimes_by_scope_request
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.canceled\_downtimes\_ids module
--------------------------------------------------------------
+canceled\_downtimes\_ids
+------------------------
 
 .. automodule:: datadog_api_client.v1.model.canceled_downtimes_ids
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.change\_widget\_definition module
----------------------------------------------------------------
+change\_widget\_definition
+--------------------------
 
 .. automodule:: datadog_api_client.v1.model.change_widget_definition
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.change\_widget\_definition\_type module
----------------------------------------------------------------------
+change\_widget\_definition\_type
+--------------------------------
 
 .. automodule:: datadog_api_client.v1.model.change_widget_definition_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.change\_widget\_request module
-------------------------------------------------------------
+change\_widget\_request
+-----------------------
 
 .. automodule:: datadog_api_client.v1.model.change_widget_request
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.check\_can\_delete\_monitor\_response module
---------------------------------------------------------------------------
+check\_can\_delete\_monitor\_response
+-------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.check_can_delete_monitor_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.check\_can\_delete\_monitor\_response\_data module
---------------------------------------------------------------------------------
+check\_can\_delete\_monitor\_response\_data
+-------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.check_can_delete_monitor_response_data
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.check\_can\_delete\_slo\_response module
-----------------------------------------------------------------------
+check\_can\_delete\_slo\_response
+---------------------------------
 
 .. automodule:: datadog_api_client.v1.model.check_can_delete_slo_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.check\_can\_delete\_slo\_response\_data module
-----------------------------------------------------------------------------
+check\_can\_delete\_slo\_response\_data
+---------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.check_can_delete_slo_response_data
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.check\_status\_widget\_definition module
-----------------------------------------------------------------------
+check\_status\_widget\_definition
+---------------------------------
 
 .. automodule:: datadog_api_client.v1.model.check_status_widget_definition
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.check\_status\_widget\_definition\_type module
-----------------------------------------------------------------------------
+check\_status\_widget\_definition\_type
+---------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.check_status_widget_definition_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.content\_encoding module
-------------------------------------------------------
+content\_encoding
+-----------------
 
 .. automodule:: datadog_api_client.v1.model.content_encoding
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.creator module
---------------------------------------------
+creator
+-------
 
 .. automodule:: datadog_api_client.v1.model.creator
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.dashboard module
-----------------------------------------------
+dashboard
+---------
 
 .. automodule:: datadog_api_client.v1.model.dashboard
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.dashboard\_bulk\_action\_data module
-------------------------------------------------------------------
+dashboard\_bulk\_action\_data
+-----------------------------
 
 .. automodule:: datadog_api_client.v1.model.dashboard_bulk_action_data
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.dashboard\_bulk\_action\_data\_list module
-------------------------------------------------------------------------
+dashboard\_bulk\_action\_data\_list
+-----------------------------------
 
 .. automodule:: datadog_api_client.v1.model.dashboard_bulk_action_data_list
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.dashboard\_bulk\_delete\_request module
----------------------------------------------------------------------
+dashboard\_bulk\_delete\_request
+--------------------------------
 
 .. automodule:: datadog_api_client.v1.model.dashboard_bulk_delete_request
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.dashboard\_delete\_response module
-----------------------------------------------------------------
+dashboard\_delete\_response
+---------------------------
 
 .. automodule:: datadog_api_client.v1.model.dashboard_delete_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.dashboard\_global\_time module
-------------------------------------------------------------
+dashboard\_global\_time
+-----------------------
 
 .. automodule:: datadog_api_client.v1.model.dashboard_global_time
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.dashboard\_global\_time\_live\_span module
-------------------------------------------------------------------------
+dashboard\_global\_time\_live\_span
+-----------------------------------
 
 .. automodule:: datadog_api_client.v1.model.dashboard_global_time_live_span
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.dashboard\_invite\_type module
-------------------------------------------------------------
+dashboard\_invite\_type
+-----------------------
 
 .. automodule:: datadog_api_client.v1.model.dashboard_invite_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.dashboard\_layout\_type module
-------------------------------------------------------------
+dashboard\_layout\_type
+-----------------------
 
 .. automodule:: datadog_api_client.v1.model.dashboard_layout_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.dashboard\_list module
-----------------------------------------------------
+dashboard\_list
+---------------
 
 .. automodule:: datadog_api_client.v1.model.dashboard_list
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.dashboard\_list\_delete\_response module
-----------------------------------------------------------------------
+dashboard\_list\_delete\_response
+---------------------------------
 
 .. automodule:: datadog_api_client.v1.model.dashboard_list_delete_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.dashboard\_list\_list\_response module
---------------------------------------------------------------------
+dashboard\_list\_list\_response
+-------------------------------
 
 .. automodule:: datadog_api_client.v1.model.dashboard_list_list_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.dashboard\_reflow\_type module
-------------------------------------------------------------
+dashboard\_reflow\_type
+-----------------------
 
 .. automodule:: datadog_api_client.v1.model.dashboard_reflow_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.dashboard\_resource\_type module
---------------------------------------------------------------
+dashboard\_resource\_type
+-------------------------
 
 .. automodule:: datadog_api_client.v1.model.dashboard_resource_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.dashboard\_restore\_request module
-----------------------------------------------------------------
+dashboard\_restore\_request
+---------------------------
 
 .. automodule:: datadog_api_client.v1.model.dashboard_restore_request
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.dashboard\_share\_type module
------------------------------------------------------------
+dashboard\_share\_type
+----------------------
 
 .. automodule:: datadog_api_client.v1.model.dashboard_share_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.dashboard\_summary module
--------------------------------------------------------
+dashboard\_summary
+------------------
 
 .. automodule:: datadog_api_client.v1.model.dashboard_summary
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.dashboard\_summary\_definition module
--------------------------------------------------------------------
+dashboard\_summary\_definition
+------------------------------
 
 .. automodule:: datadog_api_client.v1.model.dashboard_summary_definition
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.dashboard\_template\_variable module
-------------------------------------------------------------------
+dashboard\_template\_variable
+-----------------------------
 
 .. automodule:: datadog_api_client.v1.model.dashboard_template_variable
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.dashboard\_template\_variable\_preset module
---------------------------------------------------------------------------
+dashboard\_template\_variable\_preset
+-------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.dashboard_template_variable_preset
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.dashboard\_template\_variable\_preset\_value module
----------------------------------------------------------------------------------
+dashboard\_template\_variable\_preset\_value
+--------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.dashboard_template_variable_preset_value
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.dashboard\_type module
-----------------------------------------------------
+dashboard\_type
+---------------
 
 .. automodule:: datadog_api_client.v1.model.dashboard_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.delete\_shared\_dashboard\_response module
-------------------------------------------------------------------------
+delete\_shared\_dashboard\_response
+-----------------------------------
 
 .. automodule:: datadog_api_client.v1.model.delete_shared_dashboard_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.deleted\_monitor module
------------------------------------------------------
+deleted\_monitor
+----------------
 
 .. automodule:: datadog_api_client.v1.model.deleted_monitor
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.distribution\_point module
---------------------------------------------------------
+distribution\_point
+-------------------
 
 .. automodule:: datadog_api_client.v1.model.distribution_point
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.distribution\_points\_content\_encoding module
-----------------------------------------------------------------------------
+distribution\_points\_content\_encoding
+---------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.distribution_points_content_encoding
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.distribution\_points\_payload module
-------------------------------------------------------------------
+distribution\_points\_payload
+-----------------------------
 
 .. automodule:: datadog_api_client.v1.model.distribution_points_payload
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.distribution\_points\_series module
------------------------------------------------------------------
+distribution\_points\_series
+----------------------------
 
 .. automodule:: datadog_api_client.v1.model.distribution_points_series
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.distribution\_points\_type module
----------------------------------------------------------------
+distribution\_points\_type
+--------------------------
 
 .. automodule:: datadog_api_client.v1.model.distribution_points_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.distribution\_widget\_definition module
----------------------------------------------------------------------
+distribution\_widget\_definition
+--------------------------------
 
 .. automodule:: datadog_api_client.v1.model.distribution_widget_definition
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.distribution\_widget\_definition\_type module
----------------------------------------------------------------------------
+distribution\_widget\_definition\_type
+--------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.distribution_widget_definition_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.distribution\_widget\_histogram\_request\_query module
-------------------------------------------------------------------------------------
+distribution\_widget\_histogram\_request\_query
+-----------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.distribution_widget_histogram_request_query
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.distribution\_widget\_histogram\_request\_type module
------------------------------------------------------------------------------------
+distribution\_widget\_histogram\_request\_type
+----------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.distribution_widget_histogram_request_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.distribution\_widget\_request module
-------------------------------------------------------------------
+distribution\_widget\_request
+-----------------------------
 
 .. automodule:: datadog_api_client.v1.model.distribution_widget_request
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.distribution\_widget\_x\_axis module
-------------------------------------------------------------------
+distribution\_widget\_x\_axis
+-----------------------------
 
 .. automodule:: datadog_api_client.v1.model.distribution_widget_x_axis
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.distribution\_widget\_y\_axis module
-------------------------------------------------------------------
+distribution\_widget\_y\_axis
+-----------------------------
 
 .. automodule:: datadog_api_client.v1.model.distribution_widget_y_axis
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.downtime module
----------------------------------------------
+downtime
+--------
 
 .. automodule:: datadog_api_client.v1.model.downtime
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.downtime\_child module
-----------------------------------------------------
+downtime\_child
+---------------
 
 .. automodule:: datadog_api_client.v1.model.downtime_child
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.downtime\_recurrence module
----------------------------------------------------------
+downtime\_recurrence
+--------------------
 
 .. automodule:: datadog_api_client.v1.model.downtime_recurrence
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.event module
-------------------------------------------
+event
+-----
 
 .. automodule:: datadog_api_client.v1.model.event
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.event\_alert\_type module
--------------------------------------------------------
+event\_alert\_type
+------------------
 
 .. automodule:: datadog_api_client.v1.model.event_alert_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.event\_create\_request module
------------------------------------------------------------
+event\_create\_request
+----------------------
 
 .. automodule:: datadog_api_client.v1.model.event_create_request
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.event\_create\_response module
-------------------------------------------------------------
+event\_create\_response
+-----------------------
 
 .. automodule:: datadog_api_client.v1.model.event_create_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.event\_list\_response module
-----------------------------------------------------------
+event\_list\_response
+---------------------
 
 .. automodule:: datadog_api_client.v1.model.event_list_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.event\_priority module
-----------------------------------------------------
+event\_priority
+---------------
 
 .. automodule:: datadog_api_client.v1.model.event_priority
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.event\_query\_definition module
--------------------------------------------------------------
+event\_query\_definition
+------------------------
 
 .. automodule:: datadog_api_client.v1.model.event_query_definition
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.event\_response module
-----------------------------------------------------
+event\_response
+---------------
 
 .. automodule:: datadog_api_client.v1.model.event_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.event\_stream\_widget\_definition module
-----------------------------------------------------------------------
+event\_stream\_widget\_definition
+---------------------------------
 
 .. automodule:: datadog_api_client.v1.model.event_stream_widget_definition
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.event\_stream\_widget\_definition\_type module
-----------------------------------------------------------------------------
+event\_stream\_widget\_definition\_type
+---------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.event_stream_widget_definition_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.event\_timeline\_widget\_definition module
-------------------------------------------------------------------------
+event\_timeline\_widget\_definition
+-----------------------------------
 
 .. automodule:: datadog_api_client.v1.model.event_timeline_widget_definition
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.event\_timeline\_widget\_definition\_type module
-------------------------------------------------------------------------------
+event\_timeline\_widget\_definition\_type
+-----------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.event_timeline_widget_definition_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.formula\_and\_function\_apm\_dependency\_stat\_name module
-----------------------------------------------------------------------------------------
+formula\_and\_function\_apm\_dependency\_stat\_name
+---------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.formula_and_function_apm_dependency_stat_name
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.formula\_and\_function\_apm\_dependency\_stats\_data\_source module
--------------------------------------------------------------------------------------------------
+formula\_and\_function\_apm\_dependency\_stats\_data\_source
+------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.formula_and_function_apm_dependency_stats_data_source
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.formula\_and\_function\_apm\_dependency\_stats\_query\_definition module
-------------------------------------------------------------------------------------------------------
+formula\_and\_function\_apm\_dependency\_stats\_query\_definition
+-----------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.formula_and_function_apm_dependency_stats_query_definition
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.formula\_and\_function\_apm\_resource\_stat\_name module
---------------------------------------------------------------------------------------
+formula\_and\_function\_apm\_resource\_stat\_name
+-------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.formula_and_function_apm_resource_stat_name
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.formula\_and\_function\_apm\_resource\_stats\_data\_source module
------------------------------------------------------------------------------------------------
+formula\_and\_function\_apm\_resource\_stats\_data\_source
+----------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.formula_and_function_apm_resource_stats_data_source
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.formula\_and\_function\_apm\_resource\_stats\_query\_definition module
-----------------------------------------------------------------------------------------------------
+formula\_and\_function\_apm\_resource\_stats\_query\_definition
+---------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.formula_and_function_apm_resource_stats_query_definition
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.formula\_and\_function\_cloud\_cost\_data\_source module
---------------------------------------------------------------------------------------
+formula\_and\_function\_cloud\_cost\_data\_source
+-------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.formula_and_function_cloud_cost_data_source
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.formula\_and\_function\_cloud\_cost\_query\_definition module
--------------------------------------------------------------------------------------------
+formula\_and\_function\_cloud\_cost\_query\_definition
+------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.formula_and_function_cloud_cost_query_definition
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.formula\_and\_function\_event\_aggregation module
--------------------------------------------------------------------------------
+formula\_and\_function\_event\_aggregation
+------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.formula_and_function_event_aggregation
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.formula\_and\_function\_event\_query\_definition module
--------------------------------------------------------------------------------------
+formula\_and\_function\_event\_query\_definition
+------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.formula_and_function_event_query_definition
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.formula\_and\_function\_event\_query\_definition\_compute module
-----------------------------------------------------------------------------------------------
+formula\_and\_function\_event\_query\_definition\_compute
+---------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.formula_and_function_event_query_definition_compute
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.formula\_and\_function\_event\_query\_definition\_search module
----------------------------------------------------------------------------------------------
+formula\_and\_function\_event\_query\_definition\_search
+--------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.formula_and_function_event_query_definition_search
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.formula\_and\_function\_event\_query\_group\_by module
-------------------------------------------------------------------------------------
+formula\_and\_function\_event\_query\_group\_by
+-----------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.formula_and_function_event_query_group_by
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.formula\_and\_function\_event\_query\_group\_by\_sort module
-------------------------------------------------------------------------------------------
+formula\_and\_function\_event\_query\_group\_by\_sort
+-----------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.formula_and_function_event_query_group_by_sort
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.formula\_and\_function\_events\_data\_source module
----------------------------------------------------------------------------------
+formula\_and\_function\_events\_data\_source
+--------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.formula_and_function_events_data_source
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.formula\_and\_function\_metric\_aggregation module
---------------------------------------------------------------------------------
+formula\_and\_function\_metric\_aggregation
+-------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.formula_and_function_metric_aggregation
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.formula\_and\_function\_metric\_data\_source module
----------------------------------------------------------------------------------
+formula\_and\_function\_metric\_data\_source
+--------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.formula_and_function_metric_data_source
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.formula\_and\_function\_metric\_query\_definition module
---------------------------------------------------------------------------------------
+formula\_and\_function\_metric\_query\_definition
+-------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.formula_and_function_metric_query_definition
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.formula\_and\_function\_process\_query\_data\_source module
------------------------------------------------------------------------------------------
+formula\_and\_function\_process\_query\_data\_source
+----------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.formula_and_function_process_query_data_source
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.formula\_and\_function\_process\_query\_definition module
----------------------------------------------------------------------------------------
+formula\_and\_function\_process\_query\_definition
+--------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.formula_and_function_process_query_definition
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.formula\_and\_function\_query\_definition module
-------------------------------------------------------------------------------
+formula\_and\_function\_query\_definition
+-----------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.formula_and_function_query_definition
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.formula\_and\_function\_response\_format module
------------------------------------------------------------------------------
+formula\_and\_function\_response\_format
+----------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.formula_and_function_response_format
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.formula\_and\_function\_slo\_data\_source module
-------------------------------------------------------------------------------
+formula\_and\_function\_slo\_data\_source
+-----------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.formula_and_function_slo_data_source
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.formula\_and\_function\_slo\_group\_mode module
------------------------------------------------------------------------------
+formula\_and\_function\_slo\_group\_mode
+----------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.formula_and_function_slo_group_mode
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.formula\_and\_function\_slo\_measure module
--------------------------------------------------------------------------
+formula\_and\_function\_slo\_measure
+------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.formula_and_function_slo_measure
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.formula\_and\_function\_slo\_query\_definition module
------------------------------------------------------------------------------------
+formula\_and\_function\_slo\_query\_definition
+----------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.formula_and_function_slo_query_definition
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.formula\_and\_function\_slo\_query\_type module
------------------------------------------------------------------------------
+formula\_and\_function\_slo\_query\_type
+----------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.formula_and_function_slo_query_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.formula\_type module
---------------------------------------------------
+formula\_type
+-------------
 
 .. automodule:: datadog_api_client.v1.model.formula_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.free\_text\_widget\_definition module
--------------------------------------------------------------------
+free\_text\_widget\_definition
+------------------------------
 
 .. automodule:: datadog_api_client.v1.model.free_text_widget_definition
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.free\_text\_widget\_definition\_type module
--------------------------------------------------------------------------
+free\_text\_widget\_definition\_type
+------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.free_text_widget_definition_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.funnel\_query module
---------------------------------------------------
+funnel\_query
+-------------
 
 .. automodule:: datadog_api_client.v1.model.funnel_query
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.funnel\_request\_type module
-----------------------------------------------------------
+funnel\_request\_type
+---------------------
 
 .. automodule:: datadog_api_client.v1.model.funnel_request_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.funnel\_source module
----------------------------------------------------
+funnel\_source
+--------------
 
 .. automodule:: datadog_api_client.v1.model.funnel_source
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.funnel\_step module
--------------------------------------------------
+funnel\_step
+------------
 
 .. automodule:: datadog_api_client.v1.model.funnel_step
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.funnel\_widget\_definition module
----------------------------------------------------------------
+funnel\_widget\_definition
+--------------------------
 
 .. automodule:: datadog_api_client.v1.model.funnel_widget_definition
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.funnel\_widget\_definition\_type module
----------------------------------------------------------------------
+funnel\_widget\_definition\_type
+--------------------------------
 
 .. automodule:: datadog_api_client.v1.model.funnel_widget_definition_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.funnel\_widget\_request module
-------------------------------------------------------------
+funnel\_widget\_request
+-----------------------
 
 .. automodule:: datadog_api_client.v1.model.funnel_widget_request
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.gcp\_account module
--------------------------------------------------
+gcp\_account
+------------
 
 .. automodule:: datadog_api_client.v1.model.gcp_account
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.gcp\_account\_list\_response module
------------------------------------------------------------------
+gcp\_account\_list\_response
+----------------------------
 
 .. automodule:: datadog_api_client.v1.model.gcp_account_list_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.geomap\_widget\_definition module
----------------------------------------------------------------
+geomap\_widget\_definition
+--------------------------
 
 .. automodule:: datadog_api_client.v1.model.geomap_widget_definition
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.geomap\_widget\_definition\_style module
-----------------------------------------------------------------------
+geomap\_widget\_definition\_style
+---------------------------------
 
 .. automodule:: datadog_api_client.v1.model.geomap_widget_definition_style
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.geomap\_widget\_definition\_type module
----------------------------------------------------------------------
+geomap\_widget\_definition\_type
+--------------------------------
 
 .. automodule:: datadog_api_client.v1.model.geomap_widget_definition_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.geomap\_widget\_definition\_view module
----------------------------------------------------------------------
+geomap\_widget\_definition\_view
+--------------------------------
 
 .. automodule:: datadog_api_client.v1.model.geomap_widget_definition_view
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.geomap\_widget\_request module
-------------------------------------------------------------
+geomap\_widget\_request
+-----------------------
 
 .. automodule:: datadog_api_client.v1.model.geomap_widget_request
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.graph\_snapshot module
-----------------------------------------------------
+graph\_snapshot
+---------------
 
 .. automodule:: datadog_api_client.v1.model.graph_snapshot
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.group\_type module
-------------------------------------------------
+group\_type
+-----------
 
 .. automodule:: datadog_api_client.v1.model.group_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.group\_widget\_definition module
---------------------------------------------------------------
+group\_widget\_definition
+-------------------------
 
 .. automodule:: datadog_api_client.v1.model.group_widget_definition
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.group\_widget\_definition\_type module
---------------------------------------------------------------------
+group\_widget\_definition\_type
+-------------------------------
 
 .. automodule:: datadog_api_client.v1.model.group_widget_definition_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.heat\_map\_widget\_definition module
-------------------------------------------------------------------
+heat\_map\_widget\_definition
+-----------------------------
 
 .. automodule:: datadog_api_client.v1.model.heat_map_widget_definition
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.heat\_map\_widget\_definition\_type module
-------------------------------------------------------------------------
+heat\_map\_widget\_definition\_type
+-----------------------------------
 
 .. automodule:: datadog_api_client.v1.model.heat_map_widget_definition_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.heat\_map\_widget\_request module
----------------------------------------------------------------
+heat\_map\_widget\_request
+--------------------------
 
 .. automodule:: datadog_api_client.v1.model.heat_map_widget_request
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.host module
------------------------------------------
+host
+----
 
 .. automodule:: datadog_api_client.v1.model.host
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.host\_list\_response module
----------------------------------------------------------
+host\_list\_response
+--------------------
 
 .. automodule:: datadog_api_client.v1.model.host_list_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.host\_map\_request module
--------------------------------------------------------
+host\_map\_request
+------------------
 
 .. automodule:: datadog_api_client.v1.model.host_map_request
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.host\_map\_widget\_definition module
-------------------------------------------------------------------
+host\_map\_widget\_definition
+-----------------------------
 
 .. automodule:: datadog_api_client.v1.model.host_map_widget_definition
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.host\_map\_widget\_definition\_requests module
-----------------------------------------------------------------------------
+host\_map\_widget\_definition\_requests
+---------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.host_map_widget_definition_requests
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.host\_map\_widget\_definition\_style module
--------------------------------------------------------------------------
+host\_map\_widget\_definition\_style
+------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.host_map_widget_definition_style
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.host\_map\_widget\_definition\_type module
-------------------------------------------------------------------------
+host\_map\_widget\_definition\_type
+-----------------------------------
 
 .. automodule:: datadog_api_client.v1.model.host_map_widget_definition_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.host\_meta module
------------------------------------------------
+host\_meta
+----------
 
 .. automodule:: datadog_api_client.v1.model.host_meta
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.host\_meta\_install\_method module
-----------------------------------------------------------------
+host\_meta\_install\_method
+---------------------------
 
 .. automodule:: datadog_api_client.v1.model.host_meta_install_method
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.host\_metrics module
---------------------------------------------------
+host\_metrics
+-------------
 
 .. automodule:: datadog_api_client.v1.model.host_metrics
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.host\_mute\_response module
----------------------------------------------------------
+host\_mute\_response
+--------------------
 
 .. automodule:: datadog_api_client.v1.model.host_mute_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.host\_mute\_settings module
----------------------------------------------------------
+host\_mute\_settings
+--------------------
 
 .. automodule:: datadog_api_client.v1.model.host_mute_settings
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.host\_tags module
------------------------------------------------
+host\_tags
+----------
 
 .. automodule:: datadog_api_client.v1.model.host_tags
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.host\_totals module
--------------------------------------------------
+host\_totals
+------------
 
 .. automodule:: datadog_api_client.v1.model.host_totals
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.hourly\_usage\_attribution\_body module
----------------------------------------------------------------------
+hourly\_usage\_attribution\_body
+--------------------------------
 
 .. automodule:: datadog_api_client.v1.model.hourly_usage_attribution_body
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.hourly\_usage\_attribution\_metadata module
--------------------------------------------------------------------------
+hourly\_usage\_attribution\_metadata
+------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.hourly_usage_attribution_metadata
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.hourly\_usage\_attribution\_pagination module
----------------------------------------------------------------------------
+hourly\_usage\_attribution\_pagination
+--------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.hourly_usage_attribution_pagination
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.hourly\_usage\_attribution\_response module
--------------------------------------------------------------------------
+hourly\_usage\_attribution\_response
+------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.hourly_usage_attribution_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.hourly\_usage\_attribution\_usage\_type module
-----------------------------------------------------------------------------
+hourly\_usage\_attribution\_usage\_type
+---------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.hourly_usage_attribution_usage_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.http\_log module
-----------------------------------------------
+http\_log
+---------
 
 .. automodule:: datadog_api_client.v1.model.http_log
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.http\_log\_error module
------------------------------------------------------
+http\_log\_error
+----------------
 
 .. automodule:: datadog_api_client.v1.model.http_log_error
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.http\_log\_item module
-----------------------------------------------------
+http\_log\_item
+---------------
 
 .. automodule:: datadog_api_client.v1.model.http_log_item
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.i\_frame\_widget\_definition module
------------------------------------------------------------------
+i\_frame\_widget\_definition
+----------------------------
 
 .. automodule:: datadog_api_client.v1.model.i_frame_widget_definition
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.i\_frame\_widget\_definition\_type module
------------------------------------------------------------------------
+i\_frame\_widget\_definition\_type
+----------------------------------
 
 .. automodule:: datadog_api_client.v1.model.i_frame_widget_definition_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.idp\_form\_data module
-----------------------------------------------------
+idp\_form\_data
+---------------
 
 .. automodule:: datadog_api_client.v1.model.idp_form_data
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.idp\_response module
---------------------------------------------------
+idp\_response
+-------------
 
 .. automodule:: datadog_api_client.v1.model.idp_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.image\_widget\_definition module
---------------------------------------------------------------
+image\_widget\_definition
+-------------------------
 
 .. automodule:: datadog_api_client.v1.model.image_widget_definition
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.image\_widget\_definition\_type module
---------------------------------------------------------------------
+image\_widget\_definition\_type
+-------------------------------
 
 .. automodule:: datadog_api_client.v1.model.image_widget_definition_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.intake\_payload\_accepted module
---------------------------------------------------------------
+intake\_payload\_accepted
+-------------------------
 
 .. automodule:: datadog_api_client.v1.model.intake_payload_accepted
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.ip\_prefixes\_agents module
----------------------------------------------------------
+ip\_prefixes\_agents
+--------------------
 
 .. automodule:: datadog_api_client.v1.model.ip_prefixes_agents
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.ip\_prefixes\_api module
-------------------------------------------------------
+ip\_prefixes\_api
+-----------------
 
 .. automodule:: datadog_api_client.v1.model.ip_prefixes_api
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.ip\_prefixes\_apm module
-------------------------------------------------------
+ip\_prefixes\_apm
+-----------------
 
 .. automodule:: datadog_api_client.v1.model.ip_prefixes_apm
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.ip\_prefixes\_global module
----------------------------------------------------------
+ip\_prefixes\_global
+--------------------
 
 .. automodule:: datadog_api_client.v1.model.ip_prefixes_global
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.ip\_prefixes\_logs module
--------------------------------------------------------
+ip\_prefixes\_logs
+------------------
 
 .. automodule:: datadog_api_client.v1.model.ip_prefixes_logs
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.ip\_prefixes\_orchestrator module
----------------------------------------------------------------
+ip\_prefixes\_orchestrator
+--------------------------
 
 .. automodule:: datadog_api_client.v1.model.ip_prefixes_orchestrator
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.ip\_prefixes\_process module
-----------------------------------------------------------
+ip\_prefixes\_process
+---------------------
 
 .. automodule:: datadog_api_client.v1.model.ip_prefixes_process
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.ip\_prefixes\_remote\_configuration module
-------------------------------------------------------------------------
+ip\_prefixes\_remote\_configuration
+-----------------------------------
 
 .. automodule:: datadog_api_client.v1.model.ip_prefixes_remote_configuration
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.ip\_prefixes\_synthetics module
--------------------------------------------------------------
+ip\_prefixes\_synthetics
+------------------------
 
 .. automodule:: datadog_api_client.v1.model.ip_prefixes_synthetics
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.ip\_prefixes\_synthetics\_private\_locations module
----------------------------------------------------------------------------------
+ip\_prefixes\_synthetics\_private\_locations
+--------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.ip_prefixes_synthetics_private_locations
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.ip\_prefixes\_webhooks module
------------------------------------------------------------
+ip\_prefixes\_webhooks
+----------------------
 
 .. automodule:: datadog_api_client.v1.model.ip_prefixes_webhooks
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.ip\_ranges module
------------------------------------------------
+ip\_ranges
+----------
 
 .. automodule:: datadog_api_client.v1.model.ip_ranges
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.list\_stream\_column module
----------------------------------------------------------
+list\_stream\_column
+--------------------
 
 .. automodule:: datadog_api_client.v1.model.list_stream_column
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.list\_stream\_column\_width module
-----------------------------------------------------------------
+list\_stream\_column\_width
+---------------------------
 
 .. automodule:: datadog_api_client.v1.model.list_stream_column_width
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.list\_stream\_compute\_aggregation module
------------------------------------------------------------------------
+list\_stream\_compute\_aggregation
+----------------------------------
 
 .. automodule:: datadog_api_client.v1.model.list_stream_compute_aggregation
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.list\_stream\_compute\_items module
------------------------------------------------------------------
+list\_stream\_compute\_items
+----------------------------
 
 .. automodule:: datadog_api_client.v1.model.list_stream_compute_items
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.list\_stream\_group\_by\_items module
--------------------------------------------------------------------
+list\_stream\_group\_by\_items
+------------------------------
 
 .. automodule:: datadog_api_client.v1.model.list_stream_group_by_items
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.list\_stream\_query module
---------------------------------------------------------
+list\_stream\_query
+-------------------
 
 .. automodule:: datadog_api_client.v1.model.list_stream_query
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.list\_stream\_response\_format module
--------------------------------------------------------------------
+list\_stream\_response\_format
+------------------------------
 
 .. automodule:: datadog_api_client.v1.model.list_stream_response_format
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.list\_stream\_source module
----------------------------------------------------------
+list\_stream\_source
+--------------------
 
 .. automodule:: datadog_api_client.v1.model.list_stream_source
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.list\_stream\_widget\_definition module
----------------------------------------------------------------------
+list\_stream\_widget\_definition
+--------------------------------
 
 .. automodule:: datadog_api_client.v1.model.list_stream_widget_definition
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.list\_stream\_widget\_definition\_type module
----------------------------------------------------------------------------
+list\_stream\_widget\_definition\_type
+--------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.list_stream_widget_definition_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.list\_stream\_widget\_request module
-------------------------------------------------------------------
+list\_stream\_widget\_request
+-----------------------------
 
 .. automodule:: datadog_api_client.v1.model.list_stream_widget_request
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.log module
-----------------------------------------
+log
+---
 
 .. automodule:: datadog_api_client.v1.model.log
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.log\_content module
--------------------------------------------------
+log\_content
+------------
 
 .. automodule:: datadog_api_client.v1.model.log_content
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.log\_query\_definition module
------------------------------------------------------------
+log\_query\_definition
+----------------------
 
 .. automodule:: datadog_api_client.v1.model.log_query_definition
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.log\_query\_definition\_group\_by module
-----------------------------------------------------------------------
+log\_query\_definition\_group\_by
+---------------------------------
 
 .. automodule:: datadog_api_client.v1.model.log_query_definition_group_by
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.log\_query\_definition\_group\_by\_sort module
-----------------------------------------------------------------------------
+log\_query\_definition\_group\_by\_sort
+---------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.log_query_definition_group_by_sort
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.log\_query\_definition\_search module
--------------------------------------------------------------------
+log\_query\_definition\_search
+------------------------------
 
 .. automodule:: datadog_api_client.v1.model.log_query_definition_search
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.log\_stream\_widget\_definition module
---------------------------------------------------------------------
+log\_stream\_widget\_definition
+-------------------------------
 
 .. automodule:: datadog_api_client.v1.model.log_stream_widget_definition
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.log\_stream\_widget\_definition\_type module
---------------------------------------------------------------------------
+log\_stream\_widget\_definition\_type
+-------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.log_stream_widget_definition_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.logs\_api\_error module
------------------------------------------------------
+logs\_api\_error
+----------------
 
 .. automodule:: datadog_api_client.v1.model.logs_api_error
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.logs\_api\_error\_response module
----------------------------------------------------------------
+logs\_api\_error\_response
+--------------------------
 
 .. automodule:: datadog_api_client.v1.model.logs_api_error_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.logs\_arithmetic\_processor module
-----------------------------------------------------------------
+logs\_arithmetic\_processor
+---------------------------
 
 .. automodule:: datadog_api_client.v1.model.logs_arithmetic_processor
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.logs\_arithmetic\_processor\_type module
-----------------------------------------------------------------------
+logs\_arithmetic\_processor\_type
+---------------------------------
 
 .. automodule:: datadog_api_client.v1.model.logs_arithmetic_processor_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.logs\_attribute\_remapper module
---------------------------------------------------------------
+logs\_attribute\_remapper
+-------------------------
 
 .. automodule:: datadog_api_client.v1.model.logs_attribute_remapper
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.logs\_attribute\_remapper\_type module
---------------------------------------------------------------------
+logs\_attribute\_remapper\_type
+-------------------------------
 
 .. automodule:: datadog_api_client.v1.model.logs_attribute_remapper_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.logs\_by\_retention module
---------------------------------------------------------
+logs\_by\_retention
+-------------------
 
 .. automodule:: datadog_api_client.v1.model.logs_by_retention
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.logs\_by\_retention\_monthly\_usage module
-------------------------------------------------------------------------
+logs\_by\_retention\_monthly\_usage
+-----------------------------------
 
 .. automodule:: datadog_api_client.v1.model.logs_by_retention_monthly_usage
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.logs\_by\_retention\_org\_usage module
---------------------------------------------------------------------
+logs\_by\_retention\_org\_usage
+-------------------------------
 
 .. automodule:: datadog_api_client.v1.model.logs_by_retention_org_usage
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.logs\_by\_retention\_orgs module
---------------------------------------------------------------
+logs\_by\_retention\_orgs
+-------------------------
 
 .. automodule:: datadog_api_client.v1.model.logs_by_retention_orgs
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.logs\_category\_processor module
---------------------------------------------------------------
+logs\_category\_processor
+-------------------------
 
 .. automodule:: datadog_api_client.v1.model.logs_category_processor
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.logs\_category\_processor\_category module
-------------------------------------------------------------------------
+logs\_category\_processor\_category
+-----------------------------------
 
 .. automodule:: datadog_api_client.v1.model.logs_category_processor_category
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.logs\_category\_processor\_type module
---------------------------------------------------------------------
+logs\_category\_processor\_type
+-------------------------------
 
 .. automodule:: datadog_api_client.v1.model.logs_category_processor_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.logs\_daily\_limit\_reset module
---------------------------------------------------------------
+logs\_daily\_limit\_reset
+-------------------------
 
 .. automodule:: datadog_api_client.v1.model.logs_daily_limit_reset
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.logs\_date\_remapper module
----------------------------------------------------------
+logs\_date\_remapper
+--------------------
 
 .. automodule:: datadog_api_client.v1.model.logs_date_remapper
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.logs\_date\_remapper\_type module
----------------------------------------------------------------
+logs\_date\_remapper\_type
+--------------------------
 
 .. automodule:: datadog_api_client.v1.model.logs_date_remapper_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.logs\_exclusion module
-----------------------------------------------------
+logs\_exclusion
+---------------
 
 .. automodule:: datadog_api_client.v1.model.logs_exclusion
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.logs\_exclusion\_filter module
-------------------------------------------------------------
+logs\_exclusion\_filter
+-----------------------
 
 .. automodule:: datadog_api_client.v1.model.logs_exclusion_filter
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.logs\_filter module
--------------------------------------------------
+logs\_filter
+------------
 
 .. automodule:: datadog_api_client.v1.model.logs_filter
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.logs\_geo\_ip\_parser module
-----------------------------------------------------------
+logs\_geo\_ip\_parser
+---------------------
 
 .. automodule:: datadog_api_client.v1.model.logs_geo_ip_parser
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.logs\_geo\_ip\_parser\_type module
-----------------------------------------------------------------
+logs\_geo\_ip\_parser\_type
+---------------------------
 
 .. automodule:: datadog_api_client.v1.model.logs_geo_ip_parser_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.logs\_grok\_parser module
--------------------------------------------------------
+logs\_grok\_parser
+------------------
 
 .. automodule:: datadog_api_client.v1.model.logs_grok_parser
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.logs\_grok\_parser\_rules module
---------------------------------------------------------------
+logs\_grok\_parser\_rules
+-------------------------
 
 .. automodule:: datadog_api_client.v1.model.logs_grok_parser_rules
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.logs\_grok\_parser\_type module
--------------------------------------------------------------
+logs\_grok\_parser\_type
+------------------------
 
 .. automodule:: datadog_api_client.v1.model.logs_grok_parser_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.logs\_index module
-------------------------------------------------
+logs\_index
+-----------
 
 .. automodule:: datadog_api_client.v1.model.logs_index
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.logs\_index\_list\_response module
-----------------------------------------------------------------
+logs\_index\_list\_response
+---------------------------
 
 .. automodule:: datadog_api_client.v1.model.logs_index_list_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.logs\_index\_update\_request module
------------------------------------------------------------------
+logs\_index\_update\_request
+----------------------------
 
 .. automodule:: datadog_api_client.v1.model.logs_index_update_request
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.logs\_indexes\_order module
----------------------------------------------------------
+logs\_indexes\_order
+--------------------
 
 .. automodule:: datadog_api_client.v1.model.logs_indexes_order
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.logs\_list\_request module
---------------------------------------------------------
+logs\_list\_request
+-------------------
 
 .. automodule:: datadog_api_client.v1.model.logs_list_request
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.logs\_list\_request\_time module
---------------------------------------------------------------
+logs\_list\_request\_time
+-------------------------
 
 .. automodule:: datadog_api_client.v1.model.logs_list_request_time
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.logs\_list\_response module
----------------------------------------------------------
+logs\_list\_response
+--------------------
 
 .. automodule:: datadog_api_client.v1.model.logs_list_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.logs\_lookup\_processor module
-------------------------------------------------------------
+logs\_lookup\_processor
+-----------------------
 
 .. automodule:: datadog_api_client.v1.model.logs_lookup_processor
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.logs\_lookup\_processor\_type module
-------------------------------------------------------------------
+logs\_lookup\_processor\_type
+-----------------------------
 
 .. automodule:: datadog_api_client.v1.model.logs_lookup_processor_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.logs\_message\_remapper module
-------------------------------------------------------------
+logs\_message\_remapper
+-----------------------
 
 .. automodule:: datadog_api_client.v1.model.logs_message_remapper
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.logs\_message\_remapper\_type module
-------------------------------------------------------------------
+logs\_message\_remapper\_type
+-----------------------------
 
 .. automodule:: datadog_api_client.v1.model.logs_message_remapper_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.logs\_pipeline module
----------------------------------------------------
+logs\_pipeline
+--------------
 
 .. automodule:: datadog_api_client.v1.model.logs_pipeline
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.logs\_pipeline\_list module
----------------------------------------------------------
+logs\_pipeline\_list
+--------------------
 
 .. automodule:: datadog_api_client.v1.model.logs_pipeline_list
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.logs\_pipeline\_processor module
---------------------------------------------------------------
+logs\_pipeline\_processor
+-------------------------
 
 .. automodule:: datadog_api_client.v1.model.logs_pipeline_processor
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.logs\_pipeline\_processor\_type module
---------------------------------------------------------------------
+logs\_pipeline\_processor\_type
+-------------------------------
 
 .. automodule:: datadog_api_client.v1.model.logs_pipeline_processor_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.logs\_pipelines\_order module
------------------------------------------------------------
+logs\_pipelines\_order
+----------------------
 
 .. automodule:: datadog_api_client.v1.model.logs_pipelines_order
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.logs\_processor module
-----------------------------------------------------
+logs\_processor
+---------------
 
 .. automodule:: datadog_api_client.v1.model.logs_processor
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.logs\_query\_compute module
----------------------------------------------------------
+logs\_query\_compute
+--------------------
 
 .. automodule:: datadog_api_client.v1.model.logs_query_compute
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.logs\_retention\_agg\_sum\_usage module
----------------------------------------------------------------------
+logs\_retention\_agg\_sum\_usage
+--------------------------------
 
 .. automodule:: datadog_api_client.v1.model.logs_retention_agg_sum_usage
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.logs\_retention\_sum\_usage module
-----------------------------------------------------------------
+logs\_retention\_sum\_usage
+---------------------------
 
 .. automodule:: datadog_api_client.v1.model.logs_retention_sum_usage
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.logs\_service\_remapper module
-------------------------------------------------------------
+logs\_service\_remapper
+-----------------------
 
 .. automodule:: datadog_api_client.v1.model.logs_service_remapper
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.logs\_service\_remapper\_type module
-------------------------------------------------------------------
+logs\_service\_remapper\_type
+-----------------------------
 
 .. automodule:: datadog_api_client.v1.model.logs_service_remapper_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.logs\_sort module
------------------------------------------------
+logs\_sort
+----------
 
 .. automodule:: datadog_api_client.v1.model.logs_sort
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.logs\_status\_remapper module
------------------------------------------------------------
+logs\_status\_remapper
+----------------------
 
 .. automodule:: datadog_api_client.v1.model.logs_status_remapper
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.logs\_status\_remapper\_type module
------------------------------------------------------------------
+logs\_status\_remapper\_type
+----------------------------
 
 .. automodule:: datadog_api_client.v1.model.logs_status_remapper_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.logs\_string\_builder\_processor module
----------------------------------------------------------------------
+logs\_string\_builder\_processor
+--------------------------------
 
 .. automodule:: datadog_api_client.v1.model.logs_string_builder_processor
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.logs\_string\_builder\_processor\_type module
----------------------------------------------------------------------------
+logs\_string\_builder\_processor\_type
+--------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.logs_string_builder_processor_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.logs\_trace\_remapper module
-----------------------------------------------------------
+logs\_trace\_remapper
+---------------------
 
 .. automodule:: datadog_api_client.v1.model.logs_trace_remapper
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.logs\_trace\_remapper\_type module
-----------------------------------------------------------------
+logs\_trace\_remapper\_type
+---------------------------
 
 .. automodule:: datadog_api_client.v1.model.logs_trace_remapper_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.logs\_url\_parser module
-------------------------------------------------------
+logs\_url\_parser
+-----------------
 
 .. automodule:: datadog_api_client.v1.model.logs_url_parser
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.logs\_url\_parser\_type module
-------------------------------------------------------------
+logs\_url\_parser\_type
+-----------------------
 
 .. automodule:: datadog_api_client.v1.model.logs_url_parser_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.logs\_user\_agent\_parser module
---------------------------------------------------------------
+logs\_user\_agent\_parser
+-------------------------
 
 .. automodule:: datadog_api_client.v1.model.logs_user_agent_parser
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.logs\_user\_agent\_parser\_type module
---------------------------------------------------------------------
+logs\_user\_agent\_parser\_type
+-------------------------------
 
 .. automodule:: datadog_api_client.v1.model.logs_user_agent_parser_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.matching\_downtime module
--------------------------------------------------------
+matching\_downtime
+------------------
 
 .. automodule:: datadog_api_client.v1.model.matching_downtime
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.metric\_content\_encoding module
---------------------------------------------------------------
+metric\_content\_encoding
+-------------------------
 
 .. automodule:: datadog_api_client.v1.model.metric_content_encoding
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.metric\_metadata module
------------------------------------------------------
+metric\_metadata
+----------------
 
 .. automodule:: datadog_api_client.v1.model.metric_metadata
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.metric\_search\_response module
--------------------------------------------------------------
+metric\_search\_response
+------------------------
 
 .. automodule:: datadog_api_client.v1.model.metric_search_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.metric\_search\_response\_results module
-----------------------------------------------------------------------
+metric\_search\_response\_results
+---------------------------------
 
 .. automodule:: datadog_api_client.v1.model.metric_search_response_results
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.metrics\_list\_response module
-------------------------------------------------------------
+metrics\_list\_response
+-----------------------
 
 .. automodule:: datadog_api_client.v1.model.metrics_list_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.metrics\_payload module
------------------------------------------------------
+metrics\_payload
+----------------
 
 .. automodule:: datadog_api_client.v1.model.metrics_payload
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.metrics\_query\_metadata module
--------------------------------------------------------------
+metrics\_query\_metadata
+------------------------
 
 .. automodule:: datadog_api_client.v1.model.metrics_query_metadata
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.metrics\_query\_response module
--------------------------------------------------------------
+metrics\_query\_response
+------------------------
 
 .. automodule:: datadog_api_client.v1.model.metrics_query_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.metrics\_query\_unit module
----------------------------------------------------------
+metrics\_query\_unit
+--------------------
 
 .. automodule:: datadog_api_client.v1.model.metrics_query_unit
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.monitor module
---------------------------------------------
+monitor
+-------
 
 .. automodule:: datadog_api_client.v1.model.monitor
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.monitor\_device\_id module
---------------------------------------------------------
+monitor\_device\_id
+-------------------
 
 .. automodule:: datadog_api_client.v1.model.monitor_device_id
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.monitor\_formula\_and\_function\_event\_aggregation module
-----------------------------------------------------------------------------------------
+monitor\_formula\_and\_function\_event\_aggregation
+---------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.monitor_formula_and_function_event_aggregation
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.monitor\_formula\_and\_function\_event\_query\_definition module
-----------------------------------------------------------------------------------------------
+monitor\_formula\_and\_function\_event\_query\_definition
+---------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.monitor_formula_and_function_event_query_definition
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.monitor\_formula\_and\_function\_event\_query\_definition\_compute module
--------------------------------------------------------------------------------------------------------
+monitor\_formula\_and\_function\_event\_query\_definition\_compute
+------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.monitor_formula_and_function_event_query_definition_compute
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.monitor\_formula\_and\_function\_event\_query\_definition\_search module
-------------------------------------------------------------------------------------------------------
+monitor\_formula\_and\_function\_event\_query\_definition\_search
+-----------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.monitor_formula_and_function_event_query_definition_search
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.monitor\_formula\_and\_function\_event\_query\_group\_by module
----------------------------------------------------------------------------------------------
+monitor\_formula\_and\_function\_event\_query\_group\_by
+--------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.monitor_formula_and_function_event_query_group_by
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.monitor\_formula\_and\_function\_event\_query\_group\_by\_sort module
----------------------------------------------------------------------------------------------------
+monitor\_formula\_and\_function\_event\_query\_group\_by\_sort
+--------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.monitor_formula_and_function_event_query_group_by_sort
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.monitor\_formula\_and\_function\_events\_data\_source module
-------------------------------------------------------------------------------------------
+monitor\_formula\_and\_function\_events\_data\_source
+-----------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.monitor_formula_and_function_events_data_source
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.monitor\_formula\_and\_function\_query\_definition module
----------------------------------------------------------------------------------------
+monitor\_formula\_and\_function\_query\_definition
+--------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.monitor_formula_and_function_query_definition
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.monitor\_group\_search\_response module
----------------------------------------------------------------------
+monitor\_group\_search\_response
+--------------------------------
 
 .. automodule:: datadog_api_client.v1.model.monitor_group_search_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.monitor\_group\_search\_response\_counts module
------------------------------------------------------------------------------
+monitor\_group\_search\_response\_counts
+----------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.monitor_group_search_response_counts
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.monitor\_group\_search\_result module
--------------------------------------------------------------------
+monitor\_group\_search\_result
+------------------------------
 
 .. automodule:: datadog_api_client.v1.model.monitor_group_search_result
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.monitor\_options module
------------------------------------------------------
+monitor\_options
+----------------
 
 .. automodule:: datadog_api_client.v1.model.monitor_options
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.monitor\_options\_aggregation module
-------------------------------------------------------------------
+monitor\_options\_aggregation
+-----------------------------
 
 .. automodule:: datadog_api_client.v1.model.monitor_options_aggregation
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.monitor\_options\_custom\_schedule module
------------------------------------------------------------------------
+monitor\_options\_custom\_schedule
+----------------------------------
 
 .. automodule:: datadog_api_client.v1.model.monitor_options_custom_schedule
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.monitor\_options\_custom\_schedule\_recurrence module
------------------------------------------------------------------------------------
+monitor\_options\_custom\_schedule\_recurrence
+----------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.monitor_options_custom_schedule_recurrence
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.monitor\_options\_notification\_presets module
-----------------------------------------------------------------------------
+monitor\_options\_notification\_presets
+---------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.monitor_options_notification_presets
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.monitor\_options\_scheduling\_options module
---------------------------------------------------------------------------
+monitor\_options\_scheduling\_options
+-------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.monitor_options_scheduling_options
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.monitor\_options\_scheduling\_options\_evaluation\_window module
-----------------------------------------------------------------------------------------------
+monitor\_options\_scheduling\_options\_evaluation\_window
+---------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.monitor_options_scheduling_options_evaluation_window
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.monitor\_overall\_states module
--------------------------------------------------------------
+monitor\_overall\_states
+------------------------
 
 .. automodule:: datadog_api_client.v1.model.monitor_overall_states
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.monitor\_renotify\_status\_type module
---------------------------------------------------------------------
+monitor\_renotify\_status\_type
+-------------------------------
 
 .. automodule:: datadog_api_client.v1.model.monitor_renotify_status_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.monitor\_search\_count module
------------------------------------------------------------
+monitor\_search\_count
+----------------------
 
 .. automodule:: datadog_api_client.v1.model.monitor_search_count
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.monitor\_search\_count\_item module
------------------------------------------------------------------
+monitor\_search\_count\_item
+----------------------------
 
 .. automodule:: datadog_api_client.v1.model.monitor_search_count_item
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.monitor\_search\_response module
---------------------------------------------------------------
+monitor\_search\_response
+-------------------------
 
 .. automodule:: datadog_api_client.v1.model.monitor_search_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.monitor\_search\_response\_counts module
-----------------------------------------------------------------------
+monitor\_search\_response\_counts
+---------------------------------
 
 .. automodule:: datadog_api_client.v1.model.monitor_search_response_counts
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.monitor\_search\_response\_metadata module
-------------------------------------------------------------------------
+monitor\_search\_response\_metadata
+-----------------------------------
 
 .. automodule:: datadog_api_client.v1.model.monitor_search_response_metadata
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.monitor\_search\_result module
-------------------------------------------------------------
+monitor\_search\_result
+-----------------------
 
 .. automodule:: datadog_api_client.v1.model.monitor_search_result
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.monitor\_search\_result\_notification module
---------------------------------------------------------------------------
+monitor\_search\_result\_notification
+-------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.monitor_search_result_notification
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.monitor\_state module
----------------------------------------------------
+monitor\_state
+--------------
 
 .. automodule:: datadog_api_client.v1.model.monitor_state
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.monitor\_state\_group module
-----------------------------------------------------------
+monitor\_state\_group
+---------------------
 
 .. automodule:: datadog_api_client.v1.model.monitor_state_group
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.monitor\_summary\_widget\_definition module
--------------------------------------------------------------------------
+monitor\_summary\_widget\_definition
+------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.monitor_summary_widget_definition
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.monitor\_summary\_widget\_definition\_type module
--------------------------------------------------------------------------------
+monitor\_summary\_widget\_definition\_type
+------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.monitor_summary_widget_definition_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.monitor\_threshold\_window\_options module
-------------------------------------------------------------------------
+monitor\_threshold\_window\_options
+-----------------------------------
 
 .. automodule:: datadog_api_client.v1.model.monitor_threshold_window_options
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.monitor\_thresholds module
---------------------------------------------------------
+monitor\_thresholds
+-------------------
 
 .. automodule:: datadog_api_client.v1.model.monitor_thresholds
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.monitor\_type module
---------------------------------------------------
+monitor\_type
+-------------
 
 .. automodule:: datadog_api_client.v1.model.monitor_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.monitor\_update\_request module
--------------------------------------------------------------
+monitor\_update\_request
+------------------------
 
 .. automodule:: datadog_api_client.v1.model.monitor_update_request
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.monthly\_usage\_attribution\_body module
-----------------------------------------------------------------------
+monthly\_usage\_attribution\_body
+---------------------------------
 
 .. automodule:: datadog_api_client.v1.model.monthly_usage_attribution_body
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.monthly\_usage\_attribution\_metadata module
---------------------------------------------------------------------------
+monthly\_usage\_attribution\_metadata
+-------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.monthly_usage_attribution_metadata
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.monthly\_usage\_attribution\_pagination module
-----------------------------------------------------------------------------
+monthly\_usage\_attribution\_pagination
+---------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.monthly_usage_attribution_pagination
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.monthly\_usage\_attribution\_response module
---------------------------------------------------------------------------
+monthly\_usage\_attribution\_response
+-------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.monthly_usage_attribution_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.monthly\_usage\_attribution\_supported\_metrics module
-------------------------------------------------------------------------------------
+monthly\_usage\_attribution\_supported\_metrics
+-----------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.monthly_usage_attribution_supported_metrics
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.monthly\_usage\_attribution\_values module
-------------------------------------------------------------------------
+monthly\_usage\_attribution\_values
+-----------------------------------
 
 .. automodule:: datadog_api_client.v1.model.monthly_usage_attribution_values
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.note\_widget\_definition module
--------------------------------------------------------------
+note\_widget\_definition
+------------------------
 
 .. automodule:: datadog_api_client.v1.model.note_widget_definition
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.note\_widget\_definition\_type module
--------------------------------------------------------------------
+note\_widget\_definition\_type
+------------------------------
 
 .. automodule:: datadog_api_client.v1.model.note_widget_definition_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.notebook\_absolute\_time module
--------------------------------------------------------------
+notebook\_absolute\_time
+------------------------
 
 .. automodule:: datadog_api_client.v1.model.notebook_absolute_time
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.notebook\_author module
------------------------------------------------------
+notebook\_author
+----------------
 
 .. automodule:: datadog_api_client.v1.model.notebook_author
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.notebook\_cell\_create\_request module
---------------------------------------------------------------------
+notebook\_cell\_create\_request
+-------------------------------
 
 .. automodule:: datadog_api_client.v1.model.notebook_cell_create_request
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.notebook\_cell\_create\_request\_attributes module
---------------------------------------------------------------------------------
+notebook\_cell\_create\_request\_attributes
+-------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.notebook_cell_create_request_attributes
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.notebook\_cell\_resource\_type module
--------------------------------------------------------------------
+notebook\_cell\_resource\_type
+------------------------------
 
 .. automodule:: datadog_api_client.v1.model.notebook_cell_resource_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.notebook\_cell\_response module
--------------------------------------------------------------
+notebook\_cell\_response
+------------------------
 
 .. automodule:: datadog_api_client.v1.model.notebook_cell_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.notebook\_cell\_response\_attributes module
--------------------------------------------------------------------------
+notebook\_cell\_response\_attributes
+------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.notebook_cell_response_attributes
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.notebook\_cell\_time module
----------------------------------------------------------
+notebook\_cell\_time
+--------------------
 
 .. automodule:: datadog_api_client.v1.model.notebook_cell_time
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.notebook\_cell\_update\_request module
---------------------------------------------------------------------
+notebook\_cell\_update\_request
+-------------------------------
 
 .. automodule:: datadog_api_client.v1.model.notebook_cell_update_request
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.notebook\_cell\_update\_request\_attributes module
---------------------------------------------------------------------------------
+notebook\_cell\_update\_request\_attributes
+-------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.notebook_cell_update_request_attributes
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.notebook\_create\_data module
------------------------------------------------------------
+notebook\_create\_data
+----------------------
 
 .. automodule:: datadog_api_client.v1.model.notebook_create_data
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.notebook\_create\_data\_attributes module
------------------------------------------------------------------------
+notebook\_create\_data\_attributes
+----------------------------------
 
 .. automodule:: datadog_api_client.v1.model.notebook_create_data_attributes
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.notebook\_create\_request module
---------------------------------------------------------------
+notebook\_create\_request
+-------------------------
 
 .. automodule:: datadog_api_client.v1.model.notebook_create_request
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.notebook\_distribution\_cell\_attributes module
------------------------------------------------------------------------------
+notebook\_distribution\_cell\_attributes
+----------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.notebook_distribution_cell_attributes
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.notebook\_global\_time module
------------------------------------------------------------
+notebook\_global\_time
+----------------------
 
 .. automodule:: datadog_api_client.v1.model.notebook_global_time
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.notebook\_graph\_size module
-----------------------------------------------------------
+notebook\_graph\_size
+---------------------
 
 .. automodule:: datadog_api_client.v1.model.notebook_graph_size
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.notebook\_heat\_map\_cell\_attributes module
---------------------------------------------------------------------------
+notebook\_heat\_map\_cell\_attributes
+-------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.notebook_heat_map_cell_attributes
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.notebook\_log\_stream\_cell\_attributes module
-----------------------------------------------------------------------------
+notebook\_log\_stream\_cell\_attributes
+---------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.notebook_log_stream_cell_attributes
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.notebook\_markdown\_cell\_attributes module
--------------------------------------------------------------------------
+notebook\_markdown\_cell\_attributes
+------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.notebook_markdown_cell_attributes
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.notebook\_markdown\_cell\_definition module
--------------------------------------------------------------------------
+notebook\_markdown\_cell\_definition
+------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.notebook_markdown_cell_definition
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.notebook\_markdown\_cell\_definition\_type module
--------------------------------------------------------------------------------
+notebook\_markdown\_cell\_definition\_type
+------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.notebook_markdown_cell_definition_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.notebook\_metadata module
--------------------------------------------------------
+notebook\_metadata
+------------------
 
 .. automodule:: datadog_api_client.v1.model.notebook_metadata
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.notebook\_metadata\_type module
--------------------------------------------------------------
+notebook\_metadata\_type
+------------------------
 
 .. automodule:: datadog_api_client.v1.model.notebook_metadata_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.notebook\_relative\_time module
--------------------------------------------------------------
+notebook\_relative\_time
+------------------------
 
 .. automodule:: datadog_api_client.v1.model.notebook_relative_time
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.notebook\_resource\_type module
--------------------------------------------------------------
+notebook\_resource\_type
+------------------------
 
 .. automodule:: datadog_api_client.v1.model.notebook_resource_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.notebook\_response module
--------------------------------------------------------
+notebook\_response
+------------------
 
 .. automodule:: datadog_api_client.v1.model.notebook_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.notebook\_response\_data module
--------------------------------------------------------------
+notebook\_response\_data
+------------------------
 
 .. automodule:: datadog_api_client.v1.model.notebook_response_data
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.notebook\_response\_data\_attributes module
--------------------------------------------------------------------------
+notebook\_response\_data\_attributes
+------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.notebook_response_data_attributes
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.notebook\_split\_by module
---------------------------------------------------------
+notebook\_split\_by
+-------------------
 
 .. automodule:: datadog_api_client.v1.model.notebook_split_by
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.notebook\_status module
------------------------------------------------------
+notebook\_status
+----------------
 
 .. automodule:: datadog_api_client.v1.model.notebook_status
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.notebook\_timeseries\_cell\_attributes module
----------------------------------------------------------------------------
+notebook\_timeseries\_cell\_attributes
+--------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.notebook_timeseries_cell_attributes
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.notebook\_toplist\_cell\_attributes module
-------------------------------------------------------------------------
+notebook\_toplist\_cell\_attributes
+-----------------------------------
 
 .. automodule:: datadog_api_client.v1.model.notebook_toplist_cell_attributes
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.notebook\_update\_cell module
------------------------------------------------------------
+notebook\_update\_cell
+----------------------
 
 .. automodule:: datadog_api_client.v1.model.notebook_update_cell
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.notebook\_update\_data module
------------------------------------------------------------
+notebook\_update\_data
+----------------------
 
 .. automodule:: datadog_api_client.v1.model.notebook_update_data
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.notebook\_update\_data\_attributes module
------------------------------------------------------------------------
+notebook\_update\_data\_attributes
+----------------------------------
 
 .. automodule:: datadog_api_client.v1.model.notebook_update_data_attributes
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.notebook\_update\_request module
---------------------------------------------------------------
+notebook\_update\_request
+-------------------------
 
 .. automodule:: datadog_api_client.v1.model.notebook_update_request
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.notebooks\_response module
---------------------------------------------------------
+notebooks\_response
+-------------------
 
 .. automodule:: datadog_api_client.v1.model.notebooks_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.notebooks\_response\_data module
---------------------------------------------------------------
+notebooks\_response\_data
+-------------------------
 
 .. automodule:: datadog_api_client.v1.model.notebooks_response_data
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.notebooks\_response\_data\_attributes module
---------------------------------------------------------------------------
+notebooks\_response\_data\_attributes
+-------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.notebooks_response_data_attributes
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.notebooks\_response\_meta module
---------------------------------------------------------------
+notebooks\_response\_meta
+-------------------------
 
 .. automodule:: datadog_api_client.v1.model.notebooks_response_meta
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.notebooks\_response\_page module
---------------------------------------------------------------
+notebooks\_response\_page
+-------------------------
 
 .. automodule:: datadog_api_client.v1.model.notebooks_response_page
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.notify\_end\_state module
--------------------------------------------------------
+notify\_end\_state
+------------------
 
 .. automodule:: datadog_api_client.v1.model.notify_end_state
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.notify\_end\_type module
-------------------------------------------------------
+notify\_end\_type
+-----------------
 
 .. automodule:: datadog_api_client.v1.model.notify_end_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.on\_missing\_data\_option module
---------------------------------------------------------------
+on\_missing\_data\_option
+-------------------------
 
 .. automodule:: datadog_api_client.v1.model.on_missing_data_option
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.org\_downgraded\_response module
---------------------------------------------------------------
+org\_downgraded\_response
+-------------------------
 
 .. automodule:: datadog_api_client.v1.model.org_downgraded_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.organization module
--------------------------------------------------
+organization
+------------
 
 .. automodule:: datadog_api_client.v1.model.organization
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.organization\_billing module
-----------------------------------------------------------
+organization\_billing
+---------------------
 
 .. automodule:: datadog_api_client.v1.model.organization_billing
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.organization\_create\_body module
----------------------------------------------------------------
+organization\_create\_body
+--------------------------
 
 .. automodule:: datadog_api_client.v1.model.organization_create_body
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.organization\_create\_response module
--------------------------------------------------------------------
+organization\_create\_response
+------------------------------
 
 .. automodule:: datadog_api_client.v1.model.organization_create_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.organization\_list\_response module
------------------------------------------------------------------
+organization\_list\_response
+----------------------------
 
 .. automodule:: datadog_api_client.v1.model.organization_list_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.organization\_response module
------------------------------------------------------------
+organization\_response
+----------------------
 
 .. automodule:: datadog_api_client.v1.model.organization_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.organization\_settings module
------------------------------------------------------------
+organization\_settings
+----------------------
 
 .. automodule:: datadog_api_client.v1.model.organization_settings
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.organization\_settings\_saml module
------------------------------------------------------------------
+organization\_settings\_saml
+----------------------------
 
 .. automodule:: datadog_api_client.v1.model.organization_settings_saml
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.organization\_settings\_saml\_autocreate\_users\_domains module
----------------------------------------------------------------------------------------------
+organization\_settings\_saml\_autocreate\_users\_domains
+--------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.organization_settings_saml_autocreate_users_domains
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.organization\_settings\_saml\_idp\_initiated\_login module
-----------------------------------------------------------------------------------------
+organization\_settings\_saml\_idp\_initiated\_login
+---------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.organization_settings_saml_idp_initiated_login
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.organization\_settings\_saml\_strict\_mode module
--------------------------------------------------------------------------------
+organization\_settings\_saml\_strict\_mode
+------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.organization_settings_saml_strict_mode
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.organization\_subscription module
----------------------------------------------------------------
+organization\_subscription
+--------------------------
 
 .. automodule:: datadog_api_client.v1.model.organization_subscription
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.pager\_duty\_service module
----------------------------------------------------------
+pager\_duty\_service
+--------------------
 
 .. automodule:: datadog_api_client.v1.model.pager_duty_service
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.pager\_duty\_service\_key module
---------------------------------------------------------------
+pager\_duty\_service\_key
+-------------------------
 
 .. automodule:: datadog_api_client.v1.model.pager_duty_service_key
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.pager\_duty\_service\_name module
----------------------------------------------------------------
+pager\_duty\_service\_name
+--------------------------
 
 .. automodule:: datadog_api_client.v1.model.pager_duty_service_name
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.pagination module
------------------------------------------------
+pagination
+----------
 
 .. automodule:: datadog_api_client.v1.model.pagination
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.point module
-------------------------------------------
+point
+-----
 
 .. automodule:: datadog_api_client.v1.model.point
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.powerpack\_template\_variable\_contents module
-----------------------------------------------------------------------------
+powerpack\_template\_variable\_contents
+---------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.powerpack_template_variable_contents
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.powerpack\_template\_variables module
--------------------------------------------------------------------
+powerpack\_template\_variables
+------------------------------
 
 .. automodule:: datadog_api_client.v1.model.powerpack_template_variables
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.powerpack\_widget\_definition module
-------------------------------------------------------------------
+powerpack\_widget\_definition
+-----------------------------
 
 .. automodule:: datadog_api_client.v1.model.powerpack_widget_definition
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.powerpack\_widget\_definition\_type module
-------------------------------------------------------------------------
+powerpack\_widget\_definition\_type
+-----------------------------------
 
 .. automodule:: datadog_api_client.v1.model.powerpack_widget_definition_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.process\_query\_definition module
----------------------------------------------------------------
+process\_query\_definition
+--------------------------
 
 .. automodule:: datadog_api_client.v1.model.process_query_definition
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.query\_sort\_order module
--------------------------------------------------------
+query\_sort\_order
+------------------
 
 .. automodule:: datadog_api_client.v1.model.query_sort_order
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.query\_value\_widget\_definition module
----------------------------------------------------------------------
+query\_value\_widget\_definition
+--------------------------------
 
 .. automodule:: datadog_api_client.v1.model.query_value_widget_definition
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.query\_value\_widget\_definition\_type module
----------------------------------------------------------------------------
+query\_value\_widget\_definition\_type
+--------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.query_value_widget_definition_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.query\_value\_widget\_request module
-------------------------------------------------------------------
+query\_value\_widget\_request
+-----------------------------
 
 .. automodule:: datadog_api_client.v1.model.query_value_widget_request
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.reference\_table\_logs\_lookup\_processor module
-------------------------------------------------------------------------------
+reference\_table\_logs\_lookup\_processor
+-----------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.reference_table_logs_lookup_processor
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.response\_meta\_attributes module
----------------------------------------------------------------
+response\_meta\_attributes
+--------------------------
 
 .. automodule:: datadog_api_client.v1.model.response_meta_attributes
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.run\_workflow\_widget\_definition module
-----------------------------------------------------------------------
+run\_workflow\_widget\_definition
+---------------------------------
 
 .. automodule:: datadog_api_client.v1.model.run_workflow_widget_definition
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.run\_workflow\_widget\_definition\_type module
-----------------------------------------------------------------------------
+run\_workflow\_widget\_definition\_type
+---------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.run_workflow_widget_definition_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.run\_workflow\_widget\_input module
------------------------------------------------------------------
+run\_workflow\_widget\_input
+----------------------------
 
 .. automodule:: datadog_api_client.v1.model.run_workflow_widget_input
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.scatter\_plot\_request module
------------------------------------------------------------
+scatter\_plot\_request
+----------------------
 
 .. automodule:: datadog_api_client.v1.model.scatter_plot_request
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.scatter\_plot\_widget\_definition module
-----------------------------------------------------------------------
+scatter\_plot\_widget\_definition
+---------------------------------
 
 .. automodule:: datadog_api_client.v1.model.scatter_plot_widget_definition
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.scatter\_plot\_widget\_definition\_requests module
---------------------------------------------------------------------------------
+scatter\_plot\_widget\_definition\_requests
+-------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.scatter_plot_widget_definition_requests
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.scatter\_plot\_widget\_definition\_type module
-----------------------------------------------------------------------------
+scatter\_plot\_widget\_definition\_type
+---------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.scatter_plot_widget_definition_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.scatterplot\_dimension module
------------------------------------------------------------
+scatterplot\_dimension
+----------------------
 
 .. automodule:: datadog_api_client.v1.model.scatterplot_dimension
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.scatterplot\_table\_request module
-----------------------------------------------------------------
+scatterplot\_table\_request
+---------------------------
 
 .. automodule:: datadog_api_client.v1.model.scatterplot_table_request
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.scatterplot\_widget\_aggregator module
---------------------------------------------------------------------
+scatterplot\_widget\_aggregator
+-------------------------------
 
 .. automodule:: datadog_api_client.v1.model.scatterplot_widget_aggregator
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.scatterplot\_widget\_formula module
------------------------------------------------------------------
+scatterplot\_widget\_formula
+----------------------------
 
 .. automodule:: datadog_api_client.v1.model.scatterplot_widget_formula
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.search\_service\_level\_objective module
-----------------------------------------------------------------------
+search\_service\_level\_objective
+---------------------------------
 
 .. automodule:: datadog_api_client.v1.model.search_service_level_objective
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.search\_service\_level\_objective\_attributes module
-----------------------------------------------------------------------------------
+search\_service\_level\_objective\_attributes
+---------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.search_service_level_objective_attributes
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.search\_service\_level\_objective\_data module
-----------------------------------------------------------------------------
+search\_service\_level\_objective\_data
+---------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.search_service_level_objective_data
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.search\_slo\_query module
--------------------------------------------------------
+search\_slo\_query
+------------------
 
 .. automodule:: datadog_api_client.v1.model.search_slo_query
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.search\_slo\_response module
-----------------------------------------------------------
+search\_slo\_response
+---------------------
 
 .. automodule:: datadog_api_client.v1.model.search_slo_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.search\_slo\_response\_data module
-----------------------------------------------------------------
+search\_slo\_response\_data
+---------------------------
 
 .. automodule:: datadog_api_client.v1.model.search_slo_response_data
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.search\_slo\_response\_data\_attributes module
-----------------------------------------------------------------------------
+search\_slo\_response\_data\_attributes
+---------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.search_slo_response_data_attributes
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.search\_slo\_response\_data\_attributes\_facets module
-------------------------------------------------------------------------------------
+search\_slo\_response\_data\_attributes\_facets
+-----------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.search_slo_response_data_attributes_facets
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.search\_slo\_response\_data\_attributes\_facets\_object\_int module
--------------------------------------------------------------------------------------------------
+search\_slo\_response\_data\_attributes\_facets\_object\_int
+------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.search_slo_response_data_attributes_facets_object_int
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.search\_slo\_response\_data\_attributes\_facets\_object\_string module
-----------------------------------------------------------------------------------------------------
+search\_slo\_response\_data\_attributes\_facets\_object\_string
+---------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.search_slo_response_data_attributes_facets_object_string
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.search\_slo\_response\_links module
------------------------------------------------------------------
+search\_slo\_response\_links
+----------------------------
 
 .. automodule:: datadog_api_client.v1.model.search_slo_response_links
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.search\_slo\_response\_meta module
-----------------------------------------------------------------
+search\_slo\_response\_meta
+---------------------------
 
 .. automodule:: datadog_api_client.v1.model.search_slo_response_meta
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.search\_slo\_response\_meta\_page module
-----------------------------------------------------------------------
+search\_slo\_response\_meta\_page
+---------------------------------
 
 .. automodule:: datadog_api_client.v1.model.search_slo_response_meta_page
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.search\_slo\_threshold module
------------------------------------------------------------
+search\_slo\_threshold
+----------------------
 
 .. automodule:: datadog_api_client.v1.model.search_slo_threshold
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.search\_slo\_timeframe module
------------------------------------------------------------
+search\_slo\_timeframe
+----------------------
 
 .. automodule:: datadog_api_client.v1.model.search_slo_timeframe
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.selectable\_template\_variable\_items module
---------------------------------------------------------------------------
+selectable\_template\_variable\_items
+-------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.selectable_template_variable_items
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.series module
--------------------------------------------
+series
+------
 
 .. automodule:: datadog_api_client.v1.model.series
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.service\_check module
----------------------------------------------------
+service\_check
+--------------
 
 .. automodule:: datadog_api_client.v1.model.service_check
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.service\_check\_status module
------------------------------------------------------------
+service\_check\_status
+----------------------
 
 .. automodule:: datadog_api_client.v1.model.service_check_status
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.service\_checks module
-----------------------------------------------------
+service\_checks
+---------------
 
 .. automodule:: datadog_api_client.v1.model.service_checks
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.service\_level\_objective module
---------------------------------------------------------------
+service\_level\_objective
+-------------------------
 
 .. automodule:: datadog_api_client.v1.model.service_level_objective
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.service\_level\_objective\_query module
----------------------------------------------------------------------
+service\_level\_objective\_query
+--------------------------------
 
 .. automodule:: datadog_api_client.v1.model.service_level_objective_query
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.service\_level\_objective\_request module
------------------------------------------------------------------------
+service\_level\_objective\_request
+----------------------------------
 
 .. automodule:: datadog_api_client.v1.model.service_level_objective_request
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.service\_map\_widget\_definition module
----------------------------------------------------------------------
+service\_map\_widget\_definition
+--------------------------------
 
 .. automodule:: datadog_api_client.v1.model.service_map_widget_definition
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.service\_map\_widget\_definition\_type module
----------------------------------------------------------------------------
+service\_map\_widget\_definition\_type
+--------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.service_map_widget_definition_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.service\_summary\_widget\_definition module
--------------------------------------------------------------------------
+service\_summary\_widget\_definition
+------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.service_summary_widget_definition
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.service\_summary\_widget\_definition\_type module
--------------------------------------------------------------------------------
+service\_summary\_widget\_definition\_type
+------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.service_summary_widget_definition_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.shared\_dashboard module
-------------------------------------------------------
+shared\_dashboard
+-----------------
 
 .. automodule:: datadog_api_client.v1.model.shared_dashboard
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.shared\_dashboard\_author module
---------------------------------------------------------------
+shared\_dashboard\_author
+-------------------------
 
 .. automodule:: datadog_api_client.v1.model.shared_dashboard_author
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.shared\_dashboard\_invites module
----------------------------------------------------------------
+shared\_dashboard\_invites
+--------------------------
 
 .. automodule:: datadog_api_client.v1.model.shared_dashboard_invites
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.shared\_dashboard\_invites\_data module
----------------------------------------------------------------------
+shared\_dashboard\_invites\_data
+--------------------------------
 
 .. automodule:: datadog_api_client.v1.model.shared_dashboard_invites_data
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.shared\_dashboard\_invites\_data\_list module
----------------------------------------------------------------------------
+shared\_dashboard\_invites\_data\_list
+--------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.shared_dashboard_invites_data_list
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.shared\_dashboard\_invites\_data\_object module
------------------------------------------------------------------------------
+shared\_dashboard\_invites\_data\_object
+----------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.shared_dashboard_invites_data_object
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.shared\_dashboard\_invites\_data\_object\_attributes module
------------------------------------------------------------------------------------------
+shared\_dashboard\_invites\_data\_object\_attributes
+----------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.shared_dashboard_invites_data_object_attributes
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.shared\_dashboard\_invites\_meta module
----------------------------------------------------------------------
+shared\_dashboard\_invites\_meta
+--------------------------------
 
 .. automodule:: datadog_api_client.v1.model.shared_dashboard_invites_meta
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.shared\_dashboard\_invites\_meta\_page module
----------------------------------------------------------------------------
+shared\_dashboard\_invites\_meta\_page
+--------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.shared_dashboard_invites_meta_page
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.shared\_dashboard\_update\_request module
------------------------------------------------------------------------
+shared\_dashboard\_update\_request
+----------------------------------
 
 .. automodule:: datadog_api_client.v1.model.shared_dashboard_update_request
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.shared\_dashboard\_update\_request\_global\_time module
--------------------------------------------------------------------------------------
+shared\_dashboard\_update\_request\_global\_time
+------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.shared_dashboard_update_request_global_time
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.signal\_archive\_reason module
-------------------------------------------------------------
+signal\_archive\_reason
+-----------------------
 
 .. automodule:: datadog_api_client.v1.model.signal_archive_reason
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.signal\_assignee\_update\_request module
-----------------------------------------------------------------------
+signal\_assignee\_update\_request
+---------------------------------
 
 .. automodule:: datadog_api_client.v1.model.signal_assignee_update_request
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.signal\_state\_update\_request module
--------------------------------------------------------------------
+signal\_state\_update\_request
+------------------------------
 
 .. automodule:: datadog_api_client.v1.model.signal_state_update_request
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.signal\_triage\_state module
-----------------------------------------------------------
+signal\_triage\_state
+---------------------
 
 .. automodule:: datadog_api_client.v1.model.signal_triage_state
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.slack\_integration\_channel module
-----------------------------------------------------------------
+slack\_integration\_channel
+---------------------------
 
 .. automodule:: datadog_api_client.v1.model.slack_integration_channel
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.slack\_integration\_channel\_display module
--------------------------------------------------------------------------
+slack\_integration\_channel\_display
+------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.slack_integration_channel_display
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.slack\_integration\_channels module
------------------------------------------------------------------
+slack\_integration\_channels
+----------------------------
 
 .. automodule:: datadog_api_client.v1.model.slack_integration_channels
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.slo\_bulk\_delete module
-------------------------------------------------------
+slo\_bulk\_delete
+-----------------
 
 .. automodule:: datadog_api_client.v1.model.slo_bulk_delete
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.slo\_bulk\_delete\_error module
--------------------------------------------------------------
+slo\_bulk\_delete\_error
+------------------------
 
 .. automodule:: datadog_api_client.v1.model.slo_bulk_delete_error
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.slo\_bulk\_delete\_response module
-----------------------------------------------------------------
+slo\_bulk\_delete\_response
+---------------------------
 
 .. automodule:: datadog_api_client.v1.model.slo_bulk_delete_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.slo\_bulk\_delete\_response\_data module
-----------------------------------------------------------------------
+slo\_bulk\_delete\_response\_data
+---------------------------------
 
 .. automodule:: datadog_api_client.v1.model.slo_bulk_delete_response_data
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.slo\_correction module
-----------------------------------------------------
+slo\_correction
+---------------
 
 .. automodule:: datadog_api_client.v1.model.slo_correction
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.slo\_correction\_category module
---------------------------------------------------------------
+slo\_correction\_category
+-------------------------
 
 .. automodule:: datadog_api_client.v1.model.slo_correction_category
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.slo\_correction\_create\_data module
-------------------------------------------------------------------
+slo\_correction\_create\_data
+-----------------------------
 
 .. automodule:: datadog_api_client.v1.model.slo_correction_create_data
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.slo\_correction\_create\_request module
----------------------------------------------------------------------
+slo\_correction\_create\_request
+--------------------------------
 
 .. automodule:: datadog_api_client.v1.model.slo_correction_create_request
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.slo\_correction\_create\_request\_attributes module
----------------------------------------------------------------------------------
+slo\_correction\_create\_request\_attributes
+--------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.slo_correction_create_request_attributes
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.slo\_correction\_list\_response module
---------------------------------------------------------------------
+slo\_correction\_list\_response
+-------------------------------
 
 .. automodule:: datadog_api_client.v1.model.slo_correction_list_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.slo\_correction\_response module
---------------------------------------------------------------
+slo\_correction\_response
+-------------------------
 
 .. automodule:: datadog_api_client.v1.model.slo_correction_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.slo\_correction\_response\_attributes module
---------------------------------------------------------------------------
+slo\_correction\_response\_attributes
+-------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.slo_correction_response_attributes
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.slo\_correction\_response\_attributes\_modifier module
-------------------------------------------------------------------------------------
+slo\_correction\_response\_attributes\_modifier
+-----------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.slo_correction_response_attributes_modifier
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.slo\_correction\_type module
-----------------------------------------------------------
+slo\_correction\_type
+---------------------
 
 .. automodule:: datadog_api_client.v1.model.slo_correction_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.slo\_correction\_update\_data module
-------------------------------------------------------------------
+slo\_correction\_update\_data
+-----------------------------
 
 .. automodule:: datadog_api_client.v1.model.slo_correction_update_data
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.slo\_correction\_update\_request module
----------------------------------------------------------------------
+slo\_correction\_update\_request
+--------------------------------
 
 .. automodule:: datadog_api_client.v1.model.slo_correction_update_request
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.slo\_correction\_update\_request\_attributes module
----------------------------------------------------------------------------------
+slo\_correction\_update\_request\_attributes
+--------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.slo_correction_update_request_attributes
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.slo\_creator module
--------------------------------------------------
+slo\_creator
+------------
 
 .. automodule:: datadog_api_client.v1.model.slo_creator
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.slo\_data\_source\_query\_definition module
--------------------------------------------------------------------------
+slo\_data\_source\_query\_definition
+------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.slo_data_source_query_definition
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.slo\_delete\_response module
-----------------------------------------------------------
+slo\_delete\_response
+---------------------
 
 .. automodule:: datadog_api_client.v1.model.slo_delete_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.slo\_error\_budget\_remaining\_data module
-------------------------------------------------------------------------
+slo\_error\_budget\_remaining\_data
+-----------------------------------
 
 .. automodule:: datadog_api_client.v1.model.slo_error_budget_remaining_data
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.slo\_error\_timeframe module
-----------------------------------------------------------
+slo\_error\_timeframe
+---------------------
 
 .. automodule:: datadog_api_client.v1.model.slo_error_timeframe
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.slo\_formula module
--------------------------------------------------
+slo\_formula
+------------
 
 .. automodule:: datadog_api_client.v1.model.slo_formula
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.slo\_history\_metrics module
-----------------------------------------------------------
+slo\_history\_metrics
+---------------------
 
 .. automodule:: datadog_api_client.v1.model.slo_history_metrics
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.slo\_history\_metrics\_series module
-------------------------------------------------------------------
+slo\_history\_metrics\_series
+-----------------------------
 
 .. automodule:: datadog_api_client.v1.model.slo_history_metrics_series
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.slo\_history\_metrics\_series\_metadata module
-----------------------------------------------------------------------------
+slo\_history\_metrics\_series\_metadata
+---------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.slo_history_metrics_series_metadata
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.slo\_history\_metrics\_series\_metadata\_unit module
-----------------------------------------------------------------------------------
+slo\_history\_metrics\_series\_metadata\_unit
+---------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.slo_history_metrics_series_metadata_unit
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.slo\_history\_monitor module
-----------------------------------------------------------
+slo\_history\_monitor
+---------------------
 
 .. automodule:: datadog_api_client.v1.model.slo_history_monitor
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.slo\_history\_response module
------------------------------------------------------------
+slo\_history\_response
+----------------------
 
 .. automodule:: datadog_api_client.v1.model.slo_history_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.slo\_history\_response\_data module
------------------------------------------------------------------
+slo\_history\_response\_data
+----------------------------
 
 .. automodule:: datadog_api_client.v1.model.slo_history_response_data
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.slo\_history\_response\_error module
-------------------------------------------------------------------
+slo\_history\_response\_error
+-----------------------------
 
 .. automodule:: datadog_api_client.v1.model.slo_history_response_error
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.slo\_history\_response\_error\_with\_type module
-------------------------------------------------------------------------------
+slo\_history\_response\_error\_with\_type
+-----------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.slo_history_response_error_with_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.slo\_history\_sli\_data module
-------------------------------------------------------------
+slo\_history\_sli\_data
+-----------------------
 
 .. automodule:: datadog_api_client.v1.model.slo_history_sli_data
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.slo\_list\_response module
---------------------------------------------------------
+slo\_list\_response
+-------------------
 
 .. automodule:: datadog_api_client.v1.model.slo_list_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.slo\_list\_response\_metadata module
-------------------------------------------------------------------
+slo\_list\_response\_metadata
+-----------------------------
 
 .. automodule:: datadog_api_client.v1.model.slo_list_response_metadata
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.slo\_list\_response\_metadata\_page module
-------------------------------------------------------------------------
+slo\_list\_response\_metadata\_page
+-----------------------------------
 
 .. automodule:: datadog_api_client.v1.model.slo_list_response_metadata_page
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.slo\_list\_widget\_definition module
-------------------------------------------------------------------
+slo\_list\_widget\_definition
+-----------------------------
 
 .. automodule:: datadog_api_client.v1.model.slo_list_widget_definition
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.slo\_list\_widget\_definition\_type module
-------------------------------------------------------------------------
+slo\_list\_widget\_definition\_type
+-----------------------------------
 
 .. automodule:: datadog_api_client.v1.model.slo_list_widget_definition_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.slo\_list\_widget\_query module
--------------------------------------------------------------
+slo\_list\_widget\_query
+------------------------
 
 .. automodule:: datadog_api_client.v1.model.slo_list_widget_query
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.slo\_list\_widget\_request module
----------------------------------------------------------------
+slo\_list\_widget\_request
+--------------------------
 
 .. automodule:: datadog_api_client.v1.model.slo_list_widget_request
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.slo\_list\_widget\_request\_type module
----------------------------------------------------------------------
+slo\_list\_widget\_request\_type
+--------------------------------
 
 .. automodule:: datadog_api_client.v1.model.slo_list_widget_request_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.slo\_overall\_statuses module
------------------------------------------------------------
+slo\_overall\_statuses
+----------------------
 
 .. automodule:: datadog_api_client.v1.model.slo_overall_statuses
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.slo\_raw\_error\_budget\_remaining module
------------------------------------------------------------------------
+slo\_raw\_error\_budget\_remaining
+----------------------------------
 
 .. automodule:: datadog_api_client.v1.model.slo_raw_error_budget_remaining
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.slo\_response module
---------------------------------------------------
+slo\_response
+-------------
 
 .. automodule:: datadog_api_client.v1.model.slo_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.slo\_response\_data module
---------------------------------------------------------
+slo\_response\_data
+-------------------
 
 .. automodule:: datadog_api_client.v1.model.slo_response_data
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.slo\_sli\_spec module
----------------------------------------------------
+slo\_sli\_spec
+--------------
 
 .. automodule:: datadog_api_client.v1.model.slo_sli_spec
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.slo\_state module
------------------------------------------------
+slo\_state
+----------
 
 .. automodule:: datadog_api_client.v1.model.slo_state
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.slo\_status module
-------------------------------------------------
+slo\_status
+-----------
 
 .. automodule:: datadog_api_client.v1.model.slo_status
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.slo\_threshold module
----------------------------------------------------
+slo\_threshold
+--------------
 
 .. automodule:: datadog_api_client.v1.model.slo_threshold
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.slo\_time\_slice\_comparator module
------------------------------------------------------------------
+slo\_time\_slice\_comparator
+----------------------------
 
 .. automodule:: datadog_api_client.v1.model.slo_time_slice_comparator
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.slo\_time\_slice\_condition module
-----------------------------------------------------------------
+slo\_time\_slice\_condition
+---------------------------
 
 .. automodule:: datadog_api_client.v1.model.slo_time_slice_condition
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.slo\_time\_slice\_interval module
----------------------------------------------------------------
+slo\_time\_slice\_interval
+--------------------------
 
 .. automodule:: datadog_api_client.v1.model.slo_time_slice_interval
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.slo\_time\_slice\_query module
-------------------------------------------------------------
+slo\_time\_slice\_query
+-----------------------
 
 .. automodule:: datadog_api_client.v1.model.slo_time_slice_query
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.slo\_time\_slice\_spec module
------------------------------------------------------------
+slo\_time\_slice\_spec
+----------------------
 
 .. automodule:: datadog_api_client.v1.model.slo_time_slice_spec
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.slo\_timeframe module
----------------------------------------------------
+slo\_timeframe
+--------------
 
 .. automodule:: datadog_api_client.v1.model.slo_timeframe
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.slo\_type module
-----------------------------------------------
+slo\_type
+---------
 
 .. automodule:: datadog_api_client.v1.model.slo_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.slo\_type\_numeric module
--------------------------------------------------------
+slo\_type\_numeric
+------------------
 
 .. automodule:: datadog_api_client.v1.model.slo_type_numeric
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.slo\_widget\_definition module
-------------------------------------------------------------
+slo\_widget\_definition
+-----------------------
 
 .. automodule:: datadog_api_client.v1.model.slo_widget_definition
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.slo\_widget\_definition\_type module
-------------------------------------------------------------------
+slo\_widget\_definition\_type
+-----------------------------
 
 .. automodule:: datadog_api_client.v1.model.slo_widget_definition_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.split\_config module
---------------------------------------------------
+split\_config
+-------------
 
 .. automodule:: datadog_api_client.v1.model.split_config
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.split\_config\_sort\_compute module
------------------------------------------------------------------
+split\_config\_sort\_compute
+----------------------------
 
 .. automodule:: datadog_api_client.v1.model.split_config_sort_compute
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.split\_dimension module
------------------------------------------------------
+split\_dimension
+----------------
 
 .. automodule:: datadog_api_client.v1.model.split_dimension
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.split\_graph\_source\_widget\_definition module
------------------------------------------------------------------------------
+split\_graph\_source\_widget\_definition
+----------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.split_graph_source_widget_definition
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.split\_graph\_viz\_size module
-------------------------------------------------------------
+split\_graph\_viz\_size
+-----------------------
 
 .. automodule:: datadog_api_client.v1.model.split_graph_viz_size
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.split\_graph\_widget\_definition module
----------------------------------------------------------------------
+split\_graph\_widget\_definition
+--------------------------------
 
 .. automodule:: datadog_api_client.v1.model.split_graph_widget_definition
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.split\_graph\_widget\_definition\_type module
----------------------------------------------------------------------------
+split\_graph\_widget\_definition\_type
+--------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.split_graph_widget_definition_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.split\_sort module
-------------------------------------------------
+split\_sort
+-----------
 
 .. automodule:: datadog_api_client.v1.model.split_sort
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.split\_vector\_entry\_item module
----------------------------------------------------------------
+split\_vector\_entry\_item
+--------------------------
 
 .. automodule:: datadog_api_client.v1.model.split_vector_entry_item
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.successful\_signal\_update\_response module
--------------------------------------------------------------------------
+successful\_signal\_update\_response
+------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.successful_signal_update_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.sunburst\_widget\_definition module
------------------------------------------------------------------
+sunburst\_widget\_definition
+----------------------------
 
 .. automodule:: datadog_api_client.v1.model.sunburst_widget_definition
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.sunburst\_widget\_definition\_type module
------------------------------------------------------------------------
+sunburst\_widget\_definition\_type
+----------------------------------
 
 .. automodule:: datadog_api_client.v1.model.sunburst_widget_definition_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.sunburst\_widget\_legend module
--------------------------------------------------------------
+sunburst\_widget\_legend
+------------------------
 
 .. automodule:: datadog_api_client.v1.model.sunburst_widget_legend
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.sunburst\_widget\_legend\_inline\_automatic module
---------------------------------------------------------------------------------
+sunburst\_widget\_legend\_inline\_automatic
+-------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.sunburst_widget_legend_inline_automatic
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.sunburst\_widget\_legend\_inline\_automatic\_type module
---------------------------------------------------------------------------------------
+sunburst\_widget\_legend\_inline\_automatic\_type
+-------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.sunburst_widget_legend_inline_automatic_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.sunburst\_widget\_legend\_table module
---------------------------------------------------------------------
+sunburst\_widget\_legend\_table
+-------------------------------
 
 .. automodule:: datadog_api_client.v1.model.sunburst_widget_legend_table
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.sunburst\_widget\_legend\_table\_type module
---------------------------------------------------------------------------
+sunburst\_widget\_legend\_table\_type
+-------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.sunburst_widget_legend_table_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.sunburst\_widget\_request module
---------------------------------------------------------------
+sunburst\_widget\_request
+-------------------------
 
 .. automodule:: datadog_api_client.v1.model.sunburst_widget_request
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_api\_step module
-----------------------------------------------------------
+synthetics\_api\_step
+---------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_api_step
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_api\_test module
-----------------------------------------------------------
+synthetics\_api\_test
+---------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_api_test
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_api\_test\_config module
-------------------------------------------------------------------
+synthetics\_api\_test\_config
+-----------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_api_test_config
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_api\_test\_failure\_code module
--------------------------------------------------------------------------
+synthetics\_api\_test\_failure\_code
+------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_api_test_failure_code
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_api\_test\_result\_data module
-------------------------------------------------------------------------
+synthetics\_api\_test\_result\_data
+-----------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_api_test_result_data
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_api\_test\_result\_failure module
----------------------------------------------------------------------------
+synthetics\_api\_test\_result\_failure
+--------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_api_test_result_failure
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_api\_test\_result\_full module
-------------------------------------------------------------------------
+synthetics\_api\_test\_result\_full
+-----------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_api_test_result_full
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_api\_test\_result\_full\_check module
--------------------------------------------------------------------------------
+synthetics\_api\_test\_result\_full\_check
+------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_api_test_result_full_check
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_api\_test\_result\_short module
--------------------------------------------------------------------------
+synthetics\_api\_test\_result\_short
+------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_api_test_result_short
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_api\_test\_result\_short\_result module
----------------------------------------------------------------------------------
+synthetics\_api\_test\_result\_short\_result
+--------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_api_test_result_short_result
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_api\_test\_step module
-----------------------------------------------------------------
+synthetics\_api\_test\_step
+---------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_api_test_step
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_api\_test\_step\_subtype module
--------------------------------------------------------------------------
+synthetics\_api\_test\_step\_subtype
+------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_api_test_step_subtype
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_api\_test\_type module
-----------------------------------------------------------------
+synthetics\_api\_test\_type
+---------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_api_test_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_api\_wait\_step module
-----------------------------------------------------------------
+synthetics\_api\_wait\_step
+---------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_api_wait_step
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_api\_wait\_step\_subtype module
--------------------------------------------------------------------------
+synthetics\_api\_wait\_step\_subtype
+------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_api_wait_step_subtype
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_assertion module
-----------------------------------------------------------
+synthetics\_assertion
+---------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_assertion
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_assertion\_body\_hash\_operator module
---------------------------------------------------------------------------------
+synthetics\_assertion\_body\_hash\_operator
+-------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_assertion_body_hash_operator
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_assertion\_body\_hash\_target module
-------------------------------------------------------------------------------
+synthetics\_assertion\_body\_hash\_target
+-----------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_assertion_body_hash_target
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_assertion\_body\_hash\_type module
-----------------------------------------------------------------------------
+synthetics\_assertion\_body\_hash\_type
+---------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_assertion_body_hash_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_assertion\_javascript module
-----------------------------------------------------------------------
+synthetics\_assertion\_javascript
+---------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_assertion_javascript
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_assertion\_javascript\_type module
-----------------------------------------------------------------------------
+synthetics\_assertion\_javascript\_type
+---------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_assertion_javascript_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_assertion\_json\_path\_operator module
---------------------------------------------------------------------------------
+synthetics\_assertion\_json\_path\_operator
+-------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_assertion_json_path_operator
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_assertion\_json\_path\_target module
-------------------------------------------------------------------------------
+synthetics\_assertion\_json\_path\_target
+-----------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_assertion_json_path_target
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_assertion\_json\_path\_target\_target module
---------------------------------------------------------------------------------------
+synthetics\_assertion\_json\_path\_target\_target
+-------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_assertion_json_path_target_target
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_assertion\_json\_schema\_meta\_schema module
---------------------------------------------------------------------------------------
+synthetics\_assertion\_json\_schema\_meta\_schema
+-------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_assertion_json_schema_meta_schema
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_assertion\_json\_schema\_operator module
-----------------------------------------------------------------------------------
+synthetics\_assertion\_json\_schema\_operator
+---------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_assertion_json_schema_operator
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_assertion\_json\_schema\_target module
---------------------------------------------------------------------------------
+synthetics\_assertion\_json\_schema\_target
+-------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_assertion_json_schema_target
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_assertion\_json\_schema\_target\_target module
-----------------------------------------------------------------------------------------
+synthetics\_assertion\_json\_schema\_target\_target
+---------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_assertion_json_schema_target_target
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_assertion\_operator module
---------------------------------------------------------------------
+synthetics\_assertion\_operator
+-------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_assertion_operator
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_assertion\_target module
-------------------------------------------------------------------
+synthetics\_assertion\_target
+-----------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_assertion_target
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_assertion\_timings\_scope module
---------------------------------------------------------------------------
+synthetics\_assertion\_timings\_scope
+-------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_assertion_timings_scope
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_assertion\_type module
-----------------------------------------------------------------
+synthetics\_assertion\_type
+---------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_assertion_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_assertion\_x\_path\_operator module
------------------------------------------------------------------------------
+synthetics\_assertion\_x\_path\_operator
+----------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_assertion_x_path_operator
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_assertion\_x\_path\_target module
----------------------------------------------------------------------------
+synthetics\_assertion\_x\_path\_target
+--------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_assertion_x_path_target
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_assertion\_x\_path\_target\_target module
------------------------------------------------------------------------------------
+synthetics\_assertion\_x\_path\_target\_target
+----------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_assertion_x_path_target_target
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_basic\_auth module
-------------------------------------------------------------
+synthetics\_basic\_auth
+-----------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_basic_auth
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_basic\_auth\_digest module
---------------------------------------------------------------------
+synthetics\_basic\_auth\_digest
+-------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_basic_auth_digest
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_basic\_auth\_digest\_type module
---------------------------------------------------------------------------
+synthetics\_basic\_auth\_digest\_type
+-------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_basic_auth_digest_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_basic\_auth\_ntlm module
-------------------------------------------------------------------
+synthetics\_basic\_auth\_ntlm
+-----------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_basic_auth_ntlm
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_basic\_auth\_ntlm\_type module
-------------------------------------------------------------------------
+synthetics\_basic\_auth\_ntlm\_type
+-----------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_basic_auth_ntlm_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_basic\_auth\_oauth\_client module
----------------------------------------------------------------------------
+synthetics\_basic\_auth\_oauth\_client
+--------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_basic_auth_oauth_client
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_basic\_auth\_oauth\_client\_type module
----------------------------------------------------------------------------------
+synthetics\_basic\_auth\_oauth\_client\_type
+--------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_basic_auth_oauth_client_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_basic\_auth\_oauth\_rop module
-------------------------------------------------------------------------
+synthetics\_basic\_auth\_oauth\_rop
+-----------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_basic_auth_oauth_rop
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_basic\_auth\_oauth\_rop\_type module
-------------------------------------------------------------------------------
+synthetics\_basic\_auth\_oauth\_rop\_type
+-----------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_basic_auth_oauth_rop_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_basic\_auth\_oauth\_token\_api\_authentication module
------------------------------------------------------------------------------------------------
+synthetics\_basic\_auth\_oauth\_token\_api\_authentication
+----------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_basic_auth_oauth_token_api_authentication
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_basic\_auth\_sigv4 module
--------------------------------------------------------------------
+synthetics\_basic\_auth\_sigv4
+------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_basic_auth_sigv4
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_basic\_auth\_sigv4\_type module
--------------------------------------------------------------------------
+synthetics\_basic\_auth\_sigv4\_type
+------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_basic_auth_sigv4_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_basic\_auth\_web module
------------------------------------------------------------------
+synthetics\_basic\_auth\_web
+----------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_basic_auth_web
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_basic\_auth\_web\_type module
------------------------------------------------------------------------
+synthetics\_basic\_auth\_web\_type
+----------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_basic_auth_web_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_batch\_details module
----------------------------------------------------------------
+synthetics\_batch\_details
+--------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_batch_details
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_batch\_details\_data module
----------------------------------------------------------------------
+synthetics\_batch\_details\_data
+--------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_batch_details_data
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_batch\_result module
---------------------------------------------------------------
+synthetics\_batch\_result
+-------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_batch_result
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_browser\_error module
----------------------------------------------------------------
+synthetics\_browser\_error
+--------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_browser_error
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_browser\_error\_type module
----------------------------------------------------------------------
+synthetics\_browser\_error\_type
+--------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_browser_error_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_browser\_test module
---------------------------------------------------------------
+synthetics\_browser\_test
+-------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_browser_test
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_browser\_test\_config module
-----------------------------------------------------------------------
+synthetics\_browser\_test\_config
+---------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_browser_test_config
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_browser\_test\_failure\_code module
------------------------------------------------------------------------------
+synthetics\_browser\_test\_failure\_code
+----------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_browser_test_failure_code
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_browser\_test\_result\_data module
-----------------------------------------------------------------------------
+synthetics\_browser\_test\_result\_data
+---------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_browser_test_result_data
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_browser\_test\_result\_failure module
--------------------------------------------------------------------------------
+synthetics\_browser\_test\_result\_failure
+------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_browser_test_result_failure
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_browser\_test\_result\_full module
-----------------------------------------------------------------------------
+synthetics\_browser\_test\_result\_full
+---------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_browser_test_result_full
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_browser\_test\_result\_full\_check module
------------------------------------------------------------------------------------
+synthetics\_browser\_test\_result\_full\_check
+----------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_browser_test_result_full_check
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_browser\_test\_result\_short module
------------------------------------------------------------------------------
+synthetics\_browser\_test\_result\_short
+----------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_browser_test_result_short
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_browser\_test\_result\_short\_result module
--------------------------------------------------------------------------------------
+synthetics\_browser\_test\_result\_short\_result
+------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_browser_test_result_short_result
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_browser\_test\_rum\_settings module
------------------------------------------------------------------------------
+synthetics\_browser\_test\_rum\_settings
+----------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_browser_test_rum_settings
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_browser\_test\_type module
---------------------------------------------------------------------
+synthetics\_browser\_test\_type
+-------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_browser_test_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_browser\_variable module
-------------------------------------------------------------------
+synthetics\_browser\_variable
+-----------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_browser_variable
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_browser\_variable\_type module
-------------------------------------------------------------------------
+synthetics\_browser\_variable\_type
+-----------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_browser_variable_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_check\_type module
-------------------------------------------------------------
+synthetics\_check\_type
+-----------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_check_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_ci\_batch\_metadata module
---------------------------------------------------------------------
+synthetics\_ci\_batch\_metadata
+-------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_ci_batch_metadata
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_ci\_batch\_metadata\_ci module
-------------------------------------------------------------------------
+synthetics\_ci\_batch\_metadata\_ci
+-----------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_ci_batch_metadata_ci
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_ci\_batch\_metadata\_git module
--------------------------------------------------------------------------
+synthetics\_ci\_batch\_metadata\_git
+------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_ci_batch_metadata_git
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_ci\_batch\_metadata\_pipeline module
-------------------------------------------------------------------------------
+synthetics\_ci\_batch\_metadata\_pipeline
+-----------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_ci_batch_metadata_pipeline
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_ci\_batch\_metadata\_provider module
-------------------------------------------------------------------------------
+synthetics\_ci\_batch\_metadata\_provider
+-----------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_ci_batch_metadata_provider
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_ci\_test module
----------------------------------------------------------
+synthetics\_ci\_test
+--------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_ci_test
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_ci\_test\_body module
----------------------------------------------------------------
+synthetics\_ci\_test\_body
+--------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_ci_test_body
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_config\_variable module
------------------------------------------------------------------
+synthetics\_config\_variable
+----------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_config_variable
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_config\_variable\_type module
------------------------------------------------------------------------
+synthetics\_config\_variable\_type
+----------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_config_variable_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_core\_web\_vitals module
-------------------------------------------------------------------
+synthetics\_core\_web\_vitals
+-----------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_core_web_vitals
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_delete\_tests\_payload module
------------------------------------------------------------------------
+synthetics\_delete\_tests\_payload
+----------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_delete_tests_payload
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_delete\_tests\_response module
-------------------------------------------------------------------------
+synthetics\_delete\_tests\_response
+-----------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_delete_tests_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_deleted\_test module
---------------------------------------------------------------
+synthetics\_deleted\_test
+-------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_deleted_test
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_device module
--------------------------------------------------------
+synthetics\_device
+------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_device
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_device\_id module
------------------------------------------------------------
+synthetics\_device\_id
+----------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_device_id
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_fetch\_uptimes\_payload module
-------------------------------------------------------------------------
+synthetics\_fetch\_uptimes\_payload
+-----------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_fetch_uptimes_payload
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_get\_api\_test\_latest\_results\_response module
-------------------------------------------------------------------------------------------
+synthetics\_get\_api\_test\_latest\_results\_response
+-----------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_get_api_test_latest_results_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_get\_browser\_test\_latest\_results\_response module
-----------------------------------------------------------------------------------------------
+synthetics\_get\_browser\_test\_latest\_results\_response
+---------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_get_browser_test_latest_results_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_global\_variable module
------------------------------------------------------------------
+synthetics\_global\_variable
+----------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_global_variable
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_global\_variable\_attributes module
------------------------------------------------------------------------------
+synthetics\_global\_variable\_attributes
+----------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_global_variable_attributes
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_global\_variable\_options module
---------------------------------------------------------------------------
+synthetics\_global\_variable\_options
+-------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_global_variable_options
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_global\_variable\_parse\_test\_options module
----------------------------------------------------------------------------------------
+synthetics\_global\_variable\_parse\_test\_options
+--------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_global_variable_parse_test_options
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_global\_variable\_parse\_test\_options\_type module
----------------------------------------------------------------------------------------------
+synthetics\_global\_variable\_parse\_test\_options\_type
+--------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_global_variable_parse_test_options_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_global\_variable\_parser\_type module
--------------------------------------------------------------------------------
+synthetics\_global\_variable\_parser\_type
+------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_global_variable_parser_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_global\_variable\_request module
---------------------------------------------------------------------------
+synthetics\_global\_variable\_request
+-------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_global_variable_request
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_global\_variable\_totp\_parameters module
------------------------------------------------------------------------------------
+synthetics\_global\_variable\_totp\_parameters
+----------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_global_variable_totp_parameters
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_global\_variable\_value module
-------------------------------------------------------------------------
+synthetics\_global\_variable\_value
+-----------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_global_variable_value
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_list\_global\_variables\_response module
-----------------------------------------------------------------------------------
+synthetics\_list\_global\_variables\_response
+---------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_list_global_variables_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_list\_tests\_response module
-----------------------------------------------------------------------
+synthetics\_list\_tests\_response
+---------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_list_tests_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_local\_variable\_parsing\_options\_type module
-----------------------------------------------------------------------------------------
+synthetics\_local\_variable\_parsing\_options\_type
+---------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_local_variable_parsing_options_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_location module
----------------------------------------------------------
+synthetics\_location
+--------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_location
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_locations module
-----------------------------------------------------------
+synthetics\_locations
+---------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_locations
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_mobile\_step module
--------------------------------------------------------------
+synthetics\_mobile\_step
+------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_mobile_step
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_mobile\_step\_params module
----------------------------------------------------------------------
+synthetics\_mobile\_step\_params
+--------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_mobile_step_params
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_mobile\_step\_params\_direction module
---------------------------------------------------------------------------------
+synthetics\_mobile\_step\_params\_direction
+-------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_mobile_step_params_direction
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_mobile\_step\_params\_element module
-------------------------------------------------------------------------------
+synthetics\_mobile\_step\_params\_element
+-----------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_mobile_step_params_element
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_mobile\_step\_params\_element\_context\_type module
----------------------------------------------------------------------------------------------
+synthetics\_mobile\_step\_params\_element\_context\_type
+--------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_mobile_step_params_element_context_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_mobile\_step\_params\_element\_relative\_position module
---------------------------------------------------------------------------------------------------
+synthetics\_mobile\_step\_params\_element\_relative\_position
+-------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_mobile_step_params_element_relative_position
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_mobile\_step\_params\_element\_user\_locator module
----------------------------------------------------------------------------------------------
+synthetics\_mobile\_step\_params\_element\_user\_locator
+--------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_mobile_step_params_element_user_locator
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_mobile\_step\_params\_element\_user\_locator\_values\_items module
-------------------------------------------------------------------------------------------------------------
+synthetics\_mobile\_step\_params\_element\_user\_locator\_values\_items
+-----------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_mobile_step_params_element_user_locator_values_items
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_mobile\_step\_params\_element\_user\_locator\_values\_items\_type module
-------------------------------------------------------------------------------------------------------------------
+synthetics\_mobile\_step\_params\_element\_user\_locator\_values\_items\_type
+-----------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_mobile_step_params_element_user_locator_values_items_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_mobile\_step\_params\_positions\_items module
----------------------------------------------------------------------------------------
+synthetics\_mobile\_step\_params\_positions\_items
+--------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_mobile_step_params_positions_items
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_mobile\_step\_params\_value module
-----------------------------------------------------------------------------
+synthetics\_mobile\_step\_params\_value
+---------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_mobile_step_params_value
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_mobile\_step\_params\_variable module
--------------------------------------------------------------------------------
+synthetics\_mobile\_step\_params\_variable
+------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_mobile_step_params_variable
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_mobile\_step\_type module
--------------------------------------------------------------------
+synthetics\_mobile\_step\_type
+------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_mobile_step_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_mobile\_test module
--------------------------------------------------------------
+synthetics\_mobile\_test
+------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_mobile_test
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_mobile\_test\_config module
----------------------------------------------------------------------
+synthetics\_mobile\_test\_config
+--------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_mobile_test_config
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_mobile\_test\_initial\_application\_arguments module
-----------------------------------------------------------------------------------------------
+synthetics\_mobile\_test\_initial\_application\_arguments
+---------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_mobile_test_initial_application_arguments
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_mobile\_test\_options module
-----------------------------------------------------------------------
+synthetics\_mobile\_test\_options
+---------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_mobile_test_options
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_mobile\_test\_type module
--------------------------------------------------------------------
+synthetics\_mobile\_test\_type
+------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_mobile_test_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_mobile\_tests\_mobile\_application module
------------------------------------------------------------------------------------
+synthetics\_mobile\_tests\_mobile\_application
+----------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_mobile_tests_mobile_application
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_mobile\_tests\_mobile\_application\_reference\_type module
-----------------------------------------------------------------------------------------------------
+synthetics\_mobile\_tests\_mobile\_application\_reference\_type
+---------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_mobile_tests_mobile_application_reference_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_parsing\_options module
------------------------------------------------------------------
+synthetics\_parsing\_options
+----------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_parsing_options
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_patch\_test\_body module
-------------------------------------------------------------------
+synthetics\_patch\_test\_body
+-----------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_patch_test_body
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_patch\_test\_operation module
------------------------------------------------------------------------
+synthetics\_patch\_test\_operation
+----------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_patch_test_operation
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_patch\_test\_operation\_name module
------------------------------------------------------------------------------
+synthetics\_patch\_test\_operation\_name
+----------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_patch_test_operation_name
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_playing\_tab module
--------------------------------------------------------------
+synthetics\_playing\_tab
+------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_playing_tab
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_private\_location module
-------------------------------------------------------------------
+synthetics\_private\_location
+-----------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_private_location
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_private\_location\_creation\_response module
---------------------------------------------------------------------------------------
+synthetics\_private\_location\_creation\_response
+-------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_private_location_creation_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_private\_location\_creation\_response\_result\_encryption module
-----------------------------------------------------------------------------------------------------------
+synthetics\_private\_location\_creation\_response\_result\_encryption
+---------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_private_location_creation_response_result_encryption
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_private\_location\_metadata module
-----------------------------------------------------------------------------
+synthetics\_private\_location\_metadata
+---------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_private_location_metadata
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_private\_location\_secrets module
----------------------------------------------------------------------------
+synthetics\_private\_location\_secrets
+--------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_private_location_secrets
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_private\_location\_secrets\_authentication module
--------------------------------------------------------------------------------------------
+synthetics\_private\_location\_secrets\_authentication
+------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_private_location_secrets_authentication
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_private\_location\_secrets\_config\_decryption module
------------------------------------------------------------------------------------------------
+synthetics\_private\_location\_secrets\_config\_decryption
+----------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_private_location_secrets_config_decryption
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_restricted\_roles module
-------------------------------------------------------------------
+synthetics\_restricted\_roles
+-----------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_restricted_roles
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_ssl\_certificate module
------------------------------------------------------------------
+synthetics\_ssl\_certificate
+----------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_ssl_certificate
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_ssl\_certificate\_issuer module
--------------------------------------------------------------------------
+synthetics\_ssl\_certificate\_issuer
+------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_ssl_certificate_issuer
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_ssl\_certificate\_subject module
---------------------------------------------------------------------------
+synthetics\_ssl\_certificate\_subject
+-------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_ssl_certificate_subject
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_status module
--------------------------------------------------------
+synthetics\_status
+------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_status
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_step module
------------------------------------------------------
+synthetics\_step
+----------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_step
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_step\_detail module
--------------------------------------------------------------
+synthetics\_step\_detail
+------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_step_detail
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_step\_detail\_warning module
-----------------------------------------------------------------------
+synthetics\_step\_detail\_warning
+---------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_step_detail_warning
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_step\_type module
------------------------------------------------------------
+synthetics\_step\_type
+----------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_step_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_test\_call\_type module
------------------------------------------------------------------
+synthetics\_test\_call\_type
+----------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_test_call_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_test\_ci\_options module
-------------------------------------------------------------------
+synthetics\_test\_ci\_options
+-----------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_test_ci_options
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_test\_config module
--------------------------------------------------------------
+synthetics\_test\_config
+------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_test_config
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_test\_details module
---------------------------------------------------------------
+synthetics\_test\_details
+-------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_test_details
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_test\_details\_sub\_type module
--------------------------------------------------------------------------
+synthetics\_test\_details\_sub\_type
+------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_test_details_sub_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_test\_details\_type module
---------------------------------------------------------------------
+synthetics\_test\_details\_type
+-------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_test_details_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_test\_execution\_rule module
-----------------------------------------------------------------------
+synthetics\_test\_execution\_rule
+---------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_test_execution_rule
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_test\_headers module
---------------------------------------------------------------
+synthetics\_test\_headers
+-------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_test_headers
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_test\_metadata module
----------------------------------------------------------------
+synthetics\_test\_metadata
+--------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_test_metadata
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_test\_monitor\_status module
-----------------------------------------------------------------------
+synthetics\_test\_monitor\_status
+---------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_test_monitor_status
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_test\_options module
---------------------------------------------------------------
+synthetics\_test\_options
+-------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_test_options
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_test\_options\_monitor\_options module
---------------------------------------------------------------------------------
+synthetics\_test\_options\_monitor\_options
+-------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_test_options_monitor_options
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_test\_options\_monitor\_options\_notification\_preset\_name module
-------------------------------------------------------------------------------------------------------------
+synthetics\_test\_options\_monitor\_options\_notification\_preset\_name
+-----------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_test_options_monitor_options_notification_preset_name
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_test\_options\_retry module
----------------------------------------------------------------------
+synthetics\_test\_options\_retry
+--------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_test_options_retry
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_test\_options\_scheduling module
---------------------------------------------------------------------------
+synthetics\_test\_options\_scheduling
+-------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_test_options_scheduling
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_test\_options\_scheduling\_timeframe module
--------------------------------------------------------------------------------------
+synthetics\_test\_options\_scheduling\_timeframe
+------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_test_options_scheduling_timeframe
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_test\_pause\_status module
---------------------------------------------------------------------
+synthetics\_test\_pause\_status
+-------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_test_pause_status
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_test\_process\_status module
-----------------------------------------------------------------------
+synthetics\_test\_process\_status
+---------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_test_process_status
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_test\_request module
---------------------------------------------------------------
+synthetics\_test\_request
+-------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_test_request
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_test\_request\_body\_file module
---------------------------------------------------------------------------
+synthetics\_test\_request\_body\_file
+-------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_test_request_body_file
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_test\_request\_body\_type module
---------------------------------------------------------------------------
+synthetics\_test\_request\_body\_type
+-------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_test_request_body_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_test\_request\_certificate module
----------------------------------------------------------------------------
+synthetics\_test\_request\_certificate
+--------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_test_request_certificate
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_test\_request\_certificate\_item module
----------------------------------------------------------------------------------
+synthetics\_test\_request\_certificate\_item
+--------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_test_request_certificate_item
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_test\_request\_port module
---------------------------------------------------------------------
+synthetics\_test\_request\_port
+-------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_test_request_port
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_test\_request\_proxy module
----------------------------------------------------------------------
+synthetics\_test\_request\_proxy
+--------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_test_request_proxy
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_test\_restriction\_policy\_binding module
------------------------------------------------------------------------------------
+synthetics\_test\_restriction\_policy\_binding
+----------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_test_restriction_policy_binding
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_test\_restriction\_policy\_binding\_relation module
----------------------------------------------------------------------------------------------
+synthetics\_test\_restriction\_policy\_binding\_relation
+--------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_test_restriction_policy_binding_relation
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_test\_uptime module
--------------------------------------------------------------
+synthetics\_test\_uptime
+------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_test_uptime
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_timing module
--------------------------------------------------------
+synthetics\_timing
+------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_timing
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_trigger\_body module
---------------------------------------------------------------
+synthetics\_trigger\_body
+-------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_trigger_body
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_trigger\_ci\_test\_location module
-----------------------------------------------------------------------------
+synthetics\_trigger\_ci\_test\_location
+---------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_trigger_ci_test_location
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_trigger\_ci\_test\_run\_result module
--------------------------------------------------------------------------------
+synthetics\_trigger\_ci\_test\_run\_result
+------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_trigger_ci_test_run_result
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_trigger\_ci\_tests\_response module
------------------------------------------------------------------------------
+synthetics\_trigger\_ci\_tests\_response
+----------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_trigger_ci_tests_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_trigger\_test module
---------------------------------------------------------------
+synthetics\_trigger\_test
+-------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_trigger_test
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_update\_test\_pause\_status\_payload module
--------------------------------------------------------------------------------------
+synthetics\_update\_test\_pause\_status\_payload
+------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_update_test_pause_status_payload
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_uptime module
--------------------------------------------------------
+synthetics\_uptime
+------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_uptime
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_variable\_parser module
------------------------------------------------------------------
+synthetics\_variable\_parser
+----------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_variable_parser
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_warning\_type module
---------------------------------------------------------------
+synthetics\_warning\_type
+-------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_warning_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.table\_widget\_cell\_display\_mode module
------------------------------------------------------------------------
+table\_widget\_cell\_display\_mode
+----------------------------------
 
 .. automodule:: datadog_api_client.v1.model.table_widget_cell_display_mode
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.table\_widget\_definition module
---------------------------------------------------------------
+table\_widget\_definition
+-------------------------
 
 .. automodule:: datadog_api_client.v1.model.table_widget_definition
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.table\_widget\_definition\_type module
---------------------------------------------------------------------
+table\_widget\_definition\_type
+-------------------------------
 
 .. automodule:: datadog_api_client.v1.model.table_widget_definition_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.table\_widget\_has\_search\_bar module
---------------------------------------------------------------------
+table\_widget\_has\_search\_bar
+-------------------------------
 
 .. automodule:: datadog_api_client.v1.model.table_widget_has_search_bar
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.table\_widget\_request module
------------------------------------------------------------
+table\_widget\_request
+----------------------
 
 .. automodule:: datadog_api_client.v1.model.table_widget_request
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.table\_widget\_text\_format\_match module
------------------------------------------------------------------------
+table\_widget\_text\_format\_match
+----------------------------------
 
 .. automodule:: datadog_api_client.v1.model.table_widget_text_format_match
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.table\_widget\_text\_format\_match\_type module
------------------------------------------------------------------------------
+table\_widget\_text\_format\_match\_type
+----------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.table_widget_text_format_match_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.table\_widget\_text\_format\_palette module
--------------------------------------------------------------------------
+table\_widget\_text\_format\_palette
+------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.table_widget_text_format_palette
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.table\_widget\_text\_format\_replace module
--------------------------------------------------------------------------
+table\_widget\_text\_format\_replace
+------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.table_widget_text_format_replace
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.table\_widget\_text\_format\_replace\_all module
-------------------------------------------------------------------------------
+table\_widget\_text\_format\_replace\_all
+-----------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.table_widget_text_format_replace_all
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.table\_widget\_text\_format\_replace\_all\_type module
-------------------------------------------------------------------------------------
+table\_widget\_text\_format\_replace\_all\_type
+-----------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.table_widget_text_format_replace_all_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.table\_widget\_text\_format\_replace\_substring module
-------------------------------------------------------------------------------------
+table\_widget\_text\_format\_replace\_substring
+-----------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.table_widget_text_format_replace_substring
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.table\_widget\_text\_format\_replace\_substring\_type module
-------------------------------------------------------------------------------------------
+table\_widget\_text\_format\_replace\_substring\_type
+-----------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.table_widget_text_format_replace_substring_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.table\_widget\_text\_format\_rule module
-----------------------------------------------------------------------
+table\_widget\_text\_format\_rule
+---------------------------------
 
 .. automodule:: datadog_api_client.v1.model.table_widget_text_format_rule
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.tag\_to\_hosts module
----------------------------------------------------
+tag\_to\_hosts
+--------------
 
 .. automodule:: datadog_api_client.v1.model.tag_to_hosts
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.target\_format\_type module
----------------------------------------------------------
+target\_format\_type
+--------------------
 
 .. automodule:: datadog_api_client.v1.model.target_format_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.timeseries\_background module
------------------------------------------------------------
+timeseries\_background
+----------------------
 
 .. automodule:: datadog_api_client.v1.model.timeseries_background
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.timeseries\_background\_type module
------------------------------------------------------------------
+timeseries\_background\_type
+----------------------------
 
 .. automodule:: datadog_api_client.v1.model.timeseries_background_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.timeseries\_widget\_definition module
--------------------------------------------------------------------
+timeseries\_widget\_definition
+------------------------------
 
 .. automodule:: datadog_api_client.v1.model.timeseries_widget_definition
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.timeseries\_widget\_definition\_type module
--------------------------------------------------------------------------
+timeseries\_widget\_definition\_type
+------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.timeseries_widget_definition_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.timeseries\_widget\_expression\_alias module
---------------------------------------------------------------------------
+timeseries\_widget\_expression\_alias
+-------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.timeseries_widget_expression_alias
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.timeseries\_widget\_legend\_column module
------------------------------------------------------------------------
+timeseries\_widget\_legend\_column
+----------------------------------
 
 .. automodule:: datadog_api_client.v1.model.timeseries_widget_legend_column
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.timeseries\_widget\_legend\_layout module
------------------------------------------------------------------------
+timeseries\_widget\_legend\_layout
+----------------------------------
 
 .. automodule:: datadog_api_client.v1.model.timeseries_widget_legend_layout
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.timeseries\_widget\_request module
-----------------------------------------------------------------
+timeseries\_widget\_request
+---------------------------
 
 .. automodule:: datadog_api_client.v1.model.timeseries_widget_request
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.toplist\_widget\_definition module
-----------------------------------------------------------------
+toplist\_widget\_definition
+---------------------------
 
 .. automodule:: datadog_api_client.v1.model.toplist_widget_definition
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.toplist\_widget\_definition\_type module
-----------------------------------------------------------------------
+toplist\_widget\_definition\_type
+---------------------------------
 
 .. automodule:: datadog_api_client.v1.model.toplist_widget_definition_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.toplist\_widget\_display module
--------------------------------------------------------------
+toplist\_widget\_display
+------------------------
 
 .. automodule:: datadog_api_client.v1.model.toplist_widget_display
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.toplist\_widget\_flat module
-----------------------------------------------------------
+toplist\_widget\_flat
+---------------------
 
 .. automodule:: datadog_api_client.v1.model.toplist_widget_flat
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.toplist\_widget\_flat\_type module
-----------------------------------------------------------------
+toplist\_widget\_flat\_type
+---------------------------
 
 .. automodule:: datadog_api_client.v1.model.toplist_widget_flat_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.toplist\_widget\_legend module
-------------------------------------------------------------
+toplist\_widget\_legend
+-----------------------
 
 .. automodule:: datadog_api_client.v1.model.toplist_widget_legend
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.toplist\_widget\_request module
--------------------------------------------------------------
+toplist\_widget\_request
+------------------------
 
 .. automodule:: datadog_api_client.v1.model.toplist_widget_request
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.toplist\_widget\_scaling module
--------------------------------------------------------------
+toplist\_widget\_scaling
+------------------------
 
 .. automodule:: datadog_api_client.v1.model.toplist_widget_scaling
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.toplist\_widget\_stacked module
--------------------------------------------------------------
+toplist\_widget\_stacked
+------------------------
 
 .. automodule:: datadog_api_client.v1.model.toplist_widget_stacked
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.toplist\_widget\_stacked\_type module
--------------------------------------------------------------------
+toplist\_widget\_stacked\_type
+------------------------------
 
 .. automodule:: datadog_api_client.v1.model.toplist_widget_stacked_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.toplist\_widget\_style module
------------------------------------------------------------
+toplist\_widget\_style
+----------------------
 
 .. automodule:: datadog_api_client.v1.model.toplist_widget_style
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.topology\_map\_widget\_definition module
-----------------------------------------------------------------------
+topology\_map\_widget\_definition
+---------------------------------
 
 .. automodule:: datadog_api_client.v1.model.topology_map_widget_definition
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.topology\_map\_widget\_definition\_type module
-----------------------------------------------------------------------------
+topology\_map\_widget\_definition\_type
+---------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.topology_map_widget_definition_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.topology\_query module
-----------------------------------------------------
+topology\_query
+---------------
 
 .. automodule:: datadog_api_client.v1.model.topology_query
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.topology\_query\_data\_source module
-------------------------------------------------------------------
+topology\_query\_data\_source
+-----------------------------
 
 .. automodule:: datadog_api_client.v1.model.topology_query_data_source
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.topology\_request module
-------------------------------------------------------
+topology\_request
+-----------------
 
 .. automodule:: datadog_api_client.v1.model.topology_request
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.topology\_request\_type module
-------------------------------------------------------------
+topology\_request\_type
+-----------------------
 
 .. automodule:: datadog_api_client.v1.model.topology_request_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.tree\_map\_color\_by module
----------------------------------------------------------
+tree\_map\_color\_by
+--------------------
 
 .. automodule:: datadog_api_client.v1.model.tree_map_color_by
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.tree\_map\_group\_by module
----------------------------------------------------------
+tree\_map\_group\_by
+--------------------
 
 .. automodule:: datadog_api_client.v1.model.tree_map_group_by
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.tree\_map\_size\_by module
---------------------------------------------------------
+tree\_map\_size\_by
+-------------------
 
 .. automodule:: datadog_api_client.v1.model.tree_map_size_by
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.tree\_map\_widget\_definition module
-------------------------------------------------------------------
+tree\_map\_widget\_definition
+-----------------------------
 
 .. automodule:: datadog_api_client.v1.model.tree_map_widget_definition
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.tree\_map\_widget\_definition\_type module
-------------------------------------------------------------------------
+tree\_map\_widget\_definition\_type
+-----------------------------------
 
 .. automodule:: datadog_api_client.v1.model.tree_map_widget_definition_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.tree\_map\_widget\_request module
----------------------------------------------------------------
+tree\_map\_widget\_request
+--------------------------
 
 .. automodule:: datadog_api_client.v1.model.tree_map_widget_request
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_analyzed\_logs\_hour module
-----------------------------------------------------------------
+usage\_analyzed\_logs\_hour
+---------------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_analyzed_logs_hour
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_analyzed\_logs\_response module
---------------------------------------------------------------------
+usage\_analyzed\_logs\_response
+-------------------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_analyzed_logs_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_attribution\_aggregates module
--------------------------------------------------------------------
+usage\_attribution\_aggregates
+------------------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_attribution_aggregates
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_attribution\_aggregates\_body module
--------------------------------------------------------------------------
+usage\_attribution\_aggregates\_body
+------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_attribution_aggregates_body
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_attribution\_tag\_names module
--------------------------------------------------------------------
+usage\_attribution\_tag\_names
+------------------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_attribution_tag_names
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_audit\_logs\_hour module
--------------------------------------------------------------
+usage\_audit\_logs\_hour
+------------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_audit_logs_hour
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_audit\_logs\_response module
------------------------------------------------------------------
+usage\_audit\_logs\_response
+----------------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_audit_logs_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_billable\_summary\_body module
--------------------------------------------------------------------
+usage\_billable\_summary\_body
+------------------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_billable_summary_body
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_billable\_summary\_hour module
--------------------------------------------------------------------
+usage\_billable\_summary\_hour
+------------------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_billable_summary_hour
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_billable\_summary\_keys module
--------------------------------------------------------------------
+usage\_billable\_summary\_keys
+------------------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_billable_summary_keys
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_billable\_summary\_response module
------------------------------------------------------------------------
+usage\_billable\_summary\_response
+----------------------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_billable_summary_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_ci\_visibility\_hour module
-----------------------------------------------------------------
+usage\_ci\_visibility\_hour
+---------------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_ci_visibility_hour
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_ci\_visibility\_response module
---------------------------------------------------------------------
+usage\_ci\_visibility\_response
+-------------------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_ci_visibility_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_cloud\_security\_posture\_management\_hour module
---------------------------------------------------------------------------------------
+usage\_cloud\_security\_posture\_management\_hour
+-------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_cloud_security_posture_management_hour
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_cloud\_security\_posture\_management\_response module
-------------------------------------------------------------------------------------------
+usage\_cloud\_security\_posture\_management\_response
+-----------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_cloud_security_posture_management_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_custom\_reports\_attributes module
------------------------------------------------------------------------
+usage\_custom\_reports\_attributes
+----------------------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_custom_reports_attributes
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_custom\_reports\_data module
------------------------------------------------------------------
+usage\_custom\_reports\_data
+----------------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_custom_reports_data
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_custom\_reports\_meta module
------------------------------------------------------------------
+usage\_custom\_reports\_meta
+----------------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_custom_reports_meta
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_custom\_reports\_page module
------------------------------------------------------------------
+usage\_custom\_reports\_page
+----------------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_custom_reports_page
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_custom\_reports\_response module
----------------------------------------------------------------------
+usage\_custom\_reports\_response
+--------------------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_custom_reports_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_cws\_hour module
------------------------------------------------------
+usage\_cws\_hour
+----------------
 
 .. automodule:: datadog_api_client.v1.model.usage_cws_hour
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_cws\_response module
----------------------------------------------------------
+usage\_cws\_response
+--------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_cws_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_dbm\_hour module
------------------------------------------------------
+usage\_dbm\_hour
+----------------
 
 .. automodule:: datadog_api_client.v1.model.usage_dbm_hour
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_dbm\_response module
----------------------------------------------------------
+usage\_dbm\_response
+--------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_dbm_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_fargate\_hour module
----------------------------------------------------------
+usage\_fargate\_hour
+--------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_fargate_hour
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_fargate\_response module
--------------------------------------------------------------
+usage\_fargate\_response
+------------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_fargate_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_host\_hour module
-------------------------------------------------------
+usage\_host\_hour
+-----------------
 
 .. automodule:: datadog_api_client.v1.model.usage_host_hour
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_hosts\_response module
------------------------------------------------------------
+usage\_hosts\_response
+----------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_hosts_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_incident\_management\_hour module
-----------------------------------------------------------------------
+usage\_incident\_management\_hour
+---------------------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_incident_management_hour
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_incident\_management\_response module
---------------------------------------------------------------------------
+usage\_incident\_management\_response
+-------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_incident_management_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_indexed\_spans\_hour module
-----------------------------------------------------------------
+usage\_indexed\_spans\_hour
+---------------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_indexed_spans_hour
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_indexed\_spans\_response module
---------------------------------------------------------------------
+usage\_indexed\_spans\_response
+-------------------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_indexed_spans_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_ingested\_spans\_hour module
------------------------------------------------------------------
+usage\_ingested\_spans\_hour
+----------------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_ingested_spans_hour
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_ingested\_spans\_response module
----------------------------------------------------------------------
+usage\_ingested\_spans\_response
+--------------------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_ingested_spans_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_iot\_hour module
------------------------------------------------------
+usage\_iot\_hour
+----------------
 
 .. automodule:: datadog_api_client.v1.model.usage_iot_hour
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_iot\_response module
----------------------------------------------------------
+usage\_iot\_response
+--------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_iot_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_lambda\_hour module
---------------------------------------------------------
+usage\_lambda\_hour
+-------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_lambda_hour
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_lambda\_response module
-------------------------------------------------------------
+usage\_lambda\_response
+-----------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_lambda_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_logs\_by\_index\_hour module
------------------------------------------------------------------
+usage\_logs\_by\_index\_hour
+----------------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_logs_by_index_hour
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_logs\_by\_index\_response module
----------------------------------------------------------------------
+usage\_logs\_by\_index\_response
+--------------------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_logs_by_index_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_logs\_by\_retention\_hour module
----------------------------------------------------------------------
+usage\_logs\_by\_retention\_hour
+--------------------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_logs_by_retention_hour
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_logs\_by\_retention\_response module
--------------------------------------------------------------------------
+usage\_logs\_by\_retention\_response
+------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_logs_by_retention_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_logs\_hour module
-------------------------------------------------------
+usage\_logs\_hour
+-----------------
 
 .. automodule:: datadog_api_client.v1.model.usage_logs_hour
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_logs\_response module
-----------------------------------------------------------
+usage\_logs\_response
+---------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_logs_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_metric\_category module
-------------------------------------------------------------
+usage\_metric\_category
+-----------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_metric_category
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_network\_flows\_hour module
-----------------------------------------------------------------
+usage\_network\_flows\_hour
+---------------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_network_flows_hour
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_network\_flows\_response module
---------------------------------------------------------------------
+usage\_network\_flows\_response
+-------------------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_network_flows_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_network\_hosts\_hour module
-----------------------------------------------------------------
+usage\_network\_hosts\_hour
+---------------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_network_hosts_hour
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_network\_hosts\_response module
---------------------------------------------------------------------
+usage\_network\_hosts\_response
+-------------------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_network_hosts_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_online\_archive\_hour module
------------------------------------------------------------------
+usage\_online\_archive\_hour
+----------------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_online_archive_hour
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_online\_archive\_response module
----------------------------------------------------------------------
+usage\_online\_archive\_response
+--------------------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_online_archive_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_profiling\_hour module
------------------------------------------------------------
+usage\_profiling\_hour
+----------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_profiling_hour
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_profiling\_response module
----------------------------------------------------------------
+usage\_profiling\_response
+--------------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_profiling_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_reports\_type module
----------------------------------------------------------
+usage\_reports\_type
+--------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_reports_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_rum\_sessions\_hour module
----------------------------------------------------------------
+usage\_rum\_sessions\_hour
+--------------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_rum_sessions_hour
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_rum\_sessions\_response module
--------------------------------------------------------------------
+usage\_rum\_sessions\_response
+------------------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_rum_sessions_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_rum\_units\_hour module
-------------------------------------------------------------
+usage\_rum\_units\_hour
+-----------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_rum_units_hour
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_rum\_units\_response module
-----------------------------------------------------------------
+usage\_rum\_units\_response
+---------------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_rum_units_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_sds\_hour module
------------------------------------------------------
+usage\_sds\_hour
+----------------
 
 .. automodule:: datadog_api_client.v1.model.usage_sds_hour
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_sds\_response module
----------------------------------------------------------
+usage\_sds\_response
+--------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_sds_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_snmp\_hour module
-------------------------------------------------------
+usage\_snmp\_hour
+-----------------
 
 .. automodule:: datadog_api_client.v1.model.usage_snmp_hour
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_snmp\_response module
-----------------------------------------------------------
+usage\_snmp\_response
+---------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_snmp_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_sort module
-------------------------------------------------
+usage\_sort
+-----------
 
 .. automodule:: datadog_api_client.v1.model.usage_sort
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_sort\_direction module
------------------------------------------------------------
+usage\_sort\_direction
+----------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_sort_direction
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_specified\_custom\_reports\_attributes module
-----------------------------------------------------------------------------------
+usage\_specified\_custom\_reports\_attributes
+---------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_specified_custom_reports_attributes
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_specified\_custom\_reports\_data module
-----------------------------------------------------------------------------
+usage\_specified\_custom\_reports\_data
+---------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_specified_custom_reports_data
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_specified\_custom\_reports\_meta module
-----------------------------------------------------------------------------
+usage\_specified\_custom\_reports\_meta
+---------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_specified_custom_reports_meta
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_specified\_custom\_reports\_page module
-----------------------------------------------------------------------------
+usage\_specified\_custom\_reports\_page
+---------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_specified_custom_reports_page
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_specified\_custom\_reports\_response module
---------------------------------------------------------------------------------
+usage\_specified\_custom\_reports\_response
+-------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_specified_custom_reports_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_summary\_date module
----------------------------------------------------------
+usage\_summary\_date
+--------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_summary_date
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_summary\_date\_org module
---------------------------------------------------------------
+usage\_summary\_date\_org
+-------------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_summary_date_org
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_summary\_response module
--------------------------------------------------------------
+usage\_summary\_response
+------------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_summary_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_synthetics\_api\_hour module
------------------------------------------------------------------
+usage\_synthetics\_api\_hour
+----------------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_synthetics_api_hour
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_synthetics\_api\_response module
----------------------------------------------------------------------
+usage\_synthetics\_api\_response
+--------------------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_synthetics_api_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_synthetics\_browser\_hour module
----------------------------------------------------------------------
+usage\_synthetics\_browser\_hour
+--------------------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_synthetics_browser_hour
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_synthetics\_browser\_response module
--------------------------------------------------------------------------
+usage\_synthetics\_browser\_response
+------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_synthetics_browser_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_synthetics\_hour module
-------------------------------------------------------------
+usage\_synthetics\_hour
+-----------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_synthetics_hour
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_synthetics\_response module
-----------------------------------------------------------------
+usage\_synthetics\_response
+---------------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_synthetics_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_timeseries\_hour module
-------------------------------------------------------------
+usage\_timeseries\_hour
+-----------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_timeseries_hour
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_timeseries\_response module
-----------------------------------------------------------------
+usage\_timeseries\_response
+---------------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_timeseries_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_top\_avg\_metrics\_hour module
--------------------------------------------------------------------
+usage\_top\_avg\_metrics\_hour
+------------------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_top_avg_metrics_hour
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_top\_avg\_metrics\_metadata module
------------------------------------------------------------------------
+usage\_top\_avg\_metrics\_metadata
+----------------------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_top_avg_metrics_metadata
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_top\_avg\_metrics\_pagination module
--------------------------------------------------------------------------
+usage\_top\_avg\_metrics\_pagination
+------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_top_avg_metrics_pagination
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.usage\_top\_avg\_metrics\_response module
------------------------------------------------------------------------
+usage\_top\_avg\_metrics\_response
+----------------------------------
 
 .. automodule:: datadog_api_client.v1.model.usage_top_avg_metrics_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.user module
------------------------------------------
+user
+----
 
 .. automodule:: datadog_api_client.v1.model.user
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.user\_disable\_response module
-------------------------------------------------------------
+user\_disable\_response
+-----------------------
 
 .. automodule:: datadog_api_client.v1.model.user_disable_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.user\_list\_response module
----------------------------------------------------------
+user\_list\_response
+--------------------
 
 .. automodule:: datadog_api_client.v1.model.user_list_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.user\_response module
----------------------------------------------------
+user\_response
+--------------
 
 .. automodule:: datadog_api_client.v1.model.user_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.webhooks\_integration module
-----------------------------------------------------------
+webhooks\_integration
+---------------------
 
 .. automodule:: datadog_api_client.v1.model.webhooks_integration
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.webhooks\_integration\_custom\_variable module
-----------------------------------------------------------------------------
+webhooks\_integration\_custom\_variable
+---------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.webhooks_integration_custom_variable
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.webhooks\_integration\_custom\_variable\_response module
---------------------------------------------------------------------------------------
+webhooks\_integration\_custom\_variable\_response
+-------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.webhooks_integration_custom_variable_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.webhooks\_integration\_custom\_variable\_update\_request module
----------------------------------------------------------------------------------------------
+webhooks\_integration\_custom\_variable\_update\_request
+--------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.webhooks_integration_custom_variable_update_request
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.webhooks\_integration\_encoding module
---------------------------------------------------------------------
+webhooks\_integration\_encoding
+-------------------------------
 
 .. automodule:: datadog_api_client.v1.model.webhooks_integration_encoding
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.webhooks\_integration\_update\_request module
----------------------------------------------------------------------------
+webhooks\_integration\_update\_request
+--------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.webhooks_integration_update_request
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.widget module
--------------------------------------------
+widget
+------
 
 .. automodule:: datadog_api_client.v1.model.widget
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.widget\_aggregator module
--------------------------------------------------------
+widget\_aggregator
+------------------
 
 .. automodule:: datadog_api_client.v1.model.widget_aggregator
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.widget\_axis module
--------------------------------------------------
+widget\_axis
+------------
 
 .. automodule:: datadog_api_client.v1.model.widget_axis
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.widget\_change\_type module
----------------------------------------------------------
+widget\_change\_type
+--------------------
 
 .. automodule:: datadog_api_client.v1.model.widget_change_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.widget\_color\_preference module
---------------------------------------------------------------
+widget\_color\_preference
+-------------------------
 
 .. automodule:: datadog_api_client.v1.model.widget_color_preference
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.widget\_comparator module
--------------------------------------------------------
+widget\_comparator
+------------------
 
 .. automodule:: datadog_api_client.v1.model.widget_comparator
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.widget\_compare\_to module
---------------------------------------------------------
+widget\_compare\_to
+-------------------
 
 .. automodule:: datadog_api_client.v1.model.widget_compare_to
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.widget\_conditional\_format module
-----------------------------------------------------------------
+widget\_conditional\_format
+---------------------------
 
 .. automodule:: datadog_api_client.v1.model.widget_conditional_format
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.widget\_custom\_link module
----------------------------------------------------------
+widget\_custom\_link
+--------------------
 
 .. automodule:: datadog_api_client.v1.model.widget_custom_link
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.widget\_definition module
--------------------------------------------------------
+widget\_definition
+------------------
 
 .. automodule:: datadog_api_client.v1.model.widget_definition
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.widget\_display\_type module
-----------------------------------------------------------
+widget\_display\_type
+---------------------
 
 .. automodule:: datadog_api_client.v1.model.widget_display_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.widget\_event module
---------------------------------------------------
+widget\_event
+-------------
 
 .. automodule:: datadog_api_client.v1.model.widget_event
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.widget\_event\_size module
---------------------------------------------------------
+widget\_event\_size
+-------------------
 
 .. automodule:: datadog_api_client.v1.model.widget_event_size
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.widget\_field\_sort module
---------------------------------------------------------
+widget\_field\_sort
+-------------------
 
 .. automodule:: datadog_api_client.v1.model.widget_field_sort
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.widget\_formula module
-----------------------------------------------------
+widget\_formula
+---------------
 
 .. automodule:: datadog_api_client.v1.model.widget_formula
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.widget\_formula\_limit module
------------------------------------------------------------
+widget\_formula\_limit
+----------------------
 
 .. automodule:: datadog_api_client.v1.model.widget_formula_limit
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.widget\_formula\_sort module
-----------------------------------------------------------
+widget\_formula\_sort
+---------------------
 
 .. automodule:: datadog_api_client.v1.model.widget_formula_sort
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.widget\_formula\_style module
------------------------------------------------------------
+widget\_formula\_style
+----------------------
 
 .. automodule:: datadog_api_client.v1.model.widget_formula_style
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.widget\_group\_sort module
---------------------------------------------------------
+widget\_group\_sort
+-------------------
 
 .. automodule:: datadog_api_client.v1.model.widget_group_sort
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.widget\_grouping module
------------------------------------------------------
+widget\_grouping
+----------------
 
 .. automodule:: datadog_api_client.v1.model.widget_grouping
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.widget\_horizontal\_align module
---------------------------------------------------------------
+widget\_horizontal\_align
+-------------------------
 
 .. automodule:: datadog_api_client.v1.model.widget_horizontal_align
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.widget\_image\_sizing module
-----------------------------------------------------------
+widget\_image\_sizing
+---------------------
 
 .. automodule:: datadog_api_client.v1.model.widget_image_sizing
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.widget\_layout module
----------------------------------------------------
+widget\_layout
+--------------
 
 .. automodule:: datadog_api_client.v1.model.widget_layout
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.widget\_layout\_type module
----------------------------------------------------------
+widget\_layout\_type
+--------------------
 
 .. automodule:: datadog_api_client.v1.model.widget_layout_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.widget\_legacy\_live\_span module
----------------------------------------------------------------
+widget\_legacy\_live\_span
+--------------------------
 
 .. automodule:: datadog_api_client.v1.model.widget_legacy_live_span
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.widget\_line\_type module
--------------------------------------------------------
+widget\_line\_type
+------------------
 
 .. automodule:: datadog_api_client.v1.model.widget_line_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.widget\_line\_width module
---------------------------------------------------------
+widget\_line\_width
+-------------------
 
 .. automodule:: datadog_api_client.v1.model.widget_line_width
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.widget\_live\_span module
--------------------------------------------------------
+widget\_live\_span
+------------------
 
 .. automodule:: datadog_api_client.v1.model.widget_live_span
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.widget\_live\_span\_unit module
--------------------------------------------------------------
+widget\_live\_span\_unit
+------------------------
 
 .. automodule:: datadog_api_client.v1.model.widget_live_span_unit
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.widget\_margin module
----------------------------------------------------
+widget\_margin
+--------------
 
 .. automodule:: datadog_api_client.v1.model.widget_margin
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.widget\_marker module
----------------------------------------------------
+widget\_marker
+--------------
 
 .. automodule:: datadog_api_client.v1.model.widget_marker
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.widget\_message\_display module
--------------------------------------------------------------
+widget\_message\_display
+------------------------
 
 .. automodule:: datadog_api_client.v1.model.widget_message_display
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.widget\_monitor\_summary\_display\_format module
-------------------------------------------------------------------------------
+widget\_monitor\_summary\_display\_format
+-----------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.widget_monitor_summary_display_format
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.widget\_monitor\_summary\_sort module
--------------------------------------------------------------------
+widget\_monitor\_summary\_sort
+------------------------------
 
 .. automodule:: datadog_api_client.v1.model.widget_monitor_summary_sort
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.widget\_new\_fixed\_span module
--------------------------------------------------------------
+widget\_new\_fixed\_span
+------------------------
 
 .. automodule:: datadog_api_client.v1.model.widget_new_fixed_span
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.widget\_new\_fixed\_span\_type module
--------------------------------------------------------------------
+widget\_new\_fixed\_span\_type
+------------------------------
 
 .. automodule:: datadog_api_client.v1.model.widget_new_fixed_span_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.widget\_new\_live\_span module
-------------------------------------------------------------
+widget\_new\_live\_span
+-----------------------
 
 .. automodule:: datadog_api_client.v1.model.widget_new_live_span
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.widget\_new\_live\_span\_type module
-------------------------------------------------------------------
+widget\_new\_live\_span\_type
+-----------------------------
 
 .. automodule:: datadog_api_client.v1.model.widget_new_live_span_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.widget\_node\_type module
--------------------------------------------------------
+widget\_node\_type
+------------------
 
 .. automodule:: datadog_api_client.v1.model.widget_node_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.widget\_order\_by module
-------------------------------------------------------
+widget\_order\_by
+-----------------
 
 .. automodule:: datadog_api_client.v1.model.widget_order_by
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.widget\_palette module
-----------------------------------------------------
+widget\_palette
+---------------
 
 .. automodule:: datadog_api_client.v1.model.widget_palette
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.widget\_request\_style module
------------------------------------------------------------
+widget\_request\_style
+----------------------
 
 .. automodule:: datadog_api_client.v1.model.widget_request_style
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.widget\_service\_summary\_display\_format module
-------------------------------------------------------------------------------
+widget\_service\_summary\_display\_format
+-----------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.widget_service_summary_display_format
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.widget\_size\_format module
----------------------------------------------------------
+widget\_size\_format
+--------------------
 
 .. automodule:: datadog_api_client.v1.model.widget_size_format
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.widget\_sort module
--------------------------------------------------
+widget\_sort
+------------
 
 .. automodule:: datadog_api_client.v1.model.widget_sort
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.widget\_sort\_by module
------------------------------------------------------
+widget\_sort\_by
+----------------
 
 .. automodule:: datadog_api_client.v1.model.widget_sort_by
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.widget\_sort\_order\_by module
-------------------------------------------------------------
+widget\_sort\_order\_by
+-----------------------
 
 .. automodule:: datadog_api_client.v1.model.widget_sort_order_by
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.widget\_style module
---------------------------------------------------
+widget\_style
+-------------
 
 .. automodule:: datadog_api_client.v1.model.widget_style
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.widget\_summary\_type module
-----------------------------------------------------------
+widget\_summary\_type
+---------------------
 
 .. automodule:: datadog_api_client.v1.model.widget_summary_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.widget\_text\_align module
---------------------------------------------------------
+widget\_text\_align
+-------------------
 
 .. automodule:: datadog_api_client.v1.model.widget_text_align
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.widget\_tick\_edge module
--------------------------------------------------------
+widget\_tick\_edge
+------------------
 
 .. automodule:: datadog_api_client.v1.model.widget_tick_edge
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.widget\_time module
--------------------------------------------------
+widget\_time
+------------
 
 .. automodule:: datadog_api_client.v1.model.widget_time
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.widget\_time\_windows module
-----------------------------------------------------------
+widget\_time\_windows
+---------------------
 
 .. automodule:: datadog_api_client.v1.model.widget_time_windows
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.widget\_vertical\_align module
-------------------------------------------------------------
+widget\_vertical\_align
+-----------------------
 
 .. automodule:: datadog_api_client.v1.model.widget_vertical_align
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.widget\_view\_mode module
--------------------------------------------------------
+widget\_view\_mode
+------------------
 
 .. automodule:: datadog_api_client.v1.model.widget_view_mode
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.widget\_viz\_type module
-------------------------------------------------------
+widget\_viz\_type
+-----------------
 
 .. automodule:: datadog_api_client.v1.model.widget_viz_type
    :members:
    :show-inheritance:
 
-Module contents
----------------
 
 .. automodule:: datadog_api_client.v1.model
    :members:
