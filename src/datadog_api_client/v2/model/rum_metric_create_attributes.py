@@ -70,7 +70,7 @@ class RumMetricCreateAttributes(ModelNormal):
         :param group_by: The rules for the group by.
         :type group_by: [RumMetricGroupBy], optional
 
-        :param uniqueness: The rule to count updatable events. Is only set if "event_type" is "sessions" or "views".
+        :param uniqueness: The rule to count updatable events. Is only set if ``event_type`` is ``sessions`` or ``views``.
         :type uniqueness: RumMetricUniqueness, optional
         """
         if filter is not unset:

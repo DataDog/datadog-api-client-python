@@ -30,9 +30,9 @@ class RumMetricUniqueness(ModelNormal):
 
     def __init__(self_, when: RumMetricUniquenessWhen, **kwargs):
         """
-        The rule to count updatable events. Is only set if "event_type" is "sessions" or "views".
+        The rule to count updatable events. Is only set if ``event_type`` is ``sessions`` or ``views``.
 
-        :param when: When to count updatable events. "match" when the event is first seen, or "end" when the event is complete.
+        :param when: When to count updatable events. ``match`` when the event is first seen, or ``end`` when the event is complete.
         :type when: RumMetricUniquenessWhen
         """
         super().__init__(kwargs)
