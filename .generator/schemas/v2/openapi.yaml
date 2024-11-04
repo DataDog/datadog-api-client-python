@@ -29197,6 +29197,7 @@ paths:
       - Cloud Cost Management
   /api/v2/cost/enabled:
     get:
+      deprecated: true
       description: Get the Cloud Cost Management activity.
       operationId: GetCloudCostActivity
       responses:
