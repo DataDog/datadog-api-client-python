@@ -45,7 +45,6 @@ body = ScalarFormulaQueryRequest(
 )
 
 configuration = Configuration()
-configuration.unstable_operations["query_scalar_data"] = True
 with ApiClient(configuration) as api_client:
     api_instance = MetricsApi(api_client)
     response = api_instance.query_scalar_data(body=body)

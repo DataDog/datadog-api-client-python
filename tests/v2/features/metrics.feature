@@ -246,7 +246,6 @@ Feature: Metrics
   @generated @skip @team:Datadog/timeseries-query
   Scenario: Query scalar data across multiple products returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
-    And operation "QueryScalarData" enabled
     And new "QueryScalarData" request
     And body with value {"data": {"attributes": {"formulas": [{"formula": "a+b", "limit": {"count": 10, "order": "desc"}}], "from": 1568899800000, "queries": [{"aggregator": "avg", "data_source": "metrics", "query": "avg:system.cpu.user{*} by {env}"}], "to": 1568923200000}, "type": "scalar_request"}}
     When the request is sent
@@ -255,7 +254,6 @@ Feature: Metrics
   @generated @skip @team:Datadog/timeseries-query
   Scenario: Query scalar data across multiple products returns "OK" response
     Given a valid "appKeyAuth" key in the system
-    And operation "QueryScalarData" enabled
     And new "QueryScalarData" request
     And body with value {"data": {"attributes": {"formulas": [{"formula": "a+b", "limit": {"count": 10, "order": "desc"}}], "from": 1568899800000, "queries": [{"aggregator": "avg", "data_source": "metrics", "query": "avg:system.cpu.user{*} by {env}"}], "to": 1568923200000}, "type": "scalar_request"}}
     When the request is sent
@@ -264,7 +262,6 @@ Feature: Metrics
   @generated @skip @team:Datadog/timeseries-query
   Scenario: Query timeseries data across multiple products returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
-    And operation "QueryTimeseriesData" enabled
     And new "QueryTimeseriesData" request
     And body with value {"data": {"attributes": {"formulas": [{"formula": "a+b", "limit": {"count": 10, "order": "desc"}}], "from": 1568899800000, "interval": 5000, "queries": [{"data_source": "metrics", "query": "avg:system.cpu.user{*} by {env}"}], "to": 1568923200000}, "type": "timeseries_request"}}
     When the request is sent
@@ -273,7 +270,6 @@ Feature: Metrics
   @generated @skip @team:Datadog/timeseries-query
   Scenario: Query timeseries data across multiple products returns "OK" response
     Given a valid "appKeyAuth" key in the system
-    And operation "QueryTimeseriesData" enabled
     And new "QueryTimeseriesData" request
     And body with value {"data": {"attributes": {"formulas": [{"formula": "a+b", "limit": {"count": 10, "order": "desc"}}], "from": 1568899800000, "interval": 5000, "queries": [{"data_source": "metrics", "query": "avg:system.cpu.user{*} by {env}"}], "to": 1568923200000}, "type": "timeseries_request"}}
     When the request is sent
@@ -300,7 +296,6 @@ Feature: Metrics
   @team:Datadog/timeseries-query
   Scenario: Scalar cross product query returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
-    And operation "QueryScalarData" enabled
     And new "QueryScalarData" request
     And body with value {"data": {"attributes": {"formulas": [{"formula": "a+b", "limit": {"count": 10, "order": "desc"}}], "from": 1568899800000, "queries": [{"aggregator": "avg", "data_source": "metrics", "query": "avg:system.cpu.user{*}", "name": "a"}], "to": 1568923200000}, "type": "scalar_request"}}
     When the request is sent
@@ -309,7 +304,6 @@ Feature: Metrics
   @team:Datadog/timeseries-query
   Scenario: Scalar cross product query returns "OK" response
     Given a valid "appKeyAuth" key in the system
-    And operation "QueryScalarData" enabled
     And new "QueryScalarData" request
     And body with value {"data": {"attributes": {"formulas": [{"formula": "a", "limit": {"count": 10, "order": "desc"}}], "from": {{ timestamp('now - 1h') }}000, "queries": [{"aggregator": "avg", "data_source": "metrics", "query": "avg:system.cpu.user{*}", "name": "a"}], "to": {{ timestamp('now') }}000}, "type": "scalar_request"}}
     When the request is sent
@@ -374,7 +368,6 @@ Feature: Metrics
   @skip @team:Datadog/timeseries-query
   Scenario: Timeseries cross product query returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
-    And operation "QueryTimeseriesData" enabled
     And new "QueryTimeseriesData" request
     And body with value {"data": {"attributes": {"formulas": [{"formula": "a+b", "limit": {"count": 10, "order": "desc"}}], "from": {{ timestamp('now - 1h') }}, "interval": 5000, "queries": [{"data_source": "metrics", "query": "avg:system.cpu.user{*}"}], "to": {{ timestamp('now') }}}, "type": "timeseries_rquest"}}
     When the request is sent
@@ -383,7 +376,6 @@ Feature: Metrics
   @team:Datadog/timeseries-query
   Scenario: Timeseries cross product query returns "OK" response
     Given a valid "appKeyAuth" key in the system
-    And operation "QueryTimeseriesData" enabled
     And new "QueryTimeseriesData" request
     And body with value {"data": {"attributes": {"formulas": [{"formula": "a", "limit": {"count": 10, "order": "desc"}}], "from": {{ timestamp('now - 1h') }}000, "interval": 5000, "queries": [{"data_source": "metrics", "query": "avg:datadog.estimated_usage.metrics.custom{*}", "name": "a"}], "to": {{ timestamp('now') }}000}, "type": "timeseries_request"}}
     When the request is sent
