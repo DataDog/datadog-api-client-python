@@ -269,8 +269,6 @@ class Configuration:
                 "v2.update_incident_integration": False,
                 "v2.update_incident_todo": False,
                 "v2.update_incident_type": False,
-                "v2.query_scalar_data": False,
-                "v2.query_timeseries_data": False,
                 "v2.get_finding": False,
                 "v2.list_findings": False,
                 "v2.mute_findings": False,
