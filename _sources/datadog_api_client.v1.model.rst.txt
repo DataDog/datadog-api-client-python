@@ -4141,6 +4141,13 @@ datadog\_api\_client.v1.model.synthetics\_batch\_result module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.synthetics\_batch\_status module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_batch_status
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.synthetics\_browser\_error module
 ---------------------------------------------------------------
 
@@ -4726,13 +4733,6 @@ datadog\_api\_client.v1.model.synthetics\_ssl\_certificate\_subject module
 --------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_ssl_certificate_subject
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v1.model.synthetics\_status module
--------------------------------------------------------
-
-.. automodule:: datadog_api_client.v1.model.synthetics_status
    :members:
    :show-inheritance:
 

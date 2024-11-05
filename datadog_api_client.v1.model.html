@@ -4231,6 +4231,12 @@
         </li></ul>
             </nav>
         </li>
+        <li class="md-nav__item"><a href="#module-datadog_api_client.v1.model.synthetics_batch_status" class="md-nav__link">datadog_api_client.v1.model.synthetics_batch_status module</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v1.model.synthetics_batch_status.SyntheticsBatchStatus" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SyntheticsBatchStatus</span></code></a>
+        </li></ul>
+            </nav>
+        </li>
         <li class="md-nav__item"><a href="#module-datadog_api_client.v1.model.synthetics_browser_error" class="md-nav__link">datadog_api_client.v1.model.synthetics_browser_error module</a><nav class="md-nav">
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#datadog_api_client.v1.model.synthetics_browser_error.SyntheticsBrowserError" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SyntheticsBrowserError</span></code></a>
@@ -4732,12 +4738,6 @@
         <li class="md-nav__item"><a href="#module-datadog_api_client.v1.model.synthetics_ssl_certificate_subject" class="md-nav__link">datadog_api_client.v1.model.synthetics_ssl_certificate_subject module</a><nav class="md-nav">
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#datadog_api_client.v1.model.synthetics_ssl_certificate_subject.SyntheticsSSLCertificateSubject" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SyntheticsSSLCertificateSubject</span></code></a>
-        </li></ul>
-            </nav>
-        </li>
-        <li class="md-nav__item"><a href="#module-datadog_api_client.v1.model.synthetics_status" class="md-nav__link">datadog_api_client.v1.model.synthetics_status module</a><nav class="md-nav">
-              <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#datadog_api_client.v1.model.synthetics_status.SyntheticsStatus" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SyntheticsStatus</span></code></a>
         </li></ul>
             </nav>
         </li>
@@ -19511,7 +19511,7 @@ type conversion is done.</p></li>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>metadata</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.synthetics_ci_batch_metadata.SyntheticsCIBatchMetadata" title="datadog_api_client.v1.model.synthetics_ci_batch_metadata.SyntheticsCIBatchMetadata"><em>SyntheticsCIBatchMetadata</em></a><em>, </em><em>optional</em>) – Metadata for the Synthetic tests run.</p></li>
 <li><p><strong>results</strong> (<em>[</em><a class="reference internal" href="#datadog_api_client.v1.model.synthetics_batch_result.SyntheticsBatchResult" title="datadog_api_client.v1.model.synthetics_batch_result.SyntheticsBatchResult"><em>SyntheticsBatchResult</em></a><em>]</em><em>, </em><em>optional</em>) – List of results for the batch.</p></li>
-<li><p><strong>status</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.synthetics_status.SyntheticsStatus" title="datadog_api_client.v1.model.synthetics_status.SyntheticsStatus"><em>SyntheticsStatus</em></a><em>, </em><em>optional</em>) – Determines whether or not the batch has passed, failed, or is in progress.</p></li>
+<li><p><strong>status</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.synthetics_batch_status.SyntheticsBatchStatus" title="datadog_api_client.v1.model.synthetics_batch_status.SyntheticsBatchStatus"><em>SyntheticsBatchStatus</em></a><em>, </em><em>optional</em>) – Determines whether the batch has passed, failed, or is in progress.</p></li>
 </ul>
 </dd>
 </dl>
@@ -19533,10 +19533,37 @@ type conversion is done.</p></li>
 <li><p><strong>location</strong> (<em>str</em><em>, </em><em>optional</em>) – Name of the location.</p></li>
 <li><p><strong>result_id</strong> (<em>str</em><em>, </em><em>optional</em>) – The ID of the result to get.</p></li>
 <li><p><strong>retries</strong> (<em>float</em><em>, </em><em>optional</em>) – Number of times this result has been retried.</p></li>
-<li><p><strong>status</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.synthetics_status.SyntheticsStatus" title="datadog_api_client.v1.model.synthetics_status.SyntheticsStatus"><em>SyntheticsStatus</em></a><em>, </em><em>optional</em>) – Determines whether or not the batch has passed, failed, or is in progress.</p></li>
+<li><p><strong>status</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.synthetics_batch_status.SyntheticsBatchStatus" title="datadog_api_client.v1.model.synthetics_batch_status.SyntheticsBatchStatus"><em>SyntheticsBatchStatus</em></a><em>, </em><em>optional</em>) – Determines whether the batch has passed, failed, or is in progress.</p></li>
 <li><p><strong>test_name</strong> (<em>str</em><em>, </em><em>optional</em>) – Name of the test.</p></li>
 <li><p><strong>test_public_id</strong> (<em>str</em><em>, </em><em>optional</em>) – The public ID of the Synthetic test.</p></li>
 <li><p><strong>test_type</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.synthetics_test_details_type.SyntheticsTestDetailsType" title="datadog_api_client.v1.model.synthetics_test_details_type.SyntheticsTestDetailsType"><em>SyntheticsTestDetailsType</em></a><em>, </em><em>optional</em>) – Type of the Synthetic test, either <code class="docutils literal notranslate"><span class="pre">api</span></code> or <code class="docutils literal notranslate"><span class="pre">browser</span></code>.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+</section>
+<section id="module-datadog_api_client.v1.model.synthetics_batch_status">
+<span id="datadog-api-client-v1-model-synthetics-batch-status-module"></span><h2 id="module-datadog_api_client.v1.model.synthetics_batch_status">datadog_api_client.v1.model.synthetics_batch_status module<a class="headerlink" href="#module-datadog_api_client.v1.model.synthetics_batch_status" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datadog_api_client.v1.model.synthetics_batch_status.SyntheticsBatchStatus">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SyntheticsBatchStatus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datadog_api_client.v1.model.synthetics_batch_status.SyntheticsBatchStatus" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.ModelSimple" title="datadog_api_client.model_utils.ModelSimple"><code class="xref py py-class docutils literal notranslate"><span class="pre">ModelSimple</span></code></a></p>
+<p>Determines whether the batch has passed, failed, or is in progress.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> (<em>str</em>) – Must be one of [“passed”, “skipped”, “failed”].</p></li>
+<li><p><strong>_check_type</strong> (<em>bool</em>) – If True, values for parameters in openapi_types
+will be type checked and a TypeError will be raised if the wrong type is input.
+Defaults to True.</p></li>
+<li><p><strong>_path_to_item</strong> (<em>tuple/list</em>) – This is a list of keys or values to drill down to
+the model in received_data when deserializing a response.</p></li>
+<li><p><strong>_spec_property_naming</strong> (<em>bool</em>) – True if the variable names in the input
+data are serialized names, as specified in the OpenAPI document.  False if the
+variable names in the input data are pythonic names, e.g. snake case (default).</p></li>
+<li><p><strong>_configuration</strong> (<a class="reference internal" href="datadog_api_client.v1.html#datadog_api_client.v1.Configuration" title="datadog_api_client.v1.Configuration"><em>Configuration</em></a>) – The instance to use when deserializing a
+file_type parameter.  If passed, type conversion is attempted If omitted no
+type conversion is done.</p></li>
 </ul>
 </dd>
 </dl>
@@ -21288,33 +21315,6 @@ type conversion is done.</p></li>
 <li><p><strong>ou</strong> (<em>str</em><em>, </em><em>optional</em>) – Organizational Unit associated with the certificate.</p></li>
 <li><p><strong>st</strong> (<em>str</em><em>, </em><em>optional</em>) – State Or Province Name associated with the certificate.</p></li>
 <li><p><strong>alt_name</strong> (<em>str</em><em>, </em><em>optional</em>) – Subject Alternative Name associated with the certificate.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-</section>
-<section id="module-datadog_api_client.v1.model.synthetics_status">
-<span id="datadog-api-client-v1-model-synthetics-status-module"></span><h2 id="module-datadog_api_client.v1.model.synthetics_status">datadog_api_client.v1.model.synthetics_status module<a class="headerlink" href="#module-datadog_api_client.v1.model.synthetics_status" title="Link to this heading">¶</a></h2>
-<dl class="py class">
-<dt class="sig sig-object py" id="datadog_api_client.v1.model.synthetics_status.SyntheticsStatus">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SyntheticsStatus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datadog_api_client.v1.model.synthetics_status.SyntheticsStatus" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.ModelSimple" title="datadog_api_client.model_utils.ModelSimple"><code class="xref py py-class docutils literal notranslate"><span class="pre">ModelSimple</span></code></a></p>
-<p>Determines whether or not the batch has passed, failed, or is in progress.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>value</strong> (<em>str</em>) – Must be one of [“passed”, “skipped”, “failed”].</p></li>
-<li><p><strong>_check_type</strong> (<em>bool</em>) – If True, values for parameters in openapi_types
-will be type checked and a TypeError will be raised if the wrong type is input.
-Defaults to True.</p></li>
-<li><p><strong>_path_to_item</strong> (<em>tuple/list</em>) – This is a list of keys or values to drill down to
-the model in received_data when deserializing a response.</p></li>
-<li><p><strong>_spec_property_naming</strong> (<em>bool</em>) – True if the variable names in the input
-data are serialized names, as specified in the OpenAPI document.  False if the
-variable names in the input data are pythonic names, e.g. snake case (default).</p></li>
-<li><p><strong>_configuration</strong> (<a class="reference internal" href="datadog_api_client.v1.html#datadog_api_client.v1.Configuration" title="datadog_api_client.v1.Configuration"><em>Configuration</em></a>) – The instance to use when deserializing a
-file_type parameter.  If passed, type conversion is attempted If omitted no
-type conversion is done.</p></li>
 </ul>
 </dd>
 </dl>
