@@ -669,6 +669,7 @@ from datadog_api_client.v1.model.synthetics_basic_auth_web_type import Synthetic
 from datadog_api_client.v1.model.synthetics_batch_details import SyntheticsBatchDetails
 from datadog_api_client.v1.model.synthetics_batch_details_data import SyntheticsBatchDetailsData
 from datadog_api_client.v1.model.synthetics_batch_result import SyntheticsBatchResult
+from datadog_api_client.v1.model.synthetics_batch_status import SyntheticsBatchStatus
 from datadog_api_client.v1.model.synthetics_browser_error import SyntheticsBrowserError
 from datadog_api_client.v1.model.synthetics_browser_error_type import SyntheticsBrowserErrorType
 from datadog_api_client.v1.model.synthetics_browser_test import SyntheticsBrowserTest
@@ -793,7 +794,6 @@ from datadog_api_client.v1.model.synthetics_restricted_roles import SyntheticsRe
 from datadog_api_client.v1.model.synthetics_ssl_certificate import SyntheticsSSLCertificate
 from datadog_api_client.v1.model.synthetics_ssl_certificate_issuer import SyntheticsSSLCertificateIssuer
 from datadog_api_client.v1.model.synthetics_ssl_certificate_subject import SyntheticsSSLCertificateSubject
-from datadog_api_client.v1.model.synthetics_status import SyntheticsStatus
 from datadog_api_client.v1.model.synthetics_step import SyntheticsStep
 from datadog_api_client.v1.model.synthetics_step_detail import SyntheticsStepDetail
 from datadog_api_client.v1.model.synthetics_step_detail_warning import SyntheticsStepDetailWarning
@@ -1647,6 +1647,7 @@ __all__ = [
     "SyntheticsBatchDetails",
     "SyntheticsBatchDetailsData",
     "SyntheticsBatchResult",
+    "SyntheticsBatchStatus",
     "SyntheticsBrowserError",
     "SyntheticsBrowserErrorType",
     "SyntheticsBrowserTest",
@@ -1731,7 +1732,6 @@ __all__ = [
     "SyntheticsSSLCertificate",
     "SyntheticsSSLCertificateIssuer",
     "SyntheticsSSLCertificateSubject",
-    "SyntheticsStatus",
     "SyntheticsStep",
     "SyntheticsStepDetail",
     "SyntheticsStepDetailWarning",

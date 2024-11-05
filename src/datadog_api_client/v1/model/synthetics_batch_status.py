@@ -12,9 +12,9 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class SyntheticsStatus(ModelSimple):
+class SyntheticsBatchStatus(ModelSimple):
     """
-    Determines whether or not the batch has passed, failed, or is in progress.
+    Determines whether the batch has passed, failed, or is in progress.
 
     :param value: Must be one of ["passed", "skipped", "failed"].
     :type value: str
@@ -25,9 +25,9 @@ class SyntheticsStatus(ModelSimple):
         "skipped",
         "failed",
     }
-    PASSED: ClassVar["SyntheticsStatus"]
-    skipped: ClassVar["SyntheticsStatus"]
-    failed: ClassVar["SyntheticsStatus"]
+    PASSED: ClassVar["SyntheticsBatchStatus"]
+    SKIPPED: ClassVar["SyntheticsBatchStatus"]
+    FAILED: ClassVar["SyntheticsBatchStatus"]
 
     @cached_property
     def openapi_types(_):
@@ -36,6 +36,6 @@ class SyntheticsStatus(ModelSimple):
         }
 
 
-SyntheticsStatus.PASSED = SyntheticsStatus("passed")
-SyntheticsStatus.skipped = SyntheticsStatus("skipped")
-SyntheticsStatus.failed = SyntheticsStatus("failed")
+SyntheticsBatchStatus.PASSED = SyntheticsBatchStatus("passed")
+SyntheticsBatchStatus.SKIPPED = SyntheticsBatchStatus("skipped")
+SyntheticsBatchStatus.FAILED = SyntheticsBatchStatus("failed")
