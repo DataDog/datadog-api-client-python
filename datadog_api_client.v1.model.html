@@ -21331,9 +21331,11 @@ type conversion is done.</p></li>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>allow_failure</strong> (<em>bool</em><em>, </em><em>optional</em>) – A boolean set to allow this step to fail.</p></li>
+<li><p><strong>always_execute</strong> (<em>bool</em><em>, </em><em>optional</em>) – A boolean set to always execute this step even if the previous step failed or was skipped.</p></li>
+<li><p><strong>exit_if_succeed</strong> (<em>bool</em><em>, </em><em>optional</em>) – A boolean set to exit the test if the step succeeds.</p></li>
 <li><p><strong>is_critical</strong> (<em>bool</em><em>, </em><em>optional</em>) – A boolean to use in addition to <code class="docutils literal notranslate"><span class="pre">allowFailure</span></code> to determine if the test should be marked as failed when the step fails.</p></li>
 <li><p><strong>name</strong> (<em>str</em><em>, </em><em>optional</em>) – The name of the step.</p></li>
-<li><p><strong>no_screenshot</strong> (<em>bool</em><em>, </em><em>optional</em>) – A boolean set to not take a screenshot for the step.</p></li>
+<li><p><strong>no_screenshot</strong> (<em>bool</em><em>, </em><em>optional</em>) – A boolean set to skip taking a screenshot for the step.</p></li>
 <li><p><strong>params</strong> (<em>dict</em><em>, </em><em>optional</em>) – The parameters of the step.</p></li>
 <li><p><strong>timeout</strong> (<em>int</em><em>, </em><em>optional</em>) – The time before declaring a step failed.</p></li>
 <li><p><strong>type</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.synthetics_step_type.SyntheticsStepType" title="datadog_api_client.v1.model.synthetics_step_type.SyntheticsStepType"><em>SyntheticsStepType</em></a><em>, </em><em>optional</em>) – Step type used in your Synthetic test.</p></li>
