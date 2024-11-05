@@ -16,7 +16,7 @@ from datadog_api_client.model_utils import (
 if TYPE_CHECKING:
     from datadog_api_client.v1.model.synthetics_ci_batch_metadata import SyntheticsCIBatchMetadata
     from datadog_api_client.v1.model.synthetics_batch_result import SyntheticsBatchResult
-    from datadog_api_client.v1.model.synthetics_status import SyntheticsStatus
+    from datadog_api_client.v1.model.synthetics_batch_status import SyntheticsBatchStatus
 
 
 class SyntheticsBatchDetailsData(ModelNormal):
@@ -24,12 +24,12 @@ class SyntheticsBatchDetailsData(ModelNormal):
     def openapi_types(_):
         from datadog_api_client.v1.model.synthetics_ci_batch_metadata import SyntheticsCIBatchMetadata
         from datadog_api_client.v1.model.synthetics_batch_result import SyntheticsBatchResult
-        from datadog_api_client.v1.model.synthetics_status import SyntheticsStatus
+        from datadog_api_client.v1.model.synthetics_batch_status import SyntheticsBatchStatus
 
         return {
             "metadata": (SyntheticsCIBatchMetadata,),
             "results": ([SyntheticsBatchResult],),
-            "status": (SyntheticsStatus,),
+            "status": (SyntheticsBatchStatus,),
         }
 
     attribute_map = {
@@ -42,7 +42,7 @@ class SyntheticsBatchDetailsData(ModelNormal):
         self_,
         metadata: Union[SyntheticsCIBatchMetadata, UnsetType] = unset,
         results: Union[List[SyntheticsBatchResult], UnsetType] = unset,
-        status: Union[SyntheticsStatus, UnsetType] = unset,
+        status: Union[SyntheticsBatchStatus, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -54,8 +54,8 @@ class SyntheticsBatchDetailsData(ModelNormal):
         :param results: List of results for the batch.
         :type results: [SyntheticsBatchResult], optional
 
-        :param status: Determines whether or not the batch has passed, failed, or is in progress.
-        :type status: SyntheticsStatus, optional
+        :param status: Determines whether the batch has passed, failed, or is in progress.
+        :type status: SyntheticsBatchStatus, optional
         """
         if metadata is not unset:
             kwargs["metadata"] = metadata

@@ -16,7 +16,7 @@ from datadog_api_client.model_utils import (
 if TYPE_CHECKING:
     from datadog_api_client.v1.model.synthetics_device_id import SyntheticsDeviceID
     from datadog_api_client.v1.model.synthetics_test_execution_rule import SyntheticsTestExecutionRule
-    from datadog_api_client.v1.model.synthetics_status import SyntheticsStatus
+    from datadog_api_client.v1.model.synthetics_batch_status import SyntheticsBatchStatus
     from datadog_api_client.v1.model.synthetics_test_details_type import SyntheticsTestDetailsType
 
 
@@ -25,7 +25,7 @@ class SyntheticsBatchResult(ModelNormal):
     def openapi_types(_):
         from datadog_api_client.v1.model.synthetics_device_id import SyntheticsDeviceID
         from datadog_api_client.v1.model.synthetics_test_execution_rule import SyntheticsTestExecutionRule
-        from datadog_api_client.v1.model.synthetics_status import SyntheticsStatus
+        from datadog_api_client.v1.model.synthetics_batch_status import SyntheticsBatchStatus
         from datadog_api_client.v1.model.synthetics_test_details_type import SyntheticsTestDetailsType
 
         return {
@@ -35,7 +35,7 @@ class SyntheticsBatchResult(ModelNormal):
             "location": (str,),
             "result_id": (str,),
             "retries": (float,),
-            "status": (SyntheticsStatus,),
+            "status": (SyntheticsBatchStatus,),
             "test_name": (str,),
             "test_public_id": (str,),
             "test_type": (SyntheticsTestDetailsType,),
@@ -62,7 +62,7 @@ class SyntheticsBatchResult(ModelNormal):
         location: Union[str, UnsetType] = unset,
         result_id: Union[str, UnsetType] = unset,
         retries: Union[float, UnsetType] = unset,
-        status: Union[SyntheticsStatus, UnsetType] = unset,
+        status: Union[SyntheticsBatchStatus, UnsetType] = unset,
         test_name: Union[str, UnsetType] = unset,
         test_public_id: Union[str, UnsetType] = unset,
         test_type: Union[SyntheticsTestDetailsType, UnsetType] = unset,
@@ -89,8 +89,8 @@ class SyntheticsBatchResult(ModelNormal):
         :param retries: Number of times this result has been retried.
         :type retries: float, optional
 
-        :param status: Determines whether or not the batch has passed, failed, or is in progress.
-        :type status: SyntheticsStatus, optional
+        :param status: Determines whether the batch has passed, failed, or is in progress.
+        :type status: SyntheticsBatchStatus, optional
 
         :param test_name: Name of the test.
         :type test_name: str, optional

@@ -14418,7 +14418,7 @@ components:
             $ref: '#/components/schemas/SyntheticsBatchResult'
           type: array
         status:
-          $ref: '#/components/schemas/SyntheticsStatus'
+          $ref: '#/components/schemas/SyntheticsBatchStatus'
       type: object
     SyntheticsBatchResult:
       description: Object with the results of a Synthetic batch.
@@ -14442,7 +14442,7 @@ components:
           format: double
           type: number
         status:
-          $ref: '#/components/schemas/SyntheticsStatus'
+          $ref: '#/components/schemas/SyntheticsBatchStatus'
         test_name:
           description: Name of the test.
           type: string
@@ -14452,6 +14452,17 @@ components:
         test_type:
           $ref: '#/components/schemas/SyntheticsTestDetailsType'
       type: object
+    SyntheticsBatchStatus:
+      description: Determines whether the batch has passed, failed, or is in progress.
+      enum:
+      - passed
+      - skipped
+      - failed
+      type: string
+      x-enum-varnames:
+      - PASSED
+      - SKIPPED
+      - FAILED
     SyntheticsBrowserError:
       description: Error response object for a browser test.
       properties:
@@ -16210,18 +16221,6 @@ components:
           description: Subject Alternative Name associated with the certificate.
           type: string
       type: object
-    SyntheticsStatus:
-      description: Determines whether or not the batch has passed, failed, or is in
-        progress.
-      enum:
-      - passed
-      - skipped
-      - failed
-      type: string
-      x-enum-varnames:
-      - PASSED
-      - skipped
-      - failed
     SyntheticsStep:
       description: The steps used in a Synthetic browser test.
       properties:
