@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, Union
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -13,9 +13,15 @@ from datadog_api_client.model_utils import (
 )
 
 
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.gcp_metric_namespace_config import GCPMetricNamespaceConfig
+
+
 class GCPSTSServiceAccountAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.gcp_metric_namespace_config import GCPMetricNamespaceConfig
+
         return {
             "account_tags": ([str],),
             "automute": (bool,),
@@ -25,6 +31,7 @@ class GCPSTSServiceAccountAttributes(ModelNormal):
             "is_cspm_enabled": (bool,),
             "is_resource_change_collection_enabled": (bool,),
             "is_security_command_center_enabled": (bool,),
+            "metric_namespace_configs": ([GCPMetricNamespaceConfig],),
             "resource_collection_enabled": (bool,),
         }
 
@@ -37,6 +44,7 @@ class GCPSTSServiceAccountAttributes(ModelNormal):
         "is_cspm_enabled": "is_cspm_enabled",
         "is_resource_change_collection_enabled": "is_resource_change_collection_enabled",
         "is_security_command_center_enabled": "is_security_command_center_enabled",
+        "metric_namespace_configs": "metric_namespace_configs",
         "resource_collection_enabled": "resource_collection_enabled",
     }
 
@@ -50,6 +58,7 @@ class GCPSTSServiceAccountAttributes(ModelNormal):
         is_cspm_enabled: Union[bool, UnsetType] = unset,
         is_resource_change_collection_enabled: Union[bool, UnsetType] = unset,
         is_security_command_center_enabled: Union[bool, UnsetType] = unset,
+        metric_namespace_configs: Union[List[GCPMetricNamespaceConfig], UnsetType] = unset,
         resource_collection_enabled: Union[bool, UnsetType] = unset,
         **kwargs,
     ):
@@ -81,6 +90,9 @@ class GCPSTSServiceAccountAttributes(ModelNormal):
         :param is_security_command_center_enabled: When enabled, Datadog will attempt to collect Security Command Center Findings. Note: This requires additional permissions on the service account.
         :type is_security_command_center_enabled: bool, optional
 
+        :param metric_namespace_configs: Configurations for GCP metric namespaces.
+        :type metric_namespace_configs: [GCPMetricNamespaceConfig], optional
+
         :param resource_collection_enabled: When enabled, Datadog scans for all resources in your GCP environment.
         :type resource_collection_enabled: bool, optional
         """
@@ -100,6 +112,8 @@ class GCPSTSServiceAccountAttributes(ModelNormal):
             kwargs["is_resource_change_collection_enabled"] = is_resource_change_collection_enabled
         if is_security_command_center_enabled is not unset:
             kwargs["is_security_command_center_enabled"] = is_security_command_center_enabled
+        if metric_namespace_configs is not unset:
+            kwargs["metric_namespace_configs"] = metric_namespace_configs
         if resource_collection_enabled is not unset:
             kwargs["resource_collection_enabled"] = resource_collection_enabled
         super().__init__(kwargs)

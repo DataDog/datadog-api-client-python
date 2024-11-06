@@ -689,6 +689,7 @@ from datadog_api_client.v2.model.full_api_key import FullAPIKey
 from datadog_api_client.v2.model.full_api_key_attributes import FullAPIKeyAttributes
 from datadog_api_client.v2.model.full_application_key import FullApplicationKey
 from datadog_api_client.v2.model.full_application_key_attributes import FullApplicationKeyAttributes
+from datadog_api_client.v2.model.gcp_metric_namespace_config import GCPMetricNamespaceConfig
 from datadog_api_client.v2.model.gcpsts_delegate_account import GCPSTSDelegateAccount
 from datadog_api_client.v2.model.gcpsts_delegate_account_attributes import GCPSTSDelegateAccountAttributes
 from datadog_api_client.v2.model.gcpsts_delegate_account_response import GCPSTSDelegateAccountResponse
@@ -2610,6 +2611,7 @@ __all__ = [
     "FullAPIKeyAttributes",
     "FullApplicationKey",
     "FullApplicationKeyAttributes",
+    "GCPMetricNamespaceConfig",
     "GCPSTSDelegateAccount",
     "GCPSTSDelegateAccountAttributes",
     "GCPSTSDelegateAccountResponse",
