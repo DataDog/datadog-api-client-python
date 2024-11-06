@@ -3868,6 +3868,13 @@ datadog\_api\_client.v2.model.full\_application\_key\_attributes module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.gcp\_metric\_namespace\_config module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.gcp_metric_namespace_config
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.gcp\_service\_account\_meta module
 ----------------------------------------------------------------
 
