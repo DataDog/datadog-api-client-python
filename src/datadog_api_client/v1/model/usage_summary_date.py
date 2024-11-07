@@ -81,7 +81,9 @@ class UsageSummaryDate(ModelNormal):
             "date": (datetime,),
             "dbm_host_top99p": (int,),
             "dbm_queries_count_avg": (int,),
+            "error_tracking_error_events_sum": (int,),
             "error_tracking_events_sum": (int,),
+            "error_tracking_rum_error_events_sum": (int,),
             "fargate_tasks_count_avg": (int,),
             "fargate_tasks_count_hwm": (int,),
             "flex_logs_compute_large_avg": (int,),
@@ -221,7 +223,9 @@ class UsageSummaryDate(ModelNormal):
         "date": "date",
         "dbm_host_top99p": "dbm_host_top99p",
         "dbm_queries_count_avg": "dbm_queries_count_avg",
+        "error_tracking_error_events_sum": "error_tracking_error_events_sum",
         "error_tracking_events_sum": "error_tracking_events_sum",
+        "error_tracking_rum_error_events_sum": "error_tracking_rum_error_events_sum",
         "fargate_tasks_count_avg": "fargate_tasks_count_avg",
         "fargate_tasks_count_hwm": "fargate_tasks_count_hwm",
         "flex_logs_compute_large_avg": "flex_logs_compute_large_avg",
@@ -362,7 +366,9 @@ class UsageSummaryDate(ModelNormal):
         date: Union[datetime, UnsetType] = unset,
         dbm_host_top99p: Union[int, UnsetType] = unset,
         dbm_queries_count_avg: Union[int, UnsetType] = unset,
+        error_tracking_error_events_sum: Union[int, UnsetType] = unset,
         error_tracking_events_sum: Union[int, UnsetType] = unset,
+        error_tracking_rum_error_events_sum: Union[int, UnsetType] = unset,
         fargate_tasks_count_avg: Union[int, UnsetType] = unset,
         fargate_tasks_count_hwm: Union[int, UnsetType] = unset,
         flex_logs_compute_large_avg: Union[int, UnsetType] = unset,
@@ -618,8 +624,14 @@ class UsageSummaryDate(ModelNormal):
         :param dbm_queries_count_avg: Shows the average of all normalized Database Monitoring queries over all hours in the current date for all organizations.
         :type dbm_queries_count_avg: int, optional
 
+        :param error_tracking_error_events_sum: Shows the sum of all Error Tracking error events over all hours in the current date for the given org.
+        :type error_tracking_error_events_sum: int, optional
+
         :param error_tracking_events_sum: Shows the sum of all Error Tracking events over all hours in the current date for the given org.
         :type error_tracking_events_sum: int, optional
+
+        :param error_tracking_rum_error_events_sum: Shows the sum of all Error Tracking RUM error events over all hours in the current date for the given org.
+        :type error_tracking_rum_error_events_sum: int, optional
 
         :param fargate_tasks_count_avg: Shows the high-watermark of all Fargate tasks over all hours in the current date for all organizations.
         :type fargate_tasks_count_avg: int, optional
@@ -974,8 +986,12 @@ class UsageSummaryDate(ModelNormal):
             kwargs["dbm_host_top99p"] = dbm_host_top99p
         if dbm_queries_count_avg is not unset:
             kwargs["dbm_queries_count_avg"] = dbm_queries_count_avg
+        if error_tracking_error_events_sum is not unset:
+            kwargs["error_tracking_error_events_sum"] = error_tracking_error_events_sum
         if error_tracking_events_sum is not unset:
             kwargs["error_tracking_events_sum"] = error_tracking_events_sum
+        if error_tracking_rum_error_events_sum is not unset:
+            kwargs["error_tracking_rum_error_events_sum"] = error_tracking_rum_error_events_sum
         if fargate_tasks_count_avg is not unset:
             kwargs["fargate_tasks_count_avg"] = fargate_tasks_count_avg
         if fargate_tasks_count_hwm is not unset:
