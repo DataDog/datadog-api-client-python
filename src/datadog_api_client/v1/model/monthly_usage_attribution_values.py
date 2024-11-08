@@ -57,6 +57,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
             "custom_timeseries_usage": (float,),
             "cws_containers_percentage": (float,),
             "cws_containers_usage": (float,),
+            "cws_fargate_task_percentage": (float,),
+            "cws_fargate_task_usage": (float,),
             "cws_hosts_percentage": (float,),
             "cws_hosts_usage": (float,),
             "data_jobs_monitoring_usage": (float,),
@@ -194,6 +196,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         "custom_timeseries_usage": "custom_timeseries_usage",
         "cws_containers_percentage": "cws_containers_percentage",
         "cws_containers_usage": "cws_containers_usage",
+        "cws_fargate_task_percentage": "cws_fargate_task_percentage",
+        "cws_fargate_task_usage": "cws_fargate_task_usage",
         "cws_hosts_percentage": "cws_hosts_percentage",
         "cws_hosts_usage": "cws_hosts_usage",
         "data_jobs_monitoring_usage": "data_jobs_monitoring_usage",
@@ -332,6 +336,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         custom_timeseries_usage: Union[float, UnsetType] = unset,
         cws_containers_percentage: Union[float, UnsetType] = unset,
         cws_containers_usage: Union[float, UnsetType] = unset,
+        cws_fargate_task_percentage: Union[float, UnsetType] = unset,
+        cws_fargate_task_usage: Union[float, UnsetType] = unset,
         cws_hosts_percentage: Union[float, UnsetType] = unset,
         cws_hosts_usage: Union[float, UnsetType] = unset,
         data_jobs_monitoring_usage: Union[float, UnsetType] = unset,
@@ -550,6 +556,12 @@ class MonthlyUsageAttributionValues(ModelNormal):
 
         :param cws_containers_usage: The Cloud Workload Security container usage by tag(s).
         :type cws_containers_usage: float, optional
+
+        :param cws_fargate_task_percentage: The percentage of Cloud Workload Security Fargate task usage by tag(s).
+        :type cws_fargate_task_percentage: float, optional
+
+        :param cws_fargate_task_usage: The Cloud Workload Security Fargate task usage by tag(s).
+        :type cws_fargate_task_usage: float, optional
 
         :param cws_hosts_percentage: The percentage of Cloud Workload Security host usage by tag(s).
         :type cws_hosts_percentage: float, optional
@@ -913,6 +925,10 @@ class MonthlyUsageAttributionValues(ModelNormal):
             kwargs["cws_containers_percentage"] = cws_containers_percentage
         if cws_containers_usage is not unset:
             kwargs["cws_containers_usage"] = cws_containers_usage
+        if cws_fargate_task_percentage is not unset:
+            kwargs["cws_fargate_task_percentage"] = cws_fargate_task_percentage
+        if cws_fargate_task_usage is not unset:
+            kwargs["cws_fargate_task_usage"] = cws_fargate_task_usage
         if cws_hosts_percentage is not unset:
             kwargs["cws_hosts_percentage"] = cws_hosts_percentage
         if cws_hosts_usage is not unset:

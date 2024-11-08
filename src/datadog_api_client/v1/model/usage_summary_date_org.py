@@ -73,6 +73,7 @@ class UsageSummaryDateOrg(ModelNormal):
             "custom_live_ts_avg": (int,),
             "custom_ts_avg": (int,),
             "cws_container_count_avg": (int,),
+            "cws_fargate_task_avg": (int,),
             "cws_host_top99p": (int,),
             "data_jobs_monitoring_host_hr_sum": (int,),
             "dbm_host_top99p_sum": (int,),
@@ -221,6 +222,7 @@ class UsageSummaryDateOrg(ModelNormal):
         "custom_live_ts_avg": "custom_live_ts_avg",
         "custom_ts_avg": "custom_ts_avg",
         "cws_container_count_avg": "cws_container_count_avg",
+        "cws_fargate_task_avg": "cws_fargate_task_avg",
         "cws_host_top99p": "cws_host_top99p",
         "data_jobs_monitoring_host_hr_sum": "data_jobs_monitoring_host_hr_sum",
         "dbm_host_top99p_sum": "dbm_host_top99p_sum",
@@ -370,6 +372,7 @@ class UsageSummaryDateOrg(ModelNormal):
         custom_live_ts_avg: Union[int, UnsetType] = unset,
         custom_ts_avg: Union[int, UnsetType] = unset,
         cws_container_count_avg: Union[int, UnsetType] = unset,
+        cws_fargate_task_avg: Union[int, UnsetType] = unset,
         cws_host_top99p: Union[int, UnsetType] = unset,
         data_jobs_monitoring_host_hr_sum: Union[int, UnsetType] = unset,
         dbm_host_top99p_sum: Union[int, UnsetType] = unset,
@@ -631,6 +634,9 @@ class UsageSummaryDateOrg(ModelNormal):
 
         :param cws_container_count_avg: Shows the average of all distinct Cloud Workload Security containers over all hours in the current date for the given org.
         :type cws_container_count_avg: int, optional
+
+        :param cws_fargate_task_avg: Shows the average of all distinct Cloud Workload Security Fargate tasks over all hours in the current date for the given org.
+        :type cws_fargate_task_avg: int, optional
 
         :param cws_host_top99p: Shows the 99th percentile of all Cloud Workload Security hosts over all hours in the current date for the given org.
         :type cws_host_top99p: int, optional
@@ -1013,6 +1019,8 @@ class UsageSummaryDateOrg(ModelNormal):
             kwargs["custom_ts_avg"] = custom_ts_avg
         if cws_container_count_avg is not unset:
             kwargs["cws_container_count_avg"] = cws_container_count_avg
+        if cws_fargate_task_avg is not unset:
+            kwargs["cws_fargate_task_avg"] = cws_fargate_task_avg
         if cws_host_top99p is not unset:
             kwargs["cws_host_top99p"] = cws_host_top99p
         if data_jobs_monitoring_host_hr_sum is not unset:
