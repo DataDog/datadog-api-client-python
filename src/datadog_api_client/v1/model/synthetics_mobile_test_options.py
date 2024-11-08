@@ -180,7 +180,7 @@ class SyntheticsMobileTestOptions(ModelNormal):
         :param tick_every: The frequency at which to run the Synthetic test (in seconds).
         :type tick_every: int
 
-        :param verbosity: The level of verbosity for the mobile test.
+        :param verbosity: The level of verbosity for the mobile test. This field can not be set by a user.
         :type verbosity: int, optional
         """
         if allow_application_crash is not unset:
