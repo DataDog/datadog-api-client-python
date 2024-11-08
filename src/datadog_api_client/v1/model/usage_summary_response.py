@@ -80,7 +80,8 @@ class UsageSummaryResponse(ModelNormal):
             "custom_historical_ts_sum": (int,),
             "custom_live_ts_sum": (int,),
             "custom_ts_sum": (int,),
-            "cws_containers_avg_sum": (int,),
+            "cws_container_avg_sum": (int,),
+            "cws_fargate_task_avg_sum": (int,),
             "cws_host_top99p_sum": (int,),
             "data_jobs_monitoring_host_hr_agg_sum": (int,),
             "dbm_host_top99p_sum": (int,),
@@ -233,7 +234,8 @@ class UsageSummaryResponse(ModelNormal):
         "custom_historical_ts_sum": "custom_historical_ts_sum",
         "custom_live_ts_sum": "custom_live_ts_sum",
         "custom_ts_sum": "custom_ts_sum",
-        "cws_containers_avg_sum": "cws_containers_avg_sum",
+        "cws_container_avg_sum": "cws_container_avg_sum",
+        "cws_fargate_task_avg_sum": "cws_fargate_task_avg_sum",
         "cws_host_top99p_sum": "cws_host_top99p_sum",
         "data_jobs_monitoring_host_hr_agg_sum": "data_jobs_monitoring_host_hr_agg_sum",
         "dbm_host_top99p_sum": "dbm_host_top99p_sum",
@@ -387,7 +389,8 @@ class UsageSummaryResponse(ModelNormal):
         custom_historical_ts_sum: Union[int, UnsetType] = unset,
         custom_live_ts_sum: Union[int, UnsetType] = unset,
         custom_ts_sum: Union[int, UnsetType] = unset,
-        cws_containers_avg_sum: Union[int, UnsetType] = unset,
+        cws_container_avg_sum: Union[int, UnsetType] = unset,
+        cws_fargate_task_avg_sum: Union[int, UnsetType] = unset,
         cws_host_top99p_sum: Union[int, UnsetType] = unset,
         data_jobs_monitoring_host_hr_agg_sum: Union[int, UnsetType] = unset,
         dbm_host_top99p_sum: Union[int, UnsetType] = unset,
@@ -650,8 +653,11 @@ class UsageSummaryResponse(ModelNormal):
         :param custom_ts_sum: Shows the average number of distinct custom metrics over all hours in the current month for all organizations.
         :type custom_ts_sum: int, optional
 
-        :param cws_containers_avg_sum: Shows the average of all distinct Cloud Workload Security containers over all hours in the current month for all organizations.
-        :type cws_containers_avg_sum: int, optional
+        :param cws_container_avg_sum: Shows the average of all distinct Cloud Workload Security containers over all hours in the current month for all organizations.
+        :type cws_container_avg_sum: int, optional
+
+        :param cws_fargate_task_avg_sum: Shows the average of all distinct Cloud Workload Security Fargate tasks over all hours in the current month for all organizations.
+        :type cws_fargate_task_avg_sum: int, optional
 
         :param cws_host_top99p_sum: Shows the 99th percentile of all Cloud Workload Security hosts over all hours in the current month for all organizations.
         :type cws_host_top99p_sum: int, optional
@@ -1050,8 +1056,10 @@ class UsageSummaryResponse(ModelNormal):
             kwargs["custom_live_ts_sum"] = custom_live_ts_sum
         if custom_ts_sum is not unset:
             kwargs["custom_ts_sum"] = custom_ts_sum
-        if cws_containers_avg_sum is not unset:
-            kwargs["cws_containers_avg_sum"] = cws_containers_avg_sum
+        if cws_container_avg_sum is not unset:
+            kwargs["cws_container_avg_sum"] = cws_container_avg_sum
+        if cws_fargate_task_avg_sum is not unset:
+            kwargs["cws_fargate_task_avg_sum"] = cws_fargate_task_avg_sum
         if cws_host_top99p_sum is not unset:
             kwargs["cws_host_top99p_sum"] = cws_host_top99p_sum
         if data_jobs_monitoring_host_hr_agg_sum is not unset:
