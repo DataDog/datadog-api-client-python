@@ -1,0 +1,36 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"jobDefinition":{"cases":[{"condition":"a > 1","name":"Condition
+      1","notifications":[],"status":"info"}],"from":1730387522611,"index":"main","message":"A
+      large number of failed login attempts.","name":"Excessive number of failed attempts.","options":{"evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"queries":[{"aggregation":"count","distinctFields":[],"groupByFields":[],"query":"source:non_existing_src_weekend"}],"tags":[],"to":1730387532611,"type":"log_detection"}},"type":"historicalDetectionsJobCreate"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/siem-historical-detections/jobs
+  response:
+    body:
+      string: '{"data":{"id":"e332b07e-d573-45fa-b2df-9a1bcc27f17e","type":"historicalDetectionsJob"}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/siem-historical-detections/jobs/e332b07e-d573-45fa-b2df-9a1bcc27f17e/cancel
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1

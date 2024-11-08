@@ -2272,6 +2272,42 @@
       "type": "idempotent"
     }
   },
+  "ListHistoricalJobs": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "RunHistoricalJob": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ConvertJobResultToSignal": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DeleteHistoricalJob": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetHistoricalJob": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CancelHistoricalJob": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "CreateSLOReportJob": {
     "tag": "Service Level Objectives",
     "undo": {

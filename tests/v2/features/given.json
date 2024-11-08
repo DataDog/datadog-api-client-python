@@ -653,6 +653,18 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"historicalDetectionsJobCreate\",\n    \"attributes\": {\n      \"jobDefinition\": {\n        \"type\": \"log_detection\",\n        \"name\": \"Excessive number of failed attempts.\",\n        \"queries\": [\n          {\n            \"query\": \"source:non_existing_src_weekend\",\n            \"aggregation\": \"count\",\n            \"groupByFields\": [],\n            \"distinctFields\": []\n          }\n        ],\n        \"cases\": [\n          {\n            \"name\": \"Condition 1\",\n            \"status\": \"info\",\n            \"notifications\": [],\n            \"condition\": \"a > 1\"\n          }\n        ],\n        \"options\": {\n          \"keepAlive\": 3600,\n          \"maxSignalDuration\": 86400,\n          \"evaluationWindow\": 900\n        },\n        \"message\": \"A large number of failed login attempts.\",\n        \"tags\": [],\n        \"from\": 1730387522611,\n        \"to\": 1730387532611,\n        \"index\": \"main\"\n      }\n    }\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"historical_job\" in the system",
+    "key": "historical_job",
+    "tag": "Security Monitoring",
+    "operationId": "RunHistoricalJob"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"query\": \"slo_type:metric \\\"SLO Reporting Test\\\"\",\n      \"interval\": \"monthly\",\n      \"from_ts\": {{ timestamp(\"now - 21d\") }},\n      \"to_ts\":  {{ timestamp(\"now\") }}\n    }\n  }\n}"
       }
     ],

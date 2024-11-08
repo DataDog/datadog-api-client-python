@@ -1,0 +1,22 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"jobDefinition":{"cases":[{"condition":"a > 1","name":"Condition
+      1","notifications":[],"status":"info"}],"from":1730387522611,"index":"main","message":"A
+      large number of failed login attempts.","name":"Excessive number of failed attempts.","options":{"evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"queries":[{"aggregation":"count","distinctFields":[],"groupByFields":[],"query":"source:non_existing_src_weekend"}],"tags":[],"to":1730387532611,"type":"log_detection"}},"type":"historicalDetectionsJobCreate"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/siem-historical-detections/jobs
+  response:
+    body:
+      string: '{"data":{"id":"6f4c9c40-782b-4d14-900f-65ccc02389db","type":"historicalDetectionsJob"}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+version: 1
