@@ -1589,7 +1589,11 @@
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi</span></code></a><nav class="md-nav">
               <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.cancel_historical_job" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.cancel_historical_job()</span></code></a>
+        </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.convert_existing_security_monitoring_rule" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.convert_existing_security_monitoring_rule()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.convert_job_result_to_signal" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.convert_job_result_to_signal()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.convert_security_monitoring_rule_from_json_to_terraform" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.convert_security_monitoring_rule_from_json_to_terraform()</span></code></a>
         </li>
@@ -1598,6 +1602,8 @@
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.create_security_monitoring_rule" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.create_security_monitoring_rule()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.create_security_monitoring_suppression" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.create_security_monitoring_suppression()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.delete_historical_job" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.delete_historical_job()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.delete_security_filter" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.delete_security_filter()</span></code></a>
         </li>
@@ -1613,6 +1619,8 @@
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.get_finding" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.get_finding()</span></code></a>
         </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.get_historical_job" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.get_historical_job()</span></code></a>
+        </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.get_security_filter" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.get_security_filter()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.get_security_monitoring_rule" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.get_security_monitoring_rule()</span></code></a>
@@ -1625,6 +1633,8 @@
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.list_findings_with_pagination" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.list_findings_with_pagination()</span></code></a>
         </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.list_historical_jobs" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.list_historical_jobs()</span></code></a>
+        </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.list_security_filters" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.list_security_filters()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.list_security_monitoring_rules" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.list_security_monitoring_rules()</span></code></a>
@@ -1636,6 +1646,8 @@
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.list_security_monitoring_suppressions" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.list_security_monitoring_suppressions()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.mute_findings" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.mute_findings()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.run_historical_job" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.run_historical_job()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.search_security_monitoring_signals" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.search_security_monitoring_signals()</span></code></a>
         </li>
@@ -6931,6 +6943,20 @@ Returns the rum-based metric object from the request body when the request is su
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Create and manage your security rules, signals, filters, and more. See the <a class="reference external" href="https://docs.datadoghq.com/security/">Datadog Security page</a> for more information.</p>
 <dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.cancel_historical_job">
+<span class="sig-name descname"><span class="pre">cancel_historical_job</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">job_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.cancel_historical_job" title="Link to this definition">¶</a></dt>
+<dd><p>Cancel a historical job.</p>
+<p>Cancel a historical job.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>job_id</strong> (<em>str</em>) – The ID of the job.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.convert_existing_security_monitoring_rule">
 <span class="sig-name descname"><span class="pre">convert_existing_security_monitoring_rule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rule_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.security_monitoring_rule_convert_response.SecurityMonitoringRuleConvertResponse" title="datadog_api_client.v2.model.security_monitoring_rule_convert_response.SecurityMonitoringRuleConvertResponse"><span class="pre">SecurityMonitoringRuleConvertResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.convert_existing_security_monitoring_rule" title="Link to this definition">¶</a></dt>
 <dd><p>Convert an existing rule from JSON to Terraform.</p>
@@ -6942,6 +6968,17 @@ resource datadog_security_monitoring_rule.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.security_monitoring_rule_convert_response.SecurityMonitoringRuleConvertResponse" title="datadog_api_client.v2.model.security_monitoring_rule_convert_response.SecurityMonitoringRuleConvertResponse">SecurityMonitoringRuleConvertResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.convert_job_result_to_signal">
+<span class="sig-name descname"><span class="pre">convert_job_result_to_signal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.convert_job_results_to_signals_request.ConvertJobResultsToSignalsRequest" title="datadog_api_client.v2.model.convert_job_results_to_signals_request.ConvertJobResultsToSignalsRequest"><span class="pre">ConvertJobResultsToSignalsRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.convert_job_result_to_signal" title="Link to this definition">¶</a></dt>
+<dd><p>Convert a job result to a signal.</p>
+<p>Convert a job result to a signal.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
 </dd>
 </dl>
 </dd></dl>
@@ -6995,6 +7032,20 @@ for more examples.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.security_monitoring_suppression_response.SecurityMonitoringSuppressionResponse" title="datadog_api_client.v2.model.security_monitoring_suppression_response.SecurityMonitoringSuppressionResponse">SecurityMonitoringSuppressionResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.delete_historical_job">
+<span class="sig-name descname"><span class="pre">delete_historical_job</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">job_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.delete_historical_job" title="Link to this definition">¶</a></dt>
+<dd><p>Delete an existing job.</p>
+<p>Delete an existing job.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>job_id</strong> (<em>str</em>) – The ID of the job.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
 </dd>
 </dl>
 </dd></dl>
@@ -7105,6 +7156,20 @@ for more examples.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.get_finding_response.GetFindingResponse" title="datadog_api_client.v2.model.get_finding_response.GetFindingResponse">GetFindingResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.get_historical_job">
+<span class="sig-name descname"><span class="pre">get_historical_job</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">job_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.historical_job_response.HistoricalJobResponse" title="datadog_api_client.v2.model.historical_job_response.HistoricalJobResponse"><span class="pre">HistoricalJobResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.get_historical_job" title="Link to this definition">¶</a></dt>
+<dd><p>Get a job’s details.</p>
+<p>Get a job’s details.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>job_id</strong> (<em>str</em>) – The ID of the job.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.historical_job_response.HistoricalJobResponse" title="datadog_api_client.v2.model.historical_job_response.HistoricalJobResponse">HistoricalJobResponse</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -7247,6 +7312,25 @@ for more examples.</p>
 </dl>
 </dd></dl>
 <dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.list_historical_jobs">
+<span class="sig-name descname"><span class="pre">list_historical_jobs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">page_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">page_number</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter_query</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.list_historical_jobs_response.ListHistoricalJobsResponse" title="datadog_api_client.v2.model.list_historical_jobs_response.ListHistoricalJobsResponse"><span class="pre">ListHistoricalJobsResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.list_historical_jobs" title="Link to this definition">¶</a></dt>
+<dd><p>List historical jobs.</p>
+<p>List historical jobs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>page_size</strong> (<em>int</em><em>, </em><em>optional</em>) – Size for a given page. The maximum allowed value is 100.</p></li>
+<li><p><strong>page_number</strong> (<em>int</em><em>, </em><em>optional</em>) – Specific page number to return.</p></li>
+<li><p><strong>sort</strong> (<em>str</em><em>, </em><em>optional</em>) – The order of the jobs in results.</p></li>
+<li><p><strong>filter_query</strong> (<em>str</em><em>, </em><em>optional</em>) – Query used to filter items from the fetched list.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.list_historical_jobs_response.ListHistoricalJobsResponse" title="datadog_api_client.v2.model.list_historical_jobs_response.ListHistoricalJobsResponse">ListHistoricalJobsResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.list_security_filters">
 <span class="sig-name descname"><span class="pre">list_security_filters</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.security_filters_response.SecurityFiltersResponse" title="datadog_api_client.v2.model.security_filters_response.SecurityFiltersResponse"><span class="pre">SecurityFiltersResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.list_security_filters" title="Link to this definition">¶</a></dt>
 <dd><p>Get all security filters.</p>
@@ -7352,6 +7436,17 @@ The allowed reasons depend on whether the finding is being muted or unmuted:</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.bulk_mute_findings_response.BulkMuteFindingsResponse" title="datadog_api_client.v2.model.bulk_mute_findings_response.BulkMuteFindingsResponse">BulkMuteFindingsResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.run_historical_job">
+<span class="sig-name descname"><span class="pre">run_historical_job</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.run_historical_job_request.RunHistoricalJobRequest" title="datadog_api_client.v2.model.run_historical_job_request.RunHistoricalJobRequest"><span class="pre">RunHistoricalJobRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.job_create_response.JobCreateResponse" title="datadog_api_client.v2.model.job_create_response.JobCreateResponse"><span class="pre">JobCreateResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.run_historical_job" title="Link to this definition">¶</a></dt>
+<dd><p>Run a historical job.</p>
+<p>Run a historical job.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.job_create_response.JobCreateResponse" title="datadog_api_client.v2.model.job_create_response.JobCreateResponse">JobCreateResponse</a></p>
 </dd>
 </dl>
 </dd></dl>

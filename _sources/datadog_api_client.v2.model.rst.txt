@@ -767,6 +767,13 @@ datadog\_api\_client.v2.model.bulk\_mute\_findings\_response\_data module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.calculated\_field module
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.calculated_field
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.case module
 -----------------------------------------
 
@@ -2094,6 +2101,34 @@ datadog\_api\_client.v2.model.content\_encoding module
 ------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.content_encoding
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.convert\_job\_results\_to\_signals\_attributes module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.convert_job_results_to_signals_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.convert\_job\_results\_to\_signals\_data module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.convert_job_results_to_signals_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.convert\_job\_results\_to\_signals\_data\_type module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.convert_job_results_to_signals_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.convert\_job\_results\_to\_signals\_request module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.convert_job_results_to_signals_request
    :members:
    :show-inheritance:
 
@@ -4036,6 +4071,41 @@ datadog\_api\_client.v2.model.group\_tags module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.historical\_job\_data\_type module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.historical_job_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.historical\_job\_list\_meta module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.historical_job_list_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.historical\_job\_response module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.historical_job_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.historical\_job\_response\_attributes module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.historical_job_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.historical\_job\_response\_data module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.historical_job_response_data
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.hourly\_usage module
 --------------------------------------------------
 
@@ -5163,6 +5233,34 @@ datadog\_api\_client.v2.model.jira\_issue\_result module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.job\_create\_response module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.job_create_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.job\_create\_response\_data module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.job_create_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.job\_definition module
+----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.job_definition
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.job\_definition\_from\_rule module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.job_definition_from_rule
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.jsonapi\_error\_item module
 ---------------------------------------------------------
 
@@ -5307,6 +5405,13 @@ datadog\_api\_client.v2.model.list\_findings\_response module
 -------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.list_findings_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.list\_historical\_jobs\_response module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_historical_jobs_response
    :members:
    :show-inheritance:
 
@@ -8681,6 +8786,34 @@ datadog\_api\_client.v2.model.rum\_warning module
 -------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.rum_warning
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.run\_historical\_job\_request module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.run_historical_job_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.run\_historical\_job\_request\_attributes module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.run_historical_job_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.run\_historical\_job\_request\_data module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.run_historical_job_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.run\_historical\_job\_request\_data\_type module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.run_historical_job_request_data_type
    :members:
    :show-inheritance:
 
