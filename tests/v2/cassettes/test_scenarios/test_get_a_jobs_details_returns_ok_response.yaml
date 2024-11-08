@@ -1,0 +1,45 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"jobDefinition":{"cases":[{"condition":"a > 1","name":"Condition
+      1","notifications":[],"status":"info"}],"from":1730387522611,"index":"main","message":"A
+      large number of failed login attempts.","name":"Excessive number of failed attempts.","options":{"evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"queries":[{"aggregation":"count","distinctFields":[],"groupByFields":[],"query":"source:non_existing_src_weekend"}],"tags":[],"to":1730387532611,"type":"log_detection"}},"type":"historicalDetectionsJobCreate"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/siem-historical-detections/jobs
+  response:
+    body:
+      string: '{"data":{"id":"f1753ed6-8c47-4168-9d6b-d11b9612fb3c","type":"historicalDetectionsJob"}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/siem-historical-detections/jobs/f1753ed6-8c47-4168-9d6b-d11b9612fb3c
+  response:
+    body:
+      string: '{"data":{"id":"f1753ed6-8c47-4168-9d6b-d11b9612fb3c","type":"historicalDetectionsJob","attributes":{"createdAt":"2024-11-08
+        09:54:39.761792+00","createdByHandle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","createdByName":"CI
+        Account","jobDefinition":{"from":1730387522611,"to":1730387532611,"index":"main","name":"Excessive
+        number of failed attempts.","cases":[{"name":"Condition 1","status":"info","notifications":[],"condition":"a
+        \u003e 1"}],"queries":[{"query":"source:non_existing_src_weekend","groupByFields":[],"hasOptionalGroupByFields":false,"distinctFields":[],"aggregation":"count","name":""}],"options":{"evaluationWindow":900,"detectionMethod":"threshold","maxSignalDuration":86400,"keepAlive":3600},"message":"A
+        large number of failed login attempts.","tags":[],"type":"log_detection","filters":[]},"jobName":"Excessive
+        number of failed attempts.","jobStatus":"pending","modifiedAt":"2024-11-08
+        09:54:39.761792+00"}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1

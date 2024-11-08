@@ -9,6 +9,40 @@ Feature: Security Monitoring
     And a valid "appKeyAuth" key in the system
     And an instance of "SecurityMonitoring" API
 
+  @team:DataDog/k9-cloud-security-platform
+  Scenario: Cancel a historical job returns "Bad Request" response
+    Given operation "CancelHistoricalJob" enabled
+    And new "CancelHistoricalJob" request
+    And request contains "job_id" parameter with value "inva-lid"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Cancel a historical job returns "Conflict" response
+    Given operation "CancelHistoricalJob" enabled
+    And new "CancelHistoricalJob" request
+    And request contains "job_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 409 Conflict
+
+  @team:DataDog/k9-cloud-security-platform
+  Scenario: Cancel a historical job returns "Not Found" response
+    Given operation "CancelHistoricalJob" enabled
+    And new "CancelHistoricalJob" request
+    And request contains "job_id" parameter with value "8e2a37fb-b0c8-4761-a7f0-0a8d6a98ba93"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/k9-cloud-security-platform
+  Scenario: Cancel a historical job returns "OK" response
+    Given operation "CancelHistoricalJob" enabled
+    And operation "RunHistoricalJob" enabled
+    And new "CancelHistoricalJob" request
+    And there is a valid "historical_job" in the system
+    And request contains "job_id" parameter from "historical_job.data.id"
+    When the request is sent
+    Then the response status is 204 No Content
+
   @generated @skip @team:DataDog/k9-cloud-security-platform
   Scenario: Change the related incidents of a security signal returns "Bad Request" response
     Given new "EditSecurityMonitoringSignalIncidents" request
@@ -56,6 +90,30 @@ Feature: Security Monitoring
     And body with value {"data": {"attributes": {"archive_reason": "none", "state": "open"}}}
     When the request is sent
     Then the response status is 200 OK
+
+  @team:DataDog/k9-cloud-security-platform
+  Scenario: Convert a job result to a signal returns "Bad Request" response
+    Given operation "ConvertJobResultToSignal" enabled
+    And new "ConvertJobResultToSignal" request
+    And body with value {"data": {"attributes": {"jobResultIds": [""], "notifications": [""], "signalMessage": "A large number of failed login attempts.", "signalSeverity": "critical"}, "type": "historicalDetectionsJobResultSignalConversion"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Convert a job result to a signal returns "Not Found" response
+    Given operation "ConvertJobResultToSignal" enabled
+    And new "ConvertJobResultToSignal" request
+    And body with value {"data": {"attributes": {"jobResultIds": [""], "notifications": [""], "signalMessage": "A large number of failed login attempts.", "signalSeverity": "critical"}, "type": "historicalDetectionsJobResultSignalConversion"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Convert a job result to a signal returns "OK" response
+    Given operation "ConvertJobResultToSignal" enabled
+    And new "ConvertJobResultToSignal" request
+    And body with value {"data": {"attributes": {"jobResultIds": [""], "notifications": [""], "signalMessage": "A large number of failed login attempts.", "signalSeverity": "critical"}, "type": "historicalDetectionsJobResultSignalConversion"}}
+    When the request is sent
+    Then the response status is 204 OK
 
   @skip @team:DataDog/k9-cloud-security-platform
   Scenario: Convert a rule from JSON to Terraform returns "Bad Request" response
@@ -282,6 +340,38 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 204 OK
 
+  @team:DataDog/k9-cloud-security-platform
+  Scenario: Delete an existing job returns "Bad Request" response
+    Given operation "DeleteHistoricalJob" enabled
+    And new "DeleteHistoricalJob" request
+    And request contains "job_id" parameter with value "inva-lid"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Delete an existing job returns "Conflict" response
+    Given operation "DeleteHistoricalJob" enabled
+    And new "DeleteHistoricalJob" request
+    And request contains "job_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 409 Conflict
+
+  @team:DataDog/k9-cloud-security-platform
+  Scenario: Delete an existing job returns "Not Found" response
+    Given operation "DeleteHistoricalJob" enabled
+    And new "DeleteHistoricalJob" request
+    And request contains "job_id" parameter with value "8e2a37fb-b0c8-4761-a7f0-0a8d6a98ba93"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Delete an existing job returns "OK" response
+    Given operation "DeleteHistoricalJob" enabled
+    And new "DeleteHistoricalJob" request
+    And request contains "job_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 OK
+
   @generated @skip @team:DataDog/k9-cloud-security-platform
   Scenario: Delete an existing rule returns "Not Found" response
     Given new "DeleteSecurityMonitoringRule" request
@@ -331,6 +421,32 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
     And the response "data.attributes.evaluation" is equal to "pass"
+
+  @team:DataDog/k9-cloud-security-platform
+  Scenario: Get a job's details returns "Bad Request" response
+    Given operation "GetHistoricalJob" enabled
+    And new "GetHistoricalJob" request
+    And request contains "job_id" parameter with value "inva-lid"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/k9-cloud-security-platform
+  Scenario: Get a job's details returns "Not Found" response
+    Given operation "GetHistoricalJob" enabled
+    And new "GetHistoricalJob" request
+    And request contains "job_id" parameter with value "8e2a37fb-b0c8-4761-a7f0-0a8d6a98ba93"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/k9-cloud-security-platform
+  Scenario: Get a job's details returns "OK" response
+    Given operation "GetHistoricalJob" enabled
+    And operation "RunHistoricalJob" enabled
+    And new "GetHistoricalJob" request
+    And there is a valid "historical_job" in the system
+    And request contains "job_id" parameter from "historical_job.data.id"
+    When the request is sent
+    Then the response status is 200 OK
 
   @generated @skip @team:DataDog/k9-cloud-security-platform
   Scenario: Get a list of security signals returns "Bad Request" response
@@ -494,6 +610,23 @@ Feature: Security Monitoring
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: List historical jobs returns "Bad Request" response
+    Given operation "ListHistoricalJobs" enabled
+    And new "ListHistoricalJobs" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/k9-cloud-security-platform
+  Scenario: List historical jobs returns "OK" response
+    Given operation "ListHistoricalJobs" enabled
+    And operation "RunHistoricalJob" enabled
+    And new "ListHistoricalJobs" request
+    And there is a valid "historical_job" in the system
+    And request contains "filter[query]" parameter with value "id:{{historical_job.data.id}}"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
   Scenario: List rules returns "Bad Request" response
     Given new "ListSecurityMonitoringRules" request
     When the request is sent
@@ -560,6 +693,30 @@ Feature: Security Monitoring
     And body with value {"data": {"attributes": {"mute": {"expiration_date": 1778721573794, "muted": true, "reason": "ACCEPTED_RISK"}}, "id": "dbe5f567-192b-4404-b908-29b70e1c9f76", "meta": {"findings":[{"finding_id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw=="}]}, "type": "finding"}}
     When the request is sent
     Then the response status is 200 OK
+
+  @team:DataDog/k9-cloud-security-platform
+  Scenario: Run a historical job returns "Bad Request" response
+    Given operation "RunHistoricalJob" enabled
+    And new "RunHistoricalJob" request
+    And body with value {"data":{"type":"historicalDetectionsJobCreate","attributes":{"jobDefinition":{"type":"log_detection","name":"Excessive number of failed attempts.","queries":[{"query":"source:non_existing_src_weekend","aggregation":"count","groupByFields":[],"distinctFields":[]}],"cases":[{"name":"Condition 1","status":"info","notifications":[],"condition":"a > 1"}],"options":{"keepAlive":3600,"maxSignalDuration":86400,"evaluationWindow":900},"message":"A large number of failed login attempts.","tags":[],"from":1730387522611,"to":1730391122611,"index":"non_existing_index"}}}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/k9-cloud-security-platform
+  Scenario: Run a historical job returns "Not Found" response
+    Given operation "RunHistoricalJob" enabled
+    And new "RunHistoricalJob" request
+    And body with value {"data": { "type": "historicalDetectionsJobCreate", "attributes": {"fromRule": {"caseIndex": 0, "from": 1730201035064, "id": "non-existng", "index": "main", "notifications": [], "to": 1730204635115}}}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/k9-cloud-security-platform
+  Scenario: Run a historical job returns "Status created" response
+    Given operation "RunHistoricalJob" enabled
+    And new "RunHistoricalJob" request
+    And body with value {"data":{"type":"historicalDetectionsJobCreate","attributes":{"jobDefinition":{"type":"log_detection","name":"Excessive number of failed attempts.","queries":[{"query":"source:non_existing_src_weekend","aggregation":"count","groupByFields":[],"distinctFields":[]}],"cases":[{"name":"Condition 1","status":"info","notifications":[],"condition":"a > 1"}],"options":{"keepAlive":3600,"maxSignalDuration":86400,"evaluationWindow":900},"message":"A large number of failed login attempts.","tags":[],"from":1730387522611,"to":1730387532611,"index":"main"}}}}
+    When the request is sent
+    Then the response status is 201 Status created
 
   @skip @team:DataDog/k9-cloud-security-platform
   Scenario: Test a rule returns "Bad Request" response

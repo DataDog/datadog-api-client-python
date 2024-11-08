@@ -195,6 +195,7 @@ from datadog_api_client.v2.model.ci_app_tests_bucket_response import CIAppTestsB
 from datadog_api_client.v2.model.ci_app_tests_group_by import CIAppTestsGroupBy
 from datadog_api_client.v2.model.ci_app_tests_query_filter import CIAppTestsQueryFilter
 from datadog_api_client.v2.model.ci_app_warning import CIAppWarning
+from datadog_api_client.v2.model.calculated_field import CalculatedField
 from datadog_api_client.v2.model.case import Case
 from datadog_api_client.v2.model.case3rd_party_ticket_status import Case3rdPartyTicketStatus
 from datadog_api_client.v2.model.case_assign import CaseAssign
@@ -351,6 +352,10 @@ from datadog_api_client.v2.model.container_type import ContainerType
 from datadog_api_client.v2.model.containers_response import ContainersResponse
 from datadog_api_client.v2.model.containers_response_links import ContainersResponseLinks
 from datadog_api_client.v2.model.content_encoding import ContentEncoding
+from datadog_api_client.v2.model.convert_job_results_to_signals_attributes import ConvertJobResultsToSignalsAttributes
+from datadog_api_client.v2.model.convert_job_results_to_signals_data import ConvertJobResultsToSignalsData
+from datadog_api_client.v2.model.convert_job_results_to_signals_data_type import ConvertJobResultsToSignalsDataType
+from datadog_api_client.v2.model.convert_job_results_to_signals_request import ConvertJobResultsToSignalsRequest
 from datadog_api_client.v2.model.cost_attribution_aggregates_body import CostAttributionAggregatesBody
 from datadog_api_client.v2.model.cost_attribution_tag_names import CostAttributionTagNames
 from datadog_api_client.v2.model.cost_attribution_type import CostAttributionType
@@ -719,6 +724,11 @@ from datadog_api_client.v2.model.http_log import HTTPLog
 from datadog_api_client.v2.model.http_log_error import HTTPLogError
 from datadog_api_client.v2.model.http_log_errors import HTTPLogErrors
 from datadog_api_client.v2.model.http_log_item import HTTPLogItem
+from datadog_api_client.v2.model.historical_job_data_type import HistoricalJobDataType
+from datadog_api_client.v2.model.historical_job_list_meta import HistoricalJobListMeta
+from datadog_api_client.v2.model.historical_job_response import HistoricalJobResponse
+from datadog_api_client.v2.model.historical_job_response_attributes import HistoricalJobResponseAttributes
+from datadog_api_client.v2.model.historical_job_response_data import HistoricalJobResponseData
 from datadog_api_client.v2.model.hourly_usage import HourlyUsage
 from datadog_api_client.v2.model.hourly_usage_attributes import HourlyUsageAttributes
 from datadog_api_client.v2.model.hourly_usage_measurement import HourlyUsageMeasurement
@@ -908,6 +918,10 @@ from datadog_api_client.v2.model.jira_integration_metadata import JiraIntegratio
 from datadog_api_client.v2.model.jira_integration_metadata_issues_item import JiraIntegrationMetadataIssuesItem
 from datadog_api_client.v2.model.jira_issue import JiraIssue
 from datadog_api_client.v2.model.jira_issue_result import JiraIssueResult
+from datadog_api_client.v2.model.job_create_response import JobCreateResponse
+from datadog_api_client.v2.model.job_create_response_data import JobCreateResponseData
+from datadog_api_client.v2.model.job_definition import JobDefinition
+from datadog_api_client.v2.model.job_definition_from_rule import JobDefinitionFromRule
 from datadog_api_client.v2.model.leaked_key import LeakedKey
 from datadog_api_client.v2.model.leaked_key_attributes import LeakedKeyAttributes
 from datadog_api_client.v2.model.leaked_key_type import LeakedKeyType
@@ -927,6 +941,7 @@ from datadog_api_client.v2.model.list_entity_catalog_response_links import ListE
 from datadog_api_client.v2.model.list_findings_meta import ListFindingsMeta
 from datadog_api_client.v2.model.list_findings_page import ListFindingsPage
 from datadog_api_client.v2.model.list_findings_response import ListFindingsResponse
+from datadog_api_client.v2.model.list_historical_jobs_response import ListHistoricalJobsResponse
 from datadog_api_client.v2.model.list_powerpacks_response import ListPowerpacksResponse
 from datadog_api_client.v2.model.list_rules_response import ListRulesResponse
 from datadog_api_client.v2.model.list_rules_response_data_item import ListRulesResponseDataItem
@@ -1475,6 +1490,10 @@ from datadog_api_client.v2.model.rum_metric_update_compute import RumMetricUpdat
 from datadog_api_client.v2.model.rum_metric_update_data import RumMetricUpdateData
 from datadog_api_client.v2.model.rum_metric_update_request import RumMetricUpdateRequest
 from datadog_api_client.v2.model.rum_metrics_response import RumMetricsResponse
+from datadog_api_client.v2.model.run_historical_job_request import RunHistoricalJobRequest
+from datadog_api_client.v2.model.run_historical_job_request_attributes import RunHistoricalJobRequestAttributes
+from datadog_api_client.v2.model.run_historical_job_request_data import RunHistoricalJobRequestData
+from datadog_api_client.v2.model.run_historical_job_request_data_type import RunHistoricalJobRequestDataType
 from datadog_api_client.v2.model.saml_assertion_attribute import SAMLAssertionAttribute
 from datadog_api_client.v2.model.saml_assertion_attribute_attributes import SAMLAssertionAttributeAttributes
 from datadog_api_client.v2.model.saml_assertion_attributes_type import SAMLAssertionAttributesType
@@ -2237,6 +2256,7 @@ __all__ = [
     "CIAppTestsGroupBy",
     "CIAppTestsQueryFilter",
     "CIAppWarning",
+    "CalculatedField",
     "Case",
     "Case3rdPartyTicketStatus",
     "CaseAssign",
@@ -2357,6 +2377,10 @@ __all__ = [
     "ContainersResponse",
     "ContainersResponseLinks",
     "ContentEncoding",
+    "ConvertJobResultsToSignalsAttributes",
+    "ConvertJobResultsToSignalsData",
+    "ConvertJobResultsToSignalsDataType",
+    "ConvertJobResultsToSignalsRequest",
     "CostAttributionAggregatesBody",
     "CostAttributionTagNames",
     "CostAttributionType",
@@ -2641,6 +2665,11 @@ __all__ = [
     "HTTPLogError",
     "HTTPLogErrors",
     "HTTPLogItem",
+    "HistoricalJobDataType",
+    "HistoricalJobListMeta",
+    "HistoricalJobResponse",
+    "HistoricalJobResponseAttributes",
+    "HistoricalJobResponseData",
     "HourlyUsage",
     "HourlyUsageAttributes",
     "HourlyUsageMeasurement",
@@ -2798,6 +2827,10 @@ __all__ = [
     "JiraIntegrationMetadataIssuesItem",
     "JiraIssue",
     "JiraIssueResult",
+    "JobCreateResponse",
+    "JobCreateResponseData",
+    "JobDefinition",
+    "JobDefinitionFromRule",
     "LeakedKey",
     "LeakedKeyAttributes",
     "LeakedKeyType",
@@ -2817,6 +2850,7 @@ __all__ = [
     "ListFindingsMeta",
     "ListFindingsPage",
     "ListFindingsResponse",
+    "ListHistoricalJobsResponse",
     "ListPowerpacksResponse",
     "ListRulesResponse",
     "ListRulesResponseDataItem",
@@ -3299,6 +3333,10 @@ __all__ = [
     "RumMetricUpdateData",
     "RumMetricUpdateRequest",
     "RumMetricsResponse",
+    "RunHistoricalJobRequest",
+    "RunHistoricalJobRequestAttributes",
+    "RunHistoricalJobRequestData",
+    "RunHistoricalJobRequestDataType",
     "SAMLAssertionAttribute",
     "SAMLAssertionAttributeAttributes",
     "SAMLAssertionAttributesType",
