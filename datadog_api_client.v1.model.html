@@ -20920,7 +20920,7 @@ Synthetic test.</p></li>
 <li><p><strong>retry</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.synthetics_test_options_retry.SyntheticsTestOptionsRetry" title="datadog_api_client.v1.model.synthetics_test_options_retry.SyntheticsTestOptionsRetry"><em>SyntheticsTestOptionsRetry</em></a><em>, </em><em>optional</em>) – Object describing the retry strategy to apply to a Synthetic test.</p></li>
 <li><p><strong>scheduling</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.synthetics_test_options_scheduling.SyntheticsTestOptionsScheduling" title="datadog_api_client.v1.model.synthetics_test_options_scheduling.SyntheticsTestOptionsScheduling"><em>SyntheticsTestOptionsScheduling</em></a><em>, </em><em>optional</em>) – Object containing timeframes and timezone used for advanced scheduling.</p></li>
 <li><p><strong>tick_every</strong> (<em>int</em>) – The frequency at which to run the Synthetic test (in seconds).</p></li>
-<li><p><strong>verbosity</strong> (<em>int</em><em>, </em><em>optional</em>) – The level of verbosity for the mobile test.</p></li>
+<li><p><strong>verbosity</strong> (<em>int</em><em>, </em><em>optional</em>) – The level of verbosity for the mobile test. This field can not be set by a user.</p></li>
 </ul>
 </dd>
 </dl>
@@ -22024,7 +22024,7 @@ type conversion is done.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>principals</strong> (<em>[</em><em>str</em><em>]</em><em>, </em><em>optional</em>) – List of principals for a mobile test binding.</p></li>
+<li><p><strong>principal</strong> (<em>[</em><em>str</em><em>]</em><em>, </em><em>optional</em>) – List of principals for a mobile test binding.</p></li>
 <li><p><strong>relation</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.synthetics_test_restriction_policy_binding_relation.SyntheticsTestRestrictionPolicyBindingRelation" title="datadog_api_client.v1.model.synthetics_test_restriction_policy_binding_relation.SyntheticsTestRestrictionPolicyBindingRelation"><em>SyntheticsTestRestrictionPolicyBindingRelation</em></a><em>, </em><em>optional</em>) – The type of relation for the binding.</p></li>
 </ul>
 </dd>
