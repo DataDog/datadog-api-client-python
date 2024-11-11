@@ -16,13 +16,15 @@ class FormulaAndFunctionSLOMeasure(ModelSimple):
     """
     SLO measures queries.
 
-    :param value: Must be one of ["good_events", "bad_events", "slo_status", "error_budget_remaining", "burn_rate", "error_budget_burndown"].
+    :param value: Must be one of ["good_events", "bad_events", "good_minutes", "bad_minutes", "slo_status", "error_budget_remaining", "burn_rate", "error_budget_burndown"].
     :type value: str
     """
 
     allowed_values = {
         "good_events",
         "bad_events",
+        "good_minutes",
+        "bad_minutes",
         "slo_status",
         "error_budget_remaining",
         "burn_rate",
@@ -30,6 +32,8 @@ class FormulaAndFunctionSLOMeasure(ModelSimple):
     }
     GOOD_EVENTS: ClassVar["FormulaAndFunctionSLOMeasure"]
     BAD_EVENTS: ClassVar["FormulaAndFunctionSLOMeasure"]
+    GOOD_MINUTES: ClassVar["FormulaAndFunctionSLOMeasure"]
+    BAD_MINUTES: ClassVar["FormulaAndFunctionSLOMeasure"]
     SLO_STATUS: ClassVar["FormulaAndFunctionSLOMeasure"]
     ERROR_BUDGET_REMAINING: ClassVar["FormulaAndFunctionSLOMeasure"]
     BURN_RATE: ClassVar["FormulaAndFunctionSLOMeasure"]
@@ -44,6 +48,8 @@ class FormulaAndFunctionSLOMeasure(ModelSimple):
 
 FormulaAndFunctionSLOMeasure.GOOD_EVENTS = FormulaAndFunctionSLOMeasure("good_events")
 FormulaAndFunctionSLOMeasure.BAD_EVENTS = FormulaAndFunctionSLOMeasure("bad_events")
+FormulaAndFunctionSLOMeasure.GOOD_MINUTES = FormulaAndFunctionSLOMeasure("good_minutes")
+FormulaAndFunctionSLOMeasure.BAD_MINUTES = FormulaAndFunctionSLOMeasure("bad_minutes")
 FormulaAndFunctionSLOMeasure.SLO_STATUS = FormulaAndFunctionSLOMeasure("slo_status")
 FormulaAndFunctionSLOMeasure.ERROR_BUDGET_REMAINING = FormulaAndFunctionSLOMeasure("error_budget_remaining")
 FormulaAndFunctionSLOMeasure.BURN_RATE = FormulaAndFunctionSLOMeasure("burn_rate")
