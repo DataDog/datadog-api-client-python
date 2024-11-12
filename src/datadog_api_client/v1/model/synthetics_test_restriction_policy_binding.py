@@ -27,32 +27,32 @@ class SyntheticsTestRestrictionPolicyBinding(ModelNormal):
         )
 
         return {
-            "principal": ([str],),
+            "principals": ([str],),
             "relation": (SyntheticsTestRestrictionPolicyBindingRelation,),
         }
 
     attribute_map = {
-        "principal": "principal",
+        "principals": "principals",
         "relation": "relation",
     }
 
     def __init__(
         self_,
-        principal: Union[List[str], UnsetType] = unset,
+        principals: Union[List[str], UnsetType] = unset,
         relation: Union[SyntheticsTestRestrictionPolicyBindingRelation, UnsetType] = unset,
         **kwargs,
     ):
         """
         Objects describing the binding used for a mobile test.
 
-        :param principal: List of principals for a mobile test binding.
-        :type principal: [str], optional
+        :param principals: List of principals for a mobile test binding.
+        :type principals: [str], optional
 
         :param relation: The type of relation for the binding.
         :type relation: SyntheticsTestRestrictionPolicyBindingRelation, optional
         """
-        if principal is not unset:
-            kwargs["principal"] = principal
+        if principals is not unset:
+            kwargs["principals"] = principals
         if relation is not unset:
             kwargs["relation"] = relation
         super().__init__(kwargs)
