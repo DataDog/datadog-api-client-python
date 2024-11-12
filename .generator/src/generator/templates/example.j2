@@ -33,7 +33,7 @@ body = {{ body }}
 
 configuration = Configuration()
 
-{%- for operation in context._enable_operations %}
+{%- for operation in context._enable_operations|sort %}
 configuration.unstable_operations["{{ operation|safe_snake_case }}"] = True
 {%- endfor %}
 with ApiClient(configuration) as api_client:
