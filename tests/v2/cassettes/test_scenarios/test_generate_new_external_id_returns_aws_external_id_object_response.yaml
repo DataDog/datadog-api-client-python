@@ -1,0 +1,18 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/integration/aws/generate_new_external_id
+  response:
+    body:
+      string: '{"data":{"id":"78feee6b9c374776888068593fa8c0b9","type":"external_id","attributes":{"external_id":"78feee6b9c374776888068593fa8c0b9"}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1

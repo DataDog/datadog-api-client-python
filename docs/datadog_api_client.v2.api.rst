@@ -1,403 +1,412 @@
-datadog\_api\_client.v2.api package
-===================================
+datadog\_api\_client.v2.api
+===========================
 
-Submodules
-----------
-
-datadog\_api\_client.v2.api.api\_management\_api module
--------------------------------------------------------
+api\_management\_api
+--------------------
 
 .. automodule:: datadog_api_client.v2.api.api_management_api
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.api.apm\_retention\_filters\_api module
----------------------------------------------------------------
+apm\_retention\_filters\_api
+----------------------------
 
 .. automodule:: datadog_api_client.v2.api.apm_retention_filters_api
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.api.audit\_api module
----------------------------------------------
+audit\_api
+----------
 
 .. automodule:: datadog_api_client.v2.api.audit_api
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.api.authn\_mappings\_api module
--------------------------------------------------------
+authn\_mappings\_api
+--------------------
 
 .. automodule:: datadog_api_client.v2.api.authn_mappings_api
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.api.case\_management\_api module
---------------------------------------------------------
+aws\_integration\_api
+---------------------
+
+.. automodule:: datadog_api_client.v2.api.aws_integration_api
+   :members:
+   :show-inheritance:
+
+aws\_logs\_integration\_api
+---------------------------
+
+.. automodule:: datadog_api_client.v2.api.aws_logs_integration_api
+   :members:
+   :show-inheritance:
+
+case\_management\_api
+---------------------
 
 .. automodule:: datadog_api_client.v2.api.case_management_api
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.api.ci\_visibility\_pipelines\_api module
------------------------------------------------------------------
+ci\_visibility\_pipelines\_api
+------------------------------
 
 .. automodule:: datadog_api_client.v2.api.ci_visibility_pipelines_api
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.api.ci\_visibility\_tests\_api module
--------------------------------------------------------------
+ci\_visibility\_tests\_api
+--------------------------
 
 .. automodule:: datadog_api_client.v2.api.ci_visibility_tests_api
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.api.cloud\_cost\_management\_api module
----------------------------------------------------------------
+cloud\_cost\_management\_api
+----------------------------
 
 .. automodule:: datadog_api_client.v2.api.cloud_cost_management_api
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.api.cloudflare\_integration\_api module
----------------------------------------------------------------
+cloudflare\_integration\_api
+----------------------------
 
 .. automodule:: datadog_api_client.v2.api.cloudflare_integration_api
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.api.confluent\_cloud\_api module
---------------------------------------------------------
+confluent\_cloud\_api
+---------------------
 
 .. automodule:: datadog_api_client.v2.api.confluent_cloud_api
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.api.container\_images\_api module
----------------------------------------------------------
+container\_images\_api
+----------------------
 
 .. automodule:: datadog_api_client.v2.api.container_images_api
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.api.containers\_api module
---------------------------------------------------
+containers\_api
+---------------
 
 .. automodule:: datadog_api_client.v2.api.containers_api
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.api.csm\_threats\_api module
-----------------------------------------------------
+csm\_threats\_api
+-----------------
 
 .. automodule:: datadog_api_client.v2.api.csm_threats_api
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.api.dashboard\_lists\_api module
---------------------------------------------------------
+dashboard\_lists\_api
+---------------------
 
 .. automodule:: datadog_api_client.v2.api.dashboard_lists_api
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.api.domain\_allowlist\_api module
----------------------------------------------------------
+domain\_allowlist\_api
+----------------------
 
 .. automodule:: datadog_api_client.v2.api.domain_allowlist_api
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.api.dora\_metrics\_api module
------------------------------------------------------
+dora\_metrics\_api
+------------------
 
 .. automodule:: datadog_api_client.v2.api.dora_metrics_api
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.api.downtimes\_api module
--------------------------------------------------
+downtimes\_api
+--------------
 
 .. automodule:: datadog_api_client.v2.api.downtimes_api
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.api.events\_api module
-----------------------------------------------
+events\_api
+-----------
 
 .. automodule:: datadog_api_client.v2.api.events_api
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.api.fastly\_integration\_api module
------------------------------------------------------------
+fastly\_integration\_api
+------------------------
 
 .. automodule:: datadog_api_client.v2.api.fastly_integration_api
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.api.gcp\_integration\_api module
---------------------------------------------------------
+gcp\_integration\_api
+---------------------
 
 .. automodule:: datadog_api_client.v2.api.gcp_integration_api
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.api.incident\_services\_api module
-----------------------------------------------------------
+incident\_services\_api
+-----------------------
 
 .. automodule:: datadog_api_client.v2.api.incident_services_api
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.api.incident\_teams\_api module
--------------------------------------------------------
+incident\_teams\_api
+--------------------
 
 .. automodule:: datadog_api_client.v2.api.incident_teams_api
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.api.incidents\_api module
--------------------------------------------------
+incidents\_api
+--------------
 
 .. automodule:: datadog_api_client.v2.api.incidents_api
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.api.ip\_allowlist\_api module
------------------------------------------------------
+ip\_allowlist\_api
+------------------
 
 .. automodule:: datadog_api_client.v2.api.ip_allowlist_api
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.api.key\_management\_api module
--------------------------------------------------------
+key\_management\_api
+--------------------
 
 .. automodule:: datadog_api_client.v2.api.key_management_api
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.api.logs\_api module
---------------------------------------------
+logs\_api
+---------
 
 .. automodule:: datadog_api_client.v2.api.logs_api
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.api.logs\_archives\_api module
-------------------------------------------------------
+logs\_archives\_api
+-------------------
 
 .. automodule:: datadog_api_client.v2.api.logs_archives_api
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.api.logs\_custom\_destinations\_api module
-------------------------------------------------------------------
+logs\_custom\_destinations\_api
+-------------------------------
 
 .. automodule:: datadog_api_client.v2.api.logs_custom_destinations_api
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.api.logs\_metrics\_api module
------------------------------------------------------
+logs\_metrics\_api
+------------------
 
 .. automodule:: datadog_api_client.v2.api.logs_metrics_api
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.api.metrics\_api module
------------------------------------------------
+metrics\_api
+------------
 
 .. automodule:: datadog_api_client.v2.api.metrics_api
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.api.microsoft\_teams\_integration\_api module
----------------------------------------------------------------------
+microsoft\_teams\_integration\_api
+----------------------------------
 
 .. automodule:: datadog_api_client.v2.api.microsoft_teams_integration_api
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.api.monitors\_api module
-------------------------------------------------
+monitors\_api
+-------------
 
 .. automodule:: datadog_api_client.v2.api.monitors_api
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.api.network\_device\_monitoring\_api module
--------------------------------------------------------------------
+network\_device\_monitoring\_api
+--------------------------------
 
 .. automodule:: datadog_api_client.v2.api.network_device_monitoring_api
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.api.okta\_integration\_api module
----------------------------------------------------------
+okta\_integration\_api
+----------------------
 
 .. automodule:: datadog_api_client.v2.api.okta_integration_api
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.api.opsgenie\_integration\_api module
--------------------------------------------------------------
+opsgenie\_integration\_api
+--------------------------
 
 .. automodule:: datadog_api_client.v2.api.opsgenie_integration_api
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.api.organizations\_api module
------------------------------------------------------
+organizations\_api
+------------------
 
 .. automodule:: datadog_api_client.v2.api.organizations_api
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.api.powerpack\_api module
--------------------------------------------------
+powerpack\_api
+--------------
 
 .. automodule:: datadog_api_client.v2.api.powerpack_api
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.api.processes\_api module
--------------------------------------------------
+processes\_api
+--------------
 
 .. automodule:: datadog_api_client.v2.api.processes_api
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.api.restriction\_policies\_api module
--------------------------------------------------------------
+restriction\_policies\_api
+--------------------------
 
 .. automodule:: datadog_api_client.v2.api.restriction_policies_api
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.api.roles\_api module
----------------------------------------------
+roles\_api
+----------
 
 .. automodule:: datadog_api_client.v2.api.roles_api
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.api.rum\_api module
--------------------------------------------
+rum\_api
+--------
 
 .. automodule:: datadog_api_client.v2.api.rum_api
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.api.rum\_metrics\_api module
-----------------------------------------------------
+rum\_metrics\_api
+-----------------
 
 .. automodule:: datadog_api_client.v2.api.rum_metrics_api
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.api.security\_monitoring\_api module
-------------------------------------------------------------
+security\_monitoring\_api
+-------------------------
 
 .. automodule:: datadog_api_client.v2.api.security_monitoring_api
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.api.sensitive\_data\_scanner\_api module
-----------------------------------------------------------------
+sensitive\_data\_scanner\_api
+-----------------------------
 
 .. automodule:: datadog_api_client.v2.api.sensitive_data_scanner_api
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.api.service\_accounts\_api module
----------------------------------------------------------
+service\_accounts\_api
+----------------------
 
 .. automodule:: datadog_api_client.v2.api.service_accounts_api
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.api.service\_definition\_api module
------------------------------------------------------------
+service\_definition\_api
+------------------------
 
 .. automodule:: datadog_api_client.v2.api.service_definition_api
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.api.service\_level\_objectives\_api module
-------------------------------------------------------------------
+service\_level\_objectives\_api
+-------------------------------
 
 .. automodule:: datadog_api_client.v2.api.service_level_objectives_api
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.api.service\_scorecards\_api module
------------------------------------------------------------
+service\_scorecards\_api
+------------------------
 
 .. automodule:: datadog_api_client.v2.api.service_scorecards_api
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.api.software\_catalog\_api module
----------------------------------------------------------
+software\_catalog\_api
+----------------------
 
 .. automodule:: datadog_api_client.v2.api.software_catalog_api
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.api.spans\_api module
----------------------------------------------
+spans\_api
+----------
 
 .. automodule:: datadog_api_client.v2.api.spans_api
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.api.spans\_metrics\_api module
-------------------------------------------------------
+spans\_metrics\_api
+-------------------
 
 .. automodule:: datadog_api_client.v2.api.spans_metrics_api
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.api.synthetics\_api module
---------------------------------------------------
+synthetics\_api
+---------------
 
 .. automodule:: datadog_api_client.v2.api.synthetics_api
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.api.teams\_api module
----------------------------------------------
+teams\_api
+----------
 
 .. automodule:: datadog_api_client.v2.api.teams_api
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.api.usage\_metering\_api module
--------------------------------------------------------
+usage\_metering\_api
+--------------------
 
 .. automodule:: datadog_api_client.v2.api.usage_metering_api
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.api.users\_api module
----------------------------------------------
+users\_api
+----------
 
 .. automodule:: datadog_api_client.v2.api.users_api
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.api.workflow\_automation\_api module
-------------------------------------------------------------
+workflow\_automation\_api
+-------------------------
 
 .. automodule:: datadog_api_client.v2.api.workflow_automation_api
    :members:
    :show-inheritance:
 
-Module contents
----------------
 
 .. automodule:: datadog_api_client.v2.api
    :members:
