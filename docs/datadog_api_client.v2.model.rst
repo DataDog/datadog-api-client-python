@@ -480,6 +480,111 @@ datadog\_api\_client.v2.model.authn\_mappings\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.aws\_account\_create\_request module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_account_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_account\_create\_request\_attributes module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_account_create_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_account\_create\_request\_data module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_account_create_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_account\_partition module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_account_partition
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_account\_response module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_account_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_account\_response\_attributes module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_account_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_account\_response\_data module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_account_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_account\_type module
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_account_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_account\_update\_request module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_account_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_account\_update\_request\_attributes module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_account_update_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_account\_update\_request\_data module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_account_update_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_accounts\_response module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_accounts_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_auth\_config module
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_auth_config
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_auth\_config\_keys module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_auth_config_keys
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_auth\_config\_role module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_auth_config_role
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.aws\_cur\_config module
 -----------------------------------------------------
 
@@ -568,6 +673,188 @@ datadog\_api\_client.v2.model.aws\_cur\_configs\_response module
 ----------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.aws_cur_configs_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_lambda\_forwarder\_config module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_lambda_forwarder_config
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_logs\_config module
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_logs_config
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_logs\_services\_response module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_logs_services_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_logs\_services\_response\_attributes module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_logs_services_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_logs\_services\_response\_data module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_logs_services_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_logs\_services\_response\_data\_type module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_logs_services_response_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_metrics\_config module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_metrics_config
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_namespace\_filters module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_namespace_filters
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_namespace\_filters\_exclude\_all module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_namespace_filters_exclude_all
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_namespace\_filters\_exclude\_only module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_namespace_filters_exclude_only
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_namespace\_filters\_include\_all module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_namespace_filters_include_all
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_namespace\_filters\_include\_only module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_namespace_filters_include_only
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_namespace\_tag\_filter module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_namespace_tag_filter
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_namespaces\_response module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_namespaces_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_namespaces\_response\_attributes module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_namespaces_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_namespaces\_response\_data module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_namespaces_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_namespaces\_response\_data\_type module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_namespaces_response_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_new\_external\_id\_response module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_new_external_id_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_new\_external\_id\_response\_attributes module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_new_external_id_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_new\_external\_id\_response\_data module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_new_external_id_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_new\_external\_id\_response\_data\_type module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_new_external_id_response_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_regions module
+-------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_regions
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_regions\_include\_all module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_regions_include_all
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_regions\_include\_only module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_regions_include_only
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_resources\_config module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_resources_config
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_traces\_config module
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_traces_config
    :members:
    :show-inheritance:
 
@@ -11901,6 +12188,27 @@ datadog\_api\_client.v2.model.worklflow\_get\_instance\_response\_data\_attribut
 -----------------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.worklflow_get_instance_response_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.x\_ray\_services\_include\_all module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.x_ray_services_include_all
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.x\_ray\_services\_include\_only module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.x_ray_services_include_only
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.x\_ray\_services\_list module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.x_ray_services_list
    :members:
    :show-inheritance:
 

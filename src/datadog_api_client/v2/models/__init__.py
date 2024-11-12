@@ -13,6 +13,47 @@ from datadog_api_client.v2.model.api_keys_response_meta import APIKeysResponseMe
 from datadog_api_client.v2.model.api_keys_response_meta_page import APIKeysResponseMetaPage
 from datadog_api_client.v2.model.api_keys_sort import APIKeysSort
 from datadog_api_client.v2.model.api_keys_type import APIKeysType
+from datadog_api_client.v2.model.aws_account_create_request import AWSAccountCreateRequest
+from datadog_api_client.v2.model.aws_account_create_request_attributes import AWSAccountCreateRequestAttributes
+from datadog_api_client.v2.model.aws_account_create_request_data import AWSAccountCreateRequestData
+from datadog_api_client.v2.model.aws_account_partition import AWSAccountPartition
+from datadog_api_client.v2.model.aws_account_response import AWSAccountResponse
+from datadog_api_client.v2.model.aws_account_response_attributes import AWSAccountResponseAttributes
+from datadog_api_client.v2.model.aws_account_response_data import AWSAccountResponseData
+from datadog_api_client.v2.model.aws_account_type import AWSAccountType
+from datadog_api_client.v2.model.aws_account_update_request import AWSAccountUpdateRequest
+from datadog_api_client.v2.model.aws_account_update_request_attributes import AWSAccountUpdateRequestAttributes
+from datadog_api_client.v2.model.aws_account_update_request_data import AWSAccountUpdateRequestData
+from datadog_api_client.v2.model.aws_accounts_response import AWSAccountsResponse
+from datadog_api_client.v2.model.aws_auth_config import AWSAuthConfig
+from datadog_api_client.v2.model.aws_auth_config_keys import AWSAuthConfigKeys
+from datadog_api_client.v2.model.aws_auth_config_role import AWSAuthConfigRole
+from datadog_api_client.v2.model.aws_lambda_forwarder_config import AWSLambdaForwarderConfig
+from datadog_api_client.v2.model.aws_logs_config import AWSLogsConfig
+from datadog_api_client.v2.model.aws_logs_services_response import AWSLogsServicesResponse
+from datadog_api_client.v2.model.aws_logs_services_response_attributes import AWSLogsServicesResponseAttributes
+from datadog_api_client.v2.model.aws_logs_services_response_data import AWSLogsServicesResponseData
+from datadog_api_client.v2.model.aws_logs_services_response_data_type import AWSLogsServicesResponseDataType
+from datadog_api_client.v2.model.aws_metrics_config import AWSMetricsConfig
+from datadog_api_client.v2.model.aws_namespace_filters import AWSNamespaceFilters
+from datadog_api_client.v2.model.aws_namespace_filters_exclude_all import AWSNamespaceFiltersExcludeAll
+from datadog_api_client.v2.model.aws_namespace_filters_exclude_only import AWSNamespaceFiltersExcludeOnly
+from datadog_api_client.v2.model.aws_namespace_filters_include_all import AWSNamespaceFiltersIncludeAll
+from datadog_api_client.v2.model.aws_namespace_filters_include_only import AWSNamespaceFiltersIncludeOnly
+from datadog_api_client.v2.model.aws_namespace_tag_filter import AWSNamespaceTagFilter
+from datadog_api_client.v2.model.aws_namespaces_response import AWSNamespacesResponse
+from datadog_api_client.v2.model.aws_namespaces_response_attributes import AWSNamespacesResponseAttributes
+from datadog_api_client.v2.model.aws_namespaces_response_data import AWSNamespacesResponseData
+from datadog_api_client.v2.model.aws_namespaces_response_data_type import AWSNamespacesResponseDataType
+from datadog_api_client.v2.model.aws_new_external_id_response import AWSNewExternalIDResponse
+from datadog_api_client.v2.model.aws_new_external_id_response_attributes import AWSNewExternalIDResponseAttributes
+from datadog_api_client.v2.model.aws_new_external_id_response_data import AWSNewExternalIDResponseData
+from datadog_api_client.v2.model.aws_new_external_id_response_data_type import AWSNewExternalIDResponseDataType
+from datadog_api_client.v2.model.aws_regions import AWSRegions
+from datadog_api_client.v2.model.aws_regions_include_all import AWSRegionsIncludeAll
+from datadog_api_client.v2.model.aws_regions_include_only import AWSRegionsIncludeOnly
+from datadog_api_client.v2.model.aws_resources_config import AWSResourcesConfig
+from datadog_api_client.v2.model.aws_traces_config import AWSTracesConfig
 from datadog_api_client.v2.model.active_billing_dimensions_attributes import ActiveBillingDimensionsAttributes
 from datadog_api_client.v2.model.active_billing_dimensions_body import ActiveBillingDimensionsBody
 from datadog_api_client.v2.model.active_billing_dimensions_response import ActiveBillingDimensionsResponse
@@ -2075,6 +2116,9 @@ from datadog_api_client.v2.model.worklflow_get_instance_response_data import Wor
 from datadog_api_client.v2.model.worklflow_get_instance_response_data_attributes import (
     WorklflowGetInstanceResponseDataAttributes,
 )
+from datadog_api_client.v2.model.x_ray_services_include_all import XRayServicesIncludeAll
+from datadog_api_client.v2.model.x_ray_services_include_only import XRayServicesIncludeOnly
+from datadog_api_client.v2.model.x_ray_services_list import XRayServicesList
 
 __all__ = [
     "APIErrorResponse",
@@ -2092,6 +2136,47 @@ __all__ = [
     "APIKeysResponseMetaPage",
     "APIKeysSort",
     "APIKeysType",
+    "AWSAccountCreateRequest",
+    "AWSAccountCreateRequestAttributes",
+    "AWSAccountCreateRequestData",
+    "AWSAccountPartition",
+    "AWSAccountResponse",
+    "AWSAccountResponseAttributes",
+    "AWSAccountResponseData",
+    "AWSAccountType",
+    "AWSAccountUpdateRequest",
+    "AWSAccountUpdateRequestAttributes",
+    "AWSAccountUpdateRequestData",
+    "AWSAccountsResponse",
+    "AWSAuthConfig",
+    "AWSAuthConfigKeys",
+    "AWSAuthConfigRole",
+    "AWSLambdaForwarderConfig",
+    "AWSLogsConfig",
+    "AWSLogsServicesResponse",
+    "AWSLogsServicesResponseAttributes",
+    "AWSLogsServicesResponseData",
+    "AWSLogsServicesResponseDataType",
+    "AWSMetricsConfig",
+    "AWSNamespaceFilters",
+    "AWSNamespaceFiltersExcludeAll",
+    "AWSNamespaceFiltersExcludeOnly",
+    "AWSNamespaceFiltersIncludeAll",
+    "AWSNamespaceFiltersIncludeOnly",
+    "AWSNamespaceTagFilter",
+    "AWSNamespacesResponse",
+    "AWSNamespacesResponseAttributes",
+    "AWSNamespacesResponseData",
+    "AWSNamespacesResponseDataType",
+    "AWSNewExternalIDResponse",
+    "AWSNewExternalIDResponseAttributes",
+    "AWSNewExternalIDResponseData",
+    "AWSNewExternalIDResponseDataType",
+    "AWSRegions",
+    "AWSRegionsIncludeAll",
+    "AWSRegionsIncludeOnly",
+    "AWSResourcesConfig",
+    "AWSTracesConfig",
     "ActiveBillingDimensionsAttributes",
     "ActiveBillingDimensionsBody",
     "ActiveBillingDimensionsResponse",
@@ -3782,4 +3867,7 @@ __all__ = [
     "WorklflowGetInstanceResponse",
     "WorklflowGetInstanceResponseData",
     "WorklflowGetInstanceResponseDataAttributes",
+    "XRayServicesIncludeAll",
+    "XRayServicesIncludeOnly",
+    "XRayServicesList",
 ]
