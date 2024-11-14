@@ -16,7 +16,7 @@ class AWSNamespace(ModelSimple):
     """
     The namespace associated with the tag filter entry.
 
-    :param value: Must be one of ["elb", "application_elb", "sqs", "rds", "custom", "network_elb", "lambda"].
+    :param value: Must be one of ["elb", "application_elb", "sqs", "rds", "custom", "network_elb", "lambda", "step_functions"].
     :type value: str
     """
 
@@ -28,6 +28,7 @@ class AWSNamespace(ModelSimple):
         "custom",
         "network_elb",
         "lambda",
+        "step_functions",
     }
     ELB: ClassVar["AWSNamespace"]
     APPLICATION_ELB: ClassVar["AWSNamespace"]
@@ -36,6 +37,7 @@ class AWSNamespace(ModelSimple):
     CUSTOM: ClassVar["AWSNamespace"]
     NETWORK_ELB: ClassVar["AWSNamespace"]
     LAMBDA: ClassVar["AWSNamespace"]
+    STEP_FUNCTIONS: ClassVar["AWSNamespace"]
 
     @cached_property
     def openapi_types(_):
@@ -51,3 +53,4 @@ AWSNamespace.RDS = AWSNamespace("rds")
 AWSNamespace.CUSTOM = AWSNamespace("custom")
 AWSNamespace.NETWORK_ELB = AWSNamespace("network_elb")
 AWSNamespace.LAMBDA = AWSNamespace("lambda")
+AWSNamespace.STEP_FUNCTIONS = AWSNamespace("step_functions")
