@@ -47,7 +47,6 @@ body = Dashboard(
     ],
     template_variables=[],
     layout_type=DashboardLayoutType.FREE,
-    is_read_only=False,
     notify_list=[],
 )
 

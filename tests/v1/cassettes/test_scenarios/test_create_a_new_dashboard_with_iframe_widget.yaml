@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"description":"","is_read_only":false,"layout_type":"free","notify_list":[],"template_variables":[],"title":"Test-Create_a_new_dashboard_with_iframe_widget-1641430234","widgets":[{"definition":{"type":"iframe","url":"https://docs.datadoghq.com/api/latest/"},"layout":{"height":12,"width":12,"x":0,"y":0}}]}'
+    body: '{"description":"","layout_type":"free","notify_list":[],"template_variables":[],"title":"Test-Create_a_new_dashboard_with_iframe_widget-1731611544","widgets":[{"definition":{"type":"iframe","url":"https://docs.datadoghq.com/api/latest/"},"layout":{"height":12,"width":12,"x":0,"y":0}}]}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,10 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/dashboard
   response:
     body:
-      string: '{"notify_list":[],"description":"","restricted_roles":[],"author_name":null,"template_variables":[],"is_read_only":false,"id":"udq-5td-jif","title":"Test-Create_a_new_dashboard_with_iframe_widget-1641430234","url":"/dashboard/udq-5td-jif/test-createanewdashboardwithiframewidget-1641430234","created_at":"2022-01-06T00:50:35.006333+00:00","modified_at":"2022-01-06T00:50:35.006333+00:00","author_handle":"frog@datadoghq.com","widgets":[{"definition":{"url":"https://docs.datadoghq.com/api/latest/","type":"iframe"},"layout":{"y":0,"width":12,"x":0,"height":12},"id":4318913911937946}],"layout_type":"free"}'
+      string: '{"id":"az3-9m4-ywf","title":"Test-Create_a_new_dashboard_with_iframe_widget-1731611544","description":"","author_handle":"anika.maskara@datadoghq.com","author_name":"Anika
+        Maskara","layout_type":"free","url":"/dashboard/az3-9m4-ywf/test-createanewdashboardwithiframewidget-1731611544","is_read_only":false,"template_variables":[],"widgets":[{"definition":{"type":"iframe","url":"https://docs.datadoghq.com/api/latest/"},"layout":{"height":12,"width":12,"x":0,"y":0},"id":3286517205333846}],"notify_list":[],"created_at":"2024-11-14T19:12:24.844136+00:00","modified_at":"2024-11-14T19:12:24.844136+00:00","restricted_roles":[]}
+
+        '
     headers:
       content-type:
       - application/json
@@ -23,10 +26,12 @@ interactions:
       accept:
       - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/dashboard/udq-5td-jif
+    uri: https://api.datadoghq.com/api/v1/dashboard/az3-9m4-ywf
   response:
     body:
-      string: '{"deleted_dashboard_id":"udq-5td-jif"}'
+      string: '{"deleted_dashboard_id":"az3-9m4-ywf"}
+
+        '
     headers:
       content-type:
       - application/json

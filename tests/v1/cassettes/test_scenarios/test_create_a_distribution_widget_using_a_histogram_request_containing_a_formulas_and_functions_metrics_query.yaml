@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"layout_type":"ordered","title":"Test-Create_a_distribution_widget_using_a_histogram_request_containing_a_formulas_and_functions_metrics_q-1690903004","widgets":[{"definition":{"custom_links":[{"label":"Example","link":"https://example.org/"}],"requests":[{"query":{"data_source":"metrics","name":"query1","query":"histogram:trace.Load{*}"},"request_type":"histogram","style":{"palette":"dog_classic"}}],"show_legend":false,"title":"Metrics
+    body: '{"layout_type":"ordered","title":"Test-Create_a_distribution_widget_using_a_histogram_request_containing_a_formulas_and_functions_metrics_q-1731611527","widgets":[{"definition":{"custom_links":[{"label":"Example","link":"https://example.org/"}],"requests":[{"query":{"data_source":"metrics","name":"query1","query":"histogram:trace.Load{*}"},"request_type":"histogram","style":{"palette":"dog_classic"}}],"show_legend":false,"title":"Metrics
       HOP","title_align":"left","title_size":"16","type":"distribution","xaxis":{"include_zero":true,"max":"auto","min":"auto","scale":"linear"},"yaxis":{"include_zero":true,"max":"auto","min":"auto","scale":"linear"}},"layout":{"height":2,"width":4,"x":0,"y":0}}]}'
     headers:
       accept:
@@ -11,8 +11,9 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/dashboard
   response:
     body:
-      string: '{"id":"uts-6em-2su","title":"Test-Create_a_distribution_widget_using_a_histogram_request_containing_a_formulas_and_functions_metrics_q-1690903004","description":null,"author_handle":"frog@datadoghq.com","author_name":null,"layout_type":"ordered","url":"/dashboard/uts-6em-2su/test-createadistributionwidgetusingahistogramrequestcontainingaformulasandfuncti","is_read_only":false,"template_variables":null,"widgets":[{"definition":{"custom_links":[{"label":"Example","link":"https://example.org/"}],"requests":[{"query":{"data_source":"metrics","name":"query1","query":"histogram:trace.Load{*}"},"request_type":"histogram","style":{"palette":"dog_classic"}}],"show_legend":false,"title":"Metrics
-        HOP","title_align":"left","title_size":"16","type":"distribution","xaxis":{"include_zero":true,"max":"auto","min":"auto","scale":"linear"},"yaxis":{"include_zero":true,"max":"auto","min":"auto","scale":"linear"}},"layout":{"height":2,"width":4,"x":0,"y":0},"id":4570406064684725}],"notify_list":null,"created_at":"2023-08-01T15:16:44.785380+00:00","modified_at":"2023-08-01T15:16:44.785380+00:00","restricted_roles":[]}
+      string: '{"id":"2fs-dz8-tdz","title":"Test-Create_a_distribution_widget_using_a_histogram_request_containing_a_formulas_and_functions_metrics_q-1731611527","description":null,"author_handle":"anika.maskara@datadoghq.com","author_name":"Anika
+        Maskara","layout_type":"ordered","url":"/dashboard/2fs-dz8-tdz/test-createadistributionwidgetusingahistogramrequestcontainingaformulasandfuncti","is_read_only":false,"template_variables":null,"widgets":[{"definition":{"custom_links":[{"label":"Example","link":"https://example.org/"}],"requests":[{"query":{"data_source":"metrics","name":"query1","query":"histogram:trace.Load{*}"},"request_type":"histogram","style":{"palette":"dog_classic"}}],"show_legend":false,"title":"Metrics
+        HOP","title_align":"left","title_size":"16","type":"distribution","xaxis":{"include_zero":true,"max":"auto","min":"auto","scale":"linear"},"yaxis":{"include_zero":true,"max":"auto","min":"auto","scale":"linear"}},"layout":{"height":2,"width":4,"x":0,"y":0},"id":1403016087327739}],"notify_list":null,"created_at":"2024-11-14T19:12:07.286820+00:00","modified_at":"2024-11-14T19:12:07.286820+00:00","restricted_roles":[]}
 
         '
     headers:
@@ -27,10 +28,10 @@ interactions:
       accept:
       - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/dashboard/uts-6em-2su
+    uri: https://api.datadoghq.com/api/v1/dashboard/2fs-dz8-tdz
   response:
     body:
-      string: '{"deleted_dashboard_id":"uts-6em-2su"}
+      string: '{"deleted_dashboard_id":"2fs-dz8-tdz"}
 
         '
     headers:

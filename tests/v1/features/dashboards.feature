@@ -198,7 +198,7 @@ Feature: Dashboards
   @team:DataDog/dashboards-backend
   Scenario: Create a new dashboard with a toplist widget sorted by group
     Given new "CreateDashboard" request
-    And body with value {"title":"{{ unique }}","description":"","widgets":[{"layout":{"x":0,"y":0,"width":47,"height":15},"definition":{"title":"","title_size":"16","title_align":"left","time":{},"style":{"display": {"type": "stacked","legend": "inline"},"scaling": "relative","palette": "dog_classic"},"type":"toplist","requests":[{"queries":[{"data_source":"metrics","name":"query1","query":"avg:system.cpu.user{*} by {service}","aggregator":"avg"}],"formulas":[{"formula":"query1"}],"sort":{"count":10,"order_by":[{"type":"group","name":"service","order":"asc"}]},"response_format":"scalar"}]}}],"template_variables":[],"layout_type":"free","is_read_only":false,"notify_list":[]}
+    And body with value {"title":"{{ unique }}","description":"","widgets":[{"layout":{"x":0,"y":0,"width":47,"height":15},"definition":{"title":"","title_size":"16","title_align":"left","time":{},"style":{"display": {"type": "stacked","legend": "inline"},"scaling": "relative","palette": "dog_classic"},"type":"toplist","requests":[{"queries":[{"data_source":"metrics","name":"query1","query":"avg:system.cpu.user{*} by {service}","aggregator":"avg"}],"formulas":[{"formula":"query1"}],"sort":{"count":10,"order_by":[{"type":"group","name":"service","order":"asc"}]},"response_format":"scalar"}]}}],"template_variables":[],"layout_type":"free","notify_list":[]}
     When the request is sent
     Then the response status is 200 OK
     And the response "widgets[0].definition.type" is equal to "toplist"
@@ -209,7 +209,7 @@ Feature: Dashboards
   @skip-typescript @team:DataDog/dashboards-backend
   Scenario: Create a new dashboard with a toplist widget with stacked type and no legend specified
     Given new "CreateDashboard" request
-    And body with value {"title":"{{ unique }}","description":"","widgets":[{"layout":{"x":0,"y":0,"width":47,"height":15},"definition":{"title":"","title_size":"16","title_align":"left","time":{},"style":{"display": {"type": "stacked"},"scaling": "relative","palette": "dog_classic"},"type":"toplist","requests":[{"queries":[{"data_source":"metrics","name":"query1","query":"avg:system.cpu.user{*} by {service}","aggregator":"avg"}],"formulas":[{"formula":"query1"}],"sort":{"count":10,"order_by":[{"type":"group","name":"service","order":"asc"}]},"response_format":"scalar"}]}}],"template_variables":[],"layout_type":"free","is_read_only":false,"notify_list":[]}
+    And body with value {"title":"{{ unique }}","description":"","widgets":[{"layout":{"x":0,"y":0,"width":47,"height":15},"definition":{"title":"","title_size":"16","title_align":"left","time":{},"style":{"display": {"type": "stacked"},"scaling": "relative","palette": "dog_classic"},"type":"toplist","requests":[{"queries":[{"data_source":"metrics","name":"query1","query":"avg:system.cpu.user{*} by {service}","aggregator":"avg"}],"formulas":[{"formula":"query1"}],"sort":{"count":10,"order_by":[{"type":"group","name":"service","order":"asc"}]},"response_format":"scalar"}]}}],"template_variables":[],"layout_type":"free","notify_list":[]}
     When the request is sent
     Then the response status is 200 OK
     And the response "widgets[0].definition.type" is equal to "toplist"
@@ -360,7 +360,7 @@ Feature: Dashboards
   @team:DataDog/dashboards-backend
   Scenario: Create a new dashboard with formula and function heatmap widget
     Given new "CreateDashboard" request
-    And body with value {"title": "{{ unique }}", "widgets": [{"layout": {"x": 0, "y": 0, "width": 47, "height": 15}, "definition": {"title": "", "title_size": "16", "title_align": "left", "time": {}, "type": "heatmap", "requests": [{"response_format": "timeseries", "queries": [{"data_source": "metrics", "name": "query1", "query": "avg:system.cpu.user{*}"}], "formulas": [{"formula": "query1"}], "style": {"palette": "dog_classic"}}]}}], "template_variables": [], "layout_type": "free", "is_read_only": false, "notify_list": []}
+    And body with value {"title": "{{ unique }}", "widgets": [{"layout": {"x": 0, "y": 0, "width": 47, "height": 15}, "definition": {"title": "", "title_size": "16", "title_align": "left", "time": {}, "type": "heatmap", "requests": [{"response_format": "timeseries", "queries": [{"data_source": "metrics", "name": "query1", "query": "avg:system.cpu.user{*}"}], "formulas": [{"formula": "query1"}], "style": {"palette": "dog_classic"}}]}}], "template_variables": [], "layout_type": "free", "notify_list": []}
     When the request is sent
     Then the response status is 200 OK
     And the response "widgets[0].definition.type" is equal to "heatmap"
@@ -757,14 +757,14 @@ Feature: Dashboards
   @team:DataDog/dashboards-backend
   Scenario: Create a new dashboard with template variable defaults and default returns "Bad Request" response
     Given new "CreateDashboard" request
-    And body with value {"description": null, "is_read_only": false, "layout_type": "ordered", "notify_list": [], "reflow_type": "auto", "restricted_roles": [], "template_variables": [{"available_values": ["my-host", "host1", "host2"], "default": "my-host", "defaults": ["my-host"], "name": "host1", "prefix": "host"}], "title": "", "widgets": [{"definition": {"requests": {"fill": {"q": "avg:system.cpu.user{*}"}}, "type": "hostmap"}}]}
+    And body with value {"description": null, "layout_type": "ordered", "notify_list": [], "reflow_type": "auto", "restricted_roles": [], "template_variables": [{"available_values": ["my-host", "host1", "host2"], "default": "my-host", "defaults": ["my-host"], "name": "host1", "prefix": "host"}], "title": "", "widgets": [{"definition": {"requests": {"fill": {"q": "avg:system.cpu.user{*}"}}, "type": "hostmap"}}]}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @team:DataDog/dashboards-backend
   Scenario: Create a new dashboard with template variable defaults returns "OK" response
     Given new "CreateDashboard" request
-    And body with value {"description": null, "is_read_only": false, "layout_type": "ordered", "notify_list": [], "reflow_type": "auto", "restricted_roles": [], "template_variables": [{"available_values": ["my-host", "host1", "host2"], "defaults": ["my-host"], "name": "host1", "prefix": "host"}], "title": "", "widgets": [{"definition": {"requests": {"fill": {"q": "avg:system.cpu.user{*}"}}, "type": "hostmap"}}]}
+    And body with value {"description": null, "layout_type": "ordered", "notify_list": [], "reflow_type": "auto", "restricted_roles": [], "template_variables": [{"available_values": ["my-host", "host1", "host2"], "defaults": ["my-host"], "name": "host1", "prefix": "host"}], "title": "", "widgets": [{"definition": {"requests": {"fill": {"q": "avg:system.cpu.user{*}"}}, "type": "hostmap"}}]}
     When the request is sent
     Then the response status is 200 OK
     And the response "template_variables[0].name" is equal to "host1"
@@ -774,21 +774,21 @@ Feature: Dashboards
   @skip-validation @team:DataDog/dashboards-backend
   Scenario: Create a new dashboard with template variable defaults whose value has no length returns "Bad Request" response
     Given new "CreateDashboard" request
-    And body with value {"description": null, "is_read_only": false, "layout_type": "ordered", "notify_list": [], "reflow_type": "auto", "restricted_roles": [], "template_variables": [{"available_values": ["my-host", "host1", "host2"], "defaults": [""], "name": "host1", "prefix": "host"}], "title": "", "widgets": [{"definition": {"requests": {"fill": {"q": "avg:system.cpu.user{*}"}}, "type": "hostmap"}}]}
+    And body with value {"description": null, "layout_type": "ordered", "notify_list": [], "reflow_type": "auto", "restricted_roles": [], "template_variables": [{"available_values": ["my-host", "host1", "host2"], "defaults": [""], "name": "host1", "prefix": "host"}], "title": "", "widgets": [{"definition": {"requests": {"fill": {"q": "avg:system.cpu.user{*}"}}, "type": "hostmap"}}]}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @team:DataDog/dashboards-backend
   Scenario: Create a new dashboard with template variable presets using values and value returns "Bad Request" response
     Given new "CreateDashboard" request
-    And body with value {"description": null, "is_read_only": false, "layout_type": "ordered", "notify_list": [], "reflow_type": "auto", "restricted_roles": [], "template_variable_presets": [{"name": "my saved view", "template_variables": [{"name": "datacenter", "value": "*", "values": [ "*" ]}]}], "template_variables": [{"available_values": ["my-host", "host1", "host2"], "defaults": ["my-host"], "name": "host1", "prefix": "host"}], "title": "", "widgets": [{"definition": {"requests": {"fill": {"q": "avg:system.cpu.user{*}"}}, "type": "hostmap"}}]}
+    And body with value {"description": null, "layout_type": "ordered", "notify_list": [], "reflow_type": "auto", "restricted_roles": [], "template_variable_presets": [{"name": "my saved view", "template_variables": [{"name": "datacenter", "value": "*", "values": [ "*" ]}]}], "template_variables": [{"available_values": ["my-host", "host1", "host2"], "defaults": ["my-host"], "name": "host1", "prefix": "host"}], "title": "", "widgets": [{"definition": {"requests": {"fill": {"q": "avg:system.cpu.user{*}"}}, "type": "hostmap"}}]}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @team:DataDog/dashboards-backend
   Scenario: Create a new dashboard with template variable presets using values returns "OK" response
     Given new "CreateDashboard" request
-    And body with value {"description": null, "is_read_only": false, "layout_type": "ordered", "notify_list": [], "reflow_type": "auto", "restricted_roles": [], "template_variable_presets": [{"name": "my saved view", "template_variables": [{"name": "datacenter", "values": ["*", "my-host"]}]}], "template_variables": [{"available_values": ["my-host", "host1", "host2"], "defaults": ["my-host"], "name": "host1", "prefix": "host"}], "title": "", "widgets": [{"definition": {"requests": {"fill": {"q": "avg:system.cpu.user{*}"}}, "type": "hostmap"}}]}
+    And body with value {"description": null, "layout_type": "ordered", "notify_list": [], "reflow_type": "auto", "restricted_roles": [], "template_variable_presets": [{"name": "my saved view", "template_variables": [{"name": "datacenter", "values": ["*", "my-host"]}]}], "template_variables": [{"available_values": ["my-host", "host1", "host2"], "defaults": ["my-host"], "name": "host1", "prefix": "host"}], "title": "", "widgets": [{"definition": {"requests": {"fill": {"q": "avg:system.cpu.user{*}"}}, "type": "hostmap"}}]}
     When the request is sent
     Then the response status is 200 OK
     And the response "template_variable_presets[0].name" is equal to "my saved view"

@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"description":null,"is_read_only":false,"layout_type":"ordered","notify_list":[],"reflow_type":"auto","restricted_roles":[],"template_variables":[{"available_values":["my-host","host1","host2"],"defaults":["my-host"],"name":"host1","prefix":"host"}],"title":"","widgets":[{"definition":{"requests":{"fill":{"q":"avg:system.cpu.user{*}"}},"type":"hostmap"}}]}'
+    body: '{"description":null,"layout_type":"ordered","notify_list":[],"reflow_type":"auto","restricted_roles":[],"template_variables":[{"available_values":["my-host","host1","host2"],"defaults":["my-host"],"name":"host1","prefix":"host"}],"title":"","widgets":[{"definition":{"requests":{"fill":{"q":"avg:system.cpu.user{*}"}},"type":"hostmap"}}]}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/dashboard
   response:
     body:
-      string: '{"id":"h5n-j24-t82","title":"","description":null,"author_handle":"frog@datadoghq.com","author_name":null,"layout_type":"ordered","url":"/dashboard/h5n-j24-t82/","is_read_only":false,"template_variables":[{"available_values":["my-host","host1","host2"],"defaults":["my-host"],"name":"host1","prefix":"host"}],"widgets":[{"definition":{"requests":{"fill":{"q":"avg:system.cpu.user{*}"}},"type":"hostmap"},"id":355816329429238}],"notify_list":[],"created_at":"2023-02-16T21:39:58.588908+00:00","modified_at":"2023-02-16T21:39:58.588908+00:00","reflow_type":"auto","restricted_roles":[]}
+      string: '{"id":"yf6-dzr-q5c","title":"","description":null,"author_handle":"anika.maskara@datadoghq.com","author_name":"Anika
+        Maskara","layout_type":"ordered","url":"/dashboard/yf6-dzr-q5c/","is_read_only":false,"template_variables":[{"available_values":["my-host","host1","host2"],"defaults":["my-host"],"name":"host1","prefix":"host"}],"widgets":[{"definition":{"requests":{"fill":{"q":"avg:system.cpu.user{*}"}},"type":"hostmap"},"id":1555947222782912}],"notify_list":[],"created_at":"2024-11-14T19:12:40.753747+00:00","modified_at":"2024-11-14T19:12:40.753747+00:00","reflow_type":"auto","restricted_roles":[]}
 
         '
     headers:
@@ -25,10 +26,10 @@ interactions:
       accept:
       - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/dashboard/h5n-j24-t82
+    uri: https://api.datadoghq.com/api/v1/dashboard/yf6-dzr-q5c
   response:
     body:
-      string: '{"deleted_dashboard_id":"h5n-j24-t82"}
+      string: '{"deleted_dashboard_id":"yf6-dzr-q5c"}
 
         '
     headers:
