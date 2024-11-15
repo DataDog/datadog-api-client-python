@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"description":"","layout_type":"free","notify_list":[],"template_variables":[],"title":"Test-Create_a_new_dashboard_with_event_stream_widget-1731611541","widgets":[{"definition":{"event_size":"s","query":"example-query","tags_execution":"and","title":"","title_align":"left","title_size":"16","type":"event_stream"},"layout":{"height":38,"width":47,"x":0,"y":0}}]}'
+    body: '{"description":"","layout_type":"free","notify_list":[],"template_variables":[],"title":"Test-Create_a_new_dashboard_with_event_stream_widget-1731699159","widgets":[{"definition":{"event_size":"s","query":"example-query","tags_execution":"and","title":"","title_align":"left","title_size":"16","type":"event_stream"},"layout":{"height":38,"width":47,"x":0,"y":0}}]}'
     headers:
       accept:
       - application/json
@@ -10,8 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/dashboard
   response:
     body:
-      string: '{"id":"j92-23a-929","title":"Test-Create_a_new_dashboard_with_event_stream_widget-1731611541","description":"","author_handle":"anika.maskara@datadoghq.com","author_name":"Anika
-        Maskara","layout_type":"free","url":"/dashboard/j92-23a-929/test-createanewdashboardwitheventstreamwidget-1731611541","is_read_only":false,"template_variables":[],"widgets":[{"definition":{"event_size":"s","query":"example-query","tags_execution":"and","title":"","title_align":"left","title_size":"16","type":"event_stream"},"layout":{"height":38,"width":47,"x":0,"y":0},"id":5404510043206419}],"notify_list":[],"created_at":"2024-11-14T19:12:21.167451+00:00","modified_at":"2024-11-14T19:12:21.167451+00:00","restricted_roles":[]}
+      string: '{"id":"uki-9bd-4fm","title":"Test-Create_a_new_dashboard_with_event_stream_widget-1731699159","description":"","author_handle":"frog@datadoghq.com","author_name":null,"layout_type":"free","url":"/dashboard/uki-9bd-4fm/test-createanewdashboardwitheventstreamwidget-1731699159","is_read_only":false,"template_variables":[],"widgets":[{"definition":{"event_size":"s","query":"example-query","tags_execution":"and","title":"","title_align":"left","title_size":"16","type":"event_stream"},"layout":{"height":38,"width":47,"x":0,"y":0},"id":7158238942702313}],"notify_list":[],"created_at":"2024-11-15T19:32:39.414884+00:00","modified_at":"2024-11-15T19:32:39.414884+00:00","restricted_roles":[]}
 
         '
     headers:
@@ -26,10 +25,10 @@ interactions:
       accept:
       - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/dashboard/j92-23a-929
+    uri: https://api.datadoghq.com/api/v1/dashboard/uki-9bd-4fm
   response:
     body:
-      string: '{"deleted_dashboard_id":"j92-23a-929"}
+      string: '{"deleted_dashboard_id":"uki-9bd-4fm"}
 
         '
     headers:

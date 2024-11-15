@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"layout_type":"ordered","title":"Test-Create_a_new_dashboard_with_apm_dependency_stats_widget-1731611538","widgets":[{"definition":{"requests":[{"queries":[{"data_source":"apm_dependency_stats","env":"ci","name":"query1","operation_name":"cassandra.query","primary_tag_name":"datacenter","primary_tag_value":"edge-eu1.prod.dog","resource_name":"DELETE
+    body: '{"layout_type":"ordered","title":"Test-Create_a_new_dashboard_with_apm_dependency_stats_widget-1731699156","widgets":[{"definition":{"requests":[{"queries":[{"data_source":"apm_dependency_stats","env":"ci","name":"query1","operation_name":"cassandra.query","primary_tag_name":"datacenter","primary_tag_value":"edge-eu1.prod.dog","resource_name":"DELETE
       FROM monitor_history.monitor_state_change_history WHERE org_id = ? AND monitor_id
       IN ? AND group = ?","service":"cassandra","stat":"avg_duration"}],"response_format":"scalar"}],"title":"","title_align":"left","title_size":"16","type":"query_table"},"layout":{"height":4,"width":4,"x":0,"y":0}}]}'
     headers:
@@ -12,10 +12,9 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/dashboard
   response:
     body:
-      string: '{"id":"u58-b3b-jgt","title":"Test-Create_a_new_dashboard_with_apm_dependency_stats_widget-1731611538","description":null,"author_handle":"anika.maskara@datadoghq.com","author_name":"Anika
-        Maskara","layout_type":"ordered","url":"/dashboard/u58-b3b-jgt/test-createanewdashboardwithapmdependencystatswidget-1731611538","is_read_only":false,"template_variables":null,"widgets":[{"definition":{"requests":[{"queries":[{"data_source":"apm_dependency_stats","env":"ci","name":"query1","operation_name":"cassandra.query","primary_tag_name":"datacenter","primary_tag_value":"edge-eu1.prod.dog","resource_name":"DELETE
+      string: '{"id":"vz4-7gw-y6a","title":"Test-Create_a_new_dashboard_with_apm_dependency_stats_widget-1731699156","description":null,"author_handle":"frog@datadoghq.com","author_name":null,"layout_type":"ordered","url":"/dashboard/vz4-7gw-y6a/test-createanewdashboardwithapmdependencystatswidget-1731699156","is_read_only":false,"template_variables":null,"widgets":[{"definition":{"requests":[{"queries":[{"data_source":"apm_dependency_stats","env":"ci","name":"query1","operation_name":"cassandra.query","primary_tag_name":"datacenter","primary_tag_value":"edge-eu1.prod.dog","resource_name":"DELETE
         FROM monitor_history.monitor_state_change_history WHERE org_id = ? AND monitor_id
-        IN ? AND group = ?","service":"cassandra","stat":"avg_duration"}],"response_format":"scalar"}],"title":"","title_align":"left","title_size":"16","type":"query_table"},"layout":{"height":4,"width":4,"x":0,"y":0},"id":3418036957728040}],"notify_list":null,"created_at":"2024-11-14T19:12:18.368023+00:00","modified_at":"2024-11-14T19:12:18.368023+00:00","restricted_roles":[]}
+        IN ? AND group = ?","service":"cassandra","stat":"avg_duration"}],"response_format":"scalar"}],"title":"","title_align":"left","title_size":"16","type":"query_table"},"layout":{"height":4,"width":4,"x":0,"y":0},"id":8028533185092499}],"notify_list":null,"created_at":"2024-11-15T19:32:36.632468+00:00","modified_at":"2024-11-15T19:32:36.632468+00:00","restricted_roles":[]}
 
         '
     headers:
@@ -30,10 +29,10 @@ interactions:
       accept:
       - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/dashboard/u58-b3b-jgt
+    uri: https://api.datadoghq.com/api/v1/dashboard/vz4-7gw-y6a
   response:
     body:
-      string: '{"deleted_dashboard_id":"u58-b3b-jgt"}
+      string: '{"deleted_dashboard_id":"vz4-7gw-y6a"}
 
         '
     headers:

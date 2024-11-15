@@ -11,8 +11,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/dashboard
   response:
     body:
-      string: '{"id":"aea-ma4-izr","title":"","description":null,"author_handle":"anika.maskara@datadoghq.com","author_name":"Anika
-        Maskara","layout_type":"ordered","url":"/dashboard/aea-ma4-izr/","is_read_only":false,"template_variables":[{"available_values":["my-host","host1","host2"],"defaults":["my-host"],"name":"host1","prefix":"host"}],"widgets":[{"definition":{"requests":{"fill":{"q":"avg:system.cpu.user{*}"}},"type":"hostmap"},"id":725916093061701}],"notify_list":[],"created_at":"2024-11-14T19:12:41.457782+00:00","modified_at":"2024-11-14T19:12:41.457782+00:00","template_variable_presets":[{"name":"my
+      string: '{"id":"87t-neh-qip","title":"","description":null,"author_handle":"frog@datadoghq.com","author_name":null,"layout_type":"ordered","url":"/dashboard/87t-neh-qip/","is_read_only":false,"template_variables":[{"available_values":["my-host","host1","host2"],"defaults":["my-host"],"name":"host1","prefix":"host"}],"widgets":[{"definition":{"requests":{"fill":{"q":"avg:system.cpu.user{*}"}},"type":"hostmap"},"id":8760637497021649}],"notify_list":[],"created_at":"2024-11-15T19:32:58.513090+00:00","modified_at":"2024-11-15T19:32:58.513090+00:00","template_variable_presets":[{"name":"my
         saved view","template_variables":[{"name":"datacenter","values":["*","my-host"]}]}],"reflow_type":"auto","restricted_roles":[]}
 
         '
@@ -28,10 +27,10 @@ interactions:
       accept:
       - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/dashboard/aea-ma4-izr
+    uri: https://api.datadoghq.com/api/v1/dashboard/87t-neh-qip
   response:
     body:
-      string: '{"deleted_dashboard_id":"aea-ma4-izr"}
+      string: '{"deleted_dashboard_id":"87t-neh-qip"}
 
         '
     headers:

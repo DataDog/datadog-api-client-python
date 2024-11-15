@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"layout_type":"ordered","reflow_type":"auto","title":"Test-Create_a_new_timeseries_widget_with_incident_analytics_data_source-1731611564
+    body: '{"layout_type":"ordered","reflow_type":"auto","title":"Test-Create_a_new_timeseries_widget_with_incident_analytics_data_source-1731699182
       with incident_analytics datasource","widgets":[{"definition":{"legend_columns":["avg","min","max","value","sum"],"legend_layout":"auto","requests":[{"display_type":"line","formulas":[{"formula":"query1"}],"queries":[{"compute":{"aggregation":"count"},"data_source":"incident_analytics","group_by":[],"indexes":["*"],"name":"query1","search":{"query":"test_level:test"}}],"response_format":"timeseries","style":{"line_type":"solid","line_width":"normal","palette":"dog_classic"}}],"show_legend":true,"time":{},"title":"","type":"timeseries"}}]}'
     headers:
       accept:
@@ -11,9 +11,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/dashboard
   response:
     body:
-      string: '{"id":"d25-w5x-ehk","title":"Test-Create_a_new_timeseries_widget_with_incident_analytics_data_source-1731611564
-        with incident_analytics datasource","description":null,"author_handle":"anika.maskara@datadoghq.com","author_name":"Anika
-        Maskara","layout_type":"ordered","url":"/dashboard/d25-w5x-ehk/test-createanewtimeserieswidgetwithincidentanalyticsdatasource-1731611564-with-i","is_read_only":false,"template_variables":null,"widgets":[{"definition":{"legend_columns":["avg","min","max","value","sum"],"legend_layout":"auto","requests":[{"display_type":"line","formulas":[{"formula":"query1"}],"queries":[{"compute":{"aggregation":"count"},"data_source":"incident_analytics","group_by":[],"indexes":["*"],"name":"query1","search":{"query":"test_level:test"}}],"response_format":"timeseries","style":{"line_type":"solid","line_width":"normal","palette":"dog_classic"}}],"show_legend":true,"time":{},"title":"","type":"timeseries"},"id":4201081844412552}],"notify_list":null,"created_at":"2024-11-14T19:12:45.054939+00:00","modified_at":"2024-11-14T19:12:45.054939+00:00","reflow_type":"auto","restricted_roles":[]}
+      string: '{"id":"acy-6e4-hcx","title":"Test-Create_a_new_timeseries_widget_with_incident_analytics_data_source-1731699182
+        with incident_analytics datasource","description":null,"author_handle":"frog@datadoghq.com","author_name":null,"layout_type":"ordered","url":"/dashboard/acy-6e4-hcx/test-createanewtimeserieswidgetwithincidentanalyticsdatasource-1731699182-with-i","is_read_only":false,"template_variables":null,"widgets":[{"definition":{"legend_columns":["avg","min","max","value","sum"],"legend_layout":"auto","requests":[{"display_type":"line","formulas":[{"formula":"query1"}],"queries":[{"compute":{"aggregation":"count"},"data_source":"incident_analytics","group_by":[],"indexes":["*"],"name":"query1","search":{"query":"test_level:test"}}],"response_format":"timeseries","style":{"line_type":"solid","line_width":"normal","palette":"dog_classic"}}],"show_legend":true,"time":{},"title":"","type":"timeseries"},"id":1892327793861749}],"notify_list":null,"created_at":"2024-11-15T19:33:02.279466+00:00","modified_at":"2024-11-15T19:33:02.279466+00:00","reflow_type":"auto","restricted_roles":[]}
 
         '
     headers:
@@ -28,10 +27,10 @@ interactions:
       accept:
       - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/dashboard/d25-w5x-ehk
+    uri: https://api.datadoghq.com/api/v1/dashboard/acy-6e4-hcx
   response:
     body:
-      string: '{"deleted_dashboard_id":"d25-w5x-ehk"}
+      string: '{"deleted_dashboard_id":"acy-6e4-hcx"}
 
         '
     headers:

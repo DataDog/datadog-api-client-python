@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"layout_type":"ordered","title":"Test-Update_a_shared_dashboard_returns_OK_response-1731611574
+    body: '{"layout_type":"ordered","title":"Test-Update_a_shared_dashboard_returns_OK_response-1731699192
       with Profile Metrics Query","widgets":[{"definition":{"requests":[{"profile_metrics_query":{"compute":{"aggregation":"sum","facet":"@prof_core_cpu_cores"},"group_by":[{"facet":"service","limit":10,"sort":{"aggregation":"sum","facet":"@prof_core_cpu_cores","order":"desc"}}],"search":{"query":"runtime:jvm"}}}],"type":"timeseries"}}]}'
     headers:
       accept:
@@ -11,9 +11,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/dashboard
   response:
     body:
-      string: '{"id":"88w-xn2-mij","title":"Test-Update_a_shared_dashboard_returns_OK_response-1731611574
-        with Profile Metrics Query","description":null,"author_handle":"anika.maskara@datadoghq.com","author_name":"Anika
-        Maskara","layout_type":"ordered","url":"/dashboard/88w-xn2-mij/test-updateashareddashboardreturnsokresponse-1731611574-with-profile-metrics-que","is_read_only":false,"template_variables":null,"widgets":[{"definition":{"requests":[{"profile_metrics_query":{"compute":{"aggregation":"sum","facet":"@prof_core_cpu_cores"},"group_by":[{"facet":"service","limit":10,"sort":{"aggregation":"sum","facet":"@prof_core_cpu_cores","order":"desc"}}],"search":{"query":"runtime:jvm"}}}],"type":"timeseries"},"id":6560132249388355}],"notify_list":null,"created_at":"2024-11-14T19:12:55.067902+00:00","modified_at":"2024-11-14T19:12:55.067902+00:00","restricted_roles":[]}
+      string: '{"id":"7gy-n9j-kdz","title":"Test-Update_a_shared_dashboard_returns_OK_response-1731699192
+        with Profile Metrics Query","description":null,"author_handle":"frog@datadoghq.com","author_name":null,"layout_type":"ordered","url":"/dashboard/7gy-n9j-kdz/test-updateashareddashboardreturnsokresponse-1731699192-with-profile-metrics-que","is_read_only":false,"template_variables":null,"widgets":[{"definition":{"requests":[{"profile_metrics_query":{"compute":{"aggregation":"sum","facet":"@prof_core_cpu_cores"},"group_by":[{"facet":"service","limit":10,"sort":{"aggregation":"sum","facet":"@prof_core_cpu_cores","order":"desc"}}],"search":{"query":"runtime:jvm"}}}],"type":"timeseries"},"id":1917183550061512}],"notify_list":null,"created_at":"2024-11-15T19:33:12.333485+00:00","modified_at":"2024-11-15T19:33:12.333485+00:00","restricted_roles":[]}
 
         '
     headers:
@@ -23,7 +22,7 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"dashboard_id":"88w-xn2-mij","dashboard_type":"custom_timeboard","global_time":{"live_span":"1h"},"share_list":["testupdateashareddashboardreturnsokresponse1731611574@datadoghq.com"],"share_type":"invite"}'
+    body: '{"dashboard_id":"7gy-n9j-kdz","dashboard_type":"custom_timeboard","global_time":{"live_span":"1h"},"share_list":["testupdateashareddashboardreturnsokresponse1731699192@datadoghq.com"],"share_type":"invite"}'
     headers:
       accept:
       - application/json
@@ -33,8 +32,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/dashboard/public
   response:
     body:
-      string: '{"author":{"handle":"anika.maskara@datadoghq.com","name":"Anika Maskara"},"dashboard_id":"88w-xn2-mij","dashboard_type":"custom_timeboard","status":"active","title":"Test-Update_a_shared_dashboard_returns_OK_response-1731611574
-        with Profile Metrics Query","viewing_preferences":{},"expiration":null,"last_accessed":null,"global_time_selectable_enabled":false,"global_time":{"live_span":"1h"},"selectable_template_vars":null,"token":"fasjyydbcgwwc2uc-671f5753eee0a2a6b3fd80019ccbf1ec","public_url":"https://p.datadoghq.com/sb/fasjyydbcgwwc2uc-671f5753eee0a2a6b3fd80019ccbf1ec","created":"2024-11-14T19:12:55.398738+00:00","share_type":"invite","share_list":["testupdateashareddashboardreturnsokresponse1731611574@datadoghq.com"],"session_duration_in_days":30,"invitees":[{"email":"testupdateashareddashboardreturnsokresponse1731611574@datadoghq.com","access_expiration":null,"last_accessed":null,"created_at":"2024-11-14T19:12:55.430476+00:00"}]}
+      string: '{"author":{"handle":"frog@datadoghq.com","name":null},"dashboard_id":"7gy-n9j-kdz","dashboard_type":"custom_timeboard","status":"active","title":"Test-Update_a_shared_dashboard_returns_OK_response-1731699192
+        with Profile Metrics Query","viewing_preferences":{},"expiration":null,"last_accessed":null,"global_time_selectable_enabled":false,"global_time":{"live_span":"1h"},"selectable_template_vars":null,"token":"fasjyydbcgwwc2uc-601fe99239741e02ee84c1852ce59a37","public_url":"https://p.datadoghq.com/sb/fasjyydbcgwwc2uc-601fe99239741e02ee84c1852ce59a37","created":"2024-11-15T19:33:12.669592+00:00","share_type":"invite","share_list":["testupdateashareddashboardreturnsokresponse1731699192@datadoghq.com"],"session_duration_in_days":30,"invitees":[{"email":"testupdateashareddashboardreturnsokresponse1731699192@datadoghq.com","access_expiration":null,"last_accessed":null,"created_at":"2024-11-15T19:33:12.692355+00:00"}]}
 
         '
     headers:
@@ -51,11 +50,11 @@ interactions:
       content-type:
       - application/json
     method: PUT
-    uri: https://api.datadoghq.com/api/v1/dashboard/public/fasjyydbcgwwc2uc-671f5753eee0a2a6b3fd80019ccbf1ec
+    uri: https://api.datadoghq.com/api/v1/dashboard/public/fasjyydbcgwwc2uc-601fe99239741e02ee84c1852ce59a37
   response:
     body:
-      string: '{"author":{"handle":"anika.maskara@datadoghq.com","name":"Anika Maskara"},"dashboard_id":"88w-xn2-mij","dashboard_type":"custom_timeboard","status":"active","title":"Test-Update_a_shared_dashboard_returns_OK_response-1731611574
-        with Profile Metrics Query","viewing_preferences":{},"expiration":null,"last_accessed":null,"global_time_selectable_enabled":false,"global_time":{"live_span":"15m"},"selectable_template_vars":null,"token":"fasjyydbcgwwc2uc-671f5753eee0a2a6b3fd80019ccbf1ec","public_url":"https://p.datadoghq.com/sb/fasjyydbcgwwc2uc-671f5753eee0a2a6b3fd80019ccbf1ec","created":"2024-11-14T19:12:55.398738+00:00","share_type":"open","share_list":[],"session_duration_in_days":null,"invitees":[]}
+      string: '{"author":{"handle":"frog@datadoghq.com","name":null},"dashboard_id":"7gy-n9j-kdz","dashboard_type":"custom_timeboard","status":"active","title":"Test-Update_a_shared_dashboard_returns_OK_response-1731699192
+        with Profile Metrics Query","viewing_preferences":{},"expiration":null,"last_accessed":null,"global_time_selectable_enabled":false,"global_time":{"live_span":"15m"},"selectable_template_vars":null,"token":"fasjyydbcgwwc2uc-601fe99239741e02ee84c1852ce59a37","public_url":"https://p.datadoghq.com/sb/fasjyydbcgwwc2uc-601fe99239741e02ee84c1852ce59a37","created":"2024-11-15T19:33:12.669592+00:00","share_type":"open","share_list":[],"session_duration_in_days":null,"invitees":[]}
 
         '
     headers:
@@ -70,10 +69,10 @@ interactions:
       accept:
       - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/dashboard/public/fasjyydbcgwwc2uc-671f5753eee0a2a6b3fd80019ccbf1ec
+    uri: https://api.datadoghq.com/api/v1/dashboard/public/fasjyydbcgwwc2uc-601fe99239741e02ee84c1852ce59a37
   response:
     body:
-      string: '{"deleted_public_dashboard_token":"fasjyydbcgwwc2uc-671f5753eee0a2a6b3fd80019ccbf1ec"}
+      string: '{"deleted_public_dashboard_token":"fasjyydbcgwwc2uc-601fe99239741e02ee84c1852ce59a37"}
 
         '
     headers:
@@ -88,10 +87,10 @@ interactions:
       accept:
       - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/dashboard/88w-xn2-mij
+    uri: https://api.datadoghq.com/api/v1/dashboard/7gy-n9j-kdz
   response:
     body:
-      string: '{"deleted_dashboard_id":"88w-xn2-mij"}
+      string: '{"deleted_dashboard_id":"7gy-n9j-kdz"}
 
         '
     headers:

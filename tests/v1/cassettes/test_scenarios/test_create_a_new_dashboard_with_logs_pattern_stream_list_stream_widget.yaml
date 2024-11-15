@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"layout_type":"ordered","title":"Test-Create_a_new_dashboard_with_logs_pattern_stream_list_stream_widget-1731611549
+    body: '{"layout_type":"ordered","title":"Test-Create_a_new_dashboard_with_logs_pattern_stream_list_stream_widget-1731699166
       with list_stream widget","widgets":[{"definition":{"requests":[{"columns":[{"field":"timestamp","width":"auto"}],"query":{"data_source":"logs_pattern_stream","group_by":[{"facet":"service"}],"query_string":""},"response_format":"event_list"}],"type":"list_stream"}}]}'
     headers:
       accept:
@@ -11,9 +11,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/dashboard
   response:
     body:
-      string: '{"id":"xht-7tn-3si","title":"Test-Create_a_new_dashboard_with_logs_pattern_stream_list_stream_widget-1731611549
-        with list_stream widget","description":null,"author_handle":"anika.maskara@datadoghq.com","author_name":"Anika
-        Maskara","layout_type":"ordered","url":"/dashboard/xht-7tn-3si/test-createanewdashboardwithlogspatternstreamliststreamwidget-1731611549-with-li","is_read_only":false,"template_variables":null,"widgets":[{"definition":{"requests":[{"columns":[{"field":"timestamp","width":"auto"}],"query":{"data_source":"logs_pattern_stream","group_by":[{"facet":"service"}],"query_string":""},"response_format":"event_list"}],"type":"list_stream"},"id":3825798675008332}],"notify_list":null,"created_at":"2024-11-14T19:12:29.422196+00:00","modified_at":"2024-11-14T19:12:29.422196+00:00","restricted_roles":[]}
+      string: '{"id":"hem-inu-je6","title":"Test-Create_a_new_dashboard_with_logs_pattern_stream_list_stream_widget-1731699166
+        with list_stream widget","description":null,"author_handle":"frog@datadoghq.com","author_name":null,"layout_type":"ordered","url":"/dashboard/hem-inu-je6/test-createanewdashboardwithlogspatternstreamliststreamwidget-1731699166-with-li","is_read_only":false,"template_variables":null,"widgets":[{"definition":{"requests":[{"columns":[{"field":"timestamp","width":"auto"}],"query":{"data_source":"logs_pattern_stream","group_by":[{"facet":"service"}],"query_string":""},"response_format":"event_list"}],"type":"list_stream"},"id":4012469646916199}],"notify_list":null,"created_at":"2024-11-15T19:32:46.772627+00:00","modified_at":"2024-11-15T19:32:46.772627+00:00","restricted_roles":[]}
 
         '
     headers:
@@ -28,10 +27,10 @@ interactions:
       accept:
       - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/dashboard/xht-7tn-3si
+    uri: https://api.datadoghq.com/api/v1/dashboard/hem-inu-je6
   response:
     body:
-      string: '{"deleted_dashboard_id":"xht-7tn-3si"}
+      string: '{"deleted_dashboard_id":"hem-inu-je6"}
 
         '
     headers:

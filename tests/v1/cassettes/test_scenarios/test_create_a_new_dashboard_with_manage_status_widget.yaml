@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"description":"","layout_type":"free","notify_list":[],"template_variables":[],"title":"Test-Create_a_new_dashboard_with_manage_status_widget-1731611550","widgets":[{"definition":{"color_preference":"text","count":50,"display_format":"countsAndList","hide_zero_counts":true,"query":"","show_last_triggered":false,"sort":"status,asc","start":0,"summary_type":"monitors","type":"manage_status"},"layout":{"height":25,"width":50,"x":0,"y":0}}]}'
+    body: '{"description":"","layout_type":"free","notify_list":[],"template_variables":[],"title":"Test-Create_a_new_dashboard_with_manage_status_widget-1731699167","widgets":[{"definition":{"color_preference":"text","count":50,"display_format":"countsAndList","hide_zero_counts":true,"query":"","show_last_triggered":false,"sort":"status,asc","start":0,"summary_type":"monitors","type":"manage_status"},"layout":{"height":25,"width":50,"x":0,"y":0}}]}'
     headers:
       accept:
       - application/json
@@ -10,8 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/dashboard
   response:
     body:
-      string: '{"id":"4gd-vwv-ksd","title":"Test-Create_a_new_dashboard_with_manage_status_widget-1731611550","description":"","author_handle":"anika.maskara@datadoghq.com","author_name":"Anika
-        Maskara","layout_type":"free","url":"/dashboard/4gd-vwv-ksd/test-createanewdashboardwithmanagestatuswidget-1731611550","is_read_only":false,"template_variables":[],"widgets":[{"definition":{"color_preference":"text","count":50,"display_format":"countsAndList","hide_zero_counts":true,"query":"","show_last_triggered":false,"sort":"status,asc","start":0,"summary_type":"monitors","type":"manage_status"},"layout":{"height":25,"width":50,"x":0,"y":0},"id":7726390517396795}],"notify_list":[],"created_at":"2024-11-14T19:12:30.649609+00:00","modified_at":"2024-11-14T19:12:30.649609+00:00","restricted_roles":[]}
+      string: '{"id":"5qz-2zt-tj6","title":"Test-Create_a_new_dashboard_with_manage_status_widget-1731699167","description":"","author_handle":"frog@datadoghq.com","author_name":null,"layout_type":"free","url":"/dashboard/5qz-2zt-tj6/test-createanewdashboardwithmanagestatuswidget-1731699167","is_read_only":false,"template_variables":[],"widgets":[{"definition":{"color_preference":"text","count":50,"display_format":"countsAndList","hide_zero_counts":true,"query":"","show_last_triggered":false,"sort":"status,asc","start":0,"summary_type":"monitors","type":"manage_status"},"layout":{"height":25,"width":50,"x":0,"y":0},"id":7923339019354632}],"notify_list":[],"created_at":"2024-11-15T19:32:47.979194+00:00","modified_at":"2024-11-15T19:32:47.979194+00:00","restricted_roles":[]}
 
         '
     headers:
@@ -26,10 +25,10 @@ interactions:
       accept:
       - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/dashboard/4gd-vwv-ksd
+    uri: https://api.datadoghq.com/api/v1/dashboard/5qz-2zt-tj6
   response:
     body:
-      string: '{"deleted_dashboard_id":"4gd-vwv-ksd"}
+      string: '{"deleted_dashboard_id":"5qz-2zt-tj6"}
 
         '
     headers:

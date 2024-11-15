@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"description":"","layout_type":"free","notify_list":[],"template_variables":[],"title":"Test-Create_a_new_dashboard_with_topology_map_widget-1731611562","widgets":[{"definition":{"requests":[{"query":{"data_source":"service_map","filters":["env:none","environment:*"],"service":""},"request_type":"topology"}],"title":"","title_align":"left","title_size":"16","type":"topology_map"},"layout":{"height":15,"width":47,"x":0,"y":0}}]}'
+    body: '{"description":"","layout_type":"free","notify_list":[],"template_variables":[],"title":"Test-Create_a_new_dashboard_with_topology_map_widget-1731699180","widgets":[{"definition":{"requests":[{"query":{"data_source":"service_map","filters":["env:none","environment:*"],"service":""},"request_type":"topology"}],"title":"","title_align":"left","title_size":"16","type":"topology_map"},"layout":{"height":15,"width":47,"x":0,"y":0}}]}'
     headers:
       accept:
       - application/json
@@ -10,8 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/dashboard
   response:
     body:
-      string: '{"id":"4nx-4x7-4ft","title":"Test-Create_a_new_dashboard_with_topology_map_widget-1731611562","description":"","author_handle":"anika.maskara@datadoghq.com","author_name":"Anika
-        Maskara","layout_type":"free","url":"/dashboard/4nx-4x7-4ft/test-createanewdashboardwithtopologymapwidget-1731611562","is_read_only":false,"template_variables":[],"widgets":[{"definition":{"requests":[{"query":{"data_source":"service_map","filters":["env:none","environment:*"],"service":""},"request_type":"topology"}],"title":"","title_align":"left","title_size":"16","type":"topology_map"},"layout":{"height":15,"width":47,"x":0,"y":0},"id":4417217639321993}],"notify_list":[],"created_at":"2024-11-14T19:12:43.065479+00:00","modified_at":"2024-11-14T19:12:43.065479+00:00","restricted_roles":[]}
+      string: '{"id":"9fp-eg8-uae","title":"Test-Create_a_new_dashboard_with_topology_map_widget-1731699180","description":"","author_handle":"frog@datadoghq.com","author_name":null,"layout_type":"free","url":"/dashboard/9fp-eg8-uae/test-createanewdashboardwithtopologymapwidget-1731699180","is_read_only":false,"template_variables":[],"widgets":[{"definition":{"requests":[{"query":{"data_source":"service_map","filters":["env:none","environment:*"],"service":""},"request_type":"topology"}],"title":"","title_align":"left","title_size":"16","type":"topology_map"},"layout":{"height":15,"width":47,"x":0,"y":0},"id":606036044054377}],"notify_list":[],"created_at":"2024-11-15T19:33:00.244891+00:00","modified_at":"2024-11-15T19:33:00.244891+00:00","restricted_roles":[]}
 
         '
     headers:
@@ -26,10 +25,10 @@ interactions:
       accept:
       - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/dashboard/4nx-4x7-4ft
+    uri: https://api.datadoghq.com/api/v1/dashboard/9fp-eg8-uae
   response:
     body:
-      string: '{"deleted_dashboard_id":"4nx-4x7-4ft"}
+      string: '{"deleted_dashboard_id":"9fp-eg8-uae"}
 
         '
     headers:

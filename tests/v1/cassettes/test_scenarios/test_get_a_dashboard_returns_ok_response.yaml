@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"layout_type":"ordered","title":"Test-Get_a_dashboard_returns_OK_response-1731611568
+    body: '{"layout_type":"ordered","title":"Test-Get_a_dashboard_returns_OK_response-1731699186
       with Profile Metrics Query","widgets":[{"definition":{"requests":[{"profile_metrics_query":{"compute":{"aggregation":"sum","facet":"@prof_core_cpu_cores"},"group_by":[{"facet":"service","limit":10,"sort":{"aggregation":"sum","facet":"@prof_core_cpu_cores","order":"desc"}}],"search":{"query":"runtime:jvm"}}}],"type":"timeseries"}}]}'
     headers:
       accept:
@@ -11,9 +11,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/dashboard
   response:
     body:
-      string: '{"id":"8u7-9gr-rx9","title":"Test-Get_a_dashboard_returns_OK_response-1731611568
-        with Profile Metrics Query","description":null,"author_handle":"anika.maskara@datadoghq.com","author_name":"Anika
-        Maskara","layout_type":"ordered","url":"/dashboard/8u7-9gr-rx9/test-getadashboardreturnsokresponse-1731611568-with-profile-metrics-query","is_read_only":false,"template_variables":null,"widgets":[{"definition":{"requests":[{"profile_metrics_query":{"compute":{"aggregation":"sum","facet":"@prof_core_cpu_cores"},"group_by":[{"facet":"service","limit":10,"sort":{"aggregation":"sum","facet":"@prof_core_cpu_cores","order":"desc"}}],"search":{"query":"runtime:jvm"}}}],"type":"timeseries"},"id":942871578443424}],"notify_list":null,"created_at":"2024-11-14T19:12:48.809197+00:00","modified_at":"2024-11-14T19:12:48.809197+00:00","restricted_roles":[]}
+      string: '{"id":"448-ktj-ezs","title":"Test-Get_a_dashboard_returns_OK_response-1731699186
+        with Profile Metrics Query","description":null,"author_handle":"frog@datadoghq.com","author_name":null,"layout_type":"ordered","url":"/dashboard/448-ktj-ezs/test-getadashboardreturnsokresponse-1731699186-with-profile-metrics-query","is_read_only":false,"template_variables":null,"widgets":[{"definition":{"requests":[{"profile_metrics_query":{"compute":{"aggregation":"sum","facet":"@prof_core_cpu_cores"},"group_by":[{"facet":"service","limit":10,"sort":{"aggregation":"sum","facet":"@prof_core_cpu_cores","order":"desc"}}],"search":{"query":"runtime:jvm"}}}],"type":"timeseries"},"id":7381515167611300}],"notify_list":null,"created_at":"2024-11-15T19:33:06.217022+00:00","modified_at":"2024-11-15T19:33:06.217022+00:00","restricted_roles":[]}
 
         '
     headers:
@@ -28,12 +27,11 @@ interactions:
       accept:
       - application/json
     method: GET
-    uri: https://api.datadoghq.com/api/v1/dashboard/8u7-9gr-rx9
+    uri: https://api.datadoghq.com/api/v1/dashboard/448-ktj-ezs
   response:
     body:
-      string: '{"id":"8u7-9gr-rx9","title":"Test-Get_a_dashboard_returns_OK_response-1731611568
-        with Profile Metrics Query","description":null,"author_handle":"anika.maskara@datadoghq.com","author_name":"Anika
-        Maskara","layout_type":"ordered","url":"/dashboard/8u7-9gr-rx9/test-getadashboardreturnsokresponse-1731611568-with-profile-metrics-query","is_read_only":false,"template_variables":null,"widgets":[{"definition":{"requests":[{"profile_metrics_query":{"compute":{"aggregation":"sum","facet":"@prof_core_cpu_cores"},"group_by":[{"facet":"service","limit":10,"sort":{"aggregation":"sum","facet":"@prof_core_cpu_cores","order":"desc"}}],"search":{"query":"runtime:jvm"}}}],"type":"timeseries"},"id":942871578443424}],"notify_list":null,"created_at":"2024-11-14T19:12:48.809197+00:00","modified_at":"2024-11-14T19:12:48.809197+00:00","restricted_roles":[]}
+      string: '{"id":"448-ktj-ezs","title":"Test-Get_a_dashboard_returns_OK_response-1731699186
+        with Profile Metrics Query","description":null,"author_handle":"frog@datadoghq.com","author_name":null,"layout_type":"ordered","url":"/dashboard/448-ktj-ezs/test-getadashboardreturnsokresponse-1731699186-with-profile-metrics-query","is_read_only":false,"template_variables":null,"widgets":[{"definition":{"requests":[{"profile_metrics_query":{"compute":{"aggregation":"sum","facet":"@prof_core_cpu_cores"},"group_by":[{"facet":"service","limit":10,"sort":{"aggregation":"sum","facet":"@prof_core_cpu_cores","order":"desc"}}],"search":{"query":"runtime:jvm"}}}],"type":"timeseries"},"id":7381515167611300}],"notify_list":null,"created_at":"2024-11-15T19:33:06.217022+00:00","modified_at":"2024-11-15T19:33:06.217022+00:00","restricted_roles":[]}
 
         '
     headers:
@@ -48,10 +46,10 @@ interactions:
       accept:
       - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/dashboard/8u7-9gr-rx9
+    uri: https://api.datadoghq.com/api/v1/dashboard/448-ktj-ezs
   response:
     body:
-      string: '{"deleted_dashboard_id":"8u7-9gr-rx9"}
+      string: '{"deleted_dashboard_id":"448-ktj-ezs"}
 
         '
     headers:

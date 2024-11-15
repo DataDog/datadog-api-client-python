@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"layout_type":"ordered","title":"Test-Create_a_new_dashboard_with_event_stream_list_stream_widget-1731611540
+    body: '{"layout_type":"ordered","title":"Test-Create_a_new_dashboard_with_event_stream_list_stream_widget-1731699158
       with list_stream widget","widgets":[{"definition":{"requests":[{"columns":[{"field":"timestamp","width":"auto"}],"query":{"data_source":"event_stream","event_size":"l","query_string":""},"response_format":"event_list"}],"type":"list_stream"}}]}'
     headers:
       accept:
@@ -11,9 +11,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/dashboard
   response:
     body:
-      string: '{"id":"isx-9sv-axt","title":"Test-Create_a_new_dashboard_with_event_stream_list_stream_widget-1731611540
-        with list_stream widget","description":null,"author_handle":"anika.maskara@datadoghq.com","author_name":"Anika
-        Maskara","layout_type":"ordered","url":"/dashboard/isx-9sv-axt/test-createanewdashboardwitheventstreamliststreamwidget-1731611540-with-liststre","is_read_only":false,"template_variables":null,"widgets":[{"definition":{"requests":[{"columns":[{"field":"timestamp","width":"auto"}],"query":{"data_source":"event_stream","event_size":"l","query_string":""},"response_format":"event_list"}],"type":"list_stream"},"id":633928899210629}],"notify_list":null,"created_at":"2024-11-14T19:12:20.796146+00:00","modified_at":"2024-11-14T19:12:20.796146+00:00","restricted_roles":[]}
+      string: '{"id":"vw4-by2-54m","title":"Test-Create_a_new_dashboard_with_event_stream_list_stream_widget-1731699158
+        with list_stream widget","description":null,"author_handle":"frog@datadoghq.com","author_name":null,"layout_type":"ordered","url":"/dashboard/vw4-by2-54m/test-createanewdashboardwitheventstreamliststreamwidget-1731699158-with-liststre","is_read_only":false,"template_variables":null,"widgets":[{"definition":{"requests":[{"columns":[{"field":"timestamp","width":"auto"}],"query":{"data_source":"event_stream","event_size":"l","query_string":""},"response_format":"event_list"}],"type":"list_stream"},"id":7618408090059389}],"notify_list":null,"created_at":"2024-11-15T19:32:39.054775+00:00","modified_at":"2024-11-15T19:32:39.054775+00:00","restricted_roles":[]}
 
         '
     headers:
@@ -28,10 +27,10 @@ interactions:
       accept:
       - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/dashboard/isx-9sv-axt
+    uri: https://api.datadoghq.com/api/v1/dashboard/vw4-by2-54m
   response:
     body:
-      string: '{"deleted_dashboard_id":"isx-9sv-axt"}
+      string: '{"deleted_dashboard_id":"vw4-by2-54m"}
 
         '
     headers:

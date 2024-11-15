@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"description":"","layout_type":"free","notify_list":[],"template_variables":[],"title":"Test-Create_a_new_dashboard_with_note_widget-1731611551","widgets":[{"definition":{"content":"#
+    body: '{"description":"","layout_type":"free","notify_list":[],"template_variables":[],"title":"Test-Create_a_new_dashboard_with_note_widget-1731699168","widgets":[{"definition":{"content":"#
       Example Note","type":"note"},"layout":{"height":24,"width":18,"x":0,"y":0}}]}'
     headers:
       accept:
@@ -11,9 +11,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/dashboard
   response:
     body:
-      string: '{"id":"tsm-3qy-my2","title":"Test-Create_a_new_dashboard_with_note_widget-1731611551","description":"","author_handle":"anika.maskara@datadoghq.com","author_name":"Anika
-        Maskara","layout_type":"free","url":"/dashboard/tsm-3qy-my2/test-createanewdashboardwithnotewidget-1731611551","is_read_only":false,"template_variables":[],"widgets":[{"definition":{"content":"#
-        Example Note","type":"note"},"layout":{"height":24,"width":18,"x":0,"y":0},"id":1906638315550440}],"notify_list":[],"created_at":"2024-11-14T19:12:31.403064+00:00","modified_at":"2024-11-14T19:12:31.403064+00:00","restricted_roles":[]}
+      string: '{"id":"9e4-auv-jbr","title":"Test-Create_a_new_dashboard_with_note_widget-1731699168","description":"","author_handle":"frog@datadoghq.com","author_name":null,"layout_type":"free","url":"/dashboard/9e4-auv-jbr/test-createanewdashboardwithnotewidget-1731699168","is_read_only":false,"template_variables":[],"widgets":[{"definition":{"content":"#
+        Example Note","type":"note"},"layout":{"height":24,"width":18,"x":0,"y":0},"id":2240709340551044}],"notify_list":[],"created_at":"2024-11-15T19:32:48.693496+00:00","modified_at":"2024-11-15T19:32:48.693496+00:00","restricted_roles":[]}
 
         '
     headers:
@@ -28,10 +27,10 @@ interactions:
       accept:
       - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/dashboard/tsm-3qy-my2
+    uri: https://api.datadoghq.com/api/v1/dashboard/9e4-auv-jbr
   response:
     body:
-      string: '{"deleted_dashboard_id":"tsm-3qy-my2"}
+      string: '{"deleted_dashboard_id":"9e4-auv-jbr"}
 
         '
     headers:

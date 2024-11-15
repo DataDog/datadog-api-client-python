@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"layout_type":"ordered","reflow_type":"auto","title":"Test-Create_a_new_timeseries_widget_with_ci_pipelines_data_source-1731611564
+    body: '{"layout_type":"ordered","reflow_type":"auto","title":"Test-Create_a_new_timeseries_widget_with_ci_pipelines_data_source-1731699181
       with ci_pipelines datasource","widgets":[{"definition":{"legend_columns":["avg","min","max","value","sum"],"legend_layout":"auto","requests":[{"display_type":"line","formulas":[{"formula":"query1"}],"queries":[{"compute":{"aggregation":"count","metric":"@ci.queue_time"},"data_source":"ci_pipelines","group_by":[],"indexes":["*"],"name":"query1","search":{"query":"ci_level:job"}}],"response_format":"timeseries","style":{"line_type":"solid","line_width":"normal","palette":"dog_classic"}}],"show_legend":true,"time":{},"title":"","type":"timeseries"}}]}'
     headers:
       accept:
@@ -11,9 +11,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/dashboard
   response:
     body:
-      string: '{"id":"pjm-jv3-48u","title":"Test-Create_a_new_timeseries_widget_with_ci_pipelines_data_source-1731611564
-        with ci_pipelines datasource","description":null,"author_handle":"anika.maskara@datadoghq.com","author_name":"Anika
-        Maskara","layout_type":"ordered","url":"/dashboard/pjm-jv3-48u/test-createanewtimeserieswidgetwithcipipelinesdatasource-1731611564-with-cipipel","is_read_only":false,"template_variables":null,"widgets":[{"definition":{"legend_columns":["avg","min","max","value","sum"],"legend_layout":"auto","requests":[{"display_type":"line","formulas":[{"formula":"query1"}],"queries":[{"compute":{"aggregation":"count","metric":"@ci.queue_time"},"data_source":"ci_pipelines","group_by":[],"indexes":["*"],"name":"query1","search":{"query":"ci_level:job"}}],"response_format":"timeseries","style":{"line_type":"solid","line_width":"normal","palette":"dog_classic"}}],"show_legend":true,"time":{},"title":"","type":"timeseries"},"id":2715700701433922}],"notify_list":null,"created_at":"2024-11-14T19:12:44.239849+00:00","modified_at":"2024-11-14T19:12:44.239849+00:00","reflow_type":"auto","restricted_roles":[]}
+      string: '{"id":"c2y-k8z-ghy","title":"Test-Create_a_new_timeseries_widget_with_ci_pipelines_data_source-1731699181
+        with ci_pipelines datasource","description":null,"author_handle":"frog@datadoghq.com","author_name":null,"layout_type":"ordered","url":"/dashboard/c2y-k8z-ghy/test-createanewtimeserieswidgetwithcipipelinesdatasource-1731699181-with-cipipel","is_read_only":false,"template_variables":null,"widgets":[{"definition":{"legend_columns":["avg","min","max","value","sum"],"legend_layout":"auto","requests":[{"display_type":"line","formulas":[{"formula":"query1"}],"queries":[{"compute":{"aggregation":"count","metric":"@ci.queue_time"},"data_source":"ci_pipelines","group_by":[],"indexes":["*"],"name":"query1","search":{"query":"ci_level:job"}}],"response_format":"timeseries","style":{"line_type":"solid","line_width":"normal","palette":"dog_classic"}}],"show_legend":true,"time":{},"title":"","type":"timeseries"},"id":7421904402454882}],"notify_list":null,"created_at":"2024-11-15T19:33:01.435760+00:00","modified_at":"2024-11-15T19:33:01.435760+00:00","reflow_type":"auto","restricted_roles":[]}
 
         '
     headers:
@@ -28,10 +27,10 @@ interactions:
       accept:
       - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/dashboard/pjm-jv3-48u
+    uri: https://api.datadoghq.com/api/v1/dashboard/c2y-k8z-ghy
   response:
     body:
-      string: '{"deleted_dashboard_id":"pjm-jv3-48u"}
+      string: '{"deleted_dashboard_id":"c2y-k8z-ghy"}
 
         '
     headers:
