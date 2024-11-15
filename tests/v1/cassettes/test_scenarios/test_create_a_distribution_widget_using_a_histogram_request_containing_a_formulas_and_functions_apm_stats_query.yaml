@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"description":"","layout_type":"ordered","title":"Test-Create_a_distribution_widget_using_a_histogram_request_containing_a_formulas_and_functions_APM_Stats-1654267230","widgets":[{"definition":{"requests":[{"query":{"data_source":"apm_resource_stats","env":"staging","group_by":["resource_name"],"name":"query1","operation_name":"universal.http.client","primary_tag_name":"datacenter","primary_tag_value":"*","service":"azure-bill-import","stat":"latency_distribution"},"request_type":"histogram","style":{"palette":"dog_classic"}}],"show_legend":false,"title":"APM
+    body: '{"description":"","layout_type":"ordered","title":"Test-Create_a_distribution_widget_using_a_histogram_request_containing_a_formulas_and_functions_APM_Stats-1731611526","widgets":[{"definition":{"requests":[{"query":{"data_source":"apm_resource_stats","env":"staging","group_by":["resource_name"],"name":"query1","operation_name":"universal.http.client","primary_tag_name":"datacenter","primary_tag_value":"*","service":"azure-bill-import","stat":"latency_distribution"},"request_type":"histogram","style":{"palette":"dog_classic"}}],"show_legend":false,"title":"APM
       Stats - Request latency HOP","title_align":"left","title_size":"16","type":"distribution","xaxis":{"include_zero":true,"max":"auto","min":"auto","scale":"linear"},"yaxis":{"include_zero":true,"max":"auto","min":"auto","scale":"linear"}},"layout":{"height":2,"width":4,"x":8,"y":0}}]}'
     headers:
       accept:
@@ -11,8 +11,11 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/dashboard
   response:
     body:
-      string: '{"notify_list":null,"description":"","restricted_roles":[],"author_name":null,"template_variables":null,"is_read_only":false,"id":"u8n-j9a-4sd","title":"Test-Create_a_distribution_widget_using_a_histogram_request_containing_a_formulas_and_functions_APM_Stats-1654267230","url":"/dashboard/u8n-j9a-4sd/test-createadistributionwidgetusingahistogramrequestcontainingaformulasandfuncti","created_at":"2022-06-03T14:40:30.784732+00:00","modified_at":"2022-06-03T14:40:30.784732+00:00","author_handle":"frog@datadoghq.com","widgets":[{"definition":{"title_size":"16","title":"APM
-        Stats - Request latency HOP","title_align":"left","yaxis":{"include_zero":true,"scale":"linear","min":"auto","max":"auto"},"show_legend":false,"xaxis":{"include_zero":true,"scale":"linear","min":"auto","max":"auto"},"requests":[{"query":{"primary_tag_value":"*","stat":"latency_distribution","data_source":"apm_resource_stats","name":"query1","service":"azure-bill-import","group_by":["resource_name"],"env":"staging","primary_tag_name":"datacenter","operation_name":"universal.http.client"},"request_type":"histogram","style":{"palette":"dog_classic"}}],"type":"distribution"},"layout":{"y":0,"width":4,"x":8,"height":2},"id":8784141872614013}],"layout_type":"ordered"}'
+      string: '{"id":"nsh-v4v-nmq","title":"Test-Create_a_distribution_widget_using_a_histogram_request_containing_a_formulas_and_functions_APM_Stats-1731611526","description":"","author_handle":"anika.maskara@datadoghq.com","author_name":"Anika
+        Maskara","layout_type":"ordered","url":"/dashboard/nsh-v4v-nmq/test-createadistributionwidgetusingahistogramrequestcontainingaformulasandfuncti","is_read_only":false,"template_variables":null,"widgets":[{"definition":{"requests":[{"query":{"data_source":"apm_resource_stats","env":"staging","group_by":["resource_name"],"name":"query1","operation_name":"universal.http.client","primary_tag_name":"datacenter","primary_tag_value":"*","service":"azure-bill-import","stat":"latency_distribution"},"request_type":"histogram","style":{"palette":"dog_classic"}}],"show_legend":false,"title":"APM
+        Stats - Request latency HOP","title_align":"left","title_size":"16","type":"distribution","xaxis":{"include_zero":true,"max":"auto","min":"auto","scale":"linear"},"yaxis":{"include_zero":true,"max":"auto","min":"auto","scale":"linear"}},"layout":{"height":2,"width":4,"x":8,"y":0},"id":772521511524027}],"notify_list":null,"created_at":"2024-11-14T19:12:06.311354+00:00","modified_at":"2024-11-14T19:12:06.311354+00:00","restricted_roles":[]}
+
+        '
     headers:
       content-type:
       - application/json
@@ -25,10 +28,12 @@ interactions:
       accept:
       - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/dashboard/u8n-j9a-4sd
+    uri: https://api.datadoghq.com/api/v1/dashboard/nsh-v4v-nmq
   response:
     body:
-      string: '{"deleted_dashboard_id":"u8n-j9a-4sd"}'
+      string: '{"deleted_dashboard_id":"nsh-v4v-nmq"}
+
+        '
     headers:
       content-type:
       - application/json

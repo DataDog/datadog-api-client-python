@@ -113,7 +113,6 @@ body = Dashboard(
     ],
     template_variables=[],
     layout_type=DashboardLayoutType.ORDERED,
-    is_read_only=False,
     notify_list=[],
 )
 

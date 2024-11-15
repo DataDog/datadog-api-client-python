@@ -50,7 +50,6 @@ body = Dashboard(
         ),
     ],
     description="description",
-    is_read_only=False,
 )
 
 configuration = Configuration()

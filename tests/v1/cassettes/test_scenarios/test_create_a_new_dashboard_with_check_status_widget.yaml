@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"description":"","is_read_only":false,"layout_type":"free","notify_list":[],"template_variables":[],"title":"Test-Create_a_new_dashboard_with_check_status_widget-1641430229","widgets":[{"definition":{"check":"datadog.agent.up","grouping":"check","tags":["*"],"title_align":"left","title_size":"16","type":"check_status"},"layout":{"height":8,"width":15,"x":0,"y":0}}]}'
+    body: '{"description":"","layout_type":"free","notify_list":[],"template_variables":[],"title":"Test-Create_a_new_dashboard_with_check_status_widget-1731611539","widgets":[{"definition":{"check":"datadog.agent.up","grouping":"check","tags":["*"],"title_align":"left","title_size":"16","type":"check_status"},"layout":{"height":8,"width":15,"x":0,"y":0}}]}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,10 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/dashboard
   response:
     body:
-      string: '{"notify_list":[],"description":"","restricted_roles":[],"author_name":null,"template_variables":[],"is_read_only":false,"id":"baz-eax-3ka","title":"Test-Create_a_new_dashboard_with_check_status_widget-1641430229","url":"/dashboard/baz-eax-3ka/test-createanewdashboardwithcheckstatuswidget-1641430229","created_at":"2022-01-06T00:50:29.799432+00:00","modified_at":"2022-01-06T00:50:29.799432+00:00","author_handle":"frog@datadoghq.com","widgets":[{"definition":{"title_size":"16","tags":["*"],"title_align":"left","type":"check_status","check":"datadog.agent.up","grouping":"check"},"layout":{"y":0,"width":15,"x":0,"height":8},"id":3518672671182396}],"layout_type":"free"}'
+      string: '{"id":"vbg-22a-h5q","title":"Test-Create_a_new_dashboard_with_check_status_widget-1731611539","description":"","author_handle":"anika.maskara@datadoghq.com","author_name":"Anika
+        Maskara","layout_type":"free","url":"/dashboard/vbg-22a-h5q/test-createanewdashboardwithcheckstatuswidget-1731611539","is_read_only":false,"template_variables":[],"widgets":[{"definition":{"check":"datadog.agent.up","grouping":"check","tags":["*"],"title_align":"left","title_size":"16","type":"check_status"},"layout":{"height":8,"width":15,"x":0,"y":0},"id":5653198180146562}],"notify_list":[],"created_at":"2024-11-14T19:12:19.614388+00:00","modified_at":"2024-11-14T19:12:19.614388+00:00","restricted_roles":[]}
+
+        '
     headers:
       content-type:
       - application/json
@@ -23,10 +26,12 @@ interactions:
       accept:
       - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/dashboard/baz-eax-3ka
+    uri: https://api.datadoghq.com/api/v1/dashboard/vbg-22a-h5q
   response:
     body:
-      string: '{"deleted_dashboard_id":"baz-eax-3ka"}'
+      string: '{"deleted_dashboard_id":"vbg-22a-h5q"}
+
+        '
     headers:
       content-type:
       - application/json

@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"description":"Test-Create_a_distribution_widget_using_a_histogram_request_containing_a_formulas_and_functions_events_qu-1654267231","layout_type":"ordered","title":"Test-Create_a_distribution_widget_using_a_histogram_request_containing_a_formulas_and_functions_events_qu-1654267231","widgets":[{"definition":{"requests":[{"query":{"compute":{"aggregation":"min","metric":"@duration"},"data_source":"events","group_by":[],"indexes":["*"],"name":"query1","search":{"query":""}},"request_type":"histogram"}],"show_legend":false,"title":"Events
+    body: '{"description":"Test-Create_a_distribution_widget_using_a_histogram_request_containing_a_formulas_and_functions_events_qu-1731611526","layout_type":"ordered","title":"Test-Create_a_distribution_widget_using_a_histogram_request_containing_a_formulas_and_functions_events_qu-1731611526","widgets":[{"definition":{"requests":[{"query":{"compute":{"aggregation":"min","metric":"@duration"},"data_source":"events","group_by":[],"indexes":["*"],"name":"query1","search":{"query":""}},"request_type":"histogram"}],"show_legend":false,"title":"Events
       Platform - Request latency HOP","title_align":"left","title_size":"16","type":"distribution","xaxis":{"include_zero":true,"max":"auto","min":"auto","scale":"linear"},"yaxis":{"include_zero":true,"max":"auto","min":"auto","scale":"linear"}},"layout":{"height":2,"width":4,"x":0,"y":0}}]}'
     headers:
       accept:
@@ -11,8 +11,11 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/dashboard
   response:
     body:
-      string: '{"notify_list":null,"description":"Test-Create_a_distribution_widget_using_a_histogram_request_containing_a_formulas_and_functions_events_qu-1654267231","restricted_roles":[],"author_name":null,"template_variables":null,"is_read_only":false,"id":"z8p-mhb-k4x","title":"Test-Create_a_distribution_widget_using_a_histogram_request_containing_a_formulas_and_functions_events_qu-1654267231","url":"/dashboard/z8p-mhb-k4x/test-createadistributionwidgetusingahistogramrequestcontainingaformulasandfuncti","created_at":"2022-06-03T14:40:31.823381+00:00","modified_at":"2022-06-03T14:40:31.823381+00:00","author_handle":"frog@datadoghq.com","widgets":[{"definition":{"title_size":"16","title":"Events
-        Platform - Request latency HOP","title_align":"left","yaxis":{"include_zero":true,"scale":"linear","min":"auto","max":"auto"},"show_legend":false,"xaxis":{"include_zero":true,"scale":"linear","min":"auto","max":"auto"},"requests":[{"query":{"search":{"query":""},"data_source":"events","compute":{"metric":"@duration","aggregation":"min"},"name":"query1","indexes":["*"],"group_by":[]},"request_type":"histogram"}],"type":"distribution"},"layout":{"y":0,"width":4,"x":0,"height":2},"id":5948993743115767}],"layout_type":"ordered"}'
+      string: '{"id":"tys-evq-k25","title":"Test-Create_a_distribution_widget_using_a_histogram_request_containing_a_formulas_and_functions_events_qu-1731611526","description":"Test-Create_a_distribution_widget_using_a_histogram_request_containing_a_formulas_and_functions_events_qu-1731611526","author_handle":"anika.maskara@datadoghq.com","author_name":"Anika
+        Maskara","layout_type":"ordered","url":"/dashboard/tys-evq-k25/test-createadistributionwidgetusingahistogramrequestcontainingaformulasandfuncti","is_read_only":false,"template_variables":null,"widgets":[{"definition":{"requests":[{"query":{"compute":{"aggregation":"min","metric":"@duration"},"data_source":"events","group_by":[],"indexes":["*"],"name":"query1","search":{"query":""}},"request_type":"histogram"}],"show_legend":false,"title":"Events
+        Platform - Request latency HOP","title_align":"left","title_size":"16","type":"distribution","xaxis":{"include_zero":true,"max":"auto","min":"auto","scale":"linear"},"yaxis":{"include_zero":true,"max":"auto","min":"auto","scale":"linear"}},"layout":{"height":2,"width":4,"x":0,"y":0},"id":1505752567613231}],"notify_list":null,"created_at":"2024-11-14T19:12:06.799728+00:00","modified_at":"2024-11-14T19:12:06.799728+00:00","restricted_roles":[]}
+
+        '
     headers:
       content-type:
       - application/json
@@ -25,10 +28,12 @@ interactions:
       accept:
       - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/dashboard/z8p-mhb-k4x
+    uri: https://api.datadoghq.com/api/v1/dashboard/tys-evq-k25
   response:
     body:
-      string: '{"deleted_dashboard_id":"z8p-mhb-k4x"}'
+      string: '{"deleted_dashboard_id":"tys-evq-k25"}
+
+        '
     headers:
       content-type:
       - application/json

@@ -16,7 +16,6 @@ from datadog_api_client.v1.model.widget import Widget
 
 body = Dashboard(
     description=None,
-    is_read_only=False,
     layout_type=DashboardLayoutType.ORDERED,
     notify_list=[],
     reflow_type=DashboardReflowType.AUTO,

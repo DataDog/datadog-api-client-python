@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"description":"","is_read_only":false,"layout_type":"free","notify_list":[],"template_variables":[],"title":"Test-Create_a_new_dashboard_with_trace_service_widget-1641430242","widgets":[{"definition":{"display_format":"two_column","env":"none","service":"","show_breakdown":true,"show_distribution":true,"show_errors":true,"show_hits":true,"show_latency":true,"show_resource_list":false,"size_format":"medium","span_name":"","time":{},"title":"Service
+    body: '{"description":"","layout_type":"free","notify_list":[],"template_variables":[],"title":"Test-Create_a_new_dashboard_with_trace_service_widget-1731611563","widgets":[{"definition":{"display_format":"two_column","env":"none","service":"","show_breakdown":true,"show_distribution":true,"show_errors":true,"show_hits":true,"show_latency":true,"show_resource_list":false,"size_format":"medium","span_name":"","time":{},"title":"Service
       Summary","type":"trace_service"},"layout":{"height":72,"width":72,"x":0,"y":0}}]}'
     headers:
       accept:
@@ -11,8 +11,11 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/dashboard
   response:
     body:
-      string: '{"notify_list":[],"description":"","restricted_roles":[],"author_name":null,"template_variables":[],"is_read_only":false,"id":"y2w-4ed-wj5","title":"Test-Create_a_new_dashboard_with_trace_service_widget-1641430242","url":"/dashboard/y2w-4ed-wj5/test-createanewdashboardwithtraceservicewidget-1641430242","created_at":"2022-01-06T00:50:42.720557+00:00","modified_at":"2022-01-06T00:50:42.720557+00:00","author_handle":"frog@datadoghq.com","widgets":[{"definition":{"span_name":"","type":"trace_service","service":"","title":"Service
-        Summary","size_format":"medium","show_hits":true,"show_errors":true,"show_breakdown":true,"env":"none","time":{},"show_distribution":true,"display_format":"two_column","show_latency":true,"show_resource_list":false},"layout":{"y":0,"width":72,"x":0,"height":72},"id":8414814446486210}],"layout_type":"free"}'
+      string: '{"id":"82r-6xq-vn3","title":"Test-Create_a_new_dashboard_with_trace_service_widget-1731611563","description":"","author_handle":"anika.maskara@datadoghq.com","author_name":"Anika
+        Maskara","layout_type":"free","url":"/dashboard/82r-6xq-vn3/test-createanewdashboardwithtraceservicewidget-1731611563","is_read_only":false,"template_variables":[],"widgets":[{"definition":{"display_format":"two_column","env":"none","service":"","show_breakdown":true,"show_distribution":true,"show_errors":true,"show_hits":true,"show_latency":true,"show_resource_list":false,"size_format":"medium","span_name":"","time":{},"title":"Service
+        Summary","type":"trace_service"},"layout":{"height":72,"width":72,"x":0,"y":0},"id":8083039739576862}],"notify_list":[],"created_at":"2024-11-14T19:12:43.452285+00:00","modified_at":"2024-11-14T19:12:43.452285+00:00","restricted_roles":[]}
+
+        '
     headers:
       content-type:
       - application/json
@@ -25,10 +28,12 @@ interactions:
       accept:
       - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/dashboard/y2w-4ed-wj5
+    uri: https://api.datadoghq.com/api/v1/dashboard/82r-6xq-vn3
   response:
     body:
-      string: '{"deleted_dashboard_id":"y2w-4ed-wj5"}'
+      string: '{"deleted_dashboard_id":"82r-6xq-vn3"}
+
+        '
     headers:
       content-type:
       - application/json

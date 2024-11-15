@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"description":"","is_read_only":false,"layout_type":"free","notify_list":[],"template_variables":[],"title":"Test-Create_a_new_dashboard_with_manage_status_widget_and_show_priority_parameter-1660324243","widgets":[{"definition":{"color_preference":"text","count":50,"display_format":"countsAndList","hide_zero_counts":true,"query":"","show_last_triggered":false,"show_priority":false,"sort":"priority,asc","start":0,"summary_type":"monitors","type":"manage_status"},"layout":{"height":25,"width":50,"x":0,"y":0}}]}'
+    body: '{"description":"","layout_type":"free","notify_list":[],"template_variables":[],"title":"Test-Create_a_new_dashboard_with_manage_status_widget_and_show_priority_parameter-1731611550","widgets":[{"definition":{"color_preference":"text","count":50,"display_format":"countsAndList","hide_zero_counts":true,"query":"","show_last_triggered":false,"show_priority":false,"sort":"priority,asc","start":0,"summary_type":"monitors","type":"manage_status"},"layout":{"height":25,"width":50,"x":0,"y":0}}]}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/dashboard
   response:
     body:
-      string: '{"notify_list":[],"description":"","restricted_roles":[],"author_name":null,"template_variables":[],"is_read_only":false,"id":"a28-2ea-xeq","title":"Test-Create_a_new_dashboard_with_manage_status_widget_and_show_priority_parameter-1660324243","url":"/dashboard/a28-2ea-xeq/test-createanewdashboardwithmanagestatuswidgetandshowpriorityparameter-166032424","created_at":"2022-08-12T17:10:43.357911+00:00","modified_at":"2022-08-12T17:10:43.357911+00:00","author_handle":"frog@datadoghq.com","widgets":[{"definition":{"count":50,"sort":"priority,asc","color_preference":"text","show_priority":false,"hide_zero_counts":true,"start":0,"summary_type":"monitors","show_last_triggered":false,"query":"","display_format":"countsAndList","type":"manage_status"},"layout":{"y":0,"width":50,"x":0,"height":25},"id":559045226435119}],"layout_type":"free"}
+      string: '{"id":"gx6-rx5-pm6","title":"Test-Create_a_new_dashboard_with_manage_status_widget_and_show_priority_parameter-1731611550","description":"","author_handle":"anika.maskara@datadoghq.com","author_name":"Anika
+        Maskara","layout_type":"free","url":"/dashboard/gx6-rx5-pm6/test-createanewdashboardwithmanagestatuswidgetandshowpriorityparameter-173161155","is_read_only":false,"template_variables":[],"widgets":[{"definition":{"color_preference":"text","count":50,"display_format":"countsAndList","hide_zero_counts":true,"query":"","show_last_triggered":false,"show_priority":false,"sort":"priority,asc","start":0,"summary_type":"monitors","type":"manage_status"},"layout":{"height":25,"width":50,"x":0,"y":0},"id":7049477000335202}],"notify_list":[],"created_at":"2024-11-14T19:12:31.037894+00:00","modified_at":"2024-11-14T19:12:31.037894+00:00","restricted_roles":[]}
 
         '
     headers:
@@ -25,10 +26,10 @@ interactions:
       accept:
       - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/dashboard/a28-2ea-xeq
+    uri: https://api.datadoghq.com/api/v1/dashboard/gx6-rx5-pm6
   response:
     body:
-      string: '{"deleted_dashboard_id":"a28-2ea-xeq"}
+      string: '{"deleted_dashboard_id":"gx6-rx5-pm6"}
 
         '
     headers:
