@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"description":null,"layout_type":"free","notify_list":[],"template_variables":[],"title":"Test-Create_a_new_dashboard_with_geomap_widget-1731611543","widgets":[{"definition":{"requests":[{"formulas":[{"formula":"query1"}],"queries":[{"compute":{"aggregation":"count"},"data_source":"rum","group_by":[{"facet":"@geo.country_iso_code","limit":250,"sort":{"aggregation":"count","order":"desc"}}],"indexes":["*"],"name":"query1","search":{"query":""}}],"response_format":"scalar","sort":{"count":250,"order_by":[{"index":0,"order":"desc","type":"formula"}]}}],"style":{"palette":"hostmap_blues","palette_flip":false},"time":{},"title":"","title_align":"left","title_size":"16","type":"geomap","view":{"focus":"WORLD"}},"layout":{"height":30,"width":47,"x":0,"y":0}}]}'
+    body: '{"description":null,"layout_type":"free","notify_list":[],"template_variables":[],"title":"Test-Create_a_new_dashboard_with_geomap_widget-1731699161","widgets":[{"definition":{"requests":[{"formulas":[{"formula":"query1"}],"queries":[{"compute":{"aggregation":"count"},"data_source":"rum","group_by":[{"facet":"@geo.country_iso_code","limit":250,"sort":{"aggregation":"count","order":"desc"}}],"indexes":["*"],"name":"query1","search":{"query":""}}],"response_format":"scalar","sort":{"count":250,"order_by":[{"index":0,"order":"desc","type":"formula"}]}}],"style":{"palette":"hostmap_blues","palette_flip":false},"time":{},"title":"","title_align":"left","title_size":"16","type":"geomap","view":{"focus":"WORLD"}},"layout":{"height":30,"width":47,"x":0,"y":0}}]}'
     headers:
       accept:
       - application/json
@@ -10,8 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/dashboard
   response:
     body:
-      string: '{"id":"zfg-33v-zgb","title":"Test-Create_a_new_dashboard_with_geomap_widget-1731611543","description":null,"author_handle":"anika.maskara@datadoghq.com","author_name":"Anika
-        Maskara","layout_type":"free","url":"/dashboard/zfg-33v-zgb/test-createanewdashboardwithgeomapwidget-1731611543","is_read_only":false,"template_variables":[],"widgets":[{"definition":{"requests":[{"formulas":[{"formula":"query1"}],"queries":[{"compute":{"aggregation":"count"},"data_source":"rum","group_by":[{"facet":"@geo.country_iso_code","limit":250,"sort":{"aggregation":"count","order":"desc"}}],"indexes":["*"],"name":"query1","search":{"query":""}}],"response_format":"scalar","sort":{"count":250,"order_by":[{"index":0,"order":"desc","type":"formula"}]}}],"style":{"palette":"hostmap_blues","palette_flip":false},"time":{},"title":"","title_align":"left","title_size":"16","type":"geomap","view":{"focus":"WORLD"}},"layout":{"height":30,"width":47,"x":0,"y":0},"id":5382084722873723}],"notify_list":[],"created_at":"2024-11-14T19:12:23.594185+00:00","modified_at":"2024-11-14T19:12:23.594185+00:00","restricted_roles":[]}
+      string: '{"id":"ccn-3vg-8fw","title":"Test-Create_a_new_dashboard_with_geomap_widget-1731699161","description":null,"author_handle":"frog@datadoghq.com","author_name":null,"layout_type":"free","url":"/dashboard/ccn-3vg-8fw/test-createanewdashboardwithgeomapwidget-1731699161","is_read_only":false,"template_variables":[],"widgets":[{"definition":{"requests":[{"formulas":[{"formula":"query1"}],"queries":[{"compute":{"aggregation":"count"},"data_source":"rum","group_by":[{"facet":"@geo.country_iso_code","limit":250,"sort":{"aggregation":"count","order":"desc"}}],"indexes":["*"],"name":"query1","search":{"query":""}}],"response_format":"scalar","sort":{"count":250,"order_by":[{"index":0,"order":"desc","type":"formula"}]}}],"style":{"palette":"hostmap_blues","palette_flip":false},"time":{},"title":"","title_align":"left","title_size":"16","type":"geomap","view":{"focus":"WORLD"}},"layout":{"height":30,"width":47,"x":0,"y":0},"id":8863325267448971}],"notify_list":[],"created_at":"2024-11-15T19:32:42.087668+00:00","modified_at":"2024-11-15T19:32:42.087668+00:00","restricted_roles":[]}
 
         '
     headers:
@@ -26,10 +25,10 @@ interactions:
       accept:
       - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/dashboard/zfg-33v-zgb
+    uri: https://api.datadoghq.com/api/v1/dashboard/ccn-3vg-8fw
   response:
     body:
-      string: '{"deleted_dashboard_id":"zfg-33v-zgb"}
+      string: '{"deleted_dashboard_id":"ccn-3vg-8fw"}
 
         '
     headers:

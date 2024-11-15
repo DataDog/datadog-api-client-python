@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"layout_type":"ordered","title":"Test-Create_a_new_dashboard_with_distribution_widget_and_apm_stats_data-1731611540","widgets":[{"definition":{"requests":[{"apm_stats_query":{"env":"prod","name":"cassandra.query","primary_tag":"datacenter:dc1","row_type":"service","service":"cassandra"}}],"title":"","title_align":"left","title_size":"16","type":"distribution"},"layout":{"height":4,"width":4,"x":0,"y":0}}]}'
+    body: '{"layout_type":"ordered","title":"Test-Create_a_new_dashboard_with_distribution_widget_and_apm_stats_data-1731699158","widgets":[{"definition":{"requests":[{"apm_stats_query":{"env":"prod","name":"cassandra.query","primary_tag":"datacenter:dc1","row_type":"service","service":"cassandra"}}],"title":"","title_align":"left","title_size":"16","type":"distribution"},"layout":{"height":4,"width":4,"x":0,"y":0}}]}'
     headers:
       accept:
       - application/json
@@ -10,8 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/dashboard
   response:
     body:
-      string: '{"id":"hvz-a5v-6fx","title":"Test-Create_a_new_dashboard_with_distribution_widget_and_apm_stats_data-1731611540","description":null,"author_handle":"anika.maskara@datadoghq.com","author_name":"Anika
-        Maskara","layout_type":"ordered","url":"/dashboard/hvz-a5v-6fx/test-createanewdashboardwithdistributionwidgetandapmstatsdata-1731611540","is_read_only":false,"template_variables":null,"widgets":[{"definition":{"requests":[{"apm_stats_query":{"env":"prod","name":"cassandra.query","primary_tag":"datacenter:dc1","row_type":"service","service":"cassandra"}}],"title":"","title_align":"left","title_size":"16","type":"distribution"},"layout":{"height":4,"width":4,"x":0,"y":0},"id":893124335643854}],"notify_list":null,"created_at":"2024-11-14T19:12:20.407882+00:00","modified_at":"2024-11-14T19:12:20.407882+00:00","restricted_roles":[]}
+      string: '{"id":"jbq-s5a-g9h","title":"Test-Create_a_new_dashboard_with_distribution_widget_and_apm_stats_data-1731699158","description":null,"author_handle":"frog@datadoghq.com","author_name":null,"layout_type":"ordered","url":"/dashboard/jbq-s5a-g9h/test-createanewdashboardwithdistributionwidgetandapmstatsdata-1731699158","is_read_only":false,"template_variables":null,"widgets":[{"definition":{"requests":[{"apm_stats_query":{"env":"prod","name":"cassandra.query","primary_tag":"datacenter:dc1","row_type":"service","service":"cassandra"}}],"title":"","title_align":"left","title_size":"16","type":"distribution"},"layout":{"height":4,"width":4,"x":0,"y":0},"id":1068260925995159}],"notify_list":null,"created_at":"2024-11-15T19:32:38.651425+00:00","modified_at":"2024-11-15T19:32:38.651425+00:00","restricted_roles":[]}
 
         '
     headers:
@@ -26,10 +25,10 @@ interactions:
       accept:
       - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/dashboard/hvz-a5v-6fx
+    uri: https://api.datadoghq.com/api/v1/dashboard/jbq-s5a-g9h
   response:
     body:
-      string: '{"deleted_dashboard_id":"hvz-a5v-6fx"}
+      string: '{"deleted_dashboard_id":"jbq-s5a-g9h"}
 
         '
     headers:

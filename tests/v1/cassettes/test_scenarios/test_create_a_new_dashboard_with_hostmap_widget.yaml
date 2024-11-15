@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"description":null,"layout_type":"free","notify_list":[],"template_variables":[],"title":"Test-Create_a_new_dashboard_with_hostmap_widget-1731611544","widgets":[{"definition":{"no_group_hosts":true,"no_metric_hosts":true,"node_type":"host","requests":{"fill":{"q":"avg:system.cpu.user{*}
+    body: '{"description":null,"layout_type":"free","notify_list":[],"template_variables":[],"title":"Test-Create_a_new_dashboard_with_hostmap_widget-1731699162","widgets":[{"definition":{"no_group_hosts":true,"no_metric_hosts":true,"node_type":"host","requests":{"fill":{"q":"avg:system.cpu.user{*}
       by {host}"}},"style":{"palette":"green_to_orange","palette_flip":false},"title":"","title_align":"left","title_size":"16","type":"hostmap"},"layout":{"height":22,"width":47,"x":0,"y":0}}]}'
     headers:
       accept:
@@ -11,9 +11,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/dashboard
   response:
     body:
-      string: '{"id":"m3c-vup-t7s","title":"Test-Create_a_new_dashboard_with_hostmap_widget-1731611544","description":null,"author_handle":"anika.maskara@datadoghq.com","author_name":"Anika
-        Maskara","layout_type":"free","url":"/dashboard/m3c-vup-t7s/test-createanewdashboardwithhostmapwidget-1731611544","is_read_only":false,"template_variables":[],"widgets":[{"definition":{"no_group_hosts":true,"no_metric_hosts":true,"node_type":"host","requests":{"fill":{"q":"avg:system.cpu.user{*}
-        by {host}"}},"style":{"palette":"green_to_orange","palette_flip":false},"title":"","title_align":"left","title_size":"16","type":"hostmap"},"layout":{"height":22,"width":47,"x":0,"y":0},"id":142423722512604}],"notify_list":[],"created_at":"2024-11-14T19:12:24.459149+00:00","modified_at":"2024-11-14T19:12:24.459149+00:00","restricted_roles":[]}
+      string: '{"id":"cny-7s9-9di","title":"Test-Create_a_new_dashboard_with_hostmap_widget-1731699162","description":null,"author_handle":"frog@datadoghq.com","author_name":null,"layout_type":"free","url":"/dashboard/cny-7s9-9di/test-createanewdashboardwithhostmapwidget-1731699162","is_read_only":false,"template_variables":[],"widgets":[{"definition":{"no_group_hosts":true,"no_metric_hosts":true,"node_type":"host","requests":{"fill":{"q":"avg:system.cpu.user{*}
+        by {host}"}},"style":{"palette":"green_to_orange","palette_flip":false},"title":"","title_align":"left","title_size":"16","type":"hostmap"},"layout":{"height":22,"width":47,"x":0,"y":0},"id":4242019856060698}],"notify_list":[],"created_at":"2024-11-15T19:32:43.028167+00:00","modified_at":"2024-11-15T19:32:43.028167+00:00","restricted_roles":[]}
 
         '
     headers:
@@ -28,10 +27,10 @@ interactions:
       accept:
       - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/dashboard/m3c-vup-t7s
+    uri: https://api.datadoghq.com/api/v1/dashboard/cny-7s9-9di
   response:
     body:
-      string: '{"deleted_dashboard_id":"m3c-vup-t7s"}
+      string: '{"deleted_dashboard_id":"cny-7s9-9di"}
 
         '
     headers:

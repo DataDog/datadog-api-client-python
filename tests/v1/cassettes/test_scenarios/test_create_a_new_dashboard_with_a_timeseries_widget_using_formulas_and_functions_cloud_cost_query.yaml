@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"layout_type":"ordered","title":"Test-Create_a_new_dashboard_with_a_timeseries_widget_using_formulas_and_functions_cloud_cost_query-1731611531","widgets":[{"definition":{"requests":[{"display_type":"bars","formulas":[{"formula":"query1"}],"queries":[{"data_source":"cloud_cost","name":"query1","query":"sum:aws.cost.amortized{*}
+    body: '{"layout_type":"ordered","title":"Test-Create_a_new_dashboard_with_a_timeseries_widget_using_formulas_and_functions_cloud_cost_query-1731699152","widgets":[{"definition":{"requests":[{"display_type":"bars","formulas":[{"formula":"query1"}],"queries":[{"data_source":"cloud_cost","name":"query1","query":"sum:aws.cost.amortized{*}
       by {aws_product}.rollup(sum, monthly)"}],"response_format":"timeseries","style":{"line_type":"solid","line_width":"normal","palette":"dog_classic"}}],"time":{"live_span":"week_to_date"},"title":"Example
       Cloud Cost Query","title_align":"left","title_size":"16","type":"timeseries"}}]}'
     headers:
@@ -12,10 +12,9 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/dashboard
   response:
     body:
-      string: '{"id":"kf9-5t7-m6u","title":"Test-Create_a_new_dashboard_with_a_timeseries_widget_using_formulas_and_functions_cloud_cost_query-1731611531","description":null,"author_handle":"anika.maskara@datadoghq.com","author_name":"Anika
-        Maskara","layout_type":"ordered","url":"/dashboard/kf9-5t7-m6u/test-createanewdashboardwithatimeserieswidgetusingformulasandfunctionscloudcostq","is_read_only":false,"template_variables":null,"widgets":[{"definition":{"requests":[{"display_type":"bars","formulas":[{"formula":"query1"}],"queries":[{"data_source":"cloud_cost","name":"query1","query":"sum:aws.cost.amortized{*}
+      string: '{"id":"vyw-yjx-s93","title":"Test-Create_a_new_dashboard_with_a_timeseries_widget_using_formulas_and_functions_cloud_cost_query-1731699152","description":null,"author_handle":"frog@datadoghq.com","author_name":null,"layout_type":"ordered","url":"/dashboard/vyw-yjx-s93/test-createanewdashboardwithatimeserieswidgetusingformulasandfunctionscloudcostq","is_read_only":false,"template_variables":null,"widgets":[{"definition":{"requests":[{"display_type":"bars","formulas":[{"formula":"query1"}],"queries":[{"data_source":"cloud_cost","name":"query1","query":"sum:aws.cost.amortized{*}
         by {aws_product}.rollup(sum, monthly)"}],"response_format":"timeseries","style":{"line_type":"solid","line_width":"normal","palette":"dog_classic"}}],"time":{"live_span":"week_to_date"},"title":"Example
-        Cloud Cost Query","title_align":"left","title_size":"16","type":"timeseries"},"id":6669803341186266}],"notify_list":null,"created_at":"2024-11-14T19:12:11.710518+00:00","modified_at":"2024-11-14T19:12:11.710518+00:00","restricted_roles":[]}
+        Cloud Cost Query","title_align":"left","title_size":"16","type":"timeseries"},"id":2217465194290585}],"notify_list":null,"created_at":"2024-11-15T19:32:32.857554+00:00","modified_at":"2024-11-15T19:32:32.857554+00:00","restricted_roles":[]}
 
         '
     headers:
@@ -30,10 +29,10 @@ interactions:
       accept:
       - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/dashboard/kf9-5t7-m6u
+    uri: https://api.datadoghq.com/api/v1/dashboard/vyw-yjx-s93
   response:
     body:
-      string: '{"deleted_dashboard_id":"kf9-5t7-m6u"}
+      string: '{"deleted_dashboard_id":"vyw-yjx-s93"}
 
         '
     headers:

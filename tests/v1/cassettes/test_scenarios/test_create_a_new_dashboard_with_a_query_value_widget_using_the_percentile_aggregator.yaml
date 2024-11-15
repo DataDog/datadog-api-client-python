@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"layout_type":"ordered","title":"Test-Create_a_new_dashboard_with_a_query_value_widget_using_the_percentile_aggregator-1731611530
+    body: '{"layout_type":"ordered","title":"Test-Create_a_new_dashboard_with_a_query_value_widget_using_the_percentile_aggregator-1731699151
       with QVW Percentile Aggregator","widgets":[{"definition":{"autoscale":true,"precision":2,"requests":[{"formulas":[{"formula":"query1"}],"queries":[{"aggregator":"percentile","data_source":"metrics","name":"query1","query":"p90:dist.dd.dogweb.latency{*}"}],"response_format":"scalar"}],"time":{},"title":"","title_align":"left","title_size":"16","type":"query_value"},"layout":{"height":2,"width":2,"x":0,"y":0}}]}'
     headers:
       accept:
@@ -11,9 +11,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/dashboard
   response:
     body:
-      string: '{"id":"5e6-uwt-hiw","title":"Test-Create_a_new_dashboard_with_a_query_value_widget_using_the_percentile_aggregator-1731611530
-        with QVW Percentile Aggregator","description":null,"author_handle":"anika.maskara@datadoghq.com","author_name":"Anika
-        Maskara","layout_type":"ordered","url":"/dashboard/5e6-uwt-hiw/test-createanewdashboardwithaqueryvaluewidgetusingthepercentileaggregator-173161","is_read_only":false,"template_variables":null,"widgets":[{"definition":{"autoscale":true,"precision":2,"requests":[{"formulas":[{"formula":"query1"}],"queries":[{"aggregator":"percentile","data_source":"metrics","name":"query1","query":"p90:dist.dd.dogweb.latency{*}"}],"response_format":"scalar"}],"time":{},"title":"","title_align":"left","title_size":"16","type":"query_value"},"layout":{"height":2,"width":2,"x":0,"y":0},"id":2654036272451651}],"notify_list":null,"created_at":"2024-11-14T19:12:10.298509+00:00","modified_at":"2024-11-14T19:12:10.298509+00:00","restricted_roles":[]}
+      string: '{"id":"u3x-4y8-hiy","title":"Test-Create_a_new_dashboard_with_a_query_value_widget_using_the_percentile_aggregator-1731699151
+        with QVW Percentile Aggregator","description":null,"author_handle":"frog@datadoghq.com","author_name":null,"layout_type":"ordered","url":"/dashboard/u3x-4y8-hiy/test-createanewdashboardwithaqueryvaluewidgetusingthepercentileaggregator-173169","is_read_only":false,"template_variables":null,"widgets":[{"definition":{"autoscale":true,"precision":2,"requests":[{"formulas":[{"formula":"query1"}],"queries":[{"aggregator":"percentile","data_source":"metrics","name":"query1","query":"p90:dist.dd.dogweb.latency{*}"}],"response_format":"scalar"}],"time":{},"title":"","title_align":"left","title_size":"16","type":"query_value"},"layout":{"height":2,"width":2,"x":0,"y":0},"id":662978730586709}],"notify_list":null,"created_at":"2024-11-15T19:32:31.492216+00:00","modified_at":"2024-11-15T19:32:31.492216+00:00","restricted_roles":[]}
 
         '
     headers:
@@ -28,10 +27,10 @@ interactions:
       accept:
       - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/dashboard/5e6-uwt-hiw
+    uri: https://api.datadoghq.com/api/v1/dashboard/u3x-4y8-hiy
   response:
     body:
-      string: '{"deleted_dashboard_id":"5e6-uwt-hiw"}
+      string: '{"deleted_dashboard_id":"u3x-4y8-hiy"}
 
         '
     headers:

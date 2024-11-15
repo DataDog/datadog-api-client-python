@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"description":"","layout_type":"free","notify_list":[],"template_variables":[],"title":"Test-Create_a_new_dashboard_with_a_toplist_widget_sorted_by_group-1731611531","widgets":[{"definition":{"requests":[{"formulas":[{"formula":"query1"}],"queries":[{"aggregator":"avg","data_source":"metrics","name":"query1","query":"avg:system.cpu.user{*}
+    body: '{"description":"","layout_type":"free","notify_list":[],"template_variables":[],"title":"Test-Create_a_new_dashboard_with_a_toplist_widget_sorted_by_group-1731699153","widgets":[{"definition":{"requests":[{"formulas":[{"formula":"query1"}],"queries":[{"aggregator":"avg","data_source":"metrics","name":"query1","query":"avg:system.cpu.user{*}
       by {service}"}],"response_format":"scalar","sort":{"count":10,"order_by":[{"name":"service","order":"asc","type":"group"}]}}],"style":{"display":{"legend":"inline","type":"stacked"},"palette":"dog_classic","scaling":"relative"},"time":{},"title":"","title_align":"left","title_size":"16","type":"toplist"},"layout":{"height":15,"width":47,"x":0,"y":0}}]}'
     headers:
       accept:
@@ -11,9 +11,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/dashboard
   response:
     body:
-      string: '{"id":"vhe-xty-kr6","title":"Test-Create_a_new_dashboard_with_a_toplist_widget_sorted_by_group-1731611531","description":"","author_handle":"anika.maskara@datadoghq.com","author_name":"Anika
-        Maskara","layout_type":"free","url":"/dashboard/vhe-xty-kr6/test-createanewdashboardwithatoplistwidgetsortedbygroup-1731611531","is_read_only":false,"template_variables":[],"widgets":[{"definition":{"requests":[{"formulas":[{"formula":"query1"}],"queries":[{"aggregator":"avg","data_source":"metrics","name":"query1","query":"avg:system.cpu.user{*}
-        by {service}"}],"response_format":"scalar","sort":{"count":10,"order_by":[{"name":"service","order":"asc","type":"group"}]}}],"style":{"display":{"legend":"inline","type":"stacked"},"palette":"dog_classic","scaling":"relative"},"time":{},"title":"","title_align":"left","title_size":"16","type":"toplist"},"layout":{"height":15,"width":47,"x":0,"y":0},"id":6590516596968264}],"notify_list":[],"created_at":"2024-11-14T19:12:12.140934+00:00","modified_at":"2024-11-14T19:12:12.140934+00:00","restricted_roles":[]}
+      string: '{"id":"w98-fwu-ra3","title":"Test-Create_a_new_dashboard_with_a_toplist_widget_sorted_by_group-1731699153","description":"","author_handle":"frog@datadoghq.com","author_name":null,"layout_type":"free","url":"/dashboard/w98-fwu-ra3/test-createanewdashboardwithatoplistwidgetsortedbygroup-1731699153","is_read_only":false,"template_variables":[],"widgets":[{"definition":{"requests":[{"formulas":[{"formula":"query1"}],"queries":[{"aggregator":"avg","data_source":"metrics","name":"query1","query":"avg:system.cpu.user{*}
+        by {service}"}],"response_format":"scalar","sort":{"count":10,"order_by":[{"name":"service","order":"asc","type":"group"}]}}],"style":{"display":{"legend":"inline","type":"stacked"},"palette":"dog_classic","scaling":"relative"},"time":{},"title":"","title_align":"left","title_size":"16","type":"toplist"},"layout":{"height":15,"width":47,"x":0,"y":0},"id":6367571628619554}],"notify_list":[],"created_at":"2024-11-15T19:32:33.336831+00:00","modified_at":"2024-11-15T19:32:33.336831+00:00","restricted_roles":[]}
 
         '
     headers:
@@ -28,10 +27,10 @@ interactions:
       accept:
       - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/dashboard/vhe-xty-kr6
+    uri: https://api.datadoghq.com/api/v1/dashboard/w98-fwu-ra3
   response:
     body:
-      string: '{"deleted_dashboard_id":"vhe-xty-kr6"}
+      string: '{"deleted_dashboard_id":"w98-fwu-ra3"}
 
         '
     headers:

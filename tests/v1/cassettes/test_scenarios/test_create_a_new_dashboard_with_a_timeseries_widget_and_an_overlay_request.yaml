@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"layout_type":"ordered","title":"Test-Create_a_new_dashboard_with_a_timeseries_widget_and_an_overlay_request-1731611531","widgets":[{"definition":{"requests":[{"display_type":"line","on_right_yaxis":false,"queries":[{"data_source":"metrics","name":"mymetric","query":"avg:system.cpu.user{*}"}],"response_format":"timeseries"},{"display_type":"overlay","queries":[{"data_source":"metrics","name":"mymetricoverlay","query":"avg:system.cpu.user{*}"}],"response_format":"timeseries","style":{"line_type":"solid","line_width":"normal","palette":"purple"}}],"type":"timeseries"}}]}'
+    body: '{"layout_type":"ordered","title":"Test-Create_a_new_dashboard_with_a_timeseries_widget_and_an_overlay_request-1731699152","widgets":[{"definition":{"requests":[{"display_type":"line","on_right_yaxis":false,"queries":[{"data_source":"metrics","name":"mymetric","query":"avg:system.cpu.user{*}"}],"response_format":"timeseries"},{"display_type":"overlay","queries":[{"data_source":"metrics","name":"mymetricoverlay","query":"avg:system.cpu.user{*}"}],"response_format":"timeseries","style":{"line_type":"solid","line_width":"normal","palette":"purple"}}],"type":"timeseries"}}]}'
     headers:
       accept:
       - application/json
@@ -10,8 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/dashboard
   response:
     body:
-      string: '{"id":"9dj-gpc-pve","title":"Test-Create_a_new_dashboard_with_a_timeseries_widget_and_an_overlay_request-1731611531","description":null,"author_handle":"anika.maskara@datadoghq.com","author_name":"Anika
-        Maskara","layout_type":"ordered","url":"/dashboard/9dj-gpc-pve/test-createanewdashboardwithatimeserieswidgetandanoverlayrequest-1731611531","is_read_only":false,"template_variables":null,"widgets":[{"definition":{"requests":[{"display_type":"line","on_right_yaxis":false,"queries":[{"data_source":"metrics","name":"mymetric","query":"avg:system.cpu.user{*}"}],"response_format":"timeseries"},{"display_type":"overlay","queries":[{"data_source":"metrics","name":"mymetricoverlay","query":"avg:system.cpu.user{*}"}],"response_format":"timeseries","style":{"line_type":"solid","line_width":"normal","palette":"purple"}}],"type":"timeseries"},"id":3340608125452159}],"notify_list":null,"created_at":"2024-11-14T19:12:11.274182+00:00","modified_at":"2024-11-14T19:12:11.274182+00:00","restricted_roles":[]}
+      string: '{"id":"9kn-skt-493","title":"Test-Create_a_new_dashboard_with_a_timeseries_widget_and_an_overlay_request-1731699152","description":null,"author_handle":"frog@datadoghq.com","author_name":null,"layout_type":"ordered","url":"/dashboard/9kn-skt-493/test-createanewdashboardwithatimeserieswidgetandanoverlayrequest-1731699152","is_read_only":false,"template_variables":null,"widgets":[{"definition":{"requests":[{"display_type":"line","on_right_yaxis":false,"queries":[{"data_source":"metrics","name":"mymetric","query":"avg:system.cpu.user{*}"}],"response_format":"timeseries"},{"display_type":"overlay","queries":[{"data_source":"metrics","name":"mymetricoverlay","query":"avg:system.cpu.user{*}"}],"response_format":"timeseries","style":{"line_type":"solid","line_width":"normal","palette":"purple"}}],"type":"timeseries"},"id":8425606312270690}],"notify_list":null,"created_at":"2024-11-15T19:32:32.390240+00:00","modified_at":"2024-11-15T19:32:32.390240+00:00","restricted_roles":[]}
 
         '
     headers:
@@ -26,10 +25,10 @@ interactions:
       accept:
       - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/dashboard/9dj-gpc-pve
+    uri: https://api.datadoghq.com/api/v1/dashboard/9kn-skt-493
   response:
     body:
-      string: '{"deleted_dashboard_id":"9dj-gpc-pve"}
+      string: '{"deleted_dashboard_id":"9kn-skt-493"}
 
         '
     headers:

@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"layout_type":"ordered","title":"Test-Create_a_new_dashboard_with_apm_issue_stream_list_stream_widget-1731611539
+    body: '{"layout_type":"ordered","title":"Test-Create_a_new_dashboard_with_apm_issue_stream_list_stream_widget-1731699157
       with list_stream widget","widgets":[{"definition":{"requests":[{"columns":[{"field":"timestamp","width":"auto"}],"query":{"data_source":"apm_issue_stream","query_string":""},"response_format":"event_list"}],"type":"list_stream"}}]}'
     headers:
       accept:
@@ -11,9 +11,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/dashboard
   response:
     body:
-      string: '{"id":"6qf-smy-7x5","title":"Test-Create_a_new_dashboard_with_apm_issue_stream_list_stream_widget-1731611539
-        with list_stream widget","description":null,"author_handle":"anika.maskara@datadoghq.com","author_name":"Anika
-        Maskara","layout_type":"ordered","url":"/dashboard/6qf-smy-7x5/test-createanewdashboardwithapmissuestreamliststreamwidget-1731611539-with-lists","is_read_only":false,"template_variables":null,"widgets":[{"definition":{"requests":[{"columns":[{"field":"timestamp","width":"auto"}],"query":{"data_source":"apm_issue_stream","query_string":""},"response_format":"event_list"}],"type":"list_stream"},"id":680563327364797}],"notify_list":null,"created_at":"2024-11-14T19:12:19.265744+00:00","modified_at":"2024-11-14T19:12:19.265744+00:00","restricted_roles":[]}
+      string: '{"id":"tak-bfc-f2k","title":"Test-Create_a_new_dashboard_with_apm_issue_stream_list_stream_widget-1731699157
+        with list_stream widget","description":null,"author_handle":"frog@datadoghq.com","author_name":null,"layout_type":"ordered","url":"/dashboard/tak-bfc-f2k/test-createanewdashboardwithapmissuestreamliststreamwidget-1731699157-with-lists","is_read_only":false,"template_variables":null,"widgets":[{"definition":{"requests":[{"columns":[{"field":"timestamp","width":"auto"}],"query":{"data_source":"apm_issue_stream","query_string":""},"response_format":"event_list"}],"type":"list_stream"},"id":6801970282056588}],"notify_list":null,"created_at":"2024-11-15T19:32:37.429394+00:00","modified_at":"2024-11-15T19:32:37.429394+00:00","restricted_roles":[]}
 
         '
     headers:
@@ -28,10 +27,10 @@ interactions:
       accept:
       - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/dashboard/6qf-smy-7x5
+    uri: https://api.datadoghq.com/api/v1/dashboard/tak-bfc-f2k
   response:
     body:
-      string: '{"deleted_dashboard_id":"6qf-smy-7x5"}
+      string: '{"deleted_dashboard_id":"tak-bfc-f2k"}
 
         '
     headers:

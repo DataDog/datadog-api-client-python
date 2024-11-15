@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"description":"","layout_type":"free","notify_list":[],"template_variables":[],"title":"Test-Create_a_new_dashboard_with_check_status_widget-1731611539","widgets":[{"definition":{"check":"datadog.agent.up","grouping":"check","tags":["*"],"title_align":"left","title_size":"16","type":"check_status"},"layout":{"height":8,"width":15,"x":0,"y":0}}]}'
+    body: '{"description":"","layout_type":"free","notify_list":[],"template_variables":[],"title":"Test-Create_a_new_dashboard_with_check_status_widget-1731699157","widgets":[{"definition":{"check":"datadog.agent.up","grouping":"check","tags":["*"],"title_align":"left","title_size":"16","type":"check_status"},"layout":{"height":8,"width":15,"x":0,"y":0}}]}'
     headers:
       accept:
       - application/json
@@ -10,8 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/dashboard
   response:
     body:
-      string: '{"id":"vbg-22a-h5q","title":"Test-Create_a_new_dashboard_with_check_status_widget-1731611539","description":"","author_handle":"anika.maskara@datadoghq.com","author_name":"Anika
-        Maskara","layout_type":"free","url":"/dashboard/vbg-22a-h5q/test-createanewdashboardwithcheckstatuswidget-1731611539","is_read_only":false,"template_variables":[],"widgets":[{"definition":{"check":"datadog.agent.up","grouping":"check","tags":["*"],"title_align":"left","title_size":"16","type":"check_status"},"layout":{"height":8,"width":15,"x":0,"y":0},"id":5653198180146562}],"notify_list":[],"created_at":"2024-11-14T19:12:19.614388+00:00","modified_at":"2024-11-14T19:12:19.614388+00:00","restricted_roles":[]}
+      string: '{"id":"h4u-ixe-ptt","title":"Test-Create_a_new_dashboard_with_check_status_widget-1731699157","description":"","author_handle":"frog@datadoghq.com","author_name":null,"layout_type":"free","url":"/dashboard/h4u-ixe-ptt/test-createanewdashboardwithcheckstatuswidget-1731699157","is_read_only":false,"template_variables":[],"widgets":[{"definition":{"check":"datadog.agent.up","grouping":"check","tags":["*"],"title_align":"left","title_size":"16","type":"check_status"},"layout":{"height":8,"width":15,"x":0,"y":0},"id":3317310368131706}],"notify_list":[],"created_at":"2024-11-15T19:32:37.813499+00:00","modified_at":"2024-11-15T19:32:37.813499+00:00","restricted_roles":[]}
 
         '
     headers:
@@ -26,10 +25,10 @@ interactions:
       accept:
       - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/dashboard/vbg-22a-h5q
+    uri: https://api.datadoghq.com/api/v1/dashboard/h4u-ixe-ptt
   response:
     body:
-      string: '{"deleted_dashboard_id":"vbg-22a-h5q"}
+      string: '{"deleted_dashboard_id":"h4u-ixe-ptt"}
 
         '
     headers:
