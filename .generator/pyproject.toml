@@ -15,6 +15,7 @@ pytest = "^7.4.0"
 pytest-bdd = "^6.1.1"
 python-dateutil = "^2.8.2"
 m2r2 = "0.3.3.post2"
+setuptools = "^75.0.0"
 
 [tool.poetry.dev-dependencies]
 
