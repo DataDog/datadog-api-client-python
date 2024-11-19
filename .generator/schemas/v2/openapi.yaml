@@ -27189,6 +27189,7 @@ components:
             security_monitoring_rules_read: Read Detection Rules.
             security_monitoring_rules_write: Create and edit Detection Rules.
             security_monitoring_signals_read: View Security Signals.
+            security_monitoring_signals_write: Edit Security Signals.
             security_monitoring_suppressions_read: Read Rule Suppressions.
             security_monitoring_suppressions_write: Write Rule Suppressions.
             security_pipelines_read: View Security Pipelines.
@@ -40801,11 +40802,16 @@ paths:
       security:
       - apiKeyAuth: []
         appKeyAuth: []
-      - AuthZ: []
+      - AuthZ:
+        - security_monitoring_rules_write
       summary: Run a historical job
       tags:
       - Security Monitoring
       x-codegen-request-body-name: body
+      x-permission:
+        operator: OR
+        permissions:
+        - security_monitoring_rules_write
       x-unstable: '**Note**: This endpoint is in beta and may be subject to changes.
 
         Please check the documentation regularly for updates.'
@@ -40835,11 +40841,16 @@ paths:
       security:
       - apiKeyAuth: []
         appKeyAuth: []
-      - AuthZ: []
+      - AuthZ:
+        - security_monitoring_signals_write
       summary: Convert a job result to a signal
       tags:
       - Security Monitoring
       x-codegen-request-body-name: body
+      x-permission:
+        operator: OR
+        permissions:
+        - security_monitoring_signals_write
       x-unstable: '**Note**: This endpoint is in beta and may be subject to changes.
 
         Please check the documentation regularly for updates.'
@@ -40897,10 +40908,15 @@ paths:
       security:
       - apiKeyAuth: []
         appKeyAuth: []
-      - AuthZ: []
+      - AuthZ:
+        - security_monitoring_rules_read
       summary: Get a job's details
       tags:
       - Security Monitoring
+      x-permission:
+        operator: OR
+        permissions:
+        - security_monitoring_rules_read
       x-unstable: '**Note**: This endpoint is in beta and may be subject to changes.
 
         Please check the documentation regularly for updates.'
@@ -40928,10 +40944,15 @@ paths:
       security:
       - apiKeyAuth: []
         appKeyAuth: []
-      - AuthZ: []
+      - AuthZ:
+        - security_monitoring_rules_write
       summary: Cancel a historical job
       tags:
       - Security Monitoring
+      x-permission:
+        operator: OR
+        permissions:
+        - security_monitoring_rules_write
       x-unstable: '**Note**: This endpoint is in beta and may be subject to changes.
 
         Please check the documentation regularly for updates.'
