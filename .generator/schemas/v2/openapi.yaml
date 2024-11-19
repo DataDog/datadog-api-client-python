@@ -43830,7 +43830,11 @@ tags:
 
     See the [Archives Page](https://app.datadoghq.com/logs/pipelines/archives)
 
-    for a list of the archives currently configured in Datadog.'
+    for a list of the archives currently configured in Datadog.
+
+
+    You need an API and non-scoped application key with Admin rights to interact with
+    these endpoints.'
   externalDocs:
     description: Find out more at
     url: https://docs.datadoghq.com/logs/archives/
@@ -43849,8 +43853,11 @@ tags:
     description: Find out more at
     url: https://docs.datadoghq.com/logs/log_configuration/forwarding_custom_destinations/
   name: Logs Custom Destinations
-- description: Manage configuration of [log-based metrics](https://app.datadoghq.com/logs/pipelines/generate-metrics)
+- description: 'Manage configuration of [log-based metrics](https://app.datadoghq.com/logs/pipelines/generate-metrics)
     for your organization.
+
+    You need an API and non-scoped application key with Admin rights to interact with
+    these endpoints.'
   externalDocs:
     description: Find out more at
     url: https://docs.datadoghq.com/logs/logs_to_metrics/
