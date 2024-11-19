@@ -2,7 +2,8 @@
 Feature: Logs Indexes
   Manage configuration of [log
   indexes](https://docs.datadoghq.com/logs/indexes/). You need an API and
-  application key with Admin rights to interact with this endpoint.
+  non-scoped application key with Admin rights to interact with these
+  endpoints.
 
   Background:
     Given a valid "apiKeyAuth" key in the system
