@@ -1,8 +1,5 @@
-datadog\_api\_client.v2 package
-===============================
-
-Subpackages
------------
+datadog\_api\_client.v2
+=======================
 
 .. toctree::
    :maxdepth: 4
@@ -10,8 +7,6 @@ Subpackages
    datadog_api_client.v2.api
    datadog_api_client.v2.model
 
-Module contents
----------------
 
 .. automodule:: datadog_api_client.v2
    :members:
