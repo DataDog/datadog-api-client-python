@@ -586,7 +586,7 @@ COERCION_INDEX_BY_TYPE = {
 UPCONVERSION_TYPE_PAIRS = (
     (str, datetime),
     (str, date),
-    # (str, UUID),
+    # (str, UUID), # Strings shouldn't always be converted to UUIDs, only when the format is a UUID explicitly.
     (int, float),  # A float may be serialized as an integer, e.g. '3' is a valid serialized float.
     (list, ModelComposed),
     (dict, ModelComposed),
