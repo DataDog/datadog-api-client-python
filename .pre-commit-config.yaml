@@ -27,7 +27,7 @@ repos:
     entry: bash -c "SPHINX_APIDOC_OPTIONS=members,show-inheritance sphinx-apidoc --output-dir docs --force --no-toc --templatedir docs/_templates src/datadog_api_client *apis *models *version.py"
     pass_filenames: false
     additional_dependencies:
-      - Sphinx
+      - Sphinx==7.4.0
   - id: generator
     name: generator
     language: python
