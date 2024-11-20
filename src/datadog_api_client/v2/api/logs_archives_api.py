@@ -21,6 +21,8 @@ class LogsArchivesApi:
 
     See the `Archives Page <https://app.datadoghq.com/logs/pipelines/archives>`_
     for a list of the archives currently configured in Datadog.
+
+    You need an API and non-scoped application key with Admin rights to interact with these endpoints.
     """
 
     def __init__(self, api_client=None):

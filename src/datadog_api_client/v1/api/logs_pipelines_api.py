@@ -32,7 +32,7 @@ class LogsPipelinesApi:
     **Notes:**
 
     These endpoints are only available for admin users.
-    Make sure to use an application key created by an admin.
+    Make sure to use an application key created by an admin with no applied scopes.
 
     **Grok parsing rules may effect JSON output and require
     returned data to be configured before using in a request.**
