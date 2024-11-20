@@ -9,7 +9,6 @@ from datadog_api_client.v1.model.synthetics_browser_test_config import Synthetic
 from datadog_api_client.v1.model.synthetics_browser_test_type import SyntheticsBrowserTestType
 from datadog_api_client.v1.model.synthetics_config_variable import SyntheticsConfigVariable
 from datadog_api_client.v1.model.synthetics_config_variable_type import SyntheticsConfigVariableType
-from datadog_api_client.v1.model.synthetics_device_id import SyntheticsDeviceID
 from datadog_api_client.v1.model.synthetics_step import SyntheticsStep
 from datadog_api_client.v1.model.synthetics_step_type import SyntheticsStepType
 from datadog_api_client.v1.model.synthetics_test_options import SyntheticsTestOptions
@@ -46,7 +45,7 @@ body = SyntheticsBrowserTest(
         accept_self_signed=False,
         allow_insecure=True,
         device_ids=[
-            SyntheticsDeviceID.TABLET,
+            "tablet",
         ],
         disable_cors=True,
         follow_redirects=True,

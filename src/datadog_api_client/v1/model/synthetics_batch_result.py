@@ -14,7 +14,6 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v1.model.synthetics_device_id import SyntheticsDeviceID
     from datadog_api_client.v1.model.synthetics_test_execution_rule import SyntheticsTestExecutionRule
     from datadog_api_client.v1.model.synthetics_batch_status import SyntheticsBatchStatus
     from datadog_api_client.v1.model.synthetics_test_details_type import SyntheticsTestDetailsType
@@ -23,13 +22,12 @@ if TYPE_CHECKING:
 class SyntheticsBatchResult(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v1.model.synthetics_device_id import SyntheticsDeviceID
         from datadog_api_client.v1.model.synthetics_test_execution_rule import SyntheticsTestExecutionRule
         from datadog_api_client.v1.model.synthetics_batch_status import SyntheticsBatchStatus
         from datadog_api_client.v1.model.synthetics_test_details_type import SyntheticsTestDetailsType
 
         return {
-            "device": (SyntheticsDeviceID,),
+            "device": (str,),
             "duration": (float,),
             "execution_rule": (SyntheticsTestExecutionRule,),
             "location": (str,),
@@ -56,7 +54,7 @@ class SyntheticsBatchResult(ModelNormal):
 
     def __init__(
         self_,
-        device: Union[SyntheticsDeviceID, UnsetType] = unset,
+        device: Union[str, UnsetType] = unset,
         duration: Union[float, UnsetType] = unset,
         execution_rule: Union[SyntheticsTestExecutionRule, UnsetType] = unset,
         location: Union[str, UnsetType] = unset,
@@ -72,7 +70,7 @@ class SyntheticsBatchResult(ModelNormal):
         Object with the results of a Synthetic batch.
 
         :param device: The device ID.
-        :type device: SyntheticsDeviceID, optional
+        :type device: str, optional
 
         :param duration: Total duration in millisecond of the test.
         :type duration: float, optional

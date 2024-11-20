@@ -11,7 +11,6 @@ from datadog_api_client.v1.model.synthetics_assertion_operator import Synthetics
 from datadog_api_client.v1.model.synthetics_assertion_target import SyntheticsAssertionTarget
 from datadog_api_client.v1.model.synthetics_assertion_type import SyntheticsAssertionType
 from datadog_api_client.v1.model.synthetics_browser_test_rum_settings import SyntheticsBrowserTestRumSettings
-from datadog_api_client.v1.model.synthetics_device_id import SyntheticsDeviceID
 from datadog_api_client.v1.model.synthetics_restricted_roles import SyntheticsRestrictedRoles
 from datadog_api_client.v1.model.synthetics_test_ci_options import SyntheticsTestCiOptions
 from datadog_api_client.v1.model.synthetics_test_details_sub_type import SyntheticsTestDetailsSubType
@@ -54,7 +53,7 @@ body = SyntheticsAPITest(
             execution_rule=SyntheticsTestExecutionRule.BLOCKING,
         ),
         device_ids=[
-            SyntheticsDeviceID.CHROME_LAPTOP_LARGE,
+            "chrome.laptop_large",
         ],
         http_version=SyntheticsTestOptionsHTTPVersion.HTTP1,
         monitor_options=SyntheticsTestOptionsMonitorOptions(

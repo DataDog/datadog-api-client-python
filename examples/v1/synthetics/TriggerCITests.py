@@ -13,7 +13,6 @@ from datadog_api_client.v1.model.synthetics_ci_batch_metadata_pipeline import Sy
 from datadog_api_client.v1.model.synthetics_ci_batch_metadata_provider import SyntheticsCIBatchMetadataProvider
 from datadog_api_client.v1.model.synthetics_ci_test import SyntheticsCITest
 from datadog_api_client.v1.model.synthetics_ci_test_body import SyntheticsCITestBody
-from datadog_api_client.v1.model.synthetics_device_id import SyntheticsDeviceID
 from datadog_api_client.v1.model.synthetics_test_options_retry import SyntheticsTestOptionsRetry
 
 body = SyntheticsCITestBody(
@@ -25,7 +24,7 @@ body = SyntheticsCITestBody(
                 username="my_username",
             ),
             device_ids=[
-                SyntheticsDeviceID.CHROME_LAPTOP_LARGE,
+                "chrome.laptop_large",
             ],
             locations=[
                 "aws:eu-west-3",

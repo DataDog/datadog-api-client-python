@@ -702,7 +702,6 @@ from datadog_api_client.v1.model.synthetics_delete_tests_payload import Syntheti
 from datadog_api_client.v1.model.synthetics_delete_tests_response import SyntheticsDeleteTestsResponse
 from datadog_api_client.v1.model.synthetics_deleted_test import SyntheticsDeletedTest
 from datadog_api_client.v1.model.synthetics_device import SyntheticsDevice
-from datadog_api_client.v1.model.synthetics_device_id import SyntheticsDeviceID
 from datadog_api_client.v1.model.synthetics_fetch_uptimes_payload import SyntheticsFetchUptimesPayload
 from datadog_api_client.v1.model.synthetics_get_api_test_latest_results_response import (
     SyntheticsGetAPITestLatestResultsResponse,
@@ -1678,7 +1677,6 @@ __all__ = [
     "SyntheticsDeleteTestsResponse",
     "SyntheticsDeletedTest",
     "SyntheticsDevice",
-    "SyntheticsDeviceID",
     "SyntheticsFetchUptimesPayload",
     "SyntheticsGetAPITestLatestResultsResponse",
     "SyntheticsGetBrowserTestLatestResultsResponse",

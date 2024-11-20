@@ -15,7 +15,6 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v1.model.synthetics_basic_auth import SyntheticsBasicAuth
-    from datadog_api_client.v1.model.synthetics_device_id import SyntheticsDeviceID
     from datadog_api_client.v1.model.synthetics_test_headers import SyntheticsTestHeaders
     from datadog_api_client.v1.model.synthetics_ci_batch_metadata import SyntheticsCIBatchMetadata
     from datadog_api_client.v1.model.synthetics_test_options_retry import SyntheticsTestOptionsRetry
@@ -31,7 +30,6 @@ class SyntheticsCITest(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v1.model.synthetics_basic_auth import SyntheticsBasicAuth
-        from datadog_api_client.v1.model.synthetics_device_id import SyntheticsDeviceID
         from datadog_api_client.v1.model.synthetics_test_headers import SyntheticsTestHeaders
         from datadog_api_client.v1.model.synthetics_ci_batch_metadata import SyntheticsCIBatchMetadata
         from datadog_api_client.v1.model.synthetics_test_options_retry import SyntheticsTestOptionsRetry
@@ -42,7 +40,7 @@ class SyntheticsCITest(ModelNormal):
             "body": (str,),
             "body_type": (str,),
             "cookies": (str,),
-            "device_ids": ([SyntheticsDeviceID],),
+            "device_ids": ([str],),
             "follow_redirects": (bool,),
             "headers": (SyntheticsTestHeaders,),
             "locations": ([str],),
@@ -87,7 +85,7 @@ class SyntheticsCITest(ModelNormal):
         body: Union[str, UnsetType] = unset,
         body_type: Union[str, UnsetType] = unset,
         cookies: Union[str, UnsetType] = unset,
-        device_ids: Union[List[SyntheticsDeviceID], UnsetType] = unset,
+        device_ids: Union[List[str], UnsetType] = unset,
         follow_redirects: Union[bool, UnsetType] = unset,
         headers: Union[SyntheticsTestHeaders, UnsetType] = unset,
         locations: Union[List[str], UnsetType] = unset,
@@ -116,7 +114,7 @@ class SyntheticsCITest(ModelNormal):
         :type cookies: str, optional
 
         :param device_ids: For browser test, array with the different device IDs used to run the test.
-        :type device_ids: [SyntheticsDeviceID], optional
+        :type device_ids: [str], optional
 
         :param follow_redirects: For API HTTP test, whether or not the test should follow redirects.
         :type follow_redirects: bool, optional
