@@ -41,6 +41,7 @@ class ListStreamQuery(ModelNormal):
         from datadog_api_client.v1.model.widget_field_sort import WidgetFieldSort
 
         return {
+            "clustering_pattern_field_path": (str,),
             "compute": ([ListStreamComputeItems],),
             "data_source": (ListStreamSource,),
             "event_size": (WidgetEventSize,),
@@ -52,6 +53,7 @@ class ListStreamQuery(ModelNormal):
         }
 
     attribute_map = {
+        "clustering_pattern_field_path": "clustering_pattern_field_path",
         "compute": "compute",
         "data_source": "data_source",
         "event_size": "event_size",
@@ -66,6 +68,7 @@ class ListStreamQuery(ModelNormal):
         self_,
         data_source: ListStreamSource,
         query_string: str,
+        clustering_pattern_field_path: Union[str, UnsetType] = unset,
         compute: Union[List[ListStreamComputeItems], UnsetType] = unset,
         event_size: Union[WidgetEventSize, UnsetType] = unset,
         group_by: Union[List[ListStreamGroupByItems], UnsetType] = unset,
@@ -76,6 +79,9 @@ class ListStreamQuery(ModelNormal):
     ):
         """
         Updated list stream widget.
+
+        :param clustering_pattern_field_path: Specifies the field for logs pattern clustering. Usable only with logs_pattern_stream.
+        :type clustering_pattern_field_path: str, optional
 
         :param compute: Compute configuration for the List Stream Widget. Compute can be used only with the logs_transaction_stream (from 1 to 5 items) list stream source.
         :type compute: [ListStreamComputeItems], optional
@@ -101,6 +107,8 @@ class ListStreamQuery(ModelNormal):
         :param storage: Option for storage location. Feature in Private Beta.
         :type storage: str, optional
         """
+        if clustering_pattern_field_path is not unset:
+            kwargs["clustering_pattern_field_path"] = clustering_pattern_field_path
         if compute is not unset:
             kwargs["compute"] = compute
         if event_size is not unset:
