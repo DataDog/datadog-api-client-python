@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -13,17 +13,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-if TYPE_CHECKING:
-    from datadog_api_client.v1.model.synthetics_device_id import SyntheticsDeviceID
-
-
 class SyntheticsTriggerCITestRunResult(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v1.model.synthetics_device_id import SyntheticsDeviceID
-
         return {
-            "device": (SyntheticsDeviceID,),
+            "device": (str,),
             "location": (int,),
             "public_id": (str,),
             "result_id": (str,),
@@ -38,7 +32,7 @@ class SyntheticsTriggerCITestRunResult(ModelNormal):
 
     def __init__(
         self_,
-        device: Union[SyntheticsDeviceID, UnsetType] = unset,
+        device: Union[str, UnsetType] = unset,
         location: Union[int, UnsetType] = unset,
         public_id: Union[str, UnsetType] = unset,
         result_id: Union[str, UnsetType] = unset,
@@ -48,7 +42,7 @@ class SyntheticsTriggerCITestRunResult(ModelNormal):
         Information about a single test run.
 
         :param device: The device ID.
-        :type device: SyntheticsDeviceID, optional
+        :type device: str, optional
 
         :param location: The location ID of the test run.
         :type location: int, optional

@@ -15,7 +15,6 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v1.model.synthetics_test_ci_options import SyntheticsTestCiOptions
-    from datadog_api_client.v1.model.synthetics_device_id import SyntheticsDeviceID
     from datadog_api_client.v1.model.synthetics_test_options_http_version import SyntheticsTestOptionsHTTPVersion
     from datadog_api_client.v1.model.synthetics_test_options_monitor_options import SyntheticsTestOptionsMonitorOptions
     from datadog_api_client.v1.model.synthetics_restricted_roles import SyntheticsRestrictedRoles
@@ -39,7 +38,6 @@ class SyntheticsTestOptions(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v1.model.synthetics_test_ci_options import SyntheticsTestCiOptions
-        from datadog_api_client.v1.model.synthetics_device_id import SyntheticsDeviceID
         from datadog_api_client.v1.model.synthetics_test_options_http_version import SyntheticsTestOptionsHTTPVersion
         from datadog_api_client.v1.model.synthetics_test_options_monitor_options import (
             SyntheticsTestOptionsMonitorOptions,
@@ -54,7 +52,7 @@ class SyntheticsTestOptions(ModelNormal):
             "allow_insecure": (bool,),
             "check_certificate_revocation": (bool,),
             "ci": (SyntheticsTestCiOptions,),
-            "device_ids": ([SyntheticsDeviceID],),
+            "device_ids": ([str],),
             "disable_cors": (bool,),
             "disable_csp": (bool,),
             "enable_profiling": (bool,),
@@ -109,7 +107,7 @@ class SyntheticsTestOptions(ModelNormal):
         allow_insecure: Union[bool, UnsetType] = unset,
         check_certificate_revocation: Union[bool, UnsetType] = unset,
         ci: Union[SyntheticsTestCiOptions, UnsetType] = unset,
-        device_ids: Union[List[SyntheticsDeviceID], UnsetType] = unset,
+        device_ids: Union[List[str], UnsetType] = unset,
         disable_cors: Union[bool, UnsetType] = unset,
         disable_csp: Union[bool, UnsetType] = unset,
         enable_profiling: Union[bool, UnsetType] = unset,
@@ -148,7 +146,7 @@ class SyntheticsTestOptions(ModelNormal):
         :type ci: SyntheticsTestCiOptions, optional
 
         :param device_ids: For browser test, array with the different device IDs used to run the test.
-        :type device_ids: [SyntheticsDeviceID], optional
+        :type device_ids: [str], optional
 
         :param disable_cors: Whether or not to disable CORS mechanism.
         :type disable_cors: bool, optional

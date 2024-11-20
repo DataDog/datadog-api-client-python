@@ -8,6 +8,7 @@ from datadog_api_client.v1.model.synthetics_api_wait_step import SyntheticsAPIWa
 from datadog_api_client.v1.model.synthetics_api_test import SyntheticsAPITest
 from datadog_api_client.v1.model.synthetics_browser_test import SyntheticsBrowserTest
 from datadog_api_client.v1.model.synthetics_assertion import SyntheticsAssertion
+from datadog_api_client.v2.model.downtime_response import DowntimeResponse
 from datadog_api_client.v2.model.logs_aggregate_response import LogsAggregateResponse
 from datadog_api_client.v2.model.logs_archive import LogsArchive
 from datadog_api_client.v2.model.logs_archive_destination import LogsArchiveDestination
@@ -89,72 +90,46 @@ def test_unknown_nested_oneof_in_list():
 
 def test_unknown_nested_enum_in_list():
     body = """{
-        "status": "live",
-        "public_id": "2fx-64b-fb8",
-        "tags": [
-            "mini-website",
-            "team:synthetics",
-            "firefox",
-            "synthetics-ci-browser",
-            "edge",
-            "chrome"
-        ],
-        "locations": [
-            "aws:ap-northeast-1",
-            "aws:eu-north-1",
-            "aws:eu-west-3",
-            "aws:eu-central-1"
-        ],
-        "message": "This mini-website check failed, please investigate why. @slack-synthetics-ops-worker",
-        "name": "Mini Website - Click Trap",
-        "monitor_id": 7647262,
-        "type": "browser",
-        "created_at": "2018-12-20T13:19:23.734004+00:00",
-        "modified_at": "2021-06-30T15:46:49.387631+00:00",
-        "config": {
-            "variables": [],
-            "setCookie": "",
-            "request": {
-                "url": "http://34.95.79.70/click-trap",
-                "headers": {},
-                "method": "GET"
+    "data": {
+        "type": "downtime",
+        "attributes": {
+            "mute_first_recovery_notification": false,
+            "schedule": {
+                "end": null,
+                "start": "2024-11-10T03:12:35.223223+00:00"
             },
-            "assertions": [],
-            "configVariables": []
-        },
-        "options": {
-            "ci": {
-                "executionRule": "blocking"
-            },
-            "retry": {
-                "count": 1,
-                "interval": 1000
-            },
-            "min_location_failed": 1,
-            "min_failure_duration": 0,
-            "noScreenshot": false,
-            "tick_every": 300,
-            "forwardProxy": false,
-            "disableCors": false,
-            "device_ids": [
-                "chrome.laptop_large",
-                "firefox.laptop_large",
-                "A non existent device ID"
+            "notify_end_types": [
+                "expired"
             ],
-            "monitor_options": {
-                "renotify_interval": 360
+            "status": "active",
+            "monitor_identifier": {
+                "monitor_tags": [
+                    "*"
+                ]
             },
-            "ignoreServerCertificateError": true
-        }
-    }"""
+            "display_timezone": "UTC",
+            "notify_end_states": [
+                "warn",
+                "alert",
+                "not an end state"
+            ],
+            "created": "2024-11-10T03:12:35.241213+00:00",
+            "modified": "2024-11-10T03:12:35.241213+00:00",
+            "canceled": null,
+            "message": null,
+            "scope": "host:java-hostsMuteErrorsTest-local-1731208355"
+        },
+        "id": "a5546ef7-fea3-4a1b-b82e-04f8067f655a"
+    }
+}"""
     config = Configuration()
     deserialized_data = validate_and_convert_types(
-        json.loads(body), (SyntheticsBrowserTest,), ["received_data"], True, True, config
+        json.loads(body), (DowntimeResponse,), ["received_data"], True, True, config
     )
-    assert isinstance(deserialized_data, SyntheticsBrowserTest)
-    assert len(deserialized_data.options.device_ids) == 3
-    assert str(deserialized_data.options.device_ids[2]) == "A non existent device ID"
-    assert deserialized_data.options.device_ids[2]._unparsed
+    assert isinstance(deserialized_data, DowntimeResponse)
+    assert len(deserialized_data.data.attributes.notify_end_states) == 3
+    assert str(deserialized_data.data.attributes.notify_end_states[2]) == "not an end state"
+    assert deserialized_data.data.attributes.notify_end_states[2]._unparsed
 
 
 def test_unknown_top_level_enum():

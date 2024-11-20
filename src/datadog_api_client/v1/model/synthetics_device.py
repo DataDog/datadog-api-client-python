@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -13,18 +13,12 @@ from datadog_api_client.model_utils import (
 )
 
 
-if TYPE_CHECKING:
-    from datadog_api_client.v1.model.synthetics_device_id import SyntheticsDeviceID
-
-
 class SyntheticsDevice(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v1.model.synthetics_device_id import SyntheticsDeviceID
-
         return {
             "height": (int,),
-            "id": (SyntheticsDeviceID,),
+            "id": (str,),
             "is_mobile": (bool,),
             "name": (str,),
             "width": (int,),
@@ -39,13 +33,7 @@ class SyntheticsDevice(ModelNormal):
     }
 
     def __init__(
-        self_,
-        height: int,
-        id: SyntheticsDeviceID,
-        name: str,
-        width: int,
-        is_mobile: Union[bool, UnsetType] = unset,
-        **kwargs,
+        self_, height: int, id: str, name: str, width: int, is_mobile: Union[bool, UnsetType] = unset, **kwargs
     ):
         """
         Object describing the device used to perform the Synthetic test.
@@ -54,7 +42,7 @@ class SyntheticsDevice(ModelNormal):
         :type height: int
 
         :param id: The device ID.
-        :type id: SyntheticsDeviceID
+        :type id: str
 
         :param is_mobile: Whether or not the device is a mobile.
         :type is_mobile: bool, optional
