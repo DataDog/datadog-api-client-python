@@ -31,10 +31,16 @@ body = Dashboard(
                                 width=ListStreamColumnWidth.AUTO,
                                 field="timestamp",
                             ),
+                            ListStreamColumn(
+                                width=ListStreamColumnWidth.AUTO,
+                                field="message",
+                                is_clustering_pattern_field_path=True,
+                            ),
                         ],
                         query=ListStreamQuery(
                             data_source=ListStreamSource.LOGS_PATTERN_STREAM,
                             query_string="",
+                            clustering_pattern_field_path="message",
                             group_by=[
                                 ListStreamGroupByItems(
                                     facet="service",
