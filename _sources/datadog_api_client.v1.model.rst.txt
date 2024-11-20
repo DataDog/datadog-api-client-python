@@ -4358,13 +4358,6 @@ datadog\_api\_client.v1.model.synthetics\_device module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.synthetics\_device\_id module
------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v1.model.synthetics_device_id
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v1.model.synthetics\_fetch\_uptimes\_payload module
 ------------------------------------------------------------------------
 

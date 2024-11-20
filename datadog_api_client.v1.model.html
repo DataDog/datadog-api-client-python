@@ -4417,12 +4417,6 @@
         </li></ul>
             </nav>
         </li>
-        <li class="md-nav__item"><a href="#module-datadog_api_client.v1.model.synthetics_device_id" class="md-nav__link">datadog_api_client.v1.model.synthetics_device_id module</a><nav class="md-nav">
-              <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#datadog_api_client.v1.model.synthetics_device_id.SyntheticsDeviceID" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SyntheticsDeviceID</span></code></a>
-        </li></ul>
-            </nav>
-        </li>
         <li class="md-nav__item"><a href="#module-datadog_api_client.v1.model.synthetics_fetch_uptimes_payload" class="md-nav__link">datadog_api_client.v1.model.synthetics_fetch_uptimes_payload module</a><nav class="md-nav">
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#datadog_api_client.v1.model.synthetics_fetch_uptimes_payload.SyntheticsFetchUptimesPayload" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SyntheticsFetchUptimesPayload</span></code></a>
@@ -19529,7 +19523,7 @@ type conversion is done.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>device</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.synthetics_device_id.SyntheticsDeviceID" title="datadog_api_client.v1.model.synthetics_device_id.SyntheticsDeviceID"><em>SyntheticsDeviceID</em></a><em>, </em><em>optional</em>) – The device ID.</p></li>
+<li><p><strong>device</strong> (<em>str</em><em>, </em><em>optional</em>) – The device ID.</p></li>
 <li><p><strong>duration</strong> (<em>float</em><em>, </em><em>optional</em>) – Total duration in millisecond of the test.</p></li>
 <li><p><strong>execution_rule</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.synthetics_test_execution_rule.SyntheticsTestExecutionRule" title="datadog_api_client.v1.model.synthetics_test_execution_rule.SyntheticsTestExecutionRule"><em>SyntheticsTestExecutionRule</em></a><em>, </em><em>optional</em>) – Execution rule for a Synthetic test.</p></li>
 <li><p><strong>location</strong> (<em>str</em><em>, </em><em>optional</em>) – Name of the location.</p></li>
@@ -20046,7 +20040,7 @@ type conversion is done.</p></li>
 <li><p><strong>body</strong> (<em>str</em><em>, </em><em>optional</em>) – Body to include in the test.</p></li>
 <li><p><strong>body_type</strong> (<em>str</em><em>, </em><em>optional</em>) – Type of the data sent in a Synthetic API test.</p></li>
 <li><p><strong>cookies</strong> (<em>str</em><em>, </em><em>optional</em>) – Cookies for the request.</p></li>
-<li><p><strong>device_ids</strong> (<em>[</em><a class="reference internal" href="#datadog_api_client.v1.model.synthetics_device_id.SyntheticsDeviceID" title="datadog_api_client.v1.model.synthetics_device_id.SyntheticsDeviceID"><em>SyntheticsDeviceID</em></a><em>]</em><em>, </em><em>optional</em>) – For browser test, array with the different device IDs used to run the test.</p></li>
+<li><p><strong>device_ids</strong> (<em>[</em><em>str</em><em>]</em><em>, </em><em>optional</em>) – For browser test, array with the different device IDs used to run the test.</p></li>
 <li><p><strong>follow_redirects</strong> (<em>bool</em><em>, </em><em>optional</em>) – For API HTTP test, whether or not the test should follow redirects.</p></li>
 <li><p><strong>headers</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.synthetics_test_headers.SyntheticsTestHeaders" title="datadog_api_client.v1.model.synthetics_test_headers.SyntheticsTestHeaders"><em>SyntheticsTestHeaders</em></a><em>, </em><em>optional</em>) – Headers to include when performing the test.</p></li>
 <li><p><strong>locations</strong> (<em>[</em><em>str</em><em>]</em><em>, </em><em>optional</em>) – Array of locations used to run the test.</p></li>
@@ -20203,37 +20197,10 @@ deletion timestamp.</p>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>height</strong> (<em>int</em>) – Screen height of the device.</p></li>
-<li><p><strong>id</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.synthetics_device_id.SyntheticsDeviceID" title="datadog_api_client.v1.model.synthetics_device_id.SyntheticsDeviceID"><em>SyntheticsDeviceID</em></a>) – The device ID.</p></li>
+<li><p><strong>id</strong> (<em>str</em>) – The device ID.</p></li>
 <li><p><strong>is_mobile</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether or not the device is a mobile.</p></li>
 <li><p><strong>name</strong> (<em>str</em>) – The device name.</p></li>
 <li><p><strong>width</strong> (<em>int</em>) – Screen width of the device.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-</section>
-<section id="module-datadog_api_client.v1.model.synthetics_device_id">
-<span id="datadog-api-client-v1-model-synthetics-device-id-module"></span><h2 id="module-datadog_api_client.v1.model.synthetics_device_id">datadog_api_client.v1.model.synthetics_device_id module<a class="headerlink" href="#module-datadog_api_client.v1.model.synthetics_device_id" title="Link to this heading">¶</a></h2>
-<dl class="py class">
-<dt class="sig sig-object py" id="datadog_api_client.v1.model.synthetics_device_id.SyntheticsDeviceID">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SyntheticsDeviceID</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datadog_api_client.v1.model.synthetics_device_id.SyntheticsDeviceID" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.ModelSimple" title="datadog_api_client.model_utils.ModelSimple"><code class="xref py py-class docutils literal notranslate"><span class="pre">ModelSimple</span></code></a></p>
-<p>The device ID.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>value</strong> (<em>str</em>) – Must be one of [“laptop_large”, “tablet”, “mobile_small”, “chrome.laptop_large”, “chrome.tablet”, “chrome.mobile_small”, “firefox.laptop_large”, “firefox.tablet”, “firefox.mobile_small”, “edge.laptop_large”, “edge.tablet”, “edge.mobile_small”].</p></li>
-<li><p><strong>_check_type</strong> (<em>bool</em>) – If True, values for parameters in openapi_types
-will be type checked and a TypeError will be raised if the wrong type is input.
-Defaults to True.</p></li>
-<li><p><strong>_path_to_item</strong> (<em>tuple/list</em>) – This is a list of keys or values to drill down to
-the model in received_data when deserializing a response.</p></li>
-<li><p><strong>_spec_property_naming</strong> (<em>bool</em>) – True if the variable names in the input
-data are serialized names, as specified in the OpenAPI document.  False if the
-variable names in the input data are pythonic names, e.g. snake case (default).</p></li>
-<li><p><strong>_configuration</strong> (<a class="reference internal" href="datadog_api_client.v1.html#datadog_api_client.v1.Configuration" title="datadog_api_client.v1.Configuration"><em>Configuration</em></a>) – The instance to use when deserializing a
-file_type parameter.  If passed, type conversion is attempted If omitted no
-type conversion is done.</p></li>
 </ul>
 </dd>
 </dl>
@@ -21666,7 +21633,7 @@ certificates.</p></li>
 <li><p><strong>allow_insecure</strong> (<em>bool</em><em>, </em><em>optional</em>) – Allows loading insecure content for an HTTP request in an API test.</p></li>
 <li><p><strong>check_certificate_revocation</strong> (<em>bool</em><em>, </em><em>optional</em>) – For SSL test, whether or not the test should fail on revoked certificate in stapled OCSP.</p></li>
 <li><p><strong>ci</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.synthetics_test_ci_options.SyntheticsTestCiOptions" title="datadog_api_client.v1.model.synthetics_test_ci_options.SyntheticsTestCiOptions"><em>SyntheticsTestCiOptions</em></a><em>, </em><em>optional</em>) – CI/CD options for a Synthetic test.</p></li>
-<li><p><strong>device_ids</strong> (<em>[</em><a class="reference internal" href="#datadog_api_client.v1.model.synthetics_device_id.SyntheticsDeviceID" title="datadog_api_client.v1.model.synthetics_device_id.SyntheticsDeviceID"><em>SyntheticsDeviceID</em></a><em>]</em><em>, </em><em>optional</em>) – For browser test, array with the different device IDs used to run the test.</p></li>
+<li><p><strong>device_ids</strong> (<em>[</em><em>str</em><em>]</em><em>, </em><em>optional</em>) – For browser test, array with the different device IDs used to run the test.</p></li>
 <li><p><strong>disable_cors</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether or not to disable CORS mechanism.</p></li>
 <li><p><strong>disable_csp</strong> (<em>bool</em><em>, </em><em>optional</em>) – Disable Content Security Policy for browser tests.</p></li>
 <li><p><strong>enable_profiling</strong> (<em>bool</em><em>, </em><em>optional</em>) – Enable profiling for browser tests.</p></li>
@@ -22145,7 +22112,7 @@ See the <a class="reference external" href="https://docs.datadoghq.com/synthetic
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>device</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.synthetics_device_id.SyntheticsDeviceID" title="datadog_api_client.v1.model.synthetics_device_id.SyntheticsDeviceID"><em>SyntheticsDeviceID</em></a><em>, </em><em>optional</em>) – The device ID.</p></li>
+<li><p><strong>device</strong> (<em>str</em><em>, </em><em>optional</em>) – The device ID.</p></li>
 <li><p><strong>location</strong> (<em>int</em><em>, </em><em>optional</em>) – The location ID of the test run.</p></li>
 <li><p><strong>public_id</strong> (<em>str</em><em>, </em><em>optional</em>) – The public ID of the Synthetic test.</p></li>
 <li><p><strong>result_id</strong> (<em>str</em><em>, </em><em>optional</em>) – ID of the result.</p></li>
