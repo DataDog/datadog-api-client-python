@@ -10713,6 +10713,7 @@ type conversion is done.</p></li>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>field</strong> (<em>str</em>) – Widget column field.</p></li>
+<li><p><strong>is_clustering_pattern_field_path</strong> (<em>bool</em><em>, </em><em>optional</em>) – Identifies the clustering pattern field column, usable only with logs_pattern_stream.</p></li>
 <li><p><strong>width</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.list_stream_column_width.ListStreamColumnWidth" title="datadog_api_client.v1.model.list_stream_column_width.ListStreamColumnWidth"><em>ListStreamColumnWidth</em></a>) – Widget column width.</p></li>
 </ul>
 </dd>
@@ -10814,6 +10815,7 @@ type conversion is done.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
+<li><p><strong>clustering_pattern_field_path</strong> (<em>str</em><em>, </em><em>optional</em>) – Specifies the field for logs pattern clustering. Usable only with logs_pattern_stream.</p></li>
 <li><p><strong>compute</strong> (<em>[</em><a class="reference internal" href="#datadog_api_client.v1.model.list_stream_compute_items.ListStreamComputeItems" title="datadog_api_client.v1.model.list_stream_compute_items.ListStreamComputeItems"><em>ListStreamComputeItems</em></a><em>]</em><em>, </em><em>optional</em>) – Compute configuration for the List Stream Widget. Compute can be used only with the logs_transaction_stream (from 1 to 5 items) list stream source.</p></li>
 <li><p><strong>data_source</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.list_stream_source.ListStreamSource" title="datadog_api_client.v1.model.list_stream_source.ListStreamSource"><em>ListStreamSource</em></a>) – Source from which to query items to display in the stream.</p></li>
 <li><p><strong>event_size</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.widget_event_size.WidgetEventSize" title="datadog_api_client.v1.model.widget_event_size.WidgetEventSize"><em>WidgetEventSize</em></a><em>, </em><em>optional</em>) – Size to use to display an event.</p></li>
