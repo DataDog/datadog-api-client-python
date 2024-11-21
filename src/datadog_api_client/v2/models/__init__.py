@@ -265,6 +265,21 @@ from datadog_api_client.v2.model.case_update_status_request import CaseUpdateSta
 from datadog_api_client.v2.model.cases_response import CasesResponse
 from datadog_api_client.v2.model.cases_response_meta import CasesResponseMeta
 from datadog_api_client.v2.model.cases_response_meta_pagination import CasesResponseMetaPagination
+from datadog_api_client.v2.model.change_event_custom_attributes import ChangeEventCustomAttributes
+from datadog_api_client.v2.model.change_event_custom_attributes_author import ChangeEventCustomAttributesAuthor
+from datadog_api_client.v2.model.change_event_custom_attributes_author_type import ChangeEventCustomAttributesAuthorType
+from datadog_api_client.v2.model.change_event_custom_attributes_changed_resource import (
+    ChangeEventCustomAttributesChangedResource,
+)
+from datadog_api_client.v2.model.change_event_custom_attributes_changed_resource_type import (
+    ChangeEventCustomAttributesChangedResourceType,
+)
+from datadog_api_client.v2.model.change_event_custom_attributes_impacted_resources_items import (
+    ChangeEventCustomAttributesImpactedResourcesItems,
+)
+from datadog_api_client.v2.model.change_event_custom_attributes_impacted_resources_items_type import (
+    ChangeEventCustomAttributesImpactedResourcesItemsType,
+)
 from datadog_api_client.v2.model.chargeback_breakdown import ChargebackBreakdown
 from datadog_api_client.v2.model.cloud_configuration_compliance_rule_options import (
     CloudConfigurationComplianceRuleOptions,
@@ -678,6 +693,21 @@ from datadog_api_client.v2.model.entity_v3_system_kind import EntityV3SystemKind
 from datadog_api_client.v2.model.entity_v3_system_spec import EntityV3SystemSpec
 from datadog_api_client.v2.model.event import Event
 from datadog_api_client.v2.model.event_attributes import EventAttributes
+from datadog_api_client.v2.model.event_category import EventCategory
+from datadog_api_client.v2.model.event_create_request import EventCreateRequest
+from datadog_api_client.v2.model.event_create_request_payload import EventCreateRequestPayload
+from datadog_api_client.v2.model.event_create_request_type import EventCreateRequestType
+from datadog_api_client.v2.model.event_create_response import EventCreateResponse
+from datadog_api_client.v2.model.event_create_response_attributes import EventCreateResponseAttributes
+from datadog_api_client.v2.model.event_create_response_attributes_attributes import (
+    EventCreateResponseAttributesAttributes,
+)
+from datadog_api_client.v2.model.event_create_response_attributes_attributes_evt import (
+    EventCreateResponseAttributesAttributesEvt,
+)
+from datadog_api_client.v2.model.event_create_response_payload import EventCreateResponsePayload
+from datadog_api_client.v2.model.event_payload import EventPayload
+from datadog_api_client.v2.model.event_payload_attributes import EventPayloadAttributes
 from datadog_api_client.v2.model.event_priority import EventPriority
 from datadog_api_client.v2.model.event_response import EventResponse
 from datadog_api_client.v2.model.event_response_attributes import EventResponseAttributes
@@ -2370,6 +2400,13 @@ __all__ = [
     "CasesResponse",
     "CasesResponseMeta",
     "CasesResponseMetaPagination",
+    "ChangeEventCustomAttributes",
+    "ChangeEventCustomAttributesAuthor",
+    "ChangeEventCustomAttributesAuthorType",
+    "ChangeEventCustomAttributesChangedResource",
+    "ChangeEventCustomAttributesChangedResourceType",
+    "ChangeEventCustomAttributesImpactedResourcesItems",
+    "ChangeEventCustomAttributesImpactedResourcesItemsType",
     "ChargebackBreakdown",
     "CloudConfigurationComplianceRuleOptions",
     "CloudConfigurationRegoRule",
@@ -2663,6 +2700,17 @@ __all__ = [
     "EntityV3SystemSpec",
     "Event",
     "EventAttributes",
+    "EventCategory",
+    "EventCreateRequest",
+    "EventCreateRequestPayload",
+    "EventCreateRequestType",
+    "EventCreateResponse",
+    "EventCreateResponseAttributes",
+    "EventCreateResponseAttributesAttributes",
+    "EventCreateResponseAttributesAttributesEvt",
+    "EventCreateResponsePayload",
+    "EventPayload",
+    "EventPayloadAttributes",
     "EventPriority",
     "EventResponse",
     "EventResponseAttributes",
