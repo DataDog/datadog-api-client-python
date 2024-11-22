@@ -54,6 +54,7 @@ class UsageSummaryDate(ModelNormal):
             "cloud_siem_events_sum": (int,),
             "code_analysis_sa_committers_hwm": (int,),
             "code_analysis_sca_committers_hwm": (int,),
+            "code_security_host_top99p": (int,),
             "container_avg": (int,),
             "container_excl_agent_avg": (int,),
             "container_hwm": (int,),
@@ -197,6 +198,7 @@ class UsageSummaryDate(ModelNormal):
         "cloud_siem_events_sum": "cloud_siem_events_sum",
         "code_analysis_sa_committers_hwm": "code_analysis_sa_committers_hwm",
         "code_analysis_sca_committers_hwm": "code_analysis_sca_committers_hwm",
+        "code_security_host_top99p": "code_security_host_top99p",
         "container_avg": "container_avg",
         "container_excl_agent_avg": "container_excl_agent_avg",
         "container_hwm": "container_hwm",
@@ -341,6 +343,7 @@ class UsageSummaryDate(ModelNormal):
         cloud_siem_events_sum: Union[int, UnsetType] = unset,
         code_analysis_sa_committers_hwm: Union[int, UnsetType] = unset,
         code_analysis_sca_committers_hwm: Union[int, UnsetType] = unset,
+        code_security_host_top99p: Union[int, UnsetType] = unset,
         container_avg: Union[int, UnsetType] = unset,
         container_excl_agent_avg: Union[int, UnsetType] = unset,
         container_hwm: Union[int, UnsetType] = unset,
@@ -545,6 +548,9 @@ class UsageSummaryDate(ModelNormal):
 
         :param code_analysis_sca_committers_hwm: Shows the high-water mark of all static Software Composition Analysis committers over all hours in the current date for the given org.
         :type code_analysis_sca_committers_hwm: int, optional
+
+        :param code_security_host_top99p: Shows the 99th percentile of all Code Security hosts over all hours in the current date for the given org.
+        :type code_security_host_top99p: int, optional
 
         :param container_avg: Shows the average of all distinct containers over all hours in the current date for all organizations.
         :type container_avg: int, optional
@@ -936,6 +942,8 @@ class UsageSummaryDate(ModelNormal):
             kwargs["code_analysis_sa_committers_hwm"] = code_analysis_sa_committers_hwm
         if code_analysis_sca_committers_hwm is not unset:
             kwargs["code_analysis_sca_committers_hwm"] = code_analysis_sca_committers_hwm
+        if code_security_host_top99p is not unset:
+            kwargs["code_security_host_top99p"] = code_security_host_top99p
         if container_avg is not unset:
             kwargs["container_avg"] = container_avg
         if container_excl_agent_avg is not unset:

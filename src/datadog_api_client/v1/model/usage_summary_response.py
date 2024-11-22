@@ -57,6 +57,7 @@ class UsageSummaryResponse(ModelNormal):
             "cloud_siem_events_agg_sum": (int,),
             "code_analysis_sa_committers_hwm_sum": (int,),
             "code_analysis_sca_committers_hwm_sum": (int,),
+            "code_security_host_top99p_sum": (int,),
             "container_avg_sum": (int,),
             "container_excl_agent_avg_sum": (int,),
             "container_hwm_sum": (int,),
@@ -211,6 +212,7 @@ class UsageSummaryResponse(ModelNormal):
         "cloud_siem_events_agg_sum": "cloud_siem_events_agg_sum",
         "code_analysis_sa_committers_hwm_sum": "code_analysis_sa_committers_hwm_sum",
         "code_analysis_sca_committers_hwm_sum": "code_analysis_sca_committers_hwm_sum",
+        "code_security_host_top99p_sum": "code_security_host_top99p_sum",
         "container_avg_sum": "container_avg_sum",
         "container_excl_agent_avg_sum": "container_excl_agent_avg_sum",
         "container_hwm_sum": "container_hwm_sum",
@@ -366,6 +368,7 @@ class UsageSummaryResponse(ModelNormal):
         cloud_siem_events_agg_sum: Union[int, UnsetType] = unset,
         code_analysis_sa_committers_hwm_sum: Union[int, UnsetType] = unset,
         code_analysis_sca_committers_hwm_sum: Union[int, UnsetType] = unset,
+        code_security_host_top99p_sum: Union[int, UnsetType] = unset,
         container_avg_sum: Union[int, UnsetType] = unset,
         container_excl_agent_avg_sum: Union[int, UnsetType] = unset,
         container_hwm_sum: Union[int, UnsetType] = unset,
@@ -583,6 +586,9 @@ class UsageSummaryResponse(ModelNormal):
 
         :param code_analysis_sca_committers_hwm_sum: Shows the high-water mark of all static Software Composition Analysis committers over all hours in the current month for all organizations.
         :type code_analysis_sca_committers_hwm_sum: int, optional
+
+        :param code_security_host_top99p_sum: Shows the 99th percentile of all Code Security hosts over all hours in the current month for all organizations.
+        :type code_security_host_top99p_sum: int, optional
 
         :param container_avg_sum: Shows the average of all distinct containers over all hours in the current month for all organizations.
         :type container_avg_sum: int, optional
@@ -1006,6 +1012,8 @@ class UsageSummaryResponse(ModelNormal):
             kwargs["code_analysis_sa_committers_hwm_sum"] = code_analysis_sa_committers_hwm_sum
         if code_analysis_sca_committers_hwm_sum is not unset:
             kwargs["code_analysis_sca_committers_hwm_sum"] = code_analysis_sca_committers_hwm_sum
+        if code_security_host_top99p_sum is not unset:
+            kwargs["code_security_host_top99p_sum"] = code_security_host_top99p_sum
         if container_avg_sum is not unset:
             kwargs["container_avg_sum"] = container_avg_sum
         if container_excl_agent_avg_sum is not unset:
