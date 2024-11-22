@@ -1,7 +1,7 @@
 interactions:
 - request:
     body: '{"cases":[{"condition":"a > 0","name":"","notifications":[],"status":"info"}],"filters":[],"isEnabled":true,"message":"Test
-      rule","name":"Test-Update_an_existing_rule_returns_OK_response-1715358894","options":{"evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"queries":[{"aggregation":"count","distinctFields":[],"groupByFields":[],"metrics":[],"query":"@test:true"}],"tags":[],"type":"log_detection"}'
+      rule","name":"Test-Update_an_existing_rule_returns_OK_response-1732283532","options":{"evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"queries":[{"aggregation":"count","distinctFields":[],"groupByFields":[],"metrics":[],"query":"@test:true"}],"tags":[],"type":"log_detection"}'
     headers:
       accept:
       - application/json
@@ -11,7 +11,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/security_monitoring/rules
   response:
     body:
-      string: '{"id":"fu8-wg9-rsy","version":1,"name":"Test-Update_an_existing_rule_returns_OK_response-1715358894","createdAt":1715358895245,"creationAuthorId":1445416,"isDefault":false,"isPartner":false,"isEnabled":true,"isDeleted":false,"isDeprecated":false,"queries":[{"query":"@test:true","groupByFields":[],"hasOptionalGroupByFields":false,"distinctFields":[],"aggregation":"count","name":""}],"options":{"keepAlive":3600,"maxSignalDuration":86400,"detectionMethod":"threshold","evaluationWindow":900},"cases":[{"name":"","status":"info","notifications":[],"condition":"a
+      string: '{"id":"mza-hwt-ziu","version":1,"name":"Test-Update_an_existing_rule_returns_OK_response-1732283532","createdAt":1732283532973,"creationAuthorId":1445416,"isDefault":false,"isPartner":false,"isEnabled":true,"isBeta":false,"isDeleted":false,"isDeprecated":false,"queries":[{"query":"@test:true","groupByFields":[],"hasOptionalGroupByFields":false,"distinctFields":[],"aggregation":"count","name":""}],"options":{"keepAlive":3600,"maxSignalDuration":86400,"detectionMethod":"threshold","evaluationWindow":900},"cases":[{"name":"","status":"info","notifications":[],"condition":"a
         > 0"}],"message":"Test rule","tags":[],"hasExtendedTitle":false,"type":"log_detection","filters":[]}
 
         '
@@ -23,17 +23,17 @@ interactions:
       message: OK
 - request:
     body: '{"cases":[{"condition":"a > 0","name":"","notifications":[],"status":"info"}],"filters":[],"isEnabled":true,"message":"Test
-      rule","name":"Test-Update_an_existing_rule_returns_OK_response-1715358894-Updated","options":{"evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"queries":[{"aggregation":"count","distinctFields":[],"groupByFields":[],"metrics":[],"query":"@test:true"}],"tags":[]}'
+      rule","name":"Test-Update_an_existing_rule_returns_OK_response-1732283532-Updated","options":{"evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"queries":[{"aggregation":"count","distinctFields":[],"groupByFields":[],"metrics":[],"query":"@test:true"}],"tags":[]}'
     headers:
       accept:
       - application/json
       content-type:
       - application/json
     method: PUT
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/fu8-wg9-rsy
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/mza-hwt-ziu
   response:
     body:
-      string: '{"id":"fu8-wg9-rsy","version":2,"name":"Test-Update_an_existing_rule_returns_OK_response-1715358894-Updated","createdAt":1715358895245,"creationAuthorId":1445416,"updateAuthorId":1445416,"isDefault":false,"isPartner":false,"isEnabled":true,"isDeleted":false,"isDeprecated":false,"queries":[{"query":"@test:true","groupByFields":[],"hasOptionalGroupByFields":false,"distinctFields":[],"aggregation":"count","name":""}],"options":{"keepAlive":3600,"maxSignalDuration":86400,"detectionMethod":"threshold","evaluationWindow":900},"cases":[{"name":"","status":"info","notifications":[],"condition":"a
+      string: '{"id":"mza-hwt-ziu","version":2,"name":"Test-Update_an_existing_rule_returns_OK_response-1732283532-Updated","createdAt":1732283532973,"creationAuthorId":1445416,"updateAuthorId":1445416,"updatedAt":1732283533337,"isDefault":false,"isPartner":false,"isEnabled":true,"isBeta":false,"isDeleted":false,"isDeprecated":false,"queries":[{"query":"@test:true","groupByFields":[],"hasOptionalGroupByFields":false,"distinctFields":[],"aggregation":"count","name":""}],"options":{"keepAlive":3600,"maxSignalDuration":86400,"detectionMethod":"threshold","evaluationWindow":900},"cases":[{"name":"","status":"info","notifications":[],"condition":"a
         > 0"}],"message":"Test rule","tags":[],"hasExtendedTitle":false,"type":"log_detection","filters":[]}
 
         '
@@ -49,7 +49,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/fu8-wg9-rsy
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/mza-hwt-ziu
   response:
     body:
       string: ''
