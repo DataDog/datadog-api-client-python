@@ -3,119 +3,15 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
-    ModelNormal,
+    ModelComposed,
     cached_property,
-    datetime,
-    none_type,
-    unset,
-    UnsetType,
 )
 
 
-if TYPE_CHECKING:
-    from datadog_api_client.v2.model.ci_app_ci_error import CIAppCIError
-    from datadog_api_client.v2.model.ci_app_git_info import CIAppGitInfo
-    from datadog_api_client.v2.model.ci_app_pipeline_event_pipeline_level import CIAppPipelineEventPipelineLevel
-    from datadog_api_client.v2.model.ci_app_host_info import CIAppHostInfo
-    from datadog_api_client.v2.model.ci_app_pipeline_event_parameters import CIAppPipelineEventParameters
-    from datadog_api_client.v2.model.ci_app_pipeline_event_parent_pipeline import CIAppPipelineEventParentPipeline
-    from datadog_api_client.v2.model.ci_app_pipeline_event_previous_pipeline import CIAppPipelineEventPreviousPipeline
-    from datadog_api_client.v2.model.ci_app_pipeline_event_pipeline_status import CIAppPipelineEventPipelineStatus
-
-
-class CIAppPipelineEventPipeline(ModelNormal):
-    validations = {
-        "queue_time": {
-            "inclusive_minimum": 0,
-        },
-    }
-
-    @cached_property
-    def openapi_types(_):
-        from datadog_api_client.v2.model.ci_app_ci_error import CIAppCIError
-        from datadog_api_client.v2.model.ci_app_git_info import CIAppGitInfo
-        from datadog_api_client.v2.model.ci_app_pipeline_event_pipeline_level import CIAppPipelineEventPipelineLevel
-        from datadog_api_client.v2.model.ci_app_host_info import CIAppHostInfo
-        from datadog_api_client.v2.model.ci_app_pipeline_event_parameters import CIAppPipelineEventParameters
-        from datadog_api_client.v2.model.ci_app_pipeline_event_parent_pipeline import CIAppPipelineEventParentPipeline
-        from datadog_api_client.v2.model.ci_app_pipeline_event_previous_pipeline import (
-            CIAppPipelineEventPreviousPipeline,
-        )
-        from datadog_api_client.v2.model.ci_app_pipeline_event_pipeline_status import CIAppPipelineEventPipelineStatus
-
-        return {
-            "end": (datetime,),
-            "error": (CIAppCIError,),
-            "git": (CIAppGitInfo,),
-            "is_manual": (bool, none_type),
-            "is_resumed": (bool, none_type),
-            "level": (CIAppPipelineEventPipelineLevel,),
-            "metrics": ([str],),
-            "name": (str,),
-            "node": (CIAppHostInfo,),
-            "parameters": (CIAppPipelineEventParameters,),
-            "parent_pipeline": (CIAppPipelineEventParentPipeline,),
-            "partial_retry": (bool,),
-            "pipeline_id": (str,),
-            "previous_attempt": (CIAppPipelineEventPreviousPipeline,),
-            "queue_time": (int, none_type),
-            "start": (datetime,),
-            "status": (CIAppPipelineEventPipelineStatus,),
-            "tags": ([str],),
-            "unique_id": (str,),
-            "url": (str,),
-        }
-
-    attribute_map = {
-        "end": "end",
-        "error": "error",
-        "git": "git",
-        "is_manual": "is_manual",
-        "is_resumed": "is_resumed",
-        "level": "level",
-        "metrics": "metrics",
-        "name": "name",
-        "node": "node",
-        "parameters": "parameters",
-        "parent_pipeline": "parent_pipeline",
-        "partial_retry": "partial_retry",
-        "pipeline_id": "pipeline_id",
-        "previous_attempt": "previous_attempt",
-        "queue_time": "queue_time",
-        "start": "start",
-        "status": "status",
-        "tags": "tags",
-        "unique_id": "unique_id",
-        "url": "url",
-    }
-
-    def __init__(
-        self_,
-        end: datetime,
-        level: CIAppPipelineEventPipelineLevel,
-        name: str,
-        partial_retry: bool,
-        start: datetime,
-        status: CIAppPipelineEventPipelineStatus,
-        unique_id: str,
-        url: str,
-        error: Union[CIAppCIError, none_type, UnsetType] = unset,
-        git: Union[CIAppGitInfo, none_type, UnsetType] = unset,
-        is_manual: Union[bool, none_type, UnsetType] = unset,
-        is_resumed: Union[bool, none_type, UnsetType] = unset,
-        metrics: Union[List[str], none_type, UnsetType] = unset,
-        node: Union[CIAppHostInfo, none_type, UnsetType] = unset,
-        parameters: Union[CIAppPipelineEventParameters, none_type, UnsetType] = unset,
-        parent_pipeline: Union[CIAppPipelineEventParentPipeline, none_type, UnsetType] = unset,
-        pipeline_id: Union[str, UnsetType] = unset,
-        previous_attempt: Union[CIAppPipelineEventPreviousPipeline, none_type, UnsetType] = unset,
-        queue_time: Union[int, none_type, UnsetType] = unset,
-        tags: Union[List[str], none_type, UnsetType] = unset,
-        **kwargs,
-    ):
+class CIAppPipelineEventPipeline(ModelComposed):
+    def __init__(self, **kwargs):
         """
         Details of the top level pipeline, build, or workflow of your CI.
 
@@ -126,7 +22,7 @@ class CIAppPipelineEventPipeline(ModelNormal):
         :type error: CIAppCIError, none_type, optional
 
         :param git: If pipelines are triggered due to actions to a Git repository, then all payloads must contain this.
-            Note that either ``tag`` or ``branch`` has to be provided, but not both.
+            Note that either `tag` or `branch` has to be provided, but not both.
         :type git: CIAppGitInfo, none_type, optional
 
         :param is_manual: Whether or not the pipeline was triggered manually by the user.
@@ -138,7 +34,7 @@ class CIAppPipelineEventPipeline(ModelNormal):
         :param level: Used to distinguish between pipelines, stages, jobs, and steps.
         :type level: CIAppPipelineEventPipelineLevel
 
-        :param metrics: A list of user-defined metrics. The metrics must follow the ``key:value`` pattern and the value must be numeric.
+        :param metrics: A list of user-defined metrics. The metrics must follow the `key:value` pattern and the value must be numeric.
         :type metrics: [str], none_type, optional
 
         :param name: Name of the pipeline. All pipeline runs for the builds should have the same name.
@@ -158,7 +54,7 @@ class CIAppPipelineEventPipeline(ModelNormal):
         :type partial_retry: bool
 
         :param pipeline_id: Any ID used in the provider to identify the pipeline run even if it is not unique across retries.
-            If the ``pipeline_id`` is unique, then both ``unique_id`` and ``pipeline_id`` can be set to the same value.
+            If the `pipeline_id` is unique, then both `unique_id` and `pipeline_id` can be set to the same value.
         :type pipeline_id: str, optional
 
         :param previous_attempt: If the pipeline is a retry, this should contain the details of the previous attempt.
@@ -173,7 +69,7 @@ class CIAppPipelineEventPipeline(ModelNormal):
         :param status: The final status of the pipeline.
         :type status: CIAppPipelineEventPipelineStatus
 
-        :param tags: A list of user-defined tags. The tags must follow the ``key:value`` pattern.
+        :param tags: A list of user-defined tags. The tags must follow the `key:value` pattern.
         :type tags: [str], none_type, optional
 
         :param unique_id: UUID of the pipeline run. The ID has to be unique across retries and pipelines,
@@ -183,37 +79,27 @@ class CIAppPipelineEventPipeline(ModelNormal):
         :param url: The URL to look at the pipeline in the CI provider UI.
         :type url: str
         """
-        if error is not unset:
-            kwargs["error"] = error
-        if git is not unset:
-            kwargs["git"] = git
-        if is_manual is not unset:
-            kwargs["is_manual"] = is_manual
-        if is_resumed is not unset:
-            kwargs["is_resumed"] = is_resumed
-        if metrics is not unset:
-            kwargs["metrics"] = metrics
-        if node is not unset:
-            kwargs["node"] = node
-        if parameters is not unset:
-            kwargs["parameters"] = parameters
-        if parent_pipeline is not unset:
-            kwargs["parent_pipeline"] = parent_pipeline
-        if pipeline_id is not unset:
-            kwargs["pipeline_id"] = pipeline_id
-        if previous_attempt is not unset:
-            kwargs["previous_attempt"] = previous_attempt
-        if queue_time is not unset:
-            kwargs["queue_time"] = queue_time
-        if tags is not unset:
-            kwargs["tags"] = tags
         super().__init__(kwargs)
 
-        self_.end = end
-        self_.level = level
-        self_.name = name
-        self_.partial_retry = partial_retry
-        self_.start = start
-        self_.status = status
-        self_.unique_id = unique_id
-        self_.url = url
+    @cached_property
+    def _composed_schemas(_):
+        # we need this here to make our import statements work
+        # we must store _composed_schemas in here so the code is only run
+        # when we invoke this method. If we kept this at the class
+        # level we would get an error because the class level
+        # code would be run when this module is imported, and these composed
+        # classes don't exist yet because their module has not finished
+        # loading
+        from datadog_api_client.v2.model.ci_app_pipeline_event_finished_pipeline import (
+            CIAppPipelineEventFinishedPipeline,
+        )
+        from datadog_api_client.v2.model.ci_app_pipeline_event_in_progress_pipeline import (
+            CIAppPipelineEventInProgressPipeline,
+        )
+
+        return {
+            "oneOf": [
+                CIAppPipelineEventFinishedPipeline,
+                CIAppPipelineEventInProgressPipeline,
+            ],
+        }
