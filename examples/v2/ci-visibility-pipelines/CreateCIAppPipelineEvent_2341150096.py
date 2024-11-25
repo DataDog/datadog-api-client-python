@@ -1,5 +1,5 @@
 """
-Send pipeline job event returns "Request accepted for processing" response
+Send running pipeline event returns "Request accepted for processing" response
 """
 
 from datetime import datetime
@@ -14,23 +14,29 @@ from datadog_api_client.v2.model.ci_app_create_pipeline_event_request_data impor
 from datadog_api_client.v2.model.ci_app_create_pipeline_event_request_data_type import (
     CIAppCreatePipelineEventRequestDataType,
 )
-from datadog_api_client.v2.model.ci_app_pipeline_event_job import CIAppPipelineEventJob
-from datadog_api_client.v2.model.ci_app_pipeline_event_job_level import CIAppPipelineEventJobLevel
-from datadog_api_client.v2.model.ci_app_pipeline_event_job_status import CIAppPipelineEventJobStatus
+from datadog_api_client.v2.model.ci_app_git_info import CIAppGitInfo
+from datadog_api_client.v2.model.ci_app_pipeline_event_in_progress_pipeline import CIAppPipelineEventInProgressPipeline
+from datadog_api_client.v2.model.ci_app_pipeline_event_pipeline_in_progress_status import (
+    CIAppPipelineEventPipelineInProgressStatus,
+)
+from datadog_api_client.v2.model.ci_app_pipeline_event_pipeline_level import CIAppPipelineEventPipelineLevel
 
 body = CIAppCreatePipelineEventRequest(
     data=CIAppCreatePipelineEventRequestData(
         attributes=CIAppCreatePipelineEventRequestAttributes(
-            resource=CIAppPipelineEventJob(
-                level=CIAppPipelineEventJobLevel.JOB,
-                id="cf9456de-8b9e-4c27-aa79-27b1e78c1a33",
-                name="Build image",
-                pipeline_unique_id="3eacb6f3-ff04-4e10-8a9c-46e6d054024a",
-                pipeline_name="Deploy to AWS",
+            resource=CIAppPipelineEventInProgressPipeline(
+                level=CIAppPipelineEventPipelineLevel.PIPELINE,
+                unique_id="3eacb6f3-ff04-4e10-8a9c-46e6d054024a",
+                name="Deploy to AWS",
+                url="https://my-ci-provider.example/pipelines/my-pipeline/run/1",
                 start=(datetime.now() + relativedelta(seconds=-120)),
-                end=(datetime.now() + relativedelta(seconds=-30)),
-                status=CIAppPipelineEventJobStatus.ERROR,
-                url="https://my-ci-provider.example/jobs/my-jobs/run/1",
+                status=CIAppPipelineEventPipelineInProgressStatus.RUNNING,
+                partial_retry=False,
+                git=CIAppGitInfo(
+                    repository_url="https://github.com/DataDog/datadog-agent",
+                    sha="7f263865994b76066c4612fd1965215e7dcb4cd2",
+                    author_email="john.doe@email.com",
+                ),
             ),
         ),
         type=CIAppCreatePipelineEventRequestDataType.CIPIPELINE_RESOURCE_REQUEST,
