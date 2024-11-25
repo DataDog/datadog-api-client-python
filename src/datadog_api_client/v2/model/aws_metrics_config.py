@@ -16,9 +16,7 @@ from datadog_api_client.model_utils import (
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.aws_namespace_filters import AWSNamespaceFilters
     from datadog_api_client.v2.model.aws_namespace_tag_filter import AWSNamespaceTagFilter
-    from datadog_api_client.v2.model.aws_namespace_filters_exclude_all import AWSNamespaceFiltersExcludeAll
     from datadog_api_client.v2.model.aws_namespace_filters_exclude_only import AWSNamespaceFiltersExcludeOnly
-    from datadog_api_client.v2.model.aws_namespace_filters_include_all import AWSNamespaceFiltersIncludeAll
     from datadog_api_client.v2.model.aws_namespace_filters_include_only import AWSNamespaceFiltersIncludeOnly
 
 
@@ -53,12 +51,7 @@ class AWSMetricsConfig(ModelNormal):
         collect_custom_metrics: Union[bool, UnsetType] = unset,
         enabled: Union[bool, UnsetType] = unset,
         namespace_filters: Union[
-            AWSNamespaceFilters,
-            AWSNamespaceFiltersExcludeAll,
-            AWSNamespaceFiltersExcludeOnly,
-            AWSNamespaceFiltersIncludeAll,
-            AWSNamespaceFiltersIncludeOnly,
-            UnsetType,
+            AWSNamespaceFilters, AWSNamespaceFiltersExcludeOnly, AWSNamespaceFiltersIncludeOnly, UnsetType
         ] = unset,
         tag_filters: Union[List[AWSNamespaceTagFilter], UnsetType] = unset,
         **kwargs,

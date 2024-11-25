@@ -36,9 +36,7 @@ from datadog_api_client.v2.model.aws_logs_services_response_data import AWSLogsS
 from datadog_api_client.v2.model.aws_logs_services_response_data_type import AWSLogsServicesResponseDataType
 from datadog_api_client.v2.model.aws_metrics_config import AWSMetricsConfig
 from datadog_api_client.v2.model.aws_namespace_filters import AWSNamespaceFilters
-from datadog_api_client.v2.model.aws_namespace_filters_exclude_all import AWSNamespaceFiltersExcludeAll
 from datadog_api_client.v2.model.aws_namespace_filters_exclude_only import AWSNamespaceFiltersExcludeOnly
-from datadog_api_client.v2.model.aws_namespace_filters_include_all import AWSNamespaceFiltersIncludeAll
 from datadog_api_client.v2.model.aws_namespace_filters_include_only import AWSNamespaceFiltersIncludeOnly
 from datadog_api_client.v2.model.aws_namespace_tag_filter import AWSNamespaceTagFilter
 from datadog_api_client.v2.model.aws_namespaces_response import AWSNamespacesResponse
@@ -2189,9 +2187,7 @@ __all__ = [
     "AWSLogsServicesResponseDataType",
     "AWSMetricsConfig",
     "AWSNamespaceFilters",
-    "AWSNamespaceFiltersExcludeAll",
     "AWSNamespaceFiltersExcludeOnly",
-    "AWSNamespaceFiltersIncludeAll",
     "AWSNamespaceFiltersIncludeOnly",
     "AWSNamespaceTagFilter",
     "AWSNamespacesResponse",
