@@ -15,14 +15,8 @@ class AWSNamespaceFilters(ModelComposed):
         """
         AWS Metrics namespace filters
 
-        :param exclude_all: Exclude all namespaces
-        :type exclude_all: bool
-
         :param exclude_only: Exclude only these namespaces
         :type exclude_only: [str]
-
-        :param include_all: Include all namespaces
-        :type include_all: bool
 
         :param include_only: Include only these namespaces
         :type include_only: [str]
@@ -38,16 +32,12 @@ class AWSNamespaceFilters(ModelComposed):
         # code would be run when this module is imported, and these composed
         # classes don't exist yet because their module has not finished
         # loading
-        from datadog_api_client.v2.model.aws_namespace_filters_exclude_all import AWSNamespaceFiltersExcludeAll
         from datadog_api_client.v2.model.aws_namespace_filters_exclude_only import AWSNamespaceFiltersExcludeOnly
-        from datadog_api_client.v2.model.aws_namespace_filters_include_all import AWSNamespaceFiltersIncludeAll
         from datadog_api_client.v2.model.aws_namespace_filters_include_only import AWSNamespaceFiltersIncludeOnly
 
         return {
             "oneOf": [
-                AWSNamespaceFiltersExcludeAll,
                 AWSNamespaceFiltersExcludeOnly,
-                AWSNamespaceFiltersIncludeAll,
                 AWSNamespaceFiltersIncludeOnly,
             ],
         }
