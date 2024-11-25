@@ -732,24 +732,10 @@ datadog\_api\_client.v2.model.aws\_namespace\_filters module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.aws\_namespace\_filters\_exclude\_all module
---------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.aws_namespace_filters_exclude_all
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v2.model.aws\_namespace\_filters\_exclude\_only module
 ---------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.aws_namespace_filters_exclude_only
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.aws\_namespace\_filters\_include\_all module
---------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.aws_namespace_filters_include_all
    :members:
    :show-inheritance:
 
