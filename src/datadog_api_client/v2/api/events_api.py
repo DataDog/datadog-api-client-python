@@ -128,7 +128,9 @@ class EventsApi:
     ) -> EventCreateResponsePayload:
         """Post an event.
 
-        This endpoint allows you to post events. Only events with ``change`` category are under General Availability.
+        This endpoint allows you to post events.
+
+        Only events with **change category** are under General Availability. Refer to `Change Tracking <https://docs.datadoghq.com/change_tracking>`_ for further details.
 
         :param body: Event request object
         :type body: EventCreateRequestPayload
