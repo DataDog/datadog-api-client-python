@@ -51,7 +51,7 @@ class SecurityMonitoringRuleThirdPartyOptions(ModelNormal):
         **kwargs,
     ):
         """
-        Options on third party rules.
+        Options on third party detection method.
 
         :param default_notifications: Notification targets for the logs that do not correspond to any of the cases.
         :type default_notifications: [str], optional

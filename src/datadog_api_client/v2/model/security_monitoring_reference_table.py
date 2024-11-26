@@ -42,7 +42,7 @@ class SecurityMonitoringReferenceTable(ModelNormal):
         **kwargs,
     ):
         """
-        Reference table for the rule.
+        Reference tables used in the queries.
 
         :param check_presence: Whether to include or exclude the matched values.
         :type check_presence: bool, optional
@@ -53,7 +53,7 @@ class SecurityMonitoringReferenceTable(ModelNormal):
         :param log_field_path: The field in the log to match against the reference table.
         :type log_field_path: str, optional
 
-        :param rule_query_name: The name of the rule query to apply the reference table to.
+        :param rule_query_name: The name of the query to apply the reference table to.
         :type rule_query_name: str, optional
 
         :param table_name: The name of the reference table.

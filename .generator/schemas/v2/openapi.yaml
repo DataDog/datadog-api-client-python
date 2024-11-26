@@ -13495,7 +13495,7 @@ components:
             $ref: '#/components/schemas/SecurityMonitoringStandardRuleQuery'
           type: array
         referenceTables:
-          description: Reference tables for the rule.
+          description: Reference tables used in the queries.
           items:
             $ref: '#/components/schemas/SecurityMonitoringReferenceTable'
           type: array
@@ -13505,8 +13505,8 @@ components:
             type: string
           type: array
         thirdPartyCases:
-          description: Cases for generating results from third-party rules. Only available
-            for third-party rules.
+          description: Cases for generating results from third-party detection method.
+            Only available for third-party detection method.
           example: []
           items:
             $ref: '#/components/schemas/SecurityMonitoringThirdPartyRuleCaseCreate'
@@ -21191,7 +21191,7 @@ components:
           $ref: '#/components/schemas/ResponseMetaAttributes'
       type: object
     SecurityMonitoringReferenceTable:
-      description: Reference table for the rule.
+      description: Reference tables used in the queries.
       properties:
         checkPresence:
           description: Whether to include or exclude the matched values.
@@ -21203,7 +21203,7 @@ components:
           description: The field in the log to match against the reference table.
           type: string
         ruleQueryName:
-          description: The name of the rule query to apply the reference table to.
+          description: The name of the query to apply the reference table to.
           type: string
         tableName:
           description: The name of the reference table.
@@ -21234,7 +21234,7 @@ components:
       description: Case when signal is generated.
       properties:
         condition:
-          description: 'A rule case contains logical operations (`>`,`>=`, `&&`, `||`)
+          description: 'A case contains logical operations (`>`,`>=`, `&&`, `||`)
             to determine if a signal should be generated
 
             based on the event counts in the previously defined queries.'
@@ -21243,7 +21243,7 @@ components:
           description: Name of the case.
           type: string
         notifications:
-          description: Notification targets for each rule case.
+          description: Notification targets.
           items:
             description: Notification.
             type: string
@@ -21305,7 +21305,8 @@ components:
       description: 'A time window is specified to match when at least one of the cases
         matches true. This is a sliding window
 
-        and evaluates in real time. For third party rules, this field is not used.'
+        and evaluates in real time. For third party detection method, this field is
+        not used.'
       enum:
       - 0
       - 60
@@ -21334,7 +21335,7 @@ components:
       x-enum-varnames:
       - LOG4SHELL
     SecurityMonitoringRuleImpossibleTravelOptions:
-      description: Options on impossible travel rules.
+      description: Options on impossible travel detection method.
       properties:
         baselineUserLocations:
           $ref: '#/components/schemas/SecurityMonitoringRuleImpossibleTravelOptionsBaselineUserLocations'
@@ -21350,7 +21351,7 @@ components:
     SecurityMonitoringRuleKeepAlive:
       description: "Once a signal is generated, the signal will remain \u201Copen\u201D
         if a case is matched at least once within\nthis keep alive window. For third
-        party rules, this field is not used."
+        party detection method, this field is not used."
       enum:
       - 0
       - 60
@@ -21408,7 +21409,7 @@ components:
       - TWELVE_HOURS
       - ONE_DAY
     SecurityMonitoringRuleNewValueOptions:
-      description: Options on new value rules.
+      description: Options on new value detection method.
       properties:
         forgetAfter:
           $ref: '#/components/schemas/SecurityMonitoringRuleNewValueOptionsForgetAfter'
@@ -21478,7 +21479,7 @@ components:
       - ZERO_OCCURRENCES
       - ONE_OCCURRENCE
     SecurityMonitoringRuleOptions:
-      description: Options on rules.
+      description: Options.
       properties:
         complianceRuleOptions:
           $ref: '#/components/schemas/CloudConfigurationComplianceRuleOptions'
@@ -21620,7 +21621,7 @@ components:
           type: array
       type: object
     SecurityMonitoringRuleThirdPartyOptions:
-      description: Options on third party rules.
+      description: Options on third party detection method.
       properties:
         defaultNotifications:
           description: Notification targets for the logs that do not correspond to
@@ -23016,7 +23017,7 @@ components:
           description: Name of the case.
           type: string
         notifications:
-          description: Notification targets for each rule case.
+          description: Notification targets for each case.
           items:
             description: Notification.
             type: string
