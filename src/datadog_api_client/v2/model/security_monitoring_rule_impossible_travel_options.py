@@ -26,7 +26,7 @@ class SecurityMonitoringRuleImpossibleTravelOptions(ModelNormal):
 
     def __init__(self_, baseline_user_locations: Union[bool, UnsetType] = unset, **kwargs):
         """
-        Options on impossible travel rules.
+        Options on impossible travel detection method.
 
         :param baseline_user_locations: If true, signals are suppressed for the first 24 hours. In that time, Datadog learns the user's regular
             access locations. This can be helpful to reduce noise and infer VPN usage or credentialed API access.

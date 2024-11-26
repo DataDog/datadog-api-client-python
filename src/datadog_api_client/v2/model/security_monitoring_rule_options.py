@@ -111,7 +111,7 @@ class SecurityMonitoringRuleOptions(ModelNormal):
         **kwargs,
     ):
         """
-        Options on rules.
+        Options.
 
         :param compliance_rule_options: Options for cloud_configuration rules.
             Fields ``resourceType`` and ``regoRule`` are mandatory when managing custom ``cloud_configuration`` rules.
@@ -126,27 +126,27 @@ class SecurityMonitoringRuleOptions(ModelNormal):
         :type detection_method: SecurityMonitoringRuleDetectionMethod, optional
 
         :param evaluation_window: A time window is specified to match when at least one of the cases matches true. This is a sliding window
-            and evaluates in real time. For third party rules, this field is not used.
+            and evaluates in real time. For third party detection method, this field is not used.
         :type evaluation_window: SecurityMonitoringRuleEvaluationWindow, optional
 
         :param hardcoded_evaluator_type: Hardcoded evaluator type.
         :type hardcoded_evaluator_type: SecurityMonitoringRuleHardcodedEvaluatorType, optional
 
-        :param impossible_travel_options: Options on impossible travel rules.
+        :param impossible_travel_options: Options on impossible travel detection method.
         :type impossible_travel_options: SecurityMonitoringRuleImpossibleTravelOptions, optional
 
         :param keep_alive: Once a signal is generated, the signal will remain “open” if a case is matched at least once within
-            this keep alive window. For third party rules, this field is not used.
+            this keep alive window. For third party detection method, this field is not used.
         :type keep_alive: SecurityMonitoringRuleKeepAlive, optional
 
         :param max_signal_duration: A signal will “close” regardless of the query being matched once the time exceeds the maximum duration.
             This time is calculated from the first seen timestamp.
         :type max_signal_duration: SecurityMonitoringRuleMaxSignalDuration, optional
 
-        :param new_value_options: Options on new value rules.
+        :param new_value_options: Options on new value detection method.
         :type new_value_options: SecurityMonitoringRuleNewValueOptions, optional
 
-        :param third_party_rule_options: Options on third party rules.
+        :param third_party_rule_options: Options on third party detection method.
         :type third_party_rule_options: SecurityMonitoringRuleThirdPartyOptions, optional
         """
         if compliance_rule_options is not unset:

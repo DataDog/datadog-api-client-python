@@ -116,19 +116,19 @@ class JobDefinition(ModelNormal):
         :param name: Job name.
         :type name: str
 
-        :param options: Options on rules.
+        :param options: Options.
         :type options: SecurityMonitoringRuleOptions, optional
 
         :param queries: Queries for selecting logs analyzed by the job.
         :type queries: [SecurityMonitoringStandardRuleQuery]
 
-        :param reference_tables: Reference tables for the rule.
+        :param reference_tables: Reference tables used in the queries.
         :type reference_tables: [SecurityMonitoringReferenceTable], optional
 
         :param tags: Tags for generated signals.
         :type tags: [str], optional
 
-        :param third_party_cases: Cases for generating results from third-party rules. Only available for third-party rules.
+        :param third_party_cases: Cases for generating results from third-party detection method. Only available for third-party detection method.
         :type third_party_cases: [SecurityMonitoringThirdPartyRuleCaseCreate], optional
 
         :param to: Ending time of data analyzed by the job.
