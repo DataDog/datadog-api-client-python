@@ -31492,6 +31492,7 @@ paths:
           $ref: '#/components/responses/TooManyRequestsResponse'
       security:
       - apiKeyAuth: []
+        appKeyAuth: []
       summary: Post an event
       tags:
       - Events
