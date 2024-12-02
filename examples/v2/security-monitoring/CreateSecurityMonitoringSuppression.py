@@ -20,6 +20,7 @@ body = SecurityMonitoringSuppressionCreateRequest(
         attributes=SecurityMonitoringSuppressionCreateAttributes(
             description="This rule suppresses low-severity signals in staging environments.",
             enabled=True,
+            start_date=1637493071000,
             expiration_date=1638443471000,
             name="Example-Security-Monitoring",
             rule_query="type:log_detection source:cloudtrail",

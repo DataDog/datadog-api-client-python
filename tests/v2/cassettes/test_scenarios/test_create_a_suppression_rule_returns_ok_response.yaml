@@ -1,8 +1,9 @@
 interactions:
 - request:
     body: '{"data":{"attributes":{"description":"This rule suppresses low-severity
-      signals in staging environments.","enabled":true,"expiration_date":1718039223000,"name":"Test-Create_a_suppression_rule_returns_OK_response-1716224823","rule_query":"type:log_detection
-      source:cloudtrail","suppression_query":"env:staging status:low"},"type":"suppressions"}}'
+      signals in staging environments.","enabled":true,"expiration_date":1734535354000,"name":"Test-Create_a_suppression_rule_returns_OK_response-1732720954","rule_query":"type:log_detection
+      source:cloudtrail","start_date":1733584954000,"suppression_query":"env:staging
+      status:low"},"type":"suppressions"}}'
     headers:
       accept:
       - application/json
@@ -12,14 +13,13 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/suppressions
   response:
     body:
-      string: '{"data":{"id":"8qj-mmz-zym","attributes":{"name":"Test-Create_a_suppression_rule_returns_OK_response-1716224823","enabled":true,"description":"This
-        rule suppresses low-severity signals in staging environments.","rule_query":"type:log_detection
-        source:cloudtrail","suppression_query":"env:staging status:low","data_exclusion_query":"","expiration_date":1718039223000,"version":1,"creation_date":1716224823374,"update_date":1716224823374,"creator":{"name":null,"handle":"frog@datadoghq.com"},"updater":{"name":null,"handle":"frog@datadoghq.com"}},"type":"suppressions"}}
-
-        '
+      string: '{"data":{"id":"ejv-ksi-r4j","type":"suppressions","attributes":{"creation_date":1732720954868,"creator":{"handle":"frog@datadoghq.com","name":""},"data_exclusion_query":"","description":"This
+        rule suppresses low-severity signals in staging environments.","editable":true,"enabled":true,"expiration_date":1734535354000,"name":"Test-Create_a_suppression_rule_returns_OK_response-1732720954","rule_query":"type:log_detection
+        source:cloudtrail","start_date":1733584954000,"suppression_query":"env:staging
+        status:low","update_date":1732720954868,"updater":{"handle":"frog@datadoghq.com","name":""},"version":1}}}'
     headers:
       content-type:
-      - application/json
+      - application/vnd.api+json
     status:
       code: 200
       message: OK
@@ -29,13 +29,11 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/suppressions/8qj-mmz-zym
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/suppressions/ejv-ksi-r4j
   response:
     body:
       string: ''
-    headers:
-      content-type:
-      - text/html; charset=utf-8
+    headers: {}
     status:
       code: 204
       message: No Content
