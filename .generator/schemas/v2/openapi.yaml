@@ -42741,6 +42741,10 @@ paths:
       summary: Get billing dimension mapping for usage endpoints
       tags:
       - Usage Metering
+      x-permission:
+        operator: OR
+        permissions:
+        - usage_read
       x-unstable: '**Note**: This endpoint is in Preview.
 
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).'
