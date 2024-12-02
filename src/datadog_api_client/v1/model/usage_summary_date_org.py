@@ -752,7 +752,7 @@ class UsageSummaryDateOrg(ModelNormal):
         :param netflow_indexed_events_count_sum: Shows the sum of all Network flows indexed over all hours in the current date for the given org (To be deprecated on October 1st, 2024). **Deprecated**.
         :type netflow_indexed_events_count_sum: int, optional
 
-        :param npm_host_top99p: Shows the 99th percentile of all distinct Networks hosts over all hours in the current date for the given org.
+        :param npm_host_top99p: Shows the 99th percentile of all distinct Cloud Network Monitoring hosts (formerly known as Network hosts) over all hours in the current date for the given org.
         :type npm_host_top99p: int, optional
 
         :param observability_pipelines_bytes_processed_sum: Sum of all observability pipelines bytes processed over all hours in the current date for the given org.
