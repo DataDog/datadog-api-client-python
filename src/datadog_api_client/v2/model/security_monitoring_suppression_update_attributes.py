@@ -30,6 +30,7 @@ class SecurityMonitoringSuppressionUpdateAttributes(ModelNormal):
             "expiration_date": (int, none_type),
             "name": (str,),
             "rule_query": (str,),
+            "start_date": (int, none_type),
             "suppression_query": (str,),
             "version": (int,),
         }
@@ -41,6 +42,7 @@ class SecurityMonitoringSuppressionUpdateAttributes(ModelNormal):
         "expiration_date": "expiration_date",
         "name": "name",
         "rule_query": "rule_query",
+        "start_date": "start_date",
         "suppression_query": "suppression_query",
         "version": "version",
     }
@@ -53,6 +55,7 @@ class SecurityMonitoringSuppressionUpdateAttributes(ModelNormal):
         expiration_date: Union[int, none_type, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
         rule_query: Union[str, UnsetType] = unset,
+        start_date: Union[int, none_type, UnsetType] = unset,
         suppression_query: Union[str, UnsetType] = unset,
         version: Union[int, UnsetType] = unset,
         **kwargs,
@@ -78,6 +81,9 @@ class SecurityMonitoringSuppressionUpdateAttributes(ModelNormal):
         :param rule_query: The rule query of the suppression rule, with the same syntax as the search bar for detection rules.
         :type rule_query: str, optional
 
+        :param start_date: A Unix millisecond timestamp giving the start date for the suppression rule. After this date, it starts suppressing signals. If unset, the start date of the suppression rule is left untouched. If set to ``null`` , the start date is removed.
+        :type start_date: int, none_type, optional
+
         :param suppression_query: The suppression query of the suppression rule. If a signal matches this query, it is suppressed and not triggered. Same syntax as the queries to search signals in the signal explorer.
         :type suppression_query: str, optional
 
@@ -96,6 +102,8 @@ class SecurityMonitoringSuppressionUpdateAttributes(ModelNormal):
             kwargs["name"] = name
         if rule_query is not unset:
             kwargs["rule_query"] = rule_query
+        if start_date is not unset:
+            kwargs["start_date"] = start_date
         if suppression_query is not unset:
             kwargs["suppression_query"] = suppression_query
         if version is not unset:

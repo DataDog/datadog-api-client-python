@@ -23,6 +23,7 @@ class SecurityMonitoringSuppressionCreateAttributes(ModelNormal):
             "expiration_date": (int,),
             "name": (str,),
             "rule_query": (str,),
+            "start_date": (int,),
             "suppression_query": (str,),
         }
 
@@ -33,6 +34,7 @@ class SecurityMonitoringSuppressionCreateAttributes(ModelNormal):
         "expiration_date": "expiration_date",
         "name": "name",
         "rule_query": "rule_query",
+        "start_date": "start_date",
         "suppression_query": "suppression_query",
     }
 
@@ -44,6 +46,7 @@ class SecurityMonitoringSuppressionCreateAttributes(ModelNormal):
         data_exclusion_query: Union[str, UnsetType] = unset,
         description: Union[str, UnsetType] = unset,
         expiration_date: Union[int, UnsetType] = unset,
+        start_date: Union[int, UnsetType] = unset,
         suppression_query: Union[str, UnsetType] = unset,
         **kwargs,
     ):
@@ -68,6 +71,9 @@ class SecurityMonitoringSuppressionCreateAttributes(ModelNormal):
         :param rule_query: The rule query of the suppression rule, with the same syntax as the search bar for detection rules.
         :type rule_query: str
 
+        :param start_date: A Unix millisecond timestamp giving the start date for the suppression rule. After this date, it starts suppressing signals.
+        :type start_date: int, optional
+
         :param suppression_query: The suppression query of the suppression rule. If a signal matches this query, it is suppressed and is not triggered. It uses the same syntax as the queries to search signals in the Signals Explorer.
         :type suppression_query: str, optional
         """
@@ -77,6 +83,8 @@ class SecurityMonitoringSuppressionCreateAttributes(ModelNormal):
             kwargs["description"] = description
         if expiration_date is not unset:
             kwargs["expiration_date"] = expiration_date
+        if start_date is not unset:
+            kwargs["start_date"] = start_date
         if suppression_query is not unset:
             kwargs["suppression_query"] = suppression_query
         super().__init__(kwargs)
