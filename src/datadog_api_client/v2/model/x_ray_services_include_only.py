@@ -26,9 +26,9 @@ class XRayServicesIncludeOnly(ModelNormal):
 
     def __init__(self_, include_only: List[str], **kwargs):
         """
-        Include only these services
+        Include only these services. Defaults to ``[]``.
 
-        :param include_only: Include only these services
+        :param include_only: Include only these services.
         :type include_only: [str]
         """
         super().__init__(kwargs)

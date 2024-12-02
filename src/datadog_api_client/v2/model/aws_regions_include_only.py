@@ -24,9 +24,9 @@ class AWSRegionsIncludeOnly(ModelNormal):
 
     def __init__(self_, include_only: List[str], **kwargs):
         """
-        Include only these regions
+        Include only these regions.
 
-        :param include_only: Include only these regions
+        :param include_only: Include only these regions.
         :type include_only: [str]
         """
         super().__init__(kwargs)

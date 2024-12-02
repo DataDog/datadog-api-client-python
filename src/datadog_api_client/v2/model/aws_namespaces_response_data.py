@@ -43,9 +43,9 @@ class AWSNamespacesResponseData(ModelNormal):
         **kwargs,
     ):
         """
-        AWS Namespaces response body
+        AWS Namespaces response data.
 
-        :param attributes: AWS Namespaces response body
+        :param attributes: AWS Namespaces response attributes.
         :type attributes: AWSNamespacesResponseAttributes, optional
 
         :param id: The ``AWSNamespacesResponseData`` ``id``.
