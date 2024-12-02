@@ -44,12 +44,14 @@ class AWSAccountResponseData(ModelNormal):
         **kwargs,
     ):
         """
-        AWS Account Response body
+        AWS Account response data.
 
-        :param attributes: The AWS Account Integration Config
+        :param attributes: AWS Account response attributes.
         :type attributes: AWSAccountResponseAttributes, optional
 
-        :param id: Unique Datadog ID of the AWS Account Integration Config
+        :param id: Unique Datadog ID of the AWS Account Integration Config.
+            To get the config ID for an account, use the `List all AWS integrations <https://docs.datadoghq.com/api/latest/aws-integration/#list-all-aws-integrations>`_
+            endpoint and query by AWS Account ID.
         :type id: str
 
         :param type: AWS Account resource type.

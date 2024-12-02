@@ -14,9 +14,10 @@ from typing import ClassVar
 
 class AWSAccountPartition(ModelSimple):
     """
-    AWS Account partition
+    AWS partition your AWS account is scoped to. Defaults to `aws`.
+        See [Partitions](https://docs.aws.amazon.com/whitepapers/latest/aws-fault-isolation-boundaries/partitions.html) in the AWS documentation for more information.
 
-    :param value: If omitted defaults to "aws". Must be one of ["aws", "aws-cn", "aws-us-gov"].
+    :param value: Must be one of ["aws", "aws-cn", "aws-us-gov"].
     :type value: str
     """
 

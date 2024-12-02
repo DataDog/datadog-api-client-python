@@ -210,9 +210,10 @@ class AWSIntegrationApi:
     ) -> None:
         """Delete an AWS integration.
 
-        Delete an AWS Account Integration Config
+        Delete an AWS Account Integration Config by config ID.
 
-        :param aws_account_config_id: Unique Datadog ID of the AWS Account Integration Config
+        :param aws_account_config_id: Unique Datadog ID of the AWS Account Integration Config. To get the config ID for an account, use the
+            `List all AWS integrations <https://docs.datadoghq.com/api/latest/aws-integration/#list-all-aws-integrations>`_ endpoint and query by AWS Account ID.
         :type aws_account_config_id: str
         :rtype: None
         """
@@ -227,9 +228,10 @@ class AWSIntegrationApi:
     ) -> AWSAccountResponse:
         """Get an AWS integration by config ID.
 
-        Get an AWS Account Integration Config
+        Get an AWS Account Integration Config by config ID.
 
-        :param aws_account_config_id: Unique Datadog ID of the AWS Account Integration Config
+        :param aws_account_config_id: Unique Datadog ID of the AWS Account Integration Config. To get the config ID for an account, use the
+            `List all AWS integrations <https://docs.datadoghq.com/api/latest/aws-integration/#list-all-aws-integrations>`_ endpoint and query by AWS Account ID.
         :type aws_account_config_id: str
         :rtype: AWSAccountResponse
         """
@@ -247,7 +249,7 @@ class AWSIntegrationApi:
 
         Get a list of AWS Account Integration Configs.
 
-        :param aws_account_id: Optional query filter accounts by AWS Account ID
+        :param aws_account_id: Optional query parameter to filter accounts by AWS Account ID. If not provided, all accounts are returned.
         :type aws_account_id: str, optional
         :rtype: AWSAccountsResponse
         """
@@ -276,9 +278,10 @@ class AWSIntegrationApi:
     ) -> AWSAccountResponse:
         """Update an AWS integration.
 
-        Update an AWS Account Integration Config
+        Update an AWS Account Integration Config by config ID.
 
-        :param aws_account_config_id: Unique Datadog ID of the AWS Account Integration Config
+        :param aws_account_config_id: Unique Datadog ID of the AWS Account Integration Config. To get the config ID for an account, use the
+            `List all AWS integrations <https://docs.datadoghq.com/api/latest/aws-integration/#list-all-aws-integrations>`_ endpoint and query by AWS Account ID.
         :type aws_account_config_id: str
         :type body: AWSAccountUpdateRequest
         :rtype: AWSAccountResponse

@@ -13,12 +13,12 @@ from datadog_api_client.model_utils import (
 class XRayServicesList(ModelComposed):
     def __init__(self, **kwargs):
         """
-        AWS X-Ray services to collect traces from
+        AWS X-Ray services to collect traces from. Defaults to ``include_only``.
 
-        :param include_all: Include all services
+        :param include_all: Include all services.
         :type include_all: bool
 
-        :param include_only: Include only these services
+        :param include_only: Include only these services.
         :type include_only: [str]
         """
         super().__init__(kwargs)

@@ -77,33 +77,34 @@ class AWSAccountCreateRequestAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        The AWS Account Integration Config to be created
+        The AWS Account Integration Config to be created.
 
-        :param account_tags: Tags to apply to all metrics in the account
+        :param account_tags: Tags to apply to all hosts and metrics reporting for this account. Defaults to ``[]``.
         :type account_tags: [str], none_type, optional
 
-        :param auth_config: AWS Authentication config
+        :param auth_config: AWS Authentication config.
         :type auth_config: AWSAuthConfig
 
-        :param aws_account_id: AWS Account ID
+        :param aws_account_id: AWS Account ID.
         :type aws_account_id: str
 
-        :param aws_partition: AWS Account partition
+        :param aws_partition: AWS partition your AWS account is scoped to. Defaults to ``aws``.
+            See `Partitions <https://docs.aws.amazon.com/whitepapers/latest/aws-fault-isolation-boundaries/partitions.html>`_ in the AWS documentation for more information.
         :type aws_partition: AWSAccountPartition
 
-        :param aws_regions: AWS Regions to collect data from
+        :param aws_regions: AWS Regions to collect data from. Defaults to ``include_all``.
         :type aws_regions: AWSRegions, optional
 
-        :param logs_config: AWS Logs config
+        :param logs_config: AWS Logs Collection config.
         :type logs_config: AWSLogsConfig, optional
 
-        :param metrics_config: AWS Metrics config
+        :param metrics_config: AWS Metrics Collection config.
         :type metrics_config: AWSMetricsConfig, optional
 
-        :param resources_config: AWS Resources config
+        :param resources_config: AWS Resources Collection config.
         :type resources_config: AWSResourcesConfig, optional
 
-        :param traces_config: AWS Traces config
+        :param traces_config: AWS Traces Collection config.
         :type traces_config: AWSTracesConfig, optional
         """
         if account_tags is not unset:
