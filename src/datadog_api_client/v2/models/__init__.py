@@ -235,6 +235,7 @@ from datadog_api_client.v2.model.ci_app_tests_group_by import CIAppTestsGroupBy
 from datadog_api_client.v2.model.ci_app_tests_query_filter import CIAppTestsQueryFilter
 from datadog_api_client.v2.model.ci_app_warning import CIAppWarning
 from datadog_api_client.v2.model.calculated_field import CalculatedField
+from datadog_api_client.v2.model.cancel_data_deletion_response_body import CancelDataDeletionResponseBody
 from datadog_api_client.v2.model.case import Case
 from datadog_api_client.v2.model.case3rd_party_ticket_status import Case3rdPartyTicketStatus
 from datadog_api_client.v2.model.case_assign import CaseAssign
@@ -417,6 +418,12 @@ from datadog_api_client.v2.model.cost_by_org import CostByOrg
 from datadog_api_client.v2.model.cost_by_org_attributes import CostByOrgAttributes
 from datadog_api_client.v2.model.cost_by_org_response import CostByOrgResponse
 from datadog_api_client.v2.model.cost_by_org_type import CostByOrgType
+from datadog_api_client.v2.model.create_data_deletion_request_body import CreateDataDeletionRequestBody
+from datadog_api_client.v2.model.create_data_deletion_request_body_attributes import (
+    CreateDataDeletionRequestBodyAttributes,
+)
+from datadog_api_client.v2.model.create_data_deletion_request_body_data import CreateDataDeletionRequestBodyData
+from datadog_api_client.v2.model.create_data_deletion_response_body import CreateDataDeletionResponseBody
 from datadog_api_client.v2.model.create_open_api_response import CreateOpenAPIResponse
 from datadog_api_client.v2.model.create_open_api_response_attributes import CreateOpenAPIResponseAttributes
 from datadog_api_client.v2.model.create_open_api_response_data import CreateOpenAPIResponseData
@@ -560,6 +567,9 @@ from datadog_api_client.v2.model.dashboard_list_items import DashboardListItems
 from datadog_api_client.v2.model.dashboard_list_update_items_request import DashboardListUpdateItemsRequest
 from datadog_api_client.v2.model.dashboard_list_update_items_response import DashboardListUpdateItemsResponse
 from datadog_api_client.v2.model.dashboard_type import DashboardType
+from datadog_api_client.v2.model.data_deletion_response_item import DataDeletionResponseItem
+from datadog_api_client.v2.model.data_deletion_response_item_attributes import DataDeletionResponseItemAttributes
+from datadog_api_client.v2.model.data_deletion_response_meta import DataDeletionResponseMeta
 from datadog_api_client.v2.model.data_scalar_column import DataScalarColumn
 from datadog_api_client.v2.model.detailed_finding import DetailedFinding
 from datadog_api_client.v2.model.detailed_finding_attributes import DetailedFindingAttributes
@@ -778,6 +788,7 @@ from datadog_api_client.v2.model.gcpsts_service_account_update_request_data impo
 from datadog_api_client.v2.model.gcpsts_service_accounts_response import GCPSTSServiceAccountsResponse
 from datadog_api_client.v2.model.gcp_service_account_meta import GCPServiceAccountMeta
 from datadog_api_client.v2.model.gcp_service_account_type import GCPServiceAccountType
+from datadog_api_client.v2.model.get_data_deletions_response_body import GetDataDeletionsResponseBody
 from datadog_api_client.v2.model.get_device_attributes import GetDeviceAttributes
 from datadog_api_client.v2.model.get_device_data import GetDeviceData
 from datadog_api_client.v2.model.get_device_response import GetDeviceResponse
@@ -2368,6 +2379,7 @@ __all__ = [
     "CIAppTestsQueryFilter",
     "CIAppWarning",
     "CalculatedField",
+    "CancelDataDeletionResponseBody",
     "Case",
     "Case3rdPartyTicketStatus",
     "CaseAssign",
@@ -2506,6 +2518,10 @@ __all__ = [
     "CostByOrgAttributes",
     "CostByOrgResponse",
     "CostByOrgType",
+    "CreateDataDeletionRequestBody",
+    "CreateDataDeletionRequestBodyAttributes",
+    "CreateDataDeletionRequestBodyData",
+    "CreateDataDeletionResponseBody",
     "CreateOpenAPIResponse",
     "CreateOpenAPIResponseAttributes",
     "CreateOpenAPIResponseData",
@@ -2589,6 +2605,9 @@ __all__ = [
     "DashboardListUpdateItemsRequest",
     "DashboardListUpdateItemsResponse",
     "DashboardType",
+    "DataDeletionResponseItem",
+    "DataDeletionResponseItemAttributes",
+    "DataDeletionResponseMeta",
     "DataScalarColumn",
     "DetailedFinding",
     "DetailedFindingAttributes",
@@ -2779,6 +2798,7 @@ __all__ = [
     "GCPSTSServiceAccountsResponse",
     "GCPServiceAccountMeta",
     "GCPServiceAccountType",
+    "GetDataDeletionsResponseBody",
     "GetDeviceAttributes",
     "GetDeviceData",
     "GetDeviceResponse",

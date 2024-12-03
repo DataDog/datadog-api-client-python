@@ -116,6 +116,13 @@ datadog\_api\_client.v2.api.dashboard\_lists\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.data\_deletion\_api module
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.data_deletion_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.domain\_allowlist\_api module
 ---------------------------------------------------------
 

@@ -1,0 +1,20 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"from":1672527600000,"indexes":["index-1","index-2"],"query":{},"to":1704063600000}}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/deletion/data/logs
+  response:
+    body:
+      string: '{"errors":[{"status":"412","code":"INVALID_BODY","title":"INVALID_BODY","detail":"INVALID_BODY"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 412
+      message: Precondition Failed
+version: 1
