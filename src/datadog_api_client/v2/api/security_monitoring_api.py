@@ -137,7 +137,7 @@ class SecurityMonitoringApi:
         self._convert_job_result_to_signal_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/siem-historical-detections/jobs/signal_convert",
                 "operation_id": "convert_job_result_to_signal",
                 "http_method": "POST",
