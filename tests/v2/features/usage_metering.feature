@@ -2,12 +2,13 @@
 Feature: Usage Metering
   The usage metering API allows you to get hourly, daily, and monthly usage
   across multiple facets of Datadog. This API is available to all Pro and
-  Enterprise customers.  **Note**: Usage data is delayed by up to 72 hours
-  from when it was incurred. It is retained for 15 months.  You can retrieve
-  up to 24 hours of hourly usage data for multiple organizations, and up to
-  two months of hourly usage data for a single organization in one request.
-  Learn more on the [usage details documentation](https://docs.datadoghq.com
-  /account_management/billing/usage_details/).
+  Enterprise customers, except those in the Government (US1-FED) site.
+  **Note**: Usage data is delayed by up to 72 hours from when it was
+  incurred. It is retained for 15 months.  You can retrieve up to 24 hours
+  of hourly usage data for multiple organizations, and up to two months of
+  hourly usage data for a single organization in one request. Learn more on
+  the [usage details documentation](https://docs.datadoghq.com/account_manag
+  ement/billing/usage_details/).
 
   Background:
     Given a valid "apiKeyAuth" key in the system
