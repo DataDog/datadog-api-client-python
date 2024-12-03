@@ -36936,6 +36936,10 @@ paths:
       summary: List permissions
       tags:
       - Roles
+      x-permission:
+        operator: OR
+        permissions:
+        - user_access_read
   /api/v2/posture_management/findings:
     get:
       description: "Get a list of findings. These include both misconfigurations and
