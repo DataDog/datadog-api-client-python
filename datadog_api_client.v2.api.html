@@ -1007,6 +1007,20 @@
         </li></ul>
             </nav>
         </li>
+        <li class="md-nav__item"><a href="#module-datadog_api_client.v2.api.data_deletion_api" class="md-nav__link">datadog_api_client.v2.api.data_deletion_api module</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.data_deletion_api.DataDeletionApi" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">DataDeletionApi</span></code></a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.data_deletion_api.DataDeletionApi.cancel_data_deletion_request" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">DataDeletionApi.cancel_data_deletion_request()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.data_deletion_api.DataDeletionApi.create_data_deletion_request" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">DataDeletionApi.create_data_deletion_request()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.data_deletion_api.DataDeletionApi.get_data_deletion_requests" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">DataDeletionApi.get_data_deletion_requests()</span></code></a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
         <li class="md-nav__item"><a href="#module-datadog_api_client.v2.api.domain_allowlist_api" class="md-nav__link">datadog_api_client.v2.api.domain_allowlist_api module</a><nav class="md-nav">
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.domain_allowlist_api.DomainAllowlistApi" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">DomainAllowlistApi</span></code></a><nav class="md-nav">
@@ -3682,6 +3696,63 @@ organization.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.dashboard_list_update_items_response.DashboardListUpdateItemsResponse" title="datadog_api_client.v2.model.dashboard_list_update_items_response.DashboardListUpdateItemsResponse">DashboardListUpdateItemsResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+</section>
+<section id="module-datadog_api_client.v2.api.data_deletion_api">
+<span id="datadog-api-client-v2-api-data-deletion-api-module"></span><h2 id="module-datadog_api_client.v2.api.data_deletion_api">datadog_api_client.v2.api.data_deletion_api module<a class="headerlink" href="#module-datadog_api_client.v2.api.data_deletion_api" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.data_deletion_api.DataDeletionApi">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DataDeletionApi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_client</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datadog_api_client.v2.api.data_deletion_api.DataDeletionApi" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The Data Deletion API allows the user to target and delete data from the allowed products. It’s currently enabled for Logs and RUM and depends on <code class="docutils literal notranslate"><span class="pre">logs_delete_data</span></code> and <code class="docutils literal notranslate"><span class="pre">rum_delete_data</span></code> permissions respectively.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.data_deletion_api.DataDeletionApi.cancel_data_deletion_request">
+<span class="sig-name descname"><span class="pre">cancel_data_deletion_request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.cancel_data_deletion_response_body.CancelDataDeletionResponseBody" title="datadog_api_client.v2.model.cancel_data_deletion_response_body.CancelDataDeletionResponseBody"><span class="pre">CancelDataDeletionResponseBody</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.data_deletion_api.DataDeletionApi.cancel_data_deletion_request" title="Link to this definition">¶</a></dt>
+<dd><p>Cancels a data deletion request.</p>
+<p>Cancels a data deletion request by providing its ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>id</strong> (<em>str</em>) – ID of the deletion request.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.cancel_data_deletion_response_body.CancelDataDeletionResponseBody" title="datadog_api_client.v2.model.cancel_data_deletion_response_body.CancelDataDeletionResponseBody">CancelDataDeletionResponseBody</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.data_deletion_api.DataDeletionApi.create_data_deletion_request">
+<span class="sig-name descname"><span class="pre">create_data_deletion_request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">product</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.create_data_deletion_request_body.CreateDataDeletionRequestBody" title="datadog_api_client.v2.model.create_data_deletion_request_body.CreateDataDeletionRequestBody"><span class="pre">CreateDataDeletionRequestBody</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.create_data_deletion_response_body.CreateDataDeletionResponseBody" title="datadog_api_client.v2.model.create_data_deletion_response_body.CreateDataDeletionResponseBody"><span class="pre">CreateDataDeletionResponseBody</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.data_deletion_api.DataDeletionApi.create_data_deletion_request" title="Link to this definition">¶</a></dt>
+<dd><p>Creates a data deletion request.</p>
+<p>Creates a data deletion request by providing a query and a time frame targeting the proper data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>product</strong> (<em>str</em>) – Name of the product to be deleted, either <code class="docutils literal notranslate"><span class="pre">logs</span></code> or <code class="docutils literal notranslate"><span class="pre">rum</span></code>.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.create_data_deletion_response_body.CreateDataDeletionResponseBody" title="datadog_api_client.v2.model.create_data_deletion_response_body.CreateDataDeletionResponseBody">CreateDataDeletionResponseBody</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.data_deletion_api.DataDeletionApi.get_data_deletion_requests">
+<span class="sig-name descname"><span class="pre">get_data_deletion_requests</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">next_page</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">product</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">page_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.get_data_deletions_response_body.GetDataDeletionsResponseBody" title="datadog_api_client.v2.model.get_data_deletions_response_body.GetDataDeletionsResponseBody"><span class="pre">GetDataDeletionsResponseBody</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.data_deletion_api.DataDeletionApi.get_data_deletion_requests" title="Link to this definition">¶</a></dt>
+<dd><p>Gets a list of data deletion requests.</p>
+<p>Gets a list of data deletion requests based on several filter parameters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>next_page</strong> (<em>str</em><em>, </em><em>optional</em>) – The next page of the previous search. If the next_page parameter is included, the rest of the query elements are ignored.</p></li>
+<li><p><strong>product</strong> (<em>str</em><em>, </em><em>optional</em>) – Retrieve only the requests related to the given product.</p></li>
+<li><p><strong>query</strong> (<em>str</em><em>, </em><em>optional</em>) – Retrieve only the requests that matches the given query.</p></li>
+<li><p><strong>status</strong> (<em>str</em><em>, </em><em>optional</em>) – Retrieve only the requests with the given status.</p></li>
+<li><p><strong>page_size</strong> (<em>int</em><em>, </em><em>optional</em>) – Sets the page size of the search.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.get_data_deletions_response_body.GetDataDeletionsResponseBody" title="datadog_api_client.v2.model.get_data_deletions_response_body.GetDataDeletionsResponseBody">GetDataDeletionsResponseBody</a></p>
 </dd>
 </dl>
 </dd></dl>

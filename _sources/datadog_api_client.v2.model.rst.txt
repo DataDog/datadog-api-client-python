@@ -1047,6 +1047,13 @@ datadog\_api\_client.v2.model.calculated\_field module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.cancel\_data\_deletion\_response\_body module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cancel_data_deletion_response_body
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.case module
 -----------------------------------------
 
@@ -2503,6 +2510,34 @@ datadog\_api\_client.v2.model.cost\_by\_org\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.create\_data\_deletion\_request\_body module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_data_deletion_request_body
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_data\_deletion\_request\_body\_attributes module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_data_deletion_request_body_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_data\_deletion\_request\_body\_data module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_data_deletion_request_body_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_data\_deletion\_response\_body module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_data_deletion_response_body
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.create\_open\_api\_response module
 ----------------------------------------------------------------
 
@@ -2990,6 +3025,27 @@ datadog\_api\_client.v2.model.dashboard\_type module
 ----------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.dashboard_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.data\_deletion\_response\_item module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.data_deletion_response_item
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.data\_deletion\_response\_item\_attributes module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.data_deletion_response_item_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.data\_deletion\_response\_meta module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.data_deletion_response_meta
    :members:
    :show-inheritance:
 
@@ -4404,6 +4460,13 @@ datadog\_api\_client.v2.model.gcpsts\_service\_accounts\_response module
 ------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.gcpsts_service_accounts_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.get\_data\_deletions\_response\_body module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_data_deletions_response_body
    :members:
    :show-inheritance:
 
