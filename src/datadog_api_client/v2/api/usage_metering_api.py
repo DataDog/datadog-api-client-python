@@ -31,7 +31,7 @@ class UsageMeteringApi:
     """
     The usage metering API allows you to get hourly, daily, and
     monthly usage across multiple facets of Datadog.
-    This API is available to all Pro and Enterprise customers.
+    This API is available to all Pro and Enterprise customers, except those in the Government (US1-FED) site.
 
     **Note** : Usage data is delayed by up to 72 hours from when it was incurred.
     It is retained for 15 months.
