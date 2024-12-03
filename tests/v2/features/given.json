@@ -131,6 +131,22 @@
   {
     "parameters": [
       {
+        "name": "product",
+        "value": "\"logs\""
+      },
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"from\": 1672527600000,\n      \"to\": 1704063600000,\n      \"indexes\": [\"index-1\", \"index-2\"],\n      \"query\": {\"host\": \"abc\", \"service\": \"xyz\"}\n    }\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"deletion_request\" in the system",
+    "key": "deletion_request",
+    "tag": "Data Deletion",
+    "operationId": "CreateDataDeletionRequest"
+  },
+  {
+    "parameters": [
+      {
         "name": "body",
         "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"message\": \"test message\",\n      \"monitor_identifier\": {\n        \"monitor_tags\": [\"cat:hat\"]\n      },\n      \"scope\": \"test:{{ unique_lower_alnum }}\",\n      \"schedule\": {\n        \"start\": null\n      }\n    },\n    \"type\": \"downtime\"\n  }\n}"
       }

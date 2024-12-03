@@ -1,0 +1,55 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"from":1672527600000,"indexes":["index-1","index-2"],"query":{"host":"abc","service":"xyz"},"to":1704063600000}}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/deletion/data/logs
+  response:
+    body:
+      string: '{"data":{"id":"303","type":"deletion_request","attributes":{"created_at":"2024-11-15T08:57:03.242841331Z","created_by":"frog@datadoghq.com","from_time":1672527600000,"indexes":["index-1","index-2"],"is_created":false,"org_id":321813,"product":"logs","query":"host:abc
+        service:xyz","starting_at":"0001-01-01T00:00:00Z","status":"pending","to_time":1704063600000,"total_unrestricted":0,"updated_at":"2024-11-15T08:57:03.242841331Z"}},"meta":{"product":"logs"}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: PUT
+    uri: https://api.datadoghq.com/api/v2/deletion/requests/303/cancel
+  response:
+    body:
+      string: '{"data":{"id":"303","type":"deletion_request","attributes":{"created_at":"2024-11-15T08:57:03.242841Z","created_by":"frog@datadoghq.com","from_time":1672527600000,"indexes":["index-1","index-2"],"is_created":false,"org_id":321813,"product":"logs","query":"host:abc
+        service:xyz","starting_at":"0001-01-01T00:00:00Z","status":"canceled","to_time":1704063600000,"total_unrestricted":0,"updated_at":"2024-11-15T08:57:03.638067Z"}},"meta":{"product":"logs","request_status":"canceled"}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: PUT
+    uri: https://api.datadoghq.com/api/v2/deletion/requests/303/cancel
+  response:
+    body:
+      string: '{"data":{"id":"303","type":"deletion_request","attributes":{"created_at":"2024-11-15T08:57:03.242841Z","created_by":"frog@datadoghq.com","from_time":1672527600000,"indexes":["index-1","index-2"],"is_created":false,"org_id":321813,"product":"logs","query":"host:abc
+        service:xyz","starting_at":"0001-01-01T00:00:00Z","status":"canceled","to_time":1704063600000,"total_unrestricted":0,"updated_at":"2024-11-15T08:57:03.936325Z"}},"meta":{"product":"logs","request_status":"canceled"}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1

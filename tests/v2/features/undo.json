@@ -541,6 +541,31 @@
       "type": "safe"
     }
   },
+  "CreateDataDeletionRequest": {
+    "tag": "Data Deletion",
+    "undo": {
+      "operationId": "CancelDataDeletionRequest",
+      "parameters": [
+        {
+          "name": "id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "GetDataDeletionRequests": {
+    "tag": "Data Deletion",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CancelDataDeletionRequest": {
+    "tag": "Data Deletion",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "GetDomainAllowlist": {
     "tag": "Domain Allowlist",
     "undo": {
