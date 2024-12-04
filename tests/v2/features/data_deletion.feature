@@ -9,7 +9,7 @@ Feature: Data Deletion
     And a valid "appKeyAuth" key in the system
     And an instance of "DataDeletion" API
 
-  @team:DataDog/supportability-engineering
+  @replay-only @team:DataDog/supportability-engineering
   Scenario: Cancels a data deletion request returns "Bad Request" response
     Given new "CancelDataDeletionRequest" request
     And request contains "id" parameter with value "id-1"
@@ -28,7 +28,7 @@ Feature: Data Deletion
     And the response "data.attributes.product" is equal to "{{ deletion_request.data.attributes.product }}"
     And the response "data.attributes.status" is equal to "canceled"
 
-  @team:DataDog/supportability-engineering
+  @replay-only @team:DataDog/supportability-engineering
   Scenario: Cancels a data deletion request returns "Precondition failed error" response
     Given new "CancelDataDeletionRequest" request
     And request contains "id" parameter with value "-1"
@@ -54,7 +54,7 @@ Feature: Data Deletion
     And the response "data.attributes.product" is equal to "logs"
     And the response "data.attributes.status" is equal to "pending"
 
-  @team:DataDog/supportability-engineering
+  @replay-only @team:DataDog/supportability-engineering
   Scenario: Creates a data deletion request returns "Precondition failed error" response
     Given new "CreateDataDeletionRequest" request
     And request contains "product" parameter with value "logs"
