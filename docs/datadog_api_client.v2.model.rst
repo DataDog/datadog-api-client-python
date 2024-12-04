@@ -1852,34 +1852,6 @@ datadog\_api\_client.v2.model.cloud\_configuration\_rule\_type module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.cloud\_cost\_activity module
-----------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.cloud_cost_activity
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.cloud\_cost\_activity\_attributes module
-----------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.cloud_cost_activity_attributes
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.cloud\_cost\_activity\_response module
---------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.cloud_cost_activity_response
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.cloud\_cost\_activity\_type module
-----------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.cloud_cost_activity_type
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v2.model.cloud\_workload\_security\_agent\_rule\_action module
 -----------------------------------------------------------------------------------
 

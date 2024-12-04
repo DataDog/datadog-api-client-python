@@ -4,7 +4,6 @@
 from __future__ import annotations
 
 from typing import Any, Dict, List
-import warnings
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
@@ -20,7 +19,6 @@ from datadog_api_client.v2.model.custom_costs_file_list_response import CustomCo
 from datadog_api_client.v2.model.custom_costs_file_upload_response import CustomCostsFileUploadResponse
 from datadog_api_client.v2.model.custom_costs_file_line_item import CustomCostsFileLineItem
 from datadog_api_client.v2.model.custom_costs_file_get_response import CustomCostsFileGetResponse
-from datadog_api_client.v2.model.cloud_cost_activity_response import CloudCostActivityResponse
 
 
 class CloudCostManagementApi:
@@ -138,22 +136,6 @@ class CloudCostManagementApi:
             },
             headers_map={
                 "accept": ["*/*"],
-            },
-            api_client=api_client,
-        )
-
-        self._get_cloud_cost_activity_endpoint = _Endpoint(
-            settings={
-                "response_type": (CloudCostActivityResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/cost/enabled",
-                "operation_id": "get_cloud_cost_activity",
-                "http_method": "GET",
-                "version": "v2",
-            },
-            params_map={},
-            headers_map={
-                "accept": ["application/json"],
             },
             api_client=api_client,
         )
@@ -384,19 +366,6 @@ class CloudCostManagementApi:
         kwargs["file_id"] = file_id
 
         return self._delete_custom_costs_file_endpoint.call_with_http_info(**kwargs)
-
-    def get_cloud_cost_activity(
-        self,
-    ) -> CloudCostActivityResponse:
-        """Cloud Cost Enabled. **Deprecated**.
-
-        Get the Cloud Cost Management activity.
-
-        :rtype: CloudCostActivityResponse
-        """
-        kwargs: Dict[str, Any] = {}
-        warnings.warn("get_cloud_cost_activity is deprecated", DeprecationWarning, stacklevel=2)
-        return self._get_cloud_cost_activity_endpoint.call_with_http_info(**kwargs)
 
     def get_custom_costs_file(
         self,
