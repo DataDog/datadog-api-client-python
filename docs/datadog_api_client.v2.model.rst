@@ -4134,6 +4134,48 @@ datadog\_api\_client.v2.model.events\_warning module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.external\_user\_group module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.external_user_group
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.external\_user\_group\_members\_items module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.external_user_group_members_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.external\_user\_group\_meta module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.external_user_group_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.external\_user\_group\_patch\_request module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.external_user_group_patch_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.external\_user\_group\_patch\_request\_operations\_items module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.external_user_group_patch_request_operations_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.external\_user\_group\_patch\_request\_operations\_items\_op module
+-------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.external_user_group_patch_request_operations_items_op
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.fastly\_accoun\_response\_attributes module
 -------------------------------------------------------------------------
 
@@ -5846,6 +5888,27 @@ datadog\_api\_client.v2.model.list\_entity\_catalog\_response\_links module
 ---------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.list_entity_catalog_response_links
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.list\_external\_user\_group\_response module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_external_user_group_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.list\_external\_user\_group\_response\_resources\_items module
+--------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_external_user_group_response_resources_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.list\_external\_user\_group\_response\_resources\_items\_members\_items module
+------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_external_user_group_response_resources_items_members_items
    :members:
    :show-inheritance:
 

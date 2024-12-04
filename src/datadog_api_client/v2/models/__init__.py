@@ -741,6 +741,16 @@ from datadog_api_client.v2.model.events_sort import EventsSort
 from datadog_api_client.v2.model.events_sort_type import EventsSortType
 from datadog_api_client.v2.model.events_timeseries_query import EventsTimeseriesQuery
 from datadog_api_client.v2.model.events_warning import EventsWarning
+from datadog_api_client.v2.model.external_user_group import ExternalUserGroup
+from datadog_api_client.v2.model.external_user_group_members_items import ExternalUserGroupMembersItems
+from datadog_api_client.v2.model.external_user_group_meta import ExternalUserGroupMeta
+from datadog_api_client.v2.model.external_user_group_patch_request import ExternalUserGroupPatchRequest
+from datadog_api_client.v2.model.external_user_group_patch_request_operations_items import (
+    ExternalUserGroupPatchRequestOperationsItems,
+)
+from datadog_api_client.v2.model.external_user_group_patch_request_operations_items_op import (
+    ExternalUserGroupPatchRequestOperationsItemsOp,
+)
 from datadog_api_client.v2.model.fastly_accoun_response_attributes import FastlyAccounResponseAttributes
 from datadog_api_client.v2.model.fastly_account_create_request import FastlyAccountCreateRequest
 from datadog_api_client.v2.model.fastly_account_create_request_attributes import FastlyAccountCreateRequestAttributes
@@ -1018,6 +1028,13 @@ from datadog_api_client.v2.model.list_downtimes_response import ListDowntimesRes
 from datadog_api_client.v2.model.list_entity_catalog_response import ListEntityCatalogResponse
 from datadog_api_client.v2.model.list_entity_catalog_response_included_item import ListEntityCatalogResponseIncludedItem
 from datadog_api_client.v2.model.list_entity_catalog_response_links import ListEntityCatalogResponseLinks
+from datadog_api_client.v2.model.list_external_user_group_response import ListExternalUserGroupResponse
+from datadog_api_client.v2.model.list_external_user_group_response_resources_items import (
+    ListExternalUserGroupResponseResourcesItems,
+)
+from datadog_api_client.v2.model.list_external_user_group_response_resources_items_members_items import (
+    ListExternalUserGroupResponseResourcesItemsMembersItems,
+)
 from datadog_api_client.v2.model.list_findings_meta import ListFindingsMeta
 from datadog_api_client.v2.model.list_findings_page import ListFindingsPage
 from datadog_api_client.v2.model.list_findings_response import ListFindingsResponse
@@ -2751,6 +2768,12 @@ __all__ = [
     "EventsSortType",
     "EventsTimeseriesQuery",
     "EventsWarning",
+    "ExternalUserGroup",
+    "ExternalUserGroupMembersItems",
+    "ExternalUserGroupMeta",
+    "ExternalUserGroupPatchRequest",
+    "ExternalUserGroupPatchRequestOperationsItems",
+    "ExternalUserGroupPatchRequestOperationsItemsOp",
     "FastlyAccounResponseAttributes",
     "FastlyAccountCreateRequest",
     "FastlyAccountCreateRequestAttributes",
@@ -2996,6 +3019,9 @@ __all__ = [
     "ListEntityCatalogResponse",
     "ListEntityCatalogResponseIncludedItem",
     "ListEntityCatalogResponseLinks",
+    "ListExternalUserGroupResponse",
+    "ListExternalUserGroupResponseResourcesItems",
+    "ListExternalUserGroupResponseResourcesItemsMembersItems",
     "ListFindingsMeta",
     "ListFindingsPage",
     "ListFindingsResponse",

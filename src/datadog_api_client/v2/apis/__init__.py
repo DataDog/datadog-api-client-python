@@ -43,6 +43,7 @@ from datadog_api_client.v2.api.rum_api import RUMApi
 from datadog_api_client.v2.api.restriction_policies_api import RestrictionPoliciesApi
 from datadog_api_client.v2.api.roles_api import RolesApi
 from datadog_api_client.v2.api.rum_metrics_api import RumMetricsApi
+from datadog_api_client.v2.api.scim_api import ScimApi
 from datadog_api_client.v2.api.security_monitoring_api import SecurityMonitoringApi
 from datadog_api_client.v2.api.sensitive_data_scanner_api import SensitiveDataScannerApi
 from datadog_api_client.v2.api.service_accounts_api import ServiceAccountsApi
@@ -105,6 +106,7 @@ __all__ = [
     "RestrictionPoliciesApi",
     "RolesApi",
     "RumMetricsApi",
+    "ScimApi",
     "SecurityMonitoringApi",
     "SensitiveDataScannerApi",
     "ServiceAccountsApi",

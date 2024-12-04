@@ -10179,6 +10179,125 @@ components:
             from the other indexes.
           type: string
       type: object
+    ExternalUserGroup:
+      description: Definition of a SCIM group.
+      properties:
+        displayName:
+          description: A human-readable name for the group.
+          type: string
+        externalId:
+          description: An identifier for the resource as defined by the provisioning
+            client.
+          type: string
+        id:
+          description: The identifier of the resource. Not required when creating
+            a group.
+          type: string
+        members:
+          description: Members of the SCIM group.
+          items:
+            $ref: '#/components/schemas/ExternalUserGroupMembersItems'
+          type: array
+        meta:
+          $ref: '#/components/schemas/ExternalUserGroupMeta'
+        schemas:
+          description: Input JSON Schemas.
+          example:
+          - urn:ietf:params:scim:schemas:core:2.0:Group
+          items:
+            type: string
+          type: array
+      type: object
+    ExternalUserGroupMembersItems:
+      description: The definition of a member belonging to a SCIM group.
+      properties:
+        $ref:
+          description: The URI corresponding to a SCIM resource that is a member of
+            this group.
+          example: https://app.datadoghq.com/api/scim/v2/Users/429ebce5-8ed3-4da9-9f1e-662f2dbc2fe6
+          type: string
+        display:
+          description: A human-readable name for the group member.
+          type: string
+        type:
+          description: A label indicating the type of resource.
+          example: User
+          type: string
+        value:
+          description: The identifier of the member of this group.
+          type: string
+      type: object
+    ExternalUserGroupMeta:
+      description: Metadata associated with a SCIM group.
+      properties:
+        created:
+          description: The date and time the group was created.
+          format: date-time
+          type: string
+        lastModified:
+          description: The date and time the group was last changed.
+          format: date-time
+          type: string
+        location:
+          description: URL identifying the resource.
+          type: string
+        resourceType:
+          description: Type of resource.
+          example: Group
+          type: string
+      type: object
+    ExternalUserGroupPatchRequest:
+      description: Request object for patching a SCIM group.
+      example:
+        Operations:
+        - op: replace
+          path: null
+          value:
+            displayName: Real new group
+            id: e43536e9-33fe-43f8-90b8-d3e39a7dd6ad
+        - op: remove
+          path: members[value eq "fddf0cf2-9b60-11ef-ad4b-d6754a54a839"]
+          value: null
+        schemas:
+        - urn:ietf:params:scim:api:messages:2.0:PatchOp
+      properties:
+        Operations:
+          description: A list of update operations to be performed on a SCIM group.
+          items:
+            $ref: '#/components/schemas/ExternalUserGroupPatchRequestOperationsItems'
+          type: array
+        schemas:
+          description: Input JSON Schemas
+          example:
+          - urn:ietf:params:scim:api:messages:2.0:PatchOp
+          items:
+            type: string
+          type: array
+      type: object
+    ExternalUserGroupPatchRequestOperationsItems:
+      description: The definition of an individual patch operation in a patch request.
+      properties:
+        op:
+          $ref: '#/components/schemas/ExternalUserGroupPatchRequestOperationsItemsOp'
+        path:
+          description: An attribute path describing the target of the operation.
+          example: members
+          type: string
+        value:
+          description: JSON element containing the target values required to apply
+            the patch operation.
+      type: object
+    ExternalUserGroupPatchRequestOperationsItemsOp:
+      description: The operation to be performed.
+      enum:
+      - add
+      - replace
+      - remove
+      type: string
+      x-enum-varnames:
+      - ADD
+      - REPLACE
+      - REMOVE
     FastlyAccounResponseAttributes:
       description: Attributes object of a Fastly account.
       properties:
@@ -13981,6 +14100,89 @@ components:
           type: string
         self:
           description: Current link.
+          type: string
+      type: object
+    ListExternalUserGroupResponse:
+      description: List SCIM groups response object.
+      properties:
+        Resources:
+          description: List of SCIM groups matching the request criteria.
+          items:
+            $ref: '#/components/schemas/ListExternalUserGroupResponseResourcesItems'
+          type: array
+        itemsPerPage:
+          description: Number of SCIM groups returned per page.
+          format: int64
+          maximum: 4294967295
+          minimum: 0
+          type: integer
+        schemas:
+          description: List response JSON Schemas.
+          example:
+          - urn:ietf:params:scim:api:messages:2.0:ListResponse
+          items:
+            type: string
+          type: array
+        startIndex:
+          description: Starting index of the SCIM groups for this page (1-indexed).
+          format: int64
+          maximum: 4294967295
+          minimum: 0
+          type: integer
+        totalResults:
+          description: Total number of SCIM groups matching the request criteria.
+          format: int64
+          maximum: 4294967295
+          minimum: 0
+          type: integer
+      type: object
+    ListExternalUserGroupResponseResourcesItems:
+      description: SCIM resources returned in response to a List SCIM groups request.
+      properties:
+        displayName:
+          description: A human-readable name for the group.
+          type: string
+        externalId:
+          description: An identifier for the resource as defined by the provisioning
+            client.
+          type: string
+        id:
+          description: The identifier of the resource. Not required when creating
+            a group.
+          type: string
+        members:
+          description: The `items` `members`.
+          items:
+            $ref: '#/components/schemas/ListExternalUserGroupResponseResourcesItemsMembersItems'
+          type: array
+        meta:
+          $ref: '#/components/schemas/ExternalUserGroupMeta'
+        schemas:
+          description: SCIM group JSON Schemas.
+          example:
+          - urn:ietf:params:scim:schemas:core:2.0:Group
+          items:
+            type: string
+          type: array
+      type: object
+    ListExternalUserGroupResponseResourcesItemsMembersItems:
+      description: The definition of a member belonging to a group in the List SCIM
+        groups response.
+      properties:
+        $ref:
+          description: The URI corresponding to a SCIM resource that is a member of
+            this group.
+          example: https://app.datadoghq.com/api/scim/v2/Users/429ebce5-8ed3-4da9-9f1e-662f2dbc2fe6
+          type: string
+        display:
+          description: Full name of the user.
+          type: string
+        type:
+          description: A label indicating the type of resource. Only supported value
+            is "User".
+          type: string
+        value:
+          description: The identifier of the member of this group.
           type: string
       type: object
     ListFindingsData:
@@ -38917,6 +39119,251 @@ paths:
         operator: OR
         permissions:
         - org_management
+  /api/v2/scim/Groups:
+    get:
+      description: 'List SCIM groups in the organization.
+
+        Results are paginated by `startIndex` and `count` parameters.
+
+        Results can be narrowed down by the `filter` parameter.'
+      operationId: ListSCIMGroups
+      parameters:
+      - description: Specifies the start index to fetch the results (1-indexed).
+        in: query
+        name: startIndex
+        required: false
+        schema:
+          default: 1
+          example: 1
+          format: int64
+          type: integer
+      - description: Specifies the number of groups to be returned.
+        in: query
+        name: count
+        required: false
+        schema:
+          default: 20
+          example: 20
+          format: int64
+          type: integer
+      - description: 'Specifies the url encoded filter to use to narrow down the results.
+
+          Filters can be in the form of `displayName eq <group name>` or `externalId
+          eq <external id of group>`
+
+          or `id eq <group id> and members eq <user uuid>` or `members eq <user uuid>
+          and id eq <group id>`.'
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListExternalUserGroupResponse'
+          description: OK
+        '400':
+          $ref: '#/components/responses/BadRequestResponse'
+        '429':
+          $ref: '#/components/responses/TooManyRequestsResponse'
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ:
+        - user_access_invite
+        - user_access_manage
+      summary: List SCIM groups
+      tags:
+      - Scim
+      x-permission:
+        operator: AND
+        permissions:
+        - user_access_invite
+        - user_access_manage
+    post:
+      operationId: CreateSCIMGroup
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ExternalUserGroup'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExternalUserGroup'
+          description: Created
+        '400':
+          $ref: '#/components/responses/BadRequestResponse'
+        '429':
+          $ref: '#/components/responses/TooManyRequestsResponse'
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ:
+        - user_access_invite
+        - user_access_manage
+      summary: Create SCIM group
+      tags:
+      - Scim
+      x-permission:
+        operator: AND
+        permissions:
+        - user_access_invite
+        - user_access_manage
+  /api/v2/scim/Groups/{group_id}:
+    delete:
+      operationId: DeleteSCIMGroup
+      parameters:
+      - in: path
+        name: group_id
+        required: true
+        schema:
+          type: string
+      responses:
+        '204':
+          description: No Content
+        '400':
+          $ref: '#/components/responses/BadRequestResponse'
+        '404':
+          $ref: '#/components/responses/NotFoundResponse'
+        '429':
+          $ref: '#/components/responses/TooManyRequestsResponse'
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ:
+        - user_access_invite
+        - user_access_manage
+      summary: Delete SCIM group
+      tags:
+      - Scim
+      x-permission:
+        operator: AND
+        permissions:
+        - user_access_invite
+        - user_access_manage
+    get:
+      operationId: GetSCIMGroup
+      parameters:
+      - in: path
+        name: group_id
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExternalUserGroup'
+          description: OK
+        '400':
+          $ref: '#/components/responses/BadRequestResponse'
+        '404':
+          $ref: '#/components/responses/NotFoundResponse'
+        '429':
+          $ref: '#/components/responses/TooManyRequestsResponse'
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ:
+        - user_access_invite
+        - user_access_manage
+      summary: Get SCIM group
+      tags:
+      - Scim
+      x-permission:
+        operator: AND
+        permissions:
+        - user_access_invite
+        - user_access_manage
+    patch:
+      operationId: PatchSCIMGroup
+      parameters:
+      - in: path
+        name: group_id
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ExternalUserGroupPatchRequest'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExternalUserGroup'
+          description: OK
+        '400':
+          $ref: '#/components/responses/BadRequestResponse'
+        '404':
+          $ref: '#/components/responses/NotFoundResponse'
+        '429':
+          $ref: '#/components/responses/TooManyRequestsResponse'
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ:
+        - user_access_invite
+        - user_access_manage
+      summary: Patch SCIM group
+      tags:
+      - Scim
+      x-permission:
+        operator: AND
+        permissions:
+        - user_access_invite
+        - user_access_manage
+    put:
+      operationId: UpdateSCIMGroup
+      parameters:
+      - in: path
+        name: group_id
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ExternalUserGroup'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExternalUserGroup'
+          description: OK
+        '400':
+          $ref: '#/components/responses/BadRequestResponse'
+        '404':
+          $ref: '#/components/responses/NotFoundResponse'
+        '409':
+          $ref: '#/components/responses/ConflictResponse'
+        '429':
+          $ref: '#/components/responses/TooManyRequestsResponse'
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ:
+        - user_access_invite
+        - user_access_manage
+      summary: Update SCIM group
+      tags:
+      - Scim
+      x-permission:
+        operator: AND
+        permissions:
+        - user_access_invite
+        - user_access_manage
   /api/v2/scorecard/outcomes:
     get:
       description: Fetches all rule outcomes.
@@ -44670,6 +45117,8 @@ tags:
     description: Find out more at
     url: https://docs.datadoghq.com/real_user_monitoring/platform/generate_metrics/
   name: Rum Metrics
+- description: Provision Datadog teams using SCIM group APIs.
+  name: Scim
 - description: Create and manage your security rules, signals, filters, and more.
     See the [Datadog Security page](https://docs.datadoghq.com/security/) for more
     information.

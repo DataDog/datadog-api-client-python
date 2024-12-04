@@ -1890,6 +1890,49 @@
       "type": "idempotent"
     }
   },
+  "ListSCIMGroups": {
+    "tag": "Scim",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateSCIMGroup": {
+    "tag": "Scim",
+    "undo": {
+      "operationId": "DeleteSCIMGroup",
+      "parameters": [
+        {
+          "name": "group_id",
+          "source": "<RESPONSE_PATH>"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteSCIMGroup": {
+    "tag": "Scim",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetSCIMGroup": {
+    "tag": "Scim",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "PatchSCIMGroup": {
+    "tag": "Scim",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateSCIMGroup": {
+    "tag": "Scim",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListScorecardOutcomes": {
     "tag": "Service Scorecards",
     "undo": {
