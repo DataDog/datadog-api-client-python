@@ -15,8 +15,8 @@ body = CreateDataDeletionRequestBody(
         attributes=CreateDataDeletionRequestBodyAttributes(
             _from=1672527600000,
             indexes=[
-                "index-1",
-                "index-2",
+                "test-index",
+                "test-index-2",
             ],
             query=dict(
                 host="abc",
