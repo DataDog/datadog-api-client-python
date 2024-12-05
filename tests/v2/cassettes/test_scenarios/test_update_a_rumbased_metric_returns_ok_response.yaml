@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"compute":{"aggregation_type":"distribution","include_percentiles":true,"path":"@duration"},"event_type":"session","filter":{"query":"source:Test-Update_a_rum_based_metric_returns_OK_response-1730203169"},"group_by":[{"path":"@browser.name","tag_name":"browser_name"}],"uniqueness":{"when":"match"}},"id":"Test-Update_a_rum_based_metric_returns_OK_response-1730203169","type":"rum_metrics"}}'
+    body: '{"data":{"attributes":{"compute":{"aggregation_type":"distribution","include_percentiles":true,"path":"@duration"},"event_type":"session","filter":{"query":"source:Test-Update_a_rum_based_metric_returns_OK_response-1732807887"},"group_by":[{"path":"@browser.name","tag_name":"browser_name"}],"uniqueness":{"when":"match"}},"id":"testupdatearumbasedmetricreturnsokresponse1732807887","type":"rum_metrics"}}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/rum/config/metrics
   response:
     body:
-      string: '{"data":{"id":"Test_Update_a_rum_based_metric_returns_OK_response_1730203169","type":"rum_metrics","attributes":{"compute":{"aggregation_type":"distribution","include_percentiles":true,"path":"@duration"},"event_type":"session","filter":{"query":"source:Test-Update_a_rum_based_metric_returns_OK_response-1730203169"},"group_by":[{"path":"@browser.name","tag_name":"browser_name"}],"uniqueness":{"when":"match"}}}}'
+      string: '{"data":{"id":"testupdatearumbasedmetricreturnsokresponse1732807887","type":"rum_metrics","attributes":{"compute":{"aggregation_type":"distribution","include_percentiles":true,"path":"@duration"},"event_type":"session","filter":{"query":"source:Test-Update_a_rum_based_metric_returns_OK_response-1732807887"},"group_by":[{"path":"@browser.name","tag_name":"browser_name"}],"uniqueness":{"when":"match"}}}}'
     headers:
       content-type:
       - application/vnd.api+json
@@ -18,17 +18,17 @@ interactions:
       code: 201
       message: Created
 - request:
-    body: '{"data":{"attributes":{"compute":{"include_percentiles":false},"filter":{"query":"@service:rum-config"},"group_by":[{"path":"@browser.version","tag_name":"browser_version"}]},"id":"Test_Update_a_rum_based_metric_returns_OK_response_1730203169","type":"rum_metrics"}}'
+    body: '{"data":{"attributes":{"compute":{"include_percentiles":false},"filter":{"query":"@service:rum-config"},"group_by":[{"path":"@browser.version","tag_name":"browser_version"}]},"id":"testupdatearumbasedmetricreturnsokresponse1732807887","type":"rum_metrics"}}'
     headers:
       accept:
       - application/json
       content-type:
       - application/json
     method: PATCH
-    uri: https://api.datadoghq.com/api/v2/rum/config/metrics/Test_Update_a_rum_based_metric_returns_OK_response_1730203169
+    uri: https://api.datadoghq.com/api/v2/rum/config/metrics/testupdatearumbasedmetricreturnsokresponse1732807887
   response:
     body:
-      string: '{"data":{"id":"Test_Update_a_rum_based_metric_returns_OK_response_1730203169","type":"rum_metrics","attributes":{"compute":{"aggregation_type":"distribution","include_percentiles":false,"path":"@duration"},"event_type":"session","filter":{"query":"@service:rum-config"},"group_by":[{"path":"@browser.version","tag_name":"browser_version"}],"uniqueness":{"when":"match"}}}}'
+      string: '{"data":{"id":"testupdatearumbasedmetricreturnsokresponse1732807887","type":"rum_metrics","attributes":{"compute":{"aggregation_type":"distribution","include_percentiles":false,"path":"@duration"},"event_type":"session","filter":{"query":"@service:rum-config"},"group_by":[{"path":"@browser.version","tag_name":"browser_version"}],"uniqueness":{"when":"match"}}}}'
     headers:
       content-type:
       - application/vnd.api+json
@@ -41,7 +41,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/rum/config/metrics/Test_Update_a_rum_based_metric_returns_OK_response_1730203169
+    uri: https://api.datadoghq.com/api/v2/rum/config/metrics/testupdatearumbasedmetricreturnsokresponse1732807887
   response:
     body:
       string: ''

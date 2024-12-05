@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"compute":{"aggregation_type":"distribution","include_percentiles":true,"path":"@duration"},"event_type":"session","filter":{"query":"source:Test-Get_a_rum_based_metric_returns_OK_response-1730203164"},"group_by":[{"path":"@browser.name","tag_name":"browser_name"}],"uniqueness":{"when":"match"}},"id":"Test-Get_a_rum_based_metric_returns_OK_response-1730203164","type":"rum_metrics"}}'
+    body: '{"data":{"attributes":{"compute":{"aggregation_type":"distribution","include_percentiles":true,"path":"@duration"},"event_type":"session","filter":{"query":"source:Test-Get_a_rum_based_metric_returns_OK_response-1732807882"},"group_by":[{"path":"@browser.name","tag_name":"browser_name"}],"uniqueness":{"when":"match"}},"id":"testgetarumbasedmetricreturnsokresponse1732807882","type":"rum_metrics"}}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/rum/config/metrics
   response:
     body:
-      string: '{"data":{"id":"Test_Get_a_rum_based_metric_returns_OK_response_1730203164","type":"rum_metrics","attributes":{"compute":{"aggregation_type":"distribution","include_percentiles":true,"path":"@duration"},"event_type":"session","filter":{"query":"source:Test-Get_a_rum_based_metric_returns_OK_response-1730203164"},"group_by":[{"path":"@browser.name","tag_name":"browser_name"}],"uniqueness":{"when":"match"}}}}'
+      string: '{"data":{"id":"testgetarumbasedmetricreturnsokresponse1732807882","type":"rum_metrics","attributes":{"compute":{"aggregation_type":"distribution","include_percentiles":true,"path":"@duration"},"event_type":"session","filter":{"query":"source:Test-Get_a_rum_based_metric_returns_OK_response-1732807882"},"group_by":[{"path":"@browser.name","tag_name":"browser_name"}],"uniqueness":{"when":"match"}}}}'
     headers:
       content-type:
       - application/vnd.api+json
@@ -23,10 +23,10 @@ interactions:
       accept:
       - application/json
     method: GET
-    uri: https://api.datadoghq.com/api/v2/rum/config/metrics/Test_Get_a_rum_based_metric_returns_OK_response_1730203164
+    uri: https://api.datadoghq.com/api/v2/rum/config/metrics/testgetarumbasedmetricreturnsokresponse1732807882
   response:
     body:
-      string: '{"data":{"id":"Test_Get_a_rum_based_metric_returns_OK_response_1730203164","type":"rum_metrics","attributes":{"compute":{"aggregation_type":"distribution","include_percentiles":true,"path":"@duration"},"event_type":"session","filter":{"query":"source:Test-Get_a_rum_based_metric_returns_OK_response-1730203164"},"group_by":[{"path":"@browser.name","tag_name":"browser_name"}],"uniqueness":{"when":"match"}}}}'
+      string: '{"data":{"id":"testgetarumbasedmetricreturnsokresponse1732807882","type":"rum_metrics","attributes":{"compute":{"aggregation_type":"distribution","include_percentiles":true,"path":"@duration"},"event_type":"session","filter":{"query":"source:Test-Get_a_rum_based_metric_returns_OK_response-1732807882"},"group_by":[{"path":"@browser.name","tag_name":"browser_name"}],"uniqueness":{"when":"match"}}}}'
     headers:
       content-type:
       - application/vnd.api+json
@@ -39,7 +39,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/rum/config/metrics/Test_Get_a_rum_based_metric_returns_OK_response_1730203164
+    uri: https://api.datadoghq.com/api/v2/rum/config/metrics/testgetarumbasedmetricreturnsokresponse1732807882
   response:
     body:
       string: ''
