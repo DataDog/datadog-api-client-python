@@ -146,7 +146,7 @@ class DataDeletionApi:
     ) -> CreateDataDeletionResponseBody:
         """Creates a data deletion request.
 
-        Creates a data deletion request by providing a query and a time frame targeting the proper data.
+        Creates a data deletion request by providing a query and a timeframe targeting the proper data.
 
         :param product: Name of the product to be deleted, either ``logs`` or ``rum``.
         :type product: str

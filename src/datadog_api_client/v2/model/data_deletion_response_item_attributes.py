@@ -80,7 +80,7 @@ class DataDeletionResponseItemAttributes(ModelNormal):
         :param indexes: List of indexes for the search. If not provided, the search is performed in all indexes.
         :type indexes: [str], optional
 
-        :param is_created: Whether the deletion request is fully created or not.
+        :param is_created: Whether the deletion request is fully created or not. It can take several minutes to fully create a deletion request depending on the target query and timeframe.
         :type is_created: bool
 
         :param org_id: Organization ID.
