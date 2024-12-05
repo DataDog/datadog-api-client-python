@@ -41,8 +41,8 @@ body = Dashboard(
                 ),
             ),
             layout=WidgetLayout(
-                x=1,
-                y=1,
+                x=1.0,
+                y=1.0,
                 width=2,
                 height=2,
                 is_column_break=False,

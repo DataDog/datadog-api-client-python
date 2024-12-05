@@ -76,8 +76,8 @@ body = Dashboard(
                 ),
             ),
             layout=WidgetLayout(
-                x=0,
-                y=0,
+                x=0.0,
+                y=0.0,
                 width=12,
                 height=6,
             ),

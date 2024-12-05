@@ -33,8 +33,8 @@ body = Dashboard(
     widgets=[
         Widget(
             layout=WidgetLayout(
-                x=0,
-                y=0,
+                x=0.0,
+                y=0.0,
                 width=54,
                 height=32,
             ),
