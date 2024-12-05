@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"compute":{"aggregation_type":"distribution","include_percentiles":true,"path":"@duration"},"event_type":"session","filter":{"query":"source:Test-Update_a_rum_based_metric_returns_Not_Found_response-1730203168"},"group_by":[{"path":"@browser.name","tag_name":"browser_name"}],"uniqueness":{"when":"match"}},"id":"Test-Update_a_rum_based_metric_returns_Not_Found_response-1730203168","type":"rum_metrics"}}'
+    body: '{"data":{"attributes":{"compute":{"aggregation_type":"distribution","include_percentiles":true,"path":"@duration"},"event_type":"session","filter":{"query":"source:Test-Update_a_rum_based_metric_returns_Not_Found_response-1732807886"},"group_by":[{"path":"@browser.name","tag_name":"browser_name"}],"uniqueness":{"when":"match"}},"id":"testupdatearumbasedmetricreturnsnotfoundresponse1732807886","type":"rum_metrics"}}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/rum/config/metrics
   response:
     body:
-      string: '{"data":{"id":"Test_Update_a_rum_based_metric_returns_Not_Found_response_1730203168","type":"rum_metrics","attributes":{"compute":{"aggregation_type":"distribution","include_percentiles":true,"path":"@duration"},"event_type":"session","filter":{"query":"source:Test-Update_a_rum_based_metric_returns_Not_Found_response-1730203168"},"group_by":[{"path":"@browser.name","tag_name":"browser_name"}],"uniqueness":{"when":"match"}}}}'
+      string: '{"data":{"id":"testupdatearumbasedmetricreturnsnotfoundresponse1732807886","type":"rum_metrics","attributes":{"compute":{"aggregation_type":"distribution","include_percentiles":true,"path":"@duration"},"event_type":"session","filter":{"query":"source:Test-Update_a_rum_based_metric_returns_Not_Found_response-1732807886"},"group_by":[{"path":"@browser.name","tag_name":"browser_name"}],"uniqueness":{"when":"match"}}}}'
     headers:
       content-type:
       - application/vnd.api+json
@@ -42,7 +42,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/rum/config/metrics/Test_Update_a_rum_based_metric_returns_Not_Found_response_1730203168
+    uri: https://api.datadoghq.com/api/v2/rum/config/metrics/testupdatearumbasedmetricreturnsnotfoundresponse1732807886
   response:
     body:
       string: ''

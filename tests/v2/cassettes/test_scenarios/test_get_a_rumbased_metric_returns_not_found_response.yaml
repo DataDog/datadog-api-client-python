@@ -5,11 +5,11 @@ interactions:
       accept:
       - application/json
     method: GET
-    uri: https://api.datadoghq.com/api/v2/rum/config/metrics/Test-Get_a_rum_based_metric_returns_Not_Found_response-1730203163
+    uri: https://api.datadoghq.com/api/v2/rum/config/metrics/Test-Get_a_rum_based_metric_returns_Not_Found_response-1732807881
   response:
     body:
       string: '{"errors":[{"status":"404","title":"Not Found","detail":"not_found(Metric
-        with name ''Test-Get_a_rum_based_metric_returns_Not_Found_response-1730203163''
+        with name ''Test-Get_a_rum_based_metric_returns_Not_Found_response-1732807881''
         not found)"}]}'
     headers:
       content-type:
