@@ -27947,6 +27947,10 @@ paths:
       summary: List APIs
       tags:
       - API Management
+      x-permission:
+        operator: OR
+        permissions:
+        - apm_api_catalog_read
       x-unstable: '**Note**: This endpoint is in public beta.
 
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).'
@@ -27992,6 +27996,10 @@ paths:
       summary: Delete an API
       tags:
       - API Management
+      x-permission:
+        operator: OR
+        permissions:
+        - apm_api_catalog_write
       x-unstable: '**Note**: This endpoint is in public beta.
 
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).'
@@ -28043,6 +28051,10 @@ paths:
       summary: Get an API
       tags:
       - API Management
+      x-permission:
+        operator: OR
+        permissions:
+        - apm_api_catalog_read
       x-unstable: '**Note**: This endpoint is in public beta.
 
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).'
@@ -28103,6 +28115,10 @@ paths:
       summary: Update an API
       tags:
       - API Management
+      x-permission:
+        operator: OR
+        permissions:
+        - apm_api_catalog_write
       x-unstable: '**Note**: This endpoint is in public beta.
 
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).'
@@ -28155,6 +28171,10 @@ paths:
       summary: Create a new API
       tags:
       - API Management
+      x-permission:
+        operator: OR
+        permissions:
+        - apm_api_catalog_write
       x-unstable: '**Note**: This endpoint is in public beta.
 
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).'
