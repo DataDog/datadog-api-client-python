@@ -3,11 +3,14 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
+import collections
 from typing import Any, Dict, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
 from datadog_api_client.model_utils import (
+    set_attribute_from_path,
+    get_attribute_from_path,
     UnsetType,
     unset,
 )
@@ -17,6 +20,7 @@ from datadog_api_client.v2.model.metrics_and_metric_tag_configurations_response 
 from datadog_api_client.v2.model.metric_tag_configuration_metric_type_category import (
     MetricTagConfigurationMetricTypeCategory,
 )
+from datadog_api_client.v2.model.metrics_and_metric_tag_configurations import MetricsAndMetricTagConfigurations
 from datadog_api_client.v2.model.metric_bulk_tag_config_response import MetricBulkTagConfigResponse
 from datadog_api_client.v2.model.metric_bulk_tag_config_delete_request import MetricBulkTagConfigDeleteRequest
 from datadog_api_client.v2.model.metric_bulk_tag_config_create_request import MetricBulkTagConfigCreateRequest
@@ -327,6 +331,20 @@ class MetricsApi:
                 "window_seconds": {
                     "openapi_types": (int,),
                     "attribute": "window[seconds]",
+                    "location": "query",
+                },
+                "page_size": {
+                    "validation": {
+                        "inclusive_maximum": 10000,
+                        "inclusive_minimum": 1,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "page[size]",
+                    "location": "query",
+                },
+                "page_cursor": {
+                    "openapi_types": (str,),
+                    "attribute": "page[cursor]",
                     "location": "query",
                 },
             },
@@ -674,10 +692,15 @@ class MetricsApi:
         filter_queried: Union[bool, UnsetType] = unset,
         filter_tags: Union[str, UnsetType] = unset,
         window_seconds: Union[int, UnsetType] = unset,
+        page_size: Union[int, UnsetType] = unset,
+        page_cursor: Union[str, UnsetType] = unset,
     ) -> MetricsAndMetricTagConfigurationsResponse:
         """Get a list of metrics.
 
         Returns all metrics that can be configured in the Metrics Summary page or with Metrics without Limits™ (matching additional filters if specified).
+        Optionally, paginate by using the ``page[cursor]`` and/or ``page[size]`` query parameters.
+        To fetch the first page, pass in a query parameter with either a valid ``page[size]`` or an empty cursor like ``page[cursor]=``. To fetch the next page, pass in the ``next_cursor`` value from the response as the new ``page[cursor]`` value.
+        Once the ``meta.pagination.next_cursor`` value is null, all pages have been retrieved.
 
         :param filter_configured: Filter custom metrics that have configured tags.
         :type filter_configured: bool, optional
@@ -697,6 +720,12 @@ class MetricsApi:
         :param window_seconds: The number of seconds of look back (from now) to apply to a filter[tag] or filter[queried] query.
             Default value is 3600 (1 hour), maximum value is 2,592,000 (30 days).
         :type window_seconds: int, optional
+        :param page_size: Maximum number of results returned.
+        :type page_size: int, optional
+        :param page_cursor: String to query the next page of results.
+            This key is provided with each valid response from the API in ``meta.pagination.next_cursor``.
+            Once the ``meta.pagination.next_cursor`` key is null, all pages have been retrieved.
+        :type page_cursor: str, optional
         :rtype: MetricsAndMetricTagConfigurationsResponse
         """
         kwargs: Dict[str, Any] = {}
@@ -721,7 +750,99 @@ class MetricsApi:
         if window_seconds is not unset:
             kwargs["window_seconds"] = window_seconds
 
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        if page_cursor is not unset:
+            kwargs["page_cursor"] = page_cursor
+
         return self._list_tag_configurations_endpoint.call_with_http_info(**kwargs)
+
+    def list_tag_configurations_with_pagination(
+        self,
+        *,
+        filter_configured: Union[bool, UnsetType] = unset,
+        filter_tags_configured: Union[str, UnsetType] = unset,
+        filter_metric_type: Union[MetricTagConfigurationMetricTypeCategory, UnsetType] = unset,
+        filter_include_percentiles: Union[bool, UnsetType] = unset,
+        filter_queried: Union[bool, UnsetType] = unset,
+        filter_tags: Union[str, UnsetType] = unset,
+        window_seconds: Union[int, UnsetType] = unset,
+        page_size: Union[int, UnsetType] = unset,
+        page_cursor: Union[str, UnsetType] = unset,
+    ) -> collections.abc.Iterable[MetricsAndMetricTagConfigurations]:
+        """Get a list of metrics.
+
+        Provide a paginated version of :meth:`list_tag_configurations`, returning all items.
+
+        :param filter_configured: Filter custom metrics that have configured tags.
+        :type filter_configured: bool, optional
+        :param filter_tags_configured: Filter tag configurations by configured tags.
+        :type filter_tags_configured: str, optional
+        :param filter_metric_type: Filter metrics by metric type.
+        :type filter_metric_type: MetricTagConfigurationMetricTypeCategory, optional
+        :param filter_include_percentiles: Filter distributions with additional percentile
+            aggregations enabled or disabled.
+        :type filter_include_percentiles: bool, optional
+        :param filter_queried: (Beta) Filter custom metrics that have or have not been queried in the specified window[seconds].
+            If no window is provided or the window is less than 2 hours, a default of 2 hours will be applied.
+        :type filter_queried: bool, optional
+        :param filter_tags: Filter metrics that have been submitted with the given tags. Supports boolean and wildcard expressions.
+            Can only be combined with the filter[queried] filter.
+        :type filter_tags: str, optional
+        :param window_seconds: The number of seconds of look back (from now) to apply to a filter[tag] or filter[queried] query.
+            Default value is 3600 (1 hour), maximum value is 2,592,000 (30 days).
+        :type window_seconds: int, optional
+        :param page_size: Maximum number of results returned.
+        :type page_size: int, optional
+        :param page_cursor: String to query the next page of results.
+            This key is provided with each valid response from the API in ``meta.pagination.next_cursor``.
+            Once the ``meta.pagination.next_cursor`` key is null, all pages have been retrieved.
+        :type page_cursor: str, optional
+
+        :return: A generator of paginated results.
+        :rtype: collections.abc.Iterable[MetricsAndMetricTagConfigurations]
+        """
+        kwargs: Dict[str, Any] = {}
+        if filter_configured is not unset:
+            kwargs["filter_configured"] = filter_configured
+
+        if filter_tags_configured is not unset:
+            kwargs["filter_tags_configured"] = filter_tags_configured
+
+        if filter_metric_type is not unset:
+            kwargs["filter_metric_type"] = filter_metric_type
+
+        if filter_include_percentiles is not unset:
+            kwargs["filter_include_percentiles"] = filter_include_percentiles
+
+        if filter_queried is not unset:
+            kwargs["filter_queried"] = filter_queried
+
+        if filter_tags is not unset:
+            kwargs["filter_tags"] = filter_tags
+
+        if window_seconds is not unset:
+            kwargs["window_seconds"] = window_seconds
+
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        if page_cursor is not unset:
+            kwargs["page_cursor"] = page_cursor
+
+        local_page_size = get_attribute_from_path(kwargs, "page_size", 10000)
+        endpoint = self._list_tag_configurations_endpoint
+        set_attribute_from_path(kwargs, "page_size", local_page_size, endpoint.params_map)
+        pagination = {
+            "limit_value": local_page_size,
+            "results_path": "data",
+            "cursor_param": "page_cursor",
+            "cursor_path": "meta.pagination.next_cursor",
+            "endpoint": endpoint,
+            "kwargs": kwargs,
+        }
+        return endpoint.call_with_http_info_paginated(pagination)
 
     def list_tags_by_metric_name(
         self,
