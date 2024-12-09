@@ -57,24 +57,24 @@ class AWSMetricsConfig(ModelNormal):
         **kwargs,
     ):
         """
-        AWS Metrics config
+        AWS Metrics Collection config.
 
-        :param automute_enabled: Enable EC2 automute for AWS metrics
+        :param automute_enabled: Enable EC2 automute for AWS metrics. Defaults to ``true``.
         :type automute_enabled: bool, optional
 
-        :param collect_cloudwatch_alarms: Enable CloudWatch alarms collection
+        :param collect_cloudwatch_alarms: Enable CloudWatch alarms collection. Defaults to ``false``.
         :type collect_cloudwatch_alarms: bool, optional
 
-        :param collect_custom_metrics: Enable custom metrics collection
+        :param collect_custom_metrics: Enable custom metrics collection. Defaults to ``false``.
         :type collect_custom_metrics: bool, optional
 
-        :param enabled: Enable AWS metrics collection
+        :param enabled: Enable AWS metrics collection. Defaults to ``true``.
         :type enabled: bool, optional
 
-        :param namespace_filters: AWS Metrics namespace filters
+        :param namespace_filters: AWS Metrics namespace filters. Defaults to ``exclude_only``.
         :type namespace_filters: AWSNamespaceFilters, optional
 
-        :param tag_filters: AWS Metrics tag filters list
+        :param tag_filters: AWS Metrics collection tag filters list. Defaults to ``[]``.
         :type tag_filters: [AWSNamespaceTagFilter], optional
         """
         if automute_enabled is not unset:

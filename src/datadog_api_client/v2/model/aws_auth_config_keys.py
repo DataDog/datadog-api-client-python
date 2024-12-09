@@ -34,12 +34,12 @@ class AWSAuthConfigKeys(ModelNormal):
 
     def __init__(self_, access_key_id: str, secret_access_key: Union[str, UnsetType] = unset, **kwargs):
         """
-        AWS Authentication config for key-based account
+        AWS Authentication config to integrate your account using an access key pair.
 
-        :param access_key_id: AWS Access Key ID
+        :param access_key_id: AWS Access Key ID.
         :type access_key_id: str
 
-        :param secret_access_key: AWS Secret Access Key
+        :param secret_access_key: AWS Secret Access Key.
         :type secret_access_key: str, optional
         """
         if secret_access_key is not unset:

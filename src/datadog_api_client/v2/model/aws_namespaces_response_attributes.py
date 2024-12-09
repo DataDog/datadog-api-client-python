@@ -24,9 +24,9 @@ class AWSNamespacesResponseAttributes(ModelNormal):
 
     def __init__(self_, namespaces: List[str], **kwargs):
         """
-        AWS Namespaces response body
+        AWS Namespaces response attributes.
 
-        :param namespaces: AWS CloudWatch namespace
+        :param namespaces: AWS CloudWatch namespace.
         :type namespaces: [str]
         """
         super().__init__(kwargs)

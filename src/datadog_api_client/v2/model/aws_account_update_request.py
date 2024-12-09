@@ -30,9 +30,9 @@ class AWSAccountUpdateRequest(ModelNormal):
 
     def __init__(self_, data: AWSAccountUpdateRequestData, **kwargs):
         """
-        AWS Account Update Request body
+        AWS Account Update Request body.
 
-        :param data: AWS Account Update Request data
+        :param data: AWS Account Update Request data.
         :type data: AWSAccountUpdateRequestData
         """
         super().__init__(kwargs)
