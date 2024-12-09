@@ -75,6 +75,8 @@ body = SyntheticsBrowserTest(
     steps=[
         SyntheticsStep(
             allow_failure=False,
+            always_execute=True,
+            exit_if_succeed=True,
             is_critical=True,
             name="Refresh page",
             params=dict(),

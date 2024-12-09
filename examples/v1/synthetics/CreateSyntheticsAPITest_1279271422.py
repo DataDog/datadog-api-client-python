@@ -50,6 +50,7 @@ body = SyntheticsAPITest(
                         target=200,
                     ),
                 ],
+                exit_if_succeed=True,
                 extracted_values=[
                     SyntheticsParsingOptions(
                         field="server",
