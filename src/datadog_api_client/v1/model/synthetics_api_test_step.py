@@ -32,6 +32,7 @@ class SyntheticsAPITestStep(ModelNormal):
         return {
             "allow_failure": (bool,),
             "assertions": ([SyntheticsAssertion],),
+            "exit_if_succeed": (bool,),
             "extracted_values": ([SyntheticsParsingOptions],),
             "is_critical": (bool,),
             "name": (str,),
@@ -43,6 +44,7 @@ class SyntheticsAPITestStep(ModelNormal):
     attribute_map = {
         "allow_failure": "allowFailure",
         "assertions": "assertions",
+        "exit_if_succeed": "exitIfSucceed",
         "extracted_values": "extractedValues",
         "is_critical": "isCritical",
         "name": "name",
@@ -57,6 +59,7 @@ class SyntheticsAPITestStep(ModelNormal):
         request: SyntheticsTestRequest,
         subtype: SyntheticsAPITestStepSubtype,
         allow_failure: Union[bool, UnsetType] = unset,
+        exit_if_succeed: Union[bool, UnsetType] = unset,
         extracted_values: Union[List[SyntheticsParsingOptions], UnsetType] = unset,
         is_critical: Union[bool, UnsetType] = unset,
         retry: Union[SyntheticsTestOptionsRetry, UnsetType] = unset,
@@ -70,6 +73,9 @@ class SyntheticsAPITestStep(ModelNormal):
 
         :param assertions: Array of assertions used for the test.
         :type assertions: [SyntheticsAssertion]
+
+        :param exit_if_succeed: Determines whether or not to exit the test if the step succeeds.
+        :type exit_if_succeed: bool, optional
 
         :param extracted_values: Array of values to parse and save as variables from the response.
         :type extracted_values: [SyntheticsParsingOptions], optional
@@ -92,6 +98,8 @@ class SyntheticsAPITestStep(ModelNormal):
         """
         if allow_failure is not unset:
             kwargs["allow_failure"] = allow_failure
+        if exit_if_succeed is not unset:
+            kwargs["exit_if_succeed"] = exit_if_succeed
         if extracted_values is not unset:
             kwargs["extracted_values"] = extracted_values
         if is_critical is not unset:

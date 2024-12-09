@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"config":{"variables":[]},"message":"","name":"Test-Edit_a_Mobile_test_returns_OK_response-1727792037","options":{"device_ids":["synthetics:mobile:device:iphone_15_ios_17"],"mobileApplication":{"applicationId":"ab0e0aed-536d-411a-9a99-5428c27d8f8e","referenceId":"6115922a-5f5d-455e-bc7e-7955a57f3815","referenceType":"version"},"tick_every":3600},"status":"paused","steps":[],"type":"mobile"}'
+    body: '{"config":{"variables":[]},"message":"","name":"Test-Edit_a_Mobile_test_returns_OK_response-1733743091","options":{"device_ids":["synthetics:mobile:device:iphone_15_ios_17"],"mobileApplication":{"applicationId":"ab0e0aed-536d-411a-9a99-5428c27d8f8e","referenceId":"6115922a-5f5d-455e-bc7e-7955a57f3815","referenceType":"version"},"tick_every":3600},"status":"paused","steps":[],"type":"mobile"}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/synthetics/tests/mobile
   response:
     body:
-      string: '{"public_id":"ga7-aph-db8","name":"Test-Edit_a_Mobile_test_returns_OK_response-1727792037","status":"paused","type":"mobile","tags":[],"created_at":"2024-10-01T14:13:58.675045+00:00","modified_at":"2024-10-01T14:13:58.675045+00:00","config":{"variables":[]},"message":"","options":{"device_ids":["synthetics:mobile:device:iphone_15_ios_17"],"mobileApplication":{"applicationId":"ab0e0aed-536d-411a-9a99-5428c27d8f8e","referenceId":"6115922a-5f5d-455e-bc7e-7955a57f3815","referenceType":"version"},"tick_every":3600},"locations":["aws:us-west-2"],"created_by":{"name":null,"handle":"frog@datadoghq.com","email":"frog@datadoghq.com"},"deleted_at":null,"monitor_id":155155663,"org_id":321813,"modified_by":{"name":null,"handle":"frog@datadoghq.com","email":"frog@datadoghq.com"},"stepCount":{"assertions":0,"subtests":0,"total":0}}
+      string: '{"public_id":"cxt-jqd-x42","name":"Test-Edit_a_Mobile_test_returns_OK_response-1733743091","status":"paused","type":"mobile","tags":[],"created_at":"2024-12-09T11:18:12.507076+00:00","modified_at":"2024-12-09T11:18:12.507076+00:00","config":{"variables":[]},"message":"","options":{"device_ids":["synthetics:mobile:device:iphone_15_ios_17"],"mobileApplication":{"applicationId":"ab0e0aed-536d-411a-9a99-5428c27d8f8e","referenceId":"6115922a-5f5d-455e-bc7e-7955a57f3815","referenceType":"version"},"tick_every":3600},"locations":["aws:us-west-2"],"created_by":{"name":null,"handle":"frog@datadoghq.com","email":"frog@datadoghq.com"},"deleted_at":null,"monitor_id":159881046,"org_id":321813,"modified_by":{"name":null,"handle":"frog@datadoghq.com","email":"frog@datadoghq.com"},"stepCount":{"assertions":0,"subtests":0,"total":0}}
 
         '
     headers:
@@ -20,17 +20,17 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"config":{"variables":[]},"message":"","name":"Test-Edit_a_Mobile_test_returns_OK_response-1727792037-updated","options":{"device_ids":["synthetics:mobile:device:iphone_15_ios_17"],"mobileApplication":{"applicationId":"ab0e0aed-536d-411a-9a99-5428c27d8f8e","referenceId":"6115922a-5f5d-455e-bc7e-7955a57f3815","referenceType":"version"},"tick_every":3600},"status":"paused","steps":[],"type":"mobile"}'
+    body: '{"config":{"variables":[]},"message":"","name":"Test-Edit_a_Mobile_test_returns_OK_response-1733743091-updated","options":{"device_ids":["synthetics:mobile:device:iphone_15_ios_17"],"mobileApplication":{"applicationId":"ab0e0aed-536d-411a-9a99-5428c27d8f8e","referenceId":"6115922a-5f5d-455e-bc7e-7955a57f3815","referenceType":"version"},"tick_every":3600},"status":"paused","steps":[],"type":"mobile"}'
     headers:
       accept:
       - application/json
       content-type:
       - application/json
     method: PUT
-    uri: https://api.datadoghq.com/api/v1/synthetics/tests/mobile/ga7-aph-db8
+    uri: https://api.datadoghq.com/api/v1/synthetics/tests/mobile/cxt-jqd-x42
   response:
     body:
-      string: '{"public_id":"ga7-aph-db8","name":"Test-Edit_a_Mobile_test_returns_OK_response-1727792037-updated","status":"paused","type":"mobile","tags":[],"created_at":"2024-10-01T14:13:58.675045+00:00","modified_at":"2024-10-01T14:13:59.399254+00:00","config":{"variables":[]},"message":"","options":{"device_ids":["synthetics:mobile:device:iphone_15_ios_17"],"mobileApplication":{"applicationId":"ab0e0aed-536d-411a-9a99-5428c27d8f8e","referenceId":"6115922a-5f5d-455e-bc7e-7955a57f3815","referenceType":"version"},"tick_every":3600},"locations":["aws:us-west-2"],"created_by":{"name":null,"handle":"frog@datadoghq.com","email":"frog@datadoghq.com"},"deleted_at":null,"monitor_id":155155663,"org_id":321813,"modified_by":{"name":null,"handle":"frog@datadoghq.com","email":"frog@datadoghq.com"},"overall_state":2,"overall_state_modified":"2024-10-01T14:13:59.470478+00:00","stepCount":{"assertions":0,"subtests":0,"total":0}}
+      string: '{"org_id":321813,"public_id":"cxt-jqd-x42","name":"Test-Edit_a_Mobile_test_returns_OK_response-1733743091-updated","status":"paused","type":"mobile","tags":[],"message":"","options":{"device_ids":["synthetics:mobile:device:iphone_15_ios_17"],"mobileApplication":{"applicationId":"ab0e0aed-536d-411a-9a99-5428c27d8f8e","referenceId":"6115922a-5f5d-455e-bc7e-7955a57f3815","referenceType":"version"},"tick_every":3600},"locations":["aws:us-west-2"],"created_at":"2024-12-09T11:18:12.507076+00:00","modified_at":"2024-12-09T11:18:13.194537+00:00","config":{"variables":[]},"overall_state_modified":null,"monitor_id":159881046,"created_by":{"name":null,"handle":"frog@datadoghq.com","email":"frog@datadoghq.com"},"modified_by":{"name":null,"handle":"frog@datadoghq.com","email":"frog@datadoghq.com"},"stepCount":{"assertions":0,"subtests":0,"total":0}}
 
         '
     headers:
@@ -40,7 +40,7 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"public_ids":["ga7-aph-db8"]}'
+    body: '{"public_ids":["cxt-jqd-x42"]}'
     headers:
       accept:
       - application/json
@@ -50,7 +50,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/synthetics/tests/delete
   response:
     body:
-      string: '{"deleted_tests":[{"public_id":"ga7-aph-db8","deleted_at":"2024-10-01T14:14:00.385149+00:00"}]}
+      string: '{"deleted_tests":[{"public_id":"cxt-jqd-x42","deleted_at":"2024-12-09T11:18:14.310915+00:00"}]}
 
         '
     headers:

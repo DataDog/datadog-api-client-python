@@ -75,6 +75,8 @@ Feature: Synthetics
     And the response "name" is equal to "{{ unique }}"
     And the response "config.configVariables" has item with field "secure" with value true
     And the response "config.variables" has item with field "secure" with value true
+    And the response "steps[0].alwaysExecute" is equal to true
+    And the response "steps[0].exitIfSucceed" is equal to true
 
   @generated @skip @team:DataDog/synthetics-ct
   Scenario: Create a browser test returns "Test quota is reached" response
@@ -293,6 +295,7 @@ Feature: Synthetics
     And the response "config.steps[0].retry.count" is equal to 5
     And the response "config.steps[0].retry.interval" is equal to 1000
     And the response "config.steps[0].request.httpVersion" is equal to "http2"
+    And the response "config.steps[0].exitIfSucceed" is equal to true
     And the response "config.steps[0].extractedValues[0].secure" is equal to true
     And the response "config.steps[1].subtype" is equal to "wait"
     And the response "config.steps[1].value" is equal to 1

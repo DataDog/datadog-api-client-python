@@ -21,6 +21,9 @@ class SyntheticsAPIStep(ModelComposed):
         :param assertions: Array of assertions used for the test.
         :type assertions: [SyntheticsAssertion]
 
+        :param exit_if_succeed: Determines whether or not to exit the test if the step succeeds.
+        :type exit_if_succeed: bool, optional
+
         :param extracted_values: Array of values to parse and save as variables from the response.
         :type extracted_values: [SyntheticsParsingOptions], optional
 

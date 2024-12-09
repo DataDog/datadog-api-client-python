@@ -1,7 +1,7 @@
 interactions:
 - request:
     body: '{"config":{"assertions":[{"operator":"is","target":"message","type":"receivedMessage"},{"operator":"lessThan","target":2000,"type":"responseTime"}],"configVariables":[],"request":{"message":"message","url":"ws://datadoghq.com"}},"locations":["aws:us-east-2"],"message":"BDD
-      test payload: synthetics_api_test_websocket_payload.json","name":"Test-Create_an_API_test_with_WEBSOCKET_subtype_returns_OK_Returns_the_created_test_details_response-1706264446","options":{"accept_self_signed":false,"allow_insecure":true,"follow_redirects":true,"min_failure_duration":10,"min_location_failed":1,"monitor_name":"Test-Create_an_API_test_with_WEBSOCKET_subtype_returns_OK_Returns_the_created_test_details_response-1706264446","monitor_priority":5,"retry":{"count":3,"interval":10},"tick_every":60},"subtype":"websocket","tags":["testing:api"],"type":"api"}'
+      test payload: synthetics_api_test_websocket_payload.json","name":"Test-Create_an_API_test_with_WEBSOCKET_subtype_returns_OK_Returns_the_created_test_details_response-1733743086","options":{"accept_self_signed":false,"allow_insecure":true,"follow_redirects":true,"min_failure_duration":10,"min_location_failed":1,"monitor_name":"Test-Create_an_API_test_with_WEBSOCKET_subtype_returns_OK_Returns_the_created_test_details_response-1733743086","monitor_priority":5,"retry":{"count":3,"interval":10},"tick_every":60},"subtype":"websocket","tags":["testing:api"],"type":"api"}'
     headers:
       accept:
       - application/json
@@ -11,8 +11,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/synthetics/tests/api
   response:
     body:
-      string: '{"public_id":"sfs-q7c-6ft","name":"Test-Create_an_API_test_with_WEBSOCKET_subtype_returns_OK_Returns_the_created_test_details_response-1706264446","status":"live","type":"api","tags":["testing:api"],"created_at":"2024-01-26T10:20:46.730863+00:00","modified_at":"2024-01-26T10:20:46.730863+00:00","config":{"assertions":[{"operator":"is","target":"message","type":"receivedMessage"},{"operator":"lessThan","target":2000,"type":"responseTime"}],"configVariables":[],"request":{"message":"message","url":"ws://datadoghq.com"}},"message":"BDD
-        test payload: synthetics_api_test_websocket_payload.json","options":{"accept_self_signed":false,"allow_insecure":true,"follow_redirects":true,"min_failure_duration":10,"min_location_failed":1,"monitor_name":"Test-Create_an_API_test_with_WEBSOCKET_subtype_returns_OK_Returns_the_created_test_details_response-1706264446","monitor_priority":5,"retry":{"count":3,"interval":10},"tick_every":60},"locations":["aws:us-east-2"],"subtype":"websocket","created_by":{"name":"Frog","handle":"frog@datadoghq.com","email":"frog@datadoghq.com"},"deleted_at":null,"monitor_id":138446071,"org_id":569509,"modified_by":{"name":"Frog","handle":"frog@datadoghq.com","email":"frog@datadoghq.com"}}'
+      string: '{"public_id":"bae-2wv-3kh","name":"Test-Create_an_API_test_with_WEBSOCKET_subtype_returns_OK_Returns_the_created_test_details_response-1733743086","status":"live","type":"api","subtype":"websocket","tags":["testing:api"],"created_at":"2024-12-09T11:18:07.007154+00:00","modified_at":"2024-12-09T11:18:07.007154+00:00","config":{"assertions":[{"operator":"is","target":"message","type":"receivedMessage"},{"operator":"lessThan","target":2000,"type":"responseTime"}],"configVariables":[],"request":{"message":"message","url":"ws://datadoghq.com"}},"message":"BDD
+        test payload: synthetics_api_test_websocket_payload.json","options":{"accept_self_signed":false,"allow_insecure":true,"follow_redirects":true,"min_failure_duration":10,"min_location_failed":1,"monitor_name":"Test-Create_an_API_test_with_WEBSOCKET_subtype_returns_OK_Returns_the_created_test_details_response-1733743086","monitor_priority":5,"retry":{"count":3,"interval":10},"tick_every":60},"locations":["aws:us-east-2"],"created_by":{"name":null,"handle":"frog@datadoghq.com","email":"frog@datadoghq.com"},"deleted_at":null,"monitor_id":159881039,"org_id":321813,"modified_by":{"name":null,"handle":"frog@datadoghq.com","email":"frog@datadoghq.com"}}'
     headers:
       content-type:
       - application/json
@@ -20,7 +20,7 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"public_ids":["sfs-q7c-6ft"]}'
+    body: '{"public_ids":["bae-2wv-3kh"]}'
     headers:
       accept:
       - application/json
@@ -30,7 +30,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/synthetics/tests/delete
   response:
     body:
-      string: '{"deleted_tests":[{"public_id":"sfs-q7c-6ft","deleted_at":"2024-01-26T10:20:47.202087+00:00"}]}
+      string: '{"deleted_tests":[{"public_id":"bae-2wv-3kh","deleted_at":"2024-12-09T11:18:07.908849+00:00"}]}
 
         '
     headers:
