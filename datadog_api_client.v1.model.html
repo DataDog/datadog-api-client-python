@@ -18340,6 +18340,7 @@ type conversion is done.</p></li>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>allow_failure</strong> (<em>bool</em><em>, </em><em>optional</em>) – Determines whether or not to continue with test if this step fails.</p></li>
 <li><p><strong>assertions</strong> (<em>[</em><a class="reference internal" href="#datadog_api_client.v1.model.synthetics_assertion.SyntheticsAssertion" title="datadog_api_client.v1.model.synthetics_assertion.SyntheticsAssertion"><em>SyntheticsAssertion</em></a><em>]</em>) – Array of assertions used for the test.</p></li>
+<li><p><strong>exit_if_succeed</strong> (<em>bool</em><em>, </em><em>optional</em>) – Determines whether or not to exit the test if the step succeeds.</p></li>
 <li><p><strong>extracted_values</strong> (<em>[</em><a class="reference internal" href="#datadog_api_client.v1.model.synthetics_parsing_options.SyntheticsParsingOptions" title="datadog_api_client.v1.model.synthetics_parsing_options.SyntheticsParsingOptions"><em>SyntheticsParsingOptions</em></a><em>]</em><em>, </em><em>optional</em>) – Array of values to parse and save as variables from the response.</p></li>
 <li><p><strong>is_critical</strong> (<em>bool</em><em>, </em><em>optional</em>) – Determines whether or not to consider the entire test as failed if this step fails.
 Can be used only if <cite>allowFailure</cite> is <cite>true</cite>.</p></li>
@@ -18569,6 +18570,7 @@ See the <a class="reference external" href="https://docs.datadoghq.com/synthetic
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>allow_failure</strong> (<em>bool</em><em>, </em><em>optional</em>) – Determines whether or not to continue with test if this step fails.</p></li>
 <li><p><strong>assertions</strong> (<em>[</em><a class="reference internal" href="#datadog_api_client.v1.model.synthetics_assertion.SyntheticsAssertion" title="datadog_api_client.v1.model.synthetics_assertion.SyntheticsAssertion"><em>SyntheticsAssertion</em></a><em>]</em>) – Array of assertions used for the test.</p></li>
+<li><p><strong>exit_if_succeed</strong> (<em>bool</em><em>, </em><em>optional</em>) – Determines whether or not to exit the test if the step succeeds.</p></li>
 <li><p><strong>extracted_values</strong> (<em>[</em><a class="reference internal" href="#datadog_api_client.v1.model.synthetics_parsing_options.SyntheticsParsingOptions" title="datadog_api_client.v1.model.synthetics_parsing_options.SyntheticsParsingOptions"><em>SyntheticsParsingOptions</em></a><em>]</em><em>, </em><em>optional</em>) – Array of values to parse and save as variables from the response.</p></li>
 <li><p><strong>is_critical</strong> (<em>bool</em><em>, </em><em>optional</em>) – Determines whether or not to consider the entire test as failed if this step fails.
 Can be used only if <code class="docutils literal notranslate"><span class="pre">allowFailure</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p></li>
