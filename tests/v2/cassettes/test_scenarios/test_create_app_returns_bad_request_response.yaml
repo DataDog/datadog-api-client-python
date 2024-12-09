@@ -1,0 +1,20 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"description":"This is a bad example app","embeddedQueries":[],"rootInstanceName":"grid0"},"type":"appDefinitions"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/app-builder/apps
+  response:
+    body:
+      string: '{"errors":[{"detail":"missing required field","source":{"pointer":"/data/attributes/name"}}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 400
+      message: Bad Request
+version: 1

@@ -57,6 +57,13 @@ from datadog_api_client.v2.model.active_billing_dimensions_body import ActiveBil
 from datadog_api_client.v2.model.active_billing_dimensions_response import ActiveBillingDimensionsResponse
 from datadog_api_client.v2.model.active_billing_dimensions_type import ActiveBillingDimensionsType
 from datadog_api_client.v2.model.apm_retention_filter_type import ApmRetentionFilterType
+from datadog_api_client.v2.model.app_builder_error import AppBuilderError
+from datadog_api_client.v2.model.app_builder_error_errors_items import AppBuilderErrorErrorsItems
+from datadog_api_client.v2.model.app_builder_error_errors_items_source import AppBuilderErrorErrorsItemsSource
+from datadog_api_client.v2.model.app_builder_event import AppBuilderEvent
+from datadog_api_client.v2.model.app_builder_event_name import AppBuilderEventName
+from datadog_api_client.v2.model.app_builder_event_type import AppBuilderEventType
+from datadog_api_client.v2.model.app_meta import AppMeta
 from datadog_api_client.v2.model.application_key_create_attributes import ApplicationKeyCreateAttributes
 from datadog_api_client.v2.model.application_key_create_data import ApplicationKeyCreateData
 from datadog_api_client.v2.model.application_key_create_request import ApplicationKeyCreateRequest
@@ -70,6 +77,7 @@ from datadog_api_client.v2.model.application_key_update_data import ApplicationK
 from datadog_api_client.v2.model.application_key_update_request import ApplicationKeyUpdateRequest
 from datadog_api_client.v2.model.application_keys_sort import ApplicationKeysSort
 from datadog_api_client.v2.model.application_keys_type import ApplicationKeysType
+from datadog_api_client.v2.model.apps_sort_field import AppsSortField
 from datadog_api_client.v2.model.audit_logs_event import AuditLogsEvent
 from datadog_api_client.v2.model.audit_logs_event_attributes import AuditLogsEventAttributes
 from datadog_api_client.v2.model.audit_logs_event_type import AuditLogsEventType
@@ -348,6 +356,14 @@ from datadog_api_client.v2.model.cloudflare_account_update_request_attributes im
 )
 from datadog_api_client.v2.model.cloudflare_account_update_request_data import CloudflareAccountUpdateRequestData
 from datadog_api_client.v2.model.cloudflare_accounts_response import CloudflareAccountsResponse
+from datadog_api_client.v2.model.component import Component
+from datadog_api_client.v2.model.component_grid import ComponentGrid
+from datadog_api_client.v2.model.component_grid_properties import ComponentGridProperties
+from datadog_api_client.v2.model.component_grid_properties_is_visible import ComponentGridPropertiesIsVisible
+from datadog_api_client.v2.model.component_grid_type import ComponentGridType
+from datadog_api_client.v2.model.component_properties import ComponentProperties
+from datadog_api_client.v2.model.component_properties_is_visible import ComponentPropertiesIsVisible
+from datadog_api_client.v2.model.component_type import ComponentType
 from datadog_api_client.v2.model.confluent_account_create_request import ConfluentAccountCreateRequest
 from datadog_api_client.v2.model.confluent_account_create_request_attributes import (
     ConfluentAccountCreateRequestAttributes,
@@ -418,6 +434,13 @@ from datadog_api_client.v2.model.cost_by_org import CostByOrg
 from datadog_api_client.v2.model.cost_by_org_attributes import CostByOrgAttributes
 from datadog_api_client.v2.model.cost_by_org_response import CostByOrgResponse
 from datadog_api_client.v2.model.cost_by_org_type import CostByOrgType
+from datadog_api_client.v2.model.create_app_request import CreateAppRequest
+from datadog_api_client.v2.model.create_app_request_data import CreateAppRequestData
+from datadog_api_client.v2.model.create_app_request_data_attributes import CreateAppRequestDataAttributes
+from datadog_api_client.v2.model.create_app_request_data_type import CreateAppRequestDataType
+from datadog_api_client.v2.model.create_app_response import CreateAppResponse
+from datadog_api_client.v2.model.create_app_response_data import CreateAppResponseData
+from datadog_api_client.v2.model.create_app_response_data_type import CreateAppResponseDataType
 from datadog_api_client.v2.model.create_data_deletion_request_body import CreateDataDeletionRequestBody
 from datadog_api_client.v2.model.create_data_deletion_request_body_attributes import (
     CreateDataDeletionRequestBodyAttributes,
@@ -432,6 +455,12 @@ from datadog_api_client.v2.model.create_rule_request_data import CreateRuleReque
 from datadog_api_client.v2.model.create_rule_response import CreateRuleResponse
 from datadog_api_client.v2.model.create_rule_response_data import CreateRuleResponseData
 from datadog_api_client.v2.model.creator import Creator
+from datadog_api_client.v2.model.custom_connection import CustomConnection
+from datadog_api_client.v2.model.custom_connection_attributes import CustomConnectionAttributes
+from datadog_api_client.v2.model.custom_connection_attributes_on_prem_runner import (
+    CustomConnectionAttributesOnPremRunner,
+)
+from datadog_api_client.v2.model.custom_connection_type import CustomConnectionType
 from datadog_api_client.v2.model.custom_cost_get_response_meta import CustomCostGetResponseMeta
 from datadog_api_client.v2.model.custom_cost_list_response_meta import CustomCostListResponseMeta
 from datadog_api_client.v2.model.custom_cost_upload_response_meta import CustomCostUploadResponseMeta
@@ -571,12 +600,38 @@ from datadog_api_client.v2.model.data_deletion_response_item import DataDeletion
 from datadog_api_client.v2.model.data_deletion_response_item_attributes import DataDeletionResponseItemAttributes
 from datadog_api_client.v2.model.data_deletion_response_meta import DataDeletionResponseMeta
 from datadog_api_client.v2.model.data_scalar_column import DataScalarColumn
+from datadog_api_client.v2.model.delete_app_response import DeleteAppResponse
+from datadog_api_client.v2.model.delete_app_response_data import DeleteAppResponseData
+from datadog_api_client.v2.model.delete_app_response_data_type import DeleteAppResponseDataType
+from datadog_api_client.v2.model.delete_apps_request import DeleteAppsRequest
+from datadog_api_client.v2.model.delete_apps_request_data_items import DeleteAppsRequestDataItems
+from datadog_api_client.v2.model.delete_apps_request_data_items_type import DeleteAppsRequestDataItemsType
+from datadog_api_client.v2.model.delete_apps_response import DeleteAppsResponse
+from datadog_api_client.v2.model.delete_apps_response_data_items import DeleteAppsResponseDataItems
+from datadog_api_client.v2.model.delete_apps_response_data_items_type import DeleteAppsResponseDataItemsType
+from datadog_api_client.v2.model.deploy_app_response import DeployAppResponse
+from datadog_api_client.v2.model.deploy_app_response_data import DeployAppResponseData
+from datadog_api_client.v2.model.deploy_app_response_data_attributes import DeployAppResponseDataAttributes
+from datadog_api_client.v2.model.deploy_app_response_data_type import DeployAppResponseDataType
+from datadog_api_client.v2.model.deployment_included import DeploymentIncluded
+from datadog_api_client.v2.model.deployment_included_attributes import DeploymentIncludedAttributes
+from datadog_api_client.v2.model.deployment_included_meta import DeploymentIncludedMeta
+from datadog_api_client.v2.model.deployment_included_type import DeploymentIncludedType
+from datadog_api_client.v2.model.deployment_meta import DeploymentMeta
+from datadog_api_client.v2.model.deployment_relationship import DeploymentRelationship
+from datadog_api_client.v2.model.deployment_relationship_data import DeploymentRelationshipData
+from datadog_api_client.v2.model.deployment_relationship_data_type import DeploymentRelationshipDataType
+from datadog_api_client.v2.model.deployment_relationship_meta import DeploymentRelationshipMeta
 from datadog_api_client.v2.model.detailed_finding import DetailedFinding
 from datadog_api_client.v2.model.detailed_finding_attributes import DetailedFindingAttributes
 from datadog_api_client.v2.model.detailed_finding_type import DetailedFindingType
 from datadog_api_client.v2.model.device_attributes import DeviceAttributes
 from datadog_api_client.v2.model.device_attributes_interface_statuses import DeviceAttributesInterfaceStatuses
 from datadog_api_client.v2.model.devices_list_data import DevicesListData
+from datadog_api_client.v2.model.disable_app_response import DisableAppResponse
+from datadog_api_client.v2.model.disable_app_response_data import DisableAppResponseData
+from datadog_api_client.v2.model.disable_app_response_data_attributes import DisableAppResponseDataAttributes
+from datadog_api_client.v2.model.disable_app_response_data_type import DisableAppResponseDataType
 from datadog_api_client.v2.model.domain_allowlist import DomainAllowlist
 from datadog_api_client.v2.model.domain_allowlist_attributes import DomainAllowlistAttributes
 from datadog_api_client.v2.model.domain_allowlist_request import DomainAllowlistRequest
@@ -788,6 +843,11 @@ from datadog_api_client.v2.model.gcpsts_service_account_update_request_data impo
 from datadog_api_client.v2.model.gcpsts_service_accounts_response import GCPSTSServiceAccountsResponse
 from datadog_api_client.v2.model.gcp_service_account_meta import GCPServiceAccountMeta
 from datadog_api_client.v2.model.gcp_service_account_type import GCPServiceAccountType
+from datadog_api_client.v2.model.get_app_response import GetAppResponse
+from datadog_api_client.v2.model.get_app_response_data import GetAppResponseData
+from datadog_api_client.v2.model.get_app_response_data_attributes import GetAppResponseDataAttributes
+from datadog_api_client.v2.model.get_app_response_data_type import GetAppResponseDataType
+from datadog_api_client.v2.model.get_app_response_relationship import GetAppResponseRelationship
 from datadog_api_client.v2.model.get_data_deletions_response_body import GetDataDeletionsResponseBody
 from datadog_api_client.v2.model.get_device_attributes import GetDeviceAttributes
 from datadog_api_client.v2.model.get_device_data import GetDeviceData
@@ -989,6 +1049,19 @@ from datadog_api_client.v2.model.incident_user_data import IncidentUserData
 from datadog_api_client.v2.model.incident_user_defined_field_type import IncidentUserDefinedFieldType
 from datadog_api_client.v2.model.incidents_response import IncidentsResponse
 from datadog_api_client.v2.model.include_type import IncludeType
+from datadog_api_client.v2.model.input_schema import InputSchema
+from datadog_api_client.v2.model.input_schema_data import InputSchemaData
+from datadog_api_client.v2.model.input_schema_data_attributes import InputSchemaDataAttributes
+from datadog_api_client.v2.model.input_schema_data_attributes_parameters_items import (
+    InputSchemaDataAttributesParametersItems,
+)
+from datadog_api_client.v2.model.input_schema_data_attributes_parameters_items_data import (
+    InputSchemaDataAttributesParametersItemsData,
+)
+from datadog_api_client.v2.model.input_schema_data_attributes_parameters_items_data_attributes import (
+    InputSchemaDataAttributesParametersItemsDataAttributes,
+)
+from datadog_api_client.v2.model.input_schema_data_type import InputSchemaDataType
 from datadog_api_client.v2.model.intake_payload_accepted import IntakePayloadAccepted
 from datadog_api_client.v2.model.interface_attributes import InterfaceAttributes
 from datadog_api_client.v2.model.interface_attributes_status import InterfaceAttributesStatus
@@ -1011,6 +1084,15 @@ from datadog_api_client.v2.model.list_apis_response_data_attributes import ListA
 from datadog_api_client.v2.model.list_apis_response_meta import ListAPIsResponseMeta
 from datadog_api_client.v2.model.list_apis_response_meta_pagination import ListAPIsResponseMetaPagination
 from datadog_api_client.v2.model.list_application_keys_response import ListApplicationKeysResponse
+from datadog_api_client.v2.model.list_apps_response import ListAppsResponse
+from datadog_api_client.v2.model.list_apps_response_data_items import ListAppsResponseDataItems
+from datadog_api_client.v2.model.list_apps_response_data_items_attributes import ListAppsResponseDataItemsAttributes
+from datadog_api_client.v2.model.list_apps_response_data_items_relationships import (
+    ListAppsResponseDataItemsRelationships,
+)
+from datadog_api_client.v2.model.list_apps_response_data_items_type import ListAppsResponseDataItemsType
+from datadog_api_client.v2.model.list_apps_response_meta import ListAppsResponseMeta
+from datadog_api_client.v2.model.list_apps_response_meta_page import ListAppsResponseMetaPage
 from datadog_api_client.v2.model.list_devices_response import ListDevicesResponse
 from datadog_api_client.v2.model.list_devices_response_metadata import ListDevicesResponseMetadata
 from datadog_api_client.v2.model.list_devices_response_metadata_page import ListDevicesResponseMetadataPage
@@ -1395,8 +1477,10 @@ from datadog_api_client.v2.model.projected_cost_attributes import ProjectedCostA
 from datadog_api_client.v2.model.projected_cost_response import ProjectedCostResponse
 from datadog_api_client.v2.model.projected_cost_type import ProjectedCostType
 from datadog_api_client.v2.model.projects_response import ProjectsResponse
+from datadog_api_client.v2.model.query import Query
 from datadog_api_client.v2.model.query_formula import QueryFormula
 from datadog_api_client.v2.model.query_sort_order import QuerySortOrder
+from datadog_api_client.v2.model.query_type import QueryType
 from datadog_api_client.v2.model.rum_aggregate_bucket_value import RUMAggregateBucketValue
 from datadog_api_client.v2.model.rum_aggregate_bucket_value_timeseries import RUMAggregateBucketValueTimeseries
 from datadog_api_client.v2.model.rum_aggregate_bucket_value_timeseries_point import (
@@ -1599,6 +1683,10 @@ from datadog_api_client.v2.model.scalar_meta import ScalarMeta
 from datadog_api_client.v2.model.scalar_query import ScalarQuery
 from datadog_api_client.v2.model.scalar_response import ScalarResponse
 from datadog_api_client.v2.model.scorecard_type import ScorecardType
+from datadog_api_client.v2.model.script import Script
+from datadog_api_client.v2.model.script_data import ScriptData
+from datadog_api_client.v2.model.script_data_attributes import ScriptDataAttributes
+from datadog_api_client.v2.model.script_data_type import ScriptDataType
 from datadog_api_client.v2.model.security_filter import SecurityFilter
 from datadog_api_client.v2.model.security_filter_attributes import SecurityFilterAttributes
 from datadog_api_client.v2.model.security_filter_create_attributes import SecurityFilterCreateAttributes
@@ -2076,6 +2164,15 @@ from datadog_api_client.v2.model.timeseries_response_times import TimeseriesResp
 from datadog_api_client.v2.model.timeseries_response_values import TimeseriesResponseValues
 from datadog_api_client.v2.model.timeseries_response_values_list import TimeseriesResponseValuesList
 from datadog_api_client.v2.model.unit import Unit
+from datadog_api_client.v2.model.update_app_request import UpdateAppRequest
+from datadog_api_client.v2.model.update_app_request_data import UpdateAppRequestData
+from datadog_api_client.v2.model.update_app_request_data_attributes import UpdateAppRequestDataAttributes
+from datadog_api_client.v2.model.update_app_request_data_type import UpdateAppRequestDataType
+from datadog_api_client.v2.model.update_app_response import UpdateAppResponse
+from datadog_api_client.v2.model.update_app_response_data import UpdateAppResponseData
+from datadog_api_client.v2.model.update_app_response_data_attributes import UpdateAppResponseDataAttributes
+from datadog_api_client.v2.model.update_app_response_data_type import UpdateAppResponseDataType
+from datadog_api_client.v2.model.update_app_response_relationship import UpdateAppResponseRelationship
 from datadog_api_client.v2.model.update_open_api_response import UpdateOpenAPIResponse
 from datadog_api_client.v2.model.update_open_api_response_attributes import UpdateOpenAPIResponseAttributes
 from datadog_api_client.v2.model.update_open_api_response_data import UpdateOpenAPIResponseData
@@ -2219,6 +2316,13 @@ __all__ = [
     "ActiveBillingDimensionsResponse",
     "ActiveBillingDimensionsType",
     "ApmRetentionFilterType",
+    "AppBuilderError",
+    "AppBuilderErrorErrorsItems",
+    "AppBuilderErrorErrorsItemsSource",
+    "AppBuilderEvent",
+    "AppBuilderEventName",
+    "AppBuilderEventType",
+    "AppMeta",
     "ApplicationKeyCreateAttributes",
     "ApplicationKeyCreateData",
     "ApplicationKeyCreateRequest",
@@ -2232,6 +2336,7 @@ __all__ = [
     "ApplicationKeyUpdateRequest",
     "ApplicationKeysSort",
     "ApplicationKeysType",
+    "AppsSortField",
     "AuditLogsEvent",
     "AuditLogsEventAttributes",
     "AuditLogsEventType",
@@ -2454,6 +2559,14 @@ __all__ = [
     "CloudflareAccountUpdateRequestAttributes",
     "CloudflareAccountUpdateRequestData",
     "CloudflareAccountsResponse",
+    "Component",
+    "ComponentGrid",
+    "ComponentGridProperties",
+    "ComponentGridPropertiesIsVisible",
+    "ComponentGridType",
+    "ComponentProperties",
+    "ComponentPropertiesIsVisible",
+    "ComponentType",
     "ConfluentAccountCreateRequest",
     "ConfluentAccountCreateRequestAttributes",
     "ConfluentAccountCreateRequestData",
@@ -2518,6 +2631,13 @@ __all__ = [
     "CostByOrgAttributes",
     "CostByOrgResponse",
     "CostByOrgType",
+    "CreateAppRequest",
+    "CreateAppRequestData",
+    "CreateAppRequestDataAttributes",
+    "CreateAppRequestDataType",
+    "CreateAppResponse",
+    "CreateAppResponseData",
+    "CreateAppResponseDataType",
     "CreateDataDeletionRequestBody",
     "CreateDataDeletionRequestBodyAttributes",
     "CreateDataDeletionRequestBodyData",
@@ -2530,6 +2650,10 @@ __all__ = [
     "CreateRuleResponse",
     "CreateRuleResponseData",
     "Creator",
+    "CustomConnection",
+    "CustomConnectionAttributes",
+    "CustomConnectionAttributesOnPremRunner",
+    "CustomConnectionType",
     "CustomCostGetResponseMeta",
     "CustomCostListResponseMeta",
     "CustomCostUploadResponseMeta",
@@ -2609,12 +2733,38 @@ __all__ = [
     "DataDeletionResponseItemAttributes",
     "DataDeletionResponseMeta",
     "DataScalarColumn",
+    "DeleteAppResponse",
+    "DeleteAppResponseData",
+    "DeleteAppResponseDataType",
+    "DeleteAppsRequest",
+    "DeleteAppsRequestDataItems",
+    "DeleteAppsRequestDataItemsType",
+    "DeleteAppsResponse",
+    "DeleteAppsResponseDataItems",
+    "DeleteAppsResponseDataItemsType",
+    "DeployAppResponse",
+    "DeployAppResponseData",
+    "DeployAppResponseDataAttributes",
+    "DeployAppResponseDataType",
+    "DeploymentIncluded",
+    "DeploymentIncludedAttributes",
+    "DeploymentIncludedMeta",
+    "DeploymentIncludedType",
+    "DeploymentMeta",
+    "DeploymentRelationship",
+    "DeploymentRelationshipData",
+    "DeploymentRelationshipDataType",
+    "DeploymentRelationshipMeta",
     "DetailedFinding",
     "DetailedFindingAttributes",
     "DetailedFindingType",
     "DeviceAttributes",
     "DeviceAttributesInterfaceStatuses",
     "DevicesListData",
+    "DisableAppResponse",
+    "DisableAppResponseData",
+    "DisableAppResponseDataAttributes",
+    "DisableAppResponseDataType",
     "DomainAllowlist",
     "DomainAllowlistAttributes",
     "DomainAllowlistRequest",
@@ -2798,6 +2948,11 @@ __all__ = [
     "GCPSTSServiceAccountsResponse",
     "GCPServiceAccountMeta",
     "GCPServiceAccountType",
+    "GetAppResponse",
+    "GetAppResponseData",
+    "GetAppResponseDataAttributes",
+    "GetAppResponseDataType",
+    "GetAppResponseRelationship",
     "GetDataDeletionsResponseBody",
     "GetDeviceAttributes",
     "GetDeviceData",
@@ -2967,6 +3122,13 @@ __all__ = [
     "IncidentUserDefinedFieldType",
     "IncidentsResponse",
     "IncludeType",
+    "InputSchema",
+    "InputSchemaData",
+    "InputSchemaDataAttributes",
+    "InputSchemaDataAttributesParametersItems",
+    "InputSchemaDataAttributesParametersItemsData",
+    "InputSchemaDataAttributesParametersItemsDataAttributes",
+    "InputSchemaDataType",
     "IntakePayloadAccepted",
     "InterfaceAttributes",
     "InterfaceAttributesStatus",
@@ -2989,6 +3151,13 @@ __all__ = [
     "ListAPIsResponseMeta",
     "ListAPIsResponseMetaPagination",
     "ListApplicationKeysResponse",
+    "ListAppsResponse",
+    "ListAppsResponseDataItems",
+    "ListAppsResponseDataItemsAttributes",
+    "ListAppsResponseDataItemsRelationships",
+    "ListAppsResponseDataItemsType",
+    "ListAppsResponseMeta",
+    "ListAppsResponseMetaPage",
     "ListDevicesResponse",
     "ListDevicesResponseMetadata",
     "ListDevicesResponseMetadataPage",
@@ -3319,8 +3488,10 @@ __all__ = [
     "ProjectedCostResponse",
     "ProjectedCostType",
     "ProjectsResponse",
+    "Query",
     "QueryFormula",
     "QuerySortOrder",
+    "QueryType",
     "RUMAggregateBucketValue",
     "RUMAggregateBucketValueTimeseries",
     "RUMAggregateBucketValueTimeseriesPoint",
@@ -3511,6 +3682,10 @@ __all__ = [
     "ScalarQuery",
     "ScalarResponse",
     "ScorecardType",
+    "Script",
+    "ScriptData",
+    "ScriptDataAttributes",
+    "ScriptDataType",
     "SecurityFilter",
     "SecurityFilterAttributes",
     "SecurityFilterCreateAttributes",
@@ -3858,6 +4033,15 @@ __all__ = [
     "TimeseriesResponseValues",
     "TimeseriesResponseValuesList",
     "Unit",
+    "UpdateAppRequest",
+    "UpdateAppRequestData",
+    "UpdateAppRequestDataAttributes",
+    "UpdateAppRequestDataType",
+    "UpdateAppResponse",
+    "UpdateAppResponseData",
+    "UpdateAppResponseDataAttributes",
+    "UpdateAppResponseDataType",
+    "UpdateAppResponseRelationship",
     "UpdateOpenAPIResponse",
     "UpdateOpenAPIResponseAttributes",
     "UpdateOpenAPIResponseData",
