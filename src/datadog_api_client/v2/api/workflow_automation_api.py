@@ -60,7 +60,7 @@ class WorkflowAutomationApi:
         self._create_workflow_instance_endpoint = _Endpoint(
             settings={
                 "response_type": (WorkflowInstanceCreateResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/workflows/{workflow_id}/instances",
                 "operation_id": "create_workflow_instance",
                 "http_method": "POST",
