@@ -23,9 +23,9 @@ class AWSNewExternalIDResponseAttributes(ModelNormal):
 
     def __init__(self_, external_id: str, **kwargs):
         """
-        AWS External ID response body
+        AWS External ID response body.
 
-        :param external_id: AWS IAM External ID for associated role
+        :param external_id: AWS IAM External ID for associated role.
         :type external_id: str
         """
         super().__init__(kwargs)

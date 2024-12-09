@@ -45,9 +45,9 @@ class AWSNewExternalIDResponseData(ModelNormal):
         **kwargs,
     ):
         """
-        AWS External ID response body
+        AWS External ID response body.
 
-        :param attributes: AWS External ID response body
+        :param attributes: AWS External ID response body.
         :type attributes: AWSNewExternalIDResponseAttributes, optional
 
         :param id: The ``AWSNewExternalIDResponseData`` ``id``.
