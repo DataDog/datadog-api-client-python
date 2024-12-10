@@ -44,10 +44,10 @@ jobs:
       - name: Get GitHub App token
         if: github.event_name == 'pull_request'
         id: get_token
-        uses: tibdex/github-app-token@v1
+        uses: actions/create-github-app-token@v1
         with:
-          app_id: ${{ secrets.PIPELINE_GITHUB_APP_ID }}
-          private_key: ${{ secrets.PIPELINE_GITHUB_APP_PRIVATE_KEY }}
+          app-id: ${{ secrets.PIPELINE_GITHUB_APP_ID }}
+          private-key: ${{ secrets.PIPELINE_GITHUB_APP_PRIVATE_KEY }}
           repository: DataDog/datadog-api-spec
       - name: Checkout code
         uses: actions/checkout@v3
@@ -84,7 +84,7 @@ jobs:
           SLEEP_AFTER_REQUEST: ${{ vars.SLEEP_AFTER_REQUEST }}
           PYTEST_ADDOPTS: "--ddtrace"
           DD_PYTEST_OPERATION_NAME: "test"
-          DD_TRACE_PROPAGATION_STYLE_INJECT: "datadog" 
+          DD_TRACE_PROPAGATION_STYLE_INJECT: "datadog"
       - name: Post failure status check
         if: failure() && github.event_name == 'pull_request' && contains(github.event.pull_request.head.ref, 'datadog-api-spec/generated/')
         uses: DataDog/github-actions/post-status-check@v2
