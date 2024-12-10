@@ -68,6 +68,7 @@ class SecurityMonitoringStandardRuleResponse(ModelNormal):
             "third_party_cases": ([SecurityMonitoringThirdPartyRuleCase],),
             "type": (SecurityMonitoringRuleTypeRead,),
             "update_author_id": (int,),
+            "updated_at": (int,),
             "version": (int,),
         }
 
@@ -93,6 +94,7 @@ class SecurityMonitoringStandardRuleResponse(ModelNormal):
         "third_party_cases": "thirdPartyCases",
         "type": "type",
         "update_author_id": "updateAuthorId",
+        "updated_at": "updatedAt",
         "version": "version",
     }
 
@@ -119,6 +121,7 @@ class SecurityMonitoringStandardRuleResponse(ModelNormal):
         third_party_cases: Union[List[SecurityMonitoringThirdPartyRuleCase], UnsetType] = unset,
         type: Union[SecurityMonitoringRuleTypeRead, UnsetType] = unset,
         update_author_id: Union[int, UnsetType] = unset,
+        updated_at: Union[int, UnsetType] = unset,
         version: Union[int, UnsetType] = unset,
         **kwargs,
     ):
@@ -188,6 +191,9 @@ class SecurityMonitoringStandardRuleResponse(ModelNormal):
         :param update_author_id: User ID of the user who updated the rule.
         :type update_author_id: int, optional
 
+        :param updated_at: The date the rule was last updated, in milliseconds.
+        :type updated_at: int, optional
+
         :param version: The version of the rule.
         :type version: int, optional
         """
@@ -233,6 +239,8 @@ class SecurityMonitoringStandardRuleResponse(ModelNormal):
             kwargs["type"] = type
         if update_author_id is not unset:
             kwargs["update_author_id"] = update_author_id
+        if updated_at is not unset:
+            kwargs["updated_at"] = updated_at
         if version is not unset:
             kwargs["version"] = version
         super().__init__(kwargs)

@@ -78,6 +78,9 @@ class SecurityMonitoringRuleResponse(ModelComposed):
         :param update_author_id: User ID of the user who updated the rule.
         :type update_author_id: int, optional
 
+        :param updated_at: The date the rule was last updated, in milliseconds.
+        :type updated_at: int, optional
+
         :param version: The version of the rule.
         :type version: int, optional
         """
