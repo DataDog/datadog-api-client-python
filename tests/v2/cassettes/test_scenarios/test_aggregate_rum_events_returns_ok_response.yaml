@@ -11,7 +11,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/rum/analytics/aggregate
   response:
     body:
-      string: '{"meta":{"status":"done","request_id":"pddv1ChZyS2R0R2cwbFNTR3dXWHE0T1V4SkV3IiwKHO-LyxpZr85euhVxgr_zcJZpbjq-uQVUzkFlD0ISDPnlZXRCg4-gaoMc2w","elapsed":0},"data":{"buckets":[]}}
+      string: '{"meta":{"elapsed":10,"request_id":"pddv1ChZSMml0UE50SVRraWllRWtWbUV1UHVBIiwKHII2XAGPhMI6Ua9pcGpwYflxMkm9HA4hkKW0lCQSDHE8AS_dOP2EowUuSg","status":"done"},"data":{"buckets":[]}}
 
         '
     headers:

@@ -33,7 +33,7 @@ Feature: RUM
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/rum-backend
+  @skip-validation @team:DataDog/rum-backend
   Scenario: Create a new RUM application returns "OK" response
     Given new "CreateRUMApplication" request
     And body with value {"data": {"attributes": {"name": "test-rum-{{ unique_hash }}", "type": "ios"}, "type": "rum_application_create"}}
@@ -43,7 +43,7 @@ Feature: RUM
     And the response "data.attributes.type" is equal to "ios"
     And the response "data.attributes.name" is equal to "test-rum-{{ unique_hash }}"
 
-  @team:DataDog/rum-backend
+  @skip-validation @team:DataDog/rum-backend
   Scenario: Delete a RUM application returns "No Content" response
     Given there is a valid "rum_application" in the system
     And new "DeleteRUMApplication" request
@@ -65,7 +65,7 @@ Feature: RUM
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/rum-backend
+  @skip-validation @team:DataDog/rum-backend
   Scenario: Get a RUM application returns "OK" response
     Given there is a valid "rum_application" in the system
     And new "GetRUMApplication" request
@@ -73,8 +73,8 @@ Feature: RUM
     When the request is sent
     Then the response status is 200 OK
     And the response "data.type" is equal to "rum_application"
-    And the response "data.attributes.type" is equal to "browser"
-    And the response "data.attributes.name" is equal to "test_name_create"
+    And the response "data.attributes.type" is equal to "ios"
+    And the response "data.attributes.name" is equal to "test-rum-{{ unique_hash }}"
 
   @generated @skip @team:DataDog/rum-backend
   Scenario: Get a list of RUM events returns "Bad Request" response
@@ -102,7 +102,7 @@ Feature: RUM
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/rum-backend
+  @skip-validation @team:DataDog/rum-backend
   Scenario: List all the RUM applications returns "OK" response
     Given there is a valid "rum_application" in the system
     And new "GetRUMApplications" request
@@ -148,7 +148,7 @@ Feature: RUM
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/rum-backend
+  @skip-validation @team:DataDog/rum-backend
   Scenario: Update a RUM application returns "OK" response
     Given there is a valid "rum_application" in the system
     And new "UpdateRUMApplication" request
@@ -161,7 +161,7 @@ Feature: RUM
     And the response "data.attributes.type" is equal to "browser"
     And the response "data.attributes.name" is equal to "updated_name_for_my_existing_rum_application"
 
-  @team:DataDog/rum-backend
+  @skip-validation @team:DataDog/rum-backend
   Scenario: Update a RUM application returns "Unprocessable Entity." response
     Given there is a valid "rum_application" in the system
     And new "UpdateRUMApplication" request

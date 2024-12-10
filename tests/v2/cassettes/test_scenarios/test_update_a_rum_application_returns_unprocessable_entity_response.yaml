@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"name":"test_name_create","type":"browser"},"type":"rum_application_create"}}'
+    body: '{"data":{"attributes":{"name":"test-rum-6fee7799535d7418","type":"ios"},"type":"rum_application_create"}}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/rum/applications
   response:
     body:
-      string: '{"data":{"attributes":{"updated_by_handle":"frog@datadoghq.com","application_id":"fdf8b82d-d289-408c-9e57-561abf7cd7c4","name":"test_name_create","created_by_handle":"frog@datadoghq.com","created_at":1670264354633,"org_id":321813,"updated_at":1670264354633,"is_active":false,"hash":"pub0e8c306f38224753217726072c10be16","client_token":"pub0e8c306f38224753217726072c10be16","type":"browser"},"type":"rum_application","id":"fdf8b82d-d289-408c-9e57-561abf7cd7c4"}}
+      string: '{"data":{"type":"rum_application","attributes":{"updated_by_handle":"frog@datadoghq.com","rum_enabled_at":1733845249567,"application_id":"00f4c783-4371-4e5c-b2bf-acf591de6c0d","tags":[],"product_analytics_enabled":false,"rum_disabled_at":0,"client_token":"pub997fafb8492c06b8826445aba2a0bd3a","created_at":1733845249567,"created_by_handle":"frog@datadoghq.com","is_active":false,"org_id":321813,"rum_enabled":true,"product_analytics_enabled_at":1733845249567,"product_analytics_disabled_at":1733845249567,"updated_at":1733845249567,"name":"test-rum-6fee7799535d7418","hash":"pub997fafb8492c06b8826445aba2a0bd3a","type":"ios"},"id":"00f4c783-4371-4e5c-b2bf-acf591de6c0d"}}
 
         '
     headers:
@@ -27,7 +27,7 @@ interactions:
       content-type:
       - application/json
     method: PATCH
-    uri: https://api.datadoghq.com/api/v2/rum/applications/fdf8b82d-d289-408c-9e57-561abf7cd7c4
+    uri: https://api.datadoghq.com/api/v2/rum/applications/00f4c783-4371-4e5c-b2bf-acf591de6c0d
   response:
     body:
       string: '{"errors":["The id attribute in the request body does not match the
@@ -44,7 +44,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/rum/applications/fdf8b82d-d289-408c-9e57-561abf7cd7c4
+    uri: https://api.datadoghq.com/api/v2/rum/applications/00f4c783-4371-4e5c-b2bf-acf591de6c0d
   response:
     body:
       string: ''
