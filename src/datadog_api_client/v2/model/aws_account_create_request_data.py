@@ -34,9 +34,9 @@ class AWSAccountCreateRequestData(ModelNormal):
 
     def __init__(self_, attributes: AWSAccountCreateRequestAttributes, type: AWSAccountType, **kwargs):
         """
-        AWS Account Create Request data
+        AWS Account Create Request data.
 
-        :param attributes: The AWS Account Integration Config to be created
+        :param attributes: The AWS Account Integration Config to be created.
         :type attributes: AWSAccountCreateRequestAttributes
 
         :param type: AWS Account resource type.

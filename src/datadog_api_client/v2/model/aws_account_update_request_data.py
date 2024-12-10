@@ -44,12 +44,14 @@ class AWSAccountUpdateRequestData(ModelNormal):
         **kwargs,
     ):
         """
-        AWS Account Update Request data
+        AWS Account Update Request data.
 
-        :param attributes: The AWS Account Integration Config to be updated
+        :param attributes: The AWS Account Integration Config to be updated.
         :type attributes: AWSAccountUpdateRequestAttributes
 
-        :param id: Unique Datadog ID of the AWS Account Integration Config
+        :param id: Unique Datadog ID of the AWS Account Integration Config.
+            To get the config ID for an account, use the `List all AWS integrations <https://docs.datadoghq.com/api/latest/aws-integration/#list-all-aws-integrations>`_
+            endpoint and query by AWS Account ID.
         :type id: str, optional
 
         :param type: AWS Account resource type.

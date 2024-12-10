@@ -23,9 +23,9 @@ class AWSRegionsIncludeAll(ModelNormal):
 
     def __init__(self_, include_all: bool, **kwargs):
         """
-        Include all regions
+        Include all regions. Defaults to ``true``.
 
-        :param include_all: Include all regions
+        :param include_all: Include all regions.
         :type include_all: bool
         """
         super().__init__(kwargs)
