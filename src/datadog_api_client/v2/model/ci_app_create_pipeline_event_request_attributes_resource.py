@@ -15,7 +15,10 @@ class CIAppCreatePipelineEventRequestAttributesResource(ModelComposed):
         """
         Details of the CI pipeline event.
 
-        :param end: Time when the pipeline run finished. It cannot be older than 18 hours in the past from the current time. The time format must be RFC3339.
+        :param dependencies: A list of stage IDs that this stage depends on.
+        :type dependencies: [str], none_type, optional
+
+        :param end: Time when the stage run finished. The time format must be RFC3339.
         :type end: datetime
 
         :param error: Contains information of the CI error.
@@ -25,19 +28,16 @@ class CIAppCreatePipelineEventRequestAttributesResource(ModelComposed):
             Note that either `tag` or `branch` has to be provided, but not both.
         :type git: CIAppGitInfo, none_type, optional
 
-        :param is_manual: Whether or not the pipeline was triggered manually by the user.
-        :type is_manual: bool, none_type, optional
+        :param id: UUID for the stage. It has to be unique at least in the pipeline scope.
+        :type id: str
 
-        :param is_resumed: Whether or not the pipeline was resumed after being blocked.
-        :type is_resumed: bool, none_type, optional
-
-        :param level: Used to distinguish between pipelines, stages, jobs, and steps.
-        :type level: CIAppPipelineEventPipelineLevel
+        :param level: Used to distinguish between pipelines, stages, jobs and steps.
+        :type level: CIAppPipelineEventStageLevel
 
         :param metrics: A list of user-defined metrics. The metrics must follow the `key:value` pattern and the value must be numeric.
         :type metrics: [str], none_type, optional
 
-        :param name: Name of the pipeline. All pipeline runs for the builds should have the same name.
+        :param name: The name for the stage.
         :type name: str
 
         :param node: Contains information of the host running the pipeline, stage, job, or step.
@@ -46,56 +46,32 @@ class CIAppCreatePipelineEventRequestAttributesResource(ModelComposed):
         :param parameters: A map of key-value parameters or environment variables that were defined for the pipeline.
         :type parameters: CIAppPipelineEventParameters, none_type, optional
 
-        :param parent_pipeline: If the pipeline is triggered as child of another pipeline, this should contain the details of the parent pipeline.
-        :type parent_pipeline: CIAppPipelineEventParentPipeline, none_type, optional
-
-        :param partial_retry: Whether or not the pipeline was a partial retry of a previous attempt. A partial retry is one
-            which only runs a subset of the original jobs.
-        :type partial_retry: bool
-
-        :param pipeline_id: Any ID used in the provider to identify the pipeline run even if it is not unique across retries.
-            If the `pipeline_id` is unique, then both `unique_id` and `pipeline_id` can be set to the same value.
-        :type pipeline_id: str, optional
-
-        :param previous_attempt: If the pipeline is a retry, this should contain the details of the previous attempt.
-        :type previous_attempt: CIAppPipelineEventPreviousPipeline, none_type, optional
-
-        :param queue_time: The queue time in milliseconds, if applicable.
-        :type queue_time: int, none_type, optional
-
-        :param start: Time when the pipeline run started (it should not include any queue time). The time format must be RFC3339.
-        :type start: datetime
-
-        :param status: The final status of the pipeline.
-        :type status: CIAppPipelineEventPipelineStatus
-
-        :param tags: A list of user-defined tags. The tags must follow the `key:value` pattern.
-        :type tags: [str], none_type, optional
-
-        :param unique_id: UUID of the pipeline run. The ID has to be unique across retries and pipelines,
-            including partial retries.
-        :type unique_id: str
-
-        :param url: The URL to look at the pipeline in the CI provider UI.
-        :type url: str
-
-        :param dependencies: A list of stage IDs that this stage depends on.
-        :type dependencies: [str], none_type, optional
-
-        :param id: UUID for the stage. It has to be unique at least in the pipeline scope.
-        :type id: str
-
         :param pipeline_name: The parent pipeline name.
         :type pipeline_name: str
 
         :param pipeline_unique_id: The parent pipeline UUID.
         :type pipeline_unique_id: str
 
+        :param queue_time: The queue time in milliseconds, if applicable.
+        :type queue_time: int, none_type, optional
+
+        :param start: Time when the stage run started (it should not include any queue time). The time format must be RFC3339.
+        :type start: datetime
+
+        :param status: The final status of the stage.
+        :type status: CIAppPipelineEventStageStatus
+
+        :param tags: A list of user-defined tags. The tags must follow the `key:value` pattern.
+        :type tags: [str], none_type, optional
+
         :param stage_id: The parent stage UUID (if applicable).
         :type stage_id: str, none_type, optional
 
         :param stage_name: The parent stage name (if applicable).
         :type stage_name: str, none_type, optional
+
+        :param url: The URL to look at the job in the CI provider UI.
+        :type url: str
 
         :param job_id: The parent job UUID (if applicable).
         :type job_id: str, none_type, optional
