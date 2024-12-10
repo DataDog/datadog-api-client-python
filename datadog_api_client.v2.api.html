@@ -6628,7 +6628,7 @@ The restriction policy determines who is authorized to perform what actions on t
 <p>Deletes the restriction policy associated with a specified resource.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>resource_id</strong> (<em>str</em>) – Identifier, formatted as <code class="docutils literal notranslate"><span class="pre">type:id</span></code>. Supported types: <code class="docutils literal notranslate"><span class="pre">connection</span></code> , <code class="docutils literal notranslate"><span class="pre">dashboard</span></code> , <code class="docutils literal notranslate"><span class="pre">notebook</span></code> , <code class="docutils literal notranslate"><span class="pre">security-rule</span></code> , <code class="docutils literal notranslate"><span class="pre">slo</span></code>.</p>
+<dd class="field-odd"><p><strong>resource_id</strong> (<em>str</em>) – Identifier, formatted as <code class="docutils literal notranslate"><span class="pre">type:id</span></code>. Supported types: <code class="docutils literal notranslate"><span class="pre">connection</span></code> , <code class="docutils literal notranslate"><span class="pre">dashboard</span></code> , <code class="docutils literal notranslate"><span class="pre">notebook</span></code> , <code class="docutils literal notranslate"><span class="pre">reference-table</span></code> , <code class="docutils literal notranslate"><span class="pre">security-rule</span></code> , <code class="docutils literal notranslate"><span class="pre">slo</span></code>.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>None</p>
@@ -6642,7 +6642,7 @@ The restriction policy determines who is authorized to perform what actions on t
 <p>Retrieves the restriction policy associated with a specified resource.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>resource_id</strong> (<em>str</em>) – Identifier, formatted as <code class="docutils literal notranslate"><span class="pre">type:id</span></code>. Supported types: <code class="docutils literal notranslate"><span class="pre">connection</span></code> , <code class="docutils literal notranslate"><span class="pre">dashboard</span></code> , <code class="docutils literal notranslate"><span class="pre">notebook</span></code> , <code class="docutils literal notranslate"><span class="pre">security-rule</span></code> , <code class="docutils literal notranslate"><span class="pre">slo</span></code>.</p>
+<dd class="field-odd"><p><strong>resource_id</strong> (<em>str</em>) – Identifier, formatted as <code class="docutils literal notranslate"><span class="pre">type:id</span></code>. Supported types: <code class="docutils literal notranslate"><span class="pre">connection</span></code> , <code class="docutils literal notranslate"><span class="pre">dashboard</span></code> , <code class="docutils literal notranslate"><span class="pre">notebook</span></code> , <code class="docutils literal notranslate"><span class="pre">reference-table</span></code> , <code class="docutils literal notranslate"><span class="pre">security-rule</span></code> , <code class="docutils literal notranslate"><span class="pre">slo</span></code>.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.restriction_policy_response.RestrictionPolicyResponse" title="datadog_api_client.v2.model.restriction_policy_response.RestrictionPolicyResponse">RestrictionPolicyResponse</a></p>
@@ -6660,6 +6660,7 @@ The restriction policy determines who is authorized to perform what actions on t
 <li><p>Dashboards: <code class="docutils literal notranslate"><span class="pre">dashboard</span></code></p></li>
 <li><p>Notebooks: <code class="docutils literal notranslate"><span class="pre">notebook</span></code></p></li>
 <li><p>Powerpacks: <code class="docutils literal notranslate"><span class="pre">powerpack</span></code></p></li>
+<li><p>Reference Tables: <code class="docutils literal notranslate"><span class="pre">reference-table</span></code></p></li>
 <li><p>Security Rules: <code class="docutils literal notranslate"><span class="pre">security-rule</span></code></p></li>
 <li><p>Service Level Objectives: <code class="docutils literal notranslate"><span class="pre">slo</span></code></p></li>
 <li><p>Synthetic Global Variables: <code class="docutils literal notranslate"><span class="pre">synthetics-global-variable</span></code></p></li>
@@ -6702,12 +6703,15 @@ The restriction policy determines who is authorized to perform what actions on t
 <tr class="row-even"><td><p>Monitors</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">viewer</span></code> , <code class="docutils literal notranslate"><span class="pre">editor</span></code></p></td>
 </tr>
+<tr class="row-odd"><td><p>Reference Tables</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">viewer</span></code> , <code class="docutils literal notranslate"><span class="pre">editor</span></code></p></td>
+</tr>
 </tbody>
 </table>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>resource_id</strong> (<em>str</em>) – Identifier, formatted as <code class="docutils literal notranslate"><span class="pre">type:id</span></code>. Supported types: <code class="docutils literal notranslate"><span class="pre">connection</span></code> , <code class="docutils literal notranslate"><span class="pre">dashboard</span></code> , <code class="docutils literal notranslate"><span class="pre">notebook</span></code> , <code class="docutils literal notranslate"><span class="pre">security-rule</span></code> , <code class="docutils literal notranslate"><span class="pre">slo</span></code>.</p></li>
+<li><p><strong>resource_id</strong> (<em>str</em>) – Identifier, formatted as <code class="docutils literal notranslate"><span class="pre">type:id</span></code>. Supported types: <code class="docutils literal notranslate"><span class="pre">connection</span></code> , <code class="docutils literal notranslate"><span class="pre">dashboard</span></code> , <code class="docutils literal notranslate"><span class="pre">notebook</span></code> , <code class="docutils literal notranslate"><span class="pre">reference-table</span></code> , <code class="docutils literal notranslate"><span class="pre">security-rule</span></code> , <code class="docutils literal notranslate"><span class="pre">slo</span></code>.</p></li>
 <li><p><strong>body</strong> (<a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.restriction_policy_update_request.RestrictionPolicyUpdateRequest" title="datadog_api_client.v2.model.restriction_policy_update_request.RestrictionPolicyUpdateRequest"><em>RestrictionPolicyUpdateRequest</em></a>) – Restriction policy payload</p></li>
 </ul>
 </dd>
