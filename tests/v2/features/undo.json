@@ -462,12 +462,6 @@
       "type": "safe"
     }
   },
-  "GetCloudCostActivity": {
-    "tag": "Cloud Cost Management",
-    "undo": {
-      "type": "safe"
-    }
-  },
   "GetActiveBillingDimensions": {
     "tag": "Usage Metering",
     "undo": {

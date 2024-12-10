@@ -14,12 +14,6 @@ Feature: Cloud Cost Management
     And an instance of "CloudCostManagement" API
 
   @generated @skip @team:Datadog/cloud-cost-management
-  Scenario: Cloud Cost Enabled returns "OK" response
-    Given new "GetCloudCostActivity" request
-    When the request is sent
-    Then the response status is 200 OK
-
-  @generated @skip @team:Datadog/cloud-cost-management
   Scenario: Create Cloud Cost Management AWS CUR config returns "Bad Request" response
     Given new "CreateCostAWSCURConfig" request
     And body with value {"data": {"attributes": {"account_id": "123456789123", "bucket_name": "dd-cost-bucket", "bucket_region": "us-east-1", "report_name": "dd-report-name", "report_prefix": "dd-report-prefix"}, "type": "aws_cur_config_post_request"}}
