@@ -4929,42 +4929,6 @@ components:
       type: string
       x-enum-varnames:
       - CLOUD_CONFIGURATION
-    CloudCostActivity:
-      description: Cloud Cost Activity.
-      properties:
-        attributes:
-          $ref: '#/components/schemas/CloudCostActivityAttributes'
-        type:
-          $ref: '#/components/schemas/CloudCostActivityType'
-      required:
-      - attributes
-      - type
-      type: object
-    CloudCostActivityAttributes:
-      description: Attributes for Cloud Cost activity.
-      properties:
-        is_enabled:
-          description: Whether or not the cloud account is enabled.
-          example: true
-          type: boolean
-      required:
-      - is_enabled
-      type: object
-    CloudCostActivityResponse:
-      description: Response for Cloud Cost activity.
-      properties:
-        data:
-          $ref: '#/components/schemas/CloudCostActivity'
-      type: object
-    CloudCostActivityType:
-      default: cloud_cost_activity
-      description: Type of Cloud Cost Activity.
-      enum:
-      - cloud_cost_activity
-      example: cloud_cost_activity
-      type: string
-      x-enum-varnames:
-      - CLOUD_COST_ACTIVITY
     CloudWorkloadSecurityAgentRuleAction:
       description: The action the rule can perform if triggered.
       properties:
@@ -30572,38 +30536,6 @@ paths:
       summary: Get Custom Costs file
       tags:
       - Cloud Cost Management
-  /api/v2/cost/enabled:
-    get:
-      deprecated: true
-      description: Get the Cloud Cost Management activity.
-      operationId: GetCloudCostActivity
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/CloudCostActivityResponse'
-          description: OK
-        '403':
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/APIErrorResponse'
-          description: Forbidden
-        '429':
-          $ref: '#/components/responses/TooManyRequestsResponse'
-      security:
-      - apiKeyAuth: []
-        appKeyAuth: []
-      - AuthZ:
-        - cloud_cost_management_read
-      summary: Cloud Cost Enabled
-      tags:
-      - Cloud Cost Management
-      x-permission:
-        operator: OR
-        permissions:
-        - cloud_cost_management_read
   /api/v2/cost_by_tag/active_billing_dimensions:
     get:
       description: Get active billing dimensions for cost attribution. Cost data for
