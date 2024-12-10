@@ -518,7 +518,7 @@ class Configuration:
                 "key": "Authorization",
                 "value": self.get_basic_auth_token()
             }
-{%- elif schema.type == "http" and schema.scheme == "bearer" %}
+{# {%- elif schema.type == "http" and schema.scheme == "bearer" %}
         if self.access_token is not None:
             auth["{{name}}"] = {
                 "type": "bearer",
@@ -529,6 +529,7 @@ class Configuration:
                 "key": "Authorization",
                 "value": "Bearer " + self.access_token
             }
+#}
 {%- elif schema.type == "oauth2" %}
         if self.access_token is not None:
             auth["AuthZ"] = {
