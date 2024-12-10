@@ -1474,6 +1474,20 @@ datadog\_api\_client.v2.model.ci\_app\_pipeline\_event\_attributes module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.ci\_app\_pipeline\_event\_finished\_pipeline module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_pipeline_event_finished_pipeline
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ci\_app\_pipeline\_event\_in\_progress\_pipeline module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_pipeline_event_in_progress_pipeline
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.ci\_app\_pipeline\_event\_job module
 ------------------------------------------------------------------
 
@@ -1513,6 +1527,13 @@ datadog\_api\_client.v2.model.ci\_app\_pipeline\_event\_pipeline module
 -----------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.ci_app_pipeline_event_pipeline
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ci\_app\_pipeline\_event\_pipeline\_in\_progress\_status module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_pipeline_event_pipeline_in_progress_status
    :members:
    :show-inheritance:
 
