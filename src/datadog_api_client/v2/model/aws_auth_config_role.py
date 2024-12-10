@@ -35,12 +35,12 @@ class AWSAuthConfigRole(ModelNormal):
 
     def __init__(self_, role_name: str, external_id: Union[str, UnsetType] = unset, **kwargs):
         """
-        AWS Authentication config for role-based account
+        AWS Authentication config to integrate your account using an IAM role.
 
-        :param external_id: AWS IAM External ID for associated role
+        :param external_id: AWS IAM External ID for associated role.
         :type external_id: str, optional
 
-        :param role_name: AWS IAM Role name
+        :param role_name: AWS IAM Role name.
         :type role_name: str
         """
         if external_id is not unset:

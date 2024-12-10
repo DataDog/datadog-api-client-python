@@ -38,9 +38,9 @@ class AWSTracesConfig(ModelNormal):
         **kwargs,
     ):
         """
-        AWS Traces config
+        AWS Traces Collection config.
 
-        :param xray_services: AWS X-Ray services to collect traces from
+        :param xray_services: AWS X-Ray services to collect traces from. Defaults to ``include_only``.
         :type xray_services: XRayServicesList, optional
         """
         if xray_services is not unset:
