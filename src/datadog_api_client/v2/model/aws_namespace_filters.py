@@ -13,12 +13,13 @@ from datadog_api_client.model_utils import (
 class AWSNamespaceFilters(ModelComposed):
     def __init__(self, **kwargs):
         """
-        AWS Metrics namespace filters
+        AWS Metrics namespace filters. Defaults to ``exclude_only``.
 
-        :param exclude_only: Exclude only these namespaces
+        :param exclude_only: Exclude only these namespaces from metrics collection. Defaults to `["AWS/SQS", "AWS/ElasticMapReduce"]`.
+            `AWS/SQS` and `AWS/ElasticMapReduce` are excluded by default to reduce your AWS CloudWatch costs from `GetMetricData` API calls.
         :type exclude_only: [str]
 
-        :param include_only: Include only these namespaces
+        :param include_only: Include only these namespaces.
         :type include_only: [str]
         """
         super().__init__(kwargs)

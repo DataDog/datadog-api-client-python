@@ -13,12 +13,12 @@ from datadog_api_client.model_utils import (
 class AWSRegions(ModelComposed):
     def __init__(self, **kwargs):
         """
-        AWS Regions to collect data from
+        AWS Regions to collect data from. Defaults to ``include_all``.
 
-        :param include_all: Include all regions
+        :param include_all: Include all regions.
         :type include_all: bool
 
-        :param include_only: Include only these regions
+        :param include_only: Include only these regions.
         :type include_only: [str]
         """
         super().__init__(kwargs)

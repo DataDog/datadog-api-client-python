@@ -30,9 +30,9 @@ class AWSAccountCreateRequest(ModelNormal):
 
     def __init__(self_, data: AWSAccountCreateRequestData, **kwargs):
         """
-        AWS Account Create Request body
+        AWS Account Create Request body.
 
-        :param data: AWS Account Create Request data
+        :param data: AWS Account Create Request data.
         :type data: AWSAccountCreateRequestData
         """
         super().__init__(kwargs)

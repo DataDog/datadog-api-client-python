@@ -13,18 +13,18 @@ from datadog_api_client.model_utils import (
 class AWSAuthConfig(ModelComposed):
     def __init__(self, **kwargs):
         """
-        AWS Authentication config
+        AWS Authentication config.
 
-        :param access_key_id: AWS Access Key ID
+        :param access_key_id: AWS Access Key ID.
         :type access_key_id: str
 
-        :param secret_access_key: AWS Secret Access Key
+        :param secret_access_key: AWS Secret Access Key.
         :type secret_access_key: str, optional
 
-        :param external_id: AWS IAM External ID for associated role
+        :param external_id: AWS IAM External ID for associated role.
         :type external_id: str, optional
 
-        :param role_name: AWS IAM Role name
+        :param role_name: AWS IAM Role name.
         :type role_name: str
         """
         super().__init__(kwargs)

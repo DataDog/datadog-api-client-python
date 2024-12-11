@@ -32,9 +32,10 @@ class AWSLogsConfig(ModelNormal):
 
     def __init__(self_, lambda_forwarder: Union[AWSLambdaForwarderConfig, UnsetType] = unset, **kwargs):
         """
-        AWS Logs config
+        AWS Logs Collection config.
 
-        :param lambda_forwarder: AWS Lambda forwarder
+        :param lambda_forwarder: Log Autosubscription configuration for Datadog Forwarder Lambda functions. Automatically set up triggers for existing
+            and new logs for some services, ensuring no logs from new resources are missed and saving time spent on manual configuration.
         :type lambda_forwarder: AWSLambdaForwarderConfig, optional
         """
         if lambda_forwarder is not unset:

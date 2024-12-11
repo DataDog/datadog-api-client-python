@@ -24,9 +24,9 @@ class AWSNamespaceFiltersIncludeOnly(ModelNormal):
 
     def __init__(self_, include_only: List[str], **kwargs):
         """
-        Include only these namespaces
+        Include only these namespaces.
 
-        :param include_only: Include only these namespaces
+        :param include_only: Include only these namespaces.
         :type include_only: [str]
         """
         super().__init__(kwargs)
