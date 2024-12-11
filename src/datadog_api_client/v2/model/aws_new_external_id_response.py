@@ -30,9 +30,9 @@ class AWSNewExternalIDResponse(ModelNormal):
 
     def __init__(self_, data: AWSNewExternalIDResponseData, **kwargs):
         """
-        AWS External ID response body
+        AWS External ID response body.
 
-        :param data: AWS External ID response body
+        :param data: AWS External ID response body.
         :type data: AWSNewExternalIDResponseData
         """
         super().__init__(kwargs)

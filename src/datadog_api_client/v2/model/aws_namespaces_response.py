@@ -30,9 +30,9 @@ class AWSNamespacesResponse(ModelNormal):
 
     def __init__(self_, data: AWSNamespacesResponseData, **kwargs):
         """
-        AWS Namespaces response body
+        AWS Namespaces response body.
 
-        :param data: AWS Namespaces response body
+        :param data: AWS Namespaces response data.
         :type data: AWSNamespacesResponseData
         """
         super().__init__(kwargs)

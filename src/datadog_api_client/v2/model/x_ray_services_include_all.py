@@ -23,9 +23,9 @@ class XRayServicesIncludeAll(ModelNormal):
 
     def __init__(self_, include_all: bool, **kwargs):
         """
-        Include all services
+        Include all services.
 
-        :param include_all: Include all services
+        :param include_all: Include all services.
         :type include_all: bool
         """
         super().__init__(kwargs)

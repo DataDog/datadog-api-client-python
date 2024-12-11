@@ -30,9 +30,9 @@ class AWSAccountResponse(ModelNormal):
 
     def __init__(self_, data: AWSAccountResponseData, **kwargs):
         """
-        AWS Account response body
+        AWS Account response body.
 
-        :param data: AWS Account Response body
+        :param data: AWS Account response data.
         :type data: AWSAccountResponseData
         """
         super().__init__(kwargs)

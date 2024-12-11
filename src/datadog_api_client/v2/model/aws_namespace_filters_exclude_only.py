@@ -24,9 +24,11 @@ class AWSNamespaceFiltersExcludeOnly(ModelNormal):
 
     def __init__(self_, exclude_only: List[str], **kwargs):
         """
-        Exclude only these namespaces
+        Exclude only these namespaces from metrics collection. Defaults to ``["AWS/SQS", "AWS/ElasticMapReduce"]``.
+        ``AWS/SQS`` and ``AWS/ElasticMapReduce`` are excluded by default to reduce your AWS CloudWatch costs from ``GetMetricData`` API calls.
 
-        :param exclude_only: Exclude only these namespaces
+        :param exclude_only: Exclude only these namespaces from metrics collection. Defaults to ``["AWS/SQS", "AWS/ElasticMapReduce"]``.
+            ``AWS/SQS`` and ``AWS/ElasticMapReduce`` are excluded by default to reduce your AWS CloudWatch costs from ``GetMetricData`` API calls.
         :type exclude_only: [str]
         """
         super().__init__(kwargs)
