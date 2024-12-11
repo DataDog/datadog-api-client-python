@@ -48,7 +48,7 @@ jobs:
         with:
           app-id: ${{ secrets.PIPELINE_GITHUB_APP_ID }}
           private-key: ${{ secrets.PIPELINE_GITHUB_APP_PRIVATE_KEY }}
-          repository: DataDog/datadog-api-spec
+          repositories: datadog-api-spec
       - name: Checkout code
         uses: actions/checkout@v3
       - name: Post pending status check

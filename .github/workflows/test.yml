@@ -141,7 +141,7 @@ jobs:
         with:
           app-id: ${{ secrets.PIPELINE_GITHUB_APP_ID }}
           private-key: ${{ secrets.PIPELINE_GITHUB_APP_PRIVATE_KEY }}
-          repository: DataDog/datadog-api-spec
+          repositories: datadog-api-spec
       - name: Post status check
         uses: DataDog/github-actions/post-status-check@v2
         with:
