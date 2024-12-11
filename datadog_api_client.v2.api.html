@@ -2412,10 +2412,11 @@ For more information, see the <a class="reference external" href="https://docs.d
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.aws_integration_api.AWSIntegrationApi.delete_aws_account">
 <span class="sig-name descname"><span class="pre">delete_aws_account</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">aws_account_config_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#datadog_api_client.v2.api.aws_integration_api.AWSIntegrationApi.delete_aws_account" title="Link to this definition">¶</a></dt>
 <dd><p>Delete an AWS integration.</p>
-<p>Delete an AWS Account Integration Config</p>
+<p>Delete an AWS Account Integration Config by config ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>aws_account_config_id</strong> (<em>str</em>) – Unique Datadog ID of the AWS Account Integration Config</p>
+<dd class="field-odd"><p><strong>aws_account_config_id</strong> (<em>str</em>) – Unique Datadog ID of the AWS Account Integration Config. To get the config ID for an account, use the
+<a class="reference external" href="https://docs.datadoghq.com/api/latest/aws-integration/#list-all-aws-integrations">List all AWS integrations</a> endpoint and query by AWS Account ID.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>None</p>
@@ -2426,10 +2427,12 @@ For more information, see the <a class="reference external" href="https://docs.d
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.aws_integration_api.AWSIntegrationApi.get_aws_account">
 <span class="sig-name descname"><span class="pre">get_aws_account</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">aws_account_config_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.aws_account_response.AWSAccountResponse" title="datadog_api_client.v2.model.aws_account_response.AWSAccountResponse"><span class="pre">AWSAccountResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.aws_integration_api.AWSIntegrationApi.get_aws_account" title="Link to this definition">¶</a></dt>
 <dd><p>Get an AWS integration by config ID.</p>
-<p>Get an AWS Account Integration Config</p>
+<p>Get an AWS Account Integration Config by config ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>aws_account_config_id</strong> (<em>str</em>) – Unique Datadog ID of the AWS Account Integration Config</p>
+<dd class="field-odd"><p><strong>aws_account_config_id</strong> (<em>str</em>) – <p>Unique Datadog ID of the AWS Account Integration Config. To get the config ID for an account, use the
+<a class="reference external" href="https://docs.datadoghq.com/api/latest/aws-integration/#list-all-aws-integrations">List all AWS integrations</a> endpoint and query by AWS Account ID.</p>
+</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.aws_account_response.AWSAccountResponse" title="datadog_api_client.v2.model.aws_account_response.AWSAccountResponse">AWSAccountResponse</a></p>
@@ -2443,7 +2446,7 @@ For more information, see the <a class="reference external" href="https://docs.d
 <p>Get a list of AWS Account Integration Configs.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>aws_account_id</strong> (<em>str</em><em>, </em><em>optional</em>) – Optional query filter accounts by AWS Account ID</p>
+<dd class="field-odd"><p><strong>aws_account_id</strong> (<em>str</em><em>, </em><em>optional</em>) – Optional query parameter to filter accounts by AWS Account ID. If not provided, all accounts are returned.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.aws_accounts_response.AWSAccountsResponse" title="datadog_api_client.v2.model.aws_accounts_response.AWSAccountsResponse">AWSAccountsResponse</a></p>
@@ -2465,10 +2468,12 @@ For more information, see the <a class="reference external" href="https://docs.d
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.aws_integration_api.AWSIntegrationApi.update_aws_account">
 <span class="sig-name descname"><span class="pre">update_aws_account</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">aws_account_config_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.aws_account_update_request.AWSAccountUpdateRequest" title="datadog_api_client.v2.model.aws_account_update_request.AWSAccountUpdateRequest"><span class="pre">AWSAccountUpdateRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.aws_account_response.AWSAccountResponse" title="datadog_api_client.v2.model.aws_account_response.AWSAccountResponse"><span class="pre">AWSAccountResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.aws_integration_api.AWSIntegrationApi.update_aws_account" title="Link to this definition">¶</a></dt>
 <dd><p>Update an AWS integration.</p>
-<p>Update an AWS Account Integration Config</p>
+<p>Update an AWS Account Integration Config by config ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>aws_account_config_id</strong> (<em>str</em>) – Unique Datadog ID of the AWS Account Integration Config</p>
+<dd class="field-odd"><p><strong>aws_account_config_id</strong> (<em>str</em>) – <p>Unique Datadog ID of the AWS Account Integration Config. To get the config ID for an account, use the
+<a class="reference external" href="https://docs.datadoghq.com/api/latest/aws-integration/#list-all-aws-integrations">List all AWS integrations</a> endpoint and query by AWS Account ID.</p>
+</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.aws_account_response.AWSAccountResponse" title="datadog_api_client.v2.model.aws_account_response.AWSAccountResponse">AWSAccountResponse</a></p>
