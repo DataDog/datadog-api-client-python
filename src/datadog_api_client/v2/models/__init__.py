@@ -184,12 +184,17 @@ from datadog_api_client.v2.model.ci_app_group_by_total import CIAppGroupByTotal
 from datadog_api_client.v2.model.ci_app_host_info import CIAppHostInfo
 from datadog_api_client.v2.model.ci_app_pipeline_event import CIAppPipelineEvent
 from datadog_api_client.v2.model.ci_app_pipeline_event_attributes import CIAppPipelineEventAttributes
+from datadog_api_client.v2.model.ci_app_pipeline_event_finished_pipeline import CIAppPipelineEventFinishedPipeline
+from datadog_api_client.v2.model.ci_app_pipeline_event_in_progress_pipeline import CIAppPipelineEventInProgressPipeline
 from datadog_api_client.v2.model.ci_app_pipeline_event_job import CIAppPipelineEventJob
 from datadog_api_client.v2.model.ci_app_pipeline_event_job_level import CIAppPipelineEventJobLevel
 from datadog_api_client.v2.model.ci_app_pipeline_event_job_status import CIAppPipelineEventJobStatus
 from datadog_api_client.v2.model.ci_app_pipeline_event_parameters import CIAppPipelineEventParameters
 from datadog_api_client.v2.model.ci_app_pipeline_event_parent_pipeline import CIAppPipelineEventParentPipeline
 from datadog_api_client.v2.model.ci_app_pipeline_event_pipeline import CIAppPipelineEventPipeline
+from datadog_api_client.v2.model.ci_app_pipeline_event_pipeline_in_progress_status import (
+    CIAppPipelineEventPipelineInProgressStatus,
+)
 from datadog_api_client.v2.model.ci_app_pipeline_event_pipeline_level import CIAppPipelineEventPipelineLevel
 from datadog_api_client.v2.model.ci_app_pipeline_event_pipeline_status import CIAppPipelineEventPipelineStatus
 from datadog_api_client.v2.model.ci_app_pipeline_event_previous_pipeline import CIAppPipelineEventPreviousPipeline
@@ -2328,12 +2333,15 @@ __all__ = [
     "CIAppHostInfo",
     "CIAppPipelineEvent",
     "CIAppPipelineEventAttributes",
+    "CIAppPipelineEventFinishedPipeline",
+    "CIAppPipelineEventInProgressPipeline",
     "CIAppPipelineEventJob",
     "CIAppPipelineEventJobLevel",
     "CIAppPipelineEventJobStatus",
     "CIAppPipelineEventParameters",
     "CIAppPipelineEventParentPipeline",
     "CIAppPipelineEventPipeline",
+    "CIAppPipelineEventPipelineInProgressStatus",
     "CIAppPipelineEventPipelineLevel",
     "CIAppPipelineEventPipelineStatus",
     "CIAppPipelineEventPreviousPipeline",

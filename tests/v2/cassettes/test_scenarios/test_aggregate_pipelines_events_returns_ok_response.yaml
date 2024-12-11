@@ -11,7 +11,9 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/ci/pipelines/analytics/aggregate
   response:
     body:
-      string: '{"meta":{"elapsed":170,"request_id":"pddv1ChYzYWhuN3VqLVR4ZTV4V0Q0LVFDYVB3IiwKHKG6G1xIn05fWwGRsD7MITrTmBASHDayL3wqgBcSDEOG5uEAxWRZVp8G4w","status":"done"},"data":{"buckets":[{"computes":{"c0":236880835985.0375},"by":{"@ci.status":"error"}},{"computes":{"c0":3026515237.0540113},"by":{"@ci.status":"skipped"}},{"computes":{"c0":146575581775.90088},"by":{"@ci.status":"success"}}]}}'
+      string: '{"meta":{"elapsed":90,"request_id":"pddv1ChZiVnBUVTltRVJocUlzSWlyYkdkRHFRIi0KHQLKXxzUXfzSm-D5KYypc61Y_NGGMKnRbrtODJpWEgwQ-7lds-czCpOBaB4","status":"done"},"data":{"buckets":[]}}
+
+        '
     headers:
       content-type:
       - application/json
