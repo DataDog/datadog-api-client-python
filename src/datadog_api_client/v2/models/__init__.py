@@ -1164,12 +1164,15 @@ from datadog_api_client.v2.model.metric_ingested_indexed_volume import MetricIng
 from datadog_api_client.v2.model.metric_ingested_indexed_volume_attributes import MetricIngestedIndexedVolumeAttributes
 from datadog_api_client.v2.model.metric_ingested_indexed_volume_type import MetricIngestedIndexedVolumeType
 from datadog_api_client.v2.model.metric_intake_type import MetricIntakeType
+from datadog_api_client.v2.model.metric_meta_page import MetricMetaPage
+from datadog_api_client.v2.model.metric_meta_page_type import MetricMetaPageType
 from datadog_api_client.v2.model.metric_metadata import MetricMetadata
 from datadog_api_client.v2.model.metric_monitor_asset import MetricMonitorAsset
 from datadog_api_client.v2.model.metric_monitor_type import MetricMonitorType
 from datadog_api_client.v2.model.metric_notebook_asset import MetricNotebookAsset
 from datadog_api_client.v2.model.metric_notebook_type import MetricNotebookType
 from datadog_api_client.v2.model.metric_origin import MetricOrigin
+from datadog_api_client.v2.model.metric_pagination_meta import MetricPaginationMeta
 from datadog_api_client.v2.model.metric_payload import MetricPayload
 from datadog_api_client.v2.model.metric_point import MetricPoint
 from datadog_api_client.v2.model.metric_resource import MetricResource
@@ -1209,6 +1212,7 @@ from datadog_api_client.v2.model.metrics_and_metric_tag_configurations_response 
     MetricsAndMetricTagConfigurationsResponse,
 )
 from datadog_api_client.v2.model.metrics_data_source import MetricsDataSource
+from datadog_api_client.v2.model.metrics_list_response_links import MetricsListResponseLinks
 from datadog_api_client.v2.model.metrics_scalar_query import MetricsScalarQuery
 from datadog_api_client.v2.model.metrics_timeseries_query import MetricsTimeseriesQuery
 from datadog_api_client.v2.model.microsoft_teams_channel_info_response_attributes import (
@@ -3137,12 +3141,15 @@ __all__ = [
     "MetricIngestedIndexedVolumeAttributes",
     "MetricIngestedIndexedVolumeType",
     "MetricIntakeType",
+    "MetricMetaPage",
+    "MetricMetaPageType",
     "MetricMetadata",
     "MetricMonitorAsset",
     "MetricMonitorType",
     "MetricNotebookAsset",
     "MetricNotebookType",
     "MetricOrigin",
+    "MetricPaginationMeta",
     "MetricPayload",
     "MetricPoint",
     "MetricResource",
@@ -3172,6 +3179,7 @@ __all__ = [
     "MetricsAndMetricTagConfigurations",
     "MetricsAndMetricTagConfigurationsResponse",
     "MetricsDataSource",
+    "MetricsListResponseLinks",
     "MetricsScalarQuery",
     "MetricsTimeseriesQuery",
     "MicrosoftTeamsChannelInfoResponseAttributes",

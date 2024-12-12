@@ -6815,6 +6815,20 @@ datadog\_api\_client.v2.model.metric\_intake\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.metric\_meta\_page module
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.metric_meta_page
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.metric\_meta\_page\_type module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.metric_meta_page_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.metric\_metadata module
 -----------------------------------------------------
 
@@ -6854,6 +6868,13 @@ datadog\_api\_client.v2.model.metric\_origin module
 ---------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.metric_origin
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.metric\_pagination\_meta module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.metric_pagination_meta
    :members:
    :show-inheritance:
 
@@ -7057,6 +7078,13 @@ datadog\_api\_client.v2.model.metrics\_data\_source module
 ----------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.metrics_data_source
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.metrics\_list\_response\_links module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.metrics_list_response_links
    :members:
    :show-inheritance:
 
