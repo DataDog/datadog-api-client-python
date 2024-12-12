@@ -534,7 +534,7 @@ Feature: Dashboards
   @team:DataDog/dashboards-backend
   Scenario: Create a new dashboard with logs_pattern_stream list_stream widget
     Given new "CreateDashboard" request
-    And body with value {"layout_type": "ordered", "title": "{{ unique }} with list_stream widget","widgets": [{"definition": {"type": "list_stream","requests": [{"columns":[{"width":"auto","field":"timestamp"},{"width":"auto","field":"message", "is_clustering_pattern_field_path": true}],"query":{"data_source":"logs_pattern_stream","query_string":"","clustering_pattern_field_path":"message","group_by":[{"facet":"service"}]},  "response_format":"event_list"}]}}]}
+    And body with value {"layout_type": "ordered", "title": "{{ unique }} with list_stream widget","widgets": [{"definition": {"type": "list_stream","requests": [{"columns":[{"width":"auto","field":"timestamp"},{"width":"auto","field":"message"}],"query":{"data_source":"logs_pattern_stream","query_string":"","clustering_pattern_field_path":"message","group_by":[{"facet":"service"}]},  "response_format":"event_list"}]}}]}
     When the request is sent
     Then the response status is 200 OK
     And the response "widgets[0].definition.requests[0].query.data_source" is equal to "logs_pattern_stream"

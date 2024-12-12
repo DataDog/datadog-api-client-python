@@ -34,7 +34,6 @@ body = Dashboard(
                             ListStreamColumn(
                                 width=ListStreamColumnWidth.AUTO,
                                 field="message",
-                                is_clustering_pattern_field_path=True,
                             ),
                         ],
                         query=ListStreamQuery(
