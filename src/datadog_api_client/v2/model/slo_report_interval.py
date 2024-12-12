@@ -16,14 +16,16 @@ class SLOReportInterval(ModelSimple):
     """
     The frequency at which report data is to be generated.
 
-    :param value: Must be one of ["weekly", "monthly"].
+    :param value: Must be one of ["daily", "weekly", "monthly"].
     :type value: str
     """
 
     allowed_values = {
+        "daily",
         "weekly",
         "monthly",
     }
+    DAILY: ClassVar["SLOReportInterval"]
     WEEKLY: ClassVar["SLOReportInterval"]
     MONTHLY: ClassVar["SLOReportInterval"]
 
@@ -34,5 +36,6 @@ class SLOReportInterval(ModelSimple):
         }
 
 
+SLOReportInterval.DAILY = SLOReportInterval("daily")
 SLOReportInterval.WEEKLY = SLOReportInterval("weekly")
 SLOReportInterval.MONTHLY = SLOReportInterval("monthly")
