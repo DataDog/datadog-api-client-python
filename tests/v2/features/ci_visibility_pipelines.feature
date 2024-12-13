@@ -108,7 +108,7 @@ Feature: CI Visibility Pipelines
     When the request is sent
     Then the response status is 202 Request accepted for processing
 
-  @skip @team:Datadog/ci-app-backend
+  @skip-typescript @team:Datadog/ci-app-backend
   Scenario: Send pipeline job event returns "Request accepted for processing" response
     Given new "CreateCIAppPipelineEvent" request
     And body with value {"data": {"attributes": {"resource": {"level": "job", "id": "cf9456de-8b9e-4c27-aa79-27b1e78c1a33", "name": "Build image", "pipeline_unique_id": "3eacb6f3-ff04-4e10-8a9c-46e6d054024a", "pipeline_name": "Deploy to AWS", "start": "{{ timeISO('now - 120s') }}", "end": "{{ timeISO('now - 30s') }}", "status": "error", "url": "https://my-ci-provider.example/jobs/my-jobs/run/1"}}, "type": "cipipeline_resource_request"}}
