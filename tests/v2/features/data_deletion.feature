@@ -11,14 +11,16 @@ Feature: Data Deletion
 
   @replay-only @team:DataDog/supportability-engineering
   Scenario: Cancels a data deletion request returns "Bad Request" response
-    Given new "CancelDataDeletionRequest" request
+    Given operation "CancelDataDeletionRequest" enabled
+    And new "CancelDataDeletionRequest" request
     And request contains "id" parameter with value "id-1"
     When the request is sent
     Then the response status is 400 Bad Request
 
   @team:DataDog/supportability-engineering
   Scenario: Cancels a data deletion request returns "OK" response
-    Given there is a valid "deletion_request" in the system
+    Given operation "CancelDataDeletionRequest" enabled
+    And there is a valid "deletion_request" in the system
     And new "CancelDataDeletionRequest" request
     And request contains "id" parameter from "deletion_request.data.id"
     When the request is sent
@@ -30,14 +32,16 @@ Feature: Data Deletion
 
   @replay-only @team:DataDog/supportability-engineering
   Scenario: Cancels a data deletion request returns "Precondition failed error" response
-    Given new "CancelDataDeletionRequest" request
+    Given operation "CancelDataDeletionRequest" enabled
+    And new "CancelDataDeletionRequest" request
     And request contains "id" parameter with value "-1"
     When the request is sent
     Then the response status is 412 Precondition failed error
 
   @generated @skip @team:DataDog/supportability-engineering
   Scenario: Creates a data deletion request returns "Bad Request" response
-    Given new "CreateDataDeletionRequest" request
+    Given operation "CreateDataDeletionRequest" enabled
+    And new "CreateDataDeletionRequest" request
     And request contains "product" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"from": 1672527600000, "indexes": ["test-index", "test-index-2"], "query": {"host": "abc", "service": "xyz"}, "to": 1704063600000}}}
     When the request is sent
@@ -45,7 +49,8 @@ Feature: Data Deletion
 
   @team:DataDog/supportability-engineering
   Scenario: Creates a data deletion request returns "OK" response
-    Given new "CreateDataDeletionRequest" request
+    Given operation "CreateDataDeletionRequest" enabled
+    And new "CreateDataDeletionRequest" request
     And request contains "product" parameter with value "logs"
     And body with value {"data": {"attributes": {"from": 1672527600000, "indexes": ["test-index", "test-index-2"], "query": {"host": "abc", "service": "xyz"}, "to": 1704063600000}}}
     When the request is sent
@@ -56,7 +61,8 @@ Feature: Data Deletion
 
   @replay-only @team:DataDog/supportability-engineering
   Scenario: Creates a data deletion request returns "Precondition failed error" response
-    Given new "CreateDataDeletionRequest" request
+    Given operation "CreateDataDeletionRequest" enabled
+    And new "CreateDataDeletionRequest" request
     And request contains "product" parameter with value "logs"
     And body with value {"data": {"attributes": {"from": 1672527600000, "indexes": ["test-index", "test-index-2"], "query": {}, "to": 1704063600000}}}
     When the request is sent
@@ -64,13 +70,15 @@ Feature: Data Deletion
 
   @generated @skip @team:DataDog/supportability-engineering
   Scenario: Gets a list of data deletion requests returns "Bad Request" response
-    Given new "GetDataDeletionRequests" request
+    Given operation "GetDataDeletionRequests" enabled
+    And new "GetDataDeletionRequests" request
     When the request is sent
     Then the response status is 400 Bad Request
 
   @team:DataDog/supportability-engineering
   Scenario: Gets a list of data deletion requests returns "OK" response
-    Given there is a valid "deletion_request" in the system
+    Given operation "GetDataDeletionRequests" enabled
+    And there is a valid "deletion_request" in the system
     And new "GetDataDeletionRequests" request
     When the request is sent
     Then the response status is 200 OK

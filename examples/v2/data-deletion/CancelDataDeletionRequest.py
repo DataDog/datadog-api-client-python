@@ -10,6 +10,7 @@ from datadog_api_client.v2.api.data_deletion_api import DataDeletionApi
 DELETION_REQUEST_DATA_ID = environ["DELETION_REQUEST_DATA_ID"]
 
 configuration = Configuration()
+configuration.unstable_operations["cancel_data_deletion_request"] = True
 with ApiClient(configuration) as api_client:
     api_instance = DataDeletionApi(api_client)
     response = api_instance.cancel_data_deletion_request(

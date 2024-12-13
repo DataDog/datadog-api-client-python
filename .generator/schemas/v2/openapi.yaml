@@ -31356,6 +31356,9 @@ paths:
         permissions:
         - rum_delete_data
         - logs_delete_data
+      x-unstable: '**Note**: This endpoint is in Preview. If you have any feedback,
+
+        contact [Datadog support](https://docs.datadoghq.com/help/).'
   /api/v2/deletion/requests:
     get:
       description: Gets a list of data deletion requests based on several filter parameters.
@@ -31431,6 +31434,9 @@ paths:
         permissions:
         - rum_delete_data
         - logs_delete_data
+      x-unstable: '**Note**: This endpoint is in Preview. If you have any feedback,
+
+        contact [Datadog support](https://docs.datadoghq.com/help/).'
   /api/v2/deletion/requests/{id}/cancel:
     put:
       description: Cancels a data deletion request by providing its ID.
@@ -31473,6 +31479,9 @@ paths:
         permissions:
         - rum_delete_data
         - logs_delete_data
+      x-unstable: '**Note**: This endpoint is in Preview. If you have any feedback,
+
+        contact [Datadog support](https://docs.datadoghq.com/help/).'
   /api/v2/domain_allowlist:
     get:
       description: Get the domain allowlist for an organization.
