@@ -41,7 +41,7 @@ class EventsQueryFilter(ModelNormal):
         :param _from: The minimum time for the requested events. Supports date math and regular timestamps in milliseconds.
         :type _from: str, optional
 
-        :param query: The search query following the event search syntax.
+        :param query: The search query following the `event search syntax <https://docs.datadoghq.com/service_management/events/explorer/searching>`_.
         :type query: str, optional
 
         :param to: The maximum time for the requested events. Supports date math and regular timestamps in milliseconds.
