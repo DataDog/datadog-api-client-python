@@ -33,7 +33,7 @@ class SyntheticsFetchUptimesPayload(ModelNormal):
         :param from_ts: Timestamp in seconds (Unix epoch) for the start of uptime.
         :type from_ts: int
 
-        :param public_ids: An array of Synthetic test IDs you want to delete.
+        :param public_ids: An array of Synthetic test IDs you want uptimes for.
         :type public_ids: [str]
 
         :param to_ts: Timestamp in seconds (Unix epoch) for the end of uptime.
