@@ -28,6 +28,7 @@ body = CreateDataDeletionRequestBody(
 )
 
 configuration = Configuration()
+configuration.unstable_operations["create_data_deletion_request"] = True
 with ApiClient(configuration) as api_client:
     api_instance = DataDeletionApi(api_client)
     response = api_instance.create_data_deletion_request(product="logs", body=body)
