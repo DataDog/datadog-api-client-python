@@ -41,6 +41,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
             "ci_visibility_itr_usage": (float,),
             "cloud_siem_percentage": (float,),
             "cloud_siem_usage": (float,),
+            "code_security_host_percentage": (float,),
+            "code_security_host_usage": (float,),
             "container_excl_agent_percentage": (float,),
             "container_excl_agent_usage": (float,),
             "container_percentage": (float,),
@@ -180,6 +182,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         "ci_visibility_itr_usage": "ci_visibility_itr_usage",
         "cloud_siem_percentage": "cloud_siem_percentage",
         "cloud_siem_usage": "cloud_siem_usage",
+        "code_security_host_percentage": "code_security_host_percentage",
+        "code_security_host_usage": "code_security_host_usage",
         "container_excl_agent_percentage": "container_excl_agent_percentage",
         "container_excl_agent_usage": "container_excl_agent_usage",
         "container_percentage": "container_percentage",
@@ -320,6 +324,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         ci_visibility_itr_usage: Union[float, UnsetType] = unset,
         cloud_siem_percentage: Union[float, UnsetType] = unset,
         cloud_siem_usage: Union[float, UnsetType] = unset,
+        code_security_host_percentage: Union[float, UnsetType] = unset,
+        code_security_host_usage: Union[float, UnsetType] = unset,
         container_excl_agent_percentage: Union[float, UnsetType] = unset,
         container_excl_agent_usage: Union[float, UnsetType] = unset,
         container_percentage: Union[float, UnsetType] = unset,
@@ -508,6 +514,12 @@ class MonthlyUsageAttributionValues(ModelNormal):
 
         :param cloud_siem_usage: The Cloud Security Information and Event Management usage by tag(s).
         :type cloud_siem_usage: float, optional
+
+        :param code_security_host_percentage: The percentage of Code Security host usage by tags.
+        :type code_security_host_percentage: float, optional
+
+        :param code_security_host_usage: The Code Security host usage by tags.
+        :type code_security_host_usage: float, optional
 
         :param container_excl_agent_percentage: The percentage of container usage without the Datadog Agent by tag(s).
         :type container_excl_agent_percentage: float, optional
@@ -893,6 +905,10 @@ class MonthlyUsageAttributionValues(ModelNormal):
             kwargs["cloud_siem_percentage"] = cloud_siem_percentage
         if cloud_siem_usage is not unset:
             kwargs["cloud_siem_usage"] = cloud_siem_usage
+        if code_security_host_percentage is not unset:
+            kwargs["code_security_host_percentage"] = code_security_host_percentage
+        if code_security_host_usage is not unset:
+            kwargs["code_security_host_usage"] = code_security_host_usage
         if container_excl_agent_percentage is not unset:
             kwargs["container_excl_agent_percentage"] = container_excl_agent_percentage
         if container_excl_agent_usage is not unset:
