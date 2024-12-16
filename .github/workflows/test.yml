@@ -78,11 +78,15 @@ jobs:
     strategy:
       matrix:
         python-version: ["3.7", "3.12"]
-        platform: [ubuntu-latest, macos-latest] # windows-latest
+        platform: [ubuntu-latest, macos-latest, ubuntu-22.04] # windows-latest
         # test only latest version on macos and windows
         exclude:
           - platform: macos-latest
             python-version: "3.7"
+          - platform: ubuntu-latest
+            python-version: "3.7"
+          - platform: ubuntu-22.04
+            python-version: "3.12"
           # TODO enable once dd-trace-py is updated
           # - platform: windows-latest
           #  python-version: 3.7
