@@ -78,7 +78,7 @@ jobs:
     strategy:
       matrix:
         python-version: ["3.7", "3.12"]
-        platform: [ubuntu-latest, macos-latest, ubuntu-22.04] # windows-latest
+        platform: [ubuntu-22.04, ubuntu-latest, macos-latest] # windows-latest
         # test only latest version on macos and windows
         exclude:
           - platform: macos-latest
