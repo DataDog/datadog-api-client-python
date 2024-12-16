@@ -2587,6 +2587,41 @@ datadog\_api\_client.v2.model.creator module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.csm\_agent\_data module
+-----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.csm_agent_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.csm\_agents\_attributes module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.csm_agents_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.csm\_agents\_metadata module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.csm_agents_metadata
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.csm\_agents\_response module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.csm_agents_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.csm\_agents\_type module
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.csm_agents_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.custom\_cost\_get\_response\_meta module
 ----------------------------------------------------------------------
 
@@ -7638,6 +7673,13 @@ datadog\_api\_client.v2.model.opsgenie\_services\_response module
 -----------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.opsgenie_services_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.order\_direction module
+-----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.order_direction
    :members:
    :show-inheritance:
 

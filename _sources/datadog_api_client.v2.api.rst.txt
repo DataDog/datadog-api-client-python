@@ -102,6 +102,13 @@ datadog\_api\_client.v2.api.containers\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.csm\_agents\_api module
+---------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.csm_agents_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.csm\_threats\_api module
 ----------------------------------------------------
 
