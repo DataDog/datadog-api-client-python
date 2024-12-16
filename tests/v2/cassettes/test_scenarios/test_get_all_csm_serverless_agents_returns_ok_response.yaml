@@ -1,0 +1,18 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/csm/onboarding/serverless/agents
+  response:
+    body:
+      string: '{"data":[],"meta":{"total_filtered":0,"page_index":0,"page_size":10}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1
