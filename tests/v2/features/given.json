@@ -51,6 +51,18 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\"data\": {\"attributes\": {\"components\": [{\"events\": [], \"name\": \"grid0\", \"properties\": {\"children\": [{\"events\": [], \"name\": \"gridCell0\", \"properties\": {\"children\": [{\"events\": [], \"name\": \"calloutValue0\", \"properties\": {\"isVisible\": true, \"isDisabled\": false, \"isLoading\": false, \"label\": \"CPU Usage\", \"size\": \"sm\", \"style\": \"vivid_yellow\", \"unit\": \"kB\", \"value\": \"42\"}, \"type\": \"calloutValue\"}], \"isVisible\": \"true\", \"layout\": {\"default\": {\"height\": 8, \"width\": 2, \"x\": 0, \"y\": 0}}}, \"type\": \"gridCell\"}]}, \"type\": \"grid\"}], \"description\": \"This is a simple example app\", \"embeddedQueries\": [], \"name\": \"Example App\", \"rootInstanceName\": \"grid0\"}, \"type\": \"appDefinitions\"}}"
+      }
+    ],
+    "step": "there is a valid \"app\" in the system",
+    "key": "app",
+    "tag": "Apps",
+    "operationId": "CreateApp"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"attributes\": {\n     \"attribute_key\": \"{{ unique_lower_alnum }}\",\n     \"attribute_value\": \"{{ unique }}\"\n    },\n    \"relationships\": {\n       \"role\": {\n         \"data\": {\n           \"id\": \"{{ role.data.id }}\",\n           \"type\": \"{{ role.data.type }}\"\n         }\n      }\n    },\n    \"type\": \"authn_mappings\"\n  }\n}"
       }
     ],
