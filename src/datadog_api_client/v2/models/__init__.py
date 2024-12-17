@@ -239,6 +239,8 @@ from datadog_api_client.v2.model.ci_app_tests_bucket_response import CIAppTestsB
 from datadog_api_client.v2.model.ci_app_tests_group_by import CIAppTestsGroupBy
 from datadog_api_client.v2.model.ci_app_tests_query_filter import CIAppTestsQueryFilter
 from datadog_api_client.v2.model.ci_app_warning import CIAppWarning
+from datadog_api_client.v2.model.csm_agents_metadata import CSMAgentsMetadata
+from datadog_api_client.v2.model.csm_agents_type import CSMAgentsType
 from datadog_api_client.v2.model.calculated_field import CalculatedField
 from datadog_api_client.v2.model.cancel_data_deletion_response_body import CancelDataDeletionResponseBody
 from datadog_api_client.v2.model.case import Case
@@ -433,6 +435,9 @@ from datadog_api_client.v2.model.create_rule_request_data import CreateRuleReque
 from datadog_api_client.v2.model.create_rule_response import CreateRuleResponse
 from datadog_api_client.v2.model.create_rule_response_data import CreateRuleResponseData
 from datadog_api_client.v2.model.creator import Creator
+from datadog_api_client.v2.model.csm_agent_data import CsmAgentData
+from datadog_api_client.v2.model.csm_agents_attributes import CsmAgentsAttributes
+from datadog_api_client.v2.model.csm_agents_response import CsmAgentsResponse
 from datadog_api_client.v2.model.custom_cost_get_response_meta import CustomCostGetResponseMeta
 from datadog_api_client.v2.model.custom_cost_list_response_meta import CustomCostListResponseMeta
 from datadog_api_client.v2.model.custom_cost_upload_response_meta import CustomCostUploadResponseMeta
@@ -1328,6 +1333,7 @@ from datadog_api_client.v2.model.opsgenie_service_update_attributes import Opsge
 from datadog_api_client.v2.model.opsgenie_service_update_data import OpsgenieServiceUpdateData
 from datadog_api_client.v2.model.opsgenie_service_update_request import OpsgenieServiceUpdateRequest
 from datadog_api_client.v2.model.opsgenie_services_response import OpsgenieServicesResponse
+from datadog_api_client.v2.model.order_direction import OrderDirection
 from datadog_api_client.v2.model.org_config_get_response import OrgConfigGetResponse
 from datadog_api_client.v2.model.org_config_list_response import OrgConfigListResponse
 from datadog_api_client.v2.model.org_config_read import OrgConfigRead
@@ -2386,6 +2392,8 @@ __all__ = [
     "CIAppTestsGroupBy",
     "CIAppTestsQueryFilter",
     "CIAppWarning",
+    "CSMAgentsMetadata",
+    "CSMAgentsType",
     "CalculatedField",
     "CancelDataDeletionResponseBody",
     "Case",
@@ -2534,6 +2542,9 @@ __all__ = [
     "CreateRuleResponse",
     "CreateRuleResponseData",
     "Creator",
+    "CsmAgentData",
+    "CsmAgentsAttributes",
+    "CsmAgentsResponse",
     "CustomCostGetResponseMeta",
     "CustomCostListResponseMeta",
     "CustomCostUploadResponseMeta",
@@ -3257,6 +3268,7 @@ __all__ = [
     "OpsgenieServiceUpdateData",
     "OpsgenieServiceUpdateRequest",
     "OpsgenieServicesResponse",
+    "OrderDirection",
     "OrgConfigGetResponse",
     "OrgConfigListResponse",
     "OrgConfigRead",

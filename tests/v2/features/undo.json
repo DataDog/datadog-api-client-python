@@ -474,6 +474,18 @@
       "type": "safe"
     }
   },
+  "ListAllCSMAgents": {
+    "tag": "CSM Agents",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListAllCSMServerlessAgents": {
+    "tag": "CSM Agents",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListCurrentUserApplicationKeys": {
     "tag": "Key Management",
     "undo": {
