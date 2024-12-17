@@ -1615,6 +1615,126 @@ components:
       type: string
       x-enum-varnames:
       - apm_retention_filter
+    AppBuilderError:
+      description: The definition of `AppBuilderError` object.
+      properties:
+        errors:
+          description: The `AppBuilderError` `errors`.
+          items:
+            $ref: '#/components/schemas/AppBuilderErrorErrorsItems'
+          type: array
+      type: object
+    AppBuilderErrorErrorsItems:
+      description: The definition of `AppBuilderErrorErrorsItems` object.
+      properties:
+        detail:
+          description: The `items` `detail`.
+          type: string
+        source:
+          $ref: '#/components/schemas/AppBuilderErrorErrorsItemsSource'
+      type: object
+    AppBuilderErrorErrorsItemsSource:
+      description: The definition of `AppBuilderErrorErrorsItemsSource` object.
+      properties:
+        parameter:
+          description: The `source` `parameter`.
+          type: string
+        pointer:
+          description: The `source` `pointer`.
+          type: string
+      type: object
+    AppBuilderEvent:
+      additionalProperties: {}
+      description: The definition of `AppBuilderEvent` object.
+      properties:
+        name:
+          $ref: '#/components/schemas/AppBuilderEventName'
+        type:
+          $ref: '#/components/schemas/AppBuilderEventType'
+      type: object
+    AppBuilderEventName:
+      description: The triggering action for the event.
+      enum:
+      - pageChange
+      - tableRowClick
+      - _tableRowButtonClick
+      - change
+      - submit
+      - click
+      - toggleOpen
+      - close
+      - open
+      - executionFinished
+      type: string
+      x-enum-varnames:
+      - PAGECHANGE
+      - TABLEROWCLICK
+      - TABLEROWBUTTONCLICK
+      - CHANGE
+      - SUBMIT
+      - CLICK
+      - TOGGLEOPEN
+      - CLOSE
+      - OPEN
+      - EXECUTIONFINISHED
+    AppBuilderEventType:
+      description: The response to the event.
+      enum:
+      - custom
+      - setComponentState
+      - triggerQuery
+      - openModal
+      - closeModal
+      - openUrl
+      - downloadFile
+      - setStateVariableValue
+      type: string
+      x-enum-varnames:
+      - CUSTOM
+      - SETCOMPONENTSTATE
+      - TRIGGERQUERY
+      - OPENMODAL
+      - CLOSEMODAL
+      - OPENURL
+      - DOWNLOADFILE
+      - SETSTATEVARIABLEVALUE
+    AppMeta:
+      description: The definition of `AppMeta` object.
+      properties:
+        created_at:
+          description: The `AppMeta` `created_at`.
+          type: string
+        deleted_at:
+          description: The `AppMeta` `deleted_at`.
+          type: string
+        org_id:
+          description: The `AppMeta` `org_id`.
+          format: int64
+          type: integer
+        run_as_user:
+          description: The `AppMeta` `run_as_user`.
+          type: string
+        updated_at:
+          description: The `AppMeta` `updated_at`.
+          type: string
+        updated_since_deployment:
+          description: The `AppMeta` `updated_since_deployment`.
+          type: boolean
+        user_id:
+          description: The `AppMeta` `user_id`.
+          format: int64
+          type: integer
+        user_name:
+          description: The `AppMeta` `user_name`.
+          type: string
+        user_uuid:
+          description: The `AppMeta` `user_uuid`.
+          type: string
+        version:
+          description: The `AppMeta` `version`.
+          format: int64
+          type: integer
+      type: object
     ApplicationKeyCreateAttributes:
       description: Attributes used to create an application Key.
       properties:
@@ -1766,6 +1886,27 @@ components:
       type: string
       x-enum-varnames:
       - APPLICATION_KEYS
+    AppsSortField:
+      description: The field and direction to sort apps by
+      enum:
+      - name
+      - created_at
+      - updated_at
+      - user_name
+      - -name
+      - -created_at
+      - -updated_at
+      - -user_name
+      type: string
+      x-enum-varnames:
+      - NAME
+      - CREATED_AT
+      - UPDATED_AT
+      - USER_NAME
+      - NAME_DESC
+      - CREATED_AT_DESC
+      - UPDATED_AT_DESC
+      - USER_NAME_DESC
     AuditLogsEvent:
       description: Object description of an Audit Logs event after it is processed
         and stored by Datadog.
@@ -5528,6 +5669,150 @@ components:
             $ref: '#/components/schemas/CloudflareAccountResponseData'
           type: array
       type: object
+    Component:
+      description: The definition of `Component` object.
+      properties:
+        events:
+          description: The `Component` `events`.
+          items:
+            $ref: '#/components/schemas/AppBuilderEvent'
+          type: array
+        id:
+          description: The `Component` `id`.
+          nullable: true
+          type: string
+        name:
+          description: The `Component` `name`.
+          example: ''
+          type: string
+        properties:
+          $ref: '#/components/schemas/ComponentProperties'
+        type:
+          $ref: '#/components/schemas/ComponentType'
+      required:
+      - name
+      - type
+      - properties
+      type: object
+    ComponentGrid:
+      description: The definition of `ComponentGrid` object.
+      properties:
+        events:
+          description: The `ComponentGrid` `events`.
+          items:
+            $ref: '#/components/schemas/AppBuilderEvent'
+          type: array
+        id:
+          description: The `ComponentGrid` `id`.
+          type: string
+        name:
+          description: The `ComponentGrid` `name`.
+          example: ''
+          type: string
+        properties:
+          $ref: '#/components/schemas/ComponentGridProperties'
+        type:
+          $ref: '#/components/schemas/ComponentGridType'
+      required:
+      - name
+      - type
+      - properties
+      type: object
+    ComponentGridProperties:
+      description: The definition of `ComponentGridProperties` object.
+      properties:
+        backgroundColor:
+          default: default
+          description: The `ComponentGridProperties` `backgroundColor`.
+          type: string
+        children:
+          description: The `ComponentGridProperties` `children`.
+          items:
+            $ref: '#/components/schemas/Component'
+          type: array
+        isVisible:
+          $ref: '#/components/schemas/ComponentGridPropertiesIsVisible'
+      type: object
+    ComponentGridPropertiesIsVisible:
+      description: The definition of `ComponentGridPropertiesIsVisible` object.
+      oneOf:
+      - type: string
+      - default: true
+        type: boolean
+    ComponentGridType:
+      description: The definition of `ComponentGridType` object.
+      enum:
+      - grid
+      example: grid
+      type: string
+      x-enum-varnames:
+      - GRID
+    ComponentProperties:
+      additionalProperties: {}
+      description: The definition of `ComponentProperties` object.
+      properties:
+        children:
+          description: The `ComponentProperties` `children`.
+          items:
+            $ref: '#/components/schemas/Component'
+          type: array
+        isVisible:
+          $ref: '#/components/schemas/ComponentPropertiesIsVisible'
+      type: object
+    ComponentPropertiesIsVisible:
+      description: The definition of `ComponentPropertiesIsVisible` object.
+      oneOf:
+      - type: boolean
+      - description: If a string, it should be a valid JavaScript expression that
+          evaluates to a boolean.
+        example: ${true}
+        type: string
+    ComponentType:
+      description: The definition of `ComponentType` object.
+      enum:
+      - table
+      - textInput
+      - textArea
+      - button
+      - text
+      - select
+      - modal
+      - schemaForm
+      - checkbox
+      - tabs
+      - vegaChart
+      - radioButtons
+      - numberInput
+      - fileInput
+      - jsonInput
+      - gridCell
+      - dateRangePicker
+      - search
+      - container
+      - calloutValue
+      example: table
+      type: string
+      x-enum-varnames:
+      - TABLE
+      - TEXTINPUT
+      - TEXTAREA
+      - BUTTON
+      - TEXT
+      - SELECT
+      - MODAL
+      - SCHEMAFORM
+      - CHECKBOX
+      - TABS
+      - VEGACHART
+      - RADIOBUTTONS
+      - NUMBERINPUT
+      - FILEINPUT
+      - JSONINPUT
+      - GRIDCELL
+      - DATERANGEPICKER
+      - SEARCH
+      - CONTAINER
+      - CALLOUTVALUE
     ConfluentAccountCreateRequest:
       description: Payload schema when adding a Confluent account.
       properties:
@@ -6529,6 +6814,132 @@ components:
       type: string
       x-enum-varnames:
       - COST_BY_ORG
+    CreateAppRequest:
+      description: The definition of `CreateAppRequest` object.
+      example:
+        data:
+          attributes:
+            components:
+            - events: []
+              name: grid0
+              properties:
+                children:
+                - events: []
+                  name: gridCell0
+                  properties:
+                    children:
+                    - events: []
+                      name: calloutValue0
+                      properties:
+                        isDisabled: false
+                        isLoading: false
+                        isVisible: true
+                        label: CPU Usage
+                        size: sm
+                        style: vivid_yellow
+                        unit: kB
+                        value: '42'
+                      type: calloutValue
+                    isVisible: 'true'
+                    layout:
+                      default:
+                        height: 8
+                        width: 2
+                        x: 0
+                        y: 0
+                  type: gridCell
+              type: grid
+            description: This is a simple example app
+            embeddedQueries: []
+            name: Example App
+            rootInstanceName: grid0
+          type: appDefinitions
+      properties:
+        data:
+          $ref: '#/components/schemas/CreateAppRequestData'
+      type: object
+    CreateAppRequestData:
+      description: The definition of `CreateAppRequestData` object.
+      properties:
+        attributes:
+          $ref: '#/components/schemas/CreateAppRequestDataAttributes'
+        type:
+          $ref: '#/components/schemas/CreateAppRequestDataType'
+      required:
+      - type
+      type: object
+    CreateAppRequestDataAttributes:
+      description: The definition of `CreateAppRequestDataAttributes` object.
+      properties:
+        components:
+          description: The `attributes` `components`.
+          items:
+            $ref: '#/components/schemas/ComponentGrid'
+          type: array
+        description:
+          description: The `attributes` `description`.
+          type: string
+        embeddedQueries:
+          description: The `attributes` `embeddedQueries`.
+          items:
+            $ref: '#/components/schemas/Query'
+          type: array
+        inputSchema:
+          $ref: '#/components/schemas/InputSchema'
+        name:
+          description: The `attributes` `name`.
+          type: string
+        rootInstanceName:
+          description: The `attributes` `rootInstanceName`.
+          type: string
+        scripts:
+          description: The `attributes` `scripts`.
+          items:
+            $ref: '#/components/schemas/Script'
+          type: array
+        tags:
+          description: The `attributes` `tags`.
+          items:
+            type: string
+          type: array
+      type: object
+    CreateAppRequestDataType:
+      default: appDefinitions
+      description: The definition of `CreateAppRequestDataType` object.
+      enum:
+      - appDefinitions
+      example: appDefinitions
+      type: string
+      x-enum-varnames:
+      - APPDEFINITIONS
+    CreateAppResponse:
+      description: The definition of `CreateAppResponse` object.
+      properties:
+        data:
+          $ref: '#/components/schemas/CreateAppResponseData'
+      type: object
+    CreateAppResponseData:
+      description: The definition of `CreateAppResponseData` object.
+      properties:
+        id:
+          description: The `data` `id`.
+          example: ''
+          type: string
+        type:
+          $ref: '#/components/schemas/CreateAppResponseDataType'
+      required:
+      - id
+      - type
+      type: object
+    CreateAppResponseDataType:
+      default: appDefinitions
+      description: The definition of `CreateAppResponseDataType` object.
+      enum:
+      - appDefinitions
+      example: appDefinitions
+      type: string
+      x-enum-varnames:
+      - APPDEFINITIONS
     CreateDataDeletionRequestBody:
       description: Object needed to create a data deletion request.
       properties:
@@ -6748,6 +7159,44 @@ components:
         meta:
           $ref: '#/components/schemas/CSMAgentsMetadata'
       type: object
+    CustomConnection:
+      description: The definition of `CustomConnection` object.
+      properties:
+        attributes:
+          $ref: '#/components/schemas/CustomConnectionAttributes'
+        id:
+          description: The `CustomConnection` `id`.
+          type: string
+        type:
+          $ref: '#/components/schemas/CustomConnectionType'
+      type: object
+    CustomConnectionAttributes:
+      description: The definition of `CustomConnectionAttributes` object.
+      properties:
+        name:
+          description: The `attributes` `name`.
+          type: string
+        onPremRunner:
+          $ref: '#/components/schemas/CustomConnectionAttributesOnPremRunner'
+      type: object
+    CustomConnectionAttributesOnPremRunner:
+      description: The definition of `CustomConnectionAttributesOnPremRunner` object.
+      properties:
+        id:
+          description: The `onPremRunner` `id`.
+          type: string
+        url:
+          description: The `onPremRunner` `url`.
+          type: string
+      type: object
+    CustomConnectionType:
+      default: custom_connections
+      description: The definition of `CustomConnectionType` object.
+      enum:
+      - custom_connections
+      type: string
+      x-enum-varnames:
+      - CUSTOM_CONNECTIONS
     CustomCostGetResponseMeta:
       description: Meta for the response from the Get Custom Costs endpoints.
       properties:
@@ -8129,6 +8578,270 @@ components:
             type: number
           type: array
       type: object
+    DeleteAppResponse:
+      description: The definition of `DeleteAppResponse` object.
+      properties:
+        data:
+          $ref: '#/components/schemas/DeleteAppResponseData'
+      type: object
+    DeleteAppResponseData:
+      description: The definition of `DeleteAppResponseData` object.
+      properties:
+        id:
+          description: The `data` `id`.
+          example: ''
+          type: string
+        type:
+          $ref: '#/components/schemas/DeleteAppResponseDataType'
+      required:
+      - id
+      - type
+      type: object
+    DeleteAppResponseDataType:
+      default: appDefinitions
+      description: The definition of `DeleteAppResponseDataType` object.
+      enum:
+      - appDefinitions
+      example: appDefinitions
+      type: string
+      x-enum-varnames:
+      - APPDEFINITIONS
+    DeleteAppsRequest:
+      description: The definition of `DeleteAppsRequest` object.
+      example:
+        data:
+        - id: 29494ddd-ac13-46a7-8558-b05b050ee755
+          type: appDefinitions
+        - id: 71c0d358-eac5-41e3-892d-a7467571b9b0
+          type: appDefinitions
+        - id: 98e7e44d-1562-474a-90f7-3a94e739c006
+          type: appDefinitions
+      properties:
+        data:
+          description: The `DeleteAppsRequest` `data`.
+          items:
+            $ref: '#/components/schemas/DeleteAppsRequestDataItems'
+          type: array
+      type: object
+    DeleteAppsRequestDataItems:
+      description: The definition of `DeleteAppsRequestDataItems` object.
+      properties:
+        id:
+          description: The `items` `id`.
+          example: ''
+          type: string
+        type:
+          $ref: '#/components/schemas/DeleteAppsRequestDataItemsType'
+      required:
+      - id
+      - type
+      type: object
+    DeleteAppsRequestDataItemsType:
+      default: appDefinitions
+      description: The definition of `DeleteAppsRequestDataItemsType` object.
+      enum:
+      - appDefinitions
+      example: appDefinitions
+      type: string
+      x-enum-varnames:
+      - APPDEFINITIONS
+    DeleteAppsResponse:
+      description: The definition of `DeleteAppsResponse` object.
+      properties:
+        data:
+          description: The `DeleteAppsResponse` `data`.
+          items:
+            $ref: '#/components/schemas/DeleteAppsResponseDataItems'
+          type: array
+      type: object
+    DeleteAppsResponseDataItems:
+      description: The definition of `DeleteAppsResponseDataItems` object.
+      properties:
+        id:
+          description: The `items` `id`.
+          example: ''
+          type: string
+        type:
+          $ref: '#/components/schemas/DeleteAppsResponseDataItemsType'
+      required:
+      - id
+      - type
+      type: object
+    DeleteAppsResponseDataItemsType:
+      default: appDefinitions
+      description: The definition of `DeleteAppsResponseDataItemsType` object.
+      enum:
+      - appDefinitions
+      example: appDefinitions
+      type: string
+      x-enum-varnames:
+      - APPDEFINITIONS
+    DeployAppResponse:
+      description: The definition of `DeployAppResponse` object.
+      properties:
+        data:
+          $ref: '#/components/schemas/DeployAppResponseData'
+      type: object
+    DeployAppResponseData:
+      description: The definition of `DeployAppResponseData` object.
+      properties:
+        attributes:
+          $ref: '#/components/schemas/DeployAppResponseDataAttributes'
+        id:
+          description: The `data` `id`.
+          type: string
+        meta:
+          $ref: '#/components/schemas/DeploymentMeta'
+        type:
+          $ref: '#/components/schemas/DeployAppResponseDataType'
+      type: object
+    DeployAppResponseDataAttributes:
+      description: The definition of `DeployAppResponseDataAttributes` object.
+      properties:
+        app_version_id:
+          description: The `attributes` `app_version_id`.
+          type: string
+      type: object
+    DeployAppResponseDataType:
+      default: deployment
+      description: The definition of `DeployAppResponseDataType` object.
+      enum:
+      - deployment
+      type: string
+      x-enum-varnames:
+      - DEPLOYMENT
+    Deployment:
+      description: The definition of `Deployment` object.
+      properties:
+        attributes:
+          $ref: '#/components/schemas/DeploymentAttributes'
+        id:
+          description: The `Deployment` `id`.
+          type: string
+        meta:
+          $ref: '#/components/schemas/DeploymentMeta'
+        type:
+          $ref: '#/components/schemas/DeploymentType'
+      type: object
+    DeploymentAttributes:
+      description: The definition of `DeploymentAttributes` object.
+      properties:
+        app_version_id:
+          description: The `attributes` `app_version_id`.
+          type: string
+      type: object
+    DeploymentIncluded:
+      description: The definition of `DeploymentIncluded` object.
+      properties:
+        attributes:
+          $ref: '#/components/schemas/DeploymentIncludedAttributes'
+        id:
+          description: The `DeploymentIncluded` `id`.
+          type: string
+        meta:
+          $ref: '#/components/schemas/DeploymentIncludedMeta'
+        type:
+          $ref: '#/components/schemas/DeploymentIncludedType'
+      type: object
+    DeploymentIncludedAttributes:
+      description: The definition of `DeploymentIncludedAttributes` object.
+      properties:
+        app_version_id:
+          description: The `attributes` `app_version_id`.
+          type: string
+      type: object
+    DeploymentIncludedMeta:
+      description: The definition of `DeploymentIncludedMeta` object.
+      properties:
+        created_at:
+          description: The `meta` `created_at`.
+          type: string
+        user_id:
+          description: The `meta` `user_id`.
+          format: int64
+          type: integer
+        user_name:
+          description: The `meta` `user_name`.
+          type: string
+        user_uuid:
+          description: The `meta` `user_uuid`.
+          type: string
+      type: object
+    DeploymentIncludedType:
+      default: deployment
+      description: The definition of `DeploymentIncludedType` object.
+      enum:
+      - deployment
+      type: string
+      x-enum-varnames:
+      - DEPLOYMENT
+    DeploymentMeta:
+      description: The definition of `DeploymentMeta` object.
+      properties:
+        created_at:
+          description: The `DeploymentMeta` `created_at`.
+          type: string
+        user_id:
+          description: The `DeploymentMeta` `user_id`.
+          format: int64
+          type: integer
+        user_name:
+          description: The `DeploymentMeta` `user_name`.
+          type: string
+        user_uuid:
+          description: The `DeploymentMeta` `user_uuid`.
+          type: string
+      type: object
+    DeploymentRelationship:
+      description: The definition of `DeploymentRelationship` object.
+      properties:
+        data:
+          $ref: '#/components/schemas/DeploymentRelationshipData'
+        meta:
+          $ref: '#/components/schemas/DeploymentRelationshipMeta'
+      type: object
+    DeploymentRelationshipData:
+      description: The definition of `DeploymentRelationshipData` object.
+      properties:
+        id:
+          description: The `data` `id`.
+          type: string
+        type:
+          $ref: '#/components/schemas/DeploymentRelationshipDataType'
+      type: object
+    DeploymentRelationshipDataType:
+      default: deployment
+      description: The definition of `DeploymentRelationshipDataType` object.
+      enum:
+      - deployment
+      type: string
+      x-enum-varnames:
+      - DEPLOYMENT
+    DeploymentRelationshipMeta:
+      description: The definition of `DeploymentRelationshipMeta` object.
+      properties:
+        created_at:
+          description: The `meta` `created_at`.
+          type: string
+        user_id:
+          description: The `meta` `user_id`.
+          format: int64
+          type: integer
+        user_name:
+          description: The `meta` `user_name`.
+          type: string
+        user_uuid:
+          description: The `meta` `user_uuid`.
+          type: string
+      type: object
+    DeploymentType:
+      default: deployment
+      description: The definition of `DeploymentType` object.
+      enum:
+      - deployment
+      type: string
+      x-enum-varnames:
+      - DEPLOYMENT
     DetailedFinding:
       description: A single finding with with message and resource configuration.
       properties:
@@ -8312,6 +9025,40 @@ components:
           description: The type of the resource. The value should always be device.
           type: string
       type: object
+    DisableAppResponse:
+      description: The definition of `DisableAppResponse` object.
+      properties:
+        data:
+          $ref: '#/components/schemas/DisableAppResponseData'
+      type: object
+    DisableAppResponseData:
+      description: The definition of `DisableAppResponseData` object.
+      properties:
+        attributes:
+          $ref: '#/components/schemas/DisableAppResponseDataAttributes'
+        id:
+          description: The `data` `id`.
+          type: string
+        meta:
+          $ref: '#/components/schemas/DeploymentMeta'
+        type:
+          $ref: '#/components/schemas/DisableAppResponseDataType'
+      type: object
+    DisableAppResponseDataAttributes:
+      description: The definition of `DisableAppResponseDataAttributes` object.
+      properties:
+        app_version_id:
+          description: The `attributes` `app_version_id`.
+          type: string
+      type: object
+    DisableAppResponseDataType:
+      default: deployment
+      description: The definition of `DisableAppResponseDataType` object.
+      enum:
+      - deployment
+      type: string
+      x-enum-varnames:
+      - DEPLOYMENT
     DomainAllowlist:
       description: The email domain allowlist for an org.
       properties:
@@ -11092,6 +11839,95 @@ components:
       type: string
       x-enum-varnames:
       - GCP_SERVICE_ACCOUNT
+    GetAppResponse:
+      description: The definition of `GetAppResponse` object.
+      properties:
+        data:
+          $ref: '#/components/schemas/GetAppResponseData'
+        included:
+          description: The `GetAppResponse` `included`.
+          items:
+            $ref: '#/components/schemas/DeploymentIncluded'
+          type: array
+        meta:
+          $ref: '#/components/schemas/AppMeta'
+        relationship:
+          $ref: '#/components/schemas/GetAppResponseRelationship'
+      type: object
+    GetAppResponseData:
+      description: The definition of `GetAppResponseData` object.
+      properties:
+        attributes:
+          $ref: '#/components/schemas/GetAppResponseDataAttributes'
+        id:
+          description: The `data` `id`.
+          example: ''
+          type: string
+        type:
+          $ref: '#/components/schemas/GetAppResponseDataType'
+      required:
+      - id
+      - type
+      - attributes
+      type: object
+    GetAppResponseDataAttributes:
+      description: The definition of `GetAppResponseDataAttributes` object.
+      properties:
+        components:
+          description: The `attributes` `components`.
+          items:
+            $ref: '#/components/schemas/ComponentGrid'
+          type: array
+        description:
+          description: The `attributes` `description`.
+          type: string
+        embeddedQueries:
+          description: The `attributes` `embeddedQueries`.
+          items:
+            $ref: '#/components/schemas/Query'
+          type: array
+        favorite:
+          description: The `attributes` `favorite`.
+          type: boolean
+        inputSchema:
+          $ref: '#/components/schemas/InputSchema'
+        name:
+          description: The `attributes` `name`.
+          type: string
+        rootInstanceName:
+          description: The `attributes` `rootInstanceName`.
+          type: string
+        scripts:
+          description: The `attributes` `scripts`.
+          items:
+            $ref: '#/components/schemas/Script'
+          type: array
+        tags:
+          description: The `attributes` `tags`.
+          items:
+            type: string
+          type: array
+      type: object
+    GetAppResponseDataType:
+      default: appDefinitions
+      description: The definition of `GetAppResponseDataType` object.
+      enum:
+      - appDefinitions
+      example: appDefinitions
+      type: string
+      x-enum-varnames:
+      - APPDEFINITIONS
+    GetAppResponseRelationship:
+      description: The definition of `GetAppResponseRelationship` object.
+      properties:
+        connections:
+          description: The `relationship` `connections`.
+          items:
+            $ref: '#/components/schemas/CustomConnection'
+          type: array
+        deployment:
+          $ref: '#/components/schemas/DeploymentRelationship'
+      type: object
     GetDataDeletionsResponseBody:
       description: The response from the get data deletion requests endpoint.
       properties:
@@ -13745,6 +14581,77 @@ components:
       - ONCALL
       - INCIDENT
       - RELATION
+    InputSchema:
+      description: The definition of `InputSchema` object.
+      properties:
+        data:
+          $ref: '#/components/schemas/InputSchemaData'
+      type: object
+    InputSchemaData:
+      description: The definition of `InputSchemaData` object.
+      properties:
+        attributes:
+          $ref: '#/components/schemas/InputSchemaDataAttributes'
+        id:
+          description: The `data` `id`.
+          type: string
+        type:
+          $ref: '#/components/schemas/InputSchemaDataType'
+      type: object
+    InputSchemaDataAttributes:
+      description: The definition of `InputSchemaDataAttributes` object.
+      properties:
+        parameters:
+          description: The `attributes` `parameters`.
+          items:
+            $ref: '#/components/schemas/InputSchemaDataAttributesParametersItems'
+          type: array
+      type: object
+    InputSchemaDataAttributesParametersItems:
+      description: The definition of `InputSchemaDataAttributesParametersItems` object.
+      properties:
+        data:
+          $ref: '#/components/schemas/InputSchemaDataAttributesParametersItemsData'
+      type: object
+    InputSchemaDataAttributesParametersItemsData:
+      description: The definition of `InputSchemaDataAttributesParametersItemsData`
+        object.
+      properties:
+        attributes:
+          $ref: '#/components/schemas/InputSchemaDataAttributesParametersItemsDataAttributes'
+      type: object
+    InputSchemaDataAttributesParametersItemsDataAttributes:
+      description: The definition of `InputSchemaDataAttributesParametersItemsDataAttributes`
+        object.
+      properties:
+        defaultValue:
+          description: The `attributes` `defaultValue`.
+        description:
+          description: The `attributes` `description`.
+          type: string
+        enum:
+          description: The `attributes` `enum`.
+          items:
+            type: string
+          type: array
+        label:
+          description: The `attributes` `label`.
+          type: string
+        name:
+          description: The `attributes` `name`.
+          type: string
+        type:
+          description: The `attributes` `type`.
+          type: string
+      type: object
+    InputSchemaDataType:
+      default: inputSchema
+      description: The definition of `InputSchemaDataType` object.
+      enum:
+      - inputSchema
+      type: string
+      x-enum-varnames:
+      - INPUTSCHEMA
     IntakePayloadAccepted:
       description: The payload accepted for intake.
       properties:
@@ -14129,6 +15036,96 @@ components:
           type: array
         meta:
           $ref: '#/components/schemas/ApplicationKeyResponseMeta'
+      type: object
+    ListAppsResponse:
+      description: The definition of `ListAppsResponse` object.
+      properties:
+        data:
+          description: The `ListAppsResponse` `data`.
+          items:
+            $ref: '#/components/schemas/ListAppsResponseDataItems'
+          type: array
+        included:
+          description: The `ListAppsResponse` `included`.
+          items:
+            $ref: '#/components/schemas/DeploymentIncluded'
+          type: array
+        meta:
+          $ref: '#/components/schemas/ListAppsResponseMeta'
+      type: object
+    ListAppsResponseDataItems:
+      description: The definition of `ListAppsResponseDataItems` object.
+      properties:
+        attributes:
+          $ref: '#/components/schemas/ListAppsResponseDataItemsAttributes'
+        id:
+          description: The `items` `id`.
+          example: ''
+          type: string
+        meta:
+          $ref: '#/components/schemas/AppMeta'
+        relationships:
+          $ref: '#/components/schemas/ListAppsResponseDataItemsRelationships'
+        type:
+          $ref: '#/components/schemas/ListAppsResponseDataItemsType'
+      required:
+      - id
+      - type
+      - attributes
+      type: object
+    ListAppsResponseDataItemsAttributes:
+      description: The definition of `ListAppsResponseDataItemsAttributes` object.
+      properties:
+        description:
+          description: The `attributes` `description`.
+          type: string
+        favorite:
+          description: The `attributes` `favorite`.
+          type: boolean
+        name:
+          description: The `attributes` `name`.
+          type: string
+        selfService:
+          description: The `attributes` `selfService`.
+          type: boolean
+        tags:
+          description: The `attributes` `tags`.
+          items:
+            type: string
+          type: array
+      type: object
+    ListAppsResponseDataItemsRelationships:
+      description: The definition of `ListAppsResponseDataItemsRelationships` object.
+      properties:
+        deployment:
+          $ref: '#/components/schemas/DeploymentRelationship'
+      type: object
+    ListAppsResponseDataItemsType:
+      default: appDefinitions
+      description: The definition of `ListAppsResponseDataItemsType` object.
+      enum:
+      - appDefinitions
+      example: appDefinitions
+      type: string
+      x-enum-varnames:
+      - APPDEFINITIONS
+    ListAppsResponseMeta:
+      description: The definition of `ListAppsResponseMeta` object.
+      properties:
+        page:
+          $ref: '#/components/schemas/ListAppsResponseMetaPage'
+      type: object
+    ListAppsResponseMetaPage:
+      description: The definition of `ListAppsResponseMetaPage` object.
+      properties:
+        totalCount:
+          description: The `page` `totalCount`.
+          format: int64
+          type: integer
+        totalFilteredCount:
+          description: The `page` `totalFilteredCount`.
+          format: int64
+          type: integer
       type: object
     ListDevicesResponse:
       description: List devices response.
@@ -18908,6 +19905,31 @@ components:
             $ref: '#/components/schemas/Project'
           type: array
       type: object
+    Query:
+      description: The definition of `Query` object.
+      properties:
+        events:
+          description: The `Query` `events`.
+          items:
+            $ref: '#/components/schemas/AppBuilderEvent'
+          type: array
+        id:
+          description: The `Query` `id`.
+          example: ''
+          type: string
+        name:
+          description: The `Query` `name`.
+          example: ''
+          type: string
+        properties:
+          description: The `Query` `properties`.
+        type:
+          $ref: '#/components/schemas/QueryType'
+      required:
+      - id
+      - name
+      - type
+      type: object
     QueryFormula:
       description: A formula for calculation based on one or more queries.
       properties:
@@ -18931,6 +19953,18 @@ components:
       x-enum-varnames:
       - ASC
       - DESC
+    QueryType:
+      description: The definition of `QueryType` object.
+      enum:
+      - action
+      - stateVariable
+      - dataTransform
+      example: action
+      type: string
+      x-enum-varnames:
+      - ACTION
+      - STATEVARIABLE
+      - DATATRANSFORM
     RUMAggregateBucketValue:
       description: A bucket value, can be either a timeseries or a single value.
       oneOf:
@@ -21465,6 +22499,44 @@ components:
       type: string
       x-enum-varnames:
       - SCORECARD
+    Script:
+      description: The definition of `Script` object.
+      properties:
+        data:
+          $ref: '#/components/schemas/ScriptData'
+      type: object
+    ScriptData:
+      description: The definition of `ScriptData` object.
+      properties:
+        attributes:
+          $ref: '#/components/schemas/ScriptDataAttributes'
+        id:
+          description: The `data` `id`.
+          type: string
+        type:
+          $ref: '#/components/schemas/ScriptDataType'
+      type: object
+    ScriptDataAttributes:
+      description: The definition of `ScriptDataAttributes` object.
+      properties:
+        name:
+          description: The `attributes` `name`.
+          type: string
+        src:
+          description: The `attributes` `src`.
+          type: string
+        type:
+          description: The `attributes` `type`.
+          type: string
+      type: object
+    ScriptDataType:
+      default: scripts
+      description: The definition of `ScriptDataType` object.
+      enum:
+      - scripts
+      type: string
+      x-enum-varnames:
+      - SCRIPTS
     SecurityFilter:
       description: The security filter's properties.
       properties:
@@ -27058,6 +28130,197 @@ components:
           example: min
           type: string
       type: object
+    UpdateAppRequest:
+      description: The definition of `UpdateAppRequest` object.
+      example:
+        data:
+          attributes:
+            components:
+            - events: []
+              name: grid0
+              properties:
+                children:
+                - events: []
+                  name: gridCell0
+                  properties:
+                    children:
+                    - events: []
+                      name: calloutValue0
+                      properties:
+                        isDisabled: false
+                        isLoading: false
+                        isVisible: true
+                        label: CPU Usage
+                        size: sm
+                        style: vivid_yellow
+                        unit: kB
+                        value: '42'
+                      type: calloutValue
+                    isVisible: 'true'
+                    layout:
+                      default:
+                        height: 8
+                        width: 2
+                        x: 0
+                        y: 0
+                  type: gridCell
+              type: grid
+            description: This is a simple example app
+            embeddedQueries: []
+            name: Example App
+            rootInstanceName: grid0
+          id: 9e20cbaf-68da-45a6-9ccf-54193ac29fa5
+          type: appDefinitions
+      properties:
+        data:
+          $ref: '#/components/schemas/UpdateAppRequestData'
+      type: object
+    UpdateAppRequestData:
+      description: The definition of `UpdateAppRequestData` object.
+      properties:
+        attributes:
+          $ref: '#/components/schemas/UpdateAppRequestDataAttributes'
+        id:
+          description: The `data` `id`.
+          type: string
+        type:
+          $ref: '#/components/schemas/UpdateAppRequestDataType'
+      required:
+      - type
+      type: object
+    UpdateAppRequestDataAttributes:
+      description: The definition of `UpdateAppRequestDataAttributes` object.
+      properties:
+        components:
+          description: The `attributes` `components`.
+          items:
+            $ref: '#/components/schemas/ComponentGrid'
+          type: array
+        description:
+          description: The `attributes` `description`.
+          type: string
+        embeddedQueries:
+          description: The `attributes` `embeddedQueries`.
+          items:
+            $ref: '#/components/schemas/Query'
+          type: array
+        inputSchema:
+          $ref: '#/components/schemas/InputSchema'
+        name:
+          description: The `attributes` `name`.
+          type: string
+        rootInstanceName:
+          description: The `attributes` `rootInstanceName`.
+          type: string
+        scripts:
+          description: The `attributes` `scripts`.
+          items:
+            $ref: '#/components/schemas/Script'
+          type: array
+        tags:
+          description: The `attributes` `tags`.
+          items:
+            type: string
+          type: array
+      type: object
+    UpdateAppRequestDataType:
+      default: appDefinitions
+      description: The definition of `UpdateAppRequestDataType` object.
+      enum:
+      - appDefinitions
+      example: appDefinitions
+      type: string
+      x-enum-varnames:
+      - APPDEFINITIONS
+    UpdateAppResponse:
+      description: The definition of `UpdateAppResponse` object.
+      properties:
+        data:
+          $ref: '#/components/schemas/UpdateAppResponseData'
+        included:
+          description: The `UpdateAppResponse` `included`.
+          items:
+            $ref: '#/components/schemas/DeploymentIncluded'
+          type: array
+        meta:
+          $ref: '#/components/schemas/AppMeta'
+        relationship:
+          $ref: '#/components/schemas/UpdateAppResponseRelationship'
+      type: object
+    UpdateAppResponseData:
+      description: The definition of `UpdateAppResponseData` object.
+      properties:
+        attributes:
+          $ref: '#/components/schemas/UpdateAppResponseDataAttributes'
+        id:
+          description: The `data` `id`.
+          example: ''
+          type: string
+        type:
+          $ref: '#/components/schemas/UpdateAppResponseDataType'
+      required:
+      - id
+      - type
+      - attributes
+      type: object
+    UpdateAppResponseDataAttributes:
+      description: The definition of `UpdateAppResponseDataAttributes` object.
+      properties:
+        components:
+          description: The `attributes` `components`.
+          items:
+            $ref: '#/components/schemas/ComponentGrid'
+          type: array
+        description:
+          description: The `attributes` `description`.
+          type: string
+        embeddedQueries:
+          description: The `attributes` `embeddedQueries`.
+          items:
+            $ref: '#/components/schemas/Query'
+          type: array
+        favorite:
+          description: The `attributes` `favorite`.
+          type: boolean
+        inputSchema:
+          $ref: '#/components/schemas/InputSchema'
+        name:
+          description: The `attributes` `name`.
+          type: string
+        rootInstanceName:
+          description: The `attributes` `rootInstanceName`.
+          type: string
+        scripts:
+          description: The `attributes` `scripts`.
+          items:
+            $ref: '#/components/schemas/Script'
+          type: array
+        tags:
+          description: The `attributes` `tags`.
+          items:
+            type: string
+          type: array
+      type: object
+    UpdateAppResponseDataType:
+      default: appDefinitions
+      description: The definition of `UpdateAppResponseDataType` object.
+      enum:
+      - appDefinitions
+      example: appDefinitions
+      type: string
+      x-enum-varnames:
+      - APPDEFINITIONS
+    UpdateAppResponseRelationship:
+      description: The definition of `UpdateAppResponseRelationship` object.
+      properties:
+        connections:
+          description: The `relationship` `connections`.
+          items:
+            $ref: '#/components/schemas/CustomConnection'
+          type: array
+        deployment:
+          $ref: '#/components/schemas/DeploymentRelationship'
+      type: object
     UpdateOpenAPIResponse:
       description: Response for `UpdateOpenAPI`.
       properties:
@@ -28816,6 +30079,430 @@ paths:
         permissions:
         - apm_retention_filter_write
         - apm_pipelines_write
+  /api/v2/app-builder/apps:
+    delete:
+      description: Delete multiple apps by ID
+      operationId: DeleteApps
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeleteAppsRequest'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeleteAppsResponse'
+          description: OK
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AppBuilderError'
+          description: Bad Request
+        '403':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AppBuilderError'
+          description: Forbidden, e.g. missing permissions to delete one or more apps
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AppBuilderError'
+          description: Not Found
+        '429':
+          $ref: '#/components/responses/TooManyRequestsResponse'
+      summary: Delete Multiple Apps
+      tags:
+      - Apps
+      x-permission:
+        operator: OR
+        permissions:
+        - apps_write
+      x-unstable: '**Note**: App Builder API endpoints are still under active development
+        and may change at any time.'
+    get:
+      description: List all apps, with optional filters and sorting
+      operationId: ListApps
+      parameters:
+      - description: The number of apps to return per page
+        in: query
+        name: limit
+        required: false
+        schema:
+          format: int64
+          type: integer
+      - description: The page number to return
+        in: query
+        name: page
+        required: false
+        schema:
+          format: int64
+          type: integer
+      - description: The `AppsFilter` `user_name`.
+        in: query
+        name: filter[user_name]
+        required: false
+        schema:
+          type: string
+      - description: The `AppsFilter` `user_uuid`.
+        in: query
+        name: filter[user_uuid]
+        required: false
+        schema:
+          type: string
+      - description: The `AppsFilter` `name`.
+        in: query
+        name: filter[name]
+        required: false
+        schema:
+          type: string
+      - description: The `AppsFilter` `query`.
+        in: query
+        name: filter[query]
+        required: false
+        schema:
+          type: string
+      - description: The `AppsFilter` `deployed`.
+        in: query
+        name: filter[deployed]
+        required: false
+        schema:
+          type: boolean
+      - description: The `AppsFilter` `tags`.
+        in: query
+        name: filter[tags]
+        required: false
+        schema:
+          type: string
+      - description: The `AppsFilter` `favorite`.
+        in: query
+        name: filter[favorite]
+        required: false
+        schema:
+          type: boolean
+      - explode: false
+        in: query
+        name: sort
+        required: false
+        schema:
+          items:
+            $ref: '#/components/schemas/AppsSortField'
+          type: array
+        style: form
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListAppsResponse'
+          description: OK
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AppBuilderError'
+          description: Bad Request, e.g. invalid sort parameter
+        '403':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AppBuilderError'
+          description: Forbidden
+        '429':
+          $ref: '#/components/responses/TooManyRequestsResponse'
+      summary: List Apps
+      tags:
+      - Apps
+      x-permission:
+        operator: OR
+        permissions:
+        - apps_run
+      x-unstable: '**Note**: App Builder API endpoints are still under active development
+        and may change at any time.'
+    post:
+      description: Create a new app, returning the app ID
+      operationId: CreateApp
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateAppRequest'
+        required: true
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateAppResponse'
+          description: App Created
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AppBuilderError'
+          description: Bad Request
+        '403':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AppBuilderError'
+          description: Forbidden, e.g. missing required permissions to a connection
+            or workflow used in the app
+        '429':
+          $ref: '#/components/responses/TooManyRequestsResponse'
+      summary: Create App
+      tags:
+      - Apps
+      x-permission:
+        operator: AND
+        permissions:
+        - apps_write
+        - connections_resolve
+        - workflows_run
+      x-unstable: '**Note**: App Builder API endpoints are still under active development
+        and may change at any time.'
+  /api/v2/app-builder/apps/{app_id}:
+    delete:
+      description: Delete an app by ID
+      operationId: DeleteApp
+      parameters:
+      - in: path
+        name: app_id
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeleteAppResponse'
+          description: OK
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AppBuilderError'
+          description: Bad Request
+        '403':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AppBuilderError'
+          description: Forbidden
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AppBuilderError'
+          description: Not Found
+        '410':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AppBuilderError'
+          description: Gone
+        '429':
+          $ref: '#/components/responses/TooManyRequestsResponse'
+      summary: Delete App
+      tags:
+      - Apps
+      x-permission:
+        operator: OR
+        permissions:
+        - apps_write
+      x-unstable: '**Note**: App Builder API endpoints are still under active development
+        and may change at any time.'
+    get:
+      description: Get the full definition of an app by ID
+      operationId: GetApp
+      parameters:
+      - in: path
+        name: app_id
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetAppResponse'
+          description: OK
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AppBuilderError'
+          description: Bad Request
+        '403':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AppBuilderError'
+          description: Forbidden
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AppBuilderError'
+          description: Not Found
+        '429':
+          $ref: '#/components/responses/TooManyRequestsResponse'
+      summary: Get App
+      tags:
+      - Apps
+      x-permission:
+        operator: AND
+        permissions:
+        - apps_run
+        - connections_read
+      x-unstable: '**Note**: App Builder API endpoints are still under active development
+        and may change at any time.'
+    patch:
+      description: Update an existing app by ID. Creates a new version of the app
+      operationId: UpdateApp
+      parameters:
+      - in: path
+        name: app_id
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateAppRequest'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpdateAppResponse'
+          description: OK
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AppBuilderError'
+          description: Bad Request
+        '403':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AppBuilderError'
+          description: Forbidden, e.g. missing required permissions to a connection
+            or workflow used in the app
+        '429':
+          $ref: '#/components/responses/TooManyRequestsResponse'
+      summary: Update App
+      tags:
+      - Apps
+      x-permission:
+        operator: AND
+        permissions:
+        - apps_write
+        - connections_resolve
+        - workflows_run
+      x-unstable: '**Note**: App Builder API endpoints are still under active development
+        and may change at any time.'
+  /api/v2/app-builder/apps/{app_id}/deployment:
+    delete:
+      description: Disable an app by ID
+      operationId: DisableApp
+      parameters:
+      - in: path
+        name: app_id
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DisableAppResponse'
+          description: OK
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AppBuilderError'
+          description: Bad Request
+        '403':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AppBuilderError'
+          description: Forbidden
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AppBuilderError'
+          description: Not Found
+        '429':
+          $ref: '#/components/responses/TooManyRequestsResponse'
+      summary: Disable App
+      tags:
+      - App Deployment
+      x-permission:
+        operator: OR
+        permissions:
+        - apps_write
+      x-unstable: '**Note**: App Builder API endpoints are still under active development
+        and may change at any time.'
+    post:
+      description: Deploy (publish) an app by ID
+      operationId: DeployApp
+      parameters:
+      - in: path
+        name: app_id
+        required: true
+        schema:
+          type: string
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeployAppResponse'
+          description: Created
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AppBuilderError'
+          description: Bad Request
+        '403':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AppBuilderError'
+          description: Forbidden
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AppBuilderError'
+          description: Not Found
+        '429':
+          $ref: '#/components/responses/TooManyRequestsResponse'
+      summary: Deploy App
+      tags:
+      - App Deployment
+      x-permission:
+        operator: OR
+        permissions:
+        - apps_write
+      x-unstable: '**Note**: App Builder API endpoints are still under active development
+        and may change at any time.'
   /api/v2/application_keys:
     get:
       description: List all application keys available for your org
@@ -44843,6 +46530,10 @@ tags:
   externalDocs:
     url: https://docs.datadoghq.com/integrations/amazon_web_services/#log-collection
   name: AWS Logs Integration
+- description: Deploy and disable apps in App Builder.
+  name: App Deployment
+- description: Create, read, update, and delete apps in App Builder.
+  name: Apps
 - description: Search your Audit Logs events over HTTP.
   name: Audit
 - description: '[The AuthN Mappings API](https://docs.datadoghq.com/account_management/authn_mapping/?tab=example)
