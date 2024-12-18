@@ -91,6 +91,8 @@ class UsageSummaryResponse(ModelNormal):
             "error_tracking_error_events_agg_sum": (int,),
             "error_tracking_events_agg_sum": (int,),
             "error_tracking_rum_error_events_agg_sum": (int,),
+            "fargate_container_profiler_profiling_fargate_avg_sum": (int,),
+            "fargate_container_profiler_profiling_fargate_eks_avg_sum": (int,),
             "fargate_tasks_count_avg_sum": (int,),
             "fargate_tasks_count_hwm_sum": (int,),
             "flex_logs_compute_large_avg_sum": (int,),
@@ -246,6 +248,8 @@ class UsageSummaryResponse(ModelNormal):
         "error_tracking_error_events_agg_sum": "error_tracking_error_events_agg_sum",
         "error_tracking_events_agg_sum": "error_tracking_events_agg_sum",
         "error_tracking_rum_error_events_agg_sum": "error_tracking_rum_error_events_agg_sum",
+        "fargate_container_profiler_profiling_fargate_avg_sum": "fargate_container_profiler_profiling_fargate_avg_sum",
+        "fargate_container_profiler_profiling_fargate_eks_avg_sum": "fargate_container_profiler_profiling_fargate_eks_avg_sum",
         "fargate_tasks_count_avg_sum": "fargate_tasks_count_avg_sum",
         "fargate_tasks_count_hwm_sum": "fargate_tasks_count_hwm_sum",
         "flex_logs_compute_large_avg_sum": "flex_logs_compute_large_avg_sum",
@@ -402,6 +406,8 @@ class UsageSummaryResponse(ModelNormal):
         error_tracking_error_events_agg_sum: Union[int, UnsetType] = unset,
         error_tracking_events_agg_sum: Union[int, UnsetType] = unset,
         error_tracking_rum_error_events_agg_sum: Union[int, UnsetType] = unset,
+        fargate_container_profiler_profiling_fargate_avg_sum: Union[int, UnsetType] = unset,
+        fargate_container_profiler_profiling_fargate_eks_avg_sum: Union[int, UnsetType] = unset,
         fargate_tasks_count_avg_sum: Union[int, UnsetType] = unset,
         fargate_tasks_count_hwm_sum: Union[int, UnsetType] = unset,
         flex_logs_compute_large_avg_sum: Union[int, UnsetType] = unset,
@@ -521,7 +527,7 @@ class UsageSummaryResponse(ModelNormal):
         :param audit_trail_enabled_hwm_sum: Shows the total number of organizations that had Audit Trail enabled over a specific number of months.
         :type audit_trail_enabled_hwm_sum: int, optional
 
-        :param avg_profiled_fargate_tasks_sum: Shows the average of all profiled Fargate tasks over all hours in the current month for all organizations.
+        :param avg_profiled_fargate_tasks_sum: The average total count for Fargate Container Profiler over all hours in the current month for all organizations.
         :type avg_profiled_fargate_tasks_sum: int, optional
 
         :param aws_host_top99p_sum: Shows the 99th percentile of all AWS hosts over all hours in the current month for all organizations.
@@ -688,6 +694,12 @@ class UsageSummaryResponse(ModelNormal):
 
         :param error_tracking_rum_error_events_agg_sum: Shows the sum of all Error Tracking RUM error events over all hours in the current month for all organizations.
         :type error_tracking_rum_error_events_agg_sum: int, optional
+
+        :param fargate_container_profiler_profiling_fargate_avg_sum: The average number of Profiling Fargate tasks over all hours in the current month for all organizations.
+        :type fargate_container_profiler_profiling_fargate_avg_sum: int, optional
+
+        :param fargate_container_profiler_profiling_fargate_eks_avg_sum: The average number of Profiling Fargate Elastic Kubernetes Service tasks over all hours in the current month for all organizations.
+        :type fargate_container_profiler_profiling_fargate_eks_avg_sum: int, optional
 
         :param fargate_tasks_count_avg_sum: Shows the average of all Fargate tasks over all hours in the current month for all organizations.
         :type fargate_tasks_count_avg_sum: int, optional
@@ -1084,6 +1096,14 @@ class UsageSummaryResponse(ModelNormal):
             kwargs["error_tracking_events_agg_sum"] = error_tracking_events_agg_sum
         if error_tracking_rum_error_events_agg_sum is not unset:
             kwargs["error_tracking_rum_error_events_agg_sum"] = error_tracking_rum_error_events_agg_sum
+        if fargate_container_profiler_profiling_fargate_avg_sum is not unset:
+            kwargs[
+                "fargate_container_profiler_profiling_fargate_avg_sum"
+            ] = fargate_container_profiler_profiling_fargate_avg_sum
+        if fargate_container_profiler_profiling_fargate_eks_avg_sum is not unset:
+            kwargs[
+                "fargate_container_profiler_profiling_fargate_eks_avg_sum"
+            ] = fargate_container_profiler_profiling_fargate_eks_avg_sum
         if fargate_tasks_count_avg_sum is not unset:
             kwargs["fargate_tasks_count_avg_sum"] = fargate_tasks_count_avg_sum
         if fargate_tasks_count_hwm_sum is not unset:

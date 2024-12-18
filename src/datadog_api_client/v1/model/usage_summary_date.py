@@ -86,6 +86,8 @@ class UsageSummaryDate(ModelNormal):
             "error_tracking_error_events_sum": (int,),
             "error_tracking_events_sum": (int,),
             "error_tracking_rum_error_events_sum": (int,),
+            "fargate_container_profiler_profiling_fargate_avg": (int,),
+            "fargate_container_profiler_profiling_fargate_eks_avg": (int,),
             "fargate_tasks_count_avg": (int,),
             "fargate_tasks_count_hwm": (int,),
             "flex_logs_compute_large_avg": (int,),
@@ -230,6 +232,8 @@ class UsageSummaryDate(ModelNormal):
         "error_tracking_error_events_sum": "error_tracking_error_events_sum",
         "error_tracking_events_sum": "error_tracking_events_sum",
         "error_tracking_rum_error_events_sum": "error_tracking_rum_error_events_sum",
+        "fargate_container_profiler_profiling_fargate_avg": "fargate_container_profiler_profiling_fargate_avg",
+        "fargate_container_profiler_profiling_fargate_eks_avg": "fargate_container_profiler_profiling_fargate_eks_avg",
         "fargate_tasks_count_avg": "fargate_tasks_count_avg",
         "fargate_tasks_count_hwm": "fargate_tasks_count_hwm",
         "flex_logs_compute_large_avg": "flex_logs_compute_large_avg",
@@ -375,6 +379,8 @@ class UsageSummaryDate(ModelNormal):
         error_tracking_error_events_sum: Union[int, UnsetType] = unset,
         error_tracking_events_sum: Union[int, UnsetType] = unset,
         error_tracking_rum_error_events_sum: Union[int, UnsetType] = unset,
+        fargate_container_profiler_profiling_fargate_avg: Union[int, UnsetType] = unset,
+        fargate_container_profiler_profiling_fargate_eks_avg: Union[int, UnsetType] = unset,
         fargate_tasks_count_avg: Union[int, UnsetType] = unset,
         fargate_tasks_count_hwm: Union[int, UnsetType] = unset,
         flex_logs_compute_large_avg: Union[int, UnsetType] = unset,
@@ -486,7 +492,7 @@ class UsageSummaryDate(ModelNormal):
         :param audit_trail_enabled_hwm: Shows the number of organizations that had Audit Trail enabled in the current date.
         :type audit_trail_enabled_hwm: int, optional
 
-        :param avg_profiled_fargate_tasks: The average profiled task count for Fargate Profiling.
+        :param avg_profiled_fargate_tasks: The average total count for Fargate Container Profiler over all hours in the current date for all organizations.
         :type avg_profiled_fargate_tasks: int, optional
 
         :param aws_host_top99p: Shows the 99th percentile of all AWS hosts over all hours in the current date for all organizations.
@@ -644,6 +650,12 @@ class UsageSummaryDate(ModelNormal):
 
         :param error_tracking_rum_error_events_sum: Shows the sum of all Error Tracking RUM error events over all hours in the current date for the given org.
         :type error_tracking_rum_error_events_sum: int, optional
+
+        :param fargate_container_profiler_profiling_fargate_avg: The average number of Profiling Fargate tasks over all hours in the current date for all organizations.
+        :type fargate_container_profiler_profiling_fargate_avg: int, optional
+
+        :param fargate_container_profiler_profiling_fargate_eks_avg: The average number of Profiling Fargate Elastic Kubernetes Service tasks over all hours in the current date for all organizations.
+        :type fargate_container_profiler_profiling_fargate_eks_avg: int, optional
 
         :param fargate_tasks_count_avg: Shows the high-watermark of all Fargate tasks over all hours in the current date for all organizations.
         :type fargate_tasks_count_avg: int, optional
@@ -1008,6 +1020,14 @@ class UsageSummaryDate(ModelNormal):
             kwargs["error_tracking_events_sum"] = error_tracking_events_sum
         if error_tracking_rum_error_events_sum is not unset:
             kwargs["error_tracking_rum_error_events_sum"] = error_tracking_rum_error_events_sum
+        if fargate_container_profiler_profiling_fargate_avg is not unset:
+            kwargs[
+                "fargate_container_profiler_profiling_fargate_avg"
+            ] = fargate_container_profiler_profiling_fargate_avg
+        if fargate_container_profiler_profiling_fargate_eks_avg is not unset:
+            kwargs[
+                "fargate_container_profiler_profiling_fargate_eks_avg"
+            ] = fargate_container_profiler_profiling_fargate_eks_avg
         if fargate_tasks_count_avg is not unset:
             kwargs["fargate_tasks_count_avg"] = fargate_tasks_count_avg
         if fargate_tasks_count_hwm is not unset:
