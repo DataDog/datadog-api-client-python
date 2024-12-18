@@ -947,12 +947,6 @@
         </li></ul>
             </nav>
         </li>
-        <li class="md-nav__item"><a href="#module-datadog_api_client.v1.model.azure_account_metrics_config" class="md-nav__link">datadog_api_client.v1.model.azure_account_metrics_config module</a><nav class="md-nav">
-              <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#datadog_api_client.v1.model.azure_account_metrics_config.AzureAccountMetricsConfig" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">AzureAccountMetricsConfig</span></code></a>
-        </li></ul>
-            </nav>
-        </li>
         <li class="md-nav__item"><a href="#module-datadog_api_client.v1.model.cancel_downtimes_by_scope_request" class="md-nav__link">datadog_api_client.v1.model.cancel_downtimes_by_scope_request module</a><nav class="md-nav">
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#datadog_api_client.v1.model.cancel_downtimes_by_scope_request.CancelDowntimesByScopeRequest" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CancelDowntimesByScopeRequest</span></code></a>
@@ -3108,6 +3102,12 @@
         <li class="md-nav__item"><a href="#module-datadog_api_client.v1.model.reference_table_logs_lookup_processor" class="md-nav__link">datadog_api_client.v1.model.reference_table_logs_lookup_processor module</a><nav class="md-nav">
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#datadog_api_client.v1.model.reference_table_logs_lookup_processor.ReferenceTableLogsLookupProcessor" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ReferenceTableLogsLookupProcessor</span></code></a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#module-datadog_api_client.v1.model.resource_provider_config" class="md-nav__link">datadog_api_client.v1.model.resource_provider_config module</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v1.model.resource_provider_config.ResourceProviderConfig" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ResourceProviderConfig</span></code></a>
         </li></ul>
             </nav>
         </li>
@@ -7052,14 +7052,14 @@ Note: This requires resource_collection_enabled to be set to true.</p></li>
 <li><p><strong>errors</strong> (<em>[</em><em>str</em><em>]</em><em>, </em><em>optional</em>) – Errors in your configuration.</p></li>
 <li><p><strong>host_filters</strong> (<em>str</em><em>, </em><em>optional</em>) – Limit the Azure instances that are pulled into Datadog by using tags.
 Only hosts that match one of the defined tags are imported into Datadog.</p></li>
-<li><p><strong>metrics_config</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.azure_account_metrics_config.AzureAccountMetricsConfig" title="datadog_api_client.v1.model.azure_account_metrics_config.AzureAccountMetricsConfig"><em>AzureAccountMetricsConfig</em></a><em>, </em><em>optional</em>) – Dictionary containing the key <code class="docutils literal notranslate"><span class="pre">excluded_resource_providers</span></code> which has to be a list of Microsoft Azure Resource Provider names.
-This feature is currently being beta tested.
-In order to enable all resource providers for metric collection, pass:
-<code class="docutils literal notranslate"><span class="pre">metrics_config:</span> <span class="pre">{"excluded_resource_providers":</span> <span class="pre">[]}</span></code> (i.e., an empty list for <code class="docutils literal notranslate"><span class="pre">excluded_resource_providers</span></code> ).</p></li>
+<li><p><strong>metrics_enabled</strong> (<em>bool</em><em>, </em><em>optional</em>) – Enable Azure metrics for your organization.</p></li>
+<li><p><strong>metrics_enabled_default</strong> (<em>bool</em><em>, </em><em>optional</em>) – Enable Azure metrics for your organization for resource providers where no resource provider config is specified.</p></li>
 <li><p><strong>new_client_id</strong> (<em>str</em><em>, </em><em>optional</em>) – Your New Azure web application ID.</p></li>
 <li><p><strong>new_tenant_name</strong> (<em>str</em><em>, </em><em>optional</em>) – Your New Azure Active Directory ID.</p></li>
 <li><p><strong>resource_collection_enabled</strong> (<em>bool</em><em>, </em><em>optional</em>) – When enabled, Datadog collects metadata and configuration info from cloud resources (compute instances, databases, load balancers, etc.) monitored by this app registration.</p></li>
+<li><p><strong>resource_provider_configs</strong> (<em>[</em><a class="reference internal" href="#datadog_api_client.v1.model.resource_provider_config.ResourceProviderConfig" title="datadog_api_client.v1.model.resource_provider_config.ResourceProviderConfig"><em>ResourceProviderConfig</em></a><em>]</em><em>, </em><em>optional</em>) – Configuration settings applied to resources from the specified Azure resource providers.</p></li>
 <li><p><strong>tenant_name</strong> (<em>str</em><em>, </em><em>optional</em>) – Your Azure Active Directory ID.</p></li>
+<li><p><strong>usage_metrics_enabled</strong> (<em>bool</em><em>, </em><em>optional</em>) – Enable azure.usage metrics for your organization.</p></li>
 </ul>
 </dd>
 </dl>
@@ -7087,23 +7087,6 @@ variable names in the input data are pythonic names, e.g. snake case (default).<
 file_type parameter.  If passed, type conversion is attempted If omitted no
 type conversion is done.</p></li>
 </ul>
-</dd>
-</dl>
-</dd></dl>
-</section>
-<section id="module-datadog_api_client.v1.model.azure_account_metrics_config">
-<span id="datadog-api-client-v1-model-azure-account-metrics-config-module"></span><h2 id="module-datadog_api_client.v1.model.azure_account_metrics_config">datadog_api_client.v1.model.azure_account_metrics_config module<a class="headerlink" href="#module-datadog_api_client.v1.model.azure_account_metrics_config" title="Link to this heading">¶</a></h2>
-<dl class="py class">
-<dt class="sig sig-object py" id="datadog_api_client.v1.model.azure_account_metrics_config.AzureAccountMetricsConfig">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AzureAccountMetricsConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datadog_api_client.v1.model.azure_account_metrics_config.AzureAccountMetricsConfig" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.ModelNormal" title="datadog_api_client.model_utils.ModelNormal"><code class="xref py py-class docutils literal notranslate"><span class="pre">ModelNormal</span></code></a></p>
-<p>Dictionary containing the key <code class="docutils literal notranslate"><span class="pre">excluded_resource_providers</span></code> which has to be a list of Microsoft Azure Resource Provider names.
-This feature is currently being beta tested.
-In order to enable all resource providers for metric collection, pass:
-<code class="docutils literal notranslate"><span class="pre">metrics_config:</span> <span class="pre">{"excluded_resource_providers":</span> <span class="pre">[]}</span></code> (i.e., an empty list for <code class="docutils literal notranslate"><span class="pre">excluded_resource_providers</span></code> ).</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>excluded_resource_providers</strong> (<em>[</em><em>str</em><em>]</em><em>, </em><em>optional</em>) – List of Microsoft Azure Resource Providers to exclude from metric collection.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -15304,6 +15287,23 @@ environment belongs to your list of stolen machines.</p>
 <li><p><strong>source</strong> (<em>str</em>) – Source attribute used to perform the lookup.</p></li>
 <li><p><strong>target</strong> (<em>str</em>) – Name of the attribute that contains the corresponding value in the mapping list.</p></li>
 <li><p><strong>type</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.logs_lookup_processor_type.LogsLookupProcessorType" title="datadog_api_client.v1.model.logs_lookup_processor_type.LogsLookupProcessorType"><em>LogsLookupProcessorType</em></a>) – Type of logs lookup processor.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+</section>
+<section id="module-datadog_api_client.v1.model.resource_provider_config">
+<span id="datadog-api-client-v1-model-resource-provider-config-module"></span><h2 id="module-datadog_api_client.v1.model.resource_provider_config">datadog_api_client.v1.model.resource_provider_config module<a class="headerlink" href="#module-datadog_api_client.v1.model.resource_provider_config" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datadog_api_client.v1.model.resource_provider_config.ResourceProviderConfig">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ResourceProviderConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datadog_api_client.v1.model.resource_provider_config.ResourceProviderConfig" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.ModelNormal" title="datadog_api_client.model_utils.ModelNormal"><code class="xref py py-class docutils literal notranslate"><span class="pre">ModelNormal</span></code></a></p>
+<p>Configuration settings applied to resources from the specified Azure resource provider.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>metrics_enabled</strong> (<em>bool</em><em>, </em><em>optional</em>) – Collect metrics for resources from this provider.</p></li>
+<li><p><strong>namespace</strong> (<em>str</em><em>, </em><em>optional</em>) – The provider namespace to apply this configuration to.</p></li>
 </ul>
 </dd>
 </dl>
