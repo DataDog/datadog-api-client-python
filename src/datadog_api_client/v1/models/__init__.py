@@ -43,7 +43,6 @@ from datadog_api_client.v1.model.application_key_response import ApplicationKeyR
 from datadog_api_client.v1.model.authentication_validation_response import AuthenticationValidationResponse
 from datadog_api_client.v1.model.azure_account import AzureAccount
 from datadog_api_client.v1.model.azure_account_list_response import AzureAccountListResponse
-from datadog_api_client.v1.model.azure_account_metrics_config import AzureAccountMetricsConfig
 from datadog_api_client.v1.model.cancel_downtimes_by_scope_request import CancelDowntimesByScopeRequest
 from datadog_api_client.v1.model.canceled_downtimes_ids import CanceledDowntimesIds
 from datadog_api_client.v1.model.change_widget_definition import ChangeWidgetDefinition
@@ -463,6 +462,7 @@ from datadog_api_client.v1.model.query_value_widget_definition import QueryValue
 from datadog_api_client.v1.model.query_value_widget_definition_type import QueryValueWidgetDefinitionType
 from datadog_api_client.v1.model.query_value_widget_request import QueryValueWidgetRequest
 from datadog_api_client.v1.model.reference_table_logs_lookup_processor import ReferenceTableLogsLookupProcessor
+from datadog_api_client.v1.model.resource_provider_config import ResourceProviderConfig
 from datadog_api_client.v1.model.response_meta_attributes import ResponseMetaAttributes
 from datadog_api_client.v1.model.run_workflow_widget_definition import RunWorkflowWidgetDefinition
 from datadog_api_client.v1.model.run_workflow_widget_definition_type import RunWorkflowWidgetDefinitionType
@@ -1100,7 +1100,6 @@ __all__ = [
     "AuthenticationValidationResponse",
     "AzureAccount",
     "AzureAccountListResponse",
-    "AzureAccountMetricsConfig",
     "CancelDowntimesByScopeRequest",
     "CanceledDowntimesIds",
     "ChangeWidgetDefinition",
@@ -1460,6 +1459,7 @@ __all__ = [
     "QueryValueWidgetDefinitionType",
     "QueryValueWidgetRequest",
     "ReferenceTableLogsLookupProcessor",
+    "ResourceProviderConfig",
     "ResponseMetaAttributes",
     "RunWorkflowWidgetDefinition",
     "RunWorkflowWidgetDefinitionType",
