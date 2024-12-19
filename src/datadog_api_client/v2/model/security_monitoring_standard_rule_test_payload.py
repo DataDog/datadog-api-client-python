@@ -107,7 +107,7 @@ class SecurityMonitoringStandardRuleTestPayload(ModelNormal):
         :param name: The name of the rule.
         :type name: str
 
-        :param options: Options on rules.
+        :param options: Options.
         :type options: SecurityMonitoringRuleOptions
 
         :param queries: Queries for selecting logs which are part of the rule.
