@@ -56,6 +56,7 @@ from datadog_api_client.v2.model.active_billing_dimensions_attributes import Act
 from datadog_api_client.v2.model.active_billing_dimensions_body import ActiveBillingDimensionsBody
 from datadog_api_client.v2.model.active_billing_dimensions_response import ActiveBillingDimensionsResponse
 from datadog_api_client.v2.model.active_billing_dimensions_type import ActiveBillingDimensionsType
+from datadog_api_client.v2.model.advisory import Advisory
 from datadog_api_client.v2.model.apm_retention_filter_type import ApmRetentionFilterType
 from datadog_api_client.v2.model.app_builder_error import AppBuilderError
 from datadog_api_client.v2.model.app_builder_error_errors_items import AppBuilderErrorErrorsItems
@@ -78,6 +79,13 @@ from datadog_api_client.v2.model.application_key_update_request import Applicati
 from datadog_api_client.v2.model.application_keys_sort import ApplicationKeysSort
 from datadog_api_client.v2.model.application_keys_type import ApplicationKeysType
 from datadog_api_client.v2.model.apps_sort_field import AppsSortField
+from datadog_api_client.v2.model.asset import Asset
+from datadog_api_client.v2.model.asset_attributes import AssetAttributes
+from datadog_api_client.v2.model.asset_attributes_operating_system import AssetAttributesOperatingSystem
+from datadog_api_client.v2.model.asset_attributes_risks import AssetAttributesRisks
+from datadog_api_client.v2.model.asset_attributes_version import AssetAttributesVersion
+from datadog_api_client.v2.model.asset_entity_type import AssetEntityType
+from datadog_api_client.v2.model.asset_type import AssetType
 from datadog_api_client.v2.model.audit_logs_event import AuditLogsEvent
 from datadog_api_client.v2.model.audit_logs_event_attributes import AuditLogsEventAttributes
 from datadog_api_client.v2.model.audit_logs_event_type import AuditLogsEventType
@@ -249,6 +257,7 @@ from datadog_api_client.v2.model.ci_app_tests_query_filter import CIAppTestsQuer
 from datadog_api_client.v2.model.ci_app_warning import CIAppWarning
 from datadog_api_client.v2.model.csm_agents_metadata import CSMAgentsMetadata
 from datadog_api_client.v2.model.csm_agents_type import CSMAgentsType
+from datadog_api_client.v2.model.cvss import CVSS
 from datadog_api_client.v2.model.calculated_field import CalculatedField
 from datadog_api_client.v2.model.cancel_data_deletion_response_body import CancelDataDeletionResponseBody
 from datadog_api_client.v2.model.case import Case
@@ -359,6 +368,7 @@ from datadog_api_client.v2.model.cloudflare_account_update_request_attributes im
 )
 from datadog_api_client.v2.model.cloudflare_account_update_request_data import CloudflareAccountUpdateRequestData
 from datadog_api_client.v2.model.cloudflare_accounts_response import CloudflareAccountsResponse
+from datadog_api_client.v2.model.code_location import CodeLocation
 from datadog_api_client.v2.model.component import Component
 from datadog_api_client.v2.model.component_grid import ComponentGrid
 from datadog_api_client.v2.model.component_grid_properties import ComponentGridProperties
@@ -615,6 +625,7 @@ from datadog_api_client.v2.model.delete_apps_request_data_items_type import Dele
 from datadog_api_client.v2.model.delete_apps_response import DeleteAppsResponse
 from datadog_api_client.v2.model.delete_apps_response_data_items import DeleteAppsResponseDataItems
 from datadog_api_client.v2.model.delete_apps_response_data_items_type import DeleteAppsResponseDataItemsType
+from datadog_api_client.v2.model.dependency_location import DependencyLocation
 from datadog_api_client.v2.model.deploy_app_response import DeployAppResponse
 from datadog_api_client.v2.model.deploy_app_response_data import DeployAppResponseData
 from datadog_api_client.v2.model.deploy_app_response_data_attributes import DeployAppResponseDataAttributes
@@ -693,6 +704,8 @@ from datadog_api_client.v2.model.downtime_status import DowntimeStatus
 from datadog_api_client.v2.model.downtime_update_request import DowntimeUpdateRequest
 from datadog_api_client.v2.model.downtime_update_request_attributes import DowntimeUpdateRequestAttributes
 from datadog_api_client.v2.model.downtime_update_request_data import DowntimeUpdateRequestData
+from datadog_api_client.v2.model.epss import EPSS
+from datadog_api_client.v2.model.ecosystem import Ecosystem
 from datadog_api_client.v2.model.entity_attributes import EntityAttributes
 from datadog_api_client.v2.model.entity_data import EntityData
 from datadog_api_client.v2.model.entity_meta import EntityMeta
@@ -1086,6 +1099,8 @@ from datadog_api_client.v2.model.job_definition_from_rule import JobDefinitionFr
 from datadog_api_client.v2.model.leaked_key import LeakedKey
 from datadog_api_client.v2.model.leaked_key_attributes import LeakedKeyAttributes
 from datadog_api_client.v2.model.leaked_key_type import LeakedKeyType
+from datadog_api_client.v2.model.library import Library
+from datadog_api_client.v2.model.links import Links
 from datadog_api_client.v2.model.list_apis_response import ListAPIsResponse
 from datadog_api_client.v2.model.list_apis_response_data import ListAPIsResponseData
 from datadog_api_client.v2.model.list_apis_response_data_attributes import ListAPIsResponseDataAttributes
@@ -1121,6 +1136,8 @@ from datadog_api_client.v2.model.list_tags_response_data import ListTagsResponse
 from datadog_api_client.v2.model.list_tags_response_data_attributes import ListTagsResponseDataAttributes
 from datadog_api_client.v2.model.list_teams_include import ListTeamsInclude
 from datadog_api_client.v2.model.list_teams_sort import ListTeamsSort
+from datadog_api_client.v2.model.list_vulnerabilities_response import ListVulnerabilitiesResponse
+from datadog_api_client.v2.model.list_vulnerable_assets_response import ListVulnerableAssetsResponse
 from datadog_api_client.v2.model.log import Log
 from datadog_api_client.v2.model.log_attributes import LogAttributes
 from datadog_api_client.v2.model.log_type import LogType
@@ -1203,6 +1220,7 @@ from datadog_api_client.v2.model.logs_storage_tier import LogsStorageTier
 from datadog_api_client.v2.model.logs_warning import LogsWarning
 from datadog_api_client.v2.model.ms_teams_integration_metadata import MSTeamsIntegrationMetadata
 from datadog_api_client.v2.model.ms_teams_integration_metadata_teams_item import MSTeamsIntegrationMetadataTeamsItem
+from datadog_api_client.v2.model.metadata import Metadata
 from datadog_api_client.v2.model.metric import Metric
 from datadog_api_client.v2.model.metric_active_configuration_type import MetricActiveConfigurationType
 from datadog_api_client.v2.model.metric_all_tags import MetricAllTags
@@ -1596,6 +1614,7 @@ from datadog_api_client.v2.model.relationship_to_user_team_team_data import Rela
 from datadog_api_client.v2.model.relationship_to_user_team_user import RelationshipToUserTeamUser
 from datadog_api_client.v2.model.relationship_to_user_team_user_data import RelationshipToUserTeamUserData
 from datadog_api_client.v2.model.relationship_to_users import RelationshipToUsers
+from datadog_api_client.v2.model.remediation import Remediation
 from datadog_api_client.v2.model.reorder_retention_filters_request import ReorderRetentionFiltersRequest
 from datadog_api_client.v2.model.response_meta_attributes import ResponseMetaAttributes
 from datadog_api_client.v2.model.restriction_policy import RestrictionPolicy
@@ -2054,6 +2073,7 @@ from datadog_api_client.v2.model.service_definitions_create_request import Servi
 from datadog_api_client.v2.model.service_definitions_list_response import ServiceDefinitionsListResponse
 from datadog_api_client.v2.model.service_now_ticket import ServiceNowTicket
 from datadog_api_client.v2.model.service_now_ticket_result import ServiceNowTicketResult
+from datadog_api_client.v2.model.severity import Severity
 from datadog_api_client.v2.model.slack_integration_metadata import SlackIntegrationMetadata
 from datadog_api_client.v2.model.slack_integration_metadata_channel_item import SlackIntegrationMetadataChannelItem
 from datadog_api_client.v2.model.slo_report_create_request import SloReportCreateRequest
@@ -2122,6 +2142,7 @@ from datadog_api_client.v2.model.spans_sort_order import SpansSortOrder
 from datadog_api_client.v2.model.spans_type import SpansType
 from datadog_api_client.v2.model.spans_warning import SpansWarning
 from datadog_api_client.v2.model.state import State
+from datadog_api_client.v2.model.status import Status
 from datadog_api_client.v2.model.tags_event_attribute import TagsEventAttribute
 from datadog_api_client.v2.model.team import Team
 from datadog_api_client.v2.model.team_attributes import TeamAttributes
@@ -2176,6 +2197,7 @@ from datadog_api_client.v2.model.timeseries_response_series_list import Timeseri
 from datadog_api_client.v2.model.timeseries_response_times import TimeseriesResponseTimes
 from datadog_api_client.v2.model.timeseries_response_values import TimeseriesResponseValues
 from datadog_api_client.v2.model.timeseries_response_values_list import TimeseriesResponseValuesList
+from datadog_api_client.v2.model.tool import Tool
 from datadog_api_client.v2.model.unit import Unit
 from datadog_api_client.v2.model.update_app_request import UpdateAppRequest
 from datadog_api_client.v2.model.update_app_request_data import UpdateAppRequestData
@@ -2249,6 +2271,21 @@ from datadog_api_client.v2.model.user_update_request import UserUpdateRequest
 from datadog_api_client.v2.model.users_relationship import UsersRelationship
 from datadog_api_client.v2.model.users_response import UsersResponse
 from datadog_api_client.v2.model.users_type import UsersType
+from datadog_api_client.v2.model.vulnerability import Vulnerability
+from datadog_api_client.v2.model.vulnerability_attributes import VulnerabilityAttributes
+from datadog_api_client.v2.model.vulnerability_attributes_cvss import VulnerabilityAttributesCvss
+from datadog_api_client.v2.model.vulnerability_attributes_dependency_locations import (
+    VulnerabilityAttributesDependencyLocations,
+)
+from datadog_api_client.v2.model.vulnerability_entity_type import VulnerabilityEntityType
+from datadog_api_client.v2.model.vulnerability_relationships import VulnerabilityRelationships
+from datadog_api_client.v2.model.vulnerability_relationships_affects import VulnerabilityRelationshipsAffects
+from datadog_api_client.v2.model.vulnerability_relationships_affects_data import VulnerabilityRelationshipsAffectsData
+from datadog_api_client.v2.model.vulnerability_relationships_affects_data_type import (
+    VulnerabilityRelationshipsAffectsDataType,
+)
+from datadog_api_client.v2.model.vulnerability_risks import VulnerabilityRisks
+from datadog_api_client.v2.model.vulnerability_type import VulnerabilityType
 from datadog_api_client.v2.model.widget_live_span import WidgetLiveSpan
 from datadog_api_client.v2.model.workflow_instance_create_meta import WorkflowInstanceCreateMeta
 from datadog_api_client.v2.model.workflow_instance_create_request import WorkflowInstanceCreateRequest
@@ -2328,6 +2365,7 @@ __all__ = [
     "ActiveBillingDimensionsBody",
     "ActiveBillingDimensionsResponse",
     "ActiveBillingDimensionsType",
+    "Advisory",
     "ApmRetentionFilterType",
     "AppBuilderError",
     "AppBuilderErrorErrorsItems",
@@ -2350,6 +2388,13 @@ __all__ = [
     "ApplicationKeysSort",
     "ApplicationKeysType",
     "AppsSortField",
+    "Asset",
+    "AssetAttributes",
+    "AssetAttributesOperatingSystem",
+    "AssetAttributesRisks",
+    "AssetAttributesVersion",
+    "AssetEntityType",
+    "AssetType",
     "AuditLogsEvent",
     "AuditLogsEventAttributes",
     "AuditLogsEventType",
@@ -2501,6 +2546,7 @@ __all__ = [
     "CIAppWarning",
     "CSMAgentsMetadata",
     "CSMAgentsType",
+    "CVSS",
     "CalculatedField",
     "CancelDataDeletionResponseBody",
     "Case",
@@ -2573,6 +2619,7 @@ __all__ = [
     "CloudflareAccountUpdateRequestAttributes",
     "CloudflareAccountUpdateRequestData",
     "CloudflareAccountsResponse",
+    "CodeLocation",
     "Component",
     "ComponentGrid",
     "ComponentGridProperties",
@@ -2759,6 +2806,7 @@ __all__ = [
     "DeleteAppsResponse",
     "DeleteAppsResponseDataItems",
     "DeleteAppsResponseDataItemsType",
+    "DependencyLocation",
     "DeployAppResponse",
     "DeployAppResponseData",
     "DeployAppResponseDataAttributes",
@@ -2827,6 +2875,8 @@ __all__ = [
     "DowntimeUpdateRequest",
     "DowntimeUpdateRequestAttributes",
     "DowntimeUpdateRequestData",
+    "EPSS",
+    "Ecosystem",
     "EntityAttributes",
     "EntityData",
     "EntityMeta",
@@ -3164,6 +3214,8 @@ __all__ = [
     "LeakedKey",
     "LeakedKeyAttributes",
     "LeakedKeyType",
+    "Library",
+    "Links",
     "ListAPIsResponse",
     "ListAPIsResponseData",
     "ListAPIsResponseDataAttributes",
@@ -3197,6 +3249,8 @@ __all__ = [
     "ListTagsResponseDataAttributes",
     "ListTeamsInclude",
     "ListTeamsSort",
+    "ListVulnerabilitiesResponse",
+    "ListVulnerableAssetsResponse",
     "Log",
     "LogAttributes",
     "LogType",
@@ -3275,6 +3329,7 @@ __all__ = [
     "LogsWarning",
     "MSTeamsIntegrationMetadata",
     "MSTeamsIntegrationMetadataTeamsItem",
+    "Metadata",
     "Metric",
     "MetricActiveConfigurationType",
     "MetricAllTags",
@@ -3606,6 +3661,7 @@ __all__ = [
     "RelationshipToUserTeamUser",
     "RelationshipToUserTeamUserData",
     "RelationshipToUsers",
+    "Remediation",
     "ReorderRetentionFiltersRequest",
     "ResponseMetaAttributes",
     "RestrictionPolicy",
@@ -3936,6 +3992,7 @@ __all__ = [
     "ServiceDefinitionsListResponse",
     "ServiceNowTicket",
     "ServiceNowTicketResult",
+    "Severity",
     "SlackIntegrationMetadata",
     "SlackIntegrationMetadataChannelItem",
     "SloReportCreateRequest",
@@ -4002,6 +4059,7 @@ __all__ = [
     "SpansType",
     "SpansWarning",
     "State",
+    "Status",
     "TagsEventAttribute",
     "Team",
     "TeamAttributes",
@@ -4056,6 +4114,7 @@ __all__ = [
     "TimeseriesResponseTimes",
     "TimeseriesResponseValues",
     "TimeseriesResponseValuesList",
+    "Tool",
     "Unit",
     "UpdateAppRequest",
     "UpdateAppRequestData",
@@ -4125,6 +4184,17 @@ __all__ = [
     "UsersRelationship",
     "UsersResponse",
     "UsersType",
+    "Vulnerability",
+    "VulnerabilityAttributes",
+    "VulnerabilityAttributesCvss",
+    "VulnerabilityAttributesDependencyLocations",
+    "VulnerabilityEntityType",
+    "VulnerabilityRelationships",
+    "VulnerabilityRelationshipsAffects",
+    "VulnerabilityRelationshipsAffectsData",
+    "VulnerabilityRelationshipsAffectsDataType",
+    "VulnerabilityRisks",
+    "VulnerabilityType",
     "WidgetLiveSpan",
     "WorkflowInstanceCreateMeta",
     "WorkflowInstanceCreateRequest",
