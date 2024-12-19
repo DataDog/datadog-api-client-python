@@ -50,7 +50,7 @@ class SecurityMonitoringThirdPartyRuleCaseCreate(ModelNormal):
         :param name: Name of the case.
         :type name: str, optional
 
-        :param notifications: Notification targets for each rule case.
+        :param notifications: Notification targets for each case.
         :type notifications: [str], optional
 
         :param query: A query to map a third party event to this case.

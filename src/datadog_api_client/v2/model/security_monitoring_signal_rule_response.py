@@ -137,7 +137,7 @@ class SecurityMonitoringSignalRuleResponse(ModelNormal):
         :param name: The name of the rule.
         :type name: str, optional
 
-        :param options: Options on rules.
+        :param options: Options.
         :type options: SecurityMonitoringRuleOptions, optional
 
         :param queries: Queries for selecting logs which are part of the rule.

@@ -4981,6 +4981,20 @@ datadog\_api\_client.v2.model.historical\_job\_list\_meta module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.historical\_job\_options module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.historical_job_options
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.historical\_job\_query module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.historical_job_query
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.historical\_job\_response module
 --------------------------------------------------------------
 

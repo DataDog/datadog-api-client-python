@@ -67,7 +67,7 @@ class SecurityMonitoringRuleNewValueOptions(ModelNormal):
         **kwargs,
     ):
         """
-        Options on new value rules.
+        Options on new value detection method.
 
         :param forget_after: The duration in days after which a learned value is forgotten.
         :type forget_after: SecurityMonitoringRuleNewValueOptionsForgetAfter, optional
