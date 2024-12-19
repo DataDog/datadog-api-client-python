@@ -1,0 +1,18 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/csm/onboarding/coverage_analysis/cloud_accounts
+  response:
+    body:
+      string: '{"data":{"id":"4dee724d-00cc-11ea-a77b-570c9d03c6c5","type":"get_cloud_accounts_coverage_analysis_response_public_v0","attributes":{"aws_coverage":{"partially_configured_resources_count":0,"configured_resources_count":4,"total_resources_count":10,"coverage":0.4},"azure_coverage":{"partially_configured_resources_count":0,"configured_resources_count":2,"total_resources_count":6,"coverage":0.3333333333333333},"gcp_coverage":{"partially_configured_resources_count":0,"configured_resources_count":2,"total_resources_count":4,"coverage":0.5},"org_id":321813,"total_coverage":{"partially_configured_resources_count":0,"configured_resources_count":8,"total_resources_count":20,"coverage":0.4}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1
