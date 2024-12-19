@@ -1,0 +1,18 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/csm/onboarding/coverage_analysis/serverless
+  response:
+    body:
+      string: '{"data":{"id":"4dee724d-00cc-11ea-a77b-570c9d03c6c5","type":"get_serverless_coverage_analysis_response_public_v0","attributes":{"cws_coverage":{"partially_configured_resources_count":0,"configured_resources_count":0,"total_resources_count":0},"org_id":0,"total_coverage":{"partially_configured_resources_count":0,"configured_resources_count":0,"total_resources_count":0}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1
