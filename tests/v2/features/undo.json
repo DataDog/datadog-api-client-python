@@ -1,4 +1,10 @@
 {
+  "ListAwsScanOptions": {
+    "tag": "Agentless Scanning",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListAPIKeys": {
     "tag": "Key Management",
     "undo": {
