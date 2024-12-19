@@ -1,0 +1,18 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/security/vulnerabilities?filter%5Bcvss.base.severity%5D=High&filter%5Basset.type%5D=Service&filter%5Btool%5D=Infra
+  response:
+    body:
+      string: '{"data":[]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1
