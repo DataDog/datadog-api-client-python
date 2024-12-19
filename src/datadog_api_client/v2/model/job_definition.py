@@ -16,9 +16,8 @@ from datadog_api_client.model_utils import (
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.calculated_field import CalculatedField
     from datadog_api_client.v2.model.security_monitoring_rule_case_create import SecurityMonitoringRuleCaseCreate
-    from datadog_api_client.v2.model.security_monitoring_filter import SecurityMonitoringFilter
-    from datadog_api_client.v2.model.security_monitoring_rule_options import SecurityMonitoringRuleOptions
-    from datadog_api_client.v2.model.security_monitoring_standard_rule_query import SecurityMonitoringStandardRuleQuery
+    from datadog_api_client.v2.model.historical_job_options import HistoricalJobOptions
+    from datadog_api_client.v2.model.historical_job_query import HistoricalJobQuery
     from datadog_api_client.v2.model.security_monitoring_reference_table import SecurityMonitoringReferenceTable
     from datadog_api_client.v2.model.security_monitoring_third_party_rule_case_create import (
         SecurityMonitoringThirdPartyRuleCaseCreate,
@@ -30,11 +29,8 @@ class JobDefinition(ModelNormal):
     def openapi_types(_):
         from datadog_api_client.v2.model.calculated_field import CalculatedField
         from datadog_api_client.v2.model.security_monitoring_rule_case_create import SecurityMonitoringRuleCaseCreate
-        from datadog_api_client.v2.model.security_monitoring_filter import SecurityMonitoringFilter
-        from datadog_api_client.v2.model.security_monitoring_rule_options import SecurityMonitoringRuleOptions
-        from datadog_api_client.v2.model.security_monitoring_standard_rule_query import (
-            SecurityMonitoringStandardRuleQuery,
-        )
+        from datadog_api_client.v2.model.historical_job_options import HistoricalJobOptions
+        from datadog_api_client.v2.model.historical_job_query import HistoricalJobQuery
         from datadog_api_client.v2.model.security_monitoring_reference_table import SecurityMonitoringReferenceTable
         from datadog_api_client.v2.model.security_monitoring_third_party_rule_case_create import (
             SecurityMonitoringThirdPartyRuleCaseCreate,
@@ -43,13 +39,12 @@ class JobDefinition(ModelNormal):
         return {
             "calculated_fields": ([CalculatedField],),
             "cases": ([SecurityMonitoringRuleCaseCreate],),
-            "filters": ([SecurityMonitoringFilter],),
             "_from": (int,),
             "index": (str,),
             "message": (str,),
             "name": (str,),
-            "options": (SecurityMonitoringRuleOptions,),
-            "queries": ([SecurityMonitoringStandardRuleQuery],),
+            "options": (HistoricalJobOptions,),
+            "queries": ([HistoricalJobQuery],),
             "reference_tables": ([SecurityMonitoringReferenceTable],),
             "tags": ([str],),
             "third_party_cases": ([SecurityMonitoringThirdPartyRuleCaseCreate],),
@@ -60,7 +55,6 @@ class JobDefinition(ModelNormal):
     attribute_map = {
         "calculated_fields": "calculatedFields",
         "cases": "cases",
-        "filters": "filters",
         "_from": "from",
         "index": "index",
         "message": "message",
@@ -81,11 +75,10 @@ class JobDefinition(ModelNormal):
         index: str,
         message: str,
         name: str,
-        queries: List[SecurityMonitoringStandardRuleQuery],
+        queries: List[HistoricalJobQuery],
         to: int,
         calculated_fields: Union[List[CalculatedField], UnsetType] = unset,
-        filters: Union[List[SecurityMonitoringFilter], UnsetType] = unset,
-        options: Union[SecurityMonitoringRuleOptions, UnsetType] = unset,
+        options: Union[HistoricalJobOptions, UnsetType] = unset,
         reference_tables: Union[List[SecurityMonitoringReferenceTable], UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
         third_party_cases: Union[List[SecurityMonitoringThirdPartyRuleCaseCreate], UnsetType] = unset,
@@ -101,9 +94,6 @@ class JobDefinition(ModelNormal):
         :param cases: Cases used for generating job results.
         :type cases: [SecurityMonitoringRuleCaseCreate]
 
-        :param filters: Additional queries to filter matched events before they are processed. This field is deprecated for log detection, signal correlation, and workload security rules.
-        :type filters: [SecurityMonitoringFilter], optional
-
         :param _from: Starting time of data analyzed by the job.
         :type _from: int
 
@@ -116,19 +106,19 @@ class JobDefinition(ModelNormal):
         :param name: Job name.
         :type name: str
 
-        :param options: Options on rules.
-        :type options: SecurityMonitoringRuleOptions, optional
+        :param options: Job options.
+        :type options: HistoricalJobOptions, optional
 
         :param queries: Queries for selecting logs analyzed by the job.
-        :type queries: [SecurityMonitoringStandardRuleQuery]
+        :type queries: [HistoricalJobQuery]
 
-        :param reference_tables: Reference tables for the rule.
+        :param reference_tables: Reference tables used in the queries.
         :type reference_tables: [SecurityMonitoringReferenceTable], optional
 
         :param tags: Tags for generated signals.
         :type tags: [str], optional
 
-        :param third_party_cases: Cases for generating results from third-party rules. Only available for third-party rules.
+        :param third_party_cases: Cases for generating results from third-party detection method. Only available for third-party detection method.
         :type third_party_cases: [SecurityMonitoringThirdPartyRuleCaseCreate], optional
 
         :param to: Ending time of data analyzed by the job.
@@ -139,8 +129,6 @@ class JobDefinition(ModelNormal):
         """
         if calculated_fields is not unset:
             kwargs["calculated_fields"] = calculated_fields
-        if filters is not unset:
-            kwargs["filters"] = filters
         if options is not unset:
             kwargs["options"] = options
         if reference_tables is not unset:

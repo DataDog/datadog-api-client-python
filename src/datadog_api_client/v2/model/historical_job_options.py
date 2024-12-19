@@ -14,17 +14,11 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.cloud_configuration_compliance_rule_options import (
-        CloudConfigurationComplianceRuleOptions,
-    )
     from datadog_api_client.v2.model.security_monitoring_rule_detection_method import (
         SecurityMonitoringRuleDetectionMethod,
     )
     from datadog_api_client.v2.model.security_monitoring_rule_evaluation_window import (
         SecurityMonitoringRuleEvaluationWindow,
-    )
-    from datadog_api_client.v2.model.security_monitoring_rule_hardcoded_evaluator_type import (
-        SecurityMonitoringRuleHardcodedEvaluatorType,
     )
     from datadog_api_client.v2.model.security_monitoring_rule_impossible_travel_options import (
         SecurityMonitoringRuleImpossibleTravelOptions,
@@ -41,20 +35,14 @@ if TYPE_CHECKING:
     )
 
 
-class SecurityMonitoringRuleOptions(ModelNormal):
+class HistoricalJobOptions(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.cloud_configuration_compliance_rule_options import (
-            CloudConfigurationComplianceRuleOptions,
-        )
         from datadog_api_client.v2.model.security_monitoring_rule_detection_method import (
             SecurityMonitoringRuleDetectionMethod,
         )
         from datadog_api_client.v2.model.security_monitoring_rule_evaluation_window import (
             SecurityMonitoringRuleEvaluationWindow,
-        )
-        from datadog_api_client.v2.model.security_monitoring_rule_hardcoded_evaluator_type import (
-            SecurityMonitoringRuleHardcodedEvaluatorType,
         )
         from datadog_api_client.v2.model.security_monitoring_rule_impossible_travel_options import (
             SecurityMonitoringRuleImpossibleTravelOptions,
@@ -71,11 +59,8 @@ class SecurityMonitoringRuleOptions(ModelNormal):
         )
 
         return {
-            "compliance_rule_options": (CloudConfigurationComplianceRuleOptions,),
-            "decrease_criticality_based_on_env": (bool,),
             "detection_method": (SecurityMonitoringRuleDetectionMethod,),
             "evaluation_window": (SecurityMonitoringRuleEvaluationWindow,),
-            "hardcoded_evaluator_type": (SecurityMonitoringRuleHardcodedEvaluatorType,),
             "impossible_travel_options": (SecurityMonitoringRuleImpossibleTravelOptions,),
             "keep_alive": (SecurityMonitoringRuleKeepAlive,),
             "max_signal_duration": (SecurityMonitoringRuleMaxSignalDuration,),
@@ -84,11 +69,8 @@ class SecurityMonitoringRuleOptions(ModelNormal):
         }
 
     attribute_map = {
-        "compliance_rule_options": "complianceRuleOptions",
-        "decrease_criticality_based_on_env": "decreaseCriticalityBasedOnEnv",
         "detection_method": "detectionMethod",
         "evaluation_window": "evaluationWindow",
-        "hardcoded_evaluator_type": "hardcodedEvaluatorType",
         "impossible_travel_options": "impossibleTravelOptions",
         "keep_alive": "keepAlive",
         "max_signal_duration": "maxSignalDuration",
@@ -98,11 +80,8 @@ class SecurityMonitoringRuleOptions(ModelNormal):
 
     def __init__(
         self_,
-        compliance_rule_options: Union[CloudConfigurationComplianceRuleOptions, UnsetType] = unset,
-        decrease_criticality_based_on_env: Union[bool, UnsetType] = unset,
         detection_method: Union[SecurityMonitoringRuleDetectionMethod, UnsetType] = unset,
         evaluation_window: Union[SecurityMonitoringRuleEvaluationWindow, UnsetType] = unset,
-        hardcoded_evaluator_type: Union[SecurityMonitoringRuleHardcodedEvaluatorType, UnsetType] = unset,
         impossible_travel_options: Union[SecurityMonitoringRuleImpossibleTravelOptions, UnsetType] = unset,
         keep_alive: Union[SecurityMonitoringRuleKeepAlive, UnsetType] = unset,
         max_signal_duration: Union[SecurityMonitoringRuleMaxSignalDuration, UnsetType] = unset,
@@ -111,16 +90,7 @@ class SecurityMonitoringRuleOptions(ModelNormal):
         **kwargs,
     ):
         """
-        Options.
-
-        :param compliance_rule_options: Options for cloud_configuration rules.
-            Fields ``resourceType`` and ``regoRule`` are mandatory when managing custom ``cloud_configuration`` rules.
-        :type compliance_rule_options: CloudConfigurationComplianceRuleOptions, optional
-
-        :param decrease_criticality_based_on_env: If true, signals in non-production environments have a lower severity than what is defined by the rule case, which can reduce signal noise.
-            The severity is decreased by one level: ``CRITICAL`` in production becomes ``HIGH`` in non-production, ``HIGH`` becomes ``MEDIUM`` and so on. ``INFO`` remains ``INFO``.
-            The decrement is applied when the environment tag of the signal starts with ``staging`` , ``test`` or ``dev``.
-        :type decrease_criticality_based_on_env: bool, optional
+        Job options.
 
         :param detection_method: The detection method.
         :type detection_method: SecurityMonitoringRuleDetectionMethod, optional
@@ -128,9 +98,6 @@ class SecurityMonitoringRuleOptions(ModelNormal):
         :param evaluation_window: A time window is specified to match when at least one of the cases matches true. This is a sliding window
             and evaluates in real time. For third party detection method, this field is not used.
         :type evaluation_window: SecurityMonitoringRuleEvaluationWindow, optional
-
-        :param hardcoded_evaluator_type: Hardcoded evaluator type.
-        :type hardcoded_evaluator_type: SecurityMonitoringRuleHardcodedEvaluatorType, optional
 
         :param impossible_travel_options: Options on impossible travel detection method.
         :type impossible_travel_options: SecurityMonitoringRuleImpossibleTravelOptions, optional
@@ -149,16 +116,10 @@ class SecurityMonitoringRuleOptions(ModelNormal):
         :param third_party_rule_options: Options on third party detection method.
         :type third_party_rule_options: SecurityMonitoringRuleThirdPartyOptions, optional
         """
-        if compliance_rule_options is not unset:
-            kwargs["compliance_rule_options"] = compliance_rule_options
-        if decrease_criticality_based_on_env is not unset:
-            kwargs["decrease_criticality_based_on_env"] = decrease_criticality_based_on_env
         if detection_method is not unset:
             kwargs["detection_method"] = detection_method
         if evaluation_window is not unset:
             kwargs["evaluation_window"] = evaluation_window
-        if hardcoded_evaluator_type is not unset:
-            kwargs["hardcoded_evaluator_type"] = hardcoded_evaluator_type
         if impossible_travel_options is not unset:
             kwargs["impossible_travel_options"] = impossible_travel_options
         if keep_alive is not unset:

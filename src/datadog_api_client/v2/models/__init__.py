@@ -872,6 +872,8 @@ from datadog_api_client.v2.model.http_log_errors import HTTPLogErrors
 from datadog_api_client.v2.model.http_log_item import HTTPLogItem
 from datadog_api_client.v2.model.historical_job_data_type import HistoricalJobDataType
 from datadog_api_client.v2.model.historical_job_list_meta import HistoricalJobListMeta
+from datadog_api_client.v2.model.historical_job_options import HistoricalJobOptions
+from datadog_api_client.v2.model.historical_job_query import HistoricalJobQuery
 from datadog_api_client.v2.model.historical_job_response import HistoricalJobResponse
 from datadog_api_client.v2.model.historical_job_response_attributes import HistoricalJobResponseAttributes
 from datadog_api_client.v2.model.historical_job_response_data import HistoricalJobResponseData
@@ -2986,6 +2988,8 @@ __all__ = [
     "HTTPLogItem",
     "HistoricalJobDataType",
     "HistoricalJobListMeta",
+    "HistoricalJobOptions",
+    "HistoricalJobQuery",
     "HistoricalJobResponse",
     "HistoricalJobResponseAttributes",
     "HistoricalJobResponseData",

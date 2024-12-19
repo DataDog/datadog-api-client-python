@@ -4,6 +4,8 @@ Run a historical job returns "Status created" response
 
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.security_monitoring_api import SecurityMonitoringApi
+from datadog_api_client.v2.model.historical_job_options import HistoricalJobOptions
+from datadog_api_client.v2.model.historical_job_query import HistoricalJobQuery
 from datadog_api_client.v2.model.job_definition import JobDefinition
 from datadog_api_client.v2.model.run_historical_job_request import RunHistoricalJobRequest
 from datadog_api_client.v2.model.run_historical_job_request_attributes import RunHistoricalJobRequestAttributes
@@ -17,12 +19,10 @@ from datadog_api_client.v2.model.security_monitoring_rule_keep_alive import Secu
 from datadog_api_client.v2.model.security_monitoring_rule_max_signal_duration import (
     SecurityMonitoringRuleMaxSignalDuration,
 )
-from datadog_api_client.v2.model.security_monitoring_rule_options import SecurityMonitoringRuleOptions
 from datadog_api_client.v2.model.security_monitoring_rule_query_aggregation import (
     SecurityMonitoringRuleQueryAggregation,
 )
 from datadog_api_client.v2.model.security_monitoring_rule_severity import SecurityMonitoringRuleSeverity
-from datadog_api_client.v2.model.security_monitoring_standard_rule_query import SecurityMonitoringStandardRuleQuery
 
 body = RunHistoricalJobRequest(
     data=RunHistoricalJobRequestData(
@@ -32,7 +32,7 @@ body = RunHistoricalJobRequest(
                 type="log_detection",
                 name="Excessive number of failed attempts.",
                 queries=[
-                    SecurityMonitoringStandardRuleQuery(
+                    HistoricalJobQuery(
                         query="source:non_existing_src_weekend",
                         aggregation=SecurityMonitoringRuleQueryAggregation.COUNT,
                         group_by_fields=[],
@@ -47,7 +47,7 @@ body = RunHistoricalJobRequest(
                         condition="a > 1",
                     ),
                 ],
-                options=SecurityMonitoringRuleOptions(
+                options=HistoricalJobOptions(
                     keep_alive=SecurityMonitoringRuleKeepAlive.ONE_HOUR,
                     max_signal_duration=SecurityMonitoringRuleMaxSignalDuration.ONE_DAY,
                     evaluation_window=SecurityMonitoringRuleEvaluationWindow.FIFTEEN_MINUTES,
