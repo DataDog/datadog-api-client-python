@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"app_service_plan_filters":"key:value,filter:example","automute":true,"client_id":"17219332-0000-0000-0000-172193325500","client_secret":"TestingRh2nx664kUy5dIApvM54T4AtO","container_app_filters":"key:value,filter:example","cspm_enabled":true,"custom_metrics_enabled":true,"errors":["*"],"host_filters":"key:value,filter:example","metrics_config":{"excluded_resource_providers":["Microsoft.Sql","Microsoft.Cdn"]},"new_client_id":"17219332-0000-0000-0000-172193325500","new_tenant_name":"17219332-0000-0000-0000-172193325500","resource_collection_enabled":true,"tenant_name":"17219332-0000-0000-0000-172193325500"}'
+    body: '{"app_service_plan_filters":"key:value,filter:example","automute":true,"client_id":"17344717-0000-0000-0000-173447178000","client_secret":"TestingRh2nx664kUy5dIApvM54T4AtO","container_app_filters":"key:value,filter:example","cspm_enabled":true,"custom_metrics_enabled":true,"errors":["*"],"host_filters":"key:value,filter:example","metrics_enabled":true,"metrics_enabled_default":true,"new_client_id":"17344717-0000-0000-0000-173447178000","new_tenant_name":"17344717-0000-0000-0000-173447178000","resource_collection_enabled":true,"resource_provider_configs":[{"metrics_enabled":false,"namespace":"Microsoft.Compute"},{"metrics_enabled":false,"namespace":"Microsoft.Web"}],"tenant_name":"17344717-0000-0000-0000-173447178000","usage_metrics_enabled":true}'
     headers:
       accept:
       - application/json
@@ -20,7 +20,7 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"client_id":"17219332-0000-0000-0000-172193325500","tenant_name":"17219332-0000-0000-0000-172193325500"}'
+    body: '{"client_id":"17344717-0000-0000-0000-173447178000","tenant_name":"17344717-0000-0000-0000-173447178000"}'
     headers:
       accept:
       - application/json
@@ -40,7 +40,7 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"client_id":"17219332-0000-0000-0000-172193325500","tenant_name":"17219332-0000-0000-0000-172193325500"}'
+    body: '{"client_id":"17344717-0000-0000-0000-173447178000","tenant_name":"17344717-0000-0000-0000-173447178000"}'
     headers:
       accept:
       - application/json

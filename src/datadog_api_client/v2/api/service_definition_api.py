@@ -28,6 +28,7 @@ from datadog_api_client.v2.model.service_definition_get_response import ServiceD
 class ServiceDefinitionApi:
     """
     API to create, update, retrieve and delete service definitions.
+    Note: Service Catalog `v3.0 schema <https://docs.datadoghq.com/service_catalog/service_definitions/v3-0/>`_ has new API endpoints documented under `Software Catalog <https://docs.datadoghq.com/api/latest/software-catalog/>`_. Use the following Service Definition endpoints for v2.2 and earlier.
     """
 
     def __init__(self, api_client=None):

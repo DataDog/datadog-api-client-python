@@ -319,13 +319,6 @@ datadog\_api\_client.v1.model.azure\_account\_list\_response module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.azure\_account\_metrics\_config module
---------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v1.model.azure_account_metrics_config
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v1.model.cancel\_downtimes\_by\_scope\_request module
 --------------------------------------------------------------------------
 
@@ -2836,6 +2829,13 @@ datadog\_api\_client.v1.model.reference\_table\_logs\_lookup\_processor module
 ------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.reference_table_logs_lookup_processor
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.resource\_provider\_config module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.resource_provider_config
    :members:
    :show-inheritance:
 

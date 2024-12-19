@@ -153,6 +153,61 @@
       "type": "idempotent"
     }
   },
+  "DeleteApps": {
+    "tag": "Apps",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListApps": {
+    "tag": "Apps",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateApp": {
+    "tag": "Apps",
+    "undo": {
+      "operationId": "DeleteApp",
+      "parameters": [
+        {
+          "name": "app_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteApp": {
+    "tag": "Apps",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetApp": {
+    "tag": "Apps",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateApp": {
+    "tag": "Apps",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DisableApp": {
+    "tag": "App Deployment",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DeployApp": {
+    "tag": "App Deployment",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListApplicationKeys": {
     "tag": "Key Management",
     "undo": {
