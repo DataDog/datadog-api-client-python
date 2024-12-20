@@ -21,11 +21,13 @@ from datadog_api_client.v2.model.delete_app_response import DeleteAppResponse
 from datadog_api_client.v2.model.get_app_response import GetAppResponse
 from datadog_api_client.v2.model.update_app_response import UpdateAppResponse
 from datadog_api_client.v2.model.update_app_request import UpdateAppRequest
+from datadog_api_client.v2.model.disable_app_response import DisableAppResponse
+from datadog_api_client.v2.model.deploy_app_response import DeployAppResponse
 
 
 class AppsApi:
     """
-    Create, read, update, and delete apps in App Builder.
+    Datadog App Builder provides a low-code solution to rapidly develop and integrate secure, customized applications into your monitoring stack that are built to accelerate remediation at scale. These API endpoints allow you to create, read, update, delete, and publish apps.
     """
 
     def __init__(self, api_client=None):
@@ -93,6 +95,52 @@ class AppsApi:
                 },
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._deploy_app_endpoint = _Endpoint(
+            settings={
+                "response_type": (DeployAppResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/app-builder/apps/{app_id}/deployment",
+                "operation_id": "deploy_app",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "app_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "app_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._disable_app_endpoint = _Endpoint(
+            settings={
+                "response_type": (DisableAppResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/app-builder/apps/{app_id}/deployment",
+                "operation_id": "disable_app",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "app_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "app_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
             api_client=api_client,
         )
 
@@ -172,6 +220,11 @@ class AppsApi:
                 "filter_favorite": {
                     "openapi_types": (bool,),
                     "attribute": "filter[favorite]",
+                    "location": "query",
+                },
+                "filter_self_service": {
+                    "openapi_types": (bool,),
+                    "attribute": "filter[self_service]",
                     "location": "query",
                 },
                 "sort": {
@@ -261,6 +314,38 @@ class AppsApi:
 
         return self._delete_apps_endpoint.call_with_http_info(**kwargs)
 
+    def deploy_app(
+        self,
+        app_id: str,
+    ) -> DeployAppResponse:
+        """Deploy App.
+
+        Deploy (publish) an app by ID
+
+        :type app_id: str
+        :rtype: DeployAppResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["app_id"] = app_id
+
+        return self._deploy_app_endpoint.call_with_http_info(**kwargs)
+
+    def disable_app(
+        self,
+        app_id: str,
+    ) -> DisableAppResponse:
+        """Disable App.
+
+        Disable an app by ID
+
+        :type app_id: str
+        :rtype: DisableAppResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["app_id"] = app_id
+
+        return self._disable_app_endpoint.call_with_http_info(**kwargs)
+
     def get_app(
         self,
         app_id: str,
@@ -289,6 +374,7 @@ class AppsApi:
         filter_deployed: Union[bool, UnsetType] = unset,
         filter_tags: Union[str, UnsetType] = unset,
         filter_favorite: Union[bool, UnsetType] = unset,
+        filter_self_service: Union[bool, UnsetType] = unset,
         sort: Union[List[AppsSortField], UnsetType] = unset,
     ) -> ListAppsResponse:
         """List Apps.
@@ -299,20 +385,23 @@ class AppsApi:
         :type limit: int, optional
         :param page: The page number to return
         :type page: int, optional
-        :param filter_user_name: The ``AppsFilter`` ``user_name``.
+        :param filter_user_name: Filter apps by the app creator. Usually the user's email.
         :type filter_user_name: str, optional
-        :param filter_user_uuid: The ``AppsFilter`` ``user_uuid``.
+        :param filter_user_uuid: Filter apps by the app creator's UUID.
         :type filter_user_uuid: str, optional
-        :param filter_name: The ``AppsFilter`` ``name``.
+        :param filter_name: Filter by app name.
         :type filter_name: str, optional
         :param filter_query: The ``AppsFilter`` ``query``.
         :type filter_query: str, optional
-        :param filter_deployed: The ``AppsFilter`` ``deployed``.
+        :param filter_deployed: Filter apps by whether they are published.
         :type filter_deployed: bool, optional
-        :param filter_tags: The ``AppsFilter`` ``tags``.
+        :param filter_tags: Filter apps by tags.
         :type filter_tags: str, optional
-        :param filter_favorite: The ``AppsFilter`` ``favorite``.
+        :param filter_favorite: Filter apps by whether you have added them to your favorites.
         :type filter_favorite: bool, optional
+        :param filter_self_service: Filter apps by whether they are enabled for self-service.
+        :type filter_self_service: bool, optional
+        :param sort: The fields and direction to sort apps by.
         :type sort: [AppsSortField], optional
         :rtype: ListAppsResponse
         """
@@ -343,6 +432,9 @@ class AppsApi:
 
         if filter_favorite is not unset:
             kwargs["filter_favorite"] = filter_favorite
+
+        if filter_self_service is not unset:
+            kwargs["filter_self_service"] = filter_self_service
 
         if sort is not unset:
             kwargs["sort"] = sort

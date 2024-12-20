@@ -57,9 +57,6 @@ from datadog_api_client.v2.model.active_billing_dimensions_body import ActiveBil
 from datadog_api_client.v2.model.active_billing_dimensions_response import ActiveBillingDimensionsResponse
 from datadog_api_client.v2.model.active_billing_dimensions_type import ActiveBillingDimensionsType
 from datadog_api_client.v2.model.apm_retention_filter_type import ApmRetentionFilterType
-from datadog_api_client.v2.model.app_builder_error import AppBuilderError
-from datadog_api_client.v2.model.app_builder_error_errors_items import AppBuilderErrorErrorsItems
-from datadog_api_client.v2.model.app_builder_error_errors_items_source import AppBuilderErrorErrorsItemsSource
 from datadog_api_client.v2.model.app_builder_event import AppBuilderEvent
 from datadog_api_client.v2.model.app_builder_event_name import AppBuilderEventName
 from datadog_api_client.v2.model.app_builder_event_type import AppBuilderEventType
@@ -2329,9 +2326,6 @@ __all__ = [
     "ActiveBillingDimensionsResponse",
     "ActiveBillingDimensionsType",
     "ApmRetentionFilterType",
-    "AppBuilderError",
-    "AppBuilderErrorErrorsItems",
-    "AppBuilderErrorErrorsItemsSource",
     "AppBuilderEvent",
     "AppBuilderEventName",
     "AppBuilderEventType",
