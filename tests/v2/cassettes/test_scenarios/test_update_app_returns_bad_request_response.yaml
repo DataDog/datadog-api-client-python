@@ -12,7 +12,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/app-builder/apps
   response:
     body:
-      string: '{"data":{"id":"9d2ee93b-6ac5-4b0e-abd8-829916f2365d","type":"appDefinitions"}}'
+      string: '{"data":{"id":"2eb79081-77f2-4082-93d5-fbb4d2291dc7","type":"appDefinitions"}}'
     headers:
       content-type:
       - application/vnd.api+json
@@ -20,14 +20,14 @@ interactions:
       code: 201
       message: Created
 - request:
-    body: '{"data":{"attributes":{"rootInstanceName":""},"id":"9d2ee93b-6ac5-4b0e-abd8-829916f2365d","type":"appDefinitions"}}'
+    body: '{"data":{"attributes":{"rootInstanceName":""},"id":"2eb79081-77f2-4082-93d5-fbb4d2291dc7","type":"appDefinitions"}}'
     headers:
       accept:
       - application/json
       content-type:
       - application/json
     method: PATCH
-    uri: https://api.datadoghq.com/api/v2/app-builder/apps/9d2ee93b-6ac5-4b0e-abd8-829916f2365d
+    uri: https://api.datadoghq.com/api/v2/app-builder/apps/2eb79081-77f2-4082-93d5-fbb4d2291dc7
   response:
     body:
       string: '{"errors":[{"detail":"missing required field","source":{"pointer":"/data/attributes/rootInstanceName"}}]}'
@@ -43,10 +43,10 @@ interactions:
       accept:
       - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/app-builder/apps/9d2ee93b-6ac5-4b0e-abd8-829916f2365d
+    uri: https://api.datadoghq.com/api/v2/app-builder/apps/2eb79081-77f2-4082-93d5-fbb4d2291dc7
   response:
     body:
-      string: '{"data":{"id":"9d2ee93b-6ac5-4b0e-abd8-829916f2365d","type":"appDefinitions"}}'
+      string: '{"data":{"id":"2eb79081-77f2-4082-93d5-fbb4d2291dc7","type":"appDefinitions"}}'
     headers:
       content-type:
       - application/vnd.api+json

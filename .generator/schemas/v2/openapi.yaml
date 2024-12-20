@@ -1615,34 +1615,6 @@ components:
       type: string
       x-enum-varnames:
       - apm_retention_filter
-    AppBuilderError:
-      description: The definition of `AppBuilderError` object.
-      properties:
-        errors:
-          description: The `AppBuilderError` `errors`.
-          items:
-            $ref: '#/components/schemas/AppBuilderErrorErrorsItems'
-          type: array
-      type: object
-    AppBuilderErrorErrorsItems:
-      description: The definition of `AppBuilderErrorErrorsItems` object.
-      properties:
-        detail:
-          description: The `items` `detail`.
-          type: string
-        source:
-          $ref: '#/components/schemas/AppBuilderErrorErrorsItemsSource'
-      type: object
-    AppBuilderErrorErrorsItemsSource:
-      description: The definition of `AppBuilderErrorErrorsItemsSource` object.
-      properties:
-        parameter:
-          description: The `source` `parameter`.
-          type: string
-        pointer:
-          description: The `source` `pointer`.
-          type: string
-      type: object
     AppBuilderEvent:
       additionalProperties: {}
       description: The definition of `AppBuilderEvent` object.
@@ -30153,19 +30125,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AppBuilderError'
+                $ref: '#/components/schemas/JSONAPIErrorResponse'
           description: Bad Request
         '403':
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AppBuilderError'
-          description: Forbidden, e.g. missing permissions to delete one or more apps
+                $ref: '#/components/schemas/JSONAPIErrorResponse'
+          description: Forbidden
         '404':
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AppBuilderError'
+                $ref: '#/components/schemas/JSONAPIErrorResponse'
           description: Not Found
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
@@ -30196,19 +30168,19 @@ paths:
         schema:
           format: int64
           type: integer
-      - description: The `AppsFilter` `user_name`.
+      - description: Filter apps by the app creator. Usually the user's email.
         in: query
         name: filter[user_name]
         required: false
         schema:
           type: string
-      - description: The `AppsFilter` `user_uuid`.
+      - description: Filter apps by the app creator's UUID.
         in: query
         name: filter[user_uuid]
         required: false
         schema:
           type: string
-      - description: The `AppsFilter` `name`.
+      - description: Filter by app name.
         in: query
         name: filter[name]
         required: false
@@ -30220,25 +30192,32 @@ paths:
         required: false
         schema:
           type: string
-      - description: The `AppsFilter` `deployed`.
+      - description: Filter apps by whether they are published.
         in: query
         name: filter[deployed]
         required: false
         schema:
           type: boolean
-      - description: The `AppsFilter` `tags`.
+      - description: Filter apps by tags.
         in: query
         name: filter[tags]
         required: false
         schema:
           type: string
-      - description: The `AppsFilter` `favorite`.
+      - description: Filter apps by whether you have added them to your favorites.
         in: query
         name: filter[favorite]
         required: false
         schema:
           type: boolean
-      - explode: false
+      - description: Filter apps by whether they are enabled for self-service.
+        in: query
+        name: filter[self_service]
+        required: false
+        schema:
+          type: boolean
+      - description: The fields and direction to sort apps by.
+        explode: false
         in: query
         name: sort
         required: false
@@ -30258,13 +30237,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AppBuilderError'
-          description: Bad Request, e.g. invalid sort parameter
+                $ref: '#/components/schemas/JSONAPIErrorResponse'
+          description: Bad Request
         '403':
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AppBuilderError'
+                $ref: '#/components/schemas/JSONAPIErrorResponse'
           description: Forbidden
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
@@ -30297,15 +30276,14 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AppBuilderError'
+                $ref: '#/components/schemas/JSONAPIErrorResponse'
           description: Bad Request
         '403':
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AppBuilderError'
-          description: Forbidden, e.g. missing required permissions to a connection
-            or workflow used in the app
+                $ref: '#/components/schemas/JSONAPIErrorResponse'
+          description: Forbidden
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
       summary: Create App
@@ -30340,25 +30318,25 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AppBuilderError'
+                $ref: '#/components/schemas/JSONAPIErrorResponse'
           description: Bad Request
         '403':
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AppBuilderError'
+                $ref: '#/components/schemas/JSONAPIErrorResponse'
           description: Forbidden
         '404':
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AppBuilderError'
+                $ref: '#/components/schemas/JSONAPIErrorResponse'
           description: Not Found
         '410':
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AppBuilderError'
+                $ref: '#/components/schemas/JSONAPIErrorResponse'
           description: Gone
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
@@ -30391,19 +30369,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AppBuilderError'
+                $ref: '#/components/schemas/JSONAPIErrorResponse'
           description: Bad Request
         '403':
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AppBuilderError'
+                $ref: '#/components/schemas/JSONAPIErrorResponse'
           description: Forbidden
         '404':
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AppBuilderError'
+                $ref: '#/components/schemas/JSONAPIErrorResponse'
           description: Not Found
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
@@ -30443,15 +30421,14 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AppBuilderError'
+                $ref: '#/components/schemas/JSONAPIErrorResponse'
           description: Bad Request
         '403':
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AppBuilderError'
-          description: Forbidden, e.g. missing required permissions to a connection
-            or workflow used in the app
+                $ref: '#/components/schemas/JSONAPIErrorResponse'
+          description: Forbidden
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
       summary: Update App
@@ -30486,25 +30463,25 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AppBuilderError'
+                $ref: '#/components/schemas/JSONAPIErrorResponse'
           description: Bad Request
         '403':
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AppBuilderError'
+                $ref: '#/components/schemas/JSONAPIErrorResponse'
           description: Forbidden
         '404':
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AppBuilderError'
+                $ref: '#/components/schemas/JSONAPIErrorResponse'
           description: Not Found
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
       summary: Disable App
       tags:
-      - App Deployment
+      - Apps
       x-permission:
         operator: OR
         permissions:
@@ -30531,25 +30508,25 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AppBuilderError'
+                $ref: '#/components/schemas/JSONAPIErrorResponse'
           description: Bad Request
         '403':
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AppBuilderError'
+                $ref: '#/components/schemas/JSONAPIErrorResponse'
           description: Forbidden
         '404':
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AppBuilderError'
+                $ref: '#/components/schemas/JSONAPIErrorResponse'
           description: Not Found
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
       summary: Deploy App
       tags:
-      - App Deployment
+      - Apps
       x-permission:
         operator: OR
         permissions:
@@ -46584,9 +46561,10 @@ tags:
   externalDocs:
     url: https://docs.datadoghq.com/integrations/amazon_web_services/#log-collection
   name: AWS Logs Integration
-- description: Deploy and disable apps in App Builder.
-  name: App Deployment
-- description: Create, read, update, and delete apps in App Builder.
+- description: Datadog App Builder provides a low-code solution to rapidly develop
+    and integrate secure, customized applications into your monitoring stack that
+    are built to accelerate remediation at scale. These API endpoints allow you to
+    create, read, update, delete, and publish apps.
   name: Apps
 - description: Search your Audit Logs events over HTTP.
   name: Audit
