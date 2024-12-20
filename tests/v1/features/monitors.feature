@@ -227,20 +227,20 @@ Feature: Monitors
     And the response "options.synthetics_check_id" has the same value as "synthetics_api_test.public_id"
 
   @team:DataDog/monitor-app
-  Scenario: Get all monitor details returns "Bad Request" response
+  Scenario: Get all monitors returns "Bad Request" response
     Given new "ListMonitors" request
     And request contains "group_states" parameter with value "notagroupstate"
     When the request is sent
     Then the response status is 400 Bad Request
 
   @integration-only @team:DataDog/monitor-app
-  Scenario: Get all monitor details returns "OK" response
+  Scenario: Get all monitors returns "OK" response
     Given new "ListMonitors" request
     When the request is sent
     Then the response status is 200 OK
 
   @replay-only @skip-validation @team:DataDog/monitor-app @with-pagination
-  Scenario: Get all monitor details returns "OK" response with pagination
+  Scenario: Get all monitors returns "OK" response with pagination
     Given new "ListMonitors" request
     And request contains "page_size" parameter with value 2
     When the request with pagination is sent
@@ -248,7 +248,7 @@ Feature: Monitors
     And the response has 3 items
 
   @skip @team:DataDog/monitor-app
-  Scenario: Get all monitor details with tags
+  Scenario: Get all monitors with tags
     Given there is a valid "monitor" in the system
     And new "ListMonitors" request
     And request contains "tags" parameter with value "test:{{ unique_lower_alnum }}"

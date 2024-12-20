@@ -1,5 +1,5 @@
 """
-Get all monitor details with tags
+Get all monitors with tags
 """
 
 from datadog_api_client import ApiClient, Configuration
