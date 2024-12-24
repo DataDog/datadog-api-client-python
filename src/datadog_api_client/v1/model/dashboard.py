@@ -146,8 +146,6 @@ class Dashboard(ModelNormal):
         :type reflow_type: DashboardReflowType, optional
 
         :param restricted_roles: A list of role identifiers. Only the author and users associated with at least one of these roles can edit this dashboard.
-
-            This property is deprecated; please use the `Restriction Policies API <https://docs.datadoghq.com/api/latest/restriction-policies/>`_ instead to manage write authorization for individual dashboards. **Deprecated**.
         :type restricted_roles: [str], optional
 
         :param tags: List of team names representing ownership of a dashboard.
