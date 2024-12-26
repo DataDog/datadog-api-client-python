@@ -295,6 +295,8 @@ class Configuration:
                 "v2.get_historical_job": False,
                 "v2.list_findings": False,
                 "v2.list_historical_jobs": False,
+                "v2.list_vulnerabilities": False,
+                "v2.list_vulnerable_assets": False,
                 "v2.mute_findings": False,
                 "v2.run_historical_job": False,
                 "v2.create_scorecard_outcomes_batch": False,
