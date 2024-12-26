@@ -30,6 +30,7 @@ class SyntheticsStep(ModelNormal):
             "name": (str,),
             "no_screenshot": (bool,),
             "params": (dict,),
+            "public_id": (str,),
             "timeout": (int,),
             "type": (SyntheticsStepType,),
         }
@@ -42,6 +43,7 @@ class SyntheticsStep(ModelNormal):
         "name": "name",
         "no_screenshot": "noScreenshot",
         "params": "params",
+        "public_id": "public_id",
         "timeout": "timeout",
         "type": "type",
     }
@@ -55,6 +57,7 @@ class SyntheticsStep(ModelNormal):
         name: Union[str, UnsetType] = unset,
         no_screenshot: Union[bool, UnsetType] = unset,
         params: Union[dict, UnsetType] = unset,
+        public_id: Union[str, UnsetType] = unset,
         timeout: Union[int, UnsetType] = unset,
         type: Union[SyntheticsStepType, UnsetType] = unset,
         **kwargs,
@@ -83,6 +86,9 @@ class SyntheticsStep(ModelNormal):
         :param params: The parameters of the step.
         :type params: dict, optional
 
+        :param public_id: The public ID of the step.
+        :type public_id: str, optional
+
         :param timeout: The time before declaring a step failed.
         :type timeout: int, optional
 
@@ -103,6 +109,8 @@ class SyntheticsStep(ModelNormal):
             kwargs["no_screenshot"] = no_screenshot
         if params is not unset:
             kwargs["params"] = params
+        if public_id is not unset:
+            kwargs["public_id"] = public_id
         if timeout is not unset:
             kwargs["timeout"] = timeout
         if type is not unset:
