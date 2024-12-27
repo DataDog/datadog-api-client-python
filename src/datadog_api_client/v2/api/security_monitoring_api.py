@@ -23,6 +23,14 @@ from datadog_api_client.v2.model.finding import Finding
 from datadog_api_client.v2.model.bulk_mute_findings_response import BulkMuteFindingsResponse
 from datadog_api_client.v2.model.bulk_mute_findings_request import BulkMuteFindingsRequest
 from datadog_api_client.v2.model.get_finding_response import GetFindingResponse
+from datadog_api_client.v2.model.list_vulnerable_assets_response import ListVulnerableAssetsResponse
+from datadog_api_client.v2.model.asset_type import AssetType
+from datadog_api_client.v2.model.list_vulnerabilities_response import ListVulnerabilitiesResponse
+from datadog_api_client.v2.model.vulnerability_type import VulnerabilityType
+from datadog_api_client.v2.model.vulnerability_severity import VulnerabilitySeverity
+from datadog_api_client.v2.model.vulnerability_status import VulnerabilityStatus
+from datadog_api_client.v2.model.vulnerability_tool import VulnerabilityTool
+from datadog_api_client.v2.model.vulnerability_ecosystem import VulnerabilityEcosystem
 from datadog_api_client.v2.model.security_filters_response import SecurityFiltersResponse
 from datadog_api_client.v2.model.security_filter_response import SecurityFilterResponse
 from datadog_api_client.v2.model.security_filter_create_request import SecurityFilterCreateRequest
@@ -780,6 +788,338 @@ class SecurityMonitoringApi:
                 "version": "v2",
             },
             params_map={},
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_vulnerabilities_endpoint = _Endpoint(
+            settings={
+                "response_type": (ListVulnerabilitiesResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/security/vulnerabilities",
+                "operation_id": "list_vulnerabilities",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "page_token": {
+                    "openapi_types": (str,),
+                    "attribute": "page[token]",
+                    "location": "query",
+                },
+                "page_number": {
+                    "validation": {
+                        "inclusive_minimum": 1,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "page[number]",
+                    "location": "query",
+                },
+                "filter_type": {
+                    "openapi_types": (VulnerabilityType,),
+                    "attribute": "filter[type]",
+                    "location": "query",
+                },
+                "filter_cvss_base_score_op": {
+                    "validation": {
+                        "inclusive_maximum": 10,
+                        "inclusive_minimum": 0,
+                    },
+                    "openapi_types": (float,),
+                    "attribute": "filter[cvss.base.score][`$op`]",
+                    "location": "query",
+                },
+                "filter_cvss_base_severity": {
+                    "openapi_types": (VulnerabilitySeverity,),
+                    "attribute": "filter[cvss.base.severity]",
+                    "location": "query",
+                },
+                "filter_cvss_base_vector": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[cvss.base.vector]",
+                    "location": "query",
+                },
+                "filter_cvss_datadog_score_op": {
+                    "validation": {
+                        "inclusive_maximum": 10,
+                        "inclusive_minimum": 0,
+                    },
+                    "openapi_types": (float,),
+                    "attribute": "filter[cvss.datadog.score][`$op`]",
+                    "location": "query",
+                },
+                "filter_cvss_datadog_severity": {
+                    "openapi_types": (VulnerabilitySeverity,),
+                    "attribute": "filter[cvss.datadog.severity]",
+                    "location": "query",
+                },
+                "filter_cvss_datadog_vector": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[cvss.datadog.vector]",
+                    "location": "query",
+                },
+                "filter_status": {
+                    "openapi_types": (VulnerabilityStatus,),
+                    "attribute": "filter[status]",
+                    "location": "query",
+                },
+                "filter_tool": {
+                    "openapi_types": (VulnerabilityTool,),
+                    "attribute": "filter[tool]",
+                    "location": "query",
+                },
+                "filter_library_name": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[library.name]",
+                    "location": "query",
+                },
+                "filter_library_version": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[library.version]",
+                    "location": "query",
+                },
+                "filter_advisory_id": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[advisory_id]",
+                    "location": "query",
+                },
+                "filter_risks_exploitation_probability": {
+                    "openapi_types": (bool,),
+                    "attribute": "filter[risks.exploitation_probability]",
+                    "location": "query",
+                },
+                "filter_risks_poc_exploit_available": {
+                    "openapi_types": (bool,),
+                    "attribute": "filter[risks.poc_exploit_available]",
+                    "location": "query",
+                },
+                "filter_risks_exploit_available": {
+                    "openapi_types": (bool,),
+                    "attribute": "filter[risks.exploit_available]",
+                    "location": "query",
+                },
+                "filter_risks_epss_score_op": {
+                    "validation": {
+                        "inclusive_maximum": 1,
+                        "inclusive_minimum": 0,
+                    },
+                    "openapi_types": (float,),
+                    "attribute": "filter[risks.epss.score][`$op`]",
+                    "location": "query",
+                },
+                "filter_risks_epss_severity": {
+                    "openapi_types": (VulnerabilitySeverity,),
+                    "attribute": "filter[risks.epss.severity]",
+                    "location": "query",
+                },
+                "filter_language": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[language]",
+                    "location": "query",
+                },
+                "filter_ecosystem": {
+                    "openapi_types": (VulnerabilityEcosystem,),
+                    "attribute": "filter[ecosystem]",
+                    "location": "query",
+                },
+                "filter_code_location_location": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[code_location.location]",
+                    "location": "query",
+                },
+                "filter_code_location_file_path": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[code_location.file_path]",
+                    "location": "query",
+                },
+                "filter_code_location_method": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[code_location.method]",
+                    "location": "query",
+                },
+                "filter_fix_available": {
+                    "openapi_types": (bool,),
+                    "attribute": "filter[fix_available]",
+                    "location": "query",
+                },
+                "filter_repo_digests": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[repo_digests]",
+                    "location": "query",
+                },
+                "filter_asset_name": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[asset.name]",
+                    "location": "query",
+                },
+                "filter_asset_type": {
+                    "openapi_types": (AssetType,),
+                    "attribute": "filter[asset.type]",
+                    "location": "query",
+                },
+                "filter_asset_version_first": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[asset.version.first]",
+                    "location": "query",
+                },
+                "filter_asset_version_last": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[asset.version.last]",
+                    "location": "query",
+                },
+                "filter_asset_repository_url": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[asset.repository_url]",
+                    "location": "query",
+                },
+                "filter_asset_risks_in_production": {
+                    "openapi_types": (bool,),
+                    "attribute": "filter[asset.risks.in_production]",
+                    "location": "query",
+                },
+                "filter_asset_risks_under_attack": {
+                    "openapi_types": (bool,),
+                    "attribute": "filter[asset.risks.under_attack]",
+                    "location": "query",
+                },
+                "filter_asset_risks_is_publicly_accessible": {
+                    "openapi_types": (bool,),
+                    "attribute": "filter[asset.risks.is_publicly_accessible]",
+                    "location": "query",
+                },
+                "filter_asset_risks_has_privileged_access": {
+                    "openapi_types": (bool,),
+                    "attribute": "filter[asset.risks.has_privileged_access]",
+                    "location": "query",
+                },
+                "filter_asset_risks_has_access_to_sensitive_data": {
+                    "openapi_types": (bool,),
+                    "attribute": "filter[asset.risks.has_access_to_sensitive_data]",
+                    "location": "query",
+                },
+                "filter_asset_environments": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[asset.environments]",
+                    "location": "query",
+                },
+                "filter_asset_arch": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[asset.arch]",
+                    "location": "query",
+                },
+                "filter_asset_operating_system_name": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[asset.operating_system.name]",
+                    "location": "query",
+                },
+                "filter_asset_operating_system_version": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[asset.operating_system.version]",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_vulnerable_assets_endpoint = _Endpoint(
+            settings={
+                "response_type": (ListVulnerableAssetsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/security/assets",
+                "operation_id": "list_vulnerable_assets",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "page_token": {
+                    "openapi_types": (str,),
+                    "attribute": "page[token]",
+                    "location": "query",
+                },
+                "page_number": {
+                    "validation": {
+                        "inclusive_minimum": 1,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "page[number]",
+                    "location": "query",
+                },
+                "filter_name": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[name]",
+                    "location": "query",
+                },
+                "filter_type": {
+                    "openapi_types": (AssetType,),
+                    "attribute": "filter[type]",
+                    "location": "query",
+                },
+                "filter_version_first": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[version.first]",
+                    "location": "query",
+                },
+                "filter_version_last": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[version.last]",
+                    "location": "query",
+                },
+                "filter_repository_url": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[repository_url]",
+                    "location": "query",
+                },
+                "filter_risks_in_production": {
+                    "openapi_types": (bool,),
+                    "attribute": "filter[risks.in_production]",
+                    "location": "query",
+                },
+                "filter_risks_under_attack": {
+                    "openapi_types": (bool,),
+                    "attribute": "filter[risks.under_attack]",
+                    "location": "query",
+                },
+                "filter_risks_is_publicly_accessible": {
+                    "openapi_types": (bool,),
+                    "attribute": "filter[risks.is_publicly_accessible]",
+                    "location": "query",
+                },
+                "filter_risks_has_privileged_access": {
+                    "openapi_types": (bool,),
+                    "attribute": "filter[risks.has_privileged_access]",
+                    "location": "query",
+                },
+                "filter_risks_has_access_to_sensitive_data": {
+                    "openapi_types": (bool,),
+                    "attribute": "filter[risks.has_access_to_sensitive_data]",
+                    "location": "query",
+                },
+                "filter_environments": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[environments]",
+                    "location": "query",
+                },
+                "filter_arch": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[arch]",
+                    "location": "query",
+                },
+                "filter_operating_system_name": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[operating_system.name]",
+                    "location": "query",
+                },
+                "filter_operating_system_version": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[operating_system.version]",
+                    "location": "query",
+                },
+            },
             headers_map={
                 "accept": ["application/json"],
             },
@@ -1789,6 +2129,458 @@ class SecurityMonitoringApi:
         """
         kwargs: Dict[str, Any] = {}
         return self._list_security_monitoring_suppressions_endpoint.call_with_http_info(**kwargs)
+
+    def list_vulnerabilities(
+        self,
+        *,
+        page_token: Union[str, UnsetType] = unset,
+        page_number: Union[int, UnsetType] = unset,
+        filter_type: Union[VulnerabilityType, UnsetType] = unset,
+        filter_cvss_base_score_op: Union[float, UnsetType] = unset,
+        filter_cvss_base_severity: Union[VulnerabilitySeverity, UnsetType] = unset,
+        filter_cvss_base_vector: Union[str, UnsetType] = unset,
+        filter_cvss_datadog_score_op: Union[float, UnsetType] = unset,
+        filter_cvss_datadog_severity: Union[VulnerabilitySeverity, UnsetType] = unset,
+        filter_cvss_datadog_vector: Union[str, UnsetType] = unset,
+        filter_status: Union[VulnerabilityStatus, UnsetType] = unset,
+        filter_tool: Union[VulnerabilityTool, UnsetType] = unset,
+        filter_library_name: Union[str, UnsetType] = unset,
+        filter_library_version: Union[str, UnsetType] = unset,
+        filter_advisory_id: Union[str, UnsetType] = unset,
+        filter_risks_exploitation_probability: Union[bool, UnsetType] = unset,
+        filter_risks_poc_exploit_available: Union[bool, UnsetType] = unset,
+        filter_risks_exploit_available: Union[bool, UnsetType] = unset,
+        filter_risks_epss_score_op: Union[float, UnsetType] = unset,
+        filter_risks_epss_severity: Union[VulnerabilitySeverity, UnsetType] = unset,
+        filter_language: Union[str, UnsetType] = unset,
+        filter_ecosystem: Union[VulnerabilityEcosystem, UnsetType] = unset,
+        filter_code_location_location: Union[str, UnsetType] = unset,
+        filter_code_location_file_path: Union[str, UnsetType] = unset,
+        filter_code_location_method: Union[str, UnsetType] = unset,
+        filter_fix_available: Union[bool, UnsetType] = unset,
+        filter_repo_digests: Union[str, UnsetType] = unset,
+        filter_asset_name: Union[str, UnsetType] = unset,
+        filter_asset_type: Union[AssetType, UnsetType] = unset,
+        filter_asset_version_first: Union[str, UnsetType] = unset,
+        filter_asset_version_last: Union[str, UnsetType] = unset,
+        filter_asset_repository_url: Union[str, UnsetType] = unset,
+        filter_asset_risks_in_production: Union[bool, UnsetType] = unset,
+        filter_asset_risks_under_attack: Union[bool, UnsetType] = unset,
+        filter_asset_risks_is_publicly_accessible: Union[bool, UnsetType] = unset,
+        filter_asset_risks_has_privileged_access: Union[bool, UnsetType] = unset,
+        filter_asset_risks_has_access_to_sensitive_data: Union[bool, UnsetType] = unset,
+        filter_asset_environments: Union[str, UnsetType] = unset,
+        filter_asset_arch: Union[str, UnsetType] = unset,
+        filter_asset_operating_system_name: Union[str, UnsetType] = unset,
+        filter_asset_operating_system_version: Union[str, UnsetType] = unset,
+    ) -> ListVulnerabilitiesResponse:
+        """List vulnerabilities.
+
+        Get a list of vulnerabilities.
+
+        **Pagination**
+
+        Pagination is enabled by default in both ``vulnerabilities`` and ``assets``. The size of the page varies depending on the endpoint and cannot be modified. To automate the request of the next page, you can use the links section in the response.
+
+        This endpoint will return paginated responses. The pages are stored in the links section of the response:
+
+        .. code-block:: JSON
+
+           {
+             "data": [...],
+             "meta": {...},
+             "links": {
+               "self": "https://.../api/v2/security/vulnerabilities",
+               "first": "https://.../api/v2/security/vulnerabilities?page[number]=1&page[token]=abc",
+               "last": "https://.../api/v2/security/vulnerabilities?page[number]=43&page[token]=abc",
+               "next": "https://.../api/v2/security/vulnerabilities?page[number]=2&page[token]=abc"
+             }
+           }
+
+        * ``links.previous`` is empty if the first page is requested.
+        * ``links.next`` is empty if the last page is requested.
+
+        **Token**
+
+        Vulnerabilities can be created, updated or deleted at any point in time.
+
+        Upon the first request, a token is created to ensure consistency across subsequent paginated requests.
+
+        A token is valid only for 24 hours.
+
+        **First request**
+
+        We consider a request to be the first request when there is no ``page[token]`` parameter.
+
+        The response of this first request contains the newly created token in the ``links`` section.
+
+        This token can then be used in the subsequent paginated requests.
+
+        **Subsequent requests**
+
+        Any request containing valid ``page[token]`` and ``page[number]`` parameters will be considered a subsequent request.
+
+        If the ``token`` is invalid, a ``404`` response will be returned.
+
+        If the page ``number`` is invalid, a ``400`` response will be returned.
+
+        **Filtering**
+
+        The request can include some filter parameters to filter the data to be retrieved. The format of the filter parameters follows the `JSON:API format <https://jsonapi.org/format/#fetching-filtering>`_ : ``filter[$prop_name]`` , where ``prop_name`` is the property name in the entity being filtered by.
+
+        All filters can include multiple values, where data will be filtered with an OR clause: ``filter[title]=Title1,Title2`` will filter all vulnerabilities where title is equal to ``Title1`` OR ``Title2``.
+
+        String filters are case sensitive.
+
+        Boolean filters accept ``true`` or ``false`` as values.
+
+        Number filters must include an operator as a second filter input: ``filter[$prop_name][$operator]``. For example, for the vulnerabilities endpoint: ``filter[cvss.base.score][lte]=8``.
+
+        Available operators are: ``eq`` (==), ``lt`` (<), ``lte`` (<=), ``gt`` (>) and ``gte`` (>=).
+
+        **Metadata**
+
+        Following `JSON:API format <https://jsonapi.org/format/#document-meta>`_ , object including non-standard meta-information.
+
+        This endpoint includes the meta member in the response. For more details on each of the properties included in this section, check the endpoints response tables.
+
+        .. code-block:: JSON
+
+           {
+             "data": [...],
+             "meta": {
+               "total": 1500,
+               "count": 18732,
+               "token": "some_token"
+             },
+             "links": {...}
+           }
+
+        :param page_token: Its value must come from the ``links`` section of the response of the first request. Do not manually edit it.
+        :type page_token: str, optional
+        :param page_number: The page number to be retrieved. It should be equal or greater than ``1``
+        :type page_number: int, optional
+        :param filter_type: Filter by vulnerability type.
+        :type filter_type: VulnerabilityType, optional
+        :param filter_cvss_base_score_op: Filter by vulnerability base (i.e. from the original advisory) severity score.
+        :type filter_cvss_base_score_op: float, optional
+        :param filter_cvss_base_severity: Filter by vulnerability base severity.
+        :type filter_cvss_base_severity: VulnerabilitySeverity, optional
+        :param filter_cvss_base_vector: Filter by vulnerability base CVSS vector.
+        :type filter_cvss_base_vector: str, optional
+        :param filter_cvss_datadog_score_op: Filter by vulnerability Datadog severity score.
+        :type filter_cvss_datadog_score_op: float, optional
+        :param filter_cvss_datadog_severity: Filter by vulnerability Datadog severity.
+        :type filter_cvss_datadog_severity: VulnerabilitySeverity, optional
+        :param filter_cvss_datadog_vector: Filter by vulnerability Datadog CVSS vector.
+        :type filter_cvss_datadog_vector: str, optional
+        :param filter_status: Filter by the status of the vulnerability.
+        :type filter_status: VulnerabilityStatus, optional
+        :param filter_tool: Filter by the tool of the vulnerability.
+        :type filter_tool: VulnerabilityTool, optional
+        :param filter_library_name: Filter by library name.
+        :type filter_library_name: str, optional
+        :param filter_library_version: Filter by library version.
+        :type filter_library_version: str, optional
+        :param filter_advisory_id: Filter by advisory ID.
+        :type filter_advisory_id: str, optional
+        :param filter_risks_exploitation_probability: Filter by exploitation probability.
+        :type filter_risks_exploitation_probability: bool, optional
+        :param filter_risks_poc_exploit_available: Filter by POC exploit availability.
+        :type filter_risks_poc_exploit_available: bool, optional
+        :param filter_risks_exploit_available: Filter by public exploit availability.
+        :type filter_risks_exploit_available: bool, optional
+        :param filter_risks_epss_score_op: Filter by vulnerability `EPSS <https://www.first.org/epss/>`_ severity score.
+        :type filter_risks_epss_score_op: float, optional
+        :param filter_risks_epss_severity: Filter by vulnerability `EPSS <https://www.first.org/epss/>`_ severity.
+        :type filter_risks_epss_severity: VulnerabilitySeverity, optional
+        :param filter_language: Filter by language.
+        :type filter_language: str, optional
+        :param filter_ecosystem: Filter by ecosystem.
+        :type filter_ecosystem: VulnerabilityEcosystem, optional
+        :param filter_code_location_location: Filter by vulnerability location.
+        :type filter_code_location_location: str, optional
+        :param filter_code_location_file_path: Filter by vulnerability file path.
+        :type filter_code_location_file_path: str, optional
+        :param filter_code_location_method: Filter by method.
+        :type filter_code_location_method: str, optional
+        :param filter_fix_available: Filter by fix availability.
+        :type filter_fix_available: bool, optional
+        :param filter_repo_digests: Filter by vulnerability ``repo_digest`` (when the vulnerability is related to ``Image`` asset).
+        :type filter_repo_digests: str, optional
+        :param filter_asset_name: Filter by asset name.
+        :type filter_asset_name: str, optional
+        :param filter_asset_type: Filter by asset type.
+        :type filter_asset_type: AssetType, optional
+        :param filter_asset_version_first: Filter by the first version of the asset this vulnerability has been detected on.
+        :type filter_asset_version_first: str, optional
+        :param filter_asset_version_last: Filter by the last version of the asset this vulnerability has been detected on.
+        :type filter_asset_version_last: str, optional
+        :param filter_asset_repository_url: Filter by the repository url associated to the asset.
+        :type filter_asset_repository_url: str, optional
+        :param filter_asset_risks_in_production: Filter whether the asset is in production or not.
+        :type filter_asset_risks_in_production: bool, optional
+        :param filter_asset_risks_under_attack: Filter whether the asset is under attack or not.
+        :type filter_asset_risks_under_attack: bool, optional
+        :param filter_asset_risks_is_publicly_accessible: Filter whether the asset is publicly accessible or not.
+        :type filter_asset_risks_is_publicly_accessible: bool, optional
+        :param filter_asset_risks_has_privileged_access: Filter whether the asset is publicly accessible or not.
+        :type filter_asset_risks_has_privileged_access: bool, optional
+        :param filter_asset_risks_has_access_to_sensitive_data: Filter whether the asset  has access to sensitive data or not.
+        :type filter_asset_risks_has_access_to_sensitive_data: bool, optional
+        :param filter_asset_environments: Filter by asset environments.
+        :type filter_asset_environments: str, optional
+        :param filter_asset_arch: Filter by asset architecture.
+        :type filter_asset_arch: str, optional
+        :param filter_asset_operating_system_name: Filter by asset operating system name.
+        :type filter_asset_operating_system_name: str, optional
+        :param filter_asset_operating_system_version: Filter by asset operating system version.
+        :type filter_asset_operating_system_version: str, optional
+        :rtype: ListVulnerabilitiesResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if page_token is not unset:
+            kwargs["page_token"] = page_token
+
+        if page_number is not unset:
+            kwargs["page_number"] = page_number
+
+        if filter_type is not unset:
+            kwargs["filter_type"] = filter_type
+
+        if filter_cvss_base_score_op is not unset:
+            kwargs["filter_cvss_base_score_op"] = filter_cvss_base_score_op
+
+        if filter_cvss_base_severity is not unset:
+            kwargs["filter_cvss_base_severity"] = filter_cvss_base_severity
+
+        if filter_cvss_base_vector is not unset:
+            kwargs["filter_cvss_base_vector"] = filter_cvss_base_vector
+
+        if filter_cvss_datadog_score_op is not unset:
+            kwargs["filter_cvss_datadog_score_op"] = filter_cvss_datadog_score_op
+
+        if filter_cvss_datadog_severity is not unset:
+            kwargs["filter_cvss_datadog_severity"] = filter_cvss_datadog_severity
+
+        if filter_cvss_datadog_vector is not unset:
+            kwargs["filter_cvss_datadog_vector"] = filter_cvss_datadog_vector
+
+        if filter_status is not unset:
+            kwargs["filter_status"] = filter_status
+
+        if filter_tool is not unset:
+            kwargs["filter_tool"] = filter_tool
+
+        if filter_library_name is not unset:
+            kwargs["filter_library_name"] = filter_library_name
+
+        if filter_library_version is not unset:
+            kwargs["filter_library_version"] = filter_library_version
+
+        if filter_advisory_id is not unset:
+            kwargs["filter_advisory_id"] = filter_advisory_id
+
+        if filter_risks_exploitation_probability is not unset:
+            kwargs["filter_risks_exploitation_probability"] = filter_risks_exploitation_probability
+
+        if filter_risks_poc_exploit_available is not unset:
+            kwargs["filter_risks_poc_exploit_available"] = filter_risks_poc_exploit_available
+
+        if filter_risks_exploit_available is not unset:
+            kwargs["filter_risks_exploit_available"] = filter_risks_exploit_available
+
+        if filter_risks_epss_score_op is not unset:
+            kwargs["filter_risks_epss_score_op"] = filter_risks_epss_score_op
+
+        if filter_risks_epss_severity is not unset:
+            kwargs["filter_risks_epss_severity"] = filter_risks_epss_severity
+
+        if filter_language is not unset:
+            kwargs["filter_language"] = filter_language
+
+        if filter_ecosystem is not unset:
+            kwargs["filter_ecosystem"] = filter_ecosystem
+
+        if filter_code_location_location is not unset:
+            kwargs["filter_code_location_location"] = filter_code_location_location
+
+        if filter_code_location_file_path is not unset:
+            kwargs["filter_code_location_file_path"] = filter_code_location_file_path
+
+        if filter_code_location_method is not unset:
+            kwargs["filter_code_location_method"] = filter_code_location_method
+
+        if filter_fix_available is not unset:
+            kwargs["filter_fix_available"] = filter_fix_available
+
+        if filter_repo_digests is not unset:
+            kwargs["filter_repo_digests"] = filter_repo_digests
+
+        if filter_asset_name is not unset:
+            kwargs["filter_asset_name"] = filter_asset_name
+
+        if filter_asset_type is not unset:
+            kwargs["filter_asset_type"] = filter_asset_type
+
+        if filter_asset_version_first is not unset:
+            kwargs["filter_asset_version_first"] = filter_asset_version_first
+
+        if filter_asset_version_last is not unset:
+            kwargs["filter_asset_version_last"] = filter_asset_version_last
+
+        if filter_asset_repository_url is not unset:
+            kwargs["filter_asset_repository_url"] = filter_asset_repository_url
+
+        if filter_asset_risks_in_production is not unset:
+            kwargs["filter_asset_risks_in_production"] = filter_asset_risks_in_production
+
+        if filter_asset_risks_under_attack is not unset:
+            kwargs["filter_asset_risks_under_attack"] = filter_asset_risks_under_attack
+
+        if filter_asset_risks_is_publicly_accessible is not unset:
+            kwargs["filter_asset_risks_is_publicly_accessible"] = filter_asset_risks_is_publicly_accessible
+
+        if filter_asset_risks_has_privileged_access is not unset:
+            kwargs["filter_asset_risks_has_privileged_access"] = filter_asset_risks_has_privileged_access
+
+        if filter_asset_risks_has_access_to_sensitive_data is not unset:
+            kwargs["filter_asset_risks_has_access_to_sensitive_data"] = filter_asset_risks_has_access_to_sensitive_data
+
+        if filter_asset_environments is not unset:
+            kwargs["filter_asset_environments"] = filter_asset_environments
+
+        if filter_asset_arch is not unset:
+            kwargs["filter_asset_arch"] = filter_asset_arch
+
+        if filter_asset_operating_system_name is not unset:
+            kwargs["filter_asset_operating_system_name"] = filter_asset_operating_system_name
+
+        if filter_asset_operating_system_version is not unset:
+            kwargs["filter_asset_operating_system_version"] = filter_asset_operating_system_version
+
+        return self._list_vulnerabilities_endpoint.call_with_http_info(**kwargs)
+
+    def list_vulnerable_assets(
+        self,
+        *,
+        page_token: Union[str, UnsetType] = unset,
+        page_number: Union[int, UnsetType] = unset,
+        filter_name: Union[str, UnsetType] = unset,
+        filter_type: Union[AssetType, UnsetType] = unset,
+        filter_version_first: Union[str, UnsetType] = unset,
+        filter_version_last: Union[str, UnsetType] = unset,
+        filter_repository_url: Union[str, UnsetType] = unset,
+        filter_risks_in_production: Union[bool, UnsetType] = unset,
+        filter_risks_under_attack: Union[bool, UnsetType] = unset,
+        filter_risks_is_publicly_accessible: Union[bool, UnsetType] = unset,
+        filter_risks_has_privileged_access: Union[bool, UnsetType] = unset,
+        filter_risks_has_access_to_sensitive_data: Union[bool, UnsetType] = unset,
+        filter_environments: Union[str, UnsetType] = unset,
+        filter_arch: Union[str, UnsetType] = unset,
+        filter_operating_system_name: Union[str, UnsetType] = unset,
+        filter_operating_system_version: Union[str, UnsetType] = unset,
+    ) -> ListVulnerableAssetsResponse:
+        """List vulnerable assets.
+
+        Get a list of vulnerable assets.
+
+        **Pagination**
+
+        Please review the `Pagination section for the "List Vulnerabilities" <#pagination>`_ endpoint.
+
+        **Filtering**
+
+        Please review the `Filtering section for the "List Vulnerabilities" <#filtering>`_ endpoint.
+
+        **Metadata**
+
+        Please review the `Metadata section for the "List Vulnerabilities" <#metadata>`_ endpoint.
+
+        :param page_token: Its value must come from the ``links`` section of the response of the first request. Do not manually edit it.
+        :type page_token: str, optional
+        :param page_number: The page number to be retrieved. It should be equal or greater than ``1``
+        :type page_number: int, optional
+        :param filter_name: Filter by name.
+        :type filter_name: str, optional
+        :param filter_type: Filter by type.
+        :type filter_type: AssetType, optional
+        :param filter_version_first: Filter by the first version of the asset since it has been vulnerable.
+        :type filter_version_first: str, optional
+        :param filter_version_last: Filter by the last detected version of the asset.
+        :type filter_version_last: str, optional
+        :param filter_repository_url: Filter by the repository url associated to the asset.
+        :type filter_repository_url: str, optional
+        :param filter_risks_in_production: Filter whether the asset is in production or not.
+        :type filter_risks_in_production: bool, optional
+        :param filter_risks_under_attack: Filter whether the asset (Service) is under attack or not.
+        :type filter_risks_under_attack: bool, optional
+        :param filter_risks_is_publicly_accessible: Filter whether the asset (Host) is publicly accessible or not.
+        :type filter_risks_is_publicly_accessible: bool, optional
+        :param filter_risks_has_privileged_access: Filter whether the asset (Host) has privileged access or not.
+        :type filter_risks_has_privileged_access: bool, optional
+        :param filter_risks_has_access_to_sensitive_data: Filter whether the asset (Host)  has access to sensitive data or not.
+        :type filter_risks_has_access_to_sensitive_data: bool, optional
+        :param filter_environments: Filter by environment.
+        :type filter_environments: str, optional
+        :param filter_arch: Filter by architecture.
+        :type filter_arch: str, optional
+        :param filter_operating_system_name: Filter by operating system name.
+        :type filter_operating_system_name: str, optional
+        :param filter_operating_system_version: Filter by operating system version.
+        :type filter_operating_system_version: str, optional
+        :rtype: ListVulnerableAssetsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if page_token is not unset:
+            kwargs["page_token"] = page_token
+
+        if page_number is not unset:
+            kwargs["page_number"] = page_number
+
+        if filter_name is not unset:
+            kwargs["filter_name"] = filter_name
+
+        if filter_type is not unset:
+            kwargs["filter_type"] = filter_type
+
+        if filter_version_first is not unset:
+            kwargs["filter_version_first"] = filter_version_first
+
+        if filter_version_last is not unset:
+            kwargs["filter_version_last"] = filter_version_last
+
+        if filter_repository_url is not unset:
+            kwargs["filter_repository_url"] = filter_repository_url
+
+        if filter_risks_in_production is not unset:
+            kwargs["filter_risks_in_production"] = filter_risks_in_production
+
+        if filter_risks_under_attack is not unset:
+            kwargs["filter_risks_under_attack"] = filter_risks_under_attack
+
+        if filter_risks_is_publicly_accessible is not unset:
+            kwargs["filter_risks_is_publicly_accessible"] = filter_risks_is_publicly_accessible
+
+        if filter_risks_has_privileged_access is not unset:
+            kwargs["filter_risks_has_privileged_access"] = filter_risks_has_privileged_access
+
+        if filter_risks_has_access_to_sensitive_data is not unset:
+            kwargs["filter_risks_has_access_to_sensitive_data"] = filter_risks_has_access_to_sensitive_data
+
+        if filter_environments is not unset:
+            kwargs["filter_environments"] = filter_environments
+
+        if filter_arch is not unset:
+            kwargs["filter_arch"] = filter_arch
+
+        if filter_operating_system_name is not unset:
+            kwargs["filter_operating_system_name"] = filter_operating_system_name
+
+        if filter_operating_system_version is not unset:
+            kwargs["filter_operating_system_version"] = filter_operating_system_version
+
+        return self._list_vulnerable_assets_endpoint.call_with_http_info(**kwargs)
 
     def mute_findings(
         self,

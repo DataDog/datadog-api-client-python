@@ -638,6 +638,58 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
 
+  @skip @team:DataDog/asm-vm
+  Scenario: List vulnerabilities returns "Bad request: The server cannot process the request due to invalid syntax in the request." response
+    Given operation "ListVulnerabilities" enabled
+    And new "ListVulnerabilities" request
+    When the request is sent
+    Then the response status is 400 Bad request: The server cannot process the request due to invalid syntax in the request.
+
+  @team:DataDog/asm-vm
+  Scenario: List vulnerabilities returns "Not found: There is no request associated with the provided token." response
+    Given operation "ListVulnerabilities" enabled
+    And new "ListVulnerabilities" request
+    And request contains "page[token]" parameter with value "unknown"
+    And request contains "page[number]" parameter with value 1
+    When the request is sent
+    Then the response status is 404 Not found: There is no request associated with the provided token.
+
+  @team:DataDog/asm-vm
+  Scenario: List vulnerabilities returns "OK" response
+    Given operation "ListVulnerabilities" enabled
+    And new "ListVulnerabilities" request
+    And request contains "filter[cvss.base.severity]" parameter with value "High"
+    And request contains "filter[asset.type]" parameter with value "Service"
+    And request contains "filter[tool]" parameter with value "Infra"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @skip @team:DataDog/asm-vm
+  Scenario: List vulnerable assets returns "Bad request: The server cannot process the request due to invalid syntax in the request." response
+    Given operation "ListVulnerableAssets" enabled
+    And new "ListVulnerableAssets" request
+    When the request is sent
+    Then the response status is 400 Bad request: The server cannot process the request due to invalid syntax in the request.
+
+  @team:DataDog/asm-vm
+  Scenario: List vulnerable assets returns "Not found: There is no request associated with the provided token." response
+    Given operation "ListVulnerableAssets" enabled
+    And new "ListVulnerableAssets" request
+    And request contains "page[token]" parameter with value "unknown"
+    And request contains "page[number]" parameter with value 1
+    When the request is sent
+    Then the response status is 404 Not found: There is no request associated with the provided token.
+
+  @team:DataDog/asm-vm
+  Scenario: List vulnerable assets returns "OK" response
+    Given operation "ListVulnerableAssets" enabled
+    And new "ListVulnerableAssets" request
+    And request contains "filter[type]" parameter with value "Host"
+    And request contains "filter[repository_url]" parameter with value "github.com/datadog/dd-go"
+    And request contains "filter[risks.in_production]" parameter with value true
+    When the request is sent
+    Then the response status is 200 OK
+
   @generated @skip @team:DataDog/k9-cloud-security-platform
   Scenario: Modify the triage assignee of a security signal returns "Bad Request" response
     Given new "EditSecurityMonitoringSignalAssignee" request

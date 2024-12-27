@@ -1994,8 +1994,20 @@
       "type": "idempotent"
     }
   },
+  "ListVulnerableAssets": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "DownloadCloudWorkloadPolicyFile": {
     "tag": "CSM Threats",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListVulnerabilities": {
+    "tag": "Security Monitoring",
     "undo": {
       "type": "safe"
     }
