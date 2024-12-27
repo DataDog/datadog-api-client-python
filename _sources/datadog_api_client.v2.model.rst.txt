@@ -32,6 +32,13 @@ datadog\_api\_client.v2.model.active\_billing\_dimensions\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.advisory module
+---------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.advisory
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.api\_error\_response module
 ---------------------------------------------------------
 
@@ -288,6 +295,48 @@ datadog\_api\_client.v2.model.apps\_sort\_field module
 ------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.apps_sort_field
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.asset module
+------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.asset
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.asset\_attributes module
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.asset_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.asset\_attributes\_operating\_system module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.asset_attributes_operating_system
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.asset\_attributes\_risks module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.asset_attributes_risks
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.asset\_entity\_type module
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.asset_entity_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.asset\_type module
+------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.asset_type
    :members:
    :show-inheritance:
 
@@ -2111,6 +2160,13 @@ datadog\_api\_client.v2.model.cloudflare\_accounts\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.code\_location module
+---------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.code_location
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.component module
 ----------------------------------------------
 
@@ -3168,6 +3224,13 @@ datadog\_api\_client.v2.model.custom\_destinations\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.cvss module
+-----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cvss
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.dashboard\_list\_add\_items\_request module
 -------------------------------------------------------------------------
 
@@ -3333,6 +3396,13 @@ datadog\_api\_client.v2.model.delete\_apps\_response\_data\_items\_type module
 ------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.delete_apps_response_data_items_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.dependency\_location module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dependency_location
    :members:
    :show-inheritance:
 
@@ -4264,6 +4334,13 @@ datadog\_api\_client.v2.model.entity\_v3\_system\_spec module
 -------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.entity_v3_system_spec
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.epss module
+-----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.epss
    :members:
    :show-inheritance:
 
@@ -6255,6 +6332,20 @@ datadog\_api\_client.v2.model.leaked\_key\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.library module
+--------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.library
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.links module
+------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.links
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.list\_apis\_response module
 ---------------------------------------------------------
 
@@ -6483,6 +6574,20 @@ datadog\_api\_client.v2.model.list\_teams\_sort module
 ------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.list_teams_sort
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.list\_vulnerabilities\_response module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_vulnerabilities_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.list\_vulnerable\_assets\_response module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_vulnerable_assets_response
    :members:
    :show-inheritance:
 
@@ -7015,6 +7120,13 @@ datadog\_api\_client.v2.model.logs\_warning module
 --------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.logs_warning
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.metadata module
+---------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.metadata
    :members:
    :show-inheritance:
 
@@ -9017,6 +9129,13 @@ datadog\_api\_client.v2.model.relationship\_to\_users module
 ------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.relationship_to_users
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.remediation module
+------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.remediation
    :members:
    :show-inheritance:
 
@@ -12951,6 +13070,104 @@ datadog\_api\_client.v2.model.users\_type module
 ------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.users_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.vulnerabilities\_type module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.vulnerabilities_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.vulnerability module
+--------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.vulnerability
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.vulnerability\_attributes module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.vulnerability_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.vulnerability\_attributes\_cvss module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.vulnerability_attributes_cvss
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.vulnerability\_attributes\_dependency\_locations module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.vulnerability_attributes_dependency_locations
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.vulnerability\_ecosystem module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.vulnerability_ecosystem
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.vulnerability\_relationships module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.vulnerability_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.vulnerability\_relationships\_affects module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.vulnerability_relationships_affects
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.vulnerability\_relationships\_affects\_data module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.vulnerability_relationships_affects_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.vulnerability\_risks module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.vulnerability_risks
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.vulnerability\_severity module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.vulnerability_severity
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.vulnerability\_status module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.vulnerability_status
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.vulnerability\_tool module
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.vulnerability_tool
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.vulnerability\_type module
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.vulnerability_type
    :members:
    :show-inheritance:
 
