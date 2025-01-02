@@ -471,6 +471,28 @@ from datadog_api_client.v2.model.creator import Creator
 from datadog_api_client.v2.model.csm_agent_data import CsmAgentData
 from datadog_api_client.v2.model.csm_agents_attributes import CsmAgentsAttributes
 from datadog_api_client.v2.model.csm_agents_response import CsmAgentsResponse
+from datadog_api_client.v2.model.csm_cloud_accounts_coverage_analysis_attributes import (
+    CsmCloudAccountsCoverageAnalysisAttributes,
+)
+from datadog_api_client.v2.model.csm_cloud_accounts_coverage_analysis_data import CsmCloudAccountsCoverageAnalysisData
+from datadog_api_client.v2.model.csm_cloud_accounts_coverage_analysis_response import (
+    CsmCloudAccountsCoverageAnalysisResponse,
+)
+from datadog_api_client.v2.model.csm_coverage_analysis import CsmCoverageAnalysis
+from datadog_api_client.v2.model.csm_hosts_and_containers_coverage_analysis_attributes import (
+    CsmHostsAndContainersCoverageAnalysisAttributes,
+)
+from datadog_api_client.v2.model.csm_hosts_and_containers_coverage_analysis_data import (
+    CsmHostsAndContainersCoverageAnalysisData,
+)
+from datadog_api_client.v2.model.csm_hosts_and_containers_coverage_analysis_response import (
+    CsmHostsAndContainersCoverageAnalysisResponse,
+)
+from datadog_api_client.v2.model.csm_serverless_coverage_analysis_attributes import (
+    CsmServerlessCoverageAnalysisAttributes,
+)
+from datadog_api_client.v2.model.csm_serverless_coverage_analysis_data import CsmServerlessCoverageAnalysisData
+from datadog_api_client.v2.model.csm_serverless_coverage_analysis_response import CsmServerlessCoverageAnalysisResponse
 from datadog_api_client.v2.model.custom_connection import CustomConnection
 from datadog_api_client.v2.model.custom_connection_attributes import CustomConnectionAttributes
 from datadog_api_client.v2.model.custom_connection_attributes_on_prem_runner import (
@@ -2711,6 +2733,16 @@ __all__ = [
     "CsmAgentData",
     "CsmAgentsAttributes",
     "CsmAgentsResponse",
+    "CsmCloudAccountsCoverageAnalysisAttributes",
+    "CsmCloudAccountsCoverageAnalysisData",
+    "CsmCloudAccountsCoverageAnalysisResponse",
+    "CsmCoverageAnalysis",
+    "CsmHostsAndContainersCoverageAnalysisAttributes",
+    "CsmHostsAndContainersCoverageAnalysisData",
+    "CsmHostsAndContainersCoverageAnalysisResponse",
+    "CsmServerlessCoverageAnalysisAttributes",
+    "CsmServerlessCoverageAnalysisData",
+    "CsmServerlessCoverageAnalysisResponse",
     "CustomConnection",
     "CustomConnectionAttributes",
     "CustomConnectionAttributesOnPremRunner",
