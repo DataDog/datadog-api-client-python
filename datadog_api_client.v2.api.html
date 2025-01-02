@@ -1001,6 +1001,20 @@
         </li></ul>
             </nav>
         </li>
+        <li class="md-nav__item"><a href="#module-datadog_api_client.v2.api.csm_coverage_analysis_api" class="md-nav__link">datadog_api_client.v2.api.csm_coverage_analysis_api module</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.csm_coverage_analysis_api.CSMCoverageAnalysisApi" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CSMCoverageAnalysisApi</span></code></a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.csm_coverage_analysis_api.CSMCoverageAnalysisApi.get_csm_cloud_accounts_coverage_analysis" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CSMCoverageAnalysisApi.get_csm_cloud_accounts_coverage_analysis()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.csm_coverage_analysis_api.CSMCoverageAnalysisApi.get_csm_hosts_and_containers_coverage_analysis" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CSMCoverageAnalysisApi.get_csm_hosts_and_containers_coverage_analysis()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.csm_coverage_analysis_api.CSMCoverageAnalysisApi.get_csm_serverless_coverage_analysis" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CSMCoverageAnalysisApi.get_csm_serverless_coverage_analysis()</span></code></a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
         <li class="md-nav__item"><a href="#module-datadog_api_client.v2.api.csm_threats_api" class="md-nav__link">datadog_api_client.v2.api.csm_threats_api module</a><nav class="md-nav">
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.csm_threats_api.CSMThreatsApi" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CSMThreatsApi</span></code></a><nav class="md-nav">
@@ -3654,6 +3668,57 @@ Go to <a class="reference external" href="https://docs.datadoghq.com/security/cl
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.csm_agents_response.CsmAgentsResponse" title="datadog_api_client.v2.model.csm_agents_response.CsmAgentsResponse">CsmAgentsResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+</section>
+<section id="module-datadog_api_client.v2.api.csm_coverage_analysis_api">
+<span id="datadog-api-client-v2-api-csm-coverage-analysis-api-module"></span><h2 id="module-datadog_api_client.v2.api.csm_coverage_analysis_api">datadog_api_client.v2.api.csm_coverage_analysis_api module<a class="headerlink" href="#module-datadog_api_client.v2.api.csm_coverage_analysis_api" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.csm_coverage_analysis_api.CSMCoverageAnalysisApi">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CSMCoverageAnalysisApi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_client</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datadog_api_client.v2.api.csm_coverage_analysis_api.CSMCoverageAnalysisApi" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Datadog Cloud Security Management (CSM) delivers real-time threat detection
+and continuous configuration audits across your entire cloud infrastructure,
+all in a unified view for seamless collaboration and faster remediation.
+Go to <a class="reference external" href="https://docs.datadoghq.com/security/cloud_security_management">https://docs.datadoghq.com/security/cloud_security_management</a> to learn more.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.csm_coverage_analysis_api.CSMCoverageAnalysisApi.get_csm_cloud_accounts_coverage_analysis">
+<span class="sig-name descname"><span class="pre">get_csm_cloud_accounts_coverage_analysis</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.csm_cloud_accounts_coverage_analysis_response.CsmCloudAccountsCoverageAnalysisResponse" title="datadog_api_client.v2.model.csm_cloud_accounts_coverage_analysis_response.CsmCloudAccountsCoverageAnalysisResponse"><span class="pre">CsmCloudAccountsCoverageAnalysisResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.csm_coverage_analysis_api.CSMCoverageAnalysisApi.get_csm_cloud_accounts_coverage_analysis" title="Link to this definition">¶</a></dt>
+<dd><p>Get the CSM Cloud Accounts Coverage Analysis.</p>
+<p>Get the CSM Coverage Analysis of your Cloud Accounts.
+This is calculated based on the number of your Cloud Accounts that are
+scanned for security issues.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.csm_cloud_accounts_coverage_analysis_response.CsmCloudAccountsCoverageAnalysisResponse" title="datadog_api_client.v2.model.csm_cloud_accounts_coverage_analysis_response.CsmCloudAccountsCoverageAnalysisResponse">CsmCloudAccountsCoverageAnalysisResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.csm_coverage_analysis_api.CSMCoverageAnalysisApi.get_csm_hosts_and_containers_coverage_analysis">
+<span class="sig-name descname"><span class="pre">get_csm_hosts_and_containers_coverage_analysis</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.csm_hosts_and_containers_coverage_analysis_response.CsmHostsAndContainersCoverageAnalysisResponse" title="datadog_api_client.v2.model.csm_hosts_and_containers_coverage_analysis_response.CsmHostsAndContainersCoverageAnalysisResponse"><span class="pre">CsmHostsAndContainersCoverageAnalysisResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.csm_coverage_analysis_api.CSMCoverageAnalysisApi.get_csm_hosts_and_containers_coverage_analysis" title="Link to this definition">¶</a></dt>
+<dd><p>Get the CSM Hosts and Containers Coverage Analysis.</p>
+<p>Get the CSM Coverage Analysis of your Hosts and Containers.
+This is calculated based on the number of agents running on your Hosts
+and Containers with CSM feature(s) enabled.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.csm_hosts_and_containers_coverage_analysis_response.CsmHostsAndContainersCoverageAnalysisResponse" title="datadog_api_client.v2.model.csm_hosts_and_containers_coverage_analysis_response.CsmHostsAndContainersCoverageAnalysisResponse">CsmHostsAndContainersCoverageAnalysisResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.csm_coverage_analysis_api.CSMCoverageAnalysisApi.get_csm_serverless_coverage_analysis">
+<span class="sig-name descname"><span class="pre">get_csm_serverless_coverage_analysis</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.csm_serverless_coverage_analysis_response.CsmServerlessCoverageAnalysisResponse" title="datadog_api_client.v2.model.csm_serverless_coverage_analysis_response.CsmServerlessCoverageAnalysisResponse"><span class="pre">CsmServerlessCoverageAnalysisResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.csm_coverage_analysis_api.CSMCoverageAnalysisApi.get_csm_serverless_coverage_analysis" title="Link to this definition">¶</a></dt>
+<dd><p>Get the CSM Serverless Coverage Analysis.</p>
+<p>Get the CSM Coverage Analysis of your Serverless Resources.
+This is calculated based on the number of agents running on your Serverless
+Resources with CSM feature(s) enabled.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.csm_serverless_coverage_analysis_response.CsmServerlessCoverageAnalysisResponse" title="datadog_api_client.v2.model.csm_serverless_coverage_analysis_response.CsmServerlessCoverageAnalysisResponse">CsmServerlessCoverageAnalysisResponse</a></p>
 </dd>
 </dl>
 </dd></dl>

@@ -2839,6 +2839,76 @@ datadog\_api\_client.v2.model.csm\_agents\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.csm\_cloud\_accounts\_coverage\_analysis\_attributes module
+-----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.csm_cloud_accounts_coverage_analysis_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.csm\_cloud\_accounts\_coverage\_analysis\_data module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.csm_cloud_accounts_coverage_analysis_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.csm\_cloud\_accounts\_coverage\_analysis\_response module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.csm_cloud_accounts_coverage_analysis_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.csm\_coverage\_analysis module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.csm_coverage_analysis
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.csm\_hosts\_and\_containers\_coverage\_analysis\_attributes module
+------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.csm_hosts_and_containers_coverage_analysis_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.csm\_hosts\_and\_containers\_coverage\_analysis\_data module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.csm_hosts_and_containers_coverage_analysis_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.csm\_hosts\_and\_containers\_coverage\_analysis\_response module
+----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.csm_hosts_and_containers_coverage_analysis_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.csm\_serverless\_coverage\_analysis\_attributes module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.csm_serverless_coverage_analysis_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.csm\_serverless\_coverage\_analysis\_data module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.csm_serverless_coverage_analysis_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.csm\_serverless\_coverage\_analysis\_response module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.csm_serverless_coverage_analysis_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.custom\_connection module
 -------------------------------------------------------
 
