@@ -43,20 +43,6 @@ Feature: Logs
     Then the response status is 200 OK
     And the response "meta.status" is equal to "done"
 
-  @generated @skip @team:DataDog/logs-app
-  Scenario: Get a list of logs returns "Bad Request" response
-    Given a valid "appKeyAuth" key in the system
-    And new "ListLogsGet" request
-    When the request is sent
-    Then the response status is 400 Bad Request
-
-  @generated @skip @team:DataDog/logs-app
-  Scenario: Get a list of logs returns "OK" response
-    Given a valid "appKeyAuth" key in the system
-    And new "ListLogsGet" request
-    When the request is sent
-    Then the response status is 200 OK
-
   @replay-only @skip-validation @team:DataDog/logs-app @with-pagination
   Scenario: Get a list of logs returns "OK" response with pagination
     Given a valid "appKeyAuth" key in the system
@@ -80,12 +66,49 @@ Feature: Logs
     And the response "data" has length 0
 
   @generated @skip @team:DataDog/logs-app
-  Scenario: Search logs returns "Bad Request" response
+  Scenario: Search logs (GET) returns "Bad Request" response
+    Given a valid "appKeyAuth" key in the system
+    And new "ListLogsGet" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/logs-app
+  Scenario: Search logs (GET) returns "OK" response
+    Given a valid "appKeyAuth" key in the system
+    And new "ListLogsGet" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/logs-app @with-pagination
+  Scenario: Search logs (GET) returns "OK" response with pagination
+    Given a valid "appKeyAuth" key in the system
+    And new "ListLogsGet" request
+    When the request with pagination is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/logs-app
+  Scenario: Search logs (POST) returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And new "ListLogs" request
     And body with value {"filter": {"from": "now-15m", "indexes": ["main", "web"], "query": "service:web* AND @http.status_code:[200 TO 299]", "storage_tier": "indexes", "to": "now"}, "options": {"timezone": "GMT"}, "page": {"cursor": "eyJzdGFydEF0IjoiQVFBQUFYS2tMS3pPbm40NGV3QUFBQUJCV0V0clRFdDZVbG8zY3pCRmNsbHJiVmxDWlEifQ==", "limit": 25}, "sort": "timestamp"}
     When the request is sent
     Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/logs-app
+  Scenario: Search logs (POST) returns "OK" response
+    Given a valid "appKeyAuth" key in the system
+    And new "ListLogs" request
+    And body with value {"filter": {"from": "now-15m", "indexes": ["main", "web"], "query": "service:web* AND @http.status_code:[200 TO 299]", "storage_tier": "indexes", "to": "now"}, "options": {"timezone": "GMT"}, "page": {"cursor": "eyJzdGFydEF0IjoiQVFBQUFYS2tMS3pPbm40NGV3QUFBQUJCV0V0clRFdDZVbG8zY3pCRmNsbHJiVmxDWlEifQ==", "limit": 25}, "sort": "timestamp"}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/logs-app @with-pagination
+  Scenario: Search logs (POST) returns "OK" response with pagination
+    Given a valid "appKeyAuth" key in the system
+    And new "ListLogs" request
+    And body with value {"filter": {"from": "now-15m", "indexes": ["main", "web"], "query": "service:web* AND @http.status_code:[200 TO 299]", "storage_tier": "indexes", "to": "now"}, "options": {"timezone": "GMT"}, "page": {"cursor": "eyJzdGFydEF0IjoiQVFBQUFYS2tMS3pPbm40NGV3QUFBQUJCV0V0clRFdDZVbG8zY3pCRmNsbHJiVmxDWlEifQ==", "limit": 25}, "sort": "timestamp"}
+    When the request with pagination is sent
+    Then the response status is 200 OK
 
   @team:DataDog/logs-app
   Scenario: Search logs returns "OK" response
