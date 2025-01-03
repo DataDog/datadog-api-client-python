@@ -83,6 +83,19 @@ class UsageSummaryDate(ModelNormal):
             "date": (datetime,),
             "dbm_host_top99p": (int,),
             "dbm_queries_count_avg": (int,),
+            "eph_infra_host_agent_sum": (int,),
+            "eph_infra_host_alibaba_sum": (int,),
+            "eph_infra_host_aws_sum": (int,),
+            "eph_infra_host_azure_sum": (int,),
+            "eph_infra_host_ent_sum": (int,),
+            "eph_infra_host_gcp_sum": (int,),
+            "eph_infra_host_heroku_sum": (int,),
+            "eph_infra_host_only_aas_sum": (int,),
+            "eph_infra_host_only_vsphere_sum": (int,),
+            "eph_infra_host_opentelemetry_apm_sum": (int,),
+            "eph_infra_host_opentelemetry_sum": (int,),
+            "eph_infra_host_pro_sum": (int,),
+            "eph_infra_host_proplus_sum": (int,),
             "error_tracking_error_events_sum": (int,),
             "error_tracking_events_sum": (int,),
             "error_tracking_rum_error_events_sum": (int,),
@@ -229,6 +242,19 @@ class UsageSummaryDate(ModelNormal):
         "date": "date",
         "dbm_host_top99p": "dbm_host_top99p",
         "dbm_queries_count_avg": "dbm_queries_count_avg",
+        "eph_infra_host_agent_sum": "eph_infra_host_agent_sum",
+        "eph_infra_host_alibaba_sum": "eph_infra_host_alibaba_sum",
+        "eph_infra_host_aws_sum": "eph_infra_host_aws_sum",
+        "eph_infra_host_azure_sum": "eph_infra_host_azure_sum",
+        "eph_infra_host_ent_sum": "eph_infra_host_ent_sum",
+        "eph_infra_host_gcp_sum": "eph_infra_host_gcp_sum",
+        "eph_infra_host_heroku_sum": "eph_infra_host_heroku_sum",
+        "eph_infra_host_only_aas_sum": "eph_infra_host_only_aas_sum",
+        "eph_infra_host_only_vsphere_sum": "eph_infra_host_only_vsphere_sum",
+        "eph_infra_host_opentelemetry_apm_sum": "eph_infra_host_opentelemetry_apm_sum",
+        "eph_infra_host_opentelemetry_sum": "eph_infra_host_opentelemetry_sum",
+        "eph_infra_host_pro_sum": "eph_infra_host_pro_sum",
+        "eph_infra_host_proplus_sum": "eph_infra_host_proplus_sum",
         "error_tracking_error_events_sum": "error_tracking_error_events_sum",
         "error_tracking_events_sum": "error_tracking_events_sum",
         "error_tracking_rum_error_events_sum": "error_tracking_rum_error_events_sum",
@@ -376,6 +402,19 @@ class UsageSummaryDate(ModelNormal):
         date: Union[datetime, UnsetType] = unset,
         dbm_host_top99p: Union[int, UnsetType] = unset,
         dbm_queries_count_avg: Union[int, UnsetType] = unset,
+        eph_infra_host_agent_sum: Union[int, UnsetType] = unset,
+        eph_infra_host_alibaba_sum: Union[int, UnsetType] = unset,
+        eph_infra_host_aws_sum: Union[int, UnsetType] = unset,
+        eph_infra_host_azure_sum: Union[int, UnsetType] = unset,
+        eph_infra_host_ent_sum: Union[int, UnsetType] = unset,
+        eph_infra_host_gcp_sum: Union[int, UnsetType] = unset,
+        eph_infra_host_heroku_sum: Union[int, UnsetType] = unset,
+        eph_infra_host_only_aas_sum: Union[int, UnsetType] = unset,
+        eph_infra_host_only_vsphere_sum: Union[int, UnsetType] = unset,
+        eph_infra_host_opentelemetry_apm_sum: Union[int, UnsetType] = unset,
+        eph_infra_host_opentelemetry_sum: Union[int, UnsetType] = unset,
+        eph_infra_host_pro_sum: Union[int, UnsetType] = unset,
+        eph_infra_host_proplus_sum: Union[int, UnsetType] = unset,
         error_tracking_error_events_sum: Union[int, UnsetType] = unset,
         error_tracking_events_sum: Union[int, UnsetType] = unset,
         error_tracking_rum_error_events_sum: Union[int, UnsetType] = unset,
@@ -641,6 +680,45 @@ class UsageSummaryDate(ModelNormal):
 
         :param dbm_queries_count_avg: Shows the average of all normalized Database Monitoring queries over all hours in the current date for all organizations.
         :type dbm_queries_count_avg: int, optional
+
+        :param eph_infra_host_agent_sum: Shows the sum of all ephemeral infrastructure hosts with the Datadog Agent over all hours in the current date for the given org.
+        :type eph_infra_host_agent_sum: int, optional
+
+        :param eph_infra_host_alibaba_sum: Shows the sum of all ephemeral infrastructure hosts on Alibaba over all hours in the current date for the given org.
+        :type eph_infra_host_alibaba_sum: int, optional
+
+        :param eph_infra_host_aws_sum: Shows the sum of all ephemeral infrastructure hosts on AWS over all hours in the current date for the given org.
+        :type eph_infra_host_aws_sum: int, optional
+
+        :param eph_infra_host_azure_sum: Shows the sum of all ephemeral infrastructure hosts on Azure over all hours in the current date for the given org.
+        :type eph_infra_host_azure_sum: int, optional
+
+        :param eph_infra_host_ent_sum: Shows the sum of all ephemeral infrastructure hosts for Enterprise over all hours in the current date for the given org.
+        :type eph_infra_host_ent_sum: int, optional
+
+        :param eph_infra_host_gcp_sum: Shows the sum of all ephemeral infrastructure hosts on GCP over all hours in the current date for the given org.
+        :type eph_infra_host_gcp_sum: int, optional
+
+        :param eph_infra_host_heroku_sum: Shows the sum of all ephemeral infrastructure hosts on Heroku over all hours in the current date for the given org.
+        :type eph_infra_host_heroku_sum: int, optional
+
+        :param eph_infra_host_only_aas_sum: Shows the sum of all ephemeral infrastructure hosts with only Azure App Services over all hours in the current date for the given org.
+        :type eph_infra_host_only_aas_sum: int, optional
+
+        :param eph_infra_host_only_vsphere_sum: Shows the sum of all ephemeral infrastructure hosts with only vSphere over all hours in the current date for the given org.
+        :type eph_infra_host_only_vsphere_sum: int, optional
+
+        :param eph_infra_host_opentelemetry_apm_sum: Shows the sum of all ephemeral APM hosts reported by the Datadog exporter for the OpenTelemetry Collector over all hours in the current date for the given org.
+        :type eph_infra_host_opentelemetry_apm_sum: int, optional
+
+        :param eph_infra_host_opentelemetry_sum: Shows the sum of all ephemeral hosts reported by the Datadog exporter for the OpenTelemetry Collector over all hours in the current date for the given org.
+        :type eph_infra_host_opentelemetry_sum: int, optional
+
+        :param eph_infra_host_pro_sum: Shows the sum of all ephemeral infrastructure hosts for Pro over all hours in the current date for the given org.
+        :type eph_infra_host_pro_sum: int, optional
+
+        :param eph_infra_host_proplus_sum: Shows the sum of all ephemeral infrastructure hosts for Pro Plus over all hours in the current date for the given org.
+        :type eph_infra_host_proplus_sum: int, optional
 
         :param error_tracking_error_events_sum: Shows the sum of all Error Tracking error events over all hours in the current date for the given org.
         :type error_tracking_error_events_sum: int, optional
@@ -1014,6 +1092,32 @@ class UsageSummaryDate(ModelNormal):
             kwargs["dbm_host_top99p"] = dbm_host_top99p
         if dbm_queries_count_avg is not unset:
             kwargs["dbm_queries_count_avg"] = dbm_queries_count_avg
+        if eph_infra_host_agent_sum is not unset:
+            kwargs["eph_infra_host_agent_sum"] = eph_infra_host_agent_sum
+        if eph_infra_host_alibaba_sum is not unset:
+            kwargs["eph_infra_host_alibaba_sum"] = eph_infra_host_alibaba_sum
+        if eph_infra_host_aws_sum is not unset:
+            kwargs["eph_infra_host_aws_sum"] = eph_infra_host_aws_sum
+        if eph_infra_host_azure_sum is not unset:
+            kwargs["eph_infra_host_azure_sum"] = eph_infra_host_azure_sum
+        if eph_infra_host_ent_sum is not unset:
+            kwargs["eph_infra_host_ent_sum"] = eph_infra_host_ent_sum
+        if eph_infra_host_gcp_sum is not unset:
+            kwargs["eph_infra_host_gcp_sum"] = eph_infra_host_gcp_sum
+        if eph_infra_host_heroku_sum is not unset:
+            kwargs["eph_infra_host_heroku_sum"] = eph_infra_host_heroku_sum
+        if eph_infra_host_only_aas_sum is not unset:
+            kwargs["eph_infra_host_only_aas_sum"] = eph_infra_host_only_aas_sum
+        if eph_infra_host_only_vsphere_sum is not unset:
+            kwargs["eph_infra_host_only_vsphere_sum"] = eph_infra_host_only_vsphere_sum
+        if eph_infra_host_opentelemetry_apm_sum is not unset:
+            kwargs["eph_infra_host_opentelemetry_apm_sum"] = eph_infra_host_opentelemetry_apm_sum
+        if eph_infra_host_opentelemetry_sum is not unset:
+            kwargs["eph_infra_host_opentelemetry_sum"] = eph_infra_host_opentelemetry_sum
+        if eph_infra_host_pro_sum is not unset:
+            kwargs["eph_infra_host_pro_sum"] = eph_infra_host_pro_sum
+        if eph_infra_host_proplus_sum is not unset:
+            kwargs["eph_infra_host_proplus_sum"] = eph_infra_host_proplus_sum
         if error_tracking_error_events_sum is not unset:
             kwargs["error_tracking_error_events_sum"] = error_tracking_error_events_sum
         if error_tracking_events_sum is not unset:
