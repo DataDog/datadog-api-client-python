@@ -38621,7 +38621,7 @@ paths:
         [Results are paginated][1].
 
 
-        Use this endpoint to see your latest logs.
+        Use this endpoint to search and filter your logs.
 
 
         **If you are considering archiving logs for your organization,
@@ -38718,7 +38718,7 @@ paths:
           $ref: '#/components/responses/NotAuthorizedResponse'
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
-      summary: Get a list of logs
+      summary: Search logs (GET)
       tags:
       - Logs
       x-pagination:
@@ -38737,7 +38737,7 @@ paths:
         [Results are paginated][1].
 
 
-        Use this endpoint to build complex logs filtering and search.
+        Use this endpoint to search and filter your logs.
 
 
         **If you are considering archiving logs for your organization,
@@ -38770,7 +38770,7 @@ paths:
           $ref: '#/components/responses/NotAuthorizedResponse'
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
-      summary: Search logs
+      summary: Search logs (POST)
       tags:
       - Logs
       x-codegen-request-body-name: body

@@ -1,5 +1,5 @@
 """
-Search logs (POST) returns "OK" response
+Search logs (POST) returns "OK" response with pagination
 """
 
 from datadog_api_client import ApiClient, Configuration
@@ -35,6 +35,6 @@ body = LogsListRequest(
 configuration = Configuration()
 with ApiClient(configuration) as api_client:
     api_instance = LogsApi(api_client)
-    response = api_instance.list_logs(body=body)
-
-    print(response)
+    items = api_instance.list_logs_with_pagination(body=body)
+    for item in items:
+        print(item)

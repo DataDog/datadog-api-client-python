@@ -240,12 +240,12 @@ class LogsApi:
         *,
         body: Union[LogsListRequest, UnsetType] = unset,
     ) -> LogsListResponse:
-        """Search logs.
+        """Search logs (POST).
 
         List endpoint returns logs that match a log search query.
         `Results are paginated </logs/guide/collect-multiple-logs-with-pagination>`_.
 
-        Use this endpoint to build complex logs filtering and search.
+        Use this endpoint to search and filter your logs.
 
         If you are considering archiving logs for your organization,
         consider use of the Datadog archive capabilities instead of the log list API.
@@ -265,7 +265,7 @@ class LogsApi:
         *,
         body: Union[LogsListRequest, UnsetType] = unset,
     ) -> collections.abc.Iterable[Log]:
-        """Search logs.
+        """Search logs (POST).
 
         Provide a paginated version of :meth:`list_logs`, returning all items.
 
@@ -303,12 +303,12 @@ class LogsApi:
         page_cursor: Union[str, UnsetType] = unset,
         page_limit: Union[int, UnsetType] = unset,
     ) -> LogsListResponse:
-        """Get a list of logs.
+        """Search logs (GET).
 
         List endpoint returns logs that match a log search query.
         `Results are paginated </logs/guide/collect-multiple-logs-with-pagination>`_.
 
-        Use this endpoint to see your latest logs.
+        Use this endpoint to search and filter your logs.
 
         If you are considering archiving logs for your organization,
         consider use of the Datadog archive capabilities instead of the log list API.
@@ -372,7 +372,7 @@ class LogsApi:
         page_cursor: Union[str, UnsetType] = unset,
         page_limit: Union[int, UnsetType] = unset,
     ) -> collections.abc.Iterable[Log]:
-        """Get a list of logs.
+        """Search logs (GET).
 
         Provide a paginated version of :meth:`list_logs_get`, returning all items.
 
