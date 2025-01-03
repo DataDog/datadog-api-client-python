@@ -1,5 +1,5 @@
 """
-Get a list of logs returns "OK" response
+Search logs (GET) returns "OK" response
 """
 
 from datadog_api_client import ApiClient, Configuration

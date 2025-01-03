@@ -3,10 +3,14 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Any, Dict
+from typing import Any, Dict, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
+from datadog_api_client.model_utils import (
+    UnsetType,
+    unset,
+)
 from datadog_api_client.v2.model.restriction_policy_response import RestrictionPolicyResponse
 from datadog_api_client.v2.model.restriction_policy_update_request import RestrictionPolicyUpdateRequest
 
@@ -85,6 +89,11 @@ class RestrictionPoliciesApi:
                     "attribute": "resource_id",
                     "location": "path",
                 },
+                "allow_self_lockout": {
+                    "openapi_types": (str,),
+                    "attribute": "allow_self_lockout",
+                    "location": "query",
+                },
                 "body": {
                     "required": True,
                     "openapi_types": (RestrictionPolicyUpdateRequest,),
@@ -133,6 +142,8 @@ class RestrictionPoliciesApi:
         self,
         resource_id: str,
         body: RestrictionPolicyUpdateRequest,
+        *,
+        allow_self_lockout: Union[str, UnsetType] = unset,
     ) -> RestrictionPolicyResponse:
         """Update a restriction policy.
 
@@ -186,10 +197,15 @@ class RestrictionPoliciesApi:
         :type resource_id: str
         :param body: Restriction policy payload
         :type body: RestrictionPolicyUpdateRequest
+        :param allow_self_lockout: Allows admins (users with the ``user_access_manage`` permission) to remove their own access from the resource if set to ``true``. By default, this is set to ``false`` , preventing admins from locking themselves out.
+        :type allow_self_lockout: str, optional
         :rtype: RestrictionPolicyResponse
         """
         kwargs: Dict[str, Any] = {}
         kwargs["resource_id"] = resource_id
+
+        if allow_self_lockout is not unset:
+            kwargs["allow_self_lockout"] = allow_self_lockout
 
         kwargs["body"] = body
 

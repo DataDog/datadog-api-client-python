@@ -535,6 +535,24 @@
       "type": "safe"
     }
   },
+  "GetCSMCloudAccountsCoverageAnalysis": {
+    "tag": "CSM Coverage Analysis",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetCSMHostsAndContainersCoverageAnalysis": {
+    "tag": "CSM Coverage Analysis",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetCSMServerlessCoverageAnalysis": {
+    "tag": "CSM Coverage Analysis",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListAllCSMServerlessAgents": {
     "tag": "CSM Agents",
     "undo": {
@@ -1994,8 +2012,20 @@
       "type": "idempotent"
     }
   },
+  "ListVulnerableAssets": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "DownloadCloudWorkloadPolicyFile": {
     "tag": "CSM Threats",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListVulnerabilities": {
+    "tag": "Security Monitoring",
     "undo": {
       "type": "safe"
     }

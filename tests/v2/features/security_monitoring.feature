@@ -264,21 +264,21 @@ Feature: Security Monitoring
   @generated @skip @team:DataDog/k9-cloud-security-platform
   Scenario: Create a suppression rule returns "Bad Request" response
     Given new "CreateSecurityMonitoringSuppression" request
-    And body with value {"data": {"attributes": {"data_exclusion_query": "source:cloudtrail account_id:12345", "description": "This rule suppresses low-severity signals in staging environments.", "enabled": true, "expiration_date": 1703187336000, "name": "Custom suppression", "rule_query": "type:log_detection source:cloudtrail", "suppression_query": "env:staging status:low"}, "type": "suppressions"}}
+    And body with value {"data": {"attributes": {"data_exclusion_query": "source:cloudtrail account_id:12345", "description": "This rule suppresses low-severity signals in staging environments.", "enabled": true, "expiration_date": 1703187336000, "name": "Custom suppression", "rule_query": "type:log_detection source:cloudtrail", "start_date": 1703187336000, "suppression_query": "env:staging status:low"}, "type": "suppressions"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/k9-cloud-security-platform
   Scenario: Create a suppression rule returns "Conflict" response
     Given new "CreateSecurityMonitoringSuppression" request
-    And body with value {"data": {"attributes": {"data_exclusion_query": "source:cloudtrail account_id:12345", "description": "This rule suppresses low-severity signals in staging environments.", "enabled": true, "expiration_date": 1703187336000, "name": "Custom suppression", "rule_query": "type:log_detection source:cloudtrail", "suppression_query": "env:staging status:low"}, "type": "suppressions"}}
+    And body with value {"data": {"attributes": {"data_exclusion_query": "source:cloudtrail account_id:12345", "description": "This rule suppresses low-severity signals in staging environments.", "enabled": true, "expiration_date": 1703187336000, "name": "Custom suppression", "rule_query": "type:log_detection source:cloudtrail", "start_date": 1703187336000, "suppression_query": "env:staging status:low"}, "type": "suppressions"}}
     When the request is sent
     Then the response status is 409 Conflict
 
   @skip-validation @team:DataDog/k9-cloud-security-platform
   Scenario: Create a suppression rule returns "OK" response
     Given new "CreateSecurityMonitoringSuppression" request
-    And body with value {"data": {"attributes": {"description": "This rule suppresses low-severity signals in staging environments.", "enabled": true, "expiration_date": {{ timestamp('now + 21d') }}000, "name": "{{ unique }}", "rule_query": "type:log_detection source:cloudtrail", "suppression_query": "env:staging status:low"}, "type": "suppressions"}}
+    And body with value {"data": {"attributes": {"description": "This rule suppresses low-severity signals in staging environments.", "enabled": true, "start_date": {{ timestamp('now + 10d') }}000, "expiration_date": {{ timestamp('now + 21d') }}000, "name": "{{ unique }}", "rule_query": "type:log_detection source:cloudtrail", "suppression_query": "env:staging status:low"}, "type": "suppressions"}}
     When the request is sent
     Then the response status is 200 OK
     And the response "data.type" is equal to "suppressions"
@@ -288,7 +288,7 @@ Feature: Security Monitoring
   @skip-validation @team:DataDog/k9-cloud-security-platform
   Scenario: Create a suppression rule with an exclusion query returns "OK" response
     Given new "CreateSecurityMonitoringSuppression" request
-    And body with value {"data": {"attributes": {"description": "This rule suppresses low-severity signals in staging environments.", "enabled": true, "expiration_date": {{ timestamp('now + 21d') }}000, "name": "{{ unique }}", "rule_query": "type:log_detection source:cloudtrail", "data_exclusion_query": "account_id:12345"}, "type": "suppressions"}}
+    And body with value {"data": {"attributes": {"description": "This rule suppresses low-severity signals in staging environments.", "enabled": true, "start_date": {{ timestamp('now + 10d') }}000, "expiration_date": {{ timestamp('now + 21d') }}000, "name": "{{ unique }}", "rule_query": "type:log_detection source:cloudtrail", "data_exclusion_query": "account_id:12345"}, "type": "suppressions"}}
     When the request is sent
     Then the response status is 200 OK
     And the response "data.type" is equal to "suppressions"
@@ -638,6 +638,58 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
 
+  @skip @team:DataDog/asm-vm
+  Scenario: List vulnerabilities returns "Bad request: The server cannot process the request due to invalid syntax in the request." response
+    Given operation "ListVulnerabilities" enabled
+    And new "ListVulnerabilities" request
+    When the request is sent
+    Then the response status is 400 Bad request: The server cannot process the request due to invalid syntax in the request.
+
+  @team:DataDog/asm-vm
+  Scenario: List vulnerabilities returns "Not found: There is no request associated with the provided token." response
+    Given operation "ListVulnerabilities" enabled
+    And new "ListVulnerabilities" request
+    And request contains "page[token]" parameter with value "unknown"
+    And request contains "page[number]" parameter with value 1
+    When the request is sent
+    Then the response status is 404 Not found: There is no request associated with the provided token.
+
+  @team:DataDog/asm-vm
+  Scenario: List vulnerabilities returns "OK" response
+    Given operation "ListVulnerabilities" enabled
+    And new "ListVulnerabilities" request
+    And request contains "filter[cvss.base.severity]" parameter with value "High"
+    And request contains "filter[asset.type]" parameter with value "Service"
+    And request contains "filter[tool]" parameter with value "Infra"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @skip @team:DataDog/asm-vm
+  Scenario: List vulnerable assets returns "Bad request: The server cannot process the request due to invalid syntax in the request." response
+    Given operation "ListVulnerableAssets" enabled
+    And new "ListVulnerableAssets" request
+    When the request is sent
+    Then the response status is 400 Bad request: The server cannot process the request due to invalid syntax in the request.
+
+  @team:DataDog/asm-vm
+  Scenario: List vulnerable assets returns "Not found: There is no request associated with the provided token." response
+    Given operation "ListVulnerableAssets" enabled
+    And new "ListVulnerableAssets" request
+    And request contains "page[token]" parameter with value "unknown"
+    And request contains "page[number]" parameter with value 1
+    When the request is sent
+    Then the response status is 404 Not found: There is no request associated with the provided token.
+
+  @team:DataDog/asm-vm
+  Scenario: List vulnerable assets returns "OK" response
+    Given operation "ListVulnerableAssets" enabled
+    And new "ListVulnerableAssets" request
+    And request contains "filter[type]" parameter with value "Host"
+    And request contains "filter[repository_url]" parameter with value "github.com/datadog/dd-go"
+    And request contains "filter[risks.in_production]" parameter with value true
+    When the request is sent
+    Then the response status is 200 OK
+
   @generated @skip @team:DataDog/k9-cloud-security-platform
   Scenario: Modify the triage assignee of a security signal returns "Bad Request" response
     Given new "EditSecurityMonitoringSignalAssignee" request
@@ -815,7 +867,7 @@ Feature: Security Monitoring
   Scenario: Update a suppression rule returns "Bad Request" response
     Given new "UpdateSecurityMonitoringSuppression" request
     And request contains "suppression_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"data_exclusion_query": "source:cloudtrail account_id:12345", "description": "This rule suppresses low-severity signals in staging environments.", "enabled": true, "expiration_date": 1703187336000, "name": "Custom suppression", "rule_query": "type:log_detection source:cloudtrail", "suppression_query": "env:staging status:low"}, "type": "suppressions"}}
+    And body with value {"data": {"attributes": {"data_exclusion_query": "source:cloudtrail account_id:12345", "description": "This rule suppresses low-severity signals in staging environments.", "enabled": true, "expiration_date": 1703187336000, "name": "Custom suppression", "rule_query": "type:log_detection source:cloudtrail", "start_date": 1703187336000, "suppression_query": "env:staging status:low"}, "type": "suppressions"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -823,7 +875,7 @@ Feature: Security Monitoring
   Scenario: Update a suppression rule returns "Concurrent Modification" response
     Given new "UpdateSecurityMonitoringSuppression" request
     And request contains "suppression_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"data_exclusion_query": "source:cloudtrail account_id:12345", "description": "This rule suppresses low-severity signals in staging environments.", "enabled": true, "expiration_date": 1703187336000, "name": "Custom suppression", "rule_query": "type:log_detection source:cloudtrail", "suppression_query": "env:staging status:low"}, "type": "suppressions"}}
+    And body with value {"data": {"attributes": {"data_exclusion_query": "source:cloudtrail account_id:12345", "description": "This rule suppresses low-severity signals in staging environments.", "enabled": true, "expiration_date": 1703187336000, "name": "Custom suppression", "rule_query": "type:log_detection source:cloudtrail", "start_date": 1703187336000, "suppression_query": "env:staging status:low"}, "type": "suppressions"}}
     When the request is sent
     Then the response status is 409 Concurrent Modification
 
@@ -831,7 +883,7 @@ Feature: Security Monitoring
   Scenario: Update a suppression rule returns "Not Found" response
     Given new "UpdateSecurityMonitoringSuppression" request
     And request contains "suppression_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"data_exclusion_query": "source:cloudtrail account_id:12345", "description": "This rule suppresses low-severity signals in staging environments.", "enabled": true, "expiration_date": 1703187336000, "name": "Custom suppression", "rule_query": "type:log_detection source:cloudtrail", "suppression_query": "env:staging status:low"}, "type": "suppressions"}}
+    And body with value {"data": {"attributes": {"data_exclusion_query": "source:cloudtrail account_id:12345", "description": "This rule suppresses low-severity signals in staging environments.", "enabled": true, "expiration_date": 1703187336000, "name": "Custom suppression", "rule_query": "type:log_detection source:cloudtrail", "start_date": 1703187336000, "suppression_query": "env:staging status:low"}, "type": "suppressions"}}
     When the request is sent
     Then the response status is 404 Not Found
 
