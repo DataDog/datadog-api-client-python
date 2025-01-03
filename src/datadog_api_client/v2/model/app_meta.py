@@ -10,6 +10,7 @@ from datadog_api_client.model_utils import (
     cached_property,
     unset,
     UnsetType,
+    UUID,
 )
 
 
@@ -25,7 +26,7 @@ class AppMeta(ModelNormal):
             "updated_since_deployment": (bool,),
             "user_id": (int,),
             "user_name": (str,),
-            "user_uuid": (str,),
+            "user_uuid": (UUID,),
             "version": (int,),
         }
 
@@ -52,7 +53,7 @@ class AppMeta(ModelNormal):
         updated_since_deployment: Union[bool, UnsetType] = unset,
         user_id: Union[int, UnsetType] = unset,
         user_name: Union[str, UnsetType] = unset,
-        user_uuid: Union[str, UnsetType] = unset,
+        user_uuid: Union[UUID, UnsetType] = unset,
         version: Union[int, UnsetType] = unset,
         **kwargs,
     ):
@@ -84,7 +85,7 @@ class AppMeta(ModelNormal):
         :type user_name: str, optional
 
         :param user_uuid: The ``AppMeta`` ``user_uuid``.
-        :type user_uuid: str, optional
+        :type user_uuid: UUID, optional
 
         :param version: The ``AppMeta`` ``version``.
         :type version: int, optional
