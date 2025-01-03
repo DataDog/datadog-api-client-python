@@ -25,9 +25,17 @@ from datadog_api_client.v2.model.aws_account_update_request import AWSAccountUpd
 from datadog_api_client.v2.model.aws_account_update_request_attributes import AWSAccountUpdateRequestAttributes
 from datadog_api_client.v2.model.aws_account_update_request_data import AWSAccountUpdateRequestData
 from datadog_api_client.v2.model.aws_accounts_response import AWSAccountsResponse
+from datadog_api_client.v2.model.aws_assume_role import AWSAssumeRole
+from datadog_api_client.v2.model.aws_assume_role_type import AWSAssumeRoleType
+from datadog_api_client.v2.model.aws_assume_role_update import AWSAssumeRoleUpdate
 from datadog_api_client.v2.model.aws_auth_config import AWSAuthConfig
 from datadog_api_client.v2.model.aws_auth_config_keys import AWSAuthConfigKeys
 from datadog_api_client.v2.model.aws_auth_config_role import AWSAuthConfigRole
+from datadog_api_client.v2.model.aws_credentials import AWSCredentials
+from datadog_api_client.v2.model.aws_credentials_update import AWSCredentialsUpdate
+from datadog_api_client.v2.model.aws_integration import AWSIntegration
+from datadog_api_client.v2.model.aws_integration_type import AWSIntegrationType
+from datadog_api_client.v2.model.aws_integration_update import AWSIntegrationUpdate
 from datadog_api_client.v2.model.aws_lambda_forwarder_config import AWSLambdaForwarderConfig
 from datadog_api_client.v2.model.aws_logs_config import AWSLogsConfig
 from datadog_api_client.v2.model.aws_logs_services_response import AWSLogsServicesResponse
@@ -52,6 +60,13 @@ from datadog_api_client.v2.model.aws_regions_include_all import AWSRegionsInclud
 from datadog_api_client.v2.model.aws_regions_include_only import AWSRegionsIncludeOnly
 from datadog_api_client.v2.model.aws_resources_config import AWSResourcesConfig
 from datadog_api_client.v2.model.aws_traces_config import AWSTracesConfig
+from datadog_api_client.v2.model.action_connection_attributes import ActionConnectionAttributes
+from datadog_api_client.v2.model.action_connection_attributes_update import ActionConnectionAttributesUpdate
+from datadog_api_client.v2.model.action_connection_data import ActionConnectionData
+from datadog_api_client.v2.model.action_connection_data_type import ActionConnectionDataType
+from datadog_api_client.v2.model.action_connection_data_update import ActionConnectionDataUpdate
+from datadog_api_client.v2.model.action_connection_integration import ActionConnectionIntegration
+from datadog_api_client.v2.model.action_connection_integration_update import ActionConnectionIntegrationUpdate
 from datadog_api_client.v2.model.active_billing_dimensions_attributes import ActiveBillingDimensionsAttributes
 from datadog_api_client.v2.model.active_billing_dimensions_body import ActiveBillingDimensionsBody
 from datadog_api_client.v2.model.active_billing_dimensions_response import ActiveBillingDimensionsResponse
@@ -447,6 +462,8 @@ from datadog_api_client.v2.model.cost_by_org import CostByOrg
 from datadog_api_client.v2.model.cost_by_org_attributes import CostByOrgAttributes
 from datadog_api_client.v2.model.cost_by_org_response import CostByOrgResponse
 from datadog_api_client.v2.model.cost_by_org_type import CostByOrgType
+from datadog_api_client.v2.model.create_action_connection_request import CreateActionConnectionRequest
+from datadog_api_client.v2.model.create_action_connection_response import CreateActionConnectionResponse
 from datadog_api_client.v2.model.create_app_request import CreateAppRequest
 from datadog_api_client.v2.model.create_app_request_data import CreateAppRequestData
 from datadog_api_client.v2.model.create_app_request_data_attributes import CreateAppRequestDataAttributes
@@ -883,6 +900,7 @@ from datadog_api_client.v2.model.gcpsts_service_account_update_request_data impo
 from datadog_api_client.v2.model.gcpsts_service_accounts_response import GCPSTSServiceAccountsResponse
 from datadog_api_client.v2.model.gcp_service_account_meta import GCPServiceAccountMeta
 from datadog_api_client.v2.model.gcp_service_account_type import GCPServiceAccountType
+from datadog_api_client.v2.model.get_action_connection_response import GetActionConnectionResponse
 from datadog_api_client.v2.model.get_app_response import GetAppResponse
 from datadog_api_client.v2.model.get_app_response_data import GetAppResponseData
 from datadog_api_client.v2.model.get_app_response_data_attributes import GetAppResponseDataAttributes
@@ -898,12 +916,25 @@ from datadog_api_client.v2.model.get_interfaces_response import GetInterfacesRes
 from datadog_api_client.v2.model.get_team_memberships_sort import GetTeamMembershipsSort
 from datadog_api_client.v2.model.group_scalar_column import GroupScalarColumn
 from datadog_api_client.v2.model.group_tags import GroupTags
+from datadog_api_client.v2.model.http_body import HTTPBody
 from datadog_api_client.v2.model.httpci_app_error import HTTPCIAppError
 from datadog_api_client.v2.model.httpci_app_errors import HTTPCIAppErrors
+from datadog_api_client.v2.model.http_credentials import HTTPCredentials
+from datadog_api_client.v2.model.http_credentials_update import HTTPCredentialsUpdate
+from datadog_api_client.v2.model.http_header import HTTPHeader
+from datadog_api_client.v2.model.http_header_update import HTTPHeaderUpdate
+from datadog_api_client.v2.model.http_integration import HTTPIntegration
+from datadog_api_client.v2.model.http_integration_type import HTTPIntegrationType
+from datadog_api_client.v2.model.http_integration_update import HTTPIntegrationUpdate
 from datadog_api_client.v2.model.http_log import HTTPLog
 from datadog_api_client.v2.model.http_log_error import HTTPLogError
 from datadog_api_client.v2.model.http_log_errors import HTTPLogErrors
 from datadog_api_client.v2.model.http_log_item import HTTPLogItem
+from datadog_api_client.v2.model.http_token import HTTPToken
+from datadog_api_client.v2.model.http_token_auth import HTTPTokenAuth
+from datadog_api_client.v2.model.http_token_auth_type import HTTPTokenAuthType
+from datadog_api_client.v2.model.http_token_auth_update import HTTPTokenAuthUpdate
+from datadog_api_client.v2.model.http_token_update import HTTPTokenUpdate
 from datadog_api_client.v2.model.historical_job_data_type import HistoricalJobDataType
 from datadog_api_client.v2.model.historical_job_list_meta import HistoricalJobListMeta
 from datadog_api_client.v2.model.historical_job_options import HistoricalJobOptions
@@ -2216,7 +2247,10 @@ from datadog_api_client.v2.model.timeseries_response_series_list import Timeseri
 from datadog_api_client.v2.model.timeseries_response_times import TimeseriesResponseTimes
 from datadog_api_client.v2.model.timeseries_response_values import TimeseriesResponseValues
 from datadog_api_client.v2.model.timeseries_response_values_list import TimeseriesResponseValuesList
+from datadog_api_client.v2.model.token_type import TokenType
 from datadog_api_client.v2.model.unit import Unit
+from datadog_api_client.v2.model.update_action_connection_request import UpdateActionConnectionRequest
+from datadog_api_client.v2.model.update_action_connection_response import UpdateActionConnectionResponse
 from datadog_api_client.v2.model.update_app_request import UpdateAppRequest
 from datadog_api_client.v2.model.update_app_request_data import UpdateAppRequestData
 from datadog_api_client.v2.model.update_app_request_data_attributes import UpdateAppRequestDataAttributes
@@ -2238,6 +2272,8 @@ from datadog_api_client.v2.model.upsert_catalog_entity_response import UpsertCat
 from datadog_api_client.v2.model.upsert_catalog_entity_response_included_item import (
     UpsertCatalogEntityResponseIncludedItem,
 )
+from datadog_api_client.v2.model.url_param import UrlParam
+from datadog_api_client.v2.model.url_param_update import UrlParamUpdate
 from datadog_api_client.v2.model.usage_application_security_monitoring_response import (
     UsageApplicationSecurityMonitoringResponse,
 )
@@ -2353,9 +2389,17 @@ __all__ = [
     "AWSAccountUpdateRequestAttributes",
     "AWSAccountUpdateRequestData",
     "AWSAccountsResponse",
+    "AWSAssumeRole",
+    "AWSAssumeRoleType",
+    "AWSAssumeRoleUpdate",
     "AWSAuthConfig",
     "AWSAuthConfigKeys",
     "AWSAuthConfigRole",
+    "AWSCredentials",
+    "AWSCredentialsUpdate",
+    "AWSIntegration",
+    "AWSIntegrationType",
+    "AWSIntegrationUpdate",
     "AWSLambdaForwarderConfig",
     "AWSLogsConfig",
     "AWSLogsServicesResponse",
@@ -2380,6 +2424,13 @@ __all__ = [
     "AWSRegionsIncludeOnly",
     "AWSResourcesConfig",
     "AWSTracesConfig",
+    "ActionConnectionAttributes",
+    "ActionConnectionAttributesUpdate",
+    "ActionConnectionData",
+    "ActionConnectionDataType",
+    "ActionConnectionDataUpdate",
+    "ActionConnectionIntegration",
+    "ActionConnectionIntegrationUpdate",
     "ActiveBillingDimensionsAttributes",
     "ActiveBillingDimensionsBody",
     "ActiveBillingDimensionsResponse",
@@ -2711,6 +2762,8 @@ __all__ = [
     "CostByOrgAttributes",
     "CostByOrgResponse",
     "CostByOrgType",
+    "CreateActionConnectionRequest",
+    "CreateActionConnectionResponse",
     "CreateAppRequest",
     "CreateAppRequestData",
     "CreateAppRequestDataAttributes",
@@ -3043,6 +3096,7 @@ __all__ = [
     "GCPSTSServiceAccountsResponse",
     "GCPServiceAccountMeta",
     "GCPServiceAccountType",
+    "GetActionConnectionResponse",
     "GetAppResponse",
     "GetAppResponseData",
     "GetAppResponseDataAttributes",
@@ -3058,12 +3112,25 @@ __all__ = [
     "GetTeamMembershipsSort",
     "GroupScalarColumn",
     "GroupTags",
+    "HTTPBody",
     "HTTPCIAppError",
     "HTTPCIAppErrors",
+    "HTTPCredentials",
+    "HTTPCredentialsUpdate",
+    "HTTPHeader",
+    "HTTPHeaderUpdate",
+    "HTTPIntegration",
+    "HTTPIntegrationType",
+    "HTTPIntegrationUpdate",
     "HTTPLog",
     "HTTPLogError",
     "HTTPLogErrors",
     "HTTPLogItem",
+    "HTTPToken",
+    "HTTPTokenAuth",
+    "HTTPTokenAuthType",
+    "HTTPTokenAuthUpdate",
+    "HTTPTokenUpdate",
     "HistoricalJobDataType",
     "HistoricalJobListMeta",
     "HistoricalJobOptions",
@@ -4140,7 +4207,10 @@ __all__ = [
     "TimeseriesResponseTimes",
     "TimeseriesResponseValues",
     "TimeseriesResponseValuesList",
+    "TokenType",
     "Unit",
+    "UpdateActionConnectionRequest",
+    "UpdateActionConnectionResponse",
     "UpdateAppRequest",
     "UpdateAppRequestData",
     "UpdateAppRequestDataAttributes",
@@ -4160,6 +4230,8 @@ __all__ = [
     "UpsertCatalogEntityRequest",
     "UpsertCatalogEntityResponse",
     "UpsertCatalogEntityResponseIncludedItem",
+    "UrlParam",
+    "UrlParamUpdate",
     "UsageApplicationSecurityMonitoringResponse",
     "UsageAttributesObject",
     "UsageDataObject",
