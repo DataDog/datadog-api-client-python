@@ -90,7 +90,7 @@ class RestrictionPoliciesApi:
                     "location": "path",
                 },
                 "allow_self_lockout": {
-                    "openapi_types": (str,),
+                    "openapi_types": (bool,),
                     "attribute": "allow_self_lockout",
                     "location": "query",
                 },
@@ -143,7 +143,7 @@ class RestrictionPoliciesApi:
         resource_id: str,
         body: RestrictionPolicyUpdateRequest,
         *,
-        allow_self_lockout: Union[str, UnsetType] = unset,
+        allow_self_lockout: Union[bool, UnsetType] = unset,
     ) -> RestrictionPolicyResponse:
         """Update a restriction policy.
 
@@ -198,7 +198,7 @@ class RestrictionPoliciesApi:
         :param body: Restriction policy payload
         :type body: RestrictionPolicyUpdateRequest
         :param allow_self_lockout: Allows admins (users with the ``user_access_manage`` permission) to remove their own access from the resource if set to ``true``. By default, this is set to ``false`` , preventing admins from locking themselves out.
-        :type allow_self_lockout: str, optional
+        :type allow_self_lockout: bool, optional
         :rtype: RestrictionPolicyResponse
         """
         kwargs: Dict[str, Any] = {}
