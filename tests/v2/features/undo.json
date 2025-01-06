@@ -197,13 +197,13 @@
     }
   },
   "DisableApp": {
-    "tag": "App Deployment",
+    "tag": "Apps",
     "undo": {
       "type": "idempotent"
     }
   },
   "DeployApp": {
-    "tag": "App Deployment",
+    "tag": "Apps",
     "undo": {
       "type": "idempotent"
     }
