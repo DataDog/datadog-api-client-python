@@ -1105,6 +1105,7 @@ from datadog_api_client.v2.model.intake_payload_accepted import IntakePayloadAcc
 from datadog_api_client.v2.model.interface_attributes import InterfaceAttributes
 from datadog_api_client.v2.model.interface_attributes_status import InterfaceAttributesStatus
 from datadog_api_client.v2.model.jsonapi_error_item import JSONAPIErrorItem
+from datadog_api_client.v2.model.jsonapi_error_item_source import JSONAPIErrorItemSource
 from datadog_api_client.v2.model.jsonapi_error_response import JSONAPIErrorResponse
 from datadog_api_client.v2.model.jira_integration_metadata import JiraIntegrationMetadata
 from datadog_api_client.v2.model.jira_integration_metadata_issues_item import JiraIntegrationMetadataIssuesItem
@@ -3224,6 +3225,7 @@ __all__ = [
     "InterfaceAttributes",
     "InterfaceAttributesStatus",
     "JSONAPIErrorItem",
+    "JSONAPIErrorItemSource",
     "JSONAPIErrorResponse",
     "JiraIntegrationMetadata",
     "JiraIntegrationMetadataIssuesItem",
