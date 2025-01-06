@@ -47,7 +47,7 @@
   
   
     <title>datadog-api-client-python &#8212; Datadog API Client for Python  documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=83e35b93" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=75810a84" />
     <link rel="stylesheet" type="text/css" href="_static/material.css?v=79c92029" />
     <script src="_static/documentation_options.js?v=5929fcd5"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
@@ -741,10 +741,10 @@
 <section id="getting-started">
 <h2 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading">¶</a></h2>
 <p>Please follow the <a class="reference external" href="#installation">installation</a> instruction and execute the following Python code:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datadog_api_client</span> <span class="kn">import</span> <span class="n">ApiClient</span><span class="p">,</span> <span class="n">Configuration</span>
-<span class="kn">from</span> <span class="nn">datadog_api_client.v1.api.monitors_api</span> <span class="kn">import</span> <span class="n">MonitorsApi</span>
-<span class="kn">from</span> <span class="nn">datadog_api_client.v1.model.monitor</span> <span class="kn">import</span> <span class="n">Monitor</span>
-<span class="kn">from</span> <span class="nn">datadog_api_client.v1.model.monitor_type</span> <span class="kn">import</span> <span class="n">MonitorType</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">datadog_api_client</span><span class="w"> </span><span class="kn">import</span> <span class="n">ApiClient</span><span class="p">,</span> <span class="n">Configuration</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datadog_api_client.v1.api.monitors_api</span><span class="w"> </span><span class="kn">import</span> <span class="n">MonitorsApi</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datadog_api_client.v1.model.monitor</span><span class="w"> </span><span class="kn">import</span> <span class="n">Monitor</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datadog_api_client.v1.model.monitor_type</span><span class="w"> </span><span class="kn">import</span> <span class="n">MonitorType</span>
 
 <span class="n">body</span> <span class="o">=</span> <span class="n">Monitor</span><span class="p">(</span>
     <span class="n">name</span><span class="o">=</span><span class="s2">"example"</span><span class="p">,</span>
@@ -823,8 +823,8 @@ on your configuration object:</p>
 <h3 id="threads-support">Threads support<a class="headerlink" href="#threads-support" title="Link to this heading">¶</a></h3>
 <p>You can run API calls in a thread by using <code class="docutils literal notranslate"><span class="pre">ThreadedApiClient</span></code> in place of <code class="docutils literal notranslate"><span class="pre">ApiClient</span></code>. API calls will then
 return a <code class="docutils literal notranslate"><span class="pre">AsyncResult</span></code> instance on which you can call get to retrieve the result:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datadog_api_client</span> <span class="kn">import</span> <span class="n">Configuration</span><span class="p">,</span> <span class="n">ThreadedApiClient</span>
-<span class="kn">from</span> <span class="nn">datadog_api_client.v1.api.dashboards_api</span> <span class="kn">import</span> <span class="n">DashboardsApi</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">datadog_api_client</span><span class="w"> </span><span class="kn">import</span> <span class="n">Configuration</span><span class="p">,</span> <span class="n">ThreadedApiClient</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datadog_api_client.v1.api.dashboards_api</span><span class="w"> </span><span class="kn">import</span> <span class="n">DashboardsApi</span>
 
 <span class="n">configuration</span> <span class="o">=</span> <span class="n">Configuration</span><span class="p">()</span>
 <span class="k">with</span> <span class="n">ThreadedApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
@@ -840,12 +840,12 @@ return a <code class="docutils literal notranslate"><span class="pre">AsyncResul
 <p>The library supports asynchronous operations when using <code class="docutils literal notranslate"><span class="pre">AsyncApiClient</span></code> for the transport. When that client is used,
 the API methods will then return coroutines that you can wait for.</p>
 <p>To make async support available, you need to install the extra <code class="docutils literal notranslate"><span class="pre">async</span></code> qualifiers during installation: <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">datadog-api-client[async]</span></code>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">asyncio</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
 
-<span class="kn">from</span> <span class="nn">datadog_api_client</span> <span class="kn">import</span> <span class="n">Configuration</span><span class="p">,</span> <span class="n">AsyncApiClient</span>
-<span class="kn">from</span> <span class="nn">datadog_api_client.v1.api.dashboards_api</span> <span class="kn">import</span> <span class="n">DashboardsApi</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datadog_api_client</span><span class="w"> </span><span class="kn">import</span> <span class="n">Configuration</span><span class="p">,</span> <span class="n">AsyncApiClient</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datadog_api_client.v1.api.dashboards_api</span><span class="w"> </span><span class="kn">import</span> <span class="n">DashboardsApi</span>
 
-<span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
     <span class="n">configuration</span> <span class="o">=</span> <span class="n">Configuration</span><span class="p">()</span>
     <span class="k">async</span> <span class="k">with</span> <span class="n">AsyncApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
         <span class="n">api_instance</span> <span class="o">=</span> <span class="n">DashboardsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
@@ -860,8 +860,8 @@ the API methods will then return coroutines that you can wait for.</p>
 <h3 id="pagination">Pagination<a class="headerlink" href="#pagination" title="Link to this heading">¶</a></h3>
 <p>Several listing operations have a pagination method to help consume all the items available.
 For example, to retrieve all your incidents:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datadog_api_client</span> <span class="kn">import</span> <span class="n">ApiClient</span><span class="p">,</span> <span class="n">Configuration</span>
-<span class="kn">from</span> <span class="nn">datadog_api_client.v2.api.incidents_api</span> <span class="kn">import</span> <span class="n">IncidentsApi</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">datadog_api_client</span><span class="w"> </span><span class="kn">import</span> <span class="n">ApiClient</span><span class="p">,</span> <span class="n">Configuration</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datadog_api_client.v2.api.incidents_api</span><span class="w"> </span><span class="kn">import</span> <span class="n">IncidentsApi</span>
 
 <span class="n">configuration</span> <span class="o">=</span> <span class="n">Configuration</span><span class="p">()</span>
 <span class="n">configuration</span><span class="o">.</span><span class="n">unstable_operations</span><span class="p">[</span><span class="s2">"list_incidents"</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
