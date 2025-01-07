@@ -6353,6 +6353,13 @@ datadog\_api\_client.v2.model.jsonapi\_error\_item module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.jsonapi\_error\_item\_source module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.jsonapi_error_item_source
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.jsonapi\_error\_response module
 -------------------------------------------------------------
 
