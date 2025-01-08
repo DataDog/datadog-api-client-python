@@ -921,6 +921,34 @@ datadog\_api\_client.v2.model.aws\_resources\_config module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.aws\_scan\_options\_attributes module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_scan_options_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_scan\_options\_data module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_scan_options_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_scan\_options\_response module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_scan_options_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_scan\_options\_type module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_scan_options_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.aws\_traces\_config module
 --------------------------------------------------------
 
