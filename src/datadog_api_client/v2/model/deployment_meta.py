@@ -10,7 +10,6 @@ from datadog_api_client.model_utils import (
     cached_property,
     unset,
     UnsetType,
-    UUID,
 )
 
 
@@ -21,7 +20,7 @@ class DeploymentMeta(ModelNormal):
             "created_at": (str,),
             "user_id": (int,),
             "user_name": (str,),
-            "user_uuid": (UUID,),
+            "user_uuid": (str,),
         }
 
     attribute_map = {
@@ -36,7 +35,7 @@ class DeploymentMeta(ModelNormal):
         created_at: Union[str, UnsetType] = unset,
         user_id: Union[int, UnsetType] = unset,
         user_name: Union[str, UnsetType] = unset,
-        user_uuid: Union[UUID, UnsetType] = unset,
+        user_uuid: Union[str, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -52,7 +51,7 @@ class DeploymentMeta(ModelNormal):
         :type user_name: str, optional
 
         :param user_uuid: The ``DeploymentMeta`` ``user_uuid``.
-        :type user_uuid: UUID, optional
+        :type user_uuid: str, optional
         """
         if created_at is not unset:
             kwargs["created_at"] = created_at

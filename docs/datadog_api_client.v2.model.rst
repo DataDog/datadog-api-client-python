@@ -151,6 +151,27 @@ datadog\_api\_client.v2.model.apm\_retention\_filter\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.app\_builder\_error module
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.app_builder_error
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.app\_builder\_error\_errors\_items module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.app_builder_error_errors_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.app\_builder\_error\_errors\_items\_source module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.app_builder_error_errors_items_source
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.app\_builder\_event module
 --------------------------------------------------------
 

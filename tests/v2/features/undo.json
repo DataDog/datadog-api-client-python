@@ -203,13 +203,13 @@
     }
   },
   "DisableApp": {
-    "tag": "Apps",
+    "tag": "App Deployment",
     "undo": {
       "type": "idempotent"
     }
   },
   "DeployApp": {
-    "tag": "Apps",
+    "tag": "App Deployment",
     "undo": {
       "type": "idempotent"
     }

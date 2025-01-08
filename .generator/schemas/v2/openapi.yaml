@@ -1634,6 +1634,34 @@ components:
       type: string
       x-enum-varnames:
       - apm_retention_filter
+    AppBuilderError:
+      description: The definition of `AppBuilderError` object.
+      properties:
+        errors:
+          description: The `AppBuilderError` `errors`.
+          items:
+            $ref: '#/components/schemas/AppBuilderErrorErrorsItems'
+          type: array
+      type: object
+    AppBuilderErrorErrorsItems:
+      description: The definition of `AppBuilderErrorErrorsItems` object.
+      properties:
+        detail:
+          description: The `items` `detail`.
+          type: string
+        source:
+          $ref: '#/components/schemas/AppBuilderErrorErrorsItemsSource'
+      type: object
+    AppBuilderErrorErrorsItemsSource:
+      description: The definition of `AppBuilderErrorErrorsItemsSource` object.
+      properties:
+        parameter:
+          description: The `source` `parameter`.
+          type: string
+        pointer:
+          description: The `source` `pointer`.
+          type: string
+      type: object
     AppBuilderEvent:
       additionalProperties: {}
       description: The definition of `AppBuilderEvent` object.
@@ -1720,7 +1748,6 @@ components:
           type: string
         user_uuid:
           description: The `AppMeta` `user_uuid`.
-          format: uuid
           type: string
         version:
           description: The `AppMeta` `version`.
@@ -9138,7 +9165,6 @@ components:
           type: string
         user_uuid:
           description: The `meta` `user_uuid`.
-          format: uuid
           type: string
       type: object
     DeploymentIncludedType:
@@ -9164,7 +9190,6 @@ components:
           type: string
         user_uuid:
           description: The `DeploymentMeta` `user_uuid`.
-          format: uuid
           type: string
       type: object
     DeploymentRelationship:
@@ -9207,7 +9232,6 @@ components:
           type: string
         user_uuid:
           description: The `meta` `user_uuid`.
-          format: uuid
           type: string
       type: object
     DeploymentType:
@@ -31122,19 +31146,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/JSONAPIErrorResponse'
+                $ref: '#/components/schemas/AppBuilderError'
           description: Bad Request
         '403':
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/JSONAPIErrorResponse'
-          description: Forbidden
+                $ref: '#/components/schemas/AppBuilderError'
+          description: Forbidden, e.g. missing permissions to delete one or more apps
         '404':
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/JSONAPIErrorResponse'
+                $ref: '#/components/schemas/AppBuilderError'
           description: Not Found
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
@@ -31151,71 +31175,63 @@ paths:
       description: List all apps, with optional filters and sorting
       operationId: ListApps
       parameters:
-      - description: The number of apps to return per page.
+      - description: The number of apps to return per page
         in: query
         name: limit
         required: false
         schema:
           format: int64
           type: integer
-      - description: The page number to return.
+      - description: The page number to return
         in: query
         name: page
         required: false
         schema:
           format: int64
           type: integer
-      - description: Filter apps by the app creator. Usually the user's email.
+      - description: The `AppsFilter` `user_name`.
         in: query
         name: filter[user_name]
         required: false
         schema:
           type: string
-      - description: Filter apps by the app creator's UUID.
+      - description: The `AppsFilter` `user_uuid`.
         in: query
         name: filter[user_uuid]
         required: false
         schema:
-          format: uuid
           type: string
-      - description: Filter by app name.
+      - description: The `AppsFilter` `name`.
         in: query
         name: filter[name]
         required: false
         schema:
           type: string
-      - description: Filter apps by the app name or the app creator.
+      - description: The `AppsFilter` `query`.
         in: query
         name: filter[query]
         required: false
         schema:
           type: string
-      - description: Filter apps by whether they are published.
+      - description: The `AppsFilter` `deployed`.
         in: query
         name: filter[deployed]
         required: false
         schema:
           type: boolean
-      - description: Filter apps by tags.
+      - description: The `AppsFilter` `tags`.
         in: query
         name: filter[tags]
         required: false
         schema:
           type: string
-      - description: Filter apps by whether you have added them to your favorites.
+      - description: The `AppsFilter` `favorite`.
         in: query
         name: filter[favorite]
         required: false
         schema:
           type: boolean
-      - description: Filter apps by whether they are enabled for self-service.
-        in: query
-        name: filter[self_service]
-        required: false
-        schema:
-          type: boolean
-      - description: The fields and direction to sort apps by.
-        explode: false
+      - explode: false
         in: query
         name: sort
         required: false
@@ -31235,13 +31251,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/JSONAPIErrorResponse'
-          description: Bad Request
+                $ref: '#/components/schemas/AppBuilderError'
+          description: Bad Request, e.g. invalid sort parameter
         '403':
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/JSONAPIErrorResponse'
+                $ref: '#/components/schemas/AppBuilderError'
           description: Forbidden
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
@@ -31274,14 +31290,15 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/JSONAPIErrorResponse'
+                $ref: '#/components/schemas/AppBuilderError'
           description: Bad Request
         '403':
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/JSONAPIErrorResponse'
-          description: Forbidden
+                $ref: '#/components/schemas/AppBuilderError'
+          description: Forbidden, e.g. missing required permissions to a connection
+            or workflow used in the app
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
       summary: Create App
@@ -31316,25 +31333,25 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/JSONAPIErrorResponse'
+                $ref: '#/components/schemas/AppBuilderError'
           description: Bad Request
         '403':
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/JSONAPIErrorResponse'
+                $ref: '#/components/schemas/AppBuilderError'
           description: Forbidden
         '404':
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/JSONAPIErrorResponse'
+                $ref: '#/components/schemas/AppBuilderError'
           description: Not Found
         '410':
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/JSONAPIErrorResponse'
+                $ref: '#/components/schemas/AppBuilderError'
           description: Gone
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
@@ -31356,11 +31373,6 @@ paths:
         required: true
         schema:
           type: string
-      - in: query
-        name: version
-        required: false
-        schema:
-          type: string
       responses:
         '200':
           content:
@@ -31372,19 +31384,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/JSONAPIErrorResponse'
+                $ref: '#/components/schemas/AppBuilderError'
           description: Bad Request
         '403':
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/JSONAPIErrorResponse'
+                $ref: '#/components/schemas/AppBuilderError'
           description: Forbidden
         '404':
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/JSONAPIErrorResponse'
+                $ref: '#/components/schemas/AppBuilderError'
           description: Not Found
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
@@ -31424,14 +31436,15 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/JSONAPIErrorResponse'
+                $ref: '#/components/schemas/AppBuilderError'
           description: Bad Request
         '403':
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/JSONAPIErrorResponse'
-          description: Forbidden
+                $ref: '#/components/schemas/AppBuilderError'
+          description: Forbidden, e.g. missing required permissions to a connection
+            or workflow used in the app
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
       summary: Update App
@@ -31466,25 +31479,25 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/JSONAPIErrorResponse'
+                $ref: '#/components/schemas/AppBuilderError'
           description: Bad Request
         '403':
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/JSONAPIErrorResponse'
+                $ref: '#/components/schemas/AppBuilderError'
           description: Forbidden
         '404':
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/JSONAPIErrorResponse'
+                $ref: '#/components/schemas/AppBuilderError'
           description: Not Found
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
       summary: Disable App
       tags:
-      - Apps
+      - App Deployment
       x-permission:
         operator: OR
         permissions:
@@ -31511,25 +31524,25 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/JSONAPIErrorResponse'
+                $ref: '#/components/schemas/AppBuilderError'
           description: Bad Request
         '403':
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/JSONAPIErrorResponse'
+                $ref: '#/components/schemas/AppBuilderError'
           description: Forbidden
         '404':
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/JSONAPIErrorResponse'
+                $ref: '#/components/schemas/AppBuilderError'
           description: Not Found
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
       summary: Deploy App
       tags:
-      - Apps
+      - App Deployment
       x-permission:
         operator: OR
         permissions:
@@ -48205,10 +48218,9 @@ tags:
     teams to install Agents on every host or where Agents cannot be installed.\nGo
     to https://www.datadoghq.com/blog/agentless-scanning/ to learn more"
   name: Agentless Scanning
-- description: Datadog App Builder provides a low-code solution to rapidly develop
-    and integrate secure, customized applications into your monitoring stack that
-    are built to accelerate remediation at scale. These API endpoints allow you to
-    create, read, update, delete, and publish apps.
+- description: Deploy and disable apps in App Builder.
+  name: App Deployment
+- description: Create, read, update, and delete apps in App Builder.
   name: Apps
 - description: Search your Audit Logs events over HTTP.
   name: Audit

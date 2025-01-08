@@ -12,7 +12,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/app-builder/apps
   response:
     body:
-      string: '{"data":{"id":"500bf715-77a5-4c1d-b4ef-0d181b071daf","type":"appDefinitions"}}'
+      string: '{"data":{"id":"5cb67134-d7bd-4320-9cda-d79ec98cff4c","type":"appDefinitions"}}'
     headers:
       content-type:
       - application/vnd.api+json
@@ -25,10 +25,10 @@ interactions:
       accept:
       - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/app-builder/apps/500bf715-77a5-4c1d-b4ef-0d181b071daf
+    uri: https://api.datadoghq.com/api/v2/app-builder/apps/5cb67134-d7bd-4320-9cda-d79ec98cff4c
   response:
     body:
-      string: '{"data":{"id":"500bf715-77a5-4c1d-b4ef-0d181b071daf","type":"appDefinitions"}}'
+      string: '{"data":{"id":"5cb67134-d7bd-4320-9cda-d79ec98cff4c","type":"appDefinitions"}}'
     headers:
       content-type:
       - application/vnd.api+json
@@ -41,7 +41,7 @@ interactions:
       accept:
       - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/app-builder/apps/500bf715-77a5-4c1d-b4ef-0d181b071daf
+    uri: https://api.datadoghq.com/api/v2/app-builder/apps/5cb67134-d7bd-4320-9cda-d79ec98cff4c
   response:
     body:
       string: '{"errors":[{"detail":"app not found"}]}'

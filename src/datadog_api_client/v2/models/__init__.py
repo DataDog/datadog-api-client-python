@@ -58,6 +58,9 @@ from datadog_api_client.v2.model.active_billing_dimensions_response import Activ
 from datadog_api_client.v2.model.active_billing_dimensions_type import ActiveBillingDimensionsType
 from datadog_api_client.v2.model.advisory import Advisory
 from datadog_api_client.v2.model.apm_retention_filter_type import ApmRetentionFilterType
+from datadog_api_client.v2.model.app_builder_error import AppBuilderError
+from datadog_api_client.v2.model.app_builder_error_errors_items import AppBuilderErrorErrorsItems
+from datadog_api_client.v2.model.app_builder_error_errors_items_source import AppBuilderErrorErrorsItemsSource
 from datadog_api_client.v2.model.app_builder_event import AppBuilderEvent
 from datadog_api_client.v2.model.app_builder_event_name import AppBuilderEventName
 from datadog_api_client.v2.model.app_builder_event_type import AppBuilderEventType
@@ -2388,6 +2391,9 @@ __all__ = [
     "ActiveBillingDimensionsType",
     "Advisory",
     "ApmRetentionFilterType",
+    "AppBuilderError",
+    "AppBuilderErrorErrorsItems",
+    "AppBuilderErrorErrorsItemsSource",
     "AppBuilderEvent",
     "AppBuilderEventName",
     "AppBuilderEventType",
