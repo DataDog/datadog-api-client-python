@@ -131,6 +131,10 @@ from datadog_api_client.v2.model.aws_cur_config_post_request_type import AwsCURC
 from datadog_api_client.v2.model.aws_cur_config_response import AwsCURConfigResponse
 from datadog_api_client.v2.model.aws_cur_config_type import AwsCURConfigType
 from datadog_api_client.v2.model.aws_cur_configs_response import AwsCURConfigsResponse
+from datadog_api_client.v2.model.aws_scan_options_attributes import AwsScanOptionsAttributes
+from datadog_api_client.v2.model.aws_scan_options_data import AwsScanOptionsData
+from datadog_api_client.v2.model.aws_scan_options_response import AwsScanOptionsResponse
+from datadog_api_client.v2.model.aws_scan_options_type import AwsScanOptionsType
 from datadog_api_client.v2.model.azure_uc_config import AzureUCConfig
 from datadog_api_client.v2.model.azure_uc_config_pair import AzureUCConfigPair
 from datadog_api_client.v2.model.azure_uc_config_pair_attributes import AzureUCConfigPairAttributes
@@ -2457,6 +2461,10 @@ __all__ = [
     "AwsCURConfigResponse",
     "AwsCURConfigType",
     "AwsCURConfigsResponse",
+    "AwsScanOptionsAttributes",
+    "AwsScanOptionsData",
+    "AwsScanOptionsResponse",
+    "AwsScanOptionsType",
     "AzureUCConfig",
     "AzureUCConfigPair",
     "AzureUCConfigPairAttributes",
