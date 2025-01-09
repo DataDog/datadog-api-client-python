@@ -28873,7 +28873,7 @@ paths:
         - metrics_metadata_write
   /api/v1/monitor:
     get:
-      description: Get details about the specified monitor from your organization.
+      description: Get all monitors from your organization.
       operationId: ListMonitors
       parameters:
       - description: 'When specified, shows additional information about the group
@@ -28956,6 +28956,7 @@ paths:
           content:
             application/json:
               schema:
+                description: An array of monitor objects.
                 items:
                   $ref: '#/components/schemas/Monitor'
                 type: array
@@ -28979,7 +28980,7 @@ paths:
         appKeyAuth: []
       - AuthZ:
         - monitors_read
-      summary: Get all monitor details
+      summary: Get all monitors
       tags:
       - Monitors
       x-pagination:
