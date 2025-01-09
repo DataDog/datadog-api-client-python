@@ -24,8 +24,9 @@ from datadog_api_client.v2.model.events_list_request import EventsListRequest
 
 class EventsApi:
     """
-    The Event Management API allows you to programmatically post events to the Events Explorer
-    and fetch events from the Events Explorer. See the `Event Management page <https://docs.datadoghq.com/service_management/events/>`_ for more information.
+    The Event Management API allows you to programmatically post events to the Events Explorer and fetch events from the Events Explorer. See the `Event Management page <https://docs.datadoghq.com/service_management/events/>`_ for more information.
+
+    **Update to Datadog monitor events aggregation_key starting March 1, 2025:** The Datadog monitor events ``aggregation_key`` is unique to each Monitor ID. Starting March 1st, this key will also include Monitor Group, making it unique per *Monitor ID and Monitor Group*. If you're using monitor events ``aggregation_key`` in dashboard queries or the Event API, you must migrate to use ``@monitor.id``. Reach out to `support <https://www.datadoghq.com/support/>`_ if you have any question.
     """
 
     def __init__(self, api_client=None):
