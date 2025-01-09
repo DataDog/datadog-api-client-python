@@ -640,9 +640,9 @@ class MonitorsApi:
         page: Union[int, UnsetType] = unset,
         page_size: Union[int, UnsetType] = unset,
     ) -> List[Monitor]:
-        """Get all monitor details.
+        """Get all monitors.
 
-        Get details about the specified monitor from your organization.
+        Get all monitors from your organization.
 
         :param group_states: When specified, shows additional information about the group states.
             Choose one or more from ``all`` , ``alert`` , ``warn`` , and ``no data``.
@@ -704,7 +704,7 @@ class MonitorsApi:
         page: Union[int, UnsetType] = unset,
         page_size: Union[int, UnsetType] = unset,
     ) -> collections.abc.Iterable[Monitor]:
-        """Get all monitor details.
+        """Get all monitors.
 
         Provide a paginated version of :meth:`list_monitors`, returning all items.
 

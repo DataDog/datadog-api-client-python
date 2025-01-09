@@ -1,5 +1,5 @@
 """
-Get all monitor details returns "OK" response
+Get all monitors returns "OK" response
 """
 
 from datadog_api_client import ApiClient, Configuration
