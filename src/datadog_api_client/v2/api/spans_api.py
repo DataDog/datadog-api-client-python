@@ -216,7 +216,7 @@ class SpansApi:
         :type sort: SpansSort, optional
         :param page_cursor: List following results with a cursor provided in the previous query.
         :type page_cursor: str, optional
-        :param page_limit: Maximum number of spans in the response.
+        :param page_limit: Maximum number of spans in the response. Defaults to 10 and allows up to 5000.
         :type page_limit: int, optional
         :rtype: SpansListResponse
         """
@@ -265,7 +265,7 @@ class SpansApi:
         :type sort: SpansSort, optional
         :param page_cursor: List following results with a cursor provided in the previous query.
         :type page_cursor: str, optional
-        :param page_limit: Maximum number of spans in the response.
+        :param page_limit: Maximum number of spans in the response. Defaults to 10 and allows up to 5000.
         :type page_limit: int, optional
 
         :return: A generator of paginated results.
