@@ -12,7 +12,7 @@ from datadog_api_client.model_utils import (
 
 class LogsPipelineList(ModelSimple):
     """
-    Array of pipeline ID strings.
+    Array of all log pipeline objects configured for the organization.
 
 
     :type value: [LogsPipeline]
