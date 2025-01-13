@@ -154,6 +154,9 @@ class UsageSummaryDateOrg(ModelNormal):
             "rum_mobile_lite_session_count_ios_sum": (int,),
             "rum_mobile_lite_session_count_reactnative_sum": (int,),
             "rum_mobile_lite_session_count_roku_sum": (int,),
+            "rum_mobile_replay_session_count_android_sum": (int,),
+            "rum_mobile_replay_session_count_ios_sum": (int,),
+            "rum_mobile_replay_session_count_reactnative_sum": (int,),
             "rum_replay_session_count_sum": (int,),
             "rum_session_count_sum": (int,),
             "rum_total_session_count_sum": (int,),
@@ -319,6 +322,9 @@ class UsageSummaryDateOrg(ModelNormal):
         "rum_mobile_lite_session_count_ios_sum": "rum_mobile_lite_session_count_ios_sum",
         "rum_mobile_lite_session_count_reactnative_sum": "rum_mobile_lite_session_count_reactnative_sum",
         "rum_mobile_lite_session_count_roku_sum": "rum_mobile_lite_session_count_roku_sum",
+        "rum_mobile_replay_session_count_android_sum": "rum_mobile_replay_session_count_android_sum",
+        "rum_mobile_replay_session_count_ios_sum": "rum_mobile_replay_session_count_ios_sum",
+        "rum_mobile_replay_session_count_reactnative_sum": "rum_mobile_replay_session_count_reactnative_sum",
         "rum_replay_session_count_sum": "rum_replay_session_count_sum",
         "rum_session_count_sum": "rum_session_count_sum",
         "rum_total_session_count_sum": "rum_total_session_count_sum",
@@ -485,6 +491,9 @@ class UsageSummaryDateOrg(ModelNormal):
         rum_mobile_lite_session_count_ios_sum: Union[int, UnsetType] = unset,
         rum_mobile_lite_session_count_reactnative_sum: Union[int, UnsetType] = unset,
         rum_mobile_lite_session_count_roku_sum: Union[int, UnsetType] = unset,
+        rum_mobile_replay_session_count_android_sum: Union[int, UnsetType] = unset,
+        rum_mobile_replay_session_count_ios_sum: Union[int, UnsetType] = unset,
+        rum_mobile_replay_session_count_reactnative_sum: Union[int, UnsetType] = unset,
         rum_replay_session_count_sum: Union[int, UnsetType] = unset,
         rum_session_count_sum: Union[int, UnsetType] = unset,
         rum_total_session_count_sum: Union[int, UnsetType] = unset,
@@ -872,7 +881,7 @@ class UsageSummaryDateOrg(ModelNormal):
         :param profiling_aas_count_top99p: Shows the 99th percentile of all profiled Azure app services over all hours in the current date for all organizations.
         :type profiling_aas_count_top99p: int, optional
 
-        :param profiling_host_top99p: Shows the 99th percentile of all profiled hosts over all hours in the current date for the given org.
+        :param profiling_host_top99p: Shows the 99th percentile of all profiled hosts over all hours within the current date for the given org.
         :type profiling_host_top99p: int, optional
 
         :param public_id: The organization public id.
@@ -925,6 +934,15 @@ class UsageSummaryDateOrg(ModelNormal):
 
         :param rum_mobile_lite_session_count_roku_sum: Shows the sum of all mobile RUM lite sessions on Roku over all hours in the current date for the given org (To be introduced on October 1st, 2024).
         :type rum_mobile_lite_session_count_roku_sum: int, optional
+
+        :param rum_mobile_replay_session_count_android_sum: Shows the sum of all mobile RUM replay sessions on Android over all hours within the current date for the given org.
+        :type rum_mobile_replay_session_count_android_sum: int, optional
+
+        :param rum_mobile_replay_session_count_ios_sum: Shows the sum of all mobile RUM replay sessions on iOS over all hours within the current date for the given org.
+        :type rum_mobile_replay_session_count_ios_sum: int, optional
+
+        :param rum_mobile_replay_session_count_reactnative_sum: Shows the sum of all mobile RUM replay sessions on React Native over all hours within the current date for the given org.
+        :type rum_mobile_replay_session_count_reactnative_sum: int, optional
 
         :param rum_replay_session_count_sum: Shows the sum of all RUM Session Replay counts over all hours in the current date for the given org (To be introduced on October 1st, 2024).
         :type rum_replay_session_count_sum: int, optional
@@ -1283,6 +1301,12 @@ class UsageSummaryDateOrg(ModelNormal):
             kwargs["rum_mobile_lite_session_count_reactnative_sum"] = rum_mobile_lite_session_count_reactnative_sum
         if rum_mobile_lite_session_count_roku_sum is not unset:
             kwargs["rum_mobile_lite_session_count_roku_sum"] = rum_mobile_lite_session_count_roku_sum
+        if rum_mobile_replay_session_count_android_sum is not unset:
+            kwargs["rum_mobile_replay_session_count_android_sum"] = rum_mobile_replay_session_count_android_sum
+        if rum_mobile_replay_session_count_ios_sum is not unset:
+            kwargs["rum_mobile_replay_session_count_ios_sum"] = rum_mobile_replay_session_count_ios_sum
+        if rum_mobile_replay_session_count_reactnative_sum is not unset:
+            kwargs["rum_mobile_replay_session_count_reactnative_sum"] = rum_mobile_replay_session_count_reactnative_sum
         if rum_replay_session_count_sum is not unset:
             kwargs["rum_replay_session_count_sum"] = rum_replay_session_count_sum
         if rum_session_count_sum is not unset:
