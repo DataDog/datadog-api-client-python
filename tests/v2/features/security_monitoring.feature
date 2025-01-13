@@ -296,6 +296,24 @@ Feature: Security Monitoring
     And the response "data.attributes.rule_query" is equal to "type:log_detection source:cloudtrail"
     And the response "data.attributes.data_exclusion_query" is equal to "account_id:12345"
 
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Delete a custom framework returns "Bad Request" response
+    Given new "DeleteCustomFramework" request
+    And request contains "org_id" parameter from "REPLACE.ME"
+    And request contains "handle" parameter from "REPLACE.ME"
+    And request contains "version" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Delete a custom framework returns "OK" response
+    Given new "DeleteCustomFramework" request
+    And request contains "org_id" parameter from "REPLACE.ME"
+    And request contains "handle" parameter from "REPLACE.ME"
+    And request contains "version" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
   @skip @team:DataDog/k9-cloud-security-platform
   Scenario: Delete a non existing rule returns "Not Found" response
     Given new "DeleteSecurityMonitoringRule" request

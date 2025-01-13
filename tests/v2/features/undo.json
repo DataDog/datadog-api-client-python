@@ -1651,6 +1651,12 @@
       "type": "idempotent"
     }
   },
+  "DeleteCustomFramework": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListPermissions": {
     "tag": "Roles",
     "undo": {

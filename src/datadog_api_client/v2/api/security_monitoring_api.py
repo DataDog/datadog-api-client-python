@@ -15,6 +15,7 @@ from datadog_api_client.model_utils import (
     UnsetType,
     unset,
 )
+from datadog_api_client.v2.model.delete_custom_framework_response import DeleteCustomFrameworkResponse
 from datadog_api_client.v2.model.list_findings_response import ListFindingsResponse
 from datadog_api_client.v2.model.finding_evaluation import FindingEvaluation
 from datadog_api_client.v2.model.finding_status import FindingStatus
@@ -239,6 +240,41 @@ class SecurityMonitoringApi:
                 },
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._delete_custom_framework_endpoint = _Endpoint(
+            settings={
+                "response_type": (DeleteCustomFrameworkResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/orgs/{org_id}/cloud_security_management/custom_frameworks/{handle}/{version}",
+                "operation_id": "delete_custom_framework",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "org_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "org_id",
+                    "location": "path",
+                },
+                "handle": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "handle",
+                    "location": "path",
+                },
+                "version": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "version",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
             api_client=api_client,
         )
 
@@ -1458,6 +1494,33 @@ class SecurityMonitoringApi:
         kwargs["body"] = body
 
         return self._create_security_monitoring_suppression_endpoint.call_with_http_info(**kwargs)
+
+    def delete_custom_framework(
+        self,
+        org_id: str,
+        handle: str,
+        version: str,
+    ) -> DeleteCustomFrameworkResponse:
+        """Delete a custom framework.
+
+        Delete a custom framework.
+
+        :param org_id: The ID of the organization.
+        :type org_id: str
+        :param handle: The framework handle.
+        :type handle: str
+        :param version: The framework version.
+        :type version: str
+        :rtype: DeleteCustomFrameworkResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["org_id"] = org_id
+
+        kwargs["handle"] = handle
+
+        kwargs["version"] = version
+
+        return self._delete_custom_framework_endpoint.call_with_http_info(**kwargs)
 
     def delete_historical_job(
         self,
