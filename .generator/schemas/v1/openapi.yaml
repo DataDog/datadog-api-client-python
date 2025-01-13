@@ -29766,7 +29766,7 @@ paths:
       x-permission:
         operator: OR
         permissions:
-        - monitors_write
+        - monitors_read
   /api/v1/monitor/{monitor_id}:
     delete:
       description: Delete the specified monitor
@@ -30067,7 +30067,7 @@ paths:
       x-permission:
         operator: OR
         permissions:
-        - monitors_write
+        - monitors_read
   /api/v1/monthly_custom_reports:
     get:
       deprecated: true
