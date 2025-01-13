@@ -611,6 +611,7 @@ from datadog_api_client.v2.model.custom_destination_update_request_definition im
     CustomDestinationUpdateRequestDefinition,
 )
 from datadog_api_client.v2.model.custom_destinations_response import CustomDestinationsResponse
+from datadog_api_client.v2.model.custom_framework_metadata import CustomFrameworkMetadata
 from datadog_api_client.v2.model.dora_deployment_request import DORADeploymentRequest
 from datadog_api_client.v2.model.dora_deployment_request_attributes import DORADeploymentRequestAttributes
 from datadog_api_client.v2.model.dora_deployment_request_data import DORADeploymentRequestData
@@ -648,6 +649,7 @@ from datadog_api_client.v2.model.delete_apps_request_data_items_type import Dele
 from datadog_api_client.v2.model.delete_apps_response import DeleteAppsResponse
 from datadog_api_client.v2.model.delete_apps_response_data_items import DeleteAppsResponseDataItems
 from datadog_api_client.v2.model.delete_apps_response_data_items_type import DeleteAppsResponseDataItemsType
+from datadog_api_client.v2.model.delete_custom_framework_response import DeleteCustomFrameworkResponse
 from datadog_api_client.v2.model.dependency_location import DependencyLocation
 from datadog_api_client.v2.model.deploy_app_response import DeployAppResponse
 from datadog_api_client.v2.model.deploy_app_response_data import DeployAppResponseData
@@ -2801,6 +2803,7 @@ __all__ = [
     "CustomDestinationUpdateRequestAttributes",
     "CustomDestinationUpdateRequestDefinition",
     "CustomDestinationsResponse",
+    "CustomFrameworkMetadata",
     "DORADeploymentRequest",
     "DORADeploymentRequestAttributes",
     "DORADeploymentRequestData",
@@ -2838,6 +2841,7 @@ __all__ = [
     "DeleteAppsResponse",
     "DeleteAppsResponseDataItems",
     "DeleteAppsResponseDataItemsType",
+    "DeleteCustomFrameworkResponse",
     "DependencyLocation",
     "DeployAppResponse",
     "DeployAppResponseData",

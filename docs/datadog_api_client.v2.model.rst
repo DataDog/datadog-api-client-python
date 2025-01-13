@@ -3301,6 +3301,13 @@ datadog\_api\_client.v2.model.custom\_destinations\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.custom\_framework\_metadata module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_framework_metadata
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.cvss module
 -----------------------------------------
 
@@ -3473,6 +3480,13 @@ datadog\_api\_client.v2.model.delete\_apps\_response\_data\_items\_type module
 ------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.delete_apps_response_data_items_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.delete\_custom\_framework\_response module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.delete_custom_framework_response
    :members:
    :show-inheritance:
 
