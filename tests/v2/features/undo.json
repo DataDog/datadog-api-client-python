@@ -439,6 +439,18 @@
       "type": "safe"
     }
   },
+  "CreateCustomFramework": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateCustomFramework": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListContainerImages": {
     "tag": "Container Images",
     "undo": {

@@ -455,6 +455,7 @@ from datadog_api_client.v2.model.create_app_request_data_type import CreateAppRe
 from datadog_api_client.v2.model.create_app_response import CreateAppResponse
 from datadog_api_client.v2.model.create_app_response_data import CreateAppResponseData
 from datadog_api_client.v2.model.create_app_response_data_type import CreateAppResponseDataType
+from datadog_api_client.v2.model.create_custom_framework_request import CreateCustomFrameworkRequest
 from datadog_api_client.v2.model.create_data_deletion_request_body import CreateDataDeletionRequestBody
 from datadog_api_client.v2.model.create_data_deletion_request_body_attributes import (
     CreateDataDeletionRequestBodyAttributes,
@@ -865,6 +866,8 @@ from datadog_api_client.v2.model.finding_status import FindingStatus
 from datadog_api_client.v2.model.finding_type import FindingType
 from datadog_api_client.v2.model.finding_vulnerability_type import FindingVulnerabilityType
 from datadog_api_client.v2.model.formula_limit import FormulaLimit
+from datadog_api_client.v2.model.framework_control import FrameworkControl
+from datadog_api_client.v2.model.framework_requirement import FrameworkRequirement
 from datadog_api_client.v2.model.full_api_key import FullAPIKey
 from datadog_api_client.v2.model.full_api_key_attributes import FullAPIKeyAttributes
 from datadog_api_client.v2.model.full_application_key import FullApplicationKey
@@ -2228,6 +2231,7 @@ from datadog_api_client.v2.model.update_app_response_data import UpdateAppRespon
 from datadog_api_client.v2.model.update_app_response_data_attributes import UpdateAppResponseDataAttributes
 from datadog_api_client.v2.model.update_app_response_data_type import UpdateAppResponseDataType
 from datadog_api_client.v2.model.update_app_response_relationship import UpdateAppResponseRelationship
+from datadog_api_client.v2.model.update_custom_framework_request import UpdateCustomFrameworkRequest
 from datadog_api_client.v2.model.update_open_api_response import UpdateOpenAPIResponse
 from datadog_api_client.v2.model.update_open_api_response_attributes import UpdateOpenAPIResponseAttributes
 from datadog_api_client.v2.model.update_open_api_response_data import UpdateOpenAPIResponseData
@@ -2721,6 +2725,7 @@ __all__ = [
     "CreateAppResponse",
     "CreateAppResponseData",
     "CreateAppResponseDataType",
+    "CreateCustomFrameworkRequest",
     "CreateDataDeletionRequestBody",
     "CreateDataDeletionRequestBodyAttributes",
     "CreateDataDeletionRequestBodyData",
@@ -3027,6 +3032,8 @@ __all__ = [
     "FindingType",
     "FindingVulnerabilityType",
     "FormulaLimit",
+    "FrameworkControl",
+    "FrameworkRequirement",
     "FullAPIKey",
     "FullAPIKeyAttributes",
     "FullApplicationKey",
@@ -4154,6 +4161,7 @@ __all__ = [
     "UpdateAppResponseDataAttributes",
     "UpdateAppResponseDataType",
     "UpdateAppResponseRelationship",
+    "UpdateCustomFrameworkRequest",
     "UpdateOpenAPIResponse",
     "UpdateOpenAPIResponseAttributes",
     "UpdateOpenAPIResponseData",
