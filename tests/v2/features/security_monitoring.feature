@@ -171,6 +171,20 @@ Feature: Security Monitoring
     And the response "message" is equal to "ddd"
     And the response "options.complianceRuleOptions.resourceType" is equal to "gcp_compute_disk"
 
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Create a custom framework returns "Bad Request" response
+    Given new "CreateCustomFramework" request
+    And body with value {"handle": "", "name": "", "requirements": [{"controls": [{"name": "", "rule_ids": [""]}], "name": ""}], "version": ""}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Create a custom framework returns "OK" response
+    Given new "CreateCustomFramework" request
+    And body with value {"handle": "", "name": "", "requirements": [{"controls": [{"name": "", "rule_ids": [""]}], "name": ""}], "version": ""}
+    When the request is sent
+    Then the response status is 200 OK
+
   @team:DataDog/k9-cloud-security-platform
   Scenario: Create a detection rule returns "Bad Request" response
     Given new "CreateSecurityMonitoringRule" request
@@ -826,6 +840,24 @@ Feature: Security Monitoring
     Then the response status is 200 OK
     And the response "name" is equal to "{{ unique }}_cloud_updated"
     And the response "id" has the same value as "cloud_configuration_rule.id"
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Update a custom framework returns "Bad Request" response
+    Given new "UpdateCustomFramework" request
+    And request contains "handle" parameter from "REPLACE.ME"
+    And request contains "version" parameter from "REPLACE.ME"
+    And body with value {"handle": "", "name": "", "requirements": [{"controls": [{"name": "", "rule_ids": [""]}], "name": ""}], "version": ""}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Update a custom framework returns "OK" response
+    Given new "UpdateCustomFramework" request
+    And request contains "handle" parameter from "REPLACE.ME"
+    And request contains "version" parameter from "REPLACE.ME"
+    And body with value {"handle": "", "name": "", "requirements": [{"controls": [{"name": "", "rule_ids": [""]}], "name": ""}], "version": ""}
+    When the request is sent
+    Then the response status is 200 OK
 
   @generated @skip @team:DataDog/k9-cloud-security-platform
   Scenario: Update a security filter returns "Bad Request" response
