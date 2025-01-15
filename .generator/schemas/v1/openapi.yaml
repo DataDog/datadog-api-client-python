@@ -6918,7 +6918,6 @@ components:
       - spans
       - database_queries
       - network
-      - cost
       example: rum
       type: string
       x-enum-varnames:
@@ -6931,7 +6930,6 @@ components:
       - SPANS
       - DATABASE_QUERIES
       - NETWORK
-      - COST
     MonitorFormulaAndFunctionQueryDefinition:
       description: A formula and function query.
       oneOf:
