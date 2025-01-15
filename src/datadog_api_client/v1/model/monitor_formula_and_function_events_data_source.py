@@ -16,7 +16,7 @@ class MonitorFormulaAndFunctionEventsDataSource(ModelSimple):
     """
     Data source for event platform-based queries.
 
-    :param value: Must be one of ["rum", "ci_pipelines", "ci_tests", "audit", "events", "logs", "spans", "database_queries", "network"].
+    :param value: Must be one of ["rum", "ci_pipelines", "ci_tests", "audit", "events", "logs", "spans", "database_queries", "network", "cost"].
     :type value: str
     """
 
@@ -30,6 +30,7 @@ class MonitorFormulaAndFunctionEventsDataSource(ModelSimple):
         "spans",
         "database_queries",
         "network",
+        "cost",
     }
     RUM: ClassVar["MonitorFormulaAndFunctionEventsDataSource"]
     CI_PIPELINES: ClassVar["MonitorFormulaAndFunctionEventsDataSource"]
@@ -40,6 +41,7 @@ class MonitorFormulaAndFunctionEventsDataSource(ModelSimple):
     SPANS: ClassVar["MonitorFormulaAndFunctionEventsDataSource"]
     DATABASE_QUERIES: ClassVar["MonitorFormulaAndFunctionEventsDataSource"]
     NETWORK: ClassVar["MonitorFormulaAndFunctionEventsDataSource"]
+    COST: ClassVar["MonitorFormulaAndFunctionEventsDataSource"]
 
     @cached_property
     def openapi_types(_):
@@ -59,3 +61,4 @@ MonitorFormulaAndFunctionEventsDataSource.DATABASE_QUERIES = MonitorFormulaAndFu
     "database_queries"
 )
 MonitorFormulaAndFunctionEventsDataSource.NETWORK = MonitorFormulaAndFunctionEventsDataSource("network")
+MonitorFormulaAndFunctionEventsDataSource.COST = MonitorFormulaAndFunctionEventsDataSource("cost")
