@@ -112,7 +112,7 @@ class RestrictionPoliciesApi:
 
         Deletes the restriction policy associated with a specified resource.
 
-        :param resource_id: Identifier, formatted as ``type:id``. Supported types: ``connection`` , ``dashboard`` , ``notebook`` , ``reference-table`` , ``security-rule`` , ``slo``.
+        :param resource_id: Identifier, formatted as ``type:id``. Supported types: ``connection`` , ``dashboard`` , ``notebook`` , ``reference-table`` , ``security-rule`` , ``slo`` , ``workflow`` , ``app-builder-app`` , ``connection`` , ``connection-group``.
         :type resource_id: str
         :rtype: None
         """
@@ -129,7 +129,7 @@ class RestrictionPoliciesApi:
 
         Retrieves the restriction policy associated with a specified resource.
 
-        :param resource_id: Identifier, formatted as ``type:id``. Supported types: ``connection`` , ``dashboard`` , ``notebook`` , ``reference-table`` , ``security-rule`` , ``slo``.
+        :param resource_id: Identifier, formatted as ``type:id``. Supported types: ``connection`` , ``dashboard`` , ``notebook`` , ``reference-table`` , ``security-rule`` , ``slo`` , ``workflow`` , ``app-builder-app`` , ``connection`` , ``connection-group``.
         :type resource_id: str
         :rtype: RestrictionPolicyResponse
         """
@@ -163,6 +163,10 @@ class RestrictionPoliciesApi:
         * Synthetic Tests: ``synthetics-test``
         * Synthetic Private Locations: ``synthetics-private-location``
         * Monitors: ``monitor``
+        * Workflows: ``workflow``
+        * App Builder Apps: ``app-builder-app``
+        * Connections: ``connection``
+        * Connection Groups: ``connection-group``
 
         **Supported relations for resources**
 
@@ -191,9 +195,17 @@ class RestrictionPoliciesApi:
              - ``viewer`` , ``editor``
            * - Reference Tables
              - ``viewer`` , ``editor``
+           * - Workflows
+             - ``viewer`` , ``editor``
+           * - App Builder Apps
+             - ``viewer`` , ``runner`` , ``editor``
+           * - Connections
+             - ``viewer`` , ``resolver`` , ``editor``
+           * - Connection Groups
+             - ``viewer`` , ``editor``
 
 
-        :param resource_id: Identifier, formatted as ``type:id``. Supported types: ``connection`` , ``dashboard`` , ``notebook`` , ``reference-table`` , ``security-rule`` , ``slo``.
+        :param resource_id: Identifier, formatted as ``type:id``. Supported types: ``connection`` , ``dashboard`` , ``notebook`` , ``reference-table`` , ``security-rule`` , ``slo`` , ``workflow`` , ``app-builder-app`` , ``connection`` , ``connection-group``.
         :type resource_id: str
         :param body: Restriction policy payload
         :type body: RestrictionPolicyUpdateRequest
