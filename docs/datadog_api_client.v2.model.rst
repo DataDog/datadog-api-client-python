@@ -2727,6 +2727,13 @@ datadog\_api\_client.v2.model.create\_app\_response\_data\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.create\_custom\_framework\_request module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_custom_framework_request
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.create\_data\_deletion\_request\_body module
 --------------------------------------------------------------------------
 
@@ -4880,6 +4887,20 @@ datadog\_api\_client.v2.model.formula\_limit module
 ---------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.formula_limit
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.framework\_control module
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.framework_control
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.framework\_requirement module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.framework_requirement
    :members:
    :show-inheritance:
 
@@ -12741,6 +12762,13 @@ datadog\_api\_client.v2.model.update\_app\_response\_relationship module
 ------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.update_app_response_relationship
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_custom\_framework\_request module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_custom_framework_request
    :members:
    :show-inheritance:
 
