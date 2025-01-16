@@ -100,6 +100,30 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"name\": \"name\",\n  \"description\": \"description\",\n  \"handle\": \"handle\",\n  \"version\": \"version\",\n  \"requirements\": [\n    {\n      \"name\": requirement\",\n      \"controls\": [\n        {\n          \"name\": \"control\",\n          \"rule_ids\": [\"rule_id\"]\n        }\n      ]\n    }\n  ]\n}"
+      }
+    ],
+    "step": "there is a valid \"custom_framework\" in the system",
+    "key": "custom_framework",
+    "tag": "Security Monitoring",
+    "operationId": "CreateCustomFramework"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\n  \"name\": \"name\",\n  \"description\": \"description\",\n  \"handle\": \"handle\",\n  \"version\": \"version\",\n  \"requirements\": [\n    {\n      \"name\": requirement\",\n      \"controls\": [\n        {\n          \"name\": \"control\",\n          \"rule_ids\": [\"rule_id\"]\n        }\n      ]\n    }\n  ]\n}"
+      }
+    ],
+    "step": "there is a valid \"custom_framework\" in the system",
+    "key": "custom_framework",
+    "tag": "Security Monitoring",
+    "operationId": "UpdateCustomFramework"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"name\": \"{{ unique }}\"\n    },\n    \"type\": \"application_keys\"\n  }\n}"
       }
     ],
