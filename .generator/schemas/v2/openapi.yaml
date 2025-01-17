@@ -7378,9 +7378,20 @@ components:
       properties:
         attributes:
           $ref: '#/components/schemas/CreateDataDeletionRequestBodyAttributes'
+        type:
+          $ref: '#/components/schemas/CreateDataDeletionRequestBodyDataType'
       required:
       - attributes
+      - type
       type: object
+    CreateDataDeletionRequestBodyDataType:
+      description: The deletion request type.
+      enum:
+      - create_deletion_req
+      example: create_deletion_req
+      type: string
+      x-enum-varnames:
+      - CREATE_DELETION_REQ
     CreateDataDeletionResponseBody:
       description: The response from the create data deletion request endpoint.
       properties:

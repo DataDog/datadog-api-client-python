@@ -9,6 +9,9 @@ from datadog_api_client.v2.model.create_data_deletion_request_body_attributes im
     CreateDataDeletionRequestBodyAttributes,
 )
 from datadog_api_client.v2.model.create_data_deletion_request_body_data import CreateDataDeletionRequestBodyData
+from datadog_api_client.v2.model.create_data_deletion_request_body_data_type import (
+    CreateDataDeletionRequestBodyDataType,
+)
 
 body = CreateDataDeletionRequestBody(
     data=CreateDataDeletionRequestBodyData(
@@ -24,6 +27,7 @@ body = CreateDataDeletionRequestBody(
             ),
             to=1704063600000,
         ),
+        type=CreateDataDeletionRequestBodyDataType.CREATE_DELETION_REQ,
     ),
 )
 

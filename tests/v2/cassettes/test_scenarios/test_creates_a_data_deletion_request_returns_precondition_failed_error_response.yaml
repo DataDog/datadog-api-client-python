@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"from":1672527600000,"indexes":["test-index","test-index-2"],"query":{},"to":1704063600000}}}'
+    body: '{"data":{"attributes":{"from":1672527600000,"indexes":["test-index","test-index-2"],"query":{},"to":1704063600000},"type":"create_deletion_req"}}'
     headers:
       accept:
       - application/json
