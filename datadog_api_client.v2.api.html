@@ -677,6 +677,22 @@
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#submodules" class="md-nav__link">Submodules</a>
         </li>
+        <li class="md-nav__item"><a href="#module-datadog_api_client.v2.api.action_connection_api" class="md-nav__link">datadog_api_client.v2.api.action_connection_api module</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.action_connection_api.ActionConnectionApi" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ActionConnectionApi</span></code></a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.action_connection_api.ActionConnectionApi.create_action_connection" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ActionConnectionApi.create_action_connection()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.action_connection_api.ActionConnectionApi.delete_action_connection" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ActionConnectionApi.delete_action_connection()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.action_connection_api.ActionConnectionApi.get_action_connection" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ActionConnectionApi.get_action_connection()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.action_connection_api.ActionConnectionApi.update_action_connection" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ActionConnectionApi.update_action_connection()</span></code></a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
         <li class="md-nav__item"><a href="#module-datadog_api_client.v2.api.agentless_scanning_api" class="md-nav__link">datadog_api_client.v2.api.agentless_scanning_api module</a><nav class="md-nav">
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.agentless_scanning_api.AgentlessScanningApi" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">AgentlessScanningApi</span></code></a><nav class="md-nav">
@@ -2089,6 +2105,76 @@
 <h1 id="datadog-api-client-v2-api--page-root">datadog_api_client.v2.api package<a class="headerlink" href="#datadog-api-client-v2-api--page-root" title="Link to this heading">¶</a></h1>
 <section id="submodules">
 <h2 id="submodules">Submodules<a class="headerlink" href="#submodules" title="Link to this heading">¶</a></h2>
+</section>
+<section id="module-datadog_api_client.v2.api.action_connection_api">
+<span id="datadog-api-client-v2-api-action-connection-api-module"></span><h2 id="module-datadog_api_client.v2.api.action_connection_api">datadog_api_client.v2.api.action_connection_api module<a class="headerlink" href="#module-datadog_api_client.v2.api.action_connection_api" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.action_connection_api.ActionConnectionApi">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ActionConnectionApi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_client</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datadog_api_client.v2.api.action_connection_api.ActionConnectionApi" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Action connections extend your installed integrations and allow you to take action in your third-party systems
+(e.g. AWS, GitLab, and Statuspage) with Datadog’s Workflow Automation and App Builder products.</p>
+<p>Datadog’s Integrations automatically provide authentication for Slack, Microsoft Teams, PagerDuty, Opsgenie,
+JIRA, GitHub, and Statuspage. You do not need additional connections in order to access these tools within
+Workflow Automation and App Builder.</p>
+<p>We offer granular access control for editing and resolving connections.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.action_connection_api.ActionConnectionApi.create_action_connection">
+<span class="sig-name descname"><span class="pre">create_action_connection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.create_action_connection_request.CreateActionConnectionRequest" title="datadog_api_client.v2.model.create_action_connection_request.CreateActionConnectionRequest"><span class="pre">CreateActionConnectionRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.create_action_connection_response.CreateActionConnectionResponse" title="datadog_api_client.v2.model.create_action_connection_response.CreateActionConnectionResponse"><span class="pre">CreateActionConnectionResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.action_connection_api.ActionConnectionApi.create_action_connection" title="Link to this definition">¶</a></dt>
+<dd><p>Create a new Action Connection.</p>
+<p>Create a new Action Connection</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.create_action_connection_response.CreateActionConnectionResponse" title="datadog_api_client.v2.model.create_action_connection_response.CreateActionConnectionResponse">CreateActionConnectionResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.action_connection_api.ActionConnectionApi.delete_action_connection">
+<span class="sig-name descname"><span class="pre">delete_action_connection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">connection_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#datadog_api_client.v2.api.action_connection_api.ActionConnectionApi.delete_action_connection" title="Link to this definition">¶</a></dt>
+<dd><p>Delete an existing Action Connection.</p>
+<p>Delete an existing Action Connection</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>connection_id</strong> (<em>str</em>) – The ID of the action connection</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.action_connection_api.ActionConnectionApi.get_action_connection">
+<span class="sig-name descname"><span class="pre">get_action_connection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">connection_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.get_action_connection_response.GetActionConnectionResponse" title="datadog_api_client.v2.model.get_action_connection_response.GetActionConnectionResponse"><span class="pre">GetActionConnectionResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.action_connection_api.ActionConnectionApi.get_action_connection" title="Link to this definition">¶</a></dt>
+<dd><p>Get an existing Action Connection.</p>
+<p>Get an existing Action Connection</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>connection_id</strong> (<em>str</em>) – The ID of the action connection</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.get_action_connection_response.GetActionConnectionResponse" title="datadog_api_client.v2.model.get_action_connection_response.GetActionConnectionResponse">GetActionConnectionResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.action_connection_api.ActionConnectionApi.update_action_connection">
+<span class="sig-name descname"><span class="pre">update_action_connection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">connection_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.update_action_connection_request.UpdateActionConnectionRequest" title="datadog_api_client.v2.model.update_action_connection_request.UpdateActionConnectionRequest"><span class="pre">UpdateActionConnectionRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.update_action_connection_response.UpdateActionConnectionResponse" title="datadog_api_client.v2.model.update_action_connection_response.UpdateActionConnectionResponse"><span class="pre">UpdateActionConnectionResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.action_connection_api.ActionConnectionApi.update_action_connection" title="Link to this definition">¶</a></dt>
+<dd><p>Update an existing Action Connection.</p>
+<p>Update an existing Action Connection</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>connection_id</strong> (<em>str</em>) – The ID of the action connection</p></li>
+<li><p><strong>body</strong> (<a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.update_action_connection_request.UpdateActionConnectionRequest" title="datadog_api_client.v2.model.update_action_connection_request.UpdateActionConnectionRequest"><em>UpdateActionConnectionRequest</em></a>) – Update an existing Action Connection request body</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.update_action_connection_response.UpdateActionConnectionResponse" title="datadog_api_client.v2.model.update_action_connection_response.UpdateActionConnectionResponse">UpdateActionConnectionResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
 </section>
 <section id="module-datadog_api_client.v2.api.agentless_scanning_api">
 <span id="datadog-api-client-v2-api-agentless-scanning-api-module"></span><h2 id="module-datadog_api_client.v2.api.agentless_scanning_api">datadog_api_client.v2.api.agentless_scanning_api module<a class="headerlink" href="#module-datadog_api_client.v2.api.agentless_scanning_api" title="Link to this heading">¶</a></h2>
