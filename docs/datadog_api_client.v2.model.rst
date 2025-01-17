@@ -5051,6 +5051,97 @@ datadog\_api\_client.v2.model.gcp\_service\_account\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.gcp\_usage\_cost\_config module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.gcp_usage_cost_config
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.gcp\_usage\_cost\_config\_attributes module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.gcp_usage_cost_config_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.gcp\_usage\_cost\_config\_patch\_data module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.gcp_usage_cost_config_patch_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.gcp\_usage\_cost\_config\_patch\_request module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.gcp_usage_cost_config_patch_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.gcp\_usage\_cost\_config\_patch\_request\_attributes module
+-----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.gcp_usage_cost_config_patch_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.gcp\_usage\_cost\_config\_patch\_request\_type module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.gcp_usage_cost_config_patch_request_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.gcp\_usage\_cost\_config\_post\_data module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.gcp_usage_cost_config_post_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.gcp\_usage\_cost\_config\_post\_request module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.gcp_usage_cost_config_post_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.gcp\_usage\_cost\_config\_post\_request\_attributes module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.gcp_usage_cost_config_post_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.gcp\_usage\_cost\_config\_post\_request\_type module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.gcp_usage_cost_config_post_request_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.gcp\_usage\_cost\_config\_response module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.gcp_usage_cost_config_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.gcp\_usage\_cost\_config\_type module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.gcp_usage_cost_config_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.gcp\_usage\_cost\_configs\_response module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.gcp_usage_cost_configs_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.gcpsts\_delegate\_account module
 --------------------------------------------------------------
 

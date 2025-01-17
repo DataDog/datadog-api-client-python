@@ -1,8 +1,8 @@
 @endpoint(cloud-cost-management) @endpoint(cloud-cost-management-v2)
 Feature: Cloud Cost Management
   The Cloud Cost Management API allows you to set up, edit, and delete Cloud
-  Cost Management accounts for AWS and Azure. You can query your cost data
-  by using the [Metrics
+  Cost Management accounts for AWS, Azure, and GCP. You can query your cost
+  data by using the [Metrics
   endpoint](https://docs.datadoghq.com/api/latest/metrics/#query-timeseries-
   data-across-multiple-products) and the `cloud_cost` data source. For more
   information, see the [Cloud Cost Management
@@ -44,6 +44,21 @@ Feature: Cloud Cost Management
     And the response "data.attributes.configs[0].account_id" is equal to "1234abcd-1234-abcd-1234-1234abcd1234"
 
   @generated @skip @team:Datadog/cloud-cost-management
+  Scenario: Create Cloud Cost Management GCP Usage Cost config returns "Bad Request" response
+    Given new "CreateCostGCPUsageCostConfig" request
+    And body with value {"data": {"attributes": {"account_id": "123456_A123BC_12AB34", "bucket_name": "dd-cost-bucket", "dataset": "billing", "export_prefix": "datadog_cloud_cost_usage_export", "export_project_name": "dd-cloud-cost-report", "service_account": "dd-ccm-gcp-integration@my-environment.iam.gserviceaccount.com"}, "type": "gcp_usage_cost_config_post_request"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @replay-only @team:Datadog/cloud-cost-management
+  Scenario: Create Cloud Cost Management GCP Usage Cost config returns "OK" response
+    Given new "CreateCostGCPUsageCostConfig" request
+    And body with value {"data": {"attributes": {"account_id": "123456_A123BC_12AB34", "bucket_name": "dd-cost-bucket", "dataset": "billing", "export_prefix": "datadog_cloud_cost_usage_export", "export_project_name": "dd-cloud-cost-report", "service_account": "dd-ccm-gcp-integration@my-environment.iam.gserviceaccount.com"}, "type": "gcp_usage_cost_config_post_request"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.attributes.account_id" is equal to "123456_A123BC_12AB34"
+
+  @generated @skip @team:Datadog/cloud-cost-management
   Scenario: Delete Cloud Cost Management AWS CUR config returns "Bad Request" response
     Given new "DeleteCostAWSCURConfig" request
     And request contains "cloud_account_id" parameter from "REPLACE.ME"
@@ -81,6 +96,27 @@ Feature: Cloud Cost Management
   @generated @skip @team:Datadog/cloud-cost-management
   Scenario: Delete Cloud Cost Management Azure config returns "Not Found" response
     Given new "DeleteCostAzureUCConfig" request
+    And request contains "cloud_account_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:Datadog/cloud-cost-management
+  Scenario: Delete Cloud Cost Management GCP Usage Cost config returns "Bad Request" response
+    Given new "DeleteCostGCPUsageCostConfig" request
+    And request contains "cloud_account_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @replay-only @team:Datadog/cloud-cost-management
+  Scenario: Delete Cloud Cost Management GCP Usage Cost config returns "No Content" response
+    Given new "DeleteCostGCPUsageCostConfig" request
+    And request contains "cloud_account_id" parameter with value "100"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:Datadog/cloud-cost-management
+  Scenario: Delete Cloud Cost Management GCP Usage Cost config returns "Not Found" response
+    Given new "DeleteCostGCPUsageCostConfig" request
     And request contains "cloud_account_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
@@ -130,6 +166,13 @@ Feature: Cloud Cost Management
     And the response "data[0].attributes.configs[0].export_name" is equal to "test_export_name"
 
   @replay-only @team:Datadog/cloud-cost-management
+  Scenario: List Cloud Cost Management GCP Usage Cost configs returns "OK" response
+    Given new "ListCostGCPUsageCostConfigs" request
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data[0].attributes.bucket_name" is equal to "test_bucket_name"
+
+  @replay-only @team:Datadog/cloud-cost-management
   Scenario: List Custom Costs Files returns "OK" response
     Given new "ListCustomCostsFiles" request
     When the request is sent
@@ -167,6 +210,15 @@ Feature: Cloud Cost Management
     When the request is sent
     Then the response status is 200 OK
     And the response "data.type" is equal to "azure_uc_configs"
+
+  @replay-only @team:Datadog/cloud-cost-management
+  Scenario: Update Cloud Cost Management GCP Usage Cost config returns "OK" response
+    Given new "UpdateCostGCPUsageCostConfig" request
+    And request contains "cloud_account_id" parameter with value "100"
+    And body with value {"data": {"attributes": {"is_enabled": true}, "type": "gcp_usage_cost_config_patch_request"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data[0].attributes.account_id" is equal to "123456_A123BC_12AB34"
 
   @replay-only @team:Datadog/cloud-cost-management
   Scenario: Upload Custom Costs File returns "Accepted" response
