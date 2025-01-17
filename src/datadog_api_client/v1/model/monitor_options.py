@@ -29,6 +29,9 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.monitor_formula_and_function_event_query_definition import (
         MonitorFormulaAndFunctionEventQueryDefinition,
     )
+    from datadog_api_client.v1.model.monitor_formula_and_function_cost_query_definition import (
+        MonitorFormulaAndFunctionCostQueryDefinition,
+    )
 
 
 class MonitorOptions(ModelNormal):
@@ -165,7 +168,13 @@ class MonitorOptions(ModelNormal):
         thresholds: Union[MonitorThresholds, UnsetType] = unset,
         timeout_h: Union[int, none_type, UnsetType] = unset,
         variables: Union[
-            List[Union[MonitorFormulaAndFunctionQueryDefinition, MonitorFormulaAndFunctionEventQueryDefinition]],
+            List[
+                Union[
+                    MonitorFormulaAndFunctionQueryDefinition,
+                    MonitorFormulaAndFunctionEventQueryDefinition,
+                    MonitorFormulaAndFunctionCostQueryDefinition,
+                ]
+            ],
             UnsetType,
         ] = unset,
         **kwargs,

@@ -32,6 +32,12 @@ class MonitorFormulaAndFunctionQueryDefinition(ModelComposed):
 
         :param search: Search options.
         :type search: MonitorFormulaAndFunctionEventQueryDefinitionSearch, optional
+
+        :param aggregator: Aggregation methods for metric queries.
+        :type aggregator: MonitorFormulaAndFunctionCostAggregator, optional
+
+        :param query: The monitor query.
+        :type query: str
         """
         super().__init__(kwargs)
 
@@ -47,9 +53,13 @@ class MonitorFormulaAndFunctionQueryDefinition(ModelComposed):
         from datadog_api_client.v1.model.monitor_formula_and_function_event_query_definition import (
             MonitorFormulaAndFunctionEventQueryDefinition,
         )
+        from datadog_api_client.v1.model.monitor_formula_and_function_cost_query_definition import (
+            MonitorFormulaAndFunctionCostQueryDefinition,
+        )
 
         return {
             "oneOf": [
                 MonitorFormulaAndFunctionEventQueryDefinition,
+                MonitorFormulaAndFunctionCostQueryDefinition,
             ],
         }
