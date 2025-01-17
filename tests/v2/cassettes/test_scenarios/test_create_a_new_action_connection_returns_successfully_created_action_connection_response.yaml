@@ -1,0 +1,36 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"integration":{"credentials":{"account_id":"123456789123","role":"MyRoleUpdated","type":"AWSAssumeRole"},"type":"AWS"},"name":"Cassette
+      Connection DELETE_ME"},"type":"action_connection"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/actions/connections
+  response:
+    body:
+      string: '{"data":{"id":"db41b6cb-ef93-45bd-9857-548e9474737c","type":"action_connection","attributes":{"integration":{"credentials":{"account_id":"123456789123","role":"MyRoleUpdated","external_id":"c6f62d439f14423b963e4dd4246af4a7","principal_id":"464622532012","type":"AWSAssumeRole"},"type":"AWS"},"name":"Cassette
+        Connection DELETE_ME"}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/actions/connections/db41b6cb-ef93-45bd-9857-548e9474737c
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1

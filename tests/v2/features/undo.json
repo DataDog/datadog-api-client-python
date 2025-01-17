@@ -1,4 +1,35 @@
 {
+  "CreateActionConnection": {
+    "tag": "Action Connection",
+    "undo": {
+      "operationId": "DeleteActionConnection",
+      "parameters": [
+        {
+          "name": "connection_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteActionConnection": {
+    "tag": "Action Connection",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetActionConnection": {
+    "tag": "Action Connection",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateActionConnection": {
+    "tag": "Action Connection",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListAwsScanOptions": {
     "tag": "Agentless Scanning",
     "undo": {

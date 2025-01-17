@@ -1,0 +1,27 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"integration":{"credentials":{"account_id":"1","role":"MyRoleUpdated","type":"AWSAssumeRole"},"type":"AWS"},"name":"Cassette
+      Connection"},"type":"action_connection"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/actions/connections/cb460d51-3c88-4e87-adac-d47131d0423d
+  response:
+    body:
+      string: '{"errors":[{"title":"Generic Error","detail":"error creating connection:
+        rpc error: code = InvalidArgument desc = multiple errors: 1 error occurred:\n\t*
+        [error_code=8]: invalid UpdateCustomConnectionRequest.DataUpdate: embedded
+        message failed validation | caused by: invalid CustomConnectionDataUpdate.Aws:
+        embedded message failed validation | caused by: invalid CustomConnectionDataUpdate_AwsAuth.AssumeRole:
+        embedded message failed validation | caused by: invalid CustomConnectionDataUpdate_AwsAuth_AssumeRole.AccountId:
+        value does not match regex pattern \"^\\\\d{12}$\"\n\n"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 400
+      message: Bad Request
+version: 1
