@@ -15,6 +15,9 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.create_data_deletion_request_body_attributes import (
         CreateDataDeletionRequestBodyAttributes,
     )
+    from datadog_api_client.v2.model.create_data_deletion_request_body_data_type import (
+        CreateDataDeletionRequestBodyDataType,
+    )
 
 
 class CreateDataDeletionRequestBodyData(ModelNormal):
@@ -23,22 +26,36 @@ class CreateDataDeletionRequestBodyData(ModelNormal):
         from datadog_api_client.v2.model.create_data_deletion_request_body_attributes import (
             CreateDataDeletionRequestBodyAttributes,
         )
+        from datadog_api_client.v2.model.create_data_deletion_request_body_data_type import (
+            CreateDataDeletionRequestBodyDataType,
+        )
 
         return {
             "attributes": (CreateDataDeletionRequestBodyAttributes,),
+            "type": (CreateDataDeletionRequestBodyDataType,),
         }
 
     attribute_map = {
         "attributes": "attributes",
+        "type": "type",
     }
 
-    def __init__(self_, attributes: CreateDataDeletionRequestBodyAttributes, **kwargs):
+    def __init__(
+        self_,
+        attributes: CreateDataDeletionRequestBodyAttributes,
+        type: CreateDataDeletionRequestBodyDataType,
+        **kwargs,
+    ):
         """
         Data needed to create a data deletion request.
 
         :param attributes: Attributes for creating a data deletion request.
         :type attributes: CreateDataDeletionRequestBodyAttributes
+
+        :param type: The deletion request type.
+        :type type: CreateDataDeletionRequestBodyDataType
         """
         super().__init__(kwargs)
 
         self_.attributes = attributes
+        self_.type = type

@@ -477,6 +477,9 @@ from datadog_api_client.v2.model.create_data_deletion_request_body_attributes im
     CreateDataDeletionRequestBodyAttributes,
 )
 from datadog_api_client.v2.model.create_data_deletion_request_body_data import CreateDataDeletionRequestBodyData
+from datadog_api_client.v2.model.create_data_deletion_request_body_data_type import (
+    CreateDataDeletionRequestBodyDataType,
+)
 from datadog_api_client.v2.model.create_data_deletion_response_body import CreateDataDeletionResponseBody
 from datadog_api_client.v2.model.create_open_api_response import CreateOpenAPIResponse
 from datadog_api_client.v2.model.create_open_api_response_attributes import CreateOpenAPIResponseAttributes
@@ -2777,6 +2780,7 @@ __all__ = [
     "CreateDataDeletionRequestBody",
     "CreateDataDeletionRequestBodyAttributes",
     "CreateDataDeletionRequestBodyData",
+    "CreateDataDeletionRequestBodyDataType",
     "CreateDataDeletionResponseBody",
     "CreateOpenAPIResponse",
     "CreateOpenAPIResponseAttributes",

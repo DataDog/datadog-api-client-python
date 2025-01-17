@@ -2867,6 +2867,13 @@ datadog\_api\_client.v2.model.create\_data\_deletion\_request\_body\_data module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.create\_data\_deletion\_request\_body\_data\_type module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_data_deletion_request_body_data_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.create\_data\_deletion\_response\_body module
 ---------------------------------------------------------------------------
 
