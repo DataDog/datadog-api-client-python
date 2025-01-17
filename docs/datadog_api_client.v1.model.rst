@@ -2027,6 +2027,27 @@ datadog\_api\_client.v1.model.monitor\_device\_id module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.monitor\_formula\_and\_function\_cost\_aggregator module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.monitor_formula_and_function_cost_aggregator
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.monitor\_formula\_and\_function\_cost\_data\_source module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.monitor_formula_and_function_cost_data_source
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.monitor\_formula\_and\_function\_cost\_query\_definition module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.monitor_formula_and_function_cost_query_definition
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.monitor\_formula\_and\_function\_event\_aggregation module
 ----------------------------------------------------------------------------------------
 
