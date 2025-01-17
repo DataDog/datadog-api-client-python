@@ -196,9 +196,9 @@ class RestrictionPoliciesApi:
            * - Reference Tables
              - ``viewer`` , ``editor``
            * - Workflows
-             - ``viewer`` , ``editor``
-           * - App Builder Apps
              - ``viewer`` , ``runner`` , ``editor``
+           * - App Builder Apps
+             - ``viewer`` , ``editor``
            * - Connections
              - ``viewer`` , ``resolver`` , ``editor``
            * - Connection Groups
