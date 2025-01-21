@@ -32,12 +32,14 @@ class CIAppCreatePipelineEventRequestAttributes(ModelNormal):
 
         return {
             "env": (str,),
+            "provider_name": (str,),
             "resource": (CIAppCreatePipelineEventRequestAttributesResource,),
             "service": (str,),
         }
 
     attribute_map = {
         "env": "env",
+        "provider_name": "provider_name",
         "resource": "resource",
         "service": "service",
     }
@@ -52,6 +54,7 @@ class CIAppCreatePipelineEventRequestAttributes(ModelNormal):
             CIAppPipelineEventStep,
         ],
         env: Union[str, UnsetType] = unset,
+        provider_name: Union[str, UnsetType] = unset,
         service: Union[str, UnsetType] = unset,
         **kwargs,
     ):
@@ -61,6 +64,9 @@ class CIAppCreatePipelineEventRequestAttributes(ModelNormal):
         :param env: The Datadog environment.
         :type env: str, optional
 
+        :param provider_name: The name of the CI provider. By default, this is "custom".
+        :type provider_name: str, optional
+
         :param resource: Details of the CI pipeline event.
         :type resource: CIAppCreatePipelineEventRequestAttributesResource
 
@@ -69,6 +75,8 @@ class CIAppCreatePipelineEventRequestAttributes(ModelNormal):
         """
         if env is not unset:
             kwargs["env"] = env
+        if provider_name is not unset:
+            kwargs["provider_name"] = provider_name
         if service is not unset:
             kwargs["service"] = service
         super().__init__(kwargs)
