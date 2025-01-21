@@ -43,7 +43,7 @@ Feature: Data Deletion
     Given operation "CreateDataDeletionRequest" enabled
     And new "CreateDataDeletionRequest" request
     And request contains "product" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"from": 1672527600000, "indexes": ["test-index", "test-index-2"], "query": {"host": "abc", "service": "xyz"}, "to": 1704063600000}}}
+    And body with value {"data": {"attributes": {"from": 1672527600000, "indexes": ["test-index", "test-index-2"], "query": {"host": "abc", "service": "xyz"}, "to": 1704063600000}, "type": "create_deletion_req"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -52,7 +52,7 @@ Feature: Data Deletion
     Given operation "CreateDataDeletionRequest" enabled
     And new "CreateDataDeletionRequest" request
     And request contains "product" parameter with value "logs"
-    And body with value {"data": {"attributes": {"from": 1672527600000, "indexes": ["test-index", "test-index-2"], "query": {"host": "abc", "service": "xyz"}, "to": 1704063600000}}}
+    And body with value {"data": {"attributes": {"from": 1672527600000, "indexes": ["test-index", "test-index-2"], "query": {"host": "abc", "service": "xyz"}, "to": 1704063600000}, "type": "create_deletion_req"}}
     When the request is sent
     Then the response status is 200 OK
     And the response "data.type" is equal to "deletion_request"
@@ -64,7 +64,7 @@ Feature: Data Deletion
     Given operation "CreateDataDeletionRequest" enabled
     And new "CreateDataDeletionRequest" request
     And request contains "product" parameter with value "logs"
-    And body with value {"data": {"attributes": {"from": 1672527600000, "indexes": ["test-index", "test-index-2"], "query": {}, "to": 1704063600000}}}
+    And body with value {"data": {"attributes": {"from": 1672527600000, "indexes": ["test-index", "test-index-2"], "query": {}, "to": 1704063600000}, "type": "create_deletion_req"}}
     When the request is sent
     Then the response status is 412 Precondition failed error
 

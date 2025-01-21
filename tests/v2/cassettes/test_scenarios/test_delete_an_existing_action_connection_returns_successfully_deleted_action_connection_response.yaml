@@ -1,0 +1,53 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"integration":{"credentials":{"account_id":"123456789123","role":"MyRole","type":"AWSAssumeRole"},"type":"AWS"},"name":"Cassette
+      Connection DELETE"},"type":"action_connection"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/actions/connections
+  response:
+    body:
+      string: '{"data":{"id":"4b60345a-85b2-4417-94b2-72a9528b4060","type":"action_connection","attributes":{"integration":{"credentials":{"account_id":"123456789123","role":"MyRole","external_id":"3bceadebe70c4df7b8ec6abb789e08c0","principal_id":"464622532012","type":"AWSAssumeRole"},"type":"AWS"},"name":"Cassette
+        Connection DELETE"}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/actions/connections/4b60345a-85b2-4417-94b2-72a9528b4060
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/actions/connections/4b60345a-85b2-4417-94b2-72a9528b4060
+  response:
+    body:
+      string: '{"errors":[{"title":"Generic Error","detail":"error deleting connection:
+        rpc error: code = NotFound desc = connection not found"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 404
+      message: Not Found
+version: 1
