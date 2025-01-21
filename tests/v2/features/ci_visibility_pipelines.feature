@@ -108,6 +108,13 @@ Feature: CI Visibility Pipelines
     When the request is sent
     Then the response status is 202 Request accepted for processing
 
+  @team:Datadog/ci-app-backend
+  Scenario: Send pipeline event with custom provider returns "Request accepted for processing" response
+    Given new "CreateCIAppPipelineEvent" request
+    And body with value {"data": {"attributes": {"provider_name": "example-provider", "resource": {"level": "pipeline","unique_id": "3eacb6f3-ff04-4e10-8a9c-46e6d054024a","name": "Deploy to AWS","url": "https://my-ci-provider.example/pipelines/my-pipeline/run/1","start": "{{ timeISO('now - 120s') }}","end": "{{ timeISO('now - 30s') }}","status": "success","partial_retry": false,"git": {"repository_url": "https://github.com/DataDog/datadog-agent","sha": "7f263865994b76066c4612fd1965215e7dcb4cd2","author_email": "john.doe@email.com"}}},"type": "cipipeline_resource_request"}}
+    When the request is sent
+    Then the response status is 202 Request accepted for processing
+
   @skip @team:Datadog/ci-app-backend
   Scenario: Send pipeline job event returns "Request accepted for processing" response
     Given new "CreateCIAppPipelineEvent" request
