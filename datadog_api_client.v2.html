@@ -1477,6 +1477,7 @@
 <li class="toctree-l4"><a class="reference internal" href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.edit_security_monitoring_signal_state"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.edit_security_monitoring_signal_state()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.get_finding"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.get_finding()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.get_historical_job"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.get_historical_job()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.get_sbom"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.get_sbom()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.get_security_filter"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.get_security_filter()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.get_security_monitoring_rule"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.get_security_monitoring_rule()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.get_security_monitoring_signal"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.get_security_monitoring_signal()</span></code></a></li>
@@ -1871,16 +1872,16 @@
 <li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.asset_attributes.AssetAttributes"><code class="docutils literal notranslate"><span class="pre">AssetAttributes</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.asset_attributes_operating_system">datadog_api_client.v2.model.asset_attributes_operating_system module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.asset_attributes_operating_system.AssetAttributesOperatingSystem"><code class="docutils literal notranslate"><span class="pre">AssetAttributesOperatingSystem</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.asset_attributes_risks">datadog_api_client.v2.model.asset_attributes_risks module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.asset_attributes_risks.AssetAttributesRisks"><code class="docutils literal notranslate"><span class="pre">AssetAttributesRisks</span></code></a></li>
-</ul>
-</li>
 <li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.asset_entity_type">datadog_api_client.v2.model.asset_entity_type module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.asset_entity_type.AssetEntityType"><code class="docutils literal notranslate"><span class="pre">AssetEntityType</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.asset_operating_system">datadog_api_client.v2.model.asset_operating_system module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.asset_operating_system.AssetOperatingSystem"><code class="docutils literal notranslate"><span class="pre">AssetOperatingSystem</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.asset_risks">datadog_api_client.v2.model.asset_risks module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.asset_risks.AssetRisks"><code class="docutils literal notranslate"><span class="pre">AssetRisks</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.asset_type">datadog_api_client.v2.model.asset_type module</a><ul>
@@ -4755,6 +4756,10 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.get_interfaces_response">datadog_api_client.v2.model.get_interfaces_response module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.get_interfaces_response.GetInterfacesResponse"><code class="docutils literal notranslate"><span class="pre">GetInterfacesResponse</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.get_sbom_response">datadog_api_client.v2.model.get_sbom_response module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.get_sbom_response.GetSBOMResponse"><code class="docutils literal notranslate"><span class="pre">GetSBOMResponse</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.get_team_memberships_sort">datadog_api_client.v2.model.get_team_memberships_sort module</a><ul>
@@ -7671,6 +7676,34 @@
 <li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.saml_assertion_attributes_type.SAMLAssertionAttributesType"><code class="docutils literal notranslate"><span class="pre">SAMLAssertionAttributesType</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.sbom">datadog_api_client.v2.model.sbom module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.sbom.SBOM"><code class="docutils literal notranslate"><span class="pre">SBOM</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.sbom_attributes">datadog_api_client.v2.model.sbom_attributes module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.sbom_attributes.SBOMAttributes"><code class="docutils literal notranslate"><span class="pre">SBOMAttributes</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.sbom_component">datadog_api_client.v2.model.sbom_component module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.sbom_component.SBOMComponent"><code class="docutils literal notranslate"><span class="pre">SBOMComponent</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.sbom_component_type">datadog_api_client.v2.model.sbom_component_type module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.sbom_component_type.SBOMComponentType"><code class="docutils literal notranslate"><span class="pre">SBOMComponentType</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.sbom_metadata">datadog_api_client.v2.model.sbom_metadata module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.sbom_metadata.SBOMMetadata"><code class="docutils literal notranslate"><span class="pre">SBOMMetadata</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.sbom_metadata_component">datadog_api_client.v2.model.sbom_metadata_component module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.sbom_metadata_component.SBOMMetadataComponent"><code class="docutils literal notranslate"><span class="pre">SBOMMetadataComponent</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.sbom_type">datadog_api_client.v2.model.sbom_type module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.sbom_type.SBOMType"><code class="docutils literal notranslate"><span class="pre">SBOMType</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.scalar_column">datadog_api_client.v2.model.scalar_column module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.scalar_column.ScalarColumn"><code class="docutils literal notranslate"><span class="pre">ScalarColumn</span></code></a></li>
 </ul>
@@ -9451,12 +9484,12 @@
 <li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.vulnerability_attributes.VulnerabilityAttributes"><code class="docutils literal notranslate"><span class="pre">VulnerabilityAttributes</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.vulnerability_attributes_cvss">datadog_api_client.v2.model.vulnerability_attributes_cvss module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.vulnerability_attributes_cvss.VulnerabilityAttributesCvss"><code class="docutils literal notranslate"><span class="pre">VulnerabilityAttributesCvss</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.vulnerability_cvss">datadog_api_client.v2.model.vulnerability_cvss module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.vulnerability_cvss.VulnerabilityCvss"><code class="docutils literal notranslate"><span class="pre">VulnerabilityCvss</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.vulnerability_attributes_dependency_locations">datadog_api_client.v2.model.vulnerability_attributes_dependency_locations module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.vulnerability_attributes_dependency_locations.VulnerabilityAttributesDependencyLocations"><code class="docutils literal notranslate"><span class="pre">VulnerabilityAttributesDependencyLocations</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.vulnerability_dependency_locations">datadog_api_client.v2.model.vulnerability_dependency_locations module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.vulnerability_dependency_locations.VulnerabilityDependencyLocations"><code class="docutils literal notranslate"><span class="pre">VulnerabilityDependencyLocations</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.vulnerability_ecosystem">datadog_api_client.v2.model.vulnerability_ecosystem module</a><ul>

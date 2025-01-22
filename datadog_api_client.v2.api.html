@@ -1745,6 +1745,8 @@
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.get_historical_job" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.get_historical_job()</span></code></a>
         </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.get_sbom" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.get_sbom()</span></code></a>
+        </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.get_security_filter" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.get_security_filter()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.get_security_monitoring_rule" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.get_security_monitoring_rule()</span></code></a>
@@ -7854,6 +7856,24 @@ for more examples.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.historical_job_response.HistoricalJobResponse" title="datadog_api_client.v2.model.historical_job_response.HistoricalJobResponse">HistoricalJobResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.get_sbom">
+<span class="sig-name descname"><span class="pre">get_sbom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">asset_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.asset_type.AssetType" title="datadog_api_client.v2.model.asset_type.AssetType"><span class="pre">AssetType</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter_asset_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter_repo_digest</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.get_sbom_response.GetSBOMResponse" title="datadog_api_client.v2.model.get_sbom_response.GetSBOMResponse"><span class="pre">GetSBOMResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.get_sbom" title="Link to this definition">¶</a></dt>
+<dd><p>Get SBOM.</p>
+<p>Get a single SBOM related to an asset by its type and name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>asset_type</strong> (<a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.asset_type.AssetType" title="datadog_api_client.v2.model.asset_type.AssetType"><em>AssetType</em></a>) – The type of the asset for the SBOM request.</p></li>
+<li><p><strong>filter_asset_name</strong> (<em>str</em>) – The name of the asset for the SBOM request.</p></li>
+<li><p><strong>filter_repo_digest</strong> (<em>str</em><em>, </em><em>optional</em>) – The container image <code class="docutils literal notranslate"><span class="pre">repo_digest</span></code> for the SBOM request. When the requested asset type is ‘Image’, this filter is mandatory.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.get_sbom_response.GetSBOMResponse" title="datadog_api_client.v2.model.get_sbom_response.GetSBOMResponse">GetSBOMResponse</a></p>
 </dd>
 </dl>
 </dd></dl>
