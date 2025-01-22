@@ -340,24 +340,24 @@ datadog\_api\_client.v2.model.asset\_attributes module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.asset\_attributes\_operating\_system module
--------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.asset_attributes_operating_system
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.asset\_attributes\_risks module
--------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.asset_attributes_risks
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v2.model.asset\_entity\_type module
 --------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.asset_entity_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.asset\_operating\_system module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.asset_operating_system
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.asset\_risks module
+-------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.asset_risks
    :members:
    :show-inheritance:
 
@@ -5230,6 +5230,13 @@ datadog\_api\_client.v2.model.get\_interfaces\_response module
 --------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.get_interfaces_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.get\_sbom\_response module
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_sbom_response
    :members:
    :show-inheritance:
 
@@ -10322,6 +10329,55 @@ datadog\_api\_client.v2.model.saml\_assertion\_attributes\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.sbom module
+-----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sbom
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sbom\_attributes module
+-----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sbom_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sbom\_component module
+----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sbom_component
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sbom\_component\_type module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sbom_component_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sbom\_metadata module
+---------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sbom_metadata
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sbom\_metadata\_component module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sbom_metadata_component
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sbom\_type module
+-----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sbom_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.scalar\_column module
 ---------------------------------------------------
 
@@ -13437,17 +13493,17 @@ datadog\_api\_client.v2.model.vulnerability\_attributes module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.vulnerability\_attributes\_cvss module
---------------------------------------------------------------------
+datadog\_api\_client.v2.model.vulnerability\_cvss module
+--------------------------------------------------------
 
-.. automodule:: datadog_api_client.v2.model.vulnerability_attributes_cvss
+.. automodule:: datadog_api_client.v2.model.vulnerability_cvss
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.vulnerability\_attributes\_dependency\_locations module
--------------------------------------------------------------------------------------
+datadog\_api\_client.v2.model.vulnerability\_dependency\_locations module
+-------------------------------------------------------------------------
 
-.. automodule:: datadog_api_client.v2.model.vulnerability_attributes_dependency_locations
+.. automodule:: datadog_api_client.v2.model.vulnerability_dependency_locations
    :members:
    :show-inheritance:
 

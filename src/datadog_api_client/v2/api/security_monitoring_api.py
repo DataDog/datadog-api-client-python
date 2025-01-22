@@ -25,6 +25,7 @@ from datadog_api_client.v2.model.bulk_mute_findings_request import BulkMuteFindi
 from datadog_api_client.v2.model.get_finding_response import GetFindingResponse
 from datadog_api_client.v2.model.list_vulnerable_assets_response import ListVulnerableAssetsResponse
 from datadog_api_client.v2.model.asset_type import AssetType
+from datadog_api_client.v2.model.get_sbom_response import GetSBOMResponse
 from datadog_api_client.v2.model.list_vulnerabilities_response import ListVulnerabilitiesResponse
 from datadog_api_client.v2.model.vulnerability_type import VulnerabilityType
 from datadog_api_client.v2.model.vulnerability_severity import VulnerabilitySeverity
@@ -458,6 +459,40 @@ class SecurityMonitoringApi:
                     "openapi_types": (str,),
                     "attribute": "job_id",
                     "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_sbom_endpoint = _Endpoint(
+            settings={
+                "response_type": (GetSBOMResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/security/sboms/{asset_type}",
+                "operation_id": "get_sbom",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "asset_type": {
+                    "required": True,
+                    "openapi_types": (AssetType,),
+                    "attribute": "asset_type",
+                    "location": "path",
+                },
+                "filter_asset_name": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "filter[asset_name]",
+                    "location": "query",
+                },
+                "filter_repo_digest": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[repo_digest]",
+                    "location": "query",
                 },
             },
             headers_map={
@@ -1633,6 +1668,35 @@ class SecurityMonitoringApi:
         kwargs["job_id"] = job_id
 
         return self._get_historical_job_endpoint.call_with_http_info(**kwargs)
+
+    def get_sbom(
+        self,
+        asset_type: AssetType,
+        filter_asset_name: str,
+        *,
+        filter_repo_digest: Union[str, UnsetType] = unset,
+    ) -> GetSBOMResponse:
+        """Get SBOM.
+
+        Get a single SBOM related to an asset by its type and name.
+
+        :param asset_type: The type of the asset for the SBOM request.
+        :type asset_type: AssetType
+        :param filter_asset_name: The name of the asset for the SBOM request.
+        :type filter_asset_name: str
+        :param filter_repo_digest: The container image ``repo_digest`` for the SBOM request. When the requested asset type is 'Image', this filter is mandatory.
+        :type filter_repo_digest: str, optional
+        :rtype: GetSBOMResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["asset_type"] = asset_type
+
+        kwargs["filter_asset_name"] = filter_asset_name
+
+        if filter_repo_digest is not unset:
+            kwargs["filter_repo_digest"] = filter_repo_digest
+
+        return self._get_sbom_endpoint.call_with_http_info(**kwargs)
 
     def get_security_filter(
         self,

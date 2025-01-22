@@ -13,31 +13,31 @@ from datadog_api_client.model_utils import (
 )
 
 
-class AssetAttributesVersion(ModelNormal):
+class AssetOperatingSystem(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
-            "first": (str,),
-            "last": (str,),
+            "description": (str,),
+            "name": (str,),
         }
 
     attribute_map = {
-        "first": "first",
-        "last": "last",
+        "description": "description",
+        "name": "name",
     }
 
-    def __init__(self_, first: Union[str, UnsetType] = unset, last: Union[str, UnsetType] = unset, **kwargs):
+    def __init__(self_, name: str, description: Union[str, UnsetType] = unset, **kwargs):
         """
-        Asset version.
+        Asset operating system.
 
-        :param first: Asset first version.
-        :type first: str, optional
+        :param description: Operating system version.
+        :type description: str, optional
 
-        :param last: Asset last version.
-        :type last: str, optional
+        :param name: Operating system name.
+        :type name: str
         """
-        if first is not unset:
-            kwargs["first"] = first
-        if last is not unset:
-            kwargs["last"] = last
+        if description is not unset:
+            kwargs["description"] = description
         super().__init__(kwargs)
+
+        self_.name = name

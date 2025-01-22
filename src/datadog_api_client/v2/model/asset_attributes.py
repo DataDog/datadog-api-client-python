@@ -14,28 +14,28 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.asset_attributes_operating_system import AssetAttributesOperatingSystem
-    from datadog_api_client.v2.model.asset_attributes_risks import AssetAttributesRisks
+    from datadog_api_client.v2.model.asset_operating_system import AssetOperatingSystem
+    from datadog_api_client.v2.model.asset_risks import AssetRisks
     from datadog_api_client.v2.model.asset_type import AssetType
-    from datadog_api_client.v2.model.asset_attributes_version import AssetAttributesVersion
+    from datadog_api_client.v2.model.asset_version import AssetVersion
 
 
 class AssetAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.asset_attributes_operating_system import AssetAttributesOperatingSystem
-        from datadog_api_client.v2.model.asset_attributes_risks import AssetAttributesRisks
+        from datadog_api_client.v2.model.asset_operating_system import AssetOperatingSystem
+        from datadog_api_client.v2.model.asset_risks import AssetRisks
         from datadog_api_client.v2.model.asset_type import AssetType
-        from datadog_api_client.v2.model.asset_attributes_version import AssetAttributesVersion
+        from datadog_api_client.v2.model.asset_version import AssetVersion
 
         return {
             "arch": (str,),
             "environments": ([str],),
             "name": (str,),
-            "operating_system": (AssetAttributesOperatingSystem,),
-            "risks": (AssetAttributesRisks,),
+            "operating_system": (AssetOperatingSystem,),
+            "risks": (AssetRisks,),
             "type": (AssetType,),
-            "version": (AssetAttributesVersion,),
+            "version": (AssetVersion,),
         }
 
     attribute_map = {
@@ -52,11 +52,11 @@ class AssetAttributes(ModelNormal):
         self_,
         environments: List[str],
         name: str,
-        risks: AssetAttributesRisks,
+        risks: AssetRisks,
         type: AssetType,
         arch: Union[str, UnsetType] = unset,
-        operating_system: Union[AssetAttributesOperatingSystem, UnsetType] = unset,
-        version: Union[AssetAttributesVersion, UnsetType] = unset,
+        operating_system: Union[AssetOperatingSystem, UnsetType] = unset,
+        version: Union[AssetVersion, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -72,16 +72,16 @@ class AssetAttributes(ModelNormal):
         :type name: str
 
         :param operating_system: Asset operating system.
-        :type operating_system: AssetAttributesOperatingSystem, optional
+        :type operating_system: AssetOperatingSystem, optional
 
         :param risks: Asset risks.
-        :type risks: AssetAttributesRisks
+        :type risks: AssetRisks
 
         :param type: The asset type
         :type type: AssetType
 
         :param version: Asset version.
-        :type version: AssetAttributesVersion, optional
+        :type version: AssetVersion, optional
         """
         if arch is not unset:
             kwargs["arch"] = arch
