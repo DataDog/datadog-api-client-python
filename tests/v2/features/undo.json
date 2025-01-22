@@ -2061,6 +2061,12 @@
       "type": "safe"
     }
   },
+  "GetSBOM": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListVulnerabilities": {
     "tag": "Security Monitoring",
     "undo": {
