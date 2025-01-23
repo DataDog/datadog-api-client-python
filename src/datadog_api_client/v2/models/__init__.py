@@ -67,6 +67,8 @@ from datadog_api_client.v2.model.action_connection_data_type import ActionConnec
 from datadog_api_client.v2.model.action_connection_data_update import ActionConnectionDataUpdate
 from datadog_api_client.v2.model.action_connection_integration import ActionConnectionIntegration
 from datadog_api_client.v2.model.action_connection_integration_update import ActionConnectionIntegrationUpdate
+from datadog_api_client.v2.model.action_inbox import ActionInbox
+from datadog_api_client.v2.model.action_mute import ActionMute
 from datadog_api_client.v2.model.active_billing_dimensions_attributes import ActiveBillingDimensionsAttributes
 from datadog_api_client.v2.model.active_billing_dimensions_body import ActiveBillingDimensionsBody
 from datadog_api_client.v2.model.active_billing_dimensions_response import ActiveBillingDimensionsResponse
@@ -481,6 +483,16 @@ from datadog_api_client.v2.model.create_data_deletion_request_body_data_type imp
     CreateDataDeletionRequestBodyDataType,
 )
 from datadog_api_client.v2.model.create_data_deletion_response_body import CreateDataDeletionResponseBody
+from datadog_api_client.v2.model.create_inbox_rule_parameters import CreateInboxRuleParameters
+from datadog_api_client.v2.model.create_inbox_rule_parameters_data import CreateInboxRuleParametersData
+from datadog_api_client.v2.model.create_inbox_rule_parameters_data_attributes import (
+    CreateInboxRuleParametersDataAttributes,
+)
+from datadog_api_client.v2.model.create_mute_rule_parameters import CreateMuteRuleParameters
+from datadog_api_client.v2.model.create_mute_rule_parameters_data import CreateMuteRuleParametersData
+from datadog_api_client.v2.model.create_mute_rule_parameters_data_attributes import (
+    CreateMuteRuleParametersDataAttributes,
+)
 from datadog_api_client.v2.model.create_open_api_response import CreateOpenAPIResponse
 from datadog_api_client.v2.model.create_open_api_response_attributes import CreateOpenAPIResponseAttributes
 from datadog_api_client.v2.model.create_open_api_response_data import CreateOpenAPIResponseData
@@ -964,6 +976,10 @@ from datadog_api_client.v2.model.ip_allowlist_response import IPAllowlistRespons
 from datadog_api_client.v2.model.ip_allowlist_type import IPAllowlistType
 from datadog_api_client.v2.model.ip_allowlist_update_request import IPAllowlistUpdateRequest
 from datadog_api_client.v2.model.idp_metadata_form_data import IdPMetadataFormData
+from datadog_api_client.v2.model.inbox_rule import InboxRule
+from datadog_api_client.v2.model.inbox_rule_attributes import InboxRuleAttributes
+from datadog_api_client.v2.model.inbox_rule_response import InboxRuleResponse
+from datadog_api_client.v2.model.inbox_rules_type import InboxRulesType
 from datadog_api_client.v2.model.incident_attachment_attachment_type import IncidentAttachmentAttachmentType
 from datadog_api_client.v2.model.incident_attachment_attributes import IncidentAttachmentAttributes
 from datadog_api_client.v2.model.incident_attachment_data import IncidentAttachmentData
@@ -1143,6 +1159,7 @@ from datadog_api_client.v2.model.input_schema_data_type import InputSchemaDataTy
 from datadog_api_client.v2.model.intake_payload_accepted import IntakePayloadAccepted
 from datadog_api_client.v2.model.interface_attributes import InterfaceAttributes
 from datadog_api_client.v2.model.interface_attributes_status import InterfaceAttributesStatus
+from datadog_api_client.v2.model.issue_type import IssueType
 from datadog_api_client.v2.model.jsonapi_error_item import JSONAPIErrorItem
 from datadog_api_client.v2.model.jsonapi_error_item_source import JSONAPIErrorItemSource
 from datadog_api_client.v2.model.jsonapi_error_response import JSONAPIErrorResponse
@@ -1461,6 +1478,11 @@ from datadog_api_client.v2.model.monthly_cost_attribution_body import MonthlyCos
 from datadog_api_client.v2.model.monthly_cost_attribution_meta import MonthlyCostAttributionMeta
 from datadog_api_client.v2.model.monthly_cost_attribution_pagination import MonthlyCostAttributionPagination
 from datadog_api_client.v2.model.monthly_cost_attribution_response import MonthlyCostAttributionResponse
+from datadog_api_client.v2.model.mute_reason import MuteReason
+from datadog_api_client.v2.model.mute_rule import MuteRule
+from datadog_api_client.v2.model.mute_rule_attributes import MuteRuleAttributes
+from datadog_api_client.v2.model.mute_rule_response import MuteRuleResponse
+from datadog_api_client.v2.model.mute_rules_type import MuteRulesType
 from datadog_api_client.v2.model.nullable_relationship_to_user import NullableRelationshipToUser
 from datadog_api_client.v2.model.nullable_relationship_to_user_data import NullableRelationshipToUserData
 from datadog_api_client.v2.model.nullable_user_relationship import NullableUserRelationship
@@ -1527,6 +1549,14 @@ from datadog_api_client.v2.model.partial_api_key_attributes import PartialAPIKey
 from datadog_api_client.v2.model.partial_application_key import PartialApplicationKey
 from datadog_api_client.v2.model.partial_application_key_attributes import PartialApplicationKeyAttributes
 from datadog_api_client.v2.model.partial_application_key_response import PartialApplicationKeyResponse
+from datadog_api_client.v2.model.patch_inbox_rules_parameters import PatchInboxRulesParameters
+from datadog_api_client.v2.model.patch_inbox_rules_parameters_data import PatchInboxRulesParametersData
+from datadog_api_client.v2.model.patch_inbox_rules_parameters_data_attributes import (
+    PatchInboxRulesParametersDataAttributes,
+)
+from datadog_api_client.v2.model.patch_mute_rule_parameters import PatchMuteRuleParameters
+from datadog_api_client.v2.model.patch_mute_rule_parameters_data import PatchMuteRuleParametersData
+from datadog_api_client.v2.model.patch_mute_rule_parameters_data_attributes import PatchMuteRuleParametersDataAttributes
 from datadog_api_client.v2.model.permission import Permission
 from datadog_api_client.v2.model.permission_attributes import PermissionAttributes
 from datadog_api_client.v2.model.permissions_response import PermissionsResponse
@@ -1673,6 +1703,10 @@ from datadog_api_client.v2.model.relationship_to_user_team_user import Relations
 from datadog_api_client.v2.model.relationship_to_user_team_user_data import RelationshipToUserTeamUserData
 from datadog_api_client.v2.model.relationship_to_users import RelationshipToUsers
 from datadog_api_client.v2.model.remediation import Remediation
+from datadog_api_client.v2.model.reorder_inbox_rules_parameters import ReorderInboxRulesParameters
+from datadog_api_client.v2.model.reorder_inbox_rules_parameters_data import ReorderInboxRulesParametersData
+from datadog_api_client.v2.model.reorder_mute_rules_parameters import ReorderMuteRulesParameters
+from datadog_api_client.v2.model.reorder_mute_rules_parameters_data import ReorderMuteRulesParametersData
 from datadog_api_client.v2.model.reorder_retention_filters_request import ReorderRetentionFiltersRequest
 from datadog_api_client.v2.model.response_meta_attributes import ResponseMetaAttributes
 from datadog_api_client.v2.model.restriction_policy import RestrictionPolicy
@@ -1718,9 +1752,13 @@ from datadog_api_client.v2.model.role_update_response_data import RoleUpdateResp
 from datadog_api_client.v2.model.roles_response import RolesResponse
 from datadog_api_client.v2.model.roles_sort import RolesSort
 from datadog_api_client.v2.model.roles_type import RolesType
+from datadog_api_client.v2.model.rule import Rule
 from datadog_api_client.v2.model.rule_attributes import RuleAttributes
 from datadog_api_client.v2.model.rule_outcome_relationships import RuleOutcomeRelationships
+from datadog_api_client.v2.model.rule_severity import RuleSeverity
 from datadog_api_client.v2.model.rule_type import RuleType
+from datadog_api_client.v2.model.rule_types_items import RuleTypesItems
+from datadog_api_client.v2.model.rule_user import RuleUser
 from datadog_api_client.v2.model.rum_metric_compute import RumMetricCompute
 from datadog_api_client.v2.model.rum_metric_compute_aggregation_type import RumMetricComputeAggregationType
 from datadog_api_client.v2.model.rum_metric_create_attributes import RumMetricCreateAttributes
@@ -2274,6 +2312,10 @@ from datadog_api_client.v2.model.update_app_response_data import UpdateAppRespon
 from datadog_api_client.v2.model.update_app_response_data_attributes import UpdateAppResponseDataAttributes
 from datadog_api_client.v2.model.update_app_response_data_type import UpdateAppResponseDataType
 from datadog_api_client.v2.model.update_app_response_relationship import UpdateAppResponseRelationship
+from datadog_api_client.v2.model.update_inbox_rule_parameters import UpdateInboxRuleParameters
+from datadog_api_client.v2.model.update_inbox_rule_parameters_data import UpdateInboxRuleParametersData
+from datadog_api_client.v2.model.update_mute_rule_parameters import UpdateMuteRuleParameters
+from datadog_api_client.v2.model.update_mute_rule_parameters_data import UpdateMuteRuleParametersData
 from datadog_api_client.v2.model.update_open_api_response import UpdateOpenAPIResponse
 from datadog_api_client.v2.model.update_open_api_response_attributes import UpdateOpenAPIResponseAttributes
 from datadog_api_client.v2.model.update_open_api_response_data import UpdateOpenAPIResponseData
@@ -2443,6 +2485,8 @@ __all__ = [
     "ActionConnectionDataUpdate",
     "ActionConnectionIntegration",
     "ActionConnectionIntegrationUpdate",
+    "ActionInbox",
+    "ActionMute",
     "ActiveBillingDimensionsAttributes",
     "ActiveBillingDimensionsBody",
     "ActiveBillingDimensionsResponse",
@@ -2789,6 +2833,12 @@ __all__ = [
     "CreateDataDeletionRequestBodyData",
     "CreateDataDeletionRequestBodyDataType",
     "CreateDataDeletionResponseBody",
+    "CreateInboxRuleParameters",
+    "CreateInboxRuleParametersData",
+    "CreateInboxRuleParametersDataAttributes",
+    "CreateMuteRuleParameters",
+    "CreateMuteRuleParametersData",
+    "CreateMuteRuleParametersDataAttributes",
     "CreateOpenAPIResponse",
     "CreateOpenAPIResponseAttributes",
     "CreateOpenAPIResponseData",
@@ -3170,6 +3220,10 @@ __all__ = [
     "IPAllowlistType",
     "IPAllowlistUpdateRequest",
     "IdPMetadataFormData",
+    "InboxRule",
+    "InboxRuleAttributes",
+    "InboxRuleResponse",
+    "InboxRulesType",
     "IncidentAttachmentAttachmentType",
     "IncidentAttachmentAttributes",
     "IncidentAttachmentData",
@@ -3311,6 +3365,7 @@ __all__ = [
     "IntakePayloadAccepted",
     "InterfaceAttributes",
     "InterfaceAttributesStatus",
+    "IssueType",
     "JSONAPIErrorItem",
     "JSONAPIErrorItemSource",
     "JSONAPIErrorResponse",
@@ -3575,6 +3630,11 @@ __all__ = [
     "MonthlyCostAttributionMeta",
     "MonthlyCostAttributionPagination",
     "MonthlyCostAttributionResponse",
+    "MuteReason",
+    "MuteRule",
+    "MuteRuleAttributes",
+    "MuteRuleResponse",
+    "MuteRulesType",
     "NullableRelationshipToUser",
     "NullableRelationshipToUserData",
     "NullableUserRelationship",
@@ -3639,6 +3699,12 @@ __all__ = [
     "PartialApplicationKey",
     "PartialApplicationKeyAttributes",
     "PartialApplicationKeyResponse",
+    "PatchInboxRulesParameters",
+    "PatchInboxRulesParametersData",
+    "PatchInboxRulesParametersDataAttributes",
+    "PatchMuteRuleParameters",
+    "PatchMuteRuleParametersData",
+    "PatchMuteRuleParametersDataAttributes",
     "Permission",
     "PermissionAttributes",
     "PermissionsResponse",
@@ -3773,6 +3839,10 @@ __all__ = [
     "RelationshipToUserTeamUserData",
     "RelationshipToUsers",
     "Remediation",
+    "ReorderInboxRulesParameters",
+    "ReorderInboxRulesParametersData",
+    "ReorderMuteRulesParameters",
+    "ReorderMuteRulesParametersData",
     "ReorderRetentionFiltersRequest",
     "ResponseMetaAttributes",
     "RestrictionPolicy",
@@ -3818,9 +3888,13 @@ __all__ = [
     "RolesResponse",
     "RolesSort",
     "RolesType",
+    "Rule",
     "RuleAttributes",
     "RuleOutcomeRelationships",
+    "RuleSeverity",
     "RuleType",
+    "RuleTypesItems",
+    "RuleUser",
     "RumMetricCompute",
     "RumMetricComputeAggregationType",
     "RumMetricCreateAttributes",
@@ -4244,6 +4318,10 @@ __all__ = [
     "UpdateAppResponseDataAttributes",
     "UpdateAppResponseDataType",
     "UpdateAppResponseRelationship",
+    "UpdateInboxRuleParameters",
+    "UpdateInboxRuleParametersData",
+    "UpdateMuteRuleParameters",
+    "UpdateMuteRuleParametersData",
     "UpdateOpenAPIResponse",
     "UpdateOpenAPIResponseAttributes",
     "UpdateOpenAPIResponseData",

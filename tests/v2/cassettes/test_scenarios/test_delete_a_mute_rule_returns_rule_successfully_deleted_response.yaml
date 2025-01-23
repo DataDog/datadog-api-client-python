@@ -1,0 +1,51 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"action":{"reason":"duplicate"},"enabled":true,"name":"Test-Delete_a_mute_rule_returns_Rule_successfully_deleted_response-1737639663","rule":{"issue_type":"vulnerability","query":"","rule_ids":[],"rule_types":["misconfiguration","attack_path"],"severities":["critical"]}},"type":"mute_rules"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/security/vulnerabilities/pipelines/mute_rules
+  response:
+    body:
+      string: '{"data":{"id":"ba7a16f1-4f80-417d-a868-6b5f14dd3328","type":"mute_rules","attributes":{"action":{"reason":"duplicate"},"created_at":1737639663734,"created_by":{"name":"frog","handle":"frog@datadoghq.com"},"enabled":true,"modified_at":1737639663734,"modified_by":{"name":"frog","handle":"frog@datadoghq.com"},"name":"Test-Delete_a_mute_rule_returns_Rule_successfully_deleted_response-1737639663","rule":{"issue_type":"vulnerability","rule_types":["misconfiguration","attack_path"],"rule_ids":[],"query":"","severities":["critical"]}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/security/vulnerabilities/pipelines/mute_rules/ba7a16f1-4f80-417d-a868-6b5f14dd3328
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/security/vulnerabilities/pipelines/mute_rules/ba7a16f1-4f80-417d-a868-6b5f14dd3328
+  response:
+    body:
+      string: '{"errors":[{"status":"404","title":"Not Found","detail":"Rule does
+        not exist"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 404
+      message: Not Found
+version: 1

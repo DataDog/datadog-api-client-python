@@ -1,0 +1,52 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"action":{"reason_description":"items to focus on"},"enabled":true,"name":"Test-Get_details_of_an_inbox_rule_returns_Inbox_rule_details_response-1737621650","rule":{"issue_type":"vulnerability","query":"","rule_ids":[],"rule_types":["misconfiguration","attack_path"],"severities":["critical"]}},"type":"inbox_rules"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/security/vulnerabilities/pipelines/inbox_rules
+  response:
+    body:
+      string: '{"data":{"id":"77f32ef7-0abb-40cd-a36e-51a19999c78a","type":"inbox_rules","attributes":{"action":{"reason_description":"items
+        to focus on"},"created_at":1737621650715,"created_by":{"name":"frog","handle":"frog@datadoghq.com"},"enabled":true,"modified_at":1737621650715,"modified_by":{"name":"frog","handle":"frog@datadoghq.com"},"name":"Test-Get_details_of_an_inbox_rule_returns_Inbox_rule_details_response-1737621650","rule":{"issue_type":"vulnerability","rule_types":["misconfiguration","attack_path"],"rule_ids":[],"query":"","severities":["critical"]}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/security/vulnerabilities/pipelines/inbox_rules/77f32ef7-0abb-40cd-a36e-51a19999c78a
+  response:
+    body:
+      string: '{"data":{"id":"77f32ef7-0abb-40cd-a36e-51a19999c78a","type":"inbox_rules","attributes":{"action":{"reason_description":"items
+        to focus on"},"created_at":1737621650715,"created_by":{"name":"frog","handle":"frog@datadoghq.com"},"enabled":true,"modified_at":1737621650715,"modified_by":{"name":"frog","handle":"frog@datadoghq.com"},"name":"Test-Get_details_of_an_inbox_rule_returns_Inbox_rule_details_response-1737621650","rule":{"issue_type":"vulnerability","rule_types":["misconfiguration","attack_path"],"rule_ids":[],"query":"","severities":["critical"]}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/security/vulnerabilities/pipelines/inbox_rules/77f32ef7-0abb-40cd-a36e-51a19999c78a
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1
