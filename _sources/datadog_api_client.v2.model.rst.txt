@@ -7109,6 +7109,20 @@ datadog\_api\_client.v2.model.logs\_archive\_destination\_s3\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.logs\_archive\_encryption\_s3 module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.logs_archive_encryption_s3
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.logs\_archive\_encryption\_s3\_type module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.logs_archive_encryption_s3_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.logs\_archive\_integration\_azure module
 ----------------------------------------------------------------------
 
