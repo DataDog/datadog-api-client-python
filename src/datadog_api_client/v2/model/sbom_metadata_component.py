@@ -13,31 +13,31 @@ from datadog_api_client.model_utils import (
 )
 
 
-class AssetAttributesOperatingSystem(ModelNormal):
+class SBOMMetadataComponent(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
-            "description": (str,),
             "name": (str,),
+            "type": (str,),
         }
 
     attribute_map = {
-        "description": "description",
         "name": "name",
+        "type": "type",
     }
 
-    def __init__(self_, name: str, description: Union[str, UnsetType] = unset, **kwargs):
+    def __init__(self_, name: Union[str, UnsetType] = unset, type: Union[str, UnsetType] = unset, **kwargs):
         """
-        Asset operating system.
+        The component that the BOM describes.
 
-        :param description: Operating system version.
-        :type description: str, optional
+        :param name: The name of the component. This will often be a shortened, single name of the component.
+        :type name: str, optional
 
-        :param name: Operating system name.
-        :type name: str
+        :param type: Specifies the type of the component.
+        :type type: str, optional
         """
-        if description is not unset:
-            kwargs["description"] = description
+        if name is not unset:
+            kwargs["name"] = name
+        if type is not unset:
+            kwargs["type"] = type
         super().__init__(kwargs)
-
-        self_.name = name

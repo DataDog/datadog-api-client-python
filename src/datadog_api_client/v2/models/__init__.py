@@ -93,11 +93,11 @@ from datadog_api_client.v2.model.application_keys_type import ApplicationKeysTyp
 from datadog_api_client.v2.model.apps_sort_field import AppsSortField
 from datadog_api_client.v2.model.asset import Asset
 from datadog_api_client.v2.model.asset_attributes import AssetAttributes
-from datadog_api_client.v2.model.asset_attributes_operating_system import AssetAttributesOperatingSystem
-from datadog_api_client.v2.model.asset_attributes_risks import AssetAttributesRisks
-from datadog_api_client.v2.model.asset_attributes_version import AssetAttributesVersion
 from datadog_api_client.v2.model.asset_entity_type import AssetEntityType
+from datadog_api_client.v2.model.asset_operating_system import AssetOperatingSystem
+from datadog_api_client.v2.model.asset_risks import AssetRisks
 from datadog_api_client.v2.model.asset_type import AssetType
+from datadog_api_client.v2.model.asset_version import AssetVersion
 from datadog_api_client.v2.model.audit_logs_event import AuditLogsEvent
 from datadog_api_client.v2.model.audit_logs_event_attributes import AuditLogsEventAttributes
 from datadog_api_client.v2.model.audit_logs_event_type import AuditLogsEventType
@@ -917,6 +917,7 @@ from datadog_api_client.v2.model.get_device_response import GetDeviceResponse
 from datadog_api_client.v2.model.get_finding_response import GetFindingResponse
 from datadog_api_client.v2.model.get_interfaces_data import GetInterfacesData
 from datadog_api_client.v2.model.get_interfaces_response import GetInterfacesResponse
+from datadog_api_client.v2.model.get_sbom_response import GetSBOMResponse
 from datadog_api_client.v2.model.get_team_memberships_sort import GetTeamMembershipsSort
 from datadog_api_client.v2.model.group_scalar_column import GroupScalarColumn
 from datadog_api_client.v2.model.group_tags import GroupTags
@@ -1750,6 +1751,13 @@ from datadog_api_client.v2.model.run_historical_job_request_data_type import Run
 from datadog_api_client.v2.model.saml_assertion_attribute import SAMLAssertionAttribute
 from datadog_api_client.v2.model.saml_assertion_attribute_attributes import SAMLAssertionAttributeAttributes
 from datadog_api_client.v2.model.saml_assertion_attributes_type import SAMLAssertionAttributesType
+from datadog_api_client.v2.model.sbom import SBOM
+from datadog_api_client.v2.model.sbom_attributes import SBOMAttributes
+from datadog_api_client.v2.model.sbom_component import SBOMComponent
+from datadog_api_client.v2.model.sbom_component_type import SBOMComponentType
+from datadog_api_client.v2.model.sbom_metadata import SBOMMetadata
+from datadog_api_client.v2.model.sbom_metadata_component import SBOMMetadataComponent
+from datadog_api_client.v2.model.sbom_type import SBOMType
 from datadog_api_client.v2.model.slo_report_interval import SLOReportInterval
 from datadog_api_client.v2.model.slo_report_post_response import SLOReportPostResponse
 from datadog_api_client.v2.model.slo_report_post_response_data import SLOReportPostResponseData
@@ -2197,6 +2205,7 @@ from datadog_api_client.v2.model.spans_sort import SpansSort
 from datadog_api_client.v2.model.spans_sort_order import SpansSortOrder
 from datadog_api_client.v2.model.spans_type import SpansType
 from datadog_api_client.v2.model.spans_warning import SpansWarning
+from datadog_api_client.v2.model.spec_version import SpecVersion
 from datadog_api_client.v2.model.state import State
 from datadog_api_client.v2.model.tags_event_attribute import TagsEventAttribute
 from datadog_api_client.v2.model.team import Team
@@ -2333,10 +2342,8 @@ from datadog_api_client.v2.model.users_type import UsersType
 from datadog_api_client.v2.model.vulnerabilities_type import VulnerabilitiesType
 from datadog_api_client.v2.model.vulnerability import Vulnerability
 from datadog_api_client.v2.model.vulnerability_attributes import VulnerabilityAttributes
-from datadog_api_client.v2.model.vulnerability_attributes_cvss import VulnerabilityAttributesCvss
-from datadog_api_client.v2.model.vulnerability_attributes_dependency_locations import (
-    VulnerabilityAttributesDependencyLocations,
-)
+from datadog_api_client.v2.model.vulnerability_cvss import VulnerabilityCvss
+from datadog_api_client.v2.model.vulnerability_dependency_locations import VulnerabilityDependencyLocations
 from datadog_api_client.v2.model.vulnerability_ecosystem import VulnerabilityEcosystem
 from datadog_api_client.v2.model.vulnerability_relationships import VulnerabilityRelationships
 from datadog_api_client.v2.model.vulnerability_relationships_affects import VulnerabilityRelationshipsAffects
@@ -2462,11 +2469,11 @@ __all__ = [
     "AppsSortField",
     "Asset",
     "AssetAttributes",
-    "AssetAttributesOperatingSystem",
-    "AssetAttributesRisks",
-    "AssetAttributesVersion",
     "AssetEntityType",
+    "AssetOperatingSystem",
+    "AssetRisks",
     "AssetType",
+    "AssetVersion",
     "AuditLogsEvent",
     "AuditLogsEventAttributes",
     "AuditLogsEventType",
@@ -3116,6 +3123,7 @@ __all__ = [
     "GetFindingResponse",
     "GetInterfacesData",
     "GetInterfacesResponse",
+    "GetSBOMResponse",
     "GetTeamMembershipsSort",
     "GroupScalarColumn",
     "GroupTags",
@@ -3843,6 +3851,13 @@ __all__ = [
     "SAMLAssertionAttribute",
     "SAMLAssertionAttributeAttributes",
     "SAMLAssertionAttributesType",
+    "SBOM",
+    "SBOMAttributes",
+    "SBOMComponent",
+    "SBOMComponentType",
+    "SBOMMetadata",
+    "SBOMMetadataComponent",
+    "SBOMType",
     "SLOReportInterval",
     "SLOReportPostResponse",
     "SLOReportPostResponseData",
@@ -4160,6 +4175,7 @@ __all__ = [
     "SpansSortOrder",
     "SpansType",
     "SpansWarning",
+    "SpecVersion",
     "State",
     "TagsEventAttribute",
     "Team",
@@ -4292,8 +4308,8 @@ __all__ = [
     "VulnerabilitiesType",
     "Vulnerability",
     "VulnerabilityAttributes",
-    "VulnerabilityAttributesCvss",
-    "VulnerabilityAttributesDependencyLocations",
+    "VulnerabilityCvss",
+    "VulnerabilityDependencyLocations",
     "VulnerabilityEcosystem",
     "VulnerabilityRelationships",
     "VulnerabilityRelationshipsAffects",

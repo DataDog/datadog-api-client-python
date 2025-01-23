@@ -387,6 +387,33 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 204 OK
 
+  @generated @skip @team:DataDog/asm-vm
+  Scenario: Get SBOM returns "Bad request: The server cannot process the request due to invalid syntax in the request." response
+    Given operation "GetSBOM" enabled
+    And new "GetSBOM" request
+    And request contains "asset_type" parameter from "REPLACE.ME"
+    And request contains "filter[asset_name]" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad request: The server cannot process the request due to invalid syntax in the request.
+
+  @team:DataDog/asm-vm
+  Scenario: Get SBOM returns "Not found: asset not found" response
+    Given operation "GetSBOM" enabled
+    And new "GetSBOM" request
+    And request contains "asset_type" parameter with value "Host"
+    And request contains "filter[asset_name]" parameter with value "unknown-host"
+    When the request is sent
+    Then the response status is 404 Not found: asset not found
+
+  @team:DataDog/asm-vm
+  Scenario: Get SBOM returns "OK" response
+    Given operation "GetSBOM" enabled
+    And new "GetSBOM" request
+    And request contains "asset_type" parameter with value "Repository"
+    And request contains "filter[asset_name]" parameter with value "github.com/datadog/datadog-agent"
+    When the request is sent
+    Then the response status is 200 OK
+
   @skip-validation @team:DataDog/k9-cloud-security-platform
   Scenario: Get a cloud configuration rule's details returns "OK" response
     Given there is a valid "cloud_configuration_rule" in the system
@@ -638,7 +665,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
 
-  @skip @team:DataDog/asm-vm
+  @generated @skip @team:DataDog/asm-vm
   Scenario: List vulnerabilities returns "Bad request: The server cannot process the request due to invalid syntax in the request." response
     Given operation "ListVulnerabilities" enabled
     And new "ListVulnerabilities" request
@@ -664,7 +691,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
 
-  @skip @team:DataDog/asm-vm
+  @generated @skip @team:DataDog/asm-vm
   Scenario: List vulnerable assets returns "Bad request: The server cannot process the request due to invalid syntax in the request." response
     Given operation "ListVulnerableAssets" enabled
     And new "ListVulnerableAssets" request
