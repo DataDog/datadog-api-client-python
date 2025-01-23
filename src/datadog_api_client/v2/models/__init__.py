@@ -1227,6 +1227,8 @@ from datadog_api_client.v2.model.logs_archive_destination_gcs import LogsArchive
 from datadog_api_client.v2.model.logs_archive_destination_gcs_type import LogsArchiveDestinationGCSType
 from datadog_api_client.v2.model.logs_archive_destination_s3 import LogsArchiveDestinationS3
 from datadog_api_client.v2.model.logs_archive_destination_s3_type import LogsArchiveDestinationS3Type
+from datadog_api_client.v2.model.logs_archive_encryption_s3 import LogsArchiveEncryptionS3
+from datadog_api_client.v2.model.logs_archive_encryption_s3_type import LogsArchiveEncryptionS3Type
 from datadog_api_client.v2.model.logs_archive_integration_azure import LogsArchiveIntegrationAzure
 from datadog_api_client.v2.model.logs_archive_integration_gcs import LogsArchiveIntegrationGCS
 from datadog_api_client.v2.model.logs_archive_integration_s3 import LogsArchiveIntegrationS3
@@ -3391,6 +3393,8 @@ __all__ = [
     "LogsArchiveDestinationGCSType",
     "LogsArchiveDestinationS3",
     "LogsArchiveDestinationS3Type",
+    "LogsArchiveEncryptionS3",
+    "LogsArchiveEncryptionS3Type",
     "LogsArchiveIntegrationAzure",
     "LogsArchiveIntegrationGCS",
     "LogsArchiveIntegrationS3",
