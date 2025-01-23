@@ -50,15 +50,13 @@ Feature: Usage Metering
 
   @team:DataDog/revenue-query
   Scenario: Get billing dimension mapping for usage endpoints returns "Bad Request" response
-    Given operation "GetBillingDimensionMapping" enabled
-    And new "GetBillingDimensionMapping" request
+    Given new "GetBillingDimensionMapping" request
     When the request is sent
     Then the response status is 400 Bad Request
 
   @skip @team:DataDog/revenue-query
   Scenario: Get billing dimension mapping for usage endpoints returns "OK" response
-    Given operation "GetBillingDimensionMapping" enabled
-    And new "GetBillingDimensionMapping" request
+    Given new "GetBillingDimensionMapping" request
     When the request is sent
     Then the response status is 200 OK
 
