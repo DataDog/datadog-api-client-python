@@ -1,0 +1,55 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"enabled":true,"name":"Test-Patch_a_signal_based_rule_returns_Notification_rule_successfully_patched_response-1737539437","selectors":{"query":"env:test","rule_types":["signal_correlation"],"severities":["critical"],"trigger_source":"security_signals"},"targets":["@email@email.com"]},"type":"notification_rules"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/security/signals/notification_rules
+  response:
+    body:
+      string: '{"data":{"id":"h6x-nyx-fkm","type":"notification_rules","attributes":{"created_at":1737539437401,"created_by":{"name":"frog","handle":"frog@datadoghq.com"},"enabled":true,"modified_at":1737539437401,"modified_by":{"name":"frog","handle":"frog@datadoghq.com"},"name":"Test-Patch_a_signal_based_rule_returns_Notification_rule_successfully_patched_response-1737539437","selectors":{"severities":["critical"],"rule_types":["signal_correlation"],"query":"env:test","trigger_source":"security_signals"},"targets":["@email@email.com"],"time_aggregation":0,"version":1}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"enabled":true,"name":"Rule 1","selectors":{"query":"(source:production_service
+      OR env:prod)","rule_types":["misconfiguration","attack_path"],"severities":["critical"],"trigger_source":"security_findings"},"targets":["@john.doe@email.com"],"time_aggregation":86400,"version":1},"id":"aaa-bbb-ccc","type":"notification_rules"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/security/signals/notification_rules/h6x-nyx-fkm
+  response:
+    body:
+      string: '{"data":{"id":"h6x-nyx-fkm","type":"notification_rules","attributes":{"created_at":1737539437401,"created_by":{"name":"frog","handle":"frog@datadoghq.com"},"enabled":true,"modified_at":1737539437810,"modified_by":{"name":"frog","handle":"frog@datadoghq.com"},"name":"Rule
+        1","selectors":{"severities":["critical"],"rule_types":["misconfiguration","attack_path"],"query":"(source:production_service
+        OR env:prod)","trigger_source":"security_findings"},"targets":["@john.doe@email.com"],"time_aggregation":86400,"version":2}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/security/signals/notification_rules/h6x-nyx-fkm
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1
