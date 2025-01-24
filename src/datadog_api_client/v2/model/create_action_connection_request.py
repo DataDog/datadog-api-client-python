@@ -30,7 +30,7 @@ class CreateActionConnectionRequest(ModelNormal):
 
     def __init__(self_, data: ActionConnectionData, **kwargs):
         """
-        Request used to create an action connection.
+        Request used to create an Action Connection.
 
         :param data: Data related to the connection.
         :type data: ActionConnectionData

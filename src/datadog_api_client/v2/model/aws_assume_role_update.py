@@ -51,7 +51,7 @@ class AWSAssumeRoleUpdate(ModelNormal):
         """
         The definition of ``AWSAssumeRoleUpdate`` object.
 
-        :param account_id: AWS account the connection is created for
+        :param account_id: AWS account the connection is created for.
         :type account_id: str, optional
 
         :param generate_new_external_id: The ``AWSAssumeRoleUpdate`` ``generate_new_external_id``.

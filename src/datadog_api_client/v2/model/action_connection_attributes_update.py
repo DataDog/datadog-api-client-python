@@ -48,7 +48,7 @@ class ActionConnectionAttributesUpdate(ModelNormal):
         :param integration: The definition of ``ActionConnectionIntegrationUpdate`` object.
         :type integration: ActionConnectionIntegrationUpdate, optional
 
-        :param name: Name of the connection
+        :param name: Name of the connection.
         :type name: str, optional
         """
         if integration is not unset:

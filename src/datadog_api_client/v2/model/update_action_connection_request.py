@@ -30,7 +30,7 @@ class UpdateActionConnectionRequest(ModelNormal):
 
     def __init__(self_, data: ActionConnectionDataUpdate, **kwargs):
         """
-        Request used to update an action connection.
+        Request used to update an Action Connection.
 
         :param data: Data related to the connection update.
         :type data: ActionConnectionDataUpdate

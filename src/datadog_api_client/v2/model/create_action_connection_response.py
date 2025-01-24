@@ -32,7 +32,7 @@ class CreateActionConnectionResponse(ModelNormal):
 
     def __init__(self_, data: Union[ActionConnectionData, UnsetType] = unset, **kwargs):
         """
-        The response for a created connection
+        The response for a created connection.
 
         :param data: Data related to the connection.
         :type data: ActionConnectionData, optional

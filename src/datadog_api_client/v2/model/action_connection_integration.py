@@ -21,7 +21,7 @@ class ActionConnectionIntegration(ModelComposed):
         :param type: The definition of `AWSIntegrationType` object.
         :type type: AWSIntegrationType
 
-        :param base_url: Base HTTP url for the integration
+        :param base_url: Base HTTP url for the integration.
         :type base_url: str
         """
         super().__init__(kwargs)
