@@ -10,6 +10,7 @@ from datadog_api_client.model_utils import (
     cached_property,
     unset,
     UnsetType,
+    UUID,
 )
 
 
@@ -26,7 +27,7 @@ class CustomConnection(ModelNormal):
 
         return {
             "attributes": (CustomConnectionAttributes,),
-            "id": (str,),
+            "id": (UUID,),
             "type": (CustomConnectionType,),
         }
 
@@ -39,20 +40,20 @@ class CustomConnection(ModelNormal):
     def __init__(
         self_,
         attributes: Union[CustomConnectionAttributes, UnsetType] = unset,
-        id: Union[str, UnsetType] = unset,
+        id: Union[UUID, UnsetType] = unset,
         type: Union[CustomConnectionType, UnsetType] = unset,
         **kwargs,
     ):
         """
-        The definition of ``CustomConnection`` object.
+        A custom connection used by an app.
 
-        :param attributes: The definition of ``CustomConnectionAttributes`` object.
+        :param attributes: The custom connection attributes.
         :type attributes: CustomConnectionAttributes, optional
 
-        :param id: The ``CustomConnection`` ``id``.
-        :type id: str, optional
+        :param id: The ID of the custom connection.
+        :type id: UUID, optional
 
-        :param type: The definition of ``CustomConnectionType`` object.
+        :param type: The custom connection type.
         :type type: CustomConnectionType, optional
         """
         if attributes is not unset:

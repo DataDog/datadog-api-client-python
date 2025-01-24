@@ -43,12 +43,12 @@ class CustomConnectionAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        The definition of ``CustomConnectionAttributes`` object.
+        The custom connection attributes.
 
-        :param name: The ``attributes`` ``name``.
+        :param name: The name of the custom connection.
         :type name: str, optional
 
-        :param on_prem_runner: The definition of ``CustomConnectionAttributesOnPremRunner`` object.
+        :param on_prem_runner: Information about the Private Action Runner used by the custom connection, if the custom connection is associated with a Private Action Runner.
         :type on_prem_runner: CustomConnectionAttributesOnPremRunner, optional
         """
         if name is not unset:

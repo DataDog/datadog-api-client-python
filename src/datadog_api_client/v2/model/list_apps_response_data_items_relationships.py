@@ -32,9 +32,9 @@ class ListAppsResponseDataItemsRelationships(ModelNormal):
 
     def __init__(self_, deployment: Union[DeploymentRelationship, UnsetType] = unset, **kwargs):
         """
-        The definition of ``ListAppsResponseDataItemsRelationships`` object.
+        The app's publication information.
 
-        :param deployment: The definition of ``DeploymentRelationship`` object.
+        :param deployment: Information pointing to the app's publication status.
         :type deployment: DeploymentRelationship, optional
         """
         if deployment is not unset:

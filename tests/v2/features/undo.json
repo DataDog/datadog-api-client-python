@@ -191,19 +191,19 @@
     }
   },
   "DeleteApps": {
-    "tag": "Apps",
+    "tag": "App Builder",
     "undo": {
       "type": "idempotent"
     }
   },
   "ListApps": {
-    "tag": "Apps",
+    "tag": "App Builder",
     "undo": {
       "type": "safe"
     }
   },
   "CreateApp": {
-    "tag": "Apps",
+    "tag": "App Builder",
     "undo": {
       "operationId": "DeleteApp",
       "parameters": [
@@ -216,31 +216,31 @@
     }
   },
   "DeleteApp": {
-    "tag": "Apps",
+    "tag": "App Builder",
     "undo": {
       "type": "idempotent"
     }
   },
   "GetApp": {
-    "tag": "Apps",
+    "tag": "App Builder",
     "undo": {
       "type": "safe"
     }
   },
   "UpdateApp": {
-    "tag": "Apps",
+    "tag": "App Builder",
     "undo": {
       "type": "idempotent"
     }
   },
-  "DisableApp": {
-    "tag": "Apps",
+  "UnpublishApp": {
+    "tag": "App Builder",
     "undo": {
       "type": "idempotent"
     }
   },
-  "DeployApp": {
-    "tag": "Apps",
+  "PublishApp": {
+    "tag": "App Builder",
     "undo": {
       "type": "idempotent"
     }

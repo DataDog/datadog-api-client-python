@@ -32,9 +32,9 @@ class DeleteAppsRequest(ModelNormal):
 
     def __init__(self_, data: Union[List[DeleteAppsRequestDataItems], UnsetType] = unset, **kwargs):
         """
-        The definition of ``DeleteAppsRequest`` object.
+        A request object for deleting multiple apps by ID.
 
-        :param data: The ``DeleteAppsRequest`` ``data``.
+        :param data: An array of objects containing the IDs of the apps to delete.
         :type data: [DeleteAppsRequestDataItems], optional
         """
         if data is not unset:

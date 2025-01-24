@@ -8,21 +8,22 @@ from typing import TYPE_CHECKING
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    UUID,
 )
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.delete_apps_request_data_items_type import DeleteAppsRequestDataItemsType
+    from datadog_api_client.v2.model.app_definition_type import AppDefinitionType
 
 
 class DeleteAppsRequestDataItems(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.delete_apps_request_data_items_type import DeleteAppsRequestDataItemsType
+        from datadog_api_client.v2.model.app_definition_type import AppDefinitionType
 
         return {
-            "id": (str,),
-            "type": (DeleteAppsRequestDataItemsType,),
+            "id": (UUID,),
+            "type": (AppDefinitionType,),
         }
 
     attribute_map = {
@@ -30,15 +31,15 @@ class DeleteAppsRequestDataItems(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, id: str, type: DeleteAppsRequestDataItemsType, **kwargs):
+    def __init__(self_, id: UUID, type: AppDefinitionType, **kwargs):
         """
-        The definition of ``DeleteAppsRequestDataItems`` object.
+        An object containing the ID of an app to delete.
 
-        :param id: The ``items`` ``id``.
-        :type id: str
+        :param id: The ID of the app to delete.
+        :type id: UUID
 
-        :param type: The definition of ``DeleteAppsRequestDataItemsType`` object.
-        :type type: DeleteAppsRequestDataItemsType
+        :param type: The app definition type.
+        :type type: AppDefinitionType
         """
         super().__init__(kwargs)
 

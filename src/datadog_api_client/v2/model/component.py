@@ -53,21 +53,21 @@ class Component(ModelNormal):
         **kwargs,
     ):
         """
-        The definition of ``Component`` object.
+        `Definition of a UI component in the app <https://docs.datadoghq.com/service_management/app_builder/components/>`_
 
-        :param events: The ``Component`` ``events``.
+        :param events: Events to listen for on the UI component.
         :type events: [AppBuilderEvent], optional
 
-        :param id: The ``Component`` ``id``.
+        :param id: The ID of the UI component. This property is deprecated; use ``name`` to identify individual components instead.
         :type id: str, none_type, optional
 
-        :param name: The ``Component`` ``name``.
+        :param name: A unique identifier for this UI component. This name is also visible in the app editor.
         :type name: str
 
-        :param properties: The definition of ``ComponentProperties`` object.
+        :param properties: Properties of a UI component. Different component types can have their own additional unique properties. See the `components documentation <https://docs.datadoghq.com/service_management/app_builder/components/>`_ for more detail on each component type and its properties.
         :type properties: ComponentProperties
 
-        :param type: The definition of ``ComponentType`` object.
+        :param type: The UI component type.
         :type type: ComponentType
         """
         if events is not unset:

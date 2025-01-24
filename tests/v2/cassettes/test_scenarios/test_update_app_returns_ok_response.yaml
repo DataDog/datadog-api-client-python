@@ -12,7 +12,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/app-builder/apps
   response:
     body:
-      string: '{"data":{"id":"22653158-3691-4a09-bbd9-f4197f14dd0c","type":"appDefinitions"}}'
+      string: '{"data":{"id":"b5820444-b12a-48d2-9cf2-231d6a3e8858","type":"appDefinitions"}}'
     headers:
       content-type:
       - application/vnd.api+json
@@ -20,20 +20,20 @@ interactions:
       code: 201
       message: Created
 - request:
-    body: '{"data":{"attributes":{"name":"Updated Name","rootInstanceName":"grid0"},"id":"22653158-3691-4a09-bbd9-f4197f14dd0c","type":"appDefinitions"}}'
+    body: '{"data":{"attributes":{"name":"Updated Name","rootInstanceName":"grid0"},"id":"b5820444-b12a-48d2-9cf2-231d6a3e8858","type":"appDefinitions"}}'
     headers:
       accept:
       - application/json
       content-type:
       - application/json
     method: PATCH
-    uri: https://api.datadoghq.com/api/v2/app-builder/apps/22653158-3691-4a09-bbd9-f4197f14dd0c
+    uri: https://api.datadoghq.com/api/v2/app-builder/apps/b5820444-b12a-48d2-9cf2-231d6a3e8858
   response:
     body:
-      string: '{"data":{"id":"22653158-3691-4a09-bbd9-f4197f14dd0c","type":"appDefinitions","attributes":{"components":[{"events":[],"name":"grid0","properties":{"children":[{"events":[],"name":"gridCell0","properties":{"children":[{"events":[],"name":"calloutValue0","properties":{"isDisabled":false,"isLoading":false,"isVisible":true,"label":"CPU
+      string: '{"data":{"id":"b5820444-b12a-48d2-9cf2-231d6a3e8858","type":"appDefinitions","attributes":{"components":[{"events":[],"name":"grid0","properties":{"children":[{"events":[],"name":"gridCell0","properties":{"children":[{"events":[],"name":"calloutValue0","properties":{"isDisabled":false,"isLoading":false,"isVisible":true,"label":"CPU
         Usage","size":"sm","style":"vivid_yellow","unit":"kB","value":"42"},"type":"calloutValue"}],"isVisible":"true","layout":{"default":{"height":8,"width":2,"x":0,"y":0}}},"type":"gridCell"}]},"type":"grid"}],"description":"This
         is a simple example app","embeddedQueries":[],"favorite":false,"name":"Updated
-        Name","rootInstanceName":"grid0","selfService":false,"tags":[]},"meta":{"org_id":1107852,"user_id":15479137,"user_uuid":"b3f98453-b289-11ef-a4e9-d6d283f92d91","user_name":"oliver.li@datadoghq.com","version":2,"updated_since_deployment":false,"created_at":"2024-12-20T20:39:23.117622Z","updated_at":"2024-12-20T20:39:23.317526Z","deleted_at":"0001-01-01T00:00:00Z"}}}'
+        Name","rootInstanceName":"grid0","selfService":false,"tags":[]},"meta":{"org_id":1107852,"user_id":15479137,"user_uuid":"b3f98453-b289-11ef-a4e9-d6d283f92d91","user_name":"oliver.li@datadoghq.com","version":2,"updated_since_deployment":false,"created_at":"2025-01-09T20:40:41.309534Z","updated_at":"2025-01-09T20:40:41.499741Z","deleted_at":"0001-01-01T00:00:00Z"}}}'
     headers:
       content-type:
       - application/vnd.api+json
@@ -46,10 +46,10 @@ interactions:
       accept:
       - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/app-builder/apps/22653158-3691-4a09-bbd9-f4197f14dd0c
+    uri: https://api.datadoghq.com/api/v2/app-builder/apps/b5820444-b12a-48d2-9cf2-231d6a3e8858
   response:
     body:
-      string: '{"data":{"id":"22653158-3691-4a09-bbd9-f4197f14dd0c","type":"appDefinitions"}}'
+      string: '{"data":{"id":"b5820444-b12a-48d2-9cf2-231d6a3e8858","type":"appDefinitions"}}'
     headers:
       content-type:
       - application/vnd.api+json

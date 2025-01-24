@@ -10,6 +10,7 @@ from datadog_api_client.model_utils import (
     cached_property,
     unset,
     UnsetType,
+    UUID,
 )
 
 
@@ -19,7 +20,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.list_apps_response_data_items_relationships import (
         ListAppsResponseDataItemsRelationships,
     )
-    from datadog_api_client.v2.model.list_apps_response_data_items_type import ListAppsResponseDataItemsType
+    from datadog_api_client.v2.model.app_definition_type import AppDefinitionType
 
 
 class ListAppsResponseDataItems(ModelNormal):
@@ -32,14 +33,14 @@ class ListAppsResponseDataItems(ModelNormal):
         from datadog_api_client.v2.model.list_apps_response_data_items_relationships import (
             ListAppsResponseDataItemsRelationships,
         )
-        from datadog_api_client.v2.model.list_apps_response_data_items_type import ListAppsResponseDataItemsType
+        from datadog_api_client.v2.model.app_definition_type import AppDefinitionType
 
         return {
             "attributes": (ListAppsResponseDataItemsAttributes,),
-            "id": (str,),
+            "id": (UUID,),
             "meta": (AppMeta,),
             "relationships": (ListAppsResponseDataItemsRelationships,),
-            "type": (ListAppsResponseDataItemsType,),
+            "type": (AppDefinitionType,),
         }
 
     attribute_map = {
@@ -53,29 +54,29 @@ class ListAppsResponseDataItems(ModelNormal):
     def __init__(
         self_,
         attributes: ListAppsResponseDataItemsAttributes,
-        id: str,
-        type: ListAppsResponseDataItemsType,
+        id: UUID,
+        type: AppDefinitionType,
         meta: Union[AppMeta, UnsetType] = unset,
         relationships: Union[ListAppsResponseDataItemsRelationships, UnsetType] = unset,
         **kwargs,
     ):
         """
-        The definition of ``ListAppsResponseDataItems`` object.
+        An app definition object. This contains only basic information about the app such as ID, name, and tags.
 
-        :param attributes: The definition of ``ListAppsResponseDataItemsAttributes`` object.
+        :param attributes: Basic information about the app such as name, description, and tags.
         :type attributes: ListAppsResponseDataItemsAttributes
 
-        :param id: The ``items`` ``id``.
-        :type id: str
+        :param id: The ID of the app.
+        :type id: UUID
 
-        :param meta: The definition of ``AppMeta`` object.
+        :param meta: Metadata of an app.
         :type meta: AppMeta, optional
 
-        :param relationships: The definition of ``ListAppsResponseDataItemsRelationships`` object.
+        :param relationships: The app's publication information.
         :type relationships: ListAppsResponseDataItemsRelationships, optional
 
-        :param type: The definition of ``ListAppsResponseDataItemsType`` object.
-        :type type: ListAppsResponseDataItemsType
+        :param type: The app definition type.
+        :type type: AppDefinitionType
         """
         if meta is not unset:
             kwargs["meta"] = meta

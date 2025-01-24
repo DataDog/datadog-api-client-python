@@ -15,7 +15,7 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.list_apps_response_data_items import ListAppsResponseDataItems
-    from datadog_api_client.v2.model.deployment_included import DeploymentIncluded
+    from datadog_api_client.v2.model.deployment import Deployment
     from datadog_api_client.v2.model.list_apps_response_meta import ListAppsResponseMeta
 
 
@@ -23,12 +23,12 @@ class ListAppsResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.list_apps_response_data_items import ListAppsResponseDataItems
-        from datadog_api_client.v2.model.deployment_included import DeploymentIncluded
+        from datadog_api_client.v2.model.deployment import Deployment
         from datadog_api_client.v2.model.list_apps_response_meta import ListAppsResponseMeta
 
         return {
             "data": ([ListAppsResponseDataItems],),
-            "included": ([DeploymentIncluded],),
+            "included": ([Deployment],),
             "meta": (ListAppsResponseMeta,),
         }
 
@@ -41,20 +41,20 @@ class ListAppsResponse(ModelNormal):
     def __init__(
         self_,
         data: Union[List[ListAppsResponseDataItems], UnsetType] = unset,
-        included: Union[List[DeploymentIncluded], UnsetType] = unset,
+        included: Union[List[Deployment], UnsetType] = unset,
         meta: Union[ListAppsResponseMeta, UnsetType] = unset,
         **kwargs,
     ):
         """
-        The definition of ``ListAppsResponse`` object.
+        A paginated list of apps matching the specified filters and sorting.
 
-        :param data: The ``ListAppsResponse`` ``data``.
+        :param data: An array of app definitions.
         :type data: [ListAppsResponseDataItems], optional
 
-        :param included: The ``ListAppsResponse`` ``included``.
-        :type included: [DeploymentIncluded], optional
+        :param included: Data on the version of the app that was published.
+        :type included: [Deployment], optional
 
-        :param meta: The definition of ``ListAppsResponseMeta`` object.
+        :param meta: Pagination metadata.
         :type meta: ListAppsResponseMeta, optional
         """
         if data is not unset:

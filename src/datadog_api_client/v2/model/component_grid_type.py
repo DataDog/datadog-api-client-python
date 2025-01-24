@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class ComponentGridType(ModelSimple):
     """
-    The definition of `ComponentGridType` object.
+    The grid component type.
 
     :param value: If omitted defaults to "grid". Must be one of ["grid"].
     :type value: str

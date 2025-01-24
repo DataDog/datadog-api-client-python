@@ -30,12 +30,12 @@ class ListAppsResponseMetaPage(ModelNormal):
         self_, total_count: Union[int, UnsetType] = unset, total_filtered_count: Union[int, UnsetType] = unset, **kwargs
     ):
         """
-        The definition of ``ListAppsResponseMetaPage`` object.
+        Information on the total number of apps, to be used for pagination.
 
-        :param total_count: The ``page`` ``totalCount``.
+        :param total_count: The total number of apps under the Datadog organization, disregarding any filters applied.
         :type total_count: int, optional
 
-        :param total_filtered_count: The ``page`` ``totalFilteredCount``.
+        :param total_filtered_count: The total number of apps that match the specified filters.
         :type total_filtered_count: int, optional
         """
         if total_count is not unset:

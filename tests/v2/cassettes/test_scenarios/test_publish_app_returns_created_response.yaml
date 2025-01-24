@@ -1,0 +1,54 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"components":[{"events":[],"name":"grid0","properties":{"children":[{"events":[],"name":"gridCell0","properties":{"children":[{"events":[],"name":"calloutValue0","properties":{"isDisabled":false,"isLoading":false,"isVisible":true,"label":"CPU
+      Usage","size":"sm","style":"vivid_yellow","unit":"kB","value":"42"},"type":"calloutValue"}],"isVisible":"true","layout":{"default":{"height":8,"width":2,"x":0,"y":0}}},"type":"gridCell"}]},"type":"grid"}],"description":"This
+      is a simple example app","embeddedQueries":[],"name":"Example App","rootInstanceName":"grid0"},"type":"appDefinitions"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/app-builder/apps
+  response:
+    body:
+      string: '{"data":{"id":"f33cfd55-b517-4c29-862b-45c99742ed0e","type":"appDefinitions"}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/app-builder/apps/f33cfd55-b517-4c29-862b-45c99742ed0e/deployment
+  response:
+    body:
+      string: '{"data":{"id":"01087e5d-de82-4a28-bf05-d2e66ec4ed44","type":"deployment","attributes":{"app_version_id":"f638f430-5534-447f-85c8-860693539ff6"},"meta":{"created_at":"2025-01-09T20:40:39.764785Z","user_id":15479137,"user_uuid":"b3f98453-b289-11ef-a4e9-d6d283f92d91","user_name":"oliver.li@datadoghq.com"}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/app-builder/apps/f33cfd55-b517-4c29-862b-45c99742ed0e
+  response:
+    body:
+      string: '{"data":{"id":"f33cfd55-b517-4c29-862b-45c99742ed0e","type":"appDefinitions"}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1

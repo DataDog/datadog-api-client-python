@@ -30,7 +30,7 @@ class Query(ModelNormal):
 
         return {
             "events": ([AppBuilderEvent],),
-            "id": (str,),
+            "id": (UUID,),
             "name": (str,),
             "properties": (
                 bool,
@@ -57,7 +57,7 @@ class Query(ModelNormal):
 
     def __init__(
         self_,
-        id: str,
+        id: UUID,
         name: str,
         type: QueryType,
         events: Union[List[AppBuilderEvent], UnsetType] = unset,
@@ -65,21 +65,21 @@ class Query(ModelNormal):
         **kwargs,
     ):
         """
-        The definition of ``Query`` object.
+        A query used by an app. This can take the form of an external action, a data transformation, or a state variable change.
 
-        :param events: The ``Query`` ``events``.
+        :param events: Events to listen for downstream of the query.
         :type events: [AppBuilderEvent], optional
 
-        :param id: The ``Query`` ``id``.
-        :type id: str
+        :param id: The ID of the query.
+        :type id: UUID
 
-        :param name: The ``Query`` ``name``.
+        :param name: The name of the query. The name must be unique within the app and is visible in the app editor.
         :type name: str
 
-        :param properties: The ``Query`` ``properties``.
+        :param properties: The properties of the query. The properties vary depending on the query type.
         :type properties: bool, date, datetime, dict, float, int, list, str, UUID, none_type, optional
 
-        :param type: The definition of ``QueryType`` object.
+        :param type: The query type.
         :type type: QueryType
         """
         if events is not unset:

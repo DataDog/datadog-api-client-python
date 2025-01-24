@@ -15,18 +15,18 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.create_app_request_data_attributes import CreateAppRequestDataAttributes
-    from datadog_api_client.v2.model.create_app_request_data_type import CreateAppRequestDataType
+    from datadog_api_client.v2.model.app_definition_type import AppDefinitionType
 
 
 class CreateAppRequestData(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.create_app_request_data_attributes import CreateAppRequestDataAttributes
-        from datadog_api_client.v2.model.create_app_request_data_type import CreateAppRequestDataType
+        from datadog_api_client.v2.model.app_definition_type import AppDefinitionType
 
         return {
             "attributes": (CreateAppRequestDataAttributes,),
-            "type": (CreateAppRequestDataType,),
+            "type": (AppDefinitionType,),
         }
 
     attribute_map = {
@@ -35,19 +35,16 @@ class CreateAppRequestData(ModelNormal):
     }
 
     def __init__(
-        self_,
-        type: CreateAppRequestDataType,
-        attributes: Union[CreateAppRequestDataAttributes, UnsetType] = unset,
-        **kwargs,
+        self_, type: AppDefinitionType, attributes: Union[CreateAppRequestDataAttributes, UnsetType] = unset, **kwargs
     ):
         """
-        The definition of ``CreateAppRequestData`` object.
+        The data object containing the app definition.
 
-        :param attributes: The definition of ``CreateAppRequestDataAttributes`` object.
+        :param attributes: App definition attributes such as name, description, and components.
         :type attributes: CreateAppRequestDataAttributes, optional
 
-        :param type: The definition of ``CreateAppRequestDataType`` object.
-        :type type: CreateAppRequestDataType
+        :param type: The app definition type.
+        :type type: AppDefinitionType
         """
         if attributes is not unset:
             kwargs["attributes"] = attributes

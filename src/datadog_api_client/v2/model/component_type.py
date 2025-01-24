@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class ComponentType(ModelSimple):
     """
-    The definition of `ComponentType` object.
+    The UI component type.
 
     :param value: Must be one of ["table", "textInput", "textArea", "button", "text", "select", "modal", "schemaForm", "checkbox", "tabs", "vegaChart", "radioButtons", "numberInput", "fileInput", "jsonInput", "gridCell", "dateRangePicker", "search", "container", "calloutValue"].
     :type value: str

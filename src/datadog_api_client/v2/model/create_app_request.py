@@ -32,9 +32,9 @@ class CreateAppRequest(ModelNormal):
 
     def __init__(self_, data: Union[CreateAppRequestData, UnsetType] = unset, **kwargs):
         """
-        The definition of ``CreateAppRequest`` object.
+        A request object for creating a new app.
 
-        :param data: The definition of ``CreateAppRequestData`` object.
+        :param data: The data object containing the app definition.
         :type data: CreateAppRequestData, optional
         """
         if data is not unset:

@@ -16,8 +16,6 @@ from datadog_api_client.model_utils import (
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.component_grid import ComponentGrid
     from datadog_api_client.v2.model.query import Query
-    from datadog_api_client.v2.model.input_schema import InputSchema
-    from datadog_api_client.v2.model.script import Script
 
 
 class GetAppResponseDataAttributes(ModelNormal):
@@ -25,18 +23,14 @@ class GetAppResponseDataAttributes(ModelNormal):
     def openapi_types(_):
         from datadog_api_client.v2.model.component_grid import ComponentGrid
         from datadog_api_client.v2.model.query import Query
-        from datadog_api_client.v2.model.input_schema import InputSchema
-        from datadog_api_client.v2.model.script import Script
 
         return {
             "components": ([ComponentGrid],),
             "description": (str,),
             "embedded_queries": ([Query],),
             "favorite": (bool,),
-            "input_schema": (InputSchema,),
             "name": (str,),
             "root_instance_name": (str,),
-            "scripts": ([Script],),
             "tags": ([str],),
         }
 
@@ -45,10 +39,8 @@ class GetAppResponseDataAttributes(ModelNormal):
         "description": "description",
         "embedded_queries": "embeddedQueries",
         "favorite": "favorite",
-        "input_schema": "inputSchema",
         "name": "name",
         "root_instance_name": "rootInstanceName",
-        "scripts": "scripts",
         "tags": "tags",
     }
 
@@ -58,41 +50,33 @@ class GetAppResponseDataAttributes(ModelNormal):
         description: Union[str, UnsetType] = unset,
         embedded_queries: Union[List[Query], UnsetType] = unset,
         favorite: Union[bool, UnsetType] = unset,
-        input_schema: Union[InputSchema, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
         root_instance_name: Union[str, UnsetType] = unset,
-        scripts: Union[List[Script], UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
         **kwargs,
     ):
         """
-        The definition of ``GetAppResponseDataAttributes`` object.
+        The app definition attributes, such as name, description, and components.
 
-        :param components: The ``attributes`` ``components``.
+        :param components: The UI components that make up the app.
         :type components: [ComponentGrid], optional
 
-        :param description: The ``attributes`` ``description``.
+        :param description: A human-readable description for the app.
         :type description: str, optional
 
-        :param embedded_queries: The ``attributes`` ``embeddedQueries``.
+        :param embedded_queries: An array of queries, such as external actions and state variables, that the app uses.
         :type embedded_queries: [Query], optional
 
-        :param favorite: The ``attributes`` ``favorite``.
+        :param favorite: Whether the app is marked as a favorite by the current user.
         :type favorite: bool, optional
 
-        :param input_schema: The definition of ``InputSchema`` object.
-        :type input_schema: InputSchema, optional
-
-        :param name: The ``attributes`` ``name``.
+        :param name: The name of the app.
         :type name: str, optional
 
-        :param root_instance_name: The ``attributes`` ``rootInstanceName``.
+        :param root_instance_name: The name of the root component of the app. This must be a ``grid`` component that contains all other components.
         :type root_instance_name: str, optional
 
-        :param scripts: The ``attributes`` ``scripts``.
-        :type scripts: [Script], optional
-
-        :param tags: The ``attributes`` ``tags``.
+        :param tags: A list of tags for the app, which can be used to filter apps.
         :type tags: [str], optional
         """
         if components is not unset:
@@ -103,14 +87,10 @@ class GetAppResponseDataAttributes(ModelNormal):
             kwargs["embedded_queries"] = embedded_queries
         if favorite is not unset:
             kwargs["favorite"] = favorite
-        if input_schema is not unset:
-            kwargs["input_schema"] = input_schema
         if name is not unset:
             kwargs["name"] = name
         if root_instance_name is not unset:
             kwargs["root_instance_name"] = root_instance_name
-        if scripts is not unset:
-            kwargs["scripts"] = scripts
         if tags is not unset:
             kwargs["tags"] = tags
         super().__init__(kwargs)

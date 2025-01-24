@@ -15,24 +15,24 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.get_app_response_data import GetAppResponseData
-    from datadog_api_client.v2.model.deployment_included import DeploymentIncluded
+    from datadog_api_client.v2.model.deployment import Deployment
     from datadog_api_client.v2.model.app_meta import AppMeta
-    from datadog_api_client.v2.model.get_app_response_relationship import GetAppResponseRelationship
+    from datadog_api_client.v2.model.app_relationship import AppRelationship
 
 
 class GetAppResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.get_app_response_data import GetAppResponseData
-        from datadog_api_client.v2.model.deployment_included import DeploymentIncluded
+        from datadog_api_client.v2.model.deployment import Deployment
         from datadog_api_client.v2.model.app_meta import AppMeta
-        from datadog_api_client.v2.model.get_app_response_relationship import GetAppResponseRelationship
+        from datadog_api_client.v2.model.app_relationship import AppRelationship
 
         return {
             "data": (GetAppResponseData,),
-            "included": ([DeploymentIncluded],),
+            "included": ([Deployment],),
             "meta": (AppMeta,),
-            "relationship": (GetAppResponseRelationship,),
+            "relationship": (AppRelationship,),
         }
 
     attribute_map = {
@@ -45,25 +45,25 @@ class GetAppResponse(ModelNormal):
     def __init__(
         self_,
         data: Union[GetAppResponseData, UnsetType] = unset,
-        included: Union[List[DeploymentIncluded], UnsetType] = unset,
+        included: Union[List[Deployment], UnsetType] = unset,
         meta: Union[AppMeta, UnsetType] = unset,
-        relationship: Union[GetAppResponseRelationship, UnsetType] = unset,
+        relationship: Union[AppRelationship, UnsetType] = unset,
         **kwargs,
     ):
         """
-        The definition of ``GetAppResponse`` object.
+        The full app definition response object.
 
-        :param data: The definition of ``GetAppResponseData`` object.
+        :param data: The data object containing the app definition.
         :type data: GetAppResponseData, optional
 
-        :param included: The ``GetAppResponse`` ``included``.
-        :type included: [DeploymentIncluded], optional
+        :param included: Data on the version of the app that was published.
+        :type included: [Deployment], optional
 
-        :param meta: The definition of ``AppMeta`` object.
+        :param meta: Metadata of an app.
         :type meta: AppMeta, optional
 
-        :param relationship: The definition of ``GetAppResponseRelationship`` object.
-        :type relationship: GetAppResponseRelationship, optional
+        :param relationship: The app's publication relationship and custom connections.
+        :type relationship: AppRelationship, optional
         """
         if data is not unset:
             kwargs["data"] = data

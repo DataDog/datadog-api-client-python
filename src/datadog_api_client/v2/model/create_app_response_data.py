@@ -8,21 +8,22 @@ from typing import TYPE_CHECKING
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    UUID,
 )
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.create_app_response_data_type import CreateAppResponseDataType
+    from datadog_api_client.v2.model.app_definition_type import AppDefinitionType
 
 
 class CreateAppResponseData(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.create_app_response_data_type import CreateAppResponseDataType
+        from datadog_api_client.v2.model.app_definition_type import AppDefinitionType
 
         return {
-            "id": (str,),
-            "type": (CreateAppResponseDataType,),
+            "id": (UUID,),
+            "type": (AppDefinitionType,),
         }
 
     attribute_map = {
@@ -30,15 +31,15 @@ class CreateAppResponseData(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, id: str, type: CreateAppResponseDataType, **kwargs):
+    def __init__(self_, id: UUID, type: AppDefinitionType, **kwargs):
         """
-        The definition of ``CreateAppResponseData`` object.
+        The data object containing the app ID.
 
-        :param id: The ``data`` ``id``.
-        :type id: str
+        :param id: The ID of the created app.
+        :type id: UUID
 
-        :param type: The definition of ``CreateAppResponseDataType`` object.
-        :type type: CreateAppResponseDataType
+        :param type: The app definition type.
+        :type type: AppDefinitionType
         """
         super().__init__(kwargs)
 

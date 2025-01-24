@@ -42,21 +42,21 @@ class ListAppsResponseDataItemsAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        The definition of ``ListAppsResponseDataItemsAttributes`` object.
+        Basic information about the app such as name, description, and tags.
 
-        :param description: The ``attributes`` ``description``.
+        :param description: A human-readable description for the app.
         :type description: str, optional
 
-        :param favorite: The ``attributes`` ``favorite``.
+        :param favorite: Whether the app is marked as a favorite by the current user.
         :type favorite: bool, optional
 
-        :param name: The ``attributes`` ``name``.
+        :param name: The name of the app.
         :type name: str, optional
 
-        :param self_service: The ``attributes`` ``selfService``.
+        :param self_service: Whether the app is enabled for use in the Datadog self-service hub.
         :type self_service: bool, optional
 
-        :param tags: The ``attributes`` ``tags``.
+        :param tags: A list of tags for the app, which can be used to filter apps.
         :type tags: [str], optional
         """
         if description is not unset:

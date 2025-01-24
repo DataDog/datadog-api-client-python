@@ -32,9 +32,9 @@ class CreateAppResponse(ModelNormal):
 
     def __init__(self_, data: Union[CreateAppResponseData, UnsetType] = unset, **kwargs):
         """
-        The definition of ``CreateAppResponse`` object.
+        The response object after a new app is successfully created, with the app ID.
 
-        :param data: The definition of ``CreateAppResponseData`` object.
+        :param data: The data object containing the app ID.
         :type data: CreateAppResponseData, optional
         """
         if data is not unset:

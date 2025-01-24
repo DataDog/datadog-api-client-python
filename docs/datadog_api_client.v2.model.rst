@@ -221,10 +221,31 @@ datadog\_api\_client.v2.model.app\_builder\_event\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.app\_definition\_type module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.app_definition_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.app\_deployment\_type module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.app_deployment_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.app\_meta module
 ----------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.app_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.app\_relationship module
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.app_relationship
    :members:
    :show-inheritance:
 
@@ -2818,13 +2839,6 @@ datadog\_api\_client.v2.model.create\_app\_request\_data\_attributes module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.create\_app\_request\_data\_type module
----------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.create_app_request_data_type
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v2.model.create\_app\_response module
 ----------------------------------------------------------
 
@@ -2836,13 +2850,6 @@ datadog\_api\_client.v2.model.create\_app\_response\_data module
 ----------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.create_app_response_data
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.create\_app\_response\_data\_type module
-----------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.create_app_response_data_type
    :members:
    :show-inheritance:
 
@@ -3574,13 +3581,6 @@ datadog\_api\_client.v2.model.delete\_app\_response\_data module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.delete\_app\_response\_data\_type module
-----------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.delete_app_response_data_type
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v2.model.delete\_apps\_request module
 ----------------------------------------------------------
 
@@ -3592,13 +3592,6 @@ datadog\_api\_client.v2.model.delete\_apps\_request\_data\_items module
 -----------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.delete_apps_request_data_items
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.delete\_apps\_request\_data\_items\_type module
------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.delete_apps_request_data_items_type
    :members:
    :show-inheritance:
 
@@ -3616,13 +3609,6 @@ datadog\_api\_client.v2.model.delete\_apps\_response\_data\_items module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.delete\_apps\_response\_data\_items\_type module
-------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.delete_apps_response_data_items_type
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v2.model.dependency\_location module
 ---------------------------------------------------------
 
@@ -3630,66 +3616,24 @@ datadog\_api\_client.v2.model.dependency\_location module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.deploy\_app\_response module
-----------------------------------------------------------
+datadog\_api\_client.v2.model.deployment module
+-----------------------------------------------
 
-.. automodule:: datadog_api_client.v2.model.deploy_app_response
+.. automodule:: datadog_api_client.v2.model.deployment
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.deploy\_app\_response\_data module
-----------------------------------------------------------------
+datadog\_api\_client.v2.model.deployment\_attributes module
+-----------------------------------------------------------
 
-.. automodule:: datadog_api_client.v2.model.deploy_app_response_data
+.. automodule:: datadog_api_client.v2.model.deployment_attributes
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.deploy\_app\_response\_data\_attributes module
-----------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.deploy_app_response_data_attributes
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.deploy\_app\_response\_data\_type module
-----------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.deploy_app_response_data_type
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.deployment\_included module
+datadog\_api\_client.v2.model.deployment\_metadata module
 ---------------------------------------------------------
 
-.. automodule:: datadog_api_client.v2.model.deployment_included
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.deployment\_included\_attributes module
----------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.deployment_included_attributes
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.deployment\_included\_meta module
----------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.deployment_included_meta
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.deployment\_included\_type module
----------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.deployment_included_type
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.deployment\_meta module
------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.deployment_meta
+.. automodule:: datadog_api_client.v2.model.deployment_metadata
    :members:
    :show-inheritance:
 
@@ -3704,20 +3648,6 @@ datadog\_api\_client.v2.model.deployment\_relationship\_data module
 -------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.deployment_relationship_data
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.deployment\_relationship\_data\_type module
--------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.deployment_relationship_data_type
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.deployment\_relationship\_meta module
--------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.deployment_relationship_meta
    :members:
    :show-inheritance:
 
@@ -3760,34 +3690,6 @@ datadog\_api\_client.v2.model.devices\_list\_data module
 --------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.devices_list_data
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.disable\_app\_response module
------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.disable_app_response
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.disable\_app\_response\_data module
------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.disable_app_response_data
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.disable\_app\_response\_data\_attributes module
------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.disable_app_response_data_attributes
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.disable\_app\_response\_data\_type module
------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.disable_app_response_data_type
    :members:
    :show-inheritance:
 
@@ -5191,20 +5093,6 @@ datadog\_api\_client.v2.model.get\_app\_response\_data\_attributes module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.get\_app\_response\_data\_type module
--------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.get_app_response_data_type
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.get\_app\_response\_relationship module
----------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.get_app_response_relationship
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v2.model.get\_data\_deletions\_response\_body module
 -------------------------------------------------------------------------
 
@@ -6437,55 +6325,6 @@ datadog\_api\_client.v2.model.include\_type module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.input\_schema module
---------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.input_schema
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.input\_schema\_data module
---------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.input_schema_data
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.input\_schema\_data\_attributes module
---------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.input_schema_data_attributes
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.input\_schema\_data\_attributes\_parameters\_items module
----------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.input_schema_data_attributes_parameters_items
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.input\_schema\_data\_attributes\_parameters\_items\_data module
----------------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.input_schema_data_attributes_parameters_items_data
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.input\_schema\_data\_attributes\_parameters\_items\_data\_attributes module
----------------------------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.input_schema_data_attributes_parameters_items_data_attributes
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.input\_schema\_data\_type module
---------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.input_schema_data_type
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v2.model.intake\_payload\_accepted module
 --------------------------------------------------------------
 
@@ -6749,13 +6588,6 @@ datadog\_api\_client.v2.model.list\_apps\_response\_data\_items\_relationships m
 -------------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.list_apps_response_data_items_relationships
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.list\_apps\_response\_data\_items\_type module
-----------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.list_apps_response_data_items_type
    :members:
    :show-inheritance:
 
@@ -9202,6 +9034,13 @@ datadog\_api\_client.v2.model.projects\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.publish\_app\_response module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.publish_app_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.query module
 ------------------------------------------
 
@@ -10585,34 +10424,6 @@ datadog\_api\_client.v2.model.scorecard\_type module
 ----------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.scorecard_type
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.script module
--------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.script
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.script\_data module
--------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.script_data
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.script\_data\_attributes module
--------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.script_data_attributes
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.script\_data\_type module
--------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.script_data_type
    :members:
    :show-inheritance:
 
@@ -13087,6 +12898,13 @@ datadog\_api\_client.v2.model.unit module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.unpublish\_app\_response module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.unpublish_app_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.update\_action\_connection\_request module
 ------------------------------------------------------------------------
 
@@ -13122,13 +12940,6 @@ datadog\_api\_client.v2.model.update\_app\_request\_data\_attributes module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.update\_app\_request\_data\_type module
----------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.update_app_request_data_type
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v2.model.update\_app\_response module
 ----------------------------------------------------------
 
@@ -13147,20 +12958,6 @@ datadog\_api\_client.v2.model.update\_app\_response\_data\_attributes module
 ----------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.update_app_response_data_attributes
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.update\_app\_response\_data\_type module
-----------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.update_app_response_data_type
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.update\_app\_response\_relationship module
-------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.update_app_response_relationship
    :members:
    :show-inheritance:
 
