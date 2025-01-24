@@ -2067,10 +2067,84 @@
       "type": "safe"
     }
   },
+  "GetSignalNotificationRules": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateSignalNotificationRule": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "operationId": "DeleteSignalNotificationRule",
+      "parameters": [
+        {
+          "name": "id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteSignalNotificationRule": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetSignalNotificationRule": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "PatchSignalNotificationRule": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListVulnerabilities": {
     "tag": "Security Monitoring",
     "undo": {
       "type": "safe"
+    }
+  },
+  "GetVulnerabilityNotificationRules": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateVulnerabilityNotificationRule": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "operationId": "DeleteVulnerabilityNotificationRule",
+      "parameters": [
+        {
+          "name": "id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteVulnerabilityNotificationRule": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetVulnerabilityNotificationRule": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "PatchVulnerabilityNotificationRule": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
     }
   },
   "ListCloudWorkloadSecurityAgentRules": {

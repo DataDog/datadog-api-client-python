@@ -1,0 +1,22 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"enabled":true,"name":"Rule 1","selectors":{"query":"(source:production_service
+      OR env:prod)","rule_types":["misconfiguration","attack_path"],"severities":["critical"],"trigger_source":"security_findings"},"targets":["@john.doe@email.com"],"time_aggregation":86400,"version":1},"id":"aaa-bbb-ccc","type":"notification_rules"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/security/signals/notification_rules/000-000-000
+  response:
+    body:
+      string: '{"errors":["not_found(Notification rule with id ''000-000-000'' not
+        found)"]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 404
+      message: Not Found
+version: 1
