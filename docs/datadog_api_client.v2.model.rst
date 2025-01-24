@@ -2881,6 +2881,27 @@ datadog\_api\_client.v2.model.create\_data\_deletion\_response\_body module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.create\_notification\_rule\_parameters module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_notification_rule_parameters
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_notification\_rule\_parameters\_data module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_notification_rule_parameters_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_notification\_rule\_parameters\_data\_attributes module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_notification_rule_parameters_data_attributes
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.create\_open\_api\_response module
 ----------------------------------------------------------------
 
@@ -7109,6 +7130,20 @@ datadog\_api\_client.v2.model.logs\_archive\_destination\_s3\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.logs\_archive\_encryption\_s3 module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.logs_archive_encryption_s3
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.logs\_archive\_encryption\_s3\_type module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.logs_archive_encryption_s3_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.logs\_archive\_integration\_azure module
 ----------------------------------------------------------------------
 
@@ -8397,6 +8432,34 @@ datadog\_api\_client.v2.model.ms\_teams\_integration\_metadata\_teams\_item modu
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.notification\_rule module
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.notification_rule
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.notification\_rule\_attributes module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.notification_rule_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.notification\_rule\_response module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.notification_rule_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.notification\_rules\_type module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.notification_rules_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.nullable\_relationship\_to\_user module
 ---------------------------------------------------------------------
 
@@ -8842,6 +8905,27 @@ datadog\_api\_client.v2.model.partial\_application\_key\_response module
 ------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.partial_application_key_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.patch\_notification\_rule\_parameters module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.patch_notification_rule_parameters
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.patch\_notification\_rule\_parameters\_data module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.patch_notification_rule_parameters_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.patch\_notification\_rule\_parameters\_data\_attributes module
+--------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.patch_notification_rule_parameters_data_attributes
    :members:
    :show-inheritance:
 
@@ -9783,10 +9867,31 @@ datadog\_api\_client.v2.model.rule\_outcome\_relationships module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.rule\_severity module
+---------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rule_severity
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.rule\_type module
 -----------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.rule_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rule\_types\_items module
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rule_types_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rule\_user module
+-----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rule_user
    :members:
    :show-inheritance:
 
@@ -11250,6 +11355,13 @@ datadog\_api\_client.v2.model.security\_monitoring\_user module
 ---------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.security_monitoring_user
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.selectors module
+----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.selectors
    :members:
    :show-inheritance:
 
@@ -12958,6 +13070,13 @@ datadog\_api\_client.v2.model.token\_type module
 ------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.token_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.trigger\_source module
+----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.trigger_source
    :members:
    :show-inheritance:
 

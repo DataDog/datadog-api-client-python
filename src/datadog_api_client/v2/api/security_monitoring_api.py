@@ -26,6 +26,9 @@ from datadog_api_client.v2.model.get_finding_response import GetFindingResponse
 from datadog_api_client.v2.model.list_vulnerable_assets_response import ListVulnerableAssetsResponse
 from datadog_api_client.v2.model.asset_type import AssetType
 from datadog_api_client.v2.model.get_sbom_response import GetSBOMResponse
+from datadog_api_client.v2.model.notification_rule_response import NotificationRuleResponse
+from datadog_api_client.v2.model.create_notification_rule_parameters import CreateNotificationRuleParameters
+from datadog_api_client.v2.model.patch_notification_rule_parameters import PatchNotificationRuleParameters
 from datadog_api_client.v2.model.list_vulnerabilities_response import ListVulnerabilitiesResponse
 from datadog_api_client.v2.model.vulnerability_type import VulnerabilityType
 from datadog_api_client.v2.model.vulnerability_severity import VulnerabilitySeverity
@@ -243,6 +246,46 @@ class SecurityMonitoringApi:
             api_client=api_client,
         )
 
+        self._create_signal_notification_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": (NotificationRuleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security/signals/notification_rules",
+                "operation_id": "create_signal_notification_rule",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (CreateNotificationRuleParameters,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._create_vulnerability_notification_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": (NotificationRuleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security/vulnerabilities/notification_rules",
+                "operation_id": "create_vulnerability_notification_rule",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (CreateNotificationRuleParameters,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._delete_historical_job_endpoint = _Endpoint(
             settings={
                 "response_type": None,
@@ -326,6 +369,52 @@ class SecurityMonitoringApi:
                     "required": True,
                     "openapi_types": (str,),
                     "attribute": "suppression_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
+        self._delete_signal_notification_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security/signals/notification_rules/{id}",
+                "operation_id": "delete_signal_notification_rule",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
+        self._delete_vulnerability_notification_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security/vulnerabilities/notification_rules/{id}",
+                "operation_id": "delete_vulnerability_notification_rule",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "id",
                     "location": "path",
                 },
             },
@@ -587,6 +676,84 @@ class SecurityMonitoringApi:
                     "location": "path",
                 },
             },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_signal_notification_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": (NotificationRuleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security/signals/notification_rules/{id}",
+                "operation_id": "get_signal_notification_rule",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_signal_notification_rules_endpoint = _Endpoint(
+            settings={
+                "response_type": (dict,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security/signals/notification_rules",
+                "operation_id": "get_signal_notification_rules",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={},
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_vulnerability_notification_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": (NotificationRuleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security/vulnerabilities/notification_rules/{id}",
+                "operation_id": "get_vulnerability_notification_rule",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_vulnerability_notification_rules_endpoint = _Endpoint(
+            settings={
+                "response_type": (dict,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security/vulnerabilities/notification_rules",
+                "operation_id": "get_vulnerability_notification_rules",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={},
             headers_map={
                 "accept": ["application/json"],
             },
@@ -1181,6 +1348,58 @@ class SecurityMonitoringApi:
             api_client=api_client,
         )
 
+        self._patch_signal_notification_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": (NotificationRuleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security/signals/notification_rules/{id}",
+                "operation_id": "patch_signal_notification_rule",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (PatchNotificationRuleParameters,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._patch_vulnerability_notification_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": (NotificationRuleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security/vulnerabilities/notification_rules/{id}",
+                "operation_id": "patch_vulnerability_notification_rule",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (PatchNotificationRuleParameters,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._run_historical_job_endpoint = _Endpoint(
             settings={
                 "response_type": (JobCreateResponse,),
@@ -1494,6 +1713,42 @@ class SecurityMonitoringApi:
 
         return self._create_security_monitoring_suppression_endpoint.call_with_http_info(**kwargs)
 
+    def create_signal_notification_rule(
+        self,
+        body: CreateNotificationRuleParameters,
+    ) -> NotificationRuleResponse:
+        """Create a new signal-based rule.
+
+        Create a new notification rule for security signals and return the created rule.
+
+        :param body: The body of the create notification rule request is composed of the rule type and the rule attributes:
+            the rule name, the selectors, the notification targets, and the rule enabled status.
+        :type body: CreateNotificationRuleParameters
+        :rtype: NotificationRuleResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_signal_notification_rule_endpoint.call_with_http_info(**kwargs)
+
+    def create_vulnerability_notification_rule(
+        self,
+        body: CreateNotificationRuleParameters,
+    ) -> NotificationRuleResponse:
+        """Create a new vulnerability-based rule.
+
+        Create a new notification rule for security vulnerabilities and return the created rule.
+
+        :param body: The body of the create notification rule request is composed of the rule type and the rule attributes:
+            the rule name, the selectors, the notification targets, and the rule enabled status.
+        :type body: CreateNotificationRuleParameters
+        :rtype: NotificationRuleResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_vulnerability_notification_rule_endpoint.call_with_http_info(**kwargs)
+
     def delete_historical_job(
         self,
         job_id: str,
@@ -1561,6 +1816,40 @@ class SecurityMonitoringApi:
         kwargs["suppression_id"] = suppression_id
 
         return self._delete_security_monitoring_suppression_endpoint.call_with_http_info(**kwargs)
+
+    def delete_signal_notification_rule(
+        self,
+        id: str,
+    ) -> None:
+        """Delete a signal-based rule.
+
+        Delete a notification rule for security signals.
+
+        :param id: ID of the notification rule.
+        :type id: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["id"] = id
+
+        return self._delete_signal_notification_rule_endpoint.call_with_http_info(**kwargs)
+
+    def delete_vulnerability_notification_rule(
+        self,
+        id: str,
+    ) -> None:
+        """Delete a vulnerability-based rule.
+
+        Delete a notification rule for security vulnerabilities.
+
+        :param id: ID of the notification rule.
+        :type id: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["id"] = id
+
+        return self._delete_vulnerability_notification_rule_endpoint.call_with_http_info(**kwargs)
 
     def edit_security_monitoring_signal_assignee(
         self,
@@ -1768,6 +2057,64 @@ class SecurityMonitoringApi:
         kwargs["suppression_id"] = suppression_id
 
         return self._get_security_monitoring_suppression_endpoint.call_with_http_info(**kwargs)
+
+    def get_signal_notification_rule(
+        self,
+        id: str,
+    ) -> NotificationRuleResponse:
+        """Get details of a signal-based rule.
+
+        Get the details of a notification rule for security signals.
+
+        :param id: ID of the notification rule.
+        :type id: str
+        :rtype: NotificationRuleResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["id"] = id
+
+        return self._get_signal_notification_rule_endpoint.call_with_http_info(**kwargs)
+
+    def get_signal_notification_rules(
+        self,
+    ) -> dict:
+        """Get the list of signal-based rules.
+
+        Returns the list of notification rules for security signals.
+
+        :rtype: dict
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._get_signal_notification_rules_endpoint.call_with_http_info(**kwargs)
+
+    def get_vulnerability_notification_rule(
+        self,
+        id: str,
+    ) -> NotificationRuleResponse:
+        """Get details of a vulnerability-based rule.
+
+        Get the details of a notification rule for security vulnerabilities.
+
+        :param id: ID of the notification rule.
+        :type id: str
+        :rtype: NotificationRuleResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["id"] = id
+
+        return self._get_vulnerability_notification_rule_endpoint.call_with_http_info(**kwargs)
+
+    def get_vulnerability_notification_rules(
+        self,
+    ) -> dict:
+        """Get the list of vulnerability-based rules.
+
+        Returns the list of notification rules for security vulnerabilities.
+
+        :rtype: dict
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._get_vulnerability_notification_rules_endpoint.call_with_http_info(**kwargs)
 
     def list_findings(
         self,
@@ -2672,6 +3019,48 @@ class SecurityMonitoringApi:
         kwargs["body"] = body
 
         return self._mute_findings_endpoint.call_with_http_info(**kwargs)
+
+    def patch_signal_notification_rule(
+        self,
+        id: str,
+        body: PatchNotificationRuleParameters,
+    ) -> NotificationRuleResponse:
+        """Patch a signal-based rule.
+
+        Partially update the notification rule. All fields are optional; if a field is not provided, it is not updated.
+
+        :param id: ID of the notification rule.
+        :type id: str
+        :type body: PatchNotificationRuleParameters
+        :rtype: NotificationRuleResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["id"] = id
+
+        kwargs["body"] = body
+
+        return self._patch_signal_notification_rule_endpoint.call_with_http_info(**kwargs)
+
+    def patch_vulnerability_notification_rule(
+        self,
+        id: str,
+        body: PatchNotificationRuleParameters,
+    ) -> NotificationRuleResponse:
+        """Patch a vulnerability-based rule.
+
+        Partially update the notification rule. All fields are optional; if a field is not provided, it is not updated.
+
+        :param id: ID of the notification rule.
+        :type id: str
+        :type body: PatchNotificationRuleParameters
+        :rtype: NotificationRuleResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["id"] = id
+
+        kwargs["body"] = body
+
+        return self._patch_vulnerability_notification_rule_endpoint.call_with_http_info(**kwargs)
 
     def run_historical_job(
         self,

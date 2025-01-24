@@ -551,6 +551,30 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"notification_rules\",\n    \"attributes\": {\n      \"name\": \"{{ unique }}\",\n      \"selectors\": {\n        \"rule_types\": [\"signal_correlation\"],\n        \"trigger_source\": \"security_signals\",\n        \"severities\": [\"critical\"],\n        \"query\": \"env:test\"\n      },\n      \"targets\": [\"@email@email.com\"],\n      \"enabled\": true\n    }\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"valid_signal_notification_rule\" in the system",
+    "key": "valid_signal_notification_rule",
+    "tag": "Security Monitoring",
+    "operationId": "CreateSignalNotificationRule"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"notification_rules\",\n    \"attributes\": {\n      \"name\": \"{{ unique }}\",\n      \"selectors\": {\n        \"rule_types\": [\"misconfiguration\", \"attack_path\"],\n        \"trigger_source\": \"security_findings\",\n        \"severities\": [\"critical\"],\n        \"query\": \"env:test\"\n      },\n      \"time_aggregation\": 86400,\n      \"targets\": [\"@email@email.com\"],\n      \"enabled\": true\n    }\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"valid_vulnerability_notification_rule\" in the system",
+    "key": "valid_vulnerability_notification_rule",
+    "tag": "Security Monitoring",
+    "operationId": "CreateVulnerabilityNotificationRule"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"type\": \"agent_rule\",\n    \"attributes\": {\n      \"name\": \"{{ unique_lower_alnum }}\",\n      \"description\": \"My Agent rule\",\n      \"expression\": \"exec.file.name == \\\"sh\\\"\",\n      \"enabled\": true\n     }\n  }\n}"
       }
     ],

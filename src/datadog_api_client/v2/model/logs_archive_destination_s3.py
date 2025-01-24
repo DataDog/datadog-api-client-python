@@ -14,6 +14,7 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.logs_archive_encryption_s3 import LogsArchiveEncryptionS3
     from datadog_api_client.v2.model.logs_archive_integration_s3 import LogsArchiveIntegrationS3
     from datadog_api_client.v2.model.logs_archive_destination_s3_type import LogsArchiveDestinationS3Type
 
@@ -21,11 +22,13 @@ if TYPE_CHECKING:
 class LogsArchiveDestinationS3(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.logs_archive_encryption_s3 import LogsArchiveEncryptionS3
         from datadog_api_client.v2.model.logs_archive_integration_s3 import LogsArchiveIntegrationS3
         from datadog_api_client.v2.model.logs_archive_destination_s3_type import LogsArchiveDestinationS3Type
 
         return {
             "bucket": (str,),
+            "encryption": (LogsArchiveEncryptionS3,),
             "integration": (LogsArchiveIntegrationS3,),
             "path": (str,),
             "type": (LogsArchiveDestinationS3Type,),
@@ -33,6 +36,7 @@ class LogsArchiveDestinationS3(ModelNormal):
 
     attribute_map = {
         "bucket": "bucket",
+        "encryption": "encryption",
         "integration": "integration",
         "path": "path",
         "type": "type",
@@ -43,6 +47,7 @@ class LogsArchiveDestinationS3(ModelNormal):
         bucket: str,
         integration: LogsArchiveIntegrationS3,
         type: LogsArchiveDestinationS3Type,
+        encryption: Union[LogsArchiveEncryptionS3, UnsetType] = unset,
         path: Union[str, UnsetType] = unset,
         **kwargs,
     ):
@@ -51,6 +56,9 @@ class LogsArchiveDestinationS3(ModelNormal):
 
         :param bucket: The bucket where the archive will be stored.
         :type bucket: str
+
+        :param encryption: The S3 encryption settings.
+        :type encryption: LogsArchiveEncryptionS3, optional
 
         :param integration: The S3 Archive's integration destination.
         :type integration: LogsArchiveIntegrationS3
@@ -61,6 +69,8 @@ class LogsArchiveDestinationS3(ModelNormal):
         :param type: Type of the S3 archive destination.
         :type type: LogsArchiveDestinationS3Type
         """
+        if encryption is not unset:
+            kwargs["encryption"] = encryption
         if path is not unset:
             kwargs["path"] = path
         super().__init__(kwargs)

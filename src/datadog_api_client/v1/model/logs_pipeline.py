@@ -41,22 +41,26 @@ class LogsPipeline(ModelNormal):
         from datadog_api_client.v1.model.logs_processor import LogsProcessor
 
         return {
+            "description": (str,),
             "filter": (LogsFilter,),
             "id": (str,),
             "is_enabled": (bool,),
             "is_read_only": (bool,),
             "name": (str,),
             "processors": ([LogsProcessor],),
+            "tags": ([str],),
             "type": (str,),
         }
 
     attribute_map = {
+        "description": "description",
         "filter": "filter",
         "id": "id",
         "is_enabled": "is_enabled",
         "is_read_only": "is_read_only",
         "name": "name",
         "processors": "processors",
+        "tags": "tags",
         "type": "type",
     }
     read_only_vars = {
@@ -68,6 +72,7 @@ class LogsPipeline(ModelNormal):
     def __init__(
         self_,
         name: str,
+        description: Union[str, UnsetType] = unset,
         filter: Union[LogsFilter, UnsetType] = unset,
         id: Union[str, UnsetType] = unset,
         is_enabled: Union[bool, UnsetType] = unset,
@@ -96,6 +101,7 @@ class LogsPipeline(ModelNormal):
             ],
             UnsetType,
         ] = unset,
+        tags: Union[List[str], UnsetType] = unset,
         type: Union[str, UnsetType] = unset,
         **kwargs,
     ):
@@ -105,6 +111,9 @@ class LogsPipeline(ModelNormal):
 
         **Note** : These endpoints are only available for admin users.
         Make sure to use an application key created by an admin.
+
+        :param description: A description of the pipeline.
+        :type description: str, optional
 
         :param filter: Filter for logs.
         :type filter: LogsFilter, optional
@@ -124,9 +133,14 @@ class LogsPipeline(ModelNormal):
         :param processors: Ordered list of processors in this pipeline.
         :type processors: [LogsProcessor], optional
 
+        :param tags: A list of tags associated with the pipeline.
+        :type tags: [str], optional
+
         :param type: Type of pipeline.
         :type type: str, optional
         """
+        if description is not unset:
+            kwargs["description"] = description
         if filter is not unset:
             kwargs["filter"] = filter
         if id is not unset:
@@ -137,6 +151,8 @@ class LogsPipeline(ModelNormal):
             kwargs["is_read_only"] = is_read_only
         if processors is not unset:
             kwargs["processors"] = processors
+        if tags is not unset:
+            kwargs["tags"] = tags
         if type is not unset:
             kwargs["type"] = type
         super().__init__(kwargs)

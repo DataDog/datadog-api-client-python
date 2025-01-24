@@ -250,7 +250,6 @@ class Configuration:
                 "v2.list_apps": False,
                 "v2.update_app": False,
                 "v2.get_active_billing_dimensions": False,
-                "v2.get_billing_dimension_mapping": False,
                 "v2.get_monthly_cost_attribution": False,
                 "v2.cancel_data_deletion_request": False,
                 "v2.create_data_deletion_request": False,

@@ -481,6 +481,11 @@ from datadog_api_client.v2.model.create_data_deletion_request_body_data_type imp
     CreateDataDeletionRequestBodyDataType,
 )
 from datadog_api_client.v2.model.create_data_deletion_response_body import CreateDataDeletionResponseBody
+from datadog_api_client.v2.model.create_notification_rule_parameters import CreateNotificationRuleParameters
+from datadog_api_client.v2.model.create_notification_rule_parameters_data import CreateNotificationRuleParametersData
+from datadog_api_client.v2.model.create_notification_rule_parameters_data_attributes import (
+    CreateNotificationRuleParametersDataAttributes,
+)
 from datadog_api_client.v2.model.create_open_api_response import CreateOpenAPIResponse
 from datadog_api_client.v2.model.create_open_api_response_attributes import CreateOpenAPIResponseAttributes
 from datadog_api_client.v2.model.create_open_api_response_data import CreateOpenAPIResponseData
@@ -1227,6 +1232,8 @@ from datadog_api_client.v2.model.logs_archive_destination_gcs import LogsArchive
 from datadog_api_client.v2.model.logs_archive_destination_gcs_type import LogsArchiveDestinationGCSType
 from datadog_api_client.v2.model.logs_archive_destination_s3 import LogsArchiveDestinationS3
 from datadog_api_client.v2.model.logs_archive_destination_s3_type import LogsArchiveDestinationS3Type
+from datadog_api_client.v2.model.logs_archive_encryption_s3 import LogsArchiveEncryptionS3
+from datadog_api_client.v2.model.logs_archive_encryption_s3_type import LogsArchiveEncryptionS3Type
 from datadog_api_client.v2.model.logs_archive_integration_azure import LogsArchiveIntegrationAzure
 from datadog_api_client.v2.model.logs_archive_integration_gcs import LogsArchiveIntegrationGCS
 from datadog_api_client.v2.model.logs_archive_integration_s3 import LogsArchiveIntegrationS3
@@ -1461,6 +1468,10 @@ from datadog_api_client.v2.model.monthly_cost_attribution_body import MonthlyCos
 from datadog_api_client.v2.model.monthly_cost_attribution_meta import MonthlyCostAttributionMeta
 from datadog_api_client.v2.model.monthly_cost_attribution_pagination import MonthlyCostAttributionPagination
 from datadog_api_client.v2.model.monthly_cost_attribution_response import MonthlyCostAttributionResponse
+from datadog_api_client.v2.model.notification_rule import NotificationRule
+from datadog_api_client.v2.model.notification_rule_attributes import NotificationRuleAttributes
+from datadog_api_client.v2.model.notification_rule_response import NotificationRuleResponse
+from datadog_api_client.v2.model.notification_rules_type import NotificationRulesType
 from datadog_api_client.v2.model.nullable_relationship_to_user import NullableRelationshipToUser
 from datadog_api_client.v2.model.nullable_relationship_to_user_data import NullableRelationshipToUserData
 from datadog_api_client.v2.model.nullable_user_relationship import NullableUserRelationship
@@ -1527,6 +1538,11 @@ from datadog_api_client.v2.model.partial_api_key_attributes import PartialAPIKey
 from datadog_api_client.v2.model.partial_application_key import PartialApplicationKey
 from datadog_api_client.v2.model.partial_application_key_attributes import PartialApplicationKeyAttributes
 from datadog_api_client.v2.model.partial_application_key_response import PartialApplicationKeyResponse
+from datadog_api_client.v2.model.patch_notification_rule_parameters import PatchNotificationRuleParameters
+from datadog_api_client.v2.model.patch_notification_rule_parameters_data import PatchNotificationRuleParametersData
+from datadog_api_client.v2.model.patch_notification_rule_parameters_data_attributes import (
+    PatchNotificationRuleParametersDataAttributes,
+)
 from datadog_api_client.v2.model.permission import Permission
 from datadog_api_client.v2.model.permission_attributes import PermissionAttributes
 from datadog_api_client.v2.model.permissions_response import PermissionsResponse
@@ -1720,7 +1736,10 @@ from datadog_api_client.v2.model.roles_sort import RolesSort
 from datadog_api_client.v2.model.roles_type import RolesType
 from datadog_api_client.v2.model.rule_attributes import RuleAttributes
 from datadog_api_client.v2.model.rule_outcome_relationships import RuleOutcomeRelationships
+from datadog_api_client.v2.model.rule_severity import RuleSeverity
 from datadog_api_client.v2.model.rule_type import RuleType
+from datadog_api_client.v2.model.rule_types_items import RuleTypesItems
+from datadog_api_client.v2.model.rule_user import RuleUser
 from datadog_api_client.v2.model.rum_metric_compute import RumMetricCompute
 from datadog_api_client.v2.model.rum_metric_compute_aggregation_type import RumMetricComputeAggregationType
 from datadog_api_client.v2.model.rum_metric_create_attributes import RumMetricCreateAttributes
@@ -1972,6 +1991,7 @@ from datadog_api_client.v2.model.security_monitoring_third_party_rule_case_creat
 )
 from datadog_api_client.v2.model.security_monitoring_triage_user import SecurityMonitoringTriageUser
 from datadog_api_client.v2.model.security_monitoring_user import SecurityMonitoringUser
+from datadog_api_client.v2.model.selectors import Selectors
 from datadog_api_client.v2.model.sensitive_data_scanner_config_request import SensitiveDataScannerConfigRequest
 from datadog_api_client.v2.model.sensitive_data_scanner_configuration import SensitiveDataScannerConfiguration
 from datadog_api_client.v2.model.sensitive_data_scanner_configuration_data import SensitiveDataScannerConfigurationData
@@ -2262,6 +2282,7 @@ from datadog_api_client.v2.model.timeseries_response_times import TimeseriesResp
 from datadog_api_client.v2.model.timeseries_response_values import TimeseriesResponseValues
 from datadog_api_client.v2.model.timeseries_response_values_list import TimeseriesResponseValuesList
 from datadog_api_client.v2.model.token_type import TokenType
+from datadog_api_client.v2.model.trigger_source import TriggerSource
 from datadog_api_client.v2.model.unit import Unit
 from datadog_api_client.v2.model.update_action_connection_request import UpdateActionConnectionRequest
 from datadog_api_client.v2.model.update_action_connection_response import UpdateActionConnectionResponse
@@ -2789,6 +2810,9 @@ __all__ = [
     "CreateDataDeletionRequestBodyData",
     "CreateDataDeletionRequestBodyDataType",
     "CreateDataDeletionResponseBody",
+    "CreateNotificationRuleParameters",
+    "CreateNotificationRuleParametersData",
+    "CreateNotificationRuleParametersDataAttributes",
     "CreateOpenAPIResponse",
     "CreateOpenAPIResponseAttributes",
     "CreateOpenAPIResponseData",
@@ -3391,6 +3415,8 @@ __all__ = [
     "LogsArchiveDestinationGCSType",
     "LogsArchiveDestinationS3",
     "LogsArchiveDestinationS3Type",
+    "LogsArchiveEncryptionS3",
+    "LogsArchiveEncryptionS3Type",
     "LogsArchiveIntegrationAzure",
     "LogsArchiveIntegrationGCS",
     "LogsArchiveIntegrationS3",
@@ -3575,6 +3601,10 @@ __all__ = [
     "MonthlyCostAttributionMeta",
     "MonthlyCostAttributionPagination",
     "MonthlyCostAttributionResponse",
+    "NotificationRule",
+    "NotificationRuleAttributes",
+    "NotificationRuleResponse",
+    "NotificationRulesType",
     "NullableRelationshipToUser",
     "NullableRelationshipToUserData",
     "NullableUserRelationship",
@@ -3639,6 +3669,9 @@ __all__ = [
     "PartialApplicationKey",
     "PartialApplicationKeyAttributes",
     "PartialApplicationKeyResponse",
+    "PatchNotificationRuleParameters",
+    "PatchNotificationRuleParametersData",
+    "PatchNotificationRuleParametersDataAttributes",
     "Permission",
     "PermissionAttributes",
     "PermissionsResponse",
@@ -3820,7 +3853,10 @@ __all__ = [
     "RolesType",
     "RuleAttributes",
     "RuleOutcomeRelationships",
+    "RuleSeverity",
     "RuleType",
+    "RuleTypesItems",
+    "RuleUser",
     "RumMetricCompute",
     "RumMetricComputeAggregationType",
     "RumMetricCreateAttributes",
@@ -3990,6 +4026,7 @@ __all__ = [
     "SecurityMonitoringThirdPartyRuleCaseCreate",
     "SecurityMonitoringTriageUser",
     "SecurityMonitoringUser",
+    "Selectors",
     "SensitiveDataScannerConfigRequest",
     "SensitiveDataScannerConfiguration",
     "SensitiveDataScannerConfigurationData",
@@ -4232,6 +4269,7 @@ __all__ = [
     "TimeseriesResponseValues",
     "TimeseriesResponseValuesList",
     "TokenType",
+    "TriggerSource",
     "Unit",
     "UpdateActionConnectionRequest",
     "UpdateActionConnectionResponse",
