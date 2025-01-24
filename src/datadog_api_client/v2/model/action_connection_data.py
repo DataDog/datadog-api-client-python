@@ -52,7 +52,7 @@ class ActionConnectionData(ModelNormal):
         :param attributes: The definition of ``ActionConnectionAttributes`` object.
         :type attributes: ActionConnectionAttributes
 
-        :param id: The connection identifier
+        :param id: The connection identifier.
         :type id: str, optional
 
         :param type: The definition of ``ActionConnectionDataType`` object.

@@ -1,5 +1,5 @@
 """
-Update an existing Action Connection returns "Successfully updated an Action Connection." response
+Update an existing Action Connection returns "Successfully updated Action Connection" response
 """
 
 from datadog_api_client import ApiClient, Configuration
@@ -15,24 +15,24 @@ from datadog_api_client.v2.model.update_action_connection_request import UpdateA
 
 body = UpdateActionConnectionRequest(
     data=ActionConnectionDataUpdate(
-        attributes=ActionConnectionAttributesUpdate(
-            integration=AWSIntegrationUpdate(
-                credentials=AWSAssumeRoleUpdate(
-                    account_id="111222333444",
-                    role="my-role",
-                    type=AWSAssumeRoleType.AWSASSUMEROLE,
-                ),
-                type=AWSIntegrationType.AWS,
-            ),
-            name="My AWS Connection",
-        ),
         type=ActionConnectionDataType.ACTION_CONNECTION,
+        attributes=ActionConnectionAttributesUpdate(
+            name="Cassette Connection",
+            integration=AWSIntegrationUpdate(
+                type=AWSIntegrationType.AWS,
+                credentials=AWSAssumeRoleUpdate(
+                    type=AWSAssumeRoleType.AWSASSUMEROLE,
+                    role="MyRoleUpdated",
+                    account_id="123456789123",
+                ),
+            ),
+        ),
     ),
 )
 
 configuration = Configuration()
 with ApiClient(configuration) as api_client:
     api_instance = ActionConnectionApi(api_client)
-    response = api_instance.update_action_connection(connection_id="connection_id", body=body)
+    response = api_instance.update_action_connection(connection_id="cb460d51-3c88-4e87-adac-d47131d0423d", body=body)
 
     print(response)

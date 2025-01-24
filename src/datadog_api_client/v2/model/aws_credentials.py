@@ -15,16 +15,16 @@ class AWSCredentials(ModelComposed):
         """
         The definition of ``AWSCredentials`` object.
 
-        :param account_id: AWS account the connection is created for
+        :param account_id: AWS account the connection is created for.
         :type account_id: str
 
-        :param external_id: External ID used to scope which connection can be used to assume the role
+        :param external_id: External ID used to scope which connection can be used to assume the role.
         :type external_id: str, optional
 
-        :param principal_id: AWS account that will assume the role
+        :param principal_id: AWS account that will assume the role.
         :type principal_id: str, optional
 
-        :param role: Role to assume
+        :param role: Role to assume.
         :type role: str
 
         :param type: The definition of `AWSAssumeRoleType` object.

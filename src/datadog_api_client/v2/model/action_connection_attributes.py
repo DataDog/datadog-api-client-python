@@ -41,7 +41,7 @@ class ActionConnectionAttributes(ModelNormal):
         :param integration: The definition of ``ActionConnectionIntegration`` object.
         :type integration: ActionConnectionIntegration
 
-        :param name: Name of the connection
+        :param name: Name of the connection.
         :type name: str
         """
         super().__init__(kwargs)

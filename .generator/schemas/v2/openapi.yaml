@@ -207,7 +207,7 @@ components:
       schema:
         type: string
     ConnectionId:
-      description: The ID of the action connection
+      description: The ID of the Action Connection.
       in: path
       name: connection_id
       required: true
@@ -1221,23 +1221,23 @@ components:
       description: The definition of `AWSAssumeRole` object.
       properties:
         account_id:
-          description: AWS account the connection is created for
+          description: AWS account the connection is created for.
           example: '111222333444'
           pattern: ^\d{12}$
           type: string
         external_id:
           description: External ID used to scope which connection can be used to assume
-            the role
+            the role.
           example: 33a1011635c44b38a064cf14e82e1d8f
           readOnly: true
           type: string
         principal_id:
-          description: AWS account that will assume the role
+          description: AWS account that will assume the role.
           example: '123456789012'
           readOnly: true
           type: string
         role:
-          description: Role to assume
+          description: Role to assume.
           example: my-role
           type: string
         type:
@@ -1259,7 +1259,7 @@ components:
       description: The definition of `AWSAssumeRoleUpdate` object.
       properties:
         account_id:
-          description: AWS account the connection is created for
+          description: AWS account the connection is created for.
           example: '111222333444'
           pattern: ^\d{12}$
           type: string
@@ -1669,7 +1669,7 @@ components:
         integration:
           $ref: '#/components/schemas/ActionConnectionIntegration'
         name:
-          description: Name of the connection
+          description: Name of the connection.
           example: My AWS Connection
           type: string
       required:
@@ -1682,7 +1682,7 @@ components:
         integration:
           $ref: '#/components/schemas/ActionConnectionIntegrationUpdate'
         name:
-          description: Name of the connection
+          description: Name of the connection.
           example: My AWS Connection
           type: string
       type: object
@@ -1692,7 +1692,7 @@ components:
         attributes:
           $ref: '#/components/schemas/ActionConnectionAttributes'
         id:
-          description: The connection identifier
+          description: The connection identifier.
           readOnly: true
           type: string
         type:
@@ -7193,7 +7193,7 @@ components:
       x-enum-varnames:
       - COST_BY_ORG
     CreateActionConnectionRequest:
-      description: Request used to create an action connection.
+      description: Request used to create an Action Connection.
       properties:
         data:
           $ref: '#/components/schemas/ActionConnectionData'
@@ -7201,7 +7201,7 @@ components:
       - data
       type: object
     CreateActionConnectionResponse:
-      description: The response for a created connection
+      description: The response for a created connection.
       properties:
         data:
           $ref: '#/components/schemas/ActionConnectionData'
@@ -12428,7 +12428,7 @@ components:
       x-enum-varnames:
       - GCP_SERVICE_ACCOUNT
     GetActionConnectionResponse:
-      description: The response for found connection
+      description: The response for found connection.
       properties:
         data:
           $ref: '#/components/schemas/ActionConnectionData'
@@ -12818,7 +12818,7 @@ components:
       description: The definition of `HTTPIntegration` object.
       properties:
         base_url:
-          description: Base HTTP url for the integration
+          description: Base HTTP url for the integration.
           example: http://datadoghq.com
           pattern: url
           type: string
@@ -12843,7 +12843,7 @@ components:
       description: The definition of `HTTPIntegrationUpdate` object.
       properties:
         base_url:
-          description: Base HTTP url for the integration
+          description: Base HTTP url for the integration.
           example: http://datadoghq.com
           pattern: url
           type: string
@@ -29362,7 +29362,7 @@ components:
           type: string
       type: object
     UpdateActionConnectionRequest:
-      description: Request used to update an action connection.
+      description: Request used to update an Action Connection.
       properties:
         data:
           $ref: '#/components/schemas/ActionConnectionDataUpdate'
@@ -30918,7 +30918,7 @@ openapi: 3.0.0
 paths:
   /api/v2/actions/connections:
     post:
-      description: Create a new Action Connection
+      description: Create a new Action Connection.
       operationId: CreateActionConnection
       requestBody:
         content:
@@ -30932,7 +30932,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/CreateActionConnectionResponse'
-          description: Successfully created Action Connection
+          description: Successfully created an Action Connection.
         '400':
           content:
             application/json:
@@ -30954,9 +30954,13 @@ paths:
       summary: Create a new Action Connection
       tags:
       - Action Connection
+      x-permission:
+        operator: OR
+        permissions:
+        - connection_read
   /api/v2/actions/connections/{connection_id}:
     delete:
-      description: Delete an existing Action Connection
+      description: Delete an existing Action Connection.
       operationId: DeleteActionConnection
       parameters:
       - $ref: '#/components/parameters/ConnectionId'
@@ -30989,7 +30993,7 @@ paths:
         permissions:
         - connection_write
     get:
-      description: Get an existing Action Connection
+      description: Get an existing Action Connection.
       operationId: GetActionConnection
       parameters:
       - $ref: '#/components/parameters/ConnectionId'
@@ -30999,7 +31003,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/GetActionConnectionResponse'
-          description: Successfully get Action Connection
+          description: Successfully got an Action Connection.
         '400':
           content:
             application/json:
@@ -31027,6 +31031,10 @@ paths:
       summary: Get an existing Action Connection
       tags:
       - Action Connection
+      x-permission:
+        operator: OR
+        permissions:
+        - connection_read
     patch:
       description: Update an existing Action Connection
       operationId: UpdateActionConnection
@@ -31037,7 +31045,7 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/UpdateActionConnectionRequest'
-        description: Update an existing Action Connection request body
+        description: Update an existing Action Connection request body.
         required: true
       responses:
         '200':
@@ -31045,7 +31053,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/UpdateActionConnectionResponse'
-          description: Successfully updated Action Connection
+          description: Successfully updated an Action Connection.
         '400':
           content:
             application/json:
@@ -31073,6 +31081,10 @@ paths:
       summary: Update an existing Action Connection
       tags:
       - Action Connection
+      x-permission:
+        operator: OR
+        permissions:
+        - connection_write
   /api/v2/agentless_scanning/accounts/aws:
     get:
       description: Fetches the scan options configured for AWS accounts.
@@ -49080,13 +49092,15 @@ tags:
   externalDocs:
     url: https://docs.datadoghq.com/integrations/amazon_web_services/#log-collection
   name: AWS Logs Integration
-- description: "Action connections extend your installed integrations and allow you
-    to take action in your third-party systems\n(e.g. AWS, GitLab, and Statuspage)
-    with Datadog\u2019s Workflow Automation and App Builder products.\n\nDatadog\u2019s
+- description: "Action Connections extend your installed integrations and allow you
+    to take action in your third-party systems\n(e.g. AWS, GitLab, and OpenAI) with
+    Datadog\u2019s [Workflow Automation](https://docs.datadoghq.com/service_management/workflows/)\nand
+    [App Builder](https://docs.datadoghq.com/service_management/app_builder/) products.\n\nDatadog\u2019s
     Integrations automatically provide authentication for Slack, Microsoft Teams,
-    PagerDuty, Opsgenie,\nJIRA, GitHub, and Statuspage. You do not need additional
+    PagerDuty, Opsgenie,\nJira, GitHub, and Statuspage. You do not need additional
     connections in order to access these tools within\nWorkflow Automation and App
-    Builder.\n\nWe offer granular access control for editing and resolving connections."
+    Builder.\n\nWe offer granular access control for editing and resolving connections.\n\n**Note:**
+    The Action Connection API currently supports AWS and HTTP integrations."
   externalDocs:
     description: Find out more at
     url: https://docs.datadoghq.com/service_management/workflows/connections/

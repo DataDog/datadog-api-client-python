@@ -45,7 +45,7 @@ class HTTPIntegration(ModelNormal):
         """
         The definition of ``HTTPIntegration`` object.
 
-        :param base_url: Base HTTP url for the integration
+        :param base_url: Base HTTP url for the integration.
         :type base_url: str
 
         :param credentials: The definition of ``HTTPCredentials`` object.

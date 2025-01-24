@@ -51,7 +51,7 @@ class HTTPIntegrationUpdate(ModelNormal):
         """
         The definition of ``HTTPIntegrationUpdate`` object.
 
-        :param base_url: Base HTTP url for the integration
+        :param base_url: Base HTTP url for the integration.
         :type base_url: str, optional
 
         :param credentials: The definition of ``HTTPCredentialsUpdate`` object.

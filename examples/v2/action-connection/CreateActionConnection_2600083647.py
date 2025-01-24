@@ -1,5 +1,5 @@
 """
-Create a new Action Connection returns "Successfully created an Action Connection." response
+Create a new Action Connection returns "Successfully created Action Connection" response
 """
 
 from datadog_api_client import ApiClient, Configuration
@@ -15,18 +15,18 @@ from datadog_api_client.v2.model.create_action_connection_request import CreateA
 
 body = CreateActionConnectionRequest(
     data=ActionConnectionData(
-        attributes=ActionConnectionAttributes(
-            integration=AWSIntegration(
-                credentials=AWSAssumeRole(
-                    account_id="111222333444",
-                    role="my-role",
-                    type=AWSAssumeRoleType.AWSASSUMEROLE,
-                ),
-                type=AWSIntegrationType.AWS,
-            ),
-            name="My AWS Connection",
-        ),
         type=ActionConnectionDataType.ACTION_CONNECTION,
+        attributes=ActionConnectionAttributes(
+            name="Cassette Connection DELETE_ME",
+            integration=AWSIntegration(
+                type=AWSIntegrationType.AWS,
+                credentials=AWSAssumeRole(
+                    type=AWSAssumeRoleType.AWSASSUMEROLE,
+                    role="MyRoleUpdated",
+                    account_id="123456789123",
+                ),
+            ),
+        ),
     ),
 )
 

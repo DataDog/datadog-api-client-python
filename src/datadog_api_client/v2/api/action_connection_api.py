@@ -16,14 +16,17 @@ from datadog_api_client.v2.model.update_action_connection_request import UpdateA
 
 class ActionConnectionApi:
     """
-    Action connections extend your installed integrations and allow you to take action in your third-party systems
-    (e.g. AWS, GitLab, and Statuspage) with Datadog’s Workflow Automation and App Builder products.
+    Action Connections extend your installed integrations and allow you to take action in your third-party systems
+    (e.g. AWS, GitLab, and OpenAI) with Datadog’s `Workflow Automation <https://docs.datadoghq.com/service_management/workflows/>`_
+    and `App Builder <https://docs.datadoghq.com/service_management/app_builder/>`_ products.
 
     Datadog’s Integrations automatically provide authentication for Slack, Microsoft Teams, PagerDuty, Opsgenie,
-    JIRA, GitHub, and Statuspage. You do not need additional connections in order to access these tools within
+    Jira, GitHub, and Statuspage. You do not need additional connections in order to access these tools within
     Workflow Automation and App Builder.
 
     We offer granular access control for editing and resolving connections.
+
+    **Note:** The Action Connection API currently supports AWS and HTTP integrations.
     """
 
     def __init__(self, api_client=None):
@@ -129,7 +132,7 @@ class ActionConnectionApi:
     ) -> CreateActionConnectionResponse:
         """Create a new Action Connection.
 
-        Create a new Action Connection
+        Create a new Action Connection.
 
         :type body: CreateActionConnectionRequest
         :rtype: CreateActionConnectionResponse
@@ -145,9 +148,9 @@ class ActionConnectionApi:
     ) -> None:
         """Delete an existing Action Connection.
 
-        Delete an existing Action Connection
+        Delete an existing Action Connection.
 
-        :param connection_id: The ID of the action connection
+        :param connection_id: The ID of the Action Connection.
         :type connection_id: str
         :rtype: None
         """
@@ -162,9 +165,9 @@ class ActionConnectionApi:
     ) -> GetActionConnectionResponse:
         """Get an existing Action Connection.
 
-        Get an existing Action Connection
+        Get an existing Action Connection.
 
-        :param connection_id: The ID of the action connection
+        :param connection_id: The ID of the Action Connection.
         :type connection_id: str
         :rtype: GetActionConnectionResponse
         """
@@ -182,9 +185,9 @@ class ActionConnectionApi:
 
         Update an existing Action Connection
 
-        :param connection_id: The ID of the action connection
+        :param connection_id: The ID of the Action Connection.
         :type connection_id: str
-        :param body: Update an existing Action Connection request body
+        :param body: Update an existing Action Connection request body.
         :type body: UpdateActionConnectionRequest
         :rtype: UpdateActionConnectionResponse
         """
