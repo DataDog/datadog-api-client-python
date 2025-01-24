@@ -32,10 +32,10 @@ datadog\_api\_client.v2.api.apm\_retention\_filters\_api module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.api.apps\_api module
---------------------------------------------
+datadog\_api\_client.v2.api.app\_builder\_api module
+----------------------------------------------------
 
-.. automodule:: datadog_api_client.v2.api.apps_api
+.. automodule:: datadog_api_client.v2.api.app_builder_api
    :members:
    :show-inheritance:
 

@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class QueryType(ModelSimple):
     """
-    The definition of `QueryType` object.
+    The query type.
 
     :param value: Must be one of ["action", "stateVariable", "dataTransform"].
     :type value: str

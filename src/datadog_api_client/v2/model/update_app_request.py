@@ -32,9 +32,9 @@ class UpdateAppRequest(ModelNormal):
 
     def __init__(self_, data: Union[UpdateAppRequestData, UnsetType] = unset, **kwargs):
         """
-        The definition of ``UpdateAppRequest`` object.
+        A request object for updating an existing app.
 
-        :param data: The definition of ``UpdateAppRequestData`` object.
+        :param data: The data object containing the new app definition. Any fields not included in the request remain unchanged.
         :type data: UpdateAppRequestData, optional
         """
         if data is not unset:

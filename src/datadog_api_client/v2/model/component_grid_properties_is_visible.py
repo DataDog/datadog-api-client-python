@@ -13,7 +13,7 @@ from datadog_api_client.model_utils import (
 class ComponentGridPropertiesIsVisible(ModelComposed):
     def __init__(self, **kwargs):
         """
-        The definition of ``ComponentGridPropertiesIsVisible`` object.
+        Whether the grid component and its children are visible. If a string, it must be a valid JavaScript expression that evaluates to a boolean.
         """
         super().__init__(kwargs)
 

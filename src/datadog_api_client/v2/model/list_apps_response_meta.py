@@ -32,9 +32,9 @@ class ListAppsResponseMeta(ModelNormal):
 
     def __init__(self_, page: Union[ListAppsResponseMetaPage, UnsetType] = unset, **kwargs):
         """
-        The definition of ``ListAppsResponseMeta`` object.
+        Pagination metadata.
 
-        :param page: The definition of ``ListAppsResponseMetaPage`` object.
+        :param page: Information on the total number of apps, to be used for pagination.
         :type page: ListAppsResponseMetaPage, optional
         """
         if page is not unset:

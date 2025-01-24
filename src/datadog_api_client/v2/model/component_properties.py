@@ -41,12 +41,12 @@ class ComponentProperties(ModelNormal):
         **kwargs,
     ):
         """
-        The definition of ``ComponentProperties`` object.
+        Properties of a UI component. Different component types can have their own additional unique properties. See the `components documentation <https://docs.datadoghq.com/service_management/app_builder/components/>`_ for more detail on each component type and its properties.
 
-        :param children: The ``ComponentProperties`` ``children``.
+        :param children: The child components of the UI component.
         :type children: [Component], optional
 
-        :param is_visible: The definition of ``ComponentPropertiesIsVisible`` object.
+        :param is_visible: Whether the UI component is visible. If this is a string, it must be a valid JavaScript expression that evaluates to a boolean.
         :type is_visible: ComponentPropertiesIsVisible, optional
         """
         if children is not unset:

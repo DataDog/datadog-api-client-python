@@ -10,21 +10,22 @@ from datadog_api_client.model_utils import (
     cached_property,
     unset,
     UnsetType,
+    UUID,
 )
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.deployment_relationship_data_type import DeploymentRelationshipDataType
+    from datadog_api_client.v2.model.app_deployment_type import AppDeploymentType
 
 
 class DeploymentRelationshipData(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.deployment_relationship_data_type import DeploymentRelationshipDataType
+        from datadog_api_client.v2.model.app_deployment_type import AppDeploymentType
 
         return {
-            "id": (str,),
-            "type": (DeploymentRelationshipDataType,),
+            "id": (UUID,),
+            "type": (AppDeploymentType,),
         }
 
     attribute_map = {
@@ -33,19 +34,16 @@ class DeploymentRelationshipData(ModelNormal):
     }
 
     def __init__(
-        self_,
-        id: Union[str, UnsetType] = unset,
-        type: Union[DeploymentRelationshipDataType, UnsetType] = unset,
-        **kwargs,
+        self_, id: Union[UUID, UnsetType] = unset, type: Union[AppDeploymentType, UnsetType] = unset, **kwargs
     ):
         """
-        The definition of ``DeploymentRelationshipData`` object.
+        Data object containing the deployment ID.
 
-        :param id: The ``data`` ``id``.
-        :type id: str, optional
+        :param id: The deployment ID.
+        :type id: UUID, optional
 
-        :param type: The definition of ``DeploymentRelationshipDataType`` object.
-        :type type: DeploymentRelationshipDataType, optional
+        :param type: The deployment type.
+        :type type: AppDeploymentType, optional
         """
         if id is not unset:
             kwargs["id"] = id

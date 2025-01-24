@@ -8,6 +8,7 @@ from typing import Union
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    datetime,
     unset,
     UnsetType,
     UUID,
@@ -18,11 +19,10 @@ class AppMeta(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
-            "created_at": (str,),
-            "deleted_at": (str,),
+            "created_at": (datetime,),
+            "deleted_at": (datetime,),
             "org_id": (int,),
-            "run_as_user": (str,),
-            "updated_at": (str,),
+            "updated_at": (datetime,),
             "updated_since_deployment": (bool,),
             "user_id": (int,),
             "user_name": (str,),
@@ -34,7 +34,6 @@ class AppMeta(ModelNormal):
         "created_at": "created_at",
         "deleted_at": "deleted_at",
         "org_id": "org_id",
-        "run_as_user": "run_as_user",
         "updated_at": "updated_at",
         "updated_since_deployment": "updated_since_deployment",
         "user_id": "user_id",
@@ -45,11 +44,10 @@ class AppMeta(ModelNormal):
 
     def __init__(
         self_,
-        created_at: Union[str, UnsetType] = unset,
-        deleted_at: Union[str, UnsetType] = unset,
+        created_at: Union[datetime, UnsetType] = unset,
+        deleted_at: Union[datetime, UnsetType] = unset,
         org_id: Union[int, UnsetType] = unset,
-        run_as_user: Union[str, UnsetType] = unset,
-        updated_at: Union[str, UnsetType] = unset,
+        updated_at: Union[datetime, UnsetType] = unset,
         updated_since_deployment: Union[bool, UnsetType] = unset,
         user_id: Union[int, UnsetType] = unset,
         user_name: Union[str, UnsetType] = unset,
@@ -58,36 +56,33 @@ class AppMeta(ModelNormal):
         **kwargs,
     ):
         """
-        The definition of ``AppMeta`` object.
+        Metadata of an app.
 
-        :param created_at: The ``AppMeta`` ``created_at``.
-        :type created_at: str, optional
+        :param created_at: Timestamp of when the app was created.
+        :type created_at: datetime, optional
 
-        :param deleted_at: The ``AppMeta`` ``deleted_at``.
-        :type deleted_at: str, optional
+        :param deleted_at: Timestamp of when the app was deleted.
+        :type deleted_at: datetime, optional
 
-        :param org_id: The ``AppMeta`` ``org_id``.
+        :param org_id: The Datadog organization ID that owns the app.
         :type org_id: int, optional
 
-        :param run_as_user: The ``AppMeta`` ``run_as_user``.
-        :type run_as_user: str, optional
+        :param updated_at: Timestamp of when the app was last updated.
+        :type updated_at: datetime, optional
 
-        :param updated_at: The ``AppMeta`` ``updated_at``.
-        :type updated_at: str, optional
-
-        :param updated_since_deployment: The ``AppMeta`` ``updated_since_deployment``.
+        :param updated_since_deployment: Whether the app was updated since it was last published. Published apps are pinned to a specific version and do not automatically update when the app is updated.
         :type updated_since_deployment: bool, optional
 
-        :param user_id: The ``AppMeta`` ``user_id``.
+        :param user_id: The ID of the user who created the app.
         :type user_id: int, optional
 
-        :param user_name: The ``AppMeta`` ``user_name``.
+        :param user_name: The name (or email address) of the user who created the app.
         :type user_name: str, optional
 
-        :param user_uuid: The ``AppMeta`` ``user_uuid``.
+        :param user_uuid: The UUID of the user who created the app.
         :type user_uuid: UUID, optional
 
-        :param version: The ``AppMeta`` ``version``.
+        :param version: The version number of the app. This starts at 1 and increments with each update.
         :type version: int, optional
         """
         if created_at is not unset:
@@ -96,8 +91,6 @@ class AppMeta(ModelNormal):
             kwargs["deleted_at"] = deleted_at
         if org_id is not unset:
             kwargs["org_id"] = org_id
-        if run_as_user is not unset:
-            kwargs["run_as_user"] = run_as_user
         if updated_at is not unset:
             kwargs["updated_at"] = updated_at
         if updated_since_deployment is not unset:

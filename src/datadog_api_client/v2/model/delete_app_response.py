@@ -32,7 +32,7 @@ class DeleteAppResponse(ModelNormal):
 
     def __init__(self_, data: Union[DeleteAppResponseData, UnsetType] = unset, **kwargs):
         """
-        The definition of ``DeleteAppResponse`` object.
+        The response object after an app is successfully deleted.
 
         :param data: The definition of ``DeleteAppResponseData`` object.
         :type data: DeleteAppResponseData, optional

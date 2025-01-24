@@ -32,9 +32,9 @@ class DeleteAppsResponse(ModelNormal):
 
     def __init__(self_, data: Union[List[DeleteAppsResponseDataItems], UnsetType] = unset, **kwargs):
         """
-        The definition of ``DeleteAppsResponse`` object.
+        The response object after multiple apps are successfully deleted.
 
-        :param data: The ``DeleteAppsResponse`` ``data``.
+        :param data: An array of objects containing the IDs of the deleted apps.
         :type data: [DeleteAppsResponseDataItems], optional
         """
         if data is not unset:

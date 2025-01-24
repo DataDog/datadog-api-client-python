@@ -52,21 +52,21 @@ class ComponentGrid(ModelNormal):
         **kwargs,
     ):
         """
-        The definition of ``ComponentGrid`` object.
+        A grid component. The grid component is the root canvas for an app and contains all other components.
 
-        :param events: The ``ComponentGrid`` ``events``.
+        :param events: Events to listen for on the grid component.
         :type events: [AppBuilderEvent], optional
 
-        :param id: The ``ComponentGrid`` ``id``.
+        :param id: The ID of the grid component. This property is deprecated; use ``name`` to identify individual components instead.
         :type id: str, optional
 
-        :param name: The ``ComponentGrid`` ``name``.
+        :param name: A unique identifier for this grid component. This name is also visible in the app editor.
         :type name: str
 
-        :param properties: The definition of ``ComponentGridProperties`` object.
+        :param properties: Properties of a grid component.
         :type properties: ComponentGridProperties
 
-        :param type: The definition of ``ComponentGridType`` object.
+        :param type: The grid component type.
         :type type: ComponentGridType
         """
         if events is not unset:

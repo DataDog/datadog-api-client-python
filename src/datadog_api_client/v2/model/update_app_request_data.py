@@ -10,24 +10,25 @@ from datadog_api_client.model_utils import (
     cached_property,
     unset,
     UnsetType,
+    UUID,
 )
 
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.update_app_request_data_attributes import UpdateAppRequestDataAttributes
-    from datadog_api_client.v2.model.update_app_request_data_type import UpdateAppRequestDataType
+    from datadog_api_client.v2.model.app_definition_type import AppDefinitionType
 
 
 class UpdateAppRequestData(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.update_app_request_data_attributes import UpdateAppRequestDataAttributes
-        from datadog_api_client.v2.model.update_app_request_data_type import UpdateAppRequestDataType
+        from datadog_api_client.v2.model.app_definition_type import AppDefinitionType
 
         return {
             "attributes": (UpdateAppRequestDataAttributes,),
-            "id": (str,),
-            "type": (UpdateAppRequestDataType,),
+            "id": (UUID,),
+            "type": (AppDefinitionType,),
         }
 
     attribute_map = {
@@ -38,22 +39,22 @@ class UpdateAppRequestData(ModelNormal):
 
     def __init__(
         self_,
-        type: UpdateAppRequestDataType,
+        type: AppDefinitionType,
         attributes: Union[UpdateAppRequestDataAttributes, UnsetType] = unset,
-        id: Union[str, UnsetType] = unset,
+        id: Union[UUID, UnsetType] = unset,
         **kwargs,
     ):
         """
-        The definition of ``UpdateAppRequestData`` object.
+        The data object containing the new app definition. Any fields not included in the request remain unchanged.
 
-        :param attributes: The definition of ``UpdateAppRequestDataAttributes`` object.
+        :param attributes: App definition attributes to be updated, such as name, description, and components.
         :type attributes: UpdateAppRequestDataAttributes, optional
 
-        :param id: The ``data`` ``id``.
-        :type id: str, optional
+        :param id: The ID of the app to update. The app ID must match the ID in the URL path.
+        :type id: UUID, optional
 
-        :param type: The definition of ``UpdateAppRequestDataType`` object.
-        :type type: UpdateAppRequestDataType
+        :param type: The app definition type.
+        :type type: AppDefinitionType
         """
         if attributes is not unset:
             kwargs["attributes"] = attributes

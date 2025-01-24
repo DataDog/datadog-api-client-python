@@ -8,24 +8,25 @@ from typing import TYPE_CHECKING
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    UUID,
 )
 
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.get_app_response_data_attributes import GetAppResponseDataAttributes
-    from datadog_api_client.v2.model.get_app_response_data_type import GetAppResponseDataType
+    from datadog_api_client.v2.model.app_definition_type import AppDefinitionType
 
 
 class GetAppResponseData(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.get_app_response_data_attributes import GetAppResponseDataAttributes
-        from datadog_api_client.v2.model.get_app_response_data_type import GetAppResponseDataType
+        from datadog_api_client.v2.model.app_definition_type import AppDefinitionType
 
         return {
             "attributes": (GetAppResponseDataAttributes,),
-            "id": (str,),
-            "type": (GetAppResponseDataType,),
+            "id": (UUID,),
+            "type": (AppDefinitionType,),
         }
 
     attribute_map = {
@@ -34,18 +35,18 @@ class GetAppResponseData(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, attributes: GetAppResponseDataAttributes, id: str, type: GetAppResponseDataType, **kwargs):
+    def __init__(self_, attributes: GetAppResponseDataAttributes, id: UUID, type: AppDefinitionType, **kwargs):
         """
-        The definition of ``GetAppResponseData`` object.
+        The data object containing the app definition.
 
-        :param attributes: The definition of ``GetAppResponseDataAttributes`` object.
+        :param attributes: The app definition attributes, such as name, description, and components.
         :type attributes: GetAppResponseDataAttributes
 
-        :param id: The ``data`` ``id``.
-        :type id: str
+        :param id: The ID of the app.
+        :type id: UUID
 
-        :param type: The definition of ``GetAppResponseDataType`` object.
-        :type type: GetAppResponseDataType
+        :param type: The app definition type.
+        :type type: AppDefinitionType
         """
         super().__init__(kwargs)
 

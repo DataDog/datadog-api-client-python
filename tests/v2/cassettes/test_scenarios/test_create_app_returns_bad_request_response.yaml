@@ -10,7 +10,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/app-builder/apps
   response:
     body:
-      string: '{"errors":[{"detail":"missing required field","source":{"pointer":"/data/attributes/name"}}]}'
+      string: '{"errors":[{"title":"missing required field","detail":"missing required
+        field","source":{"pointer":"/data/attributes/name"}}]}'
     headers:
       content-type:
       - application/vnd.api+json

@@ -13,7 +13,7 @@ from datadog_api_client.model_utils import (
 class ComponentPropertiesIsVisible(ModelComposed):
     def __init__(self, **kwargs):
         """
-        The definition of ``ComponentPropertiesIsVisible`` object.
+        Whether the UI component is visible. If this is a string, it must be a valid JavaScript expression that evaluates to a boolean.
         """
         super().__init__(kwargs)
 

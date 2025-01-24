@@ -28,12 +28,12 @@ class CustomConnectionAttributesOnPremRunner(ModelNormal):
 
     def __init__(self_, id: Union[str, UnsetType] = unset, url: Union[str, UnsetType] = unset, **kwargs):
         """
-        The definition of ``CustomConnectionAttributesOnPremRunner`` object.
+        Information about the Private Action Runner used by the custom connection, if the custom connection is associated with a Private Action Runner.
 
-        :param id: The ``onPremRunner`` ``id``.
+        :param id: The Private Action Runner ID.
         :type id: str, optional
 
-        :param url: The ``onPremRunner`` ``url``.
+        :param url: The URL of the Private Action Runner.
         :type url: str, optional
         """
         if id is not unset:

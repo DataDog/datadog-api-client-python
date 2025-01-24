@@ -68,7 +68,7 @@
     ],
     "step": "there is a valid \"app\" in the system",
     "key": "app",
-    "tag": "Apps",
+    "tag": "App Builder",
     "operationId": "CreateApp"
   },
   {

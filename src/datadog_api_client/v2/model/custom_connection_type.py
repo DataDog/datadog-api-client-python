@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class CustomConnectionType(ModelSimple):
     """
-    The definition of `CustomConnectionType` object.
+    The custom connection type.
 
     :param value: If omitted defaults to "custom_connections". Must be one of ["custom_connections"].
     :type value: str

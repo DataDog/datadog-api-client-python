@@ -41,7 +41,7 @@ class AppBuilderEvent(ModelNormal):
         **kwargs,
     ):
         """
-        The definition of ``AppBuilderEvent`` object.
+        An event on a UI component that triggers a response or action in an app.
 
         :param name: The triggering action for the event.
         :type name: AppBuilderEventName, optional

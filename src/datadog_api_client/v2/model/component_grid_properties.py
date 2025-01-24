@@ -44,15 +44,15 @@ class ComponentGridProperties(ModelNormal):
         **kwargs,
     ):
         """
-        The definition of ``ComponentGridProperties`` object.
+        Properties of a grid component.
 
-        :param background_color: The ``ComponentGridProperties`` ``backgroundColor``.
+        :param background_color: The background color of the grid.
         :type background_color: str, optional
 
-        :param children: The ``ComponentGridProperties`` ``children``.
+        :param children: The child components of the grid.
         :type children: [Component], optional
 
-        :param is_visible: The definition of ``ComponentGridPropertiesIsVisible`` object.
+        :param is_visible: Whether the grid component and its children are visible. If a string, it must be a valid JavaScript expression that evaluates to a boolean.
         :type is_visible: ComponentGridPropertiesIsVisible, optional
         """
         if background_color is not unset:
