@@ -2750,8 +2750,7 @@ Add the <code class="docutils literal notranslate"><span class="pre">Content-Enc
 <dt class="sig sig-object py" id="datadog_api_client.v1.api.logs_indexes_api.LogsIndexesApi">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">LogsIndexesApi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_client</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datadog_api_client.v1.api.logs_indexes_api.LogsIndexesApi" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Manage configuration of <a class="reference external" href="https://docs.datadoghq.com/logs/indexes/">log indexes</a>.
-You need an API and non-scoped application key with Admin rights to interact with these endpoints.</p>
+<p>Manage configuration of <a class="reference external" href="https://docs.datadoghq.com/logs/indexes/">log indexes</a>.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v1.api.logs_indexes_api.LogsIndexesApi.create_logs_index">
 <span class="sig-name descname"><span class="pre">create_logs_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v1.model.html#datadog_api_client.v1.model.logs_index.LogsIndex" title="datadog_api_client.v1.model.logs_index.LogsIndex"><span class="pre">LogsIndex</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v1.model.html#datadog_api_client.v1.model.logs_index.LogsIndex" title="datadog_api_client.v1.model.logs_index.LogsIndex"><span class="pre">LogsIndex</span></a></span></span><a class="headerlink" href="#datadog_api_client.v1.api.logs_indexes_api.LogsIndexesApi.create_logs_index" title="Link to this definition">¶</a></dt>
@@ -2857,8 +2856,6 @@ for a list of the pipelines and processors currently configured in web UI.</p></
 <a class="reference external" href="https://docs.datadoghq.com/logs/log_configuration/pipelines">pipeline documentation</a>.</p></li>
 </ul>
 <p><strong>Notes:</strong></p>
-<p>These endpoints are only available for admin users.
-Make sure to use an application key created by an admin with no applied scopes.</p>
 <p><strong>Grok parsing rules may effect JSON output and require
 returned data to be configured before using in a request.</strong>
 For example, if you are using the data returned from a
