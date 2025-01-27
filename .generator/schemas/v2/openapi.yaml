@@ -38944,8 +38944,9 @@ paths:
       tags:
       - Logs Archives
       x-permission:
-        operator: OPEN
-        permissions: []
+        operator: OR
+        permissions:
+        - logs_read_config
     put:
       description: 'Update the order of your archives. Since logs are processed sequentially,
         reordering an archive may change
@@ -39272,8 +39273,9 @@ paths:
       - Logs Archives
       x-codegen-request-body-name: body
       x-permission:
-        operator: OPEN
-        permissions: []
+        operator: OR
+        permissions:
+        - logs_read_config
     post:
       description: Adds a read role to an archive. ([Roles API](https://docs.datadoghq.com/api/v2/roles/))
       operationId: AddReadRoleToArchive
@@ -39343,6 +39345,7 @@ paths:
         operator: OR
         permissions:
         - logs_read_data
+        - logs_read_config
     post:
       description: Create a custom destination in your organization.
       operationId: CreateLogsCustomDestination
@@ -39427,6 +39430,7 @@ paths:
         operator: OR
         permissions:
         - logs_read_data
+        - logs_read_config
     patch:
       description: Update the given fields of a specific custom destination in your
         organization.
@@ -39484,8 +39488,9 @@ paths:
       tags:
       - Logs Metrics
       x-permission:
-        operator: OPEN
-        permissions: []
+        operator: OR
+        permissions:
+        - logs_read_config
     post:
       description: 'Create a metric based on your ingested logs in your organization.
 
@@ -39566,8 +39571,9 @@ paths:
       tags:
       - Logs Metrics
       x-permission:
-        operator: OPEN
-        permissions: []
+        operator: OR
+        permissions:
+        - logs_read_config
     patch:
       description: 'Update a specific log-based metric from your organization.
 
@@ -49742,11 +49748,7 @@ tags:
 
     See the [Archives Page](https://app.datadoghq.com/logs/pipelines/archives)
 
-    for a list of the archives currently configured in Datadog.
-
-
-    You need an API and non-scoped application key with Admin rights to interact with
-    these endpoints.'
+    for a list of the archives currently configured in Datadog.'
   externalDocs:
     description: Find out more at
     url: https://docs.datadoghq.com/logs/archives/
@@ -49765,11 +49767,8 @@ tags:
     description: Find out more at
     url: https://docs.datadoghq.com/logs/log_configuration/forwarding_custom_destinations/
   name: Logs Custom Destinations
-- description: 'Manage configuration of [log-based metrics](https://app.datadoghq.com/logs/pipelines/generate-metrics)
+- description: Manage configuration of [log-based metrics](https://app.datadoghq.com/logs/pipelines/generate-metrics)
     for your organization.
-
-    You need an API and non-scoped application key with Admin rights to interact with
-    these endpoints.'
   externalDocs:
     description: Find out more at
     url: https://docs.datadoghq.com/logs/logs_to_metrics/

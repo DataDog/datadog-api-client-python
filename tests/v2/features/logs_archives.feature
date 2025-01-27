@@ -2,9 +2,7 @@
 Feature: Logs Archives
   Archives forward all the logs ingested to a cloud storage system.  See the
   [Archives Page](https://app.datadoghq.com/logs/pipelines/archives) for a
-  list of the archives currently configured in Datadog.  You need an API and
-  non-scoped application key with Admin rights to interact with these
-  endpoints.
+  list of the archives currently configured in Datadog.
 
   Background:
     Given a valid "apiKeyAuth" key in the system

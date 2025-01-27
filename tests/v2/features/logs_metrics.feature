@@ -2,8 +2,7 @@
 Feature: Logs Metrics
   Manage configuration of [log-based
   metrics](https://app.datadoghq.com/logs/pipelines/generate-metrics) for
-  your organization. You need an API and non-scoped application key with
-  Admin rights to interact with these endpoints.
+  your organization.
 
   Background:
     Given a valid "apiKeyAuth" key in the system

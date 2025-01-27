@@ -28362,8 +28362,9 @@ paths:
       tags:
       - Logs Indexes
       x-permission:
-        operator: OPEN
-        permissions: []
+        operator: OR
+        permissions:
+        - logs_read_config
     put:
       description: 'This endpoint updates the index order of your organization.
 
@@ -28435,8 +28436,9 @@ paths:
       tags:
       - Logs Indexes
       x-permission:
-        operator: OPEN
-        permissions: []
+        operator: OR
+        permissions:
+        - logs_read_config
     post:
       description: Creates a new index. Returns the Index object passed in the request
         body when the request is successful.
@@ -28513,6 +28515,10 @@ paths:
       summary: Get an index
       tags:
       - Logs Indexes
+      x-permission:
+        operator: OR
+        permissions:
+        - logs_read_config
     put:
       description: "Update an index as identified by its name.\nReturns the Index
         object passed in the request body when the request is successful.\n\nUsing
@@ -28587,8 +28593,9 @@ paths:
       tags:
       - Logs Pipelines
       x-permission:
-        operator: OPEN
-        permissions: []
+        operator: OR
+        permissions:
+        - logs_read_config
     put:
       description: 'Update the order of your pipelines. Since logs are processed sequentially,
         reordering a pipeline may change
@@ -28669,8 +28676,9 @@ paths:
       tags:
       - Logs Pipelines
       x-permission:
-        operator: OPEN
-        permissions: []
+        operator: OR
+        permissions:
+        - logs_read_config
     post:
       description: Create a pipeline in your organization.
       operationId: CreateLogsPipeline
@@ -28784,8 +28792,9 @@ paths:
       tags:
       - Logs Pipelines
       x-permission:
-        operator: OPEN
-        permissions: []
+        operator: OR
+        permissions:
+        - logs_read_config
     put:
       description: "Update a given pipeline configuration to change it\u2019s processors
         or their order.\n\n**Note**: Using this method updates your pipeline configuration
@@ -36578,10 +36587,7 @@ tags:
 - description: Search your logs and send them to your Datadog platform over HTTP.
     See the [Log Management page](https://docs.datadoghq.com/logs/) for more information.
   name: Logs
-- description: 'Manage configuration of [log indexes](https://docs.datadoghq.com/logs/indexes/).
-
-    You need an API and non-scoped application key with Admin rights to interact with
-    these endpoints.'
+- description: Manage configuration of [log indexes](https://docs.datadoghq.com/logs/indexes/).
   externalDocs:
     description: Find out more at
     url: https://docs.datadoghq.com/logs/indexes/
@@ -36591,14 +36597,12 @@ tags:
     page](https://app.datadoghq.com/logs/pipelines)\n  for a list of the pipelines
     and processors currently configured in web UI.\n\n- Additional API-related information
     about processors can be found in the\n  [processors documentation](https://docs.datadoghq.com/logs/log_configuration/processors/?tab=api#lookup-processor).\n\n-
-    For more information about Pipelines, see the\n  [pipeline documentation](https://docs.datadoghq.com/logs/log_configuration/pipelines).\n\n**Notes:**\n\nThese
-    endpoints are only available for admin users.\nMake sure to use an application
-    key created by an admin with no applied scopes.\n\n**Grok parsing rules may effect
-    JSON output and require\nreturned data to be configured before using in a request.**\nFor
-    example, if you are using the data returned from a\nrequest for another request
-    body, and have a parsing rule\nthat uses a regex pattern like `\\s` for spaces,
-    you will\nneed to configure all escaped spaces as `%{space}` to use\nin the body
-    data."
+    For more information about Pipelines, see the\n  [pipeline documentation](https://docs.datadoghq.com/logs/log_configuration/pipelines).\n\n**Notes:**\n\n**Grok
+    parsing rules may effect JSON output and require\nreturned data to be configured
+    before using in a request.**\nFor example, if you are using the data returned
+    from a\nrequest for another request body, and have a parsing rule\nthat uses a
+    regex pattern like `\\s` for spaces, you will\nneed to configure all escaped spaces
+    as `%{space}` to use\nin the body data."
   externalDocs:
     description: Find out more at
     url: https://docs.datadoghq.com/logs/log_configuration
