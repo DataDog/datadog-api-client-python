@@ -16,7 +16,6 @@ from datadog_api_client.v2.model.logs_metric_update_request import LogsMetricUpd
 class LogsMetricsApi:
     """
     Manage configuration of `log-based metrics <https://app.datadoghq.com/logs/pipelines/generate-metrics>`_ for your organization.
-    You need an API and non-scoped application key with Admin rights to interact with these endpoints.
     """
 
     def __init__(self, api_client=None):

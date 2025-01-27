@@ -9,14 +9,12 @@ Feature: Logs Pipelines
   documentation](https://docs.datadoghq.com/logs/log_configuration/processor
   s/?tab=api#lookup-processor).  - For more information about Pipelines, see
   the   [pipeline documentation](https://docs.datadoghq.com/logs/log_configu
-  ration/pipelines).  **Notes:**  These endpoints are only available for
-  admin users. Make sure to use an application key created by an admin with
-  no applied scopes.  **Grok parsing rules may effect JSON output and
-  require returned data to be configured before using in a request.** For
-  example, if you are using the data returned from a request for another
-  request body, and have a parsing rule that uses a regex pattern like `\s`
-  for spaces, you will need to configure all escaped spaces as `%{space}` to
-  use in the body data.
+  ration/pipelines).  **Notes:**  **Grok parsing rules may effect JSON
+  output and require returned data to be configured before using in a
+  request.** For example, if you are using the data returned from a request
+  for another request body, and have a parsing rule that uses a regex
+  pattern like `\s` for spaces, you will need to configure all escaped
+  spaces as `%{space}` to use in the body data.
 
   Background:
     Given a valid "apiKeyAuth" key in the system
