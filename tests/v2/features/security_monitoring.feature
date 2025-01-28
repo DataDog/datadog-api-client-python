@@ -236,6 +236,34 @@ Feature: Security Monitoring
     And the response "isEnabled" is equal to true
 
   @generated @skip @team:DataDog/cloud-security-posture-management
+  Scenario: Create a new inbox rule returns "Bad Request" response
+    Given new "CreateInboxRule" request
+    And body with value {"data": {"attributes": {"action": {"reason_description": "We want to focus on these items."}, "enabled": true, "name": "Rule 1", "rule": {"issue_type": "vulnerability", "query": "key:val", "rule_ids": ["rule-id-1"], "rule_types": ["application_code_vulnerability"], "severities": ["critical"]}}, "type": "inbox_rules"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/cloud-security-posture-management
+  Scenario: Create a new inbox rule returns "Successfully created the inbox rule" response
+    Given new "CreateInboxRule" request
+    And body with value {"data": {"attributes": {"action": {"reason_description": "We want to focus on these items."}, "enabled": true, "name": "Rule 1", "rule": {"issue_type": "vulnerability", "query": "key:val", "rule_ids": ["rule-id-1"], "rule_types": ["application_code_vulnerability"], "severities": ["critical"]}}, "type": "inbox_rules"}}
+    When the request is sent
+    Then the response status is 201 Successfully created the inbox rule
+
+  @generated @skip @team:DataDog/cloud-security-posture-management
+  Scenario: Create a new mute rule returns "Bad Request" response
+    Given new "CreateMuteRule" request
+    And body with value {"data": {"attributes": {"action": {"expire_at": 1893452400000, "reason": "duplicate", "reason_description": "Muting for a while"}, "enabled": true, "name": "Rule 1", "rule": {"issue_type": "vulnerability", "query": "key:val", "rule_ids": ["rule-id-1"], "rule_types": ["application_code_vulnerability"], "severities": ["critical"]}}, "type": "mute_rules"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/cloud-security-posture-management
+  Scenario: Create a new mute rule returns "Successfully created the mute rule" response
+    Given new "CreateMuteRule" request
+    And body with value {"data": {"attributes": {"action": {"expire_at": 1893452400000, "reason": "duplicate", "reason_description": "Muting for a while"}, "enabled": true, "name": "Rule 1", "rule": {"issue_type": "vulnerability", "query": "key:val", "rule_ids": ["rule-id-1"], "rule_types": ["application_code_vulnerability"], "severities": ["critical"]}}, "type": "mute_rules"}}
+    When the request is sent
+    Then the response status is 201 Successfully created the mute rule
+
+  @generated @skip @team:DataDog/cloud-security-posture-management
   Scenario: Create a new signal-based rule returns "Bad Request" response
     Given new "CreateSignalNotificationRule" request
     And body with value {"data": {"attributes": {"enabled": true, "name": "Rule 1", "selectors": {"query": "(source:production_service OR env:prod)", "rule_types": ["misconfiguration", "attack_path"], "severities": ["critical"], "trigger_source": "security_findings"}, "targets": ["@john.doe@email.com"], "time_aggregation": 86400}, "type": "notification_rules"}}
@@ -323,6 +351,21 @@ Feature: Security Monitoring
     And the response "data.attributes.enabled" is equal to true
     And the response "data.attributes.rule_query" is equal to "type:log_detection source:cloudtrail"
     And the response "data.attributes.data_exclusion_query" is equal to "account_id:12345"
+
+  @team:DataDog/cloud-security-posture-management
+  Scenario: Delete a mute rule returns "Not Found" response
+    Given new "DeleteMuteRule" request
+    And request contains "mute_rule_id" parameter with value "00000000-0000-0000-0000-426655000000"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/cloud-security-posture-management
+  Scenario: Delete a mute rule returns "Rule successfully deleted" response
+    Given there is a valid "valid_mute_rule" in the system
+    And new "DeleteMuteRule" request
+    And request contains "mute_rule_id" parameter from "valid_mute_rule.data.id"
+    When the request is sent
+    Then the response status is 204 Rule successfully deleted
 
   @skip @team:DataDog/k9-cloud-security-platform
   Scenario: Delete a non existing rule returns "Not Found" response
@@ -444,6 +487,21 @@ Feature: Security Monitoring
     And request contains "rule_id" parameter from "security_rule.id"
     When the request is sent
     Then the response status is 204 OK
+
+  @team:DataDog/cloud-security-posture-management
+  Scenario: Delete an inbox rule returns "Not Found" response
+    Given new "DeleteInboxRule" request
+    And request contains "inbox_rule_id" parameter with value "00000000-0000-0000-0000-426655000000"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/cloud-security-posture-management
+  Scenario: Delete an inbox rule returns "Rule successfully deleted" response
+    Given there is a valid "valid_inbox_rule" in the system
+    And new "DeleteInboxRule" request
+    And request contains "inbox_rule_id" parameter from "valid_inbox_rule.data.id"
+    When the request is sent
+    Then the response status is 204 Rule successfully deleted
 
   @generated @skip @team:DataDog/asm-vm
   Scenario: Get SBOM returns "Bad request: The server cannot process the request due to invalid syntax in the request." response
@@ -657,6 +715,29 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
 
+  @skip @team:DataDog/cloud-security-posture-management
+  Scenario: Get details of a mute rule returns "Bad Request" response
+    Given new "GetMuteRule" request
+    And there is a valid "valid_mute_rule" in the system
+    And request contains "mute_rule_id" parameter from "valid_mute_rule.data.id"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/cloud-security-posture-management
+  Scenario: Get details of a mute rule returns "Mute rule details" response
+    Given new "GetMuteRule" request
+    And there is a valid "valid_mute_rule" in the system
+    And request contains "mute_rule_id" parameter from "valid_mute_rule.data.id"
+    When the request is sent
+    Then the response status is 200 Mute rule details
+
+  @team:DataDog/cloud-security-posture-management
+  Scenario: Get details of a mute rule returns "Not Found" response
+    Given new "GetMuteRule" request
+    And request contains "mute_rule_id" parameter with value "00000000-0000-0000-0000-426655000000"
+    When the request is sent
+    Then the response status is 404 Not Found
+
   @generated @skip @team:DataDog/cloud-security-posture-management
   Scenario: Get details of a signal-based rule returns "Bad Request" response
     Given new "GetSignalNotificationRule" request
@@ -701,6 +782,29 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 Notification rule details.
 
+  @skip @team:DataDog/cloud-security-posture-management
+  Scenario: Get details of an inbox rule returns "Bad Request" response
+    Given new "GetInboxRule" request
+    And there is a valid "valid_inbox_rule" in the system
+    And request contains "inbox_rule_id" parameter from "valid_inbox_rule.data.id"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/cloud-security-posture-management
+  Scenario: Get details of an inbox rule returns "Inbox rule details" response
+    Given new "GetInboxRule" request
+    And there is a valid "valid_inbox_rule" in the system
+    And request contains "inbox_rule_id" parameter from "valid_inbox_rule.data.id"
+    When the request is sent
+    Then the response status is 200 Inbox rule details
+
+  @team:DataDog/cloud-security-posture-management
+  Scenario: Get details of an inbox rule returns "Not Found" response
+    Given new "GetInboxRule" request
+    And request contains "inbox_rule_id" parameter with value "00000000-0000-0000-0000-426655000000"
+    When the request is sent
+    Then the response status is 404 Not Found
+
   @team:DataDog/cloud-security-posture-management
   Scenario: Get the list of signal-based rules returns "The list of notification rules." response
     Given there is a valid "valid_signal_notification_rule" in the system
@@ -714,6 +818,20 @@ Feature: Security Monitoring
     And new "GetVulnerabilityNotificationRules" request
     When the request is sent
     Then the response status is 200 The list of notification rules.
+
+  @team:DataDog/cloud-security-posture-management
+  Scenario: Get the ordered list of inbox rules returns "The list of inbox rules" response
+    Given new "GetInboxRules" request
+    And there is a valid "valid_inbox_rule" in the system
+    When the request is sent
+    Then the response status is 200 The list of inbox rules
+
+  @team:DataDog/cloud-security-posture-management
+  Scenario: Get the ordered list of mute rules returns "The list of mute rules" response
+    Given new "GetMuteRules" request
+    And there is a valid "valid_mute_rule" in the system
+    When the request is sent
+    Then the response status is 200 The list of mute rules
 
   @generated @skip @team:DataDog/cloud-security-posture-management
   Scenario: List findings returns "Bad Request: The server cannot process the request due to invalid syntax in the request." response
@@ -889,6 +1007,41 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
 
+  @skip @team:DataDog/cloud-security-posture-management
+  Scenario: Patch a mute rule returns "Bad Request" response
+    Given new "PatchMuteRule" request
+    And there is a valid "valid_mute_rule" in the system
+    And request contains "mute_rule_id" parameter from "valid_mute_rule.data.id"
+    And body with value {"invalid": {"attributes": {"action": {"expire_at": 1893452400000, "reason": "duplicate", "reason_description": "Muting for a while"}, "enabled": true, "name": "Rule 1", "rule": {"issue_type": "vulnerability", "query": "key:val", "rule_ids": ["rule-id-1"], "rule_types": ["application_code_vulnerability"], "severities": ["critical"]}}, "id": "{{ valid_mute_rule.data.id }}", "type": "mute_rules"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/cloud-security-posture-management
+  Scenario: Patch a mute rule returns "Mute rule successfully patched" response
+    Given new "PatchMuteRule" request
+    And there is a valid "valid_mute_rule" in the system
+    And request contains "mute_rule_id" parameter from "valid_mute_rule.data.id"
+    And body with value {"data": {"attributes": {"action": {"expire_at": 1893452400000, "reason": "duplicate", "reason_description": "Muting for a while"}, "enabled": true, "name": "Rule 1", "rule": {"issue_type": "vulnerability", "query": "key:val", "rule_ids": ["rule-id-1"], "rule_types": ["application_code_vulnerability"], "severities": ["critical"]}}, "id": "{{ valid_mute_rule.data.id }}", "type": "mute_rules"}}
+    When the request is sent
+    Then the response status is 200 Mute rule successfully patched
+
+  @team:DataDog/cloud-security-posture-management
+  Scenario: Patch a mute rule returns "Not Found" response
+    Given new "PatchMuteRule" request
+    And request contains "mute_rule_id" parameter with value "00000000-0000-0000-0000-426655000000"
+    And body with value {"data": {"attributes": {"action": {"expire_at": 1893452400000, "reason": "duplicate", "reason_description": "Muting for a while"}, "enabled": true, "name": "Rule 1", "rule": {"issue_type": "vulnerability", "query": "key:val", "rule_ids": ["rule-id-1"], "rule_types": ["application_code_vulnerability"], "severities": ["critical"]}}, "id": "00000000-0000-0000-0000-426655000000", "type": "mute_rules"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @skip @team:DataDog/cloud-security-posture-management
+  Scenario: Patch a mute rule returns "The server cannot process the request because it contains invalid data." response
+    Given new "PatchMuteRule" request
+    And there is a valid "valid_mute_rule" in the system
+    And request contains "mute_rule_id" parameter from "valid_mute_rule.data.id"
+    And body with value {"data": {"attributes": {"action": {"expire_at": 1893452400000, "reason": "duplicate", "reason_description": "Muting for a while"}, "enabled": true, "name": "Rule 1", "rule": {"issue_type": "vulnerability", "query": "key:val", "rule_ids": ["rule-id-1"], "rule_types": ["application_code_vulnerability"], "severities": ["critical"]}}, "id": "00000000-0000-0000-0000-426655000000", "type": "mute_rules"}}
+    When the request is sent
+    Then the response status is 422 The server cannot process the request because it contains invalid data.
+
   @team:DataDog/cloud-security-posture-management
   Scenario: Patch a signal-based rule returns "Bad Request" response
     Given new "PatchSignalNotificationRule" request
@@ -956,6 +1109,69 @@ Feature: Security Monitoring
     And body with value {"data": {"attributes": {"enabled": true, "name": "Rule 1", "selectors": {"query": "(source:production_service OR env:prod)", "rule_types": ["misconfiguration", "attack_path"], "severities": ["critical"], "trigger_source": "security_findings"}, "targets": ["@john.doe@email.com"], "time_aggregation": 86400, "version": 1}, "id": "aaa-bbb-ccc", "type": "notification_rules"}}
     When the request is sent
     Then the response status is 422 The server cannot process the request because it contains invalid data.
+
+  @team:DataDog/cloud-security-posture-management
+  Scenario: Patch an inbox rule returns "Bad Request" response
+    Given new "PatchInboxRule" request
+    And there is a valid "valid_inbox_rule" in the system
+    And request contains "inbox_rule_id" parameter from "valid_inbox_rule.data.id"
+    And body with value {"invalid": {"attributes": {"action": {"reason_description": "We want to focus on these items."}, "enabled": true, "name": "Rule 1", "rule": {"issue_type": "vulnerability", "query": "key:val", "rule_ids": ["rule-id-1"], "rule_types": ["application_code_vulnerability"], "severities": ["critical"]}}, "id": "{{ valid_inbox_rule.data.id }}", "type": "inbox_rules"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/cloud-security-posture-management
+  Scenario: Patch an inbox rule returns "Inbox rule successfully patched" response
+    Given new "PatchInboxRule" request
+    And there is a valid "valid_inbox_rule" in the system
+    And request contains "inbox_rule_id" parameter from "valid_inbox_rule.data.id"
+    And body with value {"data": {"attributes": {"action": {"reason_description": "We want to focus on these items."}, "enabled": true, "name": "Rule 1", "rule": {"issue_type": "vulnerability", "query": "key:val", "rule_ids": ["rule-id-1"], "rule_types": ["application_code_vulnerability"], "severities": ["critical"]}}, "id": "{{ valid_inbox_rule.data.id }}", "type": "inbox_rules"}}
+    When the request is sent
+    Then the response status is 200 Inbox rule successfully patched
+
+  @team:DataDog/cloud-security-posture-management
+  Scenario: Patch an inbox rule returns "Not Found" response
+    Given new "PatchInboxRule" request
+    And request contains "inbox_rule_id" parameter with value "00000000-0000-0000-0000-426655000000"
+    And body with value {"data": {"attributes": {"action": {"reason_description": "We want to focus on these items."}, "enabled": true, "name": "Rule 1", "rule": {"issue_type": "vulnerability", "query": "key:val", "rule_ids": ["rule-id-1"], "rule_types": ["application_code_vulnerability"], "severities": ["critical"]}}, "id": "00000000-0000-0000-0000-426655000000", "type": "inbox_rules"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @skip @team:DataDog/cloud-security-posture-management
+  Scenario: Patch an inbox rule returns "The server cannot process the request because it contains invalid data." response
+    Given new "PatchInboxRule" request
+    And there is a valid "valid_inbox_rule" in the system
+    And request contains "inbox_rule_id" parameter from "valid_inbox_rule.data.id"
+    And body with value {"data": {"attributes": {"action": {"reason_description": "We want to focus on these items."}, "enabled": true, "name": "Rule 1", "rule": {"issue_type": "vulnerability", "query": "key:val", "rule_ids": ["rule-id-1"], "rule_types": ["application_code_vulnerability"], "severities": ["critical"]}}, "id": "00000000-0000-0000-0000-426655000000", "type": "inbox_rules"}}
+    When the request is sent
+    Then the response status is 422 The server cannot process the request because it contains invalid data.
+
+  @generated @skip @team:DataDog/cloud-security-posture-management
+  Scenario: Reorder the list of inbox rules in the pipeline returns "Bad Request" response
+    Given new "ReorderInboxRules" request
+    And body with value {"data": [{"id": "123e4567-e89b-12d3-a456-426655440000", "type": "inbox_rules"}]}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/cloud-security-posture-management
+  Scenario: Reorder the list of inbox rules in the pipeline returns "The list of inbox rules" response
+    Given new "ReorderInboxRules" request
+    And body with value {"data": [{"id": "123e4567-e89b-12d3-a456-426655440000", "type": "inbox_rules"}]}
+    When the request is sent
+    Then the response status is 200 The list of inbox rules
+
+  @generated @skip @team:DataDog/cloud-security-posture-management
+  Scenario: Reorder the list of mute rules in the pipeline returns "Bad Request" response
+    Given new "ReorderMuteRules" request
+    And body with value {"data": [{"id": "123e4567-e89b-12d3-a456-426655440000", "type": "mute_rules"}]}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/cloud-security-posture-management
+  Scenario: Reorder the list of mute rules in the pipeline returns "The list of mute rules" response
+    Given new "ReorderMuteRules" request
+    And body with value {"data": [{"id": "123e4567-e89b-12d3-a456-426655440000", "type": "mute_rules"}]}
+    When the request is sent
+    Then the response status is 200 The list of mute rules
 
   @team:DataDog/k9-cloud-security-platform
   Scenario: Run a historical job returns "Bad Request" response
@@ -1037,6 +1253,41 @@ Feature: Security Monitoring
     Then the response status is 200 OK
     And the response "name" is equal to "{{ unique }}_cloud_updated"
     And the response "id" has the same value as "cloud_configuration_rule.id"
+
+  @team:DataDog/cloud-security-posture-management
+  Scenario: Update a mute rule returns "Bad Request" response
+    Given new "UpdateMuteRule" request
+    And there is a valid "valid_mute_rule" in the system
+    And request contains "mute_rule_id" parameter from "valid_mute_rule.data.id"
+    And body with value {"invalid": {"attributes": {"action": {"expire_at": 1893452400000, "reason": "duplicate", "reason_description": "Muting for a while"}, "enabled": true, "name": "Rule 1", "rule": {"issue_type": "vulnerability", "query": "key:val", "rule_ids": ["rule-id-1"], "rule_types": ["application_code_vulnerability"], "severities": ["critical"]}}, "id": "{{ valid_mute_rule.data.id }}", "type": "mute_rules"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/cloud-security-posture-management
+  Scenario: Update a mute rule returns "Mute rule successfully updated" response
+    Given new "UpdateMuteRule" request
+    And there is a valid "valid_mute_rule" in the system
+    And request contains "mute_rule_id" parameter from "valid_mute_rule.data.id"
+    And body with value {"data": {"attributes": {"action": {"expire_at": 1893452400000, "reason": "duplicate", "reason_description": "Muting for a while"}, "enabled": true, "name": "Rule 1", "rule": {"issue_type": "vulnerability", "query": "key:val", "rule_ids": ["rule-id-1"], "rule_types": ["application_code_vulnerability"], "severities": ["critical"]}}, "id": "{{ valid_mute_rule.data.id }}", "type": "mute_rules"}}
+    When the request is sent
+    Then the response status is 200 Mute rule successfully updated
+
+  @team:DataDog/cloud-security-posture-management
+  Scenario: Update a mute rule returns "Not Found" response
+    Given new "UpdateMuteRule" request
+    And request contains "mute_rule_id" parameter with value "00000000-0000-0000-0000-426655000000"
+    And body with value {"data": {"attributes": {"action": {"expire_at": 1893452400000, "reason": "duplicate", "reason_description": "Muting for a while"}, "enabled": true, "name": "Rule 1", "rule": {"issue_type": "vulnerability", "query": "key:val", "rule_ids": ["rule-id-1"], "rule_types": ["application_code_vulnerability"], "severities": ["critical"]}}, "id": "00000000-0000-0000-0000-426655000000", "type": "mute_rules"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/cloud-security-posture-management
+  Scenario: Update a mute rule returns "The server cannot process the request because it contains invalid data." response
+    Given new "UpdateMuteRule" request
+    And there is a valid "valid_mute_rule" in the system
+    And request contains "mute_rule_id" parameter from "valid_mute_rule.data.id"
+    And body with value {"data": {"attributes": {"action": {"expire_at": 1893452400000, "reason": "duplicate", "reason_description": "Muting for a while"}, "enabled": true, "name": "Rule 1", "rule": {"issue_type": "vulnerability", "query": "key:val", "rule_ids": ["rule-id-1"], "rule_types": ["application_code_vulnerability"], "severities": ["critical"]}}, "id": "00000000-0000-0000-0000-426655000000", "type": "mute_rules"}}
+    When the request is sent
+    Then the response status is 422 The server cannot process the request because it contains invalid data.
 
   @generated @skip @team:DataDog/k9-cloud-security-platform
   Scenario: Update a security filter returns "Bad Request" response
@@ -1137,6 +1388,41 @@ Feature: Security Monitoring
     Then the response status is 200 OK
     And the response "name" is equal to "{{ unique }}-Updated"
     And the response "id" has the same value as "security_rule.id"
+
+  @team:DataDog/cloud-security-posture-management
+  Scenario: Update an inbox rule returns "Bad Request" response
+    Given new "UpdateInboxRule" request
+    And there is a valid "valid_inbox_rule" in the system
+    And request contains "inbox_rule_id" parameter from "valid_inbox_rule.data.id"
+    And body with value {"invalid": {"attributes": {"action": {"reason_description": "We want to focus on these items."}, "enabled": true, "name": "Rule 1", "rule": {"issue_type": "vulnerability", "query": "key:val", "rule_ids": ["rule-id-1"], "rule_types": ["application_code_vulnerability"], "severities": ["critical"]}}, "id": "{{ valid_inbox_rule.data.id }}", "type": "inbox_rules"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/cloud-security-posture-management
+  Scenario: Update an inbox rule returns "Inbox rule successfully updated" response
+    Given new "UpdateInboxRule" request
+    And there is a valid "valid_inbox_rule" in the system
+    And request contains "inbox_rule_id" parameter from "valid_inbox_rule.data.id"
+    And body with value {"data": {"attributes": {"action": {"reason_description": "We want to focus on these items."}, "enabled": true, "name": "Rule 1", "rule": {"issue_type": "vulnerability", "query": "key:val", "rule_ids": ["rule-id-1"], "rule_types": ["application_code_vulnerability"], "severities": ["critical"]}}, "id": "{{ valid_inbox_rule.data.id }}", "type": "inbox_rules"}}
+    When the request is sent
+    Then the response status is 200 Inbox rule successfully updated
+
+  @team:DataDog/cloud-security-posture-management
+  Scenario: Update an inbox rule returns "Not Found" response
+    Given new "UpdateInboxRule" request
+    And request contains "inbox_rule_id" parameter with value "00000000-0000-0000-0000-426655000000"
+    And body with value {"data": {"attributes": {"action": {"reason_description": "We want to focus on these items."}, "enabled": true, "name": "Rule 1", "rule": {"issue_type": "vulnerability", "query": "key:val", "rule_ids": ["rule-id-1"], "rule_types": ["application_code_vulnerability"], "severities": ["critical"]}}, "id": "00000000-0000-0000-0000-426655000000", "type": "inbox_rules"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/cloud-security-posture-management
+  Scenario: Update an inbox rule returns "The server cannot process the request because it contains invalid data." response
+    Given new "UpdateInboxRule" request
+    And there is a valid "valid_inbox_rule" in the system
+    And request contains "inbox_rule_id" parameter from "valid_inbox_rule.data.id"
+    And body with value {"data": {"attributes": {"action": {"reason_description": "We want to focus on these items."}, "enabled": true, "name": "Rule 1", "rule": {"issue_type": "vulnerability", "query": "key:val", "rule_ids": ["rule-id-1"], "rule_types": ["application_code_vulnerability"], "severities": ["critical"]}}, "id": "00000000-0000-0000-0000-426655000000", "type": "inbox_rules"}}
+    When the request is sent
+    Then the response status is 422 The server cannot process the request because it contains invalid data.
 
   @skip-go @skip-java @skip-python @skip-ruby @skip-rust @skip-typescript @skip-validation @team:DataDog/k9-cloud-security-platform
   Scenario: Validate a detection rule returns "Bad Request" response

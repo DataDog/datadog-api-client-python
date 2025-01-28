@@ -53,6 +53,20 @@ datadog\_api\_client.v2.model.action\_connection\_integration\_update module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.action\_inbox module
+--------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.action_inbox
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.action\_mute module
+-------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.action_mute
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.active\_billing\_dimensions\_attributes module
 ----------------------------------------------------------------------------
 
@@ -631,6 +645,20 @@ datadog\_api\_client.v2.model.authn\_mappings\_type module
 ----------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.authn_mappings_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.automation\_rule module
+-----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.automation_rule
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.automation\_rule\_user module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.automation_rule_user
    :members:
    :show-inheritance:
 
@@ -2885,6 +2913,48 @@ datadog\_api\_client.v2.model.create\_data\_deletion\_response\_body module
 ---------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.create_data_deletion_response_body
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_inbox\_rule\_parameters module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_inbox_rule_parameters
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_inbox\_rule\_parameters\_data module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_inbox_rule_parameters_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_inbox\_rule\_parameters\_data\_attributes module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_inbox_rule_parameters_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_mute\_rule\_parameters module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_mute_rule_parameters
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_mute\_rule\_parameters\_data module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_mute_rule_parameters_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_mute\_rule\_parameters\_data\_attributes module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_mute_rule_parameters_data_attributes
    :members:
    :show-inheritance:
 
@@ -5408,6 +5478,34 @@ datadog\_api\_client.v2.model.idp\_metadata\_form\_data module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.inbox\_rule module
+------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.inbox_rule
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.inbox\_rule\_attributes module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.inbox_rule_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.inbox\_rule\_response module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.inbox_rule_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.inbox\_rules\_type module
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.inbox_rules_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.incident\_attachment\_attachment\_type module
 ---------------------------------------------------------------------------
 
@@ -6406,6 +6504,13 @@ datadog\_api\_client.v2.model.ip\_allowlist\_update\_request module
 -------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.ip_allowlist_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.issue\_type module
+------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.issue_type
    :members:
    :show-inheritance:
 
@@ -8264,6 +8369,41 @@ datadog\_api\_client.v2.model.ms\_teams\_integration\_metadata\_teams\_item modu
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.mute\_reason module
+-------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.mute_reason
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.mute\_rule module
+-----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.mute_rule
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.mute\_rule\_attributes module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.mute_rule_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.mute\_rule\_response module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.mute_rule_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.mute\_rules\_type module
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.mute_rules_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.notification\_rule module
 -------------------------------------------------------
 
@@ -8737,6 +8877,48 @@ datadog\_api\_client.v2.model.partial\_application\_key\_response module
 ------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.partial_application_key_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.patch\_inbox\_rules\_parameters module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.patch_inbox_rules_parameters
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.patch\_inbox\_rules\_parameters\_data module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.patch_inbox_rules_parameters_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.patch\_inbox\_rules\_parameters\_data\_attributes module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.patch_inbox_rules_parameters_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.patch\_mute\_rule\_parameters module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.patch_mute_rule_parameters
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.patch\_mute\_rule\_parameters\_data module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.patch_mute_rule_parameters_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.patch\_mute\_rule\_parameters\_data\_attributes module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.patch_mute_rule_parameters_data_attributes
    :members:
    :show-inheritance:
 
@@ -9374,6 +9556,34 @@ datadog\_api\_client.v2.model.remediation module
 ------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.remediation
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.reorder\_inbox\_rules\_parameters module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.reorder_inbox_rules_parameters
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.reorder\_inbox\_rules\_parameters\_data module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.reorder_inbox_rules_parameters_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.reorder\_mute\_rules\_parameters module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.reorder_mute_rules_parameters
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.reorder\_mute\_rules\_parameters\_data module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.reorder_mute_rules_parameters_data
    :members:
    :show-inheritance:
 
@@ -11169,6 +11379,20 @@ datadog\_api\_client.v2.model.security\_monitoring\_user module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.security\_rule\_severity module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_rule_severity
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_rule\_types\_items module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_rule_types_items
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.selectors module
 ----------------------------------------------
 
@@ -12958,6 +13182,34 @@ datadog\_api\_client.v2.model.update\_app\_response\_data\_attributes module
 ----------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.update_app_response_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_inbox\_rule\_parameters module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_inbox_rule_parameters
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_inbox\_rule\_parameters\_data module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_inbox_rule_parameters_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_mute\_rule\_parameters module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_mute_rule_parameters
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_mute\_rule\_parameters\_data module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_mute_rule_parameters_data
    :members:
    :show-inheritance:
 

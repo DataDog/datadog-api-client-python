@@ -575,6 +575,30 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"inbox_rules\",\n    \"attributes\": {\n      \"name\": \"{{ unique }}\",\n      \"rule\": {\n        \"issue_type\": \"vulnerability\",\n        \"rule_types\": [\"misconfiguration\", \"attack_path\"],\n        \"rule_ids\": [],\n        \"severities\": [\"critical\"],\n        \"query\": \"\"\n      },\n      \"action\": {\n          \"reason_description\": \"items to focus on\"\n      },\n      \"enabled\": true\n    }\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"valid_inbox_rule\" in the system",
+    "key": "valid_inbox_rule",
+    "tag": "Security Monitoring",
+    "operationId": "CreateInboxRule"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"mute_rules\",\n    \"attributes\": {\n      \"name\": \"{{ unique }}\",\n      \"rule\": {\n        \"issue_type\": \"vulnerability\",\n        \"rule_types\": [\"misconfiguration\", \"attack_path\"],\n        \"rule_ids\": [],\n        \"severities\": [\"critical\"],\n        \"query\": \"\"\n      },\n      \"action\": {\n        \"reason\": \"duplicate\"\n      },\n      \"enabled\": true\n    }\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"valid_mute_rule\" in the system",
+    "key": "valid_mute_rule",
+    "tag": "Security Monitoring",
+    "operationId": "CreateMuteRule"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"type\": \"agent_rule\",\n    \"attributes\": {\n      \"name\": \"{{ unique_lower_alnum }}\",\n      \"description\": \"My Agent rule\",\n      \"expression\": \"exec.file.name == \\\"sh\\\"\",\n      \"enabled\": true\n     }\n  }\n}"
       }
     ],

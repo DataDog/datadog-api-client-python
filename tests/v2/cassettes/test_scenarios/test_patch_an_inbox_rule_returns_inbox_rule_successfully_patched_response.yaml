@@ -1,0 +1,56 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"action":{"reason_description":"items to focus on"},"enabled":true,"name":"Test-Patch_an_inbox_rule_returns_Inbox_rule_successfully_patched_response-1738076231","rule":{"issue_type":"vulnerability","query":"","rule_ids":[],"rule_types":["misconfiguration","attack_path"],"severities":["critical"]}},"type":"inbox_rules"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/security/vulnerabilities/pipelines/inbox_rules
+  response:
+    body:
+      string: '{"data":{"id":"b1cae592-90ba-424c-8398-1d0e2f4a4689","type":"inbox_rules","attributes":{"action":{"reason_description":"items
+        to focus on"},"created_at":1738076232178,"created_by":{"name":"frog","handle":"frog@datadoghq.com"},"enabled":true,"modified_at":1738076232178,"modified_by":{"name":"frog","handle":"frog@datadoghq.com"},"name":"Test-Patch_an_inbox_rule_returns_Inbox_rule_successfully_patched_response-1738076231","rule":{"issue_type":"vulnerability","rule_types":["misconfiguration","attack_path"],"rule_ids":[],"query":"","severities":["critical"]}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"action":{"reason_description":"We want to focus
+      on these items."},"enabled":true,"name":"Rule 1","rule":{"issue_type":"vulnerability","query":"key:val","rule_ids":["rule-id-1"],"rule_types":["application_code_vulnerability"],"severities":["critical"]}},"id":"b1cae592-90ba-424c-8398-1d0e2f4a4689","type":"inbox_rules"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/security/vulnerabilities/pipelines/inbox_rules/b1cae592-90ba-424c-8398-1d0e2f4a4689
+  response:
+    body:
+      string: '{"data":{"id":"b1cae592-90ba-424c-8398-1d0e2f4a4689","type":"inbox_rules","attributes":{"action":{"reason_description":"We
+        want to focus on these items."},"created_at":1738076232178,"created_by":{"name":"frog","handle":"frog@datadoghq.com"},"enabled":true,"modified_at":1738076232662,"modified_by":{"name":"frog","handle":"frog@datadoghq.com"},"name":"Rule
+        1","rule":{"issue_type":"vulnerability","rule_types":["application_code_vulnerability"],"rule_ids":["rule-id-1"],"query":"key:val","severities":["critical"]}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/security/vulnerabilities/pipelines/inbox_rules/b1cae592-90ba-424c-8398-1d0e2f4a4689
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1

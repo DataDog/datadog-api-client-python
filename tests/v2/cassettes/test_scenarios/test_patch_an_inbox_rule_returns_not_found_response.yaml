@@ -1,0 +1,22 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"action":{"reason_description":"We want to focus
+      on these items."},"enabled":true,"name":"Rule 1","rule":{"issue_type":"vulnerability","query":"key:val","rule_ids":["rule-id-1"],"rule_types":["application_code_vulnerability"],"severities":["critical"]}},"id":"00000000-0000-0000-0000-426655000000","type":"inbox_rules"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/security/vulnerabilities/pipelines/inbox_rules/00000000-0000-0000-0000-426655000000
+  response:
+    body:
+      string: '{"errors":[{"status":"404","title":"Not Found","detail":"Rule does
+        not exist"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 404
+      message: Not Found
+version: 1

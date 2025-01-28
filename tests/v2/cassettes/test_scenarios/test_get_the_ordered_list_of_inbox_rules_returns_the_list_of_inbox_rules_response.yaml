@@ -1,0 +1,78 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"action":{"reason_description":"items to focus on"},"enabled":true,"name":"Test-Get_the_ordered_list_of_inbox_rules_returns_The_list_of_inbox_rules_response-1738076214","rule":{"issue_type":"vulnerability","query":"","rule_ids":[],"rule_types":["misconfiguration","attack_path"],"severities":["critical"]}},"type":"inbox_rules"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/security/vulnerabilities/pipelines/inbox_rules
+  response:
+    body:
+      string: '{"data":{"id":"1b5ede63-c593-4408-a54c-dc8418d36a50","type":"inbox_rules","attributes":{"action":{"reason_description":"items
+        to focus on"},"created_at":1738076214890,"created_by":{"name":"frog","handle":"frog@datadoghq.com"},"enabled":true,"modified_at":1738076214890,"modified_by":{"name":"frog","handle":"frog@datadoghq.com"},"name":"Test-Get_the_ordered_list_of_inbox_rules_returns_The_list_of_inbox_rules_response-1738076214","rule":{"issue_type":"vulnerability","rule_types":["misconfiguration","attack_path"],"rule_ids":[],"query":"","severities":["critical"]}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/security/vulnerabilities/pipelines/inbox_rules
+  response:
+    body:
+      string: '{"data":[{"id":"720e23e6-3aa2-4792-9dff-df02f86676ad","type":"inbox_rules","attributes":{"action":{"reason_description":"items
+        to focus on"},"created_at":1736869747695,"created_by":{"name":"frog","handle":"frog@datadoghq.com"},"enabled":true,"modified_at":1736869747695,"modified_by":{"name":"frog","handle":"frog@datadoghq.com"},"name":"Test-Typescript-Delete_an_inbox_rule_returns_Rule_successfully_deleted_response-1736869747","rule":{"issue_type":"vulnerability","rule_types":["misconfiguration","attack_path"],"rule_ids":[],"query":"","severities":["critical"]}}},{"id":"307d8a2f-a82d-4272-9d38-6a859251d0a6","type":"inbox_rules","attributes":{"action":{"reason_description":"items
+        to focus on"},"created_at":1736936332401,"created_by":{"name":"frog","handle":"frog@datadoghq.com"},"enabled":true,"modified_at":1736936332401,"modified_by":{"name":"frog","handle":"frog@datadoghq.com"},"name":"Test-Typescript-Update_an_inbox_rule_returns_Bad_Request_response-1736936332","rule":{"issue_type":"vulnerability","rule_types":["misconfiguration","attack_path"],"rule_ids":[],"query":"","severities":["critical"]}}},{"id":"9e4361c5-e21b-4e59-90ae-57214151b2b2","type":"inbox_rules","attributes":{"action":{"reason_description":"items
+        to focus on"},"created_at":1736936704349,"created_by":{"name":"frog","handle":"frog@datadoghq.com"},"enabled":true,"modified_at":1736936704349,"modified_by":{"name":"frog","handle":"frog@datadoghq.com"},"name":"Test-Typescript-Patch_an_inbox_rule_returns_The_server_cannot_process_the_request_because_it_contains_invalid_data_r-1736936704","rule":{"issue_type":"vulnerability","rule_types":["misconfiguration","attack_path"],"rule_ids":[],"query":"","severities":["critical"]}}},{"id":"1ad42562-e1be-4ec2-a510-6923e6d708a4","type":"inbox_rules","attributes":{"action":{"reason_description":"items
+        to focus on"},"created_at":1736937094878,"created_by":{"name":"frog","handle":"frog@datadoghq.com"},"enabled":true,"modified_at":1736937094878,"modified_by":{"name":"frog","handle":"frog@datadoghq.com"},"name":"Test-Typescript-Get_details_of_an_inbox_rule_returns_Inbox_rule_details_response-1736937094","rule":{"issue_type":"vulnerability","rule_types":["misconfiguration","attack_path"],"rule_ids":[],"query":"","severities":["critical"]}}},{"id":"2ce28a6e-0975-48cc-9bff-de1a9edd94e2","type":"inbox_rules","attributes":{"action":{"reason_description":"items
+        to focus on"},"created_at":1736937364153,"created_by":{"name":"frog","handle":"frog@datadoghq.com"},"enabled":true,"modified_at":1736937364153,"modified_by":{"name":"frog","handle":"frog@datadoghq.com"},"name":"Test-Typescript-Update_an_inbox_rule_returns_Inbox_rule_successfully_updated_response-1736937363","rule":{"issue_type":"vulnerability","rule_types":["misconfiguration","attack_path"],"rule_ids":[],"query":"","severities":["critical"]}}},{"id":"bd638ded-e784-48c9-87bf-a3de72138f44","type":"inbox_rules","attributes":{"action":{"reason_description":"We
+        want to focus on these items."},"created_at":1736938273788,"created_by":{"name":"frog","handle":"frog@datadoghq.com"},"enabled":true,"modified_at":1736938274279,"modified_by":{"name":"frog","handle":"frog@datadoghq.com"},"name":"Rule
+        1","rule":{"issue_type":"vulnerability","rule_types":["application_code_vulnerability"],"rule_ids":["rule-id-1"],"query":"key:val","severities":["critical"]}}},{"id":"6717872d-9ac1-4570-8480-720b0f6f3193","type":"inbox_rules","attributes":{"action":{"reason_description":"We
+        want to focus on these items."},"created_at":1736938776235,"created_by":{"name":"frog","handle":"frog@datadoghq.com"},"enabled":true,"modified_at":1736938776235,"modified_by":{"name":"frog","handle":"frog@datadoghq.com"},"name":"Rule
+        1","rule":{"issue_type":"vulnerability","rule_types":["application_code_vulnerability"],"rule_ids":["rule-id-1"],"query":"key:val","severities":["critical"]}}},{"id":"1b50cdb7-5218-4989-9afc-e0d144d642e2","type":"inbox_rules","attributes":{"action":{"reason_description":"items
+        to focus on"},"created_at":1736938883731,"created_by":{"name":"frog","handle":"frog@datadoghq.com"},"enabled":true,"modified_at":1736938883731,"modified_by":{"name":"frog","handle":"frog@datadoghq.com"},"name":"Test-Typescript-Get_the_ordered_list_of_inbox_rules_returns_The_list_of_inbox_rules_response-1736938883","rule":{"issue_type":"vulnerability","rule_types":["misconfiguration","attack_path"],"rule_ids":[],"query":"","severities":["critical"]}}},{"id":"b6ea190b-0317-40ba-a7ad-844e1e89a767","type":"inbox_rules","attributes":{"action":{"reason_description":"items
+        to focus on"},"created_at":1736939052699,"created_by":{"name":"frog","handle":"frog@datadoghq.com"},"enabled":true,"modified_at":1736939052699,"modified_by":{"name":"frog","handle":"frog@datadoghq.com"},"name":"Test-Typescript-Update_an_inbox_rule_returns_The_server_cannot_process_the_request_because_it_contains_invalid_data_-1736939052","rule":{"issue_type":"vulnerability","rule_types":["misconfiguration","attack_path"],"rule_ids":[],"query":"","severities":["critical"]}}},{"id":"4f18dc53-d185-44d4-846c-561ec59bbf72","type":"inbox_rules","attributes":{"action":{"reason_description":"We
+        want to focus on these items."},"created_at":1736952258489,"created_by":{"name":"frog","handle":"frog@datadoghq.com"},"enabled":true,"modified_at":1736952258489,"modified_by":{"name":"frog","handle":"frog@datadoghq.com"},"name":"Rule
+        1","rule":{"issue_type":"vulnerability","rule_types":["application_code_vulnerability"],"rule_ids":["rule-id-1"],"query":"key:val","severities":["critical"]}}},{"id":"0294b7cd-ecf4-4e30-bf00-542e53e9918b","type":"inbox_rules","attributes":{"action":{"reason_description":"items
+        to focus on"},"created_at":1736952539376,"created_by":{"name":"frog","handle":"frog@datadoghq.com"},"enabled":true,"modified_at":1736952539376,"modified_by":{"name":"frog","handle":"frog@datadoghq.com"},"name":"Test-Typescript-Patch_an_inbox_rule_returns_Inbox_rule_successfully_patched_response-1736952538","rule":{"issue_type":"vulnerability","rule_types":["misconfiguration","attack_path"],"rule_ids":[],"query":"","severities":["critical"]}}},{"id":"5e57a84a-a64e-4551-8c70-71e164df56ea","type":"inbox_rules","attributes":{"action":{"reason_description":"We
+        want to focus on these items."},"created_at":1736952677206,"created_by":{"name":"frog","handle":"frog@datadoghq.com"},"enabled":true,"modified_at":1736952677695,"modified_by":{"name":"frog","handle":"frog@datadoghq.com"},"name":"Rule
+        1","rule":{"issue_type":"vulnerability","rule_types":["application_code_vulnerability"],"rule_ids":["rule-id-1"],"query":"key:val","severities":["critical"]}}},{"id":"8db7bc0b-0ff9-4936-8eba-32ff56c42f0d","type":"inbox_rules","attributes":{"action":{"reason_description":"items
+        to focus on"},"created_at":1736953111545,"created_by":{"name":"frog","handle":"frog@datadoghq.com"},"enabled":true,"modified_at":1736953111545,"modified_by":{"name":"frog","handle":"frog@datadoghq.com"},"name":"Test-Typescript-Delete_an_inbox_rule_returns_Rule_successfully_deleted_response-1736953111","rule":{"issue_type":"vulnerability","rule_types":["misconfiguration","attack_path"],"rule_ids":[],"query":"","severities":["critical"]}}},{"id":"754ec766-45e1-4617-92f2-2c685640cfa5","type":"inbox_rules","attributes":{"action":{"reason_description":"items
+        to focus on"},"created_at":1736953380911,"created_by":{"name":"frog","handle":"frog@datadoghq.com"},"enabled":true,"modified_at":1736953380911,"modified_by":{"name":"frog","handle":"frog@datadoghq.com"},"name":"Test-Typescript-Patch_an_inbox_rule_returns_Inbox_rule_successfully_patched_response-1736953380","rule":{"issue_type":"vulnerability","rule_types":["misconfiguration","attack_path"],"rule_ids":[],"query":"","severities":["critical"]}}},{"id":"5e7dd814-ba12-4536-be51-b29aa3dff555","type":"inbox_rules","attributes":{"action":{"reason_description":"We
+        want to focus on these items."},"created_at":1736953540702,"created_by":{"name":"frog","handle":"frog@datadoghq.com"},"enabled":true,"modified_at":1736953541190,"modified_by":{"name":"frog","handle":"frog@datadoghq.com"},"name":"Rule
+        1","rule":{"issue_type":"vulnerability","rule_types":["application_code_vulnerability"],"rule_ids":["rule-id-1"],"query":"key:val","severities":["critical"]}}},{"id":"9a53ae69-e980-4088-b57c-260f07da4706","type":"inbox_rules","attributes":{"action":{"reason_description":"items
+        to focus on"},"created_at":1736953562530,"created_by":{"name":"frog","handle":"frog@datadoghq.com"},"enabled":true,"modified_at":1736953562530,"modified_by":{"name":"frog","handle":"frog@datadoghq.com"},"name":"Test-Typescript-Update_an_inbox_rule_returns_The_server_cannot_process_the_request_because_it_contains_invalid_data_-1736953562","rule":{"issue_type":"vulnerability","rule_types":["misconfiguration","attack_path"],"rule_ids":[],"query":"","severities":["critical"]}}},{"id":"b6525132-929b-4c7a-ad7e-c51b66521219","type":"inbox_rules","attributes":{"action":{"reason_description":"items
+        to focus on"},"created_at":1736955793842,"created_by":{"name":"frog","handle":"frog@datadoghq.com"},"enabled":true,"modified_at":1736955793842,"modified_by":{"name":"frog","handle":"frog@datadoghq.com"},"name":"Test-Typescript-Get_the_ordered_list_of_inbox_rules_returns_The_list_of_inbox_rules_response-1736955793","rule":{"issue_type":"vulnerability","rule_types":["misconfiguration","attack_path"],"rule_ids":[],"query":"","severities":["critical"]}}},{"id":"f4e5ffe8-b035-4f0e-9fdb-34fc3cbe1d68","type":"inbox_rules","attributes":{"action":{"reason_description":"items
+        to focus on"},"created_at":1736956113141,"created_by":{"name":"frog","handle":"frog@datadoghq.com"},"enabled":true,"modified_at":1736956113141,"modified_by":{"name":"frog","handle":"frog@datadoghq.com"},"name":"Test-Typescript-Patch_an_inbox_rule_returns_The_server_cannot_process_the_request_because_it_contains_invalid_data_r-1736956112","rule":{"issue_type":"vulnerability","rule_types":["misconfiguration","attack_path"],"rule_ids":[],"query":"","severities":["critical"]}}},{"id":"fdc17395-9f98-4b1f-9643-21642074109c","type":"inbox_rules","attributes":{"action":{"reason_description":"items
+        to focus on"},"created_at":1736956188814,"created_by":{"name":"frog","handle":"frog@datadoghq.com"},"enabled":true,"modified_at":1736956188814,"modified_by":{"name":"frog","handle":"frog@datadoghq.com"},"name":"Test-Typescript-Update_an_inbox_rule_returns_Bad_Request_response-1736956188","rule":{"issue_type":"vulnerability","rule_types":["misconfiguration","attack_path"],"rule_ids":[],"query":"","severities":["critical"]}}},{"id":"0d0010f5-0255-46ff-94ac-ae52239d6369","type":"inbox_rules","attributes":{"action":{"reason_description":"items
+        to focus on"},"created_at":1736957603847,"created_by":{"name":"frog","handle":"frog@datadoghq.com"},"enabled":true,"modified_at":1736957603847,"modified_by":{"name":"frog","handle":"frog@datadoghq.com"},"name":"Test-Typescript-Patch_an_inbox_rule_returns_Bad_Request_response-1736957603","rule":{"issue_type":"vulnerability","rule_types":["misconfiguration","attack_path"],"rule_ids":[],"query":"","severities":["critical"]}}},{"id":"4079ea57-aa2a-4da6-b7b9-1f186492dc6c","type":"inbox_rules","attributes":{"action":{"reason_description":"items
+        to focus on"},"created_at":1736972574272,"created_by":{"name":"frog","handle":"frog@datadoghq.com"},"enabled":true,"modified_at":1736972574272,"modified_by":{"name":"frog","handle":"frog@datadoghq.com"},"name":"Test-Typescript-Get_the_ordered_list_of_inbox_rules_returns_The_list_of_inbox_rules_response-1736972573","rule":{"issue_type":"vulnerability","rule_types":["misconfiguration","attack_path"],"rule_ids":[],"query":"","severities":["critical"]}}},{"id":"1b5ede63-c593-4408-a54c-dc8418d36a50","type":"inbox_rules","attributes":{"action":{"reason_description":"items
+        to focus on"},"created_at":1738076214890,"created_by":{"name":"frog","handle":"frog@datadoghq.com"},"enabled":true,"modified_at":1738076214890,"modified_by":{"name":"frog","handle":"frog@datadoghq.com"},"name":"Test-Get_the_ordered_list_of_inbox_rules_returns_The_list_of_inbox_rules_response-1738076214","rule":{"issue_type":"vulnerability","rule_types":["misconfiguration","attack_path"],"rule_ids":[],"query":"","severities":["critical"]}}}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/security/vulnerabilities/pipelines/inbox_rules/1b5ede63-c593-4408-a54c-dc8418d36a50
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1
