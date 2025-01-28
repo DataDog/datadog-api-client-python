@@ -249,8 +249,6 @@ class Configuration:
                 "v2.publish_app": False,
                 "v2.unpublish_app": False,
                 "v2.update_app": False,
-                "v2.get_active_billing_dimensions": False,
-                "v2.get_monthly_cost_attribution": False,
                 "v2.cancel_data_deletion_request": False,
                 "v2.create_data_deletion_request": False,
                 "v2.get_data_deletion_requests": False,
