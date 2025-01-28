@@ -14,6 +14,7 @@ from datadog_api_client.model_utils import (
     get_attribute_from_path,
     UnsetType,
     unset,
+    UUID,
 )
 from datadog_api_client.v2.model.list_findings_response import ListFindingsResponse
 from datadog_api_client.v2.model.finding_evaluation import FindingEvaluation
@@ -35,6 +36,16 @@ from datadog_api_client.v2.model.vulnerability_severity import VulnerabilitySeve
 from datadog_api_client.v2.model.vulnerability_status import VulnerabilityStatus
 from datadog_api_client.v2.model.vulnerability_tool import VulnerabilityTool
 from datadog_api_client.v2.model.vulnerability_ecosystem import VulnerabilityEcosystem
+from datadog_api_client.v2.model.inbox_rule_response import InboxRuleResponse
+from datadog_api_client.v2.model.create_inbox_rule_parameters import CreateInboxRuleParameters
+from datadog_api_client.v2.model.reorder_inbox_rules_parameters import ReorderInboxRulesParameters
+from datadog_api_client.v2.model.patch_inbox_rules_parameters import PatchInboxRulesParameters
+from datadog_api_client.v2.model.update_inbox_rule_parameters import UpdateInboxRuleParameters
+from datadog_api_client.v2.model.mute_rule_response import MuteRuleResponse
+from datadog_api_client.v2.model.create_mute_rule_parameters import CreateMuteRuleParameters
+from datadog_api_client.v2.model.reorder_mute_rules_parameters import ReorderMuteRulesParameters
+from datadog_api_client.v2.model.patch_mute_rule_parameters import PatchMuteRuleParameters
+from datadog_api_client.v2.model.update_mute_rule_parameters import UpdateMuteRuleParameters
 from datadog_api_client.v2.model.security_filters_response import SecurityFiltersResponse
 from datadog_api_client.v2.model.security_filter_response import SecurityFilterResponse
 from datadog_api_client.v2.model.security_filter_create_request import SecurityFilterCreateRequest
@@ -186,6 +197,46 @@ class SecurityMonitoringApi:
             api_client=api_client,
         )
 
+        self._create_inbox_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": (InboxRuleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security/vulnerabilities/pipelines/inbox_rules",
+                "operation_id": "create_inbox_rule",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (CreateInboxRuleParameters,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._create_mute_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": (MuteRuleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security/vulnerabilities/pipelines/mute_rules",
+                "operation_id": "create_mute_rule",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (CreateMuteRuleParameters,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._create_security_filter_endpoint = _Endpoint(
             settings={
                 "response_type": (SecurityFilterResponse,),
@@ -300,6 +351,52 @@ class SecurityMonitoringApi:
                     "required": True,
                     "openapi_types": (str,),
                     "attribute": "job_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
+        self._delete_inbox_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security/vulnerabilities/pipelines/inbox_rules/{inbox_rule_id}",
+                "operation_id": "delete_inbox_rule",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "inbox_rule_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "inbox_rule_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
+        self._delete_mute_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security/vulnerabilities/pipelines/mute_rules/{mute_rule_id}",
+                "operation_id": "delete_mute_rule",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "mute_rule_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "mute_rule_id",
                     "location": "path",
                 },
             },
@@ -550,6 +647,84 @@ class SecurityMonitoringApi:
                     "location": "path",
                 },
             },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_inbox_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": (InboxRuleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security/vulnerabilities/pipelines/inbox_rules/{inbox_rule_id}",
+                "operation_id": "get_inbox_rule",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "inbox_rule_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "inbox_rule_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_inbox_rules_endpoint = _Endpoint(
+            settings={
+                "response_type": (dict,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security/vulnerabilities/pipelines/inbox_rules",
+                "operation_id": "get_inbox_rules",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={},
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_mute_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": (MuteRuleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security/vulnerabilities/pipelines/mute_rules/{mute_rule_id}",
+                "operation_id": "get_mute_rule",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "mute_rule_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "mute_rule_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_mute_rules_endpoint = _Endpoint(
+            settings={
+                "response_type": (dict,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security/vulnerabilities/pipelines/mute_rules",
+                "operation_id": "get_mute_rules",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={},
             headers_map={
                 "accept": ["application/json"],
             },
@@ -1348,6 +1523,58 @@ class SecurityMonitoringApi:
             api_client=api_client,
         )
 
+        self._patch_inbox_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": (InboxRuleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security/vulnerabilities/pipelines/inbox_rules/{inbox_rule_id}",
+                "operation_id": "patch_inbox_rule",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "inbox_rule_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "inbox_rule_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (PatchInboxRulesParameters,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._patch_mute_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": (MuteRuleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security/vulnerabilities/pipelines/mute_rules/{mute_rule_id}",
+                "operation_id": "patch_mute_rule",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "mute_rule_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "mute_rule_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (PatchMuteRuleParameters,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._patch_signal_notification_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (NotificationRuleResponse,),
@@ -1393,6 +1620,46 @@ class SecurityMonitoringApi:
                 "body": {
                     "required": True,
                     "openapi_types": (PatchNotificationRuleParameters,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._reorder_inbox_rules_endpoint = _Endpoint(
+            settings={
+                "response_type": (dict,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security/vulnerabilities/pipelines/inbox_rules/reorder",
+                "operation_id": "reorder_inbox_rules",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (ReorderInboxRulesParameters,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._reorder_mute_rules_endpoint = _Endpoint(
+            settings={
+                "response_type": (dict,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security/vulnerabilities/pipelines/mute_rules/reorder",
+                "operation_id": "reorder_mute_rules",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (ReorderMuteRulesParameters,),
                     "location": "body",
                 },
             },
@@ -1478,6 +1745,58 @@ class SecurityMonitoringApi:
                 "body": {
                     "required": True,
                     "openapi_types": (SecurityMonitoringRuleTestRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._update_inbox_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": (InboxRuleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security/vulnerabilities/pipelines/inbox_rules/{inbox_rule_id}",
+                "operation_id": "update_inbox_rule",
+                "http_method": "PUT",
+                "version": "v2",
+            },
+            params_map={
+                "inbox_rule_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "inbox_rule_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (UpdateInboxRuleParameters,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._update_mute_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": (MuteRuleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security/vulnerabilities/pipelines/mute_rules/{mute_rule_id}",
+                "operation_id": "update_mute_rule",
+                "http_method": "PUT",
+                "version": "v2",
+            },
+            params_map={
+                "mute_rule_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "mute_rule_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (UpdateMuteRuleParameters,),
                     "location": "body",
                 },
             },
@@ -1655,6 +1974,44 @@ class SecurityMonitoringApi:
 
         return self._convert_security_monitoring_rule_from_json_to_terraform_endpoint.call_with_http_info(**kwargs)
 
+    def create_inbox_rule(
+        self,
+        body: CreateInboxRuleParameters,
+    ) -> InboxRuleResponse:
+        """Create a new inbox rule.
+
+        Create a new inbox rule and return the created rule.
+
+        :param body: Mandatory fields are the rule type and the required attributes: rule name, rule details, and action.
+            The rule details are composed of issue types and security rule types on which the rule applies. Optional security rule IDs, severities, and a tag or attribute query can be provided.
+            The action is composed of the optional reason description.
+        :type body: CreateInboxRuleParameters
+        :rtype: InboxRuleResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_inbox_rule_endpoint.call_with_http_info(**kwargs)
+
+    def create_mute_rule(
+        self,
+        body: CreateMuteRuleParameters,
+    ) -> MuteRuleResponse:
+        """Create a new mute rule.
+
+        Create a new mute rule and return the created rule.
+
+        :param body: Mandatory fields are the rule type and the required attributes: rule name, rule details, and action.
+            The rule details are composed of issue types and security rule types on which the rule applies. Optional security rule IDs, severities, and a tag or attribute query can be provided.
+            The action is composed of the reason for muting and the rule expiration date, and optionally a description of the rule.
+        :type body: CreateMuteRuleParameters
+        :rtype: MuteRuleResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_mute_rule_endpoint.call_with_http_info(**kwargs)
+
     def create_security_filter(
         self,
         body: SecurityFilterCreateRequest,
@@ -1765,6 +2122,40 @@ class SecurityMonitoringApi:
         kwargs["job_id"] = job_id
 
         return self._delete_historical_job_endpoint.call_with_http_info(**kwargs)
+
+    def delete_inbox_rule(
+        self,
+        inbox_rule_id: UUID,
+    ) -> None:
+        """Delete an inbox rule.
+
+        Delete an inbox rule
+
+        :param inbox_rule_id: ID of the inbox rule
+        :type inbox_rule_id: UUID
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["inbox_rule_id"] = inbox_rule_id
+
+        return self._delete_inbox_rule_endpoint.call_with_http_info(**kwargs)
+
+    def delete_mute_rule(
+        self,
+        mute_rule_id: UUID,
+    ) -> None:
+        """Delete a mute rule.
+
+        Delete a mute rule
+
+        :param mute_rule_id: ID of the mute rule
+        :type mute_rule_id: UUID
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["mute_rule_id"] = mute_rule_id
+
+        return self._delete_mute_rule_endpoint.call_with_http_info(**kwargs)
 
     def delete_security_filter(
         self,
@@ -1957,6 +2348,64 @@ class SecurityMonitoringApi:
         kwargs["job_id"] = job_id
 
         return self._get_historical_job_endpoint.call_with_http_info(**kwargs)
+
+    def get_inbox_rule(
+        self,
+        inbox_rule_id: UUID,
+    ) -> InboxRuleResponse:
+        """Get details of an inbox rule.
+
+        Get the details of an inbox rule.
+
+        :param inbox_rule_id: ID of the inbox rule
+        :type inbox_rule_id: UUID
+        :rtype: InboxRuleResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["inbox_rule_id"] = inbox_rule_id
+
+        return self._get_inbox_rule_endpoint.call_with_http_info(**kwargs)
+
+    def get_inbox_rules(
+        self,
+    ) -> dict:
+        """Get the ordered list of inbox rules.
+
+        Returns the ordered list of inbox rules in the pipeline (first match applies)
+
+        :rtype: dict
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._get_inbox_rules_endpoint.call_with_http_info(**kwargs)
+
+    def get_mute_rule(
+        self,
+        mute_rule_id: UUID,
+    ) -> MuteRuleResponse:
+        """Get details of a mute rule.
+
+        Get the details of a mute rule.
+
+        :param mute_rule_id: ID of the mute rule
+        :type mute_rule_id: UUID
+        :rtype: MuteRuleResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["mute_rule_id"] = mute_rule_id
+
+        return self._get_mute_rule_endpoint.call_with_http_info(**kwargs)
+
+    def get_mute_rules(
+        self,
+    ) -> dict:
+        """Get the ordered list of mute rules.
+
+        Returns the ordered list of mute rules in the pipeline (first match applies)
+
+        :rtype: dict
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._get_mute_rules_endpoint.call_with_http_info(**kwargs)
 
     def get_sbom(
         self,
@@ -3020,6 +3469,48 @@ class SecurityMonitoringApi:
 
         return self._mute_findings_endpoint.call_with_http_info(**kwargs)
 
+    def patch_inbox_rule(
+        self,
+        inbox_rule_id: UUID,
+        body: PatchInboxRulesParameters,
+    ) -> InboxRuleResponse:
+        """Patch an inbox rule.
+
+        Partially update the inbox rule. All fields are optional; if a field is not provided, it is not updated.
+
+        :param inbox_rule_id: ID of the inbox rule
+        :type inbox_rule_id: UUID
+        :type body: PatchInboxRulesParameters
+        :rtype: InboxRuleResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["inbox_rule_id"] = inbox_rule_id
+
+        kwargs["body"] = body
+
+        return self._patch_inbox_rule_endpoint.call_with_http_info(**kwargs)
+
+    def patch_mute_rule(
+        self,
+        mute_rule_id: UUID,
+        body: PatchMuteRuleParameters,
+    ) -> MuteRuleResponse:
+        """Patch a mute rule.
+
+        Partially update the mute rule. All fields are optional; if a field is not provided, it is not updated.
+
+        :param mute_rule_id: ID of the mute rule
+        :type mute_rule_id: UUID
+        :type body: PatchMuteRuleParameters
+        :rtype: MuteRuleResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["mute_rule_id"] = mute_rule_id
+
+        kwargs["body"] = body
+
+        return self._patch_mute_rule_endpoint.call_with_http_info(**kwargs)
+
     def patch_signal_notification_rule(
         self,
         id: str,
@@ -3061,6 +3552,42 @@ class SecurityMonitoringApi:
         kwargs["body"] = body
 
         return self._patch_vulnerability_notification_rule_endpoint.call_with_http_info(**kwargs)
+
+    def reorder_inbox_rules(
+        self,
+        body: ReorderInboxRulesParameters,
+    ) -> dict:
+        """Reorder the list of inbox rules in the pipeline.
+
+        Reorder the list of inbox rules in the pipeline and return the reordered list of rules.
+        To reorder fields, you must provide the full list of pipeline rules in the new order.
+
+        :param body: The list of rules to reorder. The order of the rules in the list becomes the new order in the pipeline.
+        :type body: ReorderInboxRulesParameters
+        :rtype: dict
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._reorder_inbox_rules_endpoint.call_with_http_info(**kwargs)
+
+    def reorder_mute_rules(
+        self,
+        body: ReorderMuteRulesParameters,
+    ) -> dict:
+        """Reorder the list of mute rules in the pipeline.
+
+        Reorder the list of mute rules in the pipeline and return the reordered list of rules.
+        To reorder fields, you must provide the full list of pipeline rules in the new order.
+
+        :param body: The list of rules to reorder. The order of the rules in the list becomes the new order in the pipeline.
+        :type body: ReorderMuteRulesParameters
+        :rtype: dict
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._reorder_mute_rules_endpoint.call_with_http_info(**kwargs)
 
     def run_historical_job(
         self,
@@ -3165,6 +3692,48 @@ class SecurityMonitoringApi:
         kwargs["body"] = body
 
         return self._test_security_monitoring_rule_endpoint.call_with_http_info(**kwargs)
+
+    def update_inbox_rule(
+        self,
+        inbox_rule_id: UUID,
+        body: UpdateInboxRuleParameters,
+    ) -> InboxRuleResponse:
+        """Update an inbox rule.
+
+        Update the whole inbox rule. If an optional field is not provided, it is set to its default value.
+
+        :param inbox_rule_id: ID of the inbox rule
+        :type inbox_rule_id: UUID
+        :type body: UpdateInboxRuleParameters
+        :rtype: InboxRuleResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["inbox_rule_id"] = inbox_rule_id
+
+        kwargs["body"] = body
+
+        return self._update_inbox_rule_endpoint.call_with_http_info(**kwargs)
+
+    def update_mute_rule(
+        self,
+        mute_rule_id: UUID,
+        body: UpdateMuteRuleParameters,
+    ) -> MuteRuleResponse:
+        """Update a mute rule.
+
+        Update the whole mute rule. If an optional field is not provided, it is set to its default value.
+
+        :param mute_rule_id: ID of the mute rule
+        :type mute_rule_id: UUID
+        :type body: UpdateMuteRuleParameters
+        :rtype: MuteRuleResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["mute_rule_id"] = mute_rule_id
+
+        kwargs["body"] = body
+
+        return self._update_mute_rule_endpoint.call_with_http_info(**kwargs)
 
     def update_security_filter(
         self,

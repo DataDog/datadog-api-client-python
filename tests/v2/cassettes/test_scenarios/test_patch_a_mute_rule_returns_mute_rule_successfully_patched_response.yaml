@@ -1,0 +1,55 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"action":{"reason":"duplicate"},"enabled":true,"name":"Test-Patch_a_mute_rule_returns_Mute_rule_successfully_patched_response-1738076222","rule":{"issue_type":"vulnerability","query":"","rule_ids":[],"rule_types":["misconfiguration","attack_path"],"severities":["critical"]}},"type":"mute_rules"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/security/vulnerabilities/pipelines/mute_rules
+  response:
+    body:
+      string: '{"data":{"id":"d7a109ad-032f-4f25-b80c-de7fef3f7b94","type":"mute_rules","attributes":{"action":{"reason":"duplicate"},"created_at":1738076222803,"created_by":{"name":"frog","handle":"frog@datadoghq.com"},"enabled":true,"modified_at":1738076222803,"modified_by":{"name":"frog","handle":"frog@datadoghq.com"},"name":"Test-Patch_a_mute_rule_returns_Mute_rule_successfully_patched_response-1738076222","rule":{"issue_type":"vulnerability","rule_types":["misconfiguration","attack_path"],"rule_ids":[],"query":"","severities":["critical"]}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"action":{"expire_at":1893452400000,"reason":"duplicate","reason_description":"Muting
+      for a while"},"enabled":true,"name":"Rule 1","rule":{"issue_type":"vulnerability","query":"key:val","rule_ids":["rule-id-1"],"rule_types":["application_code_vulnerability"],"severities":["critical"]}},"id":"d7a109ad-032f-4f25-b80c-de7fef3f7b94","type":"mute_rules"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/security/vulnerabilities/pipelines/mute_rules/d7a109ad-032f-4f25-b80c-de7fef3f7b94
+  response:
+    body:
+      string: '{"data":{"id":"d7a109ad-032f-4f25-b80c-de7fef3f7b94","type":"mute_rules","attributes":{"action":{"reason":"duplicate","reason_description":"Muting
+        for a while","expire_at":1893452400000},"created_at":1738076222803,"created_by":{"name":"frog","handle":"frog@datadoghq.com"},"enabled":true,"modified_at":1738076223290,"modified_by":{"name":"frog","handle":"frog@datadoghq.com"},"name":"Rule
+        1","rule":{"issue_type":"vulnerability","rule_types":["application_code_vulnerability"],"rule_ids":["rule-id-1"],"query":"key:val","severities":["critical"]}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/security/vulnerabilities/pipelines/mute_rules/d7a109ad-032f-4f25-b80c-de7fef3f7b94
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1
