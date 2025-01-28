@@ -16,8 +16,7 @@ Feature: Usage Metering
 
   @replay-only @team:DataDog/revenue-query
   Scenario: Get Monthly Cost Attribution returns "Bad Request" response
-    Given operation "GetMonthlyCostAttribution" enabled
-    And new "GetMonthlyCostAttribution" request
+    Given new "GetMonthlyCostAttribution" request
     And request contains "start_month" parameter with value "{{ timeISO('now - 5d') }}"
     And request contains "fields" parameter with value "not_a_product"
     And request contains "end_month" parameter with value "{{ timeISO('now - 3d') }}"
@@ -26,8 +25,7 @@ Feature: Usage Metering
 
   @replay-only @team:DataDog/revenue-query
   Scenario: Get Monthly Cost Attribution returns "OK" response
-    Given operation "GetMonthlyCostAttribution" enabled
-    And new "GetMonthlyCostAttribution" request
+    Given new "GetMonthlyCostAttribution" request
     And request contains "start_month" parameter with value "{{ timeISO('now - 5d') }}"
     And request contains "fields" parameter with value "infra_host_total_cost"
     And request contains "end_month" parameter with value "{{ timeISO('now - 3d') }}"
@@ -36,15 +34,13 @@ Feature: Usage Metering
 
   @generated @skip @team:DataDog/revenue-query
   Scenario: Get active billing dimensions for cost attribution returns "Bad Request" response
-    Given operation "GetActiveBillingDimensions" enabled
-    And new "GetActiveBillingDimensions" request
+    Given new "GetActiveBillingDimensions" request
     When the request is sent
     Then the response status is 400 Bad Request
 
   @team:DataDog/revenue-query
   Scenario: Get active billing dimensions for cost attribution returns "OK" response
-    Given operation "GetActiveBillingDimensions" enabled
-    And new "GetActiveBillingDimensions" request
+    Given new "GetActiveBillingDimensions" request
     When the request is sent
     Then the response status is 200 OK
 
