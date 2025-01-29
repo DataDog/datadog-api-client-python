@@ -46864,6 +46864,10 @@ paths:
       tags:
       - Service Level Objectives
       x-codegen-request-body-name: body
+      x-permission:
+        operator: OR
+        permissions:
+        - slos_read
       x-unstable: '**Note**: This feature is in private beta. To request access, use
         the request access form in the [Service Level Objectives](https://docs.datadoghq.com/service_management/service_level_objectives/#slo-csv-export)
         docs.'
