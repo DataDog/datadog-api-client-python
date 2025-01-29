@@ -12,13 +12,13 @@ Feature: CSM Agents
     And a valid "appKeyAuth" key in the system
     And an instance of "CSMAgents" API
 
-  @team:DataDog/k9-cloud-security-platform
+  @team:DataDog/k9-cloud-security-platform @team:DataDog/web-frameworks
   Scenario: Get all CSM Agents returns "OK" response
     Given new "ListAllCSMAgents" request
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/k9-cloud-security-platform
+  @team:DataDog/k9-cloud-security-platform @team:DataDog/web-frameworks
   Scenario: Get all CSM Serverless Agents returns "OK" response
     Given new "ListAllCSMServerlessAgents" request
     When the request is sent

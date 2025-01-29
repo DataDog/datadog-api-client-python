@@ -5,7 +5,7 @@ Feature: AWS Logs Integration
   page](https://docs.datadoghq.com/integrations/amazon_web_services/#log-
   collection).
 
-  @team:DataDog/aws-integrations
+  @team:DataDog/aws-integrations @team:DataDog/web-frameworks
   Scenario: Get list of AWS log ready services returns "AWS Logs Services List object" response
     Given a valid "apiKeyAuth" key in the system
     And a valid "appKeyAuth" key in the system

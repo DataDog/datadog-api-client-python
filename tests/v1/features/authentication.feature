@@ -16,12 +16,12 @@ Feature: Authentication
     Given an instance of "Authentication" API
     And new "Validate" request
 
-  @skip-validation @team:DataDog/credentials-management
+  @skip-validation @team:DataDog/credentials-management @team:DataDog/web-frameworks
   Scenario: Validate API key returns "Forbidden" response
     When the request is sent
     Then the response status is 403 OK
 
-  @team:DataDog/credentials-management
+  @team:DataDog/credentials-management @team:DataDog/web-frameworks
   Scenario: Validate API key returns "OK" response
     Given a valid "apiKeyAuth" key in the system
     When the request is sent

@@ -10,14 +10,14 @@ Feature: Network Device Monitoring
     And a valid "appKeyAuth" key in the system
     And an instance of "NetworkDeviceMonitoring" API
 
-  @replay-only @team:DataDog/network-device-monitoring
+  @replay-only @team:DataDog/network-device-monitoring @team:DataDog/web-frameworks
   Scenario: Get the device details returns "Not Found" response
     Given new "GetDevice" request
     And request contains "device_id" parameter with value "unknown_device_id"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @replay-only @team:DataDog/network-device-monitoring
+  @replay-only @team:DataDog/network-device-monitoring @team:DataDog/web-frameworks
   Scenario: Get the device details returns "OK" response
     Given new "GetDevice" request
     And request contains "device_id" parameter with value "default_device"
@@ -40,13 +40,13 @@ Feature: Network Device Monitoring
     And the response "data.attributes.sys_object_id" is equal to "1.3.6.1.4.1.99999"
     And the response "data.attributes.tags" is equal to ["device_ip:1.2.3.4","device_id:default_device"]
 
-  @replay-only @team:DataDog/network-device-monitoring
+  @replay-only @team:DataDog/network-device-monitoring @team:DataDog/web-frameworks
   Scenario: Get the list of devices returns "Bad Request" response
     Given new "ListDevices" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @replay-only @team:DataDog/network-device-monitoring
+  @replay-only @team:DataDog/network-device-monitoring @team:DataDog/web-frameworks
   Scenario: Get the list of devices returns "OK" response
     Given new "ListDevices" request
     And request contains "page[size]" parameter with value 1
@@ -75,7 +75,7 @@ Feature: Network Device Monitoring
     And the response "data[0].attributes.interface_statuses.down" is equal to 13
     And the response "meta.page.total_filtered_count" is equal to 1
 
-  @replay-only @team:DataDog/network-device-monitoring
+  @replay-only @team:DataDog/network-device-monitoring @team:DataDog/web-frameworks
   Scenario: Get the list of interfaces of the device returns "OK" response
     Given new "GetInterfaces" request
     And request contains "device_id" parameter with value "default:1.2.3.4"
@@ -98,14 +98,14 @@ Feature: Network Device Monitoring
     And the response "data[1].attributes.index" is equal to 999
     And the response "data[1].attributes.status" is equal to "down"
 
-  @replay-only @team:DataDog/network-device-monitoring
+  @replay-only @team:DataDog/network-device-monitoring @team:DataDog/web-frameworks
   Scenario: Get the list of tags for a device returns "Not Found" response
     Given new "ListDeviceUserTags" request
     And request contains "device_id" parameter with value "unknown_device_id"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @replay-only @team:DataDog/network-device-monitoring
+  @replay-only @team:DataDog/network-device-monitoring @team:DataDog/web-frameworks
   Scenario: Get the list of tags for a device returns "OK" response
     Given new "ListDeviceUserTags" request
     And request contains "device_id" parameter with value "default_device"
@@ -116,7 +116,7 @@ Feature: Network Device Monitoring
     And the response "data.attributes.tags[0]" is equal to "tag:test"
     And the response "data.attributes.tags[1]" is equal to "tag:testbis"
 
-  @replay-only @team:DataDog/network-device-monitoring
+  @replay-only @team:DataDog/network-device-monitoring @team:DataDog/web-frameworks
   Scenario: Update the tags for a device returns "Not Found" response
     Given new "UpdateDeviceUserTags" request
     And request contains "device_id" parameter with value "unknown_device_id"
@@ -124,7 +124,7 @@ Feature: Network Device Monitoring
     When the request is sent
     Then the response status is 404 Not Found
 
-  @replay-only @team:DataDog/network-device-monitoring
+  @replay-only @team:DataDog/network-device-monitoring @team:DataDog/web-frameworks
   Scenario: Update the tags for a device returns "OK" response
     Given new "UpdateDeviceUserTags" request
     And request contains "device_id" parameter with value "default_device"

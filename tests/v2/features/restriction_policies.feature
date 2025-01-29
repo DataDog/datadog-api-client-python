@@ -10,28 +10,28 @@ Feature: Restriction Policies
     And a valid "appKeyAuth" key in the system
     And an instance of "RestrictionPolicies" API
 
-  @team:DataDog/aaa-granular-access
+  @team:DataDog/aaa-granular-access @team:DataDog/web-frameworks
   Scenario: Delete a restriction policy returns "Bad Request" response
     Given new "DeleteRestrictionPolicy" request
     And request contains "resource_id" parameter with value "malformed"
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/aaa-granular-access
+  @team:DataDog/aaa-granular-access @team:DataDog/web-frameworks
   Scenario: Delete a restriction policy returns "No Content" response
     Given new "DeleteRestrictionPolicy" request
     And request contains "resource_id" parameter with value "dashboard:test-delete"
     When the request is sent
     Then the response status is 204 No Content
 
-  @team:DataDog/aaa-granular-access
+  @team:DataDog/aaa-granular-access @team:DataDog/web-frameworks
   Scenario: Get a restriction policy returns "Bad Request" response
     Given new "GetRestrictionPolicy" request
     And request contains "resource_id" parameter with value "malformed"
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/aaa-granular-access
+  @team:DataDog/aaa-granular-access @team:DataDog/web-frameworks
   Scenario: Get a restriction policy returns "OK" response
     Given new "GetRestrictionPolicy" request
     And request contains "resource_id" parameter with value "dashboard:test-get"
@@ -41,7 +41,7 @@ Feature: Restriction Policies
     And the response "data.id" is equal to "dashboard:test-get"
     And the response "data.attributes.bindings" has length 0
 
-  @team:DataDog/aaa-granular-access
+  @team:DataDog/aaa-granular-access @team:DataDog/web-frameworks
   Scenario: Update a restriction policy returns "Bad Request" response
     Given there is a valid "role" in the system
     And there is a valid "user" in the system
@@ -52,7 +52,7 @@ Feature: Restriction Policies
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/aaa-granular-access
+  @team:DataDog/aaa-granular-access @team:DataDog/web-frameworks
   Scenario: Update a restriction policy returns "OK" response
     Given there is a valid "role" in the system
     And there is a valid "user" in the system

@@ -10,28 +10,28 @@ Feature: Confluent Cloud
     And a valid "appKeyAuth" key in the system
     And an instance of "ConfluentCloud" API
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:DataDog/saas-integrations @team:DataDog/web-frameworks
   Scenario: Add Confluent account returns "Bad Request" response
     Given new "CreateConfluentAccount" request
     And body with value {"data": {"attributes": {"api_key": "TESTAPIKEY123", "api_secret": "test-api-secret-123", "resources": [{"enable_custom_metrics": false, "id": "resource-id-123", "resource_type": "kafka", "tags": ["myTag", "myTag2:myValue"]}], "tags": ["myTag", "myTag2:myValue"]}, "type": "confluent-cloud-accounts"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:DataDog/saas-integrations @team:DataDog/web-frameworks
   Scenario: Add Confluent account returns "Not Found" response
     Given new "CreateConfluentAccount" request
     And body with value {"data": {"attributes": {"api_key": "TESTAPIKEY123", "api_secret": "test-api-secret-123", "resources": [{"enable_custom_metrics": false, "id": "resource-id-123", "resource_type": "kafka", "tags": ["myTag", "myTag2:myValue"]}], "tags": ["myTag", "myTag2:myValue"]}, "type": "confluent-cloud-accounts"}}
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:DataDog/saas-integrations @team:DataDog/web-frameworks
   Scenario: Add Confluent account returns "OK" response
     Given new "CreateConfluentAccount" request
     And body with value {"data": {"attributes": {"api_key": "TESTAPIKEY123", "api_secret": "test-api-secret-123", "resources": [{"enable_custom_metrics": false, "id": "resource-id-123", "resource_type": "kafka", "tags": ["myTag", "myTag2:myValue"]}], "tags": ["myTag", "myTag2:myValue"]}, "type": "confluent-cloud-accounts"}}
     When the request is sent
     Then the response status is 201 OK
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:DataDog/saas-integrations @team:DataDog/web-frameworks
   Scenario: Add resource to Confluent account returns "Bad Request" response
     Given new "CreateConfluentResource" request
     And request contains "account_id" parameter from "REPLACE.ME"
@@ -39,7 +39,7 @@ Feature: Confluent Cloud
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:DataDog/saas-integrations @team:DataDog/web-frameworks
   Scenario: Add resource to Confluent account returns "Not Found" response
     Given new "CreateConfluentResource" request
     And request contains "account_id" parameter from "REPLACE.ME"
@@ -47,7 +47,7 @@ Feature: Confluent Cloud
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/saas-integrations
+  @team:DataDog/saas-integrations @team:DataDog/web-frameworks
   Scenario: Add resource to Confluent account returns "OK" response
     Given there is a valid "confluent_account" in the system
     And new "CreateConfluentResource" request
@@ -59,21 +59,21 @@ Feature: Confluent Cloud
     And the response "data.attributes.resource_type" is equal to "kafka"
     And the response "data.attributes.tags[0]" is equal to "mytag"
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:DataDog/saas-integrations @team:DataDog/web-frameworks
   Scenario: Delete Confluent account returns "Bad Request" response
     Given new "DeleteConfluentAccount" request
     And request contains "account_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:DataDog/saas-integrations @team:DataDog/web-frameworks
   Scenario: Delete Confluent account returns "Not Found" response
     Given new "DeleteConfluentAccount" request
     And request contains "account_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/saas-integrations
+  @team:DataDog/saas-integrations @team:DataDog/web-frameworks
   Scenario: Delete Confluent account returns "OK" response
     Given there is a valid "confluent_account" in the system
     And new "DeleteConfluentAccount" request
@@ -81,7 +81,7 @@ Feature: Confluent Cloud
     When the request is sent
     Then the response status is 204 OK
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:DataDog/saas-integrations @team:DataDog/web-frameworks
   Scenario: Delete resource from Confluent account returns "Bad Request" response
     Given new "DeleteConfluentResource" request
     And request contains "account_id" parameter from "REPLACE.ME"
@@ -89,7 +89,7 @@ Feature: Confluent Cloud
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:DataDog/saas-integrations @team:DataDog/web-frameworks
   Scenario: Delete resource from Confluent account returns "Not Found" response
     Given new "DeleteConfluentResource" request
     And request contains "account_id" parameter from "REPLACE.ME"
@@ -97,7 +97,7 @@ Feature: Confluent Cloud
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:DataDog/saas-integrations @team:DataDog/web-frameworks
   Scenario: Delete resource from Confluent account returns "OK" response
     Given new "DeleteConfluentResource" request
     And request contains "account_id" parameter from "REPLACE.ME"
@@ -105,21 +105,21 @@ Feature: Confluent Cloud
     When the request is sent
     Then the response status is 204 OK
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:DataDog/saas-integrations @team:DataDog/web-frameworks
   Scenario: Get Confluent account returns "Bad Request" response
     Given new "GetConfluentAccount" request
     And request contains "account_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:DataDog/saas-integrations @team:DataDog/web-frameworks
   Scenario: Get Confluent account returns "Not Found" response
     Given new "GetConfluentAccount" request
     And request contains "account_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/saas-integrations
+  @team:DataDog/saas-integrations @team:DataDog/web-frameworks
   Scenario: Get Confluent account returns "OK" response
     Given there is a valid "confluent_account" in the system
     And new "GetConfluentAccount" request
@@ -131,7 +131,7 @@ Feature: Confluent Cloud
     And the response "data.attributes.resources[0].resource_type" is equal to "kafka"
     And the response "data.attributes.resources[0].enable_custom_metrics" is equal to false
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:DataDog/saas-integrations @team:DataDog/web-frameworks
   Scenario: Get resource from Confluent account returns "Bad Request" response
     Given new "GetConfluentResource" request
     And request contains "account_id" parameter from "REPLACE.ME"
@@ -139,7 +139,7 @@ Feature: Confluent Cloud
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:DataDog/saas-integrations @team:DataDog/web-frameworks
   Scenario: Get resource from Confluent account returns "Not Found" response
     Given new "GetConfluentResource" request
     And request contains "account_id" parameter from "REPLACE.ME"
@@ -147,7 +147,7 @@ Feature: Confluent Cloud
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:DataDog/saas-integrations @team:DataDog/web-frameworks
   Scenario: Get resource from Confluent account returns "OK" response
     Given new "GetConfluentResource" request
     And request contains "account_id" parameter from "REPLACE.ME"
@@ -155,40 +155,40 @@ Feature: Confluent Cloud
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:DataDog/saas-integrations @team:DataDog/web-frameworks
   Scenario: List Confluent Account resources returns "Bad Request" response
     Given new "ListConfluentResource" request
     And request contains "account_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:DataDog/saas-integrations @team:DataDog/web-frameworks
   Scenario: List Confluent Account resources returns "Not Found" response
     Given new "ListConfluentResource" request
     And request contains "account_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:DataDog/saas-integrations @team:DataDog/web-frameworks
   Scenario: List Confluent Account resources returns "OK" response
     Given new "ListConfluentResource" request
     And request contains "account_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:DataDog/saas-integrations @team:DataDog/web-frameworks
   Scenario: List Confluent accounts returns "Bad Request" response
     Given new "ListConfluentAccount" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:DataDog/saas-integrations @team:DataDog/web-frameworks
   Scenario: List Confluent accounts returns "Not Found" response
     Given new "ListConfluentAccount" request
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/saas-integrations
+  @team:DataDog/saas-integrations @team:DataDog/web-frameworks
   Scenario: List Confluent accounts returns "OK" response
     Given there is a valid "confluent_account" in the system
     And new "ListConfluentAccount" request
@@ -196,7 +196,7 @@ Feature: Confluent Cloud
     Then the response status is 200 OK
     And the response "data[0].type" is equal to "confluent-cloud-accounts"
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:DataDog/saas-integrations @team:DataDog/web-frameworks
   Scenario: Update Confluent account returns "Bad Request" response
     Given new "UpdateConfluentAccount" request
     And request contains "account_id" parameter from "REPLACE.ME"
@@ -204,7 +204,7 @@ Feature: Confluent Cloud
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:DataDog/saas-integrations @team:DataDog/web-frameworks
   Scenario: Update Confluent account returns "Not Found" response
     Given new "UpdateConfluentAccount" request
     And request contains "account_id" parameter from "REPLACE.ME"
@@ -212,7 +212,7 @@ Feature: Confluent Cloud
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/saas-integrations
+  @team:DataDog/saas-integrations @team:DataDog/web-frameworks
   Scenario: Update Confluent account returns "OK" response
     Given there is a valid "confluent_account" in the system
     And new "UpdateConfluentAccount" request
@@ -223,7 +223,7 @@ Feature: Confluent Cloud
     And the response "data.attributes.tags[0]" is equal to "updated_tag:val"
     And the response "data.attributes.api_key" is equal to "{{ confluent_account.data.attributes.api_key }}"
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:DataDog/saas-integrations @team:DataDog/web-frameworks
   Scenario: Update resource in Confluent account returns "Bad Request" response
     Given new "UpdateConfluentResource" request
     And request contains "account_id" parameter from "REPLACE.ME"
@@ -232,7 +232,7 @@ Feature: Confluent Cloud
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:DataDog/saas-integrations @team:DataDog/web-frameworks
   Scenario: Update resource in Confluent account returns "Not Found" response
     Given new "UpdateConfluentResource" request
     And request contains "account_id" parameter from "REPLACE.ME"
@@ -241,7 +241,7 @@ Feature: Confluent Cloud
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:DataDog/saas-integrations @team:DataDog/web-frameworks
   Scenario: Update resource in Confluent account returns "OK" response
     Given new "UpdateConfluentResource" request
     And request contains "account_id" parameter from "REPLACE.ME"

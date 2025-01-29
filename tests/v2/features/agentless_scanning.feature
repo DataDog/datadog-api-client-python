@@ -6,7 +6,7 @@ Feature: Agentless Scanning
   where Agents cannot be installed. Go to
   https://www.datadoghq.com/blog/agentless-scanning/ to learn more
 
-  @team:DataDog/k9-cloud-security-platform
+  @team:DataDog/k9-cloud-security-platform @team:DataDog/web-frameworks
   Scenario: Get AWS Scan Options returns "OK" response
     Given a valid "apiKeyAuth" key in the system
     And a valid "appKeyAuth" key in the system

@@ -13,7 +13,7 @@ Feature: Service Level Objective Corrections
     And a valid "appKeyAuth" key in the system
     And an instance of "ServiceLevelObjectiveCorrections" API
 
-  @skip @team:DataDog/slo-app
+  @skip @team:DataDog/slo-app @team:DataDog/web-frameworks
   Scenario: Create an SLO correction returns "Bad Request" response
     Given there is a valid "slo" in the system
     And new "CreateSLOCorrection" request
@@ -21,7 +21,7 @@ Feature: Service Level Objective Corrections
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/slo-app
+  @team:DataDog/slo-app @team:DataDog/web-frameworks
   Scenario: Create an SLO correction returns "OK" response
     Given there is a valid "slo" in the system
     And new "CreateSLOCorrection" request
@@ -32,14 +32,14 @@ Feature: Service Level Objective Corrections
     And the response "data.attributes.category" is equal to "Scheduled Maintenance"
     And the response "data.attributes.slo_id" has the same value as "slo.data[0].id"
 
-  @skip @team:DataDog/slo-app
+  @skip @team:DataDog/slo-app @team:DataDog/web-frameworks
   Scenario: Create an SLO correction returns "SLO Not Found" response
     Given new "CreateSLOCorrection" request
     And body with value {"data": {"attributes": {"category": "Scheduled Maintenance", "description": "{{ unique }}", "end": {{ timestamp("now + 1h") }}, "slo_id": "sloId", "start": {{ timestamp("now") }}, "timezone": "UTC"}, "type": "correction"}}
     When the request is sent
     Then the response status is 404 SLO Not Found
 
-  @team:DataDog/slo-app
+  @team:DataDog/slo-app @team:DataDog/web-frameworks
   Scenario: Create an SLO correction with rrule returns "OK" response
     Given there is a valid "slo" in the system
     And new "CreateSLOCorrection" request
@@ -49,21 +49,21 @@ Feature: Service Level Objective Corrections
     And the response "data.type" is equal to "correction"
     And the response "data.attributes.rrule" is equal to "FREQ=DAILY;INTERVAL=10;COUNT=5"
 
-  @generated @skip @team:DataDog/slo-app
+  @generated @skip @team:DataDog/slo-app @team:DataDog/web-frameworks
   Scenario: Delete an SLO correction returns "Not found" response
     Given new "DeleteSLOCorrection" request
     And request contains "slo_correction_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not found
 
-  @generated @skip @team:DataDog/slo-app
+  @generated @skip @team:DataDog/slo-app @team:DataDog/web-frameworks
   Scenario: Delete an SLO correction returns "OK" response
     Given new "DeleteSLOCorrection" request
     And request contains "slo_correction_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 204 OK
 
-  @team:DataDog/slo-app
+  @team:DataDog/slo-app @team:DataDog/web-frameworks
   Scenario: Get all SLO corrections returns "OK" response
     Given there is a valid "slo" in the system
     And there is a valid "correction" for "slo"
@@ -74,7 +74,7 @@ Feature: Service Level Objective Corrections
     Then the response status is 200 OK
     And the response "data" has length 1
 
-  @replay-only @skip-validation @team:DataDog/slo-app @with-pagination
+  @replay-only @skip-validation @team:DataDog/slo-app @team:DataDog/web-frameworks @with-pagination
   Scenario: Get all SLO corrections returns "OK" response with pagination
     Given new "ListSLOCorrection" request
     And request contains "limit" parameter with value 2
@@ -82,14 +82,14 @@ Feature: Service Level Objective Corrections
     Then the response status is 200 OK
     And the response has 3 items
 
-  @generated @skip @team:DataDog/slo-app
+  @generated @skip @team:DataDog/slo-app @team:DataDog/web-frameworks
   Scenario: Get an SLO correction for an SLO returns "Bad Request" response
     Given new "GetSLOCorrection" request
     And request contains "slo_correction_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/slo-app
+  @team:DataDog/slo-app @team:DataDog/web-frameworks
   Scenario: Get an SLO correction for an SLO returns "OK" response
     Given there is a valid "slo" in the system
     And there is a valid "correction" for "slo"
@@ -100,7 +100,7 @@ Feature: Service Level Objective Corrections
     And the response "data.type" has the same value as "correction.data.type"
     And the response "data.attributes.category" has the same value as "correction.data.attributes.category"
 
-  @skip @team:DataDog/slo-app
+  @skip @team:DataDog/slo-app @team:DataDog/web-frameworks
   Scenario: Update an SLO correction returns "Bad Request" response
     Given there is a valid "slo" in the system
     And there is a valid "correction" for "slo"
@@ -110,7 +110,7 @@ Feature: Service Level Objective Corrections
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/slo-app
+  @generated @skip @team:DataDog/slo-app @team:DataDog/web-frameworks
   Scenario: Update an SLO correction returns "Not Found" response
     Given new "UpdateSLOCorrection" request
     And request contains "slo_correction_id" parameter from "REPLACE.ME"
@@ -118,7 +118,7 @@ Feature: Service Level Objective Corrections
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/slo-app
+  @team:DataDog/slo-app @team:DataDog/web-frameworks
   Scenario: Update an SLO correction returns "OK" response
     Given there is a valid "slo" in the system
     And there is a valid "correction" for "slo"

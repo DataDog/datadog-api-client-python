@@ -9,7 +9,7 @@ Feature: Incident Teams
     And a valid "appKeyAuth" key in the system
     And an instance of "IncidentTeams" API
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:DataDog/web-frameworks @team:Datadog/incident-app
   Scenario: Create a new incident team returns "Bad Request" response
     Given operation "CreateIncidentTeam" enabled
     And new "CreateIncidentTeam" request
@@ -17,7 +17,7 @@ Feature: Incident Teams
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:Datadog/incident-app
+  @team:DataDog/web-frameworks @team:Datadog/incident-app
   Scenario: Create a new incident team returns "CREATED" response
     Given operation "CreateIncidentTeam" enabled
     And new "CreateIncidentTeam" request
@@ -27,7 +27,7 @@ Feature: Incident Teams
     And the response "data.type" is equal to "teams"
     And the response "data.attributes.name" is equal to "{{ unique }}"
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:DataDog/web-frameworks @team:Datadog/incident-app
   Scenario: Create a new incident team returns "Not Found" response
     Given operation "CreateIncidentTeam" enabled
     And new "CreateIncidentTeam" request
@@ -35,7 +35,7 @@ Feature: Incident Teams
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:DataDog/web-frameworks @team:Datadog/incident-app
   Scenario: Delete an existing incident team returns "Bad Request" response
     Given operation "DeleteIncidentTeam" enabled
     And new "DeleteIncidentTeam" request
@@ -43,7 +43,7 @@ Feature: Incident Teams
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:DataDog/web-frameworks @team:Datadog/incident-app
   Scenario: Delete an existing incident team returns "Not Found" response
     Given operation "DeleteIncidentTeam" enabled
     And new "DeleteIncidentTeam" request
@@ -51,7 +51,7 @@ Feature: Incident Teams
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:Datadog/incident-app
+  @team:DataDog/web-frameworks @team:Datadog/incident-app
   Scenario: Delete an existing incident team returns "OK" response
     Given there is a valid "team" in the system
     And operation "DeleteIncidentTeam" enabled
@@ -60,21 +60,21 @@ Feature: Incident Teams
     When the request is sent
     Then the response status is 204 OK
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:DataDog/web-frameworks @team:Datadog/incident-app
   Scenario: Get a list of all incident teams returns "Bad Request" response
     Given operation "ListIncidentTeams" enabled
     And new "ListIncidentTeams" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:DataDog/web-frameworks @team:Datadog/incident-app
   Scenario: Get a list of all incident teams returns "Not Found" response
     Given operation "ListIncidentTeams" enabled
     And new "ListIncidentTeams" request
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:Datadog/incident-app
+  @team:DataDog/web-frameworks @team:Datadog/incident-app
   Scenario: Get a list of all incident teams returns "OK" response
     Given there is a valid "team" in the system
     And operation "ListIncidentTeams" enabled
@@ -86,7 +86,7 @@ Feature: Incident Teams
     And the response "data[0].type" is equal to "teams"
     And the response "data[0].attributes.name" has the same value as "team.data.attributes.name"
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:DataDog/web-frameworks @team:Datadog/incident-app
   Scenario: Get details of an incident team returns "Bad Request" response
     Given operation "GetIncidentTeam" enabled
     And new "GetIncidentTeam" request
@@ -94,7 +94,7 @@ Feature: Incident Teams
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:DataDog/web-frameworks @team:Datadog/incident-app
   Scenario: Get details of an incident team returns "Not Found" response
     Given operation "GetIncidentTeam" enabled
     And new "GetIncidentTeam" request
@@ -102,7 +102,7 @@ Feature: Incident Teams
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:Datadog/incident-app
+  @team:DataDog/web-frameworks @team:Datadog/incident-app
   Scenario: Get details of an incident team returns "OK" response
     Given there is a valid "team" in the system
     And operation "GetIncidentTeam" enabled
@@ -114,7 +114,7 @@ Feature: Incident Teams
     And the response "data.id" is equal to "{{ team.data.id }}"
     And the response "data.attributes.name" has the same value as "team.data.attributes.name"
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:DataDog/web-frameworks @team:Datadog/incident-app
   Scenario: Update an existing incident team returns "Bad Request" response
     Given operation "UpdateIncidentTeam" enabled
     And new "UpdateIncidentTeam" request
@@ -123,7 +123,7 @@ Feature: Incident Teams
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:DataDog/web-frameworks @team:Datadog/incident-app
   Scenario: Update an existing incident team returns "Not Found" response
     Given operation "UpdateIncidentTeam" enabled
     And new "UpdateIncidentTeam" request
@@ -132,7 +132,7 @@ Feature: Incident Teams
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:Datadog/incident-app
+  @team:DataDog/web-frameworks @team:Datadog/incident-app
   Scenario: Update an existing incident team returns "OK" response
     Given there is a valid "team" in the system
     And operation "UpdateIncidentTeam" enabled

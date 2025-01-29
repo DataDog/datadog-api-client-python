@@ -9,14 +9,14 @@ Feature: Rum Metrics
     And a valid "appKeyAuth" key in the system
     And an instance of "RumMetrics" API
 
-  @team:DataDog/rum-backend
+  @team:DataDog/rum-backend @team:DataDog/web-frameworks
   Scenario: Create a rum-based metric returns "Bad Request" response
     Given new "CreateRumMetric" request
     And body with value {"data": {"id": "rum.actions.invalid", "type": "rum_metrics", "attributes": {"event_type": "action", "compute": {"aggregation_type": "count"}, "uniqueness":{"when": "match"}}}}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/rum-backend
+  @team:DataDog/rum-backend @team:DataDog/web-frameworks
   Scenario: Create a rum-based metric returns "Conflict" response
     Given there is a valid "rum_metric" in the system
     And new "CreateRumMetric" request
@@ -24,7 +24,7 @@ Feature: Rum Metrics
     When the request is sent
     Then the response status is 409 Conflict
 
-  @team:DataDog/rum-backend
+  @team:DataDog/rum-backend @team:DataDog/web-frameworks
   Scenario: Create a rum-based metric returns "Created" response
     Given new "CreateRumMetric" request
     And body with value {"data": {"attributes": {"compute": {"aggregation_type": "distribution", "include_percentiles": true, "path": "@duration"}, "event_type": "session", "filter": {"query": "@service:web-ui"}, "group_by": [{"path": "@browser.name", "tag_name": "browser_name"}], "uniqueness": {"when": "match"}}, "id": "rum.sessions.webui.count", "type": "rum_metrics"}}
@@ -41,7 +41,7 @@ Feature: Rum Metrics
     And the response "data.attributes.group_by[0].tag_name" is equal to "browser_name"
     And the response "data.attributes.uniqueness.when" is equal to "match"
 
-  @team:DataDog/rum-backend
+  @team:DataDog/rum-backend @team:DataDog/web-frameworks
   Scenario: Delete a rum-based metric returns "No Content" response
     Given there is a valid "rum_metric" in the system
     And new "DeleteRumMetric" request
@@ -49,21 +49,21 @@ Feature: Rum Metrics
     When the request is sent
     Then the response status is 204 No Content
 
-  @team:DataDog/rum-backend
+  @team:DataDog/rum-backend @team:DataDog/web-frameworks
   Scenario: Delete a rum-based metric returns "Not Found" response
     Given new "DeleteRumMetric" request
     And request contains "metric_id" parameter with value "{{ unique }}"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/rum-backend
+  @team:DataDog/rum-backend @team:DataDog/web-frameworks
   Scenario: Get a rum-based metric returns "Not Found" response
     Given new "GetRumMetric" request
     And request contains "metric_id" parameter with value "{{ unique }}"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/rum-backend
+  @team:DataDog/rum-backend @team:DataDog/web-frameworks
   Scenario: Get a rum-based metric returns "OK" response
     Given there is a valid "rum_metric" in the system
     And new "GetRumMetric" request
@@ -81,13 +81,13 @@ Feature: Rum Metrics
     And the response "data.attributes.group_by[0].tag_name" has the same value as "rum_metric.data.attributes.group_by[0].tag_name"
     And the response "data.attributes.uniqueness.when" has the same value as "rum_metric.data.attributes.uniqueness.when"
 
-  @team:DataDog/rum-backend
+  @team:DataDog/rum-backend @team:DataDog/web-frameworks
   Scenario: Get all rum-based metrics returns "OK" response
     Given new "ListRumMetrics" request
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/rum-backend
+  @team:DataDog/rum-backend @team:DataDog/web-frameworks
   Scenario: Update a rum-based metric returns "Bad Request" response
     Given there is a valid "rum_metric" in the system
     And new "UpdateRumMetric" request
@@ -96,7 +96,7 @@ Feature: Rum Metrics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/rum-backend
+  @team:DataDog/rum-backend @team:DataDog/web-frameworks
   Scenario: Update a rum-based metric returns "Conflict" response
     Given there is a valid "rum_metric" in the system
     And new "UpdateRumMetric" request
@@ -105,7 +105,7 @@ Feature: Rum Metrics
     When the request is sent
     Then the response status is 409 Conflict
 
-  @team:DataDog/rum-backend
+  @team:DataDog/rum-backend @team:DataDog/web-frameworks
   Scenario: Update a rum-based metric returns "Not Found" response
     Given there is a valid "rum_metric" in the system
     And new "UpdateRumMetric" request
@@ -114,7 +114,7 @@ Feature: Rum Metrics
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/rum-backend
+  @team:DataDog/rum-backend @team:DataDog/web-frameworks
   Scenario: Update a rum-based metric returns "OK" response
     Given there is a valid "rum_metric" in the system
     And new "UpdateRumMetric" request
