@@ -45,7 +45,7 @@ class SyntheticsMobileStepParamsElementUserLocator(ModelNormal):
         """
         User locator to find the element.
 
-        :param fail_test_on_cannot_locate: Whether if the the test should fail if the element cannot be found.
+        :param fail_test_on_cannot_locate: Whether if the test should fail if the element cannot be found.
         :type fail_test_on_cannot_locate: bool, optional
 
         :param values: Values of the user locator.
