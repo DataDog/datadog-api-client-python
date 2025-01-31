@@ -3316,13 +3316,20 @@ It is only available via the API and isn’t visible or editable in the Datadog 
 <li><p><code class="docutils literal notranslate"><span class="pre">#</span></code> an integer or decimal number used to set the threshold.</p></li>
 </ul>
 <p><strong>Cost Alert Query</strong></p>
-<p>Example: <code class="docutils literal notranslate"><span class="pre">formula(query).last(time_window).function(parameter)</span> <span class="pre">operator</span> <span class="pre">#</span></code></p>
-<ul class="simple">
+<p>Example: <code class="docutils literal notranslate"><span class="pre">formula(query).timeframe_type(time_window).function(parameter)</span> <span class="pre">operator</span> <span class="pre">#</span></code></p>
+<ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">query</span></code> The search query - following the <a class="reference external" href="https://docs.datadoghq.com/logs/search_syntax/">Log search syntax</a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">timeframe_type</span></code> The timeframe type to evaluate the cost
+.. code-block:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>- for `forecast` supports `current`
+- for `change`, `anomaly`, `threshold` supports `last`
+</pre></div>
+</div>
+</li>
 <li><p><code class="docutils literal notranslate"><span class="pre">time_window</span></code> - supports daily roll-up e.g. <code class="docutils literal notranslate"><span class="pre">7d</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">function</span></code> - [optional, defaults to <code class="docutils literal notranslate"><span class="pre">threshold</span></code> monitor if omitted] supports <code class="docutils literal notranslate"><span class="pre">change</span></code> , <code class="docutils literal notranslate"><span class="pre">anomaly</span></code> , <code class="docutils literal notranslate"><span class="pre">forecast</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">parameter</span></code> Specify the parameter of the type</p>
-<ul>
+<ul class="simple">
 <li><p>for <code class="docutils literal notranslate"><span class="pre">change</span></code> :</p>
 <ul>
 <li><p>supports <code class="docutils literal notranslate"><span class="pre">relative</span></code> , <code class="docutils literal notranslate"><span class="pre">absolute</span></code></p></li>
@@ -3338,7 +3345,7 @@ It is only available via the API and isn’t visible or editable in the Datadog 
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">operator</span></code></p>
-<ul>
+<ul class="simple">
 <li><p>for <code class="docutils literal notranslate"><span class="pre">threshold</span></code> supports <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> , <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code> , <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> , <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> , <code class="docutils literal notranslate"><span class="pre">==</span></code> , or <code class="docutils literal notranslate"><span class="pre">!=</span></code></p></li>
 <li><p>for <code class="docutils literal notranslate"><span class="pre">change</span></code> supports <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> , <code class="docutils literal notranslate"><span class="pre">&lt;</span></code></p></li>
 <li><p>for <code class="docutils literal notranslate"><span class="pre">anomaly</span></code> supports <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code></p></li>
