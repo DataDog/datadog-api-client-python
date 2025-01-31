@@ -21,7 +21,7 @@ class EventPayloadAttributes(ModelComposed):
         :param change_metadata: Free form object with information related to the `change` event. Can be arbitrarily nested and contain any valid JSON.
         :type change_metadata: {str: (bool, date, datetime, dict, float, int, list, str, UUID, none_type,)}, optional
 
-        :param changed_resource: Object representing a uniquely identified resource. Only the resource type `feature_flag` is supported.
+        :param changed_resource: Object representing a uniquely identified resource.
         :type changed_resource: ChangeEventCustomAttributesChangedResource
 
         :param impacted_resources: A list of resources impacted by this change. It is recommended to provide an impacted resource to display
