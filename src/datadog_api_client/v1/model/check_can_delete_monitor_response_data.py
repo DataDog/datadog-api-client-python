@@ -28,7 +28,7 @@ class CheckCanDeleteMonitorResponseData(ModelNormal):
         """
         Wrapper object with the list of monitor IDs.
 
-        :param ok: An array of of Monitor IDs that can be safely deleted.
+        :param ok: An array of Monitor IDs that can be safely deleted.
         :type ok: [int], optional
         """
         if ok is not unset:
