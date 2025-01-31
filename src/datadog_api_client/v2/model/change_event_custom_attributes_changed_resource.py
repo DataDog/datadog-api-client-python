@@ -36,7 +36,7 @@ class ChangeEventCustomAttributesChangedResource(ModelNormal):
 
     def __init__(self_, name: str, type: ChangeEventCustomAttributesChangedResourceType, **kwargs):
         """
-        Object representing a uniquely identified resource. Only the resource type ``feature_flag`` is supported.
+        Object representing a uniquely identified resource.
 
         :param name: Resource's name.
         :type name: str

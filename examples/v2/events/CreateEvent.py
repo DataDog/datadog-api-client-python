@@ -62,7 +62,7 @@ body = EventCreateRequestPayload(
             category=EventCategory.CHANGE,
             message="payment_processed feature flag has been enabled",
             tags=[
-                "environment:test",
+                "env:test",
             ],
             title="payment_processed feature flag updated",
         ),

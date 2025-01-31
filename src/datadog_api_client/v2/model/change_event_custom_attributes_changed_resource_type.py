@@ -16,14 +16,16 @@ class ChangeEventCustomAttributesChangedResourceType(ModelSimple):
     """
     Resource's type.
 
-    :param value: If omitted defaults to "feature_flag". Must be one of ["feature_flag"].
+    :param value: Must be one of ["feature_flag", "configuration"].
     :type value: str
     """
 
     allowed_values = {
         "feature_flag",
+        "configuration",
     }
     FEATURE_FLAG: ClassVar["ChangeEventCustomAttributesChangedResourceType"]
+    CONFIGURATION: ClassVar["ChangeEventCustomAttributesChangedResourceType"]
 
     @cached_property
     def openapi_types(_):
@@ -34,4 +36,7 @@ class ChangeEventCustomAttributesChangedResourceType(ModelSimple):
 
 ChangeEventCustomAttributesChangedResourceType.FEATURE_FLAG = ChangeEventCustomAttributesChangedResourceType(
     "feature_flag"
+)
+ChangeEventCustomAttributesChangedResourceType.CONFIGURATION = ChangeEventCustomAttributesChangedResourceType(
+    "configuration"
 )
