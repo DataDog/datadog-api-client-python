@@ -447,8 +447,7 @@ Feature: Security Monitoring
 
   @generated @skip @team:DataDog/asm-vm
   Scenario: Get SBOM returns "Bad request: The server cannot process the request due to invalid syntax in the request." response
-    Given operation "GetSBOM" enabled
-    And new "GetSBOM" request
+    Given new "GetSBOM" request
     And request contains "asset_type" parameter from "REPLACE.ME"
     And request contains "filter[asset_name]" parameter from "REPLACE.ME"
     When the request is sent
@@ -456,8 +455,7 @@ Feature: Security Monitoring
 
   @team:DataDog/asm-vm
   Scenario: Get SBOM returns "Not found: asset not found" response
-    Given operation "GetSBOM" enabled
-    And new "GetSBOM" request
+    Given new "GetSBOM" request
     And request contains "asset_type" parameter with value "Host"
     And request contains "filter[asset_name]" parameter with value "unknown-host"
     When the request is sent
@@ -465,8 +463,7 @@ Feature: Security Monitoring
 
   @team:DataDog/asm-vm
   Scenario: Get SBOM returns "OK" response
-    Given operation "GetSBOM" enabled
-    And new "GetSBOM" request
+    Given new "GetSBOM" request
     And request contains "asset_type" parameter with value "Repository"
     And request contains "filter[asset_name]" parameter with value "github.com/datadog/datadog-agent"
     When the request is sent
@@ -783,15 +780,13 @@ Feature: Security Monitoring
 
   @generated @skip @team:DataDog/asm-vm
   Scenario: List vulnerabilities returns "Bad request: The server cannot process the request due to invalid syntax in the request." response
-    Given operation "ListVulnerabilities" enabled
-    And new "ListVulnerabilities" request
+    Given new "ListVulnerabilities" request
     When the request is sent
     Then the response status is 400 Bad request: The server cannot process the request due to invalid syntax in the request.
 
   @team:DataDog/asm-vm
   Scenario: List vulnerabilities returns "Not found: There is no request associated with the provided token." response
-    Given operation "ListVulnerabilities" enabled
-    And new "ListVulnerabilities" request
+    Given new "ListVulnerabilities" request
     And request contains "page[token]" parameter with value "unknown"
     And request contains "page[number]" parameter with value 1
     When the request is sent
@@ -799,8 +794,7 @@ Feature: Security Monitoring
 
   @team:DataDog/asm-vm
   Scenario: List vulnerabilities returns "OK" response
-    Given operation "ListVulnerabilities" enabled
-    And new "ListVulnerabilities" request
+    Given new "ListVulnerabilities" request
     And request contains "filter[cvss.base.severity]" parameter with value "High"
     And request contains "filter[asset.type]" parameter with value "Service"
     And request contains "filter[tool]" parameter with value "Infra"
@@ -809,15 +803,13 @@ Feature: Security Monitoring
 
   @generated @skip @team:DataDog/asm-vm
   Scenario: List vulnerable assets returns "Bad request: The server cannot process the request due to invalid syntax in the request." response
-    Given operation "ListVulnerableAssets" enabled
-    And new "ListVulnerableAssets" request
+    Given new "ListVulnerableAssets" request
     When the request is sent
     Then the response status is 400 Bad request: The server cannot process the request due to invalid syntax in the request.
 
   @team:DataDog/asm-vm
   Scenario: List vulnerable assets returns "Not found: There is no request associated with the provided token." response
-    Given operation "ListVulnerableAssets" enabled
-    And new "ListVulnerableAssets" request
+    Given new "ListVulnerableAssets" request
     And request contains "page[token]" parameter with value "unknown"
     And request contains "page[number]" parameter with value 1
     When the request is sent
@@ -825,8 +817,7 @@ Feature: Security Monitoring
 
   @team:DataDog/asm-vm
   Scenario: List vulnerable assets returns "OK" response
-    Given operation "ListVulnerableAssets" enabled
-    And new "ListVulnerableAssets" request
+    Given new "ListVulnerableAssets" request
     And request contains "filter[type]" parameter with value "Host"
     And request contains "filter[repository_url]" parameter with value "github.com/datadog/dd-go"
     And request contains "filter[risks.in_production]" parameter with value true
