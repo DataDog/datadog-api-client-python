@@ -4260,6 +4260,55 @@ datadog\_api\_client.v2.model.entity\_v3 module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.entity\_v3\_api module
+----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_v3_api
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_v3\_api\_datadog module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_v3_api_datadog
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_v3\_api\_kind module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_v3_api_kind
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_v3\_api\_spec module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_v3_api_spec
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_v3\_api\_spec\_interface module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_v3_api_spec_interface
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_v3\_api\_spec\_interface\_definition module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_v3_api_spec_interface_definition
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_v3\_api\_spec\_interface\_file\_ref module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_v3_api_spec_interface_file_ref
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.entity\_v3\_datadog\_code\_location\_item module
 ------------------------------------------------------------------------------
 
