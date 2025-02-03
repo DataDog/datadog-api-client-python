@@ -10,8 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/app-builder/apps
   response:
     body:
-      string: '{"errors":[{"title":"one or more apps not found","detail":"one or more
-        apps not found"}]}'
+      string: '{"errors":[{"title":"one or more apps not found"}]}'
     headers:
       content-type:
       - application/vnd.api+json

@@ -2,7 +2,7 @@ interactions:
 - request:
     body: '{"data":{"attributes":{"components":[{"events":[],"name":"grid0","properties":{"children":[{"events":[],"name":"gridCell0","properties":{"children":[{"events":[],"name":"calloutValue0","properties":{"isDisabled":false,"isLoading":false,"isVisible":true,"label":"CPU
       Usage","size":"sm","style":"vivid_yellow","unit":"kB","value":"42"},"type":"calloutValue"}],"isVisible":"true","layout":{"default":{"height":8,"width":2,"x":0,"y":0}}},"type":"gridCell"}]},"type":"grid"}],"description":"This
-      is a simple example app","embeddedQueries":[],"name":"Example App","rootInstanceName":"grid0"},"type":"appDefinitions"}}'
+      is a simple example app","name":"Example App","queries":[],"rootInstanceName":"grid0"},"type":"appDefinitions"}}'
     headers:
       accept:
       - application/json
@@ -12,7 +12,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/app-builder/apps
   response:
     body:
-      string: '{"data":{"id":"862d8836-4fa8-494c-8760-5555eab08dda","type":"appDefinitions"}}'
+      string: '{"data":{"id":"25442f2c-fb75-4abe-b875-ed3497d2fc2c","type":"appDefinitions"}}'
     headers:
       content-type:
       - application/vnd.api+json
@@ -25,13 +25,12 @@ interactions:
       accept:
       - application/json
     method: GET
-    uri: https://api.datadoghq.com/api/v2/app-builder/apps/862d8836-4fa8-494c-8760-5555eab08dda
+    uri: https://api.datadoghq.com/api/v2/app-builder/apps/25442f2c-fb75-4abe-b875-ed3497d2fc2c
   response:
     body:
-      string: '{"data":{"id":"862d8836-4fa8-494c-8760-5555eab08dda","type":"appDefinitions","attributes":{"components":[{"events":[],"name":"grid0","properties":{"children":[{"events":[],"name":"gridCell0","properties":{"children":[{"events":[],"name":"calloutValue0","properties":{"isDisabled":false,"isLoading":false,"isVisible":true,"label":"CPU
+      string: '{"data":{"id":"25442f2c-fb75-4abe-b875-ed3497d2fc2c","type":"appDefinitions","attributes":{"components":[{"events":[],"name":"grid0","properties":{"children":[{"events":[],"name":"gridCell0","properties":{"children":[{"events":[],"name":"calloutValue0","properties":{"isDisabled":false,"isLoading":false,"isVisible":true,"label":"CPU
         Usage","size":"sm","style":"vivid_yellow","unit":"kB","value":"42"},"type":"calloutValue"}],"isVisible":"true","layout":{"default":{"height":8,"width":2,"x":0,"y":0}}},"type":"gridCell"}]},"type":"grid"}],"description":"This
-        is a simple example app","embeddedQueries":[],"favorite":false,"name":"Example
-        App","rootInstanceName":"grid0","selfService":false,"tags":[]},"meta":{"org_id":1107852,"user_id":15479137,"user_uuid":"b3f98453-b289-11ef-a4e9-d6d283f92d91","user_name":"oliver.li@datadoghq.com","version":1,"updated_since_deployment":false,"created_at":"2025-01-09T20:40:38.983288Z","updated_at":"2025-01-09T20:40:38.983288Z","deleted_at":"0001-01-01T00:00:00Z"}}}'
+        is a simple example app","favorite":false,"name":"Example App","queries":[],"rootInstanceName":"grid0","selfService":false,"tags":[]},"meta":{"org_id":1107852,"user_id":15479137,"user_uuid":"b3f98453-b289-11ef-a4e9-d6d283f92d91","user_name":"oliver.li@datadoghq.com","version":1,"updated_since_deployment":false,"created_at":"2025-01-30T22:30:43.296595Z","updated_at":"2025-01-30T22:30:43.296595Z","deleted_at":"0001-01-01T00:00:00Z"}}}'
     headers:
       content-type:
       - application/vnd.api+json
@@ -44,10 +43,10 @@ interactions:
       accept:
       - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/app-builder/apps/862d8836-4fa8-494c-8760-5555eab08dda
+    uri: https://api.datadoghq.com/api/v2/app-builder/apps/25442f2c-fb75-4abe-b875-ed3497d2fc2c
   response:
     body:
-      string: '{"data":{"id":"862d8836-4fa8-494c-8760-5555eab08dda","type":"appDefinitions"}}'
+      string: '{"data":{"id":"25442f2c-fb75-4abe-b875-ed3497d2fc2c","type":"appDefinitions"}}'
     headers:
       content-type:
       - application/vnd.api+json

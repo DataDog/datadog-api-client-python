@@ -27,8 +27,8 @@ class CreateAppRequestDataAttributes(ModelNormal):
         return {
             "components": ([ComponentGrid],),
             "description": (str,),
-            "embedded_queries": ([Query],),
             "name": (str,),
+            "queries": ([Query],),
             "root_instance_name": (str,),
             "tags": ([str],),
         }
@@ -36,8 +36,8 @@ class CreateAppRequestDataAttributes(ModelNormal):
     attribute_map = {
         "components": "components",
         "description": "description",
-        "embedded_queries": "embeddedQueries",
         "name": "name",
+        "queries": "queries",
         "root_instance_name": "rootInstanceName",
         "tags": "tags",
     }
@@ -46,8 +46,8 @@ class CreateAppRequestDataAttributes(ModelNormal):
         self_,
         components: Union[List[ComponentGrid], UnsetType] = unset,
         description: Union[str, UnsetType] = unset,
-        embedded_queries: Union[List[Query], UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
+        queries: Union[List[Query], UnsetType] = unset,
         root_instance_name: Union[str, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
         **kwargs,
@@ -61,11 +61,11 @@ class CreateAppRequestDataAttributes(ModelNormal):
         :param description: A human-readable description for the app.
         :type description: str, optional
 
-        :param embedded_queries: An array of queries, such as external actions and state variables, that the app uses.
-        :type embedded_queries: [Query], optional
-
         :param name: The name of the app.
         :type name: str, optional
+
+        :param queries: An array of queries, such as external actions and state variables, that the app uses.
+        :type queries: [Query], optional
 
         :param root_instance_name: The name of the root component of the app. This must be a ``grid`` component that contains all other components.
         :type root_instance_name: str, optional
@@ -77,10 +77,10 @@ class CreateAppRequestDataAttributes(ModelNormal):
             kwargs["components"] = components
         if description is not unset:
             kwargs["description"] = description
-        if embedded_queries is not unset:
-            kwargs["embedded_queries"] = embedded_queries
         if name is not unset:
             kwargs["name"] = name
+        if queries is not unset:
+            kwargs["queries"] = queries
         if root_instance_name is not unset:
             kwargs["root_instance_name"] = root_instance_name
         if tags is not unset:

@@ -8,7 +8,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/app-builder/apps/7addb29b-f935-472c-ae79-d1963979a23e/deployment
   response:
     body:
-      string: '{"errors":[{"title":"app not found","detail":"app not found"}]}'
+      string: '{"errors":[{"title":"app not found"}]}'
     headers:
       content-type:
       - application/vnd.api+json
