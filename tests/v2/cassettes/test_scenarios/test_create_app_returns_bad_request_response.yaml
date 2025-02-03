@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"description":"This is a bad example app","embeddedQueries":[],"rootInstanceName":"grid0"},"type":"appDefinitions"}}'
+    body: '{"data":{"attributes":{"description":"This is a bad example app","queries":[],"rootInstanceName":"grid0"},"type":"appDefinitions"}}'
     headers:
       accept:
       - application/json
@@ -10,8 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/app-builder/apps
   response:
     body:
-      string: '{"errors":[{"title":"missing required field","detail":"missing required
-        field","source":{"pointer":"/data/attributes/name"}}]}'
+      string: '{"errors":[{"title":"missing required field","source":{"pointer":"/data/attributes/name"}}]}'
     headers:
       content-type:
       - application/vnd.api+json

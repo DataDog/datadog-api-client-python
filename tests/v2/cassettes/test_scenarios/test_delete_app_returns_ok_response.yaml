@@ -2,7 +2,7 @@ interactions:
 - request:
     body: '{"data":{"attributes":{"components":[{"events":[],"name":"grid0","properties":{"children":[{"events":[],"name":"gridCell0","properties":{"children":[{"events":[],"name":"calloutValue0","properties":{"isDisabled":false,"isLoading":false,"isVisible":true,"label":"CPU
       Usage","size":"sm","style":"vivid_yellow","unit":"kB","value":"42"},"type":"calloutValue"}],"isVisible":"true","layout":{"default":{"height":8,"width":2,"x":0,"y":0}}},"type":"gridCell"}]},"type":"grid"}],"description":"This
-      is a simple example app","embeddedQueries":[],"name":"Example App","rootInstanceName":"grid0"},"type":"appDefinitions"}}'
+      is a simple example app","name":"Example App","queries":[],"rootInstanceName":"grid0"},"type":"appDefinitions"}}'
     headers:
       accept:
       - application/json
@@ -12,7 +12,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/app-builder/apps
   response:
     body:
-      string: '{"data":{"id":"1d01a77d-1251-42fb-ab67-c99edfb26970","type":"appDefinitions"}}'
+      string: '{"data":{"id":"6d05b89a-db5e-4f7d-aa03-26ccd05be44e","type":"appDefinitions"}}'
     headers:
       content-type:
       - application/vnd.api+json
@@ -25,10 +25,10 @@ interactions:
       accept:
       - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/app-builder/apps/1d01a77d-1251-42fb-ab67-c99edfb26970
+    uri: https://api.datadoghq.com/api/v2/app-builder/apps/6d05b89a-db5e-4f7d-aa03-26ccd05be44e
   response:
     body:
-      string: '{"data":{"id":"1d01a77d-1251-42fb-ab67-c99edfb26970","type":"appDefinitions"}}'
+      string: '{"data":{"id":"6d05b89a-db5e-4f7d-aa03-26ccd05be44e","type":"appDefinitions"}}'
     headers:
       content-type:
       - application/vnd.api+json
@@ -41,10 +41,10 @@ interactions:
       accept:
       - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/app-builder/apps/1d01a77d-1251-42fb-ab67-c99edfb26970
+    uri: https://api.datadoghq.com/api/v2/app-builder/apps/6d05b89a-db5e-4f7d-aa03-26ccd05be44e
   response:
     body:
-      string: '{"errors":[{"title":"app not found","detail":"app not found"}]}'
+      string: '{"errors":[{"title":"app not found"}]}'
     headers:
       content-type:
       - application/vnd.api+json

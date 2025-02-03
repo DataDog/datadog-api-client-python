@@ -14,17 +14,17 @@ Feature: App Builder
   Scenario: Create App returns "Bad Request" response
     Given operation "CreateApp" enabled
     And new "CreateApp" request
-    And body with value {"data": {"attributes": {"description": "This is a bad example app", "embeddedQueries": [], "rootInstanceName": "grid0"}, "type": "appDefinitions"}}
+    And body with value {"data": {"attributes": {"description": "This is a bad example app", "queries": [], "rootInstanceName": "grid0"}, "type": "appDefinitions"}}
     When the request is sent
     Then the response status is 400 Bad Request
     And the response "errors" has length 1
-    And the response "errors[0].detail" is equal to "missing required field"
+    And the response "errors[0].title" is equal to "missing required field"
 
   @skip-typescript @team:DataDog/app-builder-backend
   Scenario: Create App returns "Created" response
     Given operation "CreateApp" enabled
     And new "CreateApp" request
-    And body with value {"data": {"attributes": {"components": [{"events": [], "name": "grid0", "properties": {"children": [{"events": [], "name": "gridCell0", "properties": {"children": [{"events": [], "name": "calloutValue0", "properties": {"isVisible": true, "isUnpublishd": false, "isLoading": false, "label": "CPU Usage", "size": "sm", "style": "vivid_yellow", "unit": "kB", "value": "42"}, "type": "calloutValue"}], "isVisible": "true", "layout": {"default": {"height": 8, "width": 2, "x": 0, "y": 0}}}, "type": "gridCell"}]}, "type": "grid"}], "description": "This is a simple example app", "embeddedQueries": [], "name": "Example App", "rootInstanceName": "grid0"}, "type": "appDefinitions"}}
+    And body with value {"data": {"attributes": {"components": [{"events": [], "name": "grid0", "properties": {"children": [{"events": [], "name": "gridCell0", "properties": {"children": [{"events": [], "name": "calloutValue0", "properties": {"isVisible": true, "isUnpublishd": false, "isLoading": false, "label": "CPU Usage", "size": "sm", "style": "vivid_yellow", "unit": "kB", "value": "42"}, "type": "calloutValue"}], "isVisible": "true", "layout": {"default": {"height": 8, "width": 2, "x": 0, "y": 0}}}, "type": "gridCell"}]}, "type": "grid"}], "description": "This is a simple example app", "queries": [], "name": "Example App", "rootInstanceName": "grid0"}, "type": "appDefinitions"}}
     When the request is sent
     Then the response status is 201 Created
     And the response "data.type" is equal to "appDefinitions"
@@ -192,7 +192,7 @@ Feature: App Builder
     When the request is sent
     Then the response status is 400 Bad Request
     And the response "errors" has length 1
-    And the response "errors[0].detail" is equal to "missing required field"
+    And the response "errors[0].title" is equal to "missing required field"
 
   @skip-typescript @team:DataDog/app-builder-backend
   Scenario: Update App returns "OK" response
