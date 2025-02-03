@@ -19,6 +19,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.entity_v3_datastore import EntityV3Datastore
     from datadog_api_client.v2.model.entity_v3_queue import EntityV3Queue
     from datadog_api_client.v2.model.entity_v3_system import EntityV3System
+    from datadog_api_client.v2.model.entity_v3_api import EntityV3API
 
 
 class EntityResponseIncludedSchemaAttributes(ModelNormal):
@@ -36,7 +37,9 @@ class EntityResponseIncludedSchemaAttributes(ModelNormal):
 
     def __init__(
         self_,
-        schema: Union[EntityV3, EntityV3Service, EntityV3Datastore, EntityV3Queue, EntityV3System, UnsetType] = unset,
+        schema: Union[
+            EntityV3, EntityV3Service, EntityV3Datastore, EntityV3Queue, EntityV3System, EntityV3API, UnsetType
+        ] = unset,
         **kwargs,
     ):
         """

@@ -776,6 +776,13 @@ from datadog_api_client.v2.model.entity_to_raw_schema import EntityToRawSchema
 from datadog_api_client.v2.model.entity_to_related_entities import EntityToRelatedEntities
 from datadog_api_client.v2.model.entity_to_schema import EntityToSchema
 from datadog_api_client.v2.model.entity_v3 import EntityV3
+from datadog_api_client.v2.model.entity_v3_api import EntityV3API
+from datadog_api_client.v2.model.entity_v3_api_datadog import EntityV3APIDatadog
+from datadog_api_client.v2.model.entity_v3_api_kind import EntityV3APIKind
+from datadog_api_client.v2.model.entity_v3_api_spec import EntityV3APISpec
+from datadog_api_client.v2.model.entity_v3_api_spec_interface import EntityV3APISpecInterface
+from datadog_api_client.v2.model.entity_v3_api_spec_interface_definition import EntityV3APISpecInterfaceDefinition
+from datadog_api_client.v2.model.entity_v3_api_spec_interface_file_ref import EntityV3APISpecInterfaceFileRef
 from datadog_api_client.v2.model.entity_v3_api_version import EntityV3APIVersion
 from datadog_api_client.v2.model.entity_v3_datadog_code_location_item import EntityV3DatadogCodeLocationItem
 from datadog_api_client.v2.model.entity_v3_datadog_event_item import EntityV3DatadogEventItem
@@ -2970,6 +2977,13 @@ __all__ = [
     "EntityToRelatedEntities",
     "EntityToSchema",
     "EntityV3",
+    "EntityV3API",
+    "EntityV3APIDatadog",
+    "EntityV3APIKind",
+    "EntityV3APISpec",
+    "EntityV3APISpecInterface",
+    "EntityV3APISpecInterfaceDefinition",
+    "EntityV3APISpecInterfaceFileRef",
     "EntityV3APIVersion",
     "EntityV3DatadogCodeLocationItem",
     "EntityV3DatadogEventItem",
