@@ -9,7 +9,6 @@ from datadog_api_client.v2.model.vulnerability_severity import VulnerabilitySeve
 from datadog_api_client.v2.model.vulnerability_tool import VulnerabilityTool
 
 configuration = Configuration()
-configuration.unstable_operations["list_vulnerabilities"] = True
 with ApiClient(configuration) as api_client:
     api_instance = SecurityMonitoringApi(api_client)
     response = api_instance.list_vulnerabilities(
