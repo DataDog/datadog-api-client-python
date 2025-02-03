@@ -292,6 +292,18 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"name\": \"{{ unique }}\",\n      \"url\": \"https://prod-100.westus.logic.azure.com:443/workflows/abcd1234\"\n     },\n     \"type\": \"workflows-webhook-handle\"\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"workflows_webhook_handle\" in the system",
+    "key": "workflows_webhook_handle",
+    "tag": "Microsoft Teams Integration",
+    "operationId": "CreateWorkflowsWebhookHandle"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"name\": \"{{ unique }}\",\n      \"opsgenie_api_key\": \"00000000-0000-0000-0000-000000000000\",\n      \"region\": \"us\"\n     },\n     \"type\": \"opsgenie-service\"\n  }\n}"
       }
     ],

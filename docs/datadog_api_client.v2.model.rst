@@ -8026,6 +8026,13 @@ datadog\_api\_client.v2.model.microsoft\_teams\_create\_tenant\_based\_handle\_r
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.microsoft\_teams\_create\_workflows\_webhook\_handle\_request module
+--------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.microsoft_teams_create_workflows_webhook_handle_request
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.microsoft\_teams\_get\_channel\_by\_name\_response module
 ---------------------------------------------------------------------------------------
 
@@ -8114,6 +8121,76 @@ datadog\_api\_client.v2.model.microsoft\_teams\_update\_tenant\_based\_handle\_r
 ---------------------------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.microsoft_teams_update_tenant_based_handle_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.microsoft\_teams\_update\_workflows\_webhook\_handle\_request module
+--------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.microsoft_teams_update_workflows_webhook_handle_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.microsoft\_teams\_update\_workflows\_webhook\_handle\_request\_data module
+--------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.microsoft_teams_update_workflows_webhook_handle_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.microsoft\_teams\_workflows\_webhook\_handle\_attributes module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.microsoft_teams_workflows_webhook_handle_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.microsoft\_teams\_workflows\_webhook\_handle\_request\_attributes module
+------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.microsoft_teams_workflows_webhook_handle_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.microsoft\_teams\_workflows\_webhook\_handle\_request\_data module
+------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.microsoft_teams_workflows_webhook_handle_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.microsoft\_teams\_workflows\_webhook\_handle\_response module
+-------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.microsoft_teams_workflows_webhook_handle_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.microsoft\_teams\_workflows\_webhook\_handle\_response\_data module
+-------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.microsoft_teams_workflows_webhook_handle_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.microsoft\_teams\_workflows\_webhook\_handle\_type module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.microsoft_teams_workflows_webhook_handle_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.microsoft\_teams\_workflows\_webhook\_handles\_response module
+--------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.microsoft_teams_workflows_webhook_handles_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.microsoft\_teams\_workflows\_webhook\_response\_attributes module
+-----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.microsoft_teams_workflows_webhook_response_attributes
    :members:
    :show-inheritance:
 

@@ -1,0 +1,34 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"name":"Test-Create_workflow_webhook_handle_returns_CREATED_response-1738093012","url":"https://fake.url.com"},"type":"workflows-webhook-handle"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/integration/ms-teams/configuration/workflows-webhook-handles
+  response:
+    body:
+      string: '{"data":{"id":"264ae337-af6e-4c54-8e90-2612426f270e","type":"workflows-webhook-handle","attributes":{"name":"Test-Create_workflow_webhook_handle_returns_CREATED_response-1738093012"}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/integration/ms-teams/configuration/workflows-webhook-handles/264ae337-af6e-4c54-8e90-2612426f270e
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1

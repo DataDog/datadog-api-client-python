@@ -26,6 +26,18 @@ from datadog_api_client.v2.model.microsoft_teams_create_tenant_based_handle_requ
 from datadog_api_client.v2.model.microsoft_teams_update_tenant_based_handle_request import (
     MicrosoftTeamsUpdateTenantBasedHandleRequest,
 )
+from datadog_api_client.v2.model.microsoft_teams_workflows_webhook_handles_response import (
+    MicrosoftTeamsWorkflowsWebhookHandlesResponse,
+)
+from datadog_api_client.v2.model.microsoft_teams_workflows_webhook_handle_response import (
+    MicrosoftTeamsWorkflowsWebhookHandleResponse,
+)
+from datadog_api_client.v2.model.microsoft_teams_create_workflows_webhook_handle_request import (
+    MicrosoftTeamsCreateWorkflowsWebhookHandleRequest,
+)
+from datadog_api_client.v2.model.microsoft_teams_update_workflows_webhook_handle_request import (
+    MicrosoftTeamsUpdateWorkflowsWebhookHandleRequest,
+)
 
 
 class MicrosoftTeamsIntegrationApi:
@@ -59,12 +71,55 @@ class MicrosoftTeamsIntegrationApi:
             api_client=api_client,
         )
 
+        self._create_workflows_webhook_handle_endpoint = _Endpoint(
+            settings={
+                "response_type": (MicrosoftTeamsWorkflowsWebhookHandleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/integration/ms-teams/configuration/workflows-webhook-handles",
+                "operation_id": "create_workflows_webhook_handle",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (MicrosoftTeamsCreateWorkflowsWebhookHandleRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._delete_tenant_based_handle_endpoint = _Endpoint(
             settings={
                 "response_type": None,
                 "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/integration/ms-teams/configuration/tenant-based-handles/{handle_id}",
                 "operation_id": "delete_tenant_based_handle",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "handle_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "handle_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
+        self._delete_workflows_webhook_handle_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/integration/ms-teams/configuration/workflows-webhook-handles/{handle_id}",
+                "operation_id": "delete_workflows_webhook_handle",
                 "http_method": "DELETE",
                 "version": "v2",
             },
@@ -140,6 +195,29 @@ class MicrosoftTeamsIntegrationApi:
             api_client=api_client,
         )
 
+        self._get_workflows_webhook_handle_endpoint = _Endpoint(
+            settings={
+                "response_type": (MicrosoftTeamsWorkflowsWebhookHandleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/integration/ms-teams/configuration/workflows-webhook-handles/{handle_id}",
+                "operation_id": "get_workflows_webhook_handle",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "handle_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "handle_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._list_tenant_based_handles_endpoint = _Endpoint(
             settings={
                 "response_type": (MicrosoftTeamsTenantBasedHandlesResponse,),
@@ -155,6 +233,28 @@ class MicrosoftTeamsIntegrationApi:
                     "attribute": "tenant_id",
                     "location": "query",
                 },
+                "name": {
+                    "openapi_types": (str,),
+                    "attribute": "name",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_workflows_webhook_handles_endpoint = _Endpoint(
+            settings={
+                "response_type": (MicrosoftTeamsWorkflowsWebhookHandlesResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/integration/ms-teams/configuration/workflows-webhook-handles",
+                "operation_id": "list_workflows_webhook_handles",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
                 "name": {
                     "openapi_types": (str,),
                     "attribute": "name",
@@ -193,6 +293,32 @@ class MicrosoftTeamsIntegrationApi:
             api_client=api_client,
         )
 
+        self._update_workflows_webhook_handle_endpoint = _Endpoint(
+            settings={
+                "response_type": (MicrosoftTeamsWorkflowsWebhookHandleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/integration/ms-teams/configuration/workflows-webhook-handles/{handle_id}",
+                "operation_id": "update_workflows_webhook_handle",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "handle_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "handle_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (MicrosoftTeamsUpdateWorkflowsWebhookHandleRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
     def create_tenant_based_handle(
         self,
         body: MicrosoftTeamsCreateTenantBasedHandleRequest,
@@ -210,6 +336,23 @@ class MicrosoftTeamsIntegrationApi:
 
         return self._create_tenant_based_handle_endpoint.call_with_http_info(**kwargs)
 
+    def create_workflows_webhook_handle(
+        self,
+        body: MicrosoftTeamsCreateWorkflowsWebhookHandleRequest,
+    ) -> MicrosoftTeamsWorkflowsWebhookHandleResponse:
+        """Create Workflows webhook handle.
+
+        Create a Workflows webhook handle in the Datadog Microsoft Teams integration.
+
+        :param body: Workflows Webhook handle payload.
+        :type body: MicrosoftTeamsCreateWorkflowsWebhookHandleRequest
+        :rtype: MicrosoftTeamsWorkflowsWebhookHandleResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_workflows_webhook_handle_endpoint.call_with_http_info(**kwargs)
+
     def delete_tenant_based_handle(
         self,
         handle_id: str,
@@ -226,6 +369,23 @@ class MicrosoftTeamsIntegrationApi:
         kwargs["handle_id"] = handle_id
 
         return self._delete_tenant_based_handle_endpoint.call_with_http_info(**kwargs)
+
+    def delete_workflows_webhook_handle(
+        self,
+        handle_id: str,
+    ) -> None:
+        """Delete Workflows webhook handle.
+
+        Delete a Workflows webhook handle from the Datadog Microsoft Teams integration.
+
+        :param handle_id: Your Workflows webhook handle id.
+        :type handle_id: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["handle_id"] = handle_id
+
+        return self._delete_workflows_webhook_handle_endpoint.call_with_http_info(**kwargs)
 
     def get_channel_by_name(
         self,
@@ -271,6 +431,23 @@ class MicrosoftTeamsIntegrationApi:
 
         return self._get_tenant_based_handle_endpoint.call_with_http_info(**kwargs)
 
+    def get_workflows_webhook_handle(
+        self,
+        handle_id: str,
+    ) -> MicrosoftTeamsWorkflowsWebhookHandleResponse:
+        """Get Workflows webhook handle information.
+
+        Get the name of a Workflows webhook handle from the Datadog Microsoft Teams integration.
+
+        :param handle_id: Your Workflows webhook handle id.
+        :type handle_id: str
+        :rtype: MicrosoftTeamsWorkflowsWebhookHandleResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["handle_id"] = handle_id
+
+        return self._get_workflows_webhook_handle_endpoint.call_with_http_info(**kwargs)
+
     def list_tenant_based_handles(
         self,
         *,
@@ -296,6 +473,25 @@ class MicrosoftTeamsIntegrationApi:
 
         return self._list_tenant_based_handles_endpoint.call_with_http_info(**kwargs)
 
+    def list_workflows_webhook_handles(
+        self,
+        *,
+        name: Union[str, UnsetType] = unset,
+    ) -> MicrosoftTeamsWorkflowsWebhookHandlesResponse:
+        """Get all Workflows webhook handles.
+
+        Get a list of all Workflows webhook handles from the Datadog Microsoft Teams integration.
+
+        :param name: Your Workflows webhook handle name.
+        :type name: str, optional
+        :rtype: MicrosoftTeamsWorkflowsWebhookHandlesResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if name is not unset:
+            kwargs["name"] = name
+
+        return self._list_workflows_webhook_handles_endpoint.call_with_http_info(**kwargs)
+
     def update_tenant_based_handle(
         self,
         handle_id: str,
@@ -317,3 +513,25 @@ class MicrosoftTeamsIntegrationApi:
         kwargs["body"] = body
 
         return self._update_tenant_based_handle_endpoint.call_with_http_info(**kwargs)
+
+    def update_workflows_webhook_handle(
+        self,
+        handle_id: str,
+        body: MicrosoftTeamsUpdateWorkflowsWebhookHandleRequest,
+    ) -> MicrosoftTeamsWorkflowsWebhookHandleResponse:
+        """Update Workflows webhook handle.
+
+        Update a Workflows webhook handle from the Datadog Microsoft Teams integration.
+
+        :param handle_id: Your Workflows webhook handle id.
+        :type handle_id: str
+        :param body: Workflows Webhook handle payload.
+        :type body: MicrosoftTeamsUpdateWorkflowsWebhookHandleRequest
+        :rtype: MicrosoftTeamsWorkflowsWebhookHandleResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["handle_id"] = handle_id
+
+        kwargs["body"] = body
+
+        return self._update_workflows_webhook_handle_endpoint.call_with_http_info(**kwargs)
