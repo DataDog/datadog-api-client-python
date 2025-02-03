@@ -10,6 +10,41 @@ Feature: Microsoft Teams Integration
     And a valid "appKeyAuth" key in the system
     And an instance of "MicrosoftTeamsIntegration" API
 
+  @generated @skip @team:DataDog/chat-integrations
+  Scenario: Create Workflows webhook handle returns "Bad Request" response
+    Given new "CreateWorkflowsWebhookHandle" request
+    And body with value {"data": {"attributes": {"name": "fake-handle-name", "url": "https://fake.url.com"}, "type": "workflows-webhook-handle"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/chat-integrations
+  Scenario: Create Workflows webhook handle returns "CREATED" response
+    Given new "CreateWorkflowsWebhookHandle" request
+    And body with value {"data": {"attributes": {"name": "fake-handle-name", "url": "https://fake.url.com"}, "type": "workflows-webhook-handle"}}
+    When the request is sent
+    Then the response status is 201 CREATED
+
+  @generated @skip @team:DataDog/chat-integrations
+  Scenario: Create Workflows webhook handle returns "Conflict" response
+    Given new "CreateWorkflowsWebhookHandle" request
+    And body with value {"data": {"attributes": {"name": "fake-handle-name", "url": "https://fake.url.com"}, "type": "workflows-webhook-handle"}}
+    When the request is sent
+    Then the response status is 409 Conflict
+
+  @generated @skip @team:DataDog/chat-integrations
+  Scenario: Create Workflows webhook handle returns "Failed Precondition" response
+    Given new "CreateWorkflowsWebhookHandle" request
+    And body with value {"data": {"attributes": {"name": "fake-handle-name", "url": "https://fake.url.com"}, "type": "workflows-webhook-handle"}}
+    When the request is sent
+    Then the response status is 412 Failed Precondition
+
+  @generated @skip @team:DataDog/chat-integrations
+  Scenario: Create Workflows webhook handle returns "Not Found" response
+    Given new "CreateWorkflowsWebhookHandle" request
+    And body with value {"data": {"attributes": {"name": "fake-handle-name", "url": "https://fake.url.com"}, "type": "workflows-webhook-handle"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
   @integration-only @team:DataDog/chat-integrations
   Scenario: Create api handle returns "CREATED" response
     Given new "CreateTenantBasedHandle" request
@@ -53,6 +88,35 @@ Feature: Microsoft Teams Integration
     When the request is sent
     Then the response status is 404 Not Found
 
+  @team:DataDog/chat-integrations
+  Scenario: Create workflow webhook handle returns "CREATED" response
+    Given new "CreateWorkflowsWebhookHandle" request
+    And body with value {"data": {"attributes": {"name": "{{unique}}", "url": "https://fake.url.com"}, "type": "workflows-webhook-handle"}}
+    When the request is sent
+    Then the response status is 201 CREATED
+    And the response "data.attributes.name" is equal to "{{unique}}"
+
+  @generated @skip @team:DataDog/chat-integrations
+  Scenario: Delete Workflows webhook handle returns "Bad Request" response
+    Given new "DeleteWorkflowsWebhookHandle" request
+    And request contains "handle_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/chat-integrations
+  Scenario: Delete Workflows webhook handle returns "Failed Precondition" response
+    Given new "DeleteWorkflowsWebhookHandle" request
+    And request contains "handle_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 412 Failed Precondition
+
+  @generated @skip @team:DataDog/chat-integrations
+  Scenario: Delete Workflows webhook handle returns "OK" response
+    Given new "DeleteWorkflowsWebhookHandle" request
+    And request contains "handle_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 OK
+
   @integration-only @team:DataDog/chat-integrations
   Scenario: Delete api handle returns "OK" response
     Given there is a valid "tenant_based_handle" in the system
@@ -81,6 +145,66 @@ Feature: Microsoft Teams Integration
     And request contains "handle_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 204 OK
+
+  @team:DataDog/chat-integrations
+  Scenario: Delete workflow webhook handle returns "OK" response
+    Given there is a valid "workflows_webhook_handle" in the system
+    And new "DeleteWorkflowsWebhookHandle" request
+    And request contains "handle_id" parameter from "workflows_webhook_handle.data.id"
+    When the request is sent
+    Then the response status is 204 OK
+
+  @generated @skip @team:DataDog/chat-integrations
+  Scenario: Get Workflows webhook handle information returns "Bad Request" response
+    Given new "GetWorkflowsWebhookHandle" request
+    And request contains "handle_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/chat-integrations
+  Scenario: Get Workflows webhook handle information returns "Failed Precondition" response
+    Given new "GetWorkflowsWebhookHandle" request
+    And request contains "handle_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 412 Failed Precondition
+
+  @generated @skip @team:DataDog/chat-integrations
+  Scenario: Get Workflows webhook handle information returns "Not Found" response
+    Given new "GetWorkflowsWebhookHandle" request
+    And request contains "handle_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/chat-integrations
+  Scenario: Get Workflows webhook handle information returns "OK" response
+    Given new "GetWorkflowsWebhookHandle" request
+    And request contains "handle_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/chat-integrations
+  Scenario: Get all Workflows webhook handles returns "Bad Request" response
+    Given new "ListWorkflowsWebhookHandles" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/chat-integrations
+  Scenario: Get all Workflows webhook handles returns "Failed Precondition" response
+    Given new "ListWorkflowsWebhookHandles" request
+    When the request is sent
+    Then the response status is 412 Failed Precondition
+
+  @generated @skip @team:DataDog/chat-integrations
+  Scenario: Get all Workflows webhook handles returns "Not Found" response
+    Given new "ListWorkflowsWebhookHandles" request
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/chat-integrations
+  Scenario: Get all Workflows webhook handles returns "OK" response
+    Given new "ListWorkflowsWebhookHandles" request
+    When the request is sent
+    Then the response status is 200 OK
 
   @integration-only @team:DataDog/chat-integrations
   Scenario: Get all api handles returns "OK" response
@@ -113,6 +237,14 @@ Feature: Microsoft Teams Integration
     Given new "ListTenantBasedHandles" request
     When the request is sent
     Then the response status is 200 OK
+
+  @team:DataDog/chat-integrations
+  Scenario: Get all workflow webhook handles returns "OK" response
+    Given there is a valid "workflows_webhook_handle" in the system
+    And new "ListWorkflowsWebhookHandles" request
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data[0].type" is equal to "workflows-webhook-handle"
 
   @integration-only @team:DataDog/chat-integrations
   Scenario: Get api handle information returns "OK" response
@@ -181,6 +313,54 @@ Feature: Microsoft Teams Integration
     When the request is sent
     Then the response status is 200 OK
 
+  @team:DataDog/chat-integrations
+  Scenario: Get workflow webhook handle information returns "OK" response
+    Given there is a valid "workflows_webhook_handle" in the system
+    And new "GetWorkflowsWebhookHandle" request
+    And request contains "handle_id" parameter from "workflows_webhook_handle.data.id"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/chat-integrations
+  Scenario: Update Workflows webhook handle returns "Bad Request" response
+    Given new "UpdateWorkflowsWebhookHandle" request
+    And request contains "handle_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"name": "fake-handle-name", "url": "https://fake.url.com"}, "type": "workflows-webhook-handle"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/chat-integrations
+  Scenario: Update Workflows webhook handle returns "Conflict" response
+    Given new "UpdateWorkflowsWebhookHandle" request
+    And request contains "handle_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"name": "fake-handle-name", "url": "https://fake.url.com"}, "type": "workflows-webhook-handle"}}
+    When the request is sent
+    Then the response status is 409 Conflict
+
+  @generated @skip @team:DataDog/chat-integrations
+  Scenario: Update Workflows webhook handle returns "Failed Precondition" response
+    Given new "UpdateWorkflowsWebhookHandle" request
+    And request contains "handle_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"name": "fake-handle-name", "url": "https://fake.url.com"}, "type": "workflows-webhook-handle"}}
+    When the request is sent
+    Then the response status is 412 Failed Precondition
+
+  @generated @skip @team:DataDog/chat-integrations
+  Scenario: Update Workflows webhook handle returns "Not Found" response
+    Given new "UpdateWorkflowsWebhookHandle" request
+    And request contains "handle_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"name": "fake-handle-name", "url": "https://fake.url.com"}, "type": "workflows-webhook-handle"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/chat-integrations
+  Scenario: Update Workflows webhook handle returns "OK" response
+    Given new "UpdateWorkflowsWebhookHandle" request
+    And request contains "handle_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"name": "fake-handle-name", "url": "https://fake.url.com"}, "type": "workflows-webhook-handle"}}
+    When the request is sent
+    Then the response status is 200 OK
+
   @integration-only @team:DataDog/chat-integrations
   Scenario: Update api handle returns "OK" response
     Given there is a valid "tenant_based_handle" in the system
@@ -230,3 +410,13 @@ Feature: Microsoft Teams Integration
     And body with value {"data": {"attributes": {"channel_id": "fake-channel-id", "name": "fake-handle-name", "team_id": "00000000-0000-0000-0000-000000000000", "tenant_id": "00000000-0000-0000-0000-000000000001"}, "type": "tenant-based-handle"}}
     When the request is sent
     Then the response status is 200 OK
+
+  @team:DataDog/chat-integrations
+  Scenario: Update workflow webhook handle returns "OK" response
+    Given there is a valid "workflows_webhook_handle" in the system
+    And new "UpdateWorkflowsWebhookHandle" request
+    And request contains "handle_id" parameter from "workflows_webhook_handle.data.id"
+    And body with value {"data": {"attributes": {"name": "{{workflows_webhook_handle.data.attributes.name}}--updated"}, "type": "workflows-webhook-handle"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.attributes.name" is equal to "{{workflows_webhook_handle.data.attributes.name}}--updated"

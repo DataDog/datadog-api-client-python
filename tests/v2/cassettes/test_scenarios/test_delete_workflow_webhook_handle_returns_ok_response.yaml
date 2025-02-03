@@ -1,0 +1,48 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"name":"Test-Delete_workflow_webhook_handle_returns_OK_response-1738093013","url":"https://prod-100.westus.logic.azure.com:443/workflows/abcd1234"},"type":"workflows-webhook-handle"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/integration/ms-teams/configuration/workflows-webhook-handles
+  response:
+    body:
+      string: '{"data":{"id":"859e58f9-f63e-4ead-bde4-31265b79c6a7","type":"workflows-webhook-handle","attributes":{"name":"Test-Delete_workflow_webhook_handle_returns_OK_response-1738093013"}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/integration/ms-teams/configuration/workflows-webhook-handles/859e58f9-f63e-4ead-bde4-31265b79c6a7
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/integration/ms-teams/configuration/workflows-webhook-handles/859e58f9-f63e-4ead-bde4-31265b79c6a7
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1

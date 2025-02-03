@@ -1372,6 +1372,9 @@ from datadog_api_client.v2.model.microsoft_teams_channel_info_type import Micros
 from datadog_api_client.v2.model.microsoft_teams_create_tenant_based_handle_request import (
     MicrosoftTeamsCreateTenantBasedHandleRequest,
 )
+from datadog_api_client.v2.model.microsoft_teams_create_workflows_webhook_handle_request import (
+    MicrosoftTeamsCreateWorkflowsWebhookHandleRequest,
+)
 from datadog_api_client.v2.model.microsoft_teams_get_channel_by_name_response import (
     MicrosoftTeamsGetChannelByNameResponse,
 )
@@ -1408,6 +1411,36 @@ from datadog_api_client.v2.model.microsoft_teams_update_tenant_based_handle_requ
 )
 from datadog_api_client.v2.model.microsoft_teams_update_tenant_based_handle_request_data import (
     MicrosoftTeamsUpdateTenantBasedHandleRequestData,
+)
+from datadog_api_client.v2.model.microsoft_teams_update_workflows_webhook_handle_request import (
+    MicrosoftTeamsUpdateWorkflowsWebhookHandleRequest,
+)
+from datadog_api_client.v2.model.microsoft_teams_update_workflows_webhook_handle_request_data import (
+    MicrosoftTeamsUpdateWorkflowsWebhookHandleRequestData,
+)
+from datadog_api_client.v2.model.microsoft_teams_workflows_webhook_handle_attributes import (
+    MicrosoftTeamsWorkflowsWebhookHandleAttributes,
+)
+from datadog_api_client.v2.model.microsoft_teams_workflows_webhook_handle_request_attributes import (
+    MicrosoftTeamsWorkflowsWebhookHandleRequestAttributes,
+)
+from datadog_api_client.v2.model.microsoft_teams_workflows_webhook_handle_request_data import (
+    MicrosoftTeamsWorkflowsWebhookHandleRequestData,
+)
+from datadog_api_client.v2.model.microsoft_teams_workflows_webhook_handle_response import (
+    MicrosoftTeamsWorkflowsWebhookHandleResponse,
+)
+from datadog_api_client.v2.model.microsoft_teams_workflows_webhook_handle_response_data import (
+    MicrosoftTeamsWorkflowsWebhookHandleResponseData,
+)
+from datadog_api_client.v2.model.microsoft_teams_workflows_webhook_handle_type import (
+    MicrosoftTeamsWorkflowsWebhookHandleType,
+)
+from datadog_api_client.v2.model.microsoft_teams_workflows_webhook_handles_response import (
+    MicrosoftTeamsWorkflowsWebhookHandlesResponse,
+)
+from datadog_api_client.v2.model.microsoft_teams_workflows_webhook_response_attributes import (
+    MicrosoftTeamsWorkflowsWebhookResponseAttributes,
 )
 from datadog_api_client.v2.model.monitor_config_policy_attribute_create_request import (
     MonitorConfigPolicyAttributeCreateRequest,
@@ -3517,6 +3550,7 @@ __all__ = [
     "MicrosoftTeamsChannelInfoResponseData",
     "MicrosoftTeamsChannelInfoType",
     "MicrosoftTeamsCreateTenantBasedHandleRequest",
+    "MicrosoftTeamsCreateWorkflowsWebhookHandleRequest",
     "MicrosoftTeamsGetChannelByNameResponse",
     "MicrosoftTeamsTenantBasedHandleAttributes",
     "MicrosoftTeamsTenantBasedHandleInfoResponseAttributes",
@@ -3530,6 +3564,16 @@ __all__ = [
     "MicrosoftTeamsTenantBasedHandlesResponse",
     "MicrosoftTeamsUpdateTenantBasedHandleRequest",
     "MicrosoftTeamsUpdateTenantBasedHandleRequestData",
+    "MicrosoftTeamsUpdateWorkflowsWebhookHandleRequest",
+    "MicrosoftTeamsUpdateWorkflowsWebhookHandleRequestData",
+    "MicrosoftTeamsWorkflowsWebhookHandleAttributes",
+    "MicrosoftTeamsWorkflowsWebhookHandleRequestAttributes",
+    "MicrosoftTeamsWorkflowsWebhookHandleRequestData",
+    "MicrosoftTeamsWorkflowsWebhookHandleResponse",
+    "MicrosoftTeamsWorkflowsWebhookHandleResponseData",
+    "MicrosoftTeamsWorkflowsWebhookHandleType",
+    "MicrosoftTeamsWorkflowsWebhookHandlesResponse",
+    "MicrosoftTeamsWorkflowsWebhookResponseAttributes",
     "MonitorConfigPolicyAttributeCreateRequest",
     "MonitorConfigPolicyAttributeEditRequest",
     "MonitorConfigPolicyAttributeResponse",

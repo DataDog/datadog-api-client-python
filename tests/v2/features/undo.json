@@ -1076,6 +1076,43 @@
       "type": "idempotent"
     }
   },
+  "ListWorkflowsWebhookHandles": {
+    "tag": "Microsoft Teams Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateWorkflowsWebhookHandle": {
+    "tag": "Microsoft Teams Integration",
+    "undo": {
+      "operationId": "DeleteWorkflowsWebhookHandle",
+      "parameters": [
+        {
+          "name": "handle_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteWorkflowsWebhookHandle": {
+    "tag": "Microsoft Teams Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetWorkflowsWebhookHandle": {
+    "tag": "Microsoft Teams Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateWorkflowsWebhookHandle": {
+    "tag": "Microsoft Teams Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListOpsgenieServices": {
     "tag": "Opsgenie Integration",
     "undo": {
