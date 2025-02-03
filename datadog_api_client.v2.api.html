@@ -1481,15 +1481,25 @@
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.microsoft_teams_integration_api.MicrosoftTeamsIntegrationApi.create_tenant_based_handle" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">MicrosoftTeamsIntegrationApi.create_tenant_based_handle()</span></code></a>
         </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.microsoft_teams_integration_api.MicrosoftTeamsIntegrationApi.create_workflows_webhook_handle" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">MicrosoftTeamsIntegrationApi.create_workflows_webhook_handle()</span></code></a>
+        </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.microsoft_teams_integration_api.MicrosoftTeamsIntegrationApi.delete_tenant_based_handle" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">MicrosoftTeamsIntegrationApi.delete_tenant_based_handle()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.microsoft_teams_integration_api.MicrosoftTeamsIntegrationApi.delete_workflows_webhook_handle" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">MicrosoftTeamsIntegrationApi.delete_workflows_webhook_handle()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.microsoft_teams_integration_api.MicrosoftTeamsIntegrationApi.get_channel_by_name" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">MicrosoftTeamsIntegrationApi.get_channel_by_name()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.microsoft_teams_integration_api.MicrosoftTeamsIntegrationApi.get_tenant_based_handle" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">MicrosoftTeamsIntegrationApi.get_tenant_based_handle()</span></code></a>
         </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.microsoft_teams_integration_api.MicrosoftTeamsIntegrationApi.get_workflows_webhook_handle" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">MicrosoftTeamsIntegrationApi.get_workflows_webhook_handle()</span></code></a>
+        </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.microsoft_teams_integration_api.MicrosoftTeamsIntegrationApi.list_tenant_based_handles" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">MicrosoftTeamsIntegrationApi.list_tenant_based_handles()</span></code></a>
         </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.microsoft_teams_integration_api.MicrosoftTeamsIntegrationApi.list_workflows_webhook_handles" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">MicrosoftTeamsIntegrationApi.list_workflows_webhook_handles()</span></code></a>
+        </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.microsoft_teams_integration_api.MicrosoftTeamsIntegrationApi.update_tenant_based_handle" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">MicrosoftTeamsIntegrationApi.update_tenant_based_handle()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.microsoft_teams_integration_api.MicrosoftTeamsIntegrationApi.update_workflows_webhook_handle" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">MicrosoftTeamsIntegrationApi.update_workflows_webhook_handle()</span></code></a>
         </li></ul>
             </nav>
         </li></ul>
@@ -6443,6 +6453,20 @@ directly through the Datadog API. Note: These endpoints do not support legacy co
 </dl>
 </dd></dl>
 <dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.microsoft_teams_integration_api.MicrosoftTeamsIntegrationApi.create_workflows_webhook_handle">
+<span class="sig-name descname"><span class="pre">create_workflows_webhook_handle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.microsoft_teams_create_workflows_webhook_handle_request.MicrosoftTeamsCreateWorkflowsWebhookHandleRequest" title="datadog_api_client.v2.model.microsoft_teams_create_workflows_webhook_handle_request.MicrosoftTeamsCreateWorkflowsWebhookHandleRequest"><span class="pre">MicrosoftTeamsCreateWorkflowsWebhookHandleRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.microsoft_teams_workflows_webhook_handle_response.MicrosoftTeamsWorkflowsWebhookHandleResponse" title="datadog_api_client.v2.model.microsoft_teams_workflows_webhook_handle_response.MicrosoftTeamsWorkflowsWebhookHandleResponse"><span class="pre">MicrosoftTeamsWorkflowsWebhookHandleResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.microsoft_teams_integration_api.MicrosoftTeamsIntegrationApi.create_workflows_webhook_handle" title="Link to this definition">¶</a></dt>
+<dd><p>Create Workflows webhook handle.</p>
+<p>Create a Workflows webhook handle in the Datadog Microsoft Teams integration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>body</strong> (<a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.microsoft_teams_create_workflows_webhook_handle_request.MicrosoftTeamsCreateWorkflowsWebhookHandleRequest" title="datadog_api_client.v2.model.microsoft_teams_create_workflows_webhook_handle_request.MicrosoftTeamsCreateWorkflowsWebhookHandleRequest"><em>MicrosoftTeamsCreateWorkflowsWebhookHandleRequest</em></a>) – Workflows Webhook handle payload.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.microsoft_teams_workflows_webhook_handle_response.MicrosoftTeamsWorkflowsWebhookHandleResponse" title="datadog_api_client.v2.model.microsoft_teams_workflows_webhook_handle_response.MicrosoftTeamsWorkflowsWebhookHandleResponse">MicrosoftTeamsWorkflowsWebhookHandleResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.microsoft_teams_integration_api.MicrosoftTeamsIntegrationApi.delete_tenant_based_handle">
 <span class="sig-name descname"><span class="pre">delete_tenant_based_handle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#datadog_api_client.v2.api.microsoft_teams_integration_api.MicrosoftTeamsIntegrationApi.delete_tenant_based_handle" title="Link to this definition">¶</a></dt>
 <dd><p>Delete tenant-based handle.</p>
@@ -6450,6 +6474,20 @@ directly through the Datadog API. Note: These endpoints do not support legacy co
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>handle_id</strong> (<em>str</em>) – Your tenant-based handle id.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.microsoft_teams_integration_api.MicrosoftTeamsIntegrationApi.delete_workflows_webhook_handle">
+<span class="sig-name descname"><span class="pre">delete_workflows_webhook_handle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#datadog_api_client.v2.api.microsoft_teams_integration_api.MicrosoftTeamsIntegrationApi.delete_workflows_webhook_handle" title="Link to this definition">¶</a></dt>
+<dd><p>Delete Workflows webhook handle.</p>
+<p>Delete a Workflows webhook handle from the Datadog Microsoft Teams integration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>handle_id</strong> (<em>str</em>) – Your Workflows webhook handle id.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>None</p>
@@ -6489,6 +6527,20 @@ directly through the Datadog API. Note: These endpoints do not support legacy co
 </dl>
 </dd></dl>
 <dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.microsoft_teams_integration_api.MicrosoftTeamsIntegrationApi.get_workflows_webhook_handle">
+<span class="sig-name descname"><span class="pre">get_workflows_webhook_handle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.microsoft_teams_workflows_webhook_handle_response.MicrosoftTeamsWorkflowsWebhookHandleResponse" title="datadog_api_client.v2.model.microsoft_teams_workflows_webhook_handle_response.MicrosoftTeamsWorkflowsWebhookHandleResponse"><span class="pre">MicrosoftTeamsWorkflowsWebhookHandleResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.microsoft_teams_integration_api.MicrosoftTeamsIntegrationApi.get_workflows_webhook_handle" title="Link to this definition">¶</a></dt>
+<dd><p>Get Workflows webhook handle information.</p>
+<p>Get the name of a Workflows webhook handle from the Datadog Microsoft Teams integration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>handle_id</strong> (<em>str</em>) – Your Workflows webhook handle id.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.microsoft_teams_workflows_webhook_handle_response.MicrosoftTeamsWorkflowsWebhookHandleResponse" title="datadog_api_client.v2.model.microsoft_teams_workflows_webhook_handle_response.MicrosoftTeamsWorkflowsWebhookHandleResponse">MicrosoftTeamsWorkflowsWebhookHandleResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.microsoft_teams_integration_api.MicrosoftTeamsIntegrationApi.list_tenant_based_handles">
 <span class="sig-name descname"><span class="pre">list_tenant_based_handles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tenant_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.microsoft_teams_tenant_based_handles_response.MicrosoftTeamsTenantBasedHandlesResponse" title="datadog_api_client.v2.model.microsoft_teams_tenant_based_handles_response.MicrosoftTeamsTenantBasedHandlesResponse"><span class="pre">MicrosoftTeamsTenantBasedHandlesResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.microsoft_teams_integration_api.MicrosoftTeamsIntegrationApi.list_tenant_based_handles" title="Link to this definition">¶</a></dt>
 <dd><p>Get all tenant-based handles.</p>
@@ -6506,6 +6558,20 @@ directly through the Datadog API. Note: These endpoints do not support legacy co
 </dl>
 </dd></dl>
 <dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.microsoft_teams_integration_api.MicrosoftTeamsIntegrationApi.list_workflows_webhook_handles">
+<span class="sig-name descname"><span class="pre">list_workflows_webhook_handles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.microsoft_teams_workflows_webhook_handles_response.MicrosoftTeamsWorkflowsWebhookHandlesResponse" title="datadog_api_client.v2.model.microsoft_teams_workflows_webhook_handles_response.MicrosoftTeamsWorkflowsWebhookHandlesResponse"><span class="pre">MicrosoftTeamsWorkflowsWebhookHandlesResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.microsoft_teams_integration_api.MicrosoftTeamsIntegrationApi.list_workflows_webhook_handles" title="Link to this definition">¶</a></dt>
+<dd><p>Get all Workflows webhook handles.</p>
+<p>Get a list of all Workflows webhook handles from the Datadog Microsoft Teams integration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em><em>, </em><em>optional</em>) – Your Workflows webhook handle name.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.microsoft_teams_workflows_webhook_handles_response.MicrosoftTeamsWorkflowsWebhookHandlesResponse" title="datadog_api_client.v2.model.microsoft_teams_workflows_webhook_handles_response.MicrosoftTeamsWorkflowsWebhookHandlesResponse">MicrosoftTeamsWorkflowsWebhookHandlesResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.microsoft_teams_integration_api.MicrosoftTeamsIntegrationApi.update_tenant_based_handle">
 <span class="sig-name descname"><span class="pre">update_tenant_based_handle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.microsoft_teams_update_tenant_based_handle_request.MicrosoftTeamsUpdateTenantBasedHandleRequest" title="datadog_api_client.v2.model.microsoft_teams_update_tenant_based_handle_request.MicrosoftTeamsUpdateTenantBasedHandleRequest"><span class="pre">MicrosoftTeamsUpdateTenantBasedHandleRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.microsoft_teams_tenant_based_handle_response.MicrosoftTeamsTenantBasedHandleResponse" title="datadog_api_client.v2.model.microsoft_teams_tenant_based_handle_response.MicrosoftTeamsTenantBasedHandleResponse"><span class="pre">MicrosoftTeamsTenantBasedHandleResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.microsoft_teams_integration_api.MicrosoftTeamsIntegrationApi.update_tenant_based_handle" title="Link to this definition">¶</a></dt>
 <dd><p>Update tenant-based handle.</p>
@@ -6519,6 +6585,23 @@ directly through the Datadog API. Note: These endpoints do not support legacy co
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.microsoft_teams_tenant_based_handle_response.MicrosoftTeamsTenantBasedHandleResponse" title="datadog_api_client.v2.model.microsoft_teams_tenant_based_handle_response.MicrosoftTeamsTenantBasedHandleResponse">MicrosoftTeamsTenantBasedHandleResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.microsoft_teams_integration_api.MicrosoftTeamsIntegrationApi.update_workflows_webhook_handle">
+<span class="sig-name descname"><span class="pre">update_workflows_webhook_handle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.microsoft_teams_update_workflows_webhook_handle_request.MicrosoftTeamsUpdateWorkflowsWebhookHandleRequest" title="datadog_api_client.v2.model.microsoft_teams_update_workflows_webhook_handle_request.MicrosoftTeamsUpdateWorkflowsWebhookHandleRequest"><span class="pre">MicrosoftTeamsUpdateWorkflowsWebhookHandleRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.microsoft_teams_workflows_webhook_handle_response.MicrosoftTeamsWorkflowsWebhookHandleResponse" title="datadog_api_client.v2.model.microsoft_teams_workflows_webhook_handle_response.MicrosoftTeamsWorkflowsWebhookHandleResponse"><span class="pre">MicrosoftTeamsWorkflowsWebhookHandleResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.microsoft_teams_integration_api.MicrosoftTeamsIntegrationApi.update_workflows_webhook_handle" title="Link to this definition">¶</a></dt>
+<dd><p>Update Workflows webhook handle.</p>
+<p>Update a Workflows webhook handle from the Datadog Microsoft Teams integration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>handle_id</strong> (<em>str</em>) – Your Workflows webhook handle id.</p></li>
+<li><p><strong>body</strong> (<a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.microsoft_teams_update_workflows_webhook_handle_request.MicrosoftTeamsUpdateWorkflowsWebhookHandleRequest" title="datadog_api_client.v2.model.microsoft_teams_update_workflows_webhook_handle_request.MicrosoftTeamsUpdateWorkflowsWebhookHandleRequest"><em>MicrosoftTeamsUpdateWorkflowsWebhookHandleRequest</em></a>) – Workflows Webhook handle payload.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.microsoft_teams_workflows_webhook_handle_response.MicrosoftTeamsWorkflowsWebhookHandleResponse" title="datadog_api_client.v2.model.microsoft_teams_workflows_webhook_handle_response.MicrosoftTeamsWorkflowsWebhookHandleResponse">MicrosoftTeamsWorkflowsWebhookHandleResponse</a></p>
 </dd>
 </dl>
 </dd></dl>
