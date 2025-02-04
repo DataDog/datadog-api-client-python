@@ -45,7 +45,7 @@ class ListAPIsResponseData(ModelNormal):
         :param attributes: Attributes for ``ListAPIsResponseData``.
         :type attributes: ListAPIsResponseDataAttributes, optional
 
-        :param id: API identifier.
+        :param id: Test
         :type id: UUID, optional
         """
         if attributes is not unset:

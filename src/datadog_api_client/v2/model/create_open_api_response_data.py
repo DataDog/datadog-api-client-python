@@ -45,7 +45,7 @@ class CreateOpenAPIResponseData(ModelNormal):
         :param attributes: Attributes for ``CreateOpenAPI``.
         :type attributes: CreateOpenAPIResponseAttributes, optional
 
-        :param id: API identifier.
+        :param id: Test
         :type id: UUID, optional
         """
         if attributes is not unset:

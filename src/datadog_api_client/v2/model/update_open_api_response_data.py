@@ -45,7 +45,7 @@ class UpdateOpenAPIResponseData(ModelNormal):
         :param attributes: Attributes for ``UpdateOpenAPI``.
         :type attributes: UpdateOpenAPIResponseAttributes, optional
 
-        :param id: API identifier.
+        :param id: Test
         :type id: UUID, optional
         """
         if attributes is not unset:
