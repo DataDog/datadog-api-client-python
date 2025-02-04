@@ -70,18 +70,7 @@ class EntityV3Metadata(ModelNormal):
             ),
             "name": (str,),
             "namespace": (str,),
-            "owner": (
-                bool,
-                date,
-                datetime,
-                dict,
-                float,
-                int,
-                list,
-                str,
-                UUID,
-                none_type,
-            ),
+            "owner": (str,),
             "tags": ([str],),
         }
 
@@ -112,7 +101,7 @@ class EntityV3Metadata(ModelNormal):
         links: Union[List[EntityV3MetadataLinksItems], UnsetType] = unset,
         managed: Union[Dict[str, Any], UnsetType] = unset,
         namespace: Union[str, UnsetType] = unset,
-        owner: Union[Any, UnsetType] = unset,
+        owner: Union[str, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
         **kwargs,
     ):
@@ -150,7 +139,7 @@ class EntityV3Metadata(ModelNormal):
         :type namespace: str, optional
 
         :param owner: The owner of the entity, usually a team.
-        :type owner: bool, date, datetime, dict, float, int, list, str, UUID, none_type, optional
+        :type owner: str, optional
 
         :param tags: A set of custom tags.
         :type tags: [str], optional
