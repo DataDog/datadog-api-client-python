@@ -4421,13 +4421,6 @@ datadog\_api\_client.v2.model.entity\_v3\_metadata\_links\_items module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.entity\_v3\_metadata\_owner module
-----------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.entity_v3_metadata_owner
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v2.model.entity\_v3\_queue module
 ------------------------------------------------------
 
