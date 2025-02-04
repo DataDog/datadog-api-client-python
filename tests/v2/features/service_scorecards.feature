@@ -10,7 +10,7 @@ Feature: Service Scorecards
     And a valid "appKeyAuth" key in the system
     And an instance of "ServiceScorecards" API
 
-  @generated @skip @team:DataDog/service-catalog
+  @generated @skip @team:DataDog/service-catalog @team:DataDog/web-frameworks-approvers
   Scenario: Create a new rule returns "Bad Request" response
     Given operation "CreateScorecardRule" enabled
     And new "CreateScorecardRule" request
@@ -18,7 +18,7 @@ Feature: Service Scorecards
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/service-catalog
+  @team:DataDog/service-catalog @team:DataDog/web-frameworks-approvers
   Scenario: Create a new rule returns "Created" response
     Given operation "CreateScorecardRule" enabled
     And new "CreateScorecardRule" request
@@ -28,7 +28,7 @@ Feature: Service Scorecards
     And the response "data.attributes.scorecard_name" is equal to "Observability Best Practices"
     And the response "data.relationships.scorecard.data" has field "id"
 
-  @team:DataDog/service-catalog
+  @team:DataDog/service-catalog @team:DataDog/web-frameworks-approvers
   Scenario: Create outcomes batch returns "Bad Request" response
     Given there is a valid "create_scorecard_rule" in the system
     And operation "CreateScorecardOutcomesBatch" enabled
@@ -37,7 +37,7 @@ Feature: Service Scorecards
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/service-catalog
+  @team:DataDog/service-catalog @team:DataDog/web-frameworks-approvers
   Scenario: Create outcomes batch returns "OK" response
     Given there is a valid "create_scorecard_rule" in the system
     And operation "CreateScorecardOutcomesBatch" enabled
@@ -46,7 +46,7 @@ Feature: Service Scorecards
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/service-catalog
+  @generated @skip @team:DataDog/service-catalog @team:DataDog/web-frameworks-approvers
   Scenario: Delete a rule returns "Bad Request" response
     Given operation "DeleteScorecardRule" enabled
     And new "DeleteScorecardRule" request
@@ -54,7 +54,7 @@ Feature: Service Scorecards
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/service-catalog
+  @team:DataDog/service-catalog @team:DataDog/web-frameworks-approvers
   Scenario: Delete a rule returns "Not Found" response
     Given operation "DeleteScorecardRule" enabled
     And new "DeleteScorecardRule" request
@@ -62,7 +62,7 @@ Feature: Service Scorecards
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/service-catalog
+  @team:DataDog/service-catalog @team:DataDog/web-frameworks-approvers
   Scenario: Delete a rule returns "OK" response
     Given operation "DeleteScorecardRule" enabled
     And there is a valid "create_scorecard_rule" in the system
@@ -71,21 +71,21 @@ Feature: Service Scorecards
     When the request is sent
     Then the response status is 204 OK
 
-  @generated @skip @team:DataDog/service-catalog
+  @generated @skip @team:DataDog/service-catalog @team:DataDog/web-frameworks-approvers
   Scenario: List all rule outcomes returns "Bad Request" response
     Given operation "ListScorecardOutcomes" enabled
     And new "ListScorecardOutcomes" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/service-catalog
+  @team:DataDog/service-catalog @team:DataDog/web-frameworks-approvers
   Scenario: List all rule outcomes returns "OK" response
     Given operation "ListScorecardOutcomes" enabled
     And new "ListScorecardOutcomes" request
     When the request is sent
     Then the response status is 200 OK
 
-  @replay-only @skip-validation @team:DataDog/service-catalog @with-pagination
+  @replay-only @skip-validation @team:DataDog/service-catalog @team:DataDog/web-frameworks-approvers @with-pagination
   Scenario: List all rule outcomes returns "OK" response with pagination
     Given operation "ListScorecardOutcomes" enabled
     And new "ListScorecardOutcomes" request
@@ -96,21 +96,21 @@ Feature: Service Scorecards
     Then the response status is 200 OK
     And the response has 2 items
 
-  @generated @skip @team:DataDog/service-catalog
+  @generated @skip @team:DataDog/service-catalog @team:DataDog/web-frameworks-approvers
   Scenario: List all rules returns "Bad Request" response
     Given operation "ListScorecardRules" enabled
     And new "ListScorecardRules" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/service-catalog
+  @team:DataDog/service-catalog @team:DataDog/web-frameworks-approvers
   Scenario: List all rules returns "OK" response
     Given operation "ListScorecardRules" enabled
     And new "ListScorecardRules" request
     When the request is sent
     Then the response status is 200 OK
 
-  @replay-only @skip-validation @team:DataDog/service-catalog @with-pagination
+  @replay-only @skip-validation @team:DataDog/service-catalog @team:DataDog/web-frameworks-approvers @with-pagination
   Scenario: List all rules returns "OK" response with pagination
     Given operation "ListScorecardRules" enabled
     And new "ListScorecardRules" request
@@ -121,7 +121,7 @@ Feature: Service Scorecards
     Then the response status is 200 OK
     And the response has 4 items
 
-  @generated @skip @team:DataDog/service-catalog
+  @generated @skip @team:DataDog/service-catalog @team:DataDog/web-frameworks-approvers
   Scenario: Update an existing rule returns "Bad Request" response
     Given operation "UpdateScorecardRule" enabled
     And new "UpdateScorecardRule" request
@@ -130,7 +130,7 @@ Feature: Service Scorecards
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/service-catalog
+  @team:DataDog/service-catalog @team:DataDog/web-frameworks-approvers
   Scenario: Update an existing rule returns "Rule updated successfully" response
     Given operation "UpdateScorecardRule" enabled
     And there is a valid "create_scorecard_rule" in the system

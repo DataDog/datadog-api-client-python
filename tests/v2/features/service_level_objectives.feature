@@ -13,7 +13,7 @@ Feature: Service Level Objectives
     And a valid "appKeyAuth" key in the system
     And an instance of "ServiceLevelObjectives" API
 
-  @team:DataDog/slo-app
+  @team:DataDog/slo-app @team:DataDog/web-frameworks-approvers
   Scenario: Create a new SLO report returns "Bad Request" response
     Given operation "CreateSLOReportJob" enabled
     And new "CreateSLOReportJob" request
@@ -21,7 +21,7 @@ Feature: Service Level Objectives
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/slo-app
+  @team:DataDog/slo-app @team:DataDog/web-frameworks-approvers
   Scenario: Create a new SLO report returns "OK" response
     Given operation "CreateSLOReportJob" enabled
     And new "CreateSLOReportJob" request
@@ -30,7 +30,7 @@ Feature: Service Level Objectives
     Then the response status is 200 OK
     And the response "data.type" is equal to "report_id"
 
-  @team:DataDog/slo-app
+  @team:DataDog/slo-app @team:DataDog/web-frameworks-approvers
   Scenario: Get SLO report returns "Bad Request" response
     Given operation "GetSLOReport" enabled
     And new "GetSLOReport" request
@@ -38,7 +38,7 @@ Feature: Service Level Objectives
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/slo-app
+  @team:DataDog/slo-app @team:DataDog/web-frameworks-approvers
   Scenario: Get SLO report returns "Not Found" response
     Given operation "GetSLOReport" enabled
     And new "GetSLOReport" request
@@ -46,7 +46,7 @@ Feature: Service Level Objectives
     When the request is sent
     Then the response status is 404 Not Found
 
-  @skip @team:DataDog/slo-app
+  @skip @team:DataDog/slo-app @team:DataDog/web-frameworks-approvers
   Scenario: Get SLO report returns "OK" response
     Given operation "GetSLOReport" enabled
     And new "GetSLOReport" request
@@ -54,7 +54,7 @@ Feature: Service Level Objectives
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/slo-app
+  @team:DataDog/slo-app @team:DataDog/web-frameworks-approvers
   Scenario: Get SLO report status returns "Bad Request" response
     Given operation "GetSLOReportJobStatus" enabled
     And new "GetSLOReportJobStatus" request
@@ -62,7 +62,7 @@ Feature: Service Level Objectives
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/slo-app
+  @team:DataDog/slo-app @team:DataDog/web-frameworks-approvers
   Scenario: Get SLO report status returns "Not Found" response
     Given operation "GetSLOReportJobStatus" enabled
     And new "GetSLOReportJobStatus" request
@@ -70,7 +70,7 @@ Feature: Service Level Objectives
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/slo-app
+  @team:DataDog/slo-app @team:DataDog/web-frameworks-approvers
   Scenario: Get SLO report status returns "OK" response
     Given operation "GetSLOReportJobStatus" enabled
     And new "GetSLOReportJobStatus" request

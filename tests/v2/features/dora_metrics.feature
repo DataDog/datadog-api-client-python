@@ -8,7 +8,7 @@ Feature: DORA Metrics
     Given a valid "apiKeyAuth" key in the system
     And an instance of "DORAMetrics" API
 
-  @skip @team:Datadog/ci-app-backend
+  @skip @team:DataDog/web-frameworks-approvers @team:Datadog/ci-app-backend
   Scenario: Send a deployment event for DORA Metrics returns "Bad Request" response
     Given operation "CreateDORADeployment" enabled
     And new "CreateDORADeployment" request
@@ -16,7 +16,7 @@ Feature: DORA Metrics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip @team:Datadog/ci-app-backend
+  @skip @team:DataDog/web-frameworks-approvers @team:Datadog/ci-app-backend
   Scenario: Send a deployment event for DORA Metrics returns "OK - but delayed due to incident" response
     Given operation "CreateDORADeployment" enabled
     And new "CreateDORADeployment" request
@@ -24,7 +24,7 @@ Feature: DORA Metrics
     When the request is sent
     Then the response status is 202 OK - but delayed due to incident
 
-  @replay-only @team:Datadog/ci-app-backend
+  @replay-only @team:DataDog/web-frameworks-approvers @team:Datadog/ci-app-backend
   Scenario: Send a deployment event for DORA Metrics returns "OK" response
     Given operation "CreateDORADeployment" enabled
     And new "CreateDORADeployment" request
@@ -32,7 +32,7 @@ Feature: DORA Metrics
     When the request is sent
     Then the response status is 200 OK
 
-  @skip @team:Datadog/ci-app-backend
+  @skip @team:DataDog/web-frameworks-approvers @team:Datadog/ci-app-backend
   Scenario: Send an incident event for DORA Metrics returns "Bad Request" response
     Given operation "CreateDORAIncident" enabled
     And new "CreateDORAIncident" request
@@ -40,7 +40,7 @@ Feature: DORA Metrics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:Datadog/ci-app-backend
+  @generated @skip @team:DataDog/web-frameworks-approvers @team:Datadog/ci-app-backend
   Scenario: Send an incident event for DORA Metrics returns "OK - but delayed due to incident" response
     Given operation "CreateDORAIncident" enabled
     And new "CreateDORAIncident" request
@@ -48,7 +48,7 @@ Feature: DORA Metrics
     When the request is sent
     Then the response status is 202 OK - but delayed due to incident
 
-  @replay-only @team:Datadog/ci-app-backend
+  @replay-only @team:DataDog/web-frameworks-approvers @team:Datadog/ci-app-backend
   Scenario: Send an incident event for DORA Metrics returns "OK" response
     Given operation "CreateDORAIncident" enabled
     And new "CreateDORAIncident" request

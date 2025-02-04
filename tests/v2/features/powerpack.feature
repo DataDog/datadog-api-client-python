@@ -13,14 +13,14 @@ Feature: Powerpack
     And a valid "appKeyAuth" key in the system
     And an instance of "Powerpack" API
 
-  @team:DataDog/dashboards-backend
+  @team:DataDog/dashboards-backend @team:DataDog/web-frameworks-approvers
   Scenario: Create a new powerpack returns "Bad Request" response
     Given new "CreatePowerpack" request
     And body with value {"data": {"attributes": {"description": "Powerpack for ABC", "group_widget": {"definition": {"type": "group1", "layout_type": "ordered", "widgets": []}}, "name": "Sample Powerpack", "tags": ["tag:foo1"], "template_variables": [{"defaults": ["*"], "name": "test"}]}, "type": "powerpack"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/dashboards-backend
+  @team:DataDog/dashboards-backend @team:DataDog/web-frameworks-approvers
   Scenario: Create a new powerpack returns "OK" response
     Given new "CreatePowerpack" request
     And body from file "powerpack_payload.json"
@@ -41,7 +41,7 @@ Feature: Powerpack
     And the response "data.attributes.group_widget.definition.title" is equal to "Sample Powerpack"
     And the response "data.attributes.group_widget.definition.widgets[0].definition.type" is equal to "note"
 
-  @team:DataDog/dashboards-backend
+  @team:DataDog/dashboards-backend @team:DataDog/web-frameworks-approvers
   Scenario: Delete a powerpack returns "OK" response
     Given there is a valid "powerpack" in the system
     And new "DeletePowerpack" request
@@ -49,14 +49,14 @@ Feature: Powerpack
     When the request is sent
     Then the response status is 204 OK
 
-  @team:DataDog/dashboards-backend
+  @team:DataDog/dashboards-backend @team:DataDog/web-frameworks-approvers
   Scenario: Delete a powerpack returns "Powerpack Not Found" response
     Given new "DeletePowerpack" request
     And request contains "powerpack_id" parameter with value "made-up-id"
     When the request is sent
     Then the response status is 404 Powerpack Not Found
 
-  @team:DataDog/dashboards-backend
+  @team:DataDog/dashboards-backend @team:DataDog/web-frameworks-approvers
   Scenario: Get a Powerpack returns "OK" response
     Given there is a valid "powerpack" in the system
     And new "GetPowerpack" request
@@ -80,14 +80,14 @@ Feature: Powerpack
     And the response "data.attributes.group_widget.definition.widgets[0].definition.type" is equal to "note"
     And the response "data.attributes.group_widget.definition.widgets[0].definition.content" is equal to "test"
 
-  @team:DataDog/dashboards-backend
+  @team:DataDog/dashboards-backend @team:DataDog/web-frameworks-approvers
   Scenario: Get a Powerpack returns "Powerpack Not Found." response
     Given new "GetPowerpack" request
     And request contains "powerpack_id" parameter with value "made-up-id"
     When the request is sent
     Then the response status is 404 Powerpack Not Found.
 
-  @team:DataDog/dashboards-backend
+  @team:DataDog/dashboards-backend @team:DataDog/web-frameworks-approvers
   Scenario: Get all powerpacks returns "OK" response
     Given there is a valid "powerpack" in the system
     And new "ListPowerpacks" request
@@ -111,7 +111,7 @@ Feature: Powerpack
     And the response "data" has item with field "attributes.group_widget.definition.widgets[0].definition.type" with value "note"
     And the response "data" has item with field "attributes.group_widget.definition.widgets[0].definition.content" with value "test"
 
-  @replay-only @skip-validation @team:DataDog/dashboards-backend @with-pagination
+  @replay-only @skip-validation @team:DataDog/dashboards-backend @team:DataDog/web-frameworks-approvers @with-pagination
   Scenario: Get all powerpacks returns "OK" response with pagination
     Given new "ListPowerpacks" request
     And request contains "page[limit]" parameter with value 2
@@ -119,7 +119,7 @@ Feature: Powerpack
     Then the response status is 200 OK
     And the response has 3 items
 
-  @team:DataDog/dashboards-backend
+  @team:DataDog/dashboards-backend @team:DataDog/web-frameworks-approvers
   Scenario: Update a powerpack returns "Bad Request" response
     Given there is a valid "powerpack" in the system
     And new "UpdatePowerpack" request
@@ -128,7 +128,7 @@ Feature: Powerpack
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/dashboards-backend
+  @team:DataDog/dashboards-backend @team:DataDog/web-frameworks-approvers
   Scenario: Update a powerpack returns "OK" response
     Given there is a valid "powerpack" in the system
     And new "UpdatePowerpack" request
@@ -153,7 +153,7 @@ Feature: Powerpack
     And the response "data.attributes.group_widget.definition.widgets[0].definition.type" is equal to "note"
     And the response "data.attributes.group_widget.definition.widgets[0].definition.content" is equal to "test"
 
-  @team:DataDog/dashboards-backend
+  @team:DataDog/dashboards-backend @team:DataDog/web-frameworks-approvers
   Scenario: Update a powerpack returns "Powerpack Not Found" response
     Given new "UpdatePowerpack" request
     And request contains "powerpack_id" parameter with value "made-up-id"

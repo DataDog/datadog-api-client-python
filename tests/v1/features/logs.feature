@@ -8,7 +8,7 @@ Feature: Logs
     Given a valid "apiKeyAuth" key in the system
     And an instance of "Logs" API
 
-  @generated @skip @team:DataDog/logs-app
+  @generated @skip @team:DataDog/logs-app @team:DataDog/web-frameworks-approvers
   Scenario: Search logs returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And new "ListLogs" request
@@ -16,7 +16,7 @@ Feature: Logs
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/logs-app
+  @generated @skip @team:DataDog/logs-app @team:DataDog/web-frameworks-approvers
   Scenario: Search logs returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "ListLogs" request
@@ -24,7 +24,7 @@ Feature: Logs
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/logs-app
+  @team:DataDog/logs-app @team:DataDog/web-frameworks-approvers
   Scenario: Search test logs returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "ListLogs" request
@@ -32,7 +32,7 @@ Feature: Logs
     When the request is sent
     Then the response status is 200 OK
 
-  @integration-only @skip-terraform-config @skip-validation @team:DataDog/event-platform-intake
+  @integration-only @skip-terraform-config @skip-validation @team:DataDog/event-platform-intake @team:DataDog/web-frameworks-approvers
   Scenario: Send deflate logs returns "Response from server (always 200 empty JSON)." response
     Given new "SubmitLog" request
     And body with value [{"message": "{{ unique }}", "ddtags": "host:{{ unique_alnum }}"}]
@@ -40,7 +40,7 @@ Feature: Logs
     When the request is sent
     Then the response status is 200 Response from server (always 200 empty JSON).
 
-  @integration-only @skip-terraform-config @skip-validation @team:DataDog/event-platform-intake
+  @integration-only @skip-terraform-config @skip-validation @team:DataDog/event-platform-intake @team:DataDog/web-frameworks-approvers
   Scenario: Send gzip logs returns "Response from server (always 200 empty JSON)." response
     Given new "SubmitLog" request
     And body with value [{"message": "{{ unique }}", "ddtags": "host:{{ unique_alnum }}"}]
@@ -48,14 +48,14 @@ Feature: Logs
     When the request is sent
     Then the response status is 200 Response from server (always 200 empty JSON).
 
-  @team:DataDog/event-platform-intake
+  @team:DataDog/event-platform-intake @team:DataDog/web-frameworks-approvers
   Scenario: Send logs returns "Response from server (always 200 empty JSON)." response
     Given new "SubmitLog" request
     And body with value [{"message": "{{ unique }}", "ddtags": "host:{{ unique_alnum }}"}]
     When the request is sent
     Then the response status is 200 Response from server (always 200 empty JSON).
 
-  @generated @skip @team:DataDog/event-platform-intake
+  @generated @skip @team:DataDog/event-platform-intake @team:DataDog/web-frameworks-approvers
   Scenario: Send logs returns "unexpected error" response
     Given new "SubmitLog" request
     And body with value [{"ddsource": "nginx", "ddtags": "env:staging,version:5.1", "hostname": "i-012345678", "message": "2019-11-19T14:37:58,995 INFO [process.name][20081] Hello World", "service": "payment"}]

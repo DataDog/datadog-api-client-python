@@ -10,7 +10,7 @@ Feature: Incident Services
     And a valid "appKeyAuth" key in the system
     And an instance of "IncidentServices" API
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:DataDog/web-frameworks-approvers @team:Datadog/incident-app
   Scenario: Create a new incident service returns "Bad Request" response
     Given operation "CreateIncidentService" enabled
     And new "CreateIncidentService" request
@@ -18,7 +18,7 @@ Feature: Incident Services
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:Datadog/incident-app
+  @team:DataDog/web-frameworks-approvers @team:Datadog/incident-app
   Scenario: Create a new incident service returns "CREATED" response
     Given operation "CreateIncidentService" enabled
     And new "CreateIncidentService" request
@@ -28,7 +28,7 @@ Feature: Incident Services
     And the response "data.attributes.name" is equal to "{{ unique }}"
     And the response "data.type" is equal to "services"
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:DataDog/web-frameworks-approvers @team:Datadog/incident-app
   Scenario: Create a new incident service returns "Not Found" response
     Given operation "CreateIncidentService" enabled
     And new "CreateIncidentService" request
@@ -36,7 +36,7 @@ Feature: Incident Services
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:DataDog/web-frameworks-approvers @team:Datadog/incident-app
   Scenario: Delete an existing incident service returns "Bad Request" response
     Given operation "DeleteIncidentService" enabled
     And new "DeleteIncidentService" request
@@ -44,7 +44,7 @@ Feature: Incident Services
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:DataDog/web-frameworks-approvers @team:Datadog/incident-app
   Scenario: Delete an existing incident service returns "Not Found" response
     Given operation "DeleteIncidentService" enabled
     And new "DeleteIncidentService" request
@@ -52,7 +52,7 @@ Feature: Incident Services
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:Datadog/incident-app
+  @team:DataDog/web-frameworks-approvers @team:Datadog/incident-app
   Scenario: Delete an existing incident service returns "OK" response
     Given there is a valid "service" in the system
     And operation "DeleteIncidentService" enabled
@@ -61,21 +61,21 @@ Feature: Incident Services
     When the request is sent
     Then the response status is 204 OK
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:DataDog/web-frameworks-approvers @team:Datadog/incident-app
   Scenario: Get a list of all incident services returns "Bad Request" response
     Given operation "ListIncidentServices" enabled
     And new "ListIncidentServices" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:DataDog/web-frameworks-approvers @team:Datadog/incident-app
   Scenario: Get a list of all incident services returns "Not Found" response
     Given operation "ListIncidentServices" enabled
     And new "ListIncidentServices" request
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:Datadog/incident-app
+  @team:DataDog/web-frameworks-approvers @team:Datadog/incident-app
   Scenario: Get a list of all incident services returns "OK" response
     Given there is a valid "service" in the system
     And operation "ListIncidentServices" enabled
@@ -86,7 +86,7 @@ Feature: Incident Services
     And the response "data" has length 1
     And the response "data[0].attributes.name" has the same value as "service.data.attributes.name"
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:DataDog/web-frameworks-approvers @team:Datadog/incident-app
   Scenario: Get details of an incident service returns "Bad Request" response
     Given operation "GetIncidentService" enabled
     And new "GetIncidentService" request
@@ -94,7 +94,7 @@ Feature: Incident Services
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:DataDog/web-frameworks-approvers @team:Datadog/incident-app
   Scenario: Get details of an incident service returns "Not Found" response
     Given operation "GetIncidentService" enabled
     And new "GetIncidentService" request
@@ -102,7 +102,7 @@ Feature: Incident Services
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:Datadog/incident-app
+  @team:DataDog/web-frameworks-approvers @team:Datadog/incident-app
   Scenario: Get details of an incident service returns "OK" response
     Given there is a valid "service" in the system
     And operation "GetIncidentService" enabled
@@ -114,7 +114,7 @@ Feature: Incident Services
     And the response "data.type" is equal to "services"
     And the response "data.attributes.name" has the same value as "service.data.attributes.name"
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:DataDog/web-frameworks-approvers @team:Datadog/incident-app
   Scenario: Update an existing incident service returns "Bad Request" response
     Given operation "UpdateIncidentService" enabled
     And new "UpdateIncidentService" request
@@ -123,7 +123,7 @@ Feature: Incident Services
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:DataDog/web-frameworks-approvers @team:Datadog/incident-app
   Scenario: Update an existing incident service returns "Not Found" response
     Given operation "UpdateIncidentService" enabled
     And new "UpdateIncidentService" request
@@ -132,7 +132,7 @@ Feature: Incident Services
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:Datadog/incident-app
+  @team:DataDog/web-frameworks-approvers @team:Datadog/incident-app
   Scenario: Update an existing incident service returns "OK" response
     Given there is a valid "service" in the system
     And operation "UpdateIncidentService" enabled

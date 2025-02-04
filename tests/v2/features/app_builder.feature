@@ -10,7 +10,7 @@ Feature: App Builder
     And a valid "appKeyAuth" key in the system
     And an instance of "AppBuilder" API
 
-  @skip-typescript @team:DataDog/app-builder-backend
+  @skip-typescript @team:DataDog/app-builder-backend @team:DataDog/web-frameworks-approvers
   Scenario: Create App returns "Bad Request" response
     Given operation "CreateApp" enabled
     And new "CreateApp" request
@@ -20,7 +20,7 @@ Feature: App Builder
     And the response "errors" has length 1
     And the response "errors[0].title" is equal to "missing required field"
 
-  @skip-typescript @team:DataDog/app-builder-backend
+  @skip-typescript @team:DataDog/app-builder-backend @team:DataDog/web-frameworks-approvers
   Scenario: Create App returns "Created" response
     Given operation "CreateApp" enabled
     And new "CreateApp" request
@@ -29,7 +29,7 @@ Feature: App Builder
     Then the response status is 201 Created
     And the response "data.type" is equal to "appDefinitions"
 
-  @skip @team:DataDog/app-builder-backend
+  @skip @team:DataDog/app-builder-backend @team:DataDog/web-frameworks-approvers
   Scenario: Delete App returns "Bad Request" response
     Given operation "DeleteApp" enabled
     And new "DeleteApp" request
@@ -37,7 +37,7 @@ Feature: App Builder
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip @team:DataDog/app-builder-backend
+  @skip @team:DataDog/app-builder-backend @team:DataDog/web-frameworks-approvers
   Scenario: Delete App returns "Gone" response
     Given operation "DeleteApp" enabled
     And new "DeleteApp" request
@@ -45,7 +45,7 @@ Feature: App Builder
     When the request is sent
     Then the response status is 410 Gone
 
-  @skip-typescript @team:DataDog/app-builder-backend
+  @skip-typescript @team:DataDog/app-builder-backend @team:DataDog/web-frameworks-approvers
   Scenario: Delete App returns "Not Found" response
     Given operation "DeleteApp" enabled
     And new "DeleteApp" request
@@ -53,7 +53,7 @@ Feature: App Builder
     When the request is sent
     Then the response status is 404 Not Found
 
-  @skip-typescript @team:DataDog/app-builder-backend
+  @skip-typescript @team:DataDog/app-builder-backend @team:DataDog/web-frameworks-approvers
   Scenario: Delete App returns "OK" response
     Given operation "DeleteApp" enabled
     And there is a valid "app" in the system
@@ -64,7 +64,7 @@ Feature: App Builder
     And the response "data.id" has the same value as "app.data.id"
     And the response "data.type" is equal to "appDefinitions"
 
-  @generated @skip @team:DataDog/app-builder-backend
+  @generated @skip @team:DataDog/app-builder-backend @team:DataDog/web-frameworks-approvers
   Scenario: Delete Multiple Apps returns "Bad Request" response
     Given operation "DeleteApps" enabled
     And new "DeleteApps" request
@@ -72,7 +72,7 @@ Feature: App Builder
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip-typescript @team:DataDog/app-builder-backend
+  @skip-typescript @team:DataDog/app-builder-backend @team:DataDog/web-frameworks-approvers
   Scenario: Delete Multiple Apps returns "Not Found" response
     Given operation "DeleteApps" enabled
     And new "DeleteApps" request
@@ -80,7 +80,7 @@ Feature: App Builder
     When the request is sent
     Then the response status is 404 Not Found
 
-  @skip-typescript @team:DataDog/app-builder-backend
+  @skip-typescript @team:DataDog/app-builder-backend @team:DataDog/web-frameworks-approvers
   Scenario: Delete Multiple Apps returns "OK" response
     Given operation "DeleteApps" enabled
     And new "DeleteApps" request
@@ -91,7 +91,7 @@ Feature: App Builder
     And the response "data" has length 1
     And the response "data[0].id" has the same value as "app.data.id"
 
-  @skip @team:DataDog/app-builder-backend
+  @skip @team:DataDog/app-builder-backend @team:DataDog/web-frameworks-approvers
   Scenario: Get App returns "Bad Request" response
     Given operation "GetApp" enabled
     And new "GetApp" request
@@ -99,7 +99,7 @@ Feature: App Builder
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip-typescript @team:DataDog/app-builder-backend
+  @skip-typescript @team:DataDog/app-builder-backend @team:DataDog/web-frameworks-approvers
   Scenario: Get App returns "Not Found" response
     Given operation "GetApp" enabled
     And new "GetApp" request
@@ -107,7 +107,7 @@ Feature: App Builder
     When the request is sent
     Then the response status is 404 Not Found
 
-  @skip-typescript @team:DataDog/app-builder-backend
+  @skip-typescript @team:DataDog/app-builder-backend @team:DataDog/web-frameworks-approvers
   Scenario: Get App returns "OK" response
     Given operation "GetApp" enabled
     And new "GetApp" request
@@ -118,21 +118,21 @@ Feature: App Builder
     And the response "data.id" has the same value as "app.data.id"
     And the response "data.type" is equal to "appDefinitions"
 
-  @generated @skip @team:DataDog/app-builder-backend
+  @generated @skip @team:DataDog/app-builder-backend @team:DataDog/web-frameworks-approvers
   Scenario: List Apps returns "Bad Request" response
     Given operation "ListApps" enabled
     And new "ListApps" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip-typescript @team:DataDog/app-builder-backend
+  @skip-typescript @team:DataDog/app-builder-backend @team:DataDog/web-frameworks-approvers
   Scenario: List Apps returns "OK" response
     Given operation "ListApps" enabled
     And new "ListApps" request
     When the request is sent
     Then the response status is 200 OK
 
-  @skip @team:DataDog/app-builder-backend
+  @skip @team:DataDog/app-builder-backend @team:DataDog/web-frameworks-approvers
   Scenario: Publish App returns "Bad Request" response
     Given operation "PublishApp" enabled
     And new "PublishApp" request
@@ -140,7 +140,7 @@ Feature: App Builder
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip-typescript @team:DataDog/app-builder-backend
+  @skip-typescript @team:DataDog/app-builder-backend @team:DataDog/web-frameworks-approvers
   Scenario: Publish App returns "Created" response
     Given operation "PublishApp" enabled
     And new "PublishApp" request
@@ -149,7 +149,7 @@ Feature: App Builder
     When the request is sent
     Then the response status is 201 Created
 
-  @skip-typescript @team:DataDog/app-builder-backend
+  @skip-typescript @team:DataDog/app-builder-backend @team:DataDog/web-frameworks-approvers
   Scenario: Publish App returns "Not Found" response
     Given operation "PublishApp" enabled
     And new "PublishApp" request
@@ -157,7 +157,7 @@ Feature: App Builder
     When the request is sent
     Then the response status is 404 Not Found
 
-  @skip @team:DataDog/app-builder-backend
+  @skip @team:DataDog/app-builder-backend @team:DataDog/web-frameworks-approvers
   Scenario: Unpublish App returns "Bad Request" response
     Given operation "UnpublishApp" enabled
     And new "UnpublishApp" request
@@ -165,7 +165,7 @@ Feature: App Builder
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip-typescript @team:DataDog/app-builder-backend
+  @skip-typescript @team:DataDog/app-builder-backend @team:DataDog/web-frameworks-approvers
   Scenario: Unpublish App returns "Not Found" response
     Given operation "UnpublishApp" enabled
     And new "UnpublishApp" request
@@ -173,7 +173,7 @@ Feature: App Builder
     When the request is sent
     Then the response status is 404 Not Found
 
-  @skip-typescript @team:DataDog/app-builder-backend
+  @skip-typescript @team:DataDog/app-builder-backend @team:DataDog/web-frameworks-approvers
   Scenario: Unpublish App returns "OK" response
     Given operation "UnpublishApp" enabled
     And new "UnpublishApp" request
@@ -182,7 +182,7 @@ Feature: App Builder
     When the request is sent
     Then the response status is 200 OK
 
-  @skip-typescript @team:DataDog/app-builder-backend
+  @skip-typescript @team:DataDog/app-builder-backend @team:DataDog/web-frameworks-approvers
   Scenario: Update App returns "Bad Request" response
     Given operation "UpdateApp" enabled
     And new "UpdateApp" request
@@ -194,7 +194,7 @@ Feature: App Builder
     And the response "errors" has length 1
     And the response "errors[0].title" is equal to "missing required field"
 
-  @skip-typescript @team:DataDog/app-builder-backend
+  @skip-typescript @team:DataDog/app-builder-backend @team:DataDog/web-frameworks-approvers
   Scenario: Update App returns "OK" response
     Given operation "UpdateApp" enabled
     And new "UpdateApp" request

@@ -10,21 +10,21 @@ Feature: Spans Metrics
     And a valid "appKeyAuth" key in the system
     And an instance of "SpansMetrics" API
 
-  @generated @skip @team:DataDog/apm
+  @generated @skip @team:DataDog/apm @team:DataDog/web-frameworks-approvers
   Scenario: Create a span-based metric returns "Bad Request" response
     Given new "CreateSpansMetric" request
     And body with value {"data": {"attributes": {"compute": {"aggregation_type": "distribution", "include_percentiles": false, "path": "@duration"}, "filter": {"query": "@http.status_code:200 service:my-service"}, "group_by": [{"path": "resource_name", "tag_name": "resource_name"}]}, "id": "my.metric", "type": "spans_metrics"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/apm
+  @generated @skip @team:DataDog/apm @team:DataDog/web-frameworks-approvers
   Scenario: Create a span-based metric returns "Conflict" response
     Given new "CreateSpansMetric" request
     And body with value {"data": {"attributes": {"compute": {"aggregation_type": "distribution", "include_percentiles": false, "path": "@duration"}, "filter": {"query": "@http.status_code:200 service:my-service"}, "group_by": [{"path": "resource_name", "tag_name": "resource_name"}]}, "id": "my.metric", "type": "spans_metrics"}}
     When the request is sent
     Then the response status is 409 Conflict
 
-  @team:DataDog/apm
+  @team:DataDog/apm @team:DataDog/web-frameworks-approvers
   Scenario: Create a span-based metric returns "OK" response
     Given new "CreateSpansMetric" request
     And body with value {"data": {"attributes": {"compute": {"aggregation_type": "distribution", "include_percentiles": false, "path": "@duration"}, "filter": {"query": "@http.status_code:200 service:my-service"}, "group_by": [{"path": "resource_name", "tag_name": "resource_name"}]}, "id": "{{ unique_alnum }}", "type": "spans_metrics"}}
@@ -34,14 +34,14 @@ Feature: Spans Metrics
     And the response "data.type" is equal to "spans_metrics"
     And the response "data.attributes.compute.aggregation_type" is equal to "distribution"
 
-  @generated @skip @team:DataDog/apm
+  @generated @skip @team:DataDog/apm @team:DataDog/web-frameworks-approvers
   Scenario: Delete a span-based metric returns "Not Found" response
     Given new "DeleteSpansMetric" request
     And request contains "metric_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/apm
+  @team:DataDog/apm @team:DataDog/web-frameworks-approvers
   Scenario: Delete a span-based metric returns "OK" response
     Given there is a valid "spans_metric" in the system
     And new "DeleteSpansMetric" request
@@ -49,14 +49,14 @@ Feature: Spans Metrics
     When the request is sent
     Then the response status is 204 OK
 
-  @generated @skip @team:DataDog/apm
+  @generated @skip @team:DataDog/apm @team:DataDog/web-frameworks-approvers
   Scenario: Get a span-based metric returns "Not Found" response
     Given new "GetSpansMetric" request
     And request contains "metric_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/apm
+  @team:DataDog/apm @team:DataDog/web-frameworks-approvers
   Scenario: Get a span-based metric returns "OK" response
     Given there is a valid "spans_metric" in the system
     And new "GetSpansMetric" request
@@ -65,7 +65,7 @@ Feature: Spans Metrics
     Then the response status is 200 OK
     And the response "data.attributes.filter.query" has the same value as "spans_metric.data.attributes.filter.query"
 
-  @team:DataDog/apm
+  @team:DataDog/apm @team:DataDog/web-frameworks-approvers
   Scenario: Get all span-based metrics returns "OK" response
     Given there is a valid "spans_metric" in the system
     And new "ListSpansMetrics" request
@@ -73,7 +73,7 @@ Feature: Spans Metrics
     Then the response status is 200 OK
     And the response "data[0].type" is equal to "spans_metrics"
 
-  @generated @skip @team:DataDog/apm
+  @generated @skip @team:DataDog/apm @team:DataDog/web-frameworks-approvers
   Scenario: Update a span-based metric returns "Bad Request" response
     Given new "UpdateSpansMetric" request
     And request contains "metric_id" parameter from "REPLACE.ME"
@@ -81,7 +81,7 @@ Feature: Spans Metrics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/apm
+  @generated @skip @team:DataDog/apm @team:DataDog/web-frameworks-approvers
   Scenario: Update a span-based metric returns "Not Found" response
     Given new "UpdateSpansMetric" request
     And request contains "metric_id" parameter from "REPLACE.ME"
@@ -89,7 +89,7 @@ Feature: Spans Metrics
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/apm
+  @team:DataDog/apm @team:DataDog/web-frameworks-approvers
   Scenario: Update a span-based metric returns "OK" response
     Given there is a valid "spans_metric" in the system
     And new "UpdateSpansMetric" request

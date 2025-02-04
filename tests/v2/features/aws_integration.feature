@@ -9,7 +9,7 @@ Feature: AWS Integration
     And a valid "appKeyAuth" key in the system
     And an instance of "AWSIntegration" API
 
-  @team:DataDog/aws-integrations
+  @team:DataDog/aws-integrations @team:DataDog/web-frameworks-approvers
   Scenario: Create an AWS account returns "AWS Account object" response
     Given operation "CreateAWSAccount" enabled
     And new "CreateAWSAccount" request
@@ -17,7 +17,7 @@ Feature: AWS Integration
     When the request is sent
     Then the response status is 200 AWS Account object
 
-  @team:DataDog/aws-integrations
+  @team:DataDog/aws-integrations @team:DataDog/web-frameworks-approvers
   Scenario: Create an AWS integration returns "AWS Account object" response
     Given operation "CreateAWSAccount" enabled
     And new "CreateAWSAccount" request
@@ -25,7 +25,7 @@ Feature: AWS Integration
     When the request is sent
     Then the response status is 200 AWS Account object
 
-  @team:DataDog/aws-integrations
+  @team:DataDog/aws-integrations @team:DataDog/web-frameworks-approvers
   Scenario: Create an AWS integration returns "Bad Request" response
     Given operation "CreateAWSAccount" enabled
     And new "CreateAWSAccount" request
@@ -33,7 +33,7 @@ Feature: AWS Integration
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/aws-integrations
+  @team:DataDog/aws-integrations @team:DataDog/web-frameworks-approvers
   Scenario: Create an AWS integration returns "Conflict" response
     Given operation "CreateAWSAccount" enabled
     And there is a valid "aws_account_v2" in the system
@@ -42,7 +42,7 @@ Feature: AWS Integration
     When the request is sent
     Then the response status is 409 Conflict
 
-  @team:DataDog/aws-integrations
+  @team:DataDog/aws-integrations @team:DataDog/web-frameworks-approvers
   Scenario: Delete an AWS integration returns "Bad Request" response
     Given operation "DeleteAWSAccount" enabled
     And new "DeleteAWSAccount" request
@@ -50,7 +50,7 @@ Feature: AWS Integration
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/aws-integrations
+  @team:DataDog/aws-integrations @team:DataDog/web-frameworks-approvers
   Scenario: Delete an AWS integration returns "No Content" response
     Given operation "DeleteAWSAccount" enabled
     And there is a valid "aws_account_v2" in the system
@@ -59,7 +59,7 @@ Feature: AWS Integration
     When the request is sent
     Then the response status is 204 No Content
 
-  @team:DataDog/aws-integrations
+  @team:DataDog/aws-integrations @team:DataDog/web-frameworks-approvers
   Scenario: Delete an AWS integration returns "Not Found" response
     Given operation "DeleteAWSAccount" enabled
     And there is a valid "aws_account_v2" in the system
@@ -68,21 +68,21 @@ Feature: AWS Integration
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/aws-integrations
+  @team:DataDog/aws-integrations @team:DataDog/web-frameworks-approvers
   Scenario: Generate a new external ID returns "AWS External ID object" response
     Given operation "CreateNewAWSExternalID" enabled
     And new "CreateNewAWSExternalID" request
     When the request is sent
     Then the response status is 200 AWS External ID object
 
-  @team:DataDog/aws-integrations
+  @team:DataDog/aws-integrations @team:DataDog/web-frameworks-approvers
   Scenario: Generate new external ID returns "AWS External ID object" response
     Given operation "CreateNewAWSExternalID" enabled
     And new "CreateNewAWSExternalID" request
     When the request is sent
     Then the response status is 200 AWS External ID object
 
-  @team:DataDog/aws-integrations
+  @team:DataDog/aws-integrations @team:DataDog/web-frameworks-approvers
   Scenario: Get an AWS integration by config ID returns "AWS Account object" response
     Given operation "GetAWSAccount" enabled
     And there is a valid "aws_account_v2" in the system
@@ -91,7 +91,7 @@ Feature: AWS Integration
     When the request is sent
     Then the response status is 200 AWS Account object
 
-  @team:DataDog/aws-integrations
+  @team:DataDog/aws-integrations @team:DataDog/web-frameworks-approvers
   Scenario: Get an AWS integration by config ID returns "Bad Request" response
     Given operation "GetAWSAccount" enabled
     And new "GetAWSAccount" request
@@ -99,7 +99,7 @@ Feature: AWS Integration
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/aws-integrations
+  @team:DataDog/aws-integrations @team:DataDog/web-frameworks-approvers
   Scenario: Get an AWS integration by config ID returns "Not Found" response
     Given operation "GetAWSAccount" enabled
     And new "GetAWSAccount" request
@@ -107,28 +107,28 @@ Feature: AWS Integration
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/aws-integrations
+  @team:DataDog/aws-integrations @team:DataDog/web-frameworks-approvers
   Scenario: List all AWS integrations returns "AWS Accounts List object" response
     Given operation "ListAWSAccounts" enabled
     And new "ListAWSAccounts" request
     When the request is sent
     Then the response status is 200 AWS Accounts List object
 
-  @team:DataDog/aws-integrations
+  @team:DataDog/aws-integrations @team:DataDog/web-frameworks-approvers
   Scenario: List available namespaces returns "AWS Namespaces List object" response
     Given operation "ListAWSNamespaces" enabled
     And new "ListAWSNamespaces" request
     When the request is sent
     Then the response status is 200 AWS Namespaces List object
 
-  @team:DataDog/aws-integrations
+  @team:DataDog/aws-integrations @team:DataDog/web-frameworks-approvers
   Scenario: List namespaces returns "AWS Namespaces List object" response
     Given operation "ListAWSNamespaces" enabled
     And new "ListAWSNamespaces" request
     When the request is sent
     Then the response status is 200 AWS Namespaces List object
 
-  @team:DataDog/aws-integrations
+  @team:DataDog/aws-integrations @team:DataDog/web-frameworks-approvers
   Scenario: Update an AWS integration returns "AWS Account object" response
     Given operation "UpdateAWSAccount" enabled
     And there is a valid "aws_account_v2" in the system
@@ -138,7 +138,7 @@ Feature: AWS Integration
     When the request is sent
     Then the response status is 200 AWS Account object
 
-  @team:DataDog/aws-integrations
+  @team:DataDog/aws-integrations @team:DataDog/web-frameworks-approvers
   Scenario: Update an AWS integration returns "Bad Request" response
     Given operation "UpdateAWSAccount" enabled
     And there is a valid "aws_account_v2" in the system
@@ -148,7 +148,7 @@ Feature: AWS Integration
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/aws-integrations
+  @team:DataDog/aws-integrations @team:DataDog/web-frameworks-approvers
   Scenario: Update an AWS integration returns "Not Found" response
     Given operation "UpdateAWSAccount" enabled
     And new "UpdateAWSAccount" request

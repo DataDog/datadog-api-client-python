@@ -16,7 +16,7 @@ Feature: Events
     Given a valid "apiKeyAuth" key in the system
     And an instance of "Events" API
 
-  @generated @skip @team:DataDog/monitors-evaluation
+  @generated @skip @team:DataDog/monitors-evaluation @team:DataDog/web-frameworks-approvers
   Scenario: Get a list of events returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And new "ListEvents" request
@@ -25,7 +25,7 @@ Feature: Events
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/monitors-evaluation
+  @generated @skip @team:DataDog/monitors-evaluation @team:DataDog/web-frameworks-approvers
   Scenario: Get a list of events returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "ListEvents" request
@@ -34,7 +34,7 @@ Feature: Events
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/monitors-evaluation
+  @generated @skip @team:DataDog/monitors-evaluation @team:DataDog/web-frameworks-approvers
   Scenario: Get an event returns "Item Not Found" response
     Given a valid "appKeyAuth" key in the system
     And new "GetEvent" request
@@ -42,7 +42,7 @@ Feature: Events
     When the request is sent
     Then the response status is 404 Item Not Found
 
-  @generated @skip @team:DataDog/monitors-evaluation
+  @generated @skip @team:DataDog/monitors-evaluation @team:DataDog/web-frameworks-approvers
   Scenario: Get an event returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "GetEvent" request
@@ -50,21 +50,21 @@ Feature: Events
     When the request is sent
     Then the response status is 200 OK
 
-  @skip-validation @team:DataDog/monitors-evaluation
+  @skip-validation @team:DataDog/monitors-evaluation @team:DataDog/web-frameworks-approvers
   Scenario: Post an event in the past returns "Bad Request" response
     Given new "CreateEvent" request
     And body with value {"title": "{{ unique }}", "text": "A text message.", "date_happened": 1, "tags": ["test:{{ unique_alnum }}"]}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/monitors-evaluation
+  @generated @skip @team:DataDog/monitors-evaluation @team:DataDog/web-frameworks-approvers
   Scenario: Post an event returns "Bad Request" response
     Given new "CreateEvent" request
     And body with value {"alert_type": "info", "priority": "normal", "tags": ["environment:test"], "text": "Oh boy!", "title": "Did you hear the news today?"}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/monitors-evaluation
+  @team:DataDog/monitors-evaluation @team:DataDog/web-frameworks-approvers
   Scenario: Post an event returns "OK" response
     Given new "CreateEvent" request
     And body with value {"title": "{{ unique }}", "text": "A text message.", "tags": ["test:{{ unique_alnum }}"]}
@@ -72,7 +72,7 @@ Feature: Events
     Then the response status is 202 OK
     And the response "event.text" is equal to "A text message."
 
-  @team:DataDog/monitors-evaluation
+  @team:DataDog/monitors-evaluation @team:DataDog/web-frameworks-approvers
   Scenario: Post an event with a long title returns "OK" response
     Given new "CreateEvent" request
     And body with value {"title": "{{ unique }} very very very looooooooong looooooooooooong loooooooooooooooooooooong looooooooooooooooooooooooooong title with 100+ characters", "text": "A text message.", "tags": ["test:{{ unique_alnum }}"]}

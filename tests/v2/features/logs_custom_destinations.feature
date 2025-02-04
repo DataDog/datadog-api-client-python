@@ -13,7 +13,7 @@ Feature: Logs Custom Destinations
     And a valid "appKeyAuth" key in the system
     And an instance of "LogsCustomDestinations" API
 
-  @team:DataDog/logs-backend @team:DataDog/logs-forwarding
+  @team:DataDog/logs-backend @team:DataDog/logs-forwarding @team:DataDog/web-frameworks-approvers
   Scenario: Create a Basic HTTP custom destination returns "OK" response
     Given new "CreateLogsCustomDestination" request
     And body with value {"data": {"attributes": {"enabled": false, "forward_tags": false, "forward_tags_restriction_list": ["datacenter", "host"], "forward_tags_restriction_list_type": "ALLOW_LIST", "forwarder_destination": {"auth": {"password": "datadog-custom-destination-password", "type": "basic", "username": "datadog-custom-destination-username"}, "endpoint": "https://example.com", "type": "http"}, "name": "Nginx logs", "query": "source:nginx"}, "type": "custom_destination"}}
@@ -35,7 +35,7 @@ Feature: Logs Custom Destinations
     And the response "data.attributes.forward_tags_restriction_list" array contains value "host"
     And the response "data.attributes.forward_tags_restriction_list_type" is equal to "ALLOW_LIST"
 
-  @team:DataDog/logs-backend @team:DataDog/logs-forwarding
+  @team:DataDog/logs-backend @team:DataDog/logs-forwarding @team:DataDog/web-frameworks-approvers
   Scenario: Create a Custom Header HTTP custom destination returns "OK" response
     Given new "CreateLogsCustomDestination" request
     And body with value {"data": {"attributes": {"enabled": false, "forward_tags": false, "forward_tags_restriction_list": ["datacenter", "host"], "forward_tags_restriction_list_type": "ALLOW_LIST", "forwarder_destination": {"auth": {"header_value": "my-secret", "type": "custom_header", "header_name": "MY-AUTHENTICATION-HEADER"}, "endpoint": "https://example.com", "type": "http"}, "name": "Nginx logs", "query": "source:nginx"}, "type": "custom_destination"}}
@@ -57,7 +57,7 @@ Feature: Logs Custom Destinations
     And the response "data.attributes.forward_tags_restriction_list" array contains value "host"
     And the response "data.attributes.forward_tags_restriction_list_type" is equal to "ALLOW_LIST"
 
-  @team:DataDog/logs-backend @team:DataDog/logs-forwarding
+  @team:DataDog/logs-backend @team:DataDog/logs-forwarding @team:DataDog/web-frameworks-approvers
   Scenario: Create a Splunk custom destination returns "OK" response
     Given new "CreateLogsCustomDestination" request
     And body with value {"data": {"attributes": {"enabled": false, "forward_tags": false, "forward_tags_restriction_list": ["datacenter", "host"], "forward_tags_restriction_list_type": "ALLOW_LIST", "forwarder_destination": {"access_token": "my-access-token", "endpoint": "https://example.com", "type": "splunk_hec"}, "name": "Nginx logs", "query": "source:nginx"}, "type": "custom_destination"}}
@@ -77,28 +77,28 @@ Feature: Logs Custom Destinations
     And the response "data.attributes.forward_tags_restriction_list" array contains value "host"
     And the response "data.attributes.forward_tags_restriction_list_type" is equal to "ALLOW_LIST"
 
-  @skip-java @skip-python @skip-rust @skip-typescript @team:DataDog/logs-backend @team:DataDog/logs-forwarding
+  @skip-java @skip-python @skip-rust @skip-typescript @team:DataDog/logs-backend @team:DataDog/logs-forwarding @team:DataDog/web-frameworks-approvers
   Scenario: Create a custom destination returns "Bad Request" response
     Given new "CreateLogsCustomDestination" request
     And body with value {"data": {"attributes": {"name": "Nginx logs"}, "type": "custom_destination"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/logs-backend @team:DataDog/logs-forwarding
+  @generated @skip @team:DataDog/logs-backend @team:DataDog/logs-forwarding @team:DataDog/web-frameworks-approvers
   Scenario: Create a custom destination returns "Conflict" response
     Given new "CreateLogsCustomDestination" request
     And body with value {"data": {"attributes": {"enabled": true, "forward_tags": true, "forward_tags_restriction_list": ["datacenter", "host"], "forward_tags_restriction_list_type": "ALLOW_LIST", "forwarder_destination": {"auth": {"password": "datadog-custom-destination-password", "type": "basic", "username": "datadog-custom-destination-username"}, "endpoint": "https://example.com", "type": "http"}, "name": "Nginx logs", "query": "source:nginx"}, "type": "custom_destination"}}
     When the request is sent
     Then the response status is 409 Conflict
 
-  @generated @skip @team:DataDog/logs-backend @team:DataDog/logs-forwarding
+  @generated @skip @team:DataDog/logs-backend @team:DataDog/logs-forwarding @team:DataDog/web-frameworks-approvers
   Scenario: Create a custom destination returns "OK" response
     Given new "CreateLogsCustomDestination" request
     And body with value {"data": {"attributes": {"enabled": true, "forward_tags": true, "forward_tags_restriction_list": ["datacenter", "host"], "forward_tags_restriction_list_type": "ALLOW_LIST", "forwarder_destination": {"auth": {"password": "datadog-custom-destination-password", "type": "basic", "username": "datadog-custom-destination-username"}, "endpoint": "https://example.com", "type": "http"}, "name": "Nginx logs", "query": "source:nginx"}, "type": "custom_destination"}}
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/logs-backend @team:DataDog/logs-forwarding
+  @team:DataDog/logs-backend @team:DataDog/logs-forwarding @team:DataDog/web-frameworks-approvers
   Scenario: Create an Elasticsearch custom destination returns "OK" response
     Given new "CreateLogsCustomDestination" request
     And body with value {"data": {"attributes": {"enabled": false, "forward_tags": false, "forward_tags_restriction_list": ["datacenter", "host"], "forward_tags_restriction_list_type": "ALLOW_LIST", "forwarder_destination": {"auth": {"username": "my-username", "password": "my-password"}, "index_name": "nginx-logs", "index_rotation": "yyyy-MM-dd", "endpoint": "https://example.com", "type": "elasticsearch"}, "name": "Nginx logs", "query": "source:nginx"}, "type": "custom_destination"}}
@@ -121,21 +121,21 @@ Feature: Logs Custom Destinations
     And the response "data.attributes.forward_tags_restriction_list" array contains value "host"
     And the response "data.attributes.forward_tags_restriction_list_type" is equal to "ALLOW_LIST"
 
-  @generated @skip @team:DataDog/logs-backend @team:DataDog/logs-forwarding
+  @generated @skip @team:DataDog/logs-backend @team:DataDog/logs-forwarding @team:DataDog/web-frameworks-approvers
   Scenario: Delete a custom destination returns "Bad Request" response
     Given new "DeleteLogsCustomDestination" request
     And request contains "custom_destination_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/logs-backend @team:DataDog/logs-forwarding
+  @team:DataDog/logs-backend @team:DataDog/logs-forwarding @team:DataDog/web-frameworks-approvers
   Scenario: Delete a custom destination returns "Not Found" response
     Given new "DeleteLogsCustomDestination" request
     And request contains "custom_destination_id" parameter with value "does-not-exist"
     When the request is sent
     Then the response status is 404 Not found
 
-  @team:DataDog/logs-backend @team:DataDog/logs-forwarding
+  @team:DataDog/logs-backend @team:DataDog/logs-forwarding @team:DataDog/web-frameworks-approvers
   Scenario: Delete a custom destination returns "OK" response
     Given new "DeleteLogsCustomDestination" request
     And there is a valid "custom_destination" in the system
@@ -143,21 +143,21 @@ Feature: Logs Custom Destinations
     When the request is sent
     Then the response status is 204 OK
 
-  @generated @skip @team:DataDog/logs-backend @team:DataDog/logs-forwarding
+  @generated @skip @team:DataDog/logs-backend @team:DataDog/logs-forwarding @team:DataDog/web-frameworks-approvers
   Scenario: Get a custom destination returns "Bad Request" response
     Given new "GetLogsCustomDestination" request
     And request contains "custom_destination_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/logs-backend @team:DataDog/logs-forwarding
+  @team:DataDog/logs-backend @team:DataDog/logs-forwarding @team:DataDog/web-frameworks-approvers
   Scenario: Get a custom destination returns "Not Found" response
     Given new "GetLogsCustomDestination" request
     And request contains "custom_destination_id" parameter with value "does-not-exist"
     When the request is sent
     Then the response status is 404 Not found
 
-  @team:DataDog/logs-backend @team:DataDog/logs-forwarding
+  @team:DataDog/logs-backend @team:DataDog/logs-forwarding @team:DataDog/web-frameworks-approvers
   Scenario: Get a custom destination returns "OK" response
     Given new "GetLogsCustomDestination" request
     And there is a valid "custom_destination" in the system
@@ -179,7 +179,7 @@ Feature: Logs Custom Destinations
     And the response "data.attributes.forward_tags_restriction_list" array contains value "host"
     And the response "data.attributes.forward_tags_restriction_list_type" is equal to "{{ custom_destination.data.attributes.forward_tags_restriction_list_type }}"
 
-  @team:DataDog/logs-backend @team:DataDog/logs-forwarding
+  @team:DataDog/logs-backend @team:DataDog/logs-forwarding @team:DataDog/web-frameworks-approvers
   Scenario: Get all custom destinations returns "OK" response
     Given new "ListLogsCustomDestinations" request
     And there is a valid "custom_destination" in the system
@@ -196,7 +196,7 @@ Feature: Logs Custom Destinations
     And the response "data" has item with field "attributes.forward_tags" with value false
     And the response "data" has item with field "attributes.forward_tags_restriction_list_type" with value "{{ custom_destination.data.attributes.forward_tags_restriction_list_type }}"
 
-  @team:DataDog/logs-backend @team:DataDog/logs-forwarding
+  @team:DataDog/logs-backend @team:DataDog/logs-forwarding @team:DataDog/web-frameworks-approvers
   Scenario: Update a custom destination returns "Bad Request" response
     Given new "UpdateLogsCustomDestination" request
     And there is a valid "custom_destination" in the system
@@ -205,7 +205,7 @@ Feature: Logs Custom Destinations
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip @team:DataDog/logs-backend @team:DataDog/logs-forwarding
+  @skip @team:DataDog/logs-backend @team:DataDog/logs-forwarding @team:DataDog/web-frameworks-approvers
   Scenario: Update a custom destination returns "Conflict" response
     Given new "UpdateLogsCustomDestination" request
     And request contains "custom_destination_id" parameter from "REPLACE.ME"
@@ -213,7 +213,7 @@ Feature: Logs Custom Destinations
     When the request is sent
     Then the response status is 409 Conflict
 
-  @team:DataDog/logs-backend @team:DataDog/logs-forwarding
+  @team:DataDog/logs-backend @team:DataDog/logs-forwarding @team:DataDog/web-frameworks-approvers
   Scenario: Update a custom destination returns "Not Found" response
     Given new "UpdateLogsCustomDestination" request
     And request contains "custom_destination_id" parameter with value "id-from-non-existing-custom-destination"
@@ -221,7 +221,7 @@ Feature: Logs Custom Destinations
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/logs-backend @team:DataDog/logs-forwarding
+  @team:DataDog/logs-backend @team:DataDog/logs-forwarding @team:DataDog/web-frameworks-approvers
   Scenario: Update a custom destination returns "OK" response
     Given new "UpdateLogsCustomDestination" request
     And there is a valid "custom_destination" in the system

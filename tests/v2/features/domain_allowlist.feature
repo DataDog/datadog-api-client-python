@@ -11,7 +11,7 @@ Feature: Domain Allowlist
     And a valid "appKeyAuth" key in the system
     And an instance of "DomainAllowlist" API
 
-  @team:Datadog/team-aaa-dogmail
+  @team:DataDog/web-frameworks-approvers @team:Datadog/team-aaa-dogmail
   Scenario: Get Domain Allowlist returns "OK" response
     Given new "GetDomainAllowlist" request
     When the request is sent
@@ -20,7 +20,7 @@ Feature: Domain Allowlist
     And the response "data.attributes.domains" array contains value "@static-test-domain.test"
     And the response "data.attributes.enabled" is equal to false
 
-  @team:Datadog/team-aaa-dogmail
+  @team:DataDog/web-frameworks-approvers @team:Datadog/team-aaa-dogmail
   Scenario: Sets Domain Allowlist returns "OK" response
     Given new "PatchDomainAllowlist" request
     And body with value {"data": {"attributes": {"domains": ["@static-test-domain.test"], "enabled": false}, "type": "domain_allowlist"}}
