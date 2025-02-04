@@ -800,7 +800,6 @@ from datadog_api_client.v2.model.entity_v3_metadata import EntityV3Metadata
 from datadog_api_client.v2.model.entity_v3_metadata_additional_owners_items import EntityV3MetadataAdditionalOwnersItems
 from datadog_api_client.v2.model.entity_v3_metadata_contacts_items import EntityV3MetadataContactsItems
 from datadog_api_client.v2.model.entity_v3_metadata_links_items import EntityV3MetadataLinksItems
-from datadog_api_client.v2.model.entity_v3_metadata_owner import EntityV3MetadataOwner
 from datadog_api_client.v2.model.entity_v3_queue import EntityV3Queue
 from datadog_api_client.v2.model.entity_v3_queue_datadog import EntityV3QueueDatadog
 from datadog_api_client.v2.model.entity_v3_queue_kind import EntityV3QueueKind
@@ -3034,7 +3033,6 @@ __all__ = [
     "EntityV3MetadataAdditionalOwnersItems",
     "EntityV3MetadataContactsItems",
     "EntityV3MetadataLinksItems",
-    "EntityV3MetadataOwner",
     "EntityV3Queue",
     "EntityV3QueueDatadog",
     "EntityV3QueueKind",
