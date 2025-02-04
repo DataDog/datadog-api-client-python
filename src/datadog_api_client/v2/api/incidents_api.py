@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import collections
 from typing import Any, Dict, List, Union
+import warnings
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
@@ -741,7 +742,7 @@ class IncidentsApi:
         incident_id: str,
         body: IncidentTodoCreateRequest,
     ) -> IncidentTodoResponse:
-        """Create an incident todo.
+        """Create an incident todo. **Deprecated**.
 
         Create an incident todo.
 
@@ -756,6 +757,7 @@ class IncidentsApi:
 
         kwargs["body"] = body
 
+        warnings.warn("create_incident_todo is deprecated", DeprecationWarning, stacklevel=2)
         return self._create_incident_todo_endpoint.call_with_http_info(**kwargs)
 
     def create_incident_type(
@@ -819,7 +821,7 @@ class IncidentsApi:
         incident_id: str,
         todo_id: str,
     ) -> None:
-        """Delete an incident todo.
+        """Delete an incident todo. **Deprecated**.
 
         Delete an incident todo.
 
@@ -834,6 +836,7 @@ class IncidentsApi:
 
         kwargs["todo_id"] = todo_id
 
+        warnings.warn("delete_incident_todo is deprecated", DeprecationWarning, stacklevel=2)
         return self._delete_incident_todo_endpoint.call_with_http_info(**kwargs)
 
     def delete_incident_type(
@@ -904,7 +907,7 @@ class IncidentsApi:
         incident_id: str,
         todo_id: str,
     ) -> IncidentTodoResponse:
-        """Get incident todo details.
+        """Get incident todo details. **Deprecated**.
 
         Get incident todo details.
 
@@ -919,6 +922,7 @@ class IncidentsApi:
 
         kwargs["todo_id"] = todo_id
 
+        warnings.warn("get_incident_todo is deprecated", DeprecationWarning, stacklevel=2)
         return self._get_incident_todo_endpoint.call_with_http_info(**kwargs)
 
     def get_incident_type(
@@ -1063,7 +1067,7 @@ class IncidentsApi:
         self,
         incident_id: str,
     ) -> IncidentTodoListResponse:
-        """Get a list of an incident's todos.
+        """Get a list of an incident's todos. **Deprecated**.
 
         Get all todos for an incident.
 
@@ -1074,6 +1078,7 @@ class IncidentsApi:
         kwargs: Dict[str, Any] = {}
         kwargs["incident_id"] = incident_id
 
+        warnings.warn("list_incident_todos is deprecated", DeprecationWarning, stacklevel=2)
         return self._list_incident_todos_endpoint.call_with_http_info(**kwargs)
 
     def list_incident_types(
@@ -1286,7 +1291,7 @@ class IncidentsApi:
         todo_id: str,
         body: IncidentTodoPatchRequest,
     ) -> IncidentTodoResponse:
-        """Update an incident todo.
+        """Update an incident todo. **Deprecated**.
 
         Update an incident todo.
 
@@ -1305,6 +1310,7 @@ class IncidentsApi:
 
         kwargs["body"] = body
 
+        warnings.warn("update_incident_todo is deprecated", DeprecationWarning, stacklevel=2)
         return self._update_incident_todo_endpoint.call_with_http_info(**kwargs)
 
     def update_incident_type(
