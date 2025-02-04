@@ -3,10 +3,10 @@
 # and another team can own the rest of the directory.
 
 # All your base
-*                       @DataDog/api-clients @DataDog/web-frameworks
+*                       @DataDog/web-frameworks-approvers @DataDog/web-frameworks
 
 # Documentation
-*.md                    @DataDog/documentation @DataDog/api-clients @DataDog/web-frameworks
-LICENSE                 @DataDog/documentation @DataDog/api-clients @DataDog/web-frameworks
-NOTICE                  @DataDog/documentation @DataDog/api-clients @DataDog/web-frameworks
-LICENSE-3rdparty.csv    @DataDog/documentation @DataDog/api-clients @DataDog/web-frameworks
+*.md                    @DataDog/documentation @DataDog/web-frameworks-approvers @DataDog/web-frameworks
+LICENSE                 @DataDog/documentation @DataDog/web-frameworks-approvers @DataDog/web-frameworks
+NOTICE                  @DataDog/documentation @DataDog/web-frameworks-approvers @DataDog/web-frameworks
+LICENSE-3rdparty.csv    @DataDog/documentation @DataDog/web-frameworks-approvers @DataDog/web-frameworks
