@@ -80,6 +80,8 @@ from datadog_api_client.v2.model.app_definition_type import AppDefinitionType
 from datadog_api_client.v2.model.app_deployment_type import AppDeploymentType
 from datadog_api_client.v2.model.app_meta import AppMeta
 from datadog_api_client.v2.model.app_relationship import AppRelationship
+from datadog_api_client.v2.model.app_version_selector import AppVersionSelector
+from datadog_api_client.v2.model.app_version_selector_constants import AppVersionSelectorConstants
 from datadog_api_client.v2.model.application_key_create_attributes import ApplicationKeyCreateAttributes
 from datadog_api_client.v2.model.application_key_create_data import ApplicationKeyCreateData
 from datadog_api_client.v2.model.application_key_create_request import ApplicationKeyCreateRequest
@@ -2481,6 +2483,8 @@ __all__ = [
     "AppDeploymentType",
     "AppMeta",
     "AppRelationship",
+    "AppVersionSelector",
+    "AppVersionSelectorConstants",
     "ApplicationKeyCreateAttributes",
     "ApplicationKeyCreateData",
     "ApplicationKeyCreateRequest",

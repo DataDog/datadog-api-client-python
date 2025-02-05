@@ -20,6 +20,7 @@ from datadog_api_client.v2.model.create_app_response import CreateAppResponse
 from datadog_api_client.v2.model.create_app_request import CreateAppRequest
 from datadog_api_client.v2.model.delete_app_response import DeleteAppResponse
 from datadog_api_client.v2.model.get_app_response import GetAppResponse
+from datadog_api_client.v2.model.app_version_selector import AppVersionSelector
 from datadog_api_client.v2.model.update_app_response import UpdateAppResponse
 from datadog_api_client.v2.model.update_app_request import UpdateAppRequest
 from datadog_api_client.v2.model.unpublish_app_response import UnpublishAppResponse
@@ -116,7 +117,7 @@ class AppBuilderApi:
                     "location": "path",
                 },
                 "version": {
-                    "openapi_types": (str,),
+                    "openapi_types": (AppVersionSelector,),
                     "attribute": "version",
                     "location": "query",
                 },
@@ -325,7 +326,7 @@ class AppBuilderApi:
         self,
         app_id: UUID,
         *,
-        version: Union[str, UnsetType] = unset,
+        version: Union[Union[AppVersionSelector, str, int], UnsetType] = unset,
     ) -> GetAppResponse:
         """Get App.
 
@@ -334,7 +335,7 @@ class AppBuilderApi:
         :param app_id: The ID of the app to retrieve.
         :type app_id: UUID
         :param version: The version number of the app to retrieve. If not specified, the latest version is returned. Version numbers start at 1 and increment with each update. The special values ``latest`` and ``deployed`` can be used to retrieve the latest version or the published version, respectively.
-        :type version: str, optional
+        :type version: AppVersionSelector, optional
         :rtype: GetAppResponse
         """
         kwargs: Dict[str, Any] = {}

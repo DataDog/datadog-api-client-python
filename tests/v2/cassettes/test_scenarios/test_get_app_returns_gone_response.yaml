@@ -1,0 +1,54 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"components":[{"events":[],"name":"grid0","properties":{"children":[{"events":[],"name":"gridCell0","properties":{"children":[{"events":[],"name":"calloutValue0","properties":{"isDisabled":false,"isLoading":false,"isVisible":true,"label":"CPU
+      Usage","size":"sm","style":"vivid_yellow","unit":"kB","value":"42"},"type":"calloutValue"}],"isVisible":"true","layout":{"default":{"height":8,"width":2,"x":0,"y":0}}},"type":"gridCell"}]},"type":"grid"}],"description":"This
+      is a simple example app","name":"Example App","queries":[],"rootInstanceName":"grid0"},"type":"appDefinitions"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/app-builder/apps
+  response:
+    body:
+      string: '{"data":{"id":"e72edfaf-cb14-4a35-acf6-da5f7d8f9ab3","type":"appDefinitions"}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/app-builder/apps/e72edfaf-cb14-4a35-acf6-da5f7d8f9ab3?version=31
+  response:
+    body:
+      string: '{"errors":[{"title":"app version not found"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 410
+      message: Gone
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/app-builder/apps/e72edfaf-cb14-4a35-acf6-da5f7d8f9ab3
+  response:
+    body:
+      string: '{"data":{"id":"e72edfaf-cb14-4a35-acf6-da5f7d8f9ab3","type":"appDefinitions"}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1

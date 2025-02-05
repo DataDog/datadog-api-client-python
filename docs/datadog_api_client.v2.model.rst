@@ -249,6 +249,20 @@ datadog\_api\_client.v2.model.app\_relationship module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.app\_version\_selector module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.app_version_selector
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.app\_version\_selector\_constants module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.app_version_selector_constants
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.application\_key\_create\_attributes module
 -------------------------------------------------------------------------
 
