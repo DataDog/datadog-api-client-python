@@ -328,6 +328,11 @@ class MetricsApi:
                     "attribute": "filter[tags]",
                     "location": "query",
                 },
+                "filter_related_assets": {
+                    "openapi_types": (bool,),
+                    "attribute": "filter[related_assets]",
+                    "location": "query",
+                },
                 "window_seconds": {
                     "openapi_types": (int,),
                     "attribute": "window[seconds]",
@@ -691,6 +696,7 @@ class MetricsApi:
         filter_include_percentiles: Union[bool, UnsetType] = unset,
         filter_queried: Union[bool, UnsetType] = unset,
         filter_tags: Union[str, UnsetType] = unset,
+        filter_related_assets: Union[bool, UnsetType] = unset,
         window_seconds: Union[int, UnsetType] = unset,
         page_size: Union[int, UnsetType] = unset,
         page_cursor: Union[str, UnsetType] = unset,
@@ -711,12 +717,14 @@ class MetricsApi:
         :param filter_include_percentiles: Filter distributions with additional percentile
             aggregations enabled or disabled.
         :type filter_include_percentiles: bool, optional
-        :param filter_queried: (Beta) Filter custom metrics that have or have not been queried in the specified window[seconds].
+        :param filter_queried: (Preview) Filter custom metrics that have or have not been queried in the specified window[seconds].
             If no window is provided or the window is less than 2 hours, a default of 2 hours will be applied.
         :type filter_queried: bool, optional
         :param filter_tags: Filter metrics that have been submitted with the given tags. Supports boolean and wildcard expressions.
             Can only be combined with the filter[queried] filter.
         :type filter_tags: str, optional
+        :param filter_related_assets: (Preview) Filter metrics that are used in dashboards, monitors, notebooks, SLOs.
+        :type filter_related_assets: bool, optional
         :param window_seconds: The number of seconds of look back (from now) to apply to a filter[tag] or filter[queried] query.
             Default value is 3600 (1 hour), maximum value is 2,592,000 (30 days).
         :type window_seconds: int, optional
@@ -747,6 +755,9 @@ class MetricsApi:
         if filter_tags is not unset:
             kwargs["filter_tags"] = filter_tags
 
+        if filter_related_assets is not unset:
+            kwargs["filter_related_assets"] = filter_related_assets
+
         if window_seconds is not unset:
             kwargs["window_seconds"] = window_seconds
 
@@ -767,6 +778,7 @@ class MetricsApi:
         filter_include_percentiles: Union[bool, UnsetType] = unset,
         filter_queried: Union[bool, UnsetType] = unset,
         filter_tags: Union[str, UnsetType] = unset,
+        filter_related_assets: Union[bool, UnsetType] = unset,
         window_seconds: Union[int, UnsetType] = unset,
         page_size: Union[int, UnsetType] = unset,
         page_cursor: Union[str, UnsetType] = unset,
@@ -784,12 +796,14 @@ class MetricsApi:
         :param filter_include_percentiles: Filter distributions with additional percentile
             aggregations enabled or disabled.
         :type filter_include_percentiles: bool, optional
-        :param filter_queried: (Beta) Filter custom metrics that have or have not been queried in the specified window[seconds].
+        :param filter_queried: (Preview) Filter custom metrics that have or have not been queried in the specified window[seconds].
             If no window is provided or the window is less than 2 hours, a default of 2 hours will be applied.
         :type filter_queried: bool, optional
         :param filter_tags: Filter metrics that have been submitted with the given tags. Supports boolean and wildcard expressions.
             Can only be combined with the filter[queried] filter.
         :type filter_tags: str, optional
+        :param filter_related_assets: (Preview) Filter metrics that are used in dashboards, monitors, notebooks, SLOs.
+        :type filter_related_assets: bool, optional
         :param window_seconds: The number of seconds of look back (from now) to apply to a filter[tag] or filter[queried] query.
             Default value is 3600 (1 hour), maximum value is 2,592,000 (30 days).
         :type window_seconds: int, optional
@@ -821,6 +835,9 @@ class MetricsApi:
 
         if filter_tags is not unset:
             kwargs["filter_tags"] = filter_tags
+
+        if filter_related_assets is not unset:
+            kwargs["filter_related_assets"] = filter_related_assets
 
         if window_seconds is not unset:
             kwargs["window_seconds"] = window_seconds
