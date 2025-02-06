@@ -20,7 +20,7 @@ Feature: DORA Metrics
   Scenario: Send a deployment event for DORA Metrics returns "OK - but delayed due to incident" response
     Given operation "CreateDORADeployment" enabled
     And new "CreateDORADeployment" request
-    And body with value {"data": {"attributes": {"finished_at": 1693491984000000000, "git": {"commit_sha": "66adc9350f2cc9b250b69abddab733dd55e1a588", "repository_url": "https://github.com/organization/example-repository"}, "service": "shopist", "started_at": 1693491974000000000, "version": "v1.12.07"}}}
+    And body with value {"data": {"attributes": {"finished_at": 1693491984000, "git": {"commit_sha": "66adc9350f2cc9b250b69abddab733dd55e1a588", "repository_url": "https://github.com/organization/example-repository"}, "service": "shopist", "started_at": 1693491974000, "version": "v1.12.07"}}}
     When the request is sent
     Then the response status is 202 OK - but delayed due to incident
 
@@ -28,7 +28,7 @@ Feature: DORA Metrics
   Scenario: Send a deployment event for DORA Metrics returns "OK" response
     Given operation "CreateDORADeployment" enabled
     And new "CreateDORADeployment" request
-    And body with value {"data": {"attributes": {"finished_at": 1693491984000000000, "git": {"commit_sha": "66adc9350f2cc9b250b69abddab733dd55e1a588", "repository_url": "https://github.com/organization/example-repository"}, "service": "shopist", "started_at": 1693491974000000000, "version": "v1.12.07"}}}
+    And body with value {"data": {"attributes": {"finished_at": 1693491984000, "git": {"commit_sha": "66adc9350f2cc9b250b69abddab733dd55e1a588", "repository_url": "https://github.com/organization/example-repository"}, "service": "shopist", "started_at": 1693491974000, "version": "v1.12.07"}}}
     When the request is sent
     Then the response status is 200 OK
 
@@ -44,7 +44,7 @@ Feature: DORA Metrics
   Scenario: Send an incident event for DORA Metrics returns "OK - but delayed due to incident" response
     Given operation "CreateDORAIncident" enabled
     And new "CreateDORAIncident" request
-    And body with value {"data": {"attributes": {"env": "staging", "finished_at": 1693491984000000000, "git": {"commit_sha": "66adc9350f2cc9b250b69abddab733dd55e1a588", "repository_url": "https://github.com/organization/example-repository"}, "name": "Webserver is down failing all requests.", "services": ["shopist"], "severity": "High", "started_at": 1693491974000000000, "team": "backend", "version": "v1.12.07"}}}
+    And body with value {"data": {"attributes": {"env": "staging", "finished_at": 1693491984000, "git": {"commit_sha": "66adc9350f2cc9b250b69abddab733dd55e1a588", "repository_url": "https://github.com/organization/example-repository"}, "name": "Webserver is down failing all requests.", "services": ["shopist"], "severity": "High", "started_at": 1693491974000, "team": "backend", "version": "v1.12.07"}}}
     When the request is sent
     Then the response status is 202 OK - but delayed due to incident
 
@@ -52,6 +52,6 @@ Feature: DORA Metrics
   Scenario: Send an incident event for DORA Metrics returns "OK" response
     Given operation "CreateDORAIncident" enabled
     And new "CreateDORAIncident" request
-    And body with value {"data": {"attributes": {"finished_at": 1707842944600000000, "git": {"commit_sha": "66adc9350f2cc9b250b69abddab733dd55e1a588", "repository_url": "https://github.com/organization/example-repository"}, "name": "Webserver is down failing all requests", "services": ["shopist"], "severity": "High", "started_at": 1707842944500000000, "team": "backend", "version": "v1.12.07"}}}
+    And body with value {"data": {"attributes": {"finished_at": 17078429446000, "git": {"commit_sha": "66adc9350f2cc9b250b69abddab733dd55e1a588", "repository_url": "https://github.com/organization/example-repository"}, "name": "Webserver is down failing all requests", "services": ["shopist"], "severity": "High", "started_at": 17078429445000, "team": "backend", "version": "v1.12.07"}}}
     When the request is sent
     Then the response status is 200 OK
