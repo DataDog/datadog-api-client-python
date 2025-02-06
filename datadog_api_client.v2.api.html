@@ -7843,7 +7843,7 @@ for more examples.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.create_signal_notification_rule">
 <span class="sig-name descname"><span class="pre">create_signal_notification_rule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.create_notification_rule_parameters.CreateNotificationRuleParameters" title="datadog_api_client.v2.model.create_notification_rule_parameters.CreateNotificationRuleParameters"><span class="pre">CreateNotificationRuleParameters</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.notification_rule_response.NotificationRuleResponse" title="datadog_api_client.v2.model.notification_rule_response.NotificationRuleResponse"><span class="pre">NotificationRuleResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.create_signal_notification_rule" title="Link to this definition">¶</a></dt>
-<dd><p>Create a new signal-based rule.</p>
+<dd><p>Create a new signal-based notification rule.</p>
 <p>Create a new notification rule for security signals and return the created rule.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -7858,7 +7858,7 @@ the rule name, the selectors, the notification targets, and the rule enabled sta
 <dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.create_vulnerability_notification_rule">
 <span class="sig-name descname"><span class="pre">create_vulnerability_notification_rule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.create_notification_rule_parameters.CreateNotificationRuleParameters" title="datadog_api_client.v2.model.create_notification_rule_parameters.CreateNotificationRuleParameters"><span class="pre">CreateNotificationRuleParameters</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.notification_rule_response.NotificationRuleResponse" title="datadog_api_client.v2.model.notification_rule_response.NotificationRuleResponse"><span class="pre">NotificationRuleResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.create_vulnerability_notification_rule" title="Link to this definition">¶</a></dt>
-<dd><p>Create a new vulnerability-based rule.</p>
+<dd><p>Create a new vulnerability-based notification rule.</p>
 <p>Create a new notification rule for security vulnerabilities and return the created rule.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -7929,7 +7929,7 @@ the rule name, the selectors, the notification targets, and the rule enabled sta
 <dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.delete_signal_notification_rule">
 <span class="sig-name descname"><span class="pre">delete_signal_notification_rule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.delete_signal_notification_rule" title="Link to this definition">¶</a></dt>
-<dd><p>Delete a signal-based rule.</p>
+<dd><p>Delete a signal-based notification rule.</p>
 <p>Delete a notification rule for security signals.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -7943,7 +7943,7 @@ the rule name, the selectors, the notification targets, and the rule enabled sta
 <dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.delete_vulnerability_notification_rule">
 <span class="sig-name descname"><span class="pre">delete_vulnerability_notification_rule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.delete_vulnerability_notification_rule" title="Link to this definition">¶</a></dt>
-<dd><p>Delete a vulnerability-based rule.</p>
+<dd><p>Delete a vulnerability-based notification rule.</p>
 <p>Delete a notification rule for security vulnerabilities.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -8115,7 +8115,7 @@ for more examples.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.get_signal_notification_rule">
 <span class="sig-name descname"><span class="pre">get_signal_notification_rule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.notification_rule_response.NotificationRuleResponse" title="datadog_api_client.v2.model.notification_rule_response.NotificationRuleResponse"><span class="pre">NotificationRuleResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.get_signal_notification_rule" title="Link to this definition">¶</a></dt>
-<dd><p>Get details of a signal-based rule.</p>
+<dd><p>Get details of a signal-based notification rule.</p>
 <p>Get the details of a notification rule for security signals.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -8129,7 +8129,7 @@ for more examples.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.get_signal_notification_rules">
 <span class="sig-name descname"><span class="pre">get_signal_notification_rules</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.get_signal_notification_rules" title="Link to this definition">¶</a></dt>
-<dd><p>Get the list of signal-based rules.</p>
+<dd><p>Get the list of signal-based notification rules.</p>
 <p>Returns the list of notification rules for security signals.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -8140,7 +8140,7 @@ for more examples.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.get_vulnerability_notification_rule">
 <span class="sig-name descname"><span class="pre">get_vulnerability_notification_rule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.notification_rule_response.NotificationRuleResponse" title="datadog_api_client.v2.model.notification_rule_response.NotificationRuleResponse"><span class="pre">NotificationRuleResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.get_vulnerability_notification_rule" title="Link to this definition">¶</a></dt>
-<dd><p>Get details of a vulnerability-based rule.</p>
+<dd><p>Get details of a vulnerability notification rule.</p>
 <p>Get the details of a notification rule for security vulnerabilities.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -8154,7 +8154,7 @@ for more examples.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.get_vulnerability_notification_rules">
 <span class="sig-name descname"><span class="pre">get_vulnerability_notification_rules</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.get_vulnerability_notification_rules" title="Link to this definition">¶</a></dt>
-<dd><p>Get the list of vulnerability-based rules.</p>
+<dd><p>Get the list of vulnerability notification rules.</p>
 <p>Returns the list of notification rules for security vulnerabilities.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -8519,7 +8519,7 @@ The allowed reasons depend on whether the finding is being muted or unmuted:</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.patch_signal_notification_rule">
 <span class="sig-name descname"><span class="pre">patch_signal_notification_rule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.patch_notification_rule_parameters.PatchNotificationRuleParameters" title="datadog_api_client.v2.model.patch_notification_rule_parameters.PatchNotificationRuleParameters"><span class="pre">PatchNotificationRuleParameters</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.notification_rule_response.NotificationRuleResponse" title="datadog_api_client.v2.model.notification_rule_response.NotificationRuleResponse"><span class="pre">NotificationRuleResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.patch_signal_notification_rule" title="Link to this definition">¶</a></dt>
-<dd><p>Patch a signal-based rule.</p>
+<dd><p>Patch a signal-based notification rule.</p>
 <p>Partially update the notification rule. All fields are optional; if a field is not provided, it is not updated.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -8533,7 +8533,7 @@ The allowed reasons depend on whether the finding is being muted or unmuted:</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.patch_vulnerability_notification_rule">
 <span class="sig-name descname"><span class="pre">patch_vulnerability_notification_rule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.patch_notification_rule_parameters.PatchNotificationRuleParameters" title="datadog_api_client.v2.model.patch_notification_rule_parameters.PatchNotificationRuleParameters"><span class="pre">PatchNotificationRuleParameters</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.notification_rule_response.NotificationRuleResponse" title="datadog_api_client.v2.model.notification_rule_response.NotificationRuleResponse"><span class="pre">NotificationRuleResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.patch_vulnerability_notification_rule" title="Link to this definition">¶</a></dt>
-<dd><p>Patch a vulnerability-based rule.</p>
+<dd><p>Patch a vulnerability-based notification rule.</p>
 <p>Partially update the notification rule. All fields are optional; if a field is not provided, it is not updated.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
