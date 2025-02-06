@@ -12,13 +12,13 @@ from datadog_api_client.v2.model.dora_git_info import DORAGitInfo
 body = DORADeploymentRequest(
     data=DORADeploymentRequestData(
         attributes=DORADeploymentRequestAttributes(
-            finished_at=1693491984000000000,
+            finished_at=1693491984000,
             git=DORAGitInfo(
                 commit_sha="66adc9350f2cc9b250b69abddab733dd55e1a588",
                 repository_url="https://github.com/organization/example-repository",
             ),
             service="shopist",
-            started_at=1693491974000000000,
+            started_at=1693491974000,
             version="v1.12.07",
         ),
     ),

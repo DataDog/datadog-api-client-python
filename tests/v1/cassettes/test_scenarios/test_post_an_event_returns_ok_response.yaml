@@ -11,7 +11,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/events
   response:
     body:
-      string: '{"status":"ok","event":{"id":6327818702635911000,"id_str":"6327818702635911562","title":"Test-Post_an_event_returns_OK_response-1641430251","text":"A
+      string: '{"status":"ok","event":{"id":63278187026359,"id_str":"6327818702635911562","title":"Test-Post_an_event_returns_OK_response-1641430251","text":"A
         text message.","date_happened":1641430251,"handle":null,"priority":null,"related_event_id":null,"tags":["test:TestPostaneventreturnsOKresponse1641430251"],"url":"https://app.datadoghq.com/event/event?id=6327818702635911562"}}'
     headers:
       content-type:

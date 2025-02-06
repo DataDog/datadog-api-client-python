@@ -32,7 +32,7 @@ interactions:
     body:
       string: '{"data":{"id":"892d9225-fd31-4237-b218-e964ac33fc71","type":"appDefinitions","attributes":{"components":[{"events":[],"name":"grid0","properties":{"children":[{"events":[],"name":"gridCell0","properties":{"children":[{"events":[],"name":"calloutValue0","properties":{"isDisabled":false,"isLoading":false,"isVisible":true,"label":"CPU
         Usage","size":"sm","style":"vivid_yellow","unit":"kB","value":"42"},"type":"calloutValue"}],"isVisible":"true","layout":{"default":{"height":8,"width":2,"x":0,"y":0}}},"type":"gridCell"}]},"type":"grid"}],"description":"This
-        is a simple example app","favorite":false,"name":"Updated Name","queries":[],"rootInstanceName":"grid0","selfService":false,"tags":[]},"meta":{"org_id":1107852,"user_id":15479137,"user_uuid":"b3f98453-b289-11ef-a4e9-d6d283f92d91","user_name":"oliver.li@datadoghq.com","version":2,"updated_since_deployment":false,"created_at":"2025-01-30T22:30:45.584607Z","updated_at":"2025-01-30T22:30:45.785438Z","deleted_at":"0001-01-01T00:00:00Z"}}}'
+        is a simple example app","favorite":false,"name":"Updated Name","queries":[],"rootInstanceName":"grid0","tags":[]}}}'
     headers:
       content-type:
       - application/vnd.api+json
