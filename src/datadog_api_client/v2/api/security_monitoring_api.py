@@ -1717,7 +1717,7 @@ class SecurityMonitoringApi:
         self,
         body: CreateNotificationRuleParameters,
     ) -> NotificationRuleResponse:
-        """Create a new signal-based rule.
+        """Create a new signal-based notification rule.
 
         Create a new notification rule for security signals and return the created rule.
 
@@ -1735,7 +1735,7 @@ class SecurityMonitoringApi:
         self,
         body: CreateNotificationRuleParameters,
     ) -> NotificationRuleResponse:
-        """Create a new vulnerability-based rule.
+        """Create a new vulnerability-based notification rule.
 
         Create a new notification rule for security vulnerabilities and return the created rule.
 
@@ -1821,7 +1821,7 @@ class SecurityMonitoringApi:
         self,
         id: str,
     ) -> None:
-        """Delete a signal-based rule.
+        """Delete a signal-based notification rule.
 
         Delete a notification rule for security signals.
 
@@ -1838,7 +1838,7 @@ class SecurityMonitoringApi:
         self,
         id: str,
     ) -> None:
-        """Delete a vulnerability-based rule.
+        """Delete a vulnerability-based notification rule.
 
         Delete a notification rule for security vulnerabilities.
 
@@ -2062,7 +2062,7 @@ class SecurityMonitoringApi:
         self,
         id: str,
     ) -> NotificationRuleResponse:
-        """Get details of a signal-based rule.
+        """Get details of a signal-based notification rule.
 
         Get the details of a notification rule for security signals.
 
@@ -2078,7 +2078,7 @@ class SecurityMonitoringApi:
     def get_signal_notification_rules(
         self,
     ) -> dict:
-        """Get the list of signal-based rules.
+        """Get the list of signal-based notification rules.
 
         Returns the list of notification rules for security signals.
 
@@ -2091,7 +2091,7 @@ class SecurityMonitoringApi:
         self,
         id: str,
     ) -> NotificationRuleResponse:
-        """Get details of a vulnerability-based rule.
+        """Get details of a vulnerability notification rule.
 
         Get the details of a notification rule for security vulnerabilities.
 
@@ -2107,7 +2107,7 @@ class SecurityMonitoringApi:
     def get_vulnerability_notification_rules(
         self,
     ) -> dict:
-        """Get the list of vulnerability-based rules.
+        """Get the list of vulnerability notification rules.
 
         Returns the list of notification rules for security vulnerabilities.
 
@@ -3025,7 +3025,7 @@ class SecurityMonitoringApi:
         id: str,
         body: PatchNotificationRuleParameters,
     ) -> NotificationRuleResponse:
-        """Patch a signal-based rule.
+        """Patch a signal-based notification rule.
 
         Partially update the notification rule. All fields are optional; if a field is not provided, it is not updated.
 
@@ -3046,7 +3046,7 @@ class SecurityMonitoringApi:
         id: str,
         body: PatchNotificationRuleParameters,
     ) -> NotificationRuleResponse:
-        """Patch a vulnerability-based rule.
+        """Patch a vulnerability-based notification rule.
 
         Partially update the notification rule. All fields are optional; if a field is not provided, it is not updated.
 

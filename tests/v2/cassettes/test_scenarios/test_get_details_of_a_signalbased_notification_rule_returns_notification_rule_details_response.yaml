@@ -1,0 +1,50 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"enabled":true,"name":"Test-Get_details_of_a_signal_based_notification_rule_returns_Notification_rule_details_response-1738763161","selectors":{"query":"env:test","rule_types":["signal_correlation"],"severities":["critical"],"trigger_source":"security_signals"},"targets":["@email@email.com"]},"type":"notification_rules"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/security/signals/notification_rules
+  response:
+    body:
+      string: '{"data":{"id":"tcf-juk-5tr","type":"notification_rules","attributes":{"created_at":1738763162076,"created_by":{"name":"","handle":""},"enabled":true,"modified_at":1738763162076,"modified_by":{"name":"","handle":""},"name":"Test-Get_details_of_a_signal_based_notification_rule_returns_Notification_rule_details_response-1738763161","selectors":{"severities":["critical"],"rule_types":["signal_correlation"],"query":"env:test","trigger_source":"security_signals"},"targets":["@email@email.com"],"time_aggregation":0,"version":1}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/security/signals/notification_rules/tcf-juk-5tr
+  response:
+    body:
+      string: '{"data":{"id":"tcf-juk-5tr","type":"notification_rules","attributes":{"created_at":1738763162076,"created_by":{"name":"","handle":""},"enabled":true,"modified_at":1738763162076,"modified_by":{"name":"","handle":""},"name":"Test-Get_details_of_a_signal_based_notification_rule_returns_Notification_rule_details_response-1738763161","selectors":{"severities":["critical"],"rule_types":["signal_correlation"],"query":"env:test","trigger_source":"security_signals"},"targets":["@email@email.com"],"time_aggregation":0,"version":1}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/security/signals/notification_rules/tcf-juk-5tr
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1

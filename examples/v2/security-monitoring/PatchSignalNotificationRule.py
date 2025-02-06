@@ -1,5 +1,5 @@
 """
-Patch a signal-based rule returns "Notification rule successfully patched." response
+Patch a signal-based notification rule returns "Notification rule successfully patched." response
 """
 
 from os import environ
