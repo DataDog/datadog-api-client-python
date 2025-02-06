@@ -1,5 +1,5 @@
 """
-Get the list of signal-based rules returns "The list of notification rules." response
+Get the list of signal-based notification rules returns "The list of notification rules." response
 """
 
 from datadog_api_client import ApiClient, Configuration

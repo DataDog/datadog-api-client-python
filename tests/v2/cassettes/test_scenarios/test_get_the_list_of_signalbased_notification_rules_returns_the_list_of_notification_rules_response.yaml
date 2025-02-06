@@ -1,0 +1,50 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"enabled":true,"name":"Test-Get_the_list_of_signal_based_notification_rules_returns_The_list_of_notification_rules_response-1738763164","selectors":{"query":"env:test","rule_types":["signal_correlation"],"severities":["critical"],"trigger_source":"security_signals"},"targets":["@email@email.com"]},"type":"notification_rules"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/security/signals/notification_rules
+  response:
+    body:
+      string: '{"data":{"id":"btd-udo-vn7","type":"notification_rules","attributes":{"created_at":1738763164939,"created_by":{"name":"","handle":""},"enabled":true,"modified_at":1738763164939,"modified_by":{"name":"","handle":""},"name":"Test-Get_the_list_of_signal_based_notification_rules_returns_The_list_of_notification_rules_response-1738763164","selectors":{"severities":["critical"],"rule_types":["signal_correlation"],"query":"env:test","trigger_source":"security_signals"},"targets":["@email@email.com"],"time_aggregation":0,"version":1}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/security/signals/notification_rules
+  response:
+    body:
+      string: '{"data":[{"id":"btd-udo-vn7","type":"notification_rules","attributes":{"created_at":1738763164939,"created_by":{"name":"","handle":""},"enabled":true,"modified_at":1738763164939,"modified_by":{"name":"","handle":""},"name":"Test-Get_the_list_of_signal_based_notification_rules_returns_The_list_of_notification_rules_response-1738763164","selectors":{"severities":["critical"],"rule_types":["signal_correlation"],"query":"env:test","trigger_source":"security_signals"},"targets":["@email@email.com"],"time_aggregation":0,"version":1}}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/security/signals/notification_rules/btd-udo-vn7
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1

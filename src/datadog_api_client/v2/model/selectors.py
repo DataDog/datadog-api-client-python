@@ -56,7 +56,7 @@ class Selectors(ModelNormal):
         :param query: The query is composed of one or several key:value pairs, which can be used to filter security issues on tags and attributes.
         :type query: str, optional
 
-        :param rule_types: Security rule types used to filter signals and vulnerabilities generating notifications.
+        :param rule_types: Security rule types used as filters in security rules.
         :type rule_types: [RuleTypesItems], optional
 
         :param severities: The security rules severities to consider.

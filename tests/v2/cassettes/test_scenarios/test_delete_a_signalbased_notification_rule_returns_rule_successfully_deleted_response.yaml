@@ -1,0 +1,51 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"enabled":true,"name":"Test-Delete_a_signal_based_notification_rule_returns_Rule_successfully_deleted_response-1738763144","selectors":{"query":"env:test","rule_types":["signal_correlation"],"severities":["critical"],"trigger_source":"security_signals"},"targets":["@email@email.com"]},"type":"notification_rules"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/security/signals/notification_rules
+  response:
+    body:
+      string: '{"data":{"id":"x4n-qps-p3w","type":"notification_rules","attributes":{"created_at":1738763144838,"created_by":{"name":"","handle":""},"enabled":true,"modified_at":1738763144838,"modified_by":{"name":"","handle":""},"name":"Test-Delete_a_signal_based_notification_rule_returns_Rule_successfully_deleted_response-1738763144","selectors":{"severities":["critical"],"rule_types":["signal_correlation"],"query":"env:test","trigger_source":"security_signals"},"targets":["@email@email.com"],"time_aggregation":0,"version":1}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/security/signals/notification_rules/x4n-qps-p3w
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/security/signals/notification_rules/x4n-qps-p3w
+  response:
+    body:
+      string: '{"errors":["not_found(Notification rule with id ''x4n-qps-p3w'' not
+        found)"]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 404
+      message: Not Found
+version: 1

@@ -1,5 +1,5 @@
 """
-Delete a signal-based rule returns "Rule successfully deleted." response
+Delete a signal-based notification rule returns "Rule successfully deleted." response
 """
 
 from os import environ

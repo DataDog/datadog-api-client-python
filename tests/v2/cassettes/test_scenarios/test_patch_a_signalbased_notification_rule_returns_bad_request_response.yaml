@@ -1,16 +1,16 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"enabled":true,"name":"Test-Patch_a_vulnerability_based_rule_returns_Bad_Request_response-1737539438","selectors":{"query":"env:test","rule_types":["misconfiguration","attack_path"],"severities":["critical"],"trigger_source":"security_findings"},"targets":["@email@email.com"],"time_aggregation":86400},"type":"notification_rules"}}'
+    body: '{"data":{"attributes":{"enabled":true,"name":"Test-Patch_a_signal_based_notification_rule_returns_Bad_Request_response-1738763171","selectors":{"query":"env:test","rule_types":["signal_correlation"],"severities":["critical"],"trigger_source":"security_signals"},"targets":["@email@email.com"]},"type":"notification_rules"}}'
     headers:
       accept:
       - application/json
       content-type:
       - application/json
     method: POST
-    uri: https://api.datadoghq.com/api/v2/security/vulnerabilities/notification_rules
+    uri: https://api.datadoghq.com/api/v2/security/signals/notification_rules
   response:
     body:
-      string: '{"data":{"id":"ks5-ywq-grp","type":"notification_rules","attributes":{"created_at":1737539438831,"created_by":{"name":"frog","handle":"frog@datadoghq.com"},"enabled":true,"modified_at":1737539438831,"modified_by":{"name":"frog","handle":"frog@datadoghq.com"},"name":"Test-Patch_a_vulnerability_based_rule_returns_Bad_Request_response-1737539438","selectors":{"severities":["critical"],"rule_types":["misconfiguration","attack_path"],"query":"env:test","trigger_source":"security_findings"},"targets":["@email@email.com"],"time_aggregation":86400,"version":1}}}'
+      string: '{"data":{"id":"uwx-6n1-x2z","type":"notification_rules","attributes":{"created_at":1738763171531,"created_by":{"name":"","handle":""},"enabled":true,"modified_at":1738763171531,"modified_by":{"name":"","handle":""},"name":"Test-Patch_a_signal_based_notification_rule_returns_Bad_Request_response-1738763171","selectors":{"severities":["critical"],"rule_types":["signal_correlation"],"query":"env:test","trigger_source":"security_signals"},"targets":["@email@email.com"],"time_aggregation":0,"version":1}}}'
     headers:
       content-type:
       - application/vnd.api+json
@@ -26,7 +26,7 @@ interactions:
       content-type:
       - application/json
     method: PATCH
-    uri: https://api.datadoghq.com/api/v2/security/vulnerabilities/notification_rules/ks5-ywq-grp
+    uri: https://api.datadoghq.com/api/v2/security/signals/notification_rules/uwx-6n1-x2z
   response:
     body:
       string: '{"errors":["input_validation_error(Field ''data.attributes.version''
@@ -44,7 +44,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/security/vulnerabilities/notification_rules/ks5-ywq-grp
+    uri: https://api.datadoghq.com/api/v2/security/signals/notification_rules/uwx-6n1-x2z
   response:
     body:
       string: ''
