@@ -299,7 +299,7 @@ class ConfluentCloudApi:
 
         Create a Confluent resource for the account associated with the provided ID.
 
-        :param account_id: Confluent Account id.
+        :param account_id: Confluent Account ID.
         :type account_id: str
         :param body: Confluent payload
         :type body: ConfluentResourceRequest
@@ -320,7 +320,7 @@ class ConfluentCloudApi:
 
         Delete a Confluent account with the provided account ID.
 
-        :param account_id: Confluent Account id.
+        :param account_id: Confluent Account ID.
         :type account_id: str
         :rtype: None
         """
@@ -338,7 +338,7 @@ class ConfluentCloudApi:
 
         Delete a Confluent resource with the provided resource id for the account associated with the provided account ID.
 
-        :param account_id: Confluent Account id.
+        :param account_id: Confluent Account ID.
         :type account_id: str
         :param resource_id: Confluent Account Resource ID.
         :type resource_id: str
@@ -359,7 +359,7 @@ class ConfluentCloudApi:
 
         Get the Confluent account with the provided account ID.
 
-        :param account_id: Confluent Account id.
+        :param account_id: Confluent Account ID.
         :type account_id: str
         :rtype: ConfluentAccountResponse
         """
@@ -377,7 +377,7 @@ class ConfluentCloudApi:
 
         Get a Confluent resource with the provided resource id for the account associated with the provided account ID.
 
-        :param account_id: Confluent Account id.
+        :param account_id: Confluent Account ID.
         :type account_id: str
         :param resource_id: Confluent Account Resource ID.
         :type resource_id: str
@@ -410,7 +410,7 @@ class ConfluentCloudApi:
 
         Get a Confluent resource for the account associated with the provided ID.
 
-        :param account_id: Confluent Account id.
+        :param account_id: Confluent Account ID.
         :type account_id: str
         :rtype: ConfluentResourcesResponse
         """
@@ -428,7 +428,7 @@ class ConfluentCloudApi:
 
         Update the Confluent account with the provided account ID.
 
-        :param account_id: Confluent Account id.
+        :param account_id: Confluent Account ID.
         :type account_id: str
         :param body: Confluent payload
         :type body: ConfluentAccountUpdateRequest
@@ -451,7 +451,7 @@ class ConfluentCloudApi:
 
         Update a Confluent resource with the provided resource id for the account associated with the provided account ID.
 
-        :param account_id: Confluent Account id.
+        :param account_id: Confluent Account ID.
         :type account_id: str
         :param resource_id: Confluent Account Resource ID.
         :type resource_id: str
