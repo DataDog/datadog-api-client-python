@@ -40196,7 +40196,7 @@ paths:
         required: false
         schema:
           type: boolean
-      - description: '(Beta) Filter custom metrics that have or have not been queried
+      - description: '(Preview) Filter custom metrics that have or have not been queried
           in the specified window[seconds].
 
           If no window is provided or the window is less than 2 hours, a default of
@@ -40217,6 +40217,14 @@ paths:
         required: false
         schema:
           type: string
+      - description: (Preview) Filter metrics that are used in dashboards, monitors,
+          notebooks, SLOs.
+        example: true
+        in: query
+        name: filter[related_assets]
+        required: false
+        schema:
+          type: boolean
       - description: 'The number of seconds of look back (from now) to apply to a
           filter[tag] or filter[queried] query.
 
