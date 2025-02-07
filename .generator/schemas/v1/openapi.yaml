@@ -14988,7 +14988,6 @@ components:
       - element
       - email
       - global
-      - javascript
       - text
       example: text
       type: string
@@ -14996,7 +14995,6 @@ components:
       - ELEMENT
       - EMAIL
       - GLOBAL
-      - JAVASCRIPT
       - TEXT
     SyntheticsCIBatchMetadata:
       description: Metadata for the Synthetic tests run.
