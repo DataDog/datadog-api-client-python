@@ -1,0 +1,40 @@
+interactions:
+- request:
+    body: '{"cases":[{"actions":[{"options":{"duration":900},"type":"block_ip"}],"condition":"a
+      > 100000","name":"","notifications":[],"status":"info"}],"filters":[],"groupSignalsBy":["service"],"isEnabled":true,"message":"Test
+      rule","name":"Test-Create_a_detection_rule_with_type_application_security_returns_OK_response-1738860639_appsec_rule","options":{"detectionMethod":"threshold","evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"queries":[{"aggregation":"count","distinctFields":[],"groupByFields":["service","@http.client_ip"],"query":"@appsec.security_activity:business_logic.users.login.failure"}],"tags":[],"type":"application_security"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules
+  response:
+    body:
+      string: '{"name":"Test-Create_a_detection_rule_with_type_application_security_returns_OK_response-1738860639_appsec_rule","createdAt":1738860640426,"isDefault":false,"isPartner":false,"isEnabled":true,"isBeta":false,"isDeleted":false,"isDeprecated":false,"queries":[{"query":"@appsec.security_activity:business_logic.users.login.failure","groupByFields":["service","@http.client_ip"],"hasOptionalGroupByFields":false,"distinctFields":[],"aggregation":"count","name":"","dataSource":"app_sec_spans"}],"options":{"evaluationWindow":900,"detectionMethod":"threshold","maxSignalDuration":86400,"keepAlive":3600},"cases":[{"name":"","status":"info","notifications":[],"condition":"a
+        \u003e 100000","actions":[{"type":"block_ip","options":{"duration":900}}]}],"message":"Test
+        rule","tags":[],"hasExtendedTitle":false,"type":"application_security","filters":[],"version":1,"id":"rfn-h2v-udr","blocking":true,"groupSignalsBy":["service"],"casesActions":[[{"type":"block_ip","options":{"duration":900}}]],"dependencies":["business_logic.users.login.failure"],"metadata":{"entities":null,"sources":null},"creator":{"handle":"","name":""},"updater":{"handle":"","name":""}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/rfn-h2v-udr
+  response:
+    body:
+      string: '{"status":"404","title":"Not Found"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 404
+      message: Not Found
+version: 1
