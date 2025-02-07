@@ -43,6 +43,7 @@ class SecurityMonitoringStandardRuleTestPayload(ModelNormal):
         return {
             "cases": ([SecurityMonitoringRuleCaseCreate],),
             "filters": ([SecurityMonitoringFilter],),
+            "group_signals_by": ([str],),
             "has_extended_title": (bool,),
             "is_enabled": (bool,),
             "message": (str,),
@@ -58,6 +59,7 @@ class SecurityMonitoringStandardRuleTestPayload(ModelNormal):
     attribute_map = {
         "cases": "cases",
         "filters": "filters",
+        "group_signals_by": "groupSignalsBy",
         "has_extended_title": "hasExtendedTitle",
         "is_enabled": "isEnabled",
         "message": "message",
@@ -79,6 +81,7 @@ class SecurityMonitoringStandardRuleTestPayload(ModelNormal):
         options: SecurityMonitoringRuleOptions,
         queries: List[SecurityMonitoringStandardRuleQuery],
         filters: Union[List[SecurityMonitoringFilter], UnsetType] = unset,
+        group_signals_by: Union[List[str], UnsetType] = unset,
         has_extended_title: Union[bool, UnsetType] = unset,
         reference_tables: Union[List[SecurityMonitoringReferenceTable], UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
@@ -94,6 +97,9 @@ class SecurityMonitoringStandardRuleTestPayload(ModelNormal):
 
         :param filters: Additional queries to filter matched events before they are processed. This field is deprecated for log detection, signal correlation, and workload security rules.
         :type filters: [SecurityMonitoringFilter], optional
+
+        :param group_signals_by: Additional grouping to perform on top of the existing groups in the query section. Must be a subset of the existing groups.
+        :type group_signals_by: [str], optional
 
         :param has_extended_title: Whether the notifications include the triggering group-by values in their title.
         :type has_extended_title: bool, optional
@@ -127,6 +133,8 @@ class SecurityMonitoringStandardRuleTestPayload(ModelNormal):
         """
         if filters is not unset:
             kwargs["filters"] = filters
+        if group_signals_by is not unset:
+            kwargs["group_signals_by"] = group_signals_by
         if has_extended_title is not unset:
             kwargs["has_extended_title"] = has_extended_title
         if reference_tables is not unset:

@@ -14,15 +14,18 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.security_monitoring_rule_case_action import SecurityMonitoringRuleCaseAction
     from datadog_api_client.v2.model.security_monitoring_rule_severity import SecurityMonitoringRuleSeverity
 
 
 class SecurityMonitoringRuleCase(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.security_monitoring_rule_case_action import SecurityMonitoringRuleCaseAction
         from datadog_api_client.v2.model.security_monitoring_rule_severity import SecurityMonitoringRuleSeverity
 
         return {
+            "actions": ([SecurityMonitoringRuleCaseAction],),
             "condition": (str,),
             "name": (str,),
             "notifications": ([str],),
@@ -30,6 +33,7 @@ class SecurityMonitoringRuleCase(ModelNormal):
         }
 
     attribute_map = {
+        "actions": "actions",
         "condition": "condition",
         "name": "name",
         "notifications": "notifications",
@@ -38,6 +42,7 @@ class SecurityMonitoringRuleCase(ModelNormal):
 
     def __init__(
         self_,
+        actions: Union[List[SecurityMonitoringRuleCaseAction], UnsetType] = unset,
         condition: Union[str, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
         notifications: Union[List[str], UnsetType] = unset,
@@ -46,6 +51,9 @@ class SecurityMonitoringRuleCase(ModelNormal):
     ):
         """
         Case when signal is generated.
+
+        :param actions: Action to perform for each rule case.
+        :type actions: [SecurityMonitoringRuleCaseAction], optional
 
         :param condition: A rule case contains logical operations ( ``>`` , ``>=`` , ``&&`` , ``||`` ) to determine if a signal should be generated
             based on the event counts in the previously defined queries.
@@ -60,6 +68,8 @@ class SecurityMonitoringRuleCase(ModelNormal):
         :param status: Severity of the Security Signal.
         :type status: SecurityMonitoringRuleSeverity, optional
         """
+        if actions is not unset:
+            kwargs["actions"] = actions
         if condition is not unset:
             kwargs["condition"] = condition
         if name is not unset:

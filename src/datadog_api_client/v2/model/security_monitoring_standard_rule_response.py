@@ -54,6 +54,7 @@ class SecurityMonitoringStandardRuleResponse(ModelNormal):
             "default_tags": ([str],),
             "deprecation_date": (int,),
             "filters": ([SecurityMonitoringFilter],),
+            "group_signals_by": ([str],),
             "has_extended_title": (bool,),
             "id": (str,),
             "is_default": (bool,),
@@ -80,6 +81,7 @@ class SecurityMonitoringStandardRuleResponse(ModelNormal):
         "default_tags": "defaultTags",
         "deprecation_date": "deprecationDate",
         "filters": "filters",
+        "group_signals_by": "groupSignalsBy",
         "has_extended_title": "hasExtendedTitle",
         "id": "id",
         "is_default": "isDefault",
@@ -107,6 +109,7 @@ class SecurityMonitoringStandardRuleResponse(ModelNormal):
         default_tags: Union[List[str], UnsetType] = unset,
         deprecation_date: Union[int, UnsetType] = unset,
         filters: Union[List[SecurityMonitoringFilter], UnsetType] = unset,
+        group_signals_by: Union[List[str], UnsetType] = unset,
         has_extended_title: Union[bool, UnsetType] = unset,
         id: Union[str, UnsetType] = unset,
         is_default: Union[bool, UnsetType] = unset,
@@ -148,6 +151,9 @@ class SecurityMonitoringStandardRuleResponse(ModelNormal):
 
         :param filters: Additional queries to filter matched events before they are processed. This field is deprecated for log detection, signal correlation, and workload security rules.
         :type filters: [SecurityMonitoringFilter], optional
+
+        :param group_signals_by: Additional grouping to perform on top of the existing groups in the query section. Must be a subset of the existing groups.
+        :type group_signals_by: [str], optional
 
         :param has_extended_title: Whether the notifications include the triggering group-by values in their title.
         :type has_extended_title: bool, optional
@@ -211,6 +217,8 @@ class SecurityMonitoringStandardRuleResponse(ModelNormal):
             kwargs["deprecation_date"] = deprecation_date
         if filters is not unset:
             kwargs["filters"] = filters
+        if group_signals_by is not unset:
+            kwargs["group_signals_by"] = group_signals_by
         if has_extended_title is not unset:
             kwargs["has_extended_title"] = has_extended_title
         if id is not unset:

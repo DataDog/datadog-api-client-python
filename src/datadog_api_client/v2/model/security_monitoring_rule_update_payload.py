@@ -54,6 +54,7 @@ class SecurityMonitoringRuleUpdatePayload(ModelNormal):
             "cases": ([SecurityMonitoringRuleCase],),
             "compliance_signal_options": (CloudConfigurationRuleComplianceSignalOptions,),
             "filters": ([SecurityMonitoringFilter],),
+            "group_signals_by": ([str],),
             "has_extended_title": (bool,),
             "is_enabled": (bool,),
             "message": (str,),
@@ -70,6 +71,7 @@ class SecurityMonitoringRuleUpdatePayload(ModelNormal):
         "cases": "cases",
         "compliance_signal_options": "complianceSignalOptions",
         "filters": "filters",
+        "group_signals_by": "groupSignalsBy",
         "has_extended_title": "hasExtendedTitle",
         "is_enabled": "isEnabled",
         "message": "message",
@@ -87,6 +89,7 @@ class SecurityMonitoringRuleUpdatePayload(ModelNormal):
         cases: Union[List[SecurityMonitoringRuleCase], UnsetType] = unset,
         compliance_signal_options: Union[CloudConfigurationRuleComplianceSignalOptions, UnsetType] = unset,
         filters: Union[List[SecurityMonitoringFilter], UnsetType] = unset,
+        group_signals_by: Union[List[str], UnsetType] = unset,
         has_extended_title: Union[bool, UnsetType] = unset,
         is_enabled: Union[bool, UnsetType] = unset,
         message: Union[str, UnsetType] = unset,
@@ -117,6 +120,9 @@ class SecurityMonitoringRuleUpdatePayload(ModelNormal):
 
         :param filters: Additional queries to filter matched events before they are processed. This field is deprecated for log detection, signal correlation, and workload security rules.
         :type filters: [SecurityMonitoringFilter], optional
+
+        :param group_signals_by: Additional grouping to perform on top of the existing groups in the query section. Must be a subset of the existing groups.
+        :type group_signals_by: [str], optional
 
         :param has_extended_title: Whether the notifications include the triggering group-by values in their title.
         :type has_extended_title: bool, optional
@@ -154,6 +160,8 @@ class SecurityMonitoringRuleUpdatePayload(ModelNormal):
             kwargs["compliance_signal_options"] = compliance_signal_options
         if filters is not unset:
             kwargs["filters"] = filters
+        if group_signals_by is not unset:
+            kwargs["group_signals_by"] = group_signals_by
         if has_extended_title is not unset:
             kwargs["has_extended_title"] = has_extended_title
         if is_enabled is not unset:

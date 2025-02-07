@@ -40,6 +40,7 @@ class JobDefinition(ModelNormal):
             "calculated_fields": ([CalculatedField],),
             "cases": ([SecurityMonitoringRuleCaseCreate],),
             "_from": (int,),
+            "group_signals_by": ([str],),
             "index": (str,),
             "message": (str,),
             "name": (str,),
@@ -56,6 +57,7 @@ class JobDefinition(ModelNormal):
         "calculated_fields": "calculatedFields",
         "cases": "cases",
         "_from": "from",
+        "group_signals_by": "groupSignalsBy",
         "index": "index",
         "message": "message",
         "name": "name",
@@ -78,6 +80,7 @@ class JobDefinition(ModelNormal):
         queries: List[HistoricalJobQuery],
         to: int,
         calculated_fields: Union[List[CalculatedField], UnsetType] = unset,
+        group_signals_by: Union[List[str], UnsetType] = unset,
         options: Union[HistoricalJobOptions, UnsetType] = unset,
         reference_tables: Union[List[SecurityMonitoringReferenceTable], UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
@@ -96,6 +99,9 @@ class JobDefinition(ModelNormal):
 
         :param _from: Starting time of data analyzed by the job.
         :type _from: int
+
+        :param group_signals_by: Additional grouping to perform on top of the existing groups in the query section. Must be a subset of the existing groups.
+        :type group_signals_by: [str], optional
 
         :param index: Index used to load the data.
         :type index: str
@@ -129,6 +135,8 @@ class JobDefinition(ModelNormal):
         """
         if calculated_fields is not unset:
             kwargs["calculated_fields"] = calculated_fields
+        if group_signals_by is not unset:
+            kwargs["group_signals_by"] = group_signals_by
         if options is not unset:
             kwargs["options"] = options
         if reference_tables is not unset:

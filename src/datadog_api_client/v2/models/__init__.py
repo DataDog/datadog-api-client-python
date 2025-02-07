@@ -1829,6 +1829,11 @@ from datadog_api_client.v2.model.security_monitoring_filter_action import Securi
 from datadog_api_client.v2.model.security_monitoring_list_rules_response import SecurityMonitoringListRulesResponse
 from datadog_api_client.v2.model.security_monitoring_reference_table import SecurityMonitoringReferenceTable
 from datadog_api_client.v2.model.security_monitoring_rule_case import SecurityMonitoringRuleCase
+from datadog_api_client.v2.model.security_monitoring_rule_case_action import SecurityMonitoringRuleCaseAction
+from datadog_api_client.v2.model.security_monitoring_rule_case_action_options import (
+    SecurityMonitoringRuleCaseActionOptions,
+)
+from datadog_api_client.v2.model.security_monitoring_rule_case_action_type import SecurityMonitoringRuleCaseActionType
 from datadog_api_client.v2.model.security_monitoring_rule_case_create import SecurityMonitoringRuleCaseCreate
 from datadog_api_client.v2.model.security_monitoring_rule_convert_payload import SecurityMonitoringRuleConvertPayload
 from datadog_api_client.v2.model.security_monitoring_rule_convert_response import SecurityMonitoringRuleConvertResponse
@@ -3934,6 +3939,9 @@ __all__ = [
     "SecurityMonitoringListRulesResponse",
     "SecurityMonitoringReferenceTable",
     "SecurityMonitoringRuleCase",
+    "SecurityMonitoringRuleCaseAction",
+    "SecurityMonitoringRuleCaseActionOptions",
+    "SecurityMonitoringRuleCaseActionType",
     "SecurityMonitoringRuleCaseCreate",
     "SecurityMonitoringRuleConvertPayload",
     "SecurityMonitoringRuleConvertResponse",
