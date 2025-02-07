@@ -1,0 +1,55 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"name":"Cassette Workflow x-given","spec":{"steps":[{"actionId":"com.datadoghq.core.noop","name":"No_op"}],"triggers":[{"startStepNames":["No_op"],"workflowTrigger":{}}]}},"type":"workflows"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/workflows
+  response:
+    body:
+      string: '{"data":{"id":"748a9d1b-a9a5-415b-9360-3d8374329957","type":"workflows","attributes":{"createdAt":"2025-02-04T04:58:34.263325Z","description":"","name":"Cassette
+        Workflow x-given","published":true,"spec":{"triggers":[{"startStepNames":["No_op"],"workflowTrigger":{}}],"steps":[{"name":"No_op","actionId":"com.datadoghq.core.noop"}]},"tags":[],"updatedAt":"2025-02-04T04:58:34.263325Z"},"relationships":{"creator":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}},"owner":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"description":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","name":"Too
+      many characters in description","spec":{}},"id":"22222222-2222-2222-2222-222222222222","type":"workflows"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/workflows/748a9d1b-a9a5-415b-9360-3d8374329957
+  response:
+    body:
+      string: '{"errors":[{"detail":"workflow description exceeds size limit of [300]
+        characters"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 400
+      message: Bad Request
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/workflows/748a9d1b-a9a5-415b-9360-3d8374329957
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1
