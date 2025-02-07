@@ -2970,6 +2970,37 @@
       "type": "safe"
     }
   },
+  "CreateWorkflow": {
+    "tag": "Workflow Automation",
+    "undo": {
+      "operationId": "DeleteWorkflow",
+      "parameters": [
+        {
+          "name": "workflow_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteWorkflow": {
+    "tag": "Workflow Automation",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetWorkflow": {
+    "tag": "Workflow Automation",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateWorkflow": {
+    "tag": "Workflow Automation",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListWorkflowInstances": {
     "tag": "Workflow Automation",
     "undo": {

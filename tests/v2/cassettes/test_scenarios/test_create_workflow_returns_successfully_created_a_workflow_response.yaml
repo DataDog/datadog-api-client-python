@@ -1,0 +1,36 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"description":"A sample workflow.","name":"Example
+      Workflow","published":true,"spec":{"connectionEnvs":[{"connections":[{"connectionId":"11111111-1111-1111-1111-111111111111","label":"INTEGRATION_DATADOG"}],"env":"default"}],"handle":"my-handle","inputSchema":{"parameters":[{"defaultValue":"default","name":"input","type":"STRING"}]},"outputSchema":{"parameters":[{"name":"output","type":"ARRAY_OBJECT","value":"outputValue"}]},"steps":[{"actionId":"com.datadoghq.dd.monitor.listMonitors","connectionLabel":"INTEGRATION_DATADOG","name":"Step1","outboundEdges":[{"branchName":"main","nextStepName":"Step2"}],"parameters":[{"name":"tags","value":"service:monitoring"}]},{"actionId":"com.datadoghq.core.noop","name":"Step2"}],"triggers":[{"monitorTrigger":{"rateLimit":{"count":1,"interval":"3600s"}},"startStepNames":["Step1"]},{"githubWebhookTrigger":{},"startStepNames":["Step1"]}]},"tags":["team:infra","service:monitoring","foo:bar"]},"type":"workflows"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/workflows
+  response:
+    body:
+      string: '{"data":{"id":"9c250b4e-3d0c-433d-84e6-60a6bde81adb","type":"workflows","attributes":{"createdAt":"2025-02-04T04:34:39.501028Z","description":"A
+        sample workflow.","name":"Example Workflow","published":true,"spec":{"triggers":[{"startStepNames":["Step1"],"monitorTrigger":{"rateLimit":{"count":1,"interval":"3600s"}}},{"startStepNames":["Step1"],"githubWebhookTrigger":{}}],"steps":[{"name":"Step1","actionId":"com.datadoghq.dd.monitor.listMonitors","connectionLabel":"INTEGRATION_DATADOG","parameters":[{"name":"tags","value":"service:monitoring"}],"outboundEdges":[{"nextStepName":"Step2","branchName":"main"}]},{"name":"Step2","actionId":"com.datadoghq.core.noop"}],"handle":"my-handle","connectionEnvs":[{"env":"default","connections":[{"connectionId":"11111111-1111-1111-1111-111111111111","label":"INTEGRATION_DATADOG"}]}],"inputSchema":{"parameters":[{"name":"input","type":"STRING","defaultValue":"default"}]},"outputSchema":{"parameters":[{"name":"output","type":"ARRAY_OBJECT","value":"outputValue"}]}},"tags":["foo:bar","team:infra","service:monitoring"],"updatedAt":"2025-02-04T04:34:39.501028Z"},"relationships":{"creator":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}},"owner":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/workflows/9c250b4e-3d0c-433d-84e6-60a6bde81adb
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1
