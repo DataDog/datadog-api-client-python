@@ -16,7 +16,7 @@ class SyntheticsBrowserVariableType(ModelSimple):
     """
     Type of browser test variable.
 
-    :param value: Must be one of ["element", "email", "global", "javascript", "text"].
+    :param value: Must be one of ["element", "email", "global", "text"].
     :type value: str
     """
 
@@ -24,13 +24,11 @@ class SyntheticsBrowserVariableType(ModelSimple):
         "element",
         "email",
         "global",
-        "javascript",
         "text",
     }
     ELEMENT: ClassVar["SyntheticsBrowserVariableType"]
     EMAIL: ClassVar["SyntheticsBrowserVariableType"]
     GLOBAL: ClassVar["SyntheticsBrowserVariableType"]
-    JAVASCRIPT: ClassVar["SyntheticsBrowserVariableType"]
     TEXT: ClassVar["SyntheticsBrowserVariableType"]
 
     @cached_property
@@ -43,5 +41,4 @@ class SyntheticsBrowserVariableType(ModelSimple):
 SyntheticsBrowserVariableType.ELEMENT = SyntheticsBrowserVariableType("element")
 SyntheticsBrowserVariableType.EMAIL = SyntheticsBrowserVariableType("email")
 SyntheticsBrowserVariableType.GLOBAL = SyntheticsBrowserVariableType("global")
-SyntheticsBrowserVariableType.JAVASCRIPT = SyntheticsBrowserVariableType("javascript")
 SyntheticsBrowserVariableType.TEXT = SyntheticsBrowserVariableType("text")
