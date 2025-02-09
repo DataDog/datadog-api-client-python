@@ -166,7 +166,7 @@ with ApiClient(configuration) as api_client:
 
 ## Documentation for API Endpoints and Models
 
-Documentation for API endpoints and models are available on [readthedocs](https://datadog-api-client.readthedocs.io/).
+Documentation for API endpoints and models are available [here](https://datadoghq.dev/datadog-api-client-python/).
 
 ## Documentation for Authorization
 
