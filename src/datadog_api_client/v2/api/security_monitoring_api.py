@@ -66,6 +66,7 @@ from datadog_api_client.v2.model.security_monitoring_rule_test_request import Se
 from datadog_api_client.v2.model.security_monitoring_rule_validate_payload import SecurityMonitoringRuleValidatePayload
 from datadog_api_client.v2.model.cloud_configuration_rule_payload import CloudConfigurationRulePayload
 from datadog_api_client.v2.model.security_monitoring_rule_update_payload import SecurityMonitoringRuleUpdatePayload
+from datadog_api_client.v2.model.get_rule_version_history_response import GetRuleVersionHistoryResponse
 from datadog_api_client.v2.model.security_monitoring_signals_list_response import SecurityMonitoringSignalsListResponse
 from datadog_api_client.v2.model.security_monitoring_signals_sort import SecurityMonitoringSignalsSort
 from datadog_api_client.v2.model.security_monitoring_signal import SecurityMonitoringSignal
@@ -548,6 +549,39 @@ class SecurityMonitoringApi:
                     "openapi_types": (str,),
                     "attribute": "job_id",
                     "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_rule_version_history_endpoint = _Endpoint(
+            settings={
+                "response_type": (GetRuleVersionHistoryResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/rules/{rule_id}/version_history",
+                "operation_id": "get_rule_version_history",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "rule_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "rule_id",
+                    "location": "path",
+                },
+                "page_size": {
+                    "openapi_types": (int,),
+                    "attribute": "page[size]",
+                    "location": "query",
+                },
+                "page_number": {
+                    "openapi_types": (int,),
+                    "attribute": "page[number]",
+                    "location": "query",
                 },
             },
             headers_map={
@@ -1957,6 +1991,36 @@ class SecurityMonitoringApi:
         kwargs["job_id"] = job_id
 
         return self._get_historical_job_endpoint.call_with_http_info(**kwargs)
+
+    def get_rule_version_history(
+        self,
+        rule_id: str,
+        *,
+        page_size: Union[int, UnsetType] = unset,
+        page_number: Union[int, UnsetType] = unset,
+    ) -> GetRuleVersionHistoryResponse:
+        """Get a rule's version history.
+
+        Get a rule's version history.
+
+        :param rule_id: The ID of the rule.
+        :type rule_id: str
+        :param page_size: Size for a given page. The maximum allowed value is 100.
+        :type page_size: int, optional
+        :param page_number: Specific page number to return.
+        :type page_number: int, optional
+        :rtype: GetRuleVersionHistoryResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["rule_id"] = rule_id
+
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        if page_number is not unset:
+            kwargs["page_number"] = page_number
+
+        return self._get_rule_version_history_endpoint.call_with_http_info(**kwargs)
 
     def get_sbom(
         self,

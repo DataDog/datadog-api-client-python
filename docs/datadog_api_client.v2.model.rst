@@ -5184,6 +5184,27 @@ datadog\_api\_client.v2.model.get\_interfaces\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.get\_rule\_version\_history\_data module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_rule_version_history_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.get\_rule\_version\_history\_data\_type module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_rule_version_history_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.get\_rule\_version\_history\_response module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_rule_version_history_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.get\_sbom\_response module
 --------------------------------------------------------
 
@@ -9850,6 +9871,34 @@ datadog\_api\_client.v2.model.rule\_user module
 -----------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.rule_user
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rule\_version\_history module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rule_version_history
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rule\_version\_update module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rule_version_update
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rule\_version\_update\_type module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rule_version_update_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rule\_versions module
+---------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rule_versions
    :members:
    :show-inheritance:
 
