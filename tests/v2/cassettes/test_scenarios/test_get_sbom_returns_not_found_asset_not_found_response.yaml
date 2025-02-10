@@ -8,8 +8,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/security/sboms/Host?filter%5Basset_name%5D=unknown-host
   response:
     body:
-      string: '{"errors":[{"title":"Asset not found","detail":"asset_type: ''Host''
-        with asset_name: ''unknown-host'' not found"}]}'
+      string: '{"errors":[{"status":"404","title":"Asset not found","detail":"asset_type:
+        ''Host'' with asset_name: ''unknown-host'' not found"}]}'
     headers:
       content-type:
       - application/vnd.api+json
