@@ -21,6 +21,9 @@ class SecurityMonitoringRuleValidatePayload(ModelComposed):
         :param filters: Additional queries to filter matched events before they are processed. This field is deprecated for log detection, signal correlation, and workload security rules.
         :type filters: [SecurityMonitoringFilter], optional
 
+        :param group_signals_by: Additional grouping to perform on top of the existing groups in the query section. Must be a subset of the existing groups.
+        :type group_signals_by: [str], optional
+
         :param has_extended_title: Whether the notifications include the triggering group-by values in their title.
         :type has_extended_title: bool, optional
 
