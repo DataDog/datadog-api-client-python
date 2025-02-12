@@ -837,5 +837,17 @@
     "key": "user",
     "tag": "Users",
     "operationId": "CreateUser"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"workflows\",\n    \"attributes\": {\n        \"name\": \"Cassette Workflow x-given\",\n        \"spec\": {\n            \"triggers\": [\n                {\n                    \"startStepNames\": [\"No_op\"],\n                    \"workflowTrigger\": {}\n                }\n            ],\n            \"steps\": [\n              {\n                \"name\": \"No_op\",\n                \"actionId\": \"com.datadoghq.core.noop\"\n              }\n            ]\n        }\n    }\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"workflow\" in the system",
+    "key": "workflow",
+    "tag": "Workflow Automation",
+    "operationId": "CreateWorkflow"
   }
 ]

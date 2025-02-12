@@ -1,0 +1,51 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"name":"Cassette Workflow x-given","spec":{"steps":[{"actionId":"com.datadoghq.core.noop","name":"No_op"}],"triggers":[{"startStepNames":["No_op"],"workflowTrigger":{}}]}},"type":"workflows"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/workflows
+  response:
+    body:
+      string: '{"data":{"id":"94300e37-bf51-498b-b56b-83d17ef45e6b","type":"workflows","attributes":{"createdAt":"2025-02-04T04:58:33.538848Z","description":"","name":"Cassette
+        Workflow x-given","published":true,"spec":{"triggers":[{"startStepNames":["No_op"],"workflowTrigger":{}}],"steps":[{"name":"No_op","actionId":"com.datadoghq.core.noop"}]},"tags":[],"updatedAt":"2025-02-04T04:58:33.538848Z"},"relationships":{"creator":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}},"owner":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/workflows/94300e37-bf51-498b-b56b-83d17ef45e6b
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/workflows/94300e37-bf51-498b-b56b-83d17ef45e6b
+  response:
+    body:
+      string: '{"errors":[{"detail":"workflow not found"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 404
+      message: Not Found
+version: 1
