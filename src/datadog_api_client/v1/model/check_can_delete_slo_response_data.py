@@ -28,7 +28,7 @@ class CheckCanDeleteSLOResponseData(ModelNormal):
         """
         An array of service level objective objects.
 
-        :param ok: An array of of SLO IDs that can be safely deleted.
+        :param ok: An array of SLO IDs that can be safely deleted.
         :type ok: [str], optional
         """
         if ok is not unset:

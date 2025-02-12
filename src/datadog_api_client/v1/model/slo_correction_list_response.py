@@ -43,7 +43,7 @@ class SLOCorrectionListResponse(ModelNormal):
         """
         A list of  SLO correction objects.
 
-        :param data: The list of of SLO corrections objects.
+        :param data: The list of SLO corrections objects.
         :type data: [SLOCorrection], optional
 
         :param meta: Object describing meta attributes of response.
