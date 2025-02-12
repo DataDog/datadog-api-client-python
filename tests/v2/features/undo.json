@@ -2362,6 +2362,12 @@
       "type": "idempotent"
     }
   },
+  "GetRuleVersionHistory": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListSecurityMonitoringSignals": {
     "tag": "Security Monitoring",
     "undo": {

@@ -600,6 +600,30 @@ Feature: Security Monitoring
     And the response "id" has the same value as "security_rule.id"
 
   @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Get a rule's version history returns "Bad Request" response
+    Given operation "GetRuleVersionHistory" enabled
+    And new "GetRuleVersionHistory" request
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Get a rule's version history returns "Not Found" response
+    Given operation "GetRuleVersionHistory" enabled
+    And new "GetRuleVersionHistory" request
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Get a rule's version history returns "OK" response
+    Given operation "GetRuleVersionHistory" enabled
+    And new "GetRuleVersionHistory" request
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
   Scenario: Get a security filter returns "Not Found" response
     Given new "GetSecurityFilter" request
     And request contains "security_filter_id" parameter from "REPLACE.ME"
@@ -707,6 +731,19 @@ Feature: Security Monitoring
     And request contains "id" parameter from "valid_vulnerability_notification_rule.data.id"
     When the request is sent
     Then the response status is 200 Notification rule details.
+
+  @skip-go @skip-java @skip-ruby @team:DataDog/k9-cloud-security-platform
+  Scenario: Get rule version history returns "OK" response
+    Given operation "GetRuleVersionHistory" enabled
+    And new "GetRuleVersionHistory" request
+    And there is a valid "security_rule" in the system
+    And request contains "rule_id" parameter from "security_rule.id"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.id" has the same value as "security_rule.id"
+    And the response "data.type" is equal to "GetRuleVersionHistoryResponse"
+    And the response "data.attributes.count" is equal to 1
+    And the response "data.attributes.data[1].rule.name" has the same value as "security_rule.name"
 
   @team:DataDog/cloud-security-posture-management
   Scenario: Get the list of signal-based notification rules returns "The list of notification rules." response
