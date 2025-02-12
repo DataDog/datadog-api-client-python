@@ -11,6 +11,11 @@ from datadog_api_client.model_utils import (
     UnsetType,
     unset,
 )
+from datadog_api_client.v2.model.create_workflow_response import CreateWorkflowResponse
+from datadog_api_client.v2.model.create_workflow_request import CreateWorkflowRequest
+from datadog_api_client.v2.model.get_workflow_response import GetWorkflowResponse
+from datadog_api_client.v2.model.update_workflow_response import UpdateWorkflowResponse
+from datadog_api_client.v2.model.update_workflow_request import UpdateWorkflowRequest
 from datadog_api_client.v2.model.workflow_list_instances_response import WorkflowListInstancesResponse
 from datadog_api_client.v2.model.workflow_instance_create_response import WorkflowInstanceCreateResponse
 from datadog_api_client.v2.model.workflow_instance_create_request import WorkflowInstanceCreateRequest
@@ -20,7 +25,7 @@ from datadog_api_client.v2.model.worklflow_cancel_instance_response import Workl
 
 class WorkflowAutomationApi:
     """
-    Automate your teams operational processes with Datadog Workflow Automation.
+    Datadog Workflow Automation allows you to automate your end-to-end processes by connecting Datadog with the rest of your tech stack. Build workflows to auto-remediate your alerts, streamline your incident and security processes, and reduce manual toil. Workflow Automation supports over 1,000+ OOTB actions, including AWS, JIRA, ServiceNow, GitHub, and OpenAI. Learn more in our Workflow Automation docs `here <https://docs.datadoghq.com/service_management/workflows/>`_.
     """
 
     def __init__(self, api_client=None):
@@ -57,6 +62,26 @@ class WorkflowAutomationApi:
             api_client=api_client,
         )
 
+        self._create_workflow_endpoint = _Endpoint(
+            settings={
+                "response_type": (CreateWorkflowResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/workflows",
+                "operation_id": "create_workflow",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (CreateWorkflowRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._create_workflow_instance_endpoint = _Endpoint(
             settings={
                 "response_type": (WorkflowInstanceCreateResponse,),
@@ -80,6 +105,52 @@ class WorkflowAutomationApi:
                 },
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._delete_workflow_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/workflows/{workflow_id}",
+                "operation_id": "delete_workflow",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "workflow_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "workflow_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_workflow_endpoint = _Endpoint(
+            settings={
+                "response_type": (GetWorkflowResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/workflows/{workflow_id}",
+                "operation_id": "get_workflow",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "workflow_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "workflow_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
             api_client=api_client,
         )
 
@@ -145,6 +216,32 @@ class WorkflowAutomationApi:
             api_client=api_client,
         )
 
+        self._update_workflow_endpoint = _Endpoint(
+            settings={
+                "response_type": (UpdateWorkflowResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/workflows/{workflow_id}",
+                "operation_id": "update_workflow",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "workflow_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "workflow_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (UpdateWorkflowRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
     def cancel_workflow_instance(
         self,
         workflow_id: str,
@@ -167,6 +264,22 @@ class WorkflowAutomationApi:
 
         return self._cancel_workflow_instance_endpoint.call_with_http_info(**kwargs)
 
+    def create_workflow(
+        self,
+        body: CreateWorkflowRequest,
+    ) -> CreateWorkflowResponse:
+        """Create a Workflow.
+
+        Create a new workflow, returning the workflow ID. This API requires an application key scoped with the ``workflows_write`` permission.
+
+        :type body: CreateWorkflowRequest
+        :rtype: CreateWorkflowResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_workflow_endpoint.call_with_http_info(**kwargs)
+
     def create_workflow_instance(
         self,
         workflow_id: str,
@@ -187,6 +300,40 @@ class WorkflowAutomationApi:
         kwargs["body"] = body
 
         return self._create_workflow_instance_endpoint.call_with_http_info(**kwargs)
+
+    def delete_workflow(
+        self,
+        workflow_id: str,
+    ) -> None:
+        """Delete an existing Workflow.
+
+        Delete a workflow by ID. This API requires an application key scoped with the ``workflows_write`` permission.
+
+        :param workflow_id: The ID of the workflow.
+        :type workflow_id: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["workflow_id"] = workflow_id
+
+        return self._delete_workflow_endpoint.call_with_http_info(**kwargs)
+
+    def get_workflow(
+        self,
+        workflow_id: str,
+    ) -> GetWorkflowResponse:
+        """Get an existing Workflow.
+
+        Get a workflow by ID.  This API requires an application key scoped with the ``workflows_read`` permission.
+
+        :param workflow_id: The ID of the workflow.
+        :type workflow_id: str
+        :rtype: GetWorkflowResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["workflow_id"] = workflow_id
+
+        return self._get_workflow_endpoint.call_with_http_info(**kwargs)
 
     def get_workflow_instance(
         self,
@@ -239,3 +386,24 @@ class WorkflowAutomationApi:
             kwargs["page_number"] = page_number
 
         return self._list_workflow_instances_endpoint.call_with_http_info(**kwargs)
+
+    def update_workflow(
+        self,
+        workflow_id: str,
+        body: UpdateWorkflowRequest,
+    ) -> UpdateWorkflowResponse:
+        """Update an existing Workflow.
+
+        Update a workflow by ID. This API requires an application key scoped with the ``workflows_write`` permission.
+
+        :param workflow_id: The ID of the workflow.
+        :type workflow_id: str
+        :type body: UpdateWorkflowRequest
+        :rtype: UpdateWorkflowResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["workflow_id"] = workflow_id
+
+        kwargs["body"] = body
+
+        return self._update_workflow_endpoint.call_with_http_info(**kwargs)
