@@ -933,6 +933,9 @@ from datadog_api_client.v2.model.get_device_response import GetDeviceResponse
 from datadog_api_client.v2.model.get_finding_response import GetFindingResponse
 from datadog_api_client.v2.model.get_interfaces_data import GetInterfacesData
 from datadog_api_client.v2.model.get_interfaces_response import GetInterfacesResponse
+from datadog_api_client.v2.model.get_rule_version_history_data import GetRuleVersionHistoryData
+from datadog_api_client.v2.model.get_rule_version_history_data_type import GetRuleVersionHistoryDataType
+from datadog_api_client.v2.model.get_rule_version_history_response import GetRuleVersionHistoryResponse
 from datadog_api_client.v2.model.get_sbom_response import GetSBOMResponse
 from datadog_api_client.v2.model.get_team_memberships_sort import GetTeamMembershipsSort
 from datadog_api_client.v2.model.get_workflow_response import GetWorkflowResponse
@@ -1791,6 +1794,10 @@ from datadog_api_client.v2.model.rule_severity import RuleSeverity
 from datadog_api_client.v2.model.rule_type import RuleType
 from datadog_api_client.v2.model.rule_types_items import RuleTypesItems
 from datadog_api_client.v2.model.rule_user import RuleUser
+from datadog_api_client.v2.model.rule_version_history import RuleVersionHistory
+from datadog_api_client.v2.model.rule_version_update import RuleVersionUpdate
+from datadog_api_client.v2.model.rule_version_update_type import RuleVersionUpdateType
+from datadog_api_client.v2.model.rule_versions import RuleVersions
 from datadog_api_client.v2.model.rum_metric_compute import RumMetricCompute
 from datadog_api_client.v2.model.rum_metric_compute_aggregation_type import RumMetricComputeAggregationType
 from datadog_api_client.v2.model.rum_metric_create_attributes import RumMetricCreateAttributes
@@ -3231,6 +3238,9 @@ __all__ = [
     "GetFindingResponse",
     "GetInterfacesData",
     "GetInterfacesResponse",
+    "GetRuleVersionHistoryData",
+    "GetRuleVersionHistoryDataType",
+    "GetRuleVersionHistoryResponse",
     "GetSBOMResponse",
     "GetTeamMembershipsSort",
     "GetWorkflowResponse",
@@ -3965,6 +3975,10 @@ __all__ = [
     "RuleType",
     "RuleTypesItems",
     "RuleUser",
+    "RuleVersionHistory",
+    "RuleVersionUpdate",
+    "RuleVersionUpdateType",
+    "RuleVersions",
     "RumMetricCompute",
     "RumMetricComputeAggregationType",
     "RumMetricCreateAttributes",
