@@ -23,6 +23,8 @@ class DowntimesApi:
     you greater control over monitor notifications by allowing you to globally exclude
     scopes from alerting. Downtime settings, which can be scheduled with start and
     end times, prevent all alerting related to specified Datadog tags.
+
+    **Note:** ``curl`` commands require `url encoding <https://curl.se/docs/url-syntax.html>`_.
     """
 
     def __init__(self, api_client=None):
