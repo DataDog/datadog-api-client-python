@@ -679,7 +679,7 @@ class MonitorsApi:
         Get all monitors from your organization.
 
         :param group_states: When specified, shows additional information about the group states.
-            Choose one or more from ``all`` , ``alert`` , ``warn`` , and ``no data``.
+            Choose one or more from ``all`` , ``alert`` , ``warn`` , and ``no data`` ( ``no%20data`` ).
         :type group_states: str, optional
         :param name: A string to filter monitors by name.
         :type name: str, optional
@@ -743,7 +743,7 @@ class MonitorsApi:
         Provide a paginated version of :meth:`list_monitors`, returning all items.
 
         :param group_states: When specified, shows additional information about the group states.
-            Choose one or more from ``all`` , ``alert`` , ``warn`` , and ``no data``.
+            Choose one or more from ``all`` , ``alert`` , ``warn`` , and ``no data`` ( ``no%20data`` ).
         :type group_states: str, optional
         :param name: A string to filter monitors by name.
         :type name: str, optional
