@@ -65,7 +65,7 @@ class CIAppEventAttributes(ModelNormal):
         """
         JSON object containing all event attributes and their associated values.
 
-        :param attributes: JSON object of attributes from CI Visibility test events.
+        :param attributes: JSON object of attributes from Test Optimization test events.
         :type attributes: {str: (bool, date, datetime, dict, float, int, list, str, UUID, none_type,)}, optional
 
         :param tags: Array of tags associated with your event.

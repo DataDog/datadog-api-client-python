@@ -81,13 +81,6 @@ datadog\_api\_client.v2.api.ci\_visibility\_pipelines\_api module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.api.ci\_visibility\_tests\_api module
--------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.api.ci_visibility_tests_api
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v2.api.cloud\_cost\_management\_api module
 ---------------------------------------------------------------
 
@@ -428,6 +421,13 @@ datadog\_api\_client.v2.api.teams\_api module
 ---------------------------------------------
 
 .. automodule:: datadog_api_client.v2.api.teams_api
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.api.test\_optimization\_api module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.test_optimization_api
    :members:
    :show-inheritance:
 
