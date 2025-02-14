@@ -12,22 +12,18 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class QueryType(ModelSimple):
+class ActionQueryType(ModelSimple):
     """
-    The query type.
+    The action query type.
 
-    :param value: Must be one of ["action", "stateVariable", "dataTransform"].
+    :param value: If omitted defaults to "action". Must be one of ["action"].
     :type value: str
     """
 
     allowed_values = {
         "action",
-        "stateVariable",
-        "dataTransform",
     }
-    ACTION: ClassVar["QueryType"]
-    STATEVARIABLE: ClassVar["QueryType"]
-    DATATRANSFORM: ClassVar["QueryType"]
+    ACTION: ClassVar["ActionQueryType"]
 
     @cached_property
     def openapi_types(_):
@@ -36,6 +32,4 @@ class QueryType(ModelSimple):
         }
 
 
-QueryType.ACTION = QueryType("action")
-QueryType.STATEVARIABLE = QueryType("stateVariable")
-QueryType.DATATRANSFORM = QueryType("dataTransform")
+ActionQueryType.ACTION = ActionQueryType("action")

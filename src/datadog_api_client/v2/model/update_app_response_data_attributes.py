@@ -16,6 +16,9 @@ from datadog_api_client.model_utils import (
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.component_grid import ComponentGrid
     from datadog_api_client.v2.model.query import Query
+    from datadog_api_client.v2.model.action_query import ActionQuery
+    from datadog_api_client.v2.model.data_transform import DataTransform
+    from datadog_api_client.v2.model.state_variable import StateVariable
 
 
 class UpdateAppResponseDataAttributes(ModelNormal):
@@ -50,7 +53,7 @@ class UpdateAppResponseDataAttributes(ModelNormal):
         description: Union[str, UnsetType] = unset,
         favorite: Union[bool, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
-        queries: Union[List[Query], UnsetType] = unset,
+        queries: Union[List[Union[Query, ActionQuery, DataTransform, StateVariable]], UnsetType] = unset,
         root_instance_name: Union[str, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
         **kwargs,
