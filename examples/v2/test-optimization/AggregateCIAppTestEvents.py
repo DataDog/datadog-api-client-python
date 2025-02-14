@@ -3,7 +3,7 @@ Aggregate tests events returns "OK" response
 """
 
 from datadog_api_client import ApiClient, Configuration
-from datadog_api_client.v2.api.ci_visibility_tests_api import CIVisibilityTestsApi
+from datadog_api_client.v2.api.test_optimization_api import TestOptimizationApi
 from datadog_api_client.v2.model.ci_app_aggregate_sort import CIAppAggregateSort
 from datadog_api_client.v2.model.ci_app_aggregation_function import CIAppAggregationFunction
 from datadog_api_client.v2.model.ci_app_compute import CIAppCompute
@@ -44,7 +44,7 @@ body = CIAppTestsAggregateRequest(
 
 configuration = Configuration()
 with ApiClient(configuration) as api_client:
-    api_instance = CIVisibilityTestsApi(api_client)
+    api_instance = TestOptimizationApi(api_client)
     response = api_instance.aggregate_ci_app_test_events(body=body)
 
     print(response)

@@ -8,7 +8,6 @@ from datadog_api_client.v2.api.app_builder_api import AppBuilderApi
 from datadog_api_client.v2.api.audit_api import AuditApi
 from datadog_api_client.v2.api.authn_mappings_api import AuthNMappingsApi
 from datadog_api_client.v2.api.ci_visibility_pipelines_api import CIVisibilityPipelinesApi
-from datadog_api_client.v2.api.ci_visibility_tests_api import CIVisibilityTestsApi
 from datadog_api_client.v2.api.csm_agents_api import CSMAgentsApi
 from datadog_api_client.v2.api.csm_coverage_analysis_api import CSMCoverageAnalysisApi
 from datadog_api_client.v2.api.csm_threats_api import CSMThreatsApi
@@ -59,6 +58,7 @@ from datadog_api_client.v2.api.spans_api import SpansApi
 from datadog_api_client.v2.api.spans_metrics_api import SpansMetricsApi
 from datadog_api_client.v2.api.synthetics_api import SyntheticsApi
 from datadog_api_client.v2.api.teams_api import TeamsApi
+from datadog_api_client.v2.api.test_optimization_api import TestOptimizationApi
 from datadog_api_client.v2.api.usage_metering_api import UsageMeteringApi
 from datadog_api_client.v2.api.users_api import UsersApi
 from datadog_api_client.v2.api.workflow_automation_api import WorkflowAutomationApi
@@ -75,7 +75,6 @@ __all__ = [
     "AuditApi",
     "AuthNMappingsApi",
     "CIVisibilityPipelinesApi",
-    "CIVisibilityTestsApi",
     "CSMAgentsApi",
     "CSMCoverageAnalysisApi",
     "CSMThreatsApi",
@@ -126,6 +125,7 @@ __all__ = [
     "SpansMetricsApi",
     "SyntheticsApi",
     "TeamsApi",
+    "TestOptimizationApi",
     "UsageMeteringApi",
     "UsersApi",
     "WorkflowAutomationApi",

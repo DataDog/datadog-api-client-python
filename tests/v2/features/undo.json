@@ -453,19 +453,19 @@
     }
   },
   "AggregateCIAppTestEvents": {
-    "tag": "CI Visibility Tests",
+    "tag": "Test Optimization",
     "undo": {
       "type": "safe"
     }
   },
   "ListCIAppTestEvents": {
-    "tag": "CI Visibility Tests",
+    "tag": "Test Optimization",
     "undo": {
       "type": "safe"
     }
   },
   "SearchCIAppTestEvents": {
-    "tag": "CI Visibility Tests",
+    "tag": "Test Optimization",
     "undo": {
       "type": "safe"
     }

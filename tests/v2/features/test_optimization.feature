@@ -1,13 +1,12 @@
-@endpoint(ci-visibility-tests) @endpoint(ci-visibility-tests-v2)
-Feature: CI Visibility Tests
-  Search or aggregate your CI Visibility test events over HTTP. See the
-  [Test Visibility in Datadog page](https://docs.datadoghq.com/tests/) for
-  more information.
+@endpoint(test-optimization) @endpoint(test-optimization-v2)
+Feature: Test Optimization
+  Search or aggregate your test events over HTTP. See the [Test Optimization
+  in Datadog](https://docs.datadoghq.com/tests/) page for more information.
 
   Background:
     Given a valid "apiKeyAuth" key in the system
     And a valid "appKeyAuth" key in the system
-    And an instance of "CIVisibilityTests" API
+    And an instance of "TestOptimization" API
 
   @generated @skip @team:Datadog/ci-app-backend
   Scenario: Aggregate tests events returns "Bad Request" response

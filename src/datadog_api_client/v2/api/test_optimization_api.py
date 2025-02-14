@@ -23,9 +23,9 @@ from datadog_api_client.v2.model.ci_app_test_event import CIAppTestEvent
 from datadog_api_client.v2.model.ci_app_test_events_request import CIAppTestEventsRequest
 
 
-class CIVisibilityTestsApi:
+class TestOptimizationApi:
     """
-    Search or aggregate your CI Visibility test events over HTTP. See the `Test Visibility in Datadog page <https://docs.datadoghq.com/tests/>`_ for more information.
+    Search or aggregate your test events over HTTP. See the `Test Optimization in Datadog <https://docs.datadoghq.com/tests/>`_ page for more information.
     """
 
     def __init__(self, api_client=None):
@@ -128,7 +128,7 @@ class CIVisibilityTestsApi:
     ) -> CIAppTestsAnalyticsAggregateResponse:
         """Aggregate tests events.
 
-        The API endpoint to aggregate CI Visibility test events into buckets of computed metrics and timeseries.
+        The API endpoint to aggregate test events into buckets of computed metrics and timeseries.
 
         :type body: CIAppTestsAggregateRequest
         :rtype: CIAppTestsAnalyticsAggregateResponse
@@ -150,7 +150,7 @@ class CIVisibilityTestsApi:
     ) -> CIAppTestEventsResponse:
         """Get a list of tests events.
 
-        List endpoint returns CI Visibility test events that match a `search query <https://docs.datadoghq.com/continuous_integration/explorer/search_syntax/>`_.
+        List endpoint returns test events that match a `search query <https://docs.datadoghq.com/continuous_integration/explorer/search_syntax/>`_.
         `Results are paginated similarly to logs <https://docs.datadoghq.com/logs/guide/collect-multiple-logs-with-pagination>`_.
 
         Use this endpoint to see your latest test events.
@@ -259,7 +259,7 @@ class CIVisibilityTestsApi:
     ) -> CIAppTestEventsResponse:
         """Search tests events.
 
-        List endpoint returns CI Visibility test events that match a `search query <https://docs.datadoghq.com/continuous_integration/explorer/search_syntax/>`_.
+        List endpoint returns test events that match a `search query <https://docs.datadoghq.com/continuous_integration/explorer/search_syntax/>`_.
         `Results are paginated similarly to logs <https://docs.datadoghq.com/logs/guide/collect-multiple-logs-with-pagination>`_.
 
         Use this endpoint to build complex events filtering and search.

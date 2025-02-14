@@ -3,7 +3,7 @@ Search tests events returns "OK" response with pagination
 """
 
 from datadog_api_client import ApiClient, Configuration
-from datadog_api_client.v2.api.ci_visibility_tests_api import CIVisibilityTestsApi
+from datadog_api_client.v2.api.test_optimization_api import TestOptimizationApi
 from datadog_api_client.v2.model.ci_app_query_page_options import CIAppQueryPageOptions
 from datadog_api_client.v2.model.ci_app_sort import CIAppSort
 from datadog_api_client.v2.model.ci_app_test_events_request import CIAppTestEventsRequest
@@ -23,7 +23,7 @@ body = CIAppTestEventsRequest(
 
 configuration = Configuration()
 with ApiClient(configuration) as api_client:
-    api_instance = CIVisibilityTestsApi(api_client)
+    api_instance = TestOptimizationApi(api_client)
     items = api_instance.search_ci_app_test_events_with_pagination(body=body)
     for item in items:
         print(item)
