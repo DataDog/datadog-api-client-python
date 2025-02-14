@@ -45225,6 +45225,9 @@ paths:
       summary: Get SBOM
       tags:
       - Security Monitoring
+      x-unstable: '**Note**: This endpoint is a private preview.
+
+        If you are interested in accessing this API, please [fill out this form](https://forms.gle/kMYC1sDr6WDUBDsx9).'
   /api/v2/security/signals/notification_rules:
     get:
       description: Returns the list of notification rules for security signals.
