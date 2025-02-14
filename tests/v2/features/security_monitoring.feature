@@ -457,7 +457,8 @@ Feature: Security Monitoring
 
   @generated @skip @team:DataDog/asm-vm
   Scenario: Get SBOM returns "Bad request: The server cannot process the request due to invalid syntax in the request." response
-    Given new "GetSBOM" request
+    Given operation "GetSBOM" enabled
+    And new "GetSBOM" request
     And request contains "asset_type" parameter from "REPLACE.ME"
     And request contains "filter[asset_name]" parameter from "REPLACE.ME"
     When the request is sent
@@ -465,7 +466,8 @@ Feature: Security Monitoring
 
   @team:DataDog/asm-vm
   Scenario: Get SBOM returns "Not found: asset not found" response
-    Given new "GetSBOM" request
+    Given operation "GetSBOM" enabled
+    And new "GetSBOM" request
     And request contains "asset_type" parameter with value "Host"
     And request contains "filter[asset_name]" parameter with value "unknown-host"
     When the request is sent
@@ -473,7 +475,8 @@ Feature: Security Monitoring
 
   @team:DataDog/asm-vm
   Scenario: Get SBOM returns "OK" response
-    Given new "GetSBOM" request
+    Given operation "GetSBOM" enabled
+    And new "GetSBOM" request
     And request contains "asset_type" parameter with value "Repository"
     And request contains "filter[asset_name]" parameter with value "github.com/datadog/datadog-agent"
     When the request is sent

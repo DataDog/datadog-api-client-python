@@ -291,6 +291,7 @@ class Configuration:
                 "v2.get_finding": False,
                 "v2.get_historical_job": False,
                 "v2.get_rule_version_history": False,
+                "v2.get_sbom": False,
                 "v2.list_findings": False,
                 "v2.list_historical_jobs": False,
                 "v2.mute_findings": False,
