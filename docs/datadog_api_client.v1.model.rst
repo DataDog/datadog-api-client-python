@@ -396,6 +396,34 @@ datadog\_api\_client.v1.model.check\_status\_widget\_definition\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.column\_order\_object module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.column_order_object
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.column\_order\_object\_order module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.column_order_object_order
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.column\_order\_object\_type module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.column_order_object_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.column\_sort\_object module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.column_sort_object
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.content\_encoding module
 ------------------------------------------------------
 

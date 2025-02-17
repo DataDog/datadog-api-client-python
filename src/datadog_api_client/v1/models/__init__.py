@@ -54,6 +54,10 @@ from datadog_api_client.v1.model.check_can_delete_slo_response import CheckCanDe
 from datadog_api_client.v1.model.check_can_delete_slo_response_data import CheckCanDeleteSLOResponseData
 from datadog_api_client.v1.model.check_status_widget_definition import CheckStatusWidgetDefinition
 from datadog_api_client.v1.model.check_status_widget_definition_type import CheckStatusWidgetDefinitionType
+from datadog_api_client.v1.model.column_order_object import ColumnOrderObject
+from datadog_api_client.v1.model.column_order_object_order import ColumnOrderObjectOrder
+from datadog_api_client.v1.model.column_order_object_type import ColumnOrderObjectType
+from datadog_api_client.v1.model.column_sort_object import ColumnSortObject
 from datadog_api_client.v1.model.content_encoding import ContentEncoding
 from datadog_api_client.v1.model.creator import Creator
 from datadog_api_client.v1.model.dashboard import Dashboard
@@ -1120,6 +1124,10 @@ __all__ = [
     "CheckCanDeleteSLOResponseData",
     "CheckStatusWidgetDefinition",
     "CheckStatusWidgetDefinitionType",
+    "ColumnOrderObject",
+    "ColumnOrderObjectOrder",
+    "ColumnOrderObjectType",
+    "ColumnSortObject",
     "ContentEncoding",
     "Creator",
     "Dashboard",
