@@ -1798,6 +1798,43 @@
       "type": "idempotent"
     }
   },
+  "ListApplicationSecurityExclusionFilters": {
+    "tag": "Application Security",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateApplicationSecurityExclusionFilter": {
+    "tag": "Application Security",
+    "undo": {
+      "operationId": "DeleteApplicationSecurityExclusionFilter",
+      "parameters": [
+        {
+          "name": "exclusion_filter_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteApplicationSecurityExclusionFilter": {
+    "tag": "Application Security",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetApplicationSecurityExclusionFilter": {
+    "tag": "Application Security",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateApplicationSecurityExclusionFilter": {
+    "tag": "Application Security",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListCSMThreatsAgentRules": {
     "tag": "CSM Threats",
     "undo": {

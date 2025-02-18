@@ -471,6 +471,18 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"exclusion_filter\",\n    \"attributes\": {\n      \"description\": \"My Exclusion Filter\",\n      \"enabled\": true,\n      \"path_glob\": \"*\",\n      \"parameters\": [\n        \"list.search.query\"\n      ],\n      \"rules_target\": [\n        {\n          \"tags\": {\n            \"category\":\"attack_attempt\",\n            \"type\":\"xss\"\n          }\n        }\n      ],\n      \"scope\": [\n        {\n          \"env\": \"staging\",\n          \"service\": \"event-query\"\n        }\n      ]\n    }\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"exclusion_filter\" in the system",
+    "key": "exclusion_filter",
+    "tag": "Application Security",
+    "operationId": "CreateApplicationSecurityExclusionFilter"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"type\": \"agent_rule\",\n    \"attributes\": {\n      \"name\": \"{{ unique_lower_alnum }}\",\n      \"description\": \"My Agent rule\",\n      \"expression\": \"exec.file.name == \\\"sh\\\"\",\n      \"enabled\": true\n     }\n  }\n}"
       }
     ],
