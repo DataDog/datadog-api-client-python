@@ -97,7 +97,7 @@ Feature: Okta Integration
   Scenario: Update Okta account returns "Bad Request" response
     Given new "UpdateOktaAccount" request
     And request contains "account_id" parameter from "REPLACE.ME"
-    And body with value {}
+    And body with value {"data": {"attributes": {"auth_method": "oauth", "domain": "https://dev-test.okta.com/"}, "type": "okta-accounts"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -105,7 +105,7 @@ Feature: Okta Integration
   Scenario: Update Okta account returns "Not Found" response
     Given new "UpdateOktaAccount" request
     And request contains "account_id" parameter from "REPLACE.ME"
-    And body with value {}
+    And body with value {"data": {"attributes": {"auth_method": "oauth", "domain": "https://dev-test.okta.com/"}, "type": "okta-accounts"}}
     When the request is sent
     Then the response status is 404 Not Found
 

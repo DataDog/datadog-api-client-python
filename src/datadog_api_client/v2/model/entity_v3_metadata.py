@@ -18,6 +18,9 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.entity_v3_metadata_additional_owners_items import (
+        EntityV3MetadataAdditionalOwnersItems,
+    )
     from datadog_api_client.v2.model.entity_v3_metadata_contacts_items import EntityV3MetadataContactsItems
     from datadog_api_client.v2.model.entity_v3_metadata_links_items import EntityV3MetadataLinksItems
 
@@ -41,11 +44,14 @@ class EntityV3Metadata(ModelNormal):
 
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.entity_v3_metadata_additional_owners_items import (
+            EntityV3MetadataAdditionalOwnersItems,
+        )
         from datadog_api_client.v2.model.entity_v3_metadata_contacts_items import EntityV3MetadataContactsItems
         from datadog_api_client.v2.model.entity_v3_metadata_links_items import EntityV3MetadataLinksItems
 
         return {
-            "additional_owners": ([bool, date, datetime, dict, float, int, list, str, UUID, none_type],),
+            "additional_owners": ([EntityV3MetadataAdditionalOwnersItems],),
             "contacts": ([EntityV3MetadataContactsItems],),
             "description": (str,),
             "display_name": (str,),
@@ -92,7 +98,7 @@ class EntityV3Metadata(ModelNormal):
     def __init__(
         self_,
         name: str,
-        additional_owners: Union[List[Any], UnsetType] = unset,
+        additional_owners: Union[List[EntityV3MetadataAdditionalOwnersItems], UnsetType] = unset,
         contacts: Union[List[EntityV3MetadataContactsItems], UnsetType] = unset,
         description: Union[str, UnsetType] = unset,
         display_name: Union[str, UnsetType] = unset,
@@ -109,7 +115,7 @@ class EntityV3Metadata(ModelNormal):
         The definition of Entity V3 Metadata object.
 
         :param additional_owners: The additional owners of the entity, usually a team.
-        :type additional_owners: [bool, date, datetime, dict, float, int, list, str, UUID, none_type], optional
+        :type additional_owners: [EntityV3MetadataAdditionalOwnersItems], optional
 
         :param contacts: A list of contacts for the entity.
         :type contacts: [EntityV3MetadataContactsItems], optional
