@@ -100,6 +100,39 @@ from datadog_api_client.v2.model.application_key_update_data import ApplicationK
 from datadog_api_client.v2.model.application_key_update_request import ApplicationKeyUpdateRequest
 from datadog_api_client.v2.model.application_keys_sort import ApplicationKeysSort
 from datadog_api_client.v2.model.application_keys_type import ApplicationKeysType
+from datadog_api_client.v2.model.application_security_exclusion_filter_attributes import (
+    ApplicationSecurityExclusionFilterAttributes,
+)
+from datadog_api_client.v2.model.application_security_exclusion_filter_metadata import (
+    ApplicationSecurityExclusionFilterMetadata,
+)
+from datadog_api_client.v2.model.application_security_exclusion_filter_on_match import (
+    ApplicationSecurityExclusionFilterOnMatch,
+)
+from datadog_api_client.v2.model.application_security_exclusion_filter_request import (
+    ApplicationSecurityExclusionFilterRequest,
+)
+from datadog_api_client.v2.model.application_security_exclusion_filter_resource import (
+    ApplicationSecurityExclusionFilterResource,
+)
+from datadog_api_client.v2.model.application_security_exclusion_filter_response import (
+    ApplicationSecurityExclusionFilterResponse,
+)
+from datadog_api_client.v2.model.application_security_exclusion_filter_rules_target import (
+    ApplicationSecurityExclusionFilterRulesTarget,
+)
+from datadog_api_client.v2.model.application_security_exclusion_filter_rules_target_tags import (
+    ApplicationSecurityExclusionFilterRulesTargetTags,
+)
+from datadog_api_client.v2.model.application_security_exclusion_filter_scope import (
+    ApplicationSecurityExclusionFilterScope,
+)
+from datadog_api_client.v2.model.application_security_exclusion_filter_type import (
+    ApplicationSecurityExclusionFilterType,
+)
+from datadog_api_client.v2.model.application_security_exclusion_filters_response import (
+    ApplicationSecurityExclusionFiltersResponse,
+)
 from datadog_api_client.v2.model.apps_sort_field import AppsSortField
 from datadog_api_client.v2.model.asset import Asset
 from datadog_api_client.v2.model.asset_attributes import AssetAttributes
@@ -2577,6 +2610,17 @@ __all__ = [
     "ApplicationKeyUpdateRequest",
     "ApplicationKeysSort",
     "ApplicationKeysType",
+    "ApplicationSecurityExclusionFilterAttributes",
+    "ApplicationSecurityExclusionFilterMetadata",
+    "ApplicationSecurityExclusionFilterOnMatch",
+    "ApplicationSecurityExclusionFilterRequest",
+    "ApplicationSecurityExclusionFilterResource",
+    "ApplicationSecurityExclusionFilterResponse",
+    "ApplicationSecurityExclusionFilterRulesTarget",
+    "ApplicationSecurityExclusionFilterRulesTargetTags",
+    "ApplicationSecurityExclusionFilterScope",
+    "ApplicationSecurityExclusionFilterType",
+    "ApplicationSecurityExclusionFiltersResponse",
     "AppsSortField",
     "Asset",
     "AssetAttributes",

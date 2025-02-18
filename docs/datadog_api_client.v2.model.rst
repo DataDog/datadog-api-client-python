@@ -389,6 +389,83 @@ datadog\_api\_client.v2.model.application\_keys\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.application\_security\_exclusion\_filter\_attributes module
+-----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_exclusion_filter_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.application\_security\_exclusion\_filter\_metadata module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_exclusion_filter_metadata
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.application\_security\_exclusion\_filter\_on\_match module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_exclusion_filter_on_match
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.application\_security\_exclusion\_filter\_request module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_exclusion_filter_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.application\_security\_exclusion\_filter\_resource module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_exclusion_filter_resource
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.application\_security\_exclusion\_filter\_response module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_exclusion_filter_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.application\_security\_exclusion\_filter\_rules\_target module
+--------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_exclusion_filter_rules_target
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.application\_security\_exclusion\_filter\_rules\_target\_tags module
+--------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_exclusion_filter_rules_target_tags
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.application\_security\_exclusion\_filter\_scope module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_exclusion_filter_scope
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.application\_security\_exclusion\_filter\_type module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_exclusion_filter_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.application\_security\_exclusion\_filters\_response module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_exclusion_filters_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.apps\_sort\_field module
 ------------------------------------------------------
 
