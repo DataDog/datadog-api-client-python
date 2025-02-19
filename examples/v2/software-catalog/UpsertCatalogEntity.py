@@ -14,6 +14,7 @@ from datadog_api_client.v2.model.entity_v3_datadog_performance import EntityV3Da
 from datadog_api_client.v2.model.entity_v3_datadog_pipelines import EntityV3DatadogPipelines
 from datadog_api_client.v2.model.entity_v3_integrations import EntityV3Integrations
 from datadog_api_client.v2.model.entity_v3_metadata import EntityV3Metadata
+from datadog_api_client.v2.model.entity_v3_metadata_additional_owners_items import EntityV3MetadataAdditionalOwnersItems
 from datadog_api_client.v2.model.entity_v3_metadata_contacts_items import EntityV3MetadataContactsItems
 from datadog_api_client.v2.model.entity_v3_metadata_links_items import EntityV3MetadataLinksItems
 from datadog_api_client.v2.model.entity_v3_service import EntityV3Service
@@ -52,7 +53,11 @@ body = EntityV3Service(
     ),
     kind=EntityV3ServiceKind.SERVICE,
     metadata=EntityV3Metadata(
-        additional_owners=[],
+        additional_owners=[
+            EntityV3MetadataAdditionalOwnersItems(
+                name="",
+            ),
+        ],
         contacts=[
             EntityV3MetadataContactsItems(
                 contact="https://slack/",
