@@ -2949,6 +2949,42 @@
         </li></ul>
             </nav>
         </li>
+        <li class="md-nav__item"><a href="#module-datadog_api_client.v1.model.number_format_unit" class="md-nav__link">datadog_api_client.v1.model.number_format_unit module</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v1.model.number_format_unit.NumberFormatUnit" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">NumberFormatUnit</span></code></a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#module-datadog_api_client.v1.model.number_format_unit_canonical" class="md-nav__link">datadog_api_client.v1.model.number_format_unit_canonical module</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v1.model.number_format_unit_canonical.NumberFormatUnitCanonical" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">NumberFormatUnitCanonical</span></code></a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#module-datadog_api_client.v1.model.number_format_unit_custom" class="md-nav__link">datadog_api_client.v1.model.number_format_unit_custom module</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v1.model.number_format_unit_custom.NumberFormatUnitCustom" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">NumberFormatUnitCustom</span></code></a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#module-datadog_api_client.v1.model.number_format_unit_custom_type" class="md-nav__link">datadog_api_client.v1.model.number_format_unit_custom_type module</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v1.model.number_format_unit_custom_type.NumberFormatUnitCustomType" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">NumberFormatUnitCustomType</span></code></a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#module-datadog_api_client.v1.model.number_format_unit_scale" class="md-nav__link">datadog_api_client.v1.model.number_format_unit_scale module</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v1.model.number_format_unit_scale.NumberFormatUnitScale" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">NumberFormatUnitScale</span></code></a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#module-datadog_api_client.v1.model.number_format_unit_scale_type" class="md-nav__link">datadog_api_client.v1.model.number_format_unit_scale_type module</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v1.model.number_format_unit_scale_type.NumberFormatUnitScaleType" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">NumberFormatUnitScaleType</span></code></a>
+        </li></ul>
+            </nav>
+        </li>
         <li class="md-nav__item"><a href="#module-datadog_api_client.v1.model.on_missing_data_option" class="md-nav__link">datadog_api_client.v1.model.on_missing_data_option module</a><nav class="md-nav">
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#datadog_api_client.v1.model.on_missing_data_option.OnMissingDataOption" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">OnMissingDataOption</span></code></a>
@@ -6086,6 +6122,12 @@
         <li class="md-nav__item"><a href="#module-datadog_api_client.v1.model.widget_node_type" class="md-nav__link">datadog_api_client.v1.model.widget_node_type module</a><nav class="md-nav">
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#datadog_api_client.v1.model.widget_node_type.WidgetNodeType" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">WidgetNodeType</span></code></a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#module-datadog_api_client.v1.model.widget_number_format" class="md-nav__link">datadog_api_client.v1.model.widget_number_format module</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v1.model.widget_number_format.WidgetNumberFormat" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">WidgetNumberFormat</span></code></a>
         </li></ul>
             </nav>
         </li>
@@ -14789,6 +14831,131 @@ type conversion is done.</p></li>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>value</strong> (<em>str</em>) – Must be one of [“canceled”, “expired”].</p></li>
+<li><p><strong>_check_type</strong> (<em>bool</em>) – If True, values for parameters in openapi_types
+will be type checked and a TypeError will be raised if the wrong type is input.
+Defaults to True.</p></li>
+<li><p><strong>_path_to_item</strong> (<em>tuple/list</em>) – This is a list of keys or values to drill down to
+the model in received_data when deserializing a response.</p></li>
+<li><p><strong>_spec_property_naming</strong> (<em>bool</em>) – True if the variable names in the input
+data are serialized names, as specified in the OpenAPI document.  False if the
+variable names in the input data are pythonic names, e.g. snake case (default).</p></li>
+<li><p><strong>_configuration</strong> (<a class="reference internal" href="datadog_api_client.v1.html#datadog_api_client.v1.Configuration" title="datadog_api_client.v1.Configuration"><em>Configuration</em></a>) – The instance to use when deserializing a
+file_type parameter.  If passed, type conversion is attempted If omitted no
+type conversion is done.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+</section>
+<section id="module-datadog_api_client.v1.model.number_format_unit">
+<span id="datadog-api-client-v1-model-number-format-unit-module"></span><h2 id="module-datadog_api_client.v1.model.number_format_unit">datadog_api_client.v1.model.number_format_unit module<a class="headerlink" href="#module-datadog_api_client.v1.model.number_format_unit" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datadog_api_client.v1.model.number_format_unit.NumberFormatUnit">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">NumberFormatUnit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datadog_api_client.v1.model.number_format_unit.NumberFormatUnit" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.ModelComposed" title="datadog_api_client.model_utils.ModelComposed"><code class="xref py py-class docutils literal notranslate"><span class="pre">ModelComposed</span></code></a></p>
+<p>Number format unit.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>per_unit_name</strong> (<em>str</em><em>, </em><em>optional</em>) – The name of the unit per item.</p></li>
+<li><p><strong>type</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.number_format_unit_scale_type.NumberFormatUnitScaleType" title="datadog_api_client.v1.model.number_format_unit_scale_type.NumberFormatUnitScaleType"><em>NumberFormatUnitScaleType</em></a><em>, </em><em>optional</em>) – The type of unit scale.</p></li>
+<li><p><strong>unit_name</strong> (<em>str</em><em>, </em><em>optional</em>) – The name of the unit.</p></li>
+<li><p><strong>label</strong> (<em>str</em><em>, </em><em>optional</em>) – The label for the custom unit.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+</section>
+<section id="module-datadog_api_client.v1.model.number_format_unit_canonical">
+<span id="datadog-api-client-v1-model-number-format-unit-canonical-module"></span><h2 id="module-datadog_api_client.v1.model.number_format_unit_canonical">datadog_api_client.v1.model.number_format_unit_canonical module<a class="headerlink" href="#module-datadog_api_client.v1.model.number_format_unit_canonical" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datadog_api_client.v1.model.number_format_unit_canonical.NumberFormatUnitCanonical">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">NumberFormatUnitCanonical</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datadog_api_client.v1.model.number_format_unit_canonical.NumberFormatUnitCanonical" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.ModelNormal" title="datadog_api_client.model_utils.ModelNormal"><code class="xref py py-class docutils literal notranslate"><span class="pre">ModelNormal</span></code></a></p>
+<p>Canonical unit.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>per_unit_name</strong> (<em>str</em><em>, </em><em>optional</em>) – The name of the unit per item.</p></li>
+<li><p><strong>type</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.number_format_unit_scale_type.NumberFormatUnitScaleType" title="datadog_api_client.v1.model.number_format_unit_scale_type.NumberFormatUnitScaleType"><em>NumberFormatUnitScaleType</em></a><em>, </em><em>optional</em>) – The type of unit scale.</p></li>
+<li><p><strong>unit_name</strong> (<em>str</em><em>, </em><em>optional</em>) – The name of the unit.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+</section>
+<section id="module-datadog_api_client.v1.model.number_format_unit_custom">
+<span id="datadog-api-client-v1-model-number-format-unit-custom-module"></span><h2 id="module-datadog_api_client.v1.model.number_format_unit_custom">datadog_api_client.v1.model.number_format_unit_custom module<a class="headerlink" href="#module-datadog_api_client.v1.model.number_format_unit_custom" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datadog_api_client.v1.model.number_format_unit_custom.NumberFormatUnitCustom">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">NumberFormatUnitCustom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datadog_api_client.v1.model.number_format_unit_custom.NumberFormatUnitCustom" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.ModelNormal" title="datadog_api_client.model_utils.ModelNormal"><code class="xref py py-class docutils literal notranslate"><span class="pre">ModelNormal</span></code></a></p>
+<p>Custom unit.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>label</strong> (<em>str</em><em>, </em><em>optional</em>) – The label for the custom unit.</p></li>
+<li><p><strong>type</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.number_format_unit_custom_type.NumberFormatUnitCustomType" title="datadog_api_client.v1.model.number_format_unit_custom_type.NumberFormatUnitCustomType"><em>NumberFormatUnitCustomType</em></a><em>, </em><em>optional</em>) – The type of custom unit.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+</section>
+<section id="module-datadog_api_client.v1.model.number_format_unit_custom_type">
+<span id="datadog-api-client-v1-model-number-format-unit-custom-type-module"></span><h2 id="module-datadog_api_client.v1.model.number_format_unit_custom_type">datadog_api_client.v1.model.number_format_unit_custom_type module<a class="headerlink" href="#module-datadog_api_client.v1.model.number_format_unit_custom_type" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datadog_api_client.v1.model.number_format_unit_custom_type.NumberFormatUnitCustomType">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">NumberFormatUnitCustomType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datadog_api_client.v1.model.number_format_unit_custom_type.NumberFormatUnitCustomType" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.ModelSimple" title="datadog_api_client.model_utils.ModelSimple"><code class="xref py py-class docutils literal notranslate"><span class="pre">ModelSimple</span></code></a></p>
+<p>The type of custom unit.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> (<em>str</em>) – If omitted defaults to “custom_unit_label”. Must be one of [“custom_unit_label”].</p></li>
+<li><p><strong>_check_type</strong> (<em>bool</em>) – If True, values for parameters in openapi_types
+will be type checked and a TypeError will be raised if the wrong type is input.
+Defaults to True.</p></li>
+<li><p><strong>_path_to_item</strong> (<em>tuple/list</em>) – This is a list of keys or values to drill down to
+the model in received_data when deserializing a response.</p></li>
+<li><p><strong>_spec_property_naming</strong> (<em>bool</em>) – True if the variable names in the input
+data are serialized names, as specified in the OpenAPI document.  False if the
+variable names in the input data are pythonic names, e.g. snake case (default).</p></li>
+<li><p><strong>_configuration</strong> (<a class="reference internal" href="datadog_api_client.v1.html#datadog_api_client.v1.Configuration" title="datadog_api_client.v1.Configuration"><em>Configuration</em></a>) – The instance to use when deserializing a
+file_type parameter.  If passed, type conversion is attempted If omitted no
+type conversion is done.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+</section>
+<section id="module-datadog_api_client.v1.model.number_format_unit_scale">
+<span id="datadog-api-client-v1-model-number-format-unit-scale-module"></span><h2 id="module-datadog_api_client.v1.model.number_format_unit_scale">datadog_api_client.v1.model.number_format_unit_scale module<a class="headerlink" href="#module-datadog_api_client.v1.model.number_format_unit_scale" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datadog_api_client.v1.model.number_format_unit_scale.NumberFormatUnitScale">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">NumberFormatUnitScale</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datadog_api_client.v1.model.number_format_unit_scale.NumberFormatUnitScale" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.ModelNormal" title="datadog_api_client.model_utils.ModelNormal"><code class="xref py py-class docutils literal notranslate"><span class="pre">ModelNormal</span></code></a></p>
+<p>The definition of <code class="docutils literal notranslate"><span class="pre">NumberFormatUnitScale</span></code> object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>type</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.number_format_unit_scale_type.NumberFormatUnitScaleType" title="datadog_api_client.v1.model.number_format_unit_scale_type.NumberFormatUnitScaleType"><em>NumberFormatUnitScaleType</em></a><em>, </em><em>optional</em>) – The type of unit scale.</p></li>
+<li><p><strong>unit_name</strong> (<em>str</em><em>, </em><em>optional</em>) – The name of the unit.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+</section>
+<section id="module-datadog_api_client.v1.model.number_format_unit_scale_type">
+<span id="datadog-api-client-v1-model-number-format-unit-scale-type-module"></span><h2 id="module-datadog_api_client.v1.model.number_format_unit_scale_type">datadog_api_client.v1.model.number_format_unit_scale_type module<a class="headerlink" href="#module-datadog_api_client.v1.model.number_format_unit_scale_type" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datadog_api_client.v1.model.number_format_unit_scale_type.NumberFormatUnitScaleType">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">NumberFormatUnitScaleType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datadog_api_client.v1.model.number_format_unit_scale_type.NumberFormatUnitScaleType" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.ModelSimple" title="datadog_api_client.model_utils.ModelSimple"><code class="xref py py-class docutils literal notranslate"><span class="pre">ModelSimple</span></code></a></p>
+<p>The type of unit scale.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> (<em>str</em>) – If omitted defaults to “canonical_unit”. Must be one of [“canonical_unit”].</p></li>
 <li><p><strong>_check_type</strong> (<em>bool</em>) – If True, values for parameters in openapi_types
 will be type checked and a TypeError will be raised if the wrong type is input.
 Defaults to True.</p></li>
@@ -26227,6 +26394,7 @@ type conversion is done.</p></li>
 <li><p><strong>conditional_formats</strong> (<em>[</em><a class="reference internal" href="#datadog_api_client.v1.model.widget_conditional_format.WidgetConditionalFormat" title="datadog_api_client.v1.model.widget_conditional_format.WidgetConditionalFormat"><em>WidgetConditionalFormat</em></a><em>]</em><em>, </em><em>optional</em>) – List of conditional formats.</p></li>
 <li><p><strong>formula</strong> (<em>str</em>) – String expression built from queries, formulas, and functions.</p></li>
 <li><p><strong>limit</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.widget_formula_limit.WidgetFormulaLimit" title="datadog_api_client.v1.model.widget_formula_limit.WidgetFormulaLimit"><em>WidgetFormulaLimit</em></a><em>, </em><em>optional</em>) – Options for limiting results returned.</p></li>
+<li><p><strong>number_format</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.widget_number_format.WidgetNumberFormat" title="datadog_api_client.v1.model.widget_number_format.WidgetNumberFormat"><em>WidgetNumberFormat</em></a><em>, </em><em>optional</em>) – Number format options for the widget.</p></li>
 <li><p><strong>style</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.widget_formula_style.WidgetFormulaStyle" title="datadog_api_client.v1.model.widget_formula_style.WidgetFormulaStyle"><em>WidgetFormulaStyle</em></a><em>, </em><em>optional</em>) – Styling options for widget formulas.</p></li>
 </ul>
 </dd>
@@ -26809,6 +26977,23 @@ variable names in the input data are pythonic names, e.g. snake case (default).<
 <li><p><strong>_configuration</strong> (<a class="reference internal" href="datadog_api_client.v1.html#datadog_api_client.v1.Configuration" title="datadog_api_client.v1.Configuration"><em>Configuration</em></a>) – The instance to use when deserializing a
 file_type parameter.  If passed, type conversion is attempted If omitted no
 type conversion is done.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+</section>
+<section id="module-datadog_api_client.v1.model.widget_number_format">
+<span id="datadog-api-client-v1-model-widget-number-format-module"></span><h2 id="module-datadog_api_client.v1.model.widget_number_format">datadog_api_client.v1.model.widget_number_format module<a class="headerlink" href="#module-datadog_api_client.v1.model.widget_number_format" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datadog_api_client.v1.model.widget_number_format.WidgetNumberFormat">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">WidgetNumberFormat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datadog_api_client.v1.model.widget_number_format.WidgetNumberFormat" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.ModelNormal" title="datadog_api_client.model_utils.ModelNormal"><code class="xref py py-class docutils literal notranslate"><span class="pre">ModelNormal</span></code></a></p>
+<p>Number format options for the widget.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>unit</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.number_format_unit.NumberFormatUnit" title="datadog_api_client.v1.model.number_format_unit.NumberFormatUnit"><em>NumberFormatUnit</em></a><em>, </em><em>optional</em>) – Number format unit.</p></li>
+<li><p><strong>unit_scale</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.number_format_unit_scale.NumberFormatUnitScale" title="datadog_api_client.v1.model.number_format_unit_scale.NumberFormatUnitScale"><em>NumberFormatUnitScale</em></a><em>, </em><em>none_type</em><em>, </em><em>optional</em>) – The definition of <code class="docutils literal notranslate"><span class="pre">NumberFormatUnitScale</span></code> object.</p></li>
 </ul>
 </dd>
 </dl>

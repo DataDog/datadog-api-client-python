@@ -2650,6 +2650,48 @@ datadog\_api\_client.v1.model.notify\_end\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.number\_format\_unit module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.number_format_unit
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.number\_format\_unit\_canonical module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.number_format_unit_canonical
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.number\_format\_unit\_custom module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.number_format_unit_custom
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.number\_format\_unit\_custom\_type module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.number_format_unit_custom_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.number\_format\_unit\_scale module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.number_format_unit_scale
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.number\_format\_unit\_scale\_type module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.number_format_unit_scale_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.on\_missing\_data\_option module
 --------------------------------------------------------------
 
@@ -6301,6 +6343,13 @@ datadog\_api\_client.v1.model.widget\_node\_type module
 -------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.widget_node_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.widget\_number\_format module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.widget_number_format
    :members:
    :show-inheritance:
 
