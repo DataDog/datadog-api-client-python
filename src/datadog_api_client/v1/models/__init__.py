@@ -438,6 +438,12 @@ from datadog_api_client.v1.model.notebooks_response_meta import NotebooksRespons
 from datadog_api_client.v1.model.notebooks_response_page import NotebooksResponsePage
 from datadog_api_client.v1.model.notify_end_state import NotifyEndState
 from datadog_api_client.v1.model.notify_end_type import NotifyEndType
+from datadog_api_client.v1.model.number_format_unit import NumberFormatUnit
+from datadog_api_client.v1.model.number_format_unit_canonical import NumberFormatUnitCanonical
+from datadog_api_client.v1.model.number_format_unit_custom import NumberFormatUnitCustom
+from datadog_api_client.v1.model.number_format_unit_custom_type import NumberFormatUnitCustomType
+from datadog_api_client.v1.model.number_format_unit_scale import NumberFormatUnitScale
+from datadog_api_client.v1.model.number_format_unit_scale_type import NumberFormatUnitScaleType
 from datadog_api_client.v1.model.on_missing_data_option import OnMissingDataOption
 from datadog_api_client.v1.model.org_downgraded_response import OrgDowngradedResponse
 from datadog_api_client.v1.model.organization import Organization
@@ -1045,6 +1051,7 @@ from datadog_api_client.v1.model.widget_new_fixed_span_type import WidgetNewFixe
 from datadog_api_client.v1.model.widget_new_live_span import WidgetNewLiveSpan
 from datadog_api_client.v1.model.widget_new_live_span_type import WidgetNewLiveSpanType
 from datadog_api_client.v1.model.widget_node_type import WidgetNodeType
+from datadog_api_client.v1.model.widget_number_format import WidgetNumberFormat
 from datadog_api_client.v1.model.widget_order_by import WidgetOrderBy
 from datadog_api_client.v1.model.widget_palette import WidgetPalette
 from datadog_api_client.v1.model.widget_request_style import WidgetRequestStyle
@@ -1442,6 +1449,12 @@ __all__ = [
     "NotebooksResponsePage",
     "NotifyEndState",
     "NotifyEndType",
+    "NumberFormatUnit",
+    "NumberFormatUnitCanonical",
+    "NumberFormatUnitCustom",
+    "NumberFormatUnitCustomType",
+    "NumberFormatUnitScale",
+    "NumberFormatUnitScaleType",
     "OnMissingDataOption",
     "OrgDowngradedResponse",
     "Organization",
@@ -1965,6 +1978,7 @@ __all__ = [
     "WidgetNewLiveSpan",
     "WidgetNewLiveSpanType",
     "WidgetNodeType",
+    "WidgetNumberFormat",
     "WidgetOrderBy",
     "WidgetPalette",
     "WidgetRequestStyle",

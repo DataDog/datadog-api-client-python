@@ -818,6 +818,18 @@ Feature: Dashboards
     And the response "widgets[0].definition.requests[0].q" is equal to "sum:trace.test.errors{env:prod,service:datadog-api-spec} by {resource_name}.as_count()"
 
   @team:DataDog/dashboards-backend
+  Scenario: Create a new dashboard with timeseries widget with custom_unit
+    Given new "CreateDashboard" request
+    And body from file "dashboards_json_payload/timeseries_widget_with_custom_unit.json"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.type" is equal to "timeseries"
+    And the response "widgets[0].definition.requests[0].formulas[0].number_format.unit_scale.type" is equal to "canonical_unit"
+    And the response "widgets[0].definition.requests[0].formulas[0].number_format.unit_scale.unit_name" is equal to "apdex"
+    And the response "widgets[0].definition.requests[0].formulas[0].number_format.unit.type" is equal to "canonical_unit"
+    And the response "widgets[0].definition.requests[0].formulas[0].number_format.unit.unit_name" is equal to "fraction"
+
+  @team:DataDog/dashboards-backend
   Scenario: Create a new dashboard with toplist widget
     Given new "CreateDashboard" request
     And body from file "dashboards_json_payload/toplist_widget.json"

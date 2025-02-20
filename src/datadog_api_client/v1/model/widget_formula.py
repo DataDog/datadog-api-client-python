@@ -17,6 +17,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.table_widget_cell_display_mode import TableWidgetCellDisplayMode
     from datadog_api_client.v1.model.widget_conditional_format import WidgetConditionalFormat
     from datadog_api_client.v1.model.widget_formula_limit import WidgetFormulaLimit
+    from datadog_api_client.v1.model.widget_number_format import WidgetNumberFormat
     from datadog_api_client.v1.model.widget_formula_style import WidgetFormulaStyle
 
 
@@ -26,6 +27,7 @@ class WidgetFormula(ModelNormal):
         from datadog_api_client.v1.model.table_widget_cell_display_mode import TableWidgetCellDisplayMode
         from datadog_api_client.v1.model.widget_conditional_format import WidgetConditionalFormat
         from datadog_api_client.v1.model.widget_formula_limit import WidgetFormulaLimit
+        from datadog_api_client.v1.model.widget_number_format import WidgetNumberFormat
         from datadog_api_client.v1.model.widget_formula_style import WidgetFormulaStyle
 
         return {
@@ -34,6 +36,7 @@ class WidgetFormula(ModelNormal):
             "conditional_formats": ([WidgetConditionalFormat],),
             "formula": (str,),
             "limit": (WidgetFormulaLimit,),
+            "number_format": (WidgetNumberFormat,),
             "style": (WidgetFormulaStyle,),
         }
 
@@ -43,6 +46,7 @@ class WidgetFormula(ModelNormal):
         "conditional_formats": "conditional_formats",
         "formula": "formula",
         "limit": "limit",
+        "number_format": "number_format",
         "style": "style",
     }
 
@@ -53,6 +57,7 @@ class WidgetFormula(ModelNormal):
         cell_display_mode: Union[TableWidgetCellDisplayMode, UnsetType] = unset,
         conditional_formats: Union[List[WidgetConditionalFormat], UnsetType] = unset,
         limit: Union[WidgetFormulaLimit, UnsetType] = unset,
+        number_format: Union[WidgetNumberFormat, UnsetType] = unset,
         style: Union[WidgetFormulaStyle, UnsetType] = unset,
         **kwargs,
     ):
@@ -74,6 +79,9 @@ class WidgetFormula(ModelNormal):
         :param limit: Options for limiting results returned.
         :type limit: WidgetFormulaLimit, optional
 
+        :param number_format: Number format options for the widget.
+        :type number_format: WidgetNumberFormat, optional
+
         :param style: Styling options for widget formulas.
         :type style: WidgetFormulaStyle, optional
         """
@@ -85,6 +93,8 @@ class WidgetFormula(ModelNormal):
             kwargs["conditional_formats"] = conditional_formats
         if limit is not unset:
             kwargs["limit"] = limit
+        if number_format is not unset:
+            kwargs["number_format"] = number_format
         if style is not unset:
             kwargs["style"] = style
         super().__init__(kwargs)
