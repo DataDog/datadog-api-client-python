@@ -32,7 +32,7 @@ class SyntheticsTriggerBody(ModelNormal):
         """
         Object describing the Synthetic tests to trigger.
 
-        :param tests: Individual Synthetic test.
+        :param tests: List of Synthetic tests.
         :type tests: [SyntheticsTriggerTest]
         """
         super().__init__(kwargs)
