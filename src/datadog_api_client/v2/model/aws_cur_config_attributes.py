@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, Union
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -11,6 +11,10 @@ from datadog_api_client.model_utils import (
     unset,
     UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.account_filtering_config import AccountFilteringConfig
 
 
 class AwsCURConfigAttributes(ModelNormal):
@@ -25,7 +29,10 @@ class AwsCURConfigAttributes(ModelNormal):
 
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.account_filtering_config import AccountFilteringConfig
+
         return {
+            "account_filters": (AccountFilteringConfig,),
             "account_id": (str,),
             "bucket_name": (str,),
             "bucket_region": (str,),
@@ -40,6 +47,7 @@ class AwsCURConfigAttributes(ModelNormal):
         }
 
     attribute_map = {
+        "account_filters": "account_filters",
         "account_id": "account_id",
         "bucket_name": "bucket_name",
         "bucket_region": "bucket_region",
@@ -61,6 +69,7 @@ class AwsCURConfigAttributes(ModelNormal):
         report_name: str,
         report_prefix: str,
         status: str,
+        account_filters: Union[AccountFilteringConfig, UnsetType] = unset,
         created_at: Union[str, UnsetType] = unset,
         error_messages: Union[List[str], UnsetType] = unset,
         months: Union[int, UnsetType] = unset,
@@ -70,6 +79,9 @@ class AwsCURConfigAttributes(ModelNormal):
     ):
         """
         Attributes for An AWS CUR config.
+
+        :param account_filters: The account filtering configuration.
+        :type account_filters: AccountFilteringConfig, optional
 
         :param account_id: The AWS account ID.
         :type account_id: str
@@ -104,6 +116,8 @@ class AwsCURConfigAttributes(ModelNormal):
         :param updated_at: The timestamp when the AWS CUR config status was updated.
         :type updated_at: str, optional
         """
+        if account_filters is not unset:
+            kwargs["account_filters"] = account_filters
         if created_at is not unset:
             kwargs["created_at"] = created_at
         if error_messages is not unset:

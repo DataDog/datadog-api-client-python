@@ -4,6 +4,13 @@ datadog\_api\_client.v2.model package
 Submodules
 ----------
 
+datadog\_api\_client.v2.model.account\_filtering\_config module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.account_filtering_config
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.action\_connection\_attributes module
 -------------------------------------------------------------------
 
