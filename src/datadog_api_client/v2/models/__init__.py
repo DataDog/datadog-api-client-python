@@ -62,6 +62,7 @@ from datadog_api_client.v2.model.aws_regions_include_all import AWSRegionsInclud
 from datadog_api_client.v2.model.aws_regions_include_only import AWSRegionsIncludeOnly
 from datadog_api_client.v2.model.aws_resources_config import AWSResourcesConfig
 from datadog_api_client.v2.model.aws_traces_config import AWSTracesConfig
+from datadog_api_client.v2.model.account_filtering_config import AccountFilteringConfig
 from datadog_api_client.v2.model.action_connection_attributes import ActionConnectionAttributes
 from datadog_api_client.v2.model.action_connection_attributes_update import ActionConnectionAttributesUpdate
 from datadog_api_client.v2.model.action_connection_data import ActionConnectionData
@@ -2539,6 +2540,7 @@ __all__ = [
     "AWSRegionsIncludeOnly",
     "AWSResourcesConfig",
     "AWSTracesConfig",
+    "AccountFilteringConfig",
     "ActionConnectionAttributes",
     "ActionConnectionAttributesUpdate",
     "ActionConnectionData",
