@@ -299,6 +299,8 @@ from datadog_api_client.v1.model.logs_retention_sum_usage import LogsRetentionSu
 from datadog_api_client.v1.model.logs_service_remapper import LogsServiceRemapper
 from datadog_api_client.v1.model.logs_service_remapper_type import LogsServiceRemapperType
 from datadog_api_client.v1.model.logs_sort import LogsSort
+from datadog_api_client.v1.model.logs_span_remapper import LogsSpanRemapper
+from datadog_api_client.v1.model.logs_span_remapper_type import LogsSpanRemapperType
 from datadog_api_client.v1.model.logs_status_remapper import LogsStatusRemapper
 from datadog_api_client.v1.model.logs_status_remapper_type import LogsStatusRemapperType
 from datadog_api_client.v1.model.logs_string_builder_processor import LogsStringBuilderProcessor
@@ -1345,6 +1347,8 @@ __all__ = [
     "LogsServiceRemapper",
     "LogsServiceRemapperType",
     "LogsSort",
+    "LogsSpanRemapper",
+    "LogsSpanRemapperType",
     "LogsStatusRemapper",
     "LogsStatusRemapperType",
     "LogsStringBuilderProcessor",
