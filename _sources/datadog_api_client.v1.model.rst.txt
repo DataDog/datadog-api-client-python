@@ -1873,6 +1873,20 @@ datadog\_api\_client.v1.model.logs\_sort module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.logs\_span\_remapper module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.logs_span_remapper
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.logs\_span\_remapper\_type module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.logs_span_remapper_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.logs\_status\_remapper module
 -----------------------------------------------------------
 

@@ -2279,6 +2279,18 @@
         </li></ul>
             </nav>
         </li>
+        <li class="md-nav__item"><a href="#module-datadog_api_client.v1.model.logs_span_remapper" class="md-nav__link">datadog_api_client.v1.model.logs_span_remapper module</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v1.model.logs_span_remapper.LogsSpanRemapper" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">LogsSpanRemapper</span></code></a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#module-datadog_api_client.v1.model.logs_span_remapper_type" class="md-nav__link">datadog_api_client.v1.model.logs_span_remapper_type module</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v1.model.logs_span_remapper_type.LogsSpanRemapperType" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">LogsSpanRemapperType</span></code></a>
+        </li></ul>
+            </nav>
+        </li>
         <li class="md-nav__item"><a href="#module-datadog_api_client.v1.model.logs_status_remapper" class="md-nav__link">datadog_api_client.v1.model.logs_status_remapper module</a><nav class="md-nav">
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#datadog_api_client.v1.model.logs_status_remapper.LogsStatusRemapper" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">LogsStatusRemapper</span></code></a>
@@ -12261,6 +12273,57 @@ type conversion is done.</p></li>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>value</strong> (<em>str</em>) – Must be one of [“asc”, “desc”].</p></li>
+<li><p><strong>_check_type</strong> (<em>bool</em>) – If True, values for parameters in openapi_types
+will be type checked and a TypeError will be raised if the wrong type is input.
+Defaults to True.</p></li>
+<li><p><strong>_path_to_item</strong> (<em>tuple/list</em>) – This is a list of keys or values to drill down to
+the model in received_data when deserializing a response.</p></li>
+<li><p><strong>_spec_property_naming</strong> (<em>bool</em>) – True if the variable names in the input
+data are serialized names, as specified in the OpenAPI document.  False if the
+variable names in the input data are pythonic names, e.g. snake case (default).</p></li>
+<li><p><strong>_configuration</strong> (<a class="reference internal" href="datadog_api_client.v1.html#datadog_api_client.v1.Configuration" title="datadog_api_client.v1.Configuration"><em>Configuration</em></a>) – The instance to use when deserializing a
+file_type parameter.  If passed, type conversion is attempted If omitted no
+type conversion is done.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+</section>
+<section id="module-datadog_api_client.v1.model.logs_span_remapper">
+<span id="datadog-api-client-v1-model-logs-span-remapper-module"></span><h2 id="module-datadog_api_client.v1.model.logs_span_remapper">datadog_api_client.v1.model.logs_span_remapper module<a class="headerlink" href="#module-datadog_api_client.v1.model.logs_span_remapper" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datadog_api_client.v1.model.logs_span_remapper.LogsSpanRemapper">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">LogsSpanRemapper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datadog_api_client.v1.model.logs_span_remapper.LogsSpanRemapper" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.ModelNormal" title="datadog_api_client.model_utils.ModelNormal"><code class="xref py py-class docutils literal notranslate"><span class="pre">ModelNormal</span></code></a></p>
+<p>There are two ways to define correlation between application spans and logs:</p>
+<ol class="arabic simple">
+<li><p>Follow the documentation on <a class="reference external" href="https://docs.datadoghq.com/tracing/connect_logs_and_traces">how to inject a span ID in the application logs</a>.
+Log integrations automatically handle all remaining setup steps by default.</p></li>
+<li><p>Use the span remapper processor to define a log attribute as its associated span ID.</p></li>
+</ol>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>is_enabled</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether or not the processor is enabled.</p></li>
+<li><p><strong>name</strong> (<em>str</em><em>, </em><em>optional</em>) – Name of the processor.</p></li>
+<li><p><strong>sources</strong> (<em>[</em><em>str</em><em>]</em><em>, </em><em>optional</em>) – Array of source attributes.</p></li>
+<li><p><strong>type</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.logs_span_remapper_type.LogsSpanRemapperType" title="datadog_api_client.v1.model.logs_span_remapper_type.LogsSpanRemapperType"><em>LogsSpanRemapperType</em></a>) – Type of logs span remapper.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+</section>
+<section id="module-datadog_api_client.v1.model.logs_span_remapper_type">
+<span id="datadog-api-client-v1-model-logs-span-remapper-type-module"></span><h2 id="module-datadog_api_client.v1.model.logs_span_remapper_type">datadog_api_client.v1.model.logs_span_remapper_type module<a class="headerlink" href="#module-datadog_api_client.v1.model.logs_span_remapper_type" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datadog_api_client.v1.model.logs_span_remapper_type.LogsSpanRemapperType">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">LogsSpanRemapperType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datadog_api_client.v1.model.logs_span_remapper_type.LogsSpanRemapperType" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.ModelSimple" title="datadog_api_client.model_utils.ModelSimple"><code class="xref py py-class docutils literal notranslate"><span class="pre">ModelSimple</span></code></a></p>
+<p>Type of logs span remapper.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> (<em>str</em>) – If omitted defaults to “span-id-remapper”. Must be one of [“span-id-remapper”].</p></li>
 <li><p><strong>_check_type</strong> (<em>bool</em>) – If True, values for parameters in openapi_types
 will be type checked and a TypeError will be raised if the wrong type is input.
 Defaults to True.</p></li>
