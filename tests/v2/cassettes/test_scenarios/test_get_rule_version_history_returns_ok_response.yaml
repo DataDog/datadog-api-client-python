@@ -12,7 +12,7 @@ interactions:
   response:
     body:
       string: '{"name":"Test-Get_rule_version_history_returns_OK_response-1738708757","createdAt":1738708757817,"isDefault":false,"isPartner":false,"isEnabled":true,"isBeta":false,"isDeleted":false,"isDeprecated":false,"queries":[{"query":"@test:true","groupByFields":[],"hasOptionalGroupByFields":false,"distinctFields":[],"aggregation":"count","name":""}],"options":{"evaluationWindow":900,"detectionMethod":"threshold","maxSignalDuration":86400,"keepAlive":3600},"cases":[{"name":"","status":"info","notifications":[],"condition":"a
-        \u003e 0"}],"message":"Test rule","tags":[],"hasExtendedTitle":false,"type":"log_detection","filters":[],"version":1,"id":"gvq-qqd-jc7","blocking":false,"metadata":{"entities":null,"sources":null},"creator":{"handle":"","name":""},"updater":{"handle":"","name":""}}'
+        \u003e 0"}],"message":"Test rule","tags":[],"hasExtendedTitle":false,"type":"log_detection","filters":[],"version":1,"id":"gvq-qqd-jc7"}'
     headers:
       content-type:
       - application/json
@@ -28,8 +28,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/gvq-qqd-jc7/version_history
   response:
     body:
-      string: '{"data":{"id":"gvq-qqd-jc7","type":"GetRuleVersionHistoryResponse","attributes":{"count":1,"data":{"1":{"rule":{"name":"Test-Get_rule_version_history_returns_OK_response-1738708757","createdAt":1738708757817,"isDefault":false,"isPartner":false,"isEnabled":true,"isBeta":false,"isDeleted":false,"isDeprecated":false,"queries":[{"query":"@test:true","groupByFields":[],"hasOptionalGroupByFields":false,"distinctFields":[],"aggregation":"count","name":""}],"options":{"evaluationWindow":900,"detectionMethod":"threshold","maxSignalDuration":86400,"keepAlive":3600},"cases":[{"name":"","status":"info","notifications":[],"condition":"a
-        \u003e 0"}],"message":"Test rule","tags":[],"hasExtendedTitle":false,"type":"log_detection","filters":[],"version":1,"id":"gvq-qqd-jc7","blocking":false,"metadata":{"entities":null,"sources":null},"creator":{"handle":"","name":""},"updater":{"handle":"","name":""}},"changes":[]}}}}}'
+      string: '{"data":{"id":"gvq-qqd-jc7","type":"GetRuleVersionHistoryResponse","attributes":{"count":1,"data":{"1":{"rule":{"name":"Test-Get_rule_version_history_returns_OK_response-1738708757","createdAt":1738708757817,"isDefault":false,"isEnabled":true,"isDeleted":false,"queries":[{"query":"@test:true","groupByFields":[],"hasOptionalGroupByFields":false,"distinctFields":[],"aggregation":"count","name":""}],"options":{"evaluationWindow":900,"detectionMethod":"threshold","maxSignalDuration":86400,"keepAlive":3600},"cases":[{"name":"","status":"info","notifications":[],"condition":"a
+        \u003e 0"}],"message":"Test rule","tags":[],"hasExtendedTitle":false,"type":"log_detection","filters":[],"version":1,"id":"gvq-qqd-jc7","metadata":{"entities":null,"sources":null},"creator":{"handle":"","name":""},"updater":{"handle":"","name":""}},"changes":[]}}}}}'
     headers:
       content-type:
       - application/vnd.api+json
