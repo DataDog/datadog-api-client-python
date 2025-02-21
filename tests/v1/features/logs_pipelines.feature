@@ -35,6 +35,13 @@ Feature: Logs Pipelines
     When the request is sent
     Then the response status is 200 OK
 
+  @team:DataDog/event-platform-experience
+  Scenario: Create a pipeline with Span Id Remapper returns "OK" response
+    Given new "CreateLogsPipeline" request
+    And body with value {"filter": {"query": "source:python"}, "name": "testPipeline", "processors": [{"type": "span-id-remapper", "is_enabled" : true, "name" : "test_filter", "sources" : [ "dd.span_id"] }], "tags": []}
+    When the request is sent
+    Then the response status is 200 OK
+
   @generated @skip @team:DataDog/event-platform-experience
   Scenario: Delete a pipeline returns "Bad Request" response
     Given new "DeleteLogsPipeline" request
