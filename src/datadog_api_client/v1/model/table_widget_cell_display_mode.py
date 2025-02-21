@@ -16,16 +16,18 @@ class TableWidgetCellDisplayMode(ModelSimple):
     """
     Define a display mode for the table cell.
 
-    :param value: Must be one of ["number", "bar"].
+    :param value: Must be one of ["number", "bar", "trend"].
     :type value: str
     """
 
     allowed_values = {
         "number",
         "bar",
+        "trend",
     }
     NUMBER: ClassVar["TableWidgetCellDisplayMode"]
     BAR: ClassVar["TableWidgetCellDisplayMode"]
+    TREND: ClassVar["TableWidgetCellDisplayMode"]
 
     @cached_property
     def openapi_types(_):
@@ -36,3 +38,4 @@ class TableWidgetCellDisplayMode(ModelSimple):
 
 TableWidgetCellDisplayMode.NUMBER = TableWidgetCellDisplayMode("number")
 TableWidgetCellDisplayMode.BAR = TableWidgetCellDisplayMode("bar")
+TableWidgetCellDisplayMode.TREND = TableWidgetCellDisplayMode("trend")

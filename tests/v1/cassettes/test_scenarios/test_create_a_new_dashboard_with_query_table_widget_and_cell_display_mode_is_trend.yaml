@@ -1,0 +1,42 @@
+interactions:
+- request:
+    body: '{"description":"","layout_type":"free","notify_list":[],"template_variables":[],"title":"Test-Create_a_new_dashboard_with_query_table_widget_and_cell_display_mode_is_trend-1739540217","widgets":[{"definition":{"has_search_bar":"auto","requests":[{"formulas":[{"cell_display_mode":"trend","cell_display_mode_options":{"trend_type":"line","y_scale":"shared"},"conditional_formats":[],"formula":"query1"}],"queries":[{"aggregator":"avg","data_source":"metrics","name":"query1","query":"avg:system.cpu.user{*}
+      by {host}"}],"response_format":"scalar","sort":{"count":500,"order_by":[{"index":0,"order":"desc","type":"formula"}]}}],"time":{},"title":"","title_align":"left","title_size":"16","type":"query_table"},"layout":{"height":32,"width":54,"x":0,"y":0}}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/dashboard
+  response:
+    body:
+      string: '{"id":"qw6-574-sem","title":"Test-Create_a_new_dashboard_with_query_table_widget_and_cell_display_mode_is_trend-1739540217","description":"","author_handle":"frog@datadoghq.com","author_name":"frog","layout_type":"free","url":"/dashboard/qw6-574-sem/test-createanewdashboardwithquerytablewidgetandcelldisplaymodeistrend-1739540217","is_read_only":false,"template_variables":[],"widgets":[{"definition":{"has_search_bar":"auto","requests":[{"formulas":[{"cell_display_mode":"trend","cell_display_mode_options":{"trend_type":"line","y_scale":"shared"},"conditional_formats":[],"formula":"query1"}],"queries":[{"aggregator":"avg","data_source":"metrics","name":"query1","query":"avg:system.cpu.user{*}
+        by {host}"}],"response_format":"scalar","sort":{"count":500,"order_by":[{"index":0,"order":"desc","type":"formula"}]}}],"time":{},"title":"","title_align":"left","title_size":"16","type":"query_table"},"layout":{"height":32,"width":54,"x":0,"y":0},"id":6048610427342909}],"notify_list":[],"created_at":"2025-02-14T13:36:57.493950+00:00","modified_at":"2025-02-14T13:36:57.493950+00:00","restricted_roles":[]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/dashboard/qw6-574-sem
+  response:
+    body:
+      string: '{"deleted_dashboard_id":"qw6-574-sem"}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1
