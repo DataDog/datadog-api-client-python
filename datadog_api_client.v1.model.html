@@ -5977,6 +5977,24 @@
         </li></ul>
             </nav>
         </li>
+        <li class="md-nav__item"><a href="#module-datadog_api_client.v1.model.widget_formula_cell_display_mode_options" class="md-nav__link">datadog_api_client.v1.model.widget_formula_cell_display_mode_options module</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v1.model.widget_formula_cell_display_mode_options.WidgetFormulaCellDisplayModeOptions" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">WidgetFormulaCellDisplayModeOptions</span></code></a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#module-datadog_api_client.v1.model.widget_formula_cell_display_mode_options_trend_type" class="md-nav__link">datadog_api_client.v1.model.widget_formula_cell_display_mode_options_trend_type module</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v1.model.widget_formula_cell_display_mode_options_trend_type.WidgetFormulaCellDisplayModeOptionsTrendType" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">WidgetFormulaCellDisplayModeOptionsTrendType</span></code></a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#module-datadog_api_client.v1.model.widget_formula_cell_display_mode_options_y_scale" class="md-nav__link">datadog_api_client.v1.model.widget_formula_cell_display_mode_options_y_scale module</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v1.model.widget_formula_cell_display_mode_options_y_scale.WidgetFormulaCellDisplayModeOptionsYScale" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">WidgetFormulaCellDisplayModeOptionsYScale</span></code></a>
+        </li></ul>
+            </nav>
+        </li>
         <li class="md-nav__item"><a href="#module-datadog_api_client.v1.model.widget_formula_limit" class="md-nav__link">datadog_api_client.v1.model.widget_formula_limit module</a><nav class="md-nav">
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#datadog_api_client.v1.model.widget_formula_limit.WidgetFormulaLimit" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">WidgetFormulaLimit</span></code></a>
@@ -22516,7 +22534,7 @@ type conversion is done.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>value</strong> (<em>str</em>) – Must be one of [“number”, “bar”].</p></li>
+<li><p><strong>value</strong> (<em>str</em>) – Must be one of [“number”, “bar”, “trend”].</p></li>
 <li><p><strong>_check_type</strong> (<em>bool</em>) – If True, values for parameters in openapi_types
 will be type checked and a TypeError will be raised if the wrong type is input.
 Defaults to True.</p></li>
@@ -26391,11 +26409,83 @@ type conversion is done.</p></li>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>alias</strong> (<em>str</em><em>, </em><em>optional</em>) – Expression alias.</p></li>
 <li><p><strong>cell_display_mode</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.table_widget_cell_display_mode.TableWidgetCellDisplayMode" title="datadog_api_client.v1.model.table_widget_cell_display_mode.TableWidgetCellDisplayMode"><em>TableWidgetCellDisplayMode</em></a><em>, </em><em>optional</em>) – Define a display mode for the table cell.</p></li>
+<li><p><strong>cell_display_mode_options</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.widget_formula_cell_display_mode_options.WidgetFormulaCellDisplayModeOptions" title="datadog_api_client.v1.model.widget_formula_cell_display_mode_options.WidgetFormulaCellDisplayModeOptions"><em>WidgetFormulaCellDisplayModeOptions</em></a><em>, </em><em>optional</em>) – Cell display mode options for the widget formula. (only if <code class="docutils literal notranslate"><span class="pre">cell_display_mode</span></code> is set to <code class="docutils literal notranslate"><span class="pre">trend</span></code> ).</p></li>
 <li><p><strong>conditional_formats</strong> (<em>[</em><a class="reference internal" href="#datadog_api_client.v1.model.widget_conditional_format.WidgetConditionalFormat" title="datadog_api_client.v1.model.widget_conditional_format.WidgetConditionalFormat"><em>WidgetConditionalFormat</em></a><em>]</em><em>, </em><em>optional</em>) – List of conditional formats.</p></li>
 <li><p><strong>formula</strong> (<em>str</em>) – String expression built from queries, formulas, and functions.</p></li>
 <li><p><strong>limit</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.widget_formula_limit.WidgetFormulaLimit" title="datadog_api_client.v1.model.widget_formula_limit.WidgetFormulaLimit"><em>WidgetFormulaLimit</em></a><em>, </em><em>optional</em>) – Options for limiting results returned.</p></li>
 <li><p><strong>number_format</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.widget_number_format.WidgetNumberFormat" title="datadog_api_client.v1.model.widget_number_format.WidgetNumberFormat"><em>WidgetNumberFormat</em></a><em>, </em><em>optional</em>) – Number format options for the widget.</p></li>
 <li><p><strong>style</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.widget_formula_style.WidgetFormulaStyle" title="datadog_api_client.v1.model.widget_formula_style.WidgetFormulaStyle"><em>WidgetFormulaStyle</em></a><em>, </em><em>optional</em>) – Styling options for widget formulas.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+</section>
+<section id="module-datadog_api_client.v1.model.widget_formula_cell_display_mode_options">
+<span id="datadog-api-client-v1-model-widget-formula-cell-display-mode-options-module"></span><h2 id="module-datadog_api_client.v1.model.widget_formula_cell_display_mode_options">datadog_api_client.v1.model.widget_formula_cell_display_mode_options module<a class="headerlink" href="#module-datadog_api_client.v1.model.widget_formula_cell_display_mode_options" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datadog_api_client.v1.model.widget_formula_cell_display_mode_options.WidgetFormulaCellDisplayModeOptions">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">WidgetFormulaCellDisplayModeOptions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datadog_api_client.v1.model.widget_formula_cell_display_mode_options.WidgetFormulaCellDisplayModeOptions" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.ModelNormal" title="datadog_api_client.model_utils.ModelNormal"><code class="xref py py-class docutils literal notranslate"><span class="pre">ModelNormal</span></code></a></p>
+<p>Cell display mode options for the widget formula. (only if <code class="docutils literal notranslate"><span class="pre">cell_display_mode</span></code> is set to <code class="docutils literal notranslate"><span class="pre">trend</span></code> ).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>trend_type</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.widget_formula_cell_display_mode_options_trend_type.WidgetFormulaCellDisplayModeOptionsTrendType" title="datadog_api_client.v1.model.widget_formula_cell_display_mode_options_trend_type.WidgetFormulaCellDisplayModeOptionsTrendType"><em>WidgetFormulaCellDisplayModeOptionsTrendType</em></a><em>, </em><em>optional</em>) – Trend type for the cell display mode options.</p></li>
+<li><p><strong>y_scale</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.widget_formula_cell_display_mode_options_y_scale.WidgetFormulaCellDisplayModeOptionsYScale" title="datadog_api_client.v1.model.widget_formula_cell_display_mode_options_y_scale.WidgetFormulaCellDisplayModeOptionsYScale"><em>WidgetFormulaCellDisplayModeOptionsYScale</em></a><em>, </em><em>optional</em>) – Y scale for the cell display mode options.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+</section>
+<section id="module-datadog_api_client.v1.model.widget_formula_cell_display_mode_options_trend_type">
+<span id="datadog-api-client-v1-model-widget-formula-cell-display-mode-options-trend-type-module"></span><h2 id="module-datadog_api_client.v1.model.widget_formula_cell_display_mode_options_trend_type">datadog_api_client.v1.model.widget_formula_cell_display_mode_options_trend_type module<a class="headerlink" href="#module-datadog_api_client.v1.model.widget_formula_cell_display_mode_options_trend_type" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datadog_api_client.v1.model.widget_formula_cell_display_mode_options_trend_type.WidgetFormulaCellDisplayModeOptionsTrendType">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">WidgetFormulaCellDisplayModeOptionsTrendType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datadog_api_client.v1.model.widget_formula_cell_display_mode_options_trend_type.WidgetFormulaCellDisplayModeOptionsTrendType" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.ModelSimple" title="datadog_api_client.model_utils.ModelSimple"><code class="xref py py-class docutils literal notranslate"><span class="pre">ModelSimple</span></code></a></p>
+<p>Trend type for the cell display mode options.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> (<em>str</em>) – Must be one of [“area”, “line”, “bars”].</p></li>
+<li><p><strong>_check_type</strong> (<em>bool</em>) – If True, values for parameters in openapi_types
+will be type checked and a TypeError will be raised if the wrong type is input.
+Defaults to True.</p></li>
+<li><p><strong>_path_to_item</strong> (<em>tuple/list</em>) – This is a list of keys or values to drill down to
+the model in received_data when deserializing a response.</p></li>
+<li><p><strong>_spec_property_naming</strong> (<em>bool</em>) – True if the variable names in the input
+data are serialized names, as specified in the OpenAPI document.  False if the
+variable names in the input data are pythonic names, e.g. snake case (default).</p></li>
+<li><p><strong>_configuration</strong> (<a class="reference internal" href="datadog_api_client.v1.html#datadog_api_client.v1.Configuration" title="datadog_api_client.v1.Configuration"><em>Configuration</em></a>) – The instance to use when deserializing a
+file_type parameter.  If passed, type conversion is attempted If omitted no
+type conversion is done.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+</section>
+<section id="module-datadog_api_client.v1.model.widget_formula_cell_display_mode_options_y_scale">
+<span id="datadog-api-client-v1-model-widget-formula-cell-display-mode-options-y-scale-module"></span><h2 id="module-datadog_api_client.v1.model.widget_formula_cell_display_mode_options_y_scale">datadog_api_client.v1.model.widget_formula_cell_display_mode_options_y_scale module<a class="headerlink" href="#module-datadog_api_client.v1.model.widget_formula_cell_display_mode_options_y_scale" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datadog_api_client.v1.model.widget_formula_cell_display_mode_options_y_scale.WidgetFormulaCellDisplayModeOptionsYScale">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">WidgetFormulaCellDisplayModeOptionsYScale</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datadog_api_client.v1.model.widget_formula_cell_display_mode_options_y_scale.WidgetFormulaCellDisplayModeOptionsYScale" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.ModelSimple" title="datadog_api_client.model_utils.ModelSimple"><code class="xref py py-class docutils literal notranslate"><span class="pre">ModelSimple</span></code></a></p>
+<p>Y scale for the cell display mode options.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> (<em>str</em>) – Must be one of [“shared”, “independent”].</p></li>
+<li><p><strong>_check_type</strong> (<em>bool</em>) – If True, values for parameters in openapi_types
+will be type checked and a TypeError will be raised if the wrong type is input.
+Defaults to True.</p></li>
+<li><p><strong>_path_to_item</strong> (<em>tuple/list</em>) – This is a list of keys or values to drill down to
+the model in received_data when deserializing a response.</p></li>
+<li><p><strong>_spec_property_naming</strong> (<em>bool</em>) – True if the variable names in the input
+data are serialized names, as specified in the OpenAPI document.  False if the
+variable names in the input data are pythonic names, e.g. snake case (default).</p></li>
+<li><p><strong>_configuration</strong> (<a class="reference internal" href="datadog_api_client.v1.html#datadog_api_client.v1.Configuration" title="datadog_api_client.v1.Configuration"><em>Configuration</em></a>) – The instance to use when deserializing a
+file_type parameter.  If passed, type conversion is attempted If omitted no
+type conversion is done.</p></li>
 </ul>
 </dd>
 </dl>
