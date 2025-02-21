@@ -6178,6 +6178,27 @@ datadog\_api\_client.v1.model.widget\_formula module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.widget\_formula\_cell\_display\_mode\_options module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.widget_formula_cell_display_mode_options
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.widget\_formula\_cell\_display\_mode\_options\_trend\_type module
+-----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.widget_formula_cell_display_mode_options_trend_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.widget\_formula\_cell\_display\_mode\_options\_y\_scale module
+--------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.widget_formula_cell_display_mode_options_y_scale
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.widget\_formula\_limit module
 -----------------------------------------------------------
 

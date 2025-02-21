@@ -1027,6 +1027,13 @@ from datadog_api_client.v1.model.widget_event import WidgetEvent
 from datadog_api_client.v1.model.widget_event_size import WidgetEventSize
 from datadog_api_client.v1.model.widget_field_sort import WidgetFieldSort
 from datadog_api_client.v1.model.widget_formula import WidgetFormula
+from datadog_api_client.v1.model.widget_formula_cell_display_mode_options import WidgetFormulaCellDisplayModeOptions
+from datadog_api_client.v1.model.widget_formula_cell_display_mode_options_trend_type import (
+    WidgetFormulaCellDisplayModeOptionsTrendType,
+)
+from datadog_api_client.v1.model.widget_formula_cell_display_mode_options_y_scale import (
+    WidgetFormulaCellDisplayModeOptionsYScale,
+)
 from datadog_api_client.v1.model.widget_formula_limit import WidgetFormulaLimit
 from datadog_api_client.v1.model.widget_formula_sort import WidgetFormulaSort
 from datadog_api_client.v1.model.widget_formula_style import WidgetFormulaStyle
@@ -1954,6 +1961,9 @@ __all__ = [
     "WidgetEventSize",
     "WidgetFieldSort",
     "WidgetFormula",
+    "WidgetFormulaCellDisplayModeOptions",
+    "WidgetFormulaCellDisplayModeOptionsTrendType",
+    "WidgetFormulaCellDisplayModeOptionsYScale",
     "WidgetFormulaLimit",
     "WidgetFormulaSort",
     "WidgetFormulaStyle",

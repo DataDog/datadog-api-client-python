@@ -611,6 +611,17 @@ Feature: Dashboards
     And the response "widgets[0].definition.requests[0].sort.order_by[0].index" is equal to 0
 
   @team:DataDog/dashboards-backend
+  Scenario: Create a new dashboard with query_table widget and cell_display_mode is trend
+    Given new "CreateDashboard" request
+    And body from file "dashboards_json_payload/query_table_widget_cell_display_mode_trend.json"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.type" is equal to "query_table"
+    And the response "widgets[0].definition.requests[0].formulas[0].cell_display_mode" is equal to "trend"
+    And the response "widgets[0].definition.requests[0].formulas[0].cell_display_mode_options.trend_type" is equal to "line"
+    And the response "widgets[0].definition.requests[0].formulas[0].cell_display_mode_options.y_scale" is equal to "shared"
+
+  @team:DataDog/dashboards-backend
   Scenario: Create a new dashboard with query_table widget and text formatting
     Given new "CreateDashboard" request
     And body from file "dashboards_json_payload/query_table_widget_text_formatting.json"
