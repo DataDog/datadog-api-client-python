@@ -586,6 +586,7 @@ from datadog_api_client.v1.model.service_summary_widget_definition import Servic
 from datadog_api_client.v1.model.service_summary_widget_definition_type import ServiceSummaryWidgetDefinitionType
 from datadog_api_client.v1.model.shared_dashboard import SharedDashboard
 from datadog_api_client.v1.model.shared_dashboard_author import SharedDashboardAuthor
+from datadog_api_client.v1.model.shared_dashboard_invitees_items import SharedDashboardInviteesItems
 from datadog_api_client.v1.model.shared_dashboard_invites import SharedDashboardInvites
 from datadog_api_client.v1.model.shared_dashboard_invites_data import SharedDashboardInvitesData
 from datadog_api_client.v1.model.shared_dashboard_invites_data_list import SharedDashboardInvitesDataList
@@ -595,6 +596,7 @@ from datadog_api_client.v1.model.shared_dashboard_invites_data_object_attributes
 )
 from datadog_api_client.v1.model.shared_dashboard_invites_meta import SharedDashboardInvitesMeta
 from datadog_api_client.v1.model.shared_dashboard_invites_meta_page import SharedDashboardInvitesMetaPage
+from datadog_api_client.v1.model.shared_dashboard_status import SharedDashboardStatus
 from datadog_api_client.v1.model.shared_dashboard_update_request import SharedDashboardUpdateRequest
 from datadog_api_client.v1.model.shared_dashboard_update_request_global_time import (
     SharedDashboardUpdateRequestGlobalTime,
@@ -1004,6 +1006,8 @@ from datadog_api_client.v1.model.user import User
 from datadog_api_client.v1.model.user_disable_response import UserDisableResponse
 from datadog_api_client.v1.model.user_list_response import UserListResponse
 from datadog_api_client.v1.model.user_response import UserResponse
+from datadog_api_client.v1.model.viewing_preferences import ViewingPreferences
+from datadog_api_client.v1.model.viewing_preferences_theme import ViewingPreferencesTheme
 from datadog_api_client.v1.model.webhooks_integration import WebhooksIntegration
 from datadog_api_client.v1.model.webhooks_integration_custom_variable import WebhooksIntegrationCustomVariable
 from datadog_api_client.v1.model.webhooks_integration_custom_variable_response import (
@@ -1596,6 +1600,7 @@ __all__ = [
     "ServiceSummaryWidgetDefinitionType",
     "SharedDashboard",
     "SharedDashboardAuthor",
+    "SharedDashboardInviteesItems",
     "SharedDashboardInvites",
     "SharedDashboardInvitesData",
     "SharedDashboardInvitesDataList",
@@ -1603,6 +1608,7 @@ __all__ = [
     "SharedDashboardInvitesDataObjectAttributes",
     "SharedDashboardInvitesMeta",
     "SharedDashboardInvitesMetaPage",
+    "SharedDashboardStatus",
     "SharedDashboardUpdateRequest",
     "SharedDashboardUpdateRequestGlobalTime",
     "SignalArchiveReason",
@@ -1944,6 +1950,8 @@ __all__ = [
     "UserDisableResponse",
     "UserListResponse",
     "UserResponse",
+    "ViewingPreferences",
+    "ViewingPreferencesTheme",
     "WebhooksIntegration",
     "WebhooksIntegrationCustomVariable",
     "WebhooksIntegrationCustomVariableResponse",
