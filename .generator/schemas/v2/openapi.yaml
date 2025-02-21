@@ -25121,6 +25121,10 @@ components:
       - 1800
       - 3600
       - 7200
+      - 10800
+      - 21600
+      - 43200
+      - 86400
       format: int32
       type: integer
       x-enum-varnames:
@@ -25132,6 +25136,10 @@ components:
       - THIRTY_MINUTES
       - ONE_HOUR
       - TWO_HOURS
+      - THREE_HOURS
+      - SIX_HOURS
+      - TWELVE_HOURS
+      - ONE_DAY
     SecurityMonitoringRuleHardcodedEvaluatorType:
       description: Hardcoded evaluator type.
       enum:
@@ -25168,6 +25176,8 @@ components:
       - 7200
       - 10800
       - 21600
+      - 43200
+      - 86400
       format: int32
       type: integer
       x-enum-varnames:
@@ -25181,6 +25191,8 @@ components:
       - TWO_HOURS
       - THREE_HOURS
       - SIX_HOURS
+      - TWELVE_HOURS
+      - ONE_DAY
     SecurityMonitoringRuleMaxSignalDuration:
       description: "A signal will \u201Cclose\u201D regardless of the query being
         matched once the time exceeds the maximum duration.\nThis time is calculated
