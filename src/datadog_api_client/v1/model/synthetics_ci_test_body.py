@@ -34,7 +34,7 @@ class SyntheticsCITestBody(ModelNormal):
         """
         Object describing the synthetics tests to trigger.
 
-        :param tests: Individual synthetics test.
+        :param tests: List of Synthetic tests with overrides.
         :type tests: [SyntheticsCITest], optional
         """
         if tests is not unset:
