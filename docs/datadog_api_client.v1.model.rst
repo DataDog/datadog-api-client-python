@@ -3203,6 +3203,13 @@ datadog\_api\_client.v1.model.shared\_dashboard\_author module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.shared\_dashboard\_invitees\_items module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.shared_dashboard_invitees_items
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.shared\_dashboard\_invites module
 ---------------------------------------------------------------
 
@@ -3249,6 +3256,13 @@ datadog\_api\_client.v1.model.shared\_dashboard\_invites\_meta\_page module
 ---------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.shared_dashboard_invites_meta_page
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.shared\_dashboard\_status module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.shared_dashboard_status
    :members:
    :show-inheritance:
 
@@ -6042,6 +6056,20 @@ datadog\_api\_client.v1.model.user\_response module
 ---------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.user_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.viewing\_preferences module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.viewing_preferences
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.viewing\_preferences\_theme module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.viewing_preferences_theme
    :members:
    :show-inheritance:
 

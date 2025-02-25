@@ -936,21 +936,21 @@ Feature: Dashboards
     And the response "widgets[0].definition.time.unit" is equal to "minute"
     And the response "widgets[0].definition.time.value" is equal to 8
 
-  @generated @skip @team:DataDog/dashboards-backend
+  @generated @skip @team:DataDog/reporting-and-sharing
   Scenario: Create a shared dashboard returns "Bad Request" response
     Given new "CreatePublicDashboard" request
-    And body with value {"dashboard_id": "123-abc-456", "dashboard_type": "custom_timeboard", "global_time": {"live_span": "1h"}, "global_time_selectable_enabled": null, "selectable_template_vars": [{"default_value": "*", "name": "exampleVar", "prefix": "test", "visible_tags": ["selectableValue1", "selectableValue2"]}], "share_list": ["test@datadoghq.com", "test2@email.com"], "share_type": "open"}
+    And body with value {"dashboard_id": "123-abc-456", "dashboard_type": "custom_timeboard", "embeddable_domains": ["https://domain.atlassian.net/", "http://myserver.com/"], "expiration": null, "global_time": {"live_span": "1h"}, "global_time_selectable_enabled": null, "invitees": [{"access_expiration": "2030-01-01T12:00:00.00Z", "email": "test@datadoghq.com"}, {"access_expiration": null, "email": "test2@datadoghq.com"}], "selectable_template_vars": [{"default_value": "*", "name": "exampleVar", "prefix": "test", "visible_tags": ["selectableValue1", "selectableValue2"]}], "share_list": ["test@datadoghq.com", "test2@email.com"], "share_type": "open", "status": "active", "viewing_preferences": {"theme": "system"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/dashboards-backend
+  @team:DataDog/reporting-and-sharing
   Scenario: Create a shared dashboard returns "Dashboard Not Found" response
     Given new "CreatePublicDashboard" request
     And body with value {"dashboard_id": "abc-123-def", "dashboard_type": "custom_timeboard", "share_type": "open", "global_time": {"live_span": "1h"}}
     When the request is sent
     Then the response status is 404 Dashboard Not Found
 
-  @team:DataDog/dashboards-backend
+  @team:DataDog/reporting-and-sharing
   Scenario: Create a shared dashboard returns "OK" response
     Given there is a valid "dashboard" in the system
     And new "CreatePublicDashboard" request
@@ -1023,7 +1023,7 @@ Feature: Dashboards
     Then the response status is 200 OK
     And the response "author_name" is equal to "Frog Account"
 
-  @team:DataDog/dashboards-backend
+  @team:DataDog/reporting-and-sharing
   Scenario: Get a shared dashboard returns "OK" response
     Given there is a valid "dashboard" in the system
     And there is a valid "shared_dashboard" in the system
@@ -1034,7 +1034,7 @@ Feature: Dashboards
     And the response "dashboard_id" has the same value as "dashboard.id"
     And the response "token" has the same value as "shared_dashboard.token"
 
-  @generated @skip @team:DataDog/dashboards-backend
+  @generated @skip @team:DataDog/reporting-and-sharing
   Scenario: Get a shared dashboard returns "Shared Dashboard Not Found" response
     Given new "GetPublicDashboard" request
     And request contains "token" parameter from "REPLACE.ME"
@@ -1059,14 +1059,14 @@ Feature: Dashboards
     Then the response status is 200 OK
     And the response has 3 items
 
-  @generated @skip @team:DataDog/dashboards-backend
+  @generated @skip @team:DataDog/reporting-and-sharing
   Scenario: Get all invitations for a shared dashboard returns "Not Found" response
     Given new "GetPublicDashboardInvitations" request
     And request contains "token" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/dashboards-backend
+  @team:DataDog/reporting-and-sharing
   Scenario: Get all invitations for a shared dashboard returns "OK" response
     Given there is a valid "dashboard" in the system
     And there is a valid "shared_dashboard" in the system
@@ -1110,21 +1110,21 @@ Feature: Dashboards
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:DataDog/dashboards-backend
+  @generated @skip @team:DataDog/reporting-and-sharing
   Scenario: Revoke a shared dashboard URL returns "OK" response
     Given new "DeletePublicDashboard" request
     And request contains "token" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/dashboards-backend
+  @generated @skip @team:DataDog/reporting-and-sharing
   Scenario: Revoke a shared dashboard URL returns "Shared Dashboard Not Found" response
     Given new "DeletePublicDashboard" request
     And request contains "token" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Shared Dashboard Not Found
 
-  @generated @skip @team:DataDog/dashboards-backend
+  @generated @skip @team:DataDog/reporting-and-sharing
   Scenario: Revoke shared dashboard invitations returns "Not Found" response
     Given new "DeletePublicDashboardInvitation" request
     And request contains "token" parameter from "REPLACE.ME"
@@ -1132,7 +1132,7 @@ Feature: Dashboards
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/dashboards-backend
+  @generated @skip @team:DataDog/reporting-and-sharing
   Scenario: Revoke shared dashboard invitations returns "OK" response
     Given new "DeletePublicDashboardInvitation" request
     And request contains "token" parameter from "REPLACE.ME"
@@ -1140,7 +1140,7 @@ Feature: Dashboards
     When the request is sent
     Then the response status is 204 OK
 
-  @generated @skip @team:DataDog/dashboards-backend
+  @generated @skip @team:DataDog/reporting-and-sharing
   Scenario: Send shared dashboard invitation email returns "Bad Request" response
     Given new "SendPublicDashboardInvitation" request
     And request contains "token" parameter from "REPLACE.ME"
@@ -1148,7 +1148,7 @@ Feature: Dashboards
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/dashboards-backend
+  @generated @skip @team:DataDog/reporting-and-sharing
   Scenario: Send shared dashboard invitation email returns "Not Found" response
     Given new "SendPublicDashboardInvitation" request
     And request contains "token" parameter from "REPLACE.ME"
@@ -1156,7 +1156,7 @@ Feature: Dashboards
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/dashboards-backend
+  @team:DataDog/reporting-and-sharing
   Scenario: Send shared dashboard invitation email returns "OK" response
     Given there is a valid "dashboard" in the system
     And there is a valid "shared_dashboard" in the system
@@ -1204,7 +1204,7 @@ Feature: Dashboards
     Then the response status is 200 OK
     And the response "tags" is equal to ["team:foo", "team:bar"]
 
-  @generated @skip @team:DataDog/dashboards-backend
+  @generated @skip @team:DataDog/reporting-and-sharing
   Scenario: Update a shared dashboard returns "Bad Request" response
     Given new "UpdatePublicDashboard" request
     And request contains "token" parameter from "REPLACE.ME"
@@ -1212,7 +1212,7 @@ Feature: Dashboards
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/dashboards-backend
+  @generated @skip @team:DataDog/reporting-and-sharing
   Scenario: Update a shared dashboard returns "Item Not Found" response
     Given new "UpdatePublicDashboard" request
     And request contains "token" parameter from "REPLACE.ME"
@@ -1220,7 +1220,7 @@ Feature: Dashboards
     When the request is sent
     Then the response status is 404 Item Not Found
 
-  @team:DataDog/dashboards-backend
+  @team:DataDog/reporting-and-sharing
   Scenario: Update a shared dashboard returns "OK" response
     Given there is a valid "dashboard" in the system
     And there is a valid "shared_dashboard" in the system
