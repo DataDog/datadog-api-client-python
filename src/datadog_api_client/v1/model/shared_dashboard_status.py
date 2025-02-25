@@ -12,24 +12,20 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class DashboardShareType(ModelSimple):
+class SharedDashboardStatus(ModelSimple):
     """
-    Type of sharing access (either open to anyone who has the public URL or invite-only).
+    Active means the dashboard is publicly available. Paused means the dashboard is not publicly available.
 
-    :param value: Must be one of ["open", "invite", "embed"].
+    :param value: Must be one of ["active", "paused"].
     :type value: str
     """
 
     allowed_values = {
-        "open",
-        "invite",
-        "embed",
+        "active",
+        "paused",
     }
-    OPEN: ClassVar["DashboardShareType"]
-    INVITE: ClassVar["DashboardShareType"]
-    EMBED: ClassVar["DashboardShareType"]
-
-    _nullable = True
+    ACTIVE: ClassVar["SharedDashboardStatus"]
+    PAUSED: ClassVar["SharedDashboardStatus"]
 
     @cached_property
     def openapi_types(_):
@@ -38,6 +34,5 @@ class DashboardShareType(ModelSimple):
         }
 
 
-DashboardShareType.OPEN = DashboardShareType("open")
-DashboardShareType.INVITE = DashboardShareType("invite")
-DashboardShareType.EMBED = DashboardShareType("embed")
+SharedDashboardStatus.ACTIVE = SharedDashboardStatus("active")
+SharedDashboardStatus.PAUSED = SharedDashboardStatus("paused")
