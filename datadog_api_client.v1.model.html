@@ -3423,6 +3423,12 @@
         </li></ul>
             </nav>
         </li>
+        <li class="md-nav__item"><a href="#module-datadog_api_client.v1.model.shared_dashboard_invitees_items" class="md-nav__link">datadog_api_client.v1.model.shared_dashboard_invitees_items module</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v1.model.shared_dashboard_invitees_items.SharedDashboardInviteesItems" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SharedDashboardInviteesItems</span></code></a>
+        </li></ul>
+            </nav>
+        </li>
         <li class="md-nav__item"><a href="#module-datadog_api_client.v1.model.shared_dashboard_invites" class="md-nav__link">datadog_api_client.v1.model.shared_dashboard_invites module</a><nav class="md-nav">
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#datadog_api_client.v1.model.shared_dashboard_invites.SharedDashboardInvites" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SharedDashboardInvites</span></code></a>
@@ -3462,6 +3468,12 @@
         <li class="md-nav__item"><a href="#module-datadog_api_client.v1.model.shared_dashboard_invites_meta_page" class="md-nav__link">datadog_api_client.v1.model.shared_dashboard_invites_meta_page module</a><nav class="md-nav">
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#datadog_api_client.v1.model.shared_dashboard_invites_meta_page.SharedDashboardInvitesMetaPage" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SharedDashboardInvitesMetaPage</span></code></a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#module-datadog_api_client.v1.model.shared_dashboard_status" class="md-nav__link">datadog_api_client.v1.model.shared_dashboard_status module</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v1.model.shared_dashboard_status.SharedDashboardStatus" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SharedDashboardStatus</span></code></a>
         </li></ul>
             </nav>
         </li>
@@ -5863,6 +5875,18 @@
         </li></ul>
             </nav>
         </li>
+        <li class="md-nav__item"><a href="#module-datadog_api_client.v1.model.viewing_preferences" class="md-nav__link">datadog_api_client.v1.model.viewing_preferences module</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v1.model.viewing_preferences.ViewingPreferences" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ViewingPreferences</span></code></a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#module-datadog_api_client.v1.model.viewing_preferences_theme" class="md-nav__link">datadog_api_client.v1.model.viewing_preferences_theme module</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v1.model.viewing_preferences_theme.ViewingPreferencesTheme" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ViewingPreferencesTheme</span></code></a>
+        </li></ul>
+            </nav>
+        </li>
         <li class="md-nav__item"><a href="#module-datadog_api_client.v1.model.webhooks_integration" class="md-nav__link">datadog_api_client.v1.model.webhooks_integration module</a><nav class="md-nav">
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#datadog_api_client.v1.model.webhooks_integration.WebhooksIntegration" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">WebhooksIntegration</span></code></a>
@@ -7793,7 +7817,7 @@ type conversion is done.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>value</strong> (<em>str</em>) – Must be one of [“open”, “invite”].</p></li>
+<li><p><strong>value</strong> (<em>str</em>) – Must be one of [“open”, “invite”, “embed”].</p></li>
 <li><p><strong>_check_type</strong> (<em>bool</em>) – If True, values for parameters in openapi_types
 will be type checked and a TypeError will be raised if the wrong type is input.
 Defaults to True.</p></li>
@@ -16599,16 +16623,23 @@ type conversion is done.</p></li>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>author</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.shared_dashboard_author.SharedDashboardAuthor" title="datadog_api_client.v1.model.shared_dashboard_author.SharedDashboardAuthor"><em>SharedDashboardAuthor</em></a><em>, </em><em>optional</em>) – User who shared the dashboard.</p></li>
-<li><p><strong>created_at</strong> (<em>datetime</em><em>, </em><em>optional</em>) – Date the dashboard was shared.</p></li>
+<li><p><strong>created</strong> (<em>datetime</em><em>, </em><em>optional</em>) – Date the dashboard was shared.</p></li>
 <li><p><strong>dashboard_id</strong> (<em>str</em>) – ID of the dashboard to share.</p></li>
 <li><p><strong>dashboard_type</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.dashboard_type.DashboardType" title="datadog_api_client.v1.model.dashboard_type.DashboardType"><em>DashboardType</em></a>) – The type of the associated private dashboard.</p></li>
+<li><p><strong>embeddable_domains</strong> (<em>[</em><em>str</em><em>]</em><em>, </em><em>optional</em>) – The <code class="docutils literal notranslate"><span class="pre">SharedDashboard</span></code> <code class="docutils literal notranslate"><span class="pre">embeddable_domains</span></code>.</p></li>
+<li><p><strong>expiration</strong> (<em>datetime</em><em>, </em><em>none_type</em><em>, </em><em>optional</em>) – The time when an OPEN shared dashboard becomes publicly unavailable.</p></li>
 <li><p><strong>global_time</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.dashboard_global_time.DashboardGlobalTime" title="datadog_api_client.v1.model.dashboard_global_time.DashboardGlobalTime"><em>DashboardGlobalTime</em></a><em>, </em><em>optional</em>) – Object containing the live span selection for the dashboard.</p></li>
 <li><p><strong>global_time_selectable_enabled</strong> (<em>bool</em><em>, </em><em>none_type</em><em>, </em><em>optional</em>) – Whether to allow viewers to select a different global time setting for the shared dashboard.</p></li>
+<li><p><strong>invitees</strong> (<em>[</em><a class="reference internal" href="#datadog_api_client.v1.model.shared_dashboard_invitees_items.SharedDashboardInviteesItems" title="datadog_api_client.v1.model.shared_dashboard_invitees_items.SharedDashboardInviteesItems"><em>SharedDashboardInviteesItems</em></a><em>]</em><em>, </em><em>optional</em>) – The <code class="docutils literal notranslate"><span class="pre">SharedDashboard</span></code> <code class="docutils literal notranslate"><span class="pre">invitees</span></code>.</p></li>
+<li><p><strong>last_accessed</strong> (<em>datetime</em><em>, </em><em>none_type</em><em>, </em><em>optional</em>) – The last time the shared dashboard was accessed. Null if never accessed.</p></li>
 <li><p><strong>public_url</strong> (<em>str</em><em>, </em><em>optional</em>) – URL of the shared dashboard.</p></li>
 <li><p><strong>selectable_template_vars</strong> (<em>[</em><a class="reference internal" href="#datadog_api_client.v1.model.selectable_template_variable_items.SelectableTemplateVariableItems" title="datadog_api_client.v1.model.selectable_template_variable_items.SelectableTemplateVariableItems"><em>SelectableTemplateVariableItems</em></a><em>]</em><em>, </em><em>none_type</em><em>, </em><em>optional</em>) – List of objects representing template variables on the shared dashboard which can have selectable values.</p></li>
-<li><p><strong>share_list</strong> (<em>[</em><em>str</em><em>]</em><em>, </em><em>none_type</em><em>, </em><em>optional</em>) – List of email addresses that can receive an invitation to access to the shared dashboard.</p></li>
+<li><p><strong>share_list</strong> (<em>[</em><em>str</em><em>]</em><em>, </em><em>none_type</em><em>, </em><em>optional</em>) – List of email addresses that can receive an invitation to access to the shared dashboard. <strong>Deprecated</strong>.</p></li>
 <li><p><strong>share_type</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.dashboard_share_type.DashboardShareType" title="datadog_api_client.v1.model.dashboard_share_type.DashboardShareType"><em>DashboardShareType</em></a><em>, </em><em>none_type</em><em>, </em><em>optional</em>) – Type of sharing access (either open to anyone who has the public URL or invite-only).</p></li>
+<li><p><strong>status</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.shared_dashboard_status.SharedDashboardStatus" title="datadog_api_client.v1.model.shared_dashboard_status.SharedDashboardStatus"><em>SharedDashboardStatus</em></a><em>, </em><em>optional</em>) – Active means the dashboard is publicly available. Paused means the dashboard is not publicly available.</p></li>
+<li><p><strong>title</strong> (<em>str</em><em>, </em><em>optional</em>) – Title of the shared dashboard.</p></li>
 <li><p><strong>token</strong> (<em>str</em><em>, </em><em>optional</em>) – A unique token assigned to the shared dashboard.</p></li>
+<li><p><strong>viewing_preferences</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.viewing_preferences.ViewingPreferences" title="datadog_api_client.v1.model.viewing_preferences.ViewingPreferences"><em>ViewingPreferences</em></a><em>, </em><em>optional</em>) – The viewing preferences for a shared dashboard.</p></li>
 </ul>
 </dd>
 </dl>
@@ -16626,6 +16657,24 @@ type conversion is done.</p></li>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>handle</strong> (<em>str</em><em>, </em><em>optional</em>) – Identifier of the user who shared the dashboard.</p></li>
 <li><p><strong>name</strong> (<em>str</em><em>, </em><em>none_type</em><em>, </em><em>optional</em>) – Name of the user who shared the dashboard.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+</section>
+<section id="module-datadog_api_client.v1.model.shared_dashboard_invitees_items">
+<span id="datadog-api-client-v1-model-shared-dashboard-invitees-items-module"></span><h2 id="module-datadog_api_client.v1.model.shared_dashboard_invitees_items">datadog_api_client.v1.model.shared_dashboard_invitees_items module<a class="headerlink" href="#module-datadog_api_client.v1.model.shared_dashboard_invitees_items" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datadog_api_client.v1.model.shared_dashboard_invitees_items.SharedDashboardInviteesItems">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SharedDashboardInviteesItems</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datadog_api_client.v1.model.shared_dashboard_invitees_items.SharedDashboardInviteesItems" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.ModelNormal" title="datadog_api_client.model_utils.ModelNormal"><code class="xref py py-class docutils literal notranslate"><span class="pre">ModelNormal</span></code></a></p>
+<p>The allowlisted invitees for an INVITE-only shared dashboard.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>access_expiration</strong> (<em>datetime</em><em>, </em><em>none_type</em><em>, </em><em>optional</em>) – Time of the invitee expiration. Null means the invite will not expire.</p></li>
+<li><p><strong>created_at</strong> (<em>datetime</em><em>, </em><em>optional</em>) – Time that the invitee was created.</p></li>
+<li><p><strong>email</strong> (<em>str</em>) – Email of the invitee.</p></li>
 </ul>
 </dd>
 </dl>
@@ -16757,6 +16806,33 @@ type conversion is done.</p></li>
 </dl>
 </dd></dl>
 </section>
+<section id="module-datadog_api_client.v1.model.shared_dashboard_status">
+<span id="datadog-api-client-v1-model-shared-dashboard-status-module"></span><h2 id="module-datadog_api_client.v1.model.shared_dashboard_status">datadog_api_client.v1.model.shared_dashboard_status module<a class="headerlink" href="#module-datadog_api_client.v1.model.shared_dashboard_status" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datadog_api_client.v1.model.shared_dashboard_status.SharedDashboardStatus">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SharedDashboardStatus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datadog_api_client.v1.model.shared_dashboard_status.SharedDashboardStatus" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.ModelSimple" title="datadog_api_client.model_utils.ModelSimple"><code class="xref py py-class docutils literal notranslate"><span class="pre">ModelSimple</span></code></a></p>
+<p>Active means the dashboard is publicly available. Paused means the dashboard is not publicly available.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> (<em>str</em>) – Must be one of [“active”, “paused”].</p></li>
+<li><p><strong>_check_type</strong> (<em>bool</em>) – If True, values for parameters in openapi_types
+will be type checked and a TypeError will be raised if the wrong type is input.
+Defaults to True.</p></li>
+<li><p><strong>_path_to_item</strong> (<em>tuple/list</em>) – This is a list of keys or values to drill down to
+the model in received_data when deserializing a response.</p></li>
+<li><p><strong>_spec_property_naming</strong> (<em>bool</em>) – True if the variable names in the input
+data are serialized names, as specified in the OpenAPI document.  False if the
+variable names in the input data are pythonic names, e.g. snake case (default).</p></li>
+<li><p><strong>_configuration</strong> (<a class="reference internal" href="datadog_api_client.v1.html#datadog_api_client.v1.Configuration" title="datadog_api_client.v1.Configuration"><em>Configuration</em></a>) – The instance to use when deserializing a
+file_type parameter.  If passed, type conversion is attempted If omitted no
+type conversion is done.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+</section>
 <section id="module-datadog_api_client.v1.model.shared_dashboard_update_request">
 <span id="datadog-api-client-v1-model-shared-dashboard-update-request-module"></span><h2 id="module-datadog_api_client.v1.model.shared_dashboard_update_request">datadog_api_client.v1.model.shared_dashboard_update_request module<a class="headerlink" href="#module-datadog_api_client.v1.model.shared_dashboard_update_request" title="Link to this heading">¶</a></h2>
 <dl class="py class">
@@ -16767,11 +16843,17 @@ type conversion is done.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>global_time</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.shared_dashboard_update_request_global_time.SharedDashboardUpdateRequestGlobalTime" title="datadog_api_client.v1.model.shared_dashboard_update_request_global_time.SharedDashboardUpdateRequestGlobalTime"><em>SharedDashboardUpdateRequestGlobalTime</em></a><em>, </em><em>none_type</em>) – Timeframe setting for the shared dashboard.</p></li>
+<li><p><strong>embeddable_domains</strong> (<em>[</em><em>str</em><em>]</em><em>, </em><em>optional</em>) – The <code class="docutils literal notranslate"><span class="pre">SharedDashboard</span></code> <code class="docutils literal notranslate"><span class="pre">embeddable_domains</span></code>.</p></li>
+<li><p><strong>expiration</strong> (<em>datetime</em><em>, </em><em>none_type</em><em>, </em><em>optional</em>) – The time when an OPEN shared dashboard becomes publicly unavailable.</p></li>
+<li><p><strong>global_time</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.shared_dashboard_update_request_global_time.SharedDashboardUpdateRequestGlobalTime" title="datadog_api_client.v1.model.shared_dashboard_update_request_global_time.SharedDashboardUpdateRequestGlobalTime"><em>SharedDashboardUpdateRequestGlobalTime</em></a><em>, </em><em>none_type</em><em>, </em><em>optional</em>) – Timeframe setting for the shared dashboard.</p></li>
 <li><p><strong>global_time_selectable_enabled</strong> (<em>bool</em><em>, </em><em>none_type</em><em>, </em><em>optional</em>) – Whether to allow viewers to select a different global time setting for the shared dashboard.</p></li>
+<li><p><strong>invitees</strong> (<em>[</em><a class="reference internal" href="#datadog_api_client.v1.model.shared_dashboard_invitees_items.SharedDashboardInviteesItems" title="datadog_api_client.v1.model.shared_dashboard_invitees_items.SharedDashboardInviteesItems"><em>SharedDashboardInviteesItems</em></a><em>]</em><em>, </em><em>optional</em>) – The <code class="docutils literal notranslate"><span class="pre">SharedDashboard</span></code> <code class="docutils literal notranslate"><span class="pre">invitees</span></code>.</p></li>
 <li><p><strong>selectable_template_vars</strong> (<em>[</em><a class="reference internal" href="#datadog_api_client.v1.model.selectable_template_variable_items.SelectableTemplateVariableItems" title="datadog_api_client.v1.model.selectable_template_variable_items.SelectableTemplateVariableItems"><em>SelectableTemplateVariableItems</em></a><em>]</em><em>, </em><em>none_type</em><em>, </em><em>optional</em>) – List of objects representing template variables on the shared dashboard which can have selectable values.</p></li>
-<li><p><strong>share_list</strong> (<em>[</em><em>str</em><em>]</em><em>, </em><em>none_type</em><em>, </em><em>optional</em>) – List of email addresses that can be given access to the shared dashboard.</p></li>
+<li><p><strong>share_list</strong> (<em>[</em><em>str</em><em>]</em><em>, </em><em>none_type</em><em>, </em><em>optional</em>) – List of email addresses that can be given access to the shared dashboard. <strong>Deprecated</strong>.</p></li>
 <li><p><strong>share_type</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.dashboard_share_type.DashboardShareType" title="datadog_api_client.v1.model.dashboard_share_type.DashboardShareType"><em>DashboardShareType</em></a><em>, </em><em>none_type</em><em>, </em><em>optional</em>) – Type of sharing access (either open to anyone who has the public URL or invite-only).</p></li>
+<li><p><strong>status</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.shared_dashboard_status.SharedDashboardStatus" title="datadog_api_client.v1.model.shared_dashboard_status.SharedDashboardStatus"><em>SharedDashboardStatus</em></a><em>, </em><em>optional</em>) – Active means the dashboard is publicly available. Paused means the dashboard is not publicly available.</p></li>
+<li><p><strong>title</strong> (<em>str</em><em>, </em><em>optional</em>) – Title of the shared dashboard.</p></li>
+<li><p><strong>viewing_preferences</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.viewing_preferences.ViewingPreferences" title="datadog_api_client.v1.model.viewing_preferences.ViewingPreferences"><em>ViewingPreferences</em></a><em>, </em><em>optional</em>) – The viewing preferences for a shared dashboard.</p></li>
 </ul>
 </dd>
 </dl>
@@ -25873,6 +25955,50 @@ type conversion is done.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>user</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.user.User" title="datadog_api_client.v1.model.user.User"><em>User</em></a><em>, </em><em>optional</em>) – Create, edit, and disable users.</p>
+</dd>
+</dl>
+</dd></dl>
+</section>
+<section id="module-datadog_api_client.v1.model.viewing_preferences">
+<span id="datadog-api-client-v1-model-viewing-preferences-module"></span><h2 id="module-datadog_api_client.v1.model.viewing_preferences">datadog_api_client.v1.model.viewing_preferences module<a class="headerlink" href="#module-datadog_api_client.v1.model.viewing_preferences" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datadog_api_client.v1.model.viewing_preferences.ViewingPreferences">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ViewingPreferences</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datadog_api_client.v1.model.viewing_preferences.ViewingPreferences" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.ModelNormal" title="datadog_api_client.model_utils.ModelNormal"><code class="xref py py-class docutils literal notranslate"><span class="pre">ModelNormal</span></code></a></p>
+<p>The viewing preferences for a shared dashboard.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>high_density</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether the widgets on the shared dashboard should be displayed with high density.</p></li>
+<li><p><strong>theme</strong> (<a class="reference internal" href="#datadog_api_client.v1.model.viewing_preferences_theme.ViewingPreferencesTheme" title="datadog_api_client.v1.model.viewing_preferences_theme.ViewingPreferencesTheme"><em>ViewingPreferencesTheme</em></a><em>, </em><em>optional</em>) – The theme of the shared dashboard view. “system” follows your system’s default viewing theme.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+</section>
+<section id="module-datadog_api_client.v1.model.viewing_preferences_theme">
+<span id="datadog-api-client-v1-model-viewing-preferences-theme-module"></span><h2 id="module-datadog_api_client.v1.model.viewing_preferences_theme">datadog_api_client.v1.model.viewing_preferences_theme module<a class="headerlink" href="#module-datadog_api_client.v1.model.viewing_preferences_theme" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datadog_api_client.v1.model.viewing_preferences_theme.ViewingPreferencesTheme">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ViewingPreferencesTheme</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datadog_api_client.v1.model.viewing_preferences_theme.ViewingPreferencesTheme" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.ModelSimple" title="datadog_api_client.model_utils.ModelSimple"><code class="xref py py-class docutils literal notranslate"><span class="pre">ModelSimple</span></code></a></p>
+<p>The theme of the shared dashboard view. “system” follows your system’s default viewing theme.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> (<em>str</em>) – Must be one of [“system”, “light”, “dark”].</p></li>
+<li><p><strong>_check_type</strong> (<em>bool</em>) – If True, values for parameters in openapi_types
+will be type checked and a TypeError will be raised if the wrong type is input.
+Defaults to True.</p></li>
+<li><p><strong>_path_to_item</strong> (<em>tuple/list</em>) – This is a list of keys or values to drill down to
+the model in received_data when deserializing a response.</p></li>
+<li><p><strong>_spec_property_naming</strong> (<em>bool</em>) – True if the variable names in the input
+data are serialized names, as specified in the OpenAPI document.  False if the
+variable names in the input data are pythonic names, e.g. snake case (default).</p></li>
+<li><p><strong>_configuration</strong> (<a class="reference internal" href="datadog_api_client.v1.html#datadog_api_client.v1.Configuration" title="datadog_api_client.v1.Configuration"><em>Configuration</em></a>) – The instance to use when deserializing a
+file_type parameter.  If passed, type conversion is attempted If omitted no
+type conversion is done.</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
