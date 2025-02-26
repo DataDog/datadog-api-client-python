@@ -1,7 +1,7 @@
 interactions:
 - request:
     body: '{"cases":[{"condition":"a > 0","name":"","notifications":[],"status":"info"}],"filters":[],"isEnabled":true,"message":"Test
-      rule","name":"Test-Convert_an_existing_rule_from_JSON_to_Terraform_returns_OK_response-1719258906","options":{"evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"queries":[{"aggregation":"count","distinctFields":[],"groupByFields":[],"metrics":[],"query":"@test:true"}],"tags":[],"type":"log_detection"}'
+      rule","name":"Test-Convert_an_existing_rule_from_JSON_to_Terraform_returns_OK_response-1740590923","options":{"evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"queries":[{"aggregation":"count","distinctFields":[],"groupByFields":[],"metrics":[],"query":"@test:true"}],"tags":[],"type":"log_detection"}'
     headers:
       accept:
       - application/json
@@ -11,10 +11,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/security_monitoring/rules
   response:
     body:
-      string: '{"id":"eu8-b0k-wzc","version":1,"name":"Test-Convert_an_existing_rule_from_JSON_to_Terraform_returns_OK_response-1719258906","createdAt":1719258906588,"creationAuthorId":1445416,"isDefault":false,"isPartner":false,"isEnabled":true,"isDeleted":false,"isDeprecated":false,"queries":[{"query":"@test:true","groupByFields":[],"hasOptionalGroupByFields":false,"distinctFields":[],"aggregation":"count","name":""}],"options":{"keepAlive":3600,"maxSignalDuration":86400,"detectionMethod":"threshold","evaluationWindow":900},"cases":[{"name":"","status":"info","notifications":[],"condition":"a
-        > 0"}],"message":"Test rule","tags":[],"hasExtendedTitle":false,"type":"log_detection","filters":[]}
-
-        '
+      string: '{"name":"Test-Convert_an_existing_rule_from_JSON_to_Terraform_returns_OK_response-1740590923","createdAt":1740590923738,"isDefault":false,"isPartner":false,"isEnabled":true,"isBeta":false,"isDeleted":false,"isDeprecated":false,"queries":[{"query":"@test:true","groupByFields":[],"hasOptionalGroupByFields":false,"distinctFields":[],"aggregation":"count","name":"","dataSource":"logs"}],"options":{"evaluationWindow":900,"detectionMethod":"threshold","maxSignalDuration":86400,"keepAlive":3600},"cases":[{"name":"","status":"info","notifications":[],"condition":"a
+        \u003e 0"}],"message":"Test rule","tags":[],"hasExtendedTitle":false,"type":"log_detection","filters":[],"version":1,"id":"wva-gkr-uze","blocking":false,"metadata":{"entities":null,"sources":null},"creationAuthorId":1445416,"creator":{"handle":"frog@datadoghq.com","name":"frog"},"updater":{"handle":"","name":""}}'
     headers:
       content-type:
       - application/json
@@ -27,20 +25,18 @@ interactions:
       accept:
       - application/json
     method: GET
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/eu8-b0k-wzc/convert
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/wva-gkr-uze/convert
   response:
     body:
       string: '{"terraformContent":"resource \"datadog_security_monitoring_rule\"
-        \"test-convert_an_existing_rule_from_json_to_terraform_returns_ok_response-1719258906\"
-        {\n\tname = \"Test-Convert_an_existing_rule_from_JSON_to_Terraform_returns_OK_response-1719258906\"\n\tenabled
+        \"test-convert_an_existing_rule_from_json_to_terraform_returns_ok_response-1740590923\"
+        {\n\tname = \"Test-Convert_an_existing_rule_from_JSON_to_Terraform_returns_OK_response-1740590923\"\n\tenabled
         = true\n\tquery {\n\t\tquery = \"@test:true\"\n\t\tgroup_by_fields = []\n\t\tdistinct_fields
         = []\n\t\taggregation = \"count\"\n\t\tname = \"\"\n\t}\n\toptions {\n\t\tkeep_alive
         = 3600\n\t\tmax_signal_duration = 86400\n\t\tdetection_method = \"threshold\"\n\t\tevaluation_window
         = 900\n\t}\n\tcase {\n\t\tname = \"\"\n\t\tstatus = \"info\"\n\t\tnotifications
-        = []\n\t\tcondition = \"a > 0\"\n\t}\n\tmessage = \"Test rule\"\n\ttags =
-        []\n\thas_extended_title = false\n\ttype = \"log_detection\"\n}\n"}
-
-        '
+        = []\n\t\tcondition = \"a \u003e 0\"\n\t}\n\tmessage = \"Test rule\"\n\ttags
+        = []\n\thas_extended_title = false\n\ttype = \"log_detection\"\n}\n"}'
     headers:
       content-type:
       - application/json
@@ -53,7 +49,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/eu8-b0k-wzc
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/wva-gkr-uze
   response:
     body:
       string: ''
