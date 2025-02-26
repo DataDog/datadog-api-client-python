@@ -1,0 +1,24 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/asm/waf/custom_rules
+  response:
+    body:
+      string: '{"data":[{"id":"198b4219-243d-44a5-8bf3-e0cd27b6d16f","type":"custom_rule","attributes":{"blocking":false,"conditions":[{"operator":"match_regex","parameters":{"inputs":[{"address":"server.request.query","key_path":["id"]}],"regex":"badactor","options":{}}}],"enabled":true,"metadata":{"added_at":"2025-02-25T13:44:45Z","added_by":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","added_by_name":"CI
+        Account"},"name":"test","path_glob":"/test","scope":[{"env":"test","service":"test"}],"tags":{"category":"attack_attempt","test":"1","type":"test"}}},{"id":"86c40038-02ea-4cfd-99f1-2099c9a5e4c8","type":"custom_rule","attributes":{"blocking":false,"conditions":[{"operator":"match_regex","parameters":{"inputs":[{"address":"server.request.query","key_path":["id"]}],"regex":"badactor","options":{}}}],"enabled":false,"metadata":{"modified_at":"2025-02-25T13:44:46Z","modified_by":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","modified_by_name":"CI
+        Account"},"name":"test - 1","path_glob":"/test","scope":[{"env":"test","service":"test"}],"tags":{"category":"attack_attempt","test":"1","type":"test"}}},{"id":"bcebdf8d-7811-4d8d-801c-a54e13f9d96e","type":"custom_rule","attributes":{"blocking":false,"conditions":[{"operator":"match_regex","parameters":{"inputs":[{"address":"server.request.query","key_path":["id"]}],"regex":"badactor","options":{}}}],"enabled":true,"metadata":{"added_at":"2025-02-25T13:44:47Z","added_by":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","added_by_name":"CI
+        Account"},"name":"test - 2","path_glob":"/test","scope":[{"env":"test","service":"test"}],"tags":{"category":"attack_attempt","test":"1","type":"test"}}},{"id":"3c7e4949-7376-4aea-9d02-5738d339022e","type":"custom_rule","attributes":{"blocking":false,"conditions":[{"operator":"match_regex","parameters":{"inputs":[{"address":"server.request.query","key_path":["id"]}],"regex":"badactor","options":{}}}],"enabled":true,"metadata":{"added_at":"2025-02-25T16:50:42Z","added_by":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","added_by_name":"CI
+        Account"},"name":"test - 3","path_glob":"/test","scope":[{"env":"test","service":"test"}],"tags":{"category":"attack_attempt","test":"1","type":"test"}}},{"id":"51028dad-3f06-49e3-9226-1c4a4c0b9f5b","type":"custom_rule","attributes":{"blocking":false,"conditions":[{"operator":"match_regex","parameters":{"inputs":[{"address":"server.request.query","key_path":["id"]}],"regex":"badactor","options":{}}}],"enabled":false,"metadata":{"modified_at":"2025-02-25T16:50:43Z","modified_by":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","modified_by_name":"CI
+        Account"},"name":"test - 4","path_glob":"/test","scope":[{"env":"test","service":"test"}],"tags":{"category":"attack_attempt","test":"1","type":"test"}}},{"id":"b154ea3d-f6c6-4a4e-8712-88f3055320fb","type":"custom_rule","attributes":{"blocking":false,"conditions":[{"operator":"match_regex","parameters":{"inputs":[{"address":"server.request.query","key_path":["id"]}],"regex":"badactor","options":{}}}],"enabled":true,"metadata":{"added_at":"2025-02-25T16:50:44Z","added_by":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","added_by_name":"CI
+        Account"},"name":"test - 5","path_glob":"/test","scope":[{"env":"test","service":"test"}],"tags":{"category":"attack_attempt","test":"1","type":"test"}}}]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1
