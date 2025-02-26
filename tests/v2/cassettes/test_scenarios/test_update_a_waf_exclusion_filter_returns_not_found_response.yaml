@@ -1,0 +1,22 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"description":"Exclude false positives on a path","enabled":true,"parameters":["list.search.query"],"path_glob":"/accounts/*","rules_target":[{"rule_id":"dog-913-009","tags":{"category":"attack_attempt","type":"lfi"}}],"scope":[{"env":"www","service":"prod"}]},"type":"exclusion_filter"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PUT
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/asm/waf/exclusion_filters/unknown
+  response:
+    body:
+      string: '{"errors":[{"title":"id not found","code":"404"}]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 404
+      message: Not Found
+version: 1
