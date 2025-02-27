@@ -75,6 +75,7 @@ body = SyntheticsAPITest(
                     interval=1000.0,
                 ),
                 subtype=SyntheticsAPITestStepSubtype.HTTP,
+                extracted_values_from_script="dd.variable.set('STATUS_CODE', dd.response.statusCode);",
             ),
             SyntheticsAPIWaitStep(
                 name="Wait",

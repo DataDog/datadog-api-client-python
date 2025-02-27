@@ -27,6 +27,9 @@ class SyntheticsAPIStep(ModelComposed):
         :param extracted_values: Array of values to parse and save as variables from the response.
         :type extracted_values: [SyntheticsParsingOptions], optional
 
+        :param extracted_values_from_script: Generate variables using JavaScript.
+        :type extracted_values_from_script: str, optional
+
         :param is_critical: Determines whether or not to consider the entire test as failed if this step fails.
             Can be used only if `allowFailure` is `true`.
         :type is_critical: bool, optional
