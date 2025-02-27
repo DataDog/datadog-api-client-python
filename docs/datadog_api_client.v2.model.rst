@@ -11141,20 +11141,6 @@ datadog\_api\_client.v2.model.security\_monitoring\_rule\_new\_value\_options mo
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.security\_monitoring\_rule\_new\_value\_options\_forget\_after module
----------------------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.security_monitoring_rule_new_value_options_forget_after
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.security\_monitoring\_rule\_new\_value\_options\_learning\_duration module
---------------------------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.security_monitoring_rule_new_value_options_learning_duration
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v2.model.security\_monitoring\_rule\_new\_value\_options\_learning\_method module
 ------------------------------------------------------------------------------------------------------
 
