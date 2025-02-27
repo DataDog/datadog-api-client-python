@@ -14,12 +14,6 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.security_monitoring_rule_new_value_options_forget_after import (
-        SecurityMonitoringRuleNewValueOptionsForgetAfter,
-    )
-    from datadog_api_client.v2.model.security_monitoring_rule_new_value_options_learning_duration import (
-        SecurityMonitoringRuleNewValueOptionsLearningDuration,
-    )
     from datadog_api_client.v2.model.security_monitoring_rule_new_value_options_learning_method import (
         SecurityMonitoringRuleNewValueOptionsLearningMethod,
     )
@@ -29,14 +23,19 @@ if TYPE_CHECKING:
 
 
 class SecurityMonitoringRuleNewValueOptions(ModelNormal):
+    validations = {
+        "forget_after": {
+            "inclusive_maximum": 30,
+            "inclusive_minimum": 1,
+        },
+        "learning_duration": {
+            "inclusive_maximum": 30,
+            "inclusive_minimum": 0,
+        },
+    }
+
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.security_monitoring_rule_new_value_options_forget_after import (
-            SecurityMonitoringRuleNewValueOptionsForgetAfter,
-        )
-        from datadog_api_client.v2.model.security_monitoring_rule_new_value_options_learning_duration import (
-            SecurityMonitoringRuleNewValueOptionsLearningDuration,
-        )
         from datadog_api_client.v2.model.security_monitoring_rule_new_value_options_learning_method import (
             SecurityMonitoringRuleNewValueOptionsLearningMethod,
         )
@@ -45,8 +44,8 @@ class SecurityMonitoringRuleNewValueOptions(ModelNormal):
         )
 
         return {
-            "forget_after": (SecurityMonitoringRuleNewValueOptionsForgetAfter,),
-            "learning_duration": (SecurityMonitoringRuleNewValueOptionsLearningDuration,),
+            "forget_after": (int,),
+            "learning_duration": (int,),
             "learning_method": (SecurityMonitoringRuleNewValueOptionsLearningMethod,),
             "learning_threshold": (SecurityMonitoringRuleNewValueOptionsLearningThreshold,),
         }
@@ -60,8 +59,8 @@ class SecurityMonitoringRuleNewValueOptions(ModelNormal):
 
     def __init__(
         self_,
-        forget_after: Union[SecurityMonitoringRuleNewValueOptionsForgetAfter, UnsetType] = unset,
-        learning_duration: Union[SecurityMonitoringRuleNewValueOptionsLearningDuration, UnsetType] = unset,
+        forget_after: Union[int, UnsetType] = unset,
+        learning_duration: Union[int, UnsetType] = unset,
         learning_method: Union[SecurityMonitoringRuleNewValueOptionsLearningMethod, UnsetType] = unset,
         learning_threshold: Union[SecurityMonitoringRuleNewValueOptionsLearningThreshold, UnsetType] = unset,
         **kwargs,
@@ -70,11 +69,12 @@ class SecurityMonitoringRuleNewValueOptions(ModelNormal):
         Options on new value detection method.
 
         :param forget_after: The duration in days after which a learned value is forgotten.
-        :type forget_after: SecurityMonitoringRuleNewValueOptionsForgetAfter, optional
+        :type forget_after: int, optional
 
         :param learning_duration: The duration in days during which values are learned, and after which signals will be generated for values that
             weren't learned. If set to 0, a signal will be generated for all new values after the first value is learned.
-        :type learning_duration: SecurityMonitoringRuleNewValueOptionsLearningDuration, optional
+            The value must be between 0 and 30 (inclusive).
+        :type learning_duration: int, optional
 
         :param learning_method: The learning method used to determine when signals should be generated for values that weren't learned.
         :type learning_method: SecurityMonitoringRuleNewValueOptionsLearningMethod, optional

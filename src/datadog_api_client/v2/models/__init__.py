@@ -1904,12 +1904,6 @@ from datadog_api_client.v2.model.security_monitoring_rule_max_signal_duration im
     SecurityMonitoringRuleMaxSignalDuration,
 )
 from datadog_api_client.v2.model.security_monitoring_rule_new_value_options import SecurityMonitoringRuleNewValueOptions
-from datadog_api_client.v2.model.security_monitoring_rule_new_value_options_forget_after import (
-    SecurityMonitoringRuleNewValueOptionsForgetAfter,
-)
-from datadog_api_client.v2.model.security_monitoring_rule_new_value_options_learning_duration import (
-    SecurityMonitoringRuleNewValueOptionsLearningDuration,
-)
 from datadog_api_client.v2.model.security_monitoring_rule_new_value_options_learning_method import (
     SecurityMonitoringRuleNewValueOptionsLearningMethod,
 )
@@ -4076,8 +4070,6 @@ __all__ = [
     "SecurityMonitoringRuleKeepAlive",
     "SecurityMonitoringRuleMaxSignalDuration",
     "SecurityMonitoringRuleNewValueOptions",
-    "SecurityMonitoringRuleNewValueOptionsForgetAfter",
-    "SecurityMonitoringRuleNewValueOptionsLearningDuration",
     "SecurityMonitoringRuleNewValueOptionsLearningMethod",
     "SecurityMonitoringRuleNewValueOptionsLearningThreshold",
     "SecurityMonitoringRuleOptions",
