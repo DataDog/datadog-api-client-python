@@ -593,7 +593,7 @@ class SecurityMonitoringApi:
         self._get_sbom_endpoint = _Endpoint(
             settings={
                 "response_type": (GetSBOMResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security/sboms/{asset_type}",
                 "operation_id": "get_sbom",
                 "http_method": "GET",
@@ -1033,7 +1033,7 @@ class SecurityMonitoringApi:
         self._list_vulnerabilities_endpoint = _Endpoint(
             settings={
                 "response_type": (ListVulnerabilitiesResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security/vulnerabilities",
                 "operation_id": "list_vulnerabilities",
                 "http_method": "GET",
@@ -1265,7 +1265,7 @@ class SecurityMonitoringApi:
         self._list_vulnerable_assets_endpoint = _Endpoint(
             settings={
                 "response_type": (ListVulnerableAssetsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security/assets",
                 "operation_id": "list_vulnerable_assets",
                 "http_method": "GET",

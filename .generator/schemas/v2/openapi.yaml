@@ -32353,6 +32353,9 @@ components:
             apm_service_catalog_read: View service catalog and service definitions.
             apm_service_catalog_write: Add, modify, and delete service catalog definitions
               when those definitions are maintained by Datadog.
+            appsec_vm_read: View infrastructure, application code, and library vulnerabilities.
+              This does not restrict API or inventory SQL access to the vulnerability
+              data source.
             cases_read: View Cases.
             cases_write: Create and update cases.
             ci_visibility_pipelines_write: Create CI Visibility pipeline spans using
@@ -45204,9 +45207,14 @@ paths:
       security:
       - apiKeyAuth: []
         appKeyAuth: []
+      - AuthZ:
+        - appsec_vm_read
       summary: List vulnerable assets
       tags:
       - Security Monitoring
+      x-unstable: '**Note**: This endpoint is a private preview.
+
+        If you are interested in accessing this API, [fill out this form](https://forms.gle/kMYC1sDr6WDUBDsx9).'
   /api/v2/security/cloud_workload/policy/download:
     get:
       description: 'The download endpoint generates a Cloud Workload Security policy
@@ -45296,12 +45304,14 @@ paths:
       security:
       - apiKeyAuth: []
         appKeyAuth: []
+      - AuthZ:
+        - appsec_vm_read
       summary: Get SBOM
       tags:
       - Security Monitoring
       x-unstable: '**Note**: This endpoint is a private preview.
 
-        If you are interested in accessing this API, please [fill out this form](https://forms.gle/kMYC1sDr6WDUBDsx9).'
+        If you are interested in accessing this API, [fill out this form](https://forms.gle/kMYC1sDr6WDUBDsx9).'
   /api/v2/security/signals/notification_rules:
     get:
       description: Returns the list of notification rules for security signals.
@@ -45857,9 +45867,14 @@ paths:
       security:
       - apiKeyAuth: []
         appKeyAuth: []
+      - AuthZ:
+        - appsec_vm_read
       summary: List vulnerabilities
       tags:
       - Security Monitoring
+      x-unstable: '**Note**: This endpoint is a private preview.
+
+        If you are interested in accessing this API, [fill out this form](https://forms.gle/kMYC1sDr6WDUBDsx9).'
   /api/v2/security/vulnerabilities/notification_rules:
     get:
       description: Returns the list of notification rules for security vulnerabilities.
