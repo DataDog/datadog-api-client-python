@@ -13,8 +13,8 @@ import pprint
 import re
 import tempfile
 from types import MappingProxyType
-from typing import Collection, Mapping, Union
-from typing_extensions import Final
+from typing import Collection, Mapping, Union, overload
+from typing_extensions import Final, Self
 
 from dateutil.parser import parse
 
@@ -91,7 +91,7 @@ def composed_model_input_classes(cls):
     return []
 
 
-class OpenApiModel(object):
+class OpenApiModel:
     """The base class for all OpenAPIModels.
 
     :var attribute_map: The key is attribute name and the value is json
@@ -186,6 +186,18 @@ class OpenApiModel(object):
         """Get the value of an attribute using dot notation: `instance.attr`."""
         return self.__getitem__(attr)
 
+    @overload
+    def __new__(cls, arg: None) -> None:  # type: ignore
+        ...
+
+    @overload
+    def __new__(cls, arg: "ModelComposed") -> Self:
+        ...
+
+    @overload
+    def __new__(cls, *args, **kwargs) -> Self:
+        ...
+
     def __new__(cls, *args, **kwargs):
         if len(args) == 1:
             arg = args[0]
@@ -198,7 +210,7 @@ class OpenApiModel(object):
                 oneof_instance = get_oneof_instance(cls, model_kwargs, kwargs, model_arg=arg)
                 return oneof_instance
 
-        return super(OpenApiModel, cls).__new__(cls)
+        return super().__new__(cls)
 
     def __init__(self, kwargs):
         """
