@@ -31,12 +31,14 @@ class MonitorOptionsSchedulingOptionsEvaluationWindow(ModelNormal):
             "day_starts": (str,),
             "hour_starts": (int,),
             "month_starts": (int,),
+            "timezone": (str,),
         }
 
     attribute_map = {
         "day_starts": "day_starts",
         "hour_starts": "hour_starts",
         "month_starts": "month_starts",
+        "timezone": "timezone",
     }
 
     def __init__(
@@ -44,12 +46,13 @@ class MonitorOptionsSchedulingOptionsEvaluationWindow(ModelNormal):
         day_starts: Union[str, UnsetType] = unset,
         hour_starts: Union[int, UnsetType] = unset,
         month_starts: Union[int, UnsetType] = unset,
+        timezone: Union[str, UnsetType] = unset,
         **kwargs,
     ):
         """
         Configuration options for the evaluation window. If ``hour_starts`` is set, no other fields may be set. Otherwise, ``day_starts`` and ``month_starts`` must be set together.
 
-        :param day_starts: The time of the day at which a one day cumulative evaluation window starts. Must be defined in UTC time in ``HH:mm`` format.
+        :param day_starts: The time of the day at which a one day cumulative evaluation window starts.
         :type day_starts: str, optional
 
         :param hour_starts: The minute of the hour at which a one hour cumulative evaluation window starts.
@@ -57,6 +60,9 @@ class MonitorOptionsSchedulingOptionsEvaluationWindow(ModelNormal):
 
         :param month_starts: The day of the month at which a one month cumulative evaluation window starts.
         :type month_starts: int, optional
+
+        :param timezone: The timezone of the time of the day of the cumulative evaluation window start.
+        :type timezone: str, optional
         """
         if day_starts is not unset:
             kwargs["day_starts"] = day_starts
@@ -64,4 +70,6 @@ class MonitorOptionsSchedulingOptionsEvaluationWindow(ModelNormal):
             kwargs["hour_starts"] = hour_starts
         if month_starts is not unset:
             kwargs["month_starts"] = month_starts
+        if timezone is not unset:
+            kwargs["timezone"] = timezone
         super().__init__(kwargs)
