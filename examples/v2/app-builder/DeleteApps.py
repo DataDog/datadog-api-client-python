@@ -22,7 +22,6 @@ body = DeleteAppsRequest(
 )
 
 configuration = Configuration()
-configuration.unstable_operations["delete_apps"] = True
 with ApiClient(configuration) as api_client:
     api_instance = AppBuilderApi(api_client)
     response = api_instance.delete_apps(body=body)
