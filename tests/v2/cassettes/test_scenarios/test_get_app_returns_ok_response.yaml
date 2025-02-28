@@ -1,8 +1,18 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"components":[{"events":[],"name":"grid0","properties":{"children":[{"events":[],"name":"gridCell0","properties":{"children":[{"events":[],"name":"calloutValue0","properties":{"isDisabled":false,"isLoading":false,"isVisible":true,"label":"CPU
-      Usage","size":"sm","style":"vivid_yellow","unit":"kB","value":"42"},"type":"calloutValue"}],"isVisible":"true","layout":{"default":{"height":8,"width":2,"x":0,"y":0}}},"type":"gridCell"}]},"type":"grid"}],"description":"This
-      is a simple example app","name":"Example App","queries":[],"rootInstanceName":"grid0"},"type":"appDefinitions"}}'
+    body: '{"data":{"attributes":{"components":[{"events":[],"name":"grid0","properties":{"backgroundColor":"default","children":[{"events":[],"name":"gridCell0","properties":{"children":[{"events":[],"name":"text0","properties":{"content":"#
+      Cat Facts","contentType":"markdown","isVisible":true,"textAlign":"left","verticalAlign":"top"},"type":"text"}],"isVisible":"true","layout":{"default":{"height":5,"width":4,"x":0,"y":0}}},"type":"gridCell"},{"events":[],"name":"gridCell2","properties":{"children":[{"events":[],"name":"table0","properties":{"columns":[{"dataPath":"fact","header":"fact","id":"0ae2ae9e-0280-4389-83c6-1c5949f7e674","isHidden":false},{"dataPath":"length","header":"length","id":"c9048611-0196-4a00-9366-1ef9e3ec0408","isHidden":true},{"dataPath":"Due
+      Date","disableSortBy":false,"formatter":{"format":"LARGE_WITHOUT_TIME","type":"formatted_time"},"header":"Unused
+      Old Column","id":"8fa9284b-7a58-4f13-9959-57b7d8a7fe8f","isDeleted":true}],"data":"${fetchFacts?.outputs?.body?.data}","globalFilter":false,"isLoading":"${fetchFacts?.isLoading}","isScrollable":"vertical","isSubRowsEnabled":false,"isVisible":true,"isWrappable":false,"pageSize":"${pageSize?.value}","paginationType":"server_side","rowButtons":[],"summary":true,"totalCount":"${fetchFacts?.outputs?.body?.total}"},"type":"table"}],"isVisible":"true","layout":{"default":{"height":96,"width":12,"x":0,"y":5}}},"type":"gridCell"},{"events":[],"name":"gridCell1","properties":{"children":[{"events":[],"name":"text1","properties":{"content":"##
+      Random Fact\n\n${randomFact?.outputs?.fact}","contentType":"markdown","isVisible":true,"textAlign":"left","verticalAlign":"top"},"type":"text"}],"isVisible":"true","layout":{"default":{"height":16,"width":12,"x":0,"y":101}}},"type":"gridCell"},{"events":[],"name":"gridCell3","properties":{"children":[{"events":[{"name":"click","type":"setStateVariableValue","value":"${pageSize?.value
+      + 1}","variableName":"pageSize"}],"name":"button0","properties":{"iconLeft":"angleUp","iconRight":"","isBorderless":false,"isDisabled":false,"isLoading":false,"isPrimary":true,"isVisible":true,"label":"Increase
+      Page Size","level":"default"},"type":"button"}],"isVisible":"true","layout":{"default":{"height":4,"width":2,"x":10,"y":134}}},"type":"gridCell"},{"events":[],"name":"gridCell4","properties":{"children":[{"events":[{"name":"click","type":"setStateVariableValue","value":"${pageSize?.value
+      - 1}","variableName":"pageSize"}],"name":"button1","properties":{"iconLeft":"angleDown","iconRight":"","isBorderless":false,"isDisabled":false,"isLoading":false,"isPrimary":true,"isVisible":true,"label":"Decrease
+      Page Size","level":"default"},"type":"button"}],"isVisible":"true","layout":{"default":{"height":4,"width":2,"x":10,"y":138}}},"type":"gridCell"}]},"type":"grid"}],"description":"This
+      is a slightly complicated example app that fetches and displays cat facts","name":"Example
+      Cat Facts Viewer","queries":[{"events":[],"id":"92ff0bb8-553b-4f31-87c7-ef5bd16d47d5","name":"fetchFacts","properties":{"spec":{"connectionId":"5e63f4a8-4ce6-47de-ba11-f6617c1d54f3","fqn":"com.datadoghq.http.request","inputs":{"url":"https://catfact.ninja/facts","urlParams":[{"key":"limit","value":"${pageSize.value.toString()}"},{"key":"page","value":"${(table0.pageIndex
+      + 1).toString()}"}],"verb":"GET"}}},"type":"action"},{"id":"afd03c81-4075-4432-8618-ba09d52d2f2d","name":"pageSize","properties":{"defaultValue":"${20}"},"type":"stateVariable"},{"id":"0fb22859-47dc-4137-9e41-7b67d04c525c","name":"randomFact","properties":{"outputs":"${(()
+      => {const facts = fetchFacts.outputs.body.data\nreturn facts[Math.floor(Math.random()*facts.length)]\n})()}"},"type":"dataTransform"}],"rootInstanceName":"grid0"},"type":"appDefinitions"}}'
     headers:
       accept:
       - application/json
@@ -12,7 +22,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/app-builder/apps
   response:
     body:
-      string: '{"data":{"id":"25442f2c-fb75-4abe-b875-ed3497d2fc2c","type":"appDefinitions"}}'
+      string: '{"data":{"id":"55b4bd3f-a1e9-4595-95c8-ef3741481b97","type":"appDefinitions"}}'
     headers:
       content-type:
       - application/vnd.api+json
@@ -25,12 +35,22 @@ interactions:
       accept:
       - application/json
     method: GET
-    uri: https://api.datadoghq.com/api/v2/app-builder/apps/25442f2c-fb75-4abe-b875-ed3497d2fc2c
+    uri: https://api.datadoghq.com/api/v2/app-builder/apps/55b4bd3f-a1e9-4595-95c8-ef3741481b97
   response:
     body:
-      string: '{"data":{"id":"25442f2c-fb75-4abe-b875-ed3497d2fc2c","type":"appDefinitions","attributes":{"components":[{"events":[],"name":"grid0","properties":{"children":[{"events":[],"name":"gridCell0","properties":{"children":[{"events":[],"name":"calloutValue0","properties":{"isDisabled":false,"isLoading":false,"isVisible":true,"label":"CPU
-        Usage","size":"sm","style":"vivid_yellow","unit":"kB","value":"42"},"type":"calloutValue"}],"isVisible":"true","layout":{"default":{"height":8,"width":2,"x":0,"y":0}}},"type":"gridCell"}]},"type":"grid"}],"description":"This
-        is a simple example app","favorite":false,"name":"Example App","queries":[],"rootInstanceName":"grid0","selfService":false,"tags":[]},"meta":{"org_id":1107852,"user_id":15479137,"user_uuid":"b3f98453-b289-11ef-a4e9-d6d283f92d91","user_name":"oliver.li@datadoghq.com","version":1,"updated_since_deployment":false,"created_at":"2025-01-30T22:30:43.296595Z","updated_at":"2025-01-30T22:30:43.296595Z","deleted_at":"0001-01-01T00:00:00Z"}}}'
+      string: '{"data":{"id":"55b4bd3f-a1e9-4595-95c8-ef3741481b97","type":"appDefinitions","attributes":{"components":[{"events":[],"name":"grid0","properties":{"backgroundColor":"default","children":[{"events":[],"name":"gridCell0","properties":{"children":[{"events":[],"name":"text0","properties":{"content":"#
+        Cat Facts","contentType":"markdown","isVisible":true,"textAlign":"left","verticalAlign":"top"},"type":"text"}],"isVisible":"true","layout":{"default":{"height":5,"width":4,"x":0,"y":0}}},"type":"gridCell"},{"events":[],"name":"gridCell2","properties":{"children":[{"events":[],"name":"table0","properties":{"columns":[{"dataPath":"fact","header":"fact","id":"0ae2ae9e-0280-4389-83c6-1c5949f7e674","isHidden":false},{"dataPath":"length","header":"length","id":"c9048611-0196-4a00-9366-1ef9e3ec0408","isHidden":true},{"dataPath":"Due
+        Date","disableSortBy":false,"formatter":{"format":"LARGE_WITHOUT_TIME","type":"formatted_time"},"header":"Unused
+        Old Column","id":"8fa9284b-7a58-4f13-9959-57b7d8a7fe8f","isDeleted":true}],"data":"${fetchFacts?.outputs?.body?.data}","globalFilter":false,"isLoading":"${fetchFacts?.isLoading}","isScrollable":"vertical","isSubRowsEnabled":false,"isVisible":true,"isWrappable":false,"pageSize":"${pageSize?.value}","paginationType":"server_side","rowButtons":[],"summary":true,"totalCount":"${fetchFacts?.outputs?.body?.total}"},"type":"table"}],"isVisible":"true","layout":{"default":{"height":96,"width":12,"x":0,"y":5}}},"type":"gridCell"},{"events":[],"name":"gridCell1","properties":{"children":[{"events":[],"name":"text1","properties":{"content":"##
+        Random Fact\n\n${randomFact?.outputs?.fact}","contentType":"markdown","isVisible":true,"textAlign":"left","verticalAlign":"top"},"type":"text"}],"isVisible":"true","layout":{"default":{"height":16,"width":12,"x":0,"y":101}}},"type":"gridCell"},{"events":[],"name":"gridCell3","properties":{"children":[{"events":[{"name":"click","type":"setStateVariableValue","value":"${pageSize?.value
+        + 1}","variableName":"pageSize"}],"name":"button0","properties":{"iconLeft":"angleUp","iconRight":"","isBorderless":false,"isDisabled":false,"isLoading":false,"isPrimary":true,"isVisible":true,"label":"Increase
+        Page Size","level":"default"},"type":"button"}],"isVisible":"true","layout":{"default":{"height":4,"width":2,"x":10,"y":134}}},"type":"gridCell"},{"events":[],"name":"gridCell4","properties":{"children":[{"events":[{"name":"click","type":"setStateVariableValue","value":"${pageSize?.value
+        - 1}","variableName":"pageSize"}],"name":"button1","properties":{"iconLeft":"angleDown","iconRight":"","isBorderless":false,"isDisabled":false,"isLoading":false,"isPrimary":true,"isVisible":true,"label":"Decrease
+        Page Size","level":"default"},"type":"button"}],"isVisible":"true","layout":{"default":{"height":4,"width":2,"x":10,"y":138}}},"type":"gridCell"}]},"type":"grid"}],"description":"This
+        is a slightly complicated example app that fetches and displays cat facts","favorite":false,"name":"Example
+        Cat Facts Viewer","queries":[{"id":"92ff0bb8-553b-4f31-87c7-ef5bd16d47d5","name":"fetchFacts","type":"action","properties":{"spec":{"connectionId":"5e63f4a8-4ce6-47de-ba11-f6617c1d54f3","fqn":"com.datadoghq.http.request","inputs":{"url":"https://catfact.ninja/facts","urlParams":[{"key":"limit","value":"${pageSize.value.toString()}"},{"key":"page","value":"${(table0.pageIndex
+        + 1).toString()}"}],"verb":"GET"}}}},{"id":"afd03c81-4075-4432-8618-ba09d52d2f2d","name":"pageSize","type":"stateVariable","properties":{"defaultValue":"${20}"}},{"id":"0fb22859-47dc-4137-9e41-7b67d04c525c","name":"randomFact","type":"dataTransform","properties":{"outputs":"${(()
+        =\u003e {const facts = fetchFacts.outputs.body.data\nreturn facts[Math.floor(Math.random()*facts.length)]\n})()}"}}],"rootInstanceName":"grid0","selfService":false,"tags":[]},"meta":{"org_id":1107852,"user_id":15479137,"user_uuid":"b3f98453-b289-11ef-a4e9-d6d283f92d91","user_name":"oliver.li@datadoghq.com","version":1,"updated_since_deployment":false,"created_at":"2025-02-14T16:45:03.266046Z","updated_at":"2025-02-14T16:45:03.266046Z","deleted_at":"0001-01-01T00:00:00Z"}}}'
     headers:
       content-type:
       - application/vnd.api+json
@@ -43,10 +63,10 @@ interactions:
       accept:
       - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/app-builder/apps/25442f2c-fb75-4abe-b875-ed3497d2fc2c
+    uri: https://api.datadoghq.com/api/v2/app-builder/apps/55b4bd3f-a1e9-4595-95c8-ef3741481b97
   response:
     body:
-      string: '{"data":{"id":"25442f2c-fb75-4abe-b875-ed3497d2fc2c","type":"appDefinitions"}}'
+      string: '{"data":{"id":"55b4bd3f-a1e9-4595-95c8-ef3741481b97","type":"appDefinitions"}}'
     headers:
       content-type:
       - application/vnd.api+json
