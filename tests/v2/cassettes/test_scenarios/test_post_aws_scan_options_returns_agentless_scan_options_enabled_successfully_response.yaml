@@ -1,0 +1,36 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"lambda":false,"vuln_containers_os":true,"vuln_host_os":true},"id":"000000000003","type":"aws_scan_options"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/agentless_scanning/accounts/aws
+  response:
+    body:
+      string: '{"data":{"id":"000000000003","type":"aws_scan_options","attributes":{"lambda":false,"vuln_containers_os":true,"vuln_host_os":true}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/agentless_scanning/accounts/aws/000000000003
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1

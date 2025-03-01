@@ -1,0 +1,21 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/agentless_scanning/accounts/aws/000000000003
+  response:
+    body:
+      string: '{"errors":[{"status":"400","title":"Bad Request","detail":"unexpected
+        end of JSON input"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 400
+      message: Bad Request
+version: 1
