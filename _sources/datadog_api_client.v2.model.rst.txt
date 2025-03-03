@@ -60,6 +60,125 @@ datadog\_api\_client.v2.model.action\_connection\_integration\_update module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.action\_query module
+--------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.action_query
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.action\_query\_condition module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.action_query_condition
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.action\_query\_debounce\_in\_ms module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.action_query_debounce_in_ms
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.action\_query\_mocked\_outputs module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.action_query_mocked_outputs
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.action\_query\_mocked\_outputs\_enabled module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.action_query_mocked_outputs_enabled
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.action\_query\_mocked\_outputs\_object module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.action_query_mocked_outputs_object
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.action\_query\_only\_trigger\_manually module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.action_query_only_trigger_manually
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.action\_query\_polling\_interval\_in\_ms module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.action_query_polling_interval_in_ms
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.action\_query\_properties module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.action_query_properties
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.action\_query\_requires\_confirmation module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.action_query_requires_confirmation
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.action\_query\_show\_toast\_on\_error module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.action_query_show_toast_on_error
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.action\_query\_spec module
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.action_query_spec
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.action\_query\_spec\_connection\_group module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.action_query_spec_connection_group
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.action\_query\_spec\_input module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.action_query_spec_input
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.action\_query\_spec\_inputs module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.action_query_spec_inputs
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.action\_query\_spec\_object module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.action_query_spec_object
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.action\_query\_type module
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.action_query_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.active\_billing\_dimensions\_attributes module
 ----------------------------------------------------------------------------
 
@@ -3753,6 +3872,27 @@ datadog\_api\_client.v2.model.data\_scalar\_column module
 ---------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.data_scalar_column
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.data\_transform module
+----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.data_transform
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.data\_transform\_properties module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.data_transform_properties
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.data\_transform\_type module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.data_transform_type
    :members:
    :show-inheritance:
 
@@ -9503,13 +9643,6 @@ datadog\_api\_client.v2.model.query\_sort\_order module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.query\_type module
-------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.query_type
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v2.model.readiness\_gate module
 ----------------------------------------------------
 
@@ -13063,6 +13196,27 @@ datadog\_api\_client.v2.model.state module
 ------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.state
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.state\_variable module
+----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.state_variable
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.state\_variable\_properties module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.state_variable_properties
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.state\_variable\_type module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.state_variable_type
    :members:
    :show-inheritance:
 
