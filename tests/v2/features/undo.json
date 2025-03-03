@@ -1970,6 +1970,53 @@
       "type": "unsafe"
     }
   },
+  "OrderRetentionFilters": {
+    "tag": "Rum Retention Filters",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListRetentionFilters": {
+    "tag": "Rum Retention Filters",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateRetentionFilter": {
+    "tag": "Rum Retention Filters",
+    "undo": {
+      "operationId": "DeleteRetentionFilter",
+      "parameters": [
+        {
+          "name": "app_id",
+          "template": "\"a33671aa-24fd-4dcd-ba4b-5bbdbafe7690\""
+        },
+        {
+          "name": "rf_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteRetentionFilter": {
+    "tag": "Rum Retention Filters",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetRetentionFilter": {
+    "tag": "Rum Retention Filters",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateRetentionFilter": {
+    "tag": "Rum Retention Filters",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "DeleteRUMApplication": {
     "tag": "RUM",
     "undo": {
