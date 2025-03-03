@@ -539,6 +539,22 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"retention_filters\",\n    \"attributes\": {\n      \"event_type\": \"session\",\n      \"name\": \"Test retention filter for session\",\n      \"enabled\": true,\n      \"query\": \"custom_query\",\n      \"sample_rate\": 25\n    },\n    \"meta\": {\n      \"source\": \"terraform\"\n    }\n  }\n}"
+      },
+      {
+        "name": "app_id",
+        "value": "\"a33671aa-24fd-4dcd-ba4b-5bbdbafe7690\""
+      }
+    ],
+    "step": "there is a valid \"rum_retention_filter\" in the system",
+    "key": "rum_retention_filter",
+    "tag": "Rum Retention Filters",
+    "operationId": "CreateRetentionFilter"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"id\": \"{{ unique_lower_alnum }}\",\n    \"type\": \"rum_metrics\",\n    \"attributes\": {\n      \"event_type\": \"session\",\n      \"compute\": {\n        \"aggregation_type\": \"distribution\",\n        \"include_percentiles\": true,\n        \"path\": \"@duration\"\n      },\n      \"filter\": {\n        \"query\": \"source:{{ unique }}\"\n      },\n      \"group_by\": [{\n        \"path\": \"@browser.name\",\n        \"tag_name\": \"browser_name\"\n      }],\n      \"uniqueness\": {\n        \"when\": \"match\"\n      }\n    }\n  }\n}"
       }
     ],

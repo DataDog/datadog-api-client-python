@@ -1,0 +1,53 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"enabled":true,"event_type":"session","name":"Test
+      retention filter for session","query":"custom_query","sample_rate":25},"meta":{"source":"terraform"},"type":"retention_filters"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/rum/applications/a33671aa-24fd-4dcd-ba4b-5bbdbafe7690/retention_filters
+  response:
+    body:
+      string: '{"data":{"id":"d1793e60-a3f3-4442-9256-9ef4d874f801","type":"retention_filters","attributes":{"enabled":true,"event_type":"session","name":"Test
+        retention filter for session","query":"custom_query","sample_rate":25},"meta":{"source":"terraform"}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/rum/applications/a33671aa-24fd-4dcd-ba4b-5bbdbafe7690/retention_filters/d1793e60-a3f3-4442-9256-9ef4d874f801
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/rum/applications/%5Bobject%20Object%5D/retention_filters/d1793e60-a3f3-4442-9256-9ef4d874f801
+  response:
+    body:
+      string: '{"errors":[{"status":"404","title":"Not Found","detail":"rpc error:
+        code = NotFound desc = NotFound: This retention filter does not exist"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 404
+      message: Not Found
+version: 1

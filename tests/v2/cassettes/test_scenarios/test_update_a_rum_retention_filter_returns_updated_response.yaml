@@ -1,0 +1,59 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"enabled":true,"event_type":"session","name":"Test
+      retention filter for session","query":"custom_query","sample_rate":25},"meta":{"source":"terraform"},"type":"retention_filters"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/rum/applications/a33671aa-24fd-4dcd-ba4b-5bbdbafe7690/retention_filters
+  response:
+    body:
+      string: '{"data":{"id":"fcc65290-ca4a-4ab6-9475-59bd1bad009f","type":"retention_filters","attributes":{"enabled":true,"event_type":"session","name":"Test
+        retention filter for session","query":"custom_query","sample_rate":25},"meta":{"source":"terraform"}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"enabled":true,"event_type":"view","name":"Test
+      updating retention filter","query":"view_query","sample_rate":100},"id":"fcc65290-ca4a-4ab6-9475-59bd1bad009f","type":"retention_filters"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/rum/applications/a33671aa-24fd-4dcd-ba4b-5bbdbafe7690/retention_filters/fcc65290-ca4a-4ab6-9475-59bd1bad009f
+  response:
+    body:
+      string: '{"data":{"id":"fcc65290-ca4a-4ab6-9475-59bd1bad009f","type":"retention_filters","attributes":{"enabled":true,"event_type":"view","name":"Test
+        updating retention filter","query":"view_query","sample_rate":100},"meta":{"source":"unknown"}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/rum/applications/%5Bobject%20Object%5D/retention_filters/fcc65290-ca4a-4ab6-9475-59bd1bad009f
+  response:
+    body:
+      string: '{"errors":[{"status":"404","title":"Not Found","detail":"rpc error:
+        code = NotFound desc = NotFound: This retention filter does not exist"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 404
+      message: Not Found
+version: 1
