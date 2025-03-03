@@ -25,7 +25,6 @@ body = UpdateAppRequest(
 )
 
 configuration = Configuration()
-configuration.unstable_operations["update_app"] = True
 with ApiClient(configuration) as api_client:
     api_instance = AppBuilderApi(api_client)
     response = api_instance.update_app(app_id=APP_DATA_ID, body=body)

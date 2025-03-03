@@ -347,11 +347,16 @@ def format_data_with_schema_list(
     if "oneOf" in schema:
         return _format_oneof(data, schema, replace_values, version, imports)
 
+    if schema == True or schema == {}:
+        sub_schema = {}
+    else:
+        sub_schema = schema["items"]
+
     parameters = ""
     for d in data:
         value, extra_imports = format_data_with_schema(
             d,
-            schema["items"],
+            sub_schema,
             replace_values=replace_values,
             version=version,
         )

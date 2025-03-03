@@ -1821,6 +1821,207 @@ components:
       oneOf:
       - $ref: '#/components/schemas/AWSIntegrationUpdate'
       - $ref: '#/components/schemas/HTTPIntegrationUpdate'
+    ActionQuery:
+      description: An action query. This query type is used to trigger an action,
+        such as sending a HTTP request.
+      properties:
+        events:
+          description: Events to listen for downstream of the action query.
+          items:
+            $ref: '#/components/schemas/AppBuilderEvent'
+          type: array
+        id:
+          description: The ID of the action query.
+          example: 65bb1f25-52e1-4510-9f8d-22d1516ed693
+          format: uuid
+          type: string
+        name:
+          description: A unique identifier for this action query. This name is also
+            used to access the query's result throughout the app.
+          example: fetchPendingOrders
+          type: string
+        properties:
+          $ref: '#/components/schemas/ActionQueryProperties'
+        type:
+          $ref: '#/components/schemas/ActionQueryType'
+      required:
+      - id
+      - name
+      - type
+      - properties
+      type: object
+    ActionQueryCondition:
+      description: Whether to run this query. If specified, the query will only run
+        if this condition evaluates to `true` in JavaScript and all other conditions
+        are also met.
+      oneOf:
+      - type: boolean
+      - example: ${true}
+        type: string
+    ActionQueryDebounceInMs:
+      description: The minimum time in milliseconds that must pass before the query
+        can be triggered again. This is useful for preventing accidental double-clicks
+        from triggering the query multiple times.
+      oneOf:
+      - example: 310.5
+        format: double
+        type: number
+      - description: If this is a string, it must be a valid JavaScript expression
+          that evaluates to a number.
+        example: ${1000}
+        type: string
+    ActionQueryMockedOutputs:
+      description: The mocked outputs of the action query. This is useful for testing
+        the app without actually running the action.
+      oneOf:
+      - type: string
+      - $ref: '#/components/schemas/ActionQueryMockedOutputsObject'
+    ActionQueryMockedOutputsEnabled:
+      description: Whether to enable the mocked outputs for testing.
+      oneOf:
+      - type: boolean
+      - description: If this is a string, it must be a valid JavaScript expression
+          that evaluates to a boolean.
+        example: ${true}
+        type: string
+    ActionQueryMockedOutputsObject:
+      description: The mocked outputs of the action query.
+      properties:
+        enabled:
+          $ref: '#/components/schemas/ActionQueryMockedOutputsEnabled'
+        outputs:
+          description: The mocked outputs of the action query, serialized as JSON.
+          example: '{"status": "success"}'
+          type: string
+      required:
+      - enabled
+      type: object
+    ActionQueryOnlyTriggerManually:
+      description: Determines when this query is executed. If set to `false`, the
+        query will run when the app loads and whenever any query arguments change.
+        If set to `true`, the query will only run when manually triggered from elsewhere
+        in the app.
+      oneOf:
+      - type: boolean
+      - description: If this is a string, it must be a valid JavaScript expression
+          that evaluates to a boolean.
+        example: ${true}
+        type: string
+    ActionQueryPollingIntervalInMs:
+      description: If specified, the app will poll the query at the specified interval
+        in milliseconds. The minimum polling interval is 15 seconds. The query will
+        only poll when the app's browser tab is active.
+      oneOf:
+      - example: 30000.0
+        format: double
+        minimum: 15000.0
+        type: number
+      - description: If this is a string, it must be a valid JavaScript expression
+          that evaluates to a number.
+        example: ${15000}
+        type: string
+    ActionQueryProperties:
+      description: The properties of the action query.
+      properties:
+        condition:
+          $ref: '#/components/schemas/ActionQueryCondition'
+        debounceInMs:
+          $ref: '#/components/schemas/ActionQueryDebounceInMs'
+        mockedOutputs:
+          $ref: '#/components/schemas/ActionQueryMockedOutputs'
+        onlyTriggerManually:
+          $ref: '#/components/schemas/ActionQueryOnlyTriggerManually'
+        outputs:
+          description: The post-query transformation function, which is a JavaScript
+            function that changes the query's `.outputs` property after the query's
+            execution.
+          example: ${((outputs) => {return outputs.body.data})(self.rawOutputs)}
+          type: string
+        pollingIntervalInMs:
+          $ref: '#/components/schemas/ActionQueryPollingIntervalInMs'
+        requiresConfirmation:
+          $ref: '#/components/schemas/ActionQueryRequiresConfirmation'
+        showToastOnError:
+          $ref: '#/components/schemas/ActionQueryShowToastOnError'
+        spec:
+          $ref: '#/components/schemas/ActionQuerySpec'
+      required:
+      - spec
+      type: object
+    ActionQueryRequiresConfirmation:
+      description: Whether to prompt the user to confirm this query before it runs.
+      oneOf:
+      - type: boolean
+      - description: If this is a string, it must be a valid JavaScript expression
+          that evaluates to a boolean.
+        example: ${true}
+        type: string
+    ActionQueryShowToastOnError:
+      description: Whether to display a toast to the user when the query returns an
+        error.
+      oneOf:
+      - type: boolean
+      - description: If this is a string, it must be a valid JavaScript expression
+          that evaluates to a boolean.
+        example: ${true}
+        type: string
+    ActionQuerySpec:
+      description: The definition of the action query.
+      oneOf:
+      - type: string
+      - $ref: '#/components/schemas/ActionQuerySpecObject'
+    ActionQuerySpecConnectionGroup:
+      description: The connection group to use for an action query.
+      properties:
+        id:
+          description: The ID of the connection group.
+          example: 65bb1f25-52e1-4510-9f8d-22d1516ed693
+          format: uuid
+          type: string
+        tags:
+          description: The tags of the connection group.
+          items:
+            type: string
+          type: array
+      type: object
+    ActionQuerySpecInput:
+      additionalProperties: {}
+      description: The inputs to the action query. See the [Actions Catalog](https://docs.datadoghq.com/actions/actions_catalog/)
+        for more detail on each action and its inputs.
+      type: object
+    ActionQuerySpecInputs:
+      description: The inputs to the action query. These are the values that are passed
+        to the action when it is triggered.
+      oneOf:
+      - type: string
+      - $ref: '#/components/schemas/ActionQuerySpecInput'
+    ActionQuerySpecObject:
+      description: The action query spec object.
+      properties:
+        connectionGroup:
+          $ref: '#/components/schemas/ActionQuerySpecConnectionGroup'
+        connectionId:
+          description: The ID of the custom connection to use for this action query.
+          example: 65bb1f25-52e1-4510-9f8d-22d1516ed693
+          type: string
+        fqn:
+          description: The fully qualified name of the action type.
+          example: com.datadoghq.http.request
+          type: string
+        inputs:
+          $ref: '#/components/schemas/ActionQuerySpecInputs'
+      required:
+      - fqn
+      type: object
+    ActionQueryType:
+      default: action
+      description: The action query type.
+      enum:
+      - action
+      example: action
+      type: string
+      x-enum-varnames:
+      - ACTION
     ActiveBillingDimensionsAttributes:
       description: List of active billing dimensions.
       properties:
@@ -9649,6 +9850,48 @@ components:
             type: number
           type: array
       type: object
+    DataTransform:
+      description: A data transformer, which is custom JavaScript code that executes
+        and transforms data when its inputs change.
+      properties:
+        id:
+          description: The ID of the data transformer.
+          example: 65bb1f25-52e1-4510-9f8d-22d1516ed693
+          format: uuid
+          type: string
+        name:
+          description: A unique identifier for this data transformer. This name is
+            also used to access the transformer's result throughout the app.
+          example: combineTwoOrders
+          type: string
+        properties:
+          $ref: '#/components/schemas/DataTransformProperties'
+        type:
+          $ref: '#/components/schemas/DataTransformType'
+      required:
+      - id
+      - name
+      - type
+      - properties
+      type: object
+    DataTransformProperties:
+      description: The properties of the data transformer.
+      properties:
+        outputs:
+          description: A JavaScript function that returns the transformed data.
+          example: "${(() => {return {\n    allItems: [...fetchOrder1.outputs.items,
+            ...fetchOrder2.outputs.items],\n}})()}"
+          type: string
+      type: object
+    DataTransformType:
+      default: dataTransform
+      description: The data transform type.
+      enum:
+      - dataTransform
+      example: dataTransform
+      type: string
+      x-enum-varnames:
+      - DATATRANSFORM
     Date:
       description: Date as Unix timestamp in milliseconds.
       example: 1722439510282
@@ -21797,34 +22040,12 @@ components:
           $ref: '#/components/schemas/Deployment'
       type: object
     Query:
-      description: A query used by an app. This can take the form of an external action,
-        a data transformation, or a state variable change.
-      properties:
-        events:
-          description: Events to listen for downstream of the query.
-          items:
-            $ref: '#/components/schemas/AppBuilderEvent'
-          type: array
-        id:
-          description: The ID of the query.
-          example: 65bb1f25-52e1-4510-9f8d-22d1516ed693
-          format: uuid
-          type: string
-        name:
-          description: The name of the query. The name must be unique within the app
-            and is visible in the app editor.
-          example: ''
-          type: string
-        properties:
-          description: The properties of the query. The properties vary depending
-            on the query type.
-        type:
-          $ref: '#/components/schemas/QueryType'
-      required:
-      - id
-      - name
-      - type
-      type: object
+      description: A data query used by an app. This can take the form of an external
+        action, a data transformation, or a state variable.
+      oneOf:
+      - $ref: '#/components/schemas/ActionQuery'
+      - $ref: '#/components/schemas/DataTransform'
+      - $ref: '#/components/schemas/StateVariable'
     QueryFormula:
       description: A formula for calculation based on one or more queries.
       properties:
@@ -21848,18 +22069,6 @@ components:
       x-enum-varnames:
       - ASC
       - DESC
-    QueryType:
-      description: The query type.
-      enum:
-      - action
-      - stateVariable
-      - dataTransform
-      example: action
-      type: string
-      x-enum-varnames:
-      - ACTION
-      - STATEVARIABLE
-      - DATATRANSFORM
     RUMAggregateBucketValue:
       description: A bucket value, can be either a timeseries or a single value.
       oneOf:
@@ -29822,6 +30031,46 @@ components:
       - PASS
       - FAIL
       - SKIP
+    StateVariable:
+      description: A variable, which can be set and read by other components in the
+        app.
+      properties:
+        id:
+          description: The ID of the state variable.
+          example: 65bb1f25-52e1-4510-9f8d-22d1516ed693
+          format: uuid
+          type: string
+        name:
+          description: A unique identifier for this state variable. This name is also
+            used to access the variable's value throughout the app.
+          example: ordersToSubmit
+          type: string
+        properties:
+          $ref: '#/components/schemas/StateVariableProperties'
+        type:
+          $ref: '#/components/schemas/StateVariableType'
+      required:
+      - id
+      - name
+      - type
+      - properties
+      type: object
+    StateVariableProperties:
+      description: The properties of the state variable.
+      properties:
+        defaultValue:
+          description: The default value of the state variable.
+          example: ${['order_3145', 'order_4920']}
+      type: object
+    StateVariableType:
+      default: stateVariable
+      description: The state variable type.
+      enum:
+      - stateVariable
+      example: stateVariable
+      type: string
+      x-enum-varnames:
+      - STATEVARIABLE
     Step:
       description: A Step is a sub-component of a workflow. Each Step performs an
         action.
@@ -33659,8 +33908,6 @@ paths:
         operator: OR
         permissions:
         - apps_write
-      x-unstable: '**Note**: App Builder API endpoints are still under active development
-        and might change at any time.'
     get:
       description: List all apps, with optional filters and sorting. This endpoint
         is paginated. Only basic app information such as the app ID, name, and description
@@ -33769,8 +34016,6 @@ paths:
         operator: OR
         permissions:
         - apps_run
-      x-unstable: '**Note**: App Builder API endpoints are still under active development
-        and might change at any time.'
     post:
       description: Create a new app, returning the app ID.
       operationId: CreateApp
@@ -33810,8 +34055,6 @@ paths:
         - apps_write
         - connections_resolve
         - workflows_run
-      x-unstable: '**Note**: App Builder API endpoints are still under active development
-        and might change at any time.'
   /api/v2/app-builder/apps/{app_id}:
     delete:
       description: Delete a single app.
@@ -33865,8 +34108,6 @@ paths:
         operator: OR
         permissions:
         - apps_write
-      x-unstable: '**Note**: App Builder API endpoints are still under active development
-        and might change at any time.'
     get:
       description: Get the full definition of an app.
       operationId: GetApp
@@ -33913,6 +34154,12 @@ paths:
               schema:
                 $ref: '#/components/schemas/JSONAPIErrorResponse'
           description: Not Found
+        '410':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JSONAPIErrorResponse'
+          description: Gone
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
       summary: Get App
@@ -33923,8 +34170,6 @@ paths:
         permissions:
         - apps_run
         - connections_read
-      x-unstable: '**Note**: App Builder API endpoints are still under active development
-        and might change at any time.'
     patch:
       description: Update an existing app. This creates a new version of the app.
       operationId: UpdateApp
@@ -33973,8 +34218,6 @@ paths:
         - apps_write
         - connections_resolve
         - workflows_run
-      x-unstable: '**Note**: App Builder API endpoints are still under active development
-        and might change at any time.'
   /api/v2/app-builder/apps/{app_id}/deployment:
     delete:
       description: Unpublish an app, removing the live version of the app. Unpublishing
@@ -34025,8 +34268,6 @@ paths:
         operator: OR
         permissions:
         - apps_write
-      x-unstable: '**Note**: App Builder API endpoints are still under active development
-        and might change at any time.'
     post:
       description: Publish an app for use by other users. To ensure the app is accessible
         to the correct users, you also need to set a [Restriction Policy](https://docs.datadoghq.com/api/latest/restriction-policies/)
@@ -34075,8 +34316,6 @@ paths:
         operator: OR
         permissions:
         - apps_write
-      x-unstable: '**Note**: App Builder API endpoints are still under active development
-        and might change at any time.'
   /api/v2/application_keys:
     get:
       description: List all application keys available for your org
