@@ -36,6 +36,31 @@
       "type": "safe"
     }
   },
+  "CreateAwsScanOptions": {
+    "tag": "Agentless Scanning",
+    "undo": {
+      "operationId": "DeleteAwsScanOptions",
+      "parameters": [
+        {
+          "name": "account_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteAwsScanOptions": {
+    "tag": "Agentless Scanning",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateAwsScanOptions": {
+    "tag": "Agentless Scanning",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListAPIKeys": {
     "tag": "Key Management",
     "undo": {

@@ -158,9 +158,15 @@ from datadog_api_client.v2.model.aws_cur_config_response import AwsCURConfigResp
 from datadog_api_client.v2.model.aws_cur_config_type import AwsCURConfigType
 from datadog_api_client.v2.model.aws_cur_configs_response import AwsCURConfigsResponse
 from datadog_api_client.v2.model.aws_scan_options_attributes import AwsScanOptionsAttributes
+from datadog_api_client.v2.model.aws_scan_options_create_data import AwsScanOptionsCreateData
+from datadog_api_client.v2.model.aws_scan_options_create_request import AwsScanOptionsCreateRequest
 from datadog_api_client.v2.model.aws_scan_options_data import AwsScanOptionsData
+from datadog_api_client.v2.model.aws_scan_options_list_response import AwsScanOptionsListResponse
 from datadog_api_client.v2.model.aws_scan_options_response import AwsScanOptionsResponse
 from datadog_api_client.v2.model.aws_scan_options_type import AwsScanOptionsType
+from datadog_api_client.v2.model.aws_scan_options_update_attributes import AwsScanOptionsUpdateAttributes
+from datadog_api_client.v2.model.aws_scan_options_update_data import AwsScanOptionsUpdateData
+from datadog_api_client.v2.model.aws_scan_options_update_request import AwsScanOptionsUpdateRequest
 from datadog_api_client.v2.model.azure_uc_config import AzureUCConfig
 from datadog_api_client.v2.model.azure_uc_config_pair import AzureUCConfigPair
 from datadog_api_client.v2.model.azure_uc_config_pair_attributes import AzureUCConfigPairAttributes
@@ -2636,9 +2642,15 @@ __all__ = [
     "AwsCURConfigType",
     "AwsCURConfigsResponse",
     "AwsScanOptionsAttributes",
+    "AwsScanOptionsCreateData",
+    "AwsScanOptionsCreateRequest",
     "AwsScanOptionsData",
+    "AwsScanOptionsListResponse",
     "AwsScanOptionsResponse",
     "AwsScanOptionsType",
+    "AwsScanOptionsUpdateAttributes",
+    "AwsScanOptionsUpdateData",
+    "AwsScanOptionsUpdateRequest",
     "AzureUCConfig",
     "AzureUCConfigPair",
     "AzureUCConfigPairAttributes",

@@ -1,0 +1,21 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"lambda":true,"sensitive_data":false,"vuln_containers_os":true,"vuln_host_os":true},"id":"184366314700","type":"incorrect_type"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/agentless_scanning/accounts/aws
+  response:
+    body:
+      string: '{"errors":[{"status":"400","title":"Bad Request","detail":"got type
+        \"incorrect_type\" expected one of \"aws_scan_options\""}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 400
+      message: Bad Request
+version: 1
