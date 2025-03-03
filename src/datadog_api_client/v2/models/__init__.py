@@ -70,6 +70,23 @@ from datadog_api_client.v2.model.action_connection_data_type import ActionConnec
 from datadog_api_client.v2.model.action_connection_data_update import ActionConnectionDataUpdate
 from datadog_api_client.v2.model.action_connection_integration import ActionConnectionIntegration
 from datadog_api_client.v2.model.action_connection_integration_update import ActionConnectionIntegrationUpdate
+from datadog_api_client.v2.model.action_query import ActionQuery
+from datadog_api_client.v2.model.action_query_condition import ActionQueryCondition
+from datadog_api_client.v2.model.action_query_debounce_in_ms import ActionQueryDebounceInMs
+from datadog_api_client.v2.model.action_query_mocked_outputs import ActionQueryMockedOutputs
+from datadog_api_client.v2.model.action_query_mocked_outputs_enabled import ActionQueryMockedOutputsEnabled
+from datadog_api_client.v2.model.action_query_mocked_outputs_object import ActionQueryMockedOutputsObject
+from datadog_api_client.v2.model.action_query_only_trigger_manually import ActionQueryOnlyTriggerManually
+from datadog_api_client.v2.model.action_query_polling_interval_in_ms import ActionQueryPollingIntervalInMs
+from datadog_api_client.v2.model.action_query_properties import ActionQueryProperties
+from datadog_api_client.v2.model.action_query_requires_confirmation import ActionQueryRequiresConfirmation
+from datadog_api_client.v2.model.action_query_show_toast_on_error import ActionQueryShowToastOnError
+from datadog_api_client.v2.model.action_query_spec import ActionQuerySpec
+from datadog_api_client.v2.model.action_query_spec_connection_group import ActionQuerySpecConnectionGroup
+from datadog_api_client.v2.model.action_query_spec_input import ActionQuerySpecInput
+from datadog_api_client.v2.model.action_query_spec_inputs import ActionQuerySpecInputs
+from datadog_api_client.v2.model.action_query_spec_object import ActionQuerySpecObject
+from datadog_api_client.v2.model.action_query_type import ActionQueryType
 from datadog_api_client.v2.model.active_billing_dimensions_attributes import ActiveBillingDimensionsAttributes
 from datadog_api_client.v2.model.active_billing_dimensions_body import ActiveBillingDimensionsBody
 from datadog_api_client.v2.model.active_billing_dimensions_response import ActiveBillingDimensionsResponse
@@ -692,6 +709,9 @@ from datadog_api_client.v2.model.data_deletion_response_item import DataDeletion
 from datadog_api_client.v2.model.data_deletion_response_item_attributes import DataDeletionResponseItemAttributes
 from datadog_api_client.v2.model.data_deletion_response_meta import DataDeletionResponseMeta
 from datadog_api_client.v2.model.data_scalar_column import DataScalarColumn
+from datadog_api_client.v2.model.data_transform import DataTransform
+from datadog_api_client.v2.model.data_transform_properties import DataTransformProperties
+from datadog_api_client.v2.model.data_transform_type import DataTransformType
 from datadog_api_client.v2.model.delete_app_response import DeleteAppResponse
 from datadog_api_client.v2.model.delete_app_response_data import DeleteAppResponseData
 from datadog_api_client.v2.model.delete_apps_request import DeleteAppsRequest
@@ -1641,7 +1661,6 @@ from datadog_api_client.v2.model.publish_app_response import PublishAppResponse
 from datadog_api_client.v2.model.query import Query
 from datadog_api_client.v2.model.query_formula import QueryFormula
 from datadog_api_client.v2.model.query_sort_order import QuerySortOrder
-from datadog_api_client.v2.model.query_type import QueryType
 from datadog_api_client.v2.model.rum_aggregate_bucket_value import RUMAggregateBucketValue
 from datadog_api_client.v2.model.rum_aggregate_bucket_value_timeseries import RUMAggregateBucketValueTimeseries
 from datadog_api_client.v2.model.rum_aggregate_bucket_value_timeseries_point import (
@@ -2299,6 +2318,9 @@ from datadog_api_client.v2.model.spans_warning import SpansWarning
 from datadog_api_client.v2.model.spec import Spec
 from datadog_api_client.v2.model.spec_version import SpecVersion
 from datadog_api_client.v2.model.state import State
+from datadog_api_client.v2.model.state_variable import StateVariable
+from datadog_api_client.v2.model.state_variable_properties import StateVariableProperties
+from datadog_api_client.v2.model.state_variable_type import StateVariableType
 from datadog_api_client.v2.model.step import Step
 from datadog_api_client.v2.model.step_display import StepDisplay
 from datadog_api_client.v2.model.step_display_bounds import StepDisplayBounds
@@ -2554,6 +2576,23 @@ __all__ = [
     "ActionConnectionDataUpdate",
     "ActionConnectionIntegration",
     "ActionConnectionIntegrationUpdate",
+    "ActionQuery",
+    "ActionQueryCondition",
+    "ActionQueryDebounceInMs",
+    "ActionQueryMockedOutputs",
+    "ActionQueryMockedOutputsEnabled",
+    "ActionQueryMockedOutputsObject",
+    "ActionQueryOnlyTriggerManually",
+    "ActionQueryPollingIntervalInMs",
+    "ActionQueryProperties",
+    "ActionQueryRequiresConfirmation",
+    "ActionQueryShowToastOnError",
+    "ActionQuerySpec",
+    "ActionQuerySpecConnectionGroup",
+    "ActionQuerySpecInput",
+    "ActionQuerySpecInputs",
+    "ActionQuerySpecObject",
+    "ActionQueryType",
     "ActiveBillingDimensionsAttributes",
     "ActiveBillingDimensionsBody",
     "ActiveBillingDimensionsResponse",
@@ -3032,6 +3071,9 @@ __all__ = [
     "DataDeletionResponseItemAttributes",
     "DataDeletionResponseMeta",
     "DataScalarColumn",
+    "DataTransform",
+    "DataTransformProperties",
+    "DataTransformType",
     "DeleteAppResponse",
     "DeleteAppResponseData",
     "DeleteAppsRequest",
@@ -3841,7 +3883,6 @@ __all__ = [
     "Query",
     "QueryFormula",
     "QuerySortOrder",
-    "QueryType",
     "RUMAggregateBucketValue",
     "RUMAggregateBucketValueTimeseries",
     "RUMAggregateBucketValueTimeseriesPoint",
@@ -4355,6 +4396,9 @@ __all__ = [
     "Spec",
     "SpecVersion",
     "State",
+    "StateVariable",
+    "StateVariableProperties",
+    "StateVariableType",
     "Step",
     "StepDisplay",
     "StepDisplayBounds",
