@@ -1,0 +1,19 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/agentless_scanning/accounts/aws/incorrectId
+  response:
+    body:
+      string: '{"errors":[{"title":"Generic Error","detail":"missing or invalid url
+        parameter ''accountId'', expected uuid format ''123456789012''"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 400
+      message: Bad Request
+version: 1

@@ -1110,10 +1110,31 @@ datadog\_api\_client.v2.model.aws\_scan\_options\_attributes module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.aws\_scan\_options\_create\_data module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_scan_options_create_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_scan\_options\_create\_request module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_scan_options_create_request
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.aws\_scan\_options\_data module
 -------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.aws_scan_options_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_scan\_options\_list\_response module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_scan_options_list_response
    :members:
    :show-inheritance:
 
@@ -1128,6 +1149,27 @@ datadog\_api\_client.v2.model.aws\_scan\_options\_type module
 -------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.aws_scan_options_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_scan\_options\_update\_attributes module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_scan_options_update_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_scan\_options\_update\_data module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_scan_options_update_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_scan\_options\_update\_request module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_scan_options_update_request
    :members:
    :show-inheritance:
 
