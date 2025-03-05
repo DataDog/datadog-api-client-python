@@ -312,7 +312,7 @@ class SoftwareCatalogApi:
         pagination = {
             "limit_value": local_page_size,
             "results_path": "data",
-            "page_param": "page_offset",
+            "page_offset_param": "page_offset",
             "endpoint": endpoint,
             "kwargs": kwargs,
         }

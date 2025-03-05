@@ -35328,7 +35328,7 @@ paths:
       - Software Catalog
       x-pagination:
         limitParam: page[limit]
-        pageParam: page[offset]
+        pageOffsetParam: page[offset]
         resultsPath: data
     post:
       description: Create or update entities in Software Catalog.
