@@ -12,18 +12,18 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.aws_scan_options_attributes import AwsScanOptionsAttributes
+    from datadog_api_client.v2.model.aws_scan_options_create_attributes import AwsScanOptionsCreateAttributes
     from datadog_api_client.v2.model.aws_scan_options_type import AwsScanOptionsType
 
 
 class AwsScanOptionsCreateData(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.aws_scan_options_attributes import AwsScanOptionsAttributes
+        from datadog_api_client.v2.model.aws_scan_options_create_attributes import AwsScanOptionsCreateAttributes
         from datadog_api_client.v2.model.aws_scan_options_type import AwsScanOptionsType
 
         return {
-            "attributes": (AwsScanOptionsAttributes,),
+            "attributes": (AwsScanOptionsCreateAttributes,),
             "id": (str,),
             "type": (AwsScanOptionsType,),
         }
@@ -34,14 +34,14 @@ class AwsScanOptionsCreateData(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, attributes: AwsScanOptionsAttributes, id: str, type: AwsScanOptionsType, **kwargs):
+    def __init__(self_, attributes: AwsScanOptionsCreateAttributes, id: str, type: AwsScanOptionsType, **kwargs):
         """
         Object for the scan options of a single AWS account.
 
-        :param attributes: Attributes for the AWS scan options.
-        :type attributes: AwsScanOptionsAttributes
+        :param attributes: Attributes for the AWS scan options to create.
+        :type attributes: AwsScanOptionsCreateAttributes
 
-        :param id: The ID of an AWS account.
+        :param id: The ID of the AWS account.
         :type id: str
 
         :param type: The type of the resource. The value should always be ``aws_scan_options``.

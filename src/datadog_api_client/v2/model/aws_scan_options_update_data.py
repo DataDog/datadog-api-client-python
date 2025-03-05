@@ -3,13 +3,11 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    unset,
-    UnsetType,
 )
 
 
@@ -36,13 +34,7 @@ class AwsScanOptionsUpdateData(ModelNormal):
         "type": "type",
     }
 
-    def __init__(
-        self_,
-        attributes: AwsScanOptionsUpdateAttributes,
-        type: AwsScanOptionsType,
-        id: Union[str, UnsetType] = unset,
-        **kwargs,
-    ):
+    def __init__(self_, attributes: AwsScanOptionsUpdateAttributes, id: str, type: AwsScanOptionsType, **kwargs):
         """
         Object for the scan options of a single AWS account.
 
@@ -50,14 +42,13 @@ class AwsScanOptionsUpdateData(ModelNormal):
         :type attributes: AwsScanOptionsUpdateAttributes
 
         :param id: The ID of the AWS account.
-        :type id: str, optional
+        :type id: str
 
         :param type: The type of the resource. The value should always be ``aws_scan_options``.
         :type type: AwsScanOptionsType
         """
-        if id is not unset:
-            kwargs["id"] = id
         super().__init__(kwargs)
 
         self_.attributes = attributes
+        self_.id = id
         self_.type = type

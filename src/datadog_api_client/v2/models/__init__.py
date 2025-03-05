@@ -174,7 +174,16 @@ from datadog_api_client.v2.model.aws_cur_config_post_request_type import AwsCURC
 from datadog_api_client.v2.model.aws_cur_config_response import AwsCURConfigResponse
 from datadog_api_client.v2.model.aws_cur_config_type import AwsCURConfigType
 from datadog_api_client.v2.model.aws_cur_configs_response import AwsCURConfigsResponse
+from datadog_api_client.v2.model.aws_on_demand_attributes import AwsOnDemandAttributes
+from datadog_api_client.v2.model.aws_on_demand_create_attributes import AwsOnDemandCreateAttributes
+from datadog_api_client.v2.model.aws_on_demand_create_data import AwsOnDemandCreateData
+from datadog_api_client.v2.model.aws_on_demand_create_request import AwsOnDemandCreateRequest
+from datadog_api_client.v2.model.aws_on_demand_data import AwsOnDemandData
+from datadog_api_client.v2.model.aws_on_demand_list_response import AwsOnDemandListResponse
+from datadog_api_client.v2.model.aws_on_demand_response import AwsOnDemandResponse
+from datadog_api_client.v2.model.aws_on_demand_type import AwsOnDemandType
 from datadog_api_client.v2.model.aws_scan_options_attributes import AwsScanOptionsAttributes
+from datadog_api_client.v2.model.aws_scan_options_create_attributes import AwsScanOptionsCreateAttributes
 from datadog_api_client.v2.model.aws_scan_options_create_data import AwsScanOptionsCreateData
 from datadog_api_client.v2.model.aws_scan_options_create_request import AwsScanOptionsCreateRequest
 from datadog_api_client.v2.model.aws_scan_options_data import AwsScanOptionsData
@@ -2680,7 +2689,16 @@ __all__ = [
     "AwsCURConfigResponse",
     "AwsCURConfigType",
     "AwsCURConfigsResponse",
+    "AwsOnDemandAttributes",
+    "AwsOnDemandCreateAttributes",
+    "AwsOnDemandCreateData",
+    "AwsOnDemandCreateRequest",
+    "AwsOnDemandData",
+    "AwsOnDemandListResponse",
+    "AwsOnDemandResponse",
+    "AwsOnDemandType",
     "AwsScanOptionsAttributes",
+    "AwsScanOptionsCreateAttributes",
     "AwsScanOptionsCreateData",
     "AwsScanOptionsCreateRequest",
     "AwsScanOptionsData",

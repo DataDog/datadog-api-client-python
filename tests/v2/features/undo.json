@@ -61,6 +61,24 @@
       "type": "idempotent"
     }
   },
+  "ListAwsOnDemandTasks": {
+    "tag": "Agentless Scanning",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateAwsOnDemandTask": {
+    "tag": "Agentless Scanning",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "RetrieveAwsOnDemandTask": {
+    "tag": "Agentless Scanning",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListAPIKeys": {
     "tag": "Key Management",
     "undo": {
