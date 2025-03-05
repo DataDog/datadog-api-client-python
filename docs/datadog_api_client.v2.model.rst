@@ -1194,6 +1194,62 @@ datadog\_api\_client.v2.model.aws\_new\_external\_id\_response\_data\_type modul
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.aws\_on\_demand\_attributes module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_on_demand_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_on\_demand\_create\_attributes module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_on_demand_create_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_on\_demand\_create\_data module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_on_demand_create_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_on\_demand\_create\_request module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_on_demand_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_on\_demand\_data module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_on_demand_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_on\_demand\_list\_response module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_on_demand_list_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_on\_demand\_response module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_on_demand_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_on\_demand\_type module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_on_demand_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.aws\_regions module
 -------------------------------------------------
 
@@ -1226,6 +1282,13 @@ datadog\_api\_client.v2.model.aws\_scan\_options\_attributes module
 -------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.aws_scan_options_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_scan\_options\_create\_attributes module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_scan_options_create_attributes
    :members:
    :show-inheritance:
 

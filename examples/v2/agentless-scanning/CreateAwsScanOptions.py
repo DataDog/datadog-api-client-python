@@ -4,7 +4,7 @@ Post AWS Scan Options returns "Agentless scan options enabled successfully." res
 
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.agentless_scanning_api import AgentlessScanningApi
-from datadog_api_client.v2.model.aws_scan_options_attributes import AwsScanOptionsAttributes
+from datadog_api_client.v2.model.aws_scan_options_create_attributes import AwsScanOptionsCreateAttributes
 from datadog_api_client.v2.model.aws_scan_options_create_data import AwsScanOptionsCreateData
 from datadog_api_client.v2.model.aws_scan_options_create_request import AwsScanOptionsCreateRequest
 from datadog_api_client.v2.model.aws_scan_options_type import AwsScanOptionsType
@@ -13,7 +13,7 @@ body = AwsScanOptionsCreateRequest(
     data=AwsScanOptionsCreateData(
         id="000000000003",
         type=AwsScanOptionsType.AWS_SCAN_OPTIONS,
-        attributes=AwsScanOptionsAttributes(
+        attributes=AwsScanOptionsCreateAttributes(
             _lambda=True,
             sensitive_data=False,
             vuln_containers_os=True,
