@@ -1,0 +1,20 @@
+interactions:
+- request:
+    body: '{"data":[{"id":"325631eb-94c9-49c0-93f9-ab7e4fd24529","type":"retention_filters"}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/rum/applications/1d4b9c34-7ac4-423a-91cf-9902d926e9b3/relationships/retention_filters
+  response:
+    body:
+      string: '{"errors":[{"status":"400","title":"Bad Request"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 400
+      message: Bad Request
+version: 1
