@@ -12,6 +12,10 @@ from datadog_api_client.model_utils import (
 
 class ScheduleTrigger(ModelNormal):
     @cached_property
+    def additional_properties_type(_):
+        return None
+
+    @cached_property
     def openapi_types(_):
         return {
             "rrule_expression": (str,),

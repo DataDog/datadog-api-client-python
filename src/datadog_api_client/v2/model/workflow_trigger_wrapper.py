@@ -15,6 +15,10 @@ from datadog_api_client.model_utils import (
 
 class WorkflowTriggerWrapper(ModelNormal):
     @cached_property
+    def additional_properties_type(_):
+        return None
+
+    @cached_property
     def openapi_types(_):
         return {
             "start_step_names": ([str],),

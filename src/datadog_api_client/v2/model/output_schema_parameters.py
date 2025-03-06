@@ -23,6 +23,10 @@ if TYPE_CHECKING:
 
 class OutputSchemaParameters(ModelNormal):
     @cached_property
+    def additional_properties_type(_):
+        return None
+
+    @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.output_schema_parameters_type import OutputSchemaParametersType
 
