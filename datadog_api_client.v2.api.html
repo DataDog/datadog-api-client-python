@@ -777,6 +777,34 @@
         </li></ul>
             </nav>
         </li>
+        <li class="md-nav__item"><a href="#module-datadog_api_client.v2.api.application_security_api" class="md-nav__link">datadog_api_client.v2.api.application_security_api module</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.application_security_api.ApplicationSecurityApi" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ApplicationSecurityApi</span></code></a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.application_security_api.ApplicationSecurityApi.create_application_security_waf_custom_rule" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ApplicationSecurityApi.create_application_security_waf_custom_rule()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.application_security_api.ApplicationSecurityApi.create_application_security_waf_exclusion_filter" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ApplicationSecurityApi.create_application_security_waf_exclusion_filter()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.application_security_api.ApplicationSecurityApi.delete_application_security_waf_custom_rule" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ApplicationSecurityApi.delete_application_security_waf_custom_rule()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.application_security_api.ApplicationSecurityApi.delete_application_security_waf_exclusion_filter" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ApplicationSecurityApi.delete_application_security_waf_exclusion_filter()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.application_security_api.ApplicationSecurityApi.get_application_security_waf_custom_rule" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ApplicationSecurityApi.get_application_security_waf_custom_rule()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.application_security_api.ApplicationSecurityApi.get_application_security_waf_exclusion_filter" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ApplicationSecurityApi.get_application_security_waf_exclusion_filter()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.application_security_api.ApplicationSecurityApi.list_application_security_waf_custom_rules" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ApplicationSecurityApi.list_application_security_waf_custom_rules()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.application_security_api.ApplicationSecurityApi.list_application_security_waf_exclusion_filters" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ApplicationSecurityApi.list_application_security_waf_exclusion_filters()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.application_security_api.ApplicationSecurityApi.update_application_security_waf_custom_rule" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ApplicationSecurityApi.update_application_security_waf_custom_rule()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.application_security_api.ApplicationSecurityApi.update_application_security_waf_exclusion_filter" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ApplicationSecurityApi.update_application_security_waf_exclusion_filter()</span></code></a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
         <li class="md-nav__item"><a href="#module-datadog_api_client.v2.api.audit_api" class="md-nav__link">datadog_api_client.v2.api.audit_api module</a><nav class="md-nav">
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.audit_api.AuditApi" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">AuditApi</span></code></a><nav class="md-nav">
@@ -2649,6 +2677,164 @@ Returns the retention filter definition when the request is successful.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.update_app_response.UpdateAppResponse" title="datadog_api_client.v2.model.update_app_response.UpdateAppResponse">UpdateAppResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+</section>
+<section id="module-datadog_api_client.v2.api.application_security_api">
+<span id="datadog-api-client-v2-api-application-security-api-module"></span><h2 id="module-datadog_api_client.v2.api.application_security_api">datadog_api_client.v2.api.application_security_api module<a class="headerlink" href="#module-datadog_api_client.v2.api.application_security_api" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.application_security_api.ApplicationSecurityApi">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ApplicationSecurityApi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_client</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datadog_api_client.v2.api.application_security_api.ApplicationSecurityApi" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p><a class="reference external" href="https://docs.datadoghq.com/security/application_security/">Datadog Application Security</a> provides protection against
+application-level attacks that aim to exploit code-level vulnerabilities,
+such as Server-Side-Request-Forgery (SSRF), SQL injection, Log4Shell, and
+Reflected Cross-Site-Scripting (XSS). You can monitor and protect apps
+hosted directly on a server, Docker, Kubernetes, Amazon ECS, and (for
+supported languages) AWS Fargate.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.application_security_api.ApplicationSecurityApi.create_application_security_waf_custom_rule">
+<span class="sig-name descname"><span class="pre">create_application_security_waf_custom_rule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.application_security_waf_custom_rule_create_request.ApplicationSecurityWafCustomRuleCreateRequest" title="datadog_api_client.v2.model.application_security_waf_custom_rule_create_request.ApplicationSecurityWafCustomRuleCreateRequest"><span class="pre">ApplicationSecurityWafCustomRuleCreateRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.application_security_waf_custom_rule_response.ApplicationSecurityWafCustomRuleResponse" title="datadog_api_client.v2.model.application_security_waf_custom_rule_response.ApplicationSecurityWafCustomRuleResponse"><span class="pre">ApplicationSecurityWafCustomRuleResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.application_security_api.ApplicationSecurityApi.create_application_security_waf_custom_rule" title="Link to this definition">¶</a></dt>
+<dd><p>Create a WAF custom rule.</p>
+<p>Create a new WAF custom rule with the given parameters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>body</strong> (<a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.application_security_waf_custom_rule_create_request.ApplicationSecurityWafCustomRuleCreateRequest" title="datadog_api_client.v2.model.application_security_waf_custom_rule_create_request.ApplicationSecurityWafCustomRuleCreateRequest"><em>ApplicationSecurityWafCustomRuleCreateRequest</em></a>) – The definition of the new WAF Custom Rule.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.application_security_waf_custom_rule_response.ApplicationSecurityWafCustomRuleResponse" title="datadog_api_client.v2.model.application_security_waf_custom_rule_response.ApplicationSecurityWafCustomRuleResponse">ApplicationSecurityWafCustomRuleResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.application_security_api.ApplicationSecurityApi.create_application_security_waf_exclusion_filter">
+<span class="sig-name descname"><span class="pre">create_application_security_waf_exclusion_filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.application_security_waf_exclusion_filter_create_request.ApplicationSecurityWafExclusionFilterCreateRequest" title="datadog_api_client.v2.model.application_security_waf_exclusion_filter_create_request.ApplicationSecurityWafExclusionFilterCreateRequest"><span class="pre">ApplicationSecurityWafExclusionFilterCreateRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.application_security_waf_exclusion_filter_response.ApplicationSecurityWafExclusionFilterResponse" title="datadog_api_client.v2.model.application_security_waf_exclusion_filter_response.ApplicationSecurityWafExclusionFilterResponse"><span class="pre">ApplicationSecurityWafExclusionFilterResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.application_security_api.ApplicationSecurityApi.create_application_security_waf_exclusion_filter" title="Link to this definition">¶</a></dt>
+<dd><p>Create a WAF exclusion filter.</p>
+<p>Create a new WAF exclusion filter with the given parameters.</p>
+<p>A request matched by an exclusion filter will be ignored by the Application Security WAF product.
+Go to <a class="reference external" href="https://app.datadoghq.com/security/appsec/passlist">https://app.datadoghq.com/security/appsec/passlist</a> to review existing exclusion filters (also called passlist entries).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>body</strong> (<a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.application_security_waf_exclusion_filter_create_request.ApplicationSecurityWafExclusionFilterCreateRequest" title="datadog_api_client.v2.model.application_security_waf_exclusion_filter_create_request.ApplicationSecurityWafExclusionFilterCreateRequest"><em>ApplicationSecurityWafExclusionFilterCreateRequest</em></a>) – The definition of the new WAF exclusion filter.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.application_security_waf_exclusion_filter_response.ApplicationSecurityWafExclusionFilterResponse" title="datadog_api_client.v2.model.application_security_waf_exclusion_filter_response.ApplicationSecurityWafExclusionFilterResponse">ApplicationSecurityWafExclusionFilterResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.application_security_api.ApplicationSecurityApi.delete_application_security_waf_custom_rule">
+<span class="sig-name descname"><span class="pre">delete_application_security_waf_custom_rule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">custom_rule_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#datadog_api_client.v2.api.application_security_api.ApplicationSecurityApi.delete_application_security_waf_custom_rule" title="Link to this definition">¶</a></dt>
+<dd><p>Delete a WAF Custom Rule.</p>
+<p>Delete a specific WAF custom rule.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>custom_rule_id</strong> (<em>str</em>) – The ID of the custom rule.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.application_security_api.ApplicationSecurityApi.delete_application_security_waf_exclusion_filter">
+<span class="sig-name descname"><span class="pre">delete_application_security_waf_exclusion_filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exclusion_filter_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#datadog_api_client.v2.api.application_security_api.ApplicationSecurityApi.delete_application_security_waf_exclusion_filter" title="Link to this definition">¶</a></dt>
+<dd><p>Delete a WAF exclusion filter.</p>
+<p>Delete a specific WAF exclusion filter using its identifier.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>exclusion_filter_id</strong> (<em>str</em>) – The identifier of the WAF exclusion filter.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.application_security_api.ApplicationSecurityApi.get_application_security_waf_custom_rule">
+<span class="sig-name descname"><span class="pre">get_application_security_waf_custom_rule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">custom_rule_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.application_security_waf_custom_rule_response.ApplicationSecurityWafCustomRuleResponse" title="datadog_api_client.v2.model.application_security_waf_custom_rule_response.ApplicationSecurityWafCustomRuleResponse"><span class="pre">ApplicationSecurityWafCustomRuleResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.application_security_api.ApplicationSecurityApi.get_application_security_waf_custom_rule" title="Link to this definition">¶</a></dt>
+<dd><p>Get a WAF custom rule.</p>
+<p>Retrieve a WAF custom rule by ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>custom_rule_id</strong> (<em>str</em>) – The ID of the custom rule.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.application_security_waf_custom_rule_response.ApplicationSecurityWafCustomRuleResponse" title="datadog_api_client.v2.model.application_security_waf_custom_rule_response.ApplicationSecurityWafCustomRuleResponse">ApplicationSecurityWafCustomRuleResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.application_security_api.ApplicationSecurityApi.get_application_security_waf_exclusion_filter">
+<span class="sig-name descname"><span class="pre">get_application_security_waf_exclusion_filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exclusion_filter_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.application_security_waf_exclusion_filter_response.ApplicationSecurityWafExclusionFilterResponse" title="datadog_api_client.v2.model.application_security_waf_exclusion_filter_response.ApplicationSecurityWafExclusionFilterResponse"><span class="pre">ApplicationSecurityWafExclusionFilterResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.application_security_api.ApplicationSecurityApi.get_application_security_waf_exclusion_filter" title="Link to this definition">¶</a></dt>
+<dd><p>Get a WAF exclusion filter.</p>
+<p>Retrieve a specific WAF exclusion filter using its identifier.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>exclusion_filter_id</strong> (<em>str</em>) – The identifier of the WAF exclusion filter.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.application_security_waf_exclusion_filter_response.ApplicationSecurityWafExclusionFilterResponse" title="datadog_api_client.v2.model.application_security_waf_exclusion_filter_response.ApplicationSecurityWafExclusionFilterResponse">ApplicationSecurityWafExclusionFilterResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.application_security_api.ApplicationSecurityApi.list_application_security_waf_custom_rules">
+<span class="sig-name descname"><span class="pre">list_application_security_waf_custom_rules</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.application_security_waf_custom_rule_list_response.ApplicationSecurityWafCustomRuleListResponse" title="datadog_api_client.v2.model.application_security_waf_custom_rule_list_response.ApplicationSecurityWafCustomRuleListResponse"><span class="pre">ApplicationSecurityWafCustomRuleListResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.application_security_api.ApplicationSecurityApi.list_application_security_waf_custom_rules" title="Link to this definition">¶</a></dt>
+<dd><p>List all WAF custom rules.</p>
+<p>Retrieve a list of WAF custom rule.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.application_security_waf_custom_rule_list_response.ApplicationSecurityWafCustomRuleListResponse" title="datadog_api_client.v2.model.application_security_waf_custom_rule_list_response.ApplicationSecurityWafCustomRuleListResponse">ApplicationSecurityWafCustomRuleListResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.application_security_api.ApplicationSecurityApi.list_application_security_waf_exclusion_filters">
+<span class="sig-name descname"><span class="pre">list_application_security_waf_exclusion_filters</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.application_security_waf_exclusion_filters_response.ApplicationSecurityWafExclusionFiltersResponse" title="datadog_api_client.v2.model.application_security_waf_exclusion_filters_response.ApplicationSecurityWafExclusionFiltersResponse"><span class="pre">ApplicationSecurityWafExclusionFiltersResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.application_security_api.ApplicationSecurityApi.list_application_security_waf_exclusion_filters" title="Link to this definition">¶</a></dt>
+<dd><p>List all WAF exclusion filters.</p>
+<p>Retrieve a list of WAF exclusion filters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.application_security_waf_exclusion_filters_response.ApplicationSecurityWafExclusionFiltersResponse" title="datadog_api_client.v2.model.application_security_waf_exclusion_filters_response.ApplicationSecurityWafExclusionFiltersResponse">ApplicationSecurityWafExclusionFiltersResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.application_security_api.ApplicationSecurityApi.update_application_security_waf_custom_rule">
+<span class="sig-name descname"><span class="pre">update_application_security_waf_custom_rule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">custom_rule_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.application_security_waf_custom_rule_update_request.ApplicationSecurityWafCustomRuleUpdateRequest" title="datadog_api_client.v2.model.application_security_waf_custom_rule_update_request.ApplicationSecurityWafCustomRuleUpdateRequest"><span class="pre">ApplicationSecurityWafCustomRuleUpdateRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.application_security_waf_custom_rule_response.ApplicationSecurityWafCustomRuleResponse" title="datadog_api_client.v2.model.application_security_waf_custom_rule_response.ApplicationSecurityWafCustomRuleResponse"><span class="pre">ApplicationSecurityWafCustomRuleResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.application_security_api.ApplicationSecurityApi.update_application_security_waf_custom_rule" title="Link to this definition">¶</a></dt>
+<dd><p>Update a WAF Custom Rule.</p>
+<p>Update a specific WAF custom Rule.
+Returns the Custom Rule object when the request is successful.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>custom_rule_id</strong> (<em>str</em>) – The ID of the custom rule.</p></li>
+<li><p><strong>body</strong> (<a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.application_security_waf_custom_rule_update_request.ApplicationSecurityWafCustomRuleUpdateRequest" title="datadog_api_client.v2.model.application_security_waf_custom_rule_update_request.ApplicationSecurityWafCustomRuleUpdateRequest"><em>ApplicationSecurityWafCustomRuleUpdateRequest</em></a>) – New definition of the WAF Custom Rule.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.application_security_waf_custom_rule_response.ApplicationSecurityWafCustomRuleResponse" title="datadog_api_client.v2.model.application_security_waf_custom_rule_response.ApplicationSecurityWafCustomRuleResponse">ApplicationSecurityWafCustomRuleResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.application_security_api.ApplicationSecurityApi.update_application_security_waf_exclusion_filter">
+<span class="sig-name descname"><span class="pre">update_application_security_waf_exclusion_filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exclusion_filter_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.application_security_waf_exclusion_filter_update_request.ApplicationSecurityWafExclusionFilterUpdateRequest" title="datadog_api_client.v2.model.application_security_waf_exclusion_filter_update_request.ApplicationSecurityWafExclusionFilterUpdateRequest"><span class="pre">ApplicationSecurityWafExclusionFilterUpdateRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.application_security_waf_exclusion_filter_response.ApplicationSecurityWafExclusionFilterResponse" title="datadog_api_client.v2.model.application_security_waf_exclusion_filter_response.ApplicationSecurityWafExclusionFilterResponse"><span class="pre">ApplicationSecurityWafExclusionFilterResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.application_security_api.ApplicationSecurityApi.update_application_security_waf_exclusion_filter" title="Link to this definition">¶</a></dt>
+<dd><p>Update a WAF exclusion filter.</p>
+<p>Update a specific WAF exclusion filter using its identifier.
+Returns the exclusion filter object when the request is successful.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>exclusion_filter_id</strong> (<em>str</em>) – The identifier of the WAF exclusion filter.</p></li>
+<li><p><strong>body</strong> (<a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.application_security_waf_exclusion_filter_update_request.ApplicationSecurityWafExclusionFilterUpdateRequest" title="datadog_api_client.v2.model.application_security_waf_exclusion_filter_update_request.ApplicationSecurityWafExclusionFilterUpdateRequest"><em>ApplicationSecurityWafExclusionFilterUpdateRequest</em></a>) – The exclusion filter to update.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.application_security_waf_exclusion_filter_response.ApplicationSecurityWafExclusionFilterResponse" title="datadog_api_client.v2.model.application_security_waf_exclusion_filter_response.ApplicationSecurityWafExclusionFilterResponse">ApplicationSecurityWafExclusionFilterResponse</a></p>
 </dd>
 </dl>
 </dd></dl>

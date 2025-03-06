@@ -515,6 +515,286 @@ datadog\_api\_client.v2.model.application\_keys\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.application\_security\_waf\_custom\_rule\_action module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_waf_custom_rule_action
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.application\_security\_waf\_custom\_rule\_action\_action module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_waf_custom_rule_action_action
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.application\_security\_waf\_custom\_rule\_action\_parameters module
+-------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_waf_custom_rule_action_parameters
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.application\_security\_waf\_custom\_rule\_attributes module
+-----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_waf_custom_rule_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.application\_security\_waf\_custom\_rule\_condition module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_waf_custom_rule_condition
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.application\_security\_waf\_custom\_rule\_condition\_input module
+-----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_waf_custom_rule_condition_input
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.application\_security\_waf\_custom\_rule\_condition\_input\_address module
+--------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_waf_custom_rule_condition_input_address
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.application\_security\_waf\_custom\_rule\_condition\_operator module
+--------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_waf_custom_rule_condition_operator
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.application\_security\_waf\_custom\_rule\_condition\_options module
+-------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_waf_custom_rule_condition_options
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.application\_security\_waf\_custom\_rule\_condition\_parameters module
+----------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_waf_custom_rule_condition_parameters
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.application\_security\_waf\_custom\_rule\_create\_attributes module
+-------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_waf_custom_rule_create_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.application\_security\_waf\_custom\_rule\_create\_data module
+-------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_waf_custom_rule_create_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.application\_security\_waf\_custom\_rule\_create\_request module
+----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_waf_custom_rule_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.application\_security\_waf\_custom\_rule\_data module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_waf_custom_rule_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.application\_security\_waf\_custom\_rule\_list\_response module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_waf_custom_rule_list_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.application\_security\_waf\_custom\_rule\_metadata module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_waf_custom_rule_metadata
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.application\_security\_waf\_custom\_rule\_response module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_waf_custom_rule_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.application\_security\_waf\_custom\_rule\_scope module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_waf_custom_rule_scope
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.application\_security\_waf\_custom\_rule\_tags module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_waf_custom_rule_tags
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.application\_security\_waf\_custom\_rule\_tags\_category module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_waf_custom_rule_tags_category
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.application\_security\_waf\_custom\_rule\_type module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_waf_custom_rule_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.application\_security\_waf\_custom\_rule\_update\_attributes module
+-------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_waf_custom_rule_update_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.application\_security\_waf\_custom\_rule\_update\_data module
+-------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_waf_custom_rule_update_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.application\_security\_waf\_custom\_rule\_update\_request module
+----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_waf_custom_rule_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.application\_security\_waf\_exclusion\_filter\_attributes module
+----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_waf_exclusion_filter_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.application\_security\_waf\_exclusion\_filter\_create\_attributes module
+------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_waf_exclusion_filter_create_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.application\_security\_waf\_exclusion\_filter\_create\_data module
+------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_waf_exclusion_filter_create_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.application\_security\_waf\_exclusion\_filter\_create\_request module
+---------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_waf_exclusion_filter_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.application\_security\_waf\_exclusion\_filter\_metadata module
+--------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_waf_exclusion_filter_metadata
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.application\_security\_waf\_exclusion\_filter\_on\_match module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_waf_exclusion_filter_on_match
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.application\_security\_waf\_exclusion\_filter\_resource module
+--------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_waf_exclusion_filter_resource
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.application\_security\_waf\_exclusion\_filter\_response module
+--------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_waf_exclusion_filter_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.application\_security\_waf\_exclusion\_filter\_rules\_target module
+-------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_waf_exclusion_filter_rules_target
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.application\_security\_waf\_exclusion\_filter\_rules\_target\_tags module
+-------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_waf_exclusion_filter_rules_target_tags
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.application\_security\_waf\_exclusion\_filter\_scope module
+-----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_waf_exclusion_filter_scope
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.application\_security\_waf\_exclusion\_filter\_type module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_waf_exclusion_filter_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.application\_security\_waf\_exclusion\_filter\_update\_attributes module
+------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_waf_exclusion_filter_update_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.application\_security\_waf\_exclusion\_filter\_update\_data module
+------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_waf_exclusion_filter_update_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.application\_security\_waf\_exclusion\_filter\_update\_request module
+---------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_waf_exclusion_filter_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.application\_security\_waf\_exclusion\_filters\_response module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_waf_exclusion_filters_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.apps\_sort\_field module
 ------------------------------------------------------
 
