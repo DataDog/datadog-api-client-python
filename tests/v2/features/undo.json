@@ -73,7 +73,7 @@
       "type": "idempotent"
     }
   },
-  "RetrieveAwsOnDemandTask": {
+  "GetAwsOnDemandTask": {
     "tag": "Agentless Scanning",
     "undo": {
       "type": "safe"

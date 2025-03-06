@@ -3,13 +3,10 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    unset,
-    UnsetType,
 )
 
 
@@ -24,13 +21,13 @@ class AwsOnDemandCreateAttributes(ModelNormal):
         "arn": "arn",
     }
 
-    def __init__(self_, arn: Union[str, UnsetType] = unset, **kwargs):
+    def __init__(self_, arn: str, **kwargs):
         """
         Attributes for the AWS on demand task.
 
         :param arn: The arn of the resource to scan. Agentless supports the scan of EC2 instances, lambda functions, AMI, ECR, RDS and S3 buckets.
-        :type arn: str, optional
+        :type arn: str
         """
-        if arn is not unset:
-            kwargs["arn"] = arn
         super().__init__(kwargs)
+
+        self_.arn = arn

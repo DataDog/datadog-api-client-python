@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"lambda":false,"vuln_containers_os":true,"vuln_host_os":true},"id":"000000000002","type":"aws_scan_options"}}'
+    body: '{"data":{"attributes":{"lambda":false,"sensitive_data":false,"vuln_containers_os":true,"vuln_host_os":true},"id":"000000000002","type":"aws_scan_options"}}'
     headers:
       accept:
       - application/json

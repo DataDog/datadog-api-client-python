@@ -3,7 +3,8 @@ Feature: Agentless Scanning
   Datadog Agentless Scanning provides visibility into risks and
   vulnerabilities within your hosts, running containers, and serverless
   functions—all without requiring teams to install Agents on every host or
-  where Agents cannot be installed. Go to
+  where Agents cannot be installed. Agentless offers also Sensitive Data
+  Scanning capabilities on your storage. Go to
   https://www.datadoghq.com/blog/agentless-scanning/ to learn more.
 
   Background:
@@ -34,21 +35,21 @@ Feature: Agentless Scanning
 
   @team:DataDog/k9-agentless
   Scenario: Get AWS On Demand task by id returns "Bad Request" response
-    Given new "RetrieveAwsOnDemandTask" request
+    Given new "GetAwsOnDemandTask" request
     And request contains "task_id" parameter with value "invalid-uuid"
     When the request is sent
     Then the response status is 400 Bad Request
 
   @team:DataDog/k9-agentless
   Scenario: Get AWS On Demand task by id returns "Not Found" response
-    Given new "RetrieveAwsOnDemandTask" request
+    Given new "GetAwsOnDemandTask" request
     And request contains "task_id" parameter with value "00000000-0000-0000-824a-000000000000"
     When the request is sent
     Then the response status is 404 Not Found
 
   @team:DataDog/k9-agentless
   Scenario: Get AWS On Demand task by id returns "OK." response
-    Given new "RetrieveAwsOnDemandTask" request
+    Given new "GetAwsOnDemandTask" request
     And request contains "task_id" parameter with value "63d6b4f5-e5d0-4d90-824a-9580f05f026a"
     When the request is sent
     Then the response status is 200 OK
@@ -115,7 +116,7 @@ Feature: Agentless Scanning
   @team:DataDog/k9-agentless
   Scenario: Post AWS Scan Options returns "Conflict" response
     Given new "CreateAwsScanOptions" request
-    And body with value {"data":{"type":"aws_scan_options","id":"000000000002","attributes":{"vuln_host_os":true,"vuln_containers_os":true,"lambda":false}}}
+    And body with value {"data":{"type":"aws_scan_options","id":"000000000002","attributes":{"vuln_host_os":true,"vuln_containers_os":true,"sensitive_data":false,"lambda":false}}}
     When the request is sent
     Then the response status is 409 Conflict
 
