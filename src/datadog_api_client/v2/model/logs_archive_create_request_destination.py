@@ -38,6 +38,9 @@ class LogsArchiveCreateRequestDestination(ModelComposed):
 
         :param encryption: The S3 encryption settings.
         :type encryption: LogsArchiveEncryptionS3, optional
+
+        :param storage_class: The storage class where the archive will be stored.
+        :type storage_class: LogsArchiveStorageClassS3Type, optional
         """
         super().__init__(kwargs)
 
