@@ -1759,6 +1759,26 @@
         </li></ul>
             </nav>
         </li>
+        <li class="md-nav__item"><a href="#module-datadog_api_client.v2.api.rum_retention_filters_api" class="md-nav__link">datadog_api_client.v2.api.rum_retention_filters_api module</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.rum_retention_filters_api.RumRetentionFiltersApi" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">RumRetentionFiltersApi</span></code></a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.rum_retention_filters_api.RumRetentionFiltersApi.create_retention_filter" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">RumRetentionFiltersApi.create_retention_filter()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.rum_retention_filters_api.RumRetentionFiltersApi.delete_retention_filter" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">RumRetentionFiltersApi.delete_retention_filter()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.rum_retention_filters_api.RumRetentionFiltersApi.get_retention_filter" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">RumRetentionFiltersApi.get_retention_filter()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.rum_retention_filters_api.RumRetentionFiltersApi.list_retention_filters" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">RumRetentionFiltersApi.list_retention_filters()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.rum_retention_filters_api.RumRetentionFiltersApi.order_retention_filters" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">RumRetentionFiltersApi.order_retention_filters()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.rum_retention_filters_api.RumRetentionFiltersApi.update_retention_filter" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">RumRetentionFiltersApi.update_retention_filter()</span></code></a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
         <li class="md-nav__item"><a href="#module-datadog_api_client.v2.api.security_monitoring_api" class="md-nav__link">datadog_api_client.v2.api.security_monitoring_api module</a><nav class="md-nav">
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi</span></code></a><nav class="md-nav">
@@ -8030,6 +8050,118 @@ Returns the rum-based metric object from the request body when the request is su
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.rum_metric_response.RumMetricResponse" title="datadog_api_client.v2.model.rum_metric_response.RumMetricResponse">RumMetricResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+</section>
+<section id="module-datadog_api_client.v2.api.rum_retention_filters_api">
+<span id="datadog-api-client-v2-api-rum-retention-filters-api-module"></span><h2 id="module-datadog_api_client.v2.api.rum_retention_filters_api">datadog_api_client.v2.api.rum_retention_filters_api module<a class="headerlink" href="#module-datadog_api_client.v2.api.rum_retention_filters_api" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.rum_retention_filters_api.RumRetentionFiltersApi">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">RumRetentionFiltersApi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_client</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datadog_api_client.v2.api.rum_retention_filters_api.RumRetentionFiltersApi" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Manage retention filters through <a class="reference external" href="https://app.datadoghq.com/rum/list">Manage Applications</a> for your organization.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.rum_retention_filters_api.RumRetentionFiltersApi.create_retention_filter">
+<span class="sig-name descname"><span class="pre">create_retention_filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.rum_retention_filter_create_request.RumRetentionFilterCreateRequest" title="datadog_api_client.v2.model.rum_retention_filter_create_request.RumRetentionFilterCreateRequest"><span class="pre">RumRetentionFilterCreateRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.rum_retention_filter_response.RumRetentionFilterResponse" title="datadog_api_client.v2.model.rum_retention_filter_response.RumRetentionFilterResponse"><span class="pre">RumRetentionFilterResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.rum_retention_filters_api.RumRetentionFiltersApi.create_retention_filter" title="Link to this definition">¶</a></dt>
+<dd><p>Create a RUM retention filter.</p>
+<p>Create a RUM retention filter for an application.
+Returns RUM retention filter objects from the request body when the request is successful.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>app_id</strong> (<em>str</em>) – Application ID.</p></li>
+<li><p><strong>body</strong> (<a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.rum_retention_filter_create_request.RumRetentionFilterCreateRequest" title="datadog_api_client.v2.model.rum_retention_filter_create_request.RumRetentionFilterCreateRequest"><em>RumRetentionFilterCreateRequest</em></a>) – The definition of the new RUM retention filter.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.rum_retention_filter_response.RumRetentionFilterResponse" title="datadog_api_client.v2.model.rum_retention_filter_response.RumRetentionFilterResponse">RumRetentionFilterResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.rum_retention_filters_api.RumRetentionFiltersApi.delete_retention_filter">
+<span class="sig-name descname"><span class="pre">delete_retention_filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rf_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#datadog_api_client.v2.api.rum_retention_filters_api.RumRetentionFiltersApi.delete_retention_filter" title="Link to this definition">¶</a></dt>
+<dd><p>Delete a RUM retention filter.</p>
+<p>Delete a RUM retention filter for an application.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>app_id</strong> (<em>str</em>) – Application ID.</p></li>
+<li><p><strong>rf_id</strong> (<em>str</em>) – Retention filter ID.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.rum_retention_filters_api.RumRetentionFiltersApi.get_retention_filter">
+<span class="sig-name descname"><span class="pre">get_retention_filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rf_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.rum_retention_filter_response.RumRetentionFilterResponse" title="datadog_api_client.v2.model.rum_retention_filter_response.RumRetentionFilterResponse"><span class="pre">RumRetentionFilterResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.rum_retention_filters_api.RumRetentionFiltersApi.get_retention_filter" title="Link to this definition">¶</a></dt>
+<dd><p>Get a RUM retention filter.</p>
+<p>Get a RUM retention filter for an application.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>app_id</strong> (<em>str</em>) – Application ID.</p></li>
+<li><p><strong>rf_id</strong> (<em>str</em>) – Retention filter ID.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.rum_retention_filter_response.RumRetentionFilterResponse" title="datadog_api_client.v2.model.rum_retention_filter_response.RumRetentionFilterResponse">RumRetentionFilterResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.rum_retention_filters_api.RumRetentionFiltersApi.list_retention_filters">
+<span class="sig-name descname"><span class="pre">list_retention_filters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.rum_retention_filters_response.RumRetentionFiltersResponse" title="datadog_api_client.v2.model.rum_retention_filters_response.RumRetentionFiltersResponse"><span class="pre">RumRetentionFiltersResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.rum_retention_filters_api.RumRetentionFiltersApi.list_retention_filters" title="Link to this definition">¶</a></dt>
+<dd><p>Get all RUM retention filters.</p>
+<p>Get the list of RUM retention filters for an application.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>app_id</strong> (<em>str</em>) – Application ID.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.rum_retention_filters_response.RumRetentionFiltersResponse" title="datadog_api_client.v2.model.rum_retention_filters_response.RumRetentionFiltersResponse">RumRetentionFiltersResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.rum_retention_filters_api.RumRetentionFiltersApi.order_retention_filters">
+<span class="sig-name descname"><span class="pre">order_retention_filters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.rum_retention_filters_order_request.RumRetentionFiltersOrderRequest" title="datadog_api_client.v2.model.rum_retention_filters_order_request.RumRetentionFiltersOrderRequest"><span class="pre">RumRetentionFiltersOrderRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.rum_retention_filters_order_response.RumRetentionFiltersOrderResponse" title="datadog_api_client.v2.model.rum_retention_filters_order_response.RumRetentionFiltersOrderResponse"><span class="pre">RumRetentionFiltersOrderResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.rum_retention_filters_api.RumRetentionFiltersApi.order_retention_filters" title="Link to this definition">¶</a></dt>
+<dd><p>Order RUM retention filters.</p>
+<p>Order RUM retention filters for an application.
+Returns RUM retention filter objects without attributes and meta from the request body when the request is successful.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>app_id</strong> (<em>str</em>) – Application ID.</p></li>
+<li><p><strong>body</strong> (<a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.rum_retention_filters_order_request.RumRetentionFiltersOrderRequest" title="datadog_api_client.v2.model.rum_retention_filters_order_request.RumRetentionFiltersOrderRequest"><em>RumRetentionFiltersOrderRequest</em></a>) – New definition of the RUM retention filter.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.rum_retention_filters_order_response.RumRetentionFiltersOrderResponse" title="datadog_api_client.v2.model.rum_retention_filters_order_response.RumRetentionFiltersOrderResponse">RumRetentionFiltersOrderResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.rum_retention_filters_api.RumRetentionFiltersApi.update_retention_filter">
+<span class="sig-name descname"><span class="pre">update_retention_filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rf_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.rum_retention_filter_update_request.RumRetentionFilterUpdateRequest" title="datadog_api_client.v2.model.rum_retention_filter_update_request.RumRetentionFilterUpdateRequest"><span class="pre">RumRetentionFilterUpdateRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.rum_retention_filter_response.RumRetentionFilterResponse" title="datadog_api_client.v2.model.rum_retention_filter_response.RumRetentionFilterResponse"><span class="pre">RumRetentionFilterResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.rum_retention_filters_api.RumRetentionFiltersApi.update_retention_filter" title="Link to this definition">¶</a></dt>
+<dd><p>Update a RUM retention filter.</p>
+<p>Update a RUM retention filter for an application.
+Returns RUM retention filter objects from the request body when the request is successful.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>app_id</strong> (<em>str</em>) – Application ID.</p></li>
+<li><p><strong>rf_id</strong> (<em>str</em>) – Retention filter ID.</p></li>
+<li><p><strong>body</strong> (<a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.rum_retention_filter_update_request.RumRetentionFilterUpdateRequest" title="datadog_api_client.v2.model.rum_retention_filter_update_request.RumRetentionFilterUpdateRequest"><em>RumRetentionFilterUpdateRequest</em></a>) – New definition of the RUM retention filter.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.rum_retention_filter_response.RumRetentionFilterResponse" title="datadog_api_client.v2.model.rum_retention_filter_response.RumRetentionFilterResponse">RumRetentionFilterResponse</a></p>
 </dd>
 </dl>
 </dd></dl>
