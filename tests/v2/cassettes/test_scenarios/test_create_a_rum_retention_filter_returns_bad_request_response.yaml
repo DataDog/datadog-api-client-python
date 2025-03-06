@@ -1,0 +1,22 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"enabled":true,"event_type":"session","name":"Test
+      creating retention filter","query":"","sample_rate":25},"type":"invalid_type"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/rum/applications/a33671aa-24fd-4dcd-ba4b-5bbdbafe7690/retention_filters
+  response:
+    body:
+      string: '{"errors":[{"status":"400","title":"Bad Request","detail":"got type
+        \"invalid_type\" expected one of \"retention_filters\""}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 400
+      message: Bad Request
+version: 1

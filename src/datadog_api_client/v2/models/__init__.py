@@ -1968,6 +1968,23 @@ from datadog_api_client.v2.model.rum_metric_update_compute import RumMetricUpdat
 from datadog_api_client.v2.model.rum_metric_update_data import RumMetricUpdateData
 from datadog_api_client.v2.model.rum_metric_update_request import RumMetricUpdateRequest
 from datadog_api_client.v2.model.rum_metrics_response import RumMetricsResponse
+from datadog_api_client.v2.model.rum_retention_filter_attributes import RumRetentionFilterAttributes
+from datadog_api_client.v2.model.rum_retention_filter_create_attributes import RumRetentionFilterCreateAttributes
+from datadog_api_client.v2.model.rum_retention_filter_create_data import RumRetentionFilterCreateData
+from datadog_api_client.v2.model.rum_retention_filter_create_request import RumRetentionFilterCreateRequest
+from datadog_api_client.v2.model.rum_retention_filter_data import RumRetentionFilterData
+from datadog_api_client.v2.model.rum_retention_filter_event_type import RumRetentionFilterEventType
+from datadog_api_client.v2.model.rum_retention_filter_meta import RumRetentionFilterMeta
+from datadog_api_client.v2.model.rum_retention_filter_response import RumRetentionFilterResponse
+from datadog_api_client.v2.model.rum_retention_filter_source import RumRetentionFilterSource
+from datadog_api_client.v2.model.rum_retention_filter_type import RumRetentionFilterType
+from datadog_api_client.v2.model.rum_retention_filter_update_attributes import RumRetentionFilterUpdateAttributes
+from datadog_api_client.v2.model.rum_retention_filter_update_data import RumRetentionFilterUpdateData
+from datadog_api_client.v2.model.rum_retention_filter_update_request import RumRetentionFilterUpdateRequest
+from datadog_api_client.v2.model.rum_retention_filters_order_data import RumRetentionFiltersOrderData
+from datadog_api_client.v2.model.rum_retention_filters_order_request import RumRetentionFiltersOrderRequest
+from datadog_api_client.v2.model.rum_retention_filters_order_response import RumRetentionFiltersOrderResponse
+from datadog_api_client.v2.model.rum_retention_filters_response import RumRetentionFiltersResponse
 from datadog_api_client.v2.model.run_historical_job_request import RunHistoricalJobRequest
 from datadog_api_client.v2.model.run_historical_job_request_attributes import RunHistoricalJobRequestAttributes
 from datadog_api_client.v2.model.run_historical_job_request_data import RunHistoricalJobRequestData
@@ -4227,6 +4244,23 @@ __all__ = [
     "RumMetricUpdateData",
     "RumMetricUpdateRequest",
     "RumMetricsResponse",
+    "RumRetentionFilterAttributes",
+    "RumRetentionFilterCreateAttributes",
+    "RumRetentionFilterCreateData",
+    "RumRetentionFilterCreateRequest",
+    "RumRetentionFilterData",
+    "RumRetentionFilterEventType",
+    "RumRetentionFilterMeta",
+    "RumRetentionFilterResponse",
+    "RumRetentionFilterSource",
+    "RumRetentionFilterType",
+    "RumRetentionFilterUpdateAttributes",
+    "RumRetentionFilterUpdateData",
+    "RumRetentionFilterUpdateRequest",
+    "RumRetentionFiltersOrderData",
+    "RumRetentionFiltersOrderRequest",
+    "RumRetentionFiltersOrderResponse",
+    "RumRetentionFiltersResponse",
     "RunHistoricalJobRequest",
     "RunHistoricalJobRequestAttributes",
     "RunHistoricalJobRequestData",

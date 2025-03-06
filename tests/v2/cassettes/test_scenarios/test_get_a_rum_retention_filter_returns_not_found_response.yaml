@@ -1,0 +1,19 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/rum/applications/a33671aa-24fd-4dcd-ba4b-5bbdbafe7690/retention_filters/Test-Get_a_RUM_retention_filter_returns_Not_Found_response-1741036883
+  response:
+    body:
+      string: '{"errors":[{"status":"404","title":"Not Found","detail":"rpc error:
+        code = NotFound desc = NotFound: This retention filter does not exist"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 404
+      message: Not Found
+version: 1
