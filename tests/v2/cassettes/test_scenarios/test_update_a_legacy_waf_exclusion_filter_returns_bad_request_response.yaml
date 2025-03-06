@@ -1,0 +1,65 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"description":"My Exclusion Filter","enabled":true,"parameters":["list.search.query"],"path_glob":"*","rules_target":[{"tags":{"category":"attack_attempt","type":"xss"}}],"scope":[{"env":"staging","service":"event-query"}]},"type":"exclusion_filter"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/asm/waf/exclusion_filters
+  response:
+    body:
+      string: '{"data":{"id":"bd04e3ac-9f29-4a66-976f-2f409477a329","type":"exclusion_filter","attributes":{"description":"My
+        Exclusion Filter","enabled":true,"metadata":{"added_at":"2025-02-25T19:11:40Z","added_by":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","added_by_name":"CI
+        Account"},"parameters":["list.search.query"],"path_glob":"*","rules_target":[{"tags":{"category":"attack_attempt","type":"xss"}}],"scope":[{"env":"staging","service":"event-query"}],"search_query":"(env:staging
+        AND service:\"event-query\") AND ((@appsec.triggers.rule_matches.parameters.address:server.request.query
+        AND (@appsec.triggers.rule_matches.parameters.key:list.search.query OR @appsec.triggers.rule_matches.parameters.params.key:list.search.query))
+        OR (@appsec.triggers.rule_matches.parameters.address:server.request.body AND
+        (@appsec.triggers.rule_matches.parameters.key:list.search.query OR @appsec.triggers.rule_matches.parameters.params.key:list.search.query))
+        OR (@appsec.triggers.rule_matches.parameters.address:server.request.path_params
+        AND (@appsec.triggers.rule_matches.parameters.key:list.search.query OR @appsec.triggers.rule_matches.parameters.params.key:list.search.query)))
+        AND (@appsec.category:attack_attempt AND @appsec.type:xss)"}}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data":{"attributes":{"description":"Exclude false positives on a path","enabled":true,"event_query":"test:1"},"type":"exclusion_filter"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PUT
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/asm/waf/exclusion_filters/bd04e3ac-9f29-4a66-976f-2f409477a329
+  response:
+    body:
+      string: '{"errors":[{"title":"legacy exclusion filters cannot be created anymore","code":"400"}]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 400
+      message: Bad Request
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/asm/waf/exclusion_filters/bd04e3ac-9f29-4a66-976f-2f409477a329
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 204
+      message: No Content
+version: 1

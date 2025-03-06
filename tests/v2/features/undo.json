@@ -1841,6 +1841,80 @@
       "type": "idempotent"
     }
   },
+  "ListApplicationSecurityWAFCustomRules": {
+    "tag": "Application Security",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateApplicationSecurityWafCustomRule": {
+    "tag": "Application Security",
+    "undo": {
+      "operationId": "DeleteApplicationSecurityWafCustomRule",
+      "parameters": [
+        {
+          "name": "custom_rule_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteApplicationSecurityWafCustomRule": {
+    "tag": "Application Security",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetApplicationSecurityWafCustomRule": {
+    "tag": "Application Security",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateApplicationSecurityWafCustomRule": {
+    "tag": "Application Security",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListApplicationSecurityWafExclusionFilters": {
+    "tag": "Application Security",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateApplicationSecurityWafExclusionFilter": {
+    "tag": "Application Security",
+    "undo": {
+      "operationId": "DeleteApplicationSecurityWafExclusionFilter",
+      "parameters": [
+        {
+          "name": "exclusion_filter_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteApplicationSecurityWafExclusionFilter": {
+    "tag": "Application Security",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetApplicationSecurityWafExclusionFilter": {
+    "tag": "Application Security",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateApplicationSecurityWafExclusionFilter": {
+    "tag": "Application Security",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListCSMThreatsAgentRules": {
     "tag": "CSM Threats",
     "undo": {
