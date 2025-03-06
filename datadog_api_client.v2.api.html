@@ -703,11 +703,11 @@
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.agentless_scanning_api.AgentlessScanningApi.delete_aws_scan_options" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">AgentlessScanningApi.delete_aws_scan_options()</span></code></a>
         </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.agentless_scanning_api.AgentlessScanningApi.get_aws_on_demand_task" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">AgentlessScanningApi.get_aws_on_demand_task()</span></code></a>
+        </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.agentless_scanning_api.AgentlessScanningApi.list_aws_on_demand_tasks" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">AgentlessScanningApi.list_aws_on_demand_tasks()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.agentless_scanning_api.AgentlessScanningApi.list_aws_scan_options" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">AgentlessScanningApi.list_aws_scan_options()</span></code></a>
-        </li>
-        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.agentless_scanning_api.AgentlessScanningApi.retrieve_aws_on_demand_task" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">AgentlessScanningApi.retrieve_aws_on_demand_task()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.agentless_scanning_api.AgentlessScanningApi.update_aws_scan_options" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">AgentlessScanningApi.update_aws_scan_options()</span></code></a>
         </li></ul>
@@ -2267,12 +2267,13 @@ Workflow Automation and App Builder.</p>
 <p>Datadog Agentless Scanning provides visibility into risks and vulnerabilities
 within your hosts, running containers, and serverless functions—all without
 requiring teams to install Agents on every host or where Agents cannot be installed.
+Agentless offers also Sensitive Data Scanning capabilities on your storage.
 Go to <a class="reference external" href="https://www.datadoghq.com/blog/agentless-scanning/">https://www.datadoghq.com/blog/agentless-scanning/</a> to learn more.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.agentless_scanning_api.AgentlessScanningApi.create_aws_on_demand_task">
 <span class="sig-name descname"><span class="pre">create_aws_on_demand_task</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.aws_on_demand_create_request.AwsOnDemandCreateRequest" title="datadog_api_client.v2.model.aws_on_demand_create_request.AwsOnDemandCreateRequest"><span class="pre">AwsOnDemandCreateRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.aws_on_demand_response.AwsOnDemandResponse" title="datadog_api_client.v2.model.aws_on_demand_response.AwsOnDemandResponse"><span class="pre">AwsOnDemandResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.agentless_scanning_api.AgentlessScanningApi.create_aws_on_demand_task" title="Link to this definition">¶</a></dt>
 <dd><p>Post an AWS on demand task.</p>
-<p>Trigger the scan of an AWS resource with a high priority.</p>
+<p>Trigger the scan of an AWS resource with a high priority. Agentless scanning must be activated for the AWS account containing the resource to scan.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>body</strong> (<a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.aws_on_demand_create_request.AwsOnDemandCreateRequest" title="datadog_api_client.v2.model.aws_on_demand_create_request.AwsOnDemandCreateRequest"><em>AwsOnDemandCreateRequest</em></a>) – The definition of the on demand task.</p>
@@ -2311,6 +2312,20 @@ Go to <a class="reference external" href="https://www.datadoghq.com/blog/agentle
 </dl>
 </dd></dl>
 <dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.agentless_scanning_api.AgentlessScanningApi.get_aws_on_demand_task">
+<span class="sig-name descname"><span class="pre">get_aws_on_demand_task</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.aws_on_demand_response.AwsOnDemandResponse" title="datadog_api_client.v2.model.aws_on_demand_response.AwsOnDemandResponse"><span class="pre">AwsOnDemandResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.agentless_scanning_api.AgentlessScanningApi.get_aws_on_demand_task" title="Link to this definition">¶</a></dt>
+<dd><p>Get AWS On Demand task by id.</p>
+<p>Fetch the data of a specific on demand task.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>task_id</strong> (<em>str</em>) – The UUID of the task.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.aws_on_demand_response.AwsOnDemandResponse" title="datadog_api_client.v2.model.aws_on_demand_response.AwsOnDemandResponse">AwsOnDemandResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.agentless_scanning_api.AgentlessScanningApi.list_aws_on_demand_tasks">
 <span class="sig-name descname"><span class="pre">list_aws_on_demand_tasks</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.aws_on_demand_list_response.AwsOnDemandListResponse" title="datadog_api_client.v2.model.aws_on_demand_list_response.AwsOnDemandListResponse"><span class="pre">AwsOnDemandListResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.agentless_scanning_api.AgentlessScanningApi.list_aws_on_demand_tasks" title="Link to this definition">¶</a></dt>
 <dd><p>Get AWS On Demand tasks.</p>
@@ -2329,20 +2344,6 @@ Go to <a class="reference external" href="https://www.datadoghq.com/blog/agentle
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.aws_scan_options_list_response.AwsScanOptionsListResponse" title="datadog_api_client.v2.model.aws_scan_options_list_response.AwsScanOptionsListResponse">AwsScanOptionsListResponse</a></p>
-</dd>
-</dl>
-</dd></dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="datadog_api_client.v2.api.agentless_scanning_api.AgentlessScanningApi.retrieve_aws_on_demand_task">
-<span class="sig-name descname"><span class="pre">retrieve_aws_on_demand_task</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.aws_on_demand_response.AwsOnDemandResponse" title="datadog_api_client.v2.model.aws_on_demand_response.AwsOnDemandResponse"><span class="pre">AwsOnDemandResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.agentless_scanning_api.AgentlessScanningApi.retrieve_aws_on_demand_task" title="Link to this definition">¶</a></dt>
-<dd><p>Get AWS On Demand task by id.</p>
-<p>Fetch the data of a specific on demand task.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>task_id</strong> (<em>str</em>) – The UUID of the task.</p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.aws_on_demand_response.AwsOnDemandResponse" title="datadog_api_client.v2.model.aws_on_demand_response.AwsOnDemandResponse">AwsOnDemandResponse</a></p>
 </dd>
 </dl>
 </dd></dl>
