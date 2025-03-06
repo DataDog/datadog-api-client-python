@@ -24,6 +24,10 @@ if TYPE_CHECKING:
 
 class Step(ModelNormal):
     @cached_property
+    def additional_properties_type(_):
+        return None
+
+    @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.completion_gate import CompletionGate
         from datadog_api_client.v2.model.step_display import StepDisplay

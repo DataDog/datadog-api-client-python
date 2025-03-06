@@ -20,6 +20,10 @@ if TYPE_CHECKING:
 
 class RetryStrategy(ModelNormal):
     @cached_property
+    def additional_properties_type(_):
+        return None
+
+    @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.retry_strategy_kind import RetryStrategyKind
         from datadog_api_client.v2.model.retry_strategy_linear import RetryStrategyLinear

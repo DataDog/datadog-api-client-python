@@ -1081,12 +1081,14 @@ components:
       x-enum-varnames:
       - API_KEYS
     APITrigger:
+      additionalProperties: false
       description: Trigger a workflow VIA an API. The workflow must be published.
       properties:
         rateLimit:
           $ref: '#/components/schemas/TriggerRateLimit'
       type: object
     APITriggerWrapper:
+      additionalProperties: false
       description: Schema for an API-based trigger.
       properties:
         apiTrigger:
@@ -2103,6 +2105,7 @@ components:
       - base_severity
       type: object
     Annotation:
+      additionalProperties: false
       description: A list of annotations used in the workflow. These are like sticky
         notes for your workflow!
       properties:
@@ -2120,12 +2123,14 @@ components:
       - markdownTextAnnotation
       type: object
     AnnotationDisplay:
+      additionalProperties: false
       description: The definition of `AnnotationDisplay` object.
       properties:
         bounds:
           $ref: '#/components/schemas/AnnotationDisplayBounds'
       type: object
     AnnotationDisplayBounds:
+      additionalProperties: false
       description: The definition of `AnnotationDisplayBounds` object.
       properties:
         height:
@@ -2146,6 +2151,7 @@ components:
           type: number
       type: object
     AnnotationMarkdownTextAnnotation:
+      additionalProperties: false
       description: The definition of `AnnotationMarkdownTextAnnotation` object.
       properties:
         text:
@@ -2296,6 +2302,7 @@ components:
           $ref: '#/components/schemas/DeploymentRelationship'
       type: object
     AppTriggerWrapper:
+      additionalProperties: false
       description: Schema for an App-based trigger.
       properties:
         appTrigger:
@@ -6511,6 +6518,7 @@ components:
       - IN_PROGRESS
       - CLOSED
     CaseTrigger:
+      additionalProperties: false
       description: Trigger a workflow VIA a Case. For automatic triggering a handle
         must be configured and the workflow must be published.
       properties:
@@ -6518,6 +6526,7 @@ components:
           $ref: '#/components/schemas/TriggerRateLimit'
       type: object
     CaseTriggerWrapper:
+      additionalProperties: false
       description: Schema for a Case-based trigger.
       properties:
         caseTrigger:
@@ -6745,6 +6754,7 @@ components:
       x-enum-varnames:
       - SERVICE
     ChangeEventTriggerWrapper:
+      additionalProperties: false
       description: Schema for a Change Event-based trigger.
       properties:
         changeEventTrigger:
@@ -7452,6 +7462,7 @@ components:
       - location
       type: object
     CompletionCondition:
+      additionalProperties: false
       description: The definition of `CompletionCondition` object.
       properties:
         operand1:
@@ -7495,6 +7506,7 @@ components:
       - OPERATOR_IS_EMPTY
       - OPERATOR_IS_NOT_EMPTY
     CompletionGate:
+      additionalProperties: false
       description: Used to create conditions before running subsequent actions.
       properties:
         completionCondition:
@@ -7967,6 +7979,7 @@ components:
           type: array
       type: object
     Connection:
+      additionalProperties: false
       description: The definition of `Connection` object.
       properties:
         connectionId:
@@ -7982,6 +7995,7 @@ components:
       - label
       type: object
     ConnectionEnv:
+      additionalProperties: false
       description: A list of connections or connection groups used in the workflow.
       properties:
         connectionGroups:
@@ -8008,6 +8022,7 @@ components:
       x-enum-varnames:
       - DEFAULT
     ConnectionGroup:
+      additionalProperties: false
       description: The definition of `ConnectionGroup` object.
       properties:
         connectionGroupId:
@@ -10572,6 +10587,7 @@ components:
           type: array
       type: object
     DashboardTriggerWrapper:
+      additionalProperties: false
       description: Schema for a Dashboard-based trigger.
       properties:
         dashboardTrigger:
@@ -12727,6 +12743,7 @@ components:
           type: string
       type: object
     ErrorHandler:
+      additionalProperties: false
       description: Used to handle errors in an action.
       properties:
         fallbackStepName:
@@ -14349,6 +14366,7 @@ components:
       example: https://github.com/organization/example-repository
       type: string
     GithubWebhookTrigger:
+      additionalProperties: false
       description: Trigger a workflow VIA GitHub webhook. To trigger a workflow from
         GitHub, you must set a `webhookSecret`. In your GitHub Webhook Settings, set
         the Payload URL to "base_url"/api/v2/workflows/"workflow_id"/webhook?orgId="org_id",
@@ -14359,6 +14377,7 @@ components:
           $ref: '#/components/schemas/TriggerRateLimit'
       type: object
     GithubWebhookTriggerWrapper:
+      additionalProperties: false
       description: Schema for a GitHub webhook-based trigger.
       properties:
         githubWebhookTrigger:
@@ -16660,6 +16679,7 @@ components:
       x-enum-varnames:
       - INCIDENT_TODOS
     IncidentTrigger:
+      additionalProperties: false
       description: Trigger a workflow VIA an Incident. For automatic triggering a
         handle must be configured and the workflow must be published.
       properties:
@@ -16667,6 +16687,7 @@ components:
           $ref: '#/components/schemas/TriggerRateLimit'
       type: object
     IncidentTriggerWrapper:
+      additionalProperties: false
       description: Schema for an Incident-based trigger.
       properties:
         incidentTrigger:
@@ -17121,6 +17142,7 @@ components:
       - INCIDENT
       - RELATION
     InputSchema:
+      additionalProperties: false
       description: A list of input parameters for the workflow. These can be used
         as dynamic runtime values in your workflow.
       properties:
@@ -17131,6 +17153,7 @@ components:
           type: array
       type: object
     InputSchemaParameters:
+      additionalProperties: false
       description: The definition of `InputSchemaParameters` object.
       properties:
         defaultValue:
@@ -21114,6 +21137,7 @@ components:
           $ref: '#/components/schemas/MonitorDowntimeMatchResourceType'
       type: object
     MonitorTrigger:
+      additionalProperties: false
       description: Trigger a workflow VIA a Monitor. For automatic triggering a handle
         must be configured and the workflow must be published.
       properties:
@@ -21121,6 +21145,7 @@ components:
           $ref: '#/components/schemas/TriggerRateLimit'
       type: object
     MonitorTriggerWrapper:
+      additionalProperties: false
       description: Schema for a Monitor-based trigger.
       properties:
         monitorTrigger:
@@ -21895,6 +21920,7 @@ components:
       x-enum-varnames:
       - ORGS
     OutboundEdge:
+      additionalProperties: false
       description: The definition of `OutboundEdge` object.
       properties:
         branchName:
@@ -22089,6 +22115,7 @@ components:
           type: string
       type: object
     OutputSchema:
+      additionalProperties: false
       description: A list of output parameters for the workflow.
       properties:
         parameters:
@@ -22098,6 +22125,7 @@ components:
           type: array
       type: object
     OutputSchemaParameters:
+      additionalProperties: false
       description: The definition of `OutputSchemaParameters` object.
       properties:
         defaultValue:
@@ -22155,6 +22183,7 @@ components:
           type: integer
       type: object
     Parameter:
+      additionalProperties: false
       description: The definition of `Parameter` object.
       properties:
         name:
@@ -23746,6 +23775,7 @@ components:
           type: string
       type: object
     ReadinessGate:
+      additionalProperties: false
       description: Used to merge multiple branches into a single branch.
       properties:
         thresholdType:
@@ -24685,6 +24715,7 @@ components:
       - data
       type: object
     RetryStrategy:
+      additionalProperties: false
       description: The definition of `RetryStrategy` object.
       properties:
         kind:
@@ -24703,6 +24734,7 @@ components:
       x-enum-varnames:
       - RETRY_STRATEGY_LINEAR
     RetryStrategyLinear:
+      additionalProperties: false
       description: The definition of `RetryStrategyLinear` object.
       properties:
         interval:
@@ -25877,6 +25909,7 @@ components:
           $ref: '#/components/schemas/ScalarFormulaResponseType'
       type: object
     ScheduleTrigger:
+      additionalProperties: false
       description: Trigger a workflow VIA a Schedule. The workflow must be published.
       properties:
         rruleExpression:
@@ -25887,6 +25920,7 @@ components:
       - rruleExpression
       type: object
     ScheduleTriggerWrapper:
+      additionalProperties: false
       description: Schema for a Schedule-based trigger.
       properties:
         scheduleTrigger:
@@ -28161,6 +28195,7 @@ components:
           type: string
       type: object
     SecurityTrigger:
+      additionalProperties: false
       description: Trigger a workflow VIA a Security Signal or Finding. For automatic
         triggering a handle must be configured and the workflow must be published.
       properties:
@@ -28168,6 +28203,7 @@ components:
           $ref: '#/components/schemas/TriggerRateLimit'
       type: object
     SecurityTriggerWrapper:
+      additionalProperties: false
       description: Schema for a Security-based trigger.
       properties:
         securityTrigger:
@@ -29933,6 +29969,7 @@ components:
       - redirect_url
       type: object
     SlackTriggerWrapper:
+      additionalProperties: false
       description: Schema for a Slack-based trigger.
       properties:
         slackTrigger:
@@ -30866,6 +30903,7 @@ components:
           type: string
       type: object
     Spec:
+      additionalProperties: false
       description: The spec defines what the workflow does.
       properties:
         annotations:
@@ -30979,6 +31017,7 @@ components:
       x-enum-varnames:
       - STATEVARIABLE
     Step:
+      additionalProperties: false
       description: A Step is a sub-component of a workflow. Each Step performs an
         action.
       properties:
@@ -31019,12 +31058,14 @@ components:
       - actionId
       type: object
     StepDisplay:
+      additionalProperties: false
       description: The definition of `StepDisplay` object.
       properties:
         bounds:
           $ref: '#/components/schemas/StepDisplayBounds'
       type: object
     StepDisplayBounds:
+      additionalProperties: false
       description: The definition of `StepDisplayBounds` object.
       properties:
         x:
@@ -31858,6 +31899,7 @@ components:
       - $ref: '#/components/schemas/SlackTriggerWrapper'
       - $ref: '#/components/schemas/WorkflowTriggerWrapper'
     TriggerRateLimit:
+      additionalProperties: false
       description: Defines a rate limit for a trigger.
       properties:
         count:
@@ -33302,6 +33344,7 @@ components:
       - attributes
       type: object
     WorkflowDataAttributes:
+      additionalProperties: false
       description: The definition of `WorkflowDataAttributes` object.
       properties:
         createdAt:
@@ -33376,6 +33419,7 @@ components:
       - attributes
       type: object
     WorkflowDataUpdateAttributes:
+      additionalProperties: false
       description: The definition of `WorkflowDataUpdateAttributes` object.
       properties:
         createdAt:
@@ -33479,6 +33523,7 @@ components:
           type: integer
       type: object
     WorkflowTriggerWrapper:
+      additionalProperties: false
       description: Schema for a Workflow-based trigger.
       properties:
         startStepNames:

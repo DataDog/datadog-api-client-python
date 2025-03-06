@@ -19,6 +19,10 @@ if TYPE_CHECKING:
 
 class StepDisplay(ModelNormal):
     @cached_property
+    def additional_properties_type(_):
+        return None
+
+    @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.step_display_bounds import StepDisplayBounds
 

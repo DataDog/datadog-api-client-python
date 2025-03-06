@@ -18,6 +18,10 @@ if TYPE_CHECKING:
 
 class Annotation(ModelNormal):
     @cached_property
+    def additional_properties_type(_):
+        return None
+
+    @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.annotation_display import AnnotationDisplay
         from datadog_api_client.v2.model.annotation_markdown_text_annotation import AnnotationMarkdownTextAnnotation
