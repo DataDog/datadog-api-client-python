@@ -23,6 +23,20 @@ Feature: Logs Indexes
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/logs-backend @team:DataDog/logs-core
+  Scenario: Delete an index returns "Not Found" response
+    Given new "DeleteLogsIndex" request
+    And request contains "name" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/logs-backend @team:DataDog/logs-core
+  Scenario: Delete an index returns "OK" response
+    Given new "DeleteLogsIndex" request
+    And request contains "name" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/logs-backend @team:DataDog/logs-core
   Scenario: Get all indexes returns "OK" response
     Given new "ListLogIndexes" request
     When the request is sent

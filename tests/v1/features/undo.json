@@ -694,6 +694,12 @@
       "type": "unsafe"
     }
   },
+  "DeleteLogsIndex": {
+    "tag": "Logs Indexes",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "GetLogsIndex": {
     "tag": "Logs Indexes",
     "undo": {
