@@ -1,0 +1,58 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"blocking":false,"conditions":[{"operator":"match_regex","parameters":{"inputs":[{"address":"server.request.query","key_path":["id"]}],"regex":"badactor"}}],"enabled":true,"name":"test","path_glob":"/test","scope":[{"env":"test","service":"test"}],"tags":{"category":"attack_attempt","type":"test"}},"type":"custom_rule"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/asm/waf/custom_rules
+  response:
+    body:
+      string: '{"data":{"id":"c72e76c1-ddf7-49bb-b7a2-0b178c16a987","type":"custom_rule","attributes":{"blocking":false,"conditions":[{"operator":"match_regex","parameters":{"inputs":[{"address":"server.request.query","key_path":["id"]}],"regex":"badactor","options":{}}}],"enabled":true,"metadata":{"added_at":"2025-03-05T21:09:13Z","added_by":"frog@datadoghq.com","added_by_name":"frog"},"name":"test
+        - 12","path_glob":"/test","scope":[{"env":"test","service":"test"}],"tags":{"category":"attack_attempt","type":"test"}}}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"description":"Exclude false positives on a path","enabled":false,"ip_list":["198.51.100.72"],"on_match":"monitor","parameters":["list.search.query"],"path_glob":"/accounts/*","rules_target":[{"rule_id":"dog-913-009","tags":{"category":"attack_attempt","type":"lfi"}}],"scope":[{"env":"www","service":"prod"}]},"type":"exclusion_filter"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PUT
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/asm/waf/exclusion_filters/c72e76c1-ddf7-49bb-b7a2-0b178c16a987
+  response:
+    body:
+      string: '{"errors":[{"title":"only IPs are supported for monitored exclusion
+        filters","code":"400"}]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 400
+      message: Bad Request
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/asm/waf/custom_rules/c72e76c1-ddf7-49bb-b7a2-0b178c16a987
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 204
+      message: No Content
+version: 1
