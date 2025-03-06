@@ -16,6 +16,7 @@ from datadog_api_client.model_utils import (
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.logs_archive_encryption_s3 import LogsArchiveEncryptionS3
     from datadog_api_client.v2.model.logs_archive_integration_s3 import LogsArchiveIntegrationS3
+    from datadog_api_client.v2.model.logs_archive_storage_class_s3_type import LogsArchiveStorageClassS3Type
     from datadog_api_client.v2.model.logs_archive_destination_s3_type import LogsArchiveDestinationS3Type
 
 
@@ -24,6 +25,7 @@ class LogsArchiveDestinationS3(ModelNormal):
     def openapi_types(_):
         from datadog_api_client.v2.model.logs_archive_encryption_s3 import LogsArchiveEncryptionS3
         from datadog_api_client.v2.model.logs_archive_integration_s3 import LogsArchiveIntegrationS3
+        from datadog_api_client.v2.model.logs_archive_storage_class_s3_type import LogsArchiveStorageClassS3Type
         from datadog_api_client.v2.model.logs_archive_destination_s3_type import LogsArchiveDestinationS3Type
 
         return {
@@ -31,6 +33,7 @@ class LogsArchiveDestinationS3(ModelNormal):
             "encryption": (LogsArchiveEncryptionS3,),
             "integration": (LogsArchiveIntegrationS3,),
             "path": (str,),
+            "storage_class": (LogsArchiveStorageClassS3Type,),
             "type": (LogsArchiveDestinationS3Type,),
         }
 
@@ -39,6 +42,7 @@ class LogsArchiveDestinationS3(ModelNormal):
         "encryption": "encryption",
         "integration": "integration",
         "path": "path",
+        "storage_class": "storage_class",
         "type": "type",
     }
 
@@ -49,6 +53,7 @@ class LogsArchiveDestinationS3(ModelNormal):
         type: LogsArchiveDestinationS3Type,
         encryption: Union[LogsArchiveEncryptionS3, UnsetType] = unset,
         path: Union[str, UnsetType] = unset,
+        storage_class: Union[LogsArchiveStorageClassS3Type, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -66,6 +71,9 @@ class LogsArchiveDestinationS3(ModelNormal):
         :param path: The archive path.
         :type path: str, optional
 
+        :param storage_class: The storage class where the archive will be stored.
+        :type storage_class: LogsArchiveStorageClassS3Type, optional
+
         :param type: Type of the S3 archive destination.
         :type type: LogsArchiveDestinationS3Type
         """
@@ -73,6 +81,8 @@ class LogsArchiveDestinationS3(ModelNormal):
             kwargs["encryption"] = encryption
         if path is not unset:
             kwargs["path"] = path
+        if storage_class is not unset:
+            kwargs["storage_class"] = storage_class
         super().__init__(kwargs)
 
         self_.bucket = bucket
