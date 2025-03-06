@@ -118,6 +118,118 @@ from datadog_api_client.v2.model.application_key_update_data import ApplicationK
 from datadog_api_client.v2.model.application_key_update_request import ApplicationKeyUpdateRequest
 from datadog_api_client.v2.model.application_keys_sort import ApplicationKeysSort
 from datadog_api_client.v2.model.application_keys_type import ApplicationKeysType
+from datadog_api_client.v2.model.application_security_waf_custom_rule_action import (
+    ApplicationSecurityWafCustomRuleAction,
+)
+from datadog_api_client.v2.model.application_security_waf_custom_rule_action_action import (
+    ApplicationSecurityWafCustomRuleActionAction,
+)
+from datadog_api_client.v2.model.application_security_waf_custom_rule_action_parameters import (
+    ApplicationSecurityWafCustomRuleActionParameters,
+)
+from datadog_api_client.v2.model.application_security_waf_custom_rule_attributes import (
+    ApplicationSecurityWafCustomRuleAttributes,
+)
+from datadog_api_client.v2.model.application_security_waf_custom_rule_condition import (
+    ApplicationSecurityWafCustomRuleCondition,
+)
+from datadog_api_client.v2.model.application_security_waf_custom_rule_condition_input import (
+    ApplicationSecurityWafCustomRuleConditionInput,
+)
+from datadog_api_client.v2.model.application_security_waf_custom_rule_condition_input_address import (
+    ApplicationSecurityWafCustomRuleConditionInputAddress,
+)
+from datadog_api_client.v2.model.application_security_waf_custom_rule_condition_operator import (
+    ApplicationSecurityWafCustomRuleConditionOperator,
+)
+from datadog_api_client.v2.model.application_security_waf_custom_rule_condition_options import (
+    ApplicationSecurityWafCustomRuleConditionOptions,
+)
+from datadog_api_client.v2.model.application_security_waf_custom_rule_condition_parameters import (
+    ApplicationSecurityWafCustomRuleConditionParameters,
+)
+from datadog_api_client.v2.model.application_security_waf_custom_rule_create_attributes import (
+    ApplicationSecurityWafCustomRuleCreateAttributes,
+)
+from datadog_api_client.v2.model.application_security_waf_custom_rule_create_data import (
+    ApplicationSecurityWafCustomRuleCreateData,
+)
+from datadog_api_client.v2.model.application_security_waf_custom_rule_create_request import (
+    ApplicationSecurityWafCustomRuleCreateRequest,
+)
+from datadog_api_client.v2.model.application_security_waf_custom_rule_data import ApplicationSecurityWafCustomRuleData
+from datadog_api_client.v2.model.application_security_waf_custom_rule_list_response import (
+    ApplicationSecurityWafCustomRuleListResponse,
+)
+from datadog_api_client.v2.model.application_security_waf_custom_rule_metadata import (
+    ApplicationSecurityWafCustomRuleMetadata,
+)
+from datadog_api_client.v2.model.application_security_waf_custom_rule_response import (
+    ApplicationSecurityWafCustomRuleResponse,
+)
+from datadog_api_client.v2.model.application_security_waf_custom_rule_scope import ApplicationSecurityWafCustomRuleScope
+from datadog_api_client.v2.model.application_security_waf_custom_rule_tags import ApplicationSecurityWafCustomRuleTags
+from datadog_api_client.v2.model.application_security_waf_custom_rule_tags_category import (
+    ApplicationSecurityWafCustomRuleTagsCategory,
+)
+from datadog_api_client.v2.model.application_security_waf_custom_rule_type import ApplicationSecurityWafCustomRuleType
+from datadog_api_client.v2.model.application_security_waf_custom_rule_update_attributes import (
+    ApplicationSecurityWafCustomRuleUpdateAttributes,
+)
+from datadog_api_client.v2.model.application_security_waf_custom_rule_update_data import (
+    ApplicationSecurityWafCustomRuleUpdateData,
+)
+from datadog_api_client.v2.model.application_security_waf_custom_rule_update_request import (
+    ApplicationSecurityWafCustomRuleUpdateRequest,
+)
+from datadog_api_client.v2.model.application_security_waf_exclusion_filter_attributes import (
+    ApplicationSecurityWafExclusionFilterAttributes,
+)
+from datadog_api_client.v2.model.application_security_waf_exclusion_filter_create_attributes import (
+    ApplicationSecurityWafExclusionFilterCreateAttributes,
+)
+from datadog_api_client.v2.model.application_security_waf_exclusion_filter_create_data import (
+    ApplicationSecurityWafExclusionFilterCreateData,
+)
+from datadog_api_client.v2.model.application_security_waf_exclusion_filter_create_request import (
+    ApplicationSecurityWafExclusionFilterCreateRequest,
+)
+from datadog_api_client.v2.model.application_security_waf_exclusion_filter_metadata import (
+    ApplicationSecurityWafExclusionFilterMetadata,
+)
+from datadog_api_client.v2.model.application_security_waf_exclusion_filter_on_match import (
+    ApplicationSecurityWafExclusionFilterOnMatch,
+)
+from datadog_api_client.v2.model.application_security_waf_exclusion_filter_resource import (
+    ApplicationSecurityWafExclusionFilterResource,
+)
+from datadog_api_client.v2.model.application_security_waf_exclusion_filter_response import (
+    ApplicationSecurityWafExclusionFilterResponse,
+)
+from datadog_api_client.v2.model.application_security_waf_exclusion_filter_rules_target import (
+    ApplicationSecurityWafExclusionFilterRulesTarget,
+)
+from datadog_api_client.v2.model.application_security_waf_exclusion_filter_rules_target_tags import (
+    ApplicationSecurityWafExclusionFilterRulesTargetTags,
+)
+from datadog_api_client.v2.model.application_security_waf_exclusion_filter_scope import (
+    ApplicationSecurityWafExclusionFilterScope,
+)
+from datadog_api_client.v2.model.application_security_waf_exclusion_filter_type import (
+    ApplicationSecurityWafExclusionFilterType,
+)
+from datadog_api_client.v2.model.application_security_waf_exclusion_filter_update_attributes import (
+    ApplicationSecurityWafExclusionFilterUpdateAttributes,
+)
+from datadog_api_client.v2.model.application_security_waf_exclusion_filter_update_data import (
+    ApplicationSecurityWafExclusionFilterUpdateData,
+)
+from datadog_api_client.v2.model.application_security_waf_exclusion_filter_update_request import (
+    ApplicationSecurityWafExclusionFilterUpdateRequest,
+)
+from datadog_api_client.v2.model.application_security_waf_exclusion_filters_response import (
+    ApplicationSecurityWafExclusionFiltersResponse,
+)
 from datadog_api_client.v2.model.apps_sort_field import AppsSortField
 from datadog_api_client.v2.model.asset import Asset
 from datadog_api_client.v2.model.asset_attributes import AssetAttributes
@@ -2633,6 +2745,46 @@ __all__ = [
     "ApplicationKeyUpdateRequest",
     "ApplicationKeysSort",
     "ApplicationKeysType",
+    "ApplicationSecurityWafCustomRuleAction",
+    "ApplicationSecurityWafCustomRuleActionAction",
+    "ApplicationSecurityWafCustomRuleActionParameters",
+    "ApplicationSecurityWafCustomRuleAttributes",
+    "ApplicationSecurityWafCustomRuleCondition",
+    "ApplicationSecurityWafCustomRuleConditionInput",
+    "ApplicationSecurityWafCustomRuleConditionInputAddress",
+    "ApplicationSecurityWafCustomRuleConditionOperator",
+    "ApplicationSecurityWafCustomRuleConditionOptions",
+    "ApplicationSecurityWafCustomRuleConditionParameters",
+    "ApplicationSecurityWafCustomRuleCreateAttributes",
+    "ApplicationSecurityWafCustomRuleCreateData",
+    "ApplicationSecurityWafCustomRuleCreateRequest",
+    "ApplicationSecurityWafCustomRuleData",
+    "ApplicationSecurityWafCustomRuleListResponse",
+    "ApplicationSecurityWafCustomRuleMetadata",
+    "ApplicationSecurityWafCustomRuleResponse",
+    "ApplicationSecurityWafCustomRuleScope",
+    "ApplicationSecurityWafCustomRuleTags",
+    "ApplicationSecurityWafCustomRuleTagsCategory",
+    "ApplicationSecurityWafCustomRuleType",
+    "ApplicationSecurityWafCustomRuleUpdateAttributes",
+    "ApplicationSecurityWafCustomRuleUpdateData",
+    "ApplicationSecurityWafCustomRuleUpdateRequest",
+    "ApplicationSecurityWafExclusionFilterAttributes",
+    "ApplicationSecurityWafExclusionFilterCreateAttributes",
+    "ApplicationSecurityWafExclusionFilterCreateData",
+    "ApplicationSecurityWafExclusionFilterCreateRequest",
+    "ApplicationSecurityWafExclusionFilterMetadata",
+    "ApplicationSecurityWafExclusionFilterOnMatch",
+    "ApplicationSecurityWafExclusionFilterResource",
+    "ApplicationSecurityWafExclusionFilterResponse",
+    "ApplicationSecurityWafExclusionFilterRulesTarget",
+    "ApplicationSecurityWafExclusionFilterRulesTargetTags",
+    "ApplicationSecurityWafExclusionFilterScope",
+    "ApplicationSecurityWafExclusionFilterType",
+    "ApplicationSecurityWafExclusionFilterUpdateAttributes",
+    "ApplicationSecurityWafExclusionFilterUpdateData",
+    "ApplicationSecurityWafExclusionFilterUpdateRequest",
+    "ApplicationSecurityWafExclusionFiltersResponse",
     "AppsSortField",
     "Asset",
     "AssetAttributes",
