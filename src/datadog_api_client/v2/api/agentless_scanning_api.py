@@ -21,6 +21,7 @@ class AgentlessScanningApi:
     Datadog Agentless Scanning provides visibility into risks and vulnerabilities
     within your hosts, running containers, and serverless functions—all without
     requiring teams to install Agents on every host or where Agents cannot be installed.
+    Agentless offers also Sensitive Data Scanning capabilities on your storage.
     Go to https://www.datadoghq.com/blog/agentless-scanning/ to learn more.
     """
 
@@ -92,6 +93,29 @@ class AgentlessScanningApi:
             api_client=api_client,
         )
 
+        self._get_aws_on_demand_task_endpoint = _Endpoint(
+            settings={
+                "response_type": (AwsOnDemandResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/agentless_scanning/ondemand/aws/{task_id}",
+                "operation_id": "get_aws_on_demand_task",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "task_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "task_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._list_aws_on_demand_tasks_endpoint = _Endpoint(
             settings={
                 "response_type": (AwsOnDemandListResponse,),
@@ -118,29 +142,6 @@ class AgentlessScanningApi:
                 "version": "v2",
             },
             params_map={},
-            headers_map={
-                "accept": ["application/json"],
-            },
-            api_client=api_client,
-        )
-
-        self._retrieve_aws_on_demand_task_endpoint = _Endpoint(
-            settings={
-                "response_type": (AwsOnDemandResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
-                "endpoint_path": "/api/v2/agentless_scanning/ondemand/aws/{task_id}",
-                "operation_id": "retrieve_aws_on_demand_task",
-                "http_method": "GET",
-                "version": "v2",
-            },
-            params_map={
-                "task_id": {
-                    "required": True,
-                    "openapi_types": (str,),
-                    "attribute": "task_id",
-                    "location": "path",
-                },
-            },
             headers_map={
                 "accept": ["application/json"],
             },
@@ -179,7 +180,7 @@ class AgentlessScanningApi:
     ) -> AwsOnDemandResponse:
         """Post an AWS on demand task.
 
-        Trigger the scan of an AWS resource with a high priority.
+        Trigger the scan of an AWS resource with a high priority. Agentless scanning must be activated for the AWS account containing the resource to scan.
 
         :param body: The definition of the on demand task.
         :type body: AwsOnDemandCreateRequest
@@ -224,6 +225,23 @@ class AgentlessScanningApi:
 
         return self._delete_aws_scan_options_endpoint.call_with_http_info(**kwargs)
 
+    def get_aws_on_demand_task(
+        self,
+        task_id: str,
+    ) -> AwsOnDemandResponse:
+        """Get AWS On Demand task by id.
+
+        Fetch the data of a specific on demand task.
+
+        :param task_id: The UUID of the task.
+        :type task_id: str
+        :rtype: AwsOnDemandResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["task_id"] = task_id
+
+        return self._get_aws_on_demand_task_endpoint.call_with_http_info(**kwargs)
+
     def list_aws_on_demand_tasks(
         self,
     ) -> AwsOnDemandListResponse:
@@ -247,23 +265,6 @@ class AgentlessScanningApi:
         """
         kwargs: Dict[str, Any] = {}
         return self._list_aws_scan_options_endpoint.call_with_http_info(**kwargs)
-
-    def retrieve_aws_on_demand_task(
-        self,
-        task_id: str,
-    ) -> AwsOnDemandResponse:
-        """Get AWS On Demand task by id.
-
-        Fetch the data of a specific on demand task.
-
-        :param task_id: The UUID of the task.
-        :type task_id: str
-        :rtype: AwsOnDemandResponse
-        """
-        kwargs: Dict[str, Any] = {}
-        kwargs["task_id"] = task_id
-
-        return self._retrieve_aws_on_demand_task_endpoint.call_with_http_info(**kwargs)
 
     def update_aws_scan_options(
         self,

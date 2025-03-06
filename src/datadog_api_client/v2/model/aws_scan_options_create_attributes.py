@@ -3,13 +3,10 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    unset,
-    UnsetType,
 )
 
 
@@ -30,35 +27,25 @@ class AwsScanOptionsCreateAttributes(ModelNormal):
         "vuln_host_os": "vuln_host_os",
     }
 
-    def __init__(
-        self_,
-        _lambda: Union[bool, UnsetType] = unset,
-        sensitive_data: Union[bool, UnsetType] = unset,
-        vuln_containers_os: Union[bool, UnsetType] = unset,
-        vuln_host_os: Union[bool, UnsetType] = unset,
-        **kwargs,
-    ):
+    def __init__(self_, _lambda: bool, sensitive_data: bool, vuln_containers_os: bool, vuln_host_os: bool, **kwargs):
         """
         Attributes for the AWS scan options to create.
 
         :param _lambda: Indicates if scanning of Lambda functions is enabled.
-        :type _lambda: bool, optional
+        :type _lambda: bool
 
         :param sensitive_data: Indicates if scanning for sensitive data is enabled.
-        :type sensitive_data: bool, optional
+        :type sensitive_data: bool
 
         :param vuln_containers_os: Indicates if scanning for vulnerabilities in containers is enabled.
-        :type vuln_containers_os: bool, optional
+        :type vuln_containers_os: bool
 
         :param vuln_host_os: Indicates if scanning for vulnerabilities in hosts is enabled.
-        :type vuln_host_os: bool, optional
+        :type vuln_host_os: bool
         """
-        if _lambda is not unset:
-            kwargs["_lambda"] = _lambda
-        if sensitive_data is not unset:
-            kwargs["sensitive_data"] = sensitive_data
-        if vuln_containers_os is not unset:
-            kwargs["vuln_containers_os"] = vuln_containers_os
-        if vuln_host_os is not unset:
-            kwargs["vuln_host_os"] = vuln_host_os
         super().__init__(kwargs)
+
+        self_._lambda = _lambda
+        self_.sensitive_data = sensitive_data
+        self_.vuln_containers_os = vuln_containers_os
+        self_.vuln_host_os = vuln_host_os
