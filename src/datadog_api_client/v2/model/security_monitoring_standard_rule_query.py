@@ -28,6 +28,7 @@ class SecurityMonitoringStandardRuleQuery(ModelNormal):
 
         return {
             "aggregation": (SecurityMonitoringRuleQueryAggregation,),
+            "data_source": (str,),
             "distinct_fields": ([str],),
             "group_by_fields": ([str],),
             "has_optional_group_by_fields": (bool,),
@@ -39,6 +40,7 @@ class SecurityMonitoringStandardRuleQuery(ModelNormal):
 
     attribute_map = {
         "aggregation": "aggregation",
+        "data_source": "dataSource",
         "distinct_fields": "distinctFields",
         "group_by_fields": "groupByFields",
         "has_optional_group_by_fields": "hasOptionalGroupByFields",
@@ -54,6 +56,7 @@ class SecurityMonitoringStandardRuleQuery(ModelNormal):
     def __init__(
         self_,
         aggregation: Union[SecurityMonitoringRuleQueryAggregation, UnsetType] = unset,
+        data_source: Union[str, UnsetType] = unset,
         distinct_fields: Union[List[str], UnsetType] = unset,
         group_by_fields: Union[List[str], UnsetType] = unset,
         has_optional_group_by_fields: Union[bool, UnsetType] = unset,
@@ -68,6 +71,9 @@ class SecurityMonitoringStandardRuleQuery(ModelNormal):
 
         :param aggregation: The aggregation type.
         :type aggregation: SecurityMonitoringRuleQueryAggregation, optional
+
+        :param data_source: Track of logs events.
+        :type data_source: str, optional
 
         :param distinct_fields: Field for which the cardinality is measured. Sent as an array.
         :type distinct_fields: [str], optional
@@ -93,6 +99,8 @@ class SecurityMonitoringStandardRuleQuery(ModelNormal):
         """
         if aggregation is not unset:
             kwargs["aggregation"] = aggregation
+        if data_source is not unset:
+            kwargs["data_source"] = data_source
         if distinct_fields is not unset:
             kwargs["distinct_fields"] = distinct_fields
         if group_by_fields is not unset:
