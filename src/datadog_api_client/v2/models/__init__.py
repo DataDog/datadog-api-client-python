@@ -833,6 +833,10 @@ from datadog_api_client.v2.model.data_scalar_column import DataScalarColumn
 from datadog_api_client.v2.model.data_transform import DataTransform
 from datadog_api_client.v2.model.data_transform_properties import DataTransformProperties
 from datadog_api_client.v2.model.data_transform_type import DataTransformType
+from datadog_api_client.v2.model.datadog_agent_source import DatadogAgentSource
+from datadog_api_client.v2.model.datadog_agent_source_type import DatadogAgentSourceType
+from datadog_api_client.v2.model.datadog_logs_destination import DatadogLogsDestination
+from datadog_api_client.v2.model.datadog_logs_destination_type import DatadogLogsDestinationType
 from datadog_api_client.v2.model.delete_app_response import DeleteAppResponse
 from datadog_api_client.v2.model.delete_app_response_data import DeleteAppResponseData
 from datadog_api_client.v2.model.delete_apps_request import DeleteAppsRequest
@@ -1041,6 +1045,8 @@ from datadog_api_client.v2.model.fastly_service_request import FastlyServiceRequ
 from datadog_api_client.v2.model.fastly_service_response import FastlyServiceResponse
 from datadog_api_client.v2.model.fastly_service_type import FastlyServiceType
 from datadog_api_client.v2.model.fastly_services_response import FastlyServicesResponse
+from datadog_api_client.v2.model.filter_processor import FilterProcessor
+from datadog_api_client.v2.model.filter_processor_type import FilterProcessorType
 from datadog_api_client.v2.model.finding import Finding
 from datadog_api_client.v2.model.finding_attributes import FindingAttributes
 from datadog_api_client.v2.model.finding_evaluation import FindingEvaluation
@@ -1729,6 +1735,8 @@ from datadog_api_client.v2.model.output_schema_parameters import OutputSchemaPar
 from datadog_api_client.v2.model.output_schema_parameters_type import OutputSchemaParametersType
 from datadog_api_client.v2.model.pagination import Pagination
 from datadog_api_client.v2.model.parameter import Parameter
+from datadog_api_client.v2.model.parse_json_processor import ParseJSONProcessor
+from datadog_api_client.v2.model.parse_json_processor_type import ParseJSONProcessorType
 from datadog_api_client.v2.model.partial_api_key import PartialAPIKey
 from datadog_api_client.v2.model.partial_api_key_attributes import PartialAPIKeyAttributes
 from datadog_api_client.v2.model.partial_application_key import PartialApplicationKey
@@ -1743,6 +1751,10 @@ from datadog_api_client.v2.model.permission import Permission
 from datadog_api_client.v2.model.permission_attributes import PermissionAttributes
 from datadog_api_client.v2.model.permissions_response import PermissionsResponse
 from datadog_api_client.v2.model.permissions_type import PermissionsType
+from datadog_api_client.v2.model.pipeline import Pipeline
+from datadog_api_client.v2.model.pipeline_data import PipelineData
+from datadog_api_client.v2.model.pipeline_data_attributes import PipelineDataAttributes
+from datadog_api_client.v2.model.pipeline_data_attributes_config import PipelineDataAttributesConfig
 from datadog_api_client.v2.model.powerpack import Powerpack
 from datadog_api_client.v2.model.powerpack_attributes import PowerpackAttributes
 from datadog_api_client.v2.model.powerpack_data import PowerpackData
@@ -2516,6 +2528,7 @@ from datadog_api_client.v2.model.timeseries_response_series_list import Timeseri
 from datadog_api_client.v2.model.timeseries_response_times import TimeseriesResponseTimes
 from datadog_api_client.v2.model.timeseries_response_values import TimeseriesResponseValues
 from datadog_api_client.v2.model.timeseries_response_values_list import TimeseriesResponseValuesList
+from datadog_api_client.v2.model.tls import Tls
 from datadog_api_client.v2.model.token_type import TokenType
 from datadog_api_client.v2.model.trigger import Trigger
 from datadog_api_client.v2.model.trigger_rate_limit import TriggerRateLimit
@@ -3261,6 +3274,10 @@ __all__ = [
     "DataTransform",
     "DataTransformProperties",
     "DataTransformType",
+    "DatadogAgentSource",
+    "DatadogAgentSourceType",
+    "DatadogLogsDestination",
+    "DatadogLogsDestinationType",
     "DeleteAppResponse",
     "DeleteAppResponseData",
     "DeleteAppsRequest",
@@ -3441,6 +3458,8 @@ __all__ = [
     "FastlyServiceResponse",
     "FastlyServiceType",
     "FastlyServicesResponse",
+    "FilterProcessor",
+    "FilterProcessorType",
     "Finding",
     "FindingAttributes",
     "FindingEvaluation",
@@ -4019,6 +4038,8 @@ __all__ = [
     "OutputSchemaParametersType",
     "Pagination",
     "Parameter",
+    "ParseJSONProcessor",
+    "ParseJSONProcessorType",
     "PartialAPIKey",
     "PartialAPIKeyAttributes",
     "PartialApplicationKey",
@@ -4031,6 +4052,10 @@ __all__ = [
     "PermissionAttributes",
     "PermissionsResponse",
     "PermissionsType",
+    "Pipeline",
+    "PipelineData",
+    "PipelineDataAttributes",
+    "PipelineDataAttributesConfig",
     "Powerpack",
     "PowerpackAttributes",
     "PowerpackData",
@@ -4660,6 +4685,7 @@ __all__ = [
     "TimeseriesResponseTimes",
     "TimeseriesResponseValues",
     "TimeseriesResponseValuesList",
+    "Tls",
     "TokenType",
     "Trigger",
     "TriggerRateLimit",
