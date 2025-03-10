@@ -45,7 +45,7 @@ class LogsIndexesApi:
 
         self._delete_logs_index_endpoint = _Endpoint(
             settings={
-                "response_type": (LogsIndex,),
+                "response_type": None,
                 "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/logs/config/indexes/{name}",
                 "operation_id": "delete_logs_index",
@@ -61,7 +61,7 @@ class LogsIndexesApi:
                 },
             },
             headers_map={
-                "accept": ["application/json"],
+                "accept": ["*/*"],
             },
             api_client=api_client,
         )
@@ -187,7 +187,7 @@ class LogsIndexesApi:
     def delete_logs_index(
         self,
         name: str,
-    ) -> LogsIndex:
+    ) -> None:
         """Delete an index.
 
         Delete an existing index from your organization. Index deletions are permanent and cannot be reverted.
@@ -195,7 +195,7 @@ class LogsIndexesApi:
 
         :param name: Name of the log index.
         :type name: str
-        :rtype: LogsIndex
+        :rtype: None
         """
         kwargs: Dict[str, Any] = {}
         kwargs["name"] = name
