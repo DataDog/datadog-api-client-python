@@ -34,7 +34,7 @@ class RumRetentionFilterMeta(ModelNormal):
         """
         The object describing metadata of a RUM retention filter.
 
-        :param source: The type of RUM events to filter on.
+        :param source: The origin source of the retention filter, which may be created or updated through the Datadog UI, terraform, or other channels such as direct API calls.
         :type source: RumRetentionFilterSource, optional
         """
         if source is not unset:

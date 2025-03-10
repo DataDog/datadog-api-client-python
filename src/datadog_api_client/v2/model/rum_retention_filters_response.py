@@ -32,7 +32,7 @@ class RumRetentionFiltersResponse(ModelNormal):
 
     def __init__(self_, data: Union[List[RumRetentionFilterData], UnsetType] = unset, **kwargs):
         """
-        All RUM retention filters for an application.
+        All RUM retention filters for a RUM application.
 
         :param data: A list of RUM retention filters.
         :type data: [RumRetentionFilterData], optional

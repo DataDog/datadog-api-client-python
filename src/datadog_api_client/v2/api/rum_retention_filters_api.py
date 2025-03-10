@@ -17,7 +17,7 @@ from datadog_api_client.v2.model.rum_retention_filter_update_request import RumR
 
 class RumRetentionFiltersApi:
     """
-    Manage retention filters through `Manage Applications <https://app.datadoghq.com/rum/list>`_ for your organization.
+    Manage retention filters through `Manage Applications <https://app.datadoghq.com/rum/list>`_ of RUM for your organization.
     """
 
     def __init__(self, api_client=None):
@@ -197,10 +197,10 @@ class RumRetentionFiltersApi:
     ) -> RumRetentionFilterResponse:
         """Create a RUM retention filter.
 
-        Create a RUM retention filter for an application.
+        Create a RUM retention filter for a RUM application.
         Returns RUM retention filter objects from the request body when the request is successful.
 
-        :param app_id: Application ID.
+        :param app_id: RUM application ID.
         :type app_id: str
         :param body: The definition of the new RUM retention filter.
         :type body: RumRetentionFilterCreateRequest
@@ -220,9 +220,9 @@ class RumRetentionFiltersApi:
     ) -> None:
         """Delete a RUM retention filter.
 
-        Delete a RUM retention filter for an application.
+        Delete a RUM retention filter for a RUM application.
 
-        :param app_id: Application ID.
+        :param app_id: RUM application ID.
         :type app_id: str
         :param rf_id: Retention filter ID.
         :type rf_id: str
@@ -242,9 +242,9 @@ class RumRetentionFiltersApi:
     ) -> RumRetentionFilterResponse:
         """Get a RUM retention filter.
 
-        Get a RUM retention filter for an application.
+        Get a RUM retention filter for a RUM application.
 
-        :param app_id: Application ID.
+        :param app_id: RUM application ID.
         :type app_id: str
         :param rf_id: Retention filter ID.
         :type rf_id: str
@@ -263,9 +263,9 @@ class RumRetentionFiltersApi:
     ) -> RumRetentionFiltersResponse:
         """Get all RUM retention filters.
 
-        Get the list of RUM retention filters for an application.
+        Get the list of RUM retention filters for a RUM application.
 
-        :param app_id: Application ID.
+        :param app_id: RUM application ID.
         :type app_id: str
         :rtype: RumRetentionFiltersResponse
         """
@@ -281,10 +281,10 @@ class RumRetentionFiltersApi:
     ) -> RumRetentionFiltersOrderResponse:
         """Order RUM retention filters.
 
-        Order RUM retention filters for an application.
+        Order RUM retention filters for a RUM application.
         Returns RUM retention filter objects without attributes and meta from the request body when the request is successful.
 
-        :param app_id: Application ID.
+        :param app_id: RUM application ID.
         :type app_id: str
         :param body: New definition of the RUM retention filter.
         :type body: RumRetentionFiltersOrderRequest
@@ -305,10 +305,10 @@ class RumRetentionFiltersApi:
     ) -> RumRetentionFilterResponse:
         """Update a RUM retention filter.
 
-        Update a RUM retention filter for an application.
+        Update a RUM retention filter for a RUM application.
         Returns RUM retention filter objects from the request body when the request is successful.
 
-        :param app_id: Application ID.
+        :param app_id: RUM application ID.
         :type app_id: str
         :param rf_id: Retention filter ID.
         :type rf_id: str
