@@ -1398,6 +1398,7 @@ from datadog_api_client.v2.model.logs_archive_order_attributes import LogsArchiv
 from datadog_api_client.v2.model.logs_archive_order_definition import LogsArchiveOrderDefinition
 from datadog_api_client.v2.model.logs_archive_order_definition_type import LogsArchiveOrderDefinitionType
 from datadog_api_client.v2.model.logs_archive_state import LogsArchiveState
+from datadog_api_client.v2.model.logs_archive_storage_class_s3_type import LogsArchiveStorageClassS3Type
 from datadog_api_client.v2.model.logs_archives import LogsArchives
 from datadog_api_client.v2.model.logs_compute import LogsCompute
 from datadog_api_client.v2.model.logs_compute_type import LogsComputeType
@@ -3762,6 +3763,7 @@ __all__ = [
     "LogsArchiveOrderDefinition",
     "LogsArchiveOrderDefinitionType",
     "LogsArchiveState",
+    "LogsArchiveStorageClassS3Type",
     "LogsArchives",
     "LogsCompute",
     "LogsComputeType",

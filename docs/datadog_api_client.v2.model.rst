@@ -7830,6 +7830,13 @@ datadog\_api\_client.v2.model.logs\_archive\_state module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.logs\_archive\_storage\_class\_s3\_type module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.logs_archive_storage_class_s3_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.logs\_archives module
 ---------------------------------------------------
 
