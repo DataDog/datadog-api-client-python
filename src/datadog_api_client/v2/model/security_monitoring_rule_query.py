@@ -18,6 +18,9 @@ class SecurityMonitoringRuleQuery(ModelComposed):
         :param aggregation: The aggregation type.
         :type aggregation: SecurityMonitoringRuleQueryAggregation, optional
 
+        :param data_source: Source of events, either logs or audit trail.
+        :type data_source: SecurityMonitoringStandardDataSource, optional
+
         :param distinct_fields: Field for which the cardinality is measured. Sent as an array.
         :type distinct_fields: [str], optional
 
