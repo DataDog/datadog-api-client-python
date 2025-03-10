@@ -1958,6 +1958,36 @@
       "type": "safe"
     }
   },
+  "ListPipelines": {
+    "tag": "Observability Pipelines",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreatePipeline": {
+    "tag": "Observability Pipelines",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "DeletePipeline": {
+    "tag": "Observability Pipelines",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetPipeline": {
+    "tag": "Observability Pipelines",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdatePipeline": {
+    "tag": "Observability Pipelines",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "DeleteRestrictionPolicy": {
     "tag": "Restriction Policies",
     "undo": {

@@ -40,6 +40,7 @@ from datadog_api_client.v2.api.metrics_api import MetricsApi
 from datadog_api_client.v2.api.microsoft_teams_integration_api import MicrosoftTeamsIntegrationApi
 from datadog_api_client.v2.api.monitors_api import MonitorsApi
 from datadog_api_client.v2.api.network_device_monitoring_api import NetworkDeviceMonitoringApi
+from datadog_api_client.v2.api.observability_pipelines_api import ObservabilityPipelinesApi
 from datadog_api_client.v2.api.okta_integration_api import OktaIntegrationApi
 from datadog_api_client.v2.api.opsgenie_integration_api import OpsgenieIntegrationApi
 from datadog_api_client.v2.api.organizations_api import OrganizationsApi
@@ -109,6 +110,7 @@ __all__ = [
     "MicrosoftTeamsIntegrationApi",
     "MonitorsApi",
     "NetworkDeviceMonitoringApi",
+    "ObservabilityPipelinesApi",
     "OktaIntegrationApi",
     "OpsgenieIntegrationApi",
     "OrganizationsApi",

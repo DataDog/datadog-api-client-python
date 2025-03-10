@@ -4239,6 +4239,34 @@ datadog\_api\_client.v2.model.data\_transform\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.datadog\_agent\_source module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.datadog_agent_source
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.datadog\_agent\_source\_type module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.datadog_agent_source_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.datadog\_logs\_destination module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.datadog_logs_destination
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.datadog\_logs\_destination\_type module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.datadog_logs_destination_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.delete\_app\_response module
 ----------------------------------------------------------
 
@@ -5580,6 +5608,20 @@ datadog\_api\_client.v2.model.fastly\_services\_response module
 ---------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.fastly_services_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.filter\_processor module
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.filter_processor
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.filter\_processor\_type module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.filter_processor_type
    :members:
    :show-inheritance:
 
@@ -9629,6 +9671,20 @@ datadog\_api\_client.v2.model.parameter module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.parse\_json\_processor module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.parse_json_processor
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.parse\_json\_processor\_type module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.parse_json_processor_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.partial\_api\_key module
 ------------------------------------------------------
 
@@ -9710,6 +9766,34 @@ datadog\_api\_client.v2.model.permissions\_type module
 ------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.permissions_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.pipeline module
+---------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.pipeline
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.pipeline\_data module
+---------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.pipeline_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.pipeline\_data\_attributes module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.pipeline_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.pipeline\_data\_attributes\_config module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.pipeline_data_attributes_config
    :members:
    :show-inheritance:
 
@@ -14078,6 +14162,13 @@ datadog\_api\_client.v2.model.timeseries\_response\_values\_list module
 -----------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.timeseries_response_values_list
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tls module
+----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tls
    :members:
    :show-inheritance:
 
