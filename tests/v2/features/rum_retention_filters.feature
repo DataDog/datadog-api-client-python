@@ -1,7 +1,8 @@
 @endpoint(rum-retention-filters) @endpoint(rum-retention-filters-v2)
 Feature: Rum Retention Filters
   Manage retention filters through [Manage
-  Applications](https://app.datadoghq.com/rum/list) for your organization.
+  Applications](https://app.datadoghq.com/rum/list) of RUM for your
+  organization.
 
   Background:
     Given a valid "apiKeyAuth" key in the system

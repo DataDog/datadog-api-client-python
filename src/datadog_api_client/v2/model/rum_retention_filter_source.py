@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class RumRetentionFilterSource(ModelSimple):
     """
-    The type of RUM events to filter on.
+    The origin source of the retention filter, which may be created or updated through the Datadog UI, terraform, or other channels such as direct API calls.
 
     :param value: Must be one of ["ui", "terraform", "default", "unknown"].
     :type value: str
