@@ -3,19 +3,16 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    unset,
-    UnsetType,
 )
 
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.rum_retention_filter_update_attributes import RumRetentionFilterUpdateAttributes
-    from datadog_api_client.v2.model.rum_retention_filter_meta import RumRetentionFilterMeta
     from datadog_api_client.v2.model.rum_retention_filter_type import RumRetentionFilterType
 
 
@@ -25,30 +22,22 @@ class RumRetentionFilterUpdateData(ModelNormal):
         from datadog_api_client.v2.model.rum_retention_filter_update_attributes import (
             RumRetentionFilterUpdateAttributes,
         )
-        from datadog_api_client.v2.model.rum_retention_filter_meta import RumRetentionFilterMeta
         from datadog_api_client.v2.model.rum_retention_filter_type import RumRetentionFilterType
 
         return {
             "attributes": (RumRetentionFilterUpdateAttributes,),
             "id": (str,),
-            "meta": (RumRetentionFilterMeta,),
             "type": (RumRetentionFilterType,),
         }
 
     attribute_map = {
         "attributes": "attributes",
         "id": "id",
-        "meta": "meta",
         "type": "type",
     }
 
     def __init__(
-        self_,
-        attributes: RumRetentionFilterUpdateAttributes,
-        id: str,
-        type: RumRetentionFilterType,
-        meta: Union[RumRetentionFilterMeta, UnsetType] = unset,
-        **kwargs,
+        self_, attributes: RumRetentionFilterUpdateAttributes, id: str, type: RumRetentionFilterType, **kwargs
     ):
         """
         The new RUM retention filter properties to update.
@@ -59,14 +48,9 @@ class RumRetentionFilterUpdateData(ModelNormal):
         :param id: ID of retention filter in UUID.
         :type id: str
 
-        :param meta: The object describing metadata of a RUM retention filter.
-        :type meta: RumRetentionFilterMeta, optional
-
         :param type: The type of the resource. The value should always be retention_filters.
         :type type: RumRetentionFilterType
         """
-        if meta is not unset:
-            kwargs["meta"] = meta
         super().__init__(kwargs)
 
         self_.attributes = attributes

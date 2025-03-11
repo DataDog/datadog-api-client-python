@@ -1975,9 +1975,7 @@ from datadog_api_client.v2.model.rum_retention_filter_create_data import RumRete
 from datadog_api_client.v2.model.rum_retention_filter_create_request import RumRetentionFilterCreateRequest
 from datadog_api_client.v2.model.rum_retention_filter_data import RumRetentionFilterData
 from datadog_api_client.v2.model.rum_retention_filter_event_type import RumRetentionFilterEventType
-from datadog_api_client.v2.model.rum_retention_filter_meta import RumRetentionFilterMeta
 from datadog_api_client.v2.model.rum_retention_filter_response import RumRetentionFilterResponse
-from datadog_api_client.v2.model.rum_retention_filter_source import RumRetentionFilterSource
 from datadog_api_client.v2.model.rum_retention_filter_type import RumRetentionFilterType
 from datadog_api_client.v2.model.rum_retention_filter_update_attributes import RumRetentionFilterUpdateAttributes
 from datadog_api_client.v2.model.rum_retention_filter_update_data import RumRetentionFilterUpdateData
@@ -4252,9 +4250,7 @@ __all__ = [
     "RumRetentionFilterCreateRequest",
     "RumRetentionFilterData",
     "RumRetentionFilterEventType",
-    "RumRetentionFilterMeta",
     "RumRetentionFilterResponse",
-    "RumRetentionFilterSource",
     "RumRetentionFilterType",
     "RumRetentionFilterUpdateAttributes",
     "RumRetentionFilterUpdateData",

@@ -15,7 +15,6 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.rum_retention_filter_attributes import RumRetentionFilterAttributes
-    from datadog_api_client.v2.model.rum_retention_filter_meta import RumRetentionFilterMeta
     from datadog_api_client.v2.model.rum_retention_filter_type import RumRetentionFilterType
 
 
@@ -23,20 +22,17 @@ class RumRetentionFilterData(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.rum_retention_filter_attributes import RumRetentionFilterAttributes
-        from datadog_api_client.v2.model.rum_retention_filter_meta import RumRetentionFilterMeta
         from datadog_api_client.v2.model.rum_retention_filter_type import RumRetentionFilterType
 
         return {
             "attributes": (RumRetentionFilterAttributes,),
             "id": (str,),
-            "meta": (RumRetentionFilterMeta,),
             "type": (RumRetentionFilterType,),
         }
 
     attribute_map = {
         "attributes": "attributes",
         "id": "id",
-        "meta": "meta",
         "type": "type",
     }
 
@@ -44,7 +40,6 @@ class RumRetentionFilterData(ModelNormal):
         self_,
         attributes: Union[RumRetentionFilterAttributes, UnsetType] = unset,
         id: Union[str, UnsetType] = unset,
-        meta: Union[RumRetentionFilterMeta, UnsetType] = unset,
         type: Union[RumRetentionFilterType, UnsetType] = unset,
         **kwargs,
     ):
@@ -57,9 +52,6 @@ class RumRetentionFilterData(ModelNormal):
         :param id: ID of retention filter in UUID.
         :type id: str, optional
 
-        :param meta: The object describing metadata of a RUM retention filter.
-        :type meta: RumRetentionFilterMeta, optional
-
         :param type: The type of the resource. The value should always be retention_filters.
         :type type: RumRetentionFilterType, optional
         """
@@ -67,8 +59,6 @@ class RumRetentionFilterData(ModelNormal):
             kwargs["attributes"] = attributes
         if id is not unset:
             kwargs["id"] = id
-        if meta is not unset:
-            kwargs["meta"] = meta
         if type is not unset:
             kwargs["type"] = type
         super().__init__(kwargs)

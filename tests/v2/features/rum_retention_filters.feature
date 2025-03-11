@@ -1,7 +1,8 @@
 @endpoint(rum-retention-filters) @endpoint(rum-retention-filters-v2)
 Feature: Rum Retention Filters
   Manage retention filters through [Manage
-  Applications](https://app.datadoghq.com/rum/list) for your organization.
+  Applications](https://app.datadoghq.com/rum/list) of RUM for your
+  organization.
 
   Background:
     Given a valid "apiKeyAuth" key in the system
@@ -20,7 +21,7 @@ Feature: Rum Retention Filters
   Scenario: Create a RUM retention filter returns "Created" response
     Given new "CreateRetentionFilter" request
     And request contains "app_id" parameter with value "a33671aa-24fd-4dcd-ba4b-5bbdbafe7690"
-    And body with value {"data":{"type":"retention_filters","attributes":{"name":"Test creating retention filter","event_type":"session","query":"custom_query","sample_rate":50,"enabled":true},"meta":{"source":"terraform"}}}
+    And body with value {"data":{"type":"retention_filters","attributes":{"name":"Test creating retention filter","event_type":"session","query":"custom_query","sample_rate":50,"enabled":true}}}
     When the request is sent
     Then the response status is 201 Created
     And the response "data.type" is equal to "retention_filters"
@@ -29,7 +30,6 @@ Feature: Rum Retention Filters
     And the response "data.attributes.enabled" is equal to true
     And the response "data.attributes.query" is equal to "custom_query"
     And the response "data.attributes.sample_rate" is equal to 50
-    And the response "data.meta.source" is equal to "terraform"
 
   @replay-only @team:DataDog/rum-backend
   Scenario: Delete a RUM retention filter returns "No Content" response
@@ -69,7 +69,6 @@ Feature: Rum Retention Filters
     And the response "data.attributes.enabled" is equal to true
     And the response "data.attributes.query" is equal to "custom_query"
     And the response "data.attributes.sample_rate" is equal to 25
-    And the response "data.meta.source" is equal to "terraform"
 
   @replay-only @team:DataDog/rum-backend
   Scenario: Get all RUM retention filters returns "OK" response
@@ -131,4 +130,3 @@ Feature: Rum Retention Filters
     And the response "data.attributes.enabled" is equal to true
     And the response "data.attributes.query" is equal to "view_query"
     And the response "data.attributes.sample_rate" is equal to 100
-    And the response "data.meta.source" is equal to "unknown"

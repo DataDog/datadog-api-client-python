@@ -1,7 +1,7 @@
 interactions:
 - request:
     body: '{"data":{"attributes":{"enabled":true,"event_type":"session","name":"Test
-      creating retention filter","query":"custom_query","sample_rate":50},"meta":{"source":"terraform"},"type":"retention_filters"}}'
+      creating retention filter","query":"custom_query","sample_rate":50},"type":"retention_filters"}}'
     headers:
       accept:
       - application/json
@@ -12,7 +12,7 @@ interactions:
   response:
     body:
       string: '{"data":{"id":"4b95d361-f65d-4515-9824-c9aaeba5ac2a","type":"retention_filters","attributes":{"enabled":true,"event_type":"session","name":"Test
-        creating retention filter","query":"custom_query","sample_rate":50},"meta":{"source":"terraform"}}}'
+        creating retention filter","query":"custom_query","sample_rate":50}}}'
     headers:
       content-type:
       - application/vnd.api+json

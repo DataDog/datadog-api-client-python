@@ -8,8 +8,6 @@ from datadog_api_client.v2.model.rum_retention_filter_create_attributes import R
 from datadog_api_client.v2.model.rum_retention_filter_create_data import RumRetentionFilterCreateData
 from datadog_api_client.v2.model.rum_retention_filter_create_request import RumRetentionFilterCreateRequest
 from datadog_api_client.v2.model.rum_retention_filter_event_type import RumRetentionFilterEventType
-from datadog_api_client.v2.model.rum_retention_filter_meta import RumRetentionFilterMeta
-from datadog_api_client.v2.model.rum_retention_filter_source import RumRetentionFilterSource
 from datadog_api_client.v2.model.rum_retention_filter_type import RumRetentionFilterType
 
 body = RumRetentionFilterCreateRequest(
@@ -21,9 +19,6 @@ body = RumRetentionFilterCreateRequest(
             query="custom_query",
             sample_rate=50,
             enabled=True,
-        ),
-        meta=RumRetentionFilterMeta(
-            source=RumRetentionFilterSource.TERRAFORM,
         ),
     ),
 )
