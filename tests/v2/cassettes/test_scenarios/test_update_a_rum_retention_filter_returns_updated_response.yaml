@@ -12,7 +12,7 @@ interactions:
   response:
     body:
       string: '{"data":{"id":"4b95d361-f65d-4515-9824-c9aaeba5ac2a","type":"retention_filters","attributes":{"enabled":true,"event_type":"view","name":"Test
-        updating retention filter","query":"view_query","sample_rate":100},"meta":{"source":"unknown"}}}'
+        updating retention filter","query":"view_query","sample_rate":100}}}'
     headers:
       content-type:
       - application/vnd.api+json

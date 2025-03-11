@@ -11225,24 +11225,10 @@ datadog\_api\_client.v2.model.rum\_retention\_filter\_event\_type module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.rum\_retention\_filter\_meta module
------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.rum_retention_filter_meta
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v2.model.rum\_retention\_filter\_response module
 ---------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.rum_retention_filter_response
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.rum\_retention\_filter\_source module
--------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.rum_retention_filter_source
    :members:
    :show-inheritance:
 

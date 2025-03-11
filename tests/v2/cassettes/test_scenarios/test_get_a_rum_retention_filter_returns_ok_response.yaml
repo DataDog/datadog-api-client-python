@@ -9,7 +9,7 @@ interactions:
   response:
     body:
       string: '{"data":{"id":"4b95d361-f65d-4515-9824-c9aaeba5ac2a","type":"retention_filters","attributes":{"enabled":true,"event_type":"session","name":"Test
-        retention filter for session","query":"custom_query","sample_rate":25},"meta":{"source":"terraform"}}}'
+        retention filter for session","query":"custom_query","sample_rate":25}}}'
     headers:
       content-type:
       - application/vnd.api+json
