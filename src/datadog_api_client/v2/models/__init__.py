@@ -2172,6 +2172,7 @@ from datadog_api_client.v2.model.security_monitoring_signals_list_response_meta_
     SecurityMonitoringSignalsListResponseMetaPage,
 )
 from datadog_api_client.v2.model.security_monitoring_signals_sort import SecurityMonitoringSignalsSort
+from datadog_api_client.v2.model.security_monitoring_standard_data_source import SecurityMonitoringStandardDataSource
 from datadog_api_client.v2.model.security_monitoring_standard_rule_create_payload import (
     SecurityMonitoringStandardRuleCreatePayload,
 )
@@ -4385,6 +4386,7 @@ __all__ = [
     "SecurityMonitoringSignalsListResponseMeta",
     "SecurityMonitoringSignalsListResponseMetaPage",
     "SecurityMonitoringSignalsSort",
+    "SecurityMonitoringStandardDataSource",
     "SecurityMonitoringStandardRuleCreatePayload",
     "SecurityMonitoringStandardRulePayload",
     "SecurityMonitoringStandardRuleQuery",

@@ -12149,6 +12149,13 @@ datadog\_api\_client.v2.model.security\_monitoring\_signals\_sort module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.security\_monitoring\_standard\_data\_source module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_standard_data_source
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.security\_monitoring\_standard\_rule\_create\_payload module
 ------------------------------------------------------------------------------------------
 
