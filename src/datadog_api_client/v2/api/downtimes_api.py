@@ -213,6 +213,8 @@ class DowntimesApi:
 
         Cancel a downtime.
 
+        **Note** : Downtimes canceled through the API are no longer active, but are retained for approximately two days before being permanently removed. The downtime may still appear in search results until it is permanently removed.
+
         :param downtime_id: ID of the downtime to cancel.
         :type downtime_id: str
         :rtype: None
