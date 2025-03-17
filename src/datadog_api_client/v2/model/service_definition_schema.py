@@ -79,7 +79,7 @@ class ServiceDefinitionSchema(ModelComposed):
         :type languages: [str], optional
 
         :param type: The type of service.
-        :type type: ServiceDefinitionV2Dot2Type, optional
+        :type type: str, optional
         """
         super().__init__(kwargs)
 
