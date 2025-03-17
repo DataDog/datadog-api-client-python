@@ -22,7 +22,6 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.service_definition_v2_dot2_integrations import ServiceDefinitionV2Dot2Integrations
     from datadog_api_client.v2.model.service_definition_v2_dot2_link import ServiceDefinitionV2Dot2Link
     from datadog_api_client.v2.model.service_definition_v2_dot2_version import ServiceDefinitionV2Dot2Version
-    from datadog_api_client.v2.model.service_definition_v2_dot2_type import ServiceDefinitionV2Dot2Type
 
 
 class ServiceDefinitionV2Dot2(ModelNormal):
@@ -34,7 +33,6 @@ class ServiceDefinitionV2Dot2(ModelNormal):
         )
         from datadog_api_client.v2.model.service_definition_v2_dot2_link import ServiceDefinitionV2Dot2Link
         from datadog_api_client.v2.model.service_definition_v2_dot2_version import ServiceDefinitionV2Dot2Version
-        from datadog_api_client.v2.model.service_definition_v2_dot2_type import ServiceDefinitionV2Dot2Type
 
         return {
             "application": (str,),
@@ -66,7 +64,7 @@ class ServiceDefinitionV2Dot2(ModelNormal):
             "tags": ([str],),
             "team": (str,),
             "tier": (str,),
-            "type": (ServiceDefinitionV2Dot2Type,),
+            "type": (str,),
         }
 
     attribute_map = {
@@ -103,7 +101,7 @@ class ServiceDefinitionV2Dot2(ModelNormal):
         tags: Union[List[str], UnsetType] = unset,
         team: Union[str, UnsetType] = unset,
         tier: Union[str, UnsetType] = unset,
-        type: Union[ServiceDefinitionV2Dot2Type, UnsetType] = unset,
+        type: Union[str, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -152,7 +150,7 @@ class ServiceDefinitionV2Dot2(ModelNormal):
         :type tier: str, optional
 
         :param type: The type of service.
-        :type type: ServiceDefinitionV2Dot2Type, optional
+        :type type: str, optional
         """
         if application is not unset:
             kwargs["application"] = application
