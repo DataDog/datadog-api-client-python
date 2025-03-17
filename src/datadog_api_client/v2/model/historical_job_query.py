@@ -17,6 +17,9 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.security_monitoring_rule_query_aggregation import (
         SecurityMonitoringRuleQueryAggregation,
     )
+    from datadog_api_client.v2.model.security_monitoring_standard_data_source import (
+        SecurityMonitoringStandardDataSource,
+    )
 
 
 class HistoricalJobQuery(ModelNormal):
@@ -25,9 +28,13 @@ class HistoricalJobQuery(ModelNormal):
         from datadog_api_client.v2.model.security_monitoring_rule_query_aggregation import (
             SecurityMonitoringRuleQueryAggregation,
         )
+        from datadog_api_client.v2.model.security_monitoring_standard_data_source import (
+            SecurityMonitoringStandardDataSource,
+        )
 
         return {
             "aggregation": (SecurityMonitoringRuleQueryAggregation,),
+            "data_source": (SecurityMonitoringStandardDataSource,),
             "distinct_fields": ([str],),
             "group_by_fields": ([str],),
             "has_optional_group_by_fields": (bool,),
@@ -38,6 +45,7 @@ class HistoricalJobQuery(ModelNormal):
 
     attribute_map = {
         "aggregation": "aggregation",
+        "data_source": "dataSource",
         "distinct_fields": "distinctFields",
         "group_by_fields": "groupByFields",
         "has_optional_group_by_fields": "hasOptionalGroupByFields",
@@ -52,6 +60,7 @@ class HistoricalJobQuery(ModelNormal):
     def __init__(
         self_,
         aggregation: Union[SecurityMonitoringRuleQueryAggregation, UnsetType] = unset,
+        data_source: Union[SecurityMonitoringStandardDataSource, UnsetType] = unset,
         distinct_fields: Union[List[str], UnsetType] = unset,
         group_by_fields: Union[List[str], UnsetType] = unset,
         has_optional_group_by_fields: Union[bool, UnsetType] = unset,
@@ -65,6 +74,9 @@ class HistoricalJobQuery(ModelNormal):
 
         :param aggregation: The aggregation type.
         :type aggregation: SecurityMonitoringRuleQueryAggregation, optional
+
+        :param data_source: Source of events, either logs or audit trail.
+        :type data_source: SecurityMonitoringStandardDataSource, optional
 
         :param distinct_fields: Field for which the cardinality is measured. Sent as an array.
         :type distinct_fields: [str], optional
@@ -86,6 +98,8 @@ class HistoricalJobQuery(ModelNormal):
         """
         if aggregation is not unset:
             kwargs["aggregation"] = aggregation
+        if data_source is not unset:
+            kwargs["data_source"] = data_source
         if distinct_fields is not unset:
             kwargs["distinct_fields"] = distinct_fields
         if group_by_fields is not unset:
