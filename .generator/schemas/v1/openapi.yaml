@@ -29328,7 +29328,7 @@ paths:
       - description: 'When specified, shows additional information about the group
           states.
 
-          Choose one or more from `all`, `alert`, `warn`, and `no data` (`no%20data`).'
+          Choose one or more from `all`, `alert`, `warn`, and `no data`.'
         in: query
         name: group_states
         required: false
@@ -36863,7 +36863,10 @@ tags:
 
     scopes from alerting. Downtime settings, which can be scheduled with start and
 
-    end times, prevent all alerting related to specified Datadog tags.'
+    end times, prevent all alerting related to specified Datadog tags.
+
+
+    **Note:** `curl` commands require [url encoding](https://curl.se/docs/url-syntax.html).'
   name: Downtimes
 - description: 'The Event Management API allows you to programmatically post events
     to the Events Explorer and fetch events from the Events Explorer. See the [Event
@@ -36940,7 +36943,10 @@ tags:
     notifies your team when a defined threshold has exceeded.
 
 
-    For more information, see [Creating Monitors](https://docs.datadoghq.com/monitors/create/types/).'
+    For more information, see [Creating Monitors](https://docs.datadoghq.com/monitors/create/types/).
+
+
+    **Note:** `curl` commands require [url encoding](https://curl.se/docs/url-syntax.html).'
   externalDocs:
     description: Find out more at
     url: https://docs.datadoghq.com/monitors/create/types/
