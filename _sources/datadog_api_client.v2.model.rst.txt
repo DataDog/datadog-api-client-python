@@ -13017,13 +13017,6 @@ datadog\_api\_client.v2.model.service\_definition\_v2\_dot2\_pagerduty module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.service\_definition\_v2\_dot2\_type module
-------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.service_definition_v2_dot2_type
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v2.model.service\_definition\_v2\_email module
 -------------------------------------------------------------------
 
