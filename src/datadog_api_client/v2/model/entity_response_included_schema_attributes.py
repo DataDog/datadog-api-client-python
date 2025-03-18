@@ -8,8 +8,6 @@ from typing import Union, TYPE_CHECKING
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    unset,
-    UnsetType,
 )
 
 
@@ -37,17 +35,15 @@ class EntityResponseIncludedSchemaAttributes(ModelNormal):
 
     def __init__(
         self_,
-        schema: Union[
-            EntityV3, EntityV3Service, EntityV3Datastore, EntityV3Queue, EntityV3System, EntityV3API, UnsetType
-        ] = unset,
+        schema: Union[EntityV3, EntityV3Service, EntityV3Datastore, EntityV3Queue, EntityV3System, EntityV3API],
         **kwargs,
     ):
         """
         Included schema.
 
         :param schema: Entity schema v3.
-        :type schema: EntityV3, optional
+        :type schema: EntityV3
         """
-        if schema is not unset:
-            kwargs["schema"] = schema
         super().__init__(kwargs)
+
+        self_.schema = schema

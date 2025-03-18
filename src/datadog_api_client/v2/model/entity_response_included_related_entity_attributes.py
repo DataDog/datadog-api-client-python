@@ -32,7 +32,7 @@ class EntityResponseIncludedRelatedEntityAttributes(ModelNormal):
 
     def __init__(
         self_,
-        kind: Union[str, UnsetType] = unset,
+        kind: str,
         name: Union[str, UnsetType] = unset,
         namespace: Union[str, UnsetType] = unset,
         type: Union[str, UnsetType] = unset,
@@ -42,7 +42,7 @@ class EntityResponseIncludedRelatedEntityAttributes(ModelNormal):
         Related entity attributes.
 
         :param kind: Entity kind.
-        :type kind: str, optional
+        :type kind: str
 
         :param name: Entity name.
         :type name: str, optional
@@ -53,8 +53,6 @@ class EntityResponseIncludedRelatedEntityAttributes(ModelNormal):
         :param type: Entity relation type to the associated entity.
         :type type: str, optional
         """
-        if kind is not unset:
-            kwargs["kind"] = kind
         if name is not unset:
             kwargs["name"] = name
         if namespace is not unset:
@@ -62,3 +60,5 @@ class EntityResponseIncludedRelatedEntityAttributes(ModelNormal):
         if type is not unset:
             kwargs["type"] = type
         super().__init__(kwargs)
+
+        self_.kind = kind

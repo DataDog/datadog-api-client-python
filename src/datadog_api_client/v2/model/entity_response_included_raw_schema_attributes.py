@@ -3,13 +3,10 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    unset,
-    UnsetType,
 )
 
 
@@ -24,13 +21,13 @@ class EntityResponseIncludedRawSchemaAttributes(ModelNormal):
         "raw_schema": "rawSchema",
     }
 
-    def __init__(self_, raw_schema: Union[str, UnsetType] = unset, **kwargs):
+    def __init__(self_, raw_schema: str, **kwargs):
         """
         Included raw schema attributes.
 
         :param raw_schema: Schema from user input in base64 encoding.
-        :type raw_schema: str, optional
+        :type raw_schema: str
         """
-        if raw_schema is not unset:
-            kwargs["raw_schema"] = raw_schema
         super().__init__(kwargs)
+
+        self_.raw_schema = raw_schema
