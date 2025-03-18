@@ -2192,6 +2192,7 @@ or cloned dashboards. This parameter is incompatible with <code class="docutils 
 you greater control over monitor notifications by allowing you to globally exclude
 scopes from alerting. Downtime settings, which can be scheduled with start and
 end times, prevent all alerting related to specified Datadog tags.</p>
+<p><strong>Note:</strong> <code class="docutils literal notranslate"><span class="pre">curl</span></code> commands require <a class="reference external" href="https://curl.se/docs/url-syntax.html">url encoding</a>.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v1.api.downtimes_api.DowntimesApi.cancel_downtime">
 <span class="sig-name descname"><span class="pre">cancel_downtime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">downtime_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#datadog_api_client.v1.api.downtimes_api.DowntimesApi.cancel_downtime" title="Link to this definition">¶</a></dt>
@@ -3137,6 +3138,7 @@ compression is applied, which reduces the payload size.</p></li>
 <p><a class="reference external" href="https://docs.datadoghq.com/monitors">Monitors</a> allow you to watch a metric or check that you care about and
 notifies your team when a defined threshold has exceeded.</p>
 <p>For more information, see <a class="reference external" href="https://docs.datadoghq.com/monitors/create/types/">Creating Monitors</a>.</p>
+<p><strong>Note:</strong> <code class="docutils literal notranslate"><span class="pre">curl</span></code> commands require <a class="reference external" href="https://curl.se/docs/url-syntax.html">url encoding</a>.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v1.api.monitors_api.MonitorsApi.check_can_delete_monitor">
 <span class="sig-name descname"><span class="pre">check_can_delete_monitor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">monitor_ids</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v1.model.html#datadog_api_client.v1.model.check_can_delete_monitor_response.CheckCanDeleteMonitorResponse" title="datadog_api_client.v1.model.check_can_delete_monitor_response.CheckCanDeleteMonitorResponse"><span class="pre">CheckCanDeleteMonitorResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v1.api.monitors_api.MonitorsApi.check_can_delete_monitor" title="Link to this definition">¶</a></dt>
@@ -3424,7 +3426,7 @@ It is only available via the API and isn’t visible or editable in the Datadog 
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>group_states</strong> (<em>str</em><em>, </em><em>optional</em>) – When specified, shows additional information about the group states.
-Choose one or more from <code class="docutils literal notranslate"><span class="pre">all</span></code> , <code class="docutils literal notranslate"><span class="pre">alert</span></code> , <code class="docutils literal notranslate"><span class="pre">warn</span></code> , and <code class="docutils literal notranslate"><span class="pre">no</span> <span class="pre">data</span></code> ( <code class="docutils literal notranslate"><span class="pre">no%20data</span></code> ).</p></li>
+Choose one or more from <code class="docutils literal notranslate"><span class="pre">all</span></code> , <code class="docutils literal notranslate"><span class="pre">alert</span></code> , <code class="docutils literal notranslate"><span class="pre">warn</span></code> , and <code class="docutils literal notranslate"><span class="pre">no</span> <span class="pre">data</span></code>.</p></li>
 <li><p><strong>name</strong> (<em>str</em><em>, </em><em>optional</em>) – A string to filter monitors by name.</p></li>
 <li><p><strong>tags</strong> (<em>str</em><em>, </em><em>optional</em>) – A comma separated list indicating what tags, if any, should be used to filter the list of monitors by scope.
 For example, <code class="docutils literal notranslate"><span class="pre">host:host0</span></code>.</p></li>
@@ -3450,7 +3452,7 @@ Tags created in the Datadog UI automatically have the service key prepended. For
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>group_states</strong> (<em>str</em><em>, </em><em>optional</em>) – When specified, shows additional information about the group states.
-Choose one or more from <code class="docutils literal notranslate"><span class="pre">all</span></code> , <code class="docutils literal notranslate"><span class="pre">alert</span></code> , <code class="docutils literal notranslate"><span class="pre">warn</span></code> , and <code class="docutils literal notranslate"><span class="pre">no</span> <span class="pre">data</span></code> ( <code class="docutils literal notranslate"><span class="pre">no%20data</span></code> ).</p></li>
+Choose one or more from <code class="docutils literal notranslate"><span class="pre">all</span></code> , <code class="docutils literal notranslate"><span class="pre">alert</span></code> , <code class="docutils literal notranslate"><span class="pre">warn</span></code> , and <code class="docutils literal notranslate"><span class="pre">no</span> <span class="pre">data</span></code>.</p></li>
 <li><p><strong>name</strong> (<em>str</em><em>, </em><em>optional</em>) – A string to filter monitors by name.</p></li>
 <li><p><strong>tags</strong> (<em>str</em><em>, </em><em>optional</em>) – A comma separated list indicating what tags, if any, should be used to filter the list of monitors by scope.
 For example, <code class="docutils literal notranslate"><span class="pre">host:host0</span></code>.</p></li>
