@@ -28,6 +28,8 @@ class MonitorsApi:
     notifies your team when a defined threshold has exceeded.
 
     For more information, see `Creating Monitors <https://docs.datadoghq.com/monitors/create/types/>`_.
+
+    **Note:** ``curl`` commands require `url encoding <https://curl.se/docs/url-syntax.html>`_.
     """
 
     def __init__(self, api_client=None):
@@ -679,7 +681,7 @@ class MonitorsApi:
         Get all monitors from your organization.
 
         :param group_states: When specified, shows additional information about the group states.
-            Choose one or more from ``all`` , ``alert`` , ``warn`` , and ``no data`` ( ``no%20data`` ).
+            Choose one or more from ``all`` , ``alert`` , ``warn`` , and ``no data``.
         :type group_states: str, optional
         :param name: A string to filter monitors by name.
         :type name: str, optional
@@ -743,7 +745,7 @@ class MonitorsApi:
         Provide a paginated version of :meth:`list_monitors`, returning all items.
 
         :param group_states: When specified, shows additional information about the group states.
-            Choose one or more from ``all`` , ``alert`` , ``warn`` , and ``no data`` ( ``no%20data`` ).
+            Choose one or more from ``all`` , ``alert`` , ``warn`` , and ``no data``.
         :type group_states: str, optional
         :param name: A string to filter monitors by name.
         :type name: str, optional
