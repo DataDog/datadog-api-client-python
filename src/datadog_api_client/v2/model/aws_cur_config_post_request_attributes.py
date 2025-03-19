@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -11,6 +11,10 @@ from datadog_api_client.model_utils import (
     unset,
     UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.account_filtering_config import AccountFilteringConfig
 
 
 class AwsCURConfigPostRequestAttributes(ModelNormal):
@@ -22,7 +26,10 @@ class AwsCURConfigPostRequestAttributes(ModelNormal):
 
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.account_filtering_config import AccountFilteringConfig
+
         return {
+            "account_filters": (AccountFilteringConfig,),
             "account_id": (str,),
             "bucket_name": (str,),
             "bucket_region": (str,),
@@ -33,6 +40,7 @@ class AwsCURConfigPostRequestAttributes(ModelNormal):
         }
 
     attribute_map = {
+        "account_filters": "account_filters",
         "account_id": "account_id",
         "bucket_name": "bucket_name",
         "bucket_region": "bucket_region",
@@ -48,6 +56,7 @@ class AwsCURConfigPostRequestAttributes(ModelNormal):
         bucket_name: str,
         report_name: str,
         report_prefix: str,
+        account_filters: Union[AccountFilteringConfig, UnsetType] = unset,
         bucket_region: Union[str, UnsetType] = unset,
         is_enabled: Union[bool, UnsetType] = unset,
         months: Union[int, UnsetType] = unset,
@@ -55,6 +64,9 @@ class AwsCURConfigPostRequestAttributes(ModelNormal):
     ):
         """
         Attributes for AWS CUR config Post Request.
+
+        :param account_filters: The account filtering configuration.
+        :type account_filters: AccountFilteringConfig, optional
 
         :param account_id: The AWS account ID.
         :type account_id: str
@@ -77,6 +89,8 @@ class AwsCURConfigPostRequestAttributes(ModelNormal):
         :param report_prefix: The report prefix used for the Cost and Usage Report.
         :type report_prefix: str
         """
+        if account_filters is not unset:
+            kwargs["account_filters"] = account_filters
         if bucket_region is not unset:
             kwargs["bucket_region"] = bucket_region
         if is_enabled is not unset:

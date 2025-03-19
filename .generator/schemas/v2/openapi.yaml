@@ -148,6 +148,22 @@ components:
       required: false
       schema:
         $ref: '#/components/schemas/ApplicationKeysSort'
+    ApplicationSecurityWafCustomRuleIDParam:
+      description: The ID of the custom rule.
+      example: 3b5-v82-ns6
+      in: path
+      name: custom_rule_id
+      required: true
+      schema:
+        type: string
+    ApplicationSecurityWafExclusionFilterID:
+      description: The identifier of the WAF exclusion filter.
+      example: 3b5-v82-ns6
+      in: path
+      name: exclusion_filter_id
+      required: true
+      schema:
+        type: string
     ArchiveID:
       description: The ID of the archive.
       in: path
@@ -159,6 +175,14 @@ components:
       description: The UUID of the AuthN Mapping.
       in: path
       name: authn_mapping_id
+      required: true
+      schema:
+        type: string
+    AwsAccountId:
+      description: The ID of an AWS account.
+      example: '123456789012'
+      in: path
+      name: account_id
       required: true
       schema:
         type: string
@@ -546,6 +570,14 @@ components:
       required: false
       schema:
         type: string
+    OnDemandTaskId:
+      description: The UUID of the task.
+      example: 6d09294c-9ad9-42fd-a759-a0c1599b4828
+      in: path
+      name: task_id
+      required: true
+      schema:
+        type: string
     OpsgenieServiceIDPathParameter:
       description: The UUID of the service.
       in: path
@@ -651,10 +683,24 @@ components:
       required: true
       schema:
         type: string
+    RumApplicationIDParameter:
+      description: RUM application ID.
+      in: path
+      name: app_id
+      required: true
+      schema:
+        type: string
     RumMetricIDParameter:
       description: The name of the rum-based metric.
       in: path
       name: metric_id
+      required: true
+      schema:
+        type: string
+    RumRetentionFilterIDParameter:
+      description: Retention filter ID.
+      in: path
+      name: rf_id
       required: true
       schema:
         type: string
@@ -1048,6 +1094,22 @@ components:
       type: string
       x-enum-varnames:
       - API_KEYS
+    APITrigger:
+      description: Trigger a workflow VIA an API. The workflow must be published.
+      properties:
+        rateLimit:
+          $ref: '#/components/schemas/TriggerRateLimit'
+      type: object
+    APITriggerWrapper:
+      description: Schema for an API-based trigger.
+      properties:
+        apiTrigger:
+          $ref: '#/components/schemas/APITrigger'
+        startStepNames:
+          $ref: '#/components/schemas/StartStepNames'
+      required:
+      - apiTrigger
+      type: object
     AWSAccountConfigID:
       description: 'Unique Datadog ID of the AWS Account Integration Config.
 
@@ -1514,6 +1576,7 @@ components:
           type: array
       required:
       - exclude_only
+      type: object
     AWSNamespaceFiltersIncludeOnly:
       description: Include only these namespaces.
       properties:
@@ -1527,6 +1590,7 @@ components:
           type: array
       required:
       - include_only
+      type: object
     AWSNamespaceTagFilter:
       description: 'AWS Metrics Collection tag filters list. Defaults to `[]`.
 
@@ -1660,6 +1724,7 @@ components:
           type: boolean
       required:
       - include_all
+      type: object
     AWSRegionsIncludeOnly:
       description: Include only these regions.
       properties:
@@ -1673,6 +1738,7 @@ components:
           type: array
       required:
       - include_only
+      type: object
     AWSResourcesConfig:
       description: AWS Resources Collection config.
       properties:
@@ -1694,6 +1760,33 @@ components:
       properties:
         xray_services:
           $ref: '#/components/schemas/XRayServicesList'
+      type: object
+    AccountFilteringConfig:
+      description: The account filtering configuration.
+      properties:
+        excluded_accounts:
+          description: The AWS account IDs to be excluded from your billing dataset.
+            This field is used when `include_new_accounts` is `true`.
+          example:
+          - '123456789123'
+          - '123456789143'
+          items:
+            type: string
+          type: array
+        include_new_accounts:
+          description: Whether or not to automatically include new member accounts
+            by default in your billing dataset.
+          example: true
+          type: boolean
+        included_accounts:
+          description: The AWS account IDs to be included in your billing dataset.
+            This field is used when `include_new_accounts` is `false`.
+          example:
+          - '123456789123'
+          - '123456789143'
+          items:
+            type: string
+          type: array
       type: object
     ActionConnectionAttributes:
       description: The definition of `ActionConnectionAttributes` object.
@@ -1762,6 +1855,207 @@ components:
       oneOf:
       - $ref: '#/components/schemas/AWSIntegrationUpdate'
       - $ref: '#/components/schemas/HTTPIntegrationUpdate'
+    ActionQuery:
+      description: An action query. This query type is used to trigger an action,
+        such as sending a HTTP request.
+      properties:
+        events:
+          description: Events to listen for downstream of the action query.
+          items:
+            $ref: '#/components/schemas/AppBuilderEvent'
+          type: array
+        id:
+          description: The ID of the action query.
+          example: 65bb1f25-52e1-4510-9f8d-22d1516ed693
+          format: uuid
+          type: string
+        name:
+          description: A unique identifier for this action query. This name is also
+            used to access the query's result throughout the app.
+          example: fetchPendingOrders
+          type: string
+        properties:
+          $ref: '#/components/schemas/ActionQueryProperties'
+        type:
+          $ref: '#/components/schemas/ActionQueryType'
+      required:
+      - id
+      - name
+      - type
+      - properties
+      type: object
+    ActionQueryCondition:
+      description: Whether to run this query. If specified, the query will only run
+        if this condition evaluates to `true` in JavaScript and all other conditions
+        are also met.
+      oneOf:
+      - type: boolean
+      - example: ${true}
+        type: string
+    ActionQueryDebounceInMs:
+      description: The minimum time in milliseconds that must pass before the query
+        can be triggered again. This is useful for preventing accidental double-clicks
+        from triggering the query multiple times.
+      oneOf:
+      - example: 310.5
+        format: double
+        type: number
+      - description: If this is a string, it must be a valid JavaScript expression
+          that evaluates to a number.
+        example: ${1000}
+        type: string
+    ActionQueryMockedOutputs:
+      description: The mocked outputs of the action query. This is useful for testing
+        the app without actually running the action.
+      oneOf:
+      - type: string
+      - $ref: '#/components/schemas/ActionQueryMockedOutputsObject'
+    ActionQueryMockedOutputsEnabled:
+      description: Whether to enable the mocked outputs for testing.
+      oneOf:
+      - type: boolean
+      - description: If this is a string, it must be a valid JavaScript expression
+          that evaluates to a boolean.
+        example: ${true}
+        type: string
+    ActionQueryMockedOutputsObject:
+      description: The mocked outputs of the action query.
+      properties:
+        enabled:
+          $ref: '#/components/schemas/ActionQueryMockedOutputsEnabled'
+        outputs:
+          description: The mocked outputs of the action query, serialized as JSON.
+          example: '{"status": "success"}'
+          type: string
+      required:
+      - enabled
+      type: object
+    ActionQueryOnlyTriggerManually:
+      description: Determines when this query is executed. If set to `false`, the
+        query will run when the app loads and whenever any query arguments change.
+        If set to `true`, the query will only run when manually triggered from elsewhere
+        in the app.
+      oneOf:
+      - type: boolean
+      - description: If this is a string, it must be a valid JavaScript expression
+          that evaluates to a boolean.
+        example: ${true}
+        type: string
+    ActionQueryPollingIntervalInMs:
+      description: If specified, the app will poll the query at the specified interval
+        in milliseconds. The minimum polling interval is 15 seconds. The query will
+        only poll when the app's browser tab is active.
+      oneOf:
+      - example: 30000.0
+        format: double
+        minimum: 15000.0
+        type: number
+      - description: If this is a string, it must be a valid JavaScript expression
+          that evaluates to a number.
+        example: ${15000}
+        type: string
+    ActionQueryProperties:
+      description: The properties of the action query.
+      properties:
+        condition:
+          $ref: '#/components/schemas/ActionQueryCondition'
+        debounceInMs:
+          $ref: '#/components/schemas/ActionQueryDebounceInMs'
+        mockedOutputs:
+          $ref: '#/components/schemas/ActionQueryMockedOutputs'
+        onlyTriggerManually:
+          $ref: '#/components/schemas/ActionQueryOnlyTriggerManually'
+        outputs:
+          description: The post-query transformation function, which is a JavaScript
+            function that changes the query's `.outputs` property after the query's
+            execution.
+          example: ${((outputs) => {return outputs.body.data})(self.rawOutputs)}
+          type: string
+        pollingIntervalInMs:
+          $ref: '#/components/schemas/ActionQueryPollingIntervalInMs'
+        requiresConfirmation:
+          $ref: '#/components/schemas/ActionQueryRequiresConfirmation'
+        showToastOnError:
+          $ref: '#/components/schemas/ActionQueryShowToastOnError'
+        spec:
+          $ref: '#/components/schemas/ActionQuerySpec'
+      required:
+      - spec
+      type: object
+    ActionQueryRequiresConfirmation:
+      description: Whether to prompt the user to confirm this query before it runs.
+      oneOf:
+      - type: boolean
+      - description: If this is a string, it must be a valid JavaScript expression
+          that evaluates to a boolean.
+        example: ${true}
+        type: string
+    ActionQueryShowToastOnError:
+      description: Whether to display a toast to the user when the query returns an
+        error.
+      oneOf:
+      - type: boolean
+      - description: If this is a string, it must be a valid JavaScript expression
+          that evaluates to a boolean.
+        example: ${true}
+        type: string
+    ActionQuerySpec:
+      description: The definition of the action query.
+      oneOf:
+      - type: string
+      - $ref: '#/components/schemas/ActionQuerySpecObject'
+    ActionQuerySpecConnectionGroup:
+      description: The connection group to use for an action query.
+      properties:
+        id:
+          description: The ID of the connection group.
+          example: 65bb1f25-52e1-4510-9f8d-22d1516ed693
+          format: uuid
+          type: string
+        tags:
+          description: The tags of the connection group.
+          items:
+            type: string
+          type: array
+      type: object
+    ActionQuerySpecInput:
+      additionalProperties: {}
+      description: The inputs to the action query. See the [Actions Catalog](https://docs.datadoghq.com/actions/actions_catalog/)
+        for more detail on each action and its inputs.
+      type: object
+    ActionQuerySpecInputs:
+      description: The inputs to the action query. These are the values that are passed
+        to the action when it is triggered.
+      oneOf:
+      - type: string
+      - $ref: '#/components/schemas/ActionQuerySpecInput'
+    ActionQuerySpecObject:
+      description: The action query spec object.
+      properties:
+        connectionGroup:
+          $ref: '#/components/schemas/ActionQuerySpecConnectionGroup'
+        connectionId:
+          description: The ID of the custom connection to use for this action query.
+          example: 65bb1f25-52e1-4510-9f8d-22d1516ed693
+          type: string
+        fqn:
+          description: The fully qualified name of the action type.
+          example: com.datadoghq.http.request
+          type: string
+        inputs:
+          $ref: '#/components/schemas/ActionQuerySpecInputs'
+      required:
+      - fqn
+      type: object
+    ActionQueryType:
+      default: action
+      description: The action query type.
+      enum:
+      - action
+      example: action
+      type: string
+      x-enum-varnames:
+      - ACTION
     ActiveBillingDimensionsAttributes:
       description: List of active billing dimensions.
       properties:
@@ -1821,6 +2115,56 @@ components:
       required:
       - id
       - base_severity
+      type: object
+    Annotation:
+      description: A list of annotations used in the workflow. These are like sticky
+        notes for your workflow!
+      properties:
+        display:
+          $ref: '#/components/schemas/AnnotationDisplay'
+        id:
+          description: The `Annotation` `id`.
+          example: ''
+          type: string
+        markdownTextAnnotation:
+          $ref: '#/components/schemas/AnnotationMarkdownTextAnnotation'
+      required:
+      - id
+      - display
+      - markdownTextAnnotation
+      type: object
+    AnnotationDisplay:
+      description: The definition of `AnnotationDisplay` object.
+      properties:
+        bounds:
+          $ref: '#/components/schemas/AnnotationDisplayBounds'
+      type: object
+    AnnotationDisplayBounds:
+      description: The definition of `AnnotationDisplayBounds` object.
+      properties:
+        height:
+          description: The `bounds` `height`.
+          format: double
+          type: number
+        width:
+          description: The `bounds` `width`.
+          format: double
+          type: number
+        x:
+          description: The `bounds` `x`.
+          format: double
+          type: number
+        y:
+          description: The `bounds` `y`.
+          format: double
+          type: number
+      type: object
+    AnnotationMarkdownTextAnnotation:
+      description: The definition of `AnnotationMarkdownTextAnnotation` object.
+      properties:
+        text:
+          description: The `markdownTextAnnotation` `text`.
+          type: string
       type: object
     ApiID:
       description: API identifier.
@@ -1964,6 +2308,17 @@ components:
           type: array
         deployment:
           $ref: '#/components/schemas/DeploymentRelationship'
+      type: object
+    AppTriggerWrapper:
+      description: Schema for an App-based trigger.
+      properties:
+        appTrigger:
+          description: Trigger a workflow VIA an App.
+          type: object
+        startStepNames:
+          $ref: '#/components/schemas/StartStepNames'
+      required:
+      - appTrigger
       type: object
     ApplicationKeyCreateAttributes:
       description: Attributes used to create an application Key.
@@ -2116,6 +2471,770 @@ components:
       type: string
       x-enum-varnames:
       - APPLICATION_KEYS
+    ApplicationSecurityWafCustomRuleAction:
+      description: The definition of `ApplicationSecurityWafCustomRuleAction` object.
+      properties:
+        action:
+          $ref: '#/components/schemas/ApplicationSecurityWafCustomRuleActionAction'
+        parameters:
+          $ref: '#/components/schemas/ApplicationSecurityWafCustomRuleActionParameters'
+      type: object
+    ApplicationSecurityWafCustomRuleActionAction:
+      default: block_request
+      description: Override the default action to take when the WAF custom rule would
+        block.
+      enum:
+      - redirect_request
+      - block_request
+      example: block_request
+      type: string
+      x-enum-varnames:
+      - REDIRECT_REQUEST
+      - BLOCK_REQUEST
+    ApplicationSecurityWafCustomRuleActionParameters:
+      description: The definition of `ApplicationSecurityWafCustomRuleActionParameters`
+        object.
+      properties:
+        location:
+          description: The location to redirect to when the WAF custom rule triggers.
+          example: /blocking
+          type: string
+        status_code:
+          default: 403
+          description: The status code to return when the WAF custom rule triggers.
+          example: 403
+          format: int64
+          type: integer
+      type: object
+    ApplicationSecurityWafCustomRuleAttributes:
+      description: A WAF custom rule.
+      properties:
+        action:
+          $ref: '#/components/schemas/ApplicationSecurityWafCustomRuleAction'
+        blocking:
+          description: Indicates whether the WAF custom rule will block the request.
+          example: false
+          type: boolean
+        conditions:
+          description: 'Conditions for which the WAF Custom Rule will triggers, all
+            conditions needs to match in order for the WAF
+
+            rule to trigger.'
+          items:
+            $ref: '#/components/schemas/ApplicationSecurityWafCustomRuleCondition'
+          type: array
+        enabled:
+          description: Indicates whether the WAF custom rule is enabled.
+          example: false
+          type: boolean
+        metadata:
+          $ref: '#/components/schemas/ApplicationSecurityWafCustomRuleMetadata'
+        name:
+          description: The Name of the WAF custom rule.
+          example: Block request from bad useragent
+          type: string
+        path_glob:
+          description: The path glob for the WAF custom rule.
+          example: /api/search/*
+          type: string
+        scope:
+          description: The scope of the WAF custom rule.
+          items:
+            $ref: '#/components/schemas/ApplicationSecurityWafCustomRuleScope'
+          type: array
+        tags:
+          $ref: '#/components/schemas/ApplicationSecurityWafCustomRuleTags'
+      required:
+      - enabled
+      - blocking
+      - name
+      - tags
+      - conditions
+      type: object
+    ApplicationSecurityWafCustomRuleCondition:
+      description: One condition of the WAF Custom Rule.
+      properties:
+        operator:
+          $ref: '#/components/schemas/ApplicationSecurityWafCustomRuleConditionOperator'
+        parameters:
+          $ref: '#/components/schemas/ApplicationSecurityWafCustomRuleConditionParameters'
+      required:
+      - operator
+      - parameters
+      type: object
+    ApplicationSecurityWafCustomRuleConditionInput:
+      description: Input from the request on which the condition should apply.
+      properties:
+        address:
+          $ref: '#/components/schemas/ApplicationSecurityWafCustomRuleConditionInputAddress'
+        key_path:
+          description: Specific path for the input.
+          items:
+            type: string
+          type: array
+      required:
+      - address
+      type: object
+    ApplicationSecurityWafCustomRuleConditionInputAddress:
+      description: Input from the request on which the condition should apply.
+      enum:
+      - server.db.statement
+      - server.io.fs.file
+      - server.io.net.url
+      - server.sys.shell.cmd
+      - server.request.method
+      - server.request.uri.raw
+      - server.request.path_params
+      - server.request.query
+      - server.request.headers.no_cookies
+      - server.request.cookies
+      - server.request.trailers
+      - server.request.body
+      - server.response.status
+      - server.response.headers.no_cookies
+      - server.response.trailers
+      - grpc.server.request.metadata
+      - grpc.server.request.message
+      - grpc.server.method
+      - graphql.server.all_resolvers
+      - usr.id
+      - http.client_ip
+      example: server.db.statement
+      type: string
+      x-enum-varnames:
+      - SERVER_DB_STATEMENT
+      - SERVER_IO_FS_FILE
+      - SERVER_IO_NET_URL
+      - SERVER_SYS_SHELL_CMD
+      - SERVER_REQUEST_METHOD
+      - SERVER_REQUEST_URI_RAW
+      - SERVER_REQUEST_PATH_PARAMS
+      - SERVER_REQUEST_QUERY
+      - SERVER_REQUEST_HEADERS_NO_COOKIES
+      - SERVER_REQUEST_COOKIES
+      - SERVER_REQUEST_TRAILERS
+      - SERVER_REQUEST_BODY
+      - SERVER_RESPONSE_STATUS
+      - SERVER_RESPONSE_HEADERS_NO_COOKIES
+      - SERVER_RESPONSE_TRAILERS
+      - GRPC_SERVER_REQUEST_METADATA
+      - GRPC_SERVER_REQUEST_MESSAGE
+      - GRPC_SERVER_METHOD
+      - GRAPHQL_SERVER_ALL_RESOLVERS
+      - USR_ID
+      - HTTP_CLIENT_IP
+    ApplicationSecurityWafCustomRuleConditionOperator:
+      description: Operator to use for the WAF Condition.
+      enum:
+      - match_regex
+      - '!match_regex'
+      - phrase_match
+      - '!phrase_match'
+      - is_xss
+      - is_sqli
+      - exact_match
+      - '!exact_match'
+      - ip_match
+      - '!ip_match'
+      - capture_data
+      example: match_regex
+      type: string
+      x-enum-varnames:
+      - MATCH_REGEX
+      - NOT_MATCH_REGEX
+      - PHRASE_MATCH
+      - NOT_PHRASE_MATCH
+      - IS_XSS
+      - IS_SQLI
+      - EXACT_MATCH
+      - NOT_EXACT_MATCH
+      - IP_MATCH
+      - NOT_IP_MATCH
+      - CAPTURE_DATA
+    ApplicationSecurityWafCustomRuleConditionOptions:
+      description: Options for the operator of this condition.
+      properties:
+        case_sensitive:
+          default: false
+          description: Evaluate the value as case sensitive.
+          type: boolean
+        min_length:
+          default: 0
+          description: Only evaluate this condition if the value has a minimum amount
+            of characters.
+          format: int64
+          type: integer
+      type: object
+    ApplicationSecurityWafCustomRuleConditionParameters:
+      description: The scope of the WAF custom rule.
+      properties:
+        data:
+          description: Identifier of a list of data from the denylist. Can only be
+            used as substitution from the list parameter.
+          example: blocked_users
+          type: string
+        inputs:
+          description: List of inputs on which at least one should match with the
+            given operator.
+          items:
+            $ref: '#/components/schemas/ApplicationSecurityWafCustomRuleConditionInput'
+          type: array
+        list:
+          description: 'List of value to use with the condition. Only used with the
+            phrase_match, !phrase_match, exact_match and
+
+            !exact_match operator.'
+          items:
+            type: string
+          type: array
+        options:
+          $ref: '#/components/schemas/ApplicationSecurityWafCustomRuleConditionOptions'
+        regex:
+          description: Regex to use with the condition. Only used with match_regex
+            and !match_regex operator.
+          example: path.*
+          type: string
+        value:
+          description: Store the captured value in the specified tag name. Only used
+            with the capture_data operator.
+          example: custom_tag
+          type: string
+      required:
+      - inputs
+      type: object
+    ApplicationSecurityWafCustomRuleCreateAttributes:
+      description: Create a new WAF custom rule.
+      properties:
+        action:
+          $ref: '#/components/schemas/ApplicationSecurityWafCustomRuleAction'
+        blocking:
+          description: Indicates whether the WAF custom rule will block the request.
+          example: false
+          type: boolean
+        conditions:
+          description: 'Conditions for which the WAF Custom Rule will triggers, all
+            conditions needs to match in order for the WAF
+
+            rule to trigger'
+          items:
+            $ref: '#/components/schemas/ApplicationSecurityWafCustomRuleCondition'
+          type: array
+        enabled:
+          description: Indicates whether the WAF custom rule is enabled.
+          example: false
+          type: boolean
+        name:
+          description: The Name of the WAF custom rule.
+          example: Block request from a bad useragent
+          type: string
+        path_glob:
+          description: The path glob for the WAF custom rule.
+          example: /api/search/*
+          type: string
+        scope:
+          description: The scope of the WAF custom rule.
+          items:
+            $ref: '#/components/schemas/ApplicationSecurityWafCustomRuleScope'
+          type: array
+        tags:
+          $ref: '#/components/schemas/ApplicationSecurityWafCustomRuleTags'
+      required:
+      - enabled
+      - blocking
+      - name
+      - tags
+      - conditions
+      type: object
+    ApplicationSecurityWafCustomRuleCreateData:
+      description: Object for a single WAF custom rule.
+      properties:
+        attributes:
+          $ref: '#/components/schemas/ApplicationSecurityWafCustomRuleCreateAttributes'
+        type:
+          $ref: '#/components/schemas/ApplicationSecurityWafCustomRuleType'
+      required:
+      - attributes
+      - type
+      type: object
+    ApplicationSecurityWafCustomRuleCreateRequest:
+      description: Request object that includes the custom rule to create.
+      properties:
+        data:
+          $ref: '#/components/schemas/ApplicationSecurityWafCustomRuleCreateData'
+      required:
+      - data
+      type: object
+    ApplicationSecurityWafCustomRuleData:
+      description: Object for a single WAF custom rule.
+      properties:
+        attributes:
+          $ref: '#/components/schemas/ApplicationSecurityWafCustomRuleAttributes'
+        id:
+          description: The ID of the custom rule.
+          example: 2857c47d-1e3a-4300-8b2f-dc24089c084b
+          readOnly: true
+          type: string
+        type:
+          $ref: '#/components/schemas/ApplicationSecurityWafCustomRuleType'
+      type: object
+    ApplicationSecurityWafCustomRuleListResponse:
+      description: Response object that includes a list of WAF custom rules.
+      properties:
+        data:
+          description: The WAF custom rule data.
+          items:
+            $ref: '#/components/schemas/ApplicationSecurityWafCustomRuleData'
+          type: array
+      type: object
+    ApplicationSecurityWafCustomRuleMetadata:
+      description: Metadata associated with the WAF Custom Rule.
+      properties:
+        added_at:
+          description: The date and time the WAF custom rule was created.
+          example: '2021-01-01T00:00:00Z'
+          format: date-time
+          type: string
+        added_by:
+          description: The handle of the user who created the WAF custom rule.
+          example: john.doe@datadoghq.com
+          type: string
+        added_by_name:
+          description: The name of the user who created the WAF custom rule.
+          example: John Doe
+          type: string
+        modified_at:
+          description: The date and time the WAF custom rule was last updated.
+          example: '2021-01-01T00:00:00Z'
+          format: date-time
+          type: string
+        modified_by:
+          description: The handle of the user who last updated the WAF custom rule.
+          example: john.doe@datadoghq.com
+          type: string
+        modified_by_name:
+          description: The name of the user who last updated the WAF custom rule.
+          example: John Doe
+          type: string
+      readOnly: true
+      type: object
+    ApplicationSecurityWafCustomRuleResponse:
+      description: Response object that includes a single WAF custom rule.
+      properties:
+        data:
+          $ref: '#/components/schemas/ApplicationSecurityWafCustomRuleData'
+      type: object
+    ApplicationSecurityWafCustomRuleScope:
+      description: The scope of the WAF custom rule.
+      properties:
+        env:
+          description: The environment scope for the WAF custom rule.
+          example: prod
+          type: string
+        service:
+          description: The service scope for the WAF custom rule.
+          example: billing-service
+          type: string
+      required:
+      - service
+      - env
+      type: object
+    ApplicationSecurityWafCustomRuleTags:
+      additionalProperties:
+        type: string
+      description: 'Tags associated with the WAF Custom Rule. The concatenation of
+        category and type will form the security
+
+        activity field associated with the traces.'
+      maxProperties: 32
+      properties:
+        category:
+          $ref: '#/components/schemas/ApplicationSecurityWafCustomRuleTagsCategory'
+        type:
+          description: The type of the WAF rule, associated with the category will
+            form the security activity.
+          example: users.login.success
+          type: string
+      required:
+      - category
+      - type
+      type: object
+    ApplicationSecurityWafCustomRuleTagsCategory:
+      description: The category of the WAF Rule, can be either `business_logic`, `attack_attempt`
+        or `security_response`.
+      enum:
+      - attack_attempt
+      - business_logic
+      - security_responses
+      example: business_logic
+      type: string
+      x-enum-varnames:
+      - ATTACK_ATTEMPT
+      - BUSINESS_LOGIC
+      - SECURITY_RESPONSES
+    ApplicationSecurityWafCustomRuleType:
+      default: custom_rule
+      description: The type of the resource. The value should always be `custom_rule`.
+      enum:
+      - custom_rule
+      example: custom_rule
+      type: string
+      x-enum-varnames:
+      - CUSTOM_RULE
+    ApplicationSecurityWafCustomRuleUpdateAttributes:
+      description: Update a WAF custom rule.
+      properties:
+        action:
+          $ref: '#/components/schemas/ApplicationSecurityWafCustomRuleAction'
+        blocking:
+          description: Indicates whether the WAF custom rule will block the request.
+          example: false
+          type: boolean
+        conditions:
+          description: 'Conditions for which the WAF Custom Rule will triggers, all
+            conditions needs to match in order for the WAF
+
+            rule to trigger.'
+          items:
+            $ref: '#/components/schemas/ApplicationSecurityWafCustomRuleCondition'
+          type: array
+        enabled:
+          description: Indicates whether the WAF custom rule is enabled.
+          example: false
+          type: boolean
+        name:
+          description: The Name of the WAF custom rule.
+          example: Block request from bad useragent
+          type: string
+        path_glob:
+          description: The path glob for the WAF custom rule.
+          example: /api/search/*
+          type: string
+        scope:
+          description: The scope of the WAF custom rule.
+          items:
+            $ref: '#/components/schemas/ApplicationSecurityWafCustomRuleScope'
+          type: array
+        tags:
+          $ref: '#/components/schemas/ApplicationSecurityWafCustomRuleTags'
+      required:
+      - enabled
+      - blocking
+      - name
+      - tags
+      - conditions
+      type: object
+    ApplicationSecurityWafCustomRuleUpdateData:
+      description: Object for a single WAF Custom Rule.
+      properties:
+        attributes:
+          $ref: '#/components/schemas/ApplicationSecurityWafCustomRuleUpdateAttributes'
+        type:
+          $ref: '#/components/schemas/ApplicationSecurityWafCustomRuleType'
+      required:
+      - attributes
+      - type
+      type: object
+    ApplicationSecurityWafCustomRuleUpdateRequest:
+      description: Request object that includes the Custom Rule to update.
+      properties:
+        data:
+          $ref: '#/components/schemas/ApplicationSecurityWafCustomRuleUpdateData'
+      required:
+      - data
+      type: object
+    ApplicationSecurityWafExclusionFilterAttributes:
+      description: Attributes describing a WAF exclusion filter.
+      properties:
+        description:
+          description: A description for the exclusion filter.
+          example: Exclude false positives on a path
+          type: string
+        enabled:
+          description: Indicates whether the exclusion filter is enabled.
+          example: true
+          type: boolean
+        event_query:
+          description: The event query matched by the legacy exclusion filter. Cannot
+            be created nor updated.
+          type: string
+        ip_list:
+          description: The client IP addresses matched by the exclusion filter (CIDR
+            notation is supported).
+          items:
+            example: 198.51.100.72
+            type: string
+          type: array
+        metadata:
+          $ref: '#/components/schemas/ApplicationSecurityWafExclusionFilterMetadata'
+        on_match:
+          $ref: '#/components/schemas/ApplicationSecurityWafExclusionFilterOnMatch'
+        parameters:
+          description: A list of parameters matched by the exclusion filter in the
+            HTTP query string and HTTP request body. Nested parameters can be matched
+            by joining fields with a dot character.
+          items:
+            example: list.search.query
+            type: string
+          type: array
+        path_glob:
+          description: The HTTP path glob expression matched by the exclusion filter.
+          example: /accounts/*
+          type: string
+        rules_target:
+          description: The WAF rules targeted by the exclusion filter.
+          items:
+            $ref: '#/components/schemas/ApplicationSecurityWafExclusionFilterRulesTarget'
+          type: array
+        scope:
+          description: The services where the exclusion filter is deployed.
+          items:
+            $ref: '#/components/schemas/ApplicationSecurityWafExclusionFilterScope'
+          type: array
+        search_query:
+          description: Generated event search query for traces matching the exclusion
+            filter.
+          readOnly: true
+          type: string
+      type: object
+    ApplicationSecurityWafExclusionFilterCreateAttributes:
+      description: Attributes for creating a WAF exclusion filter.
+      properties:
+        description:
+          description: A description for the exclusion filter.
+          example: Exclude false positives on a path
+          type: string
+        enabled:
+          description: Indicates whether the exclusion filter is enabled.
+          example: true
+          type: boolean
+        ip_list:
+          description: The client IP addresses matched by the exclusion filter (CIDR
+            notation is supported).
+          items:
+            example: 198.51.100.72
+            type: string
+          type: array
+        on_match:
+          $ref: '#/components/schemas/ApplicationSecurityWafExclusionFilterOnMatch'
+        parameters:
+          description: A list of parameters matched by the exclusion filter in the
+            HTTP query string and HTTP request body. Nested parameters can be matched
+            by joining fields with a dot character.
+          items:
+            example: list.search.query
+            type: string
+          type: array
+        path_glob:
+          description: The HTTP path glob expression matched by the exclusion filter.
+          example: /accounts/*
+          type: string
+        rules_target:
+          description: The WAF rules targeted by the exclusion filter.
+          items:
+            $ref: '#/components/schemas/ApplicationSecurityWafExclusionFilterRulesTarget'
+          type: array
+        scope:
+          description: The services where the exclusion filter is deployed.
+          items:
+            $ref: '#/components/schemas/ApplicationSecurityWafExclusionFilterScope'
+          type: array
+      required:
+      - description
+      - enabled
+      type: object
+    ApplicationSecurityWafExclusionFilterCreateData:
+      description: Object for creating a single WAF exclusion filter.
+      properties:
+        attributes:
+          $ref: '#/components/schemas/ApplicationSecurityWafExclusionFilterCreateAttributes'
+        type:
+          $ref: '#/components/schemas/ApplicationSecurityWafExclusionFilterType'
+      required:
+      - attributes
+      - type
+      type: object
+    ApplicationSecurityWafExclusionFilterCreateRequest:
+      description: Request object for creating a single WAF exclusion filter.
+      properties:
+        data:
+          $ref: '#/components/schemas/ApplicationSecurityWafExclusionFilterCreateData'
+      required:
+      - data
+      type: object
+    ApplicationSecurityWafExclusionFilterID:
+      description: The identifier of the WAF exclusion filter.
+      example: 3dd-0uc-h1s
+      readOnly: true
+      type: string
+    ApplicationSecurityWafExclusionFilterMetadata:
+      description: Extra information about the exclusion filter.
+      properties:
+        added_at:
+          description: The creation date of the exclusion filter.
+          format: date-time
+          type: string
+        added_by:
+          description: The handle of the user who created the exclusion filter.
+          type: string
+        added_by_name:
+          description: The name of the user who created the exclusion filter.
+          type: string
+        modified_at:
+          description: The last modification date of the exclusion filter.
+          format: date-time
+          type: string
+        modified_by:
+          description: The handle of the user who last modified the exclusion filter.
+          type: string
+        modified_by_name:
+          description: The name of the user who last modified the exclusion filter.
+          type: string
+      readOnly: true
+      type: object
+    ApplicationSecurityWafExclusionFilterOnMatch:
+      description: The action taken when the exclusion filter matches. When set to
+        `monitor`, security traces are emitted but the requests are not blocked. By
+        default, security traces are not emitted and the requests are not blocked.
+      enum:
+      - monitor
+      type: string
+      x-enum-varnames:
+      - MONITOR
+    ApplicationSecurityWafExclusionFilterResource:
+      description: A JSON:API resource for an WAF exclusion filter.
+      properties:
+        attributes:
+          $ref: '#/components/schemas/ApplicationSecurityWafExclusionFilterAttributes'
+        id:
+          $ref: '#/components/schemas/ApplicationSecurityWafExclusionFilterID'
+        type:
+          $ref: '#/components/schemas/ApplicationSecurityWafExclusionFilterType'
+      type: object
+    ApplicationSecurityWafExclusionFilterResponse:
+      description: Response object for a single WAF exclusion filter.
+      properties:
+        data:
+          $ref: '#/components/schemas/ApplicationSecurityWafExclusionFilterResource'
+      type: object
+    ApplicationSecurityWafExclusionFilterRulesTarget:
+      description: Target WAF rules based either on an identifier or tags.
+      properties:
+        rule_id:
+          description: Target a single WAF rule based on its identifier.
+          example: dog-913-009
+          type: string
+        tags:
+          $ref: '#/components/schemas/ApplicationSecurityWafExclusionFilterRulesTargetTags'
+      type: object
+    ApplicationSecurityWafExclusionFilterRulesTargetTags:
+      additionalProperties:
+        type: string
+      description: Target multiple WAF rules based on their tags.
+      properties:
+        category:
+          description: The category of the targeted WAF rules.
+          example: attack_attempt
+          type: string
+        type:
+          description: The type of the targeted WAF rules.
+          example: lfi
+          type: string
+      type: object
+    ApplicationSecurityWafExclusionFilterScope:
+      description: Deploy on services based on their environment and/or service name.
+      properties:
+        env:
+          description: Deploy on this environment.
+          example: www
+          type: string
+        service:
+          description: Deploy on this service.
+          example: prod
+          type: string
+      type: object
+    ApplicationSecurityWafExclusionFilterType:
+      default: exclusion_filter
+      description: Type of the resource. The value should always be `exclusion_filter`.
+      enum:
+      - exclusion_filter
+      example: exclusion_filter
+      type: string
+      x-enum-varnames:
+      - EXCLUSION_FILTER
+    ApplicationSecurityWafExclusionFilterUpdateAttributes:
+      description: Attributes for updating a WAF exclusion filter.
+      properties:
+        description:
+          description: A description for the exclusion filter.
+          example: Exclude false positives on a path
+          type: string
+        enabled:
+          description: Indicates whether the exclusion filter is enabled.
+          example: true
+          type: boolean
+        ip_list:
+          description: The client IP addresses matched by the exclusion filter (CIDR
+            notation is supported).
+          items:
+            example: 198.51.100.72
+            type: string
+          type: array
+        on_match:
+          $ref: '#/components/schemas/ApplicationSecurityWafExclusionFilterOnMatch'
+        parameters:
+          description: A list of parameters matched by the exclusion filter in the
+            HTTP query string and HTTP request body. Nested parameters can be matched
+            by joining fields with a dot character.
+          items:
+            example: list.search.query
+            type: string
+          type: array
+        path_glob:
+          description: The HTTP path glob expression matched by the exclusion filter.
+          example: /accounts/*
+          type: string
+        rules_target:
+          description: The WAF rules targeted by the exclusion filter.
+          items:
+            $ref: '#/components/schemas/ApplicationSecurityWafExclusionFilterRulesTarget'
+          type: array
+        scope:
+          description: The services where the exclusion filter is deployed.
+          items:
+            $ref: '#/components/schemas/ApplicationSecurityWafExclusionFilterScope'
+          type: array
+      required:
+      - description
+      - enabled
+      type: object
+    ApplicationSecurityWafExclusionFilterUpdateData:
+      description: Object for updating a single WAF exclusion filter.
+      properties:
+        attributes:
+          $ref: '#/components/schemas/ApplicationSecurityWafExclusionFilterUpdateAttributes'
+        type:
+          $ref: '#/components/schemas/ApplicationSecurityWafExclusionFilterType'
+      required:
+      - attributes
+      - type
+      type: object
+    ApplicationSecurityWafExclusionFilterUpdateRequest:
+      description: Request object for updating a single WAF exclusion filter.
+      properties:
+        data:
+          $ref: '#/components/schemas/ApplicationSecurityWafExclusionFilterUpdateData'
+      required:
+      - data
+      type: object
+    ApplicationSecurityWafExclusionFiltersResponse:
+      description: Response object for multiple WAF exclusion filters.
+      properties:
+        data:
+          description: A list of WAF exclusion filters.
+          items:
+            $ref: '#/components/schemas/ApplicationSecurityWafExclusionFilterResource'
+          type: array
+      type: object
     AppsSortField:
       description: The field and direction to sort apps by
       enum:
@@ -2771,6 +3890,10 @@ components:
       type: string
       x-enum-varnames:
       - AUTHN_MAPPINGS
+    AwsAccountId:
+      description: The ID of the AWS account.
+      example: '123456789012'
+      type: string
     AwsCURConfig:
       description: AWS CUR config.
       properties:
@@ -2789,6 +3912,8 @@ components:
     AwsCURConfigAttributes:
       description: Attributes for An AWS CUR config.
       properties:
+        account_filters:
+          $ref: '#/components/schemas/AccountFilteringConfig'
         account_id:
           description: The AWS account ID.
           example: '123456789123'
@@ -2866,12 +3991,12 @@ components:
     AwsCURConfigPatchRequestAttributes:
       description: Attributes for AWS CUR config Patch Request.
       properties:
+        account_filters:
+          $ref: '#/components/schemas/AccountFilteringConfig'
         is_enabled:
           description: Whether or not the Cloud Cost Management account is enabled.
           example: true
           type: boolean
-      required:
-      - is_enabled
       type: object
     AwsCURConfigPatchRequestType:
       default: aws_cur_config_patch_request
@@ -2904,6 +4029,8 @@ components:
     AwsCURConfigPostRequestAttributes:
       description: Attributes for AWS CUR config Post Request.
       properties:
+        account_filters:
+          $ref: '#/components/schemas/AccountFilteringConfig'
         account_id:
           description: The AWS account ID.
           example: '123456789123'
@@ -2971,6 +4098,102 @@ components:
             $ref: '#/components/schemas/AwsCURConfig'
           type: array
       type: object
+    AwsOnDemandAttributes:
+      description: Attributes for the AWS on demand task.
+      properties:
+        arn:
+          description: The arn of the resource to scan.
+          example: arn:aws:ec2:us-east-1:727000456123:instance/i-0eabb50529b67a1ba
+          type: string
+        assigned_at:
+          description: Specifies the assignment timestamp if the task has been already
+            assigned to a scanner.
+          example: '2025-02-11T18:25:04.550564Z'
+          type: string
+        created_at:
+          description: The task submission timestamp.
+          example: '2025-02-11T18:13:24.576915Z'
+          type: string
+        status:
+          description: 'Indicates the status of the task.
+
+            QUEUED: the task has been submitted successfully and the resource has
+            not been assigned to a scanner yet.
+
+            ASSIGNED: the task has been assigned.
+
+            ABORTED: the scan has been aborted after a period of time due to technical
+            reasons, such as resource not found, insufficient permissions, or the
+            absence of a configured scanner.'
+          example: QUEUED
+          type: string
+      type: object
+    AwsOnDemandCreateAttributes:
+      description: Attributes for the AWS on demand task.
+      properties:
+        arn:
+          description: The arn of the resource to scan. Agentless supports the scan
+            of EC2 instances, lambda functions, AMI, ECR, RDS and S3 buckets.
+          example: arn:aws:ec2:us-east-1:727000456123:instance/i-0eabb50529b67a1ba
+          type: string
+      required:
+      - arn
+      type: object
+    AwsOnDemandCreateData:
+      description: Object for a single AWS on demand task.
+      properties:
+        attributes:
+          $ref: '#/components/schemas/AwsOnDemandCreateAttributes'
+        type:
+          $ref: '#/components/schemas/AwsOnDemandType'
+      required:
+      - type
+      - attributes
+      type: object
+    AwsOnDemandCreateRequest:
+      description: Request object that includes the on demand task to submit.
+      properties:
+        data:
+          $ref: '#/components/schemas/AwsOnDemandCreateData'
+      required:
+      - data
+      type: object
+    AwsOnDemandData:
+      description: Single AWS on demand task.
+      properties:
+        attributes:
+          $ref: '#/components/schemas/AwsOnDemandAttributes'
+        id:
+          description: The UUID of the task.
+          example: 6d09294c-9ad9-42fd-a759-a0c1599b4828
+          type: string
+        type:
+          $ref: '#/components/schemas/AwsOnDemandType'
+      type: object
+    AwsOnDemandListResponse:
+      description: Response object that includes a list of AWS on demand tasks.
+      properties:
+        data:
+          description: A list of on demand tasks.
+          items:
+            $ref: '#/components/schemas/AwsOnDemandData'
+          type: array
+      type: object
+    AwsOnDemandResponse:
+      description: Response object that includes an AWS on demand task.
+      properties:
+        data:
+          $ref: '#/components/schemas/AwsOnDemandData'
+      type: object
+    AwsOnDemandType:
+      default: aws_resource
+      description: The type of the on demand task. The value should always be `aws_resource`.
+      enum:
+      - aws_resource
+      example: aws_resource
+      type: string
+      x-enum-varnames:
+      - AWS_RESOURCE
     AwsScanOptionsAttributes:
       description: Attributes for the AWS scan options.
       properties:
@@ -2992,6 +4215,54 @@ components:
           example: true
           type: boolean
       type: object
+    AwsScanOptionsCreateAttributes:
+      description: Attributes for the AWS scan options to create.
+      properties:
+        lambda:
+          description: Indicates if scanning of Lambda functions is enabled.
+          example: true
+          type: boolean
+        sensitive_data:
+          description: Indicates if scanning for sensitive data is enabled.
+          example: false
+          type: boolean
+        vuln_containers_os:
+          description: Indicates if scanning for vulnerabilities in containers is
+            enabled.
+          example: true
+          type: boolean
+        vuln_host_os:
+          description: Indicates if scanning for vulnerabilities in hosts is enabled.
+          example: true
+          type: boolean
+      required:
+      - lambda
+      - sensitive_data
+      - vuln_containers_os
+      - vuln_host_os
+      type: object
+    AwsScanOptionsCreateData:
+      description: Object for the scan options of a single AWS account.
+      properties:
+        attributes:
+          $ref: '#/components/schemas/AwsScanOptionsCreateAttributes'
+        id:
+          $ref: '#/components/schemas/AwsAccountId'
+        type:
+          $ref: '#/components/schemas/AwsScanOptionsType'
+      required:
+      - id
+      - type
+      - attributes
+      type: object
+    AwsScanOptionsCreateRequest:
+      description: Request object that includes the scan options to create.
+      properties:
+        data:
+          $ref: '#/components/schemas/AwsScanOptionsCreateData'
+      required:
+      - data
+      type: object
     AwsScanOptionsData:
       description: Single AWS Scan Options entry.
       properties:
@@ -3004,7 +4275,7 @@ components:
         type:
           $ref: '#/components/schemas/AwsScanOptionsType'
       type: object
-    AwsScanOptionsResponse:
+    AwsScanOptionsListResponse:
       description: Response object that includes a list of AWS scan options.
       properties:
         data:
@@ -3012,6 +4283,12 @@ components:
           items:
             $ref: '#/components/schemas/AwsScanOptionsData'
           type: array
+      type: object
+    AwsScanOptionsResponse:
+      description: Response object that includes the scan options of an AWS account.
+      properties:
+        data:
+          $ref: '#/components/schemas/AwsScanOptionsData'
       type: object
     AwsScanOptionsType:
       default: aws_scan_options
@@ -3022,6 +4299,49 @@ components:
       type: string
       x-enum-varnames:
       - AWS_SCAN_OPTIONS
+    AwsScanOptionsUpdateAttributes:
+      description: Attributes for the AWS scan options to update.
+      properties:
+        lambda:
+          description: Indicates if scanning of Lambda functions is enabled.
+          example: true
+          type: boolean
+        sensitive_data:
+          description: Indicates if scanning for sensitive data is enabled.
+          example: false
+          type: boolean
+        vuln_containers_os:
+          description: Indicates if scanning for vulnerabilities in containers is
+            enabled.
+          example: true
+          type: boolean
+        vuln_host_os:
+          description: Indicates if scanning for vulnerabilities in hosts is enabled.
+          example: true
+          type: boolean
+      type: object
+    AwsScanOptionsUpdateData:
+      description: Object for the scan options of a single AWS account.
+      properties:
+        attributes:
+          $ref: '#/components/schemas/AwsScanOptionsUpdateAttributes'
+        id:
+          $ref: '#/components/schemas/AwsAccountId'
+        type:
+          $ref: '#/components/schemas/AwsScanOptionsType'
+      required:
+      - id
+      - type
+      - attributes
+      type: object
+    AwsScanOptionsUpdateRequest:
+      description: Request object that includes the scan options to update.
+      properties:
+        data:
+          $ref: '#/components/schemas/AwsScanOptionsUpdateData'
+      required:
+      - data
+      type: object
     AzureUCConfig:
       description: Azure config.
       properties:
@@ -3066,7 +4386,7 @@ components:
           type: integer
         scope:
           description: The scope of your observed subscription.
-          example: subscriptions/1234abcd-1234-abcd-1234-1234abcd1234
+          example: /subscriptions/1234abcd-1234-abcd-1234-1234abcd1234
           type: string
         status:
           description: The status of the Azure config.
@@ -3222,7 +4542,7 @@ components:
           type: boolean
         scope:
           description: The scope of your observed subscription.
-          example: subscriptions/1234abcd-1234-abcd-1234-1234abcd1234
+          example: /subscriptions/1234abcd-1234-abcd-1234-1234abcd1234
           type: string
       required:
       - account_id
@@ -5204,6 +6524,23 @@ components:
       - OPEN
       - IN_PROGRESS
       - CLOSED
+    CaseTrigger:
+      description: Trigger a workflow VIA a Case. For automatic triggering a handle
+        must be configured and the workflow must be published.
+      properties:
+        rateLimit:
+          $ref: '#/components/schemas/TriggerRateLimit'
+      type: object
+    CaseTriggerWrapper:
+      description: Schema for a Case-based trigger.
+      properties:
+        caseTrigger:
+          $ref: '#/components/schemas/CaseTrigger'
+        startStepNames:
+          $ref: '#/components/schemas/StartStepNames'
+      required:
+      - caseTrigger
+      type: object
     CaseType:
       description: Case type
       enum:
@@ -5421,6 +6758,17 @@ components:
       type: string
       x-enum-varnames:
       - SERVICE
+    ChangeEventTriggerWrapper:
+      description: Schema for a Change Event-based trigger.
+      properties:
+        changeEventTrigger:
+          description: Trigger a workflow VIA a Change Event.
+          type: object
+        startStepNames:
+          $ref: '#/components/schemas/StartStepNames'
+      required:
+      - changeEventTrigger
+      type: object
     ChargebackBreakdown:
       description: Charges breakdown.
       properties:
@@ -6117,6 +7465,60 @@ components:
       required:
       - location
       type: object
+    CompletionCondition:
+      description: The definition of `CompletionCondition` object.
+      properties:
+        operand1:
+          description: The `CompletionCondition` `operand1`.
+        operand2:
+          description: The `CompletionCondition` `operand2`.
+        operator:
+          $ref: '#/components/schemas/CompletionConditionOperator'
+      required:
+      - operand1
+      - operator
+      type: object
+    CompletionConditionOperator:
+      description: The definition of `CompletionConditionOperator` object.
+      enum:
+      - OPERATOR_EQUAL
+      - OPERATOR_NOT_EQUAL
+      - OPERATOR_GREATER_THAN
+      - OPERATOR_LESS_THAN
+      - OPERATOR_GREATER_THAN_OR_EQUAL_TO
+      - OPERATOR_LESS_THAN_OR_EQUAL_TO
+      - OPERATOR_CONTAINS
+      - OPERATOR_DOES_NOT_CONTAIN
+      - OPERATOR_IS_NULL
+      - OPERATOR_IS_NOT_NULL
+      - OPERATOR_IS_EMPTY
+      - OPERATOR_IS_NOT_EMPTY
+      example: OPERATOR_EQUAL
+      type: string
+      x-enum-varnames:
+      - OPERATOR_EQUAL
+      - OPERATOR_NOT_EQUAL
+      - OPERATOR_GREATER_THAN
+      - OPERATOR_LESS_THAN
+      - OPERATOR_GREATER_THAN_OR_EQUAL_TO
+      - OPERATOR_LESS_THAN_OR_EQUAL_TO
+      - OPERATOR_CONTAINS
+      - OPERATOR_DOES_NOT_CONTAIN
+      - OPERATOR_IS_NULL
+      - OPERATOR_IS_NOT_NULL
+      - OPERATOR_IS_EMPTY
+      - OPERATOR_IS_NOT_EMPTY
+    CompletionGate:
+      description: Used to create conditions before running subsequent actions.
+      properties:
+        completionCondition:
+          $ref: '#/components/schemas/CompletionCondition'
+        retryStrategy:
+          $ref: '#/components/schemas/RetryStrategy'
+      required:
+      - completionCondition
+      - retryStrategy
+      type: object
     Component:
       description: '[Definition of a UI component in the app](https://docs.datadoghq.com/service_management/app_builder/components/)'
       properties:
@@ -6577,6 +7979,70 @@ components:
           items:
             $ref: '#/components/schemas/ConfluentResourceResponseData'
           type: array
+      type: object
+    Connection:
+      description: The definition of `Connection` object.
+      properties:
+        connectionId:
+          description: The `Connection` `connectionId`.
+          example: ''
+          type: string
+        label:
+          description: The `Connection` `label`.
+          example: ''
+          type: string
+      required:
+      - connectionId
+      - label
+      type: object
+    ConnectionEnv:
+      description: A list of connections or connection groups used in the workflow.
+      properties:
+        connectionGroups:
+          description: The `ConnectionEnv` `connectionGroups`.
+          items:
+            $ref: '#/components/schemas/ConnectionGroup'
+          type: array
+        connections:
+          description: The `ConnectionEnv` `connections`.
+          items:
+            $ref: '#/components/schemas/Connection'
+          type: array
+        env:
+          $ref: '#/components/schemas/ConnectionEnvEnv'
+      required:
+      - env
+      type: object
+    ConnectionEnvEnv:
+      description: The definition of `ConnectionEnvEnv` object.
+      enum:
+      - default
+      example: default
+      type: string
+      x-enum-varnames:
+      - DEFAULT
+    ConnectionGroup:
+      description: The definition of `ConnectionGroup` object.
+      properties:
+        connectionGroupId:
+          description: The `ConnectionGroup` `connectionGroupId`.
+          example: ''
+          type: string
+        label:
+          description: The `ConnectionGroup` `label`.
+          example: ''
+          type: string
+        tags:
+          description: The `ConnectionGroup` `tags`.
+          example:
+          - ''
+          items:
+            type: string
+          type: array
+      required:
+      - connectionGroupId
+      - label
+      - tags
       type: object
     Container:
       description: Container object.
@@ -7556,6 +9022,82 @@ components:
           $ref: '#/components/schemas/RelationshipToRule'
         type:
           $ref: '#/components/schemas/RuleType'
+      type: object
+    CreateWorkflowRequest:
+      description: A request object for creating a new workflow.
+      example:
+        data:
+          attributes:
+            description: A sample workflow.
+            name: Example Workflow
+            published: true
+            spec:
+              annotations:
+              - display:
+                  bounds:
+                    height: 150
+                    width: 300
+                    x: -375
+                    y: -0.5
+                id: 99999999-9999-9999-9999-999999999999
+                markdownTextAnnotation:
+                  text: Example annotation.
+              connectionEnvs:
+              - connections:
+                - connectionId: 11111111-1111-1111-1111-111111111111
+                  label: INTEGRATION_DATADOG
+                env: default
+              handle: my-handle
+              inputSchema:
+                parameters:
+                - defaultValue: default
+                  name: input
+                  type: STRING
+              outputSchema:
+                parameters:
+                - name: output
+                  type: ARRAY_OBJECT
+                  value: '{{ Steps.Step1 }}'
+              steps:
+              - actionId: com.datadoghq.dd.monitor.listMonitors
+                connectionLabel: INTEGRATION_DATADOG
+                name: Step1
+                outboundEdges:
+                - branchName: main
+                  nextStepName: Step2
+                parameters:
+                - name: tags
+                  value: service:monitoring
+              - actionId: com.datadoghq.core.noop
+                name: Step2
+              triggers:
+              - monitorTrigger:
+                  rateLimit:
+                    count: 1
+                    interval: 3600s
+                startStepNames:
+                - Step1
+              - githubWebhookTrigger: {}
+                startStepNames:
+                - Step1
+            tags:
+            - team:infra
+            - service:monitoring
+            - foo:bar
+          type: workflows
+      properties:
+        data:
+          $ref: '#/components/schemas/WorkflowData'
+      required:
+      - data
+      type: object
+    CreateWorkflowResponse:
+      description: The response object after creating a new workflow.
+      properties:
+        data:
+          $ref: '#/components/schemas/WorkflowData'
+      required:
+      - data
       type: object
     Creator:
       description: Creator of the object.
@@ -9043,6 +10585,17 @@ components:
             $ref: '#/components/schemas/DashboardListItemResponse'
           type: array
       type: object
+    DashboardTriggerWrapper:
+      description: Schema for a Dashboard-based trigger.
+      properties:
+        dashboardTrigger:
+          description: Trigger a workflow VIA a Dashboard.
+          type: object
+        startStepNames:
+          $ref: '#/components/schemas/StartStepNames'
+      required:
+      - dashboardTrigger
+      type: object
     DashboardType:
       description: The type of the dashboard.
       enum:
@@ -9218,6 +10771,48 @@ components:
             type: number
           type: array
       type: object
+    DataTransform:
+      description: A data transformer, which is custom JavaScript code that executes
+        and transforms data when its inputs change.
+      properties:
+        id:
+          description: The ID of the data transformer.
+          example: 65bb1f25-52e1-4510-9f8d-22d1516ed693
+          format: uuid
+          type: string
+        name:
+          description: A unique identifier for this data transformer. This name is
+            also used to access the transformer's result throughout the app.
+          example: combineTwoOrders
+          type: string
+        properties:
+          $ref: '#/components/schemas/DataTransformProperties'
+        type:
+          $ref: '#/components/schemas/DataTransformType'
+      required:
+      - id
+      - name
+      - type
+      - properties
+      type: object
+    DataTransformProperties:
+      description: The properties of the data transformer.
+      properties:
+        outputs:
+          description: A JavaScript function that returns the transformed data.
+          example: "${(() => {return {\n    allItems: [...fetchOrder1.outputs.items,
+            ...fetchOrder2.outputs.items],\n}})()}"
+          type: string
+      type: object
+    DataTransformType:
+      default: dataTransform
+      description: The data transform type.
+      enum:
+      - dataTransform
+      example: dataTransform
+      type: string
+      x-enum-varnames:
+      - DATATRANSFORM
     Date:
       description: Date as Unix timestamp in milliseconds.
       example: 1722439510282
@@ -10624,6 +12219,7 @@ components:
         definition:
           description: The API definition.
           type: object
+      type: object
     EntityV3APISpecInterfaceFileRef:
       additionalProperties: false
       description: The definition of `EntityV3APISpecInterfaceFileRef` object.
@@ -10631,6 +12227,7 @@ components:
         fileRef:
           description: The reference to the API definition file.
           type: string
+      type: object
     EntityV3APIVersion:
       description: The schema version of entity type. The field is known as schema-version
         in the previous version.
@@ -10896,6 +12493,7 @@ components:
           type: string
       required:
       - name
+      type: object
     EntityV3MetadataContactsItems:
       additionalProperties: false
       description: The definition of Entity V3 Metadata Contacts Items object.
@@ -11141,6 +12739,19 @@ components:
           description: An entity reference to the owner of the component.
           minLength: 1
           type: string
+      type: object
+    ErrorHandler:
+      description: Used to handle errors in an action.
+      properties:
+        fallbackStepName:
+          description: The `ErrorHandler` `fallbackStepName`.
+          example: ''
+          type: string
+        retryStrategy:
+          $ref: '#/components/schemas/RetryStrategy'
+      required:
+      - retryStrategy
+      - fallbackStepName
       type: object
     Event:
       description: The metadata associated with a request.
@@ -11903,7 +13514,7 @@ components:
       description: The schema representation of a Fastly service.
       properties:
         id:
-          description: The id of the Fastly service
+          description: The ID of the Fastly service
           example: 6abc7de6893AbcDe9fghIj
           type: string
         tags:
@@ -12683,6 +14294,30 @@ components:
             $ref: '#/components/schemas/GetInterfacesData'
           type: array
       type: object
+    GetRuleVersionHistoryData:
+      description: Data for the rule version history.
+      properties:
+        attributes:
+          $ref: '#/components/schemas/RuleVersionHistory'
+        id:
+          description: ID of the rule.
+          type: string
+        type:
+          $ref: '#/components/schemas/GetRuleVersionHistoryDataType'
+      type: object
+    GetRuleVersionHistoryDataType:
+      description: Type of data.
+      enum:
+      - GetRuleVersionHistoryResponse
+      type: string
+      x-enum-varnames:
+      - GETRULEVERSIONHISTORYRESPONSE
+    GetRuleVersionHistoryResponse:
+      description: Response for getting the rule version history.
+      properties:
+        data:
+          $ref: '#/components/schemas/GetRuleVersionHistoryData'
+      type: object
     GetSBOMResponse:
       description: The expected response schema when getting an SBOM.
       properties:
@@ -12712,6 +14347,12 @@ components:
       - _HANDLE
       - EMAIL
       - _EMAIL
+    GetWorkflowResponse:
+      description: The response object after getting a workflow.
+      properties:
+        data:
+          $ref: '#/components/schemas/WorkflowData'
+      type: object
     GitCommitSHA:
       description: Git Commit SHA.
       example: 66adc9350f2cc9b250b69abddab733dd55e1a588
@@ -12721,6 +14362,26 @@ components:
       description: Git Repository URL
       example: https://github.com/organization/example-repository
       type: string
+    GithubWebhookTrigger:
+      description: Trigger a workflow VIA GitHub webhook. To trigger a workflow from
+        GitHub, you must set a `webhookSecret`. In your GitHub Webhook Settings, set
+        the Payload URL to "base_url"/api/v2/workflows/"workflow_id"/webhook?orgId="org_id",
+        select application/json for the content type, and be highly recommend enabling
+        SSL verification for security. The workflow must be published.
+      properties:
+        rateLimit:
+          $ref: '#/components/schemas/TriggerRateLimit'
+      type: object
+    GithubWebhookTriggerWrapper:
+      description: Schema for a GitHub webhook-based trigger.
+      properties:
+        githubWebhookTrigger:
+          $ref: '#/components/schemas/GithubWebhookTrigger'
+        startStepNames:
+          $ref: '#/components/schemas/StartStepNames'
+      required:
+      - githubWebhookTrigger
+      type: object
     GroupScalarColumn:
       description: A column containing the tag keys and values in a group.
       properties:
@@ -13085,6 +14746,8 @@ components:
       properties:
         aggregation:
           $ref: '#/components/schemas/SecurityMonitoringRuleQueryAggregation'
+        dataSource:
+          $ref: '#/components/schemas/SecurityMonitoringStandardDataSource'
         distinctFields:
           description: Field for which the cardinality is measured. Sent as an array.
           items:
@@ -15012,6 +16675,23 @@ components:
       type: string
       x-enum-varnames:
       - INCIDENT_TODOS
+    IncidentTrigger:
+      description: Trigger a workflow VIA an Incident. For automatic triggering a
+        handle must be configured and the workflow must be published.
+      properties:
+        rateLimit:
+          $ref: '#/components/schemas/TriggerRateLimit'
+      type: object
+    IncidentTriggerWrapper:
+      description: Schema for an Incident-based trigger.
+      properties:
+        incidentTrigger:
+          $ref: '#/components/schemas/IncidentTrigger'
+        startStepNames:
+          $ref: '#/components/schemas/StartStepNames'
+      required:
+      - incidentTrigger
+      type: object
     IncidentType:
       default: incidents
       description: Incident resource type.
@@ -15456,6 +17136,59 @@ components:
       - ONCALL
       - INCIDENT
       - RELATION
+    InputSchema:
+      description: A list of input parameters for the workflow. These can be used
+        as dynamic runtime values in your workflow.
+      properties:
+        parameters:
+          description: The `InputSchema` `parameters`.
+          items:
+            $ref: '#/components/schemas/InputSchemaParameters'
+          type: array
+      type: object
+    InputSchemaParameters:
+      description: The definition of `InputSchemaParameters` object.
+      properties:
+        defaultValue:
+          description: The `InputSchemaParameters` `defaultValue`.
+        description:
+          description: The `InputSchemaParameters` `description`.
+          type: string
+        label:
+          description: The `InputSchemaParameters` `label`.
+          type: string
+        name:
+          description: The `InputSchemaParameters` `name`.
+          example: ''
+          type: string
+        type:
+          $ref: '#/components/schemas/InputSchemaParametersType'
+      required:
+      - name
+      - type
+      type: object
+    InputSchemaParametersType:
+      description: The definition of `InputSchemaParametersType` object.
+      enum:
+      - STRING
+      - NUMBER
+      - BOOLEAN
+      - OBJECT
+      - ARRAY_STRING
+      - ARRAY_NUMBER
+      - ARRAY_BOOLEAN
+      - ARRAY_OBJECT
+      example: STRING
+      type: string
+      x-enum-varnames:
+      - STRING
+      - NUMBER
+      - BOOLEAN
+      - OBJECT
+      - ARRAY_STRING
+      - ARRAY_NUMBER
+      - ARRAY_BOOLEAN
+      - ARRAY_OBJECT
     IntakePayloadAccepted:
       description: The payload accepted for intake.
       properties:
@@ -15657,6 +17390,15 @@ components:
           example: 1729843470000
           format: int64
           type: integer
+        groupSignalsBy:
+          description: Additional grouping to perform on top of the existing groups
+            in the query section. Must be a subset of the existing groups.
+          example:
+          - service
+          items:
+            description: Field to group by.
+            type: string
+          type: array
         index:
           description: Index used to load the data.
           example: cloud_siem
@@ -16719,6 +18461,8 @@ components:
         path:
           description: The archive path.
           type: string
+        storage_class:
+          $ref: '#/components/schemas/LogsArchiveStorageClassS3Type'
         type:
           $ref: '#/components/schemas/LogsArchiveDestinationS3Type'
       required:
@@ -16862,6 +18606,23 @@ components:
       - WORKING
       - FAILING
       - WORKING_AUTH_LEGACY
+    LogsArchiveStorageClassS3Type:
+      default: STANDARD
+      description: The storage class where the archive will be stored.
+      enum:
+      - STANDARD
+      - STANDARD_IA
+      - ONEZONE_IA
+      - INTELLIGENT_TIERING
+      - GLACIER_IR
+      example: STANDARD
+      type: string
+      x-enum-varnames:
+      - STANDARD
+      - STANDARD_IA
+      - ONEZONE_IA
+      - INTELLIGENT_TIERING
+      - GLACIER_IR
     LogsArchives:
       description: The available archives.
       properties:
@@ -17688,6 +19449,29 @@ components:
             and exclude any other submitted tags.
 
             Defaults to false.'
+          type: boolean
+        include_actively_queried_tags_window:
+          description: 'When provided, all tags that have been actively queried are
+
+            configured (and, therefore, remain queryable) for each metric that
+
+            matches the given prefix.  Minimum value is 1 second, and maximum
+
+            value is 7,776,000 seconds (90 days).'
+          format: double
+          maximum: 7776000
+          minimum: 1
+          type: number
+        override_existing_configurations:
+          description: 'When set to true, the configuration overrides any existing
+
+            configurations for the given metric with the new set of tags in this
+
+            configuration request. If false, old configurations are kept and
+
+            are merged with the set of tags in this configuration request.
+
+            Defaults to true.'
           type: boolean
         tags:
           $ref: '#/components/schemas/MetricBulkTagConfigTagNameList'
@@ -19364,6 +21148,23 @@ components:
         type:
           $ref: '#/components/schemas/MonitorDowntimeMatchResourceType'
       type: object
+    MonitorTrigger:
+      description: Trigger a workflow VIA a Monitor. For automatic triggering a handle
+        must be configured and the workflow must be published.
+      properties:
+        rateLimit:
+          $ref: '#/components/schemas/TriggerRateLimit'
+      type: object
+    MonitorTriggerWrapper:
+      description: Schema for a Monitor-based trigger.
+      properties:
+        monitorTrigger:
+          $ref: '#/components/schemas/MonitorTrigger'
+        startStepNames:
+          $ref: '#/components/schemas/StartStepNames'
+      required:
+      - monitorTrigger
+      type: object
     MonitorType:
       description: Attributes from the monitor that triggered the event.
       nullable: true
@@ -19736,6 +21537,7 @@ components:
           $ref: '#/components/schemas/OktaAccountUpdateRequestAttributes'
         type:
           $ref: '#/components/schemas/OktaAccountType'
+      type: object
     OktaAccountsResponse:
       description: The expected response schema when getting Okta accounts.
       properties:
@@ -20127,6 +21929,21 @@ components:
       type: string
       x-enum-varnames:
       - ORGS
+    OutboundEdge:
+      description: The definition of `OutboundEdge` object.
+      properties:
+        branchName:
+          description: The `OutboundEdge` `branchName`.
+          example: ''
+          type: string
+        nextStepName:
+          description: The `OutboundEdge` `nextStepName`.
+          example: ''
+          type: string
+      required:
+      - nextStepName
+      - branchName
+      type: object
     OutcomeType:
       default: outcome
       description: The JSON:API type for an outcome.
@@ -20306,6 +22123,60 @@ components:
           example: /api/v2/scorecard/outcomes?include=rule&page%5Blimit%5D=100&page%5Boffset%5D=100
           type: string
       type: object
+    OutputSchema:
+      description: A list of output parameters for the workflow.
+      properties:
+        parameters:
+          description: The `OutputSchema` `parameters`.
+          items:
+            $ref: '#/components/schemas/OutputSchemaParameters'
+          type: array
+      type: object
+    OutputSchemaParameters:
+      description: The definition of `OutputSchemaParameters` object.
+      properties:
+        defaultValue:
+          description: The `OutputSchemaParameters` `defaultValue`.
+        description:
+          description: The `OutputSchemaParameters` `description`.
+          type: string
+        label:
+          description: The `OutputSchemaParameters` `label`.
+          type: string
+        name:
+          description: The `OutputSchemaParameters` `name`.
+          example: ''
+          type: string
+        type:
+          $ref: '#/components/schemas/OutputSchemaParametersType'
+        value:
+          description: The `OutputSchemaParameters` `value`.
+      required:
+      - name
+      - type
+      type: object
+    OutputSchemaParametersType:
+      description: The definition of `OutputSchemaParametersType` object.
+      enum:
+      - STRING
+      - NUMBER
+      - BOOLEAN
+      - OBJECT
+      - ARRAY_STRING
+      - ARRAY_NUMBER
+      - ARRAY_BOOLEAN
+      - ARRAY_OBJECT
+      example: STRING
+      type: string
+      x-enum-varnames:
+      - STRING
+      - NUMBER
+      - BOOLEAN
+      - OBJECT
+      - ARRAY_STRING
+      - ARRAY_NUMBER
+      - ARRAY_BOOLEAN
+      - ARRAY_OBJECT
     Pagination:
       description: Pagination object.
       properties:
@@ -20317,6 +22188,19 @@ components:
           description: Total count of elements matched by the filter.
           format: int64
           type: integer
+      type: object
+    Parameter:
+      description: The definition of `Parameter` object.
+      properties:
+        name:
+          description: The `Parameter` `name`.
+          example: ''
+          type: string
+        value:
+          description: The `Parameter` `value`.
+      required:
+      - name
+      - value
       type: object
     PartialAPIKey:
       description: Partial Datadog API key.
@@ -21098,34 +22982,12 @@ components:
           $ref: '#/components/schemas/Deployment'
       type: object
     Query:
-      description: A query used by an app. This can take the form of an external action,
-        a data transformation, or a state variable change.
-      properties:
-        events:
-          description: Events to listen for downstream of the query.
-          items:
-            $ref: '#/components/schemas/AppBuilderEvent'
-          type: array
-        id:
-          description: The ID of the query.
-          example: 65bb1f25-52e1-4510-9f8d-22d1516ed693
-          format: uuid
-          type: string
-        name:
-          description: The name of the query. The name must be unique within the app
-            and is visible in the app editor.
-          example: ''
-          type: string
-        properties:
-          description: The properties of the query. The properties vary depending
-            on the query type.
-        type:
-          $ref: '#/components/schemas/QueryType'
-      required:
-      - id
-      - name
-      - type
-      type: object
+      description: A data query used by an app. This can take the form of an external
+        action, a data transformation, or a state variable.
+      oneOf:
+      - $ref: '#/components/schemas/ActionQuery'
+      - $ref: '#/components/schemas/DataTransform'
+      - $ref: '#/components/schemas/StateVariable'
     QueryFormula:
       description: A formula for calculation based on one or more queries.
       properties:
@@ -21149,18 +23011,6 @@ components:
       x-enum-varnames:
       - ASC
       - DESC
-    QueryType:
-      description: The query type.
-      enum:
-      - action
-      - stateVariable
-      - dataTransform
-      example: action
-      type: string
-      x-enum-varnames:
-      - ACTION
-      - STATEVARIABLE
-      - DATATRANSFORM
     RUMAggregateBucketValue:
       description: A bucket value, can be either a timeseries or a single value.
       oneOf:
@@ -21930,6 +23780,24 @@ components:
             from the other indexes
           type: string
       type: object
+    ReadinessGate:
+      description: Used to merge multiple branches into a single branch.
+      properties:
+        thresholdType:
+          $ref: '#/components/schemas/ReadinessGateThresholdType'
+      required:
+      - thresholdType
+      type: object
+    ReadinessGateThresholdType:
+      description: The definition of `ReadinessGateThresholdType` object.
+      enum:
+      - ANY
+      - ALL
+      example: ANY
+      type: string
+      x-enum-varnames:
+      - ANY
+      - ALL
     RelationType:
       description: Supported relation types.
       enum:
@@ -22851,6 +24719,41 @@ components:
       required:
       - data
       type: object
+    RetryStrategy:
+      description: The definition of `RetryStrategy` object.
+      properties:
+        kind:
+          $ref: '#/components/schemas/RetryStrategyKind'
+        linear:
+          $ref: '#/components/schemas/RetryStrategyLinear'
+      required:
+      - kind
+      type: object
+    RetryStrategyKind:
+      description: The definition of `RetryStrategyKind` object.
+      enum:
+      - RETRY_STRATEGY_LINEAR
+      example: RETRY_STRATEGY_LINEAR
+      type: string
+      x-enum-varnames:
+      - RETRY_STRATEGY_LINEAR
+    RetryStrategyLinear:
+      description: The definition of `RetryStrategyLinear` object.
+      properties:
+        interval:
+          description: The `RetryStrategyLinear` `interval`. The expected format is
+            the number of seconds ending with an s. For example, 1 day is 86400s
+          example: ''
+          type: string
+        maxRetries:
+          description: The `RetryStrategyLinear` `maxRetries`.
+          example: 0.0
+          format: double
+          type: number
+      required:
+      - interval
+      - maxRetries
+      type: object
     Role:
       description: Role object returned by the API.
       properties:
@@ -23245,6 +25148,57 @@ components:
           example: John Doe
           type: string
       type: object
+    RuleVersionHistory:
+      description: Response object containing the version history of a rule.
+      properties:
+        count:
+          description: The number of rule versions.
+          format: int32
+          maximum: 2147483647
+          type: integer
+        data:
+          additionalProperties:
+            $ref: '#/components/schemas/RuleVersions'
+            description: A rule version with a list of updates.
+          description: The `RuleVersionHistory` `data`.
+          type: object
+      type: object
+    RuleVersionUpdate:
+      description: A change in a rule version.
+      properties:
+        change:
+          description: The new value of the field.
+          example: cloud_provider:aws
+          type: string
+        field:
+          description: The field that was changed.
+          example: Tags
+          type: string
+        type:
+          $ref: '#/components/schemas/RuleVersionUpdateType'
+      type: object
+    RuleVersionUpdateType:
+      description: The type of change.
+      enum:
+      - create
+      - update
+      - delete
+      type: string
+      x-enum-varnames:
+      - CREATE
+      - UPDATE
+      - DELETE
+    RuleVersions:
+      description: A rule version with a list of updates.
+      properties:
+        changes:
+          description: A list of changes.
+          items:
+            $ref: '#/components/schemas/RuleVersionUpdate'
+          type: array
+        rule:
+          $ref: '#/components/schemas/SecurityMonitoringRuleResponse'
+      type: object
     RumMetricCompute:
       description: The compute rule to compute the rum-based metric.
       properties:
@@ -23529,6 +25483,199 @@ components:
             $ref: '#/components/schemas/RumMetricResponseData'
           type: array
       type: object
+    RumRetentionFilterAttributes:
+      description: The object describing attributes of a RUM retention filter.
+      properties:
+        enabled:
+          $ref: '#/components/schemas/RumRetentionFilterEnabled'
+        event_type:
+          $ref: '#/components/schemas/RumRetentionFilterEventType'
+        name:
+          $ref: '#/components/schemas/RunRetentionFilterName'
+        query:
+          $ref: '#/components/schemas/RumRetentionFilterQuery'
+        sample_rate:
+          $ref: '#/components/schemas/RumRetentionFilterSampleRate'
+      type: object
+    RumRetentionFilterCreateAttributes:
+      description: The object describing attributes of a RUM retention filter to create.
+      properties:
+        enabled:
+          $ref: '#/components/schemas/RumRetentionFilterEnabled'
+        event_type:
+          $ref: '#/components/schemas/RumRetentionFilterEventType'
+        name:
+          $ref: '#/components/schemas/RunRetentionFilterName'
+        query:
+          $ref: '#/components/schemas/RumRetentionFilterQuery'
+        sample_rate:
+          $ref: '#/components/schemas/RumRetentionFilterSampleRate'
+      required:
+      - event_type
+      - name
+      - sample_rate
+      type: object
+    RumRetentionFilterCreateData:
+      description: The new RUM retention filter properties to create.
+      properties:
+        attributes:
+          $ref: '#/components/schemas/RumRetentionFilterCreateAttributes'
+        type:
+          $ref: '#/components/schemas/RumRetentionFilterType'
+      required:
+      - type
+      - attributes
+      type: object
+    RumRetentionFilterCreateRequest:
+      description: The RUM retention filter body to create.
+      properties:
+        data:
+          $ref: '#/components/schemas/RumRetentionFilterCreateData'
+      required:
+      - data
+      type: object
+    RumRetentionFilterData:
+      description: The RUM retention filter.
+      properties:
+        attributes:
+          $ref: '#/components/schemas/RumRetentionFilterAttributes'
+        id:
+          $ref: '#/components/schemas/RumRetentionFilterID'
+        type:
+          $ref: '#/components/schemas/RumRetentionFilterType'
+      type: object
+    RumRetentionFilterEnabled:
+      description: Whether the retention filter is enabled.
+      example: true
+      type: boolean
+    RumRetentionFilterEventType:
+      description: The type of RUM events to filter on.
+      enum:
+      - session
+      - view
+      - action
+      - error
+      - resource
+      - long_task
+      - vital
+      example: session
+      type: string
+      x-enum-varnames:
+      - SESSION
+      - VIEW
+      - ACTION
+      - ERROR
+      - RESOURCE
+      - LONG_TASK
+      - VITAL
+    RumRetentionFilterID:
+      description: ID of retention filter in UUID.
+      example: 051601eb-54a0-abc0-03f9-cc02efa18892
+      type: string
+    RumRetentionFilterQuery:
+      description: The query string for a RUM retention filter.
+      example: '@session.has_replay:true'
+      type: string
+    RumRetentionFilterResponse:
+      description: The RUM retention filter object.
+      properties:
+        data:
+          $ref: '#/components/schemas/RumRetentionFilterData'
+      type: object
+    RumRetentionFilterSampleRate:
+      description: The sample rate for a RUM retention filter, between 0 and 100.
+      example: 25
+      format: int64
+      maximum: 100
+      minimum: 0
+      type: integer
+    RumRetentionFilterType:
+      default: retention_filters
+      description: The type of the resource. The value should always be retention_filters.
+      enum:
+      - retention_filters
+      example: retention_filters
+      type: string
+      x-enum-varnames:
+      - RETENTION_FILTERS
+    RumRetentionFilterUpdateAttributes:
+      description: The object describing attributes of a RUM retention filter to update.
+      properties:
+        enabled:
+          $ref: '#/components/schemas/RumRetentionFilterEnabled'
+        event_type:
+          $ref: '#/components/schemas/RumRetentionFilterEventType'
+        name:
+          $ref: '#/components/schemas/RunRetentionFilterName'
+        query:
+          $ref: '#/components/schemas/RumRetentionFilterQuery'
+        sample_rate:
+          $ref: '#/components/schemas/RumRetentionFilterSampleRate'
+      type: object
+    RumRetentionFilterUpdateData:
+      description: The new RUM retention filter properties to update.
+      properties:
+        attributes:
+          $ref: '#/components/schemas/RumRetentionFilterUpdateAttributes'
+        id:
+          $ref: '#/components/schemas/RumRetentionFilterID'
+        type:
+          $ref: '#/components/schemas/RumRetentionFilterType'
+      required:
+      - id
+      - type
+      - attributes
+      type: object
+    RumRetentionFilterUpdateRequest:
+      description: The RUM retention filter body to update.
+      properties:
+        data:
+          $ref: '#/components/schemas/RumRetentionFilterUpdateData'
+      required:
+      - data
+      type: object
+    RumRetentionFiltersOrderData:
+      description: The RUM retention filter data for ordering.
+      properties:
+        id:
+          $ref: '#/components/schemas/RumRetentionFilterID'
+        type:
+          $ref: '#/components/schemas/RumRetentionFilterType'
+      required:
+      - id
+      - type
+      type: object
+    RumRetentionFiltersOrderRequest:
+      description: 'The list of RUM retention filter IDs along with their corresponding
+        type to reorder.
+
+        All retention filter IDs should be included in the list created for a RUM
+        application.'
+      properties:
+        data:
+          description: A list of RUM retention filter IDs along with type.
+          items:
+            $ref: '#/components/schemas/RumRetentionFiltersOrderData'
+          type: array
+      type: object
+    RumRetentionFiltersOrderResponse:
+      description: The list of RUM retention filter IDs along with type.
+      properties:
+        data:
+          description: A list of RUM retention filter IDs along with type.
+          items:
+            $ref: '#/components/schemas/RumRetentionFiltersOrderData'
+          type: array
+      type: object
+    RumRetentionFiltersResponse:
+      description: All RUM retention filters for a RUM application.
+      properties:
+        data:
+          description: A list of RUM retention filters.
+          items:
+            $ref: '#/components/schemas/RumRetentionFilterData'
+          type: array
+      type: object
     RunHistoricalJobRequest:
       description: Run a historical job request.
       properties:
@@ -23561,6 +25708,10 @@ components:
       type: string
       x-enum-varnames:
       - HISTORICALDETECTIONSJOBCREATE
+    RunRetentionFilterName:
+      description: The name of a RUM retention filter.
+      example: Retention filter for session
+      type: string
     SAMLAssertionAttribute:
       description: SAML assertion attribute.
       properties:
@@ -23957,6 +26108,26 @@ components:
         type:
           $ref: '#/components/schemas/ScalarFormulaResponseType'
       type: object
+    ScheduleTrigger:
+      description: Trigger a workflow VIA a Schedule. The workflow must be published.
+      properties:
+        rruleExpression:
+          description: Recurrence rule expression for scheduling.
+          example: ''
+          type: string
+      required:
+      - rruleExpression
+      type: object
+    ScheduleTriggerWrapper:
+      description: Schema for a Schedule-based trigger.
+      properties:
+        scheduleTrigger:
+          $ref: '#/components/schemas/ScheduleTrigger'
+        startStepNames:
+          $ref: '#/components/schemas/StartStepNames'
+      required:
+      - scheduleTrigger
+      type: object
     ScorecardType:
       default: scorecard
       description: The JSON:API type for scorecard.
@@ -24242,6 +26413,11 @@ components:
     SecurityMonitoringRuleCase:
       description: Case when signal is generated.
       properties:
+        actions:
+          description: Action to perform for each rule case.
+          items:
+            $ref: '#/components/schemas/SecurityMonitoringRuleCaseAction'
+          type: array
         condition:
           description: 'A rule case contains logical operations (`>`,`>=`, `&&`, `||`)
             to determine if a signal should be generated
@@ -24260,9 +26436,42 @@ components:
         status:
           $ref: '#/components/schemas/SecurityMonitoringRuleSeverity'
       type: object
+    SecurityMonitoringRuleCaseAction:
+      description: Action to perform when a signal is triggered. Only available for
+        Application Security rule type.
+      properties:
+        options:
+          $ref: '#/components/schemas/SecurityMonitoringRuleCaseActionOptions'
+        type:
+          $ref: '#/components/schemas/SecurityMonitoringRuleCaseActionType'
+      type: object
+    SecurityMonitoringRuleCaseActionOptions:
+      description: Options for the rule action
+      properties:
+        duration:
+          description: Duration of the action in seconds. 0 indicates no expiration.
+          example: 0
+          format: int64
+          minimum: 0
+          type: integer
+      type: object
+    SecurityMonitoringRuleCaseActionType:
+      description: The action type.
+      enum:
+      - block_ip
+      - block_user
+      type: string
+      x-enum-varnames:
+      - BLOCK_IP
+      - BLOCK_USER
     SecurityMonitoringRuleCaseCreate:
       description: Case when signal is generated.
       properties:
+        actions:
+          description: Action to perform for each rule case.
+          items:
+            $ref: '#/components/schemas/SecurityMonitoringRuleCaseAction'
+          type: array
         condition:
           description: 'A case contains logical operations (`>`,`>=`, `&&`, `||`)
             to determine if a signal should be generated
@@ -24346,6 +26555,10 @@ components:
       - 1800
       - 3600
       - 7200
+      - 10800
+      - 21600
+      - 43200
+      - 86400
       format: int32
       type: integer
       x-enum-varnames:
@@ -24357,6 +26570,10 @@ components:
       - THIRTY_MINUTES
       - ONE_HOUR
       - TWO_HOURS
+      - THREE_HOURS
+      - SIX_HOURS
+      - TWELVE_HOURS
+      - ONE_DAY
     SecurityMonitoringRuleHardcodedEvaluatorType:
       description: Hardcoded evaluator type.
       enum:
@@ -24393,6 +26610,8 @@ components:
       - 7200
       - 10800
       - 21600
+      - 43200
+      - 86400
       format: int32
       type: integer
       x-enum-varnames:
@@ -24406,6 +26625,8 @@ components:
       - TWO_HOURS
       - THREE_HOURS
       - SIX_HOURS
+      - TWELVE_HOURS
+      - ONE_DAY
     SecurityMonitoringRuleMaxSignalDuration:
       description: "A signal will \u201Cclose\u201D regardless of the query being
         matched once the time exceeds the maximum duration.\nThis time is calculated
@@ -24723,6 +26944,15 @@ components:
             and workload security rules.
           items:
             $ref: '#/components/schemas/SecurityMonitoringFilter'
+          type: array
+        groupSignalsBy:
+          description: Additional grouping to perform on top of the existing groups
+            in the query section. Must be a subset of the existing groups.
+          example:
+          - service
+          items:
+            description: Field to group by.
+            type: string
           type: array
         hasExtendedTitle:
           description: Whether the notifications include the triggering group-by values
@@ -25194,6 +27424,7 @@ components:
           description: The version of the rule.
           format: int64
           type: integer
+      type: object
     SecurityMonitoringSignalRuleResponseQuery:
       description: Query for matching rule on signals.
       properties:
@@ -25413,6 +27644,17 @@ components:
       x-enum-varnames:
       - TIMESTAMP_ASCENDING
       - TIMESTAMP_DESCENDING
+    SecurityMonitoringStandardDataSource:
+      default: logs
+      description: Source of events, either logs or audit trail.
+      enum:
+      - logs
+      - audit
+      example: logs
+      type: string
+      x-enum-varnames:
+      - LOGS
+      - AUDIT
     SecurityMonitoringStandardRuleCreatePayload:
       description: Create a new rule.
       properties:
@@ -25428,6 +27670,15 @@ components:
             and workload security rules.
           items:
             $ref: '#/components/schemas/SecurityMonitoringFilter'
+          type: array
+        groupSignalsBy:
+          description: Additional grouping to perform on top of the existing groups
+            in the query section. Must be a subset of the existing groups.
+          example:
+          - service
+          items:
+            description: Field to group by.
+            type: string
           type: array
         hasExtendedTitle:
           description: Whether the notifications include the triggering group-by values
@@ -25501,6 +27752,15 @@ components:
           items:
             $ref: '#/components/schemas/SecurityMonitoringFilter'
           type: array
+        groupSignalsBy:
+          description: Additional grouping to perform on top of the existing groups
+            in the query section. Must be a subset of the existing groups.
+          example:
+          - service
+          items:
+            description: Field to group by.
+            type: string
+          type: array
         hasExtendedTitle:
           description: Whether the notifications include the triggering group-by values
             in their title.
@@ -25562,6 +27822,8 @@ components:
       properties:
         aggregation:
           $ref: '#/components/schemas/SecurityMonitoringRuleQueryAggregation'
+        dataSource:
+          $ref: '#/components/schemas/SecurityMonitoringStandardDataSource'
         distinctFields:
           description: Field for which the cardinality is measured. Sent as an array.
           items:
@@ -25642,6 +27904,15 @@ components:
           items:
             $ref: '#/components/schemas/SecurityMonitoringFilter'
           type: array
+        groupSignalsBy:
+          description: Additional grouping to perform on top of the existing groups
+            in the query section. Must be a subset of the existing groups.
+          example:
+          - service
+          items:
+            description: Field to group by.
+            type: string
+          type: array
         hasExtendedTitle:
           description: Whether the notifications include the triggering group-by values
             in their title.
@@ -25703,6 +27974,7 @@ components:
           description: The version of the rule.
           format: int64
           type: integer
+      type: object
     SecurityMonitoringStandardRuleTestPayload:
       description: The payload of a rule to test
       properties:
@@ -25718,6 +27990,15 @@ components:
             and workload security rules.
           items:
             $ref: '#/components/schemas/SecurityMonitoringFilter'
+          type: array
+        groupSignalsBy:
+          description: Additional grouping to perform on top of the existing groups
+            in the query section. Must be a subset of the existing groups.
+          example:
+          - service
+          items:
+            description: Field to group by.
+            type: string
           type: array
         hasExtendedTitle:
           description: Whether the notifications include the triggering group-by values
@@ -26123,6 +28404,23 @@ components:
           example: John Doe
           nullable: true
           type: string
+      type: object
+    SecurityTrigger:
+      description: Trigger a workflow VIA a Security Signal or Finding. For automatic
+        triggering a handle must be configured and the workflow must be published.
+      properties:
+        rateLimit:
+          $ref: '#/components/schemas/TriggerRateLimit'
+      type: object
+    SecurityTriggerWrapper:
+      description: Schema for a Security-based trigger.
+      properties:
+        securityTrigger:
+          $ref: '#/components/schemas/SecurityTrigger'
+        startStepNames:
+          $ref: '#/components/schemas/StartStepNames'
+      required:
+      - securityTrigger
       type: object
     Selectors:
       description: 'Selectors are used to filter security issues for which notifications
@@ -27604,24 +29902,8 @@ components:
       type: object
     ServiceDefinitionV2Dot2Type:
       description: The type of service.
-      enum:
-      - web
-      - db
-      - cache
-      - function
-      - browser
-      - mobile
-      - custom
       example: web
       type: string
-      x-enum-varnames:
-      - WEB
-      - DB
-      - CACHE
-      - FUNCTION
-      - BROSWER
-      - MOBILE
-      - CUSTOM
     ServiceDefinitionV2Dot2Version:
       default: v2.2
       description: Schema version being used.
@@ -27878,6 +30160,17 @@ components:
       - channel_id
       - channel_name
       - redirect_url
+      type: object
+    SlackTriggerWrapper:
+      description: Schema for a Slack-based trigger.
+      properties:
+        slackTrigger:
+          description: Trigger a workflow VIA Slack. The workflow must be published.
+          type: object
+        startStepNames:
+          $ref: '#/components/schemas/StartStepNames'
+      required:
+      - slackTrigger
       type: object
     SloReportCreateRequest:
       description: The SLO report request body.
@@ -28801,6 +31094,41 @@ components:
             from the other indexes
           type: string
       type: object
+    Spec:
+      description: The spec defines what the workflow does.
+      properties:
+        annotations:
+          description: A list of annotations used in the workflow. These are like
+            sticky notes for your workflow!
+          items:
+            $ref: '#/components/schemas/Annotation'
+          type: array
+        connectionEnvs:
+          description: A list of connections or connection groups used in the workflow.
+          items:
+            $ref: '#/components/schemas/ConnectionEnv'
+          type: array
+        handle:
+          description: Unique identifier used to trigger workflows automatically in
+            Datadog.
+          type: string
+        inputSchema:
+          $ref: '#/components/schemas/InputSchema'
+        outputSchema:
+          $ref: '#/components/schemas/OutputSchema'
+        steps:
+          description: A `Step` is a sub-component of a workflow. Each `Step` performs
+            an action.
+          items:
+            $ref: '#/components/schemas/Step'
+          type: array
+        triggers:
+          description: The list of triggers that activate this workflow. At least
+            one trigger is required, and each trigger type may appear at most once.
+          items:
+            $ref: '#/components/schemas/Trigger'
+          type: array
+      type: object
     SpecVersion:
       description: The version of the CycloneDX specification a BOM conforms to.
       enum:
@@ -28819,6 +31147,14 @@ components:
       - ONE_THREE
       - ONE_FOUR
       - ONE_FIVE
+    StartStepNames:
+      description: A list of steps that run first after a trigger fires.
+      example:
+      - ''
+      items:
+        description: The `StartStepNames` `items`.
+        type: string
+      type: array
     State:
       description: The state of the rule evaluation.
       enum:
@@ -28831,6 +31167,104 @@ components:
       - PASS
       - FAIL
       - SKIP
+    StateVariable:
+      description: A variable, which can be set and read by other components in the
+        app.
+      properties:
+        id:
+          description: The ID of the state variable.
+          example: 65bb1f25-52e1-4510-9f8d-22d1516ed693
+          format: uuid
+          type: string
+        name:
+          description: A unique identifier for this state variable. This name is also
+            used to access the variable's value throughout the app.
+          example: ordersToSubmit
+          type: string
+        properties:
+          $ref: '#/components/schemas/StateVariableProperties'
+        type:
+          $ref: '#/components/schemas/StateVariableType'
+      required:
+      - id
+      - name
+      - type
+      - properties
+      type: object
+    StateVariableProperties:
+      description: The properties of the state variable.
+      properties:
+        defaultValue:
+          description: The default value of the state variable.
+          example: ${['order_3145', 'order_4920']}
+      type: object
+    StateVariableType:
+      default: stateVariable
+      description: The state variable type.
+      enum:
+      - stateVariable
+      example: stateVariable
+      type: string
+      x-enum-varnames:
+      - STATEVARIABLE
+    Step:
+      description: A Step is a sub-component of a workflow. Each Step performs an
+        action.
+      properties:
+        actionId:
+          description: The unique identifier of an action.
+          example: ''
+          type: string
+        completionGate:
+          $ref: '#/components/schemas/CompletionGate'
+        connectionLabel:
+          description: The unique identifier of a connection defined in the spec.
+          type: string
+        display:
+          $ref: '#/components/schemas/StepDisplay'
+        errorHandlers:
+          description: The `Step` `errorHandlers`.
+          items:
+            $ref: '#/components/schemas/ErrorHandler'
+          type: array
+        name:
+          description: Name of the step.
+          example: ''
+          type: string
+        outboundEdges:
+          description: A list of subsequent actions to run.
+          items:
+            $ref: '#/components/schemas/OutboundEdge'
+          type: array
+        parameters:
+          description: A list of inputs for an action.
+          items:
+            $ref: '#/components/schemas/Parameter'
+          type: array
+        readinessGate:
+          $ref: '#/components/schemas/ReadinessGate'
+      required:
+      - name
+      - actionId
+      type: object
+    StepDisplay:
+      description: The definition of `StepDisplay` object.
+      properties:
+        bounds:
+          $ref: '#/components/schemas/StepDisplayBounds'
+      type: object
+    StepDisplayBounds:
+      description: The definition of `StepDisplayBounds` object.
+      properties:
+        x:
+          description: The `bounds` `x`.
+          format: double
+          type: number
+        y:
+          description: The `bounds` `y`.
+          format: double
+          type: number
+      type: object
     TagsEventAttribute:
       description: Array of tags associated with your event.
       example:
@@ -29637,6 +32071,33 @@ components:
       type: string
       x-enum-varnames:
       - SECRET
+    Trigger:
+      description: One of the triggers that can start the execution of a workflow.
+      oneOf:
+      - $ref: '#/components/schemas/APITriggerWrapper'
+      - $ref: '#/components/schemas/AppTriggerWrapper'
+      - $ref: '#/components/schemas/CaseTriggerWrapper'
+      - $ref: '#/components/schemas/ChangeEventTriggerWrapper'
+      - $ref: '#/components/schemas/DashboardTriggerWrapper'
+      - $ref: '#/components/schemas/GithubWebhookTriggerWrapper'
+      - $ref: '#/components/schemas/IncidentTriggerWrapper'
+      - $ref: '#/components/schemas/MonitorTriggerWrapper'
+      - $ref: '#/components/schemas/ScheduleTriggerWrapper'
+      - $ref: '#/components/schemas/SecurityTriggerWrapper'
+      - $ref: '#/components/schemas/SlackTriggerWrapper'
+      - $ref: '#/components/schemas/WorkflowTriggerWrapper'
+    TriggerRateLimit:
+      description: Defines a rate limit for a trigger.
+      properties:
+        count:
+          description: The `TriggerRateLimit` `count`.
+          format: int64
+          type: integer
+        interval:
+          description: The `TriggerRateLimit` `interval`. The expected format is the
+            number of seconds ending with an s. For example, 1 day is 86400s
+          type: string
+      type: object
     TriggerSource:
       description: 'The type of security issues on which the rule applies. Notification
         rules based on security signals need to use the trigger source "security_signals",
@@ -29925,6 +32386,81 @@ components:
           $ref: '#/components/schemas/RelationshipToRule'
         type:
           $ref: '#/components/schemas/RuleType'
+      type: object
+    UpdateWorkflowRequest:
+      description: A request object for updating an existing workflow.
+      example:
+        data:
+          attributes:
+            description: A sample workflow.
+            name: Example Workflow
+            published: true
+            spec:
+              annotations:
+              - display:
+                  bounds:
+                    height: 150
+                    width: 300
+                    x: -375
+                    y: -0.5
+                id: 99999999-9999-9999-9999-999999999999
+                markdownTextAnnotation:
+                  text: Example annotation.
+              connectionEnvs:
+              - connections:
+                - connectionId: 11111111-1111-1111-1111-111111111111
+                  label: INTEGRATION_DATADOG
+                env: default
+              handle: my-handle
+              inputSchema:
+                parameters:
+                - defaultValue: default
+                  name: input
+                  type: STRING
+              outputSchema:
+                parameters:
+                - name: output
+                  type: ARRAY_OBJECT
+                  value: '{{ Steps.Step1 }}'
+              steps:
+              - actionId: com.datadoghq.dd.monitor.listMonitors
+                connectionLabel: INTEGRATION_DATADOG
+                name: Step1
+                outboundEdges:
+                - branchName: main
+                  nextStepName: Step2
+                parameters:
+                - name: tags
+                  value: service:monitoring
+              - actionId: com.datadoghq.core.noop
+                name: Step2
+              triggers:
+              - monitorTrigger:
+                  rateLimit:
+                    count: 1
+                    interval: 3600s
+                startStepNames:
+                - Step1
+              - githubWebhookTrigger: {}
+                startStepNames:
+                - Step1
+            tags:
+            - team:infra
+            - service:monitoring
+            - foo:bar
+          id: 22222222-2222-2222-2222-222222222222
+          type: workflows
+      properties:
+        data:
+          $ref: '#/components/schemas/WorkflowDataUpdate'
+      required:
+      - data
+      type: object
+    UpdateWorkflowResponse:
+      description: The response object after updating a workflow.
+      properties:
+        data:
+          $ref: '#/components/schemas/WorkflowDataUpdate'
       type: object
     UpsertCatalogEntityRequest:
       description: Create or update entity request.
@@ -30977,6 +33513,134 @@ components:
       - PAST_SIX_MONTHS
       - PAST_ONE_YEAR
       - ALERT
+    WorkflowData:
+      description: Data related to the workflow.
+      properties:
+        attributes:
+          $ref: '#/components/schemas/WorkflowDataAttributes'
+        id:
+          description: The workflow identifier
+          readOnly: true
+          type: string
+        relationships:
+          $ref: '#/components/schemas/WorkflowDataRelationships'
+        type:
+          $ref: '#/components/schemas/WorkflowDataType'
+      required:
+      - type
+      - attributes
+      type: object
+    WorkflowDataAttributes:
+      description: The definition of `WorkflowDataAttributes` object.
+      properties:
+        createdAt:
+          description: When the workflow was created.
+          format: date-time
+          readOnly: true
+          type: string
+        description:
+          description: Description of the workflow.
+          type: string
+        name:
+          description: Name of the workflow.
+          example: ''
+          type: string
+        published:
+          description: Set the workflow to published or unpublished. Workflows in
+            an unpublished state will only be executable via manual runs. Automatic
+            triggers such as Schedule will not execute the workflow until it is published.
+          type: boolean
+        spec:
+          $ref: '#/components/schemas/Spec'
+        tags:
+          description: Tags of the workflow.
+          items:
+            type: string
+          type: array
+        updatedAt:
+          description: When the workflow was last updated.
+          format: date-time
+          readOnly: true
+          type: string
+        webhookSecret:
+          description: If a Webhook trigger is defined on this workflow, a webhookSecret
+            is required and should be provided here.
+          type: string
+          writeOnly: true
+      required:
+      - name
+      - spec
+      type: object
+    WorkflowDataRelationships:
+      description: The definition of `WorkflowDataRelationships` object.
+      properties:
+        creator:
+          $ref: '#/components/schemas/WorkflowUserRelationship'
+        owner:
+          $ref: '#/components/schemas/WorkflowUserRelationship'
+      readOnly: true
+      type: object
+    WorkflowDataType:
+      description: The definition of `WorkflowDataType` object.
+      enum:
+      - workflows
+      example: workflows
+      type: string
+      x-enum-varnames:
+      - WORKFLOWS
+    WorkflowDataUpdate:
+      description: Data related to the workflow being updated.
+      properties:
+        attributes:
+          $ref: '#/components/schemas/WorkflowDataUpdateAttributes'
+        id:
+          description: The workflow identifier
+          type: string
+        relationships:
+          $ref: '#/components/schemas/WorkflowDataRelationships'
+        type:
+          $ref: '#/components/schemas/WorkflowDataType'
+      required:
+      - type
+      - attributes
+      type: object
+    WorkflowDataUpdateAttributes:
+      description: The definition of `WorkflowDataUpdateAttributes` object.
+      properties:
+        createdAt:
+          description: When the workflow was created.
+          format: date-time
+          readOnly: true
+          type: string
+        description:
+          description: Description of the workflow.
+          type: string
+        name:
+          description: Name of the workflow.
+          type: string
+        published:
+          description: Set the workflow to published or unpublished. Workflows in
+            an unpublished state will only be executable via manual runs. Automatic
+            triggers such as Schedule will not execute the workflow until it is published.
+          type: boolean
+        spec:
+          $ref: '#/components/schemas/Spec'
+        tags:
+          description: Tags of the workflow.
+          items:
+            type: string
+          type: array
+        updatedAt:
+          description: When the workflow was last updated.
+          format: date-time
+          readOnly: true
+          type: string
+        webhookSecret:
+          description: If a Webhook trigger is defined on this workflow, a webhookSecret
+            is required and should be provided here.
+          type: string
+          writeOnly: true
+      type: object
     WorkflowInstanceCreateMeta:
       description: Additional information for creating a workflow instance.
       properties:
@@ -31043,6 +33707,45 @@ components:
           format: int64
           type: integer
       type: object
+    WorkflowTriggerWrapper:
+      description: Schema for a Workflow-based trigger.
+      properties:
+        startStepNames:
+          $ref: '#/components/schemas/StartStepNames'
+        workflowTrigger:
+          description: Trigger a workflow VIA the Datadog UI. Only required if no
+            other trigger exists.
+          type: object
+      required:
+      - workflowTrigger
+      type: object
+    WorkflowUserRelationship:
+      description: The definition of `WorkflowUserRelationship` object.
+      properties:
+        data:
+          $ref: '#/components/schemas/WorkflowUserRelationshipData'
+      type: object
+    WorkflowUserRelationshipData:
+      description: The definition of `WorkflowUserRelationshipData` object.
+      properties:
+        id:
+          description: The user identifier
+          example: ''
+          type: string
+        type:
+          $ref: '#/components/schemas/WorkflowUserRelationshipType'
+      required:
+      - type
+      - id
+      type: object
+    WorkflowUserRelationshipType:
+      description: The definition of `WorkflowUserRelationshipType` object.
+      enum:
+      - users
+      example: users
+      type: string
+      x-enum-varnames:
+      - USERS
     WorklflowCancelInstanceResponse:
       description: Information about the canceled instance.
       properties:
@@ -31087,6 +33790,7 @@ components:
           type: boolean
       required:
       - include_all
+      type: object
     XRayServicesIncludeOnly:
       description: Include only these services. Defaults to `[]`.
       nullable: true
@@ -31101,6 +33805,7 @@ components:
           type: array
       required:
       - include_only
+      type: object
     XRayServicesList:
       description: AWS X-Ray services to collect traces from. Defaults to `include_only`.
       oneOf:
@@ -31119,6 +33824,9 @@ components:
             apm_service_catalog_read: View service catalog and service definitions.
             apm_service_catalog_write: Add, modify, and delete service catalog definitions
               when those definitions are maintained by Datadog.
+            appsec_vm_read: View infrastructure, application code, and library vulnerabilities.
+              This does not restrict API or inventory SQL access to the vulnerability
+              data source.
             cases_read: View Cases.
             cases_write: Create and update cases.
             ci_visibility_pipelines_write: Create CI Visibility pipeline spans using
@@ -31402,7 +34110,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AwsScanOptionsResponse'
+                $ref: '#/components/schemas/AwsScanOptionsListResponse'
           description: OK
         '403':
           $ref: '#/components/responses/NotAuthorizedResponse'
@@ -31411,6 +34119,165 @@ paths:
       summary: Get AWS Scan Options
       tags:
       - Agentless Scanning
+    post:
+      description: Activate Agentless scan options for an AWS account.
+      operationId: CreateAwsScanOptions
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AwsScanOptionsCreateRequest'
+        description: The definition of the new scan options.
+        required: true
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AwsScanOptionsResponse'
+          description: Agentless scan options enabled successfully.
+        '400':
+          $ref: '#/components/responses/BadRequestResponse'
+        '403':
+          $ref: '#/components/responses/NotAuthorizedResponse'
+        '409':
+          $ref: '#/components/responses/ConflictResponse'
+        '429':
+          $ref: '#/components/responses/TooManyRequestsResponse'
+      summary: Post AWS Scan Options
+      tags:
+      - Agentless Scanning
+      x-codegen-request-body-name: body
+  /api/v2/agentless_scanning/accounts/aws/{account_id}:
+    delete:
+      description: Delete Agentless scan options for an AWS account.
+      operationId: DeleteAwsScanOptions
+      parameters:
+      - $ref: '#/components/parameters/AwsAccountId'
+      responses:
+        '204':
+          description: No Content
+        '400':
+          $ref: '#/components/responses/BadRequestResponse'
+        '403':
+          $ref: '#/components/responses/NotAuthorizedResponse'
+        '404':
+          $ref: '#/components/responses/NotFoundResponse'
+        '429':
+          $ref: '#/components/responses/TooManyRequestsResponse'
+      summary: Delete AWS Scan Options
+      tags:
+      - Agentless Scanning
+    patch:
+      description: Update the Agentless scan options for an activated account.
+      operationId: UpdateAwsScanOptions
+      parameters:
+      - $ref: '#/components/parameters/AwsAccountId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AwsScanOptionsUpdateRequest'
+        description: New definition of the scan options.
+        required: true
+      responses:
+        '204':
+          description: No Content
+        '400':
+          $ref: '#/components/responses/BadRequestResponse'
+        '403':
+          $ref: '#/components/responses/NotAuthorizedResponse'
+        '404':
+          $ref: '#/components/responses/NotFoundResponse'
+        '429':
+          $ref: '#/components/responses/TooManyRequestsResponse'
+      summary: Patch AWS Scan Options
+      tags:
+      - Agentless Scanning
+      x-codegen-request-body-name: body
+  /api/v2/agentless_scanning/ondemand/aws:
+    get:
+      description: Fetches the most recent 1000 AWS on demand tasks.
+      operationId: ListAwsOnDemandTasks
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AwsOnDemandListResponse'
+          description: OK
+        '403':
+          $ref: '#/components/responses/NotAuthorizedResponse'
+        '429':
+          $ref: '#/components/responses/TooManyRequestsResponse'
+      summary: Get AWS On Demand tasks
+      tags:
+      - Agentless Scanning
+      x-permission:
+        operator: OR
+        permissions:
+        - security_monitoring_findings_read
+    post:
+      description: Trigger the scan of an AWS resource with a high priority. Agentless
+        scanning must be activated for the AWS account containing the resource to
+        scan.
+      operationId: CreateAwsOnDemandTask
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AwsOnDemandCreateRequest'
+        description: The definition of the on demand task.
+        required: true
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AwsOnDemandResponse'
+          description: AWS on demand task created successfully.
+        '400':
+          $ref: '#/components/responses/BadRequestResponse'
+        '403':
+          $ref: '#/components/responses/NotAuthorizedResponse'
+        '429':
+          $ref: '#/components/responses/TooManyRequestsResponse'
+      summary: Post an AWS on demand task
+      tags:
+      - Agentless Scanning
+      x-codegen-request-body-name: body
+      x-permission:
+        operator: OR
+        permissions:
+        - security_monitoring_findings_write
+  /api/v2/agentless_scanning/ondemand/aws/{task_id}:
+    get:
+      description: Fetch the data of a specific on demand task.
+      operationId: GetAwsOnDemandTask
+      parameters:
+      - $ref: '#/components/parameters/OnDemandTaskId'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AwsOnDemandResponse'
+          description: OK.
+        '400':
+          $ref: '#/components/responses/BadRequestResponse'
+        '403':
+          $ref: '#/components/responses/NotAuthorizedResponse'
+        '404':
+          $ref: '#/components/responses/NotFoundResponse'
+        '429':
+          $ref: '#/components/responses/TooManyRequestsResponse'
+      summary: Get AWS On Demand task by id
+      tags:
+      - Agentless Scanning
+      x-permission:
+        operator: OR
+        permissions:
+        - security_monitoring_findings_read
   /api/v2/api_keys:
     get:
       description: List all API keys available for your account.
@@ -31605,6 +34472,7 @@ paths:
         - api_keys_write
   /api/v2/apicatalog/api:
     get:
+      deprecated: true
       description: List APIs and their IDs.
       operationId: ListAPIs
       parameters:
@@ -31666,11 +34534,10 @@ paths:
         operator: OR
         permissions:
         - apm_api_catalog_read
-      x-unstable: '**Note**: This endpoint is in public beta.
-
-        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).'
+      x-unstable: '**Note**: This endpoint is deprecated.'
   /api/v2/apicatalog/api/{id}:
     delete:
+      deprecated: true
       description: Delete a specific API by ID.
       operationId: DeleteOpenAPI
       parameters:
@@ -31715,11 +34582,10 @@ paths:
         operator: OR
         permissions:
         - apm_api_catalog_write
-      x-unstable: '**Note**: This endpoint is in public beta.
-
-        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).'
+      x-unstable: '**Note**: This endpoint is deprecated.'
   /api/v2/apicatalog/api/{id}/openapi:
     get:
+      deprecated: true
       description: Retrieve information about a specific API in [OpenAPI](https://spec.openapis.org/oas/latest.html)
         format file.
       operationId: GetOpenAPI
@@ -31770,10 +34636,9 @@ paths:
         operator: OR
         permissions:
         - apm_api_catalog_read
-      x-unstable: '**Note**: This endpoint is in public beta.
-
-        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).'
+      x-unstable: '**Note**: This endpoint is deprecated.'
     put:
+      deprecated: true
       description: 'Update information about a specific API. The given content will
         replace all API content of the given ID.
 
@@ -31834,11 +34699,10 @@ paths:
         operator: OR
         permissions:
         - apm_api_catalog_write
-      x-unstable: '**Note**: This endpoint is in public beta.
-
-        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).'
+      x-unstable: '**Note**: This endpoint is deprecated.'
   /api/v2/apicatalog/openapi:
     post:
+      deprecated: true
       description: 'Create a new API from the [OpenAPI](https://spec.openapis.org/oas/latest.html)
         specification given.
 
@@ -31890,9 +34754,7 @@ paths:
         operator: OR
         permissions:
         - apm_api_catalog_write
-      x-unstable: '**Note**: This endpoint is in public beta.
-
-        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).'
+      x-unstable: '**Note**: This endpoint is deprecated.'
   /api/v2/apm/config/metrics:
     get:
       description: Get the list of configured span-based metrics with their definitions.
@@ -32265,8 +35127,6 @@ paths:
         operator: OR
         permissions:
         - apps_write
-      x-unstable: '**Note**: App Builder API endpoints are still under active development
-        and might change at any time.'
     get:
       description: List all apps, with optional filters and sorting. This endpoint
         is paginated. Only basic app information such as the app ID, name, and description
@@ -32375,8 +35235,6 @@ paths:
         operator: OR
         permissions:
         - apps_run
-      x-unstable: '**Note**: App Builder API endpoints are still under active development
-        and might change at any time.'
     post:
       description: Create a new app, returning the app ID.
       operationId: CreateApp
@@ -32416,8 +35274,6 @@ paths:
         - apps_write
         - connections_resolve
         - workflows_run
-      x-unstable: '**Note**: App Builder API endpoints are still under active development
-        and might change at any time.'
   /api/v2/app-builder/apps/{app_id}:
     delete:
       description: Delete a single app.
@@ -32471,8 +35327,6 @@ paths:
         operator: OR
         permissions:
         - apps_write
-      x-unstable: '**Note**: App Builder API endpoints are still under active development
-        and might change at any time.'
     get:
       description: Get the full definition of an app.
       operationId: GetApp
@@ -32519,6 +35373,12 @@ paths:
               schema:
                 $ref: '#/components/schemas/JSONAPIErrorResponse'
           description: Not Found
+        '410':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JSONAPIErrorResponse'
+          description: Gone
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
       summary: Get App
@@ -32529,8 +35389,6 @@ paths:
         permissions:
         - apps_run
         - connections_read
-      x-unstable: '**Note**: App Builder API endpoints are still under active development
-        and might change at any time.'
     patch:
       description: Update an existing app. This creates a new version of the app.
       operationId: UpdateApp
@@ -32579,8 +35437,6 @@ paths:
         - apps_write
         - connections_resolve
         - workflows_run
-      x-unstable: '**Note**: App Builder API endpoints are still under active development
-        and might change at any time.'
   /api/v2/app-builder/apps/{app_id}/deployment:
     delete:
       description: Unpublish an app, removing the live version of the app. Unpublishing
@@ -32631,8 +35487,6 @@ paths:
         operator: OR
         permissions:
         - apps_write
-      x-unstable: '**Note**: App Builder API endpoints are still under active development
-        and might change at any time.'
     post:
       description: Publish an app for use by other users. To ensure the app is accessible
         to the correct users, you also need to set a [Restriction Policy](https://docs.datadoghq.com/api/latest/restriction-policies/)
@@ -32681,8 +35535,6 @@ paths:
         operator: OR
         permissions:
         - apps_write
-      x-unstable: '**Note**: App Builder API endpoints are still under active development
-        and might change at any time.'
   /api/v2/application_keys:
     get:
       description: List all application keys available for your org
@@ -33695,7 +36547,7 @@ paths:
       - Software Catalog
       x-pagination:
         limitParam: page[limit]
-        pageParam: page[offset]
+        pageOffsetParam: page[offset]
         resultsPath: data
     post:
       description: Create or update entities in Software Catalog.
@@ -34444,7 +37296,8 @@ paths:
         permissions:
         - cloud_cost_management_write
     patch:
-      description: Update the status of an AWS CUR config (active/archived).
+      description: Update the status (active/archived) and/or account filtering configuration
+        of an AWS CUR config.
       operationId: UpdateCostAWSCURConfig
       parameters:
       - $ref: '#/components/parameters/CloudAccountID'
@@ -35910,7 +38763,12 @@ paths:
         - monitors_downtime
   /api/v2/downtime/{downtime_id}:
     delete:
-      description: Cancel a downtime.
+      description: 'Cancel a downtime.
+
+
+        **Note**: Downtimes canceled through the API are no longer active, but are
+        retained for approximately two days before being permanently removed. The
+        downtime may still appear in search results until it is permanently removed.'
       operationId: CancelDowntime
       parameters:
       - description: ID of the downtime to cancel.
@@ -42107,6 +44965,285 @@ paths:
         operator: OR
         permissions:
         - timeseries_query
+  /api/v2/remote_config/products/asm/waf/custom_rules:
+    get:
+      description: Retrieve a list of WAF custom rule.
+      operationId: ListApplicationSecurityWAFCustomRules
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApplicationSecurityWafCustomRuleListResponse'
+          description: OK
+        '403':
+          $ref: '#/components/responses/NotAuthorizedResponse'
+        '429':
+          $ref: '#/components/responses/TooManyRequestsResponse'
+      summary: List all WAF custom rules
+      tags:
+      - Application Security
+    post:
+      description: Create a new WAF custom rule with the given parameters.
+      operationId: CreateApplicationSecurityWafCustomRule
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApplicationSecurityWafCustomRuleCreateRequest'
+        description: The definition of the new WAF Custom Rule.
+        required: true
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApplicationSecurityWafCustomRuleResponse'
+          description: Created
+        '400':
+          $ref: '#/components/responses/BadRequestResponse'
+        '403':
+          $ref: '#/components/responses/NotAuthorizedResponse'
+        '409':
+          $ref: '#/components/responses/ConcurrentModificationResponse'
+        '429':
+          $ref: '#/components/responses/TooManyRequestsResponse'
+      summary: Create a WAF custom rule
+      tags:
+      - Application Security
+      x-codegen-request-body-name: body
+  /api/v2/remote_config/products/asm/waf/custom_rules/{custom_rule_id}:
+    delete:
+      description: Delete a specific WAF custom rule.
+      operationId: DeleteApplicationSecurityWafCustomRule
+      parameters:
+      - $ref: '#/components/parameters/ApplicationSecurityWafCustomRuleIDParam'
+      responses:
+        '204':
+          description: No Content
+        '403':
+          $ref: '#/components/responses/NotAuthorizedResponse'
+        '404':
+          $ref: '#/components/responses/NotFoundResponse'
+        '409':
+          $ref: '#/components/responses/ConcurrentModificationResponse'
+        '429':
+          $ref: '#/components/responses/TooManyRequestsResponse'
+      summary: Delete a WAF Custom Rule
+      tags:
+      - Application Security
+      x-terraform-resource: appsec_waf_custom_rule
+    get:
+      description: Retrieve a WAF custom rule by ID.
+      operationId: GetApplicationSecurityWafCustomRule
+      parameters:
+      - $ref: '#/components/parameters/ApplicationSecurityWafCustomRuleIDParam'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApplicationSecurityWafCustomRuleResponse'
+          description: OK
+        '403':
+          $ref: '#/components/responses/NotAuthorizedResponse'
+        '429':
+          $ref: '#/components/responses/TooManyRequestsResponse'
+      summary: Get a WAF custom rule
+      tags:
+      - Application Security
+      x-terraform-resource: appsec_waf_custom_rule
+    put:
+      description: 'Update a specific WAF custom Rule.
+
+        Returns the Custom Rule object when the request is successful.'
+      operationId: UpdateApplicationSecurityWafCustomRule
+      parameters:
+      - $ref: '#/components/parameters/ApplicationSecurityWafCustomRuleIDParam'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApplicationSecurityWafCustomRuleUpdateRequest'
+        description: New definition of the WAF Custom Rule.
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApplicationSecurityWafCustomRuleResponse'
+          description: OK
+        '400':
+          $ref: '#/components/responses/BadRequestResponse'
+        '403':
+          $ref: '#/components/responses/NotAuthorizedResponse'
+        '404':
+          $ref: '#/components/responses/NotFoundResponse'
+        '409':
+          $ref: '#/components/responses/ConcurrentModificationResponse'
+        '429':
+          $ref: '#/components/responses/TooManyRequestsResponse'
+      summary: Update a WAF Custom Rule
+      tags:
+      - Application Security
+      x-codegen-request-body-name: body
+      x-terraform-resource: appsec_waf_custom_rule
+  /api/v2/remote_config/products/asm/waf/exclusion_filters:
+    get:
+      description: Retrieve a list of WAF exclusion filters.
+      operationId: ListApplicationSecurityWafExclusionFilters
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApplicationSecurityWafExclusionFiltersResponse'
+          description: OK
+        '403':
+          $ref: '#/components/responses/NotAuthorizedResponse'
+        '429':
+          $ref: '#/components/responses/TooManyRequestsResponse'
+      summary: List all WAF exclusion filters
+      tags:
+      - Application Security
+      x-permission:
+        operator: AND
+        permissions:
+        - appsec_protect_read
+      x-terraform-resource: appsec_waf_exclusion_filter
+    post:
+      description: 'Create a new WAF exclusion filter with the given parameters.
+
+
+        A request matched by an exclusion filter will be ignored by the Application
+        Security WAF product.
+
+        Go to https://app.datadoghq.com/security/appsec/passlist to review existing
+        exclusion filters (also called passlist entries).'
+      operationId: CreateApplicationSecurityWafExclusionFilter
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApplicationSecurityWafExclusionFilterCreateRequest'
+        description: The definition of the new WAF exclusion filter.
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApplicationSecurityWafExclusionFilterResponse'
+          description: OK
+        '400':
+          $ref: '#/components/responses/BadRequestResponse'
+        '403':
+          $ref: '#/components/responses/NotAuthorizedResponse'
+        '409':
+          $ref: '#/components/responses/ConcurrentModificationResponse'
+        '429':
+          $ref: '#/components/responses/TooManyRequestsResponse'
+      summary: Create a WAF exclusion filter
+      tags:
+      - Application Security
+      x-codegen-request-body-name: body
+      x-permission:
+        operator: AND
+        permissions:
+        - appsec_protect_write
+      x-terraform-resource: appsec_waf_exclusion_filter
+  /api/v2/remote_config/products/asm/waf/exclusion_filters/{exclusion_filter_id}:
+    delete:
+      description: Delete a specific WAF exclusion filter using its identifier.
+      operationId: DeleteApplicationSecurityWafExclusionFilter
+      parameters:
+      - $ref: '#/components/parameters/ApplicationSecurityWafExclusionFilterID'
+      responses:
+        '204':
+          description: OK
+        '403':
+          $ref: '#/components/responses/NotAuthorizedResponse'
+        '404':
+          $ref: '#/components/responses/NotFoundResponse'
+        '409':
+          $ref: '#/components/responses/ConcurrentModificationResponse'
+        '429':
+          $ref: '#/components/responses/TooManyRequestsResponse'
+      summary: Delete a WAF exclusion filter
+      tags:
+      - Application Security
+      x-permission:
+        operator: AND
+        permissions:
+        - appsec_protect_write
+      x-terraform-resource: appsec_waf_exclusion_filter
+    get:
+      description: Retrieve a specific WAF exclusion filter using its identifier.
+      operationId: GetApplicationSecurityWafExclusionFilter
+      parameters:
+      - $ref: '#/components/parameters/ApplicationSecurityWafExclusionFilterID'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApplicationSecurityWafExclusionFilterResponse'
+          description: OK
+        '403':
+          $ref: '#/components/responses/NotAuthorizedResponse'
+        '404':
+          $ref: '#/components/responses/NotFoundResponse'
+        '429':
+          $ref: '#/components/responses/TooManyRequestsResponse'
+      summary: Get a WAF exclusion filter
+      tags:
+      - Application Security
+      x-permission:
+        operator: AND
+        permissions:
+        - appsec_protect_read
+      x-terraform-resource: appsec_waf_exclusion_filter
+    put:
+      description: 'Update a specific WAF exclusion filter using its identifier.
+
+        Returns the exclusion filter object when the request is successful.'
+      operationId: UpdateApplicationSecurityWafExclusionFilter
+      parameters:
+      - $ref: '#/components/parameters/ApplicationSecurityWafExclusionFilterID'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApplicationSecurityWafExclusionFilterUpdateRequest'
+        description: The exclusion filter to update.
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApplicationSecurityWafExclusionFilterResponse'
+          description: OK
+        '400':
+          $ref: '#/components/responses/BadRequestResponse'
+        '403':
+          $ref: '#/components/responses/NotAuthorizedResponse'
+        '404':
+          $ref: '#/components/responses/NotFoundResponse'
+        '409':
+          $ref: '#/components/responses/ConcurrentModificationResponse'
+        '429':
+          $ref: '#/components/responses/TooManyRequestsResponse'
+      summary: Update a WAF exclusion filter
+      tags:
+      - Application Security
+      x-codegen-request-body-name: body
+      x-permission:
+        operator: AND
+        permissions:
+        - appsec_protect_write
+      x-terraform-resource: appsec_waf_exclusion_filter
   /api/v2/remote_config/products/cws/agent_rules:
     get:
       description: Get the list of Cloud Security Management Threats Agent rules.
@@ -43084,6 +46221,167 @@ paths:
         operator: OR
         permissions:
         - rum_apps_write
+  /api/v2/rum/applications/{app_id}/relationships/retention_filters:
+    patch:
+      description: 'Order RUM retention filters for a RUM application.
+
+        Returns RUM retention filter objects without attributes from the request body
+        when the request is successful.'
+      operationId: OrderRetentionFilters
+      parameters:
+      - $ref: '#/components/parameters/RumApplicationIDParameter'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RumRetentionFiltersOrderRequest'
+        description: New definition of the RUM retention filter.
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RumRetentionFiltersOrderResponse'
+          description: Ordered
+        '400':
+          $ref: '#/components/responses/BadRequestResponse'
+        '403':
+          $ref: '#/components/responses/NotAuthorizedResponse'
+        '429':
+          $ref: '#/components/responses/TooManyRequestsResponse'
+      summary: Order RUM retention filters
+      tags:
+      - Rum Retention Filters
+      x-codegen-request-body-name: body
+  /api/v2/rum/applications/{app_id}/retention_filters:
+    get:
+      description: Get the list of RUM retention filters for a RUM application.
+      operationId: ListRetentionFilters
+      parameters:
+      - $ref: '#/components/parameters/RumApplicationIDParameter'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RumRetentionFiltersResponse'
+          description: OK
+        '403':
+          $ref: '#/components/responses/NotAuthorizedResponse'
+        '429':
+          $ref: '#/components/responses/TooManyRequestsResponse'
+      summary: Get all RUM retention filters
+      tags:
+      - Rum Retention Filters
+    post:
+      description: 'Create a RUM retention filter for a RUM application.
+
+        Returns RUM retention filter objects from the request body when the request
+        is successful.'
+      operationId: CreateRetentionFilter
+      parameters:
+      - $ref: '#/components/parameters/RumApplicationIDParameter'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RumRetentionFilterCreateRequest'
+        description: The definition of the new RUM retention filter.
+        required: true
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RumRetentionFilterResponse'
+          description: Created
+        '400':
+          $ref: '#/components/responses/BadRequestResponse'
+        '403':
+          $ref: '#/components/responses/NotAuthorizedResponse'
+        '429':
+          $ref: '#/components/responses/TooManyRequestsResponse'
+      summary: Create a RUM retention filter
+      tags:
+      - Rum Retention Filters
+      x-codegen-request-body-name: body
+  /api/v2/rum/applications/{app_id}/retention_filters/{rf_id}:
+    delete:
+      description: Delete a RUM retention filter for a RUM application.
+      operationId: DeleteRetentionFilter
+      parameters:
+      - $ref: '#/components/parameters/RumApplicationIDParameter'
+      - $ref: '#/components/parameters/RumRetentionFilterIDParameter'
+      responses:
+        '204':
+          description: No Content
+        '403':
+          $ref: '#/components/responses/NotAuthorizedResponse'
+        '404':
+          $ref: '#/components/responses/NotFoundResponse'
+        '429':
+          $ref: '#/components/responses/TooManyRequestsResponse'
+      summary: Delete a RUM retention filter
+      tags:
+      - Rum Retention Filters
+    get:
+      description: Get a RUM retention filter for a RUM application.
+      operationId: GetRetentionFilter
+      parameters:
+      - $ref: '#/components/parameters/RumApplicationIDParameter'
+      - $ref: '#/components/parameters/RumRetentionFilterIDParameter'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RumRetentionFilterResponse'
+          description: OK
+        '403':
+          $ref: '#/components/responses/NotAuthorizedResponse'
+        '404':
+          $ref: '#/components/responses/NotFoundResponse'
+        '429':
+          $ref: '#/components/responses/TooManyRequestsResponse'
+      summary: Get a RUM retention filter
+      tags:
+      - Rum Retention Filters
+    patch:
+      description: 'Update a RUM retention filter for a RUM application.
+
+        Returns RUM retention filter objects from the request body when the request
+        is successful.'
+      operationId: UpdateRetentionFilter
+      parameters:
+      - $ref: '#/components/parameters/RumApplicationIDParameter'
+      - $ref: '#/components/parameters/RumRetentionFilterIDParameter'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RumRetentionFilterUpdateRequest'
+        description: New definition of the RUM retention filter.
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RumRetentionFilterResponse'
+          description: Updated
+        '400':
+          $ref: '#/components/responses/BadRequestResponse'
+        '403':
+          $ref: '#/components/responses/NotAuthorizedResponse'
+        '404':
+          $ref: '#/components/responses/NotFoundResponse'
+        '429':
+          $ref: '#/components/responses/TooManyRequestsResponse'
+      summary: Update a RUM retention filter
+      tags:
+      - Rum Retention Filters
+      x-codegen-request-body-name: body
   /api/v2/rum/applications/{id}:
     delete:
       description: Delete an existing RUM application in your organization.
@@ -43974,9 +47272,14 @@ paths:
       security:
       - apiKeyAuth: []
         appKeyAuth: []
+      - AuthZ:
+        - appsec_vm_read
       summary: List vulnerable assets
       tags:
       - Security Monitoring
+      x-unstable: '**Note**: This endpoint is a private preview.
+
+        If you are interested in accessing this API, [fill out this form](https://forms.gle/kMYC1sDr6WDUBDsx9).'
   /api/v2/security/cloud_workload/policy/download:
     get:
       description: 'The download endpoint generates a Cloud Workload Security policy
@@ -44066,9 +47369,14 @@ paths:
       security:
       - apiKeyAuth: []
         appKeyAuth: []
+      - AuthZ:
+        - appsec_vm_read
       summary: Get SBOM
       tags:
       - Security Monitoring
+      x-unstable: '**Note**: This endpoint is a private preview.
+
+        If you are interested in accessing this API, [fill out this form](https://forms.gle/kMYC1sDr6WDUBDsx9).'
   /api/v2/security/signals/notification_rules:
     get:
       description: Returns the list of notification rules for security signals.
@@ -44624,9 +47932,14 @@ paths:
       security:
       - apiKeyAuth: []
         appKeyAuth: []
+      - AuthZ:
+        - appsec_vm_read
       summary: List vulnerabilities
       tags:
       - Security Monitoring
+      x-unstable: '**Note**: This endpoint is a private preview.
+
+        If you are interested in accessing this API, [fill out this form](https://forms.gle/kMYC1sDr6WDUBDsx9).'
   /api/v2/security/vulnerabilities/notification_rules:
     get:
       description: Returns the list of notification rules for security vulnerabilities.
@@ -45631,6 +48944,42 @@ paths:
         operator: OR
         permissions:
         - security_monitoring_rules_write
+  /api/v2/security_monitoring/rules/{rule_id}/version_history:
+    get:
+      description: Get a rule's version history.
+      operationId: GetRuleVersionHistory
+      parameters:
+      - $ref: '#/components/parameters/SecurityMonitoringRuleID'
+      - $ref: '#/components/parameters/PageSize'
+      - $ref: '#/components/parameters/PageNumber'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetRuleVersionHistoryResponse'
+          description: OK
+        '400':
+          $ref: '#/components/responses/BadRequestResponse'
+        '403':
+          $ref: '#/components/responses/NotAuthorizedResponse'
+        '404':
+          $ref: '#/components/responses/NotFoundResponse'
+        '429':
+          $ref: '#/components/responses/TooManyRequestsResponse'
+      security:
+      - apiKeyAuth: []
+        appKeyAuth: []
+      - AuthZ:
+        - security_monitoring_rules_read
+      summary: Get a rule's version history
+      tags:
+      - Security Monitoring
+      x-permission:
+        operator: OR
+        permissions:
+        - security_monitoring_rules_read
+      x-unstable: '**Note**: This endpoint is in beta and may be subject to changes.'
   /api/v2/security_monitoring/signals:
     get:
       description: 'The list endpoint returns security signals that match a search
@@ -49743,6 +53092,178 @@ paths:
         operator: OR
         permissions:
         - teams_read
+  /api/v2/workflows:
+    post:
+      description: Create a new workflow, returning the workflow ID. This API requires
+        an application key scoped with the `workflows_write` permission.
+      operationId: CreateWorkflow
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateWorkflowRequest'
+        required: true
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateWorkflowResponse'
+          description: Successfully created a workflow.
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JSONAPIErrorResponse'
+          description: Bad request
+        '403':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JSONAPIErrorResponse'
+          description: Forbidden
+        '429':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JSONAPIErrorResponse'
+          description: Too many requests
+      summary: Create a Workflow
+      tags:
+      - Workflow Automation
+      x-permission:
+        operator: OR
+        permissions:
+        - workflows_write
+  /api/v2/workflows/{workflow_id}:
+    delete:
+      description: Delete a workflow by ID. This API requires an application key scoped
+        with the `workflows_write` permission.
+      operationId: DeleteWorkflow
+      parameters:
+      - $ref: '#/components/parameters/WorkflowId'
+      responses:
+        '204':
+          description: Successfully deleted a workflow.
+        '403':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JSONAPIErrorResponse'
+          description: Forbidden
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JSONAPIErrorResponse'
+          description: Not found
+        '429':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JSONAPIErrorResponse'
+          description: Too many requests
+      summary: Delete an existing Workflow
+      tags:
+      - Workflow Automation
+      x-permission:
+        operator: OR
+        permissions:
+        - workflows_write
+    get:
+      description: Get a workflow by ID.  This API requires an application key scoped
+        with the `workflows_read` permission.
+      operationId: GetWorkflow
+      parameters:
+      - $ref: '#/components/parameters/WorkflowId'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetWorkflowResponse'
+          description: Successfully got a workflow.
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JSONAPIErrorResponse'
+          description: Bad request
+        '403':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JSONAPIErrorResponse'
+          description: Forbidden
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JSONAPIErrorResponse'
+          description: Not found
+        '429':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JSONAPIErrorResponse'
+          description: Too many requests
+      summary: Get an existing Workflow
+      tags:
+      - Workflow Automation
+      x-permission:
+        operator: OR
+        permissions:
+        - workflows_read
+    patch:
+      description: Update a workflow by ID. This API requires an application key scoped
+        with the `workflows_write` permission.
+      operationId: UpdateWorkflow
+      parameters:
+      - $ref: '#/components/parameters/WorkflowId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateWorkflowRequest'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpdateWorkflowResponse'
+          description: Successfully updated a workflow.
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JSONAPIErrorResponse'
+          description: Bad request
+        '403':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JSONAPIErrorResponse'
+          description: Forbidden
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JSONAPIErrorResponse'
+          description: Not found
+        '429':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JSONAPIErrorResponse'
+          description: Too many requests
+      summary: Update an existing Workflow
+      tags:
+      - Workflow Automation
+      x-permission:
+        operator: OR
+        permissions:
+        - workflows_write
   /api/v2/workflows/{workflow_id}/instances:
     get:
       description: List all instances of a given workflow. This API requires an application
@@ -49951,14 +53472,31 @@ tags:
   name: Action Connection
 - description: "Datadog Agentless Scanning provides visibility into risks and vulnerabilities\nwithin
     your hosts, running containers, and serverless functions\u2014all without\nrequiring
-    teams to install Agents on every host or where Agents cannot be installed.\nGo
-    to https://www.datadoghq.com/blog/agentless-scanning/ to learn more"
+    teams to install Agents on every host or where Agents cannot be installed.\nAgentless
+    offers also Sensitive Data Scanning capabilities on your storage.\nGo to https://www.datadoghq.com/blog/agentless-scanning/
+    to learn more."
   name: Agentless Scanning
 - description: Datadog App Builder provides a low-code solution to rapidly develop
     and integrate secure, customized applications into your monitoring stack that
     are built to accelerate remediation at scale. These API endpoints allow you to
     create, read, update, delete, and publish apps.
   name: App Builder
+- description: '[Datadog Application Security](https://docs.datadoghq.com/security/application_security/)
+    provides protection against
+
+    application-level attacks that aim to exploit code-level vulnerabilities,
+
+    such as Server-Side-Request-Forgery (SSRF), SQL injection, Log4Shell, and
+
+    Reflected Cross-Site-Scripting (XSS). You can monitor and protect apps
+
+    hosted directly on a server, Docker, Kubernetes, Amazon ECS, and (for
+
+    supported languages) AWS Fargate.'
+  externalDocs:
+    description: Find out more at
+    url: https://docs.datadoghq.com/security/application_security/
+  name: Application Security
 - description: Search your Audit Logs events over HTTP.
   name: Audit
 - description: '[The AuthN Mappings API](https://docs.datadoghq.com/account_management/authn_mapping/?tab=example)
@@ -50259,6 +53797,9 @@ tags:
     description: Find out more at
     url: https://docs.datadoghq.com/real_user_monitoring/platform/generate_metrics/
   name: Rum Metrics
+- description: Manage retention filters through [Manage Applications](https://app.datadoghq.com/rum/list)
+    of RUM for your organization.
+  name: Rum Retention Filters
 - description: Create and manage your security rules, signals, filters, and more.
     See the [Datadog Security page](https://docs.datadoghq.com/security/) for more
     information.
@@ -50346,7 +53887,12 @@ tags:
   externalDocs:
     url: https://docs.datadoghq.com/account_management/users
   name: Users
-- description: Automate your teams operational processes with Datadog Workflow Automation.
+- description: Datadog Workflow Automation allows you to automate your end-to-end
+    processes by connecting Datadog with the rest of your tech stack. Build workflows
+    to auto-remediate your alerts, streamline your incident and security processes,
+    and reduce manual toil. Workflow Automation supports over 1,000+ OOTB actions,
+    including AWS, JIRA, ServiceNow, GitHub, and OpenAI. Learn more in our Workflow
+    Automation docs [here](https://docs.datadoghq.com/service_management/workflows/).
   externalDocs:
     description: Find out more at
     url: https://docs.datadoghq.com/service_management/workflows/

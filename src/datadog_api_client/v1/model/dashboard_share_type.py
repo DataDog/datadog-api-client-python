@@ -16,16 +16,18 @@ class DashboardShareType(ModelSimple):
     """
     Type of sharing access (either open to anyone who has the public URL or invite-only).
 
-    :param value: Must be one of ["open", "invite"].
+    :param value: Must be one of ["open", "invite", "embed"].
     :type value: str
     """
 
     allowed_values = {
         "open",
         "invite",
+        "embed",
     }
     OPEN: ClassVar["DashboardShareType"]
     INVITE: ClassVar["DashboardShareType"]
+    EMBED: ClassVar["DashboardShareType"]
 
     _nullable = True
 
@@ -38,3 +40,4 @@ class DashboardShareType(ModelSimple):
 
 DashboardShareType.OPEN = DashboardShareType("open")
 DashboardShareType.INVITE = DashboardShareType("invite")
+DashboardShareType.EMBED = DashboardShareType("embed")

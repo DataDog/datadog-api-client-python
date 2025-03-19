@@ -11,7 +11,6 @@ from datadog_api_client.v2.model.service_definition_v2_dot2_link import ServiceD
 from datadog_api_client.v2.model.service_definition_v2_dot2_opsgenie import ServiceDefinitionV2Dot2Opsgenie
 from datadog_api_client.v2.model.service_definition_v2_dot2_opsgenie_region import ServiceDefinitionV2Dot2OpsgenieRegion
 from datadog_api_client.v2.model.service_definition_v2_dot2_pagerduty import ServiceDefinitionV2Dot2Pagerduty
-from datadog_api_client.v2.model.service_definition_v2_dot2_type import ServiceDefinitionV2Dot2Type
 from datadog_api_client.v2.model.service_definition_v2_dot2_version import ServiceDefinitionV2Dot2Version
 
 body = ServiceDefinitionV2Dot2(
@@ -65,7 +64,7 @@ body = ServiceDefinitionV2Dot2(
     ],
     team="my-team",
     tier="High",
-    type=ServiceDefinitionV2Dot2Type.WEB,
+    type="web",
 )
 
 configuration = Configuration()

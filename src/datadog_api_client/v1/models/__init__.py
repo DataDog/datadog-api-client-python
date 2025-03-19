@@ -299,6 +299,8 @@ from datadog_api_client.v1.model.logs_retention_sum_usage import LogsRetentionSu
 from datadog_api_client.v1.model.logs_service_remapper import LogsServiceRemapper
 from datadog_api_client.v1.model.logs_service_remapper_type import LogsServiceRemapperType
 from datadog_api_client.v1.model.logs_sort import LogsSort
+from datadog_api_client.v1.model.logs_span_remapper import LogsSpanRemapper
+from datadog_api_client.v1.model.logs_span_remapper_type import LogsSpanRemapperType
 from datadog_api_client.v1.model.logs_status_remapper import LogsStatusRemapper
 from datadog_api_client.v1.model.logs_status_remapper_type import LogsStatusRemapperType
 from datadog_api_client.v1.model.logs_string_builder_processor import LogsStringBuilderProcessor
@@ -438,6 +440,12 @@ from datadog_api_client.v1.model.notebooks_response_meta import NotebooksRespons
 from datadog_api_client.v1.model.notebooks_response_page import NotebooksResponsePage
 from datadog_api_client.v1.model.notify_end_state import NotifyEndState
 from datadog_api_client.v1.model.notify_end_type import NotifyEndType
+from datadog_api_client.v1.model.number_format_unit import NumberFormatUnit
+from datadog_api_client.v1.model.number_format_unit_canonical import NumberFormatUnitCanonical
+from datadog_api_client.v1.model.number_format_unit_custom import NumberFormatUnitCustom
+from datadog_api_client.v1.model.number_format_unit_custom_type import NumberFormatUnitCustomType
+from datadog_api_client.v1.model.number_format_unit_scale import NumberFormatUnitScale
+from datadog_api_client.v1.model.number_format_unit_scale_type import NumberFormatUnitScaleType
 from datadog_api_client.v1.model.on_missing_data_option import OnMissingDataOption
 from datadog_api_client.v1.model.org_downgraded_response import OrgDowngradedResponse
 from datadog_api_client.v1.model.organization import Organization
@@ -578,6 +586,7 @@ from datadog_api_client.v1.model.service_summary_widget_definition import Servic
 from datadog_api_client.v1.model.service_summary_widget_definition_type import ServiceSummaryWidgetDefinitionType
 from datadog_api_client.v1.model.shared_dashboard import SharedDashboard
 from datadog_api_client.v1.model.shared_dashboard_author import SharedDashboardAuthor
+from datadog_api_client.v1.model.shared_dashboard_invitees_items import SharedDashboardInviteesItems
 from datadog_api_client.v1.model.shared_dashboard_invites import SharedDashboardInvites
 from datadog_api_client.v1.model.shared_dashboard_invites_data import SharedDashboardInvitesData
 from datadog_api_client.v1.model.shared_dashboard_invites_data_list import SharedDashboardInvitesDataList
@@ -587,6 +596,7 @@ from datadog_api_client.v1.model.shared_dashboard_invites_data_object_attributes
 )
 from datadog_api_client.v1.model.shared_dashboard_invites_meta import SharedDashboardInvitesMeta
 from datadog_api_client.v1.model.shared_dashboard_invites_meta_page import SharedDashboardInvitesMetaPage
+from datadog_api_client.v1.model.shared_dashboard_status import SharedDashboardStatus
 from datadog_api_client.v1.model.shared_dashboard_update_request import SharedDashboardUpdateRequest
 from datadog_api_client.v1.model.shared_dashboard_update_request_global_time import (
     SharedDashboardUpdateRequestGlobalTime,
@@ -996,6 +1006,8 @@ from datadog_api_client.v1.model.user import User
 from datadog_api_client.v1.model.user_disable_response import UserDisableResponse
 from datadog_api_client.v1.model.user_list_response import UserListResponse
 from datadog_api_client.v1.model.user_response import UserResponse
+from datadog_api_client.v1.model.viewing_preferences import ViewingPreferences
+from datadog_api_client.v1.model.viewing_preferences_theme import ViewingPreferencesTheme
 from datadog_api_client.v1.model.webhooks_integration import WebhooksIntegration
 from datadog_api_client.v1.model.webhooks_integration_custom_variable import WebhooksIntegrationCustomVariable
 from datadog_api_client.v1.model.webhooks_integration_custom_variable_response import (
@@ -1021,6 +1033,13 @@ from datadog_api_client.v1.model.widget_event import WidgetEvent
 from datadog_api_client.v1.model.widget_event_size import WidgetEventSize
 from datadog_api_client.v1.model.widget_field_sort import WidgetFieldSort
 from datadog_api_client.v1.model.widget_formula import WidgetFormula
+from datadog_api_client.v1.model.widget_formula_cell_display_mode_options import WidgetFormulaCellDisplayModeOptions
+from datadog_api_client.v1.model.widget_formula_cell_display_mode_options_trend_type import (
+    WidgetFormulaCellDisplayModeOptionsTrendType,
+)
+from datadog_api_client.v1.model.widget_formula_cell_display_mode_options_y_scale import (
+    WidgetFormulaCellDisplayModeOptionsYScale,
+)
 from datadog_api_client.v1.model.widget_formula_limit import WidgetFormulaLimit
 from datadog_api_client.v1.model.widget_formula_sort import WidgetFormulaSort
 from datadog_api_client.v1.model.widget_formula_style import WidgetFormulaStyle
@@ -1045,6 +1064,7 @@ from datadog_api_client.v1.model.widget_new_fixed_span_type import WidgetNewFixe
 from datadog_api_client.v1.model.widget_new_live_span import WidgetNewLiveSpan
 from datadog_api_client.v1.model.widget_new_live_span_type import WidgetNewLiveSpanType
 from datadog_api_client.v1.model.widget_node_type import WidgetNodeType
+from datadog_api_client.v1.model.widget_number_format import WidgetNumberFormat
 from datadog_api_client.v1.model.widget_order_by import WidgetOrderBy
 from datadog_api_client.v1.model.widget_palette import WidgetPalette
 from datadog_api_client.v1.model.widget_request_style import WidgetRequestStyle
@@ -1331,6 +1351,8 @@ __all__ = [
     "LogsServiceRemapper",
     "LogsServiceRemapperType",
     "LogsSort",
+    "LogsSpanRemapper",
+    "LogsSpanRemapperType",
     "LogsStatusRemapper",
     "LogsStatusRemapperType",
     "LogsStringBuilderProcessor",
@@ -1442,6 +1464,12 @@ __all__ = [
     "NotebooksResponsePage",
     "NotifyEndState",
     "NotifyEndType",
+    "NumberFormatUnit",
+    "NumberFormatUnitCanonical",
+    "NumberFormatUnitCustom",
+    "NumberFormatUnitCustomType",
+    "NumberFormatUnitScale",
+    "NumberFormatUnitScaleType",
     "OnMissingDataOption",
     "OrgDowngradedResponse",
     "Organization",
@@ -1572,6 +1600,7 @@ __all__ = [
     "ServiceSummaryWidgetDefinitionType",
     "SharedDashboard",
     "SharedDashboardAuthor",
+    "SharedDashboardInviteesItems",
     "SharedDashboardInvites",
     "SharedDashboardInvitesData",
     "SharedDashboardInvitesDataList",
@@ -1579,6 +1608,7 @@ __all__ = [
     "SharedDashboardInvitesDataObjectAttributes",
     "SharedDashboardInvitesMeta",
     "SharedDashboardInvitesMetaPage",
+    "SharedDashboardStatus",
     "SharedDashboardUpdateRequest",
     "SharedDashboardUpdateRequestGlobalTime",
     "SignalArchiveReason",
@@ -1920,6 +1950,8 @@ __all__ = [
     "UserDisableResponse",
     "UserListResponse",
     "UserResponse",
+    "ViewingPreferences",
+    "ViewingPreferencesTheme",
     "WebhooksIntegration",
     "WebhooksIntegrationCustomVariable",
     "WebhooksIntegrationCustomVariableResponse",
@@ -1941,6 +1973,9 @@ __all__ = [
     "WidgetEventSize",
     "WidgetFieldSort",
     "WidgetFormula",
+    "WidgetFormulaCellDisplayModeOptions",
+    "WidgetFormulaCellDisplayModeOptionsTrendType",
+    "WidgetFormulaCellDisplayModeOptionsYScale",
     "WidgetFormulaLimit",
     "WidgetFormulaSort",
     "WidgetFormulaStyle",
@@ -1965,6 +2000,7 @@ __all__ = [
     "WidgetNewLiveSpan",
     "WidgetNewLiveSpanType",
     "WidgetNodeType",
+    "WidgetNumberFormat",
     "WidgetOrderBy",
     "WidgetPalette",
     "WidgetRequestStyle",

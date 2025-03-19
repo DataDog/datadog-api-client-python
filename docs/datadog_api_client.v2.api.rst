@@ -39,6 +39,13 @@ datadog\_api\_client.v2.api.app\_builder\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.application\_security\_api module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.application_security_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.audit\_api module
 ---------------------------------------------
 
@@ -351,6 +358,13 @@ datadog\_api\_client.v2.api.rum\_metrics\_api module
 ----------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.api.rum_metrics_api
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.api.rum\_retention\_filters\_api module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.rum_retention_filters_api
    :members:
    :show-inheritance:
 

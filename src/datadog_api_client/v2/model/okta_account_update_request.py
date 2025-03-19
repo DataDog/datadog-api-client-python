@@ -3,50 +3,37 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Any, TYPE_CHECKING
+from typing import TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    date,
-    datetime,
-    none_type,
-    UUID,
 )
 
 
 if TYPE_CHECKING:
-    pass
+    from datadog_api_client.v2.model.okta_account_update_request_data import OktaAccountUpdateRequestData
 
 
 class OktaAccountUpdateRequest(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.okta_account_update_request_data import OktaAccountUpdateRequestData
+
         return {
-            "data": (
-                bool,
-                date,
-                datetime,
-                dict,
-                float,
-                int,
-                list,
-                str,
-                UUID,
-                none_type,
-            ),
+            "data": (OktaAccountUpdateRequestData,),
         }
 
     attribute_map = {
         "data": "data",
     }
 
-    def __init__(self_, data: Any, **kwargs):
+    def __init__(self_, data: OktaAccountUpdateRequestData, **kwargs):
         """
         Payload schema when updating an Okta account.
 
         :param data: Data object for updating an Okta account.
-        :type data: bool, date, datetime, dict, float, int, list, str, UUID, none_type
+        :type data: OktaAccountUpdateRequestData
         """
         super().__init__(kwargs)
 

@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 from typing import Any, Dict, Union
+import warnings
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
@@ -163,7 +164,7 @@ class APIManagementApi:
         *,
         openapi_spec_file: Union[file_type, UnsetType] = unset,
     ) -> CreateOpenAPIResponse:
-        """Create a new API.
+        """Create a new API. **Deprecated**.
 
         Create a new API from the `OpenAPI <https://spec.openapis.org/oas/latest.html>`_ specification given.
         See the `API Catalog documentation <https://docs.datadoghq.com/api_catalog/add_metadata/>`_ for additional
@@ -178,13 +179,14 @@ class APIManagementApi:
         if openapi_spec_file is not unset:
             kwargs["openapi_spec_file"] = openapi_spec_file
 
+        warnings.warn("create_open_api is deprecated", DeprecationWarning, stacklevel=2)
         return self._create_open_api_endpoint.call_with_http_info(**kwargs)
 
     def delete_open_api(
         self,
         id: UUID,
     ) -> None:
-        """Delete an API.
+        """Delete an API. **Deprecated**.
 
         Delete a specific API by ID.
 
@@ -195,13 +197,14 @@ class APIManagementApi:
         kwargs: Dict[str, Any] = {}
         kwargs["id"] = id
 
+        warnings.warn("delete_open_api is deprecated", DeprecationWarning, stacklevel=2)
         return self._delete_open_api_endpoint.call_with_http_info(**kwargs)
 
     def get_open_api(
         self,
         id: UUID,
     ) -> file_type:
-        """Get an API.
+        """Get an API. **Deprecated**.
 
         Retrieve information about a specific API in `OpenAPI <https://spec.openapis.org/oas/latest.html>`_ format file.
 
@@ -212,6 +215,7 @@ class APIManagementApi:
         kwargs: Dict[str, Any] = {}
         kwargs["id"] = id
 
+        warnings.warn("get_open_api is deprecated", DeprecationWarning, stacklevel=2)
         return self._get_open_api_endpoint.call_with_http_info(**kwargs)
 
     def list_apis(
@@ -221,7 +225,7 @@ class APIManagementApi:
         page_limit: Union[int, UnsetType] = unset,
         page_offset: Union[int, UnsetType] = unset,
     ) -> ListAPIsResponse:
-        """List APIs.
+        """List APIs. **Deprecated**.
 
         List APIs and their IDs.
 
@@ -243,6 +247,7 @@ class APIManagementApi:
         if page_offset is not unset:
             kwargs["page_offset"] = page_offset
 
+        warnings.warn("list_apis is deprecated", DeprecationWarning, stacklevel=2)
         return self._list_apis_endpoint.call_with_http_info(**kwargs)
 
     def update_open_api(
@@ -251,7 +256,7 @@ class APIManagementApi:
         *,
         openapi_spec_file: Union[file_type, UnsetType] = unset,
     ) -> UpdateOpenAPIResponse:
-        """Update an API.
+        """Update an API. **Deprecated**.
 
         Update information about a specific API. The given content will replace all API content of the given ID.
         The ID is returned by the create API, or can be found in the URL in the API catalog UI.
@@ -268,4 +273,5 @@ class APIManagementApi:
         if openapi_spec_file is not unset:
             kwargs["openapi_spec_file"] = openapi_spec_file
 
+        warnings.warn("update_open_api is deprecated", DeprecationWarning, stacklevel=2)
         return self._update_open_api_endpoint.call_with_http_info(**kwargs)

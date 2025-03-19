@@ -43,6 +43,29 @@ class LogsIndexesApi:
             api_client=api_client,
         )
 
+        self._delete_logs_index_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v1/logs/config/indexes/{name}",
+                "operation_id": "delete_logs_index",
+                "http_method": "DELETE",
+                "version": "v1",
+            },
+            params_map={
+                "name": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "name",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
         self._get_logs_index_endpoint = _Endpoint(
             settings={
                 "response_type": (LogsIndex,),
@@ -160,6 +183,24 @@ class LogsIndexesApi:
         kwargs["body"] = body
 
         return self._create_logs_index_endpoint.call_with_http_info(**kwargs)
+
+    def delete_logs_index(
+        self,
+        name: str,
+    ) -> None:
+        """Delete an index.
+
+        Delete an existing index from your organization. Index deletions are permanent and cannot be reverted.
+        You cannot recreate an index with the same name as deleted ones.
+
+        :param name: Name of the log index.
+        :type name: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["name"] = name
+
+        return self._delete_logs_index_endpoint.call_with_http_info(**kwargs)
 
     def get_logs_index(
         self,

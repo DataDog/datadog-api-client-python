@@ -1,0 +1,21 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"lambda":false,"sensitive_data":false,"vuln_containers_os":true,"vuln_host_os":true},"id":"000000000002","type":"aws_scan_options"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/agentless_scanning/accounts/aws
+  response:
+    body:
+      string: '{"errors":[{"status":"409","detail":"aws scan options already exist
+        for subscription 000000000002"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 409
+      message: Conflict
+version: 1

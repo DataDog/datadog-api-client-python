@@ -298,6 +298,7 @@ Feature: Synthetics
     And the response "config.steps[0].request.httpVersion" is equal to "http2"
     And the response "config.steps[0].exitIfSucceed" is equal to true
     And the response "config.steps[0].extractedValues[0].secure" is equal to true
+    And the response "config.steps[0].extractedValuesFromScript" is equal to "dd.variable.set('STATUS_CODE', dd.response.statusCode);"
     And the response "config.steps[1].subtype" is equal to "wait"
     And the response "config.steps[1].value" is equal to 1
     And the response "config.steps[2].request.host" is equal to "grpcbin.test.k6.io"

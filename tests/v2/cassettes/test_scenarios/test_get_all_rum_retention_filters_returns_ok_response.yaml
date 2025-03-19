@@ -1,0 +1,21 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/rum/applications/1d4b9c34-7ac4-423a-91cf-9902d926e9b3/retention_filters
+  response:
+    body:
+      string: '{"data":[{"id":"325631eb-94c9-49c0-93f9-ab7e4fd24529","type":"retention_filters","attributes":{"enabled":true,"event_type":"session","name":"Default
+        session with replay","query":"@session.has_replay:true","sample_rate":100}},{"id":"42d89430-5b80-426e-a44b-ba3b417ece25","type":"retention_filters","attributes":{"enabled":true,"event_type":"session","name":"Session
+        filter","query":"","sample_rate":25}},{"id":"bff0bc34-99e9-4c16-adce-f47e71948c23","type":"retention_filters","attributes":{"enabled":true,"event_type":"view","name":"Custom
+        filter","query":"noquery","sample_rate":50}}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1

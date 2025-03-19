@@ -17,7 +17,7 @@ class SecurityMonitoringRuleKeepAlive(ModelSimple):
     Once a signal is generated, the signal will remain “open” if a case is matched at least once within
         this keep alive window. For third party detection method, this field is not used.
 
-    :param value: Must be one of [0, 60, 300, 600, 900, 1800, 3600, 7200, 10800, 21600].
+    :param value: Must be one of [0, 60, 300, 600, 900, 1800, 3600, 7200, 10800, 21600, 43200, 86400].
     :type value: int
     """
 
@@ -32,6 +32,8 @@ class SecurityMonitoringRuleKeepAlive(ModelSimple):
         7200,
         10800,
         21600,
+        43200,
+        86400,
     }
     ZERO_MINUTES: ClassVar["SecurityMonitoringRuleKeepAlive"]
     ONE_MINUTE: ClassVar["SecurityMonitoringRuleKeepAlive"]
@@ -43,6 +45,8 @@ class SecurityMonitoringRuleKeepAlive(ModelSimple):
     TWO_HOURS: ClassVar["SecurityMonitoringRuleKeepAlive"]
     THREE_HOURS: ClassVar["SecurityMonitoringRuleKeepAlive"]
     SIX_HOURS: ClassVar["SecurityMonitoringRuleKeepAlive"]
+    TWELVE_HOURS: ClassVar["SecurityMonitoringRuleKeepAlive"]
+    ONE_DAY: ClassVar["SecurityMonitoringRuleKeepAlive"]
 
     @cached_property
     def openapi_types(_):
@@ -61,3 +65,5 @@ SecurityMonitoringRuleKeepAlive.ONE_HOUR = SecurityMonitoringRuleKeepAlive(3600)
 SecurityMonitoringRuleKeepAlive.TWO_HOURS = SecurityMonitoringRuleKeepAlive(7200)
 SecurityMonitoringRuleKeepAlive.THREE_HOURS = SecurityMonitoringRuleKeepAlive(10800)
 SecurityMonitoringRuleKeepAlive.SIX_HOURS = SecurityMonitoringRuleKeepAlive(21600)
+SecurityMonitoringRuleKeepAlive.TWELVE_HOURS = SecurityMonitoringRuleKeepAlive(43200)
+SecurityMonitoringRuleKeepAlive.ONE_DAY = SecurityMonitoringRuleKeepAlive(86400)

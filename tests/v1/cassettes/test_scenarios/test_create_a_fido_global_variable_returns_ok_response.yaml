@@ -1,9 +1,9 @@
 interactions:
 - request:
-    body: '{"config":{"configVariables":[{"example":"content-type","name":"PROPERTY","pattern":"content-type","type":"text"}],"steps":[{"allowFailure":true,"assertions":[{"operator":"is","target":200,"type":"statusCode"}],"exitIfSucceed":true,"extractedValues":[{"field":"server","name":"EXTRACTED_VALUE","parser":{"type":"raw"},"secure":true,"type":"http_header"}],"isCritical":true,"name":"request
-      is sent","request":{"httpVersion":"http2","method":"GET","timeout":10,"url":"https://datadoghq.com"},"retry":{"count":5,"interval":1000},"subtype":"http"},{"name":"Wait","subtype":"wait","value":1},{"allowFailure":false,"assertions":[{"operator":"lessThan","target":1000,"type":"responseTime"}],"extractedValues":[],"isCritical":true,"name":"GRPC
+    body: '{"config":{"configVariables":[{"example":"content-type","name":"PROPERTY","pattern":"content-type","type":"text"}],"steps":[{"allowFailure":true,"assertions":[{"operator":"is","target":200,"type":"statusCode"}],"exitIfSucceed":true,"extractedValues":[{"field":"server","name":"EXTRACTED_VALUE","parser":{"type":"raw"},"secure":true,"type":"http_header"}],"extractedValuesFromScript":"dd.variable.set(''STATUS_CODE'',
+      dd.response.statusCode);","isCritical":true,"name":"request is sent","request":{"httpVersion":"http2","method":"GET","timeout":10,"url":"https://datadoghq.com"},"retry":{"count":5,"interval":1000},"subtype":"http"},{"name":"Wait","subtype":"wait","value":1},{"allowFailure":false,"assertions":[{"operator":"lessThan","target":1000,"type":"responseTime"}],"extractedValues":[],"isCritical":true,"name":"GRPC
       CALL","request":{"callType":"unary","compressedJsonDescriptor":"eJy1lU1z2yAQhv+Lzj74I3ETH506bQ7OZOSm1w4Wa4epBARQppqM/3v5koCJJdvtxCdW77vPssCO3zMKUgHOFu/ZXvBiS6hZho/f8qe7pftYgXphWJrlA8XwxywEvNba+6PhkC2yVcVVswYp0R6ykRYlZ1SCV21SDrxsssPIeS9FJKqGfK2rqnmmSBwhWa2XlKgtaQPiDcRGCUDVfwGD2sKUqKEtc1cSoOrsMlaMOec1sySYCCgUYRSVLv2zSva2u+FQkB0pVkIw8bFuIudOOn3pOaKYVT3Iy97Pd0AYhOx5QcMsnxvRHlnuLf8ETDd3CNtrv2nejkDpRnANCmGkkFn/hsYzpBKE7jVbufgnKnV9HRM9zRPDDKPttYT61n0TdWkAAjggk9AhuxIeaXd69CYTcsGw7cBTakLVbNpRzGEgyWjkSOpMbZXkhGL6oX30R49qt3GoHrap7i0XdD41WQ+2icCNm5p1hmFqnHNlcla0riKmDZ183crDxChjbnurtxHPRE784sVhWvDfGP+SsTKibU3o5NtWHuZFGZOxP6P5VXqIOvaOSec4eYohyd7NslHuJbd1bewds85xYrNxkr2d+5IhFWF3NvaO684xjE2S5ulY+tu64Pna0fCPJgzw6vF5/WucLcYjt5xoq19O3UDptOg/OamJQRaCcPPnMTQ2QDFn+uhPvUfnCrMc99upyQY4Ui9Dlc/YoG3R/v4Cs9YE+g==","host":"grpcbin.test.k6.io","message":"{}","metadata":{},"method":"Index","port":9000,"service":"grpcbin.GRPCBin"},"retry":{"count":0,"interval":300},"subtype":"grpc"}]},"locations":["aws:us-east-2"],"message":"BDD
-      test payload: synthetics_api_test_multi_step_payload.json","name":"Test-Create_a_FIDO_global_variable_returns_OK_response-1733743057","options":{"accept_self_signed":false,"allow_insecure":true,"follow_redirects":true,"min_failure_duration":10,"min_location_failed":1,"monitor_name":"Test-Create_a_FIDO_global_variable_returns_OK_response-1733743057","monitor_priority":5,"retry":{"count":3,"interval":1000},"tick_every":60},"subtype":"multi","tags":["testing:api"],"type":"api"}'
+      test payload: synthetics_api_test_multi_step_payload.json","name":"Test-Create_a_FIDO_global_variable_returns_OK_response-1740501263","options":{"accept_self_signed":false,"allow_insecure":true,"follow_redirects":true,"min_failure_duration":10,"min_location_failed":1,"monitor_name":"Test-Create_a_FIDO_global_variable_returns_OK_response-1740501263","monitor_priority":5,"retry":{"count":3,"interval":1000},"tick_every":60},"subtype":"multi","tags":["testing:api"],"type":"api"}'
     headers:
       accept:
       - application/json
@@ -13,10 +13,12 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/synthetics/tests/api
   response:
     body:
-      string: '{"public_id":"2ym-xig-di5","name":"Test-Create_a_FIDO_global_variable_returns_OK_response-1733743057","status":"live","type":"api","subtype":"multi","tags":["testing:api"],"created_at":"2024-12-09T11:17:38.620924+00:00","modified_at":"2024-12-09T11:17:38.620924+00:00","config":{"configVariables":[{"example":"content-type","name":"PROPERTY","pattern":"content-type","type":"text"}],"steps":[{"allowFailure":true,"assertions":[{"operator":"is","target":200,"type":"statusCode"}],"exitIfSucceed":true,"extractedValues":[{"field":"server","name":"EXTRACTED_VALUE","parser":{"type":"raw"},"secure":true,"type":"http_header"}],"isCritical":true,"name":"request
-        is sent","request":{"httpVersion":"http2","method":"GET","timeout":10,"url":"https://datadoghq.com"},"retry":{"count":5,"interval":1000},"subtype":"http","id":"669-hdh-vh3"},{"name":"Wait","subtype":"wait","value":1,"id":"hkh-v6r-ddp"},{"allowFailure":false,"assertions":[{"operator":"lessThan","target":1000,"type":"responseTime"}],"extractedValues":[],"isCritical":true,"name":"GRPC
-        CALL","request":{"callType":"unary","compressedJsonDescriptor":"eJy1lU1z2yAQhv+Lzj74I3ETH506bQ7OZOSm1w4Wa4epBARQppqM/3v5koCJJdvtxCdW77vPssCO3zMKUgHOFu/ZXvBiS6hZho/f8qe7pftYgXphWJrlA8XwxywEvNba+6PhkC2yVcVVswYp0R6ykRYlZ1SCV21SDrxsssPIeS9FJKqGfK2rqnmmSBwhWa2XlKgtaQPiDcRGCUDVfwGD2sKUqKEtc1cSoOrsMlaMOec1sySYCCgUYRSVLv2zSva2u+FQkB0pVkIw8bFuIudOOn3pOaKYVT3Iy97Pd0AYhOx5QcMsnxvRHlnuLf8ETDd3CNtrv2nejkDpRnANCmGkkFn/hsYzpBKE7jVbufgnKnV9HRM9zRPDDKPttYT61n0TdWkAAjggk9AhuxIeaXd69CYTcsGw7cBTakLVbNpRzGEgyWjkSOpMbZXkhGL6oX30R49qt3GoHrap7i0XdD41WQ+2icCNm5p1hmFqnHNlcla0riKmDZ183crDxChjbnurtxHPRE784sVhWvDfGP+SsTKibU3o5NtWHuZFGZOxP6P5VXqIOvaOSec4eYohyd7NslHuJbd1bewds85xYrNxkr2d+5IhFWF3NvaO684xjE2S5ulY+tu64Pna0fCPJgzw6vF5/WucLcYjt5xoq19O3UDptOg/OamJQRaCcPPnMTQ2QDFn+uhPvUfnCrMc99upyQY4Ui9Dlc/YoG3R/v4Cs9YE+g==","host":"grpcbin.test.k6.io","message":"{}","metadata":{},"method":"Index","port":9000,"service":"grpcbin.GRPCBin"},"retry":{"count":0,"interval":300},"subtype":"grpc","id":"6w8-xwm-qki"}]},"message":"BDD
-        test payload: synthetics_api_test_multi_step_payload.json","options":{"accept_self_signed":false,"allow_insecure":true,"follow_redirects":true,"min_failure_duration":10,"min_location_failed":1,"monitor_name":"Test-Create_a_FIDO_global_variable_returns_OK_response-1733743057","monitor_priority":5,"retry":{"count":3,"interval":1000},"tick_every":60},"locations":["aws:us-east-2"],"created_by":{"name":null,"handle":"frog@datadoghq.com","email":"frog@datadoghq.com"},"deleted_at":null,"monitor_id":159880989,"org_id":321813,"modified_by":{"name":null,"handle":"frog@datadoghq.com","email":"frog@datadoghq.com"}}'
+      string: '{"public_id":"rba-ta9-q2g","name":"Test-Create_a_FIDO_global_variable_returns_OK_response-1740501263","status":"live","type":"api","subtype":"multi","tags":["testing:api"],"created_at":"2025-02-25T16:34:24.599978+00:00","modified_at":"2025-02-25T16:34:24.599978+00:00","config":{"configVariables":[{"example":"content-type","name":"PROPERTY","pattern":"content-type","type":"text"}],"steps":[{"allowFailure":true,"assertions":[{"operator":"is","target":200,"type":"statusCode"}],"exitIfSucceed":true,"extractedValues":[{"field":"server","name":"EXTRACTED_VALUE","parser":{"type":"raw"},"secure":true,"type":"http_header"}],"extractedValuesFromScript":"dd.variable.set(''STATUS_CODE'',
+        dd.response.statusCode);","isCritical":true,"name":"request is sent","request":{"httpVersion":"http2","method":"GET","timeout":10,"url":"https://datadoghq.com"},"retry":{"count":5,"interval":1000},"subtype":"http","id":"7he-q78-rkr"},{"name":"Wait","subtype":"wait","value":1,"id":"rj2-fyu-8mg"},{"allowFailure":false,"assertions":[{"operator":"lessThan","target":1000,"type":"responseTime"}],"extractedValues":[],"isCritical":true,"name":"GRPC
+        CALL","request":{"callType":"unary","compressedJsonDescriptor":"eJy1lU1z2yAQhv+Lzj74I3ETH506bQ7OZOSm1w4Wa4epBARQppqM/3v5koCJJdvtxCdW77vPssCO3zMKUgHOFu/ZXvBiS6hZho/f8qe7pftYgXphWJrlA8XwxywEvNba+6PhkC2yVcVVswYp0R6ykRYlZ1SCV21SDrxsssPIeS9FJKqGfK2rqnmmSBwhWa2XlKgtaQPiDcRGCUDVfwGD2sKUqKEtc1cSoOrsMlaMOec1sySYCCgUYRSVLv2zSva2u+FQkB0pVkIw8bFuIudOOn3pOaKYVT3Iy97Pd0AYhOx5QcMsnxvRHlnuLf8ETDd3CNtrv2nejkDpRnANCmGkkFn/hsYzpBKE7jVbufgnKnV9HRM9zRPDDKPttYT61n0TdWkAAjggk9AhuxIeaXd69CYTcsGw7cBTakLVbNpRzGEgyWjkSOpMbZXkhGL6oX30R49qt3GoHrap7i0XdD41WQ+2icCNm5p1hmFqnHNlcla0riKmDZ183crDxChjbnurtxHPRE784sVhWvDfGP+SsTKibU3o5NtWHuZFGZOxP6P5VXqIOvaOSec4eYohyd7NslHuJbd1bewds85xYrNxkr2d+5IhFWF3NvaO684xjE2S5ulY+tu64Pna0fCPJgzw6vF5/WucLcYjt5xoq19O3UDptOg/OamJQRaCcPPnMTQ2QDFn+uhPvUfnCrMc99upyQY4Ui9Dlc/YoG3R/v4Cs9YE+g==","host":"grpcbin.test.k6.io","message":"{}","metadata":{},"method":"Index","port":9000,"service":"grpcbin.GRPCBin"},"retry":{"count":0,"interval":300},"subtype":"grpc","id":"5s9-wdd-awh"}]},"message":"BDD
+        test payload: synthetics_api_test_multi_step_payload.json","options":{"accept_self_signed":false,"allow_insecure":true,"follow_redirects":true,"min_failure_duration":10,"min_location_failed":1,"monitor_name":"Test-Create_a_FIDO_global_variable_returns_OK_response-1740501263","monitor_priority":5,"retry":{"count":3,"interval":1000},"tick_every":60},"locations":["aws:us-east-2"],"created_by":{"name":"CI
+        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","email":"team-intg-tools-libs-spam@datadoghq.com"},"deleted_at":null,"monitor_id":165393053,"org_id":321813,"modified_by":{"name":"CI
+        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","email":"team-intg-tools-libs-spam@datadoghq.com"}}'
     headers:
       content-type:
       - application/json
@@ -24,7 +26,7 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"description":"","is_fido":true,"name":"GLOBAL_VARIABLE_FIDO_PAYLOAD_TESTCREATEAFIDOGLOBALVARIABLERETURNSOKRESPONSE1733743057","tags":[]}'
+    body: '{"description":"","is_fido":true,"name":"GLOBAL_VARIABLE_FIDO_PAYLOAD_TESTCREATEAFIDOGLOBALVARIABLERETURNSOKRESPONSE1740501263","tags":[]}'
     headers:
       accept:
       - application/json
@@ -34,7 +36,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/synthetics/variables
   response:
     body:
-      string: '{"id":"7e732043-f247-41d4-adff-ccf1624107b7","name":"GLOBAL_VARIABLE_FIDO_PAYLOAD_TESTCREATEAFIDOGLOBALVARIABLERETURNSOKRESPONSE1733743057","description":"","type":"variable","tags":[],"last_error":null,"is_fido":true,"value":{"secure":true}}
+      string: '{"id":"8cf7404b-d839-4a30-b86e-02158c90d20e","name":"GLOBAL_VARIABLE_FIDO_PAYLOAD_TESTCREATEAFIDOGLOBALVARIABLERETURNSOKRESPONSE1740501263","description":"","type":"variable","tags":[],"last_error":null,"is_fido":true,"value":{"secure":true}}
 
         '
     headers:
@@ -49,7 +51,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/synthetics/variables/7e732043-f247-41d4-adff-ccf1624107b7
+    uri: https://api.datadoghq.com/api/v1/synthetics/variables/8cf7404b-d839-4a30-b86e-02158c90d20e
   response:
     body:
       string: ''
@@ -60,7 +62,7 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"public_ids":["2ym-xig-di5"]}'
+    body: '{"public_ids":["rba-ta9-q2g"]}'
     headers:
       accept:
       - application/json
@@ -70,7 +72,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/synthetics/tests/delete
   response:
     body:
-      string: '{"deleted_tests":[{"public_id":"2ym-xig-di5","deleted_at":"2024-12-09T11:17:40.588357+00:00"}]}
+      string: '{"deleted_tests":[{"public_id":"rba-ta9-q2g","deleted_at":"2025-02-25T16:34:26.535007+00:00"}]}
 
         '
     headers:

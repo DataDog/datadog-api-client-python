@@ -58,7 +58,7 @@ class ServiceDefinitionsCreateRequest(ModelComposed):
         :type tier: str, optional
 
         :param type: The type of service.
-        :type type: ServiceDefinitionV2Dot2Type, optional
+        :type type: str, optional
 
         :param dd_team: Experimental feature. A Team handle that matches a Team in the Datadog Teams product.
         :type dd_team: str, optional

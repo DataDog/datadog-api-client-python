@@ -28,6 +28,8 @@ class MonitorsApi:
     notifies your team when a defined threshold has exceeded.
 
     For more information, see `Creating Monitors <https://docs.datadoghq.com/monitors/create/types/>`_.
+
+    **Note:** ``curl`` commands require `url encoding <https://curl.se/docs/url-syntax.html>`_.
     """
 
     def __init__(self, api_client=None):

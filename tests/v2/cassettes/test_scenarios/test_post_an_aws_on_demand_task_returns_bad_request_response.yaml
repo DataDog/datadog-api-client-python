@@ -1,0 +1,21 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"arn":"invalid-arn"},"type":"aws_resource"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/agentless_scanning/ondemand/aws
+  response:
+    body:
+      string: '{"errors":[{"title":"Generic Error","detail":"invalid aws resource
+        arn"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 400
+      message: Bad Request
+version: 1

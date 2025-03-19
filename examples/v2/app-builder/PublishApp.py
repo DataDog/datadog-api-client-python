@@ -10,7 +10,6 @@ from datadog_api_client.v2.api.app_builder_api import AppBuilderApi
 APP_DATA_ID = environ["APP_DATA_ID"]
 
 configuration = Configuration()
-configuration.unstable_operations["publish_app"] = True
 with ApiClient(configuration) as api_client:
     api_instance = AppBuilderApi(api_client)
     response = api_instance.publish_app(

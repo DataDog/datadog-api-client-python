@@ -5,6 +5,7 @@ from datadog_api_client.v2.api.aws_logs_integration_api import AWSLogsIntegratio
 from datadog_api_client.v2.api.action_connection_api import ActionConnectionApi
 from datadog_api_client.v2.api.agentless_scanning_api import AgentlessScanningApi
 from datadog_api_client.v2.api.app_builder_api import AppBuilderApi
+from datadog_api_client.v2.api.application_security_api import ApplicationSecurityApi
 from datadog_api_client.v2.api.audit_api import AuditApi
 from datadog_api_client.v2.api.authn_mappings_api import AuthNMappingsApi
 from datadog_api_client.v2.api.ci_visibility_pipelines_api import CIVisibilityPipelinesApi
@@ -48,6 +49,7 @@ from datadog_api_client.v2.api.rum_api import RUMApi
 from datadog_api_client.v2.api.restriction_policies_api import RestrictionPoliciesApi
 from datadog_api_client.v2.api.roles_api import RolesApi
 from datadog_api_client.v2.api.rum_metrics_api import RumMetricsApi
+from datadog_api_client.v2.api.rum_retention_filters_api import RumRetentionFiltersApi
 from datadog_api_client.v2.api.security_monitoring_api import SecurityMonitoringApi
 from datadog_api_client.v2.api.sensitive_data_scanner_api import SensitiveDataScannerApi
 from datadog_api_client.v2.api.service_accounts_api import ServiceAccountsApi
@@ -72,6 +74,7 @@ __all__ = [
     "ActionConnectionApi",
     "AgentlessScanningApi",
     "AppBuilderApi",
+    "ApplicationSecurityApi",
     "AuditApi",
     "AuthNMappingsApi",
     "CIVisibilityPipelinesApi",
@@ -115,6 +118,7 @@ __all__ = [
     "RestrictionPoliciesApi",
     "RolesApi",
     "RumMetricsApi",
+    "RumRetentionFiltersApi",
     "SecurityMonitoringApi",
     "SensitiveDataScannerApi",
     "ServiceAccountsApi",

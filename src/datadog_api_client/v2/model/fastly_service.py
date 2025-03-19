@@ -30,7 +30,7 @@ class FastlyService(ModelNormal):
         """
         The schema representation of a Fastly service.
 
-        :param id: The id of the Fastly service
+        :param id: The ID of the Fastly service
         :type id: str
 
         :param tags: A list of tags for the Fastly service.

@@ -695,7 +695,7 @@ class UsageSummaryResponse(ModelNormal):
         :param cspm_container_avg_sum: Shows the average number of Cloud Security Management Pro containers over all hours in the current month for all organizations.
         :type cspm_container_avg_sum: int, optional
 
-        :param cspm_container_hwm_sum: Shows the sum of the the high-water marks of Cloud Security Management Pro containers over all hours in the current month for all organizations.
+        :param cspm_container_hwm_sum: Shows the sum of the high-water marks of Cloud Security Management Pro containers over all hours in the current month for all organizations.
         :type cspm_container_hwm_sum: int, optional
 
         :param cspm_gcp_host_top99p_sum: Shows the 99th percentile of all Cloud Security Management Pro GCP hosts over all hours in the current month for all organizations.
@@ -827,7 +827,7 @@ class UsageSummaryResponse(ModelNormal):
         :param heroku_host_top99p_sum: Shows the 99th percentile of all Heroku dynos over all hours in the current month for all organizations.
         :type heroku_host_top99p_sum: int, optional
 
-        :param incident_management_monthly_active_users_hwm_sum: Shows sum of the the high-water marks of incident management monthly active users in the current month for all organizations.
+        :param incident_management_monthly_active_users_hwm_sum: Shows sum of the high-water marks of incident management monthly active users in the current month for all organizations.
         :type incident_management_monthly_active_users_hwm_sum: int, optional
 
         :param indexed_events_count_agg_sum: Shows the sum of all log events indexed over all hours in the current month for all organizations (To be deprecated on October 1st, 2024). **Deprecated**.
@@ -845,7 +845,7 @@ class UsageSummaryResponse(ModelNormal):
         :param iot_device_top99p_sum: Shows the 99th percentile of all IoT devices over all hours in the current month of all organizations.
         :type iot_device_top99p_sum: int, optional
 
-        :param last_updated: Shows the the most recent hour in the current month for all organizations for which all usages were calculated.
+        :param last_updated: Shows the most recent hour in the current month for all organizations for which all usages were calculated.
         :type last_updated: datetime, optional
 
         :param live_indexed_events_agg_sum: Shows the sum of all live logs indexed over all hours in the current month for all organization (To be deprecated on October 1st, 2024). **Deprecated**.

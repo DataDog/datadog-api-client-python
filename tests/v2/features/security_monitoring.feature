@@ -201,6 +201,16 @@ Feature: Security Monitoring
     And the response "thirdPartyCases[0].query" is equal to "status:error"
 
   @skip-validation @team:DataDog/k9-cloud-security-platform
+  Scenario: Create a detection rule with type 'application_security 'returns "OK" response
+    Given new "CreateSecurityMonitoringRule" request
+    And body with value {"type":"application_security","name":"{{unique}}_appsec_rule","queries":[{"query":"@appsec.security_activity:business_logic.users.login.failure","aggregation":"count","groupByFields":["service","@http.client_ip"],"distinctFields":[]}],"filters":[],"cases":[{"name":"","status":"info","notifications":[],"condition":"a > 100000","actions":[{"type":"block_ip","options":{"duration":900}}]}],"options":{"keepAlive":3600,"maxSignalDuration":86400,"evaluationWindow":900,"detectionMethod":"threshold"},"isEnabled":true,"message":"Test rule","tags":[],"groupSignalsBy":["service"]}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "name" is equal to "{{ unique }}_appsec_rule"
+    And the response "type" is equal to "application_security"
+    And the response "message" is equal to "Test rule"
+
+  @skip-validation @team:DataDog/k9-cloud-security-platform
   Scenario: Create a detection rule with type 'impossible_travel' returns "OK" response
     Given new "CreateSecurityMonitoringRule" request
     And body with value {"queries":[{"aggregation":"geo_data","groupByFields":["@usr.id"],"distinctFields":[],"metric":"@network.client.geoip","query":"*"}],"cases":[{"name":"","status":"info","notifications":[]}],"hasExtendedTitle":true,"message":"test","isEnabled":true,"options":{"maxSignalDuration":86400,"evaluationWindow":900,"keepAlive":3600,"detectionMethod":"impossible_travel","impossibleTravelOptions":{"baselineUserLocations":false}},"name":"{{ unique }}","type":"log_detection","tags":[],"filters":[]}
@@ -447,7 +457,8 @@ Feature: Security Monitoring
 
   @generated @skip @team:DataDog/asm-vm
   Scenario: Get SBOM returns "Bad request: The server cannot process the request due to invalid syntax in the request." response
-    Given new "GetSBOM" request
+    Given operation "GetSBOM" enabled
+    And new "GetSBOM" request
     And request contains "asset_type" parameter from "REPLACE.ME"
     And request contains "filter[asset_name]" parameter from "REPLACE.ME"
     When the request is sent
@@ -455,15 +466,17 @@ Feature: Security Monitoring
 
   @team:DataDog/asm-vm
   Scenario: Get SBOM returns "Not found: asset not found" response
-    Given new "GetSBOM" request
+    Given operation "GetSBOM" enabled
+    And new "GetSBOM" request
     And request contains "asset_type" parameter with value "Host"
     And request contains "filter[asset_name]" parameter with value "unknown-host"
     When the request is sent
     Then the response status is 404 Not found: asset not found
 
-  @team:DataDog/asm-vm
+  @skip @team:DataDog/asm-vm
   Scenario: Get SBOM returns "OK" response
-    Given new "GetSBOM" request
+    Given operation "GetSBOM" enabled
+    And new "GetSBOM" request
     And request contains "asset_type" parameter with value "Repository"
     And request contains "filter[asset_name]" parameter with value "github.com/datadog/datadog-agent"
     When the request is sent
@@ -590,6 +603,30 @@ Feature: Security Monitoring
     And the response "id" has the same value as "security_rule.id"
 
   @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Get a rule's version history returns "Bad Request" response
+    Given operation "GetRuleVersionHistory" enabled
+    And new "GetRuleVersionHistory" request
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Get a rule's version history returns "Not Found" response
+    Given operation "GetRuleVersionHistory" enabled
+    And new "GetRuleVersionHistory" request
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Get a rule's version history returns "OK" response
+    Given operation "GetRuleVersionHistory" enabled
+    And new "GetRuleVersionHistory" request
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
   Scenario: Get a security filter returns "Not Found" response
     Given new "GetSecurityFilter" request
     And request contains "security_filter_id" parameter from "REPLACE.ME"
@@ -698,6 +735,19 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 Notification rule details.
 
+  @skip-go @skip-java @skip-ruby @team:DataDog/k9-cloud-security-platform
+  Scenario: Get rule version history returns "OK" response
+    Given operation "GetRuleVersionHistory" enabled
+    And new "GetRuleVersionHistory" request
+    And there is a valid "security_rule" in the system
+    And request contains "rule_id" parameter from "security_rule.id"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.id" has the same value as "security_rule.id"
+    And the response "data.type" is equal to "GetRuleVersionHistoryResponse"
+    And the response "data.attributes.count" is equal to 1
+    And the response "data.attributes.data[1].rule.name" has the same value as "security_rule.name"
+
   @team:DataDog/cloud-security-posture-management
   Scenario: Get the list of signal-based notification rules returns "The list of notification rules." response
     Given there is a valid "valid_signal_notification_rule" in the system
@@ -780,13 +830,15 @@ Feature: Security Monitoring
 
   @generated @skip @team:DataDog/asm-vm
   Scenario: List vulnerabilities returns "Bad request: The server cannot process the request due to invalid syntax in the request." response
-    Given new "ListVulnerabilities" request
+    Given operation "ListVulnerabilities" enabled
+    And new "ListVulnerabilities" request
     When the request is sent
     Then the response status is 400 Bad request: The server cannot process the request due to invalid syntax in the request.
 
   @team:DataDog/asm-vm
   Scenario: List vulnerabilities returns "Not found: There is no request associated with the provided token." response
-    Given new "ListVulnerabilities" request
+    Given operation "ListVulnerabilities" enabled
+    And new "ListVulnerabilities" request
     And request contains "page[token]" parameter with value "unknown"
     And request contains "page[number]" parameter with value 1
     When the request is sent
@@ -794,7 +846,8 @@ Feature: Security Monitoring
 
   @team:DataDog/asm-vm
   Scenario: List vulnerabilities returns "OK" response
-    Given new "ListVulnerabilities" request
+    Given operation "ListVulnerabilities" enabled
+    And new "ListVulnerabilities" request
     And request contains "filter[cvss.base.severity]" parameter with value "High"
     And request contains "filter[asset.type]" parameter with value "Service"
     And request contains "filter[tool]" parameter with value "Infra"
@@ -803,13 +856,15 @@ Feature: Security Monitoring
 
   @generated @skip @team:DataDog/asm-vm
   Scenario: List vulnerable assets returns "Bad request: The server cannot process the request due to invalid syntax in the request." response
-    Given new "ListVulnerableAssets" request
+    Given operation "ListVulnerableAssets" enabled
+    And new "ListVulnerableAssets" request
     When the request is sent
     Then the response status is 400 Bad request: The server cannot process the request due to invalid syntax in the request.
 
   @team:DataDog/asm-vm
   Scenario: List vulnerable assets returns "Not found: There is no request associated with the provided token." response
-    Given new "ListVulnerableAssets" request
+    Given operation "ListVulnerableAssets" enabled
+    And new "ListVulnerableAssets" request
     And request contains "page[token]" parameter with value "unknown"
     And request contains "page[number]" parameter with value 1
     When the request is sent
@@ -817,7 +872,8 @@ Feature: Security Monitoring
 
   @team:DataDog/asm-vm
   Scenario: List vulnerable assets returns "OK" response
-    Given new "ListVulnerableAssets" request
+    Given operation "ListVulnerableAssets" enabled
+    And new "ListVulnerableAssets" request
     And request contains "filter[type]" parameter with value "Host"
     And request contains "filter[repository_url]" parameter with value "github.com/datadog/dd-go"
     And request contains "filter[risks.in_production]" parameter with value true

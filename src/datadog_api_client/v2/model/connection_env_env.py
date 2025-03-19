@@ -12,22 +12,18 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class QueryType(ModelSimple):
+class ConnectionEnvEnv(ModelSimple):
     """
-    The query type.
+    The definition of `ConnectionEnvEnv` object.
 
-    :param value: Must be one of ["action", "stateVariable", "dataTransform"].
+    :param value: If omitted defaults to "default". Must be one of ["default"].
     :type value: str
     """
 
     allowed_values = {
-        "action",
-        "stateVariable",
-        "dataTransform",
+        "default",
     }
-    ACTION: ClassVar["QueryType"]
-    STATEVARIABLE: ClassVar["QueryType"]
-    DATATRANSFORM: ClassVar["QueryType"]
+    DEFAULT: ClassVar["ConnectionEnvEnv"]
 
     @cached_property
     def openapi_types(_):
@@ -36,6 +32,4 @@ class QueryType(ModelSimple):
         }
 
 
-QueryType.ACTION = QueryType("action")
-QueryType.STATEVARIABLE = QueryType("stateVariable")
-QueryType.DATATRANSFORM = QueryType("dataTransform")
+ConnectionEnvEnv.DEFAULT = ConnectionEnvEnv("default")

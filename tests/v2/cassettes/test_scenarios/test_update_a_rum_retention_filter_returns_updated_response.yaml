@@ -1,0 +1,22 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"enabled":true,"event_type":"view","name":"Test
+      updating retention filter","query":"view_query","sample_rate":100},"id":"4b95d361-f65d-4515-9824-c9aaeba5ac2a","type":"retention_filters"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/rum/applications/a33671aa-24fd-4dcd-ba4b-5bbdbafe7690/retention_filters/4b95d361-f65d-4515-9824-c9aaeba5ac2a
+  response:
+    body:
+      string: '{"data":{"id":"4b95d361-f65d-4515-9824-c9aaeba5ac2a","type":"retention_filters","attributes":{"enabled":true,"event_type":"view","name":"Test
+        updating retention filter","query":"view_query","sample_rate":100}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1

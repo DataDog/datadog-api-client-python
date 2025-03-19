@@ -36,6 +36,49 @@
       "type": "safe"
     }
   },
+  "CreateAwsScanOptions": {
+    "tag": "Agentless Scanning",
+    "undo": {
+      "operationId": "DeleteAwsScanOptions",
+      "parameters": [
+        {
+          "name": "account_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteAwsScanOptions": {
+    "tag": "Agentless Scanning",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateAwsScanOptions": {
+    "tag": "Agentless Scanning",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListAwsOnDemandTasks": {
+    "tag": "Agentless Scanning",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateAwsOnDemandTask": {
+    "tag": "Agentless Scanning",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetAwsOnDemandTask": {
+    "tag": "Agentless Scanning",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListAPIKeys": {
     "tag": "Key Management",
     "undo": {
@@ -1798,6 +1841,80 @@
       "type": "idempotent"
     }
   },
+  "ListApplicationSecurityWAFCustomRules": {
+    "tag": "Application Security",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateApplicationSecurityWafCustomRule": {
+    "tag": "Application Security",
+    "undo": {
+      "operationId": "DeleteApplicationSecurityWafCustomRule",
+      "parameters": [
+        {
+          "name": "custom_rule_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteApplicationSecurityWafCustomRule": {
+    "tag": "Application Security",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetApplicationSecurityWafCustomRule": {
+    "tag": "Application Security",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateApplicationSecurityWafCustomRule": {
+    "tag": "Application Security",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListApplicationSecurityWafExclusionFilters": {
+    "tag": "Application Security",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateApplicationSecurityWafExclusionFilter": {
+    "tag": "Application Security",
+    "undo": {
+      "operationId": "DeleteApplicationSecurityWafExclusionFilter",
+      "parameters": [
+        {
+          "name": "exclusion_filter_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteApplicationSecurityWafExclusionFilter": {
+    "tag": "Application Security",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetApplicationSecurityWafExclusionFilter": {
+    "tag": "Application Security",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateApplicationSecurityWafExclusionFilter": {
+    "tag": "Application Security",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListCSMThreatsAgentRules": {
     "tag": "CSM Threats",
     "undo": {
@@ -1968,6 +2085,42 @@
         }
       ],
       "type": "unsafe"
+    }
+  },
+  "OrderRetentionFilters": {
+    "tag": "Rum Retention Filters",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListRetentionFilters": {
+    "tag": "Rum Retention Filters",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateRetentionFilter": {
+    "tag": "Rum Retention Filters",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "DeleteRetentionFilter": {
+    "tag": "Rum Retention Filters",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetRetentionFilter": {
+    "tag": "Rum Retention Filters",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateRetentionFilter": {
+    "tag": "Rum Retention Filters",
+    "undo": {
+      "type": "idempotent"
     }
   },
   "DeleteRUMApplication": {
@@ -2360,6 +2513,12 @@
     "tag": "Security Monitoring",
     "undo": {
       "type": "idempotent"
+    }
+  },
+  "GetRuleVersionHistory": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
     }
   },
   "ListSecurityMonitoringSignals": {
@@ -2968,6 +3127,37 @@
     "tag": "Teams",
     "undo": {
       "type": "safe"
+    }
+  },
+  "CreateWorkflow": {
+    "tag": "Workflow Automation",
+    "undo": {
+      "operationId": "DeleteWorkflow",
+      "parameters": [
+        {
+          "name": "workflow_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteWorkflow": {
+    "tag": "Workflow Automation",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetWorkflow": {
+    "tag": "Workflow Automation",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateWorkflow": {
+    "tag": "Workflow Automation",
+    "undo": {
+      "type": "idempotent"
     }
   },
   "ListWorkflowInstances": {

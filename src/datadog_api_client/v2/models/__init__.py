@@ -13,6 +13,8 @@ from datadog_api_client.v2.model.api_keys_response_meta import APIKeysResponseMe
 from datadog_api_client.v2.model.api_keys_response_meta_page import APIKeysResponseMetaPage
 from datadog_api_client.v2.model.api_keys_sort import APIKeysSort
 from datadog_api_client.v2.model.api_keys_type import APIKeysType
+from datadog_api_client.v2.model.api_trigger import APITrigger
+from datadog_api_client.v2.model.api_trigger_wrapper import APITriggerWrapper
 from datadog_api_client.v2.model.aws_account_create_request import AWSAccountCreateRequest
 from datadog_api_client.v2.model.aws_account_create_request_attributes import AWSAccountCreateRequestAttributes
 from datadog_api_client.v2.model.aws_account_create_request_data import AWSAccountCreateRequestData
@@ -60,6 +62,7 @@ from datadog_api_client.v2.model.aws_regions_include_all import AWSRegionsInclud
 from datadog_api_client.v2.model.aws_regions_include_only import AWSRegionsIncludeOnly
 from datadog_api_client.v2.model.aws_resources_config import AWSResourcesConfig
 from datadog_api_client.v2.model.aws_traces_config import AWSTracesConfig
+from datadog_api_client.v2.model.account_filtering_config import AccountFilteringConfig
 from datadog_api_client.v2.model.action_connection_attributes import ActionConnectionAttributes
 from datadog_api_client.v2.model.action_connection_attributes_update import ActionConnectionAttributesUpdate
 from datadog_api_client.v2.model.action_connection_data import ActionConnectionData
@@ -67,11 +70,32 @@ from datadog_api_client.v2.model.action_connection_data_type import ActionConnec
 from datadog_api_client.v2.model.action_connection_data_update import ActionConnectionDataUpdate
 from datadog_api_client.v2.model.action_connection_integration import ActionConnectionIntegration
 from datadog_api_client.v2.model.action_connection_integration_update import ActionConnectionIntegrationUpdate
+from datadog_api_client.v2.model.action_query import ActionQuery
+from datadog_api_client.v2.model.action_query_condition import ActionQueryCondition
+from datadog_api_client.v2.model.action_query_debounce_in_ms import ActionQueryDebounceInMs
+from datadog_api_client.v2.model.action_query_mocked_outputs import ActionQueryMockedOutputs
+from datadog_api_client.v2.model.action_query_mocked_outputs_enabled import ActionQueryMockedOutputsEnabled
+from datadog_api_client.v2.model.action_query_mocked_outputs_object import ActionQueryMockedOutputsObject
+from datadog_api_client.v2.model.action_query_only_trigger_manually import ActionQueryOnlyTriggerManually
+from datadog_api_client.v2.model.action_query_polling_interval_in_ms import ActionQueryPollingIntervalInMs
+from datadog_api_client.v2.model.action_query_properties import ActionQueryProperties
+from datadog_api_client.v2.model.action_query_requires_confirmation import ActionQueryRequiresConfirmation
+from datadog_api_client.v2.model.action_query_show_toast_on_error import ActionQueryShowToastOnError
+from datadog_api_client.v2.model.action_query_spec import ActionQuerySpec
+from datadog_api_client.v2.model.action_query_spec_connection_group import ActionQuerySpecConnectionGroup
+from datadog_api_client.v2.model.action_query_spec_input import ActionQuerySpecInput
+from datadog_api_client.v2.model.action_query_spec_inputs import ActionQuerySpecInputs
+from datadog_api_client.v2.model.action_query_spec_object import ActionQuerySpecObject
+from datadog_api_client.v2.model.action_query_type import ActionQueryType
 from datadog_api_client.v2.model.active_billing_dimensions_attributes import ActiveBillingDimensionsAttributes
 from datadog_api_client.v2.model.active_billing_dimensions_body import ActiveBillingDimensionsBody
 from datadog_api_client.v2.model.active_billing_dimensions_response import ActiveBillingDimensionsResponse
 from datadog_api_client.v2.model.active_billing_dimensions_type import ActiveBillingDimensionsType
 from datadog_api_client.v2.model.advisory import Advisory
+from datadog_api_client.v2.model.annotation import Annotation
+from datadog_api_client.v2.model.annotation_display import AnnotationDisplay
+from datadog_api_client.v2.model.annotation_display_bounds import AnnotationDisplayBounds
+from datadog_api_client.v2.model.annotation_markdown_text_annotation import AnnotationMarkdownTextAnnotation
 from datadog_api_client.v2.model.apm_retention_filter_type import ApmRetentionFilterType
 from datadog_api_client.v2.model.app_builder_event import AppBuilderEvent
 from datadog_api_client.v2.model.app_builder_event_name import AppBuilderEventName
@@ -80,6 +104,7 @@ from datadog_api_client.v2.model.app_definition_type import AppDefinitionType
 from datadog_api_client.v2.model.app_deployment_type import AppDeploymentType
 from datadog_api_client.v2.model.app_meta import AppMeta
 from datadog_api_client.v2.model.app_relationship import AppRelationship
+from datadog_api_client.v2.model.app_trigger_wrapper import AppTriggerWrapper
 from datadog_api_client.v2.model.application_key_create_attributes import ApplicationKeyCreateAttributes
 from datadog_api_client.v2.model.application_key_create_data import ApplicationKeyCreateData
 from datadog_api_client.v2.model.application_key_create_request import ApplicationKeyCreateRequest
@@ -93,6 +118,118 @@ from datadog_api_client.v2.model.application_key_update_data import ApplicationK
 from datadog_api_client.v2.model.application_key_update_request import ApplicationKeyUpdateRequest
 from datadog_api_client.v2.model.application_keys_sort import ApplicationKeysSort
 from datadog_api_client.v2.model.application_keys_type import ApplicationKeysType
+from datadog_api_client.v2.model.application_security_waf_custom_rule_action import (
+    ApplicationSecurityWafCustomRuleAction,
+)
+from datadog_api_client.v2.model.application_security_waf_custom_rule_action_action import (
+    ApplicationSecurityWafCustomRuleActionAction,
+)
+from datadog_api_client.v2.model.application_security_waf_custom_rule_action_parameters import (
+    ApplicationSecurityWafCustomRuleActionParameters,
+)
+from datadog_api_client.v2.model.application_security_waf_custom_rule_attributes import (
+    ApplicationSecurityWafCustomRuleAttributes,
+)
+from datadog_api_client.v2.model.application_security_waf_custom_rule_condition import (
+    ApplicationSecurityWafCustomRuleCondition,
+)
+from datadog_api_client.v2.model.application_security_waf_custom_rule_condition_input import (
+    ApplicationSecurityWafCustomRuleConditionInput,
+)
+from datadog_api_client.v2.model.application_security_waf_custom_rule_condition_input_address import (
+    ApplicationSecurityWafCustomRuleConditionInputAddress,
+)
+from datadog_api_client.v2.model.application_security_waf_custom_rule_condition_operator import (
+    ApplicationSecurityWafCustomRuleConditionOperator,
+)
+from datadog_api_client.v2.model.application_security_waf_custom_rule_condition_options import (
+    ApplicationSecurityWafCustomRuleConditionOptions,
+)
+from datadog_api_client.v2.model.application_security_waf_custom_rule_condition_parameters import (
+    ApplicationSecurityWafCustomRuleConditionParameters,
+)
+from datadog_api_client.v2.model.application_security_waf_custom_rule_create_attributes import (
+    ApplicationSecurityWafCustomRuleCreateAttributes,
+)
+from datadog_api_client.v2.model.application_security_waf_custom_rule_create_data import (
+    ApplicationSecurityWafCustomRuleCreateData,
+)
+from datadog_api_client.v2.model.application_security_waf_custom_rule_create_request import (
+    ApplicationSecurityWafCustomRuleCreateRequest,
+)
+from datadog_api_client.v2.model.application_security_waf_custom_rule_data import ApplicationSecurityWafCustomRuleData
+from datadog_api_client.v2.model.application_security_waf_custom_rule_list_response import (
+    ApplicationSecurityWafCustomRuleListResponse,
+)
+from datadog_api_client.v2.model.application_security_waf_custom_rule_metadata import (
+    ApplicationSecurityWafCustomRuleMetadata,
+)
+from datadog_api_client.v2.model.application_security_waf_custom_rule_response import (
+    ApplicationSecurityWafCustomRuleResponse,
+)
+from datadog_api_client.v2.model.application_security_waf_custom_rule_scope import ApplicationSecurityWafCustomRuleScope
+from datadog_api_client.v2.model.application_security_waf_custom_rule_tags import ApplicationSecurityWafCustomRuleTags
+from datadog_api_client.v2.model.application_security_waf_custom_rule_tags_category import (
+    ApplicationSecurityWafCustomRuleTagsCategory,
+)
+from datadog_api_client.v2.model.application_security_waf_custom_rule_type import ApplicationSecurityWafCustomRuleType
+from datadog_api_client.v2.model.application_security_waf_custom_rule_update_attributes import (
+    ApplicationSecurityWafCustomRuleUpdateAttributes,
+)
+from datadog_api_client.v2.model.application_security_waf_custom_rule_update_data import (
+    ApplicationSecurityWafCustomRuleUpdateData,
+)
+from datadog_api_client.v2.model.application_security_waf_custom_rule_update_request import (
+    ApplicationSecurityWafCustomRuleUpdateRequest,
+)
+from datadog_api_client.v2.model.application_security_waf_exclusion_filter_attributes import (
+    ApplicationSecurityWafExclusionFilterAttributes,
+)
+from datadog_api_client.v2.model.application_security_waf_exclusion_filter_create_attributes import (
+    ApplicationSecurityWafExclusionFilterCreateAttributes,
+)
+from datadog_api_client.v2.model.application_security_waf_exclusion_filter_create_data import (
+    ApplicationSecurityWafExclusionFilterCreateData,
+)
+from datadog_api_client.v2.model.application_security_waf_exclusion_filter_create_request import (
+    ApplicationSecurityWafExclusionFilterCreateRequest,
+)
+from datadog_api_client.v2.model.application_security_waf_exclusion_filter_metadata import (
+    ApplicationSecurityWafExclusionFilterMetadata,
+)
+from datadog_api_client.v2.model.application_security_waf_exclusion_filter_on_match import (
+    ApplicationSecurityWafExclusionFilterOnMatch,
+)
+from datadog_api_client.v2.model.application_security_waf_exclusion_filter_resource import (
+    ApplicationSecurityWafExclusionFilterResource,
+)
+from datadog_api_client.v2.model.application_security_waf_exclusion_filter_response import (
+    ApplicationSecurityWafExclusionFilterResponse,
+)
+from datadog_api_client.v2.model.application_security_waf_exclusion_filter_rules_target import (
+    ApplicationSecurityWafExclusionFilterRulesTarget,
+)
+from datadog_api_client.v2.model.application_security_waf_exclusion_filter_rules_target_tags import (
+    ApplicationSecurityWafExclusionFilterRulesTargetTags,
+)
+from datadog_api_client.v2.model.application_security_waf_exclusion_filter_scope import (
+    ApplicationSecurityWafExclusionFilterScope,
+)
+from datadog_api_client.v2.model.application_security_waf_exclusion_filter_type import (
+    ApplicationSecurityWafExclusionFilterType,
+)
+from datadog_api_client.v2.model.application_security_waf_exclusion_filter_update_attributes import (
+    ApplicationSecurityWafExclusionFilterUpdateAttributes,
+)
+from datadog_api_client.v2.model.application_security_waf_exclusion_filter_update_data import (
+    ApplicationSecurityWafExclusionFilterUpdateData,
+)
+from datadog_api_client.v2.model.application_security_waf_exclusion_filter_update_request import (
+    ApplicationSecurityWafExclusionFilterUpdateRequest,
+)
+from datadog_api_client.v2.model.application_security_waf_exclusion_filters_response import (
+    ApplicationSecurityWafExclusionFiltersResponse,
+)
 from datadog_api_client.v2.model.apps_sort_field import AppsSortField
 from datadog_api_client.v2.model.asset import Asset
 from datadog_api_client.v2.model.asset_attributes import AssetAttributes
@@ -149,10 +286,25 @@ from datadog_api_client.v2.model.aws_cur_config_post_request_type import AwsCURC
 from datadog_api_client.v2.model.aws_cur_config_response import AwsCURConfigResponse
 from datadog_api_client.v2.model.aws_cur_config_type import AwsCURConfigType
 from datadog_api_client.v2.model.aws_cur_configs_response import AwsCURConfigsResponse
+from datadog_api_client.v2.model.aws_on_demand_attributes import AwsOnDemandAttributes
+from datadog_api_client.v2.model.aws_on_demand_create_attributes import AwsOnDemandCreateAttributes
+from datadog_api_client.v2.model.aws_on_demand_create_data import AwsOnDemandCreateData
+from datadog_api_client.v2.model.aws_on_demand_create_request import AwsOnDemandCreateRequest
+from datadog_api_client.v2.model.aws_on_demand_data import AwsOnDemandData
+from datadog_api_client.v2.model.aws_on_demand_list_response import AwsOnDemandListResponse
+from datadog_api_client.v2.model.aws_on_demand_response import AwsOnDemandResponse
+from datadog_api_client.v2.model.aws_on_demand_type import AwsOnDemandType
 from datadog_api_client.v2.model.aws_scan_options_attributes import AwsScanOptionsAttributes
+from datadog_api_client.v2.model.aws_scan_options_create_attributes import AwsScanOptionsCreateAttributes
+from datadog_api_client.v2.model.aws_scan_options_create_data import AwsScanOptionsCreateData
+from datadog_api_client.v2.model.aws_scan_options_create_request import AwsScanOptionsCreateRequest
 from datadog_api_client.v2.model.aws_scan_options_data import AwsScanOptionsData
+from datadog_api_client.v2.model.aws_scan_options_list_response import AwsScanOptionsListResponse
 from datadog_api_client.v2.model.aws_scan_options_response import AwsScanOptionsResponse
 from datadog_api_client.v2.model.aws_scan_options_type import AwsScanOptionsType
+from datadog_api_client.v2.model.aws_scan_options_update_attributes import AwsScanOptionsUpdateAttributes
+from datadog_api_client.v2.model.aws_scan_options_update_data import AwsScanOptionsUpdateData
+from datadog_api_client.v2.model.aws_scan_options_update_request import AwsScanOptionsUpdateRequest
 from datadog_api_client.v2.model.azure_uc_config import AzureUCConfig
 from datadog_api_client.v2.model.azure_uc_config_pair import AzureUCConfigPair
 from datadog_api_client.v2.model.azure_uc_config_pair_attributes import AzureUCConfigPairAttributes
@@ -297,6 +449,8 @@ from datadog_api_client.v2.model.case_resource_type import CaseResourceType
 from datadog_api_client.v2.model.case_response import CaseResponse
 from datadog_api_client.v2.model.case_sortable_field import CaseSortableField
 from datadog_api_client.v2.model.case_status import CaseStatus
+from datadog_api_client.v2.model.case_trigger import CaseTrigger
+from datadog_api_client.v2.model.case_trigger_wrapper import CaseTriggerWrapper
 from datadog_api_client.v2.model.case_type import CaseType
 from datadog_api_client.v2.model.case_update_priority import CaseUpdatePriority
 from datadog_api_client.v2.model.case_update_priority_attributes import CaseUpdatePriorityAttributes
@@ -322,6 +476,7 @@ from datadog_api_client.v2.model.change_event_custom_attributes_impacted_resourc
 from datadog_api_client.v2.model.change_event_custom_attributes_impacted_resources_items_type import (
     ChangeEventCustomAttributesImpactedResourcesItemsType,
 )
+from datadog_api_client.v2.model.change_event_trigger_wrapper import ChangeEventTriggerWrapper
 from datadog_api_client.v2.model.chargeback_breakdown import ChargebackBreakdown
 from datadog_api_client.v2.model.cloud_configuration_compliance_rule_options import (
     CloudConfigurationComplianceRuleOptions,
@@ -388,6 +543,9 @@ from datadog_api_client.v2.model.cloudflare_account_update_request_attributes im
 from datadog_api_client.v2.model.cloudflare_account_update_request_data import CloudflareAccountUpdateRequestData
 from datadog_api_client.v2.model.cloudflare_accounts_response import CloudflareAccountsResponse
 from datadog_api_client.v2.model.code_location import CodeLocation
+from datadog_api_client.v2.model.completion_condition import CompletionCondition
+from datadog_api_client.v2.model.completion_condition_operator import CompletionConditionOperator
+from datadog_api_client.v2.model.completion_gate import CompletionGate
 from datadog_api_client.v2.model.component import Component
 from datadog_api_client.v2.model.component_grid import ComponentGrid
 from datadog_api_client.v2.model.component_grid_properties import ComponentGridProperties
@@ -420,6 +578,10 @@ from datadog_api_client.v2.model.confluent_resource_response_attributes import C
 from datadog_api_client.v2.model.confluent_resource_response_data import ConfluentResourceResponseData
 from datadog_api_client.v2.model.confluent_resource_type import ConfluentResourceType
 from datadog_api_client.v2.model.confluent_resources_response import ConfluentResourcesResponse
+from datadog_api_client.v2.model.connection import Connection
+from datadog_api_client.v2.model.connection_env import ConnectionEnv
+from datadog_api_client.v2.model.connection_env_env import ConnectionEnvEnv
+from datadog_api_client.v2.model.connection_group import ConnectionGroup
 from datadog_api_client.v2.model.container import Container
 from datadog_api_client.v2.model.container_attributes import ContainerAttributes
 from datadog_api_client.v2.model.container_group import ContainerGroup
@@ -494,6 +656,8 @@ from datadog_api_client.v2.model.create_rule_request import CreateRuleRequest
 from datadog_api_client.v2.model.create_rule_request_data import CreateRuleRequestData
 from datadog_api_client.v2.model.create_rule_response import CreateRuleResponse
 from datadog_api_client.v2.model.create_rule_response_data import CreateRuleResponseData
+from datadog_api_client.v2.model.create_workflow_request import CreateWorkflowRequest
+from datadog_api_client.v2.model.create_workflow_response import CreateWorkflowResponse
 from datadog_api_client.v2.model.creator import Creator
 from datadog_api_client.v2.model.csm_agent_data import CsmAgentData
 from datadog_api_client.v2.model.csm_agents_attributes import CsmAgentsAttributes
@@ -660,11 +824,15 @@ from datadog_api_client.v2.model.dashboard_list_item_response import DashboardLi
 from datadog_api_client.v2.model.dashboard_list_items import DashboardListItems
 from datadog_api_client.v2.model.dashboard_list_update_items_request import DashboardListUpdateItemsRequest
 from datadog_api_client.v2.model.dashboard_list_update_items_response import DashboardListUpdateItemsResponse
+from datadog_api_client.v2.model.dashboard_trigger_wrapper import DashboardTriggerWrapper
 from datadog_api_client.v2.model.dashboard_type import DashboardType
 from datadog_api_client.v2.model.data_deletion_response_item import DataDeletionResponseItem
 from datadog_api_client.v2.model.data_deletion_response_item_attributes import DataDeletionResponseItemAttributes
 from datadog_api_client.v2.model.data_deletion_response_meta import DataDeletionResponseMeta
 from datadog_api_client.v2.model.data_scalar_column import DataScalarColumn
+from datadog_api_client.v2.model.data_transform import DataTransform
+from datadog_api_client.v2.model.data_transform_properties import DataTransformProperties
+from datadog_api_client.v2.model.data_transform_type import DataTransformType
 from datadog_api_client.v2.model.delete_app_response import DeleteAppResponse
 from datadog_api_client.v2.model.delete_app_response_data import DeleteAppResponseData
 from datadog_api_client.v2.model.delete_apps_request import DeleteAppsRequest
@@ -812,6 +980,7 @@ from datadog_api_client.v2.model.entity_v3_system import EntityV3System
 from datadog_api_client.v2.model.entity_v3_system_datadog import EntityV3SystemDatadog
 from datadog_api_client.v2.model.entity_v3_system_kind import EntityV3SystemKind
 from datadog_api_client.v2.model.entity_v3_system_spec import EntityV3SystemSpec
+from datadog_api_client.v2.model.error_handler import ErrorHandler
 from datadog_api_client.v2.model.event import Event
 from datadog_api_client.v2.model.event_attributes import EventAttributes
 from datadog_api_client.v2.model.event_category import EventCategory
@@ -912,8 +1081,14 @@ from datadog_api_client.v2.model.get_device_response import GetDeviceResponse
 from datadog_api_client.v2.model.get_finding_response import GetFindingResponse
 from datadog_api_client.v2.model.get_interfaces_data import GetInterfacesData
 from datadog_api_client.v2.model.get_interfaces_response import GetInterfacesResponse
+from datadog_api_client.v2.model.get_rule_version_history_data import GetRuleVersionHistoryData
+from datadog_api_client.v2.model.get_rule_version_history_data_type import GetRuleVersionHistoryDataType
+from datadog_api_client.v2.model.get_rule_version_history_response import GetRuleVersionHistoryResponse
 from datadog_api_client.v2.model.get_sbom_response import GetSBOMResponse
 from datadog_api_client.v2.model.get_team_memberships_sort import GetTeamMembershipsSort
+from datadog_api_client.v2.model.get_workflow_response import GetWorkflowResponse
+from datadog_api_client.v2.model.github_webhook_trigger import GithubWebhookTrigger
+from datadog_api_client.v2.model.github_webhook_trigger_wrapper import GithubWebhookTriggerWrapper
 from datadog_api_client.v2.model.group_scalar_column import GroupScalarColumn
 from datadog_api_client.v2.model.group_tags import GroupTags
 from datadog_api_client.v2.model.http_body import HTTPBody
@@ -1102,6 +1277,8 @@ from datadog_api_client.v2.model.incident_todo_response import IncidentTodoRespo
 from datadog_api_client.v2.model.incident_todo_response_data import IncidentTodoResponseData
 from datadog_api_client.v2.model.incident_todo_response_included_item import IncidentTodoResponseIncludedItem
 from datadog_api_client.v2.model.incident_todo_type import IncidentTodoType
+from datadog_api_client.v2.model.incident_trigger import IncidentTrigger
+from datadog_api_client.v2.model.incident_trigger_wrapper import IncidentTriggerWrapper
 from datadog_api_client.v2.model.incident_type import IncidentType
 from datadog_api_client.v2.model.incident_type_attributes import IncidentTypeAttributes
 from datadog_api_client.v2.model.incident_type_create_data import IncidentTypeCreateData
@@ -1122,6 +1299,9 @@ from datadog_api_client.v2.model.incident_user_data import IncidentUserData
 from datadog_api_client.v2.model.incident_user_defined_field_type import IncidentUserDefinedFieldType
 from datadog_api_client.v2.model.incidents_response import IncidentsResponse
 from datadog_api_client.v2.model.include_type import IncludeType
+from datadog_api_client.v2.model.input_schema import InputSchema
+from datadog_api_client.v2.model.input_schema_parameters import InputSchemaParameters
+from datadog_api_client.v2.model.input_schema_parameters_type import InputSchemaParametersType
 from datadog_api_client.v2.model.intake_payload_accepted import IntakePayloadAccepted
 from datadog_api_client.v2.model.interface_attributes import InterfaceAttributes
 from datadog_api_client.v2.model.interface_attributes_status import InterfaceAttributesStatus
@@ -1218,6 +1398,7 @@ from datadog_api_client.v2.model.logs_archive_order_attributes import LogsArchiv
 from datadog_api_client.v2.model.logs_archive_order_definition import LogsArchiveOrderDefinition
 from datadog_api_client.v2.model.logs_archive_order_definition_type import LogsArchiveOrderDefinitionType
 from datadog_api_client.v2.model.logs_archive_state import LogsArchiveState
+from datadog_api_client.v2.model.logs_archive_storage_class_s3_type import LogsArchiveStorageClassS3Type
 from datadog_api_client.v2.model.logs_archives import LogsArchives
 from datadog_api_client.v2.model.logs_compute import LogsCompute
 from datadog_api_client.v2.model.logs_compute_type import LogsComputeType
@@ -1471,6 +1652,8 @@ from datadog_api_client.v2.model.monitor_downtime_match_response_attributes impo
     MonitorDowntimeMatchResponseAttributes,
 )
 from datadog_api_client.v2.model.monitor_downtime_match_response_data import MonitorDowntimeMatchResponseData
+from datadog_api_client.v2.model.monitor_trigger import MonitorTrigger
+from datadog_api_client.v2.model.monitor_trigger_wrapper import MonitorTriggerWrapper
 from datadog_api_client.v2.model.monitor_type import MonitorType
 from datadog_api_client.v2.model.monthly_cost_attribution_attributes import MonthlyCostAttributionAttributes
 from datadog_api_client.v2.model.monthly_cost_attribution_body import MonthlyCostAttributionBody
@@ -1525,6 +1708,7 @@ from datadog_api_client.v2.model.org_config_write_request import OrgConfigWriteR
 from datadog_api_client.v2.model.organization import Organization
 from datadog_api_client.v2.model.organization_attributes import OrganizationAttributes
 from datadog_api_client.v2.model.organizations_type import OrganizationsType
+from datadog_api_client.v2.model.outbound_edge import OutboundEdge
 from datadog_api_client.v2.model.outcome_type import OutcomeType
 from datadog_api_client.v2.model.outcomes_batch_attributes import OutcomesBatchAttributes
 from datadog_api_client.v2.model.outcomes_batch_request import OutcomesBatchRequest
@@ -1541,7 +1725,11 @@ from datadog_api_client.v2.model.outcomes_response_included_rule_attributes impo
     OutcomesResponseIncludedRuleAttributes,
 )
 from datadog_api_client.v2.model.outcomes_response_links import OutcomesResponseLinks
+from datadog_api_client.v2.model.output_schema import OutputSchema
+from datadog_api_client.v2.model.output_schema_parameters import OutputSchemaParameters
+from datadog_api_client.v2.model.output_schema_parameters_type import OutputSchemaParametersType
 from datadog_api_client.v2.model.pagination import Pagination
+from datadog_api_client.v2.model.parameter import Parameter
 from datadog_api_client.v2.model.partial_api_key import PartialAPIKey
 from datadog_api_client.v2.model.partial_api_key_attributes import PartialAPIKeyAttributes
 from datadog_api_client.v2.model.partial_application_key import PartialApplicationKey
@@ -1595,7 +1783,6 @@ from datadog_api_client.v2.model.publish_app_response import PublishAppResponse
 from datadog_api_client.v2.model.query import Query
 from datadog_api_client.v2.model.query_formula import QueryFormula
 from datadog_api_client.v2.model.query_sort_order import QuerySortOrder
-from datadog_api_client.v2.model.query_type import QueryType
 from datadog_api_client.v2.model.rum_aggregate_bucket_value import RUMAggregateBucketValue
 from datadog_api_client.v2.model.rum_aggregate_bucket_value_timeseries import RUMAggregateBucketValueTimeseries
 from datadog_api_client.v2.model.rum_aggregate_bucket_value_timeseries_point import (
@@ -1645,6 +1832,8 @@ from datadog_api_client.v2.model.rum_search_events_request import RUMSearchEvent
 from datadog_api_client.v2.model.rum_sort import RUMSort
 from datadog_api_client.v2.model.rum_sort_order import RUMSortOrder
 from datadog_api_client.v2.model.rum_warning import RUMWarning
+from datadog_api_client.v2.model.readiness_gate import ReadinessGate
+from datadog_api_client.v2.model.readiness_gate_threshold_type import ReadinessGateThresholdType
 from datadog_api_client.v2.model.relation_type import RelationType
 from datadog_api_client.v2.model.relationship_item import RelationshipItem
 from datadog_api_client.v2.model.relationship_to_incident_attachment import RelationshipToIncidentAttachment
@@ -1723,6 +1912,9 @@ from datadog_api_client.v2.model.retention_filter_update_data import RetentionFi
 from datadog_api_client.v2.model.retention_filter_update_request import RetentionFilterUpdateRequest
 from datadog_api_client.v2.model.retention_filter_without_attributes import RetentionFilterWithoutAttributes
 from datadog_api_client.v2.model.retention_filters_response import RetentionFiltersResponse
+from datadog_api_client.v2.model.retry_strategy import RetryStrategy
+from datadog_api_client.v2.model.retry_strategy_kind import RetryStrategyKind
+from datadog_api_client.v2.model.retry_strategy_linear import RetryStrategyLinear
 from datadog_api_client.v2.model.role import Role
 from datadog_api_client.v2.model.role_attributes import RoleAttributes
 from datadog_api_client.v2.model.role_clone import RoleClone
@@ -1750,6 +1942,10 @@ from datadog_api_client.v2.model.rule_severity import RuleSeverity
 from datadog_api_client.v2.model.rule_type import RuleType
 from datadog_api_client.v2.model.rule_types_items import RuleTypesItems
 from datadog_api_client.v2.model.rule_user import RuleUser
+from datadog_api_client.v2.model.rule_version_history import RuleVersionHistory
+from datadog_api_client.v2.model.rule_version_update import RuleVersionUpdate
+from datadog_api_client.v2.model.rule_version_update_type import RuleVersionUpdateType
+from datadog_api_client.v2.model.rule_versions import RuleVersions
 from datadog_api_client.v2.model.rum_metric_compute import RumMetricCompute
 from datadog_api_client.v2.model.rum_metric_compute_aggregation_type import RumMetricComputeAggregationType
 from datadog_api_client.v2.model.rum_metric_create_attributes import RumMetricCreateAttributes
@@ -1773,6 +1969,21 @@ from datadog_api_client.v2.model.rum_metric_update_compute import RumMetricUpdat
 from datadog_api_client.v2.model.rum_metric_update_data import RumMetricUpdateData
 from datadog_api_client.v2.model.rum_metric_update_request import RumMetricUpdateRequest
 from datadog_api_client.v2.model.rum_metrics_response import RumMetricsResponse
+from datadog_api_client.v2.model.rum_retention_filter_attributes import RumRetentionFilterAttributes
+from datadog_api_client.v2.model.rum_retention_filter_create_attributes import RumRetentionFilterCreateAttributes
+from datadog_api_client.v2.model.rum_retention_filter_create_data import RumRetentionFilterCreateData
+from datadog_api_client.v2.model.rum_retention_filter_create_request import RumRetentionFilterCreateRequest
+from datadog_api_client.v2.model.rum_retention_filter_data import RumRetentionFilterData
+from datadog_api_client.v2.model.rum_retention_filter_event_type import RumRetentionFilterEventType
+from datadog_api_client.v2.model.rum_retention_filter_response import RumRetentionFilterResponse
+from datadog_api_client.v2.model.rum_retention_filter_type import RumRetentionFilterType
+from datadog_api_client.v2.model.rum_retention_filter_update_attributes import RumRetentionFilterUpdateAttributes
+from datadog_api_client.v2.model.rum_retention_filter_update_data import RumRetentionFilterUpdateData
+from datadog_api_client.v2.model.rum_retention_filter_update_request import RumRetentionFilterUpdateRequest
+from datadog_api_client.v2.model.rum_retention_filters_order_data import RumRetentionFiltersOrderData
+from datadog_api_client.v2.model.rum_retention_filters_order_request import RumRetentionFiltersOrderRequest
+from datadog_api_client.v2.model.rum_retention_filters_order_response import RumRetentionFiltersOrderResponse
+from datadog_api_client.v2.model.rum_retention_filters_response import RumRetentionFiltersResponse
 from datadog_api_client.v2.model.run_historical_job_request import RunHistoricalJobRequest
 from datadog_api_client.v2.model.run_historical_job_request_attributes import RunHistoricalJobRequestAttributes
 from datadog_api_client.v2.model.run_historical_job_request_data import RunHistoricalJobRequestData
@@ -1808,6 +2019,8 @@ from datadog_api_client.v2.model.scalar_formula_response_type import ScalarFormu
 from datadog_api_client.v2.model.scalar_meta import ScalarMeta
 from datadog_api_client.v2.model.scalar_query import ScalarQuery
 from datadog_api_client.v2.model.scalar_response import ScalarResponse
+from datadog_api_client.v2.model.schedule_trigger import ScheduleTrigger
+from datadog_api_client.v2.model.schedule_trigger_wrapper import ScheduleTriggerWrapper
 from datadog_api_client.v2.model.scorecard_type import ScorecardType
 from datadog_api_client.v2.model.security_filter import SecurityFilter
 from datadog_api_client.v2.model.security_filter_attributes import SecurityFilterAttributes
@@ -1829,6 +2042,11 @@ from datadog_api_client.v2.model.security_monitoring_filter_action import Securi
 from datadog_api_client.v2.model.security_monitoring_list_rules_response import SecurityMonitoringListRulesResponse
 from datadog_api_client.v2.model.security_monitoring_reference_table import SecurityMonitoringReferenceTable
 from datadog_api_client.v2.model.security_monitoring_rule_case import SecurityMonitoringRuleCase
+from datadog_api_client.v2.model.security_monitoring_rule_case_action import SecurityMonitoringRuleCaseAction
+from datadog_api_client.v2.model.security_monitoring_rule_case_action_options import (
+    SecurityMonitoringRuleCaseActionOptions,
+)
+from datadog_api_client.v2.model.security_monitoring_rule_case_action_type import SecurityMonitoringRuleCaseActionType
 from datadog_api_client.v2.model.security_monitoring_rule_case_create import SecurityMonitoringRuleCaseCreate
 from datadog_api_client.v2.model.security_monitoring_rule_convert_payload import SecurityMonitoringRuleConvertPayload
 from datadog_api_client.v2.model.security_monitoring_rule_convert_response import SecurityMonitoringRuleConvertResponse
@@ -1954,6 +2172,7 @@ from datadog_api_client.v2.model.security_monitoring_signals_list_response_meta_
     SecurityMonitoringSignalsListResponseMetaPage,
 )
 from datadog_api_client.v2.model.security_monitoring_signals_sort import SecurityMonitoringSignalsSort
+from datadog_api_client.v2.model.security_monitoring_standard_data_source import SecurityMonitoringStandardDataSource
 from datadog_api_client.v2.model.security_monitoring_standard_rule_create_payload import (
     SecurityMonitoringStandardRuleCreatePayload,
 )
@@ -1997,6 +2216,8 @@ from datadog_api_client.v2.model.security_monitoring_third_party_rule_case_creat
 )
 from datadog_api_client.v2.model.security_monitoring_triage_user import SecurityMonitoringTriageUser
 from datadog_api_client.v2.model.security_monitoring_user import SecurityMonitoringUser
+from datadog_api_client.v2.model.security_trigger import SecurityTrigger
+from datadog_api_client.v2.model.security_trigger_wrapper import SecurityTriggerWrapper
 from datadog_api_client.v2.model.selectors import Selectors
 from datadog_api_client.v2.model.sensitive_data_scanner_config_request import SensitiveDataScannerConfigRequest
 from datadog_api_client.v2.model.sensitive_data_scanner_configuration import SensitiveDataScannerConfiguration
@@ -2145,7 +2366,6 @@ from datadog_api_client.v2.model.service_definition_v2_dot2_link import ServiceD
 from datadog_api_client.v2.model.service_definition_v2_dot2_opsgenie import ServiceDefinitionV2Dot2Opsgenie
 from datadog_api_client.v2.model.service_definition_v2_dot2_opsgenie_region import ServiceDefinitionV2Dot2OpsgenieRegion
 from datadog_api_client.v2.model.service_definition_v2_dot2_pagerduty import ServiceDefinitionV2Dot2Pagerduty
-from datadog_api_client.v2.model.service_definition_v2_dot2_type import ServiceDefinitionV2Dot2Type
 from datadog_api_client.v2.model.service_definition_v2_dot2_version import ServiceDefinitionV2Dot2Version
 from datadog_api_client.v2.model.service_definition_v2_email import ServiceDefinitionV2Email
 from datadog_api_client.v2.model.service_definition_v2_email_type import ServiceDefinitionV2EmailType
@@ -2166,6 +2386,7 @@ from datadog_api_client.v2.model.service_now_ticket import ServiceNowTicket
 from datadog_api_client.v2.model.service_now_ticket_result import ServiceNowTicketResult
 from datadog_api_client.v2.model.slack_integration_metadata import SlackIntegrationMetadata
 from datadog_api_client.v2.model.slack_integration_metadata_channel_item import SlackIntegrationMetadataChannelItem
+from datadog_api_client.v2.model.slack_trigger_wrapper import SlackTriggerWrapper
 from datadog_api_client.v2.model.slo_report_create_request import SloReportCreateRequest
 from datadog_api_client.v2.model.slo_report_create_request_attributes import SloReportCreateRequestAttributes
 from datadog_api_client.v2.model.slo_report_create_request_data import SloReportCreateRequestData
@@ -2231,8 +2452,15 @@ from datadog_api_client.v2.model.spans_sort import SpansSort
 from datadog_api_client.v2.model.spans_sort_order import SpansSortOrder
 from datadog_api_client.v2.model.spans_type import SpansType
 from datadog_api_client.v2.model.spans_warning import SpansWarning
+from datadog_api_client.v2.model.spec import Spec
 from datadog_api_client.v2.model.spec_version import SpecVersion
 from datadog_api_client.v2.model.state import State
+from datadog_api_client.v2.model.state_variable import StateVariable
+from datadog_api_client.v2.model.state_variable_properties import StateVariableProperties
+from datadog_api_client.v2.model.state_variable_type import StateVariableType
+from datadog_api_client.v2.model.step import Step
+from datadog_api_client.v2.model.step_display import StepDisplay
+from datadog_api_client.v2.model.step_display_bounds import StepDisplayBounds
 from datadog_api_client.v2.model.tags_event_attribute import TagsEventAttribute
 from datadog_api_client.v2.model.team import Team
 from datadog_api_client.v2.model.team_attributes import TeamAttributes
@@ -2288,6 +2516,8 @@ from datadog_api_client.v2.model.timeseries_response_times import TimeseriesResp
 from datadog_api_client.v2.model.timeseries_response_values import TimeseriesResponseValues
 from datadog_api_client.v2.model.timeseries_response_values_list import TimeseriesResponseValuesList
 from datadog_api_client.v2.model.token_type import TokenType
+from datadog_api_client.v2.model.trigger import Trigger
+from datadog_api_client.v2.model.trigger_rate_limit import TriggerRateLimit
 from datadog_api_client.v2.model.trigger_source import TriggerSource
 from datadog_api_client.v2.model.unit import Unit
 from datadog_api_client.v2.model.unpublish_app_response import UnpublishAppResponse
@@ -2306,6 +2536,8 @@ from datadog_api_client.v2.model.update_rule_request import UpdateRuleRequest
 from datadog_api_client.v2.model.update_rule_request_data import UpdateRuleRequestData
 from datadog_api_client.v2.model.update_rule_response import UpdateRuleResponse
 from datadog_api_client.v2.model.update_rule_response_data import UpdateRuleResponseData
+from datadog_api_client.v2.model.update_workflow_request import UpdateWorkflowRequest
+from datadog_api_client.v2.model.update_workflow_response import UpdateWorkflowResponse
 from datadog_api_client.v2.model.upsert_catalog_entity_request import UpsertCatalogEntityRequest
 from datadog_api_client.v2.model.upsert_catalog_entity_response import UpsertCatalogEntityResponse
 from datadog_api_client.v2.model.upsert_catalog_entity_response_included_item import (
@@ -2379,6 +2611,12 @@ from datadog_api_client.v2.model.vulnerability_status import VulnerabilityStatus
 from datadog_api_client.v2.model.vulnerability_tool import VulnerabilityTool
 from datadog_api_client.v2.model.vulnerability_type import VulnerabilityType
 from datadog_api_client.v2.model.widget_live_span import WidgetLiveSpan
+from datadog_api_client.v2.model.workflow_data import WorkflowData
+from datadog_api_client.v2.model.workflow_data_attributes import WorkflowDataAttributes
+from datadog_api_client.v2.model.workflow_data_relationships import WorkflowDataRelationships
+from datadog_api_client.v2.model.workflow_data_type import WorkflowDataType
+from datadog_api_client.v2.model.workflow_data_update import WorkflowDataUpdate
+from datadog_api_client.v2.model.workflow_data_update_attributes import WorkflowDataUpdateAttributes
 from datadog_api_client.v2.model.workflow_instance_create_meta import WorkflowInstanceCreateMeta
 from datadog_api_client.v2.model.workflow_instance_create_request import WorkflowInstanceCreateRequest
 from datadog_api_client.v2.model.workflow_instance_create_response import WorkflowInstanceCreateResponse
@@ -2387,6 +2625,10 @@ from datadog_api_client.v2.model.workflow_instance_list_item import WorkflowInst
 from datadog_api_client.v2.model.workflow_list_instances_response import WorkflowListInstancesResponse
 from datadog_api_client.v2.model.workflow_list_instances_response_meta import WorkflowListInstancesResponseMeta
 from datadog_api_client.v2.model.workflow_list_instances_response_meta_page import WorkflowListInstancesResponseMetaPage
+from datadog_api_client.v2.model.workflow_trigger_wrapper import WorkflowTriggerWrapper
+from datadog_api_client.v2.model.workflow_user_relationship import WorkflowUserRelationship
+from datadog_api_client.v2.model.workflow_user_relationship_data import WorkflowUserRelationshipData
+from datadog_api_client.v2.model.workflow_user_relationship_type import WorkflowUserRelationshipType
 from datadog_api_client.v2.model.worklflow_cancel_instance_response import WorklflowCancelInstanceResponse
 from datadog_api_client.v2.model.worklflow_cancel_instance_response_data import WorklflowCancelInstanceResponseData
 from datadog_api_client.v2.model.worklflow_get_instance_response import WorklflowGetInstanceResponse
@@ -2414,6 +2656,8 @@ __all__ = [
     "APIKeysResponseMetaPage",
     "APIKeysSort",
     "APIKeysType",
+    "APITrigger",
+    "APITriggerWrapper",
     "AWSAccountCreateRequest",
     "AWSAccountCreateRequestAttributes",
     "AWSAccountCreateRequestData",
@@ -2461,6 +2705,7 @@ __all__ = [
     "AWSRegionsIncludeOnly",
     "AWSResourcesConfig",
     "AWSTracesConfig",
+    "AccountFilteringConfig",
     "ActionConnectionAttributes",
     "ActionConnectionAttributesUpdate",
     "ActionConnectionData",
@@ -2468,11 +2713,32 @@ __all__ = [
     "ActionConnectionDataUpdate",
     "ActionConnectionIntegration",
     "ActionConnectionIntegrationUpdate",
+    "ActionQuery",
+    "ActionQueryCondition",
+    "ActionQueryDebounceInMs",
+    "ActionQueryMockedOutputs",
+    "ActionQueryMockedOutputsEnabled",
+    "ActionQueryMockedOutputsObject",
+    "ActionQueryOnlyTriggerManually",
+    "ActionQueryPollingIntervalInMs",
+    "ActionQueryProperties",
+    "ActionQueryRequiresConfirmation",
+    "ActionQueryShowToastOnError",
+    "ActionQuerySpec",
+    "ActionQuerySpecConnectionGroup",
+    "ActionQuerySpecInput",
+    "ActionQuerySpecInputs",
+    "ActionQuerySpecObject",
+    "ActionQueryType",
     "ActiveBillingDimensionsAttributes",
     "ActiveBillingDimensionsBody",
     "ActiveBillingDimensionsResponse",
     "ActiveBillingDimensionsType",
     "Advisory",
+    "Annotation",
+    "AnnotationDisplay",
+    "AnnotationDisplayBounds",
+    "AnnotationMarkdownTextAnnotation",
     "ApmRetentionFilterType",
     "AppBuilderEvent",
     "AppBuilderEventName",
@@ -2481,6 +2747,7 @@ __all__ = [
     "AppDeploymentType",
     "AppMeta",
     "AppRelationship",
+    "AppTriggerWrapper",
     "ApplicationKeyCreateAttributes",
     "ApplicationKeyCreateData",
     "ApplicationKeyCreateRequest",
@@ -2494,6 +2761,46 @@ __all__ = [
     "ApplicationKeyUpdateRequest",
     "ApplicationKeysSort",
     "ApplicationKeysType",
+    "ApplicationSecurityWafCustomRuleAction",
+    "ApplicationSecurityWafCustomRuleActionAction",
+    "ApplicationSecurityWafCustomRuleActionParameters",
+    "ApplicationSecurityWafCustomRuleAttributes",
+    "ApplicationSecurityWafCustomRuleCondition",
+    "ApplicationSecurityWafCustomRuleConditionInput",
+    "ApplicationSecurityWafCustomRuleConditionInputAddress",
+    "ApplicationSecurityWafCustomRuleConditionOperator",
+    "ApplicationSecurityWafCustomRuleConditionOptions",
+    "ApplicationSecurityWafCustomRuleConditionParameters",
+    "ApplicationSecurityWafCustomRuleCreateAttributes",
+    "ApplicationSecurityWafCustomRuleCreateData",
+    "ApplicationSecurityWafCustomRuleCreateRequest",
+    "ApplicationSecurityWafCustomRuleData",
+    "ApplicationSecurityWafCustomRuleListResponse",
+    "ApplicationSecurityWafCustomRuleMetadata",
+    "ApplicationSecurityWafCustomRuleResponse",
+    "ApplicationSecurityWafCustomRuleScope",
+    "ApplicationSecurityWafCustomRuleTags",
+    "ApplicationSecurityWafCustomRuleTagsCategory",
+    "ApplicationSecurityWafCustomRuleType",
+    "ApplicationSecurityWafCustomRuleUpdateAttributes",
+    "ApplicationSecurityWafCustomRuleUpdateData",
+    "ApplicationSecurityWafCustomRuleUpdateRequest",
+    "ApplicationSecurityWafExclusionFilterAttributes",
+    "ApplicationSecurityWafExclusionFilterCreateAttributes",
+    "ApplicationSecurityWafExclusionFilterCreateData",
+    "ApplicationSecurityWafExclusionFilterCreateRequest",
+    "ApplicationSecurityWafExclusionFilterMetadata",
+    "ApplicationSecurityWafExclusionFilterOnMatch",
+    "ApplicationSecurityWafExclusionFilterResource",
+    "ApplicationSecurityWafExclusionFilterResponse",
+    "ApplicationSecurityWafExclusionFilterRulesTarget",
+    "ApplicationSecurityWafExclusionFilterRulesTargetTags",
+    "ApplicationSecurityWafExclusionFilterScope",
+    "ApplicationSecurityWafExclusionFilterType",
+    "ApplicationSecurityWafExclusionFilterUpdateAttributes",
+    "ApplicationSecurityWafExclusionFilterUpdateData",
+    "ApplicationSecurityWafExclusionFilterUpdateRequest",
+    "ApplicationSecurityWafExclusionFiltersResponse",
     "AppsSortField",
     "Asset",
     "AssetAttributes",
@@ -2550,10 +2857,25 @@ __all__ = [
     "AwsCURConfigResponse",
     "AwsCURConfigType",
     "AwsCURConfigsResponse",
+    "AwsOnDemandAttributes",
+    "AwsOnDemandCreateAttributes",
+    "AwsOnDemandCreateData",
+    "AwsOnDemandCreateRequest",
+    "AwsOnDemandData",
+    "AwsOnDemandListResponse",
+    "AwsOnDemandResponse",
+    "AwsOnDemandType",
     "AwsScanOptionsAttributes",
+    "AwsScanOptionsCreateAttributes",
+    "AwsScanOptionsCreateData",
+    "AwsScanOptionsCreateRequest",
     "AwsScanOptionsData",
+    "AwsScanOptionsListResponse",
     "AwsScanOptionsResponse",
     "AwsScanOptionsType",
+    "AwsScanOptionsUpdateAttributes",
+    "AwsScanOptionsUpdateData",
+    "AwsScanOptionsUpdateRequest",
     "AzureUCConfig",
     "AzureUCConfigPair",
     "AzureUCConfigPairAttributes",
@@ -2678,6 +3000,8 @@ __all__ = [
     "CaseResponse",
     "CaseSortableField",
     "CaseStatus",
+    "CaseTrigger",
+    "CaseTriggerWrapper",
     "CaseType",
     "CaseUpdatePriority",
     "CaseUpdatePriorityAttributes",
@@ -2695,6 +3019,7 @@ __all__ = [
     "ChangeEventCustomAttributesChangedResourceType",
     "ChangeEventCustomAttributesImpactedResourcesItems",
     "ChangeEventCustomAttributesImpactedResourcesItemsType",
+    "ChangeEventTriggerWrapper",
     "ChargebackBreakdown",
     "CloudConfigurationComplianceRuleOptions",
     "CloudConfigurationRegoRule",
@@ -2731,6 +3056,9 @@ __all__ = [
     "CloudflareAccountUpdateRequestData",
     "CloudflareAccountsResponse",
     "CodeLocation",
+    "CompletionCondition",
+    "CompletionConditionOperator",
+    "CompletionGate",
     "Component",
     "ComponentGrid",
     "ComponentGridProperties",
@@ -2759,6 +3087,10 @@ __all__ = [
     "ConfluentResourceResponseData",
     "ConfluentResourceType",
     "ConfluentResourcesResponse",
+    "Connection",
+    "ConnectionEnv",
+    "ConnectionEnvEnv",
+    "ConnectionGroup",
     "Container",
     "ContainerAttributes",
     "ContainerGroup",
@@ -2825,6 +3157,8 @@ __all__ = [
     "CreateRuleRequestData",
     "CreateRuleResponse",
     "CreateRuleResponseData",
+    "CreateWorkflowRequest",
+    "CreateWorkflowResponse",
     "Creator",
     "CsmAgentData",
     "CsmAgentsAttributes",
@@ -2917,11 +3251,15 @@ __all__ = [
     "DashboardListItems",
     "DashboardListUpdateItemsRequest",
     "DashboardListUpdateItemsResponse",
+    "DashboardTriggerWrapper",
     "DashboardType",
     "DataDeletionResponseItem",
     "DataDeletionResponseItemAttributes",
     "DataDeletionResponseMeta",
     "DataScalarColumn",
+    "DataTransform",
+    "DataTransformProperties",
+    "DataTransformType",
     "DeleteAppResponse",
     "DeleteAppResponseData",
     "DeleteAppsRequest",
@@ -3045,6 +3383,7 @@ __all__ = [
     "EntityV3SystemDatadog",
     "EntityV3SystemKind",
     "EntityV3SystemSpec",
+    "ErrorHandler",
     "Event",
     "EventAttributes",
     "EventCategory",
@@ -3141,8 +3480,14 @@ __all__ = [
     "GetFindingResponse",
     "GetInterfacesData",
     "GetInterfacesResponse",
+    "GetRuleVersionHistoryData",
+    "GetRuleVersionHistoryDataType",
+    "GetRuleVersionHistoryResponse",
     "GetSBOMResponse",
     "GetTeamMembershipsSort",
+    "GetWorkflowResponse",
+    "GithubWebhookTrigger",
+    "GithubWebhookTriggerWrapper",
     "GroupScalarColumn",
     "GroupTags",
     "HTTPBody",
@@ -3299,6 +3644,8 @@ __all__ = [
     "IncidentTodoResponseData",
     "IncidentTodoResponseIncludedItem",
     "IncidentTodoType",
+    "IncidentTrigger",
+    "IncidentTriggerWrapper",
     "IncidentType",
     "IncidentTypeAttributes",
     "IncidentTypeCreateData",
@@ -3319,6 +3666,9 @@ __all__ = [
     "IncidentUserDefinedFieldType",
     "IncidentsResponse",
     "IncludeType",
+    "InputSchema",
+    "InputSchemaParameters",
+    "InputSchemaParametersType",
     "IntakePayloadAccepted",
     "InterfaceAttributes",
     "InterfaceAttributesStatus",
@@ -3411,6 +3761,7 @@ __all__ = [
     "LogsArchiveOrderDefinition",
     "LogsArchiveOrderDefinitionType",
     "LogsArchiveState",
+    "LogsArchiveStorageClassS3Type",
     "LogsArchives",
     "LogsCompute",
     "LogsComputeType",
@@ -3592,6 +3943,8 @@ __all__ = [
     "MonitorDowntimeMatchResponse",
     "MonitorDowntimeMatchResponseAttributes",
     "MonitorDowntimeMatchResponseData",
+    "MonitorTrigger",
+    "MonitorTriggerWrapper",
     "MonitorType",
     "MonthlyCostAttributionAttributes",
     "MonthlyCostAttributionBody",
@@ -3646,6 +3999,7 @@ __all__ = [
     "Organization",
     "OrganizationAttributes",
     "OrganizationsType",
+    "OutboundEdge",
     "OutcomeType",
     "OutcomesBatchAttributes",
     "OutcomesBatchRequest",
@@ -3660,7 +4014,11 @@ __all__ = [
     "OutcomesResponseIncludedItem",
     "OutcomesResponseIncludedRuleAttributes",
     "OutcomesResponseLinks",
+    "OutputSchema",
+    "OutputSchemaParameters",
+    "OutputSchemaParametersType",
     "Pagination",
+    "Parameter",
     "PartialAPIKey",
     "PartialAPIKeyAttributes",
     "PartialApplicationKey",
@@ -3712,7 +4070,6 @@ __all__ = [
     "Query",
     "QueryFormula",
     "QuerySortOrder",
-    "QueryType",
     "RUMAggregateBucketValue",
     "RUMAggregateBucketValueTimeseries",
     "RUMAggregateBucketValueTimeseriesPoint",
@@ -3760,6 +4117,8 @@ __all__ = [
     "RUMSort",
     "RUMSortOrder",
     "RUMWarning",
+    "ReadinessGate",
+    "ReadinessGateThresholdType",
     "RelationType",
     "RelationshipItem",
     "RelationshipToIncidentAttachment",
@@ -3828,6 +4187,9 @@ __all__ = [
     "RetentionFilterUpdateRequest",
     "RetentionFilterWithoutAttributes",
     "RetentionFiltersResponse",
+    "RetryStrategy",
+    "RetryStrategyKind",
+    "RetryStrategyLinear",
     "Role",
     "RoleAttributes",
     "RoleClone",
@@ -3855,6 +4217,10 @@ __all__ = [
     "RuleType",
     "RuleTypesItems",
     "RuleUser",
+    "RuleVersionHistory",
+    "RuleVersionUpdate",
+    "RuleVersionUpdateType",
+    "RuleVersions",
     "RumMetricCompute",
     "RumMetricComputeAggregationType",
     "RumMetricCreateAttributes",
@@ -3878,6 +4244,21 @@ __all__ = [
     "RumMetricUpdateData",
     "RumMetricUpdateRequest",
     "RumMetricsResponse",
+    "RumRetentionFilterAttributes",
+    "RumRetentionFilterCreateAttributes",
+    "RumRetentionFilterCreateData",
+    "RumRetentionFilterCreateRequest",
+    "RumRetentionFilterData",
+    "RumRetentionFilterEventType",
+    "RumRetentionFilterResponse",
+    "RumRetentionFilterType",
+    "RumRetentionFilterUpdateAttributes",
+    "RumRetentionFilterUpdateData",
+    "RumRetentionFilterUpdateRequest",
+    "RumRetentionFiltersOrderData",
+    "RumRetentionFiltersOrderRequest",
+    "RumRetentionFiltersOrderResponse",
+    "RumRetentionFiltersResponse",
     "RunHistoricalJobRequest",
     "RunHistoricalJobRequestAttributes",
     "RunHistoricalJobRequestData",
@@ -3913,6 +4294,8 @@ __all__ = [
     "ScalarMeta",
     "ScalarQuery",
     "ScalarResponse",
+    "ScheduleTrigger",
+    "ScheduleTriggerWrapper",
     "ScorecardType",
     "SecurityFilter",
     "SecurityFilterAttributes",
@@ -3934,6 +4317,9 @@ __all__ = [
     "SecurityMonitoringListRulesResponse",
     "SecurityMonitoringReferenceTable",
     "SecurityMonitoringRuleCase",
+    "SecurityMonitoringRuleCaseAction",
+    "SecurityMonitoringRuleCaseActionOptions",
+    "SecurityMonitoringRuleCaseActionType",
     "SecurityMonitoringRuleCaseCreate",
     "SecurityMonitoringRuleConvertPayload",
     "SecurityMonitoringRuleConvertResponse",
@@ -3999,6 +4385,7 @@ __all__ = [
     "SecurityMonitoringSignalsListResponseMeta",
     "SecurityMonitoringSignalsListResponseMetaPage",
     "SecurityMonitoringSignalsSort",
+    "SecurityMonitoringStandardDataSource",
     "SecurityMonitoringStandardRuleCreatePayload",
     "SecurityMonitoringStandardRulePayload",
     "SecurityMonitoringStandardRuleQuery",
@@ -4020,6 +4407,8 @@ __all__ = [
     "SecurityMonitoringThirdPartyRuleCaseCreate",
     "SecurityMonitoringTriageUser",
     "SecurityMonitoringUser",
+    "SecurityTrigger",
+    "SecurityTriggerWrapper",
     "Selectors",
     "SensitiveDataScannerConfigRequest",
     "SensitiveDataScannerConfiguration",
@@ -4122,7 +4511,6 @@ __all__ = [
     "ServiceDefinitionV2Dot2Opsgenie",
     "ServiceDefinitionV2Dot2OpsgenieRegion",
     "ServiceDefinitionV2Dot2Pagerduty",
-    "ServiceDefinitionV2Dot2Type",
     "ServiceDefinitionV2Dot2Version",
     "ServiceDefinitionV2Email",
     "ServiceDefinitionV2EmailType",
@@ -4143,6 +4531,7 @@ __all__ = [
     "ServiceNowTicketResult",
     "SlackIntegrationMetadata",
     "SlackIntegrationMetadataChannelItem",
+    "SlackTriggerWrapper",
     "SloReportCreateRequest",
     "SloReportCreateRequestAttributes",
     "SloReportCreateRequestData",
@@ -4206,8 +4595,15 @@ __all__ = [
     "SpansSortOrder",
     "SpansType",
     "SpansWarning",
+    "Spec",
     "SpecVersion",
     "State",
+    "StateVariable",
+    "StateVariableProperties",
+    "StateVariableType",
+    "Step",
+    "StepDisplay",
+    "StepDisplayBounds",
     "TagsEventAttribute",
     "Team",
     "TeamAttributes",
@@ -4263,6 +4659,8 @@ __all__ = [
     "TimeseriesResponseValues",
     "TimeseriesResponseValuesList",
     "TokenType",
+    "Trigger",
+    "TriggerRateLimit",
     "TriggerSource",
     "Unit",
     "UnpublishAppResponse",
@@ -4281,6 +4679,8 @@ __all__ = [
     "UpdateRuleRequestData",
     "UpdateRuleResponse",
     "UpdateRuleResponseData",
+    "UpdateWorkflowRequest",
+    "UpdateWorkflowResponse",
     "UpsertCatalogEntityRequest",
     "UpsertCatalogEntityResponse",
     "UpsertCatalogEntityResponseIncludedItem",
@@ -4350,6 +4750,12 @@ __all__ = [
     "VulnerabilityTool",
     "VulnerabilityType",
     "WidgetLiveSpan",
+    "WorkflowData",
+    "WorkflowDataAttributes",
+    "WorkflowDataRelationships",
+    "WorkflowDataType",
+    "WorkflowDataUpdate",
+    "WorkflowDataUpdateAttributes",
     "WorkflowInstanceCreateMeta",
     "WorkflowInstanceCreateRequest",
     "WorkflowInstanceCreateResponse",
@@ -4358,6 +4764,10 @@ __all__ = [
     "WorkflowListInstancesResponse",
     "WorkflowListInstancesResponseMeta",
     "WorkflowListInstancesResponseMetaPage",
+    "WorkflowTriggerWrapper",
+    "WorkflowUserRelationship",
+    "WorkflowUserRelationshipData",
+    "WorkflowUserRelationshipType",
     "WorklflowCancelInstanceResponse",
     "WorklflowCancelInstanceResponseData",
     "WorklflowGetInstanceResponse",

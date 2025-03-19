@@ -1873,6 +1873,20 @@ datadog\_api\_client.v1.model.logs\_sort module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.logs\_span\_remapper module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.logs_span_remapper
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.logs\_span\_remapper\_type module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.logs_span_remapper_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.logs\_status\_remapper module
 -----------------------------------------------------------
 
@@ -2650,6 +2664,48 @@ datadog\_api\_client.v1.model.notify\_end\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.number\_format\_unit module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.number_format_unit
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.number\_format\_unit\_canonical module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.number_format_unit_canonical
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.number\_format\_unit\_custom module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.number_format_unit_custom
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.number\_format\_unit\_custom\_type module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.number_format_unit_custom_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.number\_format\_unit\_scale module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.number_format_unit_scale
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.number\_format\_unit\_scale\_type module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.number_format_unit_scale_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.on\_missing\_data\_option module
 --------------------------------------------------------------
 
@@ -3147,6 +3203,13 @@ datadog\_api\_client.v1.model.shared\_dashboard\_author module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.shared\_dashboard\_invitees\_items module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.shared_dashboard_invitees_items
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.shared\_dashboard\_invites module
 ---------------------------------------------------------------
 
@@ -3193,6 +3256,13 @@ datadog\_api\_client.v1.model.shared\_dashboard\_invites\_meta\_page module
 ---------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.shared_dashboard_invites_meta_page
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.shared\_dashboard\_status module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.shared_dashboard_status
    :members:
    :show-inheritance:
 
@@ -5989,6 +6059,20 @@ datadog\_api\_client.v1.model.user\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.viewing\_preferences module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.viewing_preferences
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.viewing\_preferences\_theme module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.viewing_preferences_theme
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.webhooks\_integration module
 ----------------------------------------------------------
 
@@ -6133,6 +6217,27 @@ datadog\_api\_client.v1.model.widget\_formula module
 ----------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.widget_formula
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.widget\_formula\_cell\_display\_mode\_options module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.widget_formula_cell_display_mode_options
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.widget\_formula\_cell\_display\_mode\_options\_trend\_type module
+-----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.widget_formula_cell_display_mode_options_trend_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.widget\_formula\_cell\_display\_mode\_options\_y\_scale module
+--------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.widget_formula_cell_display_mode_options_y_scale
    :members:
    :show-inheritance:
 
@@ -6301,6 +6406,13 @@ datadog\_api\_client.v1.model.widget\_node\_type module
 -------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.widget_node_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.widget\_number\_format module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.widget_number_format
    :members:
    :show-inheritance:
 

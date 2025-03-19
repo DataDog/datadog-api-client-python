@@ -38,6 +38,7 @@ class MonitorSearchResult(ModelNormal):
             "name": (str,),
             "notifications": ([MonitorSearchResultNotification],),
             "org_id": (int,),
+            "quality_issues": ([str],),
             "query": (str,),
             "scopes": ([str],),
             "status": (MonitorOverallStates,),
@@ -54,6 +55,7 @@ class MonitorSearchResult(ModelNormal):
         "name": "name",
         "notifications": "notifications",
         "org_id": "org_id",
+        "quality_issues": "quality_issues",
         "query": "query",
         "scopes": "scopes",
         "status": "status",
@@ -69,6 +71,7 @@ class MonitorSearchResult(ModelNormal):
         "name",
         "notifications",
         "org_id",
+        "quality_issues",
         "status",
         "tags",
     }
@@ -83,6 +86,7 @@ class MonitorSearchResult(ModelNormal):
         name: Union[str, UnsetType] = unset,
         notifications: Union[List[MonitorSearchResultNotification], UnsetType] = unset,
         org_id: Union[int, UnsetType] = unset,
+        quality_issues: Union[List[str], UnsetType] = unset,
         query: Union[str, UnsetType] = unset,
         scopes: Union[List[str], UnsetType] = unset,
         status: Union[MonitorOverallStates, UnsetType] = unset,
@@ -116,6 +120,9 @@ class MonitorSearchResult(ModelNormal):
 
         :param org_id: The ID of the organization.
         :type org_id: int, optional
+
+        :param quality_issues: Quality issues detected with the monitor.
+        :type quality_issues: [str], optional
 
         :param query: The monitor query.
         :type query: str, optional
@@ -151,6 +158,8 @@ class MonitorSearchResult(ModelNormal):
             kwargs["notifications"] = notifications
         if org_id is not unset:
             kwargs["org_id"] = org_id
+        if quality_issues is not unset:
+            kwargs["quality_issues"] = quality_issues
         if query is not unset:
             kwargs["query"] = query
         if scopes is not unset:

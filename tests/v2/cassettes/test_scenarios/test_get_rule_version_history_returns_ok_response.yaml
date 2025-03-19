@@ -1,0 +1,53 @@
+interactions:
+- request:
+    body: '{"cases":[{"condition":"a > 0","name":"","notifications":[],"status":"info"}],"filters":[],"isEnabled":true,"message":"Test
+      rule","name":"Test-Get_rule_version_history_returns_OK_response-1738708757","options":{"evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"queries":[{"aggregation":"count","distinctFields":[],"groupByFields":[],"metrics":[],"query":"@test:true"}],"tags":[],"type":"log_detection"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules
+  response:
+    body:
+      string: '{"name":"Test-Get_rule_version_history_returns_OK_response-1738708757","createdAt":1738708757817,"isDefault":false,"isPartner":false,"isEnabled":true,"isBeta":false,"isDeleted":false,"isDeprecated":false,"queries":[{"query":"@test:true","groupByFields":[],"hasOptionalGroupByFields":false,"distinctFields":[],"aggregation":"count","name":""}],"options":{"evaluationWindow":900,"detectionMethod":"threshold","maxSignalDuration":86400,"keepAlive":3600},"cases":[{"name":"","status":"info","notifications":[],"condition":"a
+        \u003e 0"}],"message":"Test rule","tags":[],"hasExtendedTitle":false,"type":"log_detection","filters":[],"version":1,"id":"gvq-qqd-jc7"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/gvq-qqd-jc7/version_history
+  response:
+    body:
+      string: '{"data":{"id":"gvq-qqd-jc7","type":"GetRuleVersionHistoryResponse","attributes":{"count":1,"data":{"1":{"rule":{"name":"Test-Get_rule_version_history_returns_OK_response-1738708757","createdAt":1738708757817,"isDefault":false,"isEnabled":true,"isDeleted":false,"queries":[{"query":"@test:true","groupByFields":[],"hasOptionalGroupByFields":false,"distinctFields":[],"aggregation":"count","name":""}],"options":{"evaluationWindow":900,"detectionMethod":"threshold","maxSignalDuration":86400,"keepAlive":3600},"cases":[{"name":"","status":"info","notifications":[],"condition":"a
+        \u003e 0"}],"message":"Test rule","tags":[],"hasExtendedTitle":false,"type":"log_detection","filters":[],"version":1,"id":"gvq-qqd-jc7","metadata":{"entities":null,"sources":null},"creator":{"handle":"","name":""},"updater":{"handle":"","name":""}},"changes":[]}}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/gvq-qqd-jc7
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1

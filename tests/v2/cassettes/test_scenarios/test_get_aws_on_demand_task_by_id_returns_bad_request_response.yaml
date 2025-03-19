@@ -1,0 +1,19 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/agentless_scanning/ondemand/aws/invalid-uuid
+  response:
+    body:
+      string: '{"errors":[{"title":"Generic Error","detail":"missing or invalid url
+        parameter ''taskId'', expected uuid format ''6d09294c-9ad9-42fd-a759-a0c1599b4843''"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 400
+      message: Bad Request
+version: 1

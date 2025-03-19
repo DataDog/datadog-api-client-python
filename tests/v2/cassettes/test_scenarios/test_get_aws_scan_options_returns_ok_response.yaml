@@ -8,7 +8,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/agentless_scanning/accounts/aws
   response:
     body:
-      string: '{"data":[]}'
+      string: '{"data":[{"id":"000000000002","type":"aws_scan_options","attributes":{"lambda":false,"sensitive_data":false,"vuln_containers_os":true,"vuln_host_os":true}}]}'
     headers:
       content-type:
       - application/vnd.api+json

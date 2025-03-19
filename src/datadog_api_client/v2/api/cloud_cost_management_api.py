@@ -427,7 +427,7 @@ class CloudCostManagementApi:
     ) -> AwsCURConfigsResponse:
         """Update Cloud Cost Management AWS CUR config.
 
-        Update the status of an AWS CUR config (active/archived).
+        Update the status (active/archived) and/or account filtering configuration of an AWS CUR config.
 
         :param cloud_account_id: Cloud Account id.
         :type cloud_account_id: str
