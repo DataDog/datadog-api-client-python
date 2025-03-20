@@ -92,6 +92,7 @@ class UsageSummaryDateOrg(ModelNormal):
             "eph_infra_host_opentelemetry_sum": (int,),
             "eph_infra_host_pro_sum": (int,),
             "eph_infra_host_proplus_sum": (int,),
+            "error_tracking_apm_error_events_sum": (int,),
             "error_tracking_error_events_sum": (int,),
             "error_tracking_events_sum": (int,),
             "error_tracking_rum_error_events_sum": (int,),
@@ -263,6 +264,7 @@ class UsageSummaryDateOrg(ModelNormal):
         "eph_infra_host_opentelemetry_sum": "eph_infra_host_opentelemetry_sum",
         "eph_infra_host_pro_sum": "eph_infra_host_pro_sum",
         "eph_infra_host_proplus_sum": "eph_infra_host_proplus_sum",
+        "error_tracking_apm_error_events_sum": "error_tracking_apm_error_events_sum",
         "error_tracking_error_events_sum": "error_tracking_error_events_sum",
         "error_tracking_events_sum": "error_tracking_events_sum",
         "error_tracking_rum_error_events_sum": "error_tracking_rum_error_events_sum",
@@ -435,6 +437,7 @@ class UsageSummaryDateOrg(ModelNormal):
         eph_infra_host_opentelemetry_sum: Union[int, UnsetType] = unset,
         eph_infra_host_pro_sum: Union[int, UnsetType] = unset,
         eph_infra_host_proplus_sum: Union[int, UnsetType] = unset,
+        error_tracking_apm_error_events_sum: Union[int, UnsetType] = unset,
         error_tracking_error_events_sum: Union[int, UnsetType] = unset,
         error_tracking_events_sum: Union[int, UnsetType] = unset,
         error_tracking_rum_error_events_sum: Union[int, UnsetType] = unset,
@@ -757,6 +760,9 @@ class UsageSummaryDateOrg(ModelNormal):
 
         :param eph_infra_host_proplus_sum: Shows the sum of all ephemeral infrastructure hosts for Pro Plus over all hours in the current date for the given org.
         :type eph_infra_host_proplus_sum: int, optional
+
+        :param error_tracking_apm_error_events_sum: Shows the sum of all Error Tracking APM error events over all hours in the current date for the given org.
+        :type error_tracking_apm_error_events_sum: int, optional
 
         :param error_tracking_error_events_sum: Shows the sum of all Error Tracking error events over all hours in the current date for the given org.
         :type error_tracking_error_events_sum: int, optional
@@ -1189,6 +1195,8 @@ class UsageSummaryDateOrg(ModelNormal):
             kwargs["eph_infra_host_pro_sum"] = eph_infra_host_pro_sum
         if eph_infra_host_proplus_sum is not unset:
             kwargs["eph_infra_host_proplus_sum"] = eph_infra_host_proplus_sum
+        if error_tracking_apm_error_events_sum is not unset:
+            kwargs["error_tracking_apm_error_events_sum"] = error_tracking_apm_error_events_sum
         if error_tracking_error_events_sum is not unset:
             kwargs["error_tracking_error_events_sum"] = error_tracking_error_events_sum
         if error_tracking_events_sum is not unset:
