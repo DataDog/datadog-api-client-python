@@ -164,10 +164,13 @@ class UsageSummaryResponse(ModelNormal):
             "rum_mobile_lite_session_count_android_agg_sum": (int,),
             "rum_mobile_lite_session_count_flutter_agg_sum": (int,),
             "rum_mobile_lite_session_count_ios_agg_sum": (int,),
+            "rum_mobile_lite_session_count_kotlinmultiplatform_agg_sum": (int,),
             "rum_mobile_lite_session_count_reactnative_agg_sum": (int,),
             "rum_mobile_lite_session_count_roku_agg_sum": (int,),
+            "rum_mobile_lite_session_count_unity_agg_sum": (int,),
             "rum_mobile_replay_session_count_android_agg_sum": (int,),
             "rum_mobile_replay_session_count_ios_agg_sum": (int,),
+            "rum_mobile_replay_session_count_kotlinmultiplatform_agg_sum": (int,),
             "rum_mobile_replay_session_count_reactnative_agg_sum": (int,),
             "rum_replay_session_count_agg_sum": (int,),
             "rum_session_count_agg_sum": (int,),
@@ -337,10 +340,13 @@ class UsageSummaryResponse(ModelNormal):
         "rum_mobile_lite_session_count_android_agg_sum": "rum_mobile_lite_session_count_android_agg_sum",
         "rum_mobile_lite_session_count_flutter_agg_sum": "rum_mobile_lite_session_count_flutter_agg_sum",
         "rum_mobile_lite_session_count_ios_agg_sum": "rum_mobile_lite_session_count_ios_agg_sum",
+        "rum_mobile_lite_session_count_kotlinmultiplatform_agg_sum": "rum_mobile_lite_session_count_kotlinmultiplatform_agg_sum",
         "rum_mobile_lite_session_count_reactnative_agg_sum": "rum_mobile_lite_session_count_reactnative_agg_sum",
         "rum_mobile_lite_session_count_roku_agg_sum": "rum_mobile_lite_session_count_roku_agg_sum",
+        "rum_mobile_lite_session_count_unity_agg_sum": "rum_mobile_lite_session_count_unity_agg_sum",
         "rum_mobile_replay_session_count_android_agg_sum": "rum_mobile_replay_session_count_android_agg_sum",
         "rum_mobile_replay_session_count_ios_agg_sum": "rum_mobile_replay_session_count_ios_agg_sum",
+        "rum_mobile_replay_session_count_kotlinmultiplatform_agg_sum": "rum_mobile_replay_session_count_kotlinmultiplatform_agg_sum",
         "rum_mobile_replay_session_count_reactnative_agg_sum": "rum_mobile_replay_session_count_reactnative_agg_sum",
         "rum_replay_session_count_agg_sum": "rum_replay_session_count_agg_sum",
         "rum_session_count_agg_sum": "rum_session_count_agg_sum",
@@ -511,10 +517,13 @@ class UsageSummaryResponse(ModelNormal):
         rum_mobile_lite_session_count_android_agg_sum: Union[int, UnsetType] = unset,
         rum_mobile_lite_session_count_flutter_agg_sum: Union[int, UnsetType] = unset,
         rum_mobile_lite_session_count_ios_agg_sum: Union[int, UnsetType] = unset,
+        rum_mobile_lite_session_count_kotlinmultiplatform_agg_sum: Union[int, UnsetType] = unset,
         rum_mobile_lite_session_count_reactnative_agg_sum: Union[int, UnsetType] = unset,
         rum_mobile_lite_session_count_roku_agg_sum: Union[int, UnsetType] = unset,
+        rum_mobile_lite_session_count_unity_agg_sum: Union[int, UnsetType] = unset,
         rum_mobile_replay_session_count_android_agg_sum: Union[int, UnsetType] = unset,
         rum_mobile_replay_session_count_ios_agg_sum: Union[int, UnsetType] = unset,
+        rum_mobile_replay_session_count_kotlinmultiplatform_agg_sum: Union[int, UnsetType] = unset,
         rum_mobile_replay_session_count_reactnative_agg_sum: Union[int, UnsetType] = unset,
         rum_replay_session_count_agg_sum: Union[int, UnsetType] = unset,
         rum_session_count_agg_sum: Union[int, UnsetType] = unset,
@@ -962,17 +971,26 @@ class UsageSummaryResponse(ModelNormal):
         :param rum_mobile_lite_session_count_ios_agg_sum: Shows the sum of all mobile RUM lite sessions on iOS over all hours in the current month for all organizations (To be introduced on October 1st, 2024).
         :type rum_mobile_lite_session_count_ios_agg_sum: int, optional
 
+        :param rum_mobile_lite_session_count_kotlinmultiplatform_agg_sum: Shows the sum of all mobile RUM lite sessions on Kotlin Multiplatform over all hours within the current month for all organizations.
+        :type rum_mobile_lite_session_count_kotlinmultiplatform_agg_sum: int, optional
+
         :param rum_mobile_lite_session_count_reactnative_agg_sum: Shows the sum of all mobile RUM lite sessions on React Native over all hours in the current month for all organizations (To be introduced on October 1st, 2024).
         :type rum_mobile_lite_session_count_reactnative_agg_sum: int, optional
 
         :param rum_mobile_lite_session_count_roku_agg_sum: Shows the sum of all mobile RUM lite sessions on Roku over all hours within the current month for all organizations (To be introduced on October 1st, 2024).
         :type rum_mobile_lite_session_count_roku_agg_sum: int, optional
 
+        :param rum_mobile_lite_session_count_unity_agg_sum: Shows the sum of all mobile RUM lite sessions on Unity over all hours within the current month for all organizations.
+        :type rum_mobile_lite_session_count_unity_agg_sum: int, optional
+
         :param rum_mobile_replay_session_count_android_agg_sum: Shows the sum of all mobile RUM replay sessions on Android over all hours within the current month for all organizations.
         :type rum_mobile_replay_session_count_android_agg_sum: int, optional
 
         :param rum_mobile_replay_session_count_ios_agg_sum: Shows the sum of all mobile RUM replay sessions on iOS over all hours within the current month for all organizations.
         :type rum_mobile_replay_session_count_ios_agg_sum: int, optional
+
+        :param rum_mobile_replay_session_count_kotlinmultiplatform_agg_sum: Shows the sum of all mobile RUM replay sessions on Kotlin Multiplatform over all hours within the current month for all organizations.
+        :type rum_mobile_replay_session_count_kotlinmultiplatform_agg_sum: int, optional
 
         :param rum_mobile_replay_session_count_reactnative_agg_sum: Shows the sum of all mobile RUM replay sessions on React Native over all hours within the current month for all organizations.
         :type rum_mobile_replay_session_count_reactnative_agg_sum: int, optional
@@ -1348,16 +1366,26 @@ class UsageSummaryResponse(ModelNormal):
             kwargs["rum_mobile_lite_session_count_flutter_agg_sum"] = rum_mobile_lite_session_count_flutter_agg_sum
         if rum_mobile_lite_session_count_ios_agg_sum is not unset:
             kwargs["rum_mobile_lite_session_count_ios_agg_sum"] = rum_mobile_lite_session_count_ios_agg_sum
+        if rum_mobile_lite_session_count_kotlinmultiplatform_agg_sum is not unset:
+            kwargs[
+                "rum_mobile_lite_session_count_kotlinmultiplatform_agg_sum"
+            ] = rum_mobile_lite_session_count_kotlinmultiplatform_agg_sum
         if rum_mobile_lite_session_count_reactnative_agg_sum is not unset:
             kwargs[
                 "rum_mobile_lite_session_count_reactnative_agg_sum"
             ] = rum_mobile_lite_session_count_reactnative_agg_sum
         if rum_mobile_lite_session_count_roku_agg_sum is not unset:
             kwargs["rum_mobile_lite_session_count_roku_agg_sum"] = rum_mobile_lite_session_count_roku_agg_sum
+        if rum_mobile_lite_session_count_unity_agg_sum is not unset:
+            kwargs["rum_mobile_lite_session_count_unity_agg_sum"] = rum_mobile_lite_session_count_unity_agg_sum
         if rum_mobile_replay_session_count_android_agg_sum is not unset:
             kwargs["rum_mobile_replay_session_count_android_agg_sum"] = rum_mobile_replay_session_count_android_agg_sum
         if rum_mobile_replay_session_count_ios_agg_sum is not unset:
             kwargs["rum_mobile_replay_session_count_ios_agg_sum"] = rum_mobile_replay_session_count_ios_agg_sum
+        if rum_mobile_replay_session_count_kotlinmultiplatform_agg_sum is not unset:
+            kwargs[
+                "rum_mobile_replay_session_count_kotlinmultiplatform_agg_sum"
+            ] = rum_mobile_replay_session_count_kotlinmultiplatform_agg_sum
         if rum_mobile_replay_session_count_reactnative_agg_sum is not unset:
             kwargs[
                 "rum_mobile_replay_session_count_reactnative_agg_sum"

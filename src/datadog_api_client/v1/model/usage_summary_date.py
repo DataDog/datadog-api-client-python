@@ -153,10 +153,13 @@ class UsageSummaryDate(ModelNormal):
             "rum_mobile_lite_session_count_android_sum": (int,),
             "rum_mobile_lite_session_count_flutter_sum": (int,),
             "rum_mobile_lite_session_count_ios_sum": (int,),
+            "rum_mobile_lite_session_count_kotlinmultiplatform_sum": (int,),
             "rum_mobile_lite_session_count_reactnative_sum": (int,),
             "rum_mobile_lite_session_count_roku_sum": (int,),
+            "rum_mobile_lite_session_count_unity_sum": (int,),
             "rum_mobile_replay_session_count_android_sum": (int,),
             "rum_mobile_replay_session_count_ios_sum": (int,),
+            "rum_mobile_replay_session_count_kotlinmultiplatform_sum": (int,),
             "rum_mobile_replay_session_count_reactnative_sum": (int,),
             "rum_replay_session_count_sum": (int,),
             "rum_session_count_sum": (int,),
@@ -315,10 +318,13 @@ class UsageSummaryDate(ModelNormal):
         "rum_mobile_lite_session_count_android_sum": "rum_mobile_lite_session_count_android_sum",
         "rum_mobile_lite_session_count_flutter_sum": "rum_mobile_lite_session_count_flutter_sum",
         "rum_mobile_lite_session_count_ios_sum": "rum_mobile_lite_session_count_ios_sum",
+        "rum_mobile_lite_session_count_kotlinmultiplatform_sum": "rum_mobile_lite_session_count_kotlinmultiplatform_sum",
         "rum_mobile_lite_session_count_reactnative_sum": "rum_mobile_lite_session_count_reactnative_sum",
         "rum_mobile_lite_session_count_roku_sum": "rum_mobile_lite_session_count_roku_sum",
+        "rum_mobile_lite_session_count_unity_sum": "rum_mobile_lite_session_count_unity_sum",
         "rum_mobile_replay_session_count_android_sum": "rum_mobile_replay_session_count_android_sum",
         "rum_mobile_replay_session_count_ios_sum": "rum_mobile_replay_session_count_ios_sum",
+        "rum_mobile_replay_session_count_kotlinmultiplatform_sum": "rum_mobile_replay_session_count_kotlinmultiplatform_sum",
         "rum_mobile_replay_session_count_reactnative_sum": "rum_mobile_replay_session_count_reactnative_sum",
         "rum_replay_session_count_sum": "rum_replay_session_count_sum",
         "rum_session_count_sum": "rum_session_count_sum",
@@ -478,10 +484,13 @@ class UsageSummaryDate(ModelNormal):
         rum_mobile_lite_session_count_android_sum: Union[int, UnsetType] = unset,
         rum_mobile_lite_session_count_flutter_sum: Union[int, UnsetType] = unset,
         rum_mobile_lite_session_count_ios_sum: Union[int, UnsetType] = unset,
+        rum_mobile_lite_session_count_kotlinmultiplatform_sum: Union[int, UnsetType] = unset,
         rum_mobile_lite_session_count_reactnative_sum: Union[int, UnsetType] = unset,
         rum_mobile_lite_session_count_roku_sum: Union[int, UnsetType] = unset,
+        rum_mobile_lite_session_count_unity_sum: Union[int, UnsetType] = unset,
         rum_mobile_replay_session_count_android_sum: Union[int, UnsetType] = unset,
         rum_mobile_replay_session_count_ios_sum: Union[int, UnsetType] = unset,
+        rum_mobile_replay_session_count_kotlinmultiplatform_sum: Union[int, UnsetType] = unset,
         rum_mobile_replay_session_count_reactnative_sum: Union[int, UnsetType] = unset,
         rum_replay_session_count_sum: Union[int, UnsetType] = unset,
         rum_session_count_sum: Union[int, UnsetType] = unset,
@@ -900,17 +909,26 @@ class UsageSummaryDate(ModelNormal):
         :param rum_mobile_lite_session_count_ios_sum: Shows the sum of all mobile RUM lite sessions on iOS over all hours in the current date for all organizations (To be introduced on October 1st, 2024).
         :type rum_mobile_lite_session_count_ios_sum: int, optional
 
+        :param rum_mobile_lite_session_count_kotlinmultiplatform_sum: Shows the sum of all mobile RUM lite sessions on Kotlin Multiplatform over all hours within the current date for all organizations.
+        :type rum_mobile_lite_session_count_kotlinmultiplatform_sum: int, optional
+
         :param rum_mobile_lite_session_count_reactnative_sum: Shows the sum of all mobile RUM lite sessions on React Native over all hours in the current date for all organizations (To be introduced on October 1st, 2024).
         :type rum_mobile_lite_session_count_reactnative_sum: int, optional
 
         :param rum_mobile_lite_session_count_roku_sum: Shows the sum of all mobile RUM lite sessions on Roku over all hours within the current date for all organizations (To be introduced on October 1st, 2024).
         :type rum_mobile_lite_session_count_roku_sum: int, optional
 
+        :param rum_mobile_lite_session_count_unity_sum: Shows the sum of all mobile RUM lite sessions on Unity over all hours within the current date for all organizations.
+        :type rum_mobile_lite_session_count_unity_sum: int, optional
+
         :param rum_mobile_replay_session_count_android_sum: Shows the sum of all mobile RUM replay sessions on Android over all hours within the current date for the given org.
         :type rum_mobile_replay_session_count_android_sum: int, optional
 
         :param rum_mobile_replay_session_count_ios_sum: Shows the sum of all mobile RUM replay sessions on iOS over all hours within the current date for the given org.
         :type rum_mobile_replay_session_count_ios_sum: int, optional
+
+        :param rum_mobile_replay_session_count_kotlinmultiplatform_sum: Shows the sum of all mobile RUM replay sessions on Kotlin Multiplatform over all hours within the current date for all organizations.
+        :type rum_mobile_replay_session_count_kotlinmultiplatform_sum: int, optional
 
         :param rum_mobile_replay_session_count_reactnative_sum: Shows the sum of all mobile RUM replay sessions on React Native over all hours within the current date for the given org.
         :type rum_mobile_replay_session_count_reactnative_sum: int, optional
@@ -1256,14 +1274,24 @@ class UsageSummaryDate(ModelNormal):
             kwargs["rum_mobile_lite_session_count_flutter_sum"] = rum_mobile_lite_session_count_flutter_sum
         if rum_mobile_lite_session_count_ios_sum is not unset:
             kwargs["rum_mobile_lite_session_count_ios_sum"] = rum_mobile_lite_session_count_ios_sum
+        if rum_mobile_lite_session_count_kotlinmultiplatform_sum is not unset:
+            kwargs[
+                "rum_mobile_lite_session_count_kotlinmultiplatform_sum"
+            ] = rum_mobile_lite_session_count_kotlinmultiplatform_sum
         if rum_mobile_lite_session_count_reactnative_sum is not unset:
             kwargs["rum_mobile_lite_session_count_reactnative_sum"] = rum_mobile_lite_session_count_reactnative_sum
         if rum_mobile_lite_session_count_roku_sum is not unset:
             kwargs["rum_mobile_lite_session_count_roku_sum"] = rum_mobile_lite_session_count_roku_sum
+        if rum_mobile_lite_session_count_unity_sum is not unset:
+            kwargs["rum_mobile_lite_session_count_unity_sum"] = rum_mobile_lite_session_count_unity_sum
         if rum_mobile_replay_session_count_android_sum is not unset:
             kwargs["rum_mobile_replay_session_count_android_sum"] = rum_mobile_replay_session_count_android_sum
         if rum_mobile_replay_session_count_ios_sum is not unset:
             kwargs["rum_mobile_replay_session_count_ios_sum"] = rum_mobile_replay_session_count_ios_sum
+        if rum_mobile_replay_session_count_kotlinmultiplatform_sum is not unset:
+            kwargs[
+                "rum_mobile_replay_session_count_kotlinmultiplatform_sum"
+            ] = rum_mobile_replay_session_count_kotlinmultiplatform_sum
         if rum_mobile_replay_session_count_reactnative_sum is not unset:
             kwargs["rum_mobile_replay_session_count_reactnative_sum"] = rum_mobile_replay_session_count_reactnative_sum
         if rum_replay_session_count_sum is not unset:
