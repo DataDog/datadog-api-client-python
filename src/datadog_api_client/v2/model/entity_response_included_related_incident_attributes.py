@@ -35,11 +35,11 @@ class EntityResponseIncludedRelatedIncidentAttributes(ModelNormal):
 
     def __init__(
         self_,
+        title: str,
         created_at: Union[datetime, UnsetType] = unset,
         html_url: Union[str, UnsetType] = unset,
         provider: Union[str, UnsetType] = unset,
         status: Union[str, UnsetType] = unset,
-        title: Union[str, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -58,7 +58,7 @@ class EntityResponseIncludedRelatedIncidentAttributes(ModelNormal):
         :type status: str, optional
 
         :param title: Incident title.
-        :type title: str, optional
+        :type title: str
         """
         if created_at is not unset:
             kwargs["created_at"] = created_at
@@ -68,6 +68,6 @@ class EntityResponseIncludedRelatedIncidentAttributes(ModelNormal):
             kwargs["provider"] = provider
         if status is not unset:
             kwargs["status"] = status
-        if title is not unset:
-            kwargs["title"] = title
         super().__init__(kwargs)
+
+        self_.title = title
