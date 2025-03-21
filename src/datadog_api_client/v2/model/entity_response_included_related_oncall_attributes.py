@@ -38,8 +38,8 @@ class EntityResponseIncludedRelatedOncallAttributes(ModelNormal):
 
     def __init__(
         self_,
+        provider: str,
         escalations: Union[List[EntityResponseIncludedRelatedOncallEscalationItem], UnsetType] = unset,
-        provider: Union[str, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -49,10 +49,10 @@ class EntityResponseIncludedRelatedOncallAttributes(ModelNormal):
         :type escalations: [EntityResponseIncludedRelatedOncallEscalationItem], optional
 
         :param provider: Oncall provider.
-        :type provider: str, optional
+        :type provider: str
         """
         if escalations is not unset:
             kwargs["escalations"] = escalations
-        if provider is not unset:
-            kwargs["provider"] = provider
         super().__init__(kwargs)
+
+        self_.provider = provider

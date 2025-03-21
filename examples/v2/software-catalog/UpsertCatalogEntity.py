@@ -55,7 +55,7 @@ body = EntityV3Service(
     metadata=EntityV3Metadata(
         additional_owners=[
             EntityV3MetadataAdditionalOwnersItems(
-                name="",
+                name="fake-team-name",
             ),
         ],
         contacts=[
