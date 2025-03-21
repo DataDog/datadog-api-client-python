@@ -16,7 +16,7 @@ class ContentEncoding(ModelSimple):
     """
     HTTP header used to compress the media-type.
 
-    :param value: Must be one of ["identity", "gzip", "deflate"].
+    :param value: Must be one of ["identity", "gzip", "deflate", "zstd1"].
     :type value: str
     """
 
@@ -24,10 +24,12 @@ class ContentEncoding(ModelSimple):
         "identity",
         "gzip",
         "deflate",
+        "zstd1",
     }
     IDENTITY: ClassVar["ContentEncoding"]
     GZIP: ClassVar["ContentEncoding"]
     DEFLATE: ClassVar["ContentEncoding"]
+    ZSTD1: ClassVar["ContentEncoding"]
 
     @cached_property
     def openapi_types(_):
@@ -39,3 +41,4 @@ class ContentEncoding(ModelSimple):
 ContentEncoding.IDENTITY = ContentEncoding("identity")
 ContentEncoding.GZIP = ContentEncoding("gzip")
 ContentEncoding.DEFLATE = ContentEncoding("deflate")
+ContentEncoding.ZSTD1 = ContentEncoding("zstd1")
