@@ -22,7 +22,7 @@ class ListEntityCatalogResponseIncludedItem(ModelComposed):
         :type id: str, optional
 
         :param type: Schema type.
-        :type type: str, optional
+        :type type: EntityResponseIncludedSchemaType, optional
 
         :param meta: Included related entity meta.
         :type meta: EntityResponseIncludedRelatedEntityMeta, optional

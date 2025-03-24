@@ -17,6 +17,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.entity_response_included_schema_attributes import (
         EntityResponseIncludedSchemaAttributes,
     )
+    from datadog_api_client.v2.model.entity_response_included_schema_type import EntityResponseIncludedSchemaType
 
 
 class EntityResponseIncludedSchema(ModelNormal):
@@ -25,11 +26,12 @@ class EntityResponseIncludedSchema(ModelNormal):
         from datadog_api_client.v2.model.entity_response_included_schema_attributes import (
             EntityResponseIncludedSchemaAttributes,
         )
+        from datadog_api_client.v2.model.entity_response_included_schema_type import EntityResponseIncludedSchemaType
 
         return {
             "attributes": (EntityResponseIncludedSchemaAttributes,),
             "id": (str,),
-            "type": (str,),
+            "type": (EntityResponseIncludedSchemaType,),
         }
 
     attribute_map = {
@@ -42,7 +44,7 @@ class EntityResponseIncludedSchema(ModelNormal):
         self_,
         attributes: Union[EntityResponseIncludedSchemaAttributes, UnsetType] = unset,
         id: Union[str, UnsetType] = unset,
-        type: Union[str, UnsetType] = unset,
+        type: Union[EntityResponseIncludedSchemaType, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -55,7 +57,7 @@ class EntityResponseIncludedSchema(ModelNormal):
         :type id: str, optional
 
         :param type: Schema type.
-        :type type: str, optional
+        :type type: EntityResponseIncludedSchemaType, optional
         """
         if attributes is not unset:
             kwargs["attributes"] = attributes

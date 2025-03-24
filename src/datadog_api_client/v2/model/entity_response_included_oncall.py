@@ -17,6 +17,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.entity_response_included_related_oncall_attributes import (
         EntityResponseIncludedRelatedOncallAttributes,
     )
+    from datadog_api_client.v2.model.entity_response_included_oncall_type import EntityResponseIncludedOncallType
 
 
 class EntityResponseIncludedOncall(ModelNormal):
@@ -25,11 +26,12 @@ class EntityResponseIncludedOncall(ModelNormal):
         from datadog_api_client.v2.model.entity_response_included_related_oncall_attributes import (
             EntityResponseIncludedRelatedOncallAttributes,
         )
+        from datadog_api_client.v2.model.entity_response_included_oncall_type import EntityResponseIncludedOncallType
 
         return {
             "attributes": (EntityResponseIncludedRelatedOncallAttributes,),
             "id": (str,),
-            "type": (str,),
+            "type": (EntityResponseIncludedOncallType,),
         }
 
     attribute_map = {
@@ -42,7 +44,7 @@ class EntityResponseIncludedOncall(ModelNormal):
         self_,
         attributes: Union[EntityResponseIncludedRelatedOncallAttributes, UnsetType] = unset,
         id: Union[str, UnsetType] = unset,
-        type: Union[str, UnsetType] = unset,
+        type: Union[EntityResponseIncludedOncallType, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -55,7 +57,7 @@ class EntityResponseIncludedOncall(ModelNormal):
         :type id: str, optional
 
         :param type: Oncall type.
-        :type type: str, optional
+        :type type: EntityResponseIncludedOncallType, optional
         """
         if attributes is not unset:
             kwargs["attributes"] = attributes

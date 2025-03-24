@@ -20,6 +20,9 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.entity_response_included_related_entity_meta import (
         EntityResponseIncludedRelatedEntityMeta,
     )
+    from datadog_api_client.v2.model.entity_response_included_related_entity_type import (
+        EntityResponseIncludedRelatedEntityType,
+    )
 
 
 class EntityResponseIncludedRelatedEntity(ModelNormal):
@@ -31,12 +34,15 @@ class EntityResponseIncludedRelatedEntity(ModelNormal):
         from datadog_api_client.v2.model.entity_response_included_related_entity_meta import (
             EntityResponseIncludedRelatedEntityMeta,
         )
+        from datadog_api_client.v2.model.entity_response_included_related_entity_type import (
+            EntityResponseIncludedRelatedEntityType,
+        )
 
         return {
             "attributes": (EntityResponseIncludedRelatedEntityAttributes,),
             "id": (str,),
             "meta": (EntityResponseIncludedRelatedEntityMeta,),
-            "type": (str,),
+            "type": (EntityResponseIncludedRelatedEntityType,),
         }
 
     attribute_map = {
@@ -51,7 +57,7 @@ class EntityResponseIncludedRelatedEntity(ModelNormal):
         attributes: Union[EntityResponseIncludedRelatedEntityAttributes, UnsetType] = unset,
         id: Union[str, UnsetType] = unset,
         meta: Union[EntityResponseIncludedRelatedEntityMeta, UnsetType] = unset,
-        type: Union[str, UnsetType] = unset,
+        type: Union[EntityResponseIncludedRelatedEntityType, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -67,7 +73,7 @@ class EntityResponseIncludedRelatedEntity(ModelNormal):
         :type meta: EntityResponseIncludedRelatedEntityMeta, optional
 
         :param type: Related entity.
-        :type type: str, optional
+        :type type: EntityResponseIncludedRelatedEntityType, optional
         """
         if attributes is not unset:
             kwargs["attributes"] = attributes
