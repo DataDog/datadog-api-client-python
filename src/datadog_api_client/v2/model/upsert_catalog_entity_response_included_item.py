@@ -22,7 +22,7 @@ class UpsertCatalogEntityResponseIncludedItem(ModelComposed):
         :type id: str, optional
 
         :param type: Schema type.
-        :type type: str, optional
+        :type type: EntityResponseIncludedSchemaType, optional
         """
         super().__init__(kwargs)
 
