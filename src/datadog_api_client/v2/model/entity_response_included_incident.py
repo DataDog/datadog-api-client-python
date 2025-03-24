@@ -17,6 +17,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.entity_response_included_related_incident_attributes import (
         EntityResponseIncludedRelatedIncidentAttributes,
     )
+    from datadog_api_client.v2.model.entity_response_included_incident_type import EntityResponseIncludedIncidentType
 
 
 class EntityResponseIncludedIncident(ModelNormal):
@@ -25,11 +26,14 @@ class EntityResponseIncludedIncident(ModelNormal):
         from datadog_api_client.v2.model.entity_response_included_related_incident_attributes import (
             EntityResponseIncludedRelatedIncidentAttributes,
         )
+        from datadog_api_client.v2.model.entity_response_included_incident_type import (
+            EntityResponseIncludedIncidentType,
+        )
 
         return {
             "attributes": (EntityResponseIncludedRelatedIncidentAttributes,),
             "id": (str,),
-            "type": (str,),
+            "type": (EntityResponseIncludedIncidentType,),
         }
 
     attribute_map = {
@@ -42,7 +46,7 @@ class EntityResponseIncludedIncident(ModelNormal):
         self_,
         attributes: Union[EntityResponseIncludedRelatedIncidentAttributes, UnsetType] = unset,
         id: Union[str, UnsetType] = unset,
-        type: Union[str, UnsetType] = unset,
+        type: Union[EntityResponseIncludedIncidentType, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -55,7 +59,7 @@ class EntityResponseIncludedIncident(ModelNormal):
         :type id: str, optional
 
         :param type: Incident description.
-        :type type: str, optional
+        :type type: EntityResponseIncludedIncidentType, optional
         """
         if attributes is not unset:
             kwargs["attributes"] = attributes

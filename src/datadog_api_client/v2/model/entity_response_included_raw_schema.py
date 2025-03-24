@@ -17,6 +17,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.entity_response_included_raw_schema_attributes import (
         EntityResponseIncludedRawSchemaAttributes,
     )
+    from datadog_api_client.v2.model.entity_response_included_raw_schema_type import EntityResponseIncludedRawSchemaType
 
 
 class EntityResponseIncludedRawSchema(ModelNormal):
@@ -25,11 +26,14 @@ class EntityResponseIncludedRawSchema(ModelNormal):
         from datadog_api_client.v2.model.entity_response_included_raw_schema_attributes import (
             EntityResponseIncludedRawSchemaAttributes,
         )
+        from datadog_api_client.v2.model.entity_response_included_raw_schema_type import (
+            EntityResponseIncludedRawSchemaType,
+        )
 
         return {
             "attributes": (EntityResponseIncludedRawSchemaAttributes,),
             "id": (str,),
-            "type": (str,),
+            "type": (EntityResponseIncludedRawSchemaType,),
         }
 
     attribute_map = {
@@ -42,7 +46,7 @@ class EntityResponseIncludedRawSchema(ModelNormal):
         self_,
         attributes: Union[EntityResponseIncludedRawSchemaAttributes, UnsetType] = unset,
         id: Union[str, UnsetType] = unset,
-        type: Union[str, UnsetType] = unset,
+        type: Union[EntityResponseIncludedRawSchemaType, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -55,7 +59,7 @@ class EntityResponseIncludedRawSchema(ModelNormal):
         :type id: str, optional
 
         :param type: Raw schema type.
-        :type type: str, optional
+        :type type: EntityResponseIncludedRawSchemaType, optional
         """
         if attributes is not unset:
             kwargs["attributes"] = attributes

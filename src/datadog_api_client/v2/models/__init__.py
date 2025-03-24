@@ -912,17 +912,23 @@ from datadog_api_client.v2.model.entity_data import EntityData
 from datadog_api_client.v2.model.entity_meta import EntityMeta
 from datadog_api_client.v2.model.entity_relationships import EntityRelationships
 from datadog_api_client.v2.model.entity_response_included_incident import EntityResponseIncludedIncident
+from datadog_api_client.v2.model.entity_response_included_incident_type import EntityResponseIncludedIncidentType
 from datadog_api_client.v2.model.entity_response_included_oncall import EntityResponseIncludedOncall
+from datadog_api_client.v2.model.entity_response_included_oncall_type import EntityResponseIncludedOncallType
 from datadog_api_client.v2.model.entity_response_included_raw_schema import EntityResponseIncludedRawSchema
 from datadog_api_client.v2.model.entity_response_included_raw_schema_attributes import (
     EntityResponseIncludedRawSchemaAttributes,
 )
+from datadog_api_client.v2.model.entity_response_included_raw_schema_type import EntityResponseIncludedRawSchemaType
 from datadog_api_client.v2.model.entity_response_included_related_entity import EntityResponseIncludedRelatedEntity
 from datadog_api_client.v2.model.entity_response_included_related_entity_attributes import (
     EntityResponseIncludedRelatedEntityAttributes,
 )
 from datadog_api_client.v2.model.entity_response_included_related_entity_meta import (
     EntityResponseIncludedRelatedEntityMeta,
+)
+from datadog_api_client.v2.model.entity_response_included_related_entity_type import (
+    EntityResponseIncludedRelatedEntityType,
 )
 from datadog_api_client.v2.model.entity_response_included_related_incident_attributes import (
     EntityResponseIncludedRelatedIncidentAttributes,
@@ -937,6 +943,7 @@ from datadog_api_client.v2.model.entity_response_included_schema import EntityRe
 from datadog_api_client.v2.model.entity_response_included_schema_attributes import (
     EntityResponseIncludedSchemaAttributes,
 )
+from datadog_api_client.v2.model.entity_response_included_schema_type import EntityResponseIncludedSchemaType
 from datadog_api_client.v2.model.entity_response_meta import EntityResponseMeta
 from datadog_api_client.v2.model.entity_to_incidents import EntityToIncidents
 from datadog_api_client.v2.model.entity_to_oncalls import EntityToOncalls
@@ -3329,17 +3336,22 @@ __all__ = [
     "EntityMeta",
     "EntityRelationships",
     "EntityResponseIncludedIncident",
+    "EntityResponseIncludedIncidentType",
     "EntityResponseIncludedOncall",
+    "EntityResponseIncludedOncallType",
     "EntityResponseIncludedRawSchema",
     "EntityResponseIncludedRawSchemaAttributes",
+    "EntityResponseIncludedRawSchemaType",
     "EntityResponseIncludedRelatedEntity",
     "EntityResponseIncludedRelatedEntityAttributes",
     "EntityResponseIncludedRelatedEntityMeta",
+    "EntityResponseIncludedRelatedEntityType",
     "EntityResponseIncludedRelatedIncidentAttributes",
     "EntityResponseIncludedRelatedOncallAttributes",
     "EntityResponseIncludedRelatedOncallEscalationItem",
     "EntityResponseIncludedSchema",
     "EntityResponseIncludedSchemaAttributes",
+    "EntityResponseIncludedSchemaType",
     "EntityResponseMeta",
     "EntityToIncidents",
     "EntityToOncalls",
