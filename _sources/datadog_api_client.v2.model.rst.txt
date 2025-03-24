@@ -4806,10 +4806,24 @@ datadog\_api\_client.v2.model.entity\_response\_included\_incident module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.entity\_response\_included\_incident\_type module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_response_included_incident_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.entity\_response\_included\_oncall module
 -----------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.entity_response_included_oncall
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_response\_included\_oncall\_type module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_response_included_oncall_type
    :members:
    :show-inheritance:
 
@@ -4824,6 +4838,13 @@ datadog\_api\_client.v2.model.entity\_response\_included\_raw\_schema\_attribute
 ----------------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.entity_response_included_raw_schema_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_response\_included\_raw\_schema\_type module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_response_included_raw_schema_type
    :members:
    :show-inheritance:
 
@@ -4845,6 +4866,13 @@ datadog\_api\_client.v2.model.entity\_response\_included\_related\_entity\_meta 
 --------------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.entity_response_included_related_entity_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_response\_included\_related\_entity\_type module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_response_included_related_entity_type
    :members:
    :show-inheritance:
 
@@ -4880,6 +4908,13 @@ datadog\_api\_client.v2.model.entity\_response\_included\_schema\_attributes mod
 -----------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.entity_response_included_schema_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_response\_included\_schema\_type module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_response_included_schema_type
    :members:
    :show-inheritance:
 
