@@ -13,31 +13,31 @@ from datadog_api_client.model_utils import (
 )
 
 
-class WorkflowTriggerWrapper(ModelNormal):
+class SelfServiceTriggerWrapper(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
+            "self_service_trigger": (dict,),
             "start_step_names": ([str],),
-            "workflow_trigger": (dict,),
         }
 
     attribute_map = {
+        "self_service_trigger": "selfServiceTrigger",
         "start_step_names": "startStepNames",
-        "workflow_trigger": "workflowTrigger",
     }
 
-    def __init__(self_, workflow_trigger: dict, start_step_names: Union[List[str], UnsetType] = unset, **kwargs):
+    def __init__(self_, self_service_trigger: dict, start_step_names: Union[List[str], UnsetType] = unset, **kwargs):
         """
-        Schema for a Workflow-based trigger.
+        Schema for a Self Service-based trigger.
+
+        :param self_service_trigger: Trigger a workflow from Self Service.
+        :type self_service_trigger: dict
 
         :param start_step_names: A list of steps that run first after a trigger fires.
         :type start_step_names: [str], optional
-
-        :param workflow_trigger: Trigger a workflow from the Datadog UI. Only required if no other trigger exists.
-        :type workflow_trigger: dict
         """
         if start_step_names is not unset:
             kwargs["start_step_names"] = start_step_names
         super().__init__(kwargs)
 
-        self_.workflow_trigger = workflow_trigger
+        self_.self_service_trigger = self_service_trigger

@@ -30,7 +30,7 @@ class AppTriggerWrapper(ModelNormal):
         """
         Schema for an App-based trigger.
 
-        :param app_trigger: Trigger a workflow VIA an App.
+        :param app_trigger: Trigger a workflow from an App.
         :type app_trigger: dict
 
         :param start_step_names: A list of steps that run first after a trigger fires.

@@ -38,7 +38,7 @@ class MonitorTriggerWrapper(ModelNormal):
         """
         Schema for a Monitor-based trigger.
 
-        :param monitor_trigger: Trigger a workflow VIA a Monitor. For automatic triggering a handle must be configured and the workflow must be published.
+        :param monitor_trigger: Trigger a workflow from a Monitor. For automatic triggering a handle must be configured and the workflow must be published.
         :type monitor_trigger: MonitorTrigger
 
         :param start_step_names: A list of steps that run first after a trigger fires.

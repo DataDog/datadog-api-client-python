@@ -36,7 +36,7 @@ class CaseTriggerWrapper(ModelNormal):
         """
         Schema for a Case-based trigger.
 
-        :param case_trigger: Trigger a workflow VIA a Case. For automatic triggering a handle must be configured and the workflow must be published.
+        :param case_trigger: Trigger a workflow from a Case. For automatic triggering a handle must be configured and the workflow must be published.
         :type case_trigger: CaseTrigger
 
         :param start_step_names: A list of steps that run first after a trigger fires.

@@ -36,7 +36,7 @@ class APITriggerWrapper(ModelNormal):
         """
         Schema for an API-based trigger.
 
-        :param api_trigger: Trigger a workflow VIA an API. The workflow must be published.
+        :param api_trigger: Trigger a workflow from an API request. The workflow must be published.
         :type api_trigger: APITrigger
 
         :param start_step_names: A list of steps that run first after a trigger fires.

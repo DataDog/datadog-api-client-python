@@ -30,7 +30,7 @@ class ChangeEventTriggerWrapper(ModelNormal):
         """
         Schema for a Change Event-based trigger.
 
-        :param change_event_trigger: Trigger a workflow VIA a Change Event.
+        :param change_event_trigger: Trigger a workflow from a Change Event.
         :type change_event_trigger: dict
 
         :param start_step_names: A list of steps that run first after a trigger fires.
