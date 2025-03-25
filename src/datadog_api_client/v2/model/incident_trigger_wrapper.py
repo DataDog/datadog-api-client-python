@@ -38,7 +38,7 @@ class IncidentTriggerWrapper(ModelNormal):
         """
         Schema for an Incident-based trigger.
 
-        :param incident_trigger: Trigger a workflow VIA an Incident. For automatic triggering a handle must be configured and the workflow must be published.
+        :param incident_trigger: Trigger a workflow from an Incident. For automatic triggering a handle must be configured and the workflow must be published.
         :type incident_trigger: IncidentTrigger
 
         :param start_step_names: A list of steps that run first after a trigger fires.

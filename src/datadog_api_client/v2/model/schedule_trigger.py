@@ -23,7 +23,7 @@ class ScheduleTrigger(ModelNormal):
 
     def __init__(self_, rrule_expression: str, **kwargs):
         """
-        Trigger a workflow VIA a Schedule. The workflow must be published.
+        Trigger a workflow from a Schedule. The workflow must be published.
 
         :param rrule_expression: Recurrence rule expression for scheduling.
         :type rrule_expression: str

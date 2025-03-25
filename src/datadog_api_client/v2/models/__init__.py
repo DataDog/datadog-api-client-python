@@ -833,6 +833,7 @@ from datadog_api_client.v2.model.data_scalar_column import DataScalarColumn
 from datadog_api_client.v2.model.data_transform import DataTransform
 from datadog_api_client.v2.model.data_transform_properties import DataTransformProperties
 from datadog_api_client.v2.model.data_transform_type import DataTransformType
+from datadog_api_client.v2.model.database_monitoring_trigger_wrapper import DatabaseMonitoringTriggerWrapper
 from datadog_api_client.v2.model.delete_app_response import DeleteAppResponse
 from datadog_api_client.v2.model.delete_app_response_data import DeleteAppResponseData
 from datadog_api_client.v2.model.delete_apps_request import DeleteAppsRequest
@@ -1667,6 +1668,7 @@ from datadog_api_client.v2.model.monthly_cost_attribution_body import MonthlyCos
 from datadog_api_client.v2.model.monthly_cost_attribution_meta import MonthlyCostAttributionMeta
 from datadog_api_client.v2.model.monthly_cost_attribution_pagination import MonthlyCostAttributionPagination
 from datadog_api_client.v2.model.monthly_cost_attribution_response import MonthlyCostAttributionResponse
+from datadog_api_client.v2.model.notebook_trigger_wrapper import NotebookTriggerWrapper
 from datadog_api_client.v2.model.notification_rule import NotificationRule
 from datadog_api_client.v2.model.notification_rule_attributes import NotificationRuleAttributes
 from datadog_api_client.v2.model.notification_rule_response import NotificationRuleResponse
@@ -2226,6 +2228,7 @@ from datadog_api_client.v2.model.security_monitoring_user import SecurityMonitor
 from datadog_api_client.v2.model.security_trigger import SecurityTrigger
 from datadog_api_client.v2.model.security_trigger_wrapper import SecurityTriggerWrapper
 from datadog_api_client.v2.model.selectors import Selectors
+from datadog_api_client.v2.model.self_service_trigger_wrapper import SelfServiceTriggerWrapper
 from datadog_api_client.v2.model.sensitive_data_scanner_config_request import SensitiveDataScannerConfigRequest
 from datadog_api_client.v2.model.sensitive_data_scanner_configuration import SensitiveDataScannerConfiguration
 from datadog_api_client.v2.model.sensitive_data_scanner_configuration_data import SensitiveDataScannerConfigurationData
@@ -2397,6 +2400,7 @@ from datadog_api_client.v2.model.slack_trigger_wrapper import SlackTriggerWrappe
 from datadog_api_client.v2.model.slo_report_create_request import SloReportCreateRequest
 from datadog_api_client.v2.model.slo_report_create_request_attributes import SloReportCreateRequestAttributes
 from datadog_api_client.v2.model.slo_report_create_request_data import SloReportCreateRequestData
+from datadog_api_client.v2.model.software_catalog_trigger_wrapper import SoftwareCatalogTriggerWrapper
 from datadog_api_client.v2.model.sort_direction import SortDirection
 from datadog_api_client.v2.model.span import Span
 from datadog_api_client.v2.model.spans_aggregate_bucket import SpansAggregateBucket
@@ -3267,6 +3271,7 @@ __all__ = [
     "DataTransform",
     "DataTransformProperties",
     "DataTransformType",
+    "DatabaseMonitoringTriggerWrapper",
     "DeleteAppResponse",
     "DeleteAppResponseData",
     "DeleteAppsRequest",
@@ -3963,6 +3968,7 @@ __all__ = [
     "MonthlyCostAttributionMeta",
     "MonthlyCostAttributionPagination",
     "MonthlyCostAttributionResponse",
+    "NotebookTriggerWrapper",
     "NotificationRule",
     "NotificationRuleAttributes",
     "NotificationRuleResponse",
@@ -4422,6 +4428,7 @@ __all__ = [
     "SecurityTrigger",
     "SecurityTriggerWrapper",
     "Selectors",
+    "SelfServiceTriggerWrapper",
     "SensitiveDataScannerConfigRequest",
     "SensitiveDataScannerConfiguration",
     "SensitiveDataScannerConfigurationData",
@@ -4547,6 +4554,7 @@ __all__ = [
     "SloReportCreateRequest",
     "SloReportCreateRequestAttributes",
     "SloReportCreateRequestData",
+    "SoftwareCatalogTriggerWrapper",
     "SortDirection",
     "Span",
     "SpansAggregateBucket",

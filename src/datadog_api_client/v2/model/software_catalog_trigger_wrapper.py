@@ -13,31 +13,33 @@ from datadog_api_client.model_utils import (
 )
 
 
-class WorkflowTriggerWrapper(ModelNormal):
+class SoftwareCatalogTriggerWrapper(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
+            "software_catalog_trigger": (dict,),
             "start_step_names": ([str],),
-            "workflow_trigger": (dict,),
         }
 
     attribute_map = {
+        "software_catalog_trigger": "softwareCatalogTrigger",
         "start_step_names": "startStepNames",
-        "workflow_trigger": "workflowTrigger",
     }
 
-    def __init__(self_, workflow_trigger: dict, start_step_names: Union[List[str], UnsetType] = unset, **kwargs):
+    def __init__(
+        self_, software_catalog_trigger: dict, start_step_names: Union[List[str], UnsetType] = unset, **kwargs
+    ):
         """
-        Schema for a Workflow-based trigger.
+        Schema for a Software Catalog-based trigger.
+
+        :param software_catalog_trigger: Trigger a workflow from Software Catalog.
+        :type software_catalog_trigger: dict
 
         :param start_step_names: A list of steps that run first after a trigger fires.
         :type start_step_names: [str], optional
-
-        :param workflow_trigger: Trigger a workflow from the Datadog UI. Only required if no other trigger exists.
-        :type workflow_trigger: dict
         """
         if start_step_names is not unset:
             kwargs["start_step_names"] = start_step_names
         super().__init__(kwargs)
 
-        self_.workflow_trigger = workflow_trigger
+        self_.software_catalog_trigger = software_catalog_trigger
