@@ -32,7 +32,7 @@ class APITrigger(ModelNormal):
 
     def __init__(self_, rate_limit: Union[TriggerRateLimit, UnsetType] = unset, **kwargs):
         """
-        Trigger a workflow VIA an API. The workflow must be published.
+        Trigger a workflow from an API request. The workflow must be published.
 
         :param rate_limit: Defines a rate limit for a trigger.
         :type rate_limit: TriggerRateLimit, optional

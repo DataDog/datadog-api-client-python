@@ -32,7 +32,7 @@ class MonitorTrigger(ModelNormal):
 
     def __init__(self_, rate_limit: Union[TriggerRateLimit, UnsetType] = unset, **kwargs):
         """
-        Trigger a workflow VIA a Monitor. For automatic triggering a handle must be configured and the workflow must be published.
+        Trigger a workflow from a Monitor. For automatic triggering a handle must be configured and the workflow must be published.
 
         :param rate_limit: Defines a rate limit for a trigger.
         :type rate_limit: TriggerRateLimit, optional

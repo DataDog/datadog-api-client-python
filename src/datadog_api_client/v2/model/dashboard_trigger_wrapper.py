@@ -30,7 +30,7 @@ class DashboardTriggerWrapper(ModelNormal):
         """
         Schema for a Dashboard-based trigger.
 
-        :param dashboard_trigger: Trigger a workflow VIA a Dashboard.
+        :param dashboard_trigger: Trigger a workflow from a Dashboard.
         :type dashboard_trigger: dict
 
         :param start_step_names: A list of steps that run first after a trigger fires.

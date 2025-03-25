@@ -38,7 +38,7 @@ class SecurityTriggerWrapper(ModelNormal):
         """
         Schema for a Security-based trigger.
 
-        :param security_trigger: Trigger a workflow VIA a Security Signal or Finding. For automatic triggering a handle must be configured and the workflow must be published.
+        :param security_trigger: Trigger a workflow from a Security Signal or Finding. For automatic triggering a handle must be configured and the workflow must be published.
         :type security_trigger: SecurityTrigger
 
         :param start_step_names: A list of steps that run first after a trigger fires.

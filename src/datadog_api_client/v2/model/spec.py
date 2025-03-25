@@ -24,13 +24,17 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.app_trigger_wrapper import AppTriggerWrapper
     from datadog_api_client.v2.model.case_trigger_wrapper import CaseTriggerWrapper
     from datadog_api_client.v2.model.change_event_trigger_wrapper import ChangeEventTriggerWrapper
+    from datadog_api_client.v2.model.database_monitoring_trigger_wrapper import DatabaseMonitoringTriggerWrapper
     from datadog_api_client.v2.model.dashboard_trigger_wrapper import DashboardTriggerWrapper
     from datadog_api_client.v2.model.github_webhook_trigger_wrapper import GithubWebhookTriggerWrapper
     from datadog_api_client.v2.model.incident_trigger_wrapper import IncidentTriggerWrapper
     from datadog_api_client.v2.model.monitor_trigger_wrapper import MonitorTriggerWrapper
+    from datadog_api_client.v2.model.notebook_trigger_wrapper import NotebookTriggerWrapper
     from datadog_api_client.v2.model.schedule_trigger_wrapper import ScheduleTriggerWrapper
     from datadog_api_client.v2.model.security_trigger_wrapper import SecurityTriggerWrapper
+    from datadog_api_client.v2.model.self_service_trigger_wrapper import SelfServiceTriggerWrapper
     from datadog_api_client.v2.model.slack_trigger_wrapper import SlackTriggerWrapper
+    from datadog_api_client.v2.model.software_catalog_trigger_wrapper import SoftwareCatalogTriggerWrapper
     from datadog_api_client.v2.model.workflow_trigger_wrapper import WorkflowTriggerWrapper
 
 
@@ -80,13 +84,17 @@ class Spec(ModelNormal):
                     AppTriggerWrapper,
                     CaseTriggerWrapper,
                     ChangeEventTriggerWrapper,
+                    DatabaseMonitoringTriggerWrapper,
                     DashboardTriggerWrapper,
                     GithubWebhookTriggerWrapper,
                     IncidentTriggerWrapper,
                     MonitorTriggerWrapper,
+                    NotebookTriggerWrapper,
                     ScheduleTriggerWrapper,
                     SecurityTriggerWrapper,
+                    SelfServiceTriggerWrapper,
                     SlackTriggerWrapper,
+                    SoftwareCatalogTriggerWrapper,
                     WorkflowTriggerWrapper,
                 ]
             ],

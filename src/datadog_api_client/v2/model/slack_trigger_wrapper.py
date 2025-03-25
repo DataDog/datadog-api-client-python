@@ -30,7 +30,7 @@ class SlackTriggerWrapper(ModelNormal):
         """
         Schema for a Slack-based trigger.
 
-        :param slack_trigger: Trigger a workflow VIA Slack. The workflow must be published.
+        :param slack_trigger: Trigger a workflow from Slack. The workflow must be published.
         :type slack_trigger: dict
 
         :param start_step_names: A list of steps that run first after a trigger fires.

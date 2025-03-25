@@ -4239,6 +4239,13 @@ datadog\_api\_client.v2.model.data\_transform\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.database\_monitoring\_trigger\_wrapper module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.database_monitoring_trigger_wrapper
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.delete\_app\_response module
 ----------------------------------------------------------
 
@@ -9195,6 +9202,13 @@ datadog\_api\_client.v2.model.ms\_teams\_integration\_metadata\_teams\_item modu
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.notebook\_trigger\_wrapper module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.notebook_trigger_wrapper
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.notification\_rule module
 -------------------------------------------------------
 
@@ -12359,6 +12373,13 @@ datadog\_api\_client.v2.model.selectors module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.self\_service\_trigger\_wrapper module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.self_service_trigger_wrapper
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.sensitive\_data\_scanner\_config\_request module
 ------------------------------------------------------------------------------
 
@@ -13252,6 +13273,13 @@ datadog\_api\_client.v2.model.slo\_report\_status\_get\_response\_data module
 -----------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.slo_report_status_get_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.software\_catalog\_trigger\_wrapper module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.software_catalog_trigger_wrapper
    :members:
    :show-inheritance:
 

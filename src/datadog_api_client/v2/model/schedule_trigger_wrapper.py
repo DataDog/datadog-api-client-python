@@ -38,7 +38,7 @@ class ScheduleTriggerWrapper(ModelNormal):
         """
         Schema for a Schedule-based trigger.
 
-        :param schedule_trigger: Trigger a workflow VIA a Schedule. The workflow must be published.
+        :param schedule_trigger: Trigger a workflow from a Schedule. The workflow must be published.
         :type schedule_trigger: ScheduleTrigger
 
         :param start_step_names: A list of steps that run first after a trigger fires.
