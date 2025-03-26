@@ -24,7 +24,7 @@ Feature: Action Connection
   @team:DataDog/workflow-automation-dev
   Scenario: Create a new Action Connection returns "Successfully created Action Connection" response
     Given new "CreateActionConnection" request
-    And body with value {"data":{"type":"action_connection","attributes":{"name":"Cassette Connection DELETE_ME","integration":{"type":"AWS","credentials":{"type":"AWSAssumeRole","role":"MyRoleUpdated","account_id":"123456789123"}}}}}
+    And body with value {"data":{"type":"action_connection","attributes":{"name":"Cassette Connection {{ unique_lower_alnum }}","integration":{"type":"AWS","credentials":{"type":"AWSAssumeRole","role":"MyRoleUpdated","account_id":"123456789123"}}}}}
     When the request is sent
     Then the response status is 201 Successfully created Action Connection
 
@@ -36,17 +36,10 @@ Feature: Action Connection
     Then the response status is 404 Not Found
 
   @team:DataDog/workflow-automation-dev
-  Scenario: Delete an existing Action Connection returns "Successfully deleted Action Connection" response
+  Scenario: Delete an existing Action Connection returns "The resource was deleted successfully." response
     Given there is a valid "action_connection" in the system
     And new "DeleteActionConnection" request
     And request contains "connection_id" parameter from "action_connection.data.id"
-    When the request is sent
-    Then the response status is 204 The resource was deleted successfully.
-
-  @generated @skip @team:DataDog/workflow-automation-dev
-  Scenario: Delete an existing Action Connection returns "The resource was deleted successfully." response
-    Given new "DeleteActionConnection" request
-    And request contains "connection_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 204 The resource was deleted successfully.
 
