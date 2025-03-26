@@ -16,18 +16,18 @@ class ApplicationSecurityWafCustomRuleTagsCategory(ModelSimple):
     """
     The category of the WAF Rule, can be either `business_logic`, `attack_attempt` or `security_response`.
 
-    :param value: Must be one of ["attack_attempt", "business_logic", "security_responses"].
+    :param value: Must be one of ["attack_attempt", "business_logic", "security_response"].
     :type value: str
     """
 
     allowed_values = {
         "attack_attempt",
         "business_logic",
-        "security_responses",
+        "security_response",
     }
     ATTACK_ATTEMPT: ClassVar["ApplicationSecurityWafCustomRuleTagsCategory"]
     BUSINESS_LOGIC: ClassVar["ApplicationSecurityWafCustomRuleTagsCategory"]
-    SECURITY_RESPONSES: ClassVar["ApplicationSecurityWafCustomRuleTagsCategory"]
+    SECURITY_RESPONSE: ClassVar["ApplicationSecurityWafCustomRuleTagsCategory"]
 
     @cached_property
     def openapi_types(_):
@@ -42,6 +42,6 @@ ApplicationSecurityWafCustomRuleTagsCategory.ATTACK_ATTEMPT = ApplicationSecurit
 ApplicationSecurityWafCustomRuleTagsCategory.BUSINESS_LOGIC = ApplicationSecurityWafCustomRuleTagsCategory(
     "business_logic"
 )
-ApplicationSecurityWafCustomRuleTagsCategory.SECURITY_RESPONSES = ApplicationSecurityWafCustomRuleTagsCategory(
-    "security_responses"
+ApplicationSecurityWafCustomRuleTagsCategory.SECURITY_RESPONSE = ApplicationSecurityWafCustomRuleTagsCategory(
+    "security_response"
 )
