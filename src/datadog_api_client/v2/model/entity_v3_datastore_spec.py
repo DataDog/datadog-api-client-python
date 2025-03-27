@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union
+from typing import List, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -30,12 +30,14 @@ class EntityV3DatastoreSpec(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
+            "component_of": ([str],),
             "lifecycle": (str,),
             "tier": (str,),
             "type": (str,),
         }
 
     attribute_map = {
+        "component_of": "componentOf",
         "lifecycle": "lifecycle",
         "tier": "tier",
         "type": "type",
@@ -43,6 +45,7 @@ class EntityV3DatastoreSpec(ModelNormal):
 
     def __init__(
         self_,
+        component_of: Union[List[str], UnsetType] = unset,
         lifecycle: Union[str, UnsetType] = unset,
         tier: Union[str, UnsetType] = unset,
         type: Union[str, UnsetType] = unset,
@@ -50,6 +53,9 @@ class EntityV3DatastoreSpec(ModelNormal):
     ):
         """
         The definition of Entity V3 Datastore Spec object.
+
+        :param component_of: A list of components the datastore is a part of
+        :type component_of: [str], optional
 
         :param lifecycle: The lifecycle state of the datastore.
         :type lifecycle: str, optional
@@ -60,6 +66,8 @@ class EntityV3DatastoreSpec(ModelNormal):
         :param type: The type of datastore.
         :type type: str, optional
         """
+        if component_of is not unset:
+            kwargs["component_of"] = component_of
         if lifecycle is not unset:
             kwargs["lifecycle"] = lifecycle
         if tier is not unset:
