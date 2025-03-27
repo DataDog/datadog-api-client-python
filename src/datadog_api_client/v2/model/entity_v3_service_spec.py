@@ -30,6 +30,7 @@ class EntityV3ServiceSpec(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
+            "component_of": ([str],),
             "depends_on": ([str],),
             "languages": ([str],),
             "lifecycle": (str,),
@@ -38,6 +39,7 @@ class EntityV3ServiceSpec(ModelNormal):
         }
 
     attribute_map = {
+        "component_of": "componentOf",
         "depends_on": "dependsOn",
         "languages": "languages",
         "lifecycle": "lifecycle",
@@ -47,6 +49,7 @@ class EntityV3ServiceSpec(ModelNormal):
 
     def __init__(
         self_,
+        component_of: Union[List[str], UnsetType] = unset,
         depends_on: Union[List[str], UnsetType] = unset,
         languages: Union[List[str], UnsetType] = unset,
         lifecycle: Union[str, UnsetType] = unset,
@@ -56,6 +59,9 @@ class EntityV3ServiceSpec(ModelNormal):
     ):
         """
         The definition of Entity V3 Service Spec object.
+
+        :param component_of: A list of components the service is a part of
+        :type component_of: [str], optional
 
         :param depends_on: A list of components the service depends on.
         :type depends_on: [str], optional
@@ -72,6 +78,8 @@ class EntityV3ServiceSpec(ModelNormal):
         :param type: The type of service.
         :type type: str, optional
         """
+        if component_of is not unset:
+            kwargs["component_of"] = component_of
         if depends_on is not unset:
             kwargs["depends_on"] = depends_on
         if languages is not unset:
