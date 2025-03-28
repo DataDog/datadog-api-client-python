@@ -277,6 +277,7 @@ class Configuration:
                 "v2.list_aws_namespaces": False,
                 "v2.update_aws_account": False,
                 "v2.list_aws_logs_services": False,
+                "v2.get_aggregated_connections": False,
                 "v2.cancel_historical_job": False,
                 "v2.convert_job_result_to_signal": False,
                 "v2.delete_historical_job": False,

@@ -2394,6 +2394,18 @@ from datadog_api_client.v2.model.service_definitions_create_request import Servi
 from datadog_api_client.v2.model.service_definitions_list_response import ServiceDefinitionsListResponse
 from datadog_api_client.v2.model.service_now_ticket import ServiceNowTicket
 from datadog_api_client.v2.model.service_now_ticket_result import ServiceNowTicketResult
+from datadog_api_client.v2.model.single_aggregated_connection_response_array import (
+    SingleAggregatedConnectionResponseArray,
+)
+from datadog_api_client.v2.model.single_aggregated_connection_response_data import (
+    SingleAggregatedConnectionResponseData,
+)
+from datadog_api_client.v2.model.single_aggregated_connection_response_data_attributes import (
+    SingleAggregatedConnectionResponseDataAttributes,
+)
+from datadog_api_client.v2.model.single_aggregated_connection_response_data_type import (
+    SingleAggregatedConnectionResponseDataType,
+)
 from datadog_api_client.v2.model.slack_integration_metadata import SlackIntegrationMetadata
 from datadog_api_client.v2.model.slack_integration_metadata_channel_item import SlackIntegrationMetadataChannelItem
 from datadog_api_client.v2.model.slack_trigger_wrapper import SlackTriggerWrapper
@@ -4548,6 +4560,10 @@ __all__ = [
     "ServiceDefinitionsListResponse",
     "ServiceNowTicket",
     "ServiceNowTicketResult",
+    "SingleAggregatedConnectionResponseArray",
+    "SingleAggregatedConnectionResponseData",
+    "SingleAggregatedConnectionResponseDataAttributes",
+    "SingleAggregatedConnectionResponseDataType",
     "SlackIntegrationMetadata",
     "SlackIntegrationMetadataChannelItem",
     "SlackTriggerWrapper",

@@ -13185,6 +13185,34 @@ datadog\_api\_client.v2.model.service\_now\_ticket\_result module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.single\_aggregated\_connection\_response\_array module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.single_aggregated_connection_response_array
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.single\_aggregated\_connection\_response\_data module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.single_aggregated_connection_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.single\_aggregated\_connection\_response\_data\_attributes module
+-----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.single_aggregated_connection_response_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.single\_aggregated\_connection\_response\_data\_type module
+-----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.single_aggregated_connection_response_data_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.slack\_integration\_metadata module
 -----------------------------------------------------------------
 

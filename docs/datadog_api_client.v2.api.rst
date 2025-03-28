@@ -102,6 +102,13 @@ datadog\_api\_client.v2.api.cloud\_cost\_management\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.cloud\_network\_monitoring\_api module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.cloud_network_monitoring_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.cloudflare\_integration\_api module
 ---------------------------------------------------------------
 
