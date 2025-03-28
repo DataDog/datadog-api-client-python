@@ -1,20 +1,40 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"description":"My Agent rule","enabled":true,"expression":"exec.file.name
-      == \"sh\"","filters":["os == \"linux\""],"name":"testcreateacsmthreatsagentrulereturnsokresponse1716394942"},"type":"agent_rule"}}'
+    body: '{"data":{"attributes":{"description":"My agent policy","enabled":true,"hostTags":["env:staging"],"name":"testcreateacsmthreatsagentrulereturnsokresponse1743170335"},"type":"policy"}}'
     headers:
       accept:
       - application/json
       content-type:
       - application/json
     method: POST
-    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules
+    uri: https://api.datad0g.com/api/v2/remote_config/products/cws/policy
   response:
     body:
-      string: '{"data":{"id":"pn4-mo8-u5r","type":"agent_rule","attributes":{"category":"Process
-        Activity","creationDate":1716394942614,"creator":{"name":"","handle":"frog@datadoghq.com"},"defaultRule":false,"description":"My
+      string: '{"data":{"id":"afp-j6k-bon","type":"policy","attributes":{"blockingRulesCount":0,"datadogManaged":false,"description":"My
+        agent policy","disabledRulesCount":1,"enabled":true,"hostTags":["env:staging"],"monitoringRulesCount":225,"name":"testcreateacsmthreatsagentrulereturnsokresponse1743170335","policyVersion":"1","priority":1000000026,"ruleCount":226,"updateDate":1743170335557,"updater":{"name":"Quentin
+        Guillard","handle":"quentin.guillard@datadoghq.com"}}}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data":{"attributes":{"description":"My Agent rule","enabled":true,"expression":"exec.file.name
+      == \"sh\"","filters":[],"name":"testcreateacsmthreatsagentrulereturnsokresponse1743170335","policy_id":"afp-j6k-bon","product_tags":[]},"type":"agent_rule"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datad0g.com/api/v2/remote_config/products/cws/agent_rules
+  response:
+    body:
+      string: '{"data":{"id":"ylm-hpi-z04","type":"agent_rule","attributes":{"category":"Process
+        Activity","creationDate":1743170336116,"creator":{"name":"Quentin Guillard","handle":"quentin.guillard@datadoghq.com"},"defaultRule":false,"description":"My
         Agent rule","enabled":true,"expression":"exec.file.name == \"sh\"","filters":["os
-        == \"linux\""],"name":"testcreateacsmthreatsagentrulereturnsokresponse1716394942","updateDate":1716394942614,"updater":{"name":"","handle":"frog@datadoghq.com"}}}}'
+        == \"linux\""],"monitoring":["afp-j6k-bon"],"name":"testcreateacsmthreatsagentrulereturnsokresponse1743170335","product_tags":[],"updateDate":0,"updater":{"name":"Datadog","handle":""}}}}'
     headers:
       content-type:
       - application/json
@@ -27,7 +47,23 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules/pn4-mo8-u5r
+    uri: https://api.datad0g.com/api/v2/remote_config/products/cws/agent_rules/ylm-hpi-z04
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datad0g.com/api/v2/remote_config/products/cws/policy/afp-j6k-bon
   response:
     body:
       string: ''

@@ -1,0 +1,58 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"description":"My agent policy","enabled":true,"hostTags":["env:staging"],"name":"testupdateacsmthreatsagentpolicyreturnsokresponse1743170353"},"type":"policy"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datad0g.com/api/v2/remote_config/products/cws/policy
+  response:
+    body:
+      string: '{"data":{"id":"fxs-7da-cga","type":"policy","attributes":{"blockingRulesCount":0,"datadogManaged":false,"description":"My
+        agent policy","disabledRulesCount":1,"enabled":true,"hostTags":["env:staging"],"monitoringRulesCount":225,"name":"testupdateacsmthreatsagentpolicyreturnsokresponse1743170353","policyVersion":"1","priority":1000000026,"ruleCount":226,"updateDate":1743170354184,"updater":{"name":"Quentin
+        Guillard","handle":"quentin.guillard@datadoghq.com"}}}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data":{"attributes":{"description":"Updated agent policy","enabled":true,"hostTags":["env:test"],"name":"updated_agent_policy","priority":20},"id":"fxs-7da-cga","type":"policy"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datad0g.com/api/v2/remote_config/products/cws/policy/fxs-7da-cga
+  response:
+    body:
+      string: '{"data":{"id":"fxs-7da-cga","type":"policy","attributes":{"blockingRulesCount":0,"datadogManaged":false,"description":"Updated
+        agent policy","disabledRulesCount":1,"enabled":true,"hostTags":["env:test"],"monitoringRulesCount":225,"name":"updated_agent_policy","policyVersion":"2","priority":20,"ruleCount":226,"updateDate":1743170354822,"updater":{"name":"Quentin
+        Guillard","handle":"quentin.guillard@datadoghq.com"}}}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datad0g.com/api/v2/remote_config/products/cws/policy/fxs-7da-cga
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 204
+      message: No Content
+version: 1

@@ -31,12 +31,12 @@ class CloudWorkloadSecurityAgentRuleCreatorAttributes(ModelNormal):
         self_, handle: Union[str, UnsetType] = unset, name: Union[str, none_type, UnsetType] = unset, **kwargs
     ):
         """
-        The attributes of the user who created the Agent rule.
+        The attributes of the user who created the Agent rule
 
-        :param handle: The handle of the user.
+        :param handle: The handle of the user
         :type handle: str, optional
 
-        :param name: The name of the user.
+        :param name: The name of the user
         :type name: str, none_type, optional
         """
         if handle is not unset:
