@@ -29,7 +29,7 @@ class LogsQueryOptions(ModelNormal):
     def __init__(self_, time_offset: Union[int, UnsetType] = unset, timezone: Union[str, UnsetType] = unset, **kwargs):
         """
         Global query options that are used during the query.
-        Note: you should supply either timezone or time offset, but not both. Otherwise, the query will fail.
+        Note: These fields are currently deprecated and do not affect the query results.
 
         :param time_offset: The time offset (in seconds) to apply to the query.
         :type time_offset: int, optional
