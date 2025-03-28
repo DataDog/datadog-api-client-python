@@ -1,0 +1,23 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"policies":[{"delete":true,"description":"My agent
+      policy","enabled":true,"hostTags":[],"id":"mdh-tah-lj9","name":"my_agent_policy","priority":10}]},"id":"batch_update_req","type":"policies"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datad0g.com/api/v2/remote_config/products/cws/policy
+  response:
+    body:
+      string: '{"errors":[{"title":"failed to update policy"}]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 404
+      message: Not Found
+version: 1

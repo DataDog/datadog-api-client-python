@@ -1,17 +1,37 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"description":"Test Agent rule","enabled":true,"expression":"exec.file.name
-      == \"sh\""},"id":"abc-123-xyz","type":"agent_rule"}}'
+    body: '{"data":{"attributes":{"description":"My agent policy","enabled":true,"hostTags":["env:staging"],"name":"testupdateacloudworkloadsecurityagentrulereturnsnotfoundresponse1743170357"},"type":"policy"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datad0g.com/api/v2/remote_config/products/cws/policy
+  response:
+    body:
+      string: '{"data":{"id":"blc-byi-dur","type":"policy","attributes":{"blockingRulesCount":0,"datadogManaged":false,"description":"My
+        agent policy","disabledRulesCount":1,"enabled":true,"hostTags":["env:staging"],"monitoringRulesCount":225,"name":"testupdateacloudworkloadsecurityagentrulereturnsnotfoundresponse1743170357","policyVersion":"1","priority":1000000026,"ruleCount":226,"updateDate":1743170357534,"updater":{"name":"Quentin
+        Guillard","handle":"quentin.guillard@datadoghq.com"}}}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data":{"attributes":{"description":"My Agent rule","enabled":true,"expression":"exec.file.name
+      == \"sh\"","policy_id":"blc-byi-dur","product_tags":[]},"id":"non-existent-rule-id","type":"agent_rule"}}'
     headers:
       accept:
       - application/json
       content-type:
       - application/json
     method: PATCH
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/cloud_workload_security/agent_rules/abc-123-xyz
+    uri: https://api.datad0g.com/api/v2/security_monitoring/cloud_workload_security/agent_rules/non-existent-rule-id
   response:
     body:
-      string: '{"errors":["not_found(Agent rule not found: agentRuleId=abc-123-xyz)"]}
+      string: '{"errors":["Not found"]}
 
         '
     headers:
@@ -20,4 +40,20 @@ interactions:
     status:
       code: 404
       message: Not Found
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datad0g.com/api/v2/remote_config/products/cws/policy/blc-byi-dur
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 204
+      message: No Content
 version: 1

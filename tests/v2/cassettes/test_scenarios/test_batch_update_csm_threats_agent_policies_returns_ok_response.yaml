@@ -1,0 +1,59 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"description":"My agent policy","enabled":true,"hostTags":["env:staging"],"name":"testbatchupdatecsmthreatsagentpoliciesreturnsokresponse1743170330"},"type":"policy"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datad0g.com/api/v2/remote_config/products/cws/policy
+  response:
+    body:
+      string: '{"data":{"id":"x3a-rp1-wuf","type":"policy","attributes":{"blockingRulesCount":0,"datadogManaged":false,"description":"My
+        agent policy","disabledRulesCount":1,"enabled":true,"hostTags":["env:staging"],"monitoringRulesCount":225,"name":"testbatchupdatecsmthreatsagentpoliciesreturnsokresponse1743170330","policyVersion":"1","priority":1000000026,"ruleCount":226,"updateDate":1743170330738,"updater":{"name":"Quentin
+        Guillard","handle":"quentin.guillard@datadoghq.com"}}}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data":{"attributes":{"policies":[{"delete":false,"description":"Updated
+      agent policy","enabled":true,"hostTags":["env:test"],"id":"x3a-rp1-wuf","name":"updated_agent_policy","priority":20}]},"id":"batch_update_req","type":"policies"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datad0g.com/api/v2/remote_config/products/cws/policy
+  response:
+    body:
+      string: '{"data":[{"id":"x3a-rp1-wuf","type":"policy","attributes":{"blockingRulesCount":0,"datadogManaged":false,"description":"Updated
+        agent policy","disabledRulesCount":1,"enabled":true,"hostTags":["env:test"],"monitoringRulesCount":225,"name":"updated_agent_policy","policyVersion":"2","priority":20,"ruleCount":226,"updateDate":1743170331258,"updater":{"name":"Quentin
+        Guillard","handle":"quentin.guillard@datadoghq.com"}}}]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datad0g.com/api/v2/remote_config/products/cws/policy/x3a-rp1-wuf
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 204
+      message: No Content
+version: 1
