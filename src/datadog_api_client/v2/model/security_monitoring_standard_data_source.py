@@ -16,16 +16,24 @@ class SecurityMonitoringStandardDataSource(ModelSimple):
     """
     Source of events, either logs or audit trail.
 
-    :param value: If omitted defaults to "logs". Must be one of ["logs", "audit"].
+    :param value: If omitted defaults to "logs". Must be one of ["logs", "audit", "app_sec_spans", "spans", "security_runtime", "network"].
     :type value: str
     """
 
     allowed_values = {
         "logs",
         "audit",
+        "app_sec_spans",
+        "spans",
+        "security_runtime",
+        "network",
     }
     LOGS: ClassVar["SecurityMonitoringStandardDataSource"]
     AUDIT: ClassVar["SecurityMonitoringStandardDataSource"]
+    APP_SEC_SPANS: ClassVar["SecurityMonitoringStandardDataSource"]
+    SPANS: ClassVar["SecurityMonitoringStandardDataSource"]
+    SECURITY_RUNTIME: ClassVar["SecurityMonitoringStandardDataSource"]
+    NETWORK: ClassVar["SecurityMonitoringStandardDataSource"]
 
     @cached_property
     def openapi_types(_):
@@ -36,3 +44,7 @@ class SecurityMonitoringStandardDataSource(ModelSimple):
 
 SecurityMonitoringStandardDataSource.LOGS = SecurityMonitoringStandardDataSource("logs")
 SecurityMonitoringStandardDataSource.AUDIT = SecurityMonitoringStandardDataSource("audit")
+SecurityMonitoringStandardDataSource.APP_SEC_SPANS = SecurityMonitoringStandardDataSource("app_sec_spans")
+SecurityMonitoringStandardDataSource.SPANS = SecurityMonitoringStandardDataSource("spans")
+SecurityMonitoringStandardDataSource.SECURITY_RUNTIME = SecurityMonitoringStandardDataSource("security_runtime")
+SecurityMonitoringStandardDataSource.NETWORK = SecurityMonitoringStandardDataSource("network")
