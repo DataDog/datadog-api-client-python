@@ -207,6 +207,20 @@ datadog\_api\_client.v2.model.active\_billing\_dimensions\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.add\_fields\_processor module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.add_fields_processor
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.add\_fields\_processor\_type module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.add_fields_processor_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.advisory module
 ---------------------------------------------
 
@@ -4246,6 +4260,34 @@ datadog\_api\_client.v2.model.database\_monitoring\_trigger\_wrapper module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.datadog\_agent\_source module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.datadog_agent_source
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.datadog\_agent\_source\_type module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.datadog_agent_source_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.datadog\_logs\_destination module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.datadog_logs_destination
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.datadog\_logs\_destination\_type module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.datadog_logs_destination_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.delete\_app\_response module
 ----------------------------------------------------------
 
@@ -5622,6 +5664,27 @@ datadog\_api\_client.v2.model.fastly\_services\_response module
 ---------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.fastly_services_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.field\_item module
+------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.field_item
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.filter\_processor module
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.filter_processor
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.filter\_processor\_type module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.filter_processor_type
    :members:
    :show-inheritance:
 
@@ -7323,6 +7386,41 @@ datadog\_api\_client.v2.model.jsonapi\_error\_response module
 -------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.jsonapi_error_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.kafka\_source module
+--------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.kafka_source
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.kafka\_source\_librdkafka\_options\_items module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.kafka_source_librdkafka_options_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.kafka\_source\_sasl module
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.kafka_source_sasl
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.kafka\_source\_sasl\_mechanism module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.kafka_source_sasl_mechanism
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.kafka\_source\_type module
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.kafka_source_type
    :members:
    :show-inheritance:
 
@@ -9685,6 +9783,20 @@ datadog\_api\_client.v2.model.parameter module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.parse\_json\_processor module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.parse_json_processor
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.parse\_json\_processor\_type module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.parse_json_processor_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.partial\_api\_key module
 ------------------------------------------------------
 
@@ -9766,6 +9878,34 @@ datadog\_api\_client.v2.model.permissions\_type module
 ------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.permissions_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.pipeline module
+---------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.pipeline
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.pipeline\_data module
+---------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.pipeline_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.pipeline\_data\_attributes module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.pipeline_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.pipeline\_data\_attributes\_config module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.pipeline_data_attributes_config
    :members:
    :show-inheritance:
 
@@ -10039,6 +10179,41 @@ datadog\_api\_client.v2.model.query\_sort\_order module
 -------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.query_sort_order
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.quota\_limit module
+-------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.quota_limit
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.quota\_limit\_enforce\_type module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.quota_limit_enforce_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.quota\_processor module
+-----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.quota_processor
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.quota\_processor\_override module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.quota_processor_override
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.quota\_processor\_type module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.quota_processor_type
    :members:
    :show-inheritance:
 
@@ -10361,6 +10536,41 @@ datadog\_api\_client.v2.model.remediation module
 ------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.remediation
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.remove\_fields\_processor module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.remove_fields_processor
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.remove\_fields\_processor\_type module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.remove_fields_processor_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rename\_fields\_processor module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rename_fields_processor
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rename\_fields\_processor\_fields\_items module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rename_fields_processor_fields_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rename\_fields\_processor\_type module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rename_fields_processor_type
    :members:
    :show-inheritance:
 
@@ -14134,6 +14344,13 @@ datadog\_api\_client.v2.model.timeseries\_response\_values\_list module
 -----------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.timeseries_response_values_list
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tls module
+----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tls
    :members:
    :show-inheritance:
 
