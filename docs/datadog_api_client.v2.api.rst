@@ -298,6 +298,13 @@ datadog\_api\_client.v2.api.network\_device\_monitoring\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.observability\_pipelines\_api module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.observability_pipelines_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.okta\_integration\_api module
 ---------------------------------------------------------
 
