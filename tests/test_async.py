@@ -2,6 +2,7 @@ import os
 import time
 
 import pytest
+from aiosonic import HttpHeaders
 
 from datadog_api_client.api_client import AsyncApiClient
 from datadog_api_client.configuration import Configuration
@@ -21,7 +22,9 @@ async def test_error():
         error = str(e.value)
         assert "(403)" in error
         assert "Reason: Forbidden" in error
-        assert e.value.headers["Content-Type"] == "application/json"
+        # cast headers to HttpHeaders to make them case insensitive
+        headers = HttpHeaders(e.value.headers)
+        assert headers["content-type"] == "application/json"
         assert e.value.body["errors"] == ["Forbidden"]
 
 
@@ -41,7 +44,8 @@ async def test_basic():
         api_instance = dashboards_api.DashboardsApi(api_client)
         _, code, headers = await api_instance.list_dashboards()
         assert code == 200
-        assert headers["Content-Type"] == "application/json"
+        headers = HttpHeaders(headers)
+        assert headers["content-type"] == "application/json"
 
 
 @pytest.mark.asyncio
