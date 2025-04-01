@@ -15,6 +15,7 @@ from datadog_api_client.v2.api.csm_coverage_analysis_api import CSMCoverageAnaly
 from datadog_api_client.v2.api.csm_threats_api import CSMThreatsApi
 from datadog_api_client.v2.api.case_management_api import CaseManagementApi
 from datadog_api_client.v2.api.cloud_cost_management_api import CloudCostManagementApi
+from datadog_api_client.v2.api.cloud_network_monitoring_api import CloudNetworkMonitoringApi
 from datadog_api_client.v2.api.cloudflare_integration_api import CloudflareIntegrationApi
 from datadog_api_client.v2.api.confluent_cloud_api import ConfluentCloudApi
 from datadog_api_client.v2.api.container_images_api import ContainerImagesApi
@@ -84,6 +85,7 @@ __all__ = [
     "CSMThreatsApi",
     "CaseManagementApi",
     "CloudCostManagementApi",
+    "CloudNetworkMonitoringApi",
     "CloudflareIntegrationApi",
     "ConfluentCloudApi",
     "ContainerImagesApi",
