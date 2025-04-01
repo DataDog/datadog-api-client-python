@@ -1744,6 +1744,12 @@
       "type": "idempotent"
     }
   },
+  "GetAggregatedConnections": {
+    "tag": "Cloud Network Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListOrgConfigs": {
     "tag": "Organizations",
     "undo": {
