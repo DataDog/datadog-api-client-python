@@ -80,7 +80,7 @@ class SingleAggregatedConnectionResponseDataAttributes(ModelNormal):
         :param packets_sent_by_server: The total number of packets sent by the server over the given period.
         :type packets_sent_by_server: int, optional
 
-        :param rtt_micro_seconds: Measured as TCP smoothed roundtrip time in microseconds (the time between a TCP frame being sent and acknowledged).
+        :param rtt_micro_seconds: Measured as TCP smoothed round trip time in microseconds (the time between a TCP frame being sent and acknowledged).
         :type rtt_micro_seconds: int, optional
 
         :param tcp_closed_connections: The number of TCP connections in a closed state. Measured in connections per second from the client.
