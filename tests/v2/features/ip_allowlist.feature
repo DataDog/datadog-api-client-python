@@ -46,7 +46,7 @@ Feature: IP Allowlist
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/aaa-core-access
+  @replay-only @skip-terraform-config @team:DataDog/aaa-core-access
   Scenario: Update IP Allowlist returns "OK" response
     Given the "ip_allowlist_empty_disabled" has no entries and is disabled
     And new "UpdateIPAllowlist" request

@@ -1,6 +1,7 @@
 import os
 
 import pytest
+from aiosonic import HttpHeaders
 
 from datadog_api_client.api_client import ThreadedApiClient
 from datadog_api_client.configuration import Configuration
@@ -23,4 +24,6 @@ def test_basic():
         thread = api_instance.list_dashboards()
         _, code, headers = thread.get()
         assert code == 200
-        assert headers["Content-Type"] == "application/json"
+        # cast headers to HttpHeaders to make them case insensitive
+        headers = HttpHeaders(headers)
+        assert headers["content-type"] == "application/json"
