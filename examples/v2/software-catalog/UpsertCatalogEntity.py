@@ -81,6 +81,7 @@ body = EntityV3Service(
         ],
     ),
     spec=EntityV3ServiceSpec(
+        component_of=[],
         depends_on=[],
         languages=[],
     ),
