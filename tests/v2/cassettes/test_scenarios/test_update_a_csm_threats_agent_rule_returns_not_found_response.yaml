@@ -1,14 +1,34 @@
 interactions:
 - request:
+    body: '{"data":{"attributes":{"description":"My agent policy","enabled":true,"hostTags":["env:staging"],"name":"testupdateacsmthreatsagentrulereturnsnotfoundresponse1743517862"},"type":"policy"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy
+  response:
+    body:
+      string: '{"data":{"id":"jnw-szj-ssb","type":"policy","attributes":{"blockingRulesCount":0,"datadogManaged":false,"description":"My
+        agent policy","disabledRulesCount":1,"enabled":true,"hostTags":["env:staging"],"monitoringRulesCount":225,"name":"testupdateacsmthreatsagentrulereturnsnotfoundresponse1743517862","policyVersion":"1","priority":1000000001,"ruleCount":226,"updateDate":1743517862965,"updater":{"name":"CI
+        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"}}}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
     body: '{"data":{"attributes":{"description":"My Agent rule","enabled":true,"expression":"exec.file.name
-      == \"sh\""},"id":"abc-123-xyz","type":"agent_rule"}}'
+      == \"sh\"","policy_id":"jnw-szj-ssb","product_tags":[]},"id":"non-existent-rule-id","type":"agent_rule"}}'
     headers:
       accept:
       - application/json
       content-type:
       - application/json
     method: PATCH
-    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules/abc-123-xyz
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules/non-existent-rule-id
   response:
     body:
       string: '{"errors":[{"title":"failed to update rule"}]}
@@ -20,4 +40,20 @@ interactions:
     status:
       code: 404
       message: Not Found
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy/jnw-szj-ssb
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 204
+      message: No Content
 version: 1

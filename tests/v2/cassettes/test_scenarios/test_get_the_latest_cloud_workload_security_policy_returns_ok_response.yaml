@@ -10,7 +10,7 @@ interactions:
     body:
       string: "# IMPORTANT: Edits to this file will not be reflected in the Datadog\
         \ App and will be overwritten with new policy file downloads. Please modify\
-        \ rules in the Datadog App for full functionality.\nversion: '1713895070226'\n\
+        \ rules in the Datadog App for full functionality.\nversion: '1743517859524'\n\
         rules:\n- id: apparmor_modified_tty\n  version: a7f3b5c2\n  description: An\
         \ AppArmor profile was modified in an interactive session\n  expression: exec.file.name\
         \ in [\"aa-disable\", \"aa-complain\", \"aa-audit\"] && exec.tty_name\n  \
@@ -276,70 +276,105 @@ interactions:
         \    != 0 && process.gid != 0)\n  agent_version: ''\n  filters: []\n- id:\
         \ dummy_rule\n  version: 28ba1078\n  description: Execution of a java process\n\
         \  expression: exec.file.name == \"java\"\n  agent_version: ''\n  filters:\
-        \ []\n- id: dummy_rule_BAiZP\n  version: 28ba1078\n  description: Execution\
+        \ []\n- id: dummy_rule_AszwF\n  version: 28ba1078\n  description: Execution\
         \ of a java process\n  expression: exec.file.name == \"java\"\n  agent_version:\
-        \ ''\n  filters: []\n- id: dummy_rule_CpDMZ\n  version: 28ba1078\n  description:\
-        \ Execution of a java process\n  expression: exec.file.name == \"java\"\n\
-        \  agent_version: ''\n  filters:\n  - os == \"linux\"\n- id: dummy_rule_HfYXr\n\
+        \ ''\n  filters:\n  - os == \"linux\"\n- id: dummy_rule_BAiZP\n  version:\
+        \ 28ba1078\n  description: Execution of a java process\n  expression: exec.file.name\
+        \ == \"java\"\n  agent_version: ''\n  filters: []\n- id: dummy_rule_CpDMZ\n\
         \  version: 28ba1078\n  description: Execution of a java process\n  expression:\
         \ exec.file.name == \"java\"\n  agent_version: ''\n  filters:\n  - os == \"\
-        linux\"\n- id: dummy_rule_LPRxi\n  version: 28ba1078\n  description: Execution\
+        linux\"\n- id: dummy_rule_DBtCK\n  version: 28ba1078\n  description: Execution\
         \ of a java process\n  expression: exec.file.name == \"java\"\n  agent_version:\
-        \ ''\n  filters:\n  - os == \"linux\"\n- id: dummy_rule_RMoJm\n  version:\
+        \ ''\n  filters:\n  - os == \"linux\"\n- id: dummy_rule_HfYXr\n  version:\
         \ 28ba1078\n  description: Execution of a java process\n  expression: exec.file.name\
+        \ == \"java\"\n  agent_version: ''\n  filters:\n  - os == \"linux\"\n- id:\
+        \ dummy_rule_JAnCe\n  version: 28ba1078\n  description: Execution of a java\
+        \ process\n  expression: exec.file.name == \"java\"\n  agent_version: ''\n\
+        \  filters:\n  - os == \"linux\"\n- id: dummy_rule_KJInv\n  version: 28ba1078\n\
+        \  description: Execution of a java process\n  expression: exec.file.name\
+        \ == \"java\"\n  agent_version: ''\n  filters:\n  - os == \"linux\"\n- id:\
+        \ dummy_rule_KSDPb\n  version: 28ba1078\n  description: Execution of a java\
+        \ process\n  expression: exec.file.name == \"java\"\n  agent_version: ''\n\
+        \  filters:\n  - os == \"linux\"\n- id: dummy_rule_LPRxi\n  version: 28ba1078\n\
+        \  description: Execution of a java process\n  expression: exec.file.name\
+        \ == \"java\"\n  agent_version: ''\n  filters:\n  - os == \"linux\"\n- id:\
+        \ dummy_rule_PkauG\n  version: 28ba1078\n  description: Execution of a java\
+        \ process\n  expression: exec.file.name == \"java\"\n  agent_version: ''\n\
+        \  filters:\n  - os == \"linux\"\n- id: dummy_rule_RMoJm\n  version: 28ba1078\n\
+        \  description: Execution of a java process\n  expression: exec.file.name\
         \ == \"java\"\n  agent_version: ''\n  filters: []\n- id: dummy_rule_Tjzvu\n\
         \  version: 28ba1078\n  description: Execution of a java process\n  expression:\
         \ exec.file.name == \"java\"\n  agent_version: ''\n  filters:\n  - os == \"\
-        linux\"\n- id: dummy_rule_VxNSK\n  version: 28ba1078\n  description: Execution\
+        linux\"\n- id: dummy_rule_VfQSV\n  version: 28ba1078\n  description: Execution\
         \ of a java process\n  expression: exec.file.name == \"java\"\n  agent_version:\
-        \ ''\n  filters: []\n- id: dummy_rule_XcxFr\n  version: 28ba1078\n  description:\
-        \ Execution of a java process\n  expression: exec.file.name == \"java\"\n\
-        \  agent_version: ''\n  filters:\n  - os == \"linux\"\n- id: dummy_rule_bKkuv\n\
+        \ ''\n  filters:\n  - os == \"linux\"\n- id: dummy_rule_VxNSK\n  version:\
+        \ 28ba1078\n  description: Execution of a java process\n  expression: exec.file.name\
+        \ == \"java\"\n  agent_version: ''\n  filters: []\n- id: dummy_rule_XcxFr\n\
         \  version: 28ba1078\n  description: Execution of a java process\n  expression:\
         \ exec.file.name == \"java\"\n  agent_version: ''\n  filters:\n  - os == \"\
-        linux\"\n- id: dummy_rule_cdxqn\n  version: 28ba1078\n  description: Execution\
+        linux\"\n- id: dummy_rule_bKkuv\n  version: 28ba1078\n  description: Execution\
         \ of a java process\n  expression: exec.file.name == \"java\"\n  agent_version:\
-        \ ''\n  filters: []\n- id: dummy_rule_fWORB\n  version: 28ba1078\n  description:\
+        \ ''\n  filters:\n  - os == \"linux\"\n- id: dummy_rule_bVlLJ\n  version:\
+        \ 28ba1078\n  description: Execution of a java process\n  expression: exec.file.name\
+        \ == \"java\"\n  agent_version: ''\n  filters:\n  - os == \"linux\"\n- id:\
+        \ dummy_rule_cdxqn\n  version: 28ba1078\n  description: Execution of a java\
+        \ process\n  expression: exec.file.name == \"java\"\n  agent_version: ''\n\
+        \  filters: []\n- id: dummy_rule_fWORB\n  version: 28ba1078\n  description:\
         \ Execution of a java process\n  expression: exec.file.name == \"java\"\n\
         \  agent_version: ''\n  filters:\n  - os == \"linux\"\n- id: dummy_rule_iNwDw\n\
         \  version: 28ba1078\n  description: Execution of a java process\n  expression:\
-        \ exec.file.name == \"java\"\n  agent_version: ''\n  filters: []\n- id: dummy_rule_ivMAv\n\
+        \ exec.file.name == \"java\"\n  agent_version: ''\n  filters: []\n- id: dummy_rule_ipyRF\n\
         \  version: 28ba1078\n  description: Execution of a java process\n  expression:\
         \ exec.file.name == \"java\"\n  agent_version: ''\n  filters:\n  - os == \"\
-        linux\"\n- id: dummy_rule_jcvqK\n  version: 28ba1078\n  description: Execution\
+        linux\"\n- id: dummy_rule_ivMAv\n  version: 28ba1078\n  description: Execution\
         \ of a java process\n  expression: exec.file.name == \"java\"\n  agent_version:\
-        \ ''\n  filters:\n  - os == \"linux\"\n- id: dummy_rule_lszUX\n  version:\
+        \ ''\n  filters:\n  - os == \"linux\"\n- id: dummy_rule_jcvqK\n  version:\
         \ 28ba1078\n  description: Execution of a java process\n  expression: exec.file.name\
-        \ == \"java\"\n  agent_version: ''\n  filters: []\n- id: dummy_rule_xkrhu\n\
+        \ == \"java\"\n  agent_version: ''\n  filters:\n  - os == \"linux\"\n- id:\
+        \ dummy_rule_lszUX\n  version: 28ba1078\n  description: Execution of a java\
+        \ process\n  expression: exec.file.name == \"java\"\n  agent_version: ''\n\
+        \  filters: []\n- id: dummy_rule_mABue\n  version: 28ba1078\n  description:\
+        \ Execution of a java process\n  expression: exec.file.name == \"java\"\n\
+        \  agent_version: ''\n  filters:\n  - os == \"linux\"\n- id: dummy_rule_qDgvU\n\
         \  version: 28ba1078\n  description: Execution of a java process\n  expression:\
-        \ exec.file.name == \"java\"\n  agent_version: ''\n  filters: []\n- id: dynamic_linker_config_unlink\n\
-        \  version: 1924611e\n  description: A process unlinked a dynamic linker config\
-        \ file\n  expression: unlink.file.path in [\"/etc/ld.so.preload\", \"/etc/ld.so.conf\"\
-        , ~\"/etc/ld.so.conf.d/*.conf\"]\n    && process.file.path not in [~\"/usr/bin/apt*\"\
-        , \"/usr/bin/dpkg\", \"/usr/bin/rpm\",\n    \"/usr/bin/unattended-upgrade\"\
-        , \"/usr/bin/npm\", ~\"/usr/bin/pip*\", \"/usr/bin/yum\",\n    \"/sbin/apk\"\
-        ]\n  agent_version: ''\n  filters: []\n- id: dynamic_linker_config_write\n\
-        \  version: 764fc516\n  description: A process wrote to a dynamic linker config\
-        \ file\n  expression: open.file.path in [\"/etc/ld.so.preload\", \"/etc/ld.so.conf\"\
-        , \"/etc/ld.so.conf.d/*.conf\"]\n    && open.flags & (O_CREAT|O_TRUNC|O_RDWR|O_WRONLY)\
-        \ > 0 && process.file.path not\n    in [~\"/usr/bin/apt*\", \"/usr/bin/dpkg\"\
-        , \"/usr/bin/rpm\", \"/usr/bin/unattended-upgrade\",\n    \"/usr/bin/containerd\"\
-        , \"/usr/local/bin/containerd\", \"/usr/bin/dockerd\", \"/usr/bin/npm\",\n\
-        \    ~\"/usr/bin/pip*\"] && process.ancestors.file.path not in [\"/opt/datadog-agent/embedded/bin/agent\"\
-        ,\n    \"/opt/datadog-agent/embedded/bin/system-probe\", \"/opt/datadog-agent/embedded/bin/security-agent\"\
-        ,\n    \"/opt/datadog-agent/embedded/bin/process-agent\", \"/opt/datadog-agent/bin/agent/agent\"\
-        ,\n    \"/opt/datadog/apm/inject/auto_inject_runc\", \"/usr/bin/dd-host-install\"\
-        , \"/usr/bin/dd-host-container-install\",\n    \"/usr/bin/dd-container-install\"\
-        , \"/opt/datadog-agent/bin/datadog-cluster-agent\"]\n  agent_version: ''\n\
-        \  filters: []\n- id: example_agent_rule\n  version: 28ba1078\n  description:\
-        \ An example agent rule generated in terraform\n  expression: exec.file.name\
-        \ == \"java\"\n  agent_version: ''\n  filters: []\n- id: examplecreateacloudworkloadsecurityagentrulereturnsokresponse1667938921\n\
+        \ exec.file.name == \"java\"\n  agent_version: ''\n  filters:\n  - os == \"\
+        linux\"\n- id: dummy_rule_sUVnW\n  version: 28ba1078\n  description: Execution\
+        \ of a java process\n  expression: exec.file.name == \"java\"\n  agent_version:\
+        \ ''\n  filters:\n  - os == \"linux\"\n- id: dummy_rule_tSfwV\n  version:\
+        \ 28ba1078\n  description: Execution of a java process\n  expression: exec.file.name\
+        \ == \"java\"\n  agent_version: ''\n  filters:\n  - os == \"linux\"\n- id:\
+        \ dummy_rule_xkrhu\n  version: 28ba1078\n  description: Execution of a java\
+        \ process\n  expression: exec.file.name == \"java\"\n  agent_version: ''\n\
+        \  filters: []\n- id: dynamic_linker_config_unlink\n  version: 1924611e\n\
+        \  description: A process unlinked a dynamic linker config file\n  expression:\
+        \ unlink.file.path in [\"/etc/ld.so.preload\", \"/etc/ld.so.conf\", ~\"/etc/ld.so.conf.d/*.conf\"\
+        ]\n    && process.file.path not in [~\"/usr/bin/apt*\", \"/usr/bin/dpkg\"\
+        , \"/usr/bin/rpm\",\n    \"/usr/bin/unattended-upgrade\", \"/usr/bin/npm\"\
+        , ~\"/usr/bin/pip*\", \"/usr/bin/yum\",\n    \"/sbin/apk\"]\n  agent_version:\
+        \ ''\n  filters: []\n- id: dynamic_linker_config_write\n  version: 764fc516\n\
+        \  description: A process wrote to a dynamic linker config file\n  expression:\
+        \ open.file.path in [\"/etc/ld.so.preload\", \"/etc/ld.so.conf\", \"/etc/ld.so.conf.d/*.conf\"\
+        ]\n    && open.flags & (O_CREAT|O_TRUNC|O_RDWR|O_WRONLY) > 0 && process.file.path\
+        \ not\n    in [~\"/usr/bin/apt*\", \"/usr/bin/dpkg\", \"/usr/bin/rpm\", \"\
+        /usr/bin/unattended-upgrade\",\n    \"/usr/bin/containerd\", \"/usr/local/bin/containerd\"\
+        , \"/usr/bin/dockerd\", \"/usr/bin/npm\",\n    ~\"/usr/bin/pip*\"] && process.ancestors.file.path\
+        \ not in [\"/opt/datadog-agent/embedded/bin/agent\",\n    \"/opt/datadog-agent/embedded/bin/system-probe\"\
+        , \"/opt/datadog-agent/embedded/bin/security-agent\",\n    \"/opt/datadog-agent/embedded/bin/process-agent\"\
+        , \"/opt/datadog-agent/bin/agent/agent\",\n    \"/opt/datadog/apm/inject/auto_inject_runc\"\
+        , \"/usr/bin/dd-host-install\", \"/usr/bin/dd-host-container-install\",\n\
+        \    \"/usr/bin/dd-container-install\", \"/opt/datadog-agent/bin/datadog-cluster-agent\"\
+        ]\n  agent_version: ''\n  filters: []\n- id: example_agent_rule\n  version:\
+        \ 28ba1078\n  description: An example agent rule generated in terraform\n\
+        \  expression: exec.file.name == \"java\"\n  agent_version: ''\n  filters:\
+        \ []\n- id: examplecreateacloudworkloadsecurityagentrulereturnsokresponse1667938921\n\
         \  version: f43786f8\n  description: Test Agent rule\n  expression: exec.file.name\
         \ == \"sh\"\n  agent_version: ''\n  filters: []\n- id: examplegetacloudworkloadsecurityagentrulereturnsokresponse1656001148\n\
         \  version: f43786f8\n  description: My Agent rule\n  expression: exec.file.name\
         \ == \"sh\"\n  agent_version: ''\n  filters: []\n- id: examplegetacloudworkloadsecurityagentrulereturnsokresponse1665706585\n\
         \  version: f43786f8\n  description: My Agent rule\n  expression: exec.file.name\
-        \ == \"sh\"\n  agent_version: ''\n  filters: []\n- id: examplegetallcloudworkloadsecurityagentrulesreturnsokresponse1656001148\n\
+        \ == \"sh\"\n  agent_version: ''\n  filters: []\n- id: examplegetacloudworkloadsecurityagentrulereturnsokresponse1724373425\n\
+        \  version: f43786f8\n  description: My Agent rule\n  expression: exec.file.name\
+        \ == \"sh\"\n  agent_version: ''\n  filters:\n  - os == \"linux\"\n- id: examplegetallcloudworkloadsecurityagentrulesreturnsokresponse1656001148\n\
         \  version: f43786f8\n  description: My Agent rule\n  expression: exec.file.name\
         \ == \"sh\"\n  agent_version: ''\n  filters: []\n- id: examplegetallcloudworkloadsecurityagentrulesreturnsokresponse1665706685\n\
         \  version: f43786f8\n  description: My Agent rule\n  expression: exec.file.name\
@@ -347,14 +382,18 @@ interactions:
         \  version: f43786f8\n  description: Test Agent rule\n  expression: exec.file.name\
         \ == \"sh\"\n  agent_version: ''\n  filters: []\n- id: exampleupdateacloudworkloadsecurityagentrulereturnsokresponse1665706668\n\
         \  version: f43786f8\n  description: Test Agent rule\n  expression: exec.file.name\
-        \ == \"sh\"\n  agent_version: ''\n  filters: []\n- id: exec_lsmod\n  version:\
-        \ 1a14c811\n  description: Kernel modules were listed using the lsmod command\n\
-        \  expression: exec.comm == \"lsmod\"\n  agent_version: ''\n  filters: []\n\
-        - id: exec_whoami\n  version: 90ea91b6\n  description: The whoami command\
-        \ was executed\n  expression: exec.comm == \"whoami\"\n  agent_version: ''\n\
-        \  filters: []\n- id: gcp_imds\n  version: 3035dbbf\n  description: An GCP\
-        \ IMDS was called via a network utility\n  expression: exec.comm in [\"wget\"\
-        , \"curl\", \"lwp-download\"] && exec.args in [~\"*metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/token\"\
+        \ == \"sh\"\n  agent_version: ''\n  filters: []\n- id: exampleupdateacloudworkloadsecurityagentrulereturnsokresponse1737245933\n\
+        \  version: f43786f8\n  description: Test Agent rule\n  expression: exec.file.name\
+        \ == \"sh\"\n  agent_version: ''\n  filters:\n  - os == \"linux\"\n- id: exampleupdateacloudworkloadsecurityagentrulereturnsokresponse1742473058\n\
+        \  version: f43786f8\n  description: Test Agent rule\n  expression: exec.file.name\
+        \ == \"sh\"\n  agent_version: ''\n  filters:\n  - os == \"linux\"\n- id: exec_lsmod\n\
+        \  version: 1a14c811\n  description: Kernel modules were listed using the\
+        \ lsmod command\n  expression: exec.comm == \"lsmod\"\n  agent_version: ''\n\
+        \  filters: []\n- id: exec_whoami\n  version: 90ea91b6\n  description: The\
+        \ whoami command was executed\n  expression: exec.comm == \"whoami\"\n  agent_version:\
+        \ ''\n  filters: []\n- id: gcp_imds\n  version: 3035dbbf\n  description: An\
+        \ GCP IMDS was called via a network utility\n  expression: exec.comm in [\"\
+        wget\", \"curl\", \"lwp-download\"] && exec.args in [~\"*metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/token\"\
         ,\n    ~\"*169.254.169.254/computeMetadata/v1/instance/service-accounts/default/token\"\
         ]\n  agent_version: ''\n  filters: []\n- id: hidden_file_executed\n  version:\
         \ 60fd84a9\n  description: A hidden file was executed in a suspicious folder\n\
