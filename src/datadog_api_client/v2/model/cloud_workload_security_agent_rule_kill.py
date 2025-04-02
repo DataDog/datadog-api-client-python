@@ -28,7 +28,7 @@ class CloudWorkloadSecurityAgentRuleKill(ModelNormal):
         """
         Kill system call applied on the container matching the rule
 
-        :param signal: Supported signals for the kill system call.
+        :param signal: Supported signals for the kill system call
         :type signal: str, optional
         """
         if signal is not unset:
