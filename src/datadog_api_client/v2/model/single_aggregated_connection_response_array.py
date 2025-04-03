@@ -36,9 +36,9 @@ class SingleAggregatedConnectionResponseArray(ModelNormal):
 
     def __init__(self_, data: Union[List[SingleAggregatedConnectionResponseData], UnsetType] = unset, **kwargs):
         """
-        The definition of ``SingleAggregatedConnectionResponseArray`` object.
+        List of aggregated connections.
 
-        :param data: The ``SingleAggregatedConnectionResponseArray`` ``data``.
+        :param data: Array of aggregated connection objects.
         :type data: [SingleAggregatedConnectionResponseData], optional
         """
         if data is not unset:

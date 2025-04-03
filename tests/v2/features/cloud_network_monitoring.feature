@@ -12,11 +12,6 @@ Feature: Cloud Network Monitoring
     And operation "GetAggregatedConnections" enabled
     And new "GetAggregatedConnections" request
 
-  @generated @skip @team:Datadog/networks
-  Scenario: Get aggregated connections returns "Bad Request" response
-    When the request is sent
-    Then the response status is 400 Bad Request
-
   @team:Datadog/networks
   Scenario: Get aggregated connections returns "OK" response
     When the request is sent
@@ -27,3 +22,8 @@ Feature: Cloud Network Monitoring
     Given request contains "limit" parameter with value 6000
     When the request is sent
     Then the response status is 400 Bad Request
+
+  @generated @skip @team:Datadog/networks
+  Scenario: Get all aggregated connections returns "OK" response
+    When the request is sent
+    Then the response status is 200 OK
