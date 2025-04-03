@@ -585,6 +585,13 @@ datadog\_api\_client.v1.model.distribution\_point module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.distribution\_point\_items module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.distribution_point_items
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.distribution\_points\_content\_encoding module
 ----------------------------------------------------------------------------
 

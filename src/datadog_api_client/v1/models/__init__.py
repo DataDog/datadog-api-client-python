@@ -81,6 +81,7 @@ from datadog_api_client.v1.model.dashboard_type import DashboardType
 from datadog_api_client.v1.model.delete_shared_dashboard_response import DeleteSharedDashboardResponse
 from datadog_api_client.v1.model.deleted_monitor import DeletedMonitor
 from datadog_api_client.v1.model.distribution_point import DistributionPoint
+from datadog_api_client.v1.model.distribution_point_items import DistributionPointItems
 from datadog_api_client.v1.model.distribution_points_content_encoding import DistributionPointsContentEncoding
 from datadog_api_client.v1.model.distribution_points_payload import DistributionPointsPayload
 from datadog_api_client.v1.model.distribution_points_series import DistributionPointsSeries
@@ -1167,6 +1168,7 @@ __all__ = [
     "DeleteSharedDashboardResponse",
     "DeletedMonitor",
     "DistributionPoint",
+    "DistributionPointItems",
     "DistributionPointsContentEncoding",
     "DistributionPointsPayload",
     "DistributionPointsSeries",

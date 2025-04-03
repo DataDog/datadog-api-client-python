@@ -15,7 +15,7 @@ class DistributionPoint(ModelSimple):
     Array of distribution points.
 
 
-    :type value: [float, [float]]
+    :type value: [DistributionPointItems]
     """
 
     validations = {
@@ -27,6 +27,8 @@ class DistributionPoint(ModelSimple):
 
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v1.model.distribution_point_items import DistributionPointItems
+
         return {
-            "value": ([float, [float]],),
+            "value": ([DistributionPointItems],),
         }
