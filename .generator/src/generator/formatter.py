@@ -91,6 +91,26 @@ def snake_case(value):
     return PATTERN_DOUBLE_UNDERSCORE.sub("_", s1)
 
 
+def class_name(value):
+    """
+    Convert a string into a valid Python API class name by:
+    1. Removing all non-alphanumeric characters 
+    2. Appending 'Api' suffix
+
+    Args:
+        value (str): The input string to convert
+
+    Returns:
+        str: A valid Python class name ending in 'Api'
+
+    Example:
+        >>> class_name("On-Call")
+        'OnCallApi'
+    """
+    value = re.sub(r'[^a-zA-Z0-9]', '', value)
+    return value + "Api"
+
+
 def safe_snake_case(value):
     for token, replacement in EDGE_CASES.items():
         value = value.replace(token, replacement)

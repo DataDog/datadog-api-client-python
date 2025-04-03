@@ -383,6 +383,11 @@ def client(configuration):
     with ApiClient(configuration) as api_client:
         yield api_client
 
+def _api_name(value):
+    value = re.sub(r'[^a-zA-Z0-9]', '', value)
+    return value + "Api"
+
+
 
 @given(parsers.parse('an instance of "{name}" API'))
 def api(context, package_name, client, name):
@@ -390,7 +395,7 @@ def api(context, package_name, client, name):
     module_name = snake_case(name)
     package = importlib.import_module(f"{package_name}.api.{module_name}_api")
     context["api"] = {
-        "api": getattr(package, name + "Api")(client),
+        "api": getattr(package, _api_name(name))(client),
         "package": package_name,
         "calls": [],
     }
@@ -479,7 +484,7 @@ def build_given(version, operation):
 
         package = importlib.import_module(f"{package_name}.api.{module_name}_api")
         with ApiClient(configuration) as client:
-            api = getattr(package, name + "Api")(client)
+            api = getattr(package, _api_name(name))(client)
             operation_method = getattr(api, operation_name)
             params_map = getattr(api, f"_{operation_name}_endpoint").params_map
 
@@ -565,7 +570,7 @@ def undo(package_name, undo_operations, client):
             undo_name = undo_tag.replace(" ", "")
             undo_module_name = snake_case(undo_tag)
             undo_package = importlib.import_module(f"{package_name}.api.{undo_module_name}_api")
-            api = getattr(undo_package, undo_name + "Api")(client)
+            api = getattr(undo_package, _api_name(undo_tag))(client)
 
         operation_name = snake_case(operation["operationId"])
         method = getattr(api, operation_name)
