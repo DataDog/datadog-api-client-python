@@ -14,8 +14,7 @@ from typing import ClassVar
 
 class SingleAggregatedConnectionResponseDataType(ModelSimple):
     """
-    Aggregated connection resource type. Allowed enum values: `aggregated_connection`.
-        default: `aggregated_connection`
+    Aggregated connection resource type.
 
     :param value: If omitted defaults to "aggregated_connection". Must be one of ["aggregated_connection"].
     :type value: str

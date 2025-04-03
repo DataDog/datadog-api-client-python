@@ -81,13 +81,13 @@ class CloudNetworkMonitoringApi:
         tags: Union[str, UnsetType] = unset,
         limit: Union[int, UnsetType] = unset,
     ) -> SingleAggregatedConnectionResponseArray:
-        """Get aggregated connections.
+        """Get all aggregated connections.
 
-        Get aggregated connections
+        Get all aggregated connections.
 
-        :param _from: Unix timestamp (number of seconds since epoch) of the start of the query window. If not provided, the start of the query window is 15 minutes before the "to" timestamp. If neither "from" nor "to" are provided, the query window is [now - 15m, now].
+        :param _from: Unix timestamp (number of seconds since epoch) of the start of the query window. If not provided, the start of the query window is 15 minutes before the ``to`` timestamp. If neither ``from`` nor ``to`` are provided, the query window is ``[now - 15m, now]``.
         :type _from: int, optional
-        :param to: Unix timestamp (number of seconds since epoch) of the end of the query window. If not provided, the end of the query window is the current time. If neither "from" nor "to" are provided, the query window is [now - 15m, now].
+        :param to: Unix timestamp (number of seconds since epoch) of the end of the query window. If not provided, the end of the query window is the current time. If neither ``from`` nor ``to`` are provided, the query window is ``[now - 15m, now]``.
         :type to: int, optional
         :param group_by: Comma-separated list of fields to group connections by.
         :type group_by: str, optional

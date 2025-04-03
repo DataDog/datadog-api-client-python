@@ -63,7 +63,7 @@ class SingleAggregatedConnectionResponseDataAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        The definition of ``SingleAggregatedConnectionResponseDataAttributes`` object.
+        Attributes for an aggregated connection.
 
         :param bytes_sent_by_client: The total number of bytes sent by the client over the given period.
         :type bytes_sent_by_client: int, optional
@@ -71,7 +71,7 @@ class SingleAggregatedConnectionResponseDataAttributes(ModelNormal):
         :param bytes_sent_by_server: The total number of bytes sent by the server over the given period.
         :type bytes_sent_by_server: int, optional
 
-        :param group_bys: The ``attributes`` ``group_bys``.
+        :param group_bys: The key, value pairs for each group by.
         :type group_bys: {str: ([str],)}, optional
 
         :param packets_sent_by_client: The total number of packets sent by the client over the given period.

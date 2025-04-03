@@ -10,6 +10,7 @@ from datadog_api_client.v1.model.slack_integration_channel_display import SlackI
 body = SlackIntegrationChannel(
     display=SlackIntegrationChannelDisplay(
         message=True,
+        mute_buttons=False,
         notified=True,
         snapshot=True,
         tags=True,
