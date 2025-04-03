@@ -52,16 +52,15 @@ class SingleAggregatedConnectionResponseData(ModelNormal):
         **kwargs,
     ):
         """
-        The definition of ``SingleAggregatedConnectionResponseData`` object.
+        Object describing an aggregated connection.
 
-        :param attributes: The definition of ``SingleAggregatedConnectionResponseDataAttributes`` object.
+        :param attributes: Attributes for an aggregated connection.
         :type attributes: SingleAggregatedConnectionResponseDataAttributes, optional
 
-        :param id: The ``SingleAggregatedConnectionResponseData`` ``id``.
+        :param id: A unique identifier for the aggregated connection based on the group by values.
         :type id: str, optional
 
-        :param type: Aggregated connection resource type. Allowed enum values: ``aggregated_connection``.
-            default: ``aggregated_connection``
+        :param type: Aggregated connection resource type.
         :type type: SingleAggregatedConnectionResponseDataType, optional
         """
         if attributes is not unset:
