@@ -18,6 +18,7 @@ class SlackIntegrationChannelDisplay(ModelNormal):
     def openapi_types(_):
         return {
             "message": (bool,),
+            "mute_buttons": (bool,),
             "notified": (bool,),
             "snapshot": (bool,),
             "tags": (bool,),
@@ -25,6 +26,7 @@ class SlackIntegrationChannelDisplay(ModelNormal):
 
     attribute_map = {
         "message": "message",
+        "mute_buttons": "mute_buttons",
         "notified": "notified",
         "snapshot": "snapshot",
         "tags": "tags",
@@ -33,6 +35,7 @@ class SlackIntegrationChannelDisplay(ModelNormal):
     def __init__(
         self_,
         message: Union[bool, UnsetType] = unset,
+        mute_buttons: Union[bool, UnsetType] = unset,
         notified: Union[bool, UnsetType] = unset,
         snapshot: Union[bool, UnsetType] = unset,
         tags: Union[bool, UnsetType] = unset,
@@ -43,6 +46,9 @@ class SlackIntegrationChannelDisplay(ModelNormal):
 
         :param message: Show the main body of the alert event.
         :type message: bool, optional
+
+        :param mute_buttons: Show interactive buttons to mute the alerting monitor.
+        :type mute_buttons: bool, optional
 
         :param notified: Show the list of @-handles in the alert event.
         :type notified: bool, optional
@@ -55,6 +61,8 @@ class SlackIntegrationChannelDisplay(ModelNormal):
         """
         if message is not unset:
             kwargs["message"] = message
+        if mute_buttons is not unset:
+            kwargs["mute_buttons"] = mute_buttons
         if notified is not unset:
             kwargs["notified"] = notified
         if snapshot is not unset:
