@@ -1,0 +1,40 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"config":{"destinations":[{"id":"datadog-logs-destination","inputs":["filter-processor"],"type":"datadog_logs"}],"processors":[{"id":"filter-processor","include":"service:my-service","inputs":["datadog-agent-source"],"type":"filter"}],"sources":[{"id":"datadog-agent-source","type":"datadog_agent"}]},"name":"Main
+      Observability Pipeline"},"type":"pipelines"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/obs_pipelines/pipelines
+  response:
+    body:
+      string: '{"data":{"id":"be354bf0-1140-11f0-9a6b-da7ad0900002","type":"pipelines","attributes":{"name":"Main
+        Observability Pipeline","config":{"destinations":[{"id":"datadog-logs-destination","inputs":["filter-processor"],"type":"datadog_logs"}],"processors":[{"id":"filter-processor","include":"service:my-service","inputs":["datadog-agent-source"],"type":"filter"}],"sources":[{"id":"datadog-agent-source","type":"datadog_agent"}]}}}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/obs_pipelines/pipelines/be354bf0-1140-11f0-9a6b-da7ad0900002
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 204
+      message: No Content
+version: 1

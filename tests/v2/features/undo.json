@@ -1964,6 +1964,37 @@
       "type": "safe"
     }
   },
+  "CreatePipeline": {
+    "tag": "Observability Pipelines",
+    "undo": {
+      "operationId": "DeletePipeline",
+      "parameters": [
+        {
+          "name": "pipeline_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeletePipeline": {
+    "tag": "Observability Pipelines",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetPipeline": {
+    "tag": "Observability Pipelines",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdatePipeline": {
+    "tag": "Observability Pipelines",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "DeleteRestrictionPolicy": {
     "tag": "Restriction Policies",
     "undo": {
