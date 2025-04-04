@@ -42,6 +42,7 @@ from datadog_api_client.v2.api.microsoft_teams_integration_api import MicrosoftT
 from datadog_api_client.v2.api.monitors_api import MonitorsApi
 from datadog_api_client.v2.api.network_device_monitoring_api import NetworkDeviceMonitoringApi
 from datadog_api_client.v2.api.okta_integration_api import OktaIntegrationApi
+from datadog_api_client.v2.api.on_call_api import OnCallApi
 from datadog_api_client.v2.api.opsgenie_integration_api import OpsgenieIntegrationApi
 from datadog_api_client.v2.api.organizations_api import OrganizationsApi
 from datadog_api_client.v2.api.powerpack_api import PowerpackApi
@@ -112,6 +113,7 @@ __all__ = [
     "MonitorsApi",
     "NetworkDeviceMonitoringApi",
     "OktaIntegrationApi",
+    "OnCallApi",
     "OpsgenieIntegrationApi",
     "OrganizationsApi",
     "PowerpackApi",

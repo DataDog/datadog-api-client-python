@@ -22,7 +22,7 @@ from {{ package }}.model_utils import (
 from {{ package }}.{{ version }}.model.{{ model|safe_snake_case }} import {{ model }}
 {%- endfor %}
 
-{% set classname = name.replace(" ", "") + "Api" %}
+{% set classname = name|class_name %}
 class {{ classname }}:
     """
     {{ description|docstring|indent(4) }}

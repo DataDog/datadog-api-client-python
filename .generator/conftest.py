@@ -337,7 +337,8 @@ def undo_operations():
 def api(context, api_version, specs, name):
     """Return an API instance."""
     assert name in {tag["name"].replace(" ", "") for tag in specs[api_version]["tags"]}
-    context["api_instance"] = {"name": name}
+    sanitized_name = name.replace("-", "")
+    context["api_instance"] = {"name": sanitized_name}
 
 
 @given(parsers.parse('operation "{name}" enabled'))
