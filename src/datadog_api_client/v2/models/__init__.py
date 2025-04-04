@@ -1739,6 +1739,7 @@ from datadog_api_client.v2.model.output_schema_parameters import OutputSchemaPar
 from datadog_api_client.v2.model.output_schema_parameters_type import OutputSchemaParametersType
 from datadog_api_client.v2.model.pagination import Pagination
 from datadog_api_client.v2.model.parameter import Parameter
+from datadog_api_client.v2.model.parse_json_processor import ParseJSONProcessor
 from datadog_api_client.v2.model.partial_api_key import PartialAPIKey
 from datadog_api_client.v2.model.partial_api_key_attributes import PartialAPIKeyAttributes
 from datadog_api_client.v2.model.partial_application_key import PartialApplicationKey
@@ -1753,6 +1754,45 @@ from datadog_api_client.v2.model.permission import Permission
 from datadog_api_client.v2.model.permission_attributes import PermissionAttributes
 from datadog_api_client.v2.model.permissions_response import PermissionsResponse
 from datadog_api_client.v2.model.permissions_type import PermissionsType
+from datadog_api_client.v2.model.pipeline import Pipeline
+from datadog_api_client.v2.model.pipeline_add_fields_processor import PipelineAddFieldsProcessor
+from datadog_api_client.v2.model.pipeline_add_fields_processor_type import PipelineAddFieldsProcessorType
+from datadog_api_client.v2.model.pipeline_config import PipelineConfig
+from datadog_api_client.v2.model.pipeline_config_destination import PipelineConfigDestination
+from datadog_api_client.v2.model.pipeline_config_processor import PipelineConfigProcessor
+from datadog_api_client.v2.model.pipeline_config_source import PipelineConfigSource
+from datadog_api_client.v2.model.pipeline_create_request import PipelineCreateRequest
+from datadog_api_client.v2.model.pipeline_create_request_data import PipelineCreateRequestData
+from datadog_api_client.v2.model.pipeline_data import PipelineData
+from datadog_api_client.v2.model.pipeline_data_attributes import PipelineDataAttributes
+from datadog_api_client.v2.model.pipeline_datadog_agent_source import PipelineDatadogAgentSource
+from datadog_api_client.v2.model.pipeline_datadog_agent_source_type import PipelineDatadogAgentSourceType
+from datadog_api_client.v2.model.pipeline_datadog_logs_destination import PipelineDatadogLogsDestination
+from datadog_api_client.v2.model.pipeline_datadog_logs_destination_type import PipelineDatadogLogsDestinationType
+from datadog_api_client.v2.model.pipeline_field_value import PipelineFieldValue
+from datadog_api_client.v2.model.pipeline_filter_processor import PipelineFilterProcessor
+from datadog_api_client.v2.model.pipeline_filter_processor_type import PipelineFilterProcessorType
+from datadog_api_client.v2.model.pipeline_kafka_source import PipelineKafkaSource
+from datadog_api_client.v2.model.pipeline_kafka_source_librdkafka_option import PipelineKafkaSourceLibrdkafkaOption
+from datadog_api_client.v2.model.pipeline_kafka_source_sasl import PipelineKafkaSourceSasl
+from datadog_api_client.v2.model.pipeline_kafka_source_type import PipelineKafkaSourceType
+from datadog_api_client.v2.model.pipeline_parse_json_processor_type import PipelineParseJSONProcessorType
+from datadog_api_client.v2.model.pipeline_pipeline_kafka_source_sasl_mechanism import (
+    PipelinePipelineKafkaSourceSaslMechanism,
+)
+from datadog_api_client.v2.model.pipeline_quota_processor import PipelineQuotaProcessor
+from datadog_api_client.v2.model.pipeline_quota_processor_limit import PipelineQuotaProcessorLimit
+from datadog_api_client.v2.model.pipeline_quota_processor_limit_enforce_type import (
+    PipelineQuotaProcessorLimitEnforceType,
+)
+from datadog_api_client.v2.model.pipeline_quota_processor_override import PipelineQuotaProcessorOverride
+from datadog_api_client.v2.model.pipeline_quota_processor_type import PipelineQuotaProcessorType
+from datadog_api_client.v2.model.pipeline_remove_fields_processor import PipelineRemoveFieldsProcessor
+from datadog_api_client.v2.model.pipeline_remove_fields_processor_type import PipelineRemoveFieldsProcessorType
+from datadog_api_client.v2.model.pipeline_rename_fields_processor import PipelineRenameFieldsProcessor
+from datadog_api_client.v2.model.pipeline_rename_fields_processor_field import PipelineRenameFieldsProcessorField
+from datadog_api_client.v2.model.pipeline_rename_fields_processor_type import PipelineRenameFieldsProcessorType
+from datadog_api_client.v2.model.pipeline_tls import PipelineTls
 from datadog_api_client.v2.model.powerpack import Powerpack
 from datadog_api_client.v2.model.powerpack_attributes import PowerpackAttributes
 from datadog_api_client.v2.model.powerpack_data import PowerpackData
@@ -4049,6 +4089,7 @@ __all__ = [
     "OutputSchemaParametersType",
     "Pagination",
     "Parameter",
+    "ParseJSONProcessor",
     "PartialAPIKey",
     "PartialAPIKeyAttributes",
     "PartialApplicationKey",
@@ -4061,6 +4102,41 @@ __all__ = [
     "PermissionAttributes",
     "PermissionsResponse",
     "PermissionsType",
+    "Pipeline",
+    "PipelineAddFieldsProcessor",
+    "PipelineAddFieldsProcessorType",
+    "PipelineConfig",
+    "PipelineConfigDestination",
+    "PipelineConfigProcessor",
+    "PipelineConfigSource",
+    "PipelineCreateRequest",
+    "PipelineCreateRequestData",
+    "PipelineData",
+    "PipelineDataAttributes",
+    "PipelineDatadogAgentSource",
+    "PipelineDatadogAgentSourceType",
+    "PipelineDatadogLogsDestination",
+    "PipelineDatadogLogsDestinationType",
+    "PipelineFieldValue",
+    "PipelineFilterProcessor",
+    "PipelineFilterProcessorType",
+    "PipelineKafkaSource",
+    "PipelineKafkaSourceLibrdkafkaOption",
+    "PipelineKafkaSourceSasl",
+    "PipelineKafkaSourceType",
+    "PipelineParseJSONProcessorType",
+    "PipelinePipelineKafkaSourceSaslMechanism",
+    "PipelineQuotaProcessor",
+    "PipelineQuotaProcessorLimit",
+    "PipelineQuotaProcessorLimitEnforceType",
+    "PipelineQuotaProcessorOverride",
+    "PipelineQuotaProcessorType",
+    "PipelineRemoveFieldsProcessor",
+    "PipelineRemoveFieldsProcessorType",
+    "PipelineRenameFieldsProcessor",
+    "PipelineRenameFieldsProcessorField",
+    "PipelineRenameFieldsProcessorType",
+    "PipelineTls",
     "Powerpack",
     "PowerpackAttributes",
     "PowerpackData",
