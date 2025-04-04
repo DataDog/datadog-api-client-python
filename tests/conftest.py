@@ -570,7 +570,7 @@ def undo(package_name, undo_operations, client):
             undo_name = undo_tag.replace(" ", "")
             undo_module_name = snake_case(undo_tag)
             undo_package = importlib.import_module(f"{package_name}.api.{undo_module_name}_api")
-            api = getattr(undo_package, _api_name(undo_tag))(client)
+            api = getattr(undo_package, _api_name(undo_name))(client)
 
         operation_name = snake_case(operation["operationId"])
         method = getattr(api, operation_name)
