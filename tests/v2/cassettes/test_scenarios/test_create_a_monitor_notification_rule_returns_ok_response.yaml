@@ -1,0 +1,40 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"filter":{"tags":["test:test-create_a_monitor_notification_rule_returns_ok_response-1743786633"]},"name":"test
+      rule","recipients":["slack-test-channel","jira-test"]},"type":"monitor-notification-rule"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/monitor/notification_rule
+  response:
+    body:
+      string: '{"data":{"type":"monitor-notification-rule","id":"bf2be545-f20c-4357-b37c-9cd82182f3cc","attributes":{"filter":{"tags":["test:test-create_a_monitor_notification_rule_returns_ok_response-1743786633"]},"name":"test
+        rule","modified_at":"1970-01-01T00:00:00+00:00","creator_uuid":"3ad549bf-eba0-11e9-a77a-0705486660d0","created_at":"2025-04-04T17:10:33.553987+00:00","recipients":["slack-test-channel","jira-test"]}}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/monitor/notification_rule/bf2be545-f20c-4357-b37c-9cd82182f3cc
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - text/html; charset=utf-8
+    status:
+      code: 204
+      message: No Content
+version: 1

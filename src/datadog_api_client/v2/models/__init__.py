@@ -1660,6 +1660,24 @@ from datadog_api_client.v2.model.monitor_downtime_match_response_attributes impo
     MonitorDowntimeMatchResponseAttributes,
 )
 from datadog_api_client.v2.model.monitor_downtime_match_response_data import MonitorDowntimeMatchResponseData
+from datadog_api_client.v2.model.monitor_notification_rule_attributes import MonitorNotificationRuleAttributes
+from datadog_api_client.v2.model.monitor_notification_rule_create_request import MonitorNotificationRuleCreateRequest
+from datadog_api_client.v2.model.monitor_notification_rule_create_request_data import (
+    MonitorNotificationRuleCreateRequestData,
+)
+from datadog_api_client.v2.model.monitor_notification_rule_data import MonitorNotificationRuleData
+from datadog_api_client.v2.model.monitor_notification_rule_filter import MonitorNotificationRuleFilter
+from datadog_api_client.v2.model.monitor_notification_rule_filter_tags import MonitorNotificationRuleFilterTags
+from datadog_api_client.v2.model.monitor_notification_rule_list_response import MonitorNotificationRuleListResponse
+from datadog_api_client.v2.model.monitor_notification_rule_resource_type import MonitorNotificationRuleResourceType
+from datadog_api_client.v2.model.monitor_notification_rule_response import MonitorNotificationRuleResponse
+from datadog_api_client.v2.model.monitor_notification_rule_response_attributes import (
+    MonitorNotificationRuleResponseAttributes,
+)
+from datadog_api_client.v2.model.monitor_notification_rule_update_request import MonitorNotificationRuleUpdateRequest
+from datadog_api_client.v2.model.monitor_notification_rule_update_request_data import (
+    MonitorNotificationRuleUpdateRequestData,
+)
 from datadog_api_client.v2.model.monitor_trigger import MonitorTrigger
 from datadog_api_client.v2.model.monitor_trigger_wrapper import MonitorTriggerWrapper
 from datadog_api_client.v2.model.monitor_type import MonitorType
@@ -3972,6 +3990,18 @@ __all__ = [
     "MonitorDowntimeMatchResponse",
     "MonitorDowntimeMatchResponseAttributes",
     "MonitorDowntimeMatchResponseData",
+    "MonitorNotificationRuleAttributes",
+    "MonitorNotificationRuleCreateRequest",
+    "MonitorNotificationRuleCreateRequestData",
+    "MonitorNotificationRuleData",
+    "MonitorNotificationRuleFilter",
+    "MonitorNotificationRuleFilterTags",
+    "MonitorNotificationRuleListResponse",
+    "MonitorNotificationRuleResourceType",
+    "MonitorNotificationRuleResponse",
+    "MonitorNotificationRuleResponseAttributes",
+    "MonitorNotificationRuleUpdateRequest",
+    "MonitorNotificationRuleUpdateRequestData",
     "MonitorTrigger",
     "MonitorTriggerWrapper",
     "MonitorType",

@@ -1,0 +1,60 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"filter":{"tags":["app:test-update_a_monitor_notification_rule_returns_bad_request_response-1743786638"]},"name":"test
+      rule","recipients":["slack-monitor-app"]},"type":"monitor-notification-rule"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/monitor/notification_rule
+  response:
+    body:
+      string: '{"data":{"type":"monitor-notification-rule","attributes":{"modified_at":"1970-01-01T00:00:00+00:00","recipients":["slack-monitor-app"],"name":"test
+        rule","creator_uuid":"3ad549bf-eba0-11e9-a77a-0705486660d0","filter":{"tags":["app:test-update_a_monitor_notification_rule_returns_bad_request_response-1743786638"]},"created_at":"2025-04-04T17:10:38.399066+00:00"},"id":"a55aafcd-667f-4731-8b2f-273092bf440f"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data":{"attributes":{"filter":{"tags":["test:test-update_a_monitor_notification_rule_returns_bad_request_response-1743786638","host:abc"]},"name":"updated
+      rule","recipients":["@slack-test-channel"]},"id":"a55aafcd-667f-4731-8b2f-273092bf440f","type":"monitor-notification-rule"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/monitor/notification_rule/a55aafcd-667f-4731-8b2f-273092bf440f
+  response:
+    body:
+      string: '{"errors":["Invalid recipients: Recipient handle should not start with
+        ''@''"]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 400
+      message: Bad Request
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/monitor/notification_rule/a55aafcd-667f-4731-8b2f-273092bf440f
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - text/html; charset=utf-8
+    status:
+      code: 204
+      message: No Content
+version: 1
