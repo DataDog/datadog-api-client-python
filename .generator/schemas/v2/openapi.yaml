@@ -50645,9 +50645,6 @@ paths:
       summary: List historical jobs
       tags:
       - Security Monitoring
-      x-unstable: '**Note**: This endpoint is in beta and may be subject to changes.
-
-        Please check the documentation regularly for updates.'
     post:
       description: Run a historical job.
       operationId: RunHistoricalJob
@@ -50687,9 +50684,6 @@ paths:
         operator: OR
         permissions:
         - security_monitoring_rules_write
-      x-unstable: '**Note**: This endpoint is in beta and may be subject to changes.
-
-        Please check the documentation regularly for updates.'
   /api/v2/siem-historical-detections/jobs/signal_convert:
     post:
       description: Convert a job result to a signal.
@@ -50721,9 +50715,6 @@ paths:
         operator: OR
         permissions:
         - security_monitoring_signals_write
-      x-unstable: '**Note**: This endpoint is in beta and may be subject to changes.
-
-        Please check the documentation regularly for updates.'
   /api/v2/siem-historical-detections/jobs/{job_id}:
     delete:
       description: Delete an existing job.
@@ -50752,9 +50743,6 @@ paths:
       summary: Delete an existing job
       tags:
       - Security Monitoring
-      x-unstable: '**Note**: This endpoint is in beta and may be subject to changes.
-
-        Please check the documentation regularly for updates.'
     get:
       description: Get a job's details.
       operationId: GetHistoricalJob
@@ -50787,9 +50775,6 @@ paths:
         operator: OR
         permissions:
         - security_monitoring_rules_read
-      x-unstable: '**Note**: This endpoint is in beta and may be subject to changes.
-
-        Please check the documentation regularly for updates.'
   /api/v2/siem-historical-detections/jobs/{job_id}/cancel:
     patch:
       description: Cancel a historical job.
@@ -50823,9 +50808,6 @@ paths:
         operator: OR
         permissions:
         - security_monitoring_rules_write
-      x-unstable: '**Note**: This endpoint is in beta and may be subject to changes.
-
-        Please check the documentation regularly for updates.'
   /api/v2/slo/report:
     post:
       description: 'Create a job to generate an SLO report. The report job is processed

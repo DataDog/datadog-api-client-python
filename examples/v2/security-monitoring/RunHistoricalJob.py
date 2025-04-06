@@ -63,7 +63,6 @@ body = RunHistoricalJobRequest(
 )
 
 configuration = Configuration()
-configuration.unstable_operations["run_historical_job"] = True
 with ApiClient(configuration) as api_client:
     api_instance = SecurityMonitoringApi(api_client)
     response = api_instance.run_historical_job(body=body)

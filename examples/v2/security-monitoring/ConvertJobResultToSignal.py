@@ -27,7 +27,6 @@ body = ConvertJobResultsToSignalsRequest(
 )
 
 configuration = Configuration()
-configuration.unstable_operations["convert_job_result_to_signal"] = True
 with ApiClient(configuration) as api_client:
     api_instance = SecurityMonitoringApi(api_client)
     api_instance.convert_job_result_to_signal(body=body)
