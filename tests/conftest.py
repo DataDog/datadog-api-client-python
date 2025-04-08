@@ -185,7 +185,10 @@ def relative_time(freezed_time, iso):
                 elif unit == "y":
                     ret += relativedelta(years=num)
             if iso:
-                return ret.isoformat(timespec="seconds")
+                # Return ISO 8601 formatted string with Z timezone indicator
+                # Example: 2025-04-17T03:17:07.923Z
+                from datetime import timezone
+                return ret.astimezone(timezone.utc).isoformat(timespec="milliseconds").replace("+00:00", "Z")
             return int(ret.timestamp())
         return ""
 
