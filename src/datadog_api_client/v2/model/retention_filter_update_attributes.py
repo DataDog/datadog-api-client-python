@@ -3,11 +3,13 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -28,6 +30,7 @@ class RetentionFilterUpdateAttributes(ModelNormal):
             "filter_type": (RetentionFilterAllType,),
             "name": (str,),
             "rate": (float,),
+            "trace_rate": (float,),
         }
 
     attribute_map = {
@@ -36,6 +39,7 @@ class RetentionFilterUpdateAttributes(ModelNormal):
         "filter_type": "filter_type",
         "name": "name",
         "rate": "rate",
+        "trace_rate": "trace_rate",
     }
 
     def __init__(
@@ -45,6 +49,7 @@ class RetentionFilterUpdateAttributes(ModelNormal):
         filter_type: RetentionFilterAllType,
         name: str,
         rate: float,
+        trace_rate: Union[float, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -65,7 +70,13 @@ class RetentionFilterUpdateAttributes(ModelNormal):
         :param rate: Sample rate to apply to spans going through this retention filter,
             a value of 1.0 keeps all spans matching the query.
         :type rate: float
+
+        :param trace_rate: Sample rate to apply to traces containing spans going through this retention filter.
+            A value of 1.0 keeps all traces with spans matching the query.
+        :type trace_rate: float, optional
         """
+        if trace_rate is not unset:
+            kwargs["trace_rate"] = trace_rate
         super().__init__(kwargs)
 
         self_.enabled = enabled
