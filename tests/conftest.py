@@ -185,9 +185,7 @@ def relative_time(freezed_time, iso):
                 elif unit == "y":
                     ret += relativedelta(years=num)
             if iso:
-                return ret.replace(tzinfo=None)  # return datetime object and not string
-                # NOTE this is not a full ISO 8601 format, but it's enough for our needs
-                # return ret.strftime('%Y-%m-%dT%H:%M:%S') + ret.strftime('.%f')[:4] + 'Z'
+                return ret.isoformat(timespec="seconds")
             return int(ret.timestamp())
         return ""
 
