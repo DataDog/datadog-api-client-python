@@ -127,7 +127,6 @@ def snake_case(value):
     s1 = PATTERN_FOLLOWING_ALPHA.sub(r"\1_\2", s1).lower()
     s1 = PATTERN_WHITESPACE.sub("_", s1)
     s1 = s1.rstrip("_")
-    s1 = s1.replace("-", "_")
     return PATTERN_DOUBLE_UNDERSCORE.sub("_", s1)
 
 
