@@ -507,6 +507,18 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n   \"data\":{\n      \"attributes\":{\n         \"config\":{\n            \"destinations\":[\n               {\n                  \"id\":\"datadog-logs-destination\",\n                  \"inputs\":[\n                     \"filter-processor\"\n                  ],\n                  \"type\":\"datadog_logs\"\n               }\n            ],\n            \"processors\":[\n               {\n                  \"id\":\"filter-processor\",\n                  \"include\":\"service:my-service\",\n                  \"inputs\":[\n                     \"datadog-agent-source\"\n                  ],\n                  \"type\":\"filter\"\n               }\n            ],\n            \"sources\":[\n               {\n                  \"id\":\"datadog-agent-source\",\n                  \"type\":\"datadog_agent\"\n               }\n            ]\n         },\n         \"name\":\"Main Observability Pipeline\"\n      },\n      \"type\":\"pipelines\"\n   }\n}"
+      }
+    ],
+    "step": "there is a valid \"pipeline\" in the system",
+    "key": "pipeline",
+    "tag": "Observability Pipelines",
+    "operationId": "CreatePipeline"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"name\": \"{{ unique }}\"\n     },\n     \"type\": \"roles\"\n  }\n}"
       }
     ],
