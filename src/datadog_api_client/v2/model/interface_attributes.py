@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -26,6 +26,7 @@ class InterfaceAttributes(ModelNormal):
             "alias": (str,),
             "description": (str,),
             "index": (int,),
+            "ip_addresses": ([str],),
             "mac_address": (str,),
             "name": (str,),
             "status": (InterfaceAttributesStatus,),
@@ -35,6 +36,7 @@ class InterfaceAttributes(ModelNormal):
         "alias": "alias",
         "description": "description",
         "index": "index",
+        "ip_addresses": "ip_addresses",
         "mac_address": "mac_address",
         "name": "name",
         "status": "status",
@@ -45,6 +47,7 @@ class InterfaceAttributes(ModelNormal):
         alias: Union[str, UnsetType] = unset,
         description: Union[str, UnsetType] = unset,
         index: Union[int, UnsetType] = unset,
+        ip_addresses: Union[List[str], UnsetType] = unset,
         mac_address: Union[str, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
         status: Union[InterfaceAttributesStatus, UnsetType] = unset,
@@ -62,6 +65,9 @@ class InterfaceAttributes(ModelNormal):
         :param index: The interface index
         :type index: int, optional
 
+        :param ip_addresses: The interface IP addresses
+        :type ip_addresses: [str], optional
+
         :param mac_address: The interface MAC address
         :type mac_address: str, optional
 
@@ -77,6 +83,8 @@ class InterfaceAttributes(ModelNormal):
             kwargs["description"] = description
         if index is not unset:
             kwargs["index"] = index
+        if ip_addresses is not unset:
+            kwargs["ip_addresses"] = ip_addresses
         if mac_address is not unset:
             kwargs["mac_address"] = mac_address
         if name is not unset:
