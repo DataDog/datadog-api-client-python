@@ -29,7 +29,7 @@ Feature: APM Retention Filters
   @generated @skip @team:DataDog/apm-trace-intake
   Scenario: Create a retention filter returns "Conflict" response
     Given new "CreateApmRetentionFilter" request
-    And body with value {"data": {"attributes": {"enabled": true, "filter": {"query": "@http.status_code:200 service:my-service"}, "filter_type": "spans-sampling-processor", "name": "my retention filter", "rate": 1.0}, "type": "apm_retention_filter"}}
+    And body with value {"data": {"attributes": {"enabled": true, "filter": {"query": "@http.status_code:200 service:my-service"}, "filter_type": "spans-sampling-processor", "name": "my retention filter", "rate": 1.0, "trace_rate": 1.0}, "type": "apm_retention_filter"}}
     When the request is sent
     Then the response status is 409 Conflict
 
@@ -40,6 +40,13 @@ Feature: APM Retention Filters
     When the request is sent
     Then the response status is 200 OK
     And the response "data.attributes.name" is equal to "my retention filter"
+
+  @team:DataDog/apm-trace-intake
+  Scenario: Create a retention filter with trace rate returns "OK" response
+    Given new "CreateApmRetentionFilter" request
+    And body with value {"data": {"attributes": {"enabled": true, "filter": {"query": "@http.status_code:200 service:my-service"}, "filter_type": "spans-sampling-processor", "name": "my retention filter", "rate": 1.0, "trace_rate": 1.0}, "type": "apm_retention_filter"}}
+    When the request is sent
+    Then the response status is 200 OK
 
   @team:DataDog/apm-trace-intake
   Scenario: Delete a retention filter returns "Not Found" response
@@ -116,5 +123,14 @@ Feature: APM Retention Filters
     And new "UpdateApmRetentionFilter" request
     And request contains "filter_id" parameter from "retention_filter.data.id"
     And body with value {"data": { "attributes": { "name": "test", "rate": 0.90, "filter": {"query": "@_top_level:1 test:service-demo"},"enabled": true,"filter_type": "spans-sampling-processor"}, "id":"test-id", "type": "apm_retention_filter"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @team:DataDog/apm-trace-intake
+  Scenario: Update a retention filter with trace rate returns "OK" response
+    Given there is a valid "retention_filter" in the system
+    And new "UpdateApmRetentionFilter" request
+    And request contains "filter_id" parameter from "retention_filter.data.id"
+    And body with value {"data": {"attributes": {"name": "test", "rate": 0.90, "trace_rate": 1.0, "filter": {"query": "@_top_level:1 test:service-demo"},"enabled": true,"filter_type": "spans-sampling-processor"}, "id":"test-id", "type": "apm_retention_filter"}}
     When the request is sent
     Then the response status is 200 OK
