@@ -16,15 +16,17 @@ class FormulaAndFunctionSLOQueryType(ModelSimple):
     """
     Name of the query for use in formulas.
 
-    :param value: Must be one of ["metric", "time_slice"].
+    :param value: Must be one of ["metric", "monitor", "time_slice"].
     :type value: str
     """
 
     allowed_values = {
         "metric",
+        "monitor",
         "time_slice",
     }
     METRIC: ClassVar["FormulaAndFunctionSLOQueryType"]
+    MONITOR: ClassVar["FormulaAndFunctionSLOQueryType"]
     TIME_SLICE: ClassVar["FormulaAndFunctionSLOQueryType"]
 
     @cached_property
@@ -35,4 +37,5 @@ class FormulaAndFunctionSLOQueryType(ModelSimple):
 
 
 FormulaAndFunctionSLOQueryType.METRIC = FormulaAndFunctionSLOQueryType("metric")
+FormulaAndFunctionSLOQueryType.MONITOR = FormulaAndFunctionSLOQueryType("monitor")
 FormulaAndFunctionSLOQueryType.TIME_SLICE = FormulaAndFunctionSLOQueryType("time_slice")
