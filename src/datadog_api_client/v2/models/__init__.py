@@ -1677,6 +1677,88 @@ from datadog_api_client.v2.model.nullable_relationship_to_user import NullableRe
 from datadog_api_client.v2.model.nullable_relationship_to_user_data import NullableRelationshipToUserData
 from datadog_api_client.v2.model.nullable_user_relationship import NullableUserRelationship
 from datadog_api_client.v2.model.nullable_user_relationship_data import NullableUserRelationshipData
+from datadog_api_client.v2.model.observability_pipeline import ObservabilityPipeline
+from datadog_api_client.v2.model.observability_pipeline_add_fields_processor import (
+    ObservabilityPipelineAddFieldsProcessor,
+)
+from datadog_api_client.v2.model.observability_pipeline_add_fields_processor_type import (
+    ObservabilityPipelineAddFieldsProcessorType,
+)
+from datadog_api_client.v2.model.observability_pipeline_config import ObservabilityPipelineConfig
+from datadog_api_client.v2.model.observability_pipeline_config_destination_item import (
+    ObservabilityPipelineConfigDestinationItem,
+)
+from datadog_api_client.v2.model.observability_pipeline_config_processor_item import (
+    ObservabilityPipelineConfigProcessorItem,
+)
+from datadog_api_client.v2.model.observability_pipeline_config_source_item import ObservabilityPipelineConfigSourceItem
+from datadog_api_client.v2.model.observability_pipeline_create_request import ObservabilityPipelineCreateRequest
+from datadog_api_client.v2.model.observability_pipeline_create_request_data import (
+    ObservabilityPipelineCreateRequestData,
+)
+from datadog_api_client.v2.model.observability_pipeline_data import ObservabilityPipelineData
+from datadog_api_client.v2.model.observability_pipeline_data_attributes import ObservabilityPipelineDataAttributes
+from datadog_api_client.v2.model.observability_pipeline_datadog_agent_source import (
+    ObservabilityPipelineDatadogAgentSource,
+)
+from datadog_api_client.v2.model.observability_pipeline_datadog_agent_source_type import (
+    ObservabilityPipelineDatadogAgentSourceType,
+)
+from datadog_api_client.v2.model.observability_pipeline_datadog_logs_destination import (
+    ObservabilityPipelineDatadogLogsDestination,
+)
+from datadog_api_client.v2.model.observability_pipeline_datadog_logs_destination_type import (
+    ObservabilityPipelineDatadogLogsDestinationType,
+)
+from datadog_api_client.v2.model.observability_pipeline_field_value import ObservabilityPipelineFieldValue
+from datadog_api_client.v2.model.observability_pipeline_filter_processor import ObservabilityPipelineFilterProcessor
+from datadog_api_client.v2.model.observability_pipeline_filter_processor_type import (
+    ObservabilityPipelineFilterProcessorType,
+)
+from datadog_api_client.v2.model.observability_pipeline_kafka_source import ObservabilityPipelineKafkaSource
+from datadog_api_client.v2.model.observability_pipeline_kafka_source_librdkafka_option import (
+    ObservabilityPipelineKafkaSourceLibrdkafkaOption,
+)
+from datadog_api_client.v2.model.observability_pipeline_kafka_source_sasl import ObservabilityPipelineKafkaSourceSasl
+from datadog_api_client.v2.model.observability_pipeline_kafka_source_type import ObservabilityPipelineKafkaSourceType
+from datadog_api_client.v2.model.observability_pipeline_parse_json_processor import (
+    ObservabilityPipelineParseJSONProcessor,
+)
+from datadog_api_client.v2.model.observability_pipeline_parse_json_processor_type import (
+    ObservabilityPipelineParseJSONProcessorType,
+)
+from datadog_api_client.v2.model.observability_pipeline_pipeline_kafka_source_sasl_mechanism import (
+    ObservabilityPipelinePipelineKafkaSourceSaslMechanism,
+)
+from datadog_api_client.v2.model.observability_pipeline_quota_processor import ObservabilityPipelineQuotaProcessor
+from datadog_api_client.v2.model.observability_pipeline_quota_processor_limit import (
+    ObservabilityPipelineQuotaProcessorLimit,
+)
+from datadog_api_client.v2.model.observability_pipeline_quota_processor_limit_enforce_type import (
+    ObservabilityPipelineQuotaProcessorLimitEnforceType,
+)
+from datadog_api_client.v2.model.observability_pipeline_quota_processor_override import (
+    ObservabilityPipelineQuotaProcessorOverride,
+)
+from datadog_api_client.v2.model.observability_pipeline_quota_processor_type import (
+    ObservabilityPipelineQuotaProcessorType,
+)
+from datadog_api_client.v2.model.observability_pipeline_remove_fields_processor import (
+    ObservabilityPipelineRemoveFieldsProcessor,
+)
+from datadog_api_client.v2.model.observability_pipeline_remove_fields_processor_type import (
+    ObservabilityPipelineRemoveFieldsProcessorType,
+)
+from datadog_api_client.v2.model.observability_pipeline_rename_fields_processor import (
+    ObservabilityPipelineRenameFieldsProcessor,
+)
+from datadog_api_client.v2.model.observability_pipeline_rename_fields_processor_field import (
+    ObservabilityPipelineRenameFieldsProcessorField,
+)
+from datadog_api_client.v2.model.observability_pipeline_rename_fields_processor_type import (
+    ObservabilityPipelineRenameFieldsProcessorType,
+)
+from datadog_api_client.v2.model.observability_pipeline_tls import ObservabilityPipelineTls
 from datadog_api_client.v2.model.okta_account import OktaAccount
 from datadog_api_client.v2.model.okta_account_attributes import OktaAccountAttributes
 from datadog_api_client.v2.model.okta_account_request import OktaAccountRequest
@@ -3989,6 +4071,42 @@ __all__ = [
     "NullableRelationshipToUserData",
     "NullableUserRelationship",
     "NullableUserRelationshipData",
+    "ObservabilityPipeline",
+    "ObservabilityPipelineAddFieldsProcessor",
+    "ObservabilityPipelineAddFieldsProcessorType",
+    "ObservabilityPipelineConfig",
+    "ObservabilityPipelineConfigDestinationItem",
+    "ObservabilityPipelineConfigProcessorItem",
+    "ObservabilityPipelineConfigSourceItem",
+    "ObservabilityPipelineCreateRequest",
+    "ObservabilityPipelineCreateRequestData",
+    "ObservabilityPipelineData",
+    "ObservabilityPipelineDataAttributes",
+    "ObservabilityPipelineDatadogAgentSource",
+    "ObservabilityPipelineDatadogAgentSourceType",
+    "ObservabilityPipelineDatadogLogsDestination",
+    "ObservabilityPipelineDatadogLogsDestinationType",
+    "ObservabilityPipelineFieldValue",
+    "ObservabilityPipelineFilterProcessor",
+    "ObservabilityPipelineFilterProcessorType",
+    "ObservabilityPipelineKafkaSource",
+    "ObservabilityPipelineKafkaSourceLibrdkafkaOption",
+    "ObservabilityPipelineKafkaSourceSasl",
+    "ObservabilityPipelineKafkaSourceType",
+    "ObservabilityPipelineParseJSONProcessor",
+    "ObservabilityPipelineParseJSONProcessorType",
+    "ObservabilityPipelinePipelineKafkaSourceSaslMechanism",
+    "ObservabilityPipelineQuotaProcessor",
+    "ObservabilityPipelineQuotaProcessorLimit",
+    "ObservabilityPipelineQuotaProcessorLimitEnforceType",
+    "ObservabilityPipelineQuotaProcessorOverride",
+    "ObservabilityPipelineQuotaProcessorType",
+    "ObservabilityPipelineRemoveFieldsProcessor",
+    "ObservabilityPipelineRemoveFieldsProcessorType",
+    "ObservabilityPipelineRenameFieldsProcessor",
+    "ObservabilityPipelineRenameFieldsProcessorField",
+    "ObservabilityPipelineRenameFieldsProcessorType",
+    "ObservabilityPipelineTls",
     "OktaAccount",
     "OktaAccountAttributes",
     "OktaAccountRequest",
