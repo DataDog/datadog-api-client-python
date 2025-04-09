@@ -12,9 +12,9 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/apm/config/retention-filters
   response:
     body:
-      string: '{"data":{"id":"9GCsJn-gSde5fIBpwk1P0g","attributes":{"name":"demo retention
+      string: '{"data":{"id":"yf41wyfPQ0m1RWfI9mYMLw","attributes":{"name":"demo retention
         filter","rate":0.9,"trace_rate":0.0,"enabled":true,"filter_type":"spans-sampling-processor","filter":{"query":"@_top_level:1
-        test:service-demo"},"editable":true,"modified_by":"frog@datadoghq.com","modified_at":1744111976,"created_by":"frog@datadoghq.com","created_at":1744111976},"type":"apm_retention_filter"}}
+        test:service-demo"},"editable":true,"modified_by":"frog@datadoghq.com","modified_at":1744111977,"created_by":"frog@datadoghq.com","created_at":1744111977},"type":"apm_retention_filter"}}
 
         '
     headers:
@@ -25,18 +25,18 @@ interactions:
       message: OK
 - request:
     body: '{"data":{"attributes":{"enabled":true,"filter":{"query":"@_top_level:1
-      test:service-demo"},"filter_type":"spans-sampling-processor","name":"test","rate":0.9},"id":"test-id","type":"apm_retention_filter"}}'
+      test:service-demo"},"filter_type":"spans-sampling-processor","name":"test","rate":0.9,"trace_rate":1},"id":"test-id","type":"apm_retention_filter"}}'
     headers:
       accept:
       - application/json
       content-type:
       - application/json
     method: PUT
-    uri: https://api.datadoghq.com/api/v2/apm/config/retention-filters/9GCsJn-gSde5fIBpwk1P0g
+    uri: https://api.datadoghq.com/api/v2/apm/config/retention-filters/yf41wyfPQ0m1RWfI9mYMLw
   response:
     body:
-      string: '{"data":{"id":"9GCsJn-gSde5fIBpwk1P0g","attributes":{"name":"test","rate":0.9,"trace_rate":0.0,"enabled":true,"filter_type":"spans-sampling-processor","filter":{"query":"@_top_level:1
-        test:service-demo"},"editable":true,"modified_by":"frog@datadoghq.com","modified_at":1744111976,"created_by":"frog@datadoghq.com","created_at":1744111976},"type":"apm_retention_filter"}}
+      string: '{"data":{"id":"yf41wyfPQ0m1RWfI9mYMLw","attributes":{"name":"test","rate":0.9,"trace_rate":1.0,"enabled":true,"filter_type":"spans-sampling-processor","filter":{"query":"@_top_level:1
+        test:service-demo"},"editable":true,"modified_by":"frog@datadoghq.com","modified_at":1744111978,"created_by":"frog@datadoghq.com","created_at":1744111977},"type":"apm_retention_filter"}}
 
         '
     headers:
@@ -51,7 +51,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/apm/config/retention-filters/9GCsJn-gSde5fIBpwk1P0g
+    uri: https://api.datadoghq.com/api/v2/apm/config/retention-filters/yf41wyfPQ0m1RWfI9mYMLw
   response:
     body:
       string: '{}

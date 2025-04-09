@@ -86,6 +86,7 @@ Feature: Network Device Monitoring
     And the response "data[0].attributes.name" is equal to "if99"
     And the response "data[0].attributes.description" is equal to "a network interface"
     And the response "data[0].attributes.mac_address" is equal to "00:00:00:00:00:00"
+    And the response "data[0].attributes.ip_addresses" is equal to ["1.1.1.1","1.1.1.2"]
     And the response "data[0].attributes.alias" is equal to "interface_99"
     And the response "data[0].attributes.index" is equal to 99
     And the response "data[0].attributes.status" is equal to "up"

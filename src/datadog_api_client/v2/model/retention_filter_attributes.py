@@ -36,6 +36,7 @@ class RetentionFilterAttributes(ModelNormal):
             "modified_by": (str,),
             "name": (str,),
             "rate": (float,),
+            "trace_rate": (float,),
         }
 
     attribute_map = {
@@ -50,6 +51,7 @@ class RetentionFilterAttributes(ModelNormal):
         "modified_by": "modified_by",
         "name": "name",
         "rate": "rate",
+        "trace_rate": "trace_rate",
     }
 
     def __init__(
@@ -65,6 +67,7 @@ class RetentionFilterAttributes(ModelNormal):
         modified_by: Union[str, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
         rate: Union[float, UnsetType] = unset,
+        trace_rate: Union[float, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -103,6 +106,10 @@ class RetentionFilterAttributes(ModelNormal):
         :param rate: Sample rate to apply to spans going through this retention filter,
             a value of 1.0 keeps all spans matching the query.
         :type rate: float, optional
+
+        :param trace_rate: Sample rate to apply to traces containing spans going through this retention filter.
+            A value of 1.0 keeps all traces with spans matching the query.
+        :type trace_rate: float, optional
         """
         if created_at is not unset:
             kwargs["created_at"] = created_at
@@ -126,4 +133,6 @@ class RetentionFilterAttributes(ModelNormal):
             kwargs["name"] = name
         if rate is not unset:
             kwargs["rate"] = rate
+        if trace_rate is not unset:
+            kwargs["trace_rate"] = trace_rate
         super().__init__(kwargs)

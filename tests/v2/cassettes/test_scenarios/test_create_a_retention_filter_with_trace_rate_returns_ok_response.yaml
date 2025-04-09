@@ -2,7 +2,7 @@ interactions:
 - request:
     body: '{"data":{"attributes":{"enabled":true,"filter":{"query":"@http.status_code:200
       service:my-service"},"filter_type":"spans-sampling-processor","name":"my retention
-      filter","rate":1},"type":"apm_retention_filter"}}'
+      filter","rate":1,"trace_rate":1},"type":"apm_retention_filter"}}'
     headers:
       accept:
       - application/json
@@ -12,9 +12,9 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/apm/config/retention-filters
   response:
     body:
-      string: '{"data":{"id":"x1aRVkAVQN2CBx1ghs4xDQ","attributes":{"name":"my retention
-        filter","rate":1.0,"trace_rate":0.0,"enabled":true,"filter_type":"spans-sampling-processor","filter":{"query":"@http.status_code:200
-        service:my-service"},"editable":true,"modified_by":"frog@datadoghq.com","modified_at":1744111965,"created_by":"frog@datadoghq.com","created_at":1744111965},"type":"apm_retention_filter"}}
+      string: '{"data":{"id":"QAtIbDKzQmCnHSvQde-VWw","attributes":{"name":"my retention
+        filter","rate":1.0,"trace_rate":1.0,"enabled":true,"filter_type":"spans-sampling-processor","filter":{"query":"@http.status_code:200
+        service:my-service"},"editable":true,"modified_by":"frog@datadoghq.com","modified_at":1744111966,"created_by":"frog@datadoghq.com","created_at":1744111966},"type":"apm_retention_filter"}}
 
         '
     headers:
@@ -29,7 +29,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/apm/config/retention-filters/x1aRVkAVQN2CBx1ghs4xDQ
+    uri: https://api.datadoghq.com/api/v2/apm/config/retention-filters/QAtIbDKzQmCnHSvQde-VWw
   response:
     body:
       string: '{}
