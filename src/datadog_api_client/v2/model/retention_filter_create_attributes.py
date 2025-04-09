@@ -67,8 +67,8 @@ class RetentionFilterCreateAttributes(ModelNormal):
         :param name: The name of the retention filter.
         :type name: str
 
-        :param rate: Sample rate to apply to spans going through this retention filter,
-            a value of 1.0 keeps all spans matching the query.
+        :param rate: Sample rate to apply to spans going through this retention filter.
+            A value of 1.0 keeps all spans matching the query.
         :type rate: float
 
         :param trace_rate: Sample rate to apply to traces containing spans going through this retention filter.
