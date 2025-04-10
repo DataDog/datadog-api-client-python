@@ -317,10 +317,45 @@ def pytest_recording_configure(config, vcr):
     is_text_json = matchers._header_checker("text/json")
     transformer = matchers._transform_json
 
+    def convert_dates_to_z_format(date_str: str) -> str:
+        # Match datetime pattern YYYY-MM-DD HH:MM:SS.mmmmmm with an optional +00:00
+        # and convert it to the YYYY-MM-DDTHH:MM:SS.mmmZ format
+        # 
+        # When using the timeISO method, we return a datetime object but never serialize it to a string
+        # https://github.com/DataDog/datadog-api-client-python/blob/44f3b8e4304c9f58dd929adc493ee6297fa83654/tests/conftest.py#L187
+        # This means that the default Jinja2 template renderer serailizer is usesd and
+        # it uses the YYYY-MM-DD HH:MM:SS.mmmmmm format
+        # "+00:00" format is used by the VCR test as the raw payload is first converted
+        # into a datetime object and then serialized into a string with the `+00:00` format.
+        # First from string to datetime:
+        # https://github.com/DataDog/datadog-api-client-python/blob/44f3b8e4304c9f58dd929adc493ee6297fa83654/src/datadog_api_client/model_utils.py#L1053
+        # Then from datetime to string:
+        # https://github.com/DataDog/datadog-api-client-python/blob/44f3b8e4304c9f58dd929adc493ee6297fa83654/src/datadog_api_client/model_utils.py#L1423
+        if isinstance(date_str, bytes):
+            date_str = date_str.decode('utf-8')
+        
+        # Find all datetime strings in the format YYYY-MM-DD HH:MM:SS.mmmmmm
+        datetime_pattern = r'"(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}\.\d{6})"'
+        
+        # Replace each match with the converted format
+        def replace_match(match):
+            dt_str = match.group(1)
+            dt_obj = datetime.strptime(dt_str, '%Y-%m-%d %H:%M:%S.%f')
+            return f'"{dt_obj.strftime("%Y-%m-%dT%H:%M:%S.%f")[:-3]}Z"'
+        
+        # Apply the replacement
+        return re.sub(datetime_pattern, replace_match, date_str).encode('utf-8')
+
     def body(r1, r2):
         if is_text_json(r1.headers) and is_text_json(r2.headers):
             assert transformer(read_body(r1)) == transformer(read_body(r2))
         else:
+            # On-Call cassettes are using the `Z` format instead of `+00:00`
+            if "api/v2/on-call" in r2.path:
+                if r1.body:
+                    # Parse the JSON body
+                    r1.body = convert_dates_to_z_format(r1.body)
+                
             matchers.body(r1, r2)
 
     vcr.matchers["body"] = body
