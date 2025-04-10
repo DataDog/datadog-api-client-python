@@ -57,6 +57,12 @@ body = SecurityMonitoringStandardRuleCreatePayload(
                         duration=900,
                     ),
                 ),
+                SecurityMonitoringRuleCaseAction(
+                    type=SecurityMonitoringRuleCaseActionType.USER_BEHAVIOR,
+                    options=SecurityMonitoringRuleCaseActionOptions(
+                        user_behavior_name="behavior",
+                    ),
+                ),
             ],
         ),
     ],
