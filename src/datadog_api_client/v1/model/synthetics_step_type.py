@@ -16,7 +16,7 @@ class SyntheticsStepType(ModelSimple):
     """
     Step type used in your Synthetic test.
 
-    :param value: Must be one of ["assertCurrentUrl", "assertElementAttribute", "assertElementContent", "assertElementPresent", "assertEmail", "assertFileDownload", "assertFromJavascript", "assertPageContains", "assertPageLacks", "click", "extractFromJavascript", "extractVariable", "goToEmailLink", "goToUrl", "goToUrlAndMeasureTti", "hover", "playSubTest", "pressKey", "refresh", "runApiTest", "scroll", "selectOption", "typeText", "uploadFiles", "wait"].
+    :param value: Must be one of ["assertCurrentUrl", "assertElementAttribute", "assertElementContent", "assertElementPresent", "assertEmail", "assertFileDownload", "assertFromJavascript", "assertPageContains", "assertPageLacks", "assertRequests", "click", "extractFromJavascript", "extractVariable", "goToEmailLink", "goToUrl", "goToUrlAndMeasureTti", "hover", "playSubTest", "pressKey", "refresh", "runApiTest", "scroll", "selectOption", "typeText", "uploadFiles", "wait"].
     :type value: str
     """
 
@@ -30,6 +30,7 @@ class SyntheticsStepType(ModelSimple):
         "assertFromJavascript",
         "assertPageContains",
         "assertPageLacks",
+        "assertRequests",
         "click",
         "extractFromJavascript",
         "extractVariable",
@@ -56,6 +57,7 @@ class SyntheticsStepType(ModelSimple):
     ASSERT_FROM_JAVASCRIPT: ClassVar["SyntheticsStepType"]
     ASSERT_PAGE_CONTAINS: ClassVar["SyntheticsStepType"]
     ASSERT_PAGE_LACKS: ClassVar["SyntheticsStepType"]
+    ASSERT_REQUESTS: ClassVar["SyntheticsStepType"]
     CLICK: ClassVar["SyntheticsStepType"]
     EXTRACT_FROM_JAVASCRIPT: ClassVar["SyntheticsStepType"]
     EXTRACT_VARIABLE: ClassVar["SyntheticsStepType"]
@@ -89,6 +91,7 @@ SyntheticsStepType.ASSERT_FILE_DOWNLOAD = SyntheticsStepType("assertFileDownload
 SyntheticsStepType.ASSERT_FROM_JAVASCRIPT = SyntheticsStepType("assertFromJavascript")
 SyntheticsStepType.ASSERT_PAGE_CONTAINS = SyntheticsStepType("assertPageContains")
 SyntheticsStepType.ASSERT_PAGE_LACKS = SyntheticsStepType("assertPageLacks")
+SyntheticsStepType.ASSERT_REQUESTS = SyntheticsStepType("assertRequests")
 SyntheticsStepType.CLICK = SyntheticsStepType("click")
 SyntheticsStepType.EXTRACT_FROM_JAVASCRIPT = SyntheticsStepType("extractFromJavascript")
 SyntheticsStepType.EXTRACT_VARIABLE = SyntheticsStepType("extractVariable")
