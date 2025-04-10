@@ -440,6 +440,18 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"monitor-notification-rule\",\n    \"attributes\": {\n      \"name\":\"test rule\",\n      \"filter\": {\n        \"tags\": [\n          \"app:{{ unique_lower }}\"\n        ]\n      },\n      \"recipients\":[\n        \"slack-monitor-app\"\n      ]\n    }\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"monitor_notification_rule\" in the system",
+    "key": "monitor_notification_rule",
+    "tag": "Monitors",
+    "operationId": "CreateMonitorNotificationRule"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"type\": \"monitor-config-policy\",\n    \"attributes\": {\n      \"policy_type\": \"tag\",\n      \"policy\": {\n        \"tag_key\": \"{{ unique_lower_alnum }}\", \"tag_key_required\": false, \"valid_tag_values\": [\"prod\", \"staging\"]\n      }\n    }\n  }\n}"
       }
     ],

@@ -1,0 +1,21 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"filter":{"tags":["test:test-update_a_monitor_notification_rule_returns_not_found_response-1744280997","host:abc"]},"name":"updated
+      rule","recipients":["slack-test-channel","jira-test"]},"id":"00000000-0000-1234-0000-000000000000","type":"monitor-notification-rule"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/monitor/notification_rule/00000000-0000-1234-0000-000000000000
+  response:
+    body:
+      string: '{"errors":["Monitor Notification Rule not found"]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 404
+      message: Not Found
+version: 1
