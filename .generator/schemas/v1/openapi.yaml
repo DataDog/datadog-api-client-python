@@ -33760,6 +33760,8 @@ paths:
         appKeyAuth: []
       - AuthZ:
         - synthetics_global_variable_read
+      - AuthZ:
+        - apm_api_catalog_read
       summary: Get all global variables
       tags:
       - Synthetics
@@ -33767,6 +33769,7 @@ paths:
         operator: OR
         permissions:
         - synthetics_global_variable_read
+        - apm_api_catalog_read
     post:
       description: Create a Synthetic global variable.
       operationId: CreateGlobalVariable
