@@ -1750,6 +1750,37 @@
       "type": "safe"
     }
   },
+  "CreateOnCallSchedule": {
+    "tag": "On-Call",
+    "undo": {
+      "operationId": "DeleteOnCallSchedule",
+      "parameters": [
+        {
+          "name": "schedule_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteOnCallSchedule": {
+    "tag": "On-Call",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetOnCallSchedule": {
+    "tag": "On-Call",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateOnCallSchedule": {
+    "tag": "On-Call",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListOrgConfigs": {
     "tag": "Organizations",
     "undo": {

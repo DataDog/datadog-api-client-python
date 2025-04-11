@@ -161,7 +161,7 @@ def unique(request, freezed_time):
     return f"{prefix}-{int(freezed_time.timestamp())}"
 
 
-def relative_time(freezed_time, iso):
+def relative_time(freezed_time, iso, is_iso_with_timezone_indicator):
     time_re = re.compile(r"now( *([+-]) *(\d+)([smhdMy]))?")
 
     def func(arg):
@@ -185,9 +185,17 @@ def relative_time(freezed_time, iso):
                 elif unit == "y":
                     ret += relativedelta(years=num)
             if iso:
-                return ret.replace(tzinfo=None)  # return datetime object and not string
-                # NOTE this is not a full ISO 8601 format, but it's enough for our needs
-                # return ret.strftime('%Y-%m-%dT%H:%M:%S') + ret.strftime('.%f')[:4] + 'Z'
+                if is_iso_with_timezone_indicator:
+                    # Return ISO 8601 formatted string with Z timezone indicator
+                    # Example: 2025-04-17T03:17:07.923Z
+                    from datetime import timezone
+
+                    return ret.astimezone(timezone.utc).isoformat(timespec="milliseconds").replace("+00:00", "Z")
+                else:
+                    return ret.replace(tzinfo=None)  # return datetime object and not string
+                    # NOTE this is not a full ISO 8601 format, but it's enough for our needs
+                    # return ret.strftime('%Y-%m-%dT%H:%M:%S') + ret.strftime('.%f')[:4] + 'Z'
+
             return int(ret.timestamp())
         return ""
 
@@ -206,6 +214,10 @@ def context(vcr, unique, freezed_time):
     and the undo operations to perform after a test scenario.
     """
     unique_hash = hashlib.sha256(unique.encode("utf-8")).hexdigest()[:16]
+
+    # Dirty fix as on_call cassette and API use the `Z` format instead of `+00:00`
+    is_iso_with_timezone_indicator = "on_call" in unique
+
     ctx = {
         "undo_operations": [],
         "unique": unique,
@@ -215,8 +227,8 @@ def context(vcr, unique, freezed_time):
         "unique_lower_alnum": PATTERN_ALPHANUM.sub("", unique).lower(),
         "unique_upper_alnum": PATTERN_ALPHANUM.sub("", unique).upper(),
         "unique_hash": unique_hash,
-        "timestamp": relative_time(freezed_time, False),
-        "timeISO": relative_time(freezed_time, True),
+        "timestamp": relative_time(freezed_time, False, False),
+        "timeISO": relative_time(freezed_time, True, is_iso_with_timezone_indicator),
         "uuid": generate_uuid(freezed_time),
     }
 
@@ -384,13 +396,18 @@ def client(configuration):
         yield api_client
 
 
+def _api_name(value):
+    value = re.sub(r"[^a-zA-Z0-9]", "", value)
+    return value + "Api"
+
+
 @given(parsers.parse('an instance of "{name}" API'))
 def api(context, package_name, client, name):
     """Return an API instance."""
     module_name = snake_case(name)
     package = importlib.import_module(f"{package_name}.api.{module_name}_api")
     context["api"] = {
-        "api": getattr(package, name + "Api")(client),
+        "api": getattr(package, _api_name(name))(client),
         "package": package_name,
         "calls": [],
     }
@@ -479,7 +496,7 @@ def build_given(version, operation):
 
         package = importlib.import_module(f"{package_name}.api.{module_name}_api")
         with ApiClient(configuration) as client:
-            api = getattr(package, name + "Api")(client)
+            api = getattr(package, _api_name(name))(client)
             operation_method = getattr(api, operation_name)
             params_map = getattr(api, f"_{operation_name}_endpoint").params_map
 
@@ -565,7 +582,7 @@ def undo(package_name, undo_operations, client):
             undo_name = undo_tag.replace(" ", "")
             undo_module_name = snake_case(undo_tag)
             undo_package = importlib.import_module(f"{package_name}.api.{undo_module_name}_api")
-            api = getattr(undo_package, undo_name + "Api")(client)
+            api = getattr(undo_package, _api_name(undo_name))(client)
 
         operation_name = snake_case(operation["operationId"])
         method = getattr(api, operation_name)

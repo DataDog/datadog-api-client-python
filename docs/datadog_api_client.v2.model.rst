@@ -7326,6 +7326,83 @@ datadog\_api\_client.v2.model.jsonapi\_error\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.layer module
+------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.layer
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.layer\_attributes module
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.layer_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.layer\_attributes\_interval module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.layer_attributes_interval
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.layer\_attributes\_restrictions\_items module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.layer_attributes_restrictions_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.layer\_attributes\_restrictions\_items\_end\_day module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.layer_attributes_restrictions_items_end_day
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.layer\_attributes\_restrictions\_items\_start\_day module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.layer_attributes_restrictions_items_start_day
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.layer\_relationships module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.layer_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.layer\_relationships\_members module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.layer_relationships_members
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.layer\_relationships\_members\_data\_items module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.layer_relationships_members_data_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.layer\_relationships\_members\_data\_items\_type module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.layer_relationships_members_data_items_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.layer\_type module
+------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.layer_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.leaked\_key module
 ------------------------------------------------
 
@@ -11813,6 +11890,237 @@ datadog\_api\_client.v2.model.scalar\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.schedule module
+---------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_create\_request module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_create\_request\_data module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_create_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_create\_request\_data\_attributes module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_create_request_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_create\_request\_data\_attributes\_layers\_items module
+-----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_create_request_data_attributes_layers_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_create\_request\_data\_attributes\_layers\_items\_interval module
+---------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_create_request_data_attributes_layers_items_interval
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_create\_request\_data\_attributes\_layers\_items\_members\_items module
+---------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_create_request_data_attributes_layers_items_members_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_create\_request\_data\_attributes\_layers\_items\_members\_items\_user module
+---------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_create_request_data_attributes_layers_items_members_items_user
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_create\_request\_data\_attributes\_layers\_items\_restrictions\_items module
+--------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_create_request_data_attributes_layers_items_restrictions_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_create\_request\_data\_attributes\_layers\_items\_restrictions\_items\_end\_day module
+------------------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_create_request_data_attributes_layers_items_restrictions_items_end_day
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_create\_request\_data\_attributes\_layers\_items\_restrictions\_items\_start\_day module
+--------------------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_create_request_data_attributes_layers_items_restrictions_items_start_day
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_create\_request\_data\_relationships module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_create_request_data_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_create\_request\_data\_relationships\_teams module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_create_request_data_relationships_teams
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_create\_request\_data\_relationships\_teams\_data\_items module
+-------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_create_request_data_relationships_teams_data_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_create\_request\_data\_relationships\_teams\_data\_items\_type module
+-------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_create_request_data_relationships_teams_data_items_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_create\_request\_data\_type module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_create_request_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_data module
+---------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_data\_attributes module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_data\_included\_item module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_data_included_item
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_data\_relationships module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_data_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_data\_relationships\_layers module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_data_relationships_layers
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_data\_relationships\_layers\_data\_items module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_data_relationships_layers_data_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_data\_relationships\_layers\_data\_items\_type module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_data_relationships_layers_data_items_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_data\_relationships\_teams module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_data_relationships_teams
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_data\_relationships\_teams\_data\_items module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_data_relationships_teams_data_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_data\_relationships\_teams\_data\_items\_type module
+--------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_data_relationships_teams_data_items_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_data\_type module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_member module
+-----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_member
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_member\_relationships module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_member_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_member\_relationships\_user module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_member_relationships_user
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_member\_relationships\_user\_data module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_member_relationships_user_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_member\_relationships\_user\_data\_type module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_member_relationships_user_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_member\_type module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_member_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.schedule\_trigger module
 ------------------------------------------------------
 
@@ -11824,6 +12132,132 @@ datadog\_api\_client.v2.model.schedule\_trigger\_wrapper module
 ---------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.schedule_trigger_wrapper
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_update\_request module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_update\_request\_data module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_update_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_update\_request\_data\_attributes module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_update_request_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_update\_request\_data\_attributes\_layers\_items module
+-----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_update_request_data_attributes_layers_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_update\_request\_data\_attributes\_layers\_items\_interval module
+---------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_update_request_data_attributes_layers_items_interval
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_update\_request\_data\_attributes\_layers\_items\_members\_items module
+---------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_update_request_data_attributes_layers_items_members_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_update\_request\_data\_attributes\_layers\_items\_members\_items\_user module
+---------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_update_request_data_attributes_layers_items_members_items_user
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_update\_request\_data\_attributes\_layers\_items\_restrictions\_items module
+--------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_update_request_data_attributes_layers_items_restrictions_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_update\_request\_data\_attributes\_layers\_items\_restrictions\_items\_end\_day module
+------------------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_update_request_data_attributes_layers_items_restrictions_items_end_day
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_update\_request\_data\_attributes\_layers\_items\_restrictions\_items\_start\_day module
+--------------------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_update_request_data_attributes_layers_items_restrictions_items_start_day
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_update\_request\_data\_relationships module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_update_request_data_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_update\_request\_data\_relationships\_teams module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_update_request_data_relationships_teams
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_update\_request\_data\_relationships\_teams\_data\_items module
+-------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_update_request_data_relationships_teams_data_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_update\_request\_data\_relationships\_teams\_data\_items\_type module
+-------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_update_request_data_relationships_teams_data_items_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_update\_request\_data\_type module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_update_request_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_user module
+---------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_user
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_user\_attributes module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_user_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_user\_type module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_user_type
    :members:
    :show-inheritance:
 
@@ -14218,6 +14652,55 @@ datadog\_api\_client.v2.model.team\_permission\_settings\_response module
 -------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.team_permission_settings_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_reference module
+----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_reference
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_reference\_attributes module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_reference_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_reference\_relationships module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_reference_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_reference\_relationships\_oncall\_users module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_reference_relationships_oncall_users
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_reference\_relationships\_oncall\_users\_data\_items module
+-----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_reference_relationships_oncall_users_data_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_reference\_relationships\_oncall\_users\_data\_items\_type module
+-----------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_reference_relationships_oncall_users_data_items_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_reference\_type module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_reference_type
    :members:
    :show-inheritance:
 
