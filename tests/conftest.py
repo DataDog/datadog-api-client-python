@@ -189,12 +189,13 @@ def relative_time(freezed_time, iso, is_iso_with_timezone_indicator):
                     # Return ISO 8601 formatted string with Z timezone indicator
                     # Example: 2025-04-17T03:17:07.923Z
                     from datetime import timezone
+
                     return ret.astimezone(timezone.utc).isoformat(timespec="milliseconds").replace("+00:00", "Z")
                 else:
                     return ret.replace(tzinfo=None)  # return datetime object and not string
                     # NOTE this is not a full ISO 8601 format, but it's enough for our needs
                     # return ret.strftime('%Y-%m-%dT%H:%M:%S') + ret.strftime('.%f')[:4] + 'Z'
-                    
+
             return int(ret.timestamp())
         return ""
 
@@ -213,7 +214,7 @@ def context(vcr, unique, freezed_time):
     and the undo operations to perform after a test scenario.
     """
     unique_hash = hashlib.sha256(unique.encode("utf-8")).hexdigest()[:16]
-    
+
     # Dirty fix as on_call cassette and API use the `Z` format instead of `+00:00`
     is_iso_with_timezone_indicator = "on_call" in unique
 

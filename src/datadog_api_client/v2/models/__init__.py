@@ -1324,6 +1324,23 @@ from datadog_api_client.v2.model.job_create_response import JobCreateResponse
 from datadog_api_client.v2.model.job_create_response_data import JobCreateResponseData
 from datadog_api_client.v2.model.job_definition import JobDefinition
 from datadog_api_client.v2.model.job_definition_from_rule import JobDefinitionFromRule
+from datadog_api_client.v2.model.layer import Layer
+from datadog_api_client.v2.model.layer_attributes import LayerAttributes
+from datadog_api_client.v2.model.layer_attributes_interval import LayerAttributesInterval
+from datadog_api_client.v2.model.layer_attributes_restrictions_items import LayerAttributesRestrictionsItems
+from datadog_api_client.v2.model.layer_attributes_restrictions_items_end_day import (
+    LayerAttributesRestrictionsItemsEndDay,
+)
+from datadog_api_client.v2.model.layer_attributes_restrictions_items_start_day import (
+    LayerAttributesRestrictionsItemsStartDay,
+)
+from datadog_api_client.v2.model.layer_relationships import LayerRelationships
+from datadog_api_client.v2.model.layer_relationships_members import LayerRelationshipsMembers
+from datadog_api_client.v2.model.layer_relationships_members_data_items import LayerRelationshipsMembersDataItems
+from datadog_api_client.v2.model.layer_relationships_members_data_items_type import (
+    LayerRelationshipsMembersDataItemsType,
+)
+from datadog_api_client.v2.model.layer_type import LayerType
 from datadog_api_client.v2.model.leaked_key import LeakedKey
 from datadog_api_client.v2.model.leaked_key_attributes import LeakedKeyAttributes
 from datadog_api_client.v2.model.leaked_key_type import LeakedKeyType
@@ -2110,8 +2127,113 @@ from datadog_api_client.v2.model.scalar_formula_response_type import ScalarFormu
 from datadog_api_client.v2.model.scalar_meta import ScalarMeta
 from datadog_api_client.v2.model.scalar_query import ScalarQuery
 from datadog_api_client.v2.model.scalar_response import ScalarResponse
+from datadog_api_client.v2.model.schedule import Schedule
+from datadog_api_client.v2.model.schedule_create_request import ScheduleCreateRequest
+from datadog_api_client.v2.model.schedule_create_request_data import ScheduleCreateRequestData
+from datadog_api_client.v2.model.schedule_create_request_data_attributes import ScheduleCreateRequestDataAttributes
+from datadog_api_client.v2.model.schedule_create_request_data_attributes_layers_items import (
+    ScheduleCreateRequestDataAttributesLayersItems,
+)
+from datadog_api_client.v2.model.schedule_create_request_data_attributes_layers_items_interval import (
+    ScheduleCreateRequestDataAttributesLayersItemsInterval,
+)
+from datadog_api_client.v2.model.schedule_create_request_data_attributes_layers_items_members_items import (
+    ScheduleCreateRequestDataAttributesLayersItemsMembersItems,
+)
+from datadog_api_client.v2.model.schedule_create_request_data_attributes_layers_items_members_items_user import (
+    ScheduleCreateRequestDataAttributesLayersItemsMembersItemsUser,
+)
+from datadog_api_client.v2.model.schedule_create_request_data_attributes_layers_items_restrictions_items import (
+    ScheduleCreateRequestDataAttributesLayersItemsRestrictionsItems,
+)
+from datadog_api_client.v2.model.schedule_create_request_data_attributes_layers_items_restrictions_items_end_day import (
+    ScheduleCreateRequestDataAttributesLayersItemsRestrictionsItemsEndDay,
+)
+from datadog_api_client.v2.model.schedule_create_request_data_attributes_layers_items_restrictions_items_start_day import (
+    ScheduleCreateRequestDataAttributesLayersItemsRestrictionsItemsStartDay,
+)
+from datadog_api_client.v2.model.schedule_create_request_data_relationships import (
+    ScheduleCreateRequestDataRelationships,
+)
+from datadog_api_client.v2.model.schedule_create_request_data_relationships_teams import (
+    ScheduleCreateRequestDataRelationshipsTeams,
+)
+from datadog_api_client.v2.model.schedule_create_request_data_relationships_teams_data_items import (
+    ScheduleCreateRequestDataRelationshipsTeamsDataItems,
+)
+from datadog_api_client.v2.model.schedule_create_request_data_relationships_teams_data_items_type import (
+    ScheduleCreateRequestDataRelationshipsTeamsDataItemsType,
+)
+from datadog_api_client.v2.model.schedule_create_request_data_type import ScheduleCreateRequestDataType
+from datadog_api_client.v2.model.schedule_data import ScheduleData
+from datadog_api_client.v2.model.schedule_data_attributes import ScheduleDataAttributes
+from datadog_api_client.v2.model.schedule_data_included_item import ScheduleDataIncludedItem
+from datadog_api_client.v2.model.schedule_data_relationships import ScheduleDataRelationships
+from datadog_api_client.v2.model.schedule_data_relationships_layers import ScheduleDataRelationshipsLayers
+from datadog_api_client.v2.model.schedule_data_relationships_layers_data_items import (
+    ScheduleDataRelationshipsLayersDataItems,
+)
+from datadog_api_client.v2.model.schedule_data_relationships_layers_data_items_type import (
+    ScheduleDataRelationshipsLayersDataItemsType,
+)
+from datadog_api_client.v2.model.schedule_data_relationships_teams import ScheduleDataRelationshipsTeams
+from datadog_api_client.v2.model.schedule_data_relationships_teams_data_items import (
+    ScheduleDataRelationshipsTeamsDataItems,
+)
+from datadog_api_client.v2.model.schedule_data_relationships_teams_data_items_type import (
+    ScheduleDataRelationshipsTeamsDataItemsType,
+)
+from datadog_api_client.v2.model.schedule_data_type import ScheduleDataType
+from datadog_api_client.v2.model.schedule_member import ScheduleMember
+from datadog_api_client.v2.model.schedule_member_relationships import ScheduleMemberRelationships
+from datadog_api_client.v2.model.schedule_member_relationships_user import ScheduleMemberRelationshipsUser
+from datadog_api_client.v2.model.schedule_member_relationships_user_data import ScheduleMemberRelationshipsUserData
+from datadog_api_client.v2.model.schedule_member_relationships_user_data_type import (
+    ScheduleMemberRelationshipsUserDataType,
+)
+from datadog_api_client.v2.model.schedule_member_type import ScheduleMemberType
 from datadog_api_client.v2.model.schedule_trigger import ScheduleTrigger
 from datadog_api_client.v2.model.schedule_trigger_wrapper import ScheduleTriggerWrapper
+from datadog_api_client.v2.model.schedule_update_request import ScheduleUpdateRequest
+from datadog_api_client.v2.model.schedule_update_request_data import ScheduleUpdateRequestData
+from datadog_api_client.v2.model.schedule_update_request_data_attributes import ScheduleUpdateRequestDataAttributes
+from datadog_api_client.v2.model.schedule_update_request_data_attributes_layers_items import (
+    ScheduleUpdateRequestDataAttributesLayersItems,
+)
+from datadog_api_client.v2.model.schedule_update_request_data_attributes_layers_items_interval import (
+    ScheduleUpdateRequestDataAttributesLayersItemsInterval,
+)
+from datadog_api_client.v2.model.schedule_update_request_data_attributes_layers_items_members_items import (
+    ScheduleUpdateRequestDataAttributesLayersItemsMembersItems,
+)
+from datadog_api_client.v2.model.schedule_update_request_data_attributes_layers_items_members_items_user import (
+    ScheduleUpdateRequestDataAttributesLayersItemsMembersItemsUser,
+)
+from datadog_api_client.v2.model.schedule_update_request_data_attributes_layers_items_restrictions_items import (
+    ScheduleUpdateRequestDataAttributesLayersItemsRestrictionsItems,
+)
+from datadog_api_client.v2.model.schedule_update_request_data_attributes_layers_items_restrictions_items_end_day import (
+    ScheduleUpdateRequestDataAttributesLayersItemsRestrictionsItemsEndDay,
+)
+from datadog_api_client.v2.model.schedule_update_request_data_attributes_layers_items_restrictions_items_start_day import (
+    ScheduleUpdateRequestDataAttributesLayersItemsRestrictionsItemsStartDay,
+)
+from datadog_api_client.v2.model.schedule_update_request_data_relationships import (
+    ScheduleUpdateRequestDataRelationships,
+)
+from datadog_api_client.v2.model.schedule_update_request_data_relationships_teams import (
+    ScheduleUpdateRequestDataRelationshipsTeams,
+)
+from datadog_api_client.v2.model.schedule_update_request_data_relationships_teams_data_items import (
+    ScheduleUpdateRequestDataRelationshipsTeamsDataItems,
+)
+from datadog_api_client.v2.model.schedule_update_request_data_relationships_teams_data_items_type import (
+    ScheduleUpdateRequestDataRelationshipsTeamsDataItemsType,
+)
+from datadog_api_client.v2.model.schedule_update_request_data_type import ScheduleUpdateRequestDataType
+from datadog_api_client.v2.model.schedule_user import ScheduleUser
+from datadog_api_client.v2.model.schedule_user_attributes import ScheduleUserAttributes
+from datadog_api_client.v2.model.schedule_user_type import ScheduleUserType
 from datadog_api_client.v2.model.scorecard_type import ScorecardType
 from datadog_api_client.v2.model.security_filter import SecurityFilter
 from datadog_api_client.v2.model.security_filter_attributes import SecurityFilterAttributes
@@ -2592,6 +2714,17 @@ from datadog_api_client.v2.model.team_permission_setting_update_request import T
 from datadog_api_client.v2.model.team_permission_setting_value import TeamPermissionSettingValue
 from datadog_api_client.v2.model.team_permission_setting_values import TeamPermissionSettingValues
 from datadog_api_client.v2.model.team_permission_settings_response import TeamPermissionSettingsResponse
+from datadog_api_client.v2.model.team_reference import TeamReference
+from datadog_api_client.v2.model.team_reference_attributes import TeamReferenceAttributes
+from datadog_api_client.v2.model.team_reference_relationships import TeamReferenceRelationships
+from datadog_api_client.v2.model.team_reference_relationships_oncall_users import TeamReferenceRelationshipsOncallUsers
+from datadog_api_client.v2.model.team_reference_relationships_oncall_users_data_items import (
+    TeamReferenceRelationshipsOncallUsersDataItems,
+)
+from datadog_api_client.v2.model.team_reference_relationships_oncall_users_data_items_type import (
+    TeamReferenceRelationshipsOncallUsersDataItemsType,
+)
+from datadog_api_client.v2.model.team_reference_type import TeamReferenceType
 from datadog_api_client.v2.model.team_relationships import TeamRelationships
 from datadog_api_client.v2.model.team_relationships_links import TeamRelationshipsLinks
 from datadog_api_client.v2.model.team_response import TeamResponse
@@ -3794,6 +3927,17 @@ __all__ = [
     "JobCreateResponseData",
     "JobDefinition",
     "JobDefinitionFromRule",
+    "Layer",
+    "LayerAttributes",
+    "LayerAttributesInterval",
+    "LayerAttributesRestrictionsItems",
+    "LayerAttributesRestrictionsItemsEndDay",
+    "LayerAttributesRestrictionsItemsStartDay",
+    "LayerRelationships",
+    "LayerRelationshipsMembers",
+    "LayerRelationshipsMembersDataItems",
+    "LayerRelationshipsMembersDataItemsType",
+    "LayerType",
     "LeakedKey",
     "LeakedKeyAttributes",
     "LeakedKeyType",
@@ -4442,8 +4586,59 @@ __all__ = [
     "ScalarMeta",
     "ScalarQuery",
     "ScalarResponse",
+    "Schedule",
+    "ScheduleCreateRequest",
+    "ScheduleCreateRequestData",
+    "ScheduleCreateRequestDataAttributes",
+    "ScheduleCreateRequestDataAttributesLayersItems",
+    "ScheduleCreateRequestDataAttributesLayersItemsInterval",
+    "ScheduleCreateRequestDataAttributesLayersItemsMembersItems",
+    "ScheduleCreateRequestDataAttributesLayersItemsMembersItemsUser",
+    "ScheduleCreateRequestDataAttributesLayersItemsRestrictionsItems",
+    "ScheduleCreateRequestDataAttributesLayersItemsRestrictionsItemsEndDay",
+    "ScheduleCreateRequestDataAttributesLayersItemsRestrictionsItemsStartDay",
+    "ScheduleCreateRequestDataRelationships",
+    "ScheduleCreateRequestDataRelationshipsTeams",
+    "ScheduleCreateRequestDataRelationshipsTeamsDataItems",
+    "ScheduleCreateRequestDataRelationshipsTeamsDataItemsType",
+    "ScheduleCreateRequestDataType",
+    "ScheduleData",
+    "ScheduleDataAttributes",
+    "ScheduleDataIncludedItem",
+    "ScheduleDataRelationships",
+    "ScheduleDataRelationshipsLayers",
+    "ScheduleDataRelationshipsLayersDataItems",
+    "ScheduleDataRelationshipsLayersDataItemsType",
+    "ScheduleDataRelationshipsTeams",
+    "ScheduleDataRelationshipsTeamsDataItems",
+    "ScheduleDataRelationshipsTeamsDataItemsType",
+    "ScheduleDataType",
+    "ScheduleMember",
+    "ScheduleMemberRelationships",
+    "ScheduleMemberRelationshipsUser",
+    "ScheduleMemberRelationshipsUserData",
+    "ScheduleMemberRelationshipsUserDataType",
+    "ScheduleMemberType",
     "ScheduleTrigger",
     "ScheduleTriggerWrapper",
+    "ScheduleUpdateRequest",
+    "ScheduleUpdateRequestData",
+    "ScheduleUpdateRequestDataAttributes",
+    "ScheduleUpdateRequestDataAttributesLayersItems",
+    "ScheduleUpdateRequestDataAttributesLayersItemsInterval",
+    "ScheduleUpdateRequestDataAttributesLayersItemsMembersItems",
+    "ScheduleUpdateRequestDataAttributesLayersItemsMembersItemsUser",
+    "ScheduleUpdateRequestDataAttributesLayersItemsRestrictionsItems",
+    "ScheduleUpdateRequestDataAttributesLayersItemsRestrictionsItemsEndDay",
+    "ScheduleUpdateRequestDataAttributesLayersItemsRestrictionsItemsStartDay",
+    "ScheduleUpdateRequestDataRelationships",
+    "ScheduleUpdateRequestDataRelationshipsTeams",
+    "ScheduleUpdateRequestDataRelationshipsTeamsDataItems",
+    "ScheduleUpdateRequestDataRelationshipsTeamsDataItemsType",
+    "ScheduleUpdateRequestDataType",
+    "ScheduleUser",
+    "ScheduleUserAttributes",
+    "ScheduleUserType",
     "ScorecardType",
     "SecurityFilter",
     "SecurityFilterAttributes",
@@ -4784,6 +4979,13 @@ __all__ = [
     "TeamPermissionSettingValue",
     "TeamPermissionSettingValues",
     "TeamPermissionSettingsResponse",
+    "TeamReference",
+    "TeamReferenceAttributes",
+    "TeamReferenceRelationships",
+    "TeamReferenceRelationshipsOncallUsers",
+    "TeamReferenceRelationshipsOncallUsersDataItems",
+    "TeamReferenceRelationshipsOncallUsersDataItemsType",
+    "TeamReferenceType",
     "TeamRelationships",
     "TeamRelationshipsLinks",
     "TeamResponse",
