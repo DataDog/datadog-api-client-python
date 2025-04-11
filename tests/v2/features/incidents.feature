@@ -134,7 +134,7 @@ Feature: Incidents
   Scenario: Create an incident type returns "CREATED" response
     Given operation "CreateIncidentType" enabled
     And new "CreateIncidentType" request
-    And body with value {"data": {"attributes": {"description": "Any incidents that harm (or have the potential to) the confidentiality, integrity, or availability of our data.", "is_default": false, "name": "Security Incident"}, "type": "incident_types"}}
+    And body with value {"data": {"attributes": {"description": "Any incidents that harm (or have the potential to) the confidentiality, integrity, or availability of our data.", "is_default": false, "name": "{{ unique_hash }}"}, "type": "incident_types"}}
     When the request is sent
     Then the response status is 201 CREATED
 
