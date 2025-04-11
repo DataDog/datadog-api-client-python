@@ -510,15 +510,15 @@ class IncidentsApi:
                 "version": "v2",
             },
             params_map={
-                "include": {
-                    "openapi_types": (IncidentRelatedObject,),
-                    "attribute": "include",
-                    "location": "query",
-                },
                 "query": {
                     "required": True,
                     "openapi_types": (str,),
                     "attribute": "query",
+                    "location": "query",
+                },
+                "include": {
+                    "openapi_types": (IncidentRelatedObject,),
+                    "attribute": "include",
                     "location": "query",
                 },
                 "sort": {
@@ -1123,10 +1123,10 @@ class IncidentsApi:
         :rtype: IncidentSearchResponse
         """
         kwargs: Dict[str, Any] = {}
+        kwargs["query"] = query
+
         if include is not unset:
             kwargs["include"] = include
-
-        kwargs["query"] = query
 
         if sort is not unset:
             kwargs["sort"] = sort
@@ -1169,10 +1169,10 @@ class IncidentsApi:
         :rtype: collections.abc.Iterable[IncidentSearchResponseIncidentsData]
         """
         kwargs: Dict[str, Any] = {}
+        kwargs["query"] = query
+
         if include is not unset:
             kwargs["include"] = include
-
-        kwargs["query"] = query
 
         if sort is not unset:
             kwargs["sort"] = sort
