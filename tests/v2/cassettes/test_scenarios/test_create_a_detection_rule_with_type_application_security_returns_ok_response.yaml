@@ -1,8 +1,8 @@
 interactions:
 - request:
-    body: '{"cases":[{"actions":[{"options":{"duration":900},"type":"block_ip"}],"condition":"a
+    body: '{"cases":[{"actions":[{"options":{"duration":900},"type":"block_ip"},{"options":{"userBehaviorName":"behavior"},"type":"user_behavior"}],"condition":"a
       > 100000","name":"","notifications":[],"status":"info"}],"filters":[],"groupSignalsBy":["service"],"isEnabled":true,"message":"Test
-      rule","name":"Test-Create_a_detection_rule_with_type_application_security_returns_OK_response-1738860639_appsec_rule","options":{"detectionMethod":"threshold","evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"queries":[{"aggregation":"count","distinctFields":[],"groupByFields":["service","@http.client_ip"],"query":"@appsec.security_activity:business_logic.users.login.failure"}],"tags":[],"type":"application_security"}'
+      rule","name":"Test-Create_a_detection_rule_with_type_application_security_returns_OK_response-1744210925_appsec_rule","options":{"detectionMethod":"threshold","evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"queries":[{"aggregation":"count","distinctFields":[],"groupByFields":["service","@http.client_ip"],"query":"@appsec.security_activity:business_logic.users.login.failure"}],"tags":[],"type":"application_security"}'
     headers:
       accept:
       - application/json
@@ -12,9 +12,10 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/security_monitoring/rules
   response:
     body:
-      string: '{"name":"Test-Create_a_detection_rule_with_type_application_security_returns_OK_response-1738860639_appsec_rule","createdAt":1738860640426,"isDefault":false,"isPartner":false,"isEnabled":true,"isBeta":false,"isDeleted":false,"isDeprecated":false,"queries":[{"query":"@appsec.security_activity:business_logic.users.login.failure","groupByFields":["service","@http.client_ip"],"hasOptionalGroupByFields":false,"distinctFields":[],"aggregation":"count","name":"","dataSource":"app_sec_spans"}],"options":{"evaluationWindow":900,"detectionMethod":"threshold","maxSignalDuration":86400,"keepAlive":3600},"cases":[{"name":"","status":"info","notifications":[],"condition":"a
-        \u003e 100000","actions":[{"type":"block_ip","options":{"duration":900}}]}],"message":"Test
-        rule","tags":[],"hasExtendedTitle":false,"type":"application_security","filters":[],"version":1,"id":"rfn-h2v-udr","blocking":true,"groupSignalsBy":["service"],"casesActions":[[{"type":"block_ip","options":{"duration":900}}]],"dependencies":["business_logic.users.login.failure"],"metadata":{"entities":null,"sources":null},"creator":{"handle":"","name":""},"updater":{"handle":"","name":""}}'
+      string: '{"name":"Test-Create_a_detection_rule_with_type_application_security_returns_OK_response-1744210925_appsec_rule","createdAt":1744210925675,"isDefault":false,"isPartner":false,"isEnabled":true,"isBeta":false,"isDeleted":false,"isDeprecated":false,"queries":[{"query":"@appsec.security_activity:business_logic.users.login.failure","groupByFields":["service","@http.client_ip"],"hasOptionalGroupByFields":false,"distinctFields":[],"aggregation":"count","name":"","dataSource":"app_sec_spans"}],"options":{"evaluationWindow":900,"detectionMethod":"threshold","maxSignalDuration":86400,"keepAlive":3600},"cases":[{"name":"","status":"info","notifications":[],"condition":"a
+        \u003e 100000","actions":[{"type":"block_ip","options":{"duration":900}},{"type":"user_behavior","options":{"userBehaviorName":"behavior"}}]}],"message":"Test
+        rule","tags":[],"hasExtendedTitle":false,"type":"application_security","filters":[],"version":1,"id":"lfr-zxg-fyc","blocking":true,"groupSignalsBy":["service"],"dependencies":["business_logic.users.login.failure"],"metadata":{"entities":null,"sources":null},"creationAuthorId":2320499,"creator":{"handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+        Account"},"updater":{"handle":"","name":""}}'
     headers:
       content-type:
       - application/json
@@ -27,14 +28,12 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/rfn-h2v-udr
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/lfr-zxg-fyc
   response:
     body:
-      string: '{"status":"404","title":"Not Found"}'
-    headers:
-      content-type:
-      - application/json
+      string: ''
+    headers: {}
     status:
-      code: 404
-      message: Not Found
+      code: 204
+      message: No Content
 version: 1
