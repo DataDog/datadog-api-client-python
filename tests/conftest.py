@@ -162,7 +162,7 @@ def unique(request, freezed_time):
     return f"{prefix}-{int(freezed_time.timestamp())}"
 
 
-def relative_time(freezed_time, iso):
+def relative_time(freezed_time, iso_func):
     time_re = re.compile(r"now( *([+-]) *(\d+)([smhdMy]))?")
 
     def func(arg):
@@ -185,13 +185,8 @@ def relative_time(freezed_time, iso):
                     ret += relativedelta(months=num)
                 elif unit == "y":
                     ret += relativedelta(years=num)
-            if iso:
-                # Default/legacy behavior is to return datetime object and not string
-                if getattr(ret, "tzinfo", None) is None or ret.tzinfo is not UTC:
-                    # return datetime object and not string
-                    # NOTE this is not a full ISO 8601 format, but it's enough for our needs
-                    return ret
-                return "{}Z".format(ret.strftime("%Y-%m-%dT%H:%M:%S.%f")[:-3])
+            if iso_func:
+                return iso_func(ret)
 
             return int(ret.timestamp())
         return ""
@@ -212,6 +207,16 @@ def context(vcr, unique, freezed_time):
     """
     unique_hash = hashlib.sha256(unique.encode("utf-8")).hexdigest()[:16]
 
+    # On-Call cassettes use ISO 8601 with timezone indicator
+    is_on_call = any(["api/v2/on-call" in req.path for req in vcr.requests])
+    is_iso_with_timezone_indicator = is_on_call
+    if is_iso_with_timezone_indicator:
+        iso_func = lambda x: "{}Z".format(x.strftime("%Y-%m-%dT%H:%M:%S.%f")[:-3])
+    else:
+        # return datetime object and not string
+        # NOTE this is not a full ISO 8601 format, but it's enough for our needs
+        iso_func = lambda x: x
+
     ctx = {
         "undo_operations": [],
         "unique": unique,
@@ -221,8 +226,8 @@ def context(vcr, unique, freezed_time):
         "unique_lower_alnum": PATTERN_ALPHANUM.sub("", unique).lower(),
         "unique_upper_alnum": PATTERN_ALPHANUM.sub("", unique).upper(),
         "unique_hash": unique_hash,
-        "timestamp": relative_time(freezed_time, False),
-        "timeISO": relative_time(freezed_time, True),
+        "timestamp": relative_time(freezed_time, None),
+        "timeISO": relative_time(freezed_time, iso_func),
         "uuid": generate_uuid(freezed_time),
     }
 
