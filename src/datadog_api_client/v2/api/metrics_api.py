@@ -186,14 +186,6 @@ class MetricsApi:
                     "attribute": "filter[hours_ago]",
                     "location": "query",
                 },
-                "filter_num_aggregations": {
-                    "validation": {
-                        "inclusive_maximum": 9,
-                    },
-                    "openapi_types": (int,),
-                    "attribute": "filter[num_aggregations]",
-                    "location": "query",
-                },
                 "filter_pct": {
                     "openapi_types": (bool,),
                     "attribute": "filter[pct]",
@@ -526,10 +518,9 @@ class MetricsApi:
         """Create a tag configuration.
 
         Create and define a list of queryable tag keys for an existing count/gauge/rate/distribution metric.
-        Optionally, include percentile aggregations on any distribution metric or configure custom aggregations
-        on any count, rate, or gauge metric. By setting ``exclude_tags_mode`` to true the behavior is changed
-        from an allow-list to a deny-list, and tags in the defined list will not be queryable.
-        Can only be used with application keys of users with the ``Manage Tags for Metrics`` permission.
+        Optionally, include percentile aggregations on any distribution metric. By setting ``exclude_tags_mode``
+        to true the behavior is changed from an allow-list to a deny-list, and tags in the defined list will not
+        be queryable. Can only be used with application keys of users with the ``Manage Tags for Metrics`` permission.
 
         :param metric_name: The name of the metric.
         :type metric_name: str
@@ -586,13 +577,12 @@ class MetricsApi:
         *,
         filter_groups: Union[str, UnsetType] = unset,
         filter_hours_ago: Union[int, UnsetType] = unset,
-        filter_num_aggregations: Union[int, UnsetType] = unset,
         filter_pct: Union[bool, UnsetType] = unset,
         filter_timespan_h: Union[int, UnsetType] = unset,
     ) -> MetricEstimateResponse:
         """Tag Configuration Cardinality Estimator.
 
-        Returns the estimated cardinality for a metric with a given tag, percentile and number of aggregations configuration using Metrics without Limits&trade;.
+        Returns the estimated cardinality for a metric with a given tag and percentile configuration using Metrics without Limits&trade;.
 
         :param metric_name: The name of the metric.
         :type metric_name: str
@@ -600,8 +590,6 @@ class MetricsApi:
         :type filter_groups: str, optional
         :param filter_hours_ago: The number of hours of look back (from now) to estimate cardinality with. If unspecified, it defaults to 0 hours.
         :type filter_hours_ago: int, optional
-        :param filter_num_aggregations: The number of aggregations that a ``count`` , ``rate`` , or ``gauge`` metric is configured to use. Max number of aggregation combos is 9.
-        :type filter_num_aggregations: int, optional
         :param filter_pct: A boolean, for distribution metrics only, to estimate cardinality if the metric includes additional percentile aggregators.
         :type filter_pct: bool, optional
         :param filter_timespan_h: A window, in hours, from the look back to estimate cardinality with. The minimum and default is 1 hour.
@@ -617,9 +605,6 @@ class MetricsApi:
         if filter_hours_ago is not unset:
             kwargs["filter_hours_ago"] = filter_hours_ago
 
-        if filter_num_aggregations is not unset:
-            kwargs["filter_num_aggregations"] = filter_num_aggregations
-
         if filter_pct is not unset:
             kwargs["filter_pct"] = filter_pct
 
@@ -634,9 +619,9 @@ class MetricsApi:
         *,
         window_seconds: Union[int, UnsetType] = unset,
     ) -> MetricSuggestedTagsAndAggregationsResponse:
-        """List active tags and aggregations.
+        """List active tags.
 
-        List tags and aggregations that are actively queried on dashboards, notebooks, monitors, the Metrics Explorer, and using the API for a given metric name.
+        List tags that are actively queried on dashboards, notebooks, monitors, the Metrics Explorer, and using the API for a given metric name.
 
         :param metric_name: The name of the metric.
         :type metric_name: str
@@ -973,9 +958,8 @@ class MetricsApi:
     ) -> MetricTagConfigurationResponse:
         """Update a tag configuration.
 
-        Update the tag configuration of a metric or percentile aggregations of a distribution metric or custom aggregations
-        of a count, rate, or gauge metric. By setting ``exclude_tags_mode`` to true the behavior is changed
-        from an allow-list to a deny-list, and tags in the defined list will not be queryable.
+        Update the tag configuration of a metric or percentile aggregations of a distribution metric. By setting ``exclude_tags_mode``
+        to true the behavior is changed from an allow-list to a deny-list, and tags in the defined list will not be queryable.
         Can only be used with application keys from users with the ``Manage Tags for Metrics`` permission. This endpoint requires
         a tag configuration to be created first.
 

@@ -1500,7 +1500,6 @@ from datadog_api_client.v2.model.metric_bulk_tag_config_status_attributes import
 from datadog_api_client.v2.model.metric_bulk_tag_config_tag_name_list import MetricBulkTagConfigTagNameList
 from datadog_api_client.v2.model.metric_content_encoding import MetricContentEncoding
 from datadog_api_client.v2.model.metric_custom_aggregation import MetricCustomAggregation
-from datadog_api_client.v2.model.metric_custom_aggregations import MetricCustomAggregations
 from datadog_api_client.v2.model.metric_custom_space_aggregation import MetricCustomSpaceAggregation
 from datadog_api_client.v2.model.metric_custom_time_aggregation import MetricCustomTimeAggregation
 from datadog_api_client.v2.model.metric_dashboard_asset import MetricDashboardAsset
@@ -4091,7 +4090,6 @@ __all__ = [
     "MetricBulkTagConfigTagNameList",
     "MetricContentEncoding",
     "MetricCustomAggregation",
-    "MetricCustomAggregations",
     "MetricCustomSpaceAggregation",
     "MetricCustomTimeAggregation",
     "MetricDashboardAsset",

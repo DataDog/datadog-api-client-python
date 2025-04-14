@@ -1,5 +1,5 @@
 """
-List active tags and aggregations returns "Success" response
+List active tags returns "Success" response
 """
 
 from datadog_api_client import ApiClient, Configuration
@@ -9,7 +9,7 @@ configuration = Configuration()
 with ApiClient(configuration) as api_client:
     api_instance = MetricsApi(api_client)
     response = api_instance.list_active_metric_configurations(
-        metric_name="static_test_metric_donotdelete",
+        metric_name="metric_name",
     )
 
     print(response)

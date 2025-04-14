@@ -8460,13 +8460,6 @@ datadog\_api\_client.v2.model.metric\_custom\_aggregation module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.metric\_custom\_aggregations module
------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.metric_custom_aggregations
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v2.model.metric\_custom\_space\_aggregation module
 -----------------------------------------------------------------------
 

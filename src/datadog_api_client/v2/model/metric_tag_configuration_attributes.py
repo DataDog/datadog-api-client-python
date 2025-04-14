@@ -15,18 +15,15 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.metric_custom_aggregations import MetricCustomAggregations
     from datadog_api_client.v2.model.metric_tag_configuration_metric_types import MetricTagConfigurationMetricTypes
 
 
 class MetricTagConfigurationAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.metric_custom_aggregations import MetricCustomAggregations
         from datadog_api_client.v2.model.metric_tag_configuration_metric_types import MetricTagConfigurationMetricTypes
 
         return {
-            "aggregations": (MetricCustomAggregations,),
             "created_at": (datetime,),
             "exclude_tags_mode": (bool,),
             "include_percentiles": (bool,),
@@ -36,7 +33,6 @@ class MetricTagConfigurationAttributes(ModelNormal):
         }
 
     attribute_map = {
-        "aggregations": "aggregations",
         "created_at": "created_at",
         "exclude_tags_mode": "exclude_tags_mode",
         "include_percentiles": "include_percentiles",
@@ -47,7 +43,6 @@ class MetricTagConfigurationAttributes(ModelNormal):
 
     def __init__(
         self_,
-        aggregations: Union[MetricCustomAggregations, UnsetType] = unset,
         created_at: Union[datetime, UnsetType] = unset,
         exclude_tags_mode: Union[bool, UnsetType] = unset,
         include_percentiles: Union[bool, UnsetType] = unset,
@@ -58,24 +53,6 @@ class MetricTagConfigurationAttributes(ModelNormal):
     ):
         """
         Object containing the definition of a metric tag configuration attributes.
-
-        :param aggregations: A list of queryable aggregation combinations for a count, rate, or gauge metric.
-            By default, count and rate metrics require the (time: sum, space: sum) aggregation and
-            Gauge metrics require the (time: avg, space: avg) aggregation.
-            Additional time & space combinations are also available:
-
-            * time: avg, space: avg
-            * time: avg, space: max
-            * time: avg, space: min
-            * time: avg, space: sum
-            * time: count, space: sum
-            * time: max, space: max
-            * time: min, space: min
-            * time: sum, space: avg
-            * time: sum, space: sum
-
-            Can only be applied to non_distribution metrics that have a ``metric_type`` of ``count`` , ``rate`` , or ``gauge``.
-        :type aggregations: MetricCustomAggregations, optional
 
         :param created_at: Timestamp when the tag configuration was created.
         :type created_at: datetime, optional
@@ -98,8 +75,6 @@ class MetricTagConfigurationAttributes(ModelNormal):
         :param tags: List of tag keys on which to group.
         :type tags: [str], optional
         """
-        if aggregations is not unset:
-            kwargs["aggregations"] = aggregations
         if created_at is not unset:
             kwargs["created_at"] = created_at
         if exclude_tags_mode is not unset:
