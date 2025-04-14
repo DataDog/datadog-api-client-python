@@ -5,7 +5,7 @@ interactions:
       accept:
       - application/json
     method: GET
-    uri: https://api.datadoghq.com/api/v2/ndm/interfaces?device_id=default:1.2.3.4
+    uri: https://api.datadoghq.com/api/v2/ndm/interfaces?device_id=default%3A1.2.3.4&get_ip_addresses=true
   response:
     body:
       string: '{"data":[{"id":"default:1.2.3.4:99","type":"interface","attributes":{"name":"if99","status":"up","description":"a

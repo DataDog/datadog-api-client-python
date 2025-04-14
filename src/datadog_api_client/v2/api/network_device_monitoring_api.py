@@ -66,6 +66,11 @@ class NetworkDeviceMonitoringApi:
                     "attribute": "device_id",
                     "location": "query",
                 },
+                "get_ip_addresses": {
+                    "openapi_types": (bool,),
+                    "attribute": "get_ip_addresses",
+                    "location": "query",
+                },
             },
             headers_map={
                 "accept": ["application/json"],
@@ -179,6 +184,8 @@ class NetworkDeviceMonitoringApi:
     def get_interfaces(
         self,
         device_id: str,
+        *,
+        get_ip_addresses: Union[bool, UnsetType] = unset,
     ) -> GetInterfacesResponse:
         """Get the list of interfaces of the device.
 
@@ -186,10 +193,15 @@ class NetworkDeviceMonitoringApi:
 
         :param device_id: The ID of the device to get interfaces from.
         :type device_id: str
+        :param get_ip_addresses: Whether to get the IP addresses of the interfaces.
+        :type get_ip_addresses: bool, optional
         :rtype: GetInterfacesResponse
         """
         kwargs: Dict[str, Any] = {}
         kwargs["device_id"] = device_id
+
+        if get_ip_addresses is not unset:
+            kwargs["get_ip_addresses"] = get_ip_addresses
 
         return self._get_interfaces_endpoint.call_with_http_info(**kwargs)
 
