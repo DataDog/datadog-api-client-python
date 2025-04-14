@@ -152,22 +152,6 @@ Feature: Metrics
     Then the response status is 200 Success
     And the response "data[0].type" is equal to "manage_tags"
 
-  @generated @skip @team:DataDog/metrics-experience
-  Scenario: List active tags and aggregations returns "Bad Request" response
-    Given a valid "appKeyAuth" key in the system
-    And new "ListActiveMetricConfigurations" request
-    And request contains "metric_name" parameter from "REPLACE.ME"
-    When the request is sent
-    Then the response status is 400 Bad Request
-
-  @generated @skip @team:DataDog/metrics-experience
-  Scenario: List active tags and aggregations returns "Not Found" response
-    Given a valid "appKeyAuth" key in the system
-    And new "ListActiveMetricConfigurations" request
-    And request contains "metric_name" parameter from "REPLACE.ME"
-    When the request is sent
-    Then the response status is 404 Not Found
-
   @skip-validation @team:DataDog/metrics-experience
   Scenario: List active tags and aggregations returns "Success" response
     Given a valid "appKeyAuth" key in the system
@@ -178,6 +162,30 @@ Feature: Metrics
     Then the response status is 200 Success
     And the response "data.type" is equal to "actively_queried_configurations"
     And the response "data.id" is equal to "static_test_metric_donotdelete"
+
+  @generated @skip @team:DataDog/metrics-experience
+  Scenario: List active tags returns "Bad Request" response
+    Given a valid "appKeyAuth" key in the system
+    And new "ListActiveMetricConfigurations" request
+    And request contains "metric_name" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/metrics-experience
+  Scenario: List active tags returns "Not Found" response
+    Given a valid "appKeyAuth" key in the system
+    And new "ListActiveMetricConfigurations" request
+    And request contains "metric_name" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/metrics-experience
+  Scenario: List active tags returns "Success" response
+    Given a valid "appKeyAuth" key in the system
+    And new "ListActiveMetricConfigurations" request
+    And request contains "metric_name" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 Success
 
   @generated @skip @team:DataDog/metrics-experience
   Scenario: List distinct metric volumes by metric name returns "Bad Request" response
@@ -370,7 +378,6 @@ Feature: Metrics
     Given new "EstimateMetricsOutputSeries" request
     And request contains "metric_name" parameter with value "system.cpu.idle"
     And request contains "filter[groups]" parameter with value "app,host"
-    And request contains "filter[num_aggregations]" parameter with value 4
     When the request is sent
     Then the response status is 200 Success
 

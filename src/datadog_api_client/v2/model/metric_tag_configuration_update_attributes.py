@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, Union, TYPE_CHECKING
+from typing import List, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -13,24 +13,16 @@ from datadog_api_client.model_utils import (
 )
 
 
-if TYPE_CHECKING:
-    from datadog_api_client.v2.model.metric_custom_aggregations import MetricCustomAggregations
-
-
 class MetricTagConfigurationUpdateAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.metric_custom_aggregations import MetricCustomAggregations
-
         return {
-            "aggregations": (MetricCustomAggregations,),
             "exclude_tags_mode": (bool,),
             "include_percentiles": (bool,),
             "tags": ([str],),
         }
 
     attribute_map = {
-        "aggregations": "aggregations",
         "exclude_tags_mode": "exclude_tags_mode",
         "include_percentiles": "include_percentiles",
         "tags": "tags",
@@ -38,7 +30,6 @@ class MetricTagConfigurationUpdateAttributes(ModelNormal):
 
     def __init__(
         self_,
-        aggregations: Union[MetricCustomAggregations, UnsetType] = unset,
         exclude_tags_mode: Union[bool, UnsetType] = unset,
         include_percentiles: Union[bool, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
@@ -46,24 +37,6 @@ class MetricTagConfigurationUpdateAttributes(ModelNormal):
     ):
         """
         Object containing the definition of a metric tag configuration to be updated.
-
-        :param aggregations: A list of queryable aggregation combinations for a count, rate, or gauge metric.
-            By default, count and rate metrics require the (time: sum, space: sum) aggregation and
-            Gauge metrics require the (time: avg, space: avg) aggregation.
-            Additional time & space combinations are also available:
-
-            * time: avg, space: avg
-            * time: avg, space: max
-            * time: avg, space: min
-            * time: avg, space: sum
-            * time: count, space: sum
-            * time: max, space: max
-            * time: min, space: min
-            * time: sum, space: avg
-            * time: sum, space: sum
-
-            Can only be applied to non_distribution metrics that have a ``metric_type`` of ``count`` , ``rate`` , or ``gauge``.
-        :type aggregations: MetricCustomAggregations, optional
 
         :param exclude_tags_mode: When set to true, the configuration will exclude the configured tags and include any other submitted tags.
             When set to false, the configuration will include the configured tags and exclude any other submitted tags.
@@ -77,8 +50,6 @@ class MetricTagConfigurationUpdateAttributes(ModelNormal):
         :param tags: A list of tag keys that will be queryable for your metric.
         :type tags: [str], optional
         """
-        if aggregations is not unset:
-            kwargs["aggregations"] = aggregations
         if exclude_tags_mode is not unset:
             kwargs["exclude_tags_mode"] = exclude_tags_mode
         if include_percentiles is not unset:
