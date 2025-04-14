@@ -46,6 +46,7 @@ import re
 import time
 import warnings
 from datetime import datetime
+from dateutil.tz import UTC
 
 import pytest
 from dateutil.relativedelta import relativedelta
@@ -185,6 +186,11 @@ def relative_time(freezed_time, iso):
                 elif unit == "y":
                     ret += relativedelta(years=num)
             if iso:
+                # Default/legacy behavior is to return datetime object and not string
+                if getattr(ret, "tzinfo", None) is None or ret.tzinfo is not UTC:
+                    # return datetime object and not string
+                    # NOTE this is not a full ISO 8601 format, but it's enough for our needs
+                    return ret
                 return "{}Z".format(ret.strftime("%Y-%m-%dT%H:%M:%S.%f")[:-3])
 
             return int(ret.timestamp())
