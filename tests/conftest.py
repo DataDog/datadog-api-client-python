@@ -207,7 +207,7 @@ def context(vcr, unique, freezed_time):
     """
     unique_hash = hashlib.sha256(unique.encode("utf-8")).hexdigest()[:16]
 
-    # On-Call cassettes use ISO 8601 with timezone indicator
+    # On-Call cassettes use ISO 8601 with Z timezone indicator
     is_on_call = any(["api/v2/on-call" in req.path for req in vcr.requests])
     is_iso_with_timezone_indicator = is_on_call
     if is_iso_with_timezone_indicator:
@@ -215,7 +215,7 @@ def context(vcr, unique, freezed_time):
     else:
         # return datetime object and not string
         # NOTE this is not a full ISO 8601 format, but it's enough for our needs
-        iso_func = lambda x: x
+        iso_func = lambda x: x.replace(tzinfo=None)
 
     ctx = {
         "undo_operations": [],
