@@ -635,6 +635,8 @@ from datadog_api_client.v2.model.create_app_request_data import CreateAppRequest
 from datadog_api_client.v2.model.create_app_request_data_attributes import CreateAppRequestDataAttributes
 from datadog_api_client.v2.model.create_app_response import CreateAppResponse
 from datadog_api_client.v2.model.create_app_response_data import CreateAppResponseData
+from datadog_api_client.v2.model.create_custom_framework_request import CreateCustomFrameworkRequest
+from datadog_api_client.v2.model.create_custom_framework_response import CreateCustomFrameworkResponse
 from datadog_api_client.v2.model.create_data_deletion_request_body import CreateDataDeletionRequestBody
 from datadog_api_client.v2.model.create_data_deletion_request_body_attributes import (
     CreateDataDeletionRequestBodyAttributes,
@@ -801,6 +803,12 @@ from datadog_api_client.v2.model.custom_destination_update_request_definition im
     CustomDestinationUpdateRequestDefinition,
 )
 from datadog_api_client.v2.model.custom_destinations_response import CustomDestinationsResponse
+from datadog_api_client.v2.model.custom_framework_control import CustomFrameworkControl
+from datadog_api_client.v2.model.custom_framework_data import CustomFrameworkData
+from datadog_api_client.v2.model.custom_framework_data_attributes import CustomFrameworkDataAttributes
+from datadog_api_client.v2.model.custom_framework_data_handle_and_version import CustomFrameworkDataHandleAndVersion
+from datadog_api_client.v2.model.custom_framework_requirement import CustomFrameworkRequirement
+from datadog_api_client.v2.model.custom_framework_type import CustomFrameworkType
 from datadog_api_client.v2.model.dora_deployment_request import DORADeploymentRequest
 from datadog_api_client.v2.model.dora_deployment_request_attributes import DORADeploymentRequestAttributes
 from datadog_api_client.v2.model.dora_deployment_request_data import DORADeploymentRequestData
@@ -1063,6 +1071,8 @@ from datadog_api_client.v2.model.full_api_key import FullAPIKey
 from datadog_api_client.v2.model.full_api_key_attributes import FullAPIKeyAttributes
 from datadog_api_client.v2.model.full_application_key import FullApplicationKey
 from datadog_api_client.v2.model.full_application_key_attributes import FullApplicationKeyAttributes
+from datadog_api_client.v2.model.full_custom_framework_data import FullCustomFrameworkData
+from datadog_api_client.v2.model.full_custom_framework_data_attributes import FullCustomFrameworkDataAttributes
 from datadog_api_client.v2.model.gcp_metric_namespace_config import GCPMetricNamespaceConfig
 from datadog_api_client.v2.model.gcpsts_delegate_account import GCPSTSDelegateAccount
 from datadog_api_client.v2.model.gcpsts_delegate_account_attributes import GCPSTSDelegateAccountAttributes
@@ -1843,6 +1853,7 @@ from datadog_api_client.v2.model.partial_api_key_attributes import PartialAPIKey
 from datadog_api_client.v2.model.partial_application_key import PartialApplicationKey
 from datadog_api_client.v2.model.partial_application_key_attributes import PartialApplicationKeyAttributes
 from datadog_api_client.v2.model.partial_application_key_response import PartialApplicationKeyResponse
+from datadog_api_client.v2.model.partial_custom_framework_data import PartialCustomFrameworkData
 from datadog_api_client.v2.model.patch_notification_rule_parameters import PatchNotificationRuleParameters
 from datadog_api_client.v2.model.patch_notification_rule_parameters_data import PatchNotificationRuleParametersData
 from datadog_api_client.v2.model.patch_notification_rule_parameters_data_attributes import (
@@ -2020,6 +2031,7 @@ from datadog_api_client.v2.model.retention_filter_update_data import RetentionFi
 from datadog_api_client.v2.model.retention_filter_update_request import RetentionFilterUpdateRequest
 from datadog_api_client.v2.model.retention_filter_without_attributes import RetentionFilterWithoutAttributes
 from datadog_api_client.v2.model.retention_filters_response import RetentionFiltersResponse
+from datadog_api_client.v2.model.retrieve_custom_framework_response import RetrieveCustomFrameworkResponse
 from datadog_api_client.v2.model.retry_strategy import RetryStrategy
 from datadog_api_client.v2.model.retry_strategy_kind import RetryStrategyKind
 from datadog_api_client.v2.model.retry_strategy_linear import RetryStrategyLinear
@@ -2767,6 +2779,7 @@ from datadog_api_client.v2.model.update_app_request_data_attributes import Updat
 from datadog_api_client.v2.model.update_app_response import UpdateAppResponse
 from datadog_api_client.v2.model.update_app_response_data import UpdateAppResponseData
 from datadog_api_client.v2.model.update_app_response_data_attributes import UpdateAppResponseDataAttributes
+from datadog_api_client.v2.model.update_custom_framework_request import UpdateCustomFrameworkRequest
 from datadog_api_client.v2.model.update_open_api_response import UpdateOpenAPIResponse
 from datadog_api_client.v2.model.update_open_api_response_attributes import UpdateOpenAPIResponseAttributes
 from datadog_api_client.v2.model.update_open_api_response_data import UpdateOpenAPIResponseData
@@ -3380,6 +3393,8 @@ __all__ = [
     "CreateAppRequestDataAttributes",
     "CreateAppResponse",
     "CreateAppResponseData",
+    "CreateCustomFrameworkRequest",
+    "CreateCustomFrameworkResponse",
     "CreateDataDeletionRequestBody",
     "CreateDataDeletionRequestBodyAttributes",
     "CreateDataDeletionRequestBodyData",
@@ -3466,6 +3481,12 @@ __all__ = [
     "CustomDestinationUpdateRequestAttributes",
     "CustomDestinationUpdateRequestDefinition",
     "CustomDestinationsResponse",
+    "CustomFrameworkControl",
+    "CustomFrameworkData",
+    "CustomFrameworkDataAttributes",
+    "CustomFrameworkDataHandleAndVersion",
+    "CustomFrameworkRequirement",
+    "CustomFrameworkType",
     "DORADeploymentRequest",
     "DORADeploymentRequestAttributes",
     "DORADeploymentRequestData",
@@ -3698,6 +3719,8 @@ __all__ = [
     "FullAPIKeyAttributes",
     "FullApplicationKey",
     "FullApplicationKeyAttributes",
+    "FullCustomFrameworkData",
+    "FullCustomFrameworkDataAttributes",
     "GCPMetricNamespaceConfig",
     "GCPSTSDelegateAccount",
     "GCPSTSDelegateAccountAttributes",
@@ -4316,6 +4339,7 @@ __all__ = [
     "PartialApplicationKey",
     "PartialApplicationKeyAttributes",
     "PartialApplicationKeyResponse",
+    "PartialCustomFrameworkData",
     "PatchNotificationRuleParameters",
     "PatchNotificationRuleParametersData",
     "PatchNotificationRuleParametersDataAttributes",
@@ -4479,6 +4503,7 @@ __all__ = [
     "RetentionFilterUpdateRequest",
     "RetentionFilterWithoutAttributes",
     "RetentionFiltersResponse",
+    "RetrieveCustomFrameworkResponse",
     "RetryStrategy",
     "RetryStrategyKind",
     "RetryStrategyLinear",
@@ -5028,6 +5053,7 @@ __all__ = [
     "UpdateAppResponse",
     "UpdateAppResponseData",
     "UpdateAppResponseDataAttributes",
+    "UpdateCustomFrameworkRequest",
     "UpdateOpenAPIResponse",
     "UpdateOpenAPIResponseAttributes",
     "UpdateOpenAPIResponseData",

@@ -1,0 +1,20 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"handle":"ponse1737559707","icon_url":"","name":"ponse1737559707","requirements":[{"controls":[{"name":"ponse1737559707","rules_id":["kyz-e99-tys"]}],"name":"ponse1737559707"}],"version":"ponse1737559707"},"type":"custom_framework"}}'
+    headers:
+      accept:
+      - '*/*'
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/cloud_security_management/custom_frameworks
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+version: 1

@@ -1,0 +1,18 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"handle":"ponse1744139743","icon_url":"","name":"ponse1744139743","requirements":[{"controls":[{"name":"ponse1744139743","rules_id":["def-000-cea"]}],"name":"ponse1744139743"}],"version":"ponse1744139743"},"type":"custom_framework"}}'
+    headers:
+      accept:
+      - '*/*'
+      content-type:
+      - application/json
+    method: POST
+    uri: https://frog.datadoghq.com/api/v2/cloud_security_management/custom_frameworks
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1

@@ -1,0 +1,21 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"handle":"handle-testupdateacustomframeworkreturnsbadrequestresponse1744141094","icon_url":"https://example.com/icon-testupdateacustomframeworkreturnsbadrequestresponse1744141094.png","name":"Framework-testupdateacustomframeworkreturnsbadrequestresponse1744141094","requirements":[{"controls":[{"name":"Control-testupdateacustomframeworkreturnsbadrequestresponse1744141094","rules_id":["def-000-cea"]}],"name":"Requirement-testupdateacustomframeworkreturnsbadrequestresponse1744141094"}],"version":"1.0.testupdateacustomframeworkreturnsbadrequestresponse1744141094"},"type":"custom_framework"}}'
+    headers:
+      accept:
+      - '*/*'
+      content-type:
+      - application/json
+    method: POST
+    uri: https://frog.datadoghq.com/api/v2/cloud_security_management/custom_frameworks
+  response:
+    body:
+      string: '{"errors":[{"status":"400","title":"Bad Request","detail":"invalid_argument(Invalid
+        rule configuration)"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 400
+      message: Bad Request
+version: 1
