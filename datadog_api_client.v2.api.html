@@ -7707,7 +7707,7 @@ The restriction policy determines who is authorized to perform what actions on t
 <p>Deletes the restriction policy associated with a specified resource.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>resource_id</strong> (<em>str</em>) – Identifier, formatted as <code class="docutils literal notranslate"><span class="pre">type:id</span></code>. Supported types: <code class="docutils literal notranslate"><span class="pre">connection</span></code> , <code class="docutils literal notranslate"><span class="pre">dashboard</span></code> , <code class="docutils literal notranslate"><span class="pre">integration-account</span></code> , <code class="docutils literal notranslate"><span class="pre">integration-webhook</span></code> , <code class="docutils literal notranslate"><span class="pre">notebook</span></code> , <code class="docutils literal notranslate"><span class="pre">reference-table</span></code> , <code class="docutils literal notranslate"><span class="pre">security-rule</span></code> , <code class="docutils literal notranslate"><span class="pre">slo</span></code> , <code class="docutils literal notranslate"><span class="pre">workflow</span></code> , <code class="docutils literal notranslate"><span class="pre">app-builder-app</span></code> , <code class="docutils literal notranslate"><span class="pre">connection</span></code> , <code class="docutils literal notranslate"><span class="pre">connection-group</span></code>.</p>
+<dd class="field-odd"><p><strong>resource_id</strong> (<em>str</em>) – Identifier, formatted as <code class="docutils literal notranslate"><span class="pre">type:id</span></code>. Supported types: <code class="docutils literal notranslate"><span class="pre">connection</span></code> , <code class="docutils literal notranslate"><span class="pre">dashboard</span></code> , <code class="docutils literal notranslate"><span class="pre">integration-account</span></code> , <code class="docutils literal notranslate"><span class="pre">integration-service</span></code> , <code class="docutils literal notranslate"><span class="pre">integration-webhook</span></code> , <code class="docutils literal notranslate"><span class="pre">notebook</span></code> , <code class="docutils literal notranslate"><span class="pre">reference-table</span></code> , <code class="docutils literal notranslate"><span class="pre">security-rule</span></code> , <code class="docutils literal notranslate"><span class="pre">slo</span></code> , <code class="docutils literal notranslate"><span class="pre">workflow</span></code> , <code class="docutils literal notranslate"><span class="pre">app-builder-app</span></code> , <code class="docutils literal notranslate"><span class="pre">connection</span></code> , <code class="docutils literal notranslate"><span class="pre">connection-group</span></code>.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>None</p>
@@ -7721,7 +7721,7 @@ The restriction policy determines who is authorized to perform what actions on t
 <p>Retrieves the restriction policy associated with a specified resource.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>resource_id</strong> (<em>str</em>) – Identifier, formatted as <code class="docutils literal notranslate"><span class="pre">type:id</span></code>. Supported types: <code class="docutils literal notranslate"><span class="pre">connection</span></code> , <code class="docutils literal notranslate"><span class="pre">dashboard</span></code> , <code class="docutils literal notranslate"><span class="pre">integration-account</span></code> , <code class="docutils literal notranslate"><span class="pre">integration-webhook</span></code> , <code class="docutils literal notranslate"><span class="pre">notebook</span></code> , <code class="docutils literal notranslate"><span class="pre">reference-table</span></code> , <code class="docutils literal notranslate"><span class="pre">security-rule</span></code> , <code class="docutils literal notranslate"><span class="pre">slo</span></code> , <code class="docutils literal notranslate"><span class="pre">workflow</span></code> , <code class="docutils literal notranslate"><span class="pre">app-builder-app</span></code> , <code class="docutils literal notranslate"><span class="pre">connection</span></code> , <code class="docutils literal notranslate"><span class="pre">connection-group</span></code>.</p>
+<dd class="field-odd"><p><strong>resource_id</strong> (<em>str</em>) – Identifier, formatted as <code class="docutils literal notranslate"><span class="pre">type:id</span></code>. Supported types: <code class="docutils literal notranslate"><span class="pre">connection</span></code> , <code class="docutils literal notranslate"><span class="pre">dashboard</span></code> , <code class="docutils literal notranslate"><span class="pre">integration-account</span></code> , <code class="docutils literal notranslate"><span class="pre">integration-service</span></code> , <code class="docutils literal notranslate"><span class="pre">integration-webhook</span></code> , <code class="docutils literal notranslate"><span class="pre">notebook</span></code> , <code class="docutils literal notranslate"><span class="pre">reference-table</span></code> , <code class="docutils literal notranslate"><span class="pre">security-rule</span></code> , <code class="docutils literal notranslate"><span class="pre">slo</span></code> , <code class="docutils literal notranslate"><span class="pre">workflow</span></code> , <code class="docutils literal notranslate"><span class="pre">app-builder-app</span></code> , <code class="docutils literal notranslate"><span class="pre">connection</span></code> , <code class="docutils literal notranslate"><span class="pre">connection-group</span></code>.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.restriction_policy_response.RestrictionPolicyResponse" title="datadog_api_client.v2.model.restriction_policy_response.RestrictionPolicyResponse">RestrictionPolicyResponse</a></p>
@@ -7738,6 +7738,7 @@ The restriction policy determines who is authorized to perform what actions on t
 <ul class="simple">
 <li><p>Dashboards: <code class="docutils literal notranslate"><span class="pre">dashboard</span></code></p></li>
 <li><p>Integration Accounts: <code class="docutils literal notranslate"><span class="pre">integration-account</span></code></p></li>
+<li><p>Integration Services: <code class="docutils literal notranslate"><span class="pre">integration-service</span></code></p></li>
 <li><p>Integration Webhooks: <code class="docutils literal notranslate"><span class="pre">integration-webhook</span></code></p></li>
 <li><p>Notebooks: <code class="docutils literal notranslate"><span class="pre">notebook</span></code></p></li>
 <li><p>Powerpacks: <code class="docutils literal notranslate"><span class="pre">powerpack</span></code></p></li>
@@ -7767,46 +7768,49 @@ The restriction policy determines who is authorized to perform what actions on t
 <tr class="row-odd"><td><p>Integration Accounts</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">viewer</span></code> , <code class="docutils literal notranslate"><span class="pre">editor</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p>Integration Webhooks</p></td>
+<tr class="row-even"><td><p>Integration Services</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">viewer</span></code> , <code class="docutils literal notranslate"><span class="pre">editor</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p>Notebooks</p></td>
+<tr class="row-odd"><td><p>Integration Webhooks</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">viewer</span></code> , <code class="docutils literal notranslate"><span class="pre">editor</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p>Powerpacks</p></td>
+<tr class="row-even"><td><p>Notebooks</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">viewer</span></code> , <code class="docutils literal notranslate"><span class="pre">editor</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p>Security Rules</p></td>
+<tr class="row-odd"><td><p>Powerpacks</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">viewer</span></code> , <code class="docutils literal notranslate"><span class="pre">editor</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p>Service Level Objectives</p></td>
+<tr class="row-even"><td><p>Security Rules</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">viewer</span></code> , <code class="docutils literal notranslate"><span class="pre">editor</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p>Synthetic Global Variables</p></td>
+<tr class="row-odd"><td><p>Service Level Objectives</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">viewer</span></code> , <code class="docutils literal notranslate"><span class="pre">editor</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p>Synthetic Tests</p></td>
+<tr class="row-even"><td><p>Synthetic Global Variables</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">viewer</span></code> , <code class="docutils literal notranslate"><span class="pre">editor</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p>Synthetic Private Locations</p></td>
+<tr class="row-odd"><td><p>Synthetic Tests</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">viewer</span></code> , <code class="docutils literal notranslate"><span class="pre">editor</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p>Monitors</p></td>
+<tr class="row-even"><td><p>Synthetic Private Locations</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">viewer</span></code> , <code class="docutils literal notranslate"><span class="pre">editor</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p>Reference Tables</p></td>
+<tr class="row-odd"><td><p>Monitors</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">viewer</span></code> , <code class="docutils literal notranslate"><span class="pre">editor</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p>Workflows</p></td>
+<tr class="row-even"><td><p>Reference Tables</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">viewer</span></code> , <code class="docutils literal notranslate"><span class="pre">editor</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Workflows</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">viewer</span></code> , <code class="docutils literal notranslate"><span class="pre">runner</span></code> , <code class="docutils literal notranslate"><span class="pre">editor</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p>App Builder Apps</p></td>
+<tr class="row-even"><td><p>App Builder Apps</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">viewer</span></code> , <code class="docutils literal notranslate"><span class="pre">editor</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p>Connections</p></td>
+<tr class="row-odd"><td><p>Connections</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">viewer</span></code> , <code class="docutils literal notranslate"><span class="pre">resolver</span></code> , <code class="docutils literal notranslate"><span class="pre">editor</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p>Connection Groups</p></td>
+<tr class="row-even"><td><p>Connection Groups</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">viewer</span></code> , <code class="docutils literal notranslate"><span class="pre">editor</span></code></p></td>
 </tr>
 </tbody>
@@ -7814,7 +7818,7 @@ The restriction policy determines who is authorized to perform what actions on t
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>resource_id</strong> (<em>str</em>) – Identifier, formatted as <code class="docutils literal notranslate"><span class="pre">type:id</span></code>. Supported types: <code class="docutils literal notranslate"><span class="pre">connection</span></code> , <code class="docutils literal notranslate"><span class="pre">dashboard</span></code> , <code class="docutils literal notranslate"><span class="pre">integration-account</span></code> , <code class="docutils literal notranslate"><span class="pre">integration-webhook</span></code> , <code class="docutils literal notranslate"><span class="pre">notebook</span></code> , <code class="docutils literal notranslate"><span class="pre">reference-table</span></code> , <code class="docutils literal notranslate"><span class="pre">security-rule</span></code> , <code class="docutils literal notranslate"><span class="pre">slo</span></code> , <code class="docutils literal notranslate"><span class="pre">workflow</span></code> , <code class="docutils literal notranslate"><span class="pre">app-builder-app</span></code> , <code class="docutils literal notranslate"><span class="pre">connection</span></code> , <code class="docutils literal notranslate"><span class="pre">connection-group</span></code>.</p></li>
+<li><p><strong>resource_id</strong> (<em>str</em>) – Identifier, formatted as <code class="docutils literal notranslate"><span class="pre">type:id</span></code>. Supported types: <code class="docutils literal notranslate"><span class="pre">connection</span></code> , <code class="docutils literal notranslate"><span class="pre">dashboard</span></code> , <code class="docutils literal notranslate"><span class="pre">integration-account</span></code> , <code class="docutils literal notranslate"><span class="pre">integration-service</span></code> , <code class="docutils literal notranslate"><span class="pre">integration-webhook</span></code> , <code class="docutils literal notranslate"><span class="pre">notebook</span></code> , <code class="docutils literal notranslate"><span class="pre">reference-table</span></code> , <code class="docutils literal notranslate"><span class="pre">security-rule</span></code> , <code class="docutils literal notranslate"><span class="pre">slo</span></code> , <code class="docutils literal notranslate"><span class="pre">workflow</span></code> , <code class="docutils literal notranslate"><span class="pre">app-builder-app</span></code> , <code class="docutils literal notranslate"><span class="pre">connection</span></code> , <code class="docutils literal notranslate"><span class="pre">connection-group</span></code>.</p></li>
 <li><p><strong>body</strong> (<a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.restriction_policy_update_request.RestrictionPolicyUpdateRequest" title="datadog_api_client.v2.model.restriction_policy_update_request.RestrictionPolicyUpdateRequest"><em>RestrictionPolicyUpdateRequest</em></a>) – Restriction policy payload</p></li>
 <li><p><strong>allow_self_lockout</strong> (<em>bool</em><em>, </em><em>optional</em>) – Allows admins (users with the <code class="docutils literal notranslate"><span class="pre">user_access_manage</span></code> permission) to remove their own access from the resource if set to <code class="docutils literal notranslate"><span class="pre">true</span></code>. By default, this is set to <code class="docutils literal notranslate"><span class="pre">false</span></code> , preventing admins from locking themselves out.</p></li>
 </ul>
