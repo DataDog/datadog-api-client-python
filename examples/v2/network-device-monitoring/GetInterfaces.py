@@ -10,6 +10,7 @@ with ApiClient(configuration) as api_client:
     api_instance = NetworkDeviceMonitoringApi(api_client)
     response = api_instance.get_interfaces(
         device_id="default:1.2.3.4",
+        get_ip_addresses=True,
     )
 
     print(response)
