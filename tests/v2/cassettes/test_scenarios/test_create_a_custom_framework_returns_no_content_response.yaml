@@ -1,0 +1,34 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"handle":"new-terraform-framework","icon_url":"","name":"ponse1744226684","requirements":[{"controls":[{"name":"ponse1744226684","rules_id":["def-000-cea"]}],"name":"ponse1744226684"}],"version":"4"},"type":"custom_framework"}}'
+    headers:
+      accept:
+      - '*/*'
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/cloud_security_management/custom_frameworks
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/cloud_security_management/custom_frameworks/%7Bhandle%7D/%7Bversion%7D
+  response:
+    body:
+      string: '{"errors":[{"status":"500","title":"Internal Server Error"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 500
+      message: Internal Server Error
+version: 1

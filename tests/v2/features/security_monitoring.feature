@@ -172,6 +172,39 @@ Feature: Security Monitoring
     And the response "options.complianceRuleOptions.resourceType" is equal to "gcp_compute_disk"
 
   @team:DataDog/k9-cloud-security-platform
+  Scenario: Create a custom framework returns "Bad Request" response
+    Given operation "CreateCustomFramework" enabled
+    And new "CreateCustomFramework" request
+    And body with value {"data":{"type":"custom_framework","attributes":{"name":"name","handle":"","version":"10","icon_url":"test-url","requirements":[{"name":"requirement","controls":[{"name":"control","rules_id":["def-000-be9"]}]}]}}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/k9-cloud-security-platform
+  Scenario: Create a custom framework returns "Conflict" response
+    Given operation "CreateCustomFramework" enabled
+    And there is a valid "custom_framework" in the system
+    And new "CreateCustomFramework" request
+    And body with value {"data":{"type":"custom_framework","attributes":{"name":"name","handle":"create-framework-new","version":"10","icon_url":"test-url","requirements":[{"name":"requirement","controls":[{"name":"control","rules_id":["def-000-be9"]}]}]}}}
+    When the request is sent
+    Then the response status is 409 Conflict
+
+  @team:DataDog/k9-cloud-security-platform
+  Scenario: Create a custom framework returns "Not Found" response
+    Given operation "CreateCustomFramework" enabled
+    And new "CreateCustomFramework" request
+    And body with value {"data":{"type":"custom_framework","attributes":{"name":"name","handle":"create-framework-new","version":"10","icon_url":"test-url","requirements":[{"name":"requirement","controls":[{"name":"control","rules_id":["def-000-neha"]}]}]}}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/k9-cloud-security-platform
+  Scenario: Create a custom framework returns "OK" response
+    Given operation "CreateCustomFramework" enabled
+    And new "CreateCustomFramework" request
+    And body with value {"data":{"type":"custom_framework","attributes":{"name":"name","handle":"create-framework-new","version":"10","icon_url":"test-url","requirements":[{"name":"requirement","controls":[{"name":"control","rules_id":["def-000-be9"]}]}]}}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @skip @team:DataDog/k9-cloud-security-platform
   Scenario: Create a detection rule returns "Bad Request" response
     Given new "CreateSecurityMonitoringRule" request
     And body with value {"name":"{{ unique }}", "queries":[{"query":""}],"cases":[{"status":"info"}],"options":{},"message":"Test rule","tags":[],"isEnabled":true}
@@ -334,6 +367,25 @@ Feature: Security Monitoring
     And the response "data.attributes.rule_query" is equal to "type:log_detection source:cloudtrail"
     And the response "data.attributes.data_exclusion_query" is equal to "account_id:12345"
 
+  @team:DataDog/k9-cloud-security-platform
+  Scenario: Delete a custom framework returns "Not Found" response
+    Given operation "DeleteCustomFramework" enabled
+    And new "DeleteCustomFramework" request
+    And request contains "handle" parameter with value "fake-handle"
+    And request contains "version" parameter with value ""
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/k9-cloud-security-platform
+  Scenario: Delete a custom framework returns "OK" response
+    Given there is a valid "custom_framework" in the system
+    And operation "DeleteCustomFramework" enabled
+    And new "DeleteCustomFramework" request
+    And request contains "handle" parameter with value "create-framework-new"
+    And request contains "version" parameter with value "10"
+    When the request is sent
+    Then the response status is 200 OK
+
   @skip @team:DataDog/k9-cloud-security-platform
   Scenario: Delete a non existing rule returns "Not Found" response
     Given new "DeleteSecurityMonitoringRule" request
@@ -482,7 +534,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
 
-  @skip-validation @team:DataDog/k9-cloud-security-platform
+  @team:DataDog/k9-cloud-security-platform
   Scenario: Get a cloud configuration rule's details returns "OK" response
     Given there is a valid "cloud_configuration_rule" in the system
     And new "GetSecurityMonitoringRule" request
@@ -1005,6 +1057,23 @@ Feature: Security Monitoring
     Then the response status is 422 The server cannot process the request because it contains invalid data.
 
   @team:DataDog/k9-cloud-security-platform
+  Scenario: Retrieve a custom framework returns "Not Found" response
+    Given new "RetrieveCustomFramework" request
+    And request contains "handle" parameter with value "create-framework-new"
+    And request contains "version" parameter with value "10"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/k9-cloud-security-platform
+  Scenario: Retrieve a custom framework returns "OK" response
+    Given there is a valid "custom_framework" in the system
+    And new "RetrieveCustomFramework" request
+    And request contains "handle" parameter with value "create-framework-new"
+    And request contains "version" parameter with value "10"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @team:DataDog/k9-cloud-security-platform
   Scenario: Run a historical job returns "Bad Request" response
     Given operation "RunHistoricalJob" enabled
     And new "RunHistoricalJob" request
@@ -1084,6 +1153,26 @@ Feature: Security Monitoring
     Then the response status is 200 OK
     And the response "name" is equal to "{{ unique }}_cloud_updated"
     And the response "id" has the same value as "cloud_configuration_rule.id"
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Update a custom framework returns "Bad Request" response
+    Given operation "UpdateCustomFramework" enabled
+    And new "UpdateCustomFramework" request
+    And request contains "handle" parameter from "REPLACE.ME"
+    And request contains "version" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"handle": "", "name": "", "requirements": [{"controls": [{"name": "", "rules_id": [""]}], "name": ""}], "version": ""}, "type": "custom_framework"}}
+    When the request is sent
+    Then the response status is 404 Bad Request
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Update a custom framework returns "OK" response
+    Given operation "UpdateCustomFramework" enabled
+    And new "UpdateCustomFramework" request
+    And request contains "handle" parameter from "REPLACE.ME"
+    And request contains "version" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"handle": "", "name": "", "requirements": [{"controls": [{"name": "", "rules_id": [""]}], "name": ""}], "version": ""}, "type": "custom_framework"}}
+    When the request is sent
+    Then the response status is 200 OK
 
   @generated @skip @team:DataDog/k9-cloud-security-platform
   Scenario: Update a security filter returns "Bad Request" response
