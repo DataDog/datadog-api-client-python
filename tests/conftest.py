@@ -46,7 +46,6 @@ import re
 import time
 import warnings
 from datetime import datetime
-from dateutil.tz import UTC
 
 import pytest
 from dateutil.relativedelta import relativedelta
