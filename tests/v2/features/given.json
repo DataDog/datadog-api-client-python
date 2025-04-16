@@ -464,6 +464,18 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"name\": \"{{ unique }}\",\n      \"description\": \"{{ unique }}\",\n      \"resolve_page_on_policy_end\": true,\n      \"retries\": 2,\n      \"steps\": [\n        {\n          \"assignment\": \"default\",\n          \"escalate_after_seconds\": 3600,\n          \"targets\": [\n            {\n              \"id\": \"{{ dd_team.data.id }}\",\n              \"type\": \"teams\"\n            },\n            {\n              \"id\": \"{{ schedule.data.id }}\",\n              \"type\": \"schedules\"\n            },\n            {\n              \"id\": \"{{ user.data.id }}\",\n              \"type\": \"users\"\n            }\n          ]\n        },\n        {\n          \"assignment\": \"round-robin\",\n          \"escalate_after_seconds\": 3600,\n          \"targets\": [\n            {\n              \"id\": \"{{ dd_team.data.id }}\",\n              \"type\": \"teams\"\n            }\n          ]\n        }\n      ]\n    },\n    \"relationships\": {\n      \"teams\": {\n        \"data\": [\n          {\n            \"id\": \"{{ dd_team.data.id }}\",\n            \"type\": \"teams\"\n          }\n        ]\n      }\n    },\n    \"type\": \"policies\"\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"escalation_policy\" in the system",
+    "key": "escalation_policy",
+    "tag": "On-Call",
+    "operationId": "CreateOnCallEscalationPolicy"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"layers\": [\n        {\n          \"effective_date\": \"{{ timeISO('now - 10d') }}\",\n          \"end_date\": \"{{ timeISO('now + 10d') }}\",\n          \"interval\": {\n            \"days\": 1\n          },\n          \"members\": [\n            {\n              \"user\": {\n                \"id\": \"890f29d4-0b7a-11f0-aeb2-760fcae4f596\"\n              }\n            }\n          ],\n          \"name\": \"Layer 1\",\n          \"restrictions\": [\n            {\n              \"end_day\": \"friday\",\n              \"end_time\": \"17:00:00\",\n              \"start_day\": \"monday\",\n              \"start_time\": \"09:00:00\"\n            }\n          ],\n          \"rotation_start\": \"{{ timeISO('now - 5d') }}\"\n        }\n      ],\n      \"name\": \"{{ unique }}\",\n      \"tags\": [\n        \"tag1\",\n        \"tag2\"\n      ],\n      \"time_zone\": \"America/New_York\"\n    },\n    \"relationships\": {\n      \"teams\": {\n        \"data\": [\n          {\n            \"id\": \"65aea9d0-941c-4607-bf8a-14fc0dac2820\",\n            \"type\": \"teams\"\n          }\n        ]\n      }\n    },\n    \"type\": \"schedules\"\n  }\n}"
       }
     ],

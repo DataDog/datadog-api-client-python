@@ -1,0 +1,155 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"email":"Test-Update_on_call_escalation_policy_returns_OK_response-1744783257@datadoghq.com","title":"user
+      title"},"type":"users"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/users
+  response:
+    body:
+      string: '{"data":{"type":"users","id":"2aa838d3-1a88-11f0-b112-0270a5f0bec0","attributes":{"name":null,"handle":"test-update_on_call_escalation_policy_returns_ok_response-1744783257@datadoghq.com","created_at":"2025-04-16T06:00:58.202779+00:00","modified_at":"2025-04-16T06:00:58.202779+00:00","email":"test-update_on_call_escalation_policy_returns_ok_response-1744783257@datadoghq.com","icon":"https://secure.gravatar.com/avatar/620480c5d2c43951f1cf784b30cbf7d6?s=48&d=retro","title":"user
+        title","verified":false,"service_account":false,"disabled":false,"allowed_login_methods":[],"status":"Pending"},"relationships":{"roles":{"data":[]},"org":{"data":{"type":"orgs","id":"4dee724d-00cc-11ea-a77b-570c9d03c6c5"}}}}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"handle":"test-handle-b559056f09fb2371","name":"test-name-b559056f09fb2371"},"type":"team"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/team
+  response:
+    body:
+      string: '{"data":{"type":"team","id":"8b056bb7-5f29-4f56-b0fa-869befc0cfef","attributes":{"name":"test-name-b559056f09fb2371","handle":"test-handle-b559056f09fb2371","summary":null,"description":null,"avatar":null,"banner":14,"visible_modules":[],"hidden_modules":[],"created_at":"2025-04-16T06:00:58.864953+00:00","modified_at":"2025-04-16T06:00:58.864959+00:00","user_count":0,"link_count":0},"relationships":{"team_links":{"links":{"related":"/api/v2/team/8b056bb7-5f29-4f56-b0fa-869befc0cfef/links"}},"user_team_permissions":{"links":{"related":"/api/v2/team/8b056bb7-5f29-4f56-b0fa-869befc0cfef/permission-settings"}}}}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"layers":[{"effective_date":"2025-04-06T06:00:57.623Z","end_date":"2025-04-26T06:00:57.623Z","interval":{"days":1},"members":[{"user":{"id":"890f29d4-0b7a-11f0-aeb2-760fcae4f596"}}],"name":"Layer
+      1","restrictions":[{"end_day":"friday","end_time":"17:00:00","start_day":"monday","start_time":"09:00:00"}],"rotation_start":"2025-04-11T06:00:57.623Z"}],"name":"Test-Update_on_call_escalation_policy_returns_OK_response-1744783257","tags":["tag1","tag2"],"time_zone":"America/New_York"},"relationships":{"teams":{"data":[{"id":"65aea9d0-941c-4607-bf8a-14fc0dac2820","type":"teams"}]}},"type":"schedules"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/on-call/schedules
+  response:
+    body:
+      string: '{"data":{"id":"445b7853-4e45-4251-b5cd-029792035253","type":"schedules","attributes":{"name":"Test-Update_on_call_escalation_policy_returns_OK_response-1744783257","tags":["tag1","tag2"],"time_zone":"America/New_York"},"relationships":{"layers":{"data":[{"id":"c1c3ed8b-27c6-48df-b789-ce452e683a18","type":"layers"}]},"teams":{"data":[{"id":"65aea9d0-941c-4607-bf8a-14fc0dac2820","type":"teams"}]}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"description":"Test-Update_on_call_escalation_policy_returns_OK_response-1744783257","name":"Test-Update_on_call_escalation_policy_returns_OK_response-1744783257","resolve_page_on_policy_end":true,"retries":2,"steps":[{"assignment":"default","escalate_after_seconds":3600,"targets":[{"id":"8b056bb7-5f29-4f56-b0fa-869befc0cfef","type":"teams"},{"id":"445b7853-4e45-4251-b5cd-029792035253","type":"schedules"},{"id":"2aa838d3-1a88-11f0-b112-0270a5f0bec0","type":"users"}]},{"assignment":"round-robin","escalate_after_seconds":3600,"targets":[{"id":"8b056bb7-5f29-4f56-b0fa-869befc0cfef","type":"teams"}]}]},"relationships":{"teams":{"data":[{"id":"8b056bb7-5f29-4f56-b0fa-869befc0cfef","type":"teams"}]}},"type":"policies"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/on-call/escalation-policies
+  response:
+    body:
+      string: '{"data":{"id":"d0b56643-23fc-43df-a7d5-35ec91d1fd44","type":"policies","attributes":{"description":"Test-Update_on_call_escalation_policy_returns_OK_response-1744783257","name":"Test-Update_on_call_escalation_policy_returns_OK_response-1744783257","resolve_page_on_policy_end":true,"retries":2},"relationships":{"steps":{"data":[{"id":"4b2938d9-582f-4ddc-b867-c8ce957db730","type":"steps"},{"id":"4b3952d9-d9c0-4a48-a76d-8805b6a5fb85","type":"steps"}]},"teams":{"data":[]}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"description":"Test-Update_on_call_escalation_policy_returns_OK_response-1744783257","name":"Test-Update_on_call_escalation_policy_returns_OK_response-1744783257-updated","resolve_page_on_policy_end":false,"retries":0,"steps":[{"assignment":"default","escalate_after_seconds":3600,"id":"4b2938d9-582f-4ddc-b867-c8ce957db730","targets":[{"id":"2aa838d3-1a88-11f0-b112-0270a5f0bec0","type":"users"}]}]},"id":"d0b56643-23fc-43df-a7d5-35ec91d1fd44","relationships":{"teams":{"data":[{"id":"8b056bb7-5f29-4f56-b0fa-869befc0cfef","type":"teams"}]}},"type":"policies"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PUT
+    uri: https://api.datadoghq.com/api/v2/on-call/escalation-policies/d0b56643-23fc-43df-a7d5-35ec91d1fd44
+  response:
+    body:
+      string: '{"data":{"id":"d0b56643-23fc-43df-a7d5-35ec91d1fd44","type":"policies","attributes":{"description":"Test-Update_on_call_escalation_policy_returns_OK_response-1744783257","name":"Test-Update_on_call_escalation_policy_returns_OK_response-1744783257-updated","resolve_page_on_policy_end":false,"retries":0},"relationships":{"steps":{"data":[{"id":"4b2938d9-582f-4ddc-b867-c8ce957db730","type":"steps"}]},"teams":{"data":[]}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/on-call/escalation-policies/d0b56643-23fc-43df-a7d5-35ec91d1fd44
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/on-call/schedules/445b7853-4e45-4251-b5cd-029792035253
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/team/8b056bb7-5f29-4f56-b0fa-869befc0cfef
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/users/2aa838d3-1a88-11f0-b112-0270a5f0bec0
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1

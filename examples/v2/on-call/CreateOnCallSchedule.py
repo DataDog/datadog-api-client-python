@@ -48,8 +48,8 @@ from datadog_api_client.v2.model.schedule_create_request_data_type import Schedu
 # there is a valid "user" in the system
 USER_DATA_ID = environ["USER_DATA_ID"]
 
-# there is a valid "team" in the system
-TEAM_DATA_ID = environ["TEAM_DATA_ID"]
+# there is a valid "dd_team" in the system
+DD_TEAM_DATA_ID = environ["DD_TEAM_DATA_ID"]
 
 body = ScheduleCreateRequest(
     data=ScheduleCreateRequestData(
@@ -91,7 +91,7 @@ body = ScheduleCreateRequest(
             teams=ScheduleCreateRequestDataRelationshipsTeams(
                 data=[
                     ScheduleCreateRequestDataRelationshipsTeamsDataItems(
-                        id=TEAM_DATA_ID,
+                        id=DD_TEAM_DATA_ID,
                         type=ScheduleCreateRequestDataRelationshipsTeamsDataItemsType.TEAMS,
                     ),
                 ],

@@ -92,7 +92,7 @@ class ScheduleUpdateRequestDataAttributesLayersItems(ModelNormal):
         :param members: The members assigned to this layer.
         :type members: [ScheduleUpdateRequestDataAttributesLayersItemsMembersItems], optional
 
-        :param name: The name for this layer (for example, “Secondary Coverage”).
+        :param name: The name for this layer (for example, "Secondary Coverage").
         :type name: str, optional
 
         :param restrictions: Any time restrictions that define when this layer is active.

@@ -1787,6 +1787,37 @@
       "type": "safe"
     }
   },
+  "CreateOnCallEscalationPolicy": {
+    "tag": "On-Call",
+    "undo": {
+      "operationId": "DeleteOnCallEscalationPolicy",
+      "parameters": [
+        {
+          "name": "policy_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteOnCallEscalationPolicy": {
+    "tag": "On-Call",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetOnCallEscalationPolicy": {
+    "tag": "On-Call",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateOnCallEscalationPolicy": {
+    "tag": "On-Call",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "CreateOnCallSchedule": {
     "tag": "On-Call",
     "undo": {
