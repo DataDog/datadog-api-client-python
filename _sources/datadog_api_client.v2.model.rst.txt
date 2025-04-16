@@ -9209,6 +9209,118 @@ datadog\_api\_client.v2.model.monitor\_downtime\_match\_response\_data module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.monitor\_notification\_rule\_attributes module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_notification_rule_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.monitor\_notification\_rule\_create\_request module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_notification_rule_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.monitor\_notification\_rule\_create\_request\_data module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_notification_rule_create_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.monitor\_notification\_rule\_data module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_notification_rule_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.monitor\_notification\_rule\_filter module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_notification_rule_filter
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.monitor\_notification\_rule\_filter\_tags module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_notification_rule_filter_tags
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.monitor\_notification\_rule\_list\_response module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_notification_rule_list_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.monitor\_notification\_rule\_relationships module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_notification_rule_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.monitor\_notification\_rule\_relationships\_created\_by module
+--------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_notification_rule_relationships_created_by
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.monitor\_notification\_rule\_relationships\_created\_by\_data module
+--------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_notification_rule_relationships_created_by_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.monitor\_notification\_rule\_resource\_type module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_notification_rule_resource_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.monitor\_notification\_rule\_response module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_notification_rule_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.monitor\_notification\_rule\_response\_attributes module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_notification_rule_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.monitor\_notification\_rule\_response\_included\_item module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_notification_rule_response_included_item
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.monitor\_notification\_rule\_update\_request module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_notification_rule_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.monitor\_notification\_rule\_update\_request\_data module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_notification_rule_update_request_data
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.monitor\_trigger module
 -----------------------------------------------------
 
