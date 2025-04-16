@@ -1,0 +1,22 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"filter":{"tags":["test:test-create_a_monitor_notification_rule_returns_bad_request_response-1744280983","host:abc"]},"name":"test
+      rule","recipients":["@slack-test-channel","@jira-test"]},"type":"monitor-notification-rule"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/monitor/notification_rule
+  response:
+    body:
+      string: '{"errors":["Invalid recipients: Recipient handle should not start with
+        ''@''"]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 400
+      message: Bad Request
+version: 1
