@@ -46,8 +46,8 @@ class ScheduleCreateRequestData(ModelNormal):
 
     def __init__(
         self_,
-        attributes: ScheduleCreateRequestDataAttributes,
         type: ScheduleCreateRequestDataType,
+        attributes: Union[ScheduleCreateRequestDataAttributes, UnsetType] = unset,
         relationships: Union[ScheduleCreateRequestDataRelationships, UnsetType] = unset,
         **kwargs,
     ):
@@ -55,7 +55,7 @@ class ScheduleCreateRequestData(ModelNormal):
         The core data wrapper for creating a schedule, encompassing attributes, relationships, and the resource type.
 
         :param attributes: Describes the main attributes for creating a new schedule, including name, layers, time zone, and tags.
-        :type attributes: ScheduleCreateRequestDataAttributes
+        :type attributes: ScheduleCreateRequestDataAttributes, optional
 
         :param relationships: Gathers relationship objects for the schedule creation request, including the teams to associate.
         :type relationships: ScheduleCreateRequestDataRelationships, optional
@@ -63,9 +63,10 @@ class ScheduleCreateRequestData(ModelNormal):
         :param type: Schedules resource type.
         :type type: ScheduleCreateRequestDataType
         """
+        if attributes is not unset:
+            kwargs["attributes"] = attributes
         if relationships is not unset:
             kwargs["relationships"] = relationships
         super().__init__(kwargs)
 
-        self_.attributes = attributes
         self_.type = type

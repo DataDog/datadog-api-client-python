@@ -989,6 +989,98 @@ from datadog_api_client.v2.model.entity_v3_system_datadog import EntityV3SystemD
 from datadog_api_client.v2.model.entity_v3_system_kind import EntityV3SystemKind
 from datadog_api_client.v2.model.entity_v3_system_spec import EntityV3SystemSpec
 from datadog_api_client.v2.model.error_handler import ErrorHandler
+from datadog_api_client.v2.model.escalation_policy import EscalationPolicy
+from datadog_api_client.v2.model.escalation_policy_create_request import EscalationPolicyCreateRequest
+from datadog_api_client.v2.model.escalation_policy_create_request_data import EscalationPolicyCreateRequestData
+from datadog_api_client.v2.model.escalation_policy_create_request_data_attributes import (
+    EscalationPolicyCreateRequestDataAttributes,
+)
+from datadog_api_client.v2.model.escalation_policy_create_request_data_attributes_steps_items import (
+    EscalationPolicyCreateRequestDataAttributesStepsItems,
+)
+from datadog_api_client.v2.model.escalation_policy_create_request_data_attributes_steps_items_assignment import (
+    EscalationPolicyCreateRequestDataAttributesStepsItemsAssignment,
+)
+from datadog_api_client.v2.model.escalation_policy_create_request_data_attributes_steps_items_targets_items import (
+    EscalationPolicyCreateRequestDataAttributesStepsItemsTargetsItems,
+)
+from datadog_api_client.v2.model.escalation_policy_create_request_data_attributes_steps_items_targets_items_type import (
+    EscalationPolicyCreateRequestDataAttributesStepsItemsTargetsItemsType,
+)
+from datadog_api_client.v2.model.escalation_policy_create_request_data_relationships import (
+    EscalationPolicyCreateRequestDataRelationships,
+)
+from datadog_api_client.v2.model.escalation_policy_create_request_data_relationships_teams import (
+    EscalationPolicyCreateRequestDataRelationshipsTeams,
+)
+from datadog_api_client.v2.model.escalation_policy_create_request_data_relationships_teams_data_items import (
+    EscalationPolicyCreateRequestDataRelationshipsTeamsDataItems,
+)
+from datadog_api_client.v2.model.escalation_policy_create_request_data_relationships_teams_data_items_type import (
+    EscalationPolicyCreateRequestDataRelationshipsTeamsDataItemsType,
+)
+from datadog_api_client.v2.model.escalation_policy_create_request_data_type import EscalationPolicyCreateRequestDataType
+from datadog_api_client.v2.model.escalation_policy_data import EscalationPolicyData
+from datadog_api_client.v2.model.escalation_policy_data_attributes import EscalationPolicyDataAttributes
+from datadog_api_client.v2.model.escalation_policy_data_relationships import EscalationPolicyDataRelationships
+from datadog_api_client.v2.model.escalation_policy_data_relationships_steps import (
+    EscalationPolicyDataRelationshipsSteps,
+)
+from datadog_api_client.v2.model.escalation_policy_data_relationships_steps_data_items import (
+    EscalationPolicyDataRelationshipsStepsDataItems,
+)
+from datadog_api_client.v2.model.escalation_policy_data_relationships_steps_data_items_type import (
+    EscalationPolicyDataRelationshipsStepsDataItemsType,
+)
+from datadog_api_client.v2.model.escalation_policy_data_relationships_teams import (
+    EscalationPolicyDataRelationshipsTeams,
+)
+from datadog_api_client.v2.model.escalation_policy_data_relationships_teams_data_items import (
+    EscalationPolicyDataRelationshipsTeamsDataItems,
+)
+from datadog_api_client.v2.model.escalation_policy_data_relationships_teams_data_items_type import (
+    EscalationPolicyDataRelationshipsTeamsDataItemsType,
+)
+from datadog_api_client.v2.model.escalation_policy_data_type import EscalationPolicyDataType
+from datadog_api_client.v2.model.escalation_policy_included import EscalationPolicyIncluded
+from datadog_api_client.v2.model.escalation_policy_step import EscalationPolicyStep
+from datadog_api_client.v2.model.escalation_policy_step_attributes import EscalationPolicyStepAttributes
+from datadog_api_client.v2.model.escalation_policy_step_attributes_assignment import (
+    EscalationPolicyStepAttributesAssignment,
+)
+from datadog_api_client.v2.model.escalation_policy_step_relationships import EscalationPolicyStepRelationships
+from datadog_api_client.v2.model.escalation_policy_step_type import EscalationPolicyStepType
+from datadog_api_client.v2.model.escalation_policy_update_request import EscalationPolicyUpdateRequest
+from datadog_api_client.v2.model.escalation_policy_update_request_data import EscalationPolicyUpdateRequestData
+from datadog_api_client.v2.model.escalation_policy_update_request_data_attributes import (
+    EscalationPolicyUpdateRequestDataAttributes,
+)
+from datadog_api_client.v2.model.escalation_policy_update_request_data_attributes_steps_items import (
+    EscalationPolicyUpdateRequestDataAttributesStepsItems,
+)
+from datadog_api_client.v2.model.escalation_policy_update_request_data_attributes_steps_items_assignment import (
+    EscalationPolicyUpdateRequestDataAttributesStepsItemsAssignment,
+)
+from datadog_api_client.v2.model.escalation_policy_update_request_data_attributes_steps_items_targets_items import (
+    EscalationPolicyUpdateRequestDataAttributesStepsItemsTargetsItems,
+)
+from datadog_api_client.v2.model.escalation_policy_update_request_data_attributes_steps_items_targets_items_type import (
+    EscalationPolicyUpdateRequestDataAttributesStepsItemsTargetsItemsType,
+)
+from datadog_api_client.v2.model.escalation_policy_update_request_data_relationships import (
+    EscalationPolicyUpdateRequestDataRelationships,
+)
+from datadog_api_client.v2.model.escalation_policy_update_request_data_relationships_teams import (
+    EscalationPolicyUpdateRequestDataRelationshipsTeams,
+)
+from datadog_api_client.v2.model.escalation_policy_update_request_data_relationships_teams_data_items import (
+    EscalationPolicyUpdateRequestDataRelationshipsTeamsDataItems,
+)
+from datadog_api_client.v2.model.escalation_policy_update_request_data_relationships_teams_data_items_type import (
+    EscalationPolicyUpdateRequestDataRelationshipsTeamsDataItemsType,
+)
+from datadog_api_client.v2.model.escalation_policy_update_request_data_type import EscalationPolicyUpdateRequestDataType
+from datadog_api_client.v2.model.escalation_target import EscalationTarget
 from datadog_api_client.v2.model.event import Event
 from datadog_api_client.v2.model.event_attributes import EventAttributes
 from datadog_api_client.v2.model.event_category import EventCategory
@@ -2220,6 +2312,8 @@ from datadog_api_client.v2.model.schedule_member_relationships_user_data_type im
     ScheduleMemberRelationshipsUserDataType,
 )
 from datadog_api_client.v2.model.schedule_member_type import ScheduleMemberType
+from datadog_api_client.v2.model.schedule_target import ScheduleTarget
+from datadog_api_client.v2.model.schedule_target_type import ScheduleTargetType
 from datadog_api_client.v2.model.schedule_trigger import ScheduleTrigger
 from datadog_api_client.v2.model.schedule_trigger_wrapper import ScheduleTriggerWrapper
 from datadog_api_client.v2.model.schedule_update_request import ScheduleUpdateRequest
@@ -2756,6 +2850,8 @@ from datadog_api_client.v2.model.team_reference_type import TeamReferenceType
 from datadog_api_client.v2.model.team_relationships import TeamRelationships
 from datadog_api_client.v2.model.team_relationships_links import TeamRelationshipsLinks
 from datadog_api_client.v2.model.team_response import TeamResponse
+from datadog_api_client.v2.model.team_target import TeamTarget
+from datadog_api_client.v2.model.team_target_type import TeamTargetType
 from datadog_api_client.v2.model.team_type import TeamType
 from datadog_api_client.v2.model.team_update import TeamUpdate
 from datadog_api_client.v2.model.team_update_attributes import TeamUpdateAttributes
@@ -2839,6 +2935,8 @@ from datadog_api_client.v2.model.user_resource_type import UserResourceType
 from datadog_api_client.v2.model.user_response import UserResponse
 from datadog_api_client.v2.model.user_response_included_item import UserResponseIncludedItem
 from datadog_api_client.v2.model.user_response_relationships import UserResponseRelationships
+from datadog_api_client.v2.model.user_target import UserTarget
+from datadog_api_client.v2.model.user_target_type import UserTargetType
 from datadog_api_client.v2.model.user_team import UserTeam
 from datadog_api_client.v2.model.user_team_attributes import UserTeamAttributes
 from datadog_api_client.v2.model.user_team_create import UserTeamCreate
@@ -3656,6 +3754,48 @@ __all__ = [
     "EntityV3SystemKind",
     "EntityV3SystemSpec",
     "ErrorHandler",
+    "EscalationPolicy",
+    "EscalationPolicyCreateRequest",
+    "EscalationPolicyCreateRequestData",
+    "EscalationPolicyCreateRequestDataAttributes",
+    "EscalationPolicyCreateRequestDataAttributesStepsItems",
+    "EscalationPolicyCreateRequestDataAttributesStepsItemsAssignment",
+    "EscalationPolicyCreateRequestDataAttributesStepsItemsTargetsItems",
+    "EscalationPolicyCreateRequestDataAttributesStepsItemsTargetsItemsType",
+    "EscalationPolicyCreateRequestDataRelationships",
+    "EscalationPolicyCreateRequestDataRelationshipsTeams",
+    "EscalationPolicyCreateRequestDataRelationshipsTeamsDataItems",
+    "EscalationPolicyCreateRequestDataRelationshipsTeamsDataItemsType",
+    "EscalationPolicyCreateRequestDataType",
+    "EscalationPolicyData",
+    "EscalationPolicyDataAttributes",
+    "EscalationPolicyDataRelationships",
+    "EscalationPolicyDataRelationshipsSteps",
+    "EscalationPolicyDataRelationshipsStepsDataItems",
+    "EscalationPolicyDataRelationshipsStepsDataItemsType",
+    "EscalationPolicyDataRelationshipsTeams",
+    "EscalationPolicyDataRelationshipsTeamsDataItems",
+    "EscalationPolicyDataRelationshipsTeamsDataItemsType",
+    "EscalationPolicyDataType",
+    "EscalationPolicyIncluded",
+    "EscalationPolicyStep",
+    "EscalationPolicyStepAttributes",
+    "EscalationPolicyStepAttributesAssignment",
+    "EscalationPolicyStepRelationships",
+    "EscalationPolicyStepType",
+    "EscalationPolicyUpdateRequest",
+    "EscalationPolicyUpdateRequestData",
+    "EscalationPolicyUpdateRequestDataAttributes",
+    "EscalationPolicyUpdateRequestDataAttributesStepsItems",
+    "EscalationPolicyUpdateRequestDataAttributesStepsItemsAssignment",
+    "EscalationPolicyUpdateRequestDataAttributesStepsItemsTargetsItems",
+    "EscalationPolicyUpdateRequestDataAttributesStepsItemsTargetsItemsType",
+    "EscalationPolicyUpdateRequestDataRelationships",
+    "EscalationPolicyUpdateRequestDataRelationshipsTeams",
+    "EscalationPolicyUpdateRequestDataRelationshipsTeamsDataItems",
+    "EscalationPolicyUpdateRequestDataRelationshipsTeamsDataItemsType",
+    "EscalationPolicyUpdateRequestDataType",
+    "EscalationTarget",
     "Event",
     "EventAttributes",
     "EventCategory",
@@ -4663,6 +4803,8 @@ __all__ = [
     "ScheduleMemberRelationshipsUserData",
     "ScheduleMemberRelationshipsUserDataType",
     "ScheduleMemberType",
+    "ScheduleTarget",
+    "ScheduleTargetType",
     "ScheduleTrigger",
     "ScheduleTriggerWrapper",
     "ScheduleUpdateRequest",
@@ -5033,6 +5175,8 @@ __all__ = [
     "TeamRelationships",
     "TeamRelationshipsLinks",
     "TeamResponse",
+    "TeamTarget",
+    "TeamTargetType",
     "TeamType",
     "TeamUpdate",
     "TeamUpdateAttributes",
@@ -5112,6 +5256,8 @@ __all__ = [
     "UserResponse",
     "UserResponseIncludedItem",
     "UserResponseRelationships",
+    "UserTarget",
+    "UserTargetType",
     "UserTeam",
     "UserTeamAttributes",
     "UserTeamCreate",
