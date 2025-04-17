@@ -9853,6 +9853,13 @@ datadog\_api\_client.v2.model.observability\_pipeline\_datadog\_logs\_destinatio
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.observability\_pipeline\_decoding module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_decoding
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.observability\_pipeline\_field\_value module
 --------------------------------------------------------------------------
 
@@ -9871,6 +9878,41 @@ datadog\_api\_client.v2.model.observability\_pipeline\_filter\_processor\_type m
 -------------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.observability_pipeline_filter_processor_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_fluent\_source module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_fluent_source
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_fluent\_source\_type module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_fluent_source_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_http\_server\_source module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_http_server_source
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_http\_server\_source\_auth\_strategy module
+--------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_http_server_source_auth_strategy
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_http\_server\_source\_type module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_http_server_source_type
    :members:
    :show-inheritance:
 
@@ -9899,6 +9941,41 @@ datadog\_api\_client.v2.model.observability\_pipeline\_kafka\_source\_type modul
 ---------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.observability_pipeline_kafka_source_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_parse\_grok\_processor module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_parse_grok_processor
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_parse\_grok\_processor\_rule module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_parse_grok_processor_rule
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_parse\_grok\_processor\_rule\_match\_rule module
+-------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_parse_grok_processor_rule_match_rule
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_parse\_grok\_processor\_rule\_support\_rule module
+---------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_parse_grok_processor_rule_support_rule
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_parse\_grok\_processor\_type module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_parse_grok_processor_type
    :members:
    :show-inheritance:
 
@@ -9990,6 +10067,20 @@ datadog\_api\_client.v2.model.observability\_pipeline\_rename\_fields\_processor
 ---------------------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.observability_pipeline_rename_fields_processor_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_sample\_processor module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_sample_processor
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_sample\_processor\_type module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_sample_processor_type
    :members:
    :show-inheritance:
 
