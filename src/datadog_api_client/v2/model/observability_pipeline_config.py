@@ -8,6 +8,8 @@ from typing import List, Union, TYPE_CHECKING
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -38,9 +40,17 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_rename_fields_processor import (
         ObservabilityPipelineRenameFieldsProcessor,
     )
+    from datadog_api_client.v2.model.observability_pipeline_sample_processor import ObservabilityPipelineSampleProcessor
+    from datadog_api_client.v2.model.observability_pipeline_parse_grok_processor import (
+        ObservabilityPipelineParseGrokProcessor,
+    )
     from datadog_api_client.v2.model.observability_pipeline_kafka_source import ObservabilityPipelineKafkaSource
     from datadog_api_client.v2.model.observability_pipeline_datadog_agent_source import (
         ObservabilityPipelineDatadogAgentSource,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_fluent_source import ObservabilityPipelineFluentSource
+    from datadog_api_client.v2.model.observability_pipeline_http_server_source import (
+        ObservabilityPipelineHttpServerSource,
     )
 
 
@@ -74,24 +84,31 @@ class ObservabilityPipelineConfig(ModelNormal):
         destinations: List[
             Union[ObservabilityPipelineConfigDestinationItem, ObservabilityPipelineDatadogLogsDestination]
         ],
-        processors: List[
-            Union[
-                ObservabilityPipelineConfigProcessorItem,
-                ObservabilityPipelineFilterProcessor,
-                ObservabilityPipelineParseJSONProcessor,
-                ObservabilityPipelineQuotaProcessor,
-                ObservabilityPipelineAddFieldsProcessor,
-                ObservabilityPipelineRemoveFieldsProcessor,
-                ObservabilityPipelineRenameFieldsProcessor,
-            ]
-        ],
         sources: List[
             Union[
                 ObservabilityPipelineConfigSourceItem,
                 ObservabilityPipelineKafkaSource,
                 ObservabilityPipelineDatadogAgentSource,
+                ObservabilityPipelineFluentSource,
+                ObservabilityPipelineHttpServerSource,
             ]
         ],
+        processors: Union[
+            List[
+                Union[
+                    ObservabilityPipelineConfigProcessorItem,
+                    ObservabilityPipelineFilterProcessor,
+                    ObservabilityPipelineParseJSONProcessor,
+                    ObservabilityPipelineQuotaProcessor,
+                    ObservabilityPipelineAddFieldsProcessor,
+                    ObservabilityPipelineRemoveFieldsProcessor,
+                    ObservabilityPipelineRenameFieldsProcessor,
+                    ObservabilityPipelineSampleProcessor,
+                    ObservabilityPipelineParseGrokProcessor,
+                ]
+            ],
+            UnsetType,
+        ] = unset,
         **kwargs,
     ):
         """
@@ -101,13 +118,14 @@ class ObservabilityPipelineConfig(ModelNormal):
         :type destinations: [ObservabilityPipelineConfigDestinationItem]
 
         :param processors: A list of processors that transform or enrich log data.
-        :type processors: [ObservabilityPipelineConfigProcessorItem]
+        :type processors: [ObservabilityPipelineConfigProcessorItem], optional
 
         :param sources: A list of configured data sources for the pipeline.
         :type sources: [ObservabilityPipelineConfigSourceItem]
         """
+        if processors is not unset:
+            kwargs["processors"] = processors
         super().__init__(kwargs)
 
         self_.destinations = destinations
-        self_.processors = processors
         self_.sources = sources
