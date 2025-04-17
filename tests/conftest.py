@@ -227,8 +227,8 @@ def context(vcr, unique, freezed_time):
         "unique_lower_alnum": PATTERN_ALPHANUM.sub("", unique).lower(),
         "unique_upper_alnum": PATTERN_ALPHANUM.sub("", unique).upper(),
         "unique_hash": unique_hash,
-        "timestamp": relative_time(freezed_time, False, False),
-        "timeISO": relative_time(freezed_time, True, is_iso_with_timezone_indicator),
+        "timestamp": relative_time(freezed_time, False),
+        "timeISO": relative_time(freezed_time, True),
         "uuid": generate_uuid(freezed_time),
     }
 
