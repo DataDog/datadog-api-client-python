@@ -206,7 +206,7 @@ Feature: Dashboards
     And the response "widgets[0].definition.requests[0].sort.order_by[0].type" is equal to "group"
     And the response "widgets[0].definition.requests[0].sort.order_by[0].name" is equal to "service"
 
-  @skip-typescript @team:DataDog/dashboards-backend
+  @skip-terraform-config @skip-typescript @team:DataDog/dashboards-backend
   Scenario: Create a new dashboard with a toplist widget with stacked type and no legend specified
     Given new "CreateDashboard" request
     And body with value {"title":"{{ unique }}","description":"","widgets":[{"layout":{"x":0,"y":0,"width":47,"height":15},"definition":{"title":"","title_size":"16","title_align":"left","time":{},"style":{"display": {"type": "stacked"},"scaling": "relative","palette": "dog_classic"},"type":"toplist","requests":[{"queries":[{"data_source":"metrics","name":"query1","query":"avg:system.cpu.user{*} by {service}","aggregator":"avg"}],"formulas":[{"formula":"query1"}],"sort":{"count":10,"order_by":[{"type":"group","name":"service","order":"asc"}]},"response_format":"scalar"}]}}],"template_variables":[],"layout_type":"free","notify_list":[]}

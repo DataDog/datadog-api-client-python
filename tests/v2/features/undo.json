@@ -1671,6 +1671,43 @@
       "type": "safe"
     }
   },
+  "GetMonitorNotificationRules": {
+    "tag": "Monitors",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateMonitorNotificationRule": {
+    "tag": "Monitors",
+    "undo": {
+      "operationId": "DeleteMonitorNotificationRule",
+      "parameters": [
+        {
+          "name": "rule_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteMonitorNotificationRule": {
+    "tag": "Monitors",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetMonitorNotificationRule": {
+    "tag": "Monitors",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateMonitorNotificationRule": {
+    "tag": "Monitors",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListMonitorConfigPolicies": {
     "tag": "Monitors",
     "undo": {
@@ -1748,6 +1785,37 @@
     "tag": "Cloud Network Monitoring",
     "undo": {
       "type": "safe"
+    }
+  },
+  "CreateOnCallEscalationPolicy": {
+    "tag": "On-Call",
+    "undo": {
+      "operationId": "DeleteOnCallEscalationPolicy",
+      "parameters": [
+        {
+          "name": "policy_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteOnCallEscalationPolicy": {
+    "tag": "On-Call",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetOnCallEscalationPolicy": {
+    "tag": "On-Call",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateOnCallEscalationPolicy": {
+    "tag": "On-Call",
+    "undo": {
+      "type": "idempotent"
     }
   },
   "CreateOnCallSchedule": {

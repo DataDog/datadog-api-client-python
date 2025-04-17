@@ -11,6 +11,9 @@ from datadog_api_client.model_utils import (
     UnsetType,
     unset,
 )
+from datadog_api_client.v2.model.escalation_policy import EscalationPolicy
+from datadog_api_client.v2.model.escalation_policy_create_request import EscalationPolicyCreateRequest
+from datadog_api_client.v2.model.escalation_policy_update_request import EscalationPolicyUpdateRequest
 from datadog_api_client.v2.model.schedule import Schedule
 from datadog_api_client.v2.model.schedule_create_request import ScheduleCreateRequest
 from datadog_api_client.v2.model.schedule_update_request import ScheduleUpdateRequest
@@ -26,6 +29,31 @@ class OnCallApi:
         if api_client is None:
             api_client = ApiClient(Configuration())
         self.api_client = api_client
+
+        self._create_on_call_escalation_policy_endpoint = _Endpoint(
+            settings={
+                "response_type": (EscalationPolicy,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/on-call/escalation-policies",
+                "operation_id": "create_on_call_escalation_policy",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "include": {
+                    "openapi_types": (str,),
+                    "attribute": "include",
+                    "location": "query",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (EscalationPolicyCreateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
 
         self._create_on_call_schedule_endpoint = _Endpoint(
             settings={
@@ -52,6 +80,29 @@ class OnCallApi:
             api_client=api_client,
         )
 
+        self._delete_on_call_escalation_policy_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/on-call/escalation-policies/{policy_id}",
+                "operation_id": "delete_on_call_escalation_policy",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "policy_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "policy_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
         self._delete_on_call_schedule_endpoint = _Endpoint(
             settings={
                 "response_type": None,
@@ -71,6 +122,34 @@ class OnCallApi:
             },
             headers_map={
                 "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_on_call_escalation_policy_endpoint = _Endpoint(
+            settings={
+                "response_type": (EscalationPolicy,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/on-call/escalation-policies/{policy_id}",
+                "operation_id": "get_on_call_escalation_policy",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "policy_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "policy_id",
+                    "location": "path",
+                },
+                "include": {
+                    "openapi_types": (str,),
+                    "attribute": "include",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
             },
             api_client=api_client,
         )
@@ -100,6 +179,37 @@ class OnCallApi:
             headers_map={
                 "accept": ["application/json"],
             },
+            api_client=api_client,
+        )
+
+        self._update_on_call_escalation_policy_endpoint = _Endpoint(
+            settings={
+                "response_type": (EscalationPolicy,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/on-call/escalation-policies/{policy_id}",
+                "operation_id": "update_on_call_escalation_policy",
+                "http_method": "PUT",
+                "version": "v2",
+            },
+            params_map={
+                "policy_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "policy_id",
+                    "location": "path",
+                },
+                "include": {
+                    "openapi_types": (str,),
+                    "attribute": "include",
+                    "location": "query",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (EscalationPolicyUpdateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
         )
 
@@ -134,6 +244,29 @@ class OnCallApi:
             api_client=api_client,
         )
 
+    def create_on_call_escalation_policy(
+        self,
+        body: EscalationPolicyCreateRequest,
+        *,
+        include: Union[str, UnsetType] = unset,
+    ) -> EscalationPolicy:
+        """Create on call escalation policy.
+
+        Create a new on-call escalation policy
+
+        :type body: EscalationPolicyCreateRequest
+        :param include: Comma-separated list of included relationships to be returned. Allowed values: ``teams`` , ``steps`` , ``steps.targets``.
+        :type include: str, optional
+        :rtype: EscalationPolicy
+        """
+        kwargs: Dict[str, Any] = {}
+        if include is not unset:
+            kwargs["include"] = include
+
+        kwargs["body"] = body
+
+        return self._create_on_call_escalation_policy_endpoint.call_with_http_info(**kwargs)
+
     def create_on_call_schedule(
         self,
         body: ScheduleCreateRequest,
@@ -157,6 +290,23 @@ class OnCallApi:
 
         return self._create_on_call_schedule_endpoint.call_with_http_info(**kwargs)
 
+    def delete_on_call_escalation_policy(
+        self,
+        policy_id: str,
+    ) -> None:
+        """Delete on call escalation policy.
+
+        Delete an on-call escalation policy
+
+        :param policy_id: The ID of the escalation policy
+        :type policy_id: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["policy_id"] = policy_id
+
+        return self._delete_on_call_escalation_policy_endpoint.call_with_http_info(**kwargs)
+
     def delete_on_call_schedule(
         self,
         schedule_id: str,
@@ -173,6 +323,30 @@ class OnCallApi:
         kwargs["schedule_id"] = schedule_id
 
         return self._delete_on_call_schedule_endpoint.call_with_http_info(**kwargs)
+
+    def get_on_call_escalation_policy(
+        self,
+        policy_id: str,
+        *,
+        include: Union[str, UnsetType] = unset,
+    ) -> EscalationPolicy:
+        """Get on call escalation policy.
+
+        Get an on-call escalation policy
+
+        :param policy_id: The ID of the escalation policy
+        :type policy_id: str
+        :param include: Comma-separated list of included relationships to be returned. Allowed values: ``teams`` , ``steps`` , ``steps.targets``.
+        :type include: str, optional
+        :rtype: EscalationPolicy
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["policy_id"] = policy_id
+
+        if include is not unset:
+            kwargs["include"] = include
+
+        return self._get_on_call_escalation_policy_endpoint.call_with_http_info(**kwargs)
 
     def get_on_call_schedule(
         self,
@@ -197,6 +371,34 @@ class OnCallApi:
         kwargs["schedule_id"] = schedule_id
 
         return self._get_on_call_schedule_endpoint.call_with_http_info(**kwargs)
+
+    def update_on_call_escalation_policy(
+        self,
+        policy_id: str,
+        body: EscalationPolicyUpdateRequest,
+        *,
+        include: Union[str, UnsetType] = unset,
+    ) -> EscalationPolicy:
+        """Update on call escalation policy.
+
+        Update an on-call escalation policy
+
+        :param policy_id: The ID of the escalation policy
+        :type policy_id: str
+        :type body: EscalationPolicyUpdateRequest
+        :param include: Comma-separated list of included relationships to be returned. Allowed values: ``teams`` , ``steps`` , ``steps.targets``.
+        :type include: str, optional
+        :rtype: EscalationPolicy
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["policy_id"] = policy_id
+
+        if include is not unset:
+            kwargs["include"] = include
+
+        kwargs["body"] = body
+
+        return self._update_on_call_escalation_policy_endpoint.call_with_http_info(**kwargs)
 
     def update_on_call_schedule(
         self,

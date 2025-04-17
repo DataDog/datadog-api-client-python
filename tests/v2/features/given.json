@@ -440,6 +440,18 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"monitor-notification-rule\",\n    \"attributes\": {\n      \"name\":\"test rule\",\n      \"filter\": {\n        \"tags\": [\n          \"app:{{ unique_lower }}\"\n        ]\n      },\n      \"recipients\":[\n        \"slack-monitor-app\"\n      ]\n    }\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"monitor_notification_rule\" in the system",
+    "key": "monitor_notification_rule",
+    "tag": "Monitors",
+    "operationId": "CreateMonitorNotificationRule"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"type\": \"monitor-config-policy\",\n    \"attributes\": {\n      \"policy_type\": \"tag\",\n      \"policy\": {\n        \"tag_key\": \"{{ unique_lower_alnum }}\", \"tag_key_required\": false, \"valid_tag_values\": [\"prod\", \"staging\"]\n      }\n    }\n  }\n}"
       }
     ],
@@ -447,6 +459,18 @@
     "key": "monitor_configuration_policy",
     "tag": "Monitors",
     "operationId": "CreateMonitorConfigPolicy"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"name\": \"{{ unique }}\",\n      \"description\": \"{{ unique }}\",\n      \"resolve_page_on_policy_end\": true,\n      \"retries\": 2,\n      \"steps\": [\n        {\n          \"assignment\": \"default\",\n          \"escalate_after_seconds\": 3600,\n          \"targets\": [\n            {\n              \"id\": \"{{ dd_team.data.id }}\",\n              \"type\": \"teams\"\n            },\n            {\n              \"id\": \"{{ schedule.data.id }}\",\n              \"type\": \"schedules\"\n            },\n            {\n              \"id\": \"{{ user.data.id }}\",\n              \"type\": \"users\"\n            }\n          ]\n        },\n        {\n          \"assignment\": \"round-robin\",\n          \"escalate_after_seconds\": 3600,\n          \"targets\": [\n            {\n              \"id\": \"{{ dd_team.data.id }}\",\n              \"type\": \"teams\"\n            }\n          ]\n        }\n      ]\n    },\n    \"relationships\": {\n      \"teams\": {\n        \"data\": [\n          {\n            \"id\": \"{{ dd_team.data.id }}\",\n            \"type\": \"teams\"\n          }\n        ]\n      }\n    },\n    \"type\": \"policies\"\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"escalation_policy\" in the system",
+    "key": "escalation_policy",
+    "tag": "On-Call",
+    "operationId": "CreateOnCallEscalationPolicy"
   },
   {
     "parameters": [

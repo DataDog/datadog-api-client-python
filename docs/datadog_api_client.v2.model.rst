@@ -5233,6 +5233,300 @@ datadog\_api\_client.v2.model.error\_handler module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.escalation\_policy module
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.escalation_policy
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.escalation\_policy\_create\_request module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.escalation_policy_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.escalation\_policy\_create\_request\_data module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.escalation_policy_create_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.escalation\_policy\_create\_request\_data\_attributes module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.escalation_policy_create_request_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.escalation\_policy\_create\_request\_data\_attributes\_steps\_items module
+--------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.escalation_policy_create_request_data_attributes_steps_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.escalation\_policy\_create\_request\_data\_attributes\_steps\_items\_assignment module
+--------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.escalation_policy_create_request_data_attributes_steps_items_assignment
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.escalation\_policy\_create\_request\_data\_attributes\_steps\_items\_targets\_items module
+------------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.escalation_policy_create_request_data_attributes_steps_items_targets_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.escalation\_policy\_create\_request\_data\_attributes\_steps\_items\_targets\_items\_type module
+------------------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.escalation_policy_create_request_data_attributes_steps_items_targets_items_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.escalation\_policy\_create\_request\_data\_relationships module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.escalation_policy_create_request_data_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.escalation\_policy\_create\_request\_data\_relationships\_teams module
+----------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.escalation_policy_create_request_data_relationships_teams
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.escalation\_policy\_create\_request\_data\_relationships\_teams\_data\_items module
+-----------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.escalation_policy_create_request_data_relationships_teams_data_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.escalation\_policy\_create\_request\_data\_relationships\_teams\_data\_items\_type module
+-----------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.escalation_policy_create_request_data_relationships_teams_data_items_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.escalation\_policy\_create\_request\_data\_type module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.escalation_policy_create_request_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.escalation\_policy\_data module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.escalation_policy_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.escalation\_policy\_data\_attributes module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.escalation_policy_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.escalation\_policy\_data\_relationships module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.escalation_policy_data_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.escalation\_policy\_data\_relationships\_steps module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.escalation_policy_data_relationships_steps
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.escalation\_policy\_data\_relationships\_steps\_data\_items module
+------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.escalation_policy_data_relationships_steps_data_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.escalation\_policy\_data\_relationships\_steps\_data\_items\_type module
+------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.escalation_policy_data_relationships_steps_data_items_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.escalation\_policy\_data\_relationships\_teams module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.escalation_policy_data_relationships_teams
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.escalation\_policy\_data\_relationships\_teams\_data\_items module
+------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.escalation_policy_data_relationships_teams_data_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.escalation\_policy\_data\_relationships\_teams\_data\_items\_type module
+------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.escalation_policy_data_relationships_teams_data_items_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.escalation\_policy\_data\_type module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.escalation_policy_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.escalation\_policy\_included module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.escalation_policy_included
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.escalation\_policy\_step module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.escalation_policy_step
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.escalation\_policy\_step\_attributes module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.escalation_policy_step_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.escalation\_policy\_step\_attributes\_assignment module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.escalation_policy_step_attributes_assignment
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.escalation\_policy\_step\_relationships module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.escalation_policy_step_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.escalation\_policy\_step\_type module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.escalation_policy_step_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.escalation\_policy\_update\_request module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.escalation_policy_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.escalation\_policy\_update\_request\_data module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.escalation_policy_update_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.escalation\_policy\_update\_request\_data\_attributes module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.escalation_policy_update_request_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.escalation\_policy\_update\_request\_data\_attributes\_steps\_items module
+--------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.escalation_policy_update_request_data_attributes_steps_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.escalation\_policy\_update\_request\_data\_attributes\_steps\_items\_assignment module
+--------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.escalation_policy_update_request_data_attributes_steps_items_assignment
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.escalation\_policy\_update\_request\_data\_attributes\_steps\_items\_targets\_items module
+------------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.escalation_policy_update_request_data_attributes_steps_items_targets_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.escalation\_policy\_update\_request\_data\_attributes\_steps\_items\_targets\_items\_type module
+------------------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.escalation_policy_update_request_data_attributes_steps_items_targets_items_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.escalation\_policy\_update\_request\_data\_relationships module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.escalation_policy_update_request_data_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.escalation\_policy\_update\_request\_data\_relationships\_teams module
+----------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.escalation_policy_update_request_data_relationships_teams
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.escalation\_policy\_update\_request\_data\_relationships\_teams\_data\_items module
+-----------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.escalation_policy_update_request_data_relationships_teams_data_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.escalation\_policy\_update\_request\_data\_relationships\_teams\_data\_items\_type module
+-----------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.escalation_policy_update_request_data_relationships_teams_data_items_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.escalation\_policy\_update\_request\_data\_type module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.escalation_policy_update_request_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.escalation\_target module
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.escalation_target
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.event module
 ------------------------------------------
 
@@ -9209,6 +9503,118 @@ datadog\_api\_client.v2.model.monitor\_downtime\_match\_response\_data module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.monitor\_notification\_rule\_attributes module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_notification_rule_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.monitor\_notification\_rule\_create\_request module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_notification_rule_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.monitor\_notification\_rule\_create\_request\_data module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_notification_rule_create_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.monitor\_notification\_rule\_data module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_notification_rule_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.monitor\_notification\_rule\_filter module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_notification_rule_filter
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.monitor\_notification\_rule\_filter\_tags module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_notification_rule_filter_tags
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.monitor\_notification\_rule\_list\_response module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_notification_rule_list_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.monitor\_notification\_rule\_relationships module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_notification_rule_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.monitor\_notification\_rule\_relationships\_created\_by module
+--------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_notification_rule_relationships_created_by
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.monitor\_notification\_rule\_relationships\_created\_by\_data module
+--------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_notification_rule_relationships_created_by_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.monitor\_notification\_rule\_resource\_type module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_notification_rule_resource_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.monitor\_notification\_rule\_response module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_notification_rule_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.monitor\_notification\_rule\_response\_attributes module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_notification_rule_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.monitor\_notification\_rule\_response\_included\_item module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_notification_rule_response_included_item
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.monitor\_notification\_rule\_update\_request module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_notification_rule_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.monitor\_notification\_rule\_update\_request\_data module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_notification_rule_update_request_data
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.monitor\_trigger module
 -----------------------------------------------------
 
@@ -12121,6 +12527,20 @@ datadog\_api\_client.v2.model.schedule\_member\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.schedule\_target module
+-----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_target
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_target\_type module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_target_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.schedule\_trigger module
 ------------------------------------------------------
 
@@ -14725,6 +15145,20 @@ datadog\_api\_client.v2.model.team\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.team\_target module
+-------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_target
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_target\_type module
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_target_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.team\_type module
 -----------------------------------------------
 
@@ -15275,6 +15709,20 @@ datadog\_api\_client.v2.model.user\_response\_relationships module
 ------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.user_response_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.user\_target module
+-------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.user_target
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.user\_target\_type module
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.user_target_type
    :members:
    :show-inheritance:
 

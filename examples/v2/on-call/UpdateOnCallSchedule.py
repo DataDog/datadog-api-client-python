@@ -52,8 +52,8 @@ SCHEDULE_DATA_RELATIONSHIPS_LAYERS_DATA_0_ID = environ["SCHEDULE_DATA_RELATIONSH
 # there is a valid "user" in the system
 USER_DATA_ID = environ["USER_DATA_ID"]
 
-# there is a valid "team" in the system
-TEAM_DATA_ID = environ["TEAM_DATA_ID"]
+# there is a valid "dd_team" in the system
+DD_TEAM_DATA_ID = environ["DD_TEAM_DATA_ID"]
 
 body = ScheduleUpdateRequest(
     data=ScheduleUpdateRequestData(
@@ -98,7 +98,7 @@ body = ScheduleUpdateRequest(
             teams=ScheduleUpdateRequestDataRelationshipsTeams(
                 data=[
                     ScheduleUpdateRequestDataRelationshipsTeamsDataItems(
-                        id=TEAM_DATA_ID,
+                        id=DD_TEAM_DATA_ID,
                         type=ScheduleUpdateRequestDataRelationshipsTeamsDataItemsType.TEAMS,
                     ),
                 ],
