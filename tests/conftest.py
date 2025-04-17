@@ -161,7 +161,7 @@ def unique(request, freezed_time):
     return f"{prefix}-{int(freezed_time.timestamp())}"
 
 
-def relative_time(freezed_time, iso, is_iso_with_timezone_indicator):
+def relative_time(freezed_time, iso):
     time_re = re.compile(r"now( *([+-]) *(\d+)([smhdMy]))?")
 
     def func(arg):
@@ -185,16 +185,9 @@ def relative_time(freezed_time, iso, is_iso_with_timezone_indicator):
                 elif unit == "y":
                     ret += relativedelta(years=num)
             if iso:
-                if is_iso_with_timezone_indicator:
-                    # Return ISO 8601 formatted string with Z timezone indicator
-                    # Example: 2025-04-17T03:17:07.923Z
-                    from datetime import timezone
-
-                    return ret.astimezone(timezone.utc).isoformat(timespec="milliseconds").replace("+00:00", "Z")
-                else:
-                    return ret.replace(tzinfo=None)  # return datetime object and not string
-                    # NOTE this is not a full ISO 8601 format, but it's enough for our needs
-                    # return ret.strftime('%Y-%m-%dT%H:%M:%S') + ret.strftime('.%f')[:4] + 'Z'
+                return ret.replace(tzinfo=None)  # return datetime object and not string
+                # NOTE this is not a full ISO 8601 format, but it's enough for our needs
+                # return ret.strftime('%Y-%m-%dT%H:%M:%S') + ret.strftime('.%f')[:4] + 'Z'
 
             return int(ret.timestamp())
         return ""
@@ -227,8 +220,8 @@ def context(vcr, unique, freezed_time):
         "unique_lower_alnum": PATTERN_ALPHANUM.sub("", unique).lower(),
         "unique_upper_alnum": PATTERN_ALPHANUM.sub("", unique).upper(),
         "unique_hash": unique_hash,
-        "timestamp": relative_time(freezed_time, False, False),
-        "timeISO": relative_time(freezed_time, True, is_iso_with_timezone_indicator),
+        "timestamp": relative_time(freezed_time, False),
+        "timeISO": relative_time(freezed_time, True),
         "uuid": generate_uuid(freezed_time),
     }
 
@@ -512,7 +505,7 @@ def build_given(version, operation):
                             json.loads(Template(p["value"]).render(**context)),
                         )
                         return open(filepath)
-                    return json.loads(Template(p["value"]).render(**context))
+                    return client.deserialize(Template(p["value"]).render(**context), openapi_types, True)
                 if "source" in p:
                     return glom(context, p["source"])
 
