@@ -512,7 +512,7 @@ def build_given(version, operation):
                             json.loads(Template(p["value"]).render(**context)),
                         )
                         return open(filepath)
-                    return json.loads(Template(p["value"]).render(**context))
+                    return client.deserialize(Template(p["value"]).render(**context), openapi_types, True)
                 if "source" in p:
                     return glom(context, p["source"])
 
